@@ -2,14 +2,15 @@
 Welcome to the Excel JavaScript API (Preview) documentation. Here you can find everything you need to create the next generation of Excel add-ins in Office 2016 Preview for Windows. The new APIs provide a variety of Excel-specific functionality related to worksheets, tables, charts, ranges, formatting, etc. and complement our existing Office.js library. 
 
 ## Try it out
-We've been working on a Snippet Explorer (Preview) to let you browse through common code snippets and learn how the new APIs work. Give it a try. The code snippets referenced by the explorer are available [here](samples). 
+We've been working on a Snippet Explorer to let you browse through code snippets for common scenarios and learn how the new APIs work. Explore them [here](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel). 
 
-##Give feedback
-We've released this preview to give developers an early look at the direction we're heading with the Office developer platform.
+## Give us your feedback
 
-* Check out the docs and let us know about any issues you find in it by submitting issues directly in this repo.
-* Share your code snippets by submitting  a pull request to [this repo](ExcelJSSamplesRepo).
-* Let us what you think about the APIs and the general programming experience. 
+Your feedback is important to us. 
+
+* Check out the docs and let us know about any questions, issues you find in it by [submitting an issue](https://github.com/OfficeDev/office-js-docs/issues) directly in this repository.
+* Share your code snippets by submitting  a pull request to [this repository](https://github.com/OfficeDev/office-js-snippet-explorer/tree/master/excel-snippets).
+* Let us know about your programming experience, what you would like to see in future versions, code samples, etc. Use [this site](http://officespdev.uservoice.com/) for entering your suggestions and ideas.
 
 ##API overview
 
