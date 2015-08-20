@@ -252,12 +252,12 @@ Let's put it all together by taking a look at a simple example that shows how yo
 Use these steps to get you started with WordJS. Please open an issue if you encounter a problem using these steps.
 
 1. [Download](https://products.office.com/en-us/office-2016-preview) the latest Office 16 preview (4229.1005 or greater).
-2. Put [Word16SampleRegKey.reg](/resources/sampleFiles/Word16SampleRegKey.reg) and [WordAPIs.xml](/resources/sampleFiles/WordAPIs.xml) in the c:\temp directory. Modify the registry file if you place these files in a different directory. The registry key tells Word where it can find WordAPIs.xml. WordAPIs.xml is the manifest file that declares th functionality and the location of the add-in web application.
+2. Put [Word16SampleRegKey.reg](/word/resources/sampleFiles/Word16SampleRegKey.reg) and [WordAPIs.xml](/word/resources/sampleFiles/WordAPIs.xml) in the c:\temp directory. Modify the registry file if you place these files in a different directory. The registry key tells Word where it can find WordAPIs.xml. WordAPIs.xml is the manifest file that declares th functionality and the location of the add-in web application.
 3. Close all Word, Excel, PowerPoint, and Outlook sessions.
 4. Start Word.
 5. Select the *Insert* tab, and then select the *My Add-ins* drop-down box. Select the *Word APIs (4229-1005)* add-in. This will load the add-in.
-![Select the add-in from the Insert tab](/resources/images/insertAddIn.png)
-6. Select the target build (in red), and the target object and sample (in green). ![Select the sample to run](/resources/images/chooseSample.png)
+![Select the add-in from the Insert tab](/word/resources/images/insertAddIn.png)
+6. Select the target build (in red), and the target object and sample (in green). ![Select the sample to run](/word/resources/images/chooseSample.png)
 7. Select *Run!* to see the results of running the sample.
 
 The code for this sample is found in this [sample library](https://github.com/trmini/robmhoward.github.io/tree/Word-APIs/word/samples/4229.1005). A great feature of this sample is that you can alter and run the code from within the sample. Contributions to this sample library are encouraged. Please provide feedback on this API, the experience of using it, blocking issues, and the documentation. Your input is appreciated! 
