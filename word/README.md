@@ -4,7 +4,7 @@ Welcome to the Word JavaScript API (Preview) documentation. Here you can find ev
 
 ## Try it out
 
-We've working on a Snippet Explorer (Preview) to let you browse through common code snippets and learn how the new APIs work. Give it a try. The code snippets referenced by the Snippet Explorer are available [here](https://github.com/robmhoward/robmhoward.github.io/tree/master/word/samples). 
+We've working on a Snippet Explorer (Preview) to let you browse through common code snippets and learn how the new APIs work. Give it a try. The code snippets referenced by the Snippet Explorer are available [here](http://officesnippetexplorer.azurewebsites.net/#/snippets/word). 
 
 You can also [get started with build 4429.1005](#getstarted).
 
@@ -13,7 +13,6 @@ You can also [get started with build 4429.1005](#getstarted).
 We've released this preview to give developers an early look at the direction we're heading with the Office developer platform.
 
 * Check out the docs and let us know about any [issues](https://github.com/OfficeDev/office-js-docs/issues) you find in those docs by submitting issues directly in this repo.
-* Share your code snippets by submitting a pull request to the Snippet Explorer repo.
 * Let us know what you think about the APIs and the general programming experience. 
 
 ## API overview  
