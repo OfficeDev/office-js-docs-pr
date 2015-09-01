@@ -6,8 +6,6 @@ Welcome to the Word JavaScript API (Preview) documentation. Here you can find ev
 
 We've working on a Snippet Explorer (Preview) to let you browse through common code snippets and learn how the new APIs work. Give it a try. The code snippets referenced by the Snippet Explorer are available [here](http://officesnippetexplorer.azurewebsites.net/#/snippets/word). 
 
-You can also [get started with build 4429.1005](#getstarted).
-
 ## Give feedback
 
 We've released this preview to give developers an early look at the direction we're heading with the Office developer platform.
