@@ -12,7 +12,7 @@ Specifies the options to be included in a search operation.
 |`matchSoundsLike`| bool |Gets or sets a value that indicates whether to find words that sound similar to the search string. Corresponds to the Sounds like check box in the Find and Replace dialog box | 
 |`matchSuffix`| bool |Gets or sets a value that indicates whether to match words that end with the search string. Corresponds to the Match suffix check box in the Find and Replace dialog box. | 
 |`matchWholeWord`| bool |Gets or sets a value that indicates whether to find operation only entire words, not text that is part of a larger word. Corresponds to the Find whole words only check box in the Find and Replace dialog box. | 
-|`matchWildcards`| bool |Gets or sets a value that indicates whether the search will be performed using special search operators. Corresponds to the Use wildcards check box in the Find and Replace dialog box. |  |
+|`matchWildCards`| bool |Gets or sets a value that indicates whether the search will be performed using special search operators. Corresponds to the Use wildcards check box in the Find and Replace dialog box. |  |
 
 
 
