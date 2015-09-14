@@ -1,3 +1,5 @@
+Applies to: Word 2016
+
 # Body 
 Represents the body of a document or a section.
 
