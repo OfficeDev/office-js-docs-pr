@@ -8,6 +8,9 @@ We've working on a Snippet Explorer (Preview) to let you browse through common c
 
 ## Give feedback
 
+<!--We need a link to the MSDN content here-->
+
+
 We've released this preview to give developers an early look at the direction we're heading with the Office developer platform.
 
 * Check out the docs and let us know about any [issues](https://github.com/OfficeDev/office-js-docs/issues) you find in those docs by submitting issues directly in this repo.

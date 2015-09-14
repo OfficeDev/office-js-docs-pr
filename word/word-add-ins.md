@@ -21,18 +21,18 @@ Let's take a look at this code and comments to get a better understanding of how
     // Get the context. This provides the bridge between the Word application and the add-in.
     var ctx = new Word.RequestContext();
 
-    // Queue: get a handle on the document proxy object. Nothing has changed in Word.
+    // Queue: get a handle on the document proxy object. Nothing has changed in the Word document.
     var thisDocument = ctx.document;
 
-    // Queue: save the document proxy object. Nothing has changed in Word. 
+    // Queue: save the document proxy object. Nothing has changed in the Word document.
     thisDocument.save();
     
-    // Queue: load the save state on the document proxy object. Nothing has changed in Word. 
+    // Queue: load the save state on the document proxy object. Nothing has changed in the Word document.
     // The current value for the saved property on the document proxy object is null.
     ctx.load(thisDocument, { select: 'saved'});
     
     // Run the batch of commands in the queue. The set of commands set on on the document proxy object
-    // are sent to Word. If all of the commands are successful, the document will be saved and the
+    // are sent to Word. If all of the commands are successful, the Word document will be saved and the
     // value of the *saved* property will be returned and set on the document proxy object. The document
     // proxy object's, and the actual Word document's, *saved* property will be in sync. 
     ctx.executeAsync();
