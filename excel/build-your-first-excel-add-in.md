@@ -18,7 +18,7 @@ Content add-ins integrate web-based features as content that is shown in-line wi
 The steps below show how to build and run a simple Excel task pane add-in that loads some data into a  worksheet and creates a simple chart. 
 
 ### Set it up
-1.	To create the add-in, you essentially need to create a web app and an XML manifest file that tells where your web app is located and how you want it to appear within Excel. In this example, you will create the web app using HTML and JavaScript. To start, create a folder on your local drive called QuarterlySalesReport (for example C:\QuarterlySalesReport). Save all of the files created in the following steps into this folder.
+1.	To create the add-in, you essentially need to create a web app and an XML manifest file that tells where your web app is located and how you want it to appear within Excel. In this example, you will create the web app using HTML and JQuery. To start, create a folder on your local drive called QuarterlySalesReport (for example C:\QuarterlySalesReport). Save all of the files created in the following steps into this folder.
 
 2.  Let's now create the HTML page that will be loaded into the task pane add-in. Create a file named home.html and paste in the code below.
 	```
@@ -78,7 +78,7 @@ The steps below show how to build and run a simple Excel task pane add-in that l
 	
 	```
 
-4.  Create a file named Home.js and copy and paste the following script.
+4.  Create a file named Home.js and copy and paste the following script. This file contains the programming logic for the add-in in JQuery.
 	```
 	(function () {
 	    "use strict";
