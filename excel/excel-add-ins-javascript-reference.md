@@ -1,3 +1,3 @@
-# Word add-ins JavaScript reference 
+# Excel add-ins JavaScript reference 
 
-Learn about the objects ewer
+Learn about the objects 

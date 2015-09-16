@@ -1,5 +1,4 @@
-*Applies to:* Word 2016
+# Excel Add-in Samples
 
-# Word add-ins code smaples
+_Applies to: Excel 2016_
 
-This topic will have links out to known blessed code samples found under the officedev organization on GH.
