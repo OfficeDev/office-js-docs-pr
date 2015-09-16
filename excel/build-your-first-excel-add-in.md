@@ -195,8 +195,8 @@ The steps below show how to build and run a simple Excel task pane add-in that l
     1.  On the Insert tab in Excel 2016, choose My Add-ins. 
     2.  In the Office Add-ins dialog box, choose Shared Folder.
     3.  Choose Quarterly Sales Report, and then choose Insert.
-    4.  The add-in will open in a task pane to the right of the current worksheet as shown in this diagram. ![Quarterly Sales Report Add-in](/images/QuarterlySalesReport_taskpane.png)
-    5. Now click the **Click me!** button. This will render the data and the chart inside the worksheet as shown below.  Feel free to change the data in the range and see the chart get updated dynamically! ![Quarterly Sales Report Add-in](/images/QuarterlySalesReport_report.png)
+    4.  The add-in will open in a task pane to the right of the current worksheet as shown in this diagram. ![Quarterly Sales Report Add-in](/excel/images/QuarterlySalesReport_taskpane.png)
+    5. Now click the **Click me!** button. This will render the data and the chart inside the worksheet as shown below.  Feel free to change the data in the range and see the chart get updated dynamically! ![Quarterly Sales Report Add-in](/excel/images/QuarterlySalesReport_report.png)
 
 ### Learn more
 
