@@ -179,7 +179,7 @@ The steps below show how to build and run a simple Excel task pane add-in that l
 ### Try it out
 
 1.	The simplest way to deploy and test your add-in is to copy the files to a network share. To do this, follow these steps:
-	1.  Create a folder on a network share and copy all the files (for example, \\MyShare\QuarterlySalesReport). 
+	1.  Create a folder on a network share (for example, \\MyShare\QuarterlySalesReport) and copy all the files. 
 	2. Edit the <SourceLocation> element of the manifest file so that it points to the share location for the .html page from step 1. 
 	3. Then copy the manifest (QuarterlySalesReportManifest.xml) to a network share (for example, \\MyShare\MyManifests).
 	4. Then add the share location that contains the manifest as a trusted app catalog in Excel. To do this, follow these steps:
