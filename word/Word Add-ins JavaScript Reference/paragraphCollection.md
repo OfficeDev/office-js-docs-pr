@@ -1,4 +1,4 @@
-# ParagraphCollection
+# ParagraphCollection (Javascript API for Word)
 
 Contains a collection of [Paragraph](paragraph.md) objects. 
 

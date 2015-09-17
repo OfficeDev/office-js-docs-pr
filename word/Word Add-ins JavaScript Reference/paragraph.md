@@ -1,4 +1,4 @@
-# Paragraph
+# Paragraph (Javascript API for Word)
 Represents a single paragraph in a selection, range, document, or document body.
 
 ## Properties

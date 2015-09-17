@@ -1,4 +1,4 @@
-# Section 
+# Section (Javascript API for Word)
 Represents a section in a Word document.
 
 ## Properties

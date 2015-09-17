@@ -1,14 +1,12 @@
-*Applies to:* Word 2016
-
 # Word add-ins JavaScript reference 
 
-You'll always start with the ClientRequestContext object. 
+Find API reference for the Javascript API for Word for Word add-ins.
 
-```js
-    var clientRequestContext = new Word.RequestContext();
-```
+*Applies to: Word 2016*
 
-The **ClientRequestContext** object gives you access to the [Document](Word Add-ins JavaScript Reference/document.md) object which contains the properties and methods that you'll need to extend Word and get access to the following objects and functionality:
+<!-- Add link and statement about how to get the type definition file. Look at Michael Zs info -->
+
+## In this section
 
 * [Body](Word Add-ins JavaScript Reference/body.md): Represents the body of a document or a section.
 * [ContentControl](Word Add-ins JavaScript Reference/contentControl.md): A ContentControl object is a container for content. It is a bound and

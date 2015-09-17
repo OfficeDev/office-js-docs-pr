@@ -1,4 +1,4 @@
-# InlinePictureCollection
+# InlinePictureCollection (Javascript API for Word)
 
 Contains a collection of [InlinePicture](inlinePicture.md) objects. 
 

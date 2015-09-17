@@ -1,6 +1,6 @@
 Applies to: Word 2016
 
-# Body 
+# Body (Javascript API for Word)
 Represents the body of a document or a section.
 
 ## Properties

@@ -1,4 +1,4 @@
-# Font
+# Font (Javascript API for Word)
 
 Represents a font.
 
