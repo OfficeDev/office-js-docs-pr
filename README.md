@@ -13,5 +13,5 @@ We've been working on a Snippet Explorer to let you browse through code snippets
 
 Your feedback is important to us. 
 
-* Check out the docs and let us know about any questions, issues you find in it by [submitting an issue](https://github.com/OfficeDev/office-js-docs/issues) directly in this repository.
+* Check out the docs and let us know about any questions, issues you find in it by [submitting an issue](https://github.com/OfficeDev/office-js-docs/issues) directly in this repository. Make sure you state the version+build number of the client you are using, repro steps, console output, and error messages in any issue you open.  
 * Let us know about your programming experience, what you would like to see in future versions, code samples, etc. Use [this site](http://officespdev.uservoice.com/) for entering your suggestions and ideas.

@@ -29,7 +29,7 @@ Let's take a look at what you'll need when you run your add-in. All add-ins shou
 
 *Example 1. Initialization and execution of a Word add-in*
 
-    ```javascript
+```javascript
     (function () {
         "use strict";
 
@@ -51,7 +51,7 @@ Let's take a look at what you'll need when you run your add-in. All add-ins shou
             var thisDocument = context.document;
         })
     })();
-    ```
+```
 
 ### Proxy objects
 
@@ -59,7 +59,7 @@ The Word Javascript object model is loosely coupled with the objects in Word. Th
 
 *Example 2. Synchronization of the document body with the body proxy object.*
 
-    ```javascript
+```javascript
     // Run a batch operation against the Word object model.
     Word.run(function (context) {
 
@@ -76,19 +76,15 @@ The Word Javascript object model is loosely coupled with the objects in Word. Th
             console.log("Body contents: " + body.text);
         });  
     })
-    ```
+```
 
 ### Command queue
 
-The Word proxy objects have methods for accessing and updating the object model. These methods are executed sequentially in the order in which they were queued in the batch. In example 3., we demonstrate how the queue of commands works. When context.sync() is run, the first thing that happens is that the commmand to load the body text is executed in Word. Then, the command to insert text into the body on Word occurs. The results are then returned to the body proxy object. The value of the body.text property in the Word Javascript will be the value of the Word document body <u>before</u> the text was inserted into 
-
-
-
-
+The Word proxy objects have methods for accessing and updating the object model. These methods are executed sequentially in the order in which they were queued in the batch. In example 3., we demonstrate how the queue of commands works. When context.sync() is run, the first thing that happens is that the commmand to load the body text is executed in Word. Then, the command to insert text into the body on Word occurs. The results are then returned to the body proxy object. The value of the body.text property in the Word Javascript will be the value of the Word document body <u>before</u> the text was inserted into Word document. 
 
 *Example 3. Executing a batch of commands.*
 
-    ```javascript
+```javascript
     // Run a batch operation against the Word object model.
     Word.run(function (context) {
 
@@ -108,7 +104,7 @@ The Word proxy objects have methods for accessing and updating the object model.
             console.log("Body contents: " + body.text);
         });  
     })
-    ```
+```
 
 
 -- The methods, how they are used to send instruction to the document, how they, how there is a queue, when they executed
