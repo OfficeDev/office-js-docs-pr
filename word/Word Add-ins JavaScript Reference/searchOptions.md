@@ -1,4 +1,4 @@
-# SearchOptions  
+# SearchOptions (Javascript API for Word) 
 Specifies the options to be included in a search operation.
 
 ## Properties

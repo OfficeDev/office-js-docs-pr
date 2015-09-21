@@ -1,4 +1,4 @@
-# BreakType Values 
+# BreakType (Javascript API for Word) 
 The following are the supported break types on the API.
 
 | Value         | Description     |

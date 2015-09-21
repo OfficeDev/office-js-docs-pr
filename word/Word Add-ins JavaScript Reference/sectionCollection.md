@@ -1,4 +1,4 @@
-# SectionCollection
+# SectionCollection (Javascript API for Word)
 Contains a collection of [Section](section.md) objects.
 
 ## Properties
