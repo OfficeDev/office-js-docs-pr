@@ -1,92 +1,129 @@
-# ParagraphCollection (Javascript API for Word)
+# ParagraphCollection Object (JavaScript API for Word)
 
-Contains a collection of [Paragraph](paragraph.md) objects. 
+Contains a collection of [paragraph](paragraph.md) objects.
 
-## Properties
+_Applies to: Office 2016_
 
-| Property         | Type    |Description|
-|:-----------------|:--------|:----------|
-|items|  array | Gets an array of paragraph objects. |
-
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.|
 
 ## Relationships
-None  
+None
+
 
 ## Methods
 
-| Method     | Return Type    |Description|
-|:-----------------|:--------|:----------|
-|[getItem(index: number)](#getitemindex-number)| [Paragraph](paragraph.md)   | Gets a paragraph object by its index in the collection. |
-|[load(param: option)](#loadparam-option)|void|Fills the paragraph collection proxy object created in the JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[getItem(index: number)](#getitemindex-number)|[Paragraph](paragraph.md)|Gets a paragraph object by its index in the collection.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## API Specification
+## Method Details
 
 ### getItem(index: number)
-
 Gets a paragraph object by its index in the collection.
 
 #### Syntax
 ```js
-    paragraphCollection.getItem(index);
+paragraphCollectionObject.getItem(index);
 ```
-#### Parameters
 
-| Parameter       | Type    |Description|
+#### Parameters
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|index|number|  A number that identifies the index location of a paragraph object.  |
+|index|number|A number that identifies the index location of a paragraph object.|
 
 #### Returns
+[Paragraph](paragraph.md)
 
-[Paragraph](paragraph.md)  
-
-
-[Back](#methods)
-
-
-### load(param: option)
-Fills the paragraph collection proxy object created in the JavaScript layer with the property and object values specified in the parameter.
+#### Examples
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+	
+	// Create a proxy object for the paragraphs collection.
+	var paragraphs = context.document.body.paragraphs;
+	
+	// Queue a commmand to load the style property for all of the paragraphs.
+	context.load(paragraphs, 'style');
+	
+	// Synchronize the document state by executing the queued-up commands, 
+	// and return a promise to indicate task completion.
+	return context.sync().then(function () {
+		
+		// Queue a command to get the first paragraph and create a 
+		// proxy paragraph object.
+		var paragraph = paragraphs.getItem(0); 
+		
+		// Queue a command to select the paragraph. The Word UI will 
+		// move to the selected paragraph.
+		paragraph.select();
+		
+		// Synchronize the document state by executing the queued-up commands, 
+		// and return a promise to indicate task completion.
+		return context.sync().then(function () {
+			console.log('Selected the last paragraph.');
+		});      
+	});  
+})
+.catch(function (error) {
+	console.log('Error: ' + JSON.stringify(error));
+	if (error instanceof OfficeExtension.Error) {
+		console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+	}
+});
+```
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
 ```js
-    paragraphCollection.load(param);
+object.load(param);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|param|object| A string, a string with comma separated value, an array of strings, or an object that specifies which properties to load.  |
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
 
-[Back](#methods)
-
-
-
-### Getter and setter examples
-
-#### Get the text of each paragraph in the collection
+#### Examples
 ```js
-    // Iterate through all of the paragraphs in the documents and
-    // report back the length and text of each paragraph.
-    var ctx = new Word.RequestContext();
-    var paras = ctx.document.body.paragraphs;
-    ctx.load(paras,{select:"text"});
-
-    ctx.executeAsync().then(
-      function () {
-        for (var i = 0; i < paras.items.length; i++) {
-          console.log("paras[" + i + "].content  = " + paras.items[i].text);
-        }
-      },
-      function (result) {
-        console.log("Failed: ErrorCode=" + result.errorCode + ", ErrorMessage=" + result.errorMessage);
-        console.log(result.traceMessages);
-      }
-    );
-
-
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+    
+    // Create a proxy object for the paragraphs collection.
+    var paragraphs = context.document.body.paragraphs;
+    
+    // Queue a commmand to load the text and style properties for all of the paragraphs.
+    context.load(paragraphs, 'text, style');
+    
+    // Synchronize the document state by executing the queued-up commands, 
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        
+        // Queue a command to get the last paragraph and create a 
+        // proxy paragraph object.
+        var paragraph = paragraphs.items[paragraphs.items.length - 1]; 
+        
+        // Queue a command to select the paragraph. The Word UI will 
+        // move to the selected paragraph.
+        paragraph.select();
+        
+        // Synchronize the document state by executing the queued-up commands, 
+        // and return a promise to indicate task completion.
+        return context.sync().then(function () {
+            console.log('Selected the last paragraph.');
+        });      
+    });  
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
 ```
-
-
-
