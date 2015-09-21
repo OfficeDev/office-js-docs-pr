@@ -619,7 +619,7 @@ Word.run(function (context) {
         console.log("Debug info: " + JSON.stringify(error.debugInfo));
     }
 });
-
+```
 ### Get the style and the font size, font name, and font color properties on the body object.
 
 ```js
