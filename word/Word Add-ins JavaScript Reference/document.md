@@ -1,4 +1,4 @@
-# Document 
+# Document (Javascript API for Word)
 The Document object is the top level object. A Document object contains one or more 
 sections, content controls, and the body that contains the contents of the document.
 

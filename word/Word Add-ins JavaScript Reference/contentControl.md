@@ -1,4 +1,4 @@
-# ContentControl
+# ContentControl (Javascript API for Word)
 
 Represents a content control. Content controls are bounded and potentially labeled regions in a document that serve as containers for specific types of content. Individual content controls may contain contents such as dates, lists, or paragraphs of formatted text. Currently, only rich text content controls are supported. 
 

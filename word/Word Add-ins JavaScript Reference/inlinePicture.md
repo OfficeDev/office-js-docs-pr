@@ -1,4 +1,4 @@
-# InlinePicture
+# InlinePicture (Javascript API for Word)
 
 Represents an inline picture anchored to a paragraph.
 

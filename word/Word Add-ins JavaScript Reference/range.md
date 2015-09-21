@@ -1,4 +1,4 @@
-# Range  
+# Range (Javascript API for Word)
 Represents a contiguous area in a document.
 
 ## Properties
