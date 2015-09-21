@@ -1,19 +1,211 @@
-# SearchOptions (Javascript API for Word) 
+# SearchOptions Object (JavaScript API for Word)
+
 Specifies the options to be included in a search operation.
 
-## Properties
+_Applies to: Office 2016_
 
-| Property         | Type    |Description|
-|:-----------------|:--------|:----------|
-|`ignorePunct`| bool | Gets or sets a value that indicates whether to ignore all punctuation characters between words. Corresponds to the Ignore punctuation check box in the Find and Replace dialog box.|  
-|`ignoreSpace`| bool |Gets or sets a value that indicates whether to ignore all white space between words. Corresponds to the Ignore white-space characters check box in the Find and Replace dialog box.|
-|`matchCase`| bool |Gets or sets a value that indicates whether to perform a case sensitive search. Corresponds to the Match case check box in the Find and Replace dialog box (Edit menu).| 
-|`matchPrefix`| bool  |Gets or sets a value that indicates whether to match words that begin with the search string. Corresponds to the Match prefix check box in the Find and Replace dialog box. |
-|`matchSoundsLike`| bool |Gets or sets a value that indicates whether to find words that sound similar to the search string. Corresponds to the Sounds like check box in the Find and Replace dialog box | 
-|`matchSuffix`| bool |Gets or sets a value that indicates whether to match words that end with the search string. Corresponds to the Match suffix check box in the Find and Replace dialog box. | 
-|`matchWholeWord`| bool |Gets or sets a value that indicates whether to find operation only entire words, not text that is part of a larger word. Corresponds to the Find whole words only check box in the Find and Replace dialog box. | 
-|`matchWildCards`| bool |Gets or sets a value that indicates whether the search will be performed using special search operators. Corresponds to the Use wildcards check box in the Find and Replace dialog box. |  |
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|ignorePunct|bool|Gets or sets a value that indicates whether to ignore all punctuation characters between words. Corresponds to the Ignore punctuation check box in the Find and Replace dialog box.|
+|ignoreSpace|bool|Gets or sets a value that indicates whether to ignore all white space between words. Corresponds to the Ignore white-space characters check box in the Find and Replace dialog box.|
+|matchCase|bool|Gets or sets a value that indicates whether to perform a case sensitive search. Corresponds to the Match case check box in the Find and Replace dialog box (Edit menu).|
+|matchPrefix|bool|Gets or sets a value that indicates whether to match words that begin with the search string. Corresponds to the Match prefix check box in the Find and Replace dialog box.|
+|matchSoundsLike|bool|Gets or sets a value that indicates whether to find words that sound similar to the search string. Corresponds to the Sounds like check box in the Find and Replace dialog box|
+|matchSuffix|bool|Gets or sets a value that indicates whether to match words that end with the search string. Corresponds to the Match suffix check box in the Find and Replace dialog box.|
+|matchWholeWord|bool|Gets or sets a value that indicates whether to find operation only entire words, not text that is part of a larger word. Corresponds to the Find whole words only check box in the Find and Replace dialog box.|
+|matchWildCards|bool|Gets or sets a value that indicates whether the search will be performed using special search operators. Corresponds to the Use wildcards check box in the Find and Replace dialog box.|
 
+_See property access [examples.](#property-access-examples)_
+
+## Relationships
+None
+
+
+## Methods
+
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+
+## Method Details
+
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.load(param);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+## Property access examples
+
+### Ignore punctuation search
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+    
+    // Setup the search options.
+    var options = Word.SearchOptions.newObject(context);
+    options.ignorePunct = true;
+
+    // Queue a command to search the document.
+    var searchResults = context.document.body.search('video', options);
+
+    // Queue a command to load the search results and get the font property values.
+    context.load(searchResults, 'font');
+    
+    // Synchronize the document state by executing the queued-up commands, 
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        console.log('Found count: ' + searchResults.items.length);
+
+        // Queue a set of commands to change the font for each found item.
+        for (var i = 0; i < searchResults.items.length; i++) {
+            searchResults.items[i].font.color = 'purple';
+            searchResults.items[i].font.highlightColor = '#FFFF00'; //Yellow
+            searchResults.items[i].font.bold = true;
+        }
+        
+        // Synchronize the document state by executing the queued-up commands, 
+        // and return a promise to indicate task completion.
+        return context.sync();
+    });  
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
+
+### Search based on a prefix
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+    
+    // Setup the search options.
+    var options = Word.SearchOptions.newObject(context);
+    options.matchPrefix = true;
+
+    // Queue a command to search the document.
+    var searchResults = context.document.body.search('video', options);
+
+    // Queue a command to load the search results and get the font property values.
+    context.load(searchResults, 'font');
+    
+    // Synchronize the document state by executing the queued-up commands, 
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        console.log('Found count: ' + searchResults.items.length);
+
+        // Queue a set of commands to change the font for each found item.
+        for (var i = 0; i < searchResults.items.length; i++) {
+            searchResults.items[i].font.color = 'purple';
+            searchResults.items[i].font.highlightColor = '#FFFF00'; //Yellow
+            searchResults.items[i].font.bold = true;
+        }
+        
+        // Synchronize the document state by executing the queued-up commands, 
+        // and return a promise to indicate task completion.
+        return context.sync();
+    });  
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
+
+### Search based on a suffix
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+    
+    // Setup the search options.
+    var options = Word.SearchOptions.newObject(context);
+    options.matchSuffix = true;
+
+    // Queue a command to search the document for any string of characters after 'ly'.
+    var searchResults = context.document.body.search('ly', options);
+
+    // Queue a command to load the search results and get the font property values.
+    context.load(searchResults, 'font');
+    
+    // Synchronize the document state by executing the queued-up commands, 
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        console.log('Found count: ' + searchResults.items.length);
+
+        // Queue a set of commands to change the font for each found item.
+        for (var i = 0; i < searchResults.items.length; i++) {
+            searchResults.items[i].font.color = 'orange';
+            searchResults.items[i].font.highlightColor = 'black';
+            searchResults.items[i].font.bold = true;
+        }
+        
+        // Synchronize the document state by executing the queued-up commands, 
+        // and return a promise to indicate task completion.
+        return context.sync();
+    });  
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
+
+### Search using a wildcard
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+    
+    // Setup the search options.
+    var options = Word.SearchOptions.newObject(context);
+    options.matchWildCards = true;
+
+    // Queue a command to search the document for any string of characters after 'to'.
+    var searchResults = context.document.body.search('to*', options);
+
+    // Queue a command to load the search results and get the font property values.
+    context.load(searchResults, 'font');
+    
+    // Synchronize the document state by executing the queued-up commands, 
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        console.log('Found count: ' + searchResults.items.length);
+
+        // Queue a set of commands to change the font for each found item.
+        for (var i = 0; i < searchResults.items.length; i++) {
+            searchResults.items[i].font.color = 'purple';
+            searchResults.items[i].font.highlightColor = 'pink';
+            searchResults.items[i].font.bold = true;
+        }
+        
+        // Synchronize the document state by executing the queued-up commands, 
+        // and return a promise to indicate task completion.
+        return context.sync();
+    });  
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
 
 
 ## Wildcard Guidance 
@@ -31,27 +223,3 @@ Specifies the options to be included in a search operation.
 |At least n occurrences of the previous character or expression|{n,} |fe{1,}d finds fed and feed.|
 |From n to m occurrences of the previous character or expression|{n,m} |10{1,3} finds 10, 100, and 1000.|
 |One or more occurrences of the previous character or expression|@ |lo@t finds lot and loot.|
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

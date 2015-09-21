@@ -1,413 +1,805 @@
-# Paragraph (Javascript API for Word)
-Represents a single paragraph in a selection, range, document, or document body.
+# Paragraph Object (JavaScript API for Word)
 
-## Properties
+Represents a single paragraph in a selection, range, content control, or document body.
 
-| Property         | Type    |Description|
-|:-----------------|:--------|:----------|
-|parentContentControl|  [ContentControl](contentControl.md) | Gets the content control that contains the paragraph. Returns null if there isn't a parent content control.|
-|font|  [Font](font.md) | Gets the text format of the paragraph. Use this to get and set font name, size, color, and other properties. |
-|alignment| string |Gets or sets the alignment for a paragraph. The value can  be "left", "centered", "right", or "justified". |
-|firstLineIndent| number |Gets or sets the value, in points, for a first line or hanging indent. Use a positive value to set a first-line indent, and use a negative value to set a hanging indent.|
-|leftIndent| number | Gets or sets the left indent value, in points, for the paragraph.|
-|lineSpacing| number | Gets or sets the line spacing, (in points) for the specified paragraph. In the Word UI, this value is divided by 12. |
-|lineUnitAfter| number |Gets or sets the amount of spacing, in grid lines. after the paragraph.|
-|lineUnitBefore| number |Gets or sets the amount of spacing, in grid lines, before the paragraph.
-|outlineLevel| number |Gets or sets the outline level for the paragraph.
-|rightIndent| number |Gets or sets the right indent value, in points, for the paragraph.
-|spaceAfter| number |Gets or sets the spacing, in points, after the paragraph. |
-|spaceBefore| number |Gets or sets the spacing, in points, before the paragraph. |
-|style| string |Gets or sets the style used for the paragraph. This is the name of the pre-installed or custom style.|
-|text|  string  |  Gets the text of the paragraph.  | 
+_Applies to: Office 2016_
 
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|outlineLevel|int|Gets or sets the outline level for the paragraph.|
+|style|string|Gets or sets the style used for the paragraph. This is the name of the pre-installed or custom style.|
+|text|string|Gets the text of the paragraph. Read-only.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
-
-| Relationship     | Type    |Description|Notes  |
-|:-----------------|:--------|:----------|:------|
-|contentControls| [contentControlCollection](contentControlCollection.md)  | Gets the collection of content control objects that are in the paragraph.|
-|inlinepictures| [inlinePictureCollection](inlinePictureCollection.md)  |Gets the collection of inlinePicture objects that are in the paragraph. The collection does not include floating images.  | 
-
+| Relationship | Type	|Description|
+|:---------------|:--------|:----------|
+|alignment|[Alignment](alignment.md)|Gets or sets the alignment for a paragraph. The value can  be "left", "centered", "right", or "justified".|
+|contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of content control objects that are in the paragraph. Read-only.|
+|firstLineIndent|[float](float.md)|Gets or sets the value, in points, for a first line or hanging indent. Use a positive value to set a first-line indent, and use a negative value to set a hanging indent.|
+|font|[Font](font.md)|Gets the text format of the paragraph. Use this to get and set font name, size, color, and other properties. Read-only.|
+|inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Gets the collection of inlinePicture objects that are in the paragraph. The collection does not include floating images. Read-only.|
+|leftIndent|[float](float.md)|Gets or sets the left indent value, in points, for the paragraph.|
+|lineSpacing|[float](float.md)|Gets or sets the line spacing, in points, for the specified paragraph. In the Word UI, this value is divided by 12.|
+|lineUnitAfter|[float](float.md)|Gets or sets the amount of spacing, in grid lines. after the paragraph.|
+|lineUnitBefore|[float](float.md)|Gets or sets the amount of spacing, in grid lines, before the paragraph.|
+|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the paragraph. Returns null if there isn't a parent content control. Read-only.|
+|rightIndent|[float](float.md)|Gets or sets the right indent value, in points, for the paragraph.|
+|spaceAfter|[float](float.md)|Gets or sets the spacing, in points, after the paragraph.|
+|spaceBefore|[float](float.md)|Gets or sets the spacing, in points, before the paragraph.|
 
 ## Methods
 
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[clear()](#clear)|void|Clears the contents of the paragraph object. The user can perform the undo operation on the cleared content.|
+|[delete()](#delete)|void|Deletes the paragraph and its content from the document.|
+|[getHtml()](#gethtml)|string|Gets the HTML representation of the paragraph object.|
+|[getOoxml()](#getooxml)|string|Gets the Office Open XML (OOXML) representation of the paragraph object.|
+|[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location. The insertLocation value can be 'Start' or 'End'.|
+|[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the paragraph object with a rich text content control.|
+|[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Inserts a document into the current paragraph at the specified location. The insertLocation value can be 'Start' or 'End'.|
+|[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts HTML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
+|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|Inserts a picture into the paragraph at the specified location. The insertLocation value can be 'Before', 'After', 'Start' or 'End'.|
+|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts OOXML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
+|[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|
+|[insertText(text: string, insertLocation: InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|Inserts text into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the paragraph object. The search results are a collection of range objects.|
+|[select()](#select)|void|Selects and navigates the Word UI to the paragraph.|
 
-| Method     | Return Type    |Description|
-|:-----------------|:--------|:----------|
-|[clear()](#clear)| void | Clears the contents of the paragraph object. The user can perform the undo operation on the cleared content. | 
-|[delete()](#delete)| void | Deletes the paragraph and its content from the document. |
-|[getHtml()](#gethtml)| string  |  Gets the HTML representation  of the paragraph object. | 
-|[getOoxml()](#getooxml)| string  | Gets the Office Open XML (OOXML) representation  of the paragraph object. | 
-|[insertBreak(breakType: string, insertLocation: string)](#insertbreakbreaktype-string-insertlocation-string)| void | Inserts a break at the specified location. The insertLocation value can be 'Start' or 'End'. | 
-|[insertContentControl()](#insertcontentcontrol)| [ContentControl](contentcontrol.md)  |Wraps the paragraph object with a Rich Text content control.| 
-|[insertFileFromBase64(base64File: string, insertLocation: string)](#insertfilefrombase64base64file-string-insertlocation-string)| [Range](range.md) |Inserts a document into the current paragraph at the specified location. The insertLocation value can be 'Start' or 'End'.| 
-|[insertHtml(html: string, insertLocation: string)](#inserthtmlhtml-string-insertlocation-string)| [Range](range.md)  | Inserts HTML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'. | 
-|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)](#insertInlinePictureFromBase64base64EncodedImage-string-insertlocation-string)| [InlinePicture](inlinePicture.md)  |Inserts a picture into the paragraph at the specified location. The insertLocation value can be 'Before', 'After', 'Start' or 'End'.| 
-|[insertOoxml(ooxml: string, insertLocation: string)](#insertooxmlooxml-string-insertlocation-string)| [Range](range.md)  |Inserts OOXML into the paragraph at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'. | 
-|[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)| [Paragraph](paragraph.md)  |Inserts a paragraph at the specified location. The insertLocation value can be 'Start' or 'End'. | 
-|[insertText(text: string, insertLocation: string)](#inserttexttext-string-insertlocation-string)| [Range](range.md) | Inserts text into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'. | 
-|[load(param: option)](#loadparam-option)|void|Fills the paragraph proxy object created in the JavaScript layer with property and object values specified in the parameter.|
-|[search(searchText: string, searchOptions: searchOptions)](#searchsearchtext-string-searchoptions-searchoptions)| [searchResultCollection](searchResultCollection.md) |Performs a search with the specified searchOptions on the scope of the paragraph object. The search results are a collection of range objects. | 
-|[select()](#select)|  [Range](range.md)   | Selects and navigates the Word UI to the paragraph. |
-
-## API Specification
+## Method Details
 
 ### clear()
-
-Clears the contents of the paragraph object.
+Clears the contents of the paragraph object. The user can perform the undo operation on the cleared content.
 
 #### Syntax
 ```js
-    paragraph.clear();
+paragraphObject.clear();
 ```
-#### Parameters
 
+#### Parameters
 None
 
 #### Returns
-
 void
 
-[Back](#methods)
+#### Examples
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+    
+    // Create a proxy object for the paragraphs collection.
+    var paragraphs = context.document.body.paragraphs;
+    
+    // Queue a commmand to load the style property for all of the paragraphs.
+    context.load(paragraphs, 'style');
+    
+    // Synchronize the document state by executing the queued-up commands, 
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        
+        // Queue a command to clear the contents of the first paragraph.
+        paragraphs.items[0].clear();    
+        
+        // Synchronize the document state by executing the queued-up commands, 
+        // and return a promise to indicate task completion.
+        return context.sync().then(function () {
+            console.log('Cleared the contents of the first paragraph.');
+        });      
+    });  
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
 
 ### delete()
-
-Deletes the paragraph object.
+Deletes the paragraph and its content from the document.
 
 #### Syntax
 ```js
-    paragraph.delete();
+paragraphObject.delete();
 ```
-#### Parameters
 
+#### Parameters
 None
 
 #### Returns
-
 void
 
-[Back](#methods)
-
+#### Examples
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+    
+    // Create a proxy object for the paragraphs collection.
+    var paragraphs = context.document.body.paragraphs;
+    
+    // Queue a commmand to load the text property for all of the paragraphs.
+    context.load(paragraphs, 'text');
+    
+    // Synchronize the document state by executing the queued-up commands, 
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        
+        // Queue a command to delete the first paragraph.
+        paragraphs.items[0].delete();    
+        
+        // Synchronize the document state by executing the queued-up commands, 
+        // and return a promise to indicate task completion.
+        return context.sync().then(function () {
+            console.log('Deleted the first paragraph.');
+        });      
+    });  
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
 
 ### getHtml()
-
-Gets the HTML representation  of the paragraph object.
+Gets the HTML representation of the paragraph object.
 
 #### Syntax
 ```js
-    paragraph.getHtml();
+paragraphObject.getHtml();
 ```
-#### Parameters
 
+#### Parameters
 None
 
 #### Returns
-
 string
 
-[Back](#methods)
+#### Examples
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+    
+    // Create a proxy object for the paragraphs collection.
+    var paragraphs = context.document.body.paragraphs;
+    
+    // Queue a commmand to load the style property for all of the paragraphs.
+    context.load(paragraphs, 'style');
+    
+    // Synchronize the document state by executing the queued-up commands, 
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        
+        // Queue a a set of commands to get the HTML of the first paragraph.
+        var html = paragraphs.items[0].getHtml();    
+        
+        // Synchronize the document state by executing the queued-up commands, 
+        // and return a promise to indicate task completion.
+        return context.sync().then(function () {
+            console.log('Paragraph HTML: ' + html.value);
+        });      
+    });  
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
 
 ### getOoxml()
-
-Gets the Office Open XML (OOXML) representation  of the paragraph object.
+Gets the Office Open XML (OOXML) representation of the paragraph object.
 
 #### Syntax
 ```js
-    paragraph.getOoxml();
+paragraphObject.getOoxml();
 ```
-#### Parameters
 
+#### Parameters
 None
 
 #### Returns
-
 string
 
-[Back](#methods)
+#### Examples
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+    
+    // Create a proxy object for the paragraphs collection.
+    var paragraphs = context.document.body.paragraphs;
+    
+    // Queue a commmand to load the style property for the top 2 paragraphs.
+    context.load(paragraphs, {select: 'style', top: 2} );
+    
+    // Synchronize the document state by executing the queued-up commands, 
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        
+        // Queue a a set of commands to get the OOXML of the first paragraph.
+        var ooxml = paragraphs.items[0].getOoxml();    
+        
+        // Synchronize the document state by executing the queued-up commands, 
+        // and return a promise to indicate task completion.
+        return context.sync().then(function () {
+            console.log('Paragraph OOXML: ' + ooxml.value);
+        });      
+    });  
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
 
-### insertBreak(breakType: string, insertLocation: string)
-
-Inserts a break at the specified location.
+### insertBreak(breakType: BreakType, insertLocation: InsertLocation)
+Inserts a break at the specified location. The insertLocation value can be 'Start' or 'End'.
 
 #### Syntax
 ```js
-    paragraph.insertBreak(breakType, insertLocation);
+paragraphObject.insertBreak(breakType, insertLocation);
 ```
+
 #### Parameters
-
-Parameter      | Type   | Description|
--------------- | ------ | ------------|
-`breakType`          | string | Required. The break type to add to the document. |
-`insertLocation`          | string |  The value can be 'Before' or 'After'.|
-
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|breakType|BreakType|Required. The break type to add to the document.|
+|insertLocation|InsertLocation|Required. The value can be 'Before' or 'After'.|
 
 #### Returns
-
 void
 
-
-[Back](#methods)
-
+#### Examples
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+    
+    // Create a proxy object for the paragraphs collection.
+    var paragraphs = context.document.body.paragraphs;
+    
+    // Queue a commmand to load the style property for the top 2 paragraphs.
+    // We never perform an empty load. We always must request a property.
+    context.load(paragraphs, {select: 'style', top: 2} );
+    
+    // Synchronize the document state by executing the queued-up commands, 
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        
+        // Queue a command to get the first paragraph.
+        var paragraph = paragraphs.items[0];        
+        
+        // Queue a command to insert a page break after the first paragraph.
+        paragraph.insertBreak('page', 'After');    
+        
+        // Synchronize the document state by executing the queued-up commands, 
+        // and return a promise to indicate task completion.
+        return context.sync().then(function () {
+            console.log('Inserted a page break after the paragraph.');
+        });      
+    });  
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
 
 ### insertContentControl()
-
-Wraps the paragraph object with a Rich Text content control.
+Wraps the paragraph object with a rich text content control.
 
 #### Syntax
 ```js
-    paragraph.insertContentControl();
+paragraphObject.insertContentControl();
 ```
-#### Parameters
 
+#### Parameters
 None
 
 #### Returns
+[ContentControl](contentcontrol.md)
 
-[ContentControl](contentControl.md).
+#### Examples
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+    
+    // Create a proxy object for the paragraphs collection.
+    var paragraphs = context.document.body.paragraphs;
+    
+    // Queue a commmand to load the style property for the top 2 paragraphs.
+    // We never perform an empty load. We always must request a property.
+    context.load(paragraphs, {select: 'style', top: 2} );
+    
+    // Synchronize the document state by executing the queued-up commands, 
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        
+        // Queue a command to get the first paragraph.
+        var paragraph = paragraphs.items[0];        
+        
+        // Queue a command to wrap the first paragraph in a rich text content control.
+        paragraph.insertContentControl(); 
+        
+        // Synchronize the document state by executing the queued-up commands, 
+        // and return a promise to indicate task completion.
+        return context.sync().then(function () {
+            console.log('Wrapped the first paragraph in a content control.');
+        });      
+    });  
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
 
-[Back](#methods)
-
-
-### insertFileFromBase64(base64File: string, insertLocation: string)
-
-Inserts a document into the current paragraph at the specified location.
+### insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
+Inserts a document into the current paragraph at the specified location. The insertLocation value can be 'Start' or 'End'.
 
 #### Syntax
 ```js
-    paragraph.insertFileFromBase64(base64File, insertLocation)
-```
-#### Parameters
-
-Parameter      | Type   | Description
--------------- | ------ | ------------
-`base64File`          | string | Required. The file base64 encoded file contents to be inserted. |
-`insertLocation`          | string | The value can be 'Start' or 'End'.|
-
-
-
-#### Returns
-
-[Range](range.md)
-
-
-[Back](#methods)
-
-
-
-
-### insertHtml(html: string, insertLocation: string)
-
-Inserts HTML into the paragraph at the specified location.
-
-#### Syntax
-```js
-    paragraph.insertHtml(html, insertLocation);
-```
-#### Parameters
-
-Parameter      | Type   | Description |
--------------- | ------ | ------------ |
-`html`          | string | Required. The HTML to be inserted in the paragraph. |
-`insertLocation`          | string | The value can be 'Replace', 'Start' or 'End'.|
-
-#### Returns
-
-[Range](range.md)
-
-[Back](#methods)
-
-
-### insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)
-
-Inserts a picture into the paragraph at the specified location.
-
-#### Syntax
-```js
-    paragraph.insertInlinePictureFromBase64(base64EncodedImage, insertLocation);
-```
-#### Parameters
-
-Parameter      | Type   | Description |
--------------- | ------ | ------------ |
-`base64EncodedImage`          | string | Required. The HTML to be inserted in the paragraph. |
-`insertLocation`          | string | The value can be 'Before', 'After', 'Start' or 'End'.|
-
-#### Returns
-
-[InlinePicture](inlinePicture.md)
-
-[Back](#methods)
-
-
-
-### insertOoxml(ooxml: string, insertLocation: string)
-
-Inserts OOXML into the paragraph at the specified location. 
-
-#### Syntax
-```js
-    paragraph.insertOoxml(ooxml, insertLocation);
-```
-#### Parameters
-
-Parameter      | Type   | Description
--------------- | ------ | ------------
-`ooxml`          | string | Required. The OOXML to be inserted in the paragraph. |
-`insertLocation`          | string | The value can be 'Replace', 'Start' or 'End'.|
- 
-#### Returns
-
-[Range](range.md)
-
-[Back](#methods)
-
-### insertParagraph(paragraphText: string, insertLocation: string)
-
-Inserts a paragraph at the specified location.
-
-#### Syntax
-```js
-    paragraph.insertParagraph(paragraphText, insertLocation);
-```
-#### Parameters
-
-Parameter      | Type   | Description|
--------------- | ------ | ------------|
-`paragraphText`  | string | Required. The paragraph text to be inserted. Use null for inserting a blank paragraph.|
-`insertLocation`  | string | The value can be 'Start' or 'End'.|
-
-
-#### Returns
-
-[Paragraph](Paragraph.md)
-
-[Back](#methods)
-
-
-### insertText(text: string, insertLocation: string)
-
-Inserts text into the paragraph at the specified location.
-
-#### Syntax
-```js
-    paragraph.insertText(text, insertLocation);
-```
-#### Parameters
-
-Parameter      | Type   | Description |
--------------- | ------ | ------------ |
-`text`          | string | Required. Text to be inserted. |
-`insertLocation`          | string | The value can be 'Replace', 'Start' or 'End'.|
-
-#### Returns
-
-[Range](range.md).
-
-[Back](#methods)
-
-### load(param: option)
-Fills the paragraph proxy object created in the JavaScript layer with the property and object values specified in the parameter.
-
-#### Syntax
-```js
-    paragraph.load(param);
+paragraphObject.insertFileFromBase64(base64File, insertLocation);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|param|object| A string, a string with comma separated value, an array of strings, or an object that specifies which properties to load.  |
+|base64File|string|Required. The file base64 encoded file contents to be inserted.|
+|insertLocation|InsertLocation|Required. The value can be 'Start' or 'End'.|
+
+#### Returns
+[Range](range.md)
+
+#### Examples
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+    
+    // Create a proxy object for the paragraphs collection.
+    var paragraphs = context.document.body.paragraphs;
+    
+    // Queue a commmand to load the style property for all of the paragraphs.
+    context.load(paragraphs, 'style');
+    
+    // Synchronize the document state by executing the queued-up commands, 
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        
+        // Queue a command to get the first paragraph.
+        var paragraph = paragraphs.items[0];
+
+        // Queue a command to insert base64 encoded .docx at the beginning of the first paragraph.
+        // This won't work unless you have a definition for getBase64().
+        paragraph.insertFileFromBase64(getBase64(), Word.InsertLocation.start);
+        
+        // Synchronize the document state by executing the queued-up commands, 
+        // and return a promise to indicate task completion.
+        return context.sync().then(function () {
+            console.log('Inserted base64 encoded content at the beginning of the first paragraph.');
+        });      
+    });  
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
+
+### insertHtml(html: string, insertLocation: InsertLocation)
+Inserts HTML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
+
+#### Syntax
+```js
+paragraphObject.insertHtml(html, insertLocation);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|html|string|Required. The HTML to be inserted in the paragraph.|
+|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start' or 'End'.|
+
+#### Returns
+[Range](range.md)
+
+#### Examples
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+    
+    // Create a proxy object for the paragraphs collection.
+    var paragraphs = context.document.body.paragraphs;
+    
+    // Queue a commmand to load the style property for the top 2 paragraphs.
+    // We never perform an empty load. We always must request a property.
+    context.load(paragraphs, {select: 'style', top: 2} );
+    
+    // Synchronize the document state by executing the queued-up commands, 
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        
+        // Queue a command to get the first paragraph.
+        var paragraph = paragraphs.items[0];        
+        
+        // Queue a command to insert HTML content at the end of the first paragraph.
+        paragraph.insertHtml('<strong>Inserted HTML.</strong>', Word.InsertLocation.end);
+        
+        // Synchronize the document state by executing the queued-up commands, 
+        // and return a promise to indicate task completion.
+        return context.sync().then(function () {
+            console.log('Inserted HTML content at the end of the first paragraph.');
+        });      
+    });  
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+
+```
+
+### insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
+Inserts a picture into the paragraph at the specified location. The insertLocation value can be 'Before', 'After', 'Start' or 'End'.
+
+#### Syntax
+```js
+paragraphObject.insertInlinePictureFromBase64(base64EncodedImage, insertLocation);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|base64EncodedImage|string|Required. The HTML to be inserted in the paragraph.|
+|insertLocation|InsertLocation|Required. The value can be 'Before', 'After', 'Start' or 'End'.|
+
+#### Returns
+[InlinePicture](inlinepicture.md)
+
+#### Examples
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+    
+    // Create a proxy object for the paragraphs collection.
+    var paragraphs = context.document.body.paragraphs;
+    
+    // Queue a commmand to load the style property for all of the paragraphs.
+    context.load(paragraphs, 'style');
+    
+    // Synchronize the document state by executing the queued-up commands, 
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        
+        // Queue a command to get the first paragraph.
+        var paragraph = paragraphs.items[0];
+
+        var b64encodedImg = "iVBORw0KGgoAAAANSUhEUgAAAB4AAAANCAIAAAAxEEnAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACFSURBVDhPtY1BEoQwDMP6/0+XgIMTBAeYoTqso9Rkx1zG+tNj1H94jgGzeNSjteO5vtQQuG2seO0av8LzGbe3anzRoJ4ybm/VeKEerAEbAUpW4aWQCmrGFWykRzGBCnYy2ha3oAIq2MloW9yCCqhgJ6NtcQsqoIKdjLbFLaiACnYyf2fODbrjZcXfr2F4AAAAAElFTkSuQmCC";
+
+        // Queue a command to insert a base64 encoded image at the beginning of the first paragraph.
+        paragraph.insertInlinePictureFromBase64(b64encodedImg, Word.InsertLocation.start);
+        
+        // Synchronize the document state by executing the queued-up commands, 
+        // and return a promise to indicate task completion.
+        return context.sync().then(function () {
+            console.log('Added an image to the first paragraph.');
+        });      
+    });  
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
+
+### insertOoxml(ooxml: string, insertLocation: InsertLocation)
+Inserts OOXML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
+
+#### Syntax
+```js
+paragraphObject.insertOoxml(ooxml, insertLocation);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|ooxml|string|Required. The OOXML to be inserted in the paragraph.|
+|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start' or 'End'.|
+
+#### Returns
+[Range](range.md)
+
+#### Examples
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+    
+    // Create a proxy object for the paragraphs collection.
+    var paragraphs = context.document.body.paragraphs;
+    
+    // Queue a commmand to load the style property for the top 2 paragraphs.
+    // We never perform an empty load. We always must request a property.
+    context.load(paragraphs, {select: 'style', top: 2} );
+    
+    // Synchronize the document state by executing the queued-up commands, 
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        
+        // Queue a command to get the first paragraph.
+        var paragraph = paragraphs.items[0];        
+        
+        // Queue a command to insert Ooxml content into the first paragraph.
+        var ooxmlContent = "<w:p xmlns:w='http://schemas.microsoft.com/office/word/2003/wordml'><w:r><w:rPr><w:b/><w:b-cs/><w:color w:val='FF0000'/><w:sz w:val='28'/><w:sz-cs w:val='28'/></w:rPr><w:t>Hello world (this should be bold, red, size 14).</w:t></w:r></w:p>";
+        paragraph.insertOoxml(ooxmlContent, Word.InsertLocation.end);
+        
+        // Synchronize the document state by executing the queued-up commands, 
+        // and return a promise to indicate task completion.
+        return context.sync().then(function () {
+            console.log('Inserted OOXML at the end of the first paragraph.');
+        });      
+    });  
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
+
+### insertParagraph(paragraphText: string, insertLocation: InsertLocation)
+Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.
+
+#### Syntax
+```js
+paragraphObject.insertParagraph(paragraphText, insertLocation);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|paragraphText|string|Required. The paragraph text to be inserted.|
+|insertLocation|InsertLocation|Required. The value can be 'Before' or 'After'.|
+
+#### Returns
+[Paragraph](paragraph.md)
+
+#### Examples
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+    
+    // Create a proxy object for the paragraphs collection.
+    var paragraphs = context.document.body.paragraphs;
+    
+    // Queue a commmand to load the style property for the top 2 paragraphs.
+    // We never perform an empty load. We always must request a property.
+    context.load(paragraphs, {select: 'style', top: 2} );
+    
+    // Synchronize the document state by executing the queued-up commands, 
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        
+        // Queue a command to get the first paragraph.
+        var paragraph = paragraphs.items[0];        
+        
+        // Queue a command to insert the paragraph after the current paragraph.
+        paragraph.insertParagraph('Content of a new paragraph', Word.InsertLocation.after);
+        
+        // Synchronize the document state by executing the queued-up commands, 
+        // and return a promise to indicate task completion.
+        return context.sync().then(function () {
+            console.log('Inserted a new paragraph at the end of the first paragraph.');
+        });      
+    });  
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
+
+### insertText(text: string, insertLocation: InsertLocation)
+Inserts text into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
+
+#### Syntax
+```js
+paragraphObject.insertText(text, insertLocation);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|text|string|Required. Text to be inserted.|
+|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start' or 'End'.|
+
+#### Returns
+[Range](range.md)
+
+#### Examples
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+    
+    // Create a proxy object for the paragraphs collection.
+    var paragraphs = context.document.body.paragraphs;
+    
+    // Queue a commmand to load the style property for the top 2 paragraphs.
+    // We never perform an empty load. We always must request a property.
+    context.load(paragraphs, {select: 'style', top: 2} );
+    
+    // Synchronize the document state by executing the queued-up commands, 
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        
+        // Queue a command to get the first paragraph.
+        var paragraph = paragraphs.items[0];        
+        
+        // Queue a command to insert text into the end of the paragraph.
+        paragraph.insertText('New text inserted into the paragraph.', Word.InsertLocation.end);
+        
+        // Synchronize the document state by executing the queued-up commands, 
+        // and return a promise to indicate task completion.
+        return context.sync().then(function () {
+            console.log('Inserted text at the end of the first paragraph.');
+        });      
+    });  
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
+
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.load(param);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
 
-[Back](#methods)
+#### Examples
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+    
+    // Create a proxy object for the paragraphs collection.
+    var paragraphs = context.document.body.paragraphs;
+    
+    // Queue a commmand to load the style property for the top 2 paragraphs.
+    // We never perform an empty load. We always must request a property.
+    context.load(paragraphs, {select: 'style', top: 2} );
+    
+    // Synchronize the document state by executing the queued-up commands, 
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        
+        // Queue a command to get the first paragraph.
+        var paragraph = paragraphs.items[0];        
+        
+        // Queue a command to load font information for the paragraph.
+        context.load(paragraph, 'font/size, font/name, font/color');
+        
+        // Synchronize the document state by executing the queued-up commands, 
+        // and return a promise to indicate task completion.
+        return context.sync().then(function () {
+            // Show the results of the load method. Here we show the
+            // property values on the paragraph object. Note that we 
+            // requested the style property in the first load command.
+            var results = "<strong>Paragraph</strong><br>" +
+                          "<br>Font size: " + paragraph.font.size +
+                          "<br>Font name: " + paragraph.font.name +
+                          "<br>Font color: " + paragraph.font.color +
+                          "<br>Style: " + paragraph.style;
 
+            console.log(results);
+        });      
+    });  
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
 
-
-
-### search(searchText: string, searchOptions: searchOptions)
-
-Executes a search on the scope of the paragraph object.
+### search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)
+Performs a search with the specified searchOptions on the scope of the paragraph object. The search results are a collection of range objects.
 
 #### Syntax
 ```js
-    paragraph.search(searchText, searchOptions)
+paragraphObject.search(searchText, searchOptions);
 ```
 
 #### Parameters
-
-Parameter      | Type   | Description|
--------------- | ------ | ------------|
-`searchText`          | string | Required. The search text.|
-`searchOptions` | [searchOptions](searchOptions.md) | Required. Options for the search.|
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|searchText|string|Required. The search text.|
+|searchOptions|ParamTypeStrings.SearchOptions|Optional. Optional. Options for the search.|
 
 #### Returns
-
-[SearchResultCollection](searchResultCollection.md)
-
-
-[Back](#methods)
+[SearchResultCollection](searchresultcollection.md)
 
 
 ### select()
-
 Selects and navigates the Word UI to the paragraph.
 
 #### Syntax
 ```js
-    paragraph.select();
+paragraphObject.select();
 ```
-#### Parameters
 
+#### Parameters
 None
 
 #### Returns
+void
 
- [Range](range.md) 
-
-
-[Back](#methods)
-
-### Getter and setter examples
-
-#### Setting paragraph properties 
-
+#### Examples
 ```js
-    // Check out how it modifies your first paragraph's settings
-    var ctx = new Word.RequestContext();
-    var paras = ctx.document.body.paragraphs;
-    ctx.load(paras, {select:"text"});
-    ctx.references.add(paras);
-
-
-    ctx.executeAsync().then(
-      function () {
-    var par = paras.items[0];
-    par.lineSpacing = 45;
-    par.alignment = "justified";
-    par.spaceAfter = 45;
-    par.firstLineIndent = 1;
-    par.leftIndent = 2;
-    par.lineUnitAfter = 2;
-    par.lineUnitBefore = 5;
-    par.outlineLevel = 10;
-
-     ctx.executeAsync().then(
-          function () {
-            console.log("Success!!!" + par.lineSpacing);
-         ctx.references.remove(par);
-          }
-        );
-
-        //console.log("Success! Setting paragraph line spacing to " + par.lineSpacing);
-      },
-      function (result) {
-        console.log("Failed: ErrorCode=" + result.errorCode + ", ErrorMessage=" + result.errorMessage);
-        console.log(result.traceMessages);
-      }
-    );
-
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+    
+    // Create a proxy object for the paragraphs collection.
+    var paragraphs = context.document.body.paragraphs;
+    
+    // Queue a commmand to load the style property for all of the paragraphs.
+    context.load(paragraphs, 'style');
+    
+    // Synchronize the document state by executing the queued-up commands, 
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        
+        // Queue a command to get the last paragraph a create a 
+        // proxy paragraph object.
+        var paragraph = paragraphs.items[paragraphs.items.length - 1]; 
+        
+        // Queue a command to select the paragraph. The Word UI will 
+        // move to the selected paragraph.
+        paragraph.select();
+        
+        // Synchronize the document state by executing the queued-up commands, 
+        // and return a promise to indicate task completion.
+        return context.sync().then(function () {
+            console.log('Selected the last paragraph.');
+        });      
+    });  
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
 ```
-
 

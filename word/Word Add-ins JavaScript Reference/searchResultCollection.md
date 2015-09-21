@@ -1,106 +1,94 @@
-# SearchResultCollection (Javascript API for Word)
+# SearchResultCollection Object (JavaScript API for Word)
 
-Contains a collection of [Range](range.md) objects as a result of a search operation.
+Contains a collection of [range](range.md) objects as a result of a search operation.
 
+_Applies to: Office 2016_
 
-## Properties
-
-| Property         | Type    |Description|
-|:-----------------|:--------|:----------|
-|items|  array | Gets an array of range objects. |
-
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|items|[SearchResult[]](searchresult.md)|A collection of searchResult objects. Read-only.|
 
 ## Relationships
-None  
+None
+
 
 ## Methods
 
-| Method     | Return Type    |Description|
-|:-----------------|:--------|:----------|
-|[getItem(index: number)](#getitemindex-number)| [Range](range.md)   | Gets a range object by its index in the collection. |
-|[load(param: option)](#loadparam-option)|void|Fills the search result collection proxy object created in the JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[getItem(index: number)](#getitemindex-number)|[Range](range.md)|Gets a range object by its index in the collection.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-
-## API Specification
+## Method Details
 
 ### getItem(index: number)
-
 Gets a range object by its index in the collection.
 
 #### Syntax
 ```js
-    searchResultCollection.getItem(index);
+searchResultCollectionObject.getItem(index);
 ```
-#### Parameters
 
-| Parameter       | Type    |Description|
+#### Parameters
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|index|number|  A number that identifies the index location of a range object.  |
+|index|number| A number that identifies the index location of a range object. |
 
 #### Returns
-
 [Range](range.md)
 
-
-[Back](#methods)
-
-
-### load(param: option)
-Fills the search collection proxy object created in the JavaScript layer with the property and object values specified in the parameter.
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
 ```js
-    searchResultCollection.load(param);
+object.load(param);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|param|object| A string, a string with comma separated value, an array of strings, or an object that specifies which properties to load.  |
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
 
-[Back](#methods)
-
-
-
-
-
-#### Example
+#### Examples
 ```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+    
+    // Setup the search options.
+    var options = Word.SearchOptions.newObject(context);
+    options.matchWildCards = true;
 
-    ///Search example, returns a collection of ranges
+    // Queue a command to search the document for any string of characters after 'to'.
+    var searchResults = context.document.body.search('to*', options);
 
-    var ctx = new Word.RequestContext();
-    var options = Word.SearchOptions.newObject(ctx);
+    // Queue a command to load the search results and get the font property values.
+    context.load(searchResults, 'font');
+    
+    // Synchronize the document state by executing the queued-up commands, 
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        console.log('Found count: ' + searchResults.items.length);
 
-    options.matchCase = false
-
-    var results = ctx.document.body.search("Video", options);
-    ctx.load(results, {select:"text, font/color", expand:"font"});
-    ctx.references.add(results);
-
-    ctx.executeAsync().then(
-      function () {
-        console.log("Found count: " + results.items.length + " " + results.items[0].font.color );
-        for (var i = 0; i < results.items.length; i++) {
-          results.items[i].font.color = "#FF0000"    // Change color to Red
-          results.items[i].font.highlightColor = "#FFFF00";
-          results.items[i].font.bold = true;
-          if (i == 0)
-            results.items[i].select();
+        // Queue a set of commands to change the font for each found item.
+        for (var i = 0; i < searchResults.items.length; i++) {
+            searchResults.items[i].font.color = 'purple';
+            searchResults.items[i].font.highlightColor = 'pink';
+            searchResults.items[i].font.bold = true;
         }
-        ctx.references.remove(results);
-        ctx.executeAsync().then(
-          function () {
-            console.log("Deleted");
-          }
-        );
-      }
-    );
-
+        
+        // Synchronize the document state by executing the queued-up commands, 
+        // and return a promise to indicate task completion.
+        return context.sync();
+    });  
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
 ```
-
-
-
