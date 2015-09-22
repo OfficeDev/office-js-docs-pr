@@ -1,8 +1,9 @@
-# Workbook
+# Workbook Object (JavaScript API for Excel)
+
+_Applies to: Excel 2016, Office 2016_
 
 Workbook is the top level object which contains related workbook objects such as worksheets, tables, ranges, etc.
 
-## Properties
 None
 
 ## Relationships
@@ -21,7 +22,7 @@ None
 |[getSelectedRange()](#getselectedrange)|[Range](range.md)|Gets the currently selected range from the workbook.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## API Specification
+## Method Details
 
 ### getSelectedRange()
 Gets the currently selected range from the workbook.
@@ -40,15 +41,13 @@ None
 #### Examples
 
 ```js
-var ctx = new Excel.RequestContext();
-var selectedRange = ctx.workbook.getSelectedRange();
-ctx.executeAsync().then(function () {
-		Console.log(selectedRange.address);
-});
-```
-[Back](#methods)
-
-### load(param: object)
+Excel.run(function (ctx) { 
+	var selectedRange = ctx.workbook.getSelectedRange();
+	return ctx.sync().then(function() {
+			Console.log(selectedRange.address);
+	});
+}); 
+```### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
@@ -64,10 +63,4 @@ object.load(param);
 #### Returns
 void
 
-#### Examples
-```js
-
-```
-
-[Back](#methods)
-
+	

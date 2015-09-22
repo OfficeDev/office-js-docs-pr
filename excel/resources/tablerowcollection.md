@@ -1,12 +1,15 @@
-# TableRowCollection
+# TableRowCollection Object (JavaScript API for Excel)
+
+_Applies to: Excel 2016, Office 2016_
 
 Represents a collection of all the rows that are part of the table.
 
-## [Properties](#getter-examples)
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |count|int|Returns the number of rows in the table. Read-only.|
 |items|[TableRow[]](tablerow.md)|A collection of tableRow objects. Read-only.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
@@ -20,7 +23,7 @@ None
 |[getItemAt(index: number)](#getitematindex-number)|[TableRow](tablerow.md)|Gets a row based on its position in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## API Specification
+## Method Details
 
 ### add(index: number, values: (boolean or string or number)[][])
 Adds a new row to the table.
@@ -42,18 +45,16 @@ tableRowCollectionObject.add(index, values);
 #### Examples
 
 ```js
-var ctx = new Excel.RequestContext();
-var tables = ctx.workbook.tables;
-var values = [["Sample", "Values", "For", "New", "Row"]];
-var row = tables.getItem("Table1").rows.add(null, values);
-row.load(index);
-ctx.executeAsync().then(function () {
-	Console.log(row.index);
-});
+Excel.run(function (ctx) { 
+	var tables = ctx.workbook.tables;
+	var values = [["Sample", "Values", "For", "New", "Row"]];
+	var row = tables.getItem("Table1").rows.add(null, values);
+	row.load(index);
+	return ctx.sync().then(function() {
+		Console.log(row.index);
+	});
+}); 
 ```
-
-[Back](#methods)
-
 ### getItemAt(index: number)
 Gets a row based on its position in the collection.
 
@@ -73,16 +74,14 @@ tableRowCollectionObject.getItemAt(index);
 #### Examples
 
 ```js
-var ctx = new Excel.RequestContext();
-var tablerow = ctx.workbook.tables.getItem('Table1').rows.getItemAt(0);
-tablerow.load(name);
-ctx.executeAsync().then(function () {
-		Console.log(tablerow.name);
-});
+Excel.run(function (ctx) { 
+	var tablerow = ctx.workbook.tables.getItem('Table1').rows.getItemAt(0);
+	tablerow.load(name);
+	return ctx.sync().then(function() {
+			Console.log(tablerow.name);
+	});
+}); 
 ```
-
-[Back](#methods)
-
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -99,25 +98,19 @@ object.load(param);
 #### Returns
 void
 
-#### Examples
-```js
-
-```
-
-[Back](#methods)
-
-### Getter Examples
+	
+### Property access examples
 
 ```js
-var ctx = new Excel.RequestContext();
-var tablerows = ctx.workbook.tables.getItem('Table1').rows;
-tablerows.load(items);
-ctx.executeAsync().then(function () {
-	Console.log("tablerows Count: " + tablerows.count);
-	for (var i = 0; i < tablerows.items.length; i++)
-	{
-		Console.log(tablerows.items[i].index);
-	}
-});
+Excel.run(function (ctx) { 
+	var tablerows = ctx.workbook.tables.getItem('Table1').rows;
+	tablerows.load(items);
+	return ctx.sync().then(function() {
+		Console.log("tablerows Count: " + tablerows.count);
+		for (var i = 0; i < tablerows.items.length; i++)
+		{
+			Console.log(tablerows.items[i].index);
+		}
+	});
+}); 
 ```
-[Back](#properties)

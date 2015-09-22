@@ -15,20 +15,20 @@ An object that can be passed to the load method to specify the options such as s
 Below example select the top 100 rows of table.
 
 ```js
-var ctx = new Excel.RequestContext();
-var table = ctx.workbook.tables.getItem("Table1");
-var tableRows = table.rows.load({"select" : "index, values","top": 100, "skip": 0 })
-
-ctx.executeAsync()
-	.then(function () {
-			for (var i = 0; i < tableRows.items.length; i++)
-			{
-				console.log(tableRows.items[i].index);
-				console.log(tableRows.items[i].values);
-			}
-		})
-		.catch(function(error) {
-			console. error(JSON.stringify(error));
-		})
-
+Excel.run(function (ctx) { 
+	var table = ctx.workbook.tables.getItem("Table1");
+	var tableRows = table.rows.load({"select" : "index, values","top": 100, "skip": 0 })
+	return ctx.sync().then(function() {
+		for (var i = 0; i < tableRows.items.length; i++)
+		{
+			console.log(tableRows.items[i].index);
+			console.log(tableRows.items[i].values);
+		}
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+})
 ```

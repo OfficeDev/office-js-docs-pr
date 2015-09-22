@@ -1,12 +1,15 @@
-# TableCollection
+# TableCollection Object (JavaScript API for Excel)
+
+_Applies to: Excel 2016, Office 2016_
 
 Represents a collection of all the tables that are part of the workbook.
 
-## [Properties](#getter-examples)
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |count|int|Returns the number of tables in the workbook. Read-only.|
 |items|[Table[]](table.md)|A collection of table objects. Read-only.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
@@ -21,7 +24,7 @@ None
 |[getItemAt(index: number)](#getitematindex-number)|[Table](table.md)|Gets a table based on its position in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## API Specification
+## Method Details
 
 ### add(address: string, hasHeaders: bool)
 Create a new table. The range source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.
@@ -43,17 +46,15 @@ tableCollectionObject.add(address, hasHeaders);
 #### Examples
 
 ```js
-var ctx = new Excel.RequestContext();
-var table = ctx.workbook.tables.add('Sheet1!A1:E7', true);
-table.load(name);
-ctx.executeAsync().then(function () {
-	Console.log(table.name);
+Excel.run(function (ctx) { 
+	var table = ctx.workbook.tables.add('Sheet1!A1:E7', true);
+	table.load(name);
+	return ctx.sync().then(function() {
+		Console.log(table.name);
+	});
 });
 
 ```
-
-[Back](#methods)
-
 ### getItem(key: number or string)
 Gets a table by Name or ID.
 
@@ -73,25 +74,24 @@ tableCollectionObject.getItem(key);
 #### Examples
 
 ```js
-var ctx = new Excel.RequestContext();
-var tableName = 'Table1';
-var table = ctx.workbook.tables.getItem(tableName);
-ctx.executeAsync().then(function () {
-		Console.log(table.index);
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var table = ctx.workbook.tables.getItem(tableName);
+	return ctx.sync().then(function() {
+			Console.log(table.index);
+	});
 });
 ```
 
 
 ```js
-var ctx = new Excel.RequestContext();
-var table = ctx.workbook.tables.getItemAt(0);
-ctx.executeAsync().then(function () {
-		Console.log(table.name);
+Excel.run(function (ctx) { 
+	var table = ctx.workbook.tables.getItemAt(0);
+	return ctx.sync().then(function() {
+			Console.log(table.name);
+	});
 });
 ```
-
-
-[Back](#methods)
 
 ### getItemAt(index: number)
 Gets a table based on its position in the collection.
@@ -112,15 +112,13 @@ tableCollectionObject.getItemAt(index);
 #### Examples
 
 ```js
-var ctx = new Excel.RequestContext();
-var table = ctx.workbook.tables.getItemAt(0);
-ctx.executeAsync().then(function () {
-		Console.log(table.name);
+Excel.run(function (ctx) { 
+	var table = ctx.workbook.tables.getItemAt(0);
+	return ctx.sync().then(function() {
+			Console.log(table.name);
+	});
 });
 ```
-
-
-[Back](#methods)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -138,37 +136,32 @@ object.load(param);
 #### Returns
 void
 
-#### Examples
-```js
-
-```
-
-[Back](#methods)
-
-### Getter Examples
+	
+### Property access examples
 
 ```js
-var ctx = new Excel.RequestContext();
-var tables = ctx.workbook.tables;
-tables.load(items);
-ctx.executeAsync().then(function () {
-	Console.log("tables Count: " + tables.count);
-	for (var i = 0; i < tables.items.length; i++)
-	{
-		Console.log(tables.items[i].name);
-	}
+Excel.run(function (ctx) { 
+	var tables = ctx.workbook.tables;
+	tables.load(items);
+	return ctx.sync().then(function() {
+		Console.log("tables Count: " + tables.count);
+		for (var i = 0; i < tables.items.length; i++)
+		{
+			Console.log(tables.items[i].name);
+		}
+	});
 });
 ```
 
 Get the number of tables
 
 ```js
-var ctx = new Excel.RequestContext();
-var tables = ctx.workbook.tables;
-tables.load(count);
-ctx.executeAsync().then(function () {
-	Console.log(tables.count);
+Excel.run(function (ctx) { 
+	var tables = ctx.workbook.tables;
+	tables.load(count);
+	return ctx.sync().then(function() {
+		Console.log(tables.count);
+	});
 });
 
 ```
-[Back](#properties)

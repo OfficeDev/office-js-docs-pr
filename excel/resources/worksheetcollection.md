@@ -1,11 +1,14 @@
-# WorksheetCollection
+# WorksheetCollection Object (JavaScript API for Excel)
+
+_Applies to: Excel 2016, Office 2016_
 
 Represents a collection of worksheet objects that are part of the workbook.
 
-## [Properties](#getter-examples)
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |items|[Worksheet[]](worksheet.md)|A collection of worksheet objects. Read-only.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
@@ -20,7 +23,7 @@ None
 |[getItem(key: string)](#getitemkey-string)|[Worksheet](worksheet.md)|Gets a worksheet object using its Name or ID.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## API Specification
+## Method Details
 
 ### add(name: string)
 Adds a new worksheet to the workbook. The worksheet will be added at the end of existing worksheets. If you wish to activate the newly added worksheet, call ".activate() on it.
@@ -41,17 +44,15 @@ worksheetCollectionObject.add(name);
 #### Examples
 
 ```js
-var wSheetName = 'Sample Name';
-var ctx = new Excel.RequestContext();
-var worksheet = ctx.workbook.worksheets.add(wSheetName);
-worksheet.load(name);
-ctx.executeAsync().then(function () {
-	Console.log(worksheet.name);
+Excel.run(function (ctx) { 
+	var wSheetName = 'Sample Name';
+	var worksheet = ctx.workbook.worksheets.add(wSheetName);
+	worksheet.load(name);
+	return ctx.sync().then(function() {
+		Console.log(worksheet.name);
+	});
 });
 ```
-
-
-[Back](#methods)
 
 ### getActiveWorksheet()
 Gets the currently active worksheet in the workbook.
@@ -70,17 +71,15 @@ None
 #### Examples
 
 ```js
-hellow!!!
-var ctx = new Excel.RequestContext(); 
-var activeWorksheet = ctx.workbook.worksheets.getActiveWorksheet();
-activeWorksheet.load(name);
-ctx.executeAsync().then(function () {
-		Console.log(activeWorksheet.name);
+Excel.run(function (ctx) {  
+	var activeWorksheet = ctx.workbook.worksheets.getActiveWorksheet();
+	activeWorksheet.load(name);
+	return ctx.sync().then(function() {
+			Console.log(activeWorksheet.name);
+	});
 });
+
 ```
-
-
-[Back](#methods)
 
 ### getItem(key: string)
 Gets a worksheet object using its Name or ID.
@@ -101,17 +100,16 @@ worksheetCollectionObject.getItem(key);
 #### Examples
 
 ```js
-var ctx = new Excel.RequestContext();
-var wSheetName = 'Sheet1'; 
-var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
-worksheet.load(index);
-ctx.executeAsync().then(function () {
-		Console.log(worksheet.index);
+Excel.run(function (ctx) { 
+	var wSheetName = 'Sheet1'; 
+	var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
+	worksheet.load(index);
+	return ctx.sync().then(function() {
+			Console.log(worksheet.index);
+	});
 });
+
 ```
-
-
-[Back](#methods)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -129,27 +127,21 @@ object.load(param);
 #### Returns
 void
 
-#### Examples
-```js
-
-```
-
-[Back](#methods)
-
-### Getter Examples
+	
+### Property access examples
 
 
 ```js
-var ctx = new Excel.RequestContext();
-var worksheets = ctx.workbook.worksheets;
-worksheets.load(items);
-ctx.executeAsync().then(function () {
-	for (var i = 0; i < worksheets.items.length; i++)
-	{
-		Console.log(worksheets.items[i].name);
-		Console.log(worksheets.items[i].index);
-	}
+Excel.run(function (ctx) { 
+	var worksheets = ctx.workbook.worksheets;
+	worksheets.load(items);
+	return ctx.sync().then(function() {
+		for (var i = 0; i < worksheets.items.length; i++)
+		{
+			Console.log(worksheets.items[i].name);
+			Console.log(worksheets.items[i].index);
+		}
+	});
 });
-```
 
-[Back](#properties)
+```

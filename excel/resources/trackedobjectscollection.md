@@ -1,5 +1,7 @@
-# Reference Collection
-Reference collection allows add-ins to add and remove temporary references on range.
+# Tracked objects collection (JavaScript API for Office 2016)
+Tracked cbjects collection allows add-ins to add and remove temporary references on range.
+
+_Applies to: Office 2016_
 
 ## Properties
 None.
@@ -10,30 +12,30 @@ None
 
 ## Methods
 
-The Reference collection has the following methods defined:
+The TrackedObjects Collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[add(rangeObject: Range)](#addrangeobject-range)| Null             |Creates a new reference on a range.||
 |[remove(rangeObject: Range)](#removerangeobject-range)| Null             |Remove a reference on the range.  ||
-|[removeAll()](#removeall)| Null             |Removes all references created by the add-in on the device.||
+|[removeAll()](#removeall)| Null|Removes all references created by the add-in on the device.||
 
 
 ## API Specification 
 
 ### add(rangeObject: range)
-Add a range object to the reference collection. 
+Add a range object to the trackedObjectsCollection. 
 
 #### Syntax
 ```js
-referenceCollection.add(rangeObject);
+trackedObjectsCollection.add(rangeObject);
 ```
 
 #### Parameters
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`rangeObject`  | [Range](range.md)| The Range Object which needs to be added to the reference collection.
+`rangeObject`  | [Range](range.md)| The Range Object which needs to be added to the trackedObjectCollection.
 
 #### Returns
 Null
@@ -45,16 +47,16 @@ var sheetName = "Sheet1";
 var rangeAddress = "A1:B2";
 var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-ctx.references.add(range);
+ctx.trackedObjects.add(range);
 ctx.load(range);
 
-ctx.executeAsync().then(function () {
+Excel.run(function (ctx) { 
 	range.insert("Down");
 	Console.log(range.address); // Address should be updated to A3:B4
-	ctx.executeAsync().then();
+	return ctx.sync(); 
 });
 ```
-[Back](#methods)
+
 
 ### remove(rangeObject: range)
 
@@ -62,44 +64,44 @@ Remove a reference object from the collection.
 
 #### Syntax
 ```js
-referenceCollection.remove(rangeObject);
+trackedObjectsCollection.remove(rangeObject);
 ```
 
 #### Parameters
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`rangeObject`  | [Range](range.md)| The Range Object which needs to be removed from the reference collection.
+`rangeObject`  | [Range](range.md)| The Range Object which needs to be removed from the trackedObjectCollection.
 
 #### Returns
 Null
 
 #### Examples
 
-```js
+
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "A1:B2";
 var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-ctx.references.add(range);
+ctx.trackedObjects.add(range);
 ctx.load(range);
 
-ctx.executeAsync().then(function () {
+Excel.run(function (ctx) { 
 	range.insert("Down");
 	Console.log(range.address); // Address should be updated to A3:B4
-	ctx.references.remove(range); 
-	ctx.executeAsync().then();
+	ctx.trackedObjects.remove(range); 
+	return ctx.sync(); 
 });
 ```
-[Back](#methods)
+
 ### removeAll(rangeObject: range)
 
 Removes all references created by the add-in on the device.
 
 #### Syntax
 ```js
-referenceCollection.removeAll();
+trackedObjectsCollection.removeAll();
 ```
 
 #### Parameters
@@ -112,19 +114,17 @@ Null
 #### Examples
 
 ```js
-```js
-var sheetName = "Sheet1";
-var rangeAddress = "A1:B2";
-var ctx = new Excel.RequestContext();
-var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-ctx.references.add(range);
-ctx.load(range);
-
-ctx.executeAsync().then(function () {
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:B2";
+	var ctx = new Excel.RequestContext();
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	ctx.trackedObjects.add(range);
+	ctx.load(range);
 	range.insert("Down");
 	Console.log(range.address); // Address should be updated to A3:B4
-	ctx.references.removeAll(); 
-	ctx.executeAsync().then();
+	ctx.trackedObjects.removeAll(); 
+	return ctx.sync(); 
 });
 ```
-[Back](#methods)
+

@@ -1,11 +1,14 @@
-# Application
+# Application Object (JavaScript API for Excel)
+
+_Applies to: Excel 2016, Office 2016_
 
 Represents the Excel application that manages the workbook.
 
-## [Properties](#getter-examples)
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|calculationMode|string|Returns the calculation mode used in the workbook. Read-only. Possible values are: `Automatic` Excel controls recalculation.,`AutomaticExceptTables` Excel controls recalculation but ignores changes in tables.,`Manual` Calculation is done when the user requests it.|
+|calculationMode|string|Returns the calculation mode used in the workbook. Read-only. Possible values are: `Automatic` Excel controls recalculation,`AutomaticExceptTables` Excel controls recalculation but ignores changes in tables.,`Manual` Calculation is done when the user requests it.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
@@ -18,7 +21,7 @@ None
 |[calculate(calculationType: string)](#calculatecalculationtype-string)|void|Recalculate all currently opened workbooks in Excel.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## API Specification
+## Method Details
 
 ### calculate(calculationType: string)
 Recalculate all currently opened workbooks in Excel.
@@ -31,20 +34,18 @@ applicationObject.calculate(calculationType);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|calculationType|string|Specifies the calculation type to use. Possible values are: `Recalculate` Default-option. Performs normal calculation by calculating all the formulas in the workbook.,`Full` Forces a full calculation of the data.,`FullRebuild`  Forces a full calculation of the data and rebuilds the dependencies.|
+|calculationType|string|Specifies the calculation type to use. Possible values are: `Recalculate` Default-option. Performs normal calculation by calculating all the formulas in the workbook,`Full` Forces a full calculation of the data,`FullRebuild`  Forces a full calculation of the data and rebuilds the dependencies.|
 
 #### Returns
 void
 
 #### Examples
 ```js
-var ctx = new Excel.RequestContext();
-ctx.workbook.application.calculate('Full');
-ctx.executeAsync();
+Excel.run(function (ctx) { 
+	ctx.workbook.application.calculate('Full');
+	return ctx.sync(); 
+}); 
 ```
-
-
-[Back](#methods)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -62,21 +63,15 @@ object.load(param);
 #### Returns
 void
 
-#### Examples
+	
+### Property access examples
 ```js
-
-```
-
-[Back](#methods)
-
-### Getter Examples
-```js
-var ctx = new Excel.RequestContext();
-var application = ctx.workbook.application;
-application.load(calculationMode);
-ctx.executeAsync().then(function() {
-	Console.log(application.calculationMode);
+Excel.run(function (ctx) { 
+	var application = ctx.workbook.application;
+	application.load(calculationMode);
+	return ctx.sync().then(function() {
+		Console.log(application.calculationMode);
+	});
 });
 ```
 
-[Back](#properties)

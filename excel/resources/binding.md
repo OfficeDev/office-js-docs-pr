@@ -1,12 +1,15 @@
-# Binding
+# Binding Object (JavaScript API for Excel)
+
+_Applies to: Excel 2016, Office 2016_
 
 Represents an Office.js binding that is defined in the workbook.
 
-## [Properties](#getter-examples)
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |id|string|Represents binding identifier. Read-only.|
 |type|string|Returns the type of the binding. Read-only. Possible values are: Range, Table, Text.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
@@ -21,7 +24,7 @@ None
 |[getText()](#gettext)|string|Returns the text represented by the binding. Will throw an error if binding is not of the correct type.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## API Specification
+## Method Details
 
 ### getRange()
 Returns the range represented by the binding. Will throw an error if binding is not of the correct type.
@@ -41,17 +44,15 @@ None
 Below example uses binding object to get the associated range.
 
 ```js
-var ctx = new Excel.RequestContext();
-var binding = ctx.workbook.bindings.getItemAt(0);
-var range = binding.getRange();
-range.load(cellCount);
-ctx.executeAsync().then(function() {
-	Console.log(range.cellCount);
+Excel.run(function (ctx) { 
+	var binding = ctx.workbook.bindings.getItemAt(0);
+	var range = binding.getRange();
+	range.load(cellCount);
+	return ctx.sync().then(function() {
+		Console.log(range.cellCount);
+	});
 });
 ```
-
-
-[Back](#methods)
 
 ### getTable()
 Returns the table represented by the binding. Will throw an error if binding is not of the correct type.
@@ -69,18 +70,15 @@ None
 
 #### Examples
 ```js
-var ctx = new Excel.RequestContext();
-
-var binding = ctx.workbook.bindings.getItemAt(0);
-var table = binding.getTable();
-table.load(name);
-ctx.executeAsync().then(function () {
-		Console.log(table.name);
+Excel.run(function (ctx) { 
+	var binding = ctx.workbook.bindings.getItemAt(0);
+	var table = binding.getTable();
+	table.load(name);
+	return ctx.sync().then(function() {
+			Console.log(table.name);
+	});
 });
 ```
-
-
-[Back](#methods)
 
 ### getText()
 Returns the text represented by the binding. Will throw an error if binding is not of the correct type.
@@ -99,17 +97,15 @@ string
 #### Examples
 
 ```js
-var ctx = new Excel.RequestContext();
-var binding = ctx.workbook.bindings.getItemAt(0);
-var text = binding.getText();
-ctx.load(text);
-ctx.executeAsync().then(function() {
-	Console.log(text);
+Excel.run(function (ctx) { 
+	var binding = ctx.workbook.bindings.getItemAt(0);
+	var text = binding.getText();
+	ctx.load(text);
+	return ctx.sync().then(function() {
+		Console.log(text);
+	});
 });
 ```
-
-
-[Back](#methods)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -127,21 +123,15 @@ object.load(param);
 #### Returns
 void
 
-#### Examples
-```js
-
-```
-
-[Back](#methods)
-
-### Getter Examples
+	
+### Property access examples
 
 ```js
-var ctx = new Excel.RequestContext();
-var binding = ctx.workbook.bindings.getItemAt(0);
-binding.load(type);
-ctx.executeAsync().then(function() {
-	Console.log(binding.type);
+Excel.run(function (ctx) { 
+	var binding = ctx.workbook.bindings.getItemAt(0);
+	binding.load(type);
+	return ctx.sync().then(function() {
+		Console.log(binding.type);
+	});
 });
 ```
-[Back](#properties)

@@ -10,7 +10,6 @@ None
 | Method         | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[load(object: object, option: object)](#loadobject-object-option-object)  |void     |Fills the proxy object created in JavaScript layer with property and options specified in the parameter.||
-|[executeAsync()](#executeasync)  |Promise Object |Submits the request queue to Excel and returns a promise object, which can be used for chaining further actions.||
 
 ## API Specification
 
@@ -36,52 +35,21 @@ void
 The following example shows how to read and copy the values from Range A1:A2 to B1:B2.
 
 ```js
-var ctx = new Excel.RequestContext();
-var range = ctx.workbook.worksheets.getActiveWorksheet().getRange("A1:A2");
-ctx.load(range, {"select": "address, values", "expand" : "range/format"});
-
-ctx.executeAsync()
-	.then(function () {
-	var myvalues=range.values;
-	ctx.workbook.worksheets. getActiveWorksheet().getRange("B1:B2").values= myvalues;
-	ctx.executeAsync()
-  		.then(function () {
-			console.log(range.address);
-			console.log(range.values);
-			console.log(range.format.wrapText);
-		})
-		.catch(function(error) {
-			console. error(JSON.stringify(error));
-		})
-});
-```
-
-### executeAsync() 
-Promise Object |Submits the request queue to Excel and returns a promise object, which can be used for chaining further actions.
-
-#### Syntax
-```js
-requestContextObject.executeAsync();
-```
-
-#### Parameters
-None
-
-#### Returns
-Promise object.
-
-##### Examples
-
-
-```js
-	var ctx = new Excel.RequestContext();
-	var sheet = ctx.workbook.worksheets.add();
-
-	ctx.executeAsync()
-		.then(function () {   			
-			console.log("Done");
-		 })
-		.catch(function(error) {
-			console. error(JSON.stringify(error));
-		});
+Excel.run(function (ctx) { 
+	var range = ctx.workbook.worksheets.getActiveWorksheet().getRange("A1:A2");
+	ctx.load(range, {"select": "address, values", "expand" : "range/format"});
+	return ctx.sync().then(function() {
+		var myvalues=range.values;
+		ctx.workbook.worksheets.getActiveWorksheet().getRange("B1:B2").values = myvalues;
+	});
+}).then(function() {
+		console.log(range.address);
+		console.log(range.values);
+		console.log(range.format.wrapText);
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+})
 ```
