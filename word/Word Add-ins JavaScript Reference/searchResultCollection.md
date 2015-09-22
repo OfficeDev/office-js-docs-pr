@@ -1,4 +1,4 @@
-# SearchResultCollection Object (JavaScript API for Word)
+# SearchResultCollection object (JavaScript API for Word)
 
 Contains a collection of [range](range.md) objects as a result of a search operation.
 
@@ -19,7 +19,7 @@ None
 |[getItem(index: number)](#getitemindex-number)|[Range](range.md)|Gets a range object by its index in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## Method Details
+## Method details
 
 ### getItem(index: number)
 Gets a range object by its index in the collection.

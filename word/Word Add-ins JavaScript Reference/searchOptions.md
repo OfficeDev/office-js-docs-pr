@@ -1,4 +1,4 @@
-# SearchOptions Object (JavaScript API for Word)
+# SearchOptions object (JavaScript API for Word)
 
 Specifies the options to be included in a search operation.
 
@@ -27,7 +27,7 @@ None
 |:---------------|:--------|:----------|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## Method Details
+## Method details
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.

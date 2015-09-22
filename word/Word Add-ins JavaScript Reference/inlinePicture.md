@@ -1,4 +1,4 @@
-# InlinePicture Object (JavaScript API for Word)
+# InlinePicture object (JavaScript API for Word)
 
 Represents an inline picture.
 
@@ -28,7 +28,7 @@ _See property access [examples.](#property-access-examples)_
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the inline picture with a rich text content control.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## Method Details
+## Method details
 
 ### getBase64ImageSrc()
 Gets the base64 encoded string representation of the inline image.

@@ -1,4 +1,4 @@
-# Range Object (JavaScript API for Word)
+# Range object (JavaScript API for Word)
 
 Represents a contiguous area in a document.
 
@@ -38,7 +38,7 @@ _See property access [examples.](#property-access-examples)_
 |[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the range object. The search results are a collection of range objects.|
 |[select()](#select)|void|Selects and navigates the Word UI to the range.|
 
-## Method Details
+## Method details
 
 ### clear()
 Clears the contents of the range object. The user can perform the undo operation on the cleared content.

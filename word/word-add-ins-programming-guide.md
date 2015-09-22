@@ -1,8 +1,8 @@
-# Word add-ins programming guide
+# Word add-ins programming overview
 
 *Applies to: Word 2016*
 
-Microsoft Word 2016 (this list will be updated when we get new hosts) introduces a new object model for working with Word objects. This object model is an addition to the existing object model provided by OfficeJS to create add-ins for Word. This object model is accessed via JavaScript hosted by a web application.
+Microsoft Word 2016 introduces a new object model for working with Word objects. This object model is an addition to the existing object model provided by Office.js to create add-ins for Word. This object model is accessed via JavaScript hosted by a web application.
 
 <!--
 What is the value proposition here? How is it better?
@@ -15,17 +15,19 @@ Do I need to call out what you need to use Office.js for (gaps)?
 
 ## Manifest
 
-The new Word add-in Javascript API uses the same manifest format as is used for the old Word add-in model. The manifest describes where the add-in is hosted, how it is displayed, permissions, and other information. Learn more about how you can customize the [add-in manifests](https://msdn.microsoft.com/en-us/library/office/fp161044.aspx). 
+The new Word add-in Javascript API uses the same manifest format as is used for the old Office add-in model. The manifest describes where the add-in is hosted, how it is displayed, permissions, and other information. Learn more about how you can customize the [add-in manifests](https://msdn.microsoft.com/en-us/library/office/fp161044.aspx). 
 
 You have a few options for publishing Word add-in manifests. Read about how you can [publish your Office add-in](https://msdn.microsoft.com/EN-US/library/office/fp123515.aspx) to a network share, and app catalog, or to the Office store.
 
 ## Understanding the Javascript API for Word
 
-The Javascript API for Word is loaded by Office.js. It provides a set of proxy objects that are used to queue a set of commands that interact with the contents of a Word document. These commands are run as a batch. The results of the batch are actions taken on the Word document like inserting content, and synchronizing the Word objects with the Javascript proxy objects. 
+The Javascript API for Word is loaded by Office.js. It provides a set of Javascript proxy objects that are used to queue a set of commands that interact with the contents of a Word document. These commands are run as a batch. The results of the batch are actions taken on the Word document like inserting content, and synchronizing the Word objects with the Javascript proxy objects. 
 
 ### Running your add-in
 
-Let's take a look at what you'll need when you run your add-in. All add-ins should have an Office.initialize event handler.  Read [Understanding the API](https://msdn.microsoft.com/EN-US/library/fp160953.aspx) for more information about add-in initialization.  Your Word add-in executes by passing a function into the Word.run() method. The function passed into the run method has a context argument. This context object is different than the context object you get from the Office object, although it is used for the same purpose which is to interact with the Word runtime enviroment. The context object provides access to the Word Javascript object model. Let's take a look at the comments and code of a basic Word add-in:
+Let's take a look at what you'll need when you run your add-in. All add-ins should have an Office.initialize event handler.  Read [Understanding the API](https://msdn.microsoft.com/EN-US/library/fp160953.aspx) for more information about add-in initialization.  
+
+Your Word add-in executes by passing a function into the Word.run() method. The function passed into the run method must have a context argument. This context object is different than the context object you get from the Office object, although it is used for the same purpose which is to interact with the Word runtime enviroment. The context object provides access to the Word Javascript object model. Let's take a look at the comments and code of a basic Word add-in:
 
 *Example 1. Initialization and execution of a Word add-in*
 
@@ -38,8 +40,9 @@ Let's take a look at what you'll need when you run your add-in. All add-ins shou
             
             // Checks for the DOM to load using the jQuery ready function.
             $(document).ready(function () {
-                // Set your initialization code. You can use the reason argument
-                // to determine how the add-in was loaded.
+                // Set your initialization code. You can use the reason 
+                // argument to determine how the add-in was loaded.
+                // You can also load saved settings from the Office object.
             });
         };
 
@@ -52,6 +55,8 @@ Let's take a look at what you'll need when you run your add-in. All add-ins shou
         })
     })();
 ```
+
+Example 1. shows the basic code needed to create a a Word add-in. It initialized Office.js, provides
 
 ### Proxy objects
 
@@ -299,3 +304,47 @@ Let's put it all together by taking a look at a simple example that shows how yo
     });
 
 ```
+
+
+<!--Let's take a look at this code and comments to get a better understanding of how the proxy objects are used to interact with the contents of a Word document.
+
+```javascript
+    
+    // Run a batch operation against the Word object mode
+    Word.run(function (ctx) {
+
+        // Create a proxy object for the document. Nothing has changed in the Word document.
+        var thisDocument = ctx.document;
+
+        // Queue a command to load the save state on the document proxy object. Nothing has changed in the Word document.
+        // The current value for the saved property on the document proxy object is null.
+        ctx.load(thisDocument, { select: 'saved'});    
+
+        // Synchronize the document state by executing the queued-up commands, 
+        // and return a promise to indicate task completion.
+        // If all of the commands are successful, the Word document will be saved and the
+        // value of the *saved* property will be returned and set on the document proxy object. The document
+        // proxy object's, and the actual Word document's, *saved* property will be in sync. 
+        return ctx.sync().then(function () {
+
+            if (thisDocument.saved === false) {
+                // Queue a command to save this document.
+                thisDocument.save();
+
+                // Synchronize the document state by executing the queued-up commands, 
+                // and return a promise to indicate task completion.
+                return ctx.sync().then(function () {
+                    console.log('Saved the document');
+                });
+            } else {
+                console.log('The document has not changed since the last save.');
+            }
+        });  
+    })
+    .catch(function (error) {
+        console.log(JSON.stringify(error));
+    });    
+    
+```
+-->
+

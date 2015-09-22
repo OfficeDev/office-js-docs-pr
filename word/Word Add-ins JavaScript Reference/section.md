@@ -1,4 +1,4 @@
-# Section Object (JavaScript API for Word)
+# Section object (JavaScript API for Word)
 
 Represents a section in a Word document.
 
@@ -19,7 +19,7 @@ None
 |[getHeader(type: HeaderFooterType)](#getheadertype-headerfootertype)|[Body](body.md)|Gets one of the section's headers.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## Method Details
+## Method details
 
 ### getFooter(type: HeaderFooterType)
 Gets one of the section's footers.

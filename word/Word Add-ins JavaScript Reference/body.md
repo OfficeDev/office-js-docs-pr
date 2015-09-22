@@ -1,4 +1,4 @@
-# Body Object (JavaScript API for Word)
+# Body object (JavaScript API for Word)
 
 Represents the body of a document or a section.
 
@@ -38,7 +38,7 @@ _See property access [examples.](#property-access-examples)_
 |[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the body object. The search results are a collection of range objects.|
 |[select()](#select)|void|Selects the body and navigates the Word UI to it.|
 
-## Method Details
+## Method details
 
 ### clear()
 Clears the contents of the body object. The user can perform the undo operation on the cleared content.
