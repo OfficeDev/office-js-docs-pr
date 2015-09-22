@@ -17,11 +17,13 @@ A Word add-in runs inside Word and can interact with the contents of the documen
 >**Word add-in = manifest.xml + web app**
 
 ### Set it up
-You will create a simple web app and the app manifiest in this section. The web app will allow you to add boilerplate text into the Word document. Word 2016 is the requirement.
+You will create a simple web app and the app manifest in this section. The web app will allow you to add boilerplate text into the Word document. Word 2016 is the requirement.
 
 1. Create a folder on your local drive called BoilerplateAddin (for example C:\BoilerplateAddin). Save all of the files created in the following steps into this folder.
 
-2. Create a file named home.html and paste in the code below. <!-- TODO: Update CDN when it becomes official. -->
+2. Create a file named home.html and paste in the code below. 
+
+<!--TODO: Update CDN when it becomes official.-->
 
     ```html
     <!DOCTYPE html>
@@ -51,13 +53,13 @@ You will create a simple web app and the app manifiest in this section. The web 
     </html>
     ```
 
-3. Create a file named home.js and paste in the code below
+3. Create a file named home.js and paste in the code below.
 
     ```javascript
     (function () {
         "use strict";
 
-        // The initialize function is run each time a the page is loaded.
+        // The initialize function is run each time the page is loaded.
         Office.initialize = function (reason) {
             $(document).ready(function () {
                 $('#emerson').click(insertEmersonQuoteAtSelection);
@@ -168,22 +170,21 @@ You will create a simple web app and the app manifiest in this section. The web 
         </OfficeApp>
      ```
 
-5. Generate a GUID and replace the value in the **OfficeApp/Id** element with your GUID.
+5. Generate a GUID and replace the value in the <code>OfficeApp/Id</code> element with your GUID.
 
 6. Save all the files. You’ve now written your first Word add-in. 
 
 7. Create a shared folder (for example, \\MyShare\boilerplate) and copy home.js, home.html, and BoilerplateManifext.xml to that location. 
-
-8. Edit the <SourceLocation> element in BoilerplateManifext.xml so that it points to the shared folder location for home.html. 
+8. Edit the <code>SourceLocation</code> element in BoilerplateManifext.xml so that it points to the shared folder location for home.html. 
 
 At this point, you have your first add-in deployed. Now you need to let Word know where to find the add-in.
 
 1. Launch Word and open a document.
-2. Choose the File tab, and then choose Options.
-3. Choose Trust Center, and then choose the Trust Center Settings button.
-4. Choose Trusted Add-ins Catalogs.
-5. In the Catalog Url box, enter the path to the folder share that contains BoilerplateManifext.xml and then choose Add Catalog.
-6. Select the Show in Menu check box, and then choose OK.
+2. Choose the **File** tab, and then choose **Options**.
+3. Choose **Trust Center**, and then choose the **Trust Center Settings** button.
+4. Choose **Trusted Add-ins Catalogs**.
+5. In the **Catalog Url** box, enter the path to the folder share that contains BoilerplateManifext.xml and then choose **Add Catalog**.
+6. Select the **Show in Menu** check box, and then choose **OK**.
 7. A message is displayed to inform you that your settings will be applied the next time you start Office. Close and restart Word. 
 
 ### Try it out
@@ -191,14 +192,14 @@ At this point, you have your first add-in deployed. Now you need to let Word kno
 Now you can run the add-in you created. Follow these steps to see it in action.
 
 1. Open a Word document. 
-2. On the Insert tab in Word 2016, choose My Add-ins. 
-3. Choose *Boilerplate content*, and then select Insert.
+2. On the **Insert** tab in Word 2016, choose **My Add-ins**. 
+3. Choose **Boilerplate content**, and then select **Insert**.
 4. The add-in will load in a task pane. 
 5. Select the buttons to have boilerplate text entered into the Word document.
 
-## Learn information
+## Learn more
 
-Learn more about extending Word by reading the [Word add-ins programming guide](word-add-ins-programming-guide.md). Peruse the [Word add-ins JavaScript reference](word-add-ins-javascript-reference.md) to learn about the objects you can access. Check out our curated list of [Word add-in code samples](word-add-ins-code-samples.md) to get some ideas on how  you can create Word add-ins.
+Learn more about extending Word by reading the [Word add-ins programming guide](word-add-ins-programming-guide.md). Peruse the [Word add-ins JavaScript reference](word-add-ins-javascript-reference.md) to learn about the objects you can access.
 
 ## Give feedback on the API
 
