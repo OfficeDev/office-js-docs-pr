@@ -26,3 +26,8 @@ You can access a paragraph through the paragraphs collection in a selection, ran
 different page layout configurations of a document. You can access sections from the Document object. 
 * [Selection](Word Add-ins JavaScript Reference/document.md#getselection): The document object gives you access to the user's selection in the document, or the current insertion point, if nothing is selected.
 
+## Additional links
+
+* [Office Add-ins](https://msdn.microsoft.com/en-us/library/office/jj220060.aspx)
+* [Get started with Office Add-ins](http://dev.office.com/getting-started/addins)
+* [Word add-ins on GitHub](https://github.com/OfficeDev?utf8=%E2%9C%93&query=Word)
