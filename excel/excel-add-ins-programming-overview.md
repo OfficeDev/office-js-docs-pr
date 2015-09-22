@@ -1,10 +1,11 @@
-## Excel Add-ins JavaScript Programming Overview
+# Excel Add-ins JavaScript Programming Overview
 
 _Applies to: Excel 2016, Office 2016_
 
-Following sections provide important programming details related to Excel APIs.
+This topic covers the fundamentals of using the JavaScript APIs to build the next generation of Excel add-ins. 
 
-* [The Basics](#the-basics)
+
+* [The basics](#the-basics)
 * [Properties and Relations Selection](#properties-and-relations-selection)
 * [Document Binding](#null-input)
 * [Reference Binding](#null-input)
@@ -15,27 +16,27 @@ Following sections provide important programming details related to Excel APIs.
 * [Large-Range](#large-range)
 * [Single Input Copy](#single-input-copy)
 
-### The Basics
+## The basics
 
-This section introduces three key concepts to help get started with the Excel API. Namely, RequestContext, sync, run and load statements.  
+In this section, get a brief introduction to the key concepts that are fundamental to using the APIs, such as RequestContext, sync(), run(), and load().
 
-#### RequestContext
+### RequestContext
 The RequestContext object facilitates requests to the Excel application. Since the Office add-in and the Excel application run in two different processes, request context is required to get access to Excel and related objects such as worksheets, tables, etc. from the add-in. 
 
-#### sync()
+### sync()
 
 The sync() method available on the request context synchronizes the state between JavaScript proxy objects and real objects in Office by executing instructions queued on the context and retrieving properties of loaded Office objects for use in your code.  This method returns a promise, which is resolved when the synchronization is complete.
 
-#### Excel.run(function(context) {batch})
+### Excel.run(function(context) {batch})
 
 Executes a batch script that performs actions on the Excel object model. When the promise is resolved, any tracked objects that were automatically allocated during the execution will be released. 
 
 Batch: A function that takes in RequestContext and returns a promise (typically, just the result of ctx.sync()). The RequestContext parameter facilitates requests to the Excel application. Since the Office add-in and the Excel application run in two different processes, the request context is required to get access to the Excel object model from the add-in.
 
 
-##### Example
+#### Example
 
-The following example shows how to write values from an array to a range. First, RequestContext() is created to get access to the workbook. Then, a worksheet is added. Range A1:B2 on the sheet is retrieved afterward. Finally, we assign the values stored in the array to this range. All these commands are queued and will run when ctx.executeAsync() is called.  executeAsync() returns a promise that can be used to chain it with other operations.
+The following example shows how to write values from an array to a range. First, a RequestContext is created to get access to the workbook. Then, a worksheet is added. Range A1:B2 on the sheet is retrieved afterward. Finally, we assign the values stored in the array to this range. All these commands are queued and will run when ctx.sync() is called.  sync() returns a promise that can be used to chain it with other operations.
 
 ```js
 Excel.run(function (ctx) { 
@@ -46,7 +47,7 @@ Excel.run(function (ctx) {
 				 ];
 	var range = sheet.getRange("A1:B2");
 	range.values = values;
-	//Statements queued above will not be executed until the executeAsync() is called. 
+	//Statements queued above will not be executed until the sync() is called. 
 	return ctx.sync().then(function() {
 			console.log("Done");
 	});
@@ -58,10 +59,10 @@ Excel.run(function (ctx) {
 })
 ```
 
-#### load()
-Load method is used to fill in the Excel proxy objects created in the add-in JavaScript layer. When trying to retrieve an object, for example a worksheet, a local proxy object is created first in the JavaScript layer. Such an object can be used to queue up setting of its properties and invoking methods. However, for reading object properties or relations, the load() method and executeAsync() needs to be invoked first. Load method takes in the parameters and relations that need to be loaded when executeAsync is called. 
+### load()
+Load method is used to fill in the Excel proxy objects created in the add-in JavaScript layer. When trying to retrieve an object, for example a worksheet, a local proxy object is created first in the JavaScript layer. Such an object can be used to queue up setting of its properties and invoking methods. However, for reading object properties or relations, the load() method and sync() needs to be invoked first. Load method takes in the parameters and relations that need to be loaded when sync is called. 
 
-##### Syntax
+#### Syntax
 
 ```js
 object.load(properties);
@@ -73,7 +74,7 @@ Where,
 * properties is the list of properties and/or relationship names to be loaded specified as comma delimited strings or array of names. See .load() methods under each object for details.
 * loadOption specifies selection, expansion, top, and skip options. See [loadOption](resources/loadoption.md) object for details.
 
-##### Example
+#### Example
 The following example shows how to copy the values from Range A1:A2 to B1:B2 by using load() method on the range object.
 
 ```js
@@ -95,17 +96,19 @@ Excel.run(function (ctx) {
 })
 ```
 
-#### Summary
+### Summary
 1.	Getting a RequestContext is the first step to interact with Excel.
-2.	All JavaScript objects are local proxy objects.  Any method invocation or setting of properties, queues up the commands in JavaScript, but does not submit them until executeAsync() is called. 
-3.	Load is a special type of command for retrieval of properties. Properties can only be accessed after invoking executeAsync(). 
+2.	All JavaScript objects are local proxy objects.  Any method invocation or setting of properties, queues up the commands in JavaScript, but does not submit them until sync() is called. 
+3.	Load is a special type of command for retrieval of properties. Properties can only be accessed after invoking sync(). 
 4.	For performance reasons, avoid loading objects without specifying individual properties that will be used.
 
 [top](#programming-notes)
 
-### Properties and Relations Selection 
+## Properties and Relations Selection 
 
-* By default load() selects all scalar/complex properties of the object which is being loaded. The relations are not loaded by default.  Exceptions:  any binary, XML, etc properties are not returned. 
+In this and the upcoming sections, learn about the other core concepts that are important to using these APIs.
+
+* By default load() selects all scalar/complex properties of the object which is being loaded. The relations are not loaded by default.  Exceptions:  any binary, XML, etc. properties are not returned. 
 * The select option specifies a subset of properties and/or relations to include in the response.
 * The properties to be selected are provided during the load statement.
 * Select will essentially get the users into optimized mode of handpicking what they want. 
@@ -174,9 +177,9 @@ Excel.run(function (ctx) {
 
 
 
-### Null-Input
+## Null-Input
 
-#### null input in 2-D Array
+### null input in 2-D Array
 
 `null` input inside two dimensional array (for values, number-format, formula) is ignored in the update API. No update will take place to the intended target when `null` input is sent in values or number-format or formula grid of values.
 
@@ -202,7 +205,7 @@ Following is not valid either as null is not a valid color value.
  range.format.background.color =  null;
 ```
 
-### Null-Response
+## Null-Response
 
 Representation of formatting properties that consists of non-uniform values would result in `null` value to be returned in the response. 
 
@@ -213,7 +216,7 @@ Example: A Range can consist of one of more cells. In cases where the individual
   "color" : null,
 ```
 
-### Blank Input and Output
+## Blank Input and Output
 
 Blank values in update requests are treated as instruction to clear or reset the respective property. Blank value is represented by two double-quotes with no space in between. `""`
 
@@ -232,9 +235,9 @@ For read operations, expect to receive blank values if the contents of the cells
   range.formula = [["", "", "=Rand()"]];
 ```
 
-### Unbounded-Range
+## Unbounded-Range
 
-#### Read
+### Read
 
 Unbounded range address contains only column or row identifiers and unspecified row identifier or column identifiers (respectively), such as:
 
@@ -243,7 +246,7 @@ Unbounded range address contains only column or row identifiers and unspecified 
 
 When the API makes a request to retrieve an unbounded Range (e.g., `getRange('C:C')`, the response returned contains `null` for cell level properties such as `values`, `text`, `numberFormat`, `formula`, etc.. Other Range properties such as `address`, `cellCount`, etc. will reflect the unbounded range.
 
-#### Write
+### Write
 
 Setting cell level properties (such as values, numberFormat, etc.) on unbounded Range is **not allowed** as the input request might be too large to handle. 
 
@@ -272,20 +275,20 @@ Excel.run(function (ctx) {
 When such a Range is update operation is attempted, the API returns the an error.
 
 
-### Large-Range
+## Large-Range
 
 Large Range implies a Range whose size is too large for a single API call. Many factors such as number of cells,values, numberFormat, formulas, etc. contained in the range can make the response so large, it becomes unsuitable for API interaction. The API makes best attempt to return or write-to the requested data. However, large size involved might result in API error condition because of the large resource utilization. 
 
 To avoid such a condition, using read or write for large Range in multiple smaller range sizes is recommended .
 
 
-### Single Input Copy
+## Single Input Copy
 
 To support updating a range with same values or number-format or applying same formula across a range, the following convention is used in the set API. In Excel, this behavior is similar to inputting values or formulas to a range in the CTRL+Enter mode. 
 
 API will look for *single cell value* and if the target range dimension doesn't match the input range dimension it will apply the update to the entire range in the CTRL+Enter model with the value or formula provided in the request.
 
-#### Examples
+### Examples
 
 Following request updates selected range with the a text of "Due Date". Note that Range has 20 cells whereas the provided input only has 1 cell value.
 
@@ -357,7 +360,7 @@ Excel.run(function (ctx) {
 
 ## Error Messages
 
-Errors are returned using an error object that consists of a code and a message. The following table provides a list of possible error conditions that can occur. 
+Errors are returned using an error object that consists of a code and a message. The following table provides a list of possible error conditions that can occur in the add-ins. 
 
 |error.code | error.message |
 |:----------|:--------------|
@@ -381,4 +384,12 @@ Errors are returned using an error object that consists of a code and a message.
 |InsertDeleteConflict|The insert or delete operation attempted resulted in conflict.|
 |InvalidOperation|The operation attempted is invalid on the object.|
 
-[top](#excel-javascript-apis)
+
+## Learn more
+
+The following are just a few of the available resources. 
+
+1.  [Build your first Excel Add-in](build-your-first-excel-add-in.md)
+2.  [Snippet Explorer for Excel](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel)
+3.  [Excel Add-ins code samples](excel-add-ins-code-samples.md) 
+4.  [Excel Add-ins JavaScript API Reference](excel-add-ins-javascript-reference.md)
