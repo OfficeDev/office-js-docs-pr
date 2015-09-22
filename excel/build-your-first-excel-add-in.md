@@ -71,9 +71,10 @@ You’ll start by creating a web app using HTML and JQuery. Then you'll create a
 	
 	```
 
-4.  Create a file to contain the programming logic for the add-in in jQuery. Name the file **Home.js** and paste in the following script.   
+4.  Create a file to contain the programming logic for the add-in in jQuery. Name the file **Home.js** and paste in the following script.
+	
+```js
     
-    	```js
         (function () {
 	    "use strict";
 	
@@ -143,9 +144,10 @@ You’ll start by creating a web app using HTML and JQuery. Then you'll create a
 	        }); 
 	    }
 	})();
-	```
+```
 
-5.  Create an XML manifest file to specify where your web app is located and how you want it to appear in Excel. Name the file **QuarterlySalesReportManifest.xml** and paste the following XML into the file.
+    5.  Create an XML manifest file to specify where your web app is located and how you want it to appear in Excel. Name the file **QuarterlySalesReportManifest.xml** and paste the following XML into the file.
+    
 	```xml
 	<?xml version="1.0" encoding="UTF-8"?>
 	<!--Created:cb85b80c-f585-40ff-8bfc-12ff4d0e34a9-->
@@ -166,9 +168,9 @@ You’ll start by creating a web app using HTML and JQuery. Then you'll create a
 	</OfficeApp>
 	```
 
-6.	Generate a GUID using an online generator of your choice. Then, replace the value in the **<Id>** tag shown in the previous step with that GUID.
+    6.  Generate a GUID using an online generator of your choice. Then, replace the value in the **<Id>** tag shown in the previous step with that GUID.
 
-7.	Save all the files. You’ve now written your first Excel add-in. 
+    7.	Save all the files. You’ve now written your first Excel add-in. 
 
 ### Try it out
 
