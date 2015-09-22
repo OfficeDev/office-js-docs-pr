@@ -1,124 +1,149 @@
-# Section (Javascript API for Word)
+# Section Object (JavaScript API for Word)
+
 Represents a section in a Word document.
 
-## Properties
+_Applies to: Office 2016_
 
-| Property         | Type    |Description|
-|:-----------------|:--------|:----------|
-|body|  [Body](body.md)   | Gets the body of the section. This does not include the header/footer and other section metadata.  |
+None
 
 ## Relationships
-None
+| Relationship | Type	|Description|
+|:---------------|:--------|:----------|
+|body|[Body](body.md)|Gets the body of the section. This does not include the headerfooter and other section metadata. Read-only.|
 
 ## Methods
 
-| Method     | Return Type    |Description|
-|:-----------------|:--------|:----------|
-|[getFooter(type: string)](#getfootertype-string)| [Body](body.md) | Gets the section footer.|     
-|[getHeader(type: string)](#getheadertype-header)| [Body](body.md) |Gets the section header. |
-|[load(param: option)](#loadparam-option)|void|Fills the section proxy object created in the JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[getFooter(type: HeaderFooterType)](#getfootertype-headerfootertype)|[Body](body.md)|Gets one of the section's footers.|
+|[getHeader(type: HeaderFooterType)](#getheadertype-headerfootertype)|[Body](body.md)|Gets one of the section's headers.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## API Specification
+## Method Details
 
-
-### getFooter(type: string) 
-
-Gets the section footer.
+### getFooter(type: HeaderFooterType)
+Gets one of the section's footers.
 
 #### Syntax
 ```js
-    section.getFooter(type);
+sectionObject.getFooter(type);
 ```
-#### Parameters
 
-Parameter      | Type   | Description|
--------------- | ------ | ------------|
-`type`         | string | Required. The type of footer to return. This value can be: 'primary', 'firstPage' or 'evenPages'. |
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|type|HeaderFooterType|Required. The type of footer to return. This value can be: 'primary', 'firstPage' or 'evenPages'.|
 
 #### Returns
-
 [Body](body.md)
 
-
-#### Example
-
+#### Examples
 ```js
-    //Insert text in to the footer of the first section.
-
-    var ctx = new Word.RequestContext();
-
-    var mySections  = ctx.document.sections;
-    ctx.load(mySections);
-
-    var myFooter = mySections.getItem(0).getFooter("primary");
-    myFooter.insertText("this is a footer","end");
-
-    ctx.executeAsync().then(
-        function(){
-            console.log("Success!!");
-        }
-    );
-
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+	
+	// Create a proxy sectionsCollection object.
+	var mySections = context.document.sections;
+	
+	// Queue a commmand to load the sections.
+	context.load(mySections, 'body/style');
+	
+	// Synchronize the document state by executing the queued-up commands, 
+	// and return a promise to indicate task completion.
+	return context.sync().then(function () {
+		
+		// Create a proxy object the primary footer of the first section. 
+		// Note that the footer is a body object.
+		var myFooter = mySections.items[0].getFooter("primary");
+		
+		// Queue a command to insert text at the end of the footer.
+		myFooter.insertText("This is a footer.", Word.InsertLocation.end);
+		
+		// Queue a command to wrap the header in a content control.
+		myFooter.insertContentControl();
+							  
+		// Synchronize the document state by executing the queued-up commands, 
+		// and return a promise to indicate task completion.
+		return context.sync().then(function () {
+			console.log("Added a footer to the first section.");
+		});                    
+	});  
+})
+.catch(function (error) {
+	console.log('Error: ' + JSON.stringify(error));
+	if (error instanceof OfficeExtension.Error) {
+		console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+	}
+});
 ```
-[Back](#methods)
-
-
-### getHeader(type: string) 
-
-Gets the section header.
+### getHeader(type: HeaderFooterType)
+Gets one of the section's headers.
 
 #### Syntax
 ```js
-    section.getHeader(type);
+sectionObject.getHeader(type);
 ```
 
 #### Parameters
-
-Parameter      | Type   | Description|
--------------- | ------ | ------------|
-`type`         | string | Required. The type of header to return. This value can be: 'primary', 'firstPage' or 'evenPages'. |
-
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|type|HeaderFooterType|Required. The type of header to return. This value can be: 'primary', 'firstPage' or 'evenPages'.|
 
 #### Returns
+[Body](body.md)
 
-[Body](body.md).
-
-
-#### Example
-
+#### Examples
 ```js
-    //Insert text in to the footer of the first section.
-
-    var ctx = new Word.RequestContext();
-
-    var mySections  = ctx.document.sections;
-    ctx.load(mySections);
-
-    var myHeader = mySections.getItem(0).getHeader("primary");
-    myHeader.insertText("this is a header!!","end");
-
-    ctx.executeAsync().then(
-        function(){
-            console.log("Success!!");
-        }
-    );
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+    
+    // Create a proxy sectionsCollection object.
+    var mySections = context.document.sections;
+    
+    // Queue a commmand to load the sections.
+    context.load(mySections, 'body/style');
+    
+    // Synchronize the document state by executing the queued-up commands, 
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        
+        // Create a proxy object the primary header of the first section. 
+        // Note that the header is a body object.
+        var myHeader = mySections.items[0].getHeader("primary");
+        
+        // Queue a command to insert text at the end of the header.
+        myHeader.insertText("This is a header.", Word.InsertLocation.end);
+        
+        // Queue a command to wrap the header in a content control.
+        myHeader.insertContentControl();
+                              
+        // Synchronize the document state by executing the queued-up commands, 
+        // and return a promise to indicate task completion.
+        return context.sync().then(function () {
+            console.log("Added a header to the first section.");
+        });                    
+    });  
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
 ```
-[Back](#methods)
 
-### load(param: option)
-Fills the section proxy object created in the JavaScript layer with the property and object values specified in the parameter.
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
 ```js
-    section.load(param);
+object.load(param);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|param|object| A string, a string with comma separated value, an array of strings, or an object that specifies which properties to load.  |
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
-
-[Back](#methods)
