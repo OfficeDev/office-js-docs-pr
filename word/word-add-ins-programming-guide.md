@@ -299,3 +299,47 @@ Let's put it all together by taking a look at a simple example that shows how yo
     });
 
 ```
+
+
+<!--Let's take a look at this code and comments to get a better understanding of how the proxy objects are used to interact with the contents of a Word document.
+
+```javascript
+    
+    // Run a batch operation against the Word object mode
+    Word.run(function (ctx) {
+
+        // Create a proxy object for the document. Nothing has changed in the Word document.
+        var thisDocument = ctx.document;
+
+        // Queue a command to load the save state on the document proxy object. Nothing has changed in the Word document.
+        // The current value for the saved property on the document proxy object is null.
+        ctx.load(thisDocument, { select: 'saved'});    
+
+        // Synchronize the document state by executing the queued-up commands, 
+        // and return a promise to indicate task completion.
+        // If all of the commands are successful, the Word document will be saved and the
+        // value of the *saved* property will be returned and set on the document proxy object. The document
+        // proxy object's, and the actual Word document's, *saved* property will be in sync. 
+        return ctx.sync().then(function () {
+
+            if (thisDocument.saved === false) {
+                // Queue a command to save this document.
+                thisDocument.save();
+
+                // Synchronize the document state by executing the queued-up commands, 
+                // and return a promise to indicate task completion.
+                return ctx.sync().then(function () {
+                    console.log('Saved the document');
+                });
+            } else {
+                console.log('The document has not changed since the last save.');
+            }
+        });  
+    })
+    .catch(function (error) {
+        console.log(JSON.stringify(error));
+    });    
+    
+```
+-->
+

@@ -8,58 +8,16 @@ Welcome to the Word add-in JavaScript API documentation. The Word JavaScript API
 
 Before we start going into the specifics of the Javascript API for Word, it is important to know that this new Word add-in object model is different than what was made available with Word in Office 2013. The previous object model was not typed and provided a generic API for extending Office clients. While the previous model is still applicable to Word 2016, we strongly suggest that you start using the new Word object model. We suggest that you read the [platform overview](https://msdn.microsoft.com/EN-US/library/office/jj220082.aspx) if you aren't familiar with the add-in platform. 
 
-The new JavaScript APIs for Word changes the way that you can interact with objects like documents and paragraphs. Rather than providing individual asynchronous APIs for retrieving and updating each of these objects, the new APIs provide “proxy” JavaScript objects that correspond to the real objects running in Word.  You can directly interact with these proxy objects by synchronously reading and writing their properties and calling synchronous methods to perform operations on them.  These interactions with proxy objects aren’t immediately realized in the running script, though, so we provide a method on the context called **sync()** that synchronizes the state between your running JavaScript and the real objects in Office by executing instructions queued in your script and retrieving properties of loaded Word objects for use in your script.  
-
-<!--Let's take a look at this code and comments to get a better understanding of how the proxy objects are used to interact with the contents of a Word document.
-
-```javascript
-    
-    // Run a batch operation against the Word object mode
-    Word.run(function (ctx) {
-
-        // Create a proxy object for the document. Nothing has changed in the Word document.
-        var thisDocument = ctx.document;
-
-        // Queue a command to load the save state on the document proxy object. Nothing has changed in the Word document.
-        // The current value for the saved property on the document proxy object is null.
-        ctx.load(thisDocument, { select: 'saved'});    
-
-        // Synchronize the document state by executing the queued-up commands, 
-        // and return a promise to indicate task completion.
-        // If all of the commands are successful, the Word document will be saved and the
-        // value of the *saved* property will be returned and set on the document proxy object. The document
-        // proxy object's, and the actual Word document's, *saved* property will be in sync. 
-        return ctx.sync().then(function () {
-
-            if (thisDocument.saved === false) {
-                // Queue a command to save this document.
-                thisDocument.save();
-
-                // Synchronize the document state by executing the queued-up commands, 
-                // and return a promise to indicate task completion.
-                return ctx.sync().then(function () {
-                    console.log('Saved the document');
-                });
-            } else {
-                console.log('The document has not changed since the last save.');
-            }
-        });  
-    })
-    .catch(function (error) {
-        console.log(JSON.stringify(error));
-    });    
-    
-```
--->
+The new JavaScript APIs for Word changes the way that you can interact with objects like documents and paragraphs. Rather than providing individual asynchronous APIs for retrieving and updating each of these objects, the new APIs provide “proxy” JavaScript objects that correspond to the real objects running in Word.  You can directly interact with these proxy objects by synchronously reading and writing their properties and calling synchronous methods to perform operations on them.  These interactions with proxy objects aren’t immediately realized in the running script, so we provide a method on the context called **sync()**. The that synchronizes the state between your running JavaScript and the real objects in Office by executing instructions queued in your script and retrieving properties of loaded Word objects for use in your script.  
 
 ## Create your first Word add-in
 
-A Word add-in runs inside Word and can interact with the contents of the document using the new Word JavaScript APIs available in Office 2016. Under the hood, there are two parts to create an add-in: 1) a web application that you can host anywhere, and 2) the add-in manifest that Word uses to discover where your web application is hosted (the manifest provides more than this, read more in the [programming guide](word-add-ins-programming-guide.md)).
+A Word add-in runs inside Word and can interact with the contents of the document using the new Word JavaScript APIs available in Word 2016. Under the hood, there are two parts to create an add-in: 1) a web application that you can host anywhere, and 2) the [add-in manifest](https://msdn.microsoft.com/EN-US/library/office/fp161044.aspx) that Word uses to discover where your web application is hosted (the manifest provides more than this, read more in the [programming guide](word-add-ins-programming-guide.md)).
 
 >**Word add-in = manifest.xml + web app**
 
 ### Set it up
-You will create a simple web app and the app manifiest in this section. The web app will allow you to add boilerplate text into the word document. 
+You will create a simple web app and the app manifiest in this section. The web app will allow you to add boilerplate text into the Word document. Word 2016 is the requirement.
 
 1. Create a folder on your local drive called BoilerplateAddin (for example C:\BoilerplateAddin). Save all of the files created in the following steps into this folder.
 
