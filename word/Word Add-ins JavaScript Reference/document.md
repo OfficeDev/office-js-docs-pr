@@ -1,4 +1,4 @@
-# Document Object (JavaScript API for Word)
+# Document object (JavaScript API for Word)
 
 The Document object is the top level object. A Document object contains one or more sections, content controls, and the body that contains the contents of the document.
 
@@ -23,7 +23,7 @@ _Applies to: Office 2016_
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 |[save()](#save)|void|Saves the document. This will use the Word default file naming convention if the document has not been saved before.|
 
-## Method Details
+## Method details
 
 ### getSelection()
 Gets the current selection of the document. Multiple selections are not supported.

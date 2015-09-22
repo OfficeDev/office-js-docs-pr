@@ -1,4 +1,4 @@
-# InlinePictureCollection Object (JavaScript API for Word)
+# InlinePictureCollection object (JavaScript API for Word)
 
 Contains a collection of [inlinePicture](inlinePicture.md) objects.
 
@@ -21,7 +21,7 @@ None
 |[getItem(index: number)](#getitemindex-number)|[InlinePicture](inlinepicture.md)|Gets an inline picture object by its index in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## Method Details
+## Method details
 
 ### getItem(index: number)
 Gets an inline picture object by its index in the collection.

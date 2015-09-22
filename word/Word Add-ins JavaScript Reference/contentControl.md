@@ -1,4 +1,4 @@
-# ContentControl Object (JavaScript API for Word)
+# ContentControl object (JavaScript API for Word)
 
 Represents a content control. Content controls are bounded and potentially labeled regions in a document that serve as containers for specific types of content. Individual content controls may contain contents such as images, tables, or paragraphs of formatted text. Currently, only rich text content controls are supported.
 
@@ -48,7 +48,7 @@ _See property access [examples.](#property-access-examples)_
 |[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the content control object. The search results are a collection of range objects.|
 |[select()](#select)|void|Selects the content control. This causes Word to scroll to the selection.|
 
-## Method Details
+## Method details
 
 ### clear()
 Clears the contents of the content control. The user can perform the undo operation on the cleared content.

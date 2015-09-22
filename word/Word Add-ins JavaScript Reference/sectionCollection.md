@@ -1,4 +1,4 @@
-# SectionCollection Object (JavaScript API for Word)
+# SectionCollection object (JavaScript API for Word)
 
 Contains the collection of the document's [section](section.md) objects.
 
@@ -21,7 +21,7 @@ None
 |[getItem(index: number)](#getitemindex-number)|[Section](section.md)|Gets a section object by its index in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## Method Details
+## Method details
 
 ### getItem(index: number)
 Gets a section object by its index in the collection.

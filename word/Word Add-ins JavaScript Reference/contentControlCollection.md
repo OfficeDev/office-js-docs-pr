@@ -1,4 +1,4 @@
-# ContentControlCollection Object (JavaScript API for Word)
+# ContentControlCollection object (JavaScript API for Word)
 
 Contains a collection of ContentControl objects. Content controls are bounded and potentially labeled regions in a document that serve as containers for specific types of content. Individual content controls may contain contents such as images, tables, or paragraphs of formatted text. Currently, only rich text content controls are supported.
 
@@ -24,7 +24,7 @@ None
 |[getItem(index: number)](#getitemindex-number)|[ContentControl](contentcontrol.md)|Gets a content control by its index in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## Method Details
+## Method details
 
 ### getById(id: number)
 Gets a content control by its identifier.

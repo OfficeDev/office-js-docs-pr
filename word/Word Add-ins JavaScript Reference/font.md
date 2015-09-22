@@ -1,4 +1,4 @@
-# Font Object (JavaScript API for Word)
+# Font object (JavaScript API for Word)
 
 Represents a font.
 
@@ -30,7 +30,7 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## Method Details
+## Method details
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.

@@ -1,4 +1,4 @@
-# ParagraphCollection Object (JavaScript API for Word)
+# ParagraphCollection object (JavaScript API for Word)
 
 Contains a collection of [paragraph](paragraph.md) objects.
 
@@ -19,7 +19,7 @@ None
 |[getItem(index: number)](#getitemindex-number)|[Paragraph](paragraph.md)|Gets a paragraph object by its index in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## Method Details
+## Method details
 
 ### getItem(index: number)
 Gets a paragraph object by its index in the collection.
