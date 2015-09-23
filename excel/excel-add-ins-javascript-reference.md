@@ -21,6 +21,13 @@ Below links show the main level Excel Objects and APIs.
 * [TrackedObject Collection](resources/trackedobjectscollection.md): Allows add-ins to add and remove temporary references on range that can be tracked across requests.
 * [Request Context](resources/requestcontext.md): The RequestContext object facilitates requests to the Excel application.
 
+For a complete list of all the objects in the API, see [here](resources).
+
 ##### Learn more
 
-* [Programming overview](excel-add-ins-programming-overview.md): Provides important programming details related to Excel APIs.
+The following are just a few of the available resources. 
+
+1.  [Build your first Excel Add-in](build-your-first-excel-add-in.md)
+2.  [Snippet Explorer for Excel](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel)
+3.  [Excel Add-ins programming overview](excel-add-ins-programming-overview.md)
+4.  [Excel Add-ins code samples](excel-add-ins-code-samples.md) 
