@@ -2,7 +2,7 @@
 
 Represents a content control. Content controls are bounded and potentially labeled regions in a document that serve as containers for specific types of content. Individual content controls may contain contents such as images, tables, or paragraphs of formatted text. Currently, only rich text content controls are supported.
 
-_Applies to: Office 2016_
+_Applies to: Word 2016 for Windows_
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
@@ -38,7 +38,7 @@ _See property access [examples.](#property-access-examples)_
 |[delete(keepContent: bool)](#deletekeepcontent-bool)|void|Deletes the content control and its content. If keepContent is set to true, the content is not deleted.|
 |[getHtml()](#gethtml)|string|Gets the HTML representation of the content control object.|
 |[getOoxml()](#getooxml)|string|Gets the Office Open XML (OOXML) representation of the content control object.|
-|[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location. The insertLocation value can be 'Before', 'After', 'Start' or 'End'.|
+|[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location.  A break can only be inserted into the main document body. The insertLocation value can be 'Before', 'After', 'Start' or 'End'.|
 |[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Inserts a document into the current content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
 |[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts HTML into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
 |[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts OOXML into the content control at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.|
@@ -279,6 +279,9 @@ contentControlObject.insertBreak(breakType, insertLocation);
 
 #### Returns
 void
+
+#### Additional details
+You can not insert a break in headers, footers, footnotes, endnotes, comments, and textboxes. 
 
 #### Examples
 ```js
@@ -618,7 +621,7 @@ contentControlObject.search(searchText, searchOptions);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |searchText|string|Required. The search text.|
-|searchOptions|ParamTypeStrings.SearchOptions|Optional. Optional. Options for the search.|
+|[searchOptions](searchoptions.md)|ParamTypeStrings.SearchOptions|Optional. Options for the search.|
 
 #### Returns
 [SearchResultCollection](searchresultcollection.md)

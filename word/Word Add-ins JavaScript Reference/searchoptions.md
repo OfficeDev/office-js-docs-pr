@@ -2,7 +2,7 @@
 
 Specifies the options to be included in a search operation.
 
-_Applies to: Office 2016_
+_Applies to: Word 2016 for Windows_
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
@@ -16,6 +16,14 @@ _Applies to: Office 2016_
 |matchWildCards|bool|Gets or sets a value that indicates whether the search will be performed using special search operators. Corresponds to the Use wildcards check box in the Find and Replace dialog box.|
 
 _See property access [examples.](#property-access-examples)_
+
+Search options are optional. The search options should be specified in all search methods by using an object literal:
+
+```js
+    search('searchstring', {searchOption1:bool, ...searchOptionN:bool}
+```
+
+You can provide one or more search option properties in the object literal to specify search options. 
 
 ## Relationships
 None
@@ -52,12 +60,8 @@ void
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
     
-    // Setup the search options.
-    var options = Word.SearchOptions.newObject(context);
-    options.ignorePunct = true;
-
-    // Queue a command to search the document.
-    var searchResults = context.document.body.search('video', options);
+    // Queue a command to search the document and ignore punctuation.
+    var searchResults = context.document.body.search('video you', {ignorePunct: true});
 
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');
@@ -92,12 +96,8 @@ Word.run(function (context) {
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
     
-    // Setup the search options.
-    var options = Word.SearchOptions.newObject(context);
-    options.matchPrefix = true;
-
-    // Queue a command to search the document.
-    var searchResults = context.document.body.search('video', options);
+    // Queue a command to search the document based on a prefix.
+    var searchResults = context.document.body.search('vid', {matchPrefix: true});
 
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');
@@ -131,13 +131,9 @@ Word.run(function (context) {
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
-    // Setup the search options.
-    var options = Word.SearchOptions.newObject(context);
-    options.matchSuffix = true;
 
     // Queue a command to search the document for any string of characters after 'ly'.
-    var searchResults = context.document.body.search('ly', options);
+    var searchResults = context.document.body.search('ly', {matchSuffix: true});
 
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');
@@ -172,12 +168,9 @@ Word.run(function (context) {
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
     
-    // Setup the search options.
-    var options = Word.SearchOptions.newObject(context);
-    options.matchWildCards = true;
-
-    // Queue a command to search the document for any string of characters after 'to'.
-    var searchResults = context.document.body.search('to*', options);
+    // Queue a command to search the document with a wildcard
+    // for any string of characters that starts with 'to' and ends with 'n'.
+    var searchResults = context.document.body.search('to*n', {matchWildCards: true});
 
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');

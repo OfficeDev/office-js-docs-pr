@@ -2,7 +2,7 @@
 
 Find API reference for the Javascript API for Word for Word add-ins.
 
-*Applies to: Word 2016*
+_Applies to: Word 2016 for Windows_
 
 <!-- Add link and statement about how to get the type definition file. Look at Michael Zs info -->
 

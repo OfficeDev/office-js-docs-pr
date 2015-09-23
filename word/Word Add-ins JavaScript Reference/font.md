@@ -2,7 +2,7 @@
 
 Represents a font.
 
-_Applies to: Office 2016_
+_Applies to: Word 2016 for Windows_
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|

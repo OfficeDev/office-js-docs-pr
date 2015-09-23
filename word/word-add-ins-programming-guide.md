@@ -1,17 +1,8 @@
 # Word add-ins programming overview
 
-*Applies to: Word 2016*
+_Applies to: Word 2016 for Windows_
 
 Microsoft Word 2016 introduces a new object model for working with Word objects. This object model is an addition to the existing object model provided by Office.js to create add-ins for Word. This object model is accessed via JavaScript hosted by a web application.
-
-<!--
-What is the value proposition here? How is it better?
-What can you do with it? 
-Architecture - this is all covered in the existing content
-What do people need to know?
-Do I need to add content about how this relates to the rest of Office.js? 
-Do I need to call out what you need to use Office.js for (gaps)?
--->
 
 ## Manifest
 

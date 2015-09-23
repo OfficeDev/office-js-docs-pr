@@ -2,7 +2,7 @@
 
 Represents the body of a document or a section.
 
-_Applies to: Office 2016_
+_Applies to: Word 2016 for Windows_
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
@@ -27,7 +27,7 @@ _See property access [examples.](#property-access-examples)_
 |[clear()](#clear)|void|Clears the contents of the body object. The user can perform the undo operation on the cleared content.|
 |[getHtml()](#gethtml)|string|Gets the HTML representation of the body object.|
 |[getOoxml()](#getooxml)|string|Gets the OOXML (Office Open XML) representation of the body object.|
-|[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location. The insertLocation value can be 'Start' or 'End'.|
+|[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location. A break can only be inserted into the main document body. The insertLocation value can be 'Start' or 'End'.|
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the body object with a Rich Text content control.|
 |[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Inserts a document into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
 |[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts HTML at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
@@ -159,7 +159,7 @@ Word.run(function (context) {
 ```
 
 ### insertBreak(breakType: BreakType, insertLocation: InsertLocation)
-Inserts a break at the specified location. The insertLocation value can be 'Start' or 'End'.
+Inserts a break at the specified location. A break can only be inserted into the main document body. The insertLocation value can be 'Start' or 'End'.
 
 #### Syntax
 ```js
@@ -174,6 +174,9 @@ bodyObject.insertBreak(breakType, insertLocation);
 
 #### Returns
 void
+
+#### Additional details
+You can not insert a break in headers, footers, footnotes, endnotes, comments, and textboxes.  
 
 #### Examples
 ```js
@@ -504,7 +507,7 @@ bodyObject.search(searchText, searchOptions);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |searchText|string|Required. The search text.|
-|searchOptions|ParamTypeStrings.SearchOptions|Optional. Optional. Options for the search.|
+|[searchOptions](searchoptions.md)|ParamTypeStrings.SearchOptions|Optional. Options for the search.|
 
 #### Returns
 [SearchResultCollection](searchresultcollection.md)
