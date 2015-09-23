@@ -1,5 +1,69 @@
-# Chart Fill Format
+# ChartFill Object (JavaScript API for Excel)
+
+_Applies to: Excel 2016, Office 2016_
+
+Represents the fill formatting for a chart element.
+
+None
+
+## Relationships
+None
+
+
+## Methods
+
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[clear()](#clear)|void|Clear the fill color of a chart element.|
+|[setSolidColor(color: string)](#setsolidcolorcolor-string)|void|Sets the fill formatting of a chart element to a uniform color.|
+
+## Method Details
+
+### clear()
+Clear the fill color of a chart element.
+
+#### Syntax
+```js
+chartFillObject.clear();
+```
+
+#### Parameters
+None
+
+#### Returns
+void
+
+#### Examples
+
+Clear the line format of the major Gridlines on value axis of the Chart named "Chart1"
+
+```js
+Excel.run(function (ctx) { 
+	var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueaxis.majorGridlines;	
+	gridlines.format.line.clear();
+	return ctx.sync().then(function() {
+			console.log"Chart Major Gridlines Format Cleared");
+	});
+});
+
+```
 ### setSolidColor(color: string)
+Sets the fill formatting of a chart element to a uniform color.
+
+#### Syntax
+```js
+chartFillObject.setSolidColor(color);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|color|string|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|
+
+#### Returns
+void
+
+#### Examples
 
 Set BackGround Color of Chart1 to be red.
 
@@ -13,18 +77,4 @@ Excel.run(function (ctx) {
 			console.log("Chart1 Background Color Changed.");
 	});
 });
-```
-### clear()
-
-Clear the line format of the major Gridlines on value axis of the Chart named "Chart1"
-
-```js
-Excel.run(function (ctx) { 
-	var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueaxis.majorGridlines;	
-	gridlines.format.line.clear();
-	return ctx.sync().then(function() {
-			console.log"Chart Major Gridlines Format Cleared");
-	});
-});
-
 ```

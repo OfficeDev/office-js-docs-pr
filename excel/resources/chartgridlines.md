@@ -1,6 +1,49 @@
-# Chart Gridlines
+# ChartGridlines Object (JavaScript API for Excel)
 
-### Getter and setter
+_Applies to: Excel 2016, Office 2016_
+
+Represents major or minor gridlines on a chart axis.
+
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|visible|bool|Boolean value representing if the axis gridlines are visible or not.|
+
+_See property access [examples.](#property-access-examples)_
+
+## Relationships
+| Relationship | Type	|Description|
+|:---------------|:--------|:----------|
+|format|[ChartGridlinesFormat](chartgridlinesformat.md)|Represents the formatting of chart gridlines. Read-only.|
+
+## Methods
+
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+
+## Method Details
+
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.load(param);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
+```
+### Property access examples
 
 Get the `visible` of Major Gridlines on value axis of Chart1
 

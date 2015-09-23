@@ -1,6 +1,53 @@
-# Range Format
+# RangeFormat Object (JavaScript API for Excel)
 
-### Getter and setter Range Format 
+_Applies to: Excel 2016, Office 2016_
+
+A format object encapsulating the range's font, fill, borders, alignment, and other properties.
+
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|horizontalAlignment|string|Represents the horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.|
+|verticalAlignment|string|Represents the vertical alignment for the specified object. Possible values are: Top, Center, Bottom, Justify, Distributed.|
+|wrapText|bool|Indicates if Excel wraps the text in the object. A null value indicates that the entire range doesn't have uniform wrap setting|
+
+_See property access [examples.](#property-access-examples)_
+
+## Relationships
+| Relationship | Type	|Description|
+|:---------------|:--------|:----------|
+|borders|[RangeBorderCollection](rangebordercollection.md)|Collection of border objects that apply to the overall range selected Read-only.|
+|fill|[RangeFill](rangefill.md)|Returns the fill object defined on the overall range. Read-only.|
+|font|[RangeFont](rangefont.md)|Returns the font object defined on the overall range selected Read-only.|
+
+## Methods
+
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+
+## Method Details
+
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.load(param);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
+```
+### Property access examples
 
 Below example selects all of the Range's format properties. 
 
