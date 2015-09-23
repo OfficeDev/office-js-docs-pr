@@ -2,7 +2,7 @@
 
 Represents a content control. Content controls are bounded and potentially labeled regions in a document that serve as containers for specific types of content. Individual content controls may contain contents such as images, tables, or paragraphs of formatted text. Currently, only rich text content controls are supported.
 
-_Applies to: Office 2016_
+_Applies to: Word 2016 for Windows_
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|

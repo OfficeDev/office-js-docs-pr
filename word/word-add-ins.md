@@ -1,6 +1,6 @@
 # Word 2016 add-ins
 
-*Applies to: Word 2016*
+_Applies to: Word 2016 for Windows_
 
 Welcome to the Word add-in JavaScript API documentation. The Word JavaScript API is a part of the Office add-in programming model for extending Microsoft Office applications. The add-in programming model uses web applications to host your extension to Word. You can now extend Word with any web platform or language that you prefer. 
 
@@ -156,7 +156,7 @@ You will create a simple web app and the app manifest in this section. The web a
                 <Capability Name="document" />
             </Capabilities>
             <DefaultSettings>
-                <SourceLocation DefaultValue="\\tk2offfsm03\Users\mmainer\boilerplate\home.html" />
+                <SourceLocation DefaultValue="\\MyShare\boilerplate\home.html" />
             </DefaultSettings>
             <Permissions>ReadWriteDocument</Permissions>
         </OfficeApp>

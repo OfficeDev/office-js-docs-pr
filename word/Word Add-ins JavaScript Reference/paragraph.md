@@ -2,7 +2,7 @@
 
 Represents a single paragraph in a selection, range, content control, or document body.
 
-_Applies to: Office 2016_
+_Applies to: Word 2016 for Windows_
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
