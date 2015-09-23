@@ -118,7 +118,7 @@ c. Create a file named **Common.css** to store your custom styles and paste in t
         }
 
 	
-	```
+```
 
 d. Create a file to contain the programming logic for the add-in in jQuery. Name the file **Home.js** and paste in the following script.
 	
