@@ -20,12 +20,8 @@ A Word add-in runs inside Word and can interact with the contents of the documen
 You will create a simple web app and the app manifest in this section. The web app will allow you to add boilerplate text into the Word document. Word 2016 is the requirement.
 
 1. Create a folder on your local drive called BoilerplateAddin (for example C:\BoilerplateAddin). Save all of the files created in the following steps into this folder.
-
 2. Create a file named home.html and paste in the code below. 
-
-<!--TODO: Update CDN when it becomes official.-->
-
-    ```html
+```
     <!DOCTYPE html>
     <html>
       <head>
@@ -33,7 +29,7 @@ You will create a simple web app and the app manifest in this section. The web a
         <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
         <title>Boilerplate text app</title>    
         <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
-        <script src="https://eus-appsforoffice.edog.officeapps.live.com/afo/lib/1.1/hosted/office.js" type="text/javascript"></script>
+        <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" type="text/javascript"></script>
         <link href="Styles.css" rel="stylesheet" type="text/css" />
         <script src="Home.js" type="text/javascript"></script>
         </head>
@@ -51,11 +47,9 @@ You will create a simple web app and the app manifest in this section. The web a
             </div>
         </body>
     </html>
-    ```
-
+```
 3. Create a file named home.js and paste in the code below.
-
-    ```javascript
+```javascript
     (function () {
         "use strict";
 
@@ -148,9 +142,7 @@ You will create a simple web app and the app manifest in this section. The web a
         }    
     })();
     ```
-
 4. Create an XML file named BoilerplateManifext.xml and paste in the code below.
-
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
         <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
@@ -169,11 +161,8 @@ You will create a simple web app and the app manifest in this section. The web a
             <Permissions>ReadWriteDocument</Permissions>
         </OfficeApp>
      ```
-
 5. Generate a GUID and replace the value in the <code>OfficeApp/Id</code> element with your GUID.
-
 6. Save all the files. You’ve now written your first Word add-in. 
-
 7. Create a shared folder (for example, \\MyShare\boilerplate) and copy home.js, home.html, and BoilerplateManifext.xml to that location. 
 8. Edit the <code>SourceLocation</code> element in BoilerplateManifext.xml so that it points to the shared folder location for home.html. 
 
