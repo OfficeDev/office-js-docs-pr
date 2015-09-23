@@ -11,10 +11,12 @@ You’ll start by creating a web app using HTML and JQuery. Then you'll create a
 
 
 ### Code it
-1.	Create a folder on your local drive named QuarterlySalesReport (for example, C:\QuarterlySalesReport). Save all of the files created in the following steps into this folder.
 
-2.  Create the HTML page that will load into the task pane add-in. Name the file **Home.html** and paste in the code below.
-	```html
+a. Create a folder on your local drive named QuarterlySalesReport (for example, C:\QuarterlySalesReport). Save all of the files created in the following steps into this folder.
+
+b. Create the HTML page that will load into the task pane add-in. Name the file **Home.html** and paste in the code below.
+
+```html
 	
 	<!DOCTYPE html>
 	<html>
@@ -42,10 +44,13 @@ You’ll start by creating a web app using HTML and JQuery. Then you'll create a
 		            <button class="ms-Button" id="load-data-and-create-chart">Click me!</button>
 		    </div>
 		</body>
-</html>
-	```  
-3.  Create a file named **Styles.css** to store your custom styles and paste in the code below.
-	```css
+</html>	
+
+```  
+
+c. Create a file named **Styles.css** to store your custom styles and paste in the code below.
+
+```css
 	#content-header {
 		    background: #2a8dd4;
 		    color: #fff;
@@ -71,7 +76,7 @@ You’ll start by creating a web app using HTML and JQuery. Then you'll create a
 	
 	```
 
-4.  Create a file to contain the programming logic for the add-in in jQuery. Name the file **Home.js** and paste in the following script.
+d. Create a file to contain the programming logic for the add-in in jQuery. Name the file **Home.js** and paste in the following script.
 	
 ```js
     
@@ -146,7 +151,7 @@ You’ll start by creating a web app using HTML and JQuery. Then you'll create a
 	})();
 ```
 
-    5.  Create an XML manifest file to specify where your web app is located and how you want it to appear in Excel. Name the file **QuarterlySalesReportManifest.xml** and paste the following XML into the file.
+e. Create an XML manifest file to specify where your web app is located and how you want it to appear in Excel. Name the file **QuarterlySalesReportManifest.xml** and paste the following XML into the file.
     
 	```xml
 	<?xml version="1.0" encoding="UTF-8"?>
@@ -168,9 +173,9 @@ You’ll start by creating a web app using HTML and JQuery. Then you'll create a
 	</OfficeApp>
 	```
 
-    6.  Generate a GUID using an online generator of your choice. Then, replace the value in the **<Id>** tag shown in the previous step with that GUID.
+f.  Generate a GUID using an online generator of your choice. Then, replace the value in the **<Id>** tag shown in the previous step with that GUID. 
 
-    7.	Save all the files. You’ve now written your first Excel add-in. 
+g.	Save all the files. You’ve now written your first Excel add-in. 
 
 ### Try it out
 
