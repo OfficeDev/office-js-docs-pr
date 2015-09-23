@@ -2,9 +2,9 @@
 
 _Applies to: Excel 2016, Office 2016_
 
-Following sections provide important programming details related to Excel APIs.
+This topic covers the fundamentals of using the JavaScript APIs to build add-ins in Excel 2016.
 
-* [The Basics](#the-basics)
+* [The basics](#the-basics)
 * [Properties and Relations Selection](#properties-and-relations-selection)
 * [Document Binding](#null-input)
 * [Reference Binding](#null-input)
@@ -18,9 +18,9 @@ Following sections provide important programming details related to Excel APIs.
 
 For the detailed specifications to Excel JavaScript APIs see the [reference](excel-add-ins-javascript-reference.md) page.
 
-### The Basics
+### The basics
 
-This section introduces three key concepts to help get started with the Excel API. Namely, RequestContext, sync, run and load statements.  
+In this section, get a brief introduction to the key concepts that are fundamental to using the APIs, such as RequestContext, sync(), run(), and load().
 
 #### RequestContext
 The RequestContext object facilitates requests to the Excel application. Since the Office add-in and the Excel application run in two different processes, request context is required to get access to Excel and related objects such as worksheets, tables, etc. from the add-in. 
@@ -342,4 +342,5 @@ Explore other resources to learn more.
 
 * [Build your first Excel Add-in](build-your-first-excel-add-in.md)
 * [Snippet Explorer for Excel](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel)
-* [Excel add-ins code samples](excel-add-ins-code-samples.md) 
+* [Excel add-ins code samples](excel-add-ins-code-samples.md)
+* [Excel Add-ins JavaScript API Reference](excel-add-ins-javascript-reference.md)
