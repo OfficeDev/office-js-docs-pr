@@ -19,8 +19,10 @@ A Word add-in runs inside Word and can interact with the contents of the documen
 ### Set it up
 You will create a simple web app and the app manifest in this section. The web app will allow you to add boilerplate text into the Word document. Word 2016 is the requirement.
 
-1. Create a folder on your local drive called BoilerplateAddin (for example C:\BoilerplateAddin). Save all of the files created in the following steps into this folder.
-2. Create a file named home.html and paste in the code below. 
+1) Create a folder on your local drive called BoilerplateAddin (for example C:\BoilerplateAddin). Save all of the files created in the following steps into this folder.
+<br>
+2) Create a file named home.html and paste in the code below.
+
 ```
     <!DOCTYPE html>
     <html>
@@ -48,7 +50,9 @@ You will create a simple web app and the app manifest in this section. The web a
         </body>
     </html>
 ```
-3. Create a file named home.js and paste in the code below.
+
+3) Create a file named home.js and paste in the code below.
+
 ```javascript
     (function () {
         "use strict";
@@ -141,9 +145,10 @@ You will create a simple web app and the app manifest in this section. The web a
             });
         }    
     })();
-    ```
-4. Create an XML file named BoilerplateManifext.xml and paste in the code below.
-    ```xml
+```
+
+4) Create an XML file named BoilerplateManifext.xml and paste in the code below.
+```xml
     <?xml version="1.0" encoding="UTF-8"?>
         <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
             <Id>2b88100c-656e-4bab-9f1e-f6731d86e464</Id>
@@ -160,11 +165,14 @@ You will create a simple web app and the app manifest in this section. The web a
             </DefaultSettings>
             <Permissions>ReadWriteDocument</Permissions>
         </OfficeApp>
-     ```
-5. Generate a GUID and replace the value in the <code>OfficeApp/Id</code> element with your GUID.
-6. Save all the files. You’ve now written your first Word add-in. 
-7. Create a shared folder (for example, \\MyShare\boilerplate) and copy home.js, home.html, and BoilerplateManifext.xml to that location. 
-8. Edit the <code>SourceLocation</code> element in BoilerplateManifext.xml so that it points to the shared folder location for home.html. 
+```
+
+5) Generate a GUID and replace the value in the <code>OfficeApp/Id</code> element with your GUID.
+<br>
+6) Save all the files. You’ve now written your first Word add-in. 
+<br>
+7) Create a shared folder (for example, \\MyShare\boilerplate) and copy home.js, home.html, and BoilerplateManifext.xml to that location.<br>
+8) Edit the <code>SourceLocation</code> element in BoilerplateManifext.xml so that it points to the shared folder location for home.html. 
 
 At this point, you have your first add-in deployed. Now you need to let Word know where to find the add-in.
 

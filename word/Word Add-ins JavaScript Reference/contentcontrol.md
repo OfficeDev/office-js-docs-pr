@@ -38,7 +38,7 @@ _See property access [examples.](#property-access-examples)_
 |[delete(keepContent: bool)](#deletekeepcontent-bool)|void|Deletes the content control and its content. If keepContent is set to true, the content is not deleted.|
 |[getHtml()](#gethtml)|string|Gets the HTML representation of the content control object.|
 |[getOoxml()](#getooxml)|string|Gets the Office Open XML (OOXML) representation of the content control object.|
-|[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location.  A break can only be inserted into the main document body. The insertLocation value can be 'Before', 'After', 'Start' or 'End'.|
+|[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location. A break can only be inserted into objects that are contained within the main document body, except if it is a line break which can be inserted into any body object. The insertLocation value can be 'Before', 'After', 'Start' or 'End'.|
 |[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Inserts a document into the current content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
 |[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts HTML into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
 |[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts OOXML into the content control at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.|
@@ -264,7 +264,7 @@ Word.run(function (context) {
 ```
 
 ### insertBreak(breakType: BreakType, insertLocation: InsertLocation)
-Inserts a break at the specified location. The insertLocation value can be 'Before', 'After', 'Start' or 'End'.
+Inserts a break at the specified location. A break can only be inserted into objects that are contained within the main document body, except if it is a line break which can be inserted into any body object. The insertLocation value can be 'Before', 'After', 'Start' or 'End'.
 
 #### Syntax
 ```js
@@ -281,7 +281,7 @@ contentControlObject.insertBreak(breakType, insertLocation);
 void
 
 #### Additional details
-You can not insert a break in headers, footers, footnotes, endnotes, comments, and textboxes. 
+With the exception of line breaks, you can not insert a break into objects contained within headers, footers, footnotes, endnotes, comments, and textboxes.  
 
 #### Examples
 ```js

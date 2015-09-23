@@ -37,7 +37,7 @@ _See property access [examples.](#property-access-examples)_
 |[delete()](#delete)|void|Deletes the paragraph and its content from the document.|
 |[getHtml()](#gethtml)|string|Gets the HTML representation of the paragraph object.|
 |[getOoxml()](#getooxml)|string|Gets the Office Open XML (OOXML) representation of the paragraph object.|
-|[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location.  A break can only be inserted into the main document body. The insertLocation value can be 'Start' or 'End'.|
+|[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location. A break can only be inserted into paragraphs that are contained within the main document body, except if it is a line break which can be inserted into any body object. The insertLocation value can be 'Start' or 'End'.|
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the paragraph object with a rich text content control.|
 |[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Inserts a document into the current paragraph at the specified location. The insertLocation value can be 'Start' or 'End'.|
 |[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts HTML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
@@ -240,7 +240,7 @@ Word.run(function (context) {
 ```
 
 ### insertBreak(breakType: BreakType, insertLocation: InsertLocation)
-Inserts a break at the specified location. The insertLocation value can be 'Start' or 'End'.
+Inserts a break at the specified location. A break can only be inserted into paragraphs that are contained within the main document body, except if it is a line break which can be inserted into any body object. The insertLocation value can be 'Start' or 'End'.
 
 #### Syntax
 ```js

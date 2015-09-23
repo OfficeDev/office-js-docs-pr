@@ -27,7 +27,7 @@ _See property access [examples.](#property-access-examples)_
 |[delete()](#delete)|void|Deletes the range and its content from the document.|
 |[getHtml()](#gethtml)|string|Gets the HTML representation of the range object.|
 |[getOoxml()](#getooxml)|string|Gets the OOXML representation of the range object.|
-|[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location.  A break can only be inserted into the main document body. The insertLocation value can be 'Replace', 'Before' or 'After'.|
+|[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location. A break can only be inserted into range objects that are contained within the main document body, except if it is a line break which can be inserted into any body object. The insertLocation value can be 'Replace', 'Before' or 'After'.|
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the range object with a rich text content control.|
 |[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Inserts a document into the range at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
 |[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts HTML into the range at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
@@ -200,7 +200,7 @@ Word.run(function (context) {
 ```
 
 ### insertBreak(breakType: BreakType, insertLocation: InsertLocation)
-Inserts a break at the specified location. The insertLocation value can be 'Replace', 'Before' or 'After'.
+Inserts a break at the specified location. A break can only be inserted into range objects that are contained within the main document body, except if it is a line break which can be inserted into any body object. The insertLocation value can be 'Replace', 'Before' or 'After'.
 
 #### Syntax
 ```js
@@ -217,7 +217,7 @@ rangeObject.insertBreak(breakType, insertLocation);
 void
 
 #### Additional details
-You can not insert a break in headers, footers, footnotes, endnotes, comments, and textboxes. 
+With the exception of line breaks, you can not insert a break in header, footer, footnote, endnote, comment, and textbox objects. 
 
 #### Examples
 ```js
