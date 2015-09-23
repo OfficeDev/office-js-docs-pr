@@ -507,7 +507,7 @@ bodyObject.search(searchText, searchOptions);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |searchText|string|Required. The search text.|
-|searchOptions|ParamTypeStrings.SearchOptions|Optional. Optional. Options for the search.|
+|[searchOptions](searchoptions.md)|ParamTypeStrings.SearchOptions|Optional. Options for the search.|
 
 #### Returns
 [SearchResultCollection](searchresultcollection.md)
