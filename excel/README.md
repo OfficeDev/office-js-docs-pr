@@ -7,8 +7,9 @@ Welcome to the Excel JavaScript API documentation. Here you can find everything 
 Explore the following resources to learn more. 
 
 * [Build your first Excel Add-in](build-your-first-excel-add-in.md)
-* [Excel Add-ins programming overview](excel-add-ins-programming-overview.md)
 * [Excel Add-ins JavaScript API Reference](excel-add-ins-javascript-reference.md)
+* [Excel Add-ins programming overview](excel-add-ins-programming-overview.md)
+
 
 ## Try it out
 

@@ -1,92 +1,17 @@
-# NamedItemCollection Object (JavaScript API for Excel)
+# NamedItem Collection
+A collection of all the nameditem objects that are part of the workbook. 
 
-_Applies to: Excel 2016, Office 2016_
-
-A collection of all the nameditem objects that are part of the workbook.
-
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|items|[NamedItem[]](nameditem.md)|A collection of namedItem objects. Read-only.|
-
-_See property access [examples.](#property-access-examples)_
-
-## Relationships
-None
-
-
-## Methods
-
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[getItem(name: string)](#getitemname-string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
-
-## Method Details
-
-### getItem(name: string)
-Gets a nameditem object using its name
-
-#### Syntax
-```js
-namedItemCollectionObject.getItem(name);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|name|string|nameditem name.|
-
-#### Returns
-[NamedItem](nameditem.md)
-
-#### Examples
-
-```js
-Excel.run(function (ctx) { 
-	var nameditem = ctx.workbook.names.getItem(wSheetName);
-	nameditem.load(type);
-	return ctx.sync().then(function() {
-			Console.log(nameditem.type);
-	});
-});
-```
-
-```js
-Excel.run(function (ctx) { 
-	var nameditem = ctx.workbook.names.getItemAt(0);
-	nameditem.load(name);
-	return ctx.sync().then(function() {
-			Console.log(nameditem.name);
-	});
-});
-```### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
-
-#### Syntax
-```js
-object.load(param);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
-
-#### Returns
-void
-
-	
-### Property access examples
+### Getter 
 
 ```js
 Excel.run(function (ctx) { 
 	var nameditems = ctx.workbook.names;
-	nameditems.load(items);
+	nameditems.load('items');
 	return ctx.sync().then(function() {
 		for (var i = 0; i < nameditems.items.length; i++)
 		{
-			Console.log(nameditems.items[i].name);
-			Console.log(nameditems.items[i].index);
+			console.log(nameditems.items[i].name);
+			console.log(nameditems.items[i].index);
 		}
 	});
 });
@@ -97,11 +22,33 @@ Get the number of nameditems.
 ```js
 Excel.run(function (ctx) { 
 	var nameditems = ctx.workbook.names;
-	nameditems.load(count);
+	nameditems.load('count');
 	return ctx.sync().then(function() {
-		Console.log("nameditems: Count= " + nameditems.count);
+		console.log("nameditems: Count= " + nameditems.count);
 	});
 });
 
 ```
 
+### getItem(name: string)
+
+```js
+Excel.run(function (ctx) { 
+	var nameditem = ctx.workbook.names.getItem(wSheetName);
+	nameditem.load('type');
+	return ctx.sync().then(function() {
+			console.log(nameditem.type);
+	});
+});
+```
+### getItemAt(index: number)
+
+```js
+Excel.run(function (ctx) { 
+	var nameditem = ctx.workbook.names.getItemAt(0);
+	nameditem.load('name');
+	return ctx.sync().then(function() {
+			console.log(nameditem.name);
+	});
+});
+```

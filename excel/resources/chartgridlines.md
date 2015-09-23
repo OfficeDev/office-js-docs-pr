@@ -1,46 +1,6 @@
-# ChartGridlines Object (JavaScript API for Excel)
+# Chart Gridlines
 
-_Applies to: Excel 2016, Office 2016_
-
-Represents major or minor gridlines on a chart axis.
-
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|visible|bool|Boolean value representing if the axis gridlines are visible or not.|
-
-_See property access [examples.](#property-access-examples)_
-
-## Relationships
-| Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|format|[ChartGridlinesFormat](chartgridlinesformat.md)|Represents the formatting of chart gridlines. Read-only.|
-
-## Methods
-
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
-
-## Method Details
-
-### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
-
-#### Syntax
-```js
-object.load(param);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
-
-#### Returns
-void
-
-	
-### Property access examples
+### Getter and setter
 
 Get the `visible` of Major Gridlines on value axis of Chart1
 
@@ -48,9 +8,9 @@ Get the `visible` of Major Gridlines on value axis of Chart1
 Excel.run(function (ctx) { 
 	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 	var majGridlines = chart.axes.valueaxis.majorGridlines;
-	majGridlines.load(visible);
+	majGridlines.load('visible');
 	return ctx.sync().then(function() {
-			Console.log(majGridlines.visible);
+			console.log(majGridlines.visible);
 	});
 });
 
@@ -63,7 +23,7 @@ Excel.run(function (ctx) {
 	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 	chart.axes.valueaxis.majorgridlines.visible = true;
 	return ctx.sync().then(function() {
-			Console.log("Axis Gridlines Added ");
+			console.log("Axis Gridlines Added ");
 	});
 });
 ```

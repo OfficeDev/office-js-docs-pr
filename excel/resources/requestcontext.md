@@ -32,20 +32,17 @@ void
 
 ##### Examples
 
-The following example shows how to read and copy the values from Range A1:A2 to B1:B2.
+The following example loading of values property from one range and copying them to another range.
 
 ```js
 Excel.run(function (ctx) { 
 	var range = ctx.workbook.worksheets.getActiveWorksheet().getRange("A1:A2");
-	ctx.load(range, {"select": "address, values", "expand" : "range/format"});
+	ctx.load(range, "values");
 	return ctx.sync().then(function() {
 		var myvalues=range.values;
 		ctx.workbook.worksheets.getActiveWorksheet().getRange("B1:B2").values = myvalues;
-	});
-}).then(function() {
-		console.log(range.address);
 		console.log(range.values);
-		console.log(range.format.wrapText);
+	});
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {

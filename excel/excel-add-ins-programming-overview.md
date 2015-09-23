@@ -14,6 +14,9 @@ Following sections provide important programming details related to Excel APIs.
 * [Unbounded-Range](#unbounded-range)
 * [Large-Range](#large-range)
 * [Single Input Copy](#single-input-copy)
+* [Error Messages](#error-messages)
+
+For the detailed specifications to Excel JavaScript APIs see the [reference](excel-add-ins-javascript-reference.md) page.
 
 ### The Basics
 
@@ -26,7 +29,7 @@ The RequestContext object facilitates requests to the Excel application. Since t
 
 The sync() method available on the request context synchronizes the state between JavaScript proxy objects and real objects in Office by executing instructions queued on the context and retrieving properties of loaded Office objects for use in your code.  This method returns a promise, which is resolved when the synchronization is complete.
 
-#### Excel.run(function(context) {batch})
+#### Excel.run(function(context) { batch })
 
 Executes a batch script that performs actions on the Excel object model. When the promise is resolved, any tracked objects that were automatically allocated during the execution will be released. 
 
@@ -35,18 +38,18 @@ Batch: A function that takes in RequestContext and returns a promise (typically,
 
 ##### Example
 
-The following example shows how to write values from an array to a range. First, RequestContext() is created to get access to the workbook. Then, a worksheet is added. Range A1:B2 on the sheet is retrieved afterward. Finally, we assign the values stored in the array to this range. All these commands are queued and will run when ctx.executeAsync() is called.  executeAsync() returns a promise that can be used to chain it with other operations.
+The following example shows how to write values from an array to a range. First, request context is created to get access to the workbook. Then the range A1:B2 on the current worksheet is retrieved. Finally, the array values are assigned to range values. All these commands are queued and will run when ctx.sync() is called. The sync() method returns a promise that can be used to chain it with other operations.
 
 ```js
 Excel.run(function (ctx) { 
-	var sheet = ctx.workbook.worksheets.add();
+	var sheet = ctx.workbook.worksheets.getActiveWorksheet();
 	var values = [
 				 ["Type", "Estimate"],
 				 ["Transportation", 1670]
 				 ];
 	var range = sheet.getRange("A1:B2");
 	range.values = values;
-	//Statements queued above will not be executed until the executeAsync() is called. 
+	//Statements queued above will not be executed until the sync() is called. 
 	return ctx.sync().then(function() {
 			console.log("Done");
 	});
@@ -59,7 +62,7 @@ Excel.run(function (ctx) {
 ```
 
 #### load()
-Load method is used to fill in the Excel proxy objects created in the add-in JavaScript layer. When trying to retrieve an object, for example a worksheet, a local proxy object is created first in the JavaScript layer. Such an object can be used to queue up setting of its properties and invoking methods. However, for reading object properties or relations, the load() method and executeAsync() needs to be invoked first. Load method takes in the parameters and relations that need to be loaded when executeAsync is called. 
+Load method is used to fill in the Excel proxy objects created in the add-in JavaScript layer. When trying to retrieve an object, for example a worksheet, a local proxy object is created first in the JavaScript layer. Such an object can be used to queue up setting of its properties and invoking methods. However, for reading object properties or relations, the load() method and sync() needs to be invoked first. Load method takes in the parameters and relations that need to be loaded when sync() method is called. 
 
 ##### Syntax
 
@@ -74,7 +77,7 @@ Where,
 * loadOption specifies selection, expansion, top, and skip options. See [loadOption](resources/loadoption.md) object for details.
 
 ##### Example
-The following example shows how to copy the values from Range A1:A2 to B1:B2 by using load() method on the range object.
+The following example shows how to copy the values from Range A1:A2 to B1:B2 of the active worksheet by using load() method on the range object. Be sure to add some values to A1:A2 to see results. 
 
 ```js
 Excel.run(function (ctx) { 
@@ -95,14 +98,6 @@ Excel.run(function (ctx) {
 })
 ```
 
-#### Summary
-1.	Getting a RequestContext is the first step to interact with Excel.
-2.	All JavaScript objects are local proxy objects.  Any method invocation or setting of properties, queues up the commands in JavaScript, but does not submit them until executeAsync() is called. 
-3.	Load is a special type of command for retrieval of properties. Properties can only be accessed after invoking executeAsync(). 
-4.	For performance reasons, avoid loading objects without specifying individual properties that will be used.
-
-[top](#programming-notes)
-
 ### Properties and Relations Selection 
 
 * By default load() selects all scalar/complex properties of the object which is being loaded. The relations are not loaded by default.  Exceptions:  any binary, XML, etc properties are not returned. 
@@ -122,45 +117,21 @@ object.load (["var1", "relation1/var2"]);
 
 #### Examples
 
-```js
-Excel.run(function (ctx) { 
-	var sheetName = "Sheet1";
-	var rangeAddress = "A1:B2";
-	var myRange = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-	//load statement below loads the address, values, and numberFormat properties of the Range and then expands on the format, format/background, entireRow relations
-	myRange.load (["address", "values", "numberFormat", "format", "format/background", "entireRow"]);
-	return ctx.sync().then(function() {
-		console.log (myRange.address); //ok
-		console.log (myRange.cellCount); //not-ok
-		console.log (myRange.format.wrapText); //ok
-		console.log (myRange.format.background.color); //ok
-		console.log (myRange.format.font.color); //not-ok
-		console.log (myRange.entireRow.address); //ok
-		console.log (myRange.entireColumn.address); //not-ok
-	});
-}).then(function() {
-	  console.log("done");
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-})	
-```
-Load statement below loads all the properties of the Range and then expands on the format, format/background, entireRow relations.  
+Load statement below loads all the properties of the Range and then expands on the format, and format/fill.  
  
 ```js
 Excel.run(function (ctx) { 
 	var sheetName = "Sheet1";
 	var rangeAddress = "A1:B2"; 
-	myRange.load(["address", "format", "format/background", "entireRow" ]);
+	var myRange = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	
+	myRange.load(["address", "format/*", "format/fill", "entireRow" ]);
 	return ctx.sync().then(function() {
 		console.log (myRange.address); //ok
 		console.log (myRange.format.wrapText); //ok
-		console.log (myRange.format.background.color); //ok
-		console.log (myRange.format.font.color); //not-ok
-		console.log (myRange.entireRow.address); //ok
-		console.log (myRange.entireColumn.address); //not-ok
+		console.log (myRange.format.fill.color); //ok
+		//console.log (myRange.format.font.color); //not-ok
+
 	});
 }).then(function() {
 	  console.log("done");
@@ -199,7 +170,7 @@ In the set request below, only some parts of the Range Number Format is set whil
 
 Following is not valid either as null is not a valid color value. 
 ```
- range.format.background.color =  null;
+ range.format.fill.color =  null;
 ```
 
 ### Null-Response
@@ -250,23 +221,10 @@ Setting cell level properties (such as values, numberFormat, etc.) on unbounded 
 Example: The following is not a valid update request because the requested range is unbounded. 
 
 ```js
-Excel.run(function (ctx) { 
-	var sheetName = 'Sheet1';
-	var rangeAddress = 'A:B';
-	var ctx = new Excel.ExcelClientContext();
-	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
-	var range = worksheet.getRange(rangeAddress);
+...
+	var range = ctx.workbook.worksheets.getActiveWorksheet().getRange("A:B");
 	range.values = 'Due Date';
-	range.load('text');
-	return ctx.sync().then(function() {
-		Console.log(range.text);
-	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-})
+...
 ```
 
 When such a Range is update operation is attempted, the API returns the an error.
@@ -293,13 +251,12 @@ Following request updates selected range with the a text of "Due Date". Note tha
 Excel.run(function (ctx) { 
 	var sheetName = 'Sheet1';
 	var rangeAddress = 'A1:A20';
-	var ctx = new Excel.ExcelClientContext();
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
 	range.values = 'Due Date';
 	range.load('text');
 	return ctx.sync().then(function() {
-		Console.log(range.text);
+		console.log(range.text);
 	});
 }).catch(function(error) {
 		console.log("Error: " + error);
@@ -311,19 +268,17 @@ Excel.run(function (ctx) {
 
 Following request updates selected range with date of '3/11/2015'.
 
-
 ```js
 Excel.run(function (ctx) { 
 	var sheetName = 'Sheet1';
 	var rangeAddress = 'A1:A20';
-	var ctx = new Excel.ExcelClientContext();
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
 	range.numberFormat = 'm/d/yyyy';
 	range.values = '3/11/2015';
 	range.load('text');
 	return ctx.sync().then(function() {
-		Console.log(range.text);
+		console.log(range.text);
 	});
 }).catch(function(error) {
 		console.log("Error: " + error);
@@ -338,13 +293,13 @@ Following request updates selected range with a formula of that will be applied 
 Excel.run(function (ctx) { 
 	var sheetName = 'Sheet1';
 	var rangeAddress = 'A1:A20';
-	var ctx = new Excel.ExcelClientContext();
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
-	range.formula = '=DAYS(B15,42060)';
-	range.load'(text');
+	range.numberFormat = 'm/d/yyyy';
+	range.values = '3/11/2015';
+	range.load('text');
 	return ctx.sync().then(function() {
-		Console.log(range.text);
+		console.log(range.text);
 	});
 }).catch(function(error) {
 		console.log("Error: " + error);
@@ -355,7 +310,7 @@ Excel.run(function (ctx) {
 ```
 
 
-## Error Messages
+### Error Messages
 
 Errors are returned using an error object that consists of a code and a message. The following table provides a list of possible error conditions that can occur. 
 
@@ -381,4 +336,10 @@ Errors are returned using an error object that consists of a code and a message.
 |InsertDeleteConflict|The insert or delete operation attempted resulted in conflict.|
 |InvalidOperation|The operation attempted is invalid on the object.|
 
-[top](#excel-javascript-apis)
+### Learn more
+
+Explore other resources to learn more. 
+
+* [Build your first Excel Add-in](build-your-first-excel-add-in.md)
+* [Snippet Explorer for Excel](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel)
+* [Excel add-ins code samples](excel-add-ins-code-samples.md) 
