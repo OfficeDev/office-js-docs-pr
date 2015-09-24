@@ -37,7 +37,7 @@ Executes a batch script that performs actions on the Excel object model. When th
 #### load()
 Load method is used to fill in the Excel proxy objects created in the add-in JavaScript layer. When trying to retrieve an object, for example a worksheet, a local proxy object is created first in the JavaScript layer. Such an object can be used to queue up setting of its properties and invoking methods. However, for reading object properties or relations, the load() method and sync() needs to be invoked first. Load method takes in the properties and relations that need to be loaded when sync() method is called. 
 
-##### Syntax
+_Syntax:_
 
 ```js
 object.load(string: properties);
@@ -47,7 +47,7 @@ object.load({loadOption});
 Where, 
 
 * `properties` is the list of properties and/or relationship names to be loaded specified as comma delimited strings or array of names. See .load() methods under each object for details.
-* loadOption specifies selection, expansion, top, and skip options. See [loadOption](resources/loadoption.md) object for details.
+* `loadOption` specifies selection, expansion, top, and skip options. See [loadOption](resources/loadoption.md) object for details.
 
 ##### Example
 
@@ -159,8 +159,6 @@ Excel.run(function (ctx) {
 		}
 });
 ```
-
-
 
 ### Null-Input
 
