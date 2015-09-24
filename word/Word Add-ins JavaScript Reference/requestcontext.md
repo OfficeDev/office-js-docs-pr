@@ -82,7 +82,7 @@ None
 #### Returns
 Promise object.
 
-##### Examples
+#### Examples
 
 The following example shows the sync method used twice: 1) load the content controls collection with the text property for each content control, and 2) clearing the contents of the first content control in the collection.
 

@@ -44,7 +44,6 @@ None
 #### Returns
 string
 
-#### Examples
 ### insertContentControl()
 Wraps the inline picture with a rich text content control.
 
@@ -59,7 +58,6 @@ None
 #### Returns
 [ContentControl](contentcontrol.md)
 
-#### Examples
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -76,4 +74,4 @@ object.load(param);
 #### Returns
 void
 
-#### Examples
+
