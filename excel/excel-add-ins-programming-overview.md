@@ -32,7 +32,7 @@ var ctx = new Excel.RequestContext();
 
 #### Proxy Objects 
 
-The Excel Javascript objects declared and used in an add-in are proxy objects for the real objects in a Excel document. All actions taken on proxy objects are not realized in Excel, and the state of the Word document is not realized in the proxy objects, until the document state has been synchronized. The document state is synchronized when context.sync() is run (see below). 
+The Excel Javascript objects declared and used in an add-in are proxy objects for the real objects in a Excel document. All actions taken on proxy objects are not realized in Excel, and the state of the Excel document is not realized in the proxy objects, until the document state has been synchronized. The document state is synchronized when context.sync() is run (see below). 
 
 For example, the local JavaScript object `selectedRange` is declared to reference the selected range. This can be used to queue up setting of its properties and invoking methods. The actions on such objects are not realized until the sync() method is run. 
 
