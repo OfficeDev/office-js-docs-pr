@@ -31,7 +31,6 @@ We've been working on a Snippet Explorer to let you browse through code snippets
 
 **[Excel-Add-in-JS-RangeHighlighter](https://github.com/OfficeDev/Excel-Add-in-JS-RangeHighlighter)** : A task pane add-in that shows how to do common operations using the Range API in Excel 2016.
 
-We also a Snippet Explorer to let you browse through code snippets for common scenarios and learn how the new APIs work. Explore them [here](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel).
 
 ## Give us your feedback
 
