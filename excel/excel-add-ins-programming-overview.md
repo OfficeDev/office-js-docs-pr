@@ -373,6 +373,6 @@ Errors are returned using an error object that consists of a code and a message.
 Explore other resources to learn more. 
 
 * [Build your first Excel Add-in](build-your-first-excel-add-in.md)
-* [Snippet Explorer for Excel](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel)
+* [Code snippet explorer](https://github.com/OfficeDev/office-js-snippet-explorer)
 * [Excel add-ins code samples](excel-add-ins-code-samples.md)
 * [Excel Add-ins JavaScript API Reference](excel-add-ins-javascript-reference.md)
