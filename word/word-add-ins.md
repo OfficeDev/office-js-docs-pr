@@ -17,7 +17,7 @@ A Word add-in runs inside Word and can interact with the contents of the documen
 >**Word add-in = manifest.xml + web app**
 
 ### Set it up
-You will create a simple web app and the app manifest in this section. The web app will allow you to add boilerplate text into the Word document. Word 2016 is the requirement.
+You will create a simple web app and the app manifest in this section. The web app will allow you to add boilerplate text into the Word document. 
 
 1) Create a folder on your local drive called BoilerplateAddin (for example C:\BoilerplateAddin). Save all of the files created in the following steps into this folder.
 <br>
@@ -83,8 +83,6 @@ You will create a simple web app and the app manifest in this section. The web a
                 return ctx.sync().then(function () {
                     console.log('Added a quote from Ralph Waldo Emerson.');
                 });  
-
-
             })
             .catch(function (error) {
                 console.log('Error: ' + JSON.stringify(error));
@@ -146,10 +144,12 @@ You will create a simple web app and the app manifest in this section. The web a
     })();
 ```
 
-4) Create an XML file named BoilerplateManifext.xml and paste in the code below. This is the manifest file that Word uses to discover properties about an add-in such as its location or display name.
+4) Create an XML file named BoilerplateManifext.xml and paste in the code below. This is the manifest file that Word uses to discover information about an add-in such as its location or display name.
 ```xml
     <?xml version="1.0" encoding="UTF-8"?>
-        <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+        <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                   xsi:type="TaskPaneApp">
             <Id>2b88100c-656e-4bab-9f1e-f6731d86e464</Id>
             <Version>1.0.0.0</Version>
             <ProviderName>Microsoft</ProviderName>
@@ -170,7 +170,7 @@ You will create a simple web app and the app manifest in this section. The web a
 <br>
 6) Save all the files. You’ve now written your first Word add-in. 
 <br>
-7) Create a shared folder (for example, \\MyShare\boilerplate) and copy home.js, home.html, and BoilerplateManifext.xml to that location.<br>
+7) Create a shared folder (for example, \\\MyShare\boilerplate) and copy home.js, home.html, and BoilerplateManifext.xml to that location.<br>
 8) Edit the <code>SourceLocation</code> element in BoilerplateManifext.xml so that it points to the shared folder location for home.html. 
 
 At this point, you have your first add-in deployed. Now you need to let Word know where to find the add-in.
