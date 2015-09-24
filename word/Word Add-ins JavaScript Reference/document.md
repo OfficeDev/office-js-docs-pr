@@ -2,7 +2,7 @@
 
 The Document object is the top level object. A Document object contains one or more sections, content controls, and the body that contains the contents of the document.
 
-_Applies to: Office 2016_
+_Applies to: Word 2016 for Windows_
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|

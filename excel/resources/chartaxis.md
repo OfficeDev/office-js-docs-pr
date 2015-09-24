@@ -44,11 +44,6 @@ object.load(param);
 
 #### Returns
 void
-
-#### Examples
-```js
-
-```
 ### Property access examples
 Get the `maximum` of Chart Axis from Chart1
 
@@ -60,6 +55,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log(axis.maximum);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -75,5 +75,10 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log("Axis Settings Changed");
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```

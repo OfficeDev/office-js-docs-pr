@@ -2,7 +2,7 @@
 
 Contains a collection of [inlinePicture](inlinePicture.md) objects.
 
-_Applies to: Office 2016_
+_Applies to: Word 2016 for Windows_
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
@@ -39,7 +39,7 @@ inlinePictureCollectionObject.getItem(index);
 #### Returns
 [InlinePicture](inlinepicture.md)
 
-#### Examples
+
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -56,4 +56,4 @@ object.load(param);
 #### Returns
 void
 
-#### Examples
+

@@ -50,6 +50,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log("Point Border Color Changed");
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -66,11 +71,6 @@ object.load(param);
 
 #### Returns
 void
-
-#### Examples
-```js
-
-```
 ### Property access examples
 
 Get the names of points in the points collection
@@ -82,6 +82,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log("Points Collection loaded");
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -94,5 +99,10 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log("points: Count= " + pointsCollection.count);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```

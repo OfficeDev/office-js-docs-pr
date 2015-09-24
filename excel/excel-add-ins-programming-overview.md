@@ -16,40 +16,65 @@ This topic covers the fundamentals of using the JavaScript APIs to build add-ins
 * [Single Input Copy](#single-input-copy)
 * [Error Messages](#error-messages)
 
-For the detailed specifications to Excel JavaScript APIs see the [reference](excel-add-ins-javascript-reference.md) page.
+For detailed specifications of the Excel JavaScript APIs read the [reference](excel-add-ins-javascript-reference.md) page.
 
 ### The basics
 
 In this section, get a brief introduction to the key concepts that are fundamental to using the APIs, such as RequestContext, sync(), run(), and load().
 
 #### RequestContext
+
 The RequestContext object facilitates requests to the Excel application. Since the Office add-in and the Excel application run in two different processes, request context is required to get access to Excel and related objects such as worksheets, tables, etc. from the add-in. 
 
 #### sync()
 
-The sync() method available on the request context synchronizes the state between JavaScript proxy objects and real objects in Office by executing instructions queued on the context and retrieving properties of loaded Office objects for use in your code.  This method returns a promise, which is resolved when the synchronization is complete.
+The sync() method available on the request context synchronizes the state between JavaScript proxy objects and real objects in Excel by executing instructions queued on the context and retrieving properties of loaded Office objects for use in your code.  This method returns a promise, which is resolved when the synchronization is complete.
 
 #### Excel.run(function(context) { batch })
 
-Executes a batch script that performs actions on the Excel object model. When the promise is resolved, any tracked objects that were automatically allocated during the execution will be released. 
+Executes a batch script that performs actions on the Excel object model. When the promise is resolved, any tracked objects that were automatically allocated during the execution will be released. The run method takes in RequestContext and returns a promise (typically, just the result of ctx.sync()). 
 
-Batch: A function that takes in RequestContext and returns a promise (typically, just the result of ctx.sync()). The RequestContext parameter facilitates requests to the Excel application. Since the Office add-in and the Excel application run in two different processes, the request context is required to get access to the Excel object model from the add-in.
+#### load()
+Load method is used to fill in the Excel proxy objects created in the add-in JavaScript layer. When trying to retrieve an object, for example a worksheet, a local proxy object is created first in the JavaScript layer. Such an object can be used to queue up setting of its properties and invoking methods. However, for reading object properties or relations, the load() method and sync() needs to be invoked first. Load method takes in the properties and relations that need to be loaded when sync() method is called. 
 
+_Syntax:_
+
+```js
+object.load(string: properties);
+//or
+object.load({loadOption});
+```
+Where, 
+
+* `properties` is the list of properties and/or relationship names to be loaded specified as comma delimited strings or array of names. See .load() methods under each object for details.
+* `loadOption` specifies selection, expansion, top, and skip options. See [loadOption](resources/loadoption.md) object for details.
 
 ##### Example
 
-The following example shows how to write values from an array to a range. First, request context is created to get access to the workbook. Then the range A1:B2 on the current worksheet is retrieved. Finally, the array values are assigned to range values. All these commands are queued and will run when ctx.sync() is called. The sync() method returns a promise that can be used to chain it with other operations.
+The following example puts the above concepts together. The sample code shows writing of values from an array to a range object. 
+The Exce.run() contains the batch of instructions. As part of this batch, the range A1:B2 on the current worksheet is retrieved. Finally, the array values are assigned to range values. All these commands are queued and will be run when ctx.sync() is called. The sync() method returns a promise that can be used to chain it with other operations.
 
 ```js
+// Run a batch operation against the Excel object model. Use the context argument to get access to the Excel document.
 Excel.run(function (ctx) { 
+
+	// Create a proxy object for the sheet
 	var sheet = ctx.workbook.worksheets.getActiveWorksheet();
+	// Values to be updated
 	var values = [
 				 ["Type", "Estimate"],
 				 ["Transportation", 1670]
 				 ];
+	// Create a proxy object for the range
 	var range = sheet.getRange("A1:B2");
+
+	// Assign array value to the proxy object's values property.
 	range.values = values;
-	//Statements queued above will not be executed until the sync() is called. 
+	
+	// Queue a commmand to load the text property for the proxy range object.	
+	range.load('text');
+
+	// Synchronizes the state between JavaScript proxy objects and real objects in Excel by executing instructions queued on the context 
 	return ctx.sync().then(function() {
 			console.log("Done");
 	});
@@ -58,35 +83,27 @@ Excel.run(function (ctx) {
 		if (error instanceof OfficeExtension.Error) {
 			console.log("Debug info: " + JSON.stringify(error.debugInfo));
 		}
-})
+});
 ```
-
-#### load()
-Load method is used to fill in the Excel proxy objects created in the add-in JavaScript layer. When trying to retrieve an object, for example a worksheet, a local proxy object is created first in the JavaScript layer. Such an object can be used to queue up setting of its properties and invoking methods. However, for reading object properties or relations, the load() method and sync() needs to be invoked first. Load method takes in the parameters and relations that need to be loaded when sync() method is called. 
-
-##### Syntax
-
-```js
-object.load(properties);
-//or
-object.load({loadOption});
-```
-Where, 
-
-* properties is the list of properties and/or relationship names to be loaded specified as comma delimited strings or array of names. See .load() methods under each object for details.
-* loadOption specifies selection, expansion, top, and skip options. See [loadOption](resources/loadoption.md) object for details.
 
 ##### Example
+
 The following example shows how to copy the values from Range A1:A2 to B1:B2 of the active worksheet by using load() method on the range object. Be sure to add some values to A1:A2 to see results. 
 
 ```js
+// Run a batch operation against the Excel object model. Use the context argument to get access to the Excel document.
 Excel.run(function (ctx) { 
+
+	// Create a proxy object for the range
 	var range = ctx.workbook.worksheets.getActiveWorksheet().getRange("A1:A2");
+
+	// Queue a commmand to load the following properties on the proxy range object.	
 	range.load ("address, values, range/format"); 
-	// same as range.load (["address", "values", "range/format"]); 
+
+	// Synchronizes the state between JavaScript proxy objects and real objects in Excel by executing instructions queued on the context 
 	return ctx.sync().then(function() {
-		var myvalues=range.values;
-		ctx.workbook.worksheets. getActiveWorksheet().getRange("B1:B2").values= myvalues;
+		// Assign the previously loaded values to the new range proxy object. The values will be updated once the following .then() function is invoked. 
+		ctx.workbook.worksheets. getActiveWorksheet().getRange("B1:B2").values= range.values;
 	});
 }).then(function() {
 	  console.log("done");
@@ -95,7 +112,7 @@ Excel.run(function (ctx) {
 		if (error instanceof OfficeExtension.Error) {
 			console.log("Debug info: " + JSON.stringify(error.debugInfo));
 		}
-})
+});
 ```
 
 ### Properties and Relations Selection 
@@ -109,7 +126,7 @@ Excel.run(function (ctx) {
 	* Provide an array of property name strings
 
 ```js	
-object.load  (<var1>,<relation1/var2>);
+object.load  ('<var1>,<relation1/var2>');
 
 // Pass the parameter as an array.
 object.load (["var1", "relation1/var2"]);
@@ -140,10 +157,8 @@ Excel.run(function (ctx) {
 		if (error instanceof OfficeExtension.Error) {
 			console.log("Debug info: " + JSON.stringify(error.debugInfo));
 		}
-})
+});
 ```
-
-
 
 ### Null-Input
 
@@ -263,7 +278,7 @@ Excel.run(function (ctx) {
 		if (error instanceof OfficeExtension.Error) {
 			console.log("Debug info: " + JSON.stringify(error.debugInfo));
 		}
-})
+});
 ```
 
 Following request updates selected range with date of '3/11/2015'.
@@ -285,7 +300,7 @@ Excel.run(function (ctx) {
 		if (error instanceof OfficeExtension.Error) {
 			console.log("Debug info: " + JSON.stringify(error.debugInfo));
 		}
-})
+});
 ```
 Following request updates selected range with a formula of that will be applied across in the CTRL+Enter mode.  
 
@@ -306,7 +321,7 @@ Excel.run(function (ctx) {
 		if (error instanceof OfficeExtension.Error) {
 			console.log("Debug info: " + JSON.stringify(error.debugInfo));
 		}
-})
+});
 ```
 
 

@@ -56,8 +56,12 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log("New Chart Added");
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 
 ### getItem(name: string)
@@ -85,10 +89,16 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log(chart.height);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 
+
+#### Examples
 
 ```js
 Excel.run(function (ctx) { 
@@ -97,10 +107,17 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log(chart.height);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
 
+
+#### Examples
 
 ```js
 Excel.run(function (ctx) { 
@@ -109,6 +126,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log(chart.name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -137,6 +159,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log(chart.name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -155,11 +182,6 @@ object.load(param);
 
 #### Returns
 void
-
-#### Examples
-```js
-
-```
 ### Property access examples
 
 ```js
@@ -173,8 +195,12 @@ Excel.run(function (ctx) {
 			console.log(charts.items[i].index);
 		}
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 
 Get the number of charts
@@ -186,7 +212,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log("charts: Count= " + charts.count);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 

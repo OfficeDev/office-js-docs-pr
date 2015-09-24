@@ -45,11 +45,6 @@ object.load(param);
 
 #### Returns
 void
-
-#### Examples
-```js
-
-```
 ### Property access examples
 
 Make Series Name shown in Datalabels and set the `position` of datalabels to be "top";
@@ -63,6 +58,10 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log("Datalabels Shown");
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```

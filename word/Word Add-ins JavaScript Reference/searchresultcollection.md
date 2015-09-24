@@ -2,7 +2,7 @@
 
 Contains a collection of [range](range.md) objects as a result of a search operation.
 
-_Applies to: Office 2016_
+_Applies to: Word 2016 for Windows_
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
