@@ -86,6 +86,8 @@ Excel.run(function (ctx) {
 ```
 
 
+
+#### Examples
 ```js
 Excel.run(function (ctx) { 
 	var lastPosition = ctx.workbook.bindings.count - 1;
@@ -94,8 +96,12 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log(binding.type); 
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 
 ### getItemAt(index: number)
@@ -123,8 +129,12 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log(binding.type); 
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 
 ### load(param: object)
@@ -142,11 +152,6 @@ object.load(param);
 
 #### Returns
 void
-
-#### Examples
-```js
-
-```
 ### Property access examples
 
 ```js
@@ -160,6 +165,11 @@ Excel.run(function (ctx) {
 			console.log(bindings.items[i].index);
 		}
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 Get the number of bindings
@@ -171,6 +181,10 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log("Bindings: Count= " + bindings.count);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```

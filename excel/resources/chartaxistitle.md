@@ -39,11 +39,6 @@ object.load(param);
 
 #### Returns
 void
-
-#### Examples
-```js
-
-```
 ### Property access examples
 Get the `text` of Chart Axis Title from the value axis of Chart1.
 
@@ -55,6 +50,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log(title.text);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -67,5 +67,10 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log("Axis Title Added ");
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```

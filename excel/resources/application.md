@@ -44,7 +44,12 @@ void
 Excel.run(function (ctx) { 
 	ctx.workbook.application.calculate('Full');
 	return ctx.sync(); 
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 
 ### load(param: object)
@@ -62,11 +67,6 @@ object.load(param);
 
 #### Returns
 void
-
-#### Examples
-```js
-
-```
 ### Property access examples
 ```js
 Excel.run(function (ctx) { 
@@ -75,6 +75,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(application.calculationMode);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 

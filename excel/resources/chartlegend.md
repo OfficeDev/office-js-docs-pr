@@ -40,11 +40,6 @@ object.load(param);
 
 #### Returns
 void
-
-#### Examples
-```js
-
-```
 ### Property access examples
 
 Get the `position` of Chart Legend from Chart1
@@ -57,6 +52,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log(legend.position);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -71,5 +71,10 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log("Legend Shown ");
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ``` 

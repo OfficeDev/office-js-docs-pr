@@ -53,7 +53,12 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(row.index);
 	});
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 ### getItemAt(index: number)
 Gets a row based on its position in the collection.
@@ -80,7 +85,12 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log(tablerow.name);
 	});
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -97,11 +107,6 @@ object.load(param);
 
 #### Returns
 void
-
-#### Examples
-```js
-
-```
 ### Property access examples
 
 ```js
@@ -115,5 +120,10 @@ Excel.run(function (ctx) {
 			console.log(tablerows.items[i].index);
 		}
 	});
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```

@@ -50,7 +50,12 @@ Excel.run(function (ctx) {
 	var rangeFill = range.format.fill;
 	rangeFill.clear();
 	return ctx.sync(); 
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 
 ### load(param: object)
@@ -68,11 +73,6 @@ object.load(param);
 
 #### Returns
 void
-
-#### Examples
-```js
-
-```
 ### Property access examples
 ```js
 Excel.run(function (ctx) { 
@@ -85,8 +85,12 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(rangeFill.color);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 The example below sets fill color. 
 
@@ -97,5 +101,10 @@ Excel.run(function (ctx) {
 	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 	range.format.fill.color = '0000FF';
 	return ctx.sync(); 
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```

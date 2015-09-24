@@ -48,8 +48,15 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log(nameditem.type);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
+
+#### Examples
 
 ```js
 Excel.run(function (ctx) { 
@@ -58,6 +65,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log(nameditem.name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -74,11 +86,6 @@ object.load(param);
 
 #### Returns
 void
-
-#### Examples
-```js
-
-```
 ### Property access examples
 
 ```js
@@ -92,6 +99,11 @@ Excel.run(function (ctx) {
 			console.log(nameditems.items[i].index);
 		}
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -104,7 +116,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log("nameditems: Count= " + nameditems.count);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 

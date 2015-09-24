@@ -40,11 +40,6 @@ object.load(param);
 
 #### Returns
 void
-
-#### Examples
-```js
-
-```
 ### Property access examples
 
 Get the `text` of Chart Title from Chart1.
@@ -57,6 +52,11 @@ var title = chart.title;
 title.load('text');
 return ctx.sync().then(function() {
 		console.log(title.text);
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -72,5 +72,10 @@ chart.title.overlay=true;
 
 return ctx.sync().then(function() {
 		console.log("Char Title Changed");
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```

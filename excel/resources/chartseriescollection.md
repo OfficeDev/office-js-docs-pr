@@ -51,6 +51,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(seriesCollection.items[0].name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -69,11 +74,6 @@ object.load(param);
 
 #### Returns
 void
-
-#### Examples
-```js
-
-```
 ### Property access examples
 Getting the names of series in the series collection.
 
@@ -87,6 +87,11 @@ Excel.run(function (ctx) {
 			console.log(seriesCollection.items[i].name);
 		}
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -99,7 +104,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log("series: Count= " + seriesCollection.count);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 
