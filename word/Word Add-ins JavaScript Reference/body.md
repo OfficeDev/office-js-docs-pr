@@ -35,7 +35,7 @@ _See property access [examples.](#property-access-examples)_
 |[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Start' or 'End'.|
 |[insertText(text: string, insertLocation: InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|Inserts text into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
-|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the body object. The search results are a collection of range objects.|
+|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings-searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the body object. The search results are a collection of range objects.|
 |[select()](#select)|void|Selects the body and navigates the Word UI to it.|
 
 ## Method details
@@ -496,7 +496,7 @@ Word.run(function (context) {
 });
 ```
 ### search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)
-Performs a search with the specified searchOptions on the scope of the body object. The search results are a collection of range objects.
+Performs a search with the specified search options on the scope of the body object. The search results are a collection of range objects.
 
 #### Syntax
 ```js
@@ -520,12 +520,8 @@ Word.run(function (context) {
     // Create a proxy object for the document body.
     var body = context.document.body;
     
-    // Setup the search options.
-    var options = Word.SearchOptions.newObject(context);
-    options.matchCase = false
-
     // Queue a commmand to search the document.
-    var searchResults = context.document.body.search('video', options);
+    var searchResults = context.document.body.search('video', {matchCase: false});
 
     // Queue a commmand to load the results.
     context.load(searchResults, 'text, font');
