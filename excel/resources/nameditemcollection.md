@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 A collection of all the nameditem objects that are part of the workbook.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |items|[NamedItem[]](nameditem.md)|A collection of namedItem objects. Read-only.|

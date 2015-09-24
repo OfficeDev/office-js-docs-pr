@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents a single axis in a chart.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |majorUnit|object|Represents the interval between two major tick marks. Can be set to a numeric value or an empty string.  The returned value is always a number.|

@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents an Excel table.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |id|int|Returns a value that uniquely identifies the table in a given workbook. The value of the identifier remains the same even when the table is renamed. Read-only.|

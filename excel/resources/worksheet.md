@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 An Excel worksheet is a grid of cells. It can contain data, tables, charts, etc.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |id|string|Returns a value that uniquely identifies the worksheet in a given workbook. The value of the identifier remains the same even when the worksheet is renamed or moved. Read-only.|

@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents a row in a table.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |index|int|Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.|

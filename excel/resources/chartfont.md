@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 This object represents the font attributes (font name, font size, color, etc.) for a chart object.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |bold|bool|Represents the bold status of font.|

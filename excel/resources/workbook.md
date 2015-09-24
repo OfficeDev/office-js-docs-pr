@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Workbook is the top level object which contains related workbook objects such as worksheets, tables, ranges, etc.
 
+## Properties
+
 None
 
 ## Relationships

@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Encapsulates the format properties for the chart axis.
 
+## Properties
+
 None
 
 ## Relationships

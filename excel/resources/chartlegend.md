@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents the legend in a chart.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |overlay|bool|Boolean value for whether the chart legend should overlap with the main body of the chart.|

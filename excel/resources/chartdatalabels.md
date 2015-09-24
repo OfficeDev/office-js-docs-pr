@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents a collection of all the data labels on a chart point.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |position|string|DataLabelPosition value that represents the position of the data label. Possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.|

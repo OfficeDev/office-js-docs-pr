@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Provides access to the office art formatting for chart title.
 
+## Properties
+
 None
 
 ## Relationships

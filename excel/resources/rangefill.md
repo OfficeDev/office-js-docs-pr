@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents the background of a range object.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |color|string|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange")|

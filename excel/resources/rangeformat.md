@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 A format object encapsulating the range's font, fill, borders, alignment, and other properties.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |horizontalAlignment|string|Represents the horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.|

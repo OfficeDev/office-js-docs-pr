@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents an Office.js binding that is defined in the workbook.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |id|string|Represents binding identifier. Read-only.|

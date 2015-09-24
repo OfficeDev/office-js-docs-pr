@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents major or minor gridlines on a chart axis.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |visible|bool|Boolean value representing if the axis gridlines are visible or not.|

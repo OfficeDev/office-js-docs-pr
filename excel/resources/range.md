@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Range represents a set of one or more contiguous cells such as a cell, a row, a column, block of cells, etc.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |address|string|Represents the range reference in A1-style. Address value will contain the Sheet reference (e.g. Sheet1!A1:B4). Read-only.|

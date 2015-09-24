@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 A collection of all the chart points within a series inside a chart.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |count|int|Returns the number of chart points in the collection. Read-only.|

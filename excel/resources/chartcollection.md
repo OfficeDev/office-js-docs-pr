@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 A collection of all the chart objects on a worksheet.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |count|int|Returns the number of charts in the worksheet. Read-only.|
