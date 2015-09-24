@@ -2,7 +2,7 @@
 
 _Applies to: Excel 2016, Office 2016_
 
-Below links show the main level Excel Objects and APIs.
+Below links show the main level Excel Objects and APIs. Each object page contains description of it properties, relations, and methods available on the object. Explore the links below to learn more. 
 	
 * [Workbook](resources/workbook.md): The top-level object that contains related workbook objects such as worksheets, tables, ranges, etc. It can be used to also list related references. 
 * [Worksheet](resources/worksheet.md): A member of the Worksheets collection. The Worksheets collection contains all the Worksheet objects in a workbook.
@@ -18,16 +18,15 @@ Below links show the main level Excel Objects and APIs.
 	* [NamedItem Collection](resources/nameditemcollection.md): A collection of NamedItem objects in a workbook.
 * [Binding](resources/binding.md): An abstract class that represents a binding to a section of the workbook.
 	* [Binding Collection](resources/bindingcollection.md):A collection of all the Binding objects that are part of the workbook. 
-* [TrackedObject Collection](resources/trackedobjectscollection.md): Allows add-ins to add and remove temporary references on range that can be tracked across requests.
+* [TrackedObject Collection](resources/trackedobjectscollection.md): Allows add-ins to manage a range object reference across sync() batches. 
 * [Request Context](resources/requestcontext.md): The RequestContext object facilitates requests to the Excel application.
 
 For a complete list of all the objects in the API, see [here](resources).
 
 ##### Learn more
+Explore other resources to learn more. 
 
-The following are just a few of the available resources. 
-
-1.  [Build your first Excel Add-in](build-your-first-excel-add-in.md)
-2.  [Snippet Explorer for Excel](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel)
-3.  [Excel Add-ins programming overview](excel-add-ins-programming-overview.md)
+1.  [Excel Add-ins programming overview](excel-add-ins-programming-overview.md)
+2.  [Build your first Excel Add-in](build-your-first-excel-add-in.md)
+3.  [Snippet Explorer for Excel](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel)
 4.  [Excel Add-ins code samples](excel-add-ins-code-samples.md) 
