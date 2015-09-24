@@ -73,7 +73,9 @@ Excel.run(function (ctx) {
 			console.log("Debug info: " + JSON.stringify(error.debugInfo));
 		}
 });
-```### load(param: object)
+```
+
+### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
