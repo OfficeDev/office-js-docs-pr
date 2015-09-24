@@ -42,11 +42,6 @@ object.load(param);
 
 #### Returns
 void
-
-#### Examples
-```js
-
-```
 ### Property access examples
 
 Below example selects all of the Range's format properties. 
@@ -63,7 +58,12 @@ Excel.run(function (ctx) {
 		console.log(range.format.fill.color);
 		console.log(range.format.font.name);
 	});
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 
 The example below sets font name, fill color and wraps text. 
@@ -77,7 +77,12 @@ Excel.run(function (ctx) {
 	range.format.font.name = 'Times New Roman';
 	range.format.fill.color = '0000FF';
 	return ctx.sync(); 
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 
 The example below adds grid border around the range.
@@ -94,5 +99,10 @@ Excel.run(function (ctx) {
 	range.format.borders('EdgeRight').lineStyle = 'Continuous';
 	range.format.borders('EdgeTop').lineStyle = 'Continuous';
 	return ctx.sync(); 
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```

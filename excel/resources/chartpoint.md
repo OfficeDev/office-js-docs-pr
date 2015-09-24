@@ -36,8 +36,3 @@ object.load(param);
 
 #### Returns
 void
-
-#### Examples
-```js
-
-```

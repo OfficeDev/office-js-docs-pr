@@ -79,7 +79,12 @@ Excel.run(function (ctx) {
 	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 	range.clear();
 	return ctx.sync(); 
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 
 ### delete(shift: string)
@@ -107,7 +112,12 @@ Excel.run(function (ctx) {
 	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 	range.delete();
 	return ctx.sync(); 
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 
 ### getBoundingRect(anotherRange: Range or string)
@@ -139,6 +149,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(range.address); // Prints Sheet1!D4:H8
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -172,6 +187,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(cell.address);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -203,6 +223,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(range.address); // prints Sheet1!B1:B8
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -235,6 +260,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(rangeEC.address);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 ### getEntireRow()
@@ -263,6 +293,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(rangeER.address);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 The grid properties of the Range (values, numberFormat, formulas) contains `null` since the Range in question is unbounded.
@@ -295,6 +330,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(range.address); // prints Sheet1!D4:F6
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -324,6 +364,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(range.address); // prints Sheet1!F8
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -353,6 +398,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(range.address); // prints Sheet1!F1:F8
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -382,6 +432,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(range.address); // prints Sheet1!A8:F8
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -414,6 +469,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(range.address); // prints Sheet1!H3:K5
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -445,6 +505,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(range.address); // prints Sheet1!A2:F2
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -475,6 +540,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(rangeUR.address);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -504,7 +574,12 @@ Excel.run(function (ctx) {
 	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 	range.insert();
 	return ctx.sync(); 
-	}); 
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -523,11 +598,6 @@ object.load(param);
 
 #### Returns
 void
-
-#### Examples
-```js
-
-```
 ### select()
 Selects the specified range in the Excel UI.
 
@@ -552,7 +622,12 @@ Excel.run(function (ctx) {
 	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 	range.select();
 	return ctx.sync(); 
-	}); 
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -571,6 +646,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(range.cellCount);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -585,6 +665,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(range.cellCount);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -605,6 +690,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(range.text);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 Get the worksheet containing the range. 
@@ -619,5 +709,10 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log(rangeWorksheet.name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```

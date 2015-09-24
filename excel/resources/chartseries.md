@@ -39,11 +39,6 @@ object.load(param);
 
 #### Returns
 void
-
-#### Examples
-```js
-
-```
 ### Property access examples
 
 Rename the 1st series of Chart1 to "New Series Name"
@@ -55,5 +50,10 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log("Series1 Renamed");
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```

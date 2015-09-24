@@ -51,6 +51,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(worksheet.name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -77,8 +82,12 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log(activeWorksheet.name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 
 ### getItem(key: string)
@@ -96,21 +105,6 @@ worksheetCollectionObject.getItem(key);
 
 #### Returns
 [Worksheet](worksheet.md)
-
-#### Examples
-
-```js
-Excel.run(function (ctx) { 
-	var wSheetName = 'Sheet1'; 
-	var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
-	worksheet.load('index');
-	return ctx.sync().then(function() {
-			console.log(worksheet.index);
-	});
-});
-
-```
-
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -126,14 +120,7 @@ object.load(param);
 
 #### Returns
 void
-
-#### Examples
-```js
-
-```
 ### Property access examples
-
-
 ```js
 Excel.run(function (ctx) { 
 	var worksheets = ctx.workbook.worksheets;
@@ -145,6 +132,10 @@ Excel.run(function (ctx) {
 			console.log(worksheets.items[i].index);
 		}
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```

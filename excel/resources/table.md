@@ -54,7 +54,12 @@ Excel.run(function (ctx) {
 	var table = ctx.workbook.tables.getItem(tableName);
 	table.delete();
 	return ctx.sync(); 
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 
 ### getDataBodyRange()
@@ -81,6 +86,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log(tableDataRange.address);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 ### getHeaderRowRange()
@@ -107,6 +117,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(tableHeaderRange.address);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -133,6 +148,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log(tableRange.address);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -160,6 +180,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log(tableTotalsRange.address);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -178,11 +203,6 @@ object.load(param);
 
 #### Returns
 void
-
-#### Examples
-```js
-
-```
 ### Property access examples
 
 Get a table by name. 
@@ -195,6 +215,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log(table.index);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -208,6 +233,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log(table.name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -224,5 +254,10 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log(table.tableStyle);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```

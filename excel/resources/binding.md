@@ -51,6 +51,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(range.cellCount);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -77,6 +82,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log(table.name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -104,6 +114,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(text);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -122,11 +137,6 @@ object.load(param);
 
 #### Returns
 void
-
-#### Examples
-```js
-
-```
 ### Property access examples
 
 ```js
@@ -136,5 +146,10 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(binding.type);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```

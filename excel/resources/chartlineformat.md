@@ -48,6 +48,11 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log"Chart Major Gridlines Format Cleared");
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 ### load(param: object)
@@ -65,11 +70,6 @@ object.load(param);
 
 #### Returns
 void
-
-#### Examples
-```js
-
-```
 ### Property access examples
 
 Set chart major gridlines on value axis to be red.
@@ -77,3 +77,14 @@ Set chart major gridlines on value axis to be red.
 ```js
 Excel.run(function (ctx) { 
 	var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.axes.valueaxis.majorGridlines;
+	gridlines.format.line.color = "#FF0000";
+	return ctx.sync().then(function() {
+			console.log("Chart Gridlines Color Updated");
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```

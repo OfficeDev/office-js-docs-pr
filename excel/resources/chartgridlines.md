@@ -38,11 +38,6 @@ object.load(param);
 
 #### Returns
 void
-
-#### Examples
-```js
-
-```
 ### Property access examples
 
 Get the `visible` of Major Gridlines on value axis of Chart1
@@ -55,8 +50,12 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log(majGridlines.visible);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 
 Set to show major gridlines on valueAxis of Chart1
@@ -68,5 +67,10 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 			console.log("Axis Gridlines Added ");
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```

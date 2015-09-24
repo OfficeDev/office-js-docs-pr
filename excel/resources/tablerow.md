@@ -47,8 +47,13 @@ Excel.run(function (ctx) {
 	var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
 	row.delete();
 	return ctx.sync(); 
-	}); 
-}); 
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 
 ### getRange()
@@ -76,7 +81,12 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(rowRange.address);
 	});
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 
 ### load(param: object)
@@ -94,11 +104,6 @@ object.load(param);
 
 #### Returns
 void
-
-#### Examples
-```js
-
-```
 ### Property access examples
 
 ```js
@@ -109,7 +114,12 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(row.index);
 	});
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 
 ```js
@@ -122,5 +132,10 @@ Excel.run(function (ctx) {
 	return ctx.sync().then(function() {
 		console.log(row.values);
 	});
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
