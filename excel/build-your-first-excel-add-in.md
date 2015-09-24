@@ -259,7 +259,7 @@ e. Create an XML manifest file to specify where your web app is located and how 
     </OfficeApp>
 	```
 
-f.  Generate a GUID using an online generator of your choice. Then, replace the value in the **<Id>** tag shown in the previous step with that GUID. 
+f.  Generate a GUID using an online generator of your choice. Then, replace the value in the **Id** tag shown in the previous step with that GUID. 
 
 g.	Save all the files. You’ve now written your first Excel add-in. 
 
