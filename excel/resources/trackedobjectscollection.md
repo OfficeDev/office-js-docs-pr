@@ -15,11 +15,11 @@ None
 
 The TrackedObjects Collection has the following methods defined:
 
-| Method     | Return Type    |Description|Notes  |
-|:-----------------|:--------|:----------|:------|
-|[add(rangeObject: Range)](#addrangeobject-range)| Null             |Creates a new reference on a range.||
-|[remove(rangeObject: Range)](#removerangeobject-range)| Null             |Remove a reference on the range.  ||
-|[removeAll()](#removeall)| Null|Removes all references created by the add-in on the device.||
+| Method     | Return Type    |Description|
+|:-----------------|:--------|:----------|
+|[add(rangeObject: Range)](#addrangeobject-range)| Null             |Creates a new reference on a range.|
+|[remove(rangeObject: Range)](#removerangeobject-range)| Null             |Remove a reference on the range.  |
+|[removeAll()](#removeall)| Null|Removes all references created by the add-in on the device.|
 
 
 ## API Specification 
