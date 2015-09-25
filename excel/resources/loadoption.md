@@ -2,7 +2,14 @@
 
 Represents an object that can be passed to the load method to specify the set of properties and relations to be loaded upon execution of sync() method that synchronizes the states between Excel objects and corresponding JavaScript proxy objects in the add-in. This takes in options such as select, expand parameters to specify set of properties to be loaded on the object and also allows pagination control on collection.
 
-It is also valid to supply a string containing the properties and relations to be loaded or an aray containing list of properties and relations to be loaded. 
+It is also valid to supply a string containing the properties and relations to be loaded or an aray containing list of properties and relations to be loaded. Example:
+
+```js	
+object.load  ('<var1>,<relation1/var2>');
+
+// Pass the parameter as an array.
+object.load (["var1", "relation1/var2"]);
+```
 
 ## Properties
 | Property	   | Type	|Description|
