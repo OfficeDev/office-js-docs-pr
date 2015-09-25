@@ -8,7 +8,7 @@ Microsoft Word 2016 introduces a new object model for working with Word objects.
 
 The new Word add-in Javascript API uses the same manifest format as is used for the old Office add-in model. The manifest describes where the add-in is hosted, how it is displayed, permissions, and other information. Learn more about how you can customize the [add-in manifests](https://msdn.microsoft.com/en-us/library/office/fp161044.aspx). 
 
-You have a few options for publishing Word add-in manifests. Read about how you can [publish your Office add-in](https://msdn.microsoft.com/EN-US/library/office/fp123515.aspx) to a network share, and app catalog, or to the Office store.
+You have a few options for publishing Word add-in manifests. Read about how you can [publish your Office add-in](https://msdn.microsoft.com/EN-US/library/office/fp123515.aspx) to a network share, app catalog, or to the Office store.
 
 ## Understanding the Javascript API for Word
 
