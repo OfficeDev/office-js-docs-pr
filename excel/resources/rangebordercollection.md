@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents the border objects that make up range border.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |count|int|Number of border objects in the collection. Read-only.|

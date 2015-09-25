@@ -7,9 +7,9 @@ None
 
 ## Methods
 
-| Method         | Return Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|[load(object: object, option: object)](#loadobject-object-option-object)  |void     |Fills the proxy object created in JavaScript layer with property and options specified in the parameter.||
+| Method         | Return Type    |Description|
+|:---------------|:--------|:----------|
+|[load(object: object, option: object)](#loadobject-object-option-object)  |void     |Fills the proxy object created in JavaScript layer with property and options specified in the parameter.|
 
 ## API Specification
 

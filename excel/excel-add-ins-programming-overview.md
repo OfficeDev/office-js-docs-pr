@@ -4,8 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 This topic covers the fundamentals of using the JavaScript APIs to build add-ins in Excel 2016.
 
-* [The basics](#the-basics)
-* [Properties and Relations Selection](#properties-and-relations-selection)
+* [The Basics](#the-basics)
+* [Properties and Relations Selection](#properties-and-relationships-selection)
 * [Document Binding](#null-input)
 * [Reference Binding](#null-input)
 * [Null-Input](#null-input)
@@ -18,13 +18,27 @@ This topic covers the fundamentals of using the JavaScript APIs to build add-ins
 
 For detailed specifications of the Excel JavaScript APIs read the [reference](excel-add-ins-javascript-reference.md) page.
 
-### The basics
+### The Basics
 
-In this section, get a brief introduction to the key concepts that are fundamental to using the APIs, such as RequestContext, sync(), run(), and load().
+This section provides a brief introduction to the key concepts that are fundamental to using the APIs, such as RequestContext, JavaScript proxy objects, sync(), Excel.run(), and load(). The example code at the end of the section shows these concepts in use.
 
 #### RequestContext
 
-The RequestContext object facilitates requests to the Excel application. Since the Office add-in and the Excel application run in two different processes, request context is required to get access to Excel and related objects such as worksheets, tables, etc. from the add-in. 
+The RequestContext object facilitates requests to the Excel application. Since the Office add-in and the Excel application run in two different processes, request context is required to get access to Excel and related objects such as worksheets, tables, etc. from the add-in. A request context is created as shown below:
+
+```js
+var ctx = new Excel.RequestContext();
+```
+
+#### Proxy Objects 
+
+The Excel Javascript objects declared and used in an add-in are proxy objects for the real objects in a Excel document. All actions taken on proxy objects are not realized in Excel, and the state of the Excel document is not realized in the proxy objects, until the document state has been synchronized. The document state is synchronized when context.sync() is run (see below). 
+
+For example, the local JavaScript object `selectedRange` is declared to reference the selected range. This can be used to queue up setting of its properties and invoking methods. The actions on such objects are not realized until the sync() method is run. 
+
+```js
+var selectedRange = ctx.workbook.getSelectedRange();
+```    
 
 #### sync()
 
@@ -32,27 +46,33 @@ The sync() method available on the request context synchronizes the state betwee
 
 #### Excel.run(function(context) { batch })
 
-Executes a batch script that performs actions on the Excel object model. When the promise is resolved, any tracked objects that were automatically allocated during the execution will be released. The run method takes in RequestContext and returns a promise (typically, just the result of ctx.sync()). 
+Excel.run() executes a batch script that performs actions on the Excel object model. The batch commands includes definition of local JavaScript proxy objects, sync() methods that synchronizes the state between local and Excel objects and promise resolution. The advantage of batching requests in Excel.run() is that when the promise is resolved, any tracked range objects that were allocated during the execution will be automatically released. 
+
+The run method takes in RequestContext and returns a promise (typically, just the result of ctx.sync()). It is possible to run the batch operation outside of the Excel.run(). However, in such a scenario, any range object references needs to be manually tracked and managed. 
 
 #### load()
-Load method is used to fill in the Excel proxy objects created in the add-in JavaScript layer. When trying to retrieve an object, for example a worksheet, a local proxy object is created first in the JavaScript layer. Such an object can be used to queue up setting of its properties and invoking methods. However, for reading object properties or relations, the load() method and sync() needs to be invoked first. Load method takes in the properties and relations that need to be loaded when sync() method is called. 
+
+Load method is used to fill in the proxy objects created in the add-in JavaScript layer. When trying to retrieve an object, for example a worksheet, a local proxy object is created first in the JavaScript layer. Such an object can be used to queue up setting of its properties and invoking methods. However, for reading object properties or relations, the load() method and sync() needs to be invoked first. Load method takes in the properties and relations that need to be loaded when sync() method is called. 
 
 _Syntax:_
 
 ```js
 object.load(string: properties);
+//or 
+object.load(array: properties);
 //or
 object.load({loadOption});
 ```
 Where, 
 
 * `properties` is the list of properties and/or relationship names to be loaded specified as comma delimited strings or array of names. See .load() methods under each object for details.
-* `loadOption` specifies selection, expansion, top, and skip options. See [loadOption](resources/loadoption.md) object for details.
+* `loadOption` specifies an object that describes the selection, expansion, top, and skip options. See object load [options](resources/loadoption.md) for details.
 
 ##### Example
 
 The following example puts the above concepts together. The sample code shows writing of values from an array to a range object. 
-The Exce.run() contains the batch of instructions. As part of this batch, the range A1:B2 on the current worksheet is retrieved. Finally, the array values are assigned to range values. All these commands are queued and will be run when ctx.sync() is called. The sync() method returns a promise that can be used to chain it with other operations.
+
+The Exce.run() contains a batch of instructions. As part of this batch, a proxy object is created that references a range (address A1:B2) on the active worksheet. The value of of this proxy range object is set locally. In order to read the values back the `text` property of the range is instructed to be loaded onto the proxy object. All these commands are queued and run when ctx.sync() is called. The sync() method returns a promise that can be used to chain it with other operations.
 
 ```js
 // Run a batch operation against the Excel object model. Use the context argument to get access to the Excel document.
@@ -88,7 +108,7 @@ Excel.run(function (ctx) {
 
 ##### Example
 
-The following example shows how to copy the values from Range A1:A2 to B1:B2 of the active worksheet by using load() method on the range object. Be sure to add some values to A1:A2 to see results. 
+The following example shows how to copy the values from Range A1:A2 to B1:B2 of the active worksheet by using load() method on the range object. 
 
 ```js
 // Run a batch operation against the Excel object model. Use the context argument to get access to the Excel document.
@@ -115,15 +135,12 @@ Excel.run(function (ctx) {
 });
 ```
 
-### Properties and Relations Selection 
+### Properties and Relationships Selection 
 
-* By default load() selects all scalar/complex properties of the object which is being loaded. The relations are not loaded by default.  Exceptions:  any binary, XML, etc properties are not returned. 
-* The select option specifies a subset of properties and/or relations to include in the response.
-* The properties to be selected are provided during the load statement.
-* Select will essentially get the users into optimized mode of handpicking what they want. 
-* Property names are listed as a parameter to the select property. Support two kinds of inputs
-	* Property names are separated by comma. 
-	* Provide an array of property name strings
+By default object.load() selects all scalar and complex properties of the object that is being loaded. The relationships are not loaded by default (e.g. format is a relatoinship object of Range object). However, it is always recommended to mark the propreties and relations to be loaded explicitly to improve performance. This can be done by specifying (in the `load()` parameter) a subset of properties and/or relationships to include in the response. Load method allows two kids of inputs:
+
+* Property and relationship names as comma separated string names _or_ as an array of strings containing property or relationship names. 
+* An object that describes the selection, expansion, top, and skip options. See object load [options](resources/loadoption.md) for details.
 
 ```js	
 object.load  ('<var1>,<relation1/var2>');
@@ -147,7 +164,7 @@ Excel.run(function (ctx) {
 		console.log (myRange.address); //ok
 		console.log (myRange.format.wrapText); //ok
 		console.log (myRange.format.fill.color); //ok
-		//console.log (myRange.format.font.color); //not-ok
+		//console.log (myRange.format.font.color); //not-ok as it was not loaded
 
 	});
 }).then(function() {
@@ -356,6 +373,6 @@ Errors are returned using an error object that consists of a code and a message.
 Explore other resources to learn more. 
 
 * [Build your first Excel Add-in](build-your-first-excel-add-in.md)
-* [Snippet Explorer for Excel](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel)
+* [Code snippet explorer](https://github.com/OfficeDev/office-js-snippet-explorer)
 * [Excel add-ins code samples](excel-add-ins-code-samples.md)
 * [Excel Add-ins JavaScript API Reference](excel-add-ins-javascript-reference.md)

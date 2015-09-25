@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Workbook is the top level object which contains related workbook objects such as worksheets, tables, ranges, etc.
 
+## Properties
+
 None
 
 ## Relationships
@@ -53,7 +55,9 @@ Excel.run(function (ctx) {
 			console.log("Debug info: " + JSON.stringify(error.debugInfo));
 		}
 });
-```### load(param: object)
+```
+
+### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax

@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents the title of a chart axis.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |text|string|Represents the axis title.|

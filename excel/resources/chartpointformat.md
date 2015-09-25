@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents formatting object for chart points.
 
+## Properties
+
 None
 
 ## Relationships

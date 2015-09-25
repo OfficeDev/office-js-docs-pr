@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents a collection of worksheet objects that are part of the workbook.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |items|[Worksheet[]](worksheet.md)|A collection of worksheet objects. Read-only.|

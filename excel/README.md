@@ -7,6 +7,7 @@ Welcome to the Excel JavaScript API documentation. Here you can find everything 
 Explore the following resources to learn more. 
 
 * [Build your first Excel Add-in](build-your-first-excel-add-in.md)
+* [Code snippet explorer](https://github.com/OfficeDev/office-js-snippet-explorer)
 * [Excel Add-ins JavaScript API Reference](excel-add-ins-javascript-reference.md)
 * [Excel Add-ins programming overview](excel-add-ins-programming-overview.md)
 
@@ -31,7 +32,6 @@ We've been working on a Snippet Explorer to let you browse through code snippets
 
 **[Excel-Add-in-JS-RangeHighlighter](https://github.com/OfficeDev/Excel-Add-in-JS-RangeHighlighter)** : A task pane add-in that shows how to do common operations using the Range API in Excel 2016.
 
-We also a Snippet Explorer to let you browse through code snippets for common scenarios and learn how the new APIs work. Explore them [here](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel).
 
 ## Give us your feedback
 

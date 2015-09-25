@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents a chart title object of a chart.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |overlay|bool|Boolean value representing if the chart title will overlay the chart or not.|

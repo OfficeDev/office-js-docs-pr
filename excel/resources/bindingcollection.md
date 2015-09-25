@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents the collection of all the binding objects that are part of the workbook.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |count|int|Returns the number of bindings in the collection. Read-only.|

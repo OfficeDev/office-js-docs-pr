@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents a column in a table.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |id|int|Returns a unique key that identifies the column within the table. Read-only.|

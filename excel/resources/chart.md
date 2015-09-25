@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents a chart object in a workbook.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |height|double|Represents the height, in points, of the chart object.|

@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents the fill formatting for a chart element.
 
+## Properties
+
 None
 
 ## Relationships

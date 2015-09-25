@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents a series in a chart.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |name|string|Represents the name of a series in a chart.|

@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 encapsulates the format properties for the chart series
 
+## Properties
+
 None
 
 ## Relationships

@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Enapsulates the formatting options for line elements.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |color|string|HTML color code representing the color of lines in the chart.|
