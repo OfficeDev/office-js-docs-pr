@@ -269,7 +269,7 @@ The simplest way to deploy and test your add-in is to copy the files to a networ
 
 1.  Create a folder on a network share (for example, \\MyShare\QuarterlySalesReport) and copy all the files.  
 
-2.  Edit the <SourceLocation> element of the manifest file so that it points to the share location for the .html page from step 1. 
+2.  Edit the **SourceLocation** element of the manifest file so that it points to the share location for the .html page from step 1. 
 
 3.  Copy the manifest (QuarterlySalesReportManifest.xml) to a network share (for example, \\MyShare\MyManifests).
 

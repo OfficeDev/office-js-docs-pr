@@ -195,13 +195,14 @@ In the set request below, only some parts of the Range Number Format is set whil
 
 `null` is not a valid single input for the entire property. For example, the following is not valid as the entire values cannot be set to null or ignored. 
 
-```
+```js
  range.values= null;
 
 ```
 
 Following is not valid either as null is not a valid color value. 
-```
+
+```js
  range.format.fill.color =  null;
 ```
 
@@ -211,7 +212,7 @@ Representation of formatting properties that consists of non-uniform values woul
 
 Example: A Range can consist of one of more cells. In cases where the individual cells contained in the Range specified don't have uniform formatting values, the range level representation will be undefined. 
 
-```
+```js
   "size" : null,
   "color" : null,
 ```
@@ -227,11 +228,11 @@ Example:
 
 For read operations, expect to receive blank values if the contents of the cells are blanks. If the cell contains no data or value, then the API returns a blank value. Blank value is represented by two double quotation marks with no space in between. `""`.
 
-```
+```js
   range.values = [["", "some", "data", "in", "other", "cells", ""]];
 ```
 
-```
+```js
   range.formula = [["", "", "=Rand()"]];
 ```
 
