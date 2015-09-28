@@ -1,10 +1,8 @@
-# Word add-ins JavaScript reference 
+# Word add-ins Javascript reference 
 
 Find API reference for the Javascript API for Word for Word add-ins.
 
 _Applies to: Word 2016 for Windows_
-
-<!-- Add link and statement about how to get the type definition file. Look at Michael Zs info -->
 
 ## In this section
 
