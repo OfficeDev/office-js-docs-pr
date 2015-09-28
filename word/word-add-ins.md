@@ -20,7 +20,7 @@ A Word add-in runs inside Word and can interact with the contents of the documen
 You will create a simple web app and the app manifest in this section. The web app will allow you to add boilerplate text into the Word document. 
 
 1) Create a folder on your local drive called BoilerplateAddin (for example C:\BoilerplateAddin). Save all of the files created in the following steps into this folder.
-<br>
+
 2) Create a file named home.html for the add-in view. The add-in will have three buttons that will add boilerplate text when they are selected. Paste in the code below into home.html.
 
 ```html
@@ -167,10 +167,11 @@ You will create a simple web app and the app manifest in this section. The web a
 ```
 
 5) Generate a GUID and replace the value in the <code>OfficeApp/Id</code> element with your GUID.
-<br>
+
 6) Save all the files. You’ve now written your first Word add-in. 
-<br>
-7) Create a network folder (for example, \\\MyShare\boilerplate) and copy home.js, home.html, and BoilerplateManifext.xml to that location.<br>
+
+7) Create a network folder (for example, \\\MyShare\boilerplate) and copy home.js, home.html, and BoilerplateManifext.xml to that location.
+
 8) Edit the <code>SourceLocation</code> element in BoilerplateManifext.xml so that it points to the location of home.html. 
 
 At this point, you have your first add-in deployed. Now you need to let Word know where to find the add-in.

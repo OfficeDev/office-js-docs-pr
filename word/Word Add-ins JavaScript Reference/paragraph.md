@@ -718,11 +718,11 @@ Word.run(function (context) {
             // Show the results of the load method. Here we show the
             // property values on the paragraph object. Note that we 
             // requested the style property in the first load command.
-            var results = "<strong>Paragraph</strong><br>" +
-                          "<br>Font size: " + paragraph.font.size +
-                          "<br>Font name: " + paragraph.font.name +
-                          "<br>Font color: " + paragraph.font.color +
-                          "<br>Style: " + paragraph.style;
+            var results = "<strong>Paragraph</strong>--" +
+                          "--Font size: " + paragraph.font.size +
+                          "--Font name: " + paragraph.font.name +
+                          "--Font color: " + paragraph.font.color +
+                          "--Style: " + paragraph.style;
 
             console.log(results);
         });      
