@@ -21,7 +21,6 @@ Below links describes the high level Excel Objects available in the APIs. Each p
 * [TrackedObject Collection](resources/trackedobjectscollection.md): Allows add-ins to manage a range object reference across sync() batches. 
 * [Request Context](resources/requestcontext.md): The RequestContext object facilitates requests to the Excel application.
 
-For a complete list of all the objects in the API, see [here](resources).
 
 ##### Learn more
 Explore related resources available: 
