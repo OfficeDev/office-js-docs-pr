@@ -1,4 +1,4 @@
-# ChartGridlinesFormat Object (JavaScript API for Excel)
+# ChartGridlinesFormat object (JavaScript API for Excel)
 
 _Applies to: Excel 2016, Office 2016_
 

@@ -6,6 +6,8 @@ _Applies to: Word 2016 for Windows_
 
 ## In this section
 
+These are the main objects for the Word Javascript API. For a complete list of topics on MSDN, see the table of contents.
+
 * [Body](Word Add-ins JavaScript Reference/body.md): Represents the body of a document or a section.
 * [ContentControl](Word Add-ins JavaScript Reference/contentControl.md): A ContentControl object is a container for content. It is a bound and
  potentially labeled region in a document that serves as a container for specific types of content. For example, content 

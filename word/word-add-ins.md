@@ -1,4 +1,4 @@
-# Word 2016 add-ins
+# Word Add-ins
 
 _Applies to: Word 2016 for Windows_
 

@@ -1,4 +1,4 @@
-# RangeFill Object (JavaScript API for Excel)
+# RangeFill object (JavaScript API for Excel)
 
 _Applies to: Excel 2016, Office 2016_
 

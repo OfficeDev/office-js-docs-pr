@@ -1,4 +1,4 @@
-# RequestContext
+# RequestContext object (JavaScript API for Excel)
 
 The RequestContext object facilitates requests to the Excel application. Since the Office add-in and the Excel application run in two different processes, request context is required to get access to Excel and related objects such as worksheets, tables, etc. from the add-in. 
 
