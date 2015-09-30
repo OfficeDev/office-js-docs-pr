@@ -1,12 +1,12 @@
 # Word add-ins
 
-_Applies to: Word 2016 for Windows_
+_Applies to: Word 2016_
 
 Welcome to the Word add-in JavaScript API documentation. The Word JavaScript API is a part of the Office add-in programming model for extending Microsoft Office applications. The add-in programming model uses web applications to host your extension to Word. You can now extend Word with any web platform or language that you prefer. 
 
-## API Overview
+## API overview
 
-Before we start going into the specifics of the Javascript API for Word, it is important to know that this new Word add-in object model is different than what was made available with Word in Office 2013. The previous object model was not typed and provided a generic API for extending Office clients. While the previous model is still applicable to Word 2016, we also suggest that you start using the new Word object model. We suggest that you read the [platform overview](https://msdn.microsoft.com/EN-US/library/office/jj220082.aspx) if you aren't familiar with the add-in platform. 
+Before we start going into the specifics of the Javascript API for Word, it is important to know that this new Word add-in object model is different than the model for Word in Office 2013. The Office 2013 add-in model was not typed and provided a generic API for extending Office clients. While the previous model is still applicable to Word 2016, we also suggest that you start using the new Word object model. We suggest that you read the [platform overview](https://msdn.microsoft.com/EN-US/library/office/jj220082.aspx) if you aren't familiar with the add-in platform. 
 
 The new JavaScript APIs for Word change the way that you can interact with objects like documents and paragraphs. Rather than providing individual asynchronous APIs for retrieving and updating each of these objects, the new APIs provide “proxy” JavaScript objects that correspond to the real objects running in Word.  You can directly interact with these proxy objects by synchronously reading and writing their properties and calling synchronous methods to perform operations on them.  These interactions with proxy objects aren’t immediately realized in the running script, so we provide a method on the context named **sync()**. The context.sync method synchronizes the state between your running JavaScript and the real objects in Office by executing instructions queued in your script and by retrieving properties of loaded Word objects for use in your script.  
 
@@ -19,9 +19,9 @@ A Word add-in runs inside Word and can interact with the contents of the documen
 ### Set it up
 You will create a simple web app and the app manifest in this section. The web app will allow you to add boilerplate text into the Word document. 
 
-1) Create a folder on your local drive named BoilerplateAddin (for example C:\BoilerplateAddin). Save all files created in the following steps to this folder.
+1) Create a folder on your local drive named BoilerplateAddin (for example C:\\BoilerplateAddin). Save all files created in the following steps to this folder.
 
-2) Create a file named home.html for the add-in view. The add-in will have three buttons that, when they're selected, will add boilerplate text. Paste the code below into home.html.
+2) Create a file named home.html for the add-in view. The add-in will have three buttons that, when they're selected, will add boilerplate text. Paste the following code into home.html.
 
 ```html
     <!DOCTYPE html>
@@ -50,7 +50,7 @@ You will create a simple web app and the app manifest in this section. The web a
     </html>
 ```
 
-3) Create a file named home.js and paste the code below into the file. This contains initialization code and all of our add-in code for making changes to the Word document. This code inserts text based on the cursor or the selection in the Word document. 
+3) Create a file named home.js and paste the following code into the file. This contains initialization code and all of our add-in code for making changes to the Word document. This code inserts text based on the cursor or the selection in the Word document. 
 
 ```javascript
     (function () {
@@ -155,7 +155,7 @@ You will create a simple web app and the app manifest in this section. The web a
     })();
 ```
 
-4) Create an XML file named BoilerplateManifest.xml and paste the code below into the file. This is the manifest file that Word uses to discover information about an add-in such as its location or display name.
+4) Create an XML file named BoilerplateManifest.xml and paste the following code into the file. This is the manifest file that Word uses to discover information about an add-in such as its location or display name.
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
@@ -181,7 +181,7 @@ You will create a simple web app and the app manifest in this section. The web a
 
 6) Save all the files. You’ve now written your first Word add-in. 
 
-7) Create a network folder (for example, \\MyShare\boilerplate) and copy home.js, home.html, and BoilerplateManifest.xml to that location.
+7) Create a network folder (for example, \\\MyShare\boilerplate) and copy home.js, home.html, and BoilerplateManifest.xml to that location.
 
 8) Edit the <code>SourceLocation</code> element in BoilerplateManifest.xml so that it points to the location of home.html. 
 
@@ -212,13 +212,16 @@ __Figure 1. The Boilerplate content add-in loaded in Word__
 
 ## Learn more
 
-Learn more about extending Word by reading the [Word add-ins programming guide](word-add-ins-programming-guide.md). Read the [word-add-ins-javascript-reference](word-add-ins-javascript-reference.md) to learn about the objects that you can access.
+Learn more about extending Word by reading the [Word add-ins programming guide](word-add-ins-programming-guide.md). Read the [Word add-ins Javascript reference](word-add-ins-javascript-reference.md) to learn about the objects that you can access.
 
-## Give feedback about the API
+## Give us your feedback
 
-The documentation for this API is hosted on GitHub with the intention that we can improve the documentation and API by making it open for [issues](https://github.com/OfficeDev/office-js-docs/issues) against the documentation. Issues can include errors in the documentation, requests for clarification, or requests for improvements in the documentation. We also welcome general feedback about the API and the experience you have with it.
+Your feedback is important to us. 
 
-## Additional links
+* Check out the docs and let us know about any questions and issues you find in them by [submitting an issue](https://github.com/OfficeDev/office-js-docs/issues) directly in this repository.
+* Let us know about your programming experience, what you would like to see in future versions, code samples, etc. Use [this site](http://officespdev.uservoice.com/) for entering your suggestions and ideas.
+
+## Additional resources
 
 * [Office Add-ins](https://msdn.microsoft.com/en-us/library/office/jj220060.aspx)
 * [Get started with Office Add-ins](http://dev.office.com/getting-started/addins)

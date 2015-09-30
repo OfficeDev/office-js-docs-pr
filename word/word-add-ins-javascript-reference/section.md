@@ -2,7 +2,7 @@
 
 Represents a section in a Word document.
 
-_Applies to: Word 2016 for Windows_
+_Applies to: Word 2016_
 
 None
 

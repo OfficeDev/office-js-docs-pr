@@ -2,7 +2,7 @@
 
 Specifies the options to be included in a search operation.
 
-_Applies to: Word 2016 for Windows_
+_Applies to: Word 2016_
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
