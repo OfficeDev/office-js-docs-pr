@@ -1,4 +1,4 @@
-# Excel Add-in code samples
+# Excel add-in code samples
 
 _Applies to: Excel 2016, Office 2016_
 

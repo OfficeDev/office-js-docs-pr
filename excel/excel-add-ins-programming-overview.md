@@ -1,4 +1,4 @@
-# Excel Add-ins JavaScript Programming Overview
+# Excel add-ins JavaScript programming overview
 
 _Applies to: Excel 2016, Office 2016_
 

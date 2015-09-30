@@ -1,4 +1,4 @@
-# Build your first Excel Add-in
+# Build your first Excel add-in
 
 _Applies to: Excel 2016, Office 2016_
 

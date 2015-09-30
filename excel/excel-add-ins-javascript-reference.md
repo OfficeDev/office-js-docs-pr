@@ -1,4 +1,4 @@
-# Excel Add-ins JavaScript API reference
+# Excel add-ins JavaScript API reference
 
 _Applies to: Excel 2016, Office 2016_
 
