@@ -14,7 +14,7 @@ Explore the following resources to learn more.
 
 ## Try it out
 
-Here're two resources to help you get familiar with the APIs.
+Here're two resources to help you try out and get familiar with the APIs.
 
 #### Code snippets
 
