@@ -300,7 +300,7 @@ The simplest way to deploy and test your add-in is to copy the files to a networ
 
 The Excel JavaScript APIs have much more to offer you as you develop add-ins. The following are just a few of the available resources. 
 
-1.  [Excel add-ins programming overview](excel-add-ins-programming-overview.md)
-2.  [Snippet Explorer for Excel](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel)
-3.  [Excel add-ins code samples](excel-add-ins-code-samples.md) 
-4.  [Excel add-ins JavaScript API reference](excel-add-ins-javascript-reference.md)
+*  [Excel add-ins programming overview](excel-add-ins-programming-overview.md)
+*  [Snippet Explorer for Excel](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel)
+*  [Excel add-ins code samples](excel-add-ins-code-samples.md) 
+*  [Excel add-ins JavaScript API reference](excel-add-ins-javascript-reference.md)
