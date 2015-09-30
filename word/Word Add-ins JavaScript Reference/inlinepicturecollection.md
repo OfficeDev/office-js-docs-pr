@@ -1,6 +1,6 @@
 # InlinePictureCollection object (JavaScript API for Word)
 
-Contains a collection of [inlinePicture](inlinePicture.md) objects.
+Contains a collection of [inlinePicture](inlinepicture.md) objects.
 
 _Applies to: Word 2016 for Windows_
 

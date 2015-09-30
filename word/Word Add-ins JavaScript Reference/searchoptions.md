@@ -66,7 +66,7 @@ Word.run(function (context) {
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Found count: ' + searchResults.items.length);
@@ -78,7 +78,7 @@ Word.run(function (context) {
             searchResults.items[i].font.bold = true;
         }
         
-        // Synchronize the document state by executing the queued-up commands, 
+        // Synchronize the document state by executing the queued commands, 
         // and return a promise to indicate task completion.
         return context.sync();
     });  
@@ -102,7 +102,7 @@ Word.run(function (context) {
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Found count: ' + searchResults.items.length);
@@ -114,7 +114,7 @@ Word.run(function (context) {
             searchResults.items[i].font.bold = true;
         }
         
-        // Synchronize the document state by executing the queued-up commands, 
+        // Synchronize the document state by executing the queued commands, 
         // and return a promise to indicate task completion.
         return context.sync();
     });  
@@ -138,7 +138,7 @@ Word.run(function (context) {
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Found count: ' + searchResults.items.length);
@@ -150,7 +150,7 @@ Word.run(function (context) {
             searchResults.items[i].font.bold = true;
         }
         
-        // Synchronize the document state by executing the queued-up commands, 
+        // Synchronize the document state by executing the queued commands, 
         // and return a promise to indicate task completion.
         return context.sync();
     });  
@@ -175,7 +175,7 @@ Word.run(function (context) {
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Found count: ' + searchResults.items.length);
@@ -187,7 +187,7 @@ Word.run(function (context) {
             searchResults.items[i].font.bold = true;
         }
         
-        // Synchronize the document state by executing the queued-up commands, 
+        // Synchronize the document state by executing the queued commands, 
         // and return a promise to indicate task completion.
         return context.sync();
     });  

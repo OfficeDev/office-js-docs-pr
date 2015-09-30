@@ -75,7 +75,7 @@ Word.run(function (context) {
     // Queue a command to load the content controls collection.
     contentControls.load('text');
      
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         
@@ -85,7 +85,7 @@ Word.run(function (context) {
             
             // Queue a command to clear the contents of the first content control.
             contentControls.items[0].clear();
-            // Synchronize the document state by executing the queued-up commands, 
+            // Synchronize the document state by executing the queued commands, 
             // and return a promise to indicate task completion.
             return context.sync().then(function () {
                 console.log('Content control cleared of contents.');
@@ -130,7 +130,7 @@ Word.run(function (context) {
     // Queue a command to load the content controls collection.
     contentControls.load('text');
      
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         
@@ -141,7 +141,7 @@ Word.run(function (context) {
             // Queue a command to delete the first content control. The
             // contents will remain in the document.
             contentControls.items[0].delete(true);
-            // Synchronize the document state by executing the queued-up commands, 
+            // Synchronize the document state by executing the queued commands, 
             // and return a promise to indicate task completion.
             return context.sync().then(function () {
                 console.log('Content control cleared of contents.');
@@ -184,7 +184,7 @@ Word.run(function (context) {
     // Queue a command to load the tag property for all of content controls. 
     context.load(contentControlsWithTag, 'tag');
      
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         if (contentControlsWithTag.items.length === 0) {
@@ -194,7 +194,7 @@ Word.run(function (context) {
             // Queue a command to get the HTML contents of the first content control.
             var html = contentControlsWithTag.items[0].getHtml();
         
-            // Synchronize the document state by executing the queued-up commands, 
+            // Synchronize the document state by executing the queued commands, 
             // and return a promise to indicate task completion.
             return context.sync()
                 .then(function () {
@@ -236,7 +236,7 @@ Word.run(function (context) {
     // Queue a command to load the id property for all of the content controls. 
     context.load(contentControls, 'id');
      
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         if (contentControls.items.length === 0) {
@@ -246,7 +246,7 @@ Word.run(function (context) {
             // Queue a command to get the OOXML contents of the first content control.
             var ooxml = contentControls.items[0].getOoxml();
         
-            // Synchronize the document state by executing the queued-up commands, 
+            // Synchronize the document state by executing the queued commands, 
             // and return a promise to indicate task completion.
             return context.sync()
                 .then(function () {
@@ -294,7 +294,7 @@ Word.run(function (context) {
     // Queue a commmand to load the id property for all of content controls. 
     context.load(contentControls, 'id');
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion. We now will have 
     // access to the content control collection.
     return context.sync().then(function () {
@@ -305,7 +305,7 @@ Word.run(function (context) {
             // Queue a command to insert a page break after the first content control. 
             contentControls.items[0].insertBreak('page', "After");
             
-            // Synchronize the document state by executing the queued-up commands, 
+            // Synchronize the document state by executing the queued commands, 
             // and return a promise to indicate task completion. 
             return context.sync()
                 .then(function () {
@@ -367,7 +367,7 @@ Word.run(function (context) {
     // Queue a command to load the id property for all of the content controls. 
     context.load(contentControls, 'id');
      
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         if (contentControls.items.length === 0) {
@@ -377,7 +377,7 @@ Word.run(function (context) {
             // Queue a command to put HTML into the contents of the first content control.
             contentControls.items[0].insertHtml('<strong>HTML content inserted into the content control.</strong>', 'Start');
         
-            // Synchronize the document state by executing the queued-up commands, 
+            // Synchronize the document state by executing the queued commands, 
             // and return a promise to indicate task completion.
             return context.sync()
                 .then(function () {
@@ -422,7 +422,7 @@ Word.run(function (context) {
     // Queue a command to load the id property for all of the content controls. 
     context.load(contentControls, 'id');
      
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         if (contentControls.items.length === 0) {
@@ -432,7 +432,7 @@ Word.run(function (context) {
             // Queue a command to put OOXML into the contents of the first content control.
             contentControls.items[0].insertOoxml("<w:p xmlns:w='http://schemas.microsoft.com/office/word/2003/wordml'><w:r><w:rPr><w:b/><w:b-cs/><w:color w:val='FF0000'/><w:sz w:val='28'/><w:sz-cs w:val='28'/></w:rPr><w:t>Hello world (this should be bold, red, size 14).</w:t></w:r></w:p>", "End");
         
-            // Synchronize the document state by executing the queued-up commands, 
+            // Synchronize the document state by executing the queued commands, 
             // and return a promise to indicate task completion.
             return context.sync()
                 .then(function () {
@@ -477,7 +477,7 @@ Word.run(function (context) {
     // Queue a command to load the id property for all of the content controls. 
     context.load(contentControls, 'id');
      
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         if (contentControls.items.length === 0) {
@@ -487,7 +487,7 @@ Word.run(function (context) {
             // Queue a command to insert a paragraph after the first content control. 
             contentControls.items[0].insertParagraph('Text of the inserted paragraph.', 'After');
         
-            // Synchronize the document state by executing the queued-up commands, 
+            // Synchronize the document state by executing the queued commands, 
             // and return a promise to indicate task completion.
             return context.sync()
                 .then(function () {
@@ -532,7 +532,7 @@ Word.run(function (context) {
     // Queue a command to load the id property for all of the content controls. 
     context.load(contentControls, 'id');
      
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         if (contentControls.items.length === 0) {
@@ -542,7 +542,7 @@ Word.run(function (context) {
             // Queue a command to replace text in the first content control. 
             contentControls.items[0].insertText('Replaced text in the first content control.', 'Replace');
         
-            // Synchronize the document state by executing the queued-up commands, 
+            // Synchronize the document state by executing the queued commands, 
             // and return a promise to indicate task completion.
             return context.sync()
                 .then(function () {
@@ -595,7 +595,7 @@ Word.run(function (context) {
     // Queue a command to load the id property for the content control you created.
     context.load(myContentControl, 'id');
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Created content control with id: ' + myContentControl.id);
@@ -651,7 +651,7 @@ Word.run(function (context) {
     // Queue a command to load the id property for all of the content controls. 
     context.load(contentControls, 'id');
      
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         if (contentControls.items.length === 0) {
@@ -661,7 +661,7 @@ Word.run(function (context) {
             // Queue a command to select the first content control.
             contentControls.items[0].select();
         
-            // Synchronize the document state by executing the queued-up commands, 
+            // Synchronize the document state by executing the queued commands, 
             // and return a promise to indicate task completion.
             return context.sync()
                 .then(function () {
@@ -691,7 +691,7 @@ Word.run(function (context) {
     // Queue a command to load the id property for all of the content controls. 
     context.load(contentControls, 'id');
      
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         if (contentControls.items.length === 0) {
@@ -715,7 +715,7 @@ Word.run(function (context) {
                                             'font/name,' +
                                             'font/color');             
         
-            // Synchronize the document state by executing the queued-up commands, 
+            // Synchronize the document state by executing the queued commands, 
             // and return a promise to indicate task completion.
             return context.sync()
                 .then(function () {

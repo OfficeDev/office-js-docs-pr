@@ -56,7 +56,7 @@ Word.run(function (context) {
     // Queue a commmand to insert text at the end of the selection.
     range.insertText(textSample, Word.InsertLocation.end);
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Inserted the text at the end of the selection.');
@@ -97,7 +97,7 @@ Word.run(function (context) {
     // Queue a command to load content control properties.
     context.load(thisDocument, 'contentControls/id, contentControls/text, contentControls/tag');
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         if (thisDocument.contentControls.items.length !== 0) {
@@ -144,7 +144,7 @@ Word.run(function (context) {
     // Queue a commmand to load the document save state (on the saved property).
     context.load(thisDocument, 'saved');    
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         
@@ -152,7 +152,7 @@ Word.run(function (context) {
             // Queue a command to save this document.
             thisDocument.save();
             
-            // Synchronize the document state by executing the queued-up commands, 
+            // Synchronize the document state by executing the queued commands, 
             // and return a promise to indicate task completion.
             return context.sync().then(function () {
                 console.log('Saved the document');

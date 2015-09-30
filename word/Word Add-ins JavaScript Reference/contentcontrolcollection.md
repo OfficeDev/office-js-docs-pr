@@ -53,7 +53,7 @@ Word.run(function (context) {
 	// Queue a command to load the text property for a content control. 
 	context.load(contentControl, 'text');
 	
-	// Synchronize the document state by executing the queued-up commands, 
+	// Synchronize the document state by executing the queued commands, 
 	// and return a promise to indicate task completion.
 	return context.sync().then(function () {
 		console.log('The content control with that Id has been found in this document.'); 
@@ -94,7 +94,7 @@ Word.run(function (context) {
     // Queue a command to load the text property for all of content controls with a specific tag. 
     context.load(contentControlsWithTag, 'text');
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         if (contentControlsWithTag.items.length === 0) {
@@ -140,7 +140,7 @@ Word.run(function (context) {
     // Queue a command to load the text property for all of content controls with a specific title. 
     context.load(contentControlsWithTitle, 'text');
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         if (contentControlsWithTitle.items.length === 0) {
@@ -202,7 +202,7 @@ Word.run(function (context) {
     // Queue a command to load the id property for all of the content controls. 
     context.load(contentControls, 'id');
      
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         if (contentControls.items.length === 0) {
@@ -226,7 +226,7 @@ Word.run(function (context) {
                                             'font/name,' +
                                             'font/color');             
         
-            // Synchronize the document state by executing the queued-up commands, 
+            // Synchronize the document state by executing the queued commands, 
             // and return a promise to indicate task completion.
             return context.sync()
                 .then(function () {

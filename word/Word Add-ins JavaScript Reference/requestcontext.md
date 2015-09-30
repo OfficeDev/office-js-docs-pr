@@ -45,14 +45,14 @@ Word.run(function (context) {
     // Queue a commmand to load the text property for all of the paragraphs.
     context.load(paragraphs, 'text');
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         
         // Queue a a set of commands to get the HTML of the first paragraph.
         var html = paragraphs.items[0].getHtml();    
         
-        // Synchronize the document state by executing the queued-up commands, 
+        // Synchronize the document state by executing the queued commands, 
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Paragraph HTML: ' + html.value);
@@ -96,7 +96,7 @@ Word.run(function (context) {
     // Queue a command to load the content controls collection.
     contentControls.load('text');
      
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         
@@ -106,7 +106,7 @@ Word.run(function (context) {
             
             // Queue a command to clear the contents of the first content control.
             contentControls.items[0].clear();
-            // Synchronize the document state by executing the queued-up commands, 
+            // Synchronize the document state by executing the queued commands, 
             // and return a promise to indicate task completion.
             return context.sync().then(function () {
                 console.log('Content control cleared of contents.');

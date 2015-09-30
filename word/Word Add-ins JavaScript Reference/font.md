@@ -59,7 +59,7 @@ Word.run(function (context) {
     // Queue a commmand to load the font property for all of the paragraphs.
     context.load(paragraphs, 'font');
 
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         
@@ -72,7 +72,7 @@ Word.run(function (context) {
         font.color = '#0000ff';
         font.highlightColor = '#ffff00';
         
-        // Synchronize the document state by executing the queued-up commands, 
+        // Synchronize the document state by executing the queued commands, 
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('The font has changed.');
@@ -100,7 +100,7 @@ Word.run(function (context) {
     // Queue a commmand to change the current selection's font name.
     selection.font.name = 'Arial';
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('The font name has changed.');
@@ -125,7 +125,7 @@ Word.run(function (context) {
     // Queue a commmand to change the font color of the current selection.
     selection.font.color = 'blue'; 
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('The font color of the selection has been changed.');
@@ -150,7 +150,7 @@ Word.run(function (context) {
     // Queue a commmand to change the current selection's font size.
     selection.font.size = 20;
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('The font size has changed.');
@@ -175,7 +175,7 @@ Word.run(function (context) {
     // Queue a commmand to highlight the current selection.
     selection.font.highlightColor = '#FFFF00'; //Yellow = 'Arial';
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('The selection has been highlighted.');
@@ -200,7 +200,7 @@ Word.run(function (context) {
     // Queue a commmand to make the current selection bold.
     selection.font.bold = true;
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('The selection is now bold.');
@@ -226,7 +226,7 @@ Word.run(function (context) {
     // Queue a commmand to underline the current selection.
     selection.font.underline = Word.UnderlineType.thick;
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('The selection now has an underline style.');
@@ -251,7 +251,7 @@ Word.run(function (context) {
     // Queue a commmand to strikethrough the font of the current selection.
     selection.font.strikeThrough = true; 
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('The selection now has a strikethrough.');

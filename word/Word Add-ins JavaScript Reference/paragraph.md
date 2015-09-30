@@ -76,14 +76,14 @@ Word.run(function (context) {
     // Queue a commmand to load the style property for all of the paragraphs.
     context.load(paragraphs, 'style');
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         
         // Queue a command to clear the contents of the first paragraph.
         paragraphs.items[0].clear();    
         
-        // Synchronize the document state by executing the queued-up commands, 
+        // Synchronize the document state by executing the queued commands, 
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Cleared the contents of the first paragraph.');
@@ -123,14 +123,14 @@ Word.run(function (context) {
     // Queue a commmand to load the text property for all of the paragraphs.
     context.load(paragraphs, 'text');
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         
         // Queue a command to delete the first paragraph.
         paragraphs.items[0].delete();    
         
-        // Synchronize the document state by executing the queued-up commands, 
+        // Synchronize the document state by executing the queued commands, 
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Deleted the first paragraph.');
@@ -170,14 +170,14 @@ Word.run(function (context) {
     // Queue a commmand to load the style property for all of the paragraphs.
     context.load(paragraphs, 'style');
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         
         // Queue a a set of commands to get the HTML of the first paragraph.
         var html = paragraphs.items[0].getHtml();    
         
-        // Synchronize the document state by executing the queued-up commands, 
+        // Synchronize the document state by executing the queued commands, 
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Paragraph HTML: ' + html.value);
@@ -217,14 +217,14 @@ Word.run(function (context) {
     // Queue a commmand to load the style property for the top 2 paragraphs.
     context.load(paragraphs, {select: 'style', top: 2} );
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         
         // Queue a a set of commands to get the OOXML of the first paragraph.
         var ooxml = paragraphs.items[0].getOoxml();    
         
-        // Synchronize the document state by executing the queued-up commands, 
+        // Synchronize the document state by executing the queued commands, 
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Paragraph OOXML: ' + ooxml.value);
@@ -271,7 +271,7 @@ Word.run(function (context) {
     // We never perform an empty load. We always must request a property.
     context.load(paragraphs, {select: 'style', top: 2} );
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         
@@ -281,7 +281,7 @@ Word.run(function (context) {
         // Queue a command to insert a page break after the first paragraph.
         paragraph.insertBreak('page', 'After');    
         
-        // Synchronize the document state by executing the queued-up commands, 
+        // Synchronize the document state by executing the queued commands, 
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Inserted a page break after the paragraph.');
@@ -322,7 +322,7 @@ Word.run(function (context) {
     // We never perform an empty load. We always must request a property.
     context.load(paragraphs, {select: 'style', top: 2} );
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         
@@ -332,7 +332,7 @@ Word.run(function (context) {
         // Queue a command to wrap the first paragraph in a rich text content control.
         paragraph.insertContentControl(); 
         
-        // Synchronize the document state by executing the queued-up commands, 
+        // Synchronize the document state by executing the queued commands, 
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Wrapped the first paragraph in a content control.');
@@ -375,7 +375,7 @@ Word.run(function (context) {
     // Queue a commmand to load the style property for all of the paragraphs.
     context.load(paragraphs, 'style');
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         
@@ -386,7 +386,7 @@ Word.run(function (context) {
         // This won't work unless you have a definition for getBase64().
         paragraph.insertFileFromBase64(getBase64(), Word.InsertLocation.start);
         
-        // Synchronize the document state by executing the queued-up commands, 
+        // Synchronize the document state by executing the queued commands, 
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Inserted base64 encoded content at the beginning of the first paragraph.');
@@ -430,7 +430,7 @@ Word.run(function (context) {
     // We never perform an empty load. We always must request a property.
     context.load(paragraphs, {select: 'style', top: 2} );
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         
@@ -440,7 +440,7 @@ Word.run(function (context) {
         // Queue a command to insert HTML content at the end of the first paragraph.
         paragraph.insertHtml('<strong>Inserted HTML.</strong>', Word.InsertLocation.end);
         
-        // Synchronize the document state by executing the queued-up commands, 
+        // Synchronize the document state by executing the queued commands, 
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Inserted HTML content at the end of the first paragraph.');
@@ -484,7 +484,7 @@ Word.run(function (context) {
     // Queue a commmand to load the style property for all of the paragraphs.
     context.load(paragraphs, 'style');
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         
@@ -496,7 +496,7 @@ Word.run(function (context) {
         // Queue a command to insert a base64 encoded image at the beginning of the first paragraph.
         paragraph.insertInlinePictureFromBase64(b64encodedImg, Word.InsertLocation.start);
         
-        // Synchronize the document state by executing the queued-up commands, 
+        // Synchronize the document state by executing the queued commands, 
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Added an image to the first paragraph.');
@@ -540,7 +540,7 @@ Word.run(function (context) {
     // We never perform an empty load. We always must request a property.
     context.load(paragraphs, {select: 'style', top: 2} );
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         
@@ -551,7 +551,7 @@ Word.run(function (context) {
         var ooxmlContent = "<w:p xmlns:w='http://schemas.microsoft.com/office/word/2003/wordml'><w:r><w:rPr><w:b/><w:b-cs/><w:color w:val='FF0000'/><w:sz w:val='28'/><w:sz-cs w:val='28'/></w:rPr><w:t>Hello world (this should be bold, red, size 14).</w:t></w:r></w:p>";
         paragraph.insertOoxml(ooxmlContent, Word.InsertLocation.end);
         
-        // Synchronize the document state by executing the queued-up commands, 
+        // Synchronize the document state by executing the queued commands, 
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Inserted OOXML at the end of the first paragraph.');
@@ -595,7 +595,7 @@ Word.run(function (context) {
     // We never perform an empty load. We always must request a property.
     context.load(paragraphs, {select: 'style', top: 2} );
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         
@@ -605,7 +605,7 @@ Word.run(function (context) {
         // Queue a command to insert the paragraph after the current paragraph.
         paragraph.insertParagraph('Content of a new paragraph', Word.InsertLocation.after);
         
-        // Synchronize the document state by executing the queued-up commands, 
+        // Synchronize the document state by executing the queued commands, 
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Inserted a new paragraph at the end of the first paragraph.');
@@ -649,7 +649,7 @@ Word.run(function (context) {
     // We never perform an empty load. We always must request a property.
     context.load(paragraphs, {select: 'style', top: 2} );
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         
@@ -659,7 +659,7 @@ Word.run(function (context) {
         // Queue a command to insert text into the end of the paragraph.
         paragraph.insertText('New text inserted into the paragraph.', Word.InsertLocation.end);
         
-        // Synchronize the document state by executing the queued-up commands, 
+        // Synchronize the document state by executing the queued commands, 
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Inserted text at the end of the first paragraph.');
@@ -702,7 +702,7 @@ Word.run(function (context) {
     // We never perform an empty load. We always must request a property.
     context.load(paragraphs, {select: 'style', top: 2} );
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         
@@ -712,7 +712,7 @@ Word.run(function (context) {
         // Queue a command to load font information for the paragraph.
         context.load(paragraph, 'font/size, font/name, font/color');
         
-        // Synchronize the document state by executing the queued-up commands, 
+        // Synchronize the document state by executing the queued commands, 
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             // Show the results of the load method. Here we show the
@@ -779,7 +779,7 @@ Word.run(function (context) {
     // Queue a commmand to load the style property for all of the paragraphs.
     context.load(paragraphs, 'style');
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         
@@ -791,7 +791,7 @@ Word.run(function (context) {
         // move to the selected paragraph.
         paragraph.select();
         
-        // Synchronize the document state by executing the queued-up commands, 
+        // Synchronize the document state by executing the queued commands, 
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Selected the last paragraph.');

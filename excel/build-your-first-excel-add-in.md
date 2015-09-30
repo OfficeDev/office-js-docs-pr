@@ -178,7 +178,7 @@ d. Create a file to contain the programming logic for the add-in in jQuery. Name
                 points.getItemAt(0).format.fill.setSolidColor("pink");
                 points.getItemAt(1).format.fill.setSolidColor('indigo');
 
-                //Run the queued-up commands, and return a promise to indicate task completion
+                //Run the queued commands, and return a promise to indicate task completion
                 return ctx.sync();
             })
               .then(function () {

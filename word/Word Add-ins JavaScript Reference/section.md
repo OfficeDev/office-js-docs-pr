@@ -48,7 +48,7 @@ Word.run(function (context) {
 	// Queue a commmand to load the sections.
 	context.load(mySections, 'body/style');
 	
-	// Synchronize the document state by executing the queued-up commands, 
+	// Synchronize the document state by executing the queued commands, 
 	// and return a promise to indicate task completion.
 	return context.sync().then(function () {
 		
@@ -62,7 +62,7 @@ Word.run(function (context) {
 		// Queue a command to wrap the header in a content control.
 		myFooter.insertContentControl();
 							  
-		// Synchronize the document state by executing the queued-up commands, 
+		// Synchronize the document state by executing the queued commands, 
 		// and return a promise to indicate task completion.
 		return context.sync().then(function () {
 			console.log("Added a footer to the first section.");
@@ -103,7 +103,7 @@ Word.run(function (context) {
     // Queue a commmand to load the sections.
     context.load(mySections, 'body/style');
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         
@@ -117,7 +117,7 @@ Word.run(function (context) {
         // Queue a command to wrap the header in a content control.
         myHeader.insertContentControl();
                               
-        // Synchronize the document state by executing the queued-up commands, 
+        // Synchronize the document state by executing the queued commands, 
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log("Added a header to the first section.");

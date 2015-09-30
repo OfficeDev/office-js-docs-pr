@@ -65,7 +65,7 @@ Word.run(function (context) {
     // Queue a commmand to clear the contents of the body.
     body.clear();
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Cleared the body contents.');
@@ -105,7 +105,7 @@ Word.run(function (context) {
     // Queue a commmand to get the HTML contents of the body.
     var bodyHTML = body.getHtml();
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log("Body HTML contents: " + bodyHTML.value);
@@ -144,7 +144,7 @@ Word.run(function (context) {
     // Queue a commmand to get the OOXML contents of the body.
     var bodyOOXML = body.getOoxml();
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log("Body OOXML contents: " + bodyOOXML.value);
@@ -189,7 +189,7 @@ Word.run(function (ctx) {
     // Queue a commmand to insert a page break at the start of the document body.
     body.insertBreak(Word.BreakType.page, Word.InsertLocation.start);
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return ctx.sync().then(function () {
         console.log('Added a page break at the start of the document body.');
@@ -227,7 +227,7 @@ Word.run(function (context) {
     // Queue a commmand to wrap the body in a content control.
     body.insertContentControl();
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Wrapped the body in a content control.');
@@ -269,7 +269,7 @@ Word.run(function (context) {
     // You will need to implement getBase64() to pass in a string of a base64 encoded docx file.
     body.insertFileFromBase64(getBase64(), Word.InsertLocation.start);
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Added base64 encoded text to the beginning of the document body.');
@@ -310,7 +310,7 @@ Word.run(function (context) {
     // Queue a commmand to insert HTML in to the beginning of the body.
     body.insertHtml('<strong>This is text inserted with body.insertHtml()</strong>', Word.InsertLocation.start);
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('HTML added to the beginning of the document body.');
@@ -353,7 +353,7 @@ Word.run(function (context) {
                      "<w:color w:val='FF0000'/><w:sz w:val='28'/><w:sz-cs w:val='28'/></w:rPr><w:t>Hello world (this" +
                      " should be bold, red, size 14).</w:t></w:r></w:p>", Word.InsertLocation.start);
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('OOXML added to the beginning of the document body.');
@@ -394,7 +394,7 @@ Word.run(function (context) {
     // Queue a commmand to insert the paragraph at the end of the document body.
     body.insertParagraph('Content of a new paragraph', Word.InsertLocation.end);
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Paragraph added at the end of the document body.');
@@ -435,7 +435,7 @@ Word.run(function (context) {
     // Queue a commmand to insert text in to the beginning of the body.
     body.insertText('This is text inserted with body.insertText()', Word.InsertLocation.start);
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Text added to the beginning of the document body.');
@@ -475,7 +475,7 @@ Word.run(function (context) {
     // Queue a commmand to load font and style information for the document body.
     context.load(body, 'font/size, font/name, font/color, style');
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         // Show the results of the load method. Here we show the
@@ -526,7 +526,7 @@ Word.run(function (context) {
     // Queue a commmand to load the results.
     context.load(searchResults, 'text, font');
 
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         var results = 'Found count: ' + searchResults.items.length + 
@@ -539,7 +539,7 @@ Word.run(function (context) {
           searchResults.items[i].font.bold = true;
         }
         
-        // Synchronize the document state by executing the queued-up commands, 
+        // Synchronize the document state by executing the queued commands, 
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log(results);
@@ -579,7 +579,7 @@ Word.run(function (context) {
     // move to the selected document body.
     body.select();
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Selected the document body.');
@@ -606,7 +606,7 @@ Word.run(function (context) {
     // Queue a commmand to load the text in document body.
     context.load(body, 'text');
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log("Body contents: " + body.text);
@@ -631,7 +631,7 @@ Word.run(function (context) {
     // Queue a commmand to load font and style information for the document body.
     context.load(body, 'font/size, font/name, font/color, style');
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         // Show the results of the load method. Here we show the
