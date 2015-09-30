@@ -1,4 +1,4 @@
-# Excel Add-ins
+# Excel add-ins
 
 _Applies to: Excel 2016, Office 2016_
 
@@ -16,11 +16,11 @@ Explore the following resources to learn more.
 
 Here're two resources to help you try out and get familiar with the APIs.
 
-#### Code snippets
+### Code snippets
 
 You can use the [Office 2016 JavaScript Snippet Explorer](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel) to browse through code examples for common scenarios and to learn how the new APIs work. 
 
-#### Add-in samples
+### Sample add-ins
 
 **[Quarterly Sales Report Sample](https://github.com/OfficeDev/Excel-Add-in-JS-QuarterlySalesReport)** : A simple task pane add-in that loads some data into a worksheet and creates a basic chart in Excel 2016. 
 

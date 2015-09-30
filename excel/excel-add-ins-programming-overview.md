@@ -8,6 +8,7 @@ This article covers the fundamentals of using the JavaScript APIs to build add-i
 
 Let's begin with a brief introduction to the key concepts that are fundamental to using the APIs, such as RequestContext, JavaScript proxy objects, sync(), Excel.run(), and load(). The example code at the end of the section shows these concepts in use.
 
+
 #### RequestContext
 
 The RequestContext object facilitates requests to the Excel application. Since the Office add-in and the Excel application run in two different processes, request context is required to get access to Excel and related objects such as worksheets, tables, etc. from the add-in. A request context is created as shown below.
@@ -222,7 +223,7 @@ For read operations, expect to receive blank values if the contents of the cells
   range.formula = [["", "", "=Rand()"]];
 ```
 
-### Unbounded-Range
+### Unbounded Range
 
 #### Read
 
