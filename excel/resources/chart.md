@@ -79,6 +79,8 @@ object.load(param);
 
 #### Returns
 void
+
+
 ### setData(sourceData: Range or string, seriesBy: string)
 Resets the source data for the chart.
 

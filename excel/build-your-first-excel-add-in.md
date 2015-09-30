@@ -12,7 +12,7 @@ You’ll start by creating a web app using HTML and JQuery. Then you'll create a
 
 ### Code it
 
-1- Create a folder on your local drive named QuarterlySalesReport (for example, C:\QuarterlySalesReport). Save all files created in the steps that follow into this folder.
+1- Create a folder on your local drive named QuarterlySalesReport (for example, C:\\QuarterlySalesReport). Save all files created in the steps that follow into this folder.
 
 2- Create the HTML page that will load into the task pane add-in. Name the file **Home.html** and paste the code below into the file.
 
