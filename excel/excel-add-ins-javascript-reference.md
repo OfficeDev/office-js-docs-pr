@@ -2,7 +2,7 @@
 
 _Applies to: Excel 2016, Office 2016_
 
-The links below show the high level Excel Objects available in the APIs. Each object page link contains a description of the properties, relationships, and methods available on the object. Explore the links below to learn more.
+The links below show the high level Excel objects available in the APIs. Each object page link contains a description of the properties, relationships, and methods available on the object. Explore the links below to learn more.
 	
 * [Workbook](resources/workbook.md): The top-level object that contains related workbook objects such as worksheets, tables, ranges, etc. It also can be used to list related references. 
 * [Worksheet](resources/worksheet.md): A member of the Worksheets collection. The Worksheets collection contains all the Worksheet objects in a workbook.
