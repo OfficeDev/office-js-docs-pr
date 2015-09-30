@@ -32,7 +32,6 @@ You can use the [Office 2016 JavaScript Snippet Explorer](http://officesnippetex
 
 ### Additional resources
 
-
 *  [Build your first Excel add-in](build-your-first-excel-add-in.md)
 *  [Excel add-ins programming overview](excel-add-ins-programming-overview.md)
 *  [Excel add-ins JavaScript API reference](excel-add-ins-javascript-reference.md)

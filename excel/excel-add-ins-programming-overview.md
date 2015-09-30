@@ -357,7 +357,6 @@ Errors are returned using an error object that consists of a code and a message.
 
 ### Additional resources
 
-
 * [Build your first Excel Add-in](build-your-first-excel-add-in.md)
 * [Code snippet explorer](https://github.com/OfficeDev/office-js-snippet-explorer)
 * [Excel add-ins code samples](excel-add-ins-code-samples.md)

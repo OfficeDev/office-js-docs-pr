@@ -22,8 +22,7 @@ The links below show the high level Excel Objects available in the APIs. Each ob
 * [Request Context](resources/requestcontext.md): The RequestContext object facilitates requests to the Excel application.
 
 
-##### Learn more
-Explore related resources available: 
+##### Additional resources
 
 1.  [Excel Add-ins programming overview](excel-add-ins-programming-overview.md)
 2.  [Build your first Excel Add-in](build-your-first-excel-add-in.md)
