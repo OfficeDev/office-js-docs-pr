@@ -155,7 +155,7 @@ You will create a simple web app and the app manifest in this section. The web a
     })();
 ```
 
-4) Create an XML file named BoilerplateManifext.xml and paste the code below into the file. This is the manifest file that Word uses to discover information about an add-in such as its location or display name.
+4) Create an XML file named BoilerplateManifest.xml and paste the code below into the file. This is the manifest file that Word uses to discover information about an add-in such as its location or display name.
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
@@ -181,9 +181,9 @@ You will create a simple web app and the app manifest in this section. The web a
 
 6) Save all the files. You’ve now written your first Word add-in. 
 
-7) Create a network folder (for example, \\\MyShare\boilerplate) and copy home.js, home.html, and BoilerplateManifext.xml to that location.
+7) Create a network folder (for example, \\MyShare\boilerplate) and copy home.js, home.html, and BoilerplateManifest.xml to that location.
 
-8) Edit the <code>SourceLocation</code> element in BoilerplateManifext.xml so that it points to the location of home.html. 
+8) Edit the <code>SourceLocation</code> element in BoilerplateManifest.xml so that it points to the location of home.html. 
 
 At this point, you have your first add-in deployed. Now you need to let Word know where to find the add-in.
 
@@ -191,7 +191,7 @@ At this point, you have your first add-in deployed. Now you need to let Word kno
 2. Choose the **File** tab, and then choose **Options**.
 3. Choose **Trust Center**, and then choose the **Trust Center Settings** button.
 4. Choose **Trusted Add-ins Catalogs**.
-5. In the **Catalog Url** box, enter the path to the folder share that contains BoilerplateManifext.xml and then choose **Add Catalog**.
+5. In the **Catalog Url** box, enter the path to the folder share that contains BoilerplateManifest.xml and then choose **Add Catalog**.
 6. Select the **Show in Menu** check box, and then choose **OK**.
 7. A message is displayed to inform you that your settings will be applied the next time you start Office. Close and restart Word. 
 
