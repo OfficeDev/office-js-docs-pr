@@ -14,23 +14,25 @@ Explore the following resources to learn more.
 
 ## Try it out
 
+Here're two resources to help you get familiar with the APIs.
+
 #### Code snippets
 
-We've been working on a Snippet Explorer to let you browse through code snippets for common scenarios and learn how the new APIs work. Explore them [here](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel). 
+You can use the [Office 2016 JavaScript Snippet Explorer](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel) to browse through code examples for common scenarios and to learn how the new APIs work. 
 
-#### Sample add-ins
+#### Add-in samples
 
-**[Excel-Add-in-JS-QuarterlySalesReport](https://github.com/OfficeDev/Excel-Add-in-JS-QuarterlySalesReport)** : A simple task pane add-in that loads some data into a worksheet and creates a basic chart in Excel 2016. 
+**[Quarterly Sales Report Sample](https://github.com/OfficeDev/Excel-Add-in-JS-QuarterlySalesReport)** : A simple task pane add-in that loads some data into a worksheet and creates a basic chart in Excel 2016. 
 
-**[Excel-Add-in-JS-CollegeBudgetTracker](https://github.com/OfficeDev/Excel-Add-in-JS-CollegeBudgetTracker)** A task pane add-in that shows how to create a college budget tracker using the JavaScript APIs in Excel 2016. 
+**[College Budget Tracker Sample](https://github.com/OfficeDev/Excel-Add-in-JS-CollegeBudgetTracker)** A task pane add-in that shows how to create a college budget tracker using the JavaScript APIs in Excel 2016. 
 
-**[Excel-Add-in-JS-CollegeCreditsTracker](https://github.com/OfficeDev/Excel-Add-in-JS-CollegeCreditsTracker)** A task pane add-in that shows how to create a college credits tracker using the JavaScript APIs in Excel 2016. 
+**[College Credits Tracker Sample](https://github.com/OfficeDev/Excel-Add-in-JS-CollegeCreditsTracker)** A task pane add-in that shows how to create a college credits tracker using the JavaScript APIs in Excel 2016. 
 
-**[Excel-Add-in-JS-SheetSwitcher](https://github.com/OfficeDev/Excel-Add-in-JS-SheetSwitcher)** A task pane add-in that provides a way to add new sheets to a workbook and navigate to them in Excel 2016. 
+**[Sheet Switcher Sample](https://github.com/OfficeDev/Excel-Add-in-JS-SheetSwitcher)** A task pane add-in that provides a way to add new sheets to a workbook and navigate to them in Excel 2016. 
 
-**[Excel-Add-in-JS-ConsolidatedSalesReport](https://github.com/OfficeDev/Excel-Add-in-JS-ConsolidatedSalesReport)** A task pane add-in that shows how to consolidate data from multiple worksheets using the JavaScript APIs in Excel 2016. 
+**[Consolidated Sales Report Sample](https://github.com/OfficeDev/Excel-Add-in-JS-ConsolidatedSalesReport)** A task pane add-in that shows how to consolidate data from multiple worksheets using the JavaScript APIs in Excel 2016. 
 
-**[Excel-Add-in-JS-RangeHighlighter](https://github.com/OfficeDev/Excel-Add-in-JS-RangeHighlighter)** : A task pane add-in that shows how to do common operations using the Range API in Excel 2016.
+**[Range Highlighter Sample](https://github.com/OfficeDev/Excel-Add-in-JS-RangeHighlighter)** : A task pane add-in that shows how to do common operations using the Range API in Excel 2016.
 
 
 ## Give us your feedback
