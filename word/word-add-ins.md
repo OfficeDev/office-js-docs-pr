@@ -19,9 +19,9 @@ A Word add-in runs inside Word and can interact with the contents of the documen
 ### Set it up
 You will create a simple web app and the app manifest in this section. The web app will allow you to add boilerplate text into the Word document. 
 
-1) Create a folder on your local drive named BoilerplateAddin (for example C:\\BoilerplateAddin). Save all files created in the following steps to this folder.
+1- Create a folder on your local drive named BoilerplateAddin (for example C:\\BoilerplateAddin). Save all files created in the following steps to this folder.
 
-2) Create a file named home.html for the add-in view. The add-in will have three buttons that, when they're selected, will add boilerplate text. Paste the following code into home.html.
+2- Create a file named home.html for the add-in view. The add-in will have three buttons that, when they're selected, will add boilerplate text. Paste the following code into home.html.
 
 ```html
     <!DOCTYPE html>
@@ -50,7 +50,7 @@ You will create a simple web app and the app manifest in this section. The web a
     </html>
 ```
 
-3) Create a file named home.js and paste the following code into the file. This contains initialization code and all of our add-in code for making changes to the Word document. This code inserts text based on the cursor or the selection in the Word document. 
+3- Create a file named home.js and paste the following code into the file. This contains initialization code and all of our add-in code for making changes to the Word document. This code inserts text based on the cursor or the selection in the Word document. 
 
 ```javascript
     (function () {
@@ -155,7 +155,7 @@ You will create a simple web app and the app manifest in this section. The web a
     })();
 ```
 
-4) Create an XML file named BoilerplateManifest.xml and paste the following code into the file. This is the manifest file that Word uses to discover information about an add-in such as its location or display name.
+4- Create an XML file named BoilerplateManifest.xml and paste the following code into the file. This is the manifest file that Word uses to discover information about an add-in such as its location or display name.
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
@@ -177,13 +177,13 @@ You will create a simple web app and the app manifest in this section. The web a
     </OfficeApp>
 ```
 
-5) Generate a GUID and replace the value in the <code>OfficeApp/Id</code> element with your GUID.
+5- Generate a GUID and replace the value in the <code>OfficeApp/Id</code> element with your GUID.
 
-6) Save all the files. You’ve now written your first Word add-in. 
+6- Save all the files. You’ve now written your first Word add-in. 
 
-7) Create a network folder (for example, \\\MyShare\boilerplate) and copy home.js, home.html, and BoilerplateManifest.xml to that location.
+7- Create a network folder (for example, \\\MyShare\boilerplate) and copy home.js, home.html, and BoilerplateManifest.xml to that location.
 
-8) Edit the <code>SourceLocation</code> element in BoilerplateManifest.xml so that it points to the location of home.html. 
+8- Edit the <code>SourceLocation</code> element in BoilerplateManifest.xml so that it points to the location of home.html. 
 
 At this point, you have your first add-in deployed. Now you need to let Word know where to find the add-in.
 
