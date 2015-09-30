@@ -80,7 +80,7 @@ You will create a simple web app and the app manifest in this section. The web a
 
                 // Synchronize the document state by executing the queued-up commands, 
                 // and return a promise to indicate task completion.
-                return ctx.sync().then(function () {
+                return context.sync().then(function () {
                     console.log('Added a quote from Ralph Waldo Emerson.');
                 });  
             })
@@ -103,7 +103,7 @@ You will create a simple web app and the app manifest in this section. The web a
 
                 // Synchronize the document state by executing the queued-up commands, 
                 // and return a promise to indicate task completion.
-                return ctx.sync().then(function () {
+                return context.sync().then(function () {
                     console.log('Added a quote from Anton Chekhov.');
                 });  
 
@@ -128,7 +128,7 @@ You will create a simple web app and the app manifest in this section. The web a
 
                 // Synchronize the document state by executing the queued-up commands, 
                 // and return a promise to indicate task completion.
-                return ctx.sync().then(function () {
+                return context.sync().then(function () {
                     console.log('Added a quote from a Chinese proverb.');
                 });  
 
