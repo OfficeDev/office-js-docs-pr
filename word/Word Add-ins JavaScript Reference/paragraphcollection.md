@@ -48,7 +48,7 @@ Word.run(function (context) {
 	// Queue a commmand to load the style property for all of the paragraphs.
 	context.load(paragraphs, 'style');
 	
-	// Synchronize the document state by executing the queued-up commands, 
+	// Synchronize the document state by executing the queued commands, 
 	// and return a promise to indicate task completion.
 	return context.sync().then(function () {
 		
@@ -60,7 +60,7 @@ Word.run(function (context) {
 		// move to the selected paragraph.
 		paragraph.select();
 		
-		// Synchronize the document state by executing the queued-up commands, 
+		// Synchronize the document state by executing the queued commands, 
 		// and return a promise to indicate task completion.
 		return context.sync().then(function () {
 			console.log('Selected the last paragraph.');
@@ -101,7 +101,7 @@ Word.run(function (context) {
     // Queue a commmand to load the text and style properties for all of the paragraphs.
     context.load(paragraphs, 'text, style');
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         
@@ -113,7 +113,7 @@ Word.run(function (context) {
         // move to the selected paragraph.
         paragraph.select();
         
-        // Synchronize the document state by executing the queued-up commands, 
+        // Synchronize the document state by executing the queued commands, 
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Selected the last paragraph.');

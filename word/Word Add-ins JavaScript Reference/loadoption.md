@@ -48,7 +48,7 @@ This example shows how to get the top 50 paragraphs in the Word document along w
             // returned in on the object. 
             context.load(paragraphs, 'text, font/size, top: 50, skip: 0');
 
-            // Synchronize the document state by executing the queued-up commands, 
+            // Synchronize the document state by executing the queued commands, 
             // and return a promise to indicate task completion.
             return context.sync().then(function () {
             

@@ -66,7 +66,7 @@ Word.run(function (context) {
     // Queue a commmand to clear the contents of the proxy range object.
     range.clear();
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Cleared the selection (range object)');
@@ -105,7 +105,7 @@ Word.run(function (context) {
     // Queue a commmand to delete the range object.
     range.delete();
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Deleted the selection (range object)');
@@ -145,7 +145,7 @@ Word.run(function (context) {
     // Queue a commmand to get the HTML of the current selection. 
     var html = range.getHtml();
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('The HTML read from the document was: ' + html.value);
@@ -185,7 +185,7 @@ Word.run(function (context) {
     // Queue a commmand to get the OOXML of the current selection. 
     var ooxml = range.getOoxml();
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('The OOXML read from the document was:  ' + ooxml.value);
@@ -231,7 +231,7 @@ Word.run(function (context) {
     // Queue a commmand to insert a page break after the selected text.
     range.insertBreak('page', 'After');
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Inserted a page break after the selected text.');
@@ -279,7 +279,7 @@ Word.run(function (context) {
     myContentControl.cannotEdit = true;
     myContentControl.appearance = "tags";
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Wrapped a content control around the selected text.');
@@ -323,7 +323,7 @@ Word.run(function (context) {
     // You'll need to implement getBase64() to make this work.
     range.insertFileFromBase64(getBase64(), Word.InsertLocation.start);
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Added base64 encoded text to the beginning of the range.');
@@ -366,7 +366,7 @@ Word.run(function (context) {
     // Queue a commmand to insert HTML in to the beginning of the range.
     range.insertHtml('<strong>This is text inserted with range.insertHtml()</strong>',                                    Word.InsertLocation.start);
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('HTML added to the beginning of the range.');
@@ -412,7 +412,7 @@ Word.run(function (context) {
                       "<w:sz-cs w:val='28'/></w:rPr><w:t>Hello world (this should be bold," +
                       "red, size 14).</w:t></w:r></w:p>", Word.InsertLocation.start);
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('OOXML added to the beginning of the range.');
@@ -455,7 +455,7 @@ Word.run(function (context) {
     // Queue a commmand to insert the paragraph after the range.
     range.insertParagraph('Content of a new paragraph', Word.InsertLocation.after);
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Paragraph added to the end of the range.');
@@ -498,7 +498,7 @@ Word.run(function (context) {
     // Queue a commmand to insert the paragraph at the end of the range.
     range.insertText('New text inserted into the range.', Word.InsertLocation.end);
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Text added to the end of the range.');
@@ -540,7 +540,7 @@ Word.run(function (context) {
     // Queue a commmand to load font and style information for the range.
     context.load(range, 'font/size, font/name, font/color, style');
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         
@@ -608,7 +608,7 @@ Word.run(function (context) {
     // Queue a command to select the HTML that was inserted.
     range.select();
     
-    // Synchronize the document state by executing the queued-up commands, 
+    // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Selected the range.');
