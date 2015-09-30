@@ -28,7 +28,7 @@ Add-in code samples that use the JavaScript API in Excel 2016 are listed below f
 
 ![Range Highlighter Sample Add-in](images/RangeHighlighter_result.PNG)
 
-We also a Snippet Explorer to let you browse through code snippets for common scenarios and learn how the new APIs work. Explore them [here](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel). 
+We also offer a Snippet Explorer to let you browse through code snippets for common scenarios and learn how the new APIs work. Explore them [here](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel). 
 
 ### Learn more
 

@@ -12,9 +12,9 @@ You’ll start by creating a web app using HTML and JQuery. Then you'll create a
 
 ### Code it
 
-a. Create a folder on your local drive named QuarterlySalesReport (for example, C:\QuarterlySalesReport). Save all of the files created in the following steps into this folder.
+a. Create a folder on your local drive named QuarterlySalesReport (for example, C:\QuarterlySalesReport). Save all files created in the steps that follow into this folder.
 
-b. Create the HTML page that will load into the task pane add-in. Name the file **Home.html** and paste in the code below.
+b. Create the HTML page that will load into the task pane add-in. Name the file **Home.html** and paste the code below into the file.
 
 ```html
 	
@@ -48,7 +48,7 @@ b. Create the HTML page that will load into the task pane add-in. Name the file 
         </div>
         <div id="content-main">
             <div class="padding">
-                <p>This sample shows how to load some sample data into the worksheet and then create a chart using the Excel JavaScript API.</p>
+                <p>This sample shows how to load some sample data into the worksheet, and then create a chart using the Excel JavaScript API.</p>
                 <br />
                 <h3>Try it out</h3>
                 <button class="ms-Button" id="load-data-and-create-chart">Click me!</button>
@@ -59,7 +59,7 @@ b. Create the HTML page that will load into the task pane add-in. Name the file 
 
 ```  
 
-c. Create a file named **Common.css** to store your custom styles and paste in the code below.
+c. Create a file named **Common.css** to store your custom styles and paste the code below into the file.
 
 ```css
 	/* Common app styling */
@@ -120,7 +120,7 @@ c. Create a file named **Common.css** to store your custom styles and paste in t
 	
 ```
 
-d. Create a file to contain the programming logic for the add-in in jQuery. Name the file **Home.js** and paste in the following script.
+d. Create a file to contain the programming logic for the add-in in jQuery. Name the file **Home.js** and paste the following script into the file.
 	
 ```js
     
@@ -198,7 +198,7 @@ d. Create a file to contain the programming logic for the add-in in jQuery. Name
 ```
 
 
-e. Create a file to contain the programming logic for providing notifications in the add-in in case of errors. This is helpful while debugging. Name the file **Notification.js** and paste in the following script.
+e. Create a file to contain the programming logic for providing notifications in the add-in in case of errors. This is helpful while debugging. Name the file **Notification.js** and paste the following script into the file.
 	
 ```js
     
@@ -267,7 +267,7 @@ g.	Save all the files. You’ve now written your first Excel add-in.
 
 The simplest way to deploy and test your add-in is to copy the files to a network share.
 
-1.  Create a folder on a network share (for example, \\MyShare\QuarterlySalesReport) and copy all the files.  
+1.  Create a folder on a network share (for example, \\MyShare\QuarterlySalesReport) and copy all the files to that folder.  
 
 2.  Edit the **SourceLocation** element of the manifest file so that it points to the share location for the .html page from step 1. 
 
