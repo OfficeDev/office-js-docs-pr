@@ -48,7 +48,7 @@ var sheetName = "Sheet1";
 var rangeAddress = "A1:B2";
 var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-ctx.trackedObjects.add(range);
+ctx.trackedObjectsCollection.add(range);
 ctx.load(range);
 
 Excel.run(function (ctx) { 
@@ -85,13 +85,13 @@ var sheetName = "Sheet1";
 var rangeAddress = "A1:B2";
 var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-ctx.trackedObjects.add(range);
+ctx.trackedObjectsCollection.add(range);
 ctx.load(range);
 
 Excel.run(function (ctx) { 
 	range.insert("Down");
 	Console.log(range.address); // Address should be updated to A3:B4
-	ctx.trackedObjects.remove(range); 
+	ctx.trackedObjectsCollection.remove(range); 
 	return ctx.sync(); 
 });
 ```
@@ -120,11 +120,11 @@ Excel.run(function (ctx) {
 	var rangeAddress = "A1:B2";
 	var ctx = new Excel.RequestContext();
 	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-	ctx.trackedObjects.add(range);
+	ctx.trackedObjectsCollection.add(range);
 	ctx.load(range);
 	range.insert("Down");
 	Console.log(range.address); // Address should be updated to A3:B4
-	ctx.trackedObjects.removeAll(); 
+	ctx.trackedObjectsCollection.removeAll(); 
 	return ctx.sync(); 
 });
 ```

@@ -1,8 +1,8 @@
 # Word add-ins programming overview
 
-_Applies to: Word 2016 for Windows_
+_Applies to: Word 2016_
 
-Microsoft Word 2016 introduces a new object model for working with Word objects. This object model is an addition to the existing object model provided by Office.js to create add-ins for Word. This object model is accessed via Javascript hosted by a web application.
+Word 2016 introduces a new object model for working with Word objects. This object model is an addition to the existing object model provided by Office.js to create add-ins for Word. This object model is accessed via Javascript hosted by a web application.
 
 ## Manifest
 
@@ -20,7 +20,7 @@ Let's take a look at what you'll need when you run your add-in. All add-ins shou
 
 Your Word add-in executes by passing a function into the Word.run() method. The function passed into the run method must have a context argument. This [context object](word-add-ins-javascript-reference/requestcontext.md) is different than the context object you get from the Office object, although it is used for the same purpose which is to interact with the Word runtime environment. The context object provides access to the Word Javascript object model. Let's take a look at the comments and code of a basic Word add-in:
 
-*Example 1. Initialization and execution of a Word add-in*
+**Example 1. Initialization and execution of a Word add-in**
 
 ```javascript
     (function () {
@@ -53,7 +53,7 @@ Example 1. shows the basic code needed to create a Word add-in. It initializes O
 
 The Word Javascript object model is loosely coupled with the objects in Word. The Word Javascript objects are proxy objects for the real objects in a Word document. All actions taken on proxy objects are not realized in Word, and the state of the Word document is not realized in the proxy objects, until the document state has been synchronized. The document state is synchronized when context.sync() is run. The sync() method essentially runs the set of commands in queue for each proxy object.  Example 2 shows the creation of a proxy body object and a queued command to load the text property on the proxy body object, and then the synchronization of the body in the Word document with the body proxy object. 
 
-*Example 2. Synchronization of the document body with the body proxy object.*
+**Example 2. Synchronization of the document body with the body proxy object.**
 
 ```javascript
     // Run a batch operation against the Word object model.
@@ -80,7 +80,7 @@ The Word proxy objects have methods for accessing and updating the object model.
 
 In example 3, we demonstrate how the queue of commands works. When context.sync() is called, the first thing that happens is that the [command to load](Word%20Add-ins%20JavaScript%20Reference/loadoption.md) the body text is executed in Word. Then, the command to insert text into the body on Word occurs. The results are then returned to the body proxy object. The value of the body.text property in the Word Javascript will be the value of the Word document body <u>before</u> the text was inserted into Word document. 
 
-*Example 3. Executing a batch of commands.*
+**Example 3. Executing a batch of commands.**
 
 ```javascript
     // Run a batch operation against the Word object model.
@@ -104,11 +104,19 @@ In example 3, we demonstrate how the queue of commands works. When context.sync(
     })
 ```
 
-## Provide feedback
-If any of these core concepts aren't clear to you, or if there is a concept missing from this topic, please provide feedback so that we can better document this API and how it works. Feedback about this API and documentation can be provided in issues opened against the [office-js-docs](https://github.com/OfficeDev/office-js-docs) repository.
+## Give us your feedback
 
-## Additional links
+Your feedback is important to us. 
 
+* Check out the docs and let us know about any questions and issues you find in them by [submitting an issue](https://github.com/OfficeDev/office-js-docs/issues) directly in this repository.
+* Let us know about your programming experience, what you would like to see in future versions, code samples, etc. Use [this site](http://officespdev.uservoice.com/) for entering your suggestions and ideas.
+
+
+## Additional resources
+
+* [Word add-ins]](word-add-ins.md)
+* [Word add-ins Javascript reference](word-add-ins-javascript-reference.md)
 * [Office Add-ins](https://msdn.microsoft.com/en-us/library/office/jj220060.aspx)
 * [Get started with Office Add-ins](http://dev.office.com/getting-started/addins)
 * [Word add-ins on GitHub](https://github.com/OfficeDev?utf8=%E2%9C%93&query=Word)
+* [Snippet Explorer for Word](http://officesnippetexplorer.azurewebsites.net/#/snippets/word)

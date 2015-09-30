@@ -2,7 +2,7 @@
 
 _Applies to: Excel 2016, Office 2016_
 
-The steps below walk you through building a simple Excel task pane add-in that loads some data into a worksheet and creates a basic chart.
+The steps below walk you through building a simple task pane add-in that loads some data into a worksheet and creates a basic chart in Excel 2016.
 
 ![Quarterly Sales Report Add-in](images/QuarterlySalesReport_report.PNG)
 
@@ -12,9 +12,9 @@ You’ll start by creating a web app using HTML and JQuery. Then you'll create a
 
 ### Code it
 
-a. Create a folder on your local drive named QuarterlySalesReport (for example, C:\QuarterlySalesReport). Save all files created in the steps that follow into this folder.
+1- Create a folder on your local drive named QuarterlySalesReport (for example, C:\\QuarterlySalesReport). Save all files created in the steps that follow into this folder.
 
-b. Create the HTML page that will load into the task pane add-in. Name the file **Home.html** and paste the code below into the file.
+2- Create the HTML page that will load into the task pane add-in. Name the file **Home.html** and paste the code below into the file.
 
 ```html
 	
@@ -59,7 +59,7 @@ b. Create the HTML page that will load into the task pane add-in. Name the file 
 
 ```  
 
-c. Create a file named **Common.css** to store your custom styles and paste the code below into the file.
+3- Create a file named **Common.css** to store your custom styles and paste the code below into the file.
 
 ```css
 	/* Common app styling */
@@ -120,7 +120,7 @@ c. Create a file named **Common.css** to store your custom styles and paste the 
 	
 ```
 
-d. Create a file to contain the programming logic for the add-in in jQuery. Name the file **Home.js** and paste the following script into the file.
+4- Create a file to contain the programming logic for the add-in in jQuery. Name the file **Home.js** and paste the following script into the file.
 	
 ```js
     
@@ -198,7 +198,7 @@ d. Create a file to contain the programming logic for the add-in in jQuery. Name
 ```
 
 
-e. Create a file to contain the programming logic for providing notifications in the add-in in case of errors. This is helpful while debugging. Name the file **Notification.js** and paste the following script into the file.
+5- Create a file to contain the programming logic for providing notifications in the add-in in case of errors. This is helpful while debugging. Name the file **Notification.js** and paste the following script into the file.
 	
 ```js
     
@@ -237,7 +237,7 @@ e. Create a file to contain the programming logic for providing notifications in
     })();
 ```
 
-e. Create an XML manifest file to specify where your web app is located and how you want it to appear in Excel. Name the file **QuarterlySalesReportManifest.xml** and paste the following XML into the file.
+6- Create an XML manifest file to specify where your web app is located and how you want it to appear in Excel. Name the file **QuarterlySalesReportManifest.xml** and paste the following XML into the file.
     
 	```xml
 	<?xml version="1.0" encoding="UTF-8"?>
@@ -259,46 +259,51 @@ e. Create an XML manifest file to specify where your web app is located and how 
     </OfficeApp>
 	```
 
-f.  Generate a GUID using an online generator of your choice. Then, replace the value in the **Id** tag shown in the previous step with that GUID. 
+7-  Generate a GUID using an online generator of your choice. Then, replace the value in the **Id** tag shown in the previous step with that GUID. 
 
-g.	Save all the files. You’ve now written your first Excel add-in. 
+8-	Save all the files. You’ve now written your first Excel add-in. 
 
 ### Try it out
 
 The simplest way to deploy and test your add-in is to copy the files to a network share.
 
-1.  Create a folder on a network share (for example, \\\MyShare\\QuarterlySalesReport) and copy all the files to that folder.  
+1-  Create a folder on a network share (for example, \\\MyShare\\QuarterlySalesReport) and copy all the files to that folder.  
 
-2.  Edit the **SourceLocation** element of the manifest file so that it points to the share location for the .html page from step 1. 
+2-  Edit the **SourceLocation** element of the manifest file so that it points to the share location for the .html page from step 1. 
 
-3.  Copy the manifest (QuarterlySalesReportManifest.xml) to a network share (for example, \\\MyShare\\MyManifests).
+3-  Copy the manifest (QuarterlySalesReportManifest.xml) to a network share (for example, \\\MyShare\\MyManifests).
 
-4.  Add the share location that contains the manifest as a trusted app catalog in Excel.
-    1.  Launch Excel and open a blank spreadsheet.  
+4-  Add the share location that contains the manifest as a trusted app catalog in Excel.
+
+      a- Launch Excel and open a blank spreadsheet.  
     
-    2.  Choose the **File** tab, and then choose **Options**.
+      b-  Choose the **File** tab, and then choose **Options**.
     
-    3.  Choose **Trust Center**, and then choose the **Trust Center Settings** button.
+      c-  Choose **Trust Center**, and then choose the **Trust Center Settings** button.
     
-    4.  Choose **Trusted App Catalogs**.
+      d-  Choose **Trusted Add-in Catalogs**.
     
-    5.  In the **Catalog Url** box, enter the path to the network share you created in step 1, and then choose **Add Catalog**.
+      e-  In the **Catalog Url** box, enter the path to the network share you created in step 3, and then choose **Add Catalog**.
     
-    6.  Select the **Show in Menu** check box, and then choose **OK**. A message appears to inform you that your settings will be applied the next time you start Office. 
+      f-  Select the **Show in Menu** check box, and then choose **OK**. A message appears to inform you that your settings will be applied the next time you start Office. 
         
-5.  Test and run the add-in. 
-    1.  On the **Insert tab** in Excel 2016, choose **My Add-ins**. 
-    2.  In the **Office Add-ins** dialog box, choose **Shared Folder**.
-    3.  Choose **Quarterly Sales Report Sample**>**Insert**.The add-in opens in a task pane to the right of the current worksheet, as shown in the following figure. 
-        
-        ![Quarterly Sales Report Add-in](images/QuarterlySalesReport_taskpane.PNG)
-    5.  Click the **Click me!** button to render the data and the chart inside the worksheet, as shown in the following figure.  To see the chart update dynamically, just change the data in the range. 
-        
-        ![Quarterly Sales Report Add-in](images/QuarterlySalesReport_report.PNG)
+5-  Test and run the add-in. 
 
-### Learn more
+      a-  On the **Insert tab** in Excel 2016, choose **My Add-ins**. 
+      
+      b-  In the **Office Add-ins** dialog box, choose **Shared Folder**.
+      
+      c-  Choose **Quarterly Sales Report Sample**>**Insert**.The add-in opens in a task pane to the right of the current worksheet, as shown in the following figure. 
+        
+   ![Quarterly Sales Report Add-in](images/QuarterlySalesReport_taskpane.PNG)
+   
+      d-  Click the **Click me!** button to render the data and the chart inside the worksheet, as shown in the following figure.  To see the chart update dynamically, just change the data in the range. 
+        
+![Quarterly Sales Report Add-in](images/QuarterlySalesReport_report.PNG)
 
-The Excel JavaScript APIs have much more to offer you as you develop add-ins. The following are just a few of the available resources. 
+
+### Additional resources
+ 
 
 *  [Excel add-ins programming overview](excel-add-ins-programming-overview.md)
 *  [Snippet Explorer for Excel](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel)

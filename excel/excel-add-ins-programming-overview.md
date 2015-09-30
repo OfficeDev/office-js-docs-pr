@@ -2,25 +2,12 @@
 
 _Applies to: Excel 2016, Office 2016_
 
-This topic covers the fundamentals of using the JavaScript APIs to build add-ins in Excel 2016.
+This article covers the fundamentals of using the JavaScript APIs to build add-ins in Excel 2016. For detailed specifications of the Excel JavaScript APIs, read the [reference](excel-add-ins-javascript-reference.md) page.
 
-* [The basics](#the-basics)
-* [Properties and Relations Selection](#properties-and-relationships-selection)
-* [Document Binding](#null-input)
-* [Reference Binding](#null-input)
-* [Null-Input](#null-input)
-* [Null-Response](#null-response)
-* [Blank Input and Output](#blank-input-and-output)
-* [Unbounded Range](#unbounded-range)
-* [Large Range](#large-range)
-* [Single Input Copy](#single-input-copy)
-* [Error Messages](#error-messages)
+## The basics
 
-For detailed specifications of the Excel JavaScript APIs, read the [reference](excel-add-ins-javascript-reference.md) page.
+Let's begin with a brief introduction to the key concepts that are fundamental to using the APIs, such as RequestContext, JavaScript proxy objects, sync(), Excel.run(), and load(). The example code at the end of the section shows these concepts in use.
 
-### The basics
-
-This section provides a brief introduction to the key concepts that are fundamental to using the APIs, such as RequestContext, JavaScript proxy objects, sync(), Excel.run(), and load(). The example code at the end of the section shows these concepts in use.
 
 #### RequestContext
 
@@ -46,13 +33,13 @@ The sync() method available on the request context synchronizes the state betwee
 
 #### Excel.run(function(context) { batch })
 
-Excel.run() executes a batch script that performs actions on the Excel object model. The batch commands include definition of local JavaScript proxy objects and sync() methods that synchronize the state between local and Excel objects and promise resolution. The advantage of batching requests in Excel.run() is that when the promise is resolved, any tracked range objects that were allocated during the execution will be automatically released. 
+Excel.run() executes a batch script that performs actions on the Excel object model. The batch commands include definitions of local JavaScript proxy objects and sync() methods that synchronize the state between local and Excel objects and promise resolution. The advantage of batching requests in Excel.run() is that when the promise is resolved, any tracked range objects that were allocated during the execution will be automatically released. 
 
 The run method takes in RequestContext and returns a promise (typically, just the result of ctx.sync()). It is possible to run the batch operation outside of the Excel.run(). However, in such a scenario, any range object references needs to be manually tracked and managed. 
 
 #### load()
 
-Load method is used to fill in the proxy objects created in the add-in JavaScript layer. When trying to retrieve an object, a worksheet for example, a local proxy object is created first in the JavaScript layer. Such an object can be used to queue the setting of its properties and invoking methods. However, for reading object properties or relations, the load() and sync() methods need to be invoked first. The load() method takes in the properties and relations that need to be loaded when the sync() method is called. 
+The load() method is used to fill in the proxy objects created in the add-in JavaScript layer. When trying to retrieve an object, a worksheet for example, a local proxy object is created first in the JavaScript layer. Such an object can be used to queue the setting of its properties and invoking methods. However, for reading object properties or relations, the load() and sync() methods need to be invoked first. The load() method takes in the properties and relations that need to be loaded when the sync() method is called. 
 
 _Syntax:_
 
@@ -369,9 +356,7 @@ Errors are returned using an error object that consists of a code and a message.
 |InsertDeleteConflict|The insert or delete operation attempted resulted in a conflict.|
 |InvalidOperation|The operation attempted is invalid on the object.|
 
-### Learn more
-
-Explore other resources to learn more. 
+### Additional resources
 
 * [Build your first Excel add-in](build-your-first-excel-add-in.md)
 * [Code snippet explorer](https://github.com/OfficeDev/office-js-snippet-explorer)
