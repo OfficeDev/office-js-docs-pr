@@ -4,21 +4,21 @@ _Applies to: Excel 2016, Office 2016_
 
 This topic covers the fundamentals of using the JavaScript APIs to build add-ins in Excel 2016.
 
-* [The Basics](#the-basics)
+* [The basics](#the-basics)
 * [Properties and Relations Selection](#properties-and-relationships-selection)
 * [Document Binding](#null-input)
 * [Reference Binding](#null-input)
 * [Null-Input](#null-input)
 * [Null-Response](#null-response)
 * [Blank Input and Output](#blank-input-and-output)
-* [Unbounded-Range](#unbounded-range)
-* [Large-Range](#large-range)
+* [Unbounded Range](#unbounded-range)
+* [Large Range](#large-range)
 * [Single Input Copy](#single-input-copy)
 * [Error Messages](#error-messages)
 
 For detailed specifications of the Excel JavaScript APIs, read the [reference](excel-add-ins-javascript-reference.md) page.
 
-### The Basics
+### The basics
 
 This section provides a brief introduction to the key concepts that are fundamental to using the APIs, such as RequestContext, JavaScript proxy objects, sync(), Excel.run(), and load(). The example code at the end of the section shows these concepts in use.
 
@@ -236,7 +236,7 @@ For read operations, expect to receive blank values if the contents of the cells
   range.formula = [["", "", "=Rand()"]];
 ```
 
-### Unbounded-Range
+### Unbounded Range
 
 #### Read
 
@@ -373,7 +373,7 @@ Errors are returned using an error object that consists of a code and a message.
 
 Explore other resources to learn more. 
 
-* [Build your first Excel Add-in](build-your-first-excel-add-in.md)
+* [Build your first Excel add-in](build-your-first-excel-add-in.md)
 * [Code snippet explorer](https://github.com/OfficeDev/office-js-snippet-explorer)
 * [Excel add-ins code samples](excel-add-ins-code-samples.md)
-* [Excel Add-ins JavaScript API Reference](excel-add-ins-javascript-reference.md)
+* [Excel add-ins JavaScript API reference](excel-add-ins-javascript-reference.md)

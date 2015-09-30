@@ -2,7 +2,7 @@
 
 _Applies to: Excel 2016, Office 2016_
 
-The links below show the high level Excel Objects available in the APIs. Each object page link contains a description of the properties, relationships, and methods available on the object. Explore the links below to learn more.
+The links below show the high level Excel objects available in the APIs. Each object page link contains a description of the properties, relationships, and methods available on the object. Explore the links below to learn more.
 	
 * [Workbook](resources/workbook.md): The top-level object that contains related workbook objects such as worksheets, tables, ranges, etc. It also can be used to list related references. 
 * [Worksheet](resources/worksheet.md): A member of the Worksheets collection. The Worksheets collection contains all the Worksheet objects in a workbook.
@@ -25,7 +25,7 @@ The links below show the high level Excel Objects available in the APIs. Each ob
 ##### Learn more
 Explore related resources available: 
 
-1.  [Excel Add-ins programming overview](excel-add-ins-programming-overview.md)
-2.  [Build your first Excel Add-in](build-your-first-excel-add-in.md)
+1.  [Excel add-ins programming overview](excel-add-ins-programming-overview.md)
+2.  [Build your first Excel add-in](build-your-first-excel-add-in.md)
 3.  [Snippet Explorer for Excel](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel)
-4.  [Excel Add-ins code samples](excel-add-ins-code-samples.md) 
+4.  [Excel add-ins code samples](excel-add-ins-code-samples.md) 
