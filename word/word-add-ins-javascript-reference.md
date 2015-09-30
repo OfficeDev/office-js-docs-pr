@@ -1,4 +1,4 @@
-# word-add-ins-javascript-reference 
+# Word add-ins Javascript reference 
 
 Find API reference for the Javascript API for Word for Word add-ins.
 
