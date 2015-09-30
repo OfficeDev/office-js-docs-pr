@@ -61,7 +61,7 @@ You will create a simple web app and the app manifest in this section. The web a
             $(document).ready(function () {
                 
                 // Use this to check whether the new API is supported in the Word client.
-                }if (Office.context.requirements.isSetSupported("WordApi", "1.1")) {
+                if (Office.context.requirements.isSetSupported("WordApi", "1.1")) {
                     // Do something that is only available via the new APIs
                     $('#emerson').click(insertEmersonQuoteAtSelection);
                     $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
