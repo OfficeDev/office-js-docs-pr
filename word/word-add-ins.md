@@ -38,7 +38,7 @@ You will create a simple web app and the app manifest in this section. The web a
             <div>
                     <h1>Welcome</h1>
             </div>
-            <div id="content-main">
+            <div>
                     <p>This sample shows how to add boilerplate text to a document by using the Word JavaScript API.</p>
                     <br />
                     <h3>Try it out</h3>
@@ -46,6 +46,7 @@ You will create a simple web app and the app manifest in this section. The web a
                     <button id="checkhov">Add quote from Anton Chekhov</button>
                     <button id="proverb">Add Chinese proverb</button>
             </div>
+            <h3><div id="supportedVersion"/></h3>
         </body>
     </html>
 ```
@@ -60,18 +61,17 @@ You will create a simple web app and the app manifest in this section. The web a
         Office.initialize = function (reason) {
             $(document).ready(function () {
                 
-                // Use this to check whether the new API is supported in the Word client.
-                if (Office.context.requirements.isSetSupported("WordApi", "1.1")) {
+                // Use this to check whether the API is supported in the Word client.
+                if (Office.context.requirements.isSetSupported('WordApi', 1.1)) {
                     // Do something that is only available via the new APIs
                     $('#emerson').click(insertEmersonQuoteAtSelection);
                     $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
                     $('#proverb').click(insertChineseProverbAtTheEnd);
-                    console.log('This code is using Word 2016 or greater.');
+                    $('#supportedVersion').html('This code is using Word 2016 or greater.');
                 }
                 else {
                     // Just letting you know that this code will not work with your version of Word.
-                    $('#content-main').html('<strong>This code requires Word 2016 or greater.</strong>');
-                    console.log('This code requires Word 2016 or greater.');
+                    $('#supportedVersion').html('This code requires Word 2016 or greater.');
                 }    
             });
         };
@@ -117,8 +117,6 @@ You will create a simple web app and the app manifest in this section. The web a
                 return context.sync().then(function () {
                     console.log('Added a quote from Anton Chekhov.');
                 });  
-
-
             })
             .catch(function (error) {
                 console.log('Error: ' + JSON.stringify(error));
@@ -142,8 +140,6 @@ You will create a simple web app and the app manifest in this section. The web a
                 return context.sync().then(function () {
                     console.log('Added a quote from a Chinese proverb.');
                 });  
-
-
             })
             .catch(function (error) {
                 console.log('Error: ' + JSON.stringify(error));
