@@ -11,3 +11,5 @@ We've been working on a Snippet Explorer to let you browse through common code s
 ## Give feedback
 
 We need it, you want to give it. Feedback is much easier to give now that we're on GitHub. Check out the docs and let us know about any [issues](https://github.com/OfficeDev/office-js-docs/issues) you find in those docs by submitting issues directly in this repository. Let us know what you think about the APIs and the general programming experience. 
+
+We suggest you use the tags [office-js] and [word] on StackOverflow for asking questions to the community.
