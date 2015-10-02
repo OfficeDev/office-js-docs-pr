@@ -2,9 +2,7 @@
 
 Welcome to the Word Javascript API documentation repository. Here you'll find what you'll need to create the next generation of Word add-ins in Office 2016 for Windows (if you can't find it, open an issue). The new Word Javascript APIs provide Word-specific functionality related to documents, paragraphs, content controls, and other common Word objects. This API complements the functionality of our existing Office.js library. 
 
-This documentation is [published on MSDN](https://msdn.microsoft.com/en-us/library/office/jj220060.aspx). 
-
-<!--ADD THE LINK WHEN AVAILABLE-->
+This documentation is [published on MSDN](https://msdn.microsoft.com/EN-US/library/office/mt616496.aspx). 
 
 ## Try it out
 
