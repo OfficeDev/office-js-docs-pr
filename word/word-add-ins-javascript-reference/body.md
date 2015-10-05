@@ -4,6 +4,7 @@ Represents the body of a document or a section.
 
 _Applies to: Word 2016_
 
+## Properties
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |style|string|Gets or sets the style used for the body. This is the name of the pre-installed or custom style.|

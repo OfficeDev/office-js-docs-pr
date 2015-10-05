@@ -4,6 +4,7 @@ Contains the collection of the document's [section](section.md) objects.
 
 _Applies to: Word 2016_
 
+## Properties
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |items|[Section[]](section.md)|A collection of section objects. Read-only.|

@@ -4,6 +4,7 @@ Represents an inline picture.
 
 _Applies to: Word 2016_
 
+## Properties
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |altTextDescription|string|Gets or sets a string that represents the alternative text associated with the inline image|

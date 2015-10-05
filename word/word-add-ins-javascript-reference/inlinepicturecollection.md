@@ -4,6 +4,7 @@ Contains a collection of [inlinePicture](inlinepicture.md) objects.
 
 _Applies to: Word 2016_
 
+## Properties
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |items|[InlinePicture[]](inlinepicture.md)|A collection of inlinePicture objects. Read-only.|

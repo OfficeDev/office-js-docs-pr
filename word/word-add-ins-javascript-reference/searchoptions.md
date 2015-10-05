@@ -4,6 +4,7 @@ Specifies the options to be included in a search operation.
 
 _Applies to: Word 2016_
 
+## Properties
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |ignorePunct|bool|Gets or sets a value that indicates whether to ignore all punctuation characters between words. Corresponds to the Ignore punctuation check box in the Find and Replace dialog box.|

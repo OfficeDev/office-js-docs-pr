@@ -4,6 +4,7 @@ Represents a contiguous area in a document.
 
 _Applies to: Word 2016_
 
+## Properties
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |style|string|Gets or sets the style used for the range. This is the name of the pre-installed or custom style.|
