@@ -4,6 +4,7 @@ Contains a collection of [range](range.md) objects as a result of a search opera
 
 _Applies to: Word 2016_
 
+## Properties
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |items|[SearchResult[]](searchresult.md)|A collection of searchResult objects. Read-only.|

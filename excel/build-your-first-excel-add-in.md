@@ -275,7 +275,7 @@ The simplest way to deploy and test your add-in is to copy the files to a networ
 
 4-  Add the share location that contains the manifest as a trusted app catalog in Excel.
 
-      a- Launch Excel and open a blank spreadsheet.  
+      a-  Launch Excel and open a blank spreadsheet.  
     
       b-  Choose the **File** tab, and then choose **Options**.
     
@@ -293,9 +293,9 @@ The simplest way to deploy and test your add-in is to copy the files to a networ
       
       b-  In the **Office Add-ins** dialog box, choose **Shared Folder**.
       
-      c-  Choose **Quarterly Sales Report Sample**>**Insert**.The add-in opens in a task pane to the right of the current worksheet, as shown in the following figure. 
-        
-   ![Quarterly Sales Report Add-in](images/QuarterlySalesReport_taskpane.PNG)
+      c-  Choose **Quarterly Sales Report Sample**>**Insert**. The add-in opens in a task pane to the right of the current worksheet, as shown in the following figure.
+ 
+ ![Quarterly Sales Report Add-in](images/QuarterlySalesReport_taskpane.PNG)
    
       d-  Click the **Click me!** button to render the data and the chart inside the worksheet, as shown in the following figure.  To see the chart update dynamically, just change the data in the range. 
         

@@ -4,6 +4,7 @@ Contains a collection of ContentControl objects. Content controls are bounded an
 
 _Applies to: Word 2016_
 
+## Properties
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |items|[ContentControl[]](contentcontrol.md)|A collection of contentControl objects. Read-only.|

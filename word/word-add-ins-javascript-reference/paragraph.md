@@ -4,6 +4,7 @@ Represents a single paragraph in a selection, range, content control, or documen
 
 _Applies to: Word 2016_
 
+## Properties
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |outlineLevel|int|Gets or sets the outline level for the paragraph.|

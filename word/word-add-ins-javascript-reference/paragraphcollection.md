@@ -4,6 +4,7 @@ Contains a collection of [paragraph](paragraph.md) objects.
 
 _Applies to: Word 2016_
 
+## Properties
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.|
