@@ -17,6 +17,7 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|
 |contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of content control objects that are in the range. Read-only.|
 |font|[Font](font.md)|Gets the text format of the range. Use this to get and set font name, size, color, and other properties. Read-only.|
+|inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Gets the collection of inlinePicture objects that are in the range. Read-only.|
 |paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the collection of paragraph objects that are in the range. Read-only.|
 |parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the range. Returns null if there isn't a parent content control. Read-only.|
 
@@ -32,12 +33,13 @@ _See property access [examples.](#property-access-examples)_
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the range object with a rich text content control.|
 |[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Inserts a document into the range at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
 |[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts HTML into the range at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
+|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](#insertInlinePictureFromBase64base64EncodedImage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|Inserts a picture into the range at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.
 |[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts OOXML into the range at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.|
 |[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserts a paragraph into the range at the specified location. The insertLocation value can be 'Before' or 'After'.|
 |[insertText(text: string, insertLocation: InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|Inserts text into the range at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 |[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the range object. The search results are a collection of range objects.|
-|[select()](#select)|void|Selects and navigates the Word UI to the range.|
+|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects and navigates the Word UI to the range. The selectionMode values can be 'Select', 'Start', or 'End'.|
 
 ## Method details
 
@@ -381,6 +383,21 @@ Word.run(function (context) {
 });
 ```
 
+### insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
+Inserts a picture into the range at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.
+
+#### Syntax
+rangeObject.insertInlinePictureFromBase64(image, insertLocation);
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|base64EncodedImage|string|Required. The base64 encoded image to be inserted in the range.|
+|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'.|
+
+#### Returns
+[InlinePicture](inlinepicture.md)
+
 ### insertOoxml(ooxml: string, insertLocation: InsertLocation)
 Inserts OOXML into the range at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.
 
@@ -580,16 +597,18 @@ rangeObject.search(searchText, searchOptions);
 [SearchResultCollection](searchresultcollection.md)
 
 
-### select()
-Selects and navigates the Word UI to the range.
+### select(selectionMode: SelectionMode)
+Selects and navigates the Word UI to the range. The selectionMode values can be 'Select', 'Start', or 'End'.
 
 #### Syntax
 ```js
-rangeObject.select();
+rangeObject.select(selectionMode);
 ```
 
 #### Parameters
-None
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|selectionMode|SelectionMode|Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.|
 
 #### Returns
 void
