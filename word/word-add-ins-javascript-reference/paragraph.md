@@ -48,7 +48,7 @@ _See property access [examples.](#property-access-examples)_
 |[insertText(text: string, insertLocation: InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|Inserts text into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 |[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the paragraph object. The search results are a collection of range objects.|
-|[select()](#select)|void|Selects and navigates the Word UI to the paragraph.|
+|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects and navigates the Word UI to the paragraph. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.|
 
 ## Method details
 
@@ -754,17 +754,18 @@ paragraphObject.search(searchText, searchOptions);
 #### Returns
 [SearchResultCollection](searchresultcollection.md)
 
-
-### select()
+### select(selectionMode: SelectionMode)
 Selects and navigates the Word UI to the paragraph.
 
 #### Syntax
 ```js
-paragraphObject.select();
+paragraphObject.select(selectionMode);
 ```
 
 #### Parameters
-None
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|selectionMode|SelectionMode|Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.|
 
 #### Returns
 void
