@@ -167,9 +167,9 @@ You will create a simple web app and the app manifest in this section. The web a
         <DefaultLocale>en-US</DefaultLocale>
         <DisplayName DefaultValue="Boilerplate content" />
         <Description DefaultValue="Insert boilerplate content into a Word document." />
-        <Capabilities>
-            <Capability Name="document" />
-        </Capabilities>
+        <Hosts>
+            <Host Name="Document"/>
+        </Hosts>
         <DefaultSettings>
             <SourceLocation DefaultValue="\\MyShare\boilerplate\home.html" />
         </DefaultSettings>
