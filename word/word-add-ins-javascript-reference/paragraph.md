@@ -16,19 +16,19 @@ _See property access [examples.](#property-access-examples)_
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|alignment|[Alignment](alignment.md)|Gets or sets the alignment for a paragraph. The value can  be "left", "centered", "right", or "justified".|
+|alignment|**Alignment**|Gets or sets the alignment for a paragraph. The value can  be "left", "centered", "right", or "justified".|
 |contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of content control objects that are in the paragraph. Read-only.|
-|firstLineIndent|[float](float.md)|Gets or sets the value, in points, for a first line or hanging indent. Use a positive value to set a first-line indent, and use a negative value to set a hanging indent.|
+|firstLineIndent|**float**|Gets or sets the value, in points, for a first line or hanging indent. Use a positive value to set a first-line indent, and use a negative value to set a hanging indent.|
 |font|[Font](font.md)|Gets the text format of the paragraph. Use this to get and set font name, size, color, and other properties. Read-only.|
 |inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Gets the collection of inlinePicture objects that are in the paragraph. The collection does not include floating images. Read-only.|
-|leftIndent|[float](float.md)|Gets or sets the left indent value, in points, for the paragraph.|
-|lineSpacing|[float](float.md)|Gets or sets the line spacing, in points, for the specified paragraph. In the Word UI, this value is divided by 12.|
-|lineUnitAfter|[float](float.md)|Gets or sets the amount of spacing, in grid lines. after the paragraph.|
-|lineUnitBefore|[float](float.md)|Gets or sets the amount of spacing, in grid lines, before the paragraph.|
+|leftIndent|**float**|Gets or sets the left indent value, in points, for the paragraph.|
+|lineSpacing|**float**|Gets or sets the line spacing, in points, for the specified paragraph. In the Word UI, this value is divided by 12.|
+|lineUnitAfter|**float**|Gets or sets the amount of spacing, in grid lines. after the paragraph.|
+|lineUnitBefore|**float**|Gets or sets the amount of spacing, in grid lines, before the paragraph.|
 |parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the paragraph. Returns null if there isn't a parent content control. Read-only.|
-|rightIndent|[float](float.md)|Gets or sets the right indent value, in points, for the paragraph.|
-|spaceAfter|[float](float.md)|Gets or sets the spacing, in points, after the paragraph.|
-|spaceBefore|[float](float.md)|Gets or sets the spacing, in points, before the paragraph.|
+|rightIndent|**float**|Gets or sets the right indent value, in points, for the paragraph.|
+|spaceAfter|**float**|Gets or sets the spacing, in points, after the paragraph.|
+|spaceBefore|**float**|Gets or sets the spacing, in points, before the paragraph.|
 
 ## Methods
 

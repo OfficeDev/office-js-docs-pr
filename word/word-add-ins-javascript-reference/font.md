@@ -22,8 +22,8 @@ _See property access [examples.](#property-access-examples)_
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|size|[float](float.md)|Gets or sets a value that represents the font size in points.|
-|underline|[UnderlineType](underlinetype.md)|Gets or sets a value that indicates the font's underline type. 'None' if the font is not underlined.|
+|size|**float**|Gets or sets a value that represents the font size in points.|
+|underline|[UnderlineType](underlinetype.md)|Gets or sets a value that indicates the font's underline type. Valid values are: "None", "Single", "Word", "Double", "Dotted", "Hidden", "Thick", "Dashline", "Dotline", "DotDashLine", "TwoDotDashLine", and "Wave"|
 
 ## Methods
 
