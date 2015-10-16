@@ -181,7 +181,7 @@ You will create a simple web app and the app manifest in this section. The web a
 
 6- Save all the files. You’ve now written your first Word add-in. 
 
-7- Create a network folder (for example, \\\MyShare\boilerplate) and copy home.js, home.html, and BoilerplateManifest.xml to that location.
+7- Create a network folder (for example, \\\MyShare\boilerplate) or [share a folder to the network](https://technet.microsoft.com/en-us/library/cc770880.aspx), and copy home.js, home.html, and BoilerplateManifest.xml to that location.
 
 8- Edit the <code>SourceLocation</code> element in BoilerplateManifest.xml so that it points to the location of home.html. 
 
