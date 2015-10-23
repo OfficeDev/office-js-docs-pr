@@ -1,12 +1,12 @@
-# Word add-ins Javascript reference 
+# Word add-ins JavaScript reference 
 
-Find API reference for the Javascript API for Word for Word add-ins.
+Find API reference for the JavaScript API for Word for Word add-ins.
 
 _Applies to: Word 2016_
 
 ## In this section
 
-These are the main objects for the Word Javascript API.
+These are the main objects for the Word JavaScript API.
 
 * [Body](word-add-ins-javascript-reference/body.md): Represents the body of a document or a section.
 * [ContentControl](word-add-ins-javascript-reference/contentcontrol.md): A container for content. It is a bound and
