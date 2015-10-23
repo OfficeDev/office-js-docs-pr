@@ -2,7 +2,7 @@
 
 Contains a collection of [paragraph](paragraph.md) objects.
 
-_Applies to: Word 2016_
+_Applies to: Word 2016, Word for iPad_
 
 ## Properties
 | Property	   | Type	|Description

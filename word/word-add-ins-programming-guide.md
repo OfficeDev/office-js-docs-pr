@@ -1,6 +1,6 @@
 # Word add-ins programming overview
 
-_Applies to: Word 2016_
+_Applies to: Word 2016, Word for iPad_
 
 Word 2016 introduces a new object model for working with Word objects. This object model is an addition to the existing object model provided by Office.js to create add-ins for Word. This object model is accessed via Javascript hosted by a web application.
 

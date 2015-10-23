@@ -2,7 +2,7 @@
 
 Represents an inline picture.
 
-_Applies to: Word 2016_
+_Applies to: Word 2016, Word for iPad_
 
 ## Properties
 | Property	   | Type	|Description

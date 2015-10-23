@@ -1,6 +1,6 @@
 # Word add-ins
 
-_Applies to: Word 2016_
+_Applies to: Word 2016, Word for iPad_
 
 Welcome to the Word add-in JavaScript API documentation. The Word JavaScript API is a part of the Office add-in programming model for extending Microsoft Office applications. The add-in programming model uses web applications to host your extension to Word. You can now extend Word with any web platform or language that you prefer. 
 
