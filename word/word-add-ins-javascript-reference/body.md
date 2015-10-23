@@ -80,6 +80,7 @@ Word.run(function (context) {
 });
 ```
 
+The [Silly stories](https://aka.ms/sillystorywordaddin) add-in sample shows how the **clear** method can be used to clear the contents of a document.
 
 ### getHtml()
 Gets the HTML representation of the body object.
@@ -283,6 +284,9 @@ Word.run(function (context) {
     }
 });
 ```
+
+The [Silly stories](https://aka.ms/sillystorywordaddin) add-in sample shows how the **insertFileFromBase64** method can be used to insert docx files from a service.
+
 ### insertHtml(html: string, insertLocation: InsertLocation)
 Inserts HTML at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
 

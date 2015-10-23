@@ -259,3 +259,4 @@ Word.run(function (context) {
 });
 ```
 
+The [Silly stories](https://aka.ms/sillystorywordaddin) add-in sample shows how the **load** method is used to load the content control collection with the **tag** and **title** properties.

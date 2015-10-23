@@ -13,7 +13,7 @@ _Applies to: Word 2016_
 |placeholderText|string|Gets or sets the placeholder text of the content control. Dimmed text will be displayed when the content control is empty.|
 |removeWhenEdited|bool|Gets or sets a value that indicates whether the content control is removed after it is edited. Mutually exclusive with cannotDelete.|
 |style|string|Gets or sets the style used for the content control. This is the name of the pre-installed or custom style.|
-|tag|string|Gets or sets a tag to identify a content control.|
+|tag|string|Gets or sets a tag to identify a content control. The [Silly stories](https://aka.ms/sillystorywordaddin) add-in sample shows how you can use the **tag** property.|
 |text|string|Gets the text of the content control. Read-only.|
 |title|string|Gets or sets the title for a content control.|
 
@@ -559,6 +559,8 @@ Word.run(function (context) {
     }
 });
 ```
+
+The [Silly stories](https://aka.ms/sillystorywordaddin) add-in sample shows how to use the **insertText** method.
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
