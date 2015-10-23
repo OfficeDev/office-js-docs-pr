@@ -12,7 +12,7 @@ You have a few options for publishing Word add-in manifests. Read about how you 
 
 ## Understanding the Javascript API for Word
 
-The Javascript API for Word is loaded by Office.js. It provides a set of Javascript proxy objects that are used to queue a set of commands that interact with the contents of a Word document. These commands are run as a batch. The results of the batch are actions taken on the Word document like inserting content and synchronizing the Word objects with the Javascript proxy objects. 
+The Javascript API for Word is loaded by Office.js. It provides a set of Javascript proxy objects that are used to queue a set of commands that interact with the contents of a Word document. These commands are run as a batch. The results of the batch are actions taken on the Word document, like inserting content, and synchronizing the Word objects with the Javascript proxy objects. 
 
 ### Running your add-in
 
