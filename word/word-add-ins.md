@@ -30,9 +30,9 @@ You will create a simple web app and the app manifest in this section. The web a
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
         <title>Boilerplate text app</title>    
-        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
         <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" type="text/javascript"></script>
-        <script src="Home.js" type="text/javascript"></script>
+        <script src="home.js" type="text/javascript"></script>
         </head>
         <body>
             <div>
