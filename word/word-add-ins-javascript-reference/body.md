@@ -656,3 +656,26 @@ Word.run(function (context) {
     }
 });
 ```
+
+## Support details
+
+HTML table
+
+<table>
+  <tr>
+    <td>**Available in requirement sets**</td>
+    <td>WordApi, 1.1</td>
+  </tr>
+  <tr>
+    <td>**Minimum permission level**</td>
+    <td>[ReadWriteDocument](https://msdn.microsoft.com/EN-US/library/office/jj220081.aspx)</td>
+  </tr>
+  <tr>
+    <td>**Add-in types**</td>
+    <td>Task pane</td>
+  </tr>
+  <tr>
+    <td>**Library**</td>
+    <td>Office.js</td>
+  </tr>
+</table>

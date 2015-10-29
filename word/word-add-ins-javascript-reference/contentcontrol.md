@@ -749,3 +749,14 @@ Word.run(function (context) {
     }
 });
 ```
+
+## Support details
+
+MD table with empty header
+
+| | |
+|-|-|
+|**Available in requirement sets** | WordApi, 1.1|
+|**Minimum permission level** | [ReadWriteDocument](https://msdn.microsoft.com/EN-US/library/office/jj220081.aspx)|
+|**Add-in types** | Task pane|
+|**Library** | Office.js|
