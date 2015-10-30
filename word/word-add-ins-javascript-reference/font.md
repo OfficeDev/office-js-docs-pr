@@ -271,21 +271,9 @@ Word.run(function (context) {
 
 Use the requirement set in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/dn833104.aspx).
 
-<table>
-  <tr>
-    <td>**Available in requirement sets**</td>
-    <td>WordApi, 1.1</td>
-  </tr>
-  <tr>
-    <td>**Minimum permission level**</td>
-    <td>[ReadWriteDocument](https://msdn.microsoft.com/EN-US/library/office/jj220081.aspx)</td>
-  </tr>
-  <tr>
-    <td>**Add-in types**</td>
-    <td>Task pane</td>
-  </tr>
-  <tr>
-    <td>**Library**</td>
-    <td>Office.js</td>
-  </tr>
-</table>
+| | |
+|-|-|
+|**Available in requirement sets** | WordApi, 1.1|
+|**Minimum permission level** | [ReadWriteDocument](https://msdn.microsoft.com/EN-US/library/office/jj220081.aspx)|
+|**Add-in types** | Task pane|
+|**Library** | Office.js|
