@@ -15,11 +15,3 @@ The following are the supported break types on the API.
 |textWrapping| String | Ends the current line and forces the text to continue below a picture, table, or other item. The text continues on the next blank line that does not contain a table aligned with the left or right margin.|
 
 
-## Support details
-
-MD table without header
-
-|**Available in requirement sets** | WordApi, 1.1|
-|**Minimum permission level** | [ReadWriteDocument](https://msdn.microsoft.com/EN-US/library/office/jj220081.aspx)|
-|**Add-in types** | Task pane|
-|**Library** | Office.js|
