@@ -6,7 +6,7 @@ Welcome to the Word add-in JavaScript API documentation. The Word JavaScript API
 
 ## API overview
 
-Before we start going into the specifics of the Javascript API for Word, it is important to know that this new Word add-in object model is different than the model for Word in Office 2013. The Office 2013 add-in model was not typed and provided a generic API for extending Office clients. While the previous model is still applicable to Word 2016, we also suggest that you start using the new Word object model. We suggest that you read the [platform overview](https://msdn.microsoft.com/EN-US/library/office/jj220082.aspx) if you aren't familiar with the add-in platform. 
+Before we start going into the specifics of the JavaScript API for Word, it is important to know that this new Word add-in object model is different than the model for Word in Office 2013. The Office 2013 add-in model was not typed and provided a generic API for extending Office clients. While the previous model is still applicable to Word 2016, we also suggest that you start using the new Word object model. We suggest that you read the [platform overview](https://msdn.microsoft.com/EN-US/library/office/jj220082.aspx) if you aren't familiar with the add-in platform. 
 
 The new JavaScript APIs for Word change the way that you can interact with objects like documents and paragraphs. Rather than providing individual asynchronous APIs for retrieving and updating each of these objects, the new APIs provide “proxy” JavaScript objects that correspond to the real objects running in Word.  You can directly interact with these proxy objects by synchronously reading and writing their properties and calling synchronous methods to perform operations on them.  These interactions with proxy objects aren’t immediately realized in the running script, so we provide a method on the context named **sync()**. The context.sync method synchronizes the state between your running JavaScript and the real objects in Office by executing instructions queued in your script and by retrieving properties of loaded Word objects for use in your script.  
 
@@ -30,9 +30,9 @@ You will create a simple web app and the app manifest in this section. The web a
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
         <title>Boilerplate text app</title>    
-        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
         <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" type="text/javascript"></script>
-        <script src="Home.js" type="text/javascript"></script>
+        <script src="home.js" type="text/javascript"></script>
         </head>
         <body>
             <div>
@@ -163,9 +163,9 @@ You will create a simple web app and the app manifest in this section. The web a
         <DefaultLocale>en-US</DefaultLocale>
         <DisplayName DefaultValue="Boilerplate content" />
         <Description DefaultValue="Insert boilerplate content into a Word document." />
-        <Capabilities>
-            <Capability Name="document" />
-        </Capabilities>
+        <Hosts>
+            <Host Name="Document"/>
+        </Hosts>
         <DefaultSettings>
             <SourceLocation DefaultValue="\\MyShare\boilerplate\home.html" />
         </DefaultSettings>
@@ -177,7 +177,7 @@ You will create a simple web app and the app manifest in this section. The web a
 
 6- Save all the files. You’ve now written your first Word add-in. 
 
-7- Create a network folder (for example, \\\MyShare\boilerplate) and copy home.js, home.html, and BoilerplateManifest.xml to that location.
+7- Create a network folder (for example, \\\MyShare\boilerplate) or [share a folder to the network](https://technet.microsoft.com/en-us/library/cc770880.aspx), and copy home.js, home.html, and BoilerplateManifest.xml to that location.
 
 8- Edit the <code>SourceLocation</code> element in BoilerplateManifest.xml so that it points to the location of home.html. 
 
@@ -208,7 +208,7 @@ __Figure 1. The Boilerplate content add-in loaded in Word__
 
 ## Learn more
 
-Learn more about extending Word by reading the [Word add-ins programming guide](word-add-ins-programming-guide.md). Read the [Word add-ins Javascript reference](word-add-ins-javascript-reference.md) to learn about the objects that you can access.
+Learn more about extending Word by reading the [Word add-ins programming guide](word-add-ins-programming-guide.md). Read the [Word add-ins JavaScript reference](word-add-ins-javascript-reference.md) to learn about the objects that you can access.
 
 ## Give us your feedback
 

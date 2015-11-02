@@ -13,7 +13,7 @@ _Applies to: Word 2016, Word for iPad_
 |placeholderText|string|Gets or sets the placeholder text of the content control. Dimmed text will be displayed when the content control is empty.|
 |removeWhenEdited|bool|Gets or sets a value that indicates whether the content control is removed after it is edited. Mutually exclusive with cannotDelete.|
 |style|string|Gets or sets the style used for the content control. This is the name of the pre-installed or custom style.|
-|tag|string|Gets or sets a tag to identify a content control.|
+|tag|string|Gets or sets a tag to identify a content control. The [Silly stories](https://aka.ms/sillystorywordaddin) add-in sample shows how you can use the **tag** property.|
 |text|string|Gets the text of the content control. Read-only.|
 |title|string|Gets or sets the title for a content control.|
 
@@ -22,14 +22,14 @@ _See property access [examples.](#property-access-examples)_
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|appearance|[ContentControlAppearance](contentcontrolappearance.md)|Gets or sets the appearance of the content control. The value can be 'boundingBox', 'tags' or 'hidden'.|
+|appearance|**ContentControlAppearance**|Gets or sets the appearance of the content control. The value can be 'boundingBox', 'tags' or 'hidden'.|
 |contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of content control objects in the content control. Read-only.|
 |font|[Font](font.md)|Gets the text format of the content control. Use this to get and set font name, size, color, and other properties. Read-only.|
-|id|[uint](uint.md)|Gets an integer that represents the content control identifier. Read-only.|
+|id|**uint**|Gets an integer that represents the content control identifier. Read-only.|
 |inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Gets the collection of inlinePicture objects in the content control. The collection does not include floating images. Read-only.|
 |paragraphs|[ParagraphCollection](paragraphcollection.md)|Get the collection of paragraph objects in the content control. Read-only.|
 |parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the content control. Returns null if there isn't a parent content control. Read-only.|
-|type|[ContentControlType](contentcontroltype.md)|Gets the content control type. Only rich text content controls are supported currently. Read-only.|
+|type|**ContentControlType**|Gets the content control type. Only rich text content controls are supported currently. Read-only.|
 
 ## Methods
 
@@ -577,6 +577,8 @@ Word.run(function (context) {
     }
 });
 ```
+
+The [Silly stories](https://aka.ms/sillystorywordaddin) add-in sample shows how to use the **insertText** method.
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.

@@ -1,8 +1,8 @@
-# Tracked objects collection (JavaScript API for Office 2016)
+# TrackedObjectsCollection object (JavaScript API for Office 2016)
 
 _Applies to: Office 2016_
 
-Tracked objects collection allows add-ins to managing range object reference across sync() batches. Typically, Excel.run() allows you to maintain references across batches automatically, without having to track them explicitly. However, if an add-in scenario requires that a range object be tracked and adjusted manually to reflect the current state of the underlying Excel range, then this collection could be used to mark such objects for tracking. Note that if a range object is makred for tracking, it needs to be explicitly removed upon usage to free up the memory in Excel, even in an error case.
+Allows add-ins to manage range object references across sync() batches. Typically, Excel.run() allows you to maintain references across batches automatically, without having to track them explicitly. However, if an add-in scenario requires that a range object be tracked and adjusted manually to reflect the current state of the underlying Excel range, then this collection could be used to mark such objects for tracking. Note that if a range object is marked for tracking, it needs to be explicitly removed upon usage to free up the memory in Excel, even in an error case.
 
 ## Properties
 None.
@@ -13,7 +13,7 @@ None
 
 ## Methods
 
-The TrackedObjects Collection has the following methods defined:
+The trackedObjectsCollection object has the following methods defined:
 
 | Method     | Return Type    |Description|
 |:-----------------|:--------|:----------|

@@ -259,6 +259,8 @@ Word.run(function (context) {
 });
 ```
 
+The [Silly stories](https://aka.ms/sillystorywordaddin) add-in sample shows how the **load** method is used to load the content control collection with the **tag** and **title** properties.
+
 ## Support details
 
 Use the requirement set in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/dn833104.aspx).
@@ -269,3 +271,4 @@ Use the requirement set in run time checks to make sure your application is supp
 |**Minimum permission level** | [ReadWriteDocument](https://msdn.microsoft.com/EN-US/library/office/jj220081.aspx)|
 |**Add-in types** | Task pane|
 |**Library** | Office.js|
+
