@@ -114,7 +114,7 @@ Your feedback is important to us.
 
 ## Additional resources
 
-* [Word add-ins]](word-add-ins.md)
+* [Word add-ins](word-add-ins.md)
 * [Word add-ins JavaScript reference](word-add-ins-javascript-reference.md)
 * [Office Add-ins](https://msdn.microsoft.com/en-us/library/office/jj220060.aspx)
 * [Get started with Office Add-ins](http://dev.office.com/getting-started/addins)
