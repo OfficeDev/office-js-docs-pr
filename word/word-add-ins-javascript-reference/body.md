@@ -32,7 +32,7 @@ _See property access [examples.](#property-access-examples)_
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the body object with a Rich Text content control.|
 |[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Inserts a document into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
 |[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts HTML at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
-|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts OOXML at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.|
+|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts OOXML or wordProcessingML at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.|
 |[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Start' or 'End'.|
 |[insertText(text: string, insertLocation: InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|Inserts text into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
@@ -329,7 +329,7 @@ Word.run(function (context) {
 });
 ```
 ### insertOoxml(ooxml: string, insertLocation: InsertLocation)
-Inserts OOXML at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.
+Inserts OOXML or wordProcessingML at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.
 
 #### Syntax
 ```js
@@ -339,7 +339,7 @@ bodyObject.insertOoxml(ooxml, insertLocation);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|ooxml|string|Required. The OOXML to be inserted.|
+|ooxml|string|Required. The OOXML or wordProcessingML to be inserted.|
 |insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start' or 'End'.|
 
 #### Returns
@@ -354,9 +354,7 @@ Word.run(function (context) {
     var body = context.document.body;
     
     // Queue a commmand to insert OOXML in to the beginning of the body.
-    body.insertOoxml("<w:p xmlns:w='http://schemas.microsoft.com/office/word/2003/wordml'><w:r><w:rPr><w:b/><w:b-cs/>" +
-                     "<w:color w:val='FF0000'/><w:sz w:val='28'/><w:sz-cs w:val='28'/></w:rPr><w:t>Hello world (this" +
-                     " should be bold, red, size 14).</w:t></w:r></w:p>", Word.InsertLocation.start);
+    body.insertOoxml("<pkg:package xmlns:pkg='http://schemas.microsoft.com/office/2006/xmlPackage'><pkg:part pkg:name='/_rels/.rels' pkg:contentType='application/vnd.openxmlformats-package.relationships+xml' pkg:padding='512'><pkg:xmlData><Relationships xmlns='http://schemas.openxmlformats.org/package/2006/relationships'><Relationship Id='rId1' Type='http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument' Target='word/document.xml'/></Relationships></pkg:xmlData></pkg:part><pkg:part pkg:name='/word/document.xml' pkg:contentType='application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml'><pkg:xmlData><w:document xmlns:w='http://schemas.openxmlformats.org/wordprocessingml/2006/main' ><w:body><w:p><w:pPr><w:spacing w:before='360' w:after='0' w:line='480' w:lineRule='auto'/><w:rPr><w:color w:val='70AD47' w:themeColor='accent6'/><w:sz w:val='28'/></w:rPr></w:pPr><w:r><w:rPr><w:color w:val='70AD47' w:themeColor='accent6'/><w:sz w:val='28'/></w:rPr><w:t>This text has formatting directly applied to achieve its font size, color, line spacing, and paragraph spacing.</w:t></w:r></w:p></w:body></w:document></pkg:xmlData></pkg:part></pkg:package>", Word.InsertLocation.start);
     
     // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
@@ -371,6 +369,10 @@ Word.run(function (context) {
     }
 });
 ```
+
+#### Additional information
+Read [Create better add-ins for Word with Office Open XML](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx) for guidance on working with OOXML.
+
 ### insertParagraph(paragraphText: string, insertLocation: InsertLocation)
 Inserts a paragraph at the specified location. The insertLocation value can be 'Start' or 'End'.
 
