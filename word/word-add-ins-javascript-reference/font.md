@@ -174,7 +174,7 @@ Word.run(function (context) {
     var selection = context.document.getSelection();
     
     // Queue a commmand to highlight the current selection.
-    selection.font.highlightColor = '#FFFF00'; //Yellow = 'Arial';
+    selection.font.highlightColor = '#FFFF00'; // Yellow
     
     // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
