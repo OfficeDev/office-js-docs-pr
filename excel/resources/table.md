@@ -12,7 +12,7 @@ Represents an Excel table.
 |name|string|Name of the table.|
 |showHeaders|bool|Indicates whether the header row is visible or not. This value can be set to show or remove the header row.|
 |showTotals|bool|Indicates whether the total row is visible or not. This value can be set to show or remove the total row.|
-|style|string|Constant value that represents the Table style. Possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.|
+|style|string|Constant value that represents the Table style. Possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.|
 
 _See property access [examples.](#property-access-examples)_
 
