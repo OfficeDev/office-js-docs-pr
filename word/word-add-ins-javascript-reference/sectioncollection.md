@@ -19,26 +19,9 @@ None
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[getItem(index: number)](#getitemindex-number)|[Section](section.md)|Gets a section object by its index in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method details
-
-### getItem(index: number)
-Gets a section object by its index in the collection.
-
-#### Syntax
-```js
-sectionCollectionObject.getItem(index);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|index|number|A number that identifies the index location of a section object.|
-
-#### Returns
-[Section](section.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.

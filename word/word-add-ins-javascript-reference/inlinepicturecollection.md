@@ -19,27 +19,9 @@ None
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[getItem(index: number)](#getitemindex-number)|[InlinePicture](inlinepicture.md)|Gets an inline picture object by its index in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method details
-
-### getItem(index: number)
-Gets an inline picture object by its index in the collection.
-
-#### Syntax
-```js
-inlinePictureCollectionObject.getItem(index);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|index|number|A number that identifies the index location of an inline picture object.|
-
-#### Returns
-[InlinePicture](inlinepicture.md)
-
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
