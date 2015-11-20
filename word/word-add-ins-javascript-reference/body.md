@@ -678,11 +678,4 @@ Word.run(function (context) {
 
 ## Support details
 
-Use the requirement set in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/dn833104.aspx).
-
-| | |
-|-|-|
-|**Available in requirement sets** | WordApi, 1.1|
-|**Minimum permission level** | [ReadWriteDocument](https://msdn.microsoft.com/EN-US/library/office/jj220081.aspx)|
-|**Add-in types** | Task pane|
-|**Library** | Office.js|
+Use the [requirement set](https://msdn.microsoft.com/EN-US/library/office/mt590206.aspx) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/dn833104.aspx). 
