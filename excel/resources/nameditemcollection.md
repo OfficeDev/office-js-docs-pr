@@ -1,8 +1,8 @@
 # NamedItemCollection object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Office 2016_
+_Applies to: Excel 2016, Excel Online, Office 2016_
 
-A collection of all the nameditem objects that are part of the workbook.
+A collection of all the namedItem objects that are part of the workbook.
 
 ## Properties
 
@@ -20,13 +20,13 @@ None
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[getItem(name: string)](#getitemname-string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+|[getItem(name: string)](#getitemname-string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.|
 
 ## Method Details
 
 ### getItem(name: string)
-Gets a nameditem object using its name
+Gets a nameditem object using its name.
 
 #### Syntax
 ```js
@@ -58,25 +58,9 @@ Excel.run(function (ctx) {
 });
 ```
 
-#### Examples
-
-```js
-Excel.run(function (ctx) { 
-	var nameditem = ctx.workbook.names.getItemAt(0);
-	nameditem.load('name');
-	return ctx.sync().then(function() {
-			console.log(nameditem.name);
-	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
-```
 
 ### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.
 
 #### Syntax
 ```js
@@ -86,7 +70,7 @@ object.load(param);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
@@ -111,7 +95,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-Get the number of nameditems.
+Get the number of named items.
 
 ```js
 Excel.run(function (ctx) { 

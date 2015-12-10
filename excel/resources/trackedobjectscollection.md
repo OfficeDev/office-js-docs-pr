@@ -1,6 +1,6 @@
 # TrackedObjectsCollection object (JavaScript API for Office 2016)
 
-_Applies to: Office 2016_
+_Applies to:  Excel 2016, Excel Online, Office 2016_
 
 Allows add-ins to manage range object references across sync() batches. Typically, Excel.run() allows you to maintain references across batches automatically, without having to track them explicitly. However, if an add-in scenario requires that a range object be tracked and adjusted manually to reflect the current state of the underlying Excel range, then this collection could be used to mark such objects for tracking. Note that if a range object is marked for tracking, it needs to be explicitly removed upon usage to free up the memory in Excel, even in an error case.
 
@@ -13,7 +13,7 @@ None
 
 ## Methods
 
-The trackedObjectsCollection object has the following methods defined:
+The trackedObjectsCollection object has the following methods defined.
 
 | Method     | Return Type    |Description|
 |:-----------------|:--------|:----------|
@@ -25,7 +25,7 @@ The trackedObjectsCollection object has the following methods defined:
 ## API Specification 
 
 ### add(rangeObject: range)
-Add a range object to the trackedObjectsCollection. Any underlying chages across batch requests will be tracked and any follow-up updates will be applied to the current state of the range object. 
+Add a range object to the trackedObjectsCollection. Any underlying changes across batch requests will be tracked and any follow-up updates will be applied to the current state of the range object. 
 
 #### Syntax
 ```js
@@ -36,7 +36,7 @@ trackedObjectsCollection.add(rangeObject);
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`rangeObject`  | [Range](range.md)| The Range Object which needs to be added to the trackedObjectCollection.
+`rangeObject`  | [Range](range.md)| The range object that needs to be added to the trackedObjectCollection.
 
 #### Returns
 Null
@@ -61,7 +61,7 @@ Excel.run(function (ctx) {
 
 ### remove(rangeObject: range)
 
-Remove a reference object from the collection. This frees up memory and resources that are required to maintain the state of the tracked object. Note that if a range object is makred for tracking, it needs to be explicitly removed even in the case of an error.
+Remove a reference object from the collection. This frees up memory and resources that are required to maintain the state of the tracked object. Note that if a range object is marked for tracking, it needs to be explicitly removed even in the case of an error.
 
 #### Syntax
 ```js
@@ -72,7 +72,7 @@ trackedObjectsCollection.remove(rangeObject);
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`rangeObject`  | [Range](range.md)| The Range Object which needs to be removed from the trackedObjectCollection.
+`rangeObject`  | [Range](range.md)| The range object that needs to be removed from the trackedObjectCollection.
 
 #### Returns
 Null

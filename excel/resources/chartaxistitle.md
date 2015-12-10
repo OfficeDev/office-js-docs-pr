@@ -1,6 +1,6 @@
 # ChartAxisTitle object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Office 2016_
+_Applies to: Excel 2016, Excel Online, Office 2016_
 
 Represents the title of a chart axis.
 
@@ -9,25 +9,25 @@ Represents the title of a chart axis.
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |text|string|Represents the axis title.|
-|visible|bool|A boolean that specifies the visibility of an axis title.|
+|visible|bool|A Boolean that specifies the visibility of an axis title.|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|format|[ChartAxisTitleFormat](chartaxistitleformat.md)|Represents the formatting of chart axis title. Read-only.|
+|format|[ChartAxisTitleFormat](chartaxistitleformat.md)|Represents the formatting of the chart axis title. Read-only.|
 
 ## Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.|
 
 ## Method Details
 
 ### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.
 
 #### Syntax
 ```js
@@ -37,12 +37,12 @@ object.load(param);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
 ### Property access examples
-Get the `text` of Chart Axis Title from the value axis of Chart1.
+Get the `text` of ChartAxisTitle from the value axis of Chart1.
 
 ```js
 Excel.run(function (ctx) { 
@@ -60,7 +60,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-Add "Values" as the title for the value Axis
+Add "Values" as the title for the value axis.
 
 ```js
 Excel.run(function (ctx) { 

@@ -1,6 +1,6 @@
 # ChartLegend object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Office 2016_
+_Applies to: Excel 2016, Excel Online, Office 2016_
 
 Represents the legend in a chart.
 
@@ -10,7 +10,7 @@ Represents the legend in a chart.
 |:---------------|:--------|:----------|
 |overlay|bool|Boolean value for whether the chart legend should overlap with the main body of the chart.|
 |position|string|Represents the position of the legend on the chart. Possible values are: Top, Bottom, Left, Right, Corner, Custom.|
-|visible|bool|A boolean value the represents the visibility of a ChartLegend object.|
+|visible|bool|A Boolean value the represents the visibility of a ChartLegend object.|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -23,12 +23,12 @@ _See property access [examples.](#property-access-examples)_
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.|
 
 ## Method Details
 
 ### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.
 
 #### Syntax
 ```js
@@ -38,13 +38,13 @@ object.load(param);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
 ### Property access examples
 
-Get the `position` of Chart Legend from Chart1
+Get the `position` of chart legend from Chart1.
 
 ```js
 Excel.run(function (ctx) { 

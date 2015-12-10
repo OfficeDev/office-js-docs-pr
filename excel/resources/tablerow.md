@@ -1,6 +1,6 @@
 # TableRow object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Office 2016_
+_Applies to: Excel 2016, Excel Online, Office 2016_
 
 Represents a row in a table.
 
@@ -9,7 +9,7 @@ Represents a row in a table.
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |index|int|Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.|
-|values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.|
+|values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or boolean. A cell that contains an error returns an error string.|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -23,7 +23,7 @@ None
 |:---------------|:--------|:----------|
 |[delete()](#delete)|void|Deletes the row from the table.|
 |[getRange()](#getrange)|[Range](range.md)|Returns the range object associated with the entire row.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.|
 
 ## Method Details
 
@@ -92,7 +92,7 @@ Excel.run(function (ctx) {
 ```
 
 ### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.
 
 #### Syntax
 ```js
@@ -102,7 +102,7 @@ object.load(param);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void

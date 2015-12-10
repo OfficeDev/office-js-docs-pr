@@ -1,6 +1,6 @@
 # TableCollection object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Office 2016_
+_Applies to: Excel 2016, Excel Online, Office 2016_
 
 Represents a collection of all the tables that are part of the workbook.
 
@@ -21,15 +21,15 @@ None
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[add(address: string, hasHeaders: bool)](#addaddress-string-hasheaders-bool)|[Table](table.md)|Create a new table. The range source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.|
-|[getItem(key: number or string)](#getitemkey-number-or-string)|[Table](table.md)|Gets a table by Name or ID.|
+|[add(address: string, hasHeaders: bool)](#addaddress-string-hasheaders-bool)|[Table](table.md)|Create a new table. The range source address determines the worksheet under which the table will be added. If the table can't be added (e.g., because the address is invalid, or the table would overlap with another table), an error is thrown.|
+|[getItem(key: number or string)](#getitemkey-number-or-string)|[Table](table.md)|Gets a table by name or ID.|
 |[getItemAt(index: number)](#getitematindex-number)|[Table](table.md)|Gets a table based on its position in the collection.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.|
 
 ## Method Details
 
 ### add(address: string, hasHeaders: bool)
-Create a new table. The range source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.
+Creates a new table. The range source address determines the worksheet under which the table will be added. If the table can't be added (e.g., because the address is invalid, or the table would overlap with another table), an error is thrown.
 
 #### Syntax
 ```js
@@ -39,8 +39,8 @@ tableCollectionObject.add(address, hasHeaders);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|address|string|Address or name of the range object representing the data source. If the address does not contain a sheet name, the currently-active sheet is used.|
-|hasHeaders|bool|Boolean value that indicates whether the data being imported has column labels. If the source does not contain headers (i.e,. when this property set to false), Excel will automatically generate header shifting the data down by one row.|
+|address|string|Address or name of the range object representing the data source. If the address does not contain a sheet name, the currently active sheet is used.|
+|hasHeaders|bool|Boolean value that indicates whether the data being imported has column labels. If the source does not contain headers (i.e., when this property is set to false), Excel will automatically generate a header, shifting the data down by one row.|
 
 #### Returns
 [Table](table.md)
@@ -62,7 +62,7 @@ Excel.run(function (ctx) {
 });
 ```
 ### getItem(key: number or string)
-Gets a table by Name or ID.
+Gets a table by name or ID.
 
 #### Syntax
 ```js
@@ -144,7 +144,7 @@ Excel.run(function (ctx) {
 ```
 
 ### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.
 
 #### Syntax
 ```js
@@ -154,7 +154,7 @@ object.load(param);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
@@ -179,7 +179,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-Get the number of tables
+Get the number of tables.
 
 ```js
 Excel.run(function (ctx) { 

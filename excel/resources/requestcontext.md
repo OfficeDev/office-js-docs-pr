@@ -1,6 +1,8 @@
 # RequestContext object (JavaScript API for Excel)
 
-The RequestContext object facilitates requests to the Excel application. Since the Office add-in and the Excel application run in two different processes, request context is required to get access to Excel and related objects such as worksheets, tables, etc. from the add-in. 
+_Applies to: Excel 2016, Excel Online, Office 2016_
+
+The RequestContext object facilitates requests to the Excel application. Since the Office add-in and the Excel application run in two different processes, request context is required to get access to Excel and related objects such as worksheets, tables, etc., from the add-in. 
 
 ## Properties
 None
@@ -9,12 +11,12 @@ None
 
 | Method         | Return Type    |Description|
 |:---------------|:--------|:----------|
-|[load(object: object, option: object)](#loadobject-object-option-object)  |void     |Fills the proxy object created in JavaScript layer with property and options specified in the parameter.|
+|[load(object: object, option: object)](#loadobject-object-option-object)  |void     |Fills the proxy object created in the JavaScript layer, with property and options specified in the parameter.|
 
 ## API Specification
 
 ### load(object: object, option: object)
-Fills the proxy object created in JavaScript layer with property and options specified in the parameter.
+Fills the proxy object created in the JavaScript layer, with property and options specified in the parameter.
 
 #### Syntax
 ```js
@@ -25,14 +27,14 @@ requestContextObject.load(object, loadOption);
 | Parameter       | Type    |Description|
 |:----------------|:--------|:----------|
 |object|object|Optional. Specify the name of the object to be loaded.|
-|option|[loadOption](loadoption.md)|Optional. Specify the load options such as select, expand, skip and top. Se Load Option object for details.|
+|option|[loadOption](loadoption.md)|Optional. Specify the load options such as select, expand, skip, and top. See loadOption object for details.|
 
 #### Returns
 void
 
 ##### Examples
 
-The following example loading of values property from one range and copying them to another range.
+The following example loads property values from one range and copies them to another range.
 
 ```js
 Excel.run(function (ctx) { 
