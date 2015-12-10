@@ -2,7 +2,7 @@
 
 _Applies to: Excel 2016, Office 2016_
 
-Welcome to the Excel JavaScript API documentation. Here you can find everything you need to create the next generation of Excel add-ins in Office 2016 for Windows. The new APIs provide a variety of Excel-specific functionality related to worksheets, tables, charts, ranges, formatting, etc., and complements features present in our existing Office.js library.
+Welcome to the Excel JavaScript API documentation. Here you can find everything you need to create the next generation of Excel add-ins in Office 2016 for Windows and Excel Online. The new APIs provide a variety of Excel-specific functionality related to worksheets, tables, charts, ranges, formatting, etc., and complements features present in our existing Office.js library.
 
 Explore the following resources to learn more. 
 
