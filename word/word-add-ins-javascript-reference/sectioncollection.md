@@ -2,7 +2,7 @@
 
 Contains the collection of the document's [section](section.md) objects.
 
-_Applies to: Word 2016_
+_Applies to: Word 2016, Word for iPad_
 
 ## Properties
 | Property	   | Type	|Description
@@ -79,3 +79,7 @@ Word.run(function (context) {
 });
 
 ```
+
+## Support details
+
+Use the [requirement set](https://msdn.microsoft.com/EN-US/library/office/mt590206.aspx) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/dn833104.aspx). 

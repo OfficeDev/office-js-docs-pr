@@ -2,7 +2,7 @@
 
 Represents a content control. Content controls are bounded and potentially labeled regions in a document that serve as containers for specific types of content. Individual content controls may contain contents such as images, tables, or paragraphs of formatted text. Currently, only rich text content controls are supported.
 
-_Applies to: Word 2016_
+_Applies to: Word 2016, Word for iPad_
 
 ## Properties
 | Property	   | Type	|Description
@@ -42,12 +42,13 @@ _See property access [examples.](#property-access-examples)_
 |[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location. A break can only be inserted into objects that are contained within the main document body, except if it is a line break which can be inserted into any body object. The insertLocation value can be 'Before', 'After', 'Start' or 'End'.|
 |[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Inserts a document into the current content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
 |[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts HTML into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
+|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](#insertInlinePictureFromBase64base64EncodedImage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|Inserts an inline picture into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'. |
 |[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts OOXML or wordProcessingML into the content control at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.|
 |[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before', 'After', 'Start' or 'End'.|
 |[insertText(text: string, insertLocation: InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|Inserts text into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 |[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the content control object. The search results are a collection of range objects.|
-|[select()](#select)|void|Selects the content control. This causes Word to scroll to the selection.|
+|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects the content control. This causes Word to scroll to the selection. The selection mode can be 'Select', 'Start' or 'End'.|
 
 ## Method details
 
@@ -395,6 +396,23 @@ Word.run(function (context) {
 });
 ```
 
+### insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
+Inserts an inline picture into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
+
+#### Syntax
+contentControlObject.insertInlinePictureFromBase64(image, insertLocation);
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|base64EncodedImage|string|Required. The base64 encoded image to be inserted in the content control.|
+|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start' or 'End'.|
+
+#### Returns
+[InlinePicture](inlinepicture.md)
+
+
+
 ### insertOoxml(ooxml: string, insertLocation: InsertLocation)
 Inserts OOXML or wordProcessingML into the content control at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.
 
@@ -632,16 +650,18 @@ contentControlObject.search(searchText, searchOptions);
 #### Returns
 [SearchResultCollection](searchresultcollection.md)
 
-### select()
-Selects the content control. This causes Word to scroll to the selection.
+### select(selectionMode: SelectionMode)
+Selects the content control. This causes Word to scroll to the selection. The selection mode can be 'Select', 'Start' or 'End'.
 
 #### Syntax
 ```js
-contentControlObject.select();
+contentControlObject.select(selectionMode);
 ```
 
 #### Parameters
-None
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|selectionMode|SelectionMode|Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.|
 
 #### Returns
 void
@@ -752,3 +772,7 @@ Word.run(function (context) {
     }
 });
 ```
+
+## Support details
+
+Use the [requirement set](https://msdn.microsoft.com/EN-US/library/office/mt590206.aspx) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/dn833104.aspx). 

@@ -2,7 +2,7 @@
 
 Represents a single paragraph in a selection, range, content control, or document body.
 
-_Applies to: Word 2016_
+_Applies to: Word 2016, Word for iPad_
 
 ## Properties
 | Property	   | Type	|Description
@@ -48,7 +48,7 @@ _See property access [examples.](#property-access-examples)_
 |[insertText(text: string, insertLocation: InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|Inserts text into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 |[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the paragraph object. The search results are a collection of range objects.|
-|[select()](#select)|void|Selects and navigates the Word UI to the paragraph.|
+|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects and navigates the Word UI to the paragraph. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.|
 
 ## Method details
 
@@ -757,17 +757,18 @@ paragraphObject.search(searchText, searchOptions);
 #### Returns
 [SearchResultCollection](searchresultcollection.md)
 
-
-### select()
+### select(selectionMode: SelectionMode)
 Selects and navigates the Word UI to the paragraph.
 
 #### Syntax
 ```js
-paragraphObject.select();
+paragraphObject.select(selectionMode);
 ```
 
 #### Parameters
-None
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|selectionMode|SelectionMode|Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.|
 
 #### Returns
 void
@@ -810,3 +811,6 @@ Word.run(function (context) {
 });
 ```
 
+## Support details
+
+Use the [requirement set](https://msdn.microsoft.com/EN-US/library/office/mt590206.aspx) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/dn833104.aspx). 
