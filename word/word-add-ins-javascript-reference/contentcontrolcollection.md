@@ -113,6 +113,10 @@ Word.run(function (context) {
 });
 ```
 
+#### Additional information
+The [Word-Add-in-DocumentAssembly][contentControls.getByTag] sample has another example of using the getByTag method.
+
+
 ### getByTitle(title: string)
 Gets the content controls that have the specified title.
 
@@ -158,6 +162,9 @@ Word.run(function (context) {
     }
 });
 ```
+
+#### Additional information
+The [Word-Add-in-DocumentAssembly][contentControls.getByTitle] sample has another example of using the getByTitle method.
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -247,4 +254,8 @@ The [Silly stories](https://aka.ms/sillystorywordaddin) add-in sample shows how 
 ## Support details
 
 Use the [requirement set](https://msdn.microsoft.com/EN-US/library/office/mt590206.aspx) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/dn833104.aspx). 
+
+
+[contentControls.getByTag]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L300 "get by tag"
+[contentControls.getByTitle]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L331 "get by title"
 

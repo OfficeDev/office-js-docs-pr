@@ -8,7 +8,7 @@ _Applies to: Word 2016, Word for iPad_
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |outlineLevel|int|Gets or sets the outline level for the paragraph.|
-|style|string|Gets or sets the style used for the paragraph. This is the name of the pre-installed or custom style.|
+|style|string|Gets or sets the style used for the paragraph. This is the name of the pre-installed or custom style. The [Word-Add-in-DocumentAssembly][paragraph.style] sample shows how you can set the paragraph style.|
 |text|string|Gets the text of the paragraph. Read-only.|
 
 _See property access [examples.](#property-access-examples)_
@@ -241,7 +241,7 @@ Word.run(function (context) {
 ```
 
 ### insertBreak(breakType: BreakType, insertLocation: InsertLocation)
-Inserts a break at the specified location. A break can only be inserted into paragraphs that are contained within the main document body, except if it is a line break which can be inserted into any body object. The insertLocation value can be 'Start' or 'End'.
+Inserts a break at the specified location. A break can only be inserted into paragraphs that are contained within the main document body, except if it is a line break which can be inserted into any body object. The insertLocation value can be 'Before' or 'After'.
 
 #### Syntax
 ```js
@@ -347,6 +347,9 @@ Word.run(function (context) {
     }
 });
 ```
+
+#### Additional information
+The [Word-Add-in-DocumentAssembly][paragraph.insertContentControl] sample shows how you can use the insertContentControl method.
 
 ### insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
 Inserts a document into the current paragraph at the specified location. The insertLocation value can be 'Start' or 'End'.
@@ -511,6 +514,9 @@ Word.run(function (context) {
     }
 });
 ```
+
+#### Additional information
+The [Word-Add-in-DocumentAssembly][paragraph.insertpicture] sample provides another example of how to insert an image into a paragraph.
 
 ### insertOoxml(ooxml: string, insertLocation: InsertLocation)
 Inserts OOXML or wordProcessingML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
@@ -814,3 +820,8 @@ Word.run(function (context) {
 ## Support details
 
 Use the [requirement set](https://msdn.microsoft.com/EN-US/library/office/mt590206.aspx) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/dn833104.aspx). 
+
+
+[paragraph.insertContentControl]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L161 "insert content control"
+[paragraph.style]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L172 "set style"
+[paragraph.insertpicture]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L236 "insert picture"

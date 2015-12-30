@@ -388,7 +388,7 @@ Word.run(function (context) {
 ```
 
 #### Additional information
-Read [Create better add-ins for Word with Office Open XML](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx) for guidance on working with OOXML.
+Read [Create better add-ins for Word with Office Open XML](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx) for guidance on working with OOXML. The [Word-Add-in-DocumentAssembly][body.insertOoxml] sample shows how you can use this API to assemble a document.
 
 ### insertParagraph(paragraphText: string, insertLocation: InsertLocation)
 Inserts a paragraph at the specified location. The insertLocation value can be 'Start' or 'End'.
@@ -431,6 +431,10 @@ Word.run(function (context) {
     }
 });
 ```
+
+#### Additional information
+The [Word-Add-in-DocumentAssembly][body.insertParagraph] sample shows how you can use the insertParagraph method to assemble a document.
+
 ### insertText(text: string, insertLocation: InsertLocation)
 Inserts text into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
 
@@ -577,6 +581,10 @@ Word.run(function (context) {
     }
 });
 ```
+
+#### Additional information
+The [Word-Add-in-DocumentAssembly][body.search] sample provides another example of how to search a document.
+
 ### select(selectionMode: SelectionMode)
 Selects the body and navigates the Word UI to it. The selectionMode values can be 'Select', 'Start', or 'End'.
 
@@ -681,3 +689,8 @@ Word.run(function (context) {
 ## Support details
 
 Use the [requirement set](https://msdn.microsoft.com/EN-US/library/office/mt590206.aspx) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/dn833104.aspx). 
+
+
+[body.insertOoxml]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L127 "insert OOXML"
+[body.insertParagraph]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L153 "insert paragraph"
+[body.search]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L261 "body search"
