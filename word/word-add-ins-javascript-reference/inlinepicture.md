@@ -18,10 +18,10 @@ _See property access [examples.](#property-access-examples)_
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|height|**float**|Gets or sets a number that describes the height of the inline image.|
+|height|**float**|Gets or sets a number that describes the height of the inline image. This is measured in points. |
 |parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the inline image. Returns null if there isn't a parent content control. Read-only.|
 |paragraph|[paragraph](paragraph.md)|Gets the paragraph that contains the inline image. Read-only.
-|width|**float**|Gets or sets a number that describes the width of the inline image.|
+|width|**float**|Gets or sets a number that describes the width of the inline image. This is measured in points.|
 
 ## Methods
 
