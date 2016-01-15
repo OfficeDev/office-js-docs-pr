@@ -2,7 +2,7 @@
 
 Represents a contiguous area in a document.
 
-_Applies to: Word 2016, Word for iPad_
+_Applies to: Word 2016, Word for iPad, Word for Mac_
 
 ## Properties
 | Property	   | Type	|Description

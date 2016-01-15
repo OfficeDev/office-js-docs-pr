@@ -1,4 +1,9 @@
 # BreakType (JavaScript API for Word) 
+
+Specifies the form of a break. 
+
+_Applies to: Word 2016, Word for iPad, Word for Mac_
+
 The following are the supported break types on the API.
 
 | Value         | Description     |
