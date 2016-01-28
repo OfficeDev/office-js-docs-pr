@@ -614,7 +614,6 @@ Word.run(function (context) {
     myContentControl.style = 'Heading 2';
     myContentControl.insertText('One Microsoft Way, Redmond, WA 98052', 'replace');
     myContentControl.cannotEdit = true;
-    myContentControl.appearance = 'tags';
     
     // Queue a command to load the id property for the content control you created.
     context.load(myContentControl, 'id');
@@ -728,7 +727,6 @@ Word.run(function (context) {
             contentControls.items[0].load(  'appearance,' +
                                             'cannotDelete,' +
                                             'cannotEdit,' +
-                                            'color,' +
                                             'id,' +
                                             'placeHolderText,' +
                                             'removeWhenEdited,' +
