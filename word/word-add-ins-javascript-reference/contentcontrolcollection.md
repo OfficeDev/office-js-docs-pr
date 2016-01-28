@@ -150,7 +150,7 @@ Word.run(function (context) {
         if (contentControlsWithTitle.items.length === 0) {
             console.log("There isn't a content control with a title of 'Enter Customer Address Here' in this document.");
         } else {
-            console.log('The first content control with the title of 'Enter Customer Address Here' has this text: ' + contentControlsWithTitle.items[0].text);    
+            console.log("The first content control with the title of 'Enter Customer Address Here' has this text: " + contentControlsWithTitle.items[0].text);    
         }
             
     });  
@@ -204,7 +204,6 @@ Word.run(function (context) {
             contentControls.items[0].load(  'appearance,' +
                                             'cannotDelete,' +
                                             'cannotEdit,' +
-                                            'color,' +
                                             'id,' +
                                             'placeHolderText,' +
                                             'removeWhenEdited,' +
