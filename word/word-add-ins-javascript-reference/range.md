@@ -280,8 +280,7 @@ Word.run(function (context) {
     myContentControl.style = "Normal";
     myContentControl.insertText("One Microsoft Way, Redmond, WA 98052", 'replace');
     myContentControl.cannotEdit = true;
-    myContentControl.appearance = "tags";
-    
+
     // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
