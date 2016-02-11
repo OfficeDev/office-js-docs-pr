@@ -177,11 +177,13 @@ You will create a simple web app and the app manifest in this section. The web a
 
 6- Save all the files. You’ve now written your first Word add-in. 
 
-7- Create a network folder (for example, \\\MyShare\boilerplate) or [share a folder to the network](https://technet.microsoft.com/en-us/library/cc770880.aspx), and copy home.js, home.html, and BoilerplateManifest.xml to that location.
+7- (Windows only) Create a network folder (for example, \\\MyShare\boilerplate) or [share a folder to the network](https://technet.microsoft.com/en-us/library/cc770880.aspx), and copy home.js, home.html, and BoilerplateManifest.xml to that location.
 
 8- Edit the <code>SourceLocation</code> element in BoilerplateManifest.xml so that it points to the location of home.html. 
 
 At this point, you have your first add-in deployed. Now you need to let Word know where to find the add-in.
+
+#### Try this out in Word 2016 for Windows
 
 1. Launch Word and open a document.
 2. Choose the **File** tab, and then choose **Options**.
@@ -190,8 +192,6 @@ At this point, you have your first add-in deployed. Now you need to let Word kno
 5. In the **Catalog Url** box, enter the path to the folder share that contains BoilerplateManifest.xml and then choose **Add Catalog**.
 6. Select the **Show in Menu** check box, and then choose **OK**.
 7. A message is displayed to inform you that your settings will be applied the next time you start Office. Close and restart Word. 
-
-### Try it out
 
 Now you can run the add-in you created. Follow these steps to see it in action:
 
@@ -202,6 +202,14 @@ Now you can run the add-in you created. Follow these steps to see it in action:
 5. The add-in will load in a task pane. See figure 1 to see how it will look when it gets loaded.
 6. Select the buttons to have boilerplate text entered into the Word document.
 
+
+### Try it out in Word 2016 for Mac
+
+Now you can run the add-in you created. Follow these steps to see it in action:
+
+1. Create a folder called “wef” in Users/Library/Containers/com.microsoft.word/Data/Documents/
+2. Put the manifest, BoilerplateManifest.xml, in the wef folder (Users/Library/Containers/com.microsoft.word/Data/Documents/wef)
+3. Open Word 2016 on the Mac and click on the Insert tab > My Add-ins drop down. You should see the add-in listed in the drop down. Select it and it will load the add-in.
 
 __Figure 1. The Boilerplate content add-in loaded in Word__
 ![Picture of the Word application with the boilerplate add-in loaded.](media/boilerplateAddin.png "A simple Word add-in for entering boilerplate text.")
