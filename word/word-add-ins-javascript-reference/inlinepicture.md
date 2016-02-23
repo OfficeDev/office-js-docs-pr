@@ -12,9 +12,6 @@ _Applies to: Word 2016, Word for iPad, Word for Mac_
 |hyperlink|string|Gets or sets the hyperlink associated with the inline image.|
 |lockAspectRatio|bool|Gets or sets a value that indicates whether the inline image retains its original proportions when you resize it.|
 
-
-_See property access [examples.](#property-access-examples)_
-
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
@@ -234,4 +231,4 @@ void
 
 ## Support details
 
-Use the [requirement set](https://msdn.microsoft.com/EN-US/library/office/mt590206.aspx) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/dn833104.aspx). 
+Use the [requirement set](https://msdn.microsoft.com/EN-US/library/office/mt590206.aspx) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/dn833104.aspx).

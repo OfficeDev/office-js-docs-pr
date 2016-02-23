@@ -11,8 +11,6 @@ _Applies to: Word 2016, Word for iPad, Word for Mac_
 |style|string|Gets or sets the style used for the paragraph. This is the name of the pre-installed or custom style. The [Word-Add-in-DocumentAssembly][paragraph.style] sample shows how you can set the paragraph style.|
 |text|string|Gets the text of the paragraph. Read-only.|
 
-_See property access [examples.](#property-access-examples)_
-
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
@@ -70,26 +68,26 @@ void
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Create a proxy object for the paragraphs collection.
     var paragraphs = context.document.body.paragraphs;
-    
+
     // Queue a commmand to load the style property for all of the paragraphs.
     context.load(paragraphs, 'style');
-    
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
-        
+
         // Queue a command to clear the contents of the first paragraph.
-        paragraphs.items[0].clear();    
-        
-        // Synchronize the document state by executing the queued commands, 
+        paragraphs.items[0].clear();
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Cleared the contents of the first paragraph.');
-        });      
-    });  
+        });
+    });
 })
 .catch(function (error) {
     console.log('Error: ' + JSON.stringify(error));
@@ -117,26 +115,26 @@ void
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Create a proxy object for the paragraphs collection.
     var paragraphs = context.document.body.paragraphs;
-    
+
     // Queue a commmand to load the text property for all of the paragraphs.
     context.load(paragraphs, 'text');
-    
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
-        
+
         // Queue a command to delete the first paragraph.
-        paragraphs.items[0].delete();    
-        
-        // Synchronize the document state by executing the queued commands, 
+        paragraphs.items[0].delete();
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Deleted the first paragraph.');
-        });      
-    });  
+        });
+    });
 })
 .catch(function (error) {
     console.log('Error: ' + JSON.stringify(error));
@@ -164,26 +162,26 @@ string
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Create a proxy object for the paragraphs collection.
     var paragraphs = context.document.body.paragraphs;
-    
+
     // Queue a commmand to load the style property for all of the paragraphs.
     context.load(paragraphs, 'style');
-    
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
-        
+
         // Queue a a set of commands to get the HTML of the first paragraph.
-        var html = paragraphs.items[0].getHtml();    
-        
-        // Synchronize the document state by executing the queued commands, 
+        var html = paragraphs.items[0].getHtml();
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Paragraph HTML: ' + html.value);
-        });      
-    });  
+        });
+    });
 })
 .catch(function (error) {
     console.log('Error: ' + JSON.stringify(error));
@@ -211,26 +209,26 @@ string
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Create a proxy object for the paragraphs collection.
     var paragraphs = context.document.body.paragraphs;
-    
+
     // Queue a commmand to load the style property for the top 2 paragraphs.
     context.load(paragraphs, {select: 'style', top: 2} );
-    
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
-        
+
         // Queue a a set of commands to get the OOXML of the first paragraph.
-        var ooxml = paragraphs.items[0].getOoxml();    
-        
-        // Synchronize the document state by executing the queued commands, 
+        var ooxml = paragraphs.items[0].getOoxml();
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Paragraph OOXML: ' + ooxml.value);
-        });      
-    });  
+        });
+    });
 })
 .catch(function (error) {
     console.log('Error: ' + JSON.stringify(error));
@@ -258,36 +256,36 @@ paragraphObject.insertBreak(breakType, insertLocation);
 void
 
 #### Additional details
-You can not insert a break in headers, footers, footnotes, endnotes, comments, and textboxes. 
+You can not insert a break in headers, footers, footnotes, endnotes, comments, and textboxes.
 
 #### Examples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Create a proxy object for the paragraphs collection.
     var paragraphs = context.document.body.paragraphs;
-    
+
     // Queue a commmand to load the style property for the top 2 paragraphs.
     // We never perform an empty load. We always must request a property.
     context.load(paragraphs, {select: 'style', top: 2} );
-    
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
-        
+
         // Queue a command to get the first paragraph.
-        var paragraph = paragraphs.items[0];        
-        
+        var paragraph = paragraphs.items[0];
+
         // Queue a command to insert a page break after the first paragraph.
-        paragraph.insertBreak('page', 'After');    
-        
-        // Synchronize the document state by executing the queued commands, 
+        paragraph.insertBreak('page', 'After');
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Inserted a page break after the paragraph.');
-        });      
-    });  
+        });
+    });
 })
 .catch(function (error) {
     console.log('Error: ' + JSON.stringify(error));
@@ -315,30 +313,30 @@ None
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Create a proxy object for the paragraphs collection.
     var paragraphs = context.document.body.paragraphs;
-    
+
     // Queue a commmand to load the style property for the top 2 paragraphs.
     // We never perform an empty load. We always must request a property.
     context.load(paragraphs, {select: 'style', top: 2} );
-    
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
-        
+
         // Queue a command to get the first paragraph.
-        var paragraph = paragraphs.items[0];        
-        
+        var paragraph = paragraphs.items[0];
+
         // Queue a command to wrap the first paragraph in a rich text content control.
-        paragraph.insertContentControl(); 
-        
-        // Synchronize the document state by executing the queued commands, 
+        paragraph.insertContentControl();
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Wrapped the first paragraph in a content control.');
-        });      
-    });  
+        });
+    });
 })
 .catch(function (error) {
     console.log('Error: ' + JSON.stringify(error));
@@ -372,30 +370,30 @@ paragraphObject.insertFileFromBase64(base64File, insertLocation);
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Create a proxy object for the paragraphs collection.
     var paragraphs = context.document.body.paragraphs;
-    
+
     // Queue a commmand to load the style property for all of the paragraphs.
     context.load(paragraphs, 'style');
-    
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
-        
+
         // Queue a command to get the first paragraph.
         var paragraph = paragraphs.items[0];
 
         // Queue a command to insert base64 encoded .docx at the beginning of the first paragraph.
         // This won't work unless you have a definition for getBase64().
         paragraph.insertFileFromBase64(getBase64(), Word.InsertLocation.start);
-        
-        // Synchronize the document state by executing the queued commands, 
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Inserted base64 encoded content at the beginning of the first paragraph.');
-        });      
-    });  
+        });
+    });
 })
 .catch(function (error) {
     console.log('Error: ' + JSON.stringify(error));
@@ -426,30 +424,30 @@ paragraphObject.insertHtml(html, insertLocation);
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Create a proxy object for the paragraphs collection.
     var paragraphs = context.document.body.paragraphs;
-    
+
     // Queue a commmand to load the style property for the top 2 paragraphs.
     // We never perform an empty load. We always must request a property.
     context.load(paragraphs, {select: 'style', top: 2} );
-    
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
-        
+
         // Queue a command to get the first paragraph.
-        var paragraph = paragraphs.items[0];        
-        
+        var paragraph = paragraphs.items[0];
+
         // Queue a command to insert HTML content at the end of the first paragraph.
         paragraph.insertHtml('<strong>Inserted HTML.</strong>', Word.InsertLocation.end);
-        
-        // Synchronize the document state by executing the queued commands, 
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Inserted HTML content at the end of the first paragraph.');
-        });      
-    });  
+        });
+    });
 })
 .catch(function (error) {
     console.log('Error: ' + JSON.stringify(error));
@@ -481,17 +479,17 @@ paragraphObject.insertInlinePictureFromBase64(base64EncodedImage, insertLocation
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Create a proxy object for the paragraphs collection.
     var paragraphs = context.document.body.paragraphs;
-    
+
     // Queue a commmand to load the style property for all of the paragraphs.
     context.load(paragraphs, 'style');
-    
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
-        
+
         // Queue a command to get the first paragraph.
         var paragraph = paragraphs.items[0];
 
@@ -499,13 +497,13 @@ Word.run(function (context) {
 
         // Queue a command to insert a base64 encoded image at the beginning of the first paragraph.
         paragraph.insertInlinePictureFromBase64(b64encodedImg, Word.InsertLocation.start);
-        
-        // Synchronize the document state by executing the queued commands, 
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Added an image to the first paragraph.');
-        });      
-    });  
+        });
+    });
 })
 .catch(function (error) {
     console.log('Error: ' + JSON.stringify(error));
@@ -539,31 +537,31 @@ paragraphObject.insertOoxml(ooxml, insertLocation);
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Create a proxy object for the paragraphs collection.
     var paragraphs = context.document.body.paragraphs;
-    
+
     // Queue a commmand to load the style property for the top 2 paragraphs.
     // We never perform an empty load. We always must request a property.
     context.load(paragraphs, {select: 'style', top: 2} );
-    
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
-        
+
         // Queue a command to get the first paragraph.
-        var paragraph = paragraphs.items[0];        
-        
+        var paragraph = paragraphs.items[0];
+
         // Queue a command to insert Ooxml content into the first paragraph.
         var ooxmlContent = "<pkg:package xmlns:pkg='http://schemas.microsoft.com/office/2006/xmlPackage'><pkg:part pkg:name='/_rels/.rels' pkg:contentType='application/vnd.openxmlformats-package.relationships+xml' pkg:padding='512'><pkg:xmlData><Relationships xmlns='http://schemas.openxmlformats.org/package/2006/relationships'><Relationship Id='rId1' Type='http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument' Target='word/document.xml'/></Relationships></pkg:xmlData></pkg:part><pkg:part pkg:name='/word/document.xml' pkg:contentType='application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml'><pkg:xmlData><w:document xmlns:w='http://schemas.openxmlformats.org/wordprocessingml/2006/main' ><w:body><w:p><w:pPr><w:spacing w:before='360' w:after='0' w:line='480' w:lineRule='auto'/><w:rPr><w:color w:val='70AD47' w:themeColor='accent6'/><w:sz w:val='28'/></w:rPr></w:pPr><w:r><w:rPr><w:color w:val='70AD47' w:themeColor='accent6'/><w:sz w:val='28'/></w:rPr><w:t>This text has formatting directly applied to achieve its font size, color, line spacing, and paragraph spacing.</w:t></w:r></w:p></w:body></w:document></pkg:xmlData></pkg:part></pkg:package>";
         paragraph.insertOoxml(ooxmlContent, Word.InsertLocation.end);
-        
-        // Synchronize the document state by executing the queued commands, 
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Inserted OOXML at the end of the first paragraph.');
-        });      
-    });  
+        });
+    });
 })
 .catch(function (error) {
     console.log('Error: ' + JSON.stringify(error));
@@ -597,30 +595,30 @@ paragraphObject.insertParagraph(paragraphText, insertLocation);
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Create a proxy object for the paragraphs collection.
     var paragraphs = context.document.body.paragraphs;
-    
+
     // Queue a commmand to load the style property for the top 2 paragraphs.
     // We never perform an empty load. We always must request a property.
     context.load(paragraphs, {select: 'style', top: 2} );
-    
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
-        
+
         // Queue a command to get the first paragraph.
-        var paragraph = paragraphs.items[0];        
-        
+        var paragraph = paragraphs.items[0];
+
         // Queue a command to insert the paragraph after the current paragraph.
         paragraph.insertParagraph('Content of a new paragraph', Word.InsertLocation.after);
-        
-        // Synchronize the document state by executing the queued commands, 
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Inserted a new paragraph at the end of the first paragraph.');
-        });      
-    });  
+        });
+    });
 })
 .catch(function (error) {
     console.log('Error: ' + JSON.stringify(error));
@@ -651,30 +649,30 @@ paragraphObject.insertText(text, insertLocation);
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Create a proxy object for the paragraphs collection.
     var paragraphs = context.document.body.paragraphs;
-    
+
     // Queue a commmand to load the style property for the top 2 paragraphs.
     // We never perform an empty load. We always must request a property.
     context.load(paragraphs, {select: 'style', top: 2} );
-    
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
-        
+
         // Queue a command to get the first paragraph.
-        var paragraph = paragraphs.items[0];        
-        
+        var paragraph = paragraphs.items[0];
+
         // Queue a command to insert text into the end of the paragraph.
         paragraph.insertText('New text inserted into the paragraph.', Word.InsertLocation.end);
-        
-        // Synchronize the document state by executing the queued commands, 
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Inserted text at the end of the first paragraph.');
-        });      
-    });  
+        });
+    });
 })
 .catch(function (error) {
     console.log('Error: ' + JSON.stringify(error));
@@ -704,29 +702,29 @@ void
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Create a proxy object for the paragraphs collection.
     var paragraphs = context.document.body.paragraphs;
-    
+
     // Queue a commmand to load the style property for the top 2 paragraphs.
     // We never perform an empty load. We always must request a property.
     context.load(paragraphs, {select: 'style', top: 2} );
-    
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
-        
+
         // Queue a command to get the first paragraph.
-        var paragraph = paragraphs.items[0];        
-        
+        var paragraph = paragraphs.items[0];
+
         // Queue a command to load font information for the paragraph.
         context.load(paragraph, 'font/size, font/name, font/color');
-        
-        // Synchronize the document state by executing the queued commands, 
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             // Show the results of the load method. Here we show the
-            // property values on the paragraph object. Note that we 
+            // property values on the paragraph object. Note that we
             // requested the style property in the first load command.
             var results = "<strong>Paragraph</strong>--" +
                           "--Font size: " + paragraph.font.size +
@@ -735,8 +733,8 @@ Word.run(function (context) {
                           "--Style: " + paragraph.style;
 
             console.log(results);
-        });      
-    });  
+        });
+    });
 })
 .catch(function (error) {
     console.log('Error: ' + JSON.stringify(error));
@@ -783,31 +781,31 @@ void
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Create a proxy object for the paragraphs collection.
     var paragraphs = context.document.body.paragraphs;
-    
+
     // Queue a commmand to load the style property for all of the paragraphs.
     context.load(paragraphs, 'style');
-    
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
-        
-        // Queue a command to get the last paragraph a create a 
+
+        // Queue a command to get the last paragraph a create a
         // proxy paragraph object.
-        var paragraph = paragraphs.items[paragraphs.items.length - 1]; 
-        
-        // Queue a command to select the paragraph. The Word UI will 
+        var paragraph = paragraphs.items[paragraphs.items.length - 1];
+
+        // Queue a command to select the paragraph. The Word UI will
         // move to the selected paragraph.
         paragraph.select();
-        
-        // Synchronize the document state by executing the queued commands, 
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Selected the last paragraph.');
-        });      
-    });  
+        });
+    });
 })
 .catch(function (error) {
     console.log('Error: ' + JSON.stringify(error));
@@ -819,7 +817,7 @@ Word.run(function (context) {
 
 ## Support details
 
-Use the [requirement set](https://msdn.microsoft.com/EN-US/library/office/mt590206.aspx) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/dn833104.aspx). 
+Use the [requirement set](https://msdn.microsoft.com/EN-US/library/office/mt590206.aspx) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/dn833104.aspx).
 
 
 [paragraph.insertContentControl]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L161 "insert content control"

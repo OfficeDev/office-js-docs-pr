@@ -9,8 +9,6 @@ _Applies to: Word 2016, Word for iPad, Word for Mac_
 |:---------------|:--------|:----------|
 |items|[ContentControl[]](contentcontrol.md)|A collection of contentControl objects. Read-only.|
 
-_See property access [examples.](#property-access-examples)_
-
 ## Relationships
 None
 
@@ -46,18 +44,18 @@ contentControlCollectionObject.getById(id);
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-	
+
 	// Create a proxy object for the content control that contains a specific id.
 	var contentControl = context.document.contentControls.getById(30086310);
-		
-	// Queue a command to load the text property for a content control. 
+
+	// Queue a command to load the text property for a content control.
 	context.load(contentControl, 'text');
-	
-	// Synchronize the document state by executing the queued commands, 
+
+	// Synchronize the document state by executing the queued commands,
 	// and return a promise to indicate task completion.
 	return context.sync().then(function () {
-		console.log('The content control with that Id has been found in this document.'); 
-	});  
+		console.log('The content control with that Id has been found in this document.');
+	});
 })
 .catch(function (error) {
 	console.log('Error: ' + JSON.stringify(error));
@@ -87,23 +85,23 @@ contentControlCollectionObject.getByTag(tag);
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Create a proxy object for the content controls collection that contains a specific tag.
     var contentControlsWithTag = context.document.contentControls.getByTag('Customer-Address');
-        
-    // Queue a command to load the text property for all of content controls with a specific tag. 
+
+    // Queue a command to load the text property for all of content controls with a specific tag.
     context.load(contentControlsWithTag, 'text');
-    
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         if (contentControlsWithTag.items.length === 0) {
             console.log("There isn't a content control with a tag of Customer-Address in this document.");
         } else {
-            console.log('The first content control with the tag of Customer-Address has this text: ' + contentControlsWithTag.items[0].text);    
+            console.log('The first content control with the tag of Customer-Address has this text: ' + contentControlsWithTag.items[0].text);
         }
-            
-    });  
+
+    });
 })
 .catch(function (error) {
     console.log('Error: ' + JSON.stringify(error));
@@ -137,23 +135,23 @@ contentControlCollectionObject.getByTitle(title);
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Create a proxy object for the content controls collection that contains a specific title.
     var contentControlsWithTitle = context.document.contentControls.getByTitle('Enter Customer Address Here');
-        
-    // Queue a command to load the text property for all of content controls with a specific title. 
+
+    // Queue a command to load the text property for all of content controls with a specific title.
     context.load(contentControlsWithTitle, 'text');
-    
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         if (contentControlsWithTitle.items.length === 0) {
             console.log("There isn't a content control with a title of 'Enter Customer Address Here' in this document.");
         } else {
-            console.log("The first content control with the title of 'Enter Customer Address Here' has this text: " + contentControlsWithTitle.items[0].text);    
+            console.log("The first content control with the title of 'Enter Customer Address Here' has this text: " + contentControlsWithTitle.items[0].text);
         }
-            
-    });  
+
+    });
 })
 .catch(function (error) {
     console.log('Error: ' + JSON.stringify(error));
@@ -186,21 +184,21 @@ void
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Create a proxy object for the content controls collection.
     var contentControls = context.document.contentControls;
-    
-    // Queue a command to load the id property for all of the content controls. 
+
+    // Queue a command to load the id property for all of the content controls.
     context.load(contentControls, 'id');
-     
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         if (contentControls.items.length === 0) {
             console.log('No content control found.');
         }
         else {
-            // Queue a command to load the properties on the first content control. 
+            // Queue a command to load the properties on the first content control.
             contentControls.items[0].load(  'appearance,' +
                                             'cannotDelete,' +
                                             'cannotEdit,' +
@@ -214,14 +212,14 @@ Word.run(function (context) {
                                             'tag,' +
                                             'font/size,' +
                                             'font/name,' +
-                                            'font/color');             
-        
-            // Synchronize the document state by executing the queued commands, 
+                                            'font/color');
+
+            // Synchronize the document state by executing the queued commands,
             // and return a promise to indicate task completion.
             return context.sync()
                 .then(function () {
-                    console.log('Property values of the first content control:' + 
-                        '   ----- appearance: ' + contentControls.items[0].appearance + 
+                    console.log('Property values of the first content control:' +
+                        '   ----- appearance: ' + contentControls.items[0].appearance +
                         '   ----- cannotDelete: ' + contentControls.items[0].cannotDelete +
                         '   ----- cannotEdit: ' + contentControls.items[0].cannotEdit +
                         '   ----- color: ' + contentControls.items[0].color +
@@ -238,7 +236,7 @@ Word.run(function (context) {
                         '   ----- font color: ' + contentControls.items[0].font.color);
             });
         }
-    });  
+    });
 })
 .catch(function (error) {
     console.log('Error: ' + JSON.stringify(error));
@@ -252,7 +250,7 @@ The [Silly stories](https://aka.ms/sillystorywordaddin) add-in sample shows how 
 
 ## Support details
 
-Use the [requirement set](https://msdn.microsoft.com/EN-US/library/office/mt590206.aspx) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/dn833104.aspx). 
+Use the [requirement set](https://msdn.microsoft.com/EN-US/library/office/mt590206.aspx) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/dn833104.aspx).
 
 
 [contentControls.getByTag]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L300 "get by tag"
