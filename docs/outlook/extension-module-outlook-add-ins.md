@@ -1,5 +1,4 @@
 #Module extension Outlook add-ins
-Integrate your Outlook add-in with Outlook's navigation bar
 
 Module extension add-ins appear in the Outlook navigation bar, right alongside mail, tasks,
 and calendars. A module extension is not limited to using mail and appointment information;
