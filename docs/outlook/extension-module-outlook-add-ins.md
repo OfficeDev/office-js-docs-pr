@@ -12,17 +12,17 @@ To open a module extension, users click on the module's name or icon in the Outl
 navigation bar. If the user has compact navigation selected, the navigation bar has an
 icon that shows an extension is loaded.
 
-![Shows the compact navigation bar when a module extension is loaded in Outlook.](../images/outlook-module-navigationbar-compact.png)
+![Shows the compact navigation bar when a module extension is loaded in Outlook.](../../images/outlook-module-navigationbar-compact.png)
 
 If the user is not using compact navigation, the navigation bar has two looks; with one
 extension loaded it shows the name of the add-in.
 
-![Shows the expanded navigation bar when one module extension is loaded in Outlook.](../images/outlook-module-navigationbar-one.png)
+![Shows the expanded navigation bar when one module extension is loaded in Outlook.](../../images/outlook-module-navigationbar-one.png)
 
 When more than one add-in is loaded it shows the word "Add-ins". Clicking either will 
 open the extension's user interface.
 
-![Shows the expanded navigation bar when more than on module extension is loaded in Outlook.](../images/outlook-module-navigationbar-more.png)
+![Shows the expanded navigation bar when more than on module extension is loaded in Outlook.](../../images/outlook-module-navigationbar-more.png)
 
 When you click on an extension, Outlook replaces the built-in module with you custom module
 so that your users can interact with the add-in. You can use all of the features of the 
@@ -30,7 +30,7 @@ Outlook JavaScript API in your add-in, and can create command buttons in the Out
 that will interact with the add-in content. This sample add-in is integrated in the Outlook
 navigation bar and has ribbon commands that will update the content of the add-in.
 
-![Shows the user interface of a module extension](../images/outlook-module-extension.png)
+![Shows the user interface of a module extension](../../images/outlook-module-extension.png)
 
 The following is a section of a manifest file that definces a module extension.
 
