@@ -68,13 +68,8 @@ If the mail app is running in Outlook, the `convertToLocalClientTime` method wil
 
 ##### Returns:
 
-<dl class="param-type">
-
-<dt>Type</dt>
-
-<dd>[LocalClientTime](simple-types.md#localclienttime)</dd>
-
-</dl>
+Type:
+[LocalClientTime](simple-types.md#localclienttime)
 
 ####  convertToUtcClientTime(input) → {Date}
 

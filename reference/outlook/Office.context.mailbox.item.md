@@ -1066,13 +1066,8 @@ Gets the entities found in the selected item.
 
 ##### Returns:
 
-<dl class="param-type">
-
-<dt>Type</dt>
-
-<dd>[Entities](simple-types.md#entities)</dd>
-
-</dl>
+Type:
+[Entities](simple-types.md#entities)
 
 ##### Example
 
@@ -1116,13 +1111,7 @@ While the minimum permission level to use this method is **Restricted**, some en
 | `TaskSuggestion` | TaskSuggestion | **ReadItem** |
 | `URL` | String | **Restricted** |
 
-<dl class="param-type">
-
-<dt>Type</dt>
-
-<dd>Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))></dd>
-
-</dl>
+Type: Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>
 
 ##### Example
 
@@ -1166,13 +1155,8 @@ The `getFilteredEntitiesByName` method returns the entities that match the regul
 
 If there is no `ItemHasKnownEntity` element in the manifest with a `FilterName` element value that matches the `name` parameter, the method returns `null`. If the `name` parameter does match an `ItemHasKnownEntity` element in the manifest, but there are no entities in the current item that match, the method return an empty array.
 
-<dl class="param-type">
-
-<dt>Type</dt>
-
-<dd>Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))></dd>
-
-</dl>
+Type:
+Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>
 
 #### getRegExMatches() → {Object}
 
