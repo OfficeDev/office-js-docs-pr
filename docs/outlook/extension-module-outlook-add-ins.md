@@ -12,7 +12,7 @@ To open a module extension, users click on the module's name or icon in the Outl
 navigation bar. If the user has compact navigation selected, the navigation bar has an
 icon that shows an extension is loaded.
 
-![Shows the compact navigation bar when a module extension is loaded in Outlook.](../../images/outlook-module-navigationbar-compact.png)
+![Shows the compact navigation bar when a module extension is loaded in Outlook.](../../../images/outlook-module-navigationbar-compact.png)
 
 If the user is not using compact navigation, the navigation bar has two looks; with one
 extension loaded it shows the name of the add-in.
