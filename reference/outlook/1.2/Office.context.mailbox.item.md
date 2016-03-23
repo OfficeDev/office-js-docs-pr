@@ -310,14 +310,8 @@ The `itemClass` property specifies the message class of the selected item. The f
 
 | Type | Description | item class |
 | --- | --- | --- |
-| Appointment items | These are calendar items of the item class `IPM.Appointment` or `IPM.Appointment.Occurence`. | `IPM.Appointment`
-`IPM.Appointment.Occurence` |
-| Message items | These include email messages that have the default message class `IPM.Note`, and meeting requests, responses, and cancellations, that use `IPM.Schedule.Meeting` as the base message class. | `IPM.Note`
-`IPM.Schedule.Meeting.Request`
-`IPM.Schedule.Meeting.Neg`
-`IPM.Schedule.Meeting.Pos`
-`IPM.Schedule.Meeting.Tent`
-`IPM.Schedule.Meeting.Canceled` |
+| Appointment items | These are calendar items of the item class `IPM.Appointment` or `IPM.Appointment.Occurence`. | `IPM.Appointment`<br />`IPM.Appointment.Occurence` |
+| Message items | These include email messages that have the default message class `IPM.Note`, and meeting requests, responses, and cancellations, that use `IPM.Schedule.Meeting` as the base message class. | `IPM.Note`<br />`IPM.Schedule.Meeting.Request`<br />`IPM.Schedule.Meeting.Neg`<br />`IPM.Schedule.Meeting.Pos`<br />`IPM.Schedule.Meeting.Tent`<br />`IPM.Schedule.Meeting.Canceled` |
 
 You can create custom message classes that extends a default message class, for example, a custom appointment message class `IPM.Appointment.Contoso`.
 
