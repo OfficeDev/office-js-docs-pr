@@ -85,18 +85,16 @@ The Word and Excel JavaScript APIs provide host-specific object models that you 
 
 ## Types of Office Add-ins
 
-This section provides a quick look at the types of Office Add-ins: Commands, task pane, content, and Outlook. 
+This section provides a quick look at the types of Office Add-ins: commands, task pane, content, and Outlook. 
 
 ### Add-in Commands
 You can use add-in commands in your Office Add-ins to extend the Office UI. For example, you can add buttons for your add-ins on the ribbon or selected contextual menus allowing users to easily access their add-ins within Office. Commands buttons can launch the different types of Office add-ins [Task pane, Content as well as Outlook] or execute UI-less (Javascript code that interacts with the document via Office.js) commands. We recommend that you [watch this Channel9 video] (https://channel9.msdn.com/Events/Visual-Studio/Connect-event-2015/316) for a deeper overview of this feature.
 
+**Add-in with commands running in Excel Desktop**
 ![Add-in commands](../../images/addincommands1.png)
 
-Add-in with commands running in Excel Desktop.
-
+**Add-in with commands running in Excel Online**
 ![Add-in commands](../../images/addincommands2.png)
-
-Add-in with commands running in Excel Online.
 
 You can define your commands in your add-in manifest and the Office platform takes care of interpreting them into native UI. Add-in commands are already available for [Outlook] (http://dev.outlook.com/) and are currently in preview release for Word 2016, Excel 2016 and Excel Online. Commands willl be available for PowerPoint in the near future.
 
