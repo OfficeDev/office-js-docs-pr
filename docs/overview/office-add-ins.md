@@ -153,20 +153,20 @@ This table shows the Office host applications (including desktop, tablet, mobile
 **Supported add-in types**
 
 
-|**Office application**|**Content add-ins**|**Outlook add-ins**|**Task pane add-ins**|
+|**Office application**|**Commands**|**Content add-ins**|**Outlook add-ins**|**Task pane add-ins**|
 |:-----|:-----|:-----|:-----|
-|Access web apps|Y||Y|
-|Excel 2013 or later|Y||Y|
-|Excel Online|Y||Y|
-|Outlook 2013 or later||Y||
-|Outlook for Mac||Y||
-|Outlook Web App||Y||
-|OWA for Devices||Y||
-|PowerPoint 2013 or later|Y||Y|
-|PowerPoint Online|Y||Y|
-|Project 2013 or later|||Y|
-|Word 2013 or later|||Y|
-|Word Online|||Y|
+|Access web apps||Y||Y|
+|Excel 2013 or later||Y||Y|
+|Excel Online||Y||Y|
+|Outlook 2013 or later|||Y||
+|Outlook for Mac|||Y||
+|Outlook Web App|||Y||
+|OWA for Devices|||Y||
+|PowerPoint 2013 or later||Y||Y|
+|PowerPoint Online||Y||Y|
+|Project 2013 or later||||Y|
+|Word 2013 or later||||Y|
+|Word Online||||Y|
 
 For more details, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).
 
