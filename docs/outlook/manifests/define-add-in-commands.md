@@ -103,7 +103,7 @@ function trackMessage (event) {
 ## ExtensionPoint element
 
 
-The  **ExtensionPoint** element defines where an add-in exposes functionality. It is a child element under **FormFactor**. For each form factor, you can define **ExtensionPoint** elements with the following **xsi:type** values:
+The  **ExtensionPoint** element defines where an add-in exposes functionality. It is a child element under **FormFactor**. For each form factor, you can define **ExtensionPoint** elements with the following **xsi:type** values, with the exception of the **Module** value which can only be used in the **DesktopFormFactor**:
 
 
 - CustomPane 
@@ -115,6 +115,8 @@ The  **ExtensionPoint** element defines where an add-in exposes functionality. I
 - AppointmentOrganizerCommandSurface 
     
 - AppointmentAttendeeCommandSurface
+
+- Module
     
 
 ### CustomPane
@@ -359,6 +361,11 @@ This puts buttons on the ribbon for the form that's displayed to the organizer o
 ### AppointmentAttendeeCommandSurface
 
 This puts buttons on the ribbon for the form that's displayed to the attendee of the meeting. It is defined the same as for MessageReadCommandSurface.
+
+### Module
+
+This puts buttons on the ribbon for the module extension. It is defined the same as for 
+MessageReadCommandSurface.
 
 
 ## Resources element
