@@ -119,7 +119,7 @@ For all supported Office applications, the implementation of the Office Add-in i
     
 - The JavaScript library files, such as JavaScript API for Office (Office.js) and the Microsoft AJAX Library (MicrosoftAjax.js), which Microsoft provides. The add-in accesses the JavaScript library files from content delivery network (CDN) URLs, as specified in its HTML file.
     
-- If you are using external JavaScript libraries from a CDN or using web services, ensure you access those resources using Secure Sockets Layer (SSL), otherwise you will get a browser warning when you run your add-in. To use SSL, add the https URL to your resource in the <SCRIPT> tag in your add-in.
+- If you are using external JavaScript libraries from a CDN or using web services, ensure you access those resources using Secure Sockets Layer (SSL), otherwise you will get a browser warning when you run your add-in. To use SSL, add the https URL to your resource in the *SCRIPT* tag in your add-in.
     
 When a supported Office application starts, it reads the XML manifests for the add-ins that have been installed for or by the user. Subsequently, when a user starts an Office Add-in in the Office application, the following events occur: 
 
