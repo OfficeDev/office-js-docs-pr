@@ -180,7 +180,6 @@ The following code shows how to implement the function used by  **FunctionName**
 
 
 ```js
-<script>
         // The initialize function must be run each time a new page is loaded.
         (function () {
             Office.initialize = function (reason) {
@@ -206,9 +205,6 @@ The following code shows how to implement the function used by  **FunctionName**
            // Calling event.completed is required. event.completed lets the platform know that processing has completed.
 	   event.completed();
         }
-
-    </script>
-
 ```
 
 
