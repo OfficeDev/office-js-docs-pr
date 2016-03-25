@@ -63,14 +63,17 @@ The most basic Office Add-in consists of a static HTML page that is hosted insid
 
 ### Creating an Office Add-in with Visual Studio
 
-The most powerful way to build an Office Add-in is to use the  **Add-in for Office** project template in Visual Studio. Visual Studio creates a complete solution that contains all of the files that you need to begin testing your add-in in Office immediately. Visual Studio provides a full range of features to make it easy for you to develop and test Office Add-ins. [Get started with Office Add-ins](https://dev.office.com/getting-started/addins).
+The most powerful way to build an Office Add-in is to use the  **Add-in for Office** project template in Visual Studio. Visual Studio creates a complete solution that contains all of the files that you need to begin testing your add-in in Office immediately. Visual Studio provides a full range of features to make it easy for you to develop and test Office Add-ins. For more information, see:
+
+
+- [Get started with Office Add-ins](../../get-started/create-and-debug-office-add-ins-in-visual-studio.md).
 
 ### Creating an Office Add-in with a text editor
 
-If want to use your favorite text editor to create an Office Add-in, see these topics for information about how to get started:
+If want to use your favorite text editor to create an Office Add-in, see the following article for information about how to get started:
 
     
-- [Get Started with Outlook add-ins for Outlook.com (Preview)](https://dev.outlook.com/MailAppsGettingStarted/GetStarted/outlook-dot-com.aspx)
+- [Create an Office add-in using any editor](../../get-started/create-an-office-add-in-using-any-editor.md)
     
 
 ### JavaScript API for Office
@@ -80,15 +83,20 @@ The JavaScript API for Office contains objects and members for building add-ins 
 For more information about the JavaScript API for Office, see [Understanding the JavaScript API for Office](../../docs/develop/understanding-the-javascript-api-for-office.md) and the [JavaScript API for Office](../../reference/javascript-api-for-office.md) reference.
     
 
-The Word and Excel JavaScript APIs provide host-specific object models that you can use in an Office add-in. You get access to well known objects such as paragraphs and workbooks which makes creating an Office add-in for Word and Excel easier to do. Learn more about these APIs by taking a look at the [Word add-ins](../word/word-add-ins.md) and [Excel add-ins](https://msdn.microsoft.com/EN-US/library/office/mt616485.aspx) overview topics.
+The Word and Excel JavaScript APIs provide host-specific object models that you can use in an Office Add-in. These APIs provide access to well-known objects such as paragraphs and workbooks, which makes it easier to create an add-in for Word or Excel. To learn more about these APIs, see the [Word add-ins](../word/word-add-ins.md) and [Excel add-ins](https://msdn.microsoft.com/EN-US/library/office/mt616485.aspx) overview topics.
 
 
 ## Types of Office Add-ins
 
-This section provides a quick look at the types of Office Add-ins: commands, task pane, content, and Outlook. 
+You can create the following types of Office Add-ins:
+ 
+- Commands
+- Task pane
+- Content
+- Outlook 
 
 ### Add-in Commands
-You can use add-in commands in your Office Add-ins to extend the Office UI. For example, you can add buttons for your add-ins on the ribbon or selected contextual menus allowing users to easily access their add-ins within Office. Commands buttons can launch the different types of Office add-ins [Task pane, Content as well as Outlook] or execute UI-less (Javascript code that interacts with the document via Office.js) commands. We recommend that you [watch this Channel9 video] (https://channel9.msdn.com/Events/Visual-Studio/Connect-event-2015/316) for a deeper overview of this feature.
+You can use add-in commands in your Office Add-ins to extend the Office UI. For example, you can add buttons for your add-ins on the ribbon or selected contextual menus allowing users to easily access their add-ins within Office. Commands buttons can launch the different types of Office Add-ins (task pane, content, Outlook) or execute UI-less (Javascript code that interacts with the document via office.js) commands. We recommend that you [watch this Channel9 video](https://channel9.msdn.com/Events/Visual-Studio/Connect-event-2015/316) for a deeper overview of this feature.
 
 **Add-in with commands running in Excel Desktop**
 ![Add-in commands](../../images/addincommands1.png)
@@ -96,9 +104,9 @@ You can use add-in commands in your Office Add-ins to extend the Office UI. For 
 **Add-in with commands running in Excel Online**
 ![Add-in commands](../../images/addincommands2.png)
 
-You can define your commands in your add-in manifest and the Office platform takes care of interpreting them into native UI. Add-in commands are already available for [Outlook] (http://dev.outlook.com/) and are currently in preview release for Word 2016, Excel 2016 and Excel Online. Commands willl be available for PowerPoint in the near future.
+You can define your commands in your add-in manifest and the Office platform takes care of interpreting them into native UI. Add-in commands are already available for [Outlook](../outlook/add-in-commands-for-outlook.md) and are currently in preview release for Word 2016, Excel 2016, and Excel Online. Commands will be available for PowerPoint in the near future.
 
-To get started wth the preview, check out these [samples on GitHub] (https://github.com/OfficeDev/Office-Add-in-Commands-Samples/). [MSDN documentation] (http://aka.ms/addincommandspreview) also explains the preview in details as well as a complete reference for the [add-in manifest with commands] (http://aka.ms/addincommandsmanifest).
+To get started with the preview, check out these [samples on GitHub](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/), and see [Add-in commands for Excel, Word and PowerPoint (Preview)](../design/add-in-commands-for-excel-and-word-preview.md)
 
 
 ### Task pane add-ins
@@ -199,6 +207,4 @@ In addition to the regular capabilities of a webpage, Office Add-ins can interac
 - [Design guidelines for Office Add-ins](../../docs/design/add-in-design.md)
     
 - [Publish your Office Add-in](../publish/publish.md)
-    
-- [Office Add-ins API and schema references](../../reference/reference.md)
     
