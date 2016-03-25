@@ -10,7 +10,11 @@ An Office Add-in is a web application hosted in a web browser control or iframe 
     
 -  **Outlook mailbox items -** Email messages, meeting requests, or appointments.
     
-Add-ins can run in multiple environments, including Office desktop applications, Office Online in both desktop and mobile browsers, and a growing number of Office tablet and phone add-ins. When you publish your add-ins to the Office Store or to an on-premises add-in catalog, your add-ins will be available to consumers from their Office applications.
+Add-ins can run in multiple environments, including Office desktop applications, Office Online in both desktop and mobile browsers, and a growing number of Office tablet and phone add-ins. 
+
+>For a high-level view of where Office Add-ins are currently supported, see the [Office Add-in host and platform availability](http://dev.office.com/add-in-availability) page. 
+
+When you publish your add-ins to the Office Store or to an on-premises add-in catalog, your add-ins will be available to consumers from their Office applications.
 To try out some add-ins, you can install the following add-ins from the Office Store.
 
 
