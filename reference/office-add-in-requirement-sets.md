@@ -1,15 +1,14 @@
 
 # Office add-in requirement sets
 
-Requirement sets are named groups of API members. Office add-ins use requirement sets specified in the manifest or using a runtime check to determine if an Office host supports APIs needed by the add-in. For more information, see [Specify Office hosts and API requirements](../docs/overview/specify-office-hosts-and-api-requirements.md).
-
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or using a runtime check to determine if an Office host supports APIs needed by the add-in. For more information, see [Specify Office hosts and API requirements](../docs/overview/specify-office-hosts-and-api-requirements.md).
 
 ## Requirement sets
 
 
 The following table lists the names of requirement sets, the methods in each set, the Office host applications that support that requirement set, and the version number of the API.
 
-
+For information about requirement sets for Outlook, see [Understanding Outlook API requirement sets](../outlook/tutorial-api-requirement-sets).
 
 |**Set name**|**Version**|**Office host**|**Methods in set**|
 |:-----|:-----|:-----|:-----|
