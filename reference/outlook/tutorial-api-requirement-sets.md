@@ -1,6 +1,6 @@
  
 
-# Understanding API requirement sets
+# Understanding Outlook API requirement sets
 
 Outlook Add-ins declare what API versions they require by using the [Requirements](https://msdn.microsoft.com/EN-US/library/office/dn592036.aspx) element in their [manifest](https://msdn.microsoft.com/en-us/library/office/fp123693.aspx). Outlook add-ins always include a [Set](https://msdn.microsoft.com/EN-US/library/office/dn592049.aspx) element with a `Name` attribute set to `Mailbox` and a `MinVersion` attribute set to the minimum API requirement set that supports the add-in's scenarios.
 
