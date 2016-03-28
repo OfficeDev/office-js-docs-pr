@@ -104,7 +104,7 @@ If you are creating your add-in with a tool other than Visual Studio, add a  `<l
 
 ### Using OfficeThemes.css document theme classes in your content add-in's HTML page
 
-The following shows a simple example of HTML in a content add-in that uses the OfficeTheme.css document theme classes. For details about the OfficeThemes.css classes that correspond to the 12 colors and 2 fonts used in a document theme, see [Theme classes for content add-ins](#officeCSS_Classes_Content).
+The following shows a simple example of HTML in a content add-in that uses the OfficeTheme.css document theme classes. For details about the OfficeThemes.css classes that correspond to the 12 colors and 2 fonts used in a document theme, see [Theme classes for content add-ins](#theme-classes-for-content-add-ins).
 
 
 ```HTML
@@ -126,7 +126,7 @@ If you change the presentation to use another theme or customize the presentatio
 
 In addition to the document theme, users can customize the color scheme of the Office user interface for all Office applications using the  **File** > **Account** > **Office Theme** drop-down box.
 
-The following shows a simple example of HTML in a task pane add-in that uses OfficeTheme.css classes to specify font color and background color. For details about the OfficeThemes.css classes that correspond to fonts and colors of the Office UI theme, see [Theme classes for task pane add-ins](#officeCSS_Classes_TaskPane).
+The following shows a simple example of HTML in a task pane add-in that uses OfficeTheme.css classes to specify font color and background color. For details about the OfficeThemes.css classes that correspond to fonts and colors of the Office UI theme, see [Theme classes for task pane add-ins](#theme-classes-for-task-pane-add-ins).
 
 
 ```HTML
