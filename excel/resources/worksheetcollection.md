@@ -1,7 +1,5 @@
 # WorksheetCollection object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
-
 Represents a collection of worksheet objects that are part of the workbook.
 
 ## Properties
@@ -26,6 +24,7 @@ None
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.|
 
 ## Method Details
+
 
 ### add(name: string)
 Adds a new worksheet to the workbook. The worksheet will be added at the end of existing worksheets. If you wish to activate the newly added worksheet, call activate() on it.
@@ -61,6 +60,7 @@ Excel.run(function (ctx) {
 });
 ```
 
+
 ### getActiveWorksheet()
 Gets the currently active worksheet in the workbook.
 
@@ -92,6 +92,7 @@ Excel.run(function (ctx) {
 });
 ```
 
+
 ### getItem(key: string)
 Gets a worksheet object using its name or ID.
 
@@ -107,6 +108,7 @@ worksheetCollectionObject.getItem(key);
 
 #### Returns
 [Worksheet](worksheet.md)
+
 ### load(param: object)
 Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.
 

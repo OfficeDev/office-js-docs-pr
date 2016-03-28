@@ -1,7 +1,5 @@
 # ChartAxisTitleFormat object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
-
 Represents the chart axis title formatting.
 
 ## Properties
@@ -20,6 +18,7 @@ None
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.|
 
 ## Method Details
+
 
 ### load(param: object)
 Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.

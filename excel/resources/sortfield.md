@@ -1,20 +1,25 @@
-# ChartSeries object (JavaScript API for Excel)
+# SortField object (JavaScript API for Excel)
 
-Represents a series in a chart.
+_Applies to: Excel 2016, Excel Online, Excel for iOS, Office 2016_
+
+Represents a condition in a sorting operation.
 
 ## Properties
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|name|string|Represents the name of a series in a chart.|
+|ascending|bool|Represents whether the sorting is done in an ascending fashion.|
+|color|string|Represents the color that is the target of the condition if the sorting is on font or cell color.|
+|dataOption|string|Represents additional sorting options for this field. Possible values are: Normal, TextAsNumber.|
+|key|int|Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).|
+|sortOn|string|Represents the type of sorting of this condition. Possible values are: Value, CellColor, FontColor, Icon.|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|format|[ChartSeriesFormat](chartseriesformat.md)|Represents the formatting of a chart series, which includes fill and line formatting. Read-only.|
-|points|[ChartPointsCollection](chartpointscollection.md)|Represents a collection of all points in the series. Read-only.|
+|icon|[Icon](icon.md)|Represents the icon that is the target of the condition if the sorting is on the cell's icon.|
 
 ## Methods
 
@@ -40,21 +45,3 @@ object.load(param);
 
 #### Returns
 void
-### Property access examples
-
-Rename the first series of Chart1 to "New Series Name".
-
-```js
-Excel.run(function (ctx) { 
-	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
-	chart.series.getItemAt(0).name = "New Series Name";
-	return ctx.sync().then(function() {
-			console.log("Series1 Renamed");
-	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
-```

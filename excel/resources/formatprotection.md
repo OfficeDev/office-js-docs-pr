@@ -1,17 +1,21 @@
-# ChartAxes object (JavaScript API for Excel)
+# FormatProtection object (JavaScript API for Excel)
 
-Represents the chart axes.
+_Applies to: Excel 2016, Excel Online, Excel for iOS, Office 2016_
+
+Represents the format protection of a range object.
 
 ## Properties
 
-None
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|formulaHidden|bool|Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.|
+|locked|bool|Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|categoryAxis|[ChartAxis](chartaxis.md)|Represents the category axis in a chart. Read-only.|
-|seriesAxis|[ChartAxis](chartaxis.md)|Represents the series axis of a 3-dimensional chart. Read-only.|
-|valueAxis|[ChartAxis](chartaxis.md)|Represents the value axis in an axis. Read-only.|
+None
+
 
 ## Methods
 

@@ -1,7 +1,5 @@
 # Application object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
-
 Represents the Excel application that manages the workbook.
 
 ## Properties
@@ -24,6 +22,7 @@ None
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
+
 
 ### calculate(calculationType: string)
 Recalculate all currently open workbooks in Excel.
@@ -53,6 +52,7 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
 
 ### load(param: object)
 Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.

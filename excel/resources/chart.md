@@ -1,7 +1,5 @@
 # Chart object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
-
 Represents a chart object in a workbook.
 
 ## Properties
@@ -9,6 +7,7 @@ Represents a chart object in a workbook.
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |height|double|Represents the height, in points, of the chart object.|
+|id|string|Gets a chart based on its position in the collection. Read-only.|
 |left|double|The distance, in points, from the left side of the chart to the worksheet origin.|
 |name|string|Represents the name of a chart object.|
 |top|double|Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).|
@@ -31,11 +30,13 @@ _See property access [examples.](#property-access-examples)_
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[delete()](#delete)|void|Deletes the chart object.|
+|[getImage(height: number, width: number, fittingMode: string)](#getimageheight-number-width-number-fittingmode-string)|[System.IO.Stream](system.io.stream.md)|Renders the chart as a base64-encoded image by scaling the chart to fit the specified dimensions.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.|
-|[setData(sourceData: Range or string, seriesBy: string)](#setdatasourcedata-range-or-string-seriesby-string)|void|Resets the source data for the chart.|
+|[setData(sourceData: Range, seriesBy: string)](#setdatasourcedata-range-seriesby-string)|void|Resets the source data for the chart.|
 |[setPosition(startCell: Range or string, endCell: Range or string)](#setpositionstartcell-range-or-string-endcell-range-or-string)|void|Positions the chart relative to cells on the worksheet.|
 
 ## Method Details
+
 
 ### delete()
 Deletes the chart object.
@@ -64,6 +65,43 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
+### getImage(height: number, width: number, fittingMode: string)
+Renders the chart as a base64-encoded image by scaling the chart to fit the specified dimensions.
+
+#### Syntax
+```js
+chartObject.getImage(height, width, fittingMode);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|height|number|Optional. (Optional) The desired height of the resulting image.|
+|width|number|Optional. (Optional) The desired width of the resulting image.|
+|fittingMode|string|Optional. (Optional) The method used to scale the chart to the specified to the specified dimensions (if both height and width are set)."  Possible values are: Fit, FitAndCenter, Fill|
+
+#### Returns
+[System.IO.Stream](system.io.stream.md)
+
+#### Examples
+```js
+Excel.run(function (ctx) { 
+	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
+	var image = chart.getImage();
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+
+
+
 ### load(param: object)
 Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.
 
@@ -80,8 +118,7 @@ object.load(param);
 #### Returns
 void
 
-
-### setData(sourceData: Range or string, seriesBy: string)
+### setData(sourceData: Range, seriesBy: string)
 Resets the source data for the chart.
 
 #### Syntax
@@ -92,7 +129,7 @@ chartObject.setData(sourceData, seriesBy);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|sourceData|Range or string|The address or name of the range that contains the source data. If an address or a worksheet-scoped name is used, it must include the worksheet name (e.g., "Sheet1!A5:B9"). |
+|sourceData|Range|The Range object corresponding to the source data.|
 |seriesBy|string|Optional. Specifies the way columns or rows are used as data series on the chart. Can be one of the following: Auto (default), Rows, Columns.  Possible values are: Auto, Columns, Rows.|
 
 #### Returns
@@ -115,6 +152,7 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
 
 ### setPosition(startCell: Range or string, endCell: Range or string)
 Positions the chart relative to cells on the worksheet.
@@ -209,3 +247,4 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+

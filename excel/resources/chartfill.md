@@ -1,7 +1,5 @@
 # ChartFill object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
-
 Represents the fill formatting for a chart element.
 
 ## Properties
@@ -20,6 +18,7 @@ None
 |[setSolidColor(color: string)](#setsolidcolorcolor-string)|void|Sets the fill formatting of a chart element to a uniform color.|
 
 ## Method Details
+
 
 ### clear()
 Clear the fill color of a chart element.
@@ -53,6 +52,7 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
 ### setSolidColor(color: string)
 Sets the fill formatting of a chart element to a uniform color.
 
@@ -64,7 +64,7 @@ chartFillObject.setSolidColor(color);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|color|string|HTML color code representing the color of the border line, of the form #RRGGBB (e.g., "FFA500") or as a named HTML color (e.g., "orange").|
+|color|string|HTML color code representing the color of the border line, of the form #RRGGBB (for example, "FFA500") or as a named HTML color (for example, "orange").|
 
 #### Returns
 void
