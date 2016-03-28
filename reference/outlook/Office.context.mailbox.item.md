@@ -580,7 +580,7 @@ Gets the resources required for an appointment. Read mode only.
 
 Gets the email address of the sender of an email message. Read mode only.
 
-The [`from`](Office.context.mailbox.item.md#from) and `sender` properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.
+The [`from`](Office.context.mailbox.item.md#from-emailaddressdetails) and `sender` properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.
 
 ##### Type:
 
