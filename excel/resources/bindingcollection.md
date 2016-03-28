@@ -1,7 +1,5 @@
 # BindingCollection object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
-
 Represents the collection of all the binding objects that are part of the workbook.
 
 ## Properties
@@ -26,6 +24,7 @@ None
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.|
 
 ## Method Details
+
 
 ### getItem(id: string)
 Gets a binding object by ID.
@@ -106,6 +105,7 @@ Excel.run(function (ctx) {
 });
 ```
 
+
 ### getItemAt(index: number)
 Gets a binding object based on its position in the items array.
 
@@ -139,6 +139,7 @@ Excel.run(function (ctx) {
 });
 ```
 
+
 ### load(param: object)
 Fills the proxy object created in the JavaScript, layer with property and object values specified in the parameter.
 
@@ -154,7 +155,6 @@ object.load(param);
 
 #### Returns
 void
-
 ### Property access examples
 
 ```js

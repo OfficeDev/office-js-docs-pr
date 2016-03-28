@@ -1,7 +1,5 @@
 # Binding object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
-
 Represents an Office.js binding that is defined in the workbook.
 
 ## Properties
@@ -27,6 +25,7 @@ None
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.|
 
 ## Method Details
+
 
 ### getRange()
 Returns the range represented by the binding. Will throw an error if binding is not of the correct type.
@@ -61,6 +60,7 @@ Excel.run(function (ctx) {
 });
 ```
 
+
 ### getTable()
 Returns the table represented by the binding. Will throw an error if binding is not of the correct type.
 
@@ -91,6 +91,7 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
 
 ### getText()
 Returns the text represented by the binding. Will throw an error if binding is not of the correct type.
@@ -123,6 +124,7 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
 
 ### load(param: object)
 Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.

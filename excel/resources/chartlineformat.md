@@ -1,7 +1,5 @@
 # ChartLineFormat object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
-
 Enapsulates the formatting options for line elements.
 
 ## Properties
@@ -24,6 +22,7 @@ None
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.|
 
 ## Method Details
+
 
 ### clear()
 Clear the line format of a chart element.
@@ -57,6 +56,7 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
 ### load(param: object)
 Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.
 

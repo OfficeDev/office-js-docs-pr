@@ -1,17 +1,20 @@
-# ChartAxes object (JavaScript API for Excel)
+# RangeReference object (JavaScript API for Excel)
 
-Represents the chart axes.
+_Applies to: Excel 2016, Excel Online, Excel for iOS, Office 2016_
+
+Represents a string reference of the form SheetName!A1:B5, or a global or local named range
 
 ## Properties
 
-None
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|address|string|The worksheet containing the current range.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|categoryAxis|[ChartAxis](chartaxis.md)|Represents the category axis in a chart. Read-only.|
-|seriesAxis|[ChartAxis](chartaxis.md)|Represents the series axis of a 3-dimensional chart. Read-only.|
-|valueAxis|[ChartAxis](chartaxis.md)|Represents the value axis in an axis. Read-only.|
+None
+
 
 ## Methods
 
