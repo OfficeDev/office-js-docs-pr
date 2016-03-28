@@ -15,7 +15,7 @@ Add-ins use the Office.js API to access the Outlook Add-in API and interact with
 ![Flow of events when starting Outlook mail app](../../images/olowawecon15_LoadingDOMAgaveRuntime.png)
 ### Versioning
 
-As we evolve Outlook clients and the add-in platform and add new ways for add-ins to integrate, sometimes we're unable to implement a feature at the same time across all clients (Mac, Windows, web, mobile). To handle this situation, we version both the manifest and the APIs. In this way the platform supports backwards compatibility at all times, meaning that developers can build an add-in which works in a down-level way in older clients, but also lets you take advantage of new features in newer clients. You can read more about how versioning works in [Outlook add-in manifests](/manifests/manifests.md).
+As we evolve Outlook clients and the add-in platform and add new ways for add-ins to integrate, sometimes we're unable to implement a feature at the same time across all clients (Mac, Windows, web, mobile). To handle this situation, we version both the manifest and the APIs. In this way the platform supports backwards compatibility at all times, meaning that developers can build an add-in which works in a down-level way in older clients, but also lets you take advantage of new features in newer clients. You can read more about how versioning works in [Outlook add-in manifests](manifests/manifests.md).
 
 
 ## Outlook add-in features
