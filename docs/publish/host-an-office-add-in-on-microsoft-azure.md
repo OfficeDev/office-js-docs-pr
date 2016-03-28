@@ -77,7 +77,7 @@ To keep the walkthrough simple and focused on using Azure with an Office Add-in,
 ## Step 3: Create a website in Azure
 
 
-There are a couple of ways you can create an empty Azure website. If you're using Visual Studio 2015, follow the steps in [Using Visual Studio 2015 ](../publish/host-an-office-add-in-on-microsoft-azure.md#bk_usingVS2013) to create a Azure website from within the Visual Studio IDE. You can also follow the steps in [Using the Azure management portal](../publish/host-an-office-add-in-on-microsoft-azure.md#bk_createwebsiteusingAzureportal) to create the Azure website.
+There are a couple of ways you can create an empty Azure website. If you're using Visual Studio 2015, follow the steps in [Using Visual Studio 2015 ](../publish/host-an-office-add-in-on-microsoft-azure.md#using-visual-studio-2015) to create a Azure website from within the Visual Studio IDE. You can also follow the steps in [Using the Azure management portal](../publish/host-an-office-add-in-on-microsoft-azure.md#using-the-azure-management-portal) to create the Azure website.
 
 
 ### Using Visual Studio 2015
@@ -107,7 +107,7 @@ There are a couple of ways you can create an empty Azure website. If you're usin
     
 5. In the browser address bar, change the URL for the website so that it uses HTTPS and press  **Enter** to confirm that the HTTPS protocol is enabled. The Office Add-in model requires add-ins to use the HTTPS protocol.
     
-6. In Visual Studio 2015, right-click the new website in  **Server Explorer**, choose  **Download Publish Profile** and then save the profile to your computer. The publish profile contains your credentials and enables you to [Step 5: Publish your Office Add-in to the Azure website](../publish/host-an-office-add-in-on-microsoft-azure.md#bk_publishA4OtoAzure).
+6. In Visual Studio 2015, right-click the new website in  **Server Explorer**, choose  **Download Publish Profile** and then save the profile to your computer. The publish profile contains your credentials and enables you to [Step 5: Publish your Office Add-in to the Azure website](../publish/host-an-office-add-in-on-microsoft-azure.md#step-5-publish-your-office-add-in-to-the-azure-website).
     
 
 ### Using the Azure management portal
