@@ -1,10 +1,10 @@
 # Word JavaScript APIs
 
-Welcome to the Word JavaScript API documentation. You are currently reading documentation in our old location. We have moved the new Word JavaScript API reference documentation under [reference/word](../reference/word). That is where the JavaScript API is for the Word specific APIs. Go to the [shared reference](../shared) for the JavaScript APIs that were introduced with Word 2013. Our conceptual documentation for thenew Word API are now located under [docs/word](../docs/word)
+Welcome to the Word JavaScript API documentation. You are currently reading documentation in our old location. We have moved the new Word JavaScript API reference documentation under [reference/word](../reference/word). That is where the JavaScript API is for the Word specific APIs. Go to the [shared reference](../shared) for the JavaScript APIs that were introduced with Word 2013. Our conceptual documentation for the new Word API are now located under [docs/word](../docs/word)
 
 We are moving our content from MSDN to [dev.office.com](http://dev.office.com/docs/add-ins/overview/office-add-ins?product=word). Use the filter to see topics that are applicable to Word.
 
-We now provide information about new Word APIs in the [WordJs_1.3_Openspec](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.3_Openspec/word) branch. Learn what new APIs are coming out for Word, provide feedback on the APIs, and open issues against the proposed features and documentation.
+We now provide information about new Word APIs in the [WordJs_1.3_Openspec](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.3_Openspec/word) branch. Learn what new APIs are coming out for Word, provide feedback on the APIs, and open issues against the proposed features and documentation. This is our new OpenSpec approach to the APIs. You hear about them before they are released.
 
 ## Try it out
 
