@@ -139,7 +139,7 @@ function goToSlideByIndex() {
 
 ## Additional resources
 
-- [How to save add-in state and settings per document for content and task pane add-ins](../../docs/develop/persisting-add-in-state-and-settings.md#PersistSettingsContentTaskPaneApp)
+- [How to save add-in state and settings per document for content and task pane add-ins](../../docs/develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 
 - [Read and write data to the active selection in a document or spreadsheet](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
