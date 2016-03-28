@@ -19,7 +19,7 @@ The JavaScript API for Word is loaded by Office.js. It provides a set of JavaScr
 
 ### Running your add-in
 
-Let's take a look at what you'll need when you run your add-in. All add-ins should have an Office.initialize event handler.  Read [Understanding the API](../develop/understanding-the-javascript-api-for-office) for more information about add-in initialization.
+Let's take a look at what you'll need when you run your add-in. All add-ins should have an Office.initialize event handler.  Read [Understanding the API](../develop/understanding-the-javascript-api-for-office.md) for more information about add-in initialization.
 
 Your Word add-in executes by passing a function into the Word.run() method. The function passed into the run method must have a context argument. This [context object](../../reference/word/requestcontext.md) is different than the context object you get from the Office object, although it is used for the same purpose which is to interact with the Word runtime environment. The context object provides access to the Word JavaScript object model. Let's take a look at the comments and code of a basic Word add-in:
 
