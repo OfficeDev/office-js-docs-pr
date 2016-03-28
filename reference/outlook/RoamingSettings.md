@@ -80,7 +80,7 @@ Removes the specified setting.
 
 Saves the settings.
 
-Any settings previously saved by an add-in are loaded when it is initialized, so during the lifetime of the session you can just use the [`set`](RoamingSettings.md#set) and [`get`](RoamingSettings.md#get) methods to work with the in-memory copy of the settings property bag. When you want to persist the settings so that they are available the next time the add-in is used, use the `saveAsync` method.
+Any settings previously saved by an add-in are loaded when it is initialized, so during the lifetime of the session you can just use the [`set`](RoamingSettings.md#setname-value) and [`get`](RoamingSettings.md#get) methods to work with the in-memory copy of the settings property bag. When you want to persist the settings so that they are available the next time the add-in is used, use the `saveAsync` method.
 
 ##### Parameters:
 
