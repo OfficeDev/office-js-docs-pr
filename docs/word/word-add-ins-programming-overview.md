@@ -118,8 +118,7 @@ Your feedback is important to us.
 ## Additional resources
 
 * [Word add-ins](word-add-ins.md)
-* [Word add-ins JavaScript reference](../../reference/word/word-add-ins-javascript-reference.md)
-* [Office Add-ins](https://msdn.microsoft.com/en-us/library/office/jj220060.aspx)
-* [Get started with Office Add-ins](http://dev.office.com/getting-started/addins)
+* [Office Add-ins Overview](../overview/office-add-ins.md)
+* [Get started with Office Add-ins](http://dev.office.com/getting-started/addins?product=Word)
 * [Word add-ins on GitHub](https://github.com/OfficeDev?utf8=%E2%9C%93&query=Word)
 * [Snippet Explorer for Word](http://officesnippetexplorer.azurewebsites.net/#/snippets/word)
