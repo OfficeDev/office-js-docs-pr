@@ -42,7 +42,7 @@ For a list of features that the JavaScript API for Office provides to Outlook ad
 See also:
 
 
-- For activating add-ins in read forms: see Table 1 in [Specify activation rules in a manifest](../outlook/manifests/activation-rules.md#MailAppDefineRules_Manifest).
+- For activating add-ins in read forms: see Table 1 in [Specify activation rules in a manifest](../outlook/manifests/activation-rules.md#specify-activation-rules-in-a-manifest).
     
 - [Use regular expression activation rules to show an Outlook add-in](../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)
     
