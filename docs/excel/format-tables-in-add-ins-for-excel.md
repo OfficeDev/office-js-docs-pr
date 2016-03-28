@@ -26,7 +26,7 @@ You can work with formatting in two ways:
 
 - The first time your add-in writes data to a selection or binding, by specifying the optional  _cellFormat_ or _tableOptions_ parameters in the _options_ object passed to the [Document.setSelectedDataAysnc](../../reference/shared/document.setselecteddataasync.md) or [Binding.setDataAsync](../../reference/shared/binding.setdataasync.md) methods.
     
-- After you initially set formatting, you can [clear or update formatting](#FormatTablesInApps_UpdatingClearing) using one of the new methods dedicated to that purpose.
+- After you initially set formatting, you can [clear or update formatting](#updating-and-clearing-formatting) using one of the new methods dedicated to that purpose.
     
 
 ## Using optional parameters with data setting methods
