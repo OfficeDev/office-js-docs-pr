@@ -21,7 +21,7 @@ An XML manifest file based on this schema enables an Office Add-in to do the fol
     
 - For Outlook Office Add-ins, define the rule or rules that specify the context in which they will be activated and interact with a message, appointment, or meeting request item.
     
-For examples of manifest v1.1 XML files, see [Manifest v1.1 XML file examples](#O15AgaveManifestOverview_Samplev1_1).
+For examples of manifest v1.1 XML files, see [Manifest v1.1 XML file examples](#manifest-v1-1-XML-file-examples).
 
 ## Required elements
 
