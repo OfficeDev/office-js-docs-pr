@@ -4,6 +4,7 @@
 
 Outlook add-in activation is contextual and is based on the activation rules in the add-in manifest. When conditions for the currently selected item satisfy the activation rules for the add-in, the host application activates and displays the add-in button in the Outlook UI (add-in selection pane for compose add-ins, add-in bar for read add-ins). However, if your add-in doesn't activate as you expect, you should look into the following areas for possible reasons.
 
+<a name="troubleshootingmailapps"></a>
 ## Is the user mailbox on a version of Exchange Server that is at least Exchange 2013?
 
 
@@ -31,21 +32,21 @@ You can verify the version of Exchange 2013 by using one of the following approa
     
         - If there is only one Exchange account in the user's profile:
         
-            ```vba
-                  ?Session.ExchangeMailboxServerVersion
-            ```
+            
+            ?Session.ExchangeMailboxServerVersion
+            
         
         - If there are multiple Exchange accounts in the same user profile:
         
-                    ```vba
-                      ?Session.Accounts.Item(emailAddress).ExchangeMailboxServerVersion
-                    ```
+            
+            ?Session.Accounts.Item(emailAddress).ExchangeMailboxServerVersion
+         
         
         - _emailAddress_ represents a string that contains the user's primary STMP address. For example, if the user's primary SMTP address is randy@contoso.com, type the following:
         
-                ```vba
-                  ?Session.Accounts.Item("randy@contoso.com").ExchangeMailboxServerVersion
-                ```
+            
+            ?Session.Accounts.Item("randy@contoso.com").ExchangeMailboxServerVersion
+        
 
 
 ## Is the add-in disabled?
@@ -120,8 +121,9 @@ Figure 1 shows a summary of the steps to verify whether Outlook has a valid vers
     %LocalAppData%\Microsoft\Office\15.0\WEF
     
     You can find the manifest in the following subfolder:
-    
-    [GUID]\ [BASE 64 Hash]]\Manifests\[ManifestID]_[ManifestVersion]
+    ```
+    \<insert your guid>\<insert base 64 hash>\Manifests\<ManifestID>_<ManifestVersion>
+    ```
     
      >**Note**  The following is an example of a path to a manifest installed for a mailbox for the user John:
     
@@ -147,9 +149,9 @@ Figure 1 shows a summary of the steps to verify whether Outlook has a valid vers
     For information about opening the Event Viewer in Windows 7, see [Open Event Viewer](http://windows.microsoft.com/en-US/windows7/Open-Event-Viewer).
     
 6. If you don't see a successful event, close Outlook, and delete all the manifests in the following path:
-    
-    %LocalAppData%\Microsoft\Office\15.0\WEF\[GUID]\[BASE 64 Hash]]\Manifests\
-    
+    ```
+    %LocalAppData%\Microsoft\Office\15.0\WEF\<insert your guid>\<insert base 64 hash>\Manifests\
+    ```
     Start Outlook and test whether Outlook now activates the add-in.
     
 7. If Outlook doesn't activate the add-in, go back to Step 3 to verify again whether Outlook has properly read the manifest.
@@ -198,7 +200,7 @@ If you use an  **ItemHasRegularExpressionMatch** activation rule, verify whether
     
 - If the selected item is an appointment, or if the activation rule specifies  **BodyAsPlaintext** in the **PropertyName**, you can use the Outlook object model and the Visual Basic Editor in Outlook for Windows:
     
-      1. Ensure that macros are enabled and the  **Developer** tab is displayed in the ribbon for Outlook. If you're not sure how to do this, see Steps 1 and 2 under [Is the user mailbox on a version of Exchange Server that is at least Exchange 2013?](#TroubleshootingMailApps_MailboxE15)
+      1. Ensure that macros are enabled and the  **Developer** tab is displayed in the ribbon for Outlook. If you're not sure how to do this, see Steps 1 and 2 under [Is the user mailbox on a version of Exchange Server that is at least Exchange 2013?](#troubleshootingmailapps)
     
       2. In the Visual Basic Editor, choose  **View**,  **Immediate Window**.
     
@@ -206,28 +208,28 @@ If you use an  **ItemHasRegularExpressionMatch** activation rule, verify whether
     
       - The HTML body of the message or appointment item selected in the Outlook explorer:
     
-            ```vba
+            
               ?ActiveExplorer.Selection.Item(1).HTMLBody
-            ```
+        
 
 
      - The plain text body of the message or appointment item selected in the Outlook explorer:
     
-                 ```vba
+            
               ?ActiveExplorer.Selection.Item(1).Body
-            ```
+            
 
 
       - The HTML body of the message or appointment item opened in the current Outlook inspector:
     
-            ```vba
+            
               ?ActiveInspector.CurrentItem.HTMLBody
-            ```
+        
       - The plain text body of the message or appointment item opened in the current Outlook inspector:
     
-            ```vba
+            
               ?ActiveInspector.CurrentItem.Body
-            ```
+            
 
 If the  **ItemHasRegularExpressionMatch** activation rule specifies **Subject** or **SenderSMTPAddress**, or if you use an  **ItemIs** or **ItemHasAttachment** rule, and you are familiar with or would like to use MAPI, you can use [MFCMAPI](http://mfcmapi.codeplex.com/) to verify the value in Table 2 that your rule relies on.
 
