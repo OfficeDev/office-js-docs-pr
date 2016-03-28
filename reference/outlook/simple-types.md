@@ -81,7 +81,7 @@ Provides the email properties of the sender or specified recipients of an email 
 
 |Name| Type| Description|
 |---|---|---|
-|`appointmentResponse`| [Office.MailboxEnums.ResponseType](Office.MailboxEnums.md#responsetype-string)|Gets the response that an attendee returned for an appointment. This property applies to only an attendee of an appointment, as represented by the [`optionalAttendees`](Office.context.mailbox.item.md#optionalAttendees) or [`requiredAttendees`](Office.context.mailbox.item.md#requiredAttendees) property. This property returns `undefined` in other scenarios.|
+|`appointmentResponse`| [Office.MailboxEnums.ResponseType](Office.MailboxEnums.md#responsetype-string)|Gets the response that an attendee returned for an appointment. This property applies to only an attendee of an appointment, as represented by the [`optionalAttendees`](Office.context.mailbox.item.md#optionalattendees-arrayemailaddressdetails) or [`requiredAttendees`](Office.context.mailbox.item.md#requiredAttendees) property. This property returns `undefined` in other scenarios.|
 |`displayName`| String|Gets the display name associated with an email address.|
 |`emailAddress`| String|Gets the SMTP email address.|
 |`recipientType`| [Office.MailboxEnums.RecipientType](Office.MailboxEnums.md#recipienttype-string)|Gets the email address type of a recipient.|
