@@ -15,7 +15,7 @@ Add-ins use the Office.js API to access the Outlook Add-in API and interact with
 ![Flow of events when starting Outlook mail app](../../images/olowawecon15_LoadingDOMAgaveRuntime.png)
 ### Versioning
 
-As we evolve Outlook clients and the add-in platform and add new ways for add-ins to integrate, sometimes we're unable to implement a feature at the same time across all clients (Mac, Windows, web, mobile). To handle this situation, we version both the manifest and the APIs. In this way the platform supports backwards compatibility at all times, meaning that developers can build an add-in which works in a down-level way in older clients, but also lets you take advantage of new features in newer clients. You can read more about how versioning works in [Outlook add-in manifests](../outlook/manifests/manifests.md).
+As we evolve Outlook clients and the add-in platform and add new ways for add-ins to integrate, sometimes we're unable to implement a feature at the same time across all clients (Mac, Windows, web, mobile). To handle this situation, we version both the manifest and the APIs. In this way the platform supports backwards compatibility at all times, meaning that developers can build an add-in which works in a down-level way in older clients, but also lets you take advantage of new features in newer clients. You can read more about how versioning works in [Outlook add-in manifests](/manifests/manifests.md).
 
 
 ## Outlook add-in features
@@ -44,14 +44,14 @@ To get started building Outlook add-ins, see [Get Started with Outlook add-ins f
 For concepts that are applicable to developing Office add-ins in general, see the following:
 
 - [Design guidelines for Office Add-ins](../../docs/design/add-in-design.md)
-    
+
 - [Best practices for developing Office Add-ins](../../docs/design/add-in-development-best-practices.md)
-    
+
 - [License your Office and SharePoint Add-ins](http://msdn.microsoft.com/library/3e0e8ff6-66d6-44ff-b0c2-59108ebd9181%28Office.15%29.aspx)
-    
+
 - [Submit Office and SharePoint Add-ins and Office 365 web apps to the Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)
-    
+
 - [JavaScript API for Office](http://msdn.microsoft.com/EN-US/library/fp142185%28v=office.15%29.aspx(Office.15).aspx)
-    
+
 - [Mail add-in manifests](../outlook/manifests/manifests.md)
-    
+
