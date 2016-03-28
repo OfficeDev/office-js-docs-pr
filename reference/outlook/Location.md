@@ -1,4 +1,4 @@
- 
+
 
 # Location
 
@@ -9,7 +9,7 @@ Provides methods to get and set the location of a meeting in an Outlook add-in.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.1|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose|
 
 ### Methods
@@ -25,7 +25,7 @@ The `getAsync` method starts an asynchronous call to the Exchange server to get 
 |Name| Type| Attributes| Description|
 |---|---|---|---|
 |`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Developers can provide any object they wish to access in the callback method.</td></tr></tbody></table>|
-|`callback`| function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. 
+|`callback`| function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object.
 
 The location of the appointment is provided as a string in the `asyncResult.value` property.|
 
@@ -34,7 +34,7 @@ The location of the appointment is provided as a string in the `asyncResult.valu
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.1|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose|
 ####  setAsync(location, [options], [callback])
 
@@ -55,5 +55,5 @@ The `setAsync` method starts an asynchronous call to the Exchange server to set 
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.1|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose|

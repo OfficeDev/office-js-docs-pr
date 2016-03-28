@@ -1,4 +1,4 @@
- 
+
 
 # RoamingSettings
 
@@ -15,7 +15,7 @@ The `RoamingSettings` object is accessible via the [`roamingSettings`](Office.co
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| Restricted|
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Compose or read|
 
 ### Example
@@ -46,7 +46,7 @@ Retrieves the specified setting.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| Restricted|
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Compose or read|
 
 ##### Returns:
@@ -74,7 +74,7 @@ Removes the specified setting.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| Restricted|
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Compose or read|
 ####  saveAsync([callback])
 
@@ -93,7 +93,7 @@ Any settings previously saved by an add-in are loaded when it is initialized, so
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| Restricted|
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Compose or read|
 ####  set(name, value)
 
@@ -117,5 +117,5 @@ Any changes made to settings using the `set` function will not be saved to the s
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| Restricted|
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Compose or read|
