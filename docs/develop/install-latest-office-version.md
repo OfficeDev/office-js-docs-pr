@@ -12,6 +12,8 @@ To get the latest build:
 3. Replace the configuration.xml file with the [First Release Configuration File](https://raw.githubusercontent.com/OfficeDev/Office-Add-in-Commands-Samples/master/Tools/FirstReleaseConfig/configuration.xml).
 4. Run the following command as an administrator:  `setup.exe /configure configuration.xml` 
 
+>**Note:** The command might take a long time to run without indicating progress.
+
 When the installation process finishes, you will have the latest Office 2016 applications installed. To verify that you have the latest build, go to **File** > **Account** from any Office application. Under Office Updates, you'll see the (Office Insiders) label above the version number.
 
 ![A screenshot that shows product information with the Office Insiders label](../../images/officeinsider.PNG)
