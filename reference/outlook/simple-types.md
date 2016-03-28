@@ -111,6 +111,7 @@ Represents an email account on an Exchange Server.
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadItem|
 |Applicable Outlook mode| Read|
+
 #### Entities
 
 Represents a collection of entities found in an email message or appointment. Read mode only.
