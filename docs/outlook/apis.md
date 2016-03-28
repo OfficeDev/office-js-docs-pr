@@ -7,7 +7,7 @@ To use APIs in your Outlook add-in, you must specify the location of the Office.
 
 To interact with the Outlook add-in API, developers must use the JavaScript APIs in Office.js. The CDN for the library is  _https://appsforoffice.microsoft.com/lib/1/hosted/Office.js_. Add-ins submitted to the store must reference Office.js by this CDN; they can't use a local reference. 
 
-Declare the CDN in the **[head]** tag of the web page (.html, .aspx, or .php file) that implements the UI of your add-in, in the **[src]** attribute of the **[script]** tag:
+Declare the CDN in the **head** tag of the web page (.html, .aspx, or .php file) that implements the UI of your add-in, in the **src** attribute of the **script** tag:
 
 
 ```HTML
