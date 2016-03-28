@@ -199,7 +199,7 @@ The `start` and `end` values are string representations of a Date object that co
 |Applicable Outlook mode| Read|
 ####  NotificationMessageDetails
 
-An array of `NotificationMessageDetails` objects are returned by the [`NotificationMessages.getAllAsync`](NotificationMessages.md#getAllAsync) method.
+An array of `NotificationMessageDetails` objects are returned by the [`NotificationMessages.getAllAsync`](NotificationMessages.md#getallasyncoptions-callback) method.
 
 ##### Type:
 
