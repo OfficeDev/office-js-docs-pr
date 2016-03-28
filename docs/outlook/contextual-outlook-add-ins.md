@@ -137,5 +137,5 @@ Also, the [Package Tracker](https://store.office.com/package-tracker-WA104162083
     
 - [Use regular expression activation rules to show an Outlook add-in](../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)
 
-- [Entities object](../../reference/outlook/simple-types.md#Entities)
+- [Entities object](../../reference/outlook/simple-types.md)
     
