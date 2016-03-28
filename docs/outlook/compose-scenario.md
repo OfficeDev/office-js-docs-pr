@@ -37,7 +37,7 @@ Compose add-ins are implemented as [Add-in commands for Outlook](../outlook/add-
 
 
 
-- For activating add-ins in compose forms, see Table 1 in [Specify activation rules in a manifest](../outlook/manifests/activation-rules.md#MailAppDefineRules_Manifest).
+- For activating add-ins in compose forms, see Table 1 in [Specify activation rules in a manifest](../outlook/manifests/activation-rules.md#specify-activation-rules-in-a-manifest).
     
 - [Add and remove attachments to an item in a compose form in Outlook](../outlook/add-and-remove-attachments-to-an-item-in-a-compose-form.md)
     
