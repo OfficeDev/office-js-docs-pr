@@ -175,7 +175,7 @@ Represents a date and time in the local client's time zone. Read mode only.
 
 Represents a suggested meeting found in an item. Read mode only.
 
-The list of meetings suggested in an email message is returned in the `meetingSuggestions` property of the [`Entities`](simple-types.md#entities) object that is returned when the [`getEntities`](Office.context.mailbox.item.md#getEntities) or [`getEntitiesByType`](Office.context.mailbox.item.md#getEntitiesByType) method is called on the active item.
+The list of meetings suggested in an email message is returned in the `meetingSuggestions` property of the [`Entities`](simple-types.md#entities) object that is returned when the [`getEntities`](Office.context.mailbox.item.md#getentities--entities) or [`getEntitiesByType`](Office.context.mailbox.item.md#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) method is called on the active item.
 
 The `start` and `end` values are string representations of a Date object that contains the date and time at which the suggested meeting is to begin and end. The values are in the default time zone specified for the current user.
 
