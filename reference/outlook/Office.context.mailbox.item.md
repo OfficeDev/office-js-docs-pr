@@ -1084,7 +1084,7 @@ Gets an array of all the entities of the specified entity type found in the sele
 
 |Name| Type| Description|
 |---|---|---|
-|`entityType`| [Office.MailboxEnums.EntityType](Office.MailboxEnums.md#.EntityType)|One of the EntityType enumeration values.|
+|`entityType`| [Office.MailboxEnums.EntityType](Office.MailboxEnums.md#.EntityType-string)|One of the EntityType enumeration values.|
 
 ##### Requirements
 
