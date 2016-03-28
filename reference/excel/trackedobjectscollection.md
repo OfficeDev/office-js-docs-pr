@@ -17,7 +17,7 @@ The trackedObjectsCollection object has the following methods defined.
 |:-----------------|:--------|:----------|
 |[add(rangeObject: Range)](#addrangeobject-range)| Null             |Creates a new reference on a range.|
 |[remove(rangeObject: Range)](#removerangeobject-range)| Null             |Remove a reference on the range.  |
-|[removeAll()](#removeall)| Null|Removes all references created by the add-in on the device.|
+|[removeAll()](#removeallrangeobject-range)| Null|Removes all references created by the add-in on the device.|
 
 
 ## API Specification 
