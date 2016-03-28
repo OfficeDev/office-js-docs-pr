@@ -12,7 +12,7 @@ An object which encapsulates the result of an asynchronous request, including st
 |---|---|---|
 |`asyncContext`| Object|Gets the object passed to the optional `asyncContext` parameter of the invoked method in the same state as it was passed in.|
 |`error`| Error|Gets an Error object that provides a description of the error, if any error occurred.|
-|`status`| [Office.AsyncResultStatus](Office.md#.AsyncResultStatus)|Gets the status of the asynchronous operation.|
+|`status`| [Office.AsyncResultStatus](Office.md#.AsyncResultStatus-string)|Gets the status of the asynchronous operation.|
 |`value`| Object|Gets the payload or content of this asynchronous operation, if any.|
 
 ##### Requirements
