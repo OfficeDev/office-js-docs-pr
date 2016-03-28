@@ -39,7 +39,7 @@ _See property access [examples.](#property-access-examples)_
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[clear(applyTo: string)](#clearapplyto-string)|void|Clear range values, format, fill, border, etc.|
+|[clear(applyTo: string)](range.md#clearapplyto-string)|void|Clear range values, format, fill, border, etc.|
 |[delete(shift: string)](#deleteshift-string)|void|Deletes the cells associated with the range.|
 |[getBoundingRect(anotherRange: Range or string)](#getboundingrectanotherrange-range-or-string)|[Range](range.md)|Gets the smallest range object that encompasses the given ranges. For example, the getBoundingRect of "B2:C5" and "D10:E15" is "B2:E15".|
 |[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range as long as it stays within the worksheet grid. The returned cell is located relative to the top-left cell of the range.|
