@@ -16,7 +16,7 @@ Because Outlook for Mac doesn’t cache custom properties, if the user’s netwo
 
 ### Example
 
-The following example shows how to use the `loadCustomPropertiesAsync` method to asynchronously load custom properties that are specific to the current item. The example also shows how to use the [`saveAsync`](CustomProperties.md#saveAsync) method to save these properties back to the server. After loading the custom properties, the example uses the [`get`](CustomProperties.md#get) method to read the custom property `myProp`, the [`set`](CustomProperties.md#set) method to write the custom property `otherProp`, and then finally calls the `saveAsync` method to save the custom properties.
+The following example shows how to use the `loadCustomPropertiesAsync` method to asynchronously load custom properties that are specific to the current item. The example also shows how to use the [`saveAsync`](#saveasynccallback-asynccontext) method to save these properties back to the server. After loading the custom properties, the example uses the [`get`](CustomProperties.md#get) method to read the custom property `myProp`, the [`set`](CustomProperties.md#set) method to write the custom property `otherProp`, and then finally calls the `saveAsync` method to save the custom properties.
 
 ```
 Office.initialize = function () {
