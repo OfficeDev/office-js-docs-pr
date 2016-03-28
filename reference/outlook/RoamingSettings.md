@@ -8,7 +8,7 @@ The settings created by using the methods of the `RoamingSettings` object are sa
 
 The name of a setting is a String, while the value can be a String, Number, Boolean, null, Object, or Array.
 
-The `RoamingSettings` object is accessible via the [`roamingSettings`](Office.context.md#roamingSettings) property in the `Office.context` namespace.
+The `RoamingSettings` object is accessible via the [`roamingSettings`](Office.context.md#roamingsettings-roamingsettings) property in the `Office.context` namespace.
 
 ##### Requirements
 
