@@ -64,7 +64,7 @@ Consider the following:
 
 - If your add-in runs in one Office host, set the  **Hosts** element in the manifest. For more information, see [Set the Hosts element](../../docs/overview/specify-office-hosts-and-api-requirements.md#set-the-hosts-element).
     
-- To set the minimum requirement set or API members that an Office host must support to run your add-in, set the  **Requirements** element in the manifest. For more information, see [Set the Requirements element in the manifest](../../docs/overview/specify-office-hosts-and-api-requirements.md#RequirementsElement).
+- To set the minimum requirement set or API members that an Office host must support to run your add-in, set the  **Requirements** element in the manifest. For more information, see [Set the Requirements element in the manifest](../../docs/overview/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest).
     
 - If you would like to provide additional functionality if specific requirement sets or API members are available in the Office host, perform a runtime check in your add-in's JavaScript code. For example, if your add-in runs in Excel 2016, use API members from the new JavaScript API for Excel to provide additional functionality. For more information, see [Use runtime checks in your JavaScript code](../../docs/overview/specify-office-hosts-and-api-requirements.md#Runtimecheck).
     
