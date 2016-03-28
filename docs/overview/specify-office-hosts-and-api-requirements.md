@@ -1,6 +1,7 @@
 
 # Specify Office hosts and API requirements
-
+
+
 
 Your Office Add-in might depend on a specific Office host, a requirement set, an API member, or a version of the API in order to work as expected. For example, your add-in might:
 
@@ -61,7 +62,7 @@ When you specify Office hosts or API requirements, there are several factors to 
 
 Consider the following:
 
-- If your add-in runs in one Office host, set the  **Hosts** element in the manifest. For more information, see [Set the Hosts element](../../docs/overview/specify-office-hosts-and-api-requirements.md#SetHosts).
+- If your add-in runs in one Office host, set the  **Hosts** element in the manifest. For more information, see [Set the Hosts element](../../docs/overview/specify-office-hosts-and-api-requirements.md#set-the-hosts-element).
     
 - To set the minimum requirement set or API members that an Office host must support to run your add-in, set the  **Requirements** element in the manifest. For more information, see [Set the Requirements element in the manifest](../../docs/overview/specify-office-hosts-and-api-requirements.md#RequirementsElement).
     
