@@ -1,4 +1,4 @@
- 
+
 
 # NotificationMessages
 
@@ -11,7 +11,7 @@ The `NotificationMessages` object is returned as the [`notificationMessages`](Of
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
 ### Methods
@@ -36,26 +36,26 @@ There are a maximum of 5 notifications per message. Setting more will return a `
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
 ##### Example
 
 ```
 // Create three notifications, each with a different key
-Office.context.mailbox.item.notificationMessages.addAsync("progress", { 
-  type: "progressIndicator", 
-  message : "An add-in is processing this message." 
+Office.context.mailbox.item.notificationMessages.addAsync("progress", {
+  type: "progressIndicator",
+  message : "An add-in is processing this message."
 });
-Office.context.mailbox.item.notificationMessages.addAsync("information", { 
-  type: "informationalMessage", 
-  message : "The add-in processed this message.", 
-  icon : "iconid", 
-  persistent: false 
+Office.context.mailbox.item.notificationMessages.addAsync("information", {
+  type: "informationalMessage",
+  message : "The add-in processed this message.",
+  icon : "iconid",
+  persistent: false
 });
-Office.context.mailbox.item.notificationMessages.addAsync("error", { 
-  type: "errorMessage", 
-  message : "The add-in failed to process this message." 
+Office.context.mailbox.item.notificationMessages.addAsync("error", {
+  type: "errorMessage",
+  message : "The add-in failed to process this message."
 });
 ```
 
@@ -68,7 +68,7 @@ Returns all keys and messages for an item.
 |Name| Type| Attributes| Description|
 |---|---|---|---|
 |`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Developers can provide any object they wish to access in the callback method.</td></tr></tbody></table>|
-|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. 
+|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object.
 
 On successful completion, the `asyncResult.value` property will contain an array of [`NotificationMessageDetails`](simple-types.md#notificationmessagedetails) objects.|
 
@@ -77,7 +77,7 @@ On successful completion, the `asyncResult.value` property will contain an array
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
 ##### Example
@@ -86,11 +86,11 @@ On successful completion, the `asyncResult.value` property will contain an array
 // Get all notifications
 Office.context.mailbox.item.notificationMessages.getAllAsync(function (asyncResult) {
   if (asyncResult.status != "failed") {
-    Office.context.mailbox.item.notificationMessages.replaceAsync( "notifications", { 
-      type: "informationalMessage", 
-      message : "Found " + asyncResult.value.length + " notifications.", 
-      icon : "iconid", 
-      persistent: false 
+    Office.context.mailbox.item.notificationMessages.replaceAsync( "notifications", {
+      type: "informationalMessage",
+      message : "Found " + asyncResult.value.length + " notifications.",
+      icon : "iconid",
+      persistent: false
     });
   }
 ```
@@ -105,7 +105,7 @@ Removes a notification message for an item.
 |---|---|---|---|
 |`key`| String||The key for the notification message to remove.|
 |`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Developers can provide any object they wish to access in the callback method.</td></tr></tbody></table>|
-|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. 
+|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object.
 
 If the key is not found, a `KeyNotFound` error is returned in the `asyncResult.error` property.|
 
@@ -114,7 +114,7 @@ If the key is not found, a `KeyNotFound` error is returned in the `asyncResult.e
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
 ##### Example
@@ -144,17 +144,17 @@ If a notification message with the specified key doesn't exist, `replaceAsync` w
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
 ##### Example
 
 ```
 // Replace a notification with an informational notification
-Office.context.mailbox.item.notificationMessages.replaceAsync("progress", { 
-  type: "informationalMessage", 
-  message : "The message was processed successfully.", 
-  icon : "iconid", 
-  persistent: false 
+Office.context.mailbox.item.notificationMessages.replaceAsync("progress", {
+  type: "informationalMessage",
+  message : "The message was processed successfully.",
+  icon : "iconid",
+  persistent: false
 });
 ```
