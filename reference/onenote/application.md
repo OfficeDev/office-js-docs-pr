@@ -13,8 +13,6 @@ None
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
 |activeNotebook|[Notebook](notebook.md)|Gets the active notebook. Read-only.|
-|get;|[{]({.md)|Gets the active page. Read-only.|
-|get;|[{]({.md)|Gets the active section. Read-only.|
 |notebooks|[NotebookCollection](notebookcollection.md)|Gets the collection of notebooks that are open in the OneNote Application instance. Read-only.|
 
 ## Methods
