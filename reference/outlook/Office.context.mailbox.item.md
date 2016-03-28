@@ -468,8 +468,8 @@ Gets the notification messages for an item.
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
 |[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadItem|
 |Applicable Outlook mode| Compose or read|
-####  optionalAttendees :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>|[Recipients](Recipients.md)
-
+|[Recipients](Recipients.md)|
+####  optionalAttendees :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>
 Gets or sets a list of email addresses for optional attendees.
 
 ##### Read mode
