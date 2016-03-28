@@ -89,7 +89,7 @@ xsi:type="MailApp">
 ## HTML implementation
 
 
-The HTML file of the entities add-in specifies buttons for the user to select each type of entity, and another button to clear displayed instances of an entity. It includes a JavaScript file, default_entities.js, which is described in the next section under [JavaScript implementation](#olowa15conagave_entitiesJSImplementation). The JavaScript file includes the event handlers for each of the buttons.
+The HTML file of the entities add-in specifies buttons for the user to select each type of entity, and another button to clear displayed instances of an entity. It includes a JavaScript file, default_entities.js, which is described in the next section under [JavaScript implementation](#javascript-implementation). The JavaScript file includes the event handlers for each of the buttons.
 
 Note that all Outlook add-ins must include office.js. The HTML file that follows includes version 1.1 of office.js on the CDN. 
 
