@@ -11,6 +11,9 @@ Your Office Add-in might depend on a specific Office host, a requirement set, an
 - Run only in versions of Office that support API members that are used by your add-in.
     
 This article helps you understand which options you should choose to ensure that your add-in works as expected and reaches the broadest audience possible.
+
+>**Note:** For a high-level view of where Office Add-ins are currently supported, see the [Office Add-in host and platform availability](http://dev.office.com/add-in-availability) page. 
+
 The following table lists core concepts discussed throughout this article.
 
 >**Note:** For a high-level view of where Office Add-ins are currently supported, see the [Office Add-in host and platform availability](http://dev.office.com/add-in-availability) page. 
