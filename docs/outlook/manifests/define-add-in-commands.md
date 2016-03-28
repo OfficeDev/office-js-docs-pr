@@ -431,7 +431,7 @@ The following changes affect the rules in the manifest.
 ## Sample Manifest
 
 
-For a full sample manifest, see the [command-demo](https://github.com/jasonjoh/command-demo/blob/master/command-demo-manifest.xml%28Office.15%29.aspx) sample on GitHub.
+For a full sample manifest, see the [command-demo](https://github.com/jasonjoh/command-demo/blob/master/command-demo-manifest.xml) sample on GitHub.
 
 
 ## Additional resources
