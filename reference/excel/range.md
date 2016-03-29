@@ -14,7 +14,7 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 |columnCount|int|Represents the total number of columns in the range. Read-only.|
 |columnHidden|bool|Represents if all columns of the current range are hidden.|
 |columnIndex|int|Represents the column number of the first cell in the range. Zero-indexed. Read-only.|
-|formulas|object[][]|Represents the formula in A1-style notation.|
+|formulas|object[]|Represents the formula in A1-style notation.|
 |formulasLocal|object[][]|Represents the formula in A1-style notation, in the user's language and number-formatting locale.  For example, the English "=SUM(A1, 1.5)" formula would become "=SUMME(A1; 1,5)" in German.|
 |formulasR1C1|object[][]|Represents the formula in R1C1-style notation.|
 |hidden|bool|Represents if all cells of the current range are hidden. Read-only.|
