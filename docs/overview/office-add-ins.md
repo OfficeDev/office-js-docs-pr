@@ -70,14 +70,14 @@ The most basic Office Add-in consists of a static HTML page that is hosted insid
 The most powerful way to build an Office Add-in is to use the  **Add-in for Office** project template in Visual Studio. Visual Studio creates a complete solution that contains all of the files that you need to begin testing your add-in in Office immediately. Visual Studio provides a full range of features to make it easy for you to develop and test Office Add-ins. For more information, see:
 
 
-- [Create and debug Office Add-ins in Visual Studio](../../get-started/create-and-debug-office-add-ins-in-visual-studio.md).
+- [Create and debug Office Add-ins in Visual Studio](../get-started/create-and-debug-office-add-ins-in-visual-studio.md).
 
 ### Creating an Office Add-in with a text editor
 
 If want to use your favorite text editor to create an Office Add-in, see the following article for information about how to get started:
 
     
-- [Create an Office add-in using any editor](../../get-started/create-an-office-add-in-using-any-editor.md)
+- [Create an Office add-in using any editor](../get-started/create-an-office-add-in-using-any-editor.md)
     
 
 ### JavaScript API for Office
@@ -87,7 +87,7 @@ The JavaScript API for Office contains objects and members for building add-ins 
 For more information about the JavaScript API for Office, see [Understanding the JavaScript API for Office](../../docs/develop/understanding-the-javascript-api-for-office.md) and the [JavaScript API for Office](../../reference/javascript-api-for-office.md) reference.
     
 
-The Word and Excel JavaScript APIs provide host-specific object models that you can use in an Office Add-in. These APIs provide access to well-known objects such as paragraphs and workbooks, which makes it easier to create an add-in for Word or Excel. To learn more about these APIs, see the [Word add-ins](../word/word-add-ins.md) and [Excel add-ins](https://msdn.microsoft.com/EN-US/library/office/mt616485.aspx) overview topics.
+The Word and Excel JavaScript APIs provide host-specific object models that you can use in an Office Add-in. These APIs provide access to well-known objects such as paragraphs and workbooks, which makes it easier to create an add-in for Word or Excel. To learn more about these APIs, see the [Word add-ins](../word/word-add-ins.md) and [Excel add-ins](../excel/excel-add-ins-javascript-programming-overview.md) overview topics.
 
 
 ## Types of Office Add-ins
