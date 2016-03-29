@@ -107,7 +107,9 @@ You can **add new functionality** to Office clients using Add-ins. Use add-in co
 **Add-in with commands running in Excel Online**
 ![Add-in commands](../../images/addincommands2.png)
 
-You can define your commands in your add-in manifest and the Office platform takes care of interpreting them into native UI. To get started check out these [samples on GitHub](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/), and see [Add-in commands for Excel, Word and PowerPoint)](../design/add-in-commands-for-excel-and-word-preview.md)
+You can define your commands in your add-in manifest and the Office platform takes care of interpreting them into native UI. To get started check out these [samples on GitHub](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/), and see [Add-in commands for Excel, Word and PowerPoint](../design/add-in-commands-for-excel-and-word-preview.md)
+
+>**Note:** Clients that do not support Add-in commands yet will run your Add-in as a **Taskpane** using the DefaultUrl provided on the manifest. The add-in can then be launched using the "My Add-ins" menu from the Insert Tab.
 
 ### Excel and PowerPoint Content Add-ins 
 
