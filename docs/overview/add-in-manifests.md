@@ -29,7 +29,8 @@ For examples of manifest v1.1 XML files, see [Manifest v1.1 XML file examples](#
 The following table specifies the elements that are required for the three types of Office Add-ins and the Dictionary task pane add-in.
 
 
- >**Important**  For add-ins submitted to the Office Store, all add-in locations, such as the source file locations specified in the  **SourceLocation** element, must be SSL-secured (HTTPS). For more information see, [What are some common submission errors to avoid?](http://msdn.microsoft.com/library/0ceb385c-a608-40cc-8314-78e39d6c75d0%28Office.15%29.aspx#bk_q2)
+ >**Important**: For add-ins submitted to the Office Store, all add-in locations, such as the source file locations specified in the  **SourceLocation** element, must be SSL-secured (HTTPS). For more information see, [What are some common submission errors to avoid?](http://msdn.microsoft.com/library/0ceb385c-a608-40cc-8314-78e39d6c75d0%28Office.15%29.aspx#bk_q2)
+ >Add-ins submitted to the Office Store must include the [SupportUrl](../../reference/manifest/supporturl.md) element.
 
 
 **Required elements by Office Add-in type**
