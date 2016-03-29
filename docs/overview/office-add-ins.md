@@ -34,8 +34,10 @@ The basic components of an Office Add-in are an XML manifest file and your own w
 
 
 **Manifest + webpage = an Office Add-in**
-###Manifest
 ![Manifest plus webpage equals Office Add-in](../../images/DK2_AgaveOverview01.png)
+
+###Manifest
+
 
 The manifest specifies settings and capabilities of the add-in, such as the following:
     
