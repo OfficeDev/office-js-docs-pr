@@ -131,7 +131,7 @@ Outlook add-ins can access contextual information from the item, such as address
 
 **Outlook add-in with command buttons on the ribbon**
 
-    ![Add-in Command](../../images/41e46a9c-19ec-4ccc-98e6-a227283623d1.png)
+![Add-in Command](../../images/41e46a9c-19ec-4ccc-98e6-a227283623d1.png)
 
 **Outlook add-in contextual**
 
