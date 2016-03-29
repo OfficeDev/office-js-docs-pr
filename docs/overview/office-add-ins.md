@@ -121,14 +121,19 @@ To try out a content add-in in Excel 2013 or Excel Online, install the [Bing Map
 
 ### Outlook Add-ins
 
-Outlook add-ins can extend the Office Ribbon and also display contextually next to an Outlook item when you're viewing or composing it. They can work with an email message, meeting request, meeting response, meeting cancellation, or appointment in a read scenario - the user viewing a received item - or in a compose scenario - the user replying or creating a new item. Outlook add-ins can access contextual information from the item, such as address or tracking ID, and then use that data to access additional information on the server and from web services to create compelling user experiences. In most cases, an Outlook add-in runs without modification on the various supporting host applications, including Outlook, Outlook for Mac, Outlook Web App and OWA for Devices, to provide a seamless experience on the desktop, web, and tablet and mobile devices.
+Outlook add-ins can extend the Office Ribbon and also display contextually next to an Outlook item when you're viewing or composing it. They can work with an email message, meeting request, meeting response, meeting cancellation, or appointment in a read scenario - the user viewing a received item - or in a compose scenario - the user replying or creating a new item. 
+
+Outlook add-ins can access contextual information from the item, such as address or tracking ID, and then use that data to access additional information on the server and from web services to create compelling user experiences. In most cases, an Outlook add-in runs without modification on the various supporting host applications, including Outlook, Outlook for Mac, Outlook Web App and OWA for Devices, to provide a seamless experience on the desktop, web, and tablet and mobile devices.
 
 [Learn more about Outlook Add-ins](../outlook/add-in-commands-for-outlook.md)
 
  >**Note**  Outlook add-ins require a minimum version of Exchange 2013 or Exchange Online to host the user's mailbox. POP and IMAP email accounts aren't supported.
 
+**Outlook add-in with command buttons on the ribbon**
 
-**Outlook add-in in a read scenario**
+    ![Add-in Command](../../images/41e46a9c-19ec-4ccc-98e6-a227283623d1.png)
+
+**Outlook add-in contextual**
 
 ![Contextual add-in](../../images/DK2_AgaveOverview06.png)
 
