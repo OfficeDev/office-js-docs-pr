@@ -99,7 +99,7 @@ You can create the following types of Office Add-ins:
 - Outlook Add-ins
 
 ### Word, Excel and PowerPoint Add-ins 
-You can **add new functionality** to Office clients using Add-ins. Use add-in commands in your Office Add-ins to extend the Office UI. For example, you can add buttons for your add-ins on the ribbon or selected contextual menus allowing users to easily access their add-ins within Office. Commands buttons can launch the different types of Office Add-ins (task pane, content, Outlook) or execute UI-less (Javascript code that interacts with the document via office.js) commands. We recommend that you [watch this Channel9 video](https://channel9.msdn.com/Events/Visual-Studio/Connect-event-2015/316) for a deeper overview of this feature.
+You can **add new functionality** to Office clients using Add-ins. Use add-in commands to extend the Office UI. For example, you can add buttons for your add-ins on the ribbon or selected contextual menus allowing users to easily access their add-ins within Office. Commands buttons can launch the different actions such as showing a pane with a custom HTML or execute a JavaScript function. We recommend that you [watch this Channel9 video](https://channel9.msdn.com/Events/Visual-Studio/Connect-event-2015/316) for a deeper overview of this feature.
 
 **Add-in with commands running in Excel Desktop**
 ![Add-in commands](../../images/addincommands1.png)
