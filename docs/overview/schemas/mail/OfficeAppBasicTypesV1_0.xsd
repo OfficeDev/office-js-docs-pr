@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="OfficeAppBasicTypes" elementFormDefault="qualified" version="1.0"
+    targetNamespace="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+    xmlns="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:simpleType name="NonEmptyString">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a string that cannot be empty and can be unbounded.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ShortString">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a string that must contain between 1 and 125 characters.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="125"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ReferenceId">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a string to be used as the reference id for images and strings.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="32" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ShortReferenceId">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a subclass of ReferenceId that identifies a short string resource
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="ReferenceId" />
+  </xs:simpleType>
+
+  <xs:simpleType name="LongReferenceId">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a subclass of ReferenceId that identifies a long string resource
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="ReferenceId" />
+  </xs:simpleType>
+
+  <xs:simpleType name="URLReferenceId">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a subclass of ReferenceId that identifies a URL string resource
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="ReferenceId" />
+  </xs:simpleType>
+
+  <xs:simpleType name="ImageReferenceId">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a subclass of ReferenceId that identifies an image resource
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="ReferenceId" />
+  </xs:simpleType>
+
+  <xs:simpleType name="LongString">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a string that must contain between 1 and 250 characters.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="250"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="URL">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a string that holds a Uniform Resource Locator and that must contain between 1 and 2048 characters.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:anyURI">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="2048"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="ShortLocaleOverride">
+    <xs:annotation>
+      <xs:documentation>
+        Defines the support for multiple locales for short strings.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="Locale" type="CultureName" use="required">
+      <xs:annotation>
+        <xs:documentation>Specifies the culture name of the locale for this override.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Value" type="ShortString" use="required">
+      <xs:annotation>
+        <xs:documentation>Specifies value of the setting expressed for the specified locale.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="LongLocaleOverride">
+    <xs:annotation>
+      <xs:documentation>
+        Defines the support for multiple locales for long strings.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="Locale" type="CultureName" use="required">
+      <xs:annotation>
+        <xs:documentation>Specifies the culture name of the locale for this override.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Value" type="LongString" use="required">
+      <xs:annotation>
+        <xs:documentation>Specifies value of the setting expressed for the specified locale.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="URLLocaleOverride">
+    <xs:annotation>
+      <xs:documentation>
+        Defines the support for multiple locales for URL strings.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="Locale" type="CultureName" use="required">
+      <xs:annotation>
+        <xs:documentation>Specifies the culture name of the locale for this override.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Value" type="URL" use="required">
+      <xs:annotation>
+        <xs:documentation>Specifies value of the setting expressed for the specified locale.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="ImageLocaleAwareSettingWithId">
+    <xs:annotation>
+      <xs:documentation>
+        Defines an image resource that is locale-aware and that can be specified for a locale different than the default, and also has an identifier associated with it to uniquely identify it relative to other resources
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Override" type="URLLocaleOverride" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Provides a way to specify the value of this setting for an additional locale.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="ImageReferenceId" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          Specifies a unique identifier for this setting that can be referenced from other locations to refer back to this element.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="DefaultValue" type="URL" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          Specifies the default value for this setting, expressed for the locale specified in the "DefaultLocale" element.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="URLLocaleAwareSettingWithId">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a URL resource that is locale-aware and that can be specified for a locale different than the default, and also has an identifier associated with it to uniquely identify it relative to other resources
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Override" type="URLLocaleOverride" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Provides a way to specify the value of this setting for an additional locale.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="URLReferenceId" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          Specifies a unique identifier for this setting that can be referenced from other locations to refer back to this element.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="DefaultValue" type="URL" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          Specifies the default value for this setting, expressed for the locale specified in the "DefaultLocale" element.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="ShortLocaleAwareSettingWithId">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a short string resource that is locale-aware and that can be specified for a locale different than the default, and also has an identifier associated with it to uniquely identify it relative to other resources
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Override" type="ShortLocaleOverride" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Provides a way to specify the value of this setting for an additional locale.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="ShortReferenceId" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          Specifies a unique identifier for this setting that can be referenced from other locations to refer back to this element.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="DefaultValue" type="ShortString" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          Specifies the default value for this setting, expressed for the locale specified in the "DefaultLocale" element.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="LongLocaleAwareSettingWithId">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a long string resource that is locale-aware and that can be specified for a locale different than the default, and also has an identifier associated with it to uniquely identify it relative to other resources
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Override" type="LongLocaleOverride" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Provides a way to specify the value of this setting for an additional locale.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="LongReferenceId" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          Specifies a unique identifier for this setting that can be referenced from other locations to refer back to this element.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="DefaultValue" type="LongString" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          Specifies the default value for this setting, expressed for the locale specified in the "DefaultLocale" element.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="ResourceReference" abstract="true">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies a reference to a resource defined under the Resources element of the manifest.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="resid" type="ReferenceId" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          Specifies the identifier of the resource.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="ImageResourceReference">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies a reference to an image resource defined under the Resources element of the manifest.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ResourceReference">
+        <xs:attribute name="size" type="xs:integer" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              Specifies the dimension of the image resource. Mandatory values are 16, 32, and 80. Currently supported optional values are 20, 24, 40, 48, and 64.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="URLResourceReference">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies a reference to a URL resource defined under the Resources element of the manifest.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ResourceReference" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ShortResourceReference">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies a reference to a shortform string resource defined under the Resources element of the manifest.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ResourceReference" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="LongResourceReference">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies a reference to a longform string resource defined under the Resources element of the manifest.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ResourceReference" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:simpleType name="UUID">
+    <xs:annotation>
+      <xs:documentation>The supported representations of a URN UUID or GUID.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(urn:uuid:)?[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|\{[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="AlternateId">
+    <xs:annotation>
+      <xs:documentation>Defines an alternate ID type as defined by the Office Store.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value=".{5,12}\\WA[0-9]{9}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="CultureName">
+    <xs:annotation>
+      <xs:documentation>Represents the culture name of the language used in the string that it is qualifying.</xs:documentation>
+    </xs:annotation>
+    <!-- The culture names follow the BCP 47 standard. -->
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z]{2,3}-[a-zA-Z0-9]{3,8}(-[a-zA-Z]{2,3})?|[a-zA-Z]{2,3}(-[a-zA-Z]{2,3}(_tradnl|\.pseudo|-[a-zA-Z]{4,8})?)?"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Version">
+    <xs:annotation>
+      <xs:documentation>
+        Defines the format for the "Version" element.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([0-9]{1,5})(\.[0-9]{1,5}){0,3}?"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ShortVersion">
+    <xs:annotation>
+      <xs:documentation>
+        Defines the format for the Short Version element.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([0-9]{1,5})\.([0-9]{1,5})"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Resource Collection definition -->
+  <xs:complexType name="IconList">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies a set of icons for a control.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Image" type="ImageResourceReference" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ImageResources">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies a collection of image resources for the app.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Image" type="ImageLocaleAwareSettingWithId" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Specifies an image URL resource for the app along with a unique identifier that can be used to refer to the resource from elsewhere in the app manifest.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="URLResources">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies a collection of string resources for the app.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Url" type="URLLocaleAwareSettingWithId" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Specifies a URL resource for the app along with a unique identifier that can be used to refer to the resource from elsewhere in the app manifest.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ShortStringResources">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies a collection of short string resources for the app.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="String" type="ShortLocaleAwareSettingWithId" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Specifies a shortform string resource for the app along with a unique identifier that can be used to refer to the resource from elsewhere in the app manifest.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LongStringResources">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies a collection of long string resources for the app.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="String" type="LongLocaleAwareSettingWithId" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Specifies a longform string resource for the app along with a unique identifier that can be used to refer to the resource from elsewhere in the app manifest.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Resources">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a collection of resources referenced by other elements of the manifest where resource references are supported.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Images" type="ImageResources" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Specifies a collection of image resources for the app.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Urls" type="URLResources" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Specifies a collection of URL string resources for the app.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ShortStrings" type="ShortStringResources" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Specifies a collection of shortform string resources for the app.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LongStrings" type="LongStringResources" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Specifies a collection of longform string resources for the app.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- End Resource Collection definition -->
+
+  <!-- Requirement set -->
+  <xs:complexType name="VersionedRequirement">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies a required functionality set and version.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="MinVersion" type="ShortVersion" use="optional" />
+    <xs:attribute name="Name" type="ShortString" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="Sets">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies the list of required API sets of the Office.js API that the app for Office requires in order to activate.
+        Default version is inherited by child elements unless overridden in the given child element.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Set" type="VersionedRequirement" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="DefaultMinVersion" type="ShortVersion" default="1.1" />
+  </xs:complexType>
+
+  <xs:complexType name="Methods">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies the list of required API methods of the Office.js API that the app for Office requires in order to activate.
+        Default version is inherited by child elements unless overridden in the given child element.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Method" type="VersionedRequirement" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="DefaultMinVersion" type="ShortVersion" default="1.1" />
+  </xs:complexType>
+
+  <xs:complexType name="Requirements">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies the minimum named subsets of the Office.js API that the App requires in order to activate.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Sets" type="Sets" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <!-- End requirement set-->
+
+</xs:schema>
