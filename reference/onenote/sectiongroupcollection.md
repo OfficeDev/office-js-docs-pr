@@ -1,7 +1,8 @@
 # SectionGroupCollection Object (JavaScript API for OneNote)
 
 _Applies to: OneNote Online_
-_Note: This API is in public preview_
+_Note: This API is in preview_
+
 
 Represents a collection of section groups.
 
