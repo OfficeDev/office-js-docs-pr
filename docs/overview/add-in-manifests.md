@@ -3,21 +3,17 @@
 
 
 
-The XML manifest file of an Office Add-in enables you to declaratively describe how your add-in should be activated when an end user installs and uses it with Office documents and applications. The [offappmanifest.xsd](http://msdn.microsoft.com/en-us/library/d5f72bff-3446-c64f-02ca-ab10b5648789%28Office.15%29.aspx) defines an XML schema that is common to all supported Office applications (both rich client applications and their corresponding web app web clients).
-
- >**Note**  Your Office Add-in must use manifest schema version 1.1. For information about how to update your add-in to use manifest 1.1, see [Update the version of your JavaScript API for Office and manifest schema files](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md).
+The XML manifest file of an Office Add-in enables you to declaratively describe how your add-in should be activated when an end user installs and uses it with Office documents and applications. 
 
 An XML manifest file based on this schema enables an Office Add-in to do the following:
 
 - Describe itself by providing an ID, version, description, display name, and default locale.
     
-- Specify the location of the HTML file that provides the UI of the Office Add-in.
+- Specify how the Add-in integrates with Office
     
 - Specify the requested default dimensions for content Office Add-ins, and requested height for Outlook Office Add-ins.
     
 - Declare permissions that the Office Add-in requires, such as reading or writing to the document.
-    
-- Specify how they should be used and displayed, such as content (in the document), in a task pane, or contextually with a message, appointment, or meeting request item.
     
 - For Outlook Office Add-ins, define the rule or rules that specify the context in which they will be activated and interact with a message, appointment, or meeting request item.
     
@@ -63,16 +59,211 @@ The following table specifies the elements that are required for the three types
 *Added in the Office Add-in Manifest Schema version 1.1.
 
 
-## Manifest v1.1 XML file examples
+## Manifest v1.1 XML file examples and schemas
 
 
 The following sections show examples of manifest v1.1 XML files for content, task pane, Outlook, and dictionary Office Add-ins.
 
 If you're using Visual Studio to develop your Office Add-in, you can use the Visual Studio manifest designer to change Office Add-in manifest settings, rather than manually changing the underlying XML markup. By default, when you open an Office Add-in manifest file in Visual Studio, it opens in the manifest designer. The designer organizes the fields in the manifest, making them easier to find. Some fields have drop-down list boxes that contain valid field values, helping reduce data entry errors.
 
+### Office Add-in manifest v1.1 example with commands and fallback Taskpane
+[Taskpane Manifest Schema](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas)
+
+```XML
+<?xml version="1.0" encoding="utf-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+
+<!-- See https://github.com/OfficeDev/Office-Add-in-Commands-Samples for documentation-->
+
+<!-- BeginBasicSettings: Add-in metadata, used for all versions of Office unless override provided -->
+
+<!--IMPORTANT! Id must be unique for your add-in. If you clone this manifest ensure that you change this id to your own GUID -->
+  <Id>e504fb41-a92a-4526-b101-542f357b7acb</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Contoso</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+   <!-- The display name of your add-in. Used on the store and various placed of the Office UI such as the add-ins dialog -->
+  <DisplayName DefaultValue="Add-in Commands Sample" />
+  <Description DefaultValue="Sample that illustrates add-in commands basic control types and actions" />
+   <!--Icon for your add-in. Used on installation screens and the add-ins dialog -->
+  <IconUrl DefaultValue="https://i.imgur.com/oZFS95h.png" />
+
+  <!--BeginTaskpaneMode integration. Office 2013 and any client that doesn't understand commands will use this section.
+    This section will also be used if there are no VersionOverrides -->
+  <Hosts>
+    <Host Name="Document"/>
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://commandsimple.azurewebsites.net/Taskpane.html" />
+  </DefaultSettings>
+   <!--EndTaskpaneMode integration -->
+
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <!--BeginAddinCommandsMode integration-->
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">   
+    <Hosts>
+      <!--Each host can have a different set of commands. Cool huh!? -->
+      <!-- Workbook=Excel Document=Word Presentation=PowerPoint -->
+      <!-- Make sure the hosts you override match the hosts declared in the top section of the manifest -->
+      <Host xsi:type="Document">
+      	<!-- Form factor. Currenly only DesktopFormFactor is supported. We will add TabletFormFactor and PhoneFormFactor in the future-->
+        <DesktopFormFactor>
+        	<!--Function file is an html page that includes the javascript where functions for ExecuteAction will be called. 
+            Think of the FunctionFile as the "code behind" ExecuteFunction-->
+          <FunctionFile resid="Contoso.FunctionFile.Url" />
+
+          <!--PrimaryCommandSurface==Main Office Ribbon-->
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+          	<!--Use OfficeTab to extend an existing Tab. Use CustomTab to create a new tab -->
+            <!-- Documentation includes all the IDs currently tested to work -->
+            <CustomTab id="Contoso.Tab1">
+				<!--Group. Ensure you provide a unique id. Recommendation for any IDs is to namespace using your company name-->
+              <Group id="Contoso.Tab1.Group1">
+              	 <!--Label for your group. resid must point to a ShortString resource -->
+                <Label resid="Contoso.Tab1.GroupLabel" />
+                <Icon>
+                <!-- Sample Todo: Each size needs its own icon resource or it will look distorted when resized -->
+                <!--Icons. Required sizes 16,31,80, optional 20, 24, 40, 48, 64. Strongly recommended to provide all sizes for great UX -->
+                <!--Use PNG icons and remember that all URLs on the resources section must use HTTPS -->
+                  <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
+                  <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
+                  <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
+                </Icon>
+                
+                <!--Control. It can be of type "Button" or "Menu" -->
+                <Control xsi:type="Button" id="Contoso.FunctionButton">
+                <!--Label for your button. resid must point to a ShortString resource -->
+                  <Label resid="Contoso.FunctionButton.Label" />
+                  <Supertip>
+                  	 <!--ToolTip title. resid must point to a ShortString resource -->
+                    <Title resid="Contoso.FunctionButton.Label" />
+                     <!--ToolTip description. resid must point to a LongString resource -->
+                    <Description resid="Contoso.FunctionButton.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Contoso.FunctionButton.Icon" />
+                    <bt:Image size="32" resid="Contoso.FunctionButton.Icon" />
+                    <bt:Image size="80" resid="Contoso.FunctionButton.Icon" />
+                  </Icon>
+                  <!--This is what happens when the command is triggered (E.g. click on the Ribbon). Supported actions are ExecuteFuncion or ShowTaskpane-->
+                  <!--Look at the FunctionFile.html page for reference on how to implement the function -->
+                  - <Action xsi:type="ExecuteFunction">
+                  <!--Name of the function to call. This function needs to exist in the global DOM namespace of the function file-->
+                    <FunctionName>writeText</FunctionName>
+                  </Action>
+                </Control>
+
+                <Control xsi:type="Button" id="Contoso.TaskpaneButton">
+                  <Label resid="Contoso.TaskpaneButton.Label" />
+                  <Supertip>
+                    <Title resid="Contoso.TaskpaneButton.Label" />
+                    <Description resid="Contoso.TaskpaneButton.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
+                    <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
+                    <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>Button2Id1</TaskpaneId>
+                     <!--Provide a url resource id for the location that will be displayed on the task pane -->
+                    <SourceLocation resid="Contoso.Taskpane1.Url" />
+                  </Action>
+                </Control>
+            <!-- Menu example -->
+            <Control xsi:type="Menu" id="Contoso.Menu">
+              <Label resid="Contoso.Dropdown.Label" />
+              <Supertip>
+                <Title resid="Contoso.Dropdown.Label" />
+                <Description resid="Contoso.Dropdown.Tooltip" />
+              </Supertip>
+              <Icon>
+                <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
+                <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
+                <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
+              </Icon>
+              <Items>
+                <Item id="Contoso.Menu.Item1">
+                  <Label resid="Contoso.Item1.Label"/>
+                  <Supertip>
+                    <Title resid="Contoso.Item1.Label" />
+                    <Description resid="Contoso.Item1.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
+                    <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
+                    <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>MyTaskPaneID1</TaskpaneId>
+                    <SourceLocation resid="Contoso.Taskpane1.Url" />
+                  </Action>
+                </Item>
+
+                <Item id="Contoso.Menu.Item2">
+                  <Label resid="Contoso.Item2.Label"/>
+                  <Supertip>
+                    <Title resid="Contoso.Item2.Label" />
+                    <Description resid="Contoso.Item2.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
+                    <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
+                    <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>MyTaskPaneID2</TaskpaneId>
+                    <SourceLocation resid="Contoso.Taskpane2.Url" />
+                  </Action>
+                </Item>
+              
+              </Items>
+            </Control>
+
+              </Group>
+
+              <!-- Label of your tab -->
+              <!-- If validating with XSD it needs to be at the end, we might change this before release -->
+              <Label resid="Contoso.Tab1.TabLabel" />
+            </CustomTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+		<bt:Image id="Contoso.TaskpaneButton.Icon" DefaultValue="https://i.imgur.com/FkSShX9.png" />
+		<bt:Image id="Contoso.FunctionButton.Icon" DefaultValue="https://i.imgur.com/qDujiX0.png" />
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="Contoso.FunctionFile.Url" DefaultValue="https://commandsimple.azurewebsites.net/FunctionFile.html" />
+        <bt:Url id="Contoso.Taskpane1.Url" DefaultValue="https://commandsimple.azurewebsites.net/Taskpane.html" />
+        <bt:Url id="Contoso.Taskpane2.Url" DefaultValue="https://commandsimple.azurewebsites.net/Taskpane2.html" />
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="Contoso.FunctionButton.Label" DefaultValue="Execute Function" />
+        <bt:String id="Contoso.TaskpaneButton.Label" DefaultValue="Show Taskpane" />
+        <bt:String id="Contoso.Dropdown.Label" DefaultValue="Dropdown" />
+        <bt:String id="Contoso.Item1.Label" DefaultValue="Show Taskpane 1" />
+        <bt:String id="Contoso.Item2.Label" DefaultValue="Show Taskpane 2" />
+        <bt:String id="Contoso.Tab1.GroupLabel" DefaultValue="Test Group" />
+         <bt:String id="Contoso.Tab1.TabLabel" DefaultValue="Test Tab" />
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="Contoso.FunctionButton.Tooltip" DefaultValue="Click to Execute Function" />
+        <bt:String id="Contoso.TaskpaneButton.Tooltip" DefaultValue="Click to Show a Taskpane" />
+        <bt:String id="Contoso.Dropdown.Tooltip" DefaultValue="Click to Show Options on this Menu" />
+        <bt:String id="Contoso.Item1.Tooltip" DefaultValue="Click to Show Taskpane1" />
+        <bt:String id="Contoso.Item2.Tooltip" DefaultValue="Click to Show Taskpane2" />
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
+```
 
 ### Content Office Add-in manifest v1.1 example
-
+[Content Manifest Schema](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas/content)
 
 
 ```XML
@@ -108,54 +299,8 @@ If you're using Visual Studio to develop your Office Add-in, you can use the Vis
 </OfficeApp>
 ```
 
-
-### Task pane Office Add-in manifest v1.1 example
-
-
-
-```XML
-<?xml version="1.0" encoding="UTF-8"?>
-<OfficeApp xmlns=
-  "http://schemas.microsoft.com/office/appforoffice/1.1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:type="TaskPaneApp">
-  <Id>412ce350-4161-4ad0-a5f5-0ec9d2cd3570</Id>
-  <Version>1.0.0.0</Version>
-  <ProviderName>Microsoft</ProviderName>
-  <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="Sample task pane add-in">
-    <Override Locale="en-US" Value="Project add-in"/> 
-  </DisplayName>
-  <Description DefaultValue="Describe the features of this app.">
-    <Override Locale="en-US" Value="Adds project management information to documents"/>
-  </Description>
-  <IconUrl DefaultValue="https://contoso.com.sa/ProjectApp/Topgunas-SA.png">
-    <Override Locale="en-US" Value="https://contoso.com/ProjectApp/Topgunen-US.png"/>
-  </IconUrl>
-  <AppDomains>
-    <AppDomain>http://www.projectlogin.com</AppDomain>
-    <AppDomain>http://m.projectlogin.com</AppDomain>
-    <AppDomain>http://www.projectlogin.com.sa</AppDomain>
-    <AppDomain>http://m.projectlogin.com.sa</AppDomain>
-  </AppDomains>
-  <Hosts>
-    <Host Name = "Document"/>
-    <Host Name = "Workbook"/>
-    <Host Name = "Presentation"/>
-    <Host Name = "Project"/>
-  </Hosts>
-  <DefaultSettings>
-    <SourceLocation DefaultValue="https://contoso.com.sa/ProjectApp/ProjectAppar_SA.html">
-      <Override Locale="en-US" Value="https://contoso.com/ProjectApp/ProjectAppen-US.html"/>
-    </SourceLocation>
-  </DefaultSettings>
-  <Permissions>ReadWriteDocument</Permissions>
-</OfficeApp>
-```
-
-
 ### Outlook Office Add-in manifest v1.1 example
-
+[Content Manifest Schema](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas/mail)
 
 
 ```XML
@@ -244,71 +389,6 @@ If you're using Visual Studio to develop your Office Add-in, you can use the Vis
   </Rule>
 </OfficeApp>
 
-```
-
-
-### Dictionary Office Add-in manifest v1.1 example
-
-
-
-```XML
-<?xml version="1.0" encoding="UTF-8"?>
-<OfficeApp 
-  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-  xsi:type="TaskPaneApp">
-  <Id>6f28f837-8326-4231-a033-ea1d80ff9fb3</Id>
-  <Version>15.0</Version>
-  <ProviderName>Microsoft Office Demo Dictionary</ProviderName>
-  <DefaultLocale>en-us</DefaultLocale>
-  <!--DisplayName is the name that will appear in the user's list of applications.-->
-  <DisplayName DefaultValue="Microsoft Office Demo Dictionary" />
-  <!--Description is a 2-3 sentence description of this dictionary. -->
-  <Description DefaultValue="The Microsoft Office Demo Dictionary is an example built to demonstrate how a publisher could create a dictionary that integrates with Office. It does not return real definitions." />
-  <!--IconUrl is the URI for the icon that will appear in the user's list of applications.-->
-  <IconUrl DefaultValue="https://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg" />
-  <Hosts>
-    <Host Name = "Document"/>
-    <Host Name = "Workbook"/>
-    <Host Name = "Presentation"/>
-    <Host Name = "Project"/>
-  </Hosts>
-  <DefaultSettings>
-    <!--Replace the value specified for DefaultValue below with the URL for your dictionary-->
-    <SourceLocation DefaultValue="https://contoso.com/ExampleDictionary/DictionaryHome.html" />
-  </DefaultSettings>
-  <!--Permissions is the set of permissions a user will have to give your dictionary. If you need write access, such as to allow a user to replace the highlighted word with a synonym, use ReadWriteDocument. -->
-  <Permissions>ReadDocument</Permissions>
-  <Dictionary>
-    <!--TargetDialects is the set of dialects your dictionary contains. For example, if your dictionary applies to Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that here. This is for different dialects of the same language. Please do NOT put more than one language (e.g. Spanish and English) here. Publish separate languages as separate dictionaries. -->
-    <TargetDialects>
-      <TargetDialect>EN-AU</TargetDialect>
-      <TargetDialect>EN-BZ</TargetDialect>
-      <TargetDialect>EN-CA</TargetDialect>
-      <TargetDialect>EN-029</TargetDialect>
-      <TargetDialect>EN-HK</TargetDialect>
-      <TargetDialect>EN-IN</TargetDialect>
-      <TargetDialect>EN-ID</TargetDialect>
-      <TargetDialect>EN-IE</TargetDialect>
-      <TargetDialect>EN-JM</TargetDialect>
-      <TargetDialect>EN-MY</TargetDialect>
-      <TargetDialect>EN-NZ</TargetDialect>
-      <TargetDialect>EN-PH</TargetDialect>
-      <TargetDialect>EN-SG</TargetDialect>
-      <TargetDialect>EN-ZA</TargetDialect>
-      <TargetDialect>EN-TT</TargetDialect>
-      <TargetDialect>EN-GB</TargetDialect>
-      <TargetDialect>EN-US</TargetDialect>
-      <TargetDialect>EN-ZW</TargetDialect>
-    </TargetDialects>
-    <!--QueryUri is the address of this dictionary's XML webservice (which we use to put definitions in additional contexts, such as the spelling checker.)-->
-    <QueryUri DefaultValue="https://contoso.com/ExampleDictionary/WebService.asmx/Define?word="/>
-    <!--Citation Text, Dictionary Name, and Dictionary Home Page will be combined to form the citation line - e.g. this would produce "Examples by: Microsoft", where "Microsoft" is a hyperlink to http://www.microsoft.com-->
-    <CitationText DefaultValue="Examples by: " />
-    <DictionaryName DefaultValue="Microsoft" />
-    <DictionaryHomePage DefaultValue="https://www.microsoft.com" />
-  </Dictionary>
-</OfficeApp>
 ```
 
 
