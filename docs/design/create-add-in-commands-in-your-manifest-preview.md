@@ -1,22 +1,8 @@
 
-# Create add-in commands in your manifest for Excel, Word, and PowerPoint (Preview)
+# Create add-in commands in your manifest for Excel, Word, and PowerPoint
 
 
-Add-in commands provide an easy way to customize the default Office UI with specified UI elements that perform actions. You can use add-in commands to:
-
-- Create UI elements or entry points that make your add-in's functionality easier to use.
-
-- Add buttons or a drop-down list of buttons to the ribbon.
-
-- Add individual menu items; each containing optional submenus; to specific context (shortcut) menus.
-
-- Perform actions when your add-in command is chosen. You can:
-
-  - Show one or more task pane add-ins for users to interact with. Inside your task pane add-in, you can display HTML that uses Office UI Fabric to create a custom UI.
-
-    _or_
-
-  - Run JavaScript code, which normally runs without displaying any UI.
+Add-in commands provide an easy way to customize the default Office UI with specified UI elements that perform actions. For an overview of the feature see [Add-in commands for Excel, Word and PowerPoint](add-in-commands-for-excel-and-word-preview.md)
 
 This article describes how to edit your manifest to define add-in commands. The following diagram shows the hierarchy of elements used to define add-in commands. These elements are described in more detail in this article.
 
