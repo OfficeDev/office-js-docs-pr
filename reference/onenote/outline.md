@@ -1,7 +1,8 @@
 # Outline Object (JavaScript API for OneNote)
 
 _Applies to: OneNote Online_
-_Note: This API is in public preview_
+_Note: This API is in preview_
+
 
 Represents a region on a page that contains paragraphs. An outline can be positioned on the page.
 

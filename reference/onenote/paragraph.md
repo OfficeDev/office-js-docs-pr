@@ -1,7 +1,8 @@
 # Paragraph Object (JavaScript API for OneNote)
 
 _Applies to: OneNote Online_
-_Note: This API is in public preview_
+_Note: This API is in preview_
+
 
 Represents a placeholder object for the contents of an outline. A paragraph can contain any one ParagraphType type of content. Paragraphs are automatically positioned.
 
