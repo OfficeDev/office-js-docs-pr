@@ -1,20 +1,21 @@
 
 # Office Add-ins platform overview
 
-With Office Add-ins, you can make your solution a native part of any platform that Office supports. Using the power of the web and standard web technologies like HTML5, XML, CSS3, JavaScript, and REST APIs, you can create add-ins that interact with data in Excel, Word, PowerPoint, Outlook, Project, and Access Web Apps for SharePoint.
+Office Add-ins enable you to extend Office clients such as Word, Excel, PowerPoint and Outlook using web technologies like HTML, CSS and JavaScript. 
 
-An Office Add-in is a web application hosted in a web browser control or iframe running in the context of an Office host application that can interact with a user's documents or mail items. You can use Office Add-ins to extend and interact with: 
+You can use Office Add-ins to: 
 
 
--  **Documents or data -** Word documents, Excel spreadsheets, PowerPoint presentations, Access browser-based databases, and Project schedules and views.
+-  **Add new functionality to Office clients-** For example, augment Word, Excel, PowerPoint and Outlook by interacting with Office documents and mail items, bringing external data into Office, processing Office documents, exposing 3rd party functionality into Office clients and much more. 
     
--  **Outlook mailbox items -** Email messages, meeting requests, or appointments.
+-  **Create new rich, interactive objects that can be embedded into Office documents -** For example, maps, charts and interactive visualizations that users can add to their own Excel spreadsheets and PowerPoint presentations. Email messages, meeting requests, or appointments.
     
-Add-ins can run in multiple environments, including Office desktop applications, Office Online in both desktop and mobile browsers, and a growing number of Office tablet and phone add-ins. 
+**Office Add-ins run across multiple versions of Office** including Office for Windows Desktop, Office Online, Office for the Mac and Office for the IPad.
 
 >**Note:** For a high-level view of where Office Add-ins are currently supported, see the [Office Add-in host and platform availability](http://dev.office.com/add-in-availability) page. 
 
-When you publish your add-ins to the Office Store or to an on-premises add-in catalog, your add-ins will be available to consumers from their Office applications.
+To make your Add-in available to users you can publish it on the Office Store or to an on-premises add-in catalog.
+
 To try out some add-ins, you can install the following add-ins from the Office Store.
 
 
@@ -29,35 +30,34 @@ To try out some add-ins, you can install the following add-ins from the Office S
 ## Anatomy of an Office Add-in
 
 
-The basic components of an Office Add-in are an XML manifest file and the default webpage of your add-in. The manifest defines various settings including the URL of the webpage that implements the add-in's UI and custom logic. When your add-in is ready for your customers, you upload your add-in's manifest to an on-premises add-in catalog or submit it to the Office Store. The webpage (and any .js or other files required by its implementation) needs to be hosted on a web server, or web hosting service, such as [Microsoft Azure](../publish/host-an-office-add-in-on-microsoft-azure.md).
+The basic components of an Office Add-in are an XML manifest file and your own web application. The manifest defines various settings including how your add-in integrates with Office clients. When your add-in is ready for your customers, you [publish](../publish/publish.md) it an on-premises add-in catalog or [submit it to the Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx). Your web application needs to be hosted on a web server, or web hosting service, such as [Microsoft Azure](../publish/host-an-office-add-in-on-microsoft-azure.md).
 
 
 **Manifest + webpage = an Office Add-in**
-
 ![Manifest plus webpage equals Office Add-in](../../images/DK2_AgaveOverview01.png)
 
-The manifest specifies settings and capabilities of the add-in, such as the following:
+###Manifest
 
-- The URL of the webpage that implements the add-in's UI and programming logic.
+
+The manifest specifies settings and capabilities of the add-in, such as the following:
     
 - The add-in's display name, description, ID, version, and default locale.
     
-- How the add-in activates and displays: 
-    
-      - For add-ins that interact with documents: as a task pane, or in line with document content.
-    
-  - For add-ins that interact with mail items (messages or appointments): when reading or composing the item.
+- How the add-in integrates with Office: 
+      - For add-ins that extend Word/Excel/PowerPoint/Outlook: The native Extension Points the add-in uses to expose functionality, such as buttons on the Ribbon. 
+      - For add-ins that create new embedable objects: The URL of the default page that is loaded for the object.
+       
     
 - The permission level and data access requirements for the add-in.
     
 For more information, see [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md).
 
 
-### Basic components of an Office Add-in
+###Web app
 
-To create an Office Add-in, at minimum, a developer must create an HTML webpage and a manifest file. The HTML page can be published to any web server, or web hosting service, such as [Microsoft Azure](../publish/host-an-office-add-in-on-microsoft-azure.md). The manifest file must point to the location of the webpage and be published to any of the following locations: the public Office Store, an internal SharePoint list, or a shared network location.
+The minimal version of a compliant web app is a static HTML webpage. The page can be hosted any web server, or web hosting service, such as [Microsoft Azure](../publish/host-an-office-add-in-on-microsoft-azure.md). It is responsibility of the Add-in developer to host their web app on their service of choice.  
 
-The most basic Office Add-in consists of a static HTML page that is hosted inside an Office application, but doesn't interact with either the Office document or any other Internet resource. 
+The most basic Office Add-in consists of a static HTML page that is displayed inside an Office application, but doesn't interact with either the Office document or any other Internet resource. However, because it is a web application, you can use any technologies, both client and server side, that your hosting provider supports (e.g. ASP.net, PHP, Node.js, etc.).Then to interact with Office clients and documents your can use Office.js wich is a [JavaScript API](../../docs/develop/understanding-the-javascript-api-for-office.md) that we provide to you. 
 
 
 **Components of a Hello World Office Add-in**
@@ -94,13 +94,12 @@ The Word and Excel JavaScript APIs provide host-specific object models that you 
 
 You can create the following types of Office Add-ins:
  
-- Commands
-- Task pane
-- Content
-- Outlook 
+- Word, Excel and PowerPoint Add-ins
+- Excel and PowerPoint Content Add-ins
+- Outlook Add-ins
 
-### Add-in Commands
-You can use add-in commands in your Office Add-ins to extend the Office UI. For example, you can add buttons for your add-ins on the ribbon or selected contextual menus allowing users to easily access their add-ins within Office. Commands buttons can launch the different types of Office Add-ins (task pane, content, Outlook) or execute UI-less (Javascript code that interacts with the document via office.js) commands. We recommend that you [watch this Channel9 video](https://channel9.msdn.com/Events/Visual-Studio/Connect-event-2015/316) for a deeper overview of this feature.
+### Word, Excel and PowerPoint Add-ins 
+You can **add new functionality** to Office clients using Add-ins. Use add-in commands to extend the Office UI. For example, you can add buttons for your add-ins on the ribbon or selected contextual menus allowing users to easily access their add-ins within Office. Commands buttons can launch the different actions such as showing a pane with a custom HTML or execute a JavaScript function. We recommend that you [watch this Channel9 video](https://channel9.msdn.com/Events/Visual-Studio/Connect-event-2015/316) for a deeper overview of this feature.
 
 **Add-in with commands running in Excel Desktop**
 ![Add-in commands](../../images/addincommands1.png)
@@ -108,27 +107,13 @@ You can use add-in commands in your Office Add-ins to extend the Office UI. For 
 **Add-in with commands running in Excel Online**
 ![Add-in commands](../../images/addincommands2.png)
 
-You can define your commands in your add-in manifest and the Office platform takes care of interpreting them into native UI. Add-in commands are already available for [Outlook](../outlook/add-in-commands-for-outlook.md) and are currently in preview release for Word 2016, Excel 2016, and Excel Online. Commands will be available for PowerPoint in the near future.
+You can define your commands in your add-in manifest and the Office platform takes care of interpreting them into native UI. To get started check out these [samples on GitHub](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/), and see [Add-in commands for Excel, Word and PowerPoint](../design/add-in-commands-for-excel-and-word-preview.md)
 
-To get started with the preview, check out these [samples on GitHub](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/), and see [Add-in commands for Excel, Word and PowerPoint (Preview)](../design/add-in-commands-for-excel-and-word-preview.md)
+>**Note:** Clients that do not support Add-in commands yet will run your Add-in as a **Taskpane** using the DefaultUrl provided on the manifest. The add-in can then be launched using the "My Add-ins" menu from the Insert Tab.
 
+### Excel and PowerPoint Content Add-ins 
 
-### Task pane add-ins
-
-Task pane add-ins work side-by-side with an Office document, and let you supply contextual information and functionality to enhance the document viewing and authoring experience. For example, a task pane add-in can look up and retrieve product information from a web service based on the product name or part number selected in the document.
-
-
-**Task pane add-in**
-
-![Task Pane add-in](../../images/DK2_AgaveOverview04.png)
-
-To try out a task pane add-in in Excel 2013, Excel Online, or Word 2013, install the [Wikipedia](https://store.office.com/wikipedia-WA104099688.aspx?assetid=WA104099688) add-in.
-
-
-### Content add-ins
-
-Content add-ins integrate web-based features as content that shown in line with the body of a document. Content add-ins let you integrate rich, web-based data visualizations, embedded media (such as a YouTube video player or a picture gallery), as well as other external content.
-
+Content add-ins integrate web-based features as **objects that are embedded inside documents**. Content add-ins let you integrate rich, web-based data visualizations, embedded media (such as a YouTube video player or a picture gallery), as well as other external content.
 
 **Content add-in**
 
@@ -136,73 +121,44 @@ Content add-ins integrate web-based features as content that shown in line with 
 
 To try out a content add-in in Excel 2013 or Excel Online, install the [Bing Maps](https://store.office.com/bing-maps-WA102957661.aspx?assetid=WA102957661) add-in.
 
+### Outlook Add-ins
 
-### Outlook add-ins
+Outlook add-ins can extend the Office Ribbon and also display contextually next to an Outlook item when you're viewing or composing it. They can work with an email message, meeting request, meeting response, meeting cancellation, or appointment in a read scenario - the user viewing a received item - or in a compose scenario - the user replying or creating a new item. 
 
-Outlook add-ins display next to an Outlook item when you're viewing or composing it. They can work with an email message, meeting request, meeting response, meeting cancellation, or appointment in a read scenario - the user viewing a received item - or in a compose scenario - the user replying or creating a new item. Outlook add-ins can access contextual information from the item, such as address or tracking ID, and then use that data to access additional information on the server and from web services to create compelling user experiences. In most cases, an Outlook add-in runs without modification on the various supporting host applications, including Outlook, Outlook for Mac, Outlook Web App and OWA for Devices, to provide a seamless experience on the desktop, web, and tablet and mobile devices.
+Outlook add-ins can access contextual information from the item, such as address or tracking ID, and then use that data to access additional information on the server and from web services to create compelling user experiences. In most cases, an Outlook add-in runs without modification on the various supporting host applications, including Outlook, Outlook for Mac, Outlook Web App and OWA for Devices, to provide a seamless experience on the desktop, web, and tablet and mobile devices.
 
+[Learn more about Outlook Add-ins](../outlook/add-in-commands-for-outlook.md)
 
  >**Note**  Outlook add-ins require a minimum version of Exchange 2013 or Exchange Online to host the user's mailbox. POP and IMAP email accounts aren't supported.
 
+**Outlook add-in with command buttons on the ribbon**
 
-**Outlook add-in in a read scenario**
+![Add-in Command](../../images/41e46a9c-19ec-4ccc-98e6-a227283623d1.png)
+
+**Outlook add-in contextual**
 
 ![Contextual add-in](../../images/DK2_AgaveOverview06.png)
 
 To try out an Outlook add-in in Outlook, Outlook for Mac, or Outlook Web App, install the [Package Tracker](https://store.office.com/package-tracker-WA104162083.aspx?assetid=WA104162083) add-in.
 
 
-## Office applications that support Office Add-ins
-
-
-Office Add-ins are supported on a growing number of Office host applications running on the desktop, tablets, mobile devices, and in Office Online in the browser. In many cases, this means you can develop a single add-in that runs on different operating systems and Office host applications. And, your customers will have a consistent experience using your add-in across the desktop, their devices, or web browsers.
-
-For task pane add-ins, this means you can develop a single add-in that runs with Excel, PowerPoint, and Word on the Windows desktop, or with Excel Online, PowerPoint Online, Word Online running in a web browser. For Outlook add-ins, this means you can develop a single add-in that runs with Outlook and Outlook for Mac on the desktop, with OWA for Devices on tablet and mobile devices, or with Outlook Web App in a web browser.
-
-This table shows the Office host applications (including desktop, tablet, mobile, and web clients) that can run Office Add-ins, and the types of add-ins supported by each host.
-
-
-**Supported add-in types**
-
-
-|**Office application**|**Commands**|**Content add-ins**|**Outlook add-ins**|**Task pane add-ins**|
-|:-----|:----|:-----|:-----|:-----|
-|Access web apps||Y||Y|
-|Excel 2013 or later|v2016 Preview|Y||Y|
-|Excel Online|Preview|Y||Y|
-|Outlook 2013 or later|||Y||
-|Outlook for Mac|||Y||
-|Outlook Web App|||Y||
-|OWA for Devices|||Y||
-|PowerPoint 2013 or later||Y||Y|
-|PowerPoint Online||Y||Y|
-|Project 2013 or later||||Y|
-|Word 2013 or later|v2016 Preview|||Y|
-|Word Online||||Y|
-
-For more details, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).
-
 
 ## What can an Office Add-in do?
 
 An Office Add-in can do pretty much anything a webpage can do inside the browser, such as the following:
 
-- Provide an interactive UI and custom logic through JavaScript.
+- Extend Office Native UI by creating custom Ribbon buttons and tabs
+
+- Provide an interactive UI and custom logic through HTML and JavaScript.
     
-- Use JavaScript frameworks such as jQuery.
+- Use JavaScript frameworks such as jQuery, Angular and many others.
     
 - Connect to REST endpoints and web services via HTTP and AJAX.
     
 - Run server-side code or logic, if the page is implemented using a server-side scripting language such as ASP or PHP.
     
-And, like webpages, Office Add-ins are subject to the same restrictions imposed by browsers, such as the same-origin policy for domain isolation, and security zones. 
 
-In addition to the regular capabilities of a webpage, Office Add-ins can interact with the Office application and an add-in user's content through a JavaScript library that the Office Add-ins infrastructure provides. How your add-ins can interact with Office and content depends on the type of add-in: 
-
-
-- For task pane and content add-ins, the API lets your add-in read and write to documents, as well as handle key application and user events, such as when the active selection changes.
-    
-- For Outlook add-ins, the API lets your add-in access email message, meeting request, and appointment item properties, and user profile information. The API also provides access to some Exchange Web Services operations. For more information about Outlook add-ins, see [Outlook add-ins](../outlook/outlook-add-ins.md). For a summary of top features of Outlook add-ins, see [Overview of Outlook add-ins architecture and features](../outlook/overview.md).
+In addition to the regular capabilities of a webpage, Office Add-ins can interact with the Office application and an add-in user's content through a [JavaScript API](../../docs/develop/understanding-the-javascript-api-for-office.md) that the Office Add-ins infrastructure provides. 
     
 
 ## Additional resources
