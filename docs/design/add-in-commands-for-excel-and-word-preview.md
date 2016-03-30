@@ -36,7 +36,7 @@ Watch this video for an overview of the feature: [Add-in Commands in Office Ribb
 ## Get started creating add-in commands
 
  - To get started using add-in commands follow these [samples and documentation](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/)
- - For a detailed reference of the manifest that uses commands see [Create add-in commands in your manifest for Excel, Word and PowerPoint](../create-add-in-commands-in-your-manifest-preview.md) 
+ - For a detailed reference of the manifest that uses commands see [Create add-in commands in your manifest for Excel, Word and PowerPoint](create-add-in-commands-in-your-manifest-preview.md) 
 
 
 
