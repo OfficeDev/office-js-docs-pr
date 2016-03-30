@@ -94,12 +94,15 @@ The Word and Excel JavaScript APIs provide host-specific object models that you 
 
 You can create the following types of Office Add-ins:
  
-- Word, Excel and PowerPoint Add-ins
-- Excel and PowerPoint Content Add-ins
-- Outlook Add-ins
+- Word, Excel and PowerPoint Add-ins that extend functionality
+- Excel and PowerPoint Add-ins that create new objects
+- Outlook Add-ins that extend functionality
 
-### Word, Excel and PowerPoint Add-ins 
-You can **add new functionality** to Office clients using Add-ins. Use add-in commands to extend the Office UI. For example, you can add buttons for your add-ins on the ribbon or selected contextual menus allowing users to easily access their add-ins within Office. Commands buttons can launch the different actions such as showing a pane with a custom HTML or execute a JavaScript function. We recommend that you [watch this Channel9 video](https://channel9.msdn.com/Events/Visual-Studio/Connect-event-2015/316) for a deeper overview of this feature.
+### Word, Excel and PowerPoint Add-ins that extend functionality 
+You can **add new functionality** to Word, Excel, PowerPoint by registering your add-in using a [Taskpane Add-in manifest](../design/add-in-commands-for-excel-and-word-preview.md). This manifest supports **2 integration modes**:
+
+####Add-in Commands
+Use add-in commands to extend the user interface of Office for Windows Desktop and Office Online. For example, you can add **buttons for your add-ins on the Ribbon** or selected contextual menus allowing users to easily access their add-ins within Office. Commands buttons can launch the different actions such as **showing a pane (or multiple panes) with a custom HTML** or **execute a JavaScript function**. We recommend that you [watch this Channel9 video](https://channel9.msdn.com/Events/Visual-Studio/Connect-event-2015/316) for a deeper overview of this feature.
 
 **Add-in with commands running in Excel Desktop**
 ![Add-in commands](../../images/addincommands1.png)
@@ -107,13 +110,16 @@ You can **add new functionality** to Office clients using Add-ins. Use add-in co
 **Add-in with commands running in Excel Online**
 ![Add-in commands](../../images/addincommands2.png)
 
-You can define your commands in your add-in manifest and the Office platform takes care of interpreting them into native UI. To get started check out these [samples on GitHub](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/), and see [Add-in commands for Excel, Word and PowerPoint](../design/add-in-commands-for-excel-and-word-preview.md)
+You can define your commands in your add-in manifest using VersionOverrides and the Office platform takes care of interpreting them into native UI. To get started check out these [samples on GitHub](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/), and see [Add-in commands for Excel, Word and PowerPoint](../design/add-in-commands-for-excel-and-word-preview.md)
 
->**Note:** Clients that do not support Add-in commands yet will run your Add-in as a **Taskpane** using the DefaultUrl provided on the manifest. The add-in can then be launched using the "My Add-ins" menu from the Insert Tab.
+####Insertable Taskpanes
+Clients that do not support Add-in commands yet (e.g. Office 2013, Office for Mac and Office for IPad) will run your Add-in as a **Taskpane** using the DefaultUrl provided on the manifest. The add-in can then be launched using the "My Add-ins" menu from the Insert Tab. 
 
-### Excel and PowerPoint Content Add-ins 
+>Important: A single manifest can have both, a taskpane add-in that runs in clients that do not support commands as well as a version of your add-in with commands. This allows you to have a single add-in that works across all clients that support Office Add-ins.
+ 
+###Excel and PowerPoint add-ins that create new objects 
 
-Content add-ins integrate web-based features as **objects that are embedded inside documents**. Content add-ins let you integrate rich, web-based data visualizations, embedded media (such as a YouTube video player or a picture gallery), as well as other external content.
+Use a content add-in manifest to integrate **web-based objects that can be embedded inside documents**. Content add-ins let you integrate rich, web-based data visualizations, embedded media (such as a YouTube video player or a picture gallery), as well as other external content.
 
 **Content add-in**
 
@@ -121,7 +127,7 @@ Content add-ins integrate web-based features as **objects that are embedded insi
 
 To try out a content add-in in Excel 2013 or Excel Online, install the [Bing Maps](https://store.office.com/bing-maps-WA102957661.aspx?assetid=WA102957661) add-in.
 
-### Outlook Add-ins
+### Outlook Add-ins that extend functionality
 
 Outlook add-ins can extend the Office Ribbon and also display contextually next to an Outlook item when you're viewing or composing it. They can work with an email message, meeting request, meeting response, meeting cancellation, or appointment in a read scenario - the user viewing a received item - or in a compose scenario - the user replying or creating a new item. 
 
