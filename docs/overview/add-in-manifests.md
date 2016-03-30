@@ -9,20 +9,20 @@ An XML manifest file based on this schema enables an Office Add-in to do the fol
 
 - Describe itself by providing an ID, version, description, display name, and default locale.
     
-- Specify how the Add-in integrates with Office, including any custom UI, such as Ribbon buttons the Add-in creates.
+- Specify how the add-in integrates with Office, including any custom UI, such as ribbon buttons the add-in creates.
     
-- Specify the requested default dimensions for content Office Add-ins, and requested height for Outlook Office Add-ins.
+- Specify the requested default dimensions for content add-ins, and requested height for Outlook add-ins.
     
 - Declare permissions that the Office Add-in requires, such as reading or writing to the document.
     
-- For Outlook Office Add-ins, define the rule or rules that specify the context in which they will be activated and interact with a message, appointment, or meeting request item.
+- For Outlook add-ins, define the rule or rules that specify the context in which they will be activated and interact with a message, appointment, or meeting request item.
     
-For examples of manifest v1.1 XML files, see [Manifest v1.1 XML file examples](#O15AgaveManifestOverview_Samplev1_1).
+For examples of manifest v1.1 XML files, see [Manifest v1.1 XML file examples](#manifest-v1.1-xml-file-examples-and-schemas).
 
 ## Required elements
 
 
-The following table specifies the elements that are required for the three types of Office Add-ins and the Dictionary task pane add-in.
+The following table specifies the elements that are required for the three types of Office Add-ins.
 
 
  >**Important**: For add-ins submitted to the Office Store, all add-in locations, such as the source file locations specified in the  **SourceLocation** element, must be SSL-secured (HTTPS). For more information see, [What are some common submission errors to avoid?](http://msdn.microsoft.com/library/0ceb385c-a608-40cc-8314-78e39d6c75d0%28Office.15%29.aspx#bk_q2)
@@ -62,12 +62,12 @@ The following table specifies the elements that are required for the three types
 ## Manifest v1.1 XML file examples and schemas
 
 
-The following sections show examples of manifest v1.1 XML files for content, task pane, Outlook, and dictionary Office Add-ins.
+The following sections show examples of manifest v1.1 XML files for content, task pane,  and Outlook add-ins.
 
-If you're using Visual Studio to develop your Office Add-in, you can use the Visual Studio manifest designer to change Office Add-in manifest settings, rather than manually changing the underlying XML markup. By default, when you open an Office Add-in manifest file in Visual Studio, it opens in the manifest designer. The designer organizes the fields in the manifest, making them easier to find. Some fields have drop-down list boxes that contain valid field values, helping reduce data entry errors.
+If you're using Visual Studio to develop your Office Add-in, you can use the Visual Studio manifest designer to change manifest settings, rather than manually changing the underlying XML markup. By default, when you open an Office Add-in manifest file in Visual Studio, it opens in the manifest designer. The designer organizes the fields in the manifest, making them easier to find. Some fields have drop-down list boxes that contain valid field values, helping reduce data entry errors.
 
-### Office Add-in manifest v1.1 example with commands and fallback Taskpane
-[Taskpane Manifest Schema](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas/taskpane)
+### Office Add-in manifest v1.1 example with commands and fallback task pane
+[Task pane manifest schema](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas/taskpane)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -262,8 +262,8 @@ If you're using Visual Studio to develop your Office Add-in, you can use the Vis
 </OfficeApp>
 ```
 
-### Content Office Add-in manifest v1.1 example
-[Content Manifest Schema](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas/content)
+### Content add-in manifest v1.1 example
+[Content manifest schema](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas/content)
 
 
 ```XML
@@ -299,8 +299,8 @@ If you're using Visual Studio to develop your Office Add-in, you can use the Vis
 </OfficeApp>
 ```
 
-### Outlook Office Add-in manifest v1.1 example
-[Content Manifest Schema](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas/mail)
+### Outlook add-in manifest v1.1 example
+[Content manifest schema](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas/mail)
 
 
 ```XML
@@ -403,13 +403,11 @@ For information about validating a manifest against a schema, see [XML Schema (X
 ## Specify domains you want to open in the add-in window
 
 
-By default, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](http://msdn.microsoft.com/en-us/library/00d95bb0-e8f5-647f-790a-0aa3aabc8141%28Office.15%29.aspx) element of the manifest file), that URL will open in a new browser window outside add-in pane of the Office host application. This default behavior protects the user against unexpected page navigation within the add-in pane from embedded **iframe** elements.
+By default, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](http://msdn.microsoft.com/en-us/library/00d95bb0-e8f5-647f-790a-0aa3aabc8141%28Office.15%29.aspx) element of the manifest file), that URL will open in a new browser window outside the add-in pane of the Office host application. This default behavior protects the user against unexpected page navigation within the add-in pane from embedded **iframe** elements.
 
-To override this behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](http://msdn.microsoft.com/en-us/library/13cf867d-9b24-786f-0687-6bcdc954628e%28Office.15%29.aspx) element of the manifest file. If the add-in tries to go to a URL in a domain that isn't in the list, that URL will open in a new browser window (outside of the add-in pane).
+To override this behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](http://msdn.microsoft.com/en-us/library/13cf867d-9b24-786f-0687-6bcdc954628e%28Office.15%29.aspx) element of the manifest file. If the add-in tries to go to a URL in a domain that isn't in the list, that URL will open in a new browser window (outside the add-in pane).
 
-The following XML manifest example hosts its main add-in page in the  `https://www.contoso.com` domain as specified in the **SourceLocation** element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](http://msdn.microsoft.com/en-us/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx) element within the **AppDomains** element list. If the add-in navigates to a page in the www.northwindtraders.com domain, that page will open in the add-in pane.
-
-
+The following XML manifest example hosts its main add-in page in the  `https://www.contoso.com` domain as specified in the **SourceLocation** element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](http://msdn.microsoft.com/en-us/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx) element within the **AppDomains** element list. If the add-in goes to a page in the www.northwindtraders.com domain, that page will open in the add-in pane.
 
 
 ```XML
