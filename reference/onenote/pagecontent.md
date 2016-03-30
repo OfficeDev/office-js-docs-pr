@@ -1,7 +1,8 @@
 # PageContent Object (JavaScript API for OneNote)
 
 _Applies to: OneNote Online_
-_Note: This API is in public preview_
+_Note: This API is in preview_
+
 
 Represents a placeholder object for the top-level content objects of a page. Top-level content objects can be positioned on the page.
 
