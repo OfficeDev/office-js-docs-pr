@@ -9,7 +9,7 @@ An XML manifest file based on this schema enables an Office Add-in to do the fol
 
 - Describe itself by providing an ID, version, description, display name, and default locale.
     
-- Specify how the Add-in integrates with Office
+- Specify how the Add-in integrates with Office, including any custom UI, such as Ribbon buttons the Add-in creates.
     
 - Specify the requested default dimensions for content Office Add-ins, and requested height for Outlook Office Add-ins.
     
@@ -67,7 +67,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 If you're using Visual Studio to develop your Office Add-in, you can use the Visual Studio manifest designer to change Office Add-in manifest settings, rather than manually changing the underlying XML markup. By default, when you open an Office Add-in manifest file in Visual Studio, it opens in the manifest designer. The designer organizes the fields in the manifest, making them easier to find. Some fields have drop-down list boxes that contain valid field values, helping reduce data entry errors.
 
 ### Office Add-in manifest v1.1 example with commands and fallback Taskpane
-[Taskpane Manifest Schema](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas)
+[Taskpane Manifest Schema](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas/taskpane)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -395,12 +395,9 @@ If you're using Visual Studio to develop your Office Add-in, you can use the Vis
 ## Validate the Office Add-ins manifest
 
 
-To make sure that the manifest file that describes your Office Add-in is correct and complete, validate it against the XML Schema Definition (XSD) file. You can use an XML schema validation tool or Visual Studio to validate the manifest. You can also download the [Office App Compatibility Kit](https://www.microsoft.com/en-us/download/details.aspx?id=46831) and run it on your add-in.
+To make sure that the manifest file that describes your Office Add-in is correct and complete, validate it against the [XML Schema Definition (XSD) files](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas). You can use an XML schema validation tool or Visual Studio to validate the manifest. You can also download the [Office App Compatibility Kit](https://www.microsoft.com/en-us/download/details.aspx?id=46831) and run it on your add-in.
 
 For information about validating a manifest against a schema, see [XML Schema (XSD) validation tool](http://stackoverflow.com/questions/124865/xml-schema-xsd-validation-tool).
-
-
- >**Note**  Validating your manifest against the offappmanifest.xsd file is obsolete. For information about updating your manifest to schema version 1.1, see [Update the version of your JavaScript API for Office and manifest schema files](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md).
 
 
 ## Specify domains you want to open in the add-in window
@@ -441,9 +438,9 @@ The following XML manifest example hosts its main add-in page in the  `https://w
 
 - [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md)
     
-- [Create add-in commands in your manifest for Excel, Word, and PowerPoint (Preview)](../../docs/design/create-add-in-commands-in-your-manifest-preview.md)
+- [Create add-in commands in your manifest for Excel, Word, and PowerPoint](../../docs/design/create-add-in-commands-in-your-manifest-preview.md)
     
 - [Localization for Office Add-ins](../../docs/develop/localization.md)
     
-- [Schema reference for Office Add-ins manifests (v1.1)](http://msdn.microsoft.com/en-us/library/7e0cadc3-f613-8eb9-57ef-9032cbb97f92%28Office.15%29.aspx)
+- [Schema reference for Office Add-ins manifests](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas)
     
