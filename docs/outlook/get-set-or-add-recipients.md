@@ -2,7 +2,7 @@
 # Get, set, or add recipients when composing an appointment or message in Outlook
 
 
-The JavaScript API for Office provides asynchronous methods ([Recipients.getAsync](../../reference/outlook/Recipients.md), [Recipients.setAsync](../../reference/outlook/Recipients.md), or [Recipients.addAysnc](../../reference/outlook/Recipients.md)) to respectively get, set, or add recipients in a compose form of an appointment or message. These asynchronous methods are available to only compose add-ins. To use these methods, make sure you have set up the add-in manifest appropriately for Outlook to activate the add-in in compose forms, as described in the section [Setting up Outlook add-ins for compose forms](../outlook/compose-scenario.md#mod_off15_CreatingForCompose_SettingUp) of [Create Outlook add-ins for compose forms](../outlook/compose-scenario.md).
+The JavaScript API for Office provides asynchronous methods ([Recipients.getAsync](../../reference/outlook/Recipients.md), [Recipients.setAsync](../../reference/outlook/Recipients.md), or [Recipients.addAysnc](../../reference/outlook/Recipients.md)) to respectively get, set, or add recipients in a compose form of an appointment or message. These asynchronous methods are available to only compose add-ins. To use these methods, make sure you have set up the add-in manifest appropriately for Outlook to activate the add-in in compose forms, as described in [Create Outlook add-ins for compose forms](../outlook/compose-scenario.md).
 
 Some of the properties that represent recipients in an appointment or message are available for read access in a compose form and in a read form. These properties include  [optionalAttendees](../../reference/outlook/Office.context.mailbox.item.md) and [requiredAttendees](../../reference/outlook/Office.context.mailbox.item.md) for appointments, and [cc](../../reference/outlook/Office.context.mailbox.item.md), and  [to](../../reference/outlook/Office.context.mailbox.item.md) for messages. In a read form, you can access the property directly from the parent object, such as:
 
@@ -24,7 +24,7 @@ item.cc.getAsync
 
 These properties are available for write access in only compose forms and not read forms.
 
-As with most asynchronous methods in the JavaScript API for Office,  **getAsync**,  **setAsync**, and  **addAsync** take optional input parameters. For more information about specifying these optional input parameters, see [passing optional parameters to asynchronous methods](../../docs/develop/asynchronous-programming-in-office-add-ins.md#AsyncProgramming_OptionalParameters) in [Asynchronous programming in Office Add-ins](../../docs/develop/asynchronous-programming-in-office-add-ins.md).
+As with most asynchronous methods in the JavaScript API for Office,  **getAsync**,  **setAsync**, and  **addAsync** take optional input parameters. For more information about specifying these optional input parameters, see [passing optional parameters to asynchronous methods](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline) in [Asynchronous programming in Office Add-ins](../../docs/develop/asynchronous-programming-in-office-add-ins.md).
 
 
 ## To get recipients
