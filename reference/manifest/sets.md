@@ -37,5 +37,5 @@ Specifies the minimum subset of the JavaScript API for Office that your Office A
 
 For more information about requirement sets, see [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md).
 
-For more information about the  **MinVersion** attribute of the **Set** element and the **DefaultMinVersion** attribute of the **Sets** element, see [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md#SpecifyRequirementSets_minversion).
+For more information about the  **MinVersion** attribute of the **Set** element and the **DefaultMinVersion** attribute of the **Sets** element, see [Set the Requirements element in the manifest](../../docs/overview/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest).
 
