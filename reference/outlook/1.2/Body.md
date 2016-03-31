@@ -38,7 +38,7 @@ The content type is returned as one of the [CoercionType](Office.md#coerciontype
 
 Adds the specified content to the beginning of the item body.
 
-The `prependAsync` method inserts the specified string at the beginning of the item body. Calling the `prependAsync` method is the same as calling the [`setSelectedDataAsync`](Body.md#setSelectedDataAsync) method with the insertion point at the beginning of the body content.
+The `prependAsync` method inserts the specified string at the beginning of the item body. Calling the `prependAsync` method is the same as calling the [`setSelectedDataAsync`](#setselecteddataasyncdata-options-callback) method with the insertion point at the beginning of the body content.
 
 When including links in HTML markup, you can disable online link preview by setting the `id` attribute on the anchor (`<a>`) to `LPNoLP`. For example:
 
