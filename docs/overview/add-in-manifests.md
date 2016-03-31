@@ -429,7 +429,7 @@ The following XML manifest example hosts its main add-in page in the  `https://w
 ```
 
 
-## Taskpane VersionOverrides reference (add-in commands)
+## Taskpane VersionOverrides node (add-in commands)
 
 Add-in commands provide an easy way to customize the default Office UI with UI elements that perform actions; for example, you can add custom buttons on the ribbon. To create commands, you add a VersionOverrides node to an existing task pane manifest. 
 
