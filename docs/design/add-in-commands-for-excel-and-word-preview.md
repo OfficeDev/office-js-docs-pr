@@ -17,12 +17,12 @@ You can use add-in commands to make your add-ins easier to find and use. Current
 - Context menus - Extend selected context menus. 
 
 ####Control types
-- Simple buttons that trigger actions.
-- Menus that contain multiple buttons that trigger actions.
+- Simple buttons - trigger specific actions.
+- Menus - Contain multiple buttons that trigger actions.
 
 ####Actions
-- ShowTaskpane - Display one or multiple panes that load custom HTML pages inside them.
-- ExecuteFunction - Load an invisible HTML page and then execute a JavaScript function within it. To show UI within your function, you can use displayDialog.  
+- ShowTaskpane - Displays one or multiple panes that load custom HTML pages inside them.
+- ExecuteFunction - Loads an invisible HTML page and then execute a JavaScript function within it. To show UI within your function, you can use displayDialog.  
 
 
 For an overview of the feature, see the video [Add-in Commands in Office Ribbon](https://channel9.msdn.com/Events/Visual-Studio/Connect-event-2015/316).
