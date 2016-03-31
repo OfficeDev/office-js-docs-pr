@@ -68,7 +68,7 @@ The following example will use vlookup function to first find the unit of Wrench
 
 ```
 
-## [List of Supported Worksheet Functions](#list)
+## List of Supported Worksheet Functions
 
 | Method           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|

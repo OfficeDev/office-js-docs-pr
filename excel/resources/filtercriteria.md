@@ -15,13 +15,11 @@ Represents the filtering criteria applied to a column.
 |filterOn|string|The property used by the filter to determine whether the values should stay visible. Possible values are: 	BottomItems, BottomPercent, CellColor, Dynamic, FontColor, Values, TopItems, TopPercent, Icon, Custom |
 |values|object[]|The set of values to be used as part of "values" filtering.|
 
-_See property access [examples.](#property-access-examples)_
-
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
 |icon|[Icon](icon.md)|The icon used to filter cells. Used with "icon" filtering.|
-|operator|[FilterOperator](filteroperator.md)|The operator used to combine criterion 1 and 2 when using "custom" filtering.|
+|operator|FilterOperator|The operator used to combine criterion 1 and 2 when using "custom" filtering.|
 
 ## Methods
 
