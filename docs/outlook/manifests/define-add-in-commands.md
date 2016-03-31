@@ -22,7 +22,7 @@ The following table shows the child elements of  **VersionOverrides**.
 |**Description**|Describes the add-in. This overrides the  **Description** element in any parent portion of the manifest. The text of the description is contained in a child element of the **LongString** element contained in the **Resources** element. The **resid** attribute of the **Description** element is set to the value of the **id** attribute of the **String** element that contains the text.|
 |**Requirements**|Specifies the minimum requirement set and version of Office.js that the Office add-in needs to activate. It is defined the same as in [Outlook add-in manifests](../../outlook/manifests/manifests.md). This overrides the  **Requirements** element in the parent portion of the manifest.|
 |**Hosts**|Required. Specifies a collection of host types and their settings. It overrides the  **Hosts** element in the parent portion of the manifest. It must have an **xsi:type** attribute set to "MailHost", and it must contain a **FormFactor** child element.|
-|**Resources**|Defines a collection of resources (strings, URLs, and images) that are referenced by other elements of the manifest. This is described in the [Resources element](#VersionOverrides10_Resources) section later in this topic.|
+|**Resources**|Defines a collection of resources (strings, URLs, and images) that are referenced by other elements of the manifest. This is described in the [Resources element](#resources-element) section later in this topic.|
 
 Here an example of  **VersionOverrides**, showing its child elements.
 
@@ -51,7 +51,7 @@ Here an example of  **VersionOverrides**, showing its child elements.
 
 The  **FormFactor** element specifies the settings for an add-in for a given form factor. It is a child node under **Hosts** / **Host**. Currently, it can only specify the desktop ( **DesktopFormFactor**). It contains all the add-in information for that form factor except for the  **Resources** node.
 
-The form factor contains the  **FunctionFile** element and one or more **ExtensionPoint** elements. For more information see the following [FunctionFile element](#VersionOverrides10_FunctionFile) and [ExtensionPoint element](#VersionOverrides10_ExtensionPoint) sections. The following is an example of **FormFactor**, showing its child nodes.
+The form factor contains the  **FunctionFile** element and one or more **ExtensionPoint** elements. For more information see the following [FunctionFile element](#functionfile-element) and [ExtensionPoint element](#extensionpoint-element) sections. The following is an example of **FormFactor**, showing its child nodes.
 
 ```XML
 <OfficeApp>
@@ -81,7 +81,7 @@ The form factor contains the  **FunctionFile** element and one or more **Extensi
 ## FunctionFile element
 
 
-The  **FunctionFile** element is a child element under **FormFactor**. It specifies the source code file for operations that an add-in exposes through add-in commands that execute a JavaScript function instead of displaying UI. The **resid** attribute of the **FunctionFile** element is set to the value of the **id** attribute of a **Url** element in the **Resources** element that contains the URL to an HTML file that contains or loads all of the JavaScript functions used by UI-less add-in command buttons. For more information, see the [Button controls](#VersionOverrides10_Buttons) section of this article.
+The  **FunctionFile** element is a child element under **FormFactor**. It specifies the source code file for operations that an add-in exposes through add-in commands that execute a JavaScript function instead of displaying UI. The **resid** attribute of the **FunctionFile** element is set to the value of the **id** attribute of a **Url** element in the **Resources** element that contains the URL to an HTML file that contains or loads all of the JavaScript functions used by UI-less add-in command buttons. For more information, see the [Button controls](#button-controls) section of this article.
 
 The JavaScript in the HTML file indicated by the  **FunctionFile** element must call `Office.initialize` and define named functions that take a single parameter: `event`. The functions should use the [item.notificationMessages](../../../reference/outlook/Office.context.mailbox.item.md) API to indicate progress, success, or failure to the user. It should also call [event.completed](../../../reference/shared/event.completed.md) when it has finished execution. The name of the functions are used in the **FunctionName** element for UI-less buttons.
 
@@ -175,7 +175,7 @@ Where:
 |**OfficeTab**|Required. The pre-existing tab to use. Currently, the  **id** attribute can only be "TabDefault".|
 |**Group**|A group of user interface extension points in a tab. A group can have up to six controls.The  **id** attribute is required. It is a string with a maximum of 125 characters.|
 |**Label**|Required. The label of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the **Resources** element.|
-|**Control**|A group requires at least one control. Currently, only buttons and menus are supported. See the following [Button controls](#VersionOverrides10_Buttons) and [Menu (dropdown button) controls](#VersionOverrides10_Menus) sections for more information.|
+|**Control**|A group requires at least one control. Currently, only buttons and menus are supported. See the following [Button controls](#VersionOverrides10_Buttons) and [Menu (dropdown button) controls](#menu-dropdown-button-controls) sections for more information.|
 
 You can also create a custom tab on the ribbon by using the  **CustomTab** element, as shown in the following example.
 
@@ -201,7 +201,7 @@ Where:
 |**CustomTab**|Required. The  **id** attribute must be unique within the manifest.|
 |**Group**|A group of user interface extension points in a tab. A group can have up to six controls.The  **id** attribute is required. It is a string with a maximum of 125 characters.|
 |**Label**|Required. The label of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the **Resources** element.|
-|**Control**|A group requires at least one control. Currently, only buttons and menus are supported. See the following [Button controls](#VersionOverrides10_Buttons) and[Menu (dropdown button) controls](#VersionOverrides10_Menus) sections for more information.|
+|**Control**|A group requires at least one control. Currently, only buttons and menus are supported. See the following [Button controls](#button-controls) and[Menu (dropdown button) controls](#menu-dropdown-button-controls) sections for more information.|
 |**Label**|Required. The label of the custom tab. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the **Resources** element.|
 
 #### Button controls
@@ -310,7 +310,7 @@ Where the  **id** attribute is a string with a maximum of 125 characters and the
 |**Description**|Required. The description for the supertip. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **LongStrings** element in the **Resources** element.|
 |**Icon**|Required. Contains the  **Image** elements for the menu.|
 |**Image**|An image for the menu. The  **resid** attribute must be set to the value of the **id** attribute of an **Image** element in the **Images** element in the **Resources** element. The **size** attribute indicates the size in pixels of the image. Three image sizes are required (16, 32, and 80 pixels) while five other sizes are supported (20, 24, 40, 48, and 64 pixels).|
-|**Items**|Required. Contains the  **Item** elements for the menu. Each **Item** element contains the same child elements as a [Button controls](#VersionOverrides10_Buttons).|
+|**Items**|Required. Contains the  **Item** elements for the menu. Each **Item** element contains the same child elements as a [Button controls](#button-controls).|
 
 
 The following is an example of a menu.
