@@ -1,7 +1,8 @@
 
 # Privacy, permissions, and security for Outlook add-ins
 End users, developers, and administrators can use the tiered permission levels of the security model for Outlook add-ins to control privacy and performance.
-
+
+
 
 This article describes the possible permissions that Outlook add-ins can request, and examines the security model from the following perspectives:
 
@@ -31,7 +32,7 @@ Manifest schema version 1.1 includes four levels of permissions.
 |Read item|ReadItem|
 |Read/write item|ReadWriteItem|
 |Read/write mailbox|ReadWriteMailbox|
-The four levels of permissions are cumulative: the  **read/write mailbox** permission includes the permissions of **read/write item**,  **read item** and **restricted**,  **read/write item** includes **read item** and **restricted**, and the  **read item** permission includes **restricted**. Figure 1 shows the four levels of permissions and describes the capabilities offered to the end user, developer, and administrator by each tier. For more information about these permissions, see [End users: privacy and performance concerns](#olowa15conagave_privacy), [Developers: permission choices and resource usage limits](#olowa15conagave_choices), and [Understanding Outlook add-in permissions](../outlook/understanding-outlook-add-in-permissions.md). 
+The four levels of permissions are cumulative: the  **read/write mailbox** permission includes the permissions of **read/write item**,  **read item** and **restricted**,  **read/write item** includes **read item** and **restricted**, and the  **read item** permission includes **restricted**. Figure 1 shows the four levels of permissions and describes the capabilities offered to the end user, developer, and administrator by each tier. For more information about these permissions, see [End users: privacy and performance concerns](#end-users-privacy-and-performance-concerns), [Developers: permission choices and resource usage limits](#developers-permission-choices-and-resource-usage-limits), and [Understanding Outlook add-in permissions](../outlook/understanding-outlook-add-in-permissions.md). 
 
 
 **Figure 1. Relating the four-tier permission model to the end user, developer, and administrator**
