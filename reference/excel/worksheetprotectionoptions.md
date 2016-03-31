@@ -20,7 +20,7 @@ Represents the options in sheet protection.
 |allowPivotTables|bool|Represents the worksheet protection option of allowing using pivot table feature.|
 |allowSort|bool|Represents the worksheet protection option of allowing using sort feature.|
 
-_See property access [examples.](#property-access-examples)_
+_See property access [examples.](#examples)_
 
 ## Relationships
 None
