@@ -2,7 +2,6 @@
 # Office Add-ins XML manifest
 
 
-
 The XML manifest file of an Office Add-in enables you to declaratively describe how your add-in should be activated when an end user installs and uses it with Office documents and applications. 
 
 An XML manifest file based on this schema enables an Office Add-in to do the following:
@@ -430,9 +429,9 @@ The following XML manifest example hosts its main add-in page in the  `https://w
 ```
 
 
-## Taskpane VersionOverrides Reference (Add-in Commands)
+## Taskpane VersionOverrides node (add-in commands)
 
-Add-in commands provide an easy way to customize the default Office UI with specified UI elements that perform actions, for example, custom buttons on the Ribbon. To create commands you add a VersionOverrides section to an existing Taskpane manifest. 
+Add-in commands provide an easy way to customize the default Office UI with UI elements that perform actions; for example, you can add custom buttons on the ribbon. To create commands, you add a VersionOverrides node to an existing task pane manifest. 
 
 This section describes the different elements included in the VersionOverrides node. The following diagram shows the hierarchy of elements used to define add-in commands. These elements are described in more detail in this section.
 
@@ -574,7 +573,7 @@ The following code shows how to implement the function used by  **FunctionName**
 ```
 
 
- >**Important**  The call to  **event.completed** signals that you have successfully handled the event. When a function is called multiple times, such as multiple clicks on the same add-in command, all events are automatically queued. The first event runs automatically, while the other events remain on the queue. When your function calls **event.completed**, the next queued call to that function runs. You must implement  **event.completed**, otherwise your function will not run.
+ >**Important**  The call to  **event.completed** signals that you have successfully handled the event. When a function is called multiple times, such as multiple clicks on the same add-in command, all events are automatically queued. The first event runs automatically, while the other events remain on the queue. When your function calls **event.completed**, the next queued call to that function runs. You must implement  **event.completed**; otherwise your function will not run.
 
 
 ###ExtensionPoints
@@ -641,7 +640,7 @@ The following examples show how to use the  **ExtensionPoint** element with **Pr
 
 |
 
-###Button Controls
+###Button controls
 
 
 A button performs a single action when the user selects it. It can either execute a JavaScript function or show a task pane. The following example shows how to define two buttons. The first button runs a JavaScript function without showing a UI, and the second button shows a task pane. In the  **Control** element:
