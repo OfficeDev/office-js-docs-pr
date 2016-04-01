@@ -2,14 +2,16 @@
 
 This article walks you through building a simple task pane add-in that adds some text to a OneNote page.
 
-   ![The OneNote add-in built from this walkthrough](../../images/onenote-first-add-in.png)
-
 - [Contact us to set up your notebook](#contact-us)
 - [Set up your dev environment](#setup)
 - [Create the add-in project](#create-project)
 - [Configure the add-in manifest](#manifest)
 - [Develop the add-in](#develop)
 - [Test the add-in](#test)
+
+The following image shows the add-in that you'll create.
+
+   ![The OneNote add-in built from this walkthrough](../../images/onenote-first-add-in.png)
 
 <a name="contact-us"></a>
 ### Step 1: Contact us to set up your notebook
@@ -213,4 +215,4 @@ https://localhost:8443/app/home/home.html
 - [OneNote add-ins JavaScript programming overview (Preview)](onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API reference (Preview)](../../reference/onenote/onenote-add-ins-javascript-reference.md)
 - [Rubric Grader sample (Preview)](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader-Preview)
-- [Office Add-ins](https://dev.office.com/docs/add-ins/overview/office-add-ins)
+- [Office Add-ins platform overview](https://dev.office.com/docs/add-ins/overview/office-add-ins)
