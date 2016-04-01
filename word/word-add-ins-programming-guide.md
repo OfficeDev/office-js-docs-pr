@@ -78,7 +78,7 @@ The Word JavaScript object model is loosely coupled with the objects in Word. Th
 
 The Word proxy objects have methods for accessing and updating the object model. These methods are executed sequentially in the order in which they were queued in the batch. A batch of commands is formed before a context.sync() call is made. All of the commands queued in all of the objects that use the context will be executed.
 
-In example 3, we demonstrate how the queue of commands works. When context.sync() is called, the first thing that happens is that the [command to load](Word%20Add-ins%20JavaScript%20Reference/loadoption.md) the body text is executed in Word. Then, the command to insert text into the body on Word occurs. The results are then returned to the body proxy object. The value of the body.text property in the Word JavaScript will be the value of the Word document body <u>before</u> the text was inserted into Word document.
+In example 3, we demonstrate how the queue of commands works. When context.sync() is called, the first thing that happens is that the [command to load](../reference/word/loadoption.md#loadoption-object-javascript-api-for-word) the body text is executed in Word. Then, the command to insert text into the body on Word occurs. The results are then returned to the body proxy object. The value of the body.text property in the Word JavaScript will be the value of the Word document body <u>before</u> the text was inserted into Word document.
 
 **Example 3. Executing a batch of commands.**
 

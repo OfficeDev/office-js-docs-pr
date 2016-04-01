@@ -169,4 +169,4 @@ For more information about Office host application and server requirements, see 
 #### Other resources
 
 
-[Bind to regions in a document or spreadsheet](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md#BindRegions_NamedItem)
+[Bind to regions in a document or spreadsheet](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md#add-a-binding-to-a-named-item)

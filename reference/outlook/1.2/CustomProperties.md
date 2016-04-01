@@ -16,9 +16,9 @@ Because Outlook for Mac doesn’t cache custom properties, if the user’s netwo
 
 ### Example
 
-The following example shows how to use the `loadCustomPropertiesAsync` method to asynchronously load custom properties that are specific to the current item. The example also shows how to use the [`saveAsync`](CustomProperties.md#saveAsync) method to save these properties back to the server. After loading the custom properties, the example uses the [`get`](CustomProperties.md#get) method to read the custom property `myProp`, the [`set`](CustomProperties.md#set) method to write the custom property `otherProp`, and then finally calls the `saveAsync` method to save the custom properties.
+The following example shows how to use the `loadCustomPropertiesAsync` method to asynchronously load custom properties that are specific to the current item. The example also shows how to use the [`saveAsync`](#saveasynccallback-asynccontext) method to save these properties back to the server. After loading the custom properties, the example uses the [`get`](CustomProperties.md#get) method to read the custom property `myProp`, the [`set`](CustomProperties.md#set) method to write the custom property `otherProp`, and then finally calls the `saveAsync` method to save the custom properties.
 
-```
+```JavaScript
 Office.initialize = function () {
   // Checks for the DOM to load using the jQuery ready function.
   $(document).ready(function () {
@@ -75,7 +75,7 @@ The value of the specified custom property.
 
 Removes the specified property from the custom property collection.
 
-To make the removal of the property permanent, you must call the [`saveAsync`](CustomProperties.md#saveAsync) method of the `CustomProperties` object.
+To make the removal of the property permanent, you must call the [`saveAsync`](#saveasynccallback-asynccontext) method of the `CustomProperties` object.
 
 ##### Parameters:
 
@@ -94,7 +94,7 @@ To make the removal of the property permanent, you must call the [`saveAsync`](C
 
 Saves item-specific custom properties to the server.
 
-You must call the `saveAsync` method to persist any changes made with the [`set`](CustomProperties.md#set) method or the [`remove`](CustomProperties.md#remove) method of the `CustomProperties` object. The saving action is asynchronous.
+You must call the `saveAsync` method to persist any changes made with the [`set`](CustomProperties.md#set) method or the [`remove`](#removename) method of the `CustomProperties` object. The saving action is asynchronous.
 
 It’s a good practice to have your callback function check for and handle errors from `saveAsync`. In particular, a read add-in can be activated while the user is in a connected state in a read form, and subsequently the user becomes disconnected. If the add-in calls `saveAsync` while in the disconnected state, `saveAsync` would return an error. Your callback method should handle this error accordingly.
 
@@ -115,9 +115,9 @@ It’s a good practice to have your callback function check for and handle error
 
 ##### Example
 
-The following JavaScript code sample shows how to asynchronously use the `loadCustomPropertiesAsync` method to load custom properties that are specific to the current item, and the [`saveAsync`](CustomProperties.md#saveAsync) method to save these properties back to the server. After loading the custom properties, the code sample uses the [`get`](CustomProperties.md#get) method to read the custom property `myProp`, the [`set`](CustomProperties.md#set) method to write the custom property `otherProp`, and then finally calls the `saveAsync` method to save the custom properties.
+The following JavaScript code sample shows how to asynchronously use the `loadCustomPropertiesAsync` method to load custom properties that are specific to the current item, and the [`saveAsync`](saveasynccallback-asynccontext) method to save these properties back to the server. After loading the custom properties, the code sample uses the [`get`](CustomProperties.md#get) method to read the custom property `myProp`, the [`set`](CustomProperties.md#set) method to write the custom property `otherProp`, and then finally calls the `saveAsync` method to save the custom properties.
 
-```
+```JavaScript
 // The initialize function is required for all add-ins.
 Office.initialize = function () {
   // Checks for the DOM to load using the jQuery ready function.
@@ -155,7 +155,7 @@ function write(message){
 
 Sets the specified property to the specified value.
 
-The `set` method sets the specified property to the specified value. You must use the [`saveAsync`](CustomProperties.md#saveAsync) method to save the property to the server.
+The `set` method sets the specified property to the specified value. You must use the [`saveAsync`](#saveasynccallback-asynccontext) method to save the property to the server.
 
 The `set` method creates a new property if the specified property does not already exist; otherwise, the existing value is replaced with the new value. The `value` parameter can be of any type; however, it is always passed to the server as a string.
 

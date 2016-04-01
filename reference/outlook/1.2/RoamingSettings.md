@@ -8,7 +8,7 @@ The settings created by using the methods of the `RoamingSettings` object are sa
 
 The name of a setting is a String, while the value can be a String, Number, Boolean, null, Object, or Array.
 
-The `RoamingSettings` object is accessible via the [`roamingSettings`](Office.context.md#roamingSettings) property in the `Office.context` namespace.
+The `RoamingSettings` object is accessible via the [`roamingSettings`](Office.context.md#roamingsettings-roamingsettings) property in the `Office.context` namespace.
 
 ##### Requirements
 
@@ -20,7 +20,7 @@ The `RoamingSettings` object is accessible via the [`roamingSettings`](Office.co
 
 ### Example
 
-```
+```JavaScript
 // Get the current value of the 'myKey' setting
 var value = Office.context.roamingSettings.get('myKey');
 // Update the value of the 'myKey' setting
@@ -103,7 +103,7 @@ The set method creates a new setting of the specified name if it does not alread
 
 A maximum of 2MB is available for the settings of each add-in, and each individual setting is limited to 32KB.
 
-Any changes made to settings using the `set` function will not be saved to the server until the [`saveAsync`](RoamingSettings.md#saveAsync) function is called.
+Any changes made to settings using the `set` function will not be saved to the server until the [`saveAsync`](RoamingSettings.md#saveasynccallback) function is called.
 
 ##### Parameters:
 
