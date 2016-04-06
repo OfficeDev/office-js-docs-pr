@@ -68,7 +68,7 @@ Outlook add-ins are supported in Outlook 2013 and later versions, Outlook 2016 f
 ## Get started building Outlook add-ins
 
 
-To get started building Outlook add-ins, see [Get Started with Outlook add-ins for Office 365](https://dev.outlook.com/MailAppsGettingStarted/GetStarted.aspx).
+To get started building Outlook add-ins, see [Get Started with Outlook add-ins for Office 365](https://dev.outlook.com/MailAppsGettingStarted/GetStarted).
 
 
 ## Additional Resources
