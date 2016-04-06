@@ -1,4 +1,4 @@
-# OneNote add-ins JavaScript programming overview (Preview)
+# OneNote JavaScript API programming overview (Preview)
 
 Read on to learn more about OneNote add-ins, or [get started creating one](onenote-add-ins-getting-started.md).
 
