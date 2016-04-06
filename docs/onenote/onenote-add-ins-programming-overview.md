@@ -1,4 +1,4 @@
-# OneNote add-ins JavaScript programming overview (Preview)
+# OneNote JavaScript API programming overview (Preview)
 
 Read on to learn more about OneNote add-ins, or [get started creating one](onenote-add-ins-getting-started.md).
 
@@ -100,6 +100,7 @@ In general, you only use the common API to do something that isn't supported in 
 
 <a name="om-diagram"></a>
 ## OneNote object model diagram 
+The following diagram represents what's currently available in the OneNote JavaScript API.
 
   ![OneNote object model diagram](../../images/onenote-om.png)
 
