@@ -52,13 +52,14 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
 - Provide granular actions that make common tasks within your add-in more efficient to perform. Minimize the number of steps an action takes to complete.
 
-- For add-ins that extend the **Ribbon**:
-	- Place commands in one of the the Built-in Tabs (e.g. Insert, Review) if the functionality provided fits there. For example, if your add-in enables users to insert media the add-in should create a group on the Insert tab. Note that only selected tabs are available across multiple Office versions. Consult the [reference documentation](../overview/add-in-manifests.md) to understand which tabs are available. 
-	- Place commands on the Home Tab if their functionality doesn't fit within one of the other built-in tabs AND you have fewer than 6 top-level commands. You may also use the Home Tab if your add-in needs to work across Office versions (e.g. Office Desktop and Office Online) and a built-in Tab is not available on both (e.g. the Design tab doesn't exist on Office Online).  
-	- Place commands on a Custom Tab if you have more than 6 top-level commands. 
-  - Name your group to match the name of your add-in. If you have multiple groups each group should be named to depict the specific functionality that groups in that command provide.
+- For add-ins that extend the **ribbon**:
+	- Place commands on an existing tab (Insert, Review, and so on) if the functionality provided fits there. For example, if your add-in enables users to insert media, the add-in should create a group on the Insert tab. Note that not all tabs are available across all Office versions. For information about tabs in Office versions, see [Office Add-ins XML manifest](../overview/add-in-manifests.md). 
+	- Place commands on the Home tab if their functionality doesn't fit on another tab, and you have fewer than six top-level commands. You can also add commands to the Home tab if your add-in needs to work across Office versions (such as Office Desktop and Office Online) and a built-in tab is not available on both (for example, the Design tab doesn't exist in Office Online).  
+	- Place commands on a custom tab if you have more than six top-level commands. 
+  - Name your group to match the name of your add-in. If you have multiple groups, name each group based on the functionality that the commands in that group provide.
   - Do not add superfluous buttons to increase the real estate of your add-in.
-     **Note**  Add-ins that take up too much space might not pass [Office Store validation](http://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe%28Office.15%29.aspx).
+
+     >**Note**  Add-ins that take up too much space might not pass [Office Store validation](https://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe(Office.15).aspx).
 
 - For all icons:
 	- Provide meaningful icons and [labels](http://msdn.microsoft.com/library/8cef4fce-e6a1-459b-951f-47ac03ec95a6%28Office.15%29.aspx) for buttons that clearly identify the action the user is taking.
