@@ -100,6 +100,7 @@ In general, you only use the common API to do something that isn't supported in 
 
 <a name="om-diagram"></a>
 ## OneNote object model diagram 
+The following diagram represents what's currently available in the OneNote JavaScript API.
 
   ![OneNote object model diagram](../../images/onenote-om.png)
 

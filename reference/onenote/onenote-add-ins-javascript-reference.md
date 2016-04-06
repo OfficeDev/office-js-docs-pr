@@ -2,7 +2,7 @@
 
 *Applies to: OneNote Online*
 
-The links below show the high level OneNote objects available in the APIs. Each object page link contains a description of the properties, relationships, and methods available on the object. Explore the links below to learn more. 
+The links below show the high level OneNote objects available in the API. Each object page link contains a description of the properties, relationships, and methods available on the object. Explore the links below to learn more. 
 	
 - [Application](application.md): The top-level object used to access all globally addressable OneNote objects, such as notebooks, the active notebook, and the active section.
 - [Notebook](notebook.md): A notebook. Notebooks contain section groups and sections.
