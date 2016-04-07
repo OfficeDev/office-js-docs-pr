@@ -3,25 +3,25 @@
 _Applies to: OneNote Online_
 _Note: This API is in preview_
 
-
-Represents a placeholder object for the contents of an outline. A paragraph can contain any one ParagraphType type of content. Paragraphs are automatically positioned.
+A container for the visible content on a page. A Paragraph can contain any one ParagraphType type of content, such as RichText, Image, or Table.
 
 ## Properties
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|id|string|Gets the ID of the paragraph. Read-only.|
-|type|string|Gets the paragraph type. Read-only. Possible values are: RichText, Image, Table, InkDrawing, InsertedFile, MediaFile, InkParagraph, Other.|
+|id|string|Gets the ID of the Paragraph object. Read-only.|
+|type|string|Gets the type of the Paragraph object. Read-only. Possible values are: RichText, Image, Table, InkDrawing, InsertedFile, MediaFile, InkParagraph, Other.|
+
 
 
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|image|[Image](image.md)|Gets the image in the paragraph. Returns null if ParagraphType is not Image. Read-only.|
-|outline|[Outline](outline.md)|Gets the parent outline of the paragraph. Read-only.|
-|parentParagraph|[Paragraph](paragraph.md)|Gets the paragraph that contains the paragraph. Returns null if the paragraph is a direct child of the outline. Read-only.|
-|richText|[RichText](richtext.md)|Gets the rich text of the paragraph. Returns null if ParagraphType is not RichText. Read-only.|
-|subParagraphs|[ParagraphCollection](paragraphcollection.md)|Gets the child paragraphs of the paragraph. Only List and Table paragraph types can have child paragraphs. Read-only.|
+|image|[Image](image.md)|Gets the Image object in the Paragraph. Returns null if ParagraphType is not Image. Read-only.|
+|outline|[Outline](outline.md)|Gets the Outline object that contains the Paragraph. Read-only.|
+|parentParagraph|[Paragraph](paragraph.md)|Gets the Paragraph object that contains the Paragraph. Returns null if the Paragraph is a direct child of an Outline. Read-only.|
+|richText|[RichText](richtext.md)|Gets the RichText object in the Paragraph. Returns null if ParagraphType is not RichText. Read-only Read-only.|
+|subParagraphs|[ParagraphCollection](paragraphcollection.md)|Gets the child Paragraph objects of the Paragraph. Applies only if ParagraphType is Table. Read-only.|
 
 ## Methods
 

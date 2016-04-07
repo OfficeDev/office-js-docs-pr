@@ -3,7 +3,6 @@
 _Applies to: OneNote Online_
 _Note: This API is in preview_
 
-
 Represents a collection of pages.
 
 ## Properties
@@ -11,6 +10,8 @@ Represents a collection of pages.
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |items|[Page[]](page.md)|A collection of page objects. Read-only.|
+
+
 
 ## Relationships
 None
@@ -21,7 +22,7 @@ None
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[getByTitle(title: string)](#getbytitletitle-string)|[PageCollection](pagecollection.md)|Gets the collection of pages with the specified title.|
-|[getItem(index: number or string)](#getitemindex-number-or-string)|[Page](page.md)|Gets a page by its index in the collection. Read-only.|
+|[getItem(index: number or string)](#getitemindex-number-or-string)|[Page](page.md)|Gets a page by ID or by its index in the collection. Read-only.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
@@ -44,7 +45,7 @@ pageCollectionObject.getByTitle(title);
 [PageCollection](pagecollection.md)
 
 ### getItem(index: number or string)
-Gets a page by its index in the collection. Read-only.
+Gets a page by ID or by its index in the collection. Read-only.
 
 #### Syntax
 ```js
@@ -54,7 +55,7 @@ pageCollectionObject.getItem(index);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|index|number or string|A number or ID that identifies the index location of the page.|
+|index|number or string|The ID of the page, or the index location of the page in the collection.|
 
 #### Returns
 [Page](page.md)

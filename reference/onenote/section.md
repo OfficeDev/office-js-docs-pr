@@ -3,7 +3,6 @@
 _Applies to: OneNote Online_
 _Note: This API is in preview_
 
-
 Represents a OneNote section. Sections can contain pages.
 
 ## Properties
@@ -12,6 +11,8 @@ Represents a OneNote section. Sections can contain pages.
 |:---------------|:--------|:----------|
 |id|string|Gets the ID of the section. Read-only.|
 |name|string|Gets the name of the section. Read-only.|
+
+
 
 ## Relationships
 | Relationship | Type	|Description|
@@ -25,7 +26,7 @@ Represents a OneNote section. Sections can contain pages.
 |:---------------|:--------|:----------|
 |[addPage(title: string)](#addpagetitle-string)|[Page](page.md)|Adds a new page to the end of the section.|
 |[getPages()](#getpages)|[PageCollection](pagecollection.md)|Gets the collection of pages in the section.|
-|[insertSectionAsSibling(location: string, title: string)](#insertsectionassiblinglocation-string-title-string)|[Section](section.md)|Insert a new Section before or after the current section|
+|[insertSectionAsSibling(location: string, title: string)](#insertsectionassiblinglocation-string-title-string)|[Section](section.md)|Inserts a new section before or after the current section.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
@@ -62,7 +63,7 @@ None
 [PageCollection](pagecollection.md)
 
 ### insertSectionAsSibling(location: string, title: string)
-Insert a new Section before or after the current section
+Inserts a new section before or after the current section.
 
 #### Syntax
 ```js
@@ -72,8 +73,8 @@ sectionObject.insertSectionAsSibling(location, title);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|location|string|Location of the new Section  Possible values are: Before, After|
-|title|string|Title for the new Section|
+|location|string|The location of the new section relative to the current section.  Possible values are: Before, After|
+|title|string|The name of the new section.|
 
 #### Returns
 [Section](section.md)

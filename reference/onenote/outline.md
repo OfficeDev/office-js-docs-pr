@@ -3,36 +3,35 @@
 _Applies to: OneNote Online_
 _Note: This API is in preview_
 
-
-Represents a region on a page that contains paragraphs. An outline can be positioned on the page.
+Represents a container for Paragraph objects.
 
 ## Properties
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|id|string|Gets the ID of the outline. Read-only.|
+|id|string|Gets the ID of the Outline object. Read-only.|
+
 
 
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|pageContent|[PageContent](pagecontent.md)|Gets the page content object that contains the outline. Read-only.|
-|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the paragraphs in the outline. Read-only.|
+|pageContent|[PageContent](pagecontent.md)|Gets the PageContent object that contains the Outline. This object defines the position of the Outline on the page. Read-only.|
+|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the collection of Paragraph objects in the Outline. Read-only.|
 
 ## Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[append(html: string)](#appendhtml-string)|void|Appends the specified HTML to the outline.|
-|[getHtml()](#gethtml)|string|Gets the HTML representation of the outline.|
+|[append(html: string)](#appendhtml-string)|void|Adds the specified HTML to the bottom of the Outline.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
-|[prepend(html: string)](#prependhtml-string)|void|Prepend the specified HTML to the outline.|
+|[prepend(html: string)](#prependhtml-string)|void|Adds the specified HTML to the top of the Outline.|
 
 ## Method Details
 
 
 ### append(html: string)
-Appends the specified HTML to the outline.
+Adds the specified HTML to the bottom of the Outline.
 
 #### Syntax
 ```js
@@ -46,20 +45,6 @@ outlineObject.append(html);
 
 #### Returns
 void
-
-### getHtml()
-Gets the HTML representation of the outline.
-
-#### Syntax
-```js
-outlineObject.getHtml();
-```
-
-#### Parameters
-None
-
-#### Returns
-string
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -78,7 +63,7 @@ object.load(param);
 void
 
 ### prepend(html: string)
-Prepend the specified HTML to the outline.
+Adds the specified HTML to the top of the Outline.
 
 #### Syntax
 ```js

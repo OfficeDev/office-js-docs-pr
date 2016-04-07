@@ -3,7 +3,6 @@
 _Applies to: OneNote Online_
 _Note: This API is in preview_
 
-
 Represents a collection of notebooks.
 
 ## Properties
@@ -11,6 +10,7 @@ Represents a collection of notebooks.
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |items|[Notebook[]](notebook.md)|A collection of notebook objects. Read-only.|
+
 
 
 ## Relationships
@@ -22,7 +22,7 @@ None
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[getByName(name: string)](#getbynamename-string)|[NotebookCollection](notebookcollection.md)|Gets the collection of notebooks with the specified name.|
-|[getItem(index: number or string)](#getitemindex-number-or-string)|[Notebook](notebook.md)|Gets a notebook by its index in the collection. Read-only.|
+|[getItem(index: number or string)](#getitemindex-number-or-string)|[Notebook](notebook.md)|Gets a notebook by ID or by its index in the collection. Read-only.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
@@ -45,7 +45,7 @@ notebookCollectionObject.getByName(name);
 [NotebookCollection](notebookcollection.md)
 
 ### getItem(index: number or string)
-Gets a notebook by its index in the collection. Read-only.
+Gets a notebook by ID or by its index in the collection. Read-only.
 
 #### Syntax
 ```js
@@ -55,7 +55,7 @@ notebookCollectionObject.getItem(index);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|index|number or string|A number or ID that identifies the index location of the notebook.|
+|index|number or string|The ID of the notebook, or the index location of the notebook in the collection.|
 
 #### Returns
 [Notebook](notebook.md)
