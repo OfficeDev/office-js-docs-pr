@@ -848,7 +848,7 @@ For recommendations for where to place your commands in the ribbon, see [Best pr
 
 
 
-- [Add-in commands for Excel, Word and PowerPoint](../../docs/design/add-in-commands-for-excel-and-word-preview.md)
+- [Add-in commands for Excel, Word, and PowerPoint](../../docs/design/add-in-commands.md)
 
 - [Define add-in commands in your Outlook add-in manifest](../outlook/manifests/define-add-in-commands.md)
 

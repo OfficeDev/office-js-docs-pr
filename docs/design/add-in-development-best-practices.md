@@ -46,7 +46,7 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
 ## Use add-in commands
 
-- Provide relevant UI entry points for your add-in by using [add-in commands](../design/add-in-commands-for-excel-and-word-preview.md).
+- Provide relevant UI entry points for your add-in by using [add-in commands](../design/add-in-commands.md).
 
 - Use commands to represent a specific action with a clear and specific outcome for users. Do not combine multiple actions in a single button.
 

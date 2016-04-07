@@ -99,7 +99,7 @@ You can create the following types of Office Add-ins:
 - Outlook add-ins that extend functionality
 
 ### Word, Excel, and PowerPoint Add-ins that extend functionality 
-You can **add new functionality** to Word, Excel, or PowerPoint by registering your add-in using a [task pane add-in manifest](../design/add-in-commands-for-excel-and-word-preview.md). This manifest supports **two integration modes**:
+You can **add new functionality** to Word, Excel, or PowerPoint by registering your add-in using a [task pane add-in manifest](../design/add-in-commands.md). This manifest supports **two integration modes**:
 
 - Add-in commands
 - Insertable task panes
@@ -113,7 +113,7 @@ Use add-in commands to extend the user interface of Office for Windows Desktop a
 **Add-in with commands running in Excel Online**
 ![Add-in commands](../../images/addincommands2.png)
 
-You can define your commands in your add-in manifest by using **VersionOverrides**. The Office platform takes care of interpreting them into native UI. To get started, check out these [samples on GitHub](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/), and see [Add-in commands for Excel, Word, and PowerPoint](../design/add-in-commands-for-excel-and-word-preview.md)
+You can define your commands in your add-in manifest by using **VersionOverrides**. The Office platform takes care of interpreting them into native UI. To get started, check out these [samples on GitHub](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/), and see [Add-in commands for Excel, Word, and PowerPoint](../design/add-in-commands.md)
 
 ####Insertable Taskpanes
 Clients that do not support add-in commands yet (Office 2013, Office for Mac and Office for IPad) will run your add-in as a **Task pane** using the **DefaultUrl** provided in the manifest. The add-in can then be launched via the My Add-ins menu from the Insert Tab. 
