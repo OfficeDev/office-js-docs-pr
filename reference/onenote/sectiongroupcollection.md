@@ -3,7 +3,6 @@
 _Applies to: OneNote Online_
 _Note: This API is in preview_
 
-
 Represents a collection of section groups.
 
 ## Properties
@@ -11,6 +10,8 @@ Represents a collection of section groups.
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |items|[SectionGroup[]](sectiongroup.md)|A collection of sectionGroup objects. Read-only.|
+
+
 
 ## Relationships
 None
@@ -21,7 +22,7 @@ None
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[getByName(name: string)](#getbynamename-string)|[SectionGroupCollection](sectiongroupcollection.md)|Gets the collection of section groups with the specified name.|
-|[getItem(index: number or string)](#getitemindex-number-or-string)|[SectionGroup](sectiongroup.md)|Gets a section group by its index in the collection. Read-only.|
+|[getItem(index: number or string)](#getitemindex-number-or-string)|[SectionGroup](sectiongroup.md)|Gets a section group by ID or by its index in the collection. Read-only.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
@@ -44,7 +45,7 @@ sectionGroupCollectionObject.getByName(name);
 [SectionGroupCollection](sectiongroupcollection.md)
 
 ### getItem(index: number or string)
-Gets a section group by its index in the collection. Read-only.
+Gets a section group by ID or by its index in the collection. Read-only.
 
 #### Syntax
 ```js
@@ -54,7 +55,7 @@ sectionGroupCollectionObject.getItem(index);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|index|number or string|A number or ID that identifies the index location of the section group.|
+|index|number or string|The ID of the section group, or the index location of the section group in the collection.|
 
 #### Returns
 [SectionGroup](sectiongroup.md)

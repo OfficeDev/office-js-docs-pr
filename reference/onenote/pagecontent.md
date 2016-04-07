@@ -3,37 +3,38 @@
 _Applies to: OneNote Online_
 _Note: This API is in preview_
 
-
-Represents a placeholder object for the top-level content objects of a page. Top-level content objects can be positioned on the page.
+Represents a region on a page that contains top-level content types such as Outline or Image. A PageContent object can be assigned an XY position.
 
 ## Properties
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|id|string|Gets the ID of the page content object. Read-only.|
-|left|double|Gets or sets the left (x) position of the page content object.|
-|top|double|Gets or sets the top (y) position of the page content object.|
-|type|string|Gets the type of page content. Read-only. Possible values are: Outline, Image, Ink, InsertedFile, MediaFile, Other.|
+|id|string|Gets the ID of the PageContent object. Read-only.|
+|left|double|Gets or sets the left (X-axis) position of the PageContent object.|
+|top|double|Gets or sets the top (Y-axis) position of the PageContent object.|
+|type|string|Gets the type of the PageContent object. Read-only. Possible values are: Outline, Image, Ink, InsertedFile, MediaFile, Other.|
+
+
 
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|image|[Image](image.md)|Gets the image in the page content object. Returns null if PageContentType is not Image. Read-only.|
-|outline|[Outline](outline.md)|Gets the outline in the page content object. Returns null if PageContentType is not Outline. Read-only.|
-|page|[Page](page.md)|Gets the page that contains the page content object. Read-only.|
+|image|[Image](image.md)|Gets the Image in the PageContent object. Returns null if PageContentType is not Image. Read-only.|
+|outline|[Outline](outline.md)|Gets the Outline in the PageContent object. Returns null if PageContentType is not Outline. Read-only.|
+|page|[Page](page.md)|Gets the page that contains the PageContent object. Read-only.|
 
 ## Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[delete()](#delete)|void|Deletes the page content object.|
+|[delete()](#delete)|void|Deletes the PageContent object.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 
 
 ### delete()
-Deletes the page content object.
+Deletes the PageContent object.
 
 #### Syntax
 ```js

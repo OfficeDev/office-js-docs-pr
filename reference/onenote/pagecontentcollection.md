@@ -3,14 +3,14 @@
 _Applies to: OneNote Online_
 _Note: This API is in preview_
 
-
-Represents the contents of a page, as a collection of page content objects.
+Represents the contents of a page, as a collection of PageContent objects.
 
 ## Properties
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |items|[PageContent[]](pagecontent.md)|A collection of pageContent objects. Read-only.|
+
 
 
 ## Relationships
@@ -21,14 +21,14 @@ None
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[getItem(index: number or string)](#getitemindex-number-or-string)|[PageContent](pagecontent.md)|Gets a page content object by its index in the collection. Read-only.|
+|[getItem(index: number or string)](#getitemindex-number-or-string)|[PageContent](pagecontent.md)|Gets a PageContent object by ID or by its index in the collection. Read-only.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 
 
 ### getItem(index: number or string)
-Gets a page content object by its index in the collection. Read-only.
+Gets a PageContent object by ID or by its index in the collection. Read-only.
 
 #### Syntax
 ```js
@@ -38,7 +38,7 @@ pageContentCollectionObject.getItem(index);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|index|number or string|A number or ID that identifies the index location of the page content object.|
+|index|number or string|The ID of the PageContent object, or the index location of the PageContent object in the collection.|
 
 #### Returns
 [PageContent](pagecontent.md)

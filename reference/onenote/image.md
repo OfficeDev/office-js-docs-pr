@@ -3,55 +3,38 @@
 _Applies to: OneNote Online_
 _Note: This API is in preview_
 
-
-Represents an image.
+Represents an Image. An Image can be a direct child of a PageContent object or a Paragraph object.
 
 ## Properties
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|description|string|Gets the description of the image. Read-only.|
-|height|double|Gets the height of the image layout. Read-only.|
-|hyperlink|string|Gets or sets the hyperlink of the image.|
-|id|string|Gets the ID of the image. Read-only.|
-|width|double|Gets or sets the width of the image layout.|
+|description|string|Gets or sets the description of the Image.|
+|height|double|Gets or sets the height of the Image layout.|
+|hyperlink|string|Gets or sets the hyperlink of the Image.|
+|id|string|Gets the ID of the Image object. Read-only.|
+|width|double|Gets or sets the width of the Image layout.|
+
 
 
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|pageContent|[PageContent](pagecontent.md)|Gets the page content object that contains the image, if the image is at the page level. Read-only.|
-|paragraph|[Paragraph](paragraph.md)|Gets the paragraph that contains the image. Returns null if the image is in an outline. Read-only.|
+|pageContent|[PageContent](pagecontent.md)|Gets the PageContent object that contains the Image. Returns null if the Image is not a direct child of a PageContent. This object defines the position of the Image on the page. Read-only.|
+|paragraph|[Paragraph](paragraph.md)|Gets the Paragraph object that contains the Image. Returns null if the Image is not a direct child of a Paragraph. Read-only.|
 
 ## Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[changeDescription(description: string)](#changedescriptiondescription-string)|void|Changes the description of the image.|
-|[getBase64Image()](#getbase64image)|string|Gets the base64-encoded binary representation of the image.|
+|[getBase64Image()](#getbase64image)|string|Gets the base64-encoded binary representation of the Image.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 
 
-### changeDescription(description: string)
-Changes the description of the image.
-
-#### Syntax
-```js
-imageObject.changeDescription(description);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|description|string|The description for the image.|
-
-#### Returns
-void
-
 ### getBase64Image()
-Gets the base64-encoded binary representation of the image.
+Gets the base64-encoded binary representation of the Image.
 
 #### Syntax
 ```js
