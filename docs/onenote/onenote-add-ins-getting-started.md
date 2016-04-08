@@ -19,7 +19,7 @@ During this initial private preview period, please contact us via Twitter [@onen
 
 <a name="setup"></a>
 ### Step 2: Set up your dev environment
-1. Install the Yeoman Office generator and its prerequisites by following these [installation instructions](https://dev.office.com/docs/add-ins/get-started/create-an-office-add-in-using-any-editor).
+1- Install the Yeoman Office generator and its prerequisites by following these [installation instructions](https://dev.office.com/docs/add-ins/get-started/create-an-office-add-in-using-any-editor).
 
    The Yeoman Office generator makes it easy to create add-in projects when you don't have Visual Studio or you want to use technologies other than plain HTML, CSS, and JavaScript. It also provides quick access to a local Gulp web server for testing. 
 
@@ -27,16 +27,16 @@ During this initial private preview period, please contact us via Twitter [@onen
 
 <a name="create-project"></a>
 ### Step 3: Create the add-in project 
-1. Create a local folder named *onenote add-in*.
+1- Create a local folder named *onenote add-in*.
 
-1. Open a **cmd** prompt and navigate to the **onenote add-in** folder. Run the `yo office` command, as shown below.
+2- Open a **cmd** prompt and navigate to the **onenote add-in** folder. Run the `yo office` command, as shown below.
 
    ```
 C:\your-local-path\onenote add-in\> yo office
    ```
    >These instructions use the Windows command prompt but are equally applicable for other shell environments. 
 
-1. Use the following options to create the project.
+3- Use the following options to create the project.
 
    | Option | Value |
    |:------|:------|
@@ -48,7 +48,7 @@ C:\your-local-path\onenote add-in\> yo office
 
 <a name="manifest"></a>
 ### Step 4: Configure the add-in manifest 
-1. Open **manifest-onenote-add-in.xml** in your project files. Add the following line to the **Hosts** section. This specifies that your add-in supports the OneNote host application.
+1- Open **manifest-onenote-add-in.xml** in your project files. Add the following line to the **Hosts** section. This specifies that your add-in supports the OneNote host application.
 
    ```
 <Host Name="Notebook" />
@@ -64,9 +64,9 @@ C:\your-local-path\onenote add-in\> yo office
 ### Step 5: Develop the add-in
 You can develop the add-in using any text editor or IDE. If you haven't tried Visual Studio Code yet, you can [download it for free](https://code.visualstudio.com/) on Linux, Mac OSX, and Windows.
 
-1. Open **home.html** in the *app/home* folder. 
+1- Open **home.html** in the *app/home* folder. 
 
-1. Edit the references to the Office JavaScript API and [Office UI Fabric](http://dev.office.com/fabric) styles and components.
+2- Edit the references to the Office JavaScript API and [Office UI Fabric](http://dev.office.com/fabric) styles and components.
 
    a. Uncomment the link to fabric.components.min.css.
 
@@ -84,7 +84,7 @@ You can develop the add-in using any text editor or IDE. If you haven't tried Vi
 <script src="//appsforoffice.officeapps.live.com/afo/lib/beta/hosted/office.js"></script>
    ```
 
-1. Replace the `<body>` element with the following code. This adds a text area and a button using [Office UI Fabric components](http://dev.office.com/fabric/components). The **Responsive Grid** layout is from the set of [Office UI Fabric styles](http://dev.office.com/fabric/styles). 
+3- Replace the `<body>` element with the following code. This adds a text area and a button using [Office UI Fabric components](http://dev.office.com/fabric/components). The **Responsive Grid** layout is from the set of [Office UI Fabric styles](http://dev.office.com/fabric/styles). 
 
    ```
 <body class="ms-font-m">
@@ -122,7 +122,7 @@ You can develop the add-in using any text editor or IDE. If you haven't tried Vi
 </body>
    ```
 
-1. Open **home.js** in the *app/home* folder. Edit the **Office.initialize** function to add a click event to the **Add outline** button, as follows. 
+4- Open **home.js** in the *app/home* folder. Edit the **Office.initialize** function to add a click event to the **Add outline** button, as follows. 
 
    ```
 // The initialize function is run each time the page is loaded.
@@ -136,7 +136,7 @@ Office.initialize = function (reason) {
 };
    ```
  
-1. Replace the **getDataFromSelection** method with the following **addOutlineToPage** method. This gets the content from the text area and adds it to the page.
+5- Replace the **getDataFromSelection** method with the following **addOutlineToPage** method. This gets the content from the text area and adds it to the page.
 
    ```
 // Add the contents of the text area to the page.
@@ -181,7 +181,7 @@ function addOutlineToPage() {
 C:\your-local-path\onenote add-in\> gulp serve-static
    ```
 
-1. Install the Gulp web server's self-signed certificate as a trusted certificate. You only need to do this one time on your computer for add-in projects created with the Yeoman Office generator.
+2- Install the Gulp web server's self-signed certificate as a trusted certificate. You only need to do this one time on your computer for add-in projects created with the Yeoman Office generator.
 
    a. Navigate to the hosted add-in page. By default, this is the same URL that's in your manifest:
 
@@ -191,15 +191,15 @@ https://localhost:8443/app/home/home.html
 
    b. Install the certificate as a trusted certificate. For more information, see [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/docs/trust-self-signed-cert.md).
 
-1. On OneNote Online, open the notebook that the OneNote team created for you.
+3- On OneNote Online, open the notebook that the OneNote team created for you.
 
-1. Choose **Insert > Upload Add-in**. 
+4- Choose **Insert > Upload Add-in**. 
 
    ![Upload Add-in dialog](../../images/onenote-insert-add-ins.png)
 
-1. In the **Upload Add-in** dialog, browse to **manifest-onenote-add-in.xml** in your project files, and then choose **Upload**. While testing, your manifest file can be stored locally.
+5- In the **Upload Add-in** dialog, browse to **manifest-onenote-add-in.xml** in your project files, and then choose **Upload**. While testing, your manifest file can be stored locally.
 
-1. The add-in opens in an iFrame next to the OneNote page. Enter some text in the text area and then choose **Add outline**. The text you entered is added to the page. 
+6- The add-in opens in an iFrame next to the OneNote page. Enter some text in the text area and then choose **Add outline**. The text you entered is added to the page. 
 
 ### Troubleshooting and tips
 - You can debug the add-in using your browser's developer tools. When you're using the Gulp web server and debugging in Internet Explorer or Chrome, you can save your changes locally and then just refresh the add-in's iFrame.
@@ -212,7 +212,7 @@ https://localhost:8443/app/home/home.html
 
 ## Additional Resources
 
-- [OneNote add-ins JavaScript programming overview (Preview)](onenote-add-ins-programming-overview.md)
+- [OneNote JavaScript API programming overview (Preview)](onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API reference (Preview)](../../reference/onenote/onenote-add-ins-javascript-reference.md)
 - [Rubric Grader sample (Preview)](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader-Preview)
 - [Office Add-ins platform overview](https://dev.office.com/docs/add-ins/overview/office-add-ins)
