@@ -191,10 +191,6 @@ As a community member, **you must sign the Contribution License Agreement (CLA) 
 
 When you submit your changes, via a pull request, our team will be notified and will review your pull request. You will receive notifications about your pull request from GitHub; you may also be notified by someone from our team if we need more information. If your pull request is approved, we'll update the documentation on GitHub and on MSDN. We reserve the right to edit your submission for legal, style, clarity, or other issues.
 
-### Who approves pull requests?
-
-The Office developer documentation team approves pull requests. To contact us directly, email docthis@microsoft.com.
-
 ### Can I become an approver for this repository's GitHub pull requests?
 
 Currently, we are not allowing external contributors to approve pull requests in this repository.
