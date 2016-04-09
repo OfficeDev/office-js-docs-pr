@@ -6,11 +6,11 @@ You can use Visual Studio to develop and debug add-ins on Windows, but you can't
 ## Debugging with Vorlon.js
 Vorlon.js is a debugger for web pages, similar to the F12 tools, that is designed to work remotely and allows you to debug web pages across different devices. For more information, see the [Vorlon website](http://www.vorlonjs.com).
 
-The instructions for installing and setting up Vorlon can be found on the [Vorlon website](http://www.vorlonjs.com/#getting-started), but are essentially as follows:
+To install and set up up Vorlon:
 
 1.	Install [Node.js](https://nodejs.org) if you haven’t already.
-2.	Install Vorlon using npm with the command `sudo npm i -g vorlon`
-3.	Run the Vorlon server with the command `vorlon`
+2.	Install Vorlon using npm with the following command: `sudo npm i -g vorlon`
+3.	Run the Vorlon server with the command `vorlon`.
 4.	Open a browser window and go to [http://localhost:1337](http://localhost:1337), which is the Vorlon interface.
 5.	Add the following script tag to the `<head>` section of the home.html file (or main HTML file) of your add-in:
  ```
@@ -19,17 +19,17 @@ The instructions for installing and setting up Vorlon can be found on the [Vorlo
 
 ![Vorlon.js interface](../../images/vorlon_interface.png)
 
-Now, whenever you open the add-in on a device, it will show up in the list of Clients in Vorlon (found on the left-hand side of the Vorlon interface). You can remotely highlight DOM elements, remotely execute commands, and much more. 
+Now, whenever you open the add-in on a device, it will show up in the list of Clients in Vorlon (on the left side of the Vorlon interface). You can remotely highlight DOM elements, remotely execute commands, and much more. 
 
-There is also a dedicated Vorlon plugin for Office add-ins, which adds extra capabilities such as interacting with the Office.js APIs. You can read more about the plugin [here](https://blogs.msdn.microsoft.com/mim/2016/02/18/vorlonjs-plugin-for-debugging-office-addin/). To enable the Office add-ins plugin:
+A dedicated Vorlon plugin for Office Add-ins adds extra capabilities such as interacting with the Office.js APIs. For more information, see the blog post [VorlonJS plugin for debugging Office Addin](https://blogs.msdn.microsoft.com/mim/2016/02/18/vorlonjs-plugin-for-debugging-office-addin/). To enable the Office Add-ins plugin:
 
-1.	You will have to locally clone the dev branch of the Vorlon.js GitHub repository, which can be done with the following commands:
+1.	Locally clone the dev branch of the Vorlon.js GitHub repository by using the following commands:
  ```
  git clone https://github.com/MicrosoftDX/Vorlonjs.git  
  git checkout dev 
  npm install
  ```
 
-2.	Open the **config.json** file located in /Vorlon/Server/config.json and activate the Office Addin plugin (set the “enabled” property to **true**)
+2.	Open the **config.json** file located in /Vorlon/Server/config.json. To activate the Office Addin plugin, set the **enabled** property to **true**.
 
 ![Plugins section of config.json](../../images/vorlon_plugins_config.png)
