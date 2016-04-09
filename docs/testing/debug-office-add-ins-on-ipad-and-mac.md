@@ -3,53 +3,33 @@
 
 You can use Visual Studio to develop and debug add-ins on Windows, but you can't use it to debug add-ins on the iPad or Mac. Because add-ins are developed using HTML and Javascript, they are designed to work across platforms, but there might be subtle differences in how different browsers render the HTML. This article describes how to debug add-ins running on an iPad or Mac. 
 
- >**Note**  We recommend that you continue using Visual Studio to debug add-ins on Windows.
+## Debugging with Vorlon.js
+Vorlon.js is a debugger for web pages, similar to the F12 tools, that is designed to work remotely and allows you to debug web pages across different devices. For more information, see the [Vorlon website](http://www.vorlonjs.com).
 
-## Debugging with Weinre
+The instructions for installing and setting up Vorlon can be found on the [Vorlon website](http://www.vorlonjs.com/#getting-started), but are essentially as follows:
 
-Weinre is a debugger for web pages, similar to the F12 tools, that is designed to work remotely and allows you to debug web pages on a mobile device. For more information, see the [Weinre website](http://people.apache.org/~pmuellr/weinre-docs/latest/).
+1.	Install [Node.js](https://nodejs.org) if you haven’t already.
+2.	Install Vorlon using npm with the command `sudo npm i -g vorlon`
+3.	Run the Vorlon server with the command `vorlon`
+4.	Open a browser window and go to [http://localhost:1337](http://localhost:1337), which is the Vorlon interface.
+5.	Add the following script tag to the `<head>` section of the home.html file (or main HTML file) of your add-in:
+ ```
+ <script src="http://localhost:1337/vorlon.js"></script>
+ ```
 
- >**Note**  You can use remote debugging on your iPad or Mac. 
+![Vorlon.js interface](../../images/vorlon_interface.png)
 
-### To use Weinre to debug your add-in
+Now, whenever you open the add-in on a device, it will show up in the list of Clients in Vorlon (found on the left-hand side of the Vorlon interface). You can remotely highlight DOM elements, remotely execute commands, and much more. 
 
-1. Install the latest version of Node.js from [https://nodejs.org/](https://nodejs.org/) on your Windows or Mac computer. Because Weinre is built on Node.js, you need to install Node.js first.
-    
-2. Install Weinre using this npm command:  `npm -g install weinre`
-    
-    When installing on a Mac, you might have to use:  `sudo npm -g install weinre`
-    
-    If the above command fails, install directly from a URL: `npm -g install http://people.apache.org/~pmuellr/weinre/builds/2.0.0-pre-I0Z7U9OV/apache-cordova-weinre-2.0.0-pre-I0Z7U9OV-bin.tar.gz`
-    
-3. To ensure that IIS, Apache, or the web server of your choice is running on your computer, verify that  `http://localhost` returns a valid page.
-    
-4. Start Weinre:  `weinre --httpPort 8080 --boundHost <ipaddr>`, where  _ _&lt;ipaddr&gt;__ is your PC's or Mac's IP address.
+There is also a dedicated Vorlon plugin for Office add-ins, which adds extra capabilities such as interacting with the Office.js APIs. You can read more about the plugin [here](https://blogs.msdn.microsoft.com/mim/2016/02/18/vorlonjs-plugin-for-debugging-office-addin/). To enable the Office add-ins plugin:
 
-   Navigate to  `http://<ipaddr>:8080` to access the Weinre server home page.
- 
-  ![Weinre server home page at http://<ipaddr>:8080](../../images/8db5216c-35b4-4b1b-98ae-6aed9b54f287.jpg)
- 
- Navigate to  `http://<ipaddr>:8080/client` to get the list of clients connected to this server.
+1.	You will have to locally clone the dev branch of the Vorlon.js GitHub repository, which can be done with the following commands:
+ ```
+ git clone https://github.com/MicrosoftDX/Vorlonjs.git  
+ git checkout dev 
+ npm install
+ ```
 
-  ![Shows list of clients connected to Weinre server](../../images/bada7fc7-2186-497c-86a2-8f4379006103.jpg)
+2.	Open the **config.json** file located in /Vorlon/Server/config.json and activate the Office Addin plugin (set the “enabled” property to **true**)
 
-### To start debugging
-
-1. Include the following in the  `<head>` tag of your add-in's web page to reference the Weinre target code.
-
-  ```HTML
-  <script src="http://<ipaddr>:8080/target/target-script-min.js#anonymous"></script>
-  ```
-
-2. Launch your add-in on the iPad or Mac.
-
-  ![iPad screenshot showing targets, clients, and server properties](../../images/1eacaba2-04cc-488c-8d34-a05cc700d7eb.jpg)
-
-3. Debug your add-in using your favorite browser's F12 developer tools.
-
-  ![iPad screenshot showing an add-in in F12 development tools](../../images/0ab0cb26-6272-425f-98f3-fab08daf443d.jpg)
-
-## Additional resources
-
-- [Sideload an Office Add-in on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
-    
+![Plugins section of config.json](../../images/vorlon_plugins_config.png)
