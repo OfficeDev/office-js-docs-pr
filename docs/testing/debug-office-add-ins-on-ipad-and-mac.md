@@ -17,7 +17,7 @@ The instructions for installing and setting up Vorlon can be found on the [Vorlo
 <script src="http://localhost:1337/vorlon.js"></script>
 ```
 
-![Vorlon.js interface](../../images/)
+![Vorlon.js interface](../../images/vorlon_interface.png)
 
 Now, whenever you open the add-in on a device, it will show up in the list of Clients in Vorlon (found on the left-hand side of the Vorlon interface). You can remotely highlight DOM elements, remotely execute commands, and much more. 
 
@@ -32,4 +32,4 @@ There is also a dedicated Vorlon plugin for Office add-ins, which adds extra cap
 
 2.	Open the **config.json** file located in /Vorlon/Server/config.json and activate the Office Addin plugin (set the “enabled” property to **true**)
 
-![Plugins section of config.json](../../images/)
+![Plugins section of config.json](../../images/vorlon_plugins_config.png)
