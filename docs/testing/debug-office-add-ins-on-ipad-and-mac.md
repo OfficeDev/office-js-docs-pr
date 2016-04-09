@@ -13,9 +13,9 @@ The instructions for installing and setting up Vorlon can be found on the [Vorlo
 3.	Run the Vorlon server with the command `vorlon`
 4.	Open a browser window and go to [http://localhost:1337](http://localhost:1337), which is the Vorlon interface.
 5.	Add the following script tag to the `<head>` section of the home.html file (or main HTML file) of your add-in:
-```HTML
-<script src="http://localhost:1337/vorlon.js"></script>
-```
+ ```HTML
+ <script src="http://localhost:1337/vorlon.js"></script>
+ ```
 
 ![Vorlon.js interface](../../images/vorlon_interface.png)
 
