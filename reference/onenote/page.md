@@ -24,7 +24,6 @@ Represents a OneNote page.
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[addImageFromBase64(left: double, top: double, base64EncodedImage: String)](#addimagefrombase64left-double-top-double-base64encodedimage-string)|[Image](image.md)|Adds an Image to the page at the specified position.|
 |[addOutline(left: double, top: double, html: String)](#addoutlineleft-double-top-double-html-string)|[Outline](outline.md)|Adds an Outline to the page at the specified position.|
 |[getContents()](#getcontents)|[PageContentCollection](pagecontentcollection.md)|Gets the collection of PageContent objects on the page.|
 |[insertPageAsSibling(location: string, title: string)](#insertpageassiblinglocation-string-title-string)|[Page](page.md)|Inserts a new page before or after the current page.|
@@ -32,24 +31,6 @@ Represents a OneNote page.
 
 ## Method Details
 
-
-### addImageFromBase64(left: double, top: double, base64EncodedImage: String)
-Adds an Image to the page at the specified position.
-
-#### Syntax
-```js
-pageObject.addImageFromBase64(left, top, base64EncodedImage);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|left|double|The left position of the top, left corner of the Image.|
-|top|double|The top position of the top, left corner of the Image.|
-|base64EncodedImage|String|A base64-encoded image, e.g. data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIA...|
-
-#### Returns
-[Image](image.md)
 
 ### addOutline(left: double, top: double, html: String)
 Adds an Outline to the page at the specified position.
