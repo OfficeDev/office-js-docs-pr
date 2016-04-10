@@ -24,20 +24,31 @@ object.load (["var1", "relation1/var2"]);
 In the example, select the top 100 rows of the table.
 
 ```js
-OneNote.run(function (ctx) { 
-	var table = ctx.workbook.tables.getItem("Table1");
-	var tableRows = table.rows.load({"select" : "index, values","top": 100, "skip": 0 })
-	return ctx.sync().then(function() {
-		for (var i = 0; i < tableRows.items.length; i++)
-		{
-			console.log(tableRows.items[i].index);
-			console.log(tableRows.items[i].values);
-		}
-	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-})
+OneNote.run(function (context) { 
+    
+    // Get the pages in the current section.
+    var pages = context.application.activeSection.getPages();
+            
+    // Queue a command to load the pages.           
+    pages.load({ "select":"title,pageLevel", "top":5, "skip":0 });
+	return context.sync()
+        .then(function() {
+            
+            // Iterate through the collection of pages.    
+            $.each(pages.items, function(index, object) {
+                var title = object.title;
+                var pageLevel = object.pageLevel;
+                
+                // Show some properties.
+                console.log("Page title: " + title);
+                console.log("Indentation level: " + pageLevel);
+                
+            });
+        }).catch(function(error) {
+            console.log("Error: " + error);
+            if (error instanceof OfficeExtension.Error) {
+                console.log("Debug info: " + JSON.stringify(error.debugInfo));
+            }
+        })
+    });
 ```
