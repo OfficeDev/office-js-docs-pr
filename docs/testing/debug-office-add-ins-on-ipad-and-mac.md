@@ -17,9 +17,9 @@ To install and set up up Vorlon:
  <script src="http://localhost:1337/vorlon.js"></script>
  ```
 
-![Screenshot that shows the Vorlon.js interface](../../images/vorlon_interface.png)
-
 Now, whenever you open the add-in on a device, it will show up in the list of Clients in Vorlon (on the left side of the Vorlon interface). You can remotely highlight DOM elements, remotely execute commands, and much more. 
+
+![Screenshot that shows the Vorlon.js interface](../../images/vorlon_interface.png)
 
 A dedicated Vorlon plugin for Office Add-ins adds extra capabilities such as interacting with the Office.js APIs. For more information, see the blog post [VorlonJS plugin for debugging Office Addin](https://blogs.msdn.microsoft.com/mim/2016/02/18/vorlonjs-plugin-for-debugging-office-addin/). To enable the Office Add-ins plugin:
 
