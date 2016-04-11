@@ -46,6 +46,30 @@ notebookObject.addSection(title);
 #### Returns
 [Section](section.md)
 
+#### Examples  
+```js          
+OneNote.run(function (context) {
+
+    // Gets the active notebook.
+    var notebook = context.application.activeNotebook;
+
+    // Queue a command to add a new section. 
+    var section = notebook.addSection("sample section");
+
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function() {
+            console.log("new section name is " + section.name);
+        })
+        .catch(function(error) {
+            console.log("Error: " + error);
+            if (error instanceof OfficeExtension.Error) {
+                console.log("Debug info: " + JSON.stringify(error.debugInfo));
+            }
+        });
+});
+```
+
 ### getSectionGroups()
 Gets the section groups in the notebook.
 
