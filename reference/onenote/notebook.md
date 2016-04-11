@@ -46,6 +46,30 @@ notebookObject.addSection(title);
 #### Returns
 [Section](section.md)
 
+#### Examples  
+```js          
+OneNote.run(function (context) {
+
+    // Gets the active notebook.
+    var notebook = context.application.activeNotebook;
+
+    // Queue a command to add a new section. 
+    var section = notebook.addSection("sample section");
+
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function() {
+            console.log("new section name is " + section.name);
+        })
+        .catch(function(error) {
+            console.log("Error: " + error);
+            if (error instanceof OfficeExtension.Error) {
+                console.log("Debug info: " + JSON.stringify(error.debugInfo));
+            }
+        });
+});
+```
+
 ### getSectionGroups()
 Gets the section groups in the notebook.
 
@@ -59,6 +83,35 @@ None
 
 #### Returns
 [SectionGroupCollection](sectiongroupcollection.md)
+
+#### Examples  
+```js          
+OneNote.run(function (context) {
+
+    // Gets the active notebook.
+    var notebook = context.application.activeNotebook;
+
+    // Queue a command to get section groups of the notebook. 
+    var sectionGroups = notebook.getSectionGroups();
+
+    // Queue a command to load the sectionGroups. 
+    context.load(sectionGroups);
+
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function() {
+            $.each(sectionGroups.items, function(index, sectionGroup) {
+                console.log("Section group name: " + sectionGroup.name);
+            });
+        })
+        .catch(function(error) {
+            console.log("Error: " + error);
+            if (error instanceof OfficeExtension.Error) {
+                console.log("Debug info: " + JSON.stringify(error.debugInfo));
+            }
+        });
+});
+```
 
 ### getSections(recursive: bool)
 Gets the sections in the notebook.
@@ -75,6 +128,45 @@ notebookObject.getSections(recursive);
 
 #### Returns
 [SectionCollection](sectioncollection.md)
+
+#### Examples  
+```js          
+OneNote.run(function (context) {
+
+    // Gets the active notebook.
+    var notebook = context.application.activeNotebook;
+
+    // Queue a command to get immediate child sections of the notebook. 
+    var childSections = notebook.getSections(false);
+    
+    // Queue a command to get every child section of the notebook.
+    var allChildSections = notebook.getSections(true);
+
+    // Queue a command to load the childSections. 
+    context.load(childSections);
+    
+    // Queue a command to load the allChildSections. 
+    context.load(allChildSections);
+
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function() {
+            $.each(childSections.items, function(index, childSection) {
+                console.log("Immediate child section name: " + childSection.name);
+            });
+            
+            $.each(allChildSections.items, function(index, childSection) {
+                console.log("child section name: " + childSection.name);
+            });            
+        })
+        .catch(function(error) {
+            console.log("Error: " + error);
+            if (error instanceof OfficeExtension.Error) {
+                console.log("Debug info: " + JSON.stringify(error.debugInfo));
+            }
+        });
+});
+```
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
