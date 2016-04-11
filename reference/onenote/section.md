@@ -86,6 +86,35 @@ None
 #### Returns
 [PageCollection](pagecollection.md)
 
+#### Examples
+```js
+OneNote.run(function (context) {
+
+    // Gets the active section.
+    var section = context.application.activeSection;
+
+    // Queue a command to get pages of the section. 
+    var pages = section.getPages();
+
+    // Queue a command to load the pages. 
+    context.load(pages);
+
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function() {
+            $.each(pages.items, function(index, page) {
+                console.log("Page title: " + page.title);
+            });
+        })
+        .catch(function(error) {
+            console.log("Error: " + error);
+            if (error instanceof OfficeExtension.Error) {
+                console.log("Debug info: " + JSON.stringify(error.debugInfo));
+            }
+        });
+});
+```
+
 ### insertSectionAsSibling(location: string, title: string)
 Inserts a new section before or after the current section.
 
