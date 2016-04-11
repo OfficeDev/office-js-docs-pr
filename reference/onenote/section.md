@@ -52,16 +52,16 @@ sectionObject.addPage(title);
 ```js
 OneNote.run(function (context) {
 
-    // Gets the active notebook.
-    var notebook = context.application.activeNotebook;
+    // Gets the active section.
+    var section = context.application.activeSection;
 
-    // Queue a command to add a new section. 
-    var section = notebook.addSection("sample section");
+    // Queue a command to add a new page.
+    var page = section.addPage("sample page");
 
     // Run the queued commands, and return a promise to indicate task completion.
     return context.sync()
         .then(function() {
-            console.log("new section name is " + section.name);
+            console.log("new page title is " + page.title);
         })
         .catch(function(error) {
             console.log("Error: " + error);
