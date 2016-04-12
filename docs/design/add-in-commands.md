@@ -25,7 +25,7 @@ You can use add-in commands to make your add-ins easier to find and use. Current
 - ExecuteFunction - Loads an invisible HTML page and then execute a JavaScript function within it. To show UI within your function, you can use displayDialog.  
 
 
-For an overview of the feature, see the video [Add-in Commands in Office Ribbon](https://channel9.msdn.com/Events/Visual-Studio/Connect-event-2015/316).
+For an overview of the feature, see the video [Add-in Commands in Office Ribbon](https://channel9.msdn.com/events/Build/2016/P551).
 
 
 ##Supported platforms
