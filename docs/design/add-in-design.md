@@ -20,7 +20,7 @@ Regardless of the underlying framework you use to create your custom UI, apply t
 
 
 ##Design language
-We recommend that you adopt the Office design language and use our [UI toolkit](https://msdn.microsoft.com/en-us/library/office/mt484350.aspx) to create custom HTML-based experiences in your add-ins. If your organization already has a design language, you're welcome to use it, as long as the end result is a harmonious experience for Office users. 
+We recommend that you adopt the Office design language and use  [Office UI Fabric](https://dev.office.com/fabric) to create custom HTML-based experiences in your add-ins. If your organization already has a design language, you're welcome to use it, as long as the end result is a harmonious experience for Office users. 
 
 
 ##Add-in building blocks
