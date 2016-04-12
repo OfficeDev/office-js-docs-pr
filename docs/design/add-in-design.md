@@ -43,5 +43,5 @@ See also [Interaction patterns](https://msdn.microsoft.com/EN-US/library/dn35835
 
 ##Additional resources
 
-- [Office UI toolkit for web apps and add-ins](https://msdn.microsoft.com/en-us/library/office/mt484350.aspx)
+- [Office UI Fabric](https://dev.office.com/fabric)
 
