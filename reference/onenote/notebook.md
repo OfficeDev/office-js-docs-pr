@@ -169,7 +169,7 @@ OneNote.run(function (context) {
 ```
 
 ### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
 ```js
