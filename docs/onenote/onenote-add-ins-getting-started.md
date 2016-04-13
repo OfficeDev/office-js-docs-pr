@@ -193,9 +193,7 @@ https://localhost:8443/app/home/home.html
 
 3- On OneNote Online, open the notebook that the OneNote team created for you.
 
-4- Choose **Insert > Upload Add-in**. 
-
-   ![Upload Add-in dialog](../../images/onenote-insert-add-ins.png)
+4- Choose **Insert > Office Add-ins**, and then choose the **Upload My Add-in** link in the Office Add-ins dialog.
 
 5- In the **Upload Add-in** dialog, browse to **manifest-onenote-add-in.xml** in your project files, and then choose **Upload**. While testing, your manifest file can be stored locally.
 
