@@ -1,6 +1,6 @@
 
 # NodeReplacedEventArgs object
-Provides information about the replaced node that raised the [nodeReplaced](../../reference/shared/customxmlpart.datanodereplaced.event.md) event.
+Provides information about the replaced node that raised the [dataNodeReplaced](../../reference/shared/customxmlpart.datanodereplaced.event.md) event.
 
 |||
 |:-----|:-----|

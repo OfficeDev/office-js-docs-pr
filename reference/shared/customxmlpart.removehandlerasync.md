@@ -19,7 +19,7 @@ customXmlPart.removeHandlerAsync(eventType, handler [,options], callback);
 
 |**Name**|**Type**|**Description**|**Support notes**|
 |:-----|:-----|:-----|:-----|
-| _eventType_|[EventType](../../reference/shared/eventtype-enumeration.md)|Specifies the type of event to remove. Required.For a  **CustomXmlPart** object event, the _eventType_ parameter can be specified as **Office.EventType.NodeDeleted**,  **Office.EventType.NodeInserted**,  **Office.EventType.NodeReplaced**, or the corresponding text values of these enumerations.||
+| _eventType_|[EventType](../../reference/shared/eventtype-enumeration.md)|Specifies the type of event to remove. Required.For a  **CustomXmlPart** object event, the _eventType_ parameter can be specified as **Office.EventType.DataNodeDeleted**,  **Office.EventType.DataNodeInserted**,  **Office.EventType.DataNodeReplaced**, or the corresponding text values of these enumerations.||
 | _options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)||
 | _handler_|**string**|Specifies the name of the handler to remove. ||
 | _asyncContext_|**array**,  **boolean**,  **null**,  **number**,  **object**, **string**, or  **undefined**|A user-defined item of any type that is returned in the  **AsyncResult** object without being altered.||
@@ -52,10 +52,10 @@ If the optional  _handler_ parameter is omitted when calling the **removeHandler
 
 ```js
 function removeNodeInsertedEventHandler() {
-    Office.context.document.customXmlParts.getByIdAsync("{3BC85265-09D6-4205-B665-8EB239A8B9A1}", 
+    Office.context.document.customXmlParts.getByIdAsync("{3BC85265-09D6-4205-B665-8EB239A8B9A1}",
         function (result) {
             var xmlPart = result.value;
-            xmlPart.removeHandlerAsync(Office.EventType.NodeInserted, {handler:myHandler});
+            xmlPart.removeHandlerAsync(Office.EventType.DataNodeInserted, {handler:myHandler});
     });
 }
 ```

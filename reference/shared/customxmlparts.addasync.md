@@ -60,18 +60,18 @@ function addXMLPart() {
 
 ```
 function addXMLPartandHandler() {
-    Office.context.document.customXmlParts.addAsync("<testns:book xmlns:testns='http://testns.com'><testns:page number='1'>Hello</testns:page><testns:page number='2'>world!</testns:page></testns:book>", 
-        function(r) { r.value.addHandlerAsync("nodeDeleted", 
+    Office.context.document.customXmlParts.addAsync("<testns:book xmlns:testns='http://testns.com'><testns:page number='1'>Hello</testns:page><testns:page number='2'>world!</testns:page></testns:book>",
+        function(r) { r.value.addHandlerAsync(Office.EventType.DataNodeDeleted,
             function(a) {write(a.type)
-            }, 
+            },
                 function(s) {write(s.status)
-                }); 
+                });
         });
 }
 
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 

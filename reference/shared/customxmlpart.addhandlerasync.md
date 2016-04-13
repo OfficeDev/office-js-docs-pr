@@ -19,7 +19,7 @@ customXmlPart.addHandlerAsync(eventType, handler [, options], callback);
 
 |**Name**|**Type**|**Description**|**Support notes**|
 |:-----|:-----|:-----|:-----|
-| _eventType_|[EventType](../../reference/shared/eventtype-enumeration.md)| Specifies the type of event to add. Required. For a  **CustomXmlPart** object event, the _eventType_ parameter can be specified as **Office.EventType.NodeDeleted**,  **Office.EventType.NodeInserted**,  **Office.EventType.NodeReplaced**, or the corresponding text values of these enumerations.||
+| _eventType_|[EventType](../../reference/shared/eventtype-enumeration.md)| Specifies the type of event to add. Required. For a  **CustomXmlPart** object event, the _eventType_ parameter can be specified as **Office.EventType.DataNodeDeleted**,  **Office.EventType.DataNodeInserted**,  **Office.EventType.DataNodeReplaced**, or the corresponding text values of these enumerations.||
 | _handler_|**object**|The event handler function to add, whose only parameter is of type [NodeDeletedEventArgs](../../reference/shared/customxmlpart.nodedeletedeventargs.md), [NodeInsertedEventArgs](../../reference/shared/customxmlpart.nodeinsertedeventargs.md), or [NodeReplaceEventArgs](../../reference/shared/customxmlpart.nodereplacedeventargs.md). Required.||
 | _options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods).||
 | _asyncContext_|**array**,  **boolean**,  **null**,  **number**,  **object**, **string**, or  **undefined**|A user-defined item of any type that is returned in the  **AsyncResult** object without being altered.||
@@ -54,7 +54,7 @@ You can add multiple event handlers for the specified  _eventType_ as long as th
 function addNodeInsertedEvent() {
     Office.context.document.customXmlParts.getByIdAsync("{3BC85265-09D6-4205-B665-8EB239A8B9A1}", function (result) {
         var xmlPart = result.value;
-        xmlPart.addHandlerAsync(Office.EventType.NodeInserted, myHandler);
+        xmlPart.addHandlerAsync(Office.EventType.DataNodeInserted, myHandler);
     });
 }
 function myHandler(eventArgs) {
@@ -62,7 +62,7 @@ function myHandler(eventArgs) {
 }
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 

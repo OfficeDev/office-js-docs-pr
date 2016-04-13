@@ -1,6 +1,6 @@
 
 # NodeInsertedEventArgs object
-Provides information about the inserted node that raised the [nodeInserted](../../reference/shared/customxmlpart.datanodeinserted.event.md) event.
+Provides information about the inserted node that raised the [dataNodeInserted](../../reference/shared/customxmlpart.datanodeinserted.event.md) event.
 
 |||
 |:-----|:-----|

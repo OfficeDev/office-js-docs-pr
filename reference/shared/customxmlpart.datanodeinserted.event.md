@@ -1,5 +1,5 @@
 
-# CustomXmlPart.nodeInserted event
+# CustomXmlPart.dataNodeInserted event
 Occurs when a node is inserted.
 
 |||
@@ -9,13 +9,13 @@ Occurs when a node is inserted.
 |**Last changed in**|1.1|
 
 ```
-Office.EventType.NodeInserted
+Office.EventType.DataNodeInserted
 ```
 
 
 ## Remarks
 
-To add an event handler for the  **nodeInserted** event, use the [addHandlerAsync](../../reference/shared/customxmlpart.addhandlerasync.md) method of the **CustomXmlPart** object.
+To add an event handler for the  **dataNodeInserted** event, use the [addHandlerAsync](../../reference/shared/customxmlpart.addhandlerasync.md) method of the **CustomXmlPart** object.
 
 
 ## Example
@@ -27,14 +27,14 @@ To add an event handler for the  **nodeInserted** event, use the [addHandlerAsyn
 function addNodeInsertedEvent() {
     Office.context.document.customXmlParts.getByIdAsync("{3BC85265-09D6-4205-B665-8EB239A8B9A1}", function (result) {
         var xmlPart = result.value;
-        xmlPart.addHandlerAsync(Office.EventType.NodeInserted, function (eventArgs) {
+        xmlPart.addHandlerAsync(Office.EventType.DataNodeInserted, function (eventArgs) {
             write("A node has been inserted.");
         });
     });
 }
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 

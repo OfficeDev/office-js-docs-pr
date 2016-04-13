@@ -41,9 +41,9 @@ Office.context.document.customXmlParts.getByIdAsync(id);
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[nodeDeleted](../../reference/shared/customxmlpart.datanodedeleted.event.md)|Occurs when a node is deleted.|
-|[nodeInserted](../../reference/shared/customxmlpart.datanodeinserted.event.md)|Occurs when a node is inserted.|
-|[nodeReplaced](../../reference/shared/customxmlpart.datanodereplaced.event.md)|Occurs when a node is replaced.|
+|[dataNodeDeleted](../../reference/shared/customxmlpart.datanodedeleted.event.md)|Occurs when a node is deleted.|
+|[dataNodeInserted](../../reference/shared/customxmlpart.datanodeinserted.event.md)|Occurs when a node is inserted.|
+|[dataNodeReplaced](../../reference/shared/customxmlpart.datanodereplaced.event.md)|Occurs when a node is replaced.|
 
 ## Support details
 
