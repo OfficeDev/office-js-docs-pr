@@ -1,6 +1,6 @@
 
 # NodeDeletedEventArgs object
-Provides information about the deleted node that raised the [nodeDeleted](../../reference/shared/customxmlpart.nodedeleted.event.md) event.
+Provides information about the deleted node that raised the [nodeDeleted](../../reference/shared/customxmlpart.datanodedeleted.event.md) event.
 
 |||
 |:-----|:-----|
