@@ -1,6 +1,6 @@
 # NotebookCollection Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_
+_Applies to: OneNote Online_  
 _Note: This API is in preview_
 
 Represents a collection of notebooks.
@@ -11,7 +11,7 @@ Represents a collection of notebooks.
 |:---------------|:--------|:----------|
 |items|[Notebook[]](notebook.md)|A collection of notebook objects. Read-only.|
 
-
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
@@ -21,15 +21,17 @@ None
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[getByName(name: string)](#getbynamename-string)|[NotebookCollection](notebookcollection.md)|Gets the collection of notebooks with the specified name.|
+|[getByName(name: string)](#getbynamename-string)|[NotebookCollection](notebookcollection.md)|Gets the collection of notebooks with the specified name that are open in the application instance.|
 |[getItem(index: number or string)](#getitemindex-number-or-string)|[Notebook](notebook.md)|Gets a notebook by ID or by its index in the collection. Read-only.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 
 
 ### getByName(name: string)
-Gets the collection of notebooks with the specified name.
+Gets the collection of notebooks with the specified name that are open in the application instance.
+
+>OneNote Online has only one notebook open in the application instance, so this method will work only for the current notebook.
 
 #### Syntax
 ```js
@@ -39,10 +41,42 @@ notebookCollectionObject.getByName(name);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|name|string|The name of the notebook.|
+|name|string|The case-sensitive name of the notebook.|
 
 #### Returns
 [NotebookCollection](notebookcollection.md)
+
+#### Examples
+
+```js
+OneNote.run(function (context) {
+
+    // Get the notebooks that are open in the application instance and have the specified name.
+    var notebooks = context.application.notebooks.getByName("Homework");
+
+    // Queue a command to load the notebooks. 
+    // For best performance, request specific properties.           
+    notebooks.load("id,name");
+
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function () {
+
+            // Iterate through the collection or access items individually by index, for example: notebooks.items[0]
+            if (notebooks.items.length > 0) {
+                console.log("Notebook name: " + notebooks.items[0].name);
+                console.log("Notebook ID: " + notebooks.items[0].id);
+            }
+                
+        })
+        .catch(function(error) {
+            console.log("Error: " + error);
+            if (error instanceof OfficeExtension.Error) {
+                console.log("Debug info: " + JSON.stringify(error.debugInfo));
+            }
+        })
+    });
+```
 
 ### getItem(index: number or string)
 Gets a notebook by ID or by its index in the collection. Read-only.
@@ -75,3 +109,40 @@ object.load(param);
 
 #### Returns
 void
+
+
+### Property access examples
+
+#### items
+```
+OneNote.run(function (context) {
+
+    // Get the notebooks that are open in the application instance and have the specified name.
+    var notebooks = context.application.notebooks.getByName("Homework");
+
+    // Queue a command to load the notebooks. 
+    // For best performance, request specific properties.           
+    notebooks.load("id");
+
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function () {
+
+            // Iterate through the collection or access items individually by index, for example: notebooks.items[0]
+            $.each(notebooks.items, function(index, notebook) {
+                notebook.addSection("Biology");
+                notebook.addSection("Spanish");
+                notebook.addSection("Computer Science");
+            });
+            
+            context.sync()
+            .catch(function(error) {
+                console.log("Error: " + error);
+                if (error instanceof OfficeExtension.Error) {
+                    console.log("Debug info: " + JSON.stringify(error.debugInfo));
+                }
+            });
+        })
+    });
+
+```

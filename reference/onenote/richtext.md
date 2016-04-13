@@ -23,10 +23,28 @@ Represents a RichText object in a Paragraph.
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
+|[insertHtml(html: string, insertLocation: string)](#inserthtmlhtml-string-insertlocation-string)|void|Inserts HTML at the specified location in the RichText object.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 
+
+### insertHtml(html: string, insertLocation: string)
+Inserts HTML at the specified location in the RichText object.
+
+#### Syntax
+```js
+richTextObject.insertHtml(html, insertLocation);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|html|string|The HTML to insert.|
+|insertLocation|string|The location to insert the HTML.  Possible values are: Before, After|
+
+#### Returns
+void
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.

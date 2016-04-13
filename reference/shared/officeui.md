@@ -35,12 +35,33 @@ Runtime detection of `DialogAPI` capability can be done with the following code:
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
+|[close()](#close)|void|Closes the dialog.|
 |[displayDialogAsync()](#displaydialogasync)|void|Displays a dialog to display or collect information from the user or to facilitate Web navigation.|
 |[messageParent()](#messageparent)|void|Sends a message from a dialog to the parent add-in.|
 
 ## Method Details
 
-### displayDialogAsync(startAddress, options, callback)
+### close()
+When called from an active add-in dialog, immediately closes the dialog.
+
+#### Syntax
+```js
+close();
+```
+
+#### Parameters
+None.
+
+#### Returns
+void
+
+#### Examples
+
+```js
+closeButton.addEventListener("click", office.ui.close);
+```
+
+### displayDialogAsync(startAddress: string[, options: object], callback: function)
 Display up to one Web dialog that opens at startAddress.
 
 #### Syntax
@@ -61,10 +82,8 @@ void
 #### Examples
 
 ```js
-var dialog;
-
 function dialogCallback(asyncResult){ 
-	dialog = asyncResult.value; 
+	var dialog = asyncResult.value; 
 	dialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogMessageReceived, messageHandler); 
 	dialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogEventReceived,  eventHandler); 
 } 
@@ -75,7 +94,6 @@ function messageHandler(arg){
 
 function eventHandler(arg){ 
 	actOnEvent(arg.message); 
-	dialog.close();
 } 
 
 function openDialog() {
@@ -106,27 +124,6 @@ The callback for displayDialogAsync, in the success case, includes a dialog obje
 
 #### Returns
 void
-
-### close()
-When called from an active add-in, immediately closes its dialog.
-
-#### Syntax
-```js
-close();
-```
-
-#### Parameters
-None.
-
-#### Returns
-void
-
-#### Examples
-
-```js
-//using _dlg object provided by the displayDialogAsync callback method
-closeButton.addEventListener("click", _dlg.close);
-```
 
 ### messageParent(messageObject: object)
 Delivers a message from the dialog to its parent add-in.

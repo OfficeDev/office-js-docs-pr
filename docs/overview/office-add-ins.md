@@ -105,7 +105,7 @@ You can **add new functionality** to Word, Excel, or PowerPoint by registering y
 - Insertable task panes
 
 ####Add-in commands
-Use add-in commands to extend the user interface of Office for Windows Desktop and Office Online. For example, you can add **buttons for your add-ins on the ribbon** or selected contextual menus, allowing users to easily access their add-ins within Office. Command buttons can launch the different actions such as **showing a pane (or multiple panes) with a custom HTML** or **executing a JavaScript function**. We recommend that you [watch this Channel9 video](https://channel9.msdn.com/events/Build/2016/P551) for a deeper overview of this feature.
+Use add-in commands to extend the user interface of Office for Windows Desktop and Office Online. For example, you can add **buttons for your add-ins on the ribbon** or selected contextual menus, allowing users to easily access their add-ins within Office. Command buttons can launch the different actions such as **showing a pane (or multiple panes) with a custom HTML** or **executing a JavaScript function**. We recommend that you [watch this Channel9 video](https://channel9.msdn.com/Events/Visual-Studio/Connect-event-2015/316) for a deeper overview of this feature.
 
 **Add-in with commands running in Excel Desktop**
 ![Add-in commands](../../images/addincommands1.png)

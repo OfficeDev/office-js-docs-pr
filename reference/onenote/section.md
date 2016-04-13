@@ -48,30 +48,6 @@ sectionObject.addPage(title);
 #### Returns
 [Page](page.md)
 
-#### Examples
-```js
-OneNote.run(function (context) {
-
-    // Gets the active section.
-    var section = context.application.activeSection;
-
-    // Queue a command to add a new page.
-    var page = section.addPage("sample page");
-
-    // Run the queued commands, and return a promise to indicate task completion.
-    return context.sync()
-        .then(function() {
-            console.log("new page title is " + page.title);
-        })
-        .catch(function(error) {
-            console.log("Error: " + error);
-            if (error instanceof OfficeExtension.Error) {
-                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-            }
-        });
-});
-```
-
 ### getPages()
 Gets the collection of pages in the section.
 
@@ -85,35 +61,6 @@ None
 
 #### Returns
 [PageCollection](pagecollection.md)
-
-#### Examples
-```js
-OneNote.run(function (context) {
-
-    // Gets the active section.
-    var section = context.application.activeSection;
-
-    // Queue a command to get pages of the section. 
-    var pages = section.getPages();
-
-    // Queue a command to load the pages. 
-    context.load(pages);
-
-    // Run the queued commands, and return a promise to indicate task completion.
-    return context.sync()
-        .then(function() {
-            $.each(pages.items, function(index, page) {
-                console.log("Page title: " + page.title);
-            });
-        })
-        .catch(function(error) {
-            console.log("Error: " + error);
-            if (error instanceof OfficeExtension.Error) {
-                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-            }
-        });
-});
-```
 
 ### insertSectionAsSibling(location: string, title: string)
 Inserts a new section before or after the current section.
@@ -131,33 +78,6 @@ sectionObject.insertSectionAsSibling(location, title);
 
 #### Returns
 [Section](section.md)
-
-#### Examples
-```js
-OneNote.run(function (context) {
-
-    // Gets the active section.
-    var activeSection = context.application.activeSection;
-
-    // Queue a command to add a new section after the active section. 
-    var newSection = activeSection.insertSectionAsSibling("After", "Next Section");
-
-    // Queue a command to load the newSection to access its data.
-    context.load(newSection);
-
-    // Run the queued commands, and return a promise to indicate task completion.
-    return context.sync()
-        .then(function() {
-            console.log("section is created with name: " + newSection.name);
-        })
-        .catch(function(error) {
-            console.log("Error: " + error);
-            if (error instanceof OfficeExtension.Error) {
-                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-            }
-        })
-});
-```
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.

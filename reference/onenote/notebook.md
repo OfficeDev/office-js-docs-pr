@@ -1,6 +1,6 @@
 # Notebook Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_
+_Applies to: OneNote Online_  
 _Note: This API is in preview_
 
 Represents a OneNote notebook. Notebooks contain section groups and sections.
@@ -12,7 +12,7 @@ Represents a OneNote notebook. Notebooks contain section groups and sections.
 |id|string|Gets the ID of the notebook. Read-only.|
 |name|string|Gets the name of the notebook. Read-only.|
 
-
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
@@ -54,12 +54,15 @@ OneNote.run(function (context) {
     var notebook = context.application.activeNotebook;
 
     // Queue a command to add a new section. 
-    var section = notebook.addSection("sample section");
+    var section = notebook.addSection("Sample section");
+
+    // Queue a command to load the new section. This example loads the new section so it can read the name property later.
+    section.load('name');
 
     // Run the queued commands, and return a promise to indicate task completion.
     return context.sync()
         .then(function() {
-            console.log("new section name is " + section.name);
+            console.log("New section name is " + section.name);
         })
         .catch(function(error) {
             console.log("Error: " + error);
@@ -88,11 +91,8 @@ None
 ```js          
 OneNote.run(function (context) {
 
-    // Gets the active notebook.
-    var notebook = context.application.activeNotebook;
-
-    // Queue a command to get section groups of the notebook. 
-    var sectionGroups = notebook.getSectionGroups();
+    // Get the section groups in the active notebook.
+    var sectionGroups = context.application.activeNotebook.getSectionGroups();
 
     // Queue a command to load the sectionGroups. 
     context.load(sectionGroups);
@@ -124,7 +124,7 @@ notebookObject.getSections(recursive);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|recursive|bool|true to retrieve all child sections, or false to retrieve direct child sections only. Default is false.|
+|recursive|bool|`true` to retrieve all child sections, or `false` to retrieve direct child sections only. Default is `false`.|
 
 #### Returns
 [SectionCollection](sectioncollection.md)
@@ -133,19 +133,19 @@ notebookObject.getSections(recursive);
 ```js          
 OneNote.run(function (context) {
 
-    // Gets the active notebook.
+    // Get the active notebook.
     var notebook = context.application.activeNotebook;
 
-    // Queue a command to get immediate child sections of the notebook. 
+    // Get immediate child sections of the notebook. 
     var childSections = notebook.getSections(false);
     
-    // Queue a command to get every child section of the notebook.
+    // Get all sections in the notebook, including sections in section groups.
     var allChildSections = notebook.getSections(true);
 
-    // Queue a command to load the childSections. 
+    // Queue a command to load childSections. 
     context.load(childSections);
     
-    // Queue a command to load the allChildSections. 
+    // Queue a command to load allChildSections. 
     context.load(allChildSections);
 
     // Run the queued commands, and return a promise to indicate task completion.
@@ -169,7 +169,7 @@ OneNote.run(function (context) {
 ```
 
 ### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
 ```js
@@ -183,3 +183,54 @@ object.load(param);
 
 #### Returns
 void
+
+### Property access examples
+
+#### id
+```js
+OneNote.run(function (context) {
+        
+    // Get the current notebook.
+    var notebook = context.application.activeNotebook;
+            
+    // Queue a command to load the notebook. 
+    // For best performance, request specific properties.           
+    notebook.load('id');
+            
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function () {
+            console.log("Notebook ID: " + notebook.id);
+        }).catch(function(error) {
+            console.log("Error: " + error);
+            if (error instanceof OfficeExtension.Error) {
+                console.log("Debug info: " + JSON.stringify(error.debugInfo));
+            }
+        })
+    });
+```
+
+#### name
+```js
+OneNote.run(function (context) {
+        
+    // Get the current notebook.
+    var notebook = context.application.activeNotebook;
+            
+    // Queue a command to load the notebook. 
+    // For best performance, request specific properties.           
+    notebook.load('name');
+            
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function () {
+            console.log("Notebook name: " + notebook.name);
+        }).catch(function(error) {
+            console.log("Error: " + error);
+            if (error instanceof OfficeExtension.Error) {
+                console.log("Debug info: " + JSON.stringify(error.debugInfo));
+            }
+        })
+    });
+```
+
