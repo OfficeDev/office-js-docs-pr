@@ -144,10 +144,10 @@ OneNote.run(function (context) {
 ```js
 OneNote.run(function (context) {
         
-    // Get the current notebook.
+    // Get the current page.
     var page = context.application.activePage;
             
-    // Queue a command to load the notebook. 
+    // Queue a command to load the page. 
     // For best performance, request specific properties.           
     page.load('id,title');
             
@@ -211,13 +211,11 @@ OneNote.run(function (context) {
     return context.sync()
         .then(function () {
                         
-            $.each(notebooks.items, function(index, object) {
-                var notebookName = object.name;
-                var notebookId = object.id;
+            $.each(notebooks.items, function(index, notebook) {
                 
                 // Show some properties.
-                console.log("Notebook name: " + notebookName);
-                console.log("Notebook ID: " + notebookId);
+                console.log("Notebook name: " + notebook.name);
+                console.log("Notebook ID: " + notebook.id);
                 
             });
         }).catch(function(error) {
