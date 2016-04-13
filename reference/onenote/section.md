@@ -69,13 +69,13 @@ OneNote.run(function (context) {
             console.log("Page name: " + page.title);
             console.log("Page ID: " + page.id);
 
-        })
-        .catch(function(error) {
-            console.log("Error: " + error);
-            if (error instanceof OfficeExtension.Error) {
-                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-            }
         });
+    })
+    .catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
     });
 ```
 
@@ -106,19 +106,19 @@ OneNote.run(function (context) {
     // Run the queued commands, and return a promise to indicate task completion.
     return context.sync()
         .then(function () {
-                    
+            
+            // Display the properties.         
             $.each(pages.items, function(index, page) {
                 console.log("Page name: " + page.title);
                 console.log("Page ID: " + page.id);
             });
-
-        })
-        .catch(function(error) {
-            console.log("Error: " + error);
-            if (error instanceof OfficeExtension.Error) {
-                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-            }
         });
+    })
+    .catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
     });
 ```
 
@@ -157,15 +157,14 @@ OneNote.run(function (context) {
             // Display the properties.       
             console.log("Section name: " + section.name);
             console.log("Section ID: " + section.id);
-
-        })
-        .catch(function(error) {
-            console.log("Error: " + error);
-            if (error instanceof OfficeExtension.Error) {
-                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-            }
         });
-    }); 
+    })
+    .catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+    });  
 ```
 
 ### load(param: object)
@@ -195,19 +194,19 @@ OneNote.run(function (context) {
             
     // Queue a command to load the section. 
     // For best performance, request specific properties.           
-    section.load("id,name");
+    section.load("id");
             
     // Run the queued commands, and return a promise to indicate task completion.
     return context.sync()
         .then(function () {
             console.log("Section ID: " + section.id);
-        })
-        .catch(function(error) {
-            console.log("Error: " + error);
-            if (error instanceof OfficeExtension.Error) {
-                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-            }
-        })
+        });
+    })
+    .catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
     });
 ```
 
@@ -226,12 +225,12 @@ OneNote.run(function (context) {
         .then(function () {
             console.log("Section name: " + section.name);
             console.log("Parent notebook name: " + section.notebook.name);
-        })
-        .catch(function(error) {
-            console.log("Error: " + error);
-            if (error instanceof OfficeExtension.Error) {
-                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-            }
-        })
+        });
+    })
+    .catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
     });
 ```
