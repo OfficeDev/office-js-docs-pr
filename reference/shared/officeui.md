@@ -161,7 +161,7 @@ Dialogs support a number of configuration options.
 |width|object|Optional. Defines the width of the dialog as a percentage of the current display. Defaults to 80%. 250px minimum.|
 |height|object|Optional. Defines the height of the dialog as a percentage of the current display. Defaults to 80%. 150px minimum.|
 |xFrameDenySafe|object|Optional. Determines whether the dialog is safe to display within a Web frame.|
-|enforceAppDomains|object|Optional|object|Optional. Restricts the dialog's navigation to the add-in's trusted sites.|
+|enforceAppDomains|object|Optional. Restricts the dialog's navigation to the add-in's trusted sites.|
 
 #### Comments
 1.	The default dialog dimensions are 80% display width x 80% display height (based on the current device dimensions) 
