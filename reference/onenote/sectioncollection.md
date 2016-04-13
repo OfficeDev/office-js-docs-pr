@@ -1,6 +1,6 @@
 # SectionCollection Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_
+_Applies to: OneNote Online_  
 _Note: This API is in preview_
 
 Represents a collection of sections.
@@ -40,7 +40,7 @@ sectionCollectionObject.getByName(name);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|name|string|The name of the section.|
+|name|string|The case-sensitive name of the section.|
 
 #### Returns
 [SectionCollection](sectioncollection.md)
@@ -68,7 +68,7 @@ OneNote.run(function (context) {
             // For best performance, request specific properties.
             grocerySections.load("id,name"); 
             
-            context.sync()
+            return context.sync()
                 .then(function () {
 
                     // Iterate through the collection or access items individually by index.
@@ -76,20 +76,14 @@ OneNote.run(function (context) {
                         console.log("Section name: " + grocerySections.items[0].name);
                         console.log("Section ID: " + grocerySections.items[0].id);
                     }
-                })
-                .catch(function(error) {
-                    console.log("Error: " + error);
-                    if (error instanceof OfficeExtension.Error) {
-                        console.log("Debug info: " + JSON.stringify(error.debugInfo));
-                    }
                 });
-            })
-            .catch(function(error) {
-                console.log("Error: " + error);
-                if (error instanceof OfficeExtension.Error) {
-                    console.log("Debug info: " + JSON.stringify(error.debugInfo));
-                }
             });
+        })
+        .catch(function(error) {
+            console.log("Error: " + error);
+            if (error instanceof OfficeExtension.Error) {
+                console.log("Debug info: " + JSON.stringify(error.debugInfo));
+            }
         });
 ```
 
@@ -129,7 +123,7 @@ void
 ### Property access examples
 
 #### items
-```
+```js
 OneNote.run(function (context) {
 
     // Get all the sections in the current notebook.
@@ -151,15 +145,13 @@ OneNote.run(function (context) {
                     section.addPage("Computer Science");
                 }
             });
-            
-            context.sync()
-            .catch(function(error) {
-                console.log("Error: " + error);
-                if (error instanceof OfficeExtension.Error) {
-                    console.log("Debug info: " + JSON.stringify(error.debugInfo));
-                }
-            });
-        })
+            return context.sync();
+        });
+    })
+    .catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
     });
-
 ```

@@ -68,13 +68,13 @@ OneNote.run(function (context) {
                 console.log("Notebook ID: " + notebooks.items[0].id);
             }
                 
-        })
-        .catch(function(error) {
-            console.log("Error: " + error);
-            if (error instanceof OfficeExtension.Error) {
-                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-            }
-        })
+        });
+    })
+    .catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
     });
 ```
 
@@ -135,14 +135,13 @@ OneNote.run(function (context) {
                 notebook.addSection("Computer Science");
             });
             
-            context.sync()
-            .catch(function(error) {
-                console.log("Error: " + error);
-                if (error instanceof OfficeExtension.Error) {
-                    console.log("Debug info: " + JSON.stringify(error.debugInfo));
-                }
-            });
-        })
+            return context.sync();
+        });
+    })
+    .catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
     });
-
 ```

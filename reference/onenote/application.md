@@ -81,7 +81,7 @@ void
 #### Examples
 ```js        
 OneNote.run(function (context) {
-            
+        
     // Get the pages in the current section.
     var pages = context.application.activeSection.getPages();
             
@@ -95,20 +95,20 @@ OneNote.run(function (context) {
                     
             // This example loads the first page in the section.
             var page = pages.items[0];
-                       
+                        
             // Open the page in the application.                    
             context.application.navigateToPage(page);
                     
             // Run the queued command.
             return context.sync();
-        })
-        .catch(function(error) {
-		    console.log("Error: " + error);
-		    if (error instanceof OfficeExtension.Error) {
-			    console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		    }
+        });
     })
-});
+    .catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+    });
 ```
 ### Property access examples
 
@@ -131,12 +131,13 @@ OneNote.run(function (context) {
             console.log("Notebook name: " + notebook.name);
             console.log("Notebook ID: " + notebook.id);
             
-        }).catch(function(error) {
-            console.log("Error: " + error);
-            if (error instanceof OfficeExtension.Error) {
-                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-            }
-        })
+        });
+    })
+    .catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
     });
 ```
 
@@ -144,10 +145,10 @@ OneNote.run(function (context) {
 ```js
 OneNote.run(function (context) {
         
-    // Get the current page.
+    // Get the current notebook.
     var page = context.application.activePage;
             
-    // Queue a command to load the page. 
+    // Queue a command to load the notebook. 
     // For best performance, request specific properties.           
     page.load('id,title');
             
@@ -159,12 +160,13 @@ OneNote.run(function (context) {
             console.log("Page title: " + page.title);
             console.log("Page ID: " + page.id);
             
-        }).catch(function(error) {
-            console.log("Error: " + error);
-            if (error instanceof OfficeExtension.Error) {
-                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-            }
-        })
+        });
+    })
+    .catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
     });
 ```
 
@@ -187,12 +189,13 @@ OneNote.run(function (context) {
             console.log("Section name: " + section.name);
             console.log("Section ID: " + section.id);
             
-        }).catch(function(error) {
-            console.log("Error: " + error);
-            if (error instanceof OfficeExtension.Error) {
-                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-            }
-        })
+        });
+    })
+    .catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
     });
 ```
 
@@ -218,11 +221,12 @@ OneNote.run(function (context) {
                 console.log("Notebook ID: " + notebook.id);
                 
             });
-        }).catch(function(error) {
-            console.log("Error: " + error);
-            if (error instanceof OfficeExtension.Error) {
-                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-            }
-        })
+        });
+    })
+    .catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
     });
 ```
