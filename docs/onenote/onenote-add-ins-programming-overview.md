@@ -102,7 +102,7 @@ OneNote add-ins support only the following common APIs:
 | [Office.context.document.setSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142145.aspx) | **Office.CoercionType.Text** and **Office.CoercionType.Html** only | 
 | [var mySetting = Office.context.document.settings.get(name);](https://msdn.microsoft.com/en-us/library/office/fp142180.aspx) | Settings are supported by content add-ins only | 
 | [Office.context.document.settings.set(name, value);](https://msdn.microsoft.com/en-us/library/office/fp161063.aspx) | Settings are supported by content add-ins only | 
-| [Office.EventType.DocumentSelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event ||
+| [Office.EventType.DocumentSelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) ||
 
 In general, you only use the common API to do something that isn't supported in the rich API. To learn more about using the common API, see the Office Add-ins [documentation](https://dev.office.com/docs/add-ins/overview/office-add-ins) and [reference](https://dev.office.com/reference/add-ins/javascript-api-for-office).
 
