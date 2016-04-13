@@ -11,6 +11,7 @@ Represents a collection of sections.
 |:---------------|:--------|:----------|
 |items|[Section[]](section.md)|A collection of section objects. Read-only.|
 
+_See property access [examples.](#property-access-examples)_
 
 
 ## Relationships
@@ -44,6 +45,54 @@ sectionCollectionObject.getByName(name);
 #### Returns
 [SectionCollection](sectioncollection.md)
 
+#### Examples
+
+```js
+OneNote.run(function (context) {
+
+    // Get all the sections in the current notebook.
+    var allSections = context.application.activeNotebook.getSections(false);
+
+    // Queue a command to load the sections. 
+    // For best performance, request specific properties.
+    allSections.load("id"); 
+
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function () {
+
+            // Get the sections with the specified name.
+            var grocerySections = allSections.getByName("Groceries");
+
+            // Queue a command to load the section. 
+            // For best performance, request specific properties.
+            grocerySections.load("id,name"); 
+            
+            context.sync()
+                .then(function () {
+
+                    // Iterate through the collection or access items individually by index.
+                    if (grocerySections.items.length > 0) {
+                        console.log("Section name: " + grocerySections.items[0].name);
+                        console.log("Section ID: " + grocerySections.items[0].id);
+                    }
+                })
+                .catch(function(error) {
+                    console.log("Error: " + error);
+                    if (error instanceof OfficeExtension.Error) {
+                        console.log("Debug info: " + JSON.stringify(error.debugInfo));
+                    }
+                });
+            })
+            .catch(function(error) {
+                console.log("Error: " + error);
+                if (error instanceof OfficeExtension.Error) {
+                    console.log("Debug info: " + JSON.stringify(error.debugInfo));
+                }
+            });
+        });
+```
+
 ### getItem(index: number or string)
 Gets a section by ID or by its index in the collection. Read-only.
 
@@ -75,3 +124,42 @@ object.load(param);
 
 #### Returns
 void
+
+
+### Property access examples
+
+#### items
+```
+OneNote.run(function (context) {
+
+    // Get all the sections in the current notebook.
+    var sections = context.application.activeNotebook.getSections(true);
+
+    // Queue a command to load the sections. 
+    // For best performance, request specific properties.
+    sections.load("name"); 
+
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function () {
+            
+            // Iterate through the collection or access items individually by index, for example: sections.items[0]
+            $.each(sections.items, function(index, section) {
+                if (section.name === "Homework") {
+                    section.addPage("Biology");
+                    section.addPage("Spanish");
+                    section.addPage("Computer Science");
+                }
+            });
+            
+            context.sync()
+            .catch(function(error) {
+                console.log("Error: " + error);
+                if (error instanceof OfficeExtension.Error) {
+                    console.log("Debug info: " + JSON.stringify(error.debugInfo));
+                }
+            });
+        })
+    });
+
+```
