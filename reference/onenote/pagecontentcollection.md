@@ -1,6 +1,6 @@
 # PageContentCollection Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_
+_Applies to: OneNote Online_  
 _Note: This API is in preview_
 
 Represents the contents of a page, as a collection of PageContent objects.
