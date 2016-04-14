@@ -51,40 +51,35 @@ sectionCollectionObject.getByName(name);
 OneNote.run(function (context) {
 
     // Get all the sections in the current notebook.
-    var allSections = context.application.activeNotebook.getSections(false);
+    var allSections = context.application.activeNotebook.getSections(true);
 
     // Queue a command to load the sections. 
     // For best performance, request specific properties.
     allSections.load("id"); 
+    
+    // Get the sections with the specified name.
+    var groceriesSections = allSections.getByName("Groceries");
+    
+    // Queue a command to load the sections with the specified name.
+    groceriesSections.load("id,name");
 
     // Run the queued commands, and return a promise to indicate task completion.
     return context.sync()
         .then(function () {
 
-            // Get the sections with the specified name.
-            var grocerySections = allSections.getByName("Groceries");
-
-            // Queue a command to load the section. 
-            // For best performance, request specific properties.
-            grocerySections.load("id,name"); 
-            
-            return context.sync()
-                .then(function () {
-
-                    // Iterate through the collection or access items individually by index.
-                    if (grocerySections.items.length > 0) {
-                        console.log("Section name: " + grocerySections.items[0].name);
-                        console.log("Section ID: " + grocerySections.items[0].id);
-                    }
-                });
-            });
-        })
-        .catch(function(error) {
-            console.log("Error: " + error);
-            if (error instanceof OfficeExtension.Error) {
-                console.log("Debug info: " + JSON.stringify(error.debugInfo));
+            // Iterate through the collection or access items individually by index.
+            if (groceriesSections.items.length > 0) {
+                console.log("Section name: " + groceriesSections.items[0].name);
+                console.log("Section ID: " + groceriesSections.items[0].id);
             }
         });
+    })
+    .catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+    });
 ```
 
 ### getItem(index: number or string)
