@@ -2,12 +2,16 @@
 
 _Applies to: Office Online, Office 2013, Office 2016_
 
-The Office UI Namespace provides objects and methods used to create UI components for add-ins.
-
+The Office UI Namespace, Office.context.ui, provides objects and methods used to create UI components for add-ins.
 
 ##### Requirements
 
-Usage of Office UI APIs require `DialogAPI` requirement set 1.1 or later. To set this for app activation, use:
+|Host|Introduced in|Last changed in|
+|:---------------|:--------|:----------|
+|Word, Excel, PowerPoint|1.1|1.1|
+|Outlook|Mailbox 1.4|Mailbox 1.4|
+
+To require the `DialogAPI` [requirement set](../../docs/overview/specify-office-hosts-and-api-requirements.md) 1.1 or later, your manifest should specify
 
 ```xml
  <Requirements> 
@@ -18,7 +22,7 @@ Usage of Office UI APIs require `DialogAPI` requirement set 1.1 or later. To set
 
 ```
 
-Runtime detection of `DialogAPI` capability can be done with the following code:
+Runtime detection of the `DialogAPI` capability can be done with the following code:
 
 ```js
  if (Office.context.requirements.isSetSupported('DialogAPI', '1.1')) 
@@ -35,7 +39,6 @@ Runtime detection of `DialogAPI` capability can be done with the following code:
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[close()](#close)|void|Closes the dialog.|
 |[displayDialogAsync()](#displaydialogasync)|void|Displays a dialog to display or collect information from the user or to facilitate Web navigation.|
 |[messageParent()](#messageparent)|void|Sends a message from a dialog to the parent add-in.|
 
@@ -92,8 +95,8 @@ function openDialog() {
 4.	Every dialog opens centered on the screen 
 5.	Dialogs always open on top
 6.	Dialogs can only navigate to secured (TLS) sites 
-7.	Dialogs must initially open a site on the Trusted Domains list
-8.	Dialogs cannot send messages from pages outside the Trusted Domains list
+7.	Dialogs must initially open to a site on the add-in manifest's App Domains list
+8.	Dialogs cannot send messages from pages outside the add-in manifest's App Domains list
 
 ### callback()
 The callback for displayDialogAsync, in the success case, includes a dialog object. This dialog object has additional behaviors. 
