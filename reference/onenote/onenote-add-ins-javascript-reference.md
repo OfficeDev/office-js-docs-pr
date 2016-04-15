@@ -30,7 +30,7 @@ The links below show the high level OneNote objects available in the API. Each o
 
 - [Image](image.md): An Image object. An Image can be a direct child of a PageContent object or a Paragraph.
 
-- [Paragraph](paragraph.md): A container for the visible content on a page. A Paragraph is a direct child of an Outline or another paragraph.
+- [Paragraph](paragraph.md): A container for the visible content on a page. A Paragraph is a direct child of an Outline.
 
   - [ParagraphCollection](paragraphcollection.md): A collection of Paragraph objects in an Outline.
 
