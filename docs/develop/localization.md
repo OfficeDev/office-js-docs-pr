@@ -32,17 +32,8 @@ The JavaScript API for Office provides two properties that support displaying or
 
 ```
 
-- [Context.contentLanguage](http://msdn.microsoft.com/library/4fd063c2-0cd0-4b5b-8993-93d7ff8ce3bf.aspx) specifies the locale (or language) of the data. Extending the last code sample, instead of checking the **displayLanguage** property:
+- [Context.contentLanguage](http://msdn.microsoft.com/library/4fd063c2-0cd0-4b5b-8993-93d7ff8ce3bf.aspx) specifies the locale (or language) of the data. Extending the last code sample, instead of checking the **displayLanguage** property, assign  `myLanguage` to the **contentLanguage** property, and use the rest of the same code to display a greeting based on the locale of the data:
     
-```js
-      var myLanguage = Office.context.displayLanguage;
-```
-
-
-    Assign  `myLanguage` to the **contentLanguage** property, and use the rest of the same code to display a greeting based on the locale of the data:
-    
-
-
 ```js
       var myLanguage = Office.context.contentLanguage;
 ```
