@@ -22,7 +22,7 @@ bindingObj.setDataAsync(data [, options] ,callback);
 
 |**Name**|**Type**|**Description**|**Support notes**|
 |:-----|:-----|:-----|:-----|
-| _data_|<table><tr><td><b>string</b></td><td>Excel, Excel Online, Word, and Word Online only</td></tr><tr><td><b>array</b> (array of arrays – "matrix")</td><td>Excel and Word only</td></tr><tr><td><a href="https://msdn.microsoft.com/en-us/library/office/fp161002"><b>TableData</b></a></td><td data-th="Text value">Access, Excel, and Word only</td></tr><tr><td><b>HTML</b></td><td>Word and Word Online only</td></tr><tr><td><b>Office Open XML</b></td><td>Word only</td></tr></table>|The data to be set in the current selection. Required.|**Changed in:** 1.1.Support for content add-ins for Access requires  **TableBinding** requirement set 1.1 or later.|
+| _data_|<table><tr><td><b>string</b></td><td>Excel, Excel Online, Word, and Word Online only</td></tr><tr><td><b>array</b> (array of arrays – "matrix")</td><td>Excel and Word only</td></tr><tr><td><a href="https://msdn.microsoft.com/en-us/library/office/fp161002"><b>TableData</b></a></td><td>Access, Excel, and Word only</td></tr><tr><td><b>HTML</b></td><td>Word and Word Online only</td></tr><tr><td><b>Office Open XML</b></td><td>Word only</td></tr></table>|The data to be set in the current selection. Required.|**Changed in:** 1.1.Support for content add-ins for Access requires  **TableBinding** requirement set 1.1 or later.|
 | _options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)||
 | _coercionType_|**[CoercionType](../../reference/shared/coerciontype-enumeration.md)**|Specifies how to coerce the data being set. ||
 | _columns_|**array of strings**| Specifies the column names.|**Added in:** v1.1.Only for table bindings in content add-ins for Access.|
@@ -92,7 +92,7 @@ Additionally, these application-specific actions apply when writing data to a bi
 - The number of  _formatting groups_ passed to the _cellFormat_ parameter can't exceed 100. A single formatting group consists of a set of formatting applied to a specified range of cells. For example, the following call passes two formatting groups to _cellFormat_.
     
 ```js
-  Office.select("bindings#myBinding).setDataAsync([['Berlin'],['Munich'],['Duisburg']],
+  Office.select("bindings#myBinding").setDataAsync([['Berlin'],['Munich'],['Duisburg']],
     {cellFormat:[{cells: {row: 1}, format: {fontColor: "yellow"}}, 
         {cells: {row: 3, column: 4}, format: {borderColor: "white", fontStyle: "bold"}}]}, 
     function (asyncResult){});

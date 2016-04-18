@@ -153,7 +153,7 @@ For more information about this for Outlook add-ins, see the following topics:
 
 - [Privacy, permissions, and security for Outlook add-ins](../../docs/outlook/privacy-and-security.md)
     
-- [Understanding Outlook add-in permissions](../../docs/outlook/privacy/understanding-outlook-add-in-permissions.md)
+- [Understanding Outlook add-in permissions](../../docs/outlook/understanding-outlook-add-in-permissions.md)
     
 
 ### Same origin policy

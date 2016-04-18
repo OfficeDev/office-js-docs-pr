@@ -1,4 +1,4 @@
- 
+
 
 # RoamingSettings
 
@@ -8,14 +8,14 @@ The settings created by using the methods of the `RoamingSettings` object are sa
 
 The name of a setting is a String, while the value can be a String, Number, Boolean, null, Object, or Array.
 
-The `RoamingSettings` object is accessible via the [`roamingSettings`](Office.context.md#roamingSettings) property in the `Office.context` namespace.
+The `RoamingSettings` object is accessible via the [`roamingSettings`](Office.context.md#roamingsettings-roamingsettings) property in the `Office.context` namespace.
 
 ##### Requirements
 
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| Restricted|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Compose or read|
 
 ### Example
@@ -46,7 +46,7 @@ Retrieves the specified setting.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| Restricted|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Compose or read|
 
 ##### Returns:
@@ -74,13 +74,13 @@ Removes the specified setting.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| Restricted|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Compose or read|
 ####  saveAsync([callback])
 
 Saves the settings.
 
-Any settings previously saved by an add-in are loaded when it is initialized, so during the lifetime of the session you can just use the [`set`](RoamingSettings.md#set) and [`get`](RoamingSettings.md#get) methods to work with the in-memory copy of the settings property bag. When you want to persist the settings so that they are available the next time the add-in is used, use the `saveAsync` method.
+Any settings previously saved by an add-in are loaded when it is initialized, so during the lifetime of the session you can just use the [`set`](RoamingSettings.md#setname-value) and [`get`](RoamingSettings.md#getname--nullable-stringnumberbooleanobjectarray) methods to work with the in-memory copy of the settings property bag. When you want to persist the settings so that they are available the next time the add-in is used, use the `saveAsync` method.
 
 ##### Parameters:
 
@@ -93,7 +93,7 @@ Any settings previously saved by an add-in are loaded when it is initialized, so
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| Restricted|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Compose or read|
 ####  set(name, value)
 
@@ -103,7 +103,7 @@ The set method creates a new setting of the specified name if it does not alread
 
 A maximum of 2MB is available for the settings of each add-in, and each individual setting is limited to 32KB.
 
-Any changes made to settings using the `set` function will not be saved to the server until the [`saveAsync`](RoamingSettings.md#saveAsync) function is called.
+Any changes made to settings using the `set` function will not be saved to the server until the [`saveAsync`](RoamingSettings.md#saveasynccallback) function is called.
 
 ##### Parameters:
 
@@ -117,5 +117,5 @@ Any changes made to settings using the `set` function will not be saved to the s
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| Restricted|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Compose or read|

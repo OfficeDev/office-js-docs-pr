@@ -18,7 +18,7 @@ workbook.functions.functionMethod();
 ## Examples
 Here's a sample table tracking sales of different tools in Excel. We will use the data in this table to explain how worksheet functions work.
 
-![Sample](../images/worksheetfunctionschainingResult.JPG)
+![Sample](../../images/worksheetfunctionschainingResult.JPG)
 
 
 The following example will apply vlookup function to the table above and find the unit of Wrench sold in November.

@@ -112,7 +112,7 @@ The  `myHandler` function name that is passed as the second _handler_ parameter 
 ## Additional resources
 
 
-- [Read data from a binding](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md#BindRegions_Read)
+- [Read data from a binding](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md#read-data-from-a-binding)
     
-- [Write data to a binding](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md#BindRegions_Write)
+- [Write data to a binding](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md#write-data-to-a-binding)
     

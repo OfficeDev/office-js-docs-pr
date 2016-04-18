@@ -15,8 +15,6 @@ Represents the filtering criteria applied to a column.
 |filterOn|string|The property used by the filter to determine whether the values should stay visible. Possible values are: 	BottomItems, BottomPercent, CellColor, Dynamic, FontColor, Values, TopItems, TopPercent, Icon, Custom |
 |values|object[]|The set of values to be used as part of "values" filtering.|
 
-_See property access [examples.](#property-access-examples)_
-
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|

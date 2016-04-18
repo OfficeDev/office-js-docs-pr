@@ -41,27 +41,7 @@ Runtime detection of `DialogAPI` capability can be done with the following code:
 
 ## Method Details
 
-### close()
-When called from an active add-in dialog, immediately closes the dialog.
-
-#### Syntax
-```js
-close();
-```
-
-#### Parameters
-None.
-
-#### Returns
-void
-
-#### Examples
-
-```js
-closeButton.addEventListener("click", office.ui.close);
-```
-
-### displayDialogAsync(startAddress: string[, options: object], callback: function)
+### displayDialogAsync(startAddress, options, callback)
 Display up to one Web dialog that opens at startAddress.
 
 #### Syntax
@@ -82,8 +62,10 @@ void
 #### Examples
 
 ```js
+var dialog;
+
 function dialogCallback(asyncResult){ 
-	var dialog = asyncResult.value; 
+	dialog = asyncResult.value; 
 	dialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogMessageReceived, messageHandler); 
 	dialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogEventReceived,  eventHandler); 
 } 
@@ -93,7 +75,8 @@ function messageHandler(arg){
 } 
 
 function eventHandler(arg){ 
-	actOnEvent(arg.message); 
+	actOnEvent(arg.message);
+	dialog.close(); 
 } 
 
 function openDialog() {
@@ -124,6 +107,27 @@ The callback for displayDialogAsync, in the success case, includes a dialog obje
 
 #### Returns
 void
+
+### close()
+When called from an active add-in, immediately closes its dialog. 
+
+#### Syntax    
+```js    
+close();    
+``` 
+
+#### Parameters    
+None. 
+
+#### Returns    
+void  
+
+#### Examples    
+    
+```js    
+//using _dlg object provided by the displayDialogAsync callback method    
+closeButton.addEventListener("click", _dlg.close);    
+```  
 
 ### messageParent(messageObject: object)
 Delivers a message from the dialog to its parent add-in.
@@ -158,9 +162,9 @@ Dialogs support a number of configuration options.
 |width|object|Optional. Defines the width of the dialog as a percentage of the current display. Defaults to 80%. 250px minimum.|
 |height|object|Optional. Defines the height of the dialog as a percentage of the current display. Defaults to 80%. 150px minimum.|
 |xFrameDenySafe|object|Optional. Determines whether the dialog is safe to display within a Web frame.|
-|enforceAppDomains|object|Optional|object|Optional. Restricts the dialog's navigation to the add-in's trusted sites.|
+|enforceAppDomains|object|Optional. Restricts the dialog's navigation to the add-in's trusted sites.|
 
 #### Comments
 1.	The default dialog dimensions are 80% display width x 80% display height (based on the current device dimensions) 
 2.	Dialogs have a minimum size to avoid discoverability problems 
-3.	The dialog display may be in portrait or landscape orientation, and the width and height will adjust accordingly
+3.	The dialog display may be in portrait or landscape orientation, and the width and height will adjust accordingly 

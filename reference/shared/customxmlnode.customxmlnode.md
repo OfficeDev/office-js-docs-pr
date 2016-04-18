@@ -32,8 +32,10 @@ CustomXmlNode
 |:-----|:-----|
 |[getNodesAsync](../../reference/shared/customxmlnode.getnodesasync.md)|Asynchronously gets the nodes as an array of  **CustomXMLNode** objects matching the relative XPath expression.|
 |[getNodeValueAsync](../../reference/shared/customxmlnode.getnodevalueasync.md)|Asynchronously gets the value of the node.|
+|[getTextAsync](customxmlnode.gettextasync.md)|Asynchronously gets the text of an XML node in a custom XML part.|
 |[getXmlAsync](../../reference/shared/customxmlnode.getxmlasync.md)|Asynchronously gets the XML of the node.|
 |[setNodeValueAsync](../../reference/shared/customxmlnode.setnodevalueasync.md)|Asynchronously sets the value of the node.|
+|[setTextAsync](customxmlnode.settextasync.md)|Asynchronously sets the text of an XML node in a custom XML part.|
 |[setXmlAsync](../../reference/shared/customxmlnode.setxmlasync.md)|Asynchronously sets the XML of the node.|
 
 ## Support details

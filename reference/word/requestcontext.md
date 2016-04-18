@@ -1,6 +1,6 @@
 # RequestContext object (JavaScript API for Word)
 
-The RequestContext object facilitates requests to the Word application from the Word add-in since the two applications run in different processes. 
+The RequestContext object facilitates requests to the Word application from the Word add-in since the two applications run in different processes.
 
 _Applies to: Word 2016, Word for iPad, Word for Mac_
 
@@ -40,26 +40,26 @@ The following example shows how the request context is used to load the text pro
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Create a proxy object for the paragraphs collection.
     var paragraphs = context.document.body.paragraphs;
-    
+
     // Queue a commmand to load the text property for all of the paragraphs.
     context.load(paragraphs, 'text');
-    
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
-        
+
         // Queue a a set of commands to get the HTML of the first paragraph.
-        var html = paragraphs.items[0].getHtml();    
-        
-        // Synchronize the document state by executing the queued commands, 
+        var html = paragraphs.items[0].getHtml();
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync().then(function () {
             console.log('Paragraph HTML: ' + html.value);
-        });      
-    });  
+        });
+    });
 })
 .catch(function (error) {
     console.log('Error: ' + JSON.stringify(error));
@@ -70,7 +70,11 @@ Word.run(function (context) {
 
 ```
 
-### sync() 
+#### Additional information
+
+You must call load() after adding tracked objects.
+
+### sync()
 Submits the request queue to Word and returns a promise object, which can be used for chaining further actions.
 
 #### Syntax
@@ -91,31 +95,31 @@ The following example shows the sync method used twice: 1) load the content cont
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Create a proxy object for the content controls collection.
     var contentControls = context.document.contentControls;
-    
+
     // Queue a command to load the content controls collection.
     contentControls.load('text');
-     
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
-        
+
         if (contentControls.items.length === 0) {
             console.log("There isn't a content control in this document.");
         } else {
-            
+
             // Queue a command to clear the contents of the first content control.
             contentControls.items[0].clear();
-            // Synchronize the document state by executing the queued commands, 
+            // Synchronize the document state by executing the queued commands,
             // and return a promise to indicate task completion.
             return context.sync().then(function () {
                 console.log('Content control cleared of contents.');
-            });      
+            });
         }
-            
-    });  
+
+    });
 })
 .catch(function (error) {
     console.log('Error: ' + JSON.stringify(error));
@@ -128,4 +132,4 @@ Word.run(function (context) {
 
 ## Support details
 
-Use the [requirement set](https://msdn.microsoft.com/EN-US/library/office/mt590206.aspx) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/dn833104.aspx). 
+Use the [requirement set](https://msdn.microsoft.com/EN-US/library/office/mt590206.aspx) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/dn833104.aspx).

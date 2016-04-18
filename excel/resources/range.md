@@ -1,6 +1,6 @@
 # Range object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
+_Applies to: Excel 2016, Excel Online, Excel for iOS, Office 2016_
 
 Range represents a set of one or more contiguous cells such as a cell, a row, a column, block of cells, etc.
 
@@ -12,11 +12,15 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 |addressLocal|string|Represents range reference for the specified range in the language of the user. Read-only.|
 |cellCount|int|Number of cells in the range. Read-only.|
 |columnCount|int|Represents the total number of columns in the range. Read-only.|
+|columnHidden|bool|Represents if all columns of the current range are hidden.|
 |columnIndex|int|Represents the column number of the first cell in the range. Zero-indexed. Read-only.|
 |formulas|object[][]|Represents the formula in A1-style notation.|
 |formulasLocal|object[][]|Represents the formula in A1-style notation, in the user's language and number-formatting locale.  For example, the English "=SUM(A1, 1.5)" formula would become "=SUMME(A1; 1,5)" in German.|
+|formulasR1C1|object[][]|Represents the formula in R1C1-style notation.|
+|hidden|bool|Represents if all cells of the current range are hidden. Read-only.|
 |numberFormat|object[][]|Represents the number format code for the given cell.|
 |rowCount|int|Returns the total number of rows in the range. Read-only.|
+|rowHidden|bool|Represents if all rows of the current range are hidden.|
 |rowIndex|int|Returns the row number of the first cell in the range. Zero-indexed. Read-only.|
 |text|object[][]|Text values of the specified range. The text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.|
 |valueTypes|string|Represents the type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.|
@@ -28,6 +32,7 @@ _See property access [examples.](#property-access-examples)_
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
 |format|[RangeFormat](rangeformat.md)|Returns a format object, encapsulating the range's font, fill, borders, alignment, and other properties. Read-only.|
+|sort|[RangeSort](rangesort.md)|Represents the sorting configuration for the range. Read-only.|
 |worksheet|[Worksheet](worksheet.md)|The worksheet containing the current range. Read-only.|
 
 ## Methods
@@ -47,12 +52,15 @@ _See property access [examples.](#property-access-examples)_
 |[getLastRow()](#getlastrow)|[Range](range.md)|Gets the last row within the range. For example, the last row of "B2:D5" is "B5:D5".|
 |[getOffsetRange(rowOffset: number, columnOffset: number)](#getoffsetrangerowoffset-number-columnoffset-number)|[Range](range.md)|Gets an object that represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an exception is thrown.|
 |[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Gets a row contained in the range.|
-|[getUsedRange()](#getusedrange)|[Range](range.md)|Returns the used range of the given range object.|
+|[getUsedRange(valuesOnly: bool)](#getusedrangevaluesonly-bool)|[Range](range.md)|Returns the used subrange of the range object.|
 |[insert(shift: string)](#insertshift-string)|[Range](range.md)|Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space. Returns a new Range object at the now blank space.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+|[merge(across: bool)](#mergeacross-bool)|void|Merge the range cells into one region in the worksheet.|
 |[select()](#select)|void|Selects the specified range in the Excel UI.|
+|[unmerge()](#unmerge)|void|Unmerge the range cells into separate cells.|
 
 ## Method Details
+
 
 ### clear(applyTo: string)
 Clear range values, format, fill, border, etc.
@@ -89,6 +97,7 @@ Excel.run(function (ctx) {
 });
 ```
 
+
 ### delete(shift: string)
 Deletes the cells associated with the range.
 
@@ -121,6 +130,7 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
 
 ### getBoundingRect(anotherRange: Range or string)
 Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E15".
@@ -158,6 +168,7 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
 
 ### getCell(row: number, column: number)
 Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range as long as it stays within the worksheet grid. The returned cell is located relative to the top-left cell of the range.
@@ -197,6 +208,7 @@ Excel.run(function (ctx) {
 });
 ```
 
+
 ### getColumn(column: number)
 Gets a column contained in the range.
 
@@ -232,6 +244,7 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
 
 ### getEntireColumn()
 Gets an object that represents the entire column of the range.
@@ -269,6 +282,7 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
 ### getEntireRow()
 Gets an object that represents the entire row of the range.
 
@@ -340,6 +354,7 @@ Excel.run(function (ctx) {
 });
 ```
 
+
 ### getLastCell()
 Gets the last cell within the range. For example, the last cell of "B2:D5" is "D5".
 
@@ -373,6 +388,7 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
 
 ### getLastColumn()
 Gets the last column within the range. For example, the last column of "B2:D5" is "D2:D5".
@@ -408,6 +424,7 @@ Excel.run(function (ctx) {
 });
 ```
 
+
 ### getLastRow()
 Gets the last row within the range. For example, the last row of "B2:D5" is "B5:D5".
 
@@ -441,6 +458,7 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
 
 
 ### getOffsetRange(rowOffset: number, columnOffset: number)
@@ -479,6 +497,7 @@ Excel.run(function (ctx) {
 });
 ```
 
+
 ### getRow(row: number)
 Gets a row contained in the range.
 
@@ -515,16 +534,19 @@ Excel.run(function (ctx) {
 });
 ```
 
-### getUsedRange()
+
+### getUsedRange(valuesOnly: bool)
 Returns the used range of the given range object.
 
 #### Syntax
 ```js
-rangeObject.getUsedRange();
+rangeObject.getUsedRange(valuesOnly);
 ```
 
 #### Parameters
-None
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|valuesOnly|bool|Optional. When true only cells that currently have values are considered used cells. The default, false, counts any cell that ever had a value as used.|
 
 #### Returns
 [Range](range.md)
@@ -549,6 +571,7 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
 
 ### insert(shift: string)
 Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space. Returns a new Range object at the now blank space.
@@ -585,6 +608,7 @@ Excel.run(function (ctx) {
 });
 ```
 
+
 ### load(param: object)
 Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.
 
@@ -600,6 +624,40 @@ object.load(param);
 
 #### Returns
 void
+
+### merge(across: bool)
+Merge the range cells into one region in the worksheet.
+
+#### Syntax
+```js
+rangeObject.merge(across);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|across|bool|Optional. Set true to merge cells in each row of the specified range as separate merged cells. The default value is false.|
+
+#### Returns
+void
+
+#### Examples
+```js
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:C3";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.merge(true);
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
 ### select()
 Selects the specified range in the Excel UI.
 
@@ -625,6 +683,37 @@ Excel.run(function (ctx) {
 	range.select();
 	return ctx.sync(); 
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+### unmerge()
+Unmerge the range of merged cells into separate cells.
+
+#### Syntax
+```js
+rangeObject.unmerge();
+```
+
+#### Parameters
+None
+
+#### Returns
+void
+
+#### Examples
+```js
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:C3";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.unmerge();
+	return ctx.sync(); 
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {
@@ -699,6 +788,30 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+The example below is the same as the one just above, except that it uses R1C1 notation for the formulas.
+
+```js
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "F5:G7";
+	var numberFormat = [[null, "d-mmm"], [null, "d-mmm"], [null, null]]
+	var values = [["Today", 42147], ["Tomorrow", "5/24"], ["Difference in days", null]];
+	var formulasR1C1 = [[null,null], [null,null], [null,"=R[-1]C-R[-2]C"]];
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.numberFormat = numberFormat;
+	range.values = values;
+	range.formulasR1C1= formulasR1C1;
+	range.load('text');
+	return ctx.sync().then(function() {
+		console.log(range.text);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
 Get the worksheet containing the range. 
 
 ```js
@@ -718,3 +831,4 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+

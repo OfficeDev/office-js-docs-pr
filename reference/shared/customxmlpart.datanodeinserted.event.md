@@ -1,6 +1,6 @@
 
-# CustomXmlPart.nodeDeleted event
-Occurs when a node is deleted.
+# CustomXmlPart.dataNodeInserted event
+Occurs when a node is inserted.
 
 |||
 |:-----|:-----|
@@ -9,13 +9,13 @@ Occurs when a node is deleted.
 |**Last changed in**|1.1|
 
 ```
-Office.EventType.NodeDeleted
+Office.EventType.DataNodeInserted
 ```
 
 
 ## Remarks
 
-To add an event handler for the  **nodeDeleted** event, use the [addHandlerAsync](../../reference/shared/customxmlpart.addhandlerasync.md) method of the **CustomXmlPart** object.
+To add an event handler for the  **dataNodeInserted** event, use the [addHandlerAsync](../../reference/shared/customxmlpart.addhandlerasync.md) method of the **CustomXmlPart** object.
 
 
 ## Example
@@ -24,17 +24,17 @@ To add an event handler for the  **nodeDeleted** event, use the [addHandlerAsync
 
 
 ```js
-function addNodeDeletedEvent() {
+function addNodeInsertedEvent() {
     Office.context.document.customXmlParts.getByIdAsync("{3BC85265-09D6-4205-B665-8EB239A8B9A1}", function (result) {
         var xmlPart = result.value;
-        xmlPart.addHandlerAsync(Office.EventType.NodeDeleted, function (eventArgs) {
-            write("A node has been deleted.");
+        xmlPart.addHandlerAsync(Office.EventType.DataNodeInserted, function (eventArgs) {
+            write("A node has been inserted.");
         });
     });
 }
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
@@ -44,14 +44,13 @@ function write(message){
 ## Support details
 
 
-A capital Y in the following matrix indicates that this event is supported in the corresponding Office host application. An empty cell indicates that the Office host application doesn't support this event.
+A capital Y in the following matrix indicates that this method is supported in the corresponding Office host application. An empty cell indicates that the Office host application doesn't support this method.
 
 For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).
 
+
 ||**Office for Windows desktop**|**Office Online (in browser)**|**Office for iPad**|
 |:-----|:-----|:-----|:-----|
-|**Access**||||
-|**Excel**||||
 |**Word**|Y||Y|
 
 |||

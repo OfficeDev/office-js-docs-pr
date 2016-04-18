@@ -1,5 +1,5 @@
 
-# CustomXmlPart.nodeReplaced event
+# CustomXmlPart.dataNodeReplaced event
 Occurs when a node is replaced.
 
 |||
@@ -9,13 +9,13 @@ Occurs when a node is replaced.
 |**Last changed in**|1.1|
 
 ```
-Office.EventType.NodeReplaced
+Office.EventType.DataNodeReplaced
 ```
 
 
 ## Remarks
 
-To add an event handler for the  **nodeInserted** event, use the [addHandlerAsync](../../reference/shared/customxmlpart.addhandlerasync.md) method of the **CustomXmlPart** object.
+To add an event handler for the  **dataNodeInserted** event, use the [addHandlerAsync](../../reference/shared/customxmlpart.addhandlerasync.md) method of the **CustomXmlPart** object.
 
 
 ## Example
@@ -27,14 +27,14 @@ To add an event handler for the  **nodeInserted** event, use the [addHandlerAsyn
 function addNodeReplacedEvent() {
     Office.context.document.customXmlParts.getByIdAsync("{3BC85265-09D6-4205-B665-8EB239A8B9A1}", function (result) {
         var xmlPart = result.value;
-        xmlPart.addHandlerAsync(Office.EventType.NodeReplaced, function (eventArgs) {
+        xmlPart.addHandlerAsync(Office.EventType.DataNodeReplaced, function (eventArgs) {
             write("A node has been replaced.");
         });
     });
 }
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 

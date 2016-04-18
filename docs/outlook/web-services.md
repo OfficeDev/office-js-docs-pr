@@ -192,7 +192,7 @@ When you use the  **makeEwsRequestAsync** method, the request is authenticated b
 
  >**Note**  The server administrator must use the [New-WebServicesVirtualDirctory](http://technet.microsoft.com/en-us/library/bb125176.aspx) or the [Set-WebServicesVirtualDirecory](http://technet.microsoft.com/en-us/library/aa997233.aspx) cmldet to set the _OAuthAuthentication_ parameter to **true** on the Client Access server EWS directory in order to enable the **makeEwsRequestAsync** method to make EWS requests.
 
-Your add-in must specify the  **ReadWriteMailbox** permission in its add-in manifest to use the **makeEwsRequestAsync** method. For information about using the **ReadWriteMailbox** permission, see the section [ReadWriteMailbox permission](../outlook/understanding-outlook-add-in-permissions.md#olowa15conagave_permmodelreadwrite) in [Understanding Outlook add-in permissions](../outlook/understanding-outlook-add-in-permissions.md).
+Your add-in must specify the  **ReadWriteMailbox** permission in its add-in manifest to use the **makeEwsRequestAsync** method. For information about using the **ReadWriteMailbox** permission, see the section [ReadWriteMailbox permission](../outlook/understanding-outlook-add-in-permissions.md#readwritemailbox-permission) in [Understanding Outlook add-in permissions](../outlook/understanding-outlook-add-in-permissions.md).
 
 
 ## Additional resources

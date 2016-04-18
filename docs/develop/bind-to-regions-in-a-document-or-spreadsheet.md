@@ -300,7 +300,7 @@ function write(message){
 }
 ```
 
- `myBinding` is a variable that contains an existing text binding in the document. Alternatively, you could use the [Office.select method](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md#BindRegions_Select) to access the binding by its ID, and start your call to the **getDataAsync** method, like this: `Office.select("bindings#myBindingID").getDataAsync`.
+ `myBinding` is a variable that contains an existing text binding in the document. Alternatively, you could use the [Office.select](../../reference/shared/office.select.md) to access the binding by its ID, and start your call to the **getDataAsync** method, like this: `Office.select("bindings#myBindingID").getDataAsync`.
 
 The anonymous function that is passed into the function is a callback that is executed when the operation is complete. The [AsyncResult.value](../../reference/shared/asyncresult.status.md) property contains the data within `myBinding`. The type of the value depends on the binding type. The binding in this example is a text binding. Therefore, the value will contain a string. For additional examples of working with matrix and table bindings, see the [Binding.getDataAsync](../../reference/shared/binding.getdataasync.md) method topic.
 

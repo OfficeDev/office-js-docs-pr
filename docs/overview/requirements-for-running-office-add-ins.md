@@ -9,7 +9,7 @@ This article describes the software and device requirements for running Office A
 
 To be able to install and run any Office Add-in, you first need to deploy the manifest and webpage files for the UI and code of your add-in to the appropriate server locations.
 
-For all types of add-ins (content, Outlook, and task pane add-ins and add-in commands), you need to deploy your add-in's webpage files to a web server, or web hosting service, such as [Microsoft Azure](../publish/host-an-office-add-in-on-microsoft-azure.md). 
+For all types of add-ins (content, Outlook, and task pane add-ins and add-in commands), you need to deploy your add-in's webpage files to a web server, or web hosting service, such as [Microsoft Azure](../publish/host-an-office-add-in-on-microsoft-azure.md).
 
 
  >**Note**   When you develop and debug an add-in in Visual Studio, Visual Studio deploys and runs your add-in's webpage files locally with IIS Express, and doesn't require an additional web server. Similarly, when you develop and debug with Napa in the browser, it deploys and runs your add-in's webpage files from storage associated with the account you used to sign into Napa.
@@ -52,22 +52,25 @@ The following software is required for developing an Office Add-in for the suppo
 
 
 - For Windows x86 and x64 desktops, and tablets such as Surface Pro:
-    
+
       - The 32- or 64-bit version of Office 2013 or a later version, running on Windows 7 or a later version.
-    
+
   - Excel 2013, Outlook 2013, PowerPoint 2013, Project Professional 2013, Project 2013 SP1, Word 2013, or a later version of the Office client, if you are testing or running an Office Add-in specifically for one of these Office desktop clients. Office desktop clients can be installed on premises or via Click-to-Run on the client computer.
-    
+
 - Internet Explorer 9 or later, which must be installed but doesn't have to be the default browser. To support Office Add-ins, the Office client that acts as host uses browser components that are part of Internet Explorer 9 or later.
-    
+
 - One of the following as the default browser: Internet Explorer 9, Safari 5.0.6, Firefox 5, Chrome 13, or a later version of one of these browsers.
-    
+
 - An HTML and JavaScript editor such as Notepad, [Visual Studio and the Microsoft Developer Tools](https://www.visualstudio.com/features/office-tools-vs), or a third-party web development tool.
-    
+
 
 ## Client requirements: OS X desktop
 
 Outlook for Mac, which is distributed as part of Office 365, supports Outlook add-ins. Running Outlook add-ins on Outlook for Mac has the same requirements as Outlook for Mac itself: the operating system must be at least OS X v10.10 "Yosemite". Because Outlook for Mac uses WebKit as a layout engine to render the add-in pages, there is no additional browser dependency.
 
+Word for Mac version 15.18 (160109) is required to run Office add-ins.
+
+Excel for Mac version 15.19 (160206) is required to run Office add-ins.
 
 ## Client requirements: Browser support for Office Online web clients and SharePoint
 
@@ -93,20 +96,20 @@ Specifically for OWA for Devices, and Outlook Web App running in a browser on sm
 A typical Office Add-in solution involves the following components:
 
 
-- A client device running the supported Office client - which can be a desktop, laptop, tablet, or smartphone (for Outlook add-ins on OWA for Devices). 
-    
+- A client device running the supported Office client - which can be a desktop, laptop, tablet, or smartphone (for Outlook add-ins on OWA for Devices).
+
 - For Access web apps, Word, Excel, PowerPoint, or Project:
-    
+
       - A database, document, workbook, presentation, or project.
-    
+
   - A task pane or content add-in that the user installed from the public Office Store or from a private SharePoint or file-based add-in catalog.
-    
-- For Outlook: 
-    
+
+- For Outlook:
+
       - The user's email account and mailbox, which resides on an Exchange Server.
-    
+
   - An Outlook add-in that the user or Exchange Server administrator installed through the Exchange Admin Center (EAC).
-    
+
 
  >**Note**  The user's installation of an Office Add-in consists of a pointer to the corresponding XML manifest file, which specifies the URL from which to load the add-in webpage and script at run time.
 
@@ -114,34 +117,34 @@ For all supported Office applications, the implementation of the Office Add-in i
 
 
 - An XML manifest file which resides on a public or private add-in catalog, or the user's Exchange Server.
-    
+
 - The add-in HTML, CSS, and JavaScript files, which the developer creates and which reside on a web server.
-    
+
 - The JavaScript library files, such as JavaScript API for Office (Office.js) and the Microsoft AJAX Library (MicrosoftAjax.js), which Microsoft provides. The add-in accesses the JavaScript library files from content delivery network (CDN) URLs, as specified in its HTML file.
-    
-- If you are using external JavaScript libraries from a CDN or using web services, ensure you access those resources using Secure Sockets Layer (SSL), otherwise you will get a browser warning when you run your add-in. To use SSL, add the https URL to your resource in the <SCRIPT> tag in your add-in.
-    
-When a supported Office application starts, it reads the XML manifests for the add-ins that have been installed for or by the user. Subsequently, when a user starts an Office Add-in in the Office application, the following events occur: 
+
+- If you are using external JavaScript libraries from a CDN or using web services, ensure you access those resources using Secure Sockets Layer (SSL), otherwise you will get a browser warning when you run your add-in. To use SSL, add the https URL to your resource in the *SCRIPT* tag in your add-in.
+
+When a supported Office application starts, it reads the XML manifests for the add-ins that have been installed for or by the user. Subsequently, when a user starts an Office Add-in in the Office application, the following events occur:
 
 
 1. For Access web apps, Word, Excel, PowerPoint, or Project: When a user inserts the Office Add-in, or opens an Access web app, document, workbook, presentation, or project that already contains an add-in, the Office application loads the add-in, making its UI visible in the user interface.
-    
+
     For Outlook: Whenever the current Outlook context satisfies the activation conditions of an add-in, Outlook activates the add-in, making the add-in visible in the Outlook UI for selection.
-    
+
 2. For Windows or web-based Office applications: The Office application opens the HTML page in a web browser control (desktop or ARM-specific client) or an  **iframe** (web client). The web browser control uses Internet Explorer 9 or later components and provides security and performance isolation.
-    
+
     For OS X-based Outlook for Mac: Outlook for Mac uses a sandboxed WebKit runtime host process to open the HTML page of an Outlook add-in, to help provide similar level of security and performance protection.
-    
+
 3. The correspondng browser control,  **iframe**, or WebKit runtime host process loads the HTML body, and calls the event handler for the  **onload** event.
-    
+
 4. The Office Add-ins framework calls the event handler for the [initialize](../../reference/shared/office.initialize.md) event of the [Office](../../reference/shared/office.md) object.
-    
+
 5. When the HTML body finishes loading and the add-in finishes initializing, the main function of the add-in can proceed.
-    
+
 
 ## Additional resources
 
 
 
 - [Office Add-ins platform overview](../../docs/overview/office-add-ins.md)
-    
+

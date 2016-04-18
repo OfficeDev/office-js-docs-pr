@@ -1,7 +1,5 @@
 # TableRowCollection object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
-
 Represents a collection of all the rows that are part of the table.
 
 ## Properties
@@ -26,6 +24,7 @@ None
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.|
 
 ## Method Details
+
 
 ### add(index: number, values: (boolean or string or number)[][])
 Adds a new row to the table.
@@ -62,6 +61,7 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
 ### getItemAt(index: number)
 Gets a row based on its position in the collection.
 
@@ -94,6 +94,7 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
 ### load(param: object)
 Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.
 

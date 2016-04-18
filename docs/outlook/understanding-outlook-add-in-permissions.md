@@ -15,9 +15,9 @@ The  **Restricted** permission is the most basic level of permission. Specify **
 ### Can do
 
 
-- [Get only specific entities](../outlook/match-strings-in-an-item-as-well-known-entities.md#MailAppEntities_Retrieving) (phone number, address, URL) from the item's subject or body.
+- [Get only specific entities](../outlook/match-strings-in-an-item-as-well-known-entities.md) (phone number, address, URL) from the item's subject or body.
     
-- Specify an [ItemIs activation rule](../outlook/manifests/activation-rules.md#MailAppDefineRules_ItemIs) that requires the current item in a read or compose form to be a specific item type, or [ItemHasKnownEntity rule](../outlook/match-strings-in-an-item-as-well-known-entities.md#MailAppEntities_Activating) that matches any of a smaller subset of supported well-known entities (phone number, address, URL) in the selected item.
+- Specify an [ItemIs activation rule](../outlook/manifests/activation-rules.md#itemis-rule) that requires the current item in a read or compose form to be a specific item type, or [ItemHasKnownEntity rule](../outlook/match-strings-in-an-item-as-well-known-entities.md) that matches any of a smaller subset of supported well-known entities (phone number, address, URL) in the selected item.
     
 - Access any properties and methods that do  **not** pertain to specific information about the user or item. (See the next section for the list of members that do.)
     
@@ -97,9 +97,9 @@ The  **ReadItem** permission is the next level of permission in the permissions 
     
 - [Write custom properties](http://msdn.microsoft.com/library/30217d63-7615-4f3f-8618-c91e4e60cd43%28Office.15%29.aspx) set by the add-in on that item.
     
-- [Get all existing well-known entities](../outlook/match-strings-in-an-item-as-well-known-entities.md#MailAppEntities_Retrieving), not just a subset, from the item's subject or body.
+- [Get all existing well-known entities](../outlook/match-strings-in-an-item-as-well-known-entities.md), not just a subset, from the item's subject or body.
     
-- Use all the [well-known entities](../outlook/manifests/activation-rules.md#MailAppDefineRules_ItemHasKnownEntity) in [ItemHasKnownEntity](http://msdn.microsoft.com/en-us/library/87e10fd2-eab4-c8aa-bec3-dff92d004d39%28Office.15%29.aspx) rules, or [regular expressions](../outlook/manifests/activation-rules.md#MailAppDefineRules_ItemHasRegularExpressionMatch) in [ItemHasRegularExpressionMatch](http://msdn.microsoft.com/en-us/library/bfb726cd-81b0-a8d5-644f-2ca90a5273fc%28Office.15%29.aspx) rules. The following example follows schema v1.1. It shows a rule that activates the add-in if one or more of the well-known entities are found in the subject or body of the selected message:
+- Use all the [well-known entities](../outlook/manifests/activation-rules.md#itemhasknownentity-rule) in [ItemHasKnownEntity](http://msdn.microsoft.com/en-us/library/87e10fd2-eab4-c8aa-bec3-dff92d004d39%28Office.15%29.aspx) rules, or [regular expressions](../outlook/manifests/activation-rules.md#itemhasregularexpressionmatch-rule) in [ItemHasRegularExpressionMatch](http://msdn.microsoft.com/en-us/library/bfb726cd-81b0-a8d5-644f-2ca90a5273fc%28Office.15%29.aspx) rules. The following example follows schema v1.1. It shows a rule that activates the add-in if one or more of the well-known entities are found in the subject or body of the selected message:
     
 
 ```XML

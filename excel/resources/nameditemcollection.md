@@ -1,8 +1,6 @@
 # NamedItemCollection object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
-
-A collection of all the namedItem objects that are part of the workbook.
+A collection of all the nameditem objects that are part of the workbook.
 
 ## Properties
 
@@ -24,6 +22,7 @@ None
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.|
 
 ## Method Details
+
 
 ### getItem(name: string)
 Gets a nameditem object using its name.
@@ -58,7 +57,22 @@ Excel.run(function (ctx) {
 });
 ```
 
+#### Examples
 
+```js
+Excel.run(function (ctx) { 
+	var nameditem = ctx.workbook.names.getItemAt(0);
+	nameditem.load('name');
+	return ctx.sync().then(function() {
+			console.log(nameditem.name);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
 ### load(param: object)
 Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.
 

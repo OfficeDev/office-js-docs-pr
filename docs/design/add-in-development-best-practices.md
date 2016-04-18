@@ -46,24 +46,24 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
 ## Use add-in commands
 
-
-
-- Provide multiple UI entry points to your add-in by using [add-in commands](../outlook/add-in-commands-for-outlook.md).
-
-
- >**Note**  Add-in commands are currently supported in Outlook 2016 and are in preview for Word, Excel and PowerPoint 2016. 
-
-
-### Add-in command design best practices
-
+- Provide relevant UI entry points for your add-in by using [add-in commands](../design/add-in-commands.md).
 
 - Use commands to represent a specific action with a clear and specific outcome for users. Do not combine multiple actions in a single button.
 
 - Provide granular actions that make common tasks within your add-in more efficient to perform. Minimize the number of steps an action takes to complete.
 
-- Provide meaningful icons and [labels](http://msdn.microsoft.com/library/8cef4fce-e6a1-459b-951f-47ac03ec95a6%28Office.15%29.aspx) for buttons that clearly identify the action the user is taking.
+- For add-ins that extend the Office ribbon:
+	- Place commands on an existing tab (Insert, Review, and so on) if the functionality provided fits there. For example, if your add-in enables users to insert media, add a group to the Insert tab. Note that not all tabs are available across all Office versions. For more information, see [Office Add-ins XML manifest](../overview/add-in-manifests.md). 
+	- Place commands on the Home tab if the functionality doesn't fit on another tab, and you have fewer than six top-level commands. You can also add commands to the Home tab if your add-in needs to work across Office versions (such as Office Desktop and Office Online) and a tab is not available in all versions (for example, the Design tab doesn't exist in Office Online).  
+	- Place commands on a custom tab if you have more than six top-level commands. 
+  - Name your group to match the name of your add-in. If you have multiple groups, name each group based on the functionality that the commands in that group provide.
+  - Do not add superfluous buttons to increase the real estate of your add-in.
+
+     >**Note**  Add-ins that take up too much space might not pass [Office Store validation](https://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe(Office.15).aspx).
 
 - For all icons:
+	- Provide meaningful icons and [labels](http://msdn.microsoft.com/library/8cef4fce-e6a1-459b-951f-47ac03ec95a6%28Office.15%29.aspx) for buttons that clearly identify the action the user is taking.
+
 
  - Use PNG format with a transparent background.
 
@@ -84,33 +84,12 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
     ![A screenshot that shows add-in command buttons that match the Office style next to buttons that don't match the style](../../images/31e11214-61e8-41c1-888c-29d167cb9486.png)
 
-- For command surface extension points, such as the ribbon:
-  - Group related actions under a menu control.
-  - Name your group to match the name of your add-in, or the specific functionality that your add-in will provide.
-  - Create a custom tab when no existing tab matches functionality your add-in provides. If you need to display more than six commands, use a custom tab for some or all of the commands.
 
-     >**Note**  In Outlook, you can only add groups to the default tab or a custom tab.
-  - Support Office hosts that do and do not support add-in commands. A single add-in with a single manifest file can work in both command-aware and non-command-aware hosts.
+- Provide a version of your add-in that also works on hosts that do not support commands. A single add-in manifest can work in both command-aware (with commands) and non-command-aware (as a taskpane) hosts.
 
     ![A screenshot that shows a task pane add-in in Office 2013 and the same add-in using add-in commands in Office 2016](../../images/4f90a3cc-8cc4-4879-9a03-0bb2b6079026.png)
-    To design for multiple hosts, in your manifest file, provide the appropriate metadata in:
 
 
-  - The top section of the manifest, for non-command-aware hosts.
-
-  - The [VersionOverrides](../outlook/manifests/define-add-in-commands.md) section, for command-aware hosts.
-
-
-
->**Note**  Although a single manifest can target both command-aware and non-command-aware hosts, when you target both types of hosts, you essentially create two different versions of your add-in. You can have the same code (HTML/CSS/JS) for both versions.
-
-To ensure that your add-in works well in both types of hosts:
-- Modularize your navigation and command components so that you can replace them based to the version of your add-in that is being loaded.
-- Order your navigation and command elements consistently.
-- Ensure that navigation and command elements can transition across Office host and task pane UI.
-- Do not add superfluous buttons to increase the real estate of your add-in.
-
-     **Note**  Add-ins that take up too much space might not pass [Office Store validation](http://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe%28Office.15%29.aspx).
 
 ## Apply UX design principles
 

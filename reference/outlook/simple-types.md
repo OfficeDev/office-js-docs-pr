@@ -1,4 +1,4 @@
- 
+
 
 # Simple Types
 
@@ -12,7 +12,7 @@ An object which encapsulates the result of an asynchronous request, including st
 |---|---|---|
 |`asyncContext`| Object|Gets the object passed to the optional `asyncContext` parameter of the invoked method in the same state as it was passed in.|
 |`error`| Error|Gets an Error object that provides a description of the error, if any error occurred.|
-|`status`| [Office.AsyncResultStatus](Office.md#.AsyncResultStatus)|Gets the status of the asynchronous operation.|
+|`status`| [Office.AsyncResultStatus](Office.md#.AsyncResultStatus-string)|Gets the status of the asynchronous operation.|
 |`value`| Object|Gets the payload or content of this asynchronous operation, if any.|
 
 ##### Requirements
@@ -43,7 +43,7 @@ An array of `AttachmentDetail` objects is returned as the `attachments` property
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Read|
 #### Contact
 
@@ -67,7 +67,7 @@ The list of contacts associated with an email message or appointment is returned
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| Restricted|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Read|
 ####  EmailAddressDetails
 
@@ -81,7 +81,7 @@ Provides the email properties of the sender or specified recipients of an email 
 
 |Name| Type| Description|
 |---|---|---|
-|`appointmentResponse`| [Office.MailboxEnums.ResponseType](Office.MailboxEnums.md#responsetype-string)|Gets the response that an attendee returned for an appointment. This property applies to only an attendee of an appointment, as represented by the [`optionalAttendees`](Office.context.mailbox.item.md#optionalAttendees) or [`requiredAttendees`](Office.context.mailbox.item.md#requiredAttendees) property. This property returns `undefined` in other scenarios.|
+|`appointmentResponse`| [Office.MailboxEnums.ResponseType](Office.MailboxEnums.md#responsetype-string)|Gets the response that an attendee returned for an appointment. This property applies to only an attendee of an appointment, as represented by the [`optionalAttendees`](Office.context.mailbox.item.md#optionalattendees-arrayemailaddressdetails) or [`requiredAttendees`](Office.context.mailbox.item.md#requiredattendees-arrayemailaddressdetailsrecipients) property. This property returns `undefined` in other scenarios.|
 |`displayName`| String|Gets the display name associated with an email address.|
 |`emailAddress`| String|Gets the SMTP email address.|
 |`recipientType`| [Office.MailboxEnums.RecipientType](Office.MailboxEnums.md#recipienttype-string)|Gets the email address type of a recipient.|
@@ -91,7 +91,7 @@ Provides the email properties of the sender or specified recipients of an email 
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 #### EmailUser
 
@@ -109,8 +109,9 @@ Represents an email account on an Exchange Server.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Read|
+
 #### Entities
 
 Represents a collection of entities found in an email message or appointment. Read mode only.
@@ -144,7 +145,7 @@ When the property arrays are returned by the `getEntitiesByType` method, only th
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Read|
 #### LocalClientTime
 
@@ -168,13 +169,13 @@ Represents a date and time in the local client's time zone. Read mode only.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Read|
 #### MeetingSuggestion
 
 Represents a suggested meeting found in an item. Read mode only.
 
-The list of meetings suggested in an email message is returned in the `meetingSuggestions` property of the [`Entities`](simple-types.md#entities) object that is returned when the [`getEntities`](Office.context.mailbox.item.md#getEntities) or [`getEntitiesByType`](Office.context.mailbox.item.md#getEntitiesByType) method is called on the active item.
+The list of meetings suggested in an email message is returned in the `meetingSuggestions` property of the [`Entities`](simple-types.md#entities) object that is returned when the [`getEntities`](Office.context.mailbox.item.md#getentities--entities) or [`getEntitiesByType`](Office.context.mailbox.item.md#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) method is called on the active item.
 
 The `start` and `end` values are string representations of a Date object that contains the date and time at which the suggested meeting is to begin and end. The values are in the default time zone specified for the current user.
 
@@ -194,11 +195,11 @@ The `start` and `end` values are string representations of a Date object that co
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Read|
 ####  NotificationMessageDetails
 
-An array of `NotificationMessageDetails` objects are returned by the [`NotificationMessages.getAllAsync`](NotificationMessages.md#getAllAsync) method.
+An array of `NotificationMessageDetails` objects are returned by the [`NotificationMessages.getAllAsync`](NotificationMessages.md#getallasyncoptions-callback) method.
 
 ##### Type:
 
@@ -219,7 +220,7 @@ An array of `NotificationMessageDetails` objects are returned by the [`Notificat
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 #### PhoneNumber
 
@@ -244,7 +245,7 @@ An array of `PhoneNumber` objects containing the phone numbers found in an email
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Read|
 #### TaskSuggestion
 
@@ -264,5 +265,5 @@ The list of tasks suggested in an email message is returned in the `taskSuggesti
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Read|

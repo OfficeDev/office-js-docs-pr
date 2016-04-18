@@ -1,7 +1,5 @@
 # TableColumn object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
-
 Represents a column in a table.
 
 ## Properties
@@ -16,8 +14,9 @@ Represents a column in a table.
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-None
-
+| Relationship | Type	|Description|
+|:---------------|:--------|:----------|
+|filter|[Filter](filter.md)|Retrieve the filter applied to the column. Read-only.|
 
 ## Methods
 
@@ -31,6 +30,7 @@ None
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.|
 
 ## Method Details
+
 
 ### delete()
 Deletes the column from the table.
@@ -61,6 +61,7 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
 
 ### getDataBodyRange()
 Gets the range object associated with the data body of the column.
@@ -94,6 +95,7 @@ Excel.run(function (ctx) {
 });
 ```
 
+
 ### getHeaderRowRange()
 Gets the range object associated with the header row of the column.
 
@@ -126,6 +128,7 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
 ### getRange()
 Gets the range object associated with the entire column.
 
@@ -159,6 +162,7 @@ Excel.run(function (ctx) {
 });
 ```
 
+
 ### getTotalRowRange()
 Gets the range object associated with the totals row of the column.
 
@@ -191,6 +195,7 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
 
 ### load(param: object)
 Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.

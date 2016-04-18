@@ -1,4 +1,4 @@
- 
+
 
 # Body
 
@@ -9,7 +9,7 @@ The `body` object provides methods for adding and updating the content of the me
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.1|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
 ### Methods
@@ -26,7 +26,7 @@ This method returns the entire current body in the format specified by `coercion
 |---|---|---|---|
 |`coercionType`| [Office.CoercionType](Office.md#coerciontype-string)||The format for the returned body.|
 |`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Developers can provide any object they wish to access in the callback method.</td></tr></tbody></table>|
-|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. 
+|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object.
 
 The body is provided in the requested format in the `asyncResult.value` property.|
 
@@ -35,7 +35,7 @@ The body is provided in the requested format in the `asyncResult.value` property
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
 ##### Examples
@@ -47,7 +47,7 @@ Office.context.mailbox.item.body.getAsync(
   "text",
   { asyncContext:"This is passed to the callback" },
   function callback(result) {
-    // Do something with the result 
+    // Do something with the result
   });
 ```
 
@@ -58,7 +58,7 @@ The following is an example of the `result` parameter passed to the callback fun
   "value": "TEXT of whole body (including threads below)",
   "status": "succeeded",
   "asyncContext": "This is passed to the callback"
-}  
+}
 ```
 
 ####  getTypeAsync([options], [callback])
@@ -70,7 +70,7 @@ Gets a value that indicates whether the content is in HTML or text format.
 |Name| Type| Attributes| Description|
 |---|---|---|---|
 |`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Developers can provide any object they wish to access in the callback method.</td></tr></tbody></table>|
-|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. 
+|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object.
 
 The content type is returned as one of the [CoercionType](Office.md#coerciontype-string) values in the `asyncResult.value` property.|
 
@@ -79,20 +79,20 @@ The content type is returned as one of the [CoercionType](Office.md#coerciontype
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.1|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose|
 ####  prependAsync(data, [options], [callback])
 
 Adds the specified content to the beginning of the item body.
 
-The `prependAsync` method inserts the specified string at the beginning of the item body. Calling the `prependAsync` method is the same as calling the [`setSelectedDataAsync`](Body.md#setSelectedDataAsync) method with the insertion point at the beginning of the body content.
+The `prependAsync` method inserts the specified string at the beginning of the item body. Calling the `prependAsync` method is the same as calling the [`setSelectedDataAsync`](#setselecteddataasyncdata-options-callback) method with the insertion point at the beginning of the body content.
 
 When including links in HTML markup, you can disable online link preview by setting the `id` attribute on the anchor (`<a>`) to `LPNoLP`. For example:
 
 ```js
 Office.context.mailbox.item.body.prependAsync(
-  '<a id="LPNoLP" href="http://www.contoso.com">Click here!</a>', 
-  {coercionType: Office.CoercionType.Html}, 
+  '<a id="LPNoLP" href="http://www.contoso.com">Click here!</a>',
+  {coercionType: Office.CoercionType.Html},
   callback);
 ```
 
@@ -109,7 +109,7 @@ Office.context.mailbox.item.body.prependAsync(
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.1|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadWriteItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadWriteItem|
 |Applicable Outlook mode| Compose|
 ####  setAsync(data, [options], [callback])
 
@@ -121,8 +121,8 @@ When including links in HTML markup, you can disable online link preview by sett
 
 ```js
 Office.context.mailbox.item.body.setAsync(
-  '<a id="LPNoLP" href="http://www.contoso.com">Click here!</a>', 
-  {coercionType: Office.CoercionType.Html}, 
+  '<a id="LPNoLP" href="http://www.contoso.com">Click here!</a>',
+  {coercionType: Office.CoercionType.Html},
   callback);
 ```
 
@@ -139,7 +139,7 @@ Office.context.mailbox.item.body.setAsync(
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadWriteItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadWriteItem|
 |Applicable Outlook mode| Compose|
 
 ##### Examples
@@ -175,8 +175,8 @@ When including links in HTML markup, you can disable online link preview by sett
 
 ```js
 Office.context.mailbox.item.body.setSelectedDataAsync(
-  '<a id="LPNoLP" href="http://www.contoso.com">Click here!</a>', 
-  {coercionType: Office.CoercionType.Html}, 
+  '<a id="LPNoLP" href="http://www.contoso.com">Click here!</a>',
+  {coercionType: Office.CoercionType.Html},
   callback);
 ```
 
@@ -193,5 +193,5 @@ Office.context.mailbox.item.body.setSelectedDataAsync(
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.1|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| ReadWriteItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadWriteItem|
 |Applicable Outlook mode| Compose|

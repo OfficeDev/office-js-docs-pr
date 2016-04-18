@@ -37,7 +37,7 @@ The following example defines a custom pane for items that are messages or have 
 
 
 
-- [Get Started with Outlook add-ins for Office 365](https://dev.outlook.com/MailAppsGettingStarted/GetStarted.aspx)
+- [Get Started with Outlook add-ins for Office 365](https://dev.outlook.com/MailAppsGettingStarted)
     
 - [Activation rules for Outlook add-ins](../outlook/manifests/activation-rules.md)
     

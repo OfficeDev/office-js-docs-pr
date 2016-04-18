@@ -1,7 +1,5 @@
 # RangeFont object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
-
 This object represents the font attributes (font name, font size, color, etc.) for an object.
 
 ## Properties
@@ -9,9 +7,9 @@ This object represents the font attributes (font name, font size, color, etc.) f
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |bold|bool|Represents the bold setting for font.|
-|color|string|HTML color code representation of the text color, e.g., #FF0000 represents red.|
+|color|string|HTML color code representation of the text color, for example, #FF0000 represents red.|
 |italic|bool|Represents the italic setting for font.|
-|name|string|Font name, e.g., "Calibri".|
+|name|string|Font name, for example, "Calibri".|
 |size|double|Font size.|
 |underline|string|Type of underline applied to the font. Possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.|
 
@@ -28,6 +26,7 @@ None
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.|
 
 ## Method Details
+
 
 ### load(param: object)
 Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.

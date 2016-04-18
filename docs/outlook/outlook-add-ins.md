@@ -56,7 +56,7 @@ Outlook add-ins are available on messages or appointments while composing or rea
     
 - A .msg file opened from the file system.
     
-In general, Outlook can activate add-ins in read forms for items in the Sent Items folder, with the exception of add-ins that activate based on string matches of well-known entities. For more information about the reasons behind this, see [Support for well-known entities](../outlook/match-strings-in-an-item-as-well-known-entities.md#MailAppEntities_Supported).
+In general, Outlook can activate add-ins in read forms for items in the Sent Items folder, with the exception of add-ins that activate based on string matches of well-known entities. For more information about the reasons behind this, see "Support for well-known entities" in [Match strings in an Outlook item as well-known entities](../outlook/match-strings-in-an-item-as-well-known-entities.md).
 
 
 ## Supported hosts
@@ -68,7 +68,7 @@ Outlook add-ins are supported in Outlook 2013 and later versions, Outlook 2016 f
 ## Get started building Outlook add-ins
 
 
-To get started building Outlook add-ins, see [Get Started with Outlook add-ins for Office 365](https://dev.outlook.com/MailAppsGettingStarted/GetStarted.aspx).
+To get started building Outlook add-ins, see [Get Started with Outlook add-ins for Office 365](https://dev.outlook.com/MailAppsGettingStarted/GetStarted).
 
 
 ## Additional Resources

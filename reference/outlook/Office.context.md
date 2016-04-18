@@ -1,8 +1,8 @@
- 
+
 
 # context
 
-## [Office](Office.md). context
+## [Office](Office.md).context
 
 The Office.context namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office.context namespace, see the [Office.context reference in the Shared API](../shared/office.context.md).
 
@@ -52,7 +52,7 @@ function sayHelloWithDisplayLanguage() {
 }
 // Function that writes to a div with id='message' on the page.
 function write(message){
-  document.getElementById('message').innerText += message; 
+  document.getElementById('message').innerText += message;
 }
 ```
 
@@ -112,5 +112,5 @@ The `RoamingSettings` object lets you store and access data for a mail add-in th
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](https://msdn.microsoft.com/EN-US/library/office/fp161087.aspx)| Restricted|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Compose or read|

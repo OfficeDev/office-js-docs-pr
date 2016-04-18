@@ -1,7 +1,7 @@
 
 # Get or set the location when composing an appointment in Outlook
 
-The JavaScript API for Office provides asynchronous methods ([getAsync](../../reference/outlook/Location.md) and [setAsync](../../reference/outlook/Location.md)) to get and set the location of an appointment that the user is composing. These asynchronous methods are available to only compose add-ins. To use these methods, make sure you have set up the add-in manifest appropriately for Outlook to activate the add-in in compose forms, as described in the section [Setting up Outlook add-ins for compose forms](../outlook/compose-scenario.md#mod_off15_CreatingForCompose_SettingUp) of [Create Outlook add-ins for compose forms](../outlook/compose-scenario.md).
+The JavaScript API for Office provides asynchronous methods ([getAsync](../../reference/outlook/Location.md) and [setAsync](../../reference/outlook/Location.md)) to get and set the location of an appointment that the user is composing. These asynchronous methods are available to only compose add-ins. To use these methods, make sure you have set up the add-in manifest appropriately for Outlook to activate the add-in in compose forms, as described [Create Outlook add-ins for compose forms](../outlook/compose-scenario.md).
 
 The [location](../../reference/outlook/Office.context.mailbox.item.md) property is available for read access in both compose and read forms of appointments. In a read form, you can access the property directly from the parent object, as in:
 
@@ -23,7 +23,7 @@ item.location.getAsync
 
 The  **location** property is available for write access in only compose forms of appointments, but not in read forms.
 
-As with most asynchronous methods in the JavaScript API for Office,  **getAsync** and **setAsync** take optional input parameters. For more information about specifying these optional input parameters, see [passing optional parameters to asynchronous methods](../../docs/develop/asynchronous-programming-in-office-add-ins.md#AsyncProgramming_OptionalParameters) in [Asynchronous programming in Office Add-ins](../../docs/develop/asynchronous-programming-in-office-add-ins.md).
+As with most asynchronous methods in the JavaScript API for Office,  **getAsync** and **setAsync** take optional input parameters. For more information about specifying these optional input parameters, see [Asynchronous programming in Office Add-ins](../../docs/develop/asynchronous-programming-in-office-add-ins.md).
 
 
 ## To get the location
