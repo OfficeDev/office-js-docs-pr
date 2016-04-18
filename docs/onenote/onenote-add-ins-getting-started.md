@@ -31,9 +31,9 @@ During this initial private preview period, please contact us via Twitter [@onen
 
 2- Open a **cmd** prompt and navigate to the **onenote add-in** folder. Run the `yo office` command, as shown below.
 
-   ```
+```
 C:\your-local-path\onenote add-in\> yo office
-   ```
+```
    >These instructions use the Windows command prompt but are equally applicable for other shell environments. 
 
 3- Use the following options to create the project.
@@ -50,15 +50,15 @@ C:\your-local-path\onenote add-in\> yo office
 ### Step 4: Configure the add-in manifest 
 1- Open **manifest-onenote-add-in.xml** in your project files. Add the following line to the **Hosts** section. This specifies that your add-in supports the OneNote host application.
 
-   ```
+```
 <Host Name="Notebook" />
-   ```
+```
 
    Note that the **SourceLocation** is already set up for your Gulp web server.
 
-   ```
+```
 <SourceLocation DefaultValue="https://localhost:8443/app/home/home.html"/>
-   ```
+```
 
 <a name="develop"></a>
 ### Step 5: Develop the add-in
@@ -72,21 +72,21 @@ You can develop the add-in using any text editor or IDE. If you haven't tried Vi
 
    b. Replace the script reference to Office.js with the following reference to the *beta* version.
 
-   ```
+```
 <script src="//appsforoffice.officeapps.live.com/afo/lib/beta/hosted/office.js"></script>
-   ```
+```
 
    Your Office references will look like this.
 
-   ```
+```
 <link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.min.css" rel="stylesheet">
 <link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css" rel="stylesheet">
 <script src="//appsforoffice.officeapps.live.com/afo/lib/beta/hosted/office.js"></script>
-   ```
+```
 
 3- Replace the `<body>` element with the following code. This adds a text area and a button using [Office UI Fabric components](http://dev.office.com/fabric/components). The **Responsive Grid** layout is from the set of [Office UI Fabric styles](http://dev.office.com/fabric/styles). 
 
-   ```
+```
 <body class="ms-font-m">
     <div class="home flex-container">
         <div class="ms-Grid">
@@ -120,11 +120,11 @@ You can develop the add-in using any text editor or IDE. If you haven't tried Vi
         </div>
     </div>
 </body>
-   ```
+```
 
 4- Open **home.js** in the *app/home* folder. Edit the **Office.initialize** function to add a click event to the **Add outline** button, as follows. 
 
-   ```
+```
 // The initialize function is run each time the page is loaded.
 Office.initialize = function (reason) {
     $(document).ready(function () {
@@ -134,11 +134,11 @@ Office.initialize = function (reason) {
         $('#addOutline').click(addOutlineToPage);
     });
 };
-   ```
+```
  
 5- Replace the **getDataFromSelection** method with the following **addOutlineToPage** method. This gets the content from the text area and adds it to the page.
 
-   ```
+```
 // Add the contents of the text area to the page.
 function addOutlineToPage() {        
     OneNote.run(function (context) {
@@ -167,7 +167,7 @@ function addOutlineToPage() {
             }); 
         });
 }
-   ```
+```
 
 <a name="test"></a>
 ### Step 6: Test the add-in on OneNote Online
@@ -177,17 +177,17 @@ function addOutlineToPage() {
 
    b. Run the `gulp serve-static` command, as shown below.
 
-   ```
+```
 C:\your-local-path\onenote add-in\> gulp serve-static
-   ```
+```
 
 2- Install the Gulp web server's self-signed certificate as a trusted certificate. You only need to do this one time on your computer for add-in projects created with the Yeoman Office generator.
 
    a. Navigate to the hosted add-in page. By default, this is the same URL that's in your manifest:
 
-   ```
+```
 https://localhost:8443/app/home/home.html
-   ```
+```
 
    b. Install the certificate as a trusted certificate. For more information, see [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/docs/trust-self-signed-cert.md).
 

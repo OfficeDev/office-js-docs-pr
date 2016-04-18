@@ -39,7 +39,7 @@ Use the **Application** object to access OneNote objects such as **Notebook**, *
 
 For example: 
 
-   ```
+```
     function getPagesInSection() {
         OneNote.run(function (context) {
             
@@ -69,7 +69,7 @@ For example:
                 });
         });
     }
-   ```
+```
 
 You can find supported OneNote objects and operations in the [API reference](../../reference/onenote/onenote-add-ins-javascript-reference.md).
 
@@ -80,7 +80,7 @@ and [setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/docum
 
 For example:  
 
-   ```
+```
 function getSelectionFromPage() {
     Office.context.document.getSelectedDataAsync(
         Office.CoercionType.Text,
@@ -93,7 +93,7 @@ function getSelectionFromPage() {
             else $('#input').val(asyncResult.value);
         });
 }
-   ```
+```
 OneNote add-ins support only the following common APIs:
 
 | API | Notes |

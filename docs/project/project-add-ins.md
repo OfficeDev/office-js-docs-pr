@@ -71,7 +71,7 @@ The manifest file specifies the URL of the add-in webpage or web application, th
 
 1. Create an XML file in a local directory. The XML file includes the  **OfficeApp** element and child elements, which are described in the [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md). For example, create a file named BingSearch.xml that contains the following XML.
     
- ```XML
+```XML
    <?xml version="1.0" encoding="utf-8"?>
  <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" 
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -95,7 +95,7 @@ The manifest file specifies the URL of the add-in webpage or web application, th
    </DefaultSettings>
    <Permissions>ReadWriteDocument</Permissions>
  </OfficeApp>
- ```
+```
 
 2. Following are the required elements in the add-in manifest:
   - In the  **OfficeApp** element, the `xsi:type="TaskPaneApp"` attribute specifies that the add-in is a task pane type.
@@ -109,7 +109,7 @@ The manifest file specifies the URL of the add-in webpage or web application, th
     
 3. (Optional) Add  **Override** elements that have values for other locales. For example, the following manifest provides **Override** elements for French values of **DisplayName**,  **Description**,  **IconUrl**, and  **SourceLocation**.
     
- ```XML
+```XML
    <?xml version="1.0" encoding="utf-8"?>
  <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" 
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -137,7 +137,7 @@ The manifest file specifies the URL of the add-in webpage or web application, th
    </DefaultSettings>
    <Permissions>ReadWriteDocument</Permissions>
  </OfficeApp>
- ```
+```
 
 
 ## Installing Project add-ins
