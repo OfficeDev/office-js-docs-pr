@@ -130,7 +130,7 @@ chartObject.setData(sourceData, seriesBy);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |sourceData|Range|The Range object corresponding to the source data.|
-|seriesBy|string|Optional. Specifies the way columns or rows are used as data series on the chart. Can be one of the following: Auto (default), Rows, Columns.  Possible values are: Auto, Columns, Rows.|
+|seriesBy|string|Optional. Specifies the way columns or rows are used as data series on the chart. Possible values are: Auto, Columns, Rows. On Desktop, the "auto" option will inspect the source data shape to automatically guess whether the data is by rows or columns; on Excel Online, "auto" will simply default to "columns".|
 
 #### Returns
 void
