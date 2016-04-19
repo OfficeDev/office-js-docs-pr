@@ -32,20 +32,11 @@ The JavaScript API for Office provides two properties that support displaying or
 
 ```
 
-- [Context.contentLanguage](http://msdn.microsoft.com/library/4fd063c2-0cd0-4b5b-8993-93d7ff8ce3bf.aspx) specifies the locale (or language) of the data. Extending the last code sample, instead of checking the **displayLanguage** property:
+- [Context.contentLanguage](http://msdn.microsoft.com/library/4fd063c2-0cd0-4b5b-8993-93d7ff8ce3bf.aspx) specifies the locale (or language) of the data. Extending the last code sample, instead of checking the **displayLanguage** property, assign  `myLanguage` to the **contentLanguage** property, and use the rest of the same code to display a greeting based on the locale of the data:
     
-    ```js
-      var myLanguage = Office.context.displayLanguage;
-    ```
-
-
-    Assign  `myLanguage` to the **contentLanguage** property, and use the rest of the same code to display a greeting based on the locale of the data:
-    
-
-
-    ```js
+```js
       var myLanguage = Office.context.contentLanguage;
-    ```
+```
 
 
 ## Control localization from the manifest
@@ -215,14 +206,14 @@ To localize the add-in display name and description:
     
      >**Note**  You can replace the Spanish language localized strings used in this example for the  **DisplayName** and **Description** elements with the localized strings for any other language.
 
-    ```XML
+```XML
       <DisplayName DefaultValue="World Ready add-in">
         <Override Locale="es-es" Value="Aplicación de uso internacional"/>
       </DisplayName>
       <Description DefaultValue="An add-in for testing localization">
         <Override Locale="es-es" Value="Una aplicación para la prueba de la localización"/>
       </Description>
-    ```
+```
 
 3. When you change the display language for Office 2013 from English to Spanish, for example, and then run the add-in, the add-in display name and description are shown with localized text. 
     
@@ -233,7 +224,7 @@ To lay out the add-in UI:
     
 2. Replace the HTML in Home.html with the following HTML.
     
-    ```HTML
+```HTML
     <!DOCTYPE html>
     <html>
     <head>
@@ -269,7 +260,7 @@ To lay out the add-in UI:
         </div>
     </head>
     </html>
-    ```
+```
 
 3. In Visual Studio, choose  **File**,  **Save AddIn\Home\Home.html**.
     
@@ -296,7 +287,7 @@ To add the resource file to the add-in project:
     
 3. Add the following code to the UIStrings.js file.
 
-    ```js
+```js
       /* Store the locale-specific strings */
     
     var UIStrings = (function ()
@@ -343,7 +334,7 @@ To add the resource file to the add-in project:
     
         return UIStrings;
     })();
-    ```
+```
 
 The UIStrings.js resource file creates an object,  **UIStrings**, which contains the localized strings for your add-in UI. 
 

@@ -121,9 +121,9 @@ Figure 1 shows a summary of the steps to verify whether Outlook has a valid vers
     %LocalAppData%\Microsoft\Office\15.0\WEF
     
     You can find the manifest in the following subfolder:
-    ```
+```
     \<insert your guid>\<insert base 64 hash>\Manifests\<ManifestID>_<ManifestVersion>
-    ```
+```
     
      >**Note**  The following is an example of a path to a manifest installed for a mailbox for the user John:
     
@@ -149,9 +149,9 @@ Figure 1 shows a summary of the steps to verify whether Outlook has a valid vers
     For information about opening the Event Viewer in Windows 7, see [Open Event Viewer](http://windows.microsoft.com/en-US/windows7/Open-Event-Viewer).
     
 6. If you don't see a successful event, close Outlook, and delete all the manifests in the following path:
-    ```
+```
     %LocalAppData%\Microsoft\Office\15.0\WEF\<insert your guid>\<insert base 64 hash>\Manifests\
-    ```
+```
     Start Outlook and test whether Outlook now activates the add-in.
     
 7. If Outlook doesn't activate the add-in, go back to Step 3 to verify again whether Outlook has properly read the manifest.

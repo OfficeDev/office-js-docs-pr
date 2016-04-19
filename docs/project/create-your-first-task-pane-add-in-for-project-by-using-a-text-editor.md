@@ -14,7 +14,7 @@ For an introduction to using JavaScript in Office Add-ins, see [Understanding th
 
 - Create an XML file in a local directory. The XML file includes the  **OfficeApp** element and child elements, which are described in the [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md). For example, create a file named JSOM_SimpleOMCalls.xml that contains the following XML (change the GUID value of the **Id** element).
     
-   ```XML
+```XML
      <?xml version="1.0" encoding="utf-8"?>
    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -45,7 +45,7 @@ For an introduction to using JavaScript in Office Add-ins, see [Understanding th
      </IconUrl>
      <AllowSnapshot>true</AllowSnapshot>
    </OfficeApp>
-   ```
+```
 
 
     For Project, the  **OfficeApp** element must include the `xsi:type="TaskPaneApp"` attribute value. The **Id** element is a GUID. The **SourceLocation** value must be a file share path or a SharePoint URL for the add-in HTML source file or the web application that runs in the task pane. For an explanation of the other elements in manifest file, see [Task pane add-ins for Project](../project/project-add-ins.md).

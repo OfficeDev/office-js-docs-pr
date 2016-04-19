@@ -177,7 +177,7 @@ The task pane shows the add-in display name at the top, which is the value of th
     
     Following is the updated HTML code for the  **head** element, with the additional line for the SurfaceErrors.js file:
     
-    ```HTML
+```HTML
       <!DOCTYPE html>
     <html>
     <head>
@@ -209,7 +209,7 @@ The task pane shows the add-in display name at the top, which is the value of th
     <!-- See the code in Step 3. -->
     </body>
     </html>
-    ```
+```
 
 3. In the  **body** element, delete the existing code from the template, and then add the code for the user interface. If an element is to be filled with data or manipulated by a jQuery statement, the element must include a unique **id** attribute. In the following code, the **id** attributes for the **button**,  **span**, and  **td** (table cell definition) elements that jQuery functions use are shown in bold font.
     
@@ -217,7 +217,7 @@ The task pane shows the add-in display name at the top, which is the value of th
     
 
 
-    ```HTML
+```HTML
       <body>
       <div id="SectionContent">
         <div id="odataQueries">
@@ -269,7 +269,7 @@ The task pane shows the add-in display name at the top, which is the value of th
       <br />
       <textarea id="odataText" rows="12" cols="40"></textarea>
     </body>
-    ```
+```
 
 
 ## Creating the JavaScript code for the add-in
@@ -287,7 +287,7 @@ The remainder of the HelloProjectOData.js file includes two functions: the  **re
 
 1. Delete all code in the default HelloProjectOData.js file, and then add the global variables and  **Office.initialize** function. Variable names that are all capitals imply that they are constants; they are later used with the **_pwa** variable to create the REST query in this example.
     
-    ```js
+```js
       var PROJDATA = "/_api/ProjectData";
     var PROJQUERY = "/Projects?";
     var QUERY_FILTER = "$filter=ProjectName ne 'Timesheet Administrative Work Items'";
@@ -305,13 +305,13 @@ The remainder of the HelloProjectOData.js file includes two functions: the  **re
             // After the DOM is loaded, app-specific code can run.
         });
     }
-    ```
+```
 
 2. Add  **setOdataUrl** and related functions. The **setOdataUrl** function calls **getProjectGuid** and **getDocumentUrl** to initialize the global variables. In the [getProjectFieldAsync method](../../reference/shared/projectdocument.getprojectfieldasync.md), the anonymous function for the  _callback_ parameter enables the **Compare All Projects** button by using the **removeAttr** method in the jQuery library, and then displays the URL of the **ProjectData** service. If Project is not connected with Project Web App, the function throws an error, which displays a pop-up error message. The SurfaceErrors.js file includes the **throwError** method.
     
      >**Note**  If you run Visual Studio on the Project Server computer, to use  **F5** debugging, uncomment the code after the line that initializes the **_pwa** global variable. To enable using the jQuery **ajax** method when debugging on the Project Server computer, you must set the **localhost** value for the PWA URL.If you run Visual Studio on a remote computer, the  **localhost** URL is not required. Before you deploy the add-in, comment out that code.
 
-    ```js
+```js
       function setOdataUrl() {
         Office.context.document.getProjectFieldAsync(
             Office.ProjectProjectFields.ProjectServerUrl,
@@ -365,7 +365,7 @@ The remainder of the HelloProjectOData.js file includes two functions: the  **re
     function getDocumentUrl() {
         _docUrl = "Document path:\r\n" + Office.context.document.url;
     }
-    ```
+```
 
 3. Add the  **retrieveOData** function, which concatenates values for the REST query and then calls the **ajax** function in jQuery to get the requested data from the **ProjectData** service. The **support.cors** variable enables cross-origin resource sharing (CORS) with the **ajax** function. If the **support.cors** statement is missing or is set to **false**, the  **ajax** function returns a **No transport** error.
     
@@ -375,7 +375,7 @@ The remainder of the HelloProjectOData.js file includes two functions: the  **re
     
 
 
-    ```js
+```js
       /****************************************************************
     * Functions to get and parse the Project Server reporting data.
     *****************************************************************/
@@ -429,7 +429,7 @@ The remainder of the HelloProjectOData.js file includes two functions: the  **re
           + errorMessage);
         throwError(errorCode, errorMessage);
     }
-    ```
+```
 
 4. Add the  **parseODataResult** method, which deserializes and processes the JSON response from the OData service. The **parseODataResult** method calculates average values of the cost and work data to an accuracy of one or two decimal places, formats values with the correct color and adds a unit ( **$**,  **hrs**, or  **%**), and then displays the values in specified table cells.
     
@@ -437,7 +437,7 @@ The remainder of the HelloProjectOData.js file includes two functions: the  **re
     
 
 
-    ```js
+```js
       // Calculate the average values of actual cost, cost, work, and percent complete   
     // for all projects, and compare with the values for the current project.
     function parseODataResult(oDataResult, currentProjectGuid) {
@@ -544,7 +544,7 @@ The remainder of the HelloProjectOData.js file includes two functions: the  **re
             document.getElementById("CurrentProjectPercentComplete").style.color = "blue"
         }
     }
-    ```
+```
 
 
 ## Testing the HelloProjectOData add-in
@@ -596,7 +596,7 @@ Basic tests should include the following:
     
 
 
-    ```
+```
           Document path: <>\WinProj test1
     
         REST query:
@@ -640,7 +640,7 @@ Basic tests should include the following:
             "ProjectPercentCompleted":37,
             "ProjectWork":"104.000000"}
         ]}}
-    ```
+```
 
 7. Stop debugging (press  **Shift + F5**), and then press  **F5** again to run a new instance of Project. In the **Login** dialog box, choose the local **Computer** profile, not Project Web App. Create or open a local project .mpp file, open the **Hello ProjectData** task pane, and then select **Get ProjectData Endpoint**. The add-in should show a  **No connection!** error (see Figure 6), and the **Compare All Projects** button should remain disabled.
     
@@ -675,7 +675,7 @@ Even if your add-in is working correctly in the previous tests, there are other 
  **HelloProjectOData.html file** The following code is in the `Pages\HelloProjectOData.html` file of the **HelloProjectODataWeb** project:
 
 
-    ```
+```
     <!DOCTYPE html>
     <html>
     <head>
@@ -757,14 +757,14 @@ Even if your add-in is working correctly in the previous tests, there are other 
       <textarea id="odataText" rows="12" cols="40"></textarea>
     </body>
     </html>
-    ```
+```
 
     **HelloProjectOData.js file** The following code is in the `Scripts\Office\HelloProjectOData.js` file of the **HelloProjectODataWeb** project:
 
 
 
 
-    ```js
+```js
     /* File: HelloProjectOData.js
     * JavaScript functions for the HelloProjectOData example task pane app.
     * October 2, 2012
@@ -1007,7 +1007,7 @@ Even if your add-in is working correctly in the previous tests, there are other 
             document.getElementById("CurrentProjectPercentComplete").style.color = "blue"
         }
     }
-    ```
+```
 
  **App.css file** The following code is in the `Content\App.css` file of the **HelloProjectODataWeb** project:
 

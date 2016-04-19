@@ -140,7 +140,7 @@ For our example, we'll create a Hello World add-in. The UI of the add-in is prov
 
 1. In your project folder, go to  _[project folder]/app/home_ (in our example, it's myHelloWorldaddin/app/home), open home.html, and replace the existing code with the following code.
     
-      ```HTML
+```HTML
         <!DOCTYPE html>  
       <html> 
         <head> 
@@ -154,14 +154,14 @@ For our example, we'll create a Hello World add-in. The UI of the add-in is prov
         </body> 
       
        </html> 
-      ```
+```
 
 
     This file provides the minimum set of HTML tags to display the UI of an add-in.
     
 2. In the same folder, open the home.css file and add the following CSS code.
     
-   ```
+```
      body 
    { 
         position:relative; 
@@ -176,7 +176,7 @@ For our example, we'll create a Hello World add-in. The UI of the add-in is prov
         font-family: "Segoe UI Light","Segoe UI",Tahoma,sans-serif; 
         text-decoration-color:#4ec724; 
    } 
-   ```
+```
 
 
        This file provides the style sheet for the add-in.
@@ -185,7 +185,7 @@ For our example, we'll create a Hello World add-in. The UI of the add-in is prov
     
      >**Important**  The value in the  `<id>` tag is a GUID that the yeoman generator creates when it generates the project. Do not change the GUID that the yeoman generator created for your add-in.If the host is Azure, the the  `SourceLocation` value will be a URL that is similar to _https:// [name-of-your-web-app].azurewebsites.net/[path-to-add-in]_. If you are using the self-hosted option, as in this example, it will be _https://localhost:8443/[path-to-add-in]_.
 
-   ```XML
+```XML
      <?xml version="1.0" encoding="utf-8"?> 
    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -209,7 +209,7 @@ For our example, we'll create a Hello World add-in. The UI of the add-in is prov
    <Permissions>ReadWriteDocument</Permissions>
     
    </OfficeApp> 
-   ```
+```
 
 
 ### Running the add-in locally

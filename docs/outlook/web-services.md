@@ -44,40 +44,40 @@ When parsing a SOAP response from a EWS operation, note the following browser-de
     
      **getElementsByTagName** behaves differently depending on browser type. For example, a EWS response can contain the following XML (formatted and abbreviated for display purposes):
     
-    ```XML
+```XML
       <t:ExtendedProperty><t:ExtendedFieldURI PropertySetId="00000000-0000-0000-0000-000000000000" 
     PropertyName="MyProperty" 
     PropertyType="String"/>
     <t:Value>{
     ...
     }</t:Value></t:ExtendedProperty>
-    ```
+```
 
  Code as in the following would work on a browser like Chrome to get the XML enclosed by the  **ExtendedProperty** tags:
 
-    ```js
+```js
     var mailbox = Office.context.mailbox;
     mailbox.makeEwsRequestAsync(mailbox.item.itemId), function(result) {
         var response = $.parseXML(result.value);
         var extendedProps = response.getElementsByTagName("ExtendedProperty");
-    ```
+```
 
 
    
  On Internet Explorer, you must include the  `t:` prefix of the tag name, as shown below:
 
-    ```js
+```js
     var mailbox = Office.context.mailbox;
     mailbox.makeEwsRequestAsync(mailbox.item.itemId), function(result) {
         var response = $.parseXML(result.value);
         var extendedProps = response.getElementsByTagName("t:ExtendedProperty");
-    ```
+```
 
 - Use the DOM property  **textContent** to get the contents of a tag in a EWS response, as shown below:
     
-    ```
+```
       content = $.parseJSON(value.textContent);
-    ```
+```
 
  Other properties such as  **innerHTML** may not work on Internet Explorer for some tags in a EWS response.
     

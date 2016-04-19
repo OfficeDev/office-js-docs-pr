@@ -42,25 +42,25 @@ Pay special attention to the following when you use regular expressions:
     
 - The HTML body of an item is slightly different between an Outlook rich client, and Outlook Web App or OWA for Devices. Define your regular expressions carefully. As an example, consider the following regular expression used in an  **ItemHasRegularExpressionMatch** rule with **BodyAsHTML** as the **PropertyName** attribute value:
     
-    ```
+```
       http.*\.contoso\.com
-    ```
+```
 
 
     A rule with this regular expression would match the string "http-equiv="Content-Type" which exists in the HTML body of an item in an Outlook rich client, as part of the following  **META** tag:
     
 
-    ```HTML
+```HTML
       <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
-    ```
+```
 
 
 The same rule does not return this match in Outlook Web App and OWA for Devices because the HTML body in these hosts does not include that  **META** tag. This can affect whether the add-in is activated appropriately for the various Outlook clients. In this example, use the following regular expression instead:
     
 
-    ```
+```
       http://.*\.contoso\.com/
-    ```
+```
 
 - Depending on the host application, type of device, or property that a regular expression is being applied on, there are other best practices and limits for each of the hosts that you should be aware of when designing regular expressions as activation rules. See [Limits for activation and JavaScript API for Outlook add-ins](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md) for details.
     
