@@ -442,5 +442,5 @@ For a full sample manifest, see the [command-demo](https://github.com/jasonjoh/c
     
 - [Outlook add-in manifests](../../outlook/manifests/manifests.md)
     
-- [command-demo sample](https://github.com/jasonjoh/command-demo.aspx)
+- [command-demo sample](https://github.com/jasonjoh/command-demo)
     
