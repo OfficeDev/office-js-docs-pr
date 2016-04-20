@@ -1,8 +1,5 @@
 
 # Use the OAuth authorization framework in an Office Add-in
-Use the OAuth 2.0 authorization framework in your Office Add-ins.
-
- _**Applies to:** apps for Office | Office Add-ins_
 
 OAuth is the open standard for authorization that online service providers such as Office 365, Facebook, Google, SalesForce, LinkedIn and others use to perform user authentication. The OAuth authorization framework is the default authorization protocol used in Azure and Office 365. The OAuth authorization framework is used in both enterprise (corporate) and consumer scenarios.
 
