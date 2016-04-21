@@ -20,8 +20,8 @@ Represents the protection of a sheet object.
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object with protection details of the sheet.|
-|[protect(options: WorksheetProtectionOptions, password: string)](#protectoptions-worksheetprotectionoptions-password-string)|void|Protect a worksheet. It throws if the worksheet has been protected.|
-|[unprotect(password: string)](#unprotectpassword-string)|void|Unprotect a worksheet|
+|[protect(options: WorksheetProtectionOptions)](#protectoptions-worksheetprotectionoption)|void|Protect a worksheet. It throws if the worksheet has been protected.|
+|[unprotect()](#unprotect)|void|Unprotect a worksheet|
 
 ## Method Details
 
@@ -61,21 +61,21 @@ Excel.run(function (ctx) {
 });
 ```
 
-### protect(options: WorksheetProtectionOptions, password: string)
-Protect a worksheet with optional protection policies and an optional password. It throws an exception if the worksheet has been protected. 
+### protect(options: WorksheetProtectionOptions)
+Protect a worksheet with optional protection policies. It throws an exception if the worksheet has been protected. 
 
 When options are specified, individual policies can be toggled enabled or diabled. If a policy isn't specified, then its enabled by default. 
 
 #### Syntax
 ```js
-worksheetProtectionObject.protect(options, password);
+worksheetProtectionObject.protect(options);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |options|WorksheetProtectionOptions|Optional. sheet protection options.|
-|password|string|Optional. sheet protection password.|
+
 
 #### Returns
 void
@@ -95,18 +95,16 @@ Excel.run(function (ctx) {
 });
 
 ```
-### unprotect(password: string)
-Unprotect a worksheet with an optional password which was used to protect the sheet. It throws an exception if the password supplied is wrong.
+### unprotect()
+Unprotect a worksheet. 
 
 #### Syntax
 ```js
-worksheetProtectionObject.unprotect(password);
+worksheetProtectionObject.unprotect();
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|password|string|Optional. sheet protection password.|
+None
 
 #### Returns
 void
