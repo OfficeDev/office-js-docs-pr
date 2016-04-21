@@ -173,7 +173,7 @@ Where:
 |**Element**|**Description**|
 |:-----|:-----|
 |**OfficeTab**|Required. The pre-existing tab to use. Currently, the  **id** attribute can only be "TabDefault".|
-|**Group**|A group of user interface extension points in a tab. A group can have up to six controls.The  **id** attribute is required and each **id** must be unique. It is a string with a maximum of 125 characters.|
+|**Group**|A group of user interface extension points in a tab. A group can have up to six controls. The  **id** attribute is required and each **id** must be unique within the manfiest. It is a string with a maximum of 125 characters.|
 |**Label**|Required. The label of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the **Resources** element.|
 |**Control**|A group requires at least one control. Currently, only buttons and menus are supported. See the following [Button controls](#VersionOverrides10_Buttons) and [Menu (dropdown button) controls](#menu-dropdown-button-controls) sections for more information.|
 
@@ -217,7 +217,7 @@ The button control looks like the following:
 </Control>
 ```
 
-Where the  **id** attribute is a *unique* string with a maximum of 125 characters and contains the button elements described in the following table.
+Where the  **id** attribute is a *unique* string with a maximum of 125 characters. The **Control** element contains the button elements described in the following table.
 
 |**Button elements**|**Description**|
 |:-----|:-----|
@@ -296,7 +296,7 @@ The syntax for the menu control is as follows:
 </Control>
 ```
 
-Where the  **id** attribute is a string with a maximum of 125 characters and the menu elements are described in the following table.
+Where the  **id** attribute is a *unique* string with a maximum of 125 characters and the menu elements are described in the following table.
 
 |**Menu elements**|**Description**|
 |:-----|:-----|
@@ -371,7 +371,7 @@ MessageReadCommandSurface.
 ## Resources element
 
 
-The  **Resources** element contains icons, strings, and URLs for the **VersionOverrides** node. A manifest element specifies a resource by using the **Id** of the resource. This helps to keep the size of the manifest manageable, especially when resources have versions for different locales. An **Id** has a maximum of 32 characters.
+The  **Resources** element contains icons, strings, and URLs for the **VersionOverrides** node. A manifest element specifies a resource by using the **Id** of the resource. This helps to keep the size of the manifest manageable, especially when resources have versions for different locales. An **Id** must be unique within the manifest and has a maximum of 32 characters.
 
 The  **Resources** node defines the following resources. Each resource can have one or more **Override** child elements to define a resource for specific locales.
 
