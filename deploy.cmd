@@ -27,7 +27,7 @@ IF NOT DEFINED APIDOCS_PATH (
 
 %APIDOCS_PATH%\apidocs.exe publish --path %DEPLOYMENT_SOURCE%\reference --output %DEPLOYMENT_TARGET_DIR%\reference --template %DEPLOYMENT_TEMPLATE% --format mustache --insert-gitInfo true --gitUrl https://github.com/OfficeDev/office-js-docs/tree/master
 
-Copy-Item %DEPLOYMENT_SOURCE%\images %DEPLOYMENT_TARGET_DIR%\images /Y
+xcopy %DEPLOYMENT_SOURCE%\images %DEPLOYMENT_TARGET_DIR%\images /Y
 
 
 
