@@ -48,20 +48,19 @@ Note that the update process is applied on a  _per-project basis_ - you'll need 
     
 4. In the left pane, choose **Update** and complete the package update process.
     
-5. In the  **head** tag of your add-in's HTML pages, comment out or delete any existing office.js script references (for example: `<script src="https://appsforoffice.microsoft.com/lib/1.0/hosted/office.js" type="text/javascript"></script>)`, and now reference the updated JavaScript API for Office library like this (changing the version value to  `1`).
+5. In the  **head** tag of your add-in's HTML pages, comment out or delete any existing office.js script references (for example: `<script src="https://appsforoffice.microsoft.com/lib/1.0/hosted/office.js" type="text/javascript"></script>)`, and now reference the updated JavaScript API for Office library like this (changing the version value to  '1'). 
+
+   >**Note**The  '/1/' in front of 'office.js' in the CDN URL below specifies to use the latest incremental release within version 1 of Office.js.
     
 ```
   <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
 ```
 
 
->**Note**  The  `/1/` in front of `office.js` in the CDN URL specifies to use the latest incremental release within version 1 of Office.js.
-    
-
 ### To update the manifest file in your project to use schema version 1.1
 
 
-- In your project's add-in manifest ( _projectname_ Manifest.xml) file, update the **xmlns** attribute of the **OfficeApp** element changing the version value to `1.1` (leaving attributes other than the **xmlns** attribute unchanged).
+- In your project's add-in manifest ( _projectname_ Manifest.xml) file, update the **xmlns** attribute of the **OfficeApp** element changing the version value to '1.1' (leaving attributes other than the **xmlns** attribute unchanged).
     
 ```XML
   <OfficeApp xsi:type="ContentApp" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" >
@@ -87,7 +86,7 @@ You don't need local copies of the JavaScript API for Office files (Office.js an
 
 1. Open the HTML pages for your add-in in your text editor or IDE.
     
-2. In the  **head** tag of your add-in's HTML pages, comment out or delete any existing office.js script references (for example: `<script src="https://appsforoffice.microsoft.com/lib/1.0/hosted/office.js" type="text/javascript"></script>)`, and now reference the updated JavaScript API for Office library like this (changing the version value to  `1` ).
+2. In the  **head** tag of your add-in's HTML pages, comment out or delete any existing office.js script references (for example: `<script src="https://appsforoffice.microsoft.com/lib/1.0/hosted/office.js" type="text/javascript"></script>)`, and now reference the updated JavaScript API for Office library like this (changing the version value to  '1' ).
     
 ```
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
