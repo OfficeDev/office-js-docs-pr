@@ -6,22 +6,22 @@ Represents the protection of a sheet object.
 
 ## Properties
 
-| Property	   | Type	|Description
+| Property     | Type   |Description
 |:---------------|:--------|:----------|
 |protected|bool|Indicates if the worksheet is protected. Read-Only.|
 
 ## Relationships
-| Relationship | Type	|Description|
+| Relationship | Type   |Description|
 |:---------------|:--------|:----------|
 |options|[WorksheetProtectionOptions](worksheetprotectionoptions.md)|Sheet protection options. Read-only.|
 
 ## Methods
 
-| Method		   | Return Type	|Description|
+| Method           | Return Type    |Description|
 |:---------------|:--------|:----------|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object with protection details of the sheet.|
-|[protect(options: WorksheetProtectionOptions, password: string)](#protectoptions-worksheetprotectionoptions-password-string)|void|Protect a worksheet. It throws if the worksheet has been protected.|
-|[unprotect(password: string)](#unprotectpassword-string)|void|Unprotect a worksheet|
+|[protect(options: WorksheetProtectionOptions)](#protectoptions-worksheetprotectionoption)|void|Protect a worksheet. It throws if the worksheet has been protected.|
+|[unprotect()](#unprotect)|void|Unprotect a worksheet|
 
 ## Method Details
 
@@ -35,7 +35,7 @@ object.load(param);
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
+| Parameter    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
@@ -61,21 +61,21 @@ Excel.run(function (ctx) {
 });
 ```
 
-### protect(options: WorksheetProtectionOptions, password: string)
-Protect a worksheet with optional protection policies and an optional password. It throws an exception if the worksheet has been protected. 
+### protect(options: WorksheetProtectionOptions)
+Protect a worksheet with optional protection policies. It throws an exception if the worksheet has been protected. 
 
 When options are specified, individual policies can be toggled enabled or diabled. If a policy isn't specified, then its enabled by default. 
 
 #### Syntax
 ```js
-worksheetProtectionObject.protect(options, password);
+worksheetProtectionObject.protect(options);
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
+| Parameter    | Type   |Description|
 |:---------------|:--------|:----------|
 |options|WorksheetProtectionOptions|Optional. sheet protection options.|
-|password|string|Optional. sheet protection password.|
+
 
 #### Returns
 void
@@ -83,30 +83,28 @@ void
 #### Examples
 ```js
 Excel.run(function (ctx) { 
-	var sheet = ctx.workbook.worksheets.getItem("Sheet1");
-	var range = sheet.getRange("A1:B3").format.protection.locked = false;
-	sheet.protection.protect({allowInsertRows:true});
-	return ctx.sync(); 
+    var sheet = ctx.workbook.worksheets.getItem("Sheet1");
+    var range = sheet.getRange("A1:B3").format.protection.locked = false;
+    sheet.protection.protect({allowInsertRows:true});
+    return ctx.sync(); 
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
 });
 
 ```
-### unprotect(password: string)
-Unprotect a worksheet with an optional password which was used to protect the sheet. It throws an exception if the password supplied is wrong.
+### unprotect()
+Unprotect a worksheet. 
 
 #### Syntax
 ```js
-worksheetProtectionObject.unprotect(password);
+worksheetProtectionObject.unprotect();
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|password|string|Optional. sheet protection password.|
+None
 
 #### Returns
 void
@@ -114,9 +112,9 @@ void
 #### Examples
 ```js
 Excel.run(function (ctx) { 
-	var sheet = ctx.workbook.worksheets.getItem("Sheet1");	
-	sheet.protection.unprotect();
-	return ctx.sync(); 
+    var sheet = ctx.workbook.worksheets.getItem("Sheet1");  
+    sheet.protection.unprotect();
+    return ctx.sync(); 
 }).catch(function(error) {
     console.log("Error: " + error);
     if (error instanceof OfficeExtension.Error) {
