@@ -23,9 +23,9 @@ IF NOT DEFINED APIDOCS_PATH (
   SET APIDOCS_PATH=%SITE%\wwwroot\MDConverter\bin
 )
 
-%APIDOCS_PATH%\apidocs.exe publish --path %DEPLOYMENT_SOURCE%\docs --output %DEPLOYMENT_TARGET_DIR%\docs --template %DEPLOYMENT_TEMPLATE% --format mustache --insert-gitInfo true --gitUrl https://github.com/OfficeDev/office-js-docs/tree/master
+%APIDOCS_PATH%\apidocs.exe publish --path %DEPLOYMENT_SOURCE%\docs --output %DEPLOYMENT_TARGET_DIR%\docs --template %DEPLOYMENT_TEMPLATE% --format mustache --insert-gitInfo true --gitUrl https://github.com/OfficeDev/office-js-docs/tree/master/docs
 
-%APIDOCS_PATH%\apidocs.exe publish --path %DEPLOYMENT_SOURCE%\reference --output %DEPLOYMENT_TARGET_DIR%\reference --template %DEPLOYMENT_TEMPLATE% --format mustache --insert-gitInfo true --gitUrl https://github.com/OfficeDev/office-js-docs/tree/master
+%APIDOCS_PATH%\apidocs.exe publish --path %DEPLOYMENT_SOURCE%\reference --output %DEPLOYMENT_TARGET_DIR%\reference --template %DEPLOYMENT_TEMPLATE% --format mustache --insert-gitInfo true --gitUrl https://github.com/OfficeDev/office-js-docs/tree/master/reference
 
 xcopy %DEPLOYMENT_SOURCE%\images %DEPLOYMENT_TARGET_DIR%\images /Y
 
