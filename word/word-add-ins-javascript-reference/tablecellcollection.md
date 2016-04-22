@@ -1,45 +1,47 @@
-# SectionCollection Object (JavaScript API for Word)
+# TableCellCollection Object (JavaScript API for Word)
 
 _Word 2016, Word for iPad, Word for Mac_
 
-Contains the collection of the document's [section](section.md) objects.
+Contains the collection of the document's TableCell objects.
 
 ## Properties
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|items|[Section[]](section.md)|A collection of section objects. Read-only.|
+|items|[TableCell[]](tablecell.md)|A collection of tableCell objects. Read-only.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|first|[Section](section.md)|Gets the first section in this collection. Read-only.|
+|first|[TableCell](tablecell.md)|Gets the first table cell in this collection. Read-only.|
 
 ## Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[getItem(index: number)](#getitemindex-number)|[Section](section.md)|Gets a section object by its index in the collection.|
+|[getItem(index: number)](#getitemindex-number)|[TableCell](tablecell.md)|Gets a table cell object by its index in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 
 
 ### getItem(index: number)
-Gets a section object by its index in the collection.
+Gets a table cell object by its index in the collection.
 
 #### Syntax
 ```js
-sectionCollectionObject.getItem(index);
+tableCellCollectionObject.getItem(index);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|index|number|A number that identifies the index location of a section object.|
+|index|number|A number that identifies the index location of a table cell object.|
 
 #### Returns
-[Section](section.md)
+[TableCell](tablecell.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.

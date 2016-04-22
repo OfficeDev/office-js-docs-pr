@@ -1,45 +1,64 @@
-# SectionCollection Object (JavaScript API for Word)
+# ListCollection Object (JavaScript API for Word)
 
 _Word 2016, Word for iPad, Word for Mac_
 
-Contains the collection of the document's [section](section.md) objects.
+Contains a collection of [list](list.md) objects.
 
 ## Properties
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|items|[Section[]](section.md)|A collection of section objects. Read-only.|
+|items|[List[]](list.md)|A collection of list objects. Read-only.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|first|[Section](section.md)|Gets the first section in this collection. Read-only.|
+|first|[List](list.md)|Gets the first list in this collection. Read-only.|
 
 ## Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[getItem(index: number)](#getitemindex-number)|[Section](section.md)|Gets a section object by its index in the collection.|
+|[getById(id: number)](#getbyidid-number)|[List](list.md)|Gets a list by its identifier.|
+|[getItem(index: number)](#getitemindex-number)|[List](list.md)|Gets a list object by its index in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 
 
-### getItem(index: number)
-Gets a section object by its index in the collection.
+### getById(id: number)
+Gets a list by its identifier.
 
 #### Syntax
 ```js
-sectionCollectionObject.getItem(index);
+listCollectionObject.getById(id);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|index|number|A number that identifies the index location of a section object.|
+|id|number|Required. A list identifier.|
 
 #### Returns
-[Section](section.md)
+[List](list.md)
+
+### getItem(index: number)
+Gets a list object by its index in the collection.
+
+#### Syntax
+```js
+listCollectionObject.getItem(index);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|index|number|A number that identifies the index location of a list object.|
+
+#### Returns
+[List](list.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
