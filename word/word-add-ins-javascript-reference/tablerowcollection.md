@@ -1,45 +1,47 @@
-# SectionCollection Object (JavaScript API for Word)
+# TableRowCollection Object (JavaScript API for Word)
 
 _Word 2016, Word for iPad, Word for Mac_
 
-Contains the collection of the document's [section](section.md) objects.
+Contains the collection of the document's TableRow objects.
 
 ## Properties
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|items|[Section[]](section.md)|A collection of section objects. Read-only.|
+|items|[TableRow[]](tablerow.md)|A collection of tableRow objects. Read-only.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|first|[Section](section.md)|Gets the first section in this collection. Read-only.|
+|first|[TableRow](tablerow.md)|Gets the first row in this collection. Read-only.|
 
 ## Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[getItem(index: number)](#getitemindex-number)|[Section](section.md)|Gets a section object by its index in the collection.|
+|[getItem(index: number)](#getitemindex-number)|[TableRow](tablerow.md)|Gets a table row object by its index in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 
 
 ### getItem(index: number)
-Gets a section object by its index in the collection.
+Gets a table row object by its index in the collection.
 
 #### Syntax
 ```js
-sectionCollectionObject.getItem(index);
+tableRowCollectionObject.getItem(index);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|index|number|A number that identifies the index location of a section object.|
+|index|number|A number that identifies the index location of a table row object.|
 
 #### Returns
-[Section](section.md)
+[TableRow](tablerow.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
