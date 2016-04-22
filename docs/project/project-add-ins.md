@@ -69,7 +69,7 @@ The manifest file specifies the URL of the add-in webpage or web application, th
 ### Procedure 1. To create the add-in manifest file for Bing Search
 
 
-1. Create an XML file in a local directory. The XML file includes the  **OfficeApp** element and child elements, which are described in the [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md). For example, create a file named BingSearch.xml that contains the following XML.
+- Create an XML file in a local directory. The XML file includes the  **OfficeApp** element and child elements, which are described in the [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md). For example, create a file named BingSearch.xml that contains the following XML.
     
 ```XML
    <?xml version="1.0" encoding="utf-8"?>
@@ -97,7 +97,7 @@ The manifest file specifies the URL of the add-in webpage or web application, th
  </OfficeApp>
 ```
 
-2. Following are the required elements in the add-in manifest:
+- Following are the required elements in the add-in manifest:
   - In the  **OfficeApp** element, the `xsi:type="TaskPaneApp"` attribute specifies that the add-in is a task pane type.
   - The  **Id** element is a UUID and must be unique.
   - The  **Version** element is the version of the add-in. The **ProviderName** element is the name of the company or developer who provides the add-in. The **DefaultLocale** element specifies the default locale for the strings in the manifest.
@@ -107,7 +107,7 @@ The manifest file specifies the URL of the add-in webpage or web application, th
   - The  **DefaultSettings** element includes the **SourceLocation** element, which specifies the path of an HTML file on a file share or the URL of a webpage that the add-in uses. A task pane add-in ignores the **RequestedHeight** element and the **RequestedWidth** element.
   - The  **IconUrl** element is optional. It can be an icon on a file share or the URL of an icon in a web application.
     
-3. (Optional) Add  **Override** elements that have values for other locales. For example, the following manifest provides **Override** elements for French values of **DisplayName**,  **Description**,  **IconUrl**, and  **SourceLocation**.
+- (Optional) Add  **Override** elements that have values for other locales. For example, the following manifest provides **Override** elements for French values of **DisplayName**,  **Description**,  **IconUrl**, and  **SourceLocation**.
     
 ```XML
    <?xml version="1.0" encoding="utf-8"?>
