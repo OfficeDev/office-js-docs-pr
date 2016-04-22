@@ -138,7 +138,7 @@ For our example, we'll create a Hello World add-in. The UI of the add-in is prov
 ### To create the files for a Hello World add-in
 
 
-1. In your project folder, go to  _[project folder]/app/home_ (in our example, it's myHelloWorldaddin/app/home), open home.html, and replace the existing code with the following code.
+- In your project folder, go to  _[project folder]/app/home_ (in our example, it's myHelloWorldaddin/app/home), open home.html, and replace the existing code with the following code, which provides the minimum set of HTML tags to display the UI of an add-in.
     
 ```HTML
         <!DOCTYPE html>  
@@ -156,12 +156,11 @@ For our example, we'll create a Hello World add-in. The UI of the add-in is prov
        </html> 
 ```
 
-
-    This file provides the minimum set of HTML tags to display the UI of an add-in.
+  
     
-2. In the same folder, open the home.css file and add the following CSS code.
+- Next, in the same folder, open the home.css file and add the following CSS code.
     
-```
+```css
      body 
    { 
         position:relative; 
@@ -177,11 +176,8 @@ For our example, we'll create a Hello World add-in. The UI of the add-in is prov
         text-decoration-color:#4ec724; 
    } 
 ```
-
-
-       This file provides the style sheet for the add-in.
     
-3. Go back to the parent project folder and make sure the XML file named manifest-myHelloWorldaddin.xml contains the following XML code.
+- Then, go back to the parent project folder and make sure the XML file named manifest-myHelloWorldaddin.xml contains the following XML code.
     
      >**Important**  The value in the  `<id>` tag is a GUID that the yeoman generator creates when it generates the project. Do not change the GUID that the yeoman generator created for your add-in.If the host is Azure, the the  `SourceLocation` value will be a URL that is similar to _https:// [name-of-your-web-app].azurewebsites.net/[path-to-add-in]_. If you are using the self-hosted option, as in this example, it will be _https://localhost:8443/[path-to-add-in]_.
 
