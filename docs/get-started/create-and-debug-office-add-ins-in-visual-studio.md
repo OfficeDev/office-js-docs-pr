@@ -4,7 +4,7 @@
 
 
 
- >**Note**  These instructions are based on Visual Studio 2015. If you're using another version of Visual Studio, the procedures might vary slightly.
+ >**Note**  These instructions are based on Visual Studio 2015. If you're using another version of Visual Studio, the procedures might vary slightly. 
 
 
 
@@ -16,7 +16,7 @@ To get started, use the  **Office Add-ins** project template in Visual Studio. T
 
 1. On the Visual Studio menu bar, choose  **File**,  **New**,  **Project**.
     
-2. In the list of project types under  **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose  **Office Add-ins**, and then choose  **Office Add-in**.
+2. In the list of project types under  **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose  **Office Add-ins**, and then choose  **Office Add-in**. If you do not see this option, it is likely the Office Developer Tools are not installed. You can download them [here](https://www.visualstudio.com/features/office-tools-vs.aspx).
     
 3. Name the project, and then choose  **OK**.
     
