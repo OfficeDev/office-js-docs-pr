@@ -312,11 +312,10 @@ The following request updates the selected range with a formula that will be app
 ```js
 Excel.run(function (ctx) { 
 	var sheetName = 'Sheet1';
-	var rangeAddress = 'A1:A20';
+	var rangeAddress = 'A1:A2';
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
-	range.numberFormat = 'm/d/yyyy';
-	range.values = '3/11/2015';
+	range.formulas = [[5-1], [4+1]];
 	range.load('text');
 	return ctx.sync().then(function() {
 		console.log(range.text);
