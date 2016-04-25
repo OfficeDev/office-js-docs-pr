@@ -6,42 +6,42 @@ Represents an inline picture.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|altTextDescription|string|Gets or sets a string that represents the alternative text associated with the inline image|
-|altTextTitle|string|Gets or sets a string that contains the title for the inline image.|
-|hyperlink|string|Gets or sets the hyperlink associated with the inline image.|
-|imageFormat|string|Gets the format of the inline image. Read-only.|
-|lockAspectRatio|bool|Gets or sets a value that indicates whether the inline image retains its original proportions when you resize it.|
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|altTextDescription|string|Gets or sets a string that represents the alternative text associated with the inline image|WordApi1.1||
+|altTextTitle|string|Gets or sets a string that contains the title for the inline image.|WordApi1.1||
+|hyperlink|string|Gets or sets the hyperlink associated with the inline image.|WordApi1.1||
+|imageFormat|string|Gets the format of the inline image. Read-only.|WordApi1.3||
+|lockAspectRatio|bool|Gets or sets a value that indicates whether the inline image retains its original proportions when you resize it.|WordApi1.1||
 
 ## Relationships
-| Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|height|[float](float.md)|Gets or sets a number that describes the height of the inline image.|
-|next|[InlinePicture](inlinepicture.md)|Gets the next inline image. Read-only.|
-|paragraph|[Paragraph](paragraph.md)|Gets the paragraph that contains the inline image. Read-only.|
-|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the inline image. Returns null if there isn't a parent content control. Read-only.|
-|parentTable|[Table](table.md)|Gets the table that contains the inline image. Returns null if it is not contained in a table. Read-only.|
-|parentTableCell|[TableCell](tablecell.md)|Gets the table cell that contains the inline image. Returns null if it is not contained in a table cell. Read-only.|
-|width|[float](float.md)|Gets or sets a number that describes the width of the inline image.|
+| Relationship | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|height|[float](float.md)|Gets or sets a number that describes the height of the inline image.|WordApi1.1||
+|next|[InlinePicture](inlinepicture.md)|Gets the next inline image. Read-only.|WordApi1.3||
+|paragraph|[Paragraph](paragraph.md)|Gets the paragraph that contains the inline image. Read-only.|WordApi1.2||
+|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the inline image. Returns null if there isn't a parent content control. Read-only.|WordApi1.1||
+|parentTable|[Table](table.md)|Gets the table that contains the inline image. Returns null if it is not contained in a table. Read-only.|WordApi1.3||
+|parentTableCell|[TableCell](tablecell.md)|Gets the table cell that contains the inline image. Returns null if it is not contained in a table cell. Read-only.|WordApi1.3||
+|width|[float](float.md)|Gets or sets a number that describes the width of the inline image.|WordApi1.1||
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[delete()](#delete)|void|Deletes the inline picture from the document.|
-|[getBase64ImageSrc()](#getbase64imagesrc)|string|Gets the base64 encoded string representation of the inline image.|
-|[getRange(rangeLocation: string)](#getrangerangelocation-string)|[Range](range.md)|Gets the picture, or the starting or ending point of the picture, as a range.|
-|[insertBreak(breakType: string, insertLocation: string)](#insertbreakbreaktype-string-insertlocation-string)|void|Inserts a break at the specified location in the main document. The insertLocation value can be 'Before' or 'After'.|
-|[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the inline picture with a rich text content control.|
-|[insertFileFromBase64(base64File: string, insertLocation: string)](#insertfilefrombase64base64file-string-insertlocation-string)|[Range](range.md)|Inserts a document at the specified location. The insertLocation value can be 'Before' or 'After'.|
-|[insertHtml(html: string, insertLocation: string)](#inserthtmlhtml-string-insertlocation-string)|[Range](range.md)|Inserts HTML at the specified location. The insertLocation value can be 'Before' or 'After'.|
-|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-string)|[InlinePicture](inlinepicture.md)|Inserts an inline picture at the specified location. The insertLocation value can be 'Replace', 'Before' or 'After'.|
-|[insertOoxml(ooxml: string, insertLocation: string)](#insertooxmlooxml-string-insertlocation-string)|[Range](range.md)|Inserts OOXML at the specified location.  The insertLocation value can be 'Before' or 'After'.|
-|[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|
-|[insertText(text: string, insertLocation: string)](#inserttexttext-string-insertlocation-string)|[Range](range.md)|Inserts text at the specified location. The insertLocation value can be 'Before' or 'After'.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
-|[select(selectionMode: string)](#selectselectionmode-string)|void|Selects the inline picture. This causes Word to scroll to the selection.|
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[delete()](#delete)|void|Deletes the inline picture from the document.|WordApi1.2|
+|[getBase64ImageSrc()](#getbase64imagesrc)|string|Gets the base64 encoded string representation of the inline image.|WordApi1.1|
+|[getRange(rangeLocation: string)](#getrangerangelocation-string)|[Range](range.md)|Gets the picture, or the starting or ending point of the picture, as a range.|WordApi1.3|
+|[insertBreak(breakType: string, insertLocation: string)](#insertbreakbreaktype-string-insertlocation-string)|void|Inserts a break at the specified location in the main document. The insertLocation value can be 'Before' or 'After'.|WordApi1.2|
+|[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the inline picture with a rich text content control.|WordApi1.1|
+|[insertFileFromBase64(base64File: string, insertLocation: string)](#insertfilefrombase64base64file-string-insertlocation-string)|[Range](range.md)|Inserts a document at the specified location. The insertLocation value can be 'Before' or 'After'.|WordApi1.2|
+|[insertHtml(html: string, insertLocation: string)](#inserthtmlhtml-string-insertlocation-string)|[Range](range.md)|Inserts HTML at the specified location. The insertLocation value can be 'Before' or 'After'.|WordApi1.2|
+|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-string)|[InlinePicture](inlinepicture.md)|Inserts an inline picture at the specified location. The insertLocation value can be 'Replace', 'Before' or 'After'.|WordApi1.2|
+|[insertOoxml(ooxml: string, insertLocation: string)](#insertooxmlooxml-string-insertlocation-string)|[Range](range.md)|Inserts OOXML at the specified location.  The insertLocation value can be 'Before' or 'After'.|WordApi1.2|
+|[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|WordApi1.2|
+|[insertText(text: string, insertLocation: string)](#inserttexttext-string-insertlocation-string)|[Range](range.md)|Inserts text at the specified location. The insertLocation value can be 'Before' or 'After'.|WordApi1.2|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|WordApi1.1|
+|[select(selectionMode: string)](#selectselectionmode-string)|void|Selects the inline picture. This causes Word to scroll to the selection.|WordApi1.2|
 
 ## Method Details
 
@@ -84,7 +84,7 @@ inlinePictureObject.getRange(rangeLocation);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |rangeLocation|string|Optional. Optional. The range location can be 'Whole', 'Start' or 'End'.  Possible values are: Whole, Start, End|
 
 #### Returns
@@ -100,7 +100,7 @@ inlinePictureObject.insertBreak(breakType, insertLocation);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |breakType|string|Required. The break type to add. Possible values are: `Page` Page break at the insertion point.,`Column` Column break at the insertion point.,`Next` Section break on next page.,`SectionContinuous` New section without a corresponding page break.,`SectionEven` Section break with the next section beginning on the next even-numbered page. If the section break falls on an even-numbered page, Word leaves the next odd-numbered page blank.,`SectionOdd` Section break with the next section beginning on the next odd-numbered page. If the section break falls on an odd-numbered page, Word leaves the next even-numbered page blank.,`Line` Line break.,`LineClearLeft` Line break.,`LineClearRight` Line break.,`TextWrapping` Ends the current line and forces the text to continue below a picture, table, or other item. The text continues on the next blank line that does not contain a table aligned with the left or right margin.|
 |insertLocation|string|Required. The value can be 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
@@ -131,7 +131,7 @@ inlinePictureObject.insertFileFromBase64(base64File, insertLocation);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |base64File|string|Required. The base64 encoded content of a .docx file.|
 |insertLocation|string|Required. The value can be 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
@@ -148,7 +148,7 @@ inlinePictureObject.insertHtml(html, insertLocation);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |html|string|Required. The HTML to be inserted.|
 |insertLocation|string|Required. The value can be 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
@@ -165,7 +165,7 @@ inlinePictureObject.insertInlinePictureFromBase64(base64EncodedImage, insertLoca
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |base64EncodedImage|string|Required. The base64 encoded image to be inserted.|
 |insertLocation|string|Required. The value can be 'Replace', 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
@@ -182,7 +182,7 @@ inlinePictureObject.insertOoxml(ooxml, insertLocation);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |ooxml|string|Required. The OOXML to be inserted.|
 |insertLocation|string|Required. The value can be 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
@@ -199,7 +199,7 @@ inlinePictureObject.insertParagraph(paragraphText, insertLocation);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |paragraphText|string|Required. The paragraph text to be inserted.|
 |insertLocation|string|Required. The value can be 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
@@ -216,7 +216,7 @@ inlinePictureObject.insertText(text, insertLocation);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |text|string|Required. Text to be inserted.|
 |insertLocation|string|Required. The value can be 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
@@ -233,7 +233,7 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
@@ -249,7 +249,7 @@ inlinePictureObject.select(selectionMode);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |selectionMode|string|Optional. Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.  Possible values are: Select, Start, End|
 
 #### Returns

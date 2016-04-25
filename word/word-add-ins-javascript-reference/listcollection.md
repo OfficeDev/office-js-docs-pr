@@ -6,24 +6,24 @@ Contains a collection of [list](list.md) objects.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|items|[List[]](list.md)|A collection of list objects. Read-only.|
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|items|[List[]](list.md)|A collection of list objects. Read-only.|WordApi1.3||
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|first|[List](list.md)|Gets the first list in this collection. Read-only.|
+| Relationship | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|first|[List](list.md)|Gets the first list in this collection. Read-only.|WordApi1.3||
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[getById(id: number)](#getbyidid-number)|[List](list.md)|Gets a list by its identifier.|
-|[getItem(index: number)](#getitemindex-number)|[List](list.md)|Gets a list object by its index in the collection.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[getById(id: number)](#getbyidid-number)|[List](list.md)|Gets a list by its identifier.|WordApi1.3|
+|[getItem(index: number)](#getitemindex-number)|[List](list.md)|Gets a list object by its index in the collection.|WordApi1.3|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|WordApi1.1|
 
 ## Method Details
 
@@ -38,7 +38,7 @@ listCollectionObject.getById(id);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |id|number|Required. A list identifier.|
 
 #### Returns
@@ -54,7 +54,7 @@ listCollectionObject.getItem(index);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |index|number|A number that identifies the index location of a list object.|
 
 #### Returns
@@ -70,7 +70,7 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
