@@ -5,7 +5,6 @@
 **Description:** Creates a new document by using a base64 encoded .docx file.
 
 **Available in requirement set:** WordApiDesktop, 1.3
-
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=application-createDocument)_
 
 
