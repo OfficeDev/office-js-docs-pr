@@ -1,14 +1,25 @@
 **Resource name:** [application](application.md)
+
 **What's new:** Method **methodPlusLink** returning **[Document](document.md)**
+
 **Description:** Creates a new document by using a base64 encoded .docx file.
+
 **Available in requirement set:** WordApiDesktop, 1.3
+
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=application-createDocument)_
 
+
 **Resource name:** [body](body.md)
+
 **What's new:** Relationship **lists** of type **[ListCollection](listcollection.md)**
+
 **Description:** Gets the collection of list objects in the body. Read-only.
+
 **Available in requirement set:** 1.3
+
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=body-lists)_
+
+
 
 **Resource name:** [body](body.md)
 **What's new:** Relationship **parentBody** of type **[Body](body.md)**
