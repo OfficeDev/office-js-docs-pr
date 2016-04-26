@@ -39,12 +39,12 @@ Runtime detection of the `DialogAPI` capability can be done with the following c
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[displayDialogAsync()](#displaydialogasync)|void|Displays a dialog to display or collect information from the user or to facilitate Web navigation.|
-|[messageParent()](#messageparent)|void|Sends a message from a dialog to the parent add-in.|
+|[displayDialogAsync()](#displayDialogAsync(startAddress: Url, options: Object, callback: function))|void|Displays a dialog to display or collect information from the user or to facilitate Web navigation.|
+|[messageParent()](#messageParent(messageObject: object))|void|Sends a message from a dialog to the parent add-in.|
 
 ## Method Details
 
-### displayDialogAsync(startAddress, options, callback)
+### displayDialogAsync(startAddress: Url, options: Object, callback: function)
 Display up to one Web dialog that opens at startAddress.
 
 #### Syntax
@@ -91,9 +91,9 @@ function openDialog() {
 #### Comments
 1.	Dialogs will not create modal windows
 2.	An Office add-in may have 1 dialog open at any time 
-3.	Every dialog may be resized
+3.	Every dialog may be moved and resized
 4.	Every dialog opens centered on the screen 
-5.	Dialogs always open on top
+5.	Dialogs appear on top of the app and one another in order of being created
 6.	Dialogs can only navigate to secured (TLS) sites 
 7.	Dialogs must initially open to a site on the add-in manifest's App Domains list
 8.	Dialogs cannot send messages from pages outside the add-in manifest's App Domains list
