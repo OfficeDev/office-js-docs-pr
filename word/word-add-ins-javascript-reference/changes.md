@@ -1,173 +1,1026 @@
-|Resource|Member Type|Name|Data type |Description|Requirement-Set|Give Feedback|
-|:----|:----|:----|:----|:----|:----|:----|
-|[application](application.md)|Method|[createDocument(base64File: string)](application.md#createdocumentbase64file-string)|[Document](document.md)|Creates a new document by using a base64 encoded .docx file.|WordApiDesktop, 1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-application-createDocument)|
-|[body](body.md)|Relationship|lists|[ListCollection](listcollection.md)|Gets the collection of list objects in the body. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=body-lists)|
-|[body](body.md)|Relationship|parentBody|[Body](body.md)|Gets the parent body of the body. For example, a table cell body's parent body could be a header. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=body-parentBody)|
-|[body](body.md)|Relationship|tables|[TableCollection](tablecollection.md)|Gets the collection of table objects in the body. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=body-tables)|
-|[body](body.md)|Relationship|type|[BodyType](bodytype.md)|Gets the type of the body. The type can be 'MainDoc', 'Section', 'Header', 'Footer', or 'TableCell'. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=body-type)|
-|[body](body.md)|Method|[getRange(rangeLocation: RangeLocation)](body.md#getrangerangelocation-rangelocation)|[Range](range.md)|Gets the whole body, or the starting or ending point of the body, as a range.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-body-getRange)|
-|[body](body.md)|Method|[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](body.md#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Start' or 'End'.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-body-insertTable)|
-|[contentControl](contentcontrol.md)|Relationship|lists|[ListCollection](listcollection.md)|Gets the collection of list objects in the content control. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=contentControl-lists)|
-|[contentControl](contentcontrol.md)|Relationship|parentTable|[Table](table.md)|Gets the table that contains the content control. Returns null if it is not contained in a table. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=contentControl-parentTable)|
-|[contentControl](contentcontrol.md)|Relationship|parentTableCell|[TableCell](tablecell.md)|Gets the table cell that contains the content control. Returns null if it is not contained in a table cell. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=contentControl-parentTableCell)|
-|[contentControl](contentcontrol.md)|Relationship|subtype|[ContentControlType](contentcontroltype.md)|Gets the content control subtype. The subtype can be 'RichTextInline', 'RichTextParagraphs', 'RichTextTableCell', 'RichTextTableRow' and 'RichTextTable' for rich text content controls. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=contentControl-subtype)|
-|[contentControl](contentcontrol.md)|Relationship|tables|[TableCollection](tablecollection.md)|Gets the collection of table objects in the content control. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=contentControl-tables)|
-|[contentControl](contentcontrol.md)|Method|[getRange(rangeLocation: RangeLocation)](contentcontrol.md#getrangerangelocation-rangelocation)|[Range](range.md)|Gets the whole content control, or the starting or ending point of the content control, as a range.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControl-getRange)|
-|[contentControl](contentcontrol.md)|Method|[getTextRanges(punctuationMarks: string[], trimSpacing: bool)](contentcontrol.md#gettextrangespunctuationmarks-string-trimspacing-bool)|[RangeCollection](rangecollection.md)|Gets the text ranges in the content control by using punctuation marks andor space character.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControl-getTextRanges)|
-|[contentControl](contentcontrol.md)|Method|[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](contentcontrol.md#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns into, or next to, a content control. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControl-insertTable)|
-|[contentControl](contentcontrol.md)|Method|[split(delimiters: string[], multiParagraphs: bool, trimDelimiters: bool, trimSpacing: bool)](contentcontrol.md#splitdelimiters-string-multiparagraphs-bool-trimdelimiters-bool-trimspacing-bool)|[RangeCollection](rangecollection.md)|Splits the content control into child ranges by using delimiters.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControl-split)|
-|[contentControlCollection](contentcontrolcollection.md)|Method|[getByTypes(types: ContentControlType[])](contentcontrolcollection.md#getbytypestypes-contentcontroltype)|[ContentControlCollection](contentcontrolcollection.md)|Gets the content controls that have the specified types andor subtypes.|WordApiDesktop, 1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControlCollection-getByTypes)|
-|[document](document.md)|Method|[open()](document.md#open)|void|Open the document.|WordApiDesktop, 1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-document-open)|
-|[font](font.md)|Property|doubleStrikeThrough|bool|Gets or sets a value that indicates whether the font has a double strike through. True if the font is formatted as double strikethrough text, otherwise, false.|WordApiDesktop, 1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=font-doubleStrikeThrough)|
-|[inlinePicture](inlinepicture.md)|Relationship|imageFormat|[ImageFormat](imageformat.md)|Gets the format of the inline image. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=inlinePicture-imageFormat)|
-|[inlinePicture](inlinepicture.md)|Relationship|next|[InlinePicture](inlinepicture.md)|Gets the next inline image. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=inlinePicture-next)|
-|[inlinePicture](inlinepicture.md)|Relationship|parentTable|[Table](table.md)|Gets the table that contains the inline image. Returns null if it is not contained in a table. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=inlinePicture-parentTable)|
-|[inlinePicture](inlinepicture.md)|Relationship|parentTableCell|[TableCell](tablecell.md)|Gets the table cell that contains the inline image. Returns null if it is not contained in a table cell. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=inlinePicture-parentTableCell)|
-|[inlinePicture](inlinepicture.md)|Method|[getRange(rangeLocation: RangeLocation)](inlinepicture.md#getrangerangelocation-rangelocation)|[Range](range.md)|Gets the picture, or the starting or ending point of the picture, as a range.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-inlinePicture-getRange)|
-|[inlinePictureCollection](inlinepicturecollection.md)|Relationship|first|[InlinePicture](inlinepicture.md)|Gets the first inline image in this collection. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=inlinePictureCollection-first)|
-|[list](list.md)|Property|id|int|Gets the list's id. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=list-id)|
-|[list](list.md)|Relationship|paragraphs|[ParagraphCollection](paragraphcollection.md)|A collection containing the paragraphs in this list. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=list-paragraphs)|
-|[list](list.md)|Method|[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](list.md#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-list-insertParagraph)|
-|[listCollection](listcollection.md)|Property|items|[List[]](list.md)|A collection of list objects. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=listCollection-items)|
-|[listCollection](listcollection.md)|Relationship|first|[List](list.md)|Gets the first list in this collection. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=listCollection-first)|
-|[listCollection](listcollection.md)|Method|[getById(id: number)](listcollection.md#getbyidid-number)|[List](list.md)|Gets a list by its identifier.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-listCollection-getById)|
-|[listCollection](listcollection.md)|Method|[getItem(index: number)](listcollection.md#getitemindex-number)|[List](list.md)|Gets a list object by its index in the collection.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-listCollection-getItem)|
-|[paragraph](paragraph.md)|Property|listLevel|int|Gets or sets the list level of the paragraph.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraph-listLevel)|
-|[paragraph](paragraph.md)|Property|outlineLevel|int|Gets or sets the outline level for the paragraph.|WordApiDesktop, 1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraph-outlineLevel)|
-|[paragraph](paragraph.md)|Property|tableNestingLevel|int|Gets the level of the paragraph's table. It returns 0 if the paragraph is not in a table. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraph-tableNestingLevel)|
-|[paragraph](paragraph.md)|Relationship|list|[List](list.md)|Gets the List to which this paragraph belongs. Returns null if the paragraph is not in a list. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraph-list)|
-|[paragraph](paragraph.md)|Relationship|next|[Paragraph](paragraph.md)|Gets the next paragraph. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraph-next)|
-|[paragraph](paragraph.md)|Relationship|parentBody|[Body](body.md)|Gets the parent body of the paragraph. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraph-parentBody)|
-|[paragraph](paragraph.md)|Relationship|parentTable|[Table](table.md)|Gets the table that contains the paragraph. Returns null if it is not contained in a table. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraph-parentTable)|
-|[paragraph](paragraph.md)|Relationship|parentTableCell|[TableCell](tablecell.md)|Gets the table cell that contains the paragraph. Returns null if it is not contained in a table cell. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraph-parentTableCell)|
-|[paragraph](paragraph.md)|Relationship|previous|[Paragraph](paragraph.md)|Gets the previous paragraph. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraph-previous)|
-|[paragraph](paragraph.md)|Method|[getRange(rangeLocation: RangeLocation)](paragraph.md#getrangerangelocation-rangelocation)|[Range](range.md)|Gets the whole paragraph, or the starting or ending point of the paragraph, as a range.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-getRange)|
-|[paragraph](paragraph.md)|Method|[getTextRanges(punctuationMarks: string[], trimSpacing: bool)](paragraph.md#gettextrangespunctuationmarks-string-trimspacing-bool)|[RangeCollection](rangecollection.md)|Gets the text ranges in the paragraph by using punctuation marks andor space character.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-getTextRanges)|
-|[paragraph](paragraph.md)|Method|[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](paragraph.md#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-insertTable)|
-|[paragraph](paragraph.md)|Method|[split(delimiters: string[], trimDelimiters: bool, trimSpacing: bool)](paragraph.md#splitdelimiters-string-trimdelimiters-bool-trimspacing-bool)|[RangeCollection](rangecollection.md)|Splits the paragraph into child ranges by using delimiters.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-split)|
-|[paragraphCollection](paragraphcollection.md)|Relationship|first|[Paragraph](paragraph.md)|Gets the first paragraph in this collection. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraphCollection-first)|
-|[paragraphCollection](paragraphcollection.md)|Relationship|last|[Paragraph](paragraph.md)|Gets the last paragraph in this collection. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraphCollection-last)|
-|[range](range.md)|Property|hyperlink|string|Gets the first hyperlink in the range, or sets a hyperlink on the range. Existing hyperlinks in this range are deleted when you set a new hyperlink.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=range-hyperlink)|
-|[range](range.md)|Property|isEmpty|bool|Checks whether the range length is zero. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=range-isEmpty)|
-|[range](range.md)|Relationship|lists|[ListCollection](listcollection.md)|Gets the collection of list objects in the range. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=range-lists)|
-|[range](range.md)|Relationship|parentBody|[Body](body.md)|Gets the parent body of the range. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=range-parentBody)|
-|[range](range.md)|Relationship|parentTable|[Table](table.md)|Gets the table that contains the range. Returns null if it is not contained in a table. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=range-parentTable)|
-|[range](range.md)|Relationship|parentTableCell|[TableCell](tablecell.md)|Gets the table cell that contains the range. Returns null if it is not contained in a table cell. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=range-parentTableCell)|
-|[range](range.md)|Relationship|tables|[TableCollection](tablecollection.md)|Gets the collection of table objects in the range. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=range-tables)|
-|[range](range.md)|Method|[compareLocationWith(range: Range)](range.md#comparelocationwithrange-range)|[LocationRelation](locationrelation.md)|Compares this range's location with another range's location.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-compareLocationWith)|
-|[range](range.md)|Method|[expandTo(range: Range)](range.md#expandtorange-range)|void|Expands the range in either direction to cover another range.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-expandTo)|
-|[range](range.md)|Method|[getHyperlinkRanges()](range.md#gethyperlinkranges)|[RangeCollection](rangecollection.md)|Gets hyperlink child ranges within the range.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-getHyperlinkRanges)|
-|[range](range.md)|Method|[getNextTextRange(punctuationMarks: string[], trimSpacing: bool)](range.md#getnexttextrangepunctuationmarks-string-trimspacing-bool)|[Range](range.md)|Gets the next text range by using punctuation marks andor space character.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-getNextTextRange)|
-|[range](range.md)|Method|[getRange(rangeLocation: RangeLocation)](range.md#getrangerangelocation-rangelocation)|[Range](range.md)|Clones the range, or gets the starting or ending point of the range as a new range.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-getRange)|
-|[range](range.md)|Method|[getTextRanges(punctuationMarks: string[], trimSpacing: bool)](range.md#gettextrangespunctuationmarks-string-trimspacing-bool)|[RangeCollection](rangecollection.md)|Gets the text child ranges in the range by using punctuation marks andor space character.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-getTextRanges)|
-|[range](range.md)|Method|[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](range.md#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-insertTable)|
-|[range](range.md)|Method|[intersectWith(range: Range)](range.md#intersectwithrange-range)|void|Shrinks the range to the intersection of the range with another range.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-intersectWith)|
-|[range](range.md)|Method|[split(delimiters: string[], multiParagraphs: bool, trimDelimiters: bool, trimSpacing: bool)](range.md#splitdelimiters-string-multiparagraphs-bool-trimdelimiters-bool-trimspacing-bool)|[RangeCollection](rangecollection.md)|Splits the range into child ranges by using delimiters.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-split)|
-|[rangeCollection](rangecollection.md)|Property|items|[Range[]](range.md)|A collection of range objects. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=rangeCollection-items)|
-|[rangeCollection](rangecollection.md)|Relationship|first|[Range](range.md)|Gets the first range in this collection. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=rangeCollection-first)|
-|[rangeCollection](rangecollection.md)|Method|[getItem(index: number)](rangecollection.md#getitemindex-number)|[Range](range.md)|Gets a range object by its index in the collection.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-rangeCollection-getItem)|
-|[searchResultCollection](searchresultcollection.md)|Relationship|first|[Range](range.md)|Gets the first searched result in this collection. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=searchResultCollection-first)|
-|[section](section.md)|Relationship|next|[Section](section.md)|Gets the next section. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=section-next)|
-|[sectionCollection](sectioncollection.md)|Relationship|first|[Section](section.md)|Gets the first section in this collection. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=sectionCollection-first)|
-|[table](table.md)|Property|headerRowCount|int|Gets and sets the number of header rows.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-headerRowCount)|
-|[table](table.md)|Property|isUniform|bool|Indicates whether all of the table rows are uniform. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-isUniform)|
-|[table](table.md)|Property|nestingLevel|int|Gets the nesting level of the table. Top-level tables have level 1. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-nestingLevel)|
-|[table](table.md)|Property|rowCount|int|Gets the number of rows in the table. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-rowCount)|
-|[table](table.md)|Property|shadingColor|string|Gets and sets the shading color.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-shadingColor)|
-|[table](table.md)|Property|style|string|Gets and sets the name of the table style.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-style)|
-|[table](table.md)|Property|styleBandedColumns|bool|Gets and sets whether the table has banded columns.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-styleBandedColumns)|
-|[table](table.md)|Property|styleBandedRows|bool|Gets and sets whether the table has banded rows.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-styleBandedRows)|
-|[table](table.md)|Property|styleFirstColumn|bool|Gets and sets whether the table has a first column with a special style.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-styleFirstColumn)|
-|[table](table.md)|Property|styleLastColumn|bool|Gets and sets whether the table has a last column with a special style.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-styleLastColumn)|
-|[table](table.md)|Property|styleTotalRow|bool|Gets and sets whether the table has a total (last) row with a special style.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-styleTotalRow)|
-|[table](table.md)|Property|values|string|Gets and sets the text values in the table, as a 2D Javascript array.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-values)|
-|[table](table.md)|Relationship|cellPaddingBottom|[float](float.md)|Gets and sets the default bottom cell padding in points.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-cellPaddingBottom)|
-|[table](table.md)|Relationship|cellPaddingLeft|[float](float.md)|Gets and sets the default left cell padding in points.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-cellPaddingLeft)|
-|[table](table.md)|Relationship|cellPaddingRight|[float](float.md)|Gets and sets the default right cell padding in points.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-cellPaddingRight)|
-|[table](table.md)|Relationship|cellPaddingTop|[float](float.md)|Gets and sets the default top cell padding in points.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-cellPaddingTop)|
-|[table](table.md)|Relationship|font|[Font](font.md)|Gets the font. Use this to get and set font name, size, color, and other properties. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-font)|
-|[table](table.md)|Relationship|height|[float](float.md)|Gets the height of the table in points. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-height)|
-|[table](table.md)|Relationship|next|[Table](table.md)|Gets the next table. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-next)|
-|[table](table.md)|Relationship|paragraphAfter|[Paragraph](paragraph.md)|Gets the paragraph after the table. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-paragraphAfter)|
-|[table](table.md)|Relationship|paragraphBefore|[Paragraph](paragraph.md)|Gets the paragraph before the table. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-paragraphBefore)|
-|[table](table.md)|Relationship|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the table. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-parentContentControl)|
-|[table](table.md)|Relationship|parentTable|[Table](table.md)|Gets the table that contains this table. Returns null if it is not contained in a table. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-parentTable)|
-|[table](table.md)|Relationship|parentTableCell|[TableCell](tablecell.md)|Gets the table cell that contains this table. Returns null if it is not contained in a table cell. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-parentTableCell)|
-|[table](table.md)|Relationship|rows|[TableRowCollection](tablerowcollection.md)|Gets all of the table rows. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-rows)|
-|[table](table.md)|Relationship|tables|[TableCollection](tablecollection.md)|Gets the child tables nested one level deeper. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-tables)|
-|[table](table.md)|Relationship|verticalAlignment|[VerticalAlignment](verticalalignment.md)|Gets and sets the vertical alignment of every cell in the table.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-verticalAlignment)|
-|[table](table.md)|Relationship|width|[float](float.md)|Gets and sets the width of the table in points.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-width)|
-|[table](table.md)|Method|[addColumns(insertLocation: InsertLocation, columnCount: number, values: string[][])](table.md#addcolumnsinsertlocation-insertlocation-columncount-number-values-string)|void|Adds columns to the start or end of the table, using the first or last existing column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-addColumns)|
-|[table](table.md)|Method|[addRows(insertLocation: InsertLocation, rowCount: number, values: string[][])](table.md#addrowsinsertlocation-insertlocation-rowcount-number-values-string)|void|Adds rows to the start or end of the table, using the first or last existing row as a template. The string values, if specified, are set in the newly inserted rows.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-addRows)|
-|[table](table.md)|Method|[autoFitContents()](table.md#autofitcontents)|void|Autofits the table columns to the width of their contents.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-autoFitContents)|
-|[table](table.md)|Method|[autoFitWindow()](table.md#autofitwindow)|void|Autofits the table columns to the width of the window.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-autoFitWindow)|
-|[table](table.md)|Method|[clear()](table.md#clear)|void|Clears the contents of the table.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-clear)|
-|[table](table.md)|Method|[delete()](table.md#delete)|void|Deletes the entire table.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-delete)|
-|[table](table.md)|Method|[deleteColumns(columnIndex: number, columnCount: number)](table.md#deletecolumnscolumnindex-number-columncount-number)|void|Deletes specific columns. This is applicable to uniform tables.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-deleteColumns)|
-|[table](table.md)|Method|[deleteRows(rowIndex: number, rowCount: number)](table.md#deleterowsrowindex-number-rowcount-number)|void|Deletes specific rows.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-deleteRows)|
-|[table](table.md)|Method|[distributeColumns()](table.md#distributecolumns)|void|Distributes the column widths evenly.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-distributeColumns)|
-|[table](table.md)|Method|[distributeRows()](table.md#distributerows)|void|Distributes the row heights evenly.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-distributeRows)|
-|[table](table.md)|Method|[getBorderStyle(borderLocation: BorderLocation)](table.md#getborderstyleborderlocation-borderlocation)|[TableBorderStyle](tableborderstyle.md)|Gets the border style for the specified border.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-getBorderStyle)|
-|[table](table.md)|Method|[getCell(rowIndex: number, cellIndex: number)](table.md#getcellrowindex-number-cellindex-number)|[TableCell](tablecell.md)|Gets the table cell at a specified row and column.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-getCell)|
-|[table](table.md)|Method|[getRange(rangeLocation: RangeLocation)](table.md#getrangerangelocation-rangelocation)|[Range](range.md)|Gets the range that contains this table, or the range at the start or end of the table.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-getRange)|
-|[table](table.md)|Method|[insertContentControl()](table.md#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Inserts a content control on the table.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-insertContentControl)|
-|[table](table.md)|Method|[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](table.md#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-insertParagraph)|
-|[table](table.md)|Method|[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](table.md#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-insertTable)|
-|[table](table.md)|Method|[mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)](table.md#mergecellstoprow-number-firstcell-number-bottomrow-number-lastcell-number)|[TableCell](tablecell.md)|Merges the cells bounded inclusively by a first and last cell.|WordApiDesktop, 1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-mergeCells)|
-|[table](table.md)|Method|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](table.md#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the table object. The search results are a collection of range objects.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-search)|
-|[table](table.md)|Method|[select(selectionMode: SelectionMode)](table.md#selectselectionmode-selectionmode)|void|Selects the table, or the position at the start or end of the table, and navigates the Word UI to it.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-select)|
-|[tableBorderStyle](tableborderstyle.md)|Property|color|string|Gets or sets the table border color, as a hex value or name.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableBorderStyle-color)|
-|[tableBorderStyle](tableborderstyle.md)|Relationship|type|[BorderType](bordertype.md)|Gets or sets the type of the table border style.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableBorderStyle-type)|
-|[tableBorderStyle](tableborderstyle.md)|Relationship|width|[float](float.md)|Gets or sets the width, in points, of the table border style.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableBorderStyle-width)|
-|[tableCell](tablecell.md)|Property|cellIndex|int|Gets the index of the cell in its row. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-cellIndex)|
-|[tableCell](tablecell.md)|Property|rowIndex|int|Gets the index of the cell's row in the table. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-rowIndex)|
-|[tableCell](tablecell.md)|Property|shadingColor|string|Gets or sets the shading color of the cell. Color is specified in "#RRGGBB" format or by using the color name.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-shadingColor)|
-|[tableCell](tablecell.md)|Property|value|string|Gets and sets the text of the cell.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-value)|
-|[tableCell](tablecell.md)|Relationship|body|[Body](body.md)|Gets the body object of the cell. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-body)|
-|[tableCell](tablecell.md)|Relationship|cellPaddingBottom|[float](float.md)|Gets and sets the bottom padding of the cell in points.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-cellPaddingBottom)|
-|[tableCell](tablecell.md)|Relationship|cellPaddingLeft|[float](float.md)|Gets and sets the left padding of the cell in points.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-cellPaddingLeft)|
-|[tableCell](tablecell.md)|Relationship|cellPaddingRight|[float](float.md)|Gets and sets the right padding of the cell in points.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-cellPaddingRight)|
-|[tableCell](tablecell.md)|Relationship|cellPaddingTop|[float](float.md)|Gets and sets the top padding of the cell in points.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-cellPaddingTop)|
-|[tableCell](tablecell.md)|Relationship|columnWidth|[float](float.md)|Gets and sets the width of the cell's column in points. This is applicable to uniform tables.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-columnWidth)|
-|[tableCell](tablecell.md)|Relationship|next|[TableCell](tablecell.md)|Gets the next cell. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-next)|
-|[tableCell](tablecell.md)|Relationship|parentRow|[TableRow](tablerow.md)|Gets the parent row of the cell. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-parentRow)|
-|[tableCell](tablecell.md)|Relationship|parentTable|[Table](table.md)|Gets the parent table of the cell. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-parentTable)|
-|[tableCell](tablecell.md)|Relationship|verticalAlignment|[VerticalAlignment](verticalalignment.md)|Gets and sets the vertical alignment of the cell.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-verticalAlignment)|
-|[tableCell](tablecell.md)|Relationship|width|[float](float.md)|Gets the width of the cell in points. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-width)|
-|[tableCell](tablecell.md)|Method|[deleteColumn()](tablecell.md#deletecolumn)|void|Deletes the column containing this cell. This is applicable to uniform tables.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-deleteColumn)|
-|[tableCell](tablecell.md)|Method|[deleteRow()](tablecell.md#deleterow)|void|Deletes the row containing this cell.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-deleteRow)|
-|[tableCell](tablecell.md)|Method|[getBorderStyle(borderLocation: BorderLocation)](tablecell.md#getborderstyleborderlocation-borderlocation)|[TableBorderStyle](tableborderstyle.md)|Gets the border style for the specified border.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-getBorderStyle)|
-|[tableCell](tablecell.md)|Method|[insertColumns(insertLocation: InsertLocation, columnCount: number, values: string[][])](tablecell.md#insertcolumnsinsertlocation-insertlocation-columncount-number-values-string)|void|Adds columns to the left or right of the cell, using the cell's column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-insertColumns)|
-|[tableCell](tablecell.md)|Method|[insertRows(insertLocation: InsertLocation, rowCount: number, values: string[][])](tablecell.md#insertrowsinsertlocation-insertlocation-rowcount-number-values-string)|void|Inserts rows above or below the cell, using the cell's row as a template. The string values, if specified, are set in the newly inserted rows.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-insertRows)|
-|[tableCell](tablecell.md)|Method|[split(rowCount: number, columnCount: number)](tablecell.md#splitrowcount-number-columncount-number)|void|Adds columns to the left or right of the cell, using the existing column as a template. The string values, if specified, are set in the newly inserted rows.|WordApiDesktop, 1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-split)|
-|[tableCellCollection](tablecellcollection.md)|Property|items|[TableCell[]](tablecell.md)|A collection of tableCell objects. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCellCollection-items)|
-|[tableCellCollection](tablecellcollection.md)|Relationship|first|[TableCell](tablecell.md)|Gets the first table cell in this collection. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCellCollection-first)|
-|[tableCellCollection](tablecellcollection.md)|Method|[getItem(index: number)](tablecellcollection.md#getitemindex-number)|[TableCell](tablecell.md)|Gets a table cell object by its index in the collection.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCellCollection-getItem)|
-|[tableCollection](tablecollection.md)|Property|items|[Table[]](table.md)|A collection of table objects. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCollection-items)|
-|[tableCollection](tablecollection.md)|Relationship|first|[Table](table.md)|Gets the first table in this collection. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCollection-first)|
-|[tableCollection](tablecollection.md)|Method|[getItem(index: number)](tablecollection.md#getitemindex-number)|[Table](table.md)|Gets a table object by its index in the collection.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCollection-getItem)|
-|[tableRow](tablerow.md)|Property|cellCount|int|Gets the number of cells in the row. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-cellCount)|
-|[tableRow](tablerow.md)|Property|isHeader|bool|Gets a value that indicates whether the row is a header row. Read-only. To set the number of header rows, use HeaderRowCount on the Table object. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-isHeader)|
-|[tableRow](tablerow.md)|Property|rowIndex|int|Gets the index of the row in its parent table. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-rowIndex)|
-|[tableRow](tablerow.md)|Property|shadingColor|string|Gets and sets the shading color.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-shadingColor)|
-|[tableRow](tablerow.md)|Property|values|string|Gets and sets the text values in the row, as a 1D Javascript array.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-values)|
-|[tableRow](tablerow.md)|Relationship|cellPaddingBottom|[float](float.md)|Gets and sets the default bottom cell padding for the row in points.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-cellPaddingBottom)|
-|[tableRow](tablerow.md)|Relationship|cellPaddingLeft|[float](float.md)|Gets and sets the default left cell padding for the row in points.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-cellPaddingLeft)|
-|[tableRow](tablerow.md)|Relationship|cellPaddingRight|[float](float.md)|Gets and sets the default right cell padding for the row in points.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-cellPaddingRight)|
-|[tableRow](tablerow.md)|Relationship|cellPaddingTop|[float](float.md)|Gets and sets the default top cell padding for the row in points.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-cellPaddingTop)|
-|[tableRow](tablerow.md)|Relationship|cells|[TableCellCollection](tablecellcollection.md)|Gets cells. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-cells)|
-|[tableRow](tablerow.md)|Relationship|font|[Font](font.md)|Gets the font. Use this to get and set font name, size, color, and other properties. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-font)|
-|[tableRow](tablerow.md)|Relationship|next|[TableRow](tablerow.md)|Gets the next row. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-next)|
-|[tableRow](tablerow.md)|Relationship|parentTable|[Table](table.md)|Gets parent table. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-parentTable)|
-|[tableRow](tablerow.md)|Relationship|preferredHeight|[float](float.md)|Gets and sets the preferred height of the row in points.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-preferredHeight)|
-|[tableRow](tablerow.md)|Relationship|verticalAlignment|[VerticalAlignment](verticalalignment.md)|Gets and sets the vertical alignment of the cells in the row.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-verticalAlignment)|
-|[tableRow](tablerow.md)|Method|[clear()](tablerow.md#clear)|void|Clears the contents of the row.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-clear)|
-|[tableRow](tablerow.md)|Method|[delete()](tablerow.md#delete)|void|Deletes the entire row.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-delete)|
-|[tableRow](tablerow.md)|Method|[getBorderStyle(borderLocation: BorderLocation)](tablerow.md#getborderstyleborderlocation-borderlocation)|[TableBorderStyle](tableborderstyle.md)|Gets the border style of the cells in the row.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-getBorderStyle)|
-|[tableRow](tablerow.md)|Method|[insertRows(insertLocation: InsertLocation, rowCount: number, values: string[][])](tablerow.md#insertrowsinsertlocation-insertlocation-rowcount-number-values-string)|void|Inserts rows using this row as a template. If values are specified, inserts the values into the new rows.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-insertRows)|
-|[tableRow](tablerow.md)|Method|[merge()](tablerow.md#merge)|[TableCell](tablecell.md)|Merges the row into one cell.|WordApiDesktop, 1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-merge)|
-|[tableRow](tablerow.md)|Method|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](tablerow.md#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the row. The search results are a collection of range objects.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-search)|
-|[tableRow](tablerow.md)|Method|[select(selectionMode: SelectionMode)](tablerow.md#selectselectionmode-selectionmode)|void|Selects the row and navigates the Word UI to it.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-select)|
-|[tableRowCollection](tablerowcollection.md)|Property|items|[TableRow[]](tablerow.md)|A collection of tableRow objects. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRowCollection-items)|
-|[tableRowCollection](tablerowcollection.md)|Relationship|first|[TableRow](tablerow.md)|Gets the first row in this collection. Read-only.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRowCollection-first)|
-|[tableRowCollection](tablerowcollection.md)|Method|[getItem(index: number)](tablerowcollection.md#getitemindex-number)|[TableRow](tablerow.md)|Gets a table row object by its index in the collection.|1.3|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRowCollection-getItem)|
+**Resource name:** [application](application.md)
+**What's new:** Method **methodPlusLink** returning **[Document](document.md)**
+**Description:** Creates a new document by using a base64 encoded .docx file.
+**Available in requirement set:** WordApiDesktop, 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=application-createDocument)_
+
+**Resource name:** [body](body.md)
+**What's new:** Relationship **lists** of type **[ListCollection](listcollection.md)**
+**Description:** Gets the collection of list objects in the body. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=body-lists)_
+
+**Resource name:** [body](body.md)
+**What's new:** Relationship **parentBody** of type **[Body](body.md)**
+**Description:** Gets the parent body of the body. For example, a table cell body's parent body could be a header. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=body-parentBody)_
+
+**Resource name:** [body](body.md)
+**What's new:** Relationship **tables** of type **[TableCollection](tablecollection.md)**
+**Description:** Gets the collection of table objects in the body. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=body-tables)_
+
+**Resource name:** [body](body.md)
+**What's new:** Relationship **type** of type **[BodyType](bodytype.md)**
+**Description:** Gets the type of the body. The type can be 'MainDoc', 'Section', 'Header', 'Footer', or 'TableCell'. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=body-type)_
+
+**Resource name:** [body](body.md)
+**What's new:** Method **methodPlusLink** returning **[Range](range.md)**
+**Description:** Gets the whole body, or the starting or ending point of the body, as a range.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=body-getRange)_
+
+**Resource name:** [body](body.md)
+**What's new:** Method **methodPlusLink** returning **[Table](table.md)**
+**Description:** Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Start' or 'End'.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=body-insertTable)_
+
+**Resource name:** [contentControl](contentcontrol.md)
+**What's new:** Relationship **lists** of type **[ListCollection](listcollection.md)**
+**Description:** Gets the collection of list objects in the content control. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=contentControl-lists)_
+
+**Resource name:** [contentControl](contentcontrol.md)
+**What's new:** Relationship **parentTable** of type **[Table](table.md)**
+**Description:** Gets the table that contains the content control. Returns null if it is not contained in a table. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=contentControl-parentTable)_
+
+**Resource name:** [contentControl](contentcontrol.md)
+**What's new:** Relationship **parentTableCell** of type **[TableCell](tablecell.md)**
+**Description:** Gets the table cell that contains the content control. Returns null if it is not contained in a table cell. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=contentControl-parentTableCell)_
+
+**Resource name:** [contentControl](contentcontrol.md)
+**What's new:** Relationship **subtype** of type **[ContentControlType](contentcontroltype.md)**
+**Description:** Gets the content control subtype. The subtype can be 'RichTextInline', 'RichTextParagraphs', 'RichTextTableCell', 'RichTextTableRow' and 'RichTextTable' for rich text content controls. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=contentControl-subtype)_
+
+**Resource name:** [contentControl](contentcontrol.md)
+**What's new:** Relationship **tables** of type **[TableCollection](tablecollection.md)**
+**Description:** Gets the collection of table objects in the content control. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=contentControl-tables)_
+
+**Resource name:** [contentControl](contentcontrol.md)
+**What's new:** Method **methodPlusLink** returning **[Range](range.md)**
+**Description:** Gets the whole content control, or the starting or ending point of the content control, as a range.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=contentControl-getRange)_
+
+**Resource name:** [contentControl](contentcontrol.md)
+**What's new:** Method **methodPlusLink** returning **[RangeCollection](rangecollection.md)**
+**Description:** Gets the text ranges in the content control by using punctuation marks andor space character.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=contentControl-getTextRanges)_
+
+**Resource name:** [contentControl](contentcontrol.md)
+**What's new:** Method **methodPlusLink** returning **[Table](table.md)**
+**Description:** Inserts a table with the specified number of rows and columns into, or next to, a content control. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=contentControl-insertTable)_
+
+**Resource name:** [contentControl](contentcontrol.md)
+**What's new:** Method **methodPlusLink** returning **[RangeCollection](rangecollection.md)**
+**Description:** Splits the content control into child ranges by using delimiters.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=contentControl-split)_
+
+**Resource name:** [contentControlCollection](contentcontrolcollection.md)
+**What's new:** Method **methodPlusLink** returning **[ContentControlCollection](contentcontrolcollection.md)**
+**Description:** Gets the content controls that have the specified types andor subtypes.
+**Available in requirement set:** WordApiDesktop, 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=contentControlCollection-getByTypes)_
+
+**Resource name:** [document](document.md)
+**What's new:** Method **methodPlusLink** returning **void**
+**Description:** Open the document.
+**Available in requirement set:** WordApiDesktop, 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=document-open)_
+
+**Resource name:** [font](font.md)
+**What's new:** Property **doubleStrikeThrough** of type **bool**
+**Description:** Gets or sets a value that indicates whether the font has a double strike through. True if the font is formatted as double strikethrough text, otherwise, false.
+**Available in requirement set:** WordApiDesktop, 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=font-doubleStrikeThrough)_
+
+**Resource name:** [inlinePicture](inlinepicture.md)
+**What's new:** Relationship **imageFormat** of type **[ImageFormat](imageformat.md)**
+**Description:** Gets the format of the inline image. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=inlinePicture-imageFormat)_
+
+**Resource name:** [inlinePicture](inlinepicture.md)
+**What's new:** Relationship **next** of type **[InlinePicture](inlinepicture.md)**
+**Description:** Gets the next inline image. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=inlinePicture-next)_
+
+**Resource name:** [inlinePicture](inlinepicture.md)
+**What's new:** Relationship **parentTable** of type **[Table](table.md)**
+**Description:** Gets the table that contains the inline image. Returns null if it is not contained in a table. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=inlinePicture-parentTable)_
+
+**Resource name:** [inlinePicture](inlinepicture.md)
+**What's new:** Relationship **parentTableCell** of type **[TableCell](tablecell.md)**
+**Description:** Gets the table cell that contains the inline image. Returns null if it is not contained in a table cell. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=inlinePicture-parentTableCell)_
+
+**Resource name:** [inlinePicture](inlinepicture.md)
+**What's new:** Method **methodPlusLink** returning **[Range](range.md)**
+**Description:** Gets the picture, or the starting or ending point of the picture, as a range.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=inlinePicture-getRange)_
+
+**Resource name:** [inlinePictureCollection](inlinepicturecollection.md)
+**What's new:** Relationship **first** of type **[InlinePicture](inlinepicture.md)**
+**Description:** Gets the first inline image in this collection. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=inlinePictureCollection-first)_
+
+**Resource name:** [list](list.md)
+**What's new:** Property **id** of type **int**
+**Description:** Gets the list's id. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=list-id)_
+
+**Resource name:** [list](list.md)
+**What's new:** Relationship **paragraphs** of type **[ParagraphCollection](paragraphcollection.md)**
+**Description:** A collection containing the paragraphs in this list. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=list-paragraphs)_
+
+**Resource name:** [list](list.md)
+**What's new:** Method **methodPlusLink** returning **[Paragraph](paragraph.md)**
+**Description:** Inserts a paragraph at the specified location. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=list-insertParagraph)_
+
+**Resource name:** [listCollection](listcollection.md)
+**What's new:** Property **items** of type **[List[]](list.md)**
+**Description:** A collection of list objects. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=listCollection-items)_
+
+**Resource name:** [listCollection](listcollection.md)
+**What's new:** Relationship **first** of type **[List](list.md)**
+**Description:** Gets the first list in this collection. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=listCollection-first)_
+
+**Resource name:** [listCollection](listcollection.md)
+**What's new:** Method **methodPlusLink** returning **[List](list.md)**
+**Description:** Gets a list by its identifier.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=listCollection-getById)_
+
+**Resource name:** [listCollection](listcollection.md)
+**What's new:** Method **methodPlusLink** returning **[List](list.md)**
+**Description:** Gets a list object by its index in the collection.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=listCollection-getItem)_
+
+**Resource name:** [paragraph](paragraph.md)
+**What's new:** Property **listLevel** of type **int**
+**Description:** Gets or sets the list level of the paragraph.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraph-listLevel)_
+
+**Resource name:** [paragraph](paragraph.md)
+**What's new:** Property **outlineLevel** of type **int**
+**Description:** Gets or sets the outline level for the paragraph.
+**Available in requirement set:** WordApiDesktop, 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraph-outlineLevel)_
+
+**Resource name:** [paragraph](paragraph.md)
+**What's new:** Property **tableNestingLevel** of type **int**
+**Description:** Gets the level of the paragraph's table. It returns 0 if the paragraph is not in a table. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraph-tableNestingLevel)_
+
+**Resource name:** [paragraph](paragraph.md)
+**What's new:** Relationship **list** of type **[List](list.md)**
+**Description:** Gets the List to which this paragraph belongs. Returns null if the paragraph is not in a list. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraph-list)_
+
+**Resource name:** [paragraph](paragraph.md)
+**What's new:** Relationship **next** of type **[Paragraph](paragraph.md)**
+**Description:** Gets the next paragraph. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraph-next)_
+
+**Resource name:** [paragraph](paragraph.md)
+**What's new:** Relationship **parentBody** of type **[Body](body.md)**
+**Description:** Gets the parent body of the paragraph. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraph-parentBody)_
+
+**Resource name:** [paragraph](paragraph.md)
+**What's new:** Relationship **parentTable** of type **[Table](table.md)**
+**Description:** Gets the table that contains the paragraph. Returns null if it is not contained in a table. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraph-parentTable)_
+
+**Resource name:** [paragraph](paragraph.md)
+**What's new:** Relationship **parentTableCell** of type **[TableCell](tablecell.md)**
+**Description:** Gets the table cell that contains the paragraph. Returns null if it is not contained in a table cell. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraph-parentTableCell)_
+
+**Resource name:** [paragraph](paragraph.md)
+**What's new:** Relationship **previous** of type **[Paragraph](paragraph.md)**
+**Description:** Gets the previous paragraph. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraph-previous)_
+
+**Resource name:** [paragraph](paragraph.md)
+**What's new:** Method **methodPlusLink** returning **[Range](range.md)**
+**Description:** Gets the whole paragraph, or the starting or ending point of the paragraph, as a range.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraph-getRange)_
+
+**Resource name:** [paragraph](paragraph.md)
+**What's new:** Method **methodPlusLink** returning **[RangeCollection](rangecollection.md)**
+**Description:** Gets the text ranges in the paragraph by using punctuation marks andor space character.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraph-getTextRanges)_
+
+**Resource name:** [paragraph](paragraph.md)
+**What's new:** Method **methodPlusLink** returning **[Table](table.md)**
+**Description:** Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraph-insertTable)_
+
+**Resource name:** [paragraph](paragraph.md)
+**What's new:** Method **methodPlusLink** returning **[RangeCollection](rangecollection.md)**
+**Description:** Splits the paragraph into child ranges by using delimiters.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraph-split)_
+
+**Resource name:** [paragraphCollection](paragraphcollection.md)
+**What's new:** Relationship **first** of type **[Paragraph](paragraph.md)**
+**Description:** Gets the first paragraph in this collection. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraphCollection-first)_
+
+**Resource name:** [paragraphCollection](paragraphcollection.md)
+**What's new:** Relationship **last** of type **[Paragraph](paragraph.md)**
+**Description:** Gets the last paragraph in this collection. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=paragraphCollection-last)_
+
+**Resource name:** [range](range.md)
+**What's new:** Property **hyperlink** of type **string**
+**Description:** Gets the first hyperlink in the range, or sets a hyperlink on the range. Existing hyperlinks in this range are deleted when you set a new hyperlink.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=range-hyperlink)_
+
+**Resource name:** [range](range.md)
+**What's new:** Property **isEmpty** of type **bool**
+**Description:** Checks whether the range length is zero. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=range-isEmpty)_
+
+**Resource name:** [range](range.md)
+**What's new:** Relationship **lists** of type **[ListCollection](listcollection.md)**
+**Description:** Gets the collection of list objects in the range. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=range-lists)_
+
+**Resource name:** [range](range.md)
+**What's new:** Relationship **parentBody** of type **[Body](body.md)**
+**Description:** Gets the parent body of the range. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=range-parentBody)_
+
+**Resource name:** [range](range.md)
+**What's new:** Relationship **parentTable** of type **[Table](table.md)**
+**Description:** Gets the table that contains the range. Returns null if it is not contained in a table. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=range-parentTable)_
+
+**Resource name:** [range](range.md)
+**What's new:** Relationship **parentTableCell** of type **[TableCell](tablecell.md)**
+**Description:** Gets the table cell that contains the range. Returns null if it is not contained in a table cell. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=range-parentTableCell)_
+
+**Resource name:** [range](range.md)
+**What's new:** Relationship **tables** of type **[TableCollection](tablecollection.md)**
+**Description:** Gets the collection of table objects in the range. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=range-tables)_
+
+**Resource name:** [range](range.md)
+**What's new:** Method **methodPlusLink** returning **[LocationRelation](locationrelation.md)**
+**Description:** Compares this range's location with another range's location.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=range-compareLocationWith)_
+
+**Resource name:** [range](range.md)
+**What's new:** Method **methodPlusLink** returning **void**
+**Description:** Expands the range in either direction to cover another range.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=range-expandTo)_
+
+**Resource name:** [range](range.md)
+**What's new:** Method **methodPlusLink** returning **[RangeCollection](rangecollection.md)**
+**Description:** Gets hyperlink child ranges within the range.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=range-getHyperlinkRanges)_
+
+**Resource name:** [range](range.md)
+**What's new:** Method **methodPlusLink** returning **[Range](range.md)**
+**Description:** Gets the next text range by using punctuation marks andor space character.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=range-getNextTextRange)_
+
+**Resource name:** [range](range.md)
+**What's new:** Method **methodPlusLink** returning **[Range](range.md)**
+**Description:** Clones the range, or gets the starting or ending point of the range as a new range.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=range-getRange)_
+
+**Resource name:** [range](range.md)
+**What's new:** Method **methodPlusLink** returning **[RangeCollection](rangecollection.md)**
+**Description:** Gets the text child ranges in the range by using punctuation marks andor space character.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=range-getTextRanges)_
+
+**Resource name:** [range](range.md)
+**What's new:** Method **methodPlusLink** returning **[Table](table.md)**
+**Description:** Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=range-insertTable)_
+
+**Resource name:** [range](range.md)
+**What's new:** Method **methodPlusLink** returning **void**
+**Description:** Shrinks the range to the intersection of the range with another range.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=range-intersectWith)_
+
+**Resource name:** [range](range.md)
+**What's new:** Method **methodPlusLink** returning **[RangeCollection](rangecollection.md)**
+**Description:** Splits the range into child ranges by using delimiters.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=range-split)_
+
+**Resource name:** [rangeCollection](rangecollection.md)
+**What's new:** Property **items** of type **[Range[]](range.md)**
+**Description:** A collection of range objects. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=rangeCollection-items)_
+
+**Resource name:** [rangeCollection](rangecollection.md)
+**What's new:** Relationship **first** of type **[Range](range.md)**
+**Description:** Gets the first range in this collection. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=rangeCollection-first)_
+
+**Resource name:** [rangeCollection](rangecollection.md)
+**What's new:** Method **methodPlusLink** returning **[Range](range.md)**
+**Description:** Gets a range object by its index in the collection.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=rangeCollection-getItem)_
+
+**Resource name:** [searchResultCollection](searchresultcollection.md)
+**What's new:** Relationship **first** of type **[Range](range.md)**
+**Description:** Gets the first searched result in this collection. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=searchResultCollection-first)_
+
+**Resource name:** [section](section.md)
+**What's new:** Relationship **next** of type **[Section](section.md)**
+**Description:** Gets the next section. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=section-next)_
+
+**Resource name:** [sectionCollection](sectioncollection.md)
+**What's new:** Relationship **first** of type **[Section](section.md)**
+**Description:** Gets the first section in this collection. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=sectionCollection-first)_
+
+**Resource name:** [table](table.md)
+**What's new:** Property **headerRowCount** of type **int**
+**Description:** Gets and sets the number of header rows.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-headerRowCount)_
+
+**Resource name:** [table](table.md)
+**What's new:** Property **isUniform** of type **bool**
+**Description:** Indicates whether all of the table rows are uniform. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-isUniform)_
+
+**Resource name:** [table](table.md)
+**What's new:** Property **nestingLevel** of type **int**
+**Description:** Gets the nesting level of the table. Top-level tables have level 1. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-nestingLevel)_
+
+**Resource name:** [table](table.md)
+**What's new:** Property **rowCount** of type **int**
+**Description:** Gets the number of rows in the table. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-rowCount)_
+
+**Resource name:** [table](table.md)
+**What's new:** Property **shadingColor** of type **string**
+**Description:** Gets and sets the shading color.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-shadingColor)_
+
+**Resource name:** [table](table.md)
+**What's new:** Property **style** of type **string**
+**Description:** Gets and sets the name of the table style.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-style)_
+
+**Resource name:** [table](table.md)
+**What's new:** Property **styleBandedColumns** of type **bool**
+**Description:** Gets and sets whether the table has banded columns.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-styleBandedColumns)_
+
+**Resource name:** [table](table.md)
+**What's new:** Property **styleBandedRows** of type **bool**
+**Description:** Gets and sets whether the table has banded rows.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-styleBandedRows)_
+
+**Resource name:** [table](table.md)
+**What's new:** Property **styleFirstColumn** of type **bool**
+**Description:** Gets and sets whether the table has a first column with a special style.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-styleFirstColumn)_
+
+**Resource name:** [table](table.md)
+**What's new:** Property **styleLastColumn** of type **bool**
+**Description:** Gets and sets whether the table has a last column with a special style.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-styleLastColumn)_
+
+**Resource name:** [table](table.md)
+**What's new:** Property **styleTotalRow** of type **bool**
+**Description:** Gets and sets whether the table has a total (last) row with a special style.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-styleTotalRow)_
+
+**Resource name:** [table](table.md)
+**What's new:** Property **values** of type **string**
+**Description:** Gets and sets the text values in the table, as a 2D Javascript array.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-values)_
+
+**Resource name:** [table](table.md)
+**What's new:** Relationship **cellPaddingBottom** of type **[float](float.md)**
+**Description:** Gets and sets the default bottom cell padding in points.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-cellPaddingBottom)_
+
+**Resource name:** [table](table.md)
+**What's new:** Relationship **cellPaddingLeft** of type **[float](float.md)**
+**Description:** Gets and sets the default left cell padding in points.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-cellPaddingLeft)_
+
+**Resource name:** [table](table.md)
+**What's new:** Relationship **cellPaddingRight** of type **[float](float.md)**
+**Description:** Gets and sets the default right cell padding in points.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-cellPaddingRight)_
+
+**Resource name:** [table](table.md)
+**What's new:** Relationship **cellPaddingTop** of type **[float](float.md)**
+**Description:** Gets and sets the default top cell padding in points.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-cellPaddingTop)_
+
+**Resource name:** [table](table.md)
+**What's new:** Relationship **font** of type **[Font](font.md)**
+**Description:** Gets the font. Use this to get and set font name, size, color, and other properties. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-font)_
+
+**Resource name:** [table](table.md)
+**What's new:** Relationship **height** of type **[float](float.md)**
+**Description:** Gets the height of the table in points. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-height)_
+
+**Resource name:** [table](table.md)
+**What's new:** Relationship **next** of type **[Table](table.md)**
+**Description:** Gets the next table. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-next)_
+
+**Resource name:** [table](table.md)
+**What's new:** Relationship **paragraphAfter** of type **[Paragraph](paragraph.md)**
+**Description:** Gets the paragraph after the table. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-paragraphAfter)_
+
+**Resource name:** [table](table.md)
+**What's new:** Relationship **paragraphBefore** of type **[Paragraph](paragraph.md)**
+**Description:** Gets the paragraph before the table. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-paragraphBefore)_
+
+**Resource name:** [table](table.md)
+**What's new:** Relationship **parentContentControl** of type **[ContentControl](contentcontrol.md)**
+**Description:** Gets the content control that contains the table. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-parentContentControl)_
+
+**Resource name:** [table](table.md)
+**What's new:** Relationship **parentTable** of type **[Table](table.md)**
+**Description:** Gets the table that contains this table. Returns null if it is not contained in a table. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-parentTable)_
+
+**Resource name:** [table](table.md)
+**What's new:** Relationship **parentTableCell** of type **[TableCell](tablecell.md)**
+**Description:** Gets the table cell that contains this table. Returns null if it is not contained in a table cell. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-parentTableCell)_
+
+**Resource name:** [table](table.md)
+**What's new:** Relationship **rows** of type **[TableRowCollection](tablerowcollection.md)**
+**Description:** Gets all of the table rows. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-rows)_
+
+**Resource name:** [table](table.md)
+**What's new:** Relationship **tables** of type **[TableCollection](tablecollection.md)**
+**Description:** Gets the child tables nested one level deeper. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-tables)_
+
+**Resource name:** [table](table.md)
+**What's new:** Relationship **verticalAlignment** of type **[VerticalAlignment](verticalalignment.md)**
+**Description:** Gets and sets the vertical alignment of every cell in the table.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-verticalAlignment)_
+
+**Resource name:** [table](table.md)
+**What's new:** Relationship **width** of type **[float](float.md)**
+**Description:** Gets and sets the width of the table in points.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-width)_
+
+**Resource name:** [table](table.md)
+**What's new:** Method **methodPlusLink** returning **void**
+**Description:** Adds columns to the start or end of the table, using the first or last existing column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-addColumns)_
+
+**Resource name:** [table](table.md)
+**What's new:** Method **methodPlusLink** returning **void**
+**Description:** Adds rows to the start or end of the table, using the first or last existing row as a template. The string values, if specified, are set in the newly inserted rows.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-addRows)_
+
+**Resource name:** [table](table.md)
+**What's new:** Method **methodPlusLink** returning **void**
+**Description:** Autofits the table columns to the width of their contents.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-autoFitContents)_
+
+**Resource name:** [table](table.md)
+**What's new:** Method **methodPlusLink** returning **void**
+**Description:** Autofits the table columns to the width of the window.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-autoFitWindow)_
+
+**Resource name:** [table](table.md)
+**What's new:** Method **methodPlusLink** returning **void**
+**Description:** Clears the contents of the table.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-clear)_
+
+**Resource name:** [table](table.md)
+**What's new:** Method **methodPlusLink** returning **void**
+**Description:** Deletes the entire table.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-delete)_
+
+**Resource name:** [table](table.md)
+**What's new:** Method **methodPlusLink** returning **void**
+**Description:** Deletes specific columns. This is applicable to uniform tables.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-deleteColumns)_
+
+**Resource name:** [table](table.md)
+**What's new:** Method **methodPlusLink** returning **void**
+**Description:** Deletes specific rows.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-deleteRows)_
+
+**Resource name:** [table](table.md)
+**What's new:** Method **methodPlusLink** returning **void**
+**Description:** Distributes the column widths evenly.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-distributeColumns)_
+
+**Resource name:** [table](table.md)
+**What's new:** Method **methodPlusLink** returning **void**
+**Description:** Distributes the row heights evenly.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-distributeRows)_
+
+**Resource name:** [table](table.md)
+**What's new:** Method **methodPlusLink** returning **[TableBorderStyle](tableborderstyle.md)**
+**Description:** Gets the border style for the specified border.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-getBorderStyle)_
+
+**Resource name:** [table](table.md)
+**What's new:** Method **methodPlusLink** returning **[TableCell](tablecell.md)**
+**Description:** Gets the table cell at a specified row and column.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-getCell)_
+
+**Resource name:** [table](table.md)
+**What's new:** Method **methodPlusLink** returning **[Range](range.md)**
+**Description:** Gets the range that contains this table, or the range at the start or end of the table.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-getRange)_
+
+**Resource name:** [table](table.md)
+**What's new:** Method **methodPlusLink** returning **[ContentControl](contentcontrol.md)**
+**Description:** Inserts a content control on the table.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-insertContentControl)_
+
+**Resource name:** [table](table.md)
+**What's new:** Method **methodPlusLink** returning **[Paragraph](paragraph.md)**
+**Description:** Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-insertParagraph)_
+
+**Resource name:** [table](table.md)
+**What's new:** Method **methodPlusLink** returning **[Table](table.md)**
+**Description:** Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-insertTable)_
+
+**Resource name:** [table](table.md)
+**What's new:** Method **methodPlusLink** returning **[TableCell](tablecell.md)**
+**Description:** Merges the cells bounded inclusively by a first and last cell.
+**Available in requirement set:** WordApiDesktop, 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-mergeCells)_
+
+**Resource name:** [table](table.md)
+**What's new:** Method **methodPlusLink** returning **[SearchResultCollection](searchresultcollection.md)**
+**Description:** Performs a search with the specified searchOptions on the scope of the table object. The search results are a collection of range objects.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-search)_
+
+**Resource name:** [table](table.md)
+**What's new:** Method **methodPlusLink** returning **void**
+**Description:** Selects the table, or the position at the start or end of the table, and navigates the Word UI to it.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=table-select)_
+
+**Resource name:** [tableBorderStyle](tableborderstyle.md)
+**What's new:** Property **color** of type **string**
+**Description:** Gets or sets the table border color, as a hex value or name.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableBorderStyle-color)_
+
+**Resource name:** [tableBorderStyle](tableborderstyle.md)
+**What's new:** Relationship **type** of type **[BorderType](bordertype.md)**
+**Description:** Gets or sets the type of the table border style.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableBorderStyle-type)_
+
+**Resource name:** [tableBorderStyle](tableborderstyle.md)
+**What's new:** Relationship **width** of type **[float](float.md)**
+**Description:** Gets or sets the width, in points, of the table border style.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableBorderStyle-width)_
+
+**Resource name:** [tableCell](tablecell.md)
+**What's new:** Property **cellIndex** of type **int**
+**Description:** Gets the index of the cell in its row. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-cellIndex)_
+
+**Resource name:** [tableCell](tablecell.md)
+**What's new:** Property **rowIndex** of type **int**
+**Description:** Gets the index of the cell's row in the table. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-rowIndex)_
+
+**Resource name:** [tableCell](tablecell.md)
+**What's new:** Property **shadingColor** of type **string**
+**Description:** Gets or sets the shading color of the cell. Color is specified in "#RRGGBB" format or by using the color name.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-shadingColor)_
+
+**Resource name:** [tableCell](tablecell.md)
+**What's new:** Property **value** of type **string**
+**Description:** Gets and sets the text of the cell.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-value)_
+
+**Resource name:** [tableCell](tablecell.md)
+**What's new:** Relationship **body** of type **[Body](body.md)**
+**Description:** Gets the body object of the cell. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-body)_
+
+**Resource name:** [tableCell](tablecell.md)
+**What's new:** Relationship **cellPaddingBottom** of type **[float](float.md)**
+**Description:** Gets and sets the bottom padding of the cell in points.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-cellPaddingBottom)_
+
+**Resource name:** [tableCell](tablecell.md)
+**What's new:** Relationship **cellPaddingLeft** of type **[float](float.md)**
+**Description:** Gets and sets the left padding of the cell in points.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-cellPaddingLeft)_
+
+**Resource name:** [tableCell](tablecell.md)
+**What's new:** Relationship **cellPaddingRight** of type **[float](float.md)**
+**Description:** Gets and sets the right padding of the cell in points.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-cellPaddingRight)_
+
+**Resource name:** [tableCell](tablecell.md)
+**What's new:** Relationship **cellPaddingTop** of type **[float](float.md)**
+**Description:** Gets and sets the top padding of the cell in points.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-cellPaddingTop)_
+
+**Resource name:** [tableCell](tablecell.md)
+**What's new:** Relationship **columnWidth** of type **[float](float.md)**
+**Description:** Gets and sets the width of the cell's column in points. This is applicable to uniform tables.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-columnWidth)_
+
+**Resource name:** [tableCell](tablecell.md)
+**What's new:** Relationship **next** of type **[TableCell](tablecell.md)**
+**Description:** Gets the next cell. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-next)_
+
+**Resource name:** [tableCell](tablecell.md)
+**What's new:** Relationship **parentRow** of type **[TableRow](tablerow.md)**
+**Description:** Gets the parent row of the cell. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-parentRow)_
+
+**Resource name:** [tableCell](tablecell.md)
+**What's new:** Relationship **parentTable** of type **[Table](table.md)**
+**Description:** Gets the parent table of the cell. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-parentTable)_
+
+**Resource name:** [tableCell](tablecell.md)
+**What's new:** Relationship **verticalAlignment** of type **[VerticalAlignment](verticalalignment.md)**
+**Description:** Gets and sets the vertical alignment of the cell.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-verticalAlignment)_
+
+**Resource name:** [tableCell](tablecell.md)
+**What's new:** Relationship **width** of type **[float](float.md)**
+**Description:** Gets the width of the cell in points. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-width)_
+
+**Resource name:** [tableCell](tablecell.md)
+**What's new:** Method **methodPlusLink** returning **void**
+**Description:** Deletes the column containing this cell. This is applicable to uniform tables.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-deleteColumn)_
+
+**Resource name:** [tableCell](tablecell.md)
+**What's new:** Method **methodPlusLink** returning **void**
+**Description:** Deletes the row containing this cell.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-deleteRow)_
+
+**Resource name:** [tableCell](tablecell.md)
+**What's new:** Method **methodPlusLink** returning **[TableBorderStyle](tableborderstyle.md)**
+**Description:** Gets the border style for the specified border.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-getBorderStyle)_
+
+**Resource name:** [tableCell](tablecell.md)
+**What's new:** Method **methodPlusLink** returning **void**
+**Description:** Adds columns to the left or right of the cell, using the cell's column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-insertColumns)_
+
+**Resource name:** [tableCell](tablecell.md)
+**What's new:** Method **methodPlusLink** returning **void**
+**Description:** Inserts rows above or below the cell, using the cell's row as a template. The string values, if specified, are set in the newly inserted rows.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-insertRows)_
+
+**Resource name:** [tableCell](tablecell.md)
+**What's new:** Method **methodPlusLink** returning **void**
+**Description:** Adds columns to the left or right of the cell, using the existing column as a template. The string values, if specified, are set in the newly inserted rows.
+**Available in requirement set:** WordApiDesktop, 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCell-split)_
+
+**Resource name:** [tableCellCollection](tablecellcollection.md)
+**What's new:** Property **items** of type **[TableCell[]](tablecell.md)**
+**Description:** A collection of tableCell objects. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCellCollection-items)_
+
+**Resource name:** [tableCellCollection](tablecellcollection.md)
+**What's new:** Relationship **first** of type **[TableCell](tablecell.md)**
+**Description:** Gets the first table cell in this collection. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCellCollection-first)_
+
+**Resource name:** [tableCellCollection](tablecellcollection.md)
+**What's new:** Method **methodPlusLink** returning **[TableCell](tablecell.md)**
+**Description:** Gets a table cell object by its index in the collection.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCellCollection-getItem)_
+
+**Resource name:** [tableCollection](tablecollection.md)
+**What's new:** Property **items** of type **[Table[]](table.md)**
+**Description:** A collection of table objects. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCollection-items)_
+
+**Resource name:** [tableCollection](tablecollection.md)
+**What's new:** Relationship **first** of type **[Table](table.md)**
+**Description:** Gets the first table in this collection. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCollection-first)_
+
+**Resource name:** [tableCollection](tablecollection.md)
+**What's new:** Method **methodPlusLink** returning **[Table](table.md)**
+**Description:** Gets a table object by its index in the collection.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableCollection-getItem)_
+
+**Resource name:** [tableRow](tablerow.md)
+**What's new:** Property **cellCount** of type **int**
+**Description:** Gets the number of cells in the row. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-cellCount)_
+
+**Resource name:** [tableRow](tablerow.md)
+**What's new:** Property **isHeader** of type **bool**
+**Description:** Gets a value that indicates whether the row is a header row. Read-only. To set the number of header rows, use HeaderRowCount on the Table object. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-isHeader)_
+
+**Resource name:** [tableRow](tablerow.md)
+**What's new:** Property **rowIndex** of type **int**
+**Description:** Gets the index of the row in its parent table. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-rowIndex)_
+
+**Resource name:** [tableRow](tablerow.md)
+**What's new:** Property **shadingColor** of type **string**
+**Description:** Gets and sets the shading color.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-shadingColor)_
+
+**Resource name:** [tableRow](tablerow.md)
+**What's new:** Property **values** of type **string**
+**Description:** Gets and sets the text values in the row, as a 1D Javascript array.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-values)_
+
+**Resource name:** [tableRow](tablerow.md)
+**What's new:** Relationship **cellPaddingBottom** of type **[float](float.md)**
+**Description:** Gets and sets the default bottom cell padding for the row in points.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-cellPaddingBottom)_
+
+**Resource name:** [tableRow](tablerow.md)
+**What's new:** Relationship **cellPaddingLeft** of type **[float](float.md)**
+**Description:** Gets and sets the default left cell padding for the row in points.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-cellPaddingLeft)_
+
+**Resource name:** [tableRow](tablerow.md)
+**What's new:** Relationship **cellPaddingRight** of type **[float](float.md)**
+**Description:** Gets and sets the default right cell padding for the row in points.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-cellPaddingRight)_
+
+**Resource name:** [tableRow](tablerow.md)
+**What's new:** Relationship **cellPaddingTop** of type **[float](float.md)**
+**Description:** Gets and sets the default top cell padding for the row in points.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-cellPaddingTop)_
+
+**Resource name:** [tableRow](tablerow.md)
+**What's new:** Relationship **cells** of type **[TableCellCollection](tablecellcollection.md)**
+**Description:** Gets cells. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-cells)_
+
+**Resource name:** [tableRow](tablerow.md)
+**What's new:** Relationship **font** of type **[Font](font.md)**
+**Description:** Gets the font. Use this to get and set font name, size, color, and other properties. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-font)_
+
+**Resource name:** [tableRow](tablerow.md)
+**What's new:** Relationship **next** of type **[TableRow](tablerow.md)**
+**Description:** Gets the next row. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-next)_
+
+**Resource name:** [tableRow](tablerow.md)
+**What's new:** Relationship **parentTable** of type **[Table](table.md)**
+**Description:** Gets parent table. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-parentTable)_
+
+**Resource name:** [tableRow](tablerow.md)
+**What's new:** Relationship **preferredHeight** of type **[float](float.md)**
+**Description:** Gets and sets the preferred height of the row in points.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-preferredHeight)_
+
+**Resource name:** [tableRow](tablerow.md)
+**What's new:** Relationship **verticalAlignment** of type **[VerticalAlignment](verticalalignment.md)**
+**Description:** Gets and sets the vertical alignment of the cells in the row.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-verticalAlignment)_
+
+**Resource name:** [tableRow](tablerow.md)
+**What's new:** Method **methodPlusLink** returning **void**
+**Description:** Clears the contents of the row.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-clear)_
+
+**Resource name:** [tableRow](tablerow.md)
+**What's new:** Method **methodPlusLink** returning **void**
+**Description:** Deletes the entire row.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-delete)_
+
+**Resource name:** [tableRow](tablerow.md)
+**What's new:** Method **methodPlusLink** returning **[TableBorderStyle](tableborderstyle.md)**
+**Description:** Gets the border style of the cells in the row.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-getBorderStyle)_
+
+**Resource name:** [tableRow](tablerow.md)
+**What's new:** Method **methodPlusLink** returning **void**
+**Description:** Inserts rows using this row as a template. If values are specified, inserts the values into the new rows.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-insertRows)_
+
+**Resource name:** [tableRow](tablerow.md)
+**What's new:** Method **methodPlusLink** returning **[TableCell](tablecell.md)**
+**Description:** Merges the row into one cell.
+**Available in requirement set:** WordApiDesktop, 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-merge)_
+
+**Resource name:** [tableRow](tablerow.md)
+**What's new:** Method **methodPlusLink** returning **[SearchResultCollection](searchresultcollection.md)**
+**Description:** Performs a search with the specified searchOptions on the scope of the row. The search results are a collection of range objects.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-search)_
+
+**Resource name:** [tableRow](tablerow.md)
+**What's new:** Method **methodPlusLink** returning **void**
+**Description:** Selects the row and navigates the Word UI to it.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRow-select)_
+
+**Resource name:** [tableRowCollection](tablerowcollection.md)
+**What's new:** Property **items** of type **[TableRow[]](tablerow.md)**
+**Description:** A collection of tableRow objects. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRowCollection-items)_
+
+**Resource name:** [tableRowCollection](tablerowcollection.md)
+**What's new:** Relationship **first** of type **[TableRow](tablerow.md)**
+**Description:** Gets the first row in this collection. Read-only.
+**Available in requirement set:** 1.3
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRowCollection-first)_
+
+**Resource name:** [tableRowCollection](tablerowcollection.md)
+**What's new:** Method **methodPlusLink** returning **[TableRow](tablerow.md)**
+**Description:** Gets a table row object by its index in the collection.
+**Available in requirement set:** 1.3
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=tableRowCollection-getItem)_
+
