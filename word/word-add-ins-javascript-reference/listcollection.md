@@ -1,61 +1,64 @@
-# Section Object (JavaScript API for Word)
+# ListCollection Object (JavaScript API for Word)
 
 _Word 2016, Word for iPad, Word for Mac_
 
-Represents a section in a Word document.
+Contains a collection of [list](list.md) objects.
 
 ## Properties
 
-None
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|items|[List[]](list.md)|A collection of list objects. Read-only.|1.3||
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|body|[Body](body.md)|Gets the body object of the section. This does not include the headerfooter and other section metadata. Read-only.|1.1||
-|next|[Section](section.md)|Gets the next section. Read-only.|1.3||
+|first|[List](list.md)|Gets the first list in this collection. Read-only.|1.3||
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getFooter(type: HeaderFooterType)](#getfootertype-headerfootertype)|[Body](body.md)|Gets one of the section's footers.|1.1|
-|[getHeader(type: HeaderFooterType)](#getheadertype-headerfootertype)|[Body](body.md)|Gets one of the section's headers.|1.1|
+|[getById(id: number)](#getbyidid-number)|[List](list.md)|Gets a list by its identifier.|1.3|
+|[getItem(index: number)](#getitemindex-number)|[List](list.md)|Gets a list object by its index in the collection.|1.3|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
 
 ## Method Details
 
 
-### getFooter(type: HeaderFooterType)
-Gets one of the section's footers.
+### getById(id: number)
+Gets a list by its identifier.
 
 #### Syntax
 ```js
-sectionObject.getFooter(type);
+listCollectionObject.getById(id);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|type|HeaderFooterType|Required. The type of footer to return. This value can be: 'primary', 'firstPage' or 'evenPages'.|
+|id|number|Required. A list identifier.|
 
 #### Returns
-[Body](body.md)
+[List](list.md)
 
-### getHeader(type: HeaderFooterType)
-Gets one of the section's headers.
+### getItem(index: number)
+Gets a list object by its index in the collection.
 
 #### Syntax
 ```js
-sectionObject.getHeader(type);
+listCollectionObject.getItem(index);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|type|HeaderFooterType|Required. The type of header to return. This value can be: 'primary', 'firstPage' or 'evenPages'.|
+|index|number|A number that identifies the index location of a list object.|
 
 #### Returns
-[Body](body.md)
+[List](list.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.

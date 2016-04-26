@@ -1,48 +1,47 @@
-# ParagraphCollection Object (JavaScript API for Word)
+# TableCollection Object (JavaScript API for Word)
 
 _Word 2016, Word for iPad, Word for Mac_
 
-Contains a collection of [paragraph](paragraph.md) objects.
+Contains the collection of the document's Table objects.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.|1.1||
+|items|[Table[]](table.md)|A collection of table objects. Read-only.|1.3||
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|first|[Paragraph](paragraph.md)|Gets the first paragraph in this collection. Read-only.|1.3||
-|last|[Paragraph](paragraph.md)|Gets the last paragraph in this collection. Read-only.|1.3||
+|first|[Table](table.md)|Gets the first table in this collection. Read-only.|1.3||
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getItem(index: number)](#getitemindex-number)|[Paragraph](paragraph.md)|Gets a paragraph object by its index in the collection.|1.1|
+|[getItem(index: number)](#getitemindex-number)|[Table](table.md)|Gets a table object by its index in the collection.|1.3|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
 
 ## Method Details
 
 
 ### getItem(index: number)
-Gets a paragraph object by its index in the collection.
+Gets a table object by its index in the collection.
 
 #### Syntax
 ```js
-paragraphCollectionObject.getItem(index);
+tableCollectionObject.getItem(index);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|index|number|A number that identifies the index location of a paragraph object.|
+|index|number|A number that identifies the index location of a table object.|
 
 #### Returns
-[Paragraph](paragraph.md)
+[Table](table.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
