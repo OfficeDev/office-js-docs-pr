@@ -1,5 +1,6 @@
 |Resource|Member Type|Name|Data type |Description|Requirement-Set|
 |:----|:----|:----|:----|:----|:----|
+|[application](application.md)|Method|[createDocument(base64File: string)](application.md#createdocumentbase64file-string)|[Document](document.md)|Creates a new document by using a base64 encoded .docx file.|WordApi WordApiDesktop, 1.3|
 |[body](body.md)|Relationship|lists|[ListCollection](listcollection.md)|Gets the collection of list objects in the body. Read-only.|WordApi 1.3|
 |[body](body.md)|Relationship|parentBody|[Body](body.md)|Gets the parent body of the body. For example, a table cell body's parent body could be a header. Read-only.|WordApi 1.3|
 |[body](body.md)|Relationship|tables|[TableCollection](tablecollection.md)|Gets the collection of table objects in the body. Read-only.|WordApi 1.3|
@@ -15,6 +16,9 @@
 |[contentControl](contentcontrol.md)|Method|[getTextRanges(punctuationMarks: string[], trimSpacing: bool)](contentcontrol.md#gettextrangespunctuationmarks-string-trimspacing-bool)|[RangeCollection](rangecollection.md)|Gets the text ranges in the content control by using punctuation marks andor space character.|WordApi 1.3|
 |[contentControl](contentcontrol.md)|Method|[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](contentcontrol.md#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns into, or next to, a content control. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.|WordApi 1.3|
 |[contentControl](contentcontrol.md)|Method|[split(delimiters: string[], multiParagraphs: bool, trimDelimiters: bool, trimSpacing: bool)](contentcontrol.md#splitdelimiters-string-multiparagraphs-bool-trimdelimiters-bool-trimspacing-bool)|[RangeCollection](rangecollection.md)|Splits the content control into child ranges by using delimiters.|WordApi 1.3|
+|[contentControlCollection](contentcontrolcollection.md)|Method|[getByTypes(types: ContentControlType[])](contentcontrolcollection.md#getbytypestypes-contentcontroltype)|[ContentControlCollection](contentcontrolcollection.md)|Gets the content controls that have the specified types andor subtypes.|WordApi WordApiDesktop, 1.3|
+|[document](document.md)|Method|[open()](document.md#open)|void|Open the document.|WordApi WordApiDesktop, 1.3|
+|[font](font.md)|Property|doubleStrikeThrough|bool|Gets or sets a value that indicates whether the font has a double strike through. True if the font is formatted as double strikethrough text, otherwise, false.|WordApi WordApiDesktop, 1.3|
 |[inlinePicture](inlinepicture.md)|Relationship|imageFormat|[ImageFormat](imageformat.md)|Gets the format of the inline image. Read-only.|WordApi 1.3|
 |[inlinePicture](inlinepicture.md)|Relationship|next|[InlinePicture](inlinepicture.md)|Gets the next inline image. Read-only.|WordApi 1.3|
 |[inlinePicture](inlinepicture.md)|Relationship|parentTable|[Table](table.md)|Gets the table that contains the inline image. Returns null if it is not contained in a table. Read-only.|WordApi 1.3|
@@ -29,6 +33,7 @@
 |[listCollection](listcollection.md)|Method|[getById(id: number)](listcollection.md#getbyidid-number)|[List](list.md)|Gets a list by its identifier.|WordApi 1.3|
 |[listCollection](listcollection.md)|Method|[getItem(index: number)](listcollection.md#getitemindex-number)|[List](list.md)|Gets a list object by its index in the collection.|WordApi 1.3|
 |[paragraph](paragraph.md)|Property|listLevel|int|Gets or sets the list level of the paragraph.|WordApi 1.3|
+|[paragraph](paragraph.md)|Property|outlineLevel|int|Gets or sets the outline level for the paragraph.|WordApi WordApiDesktop, 1.3|
 |[paragraph](paragraph.md)|Property|tableNestingLevel|int|Gets the level of the paragraph's table. It returns 0 if the paragraph is not in a table. Read-only.|WordApi 1.3|
 |[paragraph](paragraph.md)|Relationship|list|[List](list.md)|Gets the List to which this paragraph belongs. Returns null if the paragraph is not in a list. Read-only.|WordApi 1.3|
 |[paragraph](paragraph.md)|Relationship|next|[Paragraph](paragraph.md)|Gets the next paragraph. Read-only.|WordApi 1.3|
@@ -108,6 +113,7 @@
 |[table](table.md)|Method|[insertContentControl()](table.md#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Inserts a content control on the table.|WordApi 1.3|
 |[table](table.md)|Method|[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](table.md#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|WordApi 1.3|
 |[table](table.md)|Method|[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](table.md#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.|WordApi 1.3|
+|[table](table.md)|Method|[mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)](table.md#mergecellstoprow-number-firstcell-number-bottomrow-number-lastcell-number)|[TableCell](tablecell.md)|Merges the cells bounded inclusively by a first and last cell.|WordApi WordApiDesktop, 1.3|
 |[table](table.md)|Method|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](table.md#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the table object. The search results are a collection of range objects.|WordApi 1.3|
 |[table](table.md)|Method|[select(selectionMode: SelectionMode)](table.md#selectselectionmode-selectionmode)|void|Selects the table, or the position at the start or end of the table, and navigates the Word UI to it.|WordApi 1.3|
 |[tableBorderStyle](tableborderstyle.md)|Property|color|string|Gets or sets the table border color, as a hex value or name.|WordApi 1.3|
@@ -133,6 +139,7 @@
 |[tableCell](tablecell.md)|Method|[getBorderStyle(borderLocation: BorderLocation)](tablecell.md#getborderstyleborderlocation-borderlocation)|[TableBorderStyle](tableborderstyle.md)|Gets the border style for the specified border.|WordApi 1.3|
 |[tableCell](tablecell.md)|Method|[insertColumns(insertLocation: InsertLocation, columnCount: number, values: string[][])](tablecell.md#insertcolumnsinsertlocation-insertlocation-columncount-number-values-string)|void|Adds columns to the left or right of the cell, using the cell's column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.|WordApi 1.3|
 |[tableCell](tablecell.md)|Method|[insertRows(insertLocation: InsertLocation, rowCount: number, values: string[][])](tablecell.md#insertrowsinsertlocation-insertlocation-rowcount-number-values-string)|void|Inserts rows above or below the cell, using the cell's row as a template. The string values, if specified, are set in the newly inserted rows.|WordApi 1.3|
+|[tableCell](tablecell.md)|Method|[split(rowCount: number, columnCount: number)](tablecell.md#splitrowcount-number-columncount-number)|void|Adds columns to the left or right of the cell, using the existing column as a template. The string values, if specified, are set in the newly inserted rows.|WordApi WordApiDesktop, 1.3|
 |[tableCellCollection](tablecellcollection.md)|Property|items|[TableCell[]](tablecell.md)|A collection of tableCell objects. Read-only.|WordApi 1.3|
 |[tableCellCollection](tablecellcollection.md)|Relationship|first|[TableCell](tablecell.md)|Gets the first table cell in this collection. Read-only.|WordApi 1.3|
 |[tableCellCollection](tablecellcollection.md)|Method|[getItem(index: number)](tablecellcollection.md#getitemindex-number)|[TableCell](tablecell.md)|Gets a table cell object by its index in the collection.|WordApi 1.3|
@@ -158,8 +165,11 @@
 |[tableRow](tablerow.md)|Method|[delete()](tablerow.md#delete)|void|Deletes the entire row.|WordApi 1.3|
 |[tableRow](tablerow.md)|Method|[getBorderStyle(borderLocation: BorderLocation)](tablerow.md#getborderstyleborderlocation-borderlocation)|[TableBorderStyle](tableborderstyle.md)|Gets the border style of the cells in the row.|WordApi 1.3|
 |[tableRow](tablerow.md)|Method|[insertRows(insertLocation: InsertLocation, rowCount: number, values: string[][])](tablerow.md#insertrowsinsertlocation-insertlocation-rowcount-number-values-string)|void|Inserts rows using this row as a template. If values are specified, inserts the values into the new rows.|WordApi 1.3|
+|[tableRow](tablerow.md)|Method|[merge()](tablerow.md#merge)|[TableCell](tablecell.md)|Merges the row into one cell.|WordApi WordApiDesktop, 1.3|
 |[tableRow](tablerow.md)|Method|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](tablerow.md#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the row. The search results are a collection of range objects.|WordApi 1.3|
 |[tableRow](tablerow.md)|Method|[select(selectionMode: SelectionMode)](tablerow.md#selectselectionmode-selectionmode)|void|Selects the row and navigates the Word UI to it.|WordApi 1.3|
 |[tableRowCollection](tablerowcollection.md)|Property|items|[TableRow[]](tablerow.md)|A collection of tableRow objects. Read-only.|WordApi 1.3|
 |[tableRowCollection](tablerowcollection.md)|Relationship|first|[TableRow](tablerow.md)|Gets the first row in this collection. Read-only.|WordApi 1.3|
 |[tableRowCollection](tablerowcollection.md)|Method|[getItem(index: number)](tablerowcollection.md#getitemindex-number)|[TableRow](tablerow.md)|Gets a table row object by its index in the collection.|WordApi 1.3|
+
+*** OK. Processed 26 input files. Check C:/Users/suramam/git/logs folder for results. ***

@@ -18,14 +18,14 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getFooter(type: string)](#getfootertype-string)|[Body](body.md)|Gets one of the section's footers.|WordApi1.1|
-|[getHeader(type: string)](#getheadertype-string)|[Body](body.md)|Gets one of the section's headers.|WordApi1.1|
+|[getFooter(type: HeaderFooterType)](#getfootertype-headerfootertype)|[Body](body.md)|Gets one of the section's footers.|WordApi1.1|
+|[getHeader(type: HeaderFooterType)](#getheadertype-headerfootertype)|[Body](body.md)|Gets one of the section's headers.|WordApi1.1|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|WordApi1.1|
 
 ## Method Details
 
 
-### getFooter(type: string)
+### getFooter(type: HeaderFooterType)
 Gets one of the section's footers.
 
 #### Syntax
@@ -36,53 +36,12 @@ sectionObject.getFooter(type);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|type|string|Required. The type of footer to return. This value can be: 'primary', 'firstPage' or 'evenPages'. Possible values are: `Primary` Returns the header or footer on all pages of a section, with the first page or odd pages excluded if they are different.,`FirstPage` Returns the header or footer on the first page of a section.,`EvenPages` Returns all headers or footers on even-numbered pages of a section.|
+|type|HeaderFooterType|Required. The type of footer to return. This value can be: 'primary', 'firstPage' or 'evenPages'.|
 
 #### Returns
 [Body](body.md)
 
-#### Examples
-
-```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-	
-	// Create a proxy sectionsCollection object.
-	var mySections = context.document.sections;
-	
-	// Queue a commmand to load the sections.
-	context.load(mySections, 'body/style');
-	
-	// Synchronize the document state by executing the queued commands, 
-	// and return a promise to indicate task completion.
-	return context.sync().then(function () {
-		
-		// Create a proxy object the primary footer of the first section. 
-		// Note that the footer is a body object.
-		var myFooter = mySections.items[0].getFooter("primary");
-		
-		// Queue a command to insert text at the end of the footer.
-		myFooter.insertText("This is a footer.", Word.InsertLocation.end);
-		
-		// Queue a command to wrap the header in a content control.
-		myFooter.insertContentControl();
-							  
-		// Synchronize the document state by executing the queued commands, 
-		// and return a promise to indicate task completion.
-		return context.sync().then(function () {
-			console.log("Added a footer to the first section.");
-		});                    
-	});  
-})
-.catch(function (error) {
-	console.log('Error: ' + JSON.stringify(error));
-	if (error instanceof OfficeExtension.Error) {
-		console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-	}
-});
-```
-
-### getHeader(type: string)
+### getHeader(type: HeaderFooterType)
 Gets one of the section's headers.
 
 #### Syntax
@@ -93,51 +52,10 @@ sectionObject.getHeader(type);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|type|string|Required. The type of header to return. This value can be: 'primary', 'firstPage' or 'evenPages'. Possible values are: `Primary` Returns the header or footer on all pages of a section, with the first page or odd pages excluded if they are different.,`FirstPage` Returns the header or footer on the first page of a section.,`EvenPages` Returns all headers or footers on even-numbered pages of a section.|
+|type|HeaderFooterType|Required. The type of header to return. This value can be: 'primary', 'firstPage' or 'evenPages'.|
 
 #### Returns
 [Body](body.md)
-
-#### Examples
-
-```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-    
-    // Create a proxy sectionsCollection object.
-    var mySections = context.document.sections;
-    
-    // Queue a commmand to load the sections.
-    context.load(mySections, 'body/style');
-    
-    // Synchronize the document state by executing the queued commands, 
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-        
-        // Create a proxy object the primary header of the first section. 
-        // Note that the header is a body object.
-        var myHeader = mySections.items[0].getHeader("primary");
-        
-        // Queue a command to insert text at the end of the header.
-        myHeader.insertText("This is a header.", Word.InsertLocation.end);
-        
-        // Queue a command to wrap the header in a content control.
-        myHeader.insertContentControl();
-                              
-        // Synchronize the document state by executing the queued commands, 
-        // and return a promise to indicate task completion.
-        return context.sync().then(function () {
-            console.log("Added a header to the first section.");
-        });                    
-    });  
-})
-.catch(function (error) {
-    console.log('Error: ' + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.

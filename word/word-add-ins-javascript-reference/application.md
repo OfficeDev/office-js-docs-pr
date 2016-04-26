@@ -16,7 +16,7 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[createDocument(base64File: string)](#createdocumentbase64file-string)|[Document](document.md)|Creates a new document by using a base64 encoded .docx file.|WordApi1.1|
+|[createDocument(base64File: string)](#createdocumentbase64file-string)|[Document](document.md)|Creates a new document by using a base64 encoded .docx file.|WordApiWordApiDesktop, 1.3|
 
 ## Method Details
 
@@ -36,3 +36,19 @@ applicationObject.createDocument(base64File);
 
 #### Returns
 [Document](document.md)
+### Property access examples
+```js
+Excel.run(function (ctx) { 
+	var application = ctx.workbook.application;
+	application.load('calculationMode');
+	return ctx.sync().then(function() {
+		console.log(application.calculationMode);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+

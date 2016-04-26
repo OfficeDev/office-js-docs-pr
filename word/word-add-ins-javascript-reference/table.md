@@ -20,9 +20,6 @@ Represents a table in a Word document.
 |styleLastColumn|bool|Gets and sets whether the table has a last column with a special style.|WordApi1.3||
 |styleTotalRow|bool|Gets and sets whether the table has a total (last) row with a special style.|WordApi1.3||
 |values|string|Gets and sets the text values in the table, as a 2D Javascript array.|WordApi1.3||
-|verticalAlignment|string|Gets and sets the vertical alignment of every cell in the table. Possible values are: Mixed, Top, Center, Bottom.|WordApi1.3||
-
-_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
@@ -41,14 +38,15 @@ _See property access [examples.](#property-access-examples)_
 |parentTableCell|[TableCell](tablecell.md)|Gets the table cell that contains this table. Returns null if it is not contained in a table cell. Read-only.|WordApi1.3||
 |rows|[TableRowCollection](tablerowcollection.md)|Gets all of the table rows. Read-only.|WordApi1.3||
 |tables|[TableCollection](tablecollection.md)|Gets the child tables nested one level deeper. Read-only.|WordApi1.3||
+|verticalAlignment|[VerticalAlignment](verticalalignment.md)|Gets and sets the vertical alignment of every cell in the table.|WordApi1.3||
 |width|[float](float.md)|Gets and sets the width of the table in points.|WordApi1.3||
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[addColumns(insertLocation: string, columnCount: number, values: string[][])](#addcolumnsinsertlocation-string-columncount-number-values-string)|void|Adds columns to the start or end of the table, using the first or last existing column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.|WordApi1.3|
-|[addRows(insertLocation: string, rowCount: number, values: string[][])](#addrowsinsertlocation-string-rowcount-number-values-string)|void|Adds rows to the start or end of the table, using the first or last existing row as a template. The string values, if specified, are set in the newly inserted rows.|WordApi1.3|
+|[addColumns(insertLocation: InsertLocation, columnCount: number, values: string[][])](#addcolumnsinsertlocation-insertlocation-columncount-number-values-string)|void|Adds columns to the start or end of the table, using the first or last existing column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.|WordApi1.3|
+|[addRows(insertLocation: InsertLocation, rowCount: number, values: string[][])](#addrowsinsertlocation-insertlocation-rowcount-number-values-string)|void|Adds rows to the start or end of the table, using the first or last existing row as a template. The string values, if specified, are set in the newly inserted rows.|WordApi1.3|
 |[autoFitContents()](#autofitcontents)|void|Autofits the table columns to the width of their contents.|WordApi1.3|
 |[autoFitWindow()](#autofitwindow)|void|Autofits the table columns to the width of the window.|WordApi1.3|
 |[clear()](#clear)|void|Clears the contents of the table.|WordApi1.3|
@@ -57,21 +55,21 @@ _See property access [examples.](#property-access-examples)_
 |[deleteRows(rowIndex: number, rowCount: number)](#deleterowsrowindex-number-rowcount-number)|void|Deletes specific rows.|WordApi1.3|
 |[distributeColumns()](#distributecolumns)|void|Distributes the column widths evenly.|WordApi1.3|
 |[distributeRows()](#distributerows)|void|Distributes the row heights evenly.|WordApi1.3|
-|[getBorderStyle(borderLocation: string)](#getborderstyleborderlocation-string)|[TableBorderStyle](tableborderstyle.md)|Gets the border style for the specified border.|WordApi1.3|
+|[getBorderStyle(borderLocation: BorderLocation)](#getborderstyleborderlocation-borderlocation)|[TableBorderStyle](tableborderstyle.md)|Gets the border style for the specified border.|WordApi1.3|
 |[getCell(rowIndex: number, cellIndex: number)](#getcellrowindex-number-cellindex-number)|[TableCell](tablecell.md)|Gets the table cell at a specified row and column.|WordApi1.3|
-|[getRange(rangeLocation: string)](#getrangerangelocation-string)|[Range](range.md)|Gets the range that contains this table, or the range at the start or end of the table.|WordApi1.3|
+|[getRange(rangeLocation: RangeLocation)](#getrangerangelocation-rangelocation)|[Range](range.md)|Gets the range that contains this table, or the range at the start or end of the table.|WordApi1.3|
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Inserts a content control on the table.|WordApi1.3|
-|[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|WordApi1.3|
-|[insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])](#inserttablerowcount-number-columncount-number-insertlocation-string-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.|WordApi1.3|
+|[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|WordApi1.3|
+|[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.|WordApi1.3|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|WordApi1.1|
-|[mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)](#mergecellstoprow-number-firstcell-number-bottomrow-number-lastcell-number)|[TableCell](tablecell.md)|Merges the cells bounded inclusively by a first and last cell.|WordApi1.1|
+|[mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)](#mergecellstoprow-number-firstcell-number-bottomrow-number-lastcell-number)|[TableCell](tablecell.md)|Merges the cells bounded inclusively by a first and last cell.|WordApiWordApiDesktop, 1.3|
 |[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the table object. The search results are a collection of range objects.|WordApi1.3|
-|[select(selectionMode: string)](#selectselectionmode-string)|void|Selects the table, or the position at the start or end of the table, and navigates the Word UI to it.|WordApi1.3|
+|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects the table, or the position at the start or end of the table, and navigates the Word UI to it.|WordApi1.3|
 
 ## Method Details
 
 
-### addColumns(insertLocation: string, columnCount: number, values: string[][])
+### addColumns(insertLocation: InsertLocation, columnCount: number, values: string[][])
 Adds columns to the start or end of the table, using the first or last existing column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.
 
 #### Syntax
@@ -82,14 +80,21 @@ tableObject.addColumns(insertLocation, columnCount, values);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|insertLocation|string|Required. It can be 'Start' or 'End', corresponding to the appropriate side of the table. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
+|insertLocation|InsertLocation|Required. It can be 'Start' or 'End', corresponding to the appropriate side of the table.|
 |columnCount|number|Required. Number of columns to add.|
 |values|string[][]|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
 
 #### Returns
 void
 
-### addRows(insertLocation: string, rowCount: number, values: string[][])
+#### Examples
+
+```js
+
+Sample example to be included in the add columns method. 
+
+```
+### addRows(insertLocation: InsertLocation, rowCount: number, values: string[][])
 Adds rows to the start or end of the table, using the first or last existing row as a template. The string values, if specified, are set in the newly inserted rows.
 
 #### Syntax
@@ -100,7 +105,7 @@ tableObject.addRows(insertLocation, rowCount, values);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|insertLocation|string|Required. It can be 'Start' or 'End'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
+|insertLocation|InsertLocation|Required. It can be 'Start' or 'End'.|
 |rowCount|number|Required. Number of rows to add.|
 |values|string[][]|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
 
@@ -225,7 +230,7 @@ None
 #### Returns
 void
 
-### getBorderStyle(borderLocation: string)
+### getBorderStyle(borderLocation: BorderLocation)
 Gets the border style for the specified border.
 
 #### Syntax
@@ -236,7 +241,7 @@ tableObject.getBorderStyle(borderLocation);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|borderLocation|string|Required. The border location.  Possible values are: Top, Left, Bottom, Right, InsideHorizontal, InsideVertical, Inside, Outside, All|
+|borderLocation|BorderLocation|Required. The border location.|
 
 #### Returns
 [TableBorderStyle](tableborderstyle.md)
@@ -258,7 +263,7 @@ tableObject.getCell(rowIndex, cellIndex);
 #### Returns
 [TableCell](tablecell.md)
 
-### getRange(rangeLocation: string)
+### getRange(rangeLocation: RangeLocation)
 Gets the range that contains this table, or the range at the start or end of the table.
 
 #### Syntax
@@ -269,7 +274,7 @@ tableObject.getRange(rangeLocation);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|rangeLocation|string|Optional. The range location can be 'Whole', 'Start' or 'End'.  Possible values are: Whole, Start, End|
+|rangeLocation|RangeLocation|Optional. The range location can be 'Whole', 'Start' or 'End'.|
 
 #### Returns
 [Range](range.md)
@@ -288,7 +293,7 @@ None
 #### Returns
 [ContentControl](contentcontrol.md)
 
-### insertParagraph(paragraphText: string, insertLocation: string)
+### insertParagraph(paragraphText: string, insertLocation: InsertLocation)
 Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.
 
 #### Syntax
@@ -300,12 +305,12 @@ tableObject.insertParagraph(paragraphText, insertLocation);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
 |paragraphText|string|Required. The paragraph text to be inserted.|
-|insertLocation|string|Required. The value can be 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
+|insertLocation|InsertLocation|Required. The value can be 'Before' or 'After'.|
 
 #### Returns
 [Paragraph](paragraph.md)
 
-### insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])
+### insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])
 Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.
 
 #### Syntax
@@ -318,7 +323,7 @@ tableObject.insertTable(rowCount, columnCount, insertLocation, values);
 |:---------------|:--------|:----------|:---|
 |rowCount|number|Required. The number of rows in the table.|
 |columnCount|number|Required. The number of columns in the table.|
-|insertLocation|string|Required. The value can be 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
+|insertLocation|InsertLocation|Required. The value can be 'Before' or 'After'.|
 |values|string[][]|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
 
 #### Returns
@@ -376,7 +381,7 @@ tableObject.search(searchText, searchOptions);
 #### Returns
 [SearchResultCollection](searchresultcollection.md)
 
-### select(selectionMode: string)
+### select(selectionMode: SelectionMode)
 Selects the table, or the position at the start or end of the table, and navigates the Word UI to it.
 
 #### Syntax
@@ -387,7 +392,7 @@ tableObject.select(selectionMode);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|selectionMode|string|Optional. Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.  Possible values are: Select, Start, End|
+|selectionMode|SelectionMode|Optional. Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.|
 
 #### Returns
 void
