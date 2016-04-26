@@ -8,29 +8,29 @@ Represents a font.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|bold|bool|Gets or sets a value that indicates whether the font is bold. True if the font is formatted as bold, otherwise, false.|WordApi1.1||
-|color|string|Gets or sets the color for the specified font. You can provide the value in the '#RRGGBB' format or the color name.|WordApi1.1||
-|doubleStrikeThrough|bool|Gets or sets a value that indicates whether the font has a double strike through. True if the font is formatted as double strikethrough text, otherwise, false.|WordApiWordApiDesktop, 1.3||
-|highlightColor|string|Gets or sets the highlight color for the specified font. You can provide the value as either in the '#RRGGBB' format or the color name.|WordApi1.1||
-|italic|bool|Gets or sets a value that indicates whether the font is italicized. True if the font is italicized, otherwise, false.|WordApi1.1||
-|name|string|Gets or sets a value that represents the name of the font.|WordApi1.1||
-|strikeThrough|bool|Gets or sets a value that indicates whether the font has a strike through. True if the font is formatted as strikethrough text, otherwise, false.|WordApi1.1||
-|subscript|bool|Gets or sets a value that indicates whether the font is a subscript. True if the font is formatted as subscript, otherwise, false.|WordApi1.1||
-|superscript|bool|Gets or sets a value that indicates whether the font is a superscript. True if the font is formatted as superscript, otherwise, false.|WordApi1.1||
+|bold|bool|Gets or sets a value that indicates whether the font is bold. True if the font is formatted as bold, otherwise, false.|1.1||
+|color|string|Gets or sets the color for the specified font. You can provide the value in the '#RRGGBB' format or the color name.|1.1||
+|doubleStrikeThrough|bool|Gets or sets a value that indicates whether the font has a double strike through. True if the font is formatted as double strikethrough text, otherwise, false.|WordApiDesktop, 1.3||
+|highlightColor|string|Gets or sets the highlight color for the specified font. You can provide the value as either in the '#RRGGBB' format or the color name.|1.1||
+|italic|bool|Gets or sets a value that indicates whether the font is italicized. True if the font is italicized, otherwise, false.|1.1||
+|name|string|Gets or sets a value that represents the name of the font.|1.1||
+|strikeThrough|bool|Gets or sets a value that indicates whether the font has a strike through. True if the font is formatted as strikethrough text, otherwise, false.|1.1||
+|subscript|bool|Gets or sets a value that indicates whether the font is a subscript. True if the font is formatted as subscript, otherwise, false.|1.1||
+|superscript|bool|Gets or sets a value that indicates whether the font is a superscript. True if the font is formatted as superscript, otherwise, false.|1.1||
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|size|[float](float.md)|Gets or sets a value that represents the font size in points.|WordApi1.1||
-|underline|[UnderlineType](underlinetype.md)|Gets or sets a value that indicates the font's underline type. 'None' if the font is not underlined.|WordApi1.1||
+|size|[float](float.md)|Gets or sets a value that represents the font size in points.|1.1||
+|underline|[UnderlineType](underlinetype.md)|Gets or sets a value that indicates the font's underline type. 'None' if the font is not underlined.|1.1||
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|WordApi1.1|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
 
 ## Method Details
 

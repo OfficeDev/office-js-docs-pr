@@ -8,40 +8,40 @@ Represents a row in a Word document.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|cellCount|int|Gets the number of cells in the row. Read-only.|WordApi1.3||
-|isHeader|bool|Gets a value that indicates whether the row is a header row. Read-only. To set the number of header rows, use HeaderRowCount on the Table object. Read-only.|WordApi1.3||
-|rowIndex|int|Gets the index of the row in its parent table. Read-only.|WordApi1.3||
-|shadingColor|string|Gets and sets the shading color.|WordApi1.3||
-|values|string|Gets and sets the text values in the row, as a 1D Javascript array.|WordApi1.3||
+|cellCount|int|Gets the number of cells in the row. Read-only.|1.3||
+|isHeader|bool|Gets a value that indicates whether the row is a header row. Read-only. To set the number of header rows, use HeaderRowCount on the Table object. Read-only.|1.3||
+|rowIndex|int|Gets the index of the row in its parent table. Read-only.|1.3||
+|shadingColor|string|Gets and sets the shading color.|1.3||
+|values|string|Gets and sets the text values in the row, as a 1D Javascript array.|1.3||
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|cellPaddingBottom|[float](float.md)|Gets and sets the default bottom cell padding for the row in points.|WordApi1.3||
-|cellPaddingLeft|[float](float.md)|Gets and sets the default left cell padding for the row in points.|WordApi1.3||
-|cellPaddingRight|[float](float.md)|Gets and sets the default right cell padding for the row in points.|WordApi1.3||
-|cellPaddingTop|[float](float.md)|Gets and sets the default top cell padding for the row in points.|WordApi1.3||
-|cells|[TableCellCollection](tablecellcollection.md)|Gets cells. Read-only.|WordApi1.3||
-|font|[Font](font.md)|Gets the font. Use this to get and set font name, size, color, and other properties. Read-only.|WordApi1.3||
-|next|[TableRow](tablerow.md)|Gets the next row. Read-only.|WordApi1.3||
-|parentTable|[Table](table.md)|Gets parent table. Read-only.|WordApi1.3||
-|preferredHeight|[float](float.md)|Gets and sets the preferred height of the row in points.|WordApi1.3||
-|verticalAlignment|[VerticalAlignment](verticalalignment.md)|Gets and sets the vertical alignment of the cells in the row.|WordApi1.3||
+|cellPaddingBottom|[float](float.md)|Gets and sets the default bottom cell padding for the row in points.|1.3||
+|cellPaddingLeft|[float](float.md)|Gets and sets the default left cell padding for the row in points.|1.3||
+|cellPaddingRight|[float](float.md)|Gets and sets the default right cell padding for the row in points.|1.3||
+|cellPaddingTop|[float](float.md)|Gets and sets the default top cell padding for the row in points.|1.3||
+|cells|[TableCellCollection](tablecellcollection.md)|Gets cells. Read-only.|1.3||
+|font|[Font](font.md)|Gets the font. Use this to get and set font name, size, color, and other properties. Read-only.|1.3||
+|next|[TableRow](tablerow.md)|Gets the next row. Read-only.|1.3||
+|parentTable|[Table](table.md)|Gets parent table. Read-only.|1.3||
+|preferredHeight|[float](float.md)|Gets and sets the preferred height of the row in points.|1.3||
+|verticalAlignment|[VerticalAlignment](verticalalignment.md)|Gets and sets the vertical alignment of the cells in the row.|1.3||
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[clear()](#clear)|void|Clears the contents of the row.|WordApi1.3|
-|[delete()](#delete)|void|Deletes the entire row.|WordApi1.3|
-|[getBorderStyle(borderLocation: BorderLocation)](#getborderstyleborderlocation-borderlocation)|[TableBorderStyle](tableborderstyle.md)|Gets the border style of the cells in the row.|WordApi1.3|
-|[insertRows(insertLocation: InsertLocation, rowCount: number, values: string[][])](#insertrowsinsertlocation-insertlocation-rowcount-number-values-string)|void|Inserts rows using this row as a template. If values are specified, inserts the values into the new rows.|WordApi1.3|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|WordApi1.1|
-|[merge()](#merge)|[TableCell](tablecell.md)|Merges the row into one cell.|WordApiWordApiDesktop, 1.3|
-|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the row. The search results are a collection of range objects.|WordApi1.3|
-|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects the row and navigates the Word UI to it.|WordApi1.3|
+|[clear()](#clear)|void|Clears the contents of the row.|1.3|
+|[delete()](#delete)|void|Deletes the entire row.|1.3|
+|[getBorderStyle(borderLocation: BorderLocation)](#getborderstyleborderlocation-borderlocation)|[TableBorderStyle](tableborderstyle.md)|Gets the border style of the cells in the row.|1.3|
+|[insertRows(insertLocation: InsertLocation, rowCount: number, values: string[][])](#insertrowsinsertlocation-insertlocation-rowcount-number-values-string)|void|Inserts rows using this row as a template. If values are specified, inserts the values into the new rows.|1.3|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[merge()](#merge)|[TableCell](tablecell.md)|Merges the row into one cell.|WordApiDesktop, 1.3|
+|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the row. The search results are a collection of range objects.|1.3|
+|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects the row and navigates the Word UI to it.|1.3|
 
 ## Method Details
 
