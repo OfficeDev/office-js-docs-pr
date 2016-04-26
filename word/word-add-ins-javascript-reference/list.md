@@ -21,13 +21,13 @@ _See property access [examples.](#property-access-examples)_
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.|WordApi1.3|
+|[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.|WordApi1.3|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|WordApi1.1|
 
 ## Method Details
 
 
-### insertParagraph(paragraphText: string, insertLocation: string)
+### insertParagraph(paragraphText: string, insertLocation: InsertLocation)
 Inserts a paragraph at the specified location. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.
 
 #### Syntax
@@ -39,7 +39,7 @@ listObject.insertParagraph(paragraphText, insertLocation);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
 |paragraphText|string|Required. The paragraph text to be inserted.|
-|insertLocation|string|Required. The value can be 'Start', 'End', 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
+|insertLocation|InsertLocation|Required. The value can be 'Start', 'End', 'Before' or 'After'.|
 
 #### Returns
 [Paragraph](paragraph.md)

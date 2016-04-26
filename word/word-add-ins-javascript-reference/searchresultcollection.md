@@ -10,6 +10,8 @@ Contains a collection of [range](range.md) objects as a result of a search opera
 |:---------------|:--------|:----------|:----|
 |items|[SearchResult[]](searchresult.md)|A collection of searchResult objects. Read-only.|WordApi1.1||
 
+_See property access [examples.](#property-access-examples)_
+
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|

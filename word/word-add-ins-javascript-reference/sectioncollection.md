@@ -10,6 +10,8 @@ Contains the collection of the document's [section](section.md) objects.
 |:---------------|:--------|:----------|:----|
 |items|[Section[]](section.md)|A collection of section objects. Read-only.|WordApi1.1||
 
+_See property access [examples.](#property-access-examples)_
+
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|

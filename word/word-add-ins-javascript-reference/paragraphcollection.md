@@ -10,6 +10,8 @@ Contains a collection of [paragraph](paragraph.md) objects.
 |:---------------|:--------|:----------|:----|
 |items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.|WordApi1.1||
 
+_See property access [examples.](#property-access-examples)_
+
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
