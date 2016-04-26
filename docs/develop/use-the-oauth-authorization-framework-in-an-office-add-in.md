@@ -118,5 +118,5 @@ The following code segment, taken from connect.js, updates the add-in's UI with 
 <a name="bk_addresources"> </a>
 
 
-- [Office-Add-in-NodeJS-ServerAuth](https://github.com/OfficeDev/Office-Add-in-NodeJS-ServerAuth)
+- [Office Add-in Server Authentication Sample for Node.js](https://github.com/OfficeDev/Office-Add-in-Nodejs-ServerAuth/blob/master/README.md)
     
