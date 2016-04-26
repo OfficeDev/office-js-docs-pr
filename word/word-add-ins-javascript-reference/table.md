@@ -8,63 +8,63 @@ Represents a table in a Word document.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|headerRowCount|int|Gets and sets the number of header rows.|WordApi1.3||
-|isUniform|bool|Indicates whether all of the table rows are uniform. Read-only.|WordApi1.3||
-|nestingLevel|int|Gets the nesting level of the table. Top-level tables have level 1. Read-only.|WordApi1.3||
-|rowCount|int|Gets the number of rows in the table. Read-only.|WordApi1.3||
-|shadingColor|string|Gets and sets the shading color.|WordApi1.3||
-|style|string|Gets and sets the name of the table style.|WordApi1.3||
-|styleBandedColumns|bool|Gets and sets whether the table has banded columns.|WordApi1.3||
-|styleBandedRows|bool|Gets and sets whether the table has banded rows.|WordApi1.3||
-|styleFirstColumn|bool|Gets and sets whether the table has a first column with a special style.|WordApi1.3||
-|styleLastColumn|bool|Gets and sets whether the table has a last column with a special style.|WordApi1.3||
-|styleTotalRow|bool|Gets and sets whether the table has a total (last) row with a special style.|WordApi1.3||
-|values|string|Gets and sets the text values in the table, as a 2D Javascript array.|WordApi1.3||
+|headerRowCount|int|Gets and sets the number of header rows.|1.3||
+|isUniform|bool|Indicates whether all of the table rows are uniform. Read-only.|1.3||
+|nestingLevel|int|Gets the nesting level of the table. Top-level tables have level 1. Read-only.|1.3||
+|rowCount|int|Gets the number of rows in the table. Read-only.|1.3||
+|shadingColor|string|Gets and sets the shading color.|1.3||
+|style|string|Gets and sets the name of the table style.|1.3||
+|styleBandedColumns|bool|Gets and sets whether the table has banded columns.|1.3||
+|styleBandedRows|bool|Gets and sets whether the table has banded rows.|1.3||
+|styleFirstColumn|bool|Gets and sets whether the table has a first column with a special style.|1.3||
+|styleLastColumn|bool|Gets and sets whether the table has a last column with a special style.|1.3||
+|styleTotalRow|bool|Gets and sets whether the table has a total (last) row with a special style.|1.3||
+|values|string|Gets and sets the text values in the table, as a 2D Javascript array.|1.3||
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|cellPaddingBottom|[float](float.md)|Gets and sets the default bottom cell padding in points.|WordApi1.3||
-|cellPaddingLeft|[float](float.md)|Gets and sets the default left cell padding in points.|WordApi1.3||
-|cellPaddingRight|[float](float.md)|Gets and sets the default right cell padding in points.|WordApi1.3||
-|cellPaddingTop|[float](float.md)|Gets and sets the default top cell padding in points.|WordApi1.3||
-|font|[Font](font.md)|Gets the font. Use this to get and set font name, size, color, and other properties. Read-only.|WordApi1.3||
-|height|[float](float.md)|Gets the height of the table in points. Read-only.|WordApi1.3||
-|next|[Table](table.md)|Gets the next table. Read-only.|WordApi1.3||
-|paragraphAfter|[Paragraph](paragraph.md)|Gets the paragraph after the table. Read-only.|WordApi1.3||
-|paragraphBefore|[Paragraph](paragraph.md)|Gets the paragraph before the table. Read-only.|WordApi1.3||
-|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the table. Read-only.|WordApi1.3||
-|parentTable|[Table](table.md)|Gets the table that contains this table. Returns null if it is not contained in a table. Read-only.|WordApi1.3||
-|parentTableCell|[TableCell](tablecell.md)|Gets the table cell that contains this table. Returns null if it is not contained in a table cell. Read-only.|WordApi1.3||
-|rows|[TableRowCollection](tablerowcollection.md)|Gets all of the table rows. Read-only.|WordApi1.3||
-|tables|[TableCollection](tablecollection.md)|Gets the child tables nested one level deeper. Read-only.|WordApi1.3||
-|verticalAlignment|[VerticalAlignment](verticalalignment.md)|Gets and sets the vertical alignment of every cell in the table.|WordApi1.3||
-|width|[float](float.md)|Gets and sets the width of the table in points.|WordApi1.3||
+|cellPaddingBottom|[float](float.md)|Gets and sets the default bottom cell padding in points.|1.3||
+|cellPaddingLeft|[float](float.md)|Gets and sets the default left cell padding in points.|1.3||
+|cellPaddingRight|[float](float.md)|Gets and sets the default right cell padding in points.|1.3||
+|cellPaddingTop|[float](float.md)|Gets and sets the default top cell padding in points.|1.3||
+|font|[Font](font.md)|Gets the font. Use this to get and set font name, size, color, and other properties. Read-only.|1.3||
+|height|[float](float.md)|Gets the height of the table in points. Read-only.|1.3||
+|next|[Table](table.md)|Gets the next table. Read-only.|1.3||
+|paragraphAfter|[Paragraph](paragraph.md)|Gets the paragraph after the table. Read-only.|1.3||
+|paragraphBefore|[Paragraph](paragraph.md)|Gets the paragraph before the table. Read-only.|1.3||
+|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the table. Read-only.|1.3||
+|parentTable|[Table](table.md)|Gets the table that contains this table. Returns null if it is not contained in a table. Read-only.|1.3||
+|parentTableCell|[TableCell](tablecell.md)|Gets the table cell that contains this table. Returns null if it is not contained in a table cell. Read-only.|1.3||
+|rows|[TableRowCollection](tablerowcollection.md)|Gets all of the table rows. Read-only.|1.3||
+|tables|[TableCollection](tablecollection.md)|Gets the child tables nested one level deeper. Read-only.|1.3||
+|verticalAlignment|[VerticalAlignment](verticalalignment.md)|Gets and sets the vertical alignment of every cell in the table.|1.3||
+|width|[float](float.md)|Gets and sets the width of the table in points.|1.3||
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[addColumns(insertLocation: InsertLocation, columnCount: number, values: string[][])](#addcolumnsinsertlocation-insertlocation-columncount-number-values-string)|void|Adds columns to the start or end of the table, using the first or last existing column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.|WordApi1.3|
-|[addRows(insertLocation: InsertLocation, rowCount: number, values: string[][])](#addrowsinsertlocation-insertlocation-rowcount-number-values-string)|void|Adds rows to the start or end of the table, using the first or last existing row as a template. The string values, if specified, are set in the newly inserted rows.|WordApi1.3|
-|[autoFitContents()](#autofitcontents)|void|Autofits the table columns to the width of their contents.|WordApi1.3|
-|[autoFitWindow()](#autofitwindow)|void|Autofits the table columns to the width of the window.|WordApi1.3|
-|[clear()](#clear)|void|Clears the contents of the table.|WordApi1.3|
-|[delete()](#delete)|void|Deletes the entire table.|WordApi1.3|
-|[deleteColumns(columnIndex: number, columnCount: number)](#deletecolumnscolumnindex-number-columncount-number)|void|Deletes specific columns. This is applicable to uniform tables.|WordApi1.3|
-|[deleteRows(rowIndex: number, rowCount: number)](#deleterowsrowindex-number-rowcount-number)|void|Deletes specific rows.|WordApi1.3|
-|[distributeColumns()](#distributecolumns)|void|Distributes the column widths evenly.|WordApi1.3|
-|[distributeRows()](#distributerows)|void|Distributes the row heights evenly.|WordApi1.3|
-|[getBorderStyle(borderLocation: BorderLocation)](#getborderstyleborderlocation-borderlocation)|[TableBorderStyle](tableborderstyle.md)|Gets the border style for the specified border.|WordApi1.3|
-|[getCell(rowIndex: number, cellIndex: number)](#getcellrowindex-number-cellindex-number)|[TableCell](tablecell.md)|Gets the table cell at a specified row and column.|WordApi1.3|
-|[getRange(rangeLocation: RangeLocation)](#getrangerangelocation-rangelocation)|[Range](range.md)|Gets the range that contains this table, or the range at the start or end of the table.|WordApi1.3|
-|[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Inserts a content control on the table.|WordApi1.3|
-|[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|WordApi1.3|
-|[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.|WordApi1.3|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|WordApi1.1|
-|[mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)](#mergecellstoprow-number-firstcell-number-bottomrow-number-lastcell-number)|[TableCell](tablecell.md)|Merges the cells bounded inclusively by a first and last cell.|WordApiWordApiDesktop, 1.3|
-|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the table object. The search results are a collection of range objects.|WordApi1.3|
-|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects the table, or the position at the start or end of the table, and navigates the Word UI to it.|WordApi1.3|
+|[addColumns(insertLocation: InsertLocation, columnCount: number, values: string[][])](#addcolumnsinsertlocation-insertlocation-columncount-number-values-string)|void|Adds columns to the start or end of the table, using the first or last existing column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.|1.3|
+|[addRows(insertLocation: InsertLocation, rowCount: number, values: string[][])](#addrowsinsertlocation-insertlocation-rowcount-number-values-string)|void|Adds rows to the start or end of the table, using the first or last existing row as a template. The string values, if specified, are set in the newly inserted rows.|1.3|
+|[autoFitContents()](#autofitcontents)|void|Autofits the table columns to the width of their contents.|1.3|
+|[autoFitWindow()](#autofitwindow)|void|Autofits the table columns to the width of the window.|1.3|
+|[clear()](#clear)|void|Clears the contents of the table.|1.3|
+|[delete()](#delete)|void|Deletes the entire table.|1.3|
+|[deleteColumns(columnIndex: number, columnCount: number)](#deletecolumnscolumnindex-number-columncount-number)|void|Deletes specific columns. This is applicable to uniform tables.|1.3|
+|[deleteRows(rowIndex: number, rowCount: number)](#deleterowsrowindex-number-rowcount-number)|void|Deletes specific rows.|1.3|
+|[distributeColumns()](#distributecolumns)|void|Distributes the column widths evenly.|1.3|
+|[distributeRows()](#distributerows)|void|Distributes the row heights evenly.|1.3|
+|[getBorderStyle(borderLocation: BorderLocation)](#getborderstyleborderlocation-borderlocation)|[TableBorderStyle](tableborderstyle.md)|Gets the border style for the specified border.|1.3|
+|[getCell(rowIndex: number, cellIndex: number)](#getcellrowindex-number-cellindex-number)|[TableCell](tablecell.md)|Gets the table cell at a specified row and column.|1.3|
+|[getRange(rangeLocation: RangeLocation)](#getrangerangelocation-rangelocation)|[Range](range.md)|Gets the range that contains this table, or the range at the start or end of the table.|1.3|
+|[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Inserts a content control on the table.|1.3|
+|[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|1.3|
+|[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.|1.3|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)](#mergecellstoprow-number-firstcell-number-bottomrow-number-lastcell-number)|[TableCell](tablecell.md)|Merges the cells bounded inclusively by a first and last cell.|WordApiDesktop, 1.3|
+|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the table object. The search results are a collection of range objects.|1.3|
+|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects the table, or the position at the start or end of the table, and navigates the Word UI to it.|1.3|
 
 ## Method Details
 

@@ -8,22 +8,22 @@ Contains a collection of [paragraph](paragraph.md) objects.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.|WordApi1.1||
+|items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.|1.1||
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|first|[Paragraph](paragraph.md)|Gets the first paragraph in this collection. Read-only.|WordApi1.3||
-|last|[Paragraph](paragraph.md)|Gets the last paragraph in this collection. Read-only.|WordApi1.3||
+|first|[Paragraph](paragraph.md)|Gets the first paragraph in this collection. Read-only.|1.3||
+|last|[Paragraph](paragraph.md)|Gets the last paragraph in this collection. Read-only.|1.3||
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getItem(index: number)](#getitemindex-number)|[Paragraph](paragraph.md)|Gets a paragraph object by its index in the collection.|WordApi1.1|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|WordApi1.1|
+|[getItem(index: number)](#getitemindex-number)|[Paragraph](paragraph.md)|Gets a paragraph object by its index in the collection.|1.1|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
 
 ## Method Details
 

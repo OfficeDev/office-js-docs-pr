@@ -8,44 +8,44 @@ Represents the body of a document or a section.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|style|string|Gets or sets the style used for the body. This is the name of the pre-installed or custom style.|WordApi1.1||
-|text|string|Gets the text of the body. Use the insertText method to insert text. Read-only.|WordApi1.1||
+|style|string|Gets or sets the style used for the body. This is the name of the pre-installed or custom style.|1.1||
+|text|string|Gets the text of the body. Use the insertText method to insert text. Read-only.|1.1||
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of rich text content control objects in the body. Read-only.|WordApi1.1||
-|font|[Font](font.md)|Gets the text format of the body. Use this to get and set font name, size, color and other properties. Read-only.|WordApi1.1||
-|inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Gets the collection of inlinePicture objects in the body. The collection does not include floating images. Read-only.|WordApi1.1||
-|lists|[ListCollection](listcollection.md)|Gets the collection of list objects in the body. Read-only.|WordApi1.3||
-|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the collection of paragraph objects in the body. Read-only.|WordApi1.1||
-|parentBody|[Body](body.md)|Gets the parent body of the body. For example, a table cell body's parent body could be a header. Read-only.|WordApi1.3||
-|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the body. Returns null if there isn't a parent content control. Read-only.|WordApi1.1||
-|tables|[TableCollection](tablecollection.md)|Gets the collection of table objects in the body. Read-only.|WordApi1.3||
-|type|[BodyType](bodytype.md)|Gets the type of the body. The type can be 'MainDoc', 'Section', 'Header', 'Footer', or 'TableCell'. Read-only.|WordApi1.3||
+|contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of rich text content control objects in the body. Read-only.|1.1||
+|font|[Font](font.md)|Gets the text format of the body. Use this to get and set font name, size, color and other properties. Read-only.|1.1||
+|inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Gets the collection of inlinePicture objects in the body. The collection does not include floating images. Read-only.|1.1||
+|lists|[ListCollection](listcollection.md)|Gets the collection of list objects in the body. Read-only.|1.3||
+|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the collection of paragraph objects in the body. Read-only.|1.1||
+|parentBody|[Body](body.md)|Gets the parent body of the body. For example, a table cell body's parent body could be a header. Read-only.|1.3||
+|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the body. Returns null if there isn't a parent content control. Read-only.|1.1||
+|tables|[TableCollection](tablecollection.md)|Gets the collection of table objects in the body. Read-only.|1.3||
+|type|[BodyType](bodytype.md)|Gets the type of the body. The type can be 'MainDoc', 'Section', 'Header', 'Footer', or 'TableCell'. Read-only.|1.3||
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[clear()](#clear)|void|Clears the contents of the body object. The user can perform the undo operation on the cleared content.|WordApi1.1|
-|[getHtml()](#gethtml)|string|Gets the HTML representation of the body object.|WordApi1.1|
-|[getOoxml()](#getooxml)|string|Gets the OOXML (Office Open XML) representation of the body object.|WordApi1.1|
-|[getRange(rangeLocation: RangeLocation)](#getrangerangelocation-rangelocation)|[Range](range.md)|Gets the whole body, or the starting or ending point of the body, as a range.|WordApi1.3|
-|[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location in the main document. The insertLocation value can be 'Start' or 'End'.|WordApi1.1|
-|[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the body object with a Rich Text content control.|WordApi1.1|
-|[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Inserts a document into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|WordApi1.1|
-|[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts HTML at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|WordApi1.1|
-|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|Inserts a picture into the body at the specified location. The insertLocation value can be 'Start' or 'End'.|WordApi1.2|
-|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts OOXML at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.|WordApi1.1|
-|[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Start' or 'End'.|WordApi1.1|
-|[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Start' or 'End'.|WordApi1.3|
-|[insertText(text: string, insertLocation: InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|Inserts text into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|WordApi1.1|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|WordApi1.1|
-|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the body object. The search results are a collection of range objects.|WordApi1.1|
-|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects the body and navigates the Word UI to it.|WordApi1.1|
+|[clear()](#clear)|void|Clears the contents of the body object. The user can perform the undo operation on the cleared content.|1.1|
+|[getHtml()](#gethtml)|string|Gets the HTML representation of the body object.|1.1|
+|[getOoxml()](#getooxml)|string|Gets the OOXML (Office Open XML) representation of the body object.|1.1|
+|[getRange(rangeLocation: RangeLocation)](#getrangerangelocation-rangelocation)|[Range](range.md)|Gets the whole body, or the starting or ending point of the body, as a range.|1.3|
+|[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location in the main document. The insertLocation value can be 'Start' or 'End'.|1.1|
+|[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the body object with a Rich Text content control.|1.1|
+|[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Inserts a document into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|1.1|
+|[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts HTML at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|1.1|
+|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|Inserts a picture into the body at the specified location. The insertLocation value can be 'Start' or 'End'.|1.2|
+|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts OOXML at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.|1.1|
+|[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Start' or 'End'.|1.1|
+|[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Start' or 'End'.|1.3|
+|[insertText(text: string, insertLocation: InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|Inserts text into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|1.1|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the body object. The search results are a collection of range objects.|1.1|
+|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects the body and navigates the Word UI to it.|1.1|
 
 ## Method Details
 
