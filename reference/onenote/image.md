@@ -15,7 +15,7 @@ Represents an Image. An Image can be a direct child of a PageContent object or a
 |id|string|Gets the ID of the Image object. Read-only.|
 |width|double|Gets or sets the width of the Image layout.|
 
-
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
