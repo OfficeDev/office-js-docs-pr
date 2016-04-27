@@ -11,20 +11,16 @@
 ## Create an Office Add-in project in Visual Studio
 
 
-To get started, use the  **Office Add-ins** project template in Visual Studio. The **Create Office Add-in** wizard asks you to choose the type of add-in that you want to create, and then provides selections for the default configuration of your add-in.
+To get started, make sure you have the [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx) installed. 
 
 
 1. On the Visual Studio menu bar, choose  **File**,  **New**,  **Project**.
     
-2. In the list of project types under  **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose  **Office Add-ins**, and then choose  **Office Add-in**.
+2. In the list of project types under  **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose  **Web Add-ins**, and then select one of the Add-in projects.  
     
-3. Name the project, and then choose  **OK**.
+3. Name the project, and then choose  **OK** to create the project.
     
-4. The  **Create Add-in for Office** dialog box opens. Choose the type of add-in you want to create, and then choose the **Next** button
-    
-5. Select the default options for the add-in you want to create, and then choose  **Finish**.
-    
-    Visual Studio creates the project, and its files appear in  **Solution Explorer**. The default Home.html page opens in Visual Studio.
+4. Visual Studio creates the project, and its files appear in  **Solution Explorer**. The default Home.html page opens in Visual Studio.
     
 In Visual Studio 2015, some of the add-in project templates have been updated to reflect additional functionality:
 
