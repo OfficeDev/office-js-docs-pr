@@ -14,7 +14,7 @@
 To get started, make sure you have the [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx) installed. 
 
 
-1. On the Visual Studio menu bar, choose  **File**,  **New**,  **Project**.
+1. On the Visual Studio menu bar, choose  **File** > **New** > **Project**.
     
 2. In the list of project types under  **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose  **Web Add-ins**, and then select one of the Add-in projects.  
     
