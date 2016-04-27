@@ -39,7 +39,7 @@ outlineObject.append(html);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|html|string|The HTML string to insert.|
+|html|string|HTML string to append.|
 
 #### Returns
 void
@@ -109,7 +109,7 @@ outlineObject.prepend(html);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|html|string|The HTML string to insert.|
+|html|string|HTML string to prepend.|
 
 #### Returns
 void

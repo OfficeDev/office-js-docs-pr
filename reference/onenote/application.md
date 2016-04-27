@@ -16,7 +16,7 @@ None
 |activeOutline|[Outline](outline.md)|Gets the active outline. Read-only.|
 |activePage|[Page](page.md)|Gets the active page. Read-only.|
 |activeSection|[Section](section.md)|Gets the active section. Read-only.|
-|notebooks|[NotebookCollection](notebookcollection.md)|Gets the collection of notebooks that are open in the OneNote application instance. Read-only.|
+|notebooks|[NotebookCollection](notebookcollection.md)|Gets the collection of notebooks that are open in the OneNote application instance. In OneNote Online, only one notebook at a time is open in the application instance. Read-only.|
 
 ## Methods
 
@@ -127,7 +127,7 @@ applicationObject.navigateToPageWithPagePath(pagePath);
 void
 ### Property access examples
 
- **activeNotebook**
+**activeNotebook**
 ```js
 OneNote.run(function (context) {
         

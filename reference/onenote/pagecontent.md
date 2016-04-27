@@ -12,7 +12,7 @@ Represents a region on a page that contains top-level content types such as Outl
 |id|string|Gets the ID of the PageContent object. Read-only.|
 |left|double|Gets or sets the left (X-axis) position of the PageContent object.|
 |top|double|Gets or sets the top (Y-axis) position of the PageContent object.|
-|type|string|Gets the type of the PageContent object. Read-only. Possible values are: Outline, Image, Ink, InsertedFile, MediaFile, Other.|
+|type|string|Gets the type of the PageContent object. Read-only. Possible values are: Outline, Image, Other.|
 
 _See property access [examples.](#property-access-examples)_
 

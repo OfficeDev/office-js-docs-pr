@@ -10,7 +10,7 @@ A container for the visible content on a page. A Paragraph can contain any one P
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |id|string|Gets the ID of the Paragraph object. Read-only.|
-|type|string|Gets the type of the Paragraph object. Read-only. Possible values are: RichText, Image, Table, InkDrawing, InsertedFile, MediaFile, InkParagraph, Other.|
+|type|string|Gets the type of the Paragraph object. Read-only. Possible values are: RichText, Image, Other.|
 
 _See property access [examples.](#property-access-examples)_
 
