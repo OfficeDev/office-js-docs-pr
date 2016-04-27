@@ -9,6 +9,7 @@ Represents the contents of a page, as a collection of PageContent objects.
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
+|count|int|Returns the number of page contents in the collection. Read-only.|
 |items|[PageContent[]](pagecontent.md)|A collection of pageContent objects. Read-only.|
 
 _See property access [examples.](#property-access-examples)_
@@ -22,6 +23,7 @@ None
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[getItem(index: number or string)](#getitemindex-number-or-string)|[PageContent](pagecontent.md)|Gets a PageContent object by ID or by its index in the collection. Read-only.|
+|[getItemAt(index: number)](#getitematindex-number)|[PageContent](pagecontent.md)|Gets a page content on its position in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
@@ -39,6 +41,22 @@ pageContentCollectionObject.getItem(index);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |index|number or string|The ID of the PageContent object, or the index location of the PageContent object in the collection.|
+
+#### Returns
+[PageContent](pagecontent.md)
+
+### getItemAt(index: number)
+Gets a page content on its position in the collection.
+
+#### Syntax
+```js
+pageContentCollectionObject.getItemAt(index);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
 [PageContent](pagecontent.md)
