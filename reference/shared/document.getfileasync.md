@@ -1,6 +1,6 @@
 
 # Document.getFileAsync method
-Returns the entire document file in slices of up to 4194304 bytes (4MB) or for add-ins for iOS up to 65536 (64KB).
+Returns the entire document file in slices of up to 4194304 bytes (4MB). For add-ins for iOS file slice is supported up to 65536 (64KB). Note that specifying file slice size of above permitted limit will result in an "Internal Error" failure. 
 
 |||
 |:-----|:-----|
