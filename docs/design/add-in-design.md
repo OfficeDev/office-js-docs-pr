@@ -26,7 +26,7 @@ We recommend that you adopt the Office design language and use  [Office UI Fabri
 ##Add-in building blocks
 You can use two types of UI elements to create your add-ins: 
 
-- [Add-in commands](ui-elements/ui-elements.md#add-in-commands) enable you to add native UX hooks into Office applications (currently available only for mail add-ins).
+- [Add-in commands](ui-elements/ui-elements.md#add-in-commands) enable you to add native UX hooks into Office applications
 - [Custom HTML-based UI](ui-elements/ui-elements.md#custom-html-based-ui) allows you to take advantage of the power of HTML within Office clients. 
 
 For details about how to use these building blocks, see [UI elements](ui-elements/ui-elements.md).  
