@@ -2,6 +2,8 @@
 
 thank you for your interest in learning more about new API/features under design. This is a froum through which we will make the early versions of the API specification available for community feedback. Please go thorugh the available topics below and provide your feedback. We value your inputs and will go a long way in ensuring that final design meets the critical use-cases that developers are targetting. 
 
+Note that below features may be in different stages of development such as early design, public preview, etc. Once the feature is generally available, the topic will be removed from this page as the supported versions of the API will contain the new feature details. 
+
 _**Note:** below listed features are still under design and review phase and hence not yet available as part of the generally available version. The final shape of the API or feature is subject to change based on feasibility, validation, feedback, etc. The final specification will be published once the feature is made available ._
 
 
