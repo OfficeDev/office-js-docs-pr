@@ -1,4 +1,4 @@
-# On-going API design specification
+# Open API specifications
 
 thank you for your interest in learning more about new API/features under design. This is a froum through which we will make the early versions of the API specification available for community feedback. Please go thorugh the available topics below and provide your feedback. We value your inputs and will go a long way in ensuring that final design meets the critical use-cases that developers are targetting. 
 
