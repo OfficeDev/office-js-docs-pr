@@ -81,7 +81,7 @@ You can develop the add-in using any text editor or IDE. If you haven't tried Vi
 ```
 <link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.min.css" rel="stylesheet">
 <link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css" rel="stylesheet">
-<script src="//appsforoffice.officeapps.live.com/afo/lib/beta/hosted/office.js"></script>
+<script src="https://richapiaddin.azurewebsites.net/App/Office/Office.js"></script>
 ```
 
 3- Replace the `<body>` element with the following code. This adds a text area and a button using [Office UI Fabric components](http://dev.office.com/fabric/components). The **Responsive Grid** layout is from the set of [Office UI Fabric styles](http://dev.office.com/fabric/styles). 
@@ -171,7 +171,7 @@ function addOutlineToPage() {
 
 <a name="test"></a>
 ### Step 6: Test the add-in on OneNote Online
-1. Run the Gulp web server.  
+1- Run the Gulp web server.  
 
    a. Open a **cmd** prompt and navigate to the **onenote add-in** folder. 
 
@@ -193,11 +193,13 @@ https://localhost:8443/app/home/home.html
 
 3- On OneNote Online, open the notebook that the OneNote team created for you.
 
-4- Choose **Insert > Office Add-ins**, and then choose the **Upload My Add-in** link in the Office Add-ins dialog.
+4- Choose **Insert > Office Add-ins** to open the Office Add-ins dialog.
 
-5- In the **Upload Add-in** dialog, browse to **manifest-onenote-add-in.xml** in your project files, and then choose **Upload**. While testing, your manifest file can be stored locally.
+5- In the Office Add-ins dialog, on the **My Organization** tab, choose the **Upload My Add-in** link. 
 
-6- The add-in opens in an iFrame next to the OneNote page. Enter some text in the text area and then choose **Add outline**. The text you entered is added to the page. 
+6- In the **Upload Add-in** dialog, browse to **manifest-onenote-add-in.xml** in your project files, and then choose **Upload**. While testing, your manifest file can be stored locally.
+
+7- The add-in opens in an iFrame next to the OneNote page. Enter some text in the text area and then choose **Add outline**. The text you entered is added to the page. 
 
 ### Troubleshooting and tips
 - You can debug the add-in using your browser's developer tools. When you're using the Gulp web server and debugging in Internet Explorer or Chrome, you can save your changes locally and then just refresh the add-in's iFrame.
