@@ -8,7 +8,7 @@ You can use Office Add-ins to:
 
 -  **Add new functionality to Office clients** - For example, augment Word, Excel, PowerPoint, and Outlook by interacting with Office documents and mail items, bringing external data into Office, processing Office documents, exposing third party functionality into Office clients, and much more. 
     
--  **Create new rich, interactive objects that can be embedded into Office documents** - For example, maps, charts, and interactive visualizations that users can add to their own Excel spreadsheets and PowerPoint presentations; email messages, meeting requests, or appointments.
+-  **Create new rich, interactive objects that can be embedded into Office documents** - For example, maps, charts, and interactive visualizations that users can add to their own Excel spreadsheets and PowerPoint presentations.
     
 **Office Add-ins run across multiple versions of Office** including Office for Windows Desktop, Office Online, Office for the Mac, and Office for the IPad.
 
