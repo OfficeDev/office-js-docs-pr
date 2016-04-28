@@ -1,6 +1,6 @@
 # SectionGroup Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_  
+_Applies to: OneNote Online_
 _Note: This API is in preview_
 
 Represents a OneNote section group. Section groups can contain sections and other section groups.
@@ -19,8 +19,6 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|
 |notebook|[Notebook](notebook.md)|Gets the notebook that contains the section group. This value is never null. Read-only.|
 |parentSectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section group. Returns null if the section group is a direct child of the notebook. Read-only.|
-
-_See property access [examples.](#property-access-examples)_
 
 ## Methods
 
@@ -50,7 +48,7 @@ sectionGroupObject.addSection(title);
 #### Returns
 [Section](section.md)
 
-#### Examples  
+#### Examples
 ```js
 OneNote.run(function (context) {
 
@@ -82,6 +80,7 @@ OneNote.run(function (context) {
     });
 ```
 
+
 ### getSectionGroups()
 Gets the collection of section groups in the section group.
 
@@ -96,7 +95,7 @@ None
 #### Returns
 [SectionGroupCollection](sectiongroupcollection.md)
 
-#### Examples  
+#### Examples
 ```js
 OneNote.run(function (context) {
 
@@ -131,6 +130,7 @@ OneNote.run(function (context) {
         });
     });
 ```
+
 
 ### getSections(recursive: bool)
 Gets the collection of sections in the section group.
@@ -177,7 +177,6 @@ OneNote.run(function (context) {
         });
     });
 ```
-
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -193,10 +192,9 @@ object.load(param);
 
 #### Returns
 void
-
 ### Property access examples
 
-#### id
+**id**
 ```js
 OneNote.run(function (context) {
         
@@ -224,7 +222,7 @@ OneNote.run(function (context) {
     });
 ```
 
-#### name and notebook
+**name and notebook**
 ```js
 OneNote.run(function (context) {
         
@@ -250,3 +248,4 @@ OneNote.run(function (context) {
         })
     });
 ```
+

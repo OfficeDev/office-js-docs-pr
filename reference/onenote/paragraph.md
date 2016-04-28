@@ -1,6 +1,6 @@
 # Paragraph Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_  
+_Applies to: OneNote Online_
 _Note: This API is in preview_
 
 A container for the visible content on a page. A Paragraph can contain any one ParagraphType type of content.
@@ -25,10 +25,43 @@ _See property access [examples.](#property-access-examples)_
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
+|[delete()](#delete)|void|Deletes the paragraph|
+|[insertAsSibling(html: string, insertLocation: string)](#insertassiblinghtml-string-insertlocation-string)|void|Inserts the specified HTML content|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 
+
+### delete()
+Deletes the paragraph
+
+#### Syntax
+```js
+paragraphObject.delete();
+```
+
+#### Parameters
+None
+
+#### Returns
+void
+
+### insertAsSibling(html: string, insertLocation: string)
+Inserts the specified HTML content
+
+#### Syntax
+```js
+paragraphObject.insertAsSibling(html, insertLocation);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|html|string|An HTML string that describes the visual presentation of the content.|
+|insertLocation|string|The location of new contents relative to the current Paragraph.  Possible values are: Before, After|
+
+#### Returns
+void
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -45,11 +78,9 @@ object.load(param);
 
 #### Returns
 void
-
-
 ### Property access examples
 
-#### id and type
+**id and type**
 ```js
 OneNote.run(function (context) {
 
@@ -63,7 +94,7 @@ OneNote.run(function (context) {
     var pageContent = pageContents._GetItem(0);
     var paragraphs = pageContent.outline.paragraphs;
             
-    // Queue a command to load the type and richText.text property of each paragraph.
+    // Queue a command to load the id and type of each paragraph.
     paragraphs.load("id,type");
             
     // Run the queued commands, and return a promise to indicate task completion.

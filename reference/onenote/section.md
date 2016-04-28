@@ -1,6 +1,6 @@
 # Section Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_  
+_Applies to: OneNote Online_
 _Note: This API is in preview_
 
 Represents a OneNote section. Sections can contain pages.
@@ -19,8 +19,6 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|
 |notebook|[Notebook](notebook.md)|Gets the notebook that contains the section. Read-only.|
 |sectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section. Returns null if the section is a direct child of the notebook. Read-only.|
-
-_See property access [examples.](#property-access-examples)_
 
 ## Methods
 
@@ -79,6 +77,7 @@ OneNote.run(function (context) {
     });
 ```
 
+
 ### getPages()
 Gets the collection of pages in the section.
 
@@ -122,6 +121,7 @@ OneNote.run(function (context) {
     });
 ```
 
+
 ### insertSectionAsSibling(location: string, title: string)
 Inserts a new section before or after the current section.
 
@@ -164,7 +164,7 @@ OneNote.run(function (context) {
         if (error instanceof OfficeExtension.Error) {
             console.log("Debug info: " + JSON.stringify(error.debugInfo));
         }
-    });  
+    });
 ```
 
 ### load(param: object)
@@ -182,10 +182,9 @@ object.load(param);
 
 #### Returns
 void
-
 ### Property access examples
 
-#### id
+**id**
 ```js
 OneNote.run(function (context) {
         
@@ -210,7 +209,7 @@ OneNote.run(function (context) {
     });
 ```
 
-#### name and notebook
+**name and notebook**
 ```js
 OneNote.run(function (context) {
         
@@ -234,3 +233,5 @@ OneNote.run(function (context) {
         }
     });
 ```
+
+

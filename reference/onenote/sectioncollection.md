@@ -1,6 +1,6 @@
 # SectionCollection Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_  
+_Applies to: OneNote Online_
 _Note: This API is in preview_
 
 Represents a collection of sections.
@@ -9,10 +9,10 @@ Represents a collection of sections.
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
+|count|int|Returns the number of sections in the collection. Read-only.|
 |items|[Section[]](section.md)|A collection of section objects. Read-only.|
 
 _See property access [examples.](#property-access-examples)_
-
 
 ## Relationships
 None
@@ -24,6 +24,7 @@ None
 |:---------------|:--------|:----------|
 |[getByName(name: string)](#getbynamename-string)|[SectionCollection](sectioncollection.md)|Gets the collection of sections with the specified name.|
 |[getItem(index: number or string)](#getitemindex-number-or-string)|[Section](section.md)|Gets a section by ID or by its index in the collection. Read-only.|
+|[getItemAt(index: number)](#getitematindex-number)|[Section](section.md)|Gets a section on its position in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
@@ -40,13 +41,12 @@ sectionCollectionObject.getByName(name);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|name|string|The case-sensitive name of the section.|
+|name|string|The name of the section.|
 
 #### Returns
 [SectionCollection](sectioncollection.md)
 
 #### Examples
-
 ```js
 OneNote.run(function (context) {
 
@@ -98,6 +98,22 @@ sectionCollectionObject.getItem(index);
 #### Returns
 [Section](section.md)
 
+### getItemAt(index: number)
+Gets a section on its position in the collection.
+
+#### Syntax
+```js
+sectionCollectionObject.getItemAt(index);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|index|number|Index value of the object to be retrieved. Zero-indexed.|
+
+#### Returns
+[Section](section.md)
+
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -113,11 +129,9 @@ object.load(param);
 
 #### Returns
 void
-
-
 ### Property access examples
 
-#### items
+**items**
 ```js
 OneNote.run(function (context) {
 
@@ -150,3 +164,4 @@ OneNote.run(function (context) {
         }
     });
 ```
+

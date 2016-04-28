@@ -12,7 +12,7 @@ Represents a RichText object in a Paragraph.
 |id|string|Gets the ID of the RichText object. Read-only.|
 |text|string|Gets the text content of the RichText object. Read-only.|
 
-
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|

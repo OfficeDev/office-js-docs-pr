@@ -11,8 +11,6 @@ Represents a container for Paragraph objects.
 |:---------------|:--------|:----------|
 |id|string|Gets the ID of the Outline object. Read-only.|
 
-
-
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
@@ -82,6 +80,7 @@ OneNote.run(function (context) {
         });
 });
 ```
+
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.

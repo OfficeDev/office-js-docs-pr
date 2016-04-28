@@ -1,6 +1,6 @@
 # PageContentCollection Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_  
+_Applies to: OneNote Online_
 _Note: This API is in preview_
 
 Represents the contents of a page, as a collection of PageContent objects.
@@ -9,6 +9,7 @@ Represents the contents of a page, as a collection of PageContent objects.
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
+|count|int|Returns the number of page contents in the collection. Read-only.|
 |items|[PageContent[]](pagecontent.md)|A collection of pageContent objects. Read-only.|
 
 _See property access [examples.](#property-access-examples)_
@@ -22,6 +23,7 @@ None
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[getItem(index: number or string)](#getitemindex-number-or-string)|[PageContent](pagecontent.md)|Gets a PageContent object by ID or by its index in the collection. Read-only.|
+|[getItemAt(index: number)](#getitematindex-number)|[PageContent](pagecontent.md)|Gets a page content on its position in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
@@ -43,6 +45,22 @@ pageContentCollectionObject.getItem(index);
 #### Returns
 [PageContent](pagecontent.md)
 
+### getItemAt(index: number)
+Gets a page content on its position in the collection.
+
+#### Syntax
+```js
+pageContentCollectionObject.getItemAt(index);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|index|number|Index value of the object to be retrieved. Zero-indexed.|
+
+#### Returns
+[PageContent](pagecontent.md)
+
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -58,24 +76,22 @@ object.load(param);
 
 #### Returns
 void
-
-
 ### Property access examples
 
-#### items
+**items**
 ```js
 OneNote.run(function (context) {
-    
+
     // Get the collection of pageContent items from the page.
     var pageContents = context.application.activePage.getContents();
-    
+
     // Queue a command to load the type of each pageContent.
     pageContents.load("type");
-    
+
     // Run the queued commands, and return a promise to indicate task completion.
     return context.sync()
         .then(function () {
-            
+
             $.each(pageContents.items, function(index, pageContent) {
                 console.log("PageContent type: " + pageContent.type);
             });

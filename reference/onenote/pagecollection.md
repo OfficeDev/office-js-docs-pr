@@ -1,6 +1,6 @@
 # PageCollection Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_  
+_Applies to: OneNote Online_
 _Note: This API is in preview_
 
 Represents a collection of pages.
@@ -9,10 +9,10 @@ Represents a collection of pages.
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
+|count|int|Returns the number of pages in the collection. Read-only.|
 |items|[Page[]](page.md)|A collection of page objects. Read-only.|
 
 _See property access [examples.](#property-access-examples)_
-
 
 ## Relationships
 None
@@ -24,6 +24,7 @@ None
 |:---------------|:--------|:----------|
 |[getByTitle(title: string)](#getbytitletitle-string)|[PageCollection](pagecollection.md)|Gets the collection of pages with the specified title.|
 |[getItem(index: number or string)](#getitemindex-number-or-string)|[Page](page.md)|Gets a page by ID or by its index in the collection. Read-only.|
+|[getItemAt(index: number)](#getitematindex-number)|[Page](page.md)|Gets a page on its position in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
@@ -45,7 +46,7 @@ pageCollectionObject.getByTitle(title);
 #### Returns
 [PageCollection](pagecollection.md)
 
-#### Errors
+#### Examples
 ```js
 OneNote.run(function (context) {
 
@@ -102,6 +103,22 @@ pageCollectionObject.getItem(index);
 #### Returns
 [Page](page.md)
 
+### getItemAt(index: number)
+Gets a page on its position in the collection.
+
+#### Syntax
+```js
+pageCollectionObject.getItemAt(index);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|index|number|Index value of the object to be retrieved. Zero-indexed.|
+
+#### Returns
+[Page](page.md)
+
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -117,10 +134,9 @@ object.load(param);
 
 #### Returns
 void
-
 ### Property access examples
 
-#### items
+**items**
 ```js
 OneNote.run(function (context) {
     
@@ -148,3 +164,4 @@ OneNote.run(function (context) {
         }
     });
 ```
+

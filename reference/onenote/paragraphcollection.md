@@ -9,6 +9,7 @@ Represents a collection of Paragraph objects.
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
+|count|int|Returns the number of paragraphs in the page. Read-only.|
 |items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.|
 
 _See property access [examples.](#property-access-examples)_
@@ -22,6 +23,7 @@ None
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[getItem(index: number or string)](#getitemindex-number-or-string)|[Paragraph](paragraph.md)|Gets a Paragraph object by ID or by its index in the collection. Read-only.|
+|[getItemAt(index: number)](#getitematindex-number)|[Paragraph](paragraph.md)|Gets a paragraph on its position in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
@@ -43,6 +45,22 @@ paragraphCollectionObject.getItem(index);
 #### Returns
 [Paragraph](paragraph.md)
 
+### getItemAt(index: number)
+Gets a paragraph on its position in the collection.
+
+#### Syntax
+```js
+paragraphCollectionObject.getItemAt(index);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|index|number|Index value of the object to be retrieved. Zero-indexed.|
+
+#### Returns
+[Paragraph](paragraph.md)
+
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -58,10 +76,9 @@ object.load(param);
 
 #### Returns
 void
-
 ### Property access examples
 
-#### items
+**items**
 ```js
 OneNote.run(function (context) {
 

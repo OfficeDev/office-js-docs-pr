@@ -9,11 +9,10 @@ Represents a OneNote page.
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
+|absolutePath|string|The absolute path of the page. Read only Read-only.|
 |id|string|Gets the ID of the page. Read-only.|
 |pageLevel|int|Gets or sets the indentation level of the page.|
 |title|string|Gets or sets the title of the page.|
-
-
 
 ## Relationships
 | Relationship | Type	|Description|
@@ -87,6 +86,7 @@ OneNote.run(function (context) {
 });
 ```
 
+
 ### getContents()
 Gets the collection of PageContent objects on the page.
 
@@ -143,6 +143,7 @@ OneNote.run(function (context) {
 });
 ```
 
+
 ### insertPageAsSibling(location: string, title: string)
 Inserts a new page before or after the current page.
 
@@ -186,6 +187,7 @@ OneNote.run(function (context) {
         })
 });
 ```
+
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
