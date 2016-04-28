@@ -1,6 +1,6 @@
 # Open API specifications
 
-Thank you for your interest in learning more about new API/features under design. This is a froum through which we will make the early versions of the API specification available for community feedback. Please go thorugh the available topics below and provide your feedback. We value your inputs and will go a long way in ensuring that final design meets the critical use-cases that developers are targetting. 
+Thank you for your interest in learning more about new API/features under design. This is a froum through which we will make the early versions of the API specification available for community feedback. Please go through the available topics below and provide your feedback. We value your inputs and will go a long way in ensuring that final design meets the critical use-cases that developers are targeting. 
 
 Note that below features may be in different stages of development such as early design, public preview, etc. Once the feature is generally available, the topic will be removed from this page as the supported versions of the API will contain the new feature details. 
 
