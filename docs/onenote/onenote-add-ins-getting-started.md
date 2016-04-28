@@ -34,17 +34,17 @@ During this initial private preview period, please contact us via Twitter [@onen
 ```
 C:\your-local-path\onenote add-in\> yo office
 ```
-   >These instructions use the Windows command prompt but are equally applicable for other shell environments. 
+>These instructions use the Windows command prompt but are equally applicable for other shell environments. 
 
 3- Use the following options to create the project.
 
-   | Option | Value |
-   |:------|:------|
-   | Project name | OneNote Add-in |
-   | Root folder of project | (accept the default) |
-   | Office project type | Task Pane Add-in |
-   | Supported Office applications | (choose any--we'll add a OneNote host later) |
-   | Technology to use | HTML, CSS & JavaScript |
+| Option | Value |
+|:------|:------|
+| Project name | OneNote Add-in |
+| Root folder of project | (accept the default) |
+| Office project type | Task Pane Add-in |
+| Supported Office applications | (choose any--we'll add a OneNote host later) |
+| Technology to use | HTML, CSS & JavaScript |
 
 <a name="manifest"></a>
 ### Step 4: Configure the add-in manifest 
@@ -54,7 +54,7 @@ C:\your-local-path\onenote add-in\> yo office
 <Host Name="Notebook" />
 ```
 
-   Note that the **SourceLocation** is already set up for your Gulp web server.
+Note that the **SourceLocation** is already set up for your Gulp web server.
 
 ```
 <SourceLocation DefaultValue="https://localhost:8443/app/home/home.html"/>
@@ -73,10 +73,10 @@ You can develop the add-in using any text editor or IDE. If you haven't tried Vi
    b. Replace the script reference to Office.js with the following reference to the *beta* version.
 
 ```
-<script src="//appsforoffice.officeapps.live.com/afo/lib/beta/hosted/office.js"></script>
+<script src="https://richapiaddin.azurewebsites.net/App/Office/Office.js"></script>
 ```
 
-   Your Office references will look like this.
+Your Office references will look like this.
 
 ```
 <link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.min.css" rel="stylesheet">
