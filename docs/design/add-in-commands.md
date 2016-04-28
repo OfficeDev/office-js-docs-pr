@@ -31,8 +31,12 @@ For an overview of the feature, see the video [Add-in Commands in Office Ribbon]
 ##Supported platforms
 Add-in commands are currently supported on the following platforms:
 
-- Office Desktop 2016 (build 16.0.6769.0000 or later)
-- Office Online
+- Generally Available
+  - Office for Windows Desktop 2016 (build 16.0.6769.0000 or later)
+  - Office Online with personal accounts
+
+- Preview
+  - Office Online with work/school accounts (Preview)
 
 More platforms are coming soon.
 
