@@ -36,7 +36,7 @@ Add-in commands are currently supported on the following platforms:
   - Office Online with personal accounts
 
 - Preview
-  - Office Online with work/school accounts (Preview)
+  - Office Online with work/school accounts
 
 More platforms are coming soon.
 
