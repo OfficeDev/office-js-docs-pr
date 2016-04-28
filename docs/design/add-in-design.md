@@ -35,7 +35,7 @@ For details about how to use these building blocks, see [UI elements](ui-element
 ##Recommended layouts and interaction patterns
 We provide recommended layouts for each add-in type, along with **end-to-end** examples to help you put everything together. To learn more about how to lay out your add-in, see the following:
 
-- [Layout for task pane add-ins](ui-elements/layout-for-task-pane-add-ins.md)
+- [Layout for task pane containers](ui-elements/layout-for-task-pane-add-ins.md)
 - [Layout for content add-ins](ui-elements/layout-for-content-add-ins.md) 
 - [Layouts for mail add-ins](ui-elements/layouts-for-outlook-add-ins.md)
 
