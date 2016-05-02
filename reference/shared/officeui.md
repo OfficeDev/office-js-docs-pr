@@ -1,6 +1,6 @@
 # Office UI Namespace (JavaScript API for Office)
 
-_Applies to: Office Online, Office 2013, Office 2016_
+_Applies to: Office 2013, Office 2016_
 
 The Office UI Namespace, Office.context.ui, provides objects and methods used to create UI components for add-ins.
 
