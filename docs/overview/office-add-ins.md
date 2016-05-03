@@ -14,7 +14,7 @@ You can use Office Add-ins to:
 
 >**Note:** For a high-level view of where Office Add-ins are currently supported, see the [Office Add-in host and platform availability](http://dev.office.com/add-in-availability) page. 
 
-To make your Add-in available to users, you can publish it on the Office Store or to an on-premises add-in catalog.
+To make your add-in available to users, you can you [publish](../publish/publish.md) it to an on-premises add-in catalog or [submit it to the Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx).
 
 To try out some add-ins, you can install the following add-ins from the Office Store.
 
@@ -30,7 +30,7 @@ To try out some add-ins, you can install the following add-ins from the Office S
 ## Anatomy of an Office Add-in
 
 
-The basic components of an Office Add-in are an XML manifest file and your own web application. The manifest defines various settings, including how your add-in integrates with Office clients. When your add-in is ready for your customers, you [publish](../publish/publish.md) it to an on-premises add-in catalog or [submit it to the Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx). Your web application needs to be hosted on a web server, or web hosting service, such as [Microsoft Azure](../publish/host-an-office-add-in-on-microsoft-azure.md).
+The basic components of an Office Add-in are an XML manifest file and your own web application. The manifest defines various settings, including how your add-in integrates with Office clients. Your web application needs to be hosted on a web server, or web hosting service, such as [Microsoft Azure](../publish/host-an-office-add-in-on-microsoft-azure.md).
 
 
 **Manifest + webpage = an Office Add-in**
@@ -136,7 +136,7 @@ Outlook add-ins can extend the Office ribbon and also display contextually next 
 
 Outlook add-ins can access contextual information from the item, such as address or tracking ID, and then use that data to access additional information on the server and from web services to create compelling user experiences. In most cases, an Outlook add-in runs without modification on the various supporting host applications, including Outlook, Outlook for Mac, Outlook Web App, and OWA for Devices, to provide a seamless experience on the desktop, web, and tablet and mobile devices.
 
-To learn more, see [Outlook add-ins](../outlook/outlook-add-ins.md)
+To learn more, see [Outlook add-ins](../outlook/outlook-add-ins.md).
 
  >**Note**  Outlook add-ins require a minimum version of Exchange 2013 or Exchange Online to host the user's mailbox. POP and IMAP email accounts aren't supported.
 
