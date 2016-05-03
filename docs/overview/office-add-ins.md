@@ -6,17 +6,17 @@ Office Add-ins enable you to extend Office clients such as Word, Excel, PowerPoi
 You can use Office Add-ins to: 
 
 
--  **Add new functionality to Office clients** - For example, augment Word, Excel, PowerPoint, and Outlook by interacting with Office documents and mail items, bringing external data into Office, processing Office documents, exposing third party functionality into Office clients, and much more. 
+-  **Add new functionality to Office clients** - For example, augment Word, Excel, PowerPoint, and Outlook by interacting with Office documents and mail items, bringing external data into Office, processing Office documents, exposing third-party functionality into Office clients, and much more. 
     
 -  **Create new rich, interactive objects that can be embedded into Office documents** - For example, maps, charts, and interactive visualizations that users can add to their own Excel spreadsheets and PowerPoint presentations.
     
-**Office Add-ins run across multiple versions of Office** including Office for Windows Desktop, Office Online, Office for the Mac, and Office for the IPad.
+**Office Add-ins run across multiple versions of Office** including Office for Windows Desktop, Office Online, Office for the Mac, and Office for the iPad.
 
 >**Note:** For a high-level view of where Office Add-ins are currently supported, see the [Office Add-in host and platform availability](http://dev.office.com/add-in-availability) page. 
 
 To make your add-in available to users, you can you [publish](../publish/publish.md) it to an on-premises add-in catalog or [submit it to the Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx).
 
-To try out some add-ins, you can install the following add-ins from the Office Store.
+To try out some add-ins, you can install the following from the Office Store.
 
 
 |**Office product**|**Add-in**|
@@ -55,7 +55,7 @@ For more information, see [Office Add-ins XML manifest](../../docs/overview/add-
 
 ###Web app
 
-The minimal version of a compliant web app is a static HTML webpage. The page can be hosted any web server, or web hosting service, such as [Microsoft Azure](../publish/host-an-office-add-in-on-microsoft-azure.md). You can host your web app on the service that you choose.  
+The minimal version of a compliant web app is a static HTML webpage. The page can be hosted on any web server, or web hosting service, such as [Microsoft Azure](../publish/host-an-office-add-in-on-microsoft-azure.md). You can host your web app on the service that you choose.  
 
 The most basic Office Add-in consists of a static HTML page that is displayed inside an Office application, but doesn't interact with either the Office document or any other Internet resource. However, because it is a web application, you can use any technologies, both client and server side, that your hosting provider supports (such as ASP.net, PHP, or Node.js). To interact with Office clients and documents, you can use the office.js [JavaScript API](../../docs/develop/understanding-the-javascript-api-for-office.md) that we provide. 
 
@@ -74,7 +74,7 @@ The most powerful way to build an Office Add-in is to use the **Add-in for Offic
 
 ### Creating an Office Add-in with a text editor
 
-If want to use your favorite text editor to create an Office Add-in, see the following article for information about how to get started:
+If you want to use your favorite text editor to create an Office Add-in, see the following article for information about how to get started:
 
     
 - [Create an Office add-in using any editor](../get-started/create-an-office-add-in-using-any-editor.md)
@@ -105,7 +105,7 @@ You can **add new functionality** to Word, Excel, or PowerPoint by registering y
 - Insertable task panes
 
 ####Add-in commands
-Use add-in commands to extend the user interface of Office for Windows Desktop and Office Online. For example, you can add **buttons for your add-ins on the ribbon** or selected contextual menus, allowing users to easily access their add-ins within Office. Command buttons can launch the different actions such as **showing a pane (or multiple panes) with a custom HTML** or **executing a JavaScript function**. We recommend that you [watch this Channel9 video](https://channel9.msdn.com/events/Build/2016/P551) for a deeper overview of this feature.
+Use add-in commands to extend the UI of Office for Windows Desktop and Office Online. For example, you can add **buttons for your add-ins on the ribbon** or selected contextual menus, allowing users to easily access their add-ins within Office. Command buttons can launch the different actions such as **showing a pane (or multiple panes) with a custom HTML** or **executing a JavaScript function**. We recommend that you [watch this Channel9 video](https://channel9.msdn.com/events/Build/2016/P551) for a deeper overview of this feature.
 
 **Add-in with commands running in Excel Desktop**
 ![Add-in commands](../../images/addincommands1.png)
@@ -116,9 +116,9 @@ Use add-in commands to extend the user interface of Office for Windows Desktop a
 You can define your commands in your add-in manifest by using **VersionOverrides**. The Office platform takes care of interpreting them into native UI. To get started, check out these [samples on GitHub](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/), and see [Add-in commands for Excel, Word, and PowerPoint](../design/add-in-commands.md)
 
 ####Insertable Taskpanes
-Clients that do not support add-in commands yet (Office 2013, Office for Mac and Office for IPad) will run your add-in as a **Task pane** using the **DefaultUrl** provided in the manifest. The add-in can then be launched via the My Add-ins menu from the Insert Tab. 
+Clients that do not support add-in commands yet (Office 2013, Office for Mac, and Office for iPad) will run your add-in as a **Task pane** using the **DefaultUrl** provided in the manifest. The add-in can then be launched via the **My Add-ins** menu from the Insert tab. 
 
->Important: A single manifest can have both a task pane add-in that runs in clients that do not support commands and a version that runs with commands. This allows you to have a single add-in that works across all clients that support Office Add-ins.
+>**Important:** A single manifest can have both a task pane add-in that runs in clients that do not support commands and a version that runs with commands. This allows you to have a single add-in that works across all clients that support Office Add-ins.
  
 ###Excel and PowerPoint add-ins that create new objects 
 
