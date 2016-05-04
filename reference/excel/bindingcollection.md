@@ -47,42 +47,54 @@ bindingCollectionObject.getItem(id);
 Create a table binding to monitor data changes in the table. When data is changed, the background color of the table will change to orange.
 
 ```js
-function addEventHandler() {
-	//Create Table1
-Excel.run(function (ctx) { 
-	ctx.workbook.tables.add("Sheet1!A1:C4", true);
-	return ctx.sync().then(function() {
-			 console.log("My Diet Data Inserted!");
-	})
-	.catch(function (error) {
-			 console.log(JSON.stringify(error));
-	});
-});
-	//Create a new table binding for Table1
-Office.context.document.bindings.addFromNamedItemAsync("Table1", Office.CoercionType.Table, { id: "myBinding" }, function (asyncResult) {
-	if (asyncResult.status == "failed") {
-		console.log("Action failed with error: " + asyncResult.error.message);
-	}
-	else {
-		// If successful, add the event handler to the table binding.
-		Office.select("bindings#myBinding").addHandlerAsync(Office.EventType.BindingDataChanged, onBindingDataChanged);
-	}
-});
-}
-	
-// When data in the table is changed, this event is triggered.
-function onBindingDataChanged(eventArgs) {
-Excel.run(function (ctx) { 
-	// Highlight the table in orange to indicate data changed.
-	ctx.workbook.bindings.getItem(eventArgs.binding.id).getTable().getDataBodyRange().format.fill.color = "Orange";
-	return ctx.sync().then(function() {
-			console.log("The value in this table got changed!");
-	})
-	.catch(function (error) {
+(function () {
+	// Create myTable
+	Excel.run(function (ctx) {
+		var table = ctx.workbook.tables.add("Sheet1!A1:C4", true);
+		table.name = "myTable";
+		return ctx.sync().then(function () {
+			console.log("MyTable is Created!");
+
+			//Create a new table binding for myTable
+			Office.context.document.bindings.addFromNamedItemAsync("myTable", Office.CoercionType.Table, { id: "myBinding" }, function (asyncResult) {
+				if (asyncResult.status == "failed") {
+					console.log("Action failed with error: " + asyncResult.error.message);
+				}
+				else {
+					// If successful, add the event handler to the table binding.
+					Office.select("bindings#myBinding").addHandlerAsync(Office.EventType.BindingDataChanged, onBindingDataChanged);
+				}
+			});
+		})
+		.catch(function (error) {
 			console.log(JSON.stringify(error));
+		});
 	});
-});
-}
+	
+	// When data in the table is changed, this event is triggered.
+	function onBindingDataChanged(eventArgs) {
+		Excel.run(function (ctx) {
+			// Highlight the table in orange to indicate data changed.
+			var fill = ctx.workbook.tables.getItem("myTable").getDataBodyRange().format.fill;
+			fill.load("color");
+			return ctx.sync().then(function () {
+				if (fill.color != "Orange") {
+					ctx.workbook.bindings.getItem(eventArgs.binding.id).getTable().getDataBodyRange().format.fill.color = "Orange";
+ 
+					console.log("The value in this table got changed!");
+				}
+				else
+					
+			})
+				.then(ctx.sync)
+			.catch(function (error) {
+				console.log(JSON.stringify(error));
+			});
+		});
+	} 
+})();
+ 
+
 
 ```
 
