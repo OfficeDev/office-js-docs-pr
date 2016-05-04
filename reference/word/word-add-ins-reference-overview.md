@@ -30,6 +30,15 @@ You have a few options for publishing Word add-in manifests. Read about how you 
 
 Describe the structure of the two API models for Word, 2013 briefly, and 2016.
 
+### How do add-ins work in Word?
+
+The add-in acts as a client of the Word application. Sends batches of commands to the service.
+
+IMPORTANT INFORMATION BEFORE WE START:
+CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js
+Beta: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js
+Tell about Nuget, and npom as sources to get the API
+
 ### Running your add-in
 
 Let's take a look at what you'll need when you run your add-in. All add-ins should have an Office.initialize event handler.  Read [Understanding the API](../develop/understanding-the-javascript-api-for-office.md) for more information about add-in initialization.
