@@ -33,13 +33,9 @@ Visual Studio has template projects that will provide OfficeJS. You can also use
 
 Get the TypeScript definitions: ```typings install office-js --ambient```
 
-## API structure
+## Understand the API
 
-The shared and the Word-specific APIs are quite a bit diffferent and so you should understand how they are different.
-
-The shared API uses namespaces to organize the objects and methods for interacting with Word.  It uses callbacks to perform the asynchronous calls to Word.
-
-The Word-specific API has strongly typed object definitions for interacting with Word. It uses promises to perform the asynchronous calls to Word.
+The shared and the Word-specific APIs are quite a bit different. The shared API uses namespaces to organize the objects and methods for interacting with Word.  It uses callbacks to perform the asynchronous calls to Word. The Word-specific API has strongly typed object definitions for interacting with Word. It uses promises to perform the asynchronous calls to Word.
 
 ### Running your add-in
 
@@ -135,7 +131,6 @@ In example 3, we demonstrate how the queue of commands works. When context.sync(
 ## OpenSpec
 
 Learn about the new Word APIs by reading our Open API specifications. We now share our pre-release, and preview API information so that you can review and provide feedback on our APIs. Read more about [OpenSpec](../../reference/openspec.md) to learn which new features are in the pipeline for the Word JavaScript APIs.
-
 
 ## Give us your feedback
 
