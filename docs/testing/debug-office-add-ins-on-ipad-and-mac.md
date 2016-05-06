@@ -9,7 +9,7 @@ Vorlon.js is a debugger for web pages, similar to the F12 tools, that is designe
 
 To install and set up up Vorlon: 
 
-1.	Install [Node.js](https://nodejs.org) if you haven’t already. 
+1.	Install [Node.js](https://nodejs.org) if you haven't already. 
 
 2.	Install Vorlon using npm with the following command: `sudo npm i -g vorlon` 
 
