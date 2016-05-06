@@ -34,12 +34,12 @@ A first-run experience is the experience a user has when opening your add-in for
 
  <table>
  <tr><th>Steps to Start</th><th>Value</th><th>Video</th></tr>
- <tr><td><img src="./Images/instruction.step.PNG" alt="instruction steps" style="width: 264px;"/></td><td><img src="./Images/value.placemat.PNG" alt="value placemat" style="width: 264px;"/></td><td><img src="./Images/video.placemat.PNG" alt="video placemat" style="width: 264px;"/></td></tr>
+ <tr><td><img src="https://github.com/OfficeDev/Office-Add-in-UX-Design-Pattern-Code/blob/master/Images/instruction.step.PNG" alt="instruction steps" style="width: 264px;"/></td><td><img src=".https://github.com/OfficeDev/Office-Add-in-UX-Design-Pattern-Code/blob/master/Images/value.placemat.PNG" alt="value placemat" style="width: 264px;"/></td><td><img src="https://github.com/OfficeDev/Office-Add-in-UX-Design-Pattern-Code/blob/master/Images/video.placemat.PNG" alt="video placemat" style="width: 264px;"/></td></tr>
  </table>
 
  <table>
  <tr><th>Walkthrough first page</th><th>Trial</th><th>Trial feature</th></tr>
- <tr><td><img src="./Images/walkthrough1.PNG" alt="walkthrough 1" style="width: 264px;"/></td><td><img src="./Images/trial.placemat.PNG" alt="trial placemat" style="width: 264px;"/></td><td><img src="./Images/trial.placemat.feature.PNG" alt="trial placemat feature" style="width: 264px;"/></td></tr>
+ <tr><td><img src="https://github.com/OfficeDev/Office-Add-in-UX-Design-Pattern-Code/blob/master/Images/walkthrough1.PNG" alt="walkthrough 1" style="width: 264px;"/></td><td><img src="https://github.com/OfficeDev/Office-Add-in-UX-Design-Pattern-Code/blob/master/Images/trial.placemat.PNG" alt="trial placemat" style="width: 264px;"/></td><td><img src="https://github.com/OfficeDev/Office-Add-in-UX-Design-Pattern-Code/blob/master/Images/trial.placemat.feature.PNG" alt="trial placemat feature" style="width: 264px;"/></td></tr>
  </table> 
 
 
@@ -49,7 +49,7 @@ A first-run experience is the experience a user has when opening your add-in for
 
 <table>
  <tr><th>Landing</th></tr>
- <tr><td><img src="./Images/landing.page.PNG" alt="landing page" style="width: 264px;"/></td></tr>
+ <tr><td><img src="https://github.com/OfficeDev/Office-Add-in-UX-Design-Pattern-Code/blob/master/Images/landing.page.PNG" alt="landing page" style="width: 264px;"/></td></tr>
  </table>
 
 ## Notifications
@@ -65,12 +65,12 @@ There are a variety of ways that your add-in can notify users of events, such as
 
  <table>
  <tr><th>Embedded dialog</th><th>Inline message</th><th>Message banner</th></tr>
- <tr><td><img src="./Images/embedded.dialog.PNG" alt="embedded dialog" style="width: 264px;"/></td><td><img src="./Images/inline.message.PNG" alt="inline message" style="width: 264px;"/></td><td><img src="./Images/message.banner.PNG" alt="message banner" style="width: 264px;"/></td></tr>
+ <tr><td><img src="https://github.com/OfficeDev/Office-Add-in-UX-Design-Pattern-Code/blob/master/Images/embedded.dialog.PNG" alt="embedded dialog" style="width: 264px;"/></td><td><img src="https://github.com/OfficeDev/Office-Add-in-UX-Design-Pattern-Code/blob/master/Images/inline.message.PNG" alt="inline message" style="width: 264px;"/></td><td><img src="https://github.com/OfficeDev/Office-Add-in-UX-Design-Pattern-Code/blob/master/Images/message.banner.PNG" alt="message banner" style="width: 264px;"/></td></tr>
  </table>
 
  <table>
  <tr><th>Progress bar</th><th>Spinner</th><th>Toast</th></tr>
- <tr><td><img src="./Images/progress.bar.PNG" alt="progress bar" style="width: 264px;"/></td><td><img src="./Images/spinner.PNG" alt="spinner" style="width: 264px;"/></td><td><img src="./Images/toast.PNG" alt="toast" style="width: 264px;"/></td></tr>
+ <tr><td><img src="https://github.com/OfficeDev/Office-Add-in-UX-Design-Pattern-Code/blob/master/Images/progress.bar.PNG" alt="progress bar" style="width: 264px;"/></td><td><img src="https://github.com/OfficeDev/Office-Add-in-UX-Design-Pattern-Code/blob/master/Images/spinner.PNG" alt="spinner" style="width: 264px;"/></td><td><img src="https://github.com/OfficeDev/Office-Add-in-UX-Design-Pattern-Code/blob/master/Images/toast.PNG" alt="toast" style="width: 264px;"/></td></tr>
  </table>
 
 ## Known issues
