@@ -14,7 +14,7 @@ The Word JavaScript API 1.3 update contains the largest set of changes we've imp
 * Create and access table objects
 * Have more options for accessing and comparing range objects
 
-These changes have been implemented across nearly all Word JavaScript API objects. This functionality is now available, or will be shortly, in Word 2016 on the desktop for both Windows and Mac, and on the iPad. Update your clients to the latest monthly build and start implementing these great features!
+These changes have been implemented across nearly all Word JavaScript API objects. This functionality is now or will soon be available in preview for Word 2016 on the desktop for both Windows and Mac, and on the iPad. Update your clients to the latest monthly build and start implementing these great features!
 
 **See the [Word JS API 1.3 page](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.3_Openspec/word) to learn more and provide your feedback.**
 
