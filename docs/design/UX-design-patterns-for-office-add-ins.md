@@ -34,7 +34,7 @@ A first-run experience is the experience a user has when opening your add-in for
 
  <table>
  <tr><th>Steps to Start</th><th>Value</th><th>Video</th></tr>
- <tr><td><img src="https://github.com/OfficeDev/Office-Add-in-UX-Design-Pattern-Code/blob/master/Images/instruction.step.PNG" alt="instruction steps" style="width: 264px;"/></td><td><img src=".https://github.com/OfficeDev/Office-Add-in-UX-Design-Pattern-Code/blob/master/Images/value.placemat.PNG" alt="value placemat" style="width: 264px;"/></td><td><img src="https://github.com/OfficeDev/Office-Add-in-UX-Design-Pattern-Code/blob/master/Images/video.placemat.PNG" alt="video placemat" style="width: 264px;"/></td></tr>
+ <tr><td><img src="https://github.com/OfficeDev/Office-Add-in-UX-Design-Pattern-Code/blob/master/Images/instruction.step.PNG" alt="instruction steps" style="width: 264px;"/></td><td><img src="https://github.com/OfficeDev/Office-Add-in-UX-Design-Pattern-Code/blob/master/Images/value.placemat.PNG" alt="value placemat" style="width: 264px;"/></td><td><img src="https://github.com/OfficeDev/Office-Add-in-UX-Design-Pattern-Code/blob/master/Images/video.placemat.PNG" alt="video placemat" style="width: 264px;"/></td></tr>
  </table>
 
  <table>
