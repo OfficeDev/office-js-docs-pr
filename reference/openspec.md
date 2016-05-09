@@ -9,6 +9,7 @@ _**Important:** The features listed here are still in the design and review phas
 
 ## New Word JavaScript APIs
 The Word JavaScript API 1.3 update contains the largest set of changes we've implemented since this API was introduced. With the new API, you’ll be able to: 
+
 * Create and alter documents in memory
 * Create and access list objects
 * Create and access table objects
