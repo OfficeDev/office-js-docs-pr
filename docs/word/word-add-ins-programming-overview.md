@@ -23,7 +23,7 @@ You can use two sets of JavaScript APIs to interact with the objects and metadat
 
 The second is the **Word JavaScript API**. This is a strongly-typed object model that you can use to create Word add-ins that target Word 2016 for Mac and Windows. This object model uses promises, and provides access to Word-specific objects like [body](../../reference/word/body.md), [content controls](../../reference/word/contentcontrol.md), [inline pictures](../../reference/word/inlinepicture.md), and [paragraphs](../../reference/word/paragraph.md). The Word JavaScript API includes TypeScript definitions and vsdoc files so that you can get code hints in your IDE.
 
-Currently, all Word clients support the shared JavaScript API for Office, and most clients support the Word JavaScript API. For details about supported clients, see the [API reference documentation](https://dev.office.com/reference/add-ins/word/paragraphcollection?product=word).
+Currently, all Word clients support the shared JavaScript API for Office, and most clients support the Word JavaScript API. For details about supported clients, see the [API reference documentation](https://dev.office.com/reference/add-ins/javascript-api-for-office?product=word).
 
 We recommend that you start with the Word JavaScript API because the object model is easier to use. Use the Word JavaScript API if you need to:
 
@@ -39,11 +39,6 @@ Use the shared JavaScript API for Office when you need to:
 * Use custom XML parts.
 * Open a dialog box.
 
-### Word JavaScript API
-
-The Word JavaScript API changes the way that you can interact with objects like documents and paragraphs. Rather than providing individual asynchronous APIs for retrieving and updating each of these objects, the Word JavaScript API provides “proxy” JavaScript objects that correspond to the real objects running in Word. You can interact with these proxy objects by synchronously reading and writing their properties and calling synchronous methods to perform operations on them. These interactions with proxy objects aren’t immediately realized in the running script. The **context.sync** method synchronizes the state between your running JavaScript and the real objects in Office by executing queued instructions and retrieving properties of loaded Word objects for use in your script.
-
-The Word JavaScript API is loaded by Office.js. <!-- I think this paragraph essentially says the same thing as the previous; combine? -->It provides a set of JavaScript proxy objects that are used to queue a set of commands that interact with the contents of a Word document. These commands are run as a batch. The results of the batch are actions taken on the Word document, like inserting content, and synchronizing the Word objects with the JavaScript proxy objects.
 
 ## Next steps
 
@@ -67,4 +62,5 @@ You can also see what's new in the Word JavaScript API on the [change log](http:
 
 
 * [Office Add-ins platform overview](../overview/office-add-ins.md)
+* [Word JavaScript API reference](../../reference/word/word-add-ins-reference-overview.md)
 
