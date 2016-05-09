@@ -51,7 +51,7 @@ To learn more about how to design a world class Word add-in that creates a compe
 
 After you develop your add-in, you can [publish](../publish/publish.md) it to a network share, to an app catalog, or to the Office Store.
 
-## What's coming up for Word add-ins? <!-- Suggest a more clear/enticing heading here. -->
+## What's coming up for Word add-ins?
 
 As we design and develop new APIs for Word add-ins, we'll make them available for your feedback on our [Open API specifications](../../reference/openspec.md) page. Find out what new features are in the pipeline for the Word JavaScript APIs, and provide your input on our design specifications.
 
