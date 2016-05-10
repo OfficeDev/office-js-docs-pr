@@ -49,7 +49,7 @@ Specifies the activation rule(s) that should be evaluated for this mail add-in.
 <Rule xsi:type="ItemHasRegularExpressionMatch" 
     RegExName="string " 
     RegExValue="string " 
-    PropertyName=["Subject" | "BodyAsPlainText" | "BodyAsHtml" | "SenderSTMPAddress"]
+    PropertyName=["Subject" | "BodyAsPlaintext" | "BodyAsHtml" | "SenderSTMPAddress"]
     IgnoreCase=["true" | "false"]
 />
 ```
@@ -135,7 +135,7 @@ None.
 |**PropertyName**|**Description**|
 |:-----|:-----|
 |Subject|Evaluates the regular expression against the item subject.|
-|BodyAsPlainText|Evaluates the regular expression against the item body in plain text.|
+|BodyAsPlaintext|Evaluates the regular expression against the item body in plain text.|
 |BodyAsHtml|Evaluates the regular expression against the item body if the body is available in HTML.|
 |SenderSTMPAddress|Evaluates the regular expression against the SMTP address of the item sender.|
 |
