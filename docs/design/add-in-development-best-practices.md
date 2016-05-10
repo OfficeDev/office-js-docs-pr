@@ -95,7 +95,7 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
 
 
-- Ensure that the look and feel and functionality of your add-in complements the Office experience. Use the [Office UI toolkit for add-ins and web apps](http://msdn.microsoft.com/library/83ffc2f8-4c5b-4b50-9251-0f3093538944%28Office.15%29.aspx).
+- Ensure that the look and feel and functionality of your add-in complements the Office experience. Use [Office UI Fabric](https://dev.office.com/fabric).
 
 - Favor content over chrome. Avoid superfluous UI elements that don't add value to the user experience.
 
