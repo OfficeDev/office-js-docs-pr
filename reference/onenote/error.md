@@ -1,9 +1,9 @@
 # OfficeExtension.Error Object (JavaScript API for OneNote)
 
-Represents errors that occur when you use the OneNote API.
+Represents errors that occur when you use the OneNote JavaScript API.
 
 _Applies to: OneNote Online_
-_Note: This API is in preview_
+_Note: This API is in preview._
 
 ## Properties
 | Property	   | Type	|Description
