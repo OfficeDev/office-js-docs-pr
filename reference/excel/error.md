@@ -1,6 +1,6 @@
 # OfficeExtension.Error object (JavaScript API for Excel)
 
-Represents errors that occur when you use the Excel-specific API.
+Represents errors that occur when you use the Excel JavaScript API.
 
 _Applies to: Excel 2016, Excel Online, Excel for iOS, Office 2016_
 
