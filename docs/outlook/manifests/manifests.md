@@ -9,7 +9,7 @@ An Outlook add-in consists of two components: the XML add-in manifest, and a web
 
 
 ```XML
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!--Created:cb85b80c-f585-40ff-8bfc-12ff4d0e34a9-->
 <OfficeApp
   xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
@@ -67,536 +67,539 @@ An Outlook add-in consists of two components: the XML add-in manifest, and a web
       </bt:Sets>
     </Requirements>
     <Hosts>
-      <Host xsi:type="MailHost">
-
-        <DesktopFormFactor>
-          <FunctionFile resid="functionFile" />
-          
-          <!-- Custom pane, only applies to read form -->
-          <ExtensionPoint xsi:type="CustomPane">
-            <RequestedHeight>100</RequestedHeight> 
-            <SourceLocation resid="customPaneUrl"/>
-            <Rule xsi:type="RuleCollection" Mode="Or">
-              <Rule xsi:type="ItemIs" ItemType="Message"/>
-              <Rule xsi:type="ItemIs" ItemType="AppointmentAttendee"/>
-            </Rule>
-          </ExtensionPoint>
-          
-          <!-- Message compose form -->
-          <ExtensionPoint xsi:type="MessageComposeCommandSurface">
-            <OfficeTab id="TabDefault">
-              <Group id="msgComposeDemoGroup">
-                <Label resid="groupLabel" />
-                <Tooltip resid="groupTooltip" />
-                <!-- Function (UI-less) button -->
-                <Control xsi:type="Button" id="msgComposeFunctionButton">
-                  <Label resid="funcComposeButtonLabel" />
-                  <Tooltip resid="funcComposeButtonTooltip" />
-                  <Supertip>
-                    <Title resid="funcComposeSuperTipTitle" />
-                    <Description resid="funcComposeSuperTipDescription" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="blue-icon-16" />
-                    <bt:Image size="32" resid="blue-icon-32" />
-                    <bt:Image size="80" resid="blue-icon-80" />
-                  </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>addDefaultMsgToBody</FunctionName>
-                  </Action>
-                </Control>
-                <!-- Menu (dropdown) button -->
-                <Control xsi:type="Menu" id="msgComposeMenuButton">
-                  <Label resid="menuComposeButtonLabel" />
-                  <Tooltip resid="menuComposeButtonTooltip" />
-                  <Supertip>
-                    <Title resid="menuComposeSuperTipTitle" />
-                    <Description resid="menuComposeSuperTipDescription" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="red-icon-16" />
-                    <bt:Image size="32" resid="red-icon-32" />
-                    <bt:Image size="80" resid="red-icon-80" />
-                  </Icon>
-                  <Items>
-                    <Item id="msgComposeMenuItem1">
-                      <Label resid="menuItem1ComposeLabel" />
-                      <Tooltip resid="menuItem1ComposeTip" />
-                      <Supertip>
-                        <Title resid="menuItem1ComposeLabel" />
-                        <Description resid="menuItem1ComposeTip" />
-                      </Supertip>
-                      <Icon>
-                        <bt:Image size="16" resid="red-icon-16" />
-                        <bt:Image size="32" resid="red-icon-32" />
-                        <bt:Image size="80" resid="red-icon-80" />
-                      </Icon>
-                      <Action xsi:type="ExecuteFunction">
-                        <FunctionName>addMsg1ToBody</FunctionName>
-                      </Action>
-                    </Item>
-                    <Item id="msgComposeMenuItem2">
-                      <Label resid="menuItem2ComposeLabel" />
-                      <Tooltip resid="menuItem2ComposeTip" />
-                      <Supertip>
-                        <Title resid="menuItem2ComposeLabel" />
-                        <Description resid="menuItem2ComposeTip" />
-                      </Supertip>
-                      <Icon>
-                        <bt:Image size="16" resid="red-icon-16" />
-                        <bt:Image size="32" resid="red-icon-32" />
-                        <bt:Image size="80" resid="red-icon-80" />
-                      </Icon>
-                      <Action xsi:type="ExecuteFunction">
-                        <FunctionName>addMsg2ToBody</FunctionName>
-                      </Action>
-                    </Item>
-                    <Item id="msgComposeMenuItem3">
-                      <Label resid="menuItem3ComposeLabel" />
-                      <Tooltip resid="menuItem3ComposeTip" />
-                      <Supertip>
-                        <Title resid="menuItem3ComposeLabel" />
-                        <Description resid="menuItem3ComposeTip" />
-                      </Supertip>
-                      <Icon>
-                        <bt:Image size="16" resid="red-icon-16" />
-                        <bt:Image size="32" resid="red-icon-32" />
-                        <bt:Image size="80" resid="red-icon-80" />
-                      </Icon>
-                      <Action xsi:type="ExecuteFunction">
-                        <FunctionName>addMsg3ToBody</FunctionName>
-                      </Action>
-                    </Item>
-                  </Items>
-                </Control>
-                <!-- Task pane button -->
-                <Control xsi:type="Button" id="msgComposeOpenPaneButton">
-                  <Label resid="paneComposeButtonLabel" />
-                  <Tooltip resid="paneComposeButtonTooltip" />
-                  <Supertip>
-                    <Title resid="paneComposeSuperTipTitle" />
-                    <Description resid="paneComposeSuperTipDescription" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="green-icon-16" />
-                    <bt:Image size="32" resid="green-icon-32" />
-                    <bt:Image size="80" resid="green-icon-80" />
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="composeTaskPaneUrl" />
-                  </Action>
-                </Control>
-              </Group>
-            </OfficeTab>
-          </ExtensionPoint>
-          
-          <!-- Appointment compose form -->
-          <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
-            <OfficeTab id="TabDefault">
-              <Group id="apptComposeDemoGroup">
-                <Label resid="groupLabel" />
-                <Tooltip resid="groupTooltip" />
-                <!-- Function (UI-less) button -->
-                <Control xsi:type="Button" id="apptComposeFunctionButton">
-                  <Label resid="funcComposeButtonLabel" />
-                  <Tooltip resid="funcComposeButtonTooltip" />
-                  <Supertip>
-                    <Title resid="funcComposeSuperTipTitle" />
-                    <Description resid="funcComposeSuperTipDescription" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="blue-icon-16" />
-                    <bt:Image size="32" resid="blue-icon-32" />
-                    <bt:Image size="80" resid="blue-icon-80" />
-                  </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>addDefaultMsgToBody</FunctionName>
-                  </Action>
-                </Control>
-                <!-- Menu (dropdown) button -->
-                <Control xsi:type="Menu" id="apptComposeMenuButton">
-                  <Label resid="menuComposeButtonLabel" />
-                  <Tooltip resid="menuComposeButtonTooltip" />
-                  <Supertip>
-                    <Title resid="menuComposeSuperTipTitle" />
-                    <Description resid="menuComposeSuperTipDescription" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="red-icon-16" />
-                    <bt:Image size="32" resid="red-icon-32" />
-                    <bt:Image size="80" resid="red-icon-80" />
-                  </Icon>
-                  <Items>
-                    <Item id="apptComposeMenuItem1">
-                      <Label resid="menuItem1ComposeLabel" />
-                      <Tooltip resid="menuItem1ComposeTip" />
-                      <Supertip>
-                        <Title resid="menuItem1ComposeLabel" />
-                        <Description resid="menuItem1ComposeTip" />
-                      </Supertip>
-                      <Icon>
-                        <bt:Image size="16" resid="red-icon-16" />
-                        <bt:Image size="32" resid="red-icon-32" />
-                        <bt:Image size="80" resid="red-icon-80" />
-                      </Icon>
-                      <Action xsi:type="ExecuteFunction">
-                        <FunctionName>addMsg1ToBody</FunctionName>
-                      </Action>
-                    </Item>
-                    <Item id="apptComposeMenuItem2">
-                      <Label resid="menuItem2ComposeLabel" />
-                      <Tooltip resid="menuItem2ComposeTip" />
-                      <Supertip>
-                        <Title resid="menuItem2ComposeLabel" />
-                        <Description resid="menuItem2ComposeTip" />
-                      </Supertip>
-                      <Icon>
-                        <bt:Image size="16" resid="red-icon-16" />
-                        <bt:Image size="32" resid="red-icon-32" />
-                        <bt:Image size="80" resid="red-icon-80" />
-                      </Icon>
-                      <Action xsi:type="ExecuteFunction">
-                        <FunctionName>addMsg2ToBody</FunctionName>
-                      </Action>
-                    </Item>
-                    <Item id="apptComposeMenuItem3">
-                      <Label resid="menuItem3ComposeLabel" />
-                      <Tooltip resid="menuItem3ComposeTip" />
-                      <Supertip>
-                        <Title resid="menuItem3ComposeLabel" />
-                        <Description resid="menuItem3ComposeTip" />
-                      </Supertip>
-                      <Icon>
-                        <bt:Image size="16" resid="red-icon-16" />
-                        <bt:Image size="32" resid="red-icon-32" />
-                        <bt:Image size="80" resid="red-icon-80" />
-                      </Icon>
-                      <Action xsi:type="ExecuteFunction">
-                        <FunctionName>addMsg3ToBody</FunctionName>
-                      </Action>
-                    </Item>
-                  </Items>
-                </Control>
-                <!-- Task pane button -->
-                <Control xsi:type="Button" id="apptComposeOpenPaneButton">
-                  <Label resid="paneComposeButtonLabel" />
-                  <Tooltip resid="paneComposeButtonTooltip" />
-                  <Supertip>
-                    <Title resid="paneComposeSuperTipTitle" />
-                    <Description resid="paneComposeSuperTipDescription" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="green-icon-16" />
-                    <bt:Image size="32" resid="green-icon-32" />
-                    <bt:Image size="80" resid="green-icon-80" />
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="composeTaskPaneUrl" />
-                  </Action>
-                </Control>
-              </Group>
-            </OfficeTab>
-          </ExtensionPoint>
-          
-          <!-- Message read form -->
-          <ExtensionPoint xsi:type="MessageReadCommandSurface">
-            <OfficeTab id="TabDefault">
-              <Group id="msgReadDemoGroup">
-                <Label resid="groupLabel" />
-                <Tooltip resid="groupTooltip" />
-                <!-- Function (UI-less) button -->
-                <Control xsi:type="Button" id="msgReadFunctionButton">
-                  <Label resid="funcReadButtonLabel" />
-                  <Tooltip resid="funcReadButtonTooltip" />
-                  <Supertip>
-                    <Title resid="funcReadSuperTipTitle" />
-                    <Description resid="funcReadSuperTipDescription" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="blue-icon-16" />
-                    <bt:Image size="32" resid="blue-icon-32" />
-                    <bt:Image size="80" resid="blue-icon-80" />
-                  </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>getSubject</FunctionName>
-                  </Action>
-                </Control>
-                <!-- Menu (dropdown) button -->
-                <Control xsi:type="Menu" id="msgReadMenuButton">
-                  <Label resid="menuReadButtonLabel" />
-                  <Tooltip resid="menuReadButtonTooltip" />
-                  <Supertip>
-                    <Title resid="menuReadSuperTipTitle" />
-                    <Description resid="menuReadSuperTipDescription" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="red-icon-16" />
-                    <bt:Image size="32" resid="red-icon-32" />
-                    <bt:Image size="80" resid="red-icon-80" />
-                  </Icon>
-                  <Items>
-                    <Item id="msgReadMenuItem1">
-                      <Label resid="menuItem1ReadLabel" />
-                      <Tooltip resid="menuItem1ReadTip" />
-                      <Supertip>
-                        <Title resid="menuItem1ReadLabel" />
-                        <Description resid="menuItem1ReadTip" />
-                      </Supertip>
-                      <Icon>
-                        <bt:Image size="16" resid="red-icon-16" />
-                        <bt:Image size="32" resid="red-icon-32" />
-                        <bt:Image size="80" resid="red-icon-80" />
-                      </Icon>
-                      <Action xsi:type="ExecuteFunction">
-                        <FunctionName>getItemClass</FunctionName>
-                      </Action>
-                    </Item>
-                    <Item id="msgReadMenuItem2">
-                      <Label resid="menuItem2ReadLabel" />
-                      <Tooltip resid="menuItem2ReadTip" />
-                      <Supertip>
-                        <Title resid="menuItem2ReadLabel" />
-                        <Description resid="menuItem2ReadTip" />
-                      </Supertip>
-                      <Icon>
-                        <bt:Image size="16" resid="red-icon-16" />
-                        <bt:Image size="32" resid="red-icon-32" />
-                        <bt:Image size="80" resid="red-icon-80" />
-                      </Icon>
-                      <Action xsi:type="ExecuteFunction">
-                        <FunctionName>getDateTimeCreated</FunctionName>
-                      </Action>
-                    </Item>
-                    <Item id="msgReadMenuItem3">
-                      <Label resid="menuItem3ReadLabel" />
-                      <Tooltip resid="menuItem3ReadTip" />
-                      <Supertip>
-                        <Title resid="menuItem3ReadLabel" />
-                        <Description resid="menuItem3ReadTip" />
-                      </Supertip>
-                      <Icon>
-                        <bt:Image size="16" resid="red-icon-16" />
-                        <bt:Image size="32" resid="red-icon-32" />
-                        <bt:Image size="80" resid="red-icon-80" />
-                      </Icon>
-                      <Action xsi:type="ExecuteFunction">
-                        <FunctionName>getItemID</FunctionName>
-                      </Action>
-                    </Item>
-                  </Items>
-                </Control>
-                <!-- Task pane button -->
-                <Control xsi:type="Button" id="msgReadOpenPaneButton">
-                  <Label resid="paneReadButtonLabel" />
-                  <Tooltip resid="paneReadButtonTooltip" />
-                  <Supertip>
-                    <Title resid="paneReadSuperTipTitle" />
-                    <Description resid="paneReadSuperTipDescription" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="green-icon-16" />
-                    <bt:Image size="32" resid="green-icon-32" />
-                    <bt:Image size="80" resid="green-icon-80" />
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="readTaskPaneUrl" />
-                  </Action>
-                </Control>
-              </Group>
-            </OfficeTab>
-          </ExtensionPoint>
-          
-          <!-- Appointment read form -->
-          <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
-            <OfficeTab id="TabDefault">
-              <Group id="apptReadDemoGroup">
-                <Label resid="groupLabel" />
-                <Tooltip resid="groupTooltip" />
-                <!-- Function (UI-less) button -->
-                <Control xsi:type="Button" id="apptReadFunctionButton">
-                  <Label resid="funcReadButtonLabel" />
-                  <Tooltip resid="funcReadButtonTooltip" />
-                  <Supertip>
-                    <Title resid="funcReadSuperTipTitle" />
-                    <Description resid="funcReadSuperTipDescription" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="blue-icon-16" />
-                    <bt:Image size="32" resid="blue-icon-32" />
-                    <bt:Image size="80" resid="blue-icon-80" />
-                  </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>getSubject</FunctionName>
-                  </Action>
-                </Control>
-                <!-- Menu (dropdown) button -->
-                <Control xsi:type="Menu" id="apptReadMenuButton">
-                  <Label resid="menuReadButtonLabel" />
-                  <Tooltip resid="menuReadButtonTooltip" />
-                  <Supertip>
-                    <Title resid="menuReadSuperTipTitle" />
-                    <Description resid="menuReadSuperTipDescription" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="red-icon-16" />
-                    <bt:Image size="32" resid="red-icon-32" />
-                    <bt:Image size="80" resid="red-icon-80" />
-                  </Icon>
-                  <Items>
-                    <Item id="apptReadMenuItem1">
-                      <Label resid="menuItem1ReadLabel" />
-                      <Tooltip resid="menuItem1ReadTip" />
-                      <Supertip>
-                        <Title resid="menuItem1ReadLabel" />
-                        <Description resid="menuItem1ReadTip" />
-                      </Supertip>
-                      <Icon>
-                        <bt:Image size="16" resid="red-icon-16" />
-                        <bt:Image size="32" resid="red-icon-32" />
-                        <bt:Image size="80" resid="red-icon-80" />
-                      </Icon>
-                      <Action xsi:type="ExecuteFunction">
-                        <FunctionName>getItemClass</FunctionName>
-                      </Action>
-                    </Item>
-                    <Item id="apptReadMenuItem2">
-                      <Label resid="menuItem2ReadLabel" />
-                      <Tooltip resid="menuItem2ReadTip" />
-                      <Supertip>
-                        <Title resid="menuItem2ReadLabel" />
-                        <Description resid="menuItem2ReadTip" />
-                      </Supertip>
-                      <Icon>
-                        <bt:Image size="16" resid="red-icon-16" />
-                        <bt:Image size="32" resid="red-icon-32" />
-                        <bt:Image size="80" resid="red-icon-80" />
-                      </Icon>
-                      <Action xsi:type="ExecuteFunction">
-                        <FunctionName>getDateTimeCreated</FunctionName>
-                      </Action>
-                    </Item>
-                    <Item id="apptReadMenuItem3">
-                      <Label resid="menuItem3ReadLabel" />
-                      <Tooltip resid="menuItem3ReadTip" />
-                      <Supertip>
-                        <Title resid="menuItem3ReadLabel" />
-                        <Description resid="menuItem3ReadTip" />
-                      </Supertip>
-                      <Icon>
-                        <bt:Image size="16" resid="red-icon-16" />
-                        <bt:Image size="32" resid="red-icon-32" />
-                        <bt:Image size="80" resid="red-icon-80" />
-                      </Icon>
-                      <Action xsi:type="ExecuteFunction">
-                        <FunctionName>getItemID</FunctionName>
-                      </Action>
-                    </Item>
-                  </Items>
-                </Control>
-                <!-- Task pane button -->
-                <Control xsi:type="Button" id="apptReadOpenPaneButton">
-                  <Label resid="paneReadButtonLabel" />
-                  <Tooltip resid="paneReadButtonTooltip" />
-                  <Supertip>
-                    <Title resid="paneReadSuperTipTitle" />
-                    <Description resid="paneReadSuperTipDescription" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="green-icon-16" />
-                    <bt:Image size="32" resid="green-icon-32" />
-                    <bt:Image size="80" resid="green-icon-80" />
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="readTaskPaneUrl" />
-                  </Action>
-                </Control>
-              </Group>
-            </OfficeTab>
-          </ExtensionPoint>
-
-        </DesktopFormFactor>
-      </Host>
+        <Host Name="Mailbox" />
     </Hosts>
+    <Requirements>
+        <Sets>
+            <Set Name="MailBox" MinVersion="1.1" />
+        </Sets>
+    </Requirements>
+    <!-- These elements support older clients that don't support add-in commands -->
+    <FormSettings>
+        <Form xsi:type="ItemRead">
+            <DesktopSettings>
+                <!-- NOTE: Just reusing the read taskpane page that is invoked by the button
+                     on the ribbon in clients that support add-in commands. You can
+                     use a completely different page if desired -->
+                <SourceLocation DefaultValue="YOUR_WEB_SERVER/AppRead/TaskPane/TaskPane.html" />
+                <RequestedHeight>450</RequestedHeight>
+            </DesktopSettings>
+        </Form>
+        <Form xsi:type="ItemEdit">
+            <DesktopSettings>
+                <SourceLocation DefaultValue="YOUR_WEB_SERVER/AppCompose/Home/Home.html" />
+            </DesktopSettings>
+        </Form>
+    </FormSettings>
+    <Permissions>ReadWriteItem</Permissions>
+    <Rule xsi:type="RuleCollection" Mode="Or">
+        <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit" />
+        <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit" />
+        <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
+        <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Read" />
+    </Rule>
+    <DisableEntityHighlighting>false</DisableEntityHighlighting>
 
-    <Resources>
-      <bt:Images>
-        <!-- Blue icon -->
-        <bt:Image id="blue-icon-16" DefaultValue="YOUR_WEB_SERVER/images/blue-16.png"/>
-        <bt:Image id="blue-icon-32" DefaultValue="YOUR_WEB_SERVER/images/blue-32.png"/>
-        <bt:Image id="blue-icon-80" DefaultValue="YOUR_WEB_SERVER/images/blue-80.png"/>
-        <!-- Red icon -->
-        <bt:Image id="red-icon-16" DefaultValue="YOUR_WEB_SERVER/images/red-16.png"/>
-        <bt:Image id="red-icon-32" DefaultValue="YOUR_WEB_SERVER/images/red-32.png"/>
-        <bt:Image id="red-icon-80" DefaultValue="YOUR_WEB_SERVER/images/red-80.png"/>
-        <!-- Green icon -->
-        <bt:Image id="green-icon-16" DefaultValue="YOUR_WEB_SERVER/images/green-16.png"/>
-        <bt:Image id="green-icon-32" DefaultValue="YOUR_WEB_SERVER/images/green-32.png"/>
-        <bt:Image id="green-icon-80" DefaultValue="YOUR_WEB_SERVER/images/green-80.png"/>
-      </bt:Images>
-      <bt:Urls>
-        <bt:Url id="functionFile" DefaultValue="YOUR_WEB_SERVER/FunctionFile/Functions.html"/>
-        <bt:Url id="readTaskPaneUrl" DefaultValue="YOUR_WEB_SERVER/AppRead/TaskPane/TaskPane.html"/>
-        <bt:Url id="composeTaskPaneUrl" DefaultValue="YOUR_WEB_SERVER/AppCompose/TaskPane/TaskPane.html"/>
-        <bt:Url id="customPaneUrl" DefaultValue="YOUR_WEB_SERVER/AppRead/CustomPane/CustomPane.html"/>"
-      </bt:Urls>
-      <bt:ShortStrings>
-        <bt:String id="groupLabel" DefaultValue="Add-in Demo"/>
-        <!-- Compose mode -->
-        <bt:String id="funcComposeButtonLabel" DefaultValue="Insert default message"/>
-        <bt:String id="menuComposeButtonLabel" DefaultValue="Insert message"/>
-        <bt:String id="paneComposeButtonLabel" DefaultValue="Insert custom message"/>
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
 
-        <bt:String id="funcComposeSuperTipTitle" DefaultValue="Inserts the default message"/>
-        <bt:String id="menuComposeSuperTipTitle" DefaultValue="Choose a message to insert"/>
-        <bt:String id="paneComposeSuperTipTitle" DefaultValue="Enter your own text to insert"/>
-        
-        <bt:String id="menuItem1ComposeLabel" DefaultValue="Hello World!"/>
-        <bt:String id="menuItem2ComposeLabel" DefaultValue="Add-in commands are cool!"/>
-        <bt:String id="menuItem3ComposeLabel" DefaultValue="Visit dev.outlook.com"/>
+        <Requirements>
+            <bt:Sets DefaultMinVersion="1.3">
+                <bt:Set Name="Mailbox" />
+            </bt:Sets>
+        </Requirements>
+        <Hosts>
+            <Host xsi:type="MailHost">
 
-        <!-- Read mode -->
-        <bt:String id="funcReadButtonLabel" DefaultValue="Get subject"/>
-        <bt:String id="menuReadButtonLabel" DefaultValue="Get property"/>
-        <bt:String id="paneReadButtonLabel" DefaultValue="Display all properties"/>
+                <DesktopFormFactor>
+                    <FunctionFile resid="functionFile" />
 
-        <bt:String id="funcReadSuperTipTitle" DefaultValue="Gets the subject of the message or appointment"/>
-        <bt:String id="menuReadSuperTipTitle" DefaultValue="Choose a property to get"/>
-        <bt:String id="paneReadSuperTipTitle" DefaultValue="Get all properties"/>
-        
-        <bt:String id="menuItem1ReadLabel" DefaultValue="Get item class"/>
-        <bt:String id="menuItem2ReadLabel" DefaultValue="Get date time created"/>
-        <bt:String id="menuItem3ReadLabel" DefaultValue="Get item ID"/>
-      </bt:ShortStrings>
-      <bt:LongStrings>
-        <bt:String id="groupTooltip" DefaultValue="Add-in Demo of the different command types"/>
-        <!-- Compose mode -->
-        <bt:String id="funcComposeButtonTooltip" DefaultValue="Inserts text into body of the message or appointment"/>
-        <bt:String id="menuComposeButtonTooltip" DefaultValue="Inserts your choice of text into body of the message or appointment"/>
-        <bt:String id="paneComposeButtonTooltip" DefaultValue="Opens a pane where you can enter text to insert in the body of the message or appointment"/>
-        
-        <bt:String id="funcComposeSuperTipDescription" DefaultValue="Inserts text into body of the message or appointment. This is an example of a function button."/>
-        <bt:String id="menuComposeSuperTipDescription" DefaultValue="Inserts your choice of text into body of the message or appointment. This is an example of a drop-down menu button."/>
-        <bt:String id="paneComposeSuperTipDescription" DefaultValue="Opens a pane where you can enter text to insert in the body of the message or appointment. This is an example of a button that opens a task pane."/>
-        
-        <bt:String id="menuItem1ComposeTip" DefaultValue="Inserts Hello World! into the body of the message or appointment." />
-        <bt:String id="menuItem2ComposeTip" DefaultValue="Inserts Add-in commands are cool! into the body of the message or appointment." />
-        <bt:String id="menuItem3ComposeTip" DefaultValue="Inserts Visit dev.outlook.com into the body of the message or appointment." />
+                    <!-- Custom pane, only applies to read form -->
+                    <ExtensionPoint xsi:type="CustomPane">
+                        <RequestedHeight>100</RequestedHeight>
+                        <SourceLocation resid="customPaneUrl" />
+                        <Rule xsi:type="RuleCollection" Mode="Or">
+                            <Rule xsi:type="ItemIs" ItemType="Message" />
+                            <Rule xsi:type="ItemIs" ItemType="AppointmentAttendee" />
+                        </Rule>
+                    </ExtensionPoint>
 
-        <!-- Read mode -->
-        <bt:String id="funcReadButtonTooltip" DefaultValue="Gets the subject of the message or appointment and displays it in the info bar"/>
-        <bt:String id="menuReadButtonTooltip" DefaultValue="Gets the selected property of the message or appointment and displays it in the info bar"/>
-        <bt:String id="paneReadButtonTooltip" DefaultValue="Opens a pane displaying all available properties of the message or appointment"/>
-        
-        <bt:String id="funcReadSuperTipDescription" DefaultValue="Gets the subject of the message or appointment and displays it in the info bar. This is an example of a function button."/>
-        <bt:String id="menuReadSuperTipDescription" DefaultValue="Gets the selected property of the message or appointment and displays it in the info bar. This is an example of a drop-down menu button."/>
-        <bt:String id="paneReadSuperTipDescription" DefaultValue="Opens a pane displaying all available properties of the message or appointment. This is an example of a button that opens a task pane."/>
-        
-        <bt:String id="menuItem1ReadTip" DefaultValue="Gets the item class of the message or appointment and displays it in the info bar." />
-        <bt:String id="menuItem2ReadTip" DefaultValue="Gets the date and time the message or appointment was created and displays it in the info bar." />
-        <bt:String id="menuItem3ReadTip" DefaultValue="Gets the item ID of the message or appointment and displays it in the info bar." />
-      </bt:LongStrings>
-    </Resources>
-  </VersionOverrides>
+                    <!-- Message compose form -->
+                    <ExtensionPoint xsi:type="MessageComposeCommandSurface">
+                        <OfficeTab id="TabDefault">
+                            <Group id="msgComposeDemoGroup">
+                                <Label resid="groupLabel" />
+                                <!-- Function (UI-less) button -->
+                                <Control xsi:type="Button" id="msgComposeFunctionButton">
+                                    <Label resid="funcComposeButtonLabel" />
+                                    <Supertip>
+                                        <Title resid="funcComposeSuperTipTitle" />
+                                        <Description resid="funcComposeSuperTipDescription" />
+                                    </Supertip>
+                                    <Icon>
+                                        <bt:Image size="16" resid="blue-icon-16" />
+                                        <bt:Image size="32" resid="blue-icon-32" />
+                                        <bt:Image size="80" resid="blue-icon-80" />
+                                    </Icon>
+                                    <Action xsi:type="ExecuteFunction">
+                                        <FunctionName>addDefaultMsgToBody</FunctionName>
+                                    </Action>
+                                </Control>
+                                <!-- Menu (dropdown) button -->
+                                <Control xsi:type="Menu" id="msgComposeMenuButton">
+                                    <Label resid="menuComposeButtonLabel" />
+                                    <Supertip>
+                                        <Title resid="menuComposeSuperTipTitle" />
+                                        <Description resid="menuComposeSuperTipDescription" />
+                                    </Supertip>
+                                    <Icon>
+                                        <bt:Image size="16" resid="red-icon-16" />
+                                        <bt:Image size="32" resid="red-icon-32" />
+                                        <bt:Image size="80" resid="red-icon-80" />
+                                    </Icon>
+                                    <Items>
+                                        <Item id="msgComposeMenuItem1">
+                                            <Label resid="menuItem1ComposeLabel" />
+                                            <Supertip>
+                                                <Title resid="menuItem1ComposeLabel" />
+                                                <Description resid="menuItem1ComposeTip" />
+                                            </Supertip>
+                                            <Icon>
+                                                <bt:Image size="16" resid="red-icon-16" />
+                                                <bt:Image size="32" resid="red-icon-32" />
+                                                <bt:Image size="80" resid="red-icon-80" />
+                                            </Icon>
+                                            <Action xsi:type="ExecuteFunction">
+                                                <FunctionName>addMsg1ToBody</FunctionName>
+                                            </Action>
+                                        </Item>
+                                        <Item id="msgComposeMenuItem2">
+                                            <Label resid="menuItem2ComposeLabel" />
+                                            <Supertip>
+                                                <Title resid="menuItem2ComposeLabel" />
+                                                <Description resid="menuItem2ComposeTip" />
+                                            </Supertip>
+                                            <Icon>
+                                                <bt:Image size="16" resid="red-icon-16" />
+                                                <bt:Image size="32" resid="red-icon-32" />
+                                                <bt:Image size="80" resid="red-icon-80" />
+                                            </Icon>
+                                            <Action xsi:type="ExecuteFunction">
+                                                <FunctionName>addMsg2ToBody</FunctionName>
+                                            </Action>
+                                        </Item>
+                                        <Item id="msgComposeMenuItem3">
+                                            <Label resid="menuItem3ComposeLabel" />
+                                            <Supertip>
+                                                <Title resid="menuItem3ComposeLabel" />
+                                                <Description resid="menuItem3ComposeTip" />
+                                            </Supertip>
+                                            <Icon>
+                                                <bt:Image size="16" resid="red-icon-16" />
+                                                <bt:Image size="32" resid="red-icon-32" />
+                                                <bt:Image size="80" resid="red-icon-80" />
+                                            </Icon>
+                                            <Action xsi:type="ExecuteFunction">
+                                                <FunctionName>addMsg3ToBody</FunctionName>
+                                            </Action>
+                                        </Item>
+                                    </Items>
+                                </Control>
+                                <!-- Task pane button -->
+                                <Control xsi:type="Button" id="msgComposeOpenPaneButton">
+                                    <Label resid="paneComposeButtonLabel" />
+                                    <Supertip>
+                                        <Title resid="paneComposeSuperTipTitle" />
+                                        <Description resid="paneComposeSuperTipDescription" />
+                                    </Supertip>
+                                    <Icon>
+                                        <bt:Image size="16" resid="green-icon-16" />
+                                        <bt:Image size="32" resid="green-icon-32" />
+                                        <bt:Image size="80" resid="green-icon-80" />
+                                    </Icon>
+                                    <Action xsi:type="ShowTaskpane">
+                                        <SourceLocation resid="composeTaskPaneUrl" />
+                                    </Action>
+                                </Control>
+                            </Group>
+                        </OfficeTab>
+                    </ExtensionPoint>
+
+                    <!-- Appointment compose form -->
+                    <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
+                        <OfficeTab id="TabDefault">
+                            <Group id="apptComposeDemoGroup">
+                                <Label resid="groupLabel" />
+                                <!-- Function (UI-less) button -->
+                                <Control xsi:type="Button" id="apptComposeFunctionButton">
+                                    <Label resid="funcComposeButtonLabel" />
+                                    <Supertip>
+                                        <Title resid="funcComposeSuperTipTitle" />
+                                        <Description resid="funcComposeSuperTipDescription" />
+                                    </Supertip>
+                                    <Icon>
+                                        <bt:Image size="16" resid="blue-icon-16" />
+                                        <bt:Image size="32" resid="blue-icon-32" />
+                                        <bt:Image size="80" resid="blue-icon-80" />
+                                    </Icon>
+                                    <Action xsi:type="ExecuteFunction">
+                                        <FunctionName>addDefaultMsgToBody</FunctionName>
+                                    </Action>
+                                </Control>
+                                <!-- Menu (dropdown) button -->
+                                <Control xsi:type="Menu" id="apptComposeMenuButton">
+                                    <Label resid="menuComposeButtonLabel" />
+                                    <Supertip>
+                                        <Title resid="menuComposeSuperTipTitle" />
+                                        <Description resid="menuComposeSuperTipDescription" />
+                                    </Supertip>
+                                    <Icon>
+                                        <bt:Image size="16" resid="red-icon-16" />
+                                        <bt:Image size="32" resid="red-icon-32" />
+                                        <bt:Image size="80" resid="red-icon-80" />
+                                    </Icon>
+                                    <Items>
+                                        <Item id="apptComposeMenuItem1">
+                                            <Label resid="menuItem1ComposeLabel" />
+                                            <Supertip>
+                                                <Title resid="menuItem1ComposeLabel" />
+                                                <Description resid="menuItem1ComposeTip" />
+                                            </Supertip>
+                                            <Icon>
+                                                <bt:Image size="16" resid="red-icon-16" />
+                                                <bt:Image size="32" resid="red-icon-32" />
+                                                <bt:Image size="80" resid="red-icon-80" />
+                                            </Icon>
+                                            <Action xsi:type="ExecuteFunction">
+                                                <FunctionName>addMsg1ToBody</FunctionName>
+                                            </Action>
+                                        </Item>
+                                        <Item id="apptComposeMenuItem2">
+                                            <Label resid="menuItem2ComposeLabel" />
+                                            <Supertip>
+                                                <Title resid="menuItem2ComposeLabel" />
+                                                <Description resid="menuItem2ComposeTip" />
+                                            </Supertip>
+                                            <Icon>
+                                                <bt:Image size="16" resid="red-icon-16" />
+                                                <bt:Image size="32" resid="red-icon-32" />
+                                                <bt:Image size="80" resid="red-icon-80" />
+                                            </Icon>
+                                            <Action xsi:type="ExecuteFunction">
+                                                <FunctionName>addMsg2ToBody</FunctionName>
+                                            </Action>
+                                        </Item>
+                                        <Item id="apptComposeMenuItem3">
+                                            <Label resid="menuItem3ComposeLabel" />
+                                            <Supertip>
+                                                <Title resid="menuItem3ComposeLabel" />
+                                                <Description resid="menuItem3ComposeTip" />
+                                            </Supertip>
+                                            <Icon>
+                                                <bt:Image size="16" resid="red-icon-16" />
+                                                <bt:Image size="32" resid="red-icon-32" />
+                                                <bt:Image size="80" resid="red-icon-80" />
+                                            </Icon>
+                                            <Action xsi:type="ExecuteFunction">
+                                                <FunctionName>addMsg3ToBody</FunctionName>
+                                            </Action>
+                                        </Item>
+                                    </Items>
+                                </Control>
+                                <!-- Task pane button -->
+                                <Control xsi:type="Button" id="apptComposeOpenPaneButton">
+                                    <Label resid="paneComposeButtonLabel" />
+                                    <Supertip>
+                                        <Title resid="paneComposeSuperTipTitle" />
+                                        <Description resid="paneComposeSuperTipDescription" />
+                                    </Supertip>
+                                    <Icon>
+                                        <bt:Image size="16" resid="green-icon-16" />
+                                        <bt:Image size="32" resid="green-icon-32" />
+                                        <bt:Image size="80" resid="green-icon-80" />
+                                    </Icon>
+                                    <Action xsi:type="ShowTaskpane">
+                                        <SourceLocation resid="composeTaskPaneUrl" />
+                                    </Action>
+                                </Control>
+                            </Group>
+                        </OfficeTab>
+                    </ExtensionPoint>
+
+                    <!-- Message read form -->
+                    <ExtensionPoint xsi:type="MessageReadCommandSurface">
+                        <OfficeTab id="TabDefault">
+                            <Group id="msgReadDemoGroup">
+                                <Label resid="groupLabel" />
+                                <!-- Function (UI-less) button -->
+                                <Control xsi:type="Button" id="msgReadFunctionButton">
+                                    <Label resid="funcReadButtonLabel" />
+                                    <Supertip>
+                                        <Title resid="funcReadSuperTipTitle" />
+                                        <Description resid="funcReadSuperTipDescription" />
+                                    </Supertip>
+                                    <Icon>
+                                        <bt:Image size="16" resid="blue-icon-16" />
+                                        <bt:Image size="32" resid="blue-icon-32" />
+                                        <bt:Image size="80" resid="blue-icon-80" />
+                                    </Icon>
+                                    <Action xsi:type="ExecuteFunction">
+                                        <FunctionName>getSubject</FunctionName>
+                                    </Action>
+                                </Control>
+                                <!-- Menu (dropdown) button -->
+                                <Control xsi:type="Menu" id="msgReadMenuButton">
+                                    <Label resid="menuReadButtonLabel" />
+                                    <Supertip>
+                                        <Title resid="menuReadSuperTipTitle" />
+                                        <Description resid="menuReadSuperTipDescription" />
+                                    </Supertip>
+                                    <Icon>
+                                        <bt:Image size="16" resid="red-icon-16" />
+                                        <bt:Image size="32" resid="red-icon-32" />
+                                        <bt:Image size="80" resid="red-icon-80" />
+                                    </Icon>
+                                    <Items>
+                                        <Item id="msgReadMenuItem1">
+                                            <Label resid="menuItem1ReadLabel" />
+                                            <Supertip>
+                                                <Title resid="menuItem1ReadLabel" />
+                                                <Description resid="menuItem1ReadTip" />
+                                            </Supertip>
+                                            <Icon>
+                                                <bt:Image size="16" resid="red-icon-16" />
+                                                <bt:Image size="32" resid="red-icon-32" />
+                                                <bt:Image size="80" resid="red-icon-80" />
+                                            </Icon>
+                                            <Action xsi:type="ExecuteFunction">
+                                                <FunctionName>getItemClass</FunctionName>
+                                            </Action>
+                                        </Item>
+                                        <Item id="msgReadMenuItem2">
+                                            <Label resid="menuItem2ReadLabel" />
+                                            <Supertip>
+                                                <Title resid="menuItem2ReadLabel" />
+                                                <Description resid="menuItem2ReadTip" />
+                                            </Supertip>
+                                            <Icon>
+                                                <bt:Image size="16" resid="red-icon-16" />
+                                                <bt:Image size="32" resid="red-icon-32" />
+                                                <bt:Image size="80" resid="red-icon-80" />
+                                            </Icon>
+                                            <Action xsi:type="ExecuteFunction">
+                                                <FunctionName>getDateTimeCreated</FunctionName>
+                                            </Action>
+                                        </Item>
+                                        <Item id="msgReadMenuItem3">
+                                            <Label resid="menuItem3ReadLabel" />
+                                            <Supertip>
+                                                <Title resid="menuItem3ReadLabel" />
+                                                <Description resid="menuItem3ReadTip" />
+                                            </Supertip>
+                                            <Icon>
+                                                <bt:Image size="16" resid="red-icon-16" />
+                                                <bt:Image size="32" resid="red-icon-32" />
+                                                <bt:Image size="80" resid="red-icon-80" />
+                                            </Icon>
+                                            <Action xsi:type="ExecuteFunction">
+                                                <FunctionName>getItemID</FunctionName>
+                                            </Action>
+                                        </Item>
+                                    </Items>
+                                </Control>
+                                <!-- Task pane button -->
+                                <Control xsi:type="Button" id="msgReadOpenPaneButton">
+                                    <Label resid="paneReadButtonLabel" />
+                                    <Supertip>
+                                        <Title resid="paneReadSuperTipTitle" />
+                                        <Description resid="paneReadSuperTipDescription" />
+                                    </Supertip>
+                                    <Icon>
+                                        <bt:Image size="16" resid="green-icon-16" />
+                                        <bt:Image size="32" resid="green-icon-32" />
+                                        <bt:Image size="80" resid="green-icon-80" />
+                                    </Icon>
+                                    <Action xsi:type="ShowTaskpane">
+                                        <SourceLocation resid="readTaskPaneUrl" />
+                                    </Action>
+                                </Control>
+                            </Group>
+                        </OfficeTab>
+                    </ExtensionPoint>
+
+                    <!-- Appointment read form -->
+                    <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
+                        <OfficeTab id="TabDefault">
+                            <Group id="apptReadDemoGroup">
+                                <Label resid="groupLabel" />
+                                <!-- Function (UI-less) button -->
+                                <Control xsi:type="Button" id="apptReadFunctionButton">
+                                    <Label resid="funcReadButtonLabel" />
+                                    <Supertip>
+                                        <Title resid="funcReadSuperTipTitle" />
+                                        <Description resid="funcReadSuperTipDescription" />
+                                    </Supertip>
+                                    <Icon>
+                                        <bt:Image size="16" resid="blue-icon-16" />
+                                        <bt:Image size="32" resid="blue-icon-32" />
+                                        <bt:Image size="80" resid="blue-icon-80" />
+                                    </Icon>
+                                    <Action xsi:type="ExecuteFunction">
+                                        <FunctionName>getSubject</FunctionName>
+                                    </Action>
+                                </Control>
+                                <!-- Menu (dropdown) button -->
+                                <Control xsi:type="Menu" id="apptReadMenuButton">
+                                    <Label resid="menuReadButtonLabel" />
+                                    <Supertip>
+                                        <Title resid="menuReadSuperTipTitle" />
+                                        <Description resid="menuReadSuperTipDescription" />
+                                    </Supertip>
+                                    <Icon>
+                                        <bt:Image size="16" resid="red-icon-16" />
+                                        <bt:Image size="32" resid="red-icon-32" />
+                                        <bt:Image size="80" resid="red-icon-80" />
+                                    </Icon>
+                                    <Items>
+                                        <Item id="apptReadMenuItem1">
+                                            <Label resid="menuItem1ReadLabel" />
+                                            <Supertip>
+                                                <Title resid="menuItem1ReadLabel" />
+                                                <Description resid="menuItem1ReadTip" />
+                                            </Supertip>
+                                            <Icon>
+                                                <bt:Image size="16" resid="red-icon-16" />
+                                                <bt:Image size="32" resid="red-icon-32" />
+                                                <bt:Image size="80" resid="red-icon-80" />
+                                            </Icon>
+                                            <Action xsi:type="ExecuteFunction">
+                                                <FunctionName>getItemClass</FunctionName>
+                                            </Action>
+                                        </Item>
+                                        <Item id="apptReadMenuItem2">
+                                            <Label resid="menuItem2ReadLabel" />
+                                            <Supertip>
+                                                <Title resid="menuItem2ReadLabel" />
+                                                <Description resid="menuItem2ReadTip" />
+                                            </Supertip>
+                                            <Icon>
+                                                <bt:Image size="16" resid="red-icon-16" />
+                                                <bt:Image size="32" resid="red-icon-32" />
+                                                <bt:Image size="80" resid="red-icon-80" />
+                                            </Icon>
+                                            <Action xsi:type="ExecuteFunction">
+                                                <FunctionName>getDateTimeCreated</FunctionName>
+                                            </Action>
+                                        </Item>
+                                        <Item id="apptReadMenuItem3">
+                                            <Label resid="menuItem3ReadLabel" />
+                                            <Supertip>
+                                                <Title resid="menuItem3ReadLabel" />
+                                                <Description resid="menuItem3ReadTip" />
+                                            </Supertip>
+                                            <Icon>
+                                                <bt:Image size="16" resid="red-icon-16" />
+                                                <bt:Image size="32" resid="red-icon-32" />
+                                                <bt:Image size="80" resid="red-icon-80" />
+                                            </Icon>
+                                            <Action xsi:type="ExecuteFunction">
+                                                <FunctionName>getItemID</FunctionName>
+                                            </Action>
+                                        </Item>
+                                    </Items>
+                                </Control>
+                                <!-- Task pane button -->
+                                <Control xsi:type="Button" id="apptReadOpenPaneButton">
+                                    <Label resid="paneReadButtonLabel" />
+                                    <Supertip>
+                                        <Title resid="paneReadSuperTipTitle" />
+                                        <Description resid="paneReadSuperTipDescription" />
+                                    </Supertip>
+                                    <Icon>
+                                        <bt:Image size="16" resid="green-icon-16" />
+                                        <bt:Image size="32" resid="green-icon-32" />
+                                        <bt:Image size="80" resid="green-icon-80" />
+                                    </Icon>
+                                    <Action xsi:type="ShowTaskpane">
+                                        <SourceLocation resid="readTaskPaneUrl" />
+                                    </Action>
+                                </Control>
+                            </Group>
+                        </OfficeTab>
+                    </ExtensionPoint>
+                </DesktopFormFactor>
+            </Host>
+        </Hosts>
+
+        <Resources>
+            <bt:Images>
+                <!-- Blue icon -->
+                <bt:Image id="blue-icon-16" DefaultValue="YOUR_WEB_SERVER/images/blue-16.png" />
+                <bt:Image id="blue-icon-32" DefaultValue="YOUR_WEB_SERVER/images/blue-32.png" />
+                <bt:Image id="blue-icon-80" DefaultValue="YOUR_WEB_SERVER/images/blue-80.png" />
+                <!-- Red icon -->
+                <bt:Image id="red-icon-16" DefaultValue="YOUR_WEB_SERVER/images/red-16.png" />
+                <bt:Image id="red-icon-32" DefaultValue="YOUR_WEB_SERVER/images/red-32.png" />
+                <bt:Image id="red-icon-80" DefaultValue="YOUR_WEB_SERVER/images/red-80.png" />
+                <!-- Green icon -->
+                <bt:Image id="green-icon-16" DefaultValue="YOUR_WEB_SERVER/images/green-16.png" />
+                <bt:Image id="green-icon-32" DefaultValue="YOUR_WEB_SERVER/images/green-32.png" />
+                <bt:Image id="green-icon-80" DefaultValue="YOUR_WEB_SERVER/images/green-80.png" />
+            </bt:Images>
+            <bt:Urls>
+                <bt:Url id="functionFile" DefaultValue="YOUR_WEB_SERVER/FunctionFile/Functions.html" />
+                <bt:Url id="readTaskPaneUrl" DefaultValue="YOUR_WEB_SERVER/AppRead/TaskPane/TaskPane.html" />
+                <bt:Url id="composeTaskPaneUrl" DefaultValue="YOUR_WEB_SERVER/AppCompose/TaskPane/TaskPane.html" />
+                <bt:Url id="customPaneUrl" DefaultValue="YOUR_WEB_SERVER/AppRead/CustomPane/CustomPane.html" />
+            </bt:Urls>
+            <bt:ShortStrings>
+                <bt:String id="groupLabel" DefaultValue="Add-in Demo" />
+                <!-- Compose mode -->
+                <bt:String id="funcComposeButtonLabel" DefaultValue="Insert default message" />
+                <bt:String id="menuComposeButtonLabel" DefaultValue="Insert message" />
+                <bt:String id="paneComposeButtonLabel" DefaultValue="Insert custom message" />
+
+                <bt:String id="funcComposeSuperTipTitle" DefaultValue="Inserts the default message" />
+                <bt:String id="menuComposeSuperTipTitle" DefaultValue="Choose a message to insert" />
+                <bt:String id="paneComposeSuperTipTitle" DefaultValue="Enter your own text to insert" />
+
+                <bt:String id="menuItem1ComposeLabel" DefaultValue="Hello World!" />
+                <bt:String id="menuItem2ComposeLabel" DefaultValue="Add-in commands are cool!" />
+                <bt:String id="menuItem3ComposeLabel" DefaultValue="Visit dev.outlook.com" />
+
+                <!-- Read mode -->
+                <bt:String id="funcReadButtonLabel" DefaultValue="Get subject" />
+                <bt:String id="menuReadButtonLabel" DefaultValue="Get property" />
+                <bt:String id="paneReadButtonLabel" DefaultValue="Display all properties" />
+
+                <bt:String id="funcReadSuperTipTitle" DefaultValue="Gets the subject of the message or appointment" />
+                <bt:String id="menuReadSuperTipTitle" DefaultValue="Choose a property to get" />
+                <bt:String id="paneReadSuperTipTitle" DefaultValue="Get all properties" />
+
+                <bt:String id="menuItem1ReadLabel" DefaultValue="Get item class" />
+                <bt:String id="menuItem2ReadLabel" DefaultValue="Get date time created" />
+                <bt:String id="menuItem3ReadLabel" DefaultValue="Get item ID" />
+            </bt:ShortStrings>
+            <bt:LongStrings>
+                <!-- Compose mode -->
+                <bt:String id="funcComposeSuperTipDescription" DefaultValue="Inserts text into body of the message or appointment. This is an example of a function button." />
+                <bt:String id="menuComposeSuperTipDescription" DefaultValue="Inserts your choice of text into body of the message or appointment. This is an example of a drop-down menu button." />
+                <bt:String id="paneComposeSuperTipDescription" DefaultValue="Opens a pane where you can enter text to insert in the body of the message or appointment. This is an example of a button that opens a task pane." />
+
+                <bt:String id="menuItem1ComposeTip" DefaultValue="Inserts Hello World! into the body of the message or appointment." />
+                <bt:String id="menuItem2ComposeTip" DefaultValue="Inserts Add-in commands are cool! into the body of the message or appointment." />
+                <bt:String id="menuItem3ComposeTip" DefaultValue="Inserts Visit dev.outlook.com into the body of the message or appointment." />
+
+                <!-- Read mode -->
+                <bt:String id="funcReadSuperTipDescription" DefaultValue="Gets the subject of the message or appointment and displays it in the info bar. This is an example of a function button." />
+                <bt:String id="menuReadSuperTipDescription" DefaultValue="Gets the selected property of the message or appointment and displays it in the info bar. This is an example of a drop-down menu button." />
+                <bt:String id="paneReadSuperTipDescription" DefaultValue="Opens a pane displaying all available properties of the message or appointment. This is an example of a button that opens a task pane." />
+
+                <bt:String id="menuItem1ReadTip" DefaultValue="Gets the item class of the message or appointment and displays it in the info bar." />
+                <bt:String id="menuItem2ReadTip" DefaultValue="Gets the date and time the message or appointment was created and displays it in the info bar." />
+                <bt:String id="menuItem3ReadTip" DefaultValue="Gets the item ID of the message or appointment and displays it in the info bar." />
+            </bt:LongStrings>
+        </Resources>
+    </VersionOverrides>
 </OfficeApp>
 
 ```
