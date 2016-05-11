@@ -11,7 +11,7 @@
 * Include examples for each method to show how the method is used. You can also provide broader examples at the object level. 
 * Use simple code examples -- do not cover broader scenarios or use-case examples. If you have a larger example to add, do it as part of a separate content page and provide links. The idea is to keep the spec short and concise. 
 * Enclose examples in a ```js {code} ``` block.
-* Do not include HTML tags other than <br/> tags inside Markdown. HTML tags are treated differently and might cause issues with the HTML conversion. 
+* Do not include HTML tags other than **br/** tags inside Markdown. HTML tags are treated differently and might cause issues with the HTML conversion. 
 
 ## Structure 
 
