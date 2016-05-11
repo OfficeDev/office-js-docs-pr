@@ -2,26 +2,26 @@
 
 ## Rules and conventions
  
-* File namename: lowecase, one word, inlcude only object name (not the full namespace). e.g., binding.md
-* Each "object" gets it's own unique file. Object is anything that is not scalar (simple and complex types, full objects with properties, methods, etc. non string, int, so on..)
+* File name: lowercase, one word, inlcude only object name (not the full namespace); for example, binding.md
+* Each object gets its own unique file. An object is anything that is not scalar (simple and complex types, full objects with properties and methods, non-string, int, and so on.)
 * Don't inlcude information that repeats in each page. Provide links. 
-* Don't include information that is not relevant or useful (e.g., support history, when introduced, etc.)
-* All properties, relationships and methods part of an object are in the same file. 
+* Don't include information that is not relevant or useful (support history, when introduced).
+* Include all properties, relationships, and methods that part of an object in the same file. 
 * Members of the object belong to one of the following categories: properties/relationships or methods. 
-* Include examples for each method to showcase the usage. Additional broader examples could be provided at the object level. 
-* Think of example code as simple code-snippers -- not broader scenario or use-case examples. If you have a larger example to add, do it as part of a separate content page and provide links. The idea is to keep the spec short and sweet. 
-* Examples should be enclosed in ```js {code} ``` block.
-* Do not include any HTML tags other thab <br/> inside markdown. HTML tags are treated differently and may cause issues with HTML conversion of markdown page. 
+* Include examples for each method to show how the method is used. You can also provide broader examples at the object level. 
+* Use simple code examples -- do not cover broader scenarios or use-case examples. If you have a larger example to add, do it as part of a separate content page and provide links. The idea is to keep the spec short and concise. 
+* Enclose examples in a ```js {code} ``` block.
+* Do not include HTML tags other than <br/> tags inside Markdown. HTML tags are treated differently and might cause issues with the HTML conversion. 
 
 ## Structure 
 
-Below block provides the structure to follow. The `<html>` looking tags are used to show components/parts of the spec. Not all component may be applicable for an object file. Example: complex types won't have any methods. 
+The following example shows the structure to follow. The `<html>` tags are used to show components/parts of the spec. Not all component are applicable for every object. For example, complex types won't have any methods. 
 
-The variables are shown within `%percent%` symbol. 
+The variables are shown within `%percent%` symbols. 
 
 Repeated rows are prefixed with `>r`.
 
-Comments are provided inside <!-- {comment} --> block.
+Comments are provided inside <!-- {comment} --> blocks.
 
 ```md
 <header>
