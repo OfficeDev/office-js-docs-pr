@@ -1,13 +1,13 @@
 # OfficeExtension.Error object (JavaScript API for Word)
 
-Represents errors that occur when you use the Word-specific API.
+Represents errors that occur when you use the Word JavaScript API.
 
 _Applies to: Word 2016, Word for iPad, Word for Mac_
 
 ## Properties
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|code|string|Gets a value that indicates the type of error. The value can be "AccessDenied", "GeneralException", "ActivityLimitReached", "InvalidArgument", "ItemNotFound", or "NotImplemented". <!-- Values come from OfficeExtension.Error and Word.ErrorCodes.-->|
+|code|string|Gets a value that indicates the type of error. The value can be "AccessDenied", "GeneralException", "ActivityLimitReached", "InvalidArgument", "ItemNotFound", or "NotImplemented". <!-- Values come from OfficeExtension.Error and Word.ErrorCodes. -->|
 |debugInfo|string|Gets a value that indicates what happened when the error occurred. This value is only intended for use during development / debugging.  |
 |message |string| Gets a localized human readable string that corresponds to the error code.|
 |name |string| Gets a value that is always "OfficeExtension.Error". |
@@ -65,7 +65,7 @@ Word.run(function (context) {
 
 ### Trace message instrumentation
 
-The following example shows how you can instrument a batch of commands to determine where an error occurred. The first batch successfully inserts the first two paragraphs into the document and cause no errors. The second batch successfully inserts the 3rd and 4th paragraphs but fails in the call to insert the 5th paragraph. All other commands after the failed command in the batch are not executed, including the command that adds the 5th trace message. In this case, we'd know that the error occurred after the 4th paragraph was inserted, and before adding the 5th trace message.
+The following example shows how you can instrument a batch of commands to determine where an error occurred. The first batch successfully inserts the first two paragraphs into the document and cause no errors. The second batch successfully inserts the third and fourth paragraphs but fails in the call to insert the fifth paragraph. All other commands after the failed command in the batch are not executed, including the command that adds the fifth trace message. In this case, the error occurred after the fourth paragraph was inserted, and before adding the fifth trace message.
 
 ```js
 // Run a batch operation against the Word object model.
