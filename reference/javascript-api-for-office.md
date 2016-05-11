@@ -20,6 +20,7 @@ Select the Office client from the drop-down above the TOC to filter the content 
 
 Learn more about [supported hosts and other requirements](../docs/overview/requirements-for-running-office-add-ins.md).
 
-## Upcoming features
+## Open API specifications
 
-Learn about new features that are under design across various applications by visiting the [upcoming features](openspec.md) page. We will make early versions of the API specifications available here for community review and feedback. As the features make their way through design and development and beta phase, you will have the opprtunity to review, try out and provide feedback.
+As we design and develop new APIs for Office Add-ins, we'll make them available for your feedback on our [Open API specifications](openspec.md) page. Find out what new features are in the pipeline, and provide your input on our design specifications.
+
