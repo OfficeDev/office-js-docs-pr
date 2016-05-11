@@ -43,6 +43,7 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
 - Use [single sign-on (SSO) authentication](../outlook/authenticate-a-user-with-an-identity-token.md).
 
+For templates that illustrate patterns that you can apply as you develop your first-run experience, see [UX design patterns for Office Add-ins](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
 
 ## Use add-in commands
 
@@ -113,6 +114,7 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
 - Design for all platforms and input methods, including mouse/keyboard and [touch](#optimize-for-touch). Ensure that your UI is responsive to different form factors.
 
+For templates that apply design principles that you can use and customize as you develop your add-in, see [UX design patterns for Office Add-ins](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
 
 ### Optimize for touch
 
