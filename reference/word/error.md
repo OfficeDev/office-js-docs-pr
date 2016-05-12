@@ -19,7 +19,7 @@ _See property access [examples.](#property-access-examples)_
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[toString()](#toString)|string|Returns the error code and message values in the following format: "{0}: {1}", code, message.|
+|[toString()](#tostring)|string|Returns the error code and message values in the following format: "{0}: {1}", code, message.|
 
 ## Method details
 
