@@ -17,7 +17,7 @@ _Applies to: Excel 2016, Excel Online, Excel for iOS, Office 2016_
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[toString()](#toString)|string|Returns the error code and message values in the following format: "{0}: {1}", code, message.|
+|[toString()](#tostring)|string|Returns the error code and message values in the following format: "{0}: {1}", code, message.|
 
 ## Method details
 

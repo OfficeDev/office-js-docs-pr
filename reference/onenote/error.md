@@ -18,7 +18,7 @@ _Note: This API is in preview._
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[toString()](#toString)|string|Returns the error code and message values in the following format: "{0}: {1}", code, message.|
+|[toString()](#tostring)|string|Returns the error code and message values in the following format: "{0}: {1}", code, message.|
 
 ## Method details
 
