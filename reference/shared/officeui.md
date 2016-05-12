@@ -1,7 +1,5 @@
 # Office UI Namespace (JavaScript API for Office)
 
-_Applies to: Office 2013, Office 2016_
-
 The Office UI Namespace, Office.context.ui, provides objects and methods used to create UI components for add-ins.
 
 ##### Requirements
@@ -90,7 +88,8 @@ function openDialog() {
 
 #### Comments
 1.	Dialogs will not create modal windows
-2.	An Office add-in may have 1 dialog open at any time 
+2.	The initial url of the dialog and any page using the messageParent API must be on the same domain as the parent. 
+3.	An Office add-in may have 1 dialog open at any time 
 3.	Every dialog may be moved and resized
 4.	Every dialog opens centered on the screen 
 5.	Dialogs appear on top of the app and one another in order of being created
@@ -171,3 +170,10 @@ Dialogs support a number of configuration options.
 1.	The default dialog dimensions are 80% display width x 80% display height (based on the current device dimensions) 
 2.	Dialogs have a minimum size to avoid discoverability problems 
 3.	The dialog display may be in portrait or landscape orientation, and the width and height will adjust accordingly 
+
+## Supported platforms
+The Dialog API is currently supported on the following platforms:
+
+  - Office for Windows Desktop 2016 (build 16.0.6741.0000 or above)
+
+More platforms coming soon. 
