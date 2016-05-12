@@ -175,7 +175,7 @@ Where:
 |**OfficeTab**|Required. The pre-existing tab to use. Currently, the  **id** attribute can only be "TabDefault".|
 |**Group**|A group of user interface extension points in a tab. A group can have up to six controls. The  **id** attribute is required and each **id** must be unique within the manfiest. It is a string with a maximum of 125 characters.|
 |**Label**|Required. The label of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the **Resources** element.|
-|**Control**|A group requires at least one control. Currently, only buttons and menus are supported. See the following [Button controls](#VersionOverrides10_Buttons) and [Menu (dropdown button) controls](#menu-dropdown-button-controls) sections for more information.|
+|**Control**|A group requires at least one control. Currently, only buttons and menus are supported. See the following [Button controls](#button-controls) and [Menu (dropdown button) controls](#menu-dropdown-button-controls) sections for more information.|
 
 You can also create a custom tab on the ribbon by using the  **CustomTab** element, as shown in the following example.
 

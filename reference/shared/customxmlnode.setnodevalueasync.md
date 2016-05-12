@@ -6,7 +6,7 @@ Asynchronously sets the value of the node.
 |:-----|:-----|
 |**Hosts:**|Word|
 |**Available in [Requirement set](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|CustomXmlParts|
-|**[Addded](#bk_history) in**|1.1|
+|**[Addded](#support-history) in**|1.1|
 
 ```js
 customXmlNodeObj.setNodeValueAsync(value [,options], callback);
