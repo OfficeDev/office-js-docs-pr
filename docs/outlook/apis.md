@@ -16,7 +16,7 @@ Declare the CDN in the **head** tag of the web page (.html, .aspx, or .php file)
 
 As we add new APIs, the URL to Office.js will stay the same. We will change the version in the URL only if we break an existing API behavior.
 
-The library must load within 5 seconds of the add-in being launched, or else Outlook will determine the page is unresponsive, and will show an error dialog.
+Outlook requires the Office.js library load within 5 seconds of an add-in being activated. After this period, Outlook we consider the add-in unresponsive and display an error message.
 
 
 ## Requirement sets
@@ -40,7 +40,8 @@ if (item.somePropertyOrFunction) {
 
 > **Note:** No such checks are necessary for any APIs that are in the requirement set version specified in the manifest.
 
-Developers should specify the minimum requirement set that supports the critical set of APIs for their scenario, without which the critical features of the add-in won't work. You specify the requirement set in the manifest in the  **Requirements**, **Sets**, and **Set** elements. For more information, see [Outlook add-in manifests](../outlook/manifests/manifests.md).
+Developers should specify the minimum requirement set that supports the critical set of APIs for their scenario, without which the critical features of the add-in won't work. You specify the requirement set in the manifest in the  **Requirements**, **Sets**, and **Set** elements. For more information, see [Outlook add-in manifests](../outlook/manifests/manifests.md) and 
+[Understanding Outlook API requirement sets](..\..\reference\outlook\tutorial-api-requirement-sets.md).
 
 The  **Methods** element doesn't apply to mail add-ins, so you can't declare support for specific methods.
 
@@ -66,6 +67,8 @@ In general, you should specify the minimum permission needed for your add-in. Pe
 - [Outlook Add-in API](../../reference/outlook/index.md)
     
 - [Outlook add-in manifests](../outlook/manifests/manifests.md)
+
+- [Understanding Outlook API requirement sets](..\..\reference\outlook\tutorial-api-requirement-sets.md)
     
 - [Privacy, permissions, and security for Outlook add-ins](../outlook/../../docs/develop/privacy-and-security.md)
     
