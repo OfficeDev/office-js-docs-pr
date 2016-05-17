@@ -25,7 +25,7 @@ We are working on adding the ability for web add-ins to access (get, set) docume
 
 
 ## New Excel JavaScript APIs
-Join us in reviewing our design for new Excel JavaScript APIs. We have details on the upcoming APIs available for your feedback. The set of API to be reviewed includes customXML parts, Pivot Table refresh, append multiple rows to table and many more. Look forward to seeing your feedback.
+Join us in reviewing our design for new Excel JavaScript APIs. We have details on the upcoming APIs available for your feedback. The set of API to be reviewed includes customXML parts, Pivot Table refresh, append multiple rows to table and many more. Look forward to hearing from you.
 
 **See the [Excel JavaScript 1.3 API page](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec) to learn more and provide your feedback.**
 
