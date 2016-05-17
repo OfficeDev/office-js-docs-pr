@@ -6,6 +6,10 @@ The features described here might be in different stages of development, such as
 
 _**Important:** The features listed here are still in the design and review phase and are not yet generally available. These features and APIs are subject to change._
 
+## New Excel JavaScript APIs
+Join us in reviewing our design for new Excel JavaScript APIs. We have details on the upcoming APIs available for your feedback. The set of API to be reviewed includes customXML parts, Pivot Table refresh, range filtered view, Range and table as image API, append multiple rows to table and many more. Look forward to hearing from you.
+
+**See the [Excel JavaScript 1.3 API page](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec) to learn more and provide your feedback.**
 
 ## New Word JavaScript APIs
 The Word JavaScript API 1.3 update contains the largest set of changes we've implemented since this API was introduced. With the new API, you’ll be able to: 
@@ -23,6 +27,4 @@ These changes have been implemented across nearly all Word JavaScript API object
 We are working on adding the ability for web add-ins to access (get, set) document-level properties. This feature will allow add-ins to integrate document properties as part of custom workflows or to read/set the document properties. Word and Excel, and potentially PowerPoint, will support this feature. The feature will also work for the Excel REST API (Excel supports the REST service). We’ll introduce the basic design idea and work through the use-cases and code snippets for how the API will work when it is added. We welcome your design feedback. 
 
 **See the [Document properties open spec page](https://github.com/OfficeDev/office-js-docs/tree/DocumentProperties_OpenSpec) to learn more and provide your feedback.**
-
-
 
