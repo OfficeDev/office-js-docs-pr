@@ -2,6 +2,9 @@
 
 _Applies to: Excel 2016, Office 2016_
 
+
+Before you start, you can check out the video from Michael Zlatkovsky on [End-to-End Walkthrough of Excel JavaScript Add-in Development](https://channel9.msdn.com/series/officejs/End-to-End-Walkthrough-of-Excel-JavaScript-Add-in-Development)
+
 The steps below walk you through building a simple task pane add-in that loads some data into a worksheet and creates a basic chart in Excel 2016.
 
 ![Quarterly Sales Report Add-in](images/QuarterlySalesReport_report.PNG)
