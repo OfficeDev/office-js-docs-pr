@@ -28,7 +28,7 @@ The add-in provides buttons for the user to choose a type of entity. When the us
 The entities add-in has two activation rules joined by a logical OR operation. 
 
 
-```XML
+```xml
 <!-- Activate the add-in if the current item in Outlook is an email or appointment item. -->
 <Rule xsi:type="RuleCollection" Mode="Or">
     <Rule xsi:type="ItemIs" ItemType="Message"/>
@@ -43,7 +43,7 @@ The following is the manifest of the entities add-in. It uses version 1.1 of the
 
 
 
-```XML
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -93,23 +93,17 @@ The HTML file of the entities add-in specifies buttons for the user to select ea
 
 Note that all Outlook add-ins must include office.js. The HTML file that follows includes version 1.1 of office.js on the CDN. 
 
-
-
-
-```HTML
+```html
 <!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" >
     <title>standard_item_properties</title>
-    <link rel="stylesheet" type="text/css" media="all" 
-        href="default_entities.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="default_entities.css" />
     <script type="text/javascript" src="MicrosoftAjax.js"></script>
     <!-- Use the CDN reference to Office.js. -->
-    <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/Office.js"
-        type="text/javascript"></script>
-    <script type="text/javascript" 
-        src="default_entities.js"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
+    <script type="text/javascript"  src="default_entities.js"></script>
 </head>
 
 <body>
@@ -145,7 +139,7 @@ Note that all Outlook add-ins must include office.js. The HTML file that follows
 The entities add-in uses an optional CSS file, default_entities.css, to specify the layout of the output. The following is a listing of the CSS file.
 
 
-```
+```css
 *
 {
     color: #FFFFFF;
@@ -209,7 +203,7 @@ The remaining sections describe how this sample (default_entities.js file) extra
 Upon the [Office.initialize](../../reference/shared/office.initialize.md) event, the entities add-in calls the [getEntities](../../reference/outlook/Office.context.mailbox.item.md) method of the current item. The **getEntities** method returns the global variable `_MyEntities` an array of instances of supported entities. The following is the related JavaScript code.
 
 
-```
+```js
 // Global variables
 var _Item;
 var _MyEntities;
@@ -352,22 +346,18 @@ When the user clicks the  **Get Email Addresses** button, the `myGetEmailAddress
 
 ```js
 // Gets instances of the EmailAddress entity on the item.
-function myGetEmailAddresses()
-{
+function myGetEmailAddresses() {
     var htmlText = "";
 
     // Gets an array of email addresses. Each email address is a 
     // string.
     var emailAddressesArray = _MyEntities.emailAddresses;
-    for (var i = 0; i < emailAddressesArray.length; i++)
-    {
-        htmlText += "E-mail Address : <span>" + 
-            emailAddressesArray[i] + "</span><br/>";
+    for (var i = 0; i < emailAddressesArray.length; i++) {
+        htmlText += "E-mail Address : <span>" + emailAddressesArray[i] + "</span><br/>";
     }
 
     document.getElementById("entities_box").innerHTML = htmlText;
 }
-
 ```
 
 
@@ -403,11 +393,10 @@ Each extracted meeting suggestion is stored as a [MeetingSuggestion](../../refer
 
 
 
-```
+```js
 // Gets instances of the MeetingSuggestion entity on the 
 // message item.
-function myGetMeetingSuggestions()
-{
+function myGetMeetingSuggestions() {
     var htmlText = "";
 
     // Gets an array of MeetingSuggestion objects, each array 
@@ -416,54 +405,44 @@ function myGetMeetingSuggestions()
     var meetingsArray = _MyEntities.meetingSuggestions;
 
     // Iterates through each instance of a meeting suggestion.
-    for (var i = 0; i < meetingsArray.length; i++)
-    {
-        // Gets the string that was identified as a meeting 
-        // suggestion.
-        htmlText += "MeetingString : <span>" + 
-            meetingsArray[i].meetingString + "</span><br/>";
+    for (var i = 0; i < meetingsArray.length; i++) {
+        // Gets the string that was identified as a meeting suggestion.
+        htmlText += "MeetingString : <span>" + meetingsArray[i].meetingString + "</span><br/>";
 
         // Gets an array of attendees for that instance of a 
         // meeting suggestion. Each attendee is represented 
         // by an EmailUser object.
         var attendeesArray = meetingsArray[i].attendees;
-        for (var j = 0; j < attendeesArray.length; j++)
-        {
+        for (var j = 0; j < attendeesArray.length; j++) {
             htmlText += "Attendee : ( ";
+
             // Gets the displayName property of the attendee.
-            htmlText += "displayName = <span>" + attendeesArray[j].displayName + 
-                "</span> , ";
+            htmlText += "displayName = <span>" + attendeesArray[j].displayName + "</span> , ";
 
             // Gets the emailAddress property of each attendee.
             // This is the SMTP address of the attendee.
-            htmlText += "emailAddress = <span>" + attendeesArray[j].emailAddress + 
-                "</span>";
+            htmlText += "emailAddress = <span>" + attendeesArray[j].emailAddress + "</span>";
 
             htmlText += " )<br/>";
         }
 
         // Gets the location of the meeting suggestion.
-        htmlText += "Location : <span>" + 
-           meetingsArray[i].location + "</span><br/>";
+        htmlText += "Location : <span>" + meetingsArray[i].location + "</span><br/>";
 
         // Gets the subject of the meeting suggestion.
-        htmlText += "Subject : <span>" + 
-            meetingsArray[i].subject + "</span><br/>";
+        htmlText += "Subject : <span>" + meetingsArray[i].subject + "</span><br/>";
 
         // Gets the start time of the meeting suggestion.
-        htmlText += "Start time : <span>" + 
-            meetingsArray[i].start + "</span><br/>";
+        htmlText += "Start time : <span>" + meetingsArray[i].start + "</span><br/>";
 
         // Gets the end time of the meeting suggestion.
-        htmlText += "End time : <span>" + 
-            meetingsArray[i].end + "</span><br/>";
+        htmlText += "End time : <span>" + meetingsArray[i].end + "</span><br/>";
 
         htmlText += "<hr/>";
     }
 
     document.getElementById("entities_box").innerHTML = htmlText;
 }
-
 ```
 
 
@@ -484,7 +463,7 @@ When the user clicks the  **Get Phone Numbers** button, the `myGetPhoneNumbers` 
 
 
 
-```
+```js
 // Gets instances of the phone number entity on the item.
 function myGetPhoneNumbers()
 {
@@ -537,7 +516,7 @@ When the user clicks the  **Get Task Suggestions** button, the `myGetTaskSuggest
 
 
 
-```
+```js
 // Gets instances of the task suggestion entity on the item.
 function myGetTaskSuggestions()
 {
@@ -629,7 +608,7 @@ function myClearEntitiesBox()
 The following is the complete listing of the JavaScript implementation.
 
 
-```
+```js
 // Global variables
 var _Item;
 var _MyEntities;

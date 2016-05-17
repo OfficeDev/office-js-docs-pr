@@ -177,7 +177,7 @@ The task pane shows the add-in display name at the top, which is the value of th
     
     Following is the updated HTML code for the  **head** element, with the additional line for the SurfaceErrors.js file:
     
-```HTML
+```html
       <!DOCTYPE html>
     <html>
     <head>
@@ -195,7 +195,7 @@ The task pane shows the add-in display name at the top, which is the value of th
       <script src="../Scripts/jquery-1.7.1.js"></script>
     
       <!-- Use the CDN reference to office.js when deploying your add-in. -->
-      <!--<script src="https://appsforoffice.microsoft.com/lib/1.0/hosted/office.js"></script>-->
+      <!--<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>-->
     
       <!-- Use the local script references for Office.js to enable offline debugging -->
       <script src="../Scripts/Office/1.0/MicrosoftAjax.js"></script>
@@ -675,7 +675,7 @@ Even if your add-in is working correctly in the previous tests, there are other 
  **HelloProjectOData.html file** The following code is in the `Pages\HelloProjectOData.html` file of the **HelloProjectODataWeb** project:
 
 
-```
+```html
     <!DOCTYPE html>
     <html>
     <head>
@@ -693,7 +693,7 @@ Even if your add-in is working correctly in the previous tests, there are other 
       <script src="../Scripts/jquery-1.7.1.js"></script>
     
       <!-- Use the CDN reference to Office.js when deploying your add-in -->
-      <!--<script src="https://appsforoffice.microsoft.com/lib/1.0/hosted/office.js"></script>-->
+      <!--<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>-->
     
       <!-- Use the local script references for Office.js to enable offline debugging -->
       <script src="../Scripts/Office/1.0/MicrosoftAjax.js"></script>
@@ -1124,7 +1124,7 @@ If you modify the  **HelloProjectOData** add-in for production use, do the follo
 - In the HelloProjectOData.html file, for better performance, change the office.js reference from the local project to the CDN reference:
     
 ```HTML
-  <script src="https://appsforoffice.microsoft.com/lib/1.0/hosted/office.js"></script>
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
 ```
 
 - Rewrite the  **retrieveOData** function to enable queries of more than 100 projects. For example, you could get the number of projects with a `~/ProjectData/Projects()/$count` query, and use the _$skip_ operator and _$top_ operator in the REST query for project data. Run multiple queries in a loop, and then average the data from each query. Each query for project data would be of the form, `~/ProjectData/Projects()?skip= [numSkipped]&amp;$top=100&amp;$filter=[filter]&amp;$select=[field1,field2, ???????]`.
