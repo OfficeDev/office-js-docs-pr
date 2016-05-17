@@ -72,8 +72,7 @@ Use the following procedure to create a simple user interface for the add-in tha
 
 - In a new file in the text editor, add the following HTML.
     
-```HTML
-  
+```html  
 <!DOCTYPE html>
 <html>
     <head>
@@ -82,7 +81,7 @@ Use the following procedure to create a simple user interface for the add-in tha
         <title>Publish presentation</title>
         <link rel="stylesheet" type="text/css" href="Program.css" />
         <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
-        <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" type="text/javascript"></script>
+        <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
         <script src="GetDoc_App.js"></script>
     </head>
     <body>
@@ -109,8 +108,7 @@ We'll use some CSS to give the add-in a simple, yet modern and professional appe
 
 - In a new file in the text editor, add the following CSS.
     
-```
-  
+```css 
 body
 {
     font-family: "Segoe UI Light","Segoe UI",Tahoma,sans-serif;
