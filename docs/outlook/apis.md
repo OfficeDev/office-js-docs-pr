@@ -17,7 +17,7 @@ Declare the CDN in the **head** tag of the web page (.html, .aspx, or .php file)
 As we add new APIs, the URL to Office.js will stay the same. We will change the version in the URL only if we break an existing API behavior.
 
 > **Important:** 
-When developing an  Add-in for any Office host application, it is important to reference the JavaScript API for Office from inside the `<head>` section of the page. This ensures the API is fully initialized prior to any body elements. Office hosts require that Add-Ins initialize within 5 seconds of activation. Crossing this threshold results in the Add-In being declared unresponsive and an error message displayed to the user.  
+When developing an  add-in for any Office host application, reference the JavaScript API for Office from inside the `<head>` section of the page. This ensures that the API is fully initialized prior to any body elements. Office hosts require that add-ins initialize within 5 seconds of activation. Crossing this threshold results in the add-in being declared unresponsive and an error message is displayed to the user.  
 
 ## Requirement sets
 
