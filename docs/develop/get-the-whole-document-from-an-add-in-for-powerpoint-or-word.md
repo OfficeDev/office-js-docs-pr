@@ -11,11 +11,11 @@ This article assumes that you are using a text editor to create the task pane ad
 
 - On a shared network folder or on a web server, you need the following files:
     
-      - An HTML file (GetDoc_App.html) that contains the user interface plus links to the JavaScript files (including office.js and host-specific .js files) and Cascading Style Sheet (CSS) files.
+    - An HTML file (GetDoc_App.html) that contains the user interface plus links to the JavaScript files (including office.js and host-specific .js files) and Cascading Style Sheet (CSS) files.
+           
+    - A JavaScript file (GetDoc_App.js) to contain the programming logic of the add-in.
     
-  - A JavaScript file (GetDoc_App.js) to contain the programming logic of the add-in.
-    
-  - A CSS file (Program.css) to contain the styles and formatting for the add-in.
+    - A CSS file (Program.css) to contain the styles and formatting for the add-in.
     
 - An XML manifest file (GetDoc_App.xml) for the add-in, available on a shared network folder or add-in catalog. The manifest file must point to the location of the HTML file mentioned previously.
     
@@ -35,8 +35,7 @@ The XML manifest file for the add-in for PowerPoint provides important informati
 
 - In a text editor, add the following code to the manifest file.
     
-```XML
-  
+```xml  
 <?xml version="1.0" encoding="utf-8" ?> 
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -72,8 +71,7 @@ Use the following procedure to create a simple user interface for the add-in tha
 
 - In a new file in the text editor, add the following HTML.
     
-```HTML
-  
+```html
 <!DOCTYPE html>
 <html>
     <head>
@@ -81,8 +79,8 @@ Use the following procedure to create a simple user interface for the add-in tha
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
         <title>Publish presentation</title>
         <link rel="stylesheet" type="text/css" href="Program.css" />
-        <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
-        <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" type="text/javascript"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+        <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
         <script src="GetDoc_App.js"></script>
     </head>
     <body>
@@ -109,8 +107,7 @@ We'll use some CSS to give the add-in a simple, yet modern and professional appe
 
 - In a new file in the text editor, add the following CSS.
     
-```
-  
+```css  
 body
 {
     font-family: "Segoe UI Light","Segoe UI",Tahoma,sans-serif;
@@ -147,21 +144,23 @@ The following code example shows the event handler for the  **Office.initialize*
 ```js
 // The initialize function is required for all add-ins.
 Office.initialize = function (reason) {
+
     // Checks for the DOM to load using the jQuery ready function.
     $(document).ready(function () {
 
-      // After the DOM is loaded, add-in-specific code can run.
-      document.getElementById('submit').addEventListener("click",
-          function () {
-              sendFile();
-          });}
-      updateStatus("Ready to send file.");
+        // Execute sendFile when submit is clicked 
+        $('#submit').click(function () {
+            sendFile();
+        });
+
+        // Update status        
+        updateStatus("Ready to send file.");
     });
 }
 
 // Create a function for writing to the status div. 
 function updateStatus(message) {
-    var statusInfo = document.getElementById("status");
+    var statusInfo = $('#status');
     statusInfo.innerHTML += message + "<br/>";
 }
 ```
@@ -180,14 +179,12 @@ Use the following code to get the PowerPoint or Word document as a  **File** obj
 
 
 ```js
-
 // Get all of the content from a PowerPoint or Word document in 100-KB chunks of text.
 function sendFile() {
-
     Office.context.document.getFileAsync("compressed",
         { sliceSize: 100000 },
         function (result) {
-
+            
             if (result.status == Office.AsyncResultStatus.Succeeded) {
 
                 // Get the File object from the result.
@@ -198,15 +195,13 @@ function sendFile() {
                     sliceCount: myFile.sliceCount
                 };
 
-                updateStatus("Getting file of " + myFile.size +
-                    " bytes");
-
+                updateStatus("Getting file of " + myFile.size + " bytes");
                 getSlice(state);
             }
             else {
                 updateStatus(result.status);
             }
-    });
+        });
 }
 ```
 
@@ -220,16 +215,11 @@ The  **Slice** object gives you access to the data contained in the file. Unless
 
 
 ```js
-
 // Get a slice from the file and then call sendSlice.
 function getSlice(state) {
-
     state.file.getSliceAsync(state.counter, function (result) {
         if (result.status == Office.AsyncResultStatus.Succeeded) {
-
-            updateStatus("Sending piece " + (state.counter + 1) +
-                " of " + state.sliceCount);
-
+            updateStatus("Sending piece " + (state.counter + 1) + " of " + state.sliceCount);
             sendSlice(result.value, state);
         }
         else {
@@ -254,7 +244,6 @@ Add the following code to send a slice to a web service.
 
 
 ```js
-
 function sendSlice(slice, state) {
     var data = slice.data;
 
@@ -306,9 +295,7 @@ As the name implies, the  **File.closeAsync** method closes the connection to th
 
 
 ```js
-
 function closeFile(state) {
-
     // Close the file when you're done with it.
     state.file.closeAsync(function (result) {
 

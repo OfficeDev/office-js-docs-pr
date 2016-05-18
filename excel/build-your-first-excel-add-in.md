@@ -32,7 +32,7 @@ You’ll start by creating a web app using HTML and JQuery. Then you'll create a
 
         <link href="Office.css" rel="stylesheet" type="text/css" />
 
-        <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" type="text/javascript"></script>
+        <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
 
         <link href="Common.css" rel="stylesheet" type="text/css" />
         <script src="Notification.js" type="text/javascript"></script>

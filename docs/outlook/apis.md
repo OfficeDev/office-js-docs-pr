@@ -16,8 +16,8 @@ Declare the CDN in the **head** tag of the web page (.html, .aspx, or .php file)
 
 As we add new APIs, the URL to Office.js will stay the same. We will change the version in the URL only if we break an existing API behavior.
 
-Outlook requires that the the Office.js library load within 5 seconds of add-in activation. If the add-in doesn't load after this period, the add-in is considered to be unresponsive an error message is displayed.
-
+> **Important:** 
+When developing an  Add-in for any Office host application, it is important to reference the JavaScript API for Office from inside the `<head>` section of the page. This ensures the API is fully initialized prior to any body elements. Office hosts require that Add-Ins initialize within 5 seconds of activation. Crossing this threshold results in the Add-In being declared unresponsive and an error message displayed to the user.  
 
 ## Requirement sets
 

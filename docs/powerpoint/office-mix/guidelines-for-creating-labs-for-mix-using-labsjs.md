@@ -18,7 +18,7 @@ The following are some general guidelines to help when writing add-ins using the
 
 Because the labs.js library is an abstraction layer on office.js, and therefore has a dependency on office.js, both the office.js and labs.js library files must be included in your development projects. 
 
-You can reference the office.js library here:  `<script src="https://sforoffice.microsoft.com/lib/1.1/hosted/office.js" type="text/javascript"></script>`.
+You can reference the office.js library here:  `<script src="https://sforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>`.
 
 The labs.js library is included with the LabsJS SDK. Alternatively, you can reference the labs.js library on a CDN at  <code>https://az592748.vo.msecnd.net/sdk/LabsJS-1.0.4/labs-1.0.4.js</code>. Note that the production version of your lab must reference the version stored on the CDN.
 
