@@ -21,25 +21,16 @@ Your add-in can remain as-is for Office applications that are running on other p
 - var allowCommerce = [Office.context.commerceAllowed](../../reference/shared/office.context.commerceallowed.md)
     
 
-## Best practices for developing Office Add-ins for iOS and Mac
-
-Apply the following best practices for developing add-ins that run on iOS:
-
-
--  **Use Visual Studio to develop your add-in.**
+## Use Visual Studio to develop your add-in
     
-    If you develop your add-in with Visual Studio, you can [set breakpoints and debug its code](../get-started/create-and-debug-office-add-ins-in-visual-studio.md#Test) in an Office host application running on Windows, before sideloading your add-in on the iPad or Mac. Because an add-in that runs in Office for iOS or Office for Mac supports the same APIs as an add-in running in Office for Windows, your add-in's code should run the same way on both platforms.
-    
--  **Specify API requirements in your add-in's manifest or with runtime checks.**
-    
-    When you specify API requirements in your add-in's manifest, Office will determine if the host application supports those API members. If the API members are available in the host, then your add-in will be available in that host application. Alternatively, you can perform a runtime check to determine if a method is available in the host before using it in your add-in. Runtime checks ensure that your add-in is always available in the host, and provides additional functionality if the methods are available. For more information, see [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md).
-    
-For general add-in development best practices, see [Best practices for developing Office Add-ins](../../docs/design/add-in-development-best-practices.md).
+If you develop your add-in with Visual Studio, you can [set breakpoints and debug its code](../get-started/create-and-debug-office-add-ins-in-visual-studio.md#Test) in an Office host application running on Windows, before sideloading your add-in on the iPad or Mac. Because an add-in that runs in Office for iOS or Office for Mac supports the same APIs as an add-in running in Office for Windows, your add-in's code should run the same way on both platforms.
 
+## Specify API requirements in your add-in's manifest or with runtime checks
+    
+When you specify API requirements in your add-in's manifest, Office will determine if the host application supports those API members. If the API members are available in the host, then your add-in will be available in that host application. Alternatively, you can perform a runtime check to determine if a method is available in the host before using it in your add-in. Runtime checks ensure that your add-in is always available in the host, and provides additional functionality if the methods are available. For more information, see [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md).
+    
 
 ## Additional resources
-<a name="bk_addresources"> </a>
-
 
 - [Sideload an Office Add-in on iPad and Mac](../../docs/testing/sideload-an-office-add-in-on-ipad-and-mac.md)
     

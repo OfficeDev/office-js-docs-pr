@@ -63,7 +63,7 @@ For templates that illustrate patterns that you can apply as you develop your fi
      >**Note**  Add-ins that take up too much space might not pass [Office Store validation](https://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe(Office.15).aspx).
 
 - For all icons:
-	- Provide meaningful icons and [labels](http://msdn.microsoft.com/library/8cef4fce-e6a1-459b-951f-47ac03ec95a6%28Office.15%29.aspx) for buttons that clearly identify the action the user is taking.
+	- Provide meaningful icons and [labels](http://msdn.microsoft.com/library/8cef4fce-e6a1-459b-951f-47ac03ec95a6%28Office.15%29.aspx) for buttons that clearly identify the action the user is taking. For UI text, follow the guidelines for [Office voice](https://msdn.microsoft.com/en-us/library/office/mt484351.aspx). 
 
 
  - Use PNG format with a transparent background.
