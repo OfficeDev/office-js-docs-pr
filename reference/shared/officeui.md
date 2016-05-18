@@ -94,8 +94,7 @@ function openDialog() {
 4.	Every dialog opens centered on the screen 
 5.	Dialogs appear on top of the app and one another in order of being created
 6.	Dialogs can only navigate to secured (TLS) sites 
-7.	Dialogs must initially open to a site on the add-in manifest's App Domains list
-8.	Dialogs cannot send messages from pages outside the add-in manifest's App Domains list
+
 
 ### callback()
 The callback for displayDialogAsync, in the success case, includes a dialog object. This dialog object has additional behaviors. 
