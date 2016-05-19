@@ -10,7 +10,7 @@ To get a broad view of where add-ins are supported by Office host, see the [Offi
 
 The following table lists the names of requirement sets, the methods in each set, the Office host applications that support that requirement set, and the version number of the API.
 
-For information about requirement sets for Outlook, see [Understanding Outlook API requirement sets](../outlook/tutorial-api-requirement-sets).
+For information about requirement sets for Outlook, see [Understanding Outlook API requirement sets](./outlook/tutorial-api-requirement-sets.md).
 
 |**Set name**|**Version**|**Office host**|**Methods in set**|
 |:-----|:-----|:-----|:-----|
@@ -27,7 +27,7 @@ For information about requirement sets for Outlook, see [Understanding Outlook A
 |File|1.1|PowerPoint<br>Word&nbsp;2013&nbsp;and&nbsp;later<br>Word&nbsp;2016&nbsp;for&nbsp;Mac<br>Word&nbsp;Online<br>Word&nbsp;for&nbsp;iPad<br>PowerPoint&nbsp;Online|Document.getFileAsync<br>File.closeAsync<br>File.getSliceAsync|
 |HtmlCoercion|1.1|Word&nbsp;2013&nbsp;and&nbsp;later<br>Word&nbsp;2016&nbsp;for&nbsp;Mac<br>Word&nbsp;Online<br>Word&nbsp;for&nbsp;iPad|Supports coercion to HTML (Office.CoercionType.Html) when reading and writing data using the Document.getSelectedDataAsync,<br>Document.setSelectedDataAsync, Binding.getDataAsync, or Binding.setDataAsync methods.|
 |ImageCoercion|1.1|Word&nbsp;2013&nbsp;and&nbsp;later<br>Word&nbsp;2016&nbsp;for&nbsp;Mac<br>Word&nbsp;Online<br>Word&nbsp;for&nbsp;iPad|Supports conversion to an image (Office.CoercionType.Image) when writing data using the Document.setSelectedDataAsync method.|
-|Mailbox|1.1|Outlook<br>Outlook&nbsp;Web&nbsp;App<br>OWA&nbsp;for&nbsp;Devices|All API members supported by Outlook add-ins (those members accessed from `Office.context` and `Office.context.mailbox` in your add-in's code).|
+|Mailbox||Outlook for Windows<br>Outlook for web<br>Outlook for Mac<br>Outlook Web App |see [Understanding Outlook API requirement sets](./outlook/tutorial-api-requirement-sets.md)|
 |MatrixBindings|1.1|Excel<br>Excel&nbsp;Online<br>Word|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncMatrix<br>Binding.getDataAsyncMatrix<br>Binding.setDataAsync|
 |MatrixCoercion|1.1|Excel<br>Excel&nbsp;Online<br>Word&nbsp;2013&nbsp;and&nbsp;later<br>Word&nbsp;2016&nbsp;for&nbsp;Mac<br>Word&nbsp;Online<br>Word&nbsp;for&nbsp;iPad|Supports coercion to the "matrix" (array of arrays) data structure (Office.CoercionType.Matrix) when reading and writing data using the Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync, or Binding.setDataAsync methods.|
 |OoxmlCoercion|1.1|Word&nbsp;2013&nbsp;and&nbsp;later<br>Word&nbsp;2016&nbsp;for&nbsp;Mac<br>Word&nbsp;Online<br>Word&nbsp;for&nbsp;iPad|Supports coercion to Open Office XML (OOXML) format (Office.CoercionType.Ooxml) when reading and writing data using the Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync, or Binding.setDataAsync methods.|

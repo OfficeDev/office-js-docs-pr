@@ -6,7 +6,7 @@ Outlook Add-ins declare what API versions they require by using the [Requirement
 
 For example, the following manifest snippet indicates a minimum requirement set of 1.1:
 
-```
+```xml
 <Requirements>
   <Sets>
     <Set Name="MailBox" MinVersion="1.1" />
@@ -24,7 +24,7 @@ Setting a requirement set does not limit the available APIs that the add-in can 
 
 To use newer APIs, developers can just check for their existence by using standard JavaScript technique
 
-```
+```js
 if (item.somePropertyOrFunction !== undefined) {
   item.somePropertyOrFunction ...
 }
@@ -42,9 +42,9 @@ The following clients support Outlook add-ins.
 
 | Client | Supported API requirement sets |
 | --- | --- |
-| Outlook 2016 | 1.1, 1.2, 1.3 |
-| Mac Outlook 2016 | 1.1 |
-| Outlook 2013 | 1.1, 1.2, 1.3 |
+| Outlook 2016 for Windows | 1.1, 1.2, 1.3 |
+| Outlook 2016 for Mac | 1.1 |
+| Outlook 2013 for Windows | 1.1, 1.2, 1.3 |
 | Outlook on the web (Office 365 and Outlook.com) | 1.1, 1.2, 1.3 |
 | Outlook Web App (Exchange 2013 On-Premise) | 1.1, 1.2 |
 | Outlook Web App (Exchange 2016 On-Premise) | 1.1, 1.2. 1.3 |
