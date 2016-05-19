@@ -25,10 +25,10 @@ AttachmentType
 
 ##### Properties:
 
-|Name| Type| Description|
-|---|---|---|
-|`File`| String|The attachment is a file.|
-|`Item`| String|The attachment is an Exchange item.|
+|Name| Type| Value | Description|
+|---|---|---|---|
+|`File`| String|`file`|The attachment is a file.|
+|`Item`| String|`item`|The attachment is an Exchange item.|
 
 ##### Requirements
 
@@ -48,15 +48,15 @@ EntityType
 
 ##### Properties:
 
-|Name| Type| Description|
-|---|---|---|
-|`Address`| String|Specifies that the entity is a postal address.|
-|`Contact`| String|Specifies that the entity is a contact.|
-|`EmailAddress`| String|Specifies that the entity is SMTP email address.|
-|`MeetingSuggestion`| String|Specifies that the entity is a meeting suggestion.|
-|`PhoneNumber`| String|Specifies that the entity is US phone number.|
-|`TaskSuggestion`| String|Specifies that the entity is a task suggestion.|
-|`URL`| String|Specifies that the entity is an Internet URL.|
+|Name| Type| Value | Description|
+|---|---|---|---|
+|`Address`| String|`address`|Specifies that the entity is a postal address.|
+|`Contact`| String|`contact`|Specifies that the entity is a contact.|
+|`EmailAddress`| String|`emailAddress`|Specifies that the entity is SMTP email address.|
+|`MeetingSuggestion`| String|`meetingSuggestion`|Specifies that the entity is a meeting suggestion.|
+|`PhoneNumber`| String|`phoneNumber`|Specifies that the entity is US phone number.|
+|`TaskSuggestion`| String|`taskSuggestion`|Specifies that the entity is a task suggestion.|
+|`URL`| String|`url`|Specifies that the entity is an Internet URL.|
 
 ##### Requirements
 
@@ -76,11 +76,11 @@ ItemNotificationMessageType
 
 ##### Properties:
 
-|Name| Type| Description|
-|---|---|---|
-|`ProgressIndicator`| String|The notificationMessage is a progress indicator.|
-|`InformationalMessage`| String|The notificationMessage is an informational message.|
-|`ErrorMessage`| String|The notificationMessage is an error message.|
+|Name| Type| Value | Description|
+|---|---|---|---|
+|`ProgressIndicator`| String|`progressIndicator`|The notificationMessage is a progress indicator.|
+|`InformationalMessage`| String|`informationalMessage`|The notificationMessage is an informational message.|
+|`ErrorMessage`| String|`errorMessage`|The notificationMessage is an error message.|
 
 ##### Requirements
 
@@ -100,10 +100,10 @@ ItemType
 
 ##### Properties:
 
-|Name| Type| Description|
-|---|---|---|
-|`Message`| String|An email, meeting request, meeting response, or meeting cancellation.|
-|`Appoinment`| String|An appointment item.|
+|Name| Type| Value | Description|
+|---|---|---|---|
+|`Message`| String|`message`|An email, meeting request, meeting response, or meeting cancellation.|
+|`Appointment`| String|`appointment`|An appointment item.|
 
 ##### Requirements
 
@@ -123,12 +123,12 @@ RecipientType
 
 ##### Properties:
 
-|Name| Type| Description|
-|---|---|---|
-|`Other`| String|The recipient is not one of the other recipient types.|
-|`DistributionList`| String|The recipient is a distribution list containing a list of email addresses.|
-|`User`| String|The recipient is an SMTP email address that is on the Exchange server.|
-|`ExternalUser`| String|The recipient is an SMTP email address that is not on the Exchange server.|
+|Name| Type| Value | Description|
+|---|---|---|---|
+|`Other`| String|`other`|The recipient is not one of the other recipient types.|
+|`DistributionList`| String|`distributionList`|The recipient is a distribution list containing a list of email addresses.|
+|`User`| String|`user`|The recipient is an SMTP email address that is on the Exchange server.|
+|`ExternalUser`| String|`externalUser`|The recipient is an SMTP email address that is not on the Exchange server.|
 
 ##### Requirements
 
@@ -148,13 +148,13 @@ ResponseType
 
 ##### Properties:
 
-|Name| Type| Description|
-|---|---|---|
-|`None`| String|There has been no response from the attendee.|
-|`Organizer`| String|The attendee is the meeting organizer.|
-|`Tentative`| String|The meeting request was tentatively accepted by the attendee.|
-|`Accepted`| String|The meeting request was accepted by the attendee.|
-|`Declined`| String|The meeting request was declined by the attendee.|
+|Name| Type| Value | Description|
+|---|---|---|---|
+|`None`| String|`none`|There has been no response from the attendee.|
+|`Organizer`| String|`organizer`|The attendee is the meeting organizer.|
+|`Tentative`| String|`tentative`|The meeting request was tentatively accepted by the attendee.|
+|`Accepted`| String|`accepted`|The meeting request was accepted by the attendee.|
+|`Declined`| String|`declined`|The meeting request was declined by the attendee.|
 
 ##### Requirements
 
