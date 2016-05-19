@@ -221,24 +221,25 @@ The `getCallbackTokenAsync` method makes an asynchronous call to get an opaque t
 
 You can pass the token and an attachment identifier or item identifier to a third-party system. The third-party system uses the token as a bearer authorization token to call the Exchange Web Services (EWS) [GetAttachment](https://msdn.microsoft.com/en-us/library/office/aa494316.aspx) or [GetItem](https://msdn.microsoft.com/en-us/library/office/aa565934.aspx) operation to return an attachment or item. For example, you can create a remote service to [get attachments from the selected item](https://msdn.microsoft.com/EN-US/library/office/dn148008.aspx).
 
-Your app must have the **ReadItem** permission specified in its manifest to call the `getCallbackTokenAsync` method.
+Your app must have the **ReadItem** permission specified in its manifest to call the `getCallbackTokenAsync` method in read mode.
+
+In compose mode you must call the [`saveAsync`](Office.context.mailbox.item#saveAsync) method to get an item identifier to pass to the `getCallbackTokenAsync` method. Your app must have **ReadWriteItem** permissions to call the `saveAsync` method.
 
 ##### Parameters:
 
 |Name| Type| Attributes| Description|
 |---|---|---|---|
-|`callback`| function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object.
-
-The token is provided as a string in the `asyncResult.value` property.|
+|`callback`| function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. The token is provided as a string in the `asyncResult.value` property.|
 |`userContext`| Object| &lt;optional&gt;|Any state data that is passed to the asynchronous method.|
 
 ##### Requirements
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
-|Applicable Outlook mode| Read|
+|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md) (Read mode)| ReadItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md) (Compose mode)| ReadWriteItem|
+|Applicable Outlook mode| Compose and read|
 
 ##### Example
 
