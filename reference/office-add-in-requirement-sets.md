@@ -10,7 +10,7 @@ To get a broad view of where add-ins are supported by Office host, see the [Offi
 
 The following table lists the names of requirement sets, the methods in each set, the Office host applications that support that requirement set, and the version number of the API.
 
-For information about requirement sets for Outlook, see [Understanding Outlook API requirement sets](../outlook/tutorial-api-requirement-sets).
+For information about requirement sets for Outlook, see [Understanding Outlook API requirement sets](./outlook/tutorial-api-requirement-sets.md).
 
 |**Set name**|**Version**|**Office host**|**Methods in set**|
 |:-----|:-----|:-----|:-----|
