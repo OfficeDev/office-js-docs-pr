@@ -5,7 +5,7 @@ and calendars. A module extension is not limited to using mail and appointment i
 you can create applications that run inside Outlook to make it easy for your users
 to access business information and productivity tools without ever leaving Outlook.
 
-> **Note**: Module extensions are available only in Office 2016 Click to Run.
+> **Note**: Module extensions are available only in Office 2016.
 
 To open a module extension, users click on the module's name or icon in the Outlook 
 navigation bar. If the user has compact navigation selected, the navigation bar has an
