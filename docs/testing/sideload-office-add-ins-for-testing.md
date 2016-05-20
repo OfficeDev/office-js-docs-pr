@@ -29,7 +29,7 @@ When you sideload an add-in, the add-in manifest is stored in the browser's loca
 6. Verify that your add-in is installed. For example, if it is an add-in command, it should appear on either the ribbon or the context menu. If it is a task pane add-in the pane should appear.
     
 
-## Sideload an Office Add-in on Microsoft Office Online
+## Sideload an Office Add-in on Office Online
 
 
 
@@ -48,5 +48,5 @@ When you sideload an add-in, the add-in manifest is stored in the browser's loca
     
     ![The upload add-in dialog with buttons for browse, upload, and cancel.](../../images/039aef16-b12f-4d01-ad46-f13e01dd3162.png)
 
-6. Verify that your add-in is installed. For example, if it is an add-in command, it should appear on either the ribbon or the context menu. If it is a task pane add-in the pane should appear.
+6. Verify that your add-in is installed. For example, if it is an add-in command, it should appear on either the ribbon or the context menu. If it is a task pane add-in, the pane should appear.
     
