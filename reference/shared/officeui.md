@@ -62,6 +62,10 @@ void
 
 #### Examples
 
+#####Full sample on GitHub
+[Office Add-in Dialog API Example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example/)
+
+#####Snippet
 ```js
 var dialog;
 
