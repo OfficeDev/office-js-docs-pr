@@ -1,11 +1,11 @@
 
 # Debug add-ins using F12 developer tools on Windows 10
 
-The F12 developer tools help you debug, test, and speed up your webpages. They can also be used with Office add-ins. The F12 tools are available with Windows 10. 
-The F12 developer tools can help develop and debug your Office add-in if you are not using an IDE like Visual Studio or if you need to investigate a problem while running your add-in outside the IDE. The F12 developer tools can be started after your add-in is running.
-This article shows how you can use the Debugger tool from the F12 developer tools in Windows 10 to test your Office add-in. You can test add-ins from the Store and also any add-ins in your account. The F12 tools display in their own window and do not use Visual Studio.
+The F12 developer tools included in Windows 10 help you debug, test, and speed up your webpages. You can also use them to develop and debug Office Add-ins, if you are not using an IDE like Visual Studio, or if you need to investigate a problem while running your add-in outside the IDE. You can start the F12 developer tools after your add-in is running.
 
- >**Note**  The Debugger is part of the F12 developer tools on Windows 10 and Internet Explorer. It is not in earlier versions of Windows. 
+This article shows how you how to use the Debugger tool from the F12 developer tools in Windows 10 to test your Office Add-in. You can test add-ins from the Office Store or add-ins that you have added from other locations. The F12 tools display in a separate window and do not use Visual Studio.
+
+ >**Note**  The Debugger is part of the F12 developer tools in Windows 10 and Internet Explorer. Earlier versions of Windows do not include the Debugger. 
 
 
 ### Prerequisites
@@ -13,25 +13,19 @@ This article shows how you can use the Debugger tool from the F12 developer tool
 You need the following software:
 
 
-- The F12 developer tools, which is part of Windows 10. 
+- The F12 developer tools, which are included in Windows 10. 
     
 - The Office client application that hosts your add-in. 
     
 - Your add-in. 
     
-This example uses Word and a free add-in from the Office Store.
-
-
 ### Using the Debugger
 
+This example uses Word and a free add-in from the Office Store.
 
-1. Open the Office client application on your computer. 
+1. Open Word and choose a blank document. 
     
-    Open Word and choose a blank document. 
-    
-2. On the  **Insert** tab in the Ribbon, choose the **My Add-ins** button and load an Add-in from the Store or your Add-in Catalog.
-    
-    For this example, choose the Store button and select the QR4Office add-in.
+2. On the  **Insert** tab, in the Add-ins group, Store and select the QR4Office add-in. (You can load any add-in from the Store or your add-in catalog.)
     
 3. Launch the F12 development tools that corresponds to your version of Office:
     
@@ -40,7 +34,7 @@ This example uses Word and a free add-in from the Office Store.
   - For the 64-Bit version of Office, use C:\Windows\SysWOW64\F12\F12Chooser.exe
     
 
-    When you launch F12Chooser, a separate window (titled "Choose target to debug") displays the possible applications to debug. Select the application that you are interested in. If you are writing your own add-in, select the website where you have the add-in deployed, which could be a localhost URL. 
+    When you launch F12Chooser, a separate window named "Choose target to debug" displays the possible applications to debug. Select the application that you are interested in. If you are writing your own add-in, select the website where you have the add-in deployed, which might be a localhost URL. 
     
     For example, select  **home.html**. 
     
