@@ -92,7 +92,8 @@ function openDialog() {
 
 #### Comments
 1.	Dialogs will not create modal windows
-2.	The initial url of the dialog and any page using the messageParent API must be on the same domain as the parent. 
+2.	Dialogs must initially open to a site on the add-in manifest's App Domains list
+2.	Any page calling the messageParent API must be on the same domain as the opener page 
 3.	An Office add-in may have 1 dialog open at any time 
 3.	Every dialog may be moved and resized
 4.	Every dialog opens centered on the screen 
