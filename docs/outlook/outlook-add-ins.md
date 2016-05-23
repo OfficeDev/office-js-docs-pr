@@ -75,7 +75,7 @@ To get started building Outlook add-ins, see [Get Started with Outlook add-ins f
 
 
 - [Overview of Outlook add-ins architecture and features](../outlook/overview.md)
-- [Best practices for developing Office Add-ins](../../docs/design/add-in-development-best-practices.md)
+- [Best practices for developing Office Add-ins](../../docs/overview/add-in-development-best-practices.md)
 - [Design guidelines for Office Add-ins](../../docs/design/add-in-design.md)
 - [License your Office and SharePoint Add-ins](http://msdn.microsoft.com/library/3e0e8ff6-66d6-44ff-b0c2-59108ebd9181%28Office.15%29.aspx)
 - [Publish your Office Add-in](../publish/publish.md)

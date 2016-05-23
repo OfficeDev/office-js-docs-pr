@@ -9,7 +9,7 @@ The following table lists the tasks to perform to design an Office Add-in to run
 |:-----|:-----|:-----|
 |Update your add-in to support Office.js version 1.1.|Update the JavaScript files (Office.js and app-specific .js files) and the add-in manifest validation file used in your Office Add-in project to version 1.1.|[What's changed in the JavaScript API for Office](../../reference/what's-changed-in-the-javascript-api-for-office.md)|
 |Apply UI design best practices.|Integrate your add-in UI seamlessly with the iOS experience.|[Designing for iOS](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/)|
-|Apply add-in design best practices.|Ensure that your add-in provides clear value, is engaging, and performs consistently.|[Best practices for developing Office Add-ins](../../docs/design/add-in-development-best-practices.md)|
+|Apply add-in design best practices.|Ensure that your add-in provides clear value, is engaging, and performs consistently.|[Best practices for developing Office Add-ins](../../docs/overview/add-in-development-best-practices.md)|
 |Optimize your add-in for touch.|Make your UI responsive to touch inputs in addition to mouse and keyboard.|[Apply UX design principles](https://msdn.microsoft.com/EN-US/library/mt590883.aspx#Anchor_3)|
 |Make your add-in free.|Office on iPad is a channel through which you can reach more users and promote your services. These new users have the potential to become your customers.|[Validation policy 10.8](http://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe%28Office.15%29.aspx)|
 |Make your add-in commerce free.|Your add-in must be free of in-app purchases, trial offers, UI that aims to upsell to paid or links to any online stores where users can purchase or acquire other content, apps, or add-ins.Your Privacy Policy and Terms of Use pages must also be free of any commerce UI or Store links.|[Validation policy 3.4](http://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe%28Office.15%29.aspx)|
@@ -34,7 +34,7 @@ Apply the following best practices for developing add-ins that run on iOS:
     
     When you specify API requirements in your add-in's manifest, Office will determine if the host application supports those API members. If the API members are available in the host, then your add-in will be available in that host application. Alternatively, you can perform a runtime check to determine if a method is available in the host before using it in your add-in. Runtime checks ensure that your add-in is always available in the host, and provides additional functionality if the methods are available. For more information, see [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md).
     
-For general add-in development best practices, see [Best practices for developing Office Add-ins](../../docs/design/add-in-development-best-practices.md).
+For general add-in development best practices, see [Best practices for developing Office Add-ins](../../docs/overview/add-in-development-best-practices.md).
 
 
 ## Additional resources
