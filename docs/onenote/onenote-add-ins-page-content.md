@@ -1,4 +1,4 @@
-# Work with OneNote page content
+# Work with OneNote page content (Preview)
 
 In the OneNote add-ins JavaScript API, page content is represented by the following object model.
 
