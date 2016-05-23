@@ -1,9 +1,8 @@
-
 # Work with OneNote page content
 
 In the OneNote add-ins JavaScript API, page content is represented by the following object model.
 
-  ![OneNote page object model diagram](OneNoteOM-page.png)
+  ![OneNote page object model diagram](../../images/OneNoteOM-page.png)
 
 - A Page object contains a collection of PageContent objects.
 - A PageContent object contains a content type of Outline, Image, or Other.
@@ -35,5 +34,9 @@ The OneNote add-in JavaScript API supports the following HTML for creating and u
 - `<h1>` ... `<h6>`
 - `<b>`, `<em>`, `<strong>`, `<i>`, `<u>`, `<del>`, `<sup>`, `<sub>`, `<cite>`
 
+## Additional Resources
 
-//TODO: where get html? update image link
+- [OneNote JavaScript API programming overview (Preview)](onenote-add-ins-programming-overview.md)
+- [OneNote JavaScript API reference (Preview)](../../reference/onenote/onenote-add-ins-javascript-reference.md)
+- [Rubric Grader sample (Preview)](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader-Preview)
+- [Office Add-ins platform overview](https://dev.office.com/docs/add-ins/overview/office-add-ins)
