@@ -11,16 +11,16 @@ In the OneNote add-ins JavaScript API, page content is represented by the follow
 
 To create an empty OneNote page, use one of the following methods:
 
-- [Section.addPage](../../reference/onenote/section#addpagetitle-string)
-- [Page.insertPageAsSibling](../../reference/onenote/page#insertpageassiblinglocation-string-title-string)
+- [Section.addPage](../../reference/onenote/section.md#addpagetitle-string)
+- [Page.insertPageAsSibling](../../reference/onenote/page.md#insertpageassiblinglocation-string-title-string)
 
 Then use the following methods to work with the page content. The content and structure of a OneNote page are represented by HTML. Only a [subset of HTML is supported](#supported-html) for creating or updating page content.
 
-- [Page.addOutline](../../reference/onenote/page#addoutlineleft-double-top-double-html-string)
-- [Outline.append](../../reference/onenote/outline#appendhtml-string)
-- [Outline.prepend](../../reference/onenote/outline#prependhtml-string)
-- [Paragraph.insertAsSibling](../../reference/onenote/paragraph#insertassiblinghtml-string-insertlocation-string)
-- [Paragraph.delete](../../reference/onenote/paragraph#delete)
+- [Page.addOutline](../../reference/onenote/page.md#addoutlineleft-double-top-double-html-string)
+- [Outline.append](../../reference/onenote/outline.md#appendhtml-string)
+- [Outline.prepend](../../reference/onenote/outline.md#prependhtml-string)
+- [Paragraph.insertAsSibling](../../reference/onenote/paragraph.md#insertassiblinghtml-string-insertlocation-string)
+- [Paragraph.delete](../../reference/onenote/paragraph.md#delete)
 
 ## Supported HTML
 
