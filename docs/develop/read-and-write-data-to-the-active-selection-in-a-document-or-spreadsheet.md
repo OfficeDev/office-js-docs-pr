@@ -106,13 +106,5 @@ Office.context.document.removeHandlerAsync("documentSelectionChanged", {handler:
 The  `myHandler` function name that is passed as the second _handler_ parameter specifies the event handler that will be removed from the **SelectionChanged** event.
 
 
- >**Important**  If the optional  _handler_ parameter is omitted when the **removeHandlerAsync** method is called, all event handlers for the specified _eventType_ will be removed.
+ >**Important:**  If the optional  _handler_ parameter is omitted when the **removeHandlerAsync** method is called, all event handlers for the specified _eventType_ will be removed.
 
-
-## Additional resources
-
-
-- [Read data from a binding](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md#read-data-from-a-binding)
-    
-- [Write data to a binding](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md#write-data-to-a-binding)
-    
