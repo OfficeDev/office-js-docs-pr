@@ -54,8 +54,6 @@ Alternatively, an administrator can specify an Office Add-in catalog on SharePoi
 ## Additional resources
 
 
-- [Publish your Office Add-in](../publish/publish.md)
-    
 - [Set up an add-in catalog on SharePoint](../publish/set-up-an-add-in-catalog-on-sharepoint.md)
     
 - [Set up an add-in catalog on Office 365](../publish/set-up-an-add-in-catalog-on-office-365.md)
