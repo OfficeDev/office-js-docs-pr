@@ -30,8 +30,6 @@ To add add-in to the Add-in Catalog Site, browse to the site you have just creat
 ## Additional resources
 
 
-
 - [Publish add-ins to an add-in catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)
-    
-- [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md)
+
     
