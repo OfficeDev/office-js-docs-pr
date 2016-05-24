@@ -382,7 +382,6 @@ The  **Resources** node defines the following resources. Each resource can have 
 |**ShortStrings**/ **String**|The text for  **Label** and **Title** elements. Each **String** contains a maximum of 125 characters.|
 |**LongStrings**/ **String**|The text for  **Description** attributes. Each **String** contains a maximum of 250 characters.|
 
-**Note**  When defining resources, keep the following requirements in mind:
 
 The following is an example of the  **Resources** element.
 
