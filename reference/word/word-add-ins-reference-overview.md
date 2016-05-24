@@ -4,33 +4,23 @@ Word provides a rich set of APIs that you can use to create add-ins that interac
 
 You can use two JavaScript APIs to interact with the objects and metadata in a Word document:
 
-- [JavaScript API for Office](../javascript-api-for-office.md) (Office.js) - Introduced in Office 2013. 
+- [JavaScript API for Office](../javascript-api-for-office.md) (Office.js) - Introduced in Office 2013.
 - Word JavaScript API - Introduced in Office 2016.
-
-<!-- Removed content that we cover in the conceptual overview topic. -->
 
 ## Word JavaScript API
 
-The Word JavaScript API changes the way that you can interact with objects like documents and paragraphs. Rather than providing individual asynchronous APIs for retrieving and updating each of these objects, the Word JavaScript API provides “proxy” JavaScript objects that correspond to the real objects running in Word. You can interact with these proxy objects by synchronously reading and writing their properties and calling synchronous methods to perform operations on them. These interactions with proxy objects aren’t immediately realized in the running script. The **context.sync** method synchronizes the state between your running JavaScript and the real objects in Office by executing queued instructions and retrieving properties of loaded Word objects for use in your script.
-
-The Word JavaScript API is loaded by Office.js. <!-- I think this paragraph essentially says the same thing as the previous; combine? -->It provides a set of JavaScript proxy objects that are used to queue a set of commands that interact with the contents of a Word document. These commands are run as a batch. The results of the batch are actions taken on the Word document, like inserting content, and synchronizing the Word objects with the JavaScript proxy objects.
-
-<!-- The Manifest section doesn't seem to fit here; we introduce the manifest in the conceptual overview topic. Unless there is a specific relationship to cover between the Word JavaScript API and the Manifest reference - i.e. specific elements that apply to Word 2016? - might be okay to just let people discover it in the TOC. -->
+The Word JavaScript API is loaded by Office.js. The Word JavaScript API changes the way that you can interact with objects like documents and paragraphs. Rather than providing individual asynchronous APIs for retrieving and updating each of these objects, the Word JavaScript API provides “proxy” JavaScript objects that correspond to the real objects running in Word. You can interact with these proxy objects by synchronously reading and writing their properties and calling synchronous methods to perform operations on them. These interactions with proxy objects aren’t immediately realized in the running script. The **context.sync** method synchronizes the state between your running JavaScript and the real objects in Office by executing queued instructions and retrieving properties of loaded Word objects for use in your script.
 
 ## Get the JavaScript API for Office
 
-<!-- Suggest we move this section into javascript-api-for-office.md; it isn't specific to Word/Word JS - right? -->
-
 You can reference Office.js from the following locations:
 
-* https://appsforoffice.microsoft.com/lib/1/hosted/office.js
-* https://appsforoffice.microsoft.com/lib/beta/hosted/office.js
+* https://appsforoffice.microsoft.com/lib/1/hosted/office.js - use this resource for production add-ins.
+* https://appsforoffice.microsoft.com/lib/beta/hosted/office.js - use this resource when you're trying out preview features.
 
-<!-- Verify the beta path? -->
+If you're using [Visual Studio](https://www.visualstudio.com/products/free-developer-offers-vs), you can download the [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx) to get project templates that include Office.js.  You can also use [nuget to get Office.js](https://www.nuget.org/packages/Microsoft.Office.js/).
 
-If you're using Visual Studio, you can download the [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx) to get project templates that include Office.js. You can also use [nuget to get Office.js](https://www.nuget.org/packages/Microsoft.Office.js/).
-
-To get the TypeScript definitions: ```typings install office-js --ambient```
+If you use TypeScript and have npm, you can get the the TypeScript definitions by typing this in your command line interface: ```typings install office-js --ambient```.
 
 ## Running Word add-ins
 
@@ -42,15 +32,18 @@ Add-ins that target Word 2016 execute by passing a function into the **Word.run(
     (function () {
         "use strict";
 
-        // The initialize event handler is run each time the page is loaded.
+        // The initialize event handler must be run on each page to initialize Office JS.
+        // You can add optional custom initialization code that will run after OfficeJS
+        // has initialized.
         Office.initialize = function (reason) {
+            // The reason object tells how the add-in was initialized. The values can be:
+            // inserted - the add-in was inserted to an open document.
+            // documentOpened - the add-in was already inserted in to the document and the document was opened.
 
             // Checks for the DOM to load using the jQuery ready function.
             $(document).ready(function () {
-                // Set your initialization code. You can use the reason
-                // argument to determine how the add-in was loaded.
-                // You can also load saved settings from the Office object
-                // or use the shared Office.js object model.
+                // Set your optional initialization code.
+                // You can also load saved settings from the Office object.
             });
         };
 
@@ -60,13 +53,14 @@ Add-ins that target Word 2016 execute by passing a function into the **Word.run(
 
             // Create a proxy object for the document.
             var thisDocument = context.document;
+            // ...
         })
     })();
 ```
 
 ### Synchronizing Word documents with Word JavaScript API proxy objects
 
-The Word JavaScript API object model is loosely coupled with the objects in Word. Word JavaScript API objects are proxies for objects in a Word document. Actions taken on proxy objects are not realized in Word, and the state of the Word document is not realized in the proxy objects, until the document state has been synchronized. To synchronize the document state, you run the **context.sync()** method. The following example creates a proxy body object and a queued command to load the text property on the proxy body object, and uses the **context.sync()** method to synchronize the body of the Word document with the body proxy object.
+The Word JavaScript API object model is loosely coupled with the objects in Word. Word JavaScript API objects are proxies for objects in a Word document. Actions taken on proxy objects are not realized in Word until the document state has been synchronized. Conversely, the state of the Word document is not realized in the proxy objects until the document state has been synchronized. To synchronize the document state, you run the **context.sync()** method. The following example creates a proxy body object and a queued command to load the text property on the proxy body object, and uses the **context.sync()** method to synchronize the body of the Word document with the body proxy object.
 
 ```js
     // Run a batch operation against the Word object model.
@@ -87,9 +81,9 @@ The Word JavaScript API object model is loosely coupled with the objects in Word
     })
 ```
 
-### Executing a batch of commands 
+### Executing a batch of commands
 
-The Word proxy objects have methods for accessing and updating the object model. These methods are executed sequentially in the order in which they were queued in the batch. A batch of commands is formed before a **context.sync()** call is made. All the commands queued in all the objects that use the context execute at the same time.
+The Word proxy objects have methods for accessing and updating the object model. These methods are executed sequentially in the order in which they were queued in the batch. All of the commands that are queued in the batch are executed when context.sync() is called.
 
 The following example shows how the command queue works. When **context.sync()** is called, the [command to load](../../reference/word/loadoption.md) the body text is executed in Word. Then, the command to insert text into the body in Word occurs. The results are then returned to the body proxy object. The value of the **body.text** property in the Word JavaScript API is the value of the Word document body <u>before</u> the text was inserted into Word document.
 
@@ -101,7 +95,7 @@ The following example shows how the command queue works. When **context.sync()**
         // Create a proxy object for the document body.
         var body = context.document.body;
 
-        // Queue a command to load the text in the proxy body object.
+        // Queue a command to load the text property of the proxy body object.
         context.load(body, 'text');
 
         // Queue a command to insert text into the end of the Word document body.
