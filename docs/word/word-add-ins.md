@@ -206,19 +206,14 @@ Now you can run the add-in you created. Follow these steps to see it in action:
 __Figure 1. The Boilerplate content add-in loaded in Word__
 ![Picture of the Word application with the boilerplate add-in loaded.](../../images/boilerplateAddin.png "A simple Word add-in for entering boilerplate text.")
 
-## Learn more
-
-Learn more about extending Word by reading the [Word add-ins programming guide](word-add-ins-programming-overview.md). Read the [Word add-ins JavaScript reference](../../reference/word/word-add-ins-javascript-reference.md) to learn about the objects that you can access.
-
 ## Give us your feedback
 
 Your feedback is important to us.
 
-* Check out the docs and let us know about any questions and issues you find in them by [submitting an issue](https://github.com/OfficeDev/office-js-docs/issues) directly in this repository.
-* Let us know about your programming experience, what you would like to see in future versions, code samples, etc. Use [this site](http://officespdev.uservoice.com/) for entering your suggestions and ideas.
+* Check out the docs and let us know about any questions and issues you find in them by [submitting an issue](https://github.com/OfficeDev/office-js-docs/issues).
+* Let us know about your programming experience and what you would like to see in future versions or code samples. Use the [UserVoice site](http://officespdev.uservoice.com/) to enter your suggestions and ideas.
 
 ## Additional resources
 
-* [Office Add-ins](https://msdn.microsoft.com/en-us/library/office/jj220060.aspx)
 * [Get started with Office Add-ins](https://dev.office.com/getting-started/addins?product=word)
 * [Word add-ins on GitHub](https://github.com/OfficeDev?utf8=%E2%9C%93&query=Word)
