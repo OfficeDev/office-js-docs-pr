@@ -50,11 +50,3 @@ After you upload add-in manifests to the Office Add-ins catalog, users can acces
     
 Alternatively, an administrator can specify an Office Add-in catalog on SharePoint by using group policy. For details, see the section "Using Group Policy to manage how users can install and use Office Add-ins" in [Overview of Office Add-ins](https://technet.microsoft.com/en-us/library/jj219429.aspx) on TechNet.
 
-
-## Additional resources
-
-
-- [Set up an add-in catalog on SharePoint](../publish/set-up-an-add-in-catalog-on-sharepoint.md)
-    
-- [Set up an add-in catalog on Office 365](../publish/set-up-an-add-in-catalog-on-office-365.md)
-    
