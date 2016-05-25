@@ -382,7 +382,7 @@ The  **Resources** node defines the following resources. Each resource can have 
 |**ShortStrings**/ **String**|The text for  **Label** and **Title** elements. Each **String** contains a maximum of 125 characters.|
 |**LongStrings**/ **String**|The text for  **Description** attributes. Each **String** contains a maximum of 250 characters.|
 
-**Note**  When defining resources, keep the following requirements in mind:
+> **Important: ** Outlook requires the ability to cache image resources for performance purposes. As such, the server hosting an image resource must not add any CACHE-CONTROL directives to the response header. Doing so will result in Outlook automatically subtituting generic/default image.    
 
 The following is an example of the  **Resources** element.
 
