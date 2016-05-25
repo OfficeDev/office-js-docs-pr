@@ -24,7 +24,7 @@ The following table shows the child elements of  **VersionOverrides**.
 |**Hosts**|Required. Specifies a collection of host types and their settings. It overrides the  **Hosts** element in the parent portion of the manifest. It must have an **xsi:type** attribute set to "MailHost", and it must contain a **FormFactor** child element.|
 |**Resources**|Defines a collection of resources (strings, URLs, and images) that are referenced by other elements of the manifest. This is described in the [Resources element](#resources-element) section later in this topic.|
 
-Here an example of  **VersionOverrides**, showing its child elements.
+The following example shows the **VersionOverrides** element and its child elements.
 
 ```XML
 <OfficeApp>
@@ -382,7 +382,7 @@ The  **Resources** node defines the following resources. Each resource can have 
 |**ShortStrings**/ **String**|The text for  **Label** and **Title** elements. Each **String** contains a maximum of 125 characters.|
 |**LongStrings**/ **String**|The text for  **Description** attributes. Each **String** contains a maximum of 250 characters.|
 
-> **Important: ** Outlook requires the ability to cache image resources for performance purposes. As such, the server hosting an image resource must not add any CACHE-CONTROL directives to the response header. Doing so will result in Outlook automatically subtituting generic/default image.    
+> **Important: ** Outlook requires the ability to cache image resources for performance purposes. For this reason, the server hosting an image resource must not add any CACHE-CONTROL directives to the response header. This will result in Outlook automatically subtituting a generic or default image.    
 
 The following is an example of the  **Resources** element.
 
@@ -418,7 +418,7 @@ The following is an example of the  **Resources** element.
 ## Rule changes
 
 
-The following changes affect the rules in the manifest.
+The following changes affect the rules in the manifest:
 
 
 - Activation rules are now inside each entry point.
@@ -428,10 +428,10 @@ The following changes affect the rules in the manifest.
 - [ItemHasKnownEntity](http://msdn.microsoft.com/library/87e10fd2-eab4-c8aa-bec3-dff92d004d39%28Office.15%29.aspx) Is modified to accept a string for entity type, rather than an enum.
     
 
-## Sample Manifest
+## Sample manifest
 
 
-For a full sample manifest, see the [command-demo](https://github.com/jasonjoh/command-demo/blob/master/command-demo-manifest.xml) sample on GitHub.
+For a full sample manifest, see the [Outlook add-in command demo sample](https://github.com/jasonjoh/command-demo/blob/master/command-demo-manifest.xml) on GitHub.
 
 
 ## Additional resources
@@ -442,5 +442,5 @@ For a full sample manifest, see the [command-demo](https://github.com/jasonjoh/c
     
 - [Outlook add-in manifests](../../outlook/manifests/manifests.md)
     
-- [command-demo sample](https://github.com/jasonjoh/command-demo)
+- [Outlook add-in command demo sample](https://github.com/jasonjoh/command-demo)
     
