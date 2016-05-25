@@ -1,7 +1,7 @@
 
 # Word JavaScript add-in development overview
 
-<!-- I added JavaScript to the H1 because we need to differentiate from the older add-in model. LG: Why do we need to differentiate? Is a valid scenario that someone who is developing an add-in for Word 2013 will land here? -->
+<!-- I added JavaScript to the H1 because we need to differentiate from the older add-in model. LG: Why do we need to differentiate? Is a valid scenario that someone who is developing an add-in for Word 2013 will land here? Also we don't refer to them as "Word JavaScript add-ins". What if we go with what Outlook does and just use "Word add-ins"?-->
 
 Does your solution involve automated document assembly? Do you want to bind and access data in a Word document from other data sources? Do you want to create new tools for Word -- to make Word do things that it doesn't do out of the box? If so, the Word JavaScript add-in development model is the choice for building cross platform extensions to Word client applications.
 
