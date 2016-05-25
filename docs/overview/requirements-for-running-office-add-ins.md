@@ -12,13 +12,13 @@ To be able to install and run any Office Add-in, you first need to deploy the ma
 For all types of add-ins (content, Outlook, and task pane add-ins and add-in commands), you need to deploy your add-in's webpage files to a web server, or web hosting service, such as [Microsoft Azure](../publish/host-an-office-add-in-on-microsoft-azure.md).
 
 
- >**Note**   When you develop and debug an add-in in Visual Studio, Visual Studio deploys and runs your add-in's webpage files locally with IIS Express, and doesn't require an additional web server. Similarly, when you develop and debug with Napa in the browser, it deploys and runs your add-in's webpage files from storage associated with the account you used to sign into Napa.
+ >**Note:**   When you develop and debug an add-in in Visual Studio, Visual Studio deploys and runs your add-in's webpage files locally with IIS Express, and doesn't require an additional web server. Similarly, when you develop and debug with Napa in the browser, it deploys and runs your add-in's webpage files from storage associated with the account you used to sign into Napa.
 
 For content and task pane add-ins, in the supported Office host applications - Access web apps, Word, Excel, PowerPoint, or Project - you also need a [ network file share](../publish/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) or an [add-in catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) on SharePoint to upload the add-in's XML manifest file.
 
 To test and run an Outlook add-in, the user's Outlook email account must reside on Exchange 2013 or later, which is available through Office 365, Exchange Online, or through an on-premises installation. The user or administrator installs manifest files for Outlook add-ins on that server.
 
- >**Note**   POP and IMAP email accounts in Outlook don't support Office Add-ins.
+ >**Note:**   POP and IMAP email accounts in Outlook don't support Office Add-ins.
 
 
 ## Client support summary
@@ -31,20 +31,20 @@ This table shows the Office host applications (including desktop, tablet, mobile
 
 |**Office application**|**Content add-ins**|**Outlook add-ins**|**Task pane add-ins**|
 |:-----|:-----|:-----|:-----|
-|Access web apps|![Check symbol](../../images/mod_off15_checkmark.png)|||
-|Excel 2013 or later|![Check symbol](../../images/mod_off15_checkmark.png)||![Check symbol](../../images/mod_off15_checkmark.png)|
-|Excel Online|![Check symbol](../../images/mod_off15_checkmark.png)||![Check symbol](../../images/mod_off15_checkmark.png)|
-|Excel for iPad|![Check symbol](../../images/mod_off15_checkmark.png)||![Check symbol](../../images/mod_off15_checkmark.png)|
-|Outlook 2013 or later||![Check symbol](../../images/mod_off15_checkmark.png)||
-|Outlook for Mac||![Check symbol](../../images/mod_off15_checkmark.png)||
-|Outlook Web App||![Check symbol](../../images/mod_off15_checkmark.png)||
-|OWA for Devices||![Check symbol](../../images/mod_off15_checkmark.png)||
-|PowerPoint 2013 or later|![Check symbol](../../images/mod_off15_checkmark.png)||![Check symbol](../../images/mod_off15_checkmark.png)|
-|PowerPoint Online|![Check symbol](../../images/mod_off15_checkmark.png)||![Check symbol](../../images/mod_off15_checkmark.png)|
-|Project 2013 or later|||![Check symbol](../../images/mod_off15_checkmark.png)|
-|Word 2013 or later|||![Check symbol](../../images/mod_off15_checkmark.png)|
-|Word Online|||![Check symbol](../../images/mod_off15_checkmark.png)|
-|Word for iPad|||![Check symbol](../../images/mod_off15_checkmark.png)|
+|Access web apps|Y|||
+|Excel 2013 or later|Y||Y|
+|Excel Online|Y||Y|
+|Excel for iPad|Y||Y|
+|Outlook 2013 or later||Y||
+|Outlook for Mac||Y||
+|Outlook Web App||Y||
+|OWA for Devices||Y||
+|PowerPoint 2013 or later|Y||Y|
+|PowerPoint Online|Y||Y|
+|Project 2013 or later|||Y|
+|Word 2013 or later|||Y|
+|Word Online|||Y|
+|Word for iPad|||Y|
 
 ## Client requirements: Windows desktop and tablet
 
@@ -111,7 +111,7 @@ A typical Office Add-in solution involves the following components:
   - An Outlook add-in that the user or Exchange Server administrator installed through the Exchange Admin Center (EAC).
 
 
- >**Note**  The user's installation of an Office Add-in consists of a pointer to the corresponding XML manifest file, which specifies the URL from which to load the add-in webpage and script at run time.
+ >**Note:**  The user's installation of an Office Add-in consists of a pointer to the corresponding XML manifest file, which specifies the URL from which to load the add-in webpage and script at run time.
 
 For all supported Office applications, the implementation of the Office Add-in itself consists of the following server-based components:
 
