@@ -1,17 +1,23 @@
 
 # Word JavaScript add-in development overview
 
-<!-- I added JavaScript to the H1 because we need to differentiate from the older add-in model. -->
+<!-- I added JavaScript to the H1 because we need to differentiate from the older add-in model. LG: Why do we need to differentiate? Is a valid scenario that someone who is developing an add-in for Word 2013 will land here? -->
 
 Does your solution involve automated document assembly? Do you want to bind and access data in a Word document from other data sources? Do you want to create new tools for Word -- to make Word do things that it doesn't do out of the box? If so, the Word JavaScript add-in development model is the choice for building cross platform extensions to Word client applications.
 
+<!-- LG: Suggested revision: "Do you want to create a solution that extends the functionality of Word - for example, one that involves automated document assembly, or that binds to and accesses data in a Word document from other data sources? You can use the Office Add-ins platform, which includes the Word JavaScript API and the JavaScript API for Office, to extend Word clients running on a Windows desktop, on a Mac, or in the cloud." Seems like we want to start general then provide specific examples. Also, might be good to mention the different platforms and APIs in the intro. -->
+
 Word add-ins are one of the many development options that you have on the [Office Add-ins platform](../overview/office-add-ins.md). You can extend the Word UI with [add-in commands](../design/add-in-commands.md) and task panes that can run JavaScript that interacts with the content in a Word document. Any code that you can run in a browser can run in a Word add-in. Word and Word add-ins have a host-client relationship. An add-in that interacts with content in a Word document takes on a client role by creating requests to act on Word objects and synchronize object state between the Word document and the add-in. Let's look at the following figure that shows a task pane loaded into Word.
 
-**Figure 1. Word host and the task pane client**
+<!-- LG: Suggested revision: "You can use add-in commands to extend the Word UI and launch task panes that run JavaScript that interacts with the content in a Word document. Any code that you can run in a browser can run in a Word add-in. Add-ins that interact with content in a Word document create requests to act on Word objects and synchronize object state. The following figure shows an example of a Word add-in that runs in a task pane." I think we need to be a little careful with the "host-client" terminology because in our docs, we refer to Office clients and Office hosts interchangeably. Can we remove that and just refer to the actual functionality - requests/synchronization? -->
 
-![Word host and task pane](../../images/WordAddinShowHostClient.png)
+**Figure 1. Add-in running in a task pane in Word**
 
-The add-in loaded into a Word task pane (1), can send requests to the Word host (2). There is a paragraph object in the Word document that the add-in can access. That paragraph can be updated, deleted, or moved by running JavaScript in the Word task pane. For example, the following code shows how to append a new sentence to that paragraph.
+<!-- Do we have another example that we can show that uses Fabric and illustrates add-in best practices? -->
+
+![Add-in running in a task pane in Word](../../images/WordAddinShowHostClient.png)
+
+The Word add-in can send requests to the Word document and can use JavaScript to access the paragraph object and update, delete, or move the paragraph. For example, the following code shows how to append a new sentence to that paragraph.
 
 ```js
 Word.run(function (context) {
@@ -25,7 +31,7 @@ Word.run(function (context) {
 
 ```
 
-You can use any Web server technology to host your Word add-in, such as ASP.NET, NodeJS, or Python. Use your favorite client-side framework -- Ember, Backbone, Angular, React -- or stick with VanillaJS to develop your solution and you can use services like Azure to [authenticate](../develop/use-the-oauth-authorization-framework-in-an-office-add-in.md) and host your application.
+You can use any web server technology to host your Word add-in, such as ASP.NET, NodeJS, or Python. Use your favorite client-side framework -- Ember, Backbone, Angular, React -- or stick with VanillaJS to develop your solution and you can use services like Azure to [authenticate](../develop/use-the-oauth-authorization-framework-in-an-office-add-in.md) and host your application.
 
 The Word JavaScript APIs give your application access to the objects and metadata found in a Word document. You can use these APIs to create add-ins that target:
 
