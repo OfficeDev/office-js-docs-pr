@@ -45,9 +45,6 @@ function createTableData() {
 ```
 
 
-
-[![Try out this call in the interactive API Tutorial for Excel](../../images/819b84bf-151c-4a12-80c3-d6f8d7c03251.png)](http://officeapitutorial.azurewebsites.net/Redirect.html?scenario=Write+and+Read+a+Table)
-
 ## Support details
 
 

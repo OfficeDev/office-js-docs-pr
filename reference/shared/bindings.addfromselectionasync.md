@@ -8,9 +8,6 @@ Adds a binding to the current selection in the document.
 |**Available in [Requirement set](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|MatrixBindings, TableBindings, TextBindings|
 |**Last changed**|1.1|
 
-[![Try out this call in the interactive API Tutorial for Excel](../../images/819b84bf-151c-4a12-80c3-d6f8d7c03251.png)](https://officeapitutorial.azurewebsites.net/TryItOut.html)
-
-
 ```
 bindingsObj.addFromSelectionAsync(bindingType [, options], callback);
 ```

@@ -12,8 +12,6 @@ Occurs when the selection is changed within the binding.
 Office.EventType.BindingSelectionChanged
 ```
 
-[![Try out this call in the interactive API Tutorial for Excel](../../images/819b84bf-151c-4a12-80c3-d6f8d7c03251.png)](http://officeapitutorial.azurewebsites.net/Redirect.html?scenario=Get+Selected+Coordinates)
-
 ## Remarks
 
 To add an event handler for the  **BindingSelectionChanged** event of a binding, use the [addHandlerAsync](../../reference/shared/binding.addhandlerasync.md) method of the **Binding** object. The event handler receives an argument of type [BindingSelectionChangedEventArgs](../../reference/shared/binding.bindingselectionchangedeventargs.md).
