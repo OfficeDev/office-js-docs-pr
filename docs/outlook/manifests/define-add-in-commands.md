@@ -430,7 +430,7 @@ The following changes affect the rules in the manifest:
 ## Sample manifest
 
 
-For a full sample manifest, see the [Outlook add-in command demo sample](https://github.com/jasonjoh/command-demo/blob/master/command-demo-manifest.xml) on GitHub.
+For a full sample manifest, see the [Sample Outlook Manifest](https://gist.github.com/mlafleur/95b7ac030bb7a7ae742527e85a36b095) on GitHub.
 
 
 ## Additional resources
