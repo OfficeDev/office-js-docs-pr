@@ -423,10 +423,9 @@ The following changes affect the rules in the manifest:
 
 - Activation rules are now inside each entry point.
     
-- [ItemIs](http://msdn.microsoft.com/en-us/library/f7dac4a3-1574-9671-1eda-47f092390669%28Office.15%29.aspx) is modified so that **ItemType** is either Message or AppointmentAttendee and there is no **FormType** attribute.
+- [ItemIs](../../../reference/manifest/rule.md) is modified so that **ItemType** is either Message or AppointmentAttendee and there is no **FormType** attribute.
     
-- [ItemHasKnownEntity](http://msdn.microsoft.com/library/87e10fd2-eab4-c8aa-bec3-dff92d004d39%28Office.15%29.aspx) Is modified to accept a string for entity type, rather than an enum.
-    
+- [ItemHasKnownEntity](../../../reference/manifest/rule.md) Is modified to accept a string for entity type, rather than an enum.    
 
 ## Sample manifest
 
