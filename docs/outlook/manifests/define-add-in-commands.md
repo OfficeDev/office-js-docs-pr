@@ -17,14 +17,15 @@ The  **VersionOverrides** element is the root element that contains information 
 |  [xsi:type](#xsitype)  |  Yes  | The schema version. The version described in this topic is `VersionOverridesV1_0`.|
 
 
-### Child Elements
+### Child elements
 
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
 |  [Description](#description)    |  No   |  Describes the add-in. |
 |  [Requirements](#requirements)  |  No   |  Minimum Mailbox version required | 
 |  [Hosts](#hosts)                |  Yes  |  Collection of host types and their settings |
-|  [Resources](#eesources-element)|  Yes  | Resource definitions (strings, URLs, and images)  |
+|  [Resources](#resources)|  Yes  | Resource definitions (strings, URLs, and images)  |
+
 
 #### xmlns 
 This is a required attribute which defines the schema location. The value should always be defined as `http://schemas.microsoft.com/office/mailappversionoverrides`.
@@ -48,7 +49,7 @@ This contains a collection of host types and their settings. It overrides the  H
 This defines a collection of resources (strings, URLs, and images) that are referenced by other elements of the manifest. This is a required element. For more information, see [Resources Element](#eesources-element) 
 
 
-### Example
+### VersionOverrides example
 ```xml
 <OfficeApp>
 ...
@@ -78,14 +79,14 @@ The  **FormFactor** element specifies the settings for an add-in for a given for
 
 The form factor contains the  **FunctionFile** element and one or more **ExtensionPoint** elements. For more information see the following [FunctionFile element](#functionfile-element) and [ExtensionPoint element](#extensionpoint-element) sections. The following is an example of **FormFactor**, showing its child nodes.
 
-### Child Elements
+### Child elements
 
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
 |  [FunctionFile](#functionfile)      | Yes |  Url to file containing JavaScript functions  |
 |  [ExtensionPoint](#extensionpoint)  | Yes |  Defines where an add-in exposes functionality  |
 
-### FormFactor Example
+### FormFactor example
 ```xml
 ...
 <Hosts>
@@ -144,7 +145,7 @@ The  **ExtensionPoint** element defines where an add-in exposes functionality. I
 
 The  **CustomPane** extension point defines an add-in that activates when specified rules are satisfied. It is only for read form and it displays in a horizontal pane. The following are the elements of the **CustomPane**.
 
-### Child Elements
+### Child elements
 
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
@@ -165,7 +166,7 @@ Required. The rule or collection of rules that specify when the add-in activates
 #### DisableEntityHighlighting
 Optional. Specifies whether entity highlighting should be turned off for this mail add-in. 
 
-#### CustomPane Example
+#### CustomPane example
 ```xml
 <ExtensionPoint xsi:type="CustomPane">
    <RequestedHeight>100< /RequestedHeight> 
@@ -179,12 +180,12 @@ Optional. Specifies whether entity highlighting should be turned off for this ma
 ```
 ----
 
-### Office Tab
+### Office tab
 On the ribbon, you specify which tab and group for their add-in commands. This can either be on the default tab (either  **Home**,  **Message**, or  **Meeting**), or on a custom tab defined by the add-in. 
 
 The default tab is limited to one group per add-in. 
 
-#### Child Elements
+#### Child elements
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
 |  OfficeTab  | Yes |  Always set to `TabDefault`.  |
@@ -204,7 +205,7 @@ Required. The label of the group. The  **resid** attribute must be set to the va
 #### Control
 A group requires at least one control. Currently, only buttons and menus are supported. See the following [Button controls](#button-controls) and [Menu (dropdown button) controls](#menu-dropdown-button-controls) sections for more information.
 
-#### Example OfficeTab
+#### OfficeTab example
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
   <OfficeTab id="TabDefault">
@@ -220,18 +221,18 @@ A group requires at least one control. Currently, only buttons and menus are sup
 ```
 ----
 
-### Custom Tab
+### Custom tab
 On the ribbon, you specify which tab and group for their add-in commands. This can either be on the default tab (either  **Home**,  **Message**, or  **Meeting**), or on a custom tab defined by the add-in.
 
 On custom tabs, the add-in can create up to 10 groups. Each group is limited to 6 controls, regardless of which tab it appears on. Add-ins are limited to one custom tab.
 
-#### Child Elements
+#### Child elements
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  CustomTab  | Yes |  Defines a custom ribbon tab.  |
-|  Group      | Yes |  Defines a Group of commands.  |
+|  [CustomTab](#customtab)  | Yes |  Defines a custom ribbon tab.  |
+|  [Group](#group)      | Yes |  Defines a Group of commands.  |
 |  Label      | Yes |  The label for the CustomTab or a Group  |
-|  Control    | Yes |  Collection of one or more Control objects  |
+|  [Control](#control)    | Yes |  Collection of one or more Control objects  |
 
 #### CustomTab
 Required. The  **id** attribute must be unique within the manifest.
@@ -248,7 +249,7 @@ Required. The label of the custom tab. The  **resid** attribute must be set to t
 #### Control
 A group requires at least one control. Currently, only buttons and menus are supported. See the following [Button controls](#button-controls) and[Menu (dropdown button) controls](#menu-dropdown-button-controls) sections for more information.
 
-#### Example CustomTab
+####  CustomTab example
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
   <CustomTab id="TabCustom1">
@@ -300,13 +301,13 @@ MessageReadCommandSurface.
 
 A button performs a single action when the user selects it. It can either execute a function or show a task pane. Each button control must have an `id` unique to the manifest. 
 
-#### Example Button Control
+#### Button control example
 ```xml
 <Control xsi:type="Button" id="<choose a descriptive name>" >
   <!-- include button elements, as described in the following table -->
 </Control>
 ```
-#### Child Elements
+#### Child elements
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
 |  Label     | Yes |  The text for the button.         |
@@ -347,7 +348,7 @@ Required element when **xsi:type** is "ExecuteFunction". Specifies the name of t
 ##### SourceLocation
 Required element when  **xsi:type** is "ShowTaskpane". Specifies the source file location for this action. The **resid** attribute must be set to the value of the **id** attribute of a **Url** element in the **Urls** element in the **Resources** element.
 
-#### Example ExecuteFunction Button
+#### ExecuteFunction button example
 ```xml
 <Control xsi:type="Button" id="msgReadFunctionButton">
   <Label resid="funcReadButtonLabel" />
@@ -366,7 +367,7 @@ Required element when  **xsi:type** is "ShowTaskpane". Specifies the source file
 </Control>
 
 ```
-#### Example ShowTaskpane Button
+#### ShowTaskpane button example
 ```xml
 <Control xsi:type="Button" id="msgReadOpenPaneButton">
   <Label resid="paneReadButtonLabel" />
@@ -402,7 +403,8 @@ The syntax for the menu control is as follows:
   <!-- include menu elements, as described in the following table -->
 </Control>
 ```
-#### Child Elements
+#### Child elements
+
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
 |  Label     | Yes |  The text for the button.         |
@@ -447,7 +449,7 @@ Required element when  **xsi:type** is "ShowTaskpane". Specifies the source file
 #### Items
 Required. Contains the  **Item** elements for the menu. Each **Item** element contains the same child elements as a [Button controls](#button-controls).
 
-#### Example Menu Control
+#### Menu control example
 ```xml
 <Control xsi:type="Menu" id="msgReadMenuButton">
   <Label resid="menuReadButtonLabel" />
@@ -488,7 +490,7 @@ The **Resources** element contains icons, strings, and URLs for the [VersionOver
 
 The  **Resources** node defines the following resources. Each resource can have one or more **Override** child elements to define a resource for specific locales.
 
-### Child Elements
+### Child elements
 
 |  Element |  Type  |  Description  |
 |:-----|:-----|:-----|
@@ -521,7 +523,7 @@ The text for  **Label** and **Title** elements. Each **String** contains a maxim
 #### LongStrings
 The text for  **Description** attributes. Each **String** contains a maximum of 250 characters.
 
-#### Resources Example 
+#### Resources example 
 ```xml
 <Resources>
   <bt:Images>
