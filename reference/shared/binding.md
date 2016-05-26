@@ -12,8 +12,6 @@ An abstract class that represents a binding to a section of the document.
 Office.context.document.bindings.getByIdAsync(id);
 ```
 
-[![Try out this call in the interactive API Tutorial for Excel](../../images/819b84bf-151c-4a12-80c3-d6f8d7c03251.png)](http://officeapitutorial.azurewebsites.net/Redirect.html?scenario=Update+a+Row+in+a+Table)
-
 ## Members
 
 

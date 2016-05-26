@@ -8,9 +8,6 @@ Reads the data contained in the current selection in the document.
 |**Available in requirement sets**|Selection|
 |**Last changed in Selection**|1.1|
 
-[![Try out this call in the interactive API Tutorial for Excel](../../images/819b84bf-151c-4a12-80c3-d6f8d7c03251.png)](http://officeapitutorial.azurewebsites.net/Redirect.html?scenario=Write+and+Read+Text&amp;task=writeSelectedDataText)
-
-
 ```js
 Office.context.document.getSelectedDataAsync(coercionType [, options], callback); 
 ```
