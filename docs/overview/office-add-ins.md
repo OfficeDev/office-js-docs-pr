@@ -131,20 +131,17 @@ The most basic Office Add-in consists of a static HTML page that is displayed in
 
 ![Components of a Hello World add-in](../../images/DK2_AgaveOverview07.png)
 
-### JavaScript API for Office
+### JavaScript APIs
+
+The Word and Excel JavaScript APIs provide host-specific object models that you can use in an Office Add-in. These APIs provide access to well-known objects such as paragraphs and workbooks, which makes it easier to create an add-in for Word or Excel. To learn more about these APIs, see the [Word add-ins](../word/word-add-ins-programming-overview.md) and [Excel add-ins](../excel/excel-add-ins-javascript-programming-overview.md) overview topics.
 
 The JavaScript API for Office contains objects and members for building add-ins and interacting with Office content and web services.
 
 For more information about the JavaScript API for Office, see [Understanding the JavaScript API for Office](../../docs/develop/understanding-the-javascript-api-for-office.md) and the [JavaScript API for Office](../../reference/javascript-api-for-office.md) reference.
     
-
-The Word and Excel JavaScript APIs provide host-specific object models that you can use in an Office Add-in. These APIs provide access to well-known objects such as paragraphs and workbooks, which makes it easier to create an add-in for Word or Excel. To learn more about these APIs, see the [Word add-ins](../word/word-add-ins-programming-overview.md) and [Excel add-ins](../excel/excel-add-ins-javascript-programming-overview.md) overview topics.
-
-
 ## Additional resources
-
 
 - [Design guidelines for Office Add-ins](../../docs/design/add-in-design.md)
     
-- [Publish your Office Add-in](../publish/publish.md)
+- [API Reference](../../docs/develop/understanding-the-javascript-api-for-office.md)
     
