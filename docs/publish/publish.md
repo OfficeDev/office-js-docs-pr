@@ -12,7 +12,7 @@ For information about publishing to the Office Store, see [Submit add-ins and we
 
 |**Type**|**Office Store**|**Corporate add-in catalog**|**Shared folder add-in catalog**|**Exchange server**|
 |:-----|:-----|:-----|:-----|:-----|
-|W/XL/PPT add-in with commands|x||x||
+|Word, Excel, or PowerPoint add-in with commands|x||x||
 |Task pane add-in|x|x|x||
 |Content add-in|x|x|x||
 |Outlook add-in|x|||x|

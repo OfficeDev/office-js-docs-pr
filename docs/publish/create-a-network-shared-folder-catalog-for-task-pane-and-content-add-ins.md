@@ -8,7 +8,7 @@ The manifest file is an XML file that enables you to declaratively describe how 
 
 The manifest file is the only file that you should deploy to the shared folder catalog. Deploy the web application itself to a web server and specify the URL in the  **SourceLocation** element of the manifest file.
 
- >**Important**  To help make add-ins that access external data and services more secure, your add-in should use a secure protocol such as Hypertext Transfer Protocol Secure (HTTPS) to connect to external data and services. You must use HTTPS if your add-in uses add-in commands.
+ >**Important:**  To help make add-ins that access external data and services more secure, your add-in should use a secure protocol such as Hypertext Transfer Protocol Secure (HTTPS) to connect to external data and services. You must use HTTPS if your add-in uses add-in commands.
 
 
 ## Specify a file share as a trusted catalog

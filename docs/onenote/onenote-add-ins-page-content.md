@@ -1,0 +1,42 @@
+# Work with OneNote page content (Preview)
+
+In the OneNote add-ins JavaScript API, page content is represented by the following object model.
+
+  ![OneNote page object model diagram](../../images/OneNoteOM-page.png)
+
+- A Page object contains a collection of PageContent objects.
+- A PageContent object contains a content type of Outline, Image, or Other.
+- An Outline object contains a collection of Paragraph objects.
+- A Paragraph object contains a content type of RichText, Image, or Other.
+
+To create an empty OneNote page, use one of the following methods:
+
+- [Section.addPage](../../reference/onenote/section.md#addpagetitle-string)
+- [Page.insertPageAsSibling](../../reference/onenote/page.md#insertpageassiblinglocation-string-title-string)
+
+Then use the following methods to work with the page content. The content and structure of a OneNote page are represented by HTML. Only a [subset of HTML is supported](#supported-html) for creating or updating page content.
+
+- [Page.addOutline](../../reference/onenote/page.md#addoutlineleft-double-top-double-html-string)
+- [Outline.append](../../reference/onenote/outline.md#appendhtml-string)
+- [Outline.prepend](../../reference/onenote/outline.md#prependhtml-string)
+- [Paragraph.insertAsSibling](../../reference/onenote/paragraph.md#insertassiblinghtml-string-insertlocation-string)
+- [Paragraph.delete](../../reference/onenote/paragraph.md#delete)
+
+## Supported HTML
+
+The OneNote add-in JavaScript API supports the following HTML for creating and updating page content:
+
+- `<html>`, `<body>`, `<div>`, `<span>`, `<br/>` 
+- `<p>`
+- `<img>`
+- `<ul>`, `<ol>`, `<li>` 
+- `<table>`, `<tr>`, `<td>`
+- `<h1>` ... `<h6>`
+- `<b>`, `<em>`, `<strong>`, `<i>`, `<u>`, `<del>`, `<sup>`, `<sub>`, `<cite>`
+
+## Additional Resources
+
+- [OneNote JavaScript API programming overview (Preview)](onenote-add-ins-programming-overview.md)
+- [OneNote JavaScript API reference (Preview)](../../reference/onenote/onenote-add-ins-javascript-reference.md)
+- [Rubric Grader sample (Preview)](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader-Preview)
+- [Office Add-ins platform overview](https://dev.office.com/docs/add-ins/overview/office-add-ins)

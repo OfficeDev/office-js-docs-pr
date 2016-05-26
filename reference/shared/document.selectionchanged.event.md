@@ -11,8 +11,6 @@ Occurs when the selection in the document is changed.
 Office.EventType.DocumentSelectionChanged
 ```
 
-[![Try out this call in the interactive API Tutorial for Excel](../../images/819b84bf-151c-4a12-80c3-d6f8d7c03251.png)](http://officeapitutorial.azurewebsites.net/Redirect.html?scenario=Selection+Changed)
-
 ## Remarks
 
 To add an event handler for the  **SelectionChanged** event of a document, use the [addHandlerAsync](../../reference/shared/document.addhandlerasync.md) method of the **Document** object.

@@ -1,12 +1,10 @@
 
 # Publish task pane and content add-ins to an add-in catalog on SharePoint
 After you upload your add-in manifest to a catalog, users can configure their Office clients so your add-in is available from the Office Add-ins dialog box.
-
+
+
 
 Use the following steps to upload the manifest for your task pane or content add-in to an Office Add-ins catalog on SharePoint. 
-
- >**Note**  The name "apps for Office" is changing to "Office Add-ins". During the transition, the documentation and the UI of some Office applications and Visual Studio tools might still use the term "app/apps". For details, see [New name for apps for Office and SharePoint: Office and SharePoint Add-ins](https://msdn.microsoft.com/en-us/library/fp161507.aspx#Anchor_2).
-
 
 ## Create or find the add-in catalog
 
@@ -52,13 +50,3 @@ After you upload add-in manifests to the Office Add-ins catalog, users can acces
     
 Alternatively, an administrator can specify an Office Add-in catalog on SharePoint by using group policy. For details, see the section "Using Group Policy to manage how users can install and use Office Add-ins" in [Overview of Office Add-ins](https://technet.microsoft.com/en-us/library/jj219429.aspx) on TechNet.
 
-
-## Additional resources
-
-
-- [Publish your Office Add-in](../publish/publish.md)
-    
-- [Set up an add-in catalog on SharePoint](../publish/set-up-an-add-in-catalog-on-sharepoint.md)
-    
-- [Set up an add-in catalog on Office 365](../publish/set-up-an-add-in-catalog-on-office-365.md)
-    

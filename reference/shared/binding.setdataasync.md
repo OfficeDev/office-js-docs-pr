@@ -8,9 +8,6 @@ Writes data to the bound section of the document represented by the specified bi
 |**Available in [Requirement sets](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|MatrixBindings, TableBindings, TextBindings|
 |**Last changed in TableBindings**|1.1|
 
-[![Try out this call in the interactive API Tutorial for Excel](../../images/819b84bf-151c-4a12-80c3-d6f8d7c03251.png)](http://officeapitutorial.azurewebsites.net/Redirect.html?scenario=Update+a+Row+in+a+Table)
-
-
 ```js
 bindingObj.setDataAsync(data [, options] ,callback);
 ```

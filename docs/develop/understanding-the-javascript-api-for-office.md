@@ -5,76 +5,61 @@
 
 This article provides information about the JavaScript API for Office and how to use it. For reference information, see [JavaScript API for Office](../../reference/javascript-api-for-office.md). To run and edit some JavaScript API for Office code in your web browser with Excel Online, see the [API Tutorial for Office](http://msdn.microsoft.com/en-us/office/dn449240.aspx). For information about updating Visual Studio project files to the most current version of the JavaScript API for Office, see [Update the version of your JavaScript API for Office and manifest schema files](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md).
 
-Explore the object model by add-in type or host: [1.1](../../reference/javascript-api-for-office.md)
-
 ## Referencing the JavaScript API for Office library in your add-in
 
+The [JavaScript API for Office](../../reference/javascript-api-for-office.md) library consists of the Office.js file and associated host application-specific .js files, such as Excel-15.js and Outlook-15.js. The simplest method of referencing the API is using our CDN by adding the following `<script>` to your page's `<head>` tag:  
 
-The JavaScript API for Office library is implemented in the Office.js file and associated .js files that contain application-specific implementations, such as Excel-15.js and Outlook-15.js. [Reference the JavaScript API for Office library](../../docs/develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md) inside the `<head>` tag of the web page (such as an .html, .aspx, or .php file) that implements the UI of your add-in by using a `script` tag with its `src` attribute set to the following CDN URL:
-
-
-```HTML
-<script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js"/>
+```html
+<script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
 ```
 
 This will download and cache the JavaScript API for Office files the first time your add-in loads to make sure that it is using the most up-to-date implementation of Office.js and its associated files for the specified version.
 
-
-
+For more details around the Office.js CDN, including how versioning and backward compatability is handled, see [Referencing the JavaScript API for Office library from its content delivery network (CDN)](referencing-the-javascript-api-for-office-library-from-its-cdn.md).
 
 ## Initializing your add-in
 
 
  **Applies to:** All add-in types
 
-The JavaScript API for Office provides the [Office](../../reference/shared/office.md) object, which lets the developer implement a listener for the [initialize](../../reference/shared/office.initialize.md) event of an Office Add-in. When the API is loaded and ready for the add-in to start interacting with user's content, it triggers the **Office.initialize** event. You can use code in the **initialize** event handler to implement common add-in initialization scenarios, such as prompting the user to select some cells in Excel, and then inserting a chart initialized with those selected values. You can also use the initialize event handler to initialize other custom logic for your add-in, such as establishing bindings, prompting for default add-in settings values, and so on.
 
- **Important:** Even if your add-in has no initialization tasks to perform, you must include at least a minimal **Office.initialize** event handler function like the following example.
+Office.js provides an initialization even which gets fired when the API is fully loaded and ready to begin interacting with the user. You can use the **initialize** event handler to implement common add-in initialization scenarios, such as prompting the user to select some cells in Excel, and then inserting a chart initialized with those selected values. You can also use the initialize event handler to initialize other custom logic for your add-in, such as establishing bindings, prompting for default add-in settings values, and so on.
 
+ At a minimum, the initialize event would look like the follow example:     
 
-
+```js
+Office.initialize = function () { };
+```
+If you are using additional JavaScript frameworks that include their own initialization handler, these should be placed within the Office.initialize event. Using [JQuery](https://jquery.com) as an example, the `$(document).ready()` function would be referenced as follows:
 
 ```js
 Office.initialize = function () {
-};
+    // Office is ready
+    $(document).ready(function () {        
+        // JQuery is ready
+    });
+  };
 ```
-
+All pages within an Office Add-ins are required to implement an event handler for the initialize event.
 If you fail to include an  **Office.initialize** event handler, your add-in may raise an error when it starts. Also, if a user attempts to use your add-in with an Office Online web client, such as Excel Online, PowerPoint Online, or Outlook Web App, it will fail to run.
-
-If your add-in includes more than one page, whenever it loads a new page that page must include or call an  **Office.initialize** event handler.
 
 For more detail about the sequence of events when an add-in is initialized, see [Loading the DOM and runtime environment](../../docs/develop/loading-the-dom-and-runtime-environment.md).
 
-For task pane and content add-ins (but not Outlook add-ins), the  _reason_ parameter of the **initialize** event listener function provides access to the [InitializationReason](../../reference/shared/initializationreason-enumeration.md) enumeration that specifies how the initialization occurred. For example, a task pane or content add-in can be initialized because the user inserted it from the Office client's ribbon UI, or because a document that already contains the add-in was opened.
-
-You can use the value of the  **InitializationReason** enumeration to implement different logic for when the add-in is first inserted versus when it already exists in the document. The following example shows some simple logic you can add to the previous example to use the value of the _reason_ argument to display how the task pane or content add-in was initialized.
-
-
-
+#### Initialization Reason
+For Take Pane and Content add-ins, Office.initialize provides an additional _reason_ parameter. This parameter can be used to determine how an add-in was added to the current document. You can use this to provide different logic for when an add-in is first inserted versus when it already existed within the document. 
 
 ```js
 Office.initialize = function (reason) {
-    // Checks for the DOM to load using the jQuery ready function.
     $(document).ready(function () {
-    // After the DOM is loaded, add-in-specific code can run.
-    // Display initialization reason.
-    if (reason == "inserted")
-    write("The add-in was just inserted.");
-
-    if (reason == "documentOpened")
-    write("The add-in is already part of the document.");
-    });
-}
-
-// Function that writes to a div with id='message' on the page.
-function write(message){
-    document.getElementById('message').innerText += message; 
+      switch (reason) {
+        case 'inserted': console.log('The add-in was just inserted.');
+        case 'documentOpened': console.log('The add-in is already part of the document.');
+    }
 }
 ```
-
+For more information, see [Office.initialize Event](../../reference/shared/office.initialize.md) and [InitializationReason Enumeration](../../reference/shared/initializationreason-enumeration.md) 
 
 ## Context Object
-
 
  **Applies to:** All add-in types
 

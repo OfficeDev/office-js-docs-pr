@@ -3,9 +3,9 @@
 
 To use APIs in your Outlook add-in, you must specify the location of the Office.js library, the requirement set, the schema, and the permissions.
 
-## Office.js
+## Office.js library
 
-To interact with the Outlook add-in API, developers must use the JavaScript APIs in Office.js. The CDN for the library is  _https://appsforoffice.microsoft.com/lib/1/hosted/Office.js_. Add-ins submitted to the store must reference Office.js by this CDN; they can't use a local reference. 
+To interact with the Outlook add-in API, you need to use the JavaScript APIs in Office.js. The CDN for the library is  _https://appsforoffice.microsoft.com/lib/1/hosted/Office.js_. Add-ins submitted to the Office Store must reference Office.js by this CDN; they can't use a local reference. 
 
 Declare the CDN in the **head** tag of the web page (.html, .aspx, or .php file) that implements the UI of your add-in, in the **src** attribute of the **script** tag:
 
@@ -16,20 +16,18 @@ Declare the CDN in the **head** tag of the web page (.html, .aspx, or .php file)
 
 As we add new APIs, the URL to Office.js will stay the same. We will change the version in the URL only if we break an existing API behavior.
 
-The library must load within 5 seconds of the add-in being launched, or else Outlook will determine the page is unresponsive, and will show an error dialog.
-
+> **Important:** 
+When developing an  add-in for any Office host application, reference the JavaScript API for Office from inside the `<head>` section of the page. This ensures that the API is fully initialized prior to any body elements. Office hosts require that add-ins initialize within 5 seconds of activation. Crossing this threshold results in the add-in being declared unresponsive and an error message is displayed to the user.  
 
 ## Requirement sets
 
-All Outlook APIs belong to the Mailbox requirement set. The Mailbox requirement set has versions, and each new set of APIs that we release belongs to a higher version of the set. Not all Outlook clients will support the newest set of APIs when we release them, but if an Outlook client declares support for a requirement set, it will support all the APIs in that requirement set. 
+All Outlook APIs belong to the Mailbox requirement set. The Mailbox requirement set has versions, and each new set of APIs that are released belongs to a higher version of the set. Not all Outlook clients will support the newest set of APIs when they are released, but if an Outlook client declares support for a requirement set, it will support all the APIs in that requirement set. 
 
-Specifying a minimum requirement set version in the manifest controls which Outlook clients the add-in will appear in. For example, if requirement set version 1.3 is specified, this means the add-in will not show up in any Outlook client that doesn't support at least v1.3. 
+To control which Outlook clients the add-in appears in, specify a minimum requirement set version in the manifest. For example, if you specify requirement set version 1.3, the add-in will not show up in any Outlook client that doesn't support a minimum version of 1.3. 
 
-However, specifying a requirement set doesn't limit your add-in to the APIs in that version. If the add-in specifies requirement set v1.1 but is running in an Outlook client that supports v1.3, the add-in can still use these new APIs. The requirement set only controls which Outlook clients the add-in appears in.
+Specifying a requirement set doesn't limit your add-in to the APIs in that version. If the add-in specifies requirement set v1.1 but is running in an Outlook client that supports v1.3, the add-in can still use v1.3 APIs. The requirement set only controls which Outlook clients the add-in appears in.
 
-To check availability of any APIs from a requirement set greater than the one specified in the manifest, you can use standard JavaScript:
-
-
+To check the availability of any APIs from a requirement set greater than the one specified in the manifest, you can use standard JavaScript:
 
 
 ```js
@@ -38,16 +36,17 @@ if (item.somePropertyOrFunction) {
 }
 ```
 
-> **Note:** No such checks are necessary for any APIs that are in the requirement set version specified in the manifest.
+> **Note:** These checks are not needed for any APIs that are in the requirement set version specified in the manifest.
 
-Developers should specify the minimum requirement set that supports the critical set of APIs for their scenario, without which the critical features of the add-in won't work. You specify the requirement set in the manifest in the  **Requirements**, **Sets**, and **Set** elements. For more information, see [Outlook add-in manifests](../outlook/manifests/manifests.md).
+Specify the minimum requirement set that supports the critical set of APIs for your scenario, without which features of your add-in won't work. You specify the requirement set in the manifest in the  **Requirements**, **Sets**, and **Set** elements. For more information, see [Outlook add-in manifests](../outlook/manifests/manifests.md) and 
+[Understanding Outlook API requirement sets](..\..\reference\outlook\tutorial-api-requirement-sets.md).
 
-The  **Methods** element doesn't apply to mail add-ins, so you can't declare support for specific methods.
+The  **Methods** element doesn't apply to Outlook add-ins, so you can't declare support for specific methods.
 
 
 ## Permissions
 
-Your add-in requires the appropriate permissions to use the APIs that it needs. There are four levels of permissions, summarized below. For full details, see [Understanding Outlook add-in permissions](../outlook/understanding-outlook-add-in-permissions.md).
+Your add-in requires the appropriate permissions to use the APIs that it needs. There are four levels of permissions. For more details, see [Understanding Outlook add-in permissions](../outlook/understanding-outlook-add-in-permissions.md).
 
 
 |**Permission level**|**Description**|
@@ -66,6 +65,8 @@ In general, you should specify the minimum permission needed for your add-in. Pe
 - [Outlook Add-in API](../../reference/outlook/index.md)
     
 - [Outlook add-in manifests](../outlook/manifests/manifests.md)
+
+- [Understanding Outlook API requirement sets](..\..\reference\outlook\tutorial-api-requirement-sets.md)
     
 - [Privacy, permissions, and security for Outlook add-ins](../outlook/../../docs/develop/privacy-and-security.md)
     
