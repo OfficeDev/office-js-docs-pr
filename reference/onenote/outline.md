@@ -24,6 +24,7 @@ Represents a container for Paragraph objects.
 |[append(html: string)](#appendhtml-string)|void|Adds the specified HTML to the bottom of the Outline.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 |[prepend(html: string)](#prependhtml-string)|void|Adds the specified HTML to the top of the Outline.|
+|[select()](#select)|void|Selects the Outline and bring it to the view.|
 
 ## Method Details
 
@@ -39,7 +40,7 @@ outlineObject.append(html);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|html|string|HTML string to append.|
+|html|string|The HTML string to append. See [supported HTML](../../docs/onenote/onenote-add-ins-page-content.md#supported-html) for the OneNote add-ins JavaScript API.|
 
 #### Returns
 void
@@ -49,7 +50,7 @@ void
 OneNote.run(function (context) {
 
     // Gets the active page.
-    var activePage = context.application.activePage;
+    var activePage = context.application.getActivePage();
 
     // Get pageContents of the activePage. 
     var pageContents = activePage.getContents();
@@ -109,7 +110,7 @@ outlineObject.prepend(html);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|html|string|HTML string to prepend.|
+|html|string|The HTML string to prepend. See [supported HTML](../../docs/onenote/onenote-add-ins-page-content.md#supported-html) for the OneNote add-ins JavaScript API.|
 
 #### Returns
 void
@@ -119,7 +120,7 @@ void
 OneNote.run(function (context) {
 
     // Gets the active page.
-    var activePage = context.application.activePage;
+    var activePage = context.application.getActivePage();
 
     // Get pageContents of the activePage. 
     var pageContents = activePage.getContents();
@@ -150,3 +151,16 @@ OneNote.run(function (context) {
         });
 });
 ```
+### select()
+Selects the Outline and bring it to the view.
+
+#### Syntax
+```js
+outlineObject.select();
+```
+
+#### Parameters
+None
+
+#### Returns
+void

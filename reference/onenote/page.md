@@ -9,7 +9,7 @@ Represents a OneNote page.
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|absolutePath|string|The absolute path of the page. Read only Read-only.|
+|clientUrl|string|The client url of the page. Read only Read-only.|
 |id|string|Gets the ID of the page. Read-only.|
 |pageLevel|int|Gets or sets the indentation level of the page.|
 |title|string|Gets or sets the title of the page.|
@@ -44,7 +44,7 @@ pageObject.addOutline(left, top, html);
 |:---------------|:--------|:----------|
 |left|double|The left position of the top, left corner of the Outline.|
 |top|double|The top position of the top, left corner of the Outline.|
-|html|String|An HTML string that describes the visual presentation of the Outline.|
+|html|String|An HTML string that describes the visual presentation of the Outline. See [supported HTML](../../docs/onenote/onenote-add-ins-page-content.md#supported-html) for the OneNote add-ins JavaScript API.|
 
 #### Returns
 [Outline](outline.md)
@@ -54,7 +54,7 @@ pageObject.addOutline(left, top, html);
 OneNote.run(function (context) {
 
     // Gets the active page.
-    var page = context.application.activePage;
+    var page = context.application.getActivePage();
 
     // Queue a command to add an outline with given html. 
     var outline = page.addOutline(200, 200,
@@ -106,7 +106,7 @@ None
 OneNote.run(function (context) {
 
     // Gets the active page.
-    var activePage = context.application.activePage;
+    var activePage = context.application.getActivePage();
 
     // Queue a command to add a new page after the active page. 
     var pageContents = activePage.getContents();
@@ -166,7 +166,7 @@ pageObject.insertPageAsSibling(location, title);
 OneNote.run(function (context) {
 
     // Gets the active page.
-    var activePage = context.application.activePage;
+    var activePage = context.application.getActivePage();
 
     // Queue a command to add a new page after the active page. 
     var newPage = activePage.insertPageAsSibling("After", "Next Page");

@@ -28,6 +28,7 @@ _See property access [examples.](#property-access-examples)_
 |[delete()](#delete)|void|Deletes the paragraph|
 |[insertAsSibling(html: string, insertLocation: string)](#insertassiblinghtml-string-insertlocation-string)|void|Inserts the specified HTML content|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+|[select()](#select)|void|Selects the paragraph|
 
 ## Method Details
 
@@ -57,7 +58,7 @@ paragraphObject.insertAsSibling(html, insertLocation);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|html|string|An HTML string that describes the visual presentation of the content.|
+|html|string|An HTML string that describes the visual presentation of the content. See [supported HTML](../../docs/onenote/onenote-add-ins-page-content.md#supported-html) for the OneNote add-ins JavaScript API.|
 |insertLocation|string|The location of new contents relative to the current Paragraph.  Possible values are: Before, After|
 
 #### Returns
@@ -78,6 +79,20 @@ object.load(param);
 
 #### Returns
 void
+
+### select()
+Selects the paragraph
+
+#### Syntax
+```js
+paragraphObject.select();
+```
+
+#### Parameters
+None
+
+#### Returns
+void
 ### Property access examples
 
 **id and type**
@@ -85,7 +100,7 @@ void
 OneNote.run(function (context) {
 
     // Get the collection of pageContent items from the page.
-    var pageContents = context.application.activePage.getContents();
+    var pageContents = context.application.getActivePage().getContents();
     
     // Queue a command to load the outline property of each pageContent.
     pageContents.load("outline");
