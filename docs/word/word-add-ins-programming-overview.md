@@ -1,126 +1,78 @@
 
-# Word JavaScript API programming overview
+# Word add-in development overview
 
-Word 2016 introduces a new object model for working with Word objects. This object model is an addition to the existing object model provided by Office.js to create add-ins for Word. This object model is accessed via JavaScript hosted by a web application. 
+Do you want to create a solution that extends the functionality of Word - for example, one that involves automated document assembly, or that binds to and accesses data in a Word document from other data sources? You can use the Office Add-ins platform, which includes the Word JavaScript API and the JavaScript API for Office, to extend Word clients running on a Windows desktop, on a Mac, or in the cloud.
 
-## Manifest
+Word add-ins are one of the many development options that you have on the [Office Add-ins platform](../overview/office-add-ins.md). You can use add-in commands to extend the Word UI and launch task panes that run JavaScript that interacts with the content in a Word document. Any code that you can run in a browser can run in a Word add-in. Add-ins that interact with content in a Word document create requests to act on Word objects and synchronize object state. The following figure shows an example of a Word add-in that runs in a task pane.
 
-The new Word add-in JavaScript API uses the same manifest format as is used for the Office 2013 add-in model. The manifest describes where the add-in is hosted, how it is displayed, permissions, and other information. Learn more about how you can customize the [add-in manifests](../overview/add-in-manifests.md).
+**Figure 1. Add-in running in a task pane in Word**
 
-You have a few options for publishing Word add-in manifests. Read about how you can [publish your Office add-in](../publish/publish.md) to a network share, to an app catalog, or to the Office store.
+![Add-in running in a task pane in Word](../../images/WordAddinShowHostClient.png)
 
-## Word JavaScript API overview
+The Word add-in (1) can send requests to the Word document (2) and can use JavaScript to access the paragraph object and update, delete, or move the paragraph. For example, the following code shows how to append a new sentence to that paragraph.
 
-The Word 2016 add-in object model is different than the model for Word in Office 2013. The Office 2013 add-in model is not typed and provides a generic API for extending Office clients. This model is still applicable to Word 2016; however, we recommend that you start using the new Word object model.
+```js
+Word.run(function (context) {
+    var paragraphs = context.document.getSelection().paragraphs;
+    paragraphs.load();
+    return context.sync().then(function () {
+        paragraphs.items[0].insertText(' New sentence in the paragraph.',
+                                       Word.InsertLocation.end);
+    }).then(context.sync);
+});
 
-The new Word JavaScript API changes the way that you can interact with objects like documents and paragraphs. Rather than providing individual asynchronous APIs for retrieving and updating each of these objects, the new APIs provide “proxy” JavaScript objects that correspond to the real objects running in Word. You can directly interact with these proxy objects by synchronously reading and writing their properties and calling synchronous methods to perform operations on them. These interactions with proxy objects aren’t immediately realized in the running script, so we provide a method on the context named sync(). The context.sync method synchronizes the state between your running JavaScript and the real objects in Office by executing instructions queued in your script and by retrieving properties of loaded Word objects for use in your script.
-
-The JavaScript API for Word is loaded by Office.js. It provides a set of JavaScript proxy objects that are used to queue a set of commands that interact with the contents of a Word document. These commands are run as a batch. The results of the batch are actions taken on the Word document, like inserting content, and synchronizing the Word objects with the JavaScript proxy objects.
-
-We make changes to this API all of the time. Learn what's new by reading our [change log](http://dev.office.com/changelog). 
-
-### Running your add-in
-
-Let's take a look at what you'll need when you run your add-in. All add-ins should have an Office.initialize event handler.  Read [Understanding the API](../develop/understanding-the-javascript-api-for-office.md) for more information about add-in initialization.
-
-Your Word add-in executes by passing a function into the Word.run() method. The function passed into the run method must have a context argument. This [context object](../../reference/word/requestcontext.md) is different than the context object you get from the Office object, although it is used for the same purpose which is to interact with the Word runtime environment. The context object provides access to the Word JavaScript object model. Let's take a look at the comments and code of a basic Word add-in:
-
-**Example 1. Initialization and execution of a Word add-in**
-
-```javascript
-    (function () {
-        "use strict";
-
-        // The initialize event handler is run each time the page is loaded.
-        Office.initialize = function (reason) {
-
-            // Checks for the DOM to load using the jQuery ready function.
-            $(document).ready(function () {
-                // Set your initialization code. You can use the reason
-                // argument to determine how the add-in was loaded.
-                // You can also load saved settings from the Office object.
-            });
-        };
-
-        // Run a batch operation against the Word object model.
-        // Use the context argument to get access to the Word document.
-        Word.run(function (context) {
-
-            // Create a proxy object for the document.
-            var thisDocument = context.document;
-        })
-    })();
 ```
 
-The above example shows the basic code needed to create a Word add-in. It initializes Office.js and contains a run method for interacting with the Word document.
+You can use any web server technology to host your Word add-in, such as ASP.NET, NodeJS, or Python. Use your favorite client-side framework -- Ember, Backbone, Angular, React -- or stick with VanillaJS to develop your solution and you can use services like Azure to [authenticate](../develop/use-the-oauth-authorization-framework-in-an-office-add-in.md) and host your application.
 
-### Proxy objects
+The Word JavaScript APIs give your application access to the objects and metadata found in a Word document. You can use these APIs to create add-ins that target:
 
-The Word JavaScript object model is loosely coupled with the objects in Word. The Word JavaScript objects are proxy objects for the real objects in a Word document. All actions taken on proxy objects are not realized in Word, and the state of the Word document is not realized in the proxy objects, until the document state has been synchronized. The document state is synchronized when context.sync() is run. The sync() method essentially runs the set of commands in queue for each proxy object.  Example 2 shows the creation of a proxy body object and a queued command to load the text property on the proxy body object, and then the synchronization of the body in the Word document with the body proxy object.
+* Word 2013 for Windows
+* Word 2016 for Windows
+* Word Online
+* Word 2016 for Mac
+* Word for iOS
 
-**Example 2. Synchronization of the document body with the body proxy object.**
+Write your add-in once, and it will run in all versions of Word across multiple platforms. For details, see [Office Add-in host and platform availability](https://dev.office.com/add-in-availability).
 
-```javascript
-    // Run a batch operation against the Word object model.
-    Word.run(function (context) {
+## JavaScript APIs for Word
 
-        // Create a proxy object for the document body.
-        // The body object hasn't been set with any property values.
-        var body = context.document.body;
+You can use two sets of JavaScript APIs to interact with the objects and metadata in a Word document. The first is the **JavaScript API for Office**, which was introduced in Office 2013. This is a shared API -- many of the objects can be used in add-ins hosted by two or more Office clients. This API uses callbacks extensively. To learn more about the JavaScript API for Office, see the Shared API section of the [API Reference](https://dev.office.com/reference/add-ins/javascript-api-for-office?product=word) page. <!-- Unfortunately, the filtering doesn't work at the individual API topic level. -->
 
-        // Queue a command to load the text property for the proxy document body object.
-        context.load(body, 'text');
+The second is the **Word JavaScript API**. This is a strongly-typed object model that you can use to create Word add-ins that target Word 2016 for Mac and Windows. This object model uses promises, and provides access to Word-specific objects like [body](../../reference/word/body.md), [content controls](../../reference/word/contentcontrol.md), [inline pictures](../../reference/word/inlinepicture.md), and [paragraphs](../../reference/word/paragraph.md). The Word JavaScript API includes TypeScript definitions and vsdoc files so that you can get code hints in your IDE.
 
-        // Synchronize the document state by executing the queued commands,
-        // and return a promise to indicate task completion.
-        return context.sync().then(function () {
-            console.log("Body contents: " + body.text);
-        });
-    })
-```
+Currently, all Word clients support the shared JavaScript API for Office, and most clients support the Word JavaScript API. For details about supported clients, see the [API reference documentation](https://dev.office.com/reference/add-ins/javascript-api-for-office?product=word).
 
-### Command queue
+We recommend that you start with the Word JavaScript API because the object model is easier to use. Use the Word JavaScript API if you need to:
 
-The Word proxy objects have methods for accessing and updating the object model. These methods are executed sequentially in the order in which they were queued in the batch. A batch of commands is formed before a context.sync() call is made. All of the commands queued in all of the objects that use the context will be executed.
+* Access the objects in a Word document.
 
-In example 3, we demonstrate how the queue of commands works. When context.sync() is called, the first thing that happens is that the [command to load](../../reference/word/loadoption.md) the body text is executed in Word. Then, the command to insert text into the body on Word occurs. The results are then returned to the body proxy object. The value of the body.text property in the Word JavaScript will be the value of the Word document body <u>before</u> the text was inserted into Word document.
+Use the shared JavaScript API for Office when you need to:
 
-**Example 3. Executing a batch of commands.**
+* Target Word 2013.
+* Perform initial actions for the application.
+* Check the supported requirement set.
+* Access metadata, settings, and environmental information for the document.
+* Bind to sections in a document and capture events.
+* Use custom XML parts.
+* Open a dialog box.
 
-```javascript
-    // Run a batch operation against the Word object model.
-    Word.run(function (context) {
+## Next steps
 
-        // Create a proxy object for the document body.
-        var body = context.document.body;
+Ready to create your first Word add-in? See [Build your first Word add-in](word-add-ins.md). You can also try our interactive [Get started experience](http://dev.office.com/getting-started/addins?product=Word). Use the [add-in manifest](../overview/add-in-manifests.md) to describe where your add-in is hosted and how it is displayed, and define permissions and other information.
 
-        // Queue a command to load the text in the proxy body object.
-        context.load(body, 'text');
+To learn more about how to design a world class Word add-in that creates a compelling experience for your users, see [Design guidelines](../design/add-in-design.md) and [Best practices](../design/add-in-development-best-practices.md).
 
-        // Queue a command to insert text into the end of the Word document body.
-        body.insertText('This is text inserted after loading the body.text property',
-                        Word.InsertLocation.end);
+After you develop your add-in, you can [publish](../publish/publish.md) it to a network share, to an app catalog, or to the Office Store.
 
-        // Synchronize the document state by executing the queued commands,
-        // and return a promise to indicate task completion.
-        return context.sync().then(function () {
-            console.log("Body contents: " + body.text);
-        });
-    })
-```
+## What's coming up for Word add-ins?
 
-## Give us your feedback
+As we design and develop new APIs for Word add-ins, we'll make them available for your feedback on our [Open API specifications](../../reference/openspec.md) page. Find out what new features are in the pipeline for the Word JavaScript APIs, and provide your input on our design specifications.
 
-Your feedback is important to us.
-
-* Check out the docs and let us know about any questions and issues you find in them by [submitting an issue](https://github.com/OfficeDev/office-js-docs/issues) directly in this repository.
-* Let us know about your programming experience, what you would like to see in future versions, code samples, etc. Use [this site](http://officespdev.uservoice.com/) for entering your suggestions and ideas.
-
+You can also see what's new in the Word JavaScript API on the [change log](http://dev.office.com/changelog) page.
 
 ## Additional resources
 
-* [Word add-ins](word-add-ins.md)
-* [Office Add-ins Overview](../overview/office-add-ins.md)
-* [Get started with Office Add-ins](http://dev.office.com/getting-started/addins?product=Word)
-* [Word add-ins on GitHub](https://github.com/OfficeDev?utf8=%E2%9C%93&query=Word)
-* [Snippet Explorer for Word](http://officesnippetexplorer.azurewebsites.net/#/snippets/word)
+* [Office Add-ins platform overview](../overview/office-add-ins.md)
+* [Word JavaScript API reference](../../reference/word/word-add-ins-reference-overview.md)
+
