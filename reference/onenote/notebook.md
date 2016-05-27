@@ -9,6 +9,7 @@ Represents a OneNote notebook. Notebooks contain section groups and sections.
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
+|clientUrl{|string|The client url of the notebook. Read only Read-only.|
 |id|string|Gets the ID of the notebook. Read-only.|
 |name|string|Gets the name of the notebook. Read-only.|
 

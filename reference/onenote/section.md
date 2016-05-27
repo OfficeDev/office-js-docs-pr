@@ -9,6 +9,7 @@ Represents a OneNote section. Sections can contain pages.
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
+|clientUrl{|string|The client url of the section. Read only Read-only.|
 |id|string|Gets the ID of the section. Read-only.|
 |name|string|Gets the name of the section. Read-only.|
 
@@ -18,7 +19,8 @@ _See property access [examples.](#property-access-examples)_
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
 |notebook|[Notebook](notebook.md)|Gets the notebook that contains the section. Read-only.|
-|sectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section. Returns null if the section is a direct child of the notebook. Read-only.|
+|sectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section. Throws ItemNotFound if the section is a direct child of the notebook. Read-only.|
+|sectionGroupOrNull|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section. Returns null if the section is a direct child of the notebook. Read-only.|
 
 ## Methods
 
