@@ -55,7 +55,7 @@ sectionObject.addPage(title);
 OneNote.run(function (context) {
             
     // Queue a command to add a page to the current section.
-    var page = context.application.activeSection.addPage("Wish list");
+    var page = context.application.getActiveSection().addPage("Wish list");
             
     // Queue a command to load the id and title of the new page. 
     // This example loads the new page so it can read its properties later.           
@@ -99,7 +99,7 @@ None
 OneNote.run(function (context) {
             
     // Get the pages in the current section.
-    var pages = context.application.activeSection.getPages();
+    var pages = context.application.getActiveSection().getPages();
             
     // Queue a command to load the id and title for each page.            
     pages.load('id,title');
@@ -146,7 +146,7 @@ sectionObject.insertSectionAsSibling(location, title);
 OneNote.run(function (context) {
             
     // Queue a command to insert a section after the current section.
-    var section = context.application.activeSection.insertSectionAsSibling("After", "New section");
+    var section = context.application.getActiveSection().insertSectionAsSibling("After", "New section");
             
     // Queue a command to load the id and name of the new section. 
     // This example loads the new section so it can read its properties later.           
@@ -191,7 +191,7 @@ void
 OneNote.run(function (context) {
         
     // Get the current section.
-    var section = context.application.activeSection;
+    var section = context.application.getActiveSection();
             
     // Queue a command to load the section. 
     // For best performance, request specific properties.           
@@ -216,7 +216,7 @@ OneNote.run(function (context) {
 OneNote.run(function (context) {
         
     // Get the current section.
-    var section = context.application.activeSection;
+    var section = context.application.getActiveSection();
             
     // Queue a command to load the section with the specified properties. 
     section.load("name,notebook/name");

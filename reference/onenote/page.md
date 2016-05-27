@@ -54,7 +54,7 @@ pageObject.addOutline(left, top, html);
 OneNote.run(function (context) {
 
     // Gets the active page.
-    var page = context.application.activePage;
+    var page = context.application.getActivePage();
 
     // Queue a command to add an outline with given html. 
     var outline = page.addOutline(200, 200,
@@ -106,7 +106,7 @@ None
 OneNote.run(function (context) {
 
     // Gets the active page.
-    var activePage = context.application.activePage;
+    var activePage = context.application.getActivePage();
 
     // Queue a command to add a new page after the active page. 
     var pageContents = activePage.getContents();
@@ -166,7 +166,7 @@ pageObject.insertPageAsSibling(location, title);
 OneNote.run(function (context) {
 
     // Gets the active page.
-    var activePage = context.application.activePage;
+    var activePage = context.application.getActivePage();
 
     // Queue a command to add a new page after the active page. 
     var newPage = activePage.insertPageAsSibling("After", "Next Page");

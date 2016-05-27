@@ -45,6 +45,36 @@ None
 #### Returns
 [Notebook](notebook.md)
 
+#### Examples
+```js
+OneNote.run(function (context) {
+        
+    // Get the current notebook.
+    var notebook = context.application.getActiveNotebook();
+            
+    // Queue a command to load the notebook. 
+    // For best performance, request specific properties.           
+    notebook.load('id,name');
+            
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function () {
+                    
+            // Show some properties.
+            console.log("Notebook name: " + notebook.name);
+            console.log("Notebook ID: " + notebook.id);
+            
+        });
+    })
+    .catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+    });
+```
+
+
 ### getActiveNotebookOrNull()
 Gets the active notebook if one exists. If no notebook is active, returns null.
 
@@ -101,6 +131,36 @@ None
 #### Returns
 [Page](page.md)
 
+#### Examples
+```js
+OneNote.run(function (context) {
+        
+    // Get the current notebook.
+    var page = context.application.getActivePage();
+            
+    // Queue a command to load the notebook. 
+    // For best performance, request specific properties.           
+    page.load('id,title');
+            
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function () {
+                    
+            // Show some properties.
+            console.log("Page title: " + page.title);
+            console.log("Page ID: " + page.id);
+            
+        });
+    })
+    .catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+    });
+```
+
+
 ### getActivePageOrNull()
 Gets the active page if one exists. If no page is active, returns null.
 
@@ -128,6 +188,36 @@ None
 
 #### Returns
 [Section](section.md)
+
+#### Examples
+```js
+OneNote.run(function (context) {
+        
+    // Get the current section.
+    var section = context.application.getActiveSection();
+            
+    // Queue a command to load the section. 
+    // For best performance, request specific properties.           
+    section.load('id,name');
+            
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function () {
+                    
+            // Show some properties.
+            console.log("Section name: " + section.name);
+            console.log("Section ID: " + section.id);
+            
+        });
+    })
+    .catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+    });
+```
+
 
 ### getActiveSectionOrNull()
 Gets the active section if one exists. If no section is active, returns null.
@@ -164,7 +254,7 @@ void
 OneNote.run(function (context) {
         
     // Get the pages in the current section.
-    var pages = context.application.activeSection.getPages();
+    var pages = context.application.getActiveSection().getPages();
             
     // Queue a command to load the pages. 
     // For best performance, request specific properties.           
@@ -206,124 +296,3 @@ applicationObject.navigateToPageWithClientUrl(url);
 
 #### Returns
 [Page](page.md)
-### Property access examples
-
-**activeNotebook**
-```js
-OneNote.run(function (context) {
-        
-    // Get the current notebook.
-    var notebook = context.application.activeNotebook;
-            
-    // Queue a command to load the notebook. 
-    // For best performance, request specific properties.           
-    notebook.load('id,name');
-            
-    // Run the queued commands, and return a promise to indicate task completion.
-    return context.sync()
-        .then(function () {
-                    
-            // Show some properties.
-            console.log("Notebook name: " + notebook.name);
-            console.log("Notebook ID: " + notebook.id);
-            
-        });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
-```
-
-**activePage**
-```js
-OneNote.run(function (context) {
-        
-    // Get the current notebook.
-    var page = context.application.activePage;
-            
-    // Queue a command to load the notebook. 
-    // For best performance, request specific properties.           
-    page.load('id,title');
-            
-    // Run the queued commands, and return a promise to indicate task completion.
-    return context.sync()
-        .then(function () {
-                    
-            // Show some properties.
-            console.log("Page title: " + page.title);
-            console.log("Page ID: " + page.id);
-            
-        });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
-```
-
-**activeSection**
-```js
-OneNote.run(function (context) {
-        
-    // Get the current section.
-    var section = context.application.activeSection;
-            
-    // Queue a command to load the section. 
-    // For best performance, request specific properties.           
-    section.load('id,name');
-            
-    // Run the queued commands, and return a promise to indicate task completion.
-    return context.sync()
-        .then(function () {
-                    
-            // Show some properties.
-            console.log("Section name: " + section.name);
-            console.log("Section ID: " + section.id);
-            
-        });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
-```
-
-**notebooks**
-```js
-OneNote.run(function (context) {
-        
-    // Get the current notebook.
-    var notebooks = context.application.notebooks;
-            
-    // Queue a command to load the notebook. 
-    // For best performance, request specific properties.           
-    notebooks.load('id,name');
-            
-    // Run the queued commands, and return a promise to indicate task completion.
-    return context.sync()
-        .then(function () {
-                        
-            $.each(notebooks.items, function(index, notebook) {
-                
-                // Show some properties.
-                console.log("Notebook name: " + notebook.name);
-                console.log("Notebook ID: " + notebook.id);
-                
-            });
-        });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
-```
-

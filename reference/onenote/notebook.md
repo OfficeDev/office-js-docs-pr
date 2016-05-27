@@ -52,7 +52,7 @@ notebookObject.addSection(name);
 OneNote.run(function (context) {
 
     // Gets the active notebook.
-    var notebook = context.application.activeNotebook;
+    var notebook = context.application.getActiveNotebook();
 
     // Queue a command to add a new section. 
     var section = notebook.addSection("Sample section");
@@ -94,7 +94,7 @@ None
 OneNote.run(function (context) {
 
     // Get the section groups in the notebook. 
-    var sectionGroups = context.application.activeNotebook.getSectionGroups();
+    var sectionGroups = context.application.getActiveNotebook().getSectionGroups();
 
     // Queue a command to load the sectionGroups. 
     sectionGroups.load("name");
@@ -137,7 +137,7 @@ notebookObject.getSections(recursive);
 OneNote.run(function (context) {
 
     // Gets the active notebook.
-    var notebook = context.application.activeNotebook;
+    var notebook = context.application.getActiveNotebook();
     
     // Queue a command to get immediate child sections of the notebook. 
     var childSections = notebook.getSections(false);
@@ -191,7 +191,7 @@ void
 OneNote.run(function (context) {
         
     // Get the current notebook.
-    var notebook = context.application.activeNotebook;
+    var notebook = context.application.getActiveNotebook();
             
     // Queue a command to load the notebook. 
     // For best performance, request specific properties.           
@@ -217,7 +217,7 @@ OneNote.run(function (context) {
 OneNote.run(function (context) {
         
     // Get the current notebook.
-    var notebook = context.application.activeNotebook;
+    var notebook = context.application.getActiveNotebook();
             
     // Queue a command to load the notebook. 
     // For best performance, request specific properties.           
