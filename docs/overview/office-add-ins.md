@@ -133,7 +133,7 @@ The most basic Office Add-in consists of a static HTML page that is displayed in
 
 ### JavaScript APIs
 
-The Word and Excel JavaScript APIs provide host-specific object models that you can use in an Office Add-in. These APIs provide access to well-known objects such as paragraphs and workbooks, which makes it easier to create an add-in for Word or Excel. To learn more about these APIs, see the [Word add-ins](../word/word-add-ins-programming-overview.md) and [Excel add-ins](../excel/excel-add-ins-javascript-programming-overview.md) overview topics.
+The Word and Excel JavaScript APIs provide host-specific object models that you can use in an Office Add-in. These APIs provide access to well-known objects such as paragraphs and workbooks, which makes it easier to create an add-in for Word or Excel. To learn more about these APIs, see [Word add-ins](../word/word-add-ins-programming-overview.md) and [Excel add-ins](../excel/excel-add-ins-javascript-programming-overview.md).
 
 The JavaScript API for Office contains objects and members for building add-ins and interacting with Office content and web services.
 
