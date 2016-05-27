@@ -155,7 +155,7 @@ sectionGroupObject.getSections(recursive);
 OneNote.run(function (context) {
 
     // Get the sections that are siblings of the current section.
-    var sections = context.application.activeSection.sectionGroup.getSections();
+    var sections = context.application.getActiveSection().sectionGroup.getSections();
 
     // Queue a command to load the section groups.
     // For best performance, request specific properties.
