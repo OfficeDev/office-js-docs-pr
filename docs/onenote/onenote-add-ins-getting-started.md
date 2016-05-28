@@ -145,7 +145,7 @@ function addOutlineToPage() {
        var html = '<p>' + $('#textBox').html() + '</p>';
 
         // Get the current page.
-        var page = context.application.activePage;
+        var page = context.application.getActivePage();
 
         // Queue a command to load the page with the title property.             
         page.load('title'); 
