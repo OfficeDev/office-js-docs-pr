@@ -4,14 +4,14 @@ Word provides a rich set of APIs that you can use to create add-ins that interac
 
 You can use two JavaScript APIs to interact with the objects and metadata in a Word document:
 
-- [JavaScript API for Office](../javascript-api-for-office.md) (Office.js) - Introduced in Office 2013.
 - Word JavaScript API - Introduced in Office 2016.
+- [JavaScript API for Office](../javascript-api-for-office.md) (Office.js) - Introduced in Office 2013.
 
 ## Word JavaScript API
 
 The Word JavaScript API is loaded by Office.js. The Word JavaScript API changes the way that you can interact with objects like documents and paragraphs. Rather than providing individual asynchronous APIs for retrieving and updating each of these objects, the Word JavaScript API provides “proxy” JavaScript objects that correspond to the real objects running in Word. You can interact with these proxy objects by synchronously reading and writing their properties and calling synchronous methods to perform operations on them. These interactions with proxy objects aren’t immediately realized in the running script. The **context.sync** method synchronizes the state between your running JavaScript and the real objects in Office by executing queued instructions and retrieving properties of loaded Word objects for use in your script.
 
-## Get the JavaScript API for Office
+## JavaScript API for Office
 
 You can reference Office.js from the following locations:
 
@@ -116,6 +116,6 @@ As we design and develop new APIs for Word add-ins, we'll make them available fo
 
 ## Additional resources
 
-* [Word add-in development overview](../../docs/word/word-add-ins-programming-overview.md )
+* [Word add-ins overview](../../docs/word/word-add-ins-programming-overview.md )
 * [Office Add-ins platform overview](../../docs/overview/office-add-ins.md)
 * [Word add-in samples on GitHub](https://github.com/OfficeDev?utf8=%E2%9C%93&query=Word)
