@@ -1137,8 +1137,8 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 - [Understanding the JavaScript API for add-ins](../develop/understanding-the-javascript-api-for-office.md)
     
 - [JavaScript API for Office add-ins](../../reference/javascript-api-for-office.md)
-    
-- [Schema reference for Office Add-ins manifests (v1.1)](http://msdn.microsoft.com/library/7e0cadc3-f613-8eb9-57ef-9032cbb97f92%28Office.15%29.aspx)
+
+- [Schema reference for Office Add-ins manifests (v1.1)](../overview/add-in-manifests.md)     
     
 - [Project 2013 SDK download](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)
     
