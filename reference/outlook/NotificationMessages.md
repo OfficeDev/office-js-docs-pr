@@ -93,6 +93,7 @@ Office.context.mailbox.item.notificationMessages.getAllAsync(function (asyncResu
       persistent: false
     });
   }
+});
 ```
 
 ####  removeAsync(key, [options], [callback])

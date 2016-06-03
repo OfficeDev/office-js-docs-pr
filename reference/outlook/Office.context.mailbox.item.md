@@ -1464,6 +1464,6 @@ Asynchronously inserts data into the body or subject of a message.
 ##### Example
 
 ```
-Office.context.mailbox.item.setSelectedDataAsync(“Hello World!”);
-Office.context.mailbox.item.setSelectedDataAsync(“<b>Hello World!</b>”, { coercionType : “html” });
+Office.context.mailbox.item.setSelectedDataAsync("Hello World!");
+Office.context.mailbox.item.setSelectedDataAsync("<b>Hello World!</b>", { coercionType : "html" });
 ```
