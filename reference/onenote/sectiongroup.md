@@ -9,6 +9,7 @@ Represents a OneNote section group. Section groups can contain sections and othe
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
+|clientUrl{|string|The client url of the section group. Read only Read-only.|
 |id|string|Gets the ID of the section group. Read-only.|
 |name|string|Gets the name of the section group. Read-only.|
 
@@ -17,8 +18,9 @@ _See property access [examples.](#property-access-examples)_
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|notebook|[Notebook](notebook.md)|Gets the notebook that contains the section group. This value is never null. Read-only.|
-|parentSectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section group. Returns null if the section group is a direct child of the notebook. Read-only.|
+|notebook|[Notebook](notebook.md)|Gets the notebook that contains the section group. Read-only.|
+|parentSectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section group. Throws ItemNotFound if the section group is a direct child of the notebook. Read-only.|
+|parentSectionGroupOrNull|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section group. Returns null if the section group is a direct child of the notebook. Read-only.|
 
 ## Methods
 
@@ -53,7 +55,7 @@ sectionGroupObject.addSection(title);
 OneNote.run(function (context) {
 
     // Get the section groups that are direct children of the current notebook.
-    var sectionGroups = context.application.activeNotebook.getSectionGroups();
+    var sectionGroups = context.application.getActiveNotebook().getSectionGroups();
     
     // Queue a command to load the section groups.
     // For best performance, request specific properties.
@@ -100,7 +102,7 @@ None
 OneNote.run(function (context) {
 
     // Get the section groups that are direct children of the current notebook.
-    var sectionGroups = context.application.activeNotebook.getSectionGroups();
+    var sectionGroups = context.application.getActiveNotebook().getSectionGroups();
 
     // Queue a command to load the section groups.
     // For best performance, request specific properties.
@@ -153,7 +155,7 @@ sectionGroupObject.getSections(recursive);
 OneNote.run(function (context) {
 
     // Get the sections that are siblings of the current section.
-    var sections = context.application.activeSection.sectionGroup.getSections();
+    var sections = context.application.getActiveSection().sectionGroup.getSections();
 
     // Queue a command to load the section groups.
     // For best performance, request specific properties.
@@ -199,7 +201,7 @@ void
 OneNote.run(function (context) {
         
     // Get the parent section group that contains the current section.
-    var sectionGroup = context.application.activeSection.sectionGroup;
+    var sectionGroup = context.application.getActiveSection().sectionGroup;
             
     // Queue a command to load the section group. 
     // For best performance, request specific properties.           
@@ -227,7 +229,7 @@ OneNote.run(function (context) {
 OneNote.run(function (context) {
         
     // Get the parent section group that contains the current section.
-    var sectionGroup = context.application.activeSection.sectionGroup;
+    var sectionGroup = context.application.getActiveSection().sectionGroup;
             
     // Queue a command to load the section group with the specified properties.           
     sectionGroup.load("name,notebook/name"); 

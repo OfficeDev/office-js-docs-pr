@@ -27,7 +27,7 @@ In the example, get the page title and indentation level of the top five pages i
 OneNote.run(function (context) { 
     
     // Get the pages in the current section.
-    var pages = context.application.activeSection.getPages();
+    var pages = context.application.getActiveSection().getPages();
             
     // Queue a command to load the pages.           
     pages.load({ "select":"title,pageLevel", "top":5, "skip":0 });

@@ -29,6 +29,7 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|
 |[delete()](#delete)|void|Deletes the PageContent object.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+|[select()](#select)|void|Selects the PageContent object.|
 
 ## Method Details
 
@@ -59,6 +60,20 @@ object.load(param);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+### select()
+Selects the PageContent object.
+
+#### Syntax
+```js
+pageContentObject.select();
+```
+
+#### Parameters
+None
 
 #### Returns
 void
