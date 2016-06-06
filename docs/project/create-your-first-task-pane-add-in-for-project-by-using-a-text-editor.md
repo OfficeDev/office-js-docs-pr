@@ -708,8 +708,6 @@ Procedure 3 shows how to install and use the Project OM Test add-in features.
   Net share AppManifests=C:\Project\AppManifests
 ```
 
-
-    For more information, see [Create a network shared folder catalog for task pane and content add-ins](../publish/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
     
 2. Create a file share for the directory that contains the HTML and JavaScript files for the Project OM Test add-in. Ensure the file share path matches the path that is specified in the JSOM_SimpleOMCalls.xml manifest. For example, if the files are in the  `C:\Project\AppSource` directory on the local computer, run the following command:
     

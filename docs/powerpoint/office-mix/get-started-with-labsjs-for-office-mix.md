@@ -38,7 +38,7 @@ For more information, see [Set up a development environment for SharePoint Add-i
 
 ### Set up an app catalog on SharePoint Online
 
-After your developer site is created and provisioned, you then set up an add-in catalog on SharePoint Online. For more information, see [Set up an add-in catalog on Office 365](../../publish/set-up-an-add-in-catalog-on-office-365.md).
+After your developer site is created and provisioned, you then set up an add-in catalog on SharePoint Online. For more information, see [Set up an add-in catalog on Office 365](../../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 For Office Mix, you use an add-in catalog so you can insert pre-production add-ins into a lesson and conduct end-to-end testing before submitting the labs to the store.
 
