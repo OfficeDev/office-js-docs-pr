@@ -10,8 +10,9 @@ Represents the top-level object that contains all globally addressable OneNote o
 None
 
 ## Relationships
-None
-
+| Relationship | Type	|Description|
+|:---------------|:--------|:----------|
+|notebooks|[NotebookCollection](notebookcollection.md)|Gets the collection of notebooks that are open in the OneNote application instance. In OneNote Online, only one notebook at a time is open in the application instance. Read-only.|
 
 ## Methods
 
@@ -25,6 +26,7 @@ None
 |[getActivePageOrNull()](#getactivepageornull)|[Page](page.md)|Gets the active page if one exists. If no page is active, returns null.|
 |[getActiveSection()](#getactivesection)|[Section](section.md)|Gets the active section if one exists. If no section is active, throws ItemNotFound.|
 |[getActiveSectionOrNull()](#getactivesectionornull)|[Section](section.md)|Gets the active section if one exists. If no section is active, returns null.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 |[navigateToPage(page: Page)](#navigatetopagepage-page)|void|Opens the specified page in the application instance.|
 |[navigateToPageWithClientUrl(url: string)](#navigatetopagewithclienturlurl-string)|[Page](page.md)|Gets the specified page, and opens it in the application instance.|
 
@@ -233,6 +235,22 @@ None
 #### Returns
 [Section](section.md)
 
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.load(param);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
 ### navigateToPage(page: Page)
 Opens the specified page in the application instance.
 
@@ -254,7 +272,7 @@ void
 OneNote.run(function (context) {
         
     // Get the pages in the current section.
-    var pages = context.application.getActiveSection().getPages();
+    var pages = context.application.getActiveSection().pages;
             
     // Queue a command to load the pages. 
     // For best performance, request specific properties.           

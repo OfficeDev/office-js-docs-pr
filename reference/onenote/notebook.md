@@ -9,23 +9,23 @@ Represents a OneNote notebook. Notebooks contain section groups and sections.
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|clientUrl{|string|The client url of the notebook. Read only Read-only.|
+|clientUrl|string|The client url of the notebook. Read only Read-only.|
 |id|string|Gets the ID of the notebook. Read-only.|
 |name|string|Gets the name of the notebook. Read-only.|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-None
-
+| Relationship | Type	|Description|
+|:---------------|:--------|:----------|
+|sectionGroups|[SectionGroupCollection](sectiongroupcollection.md)|The section groups in the notebook. Read only Read-only.|
+|sections|[SectionCollection](sectioncollection.md)|The the sections of the notebook. Read only Read-only.|
 
 ## Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[addSection(name: String)](#addsectionname-string)|[Section](section.md)|Adds a new section to the end of the notebook.|
-|[getSectionGroups()](#getsectiongroups)|[SectionGroupCollection](sectiongroupcollection.md)|Gets the section groups in the notebook.|
-|[getSections(recursive: bool)](#getsectionsrecursive-bool)|[SectionCollection](sectioncollection.md)|Gets the sections in the notebook.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
@@ -74,102 +74,6 @@ OneNote.run(function (context) {
     }); 
 ```
 
-
-### getSectionGroups()
-Gets the section groups in the notebook.
-
-#### Syntax
-```js
-notebookObject.getSectionGroups();
-```
-
-#### Parameters
-None
-
-#### Returns
-[SectionGroupCollection](sectiongroupcollection.md)
-
-#### Examples
-```js          
-OneNote.run(function (context) {
-
-    // Get the section groups in the notebook. 
-    var sectionGroups = context.application.getActiveNotebook().getSectionGroups();
-
-    // Queue a command to load the sectionGroups. 
-    sectionGroups.load("name");
-
-    // Run the queued commands, and return a promise to indicate task completion.
-    return context.sync()
-        .then(function() {
-            $.each(sectionGroups.items, function(index, sectionGroup) {
-                console.log("Section group name: " + sectionGroup.name);
-            });
-        });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
-```
-
-
-### getSections(recursive: bool)
-Gets the sections in the notebook.
-
-#### Syntax
-```js
-notebookObject.getSections(recursive);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|recursive|bool|true to retrieve all child sections, or false to retrieve direct child sections only. Default is false.|
-
-#### Returns
-[SectionCollection](sectioncollection.md)
-
-#### Examples
-```js
-OneNote.run(function (context) {
-
-    // Gets the active notebook.
-    var notebook = context.application.getActiveNotebook();
-    
-    // Queue a command to get immediate child sections of the notebook. 
-    var childSections = notebook.getSections(false);
-
-    // Queue a command to get all sections in the notebook, including sections in section groups.
-    var allChildSections = notebook.getSections(true);
-
-    // Queue a command to load the childSections. 
-    context.load(childSections);
-
-    // Queue a command to load the allChildSections. 
-    context.load(allChildSections);
-
-    // Run the queued commands, and return a promise to indicate task completion.
-    return context.sync()
-        .then(function() {
-            $.each(childSections.items, function(index, childSection) {
-                console.log("Immediate child section name: " + childSection.name);
-            });
-
-            $.each(allChildSections.items, function(index, childSection) {
-                console.log("Child section name: " + childSection.name);
-            });            
-        });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });   
-```
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -236,5 +140,60 @@ OneNote.run(function (context) {
             console.log("Debug info: " + JSON.stringify(error.debugInfo));
         }
     });
+```
+
+**sectionGroups**
+```js          
+OneNote.run(function (context) {
+
+    // Get the section groups in the notebook. 
+    var sectionGroups = context.application.getActiveNotebook().sectionGroups;
+
+    // Queue a command to load the sectionGroups. 
+    sectionGroups.load("name");
+
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function() {
+            $.each(sectionGroups.items, function(index, sectionGroup) {
+                console.log("Section group name: " + sectionGroup.name);
+            });
+        });
+    })
+    .catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+    });
+```
+
+**sections**
+```js
+OneNote.run(function (context) {
+
+    // Gets the active notebook.
+    var notebook = context.application.getActiveNotebook();
+    
+    // Queue a command to get immediate child sections of the notebook. 
+    var childSections = notebook.sections;
+
+    // Queue a command to load the childSections. 
+    context.load(childSections);
+
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function() {
+            $.each(childSections.items, function(index, childSection) {
+                console.log("Immediate child section name: " + childSection.name);
+            });            
+        });
+    })
+    .catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+    });   
 ```
 

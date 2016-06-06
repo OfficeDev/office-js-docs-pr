@@ -50,15 +50,15 @@ sectionCollectionObject.getByName(name);
 ```js
 OneNote.run(function (context) {
 
-    // Get all the sections in the current notebook.
-    var allSections = context.application.getActiveNotebook().getSections(true);
+    // Get the sections in the current notebook.
+    var sections = context.application.getActiveNotebook().sections;
 
     // Queue a command to load the sections. 
     // For best performance, request specific properties.
-    allSections.load("id"); 
+    sections.load("id"); 
     
     // Get the sections with the specified name.
-    var groceriesSections = allSections.getByName("Groceries");
+    var groceriesSections = sections.getByName("Groceries");
     
     // Queue a command to load the sections with the specified name.
     groceriesSections.load("id,name");
@@ -135,8 +135,8 @@ void
 ```js
 OneNote.run(function (context) {
 
-    // Get all the sections in the current notebook.
-    var sections = context.application.getActiveNotebook().getSections(true);
+    // Get the sections in the current notebook.
+    var sections = context.application.getActiveNotebook().sections;
 
     // Queue a command to load the sections. 
     // For best performance, request specific properties.
