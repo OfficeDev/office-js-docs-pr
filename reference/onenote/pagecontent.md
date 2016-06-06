@@ -21,7 +21,7 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|
 |image|[Image](image.md)|Gets the Image in the PageContent object. Returns null if PageContentType is not Image. Read-only.|
 |outline|[Outline](outline.md)|Gets the Outline in the PageContent object. Returns null if PageContentType is not Outline. Read-only.|
-|page|[Page](page.md)|Gets the page that contains the PageContent object. Read-only.|
+|parentPage|[Page](page.md)|Gets the page that contains the PageContent object. Read-only.|
 
 ## Methods
 

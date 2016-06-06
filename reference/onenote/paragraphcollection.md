@@ -83,7 +83,7 @@ void
 OneNote.run(function (context) {
 
     // Get the collection of pageContent items from the page.
-    var pageContents = context.application.getActivePage().getContents();
+    var pageContents = context.application.getActivePage().contents;
     
     // Queue a command to load the outline property of each pageContent.
     pageContents.load("outline");

@@ -21,20 +21,22 @@ Represents a container for Paragraph objects.
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[append(html: string)](#appendhtml-string)|void|Adds the specified HTML to the bottom of the Outline.|
+|[appendHtml(html: string)](#appendhtmlhtml-string)|void|Adds the specified HTML to the bottom of the Outline.|
+|[appendImage(base64EncodedImage: string, width: double, height: double)](#appendimagebase64encodedimage-string-width-double-height-double)|[Image](image.md)|Adds the specified image to the bottom of the Outline.|
+|[appendRichText(paragraphText: string)](#appendrichtextparagraphtext-string)|[RichText](richtext.md)|Adds the specified text to the bottom of the Outline.|
+|[appendTable(rowCount: number, columnCount: number, values: string[][])](#appendtablerowcount-number-columncount-number-values-string)|[Table](table.md)|Adds a table with the specified number of rows and columns to the bottom of the outline.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
-|[prepend(html: string)](#prependhtml-string)|void|Adds the specified HTML to the top of the Outline.|
 |[select()](#select)|void|Selects the Outline and bring it to the view.|
 
 ## Method Details
 
 
-### append(html: string)
+### appendHtml(html: string)
 Adds the specified HTML to the bottom of the Outline.
 
 #### Syntax
 ```js
-outlineObject.append(html);
+outlineObject.appendHtml(html);
 ```
 
 #### Parameters
@@ -53,7 +55,7 @@ OneNote.run(function (context) {
     var activePage = context.application.getActivePage();
 
     // Get pageContents of the activePage. 
-    var pageContents = activePage.getContents();
+    var pageContents = activePage.contents;
 
     // Queue a command to load the pageContents to access its data.
     context.load(pageContents);
@@ -67,7 +69,7 @@ OneNote.run(function (context) {
                 outline = pageContents.items[0].outline;
 
                 // Queue a command to append a paragraph to the outline.
-                outline.append("<p>new paragraph</p>");
+                outline.appendHtml("<p>new paragraph</p>");
 
                 // Run the queued commands.
                 return context.sync();
@@ -82,6 +84,57 @@ OneNote.run(function (context) {
 });
 ```
 
+### appendImage(base64EncodedImage: string, width: double, height: double)
+Adds the specified image to the bottom of the Outline.
+
+#### Syntax
+```js
+outlineObject.appendImage(base64EncodedImage, width, height);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|base64EncodedImage|string|HTML string to append.|
+|width|double|Optional. Width in the unit of Points. The default value is null and image width will be respected.|
+|height|double|Optional. Height in the unit of Points. The default value is null and image height will be respected.|
+
+#### Returns
+[Image](image.md)
+
+### appendRichText(paragraphText: string)
+Adds the specified text to the bottom of the Outline.
+
+#### Syntax
+```js
+outlineObject.appendRichText(paragraphText);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|paragraphText|string|HTML string to append.|
+
+#### Returns
+[RichText](richtext.md)
+
+### appendTable(rowCount: number, columnCount: number, values: string[][])
+Adds a table with the specified number of rows and columns to the bottom of the outline.
+
+#### Syntax
+```js
+outlineObject.appendTable(rowCount, columnCount, values);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|rowCount|number|Required. The number of rows in the table.|
+|columnCount|number|Required. The number of columns in the table.|
+|values|string[][]|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
+
+#### Returns
+[Table](table.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -99,58 +152,6 @@ object.load(param);
 #### Returns
 void
 
-### prepend(html: string)
-Adds the specified HTML to the top of the Outline.
-
-#### Syntax
-```js
-outlineObject.prepend(html);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|html|string|The HTML string to prepend. See [supported HTML](../../docs/onenote/onenote-add-ins-page-content.md#supported-html) for the OneNote add-ins JavaScript API.|
-
-#### Returns
-void
-
-#### Examples
-```js
-OneNote.run(function (context) {
-
-    // Gets the active page.
-    var activePage = context.application.getActivePage();
-
-    // Get pageContents of the activePage. 
-    var pageContents = activePage.getContents();
-
-    // Queue a command to load the pageContents to access its data.
-    context.load(pageContents);
-
-    // Run the queued commands, and return a promise to indicate task completion.
-    return context.sync()
-        .then(function() {
-            if (pageContents.items.length != 0 && pageContents.items[0].type == "Outline")
-            {
-                // First item is an outline.
-                outline = pageContents.items[0].outline;
-
-                // Queue a command to prepend a paragraph to the outline.
-                outline.prepend("<p>new paragraph</p>");
-
-                // Run the queued commands.
-                return context.sync();
-            }
-        })
-        .catch(function(error) {
-            console.log("Error: " + error);
-            if (error instanceof OfficeExtension.Error) {
-                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-            }
-        });
-});
-```
 ### select()
 Selects the Outline and bring it to the view.
 

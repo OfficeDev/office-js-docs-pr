@@ -17,14 +17,14 @@ Represents a OneNote page.
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|section|[Section](section.md)|Gets the section that contains the page. Read-only.|
+|contents|[PageContentCollection](pagecontentcollection.md)|The collection of PageContent objects on the page. Read only Read-only.|
+|parentSection|[Section](section.md)|Gets the section that contains the page. Read-only.|
 
 ## Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[addOutline(left: double, top: double, html: String)](#addoutlineleft-double-top-double-html-string)|[Outline](outline.md)|Adds an Outline to the page at the specified position.|
-|[getContents()](#getcontents)|[PageContentCollection](pagecontentcollection.md)|Gets the collection of PageContent objects on the page.|
 |[insertPageAsSibling(location: string, title: string)](#insertpageassiblinglocation-string-title-string)|[Page](page.md)|Inserts a new page before or after the current page.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
@@ -83,63 +83,6 @@ OneNote.run(function (context) {
                 console.log("Debug info: " + JSON.stringify(error.debugInfo));
             }
     })
-});
-```
-
-
-### getContents()
-Gets the collection of PageContent objects on the page.
-
-#### Syntax
-```js
-pageObject.getContents();
-```
-
-#### Parameters
-None
-
-#### Returns
-[PageContentCollection](pagecontentcollection.md)
-
-#### Examples
-```js
-OneNote.run(function (context) {
-
-    // Gets the active page.
-    var activePage = context.application.getActivePage();
-
-    // Queue a command to add a new page after the active page. 
-    var pageContents = activePage.getContents();
-
-    // Queue a command to load the pageContents to access its data.
-    context.load(pageContents);
-
-    // Run the queued commands, and return a promise to indicate task completion.
-    return context.sync()
-        .then(function() {
-            for(var i=0; i < pageContents.items.length; i++)
-            {
-                var pageContent = pageContents.items[i];
-                if (pageContent.type == "Outline")
-                {
-                    console.log("Found an outline");
-                }
-                else if (pageContent.type == "Image")
-                {
-                    console.log("Found an image");
-                }
-                else if (pageContent.type == "Other")
-                {
-                    console.log("Found a type not supported yet.");
-                }
-            }
-        })
-        .catch(function(error) {
-            console.log("Error: " + error);
-            if (error instanceof OfficeExtension.Error) {
-                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-            }
-        });
 });
 ```
 
