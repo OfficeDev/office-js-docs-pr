@@ -6,7 +6,7 @@ You can publish your add-ins to the Office Store or upload them to a private sha
 
 For information about publishing to the Office Store, see [Submit add-ins and web apps to the Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx). 
 
-Administrators can also deploy custom add-ins to users in an organization via the Office 365 admin center. For information, see [Deploy Office Add-ins in Office 365](https://support.office.com/en-ie/article/Deploy-Office-Add-Ins-in-Office-365-737e8c86-be63-44d7-bf02-492fa7cd9c3f?ui=en-US&rs=en-IE&ad=IE).
+Administrators can also deploy custom add-ins to users in an organization via the Office 365 admin center. For information, see [Deploy Office Add-ins in the Office 365 admin center preview](https://support.office.com/en-ie/article/Deploy-Office-Add-Ins-in-Office-365-737e8c86-be63-44d7-bf02-492fa7cd9c3f?ui=en-US&rs=en-IE&ad=IE).
 
 **Options for publishing Office Add-ins**
 
