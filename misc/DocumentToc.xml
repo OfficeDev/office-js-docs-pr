@@ -49,7 +49,7 @@
     	<Item text="Debug using F12 developer tools" url="testing/debug-add-ins-using-f12-developer-tools-on-windows-10" SEODescription="Use the Debugger from the F12 developer tools on Windows 10 to debug Office add-ins." />
     	<Item text="Debug in Office Online" url="testing/debug-add-ins-in-office-online" SEODescription="Use Office Online to debug add-ins without running Office on the Windows platform - for example, if you're developing on a Mac." />
     	<Item text="Debug on iPad and Mac" url="testing/debug-office-add-ins-on-ipad-and-mac" SEODescription="Debug Office Add-ins running on an iPad or Mac by using the Weinre remote web inspector." />
-    
+		<Item text="Troubleshoot user errors" url="testing/testing-and-troubleshooting" SEODescription="Troubleshoot issues your users are having with Office Add-ins."  />
 	</Item>
   <Item text="Publish" url="publish/publish">
     <Item text="Create a network shared folder catalog for task pane and content add-ins" url="publish/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins" SEODescription="" Scope="Excel, Word, PowerPoint, Project, Access" />
@@ -58,8 +58,7 @@
     <Item text="Publish task pane and content add-ins to an add-in catalog" url="publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog" SEODescription="Configure Office clients so your add-in is available from the Office Add-ins dialog box"  />
     <Item text="Set up an add in catalog on Office 365" url="publish/set-up-an-add-in-catalog-on-office-365" SEODescription="Set up an add-in catalog on Office 365 (SharePoint Online) for publishing task pane and content Office Add-ins." Scope="Excel, Word, PowerPoint, Project, Access" />
     <Item text="Set up an add-in catalog on SharePoint" url="publish/set-up-an-add-in-catalog-on-sharepoint" SEODescription="Set up an add-in catalog on SharePoint for publishing task pane and content add-ins." Scope="Excel, Word, PowerPoint, Project, Access" />
-    <Item text="Troubleshoot user errors" url="testing/testing-and-troubleshooting" SEODescription="Troubleshoot issues your users are having with Office Add-ins."  />
-  </Item>
+   </Item>
   <Item text="Word" url="word/word-add-ins-programming-overview" SEODescription="Use the JavaScript APIs to build Word add-ins." Scope="word">
     <Item text="Build your first Word add-in" url="word/word-add-ins" SEODescription="Use Word Add-ins to extend the functionality of Word and to integrate Word with other applications." Scope="word" />
     <Item text="Create better add-ins for Word with Office Open XML" url="word/create-better-add-ins-for-word-with-office-open-xml" SEODescription="Use Office Open XML to insert rich content via Word add-ins. Edit the Office Open XML to simplify the markup and minimize the payload." Scope="word" />
