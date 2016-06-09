@@ -8,21 +8,21 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 
 |**Extension point**|**Sideloading**|**SharePoint catalog**|**Office 365 admin center preview**|**Office Store**|
 |:-----|:-----|:-----|:-----|:-----|
-|Commands|X||X|X|
+|Command|X||X|X|
 |Content|X|X|X|X|
 |Task pane|X|X|X|X|
+
+- [Sideloading]() - Use as part of your development process to test your add-in.
+- [SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) - Use as part of your development process to test your add-in, or to distribute your add-in to users in your organization.
+- [Office 365 admin center preview](https://support.office.com/en-ie/article/Deploy-Office-Add-Ins-in-Office-365-737e8c86-be63-44d7-bf02-492fa7cd9c3f?ui=en-US&rs=en-IE&ad=IE) - Use to distribute to users in your organization.
+- [Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx) - Use to distribute publicly to users.
 
 **Deploy and publish options for Outlook add-ins**
 
 |**Extension point**|**Exchange server**|**Office Store**|
 |:-----|:-----|:-----|
-|Commands|X|X|
+|Command|X|X|
 |Read/compse panes|X|X|
-
-For information about publishing to the Office Store, see [Submit add-ins and web apps to the Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx). 
-
-Administrators can also deploy custom add-ins to users in an organization via the Office 365 admin center. For information, see [Deploy Office Add-ins in the Office 365 admin center preview](https://support.office.com/en-ie/article/Deploy-Office-Add-Ins-in-Office-365-737e8c86-be63-44d7-bf02-492fa7cd9c3f?ui=en-US&rs=en-IE&ad=IE).
-
 
 To broaden the reach of your add-in, make sure that it works across platforms. The Office.js version 1.1 includes support for Office Online, and the Office Store validation process verifies add-in support for Office Online. Before you publish, [test your add-in](../testing/sideload-office-add-ins-for-testing.md) to make sure that it works in Office Online.
 
