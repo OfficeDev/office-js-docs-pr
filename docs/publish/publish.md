@@ -9,7 +9,7 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 - [Office 365 admin center preview](https://support.office.com/en-ie/article/Deploy-Office-Add-Ins-in-Office-365-737e8c86-be63-44d7-bf02-492fa7cd9c3f?ui=en-US&rs=en-IE&ad=IE) - Use to distribute your add-in to users in your organization.
 - [Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx) - Use to distribute your add-in publicly to users.
 
-The options that are available depend on the type of add-in you create. 
+The options that are available depend on the Office host that you're targeting and the type of add-in you create. 
 
 **Options to deploy and publish Word, Excel, and PowerPoint add-ins**
 
