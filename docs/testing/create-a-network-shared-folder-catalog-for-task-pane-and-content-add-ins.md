@@ -1,12 +1,11 @@
 
-# Create a network shared folder catalog for task pane and content add-ins
+# Sideload Office Add-ins for testing
 
+You can install an Office Add-in for testing in an Office client running on Windows by using a shared folder catalog to publish the manifest to a network file share. 
 
-A shared folder catalog provides a way to publish the manifests for task pane and content Office Add-ins to a network file share. Users can then get add-ins by specifying this file share as a trusted catalog, using the steps in the following procedure.
+>**Note:** To test an Office Add-in in Office Online, see [Sideload Office Add-ins in Office Online for testing](sideload-office-add-ins-for-testing.md). To test an add-in on an IPad or Mac, see [Sideload Office Add-ins on iPad and Mac for testing](sideload-an-office-add-in-on-ipad-and-mac.md ). To test an Outlook add-in, see [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md ).
 
-The manifest file is an XML file that enables you to declaratively describe how your add-in should be activated when an end user installs and uses it with Office documents and applications. For more information, see [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md).
-
-The manifest file is the only file that you should deploy to the shared folder catalog. Deploy the web application itself to a web server and specify the URL in the  **SourceLocation** element of the manifest file.
+Deploy only the manifest file to the shared folder catalog. Deploy the web application itself to a web server and specify the URL in the  **SourceLocation** element of the manifest file.
 
  >**Important:**  To help make add-ins that access external data and services more secure, your add-in should use a secure protocol such as Hypertext Transfer Protocol Secure (HTTPS) to connect to external data and services. You must use HTTPS if your add-in uses add-in commands.
 
@@ -32,12 +31,8 @@ The manifest file is the only file that you should deploy to the shared folder c
     
 After performing these steps, you can select  **My Add-ins** on the **Insert** tab of the ribbon and then choose **Shared Folder** at the top of the **Office Add-ins** dialog box to insert a task pane or content add-in from this catalog.
 
-Any additional manifest files you put in this file share will be available to users that have specified this shared folder catalog.
-
 
 ## Additional resources
-
-
 
 - [Publish your Office Add-in](../publish/publish.md)
     
