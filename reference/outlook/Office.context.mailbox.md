@@ -32,7 +32,7 @@ The `ewsUrl` value can be used by a remote service to make EWS calls to the user
 
 Your app must have the **ReadItem** permission specified in its manifest to call the `ewsUrl` member in read mode.
 
-In compose mode you must call the [`saveAsync`](Office.context.mailbox.item#saveAsync) method before it can use the `ewsUrl` member. Your app must have **ReadWriteItem** permissions to call the `saveAsync` method.
+In compose mode you must call the [`saveAsync`](Office.context.mailbox.item#saveAsync) method before you can use the `ewsUrl` member. Your app must have **ReadWriteItem** permissions to call the `saveAsync` method.
 
 ##### Type:
 
