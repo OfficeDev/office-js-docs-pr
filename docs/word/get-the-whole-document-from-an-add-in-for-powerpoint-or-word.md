@@ -172,10 +172,10 @@ The  _fileType_ parameter expects one of three constants from the [FileType](../
 
 The  **getFileAsync** method returns a reference to the file as a [File](../../reference/shared/file.md) object. The **File** object exposes four members: the [size](../../reference/shared/file.size.md) property, [sliceCount](../../reference/shared/file.slicecount.md) property, [getSliceAsync](../../reference/shared/file.getsliceasync.md) method, and [closeAsync](../../reference/shared/file.closeasync.md) method. The **size** property returns the number of bytes in the file. The **sliceCount** returns the number of [Slice](../../reference/shared/document.md) objects (discussed later in this article) in the file.
 
-The following code will retrieve a PowerPoint or Word document as a **file** object using the **document.getFileAsync()** method. It then packages the resulting **file** object, a zeroed counter, and [sliceCount](../../reference/shared/file.slicecount.md) into an anonymous object. This object subsiquently  passed in to a locally defined `getSlice` function. 
+The following code retrieves a PowerPoint or Word document as a **File** object using the **document.getFileAsync()** method. It then packages the resulting **File** object, a zeroed counter, and [sliceCount](../../reference/shared/file.slicecount.md) into an anonymous object. This object is subsequently passed in to a locally defined `getSlice` function. 
 
 ```js
-// Get all of the content from a PowerPoint or Word document in 100-KB chunks of text.
+// Get all the content from a PowerPoint or Word document in 100-KB chunks of text.
 function sendFile() {
 
     Office.context.document.getFileAsync("compressed",
