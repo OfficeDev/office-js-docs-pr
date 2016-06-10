@@ -9,6 +9,7 @@ Represents a OneNote section group. Section groups can contain sections and othe
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
+|clientUrl{|string|The client url of the section group. Read only Read-only.|
 |id|string|Gets the ID of the section group. Read-only.|
 |name|string|Gets the name of the section group. Read-only.|
 
@@ -17,16 +18,17 @@ _See property access [examples.](#property-access-examples)_
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|notebook|[Notebook](notebook.md)|Gets the notebook that contains the section group. This value is never null. Read-only.|
-|parentSectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section group. Returns null if the section group is a direct child of the notebook. Read-only.|
+|notebook|[Notebook](notebook.md)|Gets the notebook that contains the section group. Read-only.|
+|parentSectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section group. Throws ItemNotFound if the section group is a direct child of the notebook. Read-only.|
+|parentSectionGroupOrNull|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section group. Returns null if the section group is a direct child of the notebook. Read-only.|
+|sectionGroups|[SectionGroupCollection](sectiongroupcollection.md)|The collection of section groups in the section group. Read only Read-only.|
+|sections|[SectionCollection](sectioncollection.md)|The collection of sections in the section group. Read only Read-only.|
 
 ## Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[addSection(title: String)](#addsectiontitle-string)|[Section](section.md)|Adds a new section to the end of the section group.|
-|[getSectionGroups()](#getsectiongroups)|[SectionGroupCollection](sectiongroupcollection.md)|Gets the collection of section groups in the section group.|
-|[getSections(recursive: bool)](#getsectionsrecursive-bool)|[SectionCollection](sectioncollection.md)|Gets the collection of sections in the section group.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
@@ -53,7 +55,7 @@ sectionGroupObject.addSection(title);
 OneNote.run(function (context) {
 
     // Get the section groups that are direct children of the current notebook.
-    var sectionGroups = context.application.activeNotebook.getSectionGroups();
+    var sectionGroups = context.application.getActiveNotebook().sectionGroups;
     
     // Queue a command to load the section groups.
     // For best performance, request specific properties.
@@ -80,103 +82,6 @@ OneNote.run(function (context) {
     });
 ```
 
-
-### getSectionGroups()
-Gets the collection of section groups in the section group.
-
-#### Syntax
-```js
-sectionGroupObject.getSectionGroups();
-```
-
-#### Parameters
-None
-
-#### Returns
-[SectionGroupCollection](sectiongroupcollection.md)
-
-#### Examples
-```js
-OneNote.run(function (context) {
-
-    // Get the section groups that are direct children of the current notebook.
-    var sectionGroups = context.application.activeNotebook.getSectionGroups();
-
-    // Queue a command to load the section groups.
-    // For best performance, request specific properties.
-    sectionGroups.load("name");
-    
-    // Get the child section groups of the first section group in the notebook.
-    var nestedSectionGroups = sectionGroups._GetItem(0).getSectionGroups();
-    
-    // Queue a command to load the ID and name properties of the child section groups.
-    nestedSectionGroups.load("id,name");
-    
-    // Run the queued commands, and return a promise to indicate task completion.
-    return context.sync()
-        .then(function() {
-            
-            // Write the properties for each child section group.
-            $.each(nestedSectionGroups.items, function(index, sectionGroup) {
-                console.log("Section group name: " + sectionGroup.name);  
-                console.log("Section group ID: " + sectionGroup.id);  
-            });
-        })
-        .catch(function(error) {
-            console.log("Error: " + error);
-            if (error instanceof OfficeExtension.Error) {
-                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-            }
-        });
-    });
-```
-
-
-### getSections(recursive: bool)
-Gets the collection of sections in the section group.
-
-#### Syntax
-```js
-sectionGroupObject.getSections(recursive);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|recursive|bool|true to retrieve all child sections, or false to retrieve immediate child sections only. Default is false.|
-
-#### Returns
-[SectionCollection](sectioncollection.md)
-
-#### Examples
-```js
-OneNote.run(function (context) {
-
-    // Get the sections that are siblings of the current section.
-    var sections = context.application.activeSection.sectionGroup.getSections();
-
-    // Queue a command to load the section groups.
-    // For best performance, request specific properties.
-    sections.load("id,name");
-    
-    // Run the queued commands, and return a promise to indicate task completion.
-    return context.sync()
-        .then(function() {
-            
-            // Write the properties for each section.
-            $.each(sections.items, function(index, section) {
-                console.log("Section name: " + section.name);  
-                console.log("Section ID: " + section.id);  
-            });
-        })
-        .catch(function(error) {
-            console.log("Error: " + error);
-            if (error instanceof OfficeExtension.Error) {
-                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-            }
-        });
-    });
-```
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -199,7 +104,7 @@ void
 OneNote.run(function (context) {
         
     // Get the parent section group that contains the current section.
-    var sectionGroup = context.application.activeSection.sectionGroup;
+    var sectionGroup = context.application.getActiveSection().parentSectionGroup;
             
     // Queue a command to load the section group. 
     // For best performance, request specific properties.           
@@ -227,7 +132,7 @@ OneNote.run(function (context) {
 OneNote.run(function (context) {
         
     // Get the parent section group that contains the current section.
-    var sectionGroup = context.application.activeSection.sectionGroup;
+    var sectionGroup = context.application.getActiveSection().parentSectionGroup;
             
     // Queue a command to load the section group with the specified properties.           
     sectionGroup.load("name,notebook/name"); 
@@ -246,6 +151,72 @@ OneNote.run(function (context) {
                 console.log("Debug info: " + JSON.stringify(error.debugInfo));
             }
         })
+    });
+```
+
+**sectionGroups**
+```js
+OneNote.run(function (context) {
+
+    // Get the section groups that are direct children of the current notebook.
+    var sectionGroups = context.application.getActiveNotebook().sectionGroups;
+
+    // Queue a command to load the section groups.
+    // For best performance, request specific properties.
+    sectionGroups.load("name");
+    
+    // Get the child section groups of the first section group in the notebook.
+    var nestedSectionGroups = sectionGroups._GetItem(0).sectionGroups;
+    
+    // Queue a command to load the ID and name properties of the child section groups.
+    nestedSectionGroups.load("id,name");
+    
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function() {
+            
+            // Write the properties for each child section group.
+            $.each(nestedSectionGroups.items, function(index, sectionGroup) {
+                console.log("Section group name: " + sectionGroup.name);  
+                console.log("Section group ID: " + sectionGroup.id);  
+            });
+        })
+        .catch(function(error) {
+            console.log("Error: " + error);
+            if (error instanceof OfficeExtension.Error) {
+                console.log("Debug info: " + JSON.stringify(error.debugInfo));
+            }
+        });
+    });
+```
+
+**sections**
+```js
+OneNote.run(function (context) {
+
+    // Get the sections that are siblings of the current section.
+    var sections = context.application.getActiveSection().parentSectionGroup.sections;
+
+    // Queue a command to load the section groups.
+    // For best performance, request specific properties.
+    sections.load("id,name");
+    
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function() {
+            
+            // Write the properties for each section.
+            $.each(sections.items, function(index, section) {
+                console.log("Section name: " + section.name);  
+                console.log("Section ID: " + section.id);  
+            });
+        })
+        .catch(function(error) {
+            console.log("Error: " + error);
+            if (error instanceof OfficeExtension.Error) {
+                console.log("Debug info: " + JSON.stringify(error.debugInfo));
+            }
+        });
     });
 ```
 

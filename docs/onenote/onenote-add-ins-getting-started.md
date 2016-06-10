@@ -142,10 +142,10 @@ Office.initialize = function (reason) {
 // Add the contents of the text area to the page.
 function addOutlineToPage() {        
     OneNote.run(function (context) {
-       var html = '<p>' + $('#textBox').html() + '</p>';
+       var html = '<p>' + $('#textBox').val() + '</p>';
 
         // Get the current page.
-        var page = context.application.activePage;
+        var page = context.application.getActivePage();
 
         // Queue a command to load the page with the title property.             
         page.load('title'); 

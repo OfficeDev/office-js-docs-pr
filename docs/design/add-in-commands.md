@@ -9,18 +9,18 @@ Add-in commands are UI elements that extend the Office UI and start actions in y
 **Add-in with commands running in Excel Online**
 ![Add-in commands](../../images/addincommands2.png)
 
-##Commands capabilities
+## Commands capabilities
 You can use add-in commands to make your add-ins easier to find and use. Current supported capabilities include the following.
 
-####Extension points
+#### Extension points
 - Ribbon tabs - Extend built-in tabs or create a new custom tab.
 - Context menus - Extend selected context menus. 
 
-####Control types
+#### Control types
 - Simple buttons - trigger specific actions.
 - Menus - Contain multiple buttons that trigger actions.
 
-####Actions
+#### Actions
 - ShowTaskpane - Displays one or multiple panes that load custom HTML pages inside them.
 - ExecuteFunction - Loads an invisible HTML page and then execute a JavaScript function within it. To show UI within your function, you can use displayDialog.  
 
@@ -28,7 +28,7 @@ You can use add-in commands to make your add-ins easier to find and use. Current
 For an overview of the feature, see the video [Add-in Commands in Office Ribbon](https://channel9.msdn.com/events/Build/2016/P551).
 
 
-##Supported platforms
+## Supported platforms
 Add-in commands are currently supported on the following platforms:
 
 - Generally Available

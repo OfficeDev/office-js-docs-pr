@@ -21,7 +21,7 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|
 |image|[Image](image.md)|Gets the Image in the PageContent object. Returns null if PageContentType is not Image. Read-only.|
 |outline|[Outline](outline.md)|Gets the Outline in the PageContent object. Returns null if PageContentType is not Outline. Read-only.|
-|page|[Page](page.md)|Gets the page that contains the PageContent object. Read-only.|
+|parentPage|[Page](page.md)|Gets the page that contains the PageContent object. Read-only.|
 
 ## Methods
 
@@ -29,6 +29,7 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|
 |[delete()](#delete)|void|Deletes the PageContent object.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+|[select()](#select)|void|Selects the PageContent object.|
 
 ## Method Details
 
@@ -59,6 +60,20 @@ object.load(param);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+### select()
+Selects the PageContent object.
+
+#### Syntax
+```js
+pageContentObject.select();
+```
+
+#### Parameters
+None
 
 #### Returns
 void

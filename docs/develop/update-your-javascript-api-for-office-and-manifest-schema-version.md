@@ -78,7 +78,7 @@ The update process is applied on a  _per-project basis_ - you'll need to repeat 
 
 You don't need local copies of the JavaScript API for Office files (Office.js and app-specific .js files) to develop anOffice Add-in (referencing the CDN for Office.js downloads the necessary files at runtime), but if you want a local copy of the library files you can use the [NuGet Command-Line Utility](http://docs.nuget.org/consume/installing-nuget) and the `Install-Package Microsoft.Office.js` command to download them.
 
- > **Note** To get a copy of the XSD (XML Schema Definition) for the v1.1 add-in manifest, see the listing in [Schema map (add-in manifest schema v1.1)](http://msdn.microsoft.com/library/d5f72bff-3446-c64f-02ca-ab10b5648789%28Office.15%29.aspx).
+ > **Note** To get a copy of the XSD (XML Schema Definition) for the v1.1 add-in manifest, see the listing in [Schema reference for Office Add-ins manifests (v1.1)](../overview/add-in-manifests.md).
 
 
 ### To update the JavaScript API for Office library files in your project to use the newest release
@@ -118,5 +118,5 @@ You don't need local copies of the JavaScript API for Office files (Office.js an
     
 - [JavaScript API for Office](../../reference/javascript-api-for-office.md)
     
-- [Schema reference for Office Add-ins manifests (v1.1)](http://msdn.microsoft.com/library/7e0cadc3-f613-8eb9-57ef-9032cbb97f92%28Office.15%29.aspx)
+- [Schema reference for Office Add-ins manifests (v1.1)](../overview/add-in-manifests.md)
     

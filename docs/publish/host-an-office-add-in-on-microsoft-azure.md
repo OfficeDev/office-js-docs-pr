@@ -1,9 +1,9 @@
 
 # Host an Office Add-in on Microsoft Azure
 
-The simplest Office Add-in is made up of an XML manifest file and an HTML page. The XML manifest file describes the add-in's characteristics, such as its name, what Office client applications it can run in, and the URL for the add-in's HTML page. The HTML page is contained in an Office Add-in website and users see it and interact with it when they install and run your add-in. For more information about Office Add-ins in general, see [Office Add-ins platform overview](../../docs/overview/office-add-ins.md).
+The simplest Office Add-in is made up of an XML manifest file and an HTML page. The XML manifest file describes the add-in's characteristics, such as its name, what Office client applications it can run in, and the URL for the add-in's HTML page. The HTML page is contained in an Office Add-in website and users see it and interact with it when they install and run your add-in. 
 
-You can host the website of an Office Add-in on many of web hosting platforms, including Azure. To host an Office Add-in on Azure, you publish the Office Add-in to a Azure website. 
+You can host the website of an Office Add-in on many web hosting platforms, including Azure. To host an Office Add-in on Azure, you publish it to an Azure website. 
 
 This topic assumes that you don't have experience using Azure. When you finish, you'll have a simple Office Add-in that has its website hosted on Azure.
 You'll learn:
@@ -15,10 +15,10 @@ You'll learn:
 - How to publish to and host an Office Add-in on a Azure website
     
 
-**A sample Office Add-in website hosted on Azure**
+**An Office Add-in website hosted on Azure**
 
 
-![App for Office website hosted in Microsoft Azure](../../images/off15app_HowToPublishA4OtoAzure_fig17.png)
+![Office Add-in website hosted in Microsoft Azure](../../images/off15app_HowToPublishA4OtoAzure_fig17.png)
 
 
 ## Set up your development computer with Azure SDK for .NET, an Azure subscription, and Office 2013
@@ -37,11 +37,12 @@ You'll learn:
     
 2. Install Office 2013 if you haven't already. 
     
-     >**Note**  You can get a [trial version for one month](http://office.microsoft.com/en-us/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786).
+     >**Note:**  You can get a [trial version for one month](http://office.microsoft.com/en-us/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786).
 3. Get your Azure account.
     
-     >**Note**  If you're a Microsoft Developer Network (MSDN) subscriber, [you get an Azure subscription as part of your MSDN subscription](http://www.windowsazure.com/en-us/pricing/member-offers/msdn-benefits/).If you're not an MSDN subscriber, you can still [get a free trial of Azure at the Windows Azure website](https://azure.microsoft.com/en-us/pricing/free-trial/). 
-To keep the walkthrough simple and focused on using Azure with an Office Add-in, you'll use a local file share as a trusted catalog where you'll store the add-in's XML manifest file. For an add-in that you intend to be used in a business or more than one business, you might keep the add-in manifest file in SharePoint, or publish the add-in to the Office Store. See Publishing basics in [Office Add-ins platform overview](../../docs/overview/office-add-ins.md).
+     >**Note:**  If you're an MSDN subscriber, [you get an Azure subscription as part of your MSDN subscription](http://www.windowsazure.com/en-us/pricing/member-offers/msdn-benefits/). If you're not an MSDN subscriber, you can still [get a free trial of Azure at the Windows Azure website](https://azure.microsoft.com/en-us/pricing/free-trial/). 
+
+To keep the walkthrough simple and focused on using Azure with an Office Add-in, you'll use a local file share as a trusted catalog where you'll store the add-in's XML manifest file. For an add-in that you intend to be used in a business or more than one business, you might keep the add-in manifest file in SharePoint, or publish the add-in to the Office Store. 
 
 
 ## Step 1: Create a network file share to host your add-in manifest file
@@ -56,7 +57,7 @@ To keep the walkthrough simple and focused on using Azure with an Office Add-in,
     
 4. Right-click the AddinManifests folder, and then choose  **Share with** > **Specific people**.
     
-5. In  **File Sharing**, click the drop-down arrow and then choose  **Everyone**>  **Add** > **Share**.
+5. In  **File Sharing**, choose the drop-down arrow and then choose  **Everyone** > **Add** > **Share**.
     
 
 ## Step 2: Add the file share to the Trusted Add-ins catalog so that Office client applications will trust the location where you install Office Add-ins
@@ -114,9 +115,9 @@ There are a couple of ways you can create an empty Azure website. If you're usin
 
 
 
-1. Log in to the [Azure management portal](https://manage.windowsazure.com/) using your Azure account.
+1. Log on to the [Azure management portal](https://manage.windowsazure.com/) using your Azure account.
     
-2. Choose  **NEW**>  **COMPUTE**>  **WEB APP**>  **QUICK CREATE**. 
+2. Choose  **NEW** > **COMPUTE** > **WEB APP** > **QUICK CREATE**. 
     
 3. Under  **URL**, enter a unique site name to complete the URL for the website. The management portal verifies that the site name is unique across the azurewebsites.net domain.
     
@@ -141,7 +142,7 @@ There are a couple of ways you can create an empty Azure website. If you're usin
 
 1. Start Visual Studio as an administrator.
     
-2. Choose  **File**>  **New** > **Project**.
+2. Choose  **File** > **New** > **Project**.
     
 3. Under  **Templates**, expand  **Visual C#** (or **Visual Basic**), expand  **Office/SharePoint**, and then choose  **Office Add-ins**.
     
@@ -206,7 +207,7 @@ Because we're focusing on how to publish to Azure, you won't make any changes to
 
 1. Start Word and open a new document.
     
-2. On the Ribbon, choose  **Insert**>  **My Apps**, and then choose  **See all**.
+2. On the Ribbon, choose  **Insert** > **My Apps**, and then choose  **See all**.
     
 3. In the  **Apps for Office** dialog box, choose **SHARED FOLDER**. Office client applications that work with the Office Add-ins model scan the folder that you list as a trusted add-in catalog and show the add-ins in the dialog. You should see the icon for your sample add-in.
     

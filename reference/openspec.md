@@ -7,7 +7,7 @@ The features described here might be in different stages of development, such as
 _**Important:** The features listed here are still in the design and review phase and are not yet generally available. These features and APIs are subject to change._
 
 ## New Excel JavaScript APIs
-Join us in reviewing our design for new Excel JavaScript APIs. We have details on the upcoming APIs available for your feedback. The set of API to be reviewed includes customXML parts, Pivot Table refresh, range filtered view, Range and table as image API, append multiple rows to table and many more. Look forward to hearing from you.
+Join us in reviewing our design for new Excel JavaScript APIs. New and updated APIs include customXML parts, Pivot Table refresh, range filtered view, Range and table as image, append multiple rows to table, and more. 
 
 **See the [Excel JavaScript 1.3 API page](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec) to learn more and provide your feedback.**
 
