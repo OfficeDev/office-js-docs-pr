@@ -51,6 +51,44 @@ None
 #### Returns
 void
 
+#### Examples
+```js
+OneNote.run(function (context) {
+
+    // Get the collection of pageContent items from the page.
+    var pageContents = context.application.getActivePage().contents;
+
+    // Get the first PageContent on the page
+    // Assuming its an outline, get the outline's paragraphs.
+    var pageContent = pageContents.getItemAt(0);
+	
+    var paragraphs = pageContent.outline.paragraphs;
+	
+	var firstParagraph = paragraphs.getItemAt(0);
+	
+    // Queue a command to load the id and type of the first paragraph
+    firstParagraph.load("id,type");
+
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function () {
+			
+            // Queue a command to delete the first paragraph                 
+            firstParagraph.delete();
+			
+			// Run the command to delete it
+			return context.sync();
+        });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
+
 ### insertHtmlAsSibling(insertLocation: string, html: string)
 Inserts the specified HTML content
 
@@ -87,6 +125,43 @@ paragraphObject.insertImageAsSibling(insertLocation, base64EncodedImage, width, 
 #### Returns
 [Image](image.md)
 
+#### Examples
+```js
+OneNote.run(function (context) {
+
+	// Get the collection of pageContent items from the page.
+	var pageContents = context.application.getActivePage().contents;
+
+	// Get the first PageContent on the page
+	// Assuming its an outline, get the outline's paragraphs.
+	var pageContent = pageContents.getItemAt(0);
+	var paragraphs = pageContent.outline.paragraphs;
+	var firstParagraph = paragraphs.getItemAt(0);
+
+	// Queue a command to load the id and type of the first paragraph
+	firstParagraph.load("id,type");
+
+	// Run the queued commands, and return a promise to indicate task completion.
+	return context.sync()
+		.then(function () {
+
+			// Queue commands to insert before and after the first paragraph
+			firstParagraph.insertImageAsSibling("Before", "R0lGODlhDwAPAKECAAAAzMzM/////wAAACwAAAAADwAPAAACIISPeQHsrZ5ModrLlN48CXF8m2iQ3YmmKqVlRtW4MLwWACH+H09wdGltaXplZCBieSBVbGVhZCBTbWFydFNhdmVyIQAAOw==");
+			firstParagraph.insertImageAsSibling("After", "R0lGODlhDwAPAKECAAAAzMzM/////wAAACwAAAAADwAPAAACIISPeQHsrZ5ModrLlN48CXF8m2iQ3YmmKqVlRtW4MLwWACH+H09wdGltaXplZCBieSBVbGVhZCBTbWFydFNhdmVyIQAAOw==");
+			
+			// Run the command to insert images
+			return context.sync();
+		});
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
+
 ### insertRichTextAsSibling(insertLocation: string, paragraphText: string)
 Inserts the paragraph text at the specifiec insert location.
 
@@ -103,6 +178,43 @@ paragraphObject.insertRichTextAsSibling(insertLocation, paragraphText);
 
 #### Returns
 [RichText](richtext.md)
+
+#### Examples
+```js
+OneNote.run(function (context) {
+
+	// Get the collection of pageContent items from the page.
+	var pageContents = context.application.getActivePage().contents;
+
+	// Get the first PageContent on the page
+	// Assuming its an outline, get the outline's paragraphs.
+	var pageContent = pageContents.getItemAt(0);
+	var paragraphs = pageContent.outline.paragraphs;
+	var firstParagraph = paragraphs.getItemAt(0);
+
+	// Queue a command to load the id and type of the first paragraph
+	firstParagraph.load("id,type");
+
+	// Run the queued commands, and return a promise to indicate task completion.
+	return context.sync()
+		.then(function () {
+
+			// Queue commands to insert before and after the first paragraph
+			firstParagraph.insertRichTextAsSibling("Before", "Text Appears Before Paragraph");
+			firstParagraph.insertRichTextAsSibling("After", "Text Appears After Paragraph");
+			
+			// Run the command to insert text contents
+			return context.sync();
+		});
+})	
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+}); 
+```
+
 
 ### insertTableAsSibling(insertLocation: string, rowCount: number, columnCount: number, values: string[][])
 Adds a table with the specified number of rows and columns before or after the current paragraph.
@@ -152,7 +264,41 @@ None
 
 #### Returns
 void
-### Property access examples
+
+#### Examples
+```js
+OneNote.run(function (context) {
+
+	// Get the collection of pageContent items from the page.
+	var pageContents = context.application.getActivePage().contents;
+
+	// Get the first PageContent on the page
+	// Assuming its an outline, get the outline's paragraphs.
+	var pageContent = pageContents.getItemAt(0);
+	var paragraphs = pageContent.outline.paragraphs;
+
+	var firstParagraph = paragraphs.getItemAt(0);
+
+	// Queue a command to load the id and type of the first paragraph
+	firstParagraph.load("id,type");
+
+	// Queue a command to select the first paragraph  
+	firstParagraph.select();
+
+	// Run the queued commands, and return a promise to indicate task completion.
+	return context.sync()
+		.then(function () {
+			console.log("Selected paragraph with id : " + firstParagraph.id + " and type: " + firstParagraph.type);
+			return Promise.resolve(firstParagraph);
+		});
+})		
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+}); 
+```### Property access examples
 
 **id and type**
 ```js
@@ -180,12 +326,13 @@ OneNote.run(function (context) {
                 console.log("Paragraph type: " + paragraph.type);
                 console.log("Paragraph ID: " + paragraph.id);
             });
-        })                
-        .catch(function(error) {
-            console.log("Error: " + error);
-            if (error instanceof OfficeExtension.Error) {
-                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-            }
-        }); 
-    });
+        });
+})		
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+}); 
 ```
+
