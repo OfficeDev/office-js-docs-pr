@@ -126,8 +126,6 @@ object.load(param);
 void
 ### Property access examples
 
-### Property access examples
-
 **items**
 ```
 OneNote.run(function (context) {
