@@ -192,7 +192,7 @@ OneNote.run(function (context) {
     });
 ```
 
-**parentSectionGroupOrNull
+**parentSectionGroupOrNull**
 ```js
 OneNote.run(function (context) {
     // Queue a command to add a page to the current section.
