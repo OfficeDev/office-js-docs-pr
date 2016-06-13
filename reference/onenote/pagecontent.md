@@ -14,8 +14,6 @@ Represents a region on a page that contains top-level content types such as Outl
 |top|double|Gets or sets the top (Y-axis) position of the PageContent object.|
 |type|string|Gets the type of the PageContent object. Read-only. Possible values are: Outline, Image, Other.|
 
-_See property access [examples.](#property-access-examples)_
-
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
@@ -48,6 +46,32 @@ None
 #### Returns
 void
 
+#### Examples
+```js
+OneNote.run(function (context) {
+
+	var page = context.application.getActivePage();
+	var pageContents = page.contents;
+
+	var firstPageContent = pageContents.getItemAt(0);
+	firstPageContent.load('type');
+
+	// Run the queued commands, and return a promise to indicate task completion.
+	return context.sync()
+		.then(function () {
+			if(firstPageContent.isNull === false) {
+				firstPageContent.delete();
+				return context.sync();
+			}
+		});
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -77,3 +101,28 @@ None
 
 #### Returns
 void
+
+#### Examples
+```js
+OneNote.run(function (context) {
+
+	var page = context.application.getActivePage();
+	var pageContents = page.contents;
+	pageContents.load('type');
+
+	// Run the queued commands, and return a promise to indicate task completion.
+	return context.sync()
+		.then(function () {
+			var firstPageContent = pageContents.getItemAt(0);
+			firstPageContent.select();
+			return context.sync();
+		});
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+

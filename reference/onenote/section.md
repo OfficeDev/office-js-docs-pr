@@ -192,4 +192,30 @@ OneNote.run(function (context) {
     });
 ```
 
-
+**parentSectionGroupOrNull
+```js
+OneNote.run(function (context) {
+    // Queue a command to add a page to the current section.
+    var section = context.application.getActiveSection();
+	section.load('clientUrl,notebook');
+	var sectionGroup = section.parentSectionGroupOrNull;
+    
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function () {
+			if(sectionGroup.isNull === false)
+			{
+				// If a parent section group exists, queue a command to add a section in it!
+				sectionGroup.addSection("NewSectionInSectionGroup");
+			}
+			return context.sync();
+        });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+	
