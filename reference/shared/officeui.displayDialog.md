@@ -54,7 +54,9 @@ The following examples illustrate the use of the dialog API
 
 - **Simple use**: *[Office Add-in Dialog API Example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example/)*
 - **Authentication**: [Office Add-in Office 365 Client Authentication for AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth)
+- 
 ## Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |startAddress|string|Accepts the initial HTTPS Url that opens in the dialog. This page must belong do a domain declared on the AppDomains list on the manifest|
