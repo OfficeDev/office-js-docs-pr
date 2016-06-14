@@ -1,6 +1,5 @@
 
-# Settings object 
-
+# Settings object
 Represents custom settings for a task pane or content add-in that are stored in the host document as name/value pairs.
 
 |||
@@ -48,19 +47,18 @@ The  **Settings** object is automatically loaded as part of the [Document](../..
 
 ## Support details
 
+
 A capital Y in the following matrix indicates that this object is supported in the corresponding Office host application. An empty cell indicates that the Office host application doesn't support this object.
 
 For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 
-|
-|
-|****|**Office for Windows desktop**|**Office Online(in browser)**|**Office for iPad**|
+||**Office for Windows desktop**|**Office Online (in browser)**|**Office for iPad**|
 |:-----|:-----|:-----|:-----|
-|**Access**||√||
-|**Excel**|√|√|√|
-|**PowerPoint**|√|√|√|
-|**Word**|√||√|
+|**Access**||Y||
+|**Excel**|Y|Y|Y|
+|**PowerPoint**|Y|Y|Y|
+|**Word**|Y||Y|
 
 |||
 |:-----|:-----|
@@ -70,7 +68,6 @@ For more information about Office host application and server requirements, see 
 |**Namespace**|Office|
 
 ## Support history
-
 
 |**Version**|**Changes**|
 |:-----|:-----|
