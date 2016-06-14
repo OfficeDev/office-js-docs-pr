@@ -1,7 +1,7 @@
-# Action Element
+# Action element
  Specifies the action to perform when the user selects a  [Button](./button-control.md) or [Menu](./menu-control.md) controls.
  
- ## Attributes
+## Attributes
 
 |  Attribute  |  Required  |  Description  |
 |:-----|:-----|:-----|
@@ -17,7 +17,7 @@
   
 
 ## xsi:type
-This attribute specifies the kind of action performed when the user selects the button. It can be one of the following
+This attribute specifies the kind of action performed when the user selects the button. It can be one of the following:
 - ExecuteFunction
 - ShowTaskpane
 
