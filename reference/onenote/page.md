@@ -82,7 +82,7 @@ OneNote.run(function (context) {
             if (error instanceof OfficeExtension.Error) {
                 console.log("Debug info: " + JSON.stringify(error.debugInfo));
             }
-    })
+		});
 });
 ```
 
@@ -121,13 +121,13 @@ OneNote.run(function (context) {
     return context.sync()
         .then(function() {
             console.log("page is created with title: " + newPage.title);
-        })
-        .catch(function(error) {
-            console.log("Error: " + error);
-            if (error instanceof OfficeExtension.Error) {
-                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-            }
-        })
+        });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
 });
 ```
 

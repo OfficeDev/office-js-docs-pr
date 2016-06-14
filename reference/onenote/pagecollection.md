@@ -78,13 +78,13 @@ OneNote.run(function (context) {
                     }
                 });
         });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
 ```
 
 ### getItem(index: number or string)
@@ -156,12 +156,12 @@ OneNote.run(function (context) {
                 console.log(page.id);
             });
         }); 
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
 ```
 

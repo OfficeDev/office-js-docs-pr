@@ -65,13 +65,13 @@ OneNote.run(function (context) {
         .then(function() {
             console.log("New section name is " + section.name);
         });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    }); 
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+}); 
 ```
 
 ### load(param: object)
@@ -107,13 +107,13 @@ OneNote.run(function (context) {
             console.log("Notebook ID: " + notebook.id);
             
         });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
 ```
 
 **name**
@@ -133,13 +133,13 @@ OneNote.run(function (context) {
             console.log("Notebook name: " + notebook.name);
             
         });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
 ```
 
 **sectionGroups**
@@ -159,13 +159,13 @@ OneNote.run(function (context) {
                 console.log("Section group name: " + sectionGroup.name);
             });
         });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
 ```
 
 **sections**
@@ -188,12 +188,12 @@ OneNote.run(function (context) {
                 console.log("Immediate child section name: " + childSection.name);
             });            
         });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });   
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});   
 ```
 

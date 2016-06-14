@@ -45,6 +45,37 @@ paragraphCollectionObject.getItem(index);
 #### Returns
 [Paragraph](paragraph.md)
 
+#### Examples
+```js
+OneNote.run(function (context) {
+
+	// Get the collection of pageContent items from the page.
+	var pageContents = context.application.getActivePage().contents;
+
+	// Get the first PageContent on the page, and then get its Outline's first paragraph.
+	var pageContent = pageContents.getItemAt(0);
+	var paragraphs = pageContent.outline.paragraphs;
+
+	var firstParagraph = paragraphs.getItemAt(0);
+
+	// Queue a command to load the type and richText.text property of this paragraph.
+	firstParagraph.load("id,type");
+
+
+	// Run the queued commands, and return a promise to indicate task completion.
+	return context.sync()
+		.then(function () {
+			// Write text from paragraph to console
+			console.log("First Paragraph found with id : " + firstParagraph.id + " and type " + firstParagraph.type);
+		});
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+}); 
+```
 ### getItemAt(index: number)
 Gets a paragraph on its position in the collection.
 
@@ -139,7 +170,7 @@ OneNote.run(function (context) {
 });
 ```
 
-**traverse collection of richText**
+**traverse for richText**
 ```js
 OneNote.run(function (context) {
 

@@ -68,13 +68,13 @@ OneNote.run(function (context) {
             }
                 
         });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
 ```
 
 ### getItem(index: number or string)
@@ -126,8 +126,6 @@ object.load(param);
 void
 ### Property access examples
 
-### Property access examples
-
 **items**
 ```
 OneNote.run(function (context) {
@@ -152,12 +150,12 @@ OneNote.run(function (context) {
             
             return context.sync();
         });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
 ```
 

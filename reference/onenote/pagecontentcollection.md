@@ -45,6 +45,30 @@ pageContentCollectionObject.getItem(index);
 #### Returns
 [PageContent](pagecontent.md)
 
+#### Examples
+```js
+OneNote.run(function (context) {
+
+	var page = context.application.getActivePage();
+	var pageContents = page.contents;
+	var firstPageContent = pageContents.getItemAt(0);
+	firstPageContent.load('type');
+
+	// Run the queued commands, and return a promise to indicate task completion.
+	return context.sync()
+		.then(function () {
+			console.log("The first page content item is of type: " + firstPageContent.type);
+			return context.sync();
+		});
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
 ### getItemAt(index: number)
 Gets a page content on its position in the collection.
 
@@ -120,16 +144,16 @@ OneNote.run(function (context) {
                 console.log("PageContent type: " + pageContent.type);
             });
         });
-    })                
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
+})                
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
 ```
 
-**traverse collection of outlines**
+**traverse for outlines**
 ```js
 OneNote.run(function (context) {
    var page = context.application.getActivePage();
@@ -154,7 +178,7 @@ OneNote.run(function (context) {
 					 console.log("An outline was found with id : " + outline.id);
 			  });
 			  return Promise.resolve(outlines);
-	   })
+	   });
 });
 ```
 

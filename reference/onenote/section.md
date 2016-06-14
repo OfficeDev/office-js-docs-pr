@@ -70,13 +70,13 @@ OneNote.run(function (context) {
             console.log("Page ID: " + page.id);
 
         });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
 ```
 
 
@@ -116,13 +116,13 @@ OneNote.run(function (context) {
             console.log("Section name: " + section.name);
             console.log("Section ID: " + section.id);
         });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
 ```
 
 ### load(param: object)
@@ -158,13 +158,13 @@ OneNote.run(function (context) {
         .then(function () {
             console.log("Section ID: " + section.id);
         });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
 ```
 
 **name and notebook**
@@ -183,16 +183,16 @@ OneNote.run(function (context) {
             console.log("Section name: " + section.name);
             console.log("Parent notebook name: " + section.notebook.name);
         });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
 ```
 
-**parentSectionGroupOrNull
+**parentSectionGroupOrNull**
 ```js
 OneNote.run(function (context) {
     // Queue a command to add a page to the current section.
