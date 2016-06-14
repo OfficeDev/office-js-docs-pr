@@ -1,6 +1,6 @@
-# AppointmentOrganizerCommandSurface
+# AppointmentOrganizerCommandSurface element
 
-This puts buttons on the ribbon for the form that's displayed to the organizer of the meeting. 
+Puts buttons on the ribbon for the form that's displayed to the organizer of the meeting. 
 
 ## Child elements
 |  Element |  Description  |
