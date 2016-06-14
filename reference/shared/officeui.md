@@ -1,8 +1,10 @@
 # Office UI Namespace (JavaScript API for Office)
 
-The Office UI Namespace, Office.context.ui, provides objects and methods used to create UI components for add-ins.
+The Office UI Namespace, Office.context.ui, provides objects and methods used to create UI components for add-ins such as displaying dialogs. 
 
-##### Requirements
+##Dialog API
+
+### Requirements
 
 |Host|Introduced in|Last changed in|
 |:---------------|:--------|:----------|
@@ -33,12 +35,12 @@ Runtime detection of the `DialogAPI` capability can be done with the following c
 	 } 
 ```
 
-## Methods
+### Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[displayDialogAsync()](#displayDialogAsync(startAddress: Url, options: Object, callback: function))|void|Displays a dialog to display or collect information from the user or to facilitate Web navigation.|
-|[messageParent()](#messageParent(messageObject: object))|void|Sends a message from a dialog to the parent add-in.|
+|[displayDialogAsync(startAddress: Url, options: Object, callback: function)](#displaydialogasync-startaddress-url-options-object-callback-function)|void|Displays a dialog to display or collect information from the user or to facilitate Web navigation.|
+|[messageParent(messageObject: object)](#messageparent-messageobject-object)]|void|Sends a message from a dialog to the parent add-in.|
 
 ## Method Details
 
