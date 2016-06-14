@@ -35,7 +35,7 @@ In the callback function passed to the  **refreshAsync** method, you can use the
 
 |**Property**|**Use to...**|
 |:-----|:-----|
-|[AsyncResult.value](../../reference/shared/asyncresult.value.md)|Access a [Settings](../../reference/shared/document.settings.md) object with the refreshed values.|
+|[AsyncResult.value](../../reference/shared/asyncresult.value.md)|Access a [Settings](../../reference/shared/settings.md) object with the refreshed values.|
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|Determine the success or failure of the operation.|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|Access an [Error](../../reference/shared/error.md) object that provides error information if the operation failed.|
 |[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
