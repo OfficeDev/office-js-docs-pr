@@ -139,7 +139,7 @@ OneNote.run(function (context) {
 });
 ```
 
-**traverse collection of richText**
+**traverse for richText**
 ```js
 OneNote.run(function (context) {
 

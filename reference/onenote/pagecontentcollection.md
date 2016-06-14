@@ -120,16 +120,16 @@ OneNote.run(function (context) {
                 console.log("PageContent type: " + pageContent.type);
             });
         });
-    })                
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
+})                
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
 ```
 
-**traverse collection of outlines**
+**traverse for outlines**
 ```js
 OneNote.run(function (context) {
    var page = context.application.getActivePage();
@@ -154,7 +154,7 @@ OneNote.run(function (context) {
 					 console.log("An outline was found with id : " + outline.id);
 			  });
 			  return Promise.resolve(outlines);
-	   })
+	   });
 });
 ```
 
