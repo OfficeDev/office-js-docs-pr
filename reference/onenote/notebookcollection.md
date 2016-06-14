@@ -127,7 +127,7 @@ void
 ### Property access examples
 
 **items**
-```
+```js
 OneNote.run(function (context) {
 
     // Get the notebooks that are open in the application instance and have the specified name.
