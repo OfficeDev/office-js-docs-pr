@@ -52,9 +52,10 @@ office.context.ui.displayDialogAsync(startAddress, options, callback);
 The following examples illustrate the use of the dialog API
 
 
-- **Simple use**: *[Office Add-in Dialog API Example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example/)*
+- **Simple use**: [Office Add-in Dialog API Example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example/)
 - **Authentication**: [Office Add-in Office 365 Client Authentication for AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth)
-- 
+
+ 
 ## Parameters
 
 | Parameter	   | Type	|Description|
