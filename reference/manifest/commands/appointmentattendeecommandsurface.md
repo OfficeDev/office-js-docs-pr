@@ -1,6 +1,6 @@
-# AppointmentAttendeeCommandSurface
+# AppointmentAttendeeCommandSurface element
 
-This puts buttons on the ribbon for the form that's displayed to the attendee of the meeting. 
+Puts buttons on the ribbon for the form that's displayed to the attendee of the meeting. 
 
 ## Child elements
 |  Element |  Description  |
