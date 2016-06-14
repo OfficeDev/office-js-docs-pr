@@ -1,6 +1,6 @@
 # Define add-in commands in your Outlook add-in manifest
 
-To support add-in commands, some additional elements have been added to the add-in manifest v1.1 within the  **VersionOverrides** element. When a manifest contains the **VersionOverrides** element, versions of Outlook that support add-in commands will use the information within that element to load the add-in. Earlier versions of Outlook that do not support add-in commands will ignore the element and continue to use the elements as described in [Outlook add-in manifests](../../outlook/manifests/manifests.md).
+To support add-in commands, some additional elements have been added to the add-in manifest v1.1 within the [VersionOverrides](../../../reference/manifest/commands/versionoverrides.md) element. When a manifest contains the **VersionOverrides** element, versions of Outlook that support add-in commands will use the information within that element to load the add-in. Earlier versions of Outlook that do not support add-in commands will ignore the element and continue to use the elements as described in [Outlook add-in manifests](../../outlook/manifests/manifests.md).
 
 When the client application recognizes the  **VersionOverrides** node, the add-in name appears in the ribbon, not in the read/compose pane. The add-in won't appear in both places.
  
