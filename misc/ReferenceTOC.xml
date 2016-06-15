@@ -591,7 +591,7 @@
       <Item text="TaskSelectionChanged event" url="shared/projectdocument.taskselectionchanged.event" FriendlyUrl="reference/common/projectdocumentprojectdocument.taskselectionchanged.event" Scope="project" SEODescription="Occurs when the task selection changes in the active project" />
       <Item text="ViewSelectionChanged event" url="shared/projectdocument.viewselectionchanged.event" FriendlyUrl="reference/common/projectdocumentprojectdocument.viewselectionchanged.event" Scope="project" SEODescription="Occurs when the active view changes in the active project." />
     </Item>
-    <Item text="Settings " url="shared/document.settings" Scope="Access, Excel, PowerPoint, Word">
+    <Item text="Settings " url="shared/settings" Scope="Access, Excel, PowerPoint, Word">
       <Item text="addHandlerAsync" url="shared/settings.addhandlerasync" FriendlyUrl="reference/common/settingssettings.addhandlerasync" Scope="excel" SEODescription="Adds an event handler for the settingsChanged event." />
       <Item text="get" url="shared/settings.get" FriendlyUrl="reference/common/settingssettings.get"   SEODescription="Retrieves the specified setting." />
       <Item text="refreshAsync" url="shared/settings.refreshasync" FriendlyUrl="reference/common/settingssettings.refreshasync"   SEODescription="Reads all settings persisted in the document and refreshes the add-in's copy of those settings held in memory." />
