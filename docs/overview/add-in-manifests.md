@@ -840,7 +840,7 @@ For recommendations for where to place your commands in the ribbon, see [Best pr
 |**Office host application**|**Tab values**|
 |:-----|:-----|
 |Excel|**TabHome**+<br/>**TabInsert**+<br/>**TabPageLayoutExcel**<br/>**TabFormulas**<br/>**TabData**+<br/>**TabReview**+<br/>**TabView**+<br/>**TabDeveloper**<br/>**TabAddIns**<br/>**TabPrintPreview**<br/>**TabBackgroundRemoval**|
-|Word|**TabHome**+<br/>**TabInsert**+<br/>**TabWordDesign**<br/>**TabPageLayoutWord**+<br/>**TabReferences**<br/>**TabMailings**<br/>**TabReviewWord**+<br/>**TabView**+<br/>**TabDeveloper**<br/>**TabAddIns**<br/>**TabBlogPost**<br/>**TabBlogInsert**<br/>**TabPrintPreview**<br/>**TabOutlining**<br/>**TabConflicts**<br/>**TabBackgroundRemoval**<br/>**TabBroadcastPresentation**|
+|Word|**TabHome**+<br/>**TabInsert**+<br/>**TabWordDesign**<br/>**TabPageLayoutWord**+<br/>**TabReferences**<br/>**TabMailings**<br/>**TabReviewWord**<br/>**TabView**+<br/>**TabDeveloper**<br/>**TabAddIns**<br/>**TabBlogPost**<br/>**TabBlogInsert**<br/>**TabPrintPreview**<br/>**TabOutlining**<br/>**TabConflicts**<br/>**TabBackgroundRemoval**<br/>**TabBroadcastPresentation**|
 |PowerPoint|**TabHome**+<br/>**TabInsert**+<br/>**TabDesign**+<br/>**TabTransitions**+<br/>**TabAnimations**+<br/>**TabSlideShow**<br/>**TabReview**<br/>**TabView**+<br/>**TabDeveloper**<br/>**TabAddIns**<br/>**TabPrintPreview**<br/>**TabMerge**<br/>**TabGrayscale**<br/>**TabBlackAndWhite**<br/>**TabBroadcastPresentation**<br/>**TabSlideMaster**<br/>**TabHandoutMaster**<br/>**TabNotesMaster**<br/>**TabBackgroundRemoval**<br/>**TabSlideMasterHome**|
 
 >+Tab exists in both Office for Windows Desktop and Office Online.
