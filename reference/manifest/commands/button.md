@@ -1,4 +1,4 @@
-#Button element
+#Button control
 
 A button performs a single action when the user selects it. It can either execute a function or show a task pane. Each button control must have an `id` unique to the manifest. 
 

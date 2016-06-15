@@ -9,7 +9,7 @@ A menu defines a static list of options. Each menu item either executes a functi
 |  [Label](#label)     | Yes |  The text for the button.         |
 |  [Supertip](./supertip.md)  | Yes |  The supertip for this button.    |
 |  [Icon](./icon.md)      | Yes |  An image for the button.         |
-|  [Items](#items)     | Yes |  Collection of Buttons to display within the menu |
+|  [Items](#items)     | Yes |  A collection of Buttons to display within the menu. |
 
 ## Label
 Required. The text for the button. The  **resid** attribute must be set to the value of the **id** attribute 
