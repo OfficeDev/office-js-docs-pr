@@ -1,7 +1,7 @@
 
 
 # Office.context property
-Gets the [Context](../../reference/shared/asyncresult.context.md) object that represents the runtime environment of the add-in and provides access to the top-level objects of the API, such as the [Document](../../reference/shared/document.md) and [Mailbox](http://msdn.microsoft.com/library/a3880d3b-8a09-4cf9-9274-f2682cb3b769%28Office.15%29.aspx) objects.
+Gets the [Context](../../reference/shared/context.md) object that represents the runtime environment of the add-in and provides access to the top-level objects of the API, such as the [Document](../../reference/shared/document.md) and [Mailbox](http://msdn.microsoft.com/library/a3880d3b-8a09-4cf9-9274-f2682cb3b769%28Office.15%29.aspx) objects.
 
 |||
 |:-----|:-----|
@@ -15,7 +15,7 @@ var myDocument = Office.context.document;
 
 ## Return Value
 
-A [Context](../../reference/shared/asyncresult.context.md) object.
+A [Context](../../reference/shared/context.md) object.
 
 
 ## Support details
