@@ -1,6 +1,6 @@
-# Resources Element
+# Resources element
 
-The **Resources** element contains icons, strings, and URLs for the [VersionOverrides](./versionoverrides.md) node. A manifest element specifies a resource by using the **Id** of the resource. This helps to keep the size of the manifest manageable, especially when resources have versions for different locales. An **Id** must be unique within the manifest and has a maximum of 32 characters.
+Contains icons, strings, and URLs for the [VersionOverrides](./versionoverrides.md) node. A manifest element specifies a resource by using the **Id** of the resource. This helps to keep the size of the manifest manageable, especially when resources have versions for different locales. An **Id** must be unique within the manifest and has a maximum of 32 characters.
 
 The  **Resources** node defines the following resources. Each resource can have one or more **Override** child elements to define a resource for specific locales.
 
@@ -10,8 +10,8 @@ The  **Resources** node defines the following resources. Each resource can have 
 |:-----|:-----|:-----|
 |  [Images](#images)            |  image   |  Provides the HTTPS URL to an image for an icon. |
 |  [Urls](#urls)                |  url     |  Provides an HTTPS URL location. |
-|  [ShotStrings](#shortstrings) |  string  |  The text for Label and Title elements. |
-|  [LongStrings](#longstrings)  |  string  | The text for Description attributes. |
+|  [ShotStrings](#shortstrings) |  string  |  The text for **Label** and **Title** elements. |
+|  [LongStrings](#longstrings)  |  string  | The text for **Description** attributes. |
 
 ## Images
 Provides the HTTPS URL to an image for an icon. Each icon must have three  **Image** elements, one for each of the three mandatory sizes:

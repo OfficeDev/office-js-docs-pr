@@ -13,7 +13,7 @@ The default tab is limited to one group per add-in.
 Required. The pre-existing tab to use. Currently, the  **id** attribute can only be "TabDefault".
 
 ## Group
-A group of user interface extension points in a tab. A group can have up to six controls. The  **id** attribute is required and each **id** must be unique within the manifest. It is a string with a maximum of 125 characters. See [Group element](./group.md).
+A group of UI extension points in a tab. A group can have up to six controls. The  **id** attribute is required and each **id** must be unique within the manifest. It is a string with a maximum of 125 characters. See [Group element](./group.md).
 
 ## OfficeTab example
 ```xml
