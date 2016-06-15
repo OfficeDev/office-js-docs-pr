@@ -23,25 +23,25 @@ For more details around the Office.js CDN, including how versioning and backward
  **Applies to:** All add-in types
 
 
-Office.js provides an initialization even which gets fired when the API is fully loaded and ready to begin interacting with the user. You can use the **initialize** event handler to implement common add-in initialization scenarios, such as prompting the user to select some cells in Excel, and then inserting a chart initialized with those selected values. You can also use the initialize event handler to initialize other custom logic for your add-in, such as establishing bindings, prompting for default add-in settings values, and so on.
+Office.js provides an initialization event which gets fired when the API is fully loaded and ready to begin interacting with the user. You can use the **initialize** event handler to implement common add-in initialization scenarios, such as prompting the user to select some cells in Excel, and then inserting a chart initialized with those selected values. You can also use the initialize event handler to initialize other custom logic for your add-in, such as establishing bindings, prompting for default add-in settings values, and so on.
 
  At a minimum, the initialize event would look like the follow example:     
 
 ```js
 Office.initialize = function () { };
 ```
-If you are using additional JavaScript frameworks that include their own initialization handler, these should be placed within the Office.initialize event. Using [JQuery](https://jquery.com) as an example, the `$(document).ready()` function would be referenced as follows:
+If you are using additional JavaScript frameworks that include their own initialization handler or tests, these should be placed within the Office.initialize event. For example, [JQuery's](https://jquery.com) `$(document).ready()` function would be referenced as follows:
 
 ```js
 Office.initialize = function () {
     // Office is ready
     $(document).ready(function () {        
-        // JQuery is ready
+        // The document is ready
     });
   };
 ```
-All pages within an Office Add-ins are required to implement an event handler for the initialize event.
-If you fail to include an  **Office.initialize** event handler, your add-in may raise an error when it starts. Also, if a user attempts to use your add-in with an Office Online web client, such as Excel Online, PowerPoint Online, or Outlook Web App, it will fail to run.
+All pages within an Office Add-ins are required to assign an event handler to the initialize event, **Office.initialize**.
+If you fail to assign an event handler, your add-in may raise an error when it starts. Also, if a user attempts to use your add-in with an Office Online web client, such as Excel Online, PowerPoint Online, or Outlook Web App, it will fail to run. If you don't need any initialization code, then the body of the function you assign to **Office.initialize** can be empty, as it is in the first example above.
 
 For more detail about the sequence of events when an add-in is initialized, see [Loading the DOM and runtime environment](../../docs/develop/loading-the-dom-and-runtime-environment.md).
 
@@ -67,7 +67,7 @@ When an add-in is initialized, it has many different objects that it can interac
 
 For example, in task pane or content add-ins, you can use the [document](../../reference/shared/office.context.document.md) property of the **Context** object to access the properties and methods of the **Document** object to interact with the content of Word documents, Excel worksheets, or Project schedules. Similarly, in Outlook add-ins, you can use the [mailbox](../../reference/outlook/Office.context.mailbox.md) property of the **Context** object to access the properties and methods of the **Mailbox** object to interact with the message, meeting request, or appointment content.
 
-The  **Context** object also provides access to the [contentLanguage](../../reference/shared/office.context.contentlanguage.md) and [displayLanguage](../../reference/shared/office.context.displaylanguage.md) properties that let you determine the locale (language) used in the document or item, or by the host application. And, the [roamingSettings](../../reference/outlook/Office.context.md) property that lets you access the members of the [RoamingSettings](../../reference/outlook/RoamingSettings.md) object.
+The  **Context** object also provides access to the [contentLanguage](../../reference/shared/office.context.contentlanguage.md) and [displayLanguage](../../reference/shared/office.context.displaylanguage.md) properties that let you determine the locale (language) used in the document or item, or by the host application. And, the [roamingSettings](../../reference/outlook/Office.context.md) property that lets you access the members of the [RoamingSettings](../../reference/outlook/RoamingSettings.md) object. Finally, the **Context** object provides a [ui](../../reference/shared/officeui.md) property that enables your add-in to launch pop-up dialogs.
 
 
 ## Document object

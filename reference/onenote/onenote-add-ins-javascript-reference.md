@@ -4,7 +4,7 @@
 
 The links below show the high level OneNote objects available in the API. Each object page link contains a description of the properties, relationships, and methods available on the object. Explore the links below to learn more. 
 	
-- [Application](application.md): The top-level object used to access all globally addressable OneNote objects, such as notebooks, the active notebook, and the active section.
+- [Application](application.md): The top-level object used to access all globally addressable OneNote objects, such as the active notebook, and the active section.
 
 - [Notebook](notebook.md): A notebook. Notebooks contain section groups and sections.
 
@@ -35,6 +35,16 @@ The links below show the high level OneNote objects available in the API. Each o
   - [ParagraphCollection](paragraphcollection.md): A collection of Paragraph objects in an Outline.
 
 - [RichText](richtext.md): A RichText object.
+
+- [Table](table.md): A container for TableRow objects.
+
+- [TableRow](tablerow.md): A container for TableCell objects.
+
+  - [TableRowCollection](tablerowcollection.md): A collection of TableRow objects in a Table.
+ 
+- [TableCell](tablecell.md): A container for Paragraph objects.
+
+  - [TableCellCollection](tablecellcollection.md): A collection of TableCell objects in a TableRow.
 		
 ## Additional resources
 

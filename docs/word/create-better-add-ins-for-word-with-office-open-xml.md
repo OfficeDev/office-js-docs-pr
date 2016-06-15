@@ -335,7 +335,21 @@ Since document.xml is the primary document part where you place your content, le
 
 ![Office Open XML elements in a Word document.](../../images/off15app_CreateWdAppUsingOOXML_fig14.png)
     
- >**Tip**  In markup you create, you might see another attribute in several tags that includes the characters **w:rsid**, which you don't see in the examples used in this topic. These are revision identifiers. They're used in Word for the Combine Documents feature and they're on by default. You'll never need them in markup you're inserting with your add-in and turning them off makes for much cleaner markup. You can easily remove existing RSID tags or disable the feature (as described in the following procedure) so that they're not added to your markup for new content.Be aware that if you use the co-authoring capabilities in Word (such as the ability to simultaneously edit documents with others), you should enable the feature again when finished generating the markup for your add-in.To turn off RSID attributes in Word for documents you create going forward, do the following: To remove RSID tags from an existing document, try the following shortcut with the document open in Office Open XML:
+**Tip:**  In markup you create, you might see another attribute in several tags that includes the characters **w:rsid**, which you don't see in the examples used in this topic. These are revision identifiers. They're used in Word for the Combine Documents feature and they're on by default. You'll never need them in markup you're inserting with your add-in and turning them off makes for much cleaner markup. You can easily remove existing RSID tags or disable the feature (as described in the following procedure) so that they're not added to your markup for new content.
+ 
+Be aware that if you use the co-authoring capabilities in Word (such as the ability to simultaneously edit documents with others), you should enable the feature again when finished generating the markup for your add-in.
+   
+To turn off RSID attributes in Word for documents you create going forward, do the following: 
+
+1. In Word 2013, choose **File** and then choose **Options**.
+2. In the Word Options dialog box, choose **Trust Center** and then choose **Trust Center Settings**.
+3. In the Trust Center dialog box, choose **Privacy Options** and then disable the setting **Store Random Number to Improve Combine Accuracy**.
+
+To remove RSID tags from an existing document, try the following shortcut with the document open in Office Open XML:
+
+
+1. With your insertion point in the main body of the document, press **Ctrl+Home** to go to the top of the document.
+2. On the keyboard, press **Spacebar**, **Delete**, **Spacebar**. Then, save the document.
 
 After removing the majority of the markup from this package, we're left with the minimal markup that needs to be inserted for the sample, as shown in the preceding section.
 

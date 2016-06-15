@@ -8,7 +8,7 @@ _Note: This API is in preview._
 ## Properties
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|code|string|Gets a value that indicates the type of error. The value can be "AccessDenied", "GeneralException", or "ActivityLimitReached". |
+|code|string|Gets a value that indicates the type of error. The value can be "InvalidArgument", "GeneralException", "ItemNotFound" or "UnsupportedOperationForObjectType". |
 |debugInfo|string|Gets a value that indicates what happened when the error occurred. This value is only intended for use during development / debugging.  |
 |message |string| Gets a localized human readable string that corresponds to the error code.|
 |name |string| Gets a value that is always "OfficeExtension.Error". |

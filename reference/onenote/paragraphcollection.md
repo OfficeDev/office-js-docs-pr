@@ -1,16 +1,17 @@
 # ParagraphCollection Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_
-_Note: This API is in preview_
+_Applies to: OneNote Online_  
+_Note: This API is in preview_  
+
 
 Represents a collection of Paragraph objects.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|count|int|Returns the number of paragraphs in the page. Read-only.|
-|items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.|
+| Property	   | Type	|Description|Feedback|
+|:---------------|:--------|:----------|:-------|
+|count|int|Returns the number of paragraphs in the page. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraphCollection-count)|
+|items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraphCollection-items)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -20,11 +21,11 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[getItem(index: number or string)](#getitemindex-number-or-string)|[Paragraph](paragraph.md)|Gets a Paragraph object by ID or by its index in the collection. Read-only.|
-|[getItemAt(index: number)](#getitematindex-number)|[Paragraph](paragraph.md)|Gets a paragraph on its position in the collection.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|[getItem(index: number or string)](#getitemindex-number-or-string)|[Paragraph](paragraph.md)|Gets a Paragraph object by ID or by its index in the collection. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraphCollection-getItem)|
+|[getItemAt(index: number)](#getitematindex-number)|[Paragraph](paragraph.md)|Gets a paragraph on its position in the collection.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraphCollection-getItemAt)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraphCollection-load)|
 
 ## Method Details
 
@@ -61,6 +62,37 @@ paragraphCollectionObject.getItemAt(index);
 #### Returns
 [Paragraph](paragraph.md)
 
+#### Examples
+```js
+OneNote.run(function (context) {
+
+	// Get the collection of pageContent items from the page.
+	var pageContents = context.application.getActivePage().contents;
+
+	// Get the first PageContent on the page, and then get its Outline's first paragraph.
+	var pageContent = pageContents.getItemAt(0);
+	var paragraphs = pageContent.outline.paragraphs;
+
+	var firstParagraph = paragraphs.getItemAt(0);
+
+	// Queue a command to load the type and richText.text property of this paragraph.
+	firstParagraph.load("id,type");
+
+
+	// Run the queued commands, and return a promise to indicate task completion.
+	return context.sync()
+		.then(function () {
+			// Write text from paragraph to console
+			console.log("First Paragraph found with id : " + firstParagraph.id + " and type " + firstParagraph.type);
+		});
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+}); 
+```
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -83,34 +115,87 @@ void
 OneNote.run(function (context) {
 
     // Get the collection of pageContent items from the page.
-    var pageContents = context.application.getActivePage().getContents();
-    
-    // Queue a command to load the outline property of each pageContent.
-    pageContents.load("outline");
-        
-    // Get the first PageContent on the page, and then get its Outline.
-    var pageContent = pageContents._GetItem(0);
+    var pageContents = context.application.getActivePage().contents;
+
+    // Get the first PageContent on the page, and then get its Outline's first paragraph.
+    var pageContent = pageContents.getItem(0);
     var paragraphs = pageContent.outline.paragraphs;
-            
-    // Queue a command to load the type and richText.text property of each paragraph.
-    paragraphs.load("type,richText/text");
-            
+	
+    // Queue a command to load the id and type of each paragraph.
+    paragraphs.load("id,type");
+
     // Run the queued commands, and return a promise to indicate task completion.
     return context.sync()
         .then(function () {
-            
-            // Write the text.                  
-            $.each(paragraphs.items, function(index, paragraph) {
-                if (paragraph.type === 'RichText') { 
-                    console.log("RichText text: " + paragraph.richText.text);
-                }
-            });
-        })                
-        .catch(function(error) {
-            console.log("Error: " + error);
-            if (error instanceof OfficeExtension.Error) {
-                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-            }
-        }); 
-    });
+			var firstParagraph = paragraphs.items[0];
+            // Write text from first paragraph to console
+			console.log("First Paragraph found with id : " + firstParagraph.id + " and type " + firstParagraph.type);
+        });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
 ```
+
+**traverse for richText**
+```js
+OneNote.run(function (context) {
+
+    // Get the collection of pageContent items from the page.
+    var pageContents = context.application.getActivePage().contents;
+
+    // Get the first PageContent on the page, and then get its outline's paragraphs.
+    var outlinePageContents = [];
+    var paragraphs = [];
+	var richTextParagraphs = [];
+    // Queue a command to load the id and type of each page content in the outline.
+    pageContents.load("id,type");
+
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function () {
+			// Load all page contents of type Outline
+			$.each(pageContents.items, function(index, pageContent) {
+				if(pageContent.type == 'Outline')
+				{
+					pageContent.load('outline,outline/paragraphs,outline/paragraphs/type');
+					outlinePageContents.push(pageContent);
+				}
+            });
+			return context.sync();
+		})
+		.then(function () {
+			// Load all rich text paragraphs across outlines
+			$.each(outlinePageContents, function(index, outlinePageContent) {
+				var outline = outlinePageContent.outline;
+				paragraphs = paragraphs.concat(outline.paragraphs.items);
+            });
+			$.each(paragraphs, function(index, paragraph) {
+				if(paragraph.type == 'RichText')
+				{
+					richTextParagraphs.push(paragraph);
+					paragraph.load("id,richText/text");
+				}
+			});
+			return context.sync();
+		})
+		.then(function () {
+			// Display all rich text paragraphs to the console
+			$.each(richTextParagraphs, function(index, richTextParagraph) {
+				var richText = richTextParagraph.richText;
+				console.log("Paragraph found with richtext content : " + richText.text + " and richtext id : " + richText.id);
+            });
+			return context.sync();
+		});
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
