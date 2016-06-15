@@ -1,26 +1,26 @@
 # Group element
-A group of user interface extension points in a tab.  On custom tabs, the add-in can create up to 10 groups. Each group is limited to 6 controls, regardless of which tab it appears on. Add-ins are limited to one custom tab.
+Defines a group of UI extension points in a tab.  On custom tabs, the add-in can create up to 10 groups. Each group is limited to 6 controls, regardless of which tab it appears on. Add-ins are limited to one custom tab.
 
 ## Attributes
 
 |  Attribute  |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  [id](#xsitype)  |  Yes  | Unique ID for the group.|
+|  [id](#xsitype)  |  Yes  | A unique ID for the group.|
 
 ## Child elements
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  [Label](#label)      | Yes |  The label for the CustomTab or a Group  |
-|  [Control](#control)    | Yes |  Collection of one or more Control objects  |
+|  [Label](#label)      | Yes |  The label for the CustomTab or a group.  |
+|  [Control](#control)    | Yes |  Collection of one or more Control objects.  |
 
 ## id attribute
-Required. Unique identifier for the Group. It is a string with a maximum of 125 characters. This must be unique within the manifest or the Group will fail to render.
+Required. Unique identifier for the group. It is a string with a maximum of 125 characters. This must be unique within the manifest or the group will fail to render.
 
 ## Label 
 Required. The label of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the [ShortStrings](./resources.md#shortstrings) element in the [Resources](./resources.md) element.
 
 ## Control
-A group requires at least one control. Currently, only buttons and menus are supported. See the following [Button controls](#button-controls) and[Menu (dropdown button) controls](#menu-dropdown-button-controls) sections for more information.
+A group requires at least one control. Currently, only [buttons](./button.md) and [menus](./menu.md) are supported. 
 
 ```xml
 <Group id="msgreadCustomTab.grp1">

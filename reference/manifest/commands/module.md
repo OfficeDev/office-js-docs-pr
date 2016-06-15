@@ -1,6 +1,6 @@
 # Module
 
-This puts buttons on the ribbon for the module extension. 
+Puts buttons on the ribbon for the module extension. 
 
 ## Child elements
 |  Element |  Description  |

@@ -1,4 +1,4 @@
-# AppointmentOrganizerCommandSurface element
+# AppointmentOrganizerCommandSurface
 
 Puts buttons on the ribbon for the form that's displayed to the organizer of the meeting. 
 
