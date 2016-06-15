@@ -420,7 +420,7 @@
       <Item text="AsyncResult.status" url="shared/asyncresult.status" SEODescription="Gets the status of the asynchronous operation." />
       <Item text="AsyncResult.value" url="shared/asyncresult.value" SEODescription="Gets the payload or content of this asynchronous operation, if any." />
     </Item>
-    <Item text="Context " url="shared/context" FriendlyUrl="reference/common/officeoffice.context" SEODescription="Represents the runtime environment of the add-in and provides access to key objects of the API.">
+    <Item text="Context " url="shared/context" SEODescription="Represents the runtime environment of the add-in and provides access to key objects of the API." >
       <Item text ="office.context" url="shared/office.context" FriendlyUrl="reference/common/officeoffice.context" SEODescription="Gets the Context object that represents the runtime environment of the API." />
 	  <Item text="office.context.commerceAllowed " url="shared/office.context.commerceallowed" FriendlyUrl="reference/common/contextoffice.context.commerceallowed"  SEODescription="Gets whether the add-in is running on a platform that allows links to external payment systems." />
       <Item text="office.context.contentLanguage" url="shared/office.context.contentlanguage" SEODescription="Gets the locale (language) specified by the user for editing the document or item." />
