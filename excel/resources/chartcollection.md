@@ -52,11 +52,15 @@ Add a chart of `chartType` "ColumnClustered" on worksheet "Charts" with `sourceD
 ```js
 Excel.run(function (ctx) { 
 	var sheetName = "Sheet1";
-	var sourceData = sheetName + "!" + "A1:B4";
-	var chart = ctx.workbook.worksheets.getItem(sheetName).charts.add("ColumnClustered", sourceData, "auto");
-	return ctx.sync().then(function() {
-			console.log("New Chart Added");
-	});
+	var selector = sheetName + "!" + "A1:B4";
+	 var sourceData = ctx.workbook.worksheets.getItem(sheetName).getRange(selector);
+                    range.load("range/format");
+                    return ctx.sync().then(function () {
+					var chart = ctx.workbook.worksheets.getItem(sheetName).charts.add("ColumnClustered", sourceData, "auto");
+					return ctx.sync().then(function() {
+						console.log("New Chart Added");
+				});
+			});
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {
