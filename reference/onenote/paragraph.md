@@ -299,7 +299,8 @@ OneNote.run(function (context) {
 		console.log("Debug info: " + JSON.stringify(error.debugInfo));
 	}
 }); 
-```### Property access examples
+```
+### Property access examples
 
 **id and type**
 ```js

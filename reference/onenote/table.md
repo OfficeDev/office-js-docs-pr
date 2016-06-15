@@ -534,7 +534,7 @@ OneNote.run(function(ctx) {
 });
 ```
 
-** paragraph, rows **
+**paragraph, rows**
 ```js
 OneNote.run(function(ctx) {
 	var app = ctx.application;
