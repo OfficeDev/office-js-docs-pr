@@ -1,23 +1,24 @@
 # RichText Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_
-_Note: This API is in preview_
+_Applies to: OneNote Online_  
+_Note: This API is in preview_  
+
 
 Represents a RichText object in a Paragraph.
 
 ## Properties
 
-| Property	   | Type	|Description
+| Property	   | Type	|Description|Feedback|
 |:---------------|:--------|:----------|:-------|
-|id|string|Gets the ID of the RichText object. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-id)|
-|text|string|Gets the text content of the RichText object. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-text)|
+|id|string|Gets the ID of the RichText object. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-id)|
+|text|string|Gets the text content of the RichText object. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-text)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description|
+| Relationship | Type	|Description| Feedback|
 |:---------------|:--------|:----------|:-------|
-|paragraph|[Paragraph](paragraph.md)|Gets the Paragraph object that contains the RichText object. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-paragraph)|
+|paragraph|[Paragraph](paragraph.md)|Gets the Paragraph object that contains the RichText object. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-paragraph)|
 
 ## Methods
 

@@ -1,24 +1,25 @@
 # Page Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_
-_Note: This API is in preview_
+_Applies to: OneNote Online_  
+_Note: This API is in preview_  
+
 
 Represents a OneNote page.
 
 ## Properties
 
-| Property	   | Type	|Description
+| Property	   | Type	|Description|Feedback|
 |:---------------|:--------|:----------|:-------|
-|clientUrl|string|The client url of the page. Read only Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-clientUrl)|
-|id|string|Gets the ID of the page. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-id)|
-|pageLevel|int|Gets or sets the indentation level of the page.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-pageLevel)|
-|title|string|Gets or sets the title of the page.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-title)|
+|clientUrl|string|The client url of the page. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-clientUrl)|
+|id|string|Gets the ID of the page. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-id)|
+|pageLevel|int|Gets or sets the indentation level of the page.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-pageLevel)|
+|title|string|Gets or sets the title of the page.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-title)|
 
 ## Relationships
-| Relationship | Type	|Description|
+| Relationship | Type	|Description| Feedback|
 |:---------------|:--------|:----------|:-------|
-|contents|[PageContentCollection](pagecontentcollection.md)|The collection of PageContent objects on the page. Read only Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-contents)|
-|parentSection|[Section](section.md)|Gets the section that contains the page. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-parentSection)|
+|contents|[PageContentCollection](pagecontentcollection.md)|The collection of PageContent objects on the page. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-contents)|
+|parentSection|[Section](section.md)|Gets the section that contains the page. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-parentSection)|
 
 ## Methods
 
