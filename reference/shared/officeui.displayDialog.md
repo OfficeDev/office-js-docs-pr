@@ -93,7 +93,8 @@ In the callback function passed to the  **displayDialogAsync** method, you can u
 
 
 ## Remarks
-2.	Dialogs can only navigate to secured (TLS) sites Dialogs must initially open to a site on the add-in manifest's App Domains list
+2.	Dialogs can only display and navigate to secured (**TLS/HTTPS**) sites 
+3.	Dialogs must initially open to a site on the add-in manifest's App Domains list
 2.	Any page calling **office.context.ui.messageParent** must be on the same domain as the parent/opener page 
 3.	An Office add-in may have only 1 dialog open at any time 
 3.	Every dialog can be moved and resized by the user
