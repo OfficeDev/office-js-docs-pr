@@ -8,9 +8,9 @@ Represents a collection of Paragraph objects.
 ## Properties
 
 | Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|count|int|Returns the number of paragraphs in the page. Read-only.|
-|items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.|
+|:---------------|:--------|:----------|:-------|
+|count|int|Returns the number of paragraphs in the page. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraphCollection-count)|
+|items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraphCollection-items)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -20,11 +20,11 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[getItem(index: number or string)](#getitemindex-number-or-string)|[Paragraph](paragraph.md)|Gets a Paragraph object by ID or by its index in the collection. Read-only.|
-|[getItemAt(index: number)](#getitematindex-number)|[Paragraph](paragraph.md)|Gets a paragraph on its position in the collection.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|[getItem(index: number or string)](#getitemindex-number-or-string)|[Paragraph](paragraph.md)|Gets a Paragraph object by ID or by its index in the collection. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraphCollection-getItem)|
+|[getItemAt(index: number)](#getitematindex-number)|[Paragraph](paragraph.md)|Gets a paragraph on its position in the collection.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraphCollection-getItemAt)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraphCollection-load)|
 
 ## Method Details
 

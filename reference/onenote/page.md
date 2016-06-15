@@ -8,25 +8,25 @@ Represents a OneNote page.
 ## Properties
 
 | Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|clientUrl|string|The client url of the page. Read only Read-only.|
-|id|string|Gets the ID of the page. Read-only.|
-|pageLevel|int|Gets or sets the indentation level of the page.|
-|title|string|Gets or sets the title of the page.|
+|:---------------|:--------|:----------|:-------|
+|clientUrl|string|The client url of the page. Read only Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-clientUrl)|
+|id|string|Gets the ID of the page. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-id)|
+|pageLevel|int|Gets or sets the indentation level of the page.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-pageLevel)|
+|title|string|Gets or sets the title of the page.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-title)|
 
 ## Relationships
 | Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|contents|[PageContentCollection](pagecontentcollection.md)|The collection of PageContent objects on the page. Read only Read-only.|
-|parentSection|[Section](section.md)|Gets the section that contains the page. Read-only.|
+|:---------------|:--------|:----------|:-------|
+|contents|[PageContentCollection](pagecontentcollection.md)|The collection of PageContent objects on the page. Read only Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-contents)|
+|parentSection|[Section](section.md)|Gets the section that contains the page. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-parentSection)|
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[addOutline(left: double, top: double, html: String)](#addoutlineleft-double-top-double-html-string)|[Outline](outline.md)|Adds an Outline to the page at the specified position.|
-|[insertPageAsSibling(location: string, title: string)](#insertpageassiblinglocation-string-title-string)|[Page](page.md)|Inserts a new page before or after the current page.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|[addOutline(left: double, top: double, html: String)](#addoutlineleft-double-top-double-html-string)|[Outline](outline.md)|Adds an Outline to the page at the specified position.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-addOutline)|
+|[insertPageAsSibling(location: string, title: string)](#insertpageassiblinglocation-string-title-string)|[Page](page.md)|Inserts a new page before or after the current page.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-insertPageAsSibling)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-load)|
 
 ## Method Details
 

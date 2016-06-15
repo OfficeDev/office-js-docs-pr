@@ -8,27 +8,27 @@ Represents an Image. An Image can be a direct child of a PageContent object or a
 ## Properties
 
 | Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|description|string|Gets or sets the description of the Image.|
-|height|double|Gets or sets the height of the Image layout.|
-|hyperlink|string|Gets or sets the hyperlink of the Image.|
-|id|string|Gets the ID of the Image object. Read-only.|
-|width|double|Gets or sets the width of the Image layout.|
+|:---------------|:--------|:----------|:-------|
+|description|string|Gets or sets the description of the Image.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-description)|
+|height|double|Gets or sets the height of the Image layout.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-height)|
+|hyperlink|string|Gets or sets the hyperlink of the Image.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-hyperlink)|
+|id|string|Gets the ID of the Image object. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-id)|
+|width|double|Gets or sets the width of the Image layout.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-width)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|pageContent|[PageContent](pagecontent.md)|Gets the PageContent object that contains the Image. Returns null if the Image is not a direct child of a PageContent. This object defines the position of the Image on the page. Read-only.|
-|paragraph|[Paragraph](paragraph.md)|Gets the Paragraph object that contains the Image. Returns null if the Image is not a direct child of a Paragraph. Read-only.|
+|:---------------|:--------|:----------|:-------|
+|pageContent|[PageContent](pagecontent.md)|Gets the PageContent object that contains the Image. Returns null if the Image is not a direct child of a PageContent. This object defines the position of the Image on the page. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-pageContent)|
+|paragraph|[Paragraph](paragraph.md)|Gets the Paragraph object that contains the Image. Returns null if the Image is not a direct child of a Paragraph. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-paragraph)|
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[getBase64Image()](#getbase64image)|string|Gets the base64-encoded binary representation of the Image.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|[getBase64Image()](#getbase64image)|string|Gets the base64-encoded binary representation of the Image.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-getBase64Image)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-load)|
 
 ## Method Details
 

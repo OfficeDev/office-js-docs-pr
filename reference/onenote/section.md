@@ -8,28 +8,28 @@ Represents a OneNote section. Sections can contain pages.
 ## Properties
 
 | Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|clientUrl|string|The client url of the section. Read only Read-only.|
-|id|string|Gets the ID of the section. Read-only.|
-|name|string|Gets the name of the section. Read-only.|
+|:---------------|:--------|:----------|:-------|
+|clientUrl|string|The client url of the section. Read only Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-clientUrl)|
+|id|string|Gets the ID of the section. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-id)|
+|name|string|Gets the name of the section. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-name)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|notebook|[Notebook](notebook.md)|Gets the notebook that contains the section. Read-only.|
-|pages|[PageCollection](pagecollection.md)|The collection of pages in the section. Read only Read-only.|
-|parentSectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section. Throws ItemNotFound if the section is a direct child of the notebook. Read-only.|
-|parentSectionGroupOrNull|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section. Returns null if the section is a direct child of the notebook. Read-only.|
+|:---------------|:--------|:----------|:-------|
+|notebook|[Notebook](notebook.md)|Gets the notebook that contains the section. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-notebook)|
+|pages|[PageCollection](pagecollection.md)|The collection of pages in the section. Read only Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-pages)|
+|parentSectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section. Throws ItemNotFound if the section is a direct child of the notebook. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-parentSectionGroup)|
+|parentSectionGroupOrNull|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section. Returns null if the section is a direct child of the notebook. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-parentSectionGroupOrNull)|
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[addPage(title: string)](#addpagetitle-string)|[Page](page.md)|Adds a new page to the end of the section.|
-|[insertSectionAsSibling(location: string, title: string)](#insertsectionassiblinglocation-string-title-string)|[Section](section.md)|Inserts a new section before or after the current section.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|[addPage(title: string)](#addpagetitle-string)|[Page](page.md)|Adds a new page to the end of the section.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-addPage)|
+|[insertSectionAsSibling(location: string, title: string)](#insertsectionassiblinglocation-string-title-string)|[Section](section.md)|Inserts a new section before or after the current section.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-insertSectionAsSibling)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-load)|
 
 ## Method Details
 
