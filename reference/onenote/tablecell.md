@@ -8,26 +8,26 @@ Represents a cell in a OneNote table.
 ## Properties
 
 | Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|cellIndex|int|Gets the index of the cell in its row. Read-only.|
-|id|string|Gets the ID of the cell. Read-only.|
-|rowIndex|int|Gets the index of the cell's row in the table. Read-only.|
+|:---------------|:--------|:----------|:-------|
+|cellIndex|int|Gets the index of the cell in its row. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-cellIndex)|
+|id|string|Gets the ID of the cell. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-id)|
+|rowIndex|int|Gets the index of the cell's row in the table. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-rowIndex)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the collection of Paragraph objects in the TableCell. Read-only.|
-|parentRow|[TableRow](tablerow.md)|Gets the parent row of the cell. Read-only.|
-|parentTable|[Table](table.md)|Gets the parent table of the cell. Read-only.|
+|:---------------|:--------|:----------|:-------|
+|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the collection of Paragraph objects in the TableCell. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-paragraphs)|
+|parentRow|[TableRow](tablerow.md)|Gets the parent row of the cell. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-parentRow)|
+|parentTable|[Table](table.md)|Gets the parent table of the cell. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-parentTable)|
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[appendHtml(html: string)](#appendhtmlhtml-string)|void|Adds the specified HTML to the bottom of the TableCell.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|[appendHtml(html: string)](#appendhtmlhtml-string)|void|Adds the specified HTML to the bottom of the TableCell.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-appendHtml)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-load)|
 
 ## Method Details
 

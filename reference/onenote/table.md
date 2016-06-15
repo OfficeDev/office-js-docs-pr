@@ -8,33 +8,33 @@ Represents a table in a OneNote page.
 ## Properties
 
 | Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|columnCount|int|Gets the number of columns in the table. Read-only.|
-|id|string|Gets the ID of the table. Read-only.|
-|rowCount|int|Gets the number of rows in the table. Read-only.|
+|:---------------|:--------|:----------|:-------|
+|columnCount|int|Gets the number of columns in the table. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-columnCount)|
+|id|string|Gets the ID of the table. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-id)|
+|rowCount|int|Gets the number of rows in the table. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-rowCount)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|paragraph|[Paragraph](paragraph.md)|Gets the Paragraph object that contains the Table object. Read-only.|
-|rows|[TableRowCollection](tablerowcollection.md)|Gets all of the table rows. Read-only.|
+|:---------------|:--------|:----------|:-------|
+|paragraph|[Paragraph](paragraph.md)|Gets the Paragraph object that contains the Table object. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-paragraph)|
+|rows|[TableRowCollection](tablerowcollection.md)|Gets all of the table rows. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-rows)|
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[appendColumn(values: string[])](#appendcolumnvalues-string)|void|Adds a column to the end of the table. Values, if specified, are set in the new column. Otherwise the column is empty.|
-|[appendRow(values: string[])](#appendrowvalues-string)|[TableRow](tablerow.md)|Adds a row to the end of the table. Values, if specified, are set in the new row. Otherwise the row is empty.|
-|[deleteColumns(columnIndex: number, columnCount: number)](#deletecolumnscolumnindex-number-columncount-number)|void|Deletes a contiguous run of columns.|
-|[deleteRows(rowIndex: number, rowCount: number)](#deleterowsrowindex-number-rowcount-number)|void|Deletes a contiguous run of rows.|
-|[getCell(rowIndex: number, cellIndex: number)](#getcellrowindex-number-cellindex-number)|[TableCell](tablecell.md)|Gets the table cell at a specified row and column.|
-|[hideBorder()](#hideborder)|void|Hides the table's border|
-|[insertColumn(index: number, values: string[])](#insertcolumnindex-number-values-string)|void|Inserts a column at the given index in the table. Values, if specified, are set in the new column. Otherwise the column is empty.|
-|[insertRow(index: number, values: string[])](#insertrowindex-number-values-string)|[TableRow](tablerow.md)|Inserts a row at the given index in the table. Values, if specified, are set in the new row. Otherwise the row is empty.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
-|[showBorder()](#showborder)|void|Make's the table's border visible|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|[appendColumn(values: string[])](#appendcolumnvalues-string)|void|Adds a column to the end of the table. Values, if specified, are set in the new column. Otherwise the column is empty.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-appendColumn)|
+|[appendRow(values: string[])](#appendrowvalues-string)|[TableRow](tablerow.md)|Adds a row to the end of the table. Values, if specified, are set in the new row. Otherwise the row is empty.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-appendRow)|
+|[deleteColumns(columnIndex: number, columnCount: number)](#deletecolumnscolumnindex-number-columncount-number)|void|Deletes a contiguous run of columns.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-deleteColumns)|
+|[deleteRows(rowIndex: number, rowCount: number)](#deleterowsrowindex-number-rowcount-number)|void|Deletes a contiguous run of rows.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-deleteRows)|
+|[getCell(rowIndex: number, cellIndex: number)](#getcellrowindex-number-cellindex-number)|[TableCell](tablecell.md)|Gets the table cell at a specified row and column.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-getCell)|
+|[hideBorder()](#hideborder)|void|Hides the table's border|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-hideBorder)|
+|[insertColumn(index: number, values: string[])](#insertcolumnindex-number-values-string)|void|Inserts a column at the given index in the table. Values, if specified, are set in the new column. Otherwise the column is empty.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-insertColumn)|
+|[insertRow(index: number, values: string[])](#insertrowindex-number-values-string)|[TableRow](tablerow.md)|Inserts a row at the given index in the table. Values, if specified, are set in the new row. Otherwise the row is empty.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-insertRow)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-load)|
+|[showBorder()](#showborder)|void|Make's the table's border visible|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-showBorder)|
 
 ## Method Details
 

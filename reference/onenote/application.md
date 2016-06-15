@@ -15,18 +15,18 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[getActiveNotebook()](#getactivenotebook)|[Notebook](notebook.md)|Gets the active notebook if one exists. If no notebook is active, throws ItemNotFound.|
-|[getActiveNotebookOrNull()](#getactivenotebookornull)|[Notebook](notebook.md)|Gets the active notebook if one exists. If no notebook is active, returns null.|
-|[getActiveOutline()](#getactiveoutline)|[Outline](outline.md)|Gets the active outline if one exists, If no outline is active, throws ItemNotFound.|
-|[getActiveOutlineOrNull()](#getactiveoutlineornull)|[Outline](outline.md)|Gets the active outline if one exists, otherwise returns null.|
-|[getActivePage()](#getactivepage)|[Page](page.md)|Gets the active page if one exists. If no page is active, throws ItemNotFound.|
-|[getActivePageOrNull()](#getactivepageornull)|[Page](page.md)|Gets the active page if one exists. If no page is active, returns null.|
-|[getActiveSection()](#getactivesection)|[Section](section.md)|Gets the active section if one exists. If no section is active, throws ItemNotFound.|
-|[getActiveSectionOrNull()](#getactivesectionornull)|[Section](section.md)|Gets the active section if one exists. If no section is active, returns null.|
-|[navigateToPage(page: Page)](#navigatetopagepage-page)|void|Opens the specified page in the application instance.|
-|[navigateToPageWithClientUrl(url: string)](#navigatetopagewithclienturlurl-string)|[Page](page.md)|Gets the specified page, and opens it in the application instance.|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|[getActiveNotebook()](#getactivenotebook)|[Notebook](notebook.md)|Gets the active notebook if one exists. If no notebook is active, throws ItemNotFound.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveNotebook)|
+|[getActiveNotebookOrNull()](#getactivenotebookornull)|[Notebook](notebook.md)|Gets the active notebook if one exists. If no notebook is active, returns null.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveNotebookOrNull)|
+|[getActiveOutline()](#getactiveoutline)|[Outline](outline.md)|Gets the active outline if one exists, If no outline is active, throws ItemNotFound.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveOutline)|
+|[getActiveOutlineOrNull()](#getactiveoutlineornull)|[Outline](outline.md)|Gets the active outline if one exists, otherwise returns null.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveOutlineOrNull)|
+|[getActivePage()](#getactivepage)|[Page](page.md)|Gets the active page if one exists. If no page is active, throws ItemNotFound.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActivePage)|
+|[getActivePageOrNull()](#getactivepageornull)|[Page](page.md)|Gets the active page if one exists. If no page is active, returns null.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActivePageOrNull)|
+|[getActiveSection()](#getactivesection)|[Section](section.md)|Gets the active section if one exists. If no section is active, throws ItemNotFound.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveSection)|
+|[getActiveSectionOrNull()](#getactivesectionornull)|[Section](section.md)|Gets the active section if one exists. If no section is active, returns null.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveSectionOrNull)|
+|[navigateToPage(page: Page)](#navigatetopagepage-page)|void|Opens the specified page in the application instance.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-navigateToPage)|
+|[navigateToPageWithClientUrl(url: string)](#navigatetopagewithclienturlurl-string)|[Page](page.md)|Gets the specified page, and opens it in the application instance.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-navigateToPageWithClientUrl)|
 
 ## Method Details
 

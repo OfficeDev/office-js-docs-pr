@@ -8,26 +8,26 @@ Represents a row in a table.
 ## Properties
 
 | Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|cellCount|int|Gets the number of cells in the row. Read-only.|
-|id|string|Gets the ID of the row. Read-only.|
-|rowIndex|int|Gets the index of the row in its parent table. Read-only.|
+|:---------------|:--------|:----------|:-------|
+|cellCount|int|Gets the number of cells in the row. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-cellCount)|
+|id|string|Gets the ID of the row. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-id)|
+|rowIndex|int|Gets the index of the row in its parent table. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-rowIndex)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|cells|[TableCellCollection](tablecellcollection.md)|Gets the cells in the row. Read-only.|
-|parentTable|[Table](table.md)|Gets the parent table. Read-only.|
+|:---------------|:--------|:----------|:-------|
+|cells|[TableCellCollection](tablecellcollection.md)|Gets the cells in the row. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-cells)|
+|parentTable|[Table](table.md)|Gets the parent table. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-parentTable)|
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[delete()](#delete)|void|Deletes the entire row.|
-|[insertRowAsSibling(insertLocation: string, values: string[])](#insertrowassiblinginsertlocation-string-values-string)|[TableRow](tablerow.md)|Inserts a row before or after the current row.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|[delete()](#delete)|void|Deletes the entire row.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-delete)|
+|[insertRowAsSibling(insertLocation: string, values: string[])](#insertrowassiblinginsertlocation-string-values-string)|[TableRow](tablerow.md)|Inserts a row before or after the current row.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-insertRowAsSibling)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-load)|
 
 ## Method Details
 

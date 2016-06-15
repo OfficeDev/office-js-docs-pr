@@ -8,25 +8,25 @@ Represents a container for Paragraph objects.
 ## Properties
 
 | Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|id|string|Gets the ID of the Outline object. Read-only.|
+|:---------------|:--------|:----------|:-------|
+|id|string|Gets the ID of the Outline object. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-id)|
 
 ## Relationships
 | Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|pageContent|[PageContent](pagecontent.md)|Gets the PageContent object that contains the Outline. This object defines the position of the Outline on the page. Read-only.|
-|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the collection of Paragraph objects in the Outline. Read-only.|
+|:---------------|:--------|:----------|:-------|
+|pageContent|[PageContent](pagecontent.md)|Gets the PageContent object that contains the Outline. This object defines the position of the Outline on the page. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-pageContent)|
+|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the collection of Paragraph objects in the Outline. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-paragraphs)|
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[appendHtml(html: string)](#appendhtmlhtml-string)|void|Adds the specified HTML to the bottom of the Outline.|
-|[appendImage(base64EncodedImage: string, width: double, height: double)](#appendimagebase64encodedimage-string-width-double-height-double)|[Image](image.md)|Adds the specified image to the bottom of the Outline.|
-|[appendRichText(paragraphText: string)](#appendrichtextparagraphtext-string)|[RichText](richtext.md)|Adds the specified text to the bottom of the Outline.|
-|[appendTable(rowCount: number, columnCount: number, values: string[][])](#appendtablerowcount-number-columncount-number-values-string)|[Table](table.md)|Adds a table with the specified number of rows and columns to the bottom of the outline.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
-|[select()](#select)|void|Selects the Outline and bring it to the view.|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|[appendHtml(html: string)](#appendhtmlhtml-string)|void|Adds the specified HTML to the bottom of the Outline.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-appendHtml)|
+|[appendImage(base64EncodedImage: string, width: double, height: double)](#appendimagebase64encodedimage-string-width-double-height-double)|[Image](image.md)|Adds the specified image to the bottom of the Outline.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-appendImage)|
+|[appendRichText(paragraphText: string)](#appendrichtextparagraphtext-string)|[RichText](richtext.md)|Adds the specified text to the bottom of the Outline.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-appendRichText)|
+|[appendTable(rowCount: number, columnCount: number, values: string[][])](#appendtablerowcount-number-columncount-number-values-string)|[Table](table.md)|Adds a table with the specified number of rows and columns to the bottom of the outline.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-appendTable)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-load)|
+|[select()](#select)|void|Selects the Outline and bring it to the view.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-select)|
 
 ## Method Details
 
