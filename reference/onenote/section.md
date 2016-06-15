@@ -1,27 +1,28 @@
 # Section Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_
-_Note: This API is in preview_
+_Applies to: OneNote Online_  
+_Note: This API is in preview_  
+
 
 Represents a OneNote section. Sections can contain pages.
 
 ## Properties
 
-| Property	   | Type	|Description
+| Property	   | Type	|Description|Feedback|
 |:---------------|:--------|:----------|:-------|
-|clientUrl|string|The client url of the section. Read only Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-clientUrl)|
-|id|string|Gets the ID of the section. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-id)|
-|name|string|Gets the name of the section. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-name)|
+|clientUrl|string|The client url of the section. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-clientUrl)|
+|id|string|Gets the ID of the section. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-id)|
+|name|string|Gets the name of the section. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-name)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description|
+| Relationship | Type	|Description| Feedback|
 |:---------------|:--------|:----------|:-------|
-|notebook|[Notebook](notebook.md)|Gets the notebook that contains the section. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-notebook)|
-|pages|[PageCollection](pagecollection.md)|The collection of pages in the section. Read only Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-pages)|
-|parentSectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section. Throws ItemNotFound if the section is a direct child of the notebook. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-parentSectionGroup)|
-|parentSectionGroupOrNull|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section. Returns null if the section is a direct child of the notebook. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-parentSectionGroupOrNull)|
+|notebook|[Notebook](notebook.md)|Gets the notebook that contains the section. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-notebook)|
+|pages|[PageCollection](pagecollection.md)|The collection of pages in the section. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-pages)|
+|parentSectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section. Throws ItemNotFound if the section is a direct child of the notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-parentSectionGroup)|
+|parentSectionGroupOrNull|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section. Returns null if the section is a direct child of the notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-parentSectionGroupOrNull)|
 
 ## Methods
 

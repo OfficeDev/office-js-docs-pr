@@ -1,25 +1,26 @@
 # TableRow Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_
-_Note: This API is in preview_
+_Applies to: OneNote Online_  
+_Note: This API is in preview_  
+
 
 Represents a row in a table.
 
 ## Properties
 
-| Property	   | Type	|Description
+| Property	   | Type	|Description|Feedback|
 |:---------------|:--------|:----------|:-------|
-|cellCount|int|Gets the number of cells in the row. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-cellCount)|
-|id|string|Gets the ID of the row. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-id)|
-|rowIndex|int|Gets the index of the row in its parent table. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-rowIndex)|
+|cellCount|int|Gets the number of cells in the row. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-cellCount)|
+|id|string|Gets the ID of the row. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-id)|
+|rowIndex|int|Gets the index of the row in its parent table. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-rowIndex)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description|
+| Relationship | Type	|Description| Feedback|
 |:---------------|:--------|:----------|:-------|
-|cells|[TableCellCollection](tablecellcollection.md)|Gets the cells in the row. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-cells)|
-|parentTable|[Table](table.md)|Gets the parent table. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-parentTable)|
+|cells|[TableCellCollection](tablecellcollection.md)|Gets the cells in the row. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-cells)|
+|parentTable|[Table](table.md)|Gets the parent table. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-parentTable)|
 
 ## Methods
 

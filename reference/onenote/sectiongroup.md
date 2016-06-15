@@ -1,28 +1,29 @@
 # SectionGroup Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_
-_Note: This API is in preview_
+_Applies to: OneNote Online_  
+_Note: This API is in preview_  
+
 
 Represents a OneNote section group. Section groups can contain sections and other section groups.
 
 ## Properties
 
-| Property	   | Type	|Description
+| Property	   | Type	|Description|Feedback|
 |:---------------|:--------|:----------|:-------|
-|clientUrl{|string|The client url of the section group. Read only Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-clientUrl{)|
-|id|string|Gets the ID of the section group. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-id)|
-|name|string|Gets the name of the section group. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-name)|
+|clientUrl{|string|The client url of the section group. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-clientUrl{)|
+|id|string|Gets the ID of the section group. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-id)|
+|name|string|Gets the name of the section group. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-name)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description|
+| Relationship | Type	|Description| Feedback|
 |:---------------|:--------|:----------|:-------|
-|notebook|[Notebook](notebook.md)|Gets the notebook that contains the section group. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-notebook)|
-|parentSectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section group. Throws ItemNotFound if the section group is a direct child of the notebook. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-parentSectionGroup)|
-|parentSectionGroupOrNull|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section group. Returns null if the section group is a direct child of the notebook. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-parentSectionGroupOrNull)|
-|sectionGroups|[SectionGroupCollection](sectiongroupcollection.md)|The collection of section groups in the section group. Read only Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-sectionGroups)|
-|sections|[SectionCollection](sectioncollection.md)|The collection of sections in the section group. Read only Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-sections)|
+|notebook|[Notebook](notebook.md)|Gets the notebook that contains the section group. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-notebook)|
+|parentSectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section group. Throws ItemNotFound if the section group is a direct child of the notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-parentSectionGroup)|
+|parentSectionGroupOrNull|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section group. Returns null if the section group is a direct child of the notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-parentSectionGroupOrNull)|
+|sectionGroups|[SectionGroupCollection](sectiongroupcollection.md)|The collection of section groups in the section group. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-sectionGroups)|
+|sections|[SectionCollection](sectioncollection.md)|The collection of sections in the section group. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-sections)|
 
 ## Methods
 

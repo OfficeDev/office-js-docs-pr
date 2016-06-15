@@ -1,25 +1,26 @@
 # Table Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_
-_Note: This API is in preview_
+_Applies to: OneNote Online_  
+_Note: This API is in preview_  
+
 
 Represents a table in a OneNote page.
 
 ## Properties
 
-| Property	   | Type	|Description
+| Property	   | Type	|Description|Feedback|
 |:---------------|:--------|:----------|:-------|
-|columnCount|int|Gets the number of columns in the table. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-columnCount)|
-|id|string|Gets the ID of the table. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-id)|
-|rowCount|int|Gets the number of rows in the table. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-rowCount)|
+|columnCount|int|Gets the number of columns in the table. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-columnCount)|
+|id|string|Gets the ID of the table. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-id)|
+|rowCount|int|Gets the number of rows in the table. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-rowCount)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description|
+| Relationship | Type	|Description| Feedback|
 |:---------------|:--------|:----------|:-------|
-|paragraph|[Paragraph](paragraph.md)|Gets the Paragraph object that contains the Table object. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-paragraph)|
-|rows|[TableRowCollection](tablerowcollection.md)|Gets all of the table rows. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-rows)|
+|paragraph|[Paragraph](paragraph.md)|Gets the Paragraph object that contains the Table object. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-paragraph)|
+|rows|[TableRowCollection](tablerowcollection.md)|Gets all of the table rows. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-rows)|
 
 ## Methods
 

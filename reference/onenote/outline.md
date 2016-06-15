@@ -1,21 +1,22 @@
 # Outline Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_
-_Note: This API is in preview_
+_Applies to: OneNote Online_  
+_Note: This API is in preview_  
+
 
 Represents a container for Paragraph objects.
 
 ## Properties
 
-| Property	   | Type	|Description
+| Property	   | Type	|Description|Feedback|
 |:---------------|:--------|:----------|:-------|
-|id|string|Gets the ID of the Outline object. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-id)|
+|id|string|Gets the ID of the Outline object. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-id)|
 
 ## Relationships
-| Relationship | Type	|Description|
+| Relationship | Type	|Description| Feedback|
 |:---------------|:--------|:----------|:-------|
-|pageContent|[PageContent](pagecontent.md)|Gets the PageContent object that contains the Outline. This object defines the position of the Outline on the page. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-pageContent)|
-|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the collection of Paragraph objects in the Outline. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-paragraphs)|
+|pageContent|[PageContent](pagecontent.md)|Gets the PageContent object that contains the Outline. This object defines the position of the Outline on the page. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-pageContent)|
+|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the collection of Paragraph objects in the Outline. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-paragraphs)|
 
 ## Methods
 

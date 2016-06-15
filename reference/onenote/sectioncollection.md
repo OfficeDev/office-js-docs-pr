@@ -1,16 +1,17 @@
 # SectionCollection Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_
-_Note: This API is in preview_
+_Applies to: OneNote Online_  
+_Note: This API is in preview_  
+
 
 Represents a collection of sections.
 
 ## Properties
 
-| Property	   | Type	|Description
+| Property	   | Type	|Description|Feedback|
 |:---------------|:--------|:----------|:-------|
-|count|int|Returns the number of sections in the collection. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionCollection-count)|
-|items|[Section[]](section.md)|A collection of section objects. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionCollection-items)|
+|count|int|Returns the number of sections in the collection. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionCollection-count)|
+|items|[Section[]](section.md)|A collection of section objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionCollection-items)|
 
 _See property access [examples.](#property-access-examples)_
 

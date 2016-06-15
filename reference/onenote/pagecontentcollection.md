@@ -1,16 +1,17 @@
 # PageContentCollection Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_
-_Note: This API is in preview_
+_Applies to: OneNote Online_  
+_Note: This API is in preview_  
+
 
 Represents the contents of a page, as a collection of PageContent objects.
 
 ## Properties
 
-| Property	   | Type	|Description
+| Property	   | Type	|Description|Feedback|
 |:---------------|:--------|:----------|:-------|
-|count|int|Returns the number of page contents in the collection. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContentCollection-count)|
-|items|[PageContent[]](pagecontent.md)|A collection of pageContent objects. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContentCollection-items)|
+|count|int|Returns the number of page contents in the collection. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContentCollection-count)|
+|items|[PageContent[]](pagecontent.md)|A collection of pageContent objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContentCollection-items)|
 
 _See property access [examples.](#property-access-examples)_
 

@@ -1,16 +1,17 @@
 # NotebookCollection Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_
-_Note: This API is in preview_
+_Applies to: OneNote Online_  
+_Note: This API is in preview_  
+
 
 Represents a collection of notebooks.
 
 ## Properties
 
-| Property	   | Type	|Description
+| Property	   | Type	|Description|Feedback|
 |:---------------|:--------|:----------|:-------|
-|count|int|Returns the number of notebooks in the collection. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebookCollection-count)|
-|items|[Notebook[]](notebook.md)|A collection of notebook objects. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebookCollection-items)|
+|count|int|Returns the number of notebooks in the collection. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebookCollection-count)|
+|items|[Notebook[]](notebook.md)|A collection of notebook objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebookCollection-items)|
 
 _See property access [examples.](#property-access-examples)_
 

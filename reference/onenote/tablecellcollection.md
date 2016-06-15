@@ -1,16 +1,17 @@
 # TableCellCollection Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_
-_Note: This API is in preview_
+_Applies to: OneNote Online_  
+_Note: This API is in preview_  
+
 
 Contains a collection of TableCell objects.
 
 ## Properties
 
-| Property	   | Type	|Description
+| Property	   | Type	|Description|Feedback|
 |:---------------|:--------|:----------|:-------|
-|count|int|Returns the number of tablecells in this collection. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCellCollection-count)|
-|items|[TableCell[]](tablecell.md)|A collection of tableCell objects. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCellCollection-items)|
+|count|int|Returns the number of tablecells in this collection. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCellCollection-count)|
+|items|[TableCell[]](tablecell.md)|A collection of tableCell objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCellCollection-items)|
 
 _See property access [examples.](#property-access-examples)_
 

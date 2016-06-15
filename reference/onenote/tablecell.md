@@ -1,26 +1,27 @@
 # TableCell Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_
-_Note: This API is in preview_
+_Applies to: OneNote Online_  
+_Note: This API is in preview_  
+
 
 Represents a cell in a OneNote table.
 
 ## Properties
 
-| Property	   | Type	|Description
+| Property	   | Type	|Description|Feedback|
 |:---------------|:--------|:----------|:-------|
-|cellIndex|int|Gets the index of the cell in its row. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-cellIndex)|
-|id|string|Gets the ID of the cell. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-id)|
-|rowIndex|int|Gets the index of the cell's row in the table. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-rowIndex)|
+|cellIndex|int|Gets the index of the cell in its row. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-cellIndex)|
+|id|string|Gets the ID of the cell. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-id)|
+|rowIndex|int|Gets the index of the cell's row in the table. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-rowIndex)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description|
+| Relationship | Type	|Description| Feedback|
 |:---------------|:--------|:----------|:-------|
-|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the collection of Paragraph objects in the TableCell. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-paragraphs)|
-|parentRow|[TableRow](tablerow.md)|Gets the parent row of the cell. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-parentRow)|
-|parentTable|[Table](table.md)|Gets the parent table of the cell. Read-only.||[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-parentTable)|
+|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the collection of Paragraph objects in the TableCell. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-paragraphs)|
+|parentRow|[TableRow](tablerow.md)|Gets the parent row of the cell. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-parentRow)|
+|parentTable|[Table](table.md)|Gets the parent table of the cell. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-parentTable)|
 
 ## Methods
 
