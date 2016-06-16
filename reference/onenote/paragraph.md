@@ -107,6 +107,43 @@ paragraphObject.insertHtmlAsSibling(insertLocation, html);
 #### Returns
 void
 
+#### Examples
+```js
+OneNote.run(function (context) {
+
+	// Get the collection of pageContent items from the page.
+	var pageContents = context.application.getActivePage().contents;
+
+	// Get the first PageContent on the page
+	// Assuming its an outline, get the outline's paragraphs.
+	var pageContent = pageContents.getItemAt(0);
+	var paragraphs = pageContent.outline.paragraphs;
+	var firstParagraph = paragraphs.getItemAt(0);
+
+	// Queue a command to load the id and type of the first paragraph
+	firstParagraph.load("id,type");
+
+	// Run the queued commands, and return a promise to indicate task completion.
+	return context.sync()
+		.then(function () {
+
+			// Queue commands to insert before and after the first paragraph
+			firstParagraph.insertHtmlAsSibling("Before", "<p>ContentBeforeFirstParagraph</p>");
+			firstParagraph.insertHtmlAsSibling("After", "<p>ContentAfterFirstParagraph</p>");
+			
+			// Run the command to run inserts
+			return context.sync();
+		});
+))
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
+
 ### insertImageAsSibling(insertLocation: string, base64EncodedImage: string, width: double, height: double)
 Inserts the image at the specified insert location..
 
