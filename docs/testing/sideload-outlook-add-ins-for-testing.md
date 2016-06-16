@@ -3,10 +3,10 @@
 
 You can use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
 
- >**Note**  You can also sideload add-ins for other Office suite applications. For more information, see [Sideload Office Add-ins for testing](sideload-office-add-ins-for-testing.md).
+ >**Note**  You can also sideload add-ins for other Office suite applications. For more information, see [Sideload Office Add-ins for testing](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
 
 
-## Sideloading Outlook add-ins
+## To sideload Outlook add-ins
 
 
 1. Go to [Outlook Web App](https://outlook.office365.com).
