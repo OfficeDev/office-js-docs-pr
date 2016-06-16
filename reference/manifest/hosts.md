@@ -1,31 +1,47 @@
-
 # Hosts element
-Specifies the type(s) of Office host application your Office Add-in supports.
 
- **Add-in type:** Content, Task pane, Mail
+Contains a collection of host objects and their settings. This element overrides the **Hosts** element in the parent portion of the manifest. Hosts is a child of the [VersionOverrides](./versionoverrides.md) element.
+
+## Child elements
+
+|  Element |  Required  |  Description  |
+|:-----|:-----|:-----|
+|  [Host](#host-element)    |  Yes   |  Describes a host and its settings. |
+
+> ** Note: ** Outlook requires `Hosts`to contain a `Host` definition for `MailHost`.
+
+---- 
+
+## Host element
+
+### Attributes
+
+|  Attribute  |  Required  |  Description  |
+|:-----|:-----|:-----|
+|  [xsi:type](#xsitype)  |  Yes  | Describes the Office host these settings apply to.|
+
+### Child elements
+
+|  Element |  Required  |  Description  |
+|:-----|:-----|:-----|
+|  [FormFactor](./formfactor.md)    |  Yes   |  Defines the form factor affected. |
 
 
-## Syntax:
+### xsi:type
+Controls which Office host (Word, Excel, PowerPoint, Outlook) the contained settings apply too. The value must be one of the following:
+
+- `MailHost` (Outlook)    
 
 
-```XML
+### FormFactor
+See [FormFactor](./formfactor.md)
+
+
+## Hosts Example 
+```xml
 <Hosts>
-   ...
-</Host>
+    <Host xsi:type="MailHost">
+        <!-- Host Settings -->
+    </Host>
+</Hosts>
 ```
-
-
-## Contained in:
-
-[OfficeApp](../../reference/manifest/officeapp.md)
-
-
-## Can contain:
-
-[Host](../../reference/manifest/host.md)
-
-
-## Remarks
-
-For more information about specifying host support, see [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md).
-
