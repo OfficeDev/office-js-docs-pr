@@ -27,7 +27,7 @@
 
 ## What's next for *Product* add-ins
 
-<!-- Describe and link to APIs available on Open Spec page. Link to change log if applicable.
+<!-- Describe and link to APIs available on Open Spec page. Link to change log if applicable. Provide a roadmap for new APIs and features.
 
 -->
 
