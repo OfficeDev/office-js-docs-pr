@@ -44,7 +44,7 @@ When you've completed the wizard, Visual Studio creates a solution for you that 
 ## Modify your add-in settings
 
 
-To modify the settings of your add-in, edit the XML manifest file of the project. In  **Solution Explorer** expand the add-in project node, expand the folder that contains the XML manifest and choose the XML manifest. You can point to any element in the file to view a tooltip that describes the purpose of the element. For a complete list of descriptions, see [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md).
+To modify the settings of your add-in, edit the XML manifest file of the project. In  **Solution Explorer**, expand the add-in project node, expand the folder that contains the XML manifest, and choose the XML manifest. You can point to any element in the file to view a tooltip that describes the purpose of the element. For more information about the manfiest file, see [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md).
 
 
 ## Develop the contents of your add-in
