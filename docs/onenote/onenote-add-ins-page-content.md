@@ -1,4 +1,4 @@
-# Work with OneNote page content
+# Work with OneNote page content (Preview)
 
 In the OneNote add-ins JavaScript API, page content is represented by the following object model.
 
@@ -36,7 +36,7 @@ The OneNote add-in JavaScript API supports the following HTML for creating and u
 
 ## Additional Resources
 
-- [OneNote JavaScript API programming overview](onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API reference](../../reference/onenote/onenote-add-ins-javascript-reference.md)
-- [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader-Preview)
+- [OneNote JavaScript API programming overview (Preview)](onenote-add-ins-programming-overview.md)
+- [OneNote JavaScript API reference (Preview)](../../reference/onenote/onenote-add-ins-javascript-reference.md)
+- [Rubric Grader sample (Preview)](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader-Preview)
 - [Office Add-ins platform overview](https://dev.office.com/docs/add-ins/overview/office-add-ins)
