@@ -1,6 +1,8 @@
 # Hosts element
 
-Contains a collection of host objects and their settings. This element overrides the **Hosts** element in the parent portion of the manifest. Hosts is a child of the [VersionOverrides](./versionoverrides.md) element.
+Specifies the Office client application where the Office add-in will activate. Contains a collection of host objects and their settings. 
+
+When included in the [VersionOverrides](./versionoverrides.md) node, this element overrides the **Hosts** element in the parent portion of the manifest. 
 
 ## Child elements
 
@@ -13,6 +15,7 @@ Contains a collection of host objects and their settings. This element overrides
 ---- 
 
 ## Host element
+Specifies an individual Office application type where the add-in should activate, such as “document”, “workbook”, “presentation”, “project”, “mailbox”.
 
 ### Attributes
 
@@ -34,7 +37,7 @@ Controls which Office host (Word, Excel, PowerPoint, Outlook) the contained sett
 
 
 ### FormFactor
-See [FormFactor](./formfactor.md)
+See [FormFactor](./formfactor.md).
 
 
 ## Hosts Example 
