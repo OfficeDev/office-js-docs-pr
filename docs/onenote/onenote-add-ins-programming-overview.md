@@ -33,7 +33,7 @@ Use the **Application** object to access OneNote objects such as **Notebook**, *
 
 3- Call **load** on the proxy to fill it with the property values specified in the parameter. This call is added to the queue of commands. 
 
-   Method calls to the API (such as `context.application.getActiveSection().getPages();`) are also added to the queue.
+   Method calls to the API (such as `context.application.getActiveSection().pages;`) are also added to the queue.
     
 4- Call **context.sync** to run all queued commands in the order that they were queued. This synchronizes the state between your running script and the real objects, and by retrieving properties of loaded OneNote objects for use in your script. You can use the returned promise object for chaining additional actions.
 
@@ -44,7 +44,7 @@ For example:
         OneNote.run(function (context) {
             
             // Get the pages in the current section.
-            var pages = context.application.getActiveSection().getPages();
+            var pages = context.application.getActiveSection().pages;
             
             // Queue a command to load the id and title for each page.            
             pages.load('id,title');
@@ -54,9 +54,9 @@ For example:
                 .then(function () {
                     
                     // Read the id and title of each page. 
-                    $.each(pages.items, function(index, object) {
-                        var pageId = object.id;
-                        var pageTitle = object.title;
+                    $.each(pages.items, function(index, page) {
+                        var pageId = page.id;
+                        var pageTitle = page.title;
                         console.log(pageTitle + ': ' + pageId); 
                     });
                 })
