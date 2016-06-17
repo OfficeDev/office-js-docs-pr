@@ -64,8 +64,6 @@ The following table specifies the elements that are required for the three types
 
 The following sections show examples of manifest v1.1 XML files for content, task pane,  and Outlook add-ins.
 
-If you're using Visual Studio to develop your Office Add-in, you can use the Visual Studio manifest designer to change manifest settings, rather than manually changing the underlying XML markup. By default, when you open an Office Add-in manifest file in Visual Studio, it opens in the manifest designer. The designer organizes the fields in the manifest, making them easier to find. Some fields have drop-down list boxes that contain valid field values, helping reduce data entry errors.
-
 ### Office Add-in manifest v1.1 example with commands and fallback task pane
 [Task pane manifest schema](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas/taskpane)
 
