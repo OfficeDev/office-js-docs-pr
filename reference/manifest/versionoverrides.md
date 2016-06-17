@@ -1,6 +1,6 @@
-# VersionOverrides Element
+# VersionOverrides element
 
-The  **VersionOverrides** element is the root element that contains information for the add-in commands implemented by the add-in. It is supported in manifest schema v1.1 and later but is defined in the VersionOverrides v1.0 schema. 
+The root element that contains information for the add-in commands implemented by the add-in. This element is supported in manifest schema v1.1 and later but is defined in the VersionOverrides v1.0 schema. 
 
 ## Attributes
 
@@ -15,9 +15,9 @@ The  **VersionOverrides** element is the root element that contains information 
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
 |  [Description](#description)    |  No   |  Describes the add-in. |
-|  [Requirements](#requirements)  |  No   |  Minimum Mailbox version required | 
-|  [Hosts](./hosts.md)                |  Yes  |  Collection of host types and their settings |
-|  [Resources](./resources.md)    |  Yes  | Resource definitions (strings, URLs, and images)  |
+|  [Requirements](#requirements)  |  No   |  The minimum Mailbox version required. | 
+|  [Hosts](./hosts.md)                |  Yes  |  A collection of host types and their settings. |
+|  [Resources](./resources.md)    |  Yes  | Resource definitions (strings, URLs, and images).  |
 
 
 ### xmlns 
