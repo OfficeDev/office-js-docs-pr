@@ -43,7 +43,7 @@
     <Item text="Performance" url="develop/resource-limits-and-performance-optimization" SEODescription="Apply resource usage limits to your Office Add-ins and optimize the performance of your add-in." />
   </Item>
   <Item text="Test" url="testing">
-    	<Item text="Sideload Office Add-ins for testing" url="publish/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins" SEODescription="" Scope="Excel, Word, PowerPoint, Project, Access" />
+    	<Item text="Sideload Office Add-ins for testing" url="testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins" SEODescription="" Scope="Excel, Word, PowerPoint, Project, Access" />
 		<Item text="Sideload Office Add-ins in Office Online for testing" url="testing/sideload-office-add-ins-for-testing" SEODescription="See how to load an add-in into an Office application for testing." />
 	    <Item text="Sideload Outlook add-ins for testing" url="testing/sideload-outlook-add-ins-for-testing" SEODescription="" />
     	<Item text="Sideload on iPad and Mac" url="testing/sideload-an-office-add-in-on-ipad-and-mac" SEODescription="Sideload your Office Add-in onto an iPad or Mac to test how it will run in Office for iOS or Office for Mac." />
