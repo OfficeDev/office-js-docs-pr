@@ -6,7 +6,7 @@ An Excel worksheet is a grid of cells. It can contain data, tables, charts, etc.
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|id|string|Returns a value that uniquely identifies the worksheet in a given workbook. The value of the identifier remains the same even when the worksheet is renamed or moved. Read-only.|
+|id|string|Returns a value that uniquely identifies the worksheet in a given workbook. The value of the identifier remains the same even when the worksheet is renamed or moved. Values change with each session of the file being opened. Read-only.|
 |name|string|The display name of the worksheet.|
 |position|int|The zero-based position of the worksheet within the workbook.|
 |visibility|string|The Visibility of the worksheet. Possible values are: Visible, Hidden, VeryHidden.|

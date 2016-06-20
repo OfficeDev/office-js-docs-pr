@@ -371,7 +371,7 @@
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:pattern value="([0-9]{1,5})(\.[0-9]{1,5}){0,3}?"/>
+      <xs:pattern value="([0-9]{1,5})(\.[0-9]{1,5}){0,3}"/>
     </xs:restriction>
   </xs:simpleType>
 

@@ -1,32 +1,33 @@
 # Notebook Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_
-_Note: This API is in preview_
+_Applies to: OneNote Online_  
+_Note: This API is in preview_  
+
 
 Represents a OneNote notebook. Notebooks contain section groups and sections.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|clientUrl|string|The client url of the notebook. Read only Read-only.|
-|id|string|Gets the ID of the notebook. Read-only.|
-|name|string|Gets the name of the notebook. Read-only.|
+| Property	   | Type	|Description|Feedback|
+|:---------------|:--------|:----------|:-------|
+|clientUrl|string|The client url of the notebook. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-clientUrl)|
+|id|string|Gets the ID of the notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-id)|
+|name|string|Gets the name of the notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-name)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|sectionGroups|[SectionGroupCollection](sectiongroupcollection.md)|The section groups in the notebook. Read only Read-only.|
-|sections|[SectionCollection](sectioncollection.md)|The the sections of the notebook. Read only Read-only.|
+| Relationship | Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|sectionGroups|[SectionGroupCollection](sectiongroupcollection.md)|The section groups in the notebook. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-sectionGroups)|
+|sections|[SectionCollection](sectioncollection.md)|The the sections of the notebook. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-sections)|
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[addSection(name: String)](#addsectionname-string)|[Section](section.md)|Adds a new section to the end of the notebook.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|[addSection(name: String)](#addsectionname-string)|[Section](section.md)|Adds a new section to the end of the notebook.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-addSection)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-load)|
 
 ## Method Details
 
@@ -65,13 +66,13 @@ OneNote.run(function (context) {
         .then(function() {
             console.log("New section name is " + section.name);
         });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    }); 
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+}); 
 ```
 
 ### load(param: object)
@@ -107,13 +108,13 @@ OneNote.run(function (context) {
             console.log("Notebook ID: " + notebook.id);
             
         });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
 ```
 
 **name**
@@ -133,13 +134,13 @@ OneNote.run(function (context) {
             console.log("Notebook name: " + notebook.name);
             
         });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
 ```
 
 **sectionGroups**
@@ -159,13 +160,13 @@ OneNote.run(function (context) {
                 console.log("Section group name: " + sectionGroup.name);
             });
         });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
 ```
 
 **sections**
@@ -188,12 +189,12 @@ OneNote.run(function (context) {
                 console.log("Immediate child section name: " + childSection.name);
             });            
         });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });   
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});   
 ```
 

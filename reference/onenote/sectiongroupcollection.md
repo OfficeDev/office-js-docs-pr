@@ -1,16 +1,17 @@
 # SectionGroupCollection Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_
-_Note: This API is in preview_
+_Applies to: OneNote Online_  
+_Note: This API is in preview_  
+
 
 Represents a collection of section groups.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|count|int|Returns the number of section groups in the collection. Read-only.|
-|items|[SectionGroup[]](sectiongroup.md)|A collection of sectionGroup objects. Read-only.|
+| Property	   | Type	|Description|Feedback|
+|:---------------|:--------|:----------|:-------|
+|count|int|Returns the number of section groups in the collection. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroupCollection-count)|
+|items|[SectionGroup[]](sectiongroup.md)|A collection of sectionGroup objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroupCollection-items)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -20,12 +21,12 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[getByName(name: string)](#getbynamename-string)|[SectionGroupCollection](sectiongroupcollection.md)|Gets the collection of section groups with the specified name.|
-|[getItem(index: number or string)](#getitemindex-number-or-string)|[SectionGroup](sectiongroup.md)|Gets a section group by ID or by its index in the collection. Read-only.|
-|[getItemAt(index: number)](#getitematindex-number)|[SectionGroup](sectiongroup.md)|Gets a section group on its position in the collection.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|[getByName(name: string)](#getbynamename-string)|[SectionGroupCollection](sectiongroupcollection.md)|Gets the collection of section groups with the specified name.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroupCollection-getByName)|
+|[getItem(index: number or string)](#getitemindex-number-or-string)|[SectionGroup](sectiongroup.md)|Gets a section group by ID or by its index in the collection. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroupCollection-getItem)|
+|[getItemAt(index: number)](#getitematindex-number)|[SectionGroup](sectiongroup.md)|Gets a section group on its position in the collection.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroupCollection-getItemAt)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroupCollection-load)|
 
 ## Method Details
 
@@ -73,13 +74,13 @@ OneNote.run(function (context) {
                 console.log("Section group ID: " + labsSectionGroups.items[0].id);
             }
         });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
 ```
 
 
@@ -153,12 +154,12 @@ OneNote.run(function (context) {
                 console.log("Section group ID: " + sectionGroup.id);  
             });
         });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
 ```
 

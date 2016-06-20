@@ -60,13 +60,9 @@ In general, you should specify the minimum permission needed for your add-in. Pe
 
 ## Additional resources
 
-
-
-- [Outlook Add-in API](../../reference/outlook/index.md)
-    
 - [Outlook add-in manifests](../outlook/manifests/manifests.md)
 
-- [Understanding Outlook API requirement sets](..\..\reference\outlook\tutorial-api-requirement-sets.md)
+- [Understanding Outlook API requirement sets](../../reference/outlook/tutorial-api-requirement-sets.md)
     
 - [Privacy, permissions, and security for Outlook add-ins](../outlook/../../docs/develop/privacy-and-security.md)
     

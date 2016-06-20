@@ -1,35 +1,36 @@
 # Section Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_
-_Note: This API is in preview_
+_Applies to: OneNote Online_  
+_Note: This API is in preview_  
+
 
 Represents a OneNote section. Sections can contain pages.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|clientUrl|string|The client url of the section. Read only Read-only.|
-|id|string|Gets the ID of the section. Read-only.|
-|name|string|Gets the name of the section. Read-only.|
+| Property	   | Type	|Description|Feedback|
+|:---------------|:--------|:----------|:-------|
+|clientUrl|string|The client url of the section. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-clientUrl)|
+|id|string|Gets the ID of the section. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-id)|
+|name|string|Gets the name of the section. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-name)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|notebook|[Notebook](notebook.md)|Gets the notebook that contains the section. Read-only.|
-|pages|[PageCollection](pagecollection.md)|The collection of pages in the section. Read only Read-only.|
-|parentSectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section. Throws ItemNotFound if the section is a direct child of the notebook. Read-only.|
-|parentSectionGroupOrNull|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section. Returns null if the section is a direct child of the notebook. Read-only.|
+| Relationship | Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|notebook|[Notebook](notebook.md)|Gets the notebook that contains the section. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-notebook)|
+|pages|[PageCollection](pagecollection.md)|The collection of pages in the section. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-pages)|
+|parentSectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section. Throws ItemNotFound if the section is a direct child of the notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-parentSectionGroup)|
+|parentSectionGroupOrNull|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section. Returns null if the section is a direct child of the notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-parentSectionGroupOrNull)|
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[addPage(title: string)](#addpagetitle-string)|[Page](page.md)|Adds a new page to the end of the section.|
-|[insertSectionAsSibling(location: string, title: string)](#insertsectionassiblinglocation-string-title-string)|[Section](section.md)|Inserts a new section before or after the current section.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|[addPage(title: string)](#addpagetitle-string)|[Page](page.md)|Adds a new page to the end of the section.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-addPage)|
+|[insertSectionAsSibling(location: string, title: string)](#insertsectionassiblinglocation-string-title-string)|[Section](section.md)|Inserts a new section before or after the current section.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-insertSectionAsSibling)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-load)|
 
 ## Method Details
 
@@ -70,13 +71,13 @@ OneNote.run(function (context) {
             console.log("Page ID: " + page.id);
 
         });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
 ```
 
 
@@ -116,13 +117,13 @@ OneNote.run(function (context) {
             console.log("Section name: " + section.name);
             console.log("Section ID: " + section.id);
         });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
 ```
 
 ### load(param: object)
@@ -158,13 +159,13 @@ OneNote.run(function (context) {
         .then(function () {
             console.log("Section ID: " + section.id);
         });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
 ```
 
 **name and notebook**
@@ -183,13 +184,39 @@ OneNote.run(function (context) {
             console.log("Section name: " + section.name);
             console.log("Parent notebook name: " + section.notebook.name);
         });
-    })
-    .catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-    });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
 ```
 
-
+**parentSectionGroupOrNull**
+```js
+OneNote.run(function (context) {
+    // Queue a command to add a page to the current section.
+    var section = context.application.getActiveSection();
+	section.load('clientUrl,notebook');
+	var sectionGroup = section.parentSectionGroupOrNull;
+    
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function () {
+			if(sectionGroup.isNull === false)
+			{
+				// If a parent section group exists, queue a command to add a section in it!
+				sectionGroup.addSection("NewSectionInSectionGroup");
+			}
+			return context.sync();
+        });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+	

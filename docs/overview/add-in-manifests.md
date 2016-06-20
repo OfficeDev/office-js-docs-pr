@@ -64,8 +64,6 @@ The following table specifies the elements that are required for the three types
 
 The following sections show examples of manifest v1.1 XML files for content, task pane,  and Outlook add-ins.
 
-If you're using Visual Studio to develop your Office Add-in, you can use the Visual Studio manifest designer to change manifest settings, rather than manually changing the underlying XML markup. By default, when you open an Office Add-in manifest file in Visual Studio, it opens in the manifest designer. The designer organizes the fields in the manifest, making them easier to find. Some fields have drop-down list boxes that contain valid field values, helping reduce data entry errors.
-
 ### Office Add-in manifest v1.1 example with commands and fallback task pane
 [Task pane manifest schema](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas/taskpane)
 
@@ -840,7 +838,7 @@ For recommendations for where to place your commands in the ribbon, see [Best pr
 |**Office host application**|**Tab values**|
 |:-----|:-----|
 |Excel|**TabHome**+<br/>**TabInsert**+<br/>**TabPageLayoutExcel**<br/>**TabFormulas**<br/>**TabData**+<br/>**TabReview**+<br/>**TabView**+<br/>**TabDeveloper**<br/>**TabAddIns**<br/>**TabPrintPreview**<br/>**TabBackgroundRemoval**|
-|Word|**TabHome**+<br/>**TabInsert**+<br/>**TabWordDesign**<br/>**TabPageLayoutWord**+<br/>**TabReferences**<br/>**TabMailings**<br/>**TabReviewWord**+<br/>**TabView**+<br/>**TabDeveloper**<br/>**TabAddIns**<br/>**TabBlogPost**<br/>**TabBlogInsert**<br/>**TabPrintPreview**<br/>**TabOutlining**<br/>**TabConflicts**<br/>**TabBackgroundRemoval**<br/>**TabBroadcastPresentation**|
+|Word|**TabHome**+<br/>**TabInsert**+<br/>**TabWordDesign**<br/>**TabPageLayoutWord**+<br/>**TabReferences**<br/>**TabMailings**<br/>**TabReviewWord**<br/>**TabView**+<br/>**TabDeveloper**<br/>**TabAddIns**<br/>**TabBlogPost**<br/>**TabBlogInsert**<br/>**TabPrintPreview**<br/>**TabOutlining**<br/>**TabConflicts**<br/>**TabBackgroundRemoval**<br/>**TabBroadcastPresentation**|
 |PowerPoint|**TabHome**+<br/>**TabInsert**+<br/>**TabDesign**+<br/>**TabTransitions**+<br/>**TabAnimations**+<br/>**TabSlideShow**<br/>**TabReview**<br/>**TabView**+<br/>**TabDeveloper**<br/>**TabAddIns**<br/>**TabPrintPreview**<br/>**TabMerge**<br/>**TabGrayscale**<br/>**TabBlackAndWhite**<br/>**TabBroadcastPresentation**<br/>**TabSlideMaster**<br/>**TabHandoutMaster**<br/>**TabNotesMaster**<br/>**TabBackgroundRemoval**<br/>**TabSlideMasterHome**|
 
 >+Tab exists in both Office for Windows Desktop and Office Online.

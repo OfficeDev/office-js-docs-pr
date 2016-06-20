@@ -1,38 +1,39 @@
 # Paragraph Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_
-_Note: This API is in preview_
+_Applies to: OneNote Online_  
+_Note: This API is in preview_  
+
 
 A container for the visible content on a page. A Paragraph can contain any one ParagraphType type of content.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|id|string|Gets the ID of the Paragraph object. Read-only.|
-|type|string|Gets the type of the Paragraph object. Read-only. Possible values are: RichText, Image, Table, Other.|
+| Property	   | Type	|Description|Feedback|
+|:---------------|:--------|:----------|:-------|
+|id|string|Gets the ID of the Paragraph object. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-id)|
+|type|string|Gets the type of the Paragraph object. Read-only. Possible values are: RichText, Image, Table, Other.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-type)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|image|[Image](image.md)|Gets the Image object in the Paragraph. Returns null if ParagraphType is not Image. Read-only.|
-|outline|[Outline](outline.md)|Gets the Outline object that contains the Paragraph. Read-only.|
-|richText|[RichText](richtext.md)|Gets the RichText object in the Paragraph. Returns null if ParagraphType is not RichText. Read-only Read-only.|
-|table|[Table](table.md)|Gets the Table object in the Paragraph. Returns null if ParagraphType is not Table. Read-only.|
+| Relationship | Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|image|[Image](image.md)|Gets the Image object in the Paragraph. Returns null if ParagraphType is not Image. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-image)|
+|outline|[Outline](outline.md)|Gets the Outline object that contains the Paragraph. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-outline)|
+|richText|[RichText](richtext.md)|Gets the RichText object in the Paragraph. Returns null if ParagraphType is not RichText. Read-only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-richText)|
+|table|[Table](table.md)|Gets the Table object in the Paragraph. Returns null if ParagraphType is not Table. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-table)|
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[delete()](#delete)|void|Deletes the paragraph|
-|[insertHtmlAsSibling(insertLocation: string, html: string)](#inserthtmlassiblinginsertlocation-string-html-string)|void|Inserts the specified HTML content|
-|[insertImageAsSibling(insertLocation: string, base64EncodedImage: string, width: double, height: double)](#insertimageassiblinginsertlocation-string-base64encodedimage-string-width-double-height-double)|[Image](image.md)|Inserts the image at the specified insert location..|
-|[insertRichTextAsSibling(insertLocation: string, paragraphText: string)](#insertrichtextassiblinginsertlocation-string-paragraphtext-string)|[RichText](richtext.md)|Inserts the paragraph text at the specifiec insert location.|
-|[insertTableAsSibling(insertLocation: string, rowCount: number, columnCount: number, values: string[][])](#inserttableassiblinginsertlocation-string-rowcount-number-columncount-number-values-string)|[Table](table.md)|Adds a table with the specified number of rows and columns before or after the current paragraph.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
-|[select()](#select)|void|Selects the paragraph|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|[delete()](#delete)|void|Deletes the paragraph|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-delete)|
+|[insertHtmlAsSibling(insertLocation: string, html: string)](#inserthtmlassiblinginsertlocation-string-html-string)|void|Inserts the specified HTML content|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-insertHtmlAsSibling)|
+|[insertImageAsSibling(insertLocation: string, base64EncodedImage: string, width: double, height: double)](#insertimageassiblinginsertlocation-string-base64encodedimage-string-width-double-height-double)|[Image](image.md)|Inserts the image at the specified insert location..|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-insertImageAsSibling)|
+|[insertRichTextAsSibling(insertLocation: string, paragraphText: string)](#insertrichtextassiblinginsertlocation-string-paragraphtext-string)|[RichText](richtext.md)|Inserts the paragraph text at the specifiec insert location.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-insertRichTextAsSibling)|
+|[insertTableAsSibling(insertLocation: string, rowCount: number, columnCount: number, values: string[][])](#inserttableassiblinginsertlocation-string-rowcount-number-columncount-number-values-string)|[Table](table.md)|Adds a table with the specified number of rows and columns before or after the current paragraph.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-insertTableAsSibling)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-load)|
+|[select()](#select)|void|Selects the paragraph|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-select)|
 
 ## Method Details
 
@@ -51,6 +52,44 @@ None
 #### Returns
 void
 
+#### Examples
+```js
+OneNote.run(function (context) {
+
+    // Get the collection of pageContent items from the page.
+    var pageContents = context.application.getActivePage().contents;
+
+    // Get the first PageContent on the page
+    // Assuming its an outline, get the outline's paragraphs.
+    var pageContent = pageContents.getItemAt(0);
+	
+    var paragraphs = pageContent.outline.paragraphs;
+	
+	var firstParagraph = paragraphs.getItemAt(0);
+	
+    // Queue a command to load the id and type of the first paragraph
+    firstParagraph.load("id,type");
+
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function () {
+			
+            // Queue a command to delete the first paragraph                 
+            firstParagraph.delete();
+			
+			// Run the command to delete it
+			return context.sync();
+        });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
+
 ### insertHtmlAsSibling(insertLocation: string, html: string)
 Inserts the specified HTML content
 
@@ -67,6 +106,43 @@ paragraphObject.insertHtmlAsSibling(insertLocation, html);
 
 #### Returns
 void
+
+#### Examples
+```js
+OneNote.run(function (context) {
+
+	// Get the collection of pageContent items from the page.
+	var pageContents = context.application.getActivePage().contents;
+
+	// Get the first PageContent on the page
+	// Assuming its an outline, get the outline's paragraphs.
+	var pageContent = pageContents.getItemAt(0);
+	var paragraphs = pageContent.outline.paragraphs;
+	var firstParagraph = paragraphs.getItemAt(0);
+
+	// Queue a command to load the id and type of the first paragraph
+	firstParagraph.load("id,type");
+
+	// Run the queued commands, and return a promise to indicate task completion.
+	return context.sync()
+		.then(function () {
+
+			// Queue commands to insert before and after the first paragraph
+			firstParagraph.insertHtmlAsSibling("Before", "<p>ContentBeforeFirstParagraph</p>");
+			firstParagraph.insertHtmlAsSibling("After", "<p>ContentAfterFirstParagraph</p>");
+			
+			// Run the command to run inserts
+			return context.sync();
+		});
+))
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
 
 ### insertImageAsSibling(insertLocation: string, base64EncodedImage: string, width: double, height: double)
 Inserts the image at the specified insert location..
@@ -87,6 +163,43 @@ paragraphObject.insertImageAsSibling(insertLocation, base64EncodedImage, width, 
 #### Returns
 [Image](image.md)
 
+#### Examples
+```js
+OneNote.run(function (context) {
+
+	// Get the collection of pageContent items from the page.
+	var pageContents = context.application.getActivePage().contents;
+
+	// Get the first PageContent on the page
+	// Assuming its an outline, get the outline's paragraphs.
+	var pageContent = pageContents.getItemAt(0);
+	var paragraphs = pageContent.outline.paragraphs;
+	var firstParagraph = paragraphs.getItemAt(0);
+
+	// Queue a command to load the id and type of the first paragraph
+	firstParagraph.load("id,type");
+
+	// Run the queued commands, and return a promise to indicate task completion.
+	return context.sync()
+		.then(function () {
+
+			// Queue commands to insert before and after the first paragraph
+			firstParagraph.insertImageAsSibling("Before", "R0lGODlhDwAPAKECAAAAzMzM/////wAAACwAAAAADwAPAAACIISPeQHsrZ5ModrLlN48CXF8m2iQ3YmmKqVlRtW4MLwWACH+H09wdGltaXplZCBieSBVbGVhZCBTbWFydFNhdmVyIQAAOw==");
+			firstParagraph.insertImageAsSibling("After", "R0lGODlhDwAPAKECAAAAzMzM/////wAAACwAAAAADwAPAAACIISPeQHsrZ5ModrLlN48CXF8m2iQ3YmmKqVlRtW4MLwWACH+H09wdGltaXplZCBieSBVbGVhZCBTbWFydFNhdmVyIQAAOw==");
+			
+			// Run the command to insert images
+			return context.sync();
+		});
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
+
 ### insertRichTextAsSibling(insertLocation: string, paragraphText: string)
 Inserts the paragraph text at the specifiec insert location.
 
@@ -103,6 +216,43 @@ paragraphObject.insertRichTextAsSibling(insertLocation, paragraphText);
 
 #### Returns
 [RichText](richtext.md)
+
+#### Examples
+```js
+OneNote.run(function (context) {
+
+	// Get the collection of pageContent items from the page.
+	var pageContents = context.application.getActivePage().contents;
+
+	// Get the first PageContent on the page
+	// Assuming its an outline, get the outline's paragraphs.
+	var pageContent = pageContents.getItemAt(0);
+	var paragraphs = pageContent.outline.paragraphs;
+	var firstParagraph = paragraphs.getItemAt(0);
+
+	// Queue a command to load the id and type of the first paragraph
+	firstParagraph.load("id,type");
+
+	// Run the queued commands, and return a promise to indicate task completion.
+	return context.sync()
+		.then(function () {
+
+			// Queue commands to insert before and after the first paragraph
+			firstParagraph.insertRichTextAsSibling("Before", "Text Appears Before Paragraph");
+			firstParagraph.insertRichTextAsSibling("After", "Text Appears After Paragraph");
+			
+			// Run the command to insert text contents
+			return context.sync();
+		});
+})	
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+}); 
+```
+
 
 ### insertTableAsSibling(insertLocation: string, rowCount: number, columnCount: number, values: string[][])
 Adds a table with the specified number of rows and columns before or after the current paragraph.
@@ -152,6 +302,41 @@ None
 
 #### Returns
 void
+
+#### Examples
+```js
+OneNote.run(function (context) {
+
+	// Get the collection of pageContent items from the page.
+	var pageContents = context.application.getActivePage().contents;
+
+	// Get the first PageContent on the page
+	// Assuming its an outline, get the outline's paragraphs.
+	var pageContent = pageContents.getItemAt(0);
+	var paragraphs = pageContent.outline.paragraphs;
+
+	var firstParagraph = paragraphs.getItemAt(0);
+
+	// Queue a command to load the id and type of the first paragraph
+	firstParagraph.load("id,type");
+
+	// Queue a command to select the first paragraph  
+	firstParagraph.select();
+
+	// Run the queued commands, and return a promise to indicate task completion.
+	return context.sync()
+		.then(function () {
+			console.log("Selected paragraph with id : " + firstParagraph.id + " and type: " + firstParagraph.type);
+			return Promise.resolve(firstParagraph);
+		});
+})		
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+}); 
+```
 ### Property access examples
 
 **id and type**
@@ -180,12 +365,13 @@ OneNote.run(function (context) {
                 console.log("Paragraph type: " + paragraph.type);
                 console.log("Paragraph ID: " + paragraph.id);
             });
-        })                
-        .catch(function(error) {
-            console.log("Error: " + error);
-            if (error instanceof OfficeExtension.Error) {
-                console.log("Debug info: " + JSON.stringify(error.debugInfo));
-            }
-        }); 
-    });
+        });
+})		
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+}); 
 ```
+

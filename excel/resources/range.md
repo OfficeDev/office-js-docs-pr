@@ -195,7 +195,7 @@ Excel.run(function (ctx) {
 	var rangeAddress = "A1:F8";
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
-	var cell = range.cell(0,0);
+	var cell = range.getCell(0,0);
 	cell.load('address');
 	return ctx.sync().then(function() {
 		console.log(cell.address);

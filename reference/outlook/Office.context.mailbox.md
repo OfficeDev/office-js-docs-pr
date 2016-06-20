@@ -30,6 +30,10 @@ Gets the URL of the Exchange Web Services (EWS) endpoint for this email account.
 
 The `ewsUrl` value can be used by a remote service to make EWS calls to the user's mailbox. For example, you can create a remote service to [get attachments from the selected item](https://msdn.microsoft.com/EN-US/library/office/dn148008.aspx).
 
+Your app must have the **ReadItem** permission specified in its manifest to call the `ewsUrl` member in read mode.
+
+In compose mode you must call the [`saveAsync`](Office.context.mailbox.item#saveAsync) method before you can use the `ewsUrl` member. Your app must have **ReadWriteItem** permissions to call the `saveAsync` method.
+
 ##### Type:
 
 *   String
@@ -40,7 +44,7 @@ The `ewsUrl` value can be used by a remote service to make EWS calls to the user
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
-|Applicable Outlook mode| Read|
+|Applicable Outlook mode| Compose or read|
 
 ### Methods
 
@@ -237,8 +241,7 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item#save
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
-|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md) (Read mode)| ReadItem|
-|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md) (Compose mode)| ReadWriteItem|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose and read|
 
 ##### Example

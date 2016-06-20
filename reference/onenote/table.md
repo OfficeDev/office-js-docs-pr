@@ -1,40 +1,41 @@
 # Table Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_
-_Note: This API is in preview_
+_Applies to: OneNote Online_  
+_Note: This API is in preview_  
+
 
 Represents a table in a OneNote page.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|columnCount|int|Gets the number of columns in the table. Read-only.|
-|id|string|Gets the ID of the table. Read-only.|
-|rowCount|int|Gets the number of rows in the table. Read-only.|
+| Property	   | Type	|Description|Feedback|
+|:---------------|:--------|:----------|:-------|
+|columnCount|int|Gets the number of columns in the table. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-columnCount)|
+|id|string|Gets the ID of the table. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-id)|
+|rowCount|int|Gets the number of rows in the table. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-rowCount)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|paragraph|[Paragraph](paragraph.md)|Gets the Paragraph object that contains the Table object. Read-only.|
-|rows|[TableRowCollection](tablerowcollection.md)|Gets all of the table rows. Read-only.|
+| Relationship | Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|paragraph|[Paragraph](paragraph.md)|Gets the Paragraph object that contains the Table object. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-paragraph)|
+|rows|[TableRowCollection](tablerowcollection.md)|Gets all of the table rows. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-rows)|
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[appendColumn(values: string[])](#appendcolumnvalues-string)|void|Adds a column to the end of the table. Values, if specified, are set in the new column. Otherwise the column is empty.|
-|[appendRow(values: string[])](#appendrowvalues-string)|[TableRow](tablerow.md)|Adds a row to the end of the table. Values, if specified, are set in the new row. Otherwise the row is empty.|
-|[deleteColumns(columnIndex: number, columnCount: number)](#deletecolumnscolumnindex-number-columncount-number)|void|Deletes a contiguous run of columns.|
-|[deleteRows(rowIndex: number, rowCount: number)](#deleterowsrowindex-number-rowcount-number)|void|Deletes a contiguous run of rows.|
-|[getCell(rowIndex: number, cellIndex: number)](#getcellrowindex-number-cellindex-number)|[TableCell](tablecell.md)|Gets the table cell at a specified row and column.|
-|[hideBorder()](#hideborder)|void|Hides the table's border|
-|[insertColumn(index: number, values: string[])](#insertcolumnindex-number-values-string)|void|Inserts a column at the given index in the table. Values, if specified, are set in the new column. Otherwise the column is empty.|
-|[insertRow(index: number, values: string[])](#insertrowindex-number-values-string)|[TableRow](tablerow.md)|Inserts a row at the given index in the table. Values, if specified, are set in the new row. Otherwise the row is empty.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
-|[showBorder()](#showborder)|void|Make's the table's border visible|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|[appendColumn(values: string[])](#appendcolumnvalues-string)|void|Adds a column to the end of the table. Values, if specified, are set in the new column. Otherwise the column is empty.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-appendColumn)|
+|[appendRow(values: string[])](#appendrowvalues-string)|[TableRow](tablerow.md)|Adds a row to the end of the table. Values, if specified, are set in the new row. Otherwise the row is empty.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-appendRow)|
+|[deleteColumns(columnIndex: number, columnCount: number)](#deletecolumnscolumnindex-number-columncount-number)|void|Deletes a contiguous run of columns.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-deleteColumns)|
+|[deleteRows(rowIndex: number, rowCount: number)](#deleterowsrowindex-number-rowcount-number)|void|Deletes a contiguous run of rows.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-deleteRows)|
+|[getCell(rowIndex: number, cellIndex: number)](#getcellrowindex-number-cellindex-number)|[TableCell](tablecell.md)|Gets the table cell at a specified row and column.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-getCell)|
+|[hideBorder()](#hideborder)|void|Hides the table's border|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-hideBorder)|
+|[insertColumn(index: number, values: string[])](#insertcolumnindex-number-values-string)|void|Inserts a column at the given index in the table. Values, if specified, are set in the new column. Otherwise the column is empty.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-insertColumn)|
+|[insertRow(index: number, values: string[])](#insertrowindex-number-values-string)|[TableRow](tablerow.md)|Inserts a row at the given index in the table. Values, if specified, are set in the new row. Otherwise the row is empty.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-insertRow)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-load)|
+|[showBorder()](#showborder)|void|Make's the table's border visible|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-showBorder)|
 
 ## Method Details
 
@@ -55,6 +56,39 @@ tableObject.appendColumn(values);
 #### Returns
 void
 
+#### Examples
+```js
+OneNote.run(function(ctx) {
+	var app = ctx.application;
+	var outline = app.getActiveOutline();
+	
+	// Queue a command to load outline.paragraphs and their types.
+	ctx.load(outline, "paragraphs, paragraphs/type");
+	
+	// Run the queued commands, and return a promise to indicate task completion.
+	return ctx.sync().then(function () {
+		var paragraphs = outline.paragraphs;
+		
+		// for each table, append a column.
+		for (var i = 0; i < paragraphs.items.length; i++) {
+			var paragraph = paragraphs.items[i];
+			if (paragraph.type == "Table") {
+				var table = paragraph.table;
+				table.appendColumn(["cell0", "cell1"]);
+			}
+		}
+		return ctx.sync();
+	})
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
+
 ### appendRow(values: string[])
 Adds a row to the end of the table. Values, if specified, are set in the new row. Otherwise the row is empty.
 
@@ -70,6 +104,39 @@ tableObject.appendRow(values);
 
 #### Returns
 [TableRow](tablerow.md)
+
+#### Examples
+```js
+OneNote.run(function(ctx) {
+	var app = ctx.application;
+	var outline = app.getActiveOutline();
+	
+	// Queue a command to load outline.paragraphs and their types.
+	ctx.load(outline, "paragraphs, paragraphs/type");
+	
+	// Run the queued commands, and return a promise to indicate task completion.
+	return ctx.sync().then(function () {
+		var paragraphs = outline.paragraphs;
+		
+		// for each table, append a column.
+		for (var i = 0; i < paragraphs.items.length; i++) {
+			var paragraph = paragraphs.items[i];
+			if (paragraph.type == "Table") {
+				var table = paragraph.table;
+				var row = table.appendRow(["cell0", "cell1"]);
+			}
+		}
+		return ctx.sync();
+	})
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
 
 ### deleteColumns(columnIndex: number, columnCount: number)
 Deletes a contiguous run of columns.
@@ -88,6 +155,39 @@ tableObject.deleteColumns(columnIndex, columnCount);
 #### Returns
 void
 
+#### Examples
+```js
+OneNote.run(function(ctx) {
+	var app = ctx.application;
+	var outline = app.getActiveOutline();
+	
+	// Queue a command to load outline.paragraphs and their types.
+	ctx.load(outline, "paragraphs, paragraphs/type");
+	
+	// Run the queued commands, and return a promise to indicate task completion.
+	return ctx.sync().then(function () {
+		var paragraphs = outline.paragraphs;
+		
+		// for each table, delete columns.
+		for (var i = 0; i < paragraphs.items.length; i++) {
+			var paragraph = paragraphs.items[i];
+			if (paragraph.type == "Table") {
+				var table = paragraph.table;
+				table.deleteColumns(2 /*Index of column to delete*/, 3 /*Number of columns to delete*/);
+			}
+		}
+		return ctx.sync();
+	})
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
+
 ### deleteRows(rowIndex: number, rowCount: number)
 Deletes a contiguous run of rows.
 
@@ -104,6 +204,39 @@ tableObject.deleteRows(rowIndex, rowCount);
 
 #### Returns
 void
+
+#### Examples
+```js
+OneNote.run(function(ctx) {
+	var app = ctx.application;
+	var outline = app.getActiveOutline();
+	
+	// Queue a command to load outline.paragraphs and their types.
+	ctx.load(outline, "paragraphs, paragraphs/type");
+	
+	// Run the queued commands, and return a promise to indicate task completion.
+	return ctx.sync().then(function () {
+		var paragraphs = outline.paragraphs;
+		
+		// for each table, delete rows.
+		for (var i = 0; i < paragraphs.items.length; i++) {
+			var paragraph = paragraphs.items[i];
+			if (paragraph.type == "Table") {
+				var table = paragraph.table;
+				table.deleteRows(2 /*Index of row to delete*/, 3 /*Number of rows to delete*/);
+			}
+		}
+		return ctx.sync();
+	})
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
 
 ### getCell(rowIndex: number, cellIndex: number)
 Gets the table cell at a specified row and column.
@@ -122,6 +255,39 @@ tableObject.getCell(rowIndex, cellIndex);
 #### Returns
 [TableCell](tablecell.md)
 
+#### Examples
+```js
+OneNote.run(function(ctx) {
+	var app = ctx.application;
+	var outline = app.getActiveOutline();
+	
+	// Queue a command to load outline.paragraphs and their types.
+	ctx.load(outline, "paragraphs, paragraphs/type");
+	
+	// Run the queued commands, and return a promise to indicate task completion.
+	return ctx.sync().then(function () {
+		var paragraphs = outline.paragraphs;
+		
+		// for each table, get a cell in the second row and third column.
+		for (var i = 0; i < paragraphs.items.length; i++) {
+			var paragraph = paragraphs.items[i];
+			if (paragraph.type == "Table") {
+				var table = paragraph.table;
+				var cell = table.getCell(2 /*Row Index*/, 3 /*Column Index*/);
+			}
+		}
+		return ctx.sync();
+	})
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
+
 ### hideBorder()
 Hides the table's border
 
@@ -135,6 +301,39 @@ None
 
 #### Returns
 void
+
+#### Examples
+```js
+OneNote.run(function(ctx) {
+	var app = ctx.application;
+	var outline = app.getActiveOutline();
+	
+	// Queue a command to load outline.paragraphs and their types.
+	ctx.load(outline, "paragraphs, paragraphs/type");
+	
+	// Run the queued commands, and return a promise to indicate task completion.
+	return ctx.sync().then(function () {
+		var paragraphs = outline.paragraphs;
+		
+		// for each table, hide border.
+		for (var i = 0; i < paragraphs.items.length; i++) {
+			var paragraph = paragraphs.items[i];
+			if (paragraph.type == "Table") {
+				var table = paragraph.table;
+				table.hideBorder();
+			}
+		}
+		return ctx.sync();
+	})
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
 
 ### insertColumn(index: number, values: string[])
 Inserts a column at the given index in the table. Values, if specified, are set in the new column. Otherwise the column is empty.
@@ -153,6 +352,39 @@ tableObject.insertColumn(index, values);
 #### Returns
 void
 
+#### Examples
+```js
+OneNote.run(function(ctx) {
+	var app = ctx.application;
+	var outline = app.getActiveOutline();
+	
+	// Queue a command to load outline.paragraphs and their types.
+	ctx.load(outline, "paragraphs, paragraphs/type");
+	
+	// Run the queued commands, and return a promise to indicate task completion.
+	return ctx.sync().then(function () {
+		var paragraphs = outline.paragraphs;
+		
+		// for each table, insert a column at index two.
+		for (var i = 0; i < paragraphs.items.length; i++) {
+			var paragraph = paragraphs.items[i];
+			if (paragraph.type == "Table") {
+				var table = paragraph.table;
+				table.insertColumn(2, ["cell0", "cell1"]);
+			}
+		}
+		return ctx.sync();
+	})
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
+
 ### insertRow(index: number, values: string[])
 Inserts a row at the given index in the table. Values, if specified, are set in the new row. Otherwise the row is empty.
 
@@ -169,6 +401,39 @@ tableObject.insertRow(index, values);
 
 #### Returns
 [TableRow](tablerow.md)
+
+#### Examples
+```js
+OneNote.run(function(ctx) {
+	var app = ctx.application;
+	var outline = app.getActiveOutline();
+	
+	// Queue a command to load outline.paragraphs and their types.
+	ctx.load(outline, "paragraphs, paragraphs/type");
+	
+	// Run the queued commands, and return a promise to indicate task completion.
+	return ctx.sync().then(function () {
+		var paragraphs = outline.paragraphs;
+		
+		// for each table, insert a row at index two.
+		for (var i = 0; i < paragraphs.items.length; i++) {
+			var paragraph = paragraphs.items[i];
+			if (paragraph.type == "Table") {
+				var table = paragraph.table;
+				var row = table.insertRow(2, ["cell0", "cell1"]);
+			}
+		}
+		return ctx.sync();
+	})
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -199,3 +464,114 @@ None
 
 #### Returns
 void
+
+#### Examples
+```js        
+OneNote.run(function(ctx) {
+	var app = ctx.application;
+	var outline = app.getActiveOutline();
+	
+	// Queue a command to load outline.paragraphs and their types.
+	ctx.load(outline, "paragraphs, paragraphs/type");
+	
+	// Run the queued commands, and return a promise to indicate task completion.
+	return ctx.sync().then(function () {
+		var paragraphs = outline.paragraphs;
+		
+		// for each table, show border.
+		for (var i = 0; i < paragraphs.items.length; i++) {
+			var paragraph = paragraphs.items[i];
+			if (paragraph.type == "Table") {
+				var table = paragraph.table;
+				table.showBorder();
+			}
+		}
+		return ctx.sync();
+	})
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+### Property access examples
+**columnCount, rowCount, id**
+```js
+OneNote.run(function(ctx) {
+	var app = ctx.application;
+	var outline = app.getActiveOutline();
+	
+	// Queue a command to load outline.paragraphs and their types.
+	ctx.load(outline, "paragraphs/type");
+	
+	// Run the queued commands, and return a promise to indicate task completion.
+	return ctx.sync().then(function () {
+		var paragraphs = outline.paragraphs;
+		
+		// For each table, log properties.
+		for (var i = 0; i < paragraphs.items.length; i++) {
+			var paragraph = paragraphs.items[i];
+			if (paragraph.type == "Table") {
+				var table = paragraph.table;
+				ctx.load(table);
+				return ctx.sync().then(function() {
+					console.log("Table Id: " + table.id);
+					console.log("Row Count: " + table.rowCount);
+					console.log("Column Count: " + table.columnCount);
+					return ctx.sync();
+				});
+			}
+		}
+	});
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
+**paragraph, rows**
+```js
+OneNote.run(function(ctx) {
+	var app = ctx.application;
+	var outline = app.getActiveOutline();
+	
+	// Queue a command to load outline.paragraphs and their types.
+	ctx.load(outline, "paragraphs, paragraphs/type");
+	
+	// Run the queued commands, and return a promise to indicate task completion.
+	return ctx.sync().then(function () {
+		var paragraphs = outline.paragraphs;
+		
+		// for each table, log its paragraph id.
+		for (var i = 0; i < paragraphs.items.length; i++) {
+			var paragraph = paragraphs.items[i];
+			if (paragraph.type == "Table") {
+				var table = paragraph.table;
+				ctx.load(table, "paragraph/id, rows/id");
+				return ctx.sync().then(function() {
+					console.log("Paragraph Id: " + table.paragraph.id);
+					var rows = table.rows;
+					
+					// for each rows in the table, log row index and id.
+					for (var i = 0; i < rows.items.length; i++) {
+						console.log("Row " + i + " Id: " + rows.items[i].id);
+					}
+					return ctx.sync();
+				});
+			}
+		}
+	})
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+

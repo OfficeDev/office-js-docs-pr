@@ -51,7 +51,7 @@ For concepts that are applicable to developing Office add-ins in general, see th
 
 - [Submit Office and SharePoint Add-ins and Office 365 web apps to the Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)
 
-- [JavaScript API for Office](http://msdn.microsoft.com/EN-US/library/fp142185%28v=office.15%29.aspx(Office.15).aspx)
+- [JavaScript API for Office](../../reference/javascript-api-for-office.md)
 
-- [Mail add-in manifests](../outlook/manifests/manifests.md)
+- [Outlook add-in manifests](../outlook/manifests/manifests.md)
 

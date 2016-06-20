@@ -172,14 +172,10 @@ The  _fileType_ parameter expects one of three constants from the [FileType](../
 
 The  **getFileAsync** method returns a reference to the file as a [File](../../reference/shared/file.md) object. The **File** object exposes four members: the [size](../../reference/shared/file.size.md) property, [sliceCount](../../reference/shared/file.slicecount.md) property, [getSliceAsync](../../reference/shared/file.getsliceasync.md) method, and [closeAsync](../../reference/shared/file.closeasync.md) method. The **size** property returns the number of bytes in the file. The **sliceCount** returns the number of [Slice](../../reference/shared/document.md) objects (discussed later in this article) in the file.
 
-Use the following code to get the PowerPoint or Word document as a  **File** object using the **Document.getFileAsync** method and then makes a call to the locally defined `getSlice` function. Note that the **File** object, a counter variable, and the total number of slices in the file are passed along in the call to `getSlice` in an anonymous object.
-
-
-
+The following code retrieves a PowerPoint or Word document as a **File** object using the **document.getFileAsync()** method. It then packages the resulting **File** object, a zeroed counter, and [sliceCount](../../reference/shared/file.slicecount.md) into an anonymous object. This object is subsequently passed in to a locally defined `getSlice` function. 
 
 ```js
-
-// Get all of the content from a PowerPoint or Word document in 100-KB chunks of text.
+// Get all the content from a PowerPoint or Word document in 100-KB chunks of text.
 function sendFile() {
 
     Office.context.document.getFileAsync("compressed",
@@ -207,8 +203,6 @@ function sendFile() {
     });
 }
 ```
-
-
 
 The local function  `getSlice` makes a call to the **File.getSliceAsync** method to retrieve a slice from the **File** object. The **getSliceAsync** method returns a **Slice** object from the collection of slices. It has two required parameters, _sliceIndex_ and _callback_. The  _sliceIndex_ parameter takes an integer as an indexer into the collection of slices. Like other functions in the JavaScript API for Office, the **getSliceAsync** method also takes a callback function as a parameter to handle the results from the method call.
 
