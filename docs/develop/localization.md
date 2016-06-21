@@ -1,4 +1,3 @@
-
 # Localization for Office Add-ins
 
 You can implement any localization scheme that's appropriate for your Office Add-in. The JavaScript API and manifest schema of the Office Add-ins platform provide some choices. You can use the JavaScript API for Office to determine a locale and display strings based on the locale of the host application, or to interpret or display data based on the locale of the data. You can use the manifest to specify locale-specific add-in file location and descriptive information. Alternatively, you can use Microsoft Ajax script to support globalization and localization.
@@ -8,7 +7,7 @@ You can implement any localization scheme that's appropriate for your Office Add
 The JavaScript API for Office provides two properties that support displaying or interpreting values consistent with the locale of the host application and data:
 
 
-- [Context.displayLanguage](../../reference/add-ins/shared/office.context.displaylanguage.md) specifies the locale (or language) of the user interface of the host application. The following example verifies if the host application uses the en-US or fr-Fr locale, and displays a locale-specific greeting.
+- [Context.displayLanguage][displayLanguage] specifies the locale (or language) of the user interface of the host application. The following example verifies if the host application uses the en-US or fr-Fr locale, and displays a locale-specific greeting.
 
     
 ```js
@@ -30,7 +29,7 @@ The JavaScript API for Office provides two properties that support displaying or
 
 ```
 
-- [Context.contentLanguage](../../reference/add-ins/shared/office.context.contentlanguage) specifies the locale (or language) of the data. Extending the last code sample, instead of checking the **displayLanguage** property, assign  `myLanguage` to the **contentLanguage** property, and use the rest of the same code to display a greeting based on the locale of the data:
+- [Context.contentLanguage][contentLanguage] specifies the locale (or language) of the data. Extending the last code sample, instead of checking the [displayLanguage] property, assign  `myLanguage` to the [contentLanguage] property, and use the rest of the same code to display a greeting based on the locale of the data:
     
 ```js
       var myLanguage = Office.context.contentLanguage;
@@ -40,7 +39,7 @@ The JavaScript API for Office provides two properties that support displaying or
 ## Control localization from the manifest
 
 
-Every Office Add-in specifies a [DefaultLocale] element and a locale in its manifest. By default, the Office Add-in platform and Office host applications apply the values of the [Description], [DisplayName], [IconUrl], [HighResolutionIconUrl], and [SourceLocation] elements to all locales. You can optionally support specific values for specific locales, by specifying an [Override] child element for each additional locale, for any of these five elements. The value for the [DefaultLocale] element and for the **Locale** attribute of the [Overrride] element is specified according to [RFC 3066], "Tags for the Identification of Languages." Table 1 describes the localizing support for these elements.
+Every Office Add-in specifies a [DefaultLocale] element and a locale in its manifest. By default, the Office Add-in platform and Office host applications apply the values of the [Description], [DisplayName], [IconUrl], [HighResolutionIconUrl], and [SourceLocation] elements to all locales. You can optionally support specific values for specific locales, by specifying an [Override] child element for each additional locale, for any of these five elements. The value for the [DefaultLocale] element and for the `Locale` attribute of the [Override] element is specified according to [RFC 3066], "Tags for the Identification of Languages." Table 1 describes the localizing support for these elements.
 
 **Table 1. Localization support**
 
@@ -87,7 +86,7 @@ The following example applies a locale override for the  [Description] element. 
 </Description>
 ```
 
-This means that the add-in assumes the  `en-us` locale by default. Users would see the English description in the **DefaultValue** attribute for all locales unless the client computer's locale is `fr-fr`, in which case they would see the French description.
+This means that the add-in assumes the  `en-us` locale by default. Users would see the English description in the `DefaultValue` attribute for all locales unless the client computer's locale is `fr-fr`, in which case they would see the French description.
 
 In the following example, the add-in specifies a separate image that's more appropriate for the  `fr-fr` locale and culture. Users see the image DefaultLogo.png by default, except when the locale of the client computer is `fr-fr`. In this case, users would see the image FrenchLogo.png. 
 
@@ -129,9 +128,9 @@ For Outlook add-ins, the  [SourceLocation] element also aligns to the form facto
 ## Match date/time format with client locale
 
 
-You can get the locale of the user interface of the hosting application by using the  **displayLanguage** property. You can then display date and time values in a format consistent with the current locale of the host application. One way to do that is to prepare a resource file that specifies the date/time display format to use for each locale that your Office Add-in supports. At run time, your add-in can use the resource file and match the appropriate date/time format with the locale obtained from the **displayLanguage** property.
+You can get the locale of the user interface of the hosting application by using the [displayLanguage] property. You can then display date and time values in a format consistent with the current locale of the host application. One way to do that is to prepare a resource file that specifies the date/time display format to use for each locale that your Office Add-in supports. At run time, your add-in can use the resource file and match the appropriate date/time format with the locale obtained from the [displayLanguage] property.
 
-You can get the locale of the data of the hosting application by using the  **contentLanguage** property. Based on this value, you can then appropriately interpret or display date/time strings. For example, the jp-JP locale expresses data/time values as yyyy/MM/dd, and the fr-FR locale, dd/MM/yyyy.
+You can get the locale of the data of the hosting application by using the  [contentLanguage] property. Based on this value, you can then appropriately interpret or display date/time strings. For example, the `jp-JP` locale expresses data/time values as `yyyy/MM/dd`, and the `fr-FR` locale, `dd/MM/yyyy`.
 
 
 ## Use Ajax for globalization and localization
@@ -426,16 +425,16 @@ Run the sample add-in. The taskpane add-in loads in Word 2013, and the strings i
     
 - [Language identifiers and OptionState Id values in Office 2013](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)
 
-
-
-[DefaultLocale]: ../../reference/add-ins/manifest/defaultlocale.md
-[Description]: ../../reference/add-ins/manifest/description.md
-[DisplayName]: ../../reference/add-ins/manifest/displayname.md
-[IconUrl]: ../../reference/add-ins/manifest/iconurl.md
-[HighResolutionIconUrl]: ../../reference/add-ins/manifest/highresolutioniconurl.md
-[SourceLocation]: ../../reference/add-ins/manifest/sourcelocation.md
-[Override]:  ../../reference/add-ins/manifest/override.md
-[DesktopSettings]: ../../reference/add-ins/manifest/desktopsettings.md
-[TabletSettings]: ../../reference/add-ins/manifest/tabletsettings.md
-[PhoneSettings]: ../../reference/add-ins/manifest/phonesettings.md
+[DefaultLocale]: 		 ../../reference/manifest/defaultlocale.md
+[Description]: 			 ../../reference/manifest/description.md
+[DisplayName]: 			 ../../reference/manifest/displayname.md
+[IconUrl]: 				 ../../reference/manifest/iconurl.md
+[HighResolutionIconUrl]: ../../reference/manifest/highresolutioniconurl.md
+[SourceLocation]: 		 ../../reference/manifest/sourcelocation.md
+[Override]:  			 ../../reference/manifest/override.md
+[DesktopSettings]: 		 ../../reference/manifest/desktopsettings.md
+[TabletSettings]: 		 ../../reference/manifest/tabletsettings.md
+[PhoneSettings]: 		 ../../reference/manifest/phonesettings.md
+[displayLanguage]: 	../../reference/shared/office.context.displaylanguage.md 
+[contentLanguage]: 	../../reference/shared/office.context.contentlanguage.md 
 [RFC 3066]: http://www.ietf.org/rfc/rfc3066.txt
