@@ -1,6 +1,7 @@
 
 # Create add-ins for Access web apps
-
+
+
 
 This article shows you how to use Visual Studio 2015 to develop an Office Add-in that targets Access web apps.
 
@@ -11,7 +12,7 @@ To create an Office Add-in that targets Access web apps, you need:
 
 - Visual Studio 2015
 
-- A SharePoint Online site (included in many Office 365 subscriptions). This site must have an add-in catalog. For more information, see [Set up an add-in catalog on SharePoint](http://msdn.microsoft.com/en-us/library/office/fp123530.aspx).
+- A SharePoint Online site (included in many Office 365 subscriptions). This site must have an add-in catalog. For more information, see [Set up an add-in catalog on SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 
  >**Note**  Office Add-ins will work with Access web apps hosted on SharePoint Online or Office 365. The Access 2013 desktop application doesn't support Office Add-ins. Office Add-ins targeting Access web apps are supported by version 1.1 and later of Office.js.
@@ -57,7 +58,7 @@ To create an Office Add-in that targets Access web apps, you need:
 
 1. In your Visual Studio project, open the  **Home.html** file, and find the lines that reference the office.js script library.
 
-```
+```html
   <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
 ```
  >**Note** that script tag references version 1.1 (and above) of Office.js. Access uses API elements introduced in version 1.1.
@@ -66,7 +67,7 @@ To create an Office Add-in that targets Access web apps, you need:
 
 3.  In the manifest file, find the **Hosts** section and look for a **Host** entry.
 
-```
+```xml
   <Hosts> <Host Name="Database" /> </Hosts>
 ```
  >**Note** This is where the applications that can use the add-in are listed. Because you selected  **Access** in the **Create Office Add-in** dialog box, **Database** is listed. If you included Excel, there is an entry for **Workbook** as well.
