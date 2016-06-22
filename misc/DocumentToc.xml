@@ -69,8 +69,7 @@
     <Item text="Excel" url="excel" Scope="excel">
     <Item text="Excel JavaScript API programming overview" url="excel/excel-add-ins-javascript-programming-overview" SEODescription="Use the JavaScript APIs to build add-ins for Excel 2016." Scope="excel" />
 	<Item text="Build your first Excel add-in" url="excel/build-your-first-excel-add-in" SEODescription="Create a simple task pane add-in for Excel 2016." Scope="excel" />
-	<Item text="Excel JavaScript API reference" url="excel/excel-add-ins-javascript-api-reference" SEODescription="Find JavaScript API reference content for add-ins for Excel 2016." Scope="excel" />
-      <Item text="Format tables in add-ins for Excel" url="excel/format-tables-in-add-ins-for-excel" SEODescription="Specify formatting for tables in add-ins for Excel." Scope="excel" />
+	<Item text="Format tables in add-ins for Excel" url="excel/format-tables-in-add-ins-for-excel" SEODescription="Specify formatting for tables in add-ins for Excel." Scope="excel" />
 	  <Item text="Read and write data to the active selection in a document or spreadsheet" url="develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet"  />	
 	  <Item text="Bind to regions in a document or spreadsheet" url="develop/bind-to-regions-in-a-document-or-spreadsheet"  Scope="excel"/>
 	</Item>
