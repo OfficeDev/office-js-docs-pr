@@ -1,5 +1,7 @@
 # Control element
 
+Defines a JavaScript function that executes and action or launches a task pane. A **Control** element can be either a button or a menu option. At least one Control must be included in a [Group](group.md) element.
+
 ## Button control
 
 A button performs a single action when the user selects it. It can either execute a function or show a task pane. Each button control must have an `id` unique to the manifest. 
