@@ -26,13 +26,15 @@ The typical development lifecycle of an Office Add-in includes the following ste
     
     Consider the following to identify the scenarios:
     
-      - Will customers use the add-in to enrich the content of a document or Access browser-based database? If so, you may want to consider creating a content add-in. Currently, you can create content add-ins for Access, Excel, Excel Online, PowerPoint, or PowerPoint Online.
+	- Will customers use the add-in to enrich the content of a document or Access browser-based database? If so, you may want to consider creating a content add-in. 
     
-  - Will customers use the add-in while viewing or composing an email message or appointment? Is being able to expose the add-in according to the current context important? Is making the add-in available on not just the desktop, but also on tablets and smartphones a priority?
+  	- Will customers use the add-in while viewing or composing an email message or appointment? Is being able to expose the add-in according to the current context important? Is making the add-in available on not just the desktop, but also on tablets and phones a priority?
     
-    If you answer yes to any of these questions, consider creating an Outlook add-in. Currently, you can create Outlook add-ins for the Outlook rich clients, Outlook Web App and OWA for Devices, if your mailbox resides on an Exchange Server. Then identify the context that will trigger your add-in (for example, the user being in a compose form, specific message types, the presence of an attachment, address, task suggestion, or meeting suggestion, or certain string patterns in the contents of an email or appointment). See [Activation rules for Outlook add-ins](../outlook/manifests/activation-rules.md) to find out how you can contextually activate the Outlook add-in.
+    	If you answer yes to any of these questions, consider creating an Outlook add-in. Then identify the context that will trigger your add-in (for example, the user being in a compose form, specific message types, the presence of an attachment, address, task suggestion, or meeting suggestion, or certain string patterns in the contents of an email or appointment). See [Activation rules for Outlook add-ins](../outlook/manifests/activation-rules.md) to find out how you can contextually activate the Outlook add-in.
     
-  - Will customers use the add-in to enhance the viewing or authoring experience of a document? If so, you may want to consider creating a task pane add-in. Currently, you can create task pane add-ins for Excel, Excel Online, PowerPoint, PowerPoint Online, Project, and Word.
+  	- Will customers use the add-in to enhance the viewing or authoring experience of a document? If so, you may want to consider creating a task pane add-in. 
+
+	Support for certain Add-in APIs may differ between Office applications and the platform they are running on (Windows, Mac, Web, Mobile). To see the current API coverage by client and platform, please see our [Office Add-in host and platform availability](https://dev.office.com/add-in-availability) page.  
     
 4.  **Design and implement the user experience and user interface for the add-in.**
     
@@ -58,5 +60,5 @@ The typical development lifecycle of an Office Add-in includes the following ste
     
 8.  **Updating the add-in**
     
-    If your add-in calls a web service, and if you make updates to the web service after publishing the add-in, you do not have to republish the add-in. However, if you change any items or data you submitted for your add-in, such as the add-in manifest, screenshots, icons, HTML or JavaScript files, you will need to republish the add-in. In particular, if you have published the add-in to the Office Store, you'll need to resubmit your add-in so that the Office Store can implement those changes. You must resubmit your add-in with an updated add-in manifest that includes a new version number. You must also make sure to update the add-in version number in the submission form to match the new manifest's version number. For Outlook add-ins, you should make sure the [Id](http://msdn.microsoft.com/en-us/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx) element contains a different UUID in the add-in manifest.
+    If your add-in calls a web service, and if you make updates to the web service after publishing the add-in, you do not have to republish the add-in. However, if you change any items or data you submitted for your add-in, such as the add-in manifest, screenshots, icons, HTML or JavaScript files, you will need to republish the add-in. In particular, if you have published the add-in to the Office Store, you'll need to resubmit your add-in so that the Office Store can implement those changes. You must resubmit your add-in with an updated add-in manifest that includes a new version number. You must also make sure to update the add-in version number in the submission form to match the new manifest's version number. For Outlook add-ins, you should make sure the [Id](../../reference/manifest/id.md) element contains a different UUID in the add-in manifest.
     
