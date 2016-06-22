@@ -1,7 +1,7 @@
 
 # Asynchronous programming in Office Add-ins
 
- Why does the Office Add-ins API use asynchronous programming? Because JavaScript is a single-threaded language, if script invokes a long-running synchronous process, all subsequent script execution will be blocked until that process completes. Because certain operations against Office web clients (but rich clients as well) could block execution if they are run synchronously, most of the methods in the JavaScript API for Office are designed to execute asynchronously. This makes sure that Office Add-ins are responsive and highly performing. It also frequently requires you to write callback functions when working with these asynchronous methods.
+Why does the Office Add-ins API use asynchronous programming? Because JavaScript is a single-threaded language, if script invokes a long-running synchronous process, all subsequent script execution will be blocked until that process completes. Because certain operations against Office web clients (but rich clients as well) could block execution if they are run synchronously, most of the methods in the JavaScript API for Office are designed to execute asynchronously. This makes sure that Office Add-ins are responsive and highly performing. It also frequently requires you to write callback functions when working with these asynchronous methods.
 
 The names of all asynchronous methods in the API end with "Async", such as the  [Document.getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md), [Binding.getDataAsync](../../reference/shared/binding.getdataasync.md), or [Item.loadCustomPropertiesAsync](../../reference/outlook/Office.context.mailbox.item.md) methods. When an "Async" method is called, it executes immediately and any subsequent script execution can continue. The optional callback function you pass to an "Async" method executes as soon as the data or requested operation is ready. This generally occurs promptly, but there can be a slight delay before it returns.
 
@@ -269,16 +269,17 @@ You can create the JSON object that contains optional parameters inline, or by c
 
 For example, the syntax for calling the [Document.setSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) method with optional parameters inline looks like this:
 
- `Office.context.document.setSelectedDataAsync(` _data_ `, {coercionType:` _coercionType_ `, asyncContext:` _asyncContext_ `},` _callback_ `);`
+```javascript
+ Office.context.document.setSelectedDataAsync(data, {coercionType: 'coercionType', asyncContext:' asyncContext},callback);
+
+```
 
 In this form of the calling syntax, the two optional parameters,  _coercionType_ and _asyncContext_, are defined as a JSON object inline enclosed in braces.
 
 The following example shows how to call to the  **Document.setSelectedDataAsync** method by specifying optional parameters inline.
 
 
-
-
-```
+```javascript
 Office.context.document.setSelectedDataAsync(
     "<html><body>hello world</body></html>",
     {coercionType: "html", asyncContext: 42},
@@ -294,7 +295,7 @@ function write(message){
 ```
 
 
- >**Note**  You can specify optional parameters in any order in the JSON object as long as their names are specified correctly.
+> **Note:**  You can specify optional parameters in any order in the JSON object as long as their names are specified correctly.
 
 
 ### Passing optional parameters in an options object
@@ -306,7 +307,7 @@ The following example shows one way of creating the  `options` object, where `pa
 
 
 
-```
+```javascript
 var options = {
     parameter1: value1,
     parameter2: value2,
@@ -321,7 +322,7 @@ Which looks like the following example when used to specify the [ValueFormat](..
 
 
 
-```
+```javascript
 var options = {
     valueFormat: "unformatted",
     filterType: "all"
@@ -333,7 +334,7 @@ Here's another way of creating the  `options` object.
 
 
 
-```
+```javascript
 var options = {};
 options[parameter1] = value1;
 options[parameter2] = value2;
@@ -344,9 +345,7 @@ options[parameterN] = valueN;
 Which looks like the following example when used to specify the  **ValueFormat** and **FilterType** parameters.:
 
 
-
-
-```
+```javascript
 var options = {};
 options["ValueFormat"] = "unformatted";
 options["FilterType"] = "all";
@@ -360,7 +359,7 @@ The following example shows how to call to the  **Document.setSelectedDataAsync*
 
 
 
-```
+```javascript
 var options = {
    coercionType: "html",
    asyncContext: 42
@@ -387,8 +386,7 @@ In both optional parameter examples, the  _callback_ parameter is specified as t
 ## Additional resources
 
 
-
 - [Understanding the JavaScript API for Office](../../docs/develop/understanding-the-javascript-api-for-office.md)
     
 - [JavaScript API for Office](../../reference/javascript-api-for-office.md)
-    
+     
