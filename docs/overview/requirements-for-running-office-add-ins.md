@@ -14,7 +14,7 @@ For all types of add-ins (content, Outlook, and task pane add-ins and add-in com
 
  >**Note:**   When you develop and debug an add-in in Visual Studio, Visual Studio deploys and runs your add-in's webpage files locally with IIS Express, and doesn't require an additional web server. Similarly, when you develop and debug with Napa in the browser, it deploys and runs your add-in's webpage files from storage associated with the account you used to sign into Napa.
 
-For content and task pane add-ins, in the supported Office host applications - Access web apps, Word, Excel, PowerPoint, or Project - you also need a [ network file share](../publish/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) or an [add-in catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) on SharePoint to upload the add-in's XML manifest file.
+For content and task pane add-ins, in the supported Office host applications - Access web apps, Word, Excel, PowerPoint, or Project - you also need an [add-in catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) on SharePoint to upload the add-in's XML manifest file.
 
 To test and run an Outlook add-in, the user's Outlook email account must reside on Exchange 2013 or later, which is available through Office 365, Exchange Online, or through an on-premises installation. The user or administrator installs manifest files for Outlook add-ins on that server.
 
