@@ -84,7 +84,7 @@ Specifies the activation rule(s) that should be evaluated for this mail add-in.
 |**ItemType**|**Corresponding ItemClass**|
 |:-----|:-----|
 |Appointment|IPM.Appointment|
-|Message|Includes email messages, meeting requests, responses, and cancellations. The following are the corresponding message classes:IPM.NoteIPM.Schedule.Meeting.RequestIPM.Schedule.Meeting.NegIPM.Schedule.Meeting.PosIPM.Schedule.Meeting.TentIPM.Schedule.Meeting.Canceled|
+|Message(1)|Includes email messages, meeting requests, responses, and cancellations.|
 |
 |FormType|ItemFormType (string)|required|Specifies whether the app should appear in read or edit form for the item. Can be one of the following:
 |
@@ -97,6 +97,9 @@ Specifies the activation rule(s) that should be evaluated for this mail add-in.
 |
 |ItemClass|string|optional|Specifies the custom message class to match. For more information, see [Activate a mail add-in in Outlook for a specific message class](http://msdn.microsoft.com/library/f464a152-2dff-4fb3-bf98-c1a3639c3e80%28Office.15%29.aspx).|
 |IncludeSubClasses|boolean|optional|Specifies whether the rule should evaluate to true if the item is of a subclass of the specified message class; the default is false.|
+
+(1) The following are the corresponding message classes:IPM.NoteIPM.Schedule.Meeting.RequestIPM.Schedule.Meeting.NegIPM.Schedule.Meeting.PosIPM.Schedule.Meeting.TentIPM.Schedule.Meeting.Canceled.
+
  **ItemHasAttachment Rule attributes**
 
 None.
@@ -118,7 +121,6 @@ None.
 |PhoneNumber| A series of digits that is identified by pattern recognition as a telephone number in North America.|
 |EmailAddress|Text that is identified by pattern recognition to contain an SMTP format email address.|
 |Contact|Text that is identified by pattern recognition to contain contact information.|
-|
 |RegExFilter|string|optional|Specifies a regular expression to run against this entity for activation.|
 |FilterName|string|optional|Specifies the name of the regular expression filter, so that it is subsequently possible to refer to it in your add-in's code.|
 |IgnoreCase|boolean|optional|Specifies to ignore case when running the regular expression specified by the  **RegExFilter** attribute.|
@@ -138,7 +140,6 @@ None.
 |BodyAsPlaintext|Evaluates the regular expression against the item body in plain text.|
 |BodyAsHtml|Evaluates the regular expression against the item body if the body is available in HTML.|
 |SenderSTMPAddress|Evaluates the regular expression against the SMTP address of the item sender.|
-|
 |IgnoreCase|boolean|optional|Specifies to ignore the case when executing the regular expression.|
  **RuleCollection Rule attributes**
 
