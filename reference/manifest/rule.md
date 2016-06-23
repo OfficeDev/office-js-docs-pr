@@ -97,6 +97,7 @@ Specifies the activation rule(s) that should be evaluated for this mail add-in.
 |ItemClass|string|optional|Specifies the custom message class to match. For more information, see [Activate a mail add-in in Outlook for a specific message class](http://msdn.microsoft.com/library/f464a152-2dff-4fb3-bf98-c1a3639c3e80%28Office.15%29.aspx).|
 |IncludeSubClasses|boolean|optional|Specifies whether the rule should evaluate to true if the item is of a subclass of the specified message class; the default is false.|
 
+
 (1) The following are the corresponding message classes:IPM.NoteIPM.Schedule.Meeting.RequestIPM.Schedule.Meeting.NegIPM.Schedule.Meeting.PosIPM.Schedule.Meeting.TentIPM.Schedule.Meeting.Canceled.
 
  **ItemHasAttachment Rule attributes**
