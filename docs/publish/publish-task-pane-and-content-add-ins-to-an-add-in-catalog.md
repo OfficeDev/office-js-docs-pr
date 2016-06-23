@@ -69,13 +69,14 @@ After you upload add-in manifests to the Office Add-ins catalog, users can acces
     
 2. Specify the URL of the  _parent SharePoint site collection_ of the add-in catalog. For example, if the URL of the Office Add-ins catalog is:
     
-    https:// _domain_ /sites/ _AddinCatalogSiteCollection_ /AgaveCatalog
+    `https:// _domain_ /sites/ _AddinCatalogSiteCollection_ /AgaveCatalog`
     
     Specify just the URL of the parent site collection:
     
-    https:// _domain_ /sites/ _AddinCatalogSiteCollection_
+    `https:// _domain_ /sites/ _AddinCatalogSiteCollection_`
     
 3. Close and reopen the Office application. The add-in catalog will be available in the  **Office Add-ins** dialog box.
     
 Alternatively, an administrator can specify an Office Add-in catalog on SharePoint by using group policy. For details, see the section "Using Group Policy to manage how users can install and use Office Add-ins" in [Overview of Office Add-ins](https://technet.microsoft.com/en-us/library/jj219429.aspx) on TechNet.
 
+> **NOTE:** Office 2016 for Mac does not support organization catalogs. To deploy to Mac clients you must either sideload or deploy through the [Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx).   
