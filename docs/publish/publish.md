@@ -11,19 +11,19 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 
 The options that are available depend on the Office host that you're targeting and the type of add-in you create.
 
-### Deployment Options for Word, Excel and PowerPoint Add-ins
+### Deployment Options for Word, Excel, and PowerPoint Add-ins
 
-| Type            | Sideloading | SharePoint catalog | Office 365 admin center preview | Office Store |
+| Extension point            | Sideloading | SharePoint catalog | Office 365 admin center preview | Office Store |
 |:----------------|:-----------:|:------------------:|:-------------------------------:|:------------:|
 | Content         | X           | X                  | X                               | X            |
 | Task pane       | X           | X                  | X                               | X            |
 | Command 		  | X           |                    | X                               | X            |
 
-> **NOTE:** Office 2016 for Mac does not support organization catalogs. To deploy to Mac clients you must either sideload the add-in or deploy through the [Office Store].    
+> **NOTE:** SharePoint catalogs are not supported for Office 2016 for Mac. To deploy Office Add-ins to Mac clients, you must submit them to the [Office Store].    
 
-### Deployment Options for Word, Excel and PowerPoint Add-ins
+### Deployment Options for Word, Excel, and PowerPoint Add-ins
 
-| Type     | Sideloading | Exchange server | Office Store |
+| Extension point     | Sideloading | Exchange server | Office Store |
 |:---------|:-----------:|:---------------:|:------------:|
 | Mail App | X           | X               | X            |
 | Command  | X           | X               | X            |
