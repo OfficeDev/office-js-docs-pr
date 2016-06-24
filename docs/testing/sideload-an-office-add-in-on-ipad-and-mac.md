@@ -21,15 +21,15 @@ To see how your add-in will run in Office for iOS, you can sideload your add-in'
 - A Mac running OS X v10.10 "Yosemite" or later with [Office for Mac](https://products.office.com/en-us/buy/compare-microsoft-office-products?tab=omac) installed.
     
 - Word for Mac version 15.18 (160109).
-    
+   
 - Excel for Mac version 15.19 (160206).
+
+- PowerPoint for Mac version 15.24 (160614)
     
 - The manifest .xml file for the add-in you want to test.
     
 
 ## Sideload an add-in on Excel or Word for iPad
-
-
 
 1. Use a sync cable to connect your iPad to your computer. If you're connecting the iPad to your computer for the first time, you'll be prompted with  **Trust This Computer?** Choose **Trust** to continue.
 
@@ -58,13 +58,13 @@ To see how your add-in will run in Office for iOS, you can sideload your add-in'
 
 ## Sideload an add-in on Office for Mac
 
-
+> **Note:** Sideloading add-ins into Outlook 2016 for Mac uses the same [sideloading technique](sideload-outlook-add-ins-for-testing.md) as Outlook 2016 for Windows.
 
 1. Open  **Terminal** and navigate to one of the following folders where you'll save your add-in's manifest file. If the `wef` folder doesn't exist on your computer, create it.
     
-      - For Word:  `/Users/<username>/Library/Containers/com.microsoft.Word/Data/documents/wef`
-    
-  - For Excel:  `/Users/<username>/Library/Containers/com.microsoft.Excel/Data/documents/wef`
+    - For Word:  `/Users/<username>/Library/Containers/com.microsoft.Word/Data/documents/wef`    
+    - For Excel:  `/Users/<username>/Library/Containers/com.microsoft.Excel/Data/documents/wef`
+    - For PowerPoint: `/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/documents/wef`
     
 2. Open the folder in  **Finder** using the command `open .` (including the period or dot). Copy your add-in's manifest file to this folder.
     
@@ -75,8 +75,9 @@ To see how your add-in will run in Office for iOS, you can sideload your add-in'
 4. In Word, choose  **Insert** > **Add-ins** > **My Add-ins**, and then choose your add-in.
     
     ![My Add-ins in Office for Mac](../../images/4593430c-b33e-4895-b2be-63fe3c4d08bc.png)
+
+> **Important:** Sideloaded Add-ins will not show up in the My Add-ins dialog. They are only visible with in the drop-down menu (small down-arrow to the right of My Add-ins). Sideloaded Add-ins are displayed in this list under the heading "Developer Add-ins". 
     
-     >**Note**  The  **Store** and **See All** options will remain unavailable in the Office for Mac (Preview).
 5. Verify that your add-in is displayed in Word.
     
     ![Office Add-in displayed in Office for Mac](../../images/a5cb2efc-1180-45b4-85a6-13df817b9d2c.png)
@@ -84,9 +85,7 @@ To see how your add-in will run in Office for iOS, you can sideload your add-in'
 
 ## Known issues in Office for Mac
 
-
-
-- Word crashes when  **getFileAsync** is called.
+- Word crashes when  `getFileAsync` is called.
     
 - Your add-in cannot make calls to the JavaScript API for Office if a pop-up is displayed. You must dismiss the pop-up before your add-in can continue executing calls to the JavaScript API for Office.
     
