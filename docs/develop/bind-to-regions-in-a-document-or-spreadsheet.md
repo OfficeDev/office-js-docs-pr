@@ -19,18 +19,15 @@ The [Bindings] object exposes a [getAllAsync] method that gives access to the se
 
 There are [three different types of bindings][Office.BindingType] that you specify with the  _bindingType_ parameter when you create a binding with the [addFromSelectionAsync], [addFromPromptAsync] or [addFromNamedItemAsync] methods:
 
-1. **[Text Binding][TextBinding]**
-	Binds to a region of the document that can be represented as text.
+1. **[Text Binding][TextBinding]** - Binds to a region of the document that can be represented as text.
 
 	In Word, most contiguous selections are valid, while in Excel only single cell selections can be the target of a text binding. In Excel, only plain text is supported. In Word, three formats are supported: plain text, HTML, and Open XML for Office.
 
-2. **[Matrix Binding][MatrixBinding]**
-	Binds to a fixed region of a document that contains tabular data without headers.Data in a matrix binding is written or read as a two dimensional  **Array**, which in JavaScript is implemented as an array of arrays. For example, two rows of  **string** values in two columns can be written or read as ` [['a', 'b'], ['c', 'd']]`, and a single column of three rows can be written or read as  `[['a'], ['b'], ['c']]`.
+2. **[Matrix Binding][MatrixBinding]** - Binds to a fixed region of a document that contains tabular data without headers.Data in a matrix binding is written or read as a two dimensional  **Array**, which in JavaScript is implemented as an array of arrays. For example, two rows of  **string** values in two columns can be written or read as ` [['a', 'b'], ['c', 'd']]`, and a single column of three rows can be written or read as  `[['a'], ['b'], ['c']]`.
 
 	In Excel, any contiguous selection of cells can be used to establish a matrix binding. In Word, only tables support matrix binding.
 
-3. **[Table Binding][TableBinding]**
-	Binds to a region of a document that contains a table with headers.Data in a table binding is written or read as a [TableData](../../reference/shared/tabledata.md) object. The `TableData` object exposes the data through the `headers` and `rows` properties.
+3. **[Table Binding][TableBinding]** - Binds to a region of a document that contains a table with headers.Data in a table binding is written or read as a [TableData](../../reference/shared/tabledata.md) object. The `TableData` object exposes the data through the `headers` and `rows` properties.
 
 	Any Excel or Word table can be the basis for a table binding. After you establish a table binding, each new row or column a user adds to the table is automatically included in the binding.
 
