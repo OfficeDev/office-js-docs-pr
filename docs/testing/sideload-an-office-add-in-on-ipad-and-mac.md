@@ -21,7 +21,7 @@ To see how your add-in will run in Office for iOS, you can sideload your add-in'
 - A Mac running OS X v10.10 "Yosemite" or later with [Office for Mac](https://products.office.com/en-us/buy/compare-microsoft-office-products?tab=omac) installed.
     
 - Word for Mac version 15.18 (160109).
--     
+   
 - Excel for Mac version 15.19 (160206).
 
 - PowerPoint for Mac version 15.24 (160614)
@@ -75,6 +75,8 @@ To see how your add-in will run in Office for iOS, you can sideload your add-in'
 4. In Word, choose  **Insert** > **Add-ins** > **My Add-ins**, and then choose your add-in.
     
     ![My Add-ins in Office for Mac](../../images/4593430c-b33e-4895-b2be-63fe3c4d08bc.png)
+
+> **Important:** Sideloaded Add-ins will not show up in the My Add-ins dialog. They are only visible with in the drop-down menu (small down-arrow to the right of My Add-ins). Sideloaded Add-ins are displayed in this list under the heading "Developer Add-ins". 
     
 5. Verify that your add-in is displayed in Word.
     
