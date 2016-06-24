@@ -85,16 +85,16 @@ The  **Hosts** element can contain one or more **Host** elements. The **Host** e
 
 
 
-|**Name**|**Office host applications**|
-|:-----|:-----|
-| `"Database"`|Access web apps|
-| `"Document"`|Word, Word Online|
-| `"Mailbox"`|Outlook, Outlook Web App, OWA for Devices|
-| `"Presentation"`|PowerPoint, PowerPoint Online|
-| `"Project"`|Project|
-| `"Workbook"`|Excel, Excel Online, Excel on iPad|
+| Name          | Office host applications                      |
+|:--------------|:----------------------------------------------|
+| Database      | Access web apps                               |
+| Document      | Word for Windows, Mac, iPad and Online        |
+| Mailbox       | Outlook for Windows, Mac, Web and Outlook.com | 
+| Presentation  | PowerPoint for Windows, Mac, iPad and Online  |
+| Project       | Project                                       |
+| Workbook      | Excel Windows, Mac, iPad and Online           |
 
- >**Note:**  The  **Name** attribute specifies the Office host application that can run your add-in. Office hosts are supported on different platforms and run on desktops, web browsers, tablets, and smartphone devices. You can't specify which platform can be used to run your add-in. For example, if you specify `"Mailbox"`, both Outlook and Outlook Web App can be used to run your add-in. As Microsoft adds support for a new platform, such as Office for iOS, your add-in will be available on that platform too.
+ >**Note:**  The  `Name` attribute specifies the Office host application that can run your add-in. Office hosts are supported on different platforms and run on desktops, web browsers, tablets, and mobile devices. You can't specify which platform can be used to run your add-in. For example, if you specify `Mailbox`, both Outlook and Outlook Web App can be used to run your add-in. 
 
 
 ## Set the Requirements element in the manifest
