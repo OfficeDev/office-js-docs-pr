@@ -86,9 +86,8 @@ Specifies the activation rule(s) that should be evaluated for this mail add-in.
 |Appointment|IPM.Appointment|
 |Message(1)|Includes email messages, meeting requests, responses, and cancellations.|
 |
-|FormType|ItemFormType (string)|required|Specifies whether the app should appear in read or edit form for the item. Can be one of the following:
-|
-|
+|FormType|ItemFormType (string)|required|Specifies whether the app should appear in read or edit form for the item. Can be one of the following.|
+
 |**FormType**|**Description**|
 |:-----|:-----|
 |Read|Specifies to activate the mail add-in only in read forms (of the specified  **ItemType**).|
