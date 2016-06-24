@@ -1,7 +1,7 @@
 
 # Sideload Office Add-ins on iPad and Mac for testing
 
-To see how your add-in will run in Office for iOS, you can sideload your add-in's manifest onto an iPad using iTunes. Or sideload your add-in's manifest directly in Office for Mac. This action won't enable you to set breakpoints and debug your add-in's code while it's running, but you can see how it behaves and verify that the UI is usable and rendering appropriately. 
+To see how your add-in will run in Office for iOS, you can sideload your add-in's manifest onto an iPad using iTunes, or sideload your add-in's manifest directly in Office for Mac. This action won't enable you to set breakpoints and debug your add-in's code while it's running, but you can see how it behaves and verify that the UI is usable and rendering appropriately. 
 
 ## Prerequisites for Office for iOS
 
@@ -31,7 +31,7 @@ To see how your add-in will run in Office for iOS, you can sideload your add-in'
 
 ## Sideload an add-in on Excel or Word for iPad
 
-1. Use a sync cable to connect your iPad to your computer. If you're connecting the iPad to your computer for the first time, you'll be prompted with  **Trust This Computer?** Choose **Trust** to continue.
+1. Use a sync cable to connect your iPad to your computer. If you're connecting the iPad to your computer for the first time, you'll be prompted with  **Trust This Computer?**. Choose **Trust** to continue.
 
 2. In iTunes, choose the  **iPad** icon below the menu bar.
     
@@ -58,9 +58,9 @@ To see how your add-in will run in Office for iOS, you can sideload your add-in'
 
 ## Sideload an add-in on Office for Mac
 
-> **Note:** Sideloading add-ins into Outlook 2016 for Mac uses the same [sideloading technique](sideload-outlook-add-ins-for-testing.md) as Outlook 2016 for Windows.
+> **Note:** To sideload Outlook 2016 for Mac add-in, see [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md).
 
-1. Open  **Terminal** and navigate to one of the following folders where you'll save your add-in's manifest file. If the `wef` folder doesn't exist on your computer, create it.
+1. Open  **Terminal** and go to one of the following folders where you'll save your add-in's manifest file. If the `wef` folder doesn't exist on your computer, create it.
     
     - For Word:  `/Users/<username>/Library/Containers/com.microsoft.Word/Data/documents/wef`    
     - For Excel:  `/Users/<username>/Library/Containers/com.microsoft.Excel/Data/documents/wef`
@@ -76,7 +76,7 @@ To see how your add-in will run in Office for iOS, you can sideload your add-in'
     
     ![My Add-ins in Office for Mac](../../images/4593430c-b33e-4895-b2be-63fe3c4d08bc.png)
 
-> **Important:** Sideloaded Add-ins will not show up in the My Add-ins dialog. They are only visible with in the drop-down menu (small down-arrow to the right of My Add-ins). Sideloaded Add-ins are displayed in this list under the heading "Developer Add-ins". 
+> **Important:** Sideloaded add-ins will not show up in the My Add-ins dialog. They are only visible within the drop-down menu (small down-arrow to the right of My Add-ins). Sideloaded add-ins are displayed in this list under the heading "Developer Add-ins". 
     
 5. Verify that your add-in is displayed in Word.
     
