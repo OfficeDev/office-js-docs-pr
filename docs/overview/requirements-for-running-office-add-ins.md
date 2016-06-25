@@ -5,6 +5,9 @@
 
 This article describes the software and device requirements for running Office Add-ins.
 
+>**Note:** For a high-level view of where Office Add-ins are currently supported, see the [Office Add-in host and platform availability](http://dev.office.com/add-in-availability) page. 
+
+
 ## Server requirements
 
 To be able to install and run any Office Add-in, you first need to deploy the manifest and webpage files for the UI and code of your add-in to the appropriate server locations.
@@ -21,33 +24,7 @@ To test and run an Outlook add-in, the user's Outlook email account must reside 
  >**Note:**   POP and IMAP email accounts in Outlook don't support Office Add-ins.
 
 
-## Client support summary
 
-This table shows the Office host applications (including desktop, tablet, mobile, and web clients) that can run Office Add-ins, and the types of add-ins supported by each host.
-
-
-**Supported add-in types**
-
-| Office application                | Content | Outlook | Task Pane |
-|:----------------------------------|:-------:|:-------:|:---------:|
-|Access web apps                    | Y       |         |           | 
-|Excel 2013 & 2016 for Windows      | Y       |         | Y         |
-|Excel 2016 for Mac                 | Y       |         | Y         |
-|Excel Online                       | Y       |         | Y         |
-|Excel for iPad                     | Y       |         | Y         |
-|Outlook 2013 & 2016 for Windows    |         | Y       |           |
-|Outlook 2016 for Mac               |         | Y       |           |
-|Outlook Web App                    |         | Y       |           |
-|Outlook.com                        |         | Y       |           |
-|PowerPoint 2013 & 2016 for Windows | Y       |         | Y         |
-|PowerPoint 2016 for Mac            | Y       |         | Y         |
-|PowerPoint Online                  | Y       |         | Y         |
-|PowerPoint for iPad                | Y       |         | Y         |
-|Project 2013 or later              |         |         | Y         |
-|Word 2013 & 2016 for Windows       |         |         | Y         |
-|Word 2016 for Mac                  |         |         | Y         |
-|Word Online                        |         |         | Y         |       
-|Word for iPad                      |         |         | Y         |
 
 ## Client requirements: Windows desktop and tablet
 
