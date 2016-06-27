@@ -53,9 +53,13 @@ To add add-in to the Add-in Catalog Site, browse to the site you have just creat
 
 
 1. Browse to the add-in catalog:
+
 	1- Open the SharePoint Central Administration main page.
+	
 	2- Select  **Add-ins**.
+	
 	3- Select  **Manage Add-in Catalog**.
+	
 	4- Choose the link provided, and then choose  **Office Add-ins** on the left navigation bar.
     
 2. Choose the  **Click to add new item** link.
