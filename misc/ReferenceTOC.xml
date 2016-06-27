@@ -428,7 +428,6 @@
       </Item>
     <Item text="AsyncResult" url="shared/asyncresult" >
       <Item text="AsyncResult.asyncContext" url="shared/asyncresult.asynccontext" SEODescription="Asynchronously gets the text of an XML node in a custom XML part." />
-      <Item text="AsyncResult.context" url="shared/asyncresult.context" SEODescription="Represents the runtime environment of the add-in and provides access to key objects of the API." />
       <Item text="AsyncResult.error" url="shared/asyncresult.error" SEODescription="Gets an Error object that provides a description of the error, if any error occurred." />
       <Item text="AsyncResult.status" url="shared/asyncresult.status" SEODescription="Gets the status of the asynchronous operation." />
       <Item text="AsyncResult.value" url="shared/asyncresult.value" SEODescription="Gets the payload or content of this asynchronous operation, if any." />
