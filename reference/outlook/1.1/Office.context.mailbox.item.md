@@ -814,13 +814,13 @@ In Outlook Web App, the reply form is displayed as a pop-out form in the 3-colum
 
 If any of the string parameters exceed their limits, `displayReplyAllForm` throws an exception.
 
-When attachments are specified in the `formData.attachments` parameter, Outlook and Outlook Web App attempt to download all attachments and attach them to the reply form. If any attachments fail to be added, an error is shown in the form UI. If this isn't possible, then no error message is thrown.
+> **NOTE:** The ability to include attachments in the call to `displayReplyAllForm` is not supported in requirement set 1.1. Attachment support was added to `displayReplyAllForm` in requirement set 1.2 and above.
 
 ##### Parameters:
 
 |Name| Type| Description|
 |---|---|---|
-|`formData`| String &#124; Object|A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.<br/>**OR**<br/>An object that contains body or attachment data and a callback function. The object is defined as follows:<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>htmlBody</code></td><td>String</td><td>&lt;optional&gt;</td><td>A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</td></tr><tr><td><code>attachments</code></td><td>Array.&lt;Object&gt;</td><td>&lt;optional&gt;</td><td>An array of JSON objects that are either file or item attachments.<br/><br/><strong>Properties</strong><br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>String</td><td>Indicates the type of attachment. Must be <code>file</code> for a file attachment or <code>item</code> for an item attachment.</td></tr><tr><td><code>name</code></td><td>String</td><td>A string that contains the name of the attachment, up to 255 characters in length.</td></tr><tr><td><code>url</code></td><td>String</td><td>Only used if <code>type</code> is set to <code>file</code>. The URI of the location for the file.</td></tr><tr><td><code>itemId</code></td><td>String</td><td>Only used if <code>type</code> is set to <code>item</code>. The EWS item id of the attachment. This is a string up to 100 characters.</td></tr></tbody></table></td></tr><tr><td><code>callback</code></td><td>function</td><td>&lt;optional&gt;</td><td>When the method completes, the function passed in the <code>callback</code> parameter is called with a single parameter, <code>asyncResult</code>, which is an <a href="simple-types.md#asyncresult"><code>AsyncResult</code></a> object. For more information, see <a href="tutorial-asynchronous.html">Using asynchronous methods</a>.</td></tr></tbody></table>|
+|`formData`| String &#124; Object|A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.<br/>**OR**<br/>An object that contains body or attachment data and a callback function. The object is defined as follows:<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>htmlBody</code></td><td>String</td><td>&lt;optional&gt;</td><td>A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</td></tr><tr><td><code>callback</code></td><td>function</td><td>&lt;optional&gt;</td><td>When the method completes, the function passed in the <code>callback</code> parameter is called with a single parameter, <code>asyncResult</code>, which is an <a href="simple-types.md#asyncresult"><code>AsyncResult</code></a> object. For more information, see <a href="tutorial-asynchronous.html">Using asynchronous methods</a>.</td></tr></tbody></table>|
 
 ##### Requirements
 
@@ -854,59 +854,12 @@ Office.context.mailbox.item.displayReplyAllForm(
 });
 ```
 
-Reply with a body and a file attachment.
+Reply with a body and a callback.
 
 ```JavaScript
 Office.context.mailbox.item.displayReplyAllForm(
 {
   'htmlBody' : 'hi',
-  'attachments' :
-  [
-    {
-      'type' : Office.MailboxEnums.AttachmentType.File,
-      'name' : 'squirrel.png',
-      'url' : 'http://i.imgur.com/sRgTlGR.jpg'
-    }
-  ]
-});
-```
-
-Reply with a body and an item attachment.
-
-```JavaScript
-Office.context.mailbox.item.displayReplyAllForm(
-{
-  'htmlBody' : 'hi',
-  'attachments' :
-  [
-    {
-      'type' : 'item',
-      'name' : 'rand',
-      'itemId' : Office.context.mailbox.item.itemId
-    }
-  ]
-});
-```
-
-Reply with a body, file attachment, item attachment, and a callback.
-
-```JavaScript
-Office.context.mailbox.item.displayReplyAllForm(
-{
-  'htmlBody' : 'hi',
-  'attachments' :
-  [
-    {
-      'type' : Office.MailboxEnums.AttachmentType.File,
-      'name' : 'squirrel.png',
-      'url' : 'http://i.imgur.com/sRgTlGR.jpg'
-    },
-    {
-      'type' : 'item',
-      'name' : 'rand',
-      'itemId' : Office.context.mailbox.item.itemId
-    }
-  ],
   'callback' : function(asyncResult)
   {
     console.log(asyncResult.value);
@@ -922,13 +875,13 @@ In Outlook Web App, the reply form is displayed as a pop-out form in the 3-colum
 
 If any of the string parameters exceed their limits, `displayReplyForm` throws an exception.
 
-When attachments are specified in the `formData.attachments` parameter, Outlook and Outlook Web App attempt to download all attachments and attach them to the reply form. If any attachments fail to be added, an error is shown in the form UI. If this isn't possible, then no error message is thrown.
+> **NOTE:** The ability to include attachments in the call to `displayReplyForm` is not supported in requirement set 1.1. Attachment support was added to `displayReplyForm` in requirement set 1.2 and above.
 
 ##### Parameters:
 
 |Name| Type| Description|
 |---|---|---|
-|`formData`| String &#124; Object|A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.<br/>**OR**<br/>An object that contains body or attachment data and a callback function. The object is defined as follows:<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>htmlBody</code></td><td>String</td><td>&lt;optional&gt;</td><td>A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</td></tr><tr><td><code>attachments</code></td><td>Array.&lt;Object&gt;</td><td>&lt;optional&gt;</td><td>An array of JSON objects that are either file or item attachments.<br/><br/><strong>Properties</strong><br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>String</td><td>Indicates the type of attachment. Must be <code>file</code> for a file attachment or <code>item</code> for an item attachment.</td></tr><tr><td><code>name</code></td><td>String</td><td>Only used if <code>type</code> is set to <code>file</code>. A string that contains the name of the attachment, up to 255 characters in length.</td></tr><tr><td><code>url</code></td><td>String</td><td>Only used if <code>type</code> is set to <code>file</code>. The URI of the location for the file.</td></tr><tr><td><code>itemId</code></td><td>String</td><td>Only used if <code>type</code> is set to <code>item</code>. The EWS item id of the attachment. This is a string up to 100 characters.</td></tr></tbody></table></td></tr><tr><td><code>callback</code></td><td>function</td><td>&lt;optional&gt;</td><td>When the method completes, the function passed in the <code>callback</code> parameter is called with a single parameter, <code>asyncResult</code>, which is an <a href="simple-types.md#asyncresult"><code>AsyncResult</code></a> object. For more information, see <a href="tutorial-asynchronous.html">Using asynchronous methods</a>.</td></tr></tbody></table>|
+|`formData`| String &#124; Object|A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.<br/>**OR**<br/>An object that contains body or attachment data and a callback function. The object is defined as follows:<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>htmlBody</code></td><td>String</td><td>&lt;optional&gt;</td><td>A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</td></tr><tr><td><code>callback</code></td><td>function</td><td>&lt;optional&gt;</td><td>When the method completes, the function passed in the <code>callback</code> parameter is called with a single parameter, <code>asyncResult</code>, which is an <a href="simple-types.md#asyncresult"><code>AsyncResult</code></a> object. For more information, see <a href="tutorial-asynchronous.html">Using asynchronous methods</a>.</td></tr></tbody></table>|
 
 ##### Requirements
 
@@ -962,59 +915,12 @@ Office.context.mailbox.item.displayReplyForm(
 });
 ```
 
-Reply with a body and a file attachment.
+Reply with a body and a callback.
 
 ```JavaScript
 Office.context.mailbox.item.displayReplyForm(
 {
   'htmlBody' : 'hi',
-  'attachments' :
-  [
-    {
-      'type' : Office.MailboxEnums.AttachmentType.File,
-      'name' : 'squirrel.png',
-      'url' : 'http://i.imgur.com/sRgTlGR.jpg'
-    }
-  ]
-});
-```
-
-Reply with a body and an item attachment.
-
-```JavaScript
-Office.context.mailbox.item.displayReplyForm(
-{
-  'htmlBody' : 'hi',
-  'attachments' :
-  [
-    {
-      'type' : 'item',
-      'name' : 'rand',
-      'itemId' : Office.context.mailbox.item.itemId
-    }
-  ]
-});
-```
-
-Reply with a body, file attachment, item attachment, and a callback.
-
-```JavaScript
-Office.context.mailbox.item.displayReplyForm(
-{
-  'htmlBody' : 'hi',
-  'attachments' :
-  [
-    {
-      'type' : Office.MailboxEnums.AttachmentType.File,
-      'name' : 'squirrel.png',
-      'url' : 'http://i.imgur.com/sRgTlGR.jpg'
-    },
-    {
-      'type' : 'item',
-      'name' : 'rand',
-      'itemId' : Office.context.mailbox.item.itemId
-    }
-  ],
   'callback' : function(asyncResult)
   {
     console.log(asyncResult.value);
