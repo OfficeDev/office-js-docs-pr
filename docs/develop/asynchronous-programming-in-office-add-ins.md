@@ -32,7 +32,7 @@ An anonymous function is useful if you are only going to use its code once - bec
 The following anonymous callback function declares a single parameter named  `result` that retrieves data from the [AsyncResult.value](../../reference/shared/asyncresult.status.md) property when the callback returns.
 
 
-```
+```js
 function (result) {
         write('Selected data: ' + result.value);
 }
@@ -71,7 +71,7 @@ For more information about using the  **getSelectedDataAsync** method, see [Read
 Alternatively, you can write a named function and pass its name to the  _callback_ parameter of an "Async" method. For example, the previous example can be rewritten to pass a function named `writeDataCallback` as the _callback_ parameter like this.
 
 
-```
+```js
 Office.context.document.getSelectedDataAsync(Office.CoercionType.Text, 
     writeDataCallback);
 
@@ -269,7 +269,7 @@ You can create the JSON object that contains optional parameters inline, or by c
 
 For example, the syntax for calling the [Document.setSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) method with optional parameters inline looks like this:
 
-```javascript
+```js
  Office.context.document.setSelectedDataAsync(data, {coercionType: 'coercionType', asyncContext:' asyncContext},callback);
 
 ```
@@ -279,7 +279,7 @@ In this form of the calling syntax, the two optional parameters,  _coercionType_
 The following example shows how to call to the  **Document.setSelectedDataAsync** method by specifying optional parameters inline.
 
 
-```javascript
+```js
 Office.context.document.setSelectedDataAsync(
     "<html><body>hello world</body></html>",
     {coercionType: "html", asyncContext: 42},
@@ -307,7 +307,7 @@ The following example shows one way of creating the  `options` object, where `pa
 
 
 
-```javascript
+```js
 var options = {
     parameter1: value1,
     parameter2: value2,
@@ -322,7 +322,7 @@ Which looks like the following example when used to specify the [ValueFormat](..
 
 
 
-```javascript
+```js
 var options = {
     valueFormat: "unformatted",
     filterType: "all"
@@ -334,7 +334,7 @@ Here's another way of creating the  `options` object.
 
 
 
-```javascript
+```js
 var options = {};
 options[parameter1] = value1;
 options[parameter2] = value2;
@@ -345,7 +345,7 @@ options[parameterN] = valueN;
 Which looks like the following example when used to specify the  **ValueFormat** and **FilterType** parameters.:
 
 
-```javascript
+```js
 var options = {};
 options["ValueFormat"] = "unformatted";
 options["FilterType"] = "all";
@@ -359,7 +359,7 @@ The following example shows how to call to the  **Document.setSelectedDataAsync*
 
 
 
-```javascript
+```js
 var options = {
    coercionType: "html",
    asyncContext: 42
