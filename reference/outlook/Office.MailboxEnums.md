@@ -162,3 +162,28 @@ ResponseType
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
 |Applicable Outlook mode| Compose|
+
+#### RestVersion :String
+
+Specifies the version of the REST API that corresponds to a REST-formatted item ID. 
+
+RestVersion
+
+##### Type:
+
+*   String
+
+##### Properties:
+
+|Name| Type| Value | Description|
+|---|---|---|---|
+|`v1_0`| String|`v1.0`|Version 1.0.|
+|`v2_0`| String|`v2.0`|Version 2.0.|
+|`Beta`| String|`beta`|Beta.|
+
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
+|Applicable Outlook mode| Compose or read|

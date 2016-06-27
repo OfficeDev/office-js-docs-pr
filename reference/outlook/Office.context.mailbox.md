@@ -48,6 +48,43 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item#save
 
 ### Methods
 
+####  convertToEwsId(itemId, restVersion) → {String}
+
+Converts an item ID formatted for REST into EWS format.
+
+Item IDs retrieved via a REST API (such as the [Outlook Mail API](https://msdn.microsoft.com/office/office365/APi/mail-rest-operations) or the [Microsoft Graph](http://graph.microsoft.io/)) use a different format than the format used by Exchange Web Services (EWS). The `convertToEwsId` method converts a REST-formatted ID into the proper format for EWS.
+
+##### Parameters:
+
+|Name| Type| Description|
+|---|---|---|
+|`itemId`| String|An item ID formatted for the Outlook REST APIs|
+|`restVersion`| [Office.MailboxEnums.RestVersion](Office.MailboxEnums.md#restversion)|A value indicating the version of the Outlook REST API used to retrieve the item ID.|
+
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
+|Applicable Outlook mode| Compose or read|
+
+##### Returns:
+
+Type:
+String
+
+##### Example
+
+```
+// Get an item's ID from a REST API
+var restId = 'AAMkAGVlOTZjNTM3LW...';
+
+// Treat restId as coming from the v2.0 version of the
+// Outlook Mail API
+var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
+```
+
 ####  convertToLocalClientTime(timeValue) → {[LocalClientTime](simple-types.md#localclienttime)}
 
 Gets a dictionary containing time information in local client time.
@@ -74,6 +111,43 @@ If the mail app is running in Outlook, the `convertToLocalClientTime` method wil
 
 Type:
 [LocalClientTime](simple-types.md#localclienttime)
+
+####  convertToRestId(itemId, restVersion) → {String}
+
+Converts an item ID formatted for EWS into REST format.
+
+Item IDs retrieved via EWS or via the `itemId` property use a different format than the format used by REST APIs (such as the [Outlook Mail API](https://msdn.microsoft.com/office/office365/APi/mail-rest-operations) or the [Microsoft Graph](http://graph.microsoft.io/)). The `convertToRestId` method converts an EWS-formatted ID into the proper format for REST.
+
+##### Parameters:
+
+|Name| Type| Description|
+|---|---|---|
+|`itemId`| String|An item ID formatted for Exchange Web Services (EWS)|
+|`restVersion`| [Office.MailboxEnums.RestVersion](Office.MailboxEnums.md#restversion)|A value indicating the version of the Outlook REST API that the converted ID will be used with.|
+
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
+|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
+|Applicable Outlook mode| Compose or read|
+
+##### Returns:
+
+Type:
+String
+
+##### Example
+
+```
+// Get the currently selected item's ID
+var ewsId = Office.context.mailbox.item.itemId;
+
+// Convert to a REST ID for the v2.0 version of the
+// Outlook Mail API
+var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.RestVersion.v2_0);
+```
 
 ####  convertToUtcClientTime(input) → {Date}
 
