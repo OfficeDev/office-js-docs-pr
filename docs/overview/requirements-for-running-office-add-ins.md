@@ -64,7 +64,7 @@ Specifically for OWA for Devices, and Outlook Web App running in a browser on sm
 
 | Host application | Device | Operating system | Exchange account | Mobile browser |
 |:-----|:-----|:-----|:-----|:-----|
-|OWA for Android|Android smartphones. Technically, those devices considered as "small" or "normal" by [Android OS](http://developer.android.com/guide/practices/screens_support.mdl).|Android 4.4 KitKat or later|On the latest update of Office 365 for business or Exchange Online|Native add-in for Android, browser not applicable|
+|OWA for Android|Android smartphones. Technically, those devices considered as "small" or "normal" by [Android OS](https://developer.android.com/guide/practices/screens_support.html).|Android 4.4 KitKat or later|On the latest update of Office 365 for business or Exchange Online|Native add-in for Android, browser not applicable|
 |OWA for iPad|iPad 2 or later|iOS 6 or later|On the latest update of Office 365 for business or Exchange Online|Native add-in for iOS, browser not applicable|
 |OWA for iPhone|iPhone 4S or later|iOS 6 or later|On the latest update of Office 365 for business or Exchange Online|Native add-in for iOS, browser not applicable|
 |Outlook Web App|iPhone 4 or later, iPad 2 or later, iPod Touch 4 or later|iOS 5 or later|On Office 365, Exchange Online, or on premise on Exchange Server 2013 or later|Safari|
