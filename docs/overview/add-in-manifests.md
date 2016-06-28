@@ -849,8 +849,6 @@ For recommendations for where to place your commands in the ribbon, see [Best pr
 
 - [Add-in commands for Excel, Word, and PowerPoint](../../docs/design/add-in-commands.md)
 
-- [Define add-in commands in your Outlook add-in manifest](../outlook/manifests/define-add-in-commands.md)
-
 - [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md)
     
 - [Localization for Office Add-ins](../../docs/develop/localization.md)
