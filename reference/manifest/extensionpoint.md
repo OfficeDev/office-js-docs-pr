@@ -9,7 +9,7 @@
 |  [xsi:type](#xsitype)  |  Yes  | The type of extension point being defined.|
 
 
-## xsi:type values for Word, Excel, and PowerPoint add-in commands
+## Type attribute values for Word, Excel, and PowerPoint add-in commands
 
 - **PrimaryCommandSurface** - The ribbon in Office.
 - **ContextMenu** - The shortcut menu that appears when you right-click in the Office UI.
@@ -52,6 +52,8 @@ The following examples show how to use the  **ExtensionPoint** element with **Pr
           </OfficeMenu>
          </ExtensionPoint>
 ```
+
+**Child elements**
  
 |**Element**|**Description**|
 |:-----|:-----|
@@ -64,7 +66,7 @@ The following examples show how to use the  **ExtensionPoint** element with **Pr
 |**Tooltip**|Optional. The tooltip of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element.|
 |**Control**|Each group requires at least one control. A  **Control** element can be either a **Button** or a **Menu**. Use  **Menu** to specify a drop-down list of button controls. Currently, only buttons and menus are supported.See the [Button controls](#button-controls) and [Menu controls](#menu-controls) sections for more information.<br/>**Note**  To make troubleshooting easier, we recommend that a  **Control** element and the related **Resources** child elements be added one at a time.
 
-## xsi:type values for Outlook add-in commands
+## Type attribute values for Outlook add-in commands
 
 - [CustomPane](#custompane) 
 - [MessageReadCommandSurface](#messagereadcommandsurface) 
