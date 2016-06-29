@@ -172,7 +172,7 @@ The following example shows how to define a menu item with two submenu items. Th
 
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  [Label](#label)     | Yes |  The text for the button. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the [ShortStrings](./resources.md#shortstrings) element in the [Resources](./resources.md) element.      |
+|  **Label**     | Yes |  The text for the button. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the [ShortStrings](./resources.md#shortstrings) element in the [Resources](./resources.md) element.      |
 |  **ToolTip**	|No|The tooltip for the button. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child of the **LongStrings** element, which is a child of the [Resources](resource.md) element.|		
 |  [Supertip](./supertip.md)  | Yes |  The supertip for this button.    |
 |  [Icon](./icon.md)      | Yes |  An image for the button.         |
