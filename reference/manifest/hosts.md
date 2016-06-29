@@ -36,11 +36,7 @@ Controls which Office host (Word, Excel, PowerPoint, Outlook) the contained sett
 - `MailHost` (Outlook)    
 
 
-### FormFactor
-See [FormFactor](./formfactor.md).
-
-
-## Hosts Example 
+## Hosts example 
 ```xml
 <Hosts>
     <Host xsi:type="MailHost">
