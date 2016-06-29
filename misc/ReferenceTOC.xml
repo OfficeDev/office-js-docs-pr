@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SupportedProduct="|Word|Excel|Outlook|PowerPoint|OneNote|Project|Access" SupportedVersion="|V1.3|V1.2|V1.1|">
   <Item text="Manifest" url="manifest">
-    <Item text="Action" url="manifest/action" SEODescription="Specifies the action to perform when the user selects a Button or Menu controls." />
+    
 	<Item text="AllowSnapshot" url="manifest/allowsnapshot" Scope="excel, powerpoint" SEODescription="Specifies whether a snapshot image of your content add-in is saved with the host document." />
     <Item text="AlternateId" url="manifest/alternateid" Scope="excel, word, powerpoint, access, project" SEODescription="Specifies the alternate ID for your Office Add-in as issued by the Office Store." />
     <Item text="AppDomain" url="manifest/appdomain" SEODescription="Specifies an additional domain that will be used to load pages in the add-in window." />
     <Item text="AppDomains" url="manifest/appdomains" SEODescription="Specifies any additional domains that your Office Add-in will use to load pages." />
     <Item text="CitationText" url="manifest/citationtext" SEODescription="Specifies the citation boilerplate text for this dictionary." />
     <Item text="Control" url="manifest/control" SEODescription="" />
-	<Item text="CustomTab" url="manifest/customtab" SEODescription="Specified the tab and group for add-in commands." />
+	
 	<Item text="DefaultLocale" url="manifest/defaultlocale" SEODescription="Specifies the default culture name of the locale used by strings in your add-in." />
     <Item text="DefaultSettings" url="manifest/defaultsettings" SEODescription="Specifies the default source location and other default settings for your content or task pane add-in." />
     <Item text="Description" url="manifest/description" SEODescription="Specifies the description of your Office Add-in as a string no longer than 250 characters." />
@@ -18,22 +18,21 @@
     <Item text="DictionaryName" url="manifest/dictionaryname" Scope="excel, word, powerpoint, project" SEODescription="Specifies the name of this dictionary." />
     <Item text="DisableEntityHighlighting" url="manifest/disableentityhighlighting" Scope="outlook" SEODescription="Specifies whether entity highlighting should be turned off for your mail add-in." />
     <Item text="DisplayName" url="manifest/displayname" SEODescription="Specifies the name for your Office Add-in as a string up to 125 characters long." />
-    <Item text="ExtensionPoint" url="manifest/extensionpoint" SEODescription="Defines where an add-in exposes functionality." />
+    
 	<Item text="Form" url="manifest/form" Scope="outlook" SEODescription="UX settings for the forms that your mail add-in will use when running on a particular device (desktop, tablet, or phone)." />
-    <Item text="FormFactor" url="manifest/formfactor" SEODescription="Specifies the settings for an add-in for a given form factor." />
+    
 	<Item text="FormSettings" url="manifest/formsettings" Scope="outlook" SEODescription="Specifies source location and control settings for your mail add-in." />
-    <Item text="FunctionFile" url="manifest/functionfile" SEODescription="Specifies the source code file for operations that an add-in exposes through add-in commands that execute a JavaScript function instead of displaying UI." />
-	<Item text="Group" url="manifest/group" SEODescription="Defines a group of UI extension points in a tab." />
+    
+	
 	<Item text="HighResolutionIconUrl" url="manifest/highresolutioniconurl" SEODescription="Specifies the URL of the image that is used to represent your Office Add-in in the insertion UX and Office Store on high DPI screens." />
     <Item text="Host" url="manifest/host" SEODescription="Specifies the type of Office host application your Office Add-in supports." />
-    <Item text="Hosts" url="manifest/hosts" SEODescription="Specifies the type(s) of Office host application your Office Add-in supports." />
-    <Item text="Icon" url="manifest/icon" SEODescription="Defines Image elements for Button and Menu controls." />
+    
 	<Item text="IconUrl" url="manifest/iconurl" SEODescription="Specifies the URL of the image that is used to represent your Office Add-in in the insertion UX and Office Store." />
     <Item text="Id" url="manifest/id" SEODescription="Specifies the unique ID of your Office Add-in as a GUID." />
     <Item text="Method" url="manifest/method" Scope="excel, word, powerpoint, access, project" SEODescription="Specifies an individual method from the JavaScript API for Office that your Office Add-in requires in order to activate." />
     <Item text="Methods" url="manifest/methods" Scope="excel, word, powerpoint, access, project" SEODescription="Specifies the list of JavaScript API for Office methods that your Office Add-in requires in order to activate." />
     <Item text="OfficeApp" url="manifest/officeapp" SEODescription="The root element in the manifest of an Office Add-in." />
-    <Item text="OfficeTab" url="manifest/officetab" SEODescription="Specifies the pre-existing tab to use for an add-in command." />
+    
 	<Item text="Override" url="manifest/override" SEODescription="Provides a way to specify the value of a setting for an additional locale." />
     <Item text="Permissions" url="manifest/permissions" SEODescription="Specifies the level of API access for your Office Add-in; you should request permissions based on the principle of least privilege." />
     <Item text="PhoneSettings" url="manifest/phonesettings" SEODescription="Specifies source location and control settings that apply when your mail add-in is used on a phone." />
@@ -42,18 +41,30 @@
     <Item text="RequestedHeight" url="manifest/requestedheight" Scope="excel, powerpoint, access" SEODescription="Specifies the initial height of a content add-in in pixels, which can be between 32 and 1000." />
     <Item text="RequestedWidth" url="manifest/requestedwidth" Scope="excel, powerpoint, access" SEODescription="Specifies the initial width of a content add-in in pixels, which can be between 32 and 1000." />
     <Item text="Requirements" url="manifest/requirements" SEODescription="Specifies the minimum set of JavaScript API for Office requirements (requirement sets and/or methods) that your Office Add-in needs to activate." />
-    <Item text="Resources" url="manifest/resources" SEODescription="Contains icons, strings, and URLs for the VersionOverrides node." />
+    
 	<Item text="Rule" url="manifest/rule" Scope="outlook" SEODescription="Specifies the activation rule(s) that should be evaluated for this mail add-in." />
     <Item text="Set" url="manifest/set" SEODescription="Specifies a requirement set from the JavaScript API for Office that your Office Add-in requires to activate." />
     <Item text="Sets" url="manifest/sets" SEODescription="Specifies the minimum subset of the JavaScript API for Office that your Office Add-in requires in order to activate." />
     <Item text="SourceLocation" url="manifest/sourcelocation" SEODescription="Specifies the source file location(s) for your Office Add-in as a URL between 1 and 2018 characters long." />
-    <Item text="SuperTip" url="manifest/supertip" SEODescription="Defines a rich tooltip (both Title and Description)." />
+    
 	<Item text="SupportUrl" url="manifest/supporturl" SEODescription="Specifies the URL of a page that provides support information for your add-in." />
     <Item text="TabletSettings" url="manifest/tabletsettings" Scope="outlook" SEODescription="Specifies control settings that apply when your mail add-in is used on a tablet." />
     <Item text="TargetDialect" url="manifest/targetdialect" Scope="excel, word, powerpoint, project" SEODescription="Defines a dialect supported by this dictionary, represented as a culture name string." />
     <Item text="TargetDialects" url="manifest/targetdialects" Scope="excel, word, powerpoint, project" SEODescription="Defines the dialect(s) supported by this dictionary." />
     <Item text="Version" url="manifest/version" SEODescription="Specifies the version of your Office Add-in." />
-	<Item text="VersionOverrides" url="manifest/versionoverrides" SEODescription="The root element that contains information for the add-in commands implemented by the add-in." />
+	<Item text="VersionOverrides" url="manifest/versionoverrides" Scope="excel, word, powerpoint" SEODescription="The root element that contains information for the add-in commands implemented by the add-in."> 
+		<Item text="Action" url="manifest/action" Scope="excel, word, powerpoint" SEODescription="Specifies the action to perform when the user selects a Button or Menu controls." />
+		<Item text="CustomTab" url="manifest/customtab" Scope="excel, word, powerpoint" SEODescription="Specified the tab and group for add-in commands." />
+		<Item text="ExtensionPoint" url="manifest/extensionpoint" Scope="excel, word, powerpoint" SEODescription="Defines where an add-in exposes functionality." />
+		<Item text="FormFactor" url="manifest/formfactor" Scope="excel, word, powerpoint" SEODescription="Specifies the settings for an add-in for a given form factor." />
+		<Item text="FunctionFile" url="manifest/functionfile" Scope="excel, word, powerpoint" SEODescription="Specifies the source code file for operations that an add-in exposes through add-in commands that execute a JavaScript function instead of displaying UI." />
+		<Item text="Group" url="manifest/group" Scope="excel, word, powerpoint" SEODescription="Defines a group of UI extension points in a tab." />
+		<Item text="Hosts" url="manifest/hosts" Scope="excel, word, powerpoint" SEODescription="Specifies the type(s) of Office host application your Office Add-in supports." />
+		<Item text="Icon" url="manifest/icon" Scope="excel, word, powerpoint" SEODescription="Defines Image elements for Button and Menu controls." />
+		<Item text="OfficeTab" url="manifest/officetab" Scope="excel, word, powerpoint" SEODescription="Specifies the pre-existing tab to use for an add-in command." />
+		<Item text="Resources" url="manifest/resources" Scope="excel, word, powerpoint" SEODescription="Contains icons, strings, and URLs for the VersionOverrides node." />
+		<Item text="SuperTip" url="manifest/supertip" Scope="excel, word, powerpoint" SEODescription="Defines a rich tooltip (both Title and Description)." />
+	</Item>
   </Item>
   
   <Item text="Word" url="word/word-add-ins-reference-overview" Scope="word" SEODescription="Word Javascript API reference overview">
