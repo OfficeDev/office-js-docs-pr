@@ -7,9 +7,7 @@
     <Item text="AppDomain" url="manifest/appdomain" SEODescription="Specifies an additional domain that will be used to load pages in the add-in window." />
     <Item text="AppDomains" url="manifest/appdomains" SEODescription="Specifies any additional domains that your Office Add-in will use to load pages." />
     <Item text="CitationText" url="manifest/citationtext" SEODescription="Specifies the citation boilerplate text for this dictionary." />
-    <Item text="Control" url="manifest/control" SEODescription="" />
-	
-	<Item text="DefaultLocale" url="manifest/defaultlocale" SEODescription="Specifies the default culture name of the locale used by strings in your add-in." />
+    <Item text="DefaultLocale" url="manifest/defaultlocale" SEODescription="Specifies the default culture name of the locale used by strings in your add-in." />
     <Item text="DefaultSettings" url="manifest/defaultsettings" SEODescription="Specifies the default source location and other default settings for your content or task pane add-in." />
     <Item text="Description" url="manifest/description" SEODescription="Specifies the description of your Office Add-in as a string no longer than 250 characters." />
     <Item text="DesktopSettings" url="manifest/desktopsettings" Scope="outlook" SEODescription="Specifies source location and control settings that apply when your mail add-in is used on a desktop computer." />
@@ -54,6 +52,7 @@
     <Item text="Version" url="manifest/version" SEODescription="Specifies the version of your Office Add-in." />
 	<Item text="VersionOverrides" url="manifest/versionoverrides" Scope="excel, word, powerpoint" SEODescription="The root element that contains information for the add-in commands implemented by the add-in."> 
 		<Item text="Action" url="manifest/action" Scope="excel, word, powerpoint" SEODescription="Specifies the action to perform when the user selects a Button or Menu controls." />
+		<Item text="Control" url="manifest/control" SEODescription="" />
 		<Item text="CustomTab" url="manifest/customtab" Scope="excel, word, powerpoint" SEODescription="Specified the tab and group for add-in commands." />
 		<Item text="ExtensionPoint" url="manifest/extensionpoint" Scope="excel, word, powerpoint" SEODescription="Defines where an add-in exposes functionality." />
 		<Item text="FormFactor" url="manifest/formfactor" Scope="excel, word, powerpoint" SEODescription="Specifies the settings for an add-in for a given form factor." />
