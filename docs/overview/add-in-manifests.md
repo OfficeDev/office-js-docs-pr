@@ -14,9 +14,7 @@ An XML manifest file based on this schema enables an Office Add-in to do the fol
     
 - Declare permissions that the Office Add-in requires, such as reading or writing to the document.
     
-- For Outlook add-ins, define the 
-- 
--  or rules that specify the context in which they will be activated and interact with a message, appointment, or meeting request item.
+- For Outlook add-ins, define the rule or rules that specify the context in which they will be activated and interact with a message, appointment, or meeting request item.
     
 For examples, see [Manifest v1.1 XML file examples](#manifest-v1.1-xml-file-examples-and-schemas).
 
@@ -432,8 +430,7 @@ The following XML manifest example hosts its main add-in page in the  `https://w
 ## Additional resources
 
 
-
-- [Add-in commands for Excel, Word, and PowerPoint](../../docs/design/add-in-commands.md)
+- [Define add-in commands in your manifest](../../docs/outlook/manifests/define-add-in-commands.md)
 
 - [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md)
     
