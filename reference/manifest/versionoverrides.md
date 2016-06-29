@@ -6,8 +6,8 @@ The root element that contains information for the add-in commands implemented b
 
 |  Attribute  |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  [xmlns](#xmlns)       |  Yes  |  The schema location, which must be `http://schemas.microsoft.com/office/mailappversionoverrides`.|
-|  [xsi:type](#xsitype)  |  Yes  | The schema version. At this time, the only valid value is `VersionOverridesV1_0`. |
+|  **xmlns**       |  Yes  |  The schema location, which must be `http://schemas.microsoft.com/office/mailappversionoverrides`.|
+|  **xsi:type**  |  Yes  | The schema version. At this time, the only valid value is `VersionOverridesV1_0`. |
 
 
 ## Child elements
@@ -15,7 +15,7 @@ The root element that contains information for the add-in commands implemented b
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
 |  **Description**    |  No   |  Describes the add-in. This overrides the `Description` element in any parent portion of the manifest. The text of the description is contained in a child element of the **LongString** element contained in the [Resources](./resources.md) element. The `resid` attribute of the **Description** element is set to the value of the `id` attribute of the `String` element that contains the text.|
-|  [Requirements](#requirements)  |  No   |  Specifies the minimum requirement set and version of Office.js that the add-in requires. This overrides the  `Requirements` element in the parent portion of the manifest.| 
+|  **Requirements**  |  No   |  Specifies the minimum requirement set and version of Office.js that the add-in requires. This overrides the  `Requirements` element in the parent portion of the manifest.| 
 |  [Hosts](./hosts.md)                |  Yes  |  Specifies a collection of Office hosts. The child  Hosts element overrides the Hosts element in the parent portion of the manifest.  |
 |  [Resources](./resources.md)    |  Yes  | Defines a collection of resources (strings, URLs, and images) that other manifest elements reference.|
 
