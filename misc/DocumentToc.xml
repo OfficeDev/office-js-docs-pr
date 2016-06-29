@@ -25,6 +25,7 @@
 	<Item text="Add-in development lifecycle" url="design/add-in-development-lifecycle" SEODescription="Plan the end-to-end process for developing task pane, content, and Outlook add-ins to extend Office applications." />
 	<Item text="Install the latest Office version" url="develop/install-latest-office-version" SEODescription="Find out how to opt in to get the latest builds of Office." />
 	<Item text="Manifest" url="overview/add-in-manifests">	
+		<Item text="Define add-in commands" url="outlook/manifests/define-add-in-commands"  SEODescription="Use the VersionOverrides element in your add-in manifest to define add-in commands." />
 		<Item text="Specify Office hosts" url="overview/specify-office-hosts-and-api-requirements" SEODescription="" /> 	
 		<Item text="Requesting permissions for API use in content and task pane add-ins" url="develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins" SEODescription=""  />
 		<Item text="Update API and manifest version" url="develop/update-your-javascript-api-for-office-and-manifest-schema-version" SEODescription="Update the JavaScript files (Office.js and app-specific .js files) and the add-in manifest validation file used in your Office Add-in project to version 1.1." />
@@ -81,7 +82,7 @@
     <Item text="Custom pane Outlook add-ins" url="outlook/custom-pane-outlook-add-ins"  SEODescription="Learn how to define an Outlook add-in that activates based on specific rules." Scope="outlook" />
 	<Item text="Module extension Outlook add-ins" url="outlook/extension-module-outlook-add-ins" FriendlyUrl="outlookmodule-extension-outlook-add-ins" Scope="outlook" /> 
 	<Item text="APIs" url="outlook/apis" SEODescription="Learn how to specify the APIs needed for your Outlook add-in." Scope="outlook" />
-	<Item text="Manifests" url="outlook/manifests" Scope="outlook">
+	<Item text="Manifests" url="overview/add-in-manifests" Scope="outlook">
       <Item text="Manifests" url="outlook/manifests/manifests" SEODescription="Create a manifest for an Outlook add-in for read or compose form." Scope="outlook" /><Item text="Activation rules" url="outlook/manifests/activation-rules" FriendlyUrl="outlook/manifestsactivation-rules" SEODescription="Define activation rules in an Outlook add-in manifest to specify when Outlook displays the add-in." Scope="outlook" />
       <Item text="Define add-in commands" url="outlook/manifests/define-add-in-commands"  SEODescription="Use the VersionOverrides element in your Outlook add-in manifest to define add-in commands." Scope="outlook" />
   </Item>
