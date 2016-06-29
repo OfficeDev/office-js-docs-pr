@@ -1,4 +1,4 @@
-# Define add-in commands in your Office Add-in manifest
+# Define add-in commands in your manifest
 
 Add-in commands provide an easy way to customize the default Office UI with UI elements that perform actions; for example, you can add custom buttons on the ribbon. To create commands, you add a **VersionOverrides** node to an existing task pane manifest. 
 
