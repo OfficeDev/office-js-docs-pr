@@ -1,23 +1,23 @@
 # VersionOverrides element
 
-The root element that contains information for the add-in commands implemented by the add-in. This element is supported in manifest schema v1.1 and later but is defined in the VersionOverrides v1.0 schema. 
+The root element that contains information for the add-in commands implemented by the add-in. **VersionOverrides** is a child element of the [OfficeApp](./officeapp.md) element in the manifest. This element is supported in manifest schema v1.1 and later but is defined in the VersionOverrides v1.0 schema. 
 
 ## Attributes
 
 |  Attribute  |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  [xmlns](#xmlns)       |  Yes  |  The schema location. Must be `http://schemas.microsoft.com/office/mailappversionoverrides`.|
-|  [xsi:type](#xsitype)  |  Yes  | The schema version. The version described in this topic is `VersionOverridesV1_0`.|
+|  [xmlns](#xmlns)       |  Yes  |  The schema location, which must be `http://schemas.microsoft.com/office/mailappversionoverrides`.|
+|  [xsi:type](#xsitype)  |  Yes  | The schema version. The version described in this article is `VersionOverridesV1_0`.|
 
 
 ## Child elements
 
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  [Description](#description)    |  No   |  Describes the add-in. |
-|  [Requirements](#requirements)  |  No   |  The minimum Mailbox version required. | 
-|  [Hosts](./hosts.md)                |  Yes  |  A collection of host types and their settings. |
-|  [Resources](./resources.md)    |  Yes  | Resource definitions (strings, URLs, and images).  |
+|  [Description](#description)    |  No   |  Describes the add-in.|
+|  [Requirements](#requirements)  |  No   |  Specifies the minimum requirement set and version of Office.js that the add-in requires.| 
+|  [Hosts](./hosts.md)                |  Yes  |  Specifies a collection of Office hosts. The child  Hosts element overrides the Hosts element in the parent portion of the manifest.  |
+|  [Resources](./resources.md)    |  Yes  | Defines a collection of resources (strings, URLs, and images) that other manifest elements reference.|
 
 
 ### xmlns 
