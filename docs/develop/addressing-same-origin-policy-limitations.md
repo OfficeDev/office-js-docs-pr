@@ -24,7 +24,7 @@ One way to overcome this limitation is to use JSON/P to provide a proxy for the 
 
 The following is an example of JSON/P that uses a technique that will work in any Office Add-in.
 
-```javascript
+```js
 // Dynamically create an HTML SCRIPT element that obtains the details for the specified video.
 function loadVideoDetails(videoIndex) {
     // Dynamically create a new HTML SCRIPT element in the webpage.

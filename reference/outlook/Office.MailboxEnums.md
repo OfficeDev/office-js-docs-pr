@@ -9,13 +9,13 @@
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|Applicable Outlook mode| Compose|
+|Applicable Outlook mode| Compose or read|
 
 ### Members
 
 #### AttachmentType :String
 
-Specifies an attachment's type. Compose mode only.
+Specifies an attachment's type.
 
 AttachmentType
 
@@ -35,10 +35,10 @@ AttachmentType
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|Applicable Outlook mode| Compose|
+|Applicable Outlook mode| Compose or read|
 #### EntityType :String
 
-Specifies an entity's type. Compose mode only.
+Specifies an entity's type.
 
 EntityType
 
@@ -63,10 +63,10 @@ EntityType
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|Applicable Outlook mode| Compose|
+|Applicable Outlook mode| Compose or read|
 #### ItemNotificationMessageType :String
 
-Specifies the notification message type for an appointment or message. Compose mode only.
+Specifies the notification message type for an appointment or message.
 
 ItemNotificationMessageType
 
@@ -87,10 +87,10 @@ ItemNotificationMessageType
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
-|Applicable Outlook mode| Compose|
+|Applicable Outlook mode| Compose or read|
 #### ItemType :String
 
-Specifies an item's type. Compose mode only.
+Specifies an item's type.
 
 ItemType
 
@@ -110,10 +110,10 @@ ItemType
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|Applicable Outlook mode| Compose|
+|Applicable Outlook mode| Compose or read|
 #### RecipientType :String
 
-Specifies the type of recipient for an appointment. Compose mode only.
+Specifies the type of recipient for an appointment.
 
 RecipientType
 
@@ -135,10 +135,10 @@ RecipientType
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.1|
-|Applicable Outlook mode| Compose|
+|Applicable Outlook mode| Compose or read|
 #### ResponseType :String
 
-Specifies the type of response to a meeting invitation. Compose mode only.
+Specifies the type of response to a meeting invitation.
 
 ResponseType
 
@@ -161,4 +161,29 @@ ResponseType
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|Applicable Outlook mode| Compose|
+|Applicable Outlook mode| Compose or read|
+
+#### RestVersion :String
+
+Specifies the version of the REST API that corresponds to a REST-formatted item ID. 
+
+RestVersion
+
+##### Type:
+
+*   String
+
+##### Properties:
+
+|Name| Type| Value | Description|
+|---|---|---|---|
+|`v1_0`| String|`v1.0`|Version 1.0.|
+|`v2_0`| String|`v2.0`|Version 2.0.|
+|`Beta`| String|`beta`|Beta.|
+
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
+|Applicable Outlook mode| Compose or read|
