@@ -72,7 +72,9 @@ Dialogs support a number of configuration options.
 |:---------------|:--------|:----------|
 |width|object|Optional. Defines the width of the dialog as a percentage of the current display. Defaults to 80%. 250px minimum.|
 |height|object|Optional. Defines the height of the dialog as a percentage of the current display. Defaults to 80%. 150px minimum.|
-|xFrameDenySafe|object|Optional. Determines whether the dialog is safe to display within a Web frame. Recommended to always set to true unless your page cannot be displayed inside an IFrame |
+|displayAsIFrame|object|Optional. Determines whether the dialog should be displayed within an IFrame in Online Clients (e.g. Word Online). This setting is ignored in non Online Clients. 
+- False (default). The dialog will be displayed as a new browser window (pop-up); recommended for authentication pages that cannot be IFramed. 
+- True. The dialog will be displayed as a floating overlay and pages will be inside an IFrame; this is best for user experience and performance. Ensure that any pages displayed on the dialog can be IFramed (e.g. that no header options disallow IFraming ([learn more](https://www.owasp.org/index.php/Clickjacking_Defense_Cheat_Sheet))  |
 |enforceAppDomains|object|Optional. Restricts the dialog's navigation to the add-in's AppDomains list.|
 
 
