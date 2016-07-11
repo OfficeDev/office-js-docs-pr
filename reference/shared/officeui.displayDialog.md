@@ -1,6 +1,6 @@
 # UI.displayDialog method
 
-Displays a web dialog inside Office hosts. Useful on authentication scenarios and selected UI patterns.  [TODO ADD LINK TO UX PATTERNS]
+Displays a web dialog inside Office hosts.
 
 ## Requirements
 
