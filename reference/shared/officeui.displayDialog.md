@@ -1,6 +1,6 @@
 # UI.displayDialog method
 
-Displays a web dialog inside Office hosts.
+Displays a web dialog inside Office hosts. 
 
 ## Requirements
 
@@ -64,6 +64,11 @@ The following examples illustrate the use of the dialog API
 |options|object|Optional. Accepts an options object to define dialog behaviors.|
 |callback|object|Accepts a callback method to handle the dialog creation attempt.|
 
+###Important:
+- Dialogs can only display and navigate to secured (**TLS/HTTPS**) sites 
+- Dialogs must initially open to a site on the add-in manifest's App Domains list
+- Any page calling **office.context.ui.messageParent** must be on the same domain as the parent/opener page 
+	
 ### Dialog Options
 Dialogs support a number of configuration options.
 
@@ -91,14 +96,21 @@ In the callback function passed to the  **displayDialogAsync** method, you can u
 |[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
 
 
+	
+## Design considerations
+###Remarks
+- An Office add-in may have only 1 dialog open at any time 
+- Every dialog can be moved and resized by the user
+- Every dialog opens centered on the screen 
+- Dialogs appear on top of the app and one another in order of being created
 
-## Remarks
-2.	Dialogs can only display and navigate to secured (**TLS/HTTPS**) sites 
-3.	Dialogs must initially open to a site on the add-in manifest's App Domains list
-2.	Any page calling **office.context.ui.messageParent** must be on the same domain as the parent/opener page 
-3.	An Office add-in may have only 1 dialog open at any time 
-3.	Every dialog can be moved and resized by the user
-4.	Every dialog opens centered on the screen 
-5.	Dialogs appear on top of the app and one another in order of being created
-6.	
+###Appropiate uses
+- Display authentication pages to collect user credentials 
+- Display an error/progress/input screen from a ShowTaspane or ExecuteAction command
+- Temporarily increase the real state the user needs to achieve a task
 
+###Innapropiate uses
+- As a primary mechanism for user interaction with a document. Use a taskpane instead. 
+
+###Useful patterns
+See [Client Dialog](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Client_Dialog.md) in Office Add-in UX Design Patterns
