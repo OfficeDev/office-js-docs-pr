@@ -103,13 +103,13 @@ In the callback function passed to the  **displayDialogAsync** method, you can u
 - Every dialog opens centered on the screen 
 - Dialogs appear on top of the app and one another in order of being created
 
-###Appropiate uses
+###Use a dialog to
 - Display authentication pages to collect user credentials 
 - Display an error/progress/input screen from a ShowTaspane or ExecuteAction command
 - Temporarily increase the real state the user needs to achieve a task
 
-###Innapropiate uses
-- As a primary mechanism for user interaction with a document. Use a taskpane instead. 
+###Do not use a dialog to
+- Interact back and forth with a document. Use a taskpane instead. 
 
 ###Useful patterns
 See [Client Dialog](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Client_Dialog.md) in Office Add-in UX Design Patterns
