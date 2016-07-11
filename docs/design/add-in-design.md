@@ -44,7 +44,7 @@ We provide recommended layouts for each add-in type, along with **end-to-end** e
 - [Layout for content add-ins](ui-elements/layout-for-content-add-ins.md) 
 - [Layouts for mail add-ins](ui-elements/layouts-for-outlook-add-ins.md)
 
-See also [Interaction patterns](interaction-patterns.md) for examples of common scenarios for add-ins and their corresponding interaction patterns.
+See also Interaction patterns for examples of common scenarios for add-ins and their corresponding interaction patterns.
 
 ##Additional resources
 
