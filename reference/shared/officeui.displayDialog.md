@@ -78,7 +78,6 @@ Dialogs support a number of configuration options.
 |width|object|Optional. Defines the width of the dialog as a percentage of the current display. Defaults to 80%. 250px minimum.|
 |height|object|Optional. Defines the height of the dialog as a percentage of the current display. Defaults to 80%. 150px minimum.|
 |displayAsIFrame|object|Optional. Determines whether the dialog should be displayed within an IFrame in Online Clients (e.g. Word Online). This setting is ignored in non Online Clients. <ul><li>False (default): The dialog will be displayed as a new browser window (pop-up); recommended for authentication pages that cannot be IFramed. </li><li>True: The dialog will be displayed as a floating overlay with an IFrame; this is best for user experience and performance. Ensure that any pages displayed on the dialog can be IFramed. </li>|
-|enforceAppDomains|object|Optional. Determines if pages from domains outside the AllowedDomain list should be restricted.  <ul><li>True(default). Restricts the dialog's navigation to the add-in's AppDomains list on the manifest.</li> <li>False. Allows navigation to domains not declared on the AppDomains list. Note that any page calling the messageParent API must be on the same domain as the page that called displayDialog</li></ul>|
 
 
 ## Callback value
