@@ -33,7 +33,7 @@ For details about how to use these building blocks, see [UI elements](ui-element
 
 ##UX design patterns
 
-To help you create a first-class user experience for your add-in, we provide templates that illustrate common UX design patterns. These templates reflect [best practices](add-in-development-best-practices.md) for creating compelling, world-class add-ins, and include patterns for first-run experiences, branding elements, and user notifications. They use [Office UI Fabric](https://dev.office.com/fabric) components and styles and include elements that naturally extend the Office UI.
+To help you create a first-class user experience for your add-in, we provide templates that illustrate common UX design patterns. These templates reflect best practices for creating compelling, world-class add-ins, and include patterns for first-run experiences, branding elements, and user notifications. They use [Office UI Fabric](https://dev.office.com/fabric) components and styles and include elements that naturally extend the Office UI.
 
 To access the templates, see the [Office Add-in UX Design Patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns) repo. The Adobe Illustrator files are also available; you can download and update them to reflect your own designs. You can also copy the code files from the [Office Add-in UX design patterns code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code) repo to your add-in project and customize them as needed. 
 
