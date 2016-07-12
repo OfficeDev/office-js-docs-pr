@@ -47,7 +47,7 @@ The Dialog API is currently supported on the following platforms:
 ```js
 office.context.ui.displayDialogAsync(startAddress, options, callback);
 ```
-###Examples
+##Examples
 
 The following examples illustrate the use of the dialog API
 
