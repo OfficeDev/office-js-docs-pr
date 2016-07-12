@@ -66,11 +66,11 @@ And, if you do not have at minimum the "My Custom Apps" role for your Exchange S
 
 The Exchange administrator can run the following PowerShell cmdlet to assign a single user the necessary permissions. In this example, wendyri is the user's email alias.
 
-**New-ManagementRoleAssignment -Role "My Custom Apps" -User "wendyri"** 
+```New-ManagementRoleAssignment -Role "My Custom Apps" -User "wendyri"```
 
 If necessary, the administrator can run the following cmdlet to assign multiple users the similar necessary permissions:
 
-**$users = Get-Mailbox *$users | ForEach-Object { New-ManagementRoleAssignment -Role "My Custom Apps" -User $_.Alias}**
+```$users = Get-Mailbox *$users | ForEach-Object { New-ManagementRoleAssignment -Role "My Custom Apps" -User $_.Alias}```
 
 For more information about the My Custom Apps role, see [My Custom Apps role](http://technet.microsoft.com/en-us/library/aa0321b3-2ec0-4694-875b-7a93d3d99089%28EXCHG.150%29.aspx). 
 
