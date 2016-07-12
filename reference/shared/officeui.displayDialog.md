@@ -60,14 +60,9 @@ The following examples illustrate the use of the dialog API
 
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|startAddress|string|Accepts the initial HTTPS Url that opens in the dialog. This page must belong do a domain declared on the AppDomains list on the manifest|
+|startAddress|string|Accepts the initial HTTPS(TLS) Url that opens in the dialog. The initial page must be on the same domain as the page calling displayDialogAsynch. Navigation to other domains is restricted to the domains declared on the AppDomains list on the manifest. Any page calling **office.context.ui.messageParent** must also be on the same domain as the parent/opener page |
 |options|object|Optional. Accepts an options object to define dialog behaviors.|
 |callback|object|Accepts a callback method to handle the dialog creation attempt.|
-
-###Important:
-- Dialogs can only display and navigate to secured (**TLS/HTTPS**) sites 
-- Dialogs must initially open to a site on the add-in manifest's App Domains list
-- Any page calling **office.context.ui.messageParent** must be on the same domain as the parent/opener page 
 	
 ### Dialog Options
 Dialogs support a number of configuration options.
