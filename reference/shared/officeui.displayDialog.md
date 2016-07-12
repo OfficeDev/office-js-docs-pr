@@ -1,6 +1,6 @@
 # UI.displayDialog method
 
-Displays a web dialog inside Office hosts. 
+Displays a dialog box in an Office host. 
 
 ## Requirements
 
@@ -9,7 +9,7 @@ Displays a web dialog inside Office hosts.
 |Word, Excel, PowerPoint|1.1|1.1|
 |Outlook|Mailbox 1.4|Mailbox 1.4|
 
-To require the `DialogAPI` [requirement set](../../docs/overview/specify-office-hosts-and-api-requirements.md) 1.1 or later, your manifest should specify
+This method is available in the **DialogAPI** [requirement set](../../docs/overview/specify-office-hosts-and-api-requirements.md). To specify the **DialogAPI** requirement set, use the following in your manifest.
 
 ```xml
  <Requirements> 
@@ -20,7 +20,7 @@ To require the `DialogAPI` [requirement set](../../docs/overview/specify-office-
 
 ```
 
-Runtime detection of the this API can be done with the following code:
+To detect this API at runtime, use the following code:
 
 ```js
  if (Office.context.requirements.isSetSupported('DialogAPI', '1.1')) 
@@ -35,25 +35,25 @@ Runtime detection of the this API can be done with the following code:
 
 
 
-###Supported platforms
-The Dialog API is currently supported on the following platforms:
+### Supported platforms
+The **DialogAPI** requirement set is currently supported on the following platforms:
 
-  - Office for Windows Desktop 2016 (build 16.0.6741.0000 or above)
-  - Office for IPad (build 1.22 or above)
-  - Office for Mac (build 15.20 or above) 
-  - More platforms coming soon. 
+  - Office for Windows Desktop 2016 (build 16.0.6741.0000 or later)
+  - Office for IPad (build 1.22 or later)
+  - Office for Mac (build 15.20 or later) 
+
+More platforms are coming soon. 
 
 ## Syntax
+
 ```js
 office.context.ui.displayDialogAsync(startAddress, options, callback);
 ```
 ##Examples
 
-The following examples illustrate the use of the dialog API
+For a simple example that uses the **displayDialog** method, see [Office Add-in Dialog API example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example/) on GitHub.
 
-
-- **Simple use**: [Office Add-in Dialog API Example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example/)
-- **Authentication**: [Office Add-in Office 365 Client Authentication for AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth)
+For an example that shows an authentication scenario, see the [Office Add-in Office 365 Client Authentication for AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth) sample on GitHub.
 
  
 ## Parameters
@@ -64,7 +64,7 @@ The following examples illustrate the use of the dialog API
 |options|object|Optional. Accepts an options object to define dialog behaviors.|
 |callback|object|Accepts a callback method to handle the dialog creation attempt.|
 	
-### Dialog Options
+### Configuration options
 Dialogs support a number of configuration options.
 
 
@@ -90,21 +90,18 @@ In the callback function passed to the  **displayDialogAsync** method, you can u
 |[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
 
 
-	
 ## Design considerations
-###Remarks
-- An Office add-in may have only 1 dialog open at any time 
-- Every dialog can be moved and resized by the user
-- Every dialog opens centered on the screen 
-- Dialogs appear on top of the app and one another in order of being created
 
-###Use a dialog to
-- Display authentication pages to collect user credentials 
-- Display an error/progress/input screen from a ShowTaspane or ExecuteAction command
-- Temporarily increase the real state the user needs to achieve a task
+- An Office add-in can have only one dialog box open at any time.
+- Every dialog box can be moved and resized by the user.
+- Every dialog box is centered on the screen when opened.
+- Dialog boxes appear on top of the host application and in the order in which they were created.
 
-###Do not use a dialog to
-- Interact back and forth with a document. Use a taskpane instead. 
+Use a dialog box to:
+- Display authentication pages to collect user credentials.
+- Display an error/progress/input screen from a ShowTaspane or ExecuteAction command.
+- Temporarily increase the surface area that a user has available to complete a task.
 
-###Useful patterns
-See [Client Dialog](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Client_Dialog.md) in Office Add-in UX Design Patterns
+Do not use a dialog box to interact with a document. Use a taskpane instead. 
+
+For a design pattern that you can use to create a dialog box, see [Client Dialog](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Client_Dialog.md) in the Office Add-in UX Design Patterns repo on GitHub.
