@@ -1,7 +1,7 @@
 # UI.messageParent method
 
 ### messageParent(messageObject: object)
-Delivers a message from the dialog to its parent/opener page. The page calling this API must be on the same domain as the parent/opener. 
+Delivers a message from the dialog to its parent/opener page. The page calling this API must be on the same domain as the parent. 
 
 #### Syntax
 ```js
