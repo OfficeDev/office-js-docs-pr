@@ -60,7 +60,7 @@ For an example that shows an authentication scenario, see the [Office Add-in Off
 
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|startAddress|string|Accepts the initial HTTPS(TLS) Url that opens in the dialog. <ul><li>The initial page must be on the same domain as the parent page. After the initial page is loaded in the dialog you can then navigate to other domains as long as they are declared on the AppDomains list on the manifest.</li> <li>Any page calling [office.context.ui.messageParent](officeui.messageParent.md) must also be on the same domain as the parent page.</li></ul>|
+|startAddress|string|Accepts the initial HTTPS(TLS) URL that opens in the dialog box. <ul><li>The initial page must be on the same domain as the parent page. After the initial page loads, you can go to other domains as long as they are declared on the AppDomains list on the manifest.</li> <li>Any page calling [office.context.ui.messageParent](officeui.messageParent.md) must also be on the same domain as the parent page.</li></ul>|
 |options|object|Optional. Accepts an options object to define dialog behaviors.|
 |callback|object|Accepts a callback method to handle the dialog creation attempt.|
 	
@@ -70,9 +70,9 @@ Dialogs support a number of configuration options.
 
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|width|object|Optional. Defines the width of the dialog as a percentage of the current display. Defaults to 80%. 250px minimum.|
-|height|object|Optional. Defines the height of the dialog as a percentage of the current display. Defaults to 80%. 150px minimum.|
-|displayInIFrame|object|Optional. Determines whether the dialog should be displayed within an IFrame in Online Clients (e.g. Word Online). This setting is ignored in non Online Clients. <ul><li>False (default): The dialog will be displayed as a new browser window (pop-up); recommended for authentication pages that cannot be IFramed. </li><li>True: The dialog will be displayed as a floating overlay with an IFrame; this is best for user experience and performance. Ensure that any pages displayed on the dialog can be IFramed. </li>|
+|width|object|Optional. Defines the width of the dialog box as a percentage of the current display. The default value is 80%. 250px minimum.|
+|height|object|Optional. Defines the height of the dialog box as a percentage of the current display. The default value is 80%. 150px minimum.|
+|displayInIFrame|object|Optional. Determines whether the dialog box should be displayed within an IFrame in Office Online clients (such as Word Online). This setting is ignored by desktop clients. <ul><li>False (default): The dialog will be displayed as a new browser window (pop-up); recommended for authentication pages that cannot be displayed in an IFrame. </li><li>True: The dialog will be displayed as a floating overlay with an IFrame; this is best for user experience and performance. Ensure that any pages displayed on the dialog can be displayed in an IFrame. </li>|
 
 
 ## Callback value
@@ -82,7 +82,7 @@ In the callback function passed to the  **displayDialogAsync** method, you can u
 
 
 
-|**Property**|**Use to...**|
+|**Property**|**Use to**|
 |:-----|:-----|
 |[AsyncResult.value](../../reference/shared/asyncresult.value.md)|Access the **[Dialog](../../reference/shared/officeui.dialog.md)** object.|
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|Determine the success or failure of the operation.|
