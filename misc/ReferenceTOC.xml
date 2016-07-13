@@ -638,7 +638,8 @@
     <Item text="event.source.id" url="shared/event.source.id" FriendlyUrl="reference/common/officeevent.source.id" Scope="outlook" SEODescription="Gets the id of the control that triggered calling this function." />
     <Item text="Office UI" url="shared/officeui" Scope="outlook, excel, word, powerpoint" SEODescription="The Office UI Namespace provides objects and methods used to create UI components for add-ins.">
     	<Item text="Dialog object" url="shared/officeui.dialog" Scope="outlook, excel, word, powerpoint" />
-    	<Item text="DisplayDialog method" url="shared/officeui.displayDialog" Scope="outlook, excel, word, powerpoint" SEODescription=" Displays a web dialog inside Office hosts." />
+    	<Item text="DisplayDialog method" url="shared/officeui.displayDialog" Scope="outlook, excel, word, powerpoint" SEODescription="Displays a web dialog inside Office hosts." />
+    	<Item text="MessageParent method" url="shared/officeui.messageParent.md" Scope="outlook, excel, word, powerpoint" SEODescription="Delivers a message from the dialog box to its parent/opener page." />
     </Item>
   </Item>
   <Item text="Open specifications" url="openspec" Scope="Excel, PowerPoint, Word, Outlook, OneNote" SEODescription="Learn about on-going design API effort and provide feedback"/>
