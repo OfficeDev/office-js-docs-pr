@@ -1,20 +1,21 @@
 # UI.messageParent method
 
-### messageParent(messageObject: object)
-Delivers a message from the dialog to its parent/opener page. The page calling this API must be on the same domain as the parent. 
+Delivers a message from the dialog box to its parent/opener page. The page calling this API must be on the same domain as the parent. 
 
-#### Syntax
+## Syntax
+
 ```js
 Office.context.ui.messageParent("Message from Dialog");
 ```
 
-#### Parameters
+## Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|messageObject|string or boolean|Accepts a message from the dialog to deliver to the add-in.|
+|messageObject|String or Boolean|Accepts a message from the dialog box to deliver to the add-in.|
 
-#### Returns
+## Returns
 void
 
-#### Examples
-See full examples on the [displayDialog](officeui.displayDialog.md) reference page
+## Examples
+For examples, see the [DisplayDialog method](officeui.displayDialog.md) topic.
+
