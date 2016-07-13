@@ -1,5 +1,5 @@
 #UI.Dialog object
-The object that is returned when the [displayDialog](officeui.displayDialog.md) method is called.
+The object that is returned when the [displayDialogAsync](officeui.displaydialogasync.md) method is called.
 
 ## Members
 | Member	   | Type	|Description|
@@ -23,4 +23,4 @@ void
 
 
 #### Examples
-For examples, see the [DisplayDialog method](officeui.displayDialog.md) topic.
+For examples, see the [DisplayDialogAsync method](officeui.displaydialogasync.md) topic.

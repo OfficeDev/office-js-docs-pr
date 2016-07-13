@@ -17,5 +17,5 @@ Office.context.ui.messageParent("Message from Dialog box");
 void
 
 ## Examples
-For examples, see the [DisplayDialog method](officeui.displayDialog.md) topic.
+For examples, see the [DisplayDialogAsync method](officeui.displaydialogasync.md) topic.
 

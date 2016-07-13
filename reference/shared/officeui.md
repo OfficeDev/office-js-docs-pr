@@ -6,8 +6,8 @@ The Office UI namespace, Office.context.ui, provides objects and methods that yo
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[DisplayDialogAsync](officeui.displayDialog.md)|void|Displays a dialog box in an Office host.|
-|[MessageParent](officeui.messageParent.md)|void|Sends a message from a dialog box to the parent add-in.|
+|[DisplayDialogAsync](officeui.displaydialogasync.md)|void|Displays a dialog box in an Office host.|
+|[MessageParent](officeui.messageparent.md)|void|Sends a message from a dialog box to the parent add-in.|
 
 ##Examples
-For examples, see the [DisplayDialog method](officeui.displayDialog.md) topic.
+For examples, see the [DisplayDialogAsync method](officeui.displaydialogasync.md) topic.
