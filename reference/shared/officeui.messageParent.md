@@ -5,7 +5,7 @@ Delivers a message from the dialog box to its parent/opener page. The page calli
 ## Syntax
 
 ```js
-Office.context.ui.messageParent("Message from Dialog");
+Office.context.ui.messageParent("Message from Dialog box");
 ```
 
 ## Parameters
