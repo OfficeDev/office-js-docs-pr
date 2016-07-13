@@ -1,16 +1,16 @@
-#UI.Dialog Object
-This is the object that gets returned after calling [office.context.ui.displayDialog](officeui.displayDialog.md)
+#UI.Dialog object
+The object that is returned when the [displayDialog](officeui.displayDialog.md) method is called.
 
 ## Members
 | Member	   | Type	|Description|
 |:---------------|:--------|:----------|
-|close|function|Allows the add-in to close its dialog.|
-|DialogMessageReceived|event|Optional. Triggered when the dialog sends a message.|
-|DialogEventReceived|event|Optional. Triggered when the dialog has been closed or otherwise unloaded.|
+|close|Function|Allows the add-in to close its dialog box.|
+|DialogMessageReceived|Event|Optional. Triggered when the dialog box sends a message.|
+|DialogEventReceived|Event|Optional. Triggered when the dialog box has been closed or otherwise unloaded.|
 
 
 ### close()
-Called from a parent page it closes the corresponding dialog.     
+Called from a parent page to close the corresponding dialog box.     
 ```js    
 [dialogObject].close();    
 ``` 
@@ -23,4 +23,4 @@ void
 
 
 #### Examples
-See full examples on the [displayDialog](officeui.displayDialog.md) reference page
+For examples, see the [DisplayDialog method](officeui.displayDialog.md) topic.
