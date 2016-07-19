@@ -5,8 +5,7 @@ The object that is returned when the [displayDialogAsync](officeui.displaydialog
 | Member	   | Type	|Description|
 |:---------------|:--------|:----------|
 |close|Function|Allows the add-in to close its dialog box.|
-|DialogMessageReceived|Event|Optional. Triggered when the dialog box sends a message.|
-|DialogEventReceived|Event|Optional. Triggered when the dialog box has been closed or otherwise unloaded.|
+|addEventHandler|Function|Registers an event handler. The two supported events are: <ul><li>DialogMessageReceived. Triggered when the dialog box sends a message to its parent.</li><li>DialogEventReceived. Triggered when the dialog box has been closed or otherwise unloaded.</li></ul> |
 
 
 ### close()
