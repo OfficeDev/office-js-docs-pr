@@ -96,6 +96,36 @@ There are a variety of ways that your add-in can notify users of events, such as
 <td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/toast"><img src="../../images/toast.PNG" alt="toast" style="width: 264px;"/></A></td></tr>
  </table>
 
+### Navigation
+
+Navigation patterns provide a way to organize different pages and commands in your add-in. The following list of navigations can be included in your add-in.
+
+* **Back button navigation** shows a task pane with a Back button. Use the Back button to navigate back to the previous page. For more information on the Back button pattern, see the [specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Back_Button.md), and the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/back-button).
+* **Navigation** shows a hamburger menu. For more information on the Navigation pattern, see the [specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Navigation.md), and the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/navigation).
+* **Navigation with commands** shows a hamburger menu with commands. Use the Navigation with commands to allow users to navigate between different content and have commands. For more information on the Navigation with commands pattern, see the [specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Navigation_%26_Commands.md), and the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/navigation-commands).
+* **Pivot** shows a Pivot navigation. Use the Pivot navigation to allow users to navigate between different content. For more information on the Pivot navigation pattern, see the [specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Pivot.md), and the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/pivot).
+* **Tab bar** shows a top-level navigation. Use the Tab bar to allow users to provide tabs with short and descriptive titles that communicate the tab's functionality. For more information on the Tab bar pattern, see the [specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Tab_Bar.md), and the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/tab-bar).
+
+
+<table>
+<tr><th>Back button</th><th>Navigation</th><th>Navigation with commands</th></tr>
+<tr><td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/back-button">
+<img src="../../images/back.button.png" alt="back button" style="width: 264px;"/></A></td>
+<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/navigation">
+<img src="../../images/navigation.png" alt="navigation" style="width: 264px;"/></A></td>
+<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/navigation-commands">
+<img src="../../images/navigation.commands.png" alt="navigation with commands" style="width: 264px;"/></A></td></tr>
+</table>
+
+<table>
+<tr><th>Pivot</th><th>Tab bar</th></tr>
+<tr><td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/pivot">
+<img src="../../images/pivot.png" alt="pivot navigation" style="width: 300px;"/></A></td>
+<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/tab-bar">
+<img src="../../images/tab.bar.png" alt="tab bar" style="width: 264px;"/></A></td>
+</tr></tr> 
+</table>
+
 ### General components
 
 The following are general components that you can use in your add-ins in a variety of scenarios.  
@@ -140,6 +170,20 @@ Using either technique opens a dialog of the add-in's page in the Office Store. 
 </tr>
  </table>
 
+#### Settings
+
+You can provide a Settings page and a Privacy page to include common components that may be used in your add-in, and to also notify the user of any privacy policies that your add-in adheres to. 
+
+* **Settings** shows a task pane with common components. Use the Settings page to display provide user options. For more information on the Settings pattern, see the [specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Settings.md), and the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/settings).
+* **Privacy Policy** shows task pane with important information about privacy policies. For more information on the Privacy pattern, see the [specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Settings.md), and the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/settings).
+
+<table>
+ <tr><th>Settings</th><th>Privacy Policy</th></tr>
+<tr>
+<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/settings"><img src="../../images/settings.png" alt="settings" style="width: 300px;"/></A></td>
+<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/settings"><img src="../../images/privacy.policy.png" alt="privacy" style="width: 264px;"/></A></td>
+</tr></tr>
+ </table>
 
 ## Additional resources
 
