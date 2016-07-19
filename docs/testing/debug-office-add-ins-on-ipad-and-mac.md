@@ -22,6 +22,8 @@ To install and set up up Vorlon:
 <script src="http://localhost:1337/vorlon.js"></script>    
 ```  
 
+>**Note:** You must enable HTTPS in Vorlon to use Vorlon.js to debug add-ins. To learn how to do that, see [VorlonJS plugin for debugging Office Addin](https://blogs.msdn.microsoft.com/mim/2016/02/18/vorlonjs-plugin-for-debugging-office-addin/).
+
 Now, whenever you open the add-in on a device, it will show up in the list of Clients in Vorlon (on the left side of the Vorlon interface). You can remotely highlight DOM elements, remotely execute commands, and much more.  
 
 ![Screenshot that shows the Vorlon.js interface](../../images/vorlon_interface.png)

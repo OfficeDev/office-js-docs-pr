@@ -82,14 +82,6 @@ To see how your add-in will run in Office for iOS, you can sideload your add-in'
     
     ![Office Add-in displayed in Office for Mac](../../images/a5cb2efc-1180-45b4-85a6-13df817b9d2c.png)
 
-
-## Known issues in Office for Mac
-
-- Word crashes when  `getFileAsync` is called.
-    
-- Your add-in cannot make calls to the JavaScript API for Office if a pop-up is displayed. You must dismiss the pop-up before your add-in can continue executing calls to the JavaScript API for Office.
-    
-
 ## Additional resources
 
 

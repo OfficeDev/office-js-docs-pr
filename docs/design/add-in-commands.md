@@ -22,7 +22,7 @@ You can use add-in commands to make your add-ins easier to find and use. Current
 
 #### Actions
 - ShowTaskpane - Displays one or multiple panes that load custom HTML pages inside them.
-- ExecuteFunction - Loads an invisible HTML page and then execute a JavaScript function within it. To show UI within your function, you can use displayDialog.  
+- ExecuteFunction - Loads an invisible HTML page and then execute a JavaScript function within it. To show UI within your function (e.g. errors, progress, additional input) you can use the [displayDialog](http://dev.office.com/reference/add-ins/shared/officeui) API.  
 
 
 For an overview of the feature, see the video [Add-in Commands in Office Ribbon](https://channel9.msdn.com/events/Build/2016/P551).
