@@ -1,36 +1,36 @@
-# UX design patterns for Office Add-ins. 
+# UX design pattern templates for Office Add-ins 
 
-When designing Office Add-ins, the UX design of your add-in should provide compelling experiences that extend Office. To create a great add-in, your add-in should provide a first-run experience, a first-class UX experience, and smooth transitions between pages, among other things. Providing a clean, modern UX experience increases user retention and adoption of your add-in. 
+The [UX design patterns for Office Add-ins project](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code "UX design patterns for Office Add-ins project") includes HTML, JavaScript, and CSS files that you can use to create the UX for your add-in.   
 
-The [UX design patterns for Office Add-ins project](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code "UX design patterns for Office Add-ins project") provides developers with resources to create great looking Office Add-ins that address common customer scenarios. Available in the UX design patterns project are HTML, JavaScript and CSS files that save developers the time involved in creating the UX for their add-in. Instead, developers can focus on writing code to meet their business requirements. 
+Use the UX design patterns project to:
 
-Use the resources in the UX design patterns project to:
+* Create Office Add-ins that address common customer scenarios.
+* Apply design best practices.
+* Apply [Office UI Fabric](https://dev.office.com/fabric/getting-started/) components and styles.
+* Build add-ins that integrate naturally withthe Office UI.  
 
-* Adhere to Office add-in best practices.
-* Use Office Fabric components and styles.
-* Build add-ins that look like a natural extension of the default Office UI.  
+## Using the UX design patterns
 
-## How do I get started with the UX design patterns project?
+You can use the [UX designer specifications](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/Source%20Files) as a guide when you create your own UX design, or you can add the source code directly to your project. To add the source code:
 
-To get started with the UX design patterns project:
-
-1. Review the UX patterns described in this topic and decide which ones are important to your add-in. For example, pick one of the first-run experiences.
-2. (Optional) Review the [UX designer specifications](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/Source%20Files) and use them as a guide when creating your own UX design. 
-3. Clone the [UX design patterns for Office Add-ins project repo](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code "UX design patterns for Office Add-ins project"). 
-4. Copy the [assets folder](https://github.com/OfficeDev/Office-Add-in-UX-Design-Pattern-Code/tree/master/assets), and the code folder for the individual pattern you choose to your add-in project.  
-5. Incorporate the individual pattern into your add-in. For example:
+1. Clone the [UX design patterns for Office Add-ins project repo](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code "UX design patterns for Office Add-ins project"). 
+2. Copy the [assets folder](https://github.com/OfficeDev/Office-Add-in-UX-Design-Pattern-Code/tree/master/assets), and the code folder for the individual pattern you choose to your add-in project.  
+3. Incorporate the individual pattern into your add-in. For example:
 	- Edit the source location or add-in command URL in the manifest.
 	- Use the UX design pattern as a template for other pages.
-	- Link to/from the UX design pattern.
-6. Run your add-in.
+	- Link to or from the UX design pattern.
 
 ## Types of UX design patterns
-### General landing pages 
+### Generic pages
 
-General landing pages can be applied to any page in your add-in and generally don't have a special purpose. An example of a special purpose page, would be any of the first-run patterns. The following list describes the general landing pages available:
+Generic page templates can be applied to any page in your add-in. The following list describes the general landing pages available:
 
-* **Landing (or generic) page** is a standard add-in page. Users may be redirected to a landing page after a first-run experience or sign-in process. For more information on the landing page, see the [specification](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Helpful%20Templates/AddIn_Template_Standard_Layout.pdf "PDF"), and the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/generic/landing-page).
-* **Brand image in brand bar** is the landing page with an image in the footer that represents your brand. For more information on the Brand image in brand bar, see the [specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Brand_Bar.md), and the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/generic/brand-bar).
+* **Landing page** - A standard add-in page, for example the page a user lands on after a first-run experience or sign-in process. 
+	* [Landing page specification](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Helpful%20Templates/AddIn_Template_Standard_Layout.pdf "PDF")
+	* [Landing page code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/generic/landing-page)
+* **Brand image in brand bar** - The landing page with an image in the footer that represents your brand. 
+	* [Brand image specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Brand_Bar.md)
+	* [Brand image code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/generic/brand-bar)
 
 <table>
  <tr><th>Landing</th><th>Brand Bar</th></tr>
@@ -38,22 +38,34 @@ General landing pages can be applied to any page in your add-in and generally do
 <td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/generic/brand-bar"><img src="../../images/brand.bar.PNG" alt="brand bar" style="width: 264px;"/></A></td></tr>
  </table>
 
-### First-Run
+### First-Run experience
 
-A first-run experience is the experience a user has when opening your add-in for the first time. The following lists the first-run design patterns you can include in your add-in. 
+A first-run experience is the experience a user has when they open your add-in for the first time. The following first-run design pattern templates are available: 
 
-* **Steps to start** provides users with an ordered list of steps to perform to get started using your add-in. For more information on Steps to start, see the [specification](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/FirstRun_StepsToStart.md), and the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/instruction-step).
-* **Value** communicates your add-in's value proposition. For more information on the Value pattern, see the [specification](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/FirstRun_ValuePlacemat.md), and the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/value-placemat).
-* **Video** shows users a video before they start using your add-in. For more information on the Video pattern, see the [specification](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/FirstRun_VideoPlacemat.md), and the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/video-placemat).
-* **Walkthrough** takes users through a series of features or information before they start using the add-in. For more information on the Walkthrough pattern, see the [specification](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/FirstRun_PagingPanel.md), and the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/walkthrough).
-* The [Office Store](https://msdn.microsoft.com/en-us/library/office/jj220033.aspx) has a system that manages trial versions of an add-in, but if you want to control the UI of your addin's trial experience, use the following patterns:
+* **Steps to start** - Provides users with an ordered list of steps to perform to get started using your add-in. 
+	* [Steps to start specification](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/FirstRun_StepsToStart.md)
+	* [Steps to start code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/instruction-step)
+* **Value** - Communicates your add-in's value proposition.
+	* [Value specification](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/FirstRun_ValuePlacemat.md)
+	* [Value code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/value-placemat)
+* **Video** - Shows users a video before they start using your add-in.
+	* [Video specification](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/FirstRun_VideoPlacemat.md)
+	* [Video code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/video-placemat)
+* **Walkthrough** - Takes users through a series of features or information before they start using the add-in.
+	* [Walkthrough specification](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/FirstRun_PagingPanel.md)
+	* [Walkthrough code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/walkthrough)
 
-	* **Trial** shows users how to get started with a trial version of your add-in. For more information on the Trial pattern, see the [specification](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/FirstRun_TrialVersion.md), and the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/trial-placemat).
-	* **Trial feature** advises users that the feature they are trying to use is not available in the trial version of the add-in. Alternatively, if your add-in is free but there's a feature in it that requires a subscription, you should consider using this pattern. You might also consider using this pattern to provide a downgraded experience after a trial has ended. For more information on the Trial feature pattern, see the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/trial-placemat-feature).
+The [Office Store](https://msdn.microsoft.com/en-us/library/office/jj220033.aspx) has a system that manages trial versions of an add-in, but if you want to control the UI of the trial experience for your add-in, use the following patterns:
 
-> Important: If you decide to manage your own trial, and not use the Office Store to manage the trial, ensure you include the **Additional purchase may be required** tag in the testing notes in the seller dashboard.
+* **Trial** - Shows users how to get started with a trial version of your add-in.
+	* [Trial specification](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/FirstRun_TrialVersion.md)
+	* [Trial code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/trial-placemat).
+* **Trial feature** - Advises users that the feature they are trying to use is not available in the trial version of the add-in. If your add-in is free but it includes a feature that requires a subscription, consider using this pattern. You might also use this pattern to provide a downgraded experience after a trial has ended.
+	* [Trial feature code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/trial-placemat-feature).
 
-Consider whether showing users the first-run experience once or many times is important to your scenario. For example, if users use your add-in periodically, they may forget how to use the add-in. Seeing the first-run experience again may be helpful to those users. 
+> Important: If you decide to manage your own trial, make sure to include the **Additional purchase may be required** tag in the testing notes in the seller dashboard.
+
+Consider whether showing users the first-run experience once or many times is important to your scenario. For example, if users use your add-in periodically, they might forget how to use it, and it might be helpful to see the first-run experience more than once. <!-- This might be a point that we add to the best practices, since this article is focused specifically on the templates. -->
 
  <table>
  <tr><th>Steps to Start</th><th>Value</th><th>Video</th></tr>
@@ -73,14 +85,26 @@ Consider whether showing users the first-run experience once or many times is im
 
 ### Notifications
 
-There are a variety of ways that your add-in can notify users of events, such as errors, or of progress. The following lists the notification techniques you can use in your add-in. 
+Your add-in can notify users of events, such as errors, or of progress in a variety of ways. The following notification templates are available: 
 
-* **Embedded dialog**  shows a dialog inside the task pane that provides information and, optionally, an interactive experience, using buttons or other controls. Consider using one to prompt a user to confirm an action. Use the Embedded dialog pattern when you want to keep the user experience in the task pane. For more information on the Embedded dialog pattern, see the [specification](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/Embedded_Dialog.md), and the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/embedded-dialog).
-* **Inline message** indicates error, success, or information, and it can appear at a specified location in the task pane. For example, if a user enters an improperly formatted email address in a text box, an error message appears just below the text box. For more information about Inline messages, see the [specification](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/Notification_Inline_Message.md), and the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/inline-message).
-* **Message banner** provides information and, optionally, a simple call to action, in a banner that can be collapsed to a single line, expanded to multiple lines, or dismissed. Consider using message banners to report a service update or a helpful tip when the add-in starts. For more information on Message banner, see the [specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Notification_MessageBanner.md), and the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/message-banner).
-* **Progress bar** indicates the progress of a long-running, synchronous process, such as a configuration task that must complete before the user can take any further action. It is a separate interstitial page that also reinforces the add-in brand. Use a progress bar when the process can send periodic measures of how far along it is back to the add-in. For more information on Progress bar, see the [specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Notification_Progress.md), and the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/progress-bar).
-* **Spinner** indicates that a long-running, synchronous process is underway, but provides no indication of how far along it is. It is a separate interstitial page that also reinforces the add-in brand. Use a spinner when the add-in cannot know reliably how far along a process is. For more information on Spinner, see the [specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Notification_Progress.md), and the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/spinner).
-* **Toast** provides a brief message that fades away after a few seconds. Since the user might not see the message, use toast only for inessential information. It is a good choice for notifying users of an event in a remote system, such as the receipt of an email. For more information on Toast, see the [specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Notification_Toast.md), and the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/toast).
+* **Embedded dialog box** - Shows a dialog box inside the task pane that provides information and, optionally, an interactive experience, using buttons or other controls. Consider using one to prompt a user to confirm an action. Use the Embedded dialog pattern when you want to keep the user experience in the task pane.
+	* [Embedded dialog box specification](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/Embedded_Dialog.md)
+	* [Embedded dialog box code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/embedded-dialog).
+* **Inline message** - Indicates error, success, or information, and can appear at a specified location in the task pane. For example, if a user enters an incorrectly formatted email address in a text box, an error message appears just below the text box. 
+	* [Inline message specification](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/Notification_Inline_Message.md)
+	* [Inline message code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/inline-message)
+* **Message banner** - Provides information and, optionally, a simple call to action, in a banner that can be collapsed to a single line, expanded to multiple lines, or dismissed. Use message banners to report a service update or a helpful tip when the add-in starts. 
+	* [Message banner specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Notification_MessageBanner.md)
+	* [Message banner code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/message-banner)
+* **Progress bar** - Indicates the progress of a long-running, synchronous process, such as a configuration task that must complete before the user can take any further action. It is a separate interstitial page that also reinforces the add-in brand. Use a progress bar when the process can send periodic measures of how far along it is back to the add-in.
+	* [Progress bar specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Notification_Progress.md)
+	* [Progress bar code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/progress-bar).
+* **Spinner** - Indicates that a long-running, synchronous process is underway, but provides no indication of how far along it is. It is a separate interstitial page that also reinforces the add-in brand. Use a spinner when the add-in cannot know reliably how far along a process is. 
+	* [Spinner specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Notification_Progress.md)
+	* [Spinner code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/spinner).
+* **Toast** - Provides a brief message that fades away after a few seconds. Because the user might not see the message, use toast only for nonessential information. It is a good choice for notifying users of an event in a remote system, such as the receipt of an email.
+	* [Toast specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Notification_Toast.md)
+	* [Toast code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/toast).
 
  <table>
  <tr><th>Embedded dialog</th><th>Inline message</th><th>Message banner</th></tr>
@@ -100,13 +124,19 @@ There are a variety of ways that your add-in can notify users of events, such as
 
 The following are general components that you can use in your add-ins in a variety of scenarios.  
 
-#### Client dialogs
+#### Client dialog boxes
 
-Client dialogs provide another way for users to work with your add-in that's not limited to a task pane. The following list of dialogs can be included in your add-in.
+Client dialog boxes provide another way for users to work with your add-in outside of a task pane. The following dialog box templates are available:
 
-* **Typeramp dialog** shows a dialog box with textual content. Use the typeramp dialog to display elaborative information to users. For more information on the Typeramp dialog pattern, see the [specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Client_Dialog.md), and the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/typeramp).
-* **Alert dialog** shows an alert box with important information, like errors or notifications, to users. For more information on the Alert dialog pattern, see the [specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Client_Dialog.md), and the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/alert).
-* **Navigation dialog** shows a dialog box with navigation. Use the navigation dialog to allow users to navigate between different content. For more information on the Navigation dialog pattern, see the [specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Client_Dialog.md), and the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/navigation).
+* **Typeramp dialog box** - Shows a dialog box with textual content. Use the typeramp dialog to display elaborative information to users. 
+	* [Typeramp dialog box specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Client_Dialog.md)
+	* [Typeramp dialog box code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/typeramp)
+* **Alert dialog box** - Shows an alert box with important information, such as errors or notifications, to users. 	
+	* [Alert dialog box specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Client_Dialog.md)
+	* [Alert dialog box code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/alert)
+* **Navigation dialog box** - Shows a dialog box with navigation. Use the navigation dialog box to allow users to navigate between different content. 
+	* [Navigation dialog box specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Client_Dialog.md)
+	* [Navigation dialog box code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/navigation).
 
 <table>
  <tr><th>Typeramp dialog</th><th>Alert dialog</th></tr>
@@ -125,14 +155,16 @@ Client dialogs provide another way for users to work with your add-in that's not
 
 #### Feedback and Ratings
 
-To improve the visibility and adoption of your add-in, you should provide users with the ability to  rate and review your add-in in the Office Store. This pattern demonstrates how to present feedback and ratings from within the add-in using two techniques:
+To improve the visibility and adoption of your add-in, it is helpful to provide users with the ability to rate and review your add-in in the Office Store. This pattern shows two methods for presenting feedback and ratings from within the add-in:
 
-- User initiated feedback - a user chooses to send feedback using either the navigation menu (for example, using the **Send Feedback** link) or icon on the footer.
-- System initiated feedback - after the add-in runs 3 times, a user is prompted to provide feedback using a Message Banner.
+- User-initiated feedback - A user chooses to send feedback by using either the navigation menu (for example, using the **Send Feedback** link) or am icon on the footer.
+- System-initiated feedback - After the add-in runs three times, the user is prompted to provide feedback via a Message Banner.
 
-Using either technique opens a dialog of the add-in's page in the Office Store. For more information on the Feedback and ratings pattern, see the [specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Notification_Feedback.md), and the [code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/feedback/office-store).
+Either method opens a dialog box that contains the Office Store page for the add-in.
+* [Feedback and ratings specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Notification_Feedback.md)
+* [Feedback and ratings code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/feedback/office-store).
 
->Important: This pattern currently points to the home page of the Office Store. Ensure you update this URL to your add-in's page in the Office Store.
+>**Important:** This pattern currently points to the Office Store home page. Be sure to update this URL to the URL of your add-in's page in the Office Store.
 
  <table>
  <tr><th>Feedback and ratings</th></tr>
