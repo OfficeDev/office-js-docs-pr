@@ -4,10 +4,10 @@ The [UX design patterns for Office Add-ins project](https://github.com/OfficeDev
 
 Use the UX design patterns project to:
 
-* Create Office Add-ins that address common customer scenarios.
+* Leverage solutions to common customer scenarios.
 * Apply design best practices.
 * Apply [Office UI Fabric](https://dev.office.com/fabric/getting-started/) components and styles.
-* Build add-ins that integrate naturally withthe Office UI.  
+* Build add-ins that visually integrate with the default Office UI.  
 
 ## Using the UX design patterns
 
@@ -23,14 +23,14 @@ You can use the [UX designer specifications](https://github.com/OfficeDev/Office
 ## Types of UX design patterns
 ### Generic pages
 
-Generic page templates can be applied to any page in your add-in. The following list describes the general landing pages available:
+Generic page templates can be applied to any page in your add-in and don't have a special purpose. An example of a special purpose page, would be any of the first-run patterns. The following list describes the generic pages available:
 
 * **Landing page** - A standard add-in page, for example the page a user lands on after a first-run experience or sign-in process. 
 	* [Landing page specification](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Helpful%20Templates/AddIn_Template_Standard_Layout.pdf "PDF")
 	* [Landing page code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/generic/landing-page)
 * **Brand image in brand bar** - The landing page with an image in the footer that represents your brand. 
-	* [Brand image specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Brand_Bar.md)
-	* [Brand image code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/generic/brand-bar)
+	* [Brand bar specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Brand_Bar.md)
+	* [Brand bar code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/generic/brand-bar)
 
 <table>
  <tr><th>Landing</th><th>Brand Bar</th></tr>
@@ -60,12 +60,12 @@ The [Office Store](https://msdn.microsoft.com/en-us/library/office/jj220033.aspx
 * **Trial** - Shows users how to get started with a trial version of your add-in.
 	* [Trial specification](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/FirstRun_TrialVersion.md)
 	* [Trial code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/trial-placemat).
-* **Trial feature** - Advises users that the feature they are trying to use is not available in the trial version of the add-in. If your add-in is free but it includes a feature that requires a subscription, consider using this pattern. You might also use this pattern to provide a downgraded experience after a trial has ended.
+* **Trial feature** - Advises users that the feature they are trying to use is not available in the trial version of the add-in. Alternatively, if your add-in is free but it includes a feature that requires a subscription, consider using this pattern. You might also use this pattern to provide a downgraded experience after a trial has ended.
 	* [Trial feature code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/trial-placemat-feature).
 
-> Important: If you decide to manage your own trial, make sure to include the **Additional purchase may be required** tag in the testing notes in the seller dashboard.
+> Important: If you decide to manage your own trial, and not use the Office Store to manage the trial, make sure to include the **Additional purchase may be required** tag in the testing notes in the seller dashboard.
 
-Consider whether showing users the first-run experience once or many times is important to your scenario. For example, if users use your add-in periodically, they might forget how to use it, and it might be helpful to see the first-run experience more than once. <!-- This might be a point that we add to the best practices, since this article is focused specifically on the templates. -->
+Consider whether showing users the first-run experience once or many times is important to your scenario. For example, if users use your add-in periodically, they might forget how to use it, and it might be helpful to see the first-run experience more than once. 
 
  <table>
  <tr><th>Steps to Start</th><th>Value</th><th>Video</th></tr>
@@ -157,10 +157,11 @@ Client dialog boxes provide another way for users to work with your add-in outsi
 
 To improve the visibility and adoption of your add-in, it is helpful to provide users with the ability to rate and review your add-in in the Office Store. This pattern shows two methods for presenting feedback and ratings from within the add-in:
 
-- User-initiated feedback - A user chooses to send feedback by using either the navigation menu (for example, using the **Send Feedback** link) or am icon on the footer.
+- User-initiated feedback - A user chooses to send feedback by using either the navigation menu (for example, using the **Send Feedback** link) or an icon on the footer.
 - System-initiated feedback - After the add-in runs three times, the user is prompted to provide feedback via a Message Banner.
 
 Either method opens a dialog box that contains the Office Store page for the add-in.
+
 * [Feedback and ratings specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Notification_Feedback.md)
 * [Feedback and ratings code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/feedback/office-store).
 
