@@ -103,7 +103,32 @@ Users need to navigate between the different pages of your add-in. The following
 	* [Tab bar specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Tab_Bar.md)
 	* [Tab bar code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/tab-bar) 
 
+<table>
+<tr><th>Back button</th><th>Navigation</th><th>Navigation with commands</th></tr>
+<tr>
+	<td>
+		<A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/back-button">
+		<img src="../../images/back.button.png" alt="back button" style="width: 264px;"/></A>
+	</td>
+	<td>
+		<A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/navigation">
+		<img src="../../images/navigation.png" alt="navigation" style="width: 264px;"/></A>
+	</td>
+	<td>
+		<A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/navigation-commands">
+		<img src="../../images/navigation.commands.png" alt="navigation with commands" style="width: 264px;"/></A>
+	</td>
+</tr>
+ </table>
 
+<table>
+<tr><th>Pivot</th><th>Tab bar</th></tr>
+<tr><td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/pivot">
+<img src="../../images/pivot.png" alt="pivot navigation" style="width: 264px;"/></A></td>
+<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/tab-bar">
+<img src="../../images/tab.bar.png" alt="tab bar" style="width: 264px;"/></A></td>
+</tr>
+ </table>
 
 ### Notifications
 
