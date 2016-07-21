@@ -12,6 +12,7 @@
   </Item>
   <Item text="Design" url="design/add-in-design">
       <Item text="UI Elements" url="design/ui-elements/ui-elements" SEODescription="Use add-in commands, Fabric UI, and custom HTML interfaces to make compelling add-in user interfaces.">
+      <Item text="UX design patterns" url="design/ux-design-patterns" SEODescription="Use the UX design pattern templates for Office Add-ins to create UI extensions." />
       <Item text="Interaction patterns" url="design/ui-elements/interaction-patterns"  />
       <Item text="Layout for content add-ins" url="design/ui-elements/layout-for-content-add-ins" SEODescription="Create a consistent look and feel for your content add-ins by using the recommended design layout."  />
       <Item text="Layout for task pane add-ins" url="design/ui-elements/layout-for-task-pane-add-ins" SEODescription="Create a consistent look and feel for task pane add-ins by using the recommended design layout." />
