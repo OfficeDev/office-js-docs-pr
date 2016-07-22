@@ -27,7 +27,6 @@ Represents a container for Paragraph objects.
 |[appendRichText(paragraphText: string)](#appendrichtextparagraphtext-string)|[RichText](richtext.md)|Adds the specified text to the bottom of the Outline.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-appendRichText)|
 |[appendTable(rowCount: number, columnCount: number, values: string[][])](#appendtablerowcount-number-columncount-number-values-string)|[Table](table.md)|Adds a table with the specified number of rows and columns to the bottom of the outline.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-appendTable)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-load)|
-|[select()](#select)|void|Selects the Outline and bring it to the view.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-select)|
 
 ## Method Details
 
@@ -190,16 +189,3 @@ object.load(param);
 #### Returns
 void
 
-### select()
-Selects the Outline and bring it to the view.
-
-#### Syntax
-```js
-outlineObject.select();
-```
-
-#### Parameters
-None
-
-#### Returns
-void
