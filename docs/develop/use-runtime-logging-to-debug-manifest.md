@@ -17,7 +17,7 @@ The following image shows what the registry should look like.
 
 To turn the feature off, remove the `RuntimeLogging` key from the registry. 
 
-## Troubleshoot issues with add-in commands in your manifest
+## Troubleshoot issues with your manifest
 
 To use runtime logging to troubleshoot issues with add-in commands:
  
@@ -32,7 +32,7 @@ In the following example, the log file identifies a control that points to a res
 ![Screenshot of a log file with an entry that specifies a Resource ID that is not found](http://i.imgur.com/f8bouLA.png) 
 
 ##Known issues with runtime logging
-You might see messages that are confusing or that are classified incorrectly. For example:
+You might see messages in the log file that are confusing or that are classified incorrectly. For example:
 
 - The message `Medium Current host not in add-in's host list` followed by `Unexpected Parsed manifest targeting different host` is incorrectly classified as an error.
 - The message `Unexpected Add-in is missing required manifest fields	DisplayName` doesn't contain the SolutionId of the add-in. This error is most likely not related to the add-in you are debugging. 
