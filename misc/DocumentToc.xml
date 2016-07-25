@@ -29,6 +29,7 @@
 		<Item text="Specify Office hosts" url="overview/specify-office-hosts-and-api-requirements" SEODescription="" /> 	
 		<Item text="Requesting permissions for API use in content and task pane add-ins" url="develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins" SEODescription=""  />
 		<Item text="Update API and manifest version" url="develop/update-your-javascript-api-for-office-and-manifest-schema-version" SEODescription="Update the JavaScript files (Office.js and app-specific .js files) and the add-in manifest validation file used in your Office Add-in project to version 1.1." />
+		<Item text="Use runtime logging to debug your manifest" url="develop/use-runtime-logging-to-debug-manifest" SEODescription="Use runtime logging to debug the manifest for your Office Add-in." />
 	</Item>	
 	<Item text="Office JavaScript API" url="develop/understanding-the-javascript-api-for-office" SEODescription="Understand the functional areas of the JavaScript API for Office, which is implemented in the Office.js file.">
 		<Item text="Support for content and task pane add-ins" url="develop/support-for-task-pane-and-content-add-ins" SEODescription="Describes the different permission levels that you can declare in your content or task pane add-in's manifest to specify the level of JavaScript API access your add-in requires for its features." />
