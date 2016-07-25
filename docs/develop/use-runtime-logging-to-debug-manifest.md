@@ -1,6 +1,6 @@
 # Use runtime logging to debug the manifest for your Office Add-in
 
-You can use runtime logging to debug your add-in's manifest. This feature can help you identify and fix issues with your manifest that are not detected by XSD schema validation; for example, a mismatch between resource IDs. Runtime logging is particularly  useful for debugging add-ins that implement add-in commands.  
+You can use runtime logging to debug your add-in's manifest. This feature can help you identify and fix issues with your manifest that are not detected by XSD schema validation, such as a mismatch between resource IDs. Runtime logging is particularly  useful for debugging add-ins that implement add-in commands.  
 
 >**Note:** The runtime logging feature is currently available for Office 2016 desktop.
 
@@ -22,9 +22,10 @@ To turn the feature off, remove the `RuntimeLogging` key from the registry.
 To use runtime logging to troubleshoot issues with add-in commands:
  
 1. [Sideload your add-in](testing/sideload-office-add-ins-for-testing.md) for testing. 
+
 	>Note: We recommend that you sideload only the add-in that you are testing to minimize the number of messages in the log file.
 2. If you don't see your buttons on the ribbon and nothing appears on the add-ins dialog box, open the log file.
-3. Search the log file for your add-in ID, which your define in your manifest. In the log file, this ID is labeled `SolutionId`. 
+3. Search the log file for your add-in ID, which you define in your manifest. In the log file, this ID is labeled `SolutionId`. 
 
 In the following example, the log file identifies a control that points to a resource file that doesn't exist. For this example, the fix would be to correct the typo in the manifest or to add the missing resource.
 
