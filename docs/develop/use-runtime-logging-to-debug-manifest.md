@@ -9,7 +9,7 @@ You can use runtime logging to debug your add-in's manifest. This feature can he
 >**Important**: Runtime Logging affects performance. Turn it on only when you need to debug issues with your add-in manifest.
 
 1. Make sure that you are running Office 2016 desktop build **16.0.7019** or later. 
-2. Add the `RuntimeLogging` registry key under **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\**. 
+2. Add the `RuntimeLogging` registry key under 'HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\'. 
 3. Set the default value of the key to the full path of the file where you want the log to be written. For an example, see [EnableRuntimeLogging.zip](RuntimeLogging/EnableRuntimeLogging.zip). 
 
 The following image shows what the registry should look like.
