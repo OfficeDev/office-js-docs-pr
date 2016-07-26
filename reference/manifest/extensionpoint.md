@@ -1,47 +1,93 @@
 # ExtensionPoint element
 
- Defines where an add-in exposes functionality. The **ExtensionPoint** element is a child element of [FormFactor](./formfactor.md). 
+ Defines where an add-in exposes functionality in the Office UI. The **ExtensionPoint** element is a child element of [FormFactor](./formfactor.md). 
 
 ## Attributes
 
 |  Attribute  |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  [xsi:type](#xsitype)  |  Yes  | The type of ExtentionPoint being defined.|
+|  **xsi:type**  |  Yes  | The type of extension point being defined.|
 
-## xsi:type
-For each form factor, you can define **ExtensionPoint** elements with the following **xsi:type** values, with the exception of the **Module** value which can only be used in the [DesktopFormFactor](./formfactor.md):
+
+## Extension points for Word, Excel, and PowerPoint add-in commands
+
+- **PrimaryCommandSurface** - The ribbon in Office.
+- **ContextMenu** - The shortcut menu that appears when you right-click in the Office UI.
+
+The following examples show how to use the  **ExtensionPoint** element with **PrimaryCommandSurface** and **ContextMenu** attribute values, and the child elements that should be used with each.
+
+
+ >**Important**  For elements that contain an ID attribute, make sure you provide a unique ID. We recommend that you use your company's name along with your ID. For example, use the following format.<CustomTab id="mycompanyname.mygroupname">
+
+
+```XML
+ <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <CustomTab id="Contoso Tab">
+            <!-- If you want to use a default tab that comes with Office, remove the above CustomTab element, and then uncomment the following OfficeTab element -->
+             <!-- <OfficeTab id="TabData"> -->
+              <Label resid="residLabel4" />
+              <Group id="Group1Id12">
+                <Label resid="residLabel4" />
+                <Icon>
+                  <bt:Image size="16" resid="icon1_32x32" />
+                  <bt:Image size="32" resid="icon1_32x32" />
+                  <bt:Image size="80" resid="icon1_32x32" />
+                </Icon>
+                <Tooltip resid="residToolTip" />
+                <Control xsi:type="Button" id="Button1Id1">
+
+                   <!-- information about the control -->
+                </Control>
+                <!-- other controls, as needed -->
+              </Group>
+            </CustomTab>
+          </ExtensionPoint>
+
+        <ExtensionPoint xsi:type="ContextMenu">
+          <OfficeMenu id="ContextMenuCell">
+            <Control xsi:type="Menu" id="ContextMenu2">
+                   <!-- information about the control -->
+            </Control>
+           <!-- other controls, as needed -->
+          </OfficeMenu>
+         </ExtensionPoint>
+```
+
+**Child elements**
+ 
+|**Element**|**Description**|
+|:-----|:-----|
+|**CustomTab**|Required if you want to add a custom tab to the ribbon (using  **PrimaryCommandSurface**). If you use the  **CustomTab** element, you can't use the **OfficeTab** element. The **id** attribute is required.|
+|**OfficeTab**|Required if you want to extend a default Office ribbon tab (using  **PrimaryCommandSurface**). If you use the  **OfficeTab** element, you can't use the **CustomTab** element.For more tab values to use with the  **id** attribute, see [Tab values for default Office ribbon tabs](#tab-values-for-default-office-ribbon-tabs).|
+|**OfficeMenu**|Required if you're adding add-in commands to a default context menu (using  **ContextMenu**). The  **id** attribute must be set to: <br/> - **ContextMenuText** for Excel or Word. Displays the item on the context menu when text is selected and then the user right-clicks on the selected text. <br/> - **ContextMenuCell** for Excel. Displays the  item on the context menu when the user right-clicks on a cell on the spreadsheet.|
+|**Group**|A group of user interface extension points on a tab. A group can have up to six controls. The  **id** attribute is required. It's a string with a maximum of 125 characters.|
+|**Label**|Required. The label of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element.|
+|**Icon**|Required. Specifies the group's icon to be used on small form factor devices, or when too many buttons are displayed. The  **resid** attribute must be set to the value of the **id** attribute of an **Image** element. The **Image** element is a child element of the **Images** element, which is a child element of the **Resources** element. The **size** attribute gives the size, in pixels, of the image. Three image sizes are required: 16, 32, and 80. Five optional sizes are also supported: 20, 24, 40, 48, and 64.|
+|**Tooltip**|Optional. The tooltip of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element.|
+|**Control**|Each group requires at least one control. A  **Control** element can be either a **Button** or a **Menu**. Use  **Menu** to specify a drop-down list of button controls. Currently, only buttons and menus are supported.See the [Button controls](#button-controls) and [Menu controls](#menu-controls) sections for more information.<br/>**Note**  To make troubleshooting easier, we recommend that a  **Control** element and the related **Resources** child elements be added one at a time.
+
+## Extension points for Outlook add-in commands
 
 - [CustomPane](#custompane) 
 - [MessageReadCommandSurface](#messagereadcommandsurface) 
 - [MessageComposeCommandSurface](#messagecomposecommandsurface) 
 - [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface) 
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
-- [Module](#module)
+- [Module](#module) (Can only be used in the [DesktopFormFactor](./formfactor.md).)
 
 ### CustomPane
 
 The CustomPane extension point defines an add-in that activates when specified rules are satisfied. It is only for read form and it displays in a horizontal pane. 
 
-#### Child elements
+**Child elements**
 
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  [RequestedHeight](#requestedheight) | No |  The requested height in pixels.  |
-|  [SourceLocation](#sourcelocation)  | Yes |  The URL for the source code file of the add-in.  |
-|  [Rule](#rule)  | Yes |  The rule or collection of rules that specify when the add-in activates.  |
-|  [DisableEntityHighlighting](#disableentityhighlighting)  | No |  Specifies whether entity highlighting should be turned off. |
+|  **RequestedHeight** | No |  The requested height, in pixels, for the display pane when it is running on a desktop computer. This can be from 32 to 450 pixels.  |
+|  **SourceLocation**  | Yes |  The URL for the source code file of the add-in. This refers to a  **Url** element in the [Resources](./resources.md)  element.  |
+|  **Rule**  | Yes |  The rule or collection of rules that specify when the add-in activates. For more information, see  [Activation rules for Outlook add-ins](../../outlook/manifests/activation-rules.md). |
+|  **DisableEntityHighlighting**  | No |  Specifies whether entity highlighting should be turned off. |
 
-#### RequestedHeight
-Optional. The requested height, in pixels, for the display pane when it is running on a desktop computer. This can be from 32 to 450 pixels. It is the same as in read add-ins (see [RequestedHeight element](../reference/requestedheight.md)
-
-#### SourceLocation
-Required. The URL for the source code file of the add-in. This refers to a  **Url** element in the [Resources](./resources.md)  element.
-
-#### Rule
-Required. The rule or collection of rules that specify when the add-in activates. It is the same as defined in [Outlook add-in manifests](../../outlook/manifests/manifests.md), except the ItemIs rule has the following changes: **ItemType** is either "Message" or "AppointmentAttendee", and there is no **FormType** attribute. For more information, see [Custom pane Outlook add-ins](../../outlook/custom-pane-outlook-add-ins.md) and [Activation rules for Outlook add-ins](../../outlook/manifests/activation-rules.md).
-
-#### DisableEntityHighlighting
-Optional. Specifies whether entity highlighting should be turned off for this Outlook add-in. 
 
 #### CustomPane example
 ```xml
@@ -59,7 +105,8 @@ Optional. Specifies whether entity highlighting should be turned off for this Ou
 ### MessageReadCommandSurface
 This extension point puts buttons in the command surface for the mail read view. In Outlook desktop, this appears in the ribbon.
 
-#### Child elements
+**Child elements**
+
 |  Element |  Description  |
 |:-----|:-----|
 |  [OfficeTab](./officetab.md) |  Adds the command(s) to the default ribbon tab.  |
@@ -85,7 +132,8 @@ This extension point puts buttons in the command surface for the mail read view.
 ### MessageComposeCommandSurface
 This extension point puts buttons on the ribbon for add-ins using mail compose form. 
 
-#### Child elements
+**Child elements**
+
 |  Element |  Description  |
 |:-----|:-----|
 |  [OfficeTab](./officetab.md) |  Adds the command(s) to the default ribbon tab.  |
@@ -113,7 +161,8 @@ This extension point puts buttons on the ribbon for add-ins using mail compose f
 
 This extension point puts buttons on the ribbon for the form that's displayed to the organizer of the meeting. 
 
-#### Child elements
+**Child elements**
+
 |  Element |  Description  |
 |:-----|:-----|
 |  [OfficeTab](./officetab.md) |  Adds the command(s) to the default ribbon tab.  |
@@ -141,7 +190,8 @@ This extension point puts buttons on the ribbon for the form that's displayed to
 
 This extension point puts buttons on the ribbon for the form that's displayed to the attendee of the meeting. 
 
-#### Child elements
+**Child elements**
+
 |  Element |  Description  |
 |:-----|:-----|
 |  [OfficeTab](./officetab.md) |  Adds the command(s) to the default ribbon tab.  |
@@ -169,7 +219,8 @@ This extension point puts buttons on the ribbon for the form that's displayed to
 
 This extension point puts buttons on the ribbon for the module extension. 
 
-#### Child elements
+**Child elements**
+
 |  Element |  Description  |
 |:-----|:-----|
 |  [OfficeTab](./officetab.md) |  Adds the command(s) to the default ribbon tab.  |
