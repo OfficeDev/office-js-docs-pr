@@ -434,5 +434,5 @@ The following XML manifest example hosts its main add-in page in the  `https://w
 - [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md)
 - [Localization for Office Add-ins](../../docs/develop/localization.md)
 - [Schema reference for Office Add-ins manifests](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas)
-- [Use runtime logging to debug your manifest](use-runtime-logging-to-debug-manifest.md)
+- [Use runtime logging to debug your manifest](../develop/use-runtime-logging-to-debug-manifest.md)
 
