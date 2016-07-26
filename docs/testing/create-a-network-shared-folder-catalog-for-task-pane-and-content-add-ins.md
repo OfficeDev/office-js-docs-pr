@@ -34,6 +34,6 @@ After performing these steps, you can select  **My Add-ins** on the **Insert** t
 
 ## Additional resources
 
-- [Use runtime logging to debug your manifest](use-runtime-logging-to-debug-manifest.md)
+- [Use runtime logging to debug your manifest](../develop/use-runtime-logging-to-debug-manifest.md)
 - [Publish your Office Add-in](../publish/publish.md)
     
