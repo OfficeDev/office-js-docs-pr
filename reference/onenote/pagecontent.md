@@ -28,7 +28,6 @@ Represents a region on a page that contains top-level content types such as Outl
 |:---------------|:--------|:----------|:-------|
 |[delete()](#delete)|void|Deletes the PageContent object.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-delete)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-load)|
-|[select()](#select)|void|Selects the PageContent object.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-select)|
 
 ## Method Details
 
@@ -89,41 +88,4 @@ object.load(param);
 #### Returns
 void
 
-### select()
-Selects the PageContent object.
-
-#### Syntax
-```js
-pageContentObject.select();
-```
-
-#### Parameters
-None
-
-#### Returns
-void
-
-#### Examples
-```js
-OneNote.run(function (context) {
-
-	var page = context.application.getActivePage();
-	var pageContents = page.contents;
-	pageContents.load('type');
-
-	// Run the queued commands, and return a promise to indicate task completion.
-	return context.sync()
-		.then(function () {
-			var firstPageContent = pageContents.getItemAt(0);
-			firstPageContent.select();
-			return context.sync();
-		});
-})
-.catch(function(error) {
-	console.log("Error: " + error);
-	if (error instanceof OfficeExtension.Error) {
-		console.log("Debug info: " + JSON.stringify(error.debugInfo));
-	}
-});
-```
 

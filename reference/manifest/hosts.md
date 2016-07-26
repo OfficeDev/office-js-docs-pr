@@ -1,6 +1,6 @@
 # Hosts element
 
-Specifies the Office client application where the Office add-in will activate. Contains a collection of host objects and their settings. 
+Specifies the Office client application where the Office add-in will activate. Contains a collection of **Host** elements and their settings. 
 
 When included in the [VersionOverrides](./versionoverrides.md) node, this element overrides the **Hosts** element in the parent portion of the manifest. 
 
@@ -36,11 +36,7 @@ Controls which Office host (Word, Excel, PowerPoint, Outlook) the contained sett
 - `MailHost` (Outlook)    
 
 
-### FormFactor
-See [FormFactor](./formfactor.md).
-
-
-## Hosts Example 
+## Hosts example 
 ```xml
 <Hosts>
     <Host xsi:type="MailHost">

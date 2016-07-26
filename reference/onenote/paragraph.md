@@ -33,7 +33,6 @@ _See property access [examples.](#property-access-examples)_
 |[insertRichTextAsSibling(insertLocation: string, paragraphText: string)](#insertrichtextassiblinginsertlocation-string-paragraphtext-string)|[RichText](richtext.md)|Inserts the paragraph text at the specifiec insert location.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-insertRichTextAsSibling)|
 |[insertTableAsSibling(insertLocation: string, rowCount: number, columnCount: number, values: string[][])](#inserttableassiblinginsertlocation-string-rowcount-number-columncount-number-values-string)|[Table](table.md)|Adds a table with the specified number of rows and columns before or after the current paragraph.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-insertTableAsSibling)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-load)|
-|[select()](#select)|void|Selects the paragraph|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-select)|
 
 ## Method Details
 
@@ -289,54 +288,6 @@ object.load(param);
 #### Returns
 void
 
-### select()
-Selects the paragraph
-
-#### Syntax
-```js
-paragraphObject.select();
-```
-
-#### Parameters
-None
-
-#### Returns
-void
-
-#### Examples
-```js
-OneNote.run(function (context) {
-
-	// Get the collection of pageContent items from the page.
-	var pageContents = context.application.getActivePage().contents;
-
-	// Get the first PageContent on the page
-	// Assuming its an outline, get the outline's paragraphs.
-	var pageContent = pageContents.getItemAt(0);
-	var paragraphs = pageContent.outline.paragraphs;
-
-	var firstParagraph = paragraphs.getItemAt(0);
-
-	// Queue a command to load the id and type of the first paragraph
-	firstParagraph.load("id,type");
-
-	// Queue a command to select the first paragraph  
-	firstParagraph.select();
-
-	// Run the queued commands, and return a promise to indicate task completion.
-	return context.sync()
-		.then(function () {
-			console.log("Selected paragraph with id : " + firstParagraph.id + " and type: " + firstParagraph.type);
-			return Promise.resolve(firstParagraph);
-		});
-})		
-.catch(function(error) {
-	console.log("Error: " + error);
-	if (error instanceof OfficeExtension.Error) {
-		console.log("Debug info: " + JSON.stringify(error.debugInfo));
-	}
-}); 
-```
 ### Property access examples
 
 **id and type**
