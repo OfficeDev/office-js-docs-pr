@@ -112,7 +112,7 @@ The manifest specifies settings and capabilities of the add-in, such as the foll
     
 - How the add-in integrates with Office: 
       - For add-ins that extend Word/Excel/PowerPoint/Outlook: The native extension points the add-in uses to expose functionality, such as buttons on the ribbon. 
-      - For add-ins that create new embedable objects: The URL of the default page that is loaded for the object.
+      - For add-ins that create new embeddable objects: The URL of the default page that is loaded for the object.
        
     
 - The permission level and data access requirements for the add-in.
