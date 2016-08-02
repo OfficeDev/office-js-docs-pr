@@ -27,7 +27,7 @@ _Applies to: Word 2016, Word for iPad, Word for Mac_
 |[delete()](#delete)|void|Deletes the range and its content from the document.|
 |[getHtml()](#gethtml)|string|Gets the HTML representation of the range object.|
 |[getOoxml()](#getooxml)|string|Gets the OOXML representation of the range object.|
-|[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location. A break can only be inserted into range objects that are contained within the main document body, except if it is a line break which can be inserted into any body object. The insertLocation value can be 'Replace', 'Before' or 'After'.|
+|[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location. A break can only be inserted into range objects that are contained within the main document body, except if it is a line break which can be inserted into any body object. The insertLocation value can be 'Before' or 'After'.|
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the range object with a rich text content control.|
 |[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Inserts a document into the range at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
 |[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts HTML into the range at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
@@ -201,7 +201,7 @@ Word.run(function (context) {
 ```
 
 ### insertBreak(breakType: BreakType, insertLocation: InsertLocation)
-Inserts a break at the specified location. A break can only be inserted into range objects that are contained within the main document body, except if it is a line break which can be inserted into any body object. The insertLocation value can be 'Replace', 'Before' or 'After'.
+Inserts a break at the specified location. A break can only be inserted into range objects that are contained within the main document body, except if it is a line break which can be inserted into any body object. The insertLocation value can be 'Before' or 'After'.
 
 #### Syntax
 ```js
@@ -212,7 +212,7 @@ rangeObject.insertBreak(breakType, insertLocation);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |breakType|BreakType|Required. The break type to add to the range.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Before' or 'After'.|
+|insertLocation|InsertLocation|Required. The value can be 'Before' or 'After'.|
 
 #### Returns
 void
