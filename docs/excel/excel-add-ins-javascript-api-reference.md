@@ -12,6 +12,11 @@ You can use the Excel JavaScript API to build add-ins for Excel 2016. The follow
 	* [TableRow Collection](../../reference/excel/tablerowcollection.md): A collection of all the rows in a table.
 * [Chart](../../reference/excel/chart.md): Represents a Chart object in a worksheet, which is a visual representation of underlying data.
 	* [Chart Collection](../../reference/excel/chartcollection.md): A collection of charts in a worksheet.
+* [TableSort](../../reference/excel/tablesort.md): Represents a object that sorting operations on Table objects.
+* [RangeSort](../../reference/excel/rangesort.md): Represents a object that sorting operations on Range objects.
+* [Filter](../../reference/excel/filter.md): Represents a fitler object that manages the filtering of a table's column.
+* [Worksheet Protection](../../reference/excel/worksheetprotection.md): Represents the protection of a worksheet object.
+* [Worksheet Function](../../reference/excel/functions.md): Represents a container for Microsoft Excel worksheet functions that can be called through JavaScript.
 * [NamedItem](../../reference/excel/nameditem.md): Represents a defined name for a range of cells or a value. Names can be primitive-named objects, range object, etc.
 	* [NamedItem Collection](../../reference/excel/nameditemcollection.md): A collection of NamedItem objects in a workbook.
 * [Binding](../../reference/excel/binding.md): An abstract class that represents a binding to a section of the workbook.
