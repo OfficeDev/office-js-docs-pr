@@ -9,14 +9,14 @@ When client applications recognize the  **VersionOverrides** node, the add-in na
 
 ## VersionOverrides node
 
-The  [VersionOverrides](../../reference/manifest/versionoverrides.md) element is the root element that contains information for the add-in commands implemented by the add-in. It is supported in manifest schema v1.1 and later, but is defined in the VersionOverrides v1.0 schema. 
+The  [VersionOverrides](../../../reference/manifest/versionoverrides.md) element is the root element that contains information for the add-in commands implemented by the add-in. It is supported in manifest schema v1.1 and later, but is defined in the VersionOverrides v1.0 schema. 
 
 The VersionOverrides element includes the following child elements:
 
-- [Description](../../reference/manifest/description.md)
-- [Requirements](../../reference/manifest/requirements.md)
-- [Hosts](../../reference/manifest/hosts.md)
-- [Resources](../../reference/manifest/resources.md)
+- [Description](../../../reference/manifest/description.md)
+- [Requirements](../../../reference/manifest/requirements.md)
+- [Hosts](../../../reference/manifest/hosts.md)
+- [Resources](../../../reference/manifest/resources.md)
 
 The following diagram shows the hierarchy of elements used to define add-in commands. 
 
