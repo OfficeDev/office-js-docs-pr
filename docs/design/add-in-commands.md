@@ -41,7 +41,7 @@ More platforms are coming soon.
 
 ## Get started with add-in commands
 
-For details about how to specify add-in commands in your manifest, see [Define add-in commands in your manifest](../../../outlook/manifests/define-add-in-commands.md).
+For details about how to specify add-in commands in your manifest, see [Define add-in commands in your manifest](http://dev.office.com/docs/add-ins/outlook/manifests/define-add-in-commands).
 
 To get started using add-in commands, see the [Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) on GitHub.
 
