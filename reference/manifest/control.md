@@ -6,7 +6,7 @@ Defines a JavaScript function that executes and action or launches a task pane. 
 
 |  Attribute  |  Required  |  Description  |
 |:-----|:-----|:-----|
-|**xsi:type**|Yes|The type of control being defined. Can be either [Button](#button) or [Menu](#menu).|
+|**xsi:type**|Yes|The type of control being defined. Can be either Button or Menu.|
 |**id**|No|The ID of the control element. Can be a maximum of 125 characters.|
 
 ## Button control
