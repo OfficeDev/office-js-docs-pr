@@ -115,7 +115,7 @@
     <Item text="ChartSeriesCollection" url="excel/chartseriescollection" SEODescription="Encapsulates the format properties for the chart series." />
     <Item text="ChartSeriesFormat" url="excel/chartseriesformat" SEODescription="Encapsulates the format properties for the chart series." />
     <Item text="ChartTitle" url="excel/charttitle" SEODescription="Represents a chart title object of a chart." />
-    <Item text="ChartTitleformat" url="excel/charttitleFormat" SEODescription="Provides access to the Office art formatting for the chart title." />
+    <Item text="ChartTitleFormat" url="excel/charttitleformat" SEODescription="Provides access to the Office art formatting for the chart title." />
     <Item text="Error" url="excel/error" SEODescription="Represents errors that occur when you use the Excel JavaScript API." />
 	<Item text="Filter" url="excel/filter" SEODescription="Manages the filtering of a table's column." />
     <Item text="LoadOption" url="excel/loadoption" SEODescription="Represents an object that can be passed to the load method to specify the set of properties and relations to be loaded upon execution of sync() method that synchronizes the states between Excel objects and corresponding JavaScript proxy objects in the add-in. " />
