@@ -134,7 +134,7 @@
     <Item text="TableColumn" url="excel/tablecolumn" SEODescription="Represents a column in a table." />
     <Item text="TableColumnCollection" url="excel/tablecolumncollection" SEODescription="Represents a collection of all the columns that are part of the table." />
     <Item text="TableRow" url="excel/tablerow" SEODescription="Represents a row in a table." />
-    <Item text="TableRowCollection" url="excel/tablerowCollection" SEODescription="Represents a collection of all the rows that are part of the table." />
+    <Item text="TableRowCollection" url="excel/tablerowcollection" SEODescription="Represents a collection of all the rows that are part of the table." />
     <Item text="TableSort" url="excel/tablesort" SEODescription="Manages sorting operations on Table objects." />
     <Item text="TrackedObjectsCollection" url="excel/trackedobjectscollection" SEODescription="Allows add-ins to manage range object references across sync() batches." />
     <Item text="Workbook" url="excel/workbook" SEODescription="Workbook is the top-level object that contains related workbook objects such as worksheets, tables, ranges, etc." />
