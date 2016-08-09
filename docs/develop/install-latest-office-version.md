@@ -4,6 +4,10 @@ New developer features, including those still in preview, are delivered first to
 
 - If you're an Office 365 Home, Personal, or University subscriber, see [Be an Office Insider](https://products.office.com/en-us/office-insider).
 - If you're an Office 365 for business customer, see [Install the First Release build for Office 365 for business customers](https://support.office.com/en-us/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead?ui=en-US&rs=en-US&ad=US).
+- If you're running Office 2016 on a Mac:
+	1. Start an Office 2016 for Mac program.
+	2. Select **Check for Updates** on the Help menu.
+	3. In the Microsoft AutoUpdate box, check the box to join the Office Insider program. 
 
 To get the latest build: 
 
