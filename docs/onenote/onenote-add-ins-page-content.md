@@ -29,6 +29,7 @@ The OneNote add-in JavaScript API supports the following HTML for creating and u
 - `<html>`, `<body>`, `<div>`, `<span>`, `<br/>` 
 - `<p>`
 - `<img>`
+- `<a>`
 - `<ul>`, `<ol>`, `<li>` 
 - `<table>`, `<tr>`, `<td>`
 - `<h1>` ... `<h6>`
