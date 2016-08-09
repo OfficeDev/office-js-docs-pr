@@ -1,8 +1,8 @@
 
-# Design Office Add-ins for the iPad
+# Develop Office Add-ins for the iPad
 
 
-The following table lists the tasks to perform to design an Office Add-in to run in Office for iPad.
+The following table lists the tasks to perform to develop an Office Add-in to run in Office for iPad.
 
 
 |**Task**|**Description**|**Resources**|
