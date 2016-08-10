@@ -51,9 +51,9 @@
     <Item text="TargetDialects" url="manifest/targetdialects" Scope="excel, word, powerpoint, project" SEODescription="Defines the dialect(s) supported by this dictionary." />
     <Item text="Version" url="manifest/version" SEODescription="Specifies the version of your Office Add-in." />
 	<Item text="VersionOverrides" url="manifest/versionoverrides" Scope="excel, word, powerpoint" SEODescription="The root element that contains information for the add-in commands implemented by the add-in."> 
-		<Item text="Action" url="manifest/action" Scope="excel, word, powerpoint" SEODescription="Specifies the action to perform when the user selects a Button or Menu controls." />
-		<Item text="Control" url="manifest/control" SEODescription="" />
-		<Item text="CustomTab" url="manifest/customtab" Scope="excel, word, powerpoint" SEODescription="Specified the tab and group for add-in commands." />
+		<Item text="Action" url="manifest/action" Scope="excel, word, powerpoint" SEODescription="Specifies the action to perform when the user selects a Button or Menu control." />
+		<Item text="Control" url="manifest/control" SEODescription="Specifies the control to perform when the user selects a Button or Menu." />
+		<Item text="CustomTab" url="manifest/customtab" Scope="excel, word, powerpoint" SEODescription="Specifies the tab and group for add-in commands." />
 		<Item text="ExtensionPoint" url="manifest/extensionpoint" Scope="excel, word, powerpoint" SEODescription="Defines where an add-in exposes functionality." />
 		<Item text="FormFactor" url="manifest/formfactor" Scope="excel, word, powerpoint" SEODescription="Specifies the settings for an add-in for a given form factor." />
 		<Item text="FunctionFile" url="manifest/functionfile" Scope="excel, word, powerpoint" SEODescription="Specifies the source code file for operations that an add-in exposes through add-in commands that execute a JavaScript function instead of displaying UI." />
@@ -66,7 +66,7 @@
 	</Item>
   </Item>
   
-  <Item text="Word" url="word/word-add-ins-reference-overview" Scope="word" SEODescription="Word Javascript API reference overview">
+  <Item text="Word" url="word/word-add-ins-reference-overview" Scope="word" SEODescription="Word Javascript API reference overview.">
     <Item text="Body" url="word/body" SEODescription="Represents the body of a document or a section." />
     <Item text="BreakType" url="word/breaktype" FriendlyUrl="word/referencebreaktype" Scope="word" SEODescription="Specifies the form of a break." />
     <Item text="ContentControl" url="word/contentcontrol" FriendlyUrl="word/referencecontentcontrol" Scope="word" SEODescription="Represents a content control. Content controls are bounded and potentially labeled regions in a document that serve as containers for specific types of content."  />
