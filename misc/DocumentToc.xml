@@ -27,8 +27,8 @@
 	<Item text="Develop add-ins for the iPad" url="develop/develop-office-add-ins-for-the-ipad"  SEODescription="Make your Office Add-ins available in Office for iPad." />
 	<Item text="Manifest" url="overview/add-in-manifests">	
 		<Item text="Define add-in commands" url="outlook/manifests/define-add-in-commands"  SEODescription="Use the VersionOverrides element in your add-in manifest to define add-in commands." />
-		<Item text="Specify Office hosts" url="overview/specify-office-hosts-and-api-requirements" SEODescription="Specify Office hosts and API requirements." /> 	
-		<Item text="Requesting permissions for API use in content and task pane add-ins" url="develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins" SEODescription="Requesting permissions for API use in content and task-pane add-ins."  />
+		<Item text="Specify Office hosts" url="overview/specify-office-hosts-and-api-requirements" SEODescription="Find out how to specify Office hosts and API requirements in your manifest." /> 	
+		<Item text="Requesting permissions for API use in content and task pane add-ins" url="develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins" SEODescription="Specify the level of API access your add-in requires in your manifest."  />
 		<Item text="Update API and manifest version" url="develop/update-your-javascript-api-for-office-and-manifest-schema-version" SEODescription="Update the JavaScript files (Office.js and app-specific .js files) and the add-in manifest validation file used in your Office Add-in project to version 1.1." />
 		<Item text="Use runtime logging to debug your manifest" url="develop/use-runtime-logging-to-debug-manifest" SEODescription="Use runtime logging to debug the manifest for your Office Add-in." />
 	</Item>	
@@ -46,9 +46,9 @@
     <Item text="Performance" url="develop/resource-limits-and-performance-optimization" SEODescription="Apply resource usage limits to your Office Add-ins and optimize the performance of your add-in." />
   </Item>
   <Item text="Test" url="testing">
-    	<Item text="Sideload Office Add-ins for testing" url="testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins" SEODescription="Create a network shared folder catalog for task-pane and content add-ins." Scope="Excel, Word, PowerPoint, Project, Access" />
+    	<Item text="Sideload Office Add-ins for testing" url="testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins" SEODescription="Install an Office Add-in running on Windows for testing." Scope="Excel, Word, PowerPoint, Project, Access" />
 		<Item text="Sideload Office Add-ins in Office Online for testing" url="testing/sideload-office-add-ins-for-testing" SEODescription="See how to load an add-in into an Office application for testing." />
-	    <Item text="Sideload Outlook add-ins for testing" url="testing/sideload-outlook-add-ins-for-testing" SEODescription="Sideload your Outlook add-ins for testing." />
+	    <Item text="Sideload Outlook add-ins for testing" url="testing/sideload-outlook-add-ins-for-testing" SEODescription="Install an Outlook add-in for testing." />
     	<Item text="Sideload on iPad and Mac" url="testing/sideload-an-office-add-in-on-ipad-and-mac" SEODescription="Sideload your Office Add-in onto an iPad or Mac to test how it will run in Office for iOS or Office for Mac." />
     	<Item text="Debug using F12 developer tools" url="testing/debug-add-ins-using-f12-developer-tools-on-windows-10" SEODescription="Use the Debugger from the F12 developer tools on Windows 10 to debug Office add-ins." />
     	<Item text="Debug in Office Online" url="testing/debug-add-ins-in-office-online" SEODescription="Use Office Online to debug add-ins without running Office on the Windows platform - for example, if you're developing on a Mac." />
@@ -65,9 +65,9 @@
     <Item text="Build your first Word add-in" url="word/word-add-ins" SEODescription="Use Word Add-ins to extend the functionality of Word and to integrate Word with other applications." Scope="word" />
     <Item text="Create better add-ins for Word with Office Open XML" url="word/create-better-add-ins-for-word-with-office-open-xml" SEODescription="Use Office Open XML to insert rich content via Word add-ins. Edit the Office Open XML to simplify the markup and minimize the payload." Scope="word" />
     <Item text="Dictionary task pane add-ins" url="word/dictionary-task-pane-add-ins"  />
-	<Item text="Get the whole document from an add-in for PowerPoint or Word" url="develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word" SEODescription="Get the whole document from an add-in for PowerPoint or Word." />
-  	<Item text="Read and write data to the active selection in a document or spreadsheet" url="develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet" SEODescription="Read and write data to the active selection in a document or spreadsheet." />
-  	<Item text="Bind to regions in a document or spreadsheet" url="develop/bind-to-regions-in-a-document-or-spreadsheet" SEODescription="Bind to regions in a document or spreadsheet." />
+	<Item text="Get the whole document from an add-in for PowerPoint or Word" url="develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word" SEODescription="Create an add-in for PowerPoint or Word that publishes to a remote location." />
+  	<Item text="Read and write data to the active selection in a document or spreadsheet" url="develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet" SEODescription="Use the Document object to read and write data to the active selection in a document or spreadsheet." />
+  	<Item text="Bind to regions in a document or spreadsheet" url="develop/bind-to-regions-in-a-document-or-spreadsheet" SEODescription="Use an identifier to access a region of a document or spreadsheet." />
   </Item>
     <Item text="Excel" url="excel" Scope="excel">
     <Item text="Excel JavaScript API programming overview" url="excel/excel-add-ins-javascript-programming-overview" SEODescription="Use the JavaScript APIs to build add-ins for Excel 2016." Scope="excel" />
@@ -82,16 +82,16 @@
     <Item text="Add-in commands for Outlook" url="outlook/add-in-commands-for-outlook"  SEODescription="Use add-in commands to integrate Outlook add-ins with the Outlook UI." Scope="outlook" />
     <Item text="Contextual Outlook add-ins" url="outlook/contextual-outlook-add-ins"  SEODescription="Activate an Outlook add-in based on specified text in a message or appointment." Scope="outlook" />
     <Item text="Custom pane Outlook add-ins" url="outlook/custom-pane-outlook-add-ins"  SEODescription="Learn how to define an Outlook add-in that activates based on specific rules." Scope="outlook" />
-	<Item text="Module extension Outlook add-ins" url="outlook/extension-module-outlook-add-ins" FriendlyUrl="outlookmodule-extension-outlook-add-ins" Scope="outlook" SEODescription="Outlook extension model for Outlook add-ins."/> 
+	<Item text="Module extension Outlook add-ins" url="outlook/extension-module-outlook-add-ins" FriendlyUrl="outlookmodule-extension-outlook-add-ins" Scope="outlook" SEODescription="Extend the Outlook UI by adding module extensions to the navigation bar."/> 
 	<Item text="APIs" url="outlook/apis" SEODescription="Learn how to specify the APIs needed for your Outlook add-in." Scope="outlook" />
-	<Item text="Manifests" url="overview/add-in-manifests" Scope="outlook" SEODescription="Overview of Add-in manifests." />
+	<Item text="Manifests" url="overview/add-in-manifests" Scope="outlook" SEODescription="Use the XML manifest to specify how your add-in is activated." />
       <Item text="Manifests" url="outlook/manifests/manifests" SEODescription="Create a manifest for an Outlook add-in for read or compose form." Scope="outlook" /><Item text="Activation rules" url="outlook/manifests/activation-rules" FriendlyUrl="outlook/manifestsactivation-rules" SEODescription="Define activation rules in an Outlook add-in manifest to specify when Outlook displays the add-in." Scope="outlook" />
       <Item text="Define add-in commands" url="outlook/manifests/define-add-in-commands"  SEODescription="Use the VersionOverrides element in your Outlook add-in manifest to define add-in commands." Scope="outlook" />
   </Item>
   <Item text="Get and set item data in read or compose forms" url="outlook/item-data" SEODescription="Learn about the ways to get or set data on an appointment or message from an Outlook add-in" Scope="outlook" />
 	<Item text="Get and set add-in metadata" url="outlook/metadata-for-an-outlook-add-in"  SEODescription="Learn to load and store custom data that only your Outlook add-in can access - through roaming settings and custom properties." Scope="outlook" />
 	<Item text="Privacy and security" url="outlook/privacy-and-security" SEODescription="End users" Scope="outlook">
-		<Item text="Understanding Outlook add-in permissions" url="outlook/understanding-outlook-add-in-permissions" SEODescription="Understanding Outlook add-in permissions" />
+		<Item text="Understanding Outlook add-in permissions" url="outlook/understanding-outlook-add-in-permissions" SEODescription="Specify permission levels in your Outlook add-in manifest." />
     </Item>
 	<Item text="Read scenario" url="outlook/read-scenario" SEODescription="Build Outlook add-ins for the read scenario and find information for available API features." Scope="outlook">
 		<Item text="Use regular expressions to show an Outlook add-in" url="outlook/use-regular-expressions-to-show-an-outlook-add-in" SEODescription="Learn how to use regular expressions to specify the criteria for a Outlook add-in to be relevant in a read scenario and that Outlook should display the add-in in the UI." Scope="outlook" />
