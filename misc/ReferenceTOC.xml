@@ -17,7 +17,7 @@
     <Item text="DisableEntityHighlighting" url="manifest/disableentityhighlighting" Scope="outlook" SEODescription="Specifies whether entity highlighting should be turned off for your mail add-in." />
     <Item text="DisplayName" url="manifest/displayname" SEODescription="Specifies the name for your Office Add-in as a string up to 125 characters long." />
     
-	<Item text="Form" url="manifest/form" Scope="outlook" SEODescription="UX settings for the forms that your mail add-in will use when running on a particular device (desktop, tablet, or phone)." />
+	<Item text="Form" url="manifest/form" Scope="outlook" SEODescription="Defines UX settings for the forms that your mail add-in will use when running on a particular device (desktop, tablet, or phone)." />
     
 	<Item text="FormSettings" url="manifest/formsettings" Scope="outlook" SEODescription="Specifies source location and control settings for your mail add-in." />
     
@@ -51,9 +51,9 @@
     <Item text="TargetDialects" url="manifest/targetdialects" Scope="excel, word, powerpoint, project" SEODescription="Defines the dialect(s) supported by this dictionary." />
     <Item text="Version" url="manifest/version" SEODescription="Specifies the version of your Office Add-in." />
 	<Item text="VersionOverrides" url="manifest/versionoverrides" Scope="excel, word, powerpoint" SEODescription="The root element that contains information for the add-in commands implemented by the add-in."> 
-		<Item text="Action" url="manifest/action" Scope="excel, word, powerpoint" SEODescription="Specifies the action to perform when the user selects a Button or Menu controls." />
-		<Item text="Control" url="manifest/control" SEODescription="" />
-		<Item text="CustomTab" url="manifest/customtab" Scope="excel, word, powerpoint" SEODescription="Specified the tab and group for add-in commands." />
+		<Item text="Action" url="manifest/action" Scope="excel, word, powerpoint" SEODescription="Specifies the action to perform when the user selects a Button or Menu control." />
+		<Item text="Control" url="manifest/control" SEODescription="Specifies the control to perform when the user selects a Button or Menu." />
+		<Item text="CustomTab" url="manifest/customtab" Scope="excel, word, powerpoint" SEODescription="Specifies the tab and group for add-in commands." />
 		<Item text="ExtensionPoint" url="manifest/extensionpoint" Scope="excel, word, powerpoint" SEODescription="Defines where an add-in exposes functionality." />
 		<Item text="FormFactor" url="manifest/formfactor" Scope="excel, word, powerpoint" SEODescription="Specifies the settings for an add-in for a given form factor." />
 		<Item text="FunctionFile" url="manifest/functionfile" Scope="excel, word, powerpoint" SEODescription="Specifies the source code file for operations that an add-in exposes through add-in commands that execute a JavaScript function instead of displaying UI." />
@@ -66,21 +66,21 @@
 	</Item>
   </Item>
   
-  <Item text="Word" url="word/word-add-ins-reference-overview" Scope="word" SEODescription="Word Javascript API reference overview">
+  <Item text="Word" url="word/word-add-ins-reference-overview" Scope="word" SEODescription="Provides an overview of the Word Javascript API.">
     <Item text="Body" url="word/body" SEODescription="Represents the body of a document or a section." />
     <Item text="BreakType" url="word/breaktype" FriendlyUrl="word/referencebreaktype" Scope="word" SEODescription="Specifies the form of a break." />
     <Item text="ContentControl" url="word/contentcontrol" FriendlyUrl="word/referencecontentcontrol" Scope="word" SEODescription="Represents a content control. Content controls are bounded and potentially labeled regions in a document that serve as containers for specific types of content."  />
     <Item text="ContentControlCollection" url="word/contentcontrolcollection" FriendlyUrl="word/referencecontentcontrolcollection" Scope="word" SEODescription="Contains a collection of ContentControl objects. Content controls are bounded and potentially labeled regions in a document that serve as containers for specific types of content."  />
-    <Item text="Document" url="word/document" FriendlyUrl="word/referencedocument" Scope="word" SEODescription="The Document object is the top level object. A Document object contains one or more sections, content controls, and the body that contains the contents of the document." />
+    <Item text="Document" url="word/document" FriendlyUrl="word/referencedocument" Scope="word" SEODescription="Contains one or more sections, content controls, and the body that contains the contents of the document." />
     <Item text="Error" url="word/error" FriendlyUrl="word/referenceerror" Scope="word" SEODescription="Represents errors that occur when you use the Word JavaScript API." />
 	<Item text="Font" url="word/font" FriendlyUrl="word/referencefont" Scope="word" SEODescription="Represents a font." />
     <Item text="InlinePicture" url="word/inlinepicture" FriendlyUrl="word/referenceinlinepicture" Scope="word" SEODescription="Represents an inline picture." />
     <Item text="InlinePictureCollection" url="word/inlinepicturecollection" FriendlyUrl="word/referenceinlinepicturecollection" Scope="word" SEODescription="Contains a collection of inlinePicture objects." />
-    <Item text="LoadOption" url="word/loadoption" SEODescription="An object that specifies paging information and the properties to load when context.sync() is called." />
+    <Item text="LoadOption" url="word/loadoption" SEODescription="Specifies paging information and the properties to load when context.sync() is called." />
     <Item text="Paragraph" url="word/paragraph" FriendlyUrl="word/referenceparagraph" Scope="word" SEODescription="Represents a single paragraph in a selection, range, content control, or document body." />
     <Item text="ParagraphCollection" url="word/paragraphcollection" FriendlyUrl="word/referenceparagraphcollection" Scope="word" SEODescription="Contains a collection of paragraph objects." />
     <Item text="Range" url="word/range" SEODescription="Represents a contiguous area in a document." />
-    <Item text="RequestContext" url="word/requestcontext" SEODescription="The RequestContext object facilitates requests to the Word application from the Word add-in since the two applications run in different processes." />
+    <Item text="RequestContext" url="word/requestcontext" SEODescription="Facilitates requests to the Word application from the Word add-in since the two applications run in different processes." />
     <Item text="SearchOptions" url="word/searchoptions" FriendlyUrl="word/referencesearchoptions" Scope="word" SEODescription="Specifies the options to be included in a search operation." />
     <Item text="SearchResultCollection" url="word/searchresultcollection" FriendlyUrl="word/referencesearchresultcollection" Scope="word" SEODescription="Contains a collection of range objects as a result of a search operation." />
     <Item text="Section" url="word/section" FriendlyUrl="word/referencesection" Scope="word" SEODescription="Represents a section in a Word document." />
@@ -102,7 +102,7 @@
     <Item text="ChartDataLabelFormat" url="excel/chartdatalabelformat" SEODescription="Encapsulates the format properties for the chart data labels." />
     <Item text="ChartDataLabels" url="excel/chartdatalabels" SEODescription="Represents a collection of all the data labels on a chart point." />
     <Item text="ChartFill" url="excel/chartfill" SEODescription="Represents the fill formatting for a chart element." />
-    <Item text="ChartFont" url="excel/chartfont" SEODescription="This object represents the font attributes (font name, font size, color, etc.) for a chart object." />
+    <Item text="ChartFont" url="excel/chartfont" SEODescription="Represents the font attributes (font name, font size, color, etc.) for a chart object." />
     <Item text="ChartGridlines" url="excel/chartgridlines" SEODescription="Represents major or minor gridlines on a chart axis." />
     <Item text="ChartGridlinesFormat" url="excel/chartgridlinesformat" SEODescription="Encapsulates the format properties for chart gridlines." />
     <Item text="ChartLegend" url="excel/chartlegend" SEODescription="Represents the legend in a chart." />
@@ -121,14 +121,14 @@
     <Item text="LoadOption" url="excel/loadoption" SEODescription="Represents an object that can be passed to the load method to specify the set of properties and relations to be loaded upon execution of sync() method that synchronizes the states between Excel objects and corresponding JavaScript proxy objects in the add-in. " />
     <Item text="NamedItem" url="excel/nameditem" SEODescription="Represents a defined name for a range of cells or a value. " />
     <Item text="NamedItemCollection" url="excel/nameditemcollection" SEODescription="A collection of all the nameditem objects that are part of the workbook." />
-    <Item text="Range" url="excel/range" SEODescription="Range represents a set of one or more contiguous cells such as a cell, a row, a column, block of cells, etc." />
+    <Item text="Range" url="excel/range" SEODescription="Represents a set of one or more contiguous cells such as a cell, a row, a column, block of cells, etc." />
     <Item text="RangeBorder" url="excel/rangeborder" SEODescription="Represents the border of an object." />
     <Item text="RangeBorderCollection" url="excel/rangebordercollection" SEODescription="Represents the border objects that make up range border." />
     <Item text="RangeFill" url="excel/rangefill" SEODescription="Represents the background of a range object." />
-    <Item text="RangeFont" url="excel/rangefont" SEODescription="This object represents the font attributes (font name, font size, color, etc.) for an object." />
+    <Item text="RangeFont" url="excel/rangefont" SEODescription="Represents the font attributes (font name, font size, color, etc.) for an object." />
     <Item text="RangeFormat" url="excel/rangeformat" SEODescription="A format object encapsulating the range's font, fill, borders, alignment, and other properties." />
     <Item text="RangeSort" url="excel/rangesort" SEODescription="Manages sorting operations on Range objects." />
-    <Item text="Requestcontext" url="excel/requestcontext" SEODescription="The RequestContext object facilitates requests to the Excel application. " />
+    <Item text="Requestcontext" url="excel/requestcontext" SEODescription="Facilitates requests to the Excel application. " />
     <Item text="Table" url="excel/table" SEODescription="Represents an Excel table." />
     <Item text="TableCollection" url="excel/tablecollection" SEODescription="Represents a collection of all the tables that are part of the workbook." />
     <Item text="TableColumn" url="excel/tablecolumn" SEODescription="Represents a column in a table." />
@@ -137,10 +137,10 @@
     <Item text="TableRowCollection" url="excel/tablerowcollection" SEODescription="Represents a collection of all the rows that are part of the table." />
     <Item text="TableSort" url="excel/tablesort" SEODescription="Manages sorting operations on Table objects." />
     <Item text="TrackedObjectsCollection" url="excel/trackedobjectscollection" SEODescription="Allows add-ins to manage range object references across sync() batches." />
-    <Item text="Workbook" url="excel/workbook" SEODescription="Workbook is the top-level object that contains related workbook objects such as worksheets, tables, ranges, etc." />
-    <Item text="Worksheet" url="excel/worksheet" SEODescription="An Excel worksheet is a grid of cells. It can contain data, tables, charts, etc." />
+    <Item text="Workbook" url="excel/workbook" SEODescription="Contains related workbook objects such as worksheets, tables, ranges, etc." />
+    <Item text="Worksheet" url="excel/worksheet" SEODescription="Represents a grid of cells that contain data, tables, and charts." />
     <Item text="WorksheetCollection" url="excel/worksheetcollection" SEODescription="Represents a collection of worksheet objects that are part of the workbook." />
-    <Item text="WorksheetFunctions" url="excel/functions" SEODescription="Used as a container for Microsoft Excel worksheet functions that can be called through JavaScript or REST." />
+    <Item text="WorksheetFunctions" url="excel/functions" SEODescription="Used as a container for Excel worksheet functions that can be called through JavaScript or REST." />
     <Item text="WorksheetProtection" url="excel/worksheetprotection" SEODescription="Represents the protection of a sheet object." />
   </Item>
   
@@ -635,9 +635,9 @@
       <Item text="rows" url="shared/tabledata.rows" SEODescription="Gets or sets the rows in the table." />
     </Item>
     <Item text="event.completed" url="shared/event.completed" FriendlyUrl="reference/common/officeevent.completed" Scope="outlook" SEODescription="The callback that the add-in invokes to let Outlook know that the operation is done." />
-    <Item text="event.source.id" url="shared/event.source.id" FriendlyUrl="reference/common/officeevent.source.id" Scope="outlook" SEODescription="Gets the id of the control that triggered calling this function." />
-    <Item text="Office UI" url="shared/officeui" Scope="outlook, excel, word, powerpoint" SEODescription="The Office UI Namespace provides objects and methods used to create UI components for add-ins.">
-    	<Item text="Dialog object" url="shared/officeui.dialog" Scope="outlook, excel, word, powerpoint" />
+    <Item text="event.source.id" url="shared/event.source.id" FriendlyUrl="reference/common/officeevent.source.id" Scope="outlook" SEODescription="Gets the ID of the control that triggered calling this function." />
+    <Item text="Office UI" url="shared/officeui" Scope="outlook, excel, word, powerpoint" SEODescription="Provides objects and methods used to create UI components for add-ins.">
+    	<Item text="Dialog object" url="shared/officeui.dialog" Scope="outlook, excel, word, powerpoint" SEODescription="The object that is returned when the displayDialogAsync method is called." />
     	<Item text="DisplayDialog method" url="shared/officeui.displaydialogasync" Scope="outlook, excel, word, powerpoint" SEODescription="Displays a web dialog inside Office hosts." />
     	<Item text="MessageParent method" url="shared/officeui.messageparent" Scope="outlook, excel, word, powerpoint" SEODescription="Delivers a message from the dialog box to its parent/opener page." />
     </Item>
