@@ -128,18 +128,14 @@ void
 ```js
   Excel.run(function (ctx) {
     var worksheets = ctx.workbook.worksheets;
-    worksheets.load('items');
+    worksheets.load({"items" : "id, name"});
     return ctx.sync().then(function() {
       for (var i = 0; i < worksheets.items.length; i++)
       {
         var worksheet = worksheets.items[i];
-        worksheet.load(['name', 'id']);
-
-        ctx.sync().then(function() {
-          console.log(worksheet.name);
-          console.log(worksheet.id);
-        });
-
+        
+        console.log(worksheet.name);
+        console.log(worksheet.id);
       }
     });
   }).catch(function(error) {
