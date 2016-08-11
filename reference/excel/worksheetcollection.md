@@ -126,20 +126,20 @@ object.load(param);
 void
 ### Property access examples
 ```js
-  Excel.run(function (ctx) {
-    var worksheets = ctx.workbook.worksheets;
-    worksheets.load({"items" : "id, name"});
-    return ctx.sync().then(function() {
-      for (var i = 0; i < worksheets.items.length; i++)
-      {
-        console.log(worksheets.items[i].name);
-        console.log(worksheets.items[i].index);
-      }
-    });
-  }).catch(function(error) {
-    console.log("Error: " + error);
-    if (error instanceof OfficeExtension.Error) {
-      console.log("Debug info: " + JSON.stringify(error.debugInfo));
+Excel.run(function (ctx) {
+  var worksheets = ctx.workbook.worksheets;
+  worksheets.load({"items" : "id, name"});
+  return ctx.sync().then(function() {
+    for (var i = 0; i < worksheets.items.length; i++)
+    {
+      console.log(worksheets.items[i].name);
+      console.log(worksheets.items[i].index);
     }
   });
-  ```
+}).catch(function(error) {
+  console.log("Error: " + error);
+  if (error instanceof OfficeExtension.Error) {
+    console.log("Debug info: " + JSON.stringify(error.debugInfo));
+  }
+});
+```
