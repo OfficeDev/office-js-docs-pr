@@ -133,7 +133,7 @@ Excel.run(function (ctx) {
     for (var i = 0; i < worksheets.items.length; i++)
     {
       console.log(worksheets.items[i].name);
-      console.log(worksheets.items[i].index);
+      console.log(worksheets.items[i].id);
     }
   });
 }).catch(function(error) {
