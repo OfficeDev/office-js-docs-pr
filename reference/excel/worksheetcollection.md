@@ -132,10 +132,8 @@ void
     return ctx.sync().then(function() {
       for (var i = 0; i < worksheets.items.length; i++)
       {
-        var worksheet = worksheets.items[i];
-        
-        console.log(worksheet.name);
-        console.log(worksheet.id);
+        console.log(worksheets.items[i].name);
+        console.log(worksheets.items[i].index);
       }
     });
   }).catch(function(error) {
