@@ -5,9 +5,14 @@ Good data visualizations help users find insights in their data. They can use th
 
 We recommend that you use [Office UI Fabric](http://odux/fabric/?page=overview) to create the chrome for your data visualizations. Office UI Fabric includes styles and components that integrate seamlessly with the Office look and feel. The following figure shows a data visualization in an add-in that uses Fabric.
 
+![Image of a data visualization with Fabric elements applied**](../../images/fabric-data-visualization)
+
 ## Data visualization elements
 
-Data visualizations share a general framework and common visual and interactive elements, including titles, labels, and data plots, as shown in the following figure.
+Data visualizations share a general framework and common visual and interactive elements, including titles, labels, and data plots, as shown in the following figures.
+
+![Image of a line chart with title, axes, legend, and plot area labeled](../../images/data_visualization_line_chart)
+![Image of a column chart with axes, gridlines, legend, and data plot labeled](../../images/data_visualization_column_chart)
 
 ### Chart titles
 
@@ -19,6 +24,9 @@ Follow these guidelines for chart titles:
 - Use sans-serif typefaces with large counters.
 
 The following examples show serif and sans-serif typefaces used in chart titles. Notice how the scale contrast and effective use of white space create a strong visual hierarchy.
+
+![Image of a data visualization with serif font](../../images/data_visualization_serif)
+![Image of a data visualization with sans-serif font](../../images/data_visualization_san_serif)
 
 ### Axis labels
 
@@ -48,6 +56,8 @@ Gridlines are often necessary for accurately reading a chart, but should be pres
 Light grays are most effective for gridlines. If you’re using Fabric, see the [Neutral Colors palette](http://odux/fabric/?page=features).
 
 The following image shows a data visualization with gridlines.
+
+![Image of a data visualization with gridlines](../../images/data_visualization_gridlines)
 
 ### Legends
 
