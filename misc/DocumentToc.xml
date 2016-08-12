@@ -87,7 +87,7 @@
 	<Item text="Manifests" url="overview/add-in-manifests" Scope="outlook" SEODescription="Use the XML manifest to specify how your add-in is activated." />
       <Item text="Manifests" url="outlook/manifests/manifests" SEODescription="Create a manifest for an Outlook add-in for read or compose form." Scope="outlook" /><Item text="Activation rules" url="outlook/manifests/activation-rules" FriendlyUrl="outlook/manifestsactivation-rules" SEODescription="Define activation rules in an Outlook add-in manifest to specify when Outlook displays the add-in." Scope="outlook" />
       <Item text="Define add-in commands" url="outlook/manifests/define-add-in-commands"  SEODescription="Use the VersionOverrides element in your Outlook add-in manifest to define add-in commands." Scope="outlook" />
-  </Item>
+  
   <Item text="Get and set item data in read or compose forms" url="outlook/item-data" SEODescription="Learn about the ways to get or set data on an appointment or message from an Outlook add-in" Scope="outlook" />
 	<Item text="Get and set add-in metadata" url="outlook/metadata-for-an-outlook-add-in"  SEODescription="Learn to load and store custom data that only your Outlook add-in can access - through roaming settings and custom properties." Scope="outlook" />
 	<Item text="Privacy and security" url="outlook/privacy-and-security" SEODescription="End users" Scope="outlook">
@@ -115,7 +115,8 @@
 		<Item text="Validate an identity token" url="outlook/validate-an-identity-token" SEODescription="Learn how to use identity tokens to link the email accounts of your Outlook add-in customers to the information that your web service provides." Scope="outlook" />
 		<Item text="Use PHP to validate an identity token" url="outlook/use-php-to-validate-an-identity-token" SEODescription="Learn how to use PHP to validate the Exchange 2013 identity token that links the email accounts of your Outlook add-in customers to the information that your service provides." Scope="outlook" />
 		<Item text="Authenticate a user with an identity token" url="outlook/authenticate-a-user-with-an-identity-token" SEODescription="See a code example showing how an authentication object matches the unique identity represented by an identity token with a set of credentials for a service." Scope="outlook" />    
-    </Item>
+    	 </Item>
+	</Item>
 	<Item text="Testing and tips" url="outlook/testing-and-tips" FriendlyUrl="outlook/testingtesting-and-tips" Scope="outlook" >
 		<Item text="Compare Outlook add-in support in Outlook for Mac" url="outlook/compare-outlook-add-in-support-in-outlook-for-mac" SEOKeyword="Bad links going to dev.office.com.  I fixed the bulleted list in the table." Scope="outlook" />
 		<Item text="Tips for handling date values in Outlook add-ins" url="outlook/tips-for-handling-date-values-in-outlook-add-ins"  Scope="outlook" SEODescription="Use the Date object to handle date values in Outlook add-ins."/>
