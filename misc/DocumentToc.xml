@@ -122,8 +122,6 @@
 		<Item text="Limits for activation and JavaScript API for Outlook add-ins" url="outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins" Scope="outlook" SEODescription="Ensure that your Outlook add-in stays within activation and API usage guidelines."/>
 		<Item text="Troubleshoot Outlook add-in activation" url="outlook/troubleshoot-outlook-add-in-activation" SEODescription="Outlook add-in activation is contextual and based on rules in an add-in manifest. Explore reasons an installed add-in can fail to activate in Outlook." Scope="outlook" />
 	</Item>    
-    
-  </Item>
   <Item text="PowerPoint" url="powerpoint/powerpoint-add-ins" Scope="powerpoint">
 	<Item text="Use document themes in your PowerPoint add-ins" url="powerpoint/use-document-themes-in-your-powerpoint-add-ins" Scope="powerpoint" SEODescription="Apply a theme to your PowerPoint add-ins"/>
 	<Item text="Get the whole document from an add-in for PowerPoint or Word" url="develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word" SEODescription="Create an add-in for PowerPoint or Word that publishes to a remote location." />   
