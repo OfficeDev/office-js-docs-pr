@@ -11,5 +11,5 @@ To align your text with the principles of the Office voice:
 - **Be helpful and empathetic.** Make your text positive, polite, supportive, and encouraging. Emphasize what users can accomplish ―- not what they can't.
 - **Know your customers.** Be mindful of cultural considerations and globalization when you use idioms or colloquialisms.
 
-If you plan to make your add-in [available in the Office Store](https://msdn.microsoft.com/EN-US/library/dn708487.aspx), make sure that your language and content complies with the [Validation policies add-ins](https://msdn.microsoft.com/EN-US/library/office/jj220035.aspx).
+If you plan to make your add-in [available in the Office Store](https://msdn.microsoft.com/EN-US/library/dn708487.aspx), make sure that your language and content complies with the [Validation policies](https://msdn.microsoft.com/EN-US/library/office/jj220035.aspx).
 
