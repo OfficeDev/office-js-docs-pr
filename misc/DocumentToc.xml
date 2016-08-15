@@ -17,6 +17,9 @@
       	<Item text="Layout for task pane add-ins" url="design/ui-elements/layout-for-task-pane-add-ins" SEODescription="Create a consistent look and feel for task pane add-ins by using the recommended design layout." />
       	<Item text="Layouts for Outlook add-ins" url="design/ui-elements/layouts-for-outlook-add-ins" SEODescription="Use these layouts for mail add-ins" Scope="outlook" />
       	<Item text="Using Office UI Fabric" url="design/ui-elements/using-office-ui-fabric" SEODescription="Walks you through the basics for using Fabric."/>
+    	<item text="Data visualization style guidelines" url="design/data-visualization-guidelines" SEODescription="Provides guidelines for data visualizations in Office Add-ins." />
+    	<item text="Voice guidelines" url="design/voice-guidelines" SEODescription="Find guidelines for the voice to use in UI text in Office Add-ins" />
+    	<item text="Accessibility guidelines" url="design/accessibility-guidelines" SEODescription="Find out how to make your Office Add-ins accessible for all users." />
     </Item>
 	<Item text="UX design patterns" url="design/ux-design-patterns" SEODescription="Use the UX design pattern templates for Office Add-ins to create UI extensions." />
 	<Item text="Add-in commands for Excel, Word, and PowerPoint" url="design/add-in-commands" SEODescription="Use add-in commands in your add-in to extend the default Office UI in Excel, Word, and PowerPoint."  />
