@@ -1,6 +1,6 @@
 # Define add-in commands in your manifest
 
-Add-in commands provide an easy way to customize the default Office UI with UI elements that perform actions; for example, you can add custom buttons on the ribbon. To create commands, you add a **VersionOverrides** node to an existing task pane manifest. 
+Add-in commands provide an easy way to customize the default Office UI with UI elements that perform actions; for example, you can add custom buttons on the ribbon. To create commands, you add a **[VersionOverrides](../../../reference/manifest/versionoverrides.md)** node to an existing task pane manifest. 
 
 When a manifest contains the **VersionOverrides** element, versions of Word, Excel, Outlook, and PowerPoint that support add-in commands will use the information within that element to load the add-in. Earlier versions of Office products that do not support add-in commands will ignore the element.
 
@@ -9,14 +9,14 @@ When client applications recognize the  **VersionOverrides** node, the add-in na
 
 ## VersionOverrides node
 
-The  [VersionOverrides](../../reference/manifest/versionoverrides.md) element is the root element that contains information for the add-in commands implemented by the add-in. It is supported in manifest schema v1.1 and later, but is defined in the VersionOverrides v1.0 schema. 
+The  [VersionOverrides](../../../reference/manifest/versionoverrides.md) element is the root element that contains information for the add-in commands implemented by the add-in. It is supported in manifest schema v1.1 and later, but is defined in the VersionOverrides v1.0 schema. 
 
 The VersionOverrides element includes the following child elements:
 
-- [Description](../../reference/manifest/description.md)
-- [Requirements](../../reference/manifest/requirements.md)
-- [Hosts](../../reference/manifest/hosts.md)
-- [Resources](../../reference/manifest/resources.md)
+- [Description](../../../reference/manifest/description.md)
+- [Requirements](../../../reference/manifest/requirements.md)
+- [Hosts](../../../reference/manifest/hosts.md)
+- [Resources](../../../reference/manifest/resources.md)
 
 The following diagram shows the hierarchy of elements used to define add-in commands. 
 
