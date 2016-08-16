@@ -60,7 +60,7 @@ For an example that shows an authentication scenario, see the [Office Add-in Off
 
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|startAddress|string|Accepts the initial HTTPS(TLS) URL that opens in the dialog box. <ul><li>The initial page must be on the same domain as the parent page. After the initial page loads, you can go to other domains as long as they are declared on the AppDomains list on the manifest.</li><li>Any page calling [office.context.ui.messageParent](officeui.messageparent.md) must also be on the same domain as the parent page.</li></ul>|
+|startAddress|string|Accepts the initial HTTPS(TLS) URL that opens in the dialog box. <ul><li>The initial page must be on the same domain as the parent page. After the initial page loads, you can go to other domains.</li><li>Any page calling [office.context.ui.messageParent](officeui.messageparent.md) must also be on the same domain as the parent page.</li></ul>|
 |options|object|Optional. Accepts an options object to define dialog behaviors.|
 |callback|object|Accepts a callback method to handle the dialog creation attempt.|
 	
