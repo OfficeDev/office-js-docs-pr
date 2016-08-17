@@ -17,10 +17,13 @@
       	<Item text="Layout for task pane add-ins" url="design/ui-elements/layout-for-task-pane-add-ins" SEODescription="Create a consistent look and feel for task pane add-ins by using the recommended design layout." />
       	<Item text="Layouts for Outlook add-ins" url="design/ui-elements/layouts-for-outlook-add-ins" SEODescription="Use these layouts for mail add-ins" Scope="outlook" />
       	<Item text="Using Office UI Fabric" url="design/ui-elements/using-office-ui-fabric" SEODescription="Walks you through the basics for using Fabric."/>
-    </Item>
-	<Item text="UX design patterns" url="design/ux-design-patterns" SEODescription="Use the UX design pattern templates for Office Add-ins to create UI extensions." />
+      </Item>	
+    	<Item text="UX design patterns" url="design/ux-design-patterns" SEODescription="Use the UX design pattern templates for Office Add-ins to create UI extensions." />
 	<Item text="Add-in commands for Excel, Word, and PowerPoint" url="design/add-in-commands" SEODescription="Use add-in commands in your add-in to extend the default Office UI in Excel, Word, and PowerPoint."  />
-  </Item>
+  	<item text="Data visualization style guidelines" url="design/data-visualization-guidelines" SEODescription="Provides guidelines for data visualizations in Office Add-ins." />
+    	<item text="Voice guidelines" url="design/voice-guidelines" SEODescription="Find guidelines for the voice to use in UI text in Office Add-ins" />
+    	<item text="Accessibility guidelines" url="design/accessibility-guidelines" SEODescription="Find out how to make your Office Add-ins accessible for all users." />
+    </Item>
   <Item text="Develop" url="develop">
 	<Item text="Add-in development lifecycle" url="design/add-in-development-lifecycle" SEODescription="Plan the end-to-end process for developing task pane, content, and Outlook add-ins to extend Office applications." />
 	<Item text="Install the latest Office version" url="develop/install-latest-office-version" SEODescription="Find out how to opt in to get the latest builds of Office." />
@@ -87,7 +90,7 @@
 	<Item text="Manifests" url="overview/add-in-manifests" Scope="outlook" SEODescription="Use the XML manifest to specify how your add-in is activated." />
       <Item text="Manifests" url="outlook/manifests/manifests" SEODescription="Create a manifest for an Outlook add-in for read or compose form." Scope="outlook" /><Item text="Activation rules" url="outlook/manifests/activation-rules" FriendlyUrl="outlook/manifestsactivation-rules" SEODescription="Define activation rules in an Outlook add-in manifest to specify when Outlook displays the add-in." Scope="outlook" />
       <Item text="Define add-in commands" url="outlook/manifests/define-add-in-commands"  SEODescription="Use the VersionOverrides element in your Outlook add-in manifest to define add-in commands." Scope="outlook" />
-  </Item>
+  
   <Item text="Get and set item data in read or compose forms" url="outlook/item-data" SEODescription="Learn about the ways to get or set data on an appointment or message from an Outlook add-in" Scope="outlook" />
 	<Item text="Get and set add-in metadata" url="outlook/metadata-for-an-outlook-add-in"  SEODescription="Learn to load and store custom data that only your Outlook add-in can access - through roaming settings and custom properties." Scope="outlook" />
 	<Item text="Privacy and security" url="outlook/privacy-and-security" SEODescription="End users" Scope="outlook">
@@ -115,15 +118,14 @@
 		<Item text="Validate an identity token" url="outlook/validate-an-identity-token" SEODescription="Learn how to use identity tokens to link the email accounts of your Outlook add-in customers to the information that your web service provides." Scope="outlook" />
 		<Item text="Use PHP to validate an identity token" url="outlook/use-php-to-validate-an-identity-token" SEODescription="Learn how to use PHP to validate the Exchange 2013 identity token that links the email accounts of your Outlook add-in customers to the information that your service provides." Scope="outlook" />
 		<Item text="Authenticate a user with an identity token" url="outlook/authenticate-a-user-with-an-identity-token" SEODescription="See a code example showing how an authentication object matches the unique identity represented by an identity token with a set of credentials for a service." Scope="outlook" />    
-    </Item>
+    	 </Item>
+	</Item>
 	<Item text="Testing and tips" url="outlook/testing-and-tips" FriendlyUrl="outlook/testingtesting-and-tips" Scope="outlook" >
 		<Item text="Compare Outlook add-in support in Outlook for Mac" url="outlook/compare-outlook-add-in-support-in-outlook-for-mac" SEOKeyword="Bad links going to dev.office.com.  I fixed the bulleted list in the table." Scope="outlook" />
 		<Item text="Tips for handling date values in Outlook add-ins" url="outlook/tips-for-handling-date-values-in-outlook-add-ins"  Scope="outlook" SEODescription="Use the Date object to handle date values in Outlook add-ins."/>
 		<Item text="Limits for activation and JavaScript API for Outlook add-ins" url="outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins" Scope="outlook" SEODescription="Ensure that your Outlook add-in stays within activation and API usage guidelines."/>
 		<Item text="Troubleshoot Outlook add-in activation" url="outlook/troubleshoot-outlook-add-in-activation" SEODescription="Outlook add-in activation is contextual and based on rules in an add-in manifest. Explore reasons an installed add-in can fail to activate in Outlook." Scope="outlook" />
 	</Item>    
-    
-  </Item>
   <Item text="PowerPoint" url="powerpoint/powerpoint-add-ins" Scope="powerpoint">
 	<Item text="Use document themes in your PowerPoint add-ins" url="powerpoint/use-document-themes-in-your-powerpoint-add-ins" Scope="powerpoint" SEODescription="Apply a theme to your PowerPoint add-ins"/>
 	<Item text="Get the whole document from an add-in for PowerPoint or Word" url="develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word" SEODescription="Create an add-in for PowerPoint or Word that publishes to a remote location." />   
