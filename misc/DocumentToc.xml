@@ -20,9 +20,9 @@
       </Item>	
     	<Item text="UX design patterns" url="design/ux-design-patterns" SEODescription="Use the UX design pattern templates for Office Add-ins to create UI extensions." />
 	<Item text="Add-in commands for Excel, Word, and PowerPoint" url="design/add-in-commands" SEODescription="Use add-in commands in your add-in to extend the default Office UI in Excel, Word, and PowerPoint."  />
-  	<item text="Data visualization style guidelines" url="design/data-visualization-guidelines" SEODescription="Provides guidelines for data visualizations in Office Add-ins." />
-    	<item text="Voice guidelines" url="design/voice-guidelines" SEODescription="Find guidelines for the voice to use in UI text in Office Add-ins" />
-    	<item text="Accessibility guidelines" url="design/accessibility-guidelines" SEODescription="Find out how to make your Office Add-ins accessible for all users." />
+  	<Item text="Data visualization style guidelines" url="design/data-visualization-guidelines" SEODescription="Provides guidelines for data visualizations in Office Add-ins." />
+    	<Item text="Voice guidelines" url="design/voice-guidelines" SEODescription="Find guidelines for the voice to use in UI text in Office Add-ins" />
+    	<Item text="Accessibility guidelines" url="design/accessibility-guidelines" SEODescription="Find out how to make your Office Add-ins accessible for all users." />
     </Item>
   <Item text="Develop" url="develop">
 	<Item text="Add-in development lifecycle" url="design/add-in-development-lifecycle" SEODescription="Plan the end-to-end process for developing task pane, content, and Outlook add-ins to extend Office applications." />
@@ -87,10 +87,10 @@
     <Item text="Custom pane Outlook add-ins" url="outlook/custom-pane-outlook-add-ins"  SEODescription="Learn how to define an Outlook add-in that activates based on specific rules." Scope="outlook" />
 	<Item text="Module extension Outlook add-ins" url="outlook/extension-module-outlook-add-ins" FriendlyUrl="outlookmodule-extension-outlook-add-ins" Scope="outlook" SEODescription="Extend the Outlook UI by adding module extensions to the navigation bar."/> 
 	<Item text="APIs" url="outlook/apis" SEODescription="Learn how to specify the APIs needed for your Outlook add-in." Scope="outlook" />
-	<Item text="Manifests" url="overview/add-in-manifests" Scope="outlook" SEODescription="Use the XML manifest to specify how your add-in is activated." />
+	<Item text="Manifests" url="overview/add-in-manifests" Scope="outlook" SEODescription="Use the XML manifest to specify how your add-in is activated.">
       <Item text="Manifests" url="outlook/manifests/manifests" SEODescription="Create a manifest for an Outlook add-in for read or compose form." Scope="outlook" /><Item text="Activation rules" url="outlook/manifests/activation-rules" FriendlyUrl="outlook/manifestsactivation-rules" SEODescription="Define activation rules in an Outlook add-in manifest to specify when Outlook displays the add-in." Scope="outlook" />
       <Item text="Define add-in commands" url="outlook/manifests/define-add-in-commands"  SEODescription="Use the VersionOverrides element in your Outlook add-in manifest to define add-in commands." Scope="outlook" />
-  
+  	</Item>
   <Item text="Get and set item data in read or compose forms" url="outlook/item-data" SEODescription="Learn about the ways to get or set data on an appointment or message from an Outlook add-in" Scope="outlook" />
 	<Item text="Get and set add-in metadata" url="outlook/metadata-for-an-outlook-add-in"  SEODescription="Learn to load and store custom data that only your Outlook add-in can access - through roaming settings and custom properties." Scope="outlook" />
 	<Item text="Privacy and security" url="outlook/privacy-and-security" SEODescription="End users" Scope="outlook">
