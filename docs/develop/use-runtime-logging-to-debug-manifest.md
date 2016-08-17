@@ -40,5 +40,5 @@ You might see messages in the log file that are confusing or that are classified
 
 ##Additional resources
 
-- [Sideload Office Add-ins for testing](testing/sideload-office-add-ins-for-testing.md)
-- [Debug Office Add-ins](testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [Sideload Office Add-ins for testing](../testing/sideload-office-add-ins-for-testing.md)
+- [Debug Office Add-ins](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md)
