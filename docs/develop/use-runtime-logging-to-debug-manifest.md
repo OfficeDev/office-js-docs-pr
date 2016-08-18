@@ -12,7 +12,7 @@ You can use runtime logging to debug your add-in's manifest. This feature can he
 2. Add the `RuntimeLogging` registry key under 'HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\'. 
 3. Set the default value of the key to the full path of the file where you want the log to be written. For an example, see [EnableRuntimeLogging.zip](RuntimeLogging/EnableRuntimeLogging.zip). 
 
- > **Note:** The logging path that you specify must already contain the folder where the file will be written.
+ > **Note:** The directory in which the log file will be written must already exist and you must have write permissions to it. 
  
 The following image shows what the registry should look like.
 ![Screenshot of the registry editor with a RuntimeLogging registry key](http://i.imgur.com/Sa9TyI6.png)
