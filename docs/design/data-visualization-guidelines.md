@@ -3,9 +3,13 @@
 
 Good data visualizations help users find insights in their data. They can use those insights to tell stories that inform and persuade. This article provides guidelines to help you design effective data visualizations in your add-ins for Excel and other Office apps.
 
-We recommend that you use [Office UI Fabric](http://odux/fabric/?page=overview) to create the chrome for your data visualizations. Office UI Fabric includes styles and components that integrate seamlessly with the Office look and feel. <!--The following figure shows a data visualization in an add-in that uses Fabric.
+We recommend that you use [Office UI Fabric](http://odux/fabric/?page=overview) to create the chrome for your data visualizations. Office UI Fabric includes styles and components that integrate seamlessly with the Office look and feel. 
 
-![Image of a data visualization with Fabric elements applied**](../../images/fabric-data-visualization.png) -->
+<!--The following figure shows a data visualization in an add-in that uses Fabric.
+
+![Image of a data visualization with Fabric elements applied**](../../images/fabric-data-visualization.png) 
+
+-->
 
 ## Data visualization elements
 
