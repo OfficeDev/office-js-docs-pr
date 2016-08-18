@@ -9,27 +9,45 @@ Deploy only the manifest file to the shared folder catalog. Deploy the web appli
 
  >**Important:**  To help make add-ins that access external data and services more secure, your add-in should use a secure protocol such as Hypertext Transfer Protocol Secure (HTTPS) to connect to external data and services. You must use HTTPS if your add-in uses add-in commands.
 
+## Share a folder
 
-## Specify a file share as a trusted catalog
+1. On the Windows computer where you want to host your add-in, go to the parent folder, or drive letter, of the folder you want to use as your shared folder catalog.
 
+2. Open the context menu for the folder (right-click) and choose **Properties**.
 
-1. Create a folder on a network share, for example  `\\MyShare\MyManifests`.
-    
-2. Put the manifest files for the task pane and content add-ins that you want to publish in this file share.
-    
+3. Open the **Sharing** tab.
+
+4. On the **Choose people ...** page, add yourself and and anyone else with whom you want to share your add-in. If they are all members of a security group, you can add the group. You will need at least **Read/Write** permission to the folder. 
+
+5. Choose **Share** > **Done** > **Close**.
+
+## Specify the shared folder as a trusted catalog
+
+      
 3. Open a new document in Excel, Word, or PowerPoint.
     
-4. Choose the  **File** tab, and then choose **Options**.
+4. Choose the **File** tab, and then choose **Options**.
     
-5. Choose  **Trust Center**, and then choose the  **Trust Center Settings** button.
+5. Choose **Trust Center**, and then choose the  **Trust Center Settings** button.
     
 6. Choose  **Trusted Add-in Catalogs**.
     
-7. In the  **Catalog Url** box, enter the path to the network share you created in Step 1, and then choose **Add Catalog**.
+7. In the  **Catalog Url** box, enter the full network path to the shared folder catalog, and then choose **Add Catalog**.
     
-8. Select the  **Show in Menu** check box, and then choose **OK**.
+8. Select the **Show in Menu** check box, and then choose **OK**.
+
+9. Close the Office application so your changes will take effect.
     
-After performing these steps, you can select  **My Add-ins** on the **Insert** tab of the ribbon and then choose **Shared Folder** at the top of the **Office Add-ins** dialog box to insert a task pane or content add-in from this catalog.
+## Sideload your add-in
+
+
+1. Put the manifest file of any add-in that you are testing in the shared folder catalog.
+
+2. In Excel, Word, or PowerPoint, select **My Add-ins** on the **Insert** tab of the ribbon.
+
+3. Choose **SHARED FOLDER** at the top of the **Office Add-ins** dialog box.
+
+4. Select the name of the add-in and choose **OK** to insert the add-in.
 
 
 ## Additional resources

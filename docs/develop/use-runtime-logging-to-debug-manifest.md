@@ -12,6 +12,8 @@ You can use runtime logging to debug your add-in's manifest. This feature can he
 2. Add the `RuntimeLogging` registry key under 'HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\'. 
 3. Set the default value of the key to the full path of the file where you want the log to be written. For an example, see [EnableRuntimeLogging.zip](RuntimeLogging/EnableRuntimeLogging.zip). 
 
+ > **Note:** The logging path that you specify must already contain the folder where the file will be written.
+ 
 The following image shows what the registry should look like.
 ![Screenshot of the registry editor with a RuntimeLogging registry key](http://i.imgur.com/Sa9TyI6.png)
 
@@ -21,7 +23,7 @@ To turn the feature off, remove the `RuntimeLogging` key from the registry.
 
 To use runtime logging to troubleshoot issues loading an add-in:
  
-1. [Sideload your add-in](testing/sideload-office-add-ins-for-testing.md) for testing. 
+1. [Sideload your add-in](../testing/sideload-office-add-ins-for-testing.md) for testing. 
 
 	>Note: We recommend that you sideload only the add-in that you are testing to minimize the number of messages in the log file.
 2. If nothing happens and you don't see your add-in (and it's not appearing in the add-ins dialog box), open the log file.
@@ -40,5 +42,5 @@ You might see messages in the log file that are confusing or that are classified
 
 ##Additional resources
 
-- [Sideload Office Add-ins for testing](testing/sideload-office-add-ins-for-testing.md)
-- [Debug Office Add-ins](testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [Sideload Office Add-ins for testing](../testing/sideload-office-add-ins-for-testing.md)
+- [Debug Office Add-ins](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md)
