@@ -1,7 +1,6 @@
 # ImageOcrData Object (JavaScript API for OneNote)
 
 _Applies to: OneNote Online_  
-_Note: This API is in preview_  
 
 
 Represents data obtained by OCR (optical character recognition) of an image
