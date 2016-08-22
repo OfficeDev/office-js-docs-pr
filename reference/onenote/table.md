@@ -10,6 +10,7 @@ Represents a table in a OneNote page.
 
 | Property	   | Type	|Description|Feedback|
 |:---------------|:--------|:----------|:-------|
+|borderVisible|bool|Gets or sets whether the borders are visible or not. True if they are visible, false if they are hidden.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-borderVisible)|
 |columnCount|int|Gets the number of columns in the table. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-columnCount)|
 |id|string|Gets the ID of the table. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-id)|
 |rowCount|int|Gets the number of rows in the table. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-rowCount)|
@@ -28,14 +29,12 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|:-------|
 |[appendColumn(values: string[])](#appendcolumnvalues-string)|void|Adds a column to the end of the table. Values, if specified, are set in the new column. Otherwise the column is empty.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-appendColumn)|
 |[appendRow(values: string[])](#appendrowvalues-string)|[TableRow](tablerow.md)|Adds a row to the end of the table. Values, if specified, are set in the new row. Otherwise the row is empty.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-appendRow)|
-|[deleteColumns(columnIndex: number, columnCount: number)](#deletecolumnscolumnindex-number-columncount-number)|void|Deletes a contiguous run of columns.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-deleteColumns)|
-|[deleteRows(rowIndex: number, rowCount: number)](#deleterowsrowindex-number-rowcount-number)|void|Deletes a contiguous run of rows.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-deleteRows)|
+|[clear()](#clear)|void|Clears the contents of the table.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-clear)|
 |[getCell(rowIndex: number, cellIndex: number)](#getcellrowindex-number-cellindex-number)|[TableCell](tablecell.md)|Gets the table cell at a specified row and column.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-getCell)|
-|[hideBorder()](#hideborder)|void|Hides the table's border|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-hideBorder)|
 |[insertColumn(index: number, values: string[])](#insertcolumnindex-number-values-string)|void|Inserts a column at the given index in the table. Values, if specified, are set in the new column. Otherwise the column is empty.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-insertColumn)|
 |[insertRow(index: number, values: string[])](#insertrowindex-number-values-string)|[TableRow](tablerow.md)|Inserts a row at the given index in the table. Values, if specified, are set in the new row. Otherwise the row is empty.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-insertRow)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-load)|
-|[showBorder()](#showborder)|void|Make's the table's border visible|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-showBorder)|
+|[setShadingColor(colorCode: string)](#setshadingcolorcolorcode-string)|void|Sets the shading color of all cells in the table.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-setShadingColor)|
 
 ## Method Details
 
@@ -138,105 +137,19 @@ OneNote.run(function(ctx) {
 ```
 
 
-### deleteColumns(columnIndex: number, columnCount: number)
-Deletes a contiguous run of columns.
+### clear()
+Clears the contents of the table.
 
 #### Syntax
 ```js
-tableObject.deleteColumns(columnIndex, columnCount);
+tableObject.clear();
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|columnIndex|number|The first column to delete.|
-|columnCount|number|Optional. Optional. The number of columns to delete. Default 1.|
+None
 
 #### Returns
 void
-
-#### Examples
-```js
-OneNote.run(function(ctx) {
-	var app = ctx.application;
-	var outline = app.getActiveOutline();
-	
-	// Queue a command to load outline.paragraphs and their types.
-	ctx.load(outline, "paragraphs, paragraphs/type");
-	
-	// Run the queued commands, and return a promise to indicate task completion.
-	return ctx.sync().then(function () {
-		var paragraphs = outline.paragraphs;
-		
-		// for each table, delete columns.
-		for (var i = 0; i < paragraphs.items.length; i++) {
-			var paragraph = paragraphs.items[i];
-			if (paragraph.type == "Table") {
-				var table = paragraph.table;
-				table.deleteColumns(2 /*Index of column to delete*/, 3 /*Number of columns to delete*/);
-			}
-		}
-		return ctx.sync();
-	})
-})
-.catch(function(error) {
-	console.log("Error: " + error);
-	if (error instanceof OfficeExtension.Error) {
-		console.log("Debug info: " + JSON.stringify(error.debugInfo));
-	}
-});
-```
-
-
-### deleteRows(rowIndex: number, rowCount: number)
-Deletes a contiguous run of rows.
-
-#### Syntax
-```js
-tableObject.deleteRows(rowIndex, rowCount);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|rowIndex|number|The first row to delete.|
-|rowCount|number|Optional. Optional. The number of rows to delete. Default 1.|
-
-#### Returns
-void
-
-#### Examples
-```js
-OneNote.run(function(ctx) {
-	var app = ctx.application;
-	var outline = app.getActiveOutline();
-	
-	// Queue a command to load outline.paragraphs and their types.
-	ctx.load(outline, "paragraphs, paragraphs/type");
-	
-	// Run the queued commands, and return a promise to indicate task completion.
-	return ctx.sync().then(function () {
-		var paragraphs = outline.paragraphs;
-		
-		// for each table, delete rows.
-		for (var i = 0; i < paragraphs.items.length; i++) {
-			var paragraph = paragraphs.items[i];
-			if (paragraph.type == "Table") {
-				var table = paragraph.table;
-				table.deleteRows(2 /*Index of row to delete*/, 3 /*Number of rows to delete*/);
-			}
-		}
-		return ctx.sync();
-	})
-})
-.catch(function(error) {
-	console.log("Error: " + error);
-	if (error instanceof OfficeExtension.Error) {
-		console.log("Debug info: " + JSON.stringify(error.debugInfo));
-	}
-});
-```
-
 
 ### getCell(rowIndex: number, cellIndex: number)
 Gets the table cell at a specified row and column.
@@ -274,53 +187,6 @@ OneNote.run(function(ctx) {
 			if (paragraph.type == "Table") {
 				var table = paragraph.table;
 				var cell = table.getCell(2 /*Row Index*/, 3 /*Column Index*/);
-			}
-		}
-		return ctx.sync();
-	})
-})
-.catch(function(error) {
-	console.log("Error: " + error);
-	if (error instanceof OfficeExtension.Error) {
-		console.log("Debug info: " + JSON.stringify(error.debugInfo));
-	}
-});
-```
-
-
-### hideBorder()
-Hides the table's border
-
-#### Syntax
-```js
-tableObject.hideBorder();
-```
-
-#### Parameters
-None
-
-#### Returns
-void
-
-#### Examples
-```js
-OneNote.run(function(ctx) {
-	var app = ctx.application;
-	var outline = app.getActiveOutline();
-	
-	// Queue a command to load outline.paragraphs and their types.
-	ctx.load(outline, "paragraphs, paragraphs/type");
-	
-	// Run the queued commands, and return a promise to indicate task completion.
-	return ctx.sync().then(function () {
-		var paragraphs = outline.paragraphs;
-		
-		// for each table, hide border.
-		for (var i = 0; i < paragraphs.items.length; i++) {
-			var paragraph = paragraphs.items[i];
-			if (paragraph.type == "Table") {
-				var table = paragraph.table;
-				table.hideBorder();
 			}
 		}
 		return ctx.sync();
@@ -451,51 +317,21 @@ object.load(param);
 #### Returns
 void
 
-### showBorder()
-Make's the table's border visible
+### setShadingColor(colorCode: string)
+Sets the shading color of all cells in the table.
 
 #### Syntax
 ```js
-tableObject.showBorder();
+tableObject.setShadingColor(colorCode);
 ```
 
 #### Parameters
-None
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|colorCode|string|The color code to set the cells to./param|
 
 #### Returns
 void
-
-#### Examples
-```js        
-OneNote.run(function(ctx) {
-	var app = ctx.application;
-	var outline = app.getActiveOutline();
-	
-	// Queue a command to load outline.paragraphs and their types.
-	ctx.load(outline, "paragraphs, paragraphs/type");
-	
-	// Run the queued commands, and return a promise to indicate task completion.
-	return ctx.sync().then(function () {
-		var paragraphs = outline.paragraphs;
-		
-		// for each table, show border.
-		for (var i = 0; i < paragraphs.items.length; i++) {
-			var paragraph = paragraphs.items[i];
-			if (paragraph.type == "Table") {
-				var table = paragraph.table;
-				table.showBorder();
-			}
-		}
-		return ctx.sync();
-	})
-})
-.catch(function(error) {
-	console.log("Error: " + error);
-	if (error instanceof OfficeExtension.Error) {
-		console.log("Debug info: " + JSON.stringify(error.debugInfo));
-	}
-});
-```
 ### Property access examples
 **columnCount, rowCount, id**
 ```js

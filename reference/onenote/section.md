@@ -29,6 +29,8 @@ _See property access [examples.](#property-access-examples)_
 | Method		   | Return Type	|Description| Feedback|
 |:---------------|:--------|:----------|:-------|
 |[addPage(title: string)](#addpagetitle-string)|[Page](page.md)|Adds a new page to the end of the section.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-addPage)|
+|[copyToNotebook(destinationNotebook: Notebook)](#copytonotebookdestinationnotebook-notebook)|[Section](section.md)|Copies this section to specified notebook.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-copyToNotebook)|
+|[copyToSectionGroup(destinationSectionGroup: SectionGroup)](#copytosectiongroupdestinationsectiongroup-sectiongroup)|[Section](section.md)|Copies this section to specified section group.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-copyToSectionGroup)|
 |[insertSectionAsSibling(location: string, title: string)](#insertsectionassiblinglocation-string-title-string)|[Section](section.md)|Inserts a new section before or after the current section.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-insertSectionAsSibling)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-load)|
 
@@ -81,6 +83,103 @@ OneNote.run(function (context) {
 ```
 
 
+### copyToNotebook(destinationNotebook: Notebook)
+Copies this section to specified notebook.
+
+#### Syntax
+```js
+sectionObject.copyToNotebook(destinationNotebook);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|destinationNotebook|Notebook|The notebook to copy this section to.|
+
+#### Returns
+[Section](section.md)
+
+#### Examples
+```js
+OneNote.run(function (context) {
+	var app = context.application;
+	
+	// Gets the active Notebook.
+	var notebook = app.getActiveNotebook();
+	
+	// Gets the active Section.
+	var section = app.getActiveSection();
+	
+	var newSection;
+	
+	return context.sync()
+		.then(function() {
+			newSection = section.copyToNotebook(notebook);
+			newSection.load('id');
+			return context.sync();
+		})
+		.then(function() {
+			console.log(newSection.id);
+		});
+})
+.catch(function (error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
+
+### copyToSectionGroup(destinationSectionGroup: SectionGroup)
+Copies this section to specified section group.
+
+#### Syntax
+```js
+sectionObject.copyToSectionGroup(destinationSectionGroup);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|destinationSectionGroup|SectionGroup|The section group to copy this section to.|
+
+#### Returns
+[Section](section.md)
+
+#### Examples
+```js
+OneNote.run(function (ctx) {
+	var app = ctx.application;
+	
+	// Gets the active Notebook.
+	var notebook = app.getActiveNotebook();
+	
+	// Gets the active Section.
+	var section = app.getActiveSection();
+	
+	var newSection;
+	
+	return ctx.sync()
+		.then(function() {
+			var firstSectionGroup = notebook.sectionGroups.items[0];
+			newSection = section.copyToSectionGroup(firstSectionGroup);
+			newSection.load('id');
+			return ctx.sync();
+		})
+		.then(function() {
+			console.log(newSection.id);
+		});
+})
+.catch(function (error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
+
 ### insertSectionAsSibling(location: string, title: string)
 Inserts a new section before or after the current section.
 
@@ -125,6 +224,7 @@ OneNote.run(function (context) {
 	}
 });
 ```
+
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.

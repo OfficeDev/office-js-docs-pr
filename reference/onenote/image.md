@@ -21,8 +21,9 @@ _See property access [examples.](#property-access-examples)_
 ## Relationships
 | Relationship | Type	|Description| Feedback|
 |:---------------|:--------|:----------|:-------|
-|pageContent|[PageContent](pagecontent.md)|Gets the PageContent object that contains the Image. Returns null if the Image is not a direct child of a PageContent. This object defines the position of the Image on the page. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-pageContent)|
-|paragraph|[Paragraph](paragraph.md)|Gets the Paragraph object that contains the Image. Returns null if the Image is not a direct child of a Paragraph. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-paragraph)|
+|ocrData|[ImageOcrData](imageocrdata.md)|Gets the data obtained by OCR (Optical Character Recognition) of this Image, such as OCR text and language. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-ocrData)|
+|pageContent|[PageContent](pagecontent.md)|Gets the PageContent object that contains the Image. Throws if the Image is not a direct child of a PageContent. This object defines the position of the Image on the page. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-pageContent)|
+|paragraph|[Paragraph](paragraph.md)|Gets the Paragraph object that contains the Image. Throws if the Image is not a direct child of a Paragraph. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-paragraph)|
 
 ## Methods
 
@@ -135,6 +136,43 @@ OneNote.run(function(ctx){
                 console.log("hyperlink: " + image.hyperlink);
             }
         });
+});
+```
+
+**ocrData**
+```js
+var image = null;
+
+OneNote.run(function(ctx){
+	// Get the current outline.
+	var outline = ctx.application.getActiveOutline();
+
+	// Queue a command to load paragraphs and their types.
+	outline.load("paragraphs")
+	return ctx.sync().
+		then(function(){
+			for (var i=0; i < outline.paragraphs.items.length; i++)
+			{
+				var paragraph = outline.paragraphs.items[i];
+				if (paragraph.type == "Image")
+				{
+					image = paragraph.image;
+				}
+			}
+			if (image != null)
+			{
+			   image.load("ocrData");
+			}
+			return ctx.sync();
+		})
+		.then(function(){
+			console.log(image.ocrData);
+		});
+}).catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
 });
 ```
 

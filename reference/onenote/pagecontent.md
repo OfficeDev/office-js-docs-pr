@@ -18,8 +18,9 @@ Represents a region on a page that contains top-level content types such as Outl
 ## Relationships
 | Relationship | Type	|Description| Feedback|
 |:---------------|:--------|:----------|:-------|
-|image|[Image](image.md)|Gets the Image in the PageContent object. Returns null if PageContentType is not Image. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-image)|
-|outline|[Outline](outline.md)|Gets the Outline in the PageContent object. Returns null if PageContentType is not Outline. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-outline)|
+|image|[Image](image.md)|Gets the Image in the PageContent object. Throws an exception if PageContentType is not Image. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-image)|
+|ink|[FloatingInk](floatingink.md)|Gets the ink in the PageContent object. Throws an exception if PageContentType is not Ink. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-ink)|
+|outline|[Outline](outline.md)|Gets the Outline in the PageContent object. Throws an exception if PageContentType is not Outline. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-outline)|
 |parentPage|[Page](page.md)|Gets the page that contains the PageContent object. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-parentPage)|
 
 ## Methods
@@ -87,5 +88,3 @@ object.load(param);
 
 #### Returns
 void
-
-

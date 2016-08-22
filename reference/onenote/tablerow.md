@@ -26,19 +26,20 @@ _See property access [examples.](#property-access-examples)_
 
 | Method		   | Return Type	|Description| Feedback|
 |:---------------|:--------|:----------|:-------|
-|[delete()](#delete)|void|Deletes the entire row.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-delete)|
+|[clear()](#clear)|void|Clears the contents of the row.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-clear)|
 |[insertRowAsSibling(insertLocation: string, values: string[])](#insertrowassiblinginsertlocation-string-values-string)|[TableRow](tablerow.md)|Inserts a row before or after the current row.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-insertRowAsSibling)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-load)|
+|[setShadingColor(colorCode: string)](#setshadingcolorcolorcode-string)|void|Sets the shading color of all cells in the row.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-setShadingColor)|
 
 ## Method Details
 
 
-### delete()
-Deletes the entire row.
+### clear()
+Clears the contents of the row.
 
 #### Syntax
 ```js
-tableRowObject.delete();
+tableRowObject.clear();
 ```
 
 #### Parameters
@@ -46,47 +47,6 @@ None
 
 #### Returns
 void
-
-#### Examples
-```js
-OneNote.run(function(ctx) {
-	var app = ctx.application;
-	var outline = app.getActiveOutline();
-	
-	// Queue a command to load outline.paragraphs and their types.
-	ctx.load(outline, "paragraphs, paragraphs/type");
-	
-	// Run the queued commands, and return a promise to indicate task completion.
-	return ctx.sync().then(function () {
-		var paragraphs = outline.paragraphs;
-		
-		// for each table, get table rows.
-		for (var i = 0; i < paragraphs.items.length; i++) {
-			var paragraph = paragraphs.items[i];
-			if (paragraph.type == "Table") {
-				var table = paragraph.table;
-				
-				// Queue a command to load table.rows.
-				ctx.load(table, "rows");
-				return ctx.sync().then(function() {
-					var rows = table.rows;
-					
-					// delete a row.
-					rows.items[2].delete();
-					return ctx.sync();
-				});
-			}
-		}
-	})
-})
-.catch(function(error) {
-	console.log("Error: " + error);
-	if (error instanceof OfficeExtension.Error) {
-		console.log("Debug info: " + JSON.stringify(error.debugInfo));
-	}
-});
-```
-
 
 ### insertRowAsSibling(insertLocation: string, values: string[])
 Inserts a row before or after the current row.
@@ -157,6 +117,22 @@ object.load(param);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+### setShadingColor(colorCode: string)
+Sets the shading color of all cells in the row.
+
+#### Syntax
+```js
+tableRowObject.setShadingColor(colorCode);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|colorCode|string|The color code to set the cells to./param|
 
 #### Returns
 void

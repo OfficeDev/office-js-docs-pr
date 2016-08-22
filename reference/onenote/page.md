@@ -14,11 +14,15 @@ Represents a OneNote page.
 |id|string|Gets the ID of the page. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-id)|
 |pageLevel|int|Gets or sets the indentation level of the page.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-pageLevel)|
 |title|string|Gets or sets the title of the page.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-title)|
+|webUrl|string|The web url of the page. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-webUrl)|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Feedback|
 |:---------------|:--------|:----------|:-------|
 |contents|[PageContentCollection](pagecontentcollection.md)|The collection of PageContent objects on the page. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-contents)|
+|inkAnalysisOrNull|[InkAnalysis](inkanalysis.md)|Text interpretation for the ink on the page. Returns null if there is no ink analysis information. Read only. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-inkAnalysisOrNull)|
 |parentSection|[Section](section.md)|Gets the section that contains the page. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-parentSection)|
 
 ## Methods
@@ -26,6 +30,7 @@ Represents a OneNote page.
 | Method		   | Return Type	|Description| Feedback|
 |:---------------|:--------|:----------|:-------|
 |[addOutline(left: double, top: double, html: String)](#addoutlineleft-double-top-double-html-string)|[Outline](outline.md)|Adds an Outline to the page at the specified position.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-addOutline)|
+|[copyToSection(destinationSection: Section)](#copytosectiondestinationsection-section)|[Page](page.md)|Copies this page to specified section.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-copyToSection)|
 |[insertPageAsSibling(location: string, title: string)](#insertpageassiblinglocation-string-title-string)|[Page](page.md)|Inserts a new page before or after the current page.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-insertPageAsSibling)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-load)|
 
@@ -88,6 +93,60 @@ OneNote.run(function (context) {
 ```
 
 
+### copyToSection(destinationSection: Section)
+Copies this page to specified section.
+
+#### Syntax
+```js
+pageObject.copyToSection(destinationSection);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|destinationSection|Section|The section to copy this page to.|
+
+#### Returns
+[Page](page.md)
+
+#### Examples
+```js
+OneNote.run(function(ctx) {
+	var app = ctx.application;
+	
+	// Gets the active notebook.
+	var notebook = app.getActiveNotebook();
+	
+	// Gets the active page.
+	var page = app.getActivePage();
+	
+	// Queue a command to load sections under the notebook.
+	notebook.load('sections');
+	
+	var newPage;
+	
+	// Run the queued commands, and return a promise to indicate task completion.
+	return ctx.sync()
+		.then(function() {
+			var section = notebook.sections.items[0];
+			
+			// copy page to the section.
+			newPage = page.copyToSection(section);
+			newPage.load('id');
+			return ctx.sync();
+		})
+		.then(function() {
+			console.log(newPage.id);
+		});
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
 ### insertPageAsSibling(location: string, title: string)
 Inserts a new page before or after the current page.
 
@@ -148,3 +207,98 @@ object.load(param);
 
 #### Returns
 void
+### Property access examples
+
+**contents**
+```js
+OneNote.run(function (context) {
+
+    // Gets the active page.
+    var activePage = context.application.getActivePage();
+
+    // Queue a command to add a new page after the active page. 
+    var pageContents = activePage.contents;
+
+    // Queue a command to load the pageContents to access its data.
+    context.load(pageContents);
+
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function() {
+            for(var i=0; i < pageContents.items.length; i++)
+            {
+                var pageContent = pageContents.items[i];
+                if (pageContent.type == "Outline")
+                {
+                    console.log("Found an outline");
+                }
+                else if (pageContent.type == "Image")
+                {
+                    console.log("Found an image");
+                }
+                else if (pageContent.type == "Other")
+                {
+                    console.log("Found a type not supported yet.");
+                }
+            }
+        });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
+**webUrl**
+```js
+OneNote.run(function (context) {
+
+	var app = context.application;
+	
+	// Gets the active page.
+	var page = app.getActivePage();
+	
+	// Queue a command to load the webUrl of the page.
+	page.load("webUrl");
+	
+	// Run the queued commands, and return a promise to indicate task completion.
+	return context.sync()
+		.then(function() {
+			console.log(page.webUrl);
+		});
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
+**inkAnalysisOrNull**
+```js
+OneNote.run(function (ctx) {		
+	var app = ctx.application;
+	
+	// Gets the active page.
+	var page = app.getActivePage();
+	
+	// Load ink words
+	page.load('inkAnalysisOrNull/paragraphs/lines/words');
+	
+	return ctx.sync()
+		.then(function() {
+			if (!page.inkAnalysisOrNull.isNull)
+				console.log(page.inkAnalysisOrNull.paragraphs.length);
+		});
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
