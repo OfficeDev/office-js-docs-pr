@@ -1,7 +1,6 @@
 # InkAnalysisParagraph Object (JavaScript API for OneNote)
 
 _Applies to: OneNote Online_  
-_Note: This API is in preview_  
 
 
 Represents ink analysis data for an identified paragraph formed by ink strokes.

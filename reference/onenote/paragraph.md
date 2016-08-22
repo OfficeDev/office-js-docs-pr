@@ -1,7 +1,6 @@
 # Paragraph Object (JavaScript API for OneNote)
 
 _Applies to: OneNote Online_  
-_Note: This API is in preview_  
 
 
 A container for the visible content on a page. A Paragraph can contain any one ParagraphType type of content.

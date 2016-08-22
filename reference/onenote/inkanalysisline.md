@@ -1,7 +1,6 @@
 # InkAnalysisLine Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_  
-_Note: This API is in preview_  
+_Applies to: OneNote Online_   
 
 
 Represents ink analysis data for an identified text line formed by ink strokes.

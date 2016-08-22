@@ -1,7 +1,6 @@
 # InkStrokePointer Object (JavaScript API for OneNote)
 
 _Applies to: OneNote Online_  
-_Note: This API is in preview_  
 
 
 Weak reference to an ink stroke object and its content parent

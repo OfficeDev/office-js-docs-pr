@@ -1,7 +1,6 @@
 # InkAnalysisWord Object (JavaScript API for OneNote)
 
 _Applies to: OneNote Online_  
-_Note: This API is in preview_  
 
 
 Represents ink analysis data for an identified word formed by ink strokes.

@@ -1,7 +1,6 @@
 # PageContent Object (JavaScript API for OneNote)
 
 _Applies to: OneNote Online_  
-_Note: This API is in preview_  
 
 
 Represents a region on a page that contains top-level content types such as Outline or Image. A PageContent object can be assigned an XY position.
