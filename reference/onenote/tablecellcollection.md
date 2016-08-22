@@ -1,7 +1,6 @@
 # TableCellCollection Object (JavaScript API for OneNote)
 
 _Applies to: OneNote Online_  
-_Note: This API is in preview_  
 
 
 Contains a collection of TableCell objects.

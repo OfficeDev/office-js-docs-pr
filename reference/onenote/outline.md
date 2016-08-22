@@ -1,7 +1,6 @@
 # Outline Object (JavaScript API for OneNote)
 
 _Applies to: OneNote Online_  
-_Note: This API is in preview_  
 
 
 Represents a container for Paragraph objects.
@@ -188,4 +187,3 @@ object.load(param);
 
 #### Returns
 void
-
