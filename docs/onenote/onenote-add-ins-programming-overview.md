@@ -1,9 +1,5 @@
 # OneNote JavaScript API programming overview (Preview)
 
-Read on to learn more about OneNote add-ins, or [get started creating one](onenote-add-ins-getting-started.md).
-
-## Overview 
-
 OneNote introduces a JavaScript API (in preview) for OneNote Online add-ins. You can create task pane add-ins, content add-ins, and add-in commands that interact with OneNote objects and connect to web services or other web-based resources.
 
 Add-ins consist of two basic components:
