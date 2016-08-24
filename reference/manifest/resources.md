@@ -92,17 +92,3 @@ The following additional sizes are also supported, but not required:
 </Resources>
 ```
 
-### Tab values for default Office ribbon tabs
-
-
-In Excel and Word, you can add your add-in commands on the ribbon by using the default Office UI tabs. The following table lists the values that you can use for the  **id** attribute of the **OfficeTab** element. The tab values are case sensitive.
-
-For recommendations for where to place your commands in the ribbon, see [Best practices for developing Office Add-ins](../../docs/design/add-in-development-best-practices.md). 
-
-|**Office host application**|**Tab values**|
-|:-----|:-----|
-|Excel|**TabHome**+<br/>**TabInsert**+<br/>**TabPageLayoutExcel**<br/>**TabFormulas**<br/>**TabData**+<br/>**TabReview**+<br/>**TabView**+<br/>**TabDeveloper**<br/>**TabAddIns**<br/>**TabPrintPreview**<br/>**TabBackgroundRemoval**|
-|Word|**TabHome**+<br/>**TabInsert**+<br/>**TabWordDesign**<br/>**TabPageLayoutWord**+<br/>**TabReferences**<br/>**TabMailings**<br/>**TabReviewWord**<br/>**TabView**+<br/>**TabDeveloper**<br/>**TabAddIns**<br/>**TabBlogPost**<br/>**TabBlogInsert**<br/>**TabPrintPreview**<br/>**TabOutlining**<br/>**TabConflicts**<br/>**TabBackgroundRemoval**<br/>**TabBroadcastPresentation**|
-|PowerPoint|**TabHome**+<br/>**TabInsert**+<br/>**TabDesign**+<br/>**TabTransitions**+<br/>**TabAnimations**+<br/>**TabSlideShow**<br/>**TabReview**<br/>**TabView**+<br/>**TabDeveloper**<br/>**TabAddIns**<br/>**TabPrintPreview**<br/>**TabMerge**<br/>**TabGrayscale**<br/>**TabBlackAndWhite**<br/>**TabBroadcastPresentation**<br/>**TabSlideMaster**<br/>**TabHandoutMaster**<br/>**TabNotesMaster**<br/>**TabBackgroundRemoval**<br/>**TabSlideMasterHome**|
-
->+Tab exists in both Office for Windows Desktop and Office Online.
