@@ -1,18 +1,13 @@
-# Office tab
-On the ribbon, you specify which tab and group for their add-in commands. This can either be on the default tab (either  **Home**,  **Message**, or  **Meeting**), or on a custom tab defined by the add-in. 
-
-The default tab is limited to one group per add-in. 
+# OfficeTab element
+Defines the ribbon tab on which your add-in command appears. This can either be the default tab (either  **Home**,  **Message**, or  **Meeting**), or a custom tab defined by the add-in. This element is required.
 
 ## Child elements
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  OfficeTab  | Yes |  Defines the Ribbon Tab to render on. |
-|  Group      | Yes |  Defines a Group of commands.  |
+|  Group      | Yes |  Defines a group of commands. You can add only one group per add-in to the default tab.  |
 
-## OfficeTab
-Required. The ribbon tab to render the add-in command on. 
 
-The following are valid tab `id` values by host. Values in **bold** are supported in both Desktop and Online (eg. Word 2016 for Windows and Word Online). 
+The following are valid tab `id` values by host. Values in **bold** are supported in both desktop and online (for example, Word 2016 for Windows and Word Online). 
 
 ### Outlook 
 - **TabDefault**
@@ -73,7 +68,7 @@ The following are valid tab `id` values by host. Values in **bold** are supporte
 
 
 ## Group
-A group of UI extension points in a tab. A group can have up to six controls. The  **id** attribute is required and each **id** must be unique within the manifest. It is a string with a maximum of 125 characters. See [Group element](./group.md).
+A group of UI extension points in a tab. A group can have up to six controls. The  **id** attribute is required and each **id** must be unique within the manifest. The **id** is a string with a maximum of 125 characters. See [Group element](./group.md).
 
 ## OfficeTab example
 ```xml
