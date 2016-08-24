@@ -66,6 +66,12 @@ The following are valid tab `id` values by host. Values in **bold** are supporte
 - TabBackgroundRemoval
 - TabSlideMasterHome
 
+### OneNote
+- **TabHome**
+- **TabInsert**
+- **TabView**
+- TabDeveloper
+- TabAddIns
 
 ## Group
 A group of UI extension points in a tab. A group can have up to six controls. The  **id** attribute is required and each **id** must be unique within the manifest. The **id** is a string with a maximum of 125 characters. See [Group element](./group.md).
