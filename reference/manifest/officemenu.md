@@ -1,5 +1,5 @@
 # OfficeMenu element
-Defines a collection of controls to be added to the Office context menu. Applies to Word, Excel, and PowerPoint add-ins.  
+Defines a collection of controls to be added to the Office context menu. Applies to Word, Excel, PowerPoint, and OneNote add-ins.
 
 ## Attributes
 
@@ -15,7 +15,7 @@ Defines a collection of controls to be added to the Office context menu. Applies
 ## xsi:type
 Specifies a built-in menu of the Office client application on which to add this Office Add-in.
 
-- `ContextMenuText` -  Displays the item on the context menu when text is selected and the user opens the context menu (right-clicks) on the selected text. Applies to Word, Excel, and PowerPoint. 
+- `ContextMenuText` -  Displays the item on the context menu when text is selected and the user opens the context menu (right-clicks) on the selected text. Applies to Word, Excel, PowerPoint, and OneNote.
 - `ContextMenuCell` -  Displays the item on the context menu when the user opens the context menu (right-clicks) on a cell on the spreadsheet. Applies to Excel. 
 
 ## Control

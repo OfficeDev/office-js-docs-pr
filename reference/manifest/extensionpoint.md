@@ -9,7 +9,7 @@
 |  **xsi:type**  |  Yes  | The type of extension point being defined.|
 
 
-## Extension points for Word, Excel, and PowerPoint add-in commands
+## Extension points for Word, Excel, PowerPoint, and OneNote add-in commands
 
 - **PrimaryCommandSurface** - The ribbon in Office.
 - **ContextMenu** - The shortcut menu that appears when you right-click in the Office UI.

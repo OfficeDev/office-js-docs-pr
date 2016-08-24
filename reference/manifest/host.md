@@ -32,6 +32,7 @@ You can specify the following values in the  **Name** attribute of a **Host** el
 | `"Document"`|Word, Word Online, Word on iPad|
 | `"Database"`|Access web apps|
 | `"Mailbox"`|Outlook, Outlook Web App, OWA for Devices|
+| `"Notebook"`|OneNote Online|
 | `"Presentation"`|PowerPoint, PowerPoint Online, PowerPoint on iPad|
 | `"Project"`|Project|
 | `"Workbook"`|Excel, Excel Online, Excel on iPad|

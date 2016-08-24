@@ -15,7 +15,7 @@ When included in the [VersionOverrides](./versionoverrides.md) node, this elemen
 ---- 
 
 ## Host element
-Specifies an individual Office application type where the add-in should activate, such as “document”, “workbook”, “presentation”, “project”, “mailbox”.
+Specifies an individual Office application type where the add-in should activate, such as “document”, “workbook”, “presentation”, “project”, “mailbox”, and "notebook".
 
 ### Attributes
 
@@ -31,7 +31,7 @@ Specifies an individual Office application type where the add-in should activate
 
 
 ### xsi:type
-Controls which Office host (Word, Excel, PowerPoint, Outlook) the contained settings apply too. The value must be one of the following:
+Controls which Office host (Word, Excel, PowerPoint, Outlook, OneNote) the contained settings apply too. The value must be one of the following:
 
 - `MailHost` (Outlook)    
 
