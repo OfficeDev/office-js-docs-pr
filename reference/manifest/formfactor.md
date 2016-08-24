@@ -14,7 +14,7 @@ The following FormFactors are supported:
 |:--------------------------------------|:--------:|:-------------|
 | [ExtensionPoint](./extensionpoint.md) | Yes      | Defines where an add-in exposes functionality. |
 | [FunctionFile](./functionfile.md)     | Yes      | A URL to a file that contains JavaScript functions.|
-| [GetStarted](./getstarted.md)         | No       | Defines callout that appears when installing the add-in in Word, Excel and PowerPoint hosts |
+| [GetStarted](./getstarted.md)         | No       | Defines the callout that appears when installing the add-in in Word, Excel, or PowerPoint hosts. |
 
 ## FormFactor example
 
