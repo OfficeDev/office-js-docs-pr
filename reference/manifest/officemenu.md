@@ -1,5 +1,5 @@
 # OfficeMenu element
-Defines a collection of controls to be added to the Office context menu. Applies to Word, Excel and PowerPoint Add-ins.  
+Defines a collection of controls to be added to the Office context menu. Applies to Word, Excel, and PowerPoint add-ins.  
 
 ## Attributes
 
@@ -10,17 +10,17 @@ Defines a collection of controls to be added to the Office context menu. Applies
 ## Child elements
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  [Control](#control)    | Yes |  Collection of one or more Control objects.  |
+|  [Control](#control)    | Yes |  A collection of one or more Control objects.  |
 
 ## xsi:type
-Specifies a built-in menu of the Office client application to add this Office add-in.
+Specifies a built-in menu of the Office client application on which to add this Office Add-in.
 
-- `ContextMenuText` -  Displays the item on the context menu when text is selected and then the user right-clicks on the selected text. Applies to Word, Excel and PowerPoint. 
-- `ContextMenuCell` -  Displays the item on the context menu when the user right-clicks on a cell on the spreadsheet. Applies to Excel. 
+- `ContextMenuText` -  Displays the item on the context menu when text is selected and the user opens the context menu (right-clicks) on the selected text. Applies to Word, Excel, and PowerPoint. 
+- `ContextMenuCell` -  Displays the item on the context menu when the user opens the context menu (right-clicks) on a cell on the spreadsheet. Applies to Excel. 
 
 ## Control
 
-Each OfficeMenu requires at one or more [menu](./menu.md#menu-control) controls . 
+Each **OfficeMenu** element requires at one or more [menu](./menu.md#menu-control) controls. 
 
 
 ## Example
