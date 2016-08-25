@@ -10,20 +10,24 @@ The following FormFactors are supported:
 
 ## Child elements
 
-|  Element |  Required  |  Description  |
-|:-----|:-----|:-----|
-|  [FunctionFile](./functionfile.md)      | Yes |  A URL to a file that contains JavaScript functions.|
-|  [ExtensionPoint](./extensionpoint.md)  | Yes |  Defines where an add-in exposes functionality. |
+| Element                               | Required | Description  |
+|:--------------------------------------|:--------:|:-------------|
+| [ExtensionPoint](./extensionpoint.md) | Yes      | Defines where an add-in exposes functionality. |
+| [FunctionFile](./functionfile.md)     | Yes      | A URL to a file that contains JavaScript functions.|
+| [GetStarted](./getstarted.md)         | No       | Defines the callout that appears when installing the add-in in Word, Excel, or PowerPoint hosts. |
 
 ## FormFactor example
 
 ```xml
 ...
 <Hosts>
-  <Host xsi:type="MailHost">
+  <Host xsi:type="Presentation">
     <DesktopFormFactor>
       <FunctionFile resid="residDesktopFuncUrl" />
-      <ExtensionPoint xsi:type="CustomPane">
+      <GetStarted>
+        <!-- GetStarted callout -->
+      </GetStarted>
+      <ExtensionPoint xsi:type="PrimaryCommandSurface">
         <!-- information on this extension point -->
       </ExtensionPoint> 
       <!-- possibly more ExtensionPoint elements -->
