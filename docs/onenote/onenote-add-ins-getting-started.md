@@ -68,7 +68,7 @@ You can develop the add-in using any text editor or IDE. If you haven't tried Vi
    b. Replace the script reference to Office.js with the following reference to the *beta* version.
 
 ```
-<script src="https://appsforoffice.officeapps.live.com/afo/lib/1.1/hosted/office.js"></script>
+<script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
 ```
 
 Your Office references will look like this.
@@ -76,7 +76,7 @@ Your Office references will look like this.
 ```
 <link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.min.css" rel="stylesheet">
 <link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css" rel="stylesheet">
-<script src="https://appsforoffice.officeapps.live.com/afo/lib/1.1/hosted/office.js"></script>
+<script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
 ```
 
 3- Replace the `<body>` element with the following code. This adds a text area and a button using [Office UI Fabric components](http://dev.office.com/fabric/components). The **Responsive Grid** layout is from the set of [Office UI Fabric styles](http://dev.office.com/fabric/styles). 
