@@ -1,4 +1,4 @@
-# Build your first OneNote add-in (Preview)
+# Build your first OneNote add-in
 
 This article walks you through building a simple task pane add-in that adds some text to a OneNote page.
 
