@@ -207,5 +207,5 @@ https://localhost:8443/app/home/home.html
 
 - [OneNote JavaScript API programming overview](onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API reference](../../reference/onenote/onenote-add-ins-javascript-reference.md)
-- [Rubric Grader sample)](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader-Preview)
+- [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader-Preview)
 - [Office Add-ins platform overview](https://dev.office.com/docs/add-ins/overview/office-add-ins)
