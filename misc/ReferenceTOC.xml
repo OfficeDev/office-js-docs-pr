@@ -395,23 +395,23 @@
   </Item>
   
   <Item text="OneNote" url="onenote/onenote-add-ins-javascript-reference" Scope="onenote">
-    <Item text="Application" url="onenote/application" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Error" url="onenote/error" SEODescription="OneNote Add-ins Preview Reference." />
-	<Item text="Notebook" url="onenote/notebook" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Notebookcollection" url="onenote/notebookcollection" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Page" url="onenote/page" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Pagecollection" url="onenote/pagecollection" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Pagecontent" url="onenote/pagecontent" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Pagecontentcollection" url="onenote/pagecontentcollection" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Paragraph" url="onenote/paragraph" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Paragraphcollection" url="onenote/paragraphcollection" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Richtext" url="onenote/richtext" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Section" url="onenote/section" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Sectioncollection" url="onenote/sectioncollection" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Sectiongroup" url="onenote/sectiongroup" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Sectiongroupcollection" url="onenote/sectiongroupcollection" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Outline" url="onenote/outline" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Image" url="onenote/image" SEODescription="OneNote Add-ins Preview Reference." />
+    <Item text="Application" url="onenote/application" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Error" url="onenote/error" SEODescription="OneNote Add-ins Reference." />
+	<Item text="Notebook" url="onenote/notebook" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Notebookcollection" url="onenote/notebookcollection" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Page" url="onenote/page" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Pagecollection" url="onenote/pagecollection" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Pagecontent" url="onenote/pagecontent" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Pagecontentcollection" url="onenote/pagecontentcollection" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Paragraph" url="onenote/paragraph" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Paragraphcollection" url="onenote/paragraphcollection" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Richtext" url="onenote/richtext" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Section" url="onenote/section" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Sectioncollection" url="onenote/sectioncollection" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Sectiongroup" url="onenote/sectiongroup" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Sectiongroupcollection" url="onenote/sectiongroupcollection" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Outline" url="onenote/outline" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Image" url="onenote/image" SEODescription="OneNote Add-ins Reference." />
   </Item>  
   <Item text="Shared API" url="shared/shared-api">
     <Item text="JavaScript API for Office" url="javascript-api-for-office" SEODescription="The JavaScript API for Office includes objects, methods, properties, events, and enumerations that you can use in your Office Add-ins code." />
