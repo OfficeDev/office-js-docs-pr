@@ -1,43 +1,71 @@
 
 # Host element
-Specifies the type of Office host application your Office Add-in supports.
+Specifies an individual Office application type where the add-in should activate.
 
- **Add-in type:** Content, Task pane, Mail
-
-
-## Syntax:
+> **Important**: There are two variation of the Host element depending on where it is defined; within the [basic manifest](#basic-manifest) or within [VersionOverrides](#versionoverrides). Both variations are covered here as they provide the same functionality but with slightly different syntax.  
 
 
-```XML
-<Host Name= ["Document" | "Database" | "Mailbox" | "Presentation" | "Project" | "Workbook"] />
+## Basic Manifest
+
+When defined in the basic manifest (under [OfficeApp](./officeapp.md)) the host type is determined by the `Name` attribute.   
+
+### Attributes
+| Attribute     | Type   | Required | Description                                      |
+|:--------------|:-------|:---------|:-------------------------------------------------|
+| [Name](#name) | string | required | The name of the type of Office host application. |
+
+
+### Name
+Specifies the Host type targeted by this add-in. 
+
+- `Document` (Word)
+- `Database` (Access)
+- `Mailbox` (Outlook)
+- `Notebook` (OneNote)
+- `Presentation` (PowerPoint)
+- `Project` (Project)
+- `Workbook` (Excel)
+
+### Example
+```xml
+<Hosts>
+    <Host Name="Mailbox">
+    </Host>
+</Hosts>
 ```
 
+---
 
-## Attributes
+## VersionOverridest
+When defined in [VersionOverrides](./versionoverrides) the host type is determined by the `xsi:type` attribute. 
+
+### Attributes
+
+|  Attribute  |  Required  |  Description  |
+|:-----|:-----|:-----|
+|  [xsi:type](#xsitype)  |  Yes  | Describes the Office host these settings apply to.|
+
+### Child elements
+
+|  Element |  Required  |  Description  |
+|:-----|:-----|:-----|
+|  [FormFactor](./formfactor.md)    |  Yes   |  Defines the form factor affected. |
 
 
+### xsi:type
+Controls which Office host (Word, Excel, PowerPoint, Outlook, OneNote) the contained settings apply too. The value must be one of the following:
 
-|**Attribute**|**Type**|**Required**|**Description**|
-|:-----|:-----|:-----|:-----|
-|Name|string|required|The name of the type of Office host application.|
+- `Document` (Word)
+- `MailHost` (Outlook)    
+- `Notebook` (OneNote)
+- `Presentation` (PowerPoint)
+- `Workbook` (Excel)
 
-## Remarks
-
-You can specify the following values in the  **Name** attribute of a **Host** element. Each value maps to the set of one or more Office host applications your add-in supports.
-
-
-
-|**Name**|**Office host applications**|
-|:-----|:-----|
-| `"Document"`|Word, Word Online, Word on iPad|
-| `"Database"`|Access web apps|
-| `"Mailbox"`|Outlook, Outlook Web App, OWA for Devices|
-| `"Notebook"`|OneNote Online|
-| `"Presentation"`|PowerPoint, PowerPoint Online, PowerPoint on iPad|
-| `"Project"`|Project|
-| `"Workbook"`|Excel, Excel Online, Excel on iPad|
-
-## Remarks
-
-For more information about specifying host support, see [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md).
-
+## Hosts example 
+```xml
+<Hosts>
+    <Host xsi:type="MailHost">
+        <!-- Host Settings -->
+    </Host>
+</Hosts>
+```
