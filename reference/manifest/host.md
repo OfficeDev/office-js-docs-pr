@@ -36,7 +36,7 @@ Specifies the Host type targeted by this add-in.
 
 ---
 
-## VersionOverridest
+## VersionOverrides
 When defined in [VersionOverrides](./versionoverrides) the host type is determined by the `xsi:type` attribute. 
 
 ### Attributes
