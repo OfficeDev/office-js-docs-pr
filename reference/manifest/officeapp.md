@@ -56,7 +56,7 @@ The root element in the manifest of an Office Add-in.
 |[AllowSnapshot](../../reference/manifest/allowsnapshot.md)|x|||
 |[Permissions](../../reference/manifest/permissions.md)||x||
 |[DisableEntityHighlighting](../../reference/manifest/disableentityhighlighting.md)||x||
-|[Dictionary](http://msdn.microsoft.com/library/c2563502-f020-4d12-a55e-dad35d59b9ac%28Office.15%29.aspx)|||x|
+|[Dictionary](../../reference/manifest/dictionary.md)|||x|
 |[VersionOverrides](../../reference/manifest/versionoverrides.md)|X|X|X|
 
 ## Attributes
