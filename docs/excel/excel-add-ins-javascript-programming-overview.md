@@ -71,9 +71,6 @@ Excel.run(function (ctx) {
 	// Assign array value to the proxy object's values property.
 	range.values = values;
 
-	// Queue a command to load the text property for the proxy range object.
-	range.load('text');
-
 	// Synchronizes the state between JavaScript proxy objects and real objects in Excel by executing instructions queued on the context
 	return ctx.sync().then(function() {
 			console.log("Done");
@@ -97,13 +94,10 @@ Excel.run(function (ctx) {
 	// Create a proxy object for the range
 	var range = ctx.workbook.worksheets.getActiveWorksheet().getRange("A1:A2");
 
-	// Queue a command to load the following properties on the proxy range object.
-	range.load ("address, values, range/format");
-
 	// Synchronizes the state between JavaScript proxy objects and real objects in Excel by executing instructions queued on the context
 	return ctx.sync().then(function() {
 		// Assign the previously loaded values to the new range proxy object. The values will be updated once the following .then() function is invoked.
-		ctx.workbook.worksheets. getActiveWorksheet().getRange("B1:B2").values= range.values;
+		ctx.workbook.worksheets.getActiveWorksheet().getRange("B1:B2").values = range.values;
 	});
 }).then(function() {
 	  console.log("done");
