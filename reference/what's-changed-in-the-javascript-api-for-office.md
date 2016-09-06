@@ -7,7 +7,7 @@ To develop add-ins using new API members, you need to [update the JavaScript API
 To view all API members including those that are unchanged from previous updates, see [JavaScript API for Office](../reference/javascript-api-for-office.md).
 
 
-## New and updated API
+## New and updated APIs
 
  **New and updated objects**
 
