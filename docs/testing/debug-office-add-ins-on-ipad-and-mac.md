@@ -11,11 +11,11 @@ To install and set up up Vorlon:
 
 1.	Install [Node.js](https://nodejs.org) and [Git](https://git-scm.com/) if you haven't already. 
 
-2.	Install Vorlon using git with the following command: `git clone https://github.com/MicrosoftDX/Vorlonjs.git` 
+2.	Install Vorlon using git with the following command: `git clone https://github.com/MicrosoftDX/Vorlonjs.git`.
 
-3.	Install dependencies with `npm install`
+3.	Install dependencies with `npm install`.
 
-4.	Add-ins require HTTPS, so by extension any scripts that they use must be HTTPS as well, including the Vorlon script. Therefore, you have to configure Vorlon to use SSL in order to use Vorlon with add-ins. Under the folder where you installed Vorlon, go to the /Server folder and edit the config.json file. Change the **useSSL** property to **true**. While you're there, you can also enable the plugin for Office add-ins (change its "enabled" property to true). 
+4.	Add-ins require HTTPS, so by extension any scripts that they use must be HTTPS as well, including the Vorlon script. Therefore, you have to configure Vorlon to use SSL in order to use Vorlon with add-ins. Under the folder where you installed Vorlon, go to the /Server folder and edit the config.json file. Change the **useSSL** property to **true**. While you're there, you can also enable the plugin for Office Add-ins (change its "enabled" property to true). 
 
 5.	Run the Vorlon server with the command `sudo vorlon`. 
 
