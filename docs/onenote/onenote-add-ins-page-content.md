@@ -35,14 +35,14 @@ The OneNote add-in JavaScript API supports the following HTML for creating and u
 - `<h1>` ... `<h6>`
 - `<b>`, `<em>`, `<strong>`, `<i>`, `<u>`, `<del>`, `<sup>`, `<sub>`, `<cite>`
 
-## Accessing Page Contents
+## Accessing page contents
 
 You are only able to access *Page Content* via `Page#load` for the currently
 active page. To change the active  page, invoke `navigateToPage($page)`.
 
 Metadata such as title can still be queried for any page.
 
-## Additional Resources
+## Additional resources
 
 - [OneNote JavaScript API programming overview](onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API reference](../../reference/onenote/onenote-add-ins-javascript-reference.md)
