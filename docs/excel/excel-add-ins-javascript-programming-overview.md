@@ -48,7 +48,7 @@ Where,
 * `properties` is the list of properties and/or relationship names to be loaded specified as comma-delimited strings or array of names. See .load() methods under each object for details.
 * `loadOption` specifies an object that describes the selection, expansion, top, and skip options. See object load [options](../../reference/excel/loadoption.md) for details.
 
-### Example: Write values from an array to a range object
+## Example: Write values from an array to a range object
 
 The following example shows you how to write values from an array to a range object.
 
@@ -86,7 +86,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-## Example: Capy values
+## Example: Copy values
 
 The following example shows how to copy the values from Range A1:A2 to B1:B2 of the active worksheet by using load() method on the range object.
 
