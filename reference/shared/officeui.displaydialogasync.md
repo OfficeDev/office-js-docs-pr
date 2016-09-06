@@ -23,7 +23,7 @@ This method is available in the DialogAPI [requirement set](../../docs/overview/
 To detect this API at runtime, use the following code.
 
 ```js
- if (Office.context.requirements.isSetSupported('DialogAPI', '1.1')) 
+ if (Office.context.requirements.isSetSupported('DialogAPI', 1.1)) 
  	{  
     	 // Use Office UI methods; 
  	} 
