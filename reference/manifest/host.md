@@ -2,12 +2,12 @@
 # Host element
 Specifies an individual Office application type where the add-in should activate.
 
-> **Important**: There are two variation of the Host element depending on where it is defined; within the [basic manifest](#basic-manifest) or within [VersionOverrides](#versionoverrides). Both variations are covered here as they provide the same functionality but with slightly different syntax.  
+> **Important**: The **Host** element syntax varies depending on whether the element is defined within the [basic manifest](#basic-manifest) or within the [VersionOverrides](#versionoverrides-node) node. However, the functionality is the same.  
 
 
-## Basic Manifest
+## Basic manifest
 
-When defined in the basic manifest (under [OfficeApp](./officeapp.md)) the host type is determined by the `Name` attribute.   
+When defined in the basic manifest (under [OfficeApp](./officeapp.md)), the host type is determined by the `Name` attribute.   
 
 ### Attributes
 | Attribute     | Type   | Required | Description                                      |
@@ -16,7 +16,7 @@ When defined in the basic manifest (under [OfficeApp](./officeapp.md)) the host 
 
 
 ### Name
-Specifies the Host type targeted by this add-in. 
+Specifies the Host type targeted by this add-in. The value must be one of the following:
 
 - `Document` (Word)
 - `Database` (Access)
@@ -36,8 +36,8 @@ Specifies the Host type targeted by this add-in.
 
 ---
 
-## VersionOverrides
-When defined in [VersionOverrides](./versionoverrides) the host type is determined by the `xsi:type` attribute. 
+## VersionOverrides node
+When defined in [VersionOverrides](./versionoverrides), the host type is determined by the `xsi:type` attribute. 
 
 ### Attributes
 
