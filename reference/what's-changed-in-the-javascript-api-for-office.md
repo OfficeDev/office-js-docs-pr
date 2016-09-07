@@ -2,19 +2,17 @@
 # What's changed in the JavaScript API for Office
 The JavaScript API for Office is periodically updated with new and updated objects, methods, properties, events and enumerations to extend the functionality of your Office Add-ins. Use the links below to see the new and updated API members.
 
- _**Applies to:** Access apps for SharePoint | apps for Office | Excel | Office Add-ins | Outlook | PowerPoint | Project | Word_
-
 To develop add-ins using new API members, you need to [update the JavaScript API for Office files in your project](../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md).
 
 To view all API members including those that are unchanged from previous updates, see [JavaScript API for Office](../reference/javascript-api-for-office.md).
 
 
-## New and updated API
+## New and updated APIs
 
  **New and updated objects**
 
 
-|**Object**|**Description**|**Version added or updated **|
+|**Object**|**Description**|**Version added or updated**|
 |:-----|:-----|:-----|
 |[Item](../reference/outlook/Office.context.mailbox.item.md)|Updates and additions to:<br><ul><li><p>The <a href="../reference/outlook/Office.context.mailbox.item.md#getSelectedDataAsync" target="_blank">getSelectedDataAsync</a> and <a href="../reference/outlook/Office.context.mailbox.item.md#setSelectedDataAsync" target="_blank">setSelectedDataAsync</a> methods to support getting the user's selection and overwriting it in the subject and body  of a message or appointment.</p></li><li><p>The <a href="../reference/outlook/Office.context.mailbox.item.md#displayReplyAllForm" target="_blank">displayReplyAllForm</a> and <a href="../reference/outlook/Office.context.mailbox.item.md#displayReplyForm" target="_blank">displayReplyForm</a> methods to support adding an attachment to the reply form of an appointment.</p></li></ul>|Mailbox 1.2|
 |[Item](../reference/outlook/Office.context.mailbox.item.md)|Updated to include methods and fields for creating compose mode Outlook add-ins. |1.1|

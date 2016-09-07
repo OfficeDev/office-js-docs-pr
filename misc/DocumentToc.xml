@@ -141,9 +141,9 @@
   </Item>
   
   <Item text="OneNote" url="onenote" Scope="onenote">
-	<Item text="OneNote JavaScript API programming overview (Preview)" url="onenote/onenote-add-ins-programming-overview" SEODescription="Use the JavaScript APIs to build add-ins for OneNote." Scope="onenote" />
-	<Item text="Build your first OneNote add-in (Preview)" url="onenote/onenote-add-ins-getting-started" SEODescription="Create a simple task pane add-in for OneNote." Scope="onenote" />
-	<Item text="Work with OneNote page content (Preview)" url="onenote/onenote-add-ins-page-content" SEODescription="Use the OneNote JavaScript API to work with the content on a page." Scope="onenote" />
+	<Item text="OneNote JavaScript API programming overview" url="onenote/onenote-add-ins-programming-overview" SEODescription="Use the JavaScript APIs to build add-ins for OneNote." Scope="onenote" />
+	<Item text="Build your first OneNote add-in" url="onenote/onenote-add-ins-getting-started" SEODescription="Create a simple task pane add-in for OneNote." Scope="onenote" />
+	<Item text="Work with OneNote page content" url="onenote/onenote-add-ins-page-content" SEODescription="Use the OneNote JavaScript API to work with the content on a page." Scope="onenote" />
   </Item>
   
   <Item text="Project" url="project" Scope="project">

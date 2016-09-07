@@ -55,7 +55,7 @@ This example shows how to get the paragraphs in the Word document along with the
             return context.sync().then(function () {
 
             // Insert code that works with the paragraphs loaded by context.load().
-
+           })
         })
         .catch(function (error) {
             console.log('Error: ' + JSON.stringify(error));
