@@ -1,6 +1,6 @@
 # Excel JavaScript API programming overview
 
-This article describes how to use the Excel JavaScript API to build add-ins for Excel 2016. It introduces key concepts that are fundamental to using the APIs, such as RequestContext, JavaScript proxy objects, sync(), Excel.run(), and load(). The code examples at the end of the article shows you how to apply the concepts.
+This article describes how to use the Excel JavaScript API to build add-ins for Excel 2016. It introduces key concepts that are fundamental to using the APIs, such as RequestContext, JavaScript proxy objects, sync(), Excel.run(), and load(). The code examples at the end of the article show you how to apply the concepts.
 
 ## RequestContext
 
