@@ -24,7 +24,7 @@
 	
 	<Item text="HighResolutionIconUrl" url="manifest/highresolutioniconurl" SEODescription="Specifies the URL of the image that is used to represent your Office Add-in in the insertion UX and Office Store on high DPI screens." />
     <Item text="Host" url="manifest/host" SEODescription="Specifies the type of Office host application your Office Add-in supports." />
-    
+    <Item text="Hosts" url="manifest/hosts" SEODescription="Specifies the Office client application where the Office Add-in will activate." />
 	<Item text="IconUrl" url="manifest/iconurl" SEODescription="Specifies the URL of the image that is used to represent your Office Add-in in the insertion UX and Office Store." />
     <Item text="Id" url="manifest/id" SEODescription="Specifies the unique ID of your Office Add-in as a GUID." />
     <Item text="Method" url="manifest/method" Scope="excel, word, powerpoint, access, project" SEODescription="Specifies an individual method from the JavaScript API for Office that your Office Add-in requires in order to activate." />

@@ -8,4 +8,4 @@ When included in the [VersionOverrides](./versionoverrides.md) node, this elemen
 
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  [Host](./hosts.md)    |  Yes   |  Describes a host and its settings. |
+|  [Host](./host.md)    |  Yes   |  Describes a host and its settings. |

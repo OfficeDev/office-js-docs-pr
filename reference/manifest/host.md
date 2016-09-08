@@ -61,7 +61,7 @@ Controls which Office host (Word, Excel, PowerPoint, Outlook, OneNote) the conta
 - `Presentation` (PowerPoint)
 - `Workbook` (Excel)
 
-## Hosts example 
+## Host example 
 ```xml
 <Hosts>
     <Host xsi:type="MailHost">
