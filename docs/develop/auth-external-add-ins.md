@@ -18,7 +18,7 @@ You should be familiar with the other pros and cons of the two flows. The offici
 >**Note:** You also have the option of having a middleman service do all the authorizing for you and passing the access token to your add-in. For details, see the section *Middleman services* later in this article.
 
 ## Using the Implicit flow in Office Add-ins
-Consulting the documentation of the online service is The best way to find out if the online service supports the Implicit flow is to consult the documentation.
+The best way to find out if the online service supports the Implicit flow is to consult the documentation.
 
 For services that support it, we provide a JavaScript library that does all the detailed work for you:
 
@@ -42,13 +42,13 @@ Many libraries are available for implementing the Authorization Code flow in var
 You can use the Authorization Code flow even with a serverless web application by storing the *client ID* and *client secret* values in a simple function that is hosted in a service such as [Azure Functions](https://azure.microsoft.com/en-us/services/functions) or [Amazon Lambda](https://aws.amazon.com/lambda).
 The function exchanges a given code for an appropriate *access token* and relays it back to the client. The security of this approach depends on how well access to the function is guarded.
 
-To use this technique, your add-in displays a UI/popup to show the login screen for the online service (Google, Facebook, and so on). When the user is logged on and grants the add-in permission to her resources in the online service, the developer receives a code which can be then sent to the hosted code. The services described in **Middleman services** in this article use a flow similar to this. 
+To use this technique, your add-in displays a UI/popup to show the login screen for the online service (Google, Facebook, and so on). When the user is logged on and grants the add-in permission to her resources in the online service, the developer receives a code which can be then sent to the online function. The services described in **Middleman services** in this article use a flow similar to this. 
 
 ## Libraries
 
 Libraries are available for many languages and platforms, and for both flows. Some are general purpose, others are for specific online services. 
 
-**Office 365 and other services that use Azure Active Directory as the authorization provider**: [Azure Active Directory Authentication Libraries](https://azure.microsoft.com/en-us/documentation/articles/active-directory-authentication-libraries/) A preview is also available for the [Microsoft Authentication Library](https://www.nuget.org/packages/Microsoft.Identity.Client).
+**Office 365 and other services that use Azure Active Directory as the authorization provider**: [Azure Active Directory Authentication Libraries](https://azure.microsoft.com/en-us/documentation/articles/active-directory-authentication-libraries/). A preview is also available for the [Microsoft Authentication Library](https://www.nuget.org/packages/Microsoft.Identity.Client).
 
 **Google**: Search [GitHub.com/Google](https://github.com/google) for "auth" or the name of your language. Most of the relevant repos are named `google-auth-library-[name of language]`.
 
