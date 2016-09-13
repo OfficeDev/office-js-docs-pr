@@ -42,7 +42,7 @@
 		<Item text="Asynchronous programming in Office Add-ins" url="develop/asynchronous-programming-in-office-add-ins" SEODescription="Develop Office Add-ins using the nested callbacks and promises patterns asynchronous programming patterns supported by the JavaScript API for Office." />
 		<Item text="Persist state and settings" url="develop/persisting-add-in-state-and-settings" SEODescription="Understand the options for persisting add-in state and settings data for content, task pane, and Outlook add-ins." />
 	</Item>
-	<Item text="Use OAuth in an Office Add-in" url="develop/use-the-oauth-authorization-framework-in-an-office-add-in" SEODescription="Use the OAuth 2.0 authorization framework in your Office Add-ins." />
+	<Item text="Authorize external services" url="develop/auth-external-add-ins" SEODescription="Use the OAuth 2.0 authorization framework in your Office Add-ins." />
 	<Item text="Privacy and security" url="develop/privacy-and-security" SEODescription="Office Add-ins are secured by a runtime framework, a multiple-tier permissions model, and the ability to govern use of memory, CPU, and network resources." />
 	<Item text="Address same origin policy limitations" url="develop/addressing-same-origin-policy-limitations" SEODescription="Provides a brief overview of ways to address the same-origin policy limitations that prevent a script loaded from one domain from getting or manipulating properties of a document from another domain in an Office Add-in." />
 	<Item text="Localization" url="develop/localization" SEODescription="Provide locale-specific content for an Office Add-in, including UI strings, add-in name, description, icon, source file, and date/time format." />
@@ -119,13 +119,13 @@
 		<Item text="Use PHP to validate an identity token" url="outlook/use-php-to-validate-an-identity-token" SEODescription="Learn how to use PHP to validate the Exchange 2013 identity token that links the email accounts of your Outlook add-in customers to the information that your service provides." Scope="outlook" />
 		<Item text="Authenticate a user with an identity token" url="outlook/authenticate-a-user-with-an-identity-token" SEODescription="See a code example showing how an authentication object matches the unique identity represented by an identity token with a set of credentials for a service." Scope="outlook" />    
     	 </Item>
-	</Item>
 	<Item text="Testing and tips" url="outlook/testing-and-tips" FriendlyUrl="outlook/testingtesting-and-tips" Scope="outlook" >
 		<Item text="Compare Outlook add-in support in Outlook for Mac" url="outlook/compare-outlook-add-in-support-in-outlook-for-mac" SEOKeyword="Bad links going to dev.office.com.  I fixed the bulleted list in the table." Scope="outlook" />
 		<Item text="Tips for handling date values in Outlook add-ins" url="outlook/tips-for-handling-date-values-in-outlook-add-ins"  Scope="outlook" SEODescription="Use the Date object to handle date values in Outlook add-ins."/>
 		<Item text="Limits for activation and JavaScript API for Outlook add-ins" url="outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins" Scope="outlook" SEODescription="Ensure that your Outlook add-in stays within activation and API usage guidelines."/>
 		<Item text="Troubleshoot Outlook add-in activation" url="outlook/troubleshoot-outlook-add-in-activation" SEODescription="Outlook add-in activation is contextual and based on rules in an add-in manifest. Explore reasons an installed add-in can fail to activate in Outlook." Scope="outlook" />
-	</Item>    
+	 </Item>  
+	</Item>
   <Item text="PowerPoint" url="powerpoint/powerpoint-add-ins" Scope="powerpoint">
 	<Item text="Use document themes in your PowerPoint add-ins" url="powerpoint/use-document-themes-in-your-powerpoint-add-ins" Scope="powerpoint" SEODescription="Apply a theme to your PowerPoint add-ins"/>
 	<Item text="Get the whole document from an add-in for PowerPoint or Word" url="develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word" SEODescription="Create an add-in for PowerPoint or Word that publishes to a remote location." />   

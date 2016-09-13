@@ -182,7 +182,15 @@ https://localhost:8443/app/home/home.html
 
 3- On OneNote Online, open a notebook.
 
-4- Choose **Insert > Upload Add-ins**.
+4- Choose **Insert > Office Add-ins**. This opens the Office Add-ins dialog.
+  - If you're logged in with your consumer account, choose the **MY ADD-INS** tab, and then choose  **Upload My Add-in**.
+  - If you're logged in with your work or school account, choose the **MY ORGANIZATION** tab, and then choose  **Upload My Add-in**. 
+  
+  The following image shows the **MY ADD-INS** tab for consumer notebooks.
+
+  ![The Office Add-ins dialog showing the MY ADD-INS tab](../../images/onenote-office-add-ins-dialog.png)
+  
+  >**NOTE**: To enable the **Office Add-ins** button, click inside the OneNote page.
 
 5- In the Upload Add-in dialog, browse to **manifest-onenote-add-in.xml** in your project files, and then choose **Upload**. While testing, your manifest file can be stored locally.
 
@@ -201,5 +209,5 @@ https://localhost:8443/app/home/home.html
 
 - [OneNote JavaScript API programming overview](onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API reference](../../reference/onenote/onenote-add-ins-javascript-reference.md)
-- [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader-Preview)
+- [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office Add-ins platform overview](https://dev.office.com/docs/add-ins/overview/office-add-ins)
