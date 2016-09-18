@@ -52,7 +52,7 @@ For more information about Office host application and server requirements, see 
 |:-----|:-----|:-----|:-----|
 |**Access**||||
 |**Excel**||||
-|**Word**|Y||Y|
+|**Word**|Y|Y|Y|
 
 |||
 |:-----|:-----|
