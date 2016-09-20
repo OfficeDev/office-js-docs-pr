@@ -1,6 +1,6 @@
 # Control element
 
-Defines a JavaScript function that executes and action or launches a task pane. A **Control** element can be either a button or a menu option. At least one **Control** must be included in a [Group](group.md) element.
+Defines a JavaScript function that executes an action or launches a task pane. A **Control** element can be either a button or a menu option. At least one **Control** must be included in a [Group](group.md) element.
 
 ## Attributes
 
