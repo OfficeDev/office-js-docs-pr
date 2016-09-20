@@ -83,7 +83,7 @@ For more information about Office host application and server requirements, see 
 |:-----|:-----|:-----|:-----|
 |**Access**||Y||
 |**Excel**|Y|Y|Y|
-|**Word**|Y||Y|
+|**Word**|Y|Y|Y|
 
 |||
 |:-----|:-----|
@@ -102,6 +102,7 @@ For more information about Office host application and server requirements, see 
 
 |**Version**|**Changes**|
 |:-----|:-----|
+|1.1|Added support for Word Online.|
 |1.1|Added support for Excel and Word in Office for iPad.|
 |1.1|Added support for add-ins for Access.|
 |1.0|Introduced|
