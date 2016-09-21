@@ -8,7 +8,7 @@ The following image shows the add-in that you'll create.
 
 <a name="setup"></a>
 ## Step 1: Set up your dev environment and create an add-in project
-Follow the instructions to [Create an Office Add-in Using Any Editor](https://dev.office.com/docs/add-ins/get-started/create-an-office-add-in-using-any-editor) to install the necessary prerequisites and run the Office Yeoman generator to create a new add-in project. When selecting the project attributes in the Yeoman generator, make sure to specify OneNote as a host, as shown below:
+Follow the instructions to [Create an Office Add-in using any editor](../get-started/create-an-office-add-in-using-any-editor.md) to install the necessary prerequisites and run the Office Yeoman generator to create a new add-in project. The following table lists  the project attributes to select in the Yeoman generator.
 
 | Option | Value |
 |:------|:------|
