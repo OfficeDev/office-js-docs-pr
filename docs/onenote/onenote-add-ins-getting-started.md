@@ -30,97 +30,95 @@ You can edit the add-in files using any text editor or IDE. If you haven't tried
   
   b. Replace the script reference to Office.js with the following reference to the *beta* version.
 
-  ```
-  <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
-  ```
+```
+<script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+```
 
   Your Office references will look like this.
 
-  ```
-  <link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.min.css" rel="stylesheet">
-  <link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css" rel="stylesheet">
-  <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
-  ```
+```
+<link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.min.css" rel="stylesheet">
+<link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css" rel="stylesheet">
+<script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+```
 
 3 - Replace the `<body>` element with the following code. This adds a text area and a button using [Office UI Fabric components](http://dev.office.com/fabric/components). The **Responsive Grid** layout is from the set of [Office UI Fabric styles](http://dev.office.com/fabric/styles). 
 
-  ```
-  <body class="ms-font-m">
-      <div class="home flex-container">
-          <div class="ms-Grid">
-              <div class="ms-Grid-row ms-bgColor-themeDarker">
-                  <div class="ms-Grid-col">
-                      <span class="ms-font-xl ms-fontColor-themeLighter ms-fontWeight-semibold">OneNote Add-in</span>
-                  </div>
-              </div>
-          </div>
-          <br />
-          <div class="ms-Grid">
-              <div class="ms-Grid-row">
-                  <div class="ms-Grid-col">
-                      <label class="ms-Label">Enter content here</label>
-                      <div class="ms-TextField ms-TextField--placeholder">
-                          <textarea id="textBox" rows="5"></textarea>
-                      </div>
-                  </div>
-              </div>
-              <div class="ms-Grid-row">
-                  <div class="ms-Grid-col">
-                      <div class="ms-font-m ms-fontColor-themeLight header--text">
-                          <button class="ms-Button ms-Button--primary" id="addOutline">
-                              <span class="ms-Button-icon"><i class="ms-Icon"></i></span>
-                              <span class="ms-Button-label">Add outline</span>
-                              <span class="ms-Button-description">Adds the content above to the current page.</span>
-                          </button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </body>
-  ```
+```
+<body class="ms-font-m">
+   <div class="home flex-container">
+       <div class="ms-Grid">
+           <div class="ms-Grid-row ms-bgColor-themeDarker">
+               <div class="ms-Grid-col">
+                   <span class="ms-font-xl ms-fontColor-themeLighter ms-fontWeight-semibold">OneNote Add-in</span>
+               </div>
+           </div>
+       </div>
+       <br />
+       <div class="ms-Grid">
+           <div class="ms-Grid-row">
+               <div class="ms-Grid-col">
+                   <label class="ms-Label">Enter content here</label>
+                   <div class="ms-TextField ms-TextField--placeholder">
+                       <textarea id="textBox" rows="5"></textarea>
+                   </div>
+               </div>
+           </div>
+           <div class="ms-Grid-row">
+               <div class="ms-Grid-col">
+                   <div class="ms-font-m ms-fontColor-themeLight header--text">
+                       <button class="ms-Button ms-Button--primary" id="addOutline">
+                           <span class="ms-Button-icon"><i class="ms-Icon"></i></span>
+                           <span class="ms-Button-label">Add outline</span>
+                           <span class="ms-Button-description">Adds the content above to the current page.</span>
+                       </button>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+</body>
+```
 
 4 - Open **home.js** in the *app/home* folder. Edit the **Office.initialize** function to add a click event to the **Add outline** button, as follows. The initialize function is run each time the page is loaded.
 
-
-  ```
-  Office.initialize = function (reason) {
-      $(document).ready(function () {
-          app.initialize();
-          // Set up event handler for the UI.
-          $('#addOutline').click(addOutlineToPage);
-      });
-  };
-  ```
+```
+Office.initialize = function (reason) {
+   $(document).ready(function () {
+       app.initialize();
+       // Set up event handler for the UI.
+       $('#addOutline').click(addOutlineToPage);
+   });
+};
+```
  
 5 - Replace the **getDataFromSelection** method with the following **addOutlineToPage** method. This gets the content from the text area and adds it to the page.
 
-
-  ```
-  function addOutlineToPage() {        
-      OneNote.run(function (context) {
-         var html = '<p>' + $('#textBox').val() + '</p>';
-          // Get the current page.
-          var page = context.application.getActivePage();
-          // Queue a command to load the page with the title property.             
-          page.load('title'); 
-          // Add an outline with the specified HTML to the page.
-          var outline = page.addOutline(40, 90, html);
-          // Run the queued commands, and return a promise to indicate task completion.
-          return context.sync()
-              .then(function() {
-                  console.log('Added outline to page ' + page.title);
-              })
-              .catch(function(error) {
-                  app.showNotification("Error: " + error); 
-                  console.log("Error: " + error); 
-                  if (error instanceof OfficeExtension.Error) { 
-                      console.log("Debug info: " + JSON.stringify(error.debugInfo)); 
-                  } 
-              }); 
-          });
-  }
-  ```
+```
+function addOutlineToPage() {        
+   OneNote.run(function (context) {
+      var html = '<p>' + $('#textBox').val() + '</p>';
+       // Get the current page.
+       var page = context.application.getActivePage();
+       // Queue a command to load the page with the title property.             
+       page.load('title'); 
+       // Add an outline with the specified HTML to the page.
+       var outline = page.addOutline(40, 90, html);
+       // Run the queued commands, and return a promise to indicate task completion.
+       return context.sync()
+           .then(function() {
+               console.log('Added outline to page ' + page.title);
+           })
+           .catch(function(error) {
+               app.showNotification("Error: " + error); 
+               console.log("Error: " + error); 
+               if (error instanceof OfficeExtension.Error) { 
+                   console.log("Debug info: " + JSON.stringify(error.debugInfo)); 
+               } 
+           }); 
+       });
+}
+```
 
 <a name="test"></a>
 ## Step 3: Test the add-in on OneNote Online
