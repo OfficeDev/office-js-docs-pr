@@ -45,7 +45,6 @@ You can edit the add-in files using any text editor or IDE. If you haven't tried
 3 - Replace the `<body>` element with the following code. This adds a text area and a button using [Office UI Fabric components](http://dev.office.com/fabric/components). The **Responsive Grid** layout is from the set of [Office UI Fabric styles](http://dev.office.com/fabric/styles). 
 
   ```html
-  
   <body class="ms-font-m">
       <div class="home flex-container">
           <div class="ms-Grid">
@@ -85,11 +84,9 @@ You can edit the add-in files using any text editor or IDE. If you haven't tried
 
 
   ```js
-  
   Office.initialize = function (reason) {
       $(document).ready(function () {
           app.initialize();
-  
           // Set up event handler for the UI.
           $('#addOutline').click(addOutlineToPage);
       });
@@ -100,7 +97,6 @@ You can edit the add-in files using any text editor or IDE. If you haven't tried
 
 
   ```js
-  
   function addOutlineToPage() {        
       OneNote.run(function (context) {
          var html = '<p>' + $('#textBox').val() + '</p>';
