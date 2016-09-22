@@ -44,7 +44,7 @@ You can edit the add-in files using any text editor or IDE. If you haven't tried
 
 3 - Replace the `<body>` element with the following code. This adds a text area and a button using [Office UI Fabric components](http://dev.office.com/fabric/components). The **Responsive Grid** layout is from the set of [Office UI Fabric styles](http://dev.office.com/fabric/styles). 
 
-```
+```html
 <body class="ms-font-m">
    <div class="home flex-container">
        <div class="ms-Grid">
@@ -80,12 +80,14 @@ You can edit the add-in files using any text editor or IDE. If you haven't tried
 </body>
 ```
 
-4 - Open **home.js** in the *app/home* folder. Edit the **Office.initialize** function to add a click event to the **Add outline** button, as follows. The initialize function is run each time the page is loaded.
+4 - Open **home.js** in the *app/home* folder. Edit the **Office.initialize** function to add a click event to the **Add outline** button, as follows.
 
-```
+```js
+// The initialize function is run each time the page is loaded.
 Office.initialize = function (reason) {
    $(document).ready(function () {
        app.initialize();
+       
        // Set up event handler for the UI.
        $('#addOutline').click(addOutlineToPage);
    });
@@ -94,16 +96,21 @@ Office.initialize = function (reason) {
  
 5 - Replace the **getDataFromSelection** method with the following **addOutlineToPage** method. This gets the content from the text area and adds it to the page.
 
-```
+```js
+// Add the contents of the text area to the page.
 function addOutlineToPage() {        
    OneNote.run(function (context) {
       var html = '<p>' + $('#textBox').val() + '</p>';
+      
        // Get the current page.
        var page = context.application.getActivePage();
+       
        // Queue a command to load the page with the title property.             
        page.load('title'); 
+       
        // Add an outline with the specified HTML to the page.
        var outline = page.addOutline(40, 90, html);
+       
        // Run the queued commands, and return a promise to indicate task completion.
        return context.sync()
            .then(function() {
