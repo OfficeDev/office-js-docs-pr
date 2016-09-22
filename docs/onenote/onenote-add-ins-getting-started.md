@@ -44,6 +44,7 @@ You can edit the add-in files using any text editor or IDE. If you haven't tried
 
 3 - Replace the `<body>` element with the following code. This adds a text area and a button using [Office UI Fabric components](http://dev.office.com/fabric/components). The **Responsive Grid** layout is from the set of [Office UI Fabric styles](http://dev.office.com/fabric/styles). 
 
+
   ```html
   <body class="ms-font-m">
       <div class="home flex-container">
@@ -82,6 +83,7 @@ You can edit the add-in files using any text editor or IDE. If you haven't tried
 
 4 - Open **home.js** in the *app/home* folder. Edit the **Office.initialize** function to add a click event to the **Add outline** button, as follows. The initialize function is run each time the page is loaded.
 
+
   ```js
   Office.initialize = function (reason) {
       $(document).ready(function () {
@@ -94,6 +96,7 @@ You can edit the add-in files using any text editor or IDE. If you haven't tried
   ```
  
 5 - Replace the **getDataFromSelection** method with the following **addOutlineToPage** method. This gets the content from the text area and adds it to the page.
+
 
   ```js
   function addOutlineToPage() {        
