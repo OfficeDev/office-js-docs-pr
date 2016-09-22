@@ -82,7 +82,7 @@ You can edit the add-in files using any text editor or IDE. If you haven't tried
 
 4 - Open **home.js** in the *app/home* folder. Edit the **Office.initialize** function to add a click event to the **Add outline** button, as follows. The initialize function is run each time the page is loaded.
 
-  ```javascript
+  ```js
   Office.initialize = function (reason) {
       $(document).ready(function () {
           app.initialize();
@@ -95,7 +95,7 @@ You can edit the add-in files using any text editor or IDE. If you haven't tried
  
 5 - Replace the **getDataFromSelection** method with the following **addOutlineToPage** method. This gets the content from the text area and adds it to the page.
 
-  ```javascript
+  ```js
   function addOutlineToPage() {        
       OneNote.run(function (context) {
          var html = '<p>' + $('#textBox').val() + '</p>';
