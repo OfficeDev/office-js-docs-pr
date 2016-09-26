@@ -3,7 +3,7 @@
 
 
 
-This article provides information about the JavaScript API for Office and how to use it. For reference information, see [JavaScript API for Office](../../reference/javascript-api-for-office.md). To run and edit some JavaScript API for Office code in your web browser with Excel Online, see the [API Tutorial for Office](http://msdn.microsoft.com/en-us/office/dn449240.aspx). For information about updating Visual Studio project files to the most current version of the JavaScript API for Office, see [Update the version of your JavaScript API for Office and manifest schema files](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md).
+This article provides information about the JavaScript API for Office and how to use it. For reference information, see [JavaScript API for Office](../../reference/javascript-api-for-office.md). For information about updating Visual Studio project files to the most current version of the JavaScript API for Office, see [Update the version of your JavaScript API for Office and manifest schema files](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md).
 
 ## Referencing the JavaScript API for Office library in your add-in
 
