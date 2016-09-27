@@ -82,7 +82,7 @@ To see how your add-in will run in Office for iOS, you can sideload your add-in'
     
     ![Office Add-in displayed in Office for Mac](../../images/a5cb2efc-1180-45b4-85a6-13df817b9d2c.png)
     
-> **Note:** Add-ins are cached quite often in Office for Mac, for performance reasons. If you need to force a reload of your add-in while developing it, you can clear the Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/ folder. 
+> **Note:** Add-ins are cached often in Office for Mac, for performance reasons. If you need to force a reload of your add-in while you're developing it, you can clear the Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/ folder. 
 
 ## Additional resources
 
