@@ -33,4 +33,4 @@ Now, whenever you open the add-in on a device, it will show up in the list of Cl
 The Office plugin adds extra capabilities for Office.js, such as exploring the object model and executing Office.js calls. 
 
 
-> **Note:** Add-ins are cached quite often in Office for Mac, for performance reasons. If you need to force a reload of your add-in while developing it, you can clear the Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/ folder.  
+> **Note:** Add-ins are cached often in Office for Mac, for performance reasons. If you need to force a reload of your add-in while you're developing it, you can clear the Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/ folder.  
