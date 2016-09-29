@@ -411,7 +411,9 @@ contentControlObject.insertInlinePictureFromBase64(image, insertLocation);
 #### Returns
 [InlinePicture](inlinepicture.md)
 
-
+#### Known Issues
+In word online, only support insertLoacation as 'Replace', if you use 'Start' or 'End', it will fail.
+Internal Bug 995700: When inserting inline pictures into content control, you can only choose ‘Replace’ as the insertLocation. This bug will be fixed by end of year 2016 with our on going project.
 
 ### insertOoxml(ooxml: string, insertLocation: InsertLocation)
 Inserts OOXML or wordProcessingML into the content control at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.
@@ -542,6 +544,10 @@ contentControlObject.insertText(text, insertLocation);
 
 #### Returns
 [Range](range.md)
+
+#### Known Issues
+In word online, only support insertLoacation as 'Replace', if you use 'Start' or 'End', it will fail. 
+Internal Bug 995758: When inserting text into content control, you can only choose ‘Replace’ as the insertLocation. This bug will be fixed by end of year 2016 with our on going project.
 
 #### Examples
 ```js
