@@ -1,9 +1,9 @@
 
-# Create an Office add-in using any editor
+# Create an Office Add-in using any editor
 
-An Office add-in is a web app that you host within an Office application. This article describes how to use the Yeoman generator to provide project scaffolding and build management. The  `manifest.xml` file tells the Office application where your add-in is located and how you want it to appear. The Office application takes care of hosting it within Office.
+You can use the Yeoman generator to your Office Add-in. The Yeoman generator provides the project scaffolding and build management. The  `manifest.xml` file tells the Office application where your add-in is located and how you want it to appear. The Office application takes care of hosting it within Office.
 
- >**Note**  The instructions include steps that use the Windows command prompt but are equally applicable for other shell environments. 
+ >**Note:** These instructions use the Windows command prompt, but you can also use other shell environments. 
 
 
 ## Prerequisites for Yeoman generator
@@ -11,31 +11,21 @@ An Office add-in is a web app that you host within an Office application. This a
 To run the Yeoman Office generator, you need the following:
 
 
-- [Git](https://git-scm.com/downloads)
-    
+- [Git](https://git-scm.com/downloads)  
 - [npm](https://www.nodejs.org/en/download)
-    
 - [Bower](http://bower.io/)
-    
 - [Yeoman Office generator](https://www.npmjs.com/package/generator-office)
-    
 - [Gulp](http://gulpjs.com/)
-    
 - [TSD](http://definitelytyped.org/tsd/)
     
 Only Git and npm require separate installation. The others can be installed using npm.
 
 When you install Git, use the defaults except that you should choose the following options: 
 
-
 - Use Git from the Windows Command Prompt
-    
 - Use Windows' default console window
     
-Install npm using the defaults. Then open a command prompt as administrator and install the other software globally, which you can do as follows:
-
-
-
+Install npm using the defaults. Then open a command prompt as an administrator and install the other software globally:
 
 ```
 npm install -g bower yo generator-office gulp tsd
@@ -44,7 +34,7 @@ npm install -g bower yo generator-office gulp tsd
 
 ## Create the default files for your add-in
 
-Before you develop an Office add-in, you should first create a folder for your project and run the generator from there. The Yeoman generator runs in the directory where you want to scaffold the project. 
+Before you develop an Office Add-in, you should first create a folder for your project and run the generator from there. The Yeoman generator runs in the directory where you want to scaffold the project. 
 
 In the command prompt, move to the parent folder where you want to create your project. Then use the following commands create a new folder named  _myHelloWorldaddin_ and shift the current directory to it:
 
@@ -56,7 +46,7 @@ mkdir myHelloWorldaddin
 cd myHelloWorldaddin
 ```
 
-Use the Yeoman generator to create the Office add-in of your choice: Outlook, content, or task pane. In this topic, we'll create a task pane add-in. To run the generator, enter the following instruction:
+Use the Yeoman generator to create the add-in of your choice: Outlook, content, or task pane. The steps in this article create a task pane add-in. To run the generator, enter the following instruction:
 
 
 
@@ -68,14 +58,10 @@ yo office
 The generator will prompt you for the following: 
 
 
-- Name of the add-in -- use  _myHelloWorldaddin_
-    
+- Name of the add-in -- use  _myHelloWorldaddin_ 
 - Root folder of the project - use  _current folder_
-    
 - Type of add-in - use  _task pane_
-    
 - Technology to create the add-in - use  _HTML, CSS &amp; JavaScript_
-    
 - The supported Office application - you can choose any application
     
 
@@ -88,7 +74,7 @@ This creates the structure and basic files for your add-in.
 
 ## Hosting your Office Add-in
 
-Office add-ins must be served via HTTPS; the Office application will not load a web app as an add-in if it is HTTP. To develop, debug and host the add-in locally, you need a way to create and serve a web app locally using HTTPS. You could create a self-hosted HTTPS site through gulp (described in the following section) or you could use Azure. 
+Office Add-ins must be served via HTTPS; the Office application will not load a web app as an add-in if it is HTTP. To develop, debug, and host the add-in locally, you need a way to create and serve a web app locally using HTTPS. You can create a self-hosted HTTPS site through gulp (described in the following section) or you can use Azure. 
 
 
 ### Using a self-hosted HTTPS site
@@ -119,7 +105,7 @@ Learn more about the jsconfig.json file on the [JavaScript language](https://cod
 
 In addition, even if you are writing plain JavaScript, you can use TypeScript type definition files ( `*.d.ts`) to provide additional IntelliSense support. The Office generator adds a  `tsd.json` file to the created files with references to all third-party libraries used by the project type you selected.
 
-All you have to do after creating the project using the Yeoman Office generator is run the following command to download the referenced type definition files:
+All you have to do after you create the project using the Yeoman Office generator is run the following command to download the referenced type definition files:
 
 
 
@@ -132,13 +118,13 @@ tsd install
 ### Create a Hello World Office Add-in
 
 
-For our example, we'll create a Hello World add-in. The UI of the add-in is provided by an HTML file that can optionally provide JavaScript programming logic. 
+In this example, you'll create a Hello World add-in. The UI of the add-in is provided by an HTML file that can optionally provide JavaScript programming logic. 
 
 
 ### To create the files for a Hello World add-in
 
 
-- In your project folder, go to  _[project folder]/app/home_ (in our example, it's myHelloWorldaddin/app/home), open home.html, and replace the existing code with the following code, which provides the minimum set of HTML tags to display the UI of an add-in.
+- In your project folder, go to  _[project folder]/app/home_ (in this example, it's myHelloWorldaddin/app/home), open home.html, and replace the existing code with the following code, which provides the minimum set of HTML tags to display the UI of an add-in.
     
 ```HTML
         <!DOCTYPE html>  
@@ -179,7 +165,7 @@ For our example, we'll create a Hello World add-in. The UI of the add-in is prov
     
 - Then, go back to the parent project folder and make sure the XML file named manifest-myHelloWorldaddin.xml contains the following XML code.
     
-     >**Important**  The value in the  `<id>` tag is a GUID that the yeoman generator creates when it generates the project. Do not change the GUID that the yeoman generator created for your add-in.If the host is Azure, the the  `SourceLocation` value will be a URL that is similar to _https:// [name-of-your-web-app].azurewebsites.net/[path-to-add-in]_. If you are using the self-hosted option, as in this example, it will be _https://localhost:8443/[path-to-add-in]_.
+     >**Important:**  The value in the  `<id>` tag is a GUID that the yeoman generator creates when it generates the project. Do not change the GUID that the yeoman generator created for your add-in. If the host is Azure, the `SourceLocation` value will be a URL that is similar to _https:// [name-of-your-web-app].azurewebsites.net/[path-to-add-in]_. If you are using the self-hosted option, as in this example, it will be _https://localhost:8443/[path-to-add-in]_.
 
 ```XML
      <?xml version="1.0" encoding="utf-8"?> 
@@ -211,25 +197,22 @@ For our example, we'll create a Hello World add-in. The UI of the add-in is prov
 ### Running the add-in locally
 
 
-To test your add-in locally, open your browser and enter the URL for your home.html file. This can be either on the web server or the self-hosted HTTPS site. If you hosted it locally, just type that URL into your browser. In our example, it is  `https://localhost:8443/app/home/home.html`. 
+To test your add-in locally, open your browser and enter the URL for your home.html file. This can be either on the web server or the self-hosted HTTPS site. If you hosted it locally, just type that URL into your browser. In this example, it's  `https://localhost:8443/app/home/home.html`. 
 
 You will see an error saying "There is a problem with this website's security certificate." Select "Continue to this website..." and then you'll see the text, "Hello World!"
 
 
- >**Note**  The generated add-in comes with a self-signed certificate and key; add these to your trusted authority list of certificates so your browser does not issue certificate warnings. Refer to the [gulp-webserver](https://www.npmjs.com/package/gulp-webserver) documentation if you want to use your own self-signed certificates.Refer to [this KB article #PH18677](https://support.apple.com/kb/PH18677?locale=en_US) for instructions on how to trust a certificate in OS X Yosemite.
+ >**Note:**  The generated add-in comes with a self-signed certificate and key. Add these to your trusted authority list of certificates so your browser does not issue certificate warnings. Refer to the [gulp-webserver](https://www.npmjs.com/package/gulp-webserver) documentation if you want to use your own self-signed certificates. For information about how to trust a certificate in OS X Yosemite, see [OS X Yosemite: If your certificate isn’t being accepted](https://support.apple.com/kb/PH18677?locale=en_US).
 
 
 ## Install the add-in for testing
 
 You can use sideloading to install your add-in for testing:
 
-
-- [Sideload Office Add-ins for testing](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
-    
+- [Sideload Office Add-ins for testing](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+- [Sideload Office Add-ins on iPad and Mac for testing](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)   
 - [Sideload Outlook add-ins for testing](../outlook/testing-and-tips.md)
     
-Alternatively, you can publish the add-in to a catalog or network share and install it the way end-users do. For details, see [Create a network shared folder catalog for task pane and content add-ins](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
-
 
 ## Debugging your Office add-in
 
@@ -237,14 +220,9 @@ There are different ways to debug your add-in:
 
 
 - You can use the Office web clients and open the browser's developer tools and debug the add-in just like any other client-side JavaScript application. 
-    
 - If you're using desktop Office on Windows 10, you can [Debug add-ins using F12 developer tools on Windows 10](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md).
     
-
-
-
 ## Additional resources
-
 
 
 - [Create and debug Office Add-ins in Visual Studio](../../docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md)
