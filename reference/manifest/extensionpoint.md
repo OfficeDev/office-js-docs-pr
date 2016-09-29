@@ -85,7 +85,7 @@ The CustomPane extension point defines an add-in that activates when specified r
 |:-----|:-----|:-----|
 |  **RequestedHeight** | No |  The requested height, in pixels, for the display pane when it is running on a desktop computer. This can be from 32 to 450 pixels.  |
 |  **SourceLocation**  | Yes |  The URL for the source code file of the add-in. This refers to a  **Url** element in the [Resources](./resources.md)  element.  |
-|  **Rule**  | Yes |  The rule or collection of rules that specify when the add-in activates. For more information, see  [Activation rules for Outlook add-ins](../../outlook/manifests/activation-rules.md). |
+|  **Rule**  | Yes |  The rule or collection of rules that specify when the add-in activates. For more information, see  [Activation rules for Outlook add-ins](../../docs/outlook/manifests/activation-rules.md). |
 |  **DisableEntityHighlighting**  | No |  Specifies whether entity highlighting should be turned off. |
 
 
