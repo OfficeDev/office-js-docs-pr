@@ -228,7 +228,7 @@ You can use sideloading to install your add-in for testing:
     
 - [Sideload Outlook add-ins for testing](../outlook/testing-and-tips.md)
     
-Alternatively, you can publish the add-in to a catalog or network share and install it the way end-users do. For details, see [Create a network shared folder catalog for task pane and content add-ins](https://technet.microsoft.com/en-us/browser/fp123503(v=office.14)).
+Alternatively, you can publish the add-in to a catalog or network share and install it the way end-users do. For details, see [Create a network shared folder catalog for task pane and content add-ins](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
 
 
 ## Debugging your Office add-in
