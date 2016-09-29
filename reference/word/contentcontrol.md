@@ -10,7 +10,7 @@ _Applies to: Word 2016, Word for iPad, Word for Mac_
 |cannotDelete|bool|Gets or sets a value that indicates whether the user can delete the content control. Mutually exclusive with removeWhenEdited.|
 |cannotEdit|bool|Gets or sets a value that indicates whether the user can edit the contents of the content control.|
 |color|string|Gets or sets the color of the content control. Color is set in "#RRGGBB" format or by using the color name.|
-|placeholderText|string|Gets or sets the placeholder text of the content control. Dimmed text will be displayed when the content control is empty.|
+|placeholderText|string|Gets or sets the placeholder text of the content control. Dimmed text will be displayed when the content control is empty. This property is currently not supported in Word Online|
 |removeWhenEdited|bool|Gets or sets a value that indicates whether the content control is removed after it is edited. Mutually exclusive with cannotDelete.|
 |style|string|Gets or sets the style used for the content control. This is the name of the pre-installed or custom style.|
 |tag|string|Gets or sets a tag to identify a content control. The [Silly stories](https://aka.ms/sillystorywordaddin) add-in sample shows how you can use the **tag** property.|
