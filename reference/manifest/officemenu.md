@@ -20,7 +20,7 @@ Specifies a built-in menu of the Office client application on which to add this 
 
 ## Control
 
-Each **OfficeMenu** element requires at one or more [menu](./menu.md#menu-control) controls. 
+Each **OfficeMenu** element requires at one or more [menu](./control.md#menu-dropdown-button-controls) controls. 
 
 
 ## Example
