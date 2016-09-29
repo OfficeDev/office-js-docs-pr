@@ -9,7 +9,7 @@ Displays a dialog box in an Office host.
 |Word, Excel, PowerPoint|1.1|1.1|
 |Outlook|Mailbox 1.4|Mailbox 1.4|
 
-This method is available in the DialogAPI [requirement set](https://dev.office.com/docs/add-ins/overview/specify-office-hosts-and-api-requirements). To specify the DialogAPI requirement set, use the following in your manifest.
+This method is available in the DialogAPI [requirement set](../../docs/overview/specify-office-hosts-and-api-requirements.md). To specify the DialogAPI requirement set, use the following in your manifest.
 
 ```xml
  <Requirements> 

@@ -6,7 +6,7 @@ Use the UX design patterns project to:
 
 * Apply solutions to common customer scenarios.
 * Apply design best practices.
-* Incorporate [Office UI Fabric](https://dev.office.com/fabric/getting-started/) components and styles.
+* Incorporate [Office UI Fabric](https://dev.office.com/fabric#/get-started) components and styles.
 * Build add-ins that visually integrate with the default Office UI.  
 
 ## Using the UX design patterns
