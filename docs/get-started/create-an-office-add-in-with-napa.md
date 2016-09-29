@@ -9,7 +9,7 @@ You can create a simple Office Add-in by using Napa. To do that, you'll need:
 
 - A [Microsoft account](http://www.microsoft.com/en-us/account/default.aspx)
     
-- The URL for the [Napa](https://www.napacloudapp.com/Getting-Started) web app
+- The URL for the [Napa](https://www.napacloudapp.com) web app
 
 >**Note:** To get started with an add-in for OneNote, see [Build your first OneNote add-in](../onenote/onenote-add-ins-getting-started.md).
 
@@ -17,7 +17,7 @@ You can create a simple Office Add-in by using Napa. To do that, you'll need:
 
 
 
-1. Open [Napa](https://www.napacloudapp.com/Getting-Started) in your browser.
+1. Open [Napa](https://www.napacloudapp.com) in your browser.
     
 2. Choose the  **Add New Project** tile.
     
