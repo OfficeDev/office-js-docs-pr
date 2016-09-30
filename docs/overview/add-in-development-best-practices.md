@@ -35,7 +35,7 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
     ![A screenshot that shows a content add-in with data next to a content add-in with no data](../../images/7de2215f-ccef-4f82-aa9d-babcbddae0c6.png)
 
-- Offer [free trials](http://msdn.microsoft.com/library/145d9466-3c3d-4294-aa23-82068a8e7ae9.aspx%28Office.15%29.aspx#sectionSection1). If your add-in requires a subscription, make some functionality available without a subscription.
+- Offer [free trials](https://msdn.microsoft.com/en-us/library/dn456317.aspx#Anchor_1). If your add-in requires a subscription, make some functionality available without a subscription.
 
 - Make signup simple. Prefill information (email, display name) and skip email verifications.
 
