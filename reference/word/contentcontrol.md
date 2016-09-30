@@ -431,8 +431,8 @@ contentControlObject.insertOoxml(ooxml, insertLocation);
 #### Returns
 [Range](range.md)
 
-#### Known Issues
-This method results in long latency in Word Online compared to other platforms. Suggest not to use this method too frequently to avoid bad user experience, and use it when there is no other better solutions for your Add-in.
+#### Known issues
+This method results in long latency in Word Online, which can affect users' experience of your add-in. We recommend that you use this method only when no other solution is available. 
 
 #### Examples
 ```js
@@ -547,9 +547,8 @@ contentControlObject.insertText(text, insertLocation);
 #### Returns
 [Range](range.md)
 
-#### Known Issues
-In word online, only support insertLoacation as 'Replace', if you use 'Start' or 'End', it will fail. 
-Internal Bug 995758: When inserting text into content control, you can only choose ‘Replace’ as the insertLocation. This bug will be fixed by end of year 2016 with our on going project.
+#### Known issues
+In Word Online, only the 'Replace' value is supported for the _insertLocation_ parameter. If you use the 'Start' or 'End' values, the operation will fail.
 
 #### Examples
 ```js
