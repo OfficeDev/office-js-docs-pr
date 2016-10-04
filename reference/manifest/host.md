@@ -37,7 +37,7 @@ Specifies the Host type targeted by this add-in. The value must be one of the fo
 ---
 
 ## VersionOverrides node
-When defined in [VersionOverrides](./versionoverrides), the host type is determined by the `xsi:type` attribute. 
+When defined in [VersionOverrides](./versionoverrides.md), the host type is determined by the `xsi:type` attribute. 
 
 ### Attributes
 

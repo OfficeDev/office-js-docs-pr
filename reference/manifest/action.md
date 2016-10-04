@@ -1,5 +1,5 @@
 # Action element
- Specifies the action to perform when the user selects a  [Button](./button-control.md) or [Menu](./menu-control.md) controls.
+ Specifies the action to perform when the user selects a  [Button](./control.md#button-control) or [Menu](./control.md#menu-dropdown-button-controls) controls.
  
 ## Attributes
 

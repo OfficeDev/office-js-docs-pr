@@ -1,5 +1,5 @@
 # Icon element
-Defines **Image** elements for [Button](./button.md) and [Menu](./menu-control.md) controls.
+Defines **Image** elements for [Button](./control.md#button-control) or [Menu](./control.md#menu-dropdown-button-controls)  controls.
 
 ## Child elements
 |  Element |  Required  |  Description  |

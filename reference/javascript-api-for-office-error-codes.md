@@ -125,5 +125,5 @@ The following table summarizes binding behavior in Word.
 
 - [Office Add-ins API and schema references](../reference/reference.md)
     
-- [Office Add-ins development lifecycle](../docs/design/add-in-development-lifecycle.md)
+- [Office Add-ins development lifecycle](../docs/develop/add-in-development-lifecycle.md)
     

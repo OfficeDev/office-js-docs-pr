@@ -35,7 +35,7 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
     ![A screenshot that shows a content add-in with data next to a content add-in with no data](../../images/7de2215f-ccef-4f82-aa9d-babcbddae0c6.png)
 
-- Offer [free trials](http://msdn.microsoft.com/library/145d9466-3c3d-4294-aa23-82068a8e7ae9.aspx%28Office.15%29.aspx#sectionSection1). If your add-in requires a subscription, make some functionality available without a subscription.
+- Offer [free trials](https://msdn.microsoft.com/en-us/library/dn456317.aspx#Anchor_1). If your add-in requires a subscription, make some functionality available without a subscription.
 
 - Make signup simple. Prefill information (email, display name) and skip email verifications.
 
@@ -60,7 +60,7 @@ For templates that illustrate patterns that you can apply as you develop your fi
   - Name your group to match the name of your add-in. If you have multiple groups, name each group based on the functionality that the commands in that group provide.
   - Do not add superfluous buttons to increase the real estate of your add-in.
 
-     >**Note**  Add-ins that take up too much space might not pass [Office Store validation](https://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe(Office.15).aspx).
+     >**Note**  Add-ins that take up too much space might not pass [Office Store validation](https://msdn.microsoft.com/en-us/library/jj220035.aspx).
 
 - For all icons:
 	- Provide meaningful icons and [labels](http://msdn.microsoft.com/library/8cef4fce-e6a1-459b-951f-47ac03ec95a6%28Office.15%29.aspx) for buttons that clearly identify the action the user is taking.

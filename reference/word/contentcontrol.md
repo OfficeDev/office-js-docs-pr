@@ -10,7 +10,7 @@ _Applies to: Word 2016, Word for iPad, Word for Mac, Word Online_
 |cannotDelete|bool|Gets or sets a value that indicates whether the user can delete the content control. Mutually exclusive with removeWhenEdited.|
 |cannotEdit|bool|Gets or sets a value that indicates whether the user can edit the contents of the content control.|
 |color|string|Gets or sets the color of the content control. Color is set in "#RRGGBB" format or by using the color name.|
-|placeholderText|string|Gets or sets the placeholder text of the content control. Dimmed text will be displayed when the content control is empty.|
+|placeholderText|string|Gets or sets the placeholder text of the content control. Dimmed text will be displayed when the content control is empty. This property is not currently supported in Word Online.|
 |removeWhenEdited|bool|Gets or sets a value that indicates whether the content control is removed after it is edited. Mutually exclusive with cannotDelete.|
 |style|string|Gets or sets the style used for the content control. This is the name of the pre-installed or custom style.|
 |tag|string|Gets or sets a tag to identify a content control. The [Silly stories](https://aka.ms/sillystorywordaddin) add-in sample shows how you can use the **tag** property.|
@@ -411,7 +411,8 @@ contentControlObject.insertInlinePictureFromBase64(image, insertLocation);
 #### Returns
 [InlinePicture](inlinepicture.md)
 
-
+#### Known issues
+In Word Online, only the 'Replace' value is supported for the _insertLocation_ parameter. If you use the 'Start' or 'End' values, the operation will fail.
 
 ### insertOoxml(ooxml: string, insertLocation: InsertLocation)
 Inserts OOXML or wordProcessingML into the content control at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.
@@ -429,6 +430,9 @@ contentControlObject.insertOoxml(ooxml, insertLocation);
 
 #### Returns
 [Range](range.md)
+
+#### Known issues
+This method results in long latency in Word Online, which can affect users' experience of your add-in. We recommend that you use this method only when no other solution is available. 
 
 #### Examples
 ```js
@@ -542,6 +546,9 @@ contentControlObject.insertText(text, insertLocation);
 
 #### Returns
 [Range](range.md)
+
+#### Known issues
+In Word Online, only the 'Replace' value is supported for the _insertLocation_ parameter. If you use the 'Start' or 'End' values, the operation will fail.
 
 #### Examples
 ```js

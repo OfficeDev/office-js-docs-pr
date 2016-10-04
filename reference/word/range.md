@@ -412,6 +412,9 @@ rangeObject.insertOoxml(ooxml, insertLocation);
 #### Returns
 [Range](range.md)
 
+#### Known issues
+This method results in long latency in Word Online, which can affect users' experience of your add-in. We recommend that you use this method only when no other solution is available. 
+
 #### Examples
 ```js
 // Run a batch operation against the Word object model.
