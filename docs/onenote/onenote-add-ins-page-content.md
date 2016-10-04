@@ -7,20 +7,20 @@ In the OneNote add-ins JavaScript API, page content is represented by the follow
 - A Page object contains a collection of PageContent objects.
 - A PageContent object contains a content type of Outline, Image, or Other.
 - An Outline object contains a collection of Paragraph objects.
-- A Paragraph object contains a content type of RichText, Image, or Other.
+- A Paragraph object contains a content type of RichText, Image, Table, or Other.
 
 To create an empty OneNote page, use one of the following methods:
 
 - [Section.addPage](../../reference/onenote/section.md#addpagetitle-string)
 - [Page.insertPageAsSibling](../../reference/onenote/page.md#insertpageassiblinglocation-string-title-string)
 
-Then use the following methods to work with the page content. The content and structure of a OneNote page are represented by HTML. Only a [subset of HTML is supported](#supported-html) for creating or updating page content.
+Then use methods in the following objects to work with the page content, such as Page.addOutline and Outline.appendHtml. 
 
-- [Page.addOutline](../../reference/onenote/page.md#addoutlineleft-double-top-double-html-string)
-- [Outline.append](../../reference/onenote/outline.md#appendhtml-string)
-- [Outline.prepend](../../reference/onenote/outline.md#prependhtml-string)
-- [Paragraph.insertAsSibling](../../reference/onenote/paragraph.md#insertassiblinghtml-string-insertlocation-string)
-- [Paragraph.delete](../../reference/onenote/paragraph.md#delete)
+- [Page](../../reference/onenote/page.md)
+- [Outline](../../reference/onenote/outline.md)
+- [Paragraph](../../reference/onenote/paragraph.md)
+
+The content and structure of a OneNote page are represented by HTML. Only a subset of HTML is supported for creating or updating page content, as described below.
 
 ## Supported HTML
 

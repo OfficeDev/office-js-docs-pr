@@ -5,6 +5,9 @@
 
 This article describes the software and device requirements for running Office Add-ins.
 
+>**Note:** For a high-level view of where Office Add-ins are currently supported, see the [Office Add-in host and platform availability](http://dev.office.com/add-in-availability) page. 
+
+
 ## Server requirements
 
 To be able to install and run any Office Add-in, you first need to deploy the manifest and webpage files for the UI and code of your add-in to the appropriate server locations.
@@ -14,37 +17,14 @@ For all types of add-ins (content, Outlook, and task pane add-ins and add-in com
 
  >**Note:**   When you develop and debug an add-in in Visual Studio, Visual Studio deploys and runs your add-in's webpage files locally with IIS Express, and doesn't require an additional web server. Similarly, when you develop and debug with Napa in the browser, it deploys and runs your add-in's webpage files from storage associated with the account you used to sign into Napa.
 
-For content and task pane add-ins, in the supported Office host applications - Access web apps, Word, Excel, PowerPoint, or Project - you also need a [ network file share](../publish/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) or an [add-in catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) on SharePoint to upload the add-in's XML manifest file.
+For content and task pane add-ins, in the supported Office host applications - Access web apps, Word, Excel, PowerPoint, or Project - you also need an [add-in catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) on SharePoint to upload the add-in's XML manifest file.
 
 To test and run an Outlook add-in, the user's Outlook email account must reside on Exchange 2013 or later, which is available through Office 365, Exchange Online, or through an on-premises installation. The user or administrator installs manifest files for Outlook add-ins on that server.
 
  >**Note:**   POP and IMAP email accounts in Outlook don't support Office Add-ins.
 
 
-## Client support summary
 
-This table shows the Office host applications (including desktop, tablet, mobile, and web clients) that can run Office Add-ins, and the types of add-ins supported by each host.
-
-
-**Supported add-in types**
-
-
-|**Office application**|**Content add-ins**|**Outlook add-ins**|**Task pane add-ins**|
-|:-----|:-----|:-----|:-----|
-|Access web apps|Y|||
-|Excel 2013 or later|Y||Y|
-|Excel Online|Y||Y|
-|Excel for iPad|Y||Y|
-|Outlook 2013 or later||Y||
-|Outlook for Mac||Y||
-|Outlook Web App||Y||
-|OWA for Devices||Y||
-|PowerPoint 2013 or later|Y||Y|
-|PowerPoint Online|Y||Y|
-|Project 2013 or later|||Y|
-|Word 2013 or later|||Y|
-|Word Online|||Y|
-|Word for iPad|||Y|
 
 ## Client requirements: Windows desktop and tablet
 
@@ -53,9 +33,9 @@ The following software is required for developing an Office Add-in for the suppo
 
 - For Windows x86 and x64 desktops, and tablets such as Surface Pro:
 
-      - The 32- or 64-bit version of Office 2013 or a later version, running on Windows 7 or a later version.
+    - The 32- or 64-bit version of Office 2013 or a later version, running on Windows 7 or a later version.
 
-  - Excel 2013, Outlook 2013, PowerPoint 2013, Project Professional 2013, Project 2013 SP1, Word 2013, or a later version of the Office client, if you are testing or running an Office Add-in specifically for one of these Office desktop clients. Office desktop clients can be installed on premises or via Click-to-Run on the client computer.
+    - Excel 2013, Outlook 2013, PowerPoint 2013, Project Professional 2013, Project 2013 SP1, Word 2013, or a later version of the Office client, if you are testing or running an Office Add-in specifically for one of these Office desktop clients. Office desktop clients can be installed on premises or via Click-to-Run on the client computer.
 
 - Internet Explorer 9 or later, which must be installed but doesn't have to be the default browser. To support Office Add-ins, the Office client that acts as host uses browser components that are part of Internet Explorer 9 or later.
 
@@ -68,9 +48,10 @@ The following software is required for developing an Office Add-in for the suppo
 
 Outlook for Mac, which is distributed as part of Office 365, supports Outlook add-ins. Running Outlook add-ins on Outlook for Mac has the same requirements as Outlook for Mac itself: the operating system must be at least OS X v10.10 "Yosemite". Because Outlook for Mac uses WebKit as a layout engine to render the add-in pages, there is no additional browser dependency.
 
-Word for Mac version 15.18 (160109) is required to run Office add-ins.
-
-Excel for Mac version 15.19 (160206) is required to run Office add-ins.
+The following are the minimum client versions of Office for Mac that support Office Add-ins:
+- Word for Mac version 15.18 (160109) 
+- Excel for Mac version 15.19 (160206) 
+- PowerPoint for Mac version 15.24 (160614)
 
 ## Client requirements: Browser support for Office Online web clients and SharePoint
 
@@ -82,8 +63,7 @@ Any browser that supports ECMAScript 5.1, HTML5, and CSS3, such as Internet Expl
 Specifically for OWA for Devices, and Outlook Web App running in a browser on smartphones and non-Windows tablet devices, the following software is required for testing and running Outlook add-ins.
 
 
-
-|**Host application**|**Device**|**Operating system**|**Exchange account**|**Mobile browser**|
+| Host application | Device | Operating system | Exchange account | Mobile browser |
 |:-----|:-----|:-----|:-----|:-----|
 |OWA for Android|Android smartphones. Technically, those devices considered as "small" or "normal" by [Android OS](http://developer.android.com/guide/practices/screens_support.mdl).|Android 4.4 KitKat or later|On the latest update of Office 365 for business or Exchange Online|Native add-in for Android, browser not applicable|
 |OWA for iPad|iPad 2 or later|iOS 6 or later|On the latest update of Office 365 for business or Exchange Online|Native add-in for iOS, browser not applicable|
@@ -143,8 +123,6 @@ When a supported Office application starts, it reads the XML manifests for the a
 
 
 ## Additional resources
-
-
 
 - [Office Add-ins platform overview](../../docs/overview/office-add-ins.md)
 

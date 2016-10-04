@@ -1,10 +1,10 @@
 ## Supertip
-The Supertip object defines a rich tooltip (both Title and Description). It is used by both [Button](./button-control.md) and [Menu](./menu-control.md) controls. 
+Defines a rich tooltip (both Title and Description). It is used by both [Button](./button.md) and [Menu](./menu-control.md) controls. 
 
 ## Child elements
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  [Title](#title)        | Yes |   The text for the supertip         |
+|  [Title](#title)        | Yes |   The text for the supertip.         |
 |  [Description](#description)  | Yes |  The description for the supertip.    |
 
 ## Title

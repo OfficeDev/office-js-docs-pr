@@ -44,86 +44,8 @@ When you've completed the wizard, Visual Studio creates a solution for you that 
 ## Modify your add-in settings
 
 
-To modify the settings of your add-in, open the  **Manifest Designer**. The Manifest Designer is a property page-like editor that enables you to modify the most common settings of your add-in in a more visual way. To open the  **Manifest Designer** from **Solution Explorer**, expand the "Office" add-in project node, choose the folder that contains the XML manifest, and then press the ENTER key. 
+To modify the settings of your add-in, edit the XML manifest file of the project. In  **Solution Explorer**, expand the add-in project node, expand the folder that contains the XML manifest, and choose the XML manifest. You can point to any element in the file to view a tooltip that describes the purpose of the element. For more information about the manfiest file, see [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md).
 
-For advanced settings, such as the target locale of the add-in, edit the XML manifest file of the project directly. In  **Solution Explorer** expand the add-in project node, expand the folder that contains the XML manifest and choose the XML manifest. You can point to any element in the file to view a tooltip that describes the purpose of the element. For a complete list of descriptions, see [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md).
-
-The  **Manifest Designer** has multiple tabs, including **General**, which contains general add-in settings such as add-in name and icon,  **Activation**, which enables you to specify the add-in's requirements such as required API sets and target applications, and  **App Domains**, which enables you to specify the domains of pages consumed by your add-in. For Outlook add-ins, there is no  **Activation** tab but there are two other tabs: **Read Form** and **Compose Form**.
-
-
-### General tab settings
-
-The following table describes the fields that appear in the  **General** tab of the manifest editor.
-
-
-
-|**Property**|**Corresponding value in the XML manifest file**|**Description**|
-|:-----|:-----|:-----|
-|**Display Name**| `DefaultValue` attribute of the [DisplayName](http://msdn.microsoft.com/en-us/library/529159ca-53bf-efcf-c245-e572dab0ef57%28Office.15%29.aspx) element.|Name that appears in the UI of the host application. For example, in Excel, when a user chooses  **Insert**,  **Add-in**, this name appears in the list of available add-ins. This name can also appear as a title above the add-in.|
-|**Add-in type**|[OfficeApp](http://msdn.microsoft.com/en-us/library/4537b0a6-a741-332d-9e8f-4341c8b50b6a%28Office.15%29.aspx) complexType.|Type of the add-in. A value of  **Task Pane Add-in** indicates that the add-in appears in the task pane of the Office application. A value of **Content Add-in** indicates that the add-in appears in the body of a document. A value of **Outlook Add-in** indicates that the add-in appears adjacent to a message or appointment item.|
-|**Version**|[Version](http://msdn.microsoft.com/en-us/library/6a8bbaa5-ee8c-6824-4aba-cb1a804269f6%28Office.15%29.aspx) element.|Specifies the version of the add-in.|
-|**Provider name**|[ProviderName](http://msdn.microsoft.com/en-us/library/0062693a-fafa-ea2d-051a-75dac0f6c323%28Office.15%29.aspx) element.|Specifies the name of the individual or company that developed the add-in.|
-|**Description**| `DefaultValue` attribute of the [Description](http://msdn.microsoft.com/en-us/library/bcce6bad-23d0-7631-7d8c-1064b8453b5a%28Office.15%29.aspx) element.|Description that appears when a user points to the add-in name in the list of available add-ins.|
-|**Icon**| `DefaultValue` attribute of the [IconUrl](http://msdn.microsoft.com/en-us/library/c7dac2d4-4fda-6fc7-3774-49f02b2d3e1e%28Office.15%29.aspx) element.|32 x 32 pixel image that appears for your add-in in the ribbon of the host application.|
-|**High resolution icon**| `DefaultValue` attribute of the [IconUrl](http://msdn.microsoft.com/en-us/library/c7dac2d4-4fda-6fc7-3774-49f02b2d3e1e%28Office.15%29.aspx) element.|64 x 64 pixel image that appears for your add-in in the ribbon of the host application.|
-|**Source location**| `DefaultValue` attribute of the [SourceLocation](http://msdn.microsoft.com/en-us/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx) element.|Location of the first page that appears in the add-in when it is activated in the host application. The default value of this property is the default HTML file of your project.|
-|**Support Url**| `DefaultValue` attribute of the [SupportUrl](http://msdn.microsoft.com/en-us/library/61cff5aa-929f-7d6a-2ce9-0b92b2d6e0a7%28Office.15%29.aspx) element.|Specifies the URL of a page that provides support information for the add-in.|
-|**Requested Height** (content and Outlook add-ins only)|[RequestedHeight](http://msdn.microsoft.com/en-us/library/fe949c28-a9ff-26dd-6a80-5f81abc330e8.aspx) element.|Number of pixels that the add-in requires as the height of the add-in pane.|
-|**Requested Width** (content add-ins only)|[RequestedWidth](http://msdn.microsoft.com/en-us/library/29032529-6661-fb99-1ff3-c02cc474017f.aspx) element.|Number of pixels that the add-in requires as the width of the add-in pane.|
-|**Permissions**|[Permissions](http://msdn.microsoft.com/en-us/library/d4cfe645-353d-8240-8495-f76fb36602fe%28Office.15%29.aspx) element.|Permissions required by this add-in.|
-|**Entity Highlighting** (Outlook add-ins only)|[DisableEntityHighlighting element (MailApp complexType) (app manifest schema v1.1)](http://msdn.microsoft.com/library/bf67a8d6-cb8f-7a58-d09d-4d5c7679d10f%28Office.15%29.aspx) element.|Specifies whether entity highlighting should be turned off for this Outlook add-in.|
-
-### Activation tab settings
-
-This tab enables you to list the sets of Office JavaScript APIs that must be supported on a target Office application for your add-in to activate. For example, if your add-in binds to a table, you'd add the TableBindings API set to the list. This feature helps prevent users from getting ugly JavaScript errors by inadvertently activating your add-in on an Office host that doesn't support the functionality contained in your add-in.
-
-The following table describes the fields that appear in the  **Activation** tab of the manifest editor. This tab appears only in content add-ins and task pane add-ins.
-
-
-
-|**Property**|**Description**|
-|:-----|:-----|
-|**Required API Sets**|Enables you to specify the API set names and the minimum versions required by your add-in to activate properly. To add an API set, choose it in the drop-down list. To delete an API set, choose it in the list and then choose the  **Delete** key. As you specify API sets, the page displays the Office clients that support that combination of API sets.<br/> **Note**  Because some API sets support only certain Office clients, specifying more API sets decreases the number of Office clients on which your add-in can activate.|
-|**Applications**|Enables you to choose the Office applications that you want your add-in to target. You can target any Office application that's available in Office 365 and Office 2013 SP1, or you can target specific Office applications.|
-|**IntelliSense**|Enables you to choose whether IntelliSense displays syntax information for all Office JavaScript APIs, or only for APIs in the  **Required API Sets** list.|
-|**Summary**|The summary section shows where the add-in will be activated based on your input in the  **Required API Sets** and the **Applications** sections.|
-
-### App Domains tab settings
-
-App Domains settings are used when the add-in needs to communicate with a remote domain (cross-domain communication). The following table describes the fields that appear in the  **Add-in Domains** tab of the manifest editor. These settings enable you to specify the domains that this add-in uses to load pages.
-
-
-
-|**Property**|**Description**|
-|:-----|:-----|
-|**Enter the URL of a domain**|Enables you to enter a URL of a domain that is used by your add-in. Choose the  **Add** button to add it to the **AppDomains** list.|
-|**AppDomains**|The list of add-in domains that you've specified. You can delete items from the list by choosing them and then choosing the  **Remove** button.|
-
-### Read Form tab settings
-
-Read Form settings are only available for Outlook add-ins. These settings specify when a read form add-in is activated and also its UI properties.
-
-
-|**Property**|**Description**|
-|:-----|:-----|
-|Activation|Specifies the activation rules for the read form add-in. You select the appropriate rule or rules in the tree pane or you can add rules by choosing the  **Add** drop down list. You can optionally specify the message class of the mail or appointment item.|
-|Source location|Sepcifies the source location for the add-in.|
-|Requested height|Specifies the requested height in pixels|
-|Enable the add-in to appear in items that are opened on a tablet|Check this box if the add-in will appear on a tablet. If selected, you must also provide the source location for the tablet code and the requested height when on a tablet.|
-|Enable the add-in to appear in items that are opened on a phone|Check this box if the add-in will appear on a phone. If selected, you must also provide the source location for the phone code.|
-
-### Compose Form tab settings
-
-Compose Form settings are only available for Outlook add-ins. These settings specify when a compose form add-in is activated and also its UI properties.
-
-
-|**Property**|**Description**|
-|:-----|:-----|
-|Activation|Specifies the item types that will activate a compose form add-in. You can choose either or both of  **email messages** or **appointments**.|
-|Source location|Sepcifies the source location for the add-in.|
-|High resolution icon:|Specifies the URL of the image that is used to represent the add-in on a high DPI display. It must be 128 x 128 pixels.|
-|Enable the add-in to appear in items that are opened on a tablet|Check this box if the add-in will appear on a tablet. If selected, you must also provide the source location for the tablet code .|
-|Enable the add-in to appear in items that are opened on a phone|Check this box if the add-in will appear on a phone. If selected, you must also provide the source location for the phone code.|
 
 ## Develop the contents of your add-in
 

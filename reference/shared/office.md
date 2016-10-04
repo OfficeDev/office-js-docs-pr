@@ -41,7 +41,7 @@ Office
 
 ## Remarks
 
-The  **Office** object enables the developer to implement a callback function for the Initialize event and provides access to the [Context](../../reference/shared/asyncresult.context.md) object.
+The  **Office** object enables the developer to implement a callback function for the Initialize event and provides access to the [Context](../../reference/shared/context.md) object.
 
 
 ## Support details

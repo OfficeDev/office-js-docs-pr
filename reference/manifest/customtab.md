@@ -1,18 +1,16 @@
-# Custom tab
+# CustomTab element
 On the ribbon, you specify which tab and group for their add-in commands. This can either be on the default tab (either  **Home**,  **Message**, or  **Meeting**), or on a custom tab defined by the add-in.
 
 On custom tabs, the add-in can create up to 10 groups. Each group is limited to 6 controls, regardless of which tab it appears on. Add-ins are limited to one custom tab.
 
+The  **id** attribute must be unique within the manifest.
+
 ## Child elements
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  [CustomTab](#customtab)  | Yes |  Defines a custom ribbon tab.  |
 |  [Group](./group.md)      | Yes |  Defines a Group of commands.  |
-|  [Label](#label)      | Yes |  The label for the CustomTab or a Group  |
-|  [Control](#control)    | Yes |  Collection of one or more Control objects  |
-
-## CustomTab
-Required. The  **id** attribute must be unique within the manifest.
+|  [Label](#label)      | Yes |  The label for the CustomTab or a Group.  |
+|  [Control](#control)    | Yes |  A collection of one or more Control objects.  |
 
 ## Group
 Required. See [Group element](./group.md).
