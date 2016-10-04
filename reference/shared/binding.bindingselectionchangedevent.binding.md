@@ -32,7 +32,7 @@ For more information about Office host application and serverrequirements, see [
 |:-----|:-----|:-----|:-----|
 |**Access**||Y||
 |**Excel**|Y|Y|Y|
-|**Word**|Y||Y|
+|**Word**|Y|Y|Y|
 
 |||
 |:-----|:-----|

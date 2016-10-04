@@ -2,7 +2,6 @@
 # Requirements for running Office Add-ins
 
 
-
 This article describes the software and device requirements for running Office Add-ins.
 
 >**Note:** For a high-level view of where Office Add-ins are currently supported, see the [Office Add-in host and platform availability](http://dev.office.com/add-in-availability) page. 
@@ -65,64 +64,14 @@ Specifically for OWA for Devices, and Outlook Web App running in a browser on sm
 
 | Host application | Device | Operating system | Exchange account | Mobile browser |
 |:-----|:-----|:-----|:-----|:-----|
-|OWA for Android|Android smartphones. Technically, those devices considered as "small" or "normal" by [Android OS](http://developer.android.com/guide/practices/screens_support.mdl).|Android 4.4 KitKat or later|On the latest update of Office 365 for business or Exchange Online|Native add-in for Android, browser not applicable|
+|OWA for Android|Android smartphones. Technically, those devices considered as "small" or "normal" by [Android OS](https://developer.android.com/guide/practices/screens_support.html).|Android 4.4 KitKat or later|On the latest update of Office 365 for business or Exchange Online|Native add-in for Android, browser not applicable|
 |OWA for iPad|iPad 2 or later|iOS 6 or later|On the latest update of Office 365 for business or Exchange Online|Native add-in for iOS, browser not applicable|
 |OWA for iPhone|iPhone 4S or later|iOS 6 or later|On the latest update of Office 365 for business or Exchange Online|Native add-in for iOS, browser not applicable|
 |Outlook Web App|iPhone 4 or later, iPad 2 or later, iPod Touch 4 or later|iOS 5 or later|On Office 365, Exchange Online, or on premise on Exchange Server 2013 or later|Safari|
-
-## Components of an Office Add-in solution
-
-
-A typical Office Add-in solution involves the following components:
-
-
-- A client device running the supported Office client - which can be a desktop, laptop, tablet, or smartphone (for Outlook add-ins on OWA for Devices).
-
-- For Access web apps, Word, Excel, PowerPoint, or Project:
-
-      - A database, document, workbook, presentation, or project.
-
-  - A task pane or content add-in that the user installed from the public Office Store or from a private SharePoint or file-based add-in catalog.
-
-- For Outlook:
-
-      - The user's email account and mailbox, which resides on an Exchange Server.
-
-  - An Outlook add-in that the user or Exchange Server administrator installed through the Exchange Admin Center (EAC).
-
-
- >**Note:**  The user's installation of an Office Add-in consists of a pointer to the corresponding XML manifest file, which specifies the URL from which to load the add-in webpage and script at run time.
-
-For all supported Office applications, the implementation of the Office Add-in itself consists of the following server-based components:
-
-
-- An XML manifest file which resides on a public or private add-in catalog, or the user's Exchange Server.
-
-- The add-in HTML, CSS, and JavaScript files, which the developer creates and which reside on a web server.
-
-- The JavaScript library files, such as JavaScript API for Office (Office.js) and the Microsoft AJAX Library (MicrosoftAjax.js), which Microsoft provides. The add-in accesses the JavaScript library files from content delivery network (CDN) URLs, as specified in its HTML file.
-
-- If you are using external JavaScript libraries from a CDN or using web services, ensure you access those resources using Secure Sockets Layer (SSL), otherwise you will get a browser warning when you run your add-in. To use SSL, add the https URL to your resource in the *SCRIPT* tag in your add-in.
-
-When a supported Office application starts, it reads the XML manifests for the add-ins that have been installed for or by the user. Subsequently, when a user starts an Office Add-in in the Office application, the following events occur:
-
-
-1. For Access web apps, Word, Excel, PowerPoint, or Project: When a user inserts the Office Add-in, or opens an Access web app, document, workbook, presentation, or project that already contains an add-in, the Office application loads the add-in, making its UI visible in the user interface.
-
-    For Outlook: Whenever the current Outlook context satisfies the activation conditions of an add-in, Outlook activates the add-in, making the add-in visible in the Outlook UI for selection.
-
-2. For Windows or web-based Office applications: The Office application opens the HTML page in a web browser control (desktop or ARM-specific client) or an  **iframe** (web client). The web browser control uses Internet Explorer 9 or later components and provides security and performance isolation.
-
-    For OS X-based Outlook for Mac: Outlook for Mac uses a sandboxed WebKit runtime host process to open the HTML page of an Outlook add-in, to help provide similar level of security and performance protection.
-
-3. The correspondng browser control,  **iframe**, or WebKit runtime host process loads the HTML body, and calls the event handler for the  **onload** event.
-
-4. The Office Add-ins framework calls the event handler for the [initialize](../../reference/shared/office.initialize.md) event of the [Office](../../reference/shared/office.md) object.
-
-5. When the HTML body finishes loading and the add-in finishes initializing, the main function of the add-in can proceed.
 
 
 ## Additional resources
 
 - [Office Add-ins platform overview](../../docs/overview/office-add-ins.md)
+- [Office Add-in host and platform availability](http://dev.office.com/add-in-availability)
 

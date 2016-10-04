@@ -2,7 +2,7 @@
 
 Specifies the options to be included in a search operation.
 
-_Applies to: Word 2016, Word for iPad, Word for Mac_
+_Applies to: Word 2016, Word for iPad, Word for Mac, Word Online_
 
 ## Properties
 | Property	   | Type	|Description
@@ -11,7 +11,7 @@ _Applies to: Word 2016, Word for iPad, Word for Mac_
 |ignoreSpace|bool|Gets or sets a value that indicates whether to ignore all white space between words. Corresponds to the Ignore white-space characters check box in the Find and Replace dialog box.|
 |matchCase|bool|Gets or sets a value that indicates whether to perform a case sensitive search. Corresponds to the Match case check box in the Find and Replace dialog box (Edit menu).|
 |matchPrefix|bool|Gets or sets a value that indicates whether to match words that begin with the search string. Corresponds to the Match prefix check box in the Find and Replace dialog box.|
-|matchSoundsLike|bool|Gets or sets a value that indicates whether to find words that sound similar to the search string. Corresponds to the Sounds like check box in the Find and Replace dialog box|
+|matchSoundsLike|bool|**This option was deprecated in the June 2016 update**. Gets or sets a value that indicates whether to find words that sound similar to the search string. Corresponds to the Sounds like check box in the Find and Replace dialog box|
 |matchSuffix|bool|Gets or sets a value that indicates whether to match words that end with the search string. Corresponds to the Match suffix check box in the Find and Replace dialog box.|
 |matchWholeWord|bool|Gets or sets a value that indicates whether to find operation only entire words, not text that is part of a larger word. Corresponds to the Find whole words only check box in the Find and Replace dialog box.|
 |matchWildCards|bool|Gets or sets a value that indicates whether the search will be performed using special search operators. Corresponds to the Use wildcards check box in the Find and Replace dialog box.|

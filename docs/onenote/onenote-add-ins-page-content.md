@@ -1,4 +1,4 @@
-# Work with OneNote page content (Preview)
+# Work with OneNote page content 
 
 In the OneNote add-ins JavaScript API, page content is represented by the following object model.
 
@@ -29,14 +29,22 @@ The OneNote add-in JavaScript API supports the following HTML for creating and u
 - `<html>`, `<body>`, `<div>`, `<span>`, `<br/>` 
 - `<p>`
 - `<img>`
+- `<a>`
 - `<ul>`, `<ol>`, `<li>` 
 - `<table>`, `<tr>`, `<td>`
 - `<h1>` ... `<h6>`
 - `<b>`, `<em>`, `<strong>`, `<i>`, `<u>`, `<del>`, `<sup>`, `<sub>`, `<cite>`
 
-## Additional Resources
+## Accessing page contents
 
-- [OneNote JavaScript API programming overview (Preview)](onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API reference (Preview)](../../reference/onenote/onenote-add-ins-javascript-reference.md)
-- [Rubric Grader sample (Preview)](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader-Preview)
+You are only able to access *Page Content* via `Page#load` for the currently
+active page. To change the active  page, invoke `navigateToPage($page)`.
+
+Metadata such as title can still be queried for any page.
+
+## Additional resources
+
+- [OneNote JavaScript API programming overview](onenote-add-ins-programming-overview.md)
+- [OneNote JavaScript API reference](../../reference/onenote/onenote-add-ins-javascript-reference.md)
+- [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office Add-ins platform overview](https://dev.office.com/docs/add-ins/overview/office-add-ins)

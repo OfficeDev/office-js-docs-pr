@@ -21,7 +21,7 @@ The options that are available depend on the Office host that you're targeting a
 
 > **NOTE:** SharePoint catalogs are not supported for Office 2016 for Mac. To deploy Office Add-ins to Mac clients, you must submit them to the [Office Store].    
 
-### Deployment Options for Word, Excel, and PowerPoint Add-ins
+### Deployment Options for Outlook Add-ins
 
 | Extension point     | Sideloading | Exchange server | Office Store |
 |:---------|:-----------:|:---------------:|:------------:|
@@ -29,6 +29,8 @@ The options that are available depend on the Office host that you're targeting a
 | Command  | X           | X               | X            |
 
 To broaden the reach of your add-in, make sure that it works across platforms. Office Add-ins are supported on Windows, Mac, Web, iOS and Android. For an overview of which features are supported by each platform, see [Office Add-in host and platform availability].   
+
+For information about licensing your Office Store add-ins, see [License your add-ins](https://msdn.microsoft.com/EN-US/library/office/jj163257.aspx).
 
 For information about how end users acquire, insert, and run add-ins, see [Start using your Office Add-in](https://support.office.com/en-ie/article/Start-using-your-Office-Add-in-82e665c4-6700-4b56-a3f3-ef5441996862?ui=en-US&rs=en-IE&ad=IE).
 

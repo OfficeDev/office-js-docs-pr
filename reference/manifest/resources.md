@@ -1,20 +1,22 @@
 # Resources element
 
-Contains icons, strings, and URLs for the [VersionOverrides](./versionoverrides.md) node. A manifest element specifies a resource by using the **Id** of the resource. This helps to keep the size of the manifest manageable, especially when resources have versions for different locales. An **Id** must be unique within the manifest and has a maximum of 32 characters.
+Contains icons, strings, and URLs for the [VersionOverrides](./versionoverrides.md) node. A manifest element specifies a resource by using the **id** of the resource. This helps to keep the size of the manifest manageable, especially when resources have versions for different locales. An **id** must be unique within the manifest and can have a maximum of 32 characters.
 
-The  **Resources** node defines the following resources. Each resource can have one or more **Override** child elements to define a resource for specific locales.
+Each resource can have one or more **Override** child elements to define a different resource for a specific locale.
 
 ## Child elements
 
 |  Element |  Type  |  Description  |
 |:-----|:-----|:-----|
 |  [Images](#images)            |  image   |  Provides the HTTPS URL to an image for an icon. |
-|  [Urls](#urls)                |  url     |  Provides an HTTPS URL location. |
-|  [ShotStrings](#shortstrings) |  string  |  The text for **Label** and **Title** elements. |
-|  [LongStrings](#longstrings)  |  string  | The text for **Description** attributes. |
+|  **Urls**                |  url     |  Provides an HTTPS URL location. A URL can have a maximum of 2048 characters. |
+|  **ShortStrings** |  string  |  The text for **Label** and **Title** elements. Each **String** contains a maximum of 125 characters.|
+|  **LongStrings**  |  string  | The text for **Description** attributes. Each **String** contains a maximum of 250 characters.|
 
-## Images
-Provides the HTTPS URL to an image for an icon. Each icon must have three  **Image** elements, one for each of the three mandatory sizes:
+>**Note**  You must use Secure Sockets Layer (SSL) for all URLs in the  **Image** and **Url** elements.
+
+### Images
+Each icon must have three  **Images** elements, one for each of the three mandatory sizes:
 - 16x16
 - 32x32
 - 80x80
@@ -28,16 +30,41 @@ The following additional sizes are also supported, but not required:
 
 > **Important: ** Outlook requires the ability to cache image resources for performance purposes. For this reason, the server hosting an image resource must not add any CACHE-CONTROL directives to the response header. This will result in Outlook automatically substituting a generic or default image.    
 
-## Urls
-Provides an HTTPS URL location. A URL can be a maximum of 2048 characters. 
 
-## ShortStrings
-The text for  **Label** and **Title** elements. Each **String** contains a maximum of 125 characters.
+## Resources examples 
 
-## LongStrings
-The text for  **Description** attributes. Each **String** contains a maximum of 250 characters.
+```XML
+<Resources>
+      <bt:Images>
+        <bt:Image id="icon1_16x16" DefaultValue="https://www.contoso.com/Images/icon_default.png">
+          <bt:Override Locale="ja-jp" Value="https://www.contoso.com/Images/ja-jp16-icon_default.png" />
+        </bt:Image>
+        <bt:Image id="icon1_32x32" DefaultValue="https://www.contoso.com/Images/icon_default.png">
+          <bt:Override Locale="ja-jp" Value="https://www.contoso.com/Images/ja-jp32-icon_default.png" />
+        </bt:Image>
+        <bt:Image id="icon1_80x80" DefaultValue="https://www.contoso.com/Images/icon_default.png">
+          <bt:Override Locale="ja-jp" Value="https://www.contoso.com/Images/ja-jp80-icon_default.png" />
+        </bt:Image>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="residDesktopFuncUrl" DefaultValue="https://www.contoso.com/Pages/Home.aspx">
+          <bt:Override Locale="ja-jp" Value="https://www.contoso.com/Pages/Home.aspx" />
+        </bt:Url>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="residLabel" DefaultValue="GetData">
+          <bt:Override Locale="ja-jp" Value="JA-JP-GetData" />
+        </bt:String>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="residToolTip" DefaultValue="Get data for your document.">
+          <bt:Override Locale="ja-jp" Value="JA-JP - Get data for your document." />
+        </bt:String>
+      </bt:LongStrings>
+    </Resources>
+```
 
-## Resources example 
+
 ```xml
 <Resources>
   <bt:Images>
@@ -64,3 +91,4 @@ The text for  **Description** attributes. Each **String** contains a maximum of 
   </bt:LongStrings>
 </Resources>
 ```
+

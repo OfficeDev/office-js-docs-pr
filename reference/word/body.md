@@ -2,7 +2,7 @@
 
 Represents the body of a document or a section.
 
-_Applies to: Word 2016, Word for iPad, Word for Mac_
+_Applies to: Word 2016, Word for iPad, Word for Mac, Word Online_
 
 ## Properties
 | Property	   | Type	|Description
@@ -33,7 +33,7 @@ _See property access [examples.](#property-access-examples)_
 |[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Inserts a document into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
 |[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts HTML at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
 |[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](#insertInlinePictureFromBase64base64EncodedImage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|Inserts a picture into the body at the specified location. The insertLocation value can be 'Start' or 'End'. |
-|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts OOXML or wordProcessingML at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.|
+|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts OOXML at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.|
 |[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Start' or 'End'.|
 |[insertText(text: string, insertLocation: InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|Inserts text into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
@@ -346,7 +346,7 @@ bodyObject.insertInlinePictureFromBase64(image, insertLocation);
 [InlinePicture](inlinepicture.md)
 
 ### insertOoxml(ooxml: string, insertLocation: InsertLocation)
-Inserts OOXML or wordProcessingML at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.
+Inserts OOXML at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.
 
 #### Syntax
 ```js
@@ -361,6 +361,9 @@ bodyObject.insertOoxml(ooxml, insertLocation);
 
 #### Returns
 [Range](range.md)
+
+#### Known issues
+This method results in long latency in Word Online, which can affect users' experience of your add-in. We recommend that you use this method only when no other solution is available. 
 
 #### Examples
 ```js

@@ -2,7 +2,7 @@
 
 Contains the collection of the document's [section](section.md) objects.
 
-_Applies to: Word 2016, Word for iPad, Word for Mac_
+_Applies to: Word 2016, Word for iPad, Word for Mac, Word Online_
 
 ## Properties
 | Property	   | Type	|Description

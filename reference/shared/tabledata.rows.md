@@ -20,7 +20,7 @@ Returns an array of arrays that contains the data in the table. Returns an empty
 
 ## Remarks
 
-To specify rows, you must specify an array of arrays that corresponds to the structure of the table. For example, to specify two rows of  **string** values in a two-column table you would set the **row** property to ` [['a', 'b'], ['c', 'd']]`.
+To specify rows, you must specify an array of arrays that corresponds to the structure of the table. For example, to specify two rows of  **string** values in a two-column table you would set the **rows** property to ` [['a', 'b'], ['c', 'd']]`.
 
 If you specify  **null** for the **rows** property (or leave the property empty when you construct a **TableData** object), the following results occur when your code executes:
 

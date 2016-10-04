@@ -1,7 +1,6 @@
 # Paragraph Object (JavaScript API for OneNote)
 
 _Applies to: OneNote Online_  
-_Note: This API is in preview_  
 
 
 A container for the visible content on a page. A Paragraph can contain any one ParagraphType type of content.
@@ -18,10 +17,16 @@ _See property access [examples.](#property-access-examples)_
 ## Relationships
 | Relationship | Type	|Description| Feedback|
 |:---------------|:--------|:----------|:-------|
-|image|[Image](image.md)|Gets the Image object in the Paragraph. Returns null if ParagraphType is not Image. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-image)|
+|image|[Image](image.md)|Gets the Image object in the Paragraph. Throws an exception if ParagraphType is not Image. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-image)|
+|inkWords|[InkWordCollection](inkwordcollection.md)|Gets the Ink collection in the Paragraph. Throws an exception if ParagraphType is not Ink. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-inkWords)|
 |outline|[Outline](outline.md)|Gets the Outline object that contains the Paragraph. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-outline)|
-|richText|[RichText](richtext.md)|Gets the RichText object in the Paragraph. Returns null if ParagraphType is not RichText. Read-only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-richText)|
-|table|[Table](table.md)|Gets the Table object in the Paragraph. Returns null if ParagraphType is not Table. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-table)|
+|paragraphs|[ParagraphCollection](paragraphcollection.md)|The collection of paragraphs under this paragraph. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-paragraphs)|
+|parentParagraph|[Paragraph](paragraph.md)|Gets the parent paragraph object. Throws if a parent paragraph does not exist. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-parentParagraph)|
+|parentParagraphOrNull|[Paragraph](paragraph.md)|Gets the parent paragraph object. Returns null if a parent paragraph does not exist. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-parentParagraphOrNull)|
+|parentTableCell|[TableCell](tablecell.md)|Gets the TableCell object that contains the Paragraph if one exists. If parent is not a TableCell, throws ItemNotFound. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-parentTableCell)|
+|parentTableCellOrNull|[TableCell](tablecell.md)|Gets the TableCell object that contains the Paragraph if one exists. If parent is not a TableCell, returns null. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-parentTableCellOrNull)|
+|richText|[RichText](richtext.md)|Gets the RichText object in the Paragraph. Throws an exception if ParagraphType is not RichText. Read-only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-richText)|
+|table|[Table](table.md)|Gets the Table object in the Paragraph. Throws an exception if ParagraphType is not Table. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-table)|
 
 ## Methods
 
@@ -33,7 +38,6 @@ _See property access [examples.](#property-access-examples)_
 |[insertRichTextAsSibling(insertLocation: string, paragraphText: string)](#insertrichtextassiblinginsertlocation-string-paragraphtext-string)|[RichText](richtext.md)|Inserts the paragraph text at the specifiec insert location.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-insertRichTextAsSibling)|
 |[insertTableAsSibling(insertLocation: string, rowCount: number, columnCount: number, values: string[][])](#inserttableassiblinginsertlocation-string-rowcount-number-columncount-number-values-string)|[Table](table.md)|Adds a table with the specified number of rows and columns before or after the current paragraph.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-insertTableAsSibling)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-load)|
-|[select()](#select)|void|Selects the paragraph|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-select)|
 
 ## Method Details
 
@@ -288,55 +292,6 @@ object.load(param);
 
 #### Returns
 void
-
-### select()
-Selects the paragraph
-
-#### Syntax
-```js
-paragraphObject.select();
-```
-
-#### Parameters
-None
-
-#### Returns
-void
-
-#### Examples
-```js
-OneNote.run(function (context) {
-
-	// Get the collection of pageContent items from the page.
-	var pageContents = context.application.getActivePage().contents;
-
-	// Get the first PageContent on the page
-	// Assuming its an outline, get the outline's paragraphs.
-	var pageContent = pageContents.getItemAt(0);
-	var paragraphs = pageContent.outline.paragraphs;
-
-	var firstParagraph = paragraphs.getItemAt(0);
-
-	// Queue a command to load the id and type of the first paragraph
-	firstParagraph.load("id,type");
-
-	// Queue a command to select the first paragraph  
-	firstParagraph.select();
-
-	// Run the queued commands, and return a promise to indicate task completion.
-	return context.sync()
-		.then(function () {
-			console.log("Selected paragraph with id : " + firstParagraph.id + " and type: " + firstParagraph.type);
-			return Promise.resolve(firstParagraph);
-		});
-})		
-.catch(function(error) {
-	console.log("Error: " + error);
-	if (error instanceof OfficeExtension.Error) {
-		console.log("Debug info: " + JSON.stringify(error.debugInfo));
-	}
-}); 
-```
 ### Property access examples
 
 **id and type**
@@ -373,5 +328,41 @@ OneNote.run(function (context) {
 		console.log("Debug info: " + JSON.stringify(error.debugInfo));
 	}
 }); 
+```
+
+**paragraphs**
+```js
+OneNote.run(function(context) {
+	var app = context.application;
+	
+	// Gets the active outline
+	var outline = app.getActiveOutline();
+	
+	// load nested paragraphs and their types.
+	outline.load("paragraphs/type");
+	
+	return context.sync().then(function () {
+		var paragraphs = outline.paragraphs.items;
+		
+		var promise;
+		// for each nested paragraphs, load tables only
+		for (var i = 0; i < paragraphs.length; i++) {
+			var paragraph = paragraphs[i];
+			if (paragraph.type == "Table") {
+				paragraph.load("table/id");
+				promise =  context.sync().then(function() {
+					console.log(paragraph.table.id);
+				});
+			}
+		}
+		return promise;
+	})
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
 ```
 

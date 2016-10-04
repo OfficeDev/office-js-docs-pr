@@ -14,9 +14,6 @@ Office.context
 
 ## Members
 
-
-**Properties**
-
 |||
 |:-----|:-----|
 |Name|Description|
@@ -25,7 +22,8 @@ Office.context
 |[displayLanguage](../../reference/shared/office.context.displaylanguage.md)|Gets the locale (language) for the UI of the hosting application.|
 |[document](../../reference/shared/office.context.document.md)|Gets an object that represents the document the content or task pane add-in is interacting with.|
 |[mailbox](../../reference/shared/office.context.mailbox.md)|Gets the  **mailbox** object that provides access to members of the API that are specifically for Outlook add-ins.|
-|[officeTheme](../../reference/shared/office.context.officetheme.md)|Provides access to the properties for Office theme colors|
+|[officeTheme](../../reference/shared/office.context.officetheme.md)|Provides access to the properties for Office theme colors.|
+|[ui](../../reference/shared/officeui)|Provides objects and methods that you can use to create and manipulate UI components, such as dialog boxes.|
 |[roamingSettings](../../reference/shared/office.context.roamingsettings.md)|Gets an object that represents the saved custom settings of the add-in.|
 |[touchEnabled](../../reference/shared/office.context.touchenabled.md)|Gets whether the add-in is running in an Office host application that is touch enabled.|
 
