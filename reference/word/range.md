@@ -7,7 +7,7 @@ _Applies to: Word 2016, Word for iPad, Word for Mac, Word Online_
 ## Properties
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|style|string|Gets or sets the style used for the range. This is the name of the pre-installed or custom style.|
+|style|string|Gets or sets the style used for the range. This is the name of the pre-installed or custom style. In Word Online there are additional pitfalls on allowed style names: if a style-name only contains alphabetic characters, then the style *must* be all lower-case, except for the first character, which *must* be upper-case. If the style contains at least one non-alphabetic character, then it will be matched against known styles case-insensitively, and if multiple styles match, the last one defined will be chosen.|
 |text|string|Gets the text of the range. Read-only.|
 
 ## Relationships
