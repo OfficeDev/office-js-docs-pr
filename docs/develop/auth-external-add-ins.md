@@ -24,8 +24,6 @@ For services that support it, we provide a JavaScript library that does all the 
 
 [Office-js-helpers](https://github.com/OfficeDev/office-js-helpers)
 
-The \demo folder of the repo contains a sample add-in that uses the library to access some popular services including Google, Facebook, and Office 365.
-
 See also the **Libraries** section later in this article.
 
 ## Using the Authorization Code flow in Office Add-ins

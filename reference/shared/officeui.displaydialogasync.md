@@ -47,7 +47,7 @@ More platforms are coming soon.
 ## Syntax
 
 ```js
-office.context.ui.displayDialogAsync(startAddress, options, callback);
+Office.context.ui.displayDialogAsync(startAddress, options, callback);
 ```
 ##Examples
 
