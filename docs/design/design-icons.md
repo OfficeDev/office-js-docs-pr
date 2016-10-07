@@ -98,10 +98,6 @@ All modifiers should have a 1px transparent cutout between each element, includi
 
 Office icons have a limited color palette. Use the colors listed in the following table to guarantee seamless integration with the Office UI.  
 
-- Use color to communicate meaning rather than for embellishment. It should highlight or emphasize an action, status, or an element that explicitly differentiates the mark.  
-- If possible, use only one additional color beyond gray. Limit additional colors to two at the most.
-- Colors should have a consistent appearance in all icon sizes. Office icons have slightly different color palettes for different icon sizes. 16px and smaller icons are slightly darker and more vibrant than 32px and larger icons. Without these subtle adjustments, colors appear to vary across sizes.  
-
 |**Color name**|**RGB**|**Hex**|**Color**|**Category**|
 |:---|:---|:---|:---|:---|
 |Text Gray (80)|80, 80, 80|#505050||Text|
@@ -124,6 +120,10 @@ Office icons have a limited color palette. Use the colors listed in the followin
 |Red 16|214, 85, 50|#D65532||16 and below|
 |Purple 32|152, 104, 185|#986889||32 and above|
 |Purple 16|137, 89, 171|#8959AB||16 and below|
+
+- Use color to communicate meaning rather than for embellishment. It should highlight or emphasize an action, status, or an element that explicitly differentiates the mark.  
+- If possible, use only one additional color beyond gray. Limit additional colors to two at the most.
+- Colors should have a consistent appearance in all icon sizes. Office icons have slightly different color palettes for different icon sizes. 16px and smaller icons are slightly darker and more vibrant than 32px and larger icons. Without these subtle adjustments, colors appear to vary across sizes.  
 
 ## Icon best practices
 Follow these best practices when you create your icons:
