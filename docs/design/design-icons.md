@@ -14,7 +14,7 @@ Office icons are based on the following design principles:
 
 The following image shows the original icons and the new icons that apply modern design principles.
 
-![Image showing old Office icons and the refreshed modern interpretation of the icons]()
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../images/icons_image.png)
 
 ## Icon size recommendations and requirements
 
@@ -61,7 +61,7 @@ To create commands that align with the Office UI, follow layout guidelines for t
 
 The following image shows the layout of base elements and modifiers in an Office icon.
 
-![Image showing an icon base element in the center with a modifier on the lower right and an action modifier on the upper left]()
+![Image showing an icon base element in the center with a modifier on the lower right and an action modifier on the upper left](../images/icon_layout.png)
 
 - Center base elements in the pixel frame with empty padding all around.
 - Place action modifiers on the top left. 
