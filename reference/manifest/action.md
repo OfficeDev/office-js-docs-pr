@@ -40,7 +40,9 @@ Required element when  **xsi:type** is "ShowTaskpane". Specifies the source file
 ```  
 
 ## TaskpaneId
-Not supported in Outlook. Optional element when  **xsi:type** is "ShowTaskpane". Specifies the Id of the taskpane container. When you have multiple "ShowTaskpane" actions, use a different TaskpaneId if you want an independent pane for each. Use the same TaskpaneId for  different actions to share the same pane; when users click on commands sharing the same TaskpaneId the pane container will remain open but the contents of the pane will be replaced with the corresponding Action "SourceLocation"; the snippet below illustrates two Actions sharing the same TaskpaneId. 
+Optional element when  **xsi:type** is "ShowTaskpane". Specifies the ID of the task pane container. When you have multiple "ShowTaskpane" actions, use a different **TaskpaneId** if you want an independent pane for each. Use the same **TaskpaneId** for  different actions that share the same pane. When users choose commands that share the same **TaskpaneId**, the pane container will remain open but the contents of the pane will be replaced with the corresponding Action "SourceLocation". The following example shows two Actions that share the same **TaskpaneId**. 
+
+>**Note:** This attribute is not supported in Outlook.
 
 ```xml
  <Action xsi:type="ShowTaskpane">
