@@ -51,7 +51,7 @@ The following table lists the locations for certain icon sizes.
 |Small ribbon button|16px|32px|40px|
 |Contextual menu|16px|32px|40px|
 |Quick access toolbar (QAT)|16px|32px|40px|
-Large ribbon icon|32px|64px|80px|
+|Large ribbon icon|32px|64px|80px|
 
 ## Icon anatomy and layout
 
