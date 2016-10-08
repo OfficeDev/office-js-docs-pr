@@ -164,20 +164,22 @@ function addOutlineToPage() {
 6 - The add-in opens in an iFrame next to the OneNote page. Enter some text in the text area and then choose **Add outline**. The text you entered is added to the page. 
 
 ## Troubleshooting and tips
-- You can debug the add-in using your browser's developer tools. When you're using the Gulp web server and debugging in Internet Explorer or Chrome, you can save your changes locally and then just refresh the add-in's iFrame.
+-You can debug the add-in using your browser's developer tools. When you're using the Gulp web server and debugging in Internet Explorer or Chrome, you can save your changes locally and then just refresh the add-in's iFrame.
 
-- When you inspect a OneNote object, the properties that are currently available for use display actual values. Properties that need to be loaded display *undefined*. Expand the `_proto_` node to see properties that are defined on the object but are not yet loaded.
+-When you inspect a OneNote object, the properties that are currently available for use display actual values. Properties that need to be loaded display *undefined*. Expand the `_proto_` node to see properties that are defined on the object but are not yet loaded.
 
       ![Unloaded OneNote object in the debugger](../../images/onenote-debug.png)
 
-- You need to enable mixed content in the browser if your add-in uses any HTTP resources. Production add-ins should use only secure HTTPS resources.
+-You need to enable mixed content in the browser if your add-in uses any HTTP resources. Production add-ins should use only secure HTTPS resources.
 
--  Task pane add-ins can be opened from anywhere, but content add-ins can only be inserted inside regular page content (i.e. not in titles, images, iFrames, etc.). 
+-Task pane add-ins can be opened from anywhere, but content add-ins can only be inserted inside regular page content (i.e. not in titles, images, iFrames, etc.). 
 
 ## Additional Resources
 
-- [OneNote JavaScript API programming overview](onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API reference](../../reference/onenote/onenote-add-ins-javascript-reference.md)
-- [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-- [Office Add-ins platform overview](https://dev.office.com/docs/add-ins/overview/office-add-ins)
+-[OneNote JavaScript API programming overview](onenote-add-ins-programming-overview.md)
 
+-[OneNote JavaScript API reference](../../reference/onenote/onenote-add-ins-javascript-reference.md)
+
+-[Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
+
+-[Office Add-ins platform overview](https://dev.office.com/docs/add-ins/overview/office-add-ins)
