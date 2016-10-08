@@ -488,7 +488,7 @@ Word.run(function (context) {
 ```
 
 ### insertText(text: string, insertLocation: InsertLocation)
-Inserts text into the range at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
+Inserts text into the range at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', ‘Before’ or ‘After’.
 
 #### Syntax
 ```js
