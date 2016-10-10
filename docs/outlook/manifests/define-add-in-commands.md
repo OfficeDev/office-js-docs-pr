@@ -20,7 +20,7 @@ The VersionOverrides element includes the following child elements:
 
 The following diagram shows the hierarchy of elements used to define add-in commands. 
 
-![Hierarchy of add-in commands elements in the manifest](../../images/080da303-51c4-4882-b74a-7ba11517c0ad.png)
+![Hierarchy of add-in commands elements in the manifest](../../../images/080da303-51c4-4882-b74a-7ba11517c0ad.png)
 
 ## Rule changes for Outlook add-in commands
 
