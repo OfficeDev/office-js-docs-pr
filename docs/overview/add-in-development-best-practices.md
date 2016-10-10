@@ -62,29 +62,7 @@ For templates that illustrate patterns that you can apply as you develop your fi
 
      >**Note**  Add-ins that take up too much space might not pass [Office Store validation](https://msdn.microsoft.com/en-us/library/jj220035.aspx).
 
-- For all icons:
-	- Provide meaningful icons and [labels](http://msdn.microsoft.com/library/8cef4fce-e6a1-459b-951f-47ac03ec95a6%28Office.15%29.aspx) for buttons that clearly identify the action the user is taking.
-
-
- - Use PNG format with a transparent background.
-
- - Include [all eight supported sizes](https://msdn.microsoft.com/EN-US/library/mt267547.aspx#bk_resources). This creates the best experience for all supported resolutions.
-
-  - Match the Office visual style. For example:
-
-    - Keep your shapes simple and avoid multiple colors. Complex graphics are difficult to see at smaller sizes and resolutions.
-
-    - Don't reuse visual metaphors for dissimilar commands. The same icon used for different actions will cause confusion.
-
-    - Make your button labels clear and succinct. Use a combination of visual and textual information to convey meaning.
-
-    - Test your icons in light and dark Office themes and high contrast settings. Note that icons might be difficult to see on dark backgrounds or in high contrast mode.
-
-    - Use consistent icon sizes and positions to help with visual alignment on the ribbon.
-
-
-    ![A screenshot that shows add-in command buttons that match the Office style next to buttons that don't match the style](../../images/31e11214-61e8-41c1-888c-29d167cb9486.png)
-
+- For all icons, follow the [icon design guidelines](../design/design-icons.md).
 
 - Provide a version of your add-in that also works on hosts that do not support commands. A single add-in manifest can work in both command-aware (with commands) and non-command-aware (as a taskpane) hosts.
 
