@@ -63,12 +63,12 @@ The following table specifies the elements that are required for the three types
 
 ## Validate the Office Add-ins manifest
 
-To help to make sure that the manifest file that describes your Office Add-in is correct and complete, validate it against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas) files. You can use an XML schema validation tool or Visual Studio to validate the manifest. 
+To help to make sure that the manifest file that describes your Office Add-in is correct and complete, validate it against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas) files. You can use an XML schema validation tool or [Visual Studio](../get-started/create-and-debug-office-add-ins-in-visual-studio.md) to validate the manifest. 
 
 To use a command-line XML schema validation tool to validate your manifest:
 
 1.	Install [tar](https://www.gnu.org/software/tar/) and [libxml](http://xmlsoft.org/FAQ.html), if you haven't already. 
-2.	Run the following command, replacing XSD_FILE with the path to the manifest XSD file and XML_FILE with the path to the manifest XML file.
+2.	Run the following command. Replace XSD_FILE with the path to the manifest XSD file and XML_FILE with the path to the manifest XML file.
 
 	xmllint --noout --schema XSD_FILE XML_FILE
 
