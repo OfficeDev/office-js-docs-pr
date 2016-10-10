@@ -108,9 +108,9 @@ For templates that illustrate patterns that you can apply as you develop your fi
 
 - Do not include unlicensed images.
 
-- Use [clear and simple language](http://msdn.microsoft.com/library/8cef4fce-e6a1-459b-951f-47ac03ec95a6%28Office.15%29.aspx) in your add-in.
+- Use [clear and simple language](../design/voice-guidelines.md) in your add-in.
 
-- Account for [accessibility](http://msdn.microsoft.com/library/3be1abbb-237a-48ec-8e17-72caa25a3cb2%28Office.15%29.aspx) - make your add-in easy for all users to interact with, and accommodate assistive technologies such as screen readers.
+- Account for [accessibility](../design/accessibility-guidelines.md) - make your add-in easy for all users to interact with, and accommodate assistive technologies such as screen readers.
 
 - Design for all platforms and input methods, including mouse/keyboard and [touch](#optimize-for-touch). Ensure that your UI is responsive to different form factors.
 
