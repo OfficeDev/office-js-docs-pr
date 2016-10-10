@@ -459,7 +459,7 @@ Word.run(function (context) {
 ```
 
 ### insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
-Inserts a picture into the paragraph at the specified location. The insertLocation value can be 'Before', 'After', 'Start', or 'End'.
+Inserts a picture into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start', or 'End'.
 
 #### Syntax
 ```js
