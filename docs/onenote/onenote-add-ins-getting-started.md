@@ -152,8 +152,10 @@ function addOutlineToPage() {
 3 - Go to [OneNote Online](https://www.onenote.com/notebooks) and open a notebook.
 
 4 - Choose **Insert > Office Add-ins**. This opens the Office Add-ins dialog.
-  - If you're logged in with your consumer account, choose the **MY ADD-INS** tab, and then choose  **Upload My Add-in**.
-  - If you're logged in with your work or school account, choose the **MY ORGANIZATION** tab, and then choose  **Upload My Add-in**. 
+
+  -If you're logged in with your consumer account, choose the **MY ADD-INS** tab, and then choose  **Upload My Add-in**.
+  
+  -If you're logged in with your work or school account, choose the **MY ORGANIZATION** tab, and then choose  **Upload My Add-in**. 
   
   The following image shows the **MY ADD-INS** tab for consumer notebooks.
 
