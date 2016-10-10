@@ -39,14 +39,14 @@ _Applies to: Word 2016, Word for iPad, Word for Mac, Word Online_
 |[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location. A break can only be inserted into paragraphs that are contained within the main document body, except if it is a line break which can be inserted into any body object. The insertLocation value can be 'After' or 'Before'.|
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the paragraph object with a rich text content control.|
 |[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Inserts a document into the current paragraph at the specified location. The insertLocation value can be 'Start' or 'End'.|
-|[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts HTML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
+|[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts HTML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start', or 'End'.|
 |[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|Inserts a picture into the paragraph at the specified location. The insertLocation value can be 'Before', 'After', 'Start' or 'End'.|
-|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts OOXML or wordProcessingML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
+|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts OOXML or wordProcessingML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start', or 'End'.|
 |[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|
-|[insertText(text: string, insertLocation: InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|Inserts text into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
+|[insertText(text: string, insertLocation: InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|Inserts text into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start', or 'End'.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 |[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the paragraph object. The search results are a collection of range objects.|
-|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects and navigates the Word UI to the paragraph. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.|
+|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects and navigates the Word UI to the paragraph. The selection mode can be 'Select', 'Start', or 'End'. 'Select' is the default.|
 
 ## Method details
 
@@ -350,7 +350,7 @@ Word.run(function (context) {
 The [Word-Add-in-DocumentAssembly][paragraph.insertContentControl] sample shows how you can use the insertContentControl method.
 
 ### insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
-Inserts a document into the current paragraph at the specified location. The insertLocation value can be ‘Replace’, 'Start' or 'End'.
+Inserts a document into the current paragraph at the specified location. The insertLocation value can be ‘Replace’, 'Start', or 'End'.
 
 #### Syntax
 ```js
@@ -404,7 +404,7 @@ Word.run(function (context) {
 ```
 
 ### insertHtml(html: string, insertLocation: InsertLocation)
-Inserts HTML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
+Inserts HTML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start', or 'End'.
 
 #### Syntax
 ```js
@@ -415,7 +415,7 @@ paragraphObject.insertHtml(html, insertLocation);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |html|string|Required. The HTML to be inserted in the paragraph.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start' or 'End'.|
+|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start', or 'End'.|
 
 #### Returns
 [Range](range.md)
@@ -459,7 +459,7 @@ Word.run(function (context) {
 ```
 
 ### insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
-Inserts a picture into the paragraph at the specified location. The insertLocation value can be 'Before', 'After', 'Start' or 'End'.
+Inserts a picture into the paragraph at the specified location. The insertLocation value can be 'Before', 'After', 'Start', or 'End'.
 
 #### Syntax
 ```js
@@ -470,7 +470,7 @@ paragraphObject.insertInlinePictureFromBase64(base64EncodedImage, insertLocation
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |base64EncodedImage|string|Required. The HTML to be inserted in the paragraph.|
-|insertLocation|InsertLocation|Required. The value can be 'Before', 'After', 'Start' or 'End'.|
+|insertLocation|InsertLocation|Required. The value can be 'Before', 'After', 'Start', or 'End'.|
 
 #### Returns
 [InlinePicture](inlinepicture.md)
@@ -517,7 +517,7 @@ Word.run(function (context) {
 The [Word-Add-in-DocumentAssembly][paragraph.insertpicture] sample provides another example of how to insert an image into a paragraph.
 
 ### insertOoxml(ooxml: string, insertLocation: InsertLocation)
-Inserts OOXML or wordProcessingML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
+Inserts OOXML or wordProcessingML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start', or 'End'.
 
 #### Syntax
 ```js
@@ -528,7 +528,7 @@ paragraphObject.insertOoxml(ooxml, insertLocation);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |ooxml|string|Required. The OOXML or wordProcessingML to be inserted in the paragraph.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start' or 'End'.|
+|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start', or 'End'.|
 
 #### Returns
 [Range](range.md)
@@ -632,7 +632,7 @@ Word.run(function (context) {
 ```
 
 ### insertText(text: string, insertLocation: InsertLocation)
-Inserts text into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
+Inserts text into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start', or 'End'.
 
 #### Syntax
 ```js
@@ -643,7 +643,7 @@ paragraphObject.insertText(text, insertLocation);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |text|string|Required. Text to be inserted.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start' or 'End'.|
+|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start', or 'End'.|
 
 #### Returns
 [Range](range.md)
@@ -775,7 +775,7 @@ paragraphObject.select(selectionMode);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|selectionMode|SelectionMode|Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.|
+|selectionMode|SelectionMode|Optional. The selection mode can be 'Select', 'Start', or 'End'. 'Select' is the default.|
 
 #### Returns
 void
