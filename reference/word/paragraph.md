@@ -350,7 +350,7 @@ Word.run(function (context) {
 The [Word-Add-in-DocumentAssembly][paragraph.insertContentControl] sample shows how you can use the insertContentControl method.
 
 ### insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
-Inserts a document into the current paragraph at the specified location. The insertLocation value can be 'Start' or 'End'.
+Inserts a document into the current paragraph at the specified location. The insertLocation value can be ‘Replace’, 'Start' or 'End'.
 
 #### Syntax
 ```js
