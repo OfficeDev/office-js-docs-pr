@@ -16,8 +16,8 @@ The following image shows the original icons and the new icons that apply modern
 
 ![Image showing old Office icons and the refreshed modern interpretation of the icons](../../images/icons_image.PNG)
 
-## Icon best practices
-Follow these best practices when you create your icons: 
+## Icon guidelines
+Follow these guidelines when you create your icons: 
 
 - Stick to the 1px grid and use a bitmap editing tool for best results.  
 - Redraw, don't resize. As you resize your icons for larger or smaller sizes, take the time to redraw cutouts, corners, and rounded edges to maximize line clarity. 
