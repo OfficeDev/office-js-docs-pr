@@ -108,7 +108,7 @@ Office icons have a limited color palette. Use the colors listed in the followin
 |Dark Gray 16|114, 114, 114|#727272||16 and below|
 |Medium Gray 16|144, 144, 144|#909090||16 and below|
 |Blue 32|77, 130, 184|#4d82B8||32 and above|
-|Blue 16|74, 125, 177|#4A7D81||16 and below|
+|Blue 16|74, 125, 177|#4A7D81|![Blue 16 color image](../../images/blue_16.GIF)|16 and below|
 |Yellow ALL|234, 194, 130|#EAC282||All sizes|
 |Orange 32|231, 142, 70|#E78E46||32 and above|
 |Orange 16|227, 142, 70|#E3751C||16 and below|
