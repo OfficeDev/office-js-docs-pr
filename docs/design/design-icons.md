@@ -14,7 +14,7 @@ Office icons are based on the following design principles:
 
 The following image shows the original icons and the new icons that apply modern design principles.
 
-![Image showing old Office icons and the refreshed modern interpretation of the icons](../../images/icons_image.png)
+![Image showing old Office icons and the refreshed modern interpretation of the icons](../../images/icons_image.PNG)
 
 ## Icon size recommendations and requirements
 
@@ -41,8 +41,7 @@ The following table shows the icon sizes that render for different modes at diff
 |250%|40px||||80px||120px|
 |300%|48px||||96px||144px
 
->**Note:** At DPI settings of 150% or greater, the icon does not get swapped out for a larger size when Touch mode is engaged. At DPI settings greater than 250%, Touch mode is t
-urned off by default.
+>**Note:** At DPI settings of 150% or greater, the icon does not get swapped out for a larger size when Touch mode is engaged. At DPI settings greater than 250%, Touch mode is turned off by default.
 
 The following table lists the locations for certain icon sizes.
 
@@ -61,7 +60,7 @@ To create commands that align with the Office UI, follow layout guidelines for t
 
 The following image shows the layout of base elements and modifiers in an Office icon.
 
-![Image showing an icon base element in the center with a modifier on the lower right and an action modifier on the upper left](../../images/icon_layout.png)
+![Image showing an icon base element in the center with a modifier on the lower right and an action modifier on the upper left](../../images/icon_layout.PNG)
 
 - Center base elements in the pixel frame with empty padding all around.
 - Place action modifiers on the top left. 
