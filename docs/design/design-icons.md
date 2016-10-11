@@ -109,7 +109,7 @@ All modifiers should have a 1px transparent cutout between each element, includi
 
 ## Icon colors
 
-Office icons have a limited color palette. Use the colors listed in the following table to guarantee seamless integration with the Office UI. Apply the following guidelines to the use of color: 
+Office icons have a limited color palette. Use the colors listed in the following table to guarantee seamless integration with the Office UI. Apply the following guidelines to the use of color: 
 
 - Use color to communicate meaning rather than for embellishment. It should highlight or emphasize an action, status, or an element that explicitly differentiates the mark.  
 - If possible, use only one additional color beyond gray. Limit additional colors to two at the most.
