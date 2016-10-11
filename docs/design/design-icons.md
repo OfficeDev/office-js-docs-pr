@@ -16,6 +16,20 @@ The following image shows the original icons and the new icons that apply modern
 
 ![Image showing old Office icons and the refreshed modern interpretation of the icons](../../images/icons_image.PNG)
 
+## Icon best practices
+Follow these best practices when you create your icons: 
+
+- Stick to the 1px grid and use a bitmap editing tool for best results.  
+- Redraw, don't resize. As you resize your icons for larger or smaller sizes, take the time to redraw cutouts, corners, and rounded edges to maximize line clarity. 
+- Remove artifacts that make your icon look messy.
+- Don't reuse Office UI Fabric icons in the Office ribbon or contextual menu. Fabric icons are stylistically different and will not match. 
+- Use a white fill for accessibility. Most objects in your icons will require a white background to be legible across Office UI themes and in high-contrast modes.  
+- Use the PNG format with a transparent background. 
+- Avoid localizable content in your icons, including typographic characters, indications of paragraph rags, and question marks. 
+- Don't reuse visual metaphors for different commands. Using the same icon for different actions can cause confusion. 
+- Make your button labels clear and succinct. Use a combination of visual and textual information to convey meaning. 
+
+
 ## Icon size recommendations and requirements
 
 Office 2016 desktop icons are bitmap images. Different sizes will render depending on the user's DPI setting and touch mode. Include all eight supported sizes to create the best experience in all supported resolutions and contexts. The following are the supported sizes - three are required:
@@ -123,19 +137,6 @@ Office icons have a limited color palette. Use the colors listed in the followin
 - Use color to communicate meaning rather than for embellishment. It should highlight or emphasize an action, status, or an element that explicitly differentiates the mark.  
 - If possible, use only one additional color beyond gray. Limit additional colors to two at the most.
 - Colors should have a consistent appearance in all icon sizes. Office icons have slightly different color palettes for different icon sizes. 16px and smaller icons are slightly darker and more vibrant than 32px and larger icons. Without these subtle adjustments, colors appear to vary across sizes.  
-
-## Icon best practices
-Follow these best practices when you create your icons:
-
-- Stick to the 1px grid and use a bitmap editing tool for best results.  
-- Redraw, don't resize. As you resize your icons for larger or smaller sizes, take the time to redraw cutouts, corners, and rounded edges to maximize line clarity. 
-- Remove artifacts that make your icon look messy.
-- Don't reuse Office UI Fabric icons in the Office ribbon or contextual menu. Fabric icons are stylistically different and will not match. 
-- Use a white fill for accessibility. Most objects in your icons will require a white background to be legible across Office UI themes and in high-contrast modes.  
-- Use the PNG format with a transparent background. 
-- Avoid localizable content in your icons, including typographic characters, indications of paragraph rags, and question marks. 
-- Don't reuse visual metaphors for different commands. Using the same icon for different actions can cause confusion. 
-- Make your button labels clear and succinct. Use a combination of visual and textual information to convey meaning. 
 
 
 ## Additional resources
