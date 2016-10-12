@@ -64,6 +64,8 @@ The following table specifies the elements that are required for the three types
 
 To help to make sure that the manifest file that describes your Office Add-in is correct and complete, validate it against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas) files. You can use an XML schema validation tool or [Visual Studio](../get-started/create-and-debug-office-add-ins-in-visual-studio.md) to validate the manifest. 
 
+To use Visual Studio, go to Build > Publish, and choose **Perform Validation check**.
+
 To use a command-line XML schema validation tool to validate your manifest:
 
 1.	Install [tar](https://www.gnu.org/software/tar/) and [libxml](http://xmlsoft.org/FAQ.html), if you haven't already. 
