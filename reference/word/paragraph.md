@@ -361,7 +361,7 @@ paragraphObject.insertFileFromBase64(base64File, insertLocation);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |base64File|string|Required. The file base64 encoded file contents to be inserted.|
-|insertLocation|InsertLocation|Required. The value can be 'Start' or 'End'.|
+|insertLocation|InsertLocation|Required. The value can be ‘Replace’, 'Start' or 'End'.|
 
 #### Returns
 [Range](range.md)
@@ -470,7 +470,7 @@ paragraphObject.insertInlinePictureFromBase64(base64EncodedImage, insertLocation
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |base64EncodedImage|string|Required. The HTML to be inserted in the paragraph.|
-|insertLocation|InsertLocation|Required. The value can be 'Before', 'After', 'Start', or 'End'.|
+|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start', or 'End'.|
 
 #### Returns
 [InlinePicture](inlinepicture.md)
