@@ -4,7 +4,7 @@
 
 ## Office icon design principles
 
-The Office 2013 release of the Office desktop clients includes refreshed iconography. The overriding stylistic change is reduction. The new modern icons include only essential communicative elements. Non-essential elements including perspective, gradients, and light source are removed. The simplified icons support faster parsing of commands and controls. 
+The Office 2013 release of the Office desktop clients includes refreshed iconography. The overriding stylistic change is reduction. The new icons include only essential communicative elements. Non-essential elements including perspective, gradients, and light source are removed. The simplified icons support faster parsing of commands and controls. Follow this style to best fit with Office.
 
 Office icons are based on the following design principles: 
 
@@ -12,7 +12,7 @@ Office icons are based on the following design principles:
 - Fresh yet familiar  
 - Simple, clear, and direct 
 
-The following image shows the original icons and the new icons that apply modern design principles.
+The following image shows icons that apply the modern design principles.
 
 ![Image showing old Office icons and the refreshed modern interpretation of the icons](../../images/icons_image.PNG)
 
@@ -23,6 +23,7 @@ Follow these guidelines when you create your icons:
 - Redraw, don't resize. As you resize your icons for larger or smaller sizes, take the time to redraw cutouts, corners, and rounded edges to maximize line clarity. 
 - Remove artifacts that make your icon look messy.
 - Don't reuse Office UI Fabric icons in the Office ribbon or contextual menu. Fabric icons are stylistically different and will not match. 
+- Avoid relying on your logo or brand to communicate what an add-in command does. Brand marks aren't always recognizable especially at smaller icon sizes and when modifiers are applied. Brand marks often conflict with Office ribbon icon styles. They often compete for user attention in a saturated environment.
 - Use a white fill for accessibility. Most objects in your icons will require a white background to be legible across Office UI themes and in high-contrast modes.  
 - Use the PNG format with a transparent background. 
 - Avoid localizable content in your icons, including typographic characters, indications of paragraph rags, and question marks. 
@@ -81,7 +82,7 @@ The following image shows the layout of base elements and modifiers in an Office
 - Place conceptual modifiers on the bottom right.
 - Limit the number of elements in your icons. At 32px, limit the number of modifiers to a maximum of two. At 16px, limit the number of modifiers to one.
 
-Place base elements consistently across sizes. If base elements can't be centered in the frame, align them to the top left. For best results, apply the padding guidelines listed in the following table.
+Place base elements consistently across sizes. If base elements can't be centered in the frame, align them to the top left, leaving the extra pixels on the bottom right. For best results, apply the padding guidelines listed in the following table.
 
 |**Icon size**|**Padding around base element**|
 |:---|:---|
@@ -126,7 +127,7 @@ Office icons have a limited color palette. Use the colors listed in the followin
 |Dark Gray 16|114, 114, 114|#727272|![Dark gray 16 color image](../../images/darkGray_16.gif)|16 and below|
 |Medium Gray 16|144, 144, 144|#909090|![Medium gray 16 color image](../../images/mediumGray_16.gif)|16 and below|
 |Blue 32|77, 130, 184|#4d82B8|![Blue 32 color image](../../images/blue_32.gif)|32 and above|
-|Blue 16|74, 125, 177|#4A7D81|![Blue 16 color image](../../images/blue_16.gif)|16 and below|
+|Blue 16|74, 125, 177|#4A7DB1|![Blue 16 color image](../../images/blue_16.gif)|16 and below|
 |Yellow ALL|234, 194, 130|#EAC282|![Yellow all color image](../../images/yellow_all.gif)|All sizes|
 |Orange 32|231, 142, 70|#E78E46|![Orange 32 color image](../../images/orange_32.gif)|32 and above|
 |Orange 16|227, 142, 70|#E3751C|![Orange 16 color image](../../images/orange_16.gif)|16 and below|
@@ -135,7 +136,7 @@ Office icons have a limited color palette. Use the colors listed in the followin
 |Green 16|104, 164, 144|#68A490|![Green 16 color image](../../images/green_16.gif)|16 and below|
 |Red 32|216, 99, 68|#D86344|![Red 32 color image](../../images/red_32.gif)|32 and above|
 |Red 16|214, 85, 50|#D65532|![Red 16 color image](../../images/red_16.gif)|16 and below|
-|Purple 32|152, 104, 185|#986889|![Purple 32 color image](../../images/purple_32.gif)|32 and above|
+|Purple 32|152, 104, 185|#9868B9|![Purple 32 color image](../../images/purple_32.gif)|32 and above|
 |Purple 16|137, 89, 171|#8959AB|![Purple 16 color image](../../images/purple_16.gif)|16 and below|
 
 
