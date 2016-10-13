@@ -59,7 +59,6 @@ The following table shows the icon sizes that render for different modes at diff
 
 >**Note:** At DPI settings of 150% or greater, the icon does not get swapped out for a larger size when Touch mode is engaged. At DPI settings greater than 250%, Touch mode is turned off by default.
 
--->
 The following table lists the locations for certain icon sizes.
 
 |Location|100% DPI|200% DPI|250% DPI|
@@ -68,6 +67,8 @@ The following table lists the locations for certain icon sizes.
 |Contextual menu|16px|32px|40px|
 |Quick access toolbar (QAT)|16px|32px|40px|
 |Large ribbon icon|32px|64px|80px|
+
+-->
 
 ## Icon anatomy and layout
 
