@@ -44,6 +44,7 @@ Office 2016 desktop icons are bitmap images. Different sizes will render dependi
 - 64 px (Recommended)
 - 80 px (Required)  
 
+<!--
 The following table shows the icon sizes that render for different modes at different DPI settings.
 
 |DPI |**Small**||**Medium**||**Large**||**Extra large**|
@@ -58,6 +59,7 @@ The following table shows the icon sizes that render for different modes at diff
 
 >**Note:** At DPI settings of 150% or greater, the icon does not get swapped out for a larger size when Touch mode is engaged. At DPI settings greater than 250%, Touch mode is turned off by default.
 
+-->
 The following table lists the locations for certain icon sizes.
 
 |Location|100% DPI|200% DPI|250% DPI|
