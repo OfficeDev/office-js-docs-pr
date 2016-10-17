@@ -2,7 +2,7 @@
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine if an Office host supports APIs needed by the add-in. For more information, see [Specify Office hosts and API requirements](../docs/overview/specify-office-hosts-and-api-requirements.md).
 
-# Requirement sets, platform availability, and build versions
+## Requirement sets, platform availability, and build versions
 Excel Add-ins run across multiple versions of Office including Office for Windows Desktop, Office Online, Office for the Mac, and Office for the iPad.
 
 The following table lists the names of requirement sets, the Office host applications that support that requirement set, and the build versions.
@@ -39,8 +39,8 @@ The following methods in the JavaScript API for Office aren't part of a requirem
 |TableBinding.setFormatsAsync|Excel, Excel Online|
 |TableBinding.setTableOptionsAsync|Excel, Excel Online|
 
-## What's new in Excel JS APIs 1.3 
-The following are the new additions to Excel JavaScript APIs in requirement set 1.3. 
+## What's new in Excel JavaScript API 1.3 
+The following are the new additions to the Excel JavaScript APIs in requirement set 1.3. 
 
 |Object| What is new| Description|Feedback|
 |:----|:----|:----|:----|
@@ -88,3 +88,5 @@ The following are the new additions to Excel JavaScript APIs in requirement set 
 
 
 - [Specify Office hosts and API requirements](../docs/overview/specify-office-hosts-and-api-requirements.md)
+- [JavaScript API for Office reference](http://dev.office.com/reference/add-ins/javascript-api-for-office)
+- [JavaScript API for Office reference](http://dev.office.com/reference/add-ins/javascript-api-for-office)
