@@ -5,9 +5,6 @@ An Outlook add-in consists of two components: the XML add-in manifest, and a web
 
  >**Note**  All URL values in the following sample begin with "YOUR_WEB_SERVER". This value is a placeholder. In an actual valid manifest, these values would contain valid https web URLs.
 
-
-
-
 ```XML
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--Created:cb85b80c-f585-40ff-8bfc-12ff4d0e34a9-->
@@ -112,16 +109,6 @@ An Outlook add-in consists of two components: the XML add-in manifest, and a web
 
                 <DesktopFormFactor>
                     <FunctionFile resid="functionFile" />
-
-                    <!-- Custom pane, only applies to read form -->
-                    <ExtensionPoint xsi:type="CustomPane">
-                        <RequestedHeight>100</RequestedHeight>
-                        <SourceLocation resid="customPaneUrl" />
-                        <Rule xsi:type="RuleCollection" Mode="Or">
-                            <Rule xsi:type="ItemIs" ItemType="Message" />
-                            <Rule xsi:type="ItemIs" ItemType="AppointmentAttendee" />
-                        </Rule>
-                    </ExtensionPoint>
 
                     <!-- Message compose form -->
                     <ExtensionPoint xsi:type="MessageComposeCommandSurface">
@@ -549,7 +536,6 @@ An Outlook add-in consists of two components: the XML add-in manifest, and a web
                 <bt:Url id="functionFile" DefaultValue="YOUR_WEB_SERVER/FunctionFile/Functions.html" />
                 <bt:Url id="readTaskPaneUrl" DefaultValue="YOUR_WEB_SERVER/AppRead/TaskPane/TaskPane.html" />
                 <bt:Url id="composeTaskPaneUrl" DefaultValue="YOUR_WEB_SERVER/AppCompose/TaskPane/TaskPane.html" />
-                <bt:Url id="customPaneUrl" DefaultValue="YOUR_WEB_SERVER/AppRead/CustomPane/CustomPane.html" />
             </bt:Urls>
             <bt:ShortStrings>
                 <bt:String id="groupLabel" DefaultValue="Add-in Demo" />
