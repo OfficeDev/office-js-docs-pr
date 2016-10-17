@@ -9,7 +9,7 @@ The following table lists the names of requirement sets, the Office host applica
 
 For information about requirement sets for Outlook, see [Understanding Outlook API requirement sets](./outlook/tutorial-api-requirement-sets.md). To get a broad view of where add-ins are supported by Office host, see the [Office Add-in host and platform availability](https://dev.office.com/add-in-availability) page.
 
-|  Set version  |  Office Online  |  Office 2016 for Windows  |  Office 2016 for iPad  |  Office 2016 for Mac  |
+|  Set version\Platform  |  Office Online  |  Office 2016 for Windows  |  Office 2016 for iPad  |  Office 2016 for Mac  |
 |:-----|-----|:-----|:-----|:-----|
 | ExcelApi 1.3  | 7403.1000 | 7403.1000| 7403.1000 | 7403.1000|
 | ExcelApi 1.2  | 7403.1000 | 7403.1000| 7403.1000 | 7403.1000|
