@@ -56,6 +56,7 @@ The following are the new additions to the Excel JavaScript APIs in requirement 
 |[worksheetCollection](reference/excel/worksheetcollection.md)|_Method_ > [getItemOrNull(key: string)](reference/excel/worksheetcollection.md#getitemornullkey-string)|Gets a worksheet object using its Name or ID. If the 
 
 ## What's new in Excel JavaScript API 1.2
+The following are the new additions to the Excel JavaScript APIs in requirement set 1.2. 
 
 ## What's new in Excel JavaScript API 1.1
 
