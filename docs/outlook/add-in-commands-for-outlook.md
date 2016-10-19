@@ -30,7 +30,7 @@ As the ribbon gets more crowded, the add-in commands will adjust (collapse) in a
 
 ![Screenshots showing add-in command buttons in a normal and a collapsed state.](../../images/6fcb64d8-9598-41d1-8944-f6d1f6d2edb6.png)
 
-When an add-in command is added to an add-in, the add-in name is removed from the app bar unless the add-in also includes a [custom pane Outlook add-in](../outlook/custom-pane-outlook-add-ins.md). Only the add-in command button on the ribbon remains.
+When an add-in command is added to an add-in, the add-in name is removed from the app bar. Only the add-in command button on the ribbon remains.
 
 
 ## What UX shapes exist for add-in commands?
