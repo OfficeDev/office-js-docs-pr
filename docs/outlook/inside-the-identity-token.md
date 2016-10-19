@@ -11,7 +11,7 @@ The authentication identity token that the Exchange server sends to your Outlook
 
 An identity token is a base-64 URL encoded string that is self-signed by the Exchange server that sent it. The token is not encrypted, and the public key that you use to validate the signature is stored on the Exchange server that issued the token. The token has three parts: a header, a payload, and a signature. In the token string, the parts are separated by a "." character to make it easy for you to split the token.
 
-Exchange 2013 uses a JSON Web Token (JWT) for the identity token. For information about JWT tokens, see the [JSON Web Token (JWT) Internet Draft](http://self-issued.info/docs/draft-goland-json-web-token-00.html).
+Exchange 2013 uses a JSON Web Token (JWT) for the identity token. For information about JWT tokens, see the [JSON Web Token (JWT) Internet Draft](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html).
 
 
 ### Identity token header
