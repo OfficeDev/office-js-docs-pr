@@ -1,10 +1,20 @@
-# Common API requirement sets
+# Office common API requirement sets
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or using a runtime check to determine if an Office host supports APIs needed by the add-in. For more information, see [Specify Office hosts and API requirements](../docs/overview/specify-office-hosts-and-api-requirements.md).
 
 To get a broad view of where add-ins are supported by Office host, see the [Office Add-in host and platform availability](https://dev.office.com/add-in-availability) page.
 
-## Requirement sets
+## Host specific API requirement sets
+
+For information about Excel, Word, OneNote and Dialog API, see the following topics:
+- [Excel JavaScript API requirement sets](excel-requirement-sets.md)
+- [Word JavaScript API requirement sets](word-requirement-sets.md)
+- [OneNote JavaScript API requirement sets](onenote-requirement-sets.md)
+- [Dialog API requirement sets](dialogapi-requirement-sets.md)
+
+For build numbers associated with Office Online Server and Office Enterprise version, see [Other Office hosts and API requirements](other-Office-hosts-and-requirement-sets.md).
+
+## Common API requirement sets
 
 The following table lists the common API requirement sets, the methods in each set, the Office host applications that support that requirement set, and the version number of the API.
 
