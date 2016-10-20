@@ -6,9 +6,9 @@ Excel Add-ins run across multiple versions of Office including Office for Window
 
 |  Requirement set  |  Office Online  |  Office 2016 for Windows  |  Office 2016 for iPad  |  Office 2016 for Mac  |
 |:-----|-----|:-----|:-----|:-----|
-| ExcelApi 1.3  | 7403.1000 | 7403.1000| 7403.1000 | 7403.1000|
-| ExcelApi 1.2  | 7403.1000 | 7403.1000| 7403.1000 | 7403.1000|
-| ExcelAPI 1.1  | 7403.1000 | 7403.1000| 7403.1000 | 7403.1000|
+| Excel Api 1.3  | Sept 2016 | 16.0.7466.2022| 1.27 or later | 15.27 or later|
+| Excel Api 1.2  | April 2016 | 16.0.6741.2081 | 1.21 or later | 15.22 or later|
+| Excel API 1.1  | January 2016 | Shipped with Office 2016 | 1.19 or later | 15.20 or later|
 
 > **Note**: For build numbers associated with Office Online Server and Office 365 Deferred Channel build, see [Other Office hosts and API requirements](other-Office-hosts-and-requirement-sets.md).
 
