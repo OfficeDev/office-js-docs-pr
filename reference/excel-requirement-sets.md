@@ -13,7 +13,7 @@ Excel Add-ins run across multiple versions of Office including Office for Window
 > **Note**: For build numbers associated with Office Online Server and Office Enterprise version, see [Other Office hosts and API requirements](other-Office-hosts-and-requirement-sets.md).
 
 ## Common API requirement sets
-For information about common API requirement sets, see [Common API requirement sets](common-API-requirement-sets.md).
+For information about common API requirement sets, see [Common API requirement sets](office-add-in-requirement-sets.md).
 
 ## What's new in Excel JavaScript API 1.3 
 The following are the new additions to the Excel JavaScript APIs in requirement set 1.3. 
