@@ -14,7 +14,7 @@ The following table lists the Office Online Server and Office Enterprise version
 
 ## Common API requirement sets
 
-For information about common API requirement sets, see [Common API requirement sets](common-API-requirement-sets.md).
+For information about common API requirement sets, see [Office common API requirement sets](office-add-in-requirement-sets.md).
 
 ## Host specific API requirement sets
 
