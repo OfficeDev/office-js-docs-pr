@@ -10,7 +10,7 @@ Excel Add-ins run across multiple versions of Office including Office for Window
 | ExcelApi 1.2  | 7403.1000 | 7403.1000| 7403.1000 | 7403.1000|
 | ExcelAPI 1.1  | 7403.1000 | 7403.1000| 7403.1000 | 7403.1000|
 
-> **Note**: For build numbers associated with Office Online Server and Office Enterprise version, see [Other Office hosts and API requirements](other-Office-hosts-and-requirement-sets.md).
+> **Note**: For build numbers associated with Office Online Server and Office 365 Deferred Channel build, see [Other Office hosts and API requirements](other-Office-hosts-and-requirement-sets.md).
 
 ## Common API requirement sets
 For information about common API requirement sets, see [Common API requirement sets](office-add-in-requirement-sets.md).
