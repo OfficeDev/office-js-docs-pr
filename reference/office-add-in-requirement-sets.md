@@ -1,23 +1,28 @@
 
-# Office add-in requirement sets
+# Office common API requirement sets
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or using a runtime check to determine if an Office host supports APIs needed by the add-in. For more information, see [Specify Office hosts and API requirements](../docs/overview/specify-office-hosts-and-api-requirements.md).
 
 To get a broad view of where add-ins are supported by Office host, see the [Office Add-in host and platform availability](https://dev.office.com/add-in-availability) page.
 
-## Requirement sets
+## Host specific API requirement sets
 
+For information about Excel, Word, OneNote and Dialog API, see the following topics:
+- [Excel JavaScript API requirement sets](excel-requirement-sets.md)
+- [Word JavaScript API requirement sets](word-requirement-sets.md)
+- [OneNote JavaScript API requirement sets](onenote-requirement-sets.md)
+- [Dialog API requirement sets](dialogapi-requirement-sets.md)
 
-The following table lists the names of requirement sets, the methods in each set, the Office host applications that support that requirement set, and the version number of the API.
+For build numbers associated with Office Online Server and Office Enterprise version, see [Other Office hosts and API requirements](other-Office-hosts-and-requirement-sets.md).
+
+## Common API requirement sets
+
+The following table lists the common API requirement sets, the methods in each set, the Office host applications that support that requirement set, and the version number of the API.
 
 For information about requirement sets for Outlook, see [Understanding Outlook API requirement sets](./outlook/tutorial-api-requirement-sets.md).
 
 |  Set name  |  Version  |  Office host  |  Methods in set  |
 |:-----|-----|:-----|:-----|
-| ExcelApi   | 1.2 | Excel 2016<br>Excel Online<br>Excel for iPad<br>|Worksheet Protection<br>Worksheet Functions<br>Sort<br>Filter<br>R1C1 Reference Style<br>Merge Cells<br>Adjust Row Height and Column Width<br>Chart.getImage()<br>Range.getUsedRange(valuesOnly)|
-| ExcelApi   | 1.1 | Excel 2016<br>Excel Online<br>Excel for iPad<br>|All elements in the Excel namespace|
-| WordApi    | 1.2 | Word 2016<br>Word 2016 for Mac<br>Word for iPad<br>Word Online| All elements in the Word namespace. The following methods were added to this version of WordApi:<br>Body.select(selectionMode)<br>Body.insertInlinePictureFromBase64(base64EncodedImage, insertLocation)<br>contentControl.select(selectionMode)<br>contentControl.insertInlinePictureFromBase64(base64EncodedImage, insertLocation)<br>inlinePicture.paragraph<br>inlinePicture.delete<br>inlinePicture.insertBreak(breakType, insertLocation)<br>inlinePicture.insertFileFromBase64(base64file, insertLocation)<br>inlinePicture.insertHtml(html, insertLocation)<br>inlinePicture.insertInlinePictureFromBase64(base64file, insertLocation)<br>inlinePicture.insertOoxml(ooxml, insertLocation)<br>inlinePicture.insertParagraph(paragraphText, insertLocation)<br>inlinePicture.insertText(text, insertLocation)<br>inlinePicture.select(selectionMode)<br>paragraph.select(selectionMode)<br>range.inlinePictures<br>range.select(selectionMode)<br>range.insertInlinePictureFomBase64(base64EcodedImage, insertLocation)|
-| WordApi    | 1.1 | Word 2016<br>Word 2016 for Mac<br>Word for iPad<br>Word Online|All elements in the Word namespace except API members that were added to WordApi 1.2 and later, which are listed above.|
 | ActiveView | 1.1 | PowerPoint<br>PowerPoint Online|Document.getActiveViewAsync|
 | BindingEvents  | 1.1 | Access Web Apps<br>Excel<br>Excel Online<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Binding.addHanderAsync<br>Binding.removeHanderAsync|
 | CompressedFile    | 1.1 |PowerPoint<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad<br/>Excel Online<br/>PowerPoint Online|Supports output to Office Open XML (OOXML) format as a byte array<br>(Office.FileType.Compressed) when using the Document.getFileAsync method.|
