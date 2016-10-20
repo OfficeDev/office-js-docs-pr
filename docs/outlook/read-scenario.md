@@ -31,8 +31,6 @@ Read add-ins can be any combination of the following types.
     
 - [Contextual Outlook add-ins](../outlook/contextual-outlook-add-ins.md)
     
-- [Custom pane Outlook add-ins](../outlook/custom-pane-outlook-add-ins.md)
-    
 
 ## API features available to read add-ins
 

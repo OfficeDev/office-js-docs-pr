@@ -339,7 +339,7 @@ Gets the Exchange Web Services item identifier for the current item. Read mode o
 
 The identifier returned by the `itemId` property is the same as the Exchange Web Services item identifier. The `itemId` property is not identical to the Outlook Entry ID.
 
-The `itemId` property returns `null` in compose mode for items that have not been saved to the server. If an item identifier is required, the [`saveAsync`](Office.context.mailbox.item.md#saveAsync) method can be used to save the item to the server, which will return the item identifier in the [`AsyncResult.value`](simple-types.md#asyncresult) parameter in the callback function.
+The `itemId` property returns `null` in compose mode for items that have not been saved to the store. If an item identifier is required, the [`saveAsync`](Office.context.mailbox.item.md#saveAsync) method can be used to save the item to the store, which will return the item identifier in the [`AsyncResult.value`](simple-types.md#asyncresult) parameter in the callback function.
 
 ##### Type:
 
@@ -355,7 +355,7 @@ The `itemId` property returns `null` in compose mode for items that have not bee
 
 ##### Example
 
-The following code checks for the presence of an item identifier. If the `itemId` property returns `null` or `undefined`, it saves the item to the server and gets the item identifier from the asynchronous result.
+The following code checks for the presence of an item identifier. If the `itemId` property returns `null` or `undefined`, it saves the item to the store and gets the item identifier from the asynchronous result.
 
 ```JavaScript
 var itemId = Office.context.mailbox.item.itemId;

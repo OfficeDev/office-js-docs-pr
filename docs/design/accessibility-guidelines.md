@@ -8,7 +8,7 @@ As you design and develop your Office Add-ins, you'll want to ensure that all po
 - On a mobile device, when users operate a control by touch, the device should provide useful audio feedback.
 - Provide helpful labels for all interactive controls. 
 
-##Make your app or add-in easy to use
+##Make your add-in easy to use
 
 - Don't rely on a single attribute, such as color, size, shape, location, orientation, or sound, to convey meaning in your UI.
 - Avoid unexpected changes of context, such as moving the focus to a different UI element without user action.
@@ -16,7 +16,7 @@ As you design and develop your Office Add-ins, you'll want to ensure that all po
 - Provide a way to pause or stop media, such as audio and video.
 - Do not impose a time limit for user action.
 
-##Make your app or add-in easy to see
+##Make your add-in easy to see
 
 - Avoid unexpected color changes.
 - Provide meaningful and timely information to describe UI elements, titles and headings, inputs, and errors. Ensure that names of controls adequately describe the intent of the control.

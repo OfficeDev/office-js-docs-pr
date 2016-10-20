@@ -1,7 +1,6 @@
 # RichText Object (JavaScript API for OneNote)
 
 _Applies to: OneNote Online_  
-_Note: This API is in preview_  
 
 
 Represents a RichText object in a Paragraph.

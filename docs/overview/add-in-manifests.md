@@ -16,7 +16,6 @@ An XML manifest file based on this schema enables an Office Add-in to do the fol
     
 - For Outlook add-ins, define the rule or rules that specify the context in which they will be activated and interact with a message, appointment, or meeting request item.
     
-For examples, see [Manifest v1.1 XML file examples](#manifest-v1.1-xml-file-examples-and-schemas).
 
 ## Required elements
 
@@ -25,9 +24,10 @@ The following table specifies the elements that are required for the three types
 
 
  >**Important Notes**: 
- - All URLs, such as the source file locations specified in the [SourceLocation](../../reference/manifest/sourcelocation.md) element, must be **SSL-secured (HTTPS)**.
- - All icon URLs, such as those used on command surfaces, must **allow caching**. The web server should NOT return HTTP headers like no-cache/no-store. 
- - Add-ins submitted to the Office Store must also include the [SupportUrl](../../reference/manifest/supporturl.md) element. For more information, see [What are some common submission errors to avoid?](http://msdn.microsoft.com/library/0ceb385c-a608-40cc-8314-78e39d6c75d0%28Office.15%29.aspx#bk_q2)
+ 
+ >- All URLs, such as the source file locations specified in the [SourceLocation](../../reference/manifest/sourcelocation.md) element, must be **SSL-secured (HTTPS)**.
+ >- All icon URLs, such as those used on command surfaces, must **allow caching**. The web server should NOT return HTTP headers like no-cache/no-store. 
+ >- Add-ins submitted to the Office Store must also include the [SupportUrl](../../reference/manifest/supporturl.md) element. For more information, see [What are some common submission errors to avoid?](http://msdn.microsoft.com/library/0ceb385c-a608-40cc-8314-78e39d6c75d0%28Office.15%29.aspx#bk_q2)
 
 
 **Required elements by Office Add-in type**
@@ -56,8 +56,53 @@ The following table specifies the elements that are required for the three types
 |[*Form](http://msdn.microsoft.com/en-us/library/77a8ac83-c22b-1225-4fc4-ba4038b68648%28Office.15%29.aspx)<br/>[**FormSettings](http://msdn.microsoft.com/en-us/library/0d1a311d-939d-78c1-e968-89ddf7ebc4b4%28Office.15%29.aspx)|||X|
 |[*Sets (Requirements)](http://msdn.microsoft.com/en-us/library/509be287-b532-87c6-71ac-64f3a4bbd3af%28Office.15%29.aspx)||X|
 |[*Hosts](http://msdn.microsoft.com/library/f9a739c1-3daf-c03a-2bd9-4a2a6b870101%28Office.15%29.aspx)||X|
+
 *Added in the Office Add-in Manifest Schema version 1.1.
 
+
+## Validate the Office Add-ins manifest
+
+To help to make sure that the manifest file that describes your Office Add-in is correct and complete, validate it against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas) files. You can use an XML schema validation tool or [Visual Studio](../get-started/create-and-debug-office-add-ins-in-visual-studio.md) to validate the manifest. 
+
+To use Visual Studio, go to Build > Publish, and choose **Perform Validation check**.
+
+To use a command-line XML schema validation tool to validate your manifest:
+
+1.	Install [tar](https://www.gnu.org/software/tar/) and [libxml](http://xmlsoft.org/FAQ.html), if you haven't already. 
+2.	Run the following command. Replace XSD_FILE with the path to the manifest XSD file and XML_FILE with the path to the manifest XML file.
+
+	xmllint --noout --schema XSD_FILE XML_FILE
+
+
+
+## Specify domains you want to open in the add-in window
+
+
+By default, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](http://msdn.microsoft.com/en-us/library/00d95bb0-e8f5-647f-790a-0aa3aabc8141%28Office.15%29.aspx) element of the manifest file), that URL will open in a new browser window outside the add-in pane of the Office host application. This default behavior protects the user against unexpected page navigation within the add-in pane from embedded **iframe** elements.
+
+To override this behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](http://msdn.microsoft.com/en-us/library/13cf867d-9b24-786f-0687-6bcdc954628e%28Office.15%29.aspx) element of the manifest file. If the add-in tries to go to a URL in a domain that isn't in the list, that URL will open in a new browser window (outside the add-in pane).
+
+The following XML manifest example hosts its main add-in page in the  `https://www.contoso.com` domain as specified in the **SourceLocation** element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](http://msdn.microsoft.com/en-us/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx) element within the **AppDomains** element list. If the add-in goes to a page in the www.northwindtraders.com domain, that page will open in the add-in pane.
+
+
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+  <Id>c6890c26-5bbb-40ed-a321-37f07909a2f0</Id>
+  <Version>1.0</Version>
+  <ProviderName>Contoso, Ltd</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Northwind Traders Excel" />
+  <Description DefaultValue="Search Northwind Traders data from Excel"/>
+  <AppDomains>
+    <AppDomain>https://www.northwindtraders.com</AppDomain>
+  </AppDomains>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://www.contoso.com/search_app/Default.aspx" />
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+</OfficeApp>
+```
 
 ## Manifest v1.1 XML file examples and schemas
 
@@ -387,44 +432,6 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   </Rule>
 </OfficeApp>
 
-```
-
-
-## Validate the Office Add-ins manifest
-
-
-To make sure that the manifest file that describes your Office Add-in is correct and complete, validate it against the [XML Schema Definition (XSD) files](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas). You can use an XML schema validation tool or Visual Studio to validate the manifest. You can also download the [Office App Compatibility Kit](https://www.microsoft.com/en-us/download/details.aspx?id=46831) and run it on your add-in.
-
-For information about validating a manifest against a schema, see [XML Schema (XSD) validation tool](http://stackoverflow.com/questions/124865/xml-schema-xsd-validation-tool).
-
-
-## Specify domains you want to open in the add-in window
-
-
-By default, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](http://msdn.microsoft.com/en-us/library/00d95bb0-e8f5-647f-790a-0aa3aabc8141%28Office.15%29.aspx) element of the manifest file), that URL will open in a new browser window outside the add-in pane of the Office host application. This default behavior protects the user against unexpected page navigation within the add-in pane from embedded **iframe** elements.
-
-To override this behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](http://msdn.microsoft.com/en-us/library/13cf867d-9b24-786f-0687-6bcdc954628e%28Office.15%29.aspx) element of the manifest file. If the add-in tries to go to a URL in a domain that isn't in the list, that URL will open in a new browser window (outside the add-in pane).
-
-The following XML manifest example hosts its main add-in page in the  `https://www.contoso.com` domain as specified in the **SourceLocation** element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](http://msdn.microsoft.com/en-us/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx) element within the **AppDomains** element list. If the add-in goes to a page in the www.northwindtraders.com domain, that page will open in the add-in pane.
-
-
-```XML
-<?xml version="1.0" encoding="UTF-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
-  <Id>c6890c26-5bbb-40ed-a321-37f07909a2f0</Id>
-  <Version>1.0</Version>
-  <ProviderName>Contoso, Ltd</ProviderName>
-  <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="Northwind Traders Excel" />
-  <Description DefaultValue="Search Northwind Traders data from Excel"/>
-  <AppDomains>
-    <AppDomain>https://www.northwindtraders.com</AppDomain>
-  </AppDomains>
-  <DefaultSettings>
-    <SourceLocation DefaultValue="https://www.contoso.com/search_app/Default.aspx" />
-  </DefaultSettings>
-  <Permissions>ReadWriteDocument</Permissions>
-</OfficeApp>
 ```
 
 ## Additional resources

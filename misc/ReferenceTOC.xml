@@ -24,7 +24,7 @@
 	
 	<Item text="HighResolutionIconUrl" url="manifest/highresolutioniconurl" SEODescription="Specifies the URL of the image that is used to represent your Office Add-in in the insertion UX and Office Store on high DPI screens." />
     <Item text="Host" url="manifest/host" SEODescription="Specifies the type of Office host application your Office Add-in supports." />
-    
+    <Item text="Hosts" url="manifest/hosts" SEODescription="Specifies the Office client application where the Office Add-in will activate." />
 	<Item text="IconUrl" url="manifest/iconurl" SEODescription="Specifies the URL of the image that is used to represent your Office Add-in in the insertion UX and Office Store." />
     <Item text="Id" url="manifest/id" SEODescription="Specifies the unique ID of your Office Add-in as a GUID." />
     <Item text="Method" url="manifest/method" Scope="excel, word, powerpoint, access, project" SEODescription="Specifies an individual method from the JavaScript API for Office that your Office Add-in requires in order to activate." />
@@ -57,9 +57,11 @@
 		<Item text="ExtensionPoint" url="manifest/extensionpoint" Scope="excel, word, powerpoint" SEODescription="Defines where an add-in exposes functionality." />
 		<Item text="FormFactor" url="manifest/formfactor" Scope="excel, word, powerpoint" SEODescription="Specifies the settings for an add-in for a given form factor." />
 		<Item text="FunctionFile" url="manifest/functionfile" Scope="excel, word, powerpoint" SEODescription="Specifies the source code file for operations that an add-in exposes through add-in commands that execute a JavaScript function instead of displaying UI." />
+		<Item text="GetStarted" url="manifest/getstarted" Scope="excel, word, powerpoint" SEODescription="Provides information used by the callout that appears when the add-in is installed in Word, Excel, and PowerPoint hosts." />
 		<Item text="Group" url="manifest/group" Scope="excel, word, powerpoint" SEODescription="Defines a group of UI extension points in a tab." />
 		<Item text="Hosts" url="manifest/hosts" Scope="excel, word, powerpoint" SEODescription="Specifies the type(s) of Office host application your Office Add-in supports." />
 		<Item text="Icon" url="manifest/icon" Scope="excel, word, powerpoint" SEODescription="Defines Image elements for Button and Menu controls." />
+		<Item text="OfficeMenu" url="manifest/officemenu" Scope="excel, word, powerpoint" SEODescription="Defines a collection of controls to be added to the Office context menu." />
 		<Item text="OfficeTab" url="manifest/officetab" Scope="excel, word, powerpoint" SEODescription="Specifies the pre-existing tab to use for an add-in command." />
 		<Item text="Resources" url="manifest/resources" Scope="excel, word, powerpoint" SEODescription="Contains icons, strings, and URLs for the VersionOverrides node." />
 		<Item text="SuperTip" url="manifest/supertip" Scope="excel, word, powerpoint" SEODescription="Defines a rich tooltip (both Title and Description)." />
@@ -393,23 +395,23 @@
   </Item>
   
   <Item text="OneNote" url="onenote/onenote-add-ins-javascript-reference" Scope="onenote">
-    <Item text="Application" url="onenote/application" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Error" url="onenote/error" SEODescription="OneNote Add-ins Preview Reference." />
-	<Item text="Notebook" url="onenote/notebook" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Notebookcollection" url="onenote/notebookcollection" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Page" url="onenote/page" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Pagecollection" url="onenote/pagecollection" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Pagecontent" url="onenote/pagecontent" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Pagecontentcollection" url="onenote/pagecontentcollection" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Paragraph" url="onenote/paragraph" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Paragraphcollection" url="onenote/paragraphcollection" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Richtext" url="onenote/richtext" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Section" url="onenote/section" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Sectioncollection" url="onenote/sectioncollection" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Sectiongroup" url="onenote/sectiongroup" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Sectiongroupcollection" url="onenote/sectiongroupcollection" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Outline" url="onenote/outline" SEODescription="OneNote Add-ins Preview Reference." />
-    <Item text="Image" url="onenote/image" SEODescription="OneNote Add-ins Preview Reference." />
+    <Item text="Application" url="onenote/application" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Error" url="onenote/error" SEODescription="OneNote Add-ins Reference." />
+	<Item text="Notebook" url="onenote/notebook" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Notebookcollection" url="onenote/notebookcollection" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Page" url="onenote/page" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Pagecollection" url="onenote/pagecollection" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Pagecontent" url="onenote/pagecontent" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Pagecontentcollection" url="onenote/pagecontentcollection" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Paragraph" url="onenote/paragraph" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Paragraphcollection" url="onenote/paragraphcollection" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Richtext" url="onenote/richtext" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Section" url="onenote/section" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Sectioncollection" url="onenote/sectioncollection" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Sectiongroup" url="onenote/sectiongroup" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Sectiongroupcollection" url="onenote/sectiongroupcollection" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Outline" url="onenote/outline" SEODescription="OneNote Add-ins Reference." />
+    <Item text="Image" url="onenote/image" SEODescription="OneNote Add-ins Reference." />
   </Item>  
   <Item text="Shared API" url="shared/shared-api">
     <Item text="JavaScript API for Office" url="javascript-api-for-office" SEODescription="The JavaScript API for Office includes objects, methods, properties, events, and enumerations that you can use in your Office Add-ins code." />
@@ -442,7 +444,8 @@
       <Item text="AsyncResult.status" url="shared/asyncresult.status" SEODescription="Gets the status of the asynchronous operation." />
       <Item text="AsyncResult.value" url="shared/asyncresult.value" SEODescription="Gets the payload or content of this asynchronous operation, if any." />
     </Item>
-    <Item text="Context " url="shared/office.context" FriendlyUrl="reference/common/officeoffice.context" >
+    <Item text="Context " url="shared/context" >
+      <Item text="office.context" url="shared/office.context" SEODescription="Gets the Context object that represents the runtime environment of the add-in " />
       <Item text="office.context.commerceAllowed " url="shared/office.context.commerceallowed" FriendlyUrl="reference/common/contextoffice.context.commerceallowed"  SEODescription="Gets whether the add-in is running on a platform that allows links to external payment systems." />
       <Item text="office.context.contentLanguage" url="shared/office.context.contentlanguage" SEODescription="Gets the locale (language) specified by the user for editing the document or item." />
       <Item text="office.context.displaylanguage" url="shared/office.context.displaylanguage" SEODescription="Gets the locale (language) specified by the user for the UI of the Office host application." />

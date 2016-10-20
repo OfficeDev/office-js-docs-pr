@@ -148,7 +148,7 @@ Excel.run(function (ctx) {
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
 	var borders = range.format.borders;
-	border.load('items');
+	borders.load('items');
 	return ctx.sync().then(function() {
 		console.log(borders.count);
 		for (var i = 0; i < borders.items.length; i++)

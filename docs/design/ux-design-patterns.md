@@ -6,7 +6,7 @@ Use the UX design patterns project to:
 
 * Apply solutions to common customer scenarios.
 * Apply design best practices.
-* Incorporate [Office UI Fabric](https://dev.office.com/fabric/getting-started/) components and styles.
+* Incorporate [Office UI Fabric](https://dev.office.com/fabric#/get-started) components and styles.
 * Build add-ins that visually integrate with the default Office UI.  
 
 ## Using the UX design patterns
@@ -70,6 +70,7 @@ The [Office Store](https://msdn.microsoft.com/en-us/library/office/jj220033.aspx
 	* [Trial specification](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/FirstRun_TrialVersion.md)
 	* [Trial code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/trial-placemat)
 * **Trial feature** - Advises users that the feature they are trying to use is not available in the trial version of the add-in. Alternatively, if your add-in is free but it includes a feature that requires a subscription, consider using this pattern. You might also use this pattern to provide a downgraded experience after a trial has ended.
+	* [Trial feature specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/FirstRun_TrialFeature.md)
 	* [Trial feature code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/trial-placemat-feature)
 
 > **Important:** If you decide to manage your own trial, and not use the Office Store to manage the trial, make sure to include the **Additional purchase may be required** tag in the testing notes in the seller dashboard.

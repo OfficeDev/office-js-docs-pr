@@ -3,9 +3,13 @@
 
 Good data visualizations help users find insights in their data. They can use those insights to tell stories that inform and persuade. This article provides guidelines to help you design effective data visualizations in your add-ins for Excel and other Office apps.
 
-We recommend that you use [Office UI Fabric](http://odux/fabric/?page=overview) to create the chrome for your data visualizations. Office UI Fabric includes styles and components that integrate seamlessly with the Office look and feel. The following figure shows a data visualization in an add-in that uses Fabric.
+We recommend that you use [Office UI Fabric](http://dev.office.com/fabric) to create the chrome for your data visualizations. Office UI Fabric includes styles and components that integrate seamlessly with the Office look and feel. 
 
-![Image of a data visualization with Fabric elements applied**](../../images/fabric-data-visualization.png)
+<!--The following figure shows a data visualization in an add-in that uses Fabric.
+
+![Image of a data visualization with Fabric elements applied**](../../images/fabric-data-visualization.png) 
+
+-->
 
 ## Data visualization elements
 
@@ -20,7 +24,7 @@ Follow these guidelines for chart titles:
 
 - Make your chart titles easily readable. Position them to create a clear visual hierarchy in relation to the rest of the chart.
 - In general, use sentence capitalization (capitalize the first word). To create contrast or to reinforce hierarchies, you can use all caps, but all caps should be used sparingly.
-- Incorporate the [Office UI Fabric type ramp](http://odux/fabric/?page=features) to make your charts consistent with the Office UI, which uses Segoe. You can also use a different typeface to differentiate chart content from the UI.
+- Incorporate the [Office UI Fabric type ramp](http://dev.office.com/fabric#/styles/typography) to make your charts consistent with the Office UI, which uses Segoe. You can also use a different typeface to differentiate chart content from the UI.
 - Use sans-serif typefaces with large counters.
 
 The following examples show serif and sans-serif typefaces used in chart titles. Notice how the scale contrast and effective use of white space create a strong visual hierarchy.
@@ -32,7 +36,7 @@ The following examples show serif and sans-serif typefaces used in chart titles.
 
 Make your axis labels dark enough to read clearly, with adequate contrast ratios between the text and background colors. Make sure that they are not so dark that they compete with data ink.
 
-Light grays are most effective for axis labels. If you’re using Fabric, see the [Neutral Colors palette](http://odux/fabric/?page=features).
+Light grays are most effective for axis labels. If you’re using Fabric, see the [Neutral Colors palette](http://dev.office.com/fabric#/styles/colors).
 
 ### Data ink
 
@@ -53,7 +57,7 @@ For best practices for use of color in data visualizations, see the following:
 
 Gridlines are often necessary for accurately reading a chart, but should be presented as a secondary visual element, enhancing the data ink, not competing with it. Make static gridlines thin and light, unless they are designed specifically for high contrast. You can also use interaction to create dynamic, just-in-time gridlines that appear in context when a user interacts with a chart.
 
-Light grays are most effective for gridlines. If you’re using Fabric, see the [Neutral Colors palette](http://odux/fabric/?page=features).
+Light grays are most effective for gridlines. If you’re using Fabric, see the [Neutral Colors palette](http://dev.office.com/fabric#/styles/colors).
 
 The following image shows a data visualization with gridlines.
 
@@ -139,6 +143,6 @@ Motion follows data.
 
 ## Additional resources 
 
-- [Data + Design: A Simple Introduction to Preparing and Visualizing Information](https://infoactive.co/data-design/titlepage01.html)
+- [Data + Design: A Simple Introduction to Preparing and Visualizing Information](https://infoactive.co/data-design)
 - [The Five Best Libraries for Building Data Visualizations](http://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)
 - [The Visual Display of Quantitative Information](https://www.edwardtufte.com/tufte/books_vdqi)

@@ -72,15 +72,17 @@ To see how your add-in will run in Office for iOS, you can sideload your add-in'
 
 3. Open Word, and then open a document. Restart Word if it's already running.
     
-4. In Word, choose  **Insert** > **Add-ins** > **My Add-ins**, and then choose your add-in.
+4. In Word, choose  **Insert** > **Add-ins** > **My Add-ins** (drop-down menu), and then choose your add-in.
     
     ![My Add-ins in Office for Mac](../../images/4593430c-b33e-4895-b2be-63fe3c4d08bc.png)
 
-> **Important:** Sideloaded add-ins will not show up in the My Add-ins dialog. They are only visible within the drop-down menu (small down-arrow to the right of My Add-ins). Sideloaded add-ins are displayed in this list under the heading "Developer Add-ins". 
+  > **Important:** Sideloaded add-ins will not show up in the My Add-ins dialog. They are only visible within the drop-down menu (small   down-arrow to the right of My Add-ins). Sideloaded add-ins are displayed in this list under the heading "Developer Add-ins". 
     
 5. Verify that your add-in is displayed in Word.
     
     ![Office Add-in displayed in Office for Mac](../../images/a5cb2efc-1180-45b4-85a6-13df817b9d2c.png)
+    
+> **Note:** Add-ins are cached often in Office for Mac, for performance reasons. If you need to force a reload of your add-in while you're developing it, you can clear the Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/ folder. 
 
 ## Additional resources
 

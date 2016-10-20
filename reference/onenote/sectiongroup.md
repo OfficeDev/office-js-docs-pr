@@ -1,7 +1,6 @@
 # SectionGroup Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_  
-_Note: This API is in preview_  
+_Applies to: OneNote Online_   
 
 
 Represents a OneNote section group. Section groups can contain sections and other section groups.
@@ -30,6 +29,7 @@ _See property access [examples.](#property-access-examples)_
 | Method		   | Return Type	|Description| Feedback|
 |:---------------|:--------|:----------|:-------|
 |[addSection(title: String)](#addsectiontitle-string)|[Section](section.md)|Adds a new section to the end of the section group.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-addSection)|
+|[addSectionGroup(name: String)](#addsectiongroupname-string)|[SectionGroup](sectiongroup.md)|Adds a new section group to the end of this sectionGroup.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-addSectionGroup)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-load)|
 
 ## Method Details
@@ -81,6 +81,62 @@ OneNote.run(function (context) {
 		console.log("Debug info: " + JSON.stringify(error.debugInfo));
 	}
 });
+```
+
+
+### addSectionGroup(name: String)
+Adds a new section group to the end of this sectionGroup.
+
+#### Syntax
+```js
+sectionGroupObject.addSectionGroup(name);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|name|String|The name of the new section.|
+
+#### Returns
+[SectionGroup](sectiongroup.md)
+
+#### Examples
+```js          
+OneNote.run(function (context) {
+	var sectionGroup;
+	var nestedSectionGroup;
+
+	// Gets the active notebook.
+	var notebook = context.application.getActiveNotebook();
+
+	// Queue a command to add a new section group.
+	var sectionGroups = notebook.sectionGroups;
+
+	// Queue a command to load the new section group.
+	sectionGroups.load();
+
+	// Run the queued commands, and return a promise to indicate task completion.
+	return context.sync()
+		.then(function(){
+			sectionGroup = sectionGroups.items[0];
+			sectionGroup.load();
+			return context.sync();
+		})
+		.then(function(){
+			nestedSectionGroup = sectionGroup.addSectionGroup("Sample nested section group");
+			nestedSectionGroup.load();
+			return context.sync();
+		})
+		.then(function() {
+			console.log("New nested section group name is " + nestedSectionGroup.name);
+		});
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+}); 
 ```
 
 ### load(param: object)

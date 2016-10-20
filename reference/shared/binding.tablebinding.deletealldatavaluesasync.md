@@ -76,7 +76,7 @@ For more information about Office host application and server requirements, see 
 |:-----|:-----|:-----|:-----|
 |**Access**||Y||
 |**Excel**|Y|Y|Y|
-|**Word**|Y||Y|
+|**Word**|Y|Y|Y|
 
 |||
 |:-----|:-----|

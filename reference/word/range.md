@@ -2,12 +2,12 @@
 
 Represents a contiguous area in a document.
 
-_Applies to: Word 2016, Word for iPad, Word for Mac_
+_Applies to: Word 2016, Word for iPad, Word for Mac, Word Online_
 
 ## Properties
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|style|string|Gets or sets the style used for the range. This is the name of the pre-installed or custom style.|
+|style|string|Gets or sets the style used for the range. This is the name of the preinstalled or custom style. In Word Online, if a style name only contains alphabetic characters, the style *must* be all lower case, except for the first character, which *must* be upper case. If the style contains at least one non-alphabetic character, it is matched against known styles regardless of case, and if multiple styles match, the last style defined is applied.|
 |text|string|Gets the text of the range. Read-only.|
 
 ## Relationships
@@ -412,6 +412,9 @@ rangeObject.insertOoxml(ooxml, insertLocation);
 #### Returns
 [Range](range.md)
 
+#### Known issues
+This method results in long latency in Word Online, which can affect users' experience of your add-in. We recommend that you use this method only when no other solution is available. 
+
 #### Examples
 ```js
 // Run a batch operation against the Word object model.
@@ -485,7 +488,7 @@ Word.run(function (context) {
 ```
 
 ### insertText(text: string, insertLocation: InsertLocation)
-Inserts text into the range at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
+Inserts text into the range at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', ‘Before’ or ‘After’.
 
 #### Syntax
 ```js
@@ -496,7 +499,7 @@ rangeObject.insertText(text, insertLocation);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |text|string|Required. Text to be inserted.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start' or 'End'.|
+|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start', 'End', ‘Before’ or ‘After’.|
 
 #### Returns
 [Range](range.md)

@@ -26,7 +26,7 @@ Specifies the default source location and other default settings for your conten
 
 |**Element**|**Content**|**Mail**|**TaskPane**|
 |:-----|:-----|:-----|:-----|
-|[SourceLocation](../../reference/manifest/override.md)|x||x|
+|[SourceLocation](../../reference/manifest/sourcelocation.md)|x||x|
 |[RequestedWidth](../../reference/manifest/requestedwidth.md)|x|||
 |[RequestedHeight](../../reference/manifest/requestedheight.md)|x|||
 
