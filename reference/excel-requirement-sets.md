@@ -2,15 +2,22 @@
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Specify Office hosts and API requirements](../docs/overview/specify-office-hosts-and-api-requirements.md).
 
-Excel Add-ins run across multiple versions of Office including Office for Windows Desktop, Office Online, Office for the Mac, and Office for the iPad. The following table lists the Excel requirement sets, the Office host applications that support that requirement set, and the build versions.
+Excel Add-ins run across multiple versions of Office including Office for Windows Desktop, Office Online, Office for the Mac, and Office for the iPad. The following table lists the Excel requirement sets, the Office host applications that support that requirement set, and the build versions or number.
 
-|  Requirement set  |  Office Online  |  Office 2016 for Windows  |  Office 2016 for iPad  |  Office 2016 for Mac  |
+|  Requirement set  |  Office Online  |  Office 365 ProPlus  |  Office 2016 for iPad  |  Office 2016 for Mac  |
 |:-----|-----|:-----|:-----|:-----|
-| Excel Api 1.3  | September 2016 | 16.0.7466.2022| 1.27 or later | 15.27 or later|
-| Excel Api 1.2  | April 2016 | 16.0.6741.2081 | 1.21 or later | 15.22 or later|
-| Excel API 1.1  | January 2016 | Shipped with Office 2016 | 1.19 or later | 15.20 or later|
+| Excel Api 1.3  | September 2016 | Version 1608| 1.27 or later | 15.27 or later|
+| Excel Api 1.2  | January 2016 | Version 1601 | 1.21 or later | 15.22 or later|
+| Excel API 1.1  | January 2016 | Shipped with Office 2016 (Build 16.0.4266.1001) | 1.19 or later | 15.20 or later|
 
-> **Note**: For build numbers associated with Office Online Server and Office 365 Deferred Channel build, see [Other Office hosts and API requirements](other-Office-hosts-and-requirement-sets.md).
+> **Note**: The build number for Office 2016 install via MSI is 16.0.4266.1001.  
+
+For more information about Office 365 ProPlus, Office 2016 install via MSI, and Office Online Server, see the following topics:
+
+- [Overview of update channels for Office 365 ProPlus](https://technet.microsoft.com/en-us/library/mt455210.aspx)
+- [Version and build numbers of update channel releases for Office 365 clients](https://technet.microsoft.com/en-us/library/mt592918.aspx)
+- [Office Online Servers](https://technet.microsoft.com/en-us/library/jj219437(v=office.16).aspx)
+- [Volume Licensing Service Center](https://www.microsoft.com/Licensing/servicecenter/default.aspx)
 
 ## What's new in Excel JavaScript API 1.3 
 The following are the new additions to the Excel JavaScript APIs in requirement set 1.3. 
