@@ -1,7 +1,7 @@
 
 # Activation rules for Outlook add-ins
 
-Outlook activates some types of add-ins if the message or appointment that the user is reading or composing satisfies the activation rules of the add-in. This is true for all add-ins that use the 1.1 manifest schema and for custom pane addins. The user can then choose the add-in from the Outlook UI to start it for the current item.
+Outlook activates some types of add-ins if the message or appointment that the user is reading or composing satisfies the activation rules of the add-in. This is true for all add-ins that use the 1.1 manifest schema. The user can then choose the add-in from the Outlook UI to start it for the current item.
 
 The following figure shows Outlook add-ins activated in the add-in bar for the message in the Reading Pane. 
 
@@ -24,11 +24,11 @@ The following table lists the types of rules that are available. You can find mo
 
 |**Rule name**|**Applicable forms**|**Description**|
 |:-----|:-----|:-----|
-|[ItemIs](#itemis-rule)|Read ,Compose, Custom pane|Checks to see whether the current item is of the specified type (message or appointment). Can also check the item class and form type.and optionally, item message class.|
-|[ItemHasAttachment](#itemhasattachment-rule)|Read, Custom pane|Checks to see whether the selected item contains an attachment.|
-|[ItemHasKnownEntity](#itemhasknownentity-rule)|Read, Custom pane|Checks to see whether the selected item contains one or more well-known entities. More information: [Match strings in an Outlook item as well-known entities](../../outlook/match-strings-in-an-item-as-well-known-entities.md).|
-|[ItemHasRegularExpressionMatch](#itemhasregularexpressionmatch-rule)|Read, Custom pane|Checks to see whether the sender's email address, the subject, and/or the body of the selected item contains a match to a regular expression.More information: [Use regular expression activation rules to show an Outlook add-in](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md).|
-|[RuleCollection](#rulecollection-rule)|Read, Compose, Custom pane|Combines a set of rules so that you can form more complex rules.|
+|[ItemIs](#itemis-rule)|Read ,Compose|Checks to see whether the current item is of the specified type (message or appointment). Can also check the item class and form type.and optionally, item message class.|
+|[ItemHasAttachment](#itemhasattachment-rule)|Read|Checks to see whether the selected item contains an attachment.|
+|[ItemHasKnownEntity](#itemhasknownentity-rule)|Read|Checks to see whether the selected item contains one or more well-known entities. More information: [Match strings in an Outlook item as well-known entities](../../outlook/match-strings-in-an-item-as-well-known-entities.md).|
+|[ItemHasRegularExpressionMatch](#itemhasregularexpressionmatch-rule)|Read|Checks to see whether the sender's email address, the subject, and/or the body of the selected item contains a match to a regular expression.More information: [Use regular expression activation rules to show an Outlook add-in](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md).|
+|[RuleCollection](#rulecollection-rule)|Read, Compose|Combines a set of rules so that you can form more complex rules.|
 
 ## ItemIs rule
 

@@ -33,12 +33,6 @@ Extension points are the ways that add-ins integrate with Outlook. The following
 
     ![Shows a contextual app in a card](../../images/59bcabc2-7cb0-4b9b-bb9f-06089dca9c31.png)
 
-- Add-ins can appear in a horizontal pane above the body of the message or appointment. This is based on complex rules, such as presence of attachments or Exchange item class of the message or appointment. For more information, see [Custom pane Outlook add-ins](../outlook/custom-pane-outlook-add-ins.md).
-    
-    **An add-in with a custom pane in read mode**
-
-    ![Shows a custom pane in a message read form.](../../images/c585ab0a-6c33-42d0-a20f-5deb8b54f480.png)
-
 
 ## Mailbox items available to add-ins
 
