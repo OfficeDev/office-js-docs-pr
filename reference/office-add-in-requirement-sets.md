@@ -13,7 +13,7 @@ For information about Excel, Word, OneNote and Dialog API, see the following top
 - [OneNote JavaScript API requirement sets](onenote-requirement-sets.md)
 - [Dialog API requirement sets](dialogapi-requirement-sets.md)
 
-For build numbers associated with Office Online Server and Office Enterprise version, see [Other Office hosts and API requirements](other-Office-hosts-and-requirement-sets.md).
+For build numbers associated with Office Online Server and Office 365 Deferred Channel build, see [Other Office hosts and API requirements](other-Office-hosts-and-requirement-sets.md).
 
 ## Common API requirement sets
 
