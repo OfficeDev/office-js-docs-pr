@@ -8,7 +8,7 @@ Excel Add-ins run across multiple versions of Office including Office for Window
 |:-----|-----|:-----|:-----|:-----|
 | Excel Api 1.3  | September 2016 | Version 1608| 1.27 or later | 15.27 or later|
 | Excel Api 1.2  | January 2016 | Version 1601 | 1.21 or later | 15.22 or later|
-| Excel API 1.1  | January 2016 | Shipped with Office 2016 (Build 16.0.4266.1001) | 1.19 or later | 15.20 or later|
+| Excel API 1.1  | January 2016 | Shipped with Office 2016 <br>(Build 16.0.4266.1001)</br> | 1.19 or later | 15.20 or later|
 
 > **Note**: The build number for Office 2016 install via MSI is 16.0.4266.1001.  
 
@@ -73,4 +73,4 @@ For information about common API requirement sets, see [Common API requirement s
 ## Additional resources
 
 - [Specify Office hosts and API requirements](../docs/overview/specify-office-hosts-and-api-requirements.md)
-- [Office Add-ins XML manifeste](https://dev.office.com/docs/add-ins/overview/add-in-manifests)
+- [Office Add-ins XML manifest](https://dev.office.com/docs/add-ins/overview/add-in-manifests)
