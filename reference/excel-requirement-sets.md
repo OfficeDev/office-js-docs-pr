@@ -12,9 +12,6 @@ Excel Add-ins run across multiple versions of Office including Office for Window
 
 > **Note**: For build numbers associated with Office Online Server and Office 365 Deferred Channel build, see [Other Office hosts and API requirements](other-Office-hosts-and-requirement-sets.md).
 
-## Common API requirement sets
-For information about common API requirement sets, see [Common API requirement sets](office-add-in-requirement-sets.md).
-
 ## What's new in Excel JavaScript API 1.3 
 The following are the new additions to the Excel JavaScript APIs in requirement set 1.3. 
 
@@ -63,7 +60,10 @@ The following are the new additions to the Excel JavaScript APIs in requirement 
 ## What's new in Excel JavaScript API 1.2
 The following are the new additions to the Excel JavaScript APIs in requirement set 1.2. 
 
+## Common API requirement sets
+For information about common API requirement sets, see [Common API requirement sets](office-add-in-requirement-sets.md).
+
 ## Additional resources
 
 - [Specify Office hosts and API requirements](../docs/overview/specify-office-hosts-and-api-requirements.md)
-- [JavaScript API for Office reference](http://dev.office.com/reference/add-ins/javascript-api-for-office)
+- [Office Add-ins XML manifeste](https://dev.office.com/docs/add-ins/overview/add-in-manifests)
