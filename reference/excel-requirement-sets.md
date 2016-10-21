@@ -2,7 +2,7 @@
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Specify Office hosts and API requirements](../docs/overview/specify-office-hosts-and-api-requirements.md).
 
-Excel Add-ins run across multiple versions of Office including Office for Windows Desktop, Office Online, Office for the Mac, and Office for the iPad. The following table lists the Excel requirement sets, the Office host applications that support that requirement set, and the build versions or number.
+Excel Add-ins run across multiple versions of Office including Office Online, Office 365 ProPlus, Office for the iPad and Office for the Mac. The following table lists the Excel requirement sets, the Office host applications that support that requirement set, and the build versions or number.
 
 |  Requirement set  |  Office Online  |  Office 365 ProPlus  |  Office 2016 for iPad  |  Office 2016 for Mac  |
 |:-----|-----|:-----|:-----|:-----|
