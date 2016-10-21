@@ -4,6 +4,8 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 
 The following table lists the Office Online Server and Office Enterprise version requirement sets, release dates and the build versions.
 
+> **Note**:  If you install Office 2016 via MSI, you might not have the latest APIs.
+
 |  Type of requirement set  |  Release date  |  Build version  |
 |:-----|-----|:-----|
 | Office 2016 MSI  | Not applicable | Not applicable| 
