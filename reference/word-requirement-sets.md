@@ -6,9 +6,9 @@ Word Add-ins run across multiple versions of Office including Office Online, Off
 
 |  Requirement set  |  Office Online  |  Office 2016 for Windows  |  Office 2016 for iPad  |  Office 2016 for Mac  |
 |:-----|-----|:-----|:-----|:-----|
-| Word Api 1.3  | Currently not supported | In preview, Version 1605| 1.21 or later | 7403.1000|
-| Word Api 1.2  | September 2016 | Version 1601 | 1.18 or later | 7403.1000|
-| Word API 1.1  | September 2016 | Shipped with Office 2016 <br>(Build 16.0.4266.1001)</br>| 1.18 or later | 7403.1000|
+| Word Api 1.3  | Currently not supported | In preview, Version 1605| 1.21 or later | In preview, 15.23 or later|
+| Word Api 1.2  | September 2016 | Version 1601 | 1.18 or later | 15.19 or later|
+| Word API 1.1  | September 2016 | Shipped with Office 2016 <br>(Build 16.0.4266.1001)</br>| 1.18 or later | 15.19 or later|
 
 For more information about Office 365 ProPlus, Office 2016 install via MSI, and Office Online Server, see the following topics:
 
