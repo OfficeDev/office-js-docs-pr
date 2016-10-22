@@ -4,7 +4,7 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 
 Word Add-ins run across multiple versions of Office including Office Online, Office 365 ProPlus, Office for the iPad and Office for the Mac. The following table lists the Word requirement sets, the Office host applications that support that requirement set, and the build versions.
 
-|  Requirement set  |  Office Online  |  Office 2016 for Windows  |  Office 2016 for iPad  |  Office 2016 for Mac  |
+|  Requirement set  |  Office Online  |  Office 365 ProPlus  |  Office 2016 for iPad  |  Office 2016 for Mac  |
 |:-----|-----|:-----|:-----|:-----|
 | Word Api 1.3  | Currently not supported | In preview, Version 1605| 1.21 or later | In preview, 15.23 or later|
 | Word Api 1.2  | September 2016 | Version 1601 | 1.18 or later | 15.19 or later|
