@@ -26,4 +26,4 @@ For information about common API requirement sets, see [Office common API requir
 ## Additional resources
 
 - [Specify Office hosts and API requirements](../docs/overview/specify-office-hosts-and-api-requirements.md)
-- [Office Add-ins XML manifeste](https://dev.office.com/docs/add-ins/overview/add-in-manifests)
+- [Office Add-ins XML manifest](https://dev.office.com/docs/add-ins/overview/add-in-manifests)
