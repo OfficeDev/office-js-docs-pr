@@ -67,8 +67,8 @@ The following are the new additions to the Excel JavaScript APIs in requirement 
 ## What's new in Excel JavaScript API 1.2
 The following are the new additions to the Excel JavaScript APIs in requirement set 1.2. 
 
-## Common API requirement sets
-For information about common API requirement sets, see [Common API requirement sets](office-add-in-requirement-sets.md).
+## Office common API requirement sets
+For information about common API requirement sets, see [Office common API requirement sets](office-add-in-requirement-sets.md).
 
 ## Additional resources
 
