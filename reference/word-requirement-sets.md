@@ -2,7 +2,7 @@
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Specify Office hosts and API requirements](../docs/overview/specify-office-hosts-and-api-requirements.md).
 
-Word Add-ins run across multiple versions of Office including Office 2016 for Windows, Office for the iPad and Office for the Mac, and Office Online. The following table lists the Word requirement sets, the Office host applications that support that requirement set, and the build versions.
+Word Add-ins run across multiple versions of Office including Office 2016 for Windows, Office for the iPad, Office for the Mac, and Office Online. The following table lists the Word requirement sets, the Office host applications that support that requirement set, and the build versions.
 
 |  Requirement set  |   Office 2016 for Windows  |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |
 |:-----|-----|:-----|:-----|:-----|
