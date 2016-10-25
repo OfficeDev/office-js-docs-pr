@@ -4,9 +4,9 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 
 Office Add-ins run across multiple versions of Office including Office 365 ProPlus, Office for the iPad and Office for the Mac. The following table lists the Dialog API requirement sets, the Office host applications that support that requirement set, and the build versions.
 
-|  Requirement set  |  Office Online  | Office 365 ProPlus  |  Office 2016 for iPad  |  Office 2016 for Mac  |
+|  Requirement set  |  Office Online  | Office 2016 for Windows   |  Office 2016 for iPad  |  Office 2016 for Mac  |
 |:-----|-----|:-----|:-----|:-----|
-| Dialog API 1.1  | Currently not supported| Version 1602 | 1.22 or later | 15.20 or later|
+| Dialog API 1.1  | Currently not supported| Version 1602 or later | 1.22 or later | 15.20 or later|
 
 > **Note**: The build number for Office 2016 install via MSI is 16.0.4266.1001.  
 
