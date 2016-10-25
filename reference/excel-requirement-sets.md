@@ -1,4 +1,4 @@
- # Excel JavaScript API requirement sets
+# Excel JavaScript API requirement sets
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Specify Office hosts and API requirements](../docs/overview/specify-office-hosts-and-api-requirements.md).
 
@@ -12,12 +12,10 @@ Excel Add-ins run across multiple versions of Office including Office Online, Of
 
 > **Note**: The build number for Office 2016 install via MSI is 16.0.4266.1001.  
 
-For more information about Office 365 ProPlus, Office 2016 install via MSI, and Office Online Server, see the following topics:
+To find out more about versions and build numbers, see [Version and build numbers of update channel releases for Office 365 clients](https://technet.microsoft.com/en-us/library/mt592918.aspx)cecenter/default.aspx)
 
-- [Overview of update channels for Office 365 ProPlus](https://technet.microsoft.com/en-us/library/mt455210.aspx)
-- [Version and build numbers of update channel releases for Office 365 clients](https://technet.microsoft.com/en-us/library/mt592918.aspx)
-- [Office Online Servers](https://technet.microsoft.com/en-us/library/jj219437(v=office.16).aspx)
-- [Volume Licensing Service Center](https://www.microsoft.com/Licensing/servicecenter/default.aspx)
+## Office common API requirement sets
+For information about common API requirement sets, see [Office common API requirement sets](office-add-in-requirement-sets.md).
 
 ## What's new in Excel JavaScript API 1.3 
 The following are the new additions to the Excel JavaScript APIs in requirement set 1.3. 
@@ -66,9 +64,6 @@ The following are the new additions to the Excel JavaScript APIs in requirement 
 
 ## What's new in Excel JavaScript API 1.2
 The following are the new additions to the Excel JavaScript APIs in requirement set 1.2. 
-
-## Office common API requirement sets
-For information about common API requirement sets, see [Office common API requirement sets](office-add-in-requirement-sets.md).
 
 ## Additional resources
 
