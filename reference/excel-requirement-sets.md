@@ -4,11 +4,11 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 
 Excel Add-ins run across multiple versions of Office including Office Online, Office 365 ProPlus, Office for the iPad and Office for the Mac. The following table lists the Excel requirement sets, the Office host applications that support that requirement set, and the build versions or number.
 
-|  Requirement set  |  Office Online  |  Office 2016 for Windows  |  Office 2016 for iPad  |  Office 2016 for Mac  |
+|  Requirement set  |  Office 2016 for Windows  |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |
 |:-----|-----|:-----|:-----|:-----|
-| Excel Api 1.3  | September 2016 | Version 1608 or later| 1.27 or later | 15.27 or later|
-| Excel Api 1.2  | January 2016 | Version 1601 or later | 1.21 or later | 15.22 or later|
-| Excel API 1.1  | January 2016 | Shipped with Office 2016 <br>(Build 16.0.4266.1001)</br> or later | 1.19 or later | 15.20 or later|
+| Excel Api 1.3  | Version 1608 or later| 1.27 or later | 15.27 or later| September 2016 | 
+| Excel Api 1.2  | Version 1601 or later | 1.21 or later | 15.22 or later| January 2016 |
+| Excel API 1.1  | Shipped with Office 2016 <br>(Build 16.0.4266.1001)</br> or later | 1.19 or later | 15.20 or later| January 2016 |
 
 > **Note**: The build number for Office 2016 install via MSI is 16.0.4266.1001.  
 
