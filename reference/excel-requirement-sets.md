@@ -1,4 +1,4 @@
-# Excel JavaScript API requirement sets
+ # Excel JavaScript API requirement sets
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Specify Office hosts and API requirements](../docs/overview/specify-office-hosts-and-api-requirements.md).
 
@@ -6,9 +6,9 @@ Excel Add-ins run across multiple versions of Office including Office Online, Of
 
 |  Requirement set  |  Office Online  |  Office 2016 for Windows  |  Office 2016 for iPad  |  Office 2016 for Mac  |
 |:-----|-----|:-----|:-----|:-----|
-| Excel Api 1.3  | September 2016 | Version 1608| 1.27 or later | 15.27 or later|
-| Excel Api 1.2  | January 2016 | Version 1601 | 1.21 or later | 15.22 or later|
-| Excel API 1.1  | January 2016 | Shipped with Office 2016 <br>(Build 16.0.4266.1001)</br> | 1.19 or later | 15.20 or later|
+| Excel Api 1.3  | September 2016 | Version 1608 or later| 1.27 or later | 15.27 or later|
+| Excel Api 1.2  | January 2016 | Version 1601 or later | 1.21 or later | 15.22 or later|
+| Excel API 1.1  | January 2016 | Shipped with Office 2016 <br>(Build 16.0.4266.1001)</br> or later | 1.19 or later | 15.20 or later|
 
 > **Note**: The build number for Office 2016 install via MSI is 16.0.4266.1001.  
 
