@@ -85,26 +85,26 @@ import { ApplicationRef } from '@angular/core';
 
 ## Using observables
 
-Angular 2.0 uses RxJS (Reactive Extensions for JavaScript), and RxJS introduces `Observable` and `Observer` objects to implement asynchronous processing. This section provides a brief introduction; for more detailed information, see the official [RxJS](http://reactivex.io/rxjs/) documentation.
+Angular 2.0 uses RxJS (Reactive Extensions for JavaScript), and RxJS introduces `Observable` and `Observer` objects to implement asynchronous processing. This section provides a brief introduction to using `Observables`; for more detailed information, see the official [RxJS](http://reactivex.io/rxjs/) documentation.
 
-An `Observable` is like a `Promise` object in some ways: it is returned immediately from an asynchronous call, but it may not resolve until some time later. However, while a `Promise` is a single value (which may be an array object), an `Observable` is an array of objects (possibly with only a single member). This enables code to call [array methods](http://www.w3schools.com/jsref/jsref_obj_array.asp), such as `concat`, `map`, and `filter` on `Observable` objects. 
+An `Observable` is like a `Promise` object in some ways - it is returned immediately from an asynchronous call, but it might not resolve until some time later. However, while a `Promise` is a single value (which can be an array object), an `Observable` is an array of objects (possibly with only a single member). This way, code can call [array methods](http://www.w3schools.com/jsref/jsref_obj_array.asp), such as `concat`, `map`, and `filter`, on `Observable` objects. 
 
 ### Pushing instead of pulling
 
-Another difference is that your code "pulls" `Promise` objects by assigning them to variables, but `Observable` objects "push" their values to objects that *subscribe* to the `Observable`. The subscribers are `Observer` objects. The benefit of the push architecture is that new members can be added to the `Observable` array over time. Whenever a new member is added, all the `Observer` objects that subscribe to the `Observable` receive a notification. 
+Your code "pulls" `Promise` objects by assigning them to variables, but `Observable` objects "push" their values to objects that *subscribe* to the `Observable`. The subscribers are `Observer` objects. The benefit of the push architecture is that new members can be added to the `Observable` array over time. When a new member is added, all the `Observer` objects that subscribe to the `Observable` receive a notification. 
 
-The `Observer` is configured to process each new object (called the "next" object) with a function. (It is also configured to respond to an error and a completion notification. See below for an example.) For this reason, `Observable` objects can be easily used in a wider range of scenarios that `Promise` objects. For example, in addition to returning an `Observable` from an AJAX call, as a `Promise` can be, an `Observable` can be returned from an event handler, such as the "changed" event handler for a text box. Each time a user enters text in the box, all the subscribed `Observer` objects react immediately using the latest text and/or the current state of the application as input. 
+The `Observer` is configured to process each new object (called the "next" object) with a function. (It is also configured to respond to an error and a completion notification. See the next section for an example.) For this reason, `Observable` objects can be used in a wider range of scenarios than `Promise` objects. For example, in addition to returning an `Observable` from an AJAX call, the way you can return a `Promise`, an `Observable` can be returned from an event handler, such as the "changed" event handler for a text box. Each time a user enters text in the box, all the subscribed `Observer` objects react immediately using the latest text and/or the current state of the application as input. 
 
 
 ### Waiting until all asynchronous calls have completed
 
-When you want to ensure that a callback only runs when every member of a set of `Promise` objects has resolved, you would use the `Promise.all()` method:
+When you want to ensure that a callback only runs when every member of a set of `Promise` objects has resolved, use the `Promise.all()` method.
 
 ```js
-myPromise.all([x, y, z]).then(// ToDo: callback logic goes here)
+myPromise.all([x, y, z]).then(// TODO: Callback logic goes here.)
 ``` 
 
-To do the same thing with an `Observable` object, you use the [Observable.forkJoin()](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/forkjoin.md) method:  
+To do the same thing with an `Observable` object, you use the [Observable.forkJoin()](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/forkjoin.md) method.  
 
 ```js
 var source = Rx.Observable.forkJoin([x, y, z]);
