@@ -6,12 +6,14 @@ Word Add-ins run across multiple versions of Office including Office 2016 for Wi
 
 |  Requirement set  |   Office 2016 for Windows  |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |
 |:-----|-----|:-----|:-----|:-----|
-| Word Api 1.3  | In preview, Version 1605 or later| 1.21 or later | In preview, 15.22 or later| Currently not supported | 
-| Word Api 1.2  | Version 1601 or later | 1.18 or later | 15.19 or later| September 2016 | 
-| Word API 1.1  | Shipped with Office 2016 <br>(Build 16.0.4266.1001)</br> or later| 1.18 or later | 15.19 or later| September 2016 | 
+| Word Api 1.3  | In preview, Build 6925 or later| In preview, May 2016, Build 1.21 or later | In preview, 15.22 or later| We're working on it | 
+| Word Api 1.2  | December 2015 update, Build 6568 or later | January 2016, Build 1.18 or later | January 2016, Build 15.19 or later| September 2016 | 
+| Word API 1.1  | Shipped with Office 2016 <br>Version 1509 (Build 16.0.4266.1001)</br> or later| January 2016, Build 1.18 or later | January 2016, Build 15.19 or later| September 2016 | 
+
+> **Note**: The build number for Office 2016 install via MSI is 16.0.4266.1001. 
 
 To find out more about versions and build numbers, see:
-- [Version and build numbers of update channel releases for Office 365 clients](https://technet.microsoft.com/en-us/library/mt592918.aspx)cecenter/default.aspx)
+- [Version and build numbers of update channel releases for Office 365 clients](https://technet.microsoft.com/en-us/library/mt592918.aspx)
 - [What version of Office am I using?](https://support.office.com/en-us/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19?ui=en-US&rs=en-US&ad=US&fromAR=1)
 - [Where you can find the version and build number for an Office 365 client application](https://technet.microsoft.com/en-us/library/mt592918.aspx#Where you can find the version and build number for an Office 365 client application)
 
