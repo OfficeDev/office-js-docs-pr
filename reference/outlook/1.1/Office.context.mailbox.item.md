@@ -339,7 +339,7 @@ Gets the Exchange Web Services item identifier for the current item. Read mode o
 
 The identifier returned by the `itemId` property is the same as the Exchange Web Services item identifier. The `itemId` property is not identical to the Outlook Entry ID.
 
-The `itemId` property returns `null` in compose mode for items that have not been saved to the store. If an item identifier is required, the [`saveAsync`](Office.context.mailbox.item.md#saveAsync) method can be used to save the item to the store, which will return the item identifier in the [`AsyncResult.value`](simple-types.md#asyncresult) parameter in the callback function.
+The `itemId` property is not available in compose mode. If an item identifier is required, the [`saveAsync`](Office.context.mailbox.item.md#saveAsync) method can be used to save the item to the store, which will return the item identifier in the [`AsyncResult.value`](simple-types.md#asyncresult) parameter in the callback function.
 
 ##### Type:
 
