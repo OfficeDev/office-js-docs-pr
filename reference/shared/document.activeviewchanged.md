@@ -30,7 +30,7 @@ For more information about Office host application and server requirements, see 
 
 ||**Office for Windows desktop**|**Office Online (in browser)**|**Office for iPad**|
 |:-----|:-----|:-----|:-----|
-|**PowerPoint**|Y|Y|Y|
+|**PowerPoint**|Y||Y|
 
 |||
 |:-----|:-----|
