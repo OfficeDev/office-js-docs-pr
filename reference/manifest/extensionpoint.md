@@ -68,39 +68,11 @@ The following examples show how to use the  **ExtensionPoint** element with **Pr
 
 ## Extension points for Outlook add-in commands
 
-- [CustomPane](#custompane) 
 - [MessageReadCommandSurface](#messagereadcommandsurface) 
 - [MessageComposeCommandSurface](#messagecomposecommandsurface) 
 - [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface) 
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
 - [Module](#module) (Can only be used in the [DesktopFormFactor](./formfactor.md).)
-
-### CustomPane
-
-The CustomPane extension point defines an add-in that activates when specified rules are satisfied. It is only for read form and it displays in a horizontal pane. 
-
-**Child elements**
-
-|  Element |  Required  |  Description  |
-|:-----|:-----|:-----|
-|  **RequestedHeight** | No |  The requested height, in pixels, for the display pane when it is running on a desktop computer. This can be from 32 to 450 pixels.  |
-|  **SourceLocation**  | Yes |  The URL for the source code file of the add-in. This refers to a  **Url** element in the [Resources](./resources.md)  element.  |
-|  **Rule**  | Yes |  The rule or collection of rules that specify when the add-in activates. For more information, see  [Activation rules for Outlook add-ins](../../docs/outlook/manifests/activation-rules.md). |
-|  **DisableEntityHighlighting**  | No |  Specifies whether entity highlighting should be turned off. |
-
-
-#### CustomPane example
-```xml
-<ExtensionPoint xsi:type="CustomPane">
-   <RequestedHeight>100< /RequestedHeight> 
-   <SourceLocation resid="residReadTaskpaneUrl"/>
-   <Rule xsi:type="RuleCollection" Mode="Or">
-     <Rule xsi:type="ItemIs" ItemType="Message"/>
-     <Rule xsi:type="ItemHasAttachment"/>
-     <Rule xsi:type="ItemHasKnownEntity" EntityType="Address"/>
-   </Rule>
-</ExtensionPoint>
-```
 
 ### MessageReadCommandSurface
 This extension point puts buttons in the command surface for the mail read view. In Outlook desktop, this appears in the ribbon.

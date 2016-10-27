@@ -38,7 +38,7 @@ tableCollectionObject.add(address, hasHeaders);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|address|string|Address or name of the range object representing the data source. If the address does not contain a sheet name, the currently active sheet is used.|
+|address|string|Address or name of the range object representing the data source. Note that the Range address should include the worksheet in which the table needs to be added. Example `Sheet1!A1:D4`.|
 |hasHeaders|bool|Boolean value that indicates whether the data being imported has column labels. If the source does not contain headers (i.e., when this property is set to false), Excel will automatically generate a header, shifting the data down by one row.|
 
 #### Returns
