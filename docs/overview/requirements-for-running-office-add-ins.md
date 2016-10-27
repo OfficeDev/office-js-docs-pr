@@ -36,9 +36,9 @@ The following software is required for developing an Office Add-in for the suppo
 
     - Excel 2013, Outlook 2013, PowerPoint 2013, Project Professional 2013, Project 2013 SP1, Word 2013, or a later version of the Office client, if you are testing or running an Office Add-in specifically for one of these Office desktop clients. Office desktop clients can be installed on premises or via Click-to-Run on the client computer.
 
-- Internet Explorer 9 or later, which must be installed but doesn't have to be the default browser. To support Office Add-ins, the Office client that acts as host uses browser components that are part of Internet Explorer 9 or later.
+- Internet Explorer 11 or later, which must be installed but doesn't have to be the default browser. To support Office Add-ins, the Office client that acts as host uses browser components that are part of Internet Explorer 11 or later.
 
-- One of the following as the default browser: Internet Explorer 9, Safari 5.0.6, Firefox 5, Chrome 13, or a later version of one of these browsers.
+- One of the following as the default browser: Internet Explorer 11 or later, or the latest version of Edge, Chrome, Firefox, or Safari (Mac OS).
 
 - An HTML and JavaScript editor such as Notepad, [Visual Studio and the Microsoft Developer Tools](https://www.visualstudio.com/features/office-tools-vs), or a third-party web development tool.
 
@@ -54,7 +54,7 @@ The following are the minimum client versions of Office for Mac that support Off
 
 ## Client requirements: Browser support for Office Online web clients and SharePoint
 
-Any browser that supports ECMAScript 5.1, HTML5, and CSS3, such as Internet Explorer 9, Chrome 13, Firefox 5, Safari 5.0.6, or a later version of these browsers.
+Any browser that supports ECMAScript 5.1, HTML5, and CSS3, such as Internet Explorer 11 or later, or the latest version of Edge, Chrome, Firefox, or Safari (Mac OS).
 
 
 ## Client requirements: non-Windows smartphone and tablet
