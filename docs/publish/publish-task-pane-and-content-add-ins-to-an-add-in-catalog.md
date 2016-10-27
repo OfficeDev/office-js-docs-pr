@@ -1,5 +1,5 @@
 
-# Publish task pane and content add-ins to SharePoint catalog
+# Publish task pane and content add-ins to a SharePoint catalog
 
 >**Note:** If you’re targeting a cloud or hybrid environment, we recommend that you use centralized deployment via the [Admin Center preview](https://support.office.com/en-ie/article/Deploy-Office-Add-ins-in-the-Office-365-new-Admin-Center-737e8c86-be63-44d7-bf02-492fa7cd9c3f?ui=en-US&rs=en-IE&ad=IE) to publish your add-ins.
 
