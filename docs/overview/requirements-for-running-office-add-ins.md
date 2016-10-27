@@ -54,7 +54,7 @@ The following are the minimum client versions of Office for Mac that support Off
 
 ## Client requirements: Browser support for Office Online web clients and SharePoint
 
-Any browser that supports ECMAScript 5.1, HTML5, and CSS3, such as Internet Explorer 11 or later, Edge, Chrome, Firefox, or Safari (Mac OS).
+Any browser that supports ECMAScript 5.1, HTML5, and CSS3, such as Internet Explorer 11 or later, or the latest version of Edge, Chrome, Firefox, or Safari (Mac OS).
 
 
 ## Client requirements: non-Windows smartphone and tablet
