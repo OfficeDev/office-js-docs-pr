@@ -1,3 +1,4 @@
+
 # Word JavaScript API requirement sets
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Specify Office hosts and API requirements](../docs/overview/specify-office-hosts-and-api-requirements.md).
@@ -22,9 +23,10 @@ For information about common API requirement sets, see [Office common API requir
 
 ## What's new in Word JavaScript API 1.3 
 The following are the new additions to the Word JavaScript APIs in requirement set 1.3. 
-Word1.2
-|Object| What is new| Description|Req. Set|
-|:----|:----|:----|:----|
+
+
+|Object| What's new| Description|Req. Set|
+|:-----|-----|:----|:----|
 |[contentControl](reference/word/contentcontrol.md)|_Method_ > [insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](reference/word/contentcontrol.md#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|Inserts an inline picture into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|1.2|
 |[inlinePicture](reference/word/inlinepicture.md)|_Relationship_ > paragraph|Gets the parent paragraph that contains the inline image. Read-only.|1.2|
 |[inlinePicture](reference/word/inlinepicture.md)|_Relationship_ > parentTable|Gets the table that contains the inline image. Returns a null object if it is not contained in a table. Read-only.|1.3|
