@@ -25,6 +25,9 @@ For information about common API requirement sets, see [Office common API requir
 The following are the new additions to the Word JavaScript APIs in requirement set 1.3. 
 
 
+## What's new in Word JavaScript API 1.2
+The following are the new additions to the Word JavaScript APIs in requirement set 1.2. 
+
 |Object| What's new| Description|Req. Set|
 |:-----|-----|:----|:----|
 |[contentControl](reference/word/contentcontrol.md)|_Method_ > [insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](reference/word/contentcontrol.md#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|Inserts an inline picture into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|1.2|
@@ -43,8 +46,6 @@ The following are the new additions to the Word JavaScript APIs in requirement s
 |[range](reference/word/range.md)|_Relationship_ > inlinePictures|Gets the collection of inline picture objects in the range. Read-only.|1.2|
 |[range](reference/word/range.md)|_Method_ > [insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](reference/word/range.md#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|Inserts a picture at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.|1.2|
 
-## What's new in Word JavaScript API 1.2
-The following are the new additions to the Word JavaScript APIs in requirement set 1.2. 
 
 ## Additional resources
 
