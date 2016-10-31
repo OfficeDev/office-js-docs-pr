@@ -38,7 +38,7 @@ The following software is required for developing an Office Add-in for the suppo
 
 - Internet Explorer 11 or later, which must be installed but doesn't have to be the default browser. To support Office Add-ins, the Office client that acts as host uses browser components that are part of Internet Explorer 11 or later.
 
-- One of the following as the default browser: Internet Explorer 11 or later, or the latest version of Edge, Chrome, Firefox, or Safari (Mac OS).
+- One of the following as the default browser: Internet Explorer 11 or later, or the latest version of Microsoft Edge, Chrome, Firefox, or Safari (Mac OS).
 
 - An HTML and JavaScript editor such as Notepad, [Visual Studio and the Microsoft Developer Tools](https://www.visualstudio.com/features/office-tools-vs), or a third-party web development tool.
 
@@ -54,7 +54,7 @@ The following are the minimum client versions of Office for Mac that support Off
 
 ## Client requirements: Browser support for Office Online web clients and SharePoint
 
-Any browser that supports ECMAScript 5.1, HTML5, and CSS3, such as Internet Explorer 11 or later, or the latest version of Edge, Chrome, Firefox, or Safari (Mac OS).
+Any browser that supports ECMAScript 5.1, HTML5, and CSS3, such as Internet Explorer 11 or later, or the latest version of Microsoft Edge, Chrome, Firefox, or Safari (Mac OS).
 
 
 ## Client requirements: non-Windows smartphone and tablet
