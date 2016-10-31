@@ -47,8 +47,8 @@
     
 	<Item text="SupportUrl" url="manifest/supporturl" SEODescription="Specifies the URL of a page that provides support information for your add-in." />
     <Item text="TabletSettings" url="manifest/tabletsettings" Scope="outlook" SEODescription="Specifies control settings that apply when your mail add-in is used on a tablet." />
-    <Item text="TargetDialect" url="manifest/targetdialect" Scope="excel, word, powerpoint, project" SEODescription="Defines a dialect supported by this dictionary, represented as a culture name string." />
-    <Item text="TargetDialects" url="manifest/targetdialects" Scope="excel, word, powerpoint, project" SEODescription="Defines the dialect(s) supported by this dictionary." />
+    <Item text="TargetDialect" url="manifest/targetdialect" Scope="excel, word, powerpoint, project" SEODescription="Defines a regional language supported by this dictionary, represented as a culture name string." />
+    <Item text="TargetDialects" url="manifest/targetdialects" Scope="excel, word, powerpoint, project" SEODescription="Defines the regional language(s) supported by this dictionary." />
     <Item text="Version" url="manifest/version" SEODescription="Specifies the version of your Office Add-in." />
 	<Item text="VersionOverrides" url="manifest/versionoverrides" Scope="excel, word, powerpoint" SEODescription="The root element that contains information for the add-in commands implemented by the add-in."> 
 		<Item text="Action" url="manifest/action" Scope="excel, word, powerpoint" SEODescription="Specifies the action to perform when the user selects a Button or Menu control." />
