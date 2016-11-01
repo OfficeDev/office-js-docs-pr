@@ -28,7 +28,7 @@ The following table specifies the elements that are required for the three types
  >- All URLs, such as the source file locations specified in the [SourceLocation](../../reference/manifest/sourcelocation.md) element, must be **SSL-secured (HTTPS)**.
  >- All icon URLs, such as those used on command surfaces, must **allow caching**. The web server should NOT return HTTP headers like no-cache/no-store. 
  >- Add-ins submitted to the Office Store must also include the [SupportUrl](../../reference/manifest/supporturl.md) element. For more information, see [What are some common submission errors to avoid?](http://msdn.microsoft.com/library/0ceb385c-a608-40cc-8314-78e39d6c75d0%28Office.15%29.aspx#bk_q2)
->- As a best practice, use the [AppDomains](../../reference/manifest/appdomains.md) element to specify domains other than the one specified in the [SourceLocation](../../reference/manifest/sourcelocation.md) element only for authentication scenarios.
+>- As a best practice, only use the [AppDomains](../../reference/manifest/appdomains.md) element to specify domains other than the one specified in the [SourceLocation](../../reference/manifest/sourcelocation.md) element for authentication scenarios.
 
 **Required elements by Office Add-in type**
 
