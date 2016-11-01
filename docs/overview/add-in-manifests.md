@@ -28,7 +28,7 @@ The following table specifies the elements that are required for the three types
  >- All URLs, such as the source file locations specified in the [SourceLocation](../../reference/manifest/sourcelocation.md) element, must be **SSL-secured (HTTPS)**.
  >- All icon URLs, such as those used on command surfaces, must **allow caching**. The web server should NOT return HTTP headers like no-cache/no-store. 
  >- Add-ins submitted to the Office Store must also include the [SupportUrl](../../reference/manifest/supporturl.md) element. For more information, see [What are some common submission errors to avoid?](http://msdn.microsoft.com/library/0ceb385c-a608-40cc-8314-78e39d6c75d0%28Office.15%29.aspx#bk_q2)
-
+>- As a best practice, only use the [AppDomains](../../reference/manifest/appdomains.md) element to specify domains other than the one specified in the [SourceLocation](../../reference/manifest/sourcelocation.md) element for authentication scenarios.
 
 **Required elements by Office Add-in type**
 
@@ -78,9 +78,9 @@ To use a command-line XML schema validation tool to validate your manifest:
 ## Specify domains you want to open in the add-in window
 
 
-By default, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](http://msdn.microsoft.com/en-us/library/00d95bb0-e8f5-647f-790a-0aa3aabc8141%28Office.15%29.aspx) element of the manifest file), that URL will open in a new browser window outside the add-in pane of the Office host application. This default behavior protects the user against unexpected page navigation within the add-in pane from embedded **iframe** elements.
+By default, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](../../reference/manifest/sourcelocation.md) element of the manifest file), that URL will open in a new browser window outside the add-in pane of the Office host application. This default behavior protects the user against unexpected page navigation within the add-in pane from embedded **iframe** elements.
 
-To override this behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](http://msdn.microsoft.com/en-us/library/13cf867d-9b24-786f-0687-6bcdc954628e%28Office.15%29.aspx) element of the manifest file. If the add-in tries to go to a URL in a domain that isn't in the list, that URL will open in a new browser window (outside the add-in pane).
+To override this behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](../../reference/manifest/appdomains.md) element of the manifest file. If the add-in tries to go to a URL in a domain that isn't in the list, that URL will open in a new browser window (outside the add-in pane).
 
 The following XML manifest example hosts its main add-in page in the  `https://www.contoso.com` domain as specified in the **SourceLocation** element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](http://msdn.microsoft.com/en-us/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx) element within the **AppDomains** element list. If the add-in goes to a page in the www.northwindtraders.com domain, that page will open in the add-in pane.
 

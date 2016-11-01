@@ -1,6 +1,6 @@
 
 # TargetDialects element
-Defines the dialect(s) supported by this dictionary.
+Defines the regional language or languages supported by this dictionary.
 
  **Add-in type:** Task pane
 

@@ -9,6 +9,11 @@ Deploy only the manifest file to the shared folder catalog. Deploy the web appli
 
  >**Important:**  To help make add-ins that access external data and services more secure, your add-in should use a secure protocol such as Hypertext Transfer Protocol Secure (HTTPS) to connect to external data and services. You must use HTTPS if your add-in uses add-in commands.
 
+The following video walks you through the process of sideloading your add-in on Office desktop or Office Online.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XXsAw2UUiQo" frameborder="0" allowfullscreen></iframe>
+
+
 ## Share a folder
 
 1. On the Windows computer where you want to host your add-in, go to the parent folder, or drive letter, of the folder you want to use as your shared folder catalog.
