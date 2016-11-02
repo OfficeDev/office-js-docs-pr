@@ -53,7 +53,7 @@ Office.context.ui.displayDialogAsync(startAddress, options, callback);
 
 For a simple example that uses the **displayDialogAsync** method, see [Office Add-in Dialog API example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example/) on GitHub.
 
-For an examples that show authentication scenarios, see
+For an examples that show authentication scenarios, see:
 
 - [PowerPoint Add-in in Microsoft Graph ASP.Net Insert Chart](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
 - [Office Add-in Auth0](https://github.com/OfficeDev/Office-Add-in-Auth0)
@@ -98,13 +98,13 @@ In the callback function passed to the  **displayDialogAsync** method, you can u
 
 ### Errors from displayDialogAsync
 
-In addition to general platform and system errors, there are three errors specific to calling **displayDialogAsync**:
+In addition to general platform and system errors, the following errors are specific to calling **displayDialogAsync**.
 
 |**Code number**|**Meaning**|
 |:-----|:-----|
-|12004|The domain of the URL passed to `displayDialogAsync` is not trusted. The domain must be either the same domain as the host page (including protocol and port number) or it must be registered in the `<AppDomains>` section of the add-in manifest.|
+|12004|The domain of the URL passed to `displayDialogAsync` is not trusted. The domain must be either the same domain as the host page (including protocol and port number), or it must be registered in the `<AppDomains>` section of the add-in manifest.|
 |12005|The URL passed to `displayDialogAsync` uses the HTTP protocol. HTTPS is required. (In some versions of Office, the error message returned with 12005 is the same one returned for 12004.)|
-|12007|There is already a dialog box opened from the task pane. A task pane add-in can only have one open at a time.|
+|12007|A dialog box is already opened from the task pane. A task pane add-in can only have one dialog box open at a time.|
 
 
 
