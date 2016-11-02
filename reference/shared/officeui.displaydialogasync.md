@@ -53,7 +53,14 @@ Office.context.ui.displayDialogAsync(startAddress, options, callback);
 
 For a simple example that uses the **displayDialogAsync** method, see [Office Add-in Dialog API example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example/) on GitHub.
 
-For an example that shows an authentication scenario, see the [Office Add-in Office 365 Client Authentication for AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth) sample on GitHub.
+For an examples that show authentication scenarios, see
+
+- [PowerPoint Add-in in Microsoft Graph ASP.Net Insert Chart](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
+- [Office Add-in Auth0](https://github.com/OfficeDev/Office-Add-in-Auth0)
+- [Excel Add-in ASP.NET QuickBooks](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks)
+- [Office Add-in Server Authentication Sample for ASP.net MVC](https://github.com/dougperkes/Office-Add-in-AspNetMvc-ServerAuth/tree/Office2016DisplayDialog)
+- [Office Add-in Office 365 Client Authentication for AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth)
+
 
  
 ## Parameters
@@ -88,6 +95,17 @@ In the callback function passed to the  **displayDialogAsync** method, you can u
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|Determine the success or failure of the operation.|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|Access an [Error](../../reference/shared/error.md) object that provides error information if the operation failed.|
 |[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Access your user-defined object or value, if you passed one as the _asyncContext_ parameter.|
+
+### Errors from displayDialogAsync
+
+In addition to general platform and system errors, there are three errors specific to calling **displayDialogAsync**:
+
+|**Code number**|**Meaning**|
+|:-----|:-----|
+|12004|The domain of the URL passed to `displayDialogAsync` is not trusted. The domain must be either the same domain as the host page (including protocol and port number) or it must be registered in the `<AppDomains>` section of the add-in manifest.|
+|12005|The URL passed to `displayDialogAsync` uses the HTTP protocol. HTTPS is required. (In some versions of Office, the error message returned with 12005 is the same one returned for 12004.)|
+|12007|There is already a dialog box opened from the task pane. A task pane add-in can only have one open at a time.|
+
 
 
 ## Design considerations
