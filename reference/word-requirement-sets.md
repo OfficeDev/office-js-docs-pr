@@ -6,7 +6,7 @@ Word Add-ins run across multiple versions of Office including Office 2016 for Wi
 
 |  Requirement set  |   Office 2016 for Windows  |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |
 |:-----|-----|:-----|:-----|:-----|
-| Word Api 1.3  | In preview, Build 6925 or later| In preview, May 2016, 1.21 or later | In preview, 15.22 or later| We're working on it | 
+| Word Api 1.3  | In preview, Build 6925 or later| In preview, May 2016, 1.22 or later | In preview, 15.22 or later| We're working on it | 
 | Word Api 1.2  | December 2015 update, Build 6568 or later | January 2016, 1.18 or later | January 2016, 15.19 or later| September 2016 | 
 | Word API 1.1  | Shipped with Office 2016 <br>Version 1509 (Build 16.0.4266.1001)</br> or later| January 2016, 1.18 or later | January 2016, 15.19 or later| September 2016 | 
 
