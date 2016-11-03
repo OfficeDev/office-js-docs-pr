@@ -202,6 +202,8 @@ function processMessage(arg) {
 }
 ```
 
+For a sample that uses this technique, see see the [dialog navigation design pattern](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/navigation) in the [Office-Add-in-UX-Design-Patterns-Code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code) repo..
+
 Even when you don't have your own close dialog UI, an end user can close the dialog by clicking the **X** in the upper right corner. This action triggers the `DialogEventReceived` event. If your host pane needs to know when this happens it should declare a handler for this event. See the section [Errors and events in the dialog window](#errors-and-events-in-the-dialog-window) for details.
 
 ## Handling errors and events 
