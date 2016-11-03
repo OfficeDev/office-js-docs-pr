@@ -278,6 +278,9 @@ function processDialogEvent(arg) {
     }
 }
 ```
+
+For a sample add-in that hangles errors in this way, see [Office Add-in Dialog API Simple](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).
+
   
 ## Passing information to the dialog
 
