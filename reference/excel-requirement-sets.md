@@ -68,6 +68,9 @@ The following are the new additions to the Excel JavaScript APIs in requirement 
 ## What's new in Excel JavaScript API 1.2
 The following are the new additions to the Excel JavaScript APIs in requirement set 1.2. 
 
+## Excel JavaScript API 1.1
+Excel JavaScript API 1.1 is the first version of the API. For more information about the API, see [JavaScript API for Office](../../reference/javascript-api-for-office.md) reference.
+    
 ## Additional resources
 
 - [Specify Office hosts and API requirements](../docs/overview/specify-office-hosts-and-api-requirements.md)
