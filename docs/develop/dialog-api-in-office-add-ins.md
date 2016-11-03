@@ -20,7 +20,7 @@ There are several scenarios in which you need to open a dialog box from a task p
 
 Here's an example of what such a dialog box looks like. 
 
-![Add-in commands](../../images/Auth0DialogOpen.png)
+![Add-in commands](../../images/Auth0DialogOpen.PNG)
 
 Note that the dialog box always opens in the center of the screen. It can be moved and resized by the user. The window is *nonmodal*: a user can continue to interact with the both the document in the host Office application and with the host page in the task pane, if there is one.
 
@@ -348,7 +348,7 @@ To show a video in a dialog box take these steps:
 
 For a sample that shows a video with the Dialog APIs, see the [video placemat design pattern](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/video-placemat) in the [Office-Add-in-UX-Design-Patterns-Code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code) repo.
 
-![Add-in commands](../../images/VideoPlacematDialogOpen.png)
+![Add-in commands](../../images/VideoPlacematDialogOpen.PNG)
 
 ## Using the Dialog APIs in an authentication flow
 
