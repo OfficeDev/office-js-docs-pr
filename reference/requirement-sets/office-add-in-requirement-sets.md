@@ -20,7 +20,6 @@ For build numbers associated with Office Online Server and Office 365 Deferred C
 The following table lists the common API requirement sets, the methods in each set, the Office host applications that support that requirement set, and the version number of the API.
 
 For information about requirement sets for Outlook, see [Understanding Outlook API requirement sets](./outlook/tutorial-api-requirement-sets.md).
-
 |  Set name  |  Version  |  Office host  |  Methods in set  |
 |:-----|-----|:-----|:-----|
 | ActiveView | 1.1 | PowerPoint<br>PowerPoint Online|Document.getActiveViewAsync|
@@ -28,7 +27,7 @@ For information about requirement sets for Outlook, see [Understanding Outlook A
 | CompressedFile    | 1.1 |PowerPoint<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad<br/>Excel Online<br/>PowerPoint Online|Supports output to Office Open XML (OOXML) format as a byte array<br>(Office.FileType.Compressed) when using the Document.getFileAsync method.|
 | CustomXmlParts    | 1.1 |Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|CustomXmlNode.getNodesAsync<br>CustomXmlNode.getNodeValueAsync<br>CustomXmlNode.getXmlAsync<br>CustomXmlNode.setNodeValueAsync<br>CustomXmlNode.setXmlAsync<br>CustomXmlPart.addHandlerAsync<br>CustomXmlPart.deleteAsync<br>CustomXmlPart.getNodesAsync<br>CustomXmlPart.getXmlAsync<br>CustomXmlPart.removeHandlerAsync<br>CustomXmlParts.addAsync<br>CustomXmlParts.getByIdAsync<br>CustomXmlParts.getByNamespaceAsync<br>CustomXmlPrefixMappings.addNamespaceAsync<br>CustomXmlPrefixMappings.getNamespaceAsync<br>CustomXmlPrefixMappings.getPrefixAsync|
 | DialogAPI | 1.1 | Excel<br>PowerPoint<br>Word 2016<br>Outlook|Office.context.ui.displayDialogAsync()<br>Office.context.ui.messageParent()<br>Office.context.ui.close()|
-| DocumentEvents    | 1.1 | Excel<br>Excel Online<br>PowerPoint<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Document.addHandlerAsync<br>Document.removeHandlerAsync|
+| DocumentEvents    | 1.1 | Excel<br>Excel Online<br>PowerPoint Online<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Document.addHandlerAsync<br>Document.removeHandlerAsync|
 | File  | 1.1 | PowerPoint<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad<br>PowerPoint Online|Document.getFileAsync<br>File.closeAsync<br>File.getSliceAsync|
 | HtmlCoercion  | 1.1 | Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Supports coercion to HTML (Office.CoercionType.Html) when reading and writing data using the Document.getSelectedDataAsync,<br>Document.setSelectedDataAsync, Binding.getDataAsync, or Binding.setDataAsync methods.|
 | ImageCoercion | 1.1 | Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Supports conversion to an image (Office.CoercionType.Image) when writing data using the Document.setSelectedDataAsync method.|
@@ -48,10 +47,7 @@ For information about requirement sets for Outlook, see [Understanding Outlook A
 
 ## Methods that aren't part of a requirement set
 
-
 The following methods in the JavaScript API for Office aren't part of a requirement set. If your add-in requires any of these methods, use the  **Methods** and **Method** elements in the add-in's manifest to declare that they are required, or perform the runtime check using an if statement. For more information, see [Specify Office hosts and API requirements](../docs/overview/specify-office-hosts-and-api-requirements.md).
-
-
 
 |**Method name**|**Office host support**|
 |:-----|:-----|
@@ -74,7 +70,7 @@ The following methods in the JavaScript API for Office aren't part of a requirem
 
 ## Additional resources
 
-
-
 - [Specify Office hosts and API requirements](../docs/overview/specify-office-hosts-and-api-requirements.md)
+
+
 
