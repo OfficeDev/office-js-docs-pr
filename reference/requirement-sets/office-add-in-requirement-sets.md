@@ -20,6 +20,7 @@ For build numbers associated with Office Online Server and Office 365 Deferred C
 The following table lists the common API requirement sets, the methods in each set, the Office host applications that support that requirement set, and the version number of the API.
 
 For information about requirement sets for Outlook, see [Understanding Outlook API requirement sets](./outlook/tutorial-api-requirement-sets.md).
+
 |  Set name  |  Version  |  Office host  |  Methods in set  |
 |:-----|-----|:-----|:-----|
 | ActiveView | 1.1 | PowerPoint<br>PowerPoint Online|Document.getActiveViewAsync|
