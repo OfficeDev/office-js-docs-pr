@@ -10,7 +10,7 @@ Word Add-ins run across multiple versions of Office including Office 2016 for Wi
 | Word Api 1.2  | December 2015 update, Build 6568 or later | January 2016, 1.18 or later | January 2016, 15.19 or later| September 2016 | 
 | Word API 1.1  | Shipped with Office 2016 <br>Version 1509 (Build 16.0.4266.1001)</br> or later| January 2016, 1.18 or later | January 2016, 15.19 or later| September 2016 | 
 
-> **Note**: The build number for Office 2016 install via MSI is 16.0.4266.1001. 
+> **Note**: The build number for Office 2016 install via MSI is 16.0.4266.1001. It only has Word API 1.1 requirement set.
 
 To find out more about versions and build numbers, see:
 - [Version and build numbers of update channel releases for Office 365 clients](https://technet.microsoft.com/en-us/library/mt592918.aspx)
@@ -250,8 +250,6 @@ The following are the new additions to the Word JavaScript APIs in requirement s
 |:-----|-----|:----|:----|
 |[contentControl](reference/word/contentcontrol.md)|_Method_ > [insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](reference/word/contentcontrol.md#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|Inserts an inline picture into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|1.2|
 |[inlinePicture](reference/word/inlinepicture.md)|_Relationship_ > paragraph|Gets the parent paragraph that contains the inline image. Read-only.|1.2|
-|[inlinePicture](reference/word/inlinepicture.md)|_Relationship_ > parentTable|Gets the table that contains the inline image. Returns a null object if it is not contained in a table. Read-only.|1.3|
-|[inlinePicture](reference/word/inlinepicture.md)|_Relationship_ > parentTableCell|Gets the table cell that contains the inline image. Returns a null object if it is not contained in a table cell. Read-only.|1.3|
 |[inlinePicture](reference/word/inlinepicture.md)|_Method_ > [delete()](reference/word/inlinepicture.md#delete)|Deletes the inline picture from the document.|1.2|
 |[inlinePicture](reference/word/inlinepicture.md)|_Method_ > [insertBreak(breakType: BreakType, insertLocation: InsertLocation)](reference/word/inlinepicture.md#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|Inserts a break at the specified location in the main document. The insertLocation value can be 'Before' or 'After'.|1.2|
 |[inlinePicture](reference/word/inlinepicture.md)|_Method_ > [insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](reference/word/inlinepicture.md#insertfilefrombase64base64file-string-insertlocation-insertlocation)|Inserts a document at the specified location. The insertLocation value can be 'Before' or 'After'.|1.2|
@@ -264,6 +262,8 @@ The following are the new additions to the Word JavaScript APIs in requirement s
 |[range](reference/word/range.md)|_Relationship_ > inlinePictures|Gets the collection of inline picture objects in the range. Read-only.|1.2|
 |[range](reference/word/range.md)|_Method_ > [insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](reference/word/range.md#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|Inserts a picture at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.|1.2|
 
+## Word JavaScript API 1.1
+Word JavaScript API 1.1 is the first version of the API. For details about the API,  see the Word JavaScript API reference topics. 
 
 ## Additional resources
 
