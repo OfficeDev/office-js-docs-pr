@@ -10,7 +10,7 @@ Excel Add-ins run across multiple versions of Office including Office 2016 for W
 | Excel Api 1.2  | Version 1601 or later | 1.21 or later | 15.22 or later| January 2016 |
 | Excel API 1.1  | Shipped with Office 2016 <br>Version 1509 (Build 16.0.4266.1001)</br> or later | 1.19 or later | 15.20 or later| January 2016 |
 
-> **Note**: The build number for Office 2016 install via MSI is 16.0.4266.1001.  
+> **Note**: The build number for Office 2016 install via MSI is 16.0.4266.1001.  It only has Excel API 1.1 requirement set.
 
 To find out more about versions and build numbers, see:
 - [Version and build numbers of update channel releases for Office 365 clients](https://technet.microsoft.com/en-us/library/mt592918.aspx)
