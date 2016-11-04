@@ -10,7 +10,7 @@ Word Add-ins run across multiple versions of Office including Office 2016 for Wi
 | Word Api 1.2  | December 2015 update, Build 6568 or later | January 2016, 1.18 or later | January 2016, 15.19 or later| September 2016 | 
 | Word API 1.1  | Shipped with Office 2016 <br>Version 1509 (Build 16.0.4266.1001)</br> or later| January 2016, 1.18 or later | January 2016, 15.19 or later| September 2016 | 
 
-> **Note**: The build number for Office 2016 install via MSI is 16.0.4266.1001. It only has Word API 1.1 requirement set.
+> **Note**: The build number for Office 2016 install via MSI is 16.0.4266.1001. It only contain Word API 1.1 requirement set.
 
 To find out more about versions and build numbers, see:
 - [Version and build numbers of update channel releases for Office 365 clients](https://technet.microsoft.com/en-us/library/mt592918.aspx)
