@@ -6,8 +6,8 @@ Word Add-ins run across multiple versions of Office including Office 2016 for Wi
 
 |  Requirement set  |   Office 2016 for Windows  |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |
 |:-----|-----|:-----|:-----|:-----|
-| Word Api 1.3  | In preview, Build 6925 or later| In preview, May 2016, 1.22 or later | In preview, 15.22 or later| We're working on it | 
-| Word Api 1.2  | December 2015 update, Build 6568 or later | January 2016, 1.18 or later | January 2016, 15.19 or later| September 2016 | 
+| Word Api 1.3  | In preview, Version 1605 (Build 6925) or later| In preview, May 2016, 1.22 or later | In preview, 15.22 or later| We're working on it | 
+| Word Api 1.2  | December 2015 update, Version 1601 (Build 6568) or later | January 2016, 1.18 or later | January 2016, 15.19 or later| September 2016 | 
 | Word API 1.1  | Shipped with Office 2016 <br>Version 1509 (Build 16.0.4266.1001)</br> or later| January 2016, 1.18 or later | January 2016, 15.19 or later| September 2016 | 
 
 > **Note**: The build number for Office 2016 install via MSI is 16.0.4266.1001. It only contain Word API 1.1 requirement set.
@@ -269,4 +269,3 @@ Word JavaScript API 1.1 is the first version of the API. For details about the A
 
 - [Specify Office hosts and API requirements](../docs/overview/specify-office-hosts-and-api-requirements.md)
 - [Office Add-ins XML manifest](https://dev.office.com/docs/add-ins/overview/add-in-manifests)
-
