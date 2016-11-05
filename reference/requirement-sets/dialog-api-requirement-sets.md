@@ -19,7 +19,7 @@ To find out more about versions and build numbers, see:
 For information about common API requirement sets, see [Office common API requirement sets](office-add-in-requirement-sets.md).
 
 ## Dialog API 1.1 
-The Dialog API 1.1 is the first version of the API. For details about the API, see the [Dialog API](../shared/officeui) reference topics. 
+The Dialog API 1.1 is the first version of the API. For details about the API, see the [Dialog API](../shared/officeui.md) reference topics.
 
 ## Additional resources
 
