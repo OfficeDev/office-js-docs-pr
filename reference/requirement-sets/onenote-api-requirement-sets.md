@@ -2,7 +2,7 @@
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Specify Office hosts and API requirements](../docs/overview/specify-office-hosts-and-api-requirements.md).
 
-The following table lists the OneNote requirement sets, the Office host applications that support that requirement set, and the availability date.
+The following table lists the OneNote requirement sets, the Office host applications that support those requirement sets, and the build versions or availability date.
 
 |  Requirement set  |  Office Online  | 
 |:-----|-----|:-----|:-----|:-----|
