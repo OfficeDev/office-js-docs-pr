@@ -21,3 +21,13 @@ To get the latest build:
 When the installation process finishes, you will have the latest Office 2016 applications installed. To verify that you have the latest build, go to **File** > **Account** from any Office application. Under Office Updates, you'll see the (Office Insiders) label above the version number.
 
 ![A screenshot that shows product information with the Office Insiders label](../../images/officeinsider.PNG)
+
+## Minimum Office builds for Office JavaScript API requirement sets
+
+For information about the minimum product builds for each platform for the API requirement sets, see the following:
+
+- [Word JavaScript API requirement sets](../../reference/requirement-sets/word-api-requirement-sets)
+- [Excel JavaScript API requirement sets](../../reference/requirement-sets/excel-api-requirement-sets)
+- [OneNote JavaScript API requirement sets](../../reference/requirement-sets/onenote-api-requirement-sets)
+- [Dialog API requirement sets](../../reference/requirement-sets/dialog-api-requirement-sets)
+- [Office common API requirement sets](../../reference/requirement-sets/office-add-in-requirement-sets)
