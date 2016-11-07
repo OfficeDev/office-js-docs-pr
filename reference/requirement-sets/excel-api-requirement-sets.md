@@ -8,7 +8,7 @@ Excel add-ins run across multiple versions of Office, including Office 2016 for 
 |:-----|-----|:-----|:-----|:-----|
 | ExcelApi 1.3  | Version 1608 or later| 1.27 or later |  15.27 or later| September 2016 | 
 | ExcelApi 1.2  | Version 1601 or later | 1.21 or later | 15.22 or later| January 2016 |
-| ExcelApi 1.1  | Shipped with Office 2016 version 1509 (Build 16.0.4266.1001) or later | 1.19 or later | 15.20 or later| January 2016 |
+| ExcelApi 1.1  | Version 1509 (Build 16.0.4266.1001) or later | 1.19 or later | 15.20 or later| January 2016 |
 
 > **Note**: The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1 requirement set.
 
