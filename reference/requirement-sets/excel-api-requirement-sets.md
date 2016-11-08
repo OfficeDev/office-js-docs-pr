@@ -79,12 +79,6 @@ The following are the new additions to the Excel JavaScript APIs in requirement 
 
 |Object| What's new| Description|Requirement set|
 |:----|:----|:----|:----|
-|[bindingDataChangedEventArgs](../excel/bindingdatachangedeventargs.md)|_Relationship_ > binding|Gets the Binding object that represents the binding that raised the DataChanged event.|1.2, introduced in 1.3|
-|[bindingSelectionChangedEventArgs](../excel/bindingselectionchangedeventargs.md)|_Property_ > columnCount|Gets the number of columns selected.|1.2, introduced in 1.3|
-|[bindingSelectionChangedEventArgs](../excel/bindingselectionchangedeventargs.md)|_Property_ > rowCount|Gets the number of rows selected.|1.2, introduced in 1.3|
-|[bindingSelectionChangedEventArgs](../excel/bindingselectionchangedeventargs.md)|_Property_ > startColumn|Gets the index of the first column of the selection (zero-based).|1.2, introduced in 1.3|
-|[bindingSelectionChangedEventArgs](../excel/bindingselectionchangedeventargs.md)|_Property_ > startRow|Gets the index of the first row of the selection (zero-based).|1.2, introduced in 1.3|
-|[bindingSelectionChangedEventArgs](../excel/bindingselectionchangedeventargs.md)|_Relationship_ > binding|Gets the Binding object that represents the binding that raised the SelectionChanged event.|1.2, introduced in 1.3|
 |[chart](../excel/chart.md)|_Property_ > id|Gets a chart based on its position in the collection. Read-only.|1.2|
 |[chart](../excel/chart.md)|_Relationship_ > worksheet|The worksheet containing the current chart. Read-only.|1.2|
 |[chart](../excel/chart.md)|_Method_ > [getImage(height: number, width: number, fittingMode: string)](../excel/chart.md#getimageheight-number-width-number-fittingmode-string)|Renders the chart as a base64-encoded image by scaling the chart to fit the specified dimensions.|1.2|
@@ -120,11 +114,6 @@ The following are the new additions to the Excel JavaScript APIs in requirement 
 |[range](../excel/range.md)|_Property_ > hidden|Represents if all cells of the current range are hidden. Read-only.|1.2|
 |[range](../excel/range.md)|_Property_ > rowHidden|Represents if all rows of the current range are hidden.|1.2|
 |[range](../excel/range.md)|_Relationship_ > sort|Represents the range sort of the current range. Read-only.|1.2|
-|[range](../excel/range.md)|_Method_ > [getColumnsAfter(count: number)](../excel/range.md#getcolumnsaftercount-number)|Gets a certain number of columns to the right of the current Range object.|1.2, introduced in 1.3|
-|[range](../excel/range.md)|_Method_ > [getColumnsBefore(count: number)](../excel/range.md#getcolumnsbeforecount-number)|Gets a certain number of columns to the left of the current Range object.|1.2, introduced in 1.3|
-|[range](../excel/range.md)|_Method_ > [getResizedRange(deltaRows: number, deltaColumns: number)](../excel/range.md#getresizedrangedeltarows-number-deltacolumns-number)|Gets a Range object similar to the current Range object, but with its bottom-right corner expanded (or contracted) by some number of rows and columns.|1.2, introduced in 1.3|
-|[range](../excel/range.md)|_Method_ > [getRowsAbove(count: number)](../excel/range.md#getrowsabovecount-number)|Gets a certain number of rows above the current Range object.|1.2, introduced in 1.3|
-|[range](../excel/range.md)|_Method_ > [getRowsBelow(count: number)](../excel/range.md#getrowsbelowcount-number)|Gets a certain number of rows below the current Range object.|1.2, introduced in 1.3|
 |[range](../excel/range.md)|_Method_ > [merge(across: bool)](../excel/range.md#mergeacross-bool)|Merge the range cells into one region in the worksheet.|1.2|
 |[range](../excel/range.md)|_Method_ > [unmerge()](../excel/range.md#unmerge)|Unmerge the range cells into separate cells.|1.2|
 |[rangeFormat](../excel/rangeformat.md)|_Property_ > columnWidth|Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.|1.2|
@@ -134,7 +123,6 @@ The following are the new additions to the Excel JavaScript APIs in requirement 
 |[rangeFormat](../excel/rangeformat.md)|_Method_ > [autofitRows()](../excel/rangeformat.md#autofitrows)|Changes the height of the rows of the current range to achieve the best fit, based on the current data in the columns.|1.2|
 |[rangeReference](../excel/rangereference.md)|_Property_ > address|Represents the visible rows of the current range.|1.2|
 |[rangeSort](../excel/rangesort.md)|_Method_ > [apply(fields: SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)](../excel/rangesort.md#applyfields-sortfield-matchcase-bool-hasheaders-bool-orientation-string-method-string)|Perform a sort operation.|1.2|
-|[selectionChangedEventArgs](../excel/selectionchangedeventargs.md)|_Relationship_ > workbook|Gets the workbook object that raised the SelectionChanged event.|1.2, introduced in 1.3|
 |[sortField](../excel/sortfield.md)|_Property_ > ascending|Represents whether the sorting is done in an ascending fashion.|1.2|
 |[sortField](../excel/sortfield.md)|_Property_ > color|Represents the color that is the target of the condition if the sorting is on font or cell color.|1.2|
 |[sortField](../excel/sortfield.md)|_Property_ > dataOption|Represents additional sorting options for this field. Possible values are: Normal, TextAsNumber.|1.2|
