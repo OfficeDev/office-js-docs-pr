@@ -16,5 +16,5 @@ OneNote JavaScript API 1.1 is the first version of the API. For details about th
 
 ## Additional resources
 
-- [Specify Office hosts and API requirements](../docs/overview/specify-office-hosts-and-api-requirements.md)
-- [Office Add-ins XML manifest](https://dev.office.com/docs/add-ins/overview/add-in-manifests)
+- [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md)
+- [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md)
