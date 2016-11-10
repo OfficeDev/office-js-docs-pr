@@ -87,6 +87,7 @@
     <Item text="SearchResultCollection" url="word/searchresultcollection" FriendlyUrl="word/referencesearchresultcollection" Scope="word" SEODescription="Contains a collection of range objects as a result of a search operation." />
     <Item text="Section" url="word/section" FriendlyUrl="word/referencesection" Scope="word" SEODescription="Represents a section in a Word document." />
     <Item text="SectionCollection" url="word/sectioncollection" FriendlyUrl="word/referencesectioncollection" Scope="word" SEODescription="Contains the collection of the document's section objects." />
+	<Item text="Word JavaScript API requirement sets" url="requirement-sets/word-api-requirement-sets" Scope="word" SEODescription="Find information about the Word requirement sets, the Office host applications that support that requirement set, and the build or version numbers for those applications." />
   </Item>
   
   <Item text="Excel" url="excel" Scope="excel">
@@ -144,6 +145,7 @@
     <Item text="WorksheetCollection" url="excel/worksheetcollection" SEODescription="Represents a collection of worksheet objects that are part of the workbook." />
     <Item text="WorksheetFunctions" url="excel/functions" SEODescription="Used as a container for Excel worksheet functions that can be called through JavaScript or REST." />
     <Item text="WorksheetProtection" url="excel/worksheetprotection" SEODescription="Represents the protection of a sheet object." />
+	<Item text="Excel JavaScript API requirement sets" url="requirement-sets/excel-api-requirement-sets" Scope="excel" SEODescription="Find information about the Excel requirement sets, the Office host applications that support that requirement set, and the build or version numbers for those applications." />
   </Item>
   
   <Item text="Outlook" url="outlook" Scope="Outlook">
@@ -412,11 +414,12 @@
     <Item text="Sectiongroupcollection" url="onenote/sectiongroupcollection" SEODescription="OneNote Add-ins Reference." />
     <Item text="Outline" url="onenote/outline" SEODescription="OneNote Add-ins Reference." />
     <Item text="Image" url="onenote/image" SEODescription="OneNote Add-ins Reference." />
+	<Item text="OneNote JavaScript API requirement sets" url="requirement-sets/onenote-api-requirement-sets" SEODescription="Find information about the OneNote requirement sets, the Office host applications that support those requirement sets, and the build versions or availability date." />
   </Item>  
   <Item text="Shared API" url="shared/shared-api">
     <Item text="JavaScript API for Office" url="javascript-api-for-office" SEODescription="The JavaScript API for Office includes objects, methods, properties, events, and enumerations that you can use in your Office Add-ins code." />
 	<Item text="What's changed in the JavaScript API for Office" url="what's-changed-in-the-javascript-api-for-office" SEODescription="The JavaScript API for Office is periodically updated with new and updated objects, methods, properties, events and enumerations to extend the functionality of your Office Add-ins." />
-	<Item text="Office Add-in requirement sets" url="office-add-in-requirement-sets" SEODescription="Requirement sets are named groups of API members. Office add-ins use requirement sets specified in the manifest or using a runtime check to determine if an Office host supports APIs needed by the add-in." />
+	<Item text="Office common requirement sets" url="requirement-sets/office-add-in-requirement-sets" SEODescription="Requirement sets are named groups of API members. Office add-ins use requirement sets specified in the manifest or using a runtime check to determine if an Office host supports APIs needed by the add-in." />
 	<Item text="JavaScript API for Office error codes" url="javascript-api-for-office-error-codes" SEODescription="The error messages you might encounter while using the JavaScript API for Office (Office.js)." />
 	<Item text="Enumerations" url="shared/enumerations" FriendlyUrl="reference/enumerationsenumerations">
       <Item text="ActiveView enumeration" url="shared/activeview-enumeration" FriendlyUrl="reference/enumerationsactiveview-enumeration" Scope="powerpoint" SEODescription="Specifies the state of the active view of the document, for example, whether the user can edit the document." />
@@ -643,6 +646,7 @@
     	<Item text="Dialog object" url="shared/officeui.dialog" Scope="outlook, excel, word, powerpoint" SEODescription="The object that is returned when the displayDialogAsync method is called." />
     	<Item text="DisplayDialog method" url="shared/officeui.displaydialogasync" Scope="outlook, excel, word, powerpoint" SEODescription="Displays a web dialog inside Office hosts." />
     	<Item text="MessageParent method" url="shared/officeui.messageparent" Scope="outlook, excel, word, powerpoint" SEODescription="Delivers a message from the dialog box to its parent/opener page." />
+		<Item text="Dialog API requirement sets" url="requirement-sets/dialog-api-requirement-sets" Scope="outlook, excel, word, powerpoint" SEODescription="Find information about the Dialog API requirement sets, the Office host applications that support that requirement set, and the build or version numbers for the Office application." />
     </Item>
   </Item>
   <Item text="Open specifications" url="openspec" Scope="Excel, PowerPoint, Word, Outlook, OneNote" SEODescription="Learn about on-going design API effort and provide feedback"/>
