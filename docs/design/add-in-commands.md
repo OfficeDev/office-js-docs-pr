@@ -1,4 +1,3 @@
-c
 # Add-in commands for Excel, Word, and PowerPoint
 
 Add-in commands are UI elements that extend the Office UI and start actions in your add-in. You can add a button on the ribbon or an item to a context menu. When users select an add-in command, they initiate actions such as running JavaScript code, or showing a page of the add-in in a task pane. Add-in commands help users find and use your add-in, which can help increase your add-in's adoption and reuse, and improve customer retention.
