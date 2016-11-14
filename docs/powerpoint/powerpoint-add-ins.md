@@ -1,19 +1,51 @@
 
-# Create content and task pane add-ins for PowerPoint
+# PowerPoint Add-ins
 
-The code examples in the article show you some basic tasks for developing PowerPoint content add-ins. To display information, these examples depend on the  `app.showNotification` function, which is included in the Visual StudioOffice Add-ins project templates. If you aren't using Visual Studio to develop your add-in, you'll need replace the `showNotification` function with your own code. Several of these examples also depend on this `globals` object that is declared outside of the scope of these functions: `var globals = {activeViewHandler:0, firstSlideId:0};`
+PowerPoint Add-ins allow you to build engaging solutions to enage your users' presentations across Windows, iOS, Office Online, and Mac.
+
+1. Use *content add-ins* to add dynamic html5 content to your presentations. For example, see the [LucidChart Diagrams for PowerPoint](https://store.office.com/en-us/app.aspx?assetid=WA104380117&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Productivity&homapppos=3&homchv=2&appredirect=false) add-in, which lets you inject an interactive diagram from LucidChart into your deck.
+2. Use *taskpane add-ins* to bring in reference information or insert data into the slide via a service. For example, see the [Shutterstock Images](https://store.office.com/en-us/app.aspx?assetid=WA104380169&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Editor%2527s%2BPicks&homapppos=0&homchv=1&appredirect=false) add-in, which leads you easily add professional photos to your presentation. 
+
+
+## PowerPoint Add-in Scenarios
+
+The code examples in the article show you some basic tasks for developing PowerPoint content add-ins. 
+
+To display information, these examples depend on the  `app.showNotification` function, which is included in the Visual StudioOffice Add-ins project templates. If you aren't using Visual Studio to develop your add-in, you'll need replace the `showNotification` function with your own code. Several of these examples also depend on this `globals` object that is declared outside of the scope of these functions: `var globals = {activeViewHandler:0, firstSlideId:0};`
 
 These code examples require your project to [reference Office.js v1.1 library or later](../../docs/develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md).
 
 
 ## Detect the presentation's active view and handle the ActiveViewChanged event
 
-The  `getFileView` function calls the [Document.getActiveViewAsync](../../reference/shared/document.getactiveviewasync.md) method to return whether the presentation's current view is "edit" (any of the views in which you can edit slides, such as **Normal** or **Outline View**) or "read" ( **Slide Show** or **Reading View**) view.
+If you are building a content add-in, you will need to get the presentation's active view and handle the ActiveViewChanged event, as part of your Office.Initialize handler.
+
+
+- The  `getActiveFileView` function calls the [Document.getActiveViewAsync](../../reference/shared/document.getactiveviewasync.md) method to return whether the presentation's current view is "edit" (any of the views in which you can edit slides, such as **Normal** or **Outline View**) or "read" ( **Slide Show** or **Reading View**) view.
+
+
+- The  `registerActiveViewChanged` function calls the [addHandlerAsync](../../reference/shared/document.addhandlerasync.md) method to register a handler for the [Document.ActiveViewChanged](../../reference/shared/document.activeviewchanged.md) event. 
+> Note: In PowerPoint Online, the [Document.ActiveViewChanged](../../reference/shared/document.activeviewchanged.md) event will never fire as Slide Show mode is treated as a new session. In this case, the add-in must fetch the active view on load, as noted below.
+
 
 
 ```js
-function getFileView() {
+
+//general Office.initialize function. Fires on load of the add-in.
+Office.initialize = function(){
+
     //Gets whether the current view is edit or read.
+    var currentView = getActiveFileView();
+
+    //register for the active view changed handler
+    registerActiveViewChanged();
+
+    //render the content based off of the currentView
+    //....
+}
+
+function getActiveFileView()
+{
     Office.context.document.getActiveViewAsync(function (asyncResult) {
         if (asyncResult.status == "failed") {
             app.showNotification("Action failed with error: " + asyncResult.error.message);
@@ -22,15 +54,10 @@ function getFileView() {
             app.showNotification(asyncResult.value);
         }
     });
+
 }
-```
-
-The  `registerActiveViewChanged` function calls the [addHandlerAsync](../../reference/shared/document.addhandlerasync.md) method to register a handler for the [Document.ActiveViewChanged](../../reference/shared/document.activeviewchanged.md) event. After executing this function, when you change the view of the presentation, the `app.showNotification` notification will display the active view mode ("read" or "edit").
 
 
-
-
-```js
 function registerActiveViewChanged() {
     Globals.activeViewHandler = function (args) {
         app.showNotification(JSON.stringify(args));
@@ -39,7 +66,7 @@ function registerActiveViewChanged() {
     Office.context.document.addHandlerAsync(Office.EventType.ActiveViewChanged, Globals.activeViewHandler, 
         function (asyncResult) {
             if (asyncResult.status == "failed") {
-            app.showNotification("Action failed with error: " + asyncResult.error.message);
+           app.showNotification("Action failed with error: " + asyncResult.error.message);
         }
             else {
             app.showNotification(asyncResult.status);
@@ -47,28 +74,7 @@ function registerActiveViewChanged() {
         });
 }
 ```
-
-
-## Get the URL of the presentation
-
-The  `getFileUrl` function calls the [Document.getFileProperties](../../reference/shared/document.getfilepropertiesasync.md) method to get the URL of the presentation file.
-
-
-```js
-function getFileUrl() {
-    //Get the URL of the current file.
-    Office.context.document.getFilePropertiesAsync(function (asyncResult) {
-        var fileUrl = asyncResult.value.url;
-        if (fileUrl == "") {
-            app.showNotification("The file hasn't been saved yet. Save the file and try again");
-        }
-        else {
-            app.showNotification(fileUrl);
-        }
-    });
-}
-```
-
+    
 
 ## Navigate to a particular slide in the presentation
 
@@ -134,10 +140,30 @@ function goToSlideByIndex() {
 }
 ```
 
+## Get the URL of the presentation
+
+The  `getFileUrl` function calls the [Document.getFileProperties](../../reference/shared/document.getfilepropertiesasync.md) method to get the URL of the presentation file.
+
+
+```js
+function getFileUrl() {
+    //Get the URL of the current file.
+    Office.context.document.getFilePropertiesAsync(function (asyncResult) {
+        var fileUrl = asyncResult.value.url;
+        if (fileUrl == "") {
+            app.showNotification("The file hasn't been saved yet. Save the file and try again");
+        }
+        else {
+            app.showNotification(fileUrl);
+        }
+    });
+}
+```
 
 
 
 ## Additional resources
+- [PowerPoint Code Samples](https://dev.office.com/code-samples#?filters=powerpoint)
 
 - [How to save add-in state and settings per document for content and task pane add-ins](../../docs/develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 

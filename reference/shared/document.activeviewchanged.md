@@ -32,6 +32,9 @@ For more information about Office host application and server requirements, see 
 |:-----|:-----|:-----|:-----|:-----|
 |**PowerPoint**|Y||Y|Y|
 
+>**Note: This event will not fire in PowerPoint Online scenarios, as SlideShow mode is treated as a new session. To get the active view, you must query for it during Office.Initialize.
+ 
+
 |||
 |:-----|:-----|
 |**Introduced in**|1.1|
