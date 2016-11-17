@@ -10,7 +10,7 @@ You might want to open a dialog box from a task pane or content add-in or [add-i
 - Provide more screen space, or even a full screen, for some tasks in your add-in.
 - Host a video that would be too small if confined to a task pane.
 
->**Note:** Because overlapping UI can annoy users, avoid opening a dialog from a task pane unless your scenario requires it. Note that task panes can be tabbed. For an example, see the [Excel Add-in JavaScriptSalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) sample.
+>**Note:** Because overlapping UI can annoy users, avoid opening a dialog from a task pane unless your scenario requires it. When considering how to use the surface area of a task pane, consider that task panes can be tabbed. For an example, see the [Excel Add-in JavaScriptSalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) sample.
 
 The following image shows an example of a dialog box. 
 
@@ -27,14 +27,14 @@ The Office JavaScript APIs support the following scenarios with a [Dialog](../..
 To open a dialog box, your code in the task pane calls the [displayDialogAsync](../../reference/shared/officeui.displaydialogasync.md) method and passes to it the URL of the page that should open. The following is a simple example.
 
 ```js
-Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html'}); 
+Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html'); 
 ```
 
 > **Notes:**
 > - The URL uses the HTTP**S** protocol. This is mandatory for all pages loaded in a dialog box, not just the first page loaded.
-> - The domain is the same as the domain of the task pane or content add-in or the [function file](https://dev.office.com/reference/add-ins/manifest/functionfile) of the add-in command. This is not required for the first page loaded in the dialog box, but if the first page is not in the same domain of your add-in, you need to list that domain in the [`<AppDomains>`](../../reference/manifest/appdomains.md) element in your add-in manifest.
+> - The domain is the same as the domain of the host page, which can be the page in a task pane or the [function file](https://dev.office.com/reference/add-ins/manifest/functionfile) of an add-in command. This is not required for the first page loaded in the dialog box, but if the first page is not in the same domain of your add-in, you need to list that domain in the [`<AppDomains>`](../../reference/manifest/appdomains.md) element in your add-in manifest.
 
-After the first page is loaded, a user can go to any website that uses HTTPS. You can also design the first page to redirect to another site. 
+After the first page is loaded, a user can go to any website that uses HTTPS. You can also design the first page to immediately redirect to another site. 
 
 By default, the dialog box will occupy 80% of the height and width of the device screen, but you can set different percentages by passing a configuration object to the method, as shown in the following example.
 
@@ -64,7 +64,7 @@ if (loginSuccess) {
 ```
 
 >**Notes:** 
-> - The `messageParent` function is the *only* Office API that can be called in the dialog box.
+> - The `messageParent` function is one of *only* two Office APIs that can be called in the dialog box. (The other is `Office.context.requirements.isSetSupported`. For information about it, see [Specify Office hosts and API requirements](https://github.com/OfficeDev/office-js-docs/blob/master/docs/overview/specify-office-hosts-and-api-requirements.md).)
 > - The `messageParent` function can only be called on a page with the same domain (including protocol and port) as the host page.
 
 In the next example, `googleProfile` is a stringified version of the user's Google profile.
@@ -107,7 +107,7 @@ function processMessage(arg) {
 When the user interaction with the dialog box is completed, your message handler should close the dialog box, as shown in this example. Note the following about this code:
 
 - The `dialog` object must be the same one that is returned by the call of `displayDialogAsync`. 
-- The call of `dialog.close` tells Office to immediately close the dialog box. Typically, you call it as the first line of the handler.
+- The call of `dialog.close` tells Office to immediately close the dialog box.
 
 ```js
 function processMessage(arg) {
@@ -212,7 +212,7 @@ In addition to general platform and system errors, three errors are specific to 
 
 |Code number|Meaning|
 |:-----|:-----|
-|12004|The domain of the URL passed to `displayDialogAsync` is not trusted. The domain must be the same domain as the host page (including protocol and port number) or it must be registered in the `<AppDomains>` section of the add-in manifest.|
+|12004|The domain of the URL passed to `displayDialogAsync` is not trusted. The domain must be the same domain as the host page (including protocol and port number) **or** it must be registered in the `<AppDomains>` section of the add-in manifest.|
 |12005|The URL passed to `displayDialogAsync` uses the HTTP protocol. HTTPS is required. (In some versions of Office, the error message returned with 12005 is the same one returned for 12004.)|
 |12007|A dialog box is already opened from this host window. A host window, such as a task pane, can only have one dialog box open at a time.|
 
@@ -279,7 +279,7 @@ For a sample add-in that handles errors in this way, see [Office Add-in Dialog A
   
 ## Passing information to the dialog box
 
-Sometimes the host page needs to pass information to the dialog box. You can do this in two ways:
+Sometimes the host page needs to pass information to the dialog box. You can do this in two primary ways:
 
 - Add query parameters to the URL that is passed to `displayDialogAsync`. 
 - Store the information somewhere that is accessible to both the host window and dialog box. The two windows do not share a common session storage, but *if they have the same domain* (including port number, if any),  they share a common [local storage](http://www.w3schools.com/html/html5_webstorage.asp).
@@ -314,10 +314,10 @@ For a sample that uses this technique, see [Insert Excel charts using Microsoft 
 
 Code in your dialog window can parse URL and read the parameter value.
 
->**Note:** Office automatically adds a query parameter called `_host_info` to the URL for the host page and also to the URL that is passed to `displayDialogAsync`. (It is appended after your custom query parameters, if any.) The query parameter provides information about the Office host. The following is an example.
+>**Note:** Office automatically adds a query parameter called `_host_info` to the URL for the host page and also to the URL that is passed to `displayDialogAsync`. (It is appended after your custom query parameters, if any, and it is not appended to any subsequent URLs that the dialog box navigates to.) The query parameter provides information about the Office host. The following is an example.
 
 >```
->_host_Info=Word|Win32|16.01|en-US|telemetry|isDialog
+>_host_Info=Word$Win32$16.01$en-US$telemetry$isDialog
 >```
 >
 >The same value is also added to [session storage](http://www.w3schools.com/html/html5_webstorage.asp) with the key `hostInfoValue`. Code in your dialog window can parse and use this information if needed. Because this information is used by Office internally, **do not change the `hostInfoValue` value in the window.sessionStorage**. The following are the parts of the query parameter:
@@ -333,16 +333,17 @@ Code in your dialog window can parse URL and read the parameter value.
 
 To show a video in a dialog box:
 
-1.  Create a page whose only content is an iframe. The `src` attribute of the iframe points to an online video. The protocol of the video's URL must be HTTP**S**. Call this page "video.dialogbox.html". The following is an example of the markup.
+1.  Create a page whose only content is an iframe. The `src` attribute of the iframe points to an online video. The protocol of the video's URL must be HTTP**S**. In this article we'll call this page "video.dialogbox.html". The following is an example of the markup.
 
 		<iframe class="ms-firstrun-video__player"  width="640" height="360" 
 			src="https://www.youtube.com/embed/XVfOe5mFbAE?rel=0&autoplay=1" 
 			frameborder="0" allowfullscreen>
 		</iframe>
 
-2.  The video.dialogbox.html page must either be in the same domain as the host page or in a domain that is registered in the `<AppDomains>` section of the add-in manifest.
+2.  The video.dialogbox.html page must either be in the same domain
+3.   as the host page or be in a domain that is registered in the `<AppDomains>` section of the add-in manifest.
 3.  Use a call of `displayDialogAsync` in the host page to open video.dialogbox.html.
-4.  If your add-in needs to know when the user closes the dialog box, register a handler for the `DialogEventReceived` event and handle the 12006 error. For details, see the section [Errors and events in the dialog window](#errors-and-events-in-the-dialog-window).
+4.  If your add-in needs to know when the user closes the dialog box, register a handler for the `DialogEventReceived` event and handle the 12006 event. For details, see the section [Errors and events in the dialog window](#errors-and-events-in-the-dialog-window).
 
 For a sample that shows a video in a dialog box, see the [video placemat design pattern](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/video-placemat) in the [UX design patterns for Office Add-ins](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code) repo.
 
@@ -352,14 +353,14 @@ For a sample that shows a video in a dialog box, see the [video placemat design 
 
 A primary scenario for the Dialog APIs is to enable authentication with a resource or identity provider that does not allow its sign-in page to open in an iframe, such as Microsoft Account, Office 365, Google, and Facebook. The following is a simple and typical authentication flow:
 
-1. The user selects a UI element on the host page to sign in. The handler for the element calls `displayDialogAsync` and passes the URL of an identity provider's sign-in page. *Because this is the first page opened in the dialog box and it does not have the same domain as the host window, its domain must be listed in the `<AppDomains>` section of the add-in manifest.* The URL includes a query parameter that tells the identity provider to redirect the dialog window after the user signs in to a page called "redirectPage.html". (*This must be a page in the same domain as the host window*, because the only way for the dialog window to pass the results of the sign-in attempt is with a call of `messageParent`, which can only be called on a page with the same domain as the host window.) 
+1. The user selects a UI element on the host page to sign in. The handler for the element calls `displayDialogAsync` and passes the URL of an identity provider's sign-in page. *Because this is the first page opened in the dialog box and it does not have the same domain as the host window, its domain must be listed in the `<AppDomains>` section of the add-in manifest.* The URL includes a query parameter that tells the identity provider to redirect the dialog window after the user signs in to a specific page. In this article, we'll call the page "redirectPage.html". (*This must be a page in the same domain as the host window*, because the only way for the dialog window to pass the results of the sign-in attempt is with a call of `messageParent`, which can only be called on a page with the same domain as the host window.) 
 2. The identity provider's service processes the incoming GET request from the dialog window. If the user is already logged on, it immediately redirects the window to redirectPage.html and includes user data as a query parameter. If the user is not already signed in, the provider's sign-in page appears in the window, and the user signs in. For most providers, if the user cannot sign in successfully, the provider shows an error page in the dialog window and does not redirect to redirectPage.html. The user must close the window by selecting the **X** in the corner. If the user successfully signs in, the dialog window is redirected to redirectPage.html and user data is included as a query parameter.
 3. When the redirectPage.html page opens, it calls `messageParent` to report the success or failure to the host page and optionally also report user data or error data. 
 4. The `DialogMessageReceived` event fires in the host page and its handler closes the dialog window and optionally does other processing of the message. 
 
 For a sample add-in that uses this pattern, see [Excel Add-in with ASP.NET and QuickBooks](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks)
 
-### Alternate authentication scenarios
+### Alternate authentication and authorization scenarios
 
 #### Addressing slow network
 
@@ -367,7 +368,7 @@ If the network or the identity provider is slow, the dialog box might not open r
 
 Code in this page constructs the URL of the identity provider's sign-in page by using information that is passed to the dialog box using, as described in [Passing information to the dialog box](#passing-information-to-the-dialog-box). It then redirects to the sign-in page. In this design, the provider's page is not the first page opened in the dialog box, so it is not necessary to list the provider's domain in the `<AppDomains>` section of the add-in manifest
 
-For sample add-ins that uses this pattern, see:
+For sample add-ins that use this pattern, see:
 
 - [Insert Excel charts using Microsoft Graph in a PowerPoint Add-in](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
 - [Office Add-in Office 365 Client Authentication for AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth).
@@ -405,7 +406,7 @@ The following samples use the Dialog APIs for this purpose:
 
 ## Using the Office Dialog API with single-page applications and client-side routing
 
-If your add-in uses client-side routing, you have the option to pass the URL of a route to the [displayDialogAsync](http://dev.office.com/reference/add-ins/shared/officeui.displaydialogasync) method, instead of the URL of a complete and separate HTML page. 
+If your add-in uses client-side routing, as single-page applications typically do, you have the option to pass the URL of a route to the [displayDialogAsync](http://dev.office.com/reference/add-ins/shared/officeui.displaydialogasync) method, instead of the URL of a complete and separate HTML page. 
 
-> **Important:** If you pass a route, the dialog box is in an new window with its own execution context. Your base page and all its initialization and bootstrapping code run again in this new context, and any variables are set to their initial values in the dialog window. So this technique launches a second instance of your single page application in the dialog window. Code that changes variables in the dialog window does not change the task pane version of the same variables. Similarly, the dialog window has its own session storage, which is not accessible from code in the task pane.  
+> **Important:** The dialog box is in an new window with its own execution context. If you pass a route, your base page and all its initialization and bootstrapping code run again in this new context, and any variables are set to their initial values in the dialog window. So this technique launches a second instance of your application in the dialog window. Code that changes variables in the dialog window does not change the task pane version of the same variables. Similarly, the dialog window has its own session storage, which is not accessible from code in the task pane. 
 
