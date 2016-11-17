@@ -30,6 +30,7 @@
 	<Item text="Install the latest Office version" url="develop/install-latest-office-version" SEODescription="Find out how to opt in to get the latest builds of Office." />
 	<Item text="Develop add-ins for the iPad" url="develop/develop-office-add-ins-for-the-ipad"  SEODescription="Make your Office Add-ins available in Office for iPad." />
 	<Item text="Tips for creating add-ins with Angular 2" url="develop/add-ins-with-angular2" SEODescription="Use Angular 2 to develop Office Add-ins." />
+	<Item text="Use the Dialog API" url="develop/dialog-api-in-office-add-ins" SEODescription="Use the Dialog API to open dialog boxes in your Office Add-in." />
 	<Item text="Manifest" url="overview/add-in-manifests">	
 		<Item text="Define add-in commands" url="outlook/manifests/define-add-in-commands"  SEODescription="Use the VersionOverrides element in your add-in manifest to define add-in commands." />
 		<Item text="Specify Office hosts" url="overview/specify-office-hosts-and-api-requirements" SEODescription="Find out how to specify Office hosts and API requirements in your manifest." /> 	
