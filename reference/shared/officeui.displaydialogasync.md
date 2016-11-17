@@ -38,6 +38,7 @@ To detect this API at runtime, use the following code.
 ### Supported platforms
 The DialogAPI requirement set is currently supported on the following platforms:
 
+  - Office for Windows Desktop 2013 (build 15.0.4855.1000 or later)
   - Office for Windows Desktop 2016 (build 16.0.6741.0000 or later)
   - Office for IPad (build 1.22 or later)
   - Office for Mac (build 15.20 or later) 

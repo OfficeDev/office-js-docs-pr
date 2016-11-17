@@ -28,9 +28,12 @@ For more information about Office host application and server requirements, see 
 **Supported hosts, by platform**
 
 
-||**Office for Windows desktop**|**Office Online (in browser)**|**Office for iPad**|
-|:-----|:-----|:-----|:-----|
-|**PowerPoint**|Y||Y|
+||**Office for Windows desktop**|**Office Online (in browser)**|**Office for Mac**|**Office for iPad**|
+|:-----|:-----|:-----|:-----|:-----|
+|**PowerPoint**|Y||Y|Y|
+
+>**Note: This event will not fire in PowerPoint Online scenarios, as SlideShow mode is treated as a new session. To get the active view, you must query for it during Office.Initialize.
+ 
 
 |||
 |:-----|:-----|

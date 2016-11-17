@@ -26,7 +26,7 @@ Fabric comes with styles for various UI elements, such as buttons and check boxe
     </button>
 
 ##4. Use components with sample behavior
-Fabric includes some components that support behaviors (such as what happens on click). To get you started, Fabric 2.6.1 includes some **sample code** in the form of JQuery UI plug-ins that you can use. You can also use any other framework you want to wire things up. If you do opt to use the samples, note that the code is not distributed as part of the CDN, so you have to download it from the 2.6.1 release of the [Fabric GitHub project](https://github.com/OfficeDev/office-ui-fabric-core/tree/release/2.6.1), reference it, and then initialize it in your code. 
+Fabric includes some components that support behaviors (such as what happens on click). To get you started, **Fabric 2.6.1** includes some **sample code** in the form of JQuery UI plug-ins that you can use. You can also use any other framework you want to wire things up. If you do opt to use the samples, note that the code is not distributed as part of the CDN, so you have to download it from the **2.6.1 release** of the [Fabric GitHub project](https://github.com/OfficeDev/office-ui-fabric-core/tree/release/2.6.1), reference it, and then initialize it in your code. 
 
 For example, to use the SearchBox component:
 
