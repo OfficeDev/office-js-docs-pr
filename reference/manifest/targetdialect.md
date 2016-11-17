@@ -1,6 +1,6 @@
 
 # TargetDialect element
- Defines a dialect supported by this dictionary, represented as a culture name string.
+ Defines a regional language supported by this dictionary, represented as a culture name string.
 
  **Add-in type:** Task pane
 

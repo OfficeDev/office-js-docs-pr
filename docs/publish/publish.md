@@ -2,22 +2,22 @@
 # Deploy and publish your Office Add-in
 
 
-You can use one of several methods to deploy your Office Add-in for testing or distribution to users:
+You can use one of several methods to deploy your Office Add-in for testing or distribution to users: 
 
 - [Sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) - Use as part of your development process to test your add-in running on Windows, Office Online, iPad, or Mac.
-- [SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) - Use as part of your development process to test your add-in, or to distribute your add-in to users in your organization.
-- [Office 365 admin center preview](https://support.office.com/en-ie/article/Deploy-Office-Add-Ins-in-Office-365-737e8c86-be63-44d7-bf02-492fa7cd9c3f?ui=en-US&rs=en-IE&ad=IE) - Use to distribute your add-in to users in your organization.
+- [Office 365 admin center preview](https://support.office.com/en-ie/article/Deploy-Office-Add-Ins-in-Office-365-737e8c86-be63-44d7-bf02-492fa7cd9c3f?ui=en-US&rs=en-IE&ad=IE) - Use to distribute your add-in to users in your organization in a cloud or hybrid deployment.
 - [Office Store] - Use to distribute your add-in publicly to users.
+- [SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) - Use as part of your development process to test your add-in, or, in an on-premises environment, to distribute your add-in to users in your organization.
 
 The options that are available depend on the Office host that you're targeting and the type of add-in you create.
 
 ### Deployment Options for Word, Excel, and PowerPoint Add-ins
 
-| Extension point            | Sideloading | SharePoint catalog | Office 365 admin center preview | Office Store |
+| Extension point            | Sideloading | Office 365 admin center preview |Office Store  | SharePoint catalog  |
 |:----------------|:-----------:|:------------------:|:-------------------------------:|:------------:|
 | Content         | X           | X                  | X                               | X            |
 | Task pane       | X           | X                  | X                               | X            |
-| Command 		  | X           |                    | X                               | X            |
+| Command 		  | X           | X                  | X                                |              |
 
 > **NOTE:** SharePoint catalogs are not supported for Office 2016 for Mac. To deploy Office Add-ins to Mac clients, you must submit them to the [Office Store].    
 
@@ -25,7 +25,7 @@ The options that are available depend on the Office host that you're targeting a
 
 | Extension point     | Sideloading | Exchange server | Office Store |
 |:---------|:-----------:|:---------------:|:------------:|
-| Mail App | X           | X               | X            |
+| Mail app | X           | X               | X            |
 | Command  | X           | X               | X            |
 
 To broaden the reach of your add-in, make sure that it works across platforms. Office Add-ins are supported on Windows, Mac, Web, iOS and Android. For an overview of which features are supported by each platform, see [Office Add-in host and platform availability].   

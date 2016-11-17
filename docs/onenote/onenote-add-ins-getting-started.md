@@ -170,7 +170,7 @@ function addOutlineToPage() {
 
 -When you inspect a OneNote object, the properties that are currently available for use display actual values. Properties that need to be loaded display *undefined*. Expand the `_proto_` node to see properties that are defined on the object but are not yet loaded.
 
-      ![Unloaded OneNote object in the debugger](../../images/onenote-debug.png)
+![Unloaded OneNote object in the debugger](../../images/onenote-debug.png)
 
 -You need to enable mixed content in the browser if your add-in uses any HTTP resources. Production add-ins should use only secure HTTPS resources.
 

@@ -225,7 +225,7 @@ The following is an example manifest file for a dictionary add-in.
   <!--Permissions is the set of permissions a user will have to give your dictionary. If you need write access, such as to allow a user to replace the highlighted word with a synonym, use ReadWriteDocument. -->
   <Permissions>ReadDocument</Permissions>
   <Dictionary>
-    <!--TargetDialects is the set of dialects your dictionary contains. For example, if your dictionary applies to Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that here. This is for different dialects of the same language. Please do NOT put more than one language (for example, Spanish and English) here. Publish separate languages as separate dictionaries. -->
+    <!--TargetDialects is the set of regional languages your dictionary contains. For example, if your dictionary applies to Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that here. Do not put more than one language (for example, Spanish and English) here. Publish separate languages as separate dictionaries. -->
     <TargetDialects>
       <TargetDialect>EN-AU</TargetDialect>
       <TargetDialect>EN-BZ</TargetDialect>
@@ -280,7 +280,7 @@ The  **Dictionary** element and its child elements are added to the manifest of 
 #### TargetDialects element
 
 
-Specifies the dialects that this dictionary supports. Required (for dictionary add-ins).
+Specifies the regional languages that this dictionary supports. Required (for dictionary add-ins).
 
  **Parent element**
 
@@ -292,7 +292,7 @@ Specifies the dialects that this dictionary supports. Required (for dictionary a
 
  **Remarks**
 
-The  **TargetDialects** element and its child elements specify the set of dialects your dictionary contains. For example, if your dictionary applies to both Spanish (Mexico) and Spanish (Peru) dialects, but not Spanish (Spain), you can specify that in this element. This element is intended to specify only different dialects of the same language. Do not specify more than one language (for example, Spanish and English) in this manifest. Publish separate languages as separate dictionaries.
+The  **TargetDialects** element and its child elements specify the set of regional languages your dictionary contains. For example, if your dictionary applies to both Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that in this element. Do not specify more than one language (for example, Spanish and English) in this manifest. Publish separate languages as separate dictionaries.
 
  **Example**
 
@@ -326,7 +326,7 @@ The  **TargetDialects** element and its child elements specify the set of dialec
 #### TargetDialect element
 
 
-Specifies a dialect that this dictionary supports. Required (for dictionary add-ins).
+Specifies a regional language that this dictionary supports. Required (for dictionary add-ins).
 
  **Parent element**
 
@@ -334,7 +334,7 @@ Specifies a dialect that this dictionary supports. Required (for dictionary add-
 
  **Remarks**
 
-Specify the value for a dialect in the RFC1766  `language` tag format, such as EN-US.
+Specify the value for a regional language in the RFC1766  `language` tag format, such as EN-US.
 
  **Example**
 
