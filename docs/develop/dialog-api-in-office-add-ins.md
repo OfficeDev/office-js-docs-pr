@@ -316,20 +316,7 @@ For a sample that uses this technique, see [Insert Excel charts using Microsoft 
 
 Code in your dialog window can parse URL and read the parameter value.
 
->**Note:** Office automatically adds a query parameter called `_host_info` to the URL for the host page and also to the URL that is passed to `displayDialogAsync`. (It is appended after your custom query parameters, if any, and it is not appended to any subsequent URLs that the dialog box navigates to.) The query parameter provides information about the Office host. The following is an example.
-
->```
->_host_Info=Word$Win32$16.01$en-US$telemetry$isDialog
->```
->
->The same value is also added to [session storage](http://www.w3schools.com/html/html5_webstorage.asp) with the key `hostInfoValue`. Code in your dialog window can parse and use this information if needed. Because this information is used by Office internally, **do not change the `hostInfoValue` value in the window.sessionStorage**. The following are the parts of the query parameter:
-
-> 1. **Host application**, such as Word, Excel, or PowerPoint.
-> 2. **Platform** - `Win32`, `Mac`, `iOS`, `Web` (Office Online), or `Winrt` (Windows Immersive).
-> 3. **Version**
-> 4. **Locale**
-> 5. **Telemetry ID** - A GUID when the platform is `Web`. On all other platforms, it is the unused placeholder "telemetry". It is not present on the host page URL.
-> 6. **isDialog** - Not present on the host page URL. 
+>**Note:** Office automatically adds a query parameter called `_host_info` to the URL that is passed to `displayDialogAsync`. (It is appended after your custom query parameters, if any. It is not appended to any subsequent URLs that the dialog box navigates to.) Microsoft may change the content of this value, or remove it entirely, in the future, so your code should not read it. The same value is added to the dialog box's session storage. Again, *your code should neither read nor write to this value*.
 
 ## Using the Dialog APIs to show a video
 
