@@ -29,7 +29,7 @@ _See property access [examples.](#property-access-examples)_
 |[delete()](#delete)|void|Deletes the worksheet from the workbook.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it's stays within the worksheet grid.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRange(address: string)](#getrangeaddress-string)|[Range](range.md)|Gets the range object specified by the address or name.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getUsedRange(valuesOnly: [ApiSet(Version)](#getusedrangevaluesonly-apisetversion)|[Range](range.md)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the worksheet is blank, this function will return the top left cell.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getUsedRange(valuesOnly)](#getusedrangevaluesonly-apisetversion)|[Range](range.md)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the worksheet is blank, this function will return the top left cell.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
@@ -191,7 +191,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-### getUsedRange(valuesOnly: [ApiSet(Version)
+### getUsedRange(valuesOnly)
 The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the worksheet is blank, this function will return the top left cell.
 
 #### Syntax

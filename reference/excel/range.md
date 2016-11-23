@@ -56,7 +56,7 @@ _See property access [examples.](#property-access-examples)_
 |[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Gets a row contained in the range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRowsAbove(count: number)](#getrowsabovecount-number)|[Range](range.md)|Gets a certain number of rows above the current Range object.|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRowsBelow(count: number)](#getrowsbelowcount-number)|[Range](range.md)|Gets a certain number of rows below the current Range object.|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[getUsedRange(valuesOnly: [ApiSet(Version)](#getusedrangevaluesonly-apisetversion)|[Range](range.md)|Returns the used range of the given range object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getUsedRange(valuesOnly)](#getusedrangevaluesonly)|[Range](range.md)|Returns the used range of the given range object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getVisibleView()](#getvisibleview)|[RangeView](rangeview.md)|Represents the visible rows of the current range.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |[insert(shift: string)](#insertshift-string)|[Range](range.md)|Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space. Returns a new Range object at the now blank space.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -638,7 +638,7 @@ rangeObject.getRowsBelow(count);
 #### Returns
 [Range](range.md)
 
-### getUsedRange(valuesOnly: [ApiSet(Version)
+### getUsedRange(valuesOnly)
 Returns the used range of the given range object.
 
 #### Syntax
