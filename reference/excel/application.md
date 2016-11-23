@@ -37,6 +37,7 @@ applicationObject.calculate(calculationType);
 |:---------------|:--------|:----------|
 |calculationType|string|Specifies the calculation type to use. Possible values are: `Recalculate` This is a soft recalculation and is mainly for backwards compatibilty. `Full` Recalculates all cells that Excel has marked as dirty, that is, dependents of volatile or changed data, and cells programmatically marked as dirty. `FullRebuild` Recalculates all cells in all open workbooks.|
 
+
 #### Returns
 void
 
