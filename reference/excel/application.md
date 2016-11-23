@@ -84,4 +84,3 @@ Excel.run(function (ctx) {
 		}
 });
 ```
-
