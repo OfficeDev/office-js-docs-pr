@@ -35,7 +35,7 @@ applicationObject.calculate(calculationType);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|calculationType|string|Specifies the calculation type to use. Possible values are: `Recalculate` Default-option. Performs normal calculation by calculating all the formulas in the workbook,`Full` Forces a full calculation of the data,`FullRebuild`  Forces a full calculation of the data and rebuilds the dependencies.|
+|calculationType|string|Specifies the calculation type to use. Possible values are: Recalculate This is a soft recalculation and is mainly for backwards compatibilty. Full Recalculates all cells that Excel has marked as dirty, that is, dependents of volatile or changed data, and cells programmatically marked as dirty. FullRebuild Recalculates all cells in all open workbooks.|
 
 #### Returns
 void
