@@ -1,13 +1,12 @@
-# FormatProtection Object (JavaScript API for Excel)
+# RangeViewCollection Object (JavaScript API for Excel)
 
-Represents the format protection of a range object.
+Represents a collection of worksheet objects that are part of the workbook.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|formulaHidden|bool|Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|locked|bool|Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[RangeView[]](rangeview.md)|A collection of rangeView objects. Read-only.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -19,10 +18,27 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|[getItemAt(index: number)](#getitematindex-number)|[RangeView](rangeview.md)|Gets a RangeView Row via it's index. Zero-Indexed.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
+
+### getItemAt(index: number)
+Gets a RangeView Row via it's index. Zero-Indexed.
+
+#### Syntax
+```js
+rangeViewCollectionObject.getItemAt(index);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|index|number|Index of the visible row.|
+
+#### Returns
+[RangeView](rangeview.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.

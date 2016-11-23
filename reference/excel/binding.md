@@ -1,13 +1,13 @@
-# Binding object (JavaScript API for Excel)
+# Binding Object (JavaScript API for Excel)
 
 Represents an Office.js binding that is defined in the workbook.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|id|string|Represents binding identifier. Read-only.|
-|type|string|Returns the type of the binding. Read-only. Possible values are: Range, Table, Text.|
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|id|string|Represents binding identifier. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|type|string|Returns the type of the binding. Read-only. Possible values are: Range, Table, Text.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -17,15 +17,30 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[getRange()](#getrange)|[Range](range.md)|Returns the range represented by the binding. Will throw an error if binding is not of the correct type.|
-|[getTable()](#gettable)|[Table](table.md)|Returns the table represented by the binding. Will throw an error if binding is not of the correct type.|
-|[getText()](#gettext)|string|Returns the text represented by the binding. Will throw an error if binding is not of the correct type.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[delete()](#delete)|void|Deletes the binding.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRange()](#getrange)|[Range](range.md)|Returns the range represented by the binding. Will throw an error if binding is not of the correct type.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getTable()](#gettable)|[Table](table.md)|Returns the table represented by the binding. Will throw an error if binding is not of the correct type.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getText()](#gettext)|string|Returns the text represented by the binding. Will throw an error if binding is not of the correct type.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
+
+### delete()
+Deletes the binding.
+
+#### Syntax
+```js
+bindingObject.delete();
+```
+
+#### Parameters
+None
+
+#### Returns
+void
 
 ### getRange()
 Returns the range represented by the binding. Will throw an error if binding is not of the correct type.
@@ -42,7 +57,7 @@ None
 [Range](range.md)
 
 #### Examples
-The example below uses a binding object to get the associated range.
+Below example uses binding object to get the associated range.
 
 ```js
 Excel.run(function (ctx) { 
@@ -113,7 +128,7 @@ string
 Excel.run(function (ctx) { 
 	var binding = ctx.workbook.bindings.getItemAt(0);
 	var text = binding.getText();
-	ctx.load('text');
+	binding.load('text');
 	return ctx.sync().then(function() {
 		console.log(text);
 	});
@@ -127,7 +142,7 @@ Excel.run(function (ctx) {
 
 
 ### load(param: object)
-Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
 ```js
@@ -136,8 +151,8 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, accepts a [loadOption](loadoption.md) object.|
+|:---------------|:--------|:----------|:---|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void

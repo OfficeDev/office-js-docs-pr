@@ -1,15 +1,16 @@
-# RangeBorder object (JavaScript API for Excel)
+# RangeBorder Object (JavaScript API for Excel)
 
 Represents the border of an object.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|color|string|HTML color code representing the color of the border line, of the form #RRGGBB (for example, "FFA500") or as a named HTML color (for example, "orange").|
-|sideIndex|string|Constant value that indicates the specific side of the border. Read-only. Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp.|
-|style|string|One of the constants of line style specifying the line style for the border. Possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.|
-|weight|string|Specifies the weight of the border around a range. Possible values are: Hairline, Thin, Medium, Thick.|
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|color|string|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|id|string|Represents border identifier. Read-only. Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|sideIndex|string|Constant value that indicates the specific side of the border. Read-only. Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|style|string|One of the constants of line style specifying the line style for the border. Possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|weight|string|Specifies the weight of the border around a range. Possible values are: Hairline, Thin, Medium, Thick.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -19,15 +20,15 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
 
 ### load(param: object)
-Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
 ```js
@@ -36,8 +37,8 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|:---------------|:--------|:----------|:---|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
@@ -65,7 +66,7 @@ Excel.run(function (ctx) {
 		}
 });
 ```
-The example below adds a grid border around the range.
+The example below adds grid border around the range.
 
 ```js
 Excel.run(function (ctx) { 

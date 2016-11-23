@@ -1,17 +1,17 @@
-# RangeFont object (JavaScript API for Excel)
+# RangeFont Object (JavaScript API for Excel)
 
 This object represents the font attributes (font name, font size, color, etc.) for an object.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|bold|bool|Represents the bold setting for font.|
-|color|string|HTML color code representation of the text color, for example, #FF0000 represents red.|
-|italic|bool|Represents the italic setting for font.|
-|name|string|Font name, for example, "Calibri".|
-|size|double|Font size.|
-|underline|string|Type of underline applied to the font. Possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.|
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|bold|bool|Represents the bold status of font.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|color|string|HTML color code representation of the text color. E.g. #FF0000 represents Red.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|italic|bool|Represents the italic status of the font.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|name|string|Font name (e.g. "Calibri")|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|size|double|Font size.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|underline|string|Type of underline applied to the font. Possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -21,15 +21,15 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
 
 ### load(param: object)
-Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
 ```js
@@ -38,8 +38,8 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|:---------------|:--------|:----------|:---|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
@@ -63,7 +63,7 @@ Excel.run(function (ctx) {
 		}
 });
 ```
-The example below sets the font name. 
+The example below sets font name. 
 
 ```js
 Excel.run(function (ctx) { 
