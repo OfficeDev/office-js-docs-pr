@@ -1,4 +1,4 @@
-# TableCollection Object (JavaScript API for Excel)
+# TableCollection object (JavaScript API for Excel)
 
 Represents a collection of all the tables that are part of the workbook.
 

@@ -1,4 +1,4 @@
-# ChartFont Object (JavaScript API for Excel)
+# ChartFont object (JavaScript API for Excel)
 
 This object represents the font attributes (font name, font size, color, etc.) for a chart object.
 

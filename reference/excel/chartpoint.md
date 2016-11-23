@@ -1,4 +1,4 @@
-# ChartPoint Object (JavaScript API for Excel)
+# ChartPoint object (JavaScript API for Excel)
 
 Represents a point of a series in a chart.
 

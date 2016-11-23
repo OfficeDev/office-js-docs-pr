@@ -1,4 +1,4 @@
-# ChartCollection Object (JavaScript API for Excel)
+# ChartCollection object (JavaScript API for Excel)
 
 A collection of all the chart objects on a worksheet.
 

@@ -1,4 +1,4 @@
-# SortField Object (JavaScript API for Excel)
+# SortField object (JavaScript API for Excel)
 
 Represents a condition in a sorting operation.
 

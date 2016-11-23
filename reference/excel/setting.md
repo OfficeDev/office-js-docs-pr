@@ -1,4 +1,4 @@
-# Setting Object (JavaScript API for Excel)
+# Setting object (JavaScript API for Excel)
 
 Setting represents a key-value pair of a setting persisted to the document.
 

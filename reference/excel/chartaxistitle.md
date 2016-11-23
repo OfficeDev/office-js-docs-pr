@@ -1,4 +1,4 @@
-# ChartAxisTitle Object (JavaScript API for Excel)
+# ChartAxisTitle object (JavaScript API for Excel)
 
 Represents the title of a chart axis.
 

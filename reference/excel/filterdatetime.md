@@ -1,4 +1,4 @@
-# FilterDatetime Object (JavaScript API for Excel)
+# FilterDatetime object (JavaScript API for Excel)
 
 Represents how to filter a date when filtering on values.
 

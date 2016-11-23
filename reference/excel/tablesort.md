@@ -1,4 +1,4 @@
-# TableSort Object (JavaScript API for Excel)
+# TableSort object (JavaScript API for Excel)
 
 Manages sorting operations on Table objects.
 

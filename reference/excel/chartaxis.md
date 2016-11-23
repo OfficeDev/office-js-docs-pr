@@ -1,4 +1,4 @@
-# ChartAxis Object (JavaScript API for Excel)
+# ChartAxis object (JavaScript API for Excel)
 
 Represents a single axis in a chart.
 

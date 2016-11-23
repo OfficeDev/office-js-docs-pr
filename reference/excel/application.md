@@ -1,4 +1,4 @@
-# Application Object (JavaScript API for Excel)
+# Application object (JavaScript API for Excel)
 
 Represents the Excel application that manages the workbook.
 

@@ -1,4 +1,4 @@
-# Range Object (JavaScript API for Excel)
+# Range object (JavaScript API for Excel)
 
 Range represents a set of one or more contiguous cells such as a cell, a row, a column, block of cells, etc.
 

@@ -1,4 +1,4 @@
-# BindingCollection Object (JavaScript API for Excel)
+# BindingCollection object (JavaScript API for Excel)
 
 Represents the collection of all the binding objects that are part of the workbook.
 

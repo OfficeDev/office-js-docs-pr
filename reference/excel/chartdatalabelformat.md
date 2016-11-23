@@ -1,4 +1,4 @@
-# ChartDataLabelFormat Object (JavaScript API for Excel)
+# ChartDataLabelFormat object (JavaScript API for Excel)
 
 Encapsulates the format properties for the chart data labels.
 

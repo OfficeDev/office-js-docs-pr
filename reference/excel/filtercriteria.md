@@ -1,4 +1,4 @@
-# FilterCriteria Object (JavaScript API for Excel)
+# FilterCriteria object (JavaScript API for Excel)
 
 Represents the filtering criteria applied to a column.
 

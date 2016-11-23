@@ -1,4 +1,4 @@
-# Icon Object (JavaScript API for Excel)
+# Icon object (JavaScript API for Excel)
 
 Represents a cell icon.
 

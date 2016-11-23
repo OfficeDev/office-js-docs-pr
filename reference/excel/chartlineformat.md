@@ -1,4 +1,4 @@
-# ChartLineFormat Object (JavaScript API for Excel)
+# ChartLineFormat object (JavaScript API for Excel)
 
 Enapsulates the formatting options for line elements.
 

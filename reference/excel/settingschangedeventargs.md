@@ -1,4 +1,4 @@
-# SettingsChangedEventArgs Object (JavaScript API for Excel)
+# SettingsChangedEventArgs object (JavaScript API for Excel)
 
 Provides information about the setting that raised the SettingsChanged event
 

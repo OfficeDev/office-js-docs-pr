@@ -1,4 +1,4 @@
-# ChartPointFormat Object (JavaScript API for Excel)
+# ChartPointFormat object (JavaScript API for Excel)
 
 Represents formatting object for chart points.
 

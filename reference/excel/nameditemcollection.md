@@ -1,4 +1,4 @@
-# NamedItemCollection Object (JavaScript API for Excel)
+# NamedItemCollection object (JavaScript API for Excel)
 
 A collection of all the nameditem objects that are part of the workbook.
 

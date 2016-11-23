@@ -1,4 +1,4 @@
-# BindingDataChangedEventArgs Object (JavaScript API for Excel)
+# BindingDataChangedEventArgs object (JavaScript API for Excel)
 
 Provides information about the binding that raised the DataChanged event.
 

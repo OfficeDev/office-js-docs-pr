@@ -1,4 +1,4 @@
-# ChartLegendFormat Object (JavaScript API for Excel)
+# ChartLegendFormat object (JavaScript API for Excel)
 
 Encapsulates the format properties of a chart legend.
 

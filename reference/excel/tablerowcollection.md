@@ -1,4 +1,4 @@
-# TableRowCollection Object (JavaScript API for Excel)
+# TableRowCollection object (JavaScript API for Excel)
 
 Represents a collection of all the rows that are part of the table.
 

@@ -1,4 +1,4 @@
-# Worksheet Object (JavaScript API for Excel)
+# Worksheet object (JavaScript API for Excel)
 
 An Excel worksheet is a grid of cells. It can contain data, tables, charts, etc.
 

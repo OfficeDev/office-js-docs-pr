@@ -1,4 +1,4 @@
-# ChartAxisTitleFormat Object (JavaScript API for Excel)
+# ChartAxisTitleFormat object (JavaScript API for Excel)
 
 Represents the chart axis title formatting.
 

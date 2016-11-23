@@ -1,4 +1,4 @@
-# TableRow Object (JavaScript API for Excel)
+# TableRow object (JavaScript API for Excel)
 
 Represents a row in a table.
 

@@ -1,4 +1,4 @@
-# RangeViewCollection Object (JavaScript API for Excel)
+# RangeViewCollection object (JavaScript API for Excel)
 
 Represents a collection of worksheet objects that are part of the workbook.
 

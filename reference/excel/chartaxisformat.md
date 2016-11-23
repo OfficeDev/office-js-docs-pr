@@ -1,4 +1,4 @@
-# ChartAxisFormat Object (JavaScript API for Excel)
+# ChartAxisFormat object (JavaScript API for Excel)
 
 Encapsulates the format properties for the chart axis.
 

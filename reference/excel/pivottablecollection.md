@@ -1,4 +1,4 @@
-# PivotTableCollection Object (JavaScript API for Excel)
+# PivotTableCollection object (JavaScript API for Excel)
 
 Represents a collection of all the PivotTables that are part of the workbook or worksheet.
 

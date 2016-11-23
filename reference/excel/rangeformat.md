@@ -1,4 +1,4 @@
-# RangeFormat Object (JavaScript API for Excel)
+# RangeFormat object (JavaScript API for Excel)
 
 A format object encapsulating the range's font, fill, borders, alignment, and other properties.
 

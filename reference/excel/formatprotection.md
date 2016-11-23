@@ -1,4 +1,4 @@
-# FormatProtection Object (JavaScript API for Excel)
+# FormatProtection object (JavaScript API for Excel)
 
 Represents the format protection of a range object.
 

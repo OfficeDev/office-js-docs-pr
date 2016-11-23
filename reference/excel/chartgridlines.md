@@ -1,4 +1,4 @@
-# ChartGridlines Object (JavaScript API for Excel)
+# ChartGridlines object (JavaScript API for Excel)
 
 Represents major or minor gridlines on a chart axis.
 

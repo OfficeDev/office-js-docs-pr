@@ -1,4 +1,4 @@
-# ChartTitleFormat Object (JavaScript API for Excel)
+# ChartTitleFormat object (JavaScript API for Excel)
 
 Provides access to the office art formatting for chart title.
 

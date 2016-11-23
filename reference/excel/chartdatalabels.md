@@ -1,4 +1,4 @@
-# ChartDataLabels Object (JavaScript API for Excel)
+# ChartDataLabels object (JavaScript API for Excel)
 
 Represents a collection of all the data labels on a chart point.
 

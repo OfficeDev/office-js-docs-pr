@@ -1,4 +1,4 @@
-# RangeBorderCollection Object (JavaScript API for Excel)
+# RangeBorderCollection object (JavaScript API for Excel)
 
 Represents the border objects that make up range border.
 

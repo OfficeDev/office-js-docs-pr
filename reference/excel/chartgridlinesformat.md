@@ -1,4 +1,4 @@
-# ChartGridlinesFormat Object (JavaScript API for Excel)
+# ChartGridlinesFormat object (JavaScript API for Excel)
 
 Encapsulates the format properties for chart gridlines.
 

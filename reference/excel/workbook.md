@@ -1,4 +1,4 @@
-# Workbook Object (JavaScript API for Excel)
+# Workbook object (JavaScript API for Excel)
 
 Workbook is the top level object which contains related workbook objects such as worksheets, tables, ranges, etc.
 

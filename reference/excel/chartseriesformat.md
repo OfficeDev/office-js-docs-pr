@@ -1,4 +1,4 @@
-# ChartSeriesFormat Object (JavaScript API for Excel)
+# ChartSeriesFormat object (JavaScript API for Excel)
 
 encapsulates the format properties for the chart series
 

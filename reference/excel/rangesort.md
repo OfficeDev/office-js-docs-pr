@@ -1,4 +1,4 @@
-# RangeSort Object (JavaScript API for Excel)
+# RangeSort object (JavaScript API for Excel)
 
 Manages sorting operations on Range objects.
 

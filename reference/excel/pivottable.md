@@ -1,4 +1,4 @@
-# PivotTable Object (JavaScript API for Excel)
+# PivotTable object (JavaScript API for Excel)
 
 Represents an Excel PivotTable.
 

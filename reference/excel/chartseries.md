@@ -1,4 +1,4 @@
-# ChartSeries Object (JavaScript API for Excel)
+# ChartSeries object (JavaScript API for Excel)
 
 Represents a series in a chart.
 

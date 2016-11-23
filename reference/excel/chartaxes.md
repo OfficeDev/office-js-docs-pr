@@ -1,4 +1,4 @@
-# ChartAxes Object (JavaScript API for Excel)
+# ChartAxes object (JavaScript API for Excel)
 
 Represents the chart axes.
 

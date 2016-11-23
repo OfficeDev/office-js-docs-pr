@@ -1,4 +1,4 @@
-# ChartLegend Object (JavaScript API for Excel)
+# ChartLegend object (JavaScript API for Excel)
 
 Represents the legend in a chart.
 

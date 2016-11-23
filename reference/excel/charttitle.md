@@ -1,4 +1,4 @@
-# ChartTitle Object (JavaScript API for Excel)
+# ChartTitle object (JavaScript API for Excel)
 
 Represents a chart title object of a chart.
 

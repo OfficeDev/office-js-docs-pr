@@ -1,4 +1,4 @@
-# Table Object (JavaScript API for Excel)
+# Table object (JavaScript API for Excel)
 
 Represents an Excel table.
 

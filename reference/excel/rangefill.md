@@ -1,4 +1,4 @@
-# RangeFill Object (JavaScript API for Excel)
+# RangeFill object (JavaScript API for Excel)
 
 Represents the background of a range object.
 

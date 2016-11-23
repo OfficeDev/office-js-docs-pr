@@ -1,4 +1,4 @@
-# TableColumnCollection Object (JavaScript API for Excel)
+# TableColumnCollection object (JavaScript API for Excel)
 
 Represents a collection of all the columns that are part of the table.
 

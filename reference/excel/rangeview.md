@@ -1,4 +1,4 @@
-# RangeView Object (JavaScript API for Excel)
+# RangeView object (JavaScript API for Excel)
 
 RangeView represents a set of visible cells of the parent range.
 

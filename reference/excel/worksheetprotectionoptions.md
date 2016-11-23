@@ -1,4 +1,4 @@
-# WorksheetProtectionOptions Object (JavaScript API for Excel)
+# WorksheetProtectionOptions object (JavaScript API for Excel)
 
 Represents the options in sheet protection.
 

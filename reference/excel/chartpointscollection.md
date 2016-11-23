@@ -1,4 +1,4 @@
-# ChartPointsCollection Object (JavaScript API for Excel)
+# ChartPointsCollection object (JavaScript API for Excel)
 
 A collection of all the chart points within a series inside a chart.
 

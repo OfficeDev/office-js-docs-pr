@@ -1,4 +1,4 @@
-# SettingCollection Object (JavaScript API for Excel)
+# SettingCollection object (JavaScript API for Excel)
 
 Represents a collection of worksheet objects that are part of the workbook.
 

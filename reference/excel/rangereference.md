@@ -1,4 +1,4 @@
-# RangeReference Object (JavaScript API for Excel)
+# RangeReference object (JavaScript API for Excel)
 
 Represents a string reference of the form SheetName!A1:B5, or a global or local named range
 

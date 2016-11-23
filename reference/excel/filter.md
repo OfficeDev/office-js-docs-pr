@@ -1,4 +1,4 @@
-# Filter Object (JavaScript API for Excel)
+# Filter object (JavaScript API for Excel)
 
 Manages the filtering of a table's column.
 

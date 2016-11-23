@@ -1,4 +1,4 @@
-# RangeBorder Object (JavaScript API for Excel)
+# RangeBorder object (JavaScript API for Excel)
 
 Represents the border of an object.
 
