@@ -4,10 +4,10 @@ Represents a row in a table.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|index|int|Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.|
-|values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or boolean. A cell that contains an error returns an error string.|
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|index|int|Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -17,11 +17,11 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[delete()](#delete)|void|Deletes the row from the table.|
-|[getRange()](#getrange)|[Range](range.md)|Returns the range object associated with the entire row.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[delete()](#delete)|void|Deletes the row from the table.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRange()](#getrange)|[Range](range.md)|Returns the range object associated with the entire row.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -45,10 +45,9 @@ void
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
-	var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
+	var row = ctx.workbook.tables.getItem(tableName).rows.getItemAt(2);
 	row.delete();
 	return ctx.sync(); 
-	});
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {
@@ -77,7 +76,7 @@ None
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
-	var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(0);
+	var row = ctx.workbook.tables.getItem(tableName).rows.getItemAt(0);
 	var rowRange = row.getRange();
 	rowRange.load('address');
 	return ctx.sync().then(function() {
@@ -93,7 +92,7 @@ Excel.run(function (ctx) {
 
 
 ### load(param: object)
-Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
 ```js
@@ -102,8 +101,8 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|:---------------|:--------|:----------|:---|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
@@ -112,7 +111,7 @@ void
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
-	var row = ctx.workbook.tables.getItem(tableName).tableRows.getItem(0);
+	var row = ctx.workbook.tables.getItem(tableName).rows.getItem(0);
 	row.load('index');
 	return ctx.sync().then(function() {
 		console.log(row.index);
@@ -129,7 +128,8 @@ Excel.run(function (ctx) {
 Excel.run(function (ctx) { 
 	var tables = ctx.workbook.tables;
 	var newValues = [["New", "Values", "For", "New", "Row"]];
-	var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
+    var tableName = 'Table1';
+	var row = ctx.workbook.tables.getItem(tableName).rows.getItemAt(2);
 	row.values = newValues;
 	row.load('values');
 	return ctx.sync().then(function() {

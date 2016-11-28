@@ -1,7 +1,5 @@
 # RangeSort object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Excel for iOS, Office 2016_
-
 Manages sorting operations on Range objects.
 
 ## Properties
@@ -14,9 +12,9 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[apply(fields: SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)](#applyfields-sortfield-matchcase-bool-hasheaders-bool-orientation-string-method-string)|void|Perform a sort operation.|
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[apply(fields: SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)](#applyfields-sortfield-matchcase-bool-hasheaders-bool-orientation-string-method-string)|void|Perform a sort operation.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -31,7 +29,7 @@ rangeSortObject.apply(fields, matchCase, hasHeaders, orientation, method);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |fields|SortField[]|The list of conditions to sort on.|
 |matchCase|bool|Optional. Whether to have the casing impact string ordering.|
 |hasHeaders|bool|Optional. Whether the range has a header.|
@@ -40,24 +38,3 @@ rangeSortObject.apply(fields, matchCase, hasHeaders, orientation, method);
 
 #### Returns
 void
-
-#### Examples
-```js
-Excel.run(function (ctx) { 
-    var sheetName = "Sheet1";
-    var rangeAddress = "D4:G6";
-    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-    range.sort.apply([ 
-            {
-                key: 2,
-                ascending: true
-            },
-        ], true);
-    return ctx.sync(); 
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-});
-```

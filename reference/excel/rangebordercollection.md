@@ -4,10 +4,10 @@ Represents the border objects that make up range border.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|count|int|Number of border objects in the collection. Read-only.|
-|items|[RangeBorder[]](rangeborder.md)|A collection of rangeBorder objects. Read-only.|
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|count|int|Number of border objects in the collection. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[RangeBorder[]](rangeborder.md)|A collection of rangeBorder objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -17,17 +17,17 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[getItem(index: string)](#getitemindex-string)|[RangeBorder](rangeborder.md)|Gets a border object using its name.|
-|[getItemAt(index: number)](#getitematindex-number)|[RangeBorder](rangeborder.md)|Gets a border object using its index.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[getItem(index: string)](#getitemindex-string)|[RangeBorder](rangeborder.md)|Gets a border object using its name|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[RangeBorder](rangeborder.md)|Gets a border object using its index|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
 
 ### getItem(index: string)
-Gets a border object using its name. 
+Gets a border object using its name
 
 #### Syntax
 ```js
@@ -36,8 +36,8 @@ rangeBorderCollectionObject.getItem(index);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|index|string|Index value of the border object to be retrieved.  Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp.|
+|:---------------|:--------|:----------|:---|
+|index|string|Index value of the border object to be retrieved.  Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp|
 
 #### Returns
 [RangeBorder](rangeborder.md)
@@ -72,7 +72,7 @@ Excel.run(function (ctx) {
 	var rangeAddress = "A1:F8";
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
-	var border = ctx.workbook.borders.getItemAt(0);
+	var border = range.format.borders.getItemAt(0);
 	border.load('sideIndex');
 	return ctx.sync().then(function() {
 			console.log(border.sideIndex);
@@ -87,7 +87,7 @@ Excel.run(function (ctx) {
 
 
 ### getItemAt(index: number)
-Gets a border object using its index.
+Gets a border object using its index
 
 #### Syntax
 ```js
@@ -96,7 +96,7 @@ rangeBorderCollectionObject.getItemAt(index);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
@@ -110,7 +110,7 @@ Excel.run(function (ctx) {
 	var rangeAddress = "A1:F8";
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
-	var border = ctx.workbook.borders.getItemAt(0);
+	var border = range.format.borders.getItemAt(0);
 	border.load('sideIndex');
 	return ctx.sync().then(function() {
 			console.log(border.sideIndex);
@@ -125,7 +125,7 @@ Excel.run(function (ctx) {
 
 
 ### load(param: object)
-Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
 ```js
@@ -134,8 +134,8 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|:---------------|:--------|:----------|:---|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
@@ -148,7 +148,7 @@ Excel.run(function (ctx) {
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
 	var borders = range.format.borders;
-	borders.load('items');
+	border.load('items');
 	return ctx.sync().then(function() {
 		console.log(borders.count);
 		for (var i = 0; i < borders.items.length; i++)
@@ -163,7 +163,7 @@ Excel.run(function (ctx) {
 		}
 });
 ```
-The example below adds a grid border around the range.
+The example below adds grid border around the range.
 
 ```js
 Excel.run(function (ctx) { 
