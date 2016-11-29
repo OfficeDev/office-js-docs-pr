@@ -18,8 +18,8 @@ None
 
 | Method		   | Return Type	|Description|Req. Set|
 |:---------------|:--------|:----------|:----------|
-|[calculate(calculationType: string)](#calculatecalculationtype-string)|void|Recalculate all currently open workbooks in Excel.||[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[calculate(calculationType: string)](#calculatecalculationtype-string)|void|Recalculate all currently open workbooks in Excel.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
