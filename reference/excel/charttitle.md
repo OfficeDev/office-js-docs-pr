@@ -4,30 +4,30 @@ Represents a chart title object of a chart.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|overlay|bool|Boolean value representing if the chart title will overlay the chart or not.|
-|text|string|Represents the title text of a chart.|
-|visible|bool|A Boolean value the represents the visibility of a chart title object.|
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|overlay|bool|Boolean value representing if the chart title will overlay the chart or not.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|text|string|Represents the title text of a chart.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|visible|bool|A boolean value the represents the visibility of a chart title object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|format|[ChartTitleFormat](charttitleformat.md)|Represents the formatting of a chart title, which includes fill and font formatting. Read-only.|
+| Relationship | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|format|[ChartTitleFormat](charttitleformat.md)|Represents the formatting of a chart title, which includes fill and font formatting. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
 
 ### load(param: object)
-Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
 ```js
@@ -36,14 +36,14 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|:---------------|:--------|:----------|:---|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
 ### Property access examples
 
-Get the `text` of the chart title from Chart1.
+Get the `text` of Chart Title from Chart1.
 
 ```js
 Excel.run(function (ctx) { 
@@ -59,9 +59,10 @@ return ctx.sync().then(function() {
 			console.log("Debug info: " + JSON.stringify(error.debugInfo));
 		}
 });
+});
 ```
 
-Set the `text` of chart title to "My Chart" and make it show on top of the chart without overlaying.
+Set the `text` of Chart Title to "My Chart" and Make it show on top of the chart without overlaying.
 
 ```js
 Excel.run(function (ctx) { 
@@ -78,5 +79,6 @@ return ctx.sync().then(function() {
 		if (error instanceof OfficeExtension.Error) {
 			console.log("Debug info: " + JSON.stringify(error.debugInfo));
 		}
+});
 });
 ```

@@ -4,9 +4,9 @@ A collection of all the nameditem objects that are part of the workbook.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|items|[NamedItem[]](nameditem.md)|A collection of namedItem objects. Read-only.|
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|items|[NamedItem[]](nameditem.md)|A collection of namedItem objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -16,16 +16,17 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[getItem(name: string)](#getitemname-string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[getItem(name: string)](#getitemname-string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNull(name: string)](#getitemornullname-string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name. If the nameditem object does not exist, the returned object's isNull property will be true.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
 
 ### getItem(name: string)
-Gets a nameditem object using its name.
+Gets a nameditem object using its name
 
 #### Syntax
 ```js
@@ -34,7 +35,7 @@ namedItemCollectionObject.getItem(name);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |name|string|nameditem name.|
 
 #### Returns
@@ -44,7 +45,8 @@ namedItemCollectionObject.getItem(name);
 
 ```js
 Excel.run(function (ctx) { 
-	var nameditem = ctx.workbook.names.getItem(wSheetName);
+	var sheetName = 'Sheet1';
+	var nameditem = ctx.workbook.names.getItem(sheetName);
 	nameditem.load('type');
 	return ctx.sync().then(function() {
 			console.log(nameditem.type);
@@ -56,25 +58,24 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+### getItemOrNull(name: string)
+Gets a nameditem object using its name. If the nameditem object does not exist, the returned object's isNull property will be true.
 
-#### Examples
-
+#### Syntax
 ```js
-Excel.run(function (ctx) { 
-	var nameditem = ctx.workbook.names.getItemAt(0);
-	nameditem.load('name');
-	return ctx.sync().then(function() {
-			console.log(nameditem.name);
-	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
+namedItemCollectionObject.getItemOrNull(name);
 ```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|name|string|nameditem name.|
+
+#### Returns
+[NamedItem](nameditem.md)
+
 ### load(param: object)
-Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
 ```js
@@ -83,8 +84,8 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|:---------------|:--------|:----------|:---|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
@@ -109,20 +110,4 @@ Excel.run(function (ctx) {
 });
 ```
 
-Get the number of named items.
-
-```js
-Excel.run(function (ctx) { 
-	var nameditems = ctx.workbook.names;
-	nameditems.load('count');
-	return ctx.sync().then(function() {
-		console.log("nameditems: Count= " + nameditems.count);
-	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
-```
 

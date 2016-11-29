@@ -4,35 +4,35 @@ Represents a collection of all the data labels on a chart point.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|position|string|DataLabelPosition value that represents the position of the data label. Possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout. Write-only.|
-|separator|string|String representing the separator used for the data labels on a chart. Write-only.|
-|showBubbleSize|bool|Boolean value representing if the data label bubble size is visible or not. Write-only.|
-|showCategoryName|bool|Boolean value representing if the data label category name is visible or not. Write-only.|
-|showLegendKey|bool|Boolean value representing if the data label legend key is visible or not. Write-only.|
-|showPercentage|bool|Boolean value representing if the data label percentage is visible or not. Write-only.|
-|showSeriesName|bool|Boolean value representing if the data label series name is visible or not. Write-only.|
-|showValue|bool|Boolean value representing if the data label value is visible or not. Write-only.|
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|position|string|DataLabelPosition value that represents the position of the data label. Possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|separator|string|String representing the separator used for the data labels on a chart.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|showBubbleSize|bool|Boolean value representing if the data label bubble size is visible or not.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|showCategoryName|bool|Boolean value representing if the data label category name is visible or not.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|showLegendKey|bool|Boolean value representing if the data label legend key is visible or not.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|showPercentage|bool|Boolean value representing if the data label percentage is visible or not.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|showSeriesName|bool|Boolean value representing if the data label series name is visible or not.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|showValue|bool|Boolean value representing if the data label value is visible or not.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|format|[ChartDataLabelFormat](chartdatalabelformat.md)|Represents the format of chart data labels, which includes fill and font formatting. Read-only.|
+| Relationship | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|format|[ChartDataLabelFormat](chartdatalabelformat.md)|Represents the format of chart data labels, which includes fill and font formatting. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
 
 ### load(param: object)
-Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
 ```js
@@ -41,21 +41,21 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|:---------------|:--------|:----------|:---|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
 ### Property access examples
 
-Make the series name shown in data labels and set the `position` of data labels to be "top".
+Make Series Name shown in Datalabels and set the `position` of datalabels to be "top";
 
 ```js
 Excel.run(function (ctx) { 
 	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
-	chart.datalabels.visible = true;
+	chart.datalabels.showValue = true;
 	chart.datalabels.position = "top";
-	chart.datalabels.ShowSeriesName = true;
+	chart.datalabels.showSeriesName = true;
 	return ctx.sync().then(function() {
 			console.log("Datalabels Shown");
 	});
