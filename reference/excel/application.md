@@ -4,9 +4,9 @@ Represents the Excel application that manages the workbook.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|calculationMode|string|Returns the calculation mode used in the workbook. Read-only. Possible values are: `Automatic` Excel controls recalculation, `AutomaticExceptTables` Excel controls recalculation but ignores changes in tables, `Manual` Calculation is done when the user requests it.|
+| Property	   | Type	|Description|Req. Set|
+|:---------------|:--------|:----------|:----------|
+|calculationMode|string|Returns the calculation mode used in the workbook. Read-only. Possible values are: `Automatic` Excel controls recalculation, `AutomaticExceptTables` Excel controls recalculation but ignores changes in tables, `Manual` Calculation is done when the user requests it.||[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -16,10 +16,10 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[calculate(calculationType: string)](#calculatecalculationtype-string)|void|Recalculate all currently open workbooks in Excel.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description|Req. Set|
+|:---------------|:--------|:----------|:----------|
+|[calculate(calculationType: string)](#calculatecalculationtype-string)|void|Recalculate all currently open workbooks in Excel.||[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
