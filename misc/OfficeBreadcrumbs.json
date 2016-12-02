@@ -1,0 +1,21 @@
+﻿{
+    "Cat":  "Office Add-ins",
+    "parentLink": "/docs/add-ins/overview/office-add-ins",
+    "DropdownOptions": [
+        {
+            "Title": "Office Add-ins docs",
+            "URL": "/docs/add-ins/overview/office-add-ins",
+            "Index":  "/docs/add-ins/"
+        },
+        {
+            "Title": "Office Add-ins API reference",
+            "URL": "/reference/add-ins/javascript-api-for-office",
+            "Index":  "/reference/add-ins/"
+        },
+        {
+            "Title": "Submit to Office store",
+            "URL": "https://msdn.microsoft.com/en-us/library/office/jj220037.aspx",
+            "Index":  "https://msdn.microsoft.com/en-us/library/office/jj220037.aspx"
+        }
+    ]
+}
