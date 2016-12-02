@@ -19,7 +19,7 @@ To install and set up up Vorlon:
 
 5.	Run the Vorlon server with the command `sudo vorlon`. 
 
-6.	Open a browser window and go to [http://localhost:1337](http://localhost:1337), which is the Vorlon interface. Trust the security certificate, which you should be prompted to do. You can also find the security certificate in the Vorlon folder under /Server/cert. 
+6.	Open a browser window and go to [http://localhost:1337](http://localhost:1337), which is the Vorlon interface. When prompted, choose **Always** to trust the security certificate. You can also find the security certificate in the Vorlon folder under /Server/cert. 
 
 7.	Add the following script tag to the `<head>` section of the home.html file (or main HTML file) of your add-in:
 ```    
