@@ -1,6 +1,7 @@
 
 # Deploy and publish your Office Add-in
 
+>**Note:** When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in must work across all platforms that support the methods that you define in the Requirements element in your manifest (see [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
 
 You can use one of several methods to deploy your Office Add-in for testing or distribution to users: 
 
