@@ -26,16 +26,6 @@ The following are the new additions to the Excel JavaScript APIs in requirement 
 
 |Object| What's new| Description|Requirement set|
 |:----|:----|:----|:----|
-|[binding](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/binding.md)|_Method_ > [delete()](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/binding.md#delete)|Deletes the binding.|1.3|
-|[bindingCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md)|_Method_ > [add(range: Range or string, bindingType: string, id: string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md#addrange-range-or-string-bindingtype-string-id-string)|Add a new binding to a particular Range.|1.3|
-|[bindingCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md)|_Method_ > [addFromNamedItem(name: string, bindingType: string, id: string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md#addfromnameditemname-string-bindingtype-string-id-string)|Add a new binding based on a named item in the workbook.|1.3|
-|[bindingCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md)|_Method_ > [addFromSelection(bindingType: string, id: string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md#addfromselectionbindingtype-string-id-string)|Add a new binding based on the current selection.|1.3|
-|[bindingCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md)|_Method_ > [getItemOrNull(id: string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md#getitemornullid-string)|Gets a binding object by ID. If the binding object does not exist, the return object's isNull property will be true.|1.3|
-|[chartCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/chartcollection.md)|_Method_ > [getItemOrNull(name: string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/chartcollection.md#getitemornullname-string)|Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.|1.3|
-|[namedItemCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/nameditemcollection.md)|_Method_ > [getItemOrNull(name: string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/nameditemcollection.md#getitemornullname-string)|Gets a nameditem object using its name. If the nameditem object does not exist, the returned object's isNull property will be true.|1.3|
-|[pivotTable](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/pivottable.md)|_Property_ > name|Name of the PivotTable.|1.3|
-|Object| What's new| Description|Requirement set|
-|:----|:----|:----|:----|
 |[binding](../excel/binding.md)|_Method_ > [delete()](../excel/binding.md#delete)|Deletes the binding.|1.3|
 |[bindingCollection](../excel/bindingcollection.md)|_Method_ > [add(range: Range or string, bindingType: string, id: string)](../excel/bindingcollection.md#addrange-range-or-string-bindingtype-string-id-string)|Add a new binding to a particular Range.|1.3|
 |[bindingCollection](../excel/bindingcollection.md)|_Method_ > [addFromNamedItem(name: string, bindingType: string, id: string)](../excel/bindingcollection.md#addfromnameditemname-string-bindingtype-string-id-string)|Add a new binding based on a named item in the workbook.|1.3|
@@ -83,7 +73,6 @@ The following are the new additions to the Excel JavaScript APIs in requirement 
 |[workbook](../excel/workbook.md)|_Relationship_ > pivotTables|Represents a collection of PivotTables associated with the workbook. Read-only.|1.3|
 |[workbook](../excel/workbook.md)|_Relationship_ > settings|Represents a collection of Settings associated with the workbook. Read-only.|1.3|
 |[worksheet](../excel/worksheet.md)|_Relationship_ > pivotTables|Collection of PivotTables that are part of the worksheet. Read-only.|1.3|
-
 
 ## What's new in Excel JavaScript API 1.2
 The following are the new additions to the Excel JavaScript APIs in requirement set 1.2. 
@@ -177,4 +166,3 @@ Excel JavaScript API 1.1 is the first version of the API. For details about the 
 
 - [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md)
 - [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md)
-
