@@ -42,10 +42,10 @@ The following clients support Outlook add-ins.
 
 | Client | Supported API requirement sets |
 | --- | --- |
-| Outlook 2016 | 1.1, 1.2, 1.3 |
+| Outlook 2016 | 1.1, 1.2, 1.3, 1.4 |
 | Mac Outlook 2016 | 1.1 |
 | Outlook 2013 | 1.1, 1.2, 1.3 |
-| Outlook on the web (Office 365 and Outlook.com) | 1.1, 1.2, 1.3 |
+| Outlook on the web (Office 365 and Outlook.com) | 1.1, 1.2, 1.3, 1.4 |
 | Outlook Web App (Exchange 2013 On-Premise) | 1.1 |
 | Outlook Web App (Exchange 2016 On-Premise) | 1.1, 1.2. 1.3 |
 >**Note** Support for 1.3 in Outlook 2013 was added as part of the [December 8, 2015, update for Outlook 2013 (KB3114349)](https://support.microsoft.com/en-us/kb/3114349)
