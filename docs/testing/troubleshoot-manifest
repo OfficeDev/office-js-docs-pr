@@ -45,7 +45,7 @@ To turn the feature off, remove the `RuntimeLogging` key from the registry.
 
 To use runtime logging to troubleshoot issues loading an add-in:
  
-1. [Sideload your add-in](../testing/sideload-office-add-ins-for-testing.md) for testing. 
+1. [Sideload your add-in](sideload-office-add-ins-for-testing.md) for testing. 
 
 	>Note: We recommend that you sideload only the add-in that you are testing to minimize the number of messages in the log file.
 2. If nothing happens and you don't see your add-in (and it's not appearing in the add-ins dialog box), open the log file.
