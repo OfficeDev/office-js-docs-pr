@@ -59,7 +59,7 @@
     	<Item text="Debug in Office Online" url="testing/debug-add-ins-in-office-online" SEODescription="Use Office Online to debug add-ins without running Office on the Windows platform - for example, if you're developing on a Mac." />
     	<Item text="Debug on iPad and Mac" url="testing/debug-office-add-ins-on-ipad-and-mac" SEODescription="Debug Office Add-ins running on an iPad or Mac by using the Weinre remote web inspector." />
         <Item text="Troubleshoot user errors" url="testing/testing-and-troubleshooting" SEODescription="Troubleshoot issues your users are having with Office Add-ins."  />
-				<Item text="Troubleshoot the Office Add-ins manifest" url="develop/troubleshoot-manifest" SEODescription="Troubleshoot issues with your Office Add-ins manifest." />
+				<Item text="Troubleshoot the Office Add-ins manifest" url="testing/troubleshoot-manifest" SEODescription="Troubleshoot issues with your Office Add-ins manifest." />
 	</Item>
   <Item text="Publish" url="publish/publish">
     <Item text="Host an Office Add-in on Microsoft Azure" url="publish/host-an-office-add-in-on-microsoft-azure" SEODescription="Use Visual Studio 2015 and the Microsoft Office Developer Tools to publish to and then host an Office Add-in on Microsoft Azure." />
