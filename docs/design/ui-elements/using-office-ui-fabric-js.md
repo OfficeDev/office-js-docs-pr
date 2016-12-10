@@ -12,7 +12,7 @@ Fabric consists of several frameworks including:
 - **Fabric React**, which implements the UX components using the React framework.
 - **Fabric Core**, which contains the core elements of the design language such as icons, colors, type, and grid. Both Fabric JS and Fabric React use Fabric Core. 
 
-The following steps walk you through the basics for using Fabric JS.  
+The following steps walk you through the basics of using Fabric JS.  
 
 ##1. Add the Fabric CDN references.
 To reference Fabric from the CDN, add the following HTML code to your page.
