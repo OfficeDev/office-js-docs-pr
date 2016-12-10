@@ -38,7 +38,7 @@ Fabric provides several UX components, like buttons or checkboxes, that you can 
 
 > Important: Fabric JS's UX components have changed significantly. The most notable change is the use of the `<label>` element in all components. The `<label>` element controls the style of the component. If you are planning to use Fabric JS, ensure you include sufficient time to learn, incorporate, and test the new components in your add-in. For example, changing the value of the `<input>` element's checked attribute on a Fabric JS checkbox has no effect on the checkbox. Instead, you should use the `check`, `unCheck`, or `toggle` functions. 
 
-The following table lists the Fabric JS UX components we recommend that you use in your add-in. To insert one of the Fabric components in your add-in, follow the link to the Fabric documentation, and then follow the instructions in **Using this component**.
+The following table lists the Fabric JS UX components we recommend that you use in your add-in. To use one of the Fabric components in your add-in, follow the link to the Fabric documentation, and then follow the instructions in **Using this component**.
 
 > Note: We'll be updating our recommendations over time.  
 
