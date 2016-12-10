@@ -42,7 +42,7 @@ The following table lists the Fabric JS UX components we recommend that you use 
 
 > Note: We'll be updating our recommendations over time.  
 
-| Fabric UX component | Description	|
+| Fabric JS UX component | Description	|
 |:---------------|:--------|
 |[Breadcrumb](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Breadcrumb.md)|Recommended|
 |[Button](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Button.md)|Recommended|
