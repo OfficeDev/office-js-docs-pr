@@ -54,7 +54,6 @@ The following table lists the Fabric JS UX components we recommend that you use 
 |[Date Picker](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/DatePicker.md)|Recommended. For an example of how the Date Picker was implemented in an add-in, see the [Excel Sales Tracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) code sample.|
 |Dialog|Not recommended  - working on a fix.|
 |[Dropdown](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Dropdown.md)|Recommended|
-|Facepile|Not recommended - working on a fix.|
 |[Label](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Label.md)|Recommended|
 |[Link](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Link.md)|Recommended|
 |[List](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/List.md)|Recommended with changes to the styles in the CSS.|
