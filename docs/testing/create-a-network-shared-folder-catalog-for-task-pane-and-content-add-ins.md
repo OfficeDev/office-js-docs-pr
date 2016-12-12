@@ -57,6 +57,6 @@ The following video walks you through the process of sideloading your add-in on 
 
 ## Additional resources
 
-- [Use runtime logging to debug your manifest](../develop/use-runtime-logging-to-debug-manifest.md)
+- [Troubleshoot the Office Add-ins manifest](troubleshoot-manifest.md)
 - [Publish your Office Add-in](../publish/publish.md)
     
