@@ -62,10 +62,6 @@ The following table specifies the elements that are required for the three types
 *Added in the Office Add-in Manifest Schema version 1.1.
 
 
-## Troubleshoot issues with the Office Add-ins manifest
-
-For troubleshooting issues with the Office Add-ins manifest, see [Troubleshoot the Office Add-ins Manifest](). There, you will find information on how to validate the manifest against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas), and also how to use runtime logging to debug the manifest.
-
 ## Specify domains you want to open in the add-in window
 
 
@@ -425,6 +421,10 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 
 ```
 
+## Validate and troubleshoot issues with your manifest
+
+For troubleshooting issues with your manifest, see [Troubleshoot the Office Add-ins Manifest](../../docs/testing/troubleshoot-manifest.md). There, you will find information on how to validate the manifest against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas), and also how to use runtime logging to debug the manifest.
+
 ## Additional resources
 
 
@@ -432,5 +432,5 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 - [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md)
 - [Localization for Office Add-ins](../../docs/develop/localization.md)
 - [Schema reference for Office Add-ins manifests](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas)
-- [Troubleshoot the Office-Add-ins manifest](../testing/troubleshoot-manifest.md)
+- [Troubleshoot the Office-Add-ins manifest](../../docs/testing/troubleshoot-manifest.md)
 
