@@ -1,4 +1,4 @@
-# ShapeCollection Object (JavaScript API for Visio)
+# ShapeCollection object (JavaScript API for Visio)
 
 _Visio Online_
 

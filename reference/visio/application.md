@@ -1,4 +1,4 @@
-# Application Object (JavaScript API for Visio)
+# Application object (JavaScript API for Visio)
 
 _Visio Online_
 

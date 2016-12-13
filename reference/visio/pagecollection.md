@@ -1,4 +1,4 @@
-# PageCollection Object (JavaScript API for Visio)
+# PageCollection object (JavaScript API for Visio)
 
 _Visio Online_
 

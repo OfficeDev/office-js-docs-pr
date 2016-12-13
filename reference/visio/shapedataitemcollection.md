@@ -1,4 +1,4 @@
-# ShapeDataItemCollection Object (JavaScript API for Visio)
+# ShapeDataItemCollection object (JavaScript API for Visio)
 
 _Visio Online_
 

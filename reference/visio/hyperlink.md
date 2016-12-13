@@ -1,4 +1,4 @@
-# Hyperlink Object (JavaScript API for Visio)
+# Hyperlink object (JavaScript API for Visio)
 
 _Visio Online_
 

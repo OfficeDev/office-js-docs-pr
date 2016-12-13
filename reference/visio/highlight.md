@@ -1,4 +1,4 @@
-# Highlight Object (JavaScript API for Visio)
+# Highlight object (JavaScript API for Visio)
 
 _Visio Online_
 

@@ -1,4 +1,4 @@
-# ShapeView Object (JavaScript API for Visio)
+# ShapeView object (JavaScript API for Visio)
 
 _Visio Online_
 

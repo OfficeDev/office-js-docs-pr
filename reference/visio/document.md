@@ -1,4 +1,4 @@
-# Document Object (JavaScript API for Visio)
+# Document object (JavaScript API for Visio)
 
 _Visio Online_
 

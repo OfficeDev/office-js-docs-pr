@@ -1,4 +1,4 @@
-# PageView Object (JavaScript API for Visio)
+# PageView object (JavaScript API for Visio)
 
 _Visio Online_
 

@@ -1,4 +1,4 @@
-# Shape Object (JavaScript API for Visio)
+# Shape object (JavaScript API for Visio)
 
 _Visio Online_
 
