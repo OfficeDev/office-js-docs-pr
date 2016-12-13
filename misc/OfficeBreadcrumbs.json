@@ -1,6 +1,6 @@
 ﻿{
     "Cat":  "Office Add-ins",
-    "parentLink": "/docs/add-ins/overview/office-add-ins",
+    "parentLink": "https://dev.office.com/docs",
     "DropdownOptions": [
         {
             "Title": "Office Add-ins docs",
@@ -8,7 +8,7 @@
             "Index":  "/docs/add-ins/"
         },
         {
-            "Title": "Office Add-ins API reference",
+            "Title": "Office JavaScript API reference",
             "URL": "/reference/add-ins/javascript-api-for-office",
             "Index":  "/reference/add-ins/"
         },
