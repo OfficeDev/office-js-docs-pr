@@ -21,7 +21,6 @@ None
 |[getActivePage()](#getactivepage)|[Page](page.md)|Returns the Active Page of the document.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-getActivePage)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-load)|
 |[setActivePage(PageName: string)](#setactivepagepagename-string)|void|Set the Active Page of the document.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-setActivePage)|
-|[startDataRefresh()](#startdatarefresh)|void|Triggers the refresh of the data in the Diagram, for all pages.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-startDataRefresh)|
 
 ## Method Details
 
@@ -106,33 +105,7 @@ Visio.run(function (ctx) {
 ```
 
 
-### startDataRefresh()
-Triggers the refresh of the data in the Diagram, for all pages.
-
-#### Syntax
-```js
-documentObject.startDataRefresh();
-```
-
-#### Parameters
-None
-
-#### Returns
-void
-
-#### Examples
-```js
-Visio.run(function (ctx) { 
-	var document = ctx.document;
-	document.startDataRefresh();
-	return ctx.sync();
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
-```### Property access examples
+### Property access examples
 ```js
 Visio.run(function (ctx) { 
 	var pages = ctx.document.pages;
