@@ -5,7 +5,7 @@ Use these methods to validate and troubleshoot issues in your manifest.
 - [Validate the Office Add-ins manifest against the XML schema](validate-the-office-add-ins-manifest-against-the-xml-schema)
 - [Use runtime logging to debug the manifest for your Office Add-in](use-runtime-logging-to-debug-the-manifest-for-your-office-add-in)
 
-## Validate the Office Add-ins manifest against the XML schema
+## Validate your manifest against the XML schema
 
 To help to make sure that the manifest file that describes your Office Add-in is correct and complete, validate it against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas) files. 
 You can use an XML schema validation tool or [Visual Studio](../get-started/create-and-debug-office-add-ins-in-visual-studio.md) to validate the manifest. 
@@ -19,7 +19,7 @@ To use a command-line XML schema validation tool to validate your manifest:
 
 	xmllint --noout --schema XSD_FILE XML_FILE
 
-## Use runtime logging to debug the manifest for your Office Add-in
+## Use runtime logging to debug your add-in manifest
 
 You can use runtime logging to debug your add-in's manifest. This feature can help you identify and fix issues with your manifest that are not detected by XSD schema validation, such as a mismatch between resource IDs. Runtime logging is particularly  useful for debugging add-ins that implement add-in commands.  
 
