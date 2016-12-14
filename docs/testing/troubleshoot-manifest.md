@@ -1,6 +1,6 @@
-# Troubleshoot the Office Add-ins manifest
+# Validate and troubleshoot issues with your manifest
 
-Use these methods to troubleshoot issues in the manifest. 
+Use these methods to validate and troubleshoot issues in your manifest. 
 
 - [Validate the Office Add-ins manifest against the XML schema](validate-the-office-add-ins-manifest-against-the-xml-schema)
 - [Use runtime logging to debug the manifest for your Office Add-in](use-runtime-logging-to-debug-the-manifest-for-your-office-add-in)
