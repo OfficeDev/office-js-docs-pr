@@ -57,6 +57,6 @@ The following video walks you through the process of sideloading your add-in on 
 
 ## Additional resources
 
-- [Troubleshoot the Office Add-ins manifest](troubleshoot-manifest.md)
+- [Validate and troubleshoot issues with your manifest](troubleshoot-manifest.md)
 - [Publish your Office Add-in](../publish/publish.md)
     
