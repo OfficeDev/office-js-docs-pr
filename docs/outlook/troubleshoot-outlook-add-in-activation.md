@@ -159,7 +159,7 @@ Figure 1 shows a summary of the steps to verify whether Outlook has a valid vers
 
 ## Is the add-in manifest valid?
 
-See [Troubleshoot the Office Add-ins manifest](../testing/troubleshoot-manifest.md) to debug add-in manifest issues.
+See [Validate and troubleshoot issues with your manifest](../testing/troubleshoot-manifest.md) to debug add-in manifest issues.
 
 ## Are you using the appropriate activation rules?
 
@@ -295,6 +295,6 @@ This section applies to all activation rules that use regular expressions -- par
     
 - [MailApp complexType](http://msdn.microsoft.com/en-us/library/696b9fcf-cd10-3f20-4d49-86d3690c887a%28Office.15%29.aspx)
     
-- [Troubleshoot the Office Add-ins manifest](../testing/troubleshoot-manifest.md)
+- [Validate and troubleshoot issues with your manifest](../testing/troubleshoot-manifest.md)
     
 
