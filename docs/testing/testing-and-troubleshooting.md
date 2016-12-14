@@ -47,7 +47,7 @@ Verify that the latest Office updates are installed, or download the [update for
 
 ## Add-in doesn't load in task pane or other issues with the add-in manifest
 
-See [Troubleshoot the Office Add-ins manifest](troubleshoot-manifest.md) to debug add-in manifest issues.
+See [Validate and troubleshoot issues with your manifest](troubleshoot-manifest.md) to debug add-in manifest issues.
 
 ## Additional resources
 
@@ -63,5 +63,5 @@ See [Troubleshoot the Office Add-ins manifest](troubleshoot-manifest.md) to debu
     
 - [Deploy and install Outlook add-ins for testing](../outlook/testing-and-tips.md)
     
-- [Troubleshoot the Office Add-ins manifest](troubleshoot-manifest.md)
+- [Validate and troubleshoot issues with your manifest](troubleshoot-manifest.md)
     
