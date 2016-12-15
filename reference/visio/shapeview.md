@@ -10,9 +10,7 @@ Represents the ShapeView class.
 None
 
 ## Relationships
-| Relationship | Type	|Description| Feedback|
-|:---------------|:--------|:----------|:---|
-|highlight|[Highlight](highlight.md)|Represents the highlight around the shape.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeView-highlight)|
+None
 
 ## Methods
 
@@ -77,20 +75,6 @@ shapeViewObject.removeOverlay(OverlayId);
 
 #### Returns
 void
-### Property access examples
-```js
-Visio.run(function (ctx) { 
-	var activePage = ctx.document.getActivePage();
-	var shape = activePage.shapes.getItem(0);
-	shape.view.highlight = { color: "#E7E7E7", width: 100 };
-	return ctx.sync();
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
-```
 
 ### Property access examples
 ```js

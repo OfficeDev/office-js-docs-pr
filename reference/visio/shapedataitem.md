@@ -9,8 +9,6 @@ Represents the ShapeDataItem.
 
 | Property	   | Type	|Description| Feedback|
 |:---------------|:--------|:----------|:---|
-|format|string|A string that specifies the format of the shape data item. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-format)|
-|formattedValue|string|A string that specifies the formatted value of the shape data item. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-formattedValue)|
 |label|string|A string that specifies the label of the shape data item. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-label)|
 |value|string|A string that specifies the value of the shape data item. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-value)|
 
