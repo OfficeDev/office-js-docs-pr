@@ -291,6 +291,7 @@
 		<Item text="Highlight" url="visio/highlight" SEODescription="Visio JavaScript API reference." />
 		<Item text="Hyperlink" url="visio/hyperlink" SEODescription="Visio JavaScript API reference." />
 		<Item text="HyperlinkCollection" url="visio/hyperlinkcollection" SEODescription="Visio JavaScript API reference." />
+		<Item text="LoadOption" url="visio/loadoption" SEODescription="Visio JavaScript API reference." />
 		<Item text="Page" url="visio/page" SEODescription="Visio JavaScript API reference." />
 		<Item text="PageCollection" url="visio/pagecollection" SEODescription="Visio JavaScript API reference." />
 		<Item text="PageView" url="visio/pageview" SEODescription="Visio JavaScript API reference." />
