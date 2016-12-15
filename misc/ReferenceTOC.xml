@@ -285,7 +285,7 @@
 		<Item text="Image" url="onenote/image" SEODescription="OneNote Add-ins Reference." />
 		<Item text="OneNote JavaScript API requirement sets" url="requirement-sets/onenote-api-requirement-sets" SEODescription="Find information about the OneNote requirement sets, the Office host applications that support those requirement sets, and the build versions or availability date." />
 	</Item>
-	<Item text="Visio" url="visio" Scope="visio">
+	<Item text="Visio" url="visio/index" Scope="visio">
 		<Item text="Application" url="visio/application" SEODescription="Visio JavaScript API reference." />
 		<Item text="Document" url="visio/document" SEODescription="Visio JavaScript API reference." />
 		<Item text="Hyperlink" url="visio/hyperlink" SEODescription="Visio JavaScript API reference." />
