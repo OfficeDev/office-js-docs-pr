@@ -65,7 +65,7 @@ object.load(string: properties); //or object.load(array: properties); //or objec
 ```
 
 1. **properties** is the list of properties and/or relationship names to be loaded, specified as comma-delimited strings or array of names. See **.load()** methods under each object for details.
-2. **loadOption** specifies an object that describes the selection, expansion, top, and skip options. See object load [options](https://dev.office.com/reference/add-ins/excel/loadoption) for details.
+2. **loadOption** specifies an object that describes the selection, expansion, top, and skip options. See object load [options](loadoption) for details.
 
 ## Example: Printing all shapes text in active page
 
