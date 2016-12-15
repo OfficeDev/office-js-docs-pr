@@ -32,7 +32,6 @@ _See property access [examples.](#property-access-examples)_
 
 ## Method Details
 
-
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 

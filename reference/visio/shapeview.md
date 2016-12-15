@@ -6,6 +6,7 @@ Applies to: _Visio Online_
 Represents the ShapeView class.
 
 ## Properties
+
 None
 
 ## Relationships
