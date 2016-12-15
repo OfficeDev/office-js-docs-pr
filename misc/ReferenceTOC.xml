@@ -297,7 +297,7 @@
 		<Item text="Shape" url="visio/shape" SEODescription="Visio JavaScript API reference." />
 		<Item text="ShapeCollection" url="visio/shapecollection" SEODescription="Visio JavaScript API reference." />
 		<Item text="ShapeDataItem" url="visio/shapedataitem" SEODescription="Visio JavaScript API reference." />
-		<Item text="ShapeDataItemCollection" url="visio/shapedataitmecollection" SEODescription="Visio JavaScript API reference." />
+		<Item text="ShapeDataItemCollection" url="visio/shapedataitemcollection" SEODescription="Visio JavaScript API reference." />
 		<Item text="ShapeView" url="visio/shapeview" SEODescription="Visio JavaScript API reference." />
 	</Item>
 	<Item text="Shared API" url="shared/shared-api">
