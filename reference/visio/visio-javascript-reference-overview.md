@@ -184,6 +184,7 @@ function getSelectedShapeText() {
   } 
     }); 
 } 
+</script>
 ```
 
 ## Open API specifications
