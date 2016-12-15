@@ -27,6 +27,11 @@ To create an Office Add-in that targets Access web apps, you need:
 
 2. In the  **New Project** dialog box, in the left hand pane, navigate to **Installed**,  **Templates**,  **Visual C#**,  **Office/SharePoint**,  **Office Add-ins**.
 
+ >**Note**  If you don't have this template installed then possibly the issue can be resolved as discussed here:
+  >https://blogs.msdn.microsoft.com/visualstudio/2015/11/23/latest-microsoft-office-developer-tools-for-visual-studio-2015/
+
+ >This post states:  This update includes a vocabulary change in our tools, Apps for Office and SharePoint are now known as Office and SharePoint Add-ins, **and bug fixes, such as the Office/SharePoint node not appearing under Visual C# in the New Project dialog.**
+
 3. In the  **New Project** dialog box, in the center pane choose **Office Add-in**.
 
 4. At the bottom of the dialog box enter a name for your Project and choose  **OK**. This opens the  **Create Office Add-in** dialog box.
