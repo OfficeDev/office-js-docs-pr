@@ -7,9 +7,9 @@ Represents the Application.
 
 ## Properties
 
-| Property	   | Type	|Description| Req. Set| Feedback|
-|:---------------|:--------|:----------|:----|:---|
-|showToolbars|bool|Show or Hide the standard toolbars.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-application-showToolbars)|
+| Property	   | Type	|Description| Feedback|
+|:---------------|:--------|:----------|:---|
+|showToolbars|bool|Show or Hide the standard toolbars.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-application-showToolbars)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -19,9 +19,9 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description| Req. Set| Feedback|
-|:---------------|:--------|:----------|:----|:---|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-application-load)|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:---|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-application-load)|
 
 ## Method Details
 

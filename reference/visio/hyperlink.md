@@ -7,11 +7,11 @@ Represents the Hyperlink.
 
 ## Properties
 
-| Property	   | Type	|Description| Req. Set| Feedback|
-|:---------------|:--------|:----------|:----|:---|
-|address|string|Gets the address of the Hyperlink object. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-address)|
-|description|string|Gets the description of a hyperlink. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-description)|
-|subAddress|string|Gets the sub-address of the Hyperlink object. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-subAddress)|
+| Property	   | Type	|Description| Feedback|
+|:---------------|:--------|:----------|:---|
+|address|string|Gets the address of the Hyperlink object. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-address)|
+|description|string|Gets the description of a hyperlink. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-description)|
+|subAddress|string|Gets the sub-address of the Hyperlink object. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-subAddress)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -21,9 +21,9 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description| Req. Set| Feedback|
-|:---------------|:--------|:----------|:----|:---|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-load)|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:---|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-load)|
 
 ## Method Details
 
