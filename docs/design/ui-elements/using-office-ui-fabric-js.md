@@ -33,37 +33,28 @@ To find more icons available in Office UI Fabric, use the search feature on the 
 
 Fabric provides several UX components, like buttons or checkboxes, that you can use in your add-in. The following table lists the Fabric JS UX components we recommend for use in an add-in. To use one of the Fabric components in your add-in, follow the links to the Fabric documentation, and then follow the instructions in **Using this component**.
 
-> Note: We'll be updating our recommendations over time.  
+> Note: We may add additional components over time.
 
-| Fabric JS UX component | Description	|
-|:---------------|:--------|
-|[Breadcrumb](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Breadcrumb.md)|Recommended|
-|[Button](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Button.md)|Recommended|
-|Callout|Not recommended - working on a fix.|
-|[Checkbox](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/CheckBox.md)|Recommended|
-|[ChoiceFieldGroup](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/ChoiceFieldGroup.md)|Recommended|
-|CommandBar|Not recommended. Consider using [Fabric React’s CommandBar](https://dev.office.com/fabric#/components/commandbar)|
-|ContextMenu|Not recommended - working on a fix.|
-|[Date Picker](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/DatePicker.md)|Recommended. For an example of how the Date Picker was implemented in an add-in, see the [Excel Sales Tracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) code sample.|
-|Dialog|Not recommended  - working on a fix.|
-|[Dropdown](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Dropdown.md)|Recommended|
-|[Label](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Label.md)|Recommended|
-|[Link](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Link.md)|Recommended|
-|[List](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/List.md)|Recommended with changes to the styles in the CSS.|
-|[MessageBanner](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/MessageBanner.md)| Recommended.|
-|[MessageBar](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/MessageBar.md)| Recommended.|
-|OrgChart|Not recommended.|
-|[Overlay](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Overlay.md)|Recommended|
-|[Panel](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Panel.md)|Recommended|
-|People Picker|Not recommended. Consider using [Fabric React’s PeoplePicker](https://dev.office.com/fabric#/components/peoplepicker)|
-|Persona Card|Not recommended|
-|[Pivot](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Pivot.md)|Recommended|
-|[ProgressIndicator](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/ProgressIndicator.md)|Recommended|
-|[Searchbox](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/SearchBox.md)|Recommended|
-|[Spinner](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Spinner.md)|Recommended|
-|[Table](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Table.md)|Recommended|
-|[TextField](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/TextField.md)|Recommended|
-|[Toggle](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Toggle.md)|Recommended|
+- [Breadcrumb](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Breadcrumb.md)
+- [Button](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Button.md)
+- [Checkbox](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/CheckBox.md)
+- [ChoiceFieldGroup](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/ChoiceFieldGroup.md)
+- [Date Picker](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/DatePicker.md). For an example of how the Date Picker was implemented in an add-in, see the [Excel Sales Tracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) code sample.
+- [Dropdown](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Dropdown.md)
+- [Label](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Label.md)
+- [Link](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Link.md)
+- [List](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/List.md). Consider changing the component's default styles in the CSS.
+- [MessageBanner](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/MessageBanner.md)
+- [MessageBar](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/MessageBar.md)
+- [Overlay](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Overlay.md)
+- [Panel](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Panel.md)
+- [Pivot](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Pivot.md)
+- [ProgressIndicator](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/ProgressIndicator.md)
+- [Searchbox](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/SearchBox.md)
+- [Spinner](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Spinner.md)
+- [Table](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Table.md)
+- [TextField](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/TextField.md)
+- [Toggle](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Toggle.md)
    
 ## Upgrading to Fabric JS
 Upgrading from a previous version of Fabric to Fabric JS requires planning. Ensure you include sufficient time to learn, incorporate, and test the new components in your add-in. Review the following general guidelines when upgrading your add-in from a previous version of Fabric to Fabric JS:
