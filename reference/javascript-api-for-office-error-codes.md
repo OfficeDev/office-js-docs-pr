@@ -5,7 +5,7 @@ This article documents the error messages you might encounter while using the Ja
  _**Applies to:** Office Add-ins | SharePoint Add-ins | Excel | Outlook | PowerPoint | Project | Word_
 
 
-## Error Codes
+## Error codes
 
 The following table lists the error codes, names, and messages displayed, and the conditions they indicate.
 
@@ -57,7 +57,7 @@ The following table lists the error codes, names, and messages displayed, and th
 |5006|Session Timeout|The document session timed out. Reload the document. |The session has timed out.|
 |5007|Invalid API call|The enumeration is not supported in the current context.|The enumeration is not supported in the current context.|
 |5009|Permission Denied|Access Denied|The add-in does not have permission to call the specific API.|
-|6000|Invalid node|The specified node was not found.|The  **CustomXmlPart** node was not found.|
+|6000|Invalid node|The specified node was not found.|The **CustomXmlPart** node was not found.|
 |6100|Custom XML error|Custom XML error|Invalid API call|
 |7000|Invalid Id|The specified Id does not exist.|Invalid ID|
 |7001|Invalid navigation|The object is located in a place where navigation is not supported.|The user can find the object, but cannot navigate to it. (For example, in Word, the binding is to the header, footer, or a comment.)|
@@ -74,7 +74,7 @@ The following table lists the error codes, names, and messages displayed, and th
 
 ## Binding creation error conditions
 
-When a binding is created in the API the solution developer needs to indicate the binding type he wants to use. The following tables summarize the different possibilities and the resulting binding behaviors that are expected.
+When a binding is created in the API, indicate the binding type that you want to use. The following tables lists the binding types and the resulting binding behaviors that are expected.
 
 
 ### Behavior in Excel
@@ -85,9 +85,9 @@ The following table summarizes binding behavior in Excel.
 
 |**Specified Binding Type**|**Actual Selection**|**Behavior**|
 |:-----|:-----|:-----|
-|Matrix|Range of cells (including within a table, and single cell)|A binding of type  _matrix_ is created on the selected cells.No modification in the document is expected.|
-|Matrix|Text selected in the cell|A binding of type  _matrix_ is created on the whole cell.No modification in the document is expected.|
-|Matrix|Multiple selection/invalid selection (For example, user selects a picture, object, Word Art, etc.)|The binding cannot be created.|
+|Matrix|Range of cells (including within a table, and single cell)|A binding of type  _matrix_ is created on the selected cells. No modification in the document is expected.|
+|Matrix|Text selected in the cell|A binding of type  _matrix_ is created on the whole cell. No modification in the document is expected.|
+|Matrix|Multiple selection/invalid selection (For example, user selects a picture, object, or Word Art.)|The binding cannot be created.|
 |Table|Range of cells (includes single cell)|The binding cannot be created.|
 |Table|Range of cell within a table (includes single cell within a table, or the whole table, or text within a cell in a table)|A binding is created in the whole table.|
 |Table|Half selection in a table and half selection outside the table|The binding cannot be created.|
