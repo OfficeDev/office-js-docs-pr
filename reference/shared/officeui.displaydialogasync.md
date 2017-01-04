@@ -9,31 +9,53 @@ Displays a dialog box in an Office host.
 |Word, Excel, PowerPoint|1.1|1.1|
 |Outlook|Mailbox 1.4|Mailbox 1.4|
 
-This method is available in the DialogAPI [requirement set](../../docs/overview/specify-office-hosts-and-api-requirements.md). To specify the DialogAPI requirement set, use the following in your manifest.
+This method is available in the DialogAPI [requirement set](../../docs/overview/specify-office-hosts-and-api-requirements.md) for Word, Excel, or PowerPoint add-ins, and in the Mailbox requirement set 1.4 for Outlook. To specify the DialogAPI requirement set, use the following in your manifest.
 
 ```xml
- <Requirements> 
-   <Sets DefaultMinVersion="1.1"> 
-     <Set Name="DialogAPI"/> 
-   </Sets> 
- </Requirements> 
-
+<Requirements> 
+  <Sets DefaultMinVersion="1.1"> 
+    <Set Name="DialogAPI"/> 
+  </Sets> 
+</Requirements> 
 ```
 
-To detect this API at runtime, use the following code.
+To specify the Mailbox 1.4 requirement set, use the following in your manifest.
+
+```xml
+<Requirements> 
+  <Sets DefaultMinVersion="1.4"> 
+    <Set Name="Mailbox"/> 
+  </Sets> 
+</Requirements> 
+```
+
+To detect this API at runtime in a Word, Excel, or PowerPoint add-in, use the following code.
 
 ```js
- if (Office.context.requirements.isSetSupported('DialogAPI', 1.1)) 
- 	{  
-    	 // Use Office UI methods; 
- 	} 
- else 
-	 { 
-	     // Alternate path 
-	 } 
+if (Office.context.requirements.isSetSupported('DialogAPI', 1.1)) {  
+  // Use Office UI methods; 
+} else { 
+  // Alternate path 
+} 
 ```
 
+To detect this API at runtime in an Outlook add-in, use the following code.
 
+```js
+if (Office.context.requirements.isSetSupported('Mailbox', 1.4)) {  
+  // Use Office UI methods; 
+} else { 
+  // Alternate path 
+} 
+```
+
+Alternatively, you can check if the `displayDialogAsync` method is undefined before using it.
+
+```js
+if (Office.context.ui.displayDialogAsync !== undefined) {
+  // Use Office UI methods
+}
+```
 
 ### Supported platforms
 For information about supported platforms, see [Dialog API requirement sets](../requirement-sets/dialog-api-requirement-sets.md).
