@@ -90,7 +90,7 @@
     <Item text="Contextual Outlook add-ins" url="outlook/contextual-outlook-add-ins"  SEODescription="Activate an Outlook add-in based on specified text in a message or appointment." Scope="outlook" />
     <Item text="Module extension Outlook add-ins" url="outlook/extension-module-outlook-add-ins" FriendlyUrl="outlookmodule-extension-outlook-add-ins" Scope="outlook" SEODescription="Extend the Outlook UI by adding module extensions to the navigation bar."/> 
 	<Item text="APIs" url="outlook/apis" SEODescription="Learn how to specify the APIs needed for your Outlook add-in." Scope="outlook" />
-	<Item text="Manifests" url="outlook/manifests/manifests" Scope="outlook" SEODescription="Create a manifest for an Outlook add-in for read or compose form." Scope="outlook">
+	<Item text="Manifests" url="outlook/manifests/manifests" Scope="outlook" SEODescription="Create a manifest for an Outlook add-in for read or compose form." >
       <Item text="Activation rules" url="outlook/manifests/activation-rules" FriendlyUrl="outlook/manifestsactivation-rules" SEODescription="Define activation rules in an Outlook add-in manifest to specify when Outlook displays the add-in." Scope="outlook" />
       <Item text="Define add-in commands" url="outlook/manifests/define-add-in-commands"  SEODescription="Use the VersionOverrides element in your Outlook add-in manifest to define add-in commands." Scope="outlook" />
   </Item>
