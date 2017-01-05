@@ -15,7 +15,7 @@
 |  [FunctionName](#functionname) |    Specifies the name of the function to execute. |
 |  [SourceLocation](#sourcelocation) |    Specifies the source file location for this action. |
 |  [TaskpaneId](#taskpaneid) | Specifies the ID of the task pane container.|
-|  [SupportsPinning](#supportspinning) | Specifies that a task pane supports persistence, which keeps the task pane open when the user changes the selection.|
+|  [SupportsPinning](#supportspinning) | Specifies that a task pane supports pinning, which keeps the task pane open when the user changes the selection.|
   
 
 ## xsi:type
@@ -64,7 +64,7 @@ The following example shows two Actions that share the same **TaskpaneId**.
 ```  
 
 ## SupportsPinning
-Optional element when  **xsi:type** is "ShowTaskpane". The containing [VersionOverrides](./versionoverrides.md) elements must have an `xsi:type` attribute value of `VersionOverridesV1_1`. Include this element with a value of `true` to enable taskpane persistence. The user will be able to "pin" the taskpane, causing it to stay open when changing the selection.
+Optional element when  **xsi:type** is "ShowTaskpane". The containing [VersionOverrides](./versionoverrides.md) elements must have an `xsi:type` attribute value of `VersionOverridesV1_1`. Include this element with a value of `true` to enable taskpane pinning. The user will be able to "pin" the taskpane, causing it to stay open when changing the selection.
 
 >**Note:** Currently this element is only supported by Outlook 2016.
 
