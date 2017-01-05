@@ -1,14 +1,14 @@
-# Implement a persistent taskpane in Outlook
+# Implement a pinnable taskpane in Outlook
 
 The [taskpane](../add-in-commands-for-outlook.md#launching-a-task-pane) UX shape for add-in commands opens a vertical taskpane to the right of an open message or appointment, allowing the add-in to provide UI for more detailed interactions (filling in multiple fields, etc.). This taskpane can be shown in the Reading Pane when viewing a list of messages, allowing for quick processing of a message.
 
-However, by default, if a user has an add-in taskpane open for a message in the Reading Pane, and then selects a new message, the task pane is automatically closed. For a heavily-used add-in, the user may prefer to keep that pane open, eliminating the need to reactivate the add-in on each message. With persistent taskpanes, your add-in can give the user that option.
+However, by default, if a user has an add-in taskpane open for a message in the Reading Pane, and then selects a new message, the task pane is automatically closed. For a heavily-used add-in, the user may prefer to keep that pane open, eliminating the need to reactivate the add-in on each message. With pinnable taskpanes, your add-in can give the user that option.
 
-> **Note**: Persistent taskpanes are currently only supported by Outlook 2016 (version xxxxx).
+> **Note**: Pinnable taskpanes are currently only supported by Outlook 2016 (version 7628.1000).
 
-## Enabling taskpane persistence
+## Enabling taskpane pinning
 
-The first step is to enable persistence, which is done in the add-in [manifest](./manifests.md). This is done by adding the [SupportsPinning](../../../reference/manifest/action.md#supportspinning) element to the `Action` element that describes the taskpane button.
+The first step is to enable pinning, which is done in the add-in [manifest](./manifests.md). This is done by adding the [SupportsPinning](../../../reference/manifest/action.md#supportspinning) element to the `Action` element that describes the taskpane button.
 
 The `SupportsPinning` element is defined in the VersionOverrides v1.1 schema, so you will need to include a [VersionOverrides](../../../reference/manifest/versionoverrides.md) element both for v1.0 and v1.1.
 
@@ -67,4 +67,4 @@ Office.initialize = function (reason) {
 
 ## Additional Resources
 
-For an example add-in that implements a peristent taskpane, see [command-demo](https://github.com/jasonjoh/command-demo) on GitHub.
+For an example add-in that implements a pinnable taskpane, see [command-demo](https://github.com/jasonjoh/command-demo) on GitHub.
