@@ -93,6 +93,7 @@
 	<Item text="Manifests" url="overview/add-in-manifests" Scope="outlook" SEODescription="Use the XML manifest to specify how your add-in is activated.">
       <Item text="Manifests" url="outlook/manifests/manifests" SEODescription="Create a manifest for an Outlook add-in for read or compose form." Scope="outlook" /><Item text="Activation rules" url="outlook/manifests/activation-rules" FriendlyUrl="outlook/manifestsactivation-rules" SEODescription="Define activation rules in an Outlook add-in manifest to specify when Outlook displays the add-in." Scope="outlook" />
       <Item text="Define add-in commands" url="outlook/manifests/define-add-in-commands"  SEODescription="Use the VersionOverrides element in your Outlook add-in manifest to define add-in commands." Scope="outlook" />
+      <Item text="Persistent taskpane" url="outlook/manifests/persistent-taskpane"  SEODescription="Implement a persistent taskpane in an Outlook add-in." Scope="outlook" />
   	</Item>
   <Item text="Get and set item data in read or compose forms" url="outlook/item-data" SEODescription="Learn about the ways to get or set data on an appointment or message from an Outlook add-in" Scope="outlook" />
 	<Item text="Get and set add-in metadata" url="outlook/metadata-for-an-outlook-add-in"  SEODescription="Learn to load and store custom data that only your Outlook add-in can access - through roaming settings and custom properties." Scope="outlook" />

@@ -1,4 +1,4 @@
-# Implement a persistent taskpane
+# Implement a persistent taskpane in Outlook
 
 The [taskpane](../add-in-commands-for-outlook.md#launching-a-task-pane) UX shape for add-in commands opens a vertical taskpane to the right of an open message or appointment, allowing the add-in to provide UI for more detailed interactions (filling in multiple fields, etc.). This taskpane can be shown in the Reading Pane when viewing a list of messages, allowing for quick processing of a message.
 
