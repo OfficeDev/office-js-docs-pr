@@ -785,6 +785,7 @@ For details and samples of activation rules, see [Activation rules for Outlook a
 
 After defining a basic manifest, [define add-in commands for your add-in](../../outlook/manifests/define-add-in-commands.md). Add-in commands present a button in the ribbon so users can activate your add-in in a simple, intuitive way. For more information, see [Add-in commands for Outlook](../../outlook/add-in-commands-for-outlook.md).
 
+For an example add-in that defines add-in commands, see [command-demo](https://github.com/jasonjoh/command-demo).
 
 ## Additional resources
 
