@@ -36,7 +36,7 @@ For a full example, see the `msgReadOpenPaneButton` control in the [command-demo
 
 ## Handling UI updates based on currently selected message
 
-If your taskpane needs to update its UI or internal variables based on the current item, you'll need to register an event handler to get notified of the change.
+To update your taskpane's UI or internal variables based on the current item, you'll need to register an event handler to get notified of the change.
 
 ### Implement the event handler
 
