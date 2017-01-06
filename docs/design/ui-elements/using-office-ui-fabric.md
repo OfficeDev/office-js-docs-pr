@@ -1,5 +1,5 @@
 
-#Use Office UI Fabric in Office Add-ins
+#Use Office UI Fabric 2.6.1 in Office Add-ins
 
 If you are building an Office Add-in, we encourage you to use [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric) to create your user experience. The following steps walk you through the basics for using Fabric.  
 
