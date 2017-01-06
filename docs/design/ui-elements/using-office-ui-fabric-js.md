@@ -35,7 +35,7 @@ For information about font sizes and colors that are available in Office UI Fabr
 
 Fabric provides several UX components, like buttons or checkboxes, that you can use in your add-in. The following is a list of the Fabric JS UX components that we recommend for use in an add-in. To use one of the Fabric components in your add-in, follow the link to the Fabric documentation, and then follow the instructions in **Using this component**.
 
-> Note: We may add additional components over time. 
+> **Note:** We will add additional components over time. 
 
 - [Breadcrumb](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Breadcrumb.md)
 - [Button](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Button.md)
