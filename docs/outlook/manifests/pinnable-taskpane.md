@@ -6,9 +6,9 @@ However, by default, if a user has an add-in taskpane open for a message in the 
 
 > **Note**: Pinnable taskpanes are currently only supported by Outlook 2016 (version 7628.1000).
 
-## Enabling taskpane pinning
+## Support taskpane pinning
 
-The first step is to enable pinning, which is done in the add-in [manifest](./manifests.md). This is done by adding the [SupportsPinning](../../../reference/manifest/action.md#supportspinning) element to the `Action` element that describes the taskpane button.
+The first step is to add pinning support, which is done in the add-in [manifest](./manifests.md). This is done by adding the [SupportsPinning](../../../reference/manifest/action.md#supportspinning) element to the `Action` element that describes the taskpane button.
 
 The `SupportsPinning` element is defined in the VersionOverrides v1.1 schema, so you will need to include a [VersionOverrides](../../../reference/manifest/versionoverrides.md) element both for v1.0 and v1.1.
 
