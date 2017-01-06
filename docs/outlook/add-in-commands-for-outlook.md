@@ -4,9 +4,9 @@
 
 Outlook add-in commands provide ways to initiate specific add-in actions from the ribbon by adding buttons or drop-down menus. This lets users access add-ins in a simple, intuitive, and unobtrusive way. Because they offer increased functionality in a seamless manner, you can use add-in commands to create more engaging solutions.
 
-> **Note**: Add-in commands are available only in Outlook 2016 and Outlook 2013 for Windows. Support for add-in commands requires the [March 8, 2016 security update](https://support.microsoft.com/en-us/kb/3114829).
+> **Note**: Add-in commands are available only in Outlook 2016 and Outlook 2013 for Windows, and Outlook on the web for Office 365 and Outlook.com. Support for add-in commands in Outlook 2013 requires the [March 8, 2016 security update](https://support.microsoft.com/en-us/kb/3114829).
 
-Add-in commands are only available for contextual add-ins that do not use [temHasAttachment, ItemHasKnownEntity, or ItemHasRegularExpressionMatch rules](manifests/activation-rules.md) limit the types of items they activate on. However, contextual add-ins can present different commands depending on whether the currently selected item is a message or appointment, and can choose to appear in read or compose scenarios. Using add-in commands if possible is a [best practice](../../docs/overview/add-in-development-best-practices.md).
+Add-in commands are only available for contextual add-ins that do not use [ItemHasAttachment, ItemHasKnownEntity, or ItemHasRegularExpressionMatch rules](manifests/activation-rules.md) limit the types of items they activate on. However, contextual add-ins can present different commands depending on whether the currently selected item is a message or appointment, and can choose to appear in read or compose scenarios. Using add-in commands if possible is a [best practice](../../docs/overview/add-in-development-best-practices.md).
 
 
 ## Creating the add-in command
@@ -65,7 +65,7 @@ The default width of the vertical task pane is 300 px. The vertical task pane ca
 
 ![A button that opens a task pane on the Outlook ribbon.](../../images/c8e03da8-9f71-4f9b-813f-1cdea43d433c.png)
 
-This screenshot shows an example of a vertical task pane. The pane opens with the name of the add-in command in the top left corner. Users can use the **X** button in the upper-right corner of the pane to close the add-in when they are finished using it. This pane will not persist across messages. All UI elements rendered in the task pane, aside from the add-in name and the close button, are provided by the add-in.
+This screenshot shows an example of a vertical task pane. The pane opens with the name of the add-in command in the top left corner. Users can use the **X** button in the upper-right corner of the pane to close the add-in when they are finished using it. By default, this pane will not persist across messages. Add-ins can [support pinning](./manifests/pinnable-taskpane.md) for the taskpane and receive events when a new message is selected. All UI elements rendered in the task pane, aside from the add-in name and the close button, are provided by the add-in.
 
 If a user chooses another add-in command that opens a task pane, the task pane is replaced with the recently used command. If a user chooses an add-in command button that executes a function, or drop-down menu while the task pane is open, the action will be completed and the task pane will remain open.
 

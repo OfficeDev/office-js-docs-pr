@@ -16,7 +16,8 @@ An XML manifest file based on this schema enables an Office Add-in to do the fol
     
 - For Outlook add-ins, define the rule or rules that specify the context in which they will be activated and interact with a message, appointment, or meeting request item.
 
->**Note:** When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in must work across all platforms that support the methods that you define in the Requirements element in your manifest (see [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
+>**Note:** When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
+
 
 ## Required elements
 
@@ -59,21 +60,6 @@ The following table specifies the elements that are required for the three types
 |[*Hosts](http://msdn.microsoft.com/library/f9a739c1-3daf-c03a-2bd9-4a2a6b870101%28Office.15%29.aspx)||X|
 
 *Added in the Office Add-in Manifest Schema version 1.1.
-
-
-## Validate the Office Add-ins manifest
-
-To help to make sure that the manifest file that describes your Office Add-in is correct and complete, validate it against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas) files. You can use an XML schema validation tool or [Visual Studio](../get-started/create-and-debug-office-add-ins-in-visual-studio.md) to validate the manifest. 
-
-To use Visual Studio, go to Build > Publish, and choose **Perform Validation check**.
-
-To use a command-line XML schema validation tool to validate your manifest:
-
-1.	Install [tar](https://www.gnu.org/software/tar/) and [libxml](http://xmlsoft.org/FAQ.html), if you haven't already. 
-2.	Run the following command. Replace XSD_FILE with the path to the manifest XSD file and XML_FILE with the path to the manifest XML file.
-
-	xmllint --noout --schema XSD_FILE XML_FILE
-
 
 
 ## Specify domains you want to open in the add-in window
@@ -435,6 +421,10 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 
 ```
 
+## Validate and troubleshoot issues with your manifest
+
+For troubleshooting issues with your manifest, see [Validate and troubleshoot issues with your manifest](../../docs/testing/troubleshoot-manifest.md). There, you will find information on how to validate the manifest against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas), and also how to use runtime logging to debug the manifest.
+
 ## Additional resources
 
 
@@ -442,5 +432,5 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 - [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md)
 - [Localization for Office Add-ins](../../docs/develop/localization.md)
 - [Schema reference for Office Add-ins manifests](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas)
-- [Use runtime logging to debug your manifest](../develop/use-runtime-logging-to-debug-manifest.md)
+- [Validate and troubleshoot issues with your manifest](../../docs/testing/troubleshoot-manifest.md)
 

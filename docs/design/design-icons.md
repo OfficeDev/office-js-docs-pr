@@ -44,6 +44,10 @@ Office 2016 desktop icons are bitmap images. Different sizes will render dependi
 - 64 px (Recommended)
 - 80 px (Required)  
 
+Make sure to redraw your icons for each size rather than shrink them to fit.
+
+![Illustration that shows the recommendation to resize icons rather than shrink icons](../../images/icon_resizing.png)
+
 <!--
 The following table shows the icon sizes that render for different modes at different DPI settings.
 

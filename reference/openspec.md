@@ -38,7 +38,7 @@ The Word JavaScript API 1.4 update contains important additions, that include:
 * table merge cells
 * Table row merge and column split
 
-**See the [Word JS API 1.4 page](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.4_Openspec/word) to learn more and provide your feedback.**
+**See the [Word JS API 1.4 page](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.4_OpenSpec) to learn more and provide your feedback.**
 
 ## Host, platform information and diagnostic information 
 See planned additions to Office.Context object in order to provide add-in runtime environment information and diagnostics information to the developers. 
