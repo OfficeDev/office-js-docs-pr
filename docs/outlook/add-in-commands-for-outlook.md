@@ -65,7 +65,7 @@ The default width of the vertical task pane is 300 px. The vertical task pane ca
 
 ![A button that opens a task pane on the Outlook ribbon.](../../images/c8e03da8-9f71-4f9b-813f-1cdea43d433c.png)
 
-This screenshot shows an example of a vertical task pane. The pane opens with the name of the add-in command in the top left corner. Users can use the **X** button in the upper-right corner of the pane to close the add-in when they are finished using it. This pane will not persist across messages. All UI elements rendered in the task pane, aside from the add-in name and the close button, are provided by the add-in.
+This screenshot shows an example of a vertical task pane. The pane opens with the name of the add-in command in the top left corner. Users can use the **X** button in the upper-right corner of the pane to close the add-in when they are finished using it. By default, this pane will not persist across messages. Add-ins can [support pinning](./manifests/pinnable-taskpane.md) for the taskpane and receive events when a new message is selected. All UI elements rendered in the task pane, aside from the add-in name and the close button, are provided by the add-in.
 
 If a user chooses another add-in command that opens a task pane, the task pane is replaced with the recently used command. If a user chooses an add-in command button that executes a function, or drop-down menu while the task pane is open, the action will be completed and the task pane will remain open.
 
