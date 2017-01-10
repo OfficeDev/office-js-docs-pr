@@ -155,7 +155,10 @@ if (loginSuccess) {
 }
 ```
 
-For a sample that uses conditional messaging, see the [Office Add-in that uses the Auth0 Service to Simplify Social Login](https://github.com/OfficeDev/Office-Add-in-Auth0) sample.
+For samples that use conditional messaging, see 
+
+- [Office Add-in that uses the Auth0 Service to Simplify Social Login](https://github.com/OfficeDev/Office-Add-in-Auth0)
+- [Office Add-in that uses the OAuth.io Service to Simplify Access to Popular Online Services](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 The handler code in the host page uses the value of the `messageType` property to branch as in the following example. Note that the `showUserName` function is the same as in the example above and `showNotification` function displays the error in the host page's UI. 
 
@@ -302,7 +305,10 @@ var clientID = localStorage.getItem("clientID");
 // var clientID = localStorage.clientID;
 ```
 
-For a sample add-in that uses local storage in this way, see the [Office Add-in that uses the Auth0 Service to Simplify Social Login](https://github.com/OfficeDev/Office-Add-in-Auth0) sample.
+For sample add-ins that uses local storage in this way, see 
+
+- [Office Add-in that uses the Auth0 Service to Simplify Social Login](https://github.com/OfficeDev/Office-Add-in-Auth0)
+- [Office Add-in that uses the OAuth.io Service to Simplify Access to Popular Online Services](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 ### Using query parameters
 
@@ -353,9 +359,9 @@ For a sample add-in that uses this pattern, see [Excel Add-in with ASP.NET and Q
 
 #### Addressing slow network
 
-If the network or the identity provider is slow, the dialog box might not open right away when the user selects the UI to open it. This can give the impression that nothing is happening. One way to ensure a better experience is to have the first page that opens in the dialog box be a local page hosted in the add-in's domain; that is, the host window's domain. This page can have a simple UI that says "Please wait, we are redirecting you to the page where you can sign in to *NAME-OF-PROVIDER*." 
+If the network or the identity provider is slow, the dialog box might not open right away when the user selects the UI element to open it. This can give the impression that nothing is happening. One way to ensure a better experience is to have the first page that opens in the dialog box be a local page hosted in the add-in's domain; that is, the host window's domain. This page can have a simple UI that says "Please wait, we are redirecting you to the page where you can sign in to *NAME-OF-PROVIDER*." 
 
-Code in this page constructs the URL of the identity provider's sign-in page by using information that is passed to the dialog box using, as described in [Passing information to the dialog box](#passing-information-to-the-dialog-box). It then redirects to the sign-in page. In this design, the provider's page is not the first page opened in the dialog box, so it is not necessary to list the provider's domain in the `<AppDomains>` section of the add-in manifest
+Code in this page constructs the URL of the identity provider's sign-in page by using information that is passed to the dialog box as described in [Passing information to the dialog box](#passing-information-to-the-dialog-box). It then redirects to the sign-in page. In this design, the provider's page is not the first page opened in the dialog box, so it is not necessary to list the provider's domain in the `<AppDomains>` section of the add-in manifest
 
 For sample add-ins that use this pattern, see:
 
@@ -386,6 +392,7 @@ The following samples use the Dialog APIs for this purpose:
 
 - [Insert Excel charts using Microsoft Graph in a PowerPoint Add-in](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) - Stores the access token in a database.
 - [Excel Add-in with ASP.NET and QuickBooks](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks) - Passes the access token in `messageParent`.
+- [Office Add-in that uses the OAuth.io Service to Simplify Access to Popular Online Services](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 #### More information about authentication and authorization in add-ins
 

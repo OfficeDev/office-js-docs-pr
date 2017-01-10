@@ -56,11 +56,15 @@ Libraries are available for many languages and platforms, and for both flows. So
 
 ## Middleman services
 
-Your add-in can use a middleman service, such as Auth0, that either provides access tokens for many popular online services, or simplifies the process of enabling social login for your add-in, or both. With very little code, your add-in can use either client-side script or server-side code to connect to the middleman and it will send back any required tokens for the online service. All the authorization implementation code is in the middleman service. 
+Your add-in can use a middleman service, such as OAuth.io or Auth0, that either provides access tokens for many popular online services, or simplifies the process of enabling social login for your add-in, or both. With very little code, your add-in can use either client-side script or server-side code to connect to the middleman and it will send back any required tokens for the online service. All the authorization implementation code is in the middleman service. 
 
 We have a sample that uses Auth0 to enable social login with Facebook, Google, and Microsoft Accounts:
 
 [Office-Add-in-Auth0](https://github.com/OfficeDev/Office-Add-in-Auth0)
+
+We have a sample that uses OAuth.io to get access tokens from Facebook and Google:
+
+[Office-Add-in-OAuth.io](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 ## What is CORS?
 
