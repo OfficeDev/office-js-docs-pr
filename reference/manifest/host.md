@@ -49,7 +49,7 @@ When defined in [VersionOverrides](./versionoverrides.md), the host type is dete
 
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  [FormFactor](./formfactor.md)    |  Yes   |  Defines the form factor affected. |
+|  [DesktopFormFactor](./desktopformfactor.md)    |  Yes   |  Defines the settings for the desktop form factor. |
 
 
 ### xsi:type
