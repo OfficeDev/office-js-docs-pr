@@ -1,6 +1,6 @@
 # GetStarted element
 
-Provides information used by the callout that appears when the add-in is installed in Word, Excel, PowerPoint, and OneNote hosts. The **GetStarted** element is a child element of [FormFactor](./formfactor.md).
+Provides information used by the callout that appears when the add-in is installed in Word, Excel, PowerPoint, and OneNote hosts. The **GetStarted** element is a child element of [DesktopFormFactor](./desktopformfactor.md).
 
 ## Child elements
 
