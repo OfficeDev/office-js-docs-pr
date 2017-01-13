@@ -1,4 +1,3 @@
-
 # Create add-ins for Access web apps
 
 
@@ -17,7 +16,7 @@ To create an Office Add-in that targets Access web apps, you need:
 - A SharePoint Online site (included in many Office 365 subscriptions). This site must have an add-in catalog. For more information, see [Set up an add-in catalog on SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 
- >**Note**  Office Add-ins will work with Access web apps hosted on SharePoint Online or Office 365. The Access 2013 desktop application doesn't support Office Add-ins. Office Add-ins targeting Access web apps are supported by version 1.1 and later of Office.js.
+ >**Note:** Office Add-ins will work with Access web apps hosted on SharePoint Online or Office 365. The Access 2013 desktop application doesn't support Office Add-ins. Office Add-ins targeting Access web apps are supported by version 1.1 and later of Office.js.
 
 
 ## Create a project in Visual Studio
@@ -27,10 +26,7 @@ To create an Office Add-in that targets Access web apps, you need:
 
 2. In the  **New Project** dialog box, in the left hand pane, navigate to **Installed**,  **Templates**,  **Visual C#**,  **Office/SharePoint**,  **Office Add-ins**.
 
- >**Note**  If you don't have this template installed then possibly the issue can be resolved as discussed here:
-  >https://blogs.msdn.microsoft.com/visualstudio/2015/11/23/latest-microsoft-office-developer-tools-for-visual-studio-2015/
-
- >This post states:  This update includes a vocabulary change in our tools, Apps for Office and SharePoint are now known as Office and SharePoint Add-ins, **and bug fixes, such as the Office/SharePoint node not appearing under Visual C# in the New Project dialog.**
+ >**Note:**  If you don't have this template installed, see the [Latest Microsoft Office Developer Tools for Visual Studio 2015(https://blogs.msdn.microsoft.com/visualstudio/2015/11/23/latest-microsoft-office-developer-tools-for-visual-studio-2015/) blog post for information.
 
 3. In the  **New Project** dialog box, in the center pane choose **Office Add-in**.
 
