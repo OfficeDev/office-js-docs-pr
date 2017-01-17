@@ -1,6 +1,7 @@
 # RichText Object (JavaScript API for OneNote)
 
 _Applies to: OneNote Online_  
+_Note: This API is in preview_  
 
 
 Represents a RichText object in a Paragraph.
@@ -10,6 +11,7 @@ Represents a RichText object in a Paragraph.
 | Property	   | Type	|Description|Feedback|
 |:---------------|:--------|:----------|:-------|
 |id|string|Gets the ID of the RichText object. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-id)|
+|languageId|string|The language id of the text. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-languageId)|
 |text|string|Gets the text content of the RichText object. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-text)|
 
 _See property access [examples.](#property-access-examples)_
@@ -23,10 +25,25 @@ _See property access [examples.](#property-access-examples)_
 
 | Method		   | Return Type	|Description| Feedback|
 |:---------------|:--------|:----------|:-------|
+|[getHtml()](#gethtml)|string|Get the HTML of the rich text|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-getHtml)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-load)|
 
 ## Method Details
 
+
+### getHtml()
+Get the HTML of the rich text
+
+#### Syntax
+```js
+richTextObject.getHtml();
+```
+
+#### Parameters
+None
+
+#### Returns
+string
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
