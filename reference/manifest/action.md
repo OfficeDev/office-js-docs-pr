@@ -64,7 +64,7 @@ The following example shows two Actions that share the same **TaskpaneId**.
 ```  
 
 ## SupportsPinning
-Optional element when  **xsi:type** is "ShowTaskpane". The containing [VersionOverrides](./versionoverrides.md) elements must have an `xsi:type` attribute value of `VersionOverridesV1_1`. Include this element with a value of `true` to support taskpane pinning. The user will be able to "pin" the taskpane, causing it to stay open when changing the selection.
+Optional element when  **xsi:type** is "ShowTaskpane". The containing [VersionOverrides](./versionoverrides.md) element must have an `xsi:type` attribute value of `VersionOverridesV1_1`. Include this element with a value of `true` to support taskpane pinning. The user will be able to "pin" the taskpane, causing it to stay open when changing the selection.
 
 >**Note:** Currently this element is only supported by Outlook 2016.
 

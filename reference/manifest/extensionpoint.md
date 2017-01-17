@@ -1,6 +1,6 @@
 # ExtensionPoint element
 
- Defines where an add-in exposes functionality in the Office UI. The **ExtensionPoint** element is a child element of [DesktopFormFactor](./desktopformfactor.md). 
+ Defines where an add-in exposes functionality in the Office UI. The **ExtensionPoint** element is a child element of [DesktopFormFactor](./desktopformfactor.md) or [MobileFormFactor](./mobileformfactor.md). 
 
 ## Attributes
 
@@ -73,6 +73,7 @@ The following examples show how to use the  **ExtensionPoint** element with **Pr
 - [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface) 
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
 - [Module](#module) (Can only be used in the [DesktopFormFactor](./desktopformfactor.md).)
+- [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
 
 ### MessageReadCommandSurface
 This extension point puts buttons in the command surface for the mail read view. In Outlook desktop, this appears in the ribbon.
@@ -198,3 +199,37 @@ This extension point puts buttons on the ribbon for the module extension.
 |  [OfficeTab](./officetab.md) |  Adds the command(s) to the default ribbon tab.  |
 |  [CustomTab](./customtab.md) |  Adds the command(s) to the custom ribbon tab.  |
 
+### MobileMessageReadCommandSurface
+This extension point puts buttons in the command surface for the mail read view in the mobile form factor.
+
+> **Note:** This element type is only supported in Outlook for iPhone.
+
+**Child elements**
+
+|  Element |  Description  |
+|:-----|:-----|
+|  [Group](./group.md) |  Adds a group of buttons to the command surface.  |
+|  [Control](./control.md) |  Adds a single of button to the command surface.  |
+
+**ExtensionPoint** elements of this type can only have one child element, either a **Group** element or a **Control** element.
+
+**Control** elements contained in this extension point must have the **xsi:type** attribute set to `MobileButton`.
+
+#### Group example
+```xml
+<ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
+  <Group id="mobileGroupID">
+    <Label resid="residAppName"/>
+    <!-- one or more Control elements -->
+  </Group>
+</ExtensionPoint>
+```
+
+#### Control example
+```xml
+<ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
+  <Control id="mobileButton1" xsi:type="MobileButton">
+    <!-- Control definition -->
+  </Control>
+</ExtensionPoint>
+```
