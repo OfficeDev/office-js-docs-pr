@@ -346,22 +346,18 @@ For a sample that shows a video in a dialog box, see the [video placemat design 
 
 ## Using the Dialog APIs in an authentication flow
 
-A primary scenario for the Dialog APIs is to enable authentication with a resource or identity provider that does not allow its sign-in page to open in an iframe, such as Microsoft Account, Office 365, Google, and Facebook. The following is a simple and typical authentication flow:
+A primary scenario for the Dialog APIs is to enable authentication with a resource or identity provider that does not allow its sign-in page to open in an iframe, such as Microsoft Account, Office 365, Google, and Facebook. 
 
-1. The user selects a UI element on the host page to sign in. The handler for the element calls `displayDialogAsync` and passes the URL of an identity provider's sign-in page. *Because this is the first page opened in the dialog box and it does not have the same domain as the host window, its domain must be listed in the `<AppDomains>` section of the add-in manifest.* The URL includes a query parameter that tells the identity provider to redirect the dialog window after the user signs in to a specific page. In this article, we'll call the page "redirectPage.html". (*This must be a page in the same domain as the host window*, because the only way for the dialog window to pass the results of the sign-in attempt is with a call of `messageParent`, which can only be called on a page with the same domain as the host window.) 
+The first page that opens in the dialog box is a local page hosted in the add-in's domain; that is, the host window's domain. This page can have a simple UI that says "Please wait, we are redirecting you to the page where you can sign in to *NAME-OF-PROVIDER*." 
+
+Code in this page constructs the URL of the identity provider's sign-in page by using information that is passed to the dialog box as described in [Passing information to the dialog box](#passing-information-to-the-dialog-box). It then redirects to the sign-in page.  
+
+The following is a simple and typical authentication flow. 
+
+1. The user is redirected from a local page hosted in the add-in's domain to a sign in page. The handler for the element calls `displayDialogAsync` and passes the URL of an identity provider's sign-in page. The URL includes a query parameter that tells the identity provider to redirect the dialog window after the user signs in to a specific page. In this article, we'll call the page "redirectPage.html". (*This must be a page in the same domain as the host window*, because the only way for the dialog window to pass the results of the sign-in attempt is with a call of `messageParent`, which can only be called on a page with the same domain as the host window.) 
 2. The identity provider's service processes the incoming GET request from the dialog window. If the user is already logged on, it immediately redirects the window to redirectPage.html and includes user data as a query parameter. If the user is not already signed in, the provider's sign-in page appears in the window, and the user signs in. For most providers, if the user cannot sign in successfully, the provider shows an error page in the dialog window and does not redirect to redirectPage.html. The user must close the window by selecting the **X** in the corner. If the user successfully signs in, the dialog window is redirected to redirectPage.html and user data is included as a query parameter.
 3. When the redirectPage.html page opens, it calls `messageParent` to report the success or failure to the host page and optionally also report user data or error data. 
 4. The `DialogMessageReceived` event fires in the host page and its handler closes the dialog window and optionally does other processing of the message. 
-
-For a sample add-in that uses this pattern, see [Excel Add-in with ASP.NET and QuickBooks](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks)
-
-### Alternate authentication and authorization scenarios
-
-#### Addressing slow network
-
-If the network or the identity provider is slow, the dialog box might not open right away when the user selects the UI element to open it. This can give the impression that nothing is happening. One way to ensure a better experience is to have the first page that opens in the dialog box be a local page hosted in the add-in's domain; that is, the host window's domain. This page can have a simple UI that says "Please wait, we are redirecting you to the page where you can sign in to *NAME-OF-PROVIDER*." 
-
-Code in this page constructs the URL of the identity provider's sign-in page by using information that is passed to the dialog box as described in [Passing information to the dialog box](#passing-information-to-the-dialog-box). It then redirects to the sign-in page. In this design, the provider's page is not the first page opened in the dialog box, so it is not necessary to list the provider's domain in the `<AppDomains>` section of the add-in manifest
 
 For sample add-ins that use this pattern, see:
 
@@ -391,7 +387,6 @@ You can use the Dialog APIs to manage this process by using a flow that is simil
 The following samples use the Dialog APIs for this purpose:
 
 - [Insert Excel charts using Microsoft Graph in a PowerPoint Add-in](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) - Stores the access token in a database.
-- [Excel Add-in with ASP.NET and QuickBooks](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks) - Passes the access token in `messageParent`.
 - [Office Add-in that uses the OAuth.io Service to Simplify Access to Popular Online Services](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 #### More information about authentication and authorization in add-ins
