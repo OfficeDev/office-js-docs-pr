@@ -335,8 +335,7 @@ To show a video in a dialog box:
 			frameborder="0" allowfullscreen>
 		</iframe>
 
-2.  The video.dialogbox.html page must either be in the same domain
-3.   as the host page.
+2.  The video.dialogbox.html page must be in the same domain as the host page.
 3.  Use a call of `displayDialogAsync` in the host page to open video.dialogbox.html.
 4.  If your add-in needs to know when the user closes the dialog box, register a handler for the `DialogEventReceived` event and handle the 12006 event. For details, see the section [Errors and events in the dialog window](#errors-and-events-in-the-dialog-window).
 
