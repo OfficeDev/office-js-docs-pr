@@ -15,6 +15,8 @@ For an overview of the feature, see the video [Add-in Commands in the Office Rib
 ## Command capabilities
 The following command capabilities are currently supported.
 
+> **Note:** Content add-ins do not currently support add-in commands.
+
 **Extension points**
 
 - Ribbon tabs - Extend built-in tabs or create a new custom tab.
