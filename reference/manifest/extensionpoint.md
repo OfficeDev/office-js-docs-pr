@@ -1,6 +1,6 @@
 # ExtensionPoint element
 
- Defines where an add-in exposes functionality in the Office UI. The **ExtensionPoint** element is a child element of [FormFactor](./formfactor.md). 
+ Defines where an add-in exposes functionality in the Office UI. The **ExtensionPoint** element is a child element of [DesktopFormFactor](./desktopformfactor.md). 
 
 ## Attributes
 
@@ -72,7 +72,7 @@ The following examples show how to use the  **ExtensionPoint** element with **Pr
 - [MessageComposeCommandSurface](#messagecomposecommandsurface) 
 - [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface) 
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
-- [Module](#module) (Can only be used in the [DesktopFormFactor](./formfactor.md).)
+- [Module](#module) (Can only be used in the [DesktopFormFactor](./desktopformfactor.md).)
 
 ### MessageReadCommandSurface
 This extension point puts buttons in the command surface for the mail read view. In Outlook desktop, this appears in the ribbon.

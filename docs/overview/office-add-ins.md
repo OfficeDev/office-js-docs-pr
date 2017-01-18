@@ -71,6 +71,8 @@ Clients that do not support add-in commands yet (Office 2013, Office for Mac, an
 
 Use a content add-in manifest to integrate **web-based objects that can be embedded inside documents**. Content add-ins let you integrate rich, web-based data visualizations, embedded media (such as a YouTube video player or a picture gallery), and other external content.
 
+>**Note:** Content add-ins do not currently support add-in commands.
+
 **Content add-in**
 
 ![In content add-in](../../images/DK2_AgaveOverview05.png)

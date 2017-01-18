@@ -14,6 +14,8 @@ Contextual add-ins are different from add-ins that involve attachments or that a
     
 Currently, contextual add-ins are limited to Outlook Web App.
 
+>**Note:** Contextual add-ins do not support add-in commands.
+
 ## How to make a contextual add-in
 
 To make a contextual add-in, its add-in manifest must specify the entity or regular expression that can activate it. The entity can be any of the properties in the [Entities](../../reference/outlook/simple-types.md) object. Thus, the add-in manifest must contain a rule of type **ItemHasKnownEntity** or **ItemHasRegularExpressionMatch**. The following example shows how to specify an entity that is a phone number:
