@@ -33,7 +33,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 > **Notes:**
 
 > - The URL uses the HTTP**S** protocol. This is mandatory for all pages loaded in a dialog box, not just the first page loaded.
-> - The domain is the same as the domain of the host page, which can be the page in a task pane or the [function file](https://dev.office.com/reference/add-ins/manifest/functionfile) of an add-in command. This is not required for the first page loaded in the dialog box, but if the first page is not in the same domain of your add-in, you need to list that domain in the [`<AppDomains>`](../../reference/manifest/appdomains.md) element in your add-in manifest.
+> - The domain is the same as the domain of the host page, which can be the page in a task pane or the [function file](https://dev.office.com/reference/add-ins/manifest/functionfile) of an add-in command. This is required.
 
 After the first page is loaded, a user can go to any website that uses HTTPS. You can also design the first page to immediately redirect to another site. 
 
