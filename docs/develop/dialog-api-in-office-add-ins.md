@@ -217,7 +217,7 @@ In addition to general platform and system errors, three errors are specific to 
 
 |Code number|Meaning|
 |:-----|:-----|
-|12004|The domain of the URL passed to `displayDialogAsync` is not trusted. The domain must be the same domain as the host page (including protocol and port number) **or** it must be registered in the `<AppDomains>` section of the add-in manifest.|
+|12004|The domain of the URL passed to `displayDialogAsync` is not trusted. The domain must be the same domain as the host page (including protocol and port number).|
 |12005|The URL passed to `displayDialogAsync` uses the HTTP protocol. HTTPS is required. (In some versions of Office, the error message returned with 12005 is the same one returned for 12004.)|
 |12007|A dialog box is already opened from this host window. A host window, such as a task pane, can only have one dialog box open at a time.|
 
@@ -336,7 +336,7 @@ To show a video in a dialog box:
 		</iframe>
 
 2.  The video.dialogbox.html page must either be in the same domain
-3.   as the host page or be in a domain that is registered in the `<AppDomains>` section of the add-in manifest.
+3.   as the host page.
 3.  Use a call of `displayDialogAsync` in the host page to open video.dialogbox.html.
 4.  If your add-in needs to know when the user closes the dialog box, register a handler for the `DialogEventReceived` event and handle the 12006 event. For details, see the section [Errors and events in the dialog window](#errors-and-events-in-the-dialog-window).
 
