@@ -24,7 +24,7 @@ The Office JavaScript APIs support the following scenarios with a [Dialog](../..
 
 ### Opening a dialog box
 
-To open a dialog box, your code in the task pane calls the [displayDialogAsync](../../reference/shared/officeui.displaydialogasync.md) method and passes to it the URL of the page that should open. The following is a simple example.
+To open a dialog box, your code in the task pane calls the [displayDialogAsync](../../reference/shared/officeui.displaydialogasync.md) method and passes to it the URL of the resource that should open. *This is usually a page, but it can be controller method in an MVC application, a route, a web service method, or any other resource. To reduce the number of verbose "or" sentences, like the preceding one, this article usually uses just the word 'page' or just the word 'website' to refer to the resource in the dialog.* The following is a simple example.
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html'); 
@@ -33,9 +33,9 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 > **Notes:**
 
 > - The URL uses the HTTP**S** protocol. This is mandatory for all pages loaded in a dialog box, not just the first page loaded.
-> - The domain is the same as the domain of the host page, which can be the page in a task pane or the [function file](https://dev.office.com/reference/add-ins/manifest/functionfile) of an add-in command. This is required.
+> - The domain is the same as the domain of the host page, which can be the page in a task pane or the [function file](https://dev.office.com/reference/add-ins/manifest/functionfile) of an add-in command. This is required: the page, controller method, or other resource that is passed to the `displayDialogAsync` method must be in the same domain as the host page. 
 
-After the first page is loaded, a user can go to any website that uses HTTPS. You can also design the first page to immediately redirect to another site. 
+After the first page (or other resource) is loaded, a user can go to any website (or other resource) that uses HTTPS. You can also design the first page to immediately redirect to another site. 
 
 By default, the dialog box will occupy 80% of the height and width of the device screen, but you can set different percentages by passing a configuration object to the method, as shown in the following example.
 
@@ -48,6 +48,20 @@ For a sample add-in that does this, see [Office Add-in Dialog API Example](https
 Set both values to 100% to get what is effectively a full screen experience. (The effective maximum is 99.5%, and the window is still moveable and resizable.)
 
 >**Note:** Only one dialog box can be open from a host window. An attempt to open another dialog box generates an error. (See [Errors from displayDialogAsync](#errors-from-displaydialogAsync) for more information.) So, for example, if a user opens a dialog box from a task pane, she cannot open a second dialog box, from a different page in the task pane. However, when a dialog box is opened from an [add-in command](https://dev.office.com/docs/add-ins/design/add-in-commands), the command opens a new (but unseen) HTML file each time it is selected. This creates a new (unseen) host window, so each such window can launch its own dialog box. 
+
+### Take advantage of a performance option in Office Online
+
+There is an additional property in the configuration object that you pass to `displayDialogAsync` that you should use when you can: `displayInIframe`. When this property is set to `true`, and the add-in is running in a document opened in Office Online, then the dialog will open as a floating Iframe rather than an independent window, which makes it open faster. The following is an example:
+
+```js
+Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe; true}); 
+```
+
+The default value is `false` which is the same as leaving the property out entirely.
+
+If the add-in is not running in Office Online, then the `displayInIframe` is ignored, but it does no harm for it to be present.
+
+> **Note:** You should ***not*** use `displayInIframe: true` if the dialog will at any point redirect to a page that cannot be opened in an Iframe. For example, the sign in pages of many popular web services, such as Google and Microsoft Account cannot be opened in an Iframe. 
 
 ### Sending information from the dialog box to the host page
 
@@ -322,7 +336,7 @@ For a sample that uses this technique, see [Insert Excel charts using Microsoft 
 
 Code in your dialog window can parse URL and read the parameter value.
 
->**Note:** Office automatically adds a query parameter called `_host_info` to the URL that is passed to `displayDialogAsync`. (It is appended after your custom query parameters, if any. It is not appended to any subsequent URLs that the dialog box navigates to.) Microsoft may change the content of this value, or remove it entirely, in the future, so your code should not read it. The same value is added to the dialog box's session storage. Again, *your code should neither read nor write to this value*.
+ automatically adds a query parameter called `_host_info` to the URL that is passed to `displayDialogAsync`. (It is appended after your custom query parameters, if any. It is not appended to any subsequent URLs that the dialog box navigates to.) Microsoft may change the content of this value, or remove it entirely, in the future, so your code should not read it. The same value is added to the dialog box's session storage. Again, *your code should neither read nor write to this value*.
 
 ## Using the Dialog APIs to show a video
 
@@ -345,23 +359,22 @@ For a sample that shows a video in a dialog box, see the [video placemat design 
 
 ## Using the Dialog APIs in an authentication flow
 
-A primary scenario for the Dialog APIs is to enable authentication with a resource or identity provider that does not allow its sign-in page to open in an iframe, such as Microsoft Account, Office 365, Google, and Facebook. 
+A primary scenario for the Dialog APIs is to enable authentication with a resource or identity provider that does not allow its sign-in page to open in an Iframe, such as Microsoft Account, Office 365, Google, and Facebook. 
 
-The first page that opens in the dialog box is a local page hosted in the add-in's domain; that is, the host window's domain. This page can have a simple UI that says "Please wait, we are redirecting you to the page where you can sign in to *NAME-OF-PROVIDER*." 
-
-Code in this page constructs the URL of the identity provider's sign-in page by using information that is passed to the dialog box as described in [Passing information to the dialog box](#passing-information-to-the-dialog-box). It then redirects to the sign-in page.  
+>**Note:** When you are using the Dialog APIs for this scenario, do *not* use the `displayInIframe: true` option in the call to `displayDialogAsync`. See earlier in this article for details about this option. 
 
 The following is a simple and typical authentication flow. 
 
-1. The user is redirected from a local page hosted in the add-in's domain to a sign in page. The handler for the element calls `displayDialogAsync` and passes the URL of an identity provider's sign-in page. The URL includes a query parameter that tells the identity provider to redirect the dialog window after the user signs in to a specific page. In this article, we'll call the page "redirectPage.html". (*This must be a page in the same domain as the host window*, because the only way for the dialog window to pass the results of the sign-in attempt is with a call of `messageParent`, which can only be called on a page with the same domain as the host window.) 
+1. The first page that opens in the dialog box is a local page (or other resource) that is hosted in the add-in's domain; that is, the host window's domain. This page can have a simple UI that says "Please wait, we are redirecting you to the page where you can sign in to *NAME-OF-PROVIDER*." Code in this page constructs the URL of the identity provider's sign-in page by using information that is passed to the dialog box as described in [Passing information to the dialog box](#passing-information-to-the-dialog-box). 
+2. The dialog window then redirects to the sign-in page. The URL includes a query parameter that tells the identity provider to redirect the dialog window, after the user signs in, to a specific page. In this article, we'll call this page "redirectPage.html". (*This must be a page in the same domain as the host window*, because the only way for the dialog window to pass the results of the sign-in attempt is with a call of `messageParent`, which can only be called on a page with the same domain as the host window.) 
 2. The identity provider's service processes the incoming GET request from the dialog window. If the user is already logged on, it immediately redirects the window to redirectPage.html and includes user data as a query parameter. If the user is not already signed in, the provider's sign-in page appears in the window, and the user signs in. For most providers, if the user cannot sign in successfully, the provider shows an error page in the dialog window and does not redirect to redirectPage.html. The user must close the window by selecting the **X** in the corner. If the user successfully signs in, the dialog window is redirected to redirectPage.html and user data is included as a query parameter.
 3. When the redirectPage.html page opens, it calls `messageParent` to report the success or failure to the host page and optionally also report user data or error data. 
 4. The `DialogMessageReceived` event fires in the host page and its handler closes the dialog window and optionally does other processing of the message. 
 
 For sample add-ins that use this pattern, see:
 
-- [Insert Excel charts using Microsoft Graph in a PowerPoint Add-in](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
-- [Office Add-in Office 365 Client Authentication for AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth).
+- [Insert Excel charts using Microsoft Graph in a PowerPoint Add-in](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart): The resource that is initially opened in the dialog window is a controller method that has no view of its own. It redirects to the Office 365 sign in page.
+- [Office Add-in Office 365 Client Authentication for AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth): The resource that is initially opened in the dialog window is a page. 
 
 #### Supporting multiple identity providers
 
