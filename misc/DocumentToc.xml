@@ -149,5 +149,5 @@
   <Item text="Access" url="access" Scope="access">
     <Item text="Access web app add-ins" url="access/access-web-app-add-ins" SEOKeyword="Access add-ins" SEODescription="Create an Office Add-in that extends Access web apps with custom HTML and JavaScript." Scope="access" />
   </Item>
-
+<Item text="JavaScript API reference" url="https://dev.office.com/reference/add-ins/javascript-api-for-office" IsExternal="true" />
 </Menu>
