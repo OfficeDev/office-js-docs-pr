@@ -12,6 +12,8 @@ The first step is to add pinning support, which is done in the add-in [manifest]
 
 The `SupportsPinning` element is defined in the VersionOverrides v1.1 schema, so you will need to include a [VersionOverrides](../../../reference/manifest/versionoverrides.md) element both for v1.0 and v1.1.
 
+> **Note:** If you plan to [publish](../../publish/publish.md) your Outlook add-in to the Office Store, when you use the **SupportsPinning** element, in order to pass [Office Store validation](https://msdn.microsoft.com/en-us/library/jj220035.aspx), your add-in content must not be static and it must clearly display data related to the message that is open or selected in the mailbox.
+
 ```xml
 <!-- Task pane button -->
 <Control xsi:type="Button" id="msgReadOpenPaneButton">
