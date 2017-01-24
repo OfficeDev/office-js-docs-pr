@@ -86,6 +86,7 @@
   
   <Item text="Outlook" url="outlook/outlook-add-ins" SEODescription="Create Outlook add-ins in read or compose mode." Scope="outlook" >
     <Item text="Overview" url="outlook/overview" SEODescription="Learn about Outlook add-ins architecture and features." Scope="outlook" />
+    <Item text="Design Outlook Add-ins" url="outlook/outlook-addin-design" SEODescription="Learn about designing an Outlook add-in." Scope="outlook" />
     <Item text="Add-in commands for Outlook" url="outlook/add-in-commands-for-outlook"  SEODescription="Use add-in commands to integrate Outlook add-ins with the Outlook UI." Scope="outlook" />
     <Item text="Contextual Outlook add-ins" url="outlook/contextual-outlook-add-ins"  SEODescription="Activate an Outlook add-in based on specified text in a message or appointment." Scope="outlook" />
     <Item text="Module extension Outlook add-ins" url="outlook/extension-module-outlook-add-ins" FriendlyUrl="outlookmodule-extension-outlook-add-ins" Scope="outlook" SEODescription="Extend the Outlook UI by adding module extensions to the navigation bar."/> 
@@ -94,6 +95,7 @@
       <Item text="Activation rules" url="outlook/manifests/activation-rules" FriendlyUrl="outlook/manifestsactivation-rules" SEODescription="Define activation rules in an Outlook add-in manifest to specify when Outlook displays the add-in." Scope="outlook" />
       <Item text="Define add-in commands" url="outlook/manifests/define-add-in-commands"  SEODescription="Use the VersionOverrides element in your Outlook add-in manifest to define add-in commands." Scope="outlook" />
       <Item text="Pinnable taskpane" url="outlook/manifests/pinnable-taskpane"  SEODescription="Implement a pinnable taskpane in an Outlook add-in." Scope="outlook" />
+      <Item text="Add support for Outlook Mobile" url="outlook/manifests/add-mobile-support" SEODescription="Learn how to add support for Outlook mobile to your add-in." Scope="outlook" />
   </Item>
   <Item text="Get and set item data in read or compose forms" url="outlook/item-data" SEODescription="Learn about the ways to get or set data on an appointment or message from an Outlook add-in" Scope="outlook" />
 	<Item text="Get and set add-in metadata" url="outlook/metadata-for-an-outlook-add-in"  SEODescription="Learn to load and store custom data that only your Outlook add-in can access - through roaming settings and custom properties." Scope="outlook" />
