@@ -10,13 +10,13 @@ You might want to open a dialog box from a task pane or content add-in or [add-i
 - Provide more screen space, or even a full screen, for some tasks in your add-in.
 - Host a video that would be too small if confined to a task pane.
 
->**Note:** Because overlapping UI can annoy users, avoid opening a dialog from a task pane unless your scenario requires it. When considering how to use the surface area of a task pane, consider that task panes can be tabbed. For an example, see the [Excel Add-in JavaScriptSalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) sample.
+>**Note:** Because overlapping UI can annoy users, avoid opening a dialog from a task pane unless your scenario requires it. When you consider how to use the surface area of a task pane, note that task panes can be tabbed. For an example, see the [Excel Add-in JavaScriptSalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) sample.
 
 The following image shows an example of a dialog box. 
 
 ![Add-in commands](../../images/Auth0DialogOpen.PNG)
 
-Note that the dialog box always opens in the center of the screen. The user can move and resize it. The window is *nonmodal*: a user can continue to interact with both the document in the host Office application and with the host page in the task pane, if there is one.
+Note that the dialog box always opens in the center of the screen. The user can move and resize it. The window is *nonmodal* - a user can continue to interact with both the document in the host Office application and with the host page in the task pane, if there is one.
 
 ## Dialog API scenarios
 
@@ -24,7 +24,7 @@ The Office JavaScript APIs support the following scenarios with a [Dialog](../..
 
 ### Opening a dialog box
 
-To open a dialog box, your code in the task pane calls the [displayDialogAsync](../../reference/shared/officeui.displaydialogasync.md) method and passes to it the URL of the resource that should open. *This is usually a page, but it can be controller method in an MVC application, a route, a web service method, or any other resource. To reduce the number of verbose "or" sentences, like the preceding one, this article usually uses just the word 'page' or just the word 'website' to refer to the resource in the dialog.* The following is a simple example.
+To open a dialog box, your code in the task pane calls the [displayDialogAsync](../../reference/shared/officeui.displaydialogasync.md) method and passes to it the URL of the resource that should open. This is usually a page, but it can be a controller method in an MVC application, a route, a web service method, or any other resource. In this article, 'page' or 'website' refers to the resource in the dialog. The following is a simple example.
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html'); 
@@ -51,17 +51,17 @@ Set both values to 100% to get what is effectively a full screen experience. (Th
 
 ### Take advantage of a performance option in Office Online
 
-There is an additional property in the configuration object that you pass to `displayDialogAsync` that you should use when you can: `displayInIframe`. When this property is set to `true`, and the add-in is running in a document opened in Office Online, then the dialog will open as a floating Iframe rather than an independent window, which makes it open faster. The following is an example:
+The `displayInIframe` property is an additional property in the configuration object that you can pass to `displayDialogAsync`. When this property is set to `true`, and the add-in is running in a document opened in Office Online, the dialog will open as a floating iframe rather than an independent window, which makes it open faster. The following is an example.
 
 ```js
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe: true}); 
 ```
 
-The default value is `false` which is the same as leaving the property out entirely.
+The default value is `false`, which is the same as leaving the property out entirely.
 
-If the add-in is not running in Office Online, then the `displayInIframe` is ignored, but it does no harm for it to be present.
+If the add-in is not running in Office Online, the `displayInIframe` is ignored, but it does no harm for it to be present.
 
-> **Note:** You should ***not*** use `displayInIframe: true` if the dialog will at any point redirect to a page that cannot be opened in an Iframe. For example, the sign in pages of many popular web services, such as Google and Microsoft Account cannot be opened in an Iframe. 
+> **Note:** You should ***not*** use `displayInIframe: true` if the dialog will at any point redirect to a page that cannot be opened in an iframe. For example, the sign in pages of many popular web services, such as Google and Microsoft Account, cannot be opened in an iframe. 
 
 ### Sending information from the dialog box to the host page
 
@@ -281,8 +281,7 @@ function processDialogEvent(arg) {
             showNotification("The dialog box has been directed to a page that it cannot find or load, or the URL syntax is invalid.");
             break;
         case 12003:
-            showNotification("The dialog box has been directed to a URL with the HTTP protocol. HTTPS is required.");
-            break;
+            showNotification("The dialog box has been directed to a URL with the HTTP protocol. HTTPS is required.");            break;
         case 12006:
             showNotification("Dialog closed.");
             break;
@@ -295,7 +294,7 @@ function processDialogEvent(arg) {
 
 For a sample add-in that handles errors in this way, see [Office Add-in Dialog API Example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).
 
-  
+ 
 ## Passing information to the dialog box
 
 Sometimes the host page needs to pass information to the dialog box. You can do this in two primary ways:
