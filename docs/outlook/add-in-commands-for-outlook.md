@@ -6,19 +6,18 @@ Outlook add-in commands provide ways to initiate specific add-in actions from th
 
 > **Note**: Add-in commands are available only in Outlook 2016 and Outlook 2013 for Windows, and Outlook on the web for Office 365 and Outlook.com. Support for add-in commands in Outlook 2013 requires the [March 8, 2016 security update](https://support.microsoft.com/en-us/kb/3114829).
 
-Add-in commands are only available for contextual add-ins that do not use [ItemHasAttachment, ItemHasKnownEntity, or ItemHasRegularExpressionMatch rules](manifests/activation-rules.md) limit the types of items they activate on. However, contextual add-ins can present different commands depending on whether the currently selected item is a message or appointment, and can choose to appear in read or compose scenarios. Using add-in commands if possible is a [best practice](../../docs/overview/add-in-development-best-practices.md).
+Add-in commands are only available for contextual add-ins that do not use [ItemHasAttachment, ItemHasKnownEntity, or ItemHasRegularExpressionMatch rules](manifests/activation-rules.md) to limit the types of items they activate on. However, contextual add-ins can present different commands depending on whether the currently selected item is a message or appointment, and can choose to appear in read or compose scenarios. Using add-in commands if possible is a [best practice](../../docs/overview/add-in-development-best-practices.md).
 
 
 ## Creating the add-in command
 
 Add-in commands are declared in the add-in manifest in the  **VersionOverrides** element. This element is an addition to the manifest schema v1.1 that ensures backward compatibility. In a client that doesn't support **VersionOverrides**, existing add-ins will continue to function as they did without add-in commands.
 
-The  **VersionOverrides** manifest entries specify many things for the add-in, such as the host, types of controls to add to the ribbon, the text, the icons, and any associated functions. For more information, see [Define add-in commands in your Outlook add-in manifest](../outlook/manifests/define-add-in-commands.md). 
+The  **VersionOverrides** manifest entries specify many things for the add-in, such as the host, types of controls to add to the ribbon, the text, the icons, and any associated functions.
 
 When an add-in needs to provide status updates, such as progress indicators or error messages, it must do so through the [notification APIs](../../reference/outlook/NotificationMessages.md). The processing for the notifications must also be defined in a separate HTML file that is specified in the  **FunctionFile** node of the manifest.
 
-Developers should define icons for all needed sizes so that the add-in commands will adjust smoothly along with the ribbon. The icon sizes are 80 x 80 pixels, 32 x 32 pixels, and 16 x 16 pixels.
-
+Developers should define icons for all required sizes so that the add-in commands will adjust smoothly along with the ribbon. The required icon sizes are 80 x 80 pixels, 32 x 32 pixels, and 16 x 16 pixels.
 
 ## How do add-in commands appear?
 
@@ -26,7 +25,6 @@ An add-in command appears on the ribbon as a button. When a user installs an add
 the default is a custom tab. On the default tab, each add-in can have one ribbon group with up to 6 commands. On custom tabs, the add-in can have up to 10 groups, each with 6 commands. Add-ins are limited to only one custom tab.
 
 As the ribbon gets more crowded, the add-in commands will adjust (collapse) in an orderly way. In all cases, the add-in commands for an add-in will be grouped together.
-
 
 ![Screenshots showing add-in command buttons in a normal and a collapsed state.](../../images/6fcb64d8-9598-41d1-8944-f6d1f6d2edb6.png)
 
@@ -37,12 +35,10 @@ When an add-in command is added to an add-in, the add-in name is removed from th
 
 The UX shape for an add-in command consists of a ribbon tab in the host application that contains buttons that can perform various functions. Currently, three UI shapes are supported:
 
-
 - A button that executes a JavaScript function
         
 - A button that shows a drop-down menu with one or more buttons of the other two types
 
-In addition, contextual add-ins support: 
 - A button that launches a task pane
 
 
