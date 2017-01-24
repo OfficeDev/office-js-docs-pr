@@ -54,7 +54,7 @@ Set both values to 100% to get what is effectively a full screen experience. (Th
 There is an additional property in the configuration object that you pass to `displayDialogAsync` that you should use when you can: `displayInIframe`. When this property is set to `true`, and the add-in is running in a document opened in Office Online, then the dialog will open as a floating Iframe rather than an independent window, which makes it open faster. The following is an example:
 
 ```js
-Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe; true}); 
+Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe: true}); 
 ```
 
 The default value is `false` which is the same as leaving the property out entirely.
