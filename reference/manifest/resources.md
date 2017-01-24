@@ -17,18 +17,20 @@ Each resource can have one or more **Override** child elements to define a diffe
 
 ### Images
 Each icon must have three  **Images** elements, one for each of the three mandatory sizes:
+
 - 16x16
 - 32x32
 - 80x80
 
 The following additional sizes are also supported, but not required:
+
 - 20x20
 - 24x24
 - 40x40
 - 48x48
 - 64x64
 
-> **Important: ** Outlook requires the ability to cache image resources for performance purposes. For this reason, the server hosting an image resource must not add any CACHE-CONTROL directives to the response header. This will result in Outlook automatically substituting a generic or default image.    
+> **Important:** Outlook requires the ability to cache image resources for performance purposes. For this reason, the server hosting an image resource must not add any CACHE-CONTROL directives to the response header. This will result in Outlook automatically substituting a generic or default image.    
 
 
 ## Resources examples 
