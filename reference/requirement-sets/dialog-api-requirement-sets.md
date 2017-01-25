@@ -7,7 +7,7 @@ Office Add-ins run across multiple versions of Office. The following table lists
 
 |  Requirement set  |  Office 2013 for Windows | Office 2016 for Windows*   |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|
-| DialogApi 1.1  | Build 15.0.4855.1000 or later | Version 1602 (Build 6741.0000) or later | 1.22 or later | 15.20 or later| We're working on it. | Version 1608 (Build 7601.6800) or later|
+| DialogApi 1.1  | Build 15.0.4855.1000 or later | Version 1602 (Build 6741.0000) or later | 1.22 or later | 15.20 or later| January 2017 | Version 1608 (Build 7601.6800) or later|
 
 >**Note:** The build number for Office 2016 installed via MSI is 16.0.4266.1001. In order to use the Dialog Api, please run Office update to get the latest version. 
 
