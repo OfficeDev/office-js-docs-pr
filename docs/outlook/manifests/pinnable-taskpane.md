@@ -4,13 +4,15 @@ The [taskpane](../add-in-commands-for-outlook.md#launching-a-task-pane) UX shape
 
 However, by default, if a user has an add-in taskpane open for a message in the Reading Pane, and then selects a new message, the task pane is automatically closed. For a heavily-used add-in, the user may prefer to keep that pane open, eliminating the need to reactivate the add-in on each message. With pinnable taskpanes, your add-in can give the user that option.
 
-> **Note**: Pinnable taskpanes are currently only supported by Outlook 2016 (version 7628.1000).
+> **Note**: Pinnable taskpanes are currently only supported by Outlook 2016 for Windows (build 7628.1000 or later).
 
 ## Support taskpane pinning
 
 The first step is to add pinning support, which is done in the add-in [manifest](./manifests.md). This is done by adding the [SupportsPinning](../../../reference/manifest/action.md#supportspinning) element to the `Action` element that describes the taskpane button.
 
 The `SupportsPinning` element is defined in the VersionOverrides v1.1 schema, so you will need to include a [VersionOverrides](../../../reference/manifest/versionoverrides.md) element both for v1.0 and v1.1.
+
+> **Note:** If you plan to [publish](../../publish/publish.md) your Outlook add-in to the Office Store, when you use the **SupportsPinning** element, in order to pass [Office Store validation](https://msdn.microsoft.com/en-us/library/jj220035.aspx), your add-in content must not be static and it must clearly display data related to the message that is open or selected in the mailbox.
 
 ```xml
 <!-- Task pane button -->

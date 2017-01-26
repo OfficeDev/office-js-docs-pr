@@ -41,7 +41,7 @@ Office 2016 desktop icons are bitmap images. Different sizes will render dependi
 - 32 px (Required)
 - 40 px
 - 48 px
-- 64 px (Recommended)
+- 64 px (Recommended, best for Mac)
 - 80 px (Required)  
 
 Make sure to redraw your icons for each size rather than shrink them to fit.

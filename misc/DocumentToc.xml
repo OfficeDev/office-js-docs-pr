@@ -4,6 +4,7 @@
     <Item text="Platform overview" url="overview/office-add-ins" SEODescription="Learn about Office Add-ins that allow you to make your solution a native part of Office across Windows, Office Online, Mac and the IPad." />
 	<Item text="Requirements for running add-ins" url="overview/requirements-for-running-office-add-ins" SEODescription="Learn about the software and device requirements for running Office Add-ins." />	
 	<Item text="Add-in development best practices" url="overview/add-in-development-best-practices" SEODescription="Apply best practices to build Office Add-ins that optimize the user experience."  />
+	<Item text="Host and platform availability" url="https://dev.office.com/add-in-availability" IsExternal="true" />
 	</Item>
   <Item text="Get started" url="get-started">
     <Item text="Use Visual Studio" url="get-started/create-and-debug-office-add-ins-in-visual-studio" SEODescription="Get started building an Office Add-in with Visual Studio" />
@@ -16,9 +17,9 @@
       	<Item text="Layout for content add-ins" url="design/ui-elements/layout-for-content-add-ins" SEODescription="Create a consistent look and feel for your content add-ins by using the recommended design layout."  />
       	<Item text="Layout for task pane add-ins" url="design/ui-elements/layout-for-task-pane-add-ins" SEODescription="Create a consistent look and feel for task pane add-ins by using the recommended design layout." />
       	<Item text="Layouts for Outlook add-ins" url="design/ui-elements/layouts-for-outlook-add-ins" SEODescription="Use these layouts for mail add-ins" Scope="outlook" />
-      	<Item text="Using Office UI Fabric JS" url="design/ui-elements/using-office-ui-fabric-js" SEODescription="Walks you through the basics for using Fabric JS."/>
       </Item>	
-    	<Item text="UX design patterns" url="design/ux-design-patterns" SEODescription="Use the UX design pattern templates for Office Add-ins to create UI extensions." />
+    	<Item text="Using Office UI Fabric JS" url="design/using-office-ui-fabric-js" SEODescription="Walks you through the basics for using Fabric JS."/>
+		<Item text="UX design patterns" url="design/ux-design-patterns" SEODescription="Use the UX design pattern templates for Office Add-ins to create UI extensions." />
 	<Item text="Add-in commands for Excel, Word, and PowerPoint" url="design/add-in-commands" SEODescription="Use add-in commands in your add-in to extend the default Office UI in Excel, Word, and PowerPoint."  />
   	<Item text="Design icons for add-in commands" url="design/design-icons" SEODescription="Design icons for add-in commands that integrate seamlessly with the Office UI." />
 	<Item text="Data visualization style guidelines" url="design/data-visualization-guidelines" SEODescription="Provides guidelines for data visualizations in Office Add-ins." />
@@ -151,5 +152,5 @@
   <Item text="Access" url="access" Scope="access">
     <Item text="Access web app add-ins" url="access/access-web-app-add-ins" SEOKeyword="Access add-ins" SEODescription="Create an Office Add-in that extends Access web apps with custom HTML and JavaScript." Scope="access" />
   </Item>
-  <Item text="JavaScript API reference" url="https://dev.office.com/reference/add-ins/javascript-api-for-office" IsExternal="true" />
+<Item text="JavaScript API reference" url="https://dev.office.com/reference/add-ins/javascript-api-for-office" IsExternal="true" />
 </Menu>

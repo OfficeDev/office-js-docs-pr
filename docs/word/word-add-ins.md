@@ -4,6 +4,8 @@ _Applies to: Word 2016, Word for iPad, Word for Mac_
 
 The Word JavaScript API is a part of the Office add-in programming model for extending Office applications. The add-in programming model uses web applications to host your extension to Word. You can now extend Word with any web platform or language that you prefer.
 
+> **Note**: If you are looking to develop for Word 2013 add-ins, you will need to use the shared [Office Javascript API]( https://dev.office.com/docs/add-ins/word/word-add-ins-programming-overview#javascript-apis-for-word). You can learn more about the platforms and the different APIs that are available [here](https://dev.office.com/add-in-availability). Unless called out that a topic applies to Word 2016, it should apply across different hosts.
+
 A Word add-in runs inside Word and can interact with the contents of the document using the Word JavaScript API that is available in Word 2016. Under the hood, there are two parts to create an add-in: 1) a web application that you can host anywhere, and 2) the [add-in manifest](../../docs/overview/add-in-manifests.md) that Word uses to discover where your web application is hosted (the manifest provides more than this, read more in the [programming overview](word-add-ins-programming-overview.md)).
 
 >**Word add-in = manifest.xml + web app**

@@ -12,7 +12,7 @@ You can use Office Add-ins to:
     
 **Office Add-ins run across multiple versions of Office** including Office for Windows Desktop, Office Online, Office for the Mac, and Office for the iPad.
 
->**Note:** When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
+>**Note:** When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in **must work across all platforms** that support the methods that you define (for more information, see [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
 
 
 For a high-level view of where Office Add-ins are currently supported, see the [Office Add-in host and platform availability](http://dev.office.com/add-in-availability) page. 
@@ -70,6 +70,8 @@ Clients that do not support add-in commands yet (Office 2013, Office for Mac, an
 ###Excel and PowerPoint add-ins that create new objects 
 
 Use a content add-in manifest to integrate **web-based objects that can be embedded inside documents**. Content add-ins let you integrate rich, web-based data visualizations, embedded media (such as a YouTube video player or a picture gallery), and other external content.
+
+>**Note:** Content add-ins do not currently support add-in commands.
 
 **Content add-in**
 
