@@ -202,7 +202,7 @@ This extension point puts buttons on the ribbon for the module extension.
 ### MobileMessageReadCommandSurface
 This extension point puts buttons in the command surface for the mail read view in the mobile form factor.
 
-> **Note:** This element type is only supported in Outlook for iPhone.
+> **Note:** This element type is only supported in Outlook for iOS.
 
 **Child elements**
 

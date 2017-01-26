@@ -1,6 +1,6 @@
 # Add support for add-in commands for Outlook Mobile
 
-> **Note**: Add-in commands for Outlook Mobile are currently only supported by Outlook for iPhone.
+> **Note**: Add-in commands for Outlook Mobile are currently only supported by Outlook for iOS.
 
 Using add-in commands in Outlook Mobile allows your users to access the same functionality (with some [limitations](#code-considerations)) that they already have in Outlook for Windows, Outlook for Mac, and Outlook on the web. Adding support for Outlook Mobile requires updating the add-in manifest and possibly changing your code for mobile scenarios.
 
