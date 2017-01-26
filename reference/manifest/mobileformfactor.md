@@ -1,8 +1,8 @@
 # MobileFormFactor element
 
-Specifies the settings for an add-in for the mobile form factor. It contains all the add-in information for the mobile form factor except for the  **Resources** node.
+Specifies the settings for an add-in for the mobile form factor. It contains all the add-in information for the mobile form factor except for the **Resources** node.
 
-> **Note:** The **MobileFormFactor** element is currently only supported by Outlook for iPhone.
+> **Note:** The **MobileFormFactor** element is currently only supported by Outlook for iOS.
 
 Each **MobileFormFactor** definition contains the  **FunctionFile** element and one or more **ExtensionPoint** elements. For more information, see [FunctionFile element](./functionfile.md) and [ExtensionPoint element](./extensionpoint.md).
 

@@ -17,7 +17,7 @@ The  **VersionOverrides** manifest entries specify many things for the add-in, s
 
 When an add-in needs to provide status updates, such as progress indicators or error messages, it must do so through the [notification APIs](../../reference/outlook/NotificationMessages.md). The processing for the notifications must also be defined in a separate HTML file that is specified in the  **FunctionFile** node of the manifest.
 
-Developers should define icons for all required sizes so that the add-in commands will adjust smoothly along with the ribbon. The required icon sizes are 80 x 80 pixels, 32 x 32 pixels, and 16 x 16 pixels.
+Developers should define icons for all required sizes so that the add-in commands will adjust smoothly along with the ribbon. The required icon sizes are 80 x 80 pixels, 32 x 32 pixels, and 16 x 16 pixels for desktop, and 48 x 48 pixels, 32 x 32 pixels, and 25 x 25 pixels for mobile.
 
 ## How do add-in commands appear?
 

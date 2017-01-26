@@ -15,7 +15,7 @@ There are two versions of the **VersionOverrides** schema.
 | Schema version | Description |
 |----------------|-------------|
 | 1.0 | Supports add-in commands for desktop versions of Office apps. | 
-| 1.1 | Adds support for [pinnable taskpanes](./pinnable-taskpane.md) and mobile add-ins. **Note:** Currently only supported by Outlook 2016 for Windows and Outlook for iPhone |
+| 1.1 | Adds support for [pinnable taskpanes](./pinnable-taskpane.md) and mobile add-ins. **Note:** Currently only supported by Outlook 2016 for Windows and Outlook for iOS |
 
 An add-in can support multiple versions of the **VersionOverrides** schema by nesting newer versions inside of the previous version. This allows clients to support the newer versions to take advantage of the new features, while allowing older clients to load the older version. For details, see [Implementing multiple versions](../../../reference/manifest/versionoverrides.md#implementing-multiple-versions).
 
