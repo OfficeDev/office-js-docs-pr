@@ -50,6 +50,7 @@ When defined in [VersionOverrides](./versionoverrides.md), the host type is dete
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](./desktopformfactor.md)    |  Yes   |  Defines the settings for the desktop form factor. |
+|  [MobileFormFactor](./mobileformfactor.md)    |  No   |  Defines the settings for the mobile form factor. **Note:** this element is only supported in Outlook for iPhone. |
 
 
 ### xsi:type
