@@ -24,11 +24,11 @@ Research questions define the objectives of your research and guide your test pl
  
 The following are some examples of research questions:
   
- **Specific**
+ **Specific**  
  - Do users notice the "free trial" link on the landing page?
  - When users insert content from the add-in to their document, do they understand where in the document it is inserted?
 
-**Broad**
+**Broad**  
  - What are the biggest pain points for the user in our add-in?
  - Do users understand the meaning of the icons in our command bar, before they click on them?
  - Can users easily find the settings menu?
@@ -65,14 +65,14 @@ Which of the following source code repositories are you familiar with?
 
 If you are planning to test a live build of your add-in, the following questions can screen for users who will be able to do this. 
 
-This test requires you to have Microsoft PowerPoint 2016. Do you have PowerPoint 2016?  
- a.	Yes [Must select]  
- b.	No [Reject]  
- c.	I don’t know [Reject]  
+   This test requires you to have Microsoft PowerPoint 2016. Do you have PowerPoint 2016?  
+   a.	Yes [Must select]  
+   b.	No [Reject]  
+   c.	I don’t know [Reject]  
 
-This test requires you to install a free add-in for PowerPoint 2016, and create a free account to use it. Are you willing to install an add-in and create a free account?  
- a.	Yes [Must select]  
- b.	No [Reject]  
+   This test requires you to install a free add-in for PowerPoint 2016, and create a free account to use it. Are you willing to install an add-in and create a free account?  
+    a.	Yes [Must select]  
+    b.	No [Reject]  
 
 For more information, see [Screener Questions Best Practices.](http://help.usertesting.com/customer/en/portal/articles/2077835-screener-question-best-practices)
  
