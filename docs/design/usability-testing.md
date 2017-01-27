@@ -3,9 +3,9 @@
 A great add-in design takes user behaviors into account. Because your own preconceptions influence your design decisions, it’s important to test designs with real users to make sure that your add-ins work well for your customers. 
 
 You can run usability tests in different ways. For many add-in developers, remote, unmoderated usability studies are the most time and cost effective. Several popular testing services make this easy; the following are some examples: 
- - [UserTesting.com](www.UserTesting.com)
- - [Optimalworkshop.com](www.Optimalworkshop.com)
- - [Userzoom.com](www.Userzoom.com)
+ - [UserTesting.com](https://www.UserTesting.com)
+ - [Optimalworkshop.com](https://www.Optimalworkshop.com)
+ - [Userzoom.com](https://www.Userzoom.com)
 
 Testing services help you to streamline test plan creation and remove the need to seek out participants or moderate the tests. 
 
@@ -55,30 +55,30 @@ The screener is the set of questions and requirements you will present to prospe
  
 For example, if you want to find participants who are familiar with GitHub, to filter out users who might misrepresent themselves, include fakes in the list of possible answers.
 
-Which of the following source code repositories are you familiar with?
-a.	SourceShelf  [Reject]
-b.	CodeContainer  [Reject]
- c.	GitHub  [Must select]
-d.	BitBucket  [May select]
-e.	CloudForge  [May select]
+Which of the following source code repositories are you familiar with?  
+a.	SourceShelf  [Reject]  
+b.	CodeContainer  [Reject]  
+c.	GitHub  [Must select]  
+d.	BitBucket  [May select]  
+e.	CloudForge  [May select]  
 
 
 If you are planning to test a live build of your add-in, the following questions can screen for users who will be able to do this. 
 
-This test requires you to have Microsoft PowerPoint 2016. Do you have PowerPoint 2016?
-a.	Yes [Must select]
-b.	No [Reject]
--c.	I don’t know [Reject]
+This test requires you to have Microsoft PowerPoint 2016. Do you have PowerPoint 2016?  
+a.	Yes [Must select]  
+b.	No [Reject]  
+c.	I don’t know [Reject]  
 
-This test requires you to install a free add-in for PowerPoint 2016, and create a free account to use it. Are you willing to install an add-in and create a free account?
-a.	Yes [Must select]
-b.	No [Reject]
+This test requires you to install a free add-in for PowerPoint 2016, and create a free account to use it. Are you willing to install an add-in and create a free account?  
+a.	Yes [Must select]  
+b.	No [Reject]  
 
 For more information, see [Screener Questions Best Practices.](http://help.usertesting.com/customer/en/portal/articles/2077835-screener-question-best-practices)
  
 ### 5.	Create tasks and questions for participants.
  
- Try to prioritize what you want tested so that you can limit the number of tasks and questions for the participant. Some services pay participants only for a set amount of time, so you want to make sure not to go over.
+Try to prioritize what you want tested so that you can limit the number of tasks and questions for the participant. Some services pay participants only for a set amount of time, so you want to make sure not to go over.
 
 Try to observe participant behaviors instead of asking about them, whenever possible. If you need to ask about behaviors, ask about what participants have done in the past, rather than what they would expect to do in a situation. This tends to give more reliable results.
  
@@ -105,7 +105,7 @@ On average, it takes about 5 minutes to walk users through how to install an add
 8. Take a moment to look at the Store page to familiarize yourself with the add-in.
 9. Choose **Add** to install the add-in.
 
-You can test a prototype at any level of interaction and visual fidelity. For more complex linking and interactivity, consider a prototyping tool like [InVision](www.invisionapp.com). If you just want to test static screens, you can host images online and send participants the corresponding URL, or give them a link to an online PowerPoint presentation. 
+You can test a prototype at any level of interaction and visual fidelity. For more complex linking and interactivity, consider a prototyping tool like [InVision](https://www.invisionapp.com). If you just want to test static screens, you can host images online and send participants the corresponding URL, or give them a link to an online PowerPoint presentation. 
 
 ### 7.	Run a pilot test.
 
@@ -126,6 +126,6 @@ In general, be careful about how you use your data to draw conclusions. Don’t 
 
 ## Additional resources
  
- - [How to Conduct Usability Testing](http://whatpixel.com/howto-conduct-usability-testing/) 
- - [Best Practices](http://help.usertesting.com/customer/en/portal/articles/1680726-best-practices) 
- - [Minimizing Bias](http://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)
+ - [How to Conduct Usability Testing](http://whatpixel.com/howto-conduct-usability-testing/)  
+ - [Best Practices](http://help.usertesting.com/customer/en/portal/articles/1680726-best-practices)  
+ - [Minimizing Bias](http://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)  
