@@ -7,7 +7,7 @@ You can run usability tests in different ways. For many add-in developers, remot
  - [Optimalworkshop.com](https://www.Optimalworkshop.com)
  - [Userzoom.com](https://www.Userzoom.com)
 
-Testing services help you to streamline test plan creation and remove the need to seek out participants or moderate the tests. 
+These testing services help you to streamline test plan creation and remove the need to seek out participants or moderate the tests. 
 
 You need only five participants to uncover most usability issues in your design. Incorporate small tests regularly throughout your development cycle to ensure that your product is user-centered.
 
@@ -23,7 +23,7 @@ For more information, see [Selecting an Online Tool for Unmoderated Remote User 
 Research questions define the objectives of your research and guide your test plan. Your questions will help you identify participants to recruit and the tasks they will perform. Make your research questions as specific as you can. You can also seek to answer broader questions.
  
 The following are some examples of research questions:
- 
+  
  **Specific**
  - Do users notice the "free trial" link on the landing page?
  - When users insert content from the add-in to their document, do they understand where in the document it is inserted?
@@ -56,23 +56,23 @@ The screener is the set of questions and requirements you will present to prospe
 For example, if you want to find participants who are familiar with GitHub, to filter out users who might misrepresent themselves, include fakes in the list of possible answers.
 
 Which of the following source code repositories are you familiar with?  
-a.	SourceShelf  [Reject]  
-b.	CodeContainer  [Reject]  
-c.	GitHub  [Must select]  
-d.	BitBucket  [May select]  
-e.	CloudForge  [May select]  
+ a.	SourceShelf  [Reject]  
+ b.	CodeContainer  [Reject]  
+ c.	GitHub  [Must select]  
+ d.	BitBucket  [May select]  
+ e.	CloudForge  [May select]  
 
 
 If you are planning to test a live build of your add-in, the following questions can screen for users who will be able to do this. 
 
 This test requires you to have Microsoft PowerPoint 2016. Do you have PowerPoint 2016?  
-a.	Yes [Must select]  
-b.	No [Reject]  
-c.	I don’t know [Reject]  
+ a.	Yes [Must select]  
+ b.	No [Reject]  
+ c.	I don’t know [Reject]  
 
 This test requires you to install a free add-in for PowerPoint 2016, and create a free account to use it. Are you willing to install an add-in and create a free account?  
-a.	Yes [Must select]  
-b.	No [Reject]  
+ a.	Yes [Must select]  
+ b.	No [Reject]  
 
 For more information, see [Screener Questions Best Practices.](http://help.usertesting.com/customer/en/portal/articles/2077835-screener-question-best-practices)
  
