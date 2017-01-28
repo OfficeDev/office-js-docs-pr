@@ -55,7 +55,7 @@ The screener is the set of questions and requirements you will present to prospe
  
 For example, if you want to find participants who are familiar with GitHub, to filter out users who might misrepresent themselves, include fakes in the list of possible answers.
 
-**Which of the following source code repositories are you familiar with?**
+**Which of the following source code repositories are you familiar with?**  
  a.	SourceShelf  [*Reject*]  
  b.	CodeContainer  [*Reject*]  
  c.	GitHub  [*Must select*]  
@@ -70,7 +70,7 @@ If you are planning to test a live build of your add-in, the following questions
    b.	No [*Reject*]  
    c.	I don’t know [*Reject*]  
 
-   **This test requires you to install a free add-in for PowerPoint 2016, and create a free account to use it. Are you willing to install an add-in and create a free account?**
+   **This test requires you to install a free add-in for PowerPoint 2016, and create a free account to use it. Are you willing to install an add-in and create a free account?**  
     a.	Yes [*Must select*]  
     b.	No [*Reject*]  
 
