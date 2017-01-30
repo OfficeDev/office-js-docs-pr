@@ -12,14 +12,11 @@ These testing services help you to streamline test plan creation and remove the 
 
 You need only five participants to uncover most usability issues in your design. Incorporate small tests regularly throughout your development cycle to ensure that your product is user-centered.
 
-
-## Set up a remote usability test
-
-### 1.	Sign up for a testing service.
+## 1.	Sign up for a testing service.
 
 For more information, see [Selecting an Online Tool for Unmoderated Remote User Testing.](https://www.nngroup.com/articles/unmoderated-user-testing-tools/)
 
-### 2.	Develop your research questions.
+## 2. Develop your research questions.
  
 Research questions define the objectives of your research and guide your test plan. Your questions will help you identify participants to recruit and the tasks they will perform. Make your research questions as specific as you can. You can also seek to answer broader questions.
  
@@ -48,11 +45,11 @@ It’s important to get data on the entire user journey – from discovering you
 
 For more information, see [Writing Effective Questions.](http://help.usertesting.com/customer/en/portal/articles/2077663-writing-effective-questions)
  
-### 3.	Identify participants to target.
+## 3. Identify participants to target.
  
 Remote testing services can give you control over many characteristics of your test participants. Think carefully about what kinds of users you want to target. In your early stages of data collection, it might be better to recruit a wide variety of participants to identify more obvious usability issues. Later, you might choose to target groups like advanced Office users, particular occupations, or specific age ranges.
  
-### 4.	Create the participant screener.
+## 4. Create the participant screener.
  
 The screener is the set of questions and requirements you will present to prospective test participants to screen them for your test. Keep in mind that participants for services like UserTesting.com have a financial interest in qualifying for your test. It's a good idea to include trick questions in your screener if you want to  exclude certain users from the test. 
  
@@ -79,7 +76,7 @@ If you are planning to test a live build of your add-in, the following questions
 
 For more information, see [Screener Questions Best Practices.](http://help.usertesting.com/customer/en/portal/articles/2077835-screener-question-best-practices)
  
-### 5.	Create tasks and questions for participants.
+## 5. Create tasks and questions for participants.
  
 Try to prioritize what you want tested so that you can limit the number of tasks and questions for the participant. Some services pay participants only for a set amount of time, so you want to make sure not to go over.
 
@@ -91,7 +88,7 @@ Don't assume that your user will be on the screen they’re supposed to be on at
 
 For more information, see [Writing Great Tasks.](http://help.usertesting.com/customer/en/portal/articles/2077824-writing-great-tasks)
 
-### 6.	Create a prototype to match the tasks and questions.
+## 6. Create a prototype to match the tasks and questions.
  
 You can either test your live add-in, or you can test a prototype. Keep in mind that if you want to test the live add-in, you need to screen for participants that have Office 2016, are willing to install the add-in, and are willing to sign up for an account (unless you have logon credentials to provide them.) You'll then need to make sure that they successfully install your add-in. 
 
@@ -110,15 +107,15 @@ On average, it takes about 5 minutes to walk users through how to install an add
 
 You can test a prototype at any level of interaction and visual fidelity. For more complex linking and interactivity, consider a prototyping tool like [InVision](https://www.invisionapp.com). If you just want to test static screens, you can host images online and send participants the corresponding URL, or give them a link to an online PowerPoint presentation. 
 
-### 7.	Run a pilot test.
+## 7. Run a pilot test.
 
 It can be tricky to get the prototype and your task/question list right. Users might be confused by tasks, or might get lost in your prototype. You should run a pilot test with 1-3 users to work out the inevitable issues with the test format. This will help to ensure that your questions are clear, that the prototype is set up correctly, and that you’re capturing the type of data you’re looking for.
 
-### 8.	Run the test.
+## 8. Run the test.
 
 After you order your test, you will get email notifications when participants complete it. Unless you’ve targeted a specific group of participants, the tests are usually completed within a few hours.
 
-### 9.	Analyze results.
+## 9. Analyze results.
 
 This is the part where you try to make sense of the data you’ve collected. While watching the test videos, record notes about problems and successes the user has. Avoid trying to interpret the meaning of the data until you have viewed all the results. 
 
