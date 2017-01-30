@@ -12,6 +12,8 @@ These testing services help you to streamline test plan creation and remove the 
 
 You need only five participants to uncover most usability issues in your design. Incorporate small tests regularly throughout your development cycle to ensure that your product is user-centered.
 
+> **Note:** We recommend that you test the usability of your add-in across multiple platforms. To [publish your add-in to the Office Store](https://msdn.microsoft.com/en-us/library/office/jj220037.aspx), it must work on all [platforms that support the methods that you define](https://dev.office.com/add-in-availability).
+
 ## 1.	Sign up for a testing service.
 
 For more information, see [Selecting an Online Tool for Unmoderated Remote User Testing.](https://www.nngroup.com/articles/unmoderated-user-testing-tools/)
