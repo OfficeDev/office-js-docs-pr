@@ -28,6 +28,8 @@ Provides access to the Outlook Add-in object model for Microsoft Outlook and Mic
 
 Gets the URL of the Exchange Web Services (EWS) endpoint for this email account. Read mode only.
 
+> **Note:** This member is not supported in Outlook for iOS or Outlook for Android.
+
 The `ewsUrl` value can be used by a remote service to make EWS calls to the user's mailbox. For example, you can create a remote service to [get attachments from the selected item](https://msdn.microsoft.com/EN-US/library/office/dn148008.aspx).
 
 Your app must have the **ReadItem** permission specified in its manifest to call the `ewsUrl` member in read mode.
@@ -51,6 +53,8 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item#save
 ####  convertToEwsId(itemId, restVersion) → {String}
 
 Converts an item ID formatted for REST into EWS format.
+
+> **Note:** This method is not supported in Outlook for iOS or Outlook for Android.
 
 Item IDs retrieved via a REST API (such as the [Outlook Mail API](https://msdn.microsoft.com/office/office365/APi/mail-rest-operations) or the [Microsoft Graph](http://graph.microsoft.io/)) use a different format than the format used by Exchange Web Services (EWS). The `convertToEwsId` method converts a REST-formatted ID into the proper format for EWS.
 
@@ -115,6 +119,8 @@ Type:
 ####  convertToRestId(itemId, restVersion) → {String}
 
 Converts an item ID formatted for EWS into REST format.
+
+> **Note:** This method is not supported in Outlook for iOS or Outlook for Android.
 
 Item IDs retrieved via EWS or via the `itemId` property use a different format than the format used by REST APIs (such as the [Outlook Mail API](https://msdn.microsoft.com/office/office365/APi/mail-rest-operations) or the [Microsoft Graph](http://graph.microsoft.io/)). The `convertToRestId` method converts an EWS-formatted ID into the proper format for REST.
 
@@ -185,6 +191,8 @@ A Date object with the time expressed in UTC.
 
 Displays an existing calendar appointment.
 
+> **Note:** This method is not supported in Outlook for iOS or Outlook for Android.
+
 The `displayAppointmentForm` method opens an existing calendar appointment in a new window on the desktop or in a dialog box on mobile devices.
 
 In Outlook for Mac, you can use this method to display a single appointment that is not part of a recurring series, or the master appointment of a recurring series, but you cannot display an instance of the series. This is because in Outlook for Mac, you cannot access the properties (including the item ID) of instances of a recurring series.
@@ -217,6 +225,8 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 
 Displays an existing message.
 
+> **Note:** This method is not supported in Outlook for iOS or Outlook for Android.
+
 The `displayMessageForm` method opens an existing message in a new window on the desktop or in a dialog box on mobile devices.
 
 In Outlook Web App, this method opens the specified form only if the body of the form is less than or equal to 32 KB number of characters.
@@ -248,6 +258,8 @@ Office.context.mailbox.displayMessageForm(messageId);
 #### displayNewAppointmentForm(parameters)
 
 Displays a form for creating a new calendar appointment.
+
+> **Note:** This method is not supported in Outlook for iOS or Outlook for Android.
 
 The `displayNewAppointmentForm` method opens a form that enables the user to create a new appointment or meeting. If parameters are specified, the appointment form fields are automatically populated with the contents of the parameters.
 
@@ -368,6 +380,8 @@ function cb(asyncResult) {
 ####  makeEwsRequestAsync(data, callback, [userContext])
 
 Makes an asynchronous request to an Exchange Web Services (EWS) service on the Exchange server that hosts the user’s mailbox.
+
+> **Note:** This method is not supported in Outlook for iOS or Outlook for Android.
 
 The `makeEwsRequestAsync` method sends an EWS request on behalf of the add-in to Exchange.
 
