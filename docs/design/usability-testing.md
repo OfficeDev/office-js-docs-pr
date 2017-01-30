@@ -3,6 +3,7 @@
 A great add-in design takes user behaviors into account. Because your own preconceptions influence your design decisions, it’s important to test designs with real users to make sure that your add-ins work well for your customers. 
 
 You can run usability tests in different ways. For many add-in developers, remote, unmoderated usability studies are the most time and cost effective. Several popular testing services make this easy; the following are some examples: 
+
  - [UserTesting.com](https://www.UserTesting.com)
  - [Optimalworkshop.com](https://www.Optimalworkshop.com)
  - [Userzoom.com](https://www.Userzoom.com)
@@ -25,10 +26,12 @@ Research questions define the objectives of your research and guide your test pl
 The following are some examples of research questions:
   
  **Specific**  
+
  - Do users notice the "free trial" link on the landing page?
  - When users insert content from the add-in to their document, do they understand where in the document it is inserted?
 
 **Broad**  
+
  - What are the biggest pain points for the user in our add-in?
  - Do users understand the meaning of the icons in our command bar, before they click on them?
  - Can users easily find the settings menu?
