@@ -77,11 +77,11 @@ Color usage is subtle in Outlook iOS.  To align, we ask that usage of color is l
 Since the navigation bar cannot be used to label a page, use section titles to label pages.
 
 ![Cell types for iOS](../../images/outlook-mobile-design-cell-types.png)
----
+* * *
 ![Cell 'dos' for iOS](../../images/outlook-mobile-design-cell-dos.png)
----
+* * *
 ![Cell 'don'ts' for iOS](../../images/outlook-mobile-design-cell-donts.png)
----
+* * *
 ![Cells and inputs for iOS](../../images/outlook-mobile-design-cell-input.png)
 
 ### Actions
@@ -89,7 +89,7 @@ Since the navigation bar cannot be used to label a page, use section titles to l
 Even if your app handles a multitude of actions, think about the most important ones you want you add-in to perform, and concentrate on those.
 
 ![Actions and cells in iOS](../../images/outlook-mobile-design-action-cells.png)
----
+* * *
 ![Actions 'dos' for iOS](../../images/outlook-mobile-design-action-dos.png)
 
 ### Buttons
@@ -127,9 +127,9 @@ For our v1 Outlook Mobile Add-ins launch, we worked closely with our partners wh
 ### Trello
 
 ![End-to-end design for the Trello add-in part 1](../../images/outlook-mobile-design-trello-1.png)
----
+* * *
 ![End-to-end design for the Trello add-in part 2](../../images/outlook-mobile-design-trello-2.png)
----
+* * *
 ![End-to-end design for the Trello add-in part 3](../../images/outlook-mobile-design-trello-3.png)
 
 ### Dynamics CRM
