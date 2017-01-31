@@ -261,6 +261,8 @@ If the add-in's requested permissions change, users will be prompted to upgrade 
 
 The  **VersionOverrides** element is the location of information for add-in commands. For more information on this element, see [Define add-in commands in your Outlook add-in manifest](../../outlook/manifests/define-add-in-commands.md).
 
+This element is also where add-ins define support for [mobile add-ins](./add-mobile-support.md).
+
 ## Localization
 
 Some aspects of the add-in need to be localized for different locales, such as the name, description and the URL that's loaded. These elements can easily be localized by specifying the default value and then locale overrides in the  **Resources** element within the **VersionOverrides** element. The following shows how to override an image, a URL, and a string:
@@ -395,6 +397,10 @@ For details and samples of activation rules, see [Activation rules for Outlook a
 After defining a basic manifest, [define add-in commands for your add-in](../../outlook/manifests/define-add-in-commands.md). Add-in commands present a button in the ribbon so users can activate your add-in in a simple, intuitive way. For more information, see [Add-in commands for Outlook](../../outlook/add-in-commands-for-outlook.md).
 
 For an example add-in that defines add-in commands, see [command-demo](https://github.com/jasonjoh/command-demo).
+
+## Next steps: Add mobile support
+
+Add-ins can optionally add support for Outlook mobile. Outlook mobile supports add-in commands in a similar fashion to Outlook on Windows and Mac. For more information, see [Add support for add-in commands for Outlook Mobile](./add-mobile-support.md).
 
 ## Additional resources
 
