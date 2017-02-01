@@ -112,7 +112,7 @@ Figure 1 shows a summary of the steps to verify whether Outlook has a valid vers
 
 
 
-1. If you have modified the manifest while Outlook is open, and you are not using Napa, Visual Studio 2012, or a later version of Visual Studio to develop the add-in, you should uninstall the add-in and reinstall it using the Exchange Admin Center. 
+1. If you have modified the manifest while Outlook is open, and you are not using Visual Studio 2012 or a later version of Visual Studio to develop the add-in, you should uninstall the add-in and reinstall it using the Exchange Admin Center. 
     
 2. Restart Outlook and test whether Outlook now activates the add-in.
     

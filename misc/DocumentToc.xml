@@ -9,7 +9,6 @@
   <Item text="Get started" url="get-started">
     <Item text="Use Visual Studio" url="get-started/create-and-debug-office-add-ins-in-visual-studio" SEODescription="Get started building an Office Add-in with Visual Studio" />
 	  <Item text="Use any editor" url="get-started/create-an-office-add-in-using-any-editor" SEODescription="Get started building Office Add-ins with any editor, on a Mac or Windows PC. " />
-    <Item text="Use Napa" url="get-started/create-an-office-add-in-with-napa" SEODescription="Get started with Office Add-ins by using Napa Office 365 Development Tools from your browser to create a basic content, task pane, or Outlook add-in for Excel, Outlook, PowerPoint, Project, or Word." />
   </Item>
   <Item text="Design" url="design/add-in-design">
       <Item text="UI Elements" url="design/ui-elements/ui-elements" SEODescription="Use add-in commands, Fabric UI, and custom HTML interfaces to make compelling add-in user interfaces.">
@@ -65,7 +64,7 @@
 	</Item>
   <Item text="Publish" url="publish/publish">
     <Item text="Host an Office Add-in on Microsoft Azure" url="publish/host-an-office-add-in-on-microsoft-azure" SEODescription="Use Visual Studio 2015 and the Microsoft Office Developer Tools to publish to and then host an Office Add-in on Microsoft Azure." />
-    <Item text="Package your add-in using Napa or Visual Studio" url="publish/package-your-add-in-using-napa-or-visual-studio" SEODescription="Package your Office Add-in to prepare it for publishing." />
+    <Item text="Package your add-in using Visual Studio" url="publish/package-your-add-in-using-visual-studio" SEODescription="Package your Office Add-in to prepare it for publishing." />
     <Item text="Publish task pane and content add-ins to an add-in catalog" url="publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog" SEODescription="Configure Office clients so your add-in is available from the Office Add-ins dialog box"  />
 	<Item text="Submit add-ins to the Office Store" url="https://msdn.microsoft.com/en-us/library/office/jj220037.aspx" IsExternal="true" />
   </Item>
