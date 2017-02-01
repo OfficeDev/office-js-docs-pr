@@ -222,5 +222,5 @@ Because we're focusing on how to publish to Azure, you won't make any changes to
 
 - [Publish your Office Add-in](../publish/publish.md)
     
-- [Package your add-in using Napa or Visual Studio to prepare for publishing](../publish/package-your-add-in-using-napa-or-visual-studio.md)
+- [Package your add-in using Visual Studio to prepare for publishing](../publish/package-your-add-in-using-visual-studio.md)
     
