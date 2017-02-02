@@ -46,4 +46,5 @@ Troubleshooting on mobile can be hard, since you may not have the tools you're u
 ## Next steps
 
 - Learn how to [add mobile support to your add-in's manifest](./manifests/add-mobile-support.md).
+- Learn how to [design a great mobile experience for your add-in](./outlook-addin-design.md).
 - Learn how to [get an access token and call Outlook REST APIs](./use-rest-api.md) from your add-in.
