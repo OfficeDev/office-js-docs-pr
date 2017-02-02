@@ -6,8 +6,10 @@ Defines a JavaScript function that executes an action or launches a task pane. A
 
 |  Attribute  |  Required  |  Description  |
 |:-----|:-----|:-----|
-|**xsi:type**|Yes|The type of control being defined. Can be either Button or Menu.|
+|**xsi:type**|Yes|The type of control being defined. Can be either `Button`, `Menu`, or `MobileButton`. |
 |**id**|No|The ID of the control element. Can be a maximum of 125 characters.|
+
+> **Note:** The `MobileButton` value for **xsi:type** is defined in VersionOverrides schema 1.1. It only applies to the **Control** elements contained within a [MobileFormFactor](./mobileformfactor.md) element.
 
 ## Button control
 
@@ -21,49 +23,6 @@ A button performs a single action when the user selects it. It can either execut
 |  [Supertip](./supertip.md)  | Yes |  The supertip for the button.    |
 |  [Icon](./icon.md)      | Yes |  An image for the button.         |
 |  [Action](./action.md)    | Yes |  Specifies the action to perform.  |
-
-
-
-```XML
-        <!-- Define a control that calls a JavaScript function. -->
-
-                 <Control xsi:type="Button" id="Button1Id1">
-                  <Label resid="residLabel" />
-                  <Tooltip resid="residToolTip" />
-                  <Supertip>
-                    <Title resid="residLabel" />
-                    <Description resid="residToolTip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon1_32x32" />
-                    <bt:Image size="32" resid="icon1_32x32" />
-                    <bt:Image size="80" resid="icon1_32x32" />
-                  </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>getData</FunctionName>
-                  </Action>
-                </Control>
-
-
-                <!-- Define a control that shows a task pane. -->
-
-                <Control xsi:type="Button" id="Button2Id1">
-                  <Label resid="residLabel2" />
-                  <Tooltip resid="residToolTip" />
-                  <Supertip>
-                    <Title resid="residLabel" />
-                    <Description resid="residToolTip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon2_32x32" />
-                    <bt:Image size="32" resid="icon2_32x32" />
-                    <bt:Image size="80" resid="icon2_32x32" />
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="residUnitConverterUrl" />
-                  </Action>
-                </Control>
-```
 
 ### ExecuteFunction button example
 
@@ -120,51 +79,51 @@ The following example shows how to define a menu item with two submenu items. Th
 
 ```xml
 <Control xsi:type="Menu" id="TestMenu2">
-              <Label resid="residLabel3" />
-              <Tooltip resid="residToolTip" />
-              <Supertip>
-                <Title resid="residLabel" />
-                <Description resid="residToolTip" />
-              </Supertip>
-              <Icon>
-                <bt:Image size="16" resid="icon1_32x32" />
-                <bt:Image size="32" resid="icon1_32x32" />
-                <bt:Image size="80" resid="icon1_32x32" />
-              </Icon>
-              <Items>
-                <Item id="showGallery2">
-                  <Label resid="residLabel3"/>
-                  <Supertip>
-                    <Title resid="residLabel" />
-                    <Description resid="residToolTip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon1_32x32" />
-                    <bt:Image size="32" resid="icon1_32x32" />
-                    <bt:Image size="80" resid="icon1_32x32" />
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <TaskpaneId>MyTaskPaneID1</TaskpaneId>
-                    <SourceLocation resid="residUnitConverterUrl" />
-                  </Action>
-                </Item>
-              <Item id="showGallery3">
-                  <Label resid="residLabel5"/>
-                  <Supertip>
-                    <Title resid="residLabel" />
-                    <Description resid="residToolTip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon4_32x32" />
-                    <bt:Image size="32" resid="icon4_32x32" />
-                    <bt:Image size="80" resid="icon4_32x32" />
-                  </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>getButton</FunctionName>
-                  </Action>
-                </Item>
-              </Items>
-            </Control>
+  <Label resid="residLabel3" />
+  <Tooltip resid="residToolTip" />
+  <Supertip>
+    <Title resid="residLabel" />
+    <Description resid="residToolTip" />
+  </Supertip>
+  <Icon>
+    <bt:Image size="16" resid="icon1_32x32" />
+    <bt:Image size="32" resid="icon1_32x32" />
+    <bt:Image size="80" resid="icon1_32x32" />
+  </Icon>
+  <Items>
+    <Item id="showGallery2">
+      <Label resid="residLabel3"/>
+      <Supertip>
+        <Title resid="residLabel" />
+        <Description resid="residToolTip" />
+      </Supertip>
+      <Icon>
+        <bt:Image size="16" resid="icon1_32x32" />
+        <bt:Image size="32" resid="icon1_32x32" />
+        <bt:Image size="80" resid="icon1_32x32" />
+      </Icon>
+      <Action xsi:type="ShowTaskpane">
+        <TaskpaneId>MyTaskPaneID1</TaskpaneId>
+        <SourceLocation resid="residUnitConverterUrl" />
+      </Action>
+    </Item>
+    <Item id="showGallery3">
+      <Label resid="residLabel5"/>
+      <Supertip>
+        <Title resid="residLabel" />
+        <Description resid="residToolTip" />
+      </Supertip>
+      <Icon>
+        <bt:Image size="16" resid="icon4_32x32" />
+        <bt:Image size="32" resid="icon4_32x32" />
+        <bt:Image size="80" resid="icon4_32x32" />
+      </Icon>
+      <Action xsi:type="ExecuteFunction">
+        <FunctionName>getButton</FunctionName>
+      </Action>
+    </Item>
+  </Items>
+</Control>
 
 ```
 
@@ -178,59 +137,57 @@ The following example shows how to define a menu item with two submenu items. Th
 |  [Icon](./icon.md)      | Yes |  An image for the button.         |
 |  [Items](#items)     | Yes |  A collection of Buttons to display within the menu. Contains the  **Item** elements for each submenu item. Each **Item** element contains the  child elements of the [Button control](#button-control).|
 
-
 ### Menu control examples
 
 ```xml
 <Control xsi:type="Menu" id="TestMenu2">
-              <Label resid="residLabel3" />
-              <Tooltip resid="residToolTip" />
-              <Supertip>
-                <Title resid="residLabel" />
-                <Description resid="residToolTip" />
-              </Supertip>
-              <Icon>
-                <bt:Image size="16" resid="icon1_32x32" />
-                <bt:Image size="32" resid="icon1_32x32" />
-                <bt:Image size="80" resid="icon1_32x32" />
-              </Icon>
-              <Items>
-                <Item id="showGallery2">
-                  <Label resid="residLabel3"/>
-                  <Supertip>
-                    <Title resid="residLabel" />
-                    <Description resid="residToolTip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon1_32x32" />
-                    <bt:Image size="32" resid="icon1_32x32" />
-                    <bt:Image size="80" resid="icon1_32x32" />
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <TaskpaneId>MyTaskPaneID1</TaskpaneId>
-                    <SourceLocation resid="residUnitConverterUrl" />
-                  </Action>
-                </Item>
-              <Item id="showGallery3">
-                  <Label resid="residLabel5"/>
-                  <Supertip>
-                    <Title resid="residLabel" />
-                    <Description resid="residToolTip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon4_32x32" />
-                    <bt:Image size="32" resid="icon4_32x32" />
-                    <bt:Image size="80" resid="icon4_32x32" />
-                  </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>getButton</FunctionName>
-                  </Action>
-                </Item>
-              </Items>
-            </Control>
+  <Label resid="residLabel3" />
+  <Tooltip resid="residToolTip" />
+  <Supertip>
+    <Title resid="residLabel" />
+    <Description resid="residToolTip" />
+  </Supertip>
+  <Icon>
+    <bt:Image size="16" resid="icon1_32x32" />
+    <bt:Image size="32" resid="icon1_32x32" />
+    <bt:Image size="80" resid="icon1_32x32" />
+  </Icon>
+  <Items>
+    <Item id="showGallery2">
+      <Label resid="residLabel3"/>
+      <Supertip>
+        <Title resid="residLabel" />
+        <Description resid="residToolTip" />
+      </Supertip>
+      <Icon>
+        <bt:Image size="16" resid="icon1_32x32" />
+        <bt:Image size="32" resid="icon1_32x32" />
+        <bt:Image size="80" resid="icon1_32x32" />
+      </Icon>
+      <Action xsi:type="ShowTaskpane">
+        <TaskpaneId>MyTaskPaneID1</TaskpaneId>
+        <SourceLocation resid="residUnitConverterUrl" />
+      </Action>
+    </Item>
+    <Item id="showGallery3">
+      <Label resid="residLabel5"/>
+      <Supertip>
+        <Title resid="residLabel" />
+        <Description resid="residToolTip" />
+      </Supertip>
+      <Icon>
+        <bt:Image size="16" resid="icon4_32x32" />
+        <bt:Image size="32" resid="icon4_32x32" />
+        <bt:Image size="80" resid="icon4_32x32" />
+      </Icon>
+      <Action xsi:type="ExecuteFunction">
+        <FunctionName>getButton</FunctionName>
+      </Action>
+    </Item>
+  </Items>
+</Control>
 
 ```
-
 
 ```xml
 <Control xsi:type="Menu" id="msgReadMenuButton">
@@ -261,5 +218,64 @@ The following example shows how to define a menu item with two submenu items. Th
       </Action>
     </Item>
   </Items>
+</Control>
+```
+
+## MobileButton control
+
+A mobile button performs a single action when the user selects it. It can either execute a function or show a task pane. Each mobile button control must have an `id` unique to the manifest.
+
+The `MobileButton` value for **xsi:type** is defined in VersionOverrides schema 1.1. The containing [VersionOverrides](./versionoverrides.md) element must have an `xsi:type` attribute value of `VersionOverridesV1_1`.
+
+> **Note**: **Control** elements of this type are only supported by Outlook for iOS.
+
+### Child elements
+|  Element |  Required  |  Description  |
+|:-----|:-----|:-----|
+|  **Label**     | Yes |  The text for the button. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the [ShortStrings](./resources.md#shortstrings) element in the [Resources](./resources.md)  element.        |
+|  [Icon](./icon.md)      | Yes |  An image for the button.         |
+|  [Action](./action.md)    | Yes |  Specifies the action to perform.  |
+
+### ExecuteFunction mobile button example
+
+```xml
+<Control xsi:type="MobileButton" id="msgReadFunctionButton">
+  <Label resid="funcReadButtonLabel" />
+  <Icon>
+    <bt:Image resid="blue-icon-16-1" size="25" scale="1" />
+    <bt:Image resid="blue-icon-16-2" size="25" scale="2" />
+    <bt:Image resid="blue-icon-16-3" size="25" scale="3" />
+    <bt:Image resid="blue-icon-32-1" size="32" scale="1" />
+    <bt:Image resid="blue-icon-32-2" size="32" scale="2" />
+    <bt:Image resid="blue-icon-32-3" size="32" scale="3" />
+    <bt:Image resid="blue-icon-80-1" size="48" scale="1" />
+    <bt:Image resid="blue-icon-80-2" size="48" scale="2" />
+    <bt:Image resid="blue-icon-80-3" size="48" scale="3" />
+  </Icon>
+  <Action xsi:type="ExecuteFunction">
+    <FunctionName>getSubject</FunctionName>
+  </Action>
+</Control>
+```
+
+### ShowTaskpane mobile button example
+
+```xml
+<Control xsi:type="MobileButton" id="msgReadOpenPaneButton">
+  <Label resid="paneReadButtonLabel" />
+  <Icon>
+    <bt:Image resid="blue-icon-16-1" size="25" scale="1" />
+    <bt:Image resid="blue-icon-16-2" size="25" scale="2" />
+    <bt:Image resid="blue-icon-16-3" size="25" scale="3" />
+    <bt:Image resid="blue-icon-32-1" size="32" scale="1" />
+    <bt:Image resid="blue-icon-32-2" size="32" scale="2" />
+    <bt:Image resid="blue-icon-32-3" size="32" scale="3" />
+    <bt:Image resid="blue-icon-80-1" size="48" scale="1" />
+    <bt:Image resid="blue-icon-80-2" size="48" scale="2" />
+    <bt:Image resid="blue-icon-80-3" size="48" scale="3" />
+  </Icon>
+  <Action xsi:type="ShowTaskpane">
+    <SourceLocation resid="readTaskPaneUrl" />
+  </Action>
 </Control>
 ```

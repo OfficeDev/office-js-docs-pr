@@ -47,9 +47,6 @@ To create an add-in, you can use a simple text editor to create an HTML webpage 
 
 For complex custom applications, and for easier debugging, we recommend that you use Visual Studio 2015 to develop websites for add-ins. Visual Studio 2015 include templates for add-in projects, where you can choose the kind of add-in (task pane, content, or mail) and the host application (Project, Word, Excel, or Outlook).  For an example that integrates with data from Project Online, see [Connecting a Project task pane add-in to PWA](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx) in the Project Programmability blog on MSDN.
 
-
- >**Note**  The Project 2013 release does not support Napa.
-
 When you install the Project 2013 SDK download, the  `\Samples\Apps\` subdirectory includes the following sample add-ins:
 
 
