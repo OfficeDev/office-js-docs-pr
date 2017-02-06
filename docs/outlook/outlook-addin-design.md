@@ -16,6 +16,8 @@ Add-ins are a great way for partners to extend the functionality of Outlook beyo
 
     Your add-in should be designed using patterns native to the platform that Outlook is running on. To achieve this, be sure to respect and implement the interaction and visual guidelines set forth by each platform. Outlook has its own guidelines and those are also important to consider. A well-designed add-in will be an appropriate blend of your experience, the platform, and Outlook.
 
+    This does mean that your add-in will have to visually be different when it runs on Outlook for iOS vs Outlook for Android (when we roll out support for it). We recommend taking a look at [Framework7](https://framework7.io/) as one option to help you with styling. We will be posting updated guidelines, especially for Android, as we get closer to launching add-in support for Outlook for Android.
+
 3. **Make it enjoyable to use and get the details right**
 
     People enjoy using products that are both functionally and visually appealing. You can help ensure the success of your add-in by crafting an experience where you've carefully considered every interaction and visual detail. The necessary steps to complete a task must be clear and relevant. Ideally, no action should be further than a click or two away. Try not to take a user out of context to complete an action. A user should easily be able to get in and out of your add-in and back to whatever she was doing before. An add-in is not meant to be a destination to spend a lot of time in – it is an enhancement to our core functionality. If done properly, your add-in will help us deliver on the goal of making people more productive.
