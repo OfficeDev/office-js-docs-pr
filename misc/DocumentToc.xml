@@ -87,7 +87,7 @@
   
   <Item text="Outlook" url="outlook/outlook-add-ins" SEODescription="Create Outlook add-ins in read or compose mode." Scope="outlook" >
     <Item text="Overview" url="outlook/overview" SEODescription="Learn about Outlook add-ins architecture and features." Scope="outlook" />
-    <Item text="Outlook Add-in Design Guidelines" url="outlook/outlook-addin-design" SEODescription="Learn about designing an Outlook add-in." Scope="outlook" />
+    <Item text="Outlook add-in design guidelines" url="outlook/outlook-addin-design" SEODescription="Learn about designing an Outlook add-in." Scope="outlook" />
     <Item text="Add-in commands for Outlook" url="outlook/add-in-commands-for-outlook"  SEODescription="Use add-in commands to integrate Outlook add-ins with the Outlook UI." Scope="outlook" />
     <Item text="Add-ins for Outlook Mobile" url="outlook/outlook-mobile-addins"  SEODescription="Learn about developing add-ins for Outlook Mobile." Scope="outlook" />
     <Item text="Contextual Outlook add-ins" url="outlook/contextual-outlook-add-ins"  SEODescription="Activate an Outlook add-in based on specified text in a message or appointment." Scope="outlook" />

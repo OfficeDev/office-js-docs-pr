@@ -1,6 +1,6 @@
 # Object Load Options (JavaScript API for Visio)
 
->**Note:** The Visio JavaScript APIs are not currently available for use in preview or production environments.
+>**Note:** The Visio JavaScript APIs are currently in preview and are subject to change. The Visio JavaScript APIs are not currently supported for use in production environments.
 
 Represents an object that can be passed to the load method to specify the set of properties and relations to be loaded upon execution of **sync()** method that synchronizes the states between Visio objects and corresponding JavaScript proxy objects. This takes in options such as select and expand parameters to specify a set of properties to be loaded on the object and also allows pagination on the collection.
 
