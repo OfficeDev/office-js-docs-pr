@@ -24,7 +24,7 @@ npm install -g yo generator-office
 
 ## Create the default files for your add-in
 
-The Yeoman generator runs in the directory where you want to scaffold the project. So, before you develop an Office Add-in, you should first create a folder for your project.
+The Yeoman generator runs in the directory where you want to scaffold the project. Before you develop an Office Add-in, you should first create a folder for your project.
 
 In Terminal, move to the parent folder where you want to create your project. Then use the following commands create a new folder named  _myHelloWorldaddin_ and shift the current directory to it:
 
@@ -65,7 +65,7 @@ This creates the structure and basic files for your add-in.
 
 ## Hosting your Office Add-in
 
-Office Add-ins must be hosted, even in development, via HTTPS. Yo Office creates a bsconfig.json, which uses Browsersync to make your tweaking and testing faster by synchronizing file changes across multiple devices. 
+Office Add-ins must be hosted, even in development, via HTTPS. Yo Office creates a bsconfig.json, which uses Browsersync to make it faster for you to tweak and test your add-in by synchronizing file changes across multiple devices. 
 
 Launch the local HTTPS site on https://localhost:3000 by typing the following command in your console:
 
@@ -74,12 +74,12 @@ Launch the local HTTPS site on https://localhost:3000 by typing the following co
 npm start
 ```
 
-Browsersync will start a HTTPS server, and launch the index.html file in your project. However, you will see an error saying You will see an error saying "There is a problem with this website's security certificate.".
+Browsersync will start a HTTPS server, and launch the index.html file in your project. You will see an error that states "There is a problem with this website's security certificate."
 
 
 ![Gif showing process to bypass error and see default index.html file](https://github.com/OfficeDev/generator-office/blob/master/src/docs/assets/ssl-chrome-bypass.gif)
 
-This error occurs because Browsersync includes a self-signed SSL cert that your development environment must trust. Refer to our docs on [adding self-signed certificates](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) for instructions on how to do this.
+This error occurs because Browsersync includes a self-signed SSL certificate that your development environment must trust. For information about how to resolve this error, see [adding self-signed certificates](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
 
 ## Sideload the add-in into Office
 
@@ -93,7 +93,7 @@ You can use sideloading to install your add-in for testing within the Office cli
 
 You can use any text editor to develop the files for your custom Office Add-in.
 
-> **Important:**  The manifest-myHelloWorldaddin.xml file tells the Office client applications how to interact with your add-in. The value in the  `<id>` tag is a GUID that Yo Office creates when it generates the project. Do not change the GUID for your add-in. If the host is Azure, the `SourceLocation` value will be a URL that is similar to _https:// [name-of-your-web-app].azurewebsites.net/[path-to-add-in]_. If you are using the self-hosted option, as in this example, it will be _https://localhost:3000/[path-to-add-in]_.
+> **Important:** The manifest-myHelloWorldaddin.xml file tells the Office client applications how to interact with your add-in. The value in the `<id>` tag is a GUID that Yo Office creates when it generates the project. Do not change the GUID for your add-in. If the host is Azure, the `SourceLocation` value will be a URL that is similar to _https:// [name-of-your-web-app].azurewebsites.net/[path-to-add-in]_. If you are using the self-hosted option, as in this example, it will be _https://localhost:3000/[path-to-add-in]_.
 
 
 ## Debug your Office Add-in
