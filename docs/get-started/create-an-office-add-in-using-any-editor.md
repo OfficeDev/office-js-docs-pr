@@ -6,16 +6,16 @@ You can use the Yeoman generator to your Office Add-in. The Yeoman generator pro
  >**Note:** These instructions use Terminal on a Mac, but you can also use other shell environments. 
 
 
-## Prerequisites for Yeoman generator
+## Prerequisites for the Yeoman generator
 
-To install the Yeoman Office generator, you must first have [Git](https://git-scm.com/downloads) and Node.js already installed on your machine. We recommend using [Node Version Manager](https://github.com/creationix/nvm) to install Node.js with the right permissions.
+To install the Yeoman Office generator, you must have [git](https://git-scm.com/downloads) and node.js installed on your computer. If you're on a Mac, we recommend that you use [Node Version Manager](https://github.com/creationix/nvm) to install node.js with the right permissions. If you're on Windows, you can install node.js from [nodejs.org](https://nodejs.org/en/).
 
->**Wait! If you are on Windows,** install Git using the defaults, except that you should choose the following options:
->- Use Git from the Windows Command Prompt
->- Use Windows' default console window
->Then you can install npm from [nodejs.org](https://nodejs.org/en/)
+>**Note:** If you're on Windows, use the default values when you install git, with the following exceptions:
 
-Install npm using the defaults. Then open Terminal and install the generator globally:
+>- Use git from the Windows command prompt
+>- Use the Windows default console window
+
+After you install node.js, open a Terminal and install the generator globally.
 
 ```
 npm install -g yo generator-office
