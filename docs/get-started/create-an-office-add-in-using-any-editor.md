@@ -54,7 +54,7 @@ The generator will prompt you for the following:
 - Add-in name -- use  _myHelloWorldaddin_ 
 - The supported Office application - you can choose any application
 - Create new add-in -- use _Yes, I want a new add-in._
-- Add [TypeScript]() -- use _N_
+- Add [TypeScript](https://www.typescriptlang.org/) -- use _N_
 - Choose framework -- use _Jquery_
 
 
