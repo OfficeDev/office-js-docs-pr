@@ -1,4 +1,4 @@
-﻿{
+/﻿{
     "Cat":  "Office Add-ins",
     "parentLink": "/docs/add-ins/overview/office-add-ins",
     "DropdownOptions": [
@@ -16,7 +16,7 @@
 
             "Title": "Submit to the Office Store",
             "URL": "/officestore/docs/submit-add-ins-and-web-apps-to-the-office-store",
-            "Index":  "/officestore/docs"
+            "Index":  "/officestore/docs/"
 
         }
         
