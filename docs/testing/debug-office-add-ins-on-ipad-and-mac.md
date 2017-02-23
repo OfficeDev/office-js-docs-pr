@@ -47,7 +47,7 @@ To debug an application using Vorlon.JS, you add a `<script>` tag to the opening
 
     >**Note:** If you are not prompted, you may need to trust the certificate manually. The certificate file is `/usr/local/lib/node_modules/vorlon/Server/cert/server.crt`. Try the following steps. If you have trouble, consult Macintosh or iPad help. 
     >
-    >1. Close the browser window and in the **Terminal** window that is running the vorlon server, use Control-C to stop the server, but leave the **Terminal** window open.
+    >1. Close the browser window and in the **Terminal** window that is running the vorlon server, use Control-C to stop the server.
     >2. In **Finder**, right-click the `server.crt` file and select **Keychain Access**. The **Keychain Access** window opens.
     >2. In the **Keychains** list on the left, select **login** if it is not already selected, and then select **Certificates** in the **Category** section. The certificate **localhost** is listed.
     >3. Right-click the certificate **localhost** and select **Get Info**. A **localhost** window opens.
