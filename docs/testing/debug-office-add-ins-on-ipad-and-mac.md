@@ -22,7 +22,7 @@ To debug an application using Vorlon.JS, you add a `<script>` tag to the opening
 
 5.	Choose the padlock icon in the lower right corner of the **Server info** window to unlock the folder.
 
-6. In the **Sharing and Permissions** section of the window, set the **Privilege** for the **staff** group to **Read & Write**. (If someone who is not an administrator of the device will be debugging add-ins on it, do the same thing for the **everyone** group.) 
+6. In the **Sharing and Permissions** section of the window, set the **Privilege** for the **staff** group to **Read & Write**.
 
 7. Choose the padlock icon again to ***relock*** the folder.
 
@@ -76,7 +76,7 @@ To debug an application using Vorlon.JS, you add a `<script>` tag to the opening
 
 7. Sideload the add-in. If it is for Excel, PowerPoint, or Word, sideload it as described in [Sideload an Office Add-in on iPad and Mac](https://dev.office.com/docs/add-ins/testing/sideload-an-office-add-in-on-ipad-and-mac). If it is an Outlook add-in, sideload it as described in [Sideload Outlook Add-ins for testing](https://dev.office.com/docs/add-ins/testing/sideload-outlook-add-ins-for-testing). If the add-in does not use add-in commands, it will open immediately. Otherwise, choose the button to open the add-in. Depending on the build of the Office host application, the button will be on either the **Home** tab or an **Add-in** tab.
 
-The add-in will show up in the list of Clients in Vorlon.JS (on the left side of the Vorlon.JS interface) as **Macintosh - n**, for some number *n*. 
+The add-in will show up in the list of Clients in Vorlon.JS (on the left side of the Vorlon.JS interface) as **{OS} - n**, for some number *n*, and where *{OS}* is the device type, such as "Macintosh". 
 
 ![Screenshot that shows the Vorlon.js interface](../../images/vorlon_interface.png)
 
@@ -88,4 +88,8 @@ An **Office Addin** plug-in adds extra capabilities for Office.js, such as explo
 
 ## Clearing the Office application's cache on a Mac or iPad
 
-Add-ins are cached often in Office for Mac, for performance reasons. Normally, the cache is cleared by reloading the add-in. If  more than one add-in exists in the same document, the process of automatically clearing the cache on reload might not be reliable. You can clear the cache manually by deleting everything in the `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/` folder.  
+Add-ins are cached often in Office for Mac, for performance reasons. Normally, the cache is cleared by reloading the add-in. If  more than one add-in exists in the same document, the process of automatically clearing the cache on reload might not be reliable. 
+
+On a Mac, you can clear the cache manually by deleting everything in the `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/` folder. 
+
+On an iPad, you can call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, you can reinstall Office.
