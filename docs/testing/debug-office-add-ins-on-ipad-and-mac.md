@@ -3,34 +3,89 @@
 
 You can use Visual Studio to develop and debug add-ins on Windows, but you can't use it to debug add-ins on the iPad or Mac. Because add-ins are developed using HTML and Javascript, they are designed to work across platforms, but there might be subtle differences in how different browsers render the HTML. This article describes how to debug add-ins running on an iPad or Mac. 
 
-## Debugging with Vorlon.js 
+## Debugging with Vorlon.JS 
 
-Vorlon.js is a debugger for web pages, similar to the F12 tools, that is designed to work remotely and allows you to debug web pages across different devices. For more information, see the [Vorlon website](http://www.vorlonjs.com).  
+Vorlon.JS is a debugger for web pages, similar to the F12 tools. It is designed to work remotely and it enables you to debug web pages across different devices. For more information, see the [Vorlon website](http://www.vorlonjs.com).  
 
-To install and set up up Vorlon: 
+### Install and set up up Vorlon.JS on a Mac or iPad: 
 
-1.	Install [Node.js](https://nodejs.org) and [Git](https://git-scm.com/) if you haven't already. 
+1.	Log into the device as an administrator.
 
-2.	Install Vorlon using git with the following command: `git clone https://github.com/MicrosoftDX/Vorlonjs.git`.
+2.	Install [Node.js](https://nodejs.org) if it isn't already installed. 
 
-3.	Install dependencies with `npm install`.
+2.	Open a **Terminal** window and enter the command `npm i -g vorlon`. The tool is installed to `/usr/local/lib/node_modules/vorlon`.
 
-4.	Add-ins require HTTPS, so by extension any scripts that they use must be HTTPS as well, including the Vorlon script. Therefore, you have to configure Vorlon to use SSL in order to use Vorlon with add-ins. Under the folder where you installed Vorlon, go to the /Server folder and edit the config.json file. Change the **useSSL** property to **true**. While you're there, you can also enable the plugin for Office Add-ins (change its "enabled" property to true). 
+### Configure Vorlon.JS to use HTTPS:
 
-5.	Run the Vorlon server with the command `sudo vorlon`. 
+To debug an application using Vorlon.JS, you add a `<script>` tag to the opening page of the application that loads a Vorlon.JS script from a well-known location. (Details are below.) Add-ins require the HTTPS protocol; that is, SSL; so by extension any scripts that they use must be hosted from an HTTPS server as well, including the Vorlon.JS script. Therefore, you have to configure Vorlon.JS to use SSL in order to use Vorlon.JS with add-ins. 
 
-6.	Open a browser window and go to [http://localhost:1337](http://localhost:1337), which is the Vorlon interface. When prompted, choose **Always** to trust the security certificate. You can also find the security certificate in the Vorlon folder under /Server/cert. 
+4.	In **Finder**, go to `/usr/local/lib/node_modules/vorlon`, right-click the `/Server` folder, and then select **Get Info**.
 
-7.	Add the following script tag to the `<head>` section of the home.html file (or main HTML file) of your add-in:
+5.	Click the padlock icon in the lower right corner of the **Server info** window to unlock the folder.
+
+6. In the **Sharing and Permissions** section of the window set the **Privilege** for the **staff** group to **Read & Write**. (If someone who is not an administrator of the device will be debugging add-ins on it, do the same thing for the **everyone** group.) 
+
+7. Click the padlock icon again to ***relock*** the folder.
+
+8. Back in **Finder**, expand the `/Server` subfolder, right-click the file `config.json`, and then select **Get Info**.
+
+9. In the **config.json info** window, change the privileges of the file exactly the way you did for it's parent `/Server` folder. Be sure to relock and close the window.
+
+10. Back in **Finder**, right-click the file `config.json`, and then select **Open with**, and then select **TextEdit**. The file opens in a text editor.
+
+11. Change the value of the **useSSL** property to `true`.
+
+12. In the **plugins** section, find the plugin with the **id** of `OFFICE` and the **name** of `Office Addin`. If the **enabled** property for the plug-in is not already `true`, set it to `true`.
+
+
+5.	In **Finder**, navigate to `/usr/local/lib/node_modules/vorlon`, right-click the `Server` subfolder, and select **New terminal at folder**. 
+	
+7.	In the **Terminal** window, enter `sudo vorlon`. You will be prompted to enter your administrator password. The Vorlon server starts. Leave the **Terminal** window open.
+
+6.	Open a browser window and go to `https://localhost:1337`, which is the Vorlon.JS interface. When prompted, choose **Always** to trust the security certificate. 
+
+    >**Note:** If you are not prompted, you may need to trust the certificate manually. The certificate file is `/usr/local/lib/node_modules/vorlon/Server/cert/server.crt`. Try the following steps. If you have trouble, consult Macintosh or iPad help. 
+    >
+    >1. Close the browser window and in the **Terminal** window that is running the vorlon server, use Control-C to stop the server, but leave the **Terminal** window open.
+    >2. In **Finder**, right-click the `server.crt` file and select **Keychain Access**. The **Keychain Access** window opens.
+    >2. In the **Keychains** list on the left, select **login** if it is not already selected, and then select **Certificates** in the **Category** section. The certificate **localhost** is listed.
+    >3. Right-click the certificate **localhost** and select **Get Info**. A **localhost** window opens.
+    >4. In the **Trust** section, open the selector labelled **When using this certificate** and select **Always Trust**. 
+    >5. Close the **localhost** window. If the action was successful, the **localhost** certificate in the **Keychain Access** window has a white cross in a blue circle on its icon.
+
+### Configure the add-in for Vorlon.JS debugging
+
+1. Add the following script tag to the `<head>` section of the home.html file (or main HTML file) of your add-in:
 ```    
 <script src="https://localhost:1337/vorlon.js"></script>    
 ```  
 
-Now, whenever you open the add-in on a device, it will show up in the list of Clients in Vorlon (on the left side of the Vorlon interface). You can remotely highlight DOM elements, remotely execute commands, and much more.  
+2. Deploy the add-in web application to a web server that is accessible from the Mac or iPad, such as an Azure web site. 
+
+3. Update the URL of the add-in in all the places where the URL appears in the add-in manifest.
+
+4. Copy the add-in manifest to the following folder on the Mac or iPad: `/Users/{your_name_on_the_device}/Library/Containers/com.microsoft.{host_name}/Data/Documents/wef`, where *{host_name}* is Word, Excel, PowerPoint, or Outlook.
+
+### Inspect an add-in in Vorlon.JS
+
+1. If the Vorlon server is not running, in **Finder**, navigate to `/usr/local/lib/node_modules/vorlon`, right-click the `Server` subfolder, and select **New terminal at folder**. 
+	
+7.	In the **Terminal** window, enter `sudo vorlon`. You will be prompted to enter your administrator password. The Vorlon server starts. Leave the **Terminal** window open.
+
+6.	Open a browser window and go to `https://localhost:1337`, which is the Vorlon.JS interface.
+
+7. Sideload the add-in. If it is for Excel, PowerPoint, or Word, sideload it as described in [Sideload an Office Add-in on iPad and Mac](https://dev.office.com/docs/add-ins/testing/sideload-an-office-add-in-on-ipad-and-mac). If it is an Outlook add-in, sideload it as described in [Sideload Outlook Add-ins for testing](https://dev.office.com/docs/add-ins/testing/sideload-outlook-add-ins-for-testing). If the add-in does not use Add-in Commands, it will open immediately. Otherwise, click the button to open the add-in. Depending on the build of the Office host application, the button will be on either the **Home** ribbon or an **Add-in** ribbon.
+
+The add-in will show up in the list of Clients in Vorlon.JS (on the left side of the Vorlon.JS interface) as **Macintosh - n**, for some number *n*. 
 
 ![Screenshot that shows the Vorlon.js interface](../../images/vorlon_interface.png)
 
-The Office plugin adds extra capabilities for Office.js, such as exploring the object model and executing Office.js calls. 
+The Vorlon tool has a variety of plug-ins. The ones that are currently enabled appear as tabs at the top of the tool. (You can enable more plugins by clicking the gears icon on the left.)These plugins are very similar to the functions in F12 tools. For example, you can highlight DOM elements, execute commands, and much more. For details on using these plugins, see [Vorlon Documentation Core Plugins](http://vorlonjs.com/documentation/#introduction) 
 
+There is also an **Office Addin** plugin adds extra capabilities for Office.js, such as exploring the object model, executing Office.js calls, and reading the values of object properties. For instructions on using the plugin, see [VorlonJS plugin for debugging Office Addin](https://blogs.msdn.microsoft.com/mim/2016/02/18/vorlonjs-plugin-for-debugging-office-addin/).
 
-> **Note:** Add-ins are cached often in Office for Mac, for performance reasons. If you need to force a reload of your add-in while you're developing it, you can clear the Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/ folder.  
+>**Note:** There is no way to set break points in Vorlon.JS.
+
+## Clearing the Office application's cache on a Mac or iPad
+
+Add-ins are cached often in Office for Mac, for performance reasons. Normally, the cache is cleared just by reloading the add-in. If there is more than one add-in in the same document, the process of automatically clearing the cache on reload may not be reliable. You can clear the cache manually by deleting everything in the `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/` folder.  
