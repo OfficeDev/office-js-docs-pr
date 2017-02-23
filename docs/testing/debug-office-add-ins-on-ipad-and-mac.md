@@ -37,6 +37,7 @@ To debug an application using Vorlon.JS, you add a `<script>` tag to the opening
 
 12. In the **plugins** section, find the plugin with the **id** of `OFFICE` and the **name** of `Office Addin`. If the **enabled** property for the plug-in is not already `true`, set it to `true`.
 
+13. Save the file and close the editor.
 
 5.	In **Finder**, navigate to `/usr/local/lib/node_modules/vorlon`, right-click the `Server` subfolder, and select **New terminal at folder**. 
 	
