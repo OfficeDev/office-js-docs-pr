@@ -9,9 +9,11 @@ Represents the Page class.
 
 | Property	   | Type	|Description| Feedback|
 |:---------------|:--------|:----------|:---|
+|height|int|Returns the height of the page. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-height)|
 |index|int|Index of the Page. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-index)|
 |isBackground|bool|Whether the page is a background page or not. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-isBackground)|
 |name|string|Page name. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-name)|
+|width|int|Returns the width of the page. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-width)|
 
 ## Relationships
 | Relationship | Type	|Description| Feedback|
