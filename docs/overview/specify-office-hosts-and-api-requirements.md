@@ -213,7 +213,7 @@ if (Office.context.document.setSelectedDataAsync)
 
 - [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md)
     
-- [Office add-in requirement sets](../../reference/office-add-in-requirement-sets.md)
+- [Office add-in requirement sets](../../reference/requirement-sets/office-add-in-requirement-sets.md)
     
 - [Word-Add-in-Get-Set-EditOpen-XML ](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)
     
