@@ -21,7 +21,7 @@ None
 |[add(name: string)](#addname-string)|[Worksheet](worksheet.md)|Adds a new worksheet to the workbook. The worksheet will be added at the end of existing worksheets. If you wish to activate the newly added worksheet, call ".activate() on it.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getActiveWorksheet()](#getactiveworksheet)|[Worksheet](worksheet.md)|Gets the currently active worksheet in the workbook.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItem(key: string)](#getitemkey-string)|[Worksheet](worksheet.md)|Gets a worksheet object using its Name or ID.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNull(key: string)](#getitemornullkey-string)|[Worksheet](worksheet.md)|Gets a worksheet object using its Name or ID. If the worksheet does not exist, the returned object's isNull property will be true.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(key: string)](#getitemornullkey-string)|[Worksheet](worksheet.md)|Gets a worksheet object using its Name or ID. If the worksheet does not exist, the returned object's isNull property will be true.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
