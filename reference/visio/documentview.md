@@ -1,18 +1,17 @@
 # DocumentView object (JavaScript API for Visio)
 
 Applies to: _Visio Online_
->**Note:** The Visio JavaScript APIs are currently in preview and are subject to change. The Visio JavaScript APIs are not currently supported for use in production environments.
 
 Represents the DocumentView class.
 
 ## Properties
 
-| Property	   | Type	|Description| Feedback|
-|:---------------|:--------|:----------|:---|
-|disableHyperlinks|bool|Disable Hyperlinks.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-disableHyperlinks)|
-|disablePan|bool|Disable Pan.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-disablePan)|
-|disableZoom|bool|Disable Zoom.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-disableZoom)|
-|hideDiagramBoundry|bool|Disable Hyperlinks.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-hideDiagramBoundry)|
+| Property	   | Type	|Description|
+|:---------------|:--------|:----------|
+|disableHyperlinks|bool|Disable Hyperlinks.|
+|disablePan|bool|Disable Pan.|
+|disableZoom|bool|Disable Zoom.|
+|hideDiagramBoundry|bool|Hide Diagram Boundry.|
 
 ## Relationships
 None
@@ -20,9 +19,9 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description| Feedback|
-|:---------------|:--------|:----------|:---|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-load)|
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 

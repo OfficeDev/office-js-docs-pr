@@ -1,7 +1,6 @@
 # Selection object (JavaScript API for Visio)
 
 Applies to: _Visio Online_
->**Note:** The Visio JavaScript APIs are currently in preview and are subject to change. The Visio JavaScript APIs are not currently supported for use in production environments.
 
 Represents the Selection in the page.
 
@@ -10,15 +9,15 @@ Represents the Selection in the page.
 None
 
 ## Relationships
-| Relationship | Type	|Description| Feedback|
-|:---------------|:--------|:----------|:---|
-|shapes|[ShapeCollection](shapecollection.md)|Gets the Shapes of the Selection Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-selection-shapes)|
+| Relationship | Type	|Description|
+|:---------------|:--------|:----------|
+|shapes|[ShapeCollection](shapecollection.md)|Gets the Shapes of the Selection Read-only.|
 
 ## Methods
 
-| Method		   | Return Type	|Description| Feedback|
-|:---------------|:--------|:----------|:---|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-selection-load)|
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 

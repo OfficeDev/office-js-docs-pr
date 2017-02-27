@@ -1,7 +1,6 @@
 # Document object (JavaScript API for Visio)
 
 Applies to: _Visio Online_
->**Note:** The Visio JavaScript APIs are currently in preview and are subject to change. The Visio JavaScript APIs are not currently supported for use in production environments.
 
 Represents the Document class.
 
@@ -10,20 +9,20 @@ Represents the Document class.
 None
 
 ## Relationships
-| Relationship | Type	|Description| Feedback|
-|:---------------|:--------|:----------|:---|
-|application|[Application](application.md)|Represents a Visio application instance that contains this document. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-application)|
-|pages|[PageCollection](pagecollection.md)|Represents a collection of pages associated with the document. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-pages)|
-|view|[DocumentView](documentview.md)|Returns the DocumentView object. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-view)|
+| Relationship | Type	|Description|
+|:---------------|:--------|:----------|
+|application|[Application](application.md)|Represents a Visio application instance that contains this document. Read-only.|
+|pages|[PageCollection](pagecollection.md)|Represents a collection of pages associated with the document. Read-only.|
+|view|[DocumentView](documentview.md)|Returns the DocumentView object. Read-only.|
 
 ## Methods
 
-| Method		   | Return Type	|Description| Feedback|
-|:---------------|:--------|:----------|:---|
-|[getActivePage()](#getactivepage)|[Page](page.md)|Returns the Active Page of the document.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-getActivePage)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-load)|
-|[setActivePage(PageName: string)](#setactivepagepagename-string)|void|Set the Active Page of the document.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-setActivePage)|
-|[startDataRefresh()](#startdatarefresh)|void|Triggers the refresh of the data in the Diagram, for all pages.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-startDataRefresh)|
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[getActivePage()](#getactivepage)|[Page](page.md)|Returns the Active Page of the document.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+|[setActivePage(PageName: string)](#setactivepagepagename-string)|void|Set the Active Page of the document.|
+|[startDataRefresh()](#startdatarefresh)|void|Triggers the refresh of the data in the Diagram, for all pages.|
 
 ## Method Details
 

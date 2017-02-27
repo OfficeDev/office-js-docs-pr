@@ -1,35 +1,35 @@
 # Shape object (JavaScript API for Visio)
 
 Applies to: _Visio Online_
->**Note:** The Visio JavaScript APIs are currently in preview and are subject to change. The Visio JavaScript APIs are not currently supported for use in production environments.
 
 Represents the Shape class.
 
 ## Properties
 
-| Property	   | Type	|Description| Feedback|
-|:---------------|:--------|:----------|:---|
-|id|int|Shape's Identifier. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-id)|
-|name|string|Shape's name. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-name)|
+| Property	   | Type	|Description|
+|:---------------|:--------|:----------|
+|id|int|Shape's Identifier. Read-only.|
+|name|string|Shape's name. Read-only.|
 |select|bool|Returns true, if shape is selected. User can set true to select the shape explicitly.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-select)|
-|text|string|Shape's Text. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-text)|
+|text|string|Shape's Text. Read-only.|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description| Feedback|
-|:---------------|:--------|:----------|:---|
-|hyperlinks|[HyperlinkCollection](hyperlinkcollection.md)|Returns the Hyperlinks collection for a Shape object. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-hyperlinks)|
-|shapeDataItems|[ShapeDataItemCollection](shapedataitemcollection.md)|Returns the Shape's Data Section. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-shapeDataItems)|
-|subShapes|[ShapeCollection](shapecollection.md)|Gets SubShape Collection. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-subShapes)|
-|view|[ShapeView](shapeview.md)|Returns the view of the shape. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-view)|
+| Relationship | Type	|Description|
+|:---------------|:--------|:----------|
+|comments|[CommentCollection](commentcollection.md)|Returns the Comments Collection. Read-only.|
+|hyperlinks|[HyperlinkCollection](hyperlinkcollection.md)|Returns the Hyperlinks collection for a Shape object. Read-only.|
+|shapeDataItems|[ShapeDataItemCollection](shapedataitemcollection.md)|Returns the Shape's Data Section. Read-only.|
+|subShapes|[ShapeCollection](shapecollection.md)|Gets SubShape Collection. Read-only.|
+|view|[ShapeView](shapeview.md)|Returns the view of the shape. Read-only.|
 
 ## Methods
 
-| Method		   | Return Type	|Description| Feedback|
-|:---------------|:--------|:----------|:---|
-|[getBounds()](#getbounds)|[BoundingBox](boundingbox.md)|Returns the BoundingBox object that specifies bounding box of the shape.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-getBounds)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-load)|
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[getBounds()](#getbounds)|[BoundingBox](boundingbox.md)|Returns the BoundingBox object that specifies bounding box of the shape.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 

@@ -1,15 +1,14 @@
 # ShapeCollection object (JavaScript API for Visio)
 
 Applies to: _Visio Online_
->**Note:** The Visio JavaScript APIs are currently in preview and are subject to change. The Visio JavaScript APIs are not currently supported for use in production environments.
 
 Represents the Shape Collection.
 
 ## Properties
 
-| Property	   | Type	|Description| Feedback|
-|:---------------|:--------|:----------|:---|
-|items|[Shape[]](shape.md)|A collection of shape objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeCollection-items)|
+| Property	   | Type	|Description|
+|:---------------|:--------|:----------|
+|items|[Shape[]](shape.md)|A collection of shape objects. Read-only.|
 
 ## Relationships
 None
@@ -17,11 +16,11 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description| Feedback|
-|:---------------|:--------|:----------|:---|
-|[getCount()](#getcount)|int|Gets the number of Shapes in the collection.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeCollection-getCount)|
-|[getItem(key: number or string)](#getitemkey-number-or-string)|[Shape](shape.md)|Gets a Shape using its key (name or Index).|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeCollection-getItem)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeCollection-load)|
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[getCount()](#getcount)|int|Gets the number of Shapes in the collection.|
+|[getItem(key: number or string)](#getitemkey-number-or-string)|[Shape](shape.md)|Gets a Shape using its key (name or Index).|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 

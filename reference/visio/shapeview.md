@@ -1,7 +1,6 @@
 # ShapeView object (JavaScript API for Visio)
 
 Applies to: _Visio Online_
->**Note:** The Visio JavaScript APIs are currently in preview and are subject to change. The Visio JavaScript APIs are not currently supported for use in production environments.
 
 Represents the ShapeView class.
 
@@ -10,17 +9,17 @@ Represents the ShapeView class.
 None
 
 ## Relationships
-| Relationship | Type	|Description| Feedback|
-|:---------------|:--------|:----------|:---|
-|highlight|[Highlight](highlight.md)|Represents the highlight around the shape.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeView-highlight)|
+| Relationship | Type	|Description|
+|:---------------|:--------|:----------|
+|highlight|[Highlight](highlight.md)|Represents the highlight around the shape.|
 
 ## Methods
 
-| Method		   | Return Type	|Description| Feedback|
-|:---------------|:--------|:----------|:---|
-|[addOverlay(OverlayType: OverlayType, Content: string, HorizontalAlignment: HorizontalAlignment, VerticalAlignment: VerticalAlignment, Width: number, Height: number)](#addoverlayoverlaytype-overlaytype-content-string-horizontalalignment-horizontalalignment-verticalalignment-verticalalignment-width-number-height-number)|int|Adds an overlay on top of the shape.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeView-addOverlay)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeView-load)|
-|[removeOverlay(OverlayId: number)](#removeoverlayoverlayid-number)|void|Removes particular overlay or all overlays on the Shape.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeView-removeOverlay)|
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[addOverlay(OverlayType: OverlayType, Content: string, HorizontalAlignment: HorizontalAlignment, VerticalAlignment: VerticalAlignment, Width: number, Height: number)](#addoverlayoverlaytype-overlaytype-content-string-horizontalalignment-horizontalalignment-verticalalignment-verticalalignment-width-number-height-number)|int|Adds an overlay on top of the shape.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+|[removeOverlay(OverlayId: number)](#removeoverlayoverlayid-number)|void|Removes particular overlay or all overlays on the Shape.|
 
 ## Method Details
 
