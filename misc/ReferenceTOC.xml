@@ -300,7 +300,7 @@
 		<Item text="LoadOption" url="visio/loadoption" /> 
 		<Item text="Page" url="visio/page" /> 
 		<Item text="PageCollection" url="visio/pagecollection" /> 
-		<Item text="PageLoadCompleteEventArgs" url="pageloadcompleteeventargs" />
+		<Item text="PageLoadCompleteEventArgs" url="visio/pageloadcompleteeventargs" />
 		<Item text="PageView" url="visio/pageview" /> 
 		<Item text="Position" url="visio/position" />
 		<Item text="Selection" url="visio/selection" />
