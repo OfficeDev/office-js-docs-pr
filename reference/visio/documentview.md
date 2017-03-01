@@ -1,16 +1,17 @@
-# Application object (JavaScript API for Visio)
+# DocumentView object (JavaScript API for Visio)
 
 Applies to: _Visio Online_
 
-Represents the Application.
+Represents the DocumentView class.
 
 ## Properties
 
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|showToolbars|bool|Show or Hide the standard toolbars.|
-
-_See property access [examples.](#property-access-examples)_
+|disableHyperlinks|bool|Disable Hyperlinks.|
+|disablePan|bool|Disable Pan.|
+|disableZoom|bool|Disable Zoom.|
+|hideDiagramBoundry|bool|Hide Diagram Boundry.|
 
 ## Relationships
 None
@@ -40,16 +41,3 @@ object.load(param);
 
 #### Returns
 void
-### Property access examples
-```js
-Visio.run(function (ctx) { 
-	var application = ctx.document.application;
-	application.showToolbars = false;
-	return ctx.sync();
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
-```

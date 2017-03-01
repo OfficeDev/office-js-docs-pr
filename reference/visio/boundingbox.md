@@ -1,14 +1,17 @@
-# Application object (JavaScript API for Visio)
+# BoundingBox object (JavaScript API for Visio)
 
 Applies to: _Visio Online_
 
-Represents the Application.
+Represents the BoundingBox of the shape.
 
 ## Properties
 
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|showToolbars|bool|Show or Hide the standard toolbars.|
+|height|int|The distance between the top and bottom edges of the bounding box of the shape, excluding any data graphics associated with the shape.|
+|width|int|The distance between the left and right edges of the bounding box of the shape, excluding any data graphics associated with the shape.|
+|x|int|An integer that specifies the x-coordinate of the bounding box.|
+|y|int|An integer that specifies the y-coordinate of the bounding box.|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -40,16 +43,3 @@ object.load(param);
 
 #### Returns
 void
-### Property access examples
-```js
-Visio.run(function (ctx) { 
-	var application = ctx.document.application;
-	application.showToolbars = false;
-	return ctx.sync();
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
-```

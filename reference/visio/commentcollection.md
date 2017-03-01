@@ -1,14 +1,14 @@
-# HyperlinkCollection object (JavaScript API for Visio)
+# CommentCollection Object (JavaScript API for Visio)
 
 Applies to: _Visio Online_
 
-Represents the Hyperlink Collection.
+Represents the CommentCollection for a given Shape.
 
 ## Properties
 
-| Property	   | Type	|Description|
+| Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|items|[Hyperlink[]](hyperlink.md)|A collection of hyperlink objects. Read-only.|
+|items|[Comment[]](comment.md)|A collection of comment objects. Read-only.|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -20,19 +20,19 @@ None
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[getCount()](#getcount)|int|Gets the number of hyperlinks.|
-|[getItem(Key: number or string)](#getitemkey-number-or-string)|[Hyperlink](hyperlink.md)|Gets a Hyperlink using its key (name or Id).|
+|[getCount()](#getcount)|int|Gets the number of Comments.|
+|[getItem(key: string)](#getitemkey-string)|[Comment](comment.md)|Gets the Comment using its name.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 
 
 ### getCount()
-Gets the number of hyperlinks.
+Gets the number of Comments.
 
 #### Syntax
 ```js
-hyperlinkCollectionObject.getCount();
+CommentCollectionObject.getCount();
 ```
 
 #### Parameters
@@ -41,21 +41,21 @@ None
 #### Returns
 int
 
-### getItem(Key: number or string)
-Gets a Hyperlink using its key (name or Id).
+### getItem(key: string)
+Gets the Comment using its name.
 
 #### Syntax
 ```js
-hyperlinkCollectionObject.getItem(Key);
+CommentCollectionObject.getItem(key);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|Key|number or string|Key is the name or index of the Hyperlink to be retrieved.|
+|:---------------|:--------|:----------|
+|key|string|Key is the name of the Comment to be retrieved.|
 
 #### Returns
-[Hyperlink](hyperlink.md)
+[Comment](comment.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -67,27 +67,28 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
 ### Property access examples
 ```js
-Visio.run(function (ctx) { 
+ Visio.run(function (ctx) { 
 	var activePage = ctx.document.getActivePage();
-	var shapeName = "Manager Belt";
+	var shapeName = "Position Belt.41";
 	var shape = activePage.shapes.getItem(shapeName);
-	var hyperlinks = shape.hyperlinks;
-	shapeHyperlinks.load();
-		ctx.sync().then(function () {
-			for(var i=0; i<shapeHyperlinks.items.length;i++)
-				{
-				  var hyperlink = shapeHyperlinks.items[i];
-				  console.log("Description:"+hyperlink.description +"Address:"+hyperlink.address +"SubAddress:  "+ hyperlink.subAddress);
-				}
-
-			});
+	var shapecomments= shape.comments;
+        shapecomments.load();
+        return ctx.sync().then(function () {
+       	  for(var i=0; i<shapecomments.items.length;i++)
+		{
+       	    	 var comment= shapecomments.items[i];
+	   	 console.log("comment Author: " + comment.author);
+	   	 console.log("Comment Text: " + comment.text);
+	 	   console.log("Date " + comment.date);
+		}
+	 });
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {

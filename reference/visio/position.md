@@ -1,14 +1,15 @@
-# Application object (JavaScript API for Visio)
+# Position object (JavaScript API for Visio)
 
 Applies to: _Visio Online_
 
-Represents the Application.
+Represents the Position of the object in the view.
 
 ## Properties
 
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|showToolbars|bool|Show or Hide the standard toolbars.|
+|x|int|An integer that specifies the x-coordinate of the object, which is the signed value of the distance in pixels from the viewport's center to the left boundary of the page.|
+|y|int|An integer that specifies the y-coordinate of the object, which is the signed value of the distance in pixels from the viewport's center to the top boundary of the page.|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -40,16 +41,3 @@ object.load(param);
 
 #### Returns
 void
-### Property access examples
-```js
-Visio.run(function (ctx) { 
-	var application = ctx.document.application;
-	application.showToolbars = false;
-	return ctx.sync();
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
-```

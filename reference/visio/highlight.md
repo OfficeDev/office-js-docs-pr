@@ -1,14 +1,15 @@
-# Application object (JavaScript API for Visio)
+# Highlight object (JavaScript API for Visio)
 
 Applies to: _Visio Online_
 
-Represents the Application.
+Represents the highlight data added to the shape.
 
 ## Properties
 
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|showToolbars|bool|Show or Hide the standard toolbars.|
+|color|string|A string that specifies the color of the highlight. It must have the form "#RRGGBB", where each letter represents a hexadecimal digit between 0 and F, and where RR is the red value between 0 and 0xFF (255), GG the green value between 0 and 0xFF (255), and BB is the blue value between 0 and 0xFF (255).|
+|width|int|A positive integer that specifies the width of the highlight's stroke in pixels.|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -43,8 +44,9 @@ void
 ### Property access examples
 ```js
 Visio.run(function (ctx) { 
-	var application = ctx.document.application;
-	application.showToolbars = false;
+	var activePage = ctx.document.getActivePage();
+	var shape = activePage.shapes.getItem(0);
+	shape.view.highlight = { color: "#E7E7E7", width: 100 };
 	return ctx.sync();
 }).catch(function(error) {
 		console.log("Error: " + error);
