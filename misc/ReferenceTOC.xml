@@ -289,6 +289,7 @@
 	<Item text="Visio" url="visio/visio-javascript-reference-overview" Scope="visio"> 
 		<Item text="Application" url="visio/application" SEODescription="Visio JavaScript API reference." /> 
 		<Item text="Document" url="visio/document" SEODescription="Visio JavaScript API reference." /> 
+		<Item text="Highlight" url="visio/highlight" />
 		<Item text="Hyperlink" url="visio/hyperlink" SEODescription="Visio JavaScript API reference." /> 
 		<Item text="HyperlinkCollection" url="visio/hyperlinkcollection" SEODescription="Visio JavaScript API reference." /> 
 		<Item text="LoadOption" url="visio/loadoption" SEODescription="Visio JavaScript API reference." /> 
