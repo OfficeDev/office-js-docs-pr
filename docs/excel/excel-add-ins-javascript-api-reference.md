@@ -4,7 +4,7 @@ You can use the Excel JavaScript API to build add-ins for Excel 2016. The follow
 
 * [Workbook](../../reference/excel/workbook.md): The top-level object that contains related workbook objects such as worksheets, tables, ranges, etc. It also can be used to list related references.
 * [Worksheet](../../reference/excel/worksheet.md): A member of the Worksheets collection. The Worksheets collection contains all the Worksheet objects in a workbook.
-	* [Worksheet Collection](../../reference/excel/worksheetcollection.md): A collection of all the Workbook objects that are part of the workbook.
+	* [Worksheet Collection](../../reference/excel/worksheetcollection.md): A collection of all the Worksheet objects that are part of the workbook.
 * [Range](../../reference/excel/range.md): Represents a cell, a row, a column, or a selection of cells containing one or more contiguous blocks of cells.
 * [Table](../../reference/excel/table.md): Represents a collection of organized cells designed to make management of the data easy.
 	* [Table Collection](../../reference/excel/tablecollection.md): A collection of tables in a workbook or worksheet.
