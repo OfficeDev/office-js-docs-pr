@@ -1,7 +1,7 @@
 
 # Publish task pane and content add-ins to a SharePoint catalog
 
->**Note:** Add-in catalogs on SharePoint do not support add-in features that are implemented in the VersionOverrides node of the [add-in manifest](../overview/add-in-manifests.md), such as add-in commands. 
+>**Important!** Add-in catalogs on SharePoint do not support add-in features that are implemented in the VersionOverrides node of the [add-in manifest](../overview/add-in-manifests.md), such as add-in commands. 
 
 >If you’re targeting a cloud or hybrid environment, we recommend that you use **centralized deployment** via the [Admin Center preview](https://support.office.com/en-ie/article/Deploy-Office-Add-ins-in-the-Office-365-new-Admin-Center-737e8c86-be63-44d7-bf02-492fa7cd9c3f?ui=en-US&rs=en-IE&ad=IE) to publish your add-ins.
 
