@@ -1,6 +1,6 @@
-# NamedItemCollection object (JavaScript API for Excel)
+# NamedItemCollection Object (JavaScript API for Excel)
 
-A collection of all the nameditem objects that are part of the workbook.
+A collection of all the nameditem objects that are part of the workbook or worksheet, depending on how it was reached.
 
 ## Properties
 
@@ -18,12 +18,64 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|[add(name: string, reference: Range or string, comment: string)](#addname-string-reference-range-or-string-comment-string)|[NamedItem](nameditem.md)|Adds a new name to the collection of the given scope.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[addFormulaLocal(name: string, formula: string, comment: string)](#addformulalocalname-string-formula-string-comment-string)|[NamedItem](nameditem.md)|Adds a new name to the collection of the given scope using the user's locale for the formula.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|Gets the number of named items in the collection.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItem(name: string)](#getitemname-string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNull(name: string)](#getitemornullname-string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name. If the nameditem object does not exist, the returned object's isNull property will be true.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(name: string)](#getitemornullobjectname-string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name. If the nameditem object does not exist, will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
+
+### add(name: string, reference: Range or string, comment: string)
+Adds a new name to the collection of the given scope.
+
+#### Syntax
+```js
+namedItemCollectionObject.add(name, reference, comment);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|name|string|The name of the named item.|
+|reference|Range or string|The formula or the range that the name will refer to.|
+|comment|string|Optional. The comment associated with the named item|
+
+#### Returns
+[NamedItem](nameditem.md)
+
+### addFormulaLocal(name: string, formula: string, comment: string)
+Adds a new name to the collection of the given scope using the user's locale for the formula.
+
+#### Syntax
+```js
+namedItemCollectionObject.addFormulaLocal(name, formula, comment);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|name|string|The "name" of the named item.|
+|formula|string|The formula in the user's locale that the name will refer to.|
+|comment|string|Optional. The comment associated with the named item|
+
+#### Returns
+[NamedItem](nameditem.md)
+
+### getCount()
+Gets the number of named items in the collection.
+
+#### Syntax
+```js
+namedItemCollectionObject.getCount();
+```
+
+#### Parameters
+None
+
+#### Returns
+int
 
 ### getItem(name: string)
 Gets a nameditem object using its name
@@ -58,12 +110,12 @@ Excel.run(function (ctx) {
 		}
 });
 ```
-### getItemOrNull(name: string)
-Gets a nameditem object using its name. If the nameditem object does not exist, the returned object's isNull property will be true.
+### getItemOrNullObject(name: string)
+Gets a nameditem object using its name. If the nameditem object does not exist, will return a null object.
 
 #### Syntax
 ```js
-namedItemCollectionObject.getItemOrNull(name);
+namedItemCollectionObject.getItemOrNullObject(name);
 ```
 
 #### Parameters
@@ -73,22 +125,6 @@ namedItemCollectionObject.getItemOrNull(name);
 
 #### Returns
 [NamedItem](nameditem.md)
-
-### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
-
-#### Syntax
-```js
-object.load(param);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
-
-#### Returns
-void
 ### Property access examples
 
 ```js

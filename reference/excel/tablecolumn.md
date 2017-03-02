@@ -1,4 +1,4 @@
-# TableColumn object (JavaScript API for Excel)
+# TableColumn Object (JavaScript API for Excel)
 
 Represents a column in a table.
 
@@ -8,7 +8,7 @@ Represents a column in a table.
 |:---------------|:--------|:----------|:----|
 |id|int|Returns a unique key that identifies the column within the table. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |index|int|Returns the index number of the column within the columns collection of the table. Zero-indexed. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|name|string|Returns the name of the table column. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|name|string|Represents the name of the table column.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
@@ -27,7 +27,6 @@ _See property access [examples.](#property-access-examples)_
 |[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|Gets the range object associated with the header row of the column.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRange()](#getrange)|[Range](range.md)|Gets the range object associated with the entire column.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Gets the range object associated with the totals row of the column.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -196,22 +195,6 @@ Excel.run(function (ctx) {
 });
 ```
 
-
-### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
-
-#### Syntax
-```js
-object.load(param);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
-
-#### Returns
-void
 ### Property access examples
 
 ```js

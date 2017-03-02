@@ -1,4 +1,4 @@
-# WorksheetProtection object (JavaScript API for Excel)
+# WorksheetProtection Object (JavaScript API for Excel)
 
 Represents the protection of a sheet object.
 
@@ -11,34 +11,17 @@ Represents the protection of a sheet object.
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|options|[WorksheetProtectionOptions](worksheetprotectionoptions.md)|Sheet protection options. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|options|[WorksheetProtectionOptions](worksheetprotectionoptions.md)|Sheet protection options. Read-Only. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[protect(options: WorksheetProtectionOptions)](#protectoptions-worksheetprotectionoptions)|void|Protects a worksheet. Fails if the worksheet has been protected.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[unprotect()](#unprotect)|void|Unprotects a worksheet.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
-
-### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
-
-#### Syntax
-```js
-object.load(param);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
-
-#### Returns
-void
 
 ### protect(options: WorksheetProtectionOptions)
 Protects a worksheet. Fails if the worksheet has been protected.

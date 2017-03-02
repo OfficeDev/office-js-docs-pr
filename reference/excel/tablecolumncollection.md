@@ -1,4 +1,4 @@
-# TableColumnCollection object (JavaScript API for Excel)
+# TableColumnCollection Object (JavaScript API for Excel)
 
 Represents a collection of all the columns that are part of the table.
 
@@ -19,21 +19,21 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(index: number, values: (boolean or string or number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableColumn](tablecolumn.md)|Adds a new column to the table.|[1.1, 1.1 requires an index smaller than the total column count; 1.4 allows index to be optional (null or -1](../requirement-sets/excel-api-requirement-sets.md)|
+|[add(index: number, values: (boolean or string or number)[][], name: string)](#addindex-number-values-boolean-or-string-or-number-name-string)|[TableColumn](tablecolumn.md)|Adds a new column to the table.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|Gets the number of columns in the table.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItem(key: number or string)](#getitemkey-number-or-string)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[TableColumn](tablecolumn.md)|Gets a column based on its position in the collection.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNull(key: number or string)](#getitemornullkey-number-or-string)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID. If the column does not exist, the returned object's isNull property will be true.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(key: number or string)](#getitemornullobjectkey-number-or-string)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID. If the column does not exist, will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
 
-### add(index: number, values: (boolean or string or number)[][])
+### add(index: number, values: (boolean or string or number)[][], name: string)
 Adds a new column to the table.
 
 #### Syntax
 ```js
-tableColumnCollectionObject.add(index, values);
+tableColumnCollectionObject.add(index, values, name);
 ```
 
 #### Parameters
@@ -41,6 +41,7 @@ tableColumnCollectionObject.add(index, values);
 |:---------------|:--------|:----------|:---|
 |index|number|Optional. Specifies the relative position of the new column. If null or -1, the addition happens at the end. Columns with a higher index will be shifted to the side. Zero-indexed.|
 |values|(boolean or string or number)[][]|Optional. A 2-dimensional array of unformatted values of the table column.|
+|name|string|Optional. Specifies the name of the new column. If null, the default name will be used.|
 
 #### Returns
 [TableColumn](tablecolumn.md)
@@ -64,6 +65,20 @@ Excel.run(function (ctx) {
 });
 ```
 
+
+### getCount()
+Gets the number of columns in the table.
+
+#### Syntax
+```js
+tableColumnCollectionObject.getCount();
+```
+
+#### Parameters
+None
+
+#### Returns
+int
 
 ### getItem(key: number or string)
 Gets a column object by Name or ID.
@@ -147,12 +162,12 @@ Excel.run(function (ctx) {
 });
 ```
 
-### getItemOrNull(key: number or string)
-Gets a column object by Name or ID. If the column does not exist, the returned object's isNull property will be true.
+### getItemOrNullObject(key: number or string)
+Gets a column object by Name or ID. If the column does not exist, will return a null object.
 
 #### Syntax
 ```js
-tableColumnCollectionObject.getItemOrNull(key);
+tableColumnCollectionObject.getItemOrNullObject(key);
 ```
 
 #### Parameters
@@ -162,22 +177,6 @@ tableColumnCollectionObject.getItemOrNull(key);
 
 #### Returns
 [TableColumn](tablecolumn.md)
-
-### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
-
-#### Syntax
-```js
-object.load(param);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
-
-#### Returns
-void
 ### Property access examples
 
 ```js

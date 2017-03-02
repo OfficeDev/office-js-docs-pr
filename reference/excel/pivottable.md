@@ -1,4 +1,4 @@
-# PivotTable object (JavaScript API for Excel)
+# PivotTable Object (JavaScript API for Excel)
 
 Represents an Excel PivotTable.
 
@@ -19,27 +19,10 @@ _See property access [examples.](#property-access-examples)_
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[refresh()](#refresh)|void|Refreshes the PivotTable.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
-
-### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
-
-#### Syntax
-```js
-object.load(param);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
-
-#### Returns
-void
 
 ### refresh()
 Refreshes the PivotTable.
