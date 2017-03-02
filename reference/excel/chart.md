@@ -1,4 +1,4 @@
-# Chart object (JavaScript API for Excel)
+# Chart Object (JavaScript API for Excel)
 
 Represents a chart object in a workbook.
 
@@ -32,7 +32,6 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|:----|
 |[delete()](#delete)|void|Deletes the chart object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getImage(height: number, width: number, fittingMode: string)](#getimageheight-number-width-number-fittingmode-string)|[System.IO.Stream](system.io.stream.md)|Renders the chart as a base64-encoded image by scaling the chart to fit the specified dimensions.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[setData(sourceData: Range, seriesBy: string)](#setdatasourcedata-range-seriesby-string)|void|Resets the source data for the chart.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[setPosition(startCell: Range or string, endCell: Range or string)](#setpositionstartcell-range-or-string-endcell-range-or-string)|void|Positions the chart relative to cells on the worksheet.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
@@ -102,22 +101,6 @@ Excel.run(function (ctx) {
 
 
 
-
-### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
-
-#### Syntax
-```js
-object.load(param);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
-
-#### Returns
-void
 
 ### setData(sourceData: Range, seriesBy: string)
 Resets the source data for the chart.

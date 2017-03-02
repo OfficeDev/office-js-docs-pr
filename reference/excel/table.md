@@ -1,4 +1,4 @@
-# Table object (JavaScript API for Excel)
+# Table Object (JavaScript API for Excel)
 
 Represents an Excel table.
 
@@ -38,7 +38,6 @@ _See property access [examples.](#property-access-examples)_
 |[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|Gets the range object associated with header row of the table.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRange()](#getrange)|[Range](range.md)|Gets the range object associated with the entire table.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Gets the range object associated with totals row of the table.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[reapplyFilters()](#reapplyfilters)|void|Reapplies all the filters currently on the table.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
@@ -247,22 +246,6 @@ Excel.run(function (ctx) {
 });
 ```
 
-
-### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
-
-#### Syntax
-```js
-object.load(param);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
-
-#### Returns
-void
 
 ### reapplyFilters()
 Reapplies all the filters currently on the table.
