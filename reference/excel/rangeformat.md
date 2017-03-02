@@ -1,4 +1,4 @@
-# RangeFormat object (JavaScript API for Excel)
+# RangeFormat Object (JavaScript API for Excel)
 
 A format object encapsulating the range's font, fill, borders, alignment, and other properties.
 
@@ -17,9 +17,9 @@ _See property access [examples.](#property-access-examples)_
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|borders|[RangeBorderCollection](rangebordercollection.md)|Collection of border objects that apply to the overall range selected Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|borders|[RangeBorderCollection](rangebordercollection.md)|Collection of border objects that apply to the overall range. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |fill|[RangeFill](rangefill.md)|Returns the fill object defined on the overall range. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|font|[RangeFont](rangefont.md)|Returns the font object defined on the overall range selected Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|font|[RangeFont](rangefont.md)|Returns the font object defined on the overall range. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |protection|[FormatProtection](formatprotection.md)|Returns the format protection object for a range. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
@@ -28,7 +28,6 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|:----|
 |[autofitColumns()](#autofitcolumns)|void|Changes the width of the columns of the current range to achieve the best fit, based on the current data in the columns.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[autofitRows()](#autofitrows)|void|Changes the height of the rows of the current range to achieve the best fit, based on the current data in the columns.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -57,22 +56,6 @@ rangeFormatObject.autofitRows();
 
 #### Parameters
 None
-
-#### Returns
-void
-
-### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
-
-#### Syntax
-```js
-object.load(param);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void

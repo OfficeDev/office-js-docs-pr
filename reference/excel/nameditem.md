@@ -1,4 +1,4 @@
-# NamedItem object (JavaScript API for Excel)
+# NamedItem Object (JavaScript API for Excel)
 
 Represents a defined name for a range of cells or value. Names can be primitive named objects (as seen in the type below), range object, reference to a range. This object can be used to obtain range object associated with names.
 
@@ -6,29 +6,48 @@ Represents a defined name for a range of cells or value. Names can be primitive 
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|comment|string|Represents the comment associated with this name.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |name|string|The name of the object. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|type|string|Indicates what type of reference is associated with the name. Read-only. Possible values are: String, Integer, Double, Boolean, Range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|value|object|Represents the formula that the name is defined to refer to. E.g. =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|scope|string|Indicates whether the name is scoped to the workbook or to a specific worksheet. Read-only. Possible values are: Equal, Greater, GreaterEqual, Less, LessEqual, NotEqual.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|type|string|Indicates the type of the value returned by the name's formula. Read-only. Possible values are: String, Integer, Double, Boolean, Range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|value|object|Represents the value computed by the name's formula. For a named range, will return the range address. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |visible|bool|Specifies whether the object is visible or not.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-None
-
+| Relationship | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|worksheet|[Worksheet](worksheet.md)|Returns the worksheet on which the named item is scoped to. Throws an error if the items is scoped to the workbook instead. Read-only.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|worksheetOrNullObject|[Worksheet](worksheet.md)|Returns the worksheet on which the named item is scoped to. Returns a null object if the item is scoped to the workbook instead. Read-only.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getRange()](#getrange)|[Range](range.md)|Returns the range object that is associated with the name. Throws an exception if the named item's type is not a range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[delete()](#delete)|void|Deletes the given name.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRange()](#getrange)|[Range](range.md)|Returns the range object that is associated with the name. Throws an error if the named item's type is not a range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRangeOrNullObject()](#getrangeornullobject)|[Range](range.md)|Returns the range object that is associated with the name. Returns a null object if the named item's type is not a range.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
 
+### delete()
+Deletes the given name.
+
+#### Syntax
+```js
+namedItemObject.delete();
+```
+
+#### Parameters
+None
+
+#### Returns
+void
+
 ### getRange()
-Returns the range object that is associated with the name. Throws an exception if the named item's type is not a range.
+Returns the range object that is associated with the name. Throws an error if the named item's type is not a range.
 
 #### Syntax
 ```js
@@ -62,21 +81,19 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+### getRangeOrNullObject()
+Returns the range object that is associated with the name. Returns a null object if the named item's type is not a range.
 
 #### Syntax
 ```js
-object.load(param);
+namedItemObject.getRangeOrNullObject();
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+None
 
 #### Returns
-void
+[Range](range.md)
 ### Property access examples
 
 ```js

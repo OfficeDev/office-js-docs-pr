@@ -1,4 +1,4 @@
-# ChartFill object (JavaScript API for Excel)
+# ChartFill Object (JavaScript API for Excel)
 
 Represents the fill formatting for a chart element.
 

@@ -1,15 +1,14 @@
 # PageCollection object (JavaScript API for Visio)
 
 Applies to: _Visio Online_
->**Note:** The Visio JavaScript APIs are currently in preview and are subject to change. The Visio JavaScript APIs are not currently supported for use in production environments.
 
 Represents a collection of Page objects that are part of the document.
 
 ## Properties
 
-| Property	   | Type	|Description| Feedback|
-|:---------------|:--------|:----------|:---|
-|items|[Page[]](page.md)|A collection of page objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageCollection-items)|
+| Property	   | Type	|Description|
+|:---------------|:--------|:----------|
+|items|[Page[]](page.md)|A collection of page objects. Read-only.|
 
 ## Relationships
 None
@@ -17,11 +16,11 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description| Feedback|
-|:---------------|:--------|:----------|:---|
-|[getCount()](#getcount)|int|Gets the number of pages in the collection.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageCollection-getCount)|
-|[getItem(key: number or string)](#getitemkey-number-or-string)|[Page](page.md)|Gets a page using its key (name or Id).|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageCollection-getItem)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageCollection-load)|
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[getCount()](#getcount)|int|Gets the number of pages in the collection.|
+|[getItem(key: number or string)](#getitemkey-number-or-string)|[Page](page.md)|Gets a page using its key (name or Id).|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 
