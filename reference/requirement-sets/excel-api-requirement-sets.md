@@ -27,8 +27,6 @@ For information about common API requirement sets, see [Office common API requir
 ## What's new in Excel JavaScript API 1.4
 The following are the new additions to the Excel JavaScript APIs in requirement set 1.3.
 
-## Excel 1.4 Release Features
-
 ### Named item add and new properties
 
 New properties
