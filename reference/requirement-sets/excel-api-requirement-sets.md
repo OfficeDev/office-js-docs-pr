@@ -59,7 +59,7 @@ Suspends calculation (application.suspendCalculationUntilNextSync()) until the n
 
 In addition, we are fixing the F9 re-calc bug that wasn't re-calculating the dirty cells.
 
-|Object| What is new| Description|Feedback|
+|Object| What is new| Description|Requirement set|
 |:----|:----|:----|:----|
 |[application](../excel/application.md)|_Method_ > [suspendCalculationUntilNextSync()](../excel/application.md#suspendcalculationuntilnextsync)|Suspends calculation until the next "context.sync()" is called. Once set, it is the developer's responsibility to re-calc the workbook, to ensure that any dependencies are propagated.|1.4|
 |[bindingCollection](../excel/bindingcollection.md)|_Method_ > [getCount()](../excel/bindingcollection.md#getcount)|Gets the number of bindings in the collection.|1.4|
