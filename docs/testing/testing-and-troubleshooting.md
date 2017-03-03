@@ -72,7 +72,7 @@ To add a URL to your list of trusted sites:
 3. Enter the URL that appears in the error message, and choose **Add**.
 4. Try to use the add-in again. If the problem persists, verify the settings for the other security zones and ensure that the add-in domain is in the same zone as the URL that is displayed in the address bar of the Office application.
 
-This issue occurs when the Dialog API is used in pop-up mode. To prevent this issue from occurring, use the [displayInFrame]() flag. This requires that your page support display within an iframe. The following example shows how to use the flag.
+This issue occurs when the Dialog API is used in pop-up mode. To prevent this issue from occurring, use the [displayInFrame](../../reference/shared/officeui.displaydialogasync) flag. This requires that your page support display within an iframe. The following example shows how to use the flag.
 
 ```js
 
@@ -84,7 +84,5 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callba
 - [Debug add-ins in Office Online](../testing/debug-add-ins-in-office-online.md) 
 - [Sideload an Office Add-in on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [Debug Office Add-ins on iPad and Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)  
-- [Create and debug Office Add-ins in Visual Studio](../../docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md) 
-- [Deploy and install Outlook add-ins for testing](../outlook/testing-and-tips.md)
 - [Validate and troubleshoot issues with your manifest](troubleshoot-manifest.md)
     
