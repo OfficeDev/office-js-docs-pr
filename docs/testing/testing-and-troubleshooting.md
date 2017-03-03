@@ -53,7 +53,7 @@ See [Validate and troubleshoot issues with your manifest](troubleshoot-manifest.
 
 When using an Office Add-in, the user is asked to allow a dialog box to be displayed. The user chooses **Allow**, and the following error message occurs.
 
-The security settings in your browser prevent us from creating a dialog box. Try a different browser, or configure your browser, so that [URL] and the domain shown in your address bar are in the same security zone.
+`The security settings in your browser prevent us from creating a dialog box. Try a different browser, or configure your browser, so that [URL] and the domain shown in your address bar are in the same security zone.`
 
 ![A screen shot of the dialog box error message](http://i.imgur.com/3mqmlgE.png)
 
@@ -61,7 +61,7 @@ The security settings in your browser prevent us from creating a dialog box. Try
 |:--------------------|:---------------------|
 |Internet Explorer, Microsoft Edge|Office Online|
 
-`To resolve the issue, end users or administrators can add the domain of the add-in to the list of trusted sites in Internet Explorer. Use the same procedure whether you're using the Internet Explorer or Microsoft Edge browser.`
+To resolve the issue, end users or administrators can add the domain of the add-in to the list of trusted sites in Internet Explorer. Use the same procedure whether you're using the Internet Explorer or Microsoft Edge browser.
 
 >**Important:** Do not add the URL for an add-in to your list of trusted sites if you don't trust the add-in.
 
