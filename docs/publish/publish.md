@@ -58,7 +58,7 @@ You can deploy add-ins via the admin center if your organization meets the follo
 - Users sign in to Office 2016 with their work or school account.
 - Your organization uses the Azure Active Directory (Azure AD) identity service.
 
-The admin center does not support the followng scenarios:
+The admin center does not support the followng:
 
 - Add-ins that target Word, Excel, or PowerPoint in Office 2013.
 - An on-premises directory service.
