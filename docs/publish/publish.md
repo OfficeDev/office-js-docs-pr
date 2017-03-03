@@ -68,7 +68,7 @@ Centralized deployment does not support the followng scenarios:
 - Deployment to Mac platforms (iOS, iPad).
 - Deployment of COM/VSTO add-ins.
 
-To deploy Office 2013 and SharePoint Add-ins, use a [SharePoint add-in catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
+To deploy SharePoint Add-ins or add-ins that target Office 2013, use a [SharePoint add-in catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 >**Important!** SharePoint add-in catalogs do not support add-in features that are implemented in the [VersionOverrides](../../reference/manifest/versionoverrides.md) node of the add-in manifest, such as [add-in commands](../design/add-in-commands.md). 
 
@@ -76,11 +76,11 @@ To deploy COM/VSTO add-ins, see [Deploying an Office solution](https://msdn.micr
 
 ## SharePoint catalog
 
-A SharePoint add-in catalog is a special site collection that you can create to host Word, Excel, and PowerPoint add-ins. Add-in commands deployed via a SharePoint catalog default to task pane add-ins.
+A SharePoint add-in catalog is a special site collection that you can create to host Word, Excel, and PowerPoint add-ins. Because SharePoint catalogs don't support new add-in features implemented in the VersionOverrides node of the manifest, including add-in commands, we recommend that you use centralized deployment via the admin center preview if possible. Add-in commands deployed via a SharePoint catalog default to task pane add-ins.
 
-You can deploy Word, Excel, and PowerPoint add-ins that target Office 2013 or an on-premises environment via a SharePoint catalog. For details, see [Publish task pane and content add-ins to a SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
+If you are targeting an on-premises environment, deploy your add-ins via a SharePoint catalog. For details, see [Publish task pane and content add-ins to a SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
->**Note:** Because SharePoint catalogs don't support new add-in features implemented in the VersionOverrides node of the manifest, we recommend that you use centralized deployment via the admin center preview if possible.
+> **Note:** SharePoint catalogs do not support Office 2016 for Mac. To deploy Office Add-ins to Mac clients, you must submit them to the [Office Store]. 
 
 ## Outlook add-in deployment
 
@@ -88,7 +88,10 @@ For on-premises and online environments that do not use the Azure AD identity se
 
 To assign add-ins to whole tenants, you can upload an add-in via the Exchange admin center directly from the manifest, or from the Office Store. To assign add-ins to individual users, you must use Exchange PowerShell. For details, see [Install or remove Outlook add-ins for your organization](https://technet.microsoft.com/en-us/library/jj943752(v=exchg.150).aspx) on TechNet.
 
-Outlook add-in deployment required Office 365, Exchange Online, Exchange Server 2013 or later, and Outlook 2013 or later.
+Outlook add-in deployment requires:
+
+- Office 365, Exchange Online, or Exchange Server 2013 or later
+- Outlook 2013 or later
 
 ## Additional resources
 
