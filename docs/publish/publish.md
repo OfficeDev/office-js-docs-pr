@@ -20,7 +20,7 @@ The options that are available depend on the Office host that you're targeting a
 | Task pane       | X           | X                  | X                               | X|
 | Command 		  | X           | X                  | X                               |              |
 
-* SharePoint catalogs do not support Office 2016 for Mac.
+&#42; SharePoint catalogs do not support Office 2016 for Mac.
 
 **Deployment options for Outlook add-ins**
 
