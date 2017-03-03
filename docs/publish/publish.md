@@ -14,13 +14,12 @@ The options that are available depend on the Office host that you're targeting a
 
 **Deployment options for Word, Excel, and PowerPoint add-ins**
 
-| Extension point            | Sideloading | Office 365 admin center (preview) |Office Store  | SharePoint catalog  |
+| Extension point            | Sideloading | Office 365 admin center (preview) |Office Store| SharePoint catalog  |
 |:----------------|:-----------:|:------------------:|:-------------------------------:|:------------:|
-| Content         | X           | X                  | X                               | X            |
-| Task pane       | X           | X                  | X                               | X            |
+| Content         | X           | X                  | X                               | X (except for Office 2016 for Mac)|
+| Task pane       | X           | X                  | X                               | X (except for Office 2016 for Mac)|
 | Command 		  | X           | X                  | X                               |              |
 
-> **Note:** SharePoint catalogs are not supported for Office 2016 for Mac. To deploy Office Add-ins to Mac clients, you must submit them to the [Office Store].    
 
 **Deployment options for Outlook add-ins**
 
