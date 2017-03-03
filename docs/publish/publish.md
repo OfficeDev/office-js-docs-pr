@@ -42,7 +42,7 @@ The Office 365 admin center (preview) makes it easy for an admin to deploy Offic
 The admin center (preview) currently supports:
 
 - Centralized deployment of add-ins and add-in update to individuals, groups, or an organization.
-- Multiple platforms, including Windows and Office Online, with more coming soon.
+- Multiple platforms, including Windows, Office Online, and Mac (coming soon).
 - Word, Excel, and PowerPoint add-in deployment.
 - Deployment to worldwide tenants.
 - Deployment of internal add-ins and add-ins provided by ISVs.
@@ -89,8 +89,9 @@ You can deploy Word, Excel, and PowerPoint add-ins that target Office 2013 or an
 
 For on-premises and online environments that do not use the Azure AD identity service, you can deploy Outlook add-ins via the Exchange server. 
 
-To assign add-ins to whole tenants, you can upload an add-in via the Exchange admin center directly from the manifest, or from the Office Store. To assign add-ins to individual users, you must use Exchange PowerShell.
-- 
+To assign add-ins to whole tenants, you can upload an add-in via the Exchange admin center directly from the manifest, or from the Office Store. To assign add-ins to individual users, you must use Exchange PowerShell. For details, see [Install or remove Outlook add-ins for your organization](https://technet.microsoft.com/en-us/library/jj943752(v=exchg.150).aspx) on TechNet.
+
+Outlook add-in deployment required Office 365, Exchange Online, Exchange Server 2013 or later, and Outlook 2013 or later.
 
 ## Additional resources
 
@@ -98,7 +99,7 @@ To assign add-ins to whole tenants, you can upload an add-in via the Exchange ad
 - [Deploy and install Outlook add-ins for testing](../outlook/testing-and-tips.md) 
 - [Submit add-ins and web apps to the Office Store][Office Store]
 - [Design guidelines for Office Add-ins](../design/add-in-design)
-- [Created effective Office Store add-ins](https://msdn.microsoft.com/en-us/library/jj635874.aspx)
+- [Create effective Office Store add-ins](https://msdn.microsoft.com/en-us/library/jj635874.aspx)
 - [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)
 
 [Office Store]: http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx
