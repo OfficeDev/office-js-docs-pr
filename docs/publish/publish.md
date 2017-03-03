@@ -10,7 +10,7 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 
 The options that are available depend on the Office host that you're targeting and the type of add-in you create.
 
->**Note:** When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
+>**Note:** If you plan to your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://dev.office.com/officestore/docs/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
 
 **Deployment options for Word, Excel, and PowerPoint add-ins**
 
@@ -18,7 +18,7 @@ The options that are available depend on the Office host that you're targeting a
 |:----------------|:-----------:|:------------------:|:-------------------------------:|:------------:|
 | Content         | X           | X                  | X                               | X            |
 | Task pane       | X           | X                  | X                               | X            |
-| Command 		  | X           | X                  | X                                |              |
+| Command 		  | X           | X                  | X                               |              |
 
 > **Note:** SharePoint catalogs are not supported for Office 2016 for Mac. To deploy Office Add-ins to Mac clients, you must submit them to the [Office Store].    
 
@@ -29,9 +29,6 @@ The options that are available depend on the Office host that you're targeting a
 | Mail app | X           | X               | X            |
 | Command  | X           | X               | X            |
 
-To broaden the reach of your add-in, make sure that it works across platforms. Office Add-ins are supported on Windows, Mac, Web, iOS and Android. For an overview of which features are supported by each platform, see [Office Add-in host and platform availability].   
-
-For information about licensing your Office Store add-ins, see [License your add-ins](https://msdn.microsoft.com/EN-US/library/office/jj163257.aspx).
 
 For information about how end users acquire, insert, and run add-ins, see [Start using your Office Add-in](https://support.office.com/en-ie/article/Start-using-your-Office-Add-in-82e665c4-6700-4b56-a3f3-ef5441996862?ui=en-US&rs=en-IE&ad=IE).
 
@@ -95,7 +92,6 @@ Outlook add-in deployment required Office 365, Exchange Online, Exchange Server 
 
 ## Additional resources
 
-- [Office Add-in host and platform availability]
 - [Deploy and install Outlook add-ins for testing](../outlook/testing-and-tips.md) 
 - [Submit add-ins and web apps to the Office Store][Office Store]
 - [Design guidelines for Office Add-ins](../design/add-in-design)
