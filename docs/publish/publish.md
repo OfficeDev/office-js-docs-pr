@@ -48,7 +48,9 @@ The admin center currently supports the following scenarios:
 - Add-in URLs hosted within a firewall.
 - Deployment of Office Store add-ins (coming soon).
 
+<!--
 The admin center also includes a pre-deployment validation checking service.
+-->
 
 Future investments in add-in deployment scenarios will focus on the Office 365 admin center. We recommend that you use the admin center to deploy add-ins to your organization, if your organization meets the prerequisites.
 
@@ -76,9 +78,9 @@ To deploy COM/VSTO add-ins, use ClickOnce or Windows Installer. For details, see
 
 ## SharePoint catalog deployment
 
-A SharePoint add-in catalog is a special site collection that you can create to host Word, Excel, and PowerPoint add-ins. Because SharePoint catalogs don't support new add-in features implemented in the VersionOverrides node of the manifest, including add-in commands, we recommend that you use centralized deployment via the admin center preview if possible. Add-in commands deployed via a SharePoint catalog default to task pane add-ins.
+A SharePoint add-in catalog is a special site collection that you can create to host Word, Excel, and PowerPoint add-ins. Because SharePoint catalogs don't support new add-in features implemented in the VersionOverrides node of the manifest, including add-in commands, we recommend that you use centralized deployment via the admin center preview if possible. Add-in commands deployed via a SharePoint catalog open in a task pane by default.
 
-If you are targeting an on-premises environment, deploy your add-ins via a SharePoint catalog. For details, see [Publish task pane and content add-ins to a SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
+If you are deploying add-ins in an on-premises environment, use a SharePoint catalog. For details, see [Publish task pane and content add-ins to a SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 > **Note:** SharePoint catalogs do not support Office 2016 for Mac. To deploy Office Add-ins to Mac clients, you must submit them to the [Office Store]. 
 
@@ -86,12 +88,13 @@ If you are targeting an on-premises environment, deploy your add-ins via a Share
 
 For on-premises and online environments that do not use the Azure AD identity service, you can deploy Outlook add-ins via the Exchange server. 
 
-To assign add-ins to whole tenants, you can upload an add-in via the Exchange admin center directly from the manifest, or from the Office Store. To assign add-ins to individual users, you must use Exchange PowerShell. For details, see [Install or remove Outlook add-ins for your organization](https://technet.microsoft.com/en-us/library/jj943752(v=exchg.150).aspx) on TechNet.
-
 Outlook add-in deployment requires:
 
 - Office 365, Exchange Online, or Exchange Server 2013 or later
 - Outlook 2013 or later
+
+To assign add-ins to whole tenants, you can upload an add-in via the Exchange admin center directly from the manifest, or from the Office Store. To assign add-ins to individual users, you must use Exchange PowerShell. For details, see [Install or remove Outlook add-ins for your organization](https://technet.microsoft.com/en-us/library/jj943752(v=exchg.150).aspx) on TechNet.
+
 
 ## Additional resources
 
