@@ -6,9 +6,10 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 |**Method**|**Use...**|
 |:---------|:------------|
 |[Sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|As part of your development process, to test your add-in running on Windows, Office Online, iPad, or Mac.|
-|[Office 365 admin center (preview)](#office-365-admin-center-preview)|To distribute your add-in to users in your organization in a cloud or hybrid deployment.|
+|[Office 365 admin center (preview)](#office-365-admin-center-preview)|in a cloud or hybrid deployment, to distribute your add-in to users in your organization.|
 |[Office Store]|To distribute your add-in publicly to users.|
 |[SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|In an on-premises environment, to distribute your add-in to users in your organization.|
+|[Exchange server](#outlook-add-in-deployment)|In an on-premises or online environment, to distribute Outlook add-ins to users.|
 
 The options that are available depend on the Office host that you're targeting and the type of add-in you create.
 
@@ -78,7 +79,7 @@ To deploy COM/VSTO add-ins, use ClickOnce or Windows Installer. For details, see
 
 ## SharePoint catalog deployment
 
-A SharePoint add-in catalog is a special site collection that you can create to host Word, Excel, and PowerPoint add-ins. Because SharePoint catalogs don't support new add-in features implemented in the VersionOverrides node of the manifest, including add-in commands, we recommend that you use centralized deployment via the admin center preview if possible. Add-in commands deployed via a SharePoint catalog open in a task pane by default.
+A SharePoint add-in catalog is a special site collection that you can create to host Word, Excel, and PowerPoint add-ins. Because SharePoint catalogs don't support new add-in features implemented in the VersionOverrides node of the manifest, including add-in commands, we recommend that you use centralized deployment via the admin center (preview) if possible. Add-in commands deployed via a SharePoint catalog open in a task pane by default.
 
 If you are deploying add-ins in an on-premises environment, use a SharePoint catalog. For details, see [Publish task pane and content add-ins to a SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
