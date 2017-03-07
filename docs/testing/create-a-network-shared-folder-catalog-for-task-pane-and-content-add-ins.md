@@ -9,10 +9,6 @@ If you're not testing a Word, Excel, or PowerPoint add-in on Windows, see one of
 - [Sideload Office Add-ins on iPad and Mac for testing](sideload-an-office-add-in-on-ipad-and-mac.md )
 - [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md )
 
-Deploy only the manifest file to the shared folder catalog. Deploy the web application itself to a web server and specify the URL in the  **SourceLocation** element of the manifest file.
-
- >**Important:**  To help make add-ins that access external data and services more secure, your add-in should use a secure protocol such as HTTPS to connect to external data and services. You must use HTTPS if your add-in uses add-in commands.
-
 The following video walks you through the process of sideloading your add-in on Office desktop or Office Online.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/XXsAw2UUiQo" frameborder="0" allowfullscreen></iframe>
@@ -50,7 +46,9 @@ The following video walks you through the process of sideloading your add-in on 
 ## Sideload your add-in
 
 
-1. Put the manifest file of any add-in that you are testing in the shared folder catalog.
+1. Put the manifest file of any add-in that you are testing in the shared folder catalog. You deploy the web application itself to a web server. Be sure to specify the URL in the **SourceLocation** element of the manifest file.
+
+    >**Important:**  To help make add-ins that access external data and services more secure, your add-in should use a secure protocol such as HTTPS to connect to external data and services. You must use HTTPS if your add-in uses add-in commands.
 
 2. In Excel, Word, or PowerPoint, select **My Add-ins** on the **Insert** tab of the ribbon.
 
