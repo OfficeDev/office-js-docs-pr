@@ -10,6 +10,13 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 |[Office Store]|To distribute your add-in publicly to users.|
 |[SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|As part of your development process to test your add-in, or, in an on-premises environment, to distribute your add-in to users in your organization.|
 
+<<<<<<< HEAD
+- [Sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) - Use as part of your development process to test your add-in running on Windows, Office Online, iPad, or Mac.
+- [Office 365 admin center (preview)](#office-365-admin-center-preview) - Use to distribute your add-in to users in your organization in a cloud or hybrid deployment.
+- [Office Store] - Use to distribute your add-in publicly to users.
+- [SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) - Use in an on-premises environment to distribute your add-in to users in your organization.
+=======
+>>>>>>> origin/master
 
 The options that are available depend on the Office host that you're targeting and the type of add-in you create.
 
@@ -21,7 +28,7 @@ The options that are available depend on the Office host that you're targeting a
 |:----------------|:-----------:|:------------------:|:-------------------------------:|:------------:|
 | Content         | X           | X                  | X                               | X|
 | Task pane       | X           | X                  | X                               | X|
-| Command 		  | X           | X                  | X                               |              |
+| Command 		  | X           | X                  | X                               |  |
 
 &#42; SharePoint catalogs do not support Office 2016 for Mac.
 
@@ -42,7 +49,7 @@ The Office 365 admin center makes it easy for an admin to deploy Word, Excel, an
 The admin center currently supports the following scenarios:
 
 - Centralized deployment of new and updated add-ins to individuals, groups, or an organization.
-- Support for multiple platforms, including Windows, Office Online, and Mac (coming soon).
+- Support for multiple platforms, including Windows and Office Online, with Mac coming soon.
 - Deployment to English language and worldwide tenants.
 - Cloud-hosted add-in deployment.
 - Automatic installation on launch of the Office application.
@@ -51,9 +58,9 @@ The admin center currently supports the following scenarios:
 
 The admin center also includes a pre-deployment validation checking service.
 
-Future investments in add-in deployment scenarios will focus on the Office 365 admin center. We recommend that you use the admin center to deploy add-ins to your organization, if your organization meets the criteria.
+Future investments in add-in deployment scenarios will focus on the Office 365 admin center. We recommend that you use the admin center to deploy add-ins to your organization, if your organization meets the prerequisites.
 
-### Criteria for admin center deployment 
+### Prerequisites for admin center deployment 
 
 You can deploy add-ins via the admin center if your organization meets the following criteria:
 
