@@ -93,7 +93,7 @@ Outlook add-in deployment requires:
 - Office 365, Exchange Online, or Exchange Server 2013 or later
 - Outlook 2013 or later
 
-To assign add-ins to whole tenants, you can upload an add-in via the Exchange admin center directly from the manifest, or from the Office Store. To assign add-ins to individual users, you must use Exchange PowerShell. For details, see [Install or remove Outlook add-ins for your organization](https://technet.microsoft.com/en-us/library/jj943752(v=exchg.150).aspx) on TechNet.
+To assign add-ins to tenants, you use the Exchange admin center to upload a manifest directly, either from a file or a URL, or add an add-in from the Office Store. To assign add-ins to individual users, you must use Exchange PowerShell. For details, see [Install or remove Outlook add-ins for your organization](https://technet.microsoft.com/en-us/library/jj943752(v=exchg.150).aspx) on TechNet.
 
 
 ## Additional resources
