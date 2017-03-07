@@ -8,15 +8,7 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 |[Sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|As part of your development process, to test your add-in running on Windows, Office Online, iPad, or Mac.|
 |[Office 365 admin center (preview)](#office-365-admin-center-preview)|To distribute your add-in to users in your organization in a cloud or hybrid deployment.|
 |[Office Store]|To distribute your add-in publicly to users.|
-|[SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|As part of your development process to test your add-in, or, in an on-premises environment, to distribute your add-in to users in your organization.|
-
-<<<<<<< HEAD
-- [Sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) - Use as part of your development process to test your add-in running on Windows, Office Online, iPad, or Mac.
-- [Office 365 admin center (preview)](#office-365-admin-center-preview) - Use to distribute your add-in to users in your organization in a cloud or hybrid deployment.
-- [Office Store] - Use to distribute your add-in publicly to users.
-- [SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) - Use in an on-premises environment to distribute your add-in to users in your organization.
-=======
->>>>>>> origin/master
+|[SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|In an on-premises environment, to distribute your add-in to users in your organization.|
 
 The options that are available depend on the Office host that you're targeting and the type of add-in you create.
 
