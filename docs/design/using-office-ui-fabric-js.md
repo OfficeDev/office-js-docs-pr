@@ -38,7 +38,7 @@ Fabric provides several UX components, like buttons or checkboxes, that you can 
 > **Note:** We will add additional components over time. 
 
 - [Breadcrumb](https://dev.office.com/fabric-js/Components/Breadcrumb/Breadcrumb.html)
-- [Button](https://dev.office.com/fabric-js/Components/Button/Button.html) (Consider using the small button variant in your add-in.)
+- [Button](https://dev.office.com/fabric-js/Components/Button/Button.html) (Consider using the small button variant in your add-in. Add 16px of padding to small buttons to ensure a 40px minimum touch target on touch devices.)
 - [Checkbox](https://dev.office.com/fabric-js/Components/CheckBox/CheckBox.html)
 - [ChoiceFieldGroup](https://dev.office.com/fabric-js/Components/ChoiceFieldGroup/ChoiceFieldGroup.html)
 - [Date Picker](https://dev.office.com/fabric-js/Components/DatePicker/DatePicker.html) (For an example that shows how to implement the Date Picker in an add-in, see the [Excel Sales Tracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) code sample.)
