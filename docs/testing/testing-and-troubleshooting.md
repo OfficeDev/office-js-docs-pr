@@ -53,7 +53,7 @@ See [Validate and troubleshoot issues with your manifest](troubleshoot-manifest.
 
 When using an Office Add-in, the user is asked to allow a dialog box to be displayed. The user chooses **Allow**, and the following error message occurs.
 
-`The security settings in your browser prevent us from creating a dialog box. Try a different browser, or configure your browser, so that [URL] and the domain shown in your address bar are in the same security zone.`
+The security settings in your browser prevent us from creating a dialog box. Try a different browser, or configure your browser, so that [URL] and the domain shown in your address bar are in the same security zone.
 
 ![A screen shot of the dialog box error message](http://i.imgur.com/3mqmlgE.png)
 
