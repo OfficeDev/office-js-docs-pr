@@ -1,4 +1,3 @@
-
 # Troubleshoot user errors with Office Add-ins
 
 At times your users might encounter issues with Office Add-ins that you develop. For example, an add-in fails to load or is inaccessible. Use the information in this article to help resolve common issues that your users encounter with your Office Add-in. 
@@ -49,19 +48,40 @@ Verify that the latest Office updates are installed, or download the [update for
 
 See [Validate and troubleshoot issues with your manifest](troubleshoot-manifest.md) to debug add-in manifest issues.
 
+## Add-in dialog box cannot be displayed
+
+When using an Office Add-in, the user is asked to allow a dialog box to be displayed. The user chooses **Allow**, and the following error message occurs:
+
+"The security settings in your browser prevent us from creating a dialog box. Try a different browser, or configure your browser so that [URL] and the domain shown in your address bar are in the same security zone."
+
+![A screen shot of the dialog box error message](http://i.imgur.com/3mqmlgE.png)
+
+|**Affected browsers**|**Affected platforms**|
+|:--------------------|:---------------------|
+|Internet Explorer, Microsoft Edge|Office Online|
+
+To resolve the issue, end users or administrators can add the domain of the add-in to the list of trusted sites in Internet Explorer. Use the same procedure whether you're using the Internet Explorer or Microsoft Edge browser.
+
+>**Important:** Do not add the URL for an add-in to your list of trusted sites if you don't trust the add-in.
+
+To add a URL to your list of trusted sites:
+
+1. In Internet Explorer, choose the Tools button, and go to **Internet options** > **Security**.
+2. Select the **Trusted sites** zone, and choose **Sites**.
+3. Enter the URL that appears in the error message, and choose **Add**.
+4. Try to use the add-in again. If the problem persists, verify the settings for the other security zones and ensure that the add-in domain is in the same zone as the URL that is displayed in the address bar of the Office application.
+
+This issue occurs when the Dialog API is used in pop-up mode. To prevent this issue from occurring, use the [displayInFrame](../../reference/shared/officeui.displaydialogasync) flag. This requires that your page support display within an iframe. The following example shows how to use the flag.
+
+```js
+
+Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callback);
+```
+
 ## Additional resources
 
-
-
-- [Debug add-ins in Office Online](../testing/debug-add-ins-in-office-online.md)
-    
-- [Sideload an Office Add-in on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
-    
-- [Debug Office Add-ins on iPad and Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
-    
-- [Create and debug Office Add-ins in Visual Studio](../../docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md)
-    
-- [Deploy and install Outlook add-ins for testing](../outlook/testing-and-tips.md)
-    
+- [Debug add-ins in Office Online](../testing/debug-add-ins-in-office-online.md) 
+- [Sideload an Office Add-in on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)  
+- [Debug Office Add-ins on iPad and Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)  
 - [Validate and troubleshoot issues with your manifest](troubleshoot-manifest.md)
     
