@@ -57,11 +57,7 @@ To use Outlook Web App (OWA) to install an Outlook add-in, follow these steps:
 6. Select the user name in the upper-right corner of the window and select **My Mail** to switch to your email to test the add-in.
     
 
->**Note**  If you are not using any of the following to develop your add-in: 
-- Office 365 developer tenant
-- Visual Studio
-
-And, if you do not have at minimum the "My Custom Apps" role for your Exchange Server, then you can install add-ins only from the Office Store. In order to test your add-in, or install add-ins in general by specifying a URL or file name for the add-in manifest, you should request your Exchange administrator to provide the necessary permissions.
+If you do not have at minimum the "My Custom Apps" role for your Exchange Server, then you can install add-ins only from the Office Store. In order to test your add-in, or install add-ins in general by specifying a URL or file name for the add-in manifest, you should request your Exchange administrator to provide the necessary permissions.
 
 The Exchange administrator can run the following PowerShell cmdlet to assign a single user the necessary permissions. In this example, wendyri is the user's email alias.
 
