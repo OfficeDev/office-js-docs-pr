@@ -271,6 +271,8 @@ Gets the email address of the sender of a message. Read mode only.
 
 The `from` and [`sender`](Office.context.mailbox.item.md#sender) properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.
 
+> **Note:** The `recipientType` property of the `EmailAddressDetails` object in the `from` property is `undefined`.
+
 ##### Type:
 
 *   [EmailAddressDetails](simple-types.md#emailaddressdetails)
@@ -570,6 +572,8 @@ Gets the resources required for an appointment. Read mode only.
 Gets the email address of the sender of an email message. Read mode only.
 
 The [`from`](Office.context.mailbox.item.md#from) and `sender` properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.
+
+> **Note:** The `recipientType` property of the `EmailAddressDetails` object in the `sender` property is `undefined`.
 
 ##### Type:
 
