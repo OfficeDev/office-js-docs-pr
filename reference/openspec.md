@@ -46,5 +46,5 @@ See planned [additions](https://github.com/OfficeDev/office-js-docs/tree/Context
 ## Single sign-on capability 
 Explore initial design for enabling single sign-on in Office add-ins [here](https://github.com/OfficeDev/office-js-docs/tree/Addin_SSO_OpenSpec)
 
-**See the [Office context additions spec](https://github.com/OfficeDev/office-js-docs/tree/ContextAdditions_OpenSpec) to learn more and provide your feedback.**
+**See the [Single Sign On spec](https://github.com/OfficeDev/office-js-docs/tree/Addin_SSO_OpenSpec) to learn more and provide your feedback.**
 
