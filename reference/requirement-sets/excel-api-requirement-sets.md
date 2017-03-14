@@ -4,6 +4,10 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 
 Excel add-ins run across multiple versions of Office, including Office 2016 for Windows, Office for iPad, Office for Mac, and Office Online. The following table lists the Excel requirement sets, the Office host applications that support that requirement set, and the build versions or number for those applications.
 
+> For the requirement sets that are marked as *Beta*, use the specified (or later) version of the Office software and use the Beta library of the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js
+
+> Entires not listed as *Beta* are generally available and you can continue to use Production CDN library: https://appsforoffice.microsoft.com/lib/1/hosted/office.js
+
 |  Requirement set  |  Office 2016 for Windows*  |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | ExcelApi 1.5 **Beta**  | Version 1702 (Build TBD) or later| Coming soon |  Coming soon| coming soon | Coming soon|
