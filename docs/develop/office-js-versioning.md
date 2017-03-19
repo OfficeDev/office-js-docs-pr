@@ -1,34 +1,37 @@
-{pagebreak}
+# Office.js API versioning 
 
-## Office.js API versioning {#api-versioning}
+>**Note:** This article is an excerpt from the book “[Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins)” by Michael Zlatkovsky, available for purchase as an e-book on LeanPub.com.  Copyright © 2016-2017 by Michael Zlatkovsky, all rights reserved.
 
 There are several aspects to the versioning of the Office.js library.
 
-### The JavaScript files {#api-versioning-js-files}
+## The JavaScript files 
 
 First, there is versioning of the actual **JavaScript source files**.  Fortunately, this part is pretty simple:  you **always want the latest and greatest of the production Office.js**, which is conveniently obtainable through the CDN:
-https://appsforoffice.microsoft.com/lib/1/hosted/Office.js[^office-loader].
+https://appsforoffice.microsoft.com/lib/1/hosted/Office.js.
 
 In addition to the CDN, the production Office.js files are also shipped as a NuGet package to allow corporate firewalled development or offline development.  That said, the NuGet may lag several weeks behind the CDN, and any Store-bound add-ins are *required* to reference the production CDN location anyway.  So, in terms of Office.js versions, there isn't really much to the versioning of the actual JS files:  by far and away the best choice is to reference the evergreen, frequently-updated, always-backwards-compatible, Store-required CDN version.
 
 
-### The host capabilities {#api-versioning-host-capabilities}
+## The host capabilities 
 
-The more interesting bit for versioning are the **actual API capabilities that are offered by each host**.  Just because you have the latest and greatest JavaScript does not mean that older clients will be able to make use of all of it.  While some of your customers might be on the latest-and-greatest versions of Office, others won't be!  In particular, Office 2016 RTM will always only have access to the original set of Office 2016 APIs -- period.  And even customers who own subscription versions of office (Office 365 / click-to-run) might still be on older versions of the supposedly-evergreen version, depending on whether they are on the *Current Channel* or the *Deferred Channel* of Office 365[^deferred-channel].  This intersection of native-application-versioning to javascript-versioning is where things get trickly.
+The more interesting bit for versioning are the **actual API capabilities that are offered by each host**.  Just because you have the latest and greatest JavaScript does not mean that older clients will be able to make use of all of it.  While some of your customers might be on the latest-and-greatest versions of Office, others won't be!  In particular, Office 2016 RTM will always only have access to the original set of Office 2016 APIs -- period.  And even customers who own subscription versions of office (Office 365 / click-to-run) might still be on older versions of the supposedly-evergreen version, depending on whether they are on the *Current Channel* or the *Deferred Channel* of Office 365.  This intersection of native-application-versioning to javascript-versioning is where things get trickly.
 
-The solution to this complexity (albeit complex in its own right) is *Requirement Sets*.  For example, if you look at the Excel API sets documentation[^excel-req-set], you will see that the 2016 wave of Excel APIs has had three versions as of December 2016:  1.1, 1.2, and 1.3.  ExcelApi 1.1 was what shipped with Office 2016 RTM in September 2015; 1.2 shipped in early March 2016; and 1.3 shipped in October of 2016.  Each API set version has a corresponding Office host version that supports this API set. The version numbers are listed in the table, and there are links below the table to find a mapping from build numbers to dates.
 
-![](images/API-Set-Table.jpg)
+The solution to this complexity (albeit complex in its own right) is *Requirement Sets*.  For example, if you look at the [Excel API sets](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) documentation, you will see that the 2016 wave of Excel APIs has had three versions as of December 2016:  1.1, 1.2, and 1.3.  ExcelApi 1.1 was what shipped with Office 2016 RTM in September 2015; 1.2 shipped in early March 2016; and 1.3 shipped in October of 2016.  Each API set version has a corresponding Office host version that supports this API set. The version numbers are listed in the table, and there are links below the table to find a mapping from build numbers to dates.
+
+<!-- LG: This was a screenshot of content in one of our articles. I recommend linking to the article here instead, so it's always pointint to the latest info. -->
+For details, see [Excel JavaScript API requirement sets](../../reference/requirement-sets/excel-api-requirement-sets.md).
 
 Each of the API set versions contain a number of fairly large features, as well as incremental improvements to existing features.  The topic for each requirement set, such as the link above, will provide a detailed listing of each of those features.  And as you're programming, if you are using the JavaScript or TypeScript IntelliSense, you should be able to see the API versions for each of your APIs displayed as part of the IntelliSense:
 
-![](images/API-Set-IntelliSense.jpg)
+![A screenshot showing the JavaScript IntelliSense.](../../images/api-set-intelliSense.jpg)
 
 You can use the requirement set in one of two ways.  You can declare in the manifest that "I need API set ExcelApi 1.2, or else my add-in doesn't work at all" -- and that's fine, but then of course you aren't able to service older hosts, and so your add-in won't even show up there.  Alternatively, if you add-in could *sorta* work in a 1.1 environment, but you want to *light-up* additional functionality on newer hosts that support it, you can use the manifest to declare only your minimal API sets that you need (e.g., ExcelApi 1.1), and then do runtime checks for higher version numbers via the `isSetSupported` API.
 
 For example, suppose that you are exporting some data to a new sheet, and you'd ideally like to autofit the column width -- but this is only available in ExcelApi 1.2.  Rather than block the add-in outright from running on an older host, you can do a light-up scenario on newer hosts that support the API, and skip over the functionality otherwise:
 
-{caption: "Light-up functionality for a newer API set", line-numbers: on}
+**Light-up functionality for a newer API set**
+
 ~~~
 Excel.run(context => {
     let data = [
@@ -51,14 +54,12 @@ Excel.run(context => {
 })
 ~~~
 
-A> ### Important: Version numbers are *per API SET*
-A>
-A> To be very clear: Version numbers such as `ExcelApi 1.3` are relative *to the API set iself*, but has nothing to do with the version numbers of Office.js or of other API sets.  The different requirement sets move at completely different speeds (which makes sense -- you wouldn't want Excel APIs to be delayed by a few months, simply so that the Excel's 1.3 set can ship at the same time as Word's 1.3 set).
-A>
-A> Because of this, Office.js is an amalgam of different API Set version numbers at any given time.  So, while there is definitely such a thing as `ExcelApi 1.3`, ***there is no Office.js 1.3***.  It's always the single evergreen Office endpoint, and a variety of versioned API Sets that comprise it.
+> **Important:** Version numbers are *per API SET*
+> To be very clear: Version numbers such as `ExcelApi 1.3` are relative *to the API set iself*, but has nothing to do with the version numbers of Office.js or of other API sets.  The different requirement sets move at completely different speeds (which makes sense -- you wouldn't want Excel APIs to be delayed by a few months, simply so that the Excel's 1.3 set can ship at the same time as Word's 1.3 set).
+> Because of this, Office.js is an amalgam of different API Set version numbers at any given time.  So, while there is definitely such a thing as `ExcelApi 1.3`, ***there is no Office.js 1.3***.  It's always the single evergreen Office endpoint, and a variety of versioned API Sets that comprise it.
 
 
-### The Beta Endpoint {#api-versioning-beta-endpoint}
+## The Beta Endpoint 
 
 In addition to the production CDN, there is also a **beta** endpoint;  with the same URL but with "beta" in place of "1". Thus, the full Beta URL is https://appsforoffice.microsoft.com/lib/**beta**/hosted/Office.js
 
@@ -80,40 +81,34 @@ There are a few caveats to the beta endpoint:
 
 All this being said:  As you become more familiar with the platform, and especially as you see features that you care about become open-spec-ed, I strongly encourage you to participate in the feedback process, and to use the beta endpoint to validate that the design meets your needs.  And as always, questions or feedback on StackOverflow about the APIs -- whether production or beta -- are always welcome.
 
-A> ### Tip: writing `isSetSupported` for the Beta endpoint
-A>
-A> As noted earlier, APIs in beta will not show `isSetSupported` as `true` until the functionality is already production-ready (see next section).  But on the other hand, what if you want to write the code just as you would for production, without changing a line (i.e., without needing to go back and uncomment the previously-commented-out `if` statements?)
-A>
-A> My personal trick for this: go ahead and write your `isSetSupported` checks and `if` statements just as you would for a regular production API.  Go to your main HTML page (which ideally you have two copies of -- one for production, and one for development, where you can reference the Beta CDN) and write in the following script tag right beneath your beta CDN reference (let's assume that the API set you care about is `ExcelApi`; and you effectively want *any* new APIs to show up as if they are fully supported, for testing purposes):
-A>
-A> `<script>`
-A>   `(function() {`
-A>     `var originalIsSetSupported = Office.requirements.isSetSupported;`
-A>     `Office.requirements.isSetSupported = function (apiSet, version) {`
-A>       `if (apiSet === 'ExcelApi') { return true; }`
-A>       `return originalIsSetSupported(apiSet, version);`
-A>     `};`
-A>   `})();`
-A> `</script>`
-A>
-A> Essentially, the script above will return `true` for any API at all that is part of the API set that you want the latest-and-greatest beta functinality of (in this case, `ExcelApi`), and otherwise will redirect to the original `isSetSupported` function.
+### Tip: Writing `isSetSupported` for the Beta endpoint
+
+As noted earlier, APIs in beta will not show `isSetSupported` as `true` until the functionality is already production-ready (see next section).  But on the other hand, what if you want to write the code just as you would for production, without changing a line (i.e., without needing to go back and uncomment the previously-commented-out `if` statements?)
+
+My personal trick for this: go ahead and write your `isSetSupported` checks and `if` statements just as you would for a regular production API.  Go to your main HTML page (which ideally you have two copies of -- one for production, and one for development, where you can reference the Beta CDN) and write in the following script tag right beneath your beta CDN reference (let's assume that the API set you care about is `ExcelApi`; and you effectively want *any* new APIs to show up as if they are fully supported, for testing purposes):
+
+ ```
+ <script>
+   (function() {
+     var originalIsSetSupported = Office.requirements.isSetSupported;
+     Office.requirements.isSetSupported = function (apiSet, version) {
+       if (apiSet === 'ExcelApi') { return true; }
+       return originalIsSetSupported(apiSet, version);
+     };
+   })();
+ </script>
+```
+
+Essentially, the script above will return `true` for any API at all that is part of the API set that you want the latest-and-greatest beta functinality of (in this case, `ExcelApi`), and otherwise will redirect to the original `isSetSupported` function.
 
 
-### How can you know than an API is "production-ready"? {#api-versioning-production-ready}
+## How can you know than an API is "production-ready"? 
 
 An API is production-ready when you look at the IntelliSense, see what API set version the API is supposed to be a part of, do `isSetSupported` on that version number, and see it return `true`.
 
 This moment should roughly correspond with:
 
 * Seeing the API listed in the documentation, no longer under an Open Spec.
-* Seeing its IntelliSense listed in a public place like DefinitelyTyped (<https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/office-js/index.d.ts>)
+* Seeing its IntelliSense listed in a public place like <!-- Is this a trustworthy source? -->[DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/office-js/index.d.ts).
 
-Note that some platforms might be ahead of others, with Desktop generally leading.  So just because `isSetSupported` returns `true` on Desktop, doesn't mean that it will necessarily return `true` on the Mac at the very same moment (though it generally will, within a month or two's time).  But the different cadence of implementation is precisely why `isSetSupported` (and/or manifest-based requirements specification) is needed in the first place.  As long as you surround any light-up functionality with `isSetSupported`, or add the manifest requirement, you shouldn't need to worry about what APIs are made available when; when the functionality becomes available on the given platform, your add-in will "just work" there.
-
-
-
-[^office-loader]: Note that even though your HTML page will reference `Office.js`, in practice that file is only a loader -- it will then go and load the *actual* host-specific files, such as https://appsforoffice.microsoft.com/lib/1/hosted/excel-web-16.00.js.  So if, for whatever reason, you are looking at the text headers of the JS files, note that the interesting version number is that of the host-specific file, *not* of Office.js itself.
-
-[^excel-req-set]: <https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets>
-
-[^deferred-channel]: Being on a *Deferred Channel* is an option offered to business customers, allowing them to lock in to older versions and defer the monthly updates until they've had sufficient time to test out the new features.  See <https://technet.microsoft.com/en-us/library/mt455210.aspx>.
+Note that some platforms might be ahead of others, with desktop generally leading.  So just because `isSetSupported` returns `true` on desktop, doesn't mean that it will necessarily return `true` on the Mac at the very same moment (though it generally will, within a month or two's time).  But the different cadence of implementation is precisely why `isSetSupported` (and/or manifest-based requirements specification) is needed in the first place.  As long as you surround any light-up functionality with `isSetSupported`, or add the manifest requirement, you shouldn't need to worry about what APIs are made available when; when the functionality becomes available on the given platform, your add-in will "just work" there.
