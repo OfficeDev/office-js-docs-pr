@@ -1,8 +1,6 @@
-<!-- A shorter title here might be more readable/digestible online. You could try a shorter title and a more detailed introduction that covers each point. -->
+# Understanding Office versions
 
-# Office versions:  Office 2016 vs. Office 365 (MSI vs. Click-to-Run); Deferred vs. Current channels; Insider tracks
-
->**Note:** This article is an excerpt from the book “[Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins)” by Michael Zlatkovsky, available for purchase as an e-book on LeanPub.com.  Copyright © 2016-2017 by Michael Zlatkovsky, all rights reserved.
+>**Note:** This article is an excerpt from the book "[Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins)" by Michael Zlatkovsky, available for purchase as an e-book on LeanPub.com.  Copyright © 2016-2017 by Michael Zlatkovsky, all rights reserved.
 
 To develop and distribute add-ins that use the new Office 2016 API model, you need either Office 2016 or Office 365 (the subscription-based superset that includes all Office 2016 features).  This seems reasonably straightforward, but the devil is in the details.
 
@@ -24,11 +22,9 @@ In the next few pages, I will describe the different installation possibilities.
 
 The first place where the API surface-area forks off is at the split between the MSI-based installation of Office 2016, and the subscription-based (sometimes called "click-to-run") installation of Office 365.
 
-Let's pause for a second to talk about Office 365, as I've seen some confusion about the term.  <!-- LG: It seems a bit odd to quote a Wikipedia article describing Microsoft content in Microsoft content. ;) Let's remove the link to Wikipedia and paraphrase the description in our own words, or link to an authoritative Microsoft site for a description. [Wikipedia](https://en.wikipedia.org/wiki/Office_365) explains it nicely:
+Let's pause for a second to talk about Office 365, as I've seen some confusion about the term.  
 
-> Office 365 is the brand name Microsoft uses for a group of software and services subscriptions, which together provide productivity software and related services to subscribers. For consumers, the service allows the use of Microsoft Office apps on Windows and acOS, provides storage space on Microsoft's cloud storage service OneDrive, and grants 60 Skype minutes per month. For business users, Office 365 offers service plans providing e-mail and social networking services through hosted versions of Exchange Server, Skype for Business Server, SharePoint and Office Online, integration with Yammer, as well as access to the Microsoft Office software.
-
--->
+Office 365 is a subscription service that provides the most up-to-date tools from Microsoft. There are Office 365 plans for home and personal use, as well as for small and midsized businesses, large enterprises, schools, and nonprofits. All Office 365 plans for home and personal use include Office 2016 with the fully installed Office applications like Word, PowerPoint, and Excel, as well as online storage, and more. Office 365 for business users provides email and social networking services through Exchange Server, Skype for Business Server, Office Online, and Yammer integration, in addition to Office software.
 
 So, for those coming from the SharePoint world: yes, SharePoint Online is part of an Office 365 subscription, as are the Office Online in-browser editors that come with it. But, it is not the *only* part of the subscription.  Getting access to the *same desktop/mac Office programs that you know and love* is also part of that same subscription (as is getting iOS and Android versions of those Word, Excel, PowerPoint, etc. programs).
 
@@ -37,7 +33,7 @@ Now, back to the APIs:  if you have Office 2016 (non-subscription), you will *on
 
 It's also worth noting that the original RTM offering of the APIs does have some bugs.  In my personal opinion, I would treat RTM as more of *the start of a journey* into rich host-specific APIs, rather than a destination of its own.
 
-So again: Office 2016, from an API / extensibility standpoint, is frozen in time... frozen to the functionality that was there when it shipped in September 2015.  <!-- LG: Remove for tone (For those unclear on how a "2016"-branded product could have shipped in 2015, I guess it's a bit like buying next year's car models. Or, perhaps, `2015 + 3/4-of-a-year` rounds to `2016`...) -->
+So again: Office 2016, from an API / extensibility standpoint, is frozen in time... frozen to the functionality that was there when it shipped in September 2015.  
 
 Meanwhile, Office 365 means "subscription".  This translates to being on the latest-and-greatest stable build (where "stable" for enterprise might be a build that's a few months old; more on that below).
 
