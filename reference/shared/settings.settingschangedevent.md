@@ -5,7 +5,7 @@ Occurs when the in-memory copy of the settings property bag is saved into the do
 
 |||
 |:-----|:-----|
-|**Hosts:**|Excel |
+|**Hosts:**|Excel,Word|
 |**Available in [Requirement set](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Settings|
 |**Last changed in**|1.0|
 
@@ -38,6 +38,7 @@ For more information about Office host application and server requirements, see 
 ||**Office for Windows desktop**|**Office Online (in browser)**|**Office for iPad**|
 |:-----|:-----|:-----|:-----|
 |**Excel**||Y||
+|**Word**|Y|Y||
 
 |||
 |:-----|:-----|
