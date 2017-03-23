@@ -1,6 +1,6 @@
 # Office.js API versioning 
 
->**Note:** This article is an excerpt from the book “[Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins)” by Michael Zlatkovsky, available for purchase as an e-book on LeanPub.com.  Copyright © 2016-2017 by Michael Zlatkovsky, all rights reserved.
+>**Note:** This article is an excerpt from the book "[Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins)" by Michael Zlatkovsky, available for purchase as an e-book on LeanPub.com.  Copyright © 2016-2017 by Michael Zlatkovsky, all rights reserved.
 
 There are several aspects to the versioning of the Office.js library.
 
@@ -19,8 +19,9 @@ The more interesting bit for versioning are the **actual API capabilities that a
 
 The solution to this complexity (albeit complex in its own right) is *Requirement Sets*.  For example, if you look at the [Excel API sets](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) documentation, you will see that the 2016 wave of Excel APIs has had three versions as of December 2016:  1.1, 1.2, and 1.3.  ExcelApi 1.1 was what shipped with Office 2016 RTM in September 2015; 1.2 shipped in early March 2016; and 1.3 shipped in October of 2016.  Each API set version has a corresponding Office host version that supports this API set. The version numbers are listed in the table, and there are links below the table to find a mapping from build numbers to dates.
 
-<!-- LG: This was a screenshot of content in one of our articles. I recommend linking to the article here instead, so it's always pointint to the latest info. -->
-For details, see [Excel JavaScript API requirement sets](../../reference/requirement-sets/excel-api-requirement-sets.md).
+The following image shows the table; see the [Excel JavaScript API requirement sets](../../reference/requirement-sets/excel-api-requirement-sets.md) topic for the latest content.
+
+![Screenshot of the Excel JavaScript API requirement sets table](../images/api-set-table.jpg)
 
 Each of the API set versions contain a number of fairly large features, as well as incremental improvements to existing features.  The topic for each requirement set, such as the link above, will provide a detailed listing of each of those features.  And as you're programming, if you are using the JavaScript or TypeScript IntelliSense, you should be able to see the API versions for each of your APIs displayed as part of the IntelliSense:
 
@@ -109,6 +110,6 @@ An API is production-ready when you look at the IntelliSense, see what API set v
 This moment should roughly correspond with:
 
 * Seeing the API listed in the documentation, no longer under an Open Spec.
-* Seeing its IntelliSense listed in a public place like <!-- Is this a trustworthy source? -->[DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/office-js/index.d.ts).
+* Seeing its IntelliSense listed in a public place like [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/office-js/index.d.ts).
 
 Note that some platforms might be ahead of others, with desktop generally leading.  So just because `isSetSupported` returns `true` on desktop, doesn't mean that it will necessarily return `true` on the Mac at the very same moment (though it generally will, within a month or two's time).  But the different cadence of implementation is precisely why `isSetSupported` (and/or manifest-based requirements specification) is needed in the first place.  As long as you surround any light-up functionality with `isSetSupported`, or add the manifest requirement, you shouldn't need to worry about what APIs are made available when; when the functionality becomes available on the given platform, your add-in will "just work" there.
