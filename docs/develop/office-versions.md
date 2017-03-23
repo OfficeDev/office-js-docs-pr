@@ -15,7 +15,7 @@ Different versions (and categories of versions) offer different API surface area
 
 In the next few pages, I will describe the different installation possibilities.  It may help to bear the following image in mind:
 
-![An image that shows the Office 2016 MSI release, and the Office 365 subscription. The subscription has two versions - consumer and enterprise. The consumer version has current, insider slow, and insider fast releases. The enterprise version has deferred, first release for deferred channel, current, and first release for current channel releases.](../../images/office-versions.jpg)
+![An image that shows the Office 2016 MSI release, and the Office 365 subscription. The subscription has two versions - consumer and enterprise. The consumer version has current, insider slow, and insider fast releases. The enterprise version has deferred, first release for deferred channel, current, and first release for current channel releases.](../../images/office-versions.png)
 
 
 ## Office 2016 vs. Office 365
