@@ -21,11 +21,11 @@ The solution to this complexity (albeit complex in its own right) is *Requiremen
 
 The following image shows the table; see the [Excel JavaScript API requirement sets](../../reference/requirement-sets/excel-api-requirement-sets.md) topic for the latest content.
 
-![Screenshot of the Excel JavaScript API requirement sets table](../images/api-set-table.png)
+![Screenshot of the Excel JavaScript API requirement sets table](../../images/api-set-table.png)
 
 Each of the API set versions contain a number of fairly large features, as well as incremental improvements to existing features.  The topic for each requirement set, such as the link above, will provide a detailed listing of each of those features.  And as you're programming, if you are using the JavaScript or TypeScript IntelliSense, you should be able to see the API versions for each of your APIs displayed as part of the IntelliSense:
 
-![A screenshot showing the JavaScript IntelliSense.](../../images/api-set-intelliSense.png)
+![A screenshot showing the JavaScript IntelliSense.](../../images/api-set-intellisense.png)
 
 You can use the requirement set in one of two ways.  You can declare in the manifest that "I need API set ExcelApi 1.2, or else my add-in doesn't work at all" -- and that's fine, but then of course you aren't able to service older hosts, and so your add-in won't even show up there.  Alternatively, if you add-in could *sorta* work in a 1.1 environment, but you want to *light-up* additional functionality on newer hosts that support it, you can use the manifest to declare only your minimal API sets that you need (e.g., ExcelApi 1.1), and then do runtime checks for higher version numbers via the `isSetSupported` API.
 
