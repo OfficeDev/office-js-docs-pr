@@ -5,7 +5,7 @@ Gets a  **Settings** object that represents the settings that raised the **setti
 
 |||
 |:-----|:-----|
-|**Hosts:**|Excel|
+|**Hosts:**|Excel,Word|
 |**Available in [Requirement set](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Settings|
 |**Last changed in**|1.0|
 
@@ -31,6 +31,7 @@ For more information about Office host application and server requirements, see 
 ||**Office for Windows desktop**|**Office Online (in browser)**|**Office for iPad**|
 |:-----|:-----|:-----|:-----|
 |**Excel**||Y||
+|**Word**|Y|Y||
 
 |||
 |:-----|:-----|
