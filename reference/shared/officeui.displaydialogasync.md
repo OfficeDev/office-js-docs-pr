@@ -95,7 +95,7 @@ The following configuration options are available for a dialog box.
 |:---------------|:--------|:----------|
 |**width**|int|Optional. Defines the width of the dialog box as a percentage of the current display. The default value is 80%. The minimum resolution is 250 pixels.|
 |**height**|int|Optional. Defines the height of the dialog box as a percentage of the current display. The default value is 80%. The minimum resolution is 150 pixels.|
-|**displayInIframe**|bool|Optional. Determines whether the dialog box should be displayed within an IFrame. **This setting is only applicable in Office Online clients**, this setting is ignored by desktop clients. The following are the possible values:<ul><li>false (default) - The dialog will be displayed as a new browser window (pop-up). Recommended for authentication pages that cannot be displayed in an IFrame. </li><li>true - The dialog will be displayed as a floating overlay with an IFrame. This is best for user experience and performance.</li>|
+|**displayInIframe**|bool|Optional. Determines whether the dialog box should be displayed within an IFrame. **This setting is only applicable in Office Online clients**, and is ignored by other platforms. The following are the possible values:<ul><li>false (default) - The dialog will be displayed as a new browser window (pop-up). Recommended for authentication pages that cannot be displayed in an IFrame. </li><li>true - The dialog will be displayed as a floating overlay with an IFrame. This is best for user experience and performance.</li>|
 
 
 ## Callback value
