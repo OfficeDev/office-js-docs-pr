@@ -16,7 +16,7 @@ Required. Specifies which event will invoke the event handler. The possible valu
 
 |  Event type  |  Description  |
 |:-----|:-----|
-|  `MessageSend`  |  The event handler will be invoked when the user sends a message.  |
+|  `ItemSend`  |  The event handler will be invoked when the user sends a message or meeting invitation.  |
 
 ## FunctionExecution attribute
 Required. MUST be set to `synchronous`.
@@ -25,5 +25,5 @@ Required. MUST be set to `synchronous`.
 Required. Specifies the function name of the event handler. This value must match a function name in the add-in's [function file](./functionfile.md).
 
 ```xml
-<Event Type="MessageSend" FunctionExecution="synchronous" FunctionName="messageSendHandler" /> 
+<Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
 ```

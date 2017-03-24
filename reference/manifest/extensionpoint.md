@@ -244,9 +244,9 @@ This extension point adds an event handler for a specified event.
 |:-----|:-----|
 |  [Event](./event.md) |  Specifies the event and event handler function.  |
 
-#### MessageSend event example
+#### ItemSend event example
 ```xml
 <ExtensionPoint xsi:type="Events"> 
-  <Event Type="MessageSend" FunctionExecution="synchronous" FunctionName="messageSendHandler" /> 
+  <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
 </ExtensionPoint> 
 ```
