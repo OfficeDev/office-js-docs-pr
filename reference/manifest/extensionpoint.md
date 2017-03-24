@@ -74,6 +74,7 @@ The following examples show how to use the  **ExtensionPoint** element with **Pr
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
 - [Module](#module) (Can only be used in the [DesktopFormFactor](./desktopformfactor.md).)
 - [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
+- [Events](#events)
 
 ### MessageReadCommandSurface
 This extension point puts buttons in the command surface for the mail read view. In Outlook desktop, this appears in the ribbon.
@@ -232,4 +233,20 @@ This extension point puts buttons in the command surface for the mail read view 
     <!-- Control definition -->
   </Control>
 </ExtensionPoint>
+```
+
+### Events
+This extension point adds an event handler for a specified event.
+
+> **Note:** This element type is only supported by Outlook on the web in Office 365.
+
+|  Element |  Description  |
+|:-----|:-----|
+|  [Event](./event.md) |  Specifies the event and event handler function.  |
+
+#### MessageSend event example
+```xml
+<ExtensionPoint xsi:type="Events"> 
+  <Event Type="MessageSend" FunctionExecution="synchronous" FunctionName="messageSendHandler" /> 
+</ExtensionPoint> 
 ```
