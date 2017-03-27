@@ -88,7 +88,7 @@ As noted earlier, APIs in beta will not show `isSetSupported` as `true` until th
 
 My personal trick for this: go ahead and write your `isSetSupported` checks and `if` statements just as you would for a regular production API.  Go to your main HTML page (which ideally you have two copies of -- one for production, and one for development, where you can reference the Beta CDN) and write in the following script tag right beneath your beta CDN reference (let's assume that the API set you care about is `ExcelApi`; and you effectively want *any* new APIs to show up as if they are fully supported, for testing purposes):
 
- ```
+ ~~~
    (function() {
      var originalIsSetSupported = Office.requirements.isSetSupported;
      Office.requirements.isSetSupported = function (apiSet, version) {
@@ -96,7 +96,7 @@ My personal trick for this: go ahead and write your `isSetSupported` checks and 
        return originalIsSetSupported(apiSet, version);
      };
    })();
-```
+~~~
 
 Essentially, the script above will return `true` for any API at all that is part of the API set that you want the latest-and-greatest beta functinality of (in this case, `ExcelApi`), and otherwise will redirect to the original `isSetSupported` function.
 
