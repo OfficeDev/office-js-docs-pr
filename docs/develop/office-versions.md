@@ -1,6 +1,8 @@
 # Understanding Office versions
 
->**Note:** This article is an excerpt from the book "[Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins)" by Michael Zlatkovsky, available for purchase as an e-book on LeanPub.com.  Copyright © 2016-2017 by Michael Zlatkovsky, all rights reserved.
+|||
+|:--|:--|:--|
+|![An image of the Building Office Add-ins using Office.js book cover](../../images/book-cover.png)|**Note:** This article is an excerpt from the book [Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins) by Michael Zlatkovsky, available for purchase as an e-book on LeanPub.com.<br/><br/>Copyright © 2016-2017 by Michael Zlatkovsky, all rights reserved.|
 
 To develop and distribute add-ins that use the new Office 2016 API model, you need either Office 2016 or Office 365 (the subscription-based superset that includes all Office 2016 features).  This seems reasonably straightforward, but the devil is in the details.
 
