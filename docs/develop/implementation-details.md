@@ -2,7 +2,7 @@
 
 | | |
 |:--|:--|
-|![An image of the Building Office Add-ins using Office.js book cover](../../images/book-cover.png)|**This article is an excerpt from the book [Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins) by Michael Zlatkovsky, available for purchase as an e-book on LeanPub.com.**<br/><br/>Copyright © 2016-2017 by Michael Zlatkovsky, all rights reserved.|
+|[![An image of the Building Office Add-ins using Office.js book cover](../../images/book-cover.png)](https://leanpub.com/buildingofficeaddins)|**This article is an excerpt from the book [Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins) by Michael Zlatkovsky, available for purchase as an e-book on [LeanPub.com](https://leanpub.com/buildingofficeaddins).**<br/><br/>Copyright © 2016-2017 by Michael Zlatkovsky, all rights reserved.|
 
 > *In writing this book and receiving feedback from early readers, I've heard a couple requests for a more thorough explanation of what happens under the covers with all this proxy-object / syncing business.  So, if you're the sort of person who likes to see the **implementation details** in order to better understand the outer behavior of an API, read on.  If you're not, feel free to skip to the next section.*
 
