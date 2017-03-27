@@ -1,6 +1,6 @@
 # Understanding Office versions
 
-|||
+| | |
 |:--|:--|
 |![An image of the Building Office Add-ins using Office.js book cover](../../images/book-cover.png)|**Note:** This article is an excerpt from the book [Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins) by Michael Zlatkovsky, available for purchase as an e-book on LeanPub.com.<br/><br/>Copyright © 2016-2017 by Michael Zlatkovsky, all rights reserved.|
 
