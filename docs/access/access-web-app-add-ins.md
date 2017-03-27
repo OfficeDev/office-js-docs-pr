@@ -1,6 +1,6 @@
 # Create add-ins for Access web apps
 
-
+>**Important!** Access web apps in SharePoint are deprecated. We recommend that you use [Microsoft PowerApps](https://powerapps.microsoft.com/) to build no-code business solutions for web and mobile devices.
 
 This article shows you how to use Visual Studio 2015 to develop an Office Add-in that targets Access web apps.
 
