@@ -2,7 +2,7 @@
 
 | | |
 |:--|:--|
-|[![An image of the Building Office Add-ins using Office.js book cover](../../images/book-cover.png)](https://leanpub.com/buildingofficeaddins)|**This article is an excerpt from the book [Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins) by Michael Zlatkovsky, available for purchase as an e-book on [LeanPub.com](https://leanpub.com/buildingofficeaddins).**<br/><br/>Copyright © 2016-2017 by Michael Zlatkovsky, all rights reserved.|
+|[![An image of the Building Office Add-ins using Office.js book cover](../../images/book-cover.png)](https://leanpub.com/buildingofficeaddins)|**This article is an excerpt from the book "[Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins)" by Michael Zlatkovsky, available for purchase as an e-book on [LeanPub.com](https://leanpub.com/buildingofficeaddins).**<br/><br/>Copyright © 2016-2017 by Michael Zlatkovsky, all rights reserved.|
 
 > *In writing this book and receiving feedback from early readers, I've heard a couple requests for a more thorough explanation of what happens under the covers with all this proxy-object / syncing business.  So, if you're the sort of person who likes to see the **implementation details** in order to better understand the outer behavior of an API, read on.  If you're not, feel free to skip to the next section.*
 
@@ -231,3 +231,5 @@ And then, at the completion of the `run`, after a final flush of the queue, the 
 
 
 And this -- in a not so small nutshell -- is how the underlying proxy objects work, and how the runtime handles its communication to and from the host application.  
+
+>**This article is an excerpt from the book "[Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins)" by Michael Zlatkovsky**. Read more by purchasing the e-book online at [LeanPub.com](https://leanpub.com/buildingofficeaddins).
