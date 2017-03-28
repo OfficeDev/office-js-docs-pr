@@ -2,7 +2,7 @@
 
 | | |
 |:--|:--|
-|[![An image of the Building Office Add-ins using Office.js book cover](../../images/book-cover.png)](https://leanpub.com/buildingofficeaddins)|**This article is an excerpt from the book [Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins) by Michael Zlatkovsky, available for purchase as an e-book on [LeanPub.com](https://leanpub.com/buildingofficeaddins).**<br/><br/>Copyright © 2016-2017 by Michael Zlatkovsky, all rights reserved.|
+|[![An image of the Building Office Add-ins using Office.js book cover](../../images/book-cover.png)](https://leanpub.com/buildingofficeaddins)|**This article is an excerpt from the book "[Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins)" by Michael Zlatkovsky, available for purchase as an e-book on [LeanPub.com](https://leanpub.com/buildingofficeaddins).**<br/><br/>Copyright © 2016-2017 by Michael Zlatkovsky, all rights reserved.|
 
 To develop and distribute add-ins that use the new Office 2016 API model, you need either Office 2016 or Office 365 (the subscription-based superset that includes all Office 2016 features).  This seems reasonably straightforward, but the devil is in the details.
 
@@ -60,3 +60,6 @@ However, risk-averse enterprises may also choose to be on a Deferred channel, wh
 
 For non-PC platforms, there is also a span of time before different functionality lights up.  This is sometimes dependent not just on the *delay* between something being code-complete and getting in front of customers' hands (i.e., the difference between Insider and Current and Deferred), but also on the order in which functionality gets implemented on these platforms.  For the Excel APIs to date, I have seen them light up on most platforms at roughly the same time; for Word, Office for desktop has generally been ahead of Office Online.  For the non-API functionality (i.e., dialog boxes, ribbon extensibility), these have also generally come to the desktop first, followed by Office Online and Mac.  The different speeds of implementation is why it's important to keep in mind not just Office host versions, but also API versions and Requirement Sets.
  
+| | |
+|:--|:--|
+|[![An image of the Building Office Add-ins using Office.js book cover](../../images/book-cover.png)](https://leanpub.com/buildingofficeaddins)|**This article was an excerpt from the book "[Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins)" by Michael Zlatkovsky**. <br/><br/> Read more by purchasing the e-book online at [LeanPub.com](https://leanpub.com/buildingofficeaddins).|
