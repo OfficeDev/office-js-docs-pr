@@ -58,7 +58,7 @@ For information about common API requirement sets, see [Office common API requir
 
 ### Conditional formatting
 
-Introduces [Conditional formating](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_1.4_OpenSpec/reference/excel/conditionalformat.md) of a range. Allows follwoing types of conditional formatting:
+Introduces [Conditional formating](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/conditionalformat.md) of a range. Allows follwoing types of conditional formatting:
 
 * Color scale
 * Data bar
