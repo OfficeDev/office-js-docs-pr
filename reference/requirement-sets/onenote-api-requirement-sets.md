@@ -4,8 +4,8 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 
 The following table lists the OneNote requirement sets, the Office host applications that support those requirement sets, and the build versions or availability date.
 
-|  Requirement set  |  Office Online  | 
-|:-----|-----|:-----|:-----|:-----|
+|  Requirement set  |  Office Online | 
+|:-----|:-----|
 | OneNoteApi 1.1  | September 2016 |  
 
 ## Office common API requirement sets
