@@ -54,6 +54,57 @@ The following code example shows an add-in that loads in all Office host applica
 ## Office common API requirement sets
 For information about common API requirement sets, see [Office common API requirement sets](office-add-in-requirement-sets.md).
 
+## Upcoming Excel 1.6 Release Features
+
+### Conditional formatting
+
+Introduces [Conditional formating](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_1.4_OpenSpec/reference/excel/conditionalformat.md) of a range. Allows follwoing types of conditional formatting:
+
+* Color scale
+* Data bar
+* Icon set
+* Custom
+
+In addiiton:
+* Returns the range the conditonal format is applied to.
+* Removal of conditional formatting.
+* Provides priority and stopifTrue capability
+* Get collection of all conditional formatting on a given range.
+* Clears all conditional formats active on the current specified range.
+
+For API details, please refer to the Excel API [open specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec). 
+
+## Upcoming Excel 1.5 Release Features
+
+### Custom XML Part
+
+* Addition of custom XML parts collection to workbook object.
+* Get custom XML part using ID
+* Get a new scoped collection of custom XML parts whose namespaces match the given namespace.
+* Get XML string associated with a part.
+* Provide id and namespace of a part.
+* Adds a new custom XML part to the workbook.
+* Set entire XML part.
+* Delete a custom XML part.
+* Delete an attribute with the given name from the element identified by xpath.
+* Query the XML content by xpath.
+* Insert, update and delete attribute.
+
+**Reference implementation:** Please refer [here](https://github.com/mandren/Excel-CustomXMLPart-Demo) for a reference implementation that shows how custom XML parts can be used in an add-in.
+
+### Others
+* `range.getSurroundingRegion()` Returns a Range object that represents the surrounding region for this range. A surrounding region is a range bounded by any combination of blank rows and blank columns relative to this range.
+* `getNextColumn()` and `getPreviousColumn()`, `getLast() on table column.
+* `getActiveWorksheet()` on the workbook.
+* `getRange(address: string)` off of workbook.
+* `getBoundingRange(ranges: [])` Gets the smallest range object that encompasses the provided ranges. For example, the bounding range between "B2:C5" and "D10:E15" is "B2:E15".
+* `getCount()` on various collections such as named item, worksheet, table, etc. to get number of items in a collection. `workbook.worksheets.getCount()`
+* `getFirst()` and `getLast()` and get last on various collection such as tworksheet, able column, chart points, range view collection.
+* `getNext()` and `getPrevious()` on worksheet, table column collection.
+* `getRangeR1C1()` Gets the range object beginning at a particular row index and column index, and spanning a certain number of rows and columns.
+
+For API details, please refer to the Excel API [open specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec). 
+
 ## What's new in Excel JavaScript API 1.4
 The following are the new additions to the Excel JavaScript APIs in requirement set 1.3.
 
