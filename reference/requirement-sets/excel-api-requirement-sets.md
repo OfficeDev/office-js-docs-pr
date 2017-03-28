@@ -41,12 +41,7 @@ else {
 
 Use the Requirements element in the add-in manifest to specify critical requirement sets or API members that your add-in must use. If the Office host or platform doesn't support the requirement sets or API members specified in the Requirements element, the add-in won't run in that host or platform, and won't display in My Add-ins. Instead, we recommend that you make your add-in available on all platforms of an Office host, such as Excel for Windows, Excel Online, and Excel for iPad. To make your add-in available on all Office hosts and platforms, use runtime checks instead of the Requirements element.
 
-The following code example shows an add-in that loads in all Office host applications that support the following:
-
-ExcelApi requirement set, which has a minimum version of 1.3.
-
-
-Document.getSelectedDataAsync method.
+The following code example shows an add-in that loads in all Office host applications that support ExcelApi requirement set, version 1.3.
 
 ```xml
 <Requirements>
