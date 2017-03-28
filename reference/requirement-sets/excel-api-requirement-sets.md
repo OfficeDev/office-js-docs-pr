@@ -4,14 +4,15 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 
 Excel add-ins run across multiple versions of Office, including Office 2016 for Windows, Office for iPad, Office for Mac, and Office Online. The following table lists the Excel requirement sets, the Office host applications that support that requirement set, and the build versions or number for those applications.
 
-> For the requirement sets that are marked as *Beta*, use the specified (or later) version of the Office software and use the Beta library of the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js
+> **Note**: Any API that is listed as **beta** is not ready for production usage. They are made available so that developers can try them out in test and development environments. They are not meant to be used against production/business critical documents. 
 
-> Entires not listed as *Beta* are generally available and you can continue to use Production CDN library: https://appsforoffice.microsoft.com/lib/1/hosted/office.js
+> For the requirement sets that are marked as *Beta*, use the specified (or later) version of the Office software and use the Beta library of the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js. Entires not listed as *Beta* are generally available and you can continue to use Production CDN library: https://appsforoffice.microsoft.com/lib/1/hosted/office.js
 
 |  Requirement set  |  Office 2016 for Windows*  |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
-| ExcelApi 1.5 **Beta**  | Version 1702 (Build TBD) or later| Coming soon |  Coming soon| coming soon | Coming soon|
-| ExcelApi 1.4 **Beta** | Version 1702 (Build TBD) or later| Coming soon |  Coming soon| coming soon | Coming soon|
+| ExcelApi 1.6 **Beta**  | Version 1702 (Build TBD) or later| Coming soon |  Coming soon| March 2017 | Coming soon|
+| ExcelApi 1.5 **Beta**  | Version 1702 (Build TBD) or later| Coming soon |  Coming soon| March 2017 | Coming soon|
+| ExcelApi 1.4 | Version 1701 (Build 7870.2024) or later| Coming soon |  Coming soon| January 2017 | Coming soon|
 | ExcelApi 1.3  | Version 1608 (Build 7369.2055) or later| 1.27 or later |  15.27 or later| September 2016 | Version 1608 (Build 7601.6800) or later|
 | ExcelApi 1.2  | Version 1601 (Build 6741.2088) or later | 1.21 or later | 15.22 or later| January 2016 ||
 | ExcelApi 1.1  | Version 1509 (Build 4266.1001) or later | 1.19 or later | 15.20 or later| January 2016 ||
@@ -25,8 +26,86 @@ To find out more about versions, build numbers, and Office Online Server, see:
 - [Where you can find the version and build number for an Office 365 client application](https://technet.microsoft.com/en-us/library/mt592918.aspx#Anchor_1)
 - [Office Online Server overview](https://technet.microsoft.com/en-us/library/jj219437(v=office.16).aspx)
 
+## Runtime requirement support check
+
+During the runtime, add-ins can check if a particular host supports an API requirement set by doing the following-check: 
+
+```js
+if (Office.context.requirements.isSetSupported('ExcelApi', 1.3) === true) {
+  /// perform actions
+}
+else {
+  /// provide alternate flow/logic
+}
+```
+
+## Manifest based requirement support check
+
+Use the Requirements element in the add-in manifest to specify critical requirement sets or API members that your add-in must use. If the Office host or platform doesn't support the requirement sets or API members specified in the Requirements element, the add-in won't run in that host or platform, and won't display in My Add-ins. Instead, we recommend that you make your add-in available on all platforms of an Office host, such as Excel for Windows, Excel Online, and Excel for iPad. To make your add-in available on all Office hosts and platforms, use runtime checks instead of the Requirements element.
+
+The following code example shows an add-in that loads in all Office host applications that support ExcelApi requirement set, version 1.3.
+
+```xml
+<Requirements>
+   <Sets DefaultMinVersion="1.3">
+      <Set Name="ExcelApi" MinVersion="1.3"/>
+   </Sets>
+</Requirements>
+```
+
 ## Office common API requirement sets
 For information about common API requirement sets, see [Office common API requirement sets](office-add-in-requirement-sets.md).
+
+## Upcoming Excel 1.6 Release Features
+
+### Conditional formatting
+
+Introduces [Conditional formating](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/conditionalformat.md) of a range. Allows follwoing types of conditional formatting:
+
+* Color scale
+* Data bar
+* Icon set
+* Custom
+
+In addiiton:
+* Returns the range the conditonal format is applied to.
+* Removal of conditional formatting.
+* Provides priority and stopifTrue capability
+* Get collection of all conditional formatting on a given range.
+* Clears all conditional formats active on the current specified range.
+
+For API details, please refer to the Excel API [open specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec). 
+
+## Upcoming Excel 1.5 Release Features
+
+### Custom XML Part
+
+* Addition of custom XML parts collection to workbook object.
+* Get custom XML part using ID
+* Get a new scoped collection of custom XML parts whose namespaces match the given namespace.
+* Get XML string associated with a part.
+* Provide id and namespace of a part.
+* Adds a new custom XML part to the workbook.
+* Set entire XML part.
+* Delete a custom XML part.
+* Delete an attribute with the given name from the element identified by xpath.
+* Query the XML content by xpath.
+* Insert, update and delete attribute.
+
+**Reference implementation:** Please refer [here](https://github.com/mandren/Excel-CustomXMLPart-Demo) for a reference implementation that shows how custom XML parts can be used in an add-in.
+
+### Others
+* `range.getSurroundingRegion()` Returns a Range object that represents the surrounding region for this range. A surrounding region is a range bounded by any combination of blank rows and blank columns relative to this range.
+* `getNextColumn()` and `getPreviousColumn()`, `getLast() on table column.
+* `getActiveWorksheet()` on the workbook.
+* `getRange(address: string)` off of workbook.
+* `getBoundingRange(ranges: [])` Gets the smallest range object that encompasses the provided ranges. For example, the bounding range between "B2:C5" and "D10:E15" is "B2:E15".
+* `getCount()` on various collections such as named item, worksheet, table, etc. to get number of items in a collection. `workbook.worksheets.getCount()`
+* `getFirst()` and `getLast()` and get last on various collection such as tworksheet, able column, chart points, range view collection.
+* `getNext()` and `getPrevious()` on worksheet, table column collection.
+* `getRangeR1C1()` Gets the range object beginning at a particular row index and column index, and spanning a certain number of rows and columns.
+
+For API details, please refer to the Excel API [open specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec). 
 
 ## What's new in Excel JavaScript API 1.4
 The following are the new additions to the Excel JavaScript APIs in requirement set 1.3.
@@ -58,14 +137,8 @@ APIs include `getItem()` to get setting entry via the key, `add()` to add the sp
 
 `worksheet.GetItemOrNullObject()`
 
-### Suspend calculation
-Suspends calculation (application.suspendCalculationUntilNextSync()) until the next "context.sync()" is called. Once set, it is the developer's responsibility to re-calc the workbook, to ensure that any dependencies are propagated.
-
-In addition, we are fixing the F9 re-calc bug that wasn't re-calculating the dirty cells.
-
 |Object| What is new| Description|Requirement set|
 |:----|:----|:----|:----|
-|[application](../excel/application.md)|_Method_ > [suspendCalculationUntilNextSync()](../excel/application.md#suspendcalculationuntilnextsync)|Suspends calculation until the next "context.sync()" is called. Once set, it is the developer's responsibility to re-calc the workbook, to ensure that any dependencies are propagated.|1.4|
 |[bindingCollection](../excel/bindingcollection.md)|_Method_ > [getCount()](../excel/bindingcollection.md#getcount)|Gets the number of bindings in the collection.|1.4|
 |[bindingCollection](../excel/bindingcollection.md)|_Method_ > [getItemOrNullObject(id: string)](../excel/bindingcollection.md#getitemornullobjectid-string)|Gets a binding object by ID. If the binding object does not exist, will return a null object.|1.4|
 |[chartCollection](../excel/chartcollection.md)|_Method_ > [getCount()](../excel/chartcollection.md#getcount)|Returns the number of charts in the worksheet.|1.4|

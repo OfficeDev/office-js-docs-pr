@@ -6,13 +6,8 @@ The features described here might be in different stages of development, such as
 
 >**Important:** The features listed here are still in the design and review phase and are not yet generally available. These features and APIs are subject to change.
 
-## Visio JavaScript APIs
-Visio Online is the new way to view and share Visio diagrams on the web. You can use the Visio JavaScript API 1.1 to extend the capabilities of Visio Online. Use these APIs against Visio diagrams embedded in a SharePoint page. Note that the Visio JavaScript API does not currently apply to [Office Add-ins](https://dev.office.com/docs/add-ins/overview/office-add-ins).
-
-**See the [Visio JavaScript API 1.1](https://github.com/OfficeDev/office-js-docs/tree/VisioJs_1.1_Openspec) page to learn more and provide your feedback.**
-
 ## New Excel JavaScript APIs
-Join us in reviewing our design for new Excel JavaScript APIs. New and updated APIs include customXML parts, conditional formatting, etc. 
+Join us in reviewing our design for new Excel JavaScript APIs. 
 
 **See the [Excel JavaScript open design page](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec) to learn more and provide your feedback.**
 
