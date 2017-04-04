@@ -10,7 +10,7 @@ Use these methods to validate and troubleshoot issues in your manifest.
 To help to make sure that the manifest file that describes your Office Add-in is correct and complete, validate it against the [Office Add-in Validator](https://github.com/OfficeDev/office-addin-validator).
 
 To use the Office Add-in Validator to validate your manifest:
-1. Install [Node.js](https://nodejs.org/download/) on your machine. 
+1. Install [Node.js](https://nodejs.org/download/). 
 2. Open a command prompt / terminal as an administrator, and install the Office Add-in Validator and its dependencies globally by using the following command:
 
 	```
