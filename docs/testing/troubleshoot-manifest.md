@@ -2,7 +2,7 @@
 
 Use these methods to validate and troubleshoot issues in your manifest. 
 
-- [Validate the Office Add-ins manifest with the Office Add-in Validator](validate-the-office-add-ins-manifest-against-validator)
+- [Validate the Office Add-ins manifest with the Office Add-in Validator](validate-the-office-add-ins-manifest-against-validator)	
 - [Validate the Office Add-ins manifest against the XML schema](validate-the-office-add-ins-manifest-against-the-xml-schema)
 - [Use runtime logging to debug the manifest for your Office Add-in](use-runtime-logging-to-debug-the-manifest-for-your-office-add-in)
 
@@ -18,7 +18,7 @@ To use the Office Add-in Validator to validate your manifest:
 	npm install -g office-addin-validator
 	```
 	
-> **Note:** If you already have Yo Office installed, upgrade to the latest version, and the validator will be installed as a dependency.
+    > **Note:** If you already have Yo Office installed, upgrade to the latest version, and the validator will be installed as a dependency.
 
 3. Run the following command to validate your manifest. Replace MANIFEST.XML with the path to the manifest XML file.
 
