@@ -1,6 +1,6 @@
-# Use centralized deployment to publish add-ins
+# Use centralized deployment to publish Office Add-ins
 
-The Office 365 admin center makes it easy for an admin to deploy Word, Excel, and PowerPoint add-ins to users or groups within their organization. Add-ins deployed via the admin center are available to users in their Office applications right away, with no client configuration required. You can deploy internal add-ins as well as add-ins provided by ISVs via the admin center.
+The Office 365 admin center makes it easy for an administrator to deploy Word, Excel, and PowerPoint add-ins to users or groups within their organization. Add-ins deployed via the admin center are available to users in their Office applications right away, with no client configuration required. You can deploy internal add-ins as well as add-ins provided by ISVs via centralized deployment.
 
 The admin center currently supports the following scenarios:
 
@@ -26,9 +26,9 @@ You can deploy add-ins via the admin center if your organization meets the follo
 - Users sign in to Office 2016 with their work or school account.
 - Your organization uses the Azure Active Directory (Azure AD) identity service.
 
-Currently, add-ins for the following clients are supported. 
+Currently, add-ins for the following Office clients are supported. 
 
-|**Office application**|**Office 2016 for Windows**|Office Online**|Office 2016 for Mac|
+|**Office application**|**Office 2016 for Windows**|**Office Online**|**Office 2016 for Mac**|
 |:---------------------|:--------------------------|:--------------|:------------------|
 |Word|X|X|X|
 |Excel|X|X|X|
@@ -67,13 +67,13 @@ To publish an add-in via centralized deployment:
 5.	Choose **Next**.
 6.	If you're adding an add-in from the Office Store, select the add-in. The add-in is now enabled. 
 7.	Choose **Edit** to assign the add-in to users. 
-8.	Search for the people or groups who you want to deploy the add-in and choose **Add** next to their name.
+8.	Search for the people or groups to whom you want to deploy the add-in and choose **Add** next to their name.
 9.	Choose **Save**, review the add-in settings, and then choose **Close**.
 
 
 If the add-in supports add-in commands, the commands will appear on the Office application ribbon for all users to whom the add-in is deployed. 
 
-If the add-in does not support add-in commands, users can add it from the **My Add-ins** button. To add the add-in:
+If the add-in does not support add-in commands, users can add it from the **My Add-ins** button by doing the following:
 
 1.	In Word 2016, Excel 2016, or PowerPoint 2016, choose **Insert** > **My Add-ins**.
 2.	Choose the **Admin Managed** tab in the add-in window.
