@@ -8,11 +8,9 @@ When considering their place in a layout, contemplate the order in which a user 
 
 While buttons can technically be used to navigate a user to another part of the experience,this is not recommended unless that navigation is part of an action or their flow.
   
-### Task Pane Example
----
-![alt text](../../images/exampleButton@430.png)
+#### Task Pane Example
 
----
+![alt text](../../images/exampleButton@430.png)
 
 ## Best Practices
 
@@ -24,9 +22,16 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
 
 ##### Style 2
 
-Do | Don't
---- | ---
-![alt text](../../images/do1@320.png) | ![alt text](../../images/dont1@320.png)
+<table>
+    <tr>
+        <th>Do</th>
+        <th>Don't</th>
+    </tr>
+    <tr>
+        <td><img src="../../images/do1@320.png"></td>
+        <td><img src="../../images/dont1@320.png"></td>
+    </tr>
+</table>
 
 **DO** Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
 
@@ -34,10 +39,20 @@ Do | Don't
 
 ##### Style 3
 
-Do | Don't
---- | ---
-![alt text](../../images/do1@320.png) | ![alt text](../../images/dont1@320.png)
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+<table>
+    <tr>
+        <th>Do</th>
+        <th>Don't</th>
+    </tr>
+    <tr>
+        <td><img src="../../images/do1@320.png"></td>
+        <td><img src="../../images/dont1@320.png"></td>
+    </tr>
+    <tr>
+        <td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</td>
+        <td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</td>
+    </tr>
+</table>
 
 ## Variants
 
@@ -47,31 +62,65 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
 
 ##### Style 2
 
-Default Button |
----
-![alt text](../../images/default.png)
+<table>
+    <tr>
+        <th><h3>Default Button</h3></th>
+    </tr>
+    <tr>
+        <td><img src="../../images/default.png"></td>
+    </tr>
+</table>
 
-Primary Button |
----
-![alt text](../../images/primary.png)
+<table>
+    <tr>
+        <th><h4>Primary Button</h4></th>
+    </tr>
+    <tr>
+        <td><img src="../../images/primary.png"></td>
+    </tr>
+</table>
 
-Compound Button |
----
-![alt text](../../images/compound.png)
+<table>
+    <tr>
+        <th><h5>Compound Button</h5></th>
+    </tr>
+    <tr>
+        <td><img src="../../images/compound.png"></td>
+    </tr>
+</table>
 
-Hero Button |
----
-![alt text](../../images/hero.png)
+<table>
+    <tr>
+        <th>Hero Button</th>
+    </tr>
+    <tr>
+        <td><img src="../../images/hero.png"></td>
+    </tr>
+</table>
 
-Command Button |
----
-![alt text](../../images/command.png)
+<table>
+    <tr>
+        <th>Command Button</th>
+    </tr>
+    <tr>
+        <td><img src="../../images/command.png"></td>
+    </tr>
+</table>
 
-Icon Button |
----
-![alt text](../../images/icon.png)
+<table>
+    <tr>
+        <th>Icon Button</th>
+    </tr>
+    <tr>
+        <td><img src="../../images/icon.png"></td>
+    </tr>
+</table>
 
-Button like Anchor |
----
-![alt text](../../images/anchor.png)
- 
+<table>
+    <tr>
+        <th>Button Like Anchor</th>
+    </tr>
+    <tr>
+        <td><img src="../../images/anchor.png"></td>
+    </tr>
+</table>
