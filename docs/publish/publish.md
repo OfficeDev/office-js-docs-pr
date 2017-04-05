@@ -35,7 +35,7 @@ The options that are available depend on the Office host that you're targeting a
 
 For information about how end users acquire, insert, and run add-ins, see [Start using your Office Add-in](https://support.office.com/en-ie/article/Start-using-your-Office-Add-in-82e665c4-6700-4b56-a3f3-ef5441996862?ui=en-US&rs=en-IE&ad=IE).
 
-## Centralized deployment
+## Centralized deployment via the Office 365 admin center (preview)
 
 The Office 365 admin center makes it easy for an administrator to deploy Word, Excel, and PowerPoint add-ins to users or groups within their organization. Add-ins deployed via the admin center are available to users in their Office applications right away, with no client configuration required. You can deploy internal add-ins as well as add-ins provided by ISVs via the admin center.
 
