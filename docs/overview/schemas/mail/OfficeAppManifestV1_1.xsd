@@ -2,14 +2,17 @@
 <xs:schema id="OfficeAppManifest" elementFormDefault="qualified" version="1.1"
     targetNamespace="http://schemas.microsoft.com/office/appforoffice/1.1"
     xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+    xmlns:odoc="http://schemas.microsoft.com/internal/obd"
     xmlns:mailor="http://schemas.microsoft.com/office/mailappversionoverrides"
     xmlns:taskpanor="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+    xmlns:contentor="http://schemas.microsoft.com/office/contentappversionoverrides"
     xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
     xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
   <xs:import schemaLocation="OfficeAppBasicTypesV1_0.xsd" namespace="http://schemas.microsoft.com/office/officeappbasictypes/1.0" />
   <xs:import schemaLocation="MailAppVersionOverridesV1_0.xsd" namespace="http://schemas.microsoft.com/office/mailappversionoverrides" />
   <xs:import schemaLocation="TaskPaneAppVersionOverridesV1_0.xsd" namespace="http://schemas.microsoft.com/office/taskpaneappversionoverrides" />
+  <xs:import schemaLocation="ContentAppVersionOverridesV1_0.xsd" namespace="http://schemas.microsoft.com/office/contentappversionoverrides" />
 
   <xs:simpleType name="NonEmptyString">
     <xs:annotation>
@@ -930,7 +933,7 @@
     <xs:annotation>
       <xs:documentation>
         Specifies the list of required API sets of the Office.js API that the app for Office requires in order to activate.
-        Default version is inherited in child elements unless overriten by said child elements.
+        Default version is inherited in child elements unless overwritten by the child elements.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence minOccurs="1" maxOccurs="unbounded">
@@ -1031,11 +1034,11 @@
               <xs:documentation>Specifies whether a snapshot image of this content app is saved when the hosting document is saved.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:any id="ContentAppVersionOverrides" minOccurs="0" maxOccurs="1" namespace="http://schemas.microsoft.com/office/contentappversionoverrides" processContents="lax">
+          <xs:element ref="contentor:VersionOverrides" minOccurs="0" maxOccurs="1" odoc:omit="true">
             <xs:annotation>
-              <xs:documentation>Contains elements for use in future versions of the app platform as they release. These elements may be overrides to previously defined elements or new elements.</xs:documentation>
+              <xs:documentation>Contains elements that override elements defined in the top level manifest for hosts that support the additional functionality that this extended schema defines. These elements may also contain new elements.</xs:documentation>
             </xs:annotation>
-          </xs:any>
+          </xs:element>
           <xs:any id="ContentAppSignature" minOccurs="0" maxOccurs="1" namespace="http://www.w3.org/2000/09/xmldsig#" processContents="lax">
             <xs:annotation>
               <xs:documentation>Reserved to store the app manifest digital signature.</xs:documentation>
