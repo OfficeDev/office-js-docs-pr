@@ -52,8 +52,9 @@ To deploy SharePoint Add-ins or add-ins that target Office 2013, use a [SharePoi
 
 To deploy COM/VSTO add-ins, use ClickOnce or Windows Installer. For details, see [Deploying an Office solution](https://msdn.microsoft.com/en-us/library/bb386179.aspx).
 
+<!-- Need URL on SOC site.
 For more information about requirements, see [centralized deployment eligibility]().
-
+-->
 
 ## Publish an add-in via centralized deployment
 
