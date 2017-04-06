@@ -2,6 +2,7 @@
 <xs:schema id="OfficeAppBasicTypes" elementFormDefault="qualified" version="1.0"
     targetNamespace="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
     xmlns="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+    xmlns:odoc="http://schemas.microsoft.com/internal/obd"
     xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
   <xs:simpleType name="NonEmptyString">
@@ -303,6 +304,32 @@
     </xs:complexContent>
   </xs:complexType>
 
+  <xs:complexType name="MobileImageResourceReference" odoc:omit="true">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies a reference to an image resource defined under the Resources element of the manifest.
+       </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ResourceReference">
+        <xs:attribute name="size" type="xs:integer" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              Specifies the dimension of the image resource. Mandatory values are 25 (25x25 image size), 32 (32x32 image size) and 48 (48x48 image size).
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="scale" type="xs:integer" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              Specifies the scale factor (NewSize = OldSize / ScaleFactor) for the image resource. Mandatory values are 1, 2 and 3.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
   <xs:complexType name="URLResourceReference">
     <xs:annotation>
       <xs:documentation>
@@ -371,7 +398,7 @@
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:pattern value="([0-9]{1,5})(\.[0-9]{1,5}){0,3}"/>
+      <xs:pattern value="([0-9]{1,5})(\.[0-9]{1,5}){0,3}?"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -398,6 +425,17 @@
     </xs:sequence>
   </xs:complexType>
 
+  <xs:complexType name="MobileIconList" odoc:omit="true">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies a set of icons for a control.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Image" type="MobileImageResourceReference" minOccurs="9" maxOccurs="unbounded" />
+      </xs:sequence>
+  </xs:complexType>
+
   <xs:complexType name="ImageResources">
     <xs:annotation>
       <xs:documentation>
@@ -407,7 +445,7 @@
     <xs:sequence>
       <xs:element name="Image" type="ImageLocaleAwareSettingWithId" minOccurs="0" maxOccurs="unbounded">
         <xs:annotation>
-          <xs:documentation>Specifies an image URL resource for the app along with a unique identifier that can be used to refer to the resource from elsewhere in the app manifest.</xs:documentation>
+          <xs:documentation>Specifies an image URL resource for the app along with a unique identifier that can be used to refer to the resource from elsewhere in the app manifest. The image file size should not exceed 100KB.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
