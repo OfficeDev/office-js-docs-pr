@@ -22,9 +22,12 @@ Future investments in add-in deployment scenarios will focus on the Office 365 a
 
 You can deploy add-ins via the admin center if your organization meets the following criteria:
 
-- Users are running Office 2016 build 7070 or later.
+- Users are running a version of Office 2016 ProPlus:
+    - Windows build 16.0.8027 or later
+    - Mac build 15.33.170327 or later
 - Users sign in to Office 2016 with their work or school account.
 - Your organization uses the Azure Active Directory (Azure AD) identity service.
+- Users' Exchange mailboxes have [OAuth enabled](https://msdn.microsoft.com/en-us/library/office/dn626019(v=exchg.150).aspx#Anchor_0).
 
 Currently, add-ins for the following Office clients are supported. 
 
@@ -79,12 +82,11 @@ If the add-in does not support add-in commands, users can add it from the **My A
 2.	Choose the **Admin Managed** tab in the add-in window.
 3.	Choose the add-in, and then choose **Add**. 
 
-<!-- LG: I have some questions about this section. Azure is currently focusing on the Microsoft Graph API, not the Azure Graph API. Is this content up to date? Also, a few things are potentially unclear: What data are devs getting from Azure - just the list of the add-ins that are centrally deployed? The heading currently might imply they get usage data and such. Also, explain the query parameters used to send the request? 
+## View metadata for deployed add-ins in Microsoft Azure
 
-## Looking at data for deployed add-in in Azure
+You can use the Azure Active Directory (Azure AD) Graph Explorer to view metadata for add-ins within Azure. This can be helpful for debugging purposes. To view metadata:
 
-You can use the Azure Graph explorer to view raw data for add-ins within Azure. This can be helpful for debugging purposes.
-1.	Go to the Azure Graph Explorer.
+1.	Go to the [Azure AD Graph Explorer](https://graphexplorer.azurewebsites.net/).
 2.	Log on using your work or school account.
 3.	Append the following to the text box: 
 
@@ -95,7 +97,6 @@ You can use the Azure Graph explorer to view raw data for add-ins within Azure. 
 
 4.	The Graph Explorer will return the list of all centrally deployed add-ins on that tenant.
 
--->
 
 
 
