@@ -3,6 +3,7 @@
     targetNamespace="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
     xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
     xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+    xmlns:odoc="http://schemas.microsoft.com/internal/obd"
     xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
   <xs:import schemaLocation="OfficeAppBasicTypesV1_0.xsd" namespace="http://schemas.microsoft.com/office/officeappbasictypes/1.0" />
@@ -387,6 +388,25 @@
     </xs:complexContent>
   </xs:complexType>
 
+  <xs:complexType name="Notebook">
+    <xs:annotation>
+      <xs:documentation>
+        Defines add-in command extensions for OneNote, including supported form factors.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Host">
+        <xs:sequence>
+          <xs:element name="DesktopFormFactor" type="FormFactor" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Specifies the settings of the Office add-in when running in a desktop version of OneNote.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
   <xs:complexType name="Presentation">
     <xs:annotation>
       <xs:documentation>
@@ -424,6 +444,23 @@
   </xs:complexType>
   <!-- End hosts and form factors -->
 
+  <xs:complexType name="WebApplicationScopes" odoc:omit="true">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies the scope strings for any permissions that your application needs to external resources.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="WebApplicationScope" type="bt:LongString">
+        <xs:annotation>
+          <xs:documentation>
+            Specifies the scope string for one permission that your application needs to external resources.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
   <xs:complexType name="VersionOverridesV1_0">
     <xs:annotation>
       <xs:documentation>
@@ -449,6 +486,21 @@
       <xs:element name="Resources" type="bt:Resources" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>Specifies a collection of resources referenced by other elements of the manifest where resource references are supported.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="WebApplicationId" type="bt:ShortString" minOccurs="0" maxOccurs="1" odoc:omit="true">
+        <xs:annotation>
+          <xs:documentation>Specifies the client id of your multi-tenant application as registered with Microsoft.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="WebApplicationResource" type="bt:LongString" minOccurs="0" maxOccurs="1" odoc:omit="true">
+        <xs:annotation>
+          <xs:documentation>Specifies the resource for your application’s Web API.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="WebApplicationScopes" type="WebApplicationScopes" minOccurs="0" maxOccurs="1" odoc:omit="true">
+        <xs:annotation>
+          <xs:documentation>Specifies the scope strings for any permissions that your application needs to external resources.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:any id="VersionOverrides" minOccurs="0" maxOccurs="1" namespace="http://schemas.microsoft.com/office/taskpaneappversionoverrides/1.1" processContents="lax">
