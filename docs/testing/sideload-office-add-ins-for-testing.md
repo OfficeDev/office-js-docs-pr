@@ -52,12 +52,12 @@ The following video walks you through the process of sideloading your add-in on 
 
 ## Sideload an add-in when using Visual Studio
 
-If you're using Visual Studio to develop your add-in, the process to sideload is similar. The only difference is that you will have to update your 'SourceURL' element in the manifest to include the full URL where the add-in is deployed. 
+If you're using Visual Studio to develop your add-in, the process to sideload is similar. The only difference is that you will have to update the value of the **SourceURL** element in your manifest to include the full URL where the add-in is deployed. 
 
-If currently developing your add-in, locate your add-in manifest.xml file, and update the **SourceLocation** element value to include an absolute URI. Visual Studio will put in a token for your localhost deployment.
+If you're currently developing your add-in, locate your add-in manifest.xml file, and update the **SourceLocation** element value to include an absolute URI. Visual Studio will put in a token for your localhost deployment.
 
 For example: 
-   
+
 	```xml
 	<SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
 	```
