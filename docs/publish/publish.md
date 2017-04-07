@@ -35,47 +35,12 @@ The options that are available depend on the Office host that you're targeting a
 
 For information about how end users acquire, insert, and run add-ins, see [Start using your Office Add-in](https://support.office.com/en-ie/article/Start-using-your-Office-Add-in-82e665c4-6700-4b56-a3f3-ef5441996862?ui=en-US&rs=en-IE&ad=IE).
 
-## Office 365 admin center (preview) deployment
+## Centralized deployment via the Office 365 admin center (preview)
 
-The Office 365 admin center makes it easy for an admin to deploy Word, Excel, and PowerPoint add-ins to users or groups within their organization. Add-ins deployed via the admin center are available to users in their Office applications right away, with no client configuration required. You can deploy internal add-ins as well as add-ins provided by ISVs via the admin center.
+The Office 365 admin center makes it easy for an administrator to deploy Word, Excel, and PowerPoint add-ins to users or groups within their organization. Add-ins deployed via the admin center are available to users in their Office applications right away, with no client configuration required. You can deploy internal add-ins as well as add-ins provided by ISVs via centralized deployment.
 
-The admin center currently supports the following scenarios:
+For more information, see [Use centralized deployment to publish add-ins](centralized-deployment.md).
 
-- Centralized deployment of new and updated add-ins to individuals, groups, or an organization.
-- Support for multiple platforms, including Windows and Office Online, with Mac coming soon.
-- Deployment to English language and worldwide tenants.
-- Cloud-hosted add-in deployment.
-- Automatic installation on launch of the Office application.
-- Add-in URLs hosted within a firewall.
-- Deployment of Office Store add-ins (coming soon).
-
-<!--
-The admin center also includes a pre-deployment validation checking service.
--->
-
-Future investments in add-in deployment scenarios will focus on the Office 365 admin center. We recommend that you use the admin center to deploy add-ins to your organization, if your organization meets the prerequisites.
-
-### Prerequisites for admin center deployment 
-
-You can deploy add-ins via the admin center if your organization meets the following criteria:
-
-- Users are running Office 2016 build 7070 or later.
-- Users sign in to Office 2016 with their work or school account.
-- Your organization uses the Azure Active Directory (Azure AD) identity service.
-
-The admin center does not support the followng:
-
-- Add-ins that target Word, Excel, or PowerPoint in Office 2013.
-- An on-premises directory service.
-- SharePoint Add-in deployment.
-- Add-in deployment to Office Online Server.
-- Deployment of COM/VSTO add-ins.
-
-To deploy SharePoint Add-ins or add-ins that target Office 2013, use a [SharePoint add-in catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
-
->**Important!** SharePoint add-in catalogs do not support add-in features that are implemented in the [VersionOverrides](../../reference/manifest/versionoverrides.md) node of the add-in manifest, such as [add-in commands](../design/add-in-commands.md). 
-
-To deploy COM/VSTO add-ins, use ClickOnce or Windows Installer. For details, see [Deploying an Office solution](https://msdn.microsoft.com/en-us/library/bb386179.aspx).
 
 ## SharePoint catalog deployment
 
