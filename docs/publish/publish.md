@@ -6,14 +6,17 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 |**Method**|**Use...**|
 |:---------|:------------|
 |[Sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|As part of your development process, to test your add-in running on Windows, Office Online, iPad, or Mac.|
-|[Office 365 admin center (preview)](#office-365-admin-center-preview)|in a cloud or hybrid deployment, to distribute your add-in to users in your organization.|
-|[Office Store]|To distribute your add-in publicly to users.|
+|[Centralized deployment](centralized-deployment.md)|In a cloud or hybrid deployment, to distribute your add-in to users in your organization.|
+|[Office Store](https://dev.office.com/officestore/docs/submit-to-the-office-store)|To distribute your add-in publicly to users.|
 |[SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|In an on-premises environment, to distribute your add-in to users in your organization.|
 |[Exchange server](#outlook-add-in-deployment)|In an on-premises or online environment, to distribute Outlook add-ins to users.|
 
 The options that are available depend on the Office host that you're targeting and the type of add-in you create.
 
 >**Note:** If you plan to your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://dev.office.com/officestore/docs/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
+
+For information about how end users acquire, insert, and run add-ins, see [Start using your Office Add-in](https://support.office.com/en-ie/article/Start-using-your-Office-Add-in-82e665c4-6700-4b56-a3f3-ef5441996862?ui=en-US&rs=en-IE&ad=IE).
+
 
 ## Deployment options for Word, Excel, and PowerPoint add-ins
 
@@ -32,8 +35,6 @@ The options that are available depend on the Office host that you're targeting a
 | Mail app | X           | X               | X            |
 | Command  | X           | X               | X            |
 
-
-For information about how end users acquire, insert, and run add-ins, see [Start using your Office Add-in](https://support.office.com/en-ie/article/Start-using-your-Office-Add-in-82e665c4-6700-4b56-a3f3-ef5441996862?ui=en-US&rs=en-IE&ad=IE).
 
 ## Centralized deployment via the Office 365 admin center (preview)
 
