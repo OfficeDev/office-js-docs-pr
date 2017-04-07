@@ -73,3 +73,4 @@ To assign add-ins to tenants, you use the Exchange admin center to upload a mani
 
 [Office Store]: http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx
 [Office Add-in host and platform availability]: http://dev.office.com/add-in-availability
+ 
