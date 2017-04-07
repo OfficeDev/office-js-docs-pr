@@ -52,4 +52,14 @@ The following video walks you through the process of sideloading your add-in on 
     ![The upload add-in dialog with buttons for browse, upload, and cancel.](../../images/039aef16-b12f-4d01-ad46-f13e01dd3162.png)
 
 6. Verify that your add-in is installed. For example, if it is an add-in command, it should appear on either the ribbon or the context menu. If it is a task pane add-in, the pane should appear.
-    
+
+## Sideloading an add-in when using Visual Studio
+
+If you are using Visual Studio, the process to sideload is the similar to above. The one difference is you will have to update your 'SourceURL' element in the manifest to have the full URL of where the add-in is deployed to. 
+
+If you are actively in development, locate your add-in manifest.xml file, update the  **SourceLocation** element value to include an absolute URI, as Visual Studio will put in a token for your localhost deployment.
+
+For example:    
+	```xml
+	<SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
+	```
