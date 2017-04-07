@@ -83,21 +83,3 @@ If the add-in does not support add-in commands, users can add it from the **My A
 2.	Choose the **Admin Managed** tab in the add-in window.
 3.	Choose the add-in, and then choose **Add**. 
 
-## View metadata for deployed add-ins in Microsoft Azure
-
-You can use the Azure Active Directory (Azure AD) Graph Explorer to view metadata for add-ins within Azure. This can be helpful for debugging purposes. To view metadata:
-
-1.	Go to the [Azure AD Graph Explorer](https://graphexplorer.azurewebsites.net/).
-2.	Log on using your work or school account.
-3.	Append the following to the text box: 
-
-    `servicePrincipals?api-version=1.6&$filter=tags/any(t:t+eq+'PrivateCatalogApp')`
-
-    For example:
-    `https://graph.windows.net/contoso.com/servicePrincipals?api-version=1.6&$filter=tags/any(t:t+eq+'PrivateCatalogApp')`
-
-4.	The Graph Explorer will return the list of all centrally deployed add-ins on that tenant.
-
-
-
-
