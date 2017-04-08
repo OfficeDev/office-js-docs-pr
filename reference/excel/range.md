@@ -77,7 +77,7 @@ rangeObject.clear(applyTo);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |applyTo|string|Optional. Determines the type of clear action. Possible values are: `All` Default-option,`Formats` ,`Contents` |
 
 #### Returns
@@ -113,7 +113,7 @@ rangeObject.delete(shift);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |shift|string|Specifies which way to shift the cells.  Possible values are: Up, Left|
 
 #### Returns
@@ -147,7 +147,7 @@ rangeObject.getBoundingRect(anotherRange);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |anotherRange|Range or string|The range object or address or range name.|
 
 #### Returns
@@ -185,7 +185,7 @@ rangeObject.getCell(row, column);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |row|number|Row number of the cell to be retrieved. Zero-indexed.|
 |column|number|Column number of the cell to be retrieved. Zero-indexed.|
 
@@ -224,7 +224,7 @@ rangeObject.getColumn(column);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |column|number|Column number of the range to be retrieved. Zero-indexed.|
 
 #### Returns
@@ -261,7 +261,7 @@ rangeObject.getColumnsAfter(count);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |count|number|Optional. The number of columns to include in the resulting range. In general, use a positive number to create a range outside the current range. You can also use a negative number to create a range within the current range. The default value is 1.|
 
 #### Returns
@@ -277,7 +277,7 @@ rangeObject.getColumnsBefore(count);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |count|number|Optional. The number of columns to include in the resulting range. In general, use a positive number to create a range outside the current range. You can also use a negative number to create a range within the current range. The default value is 1.|
 
 #### Returns
@@ -366,7 +366,7 @@ rangeObject.getIntersection(anotherRange);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |anotherRange|Range or string|The range object or range address that will be used to determine the intersection of ranges.|
 
 #### Returns
@@ -403,7 +403,7 @@ rangeObject.getIntersectionOrNullObject(anotherRange);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |anotherRange|Range or string|The range object or range address that will be used to determine the intersection of ranges.|
 
 #### Returns
@@ -525,7 +525,7 @@ rangeObject.getOffsetRange(rowOffset, columnOffset);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |rowOffset|number|The number of rows (positive, negative, or 0) by which the range is to be offset. Positive values are offset downward, and negative values are offset upward.|
 |columnOffset|number|The number of columns (positive, negative, or 0) by which the range is to be offset. Positive values are offset to the right, and negative values are offset to the left.|
 
@@ -562,7 +562,7 @@ rangeObject.getResizedRange(deltaRows, deltaColumns);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |deltaRows|number|The number of rows by which to expand the bottom-right corner, relative to the current range. Use a positive number to expand the range, or a negative number to decrease it.|
 |deltaColumns|number|The number of columnsby which to expand the bottom-right corner, relative to the current range. Use a positive number to expand the range, or a negative number to decrease it.|
 
@@ -579,7 +579,7 @@ rangeObject.getRow(row);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |row|number|Row number of the range to be retrieved. Zero-indexed.|
 
 #### Returns
@@ -616,7 +616,7 @@ rangeObject.getRowsAbove(count);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |count|number|Optional. The number of rows to include in the resulting range. In general, use a positive number to create a range outside the current range. You can also use a negative number to create a range within the current range. The default value is 1.|
 
 #### Returns
@@ -632,7 +632,7 @@ rangeObject.getRowsBelow(count);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |count|number|Optional. The number of rows to include in the resulting range. In general, use a positive number to create a range outside the current range. You can also use a negative number to create a range within the current range. The default value is 1.|
 
 #### Returns
@@ -648,7 +648,7 @@ rangeObject.getUsedRange(valuesOnly);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |valuesOnly|[ApiSet(Version|Considers only cells with values as used cells.|
 
 #### Returns
@@ -686,7 +686,7 @@ rangeObject.getUsedRangeOrNullObject(valuesOnly);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |valuesOnly|bool|Optional. Considers only cells with values as used cells.|
 
 #### Returns
@@ -716,7 +716,7 @@ rangeObject.insert(shift);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |shift|string|Specifies which way to shift the cells.  Possible values are: Down, Right|
 
 #### Returns
@@ -752,7 +752,7 @@ rangeObject.merge(across);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |across|bool|Optional. Set true to merge cells in each row of the specified range as separate merged cells. The default value is false.|
 
 #### Returns

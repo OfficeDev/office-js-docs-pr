@@ -41,7 +41,7 @@ filterObject.apply(criteria);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |criteria|FilterCriteria|The criteria to apply.|
 
 #### Returns
@@ -57,7 +57,7 @@ filterObject.applyBottomItemsFilter(count);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |count|number|The number of elements from the bottom to show.|
 
 #### Returns
@@ -73,7 +73,7 @@ filterObject.applyBottomPercentFilter(percent);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |percent|number|The percentage of elements from the bottom to show.|
 
 #### Returns
@@ -89,7 +89,7 @@ filterObject.applyCellColorFilter(color);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |color|string|The background color of the cells to show.|
 
 #### Returns
@@ -105,7 +105,7 @@ filterObject.applyCustomFilter(criteria1, criteria2, oper);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |criteria1|string|The first criteria string.|
 |criteria2|string|Optional. The second criteria string.|
 |oper|string|Optional. The operator that describes how the two criteria are joined.  Possible values are: And, Or|
@@ -123,7 +123,7 @@ filterObject.applyDynamicFilter(criteria);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |criteria|string|The dynamic criteria to apply.  Possible values are: Unknown, AboveAverage, AllDatesInPeriodApril, AllDatesInPeriodAugust, AllDatesInPeriodDecember, AllDatesInPeriodFebruray, AllDatesInPeriodJanuary, AllDatesInPeriodJuly, AllDatesInPeriodJune, AllDatesInPeriodMarch, AllDatesInPeriodMay, AllDatesInPeriodNovember, AllDatesInPeriodOctober, AllDatesInPeriodQuarter1, AllDatesInPeriodQuarter2, AllDatesInPeriodQuarter3, AllDatesInPeriodQuarter4, AllDatesInPeriodSeptember, BelowAverage, LastMonth, LastQuarter, LastWeek, LastYear, NextMonth, NextQuarter, NextWeek, NextYear, ThisMonth, ThisQuarter, ThisWeek, ThisYear, Today, Tomorrow, YearToDate, Yesterday|
 
 #### Returns
@@ -139,7 +139,7 @@ filterObject.applyFontColorFilter(color);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |color|string|The font color of the cells to show.|
 
 #### Returns
@@ -155,7 +155,7 @@ filterObject.applyIconFilter(icon);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |icon|Icon|The icons of the cells to show.|
 
 #### Returns
@@ -171,7 +171,7 @@ filterObject.applyTopItemsFilter(count);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |count|number|The number of elements from the top to show.|
 
 #### Returns
@@ -187,7 +187,7 @@ filterObject.applyTopPercentFilter(percent);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |percent|number|The percentage of elements from the top to show.|
 
 #### Returns
@@ -203,7 +203,7 @@ filterObject.applyValuesFilter(values);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |values|()[]|The list of values to show.|
 
 #### Returns
