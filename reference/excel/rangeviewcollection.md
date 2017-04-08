@@ -48,7 +48,7 @@ rangeViewCollectionObject.getItemAt(index);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |index|number|Index of the visible row.|
 
 #### Returns

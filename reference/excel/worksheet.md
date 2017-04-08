@@ -108,7 +108,7 @@ worksheetObject.getCell(row, column);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |row|number|The row number of the cell to be retrieved. Zero-indexed.|
 |column|number|the column number of the cell to be retrieved. Zero-indexed.|
 
@@ -145,7 +145,7 @@ worksheetObject.getRange(address);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |address|string|Optional. The address or the name of the range. If not specified, the entire worksheet range is returned.|
 
 #### Returns
@@ -202,7 +202,7 @@ worksheetObject.getUsedRange(valuesOnly);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |valuesOnly|[ApiSet(Version|Considers only cells with values as used cells (ignoring formatting).|
 
 #### Returns
@@ -238,7 +238,7 @@ worksheetObject.getUsedRangeOrNullObject(valuesOnly);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |valuesOnly|bool|Optional. Considers only cells with values as used cells.|
 
 #### Returns

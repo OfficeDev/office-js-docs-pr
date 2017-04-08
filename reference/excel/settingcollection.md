@@ -36,7 +36,7 @@ settingCollectionObject.add(key, value);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |key|string|The Key of the new setting.|
 |value|(any)[]|The Value for the new setting.|
 
@@ -67,7 +67,7 @@ settingCollectionObject.getItem(key);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |key|string|Key of the setting.|
 
 #### Returns
@@ -83,7 +83,7 @@ settingCollectionObject.getItemOrNullObject(key);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |key|string|The key of the setting.|
 
 #### Returns
