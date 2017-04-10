@@ -19,7 +19,7 @@ This article assumes that you are using a text editor to create the task pane ad
     
 - An XML manifest file (GetDoc_App.xml) for the add-in, available on a shared network folder or add-in catalog. The manifest file must point to the location of the HTML file mentioned previously.
     
-You can also create an add-in for PowerPoint or Word by using [Visual Studio 2015](get-started/create-and-debug-office-add-ins-in-visual-studio) or [any editor](get-started/create-an-office-add-in-using-any-editor). 
+You can also create an add-in for PowerPoint or Word by using [Visual Studio](../get-started/create-and-debug-office-add-ins-in-visual-studio.md) or [any editor](../get-started/create-an-office-add-in-using-any-editor.md). 
 
 
 ### Core concepts to know for creating a task pane add-in
