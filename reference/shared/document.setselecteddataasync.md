@@ -15,11 +15,61 @@ Office.context.document.setSelectedDataAsync(data [, options], callback(asyncRes
 
 ## Parameters
 
-|**Name**|**Type**|**Description**|**Support notes**|
-|:-----|:-----|:-----|:-----|
-| _data_|The data can be any of the following data types:<ul><li><b>string</b> (Office.CoercionType.Text) - Apples to Excel, Excel Online, PowerPoint,  PowerPoint Online, Word, and  Word Online only.</li><li><b>array</b> of arrays (Office.CoercionType.Matrix) - Applies to Excel, Word, and Word Online only.</li><li>[TableData](../../reference/shared/tabledata.md) (Office.CoercionType.Table) - Access, Excel, Word, Word Online only</li><li><b>HTML</b>  (Office.CoercionType.Html) - Applies to Word,and Word Online only.</li><li><b>Office Open XML</b>  (Office.CoercionType.Ooxml) - Applies to Word, and   Word Online only.</li><li><b>Base64 encoded image stream</b>  (Office.CoercionType.Image) - Applies to PowerPoint and Word only.</li></ul>|The data to be set in the current selection. Required.|**Changed in:** 1.1.Support for content add-ins for Access requires  **Selection** requirement set 1.1 or later.Support for setting image data requires  **ImageCoercion** requirement set 1.1 or later. To set this for app activation, use:<br/><br/>`<Requirements>`<br/>&nbsp;&nbsp;`<Sets DefaultMinVersion="1.1">`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<Set Name="ImageCoercion"/>`<br/>&nbsp;&nbsp;`</Sets>`<br/>`</Requirements>`<br/><br/>Runtime detection of ImageCoercion capability can be done with the following code:<br/><br/>`if (Office.context.requirements.isSetSupported('ImageCoercion', '1.1')) {)) {`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`// insertViaImageCoercion();`<br/>`} else {`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`// insertViaOoxml();`<br/>`}`|
-| _options_|**object**|Specifies a set of [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods). The options object can contain the following properties to set the options:<br/><ul><li>coercionType (<b><a href="735eaab6-5e31-4bc2-add5-9d378900a31b.htm">CoercionType</a></b> ) - Specifies how to coerce the data being set. The default coercionType value of Office.CoercionType.Text is used if this option is not set.</li><li>tableOptions (<b>object</b> ) - For the inserted table, a list of key-value pairs that specify <a href="http://msdn.microsoft.com/library/46b05707-b350-41be-b6b8-311799c71a33(Office.15).aspx" target="_blank">table formatting options</a>, such as header row, total row, and banded rows. </li><li>cellFormat (<b>object</b> ) - For the inserted table, a list of key-value pairs that specify a range of columns, rows, or cells and the <a href="http://msdn.microsoft.com/library/46b05707-b350-41be-b6b8-311799c71a33(Office.15).aspx" target="_blank">cell formatting</a> to apply to that range. </li><li>imageLeft (<b>number</b> ) - This option is applicable for inserting images. Indicates the insert location in relation to the left side of the slide for PowerPoint, and its relation to the currently selected cell in Excel. This value is ignored for Word. This value is in points.</li><li>imageTop (<b>number</b> ) - This option is applicable for inserting images. Indicates the insert location in relation to the top  of the slide for PowerPoint, and its relation to the currently selected cell in Excel. This value is ignored for Word. This value is in points.</li><li>imageWidth (<b>number</b> ) - This option is applicable for inserting images. Indicates the image width. If this option is provided without the imageHeight, the image will scale to match the value of the image width. If both image width and image height are provided, the image will be resized accordingly. If neither the image height or width is provided, then the default image size and aspect ratio will be used. This value is in points.</li><li>imageHeight (<b>number</b> ) - This option is applicable for inserting images. Indicates the image height. If this option is provided without the imageWidth, the image will scale to match the value of the image height. If both image width and image height are provided, the image will be resized accordingly. If neither the image height or width is provided, then the default image size and aspect ratio will be used. This value is in points.</li><li>asyncContext (<b>object \| value</b> ) - A user-defined object that is available on the <a href="540c114f-0398-425c-baf3-7363f2f6bc47.htm">AsyncResult</a> object's asyncContext property. Use this to provide an object or value to the <b>AsyncResult</b>  when the callback is a named function.</li></ul>|The  _tableOptions_ and _cellFormat_ options were added in v1.1 and are supported in Excel 2013 and Excel Online.<br/><br/>The  _imageLeft_ and _ImageTop_ options are supported in Excel and PowerPoint.|
-| _callback_|**object**|A function that is invoked when the callback returns, whose only parameter is of type  **AsyncResult**.||
+|Name       | Type  | Description
+|:----------|:------|:-----
+| data      |object | The data can be any supported [coercision types](#coerciontype)
+| options   |object | Specifies a set of [optional parameters](#options)
+| callback  |object | [AsyncResult](../../reference/shared/asyncresult.md) object 
+
+
+
+## Options
+```js
+{
+    coercionType: '',
+    tableOptions: [],
+    cellFormat: [],
+    imageLeft: 0,
+    imageTop: 0,
+    imageWidth: 0,
+    imageHeight: 0,
+    asyncContext
+}
+```
+
+### coercionType
+The follow coercion types are supported by Office.js. Note that not all coercion types are supported by all hosts. 
+
+|Name                       |Access |Excel  |Word   |PowerPoint
+|:--------------------------|:-----:|:-----:|:-----:|:---------:|
+|Office.CoercionType.Text   |       |   X   |   X   |   X       |
+|Office.CoercionType.Matrix |       |   X   |   X   |           |
+|Office.CoercionType.Table  |   X   |   X   |   X   |           |
+|Office.CoercionType.Html   |       |       |   X   |           |
+|Office.CoercionType.Ooxml  |       |       |   X   |           |
+|Office.CoercionType.Image  |       |   X   |   X   |   X       |
+
+### tableOptions (object)
+For the inserted table, a list of key-value pairs that specify table formatting options, such as header row, total row, and banded rows. (added in 1.1)
+
+### cellFormat (object)
+For the inserted table, a list of key-value pairs that specify a range of columns, rows, or cells and the cell formatting to apply to that range. (added in 1.1)
+
+### imageLeft (number)
+This option is applicable for inserting images. Indicates the insert location in relation to the left side of the slide for PowerPoint, and its relation to the currently selected cell in Excel. This value is ignored for Word. This value is in points.
+
+### imageTop (number)
+This option is applicable for inserting images. Indicates the insert location in relation to the top  of the slide for PowerPoint, and its relation to the currently selected cell in Excel. This value is ignored for Word. This value is in points.
+
+### imageWidth (number)
+This option is applicable for inserting images. Indicates the image width. If this option is provided without the imageHeight, the image will scale to match the value of the image width. If both image width and image height are provided, the image will be resized accordingly. If neither the image height or width is provided, then the default image size and aspect ratio will be used. This value is in points.
+
+### imageHeight (number)
+This option is applicable for inserting images. Indicates the image height. If this option is provided without the imageWidth, the image will scale to match the value of the image height. If both image width and image height are provided, the image will be resized accordingly. If neither the image height or width is provided, then the default image size and aspect ratio will be used. This value is in points.
+
+### asyncContext (object | value)
+A user-defined object that is available on the AsyncResult object's asyncContext property. Use this to provide an object or value to the AsyncResult  when the callback is a named function.
+
 
 ## Callback Value
 
@@ -263,6 +313,28 @@ For more information about Office host application and server requirements, see 
 |**Add-in types**|Content, task pane|
 |**Library**|Office.js|
 |**Namespace**|Office|
+
+## Support Notes
+**Changed in:** 1.1.Support for content add-ins for Access requires  **Selection** requirement set 1.1 or later.Support for setting image data requires  **ImageCoercion** requirement set 1.1 or later. To set this for app activation, use:
+
+```xml
+<Requirements>
+    <Sets DefaultMinVersion="1.1">
+        <Set Name="ImageCoercion"/>
+    </Sets>
+</Requirements>
+```
+
+Runtime detection of ImageCoercion capability can be done with the following code:
+
+```javascript
+if (Office.context.requirements.isSetSupported('ImageCoercion', '1.1')) {)) {
+    // insertViaImageCoercion();
+} 
+else {
+    // insertViaOoxml();
+}
+```
 
 ## Support history
 
