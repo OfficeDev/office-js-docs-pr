@@ -11,7 +11,7 @@ The simplest way to reference the API is to use our CDN by adding the following 
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
 ```
 
-The  `/1/` in front of `office.js` in the CDN URL specifies the latest incremental release within version 1 of Office.js. Because the JavaScript API for Office maintains backward compatibility, the latest release will continue to support API members that were introduced earlier in version 1. If you need to upgrade an existing project, see [Update the version of your JavaScript API for Office and manifest schema files](../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md). 
+The  `/1/` in front of `office.js` in the CDN URL specifies the latest incremental release within version 1 of Office.js. Because the JavaScript API for Office maintains backward compatibility, the latest release will continue to support API members that were introduced earlier in version 1. If you need to upgrade an existing project, see [Update the version of your JavaScript API for Office and manifest schema files](update-your-javascript-api-for-office-and-manifest-schema-version.md). 
 
 If you plan to publish your Office Add-in from the Office Store, you must use this CDN reference. Local references are only appropriate for internal, development, and debugging scenarios.
 
