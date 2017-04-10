@@ -20,8 +20,6 @@ You can use the Excel JavaScript API to build add-ins for Excel 2016. The follow
 	* [NamedItem Collection](../../reference/excel/nameditemcollection.md): A collection of NamedItem objects in a workbook.
 * [Binding](../../reference/excel/binding.md): An abstract class that represents a binding to a section of the workbook.
 	* [Binding Collection](../../reference/excel/bindingcollection.md):A collection of all the Binding objects that are part of the workbook.
-* [TrackedObject Collection](../../reference/excel/trackedobjectscollection.md): Allows add-ins to manage a range object reference across sync() batches.
-* [Request Context](../../reference/excel/requestcontext.md): The RequestContext object facilitates requests to the Excel application.
 
 
 ##### Additional resources
