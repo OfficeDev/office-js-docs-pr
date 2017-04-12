@@ -101,11 +101,11 @@ The value passed for  _data_ contains the data to write to the current selection
     
      >**Note:** In Excel, if you specify formulas in the **TableData** object you pass for the _data_ parameter, you might not get the results you expect due to the "calculated columns" feature of Excel, which automatically duplicates formulas within a column. To work around this when you want to write _data_ that contains formulas to a selected table, try specifying the data as an array of arrays (instead of a **TableData** object), and specify the _coercionType_ as **Microsoft.Office.Matrix** or "matrix".
     
- **Application-specific behaviors**
+### Application-specific behaviors
 
 Additionally, the following application-specific actions apply when writing data to a selection.
 
-### Word
+#### Word
 
 
 - If there is no selection and the insertion point is at a valid location, the specified  _data_ is inserted at the insertion point as follows:
@@ -125,7 +125,7 @@ Additionally, the following application-specific actions apply when writing data
     
 -  **Insert images**: Inserted images are placed inline. The **imageLeft** and **imageTop** parameters are ignored. The image aspect ratio is always locked. If only one of the **imageWidth** and **imageHeight** parameter is given, the other value will be automatically scaled to keep the original aspect ratio.
     
-### For Excel
+#### Excel
 
 
 - If a single cell is selected:
@@ -144,7 +144,7 @@ Additionally, the following application-specific actions apply when writing data
     
 In all other cases, an error is returned.
 
-### Excel Online
+#### Excel Online
 
 In addition to the behaviors described for Excel above, the following limits apply when writing data in Excel Online. 
 
@@ -161,7 +161,7 @@ In addition to the behaviors described for Excel above, the following limits app
     function (asyncResult){});
 ```
 
-### PowerPoint
+#### PowerPoint
 
 Inserted images are floating. The position  **imageLeft** and **imageTop** parameters are optional but if provided, both should be present. If a single value is provided, it will be ignored. Negative **imageLeft** and **imageTop** values are allowed and can position an image outside of a slide. If no optional parameter is given and slide has a placeholder, the image will replace the placeholder in the slide. Image aspect ratio will be locked unless both **imageWidth** and **imageHeight** parameters are provided. If only one of the **imageWidth** and **imageHeight** parameter is given, the other value will be automatically scaled to keep the original aspect ratio.
 
