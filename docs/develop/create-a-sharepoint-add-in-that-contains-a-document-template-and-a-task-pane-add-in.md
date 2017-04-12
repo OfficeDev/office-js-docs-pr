@@ -271,9 +271,9 @@ When you are ready to package your add-in for publishing, open the  **Publish Of
 ## Additional resources
 
 
-- [Design guidelines for Office Add-ins](../../docs/design/add-in-design.md)
+- [Design guidelines for Office Add-ins](../design/add-in-design.md)
     
-- [Office Add-ins development lifecycle](../../docs/design/add-in-development-lifecycle.md)
+- [Office Add-ins development lifecycle](add-in-development-lifecycle.md)
     
 - [Publish your Office Add-in](../publish/publish.md)
     
@@ -281,5 +281,5 @@ When you are ready to package your add-in for publishing, open the  **Publish Of
     
 - [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md)
     
-- [Office Add-ins API and schema references](../../reference/reference.md)
+- [Office Add-ins API and schema references](../../reference/javascript-api-for-office.md)
     

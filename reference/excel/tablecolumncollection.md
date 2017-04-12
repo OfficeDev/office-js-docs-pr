@@ -38,7 +38,7 @@ tableColumnCollectionObject.add(index, values, name);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |index|number|Optional. Specifies the relative position of the new column. If null or -1, the addition happens at the end. Columns with a higher index will be shifted to the side. Zero-indexed.|
 |values|(boolean or string or number)[][]|Optional. A 2-dimensional array of unformatted values of the table column.|
 |name|string|Optional. Specifies the name of the new column. If null, the default name will be used.|
@@ -90,7 +90,7 @@ tableColumnCollectionObject.getItem(key);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |key|number or string| Column Name or ID.|
 
 #### Returns
@@ -140,7 +140,7 @@ tableColumnCollectionObject.getItemAt(index);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
@@ -172,7 +172,7 @@ tableColumnCollectionObject.getItemOrNullObject(key);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |key|number or string| Column Name or ID.|
 
 #### Returns
