@@ -6,6 +6,7 @@
 	<Item text="Add-in development best practices" url="overview/add-in-development-best-practices" SEODescription="Apply best practices to build Office Add-ins that optimize the user experience."  />
 	<Item text="Host and platform availability" url="https://dev.office.com/add-in-availability" IsExternal="true" />
 	</Item>
+	<Item text="Changelog" url="overview/add-in-changelog" />
   <Item text="Get started" url="get-started">
     <Item text="Use Visual Studio" url="get-started/create-and-debug-office-add-ins-in-visual-studio" SEODescription="Get started building an Office Add-in with Visual Studio" />
 	  <Item text="Use any editor" url="get-started/create-an-office-add-in-using-any-editor" SEODescription="Get started building Office Add-ins with any editor, on a Mac or Windows PC. " />
