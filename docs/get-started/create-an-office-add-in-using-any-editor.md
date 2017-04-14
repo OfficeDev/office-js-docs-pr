@@ -57,6 +57,9 @@ The generator will prompt you for the following:
 - Add [TypeScript](https://www.typescriptlang.org/) -- use _N_
 - Choose framework -- use _Jquery_
 
+>**Note:** If you want to create an Office Add-in that uses Office UI Fabric React, enter the following:
+>- Add [TypeScript](https://www.typescriptlang.org/) -- use _Y_
+>- Choose framework -- use _React_
 
 ![Gif of yeoman generator prompting for project input](../../images/gettingstarted-fast.gif)
 
