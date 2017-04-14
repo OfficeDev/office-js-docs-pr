@@ -5,6 +5,7 @@
 	<Item text="Requirements for running add-ins" url="overview/requirements-for-running-office-add-ins" SEODescription="Learn about the software and device requirements for running Office Add-ins." />	
 	<Item text="Add-in development best practices" url="overview/add-in-development-best-practices" SEODescription="Apply best practices to build Office Add-ins that optimize the user experience."  />
 	<Item text="Host and platform availability" url="https://dev.office.com/add-in-availability" IsExternal="true" />
+	<Item text="Changelog" url="overview/add-in-changelog" />
 	</Item>
   <Item text="Get started" url="get-started">
     <Item text="Use Visual Studio" url="get-started/create-and-debug-office-add-ins-in-visual-studio" SEODescription="Get started building an Office Add-in with Visual Studio" />

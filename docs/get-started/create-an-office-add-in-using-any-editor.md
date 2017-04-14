@@ -1,7 +1,7 @@
 
 # Create an Office Add-in using any editor
 
-You can use the Yeoman generator to your Office Add-in. The Yeoman generator provides the project scaffolding and build management. The  `manifest.xml` file tells the Office application where your add-in is located and how you want it to appear. The Office application takes care of hosting it within Office.
+You can use the Yeoman generator to create your Office Add-in. The Yeoman generator provides the project scaffolding and build management. The  `manifest.xml` file tells the Office application where your add-in is located and how you want it to appear. The Office application takes care of hosting it within Office.
 
  >**Note:** These instructions use Terminal on a Mac, but you can also use other shell environments. 
 
