@@ -1,10 +1,9 @@
 
 # SupportUrl element
 
-## Description
 Specifies the URL of a page that provides support information for your add-in.
 
-### Example
+## Example
 
 ```XML
 <OfficeApp>
@@ -40,5 +39,3 @@ Specifies the URL of a page that provides support information for your add-in.
 ## Parent element
 [OfficeApp](../../reference/manifest/officeapp.md)
 
-## Additional Information
-None
