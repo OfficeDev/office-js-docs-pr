@@ -1,6 +1,6 @@
 # Office Add-in Changelog
 
-This changelog covers what's changed on the Office Add-in Platform, including updates to the APIs as well as new features and tools available to Office developers.
+This changelog covers what's changed on the Office Add-in platform, including updates to the APIs as well as new features and tools available to Office developers.
 
 ## April 2017
 |**Category**|**Description**|**Link**|
