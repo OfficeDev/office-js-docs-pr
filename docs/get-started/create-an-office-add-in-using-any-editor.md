@@ -1,7 +1,7 @@
 
 # Create an Office Add-in using any editor
 
-You can use the Yeoman generator to your Office Add-in. The Yeoman generator provides the project scaffolding and build management. The  `manifest.xml` file tells the Office application where your add-in is located and how you want it to appear. The Office application takes care of hosting it within Office.
+You can use the Yeoman generator to create your Office Add-in. The Yeoman generator provides the project scaffolding and build management. The  `manifest.xml` file tells the Office application where your add-in is located and how you want it to appear. The Office application takes care of hosting it within Office.
 
  >**Note:** These instructions use Terminal on a Mac, but you can also use other shell environments. 
 
@@ -57,6 +57,9 @@ The generator will prompt you for the following:
 - Add [TypeScript](https://www.typescriptlang.org/) -- use _N_
 - Choose framework -- use _Jquery_
 
+>**Note:** If you want to create an Office Add-in that uses Office UI Fabric React, enter the following:
+>- Add [TypeScript](https://www.typescriptlang.org/) -- use _Y_
+>- Choose framework -- use _React_
 
 ![Gif of yeoman generator prompting for project input](../../images/gettingstarted-fast.gif)
 
