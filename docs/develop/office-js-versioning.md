@@ -1,6 +1,8 @@
 # Office.js API versioning 
 
->**Note:** This article is an excerpt from the book "[Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins)" by Michael Zlatkovsky, available for purchase as an e-book on LeanPub.com.  Copyright © 2016-2017 by Michael Zlatkovsky, all rights reserved.
+| | |
+|:--|:--|
+|[![An image of the Building Office Add-ins using Office.js book cover](../../images/book-cover.png)](https://leanpub.com/buildingofficeaddins)|**This article is an excerpt from the book "[Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins)" by Michael Zlatkovsky, available for purchase as an e-book on [LeanPub.com](https://leanpub.com/buildingofficeaddins).**<br/><br/>Copyright © 2016-2017 by Michael Zlatkovsky, all rights reserved.|
 
 There are several aspects to the versioning of the Office.js library.
 
@@ -88,8 +90,7 @@ As noted earlier, APIs in beta will not show `isSetSupported` as `true` until th
 
 My personal trick for this: go ahead and write your `isSetSupported` checks and `if` statements just as you would for a regular production API.  Go to your main HTML page (which ideally you have two copies of -- one for production, and one for development, where you can reference the Beta CDN) and write in the following script tag right beneath your beta CDN reference (let's assume that the API set you care about is `ExcelApi`; and you effectively want *any* new APIs to show up as if they are fully supported, for testing purposes):
 
- ```
- <script>
+~~~
    (function() {
      var originalIsSetSupported = Office.requirements.isSetSupported;
      Office.requirements.isSetSupported = function (apiSet, version) {
@@ -97,8 +98,7 @@ My personal trick for this: go ahead and write your `isSetSupported` checks and 
        return originalIsSetSupported(apiSet, version);
      };
    })();
- </script>
-```
+~~~
 
 Essentially, the script above will return `true` for any API at all that is part of the API set that you want the latest-and-greatest beta functinality of (in this case, `ExcelApi`), and otherwise will redirect to the original `isSetSupported` function.
 
@@ -113,3 +113,5 @@ This moment should roughly correspond with:
 * Seeing its IntelliSense listed in a public place like [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/office-js/index.d.ts).
 
 Note that some platforms might be ahead of others, with desktop generally leading.  So just because `isSetSupported` returns `true` on desktop, doesn't mean that it will necessarily return `true` on the Mac at the very same moment (though it generally will, within a month or two's time).  But the different cadence of implementation is precisely why `isSetSupported` (and/or manifest-based requirements specification) is needed in the first place.  As long as you surround any light-up functionality with `isSetSupported`, or add the manifest requirement, you shouldn't need to worry about what APIs are made available when; when the functionality becomes available on the given platform, your add-in will "just work" there.
+
+>**This article is an excerpt from the book "[Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins)" by Michael Zlatkovsky**. Read more by purchasing the e-book online at [LeanPub.com](https://leanpub.com/buildingofficeaddins).

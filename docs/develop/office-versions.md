@@ -1,8 +1,10 @@
 # Understanding Office versions
 
->**Note:** This article is an excerpt from the book "[Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins)" by Michael Zlatkovsky, available for purchase as an e-book on LeanPub.com.  Copyright © 2016-2017 by Michael Zlatkovsky, all rights reserved.
+| | |
+|:--|:--|
+|[![An image of the Building Office Add-ins using Office.js book cover](../../images/book-cover.png)](https://leanpub.com/buildingofficeaddins)|**This article is an excerpt from the book "[Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins)" by Michael Zlatkovsky, available for purchase as an e-book on [LeanPub.com](https://leanpub.com/buildingofficeaddins).**<br/><br/>Copyright © 2016-2017 by Michael Zlatkovsky, all rights reserved.|
 
-To develop and distribute add-ins that use the new Office 2016 API model, you need either Office 2016 or Office 365 (the subscription-based superset that includes all Office 2016 features).  This seems reasonably straightforward, but the devil is in the details.
+To develop and distribute add-ins that use the new Office 2016 API model, you need either Office 2016 or Office 365 (the subscription-based superset that includes all Office 2016 features). This seems reasonably straightforward, but the details are a bit more complex.
 
 
 **The golden path**
@@ -44,7 +46,7 @@ If you want access to the latest-and-greatest API functionality -- which as a de
 
 The Consumer (non-business) versions of Office 365 include **Office 365 Personal** and **Office 365 Home** (with the only difference between the two being the number of active devices on the subscription -- 1 PC or Mac, 1 Tablet, and 1 Phone, as opposed to 5 of each).  There is also **Office 365 University**, which is the same as Personal, but offers activating on *two* devices rather than one.  For all three, the difference is merely the cost of the plan and the number of devices supported; they are all 100% equivalent from an API & functionality standpoint.
 
-The Consumer versions of Office 356 are updated each month, with the updates installed silently and automatically. Thus, consumer versions of Office 365, provided the computer is connected to the internet, will always have access to the latest-and-greatest functionality.  The default is the "Current" channel (i.e., what is publicly available worldwide), but the adventurous user (developer) can also opt in to be on one of the *Insider* tracks.  The Insider tracks come in two flavors, Insider Fast and Insider Slow, with the *Fast* being really-bleeding-edge, and *Slow* being a few weeks behind, anchored around more stable builds.  In both cases, they let you preview the forthcoming functionality a month or two ahead of the general public.  For developers, this can be particularly useful for trying out the latest APIs ahead of your customers, allowing you to deliver new functionality as soon as it's publicly-available on your customers' machines.  Combined with using the Beta CDN for Office.js, it can also let you provide real-time API feedback back to the team, before the APIs get cemented and go live!  To become an Insider, see <https://products.office.com/en-us/office-insider>.
+The Consumer versions of Office 365 are updated each month, with the updates installed silently and automatically. Thus, consumer versions of Office 365, provided the computer is connected to the internet, will always have access to the latest-and-greatest functionality.  The default is the "Current" channel (i.e., what is publicly available worldwide), but the adventurous user (developer) can also opt in to be on one of the *Insider* tracks.  The Insider tracks come in two flavors, Insider Fast and Insider Slow, with the *Fast* being really-bleeding-edge, and *Slow* being a few weeks behind, anchored around more stable builds.  In both cases, they let you preview the forthcoming functionality a month or two ahead of the general public.  For developers, this can be particularly useful for trying out the latest APIs ahead of your customers, allowing you to deliver new functionality as soon as it's publicly-available on your customers' machines.  Combined with using the Beta CDN for Office.js, it can also let you provide real-time API feedback back to the team, before the APIs get cemented and go live!  To become an Insider, see <https://products.office.com/en-us/office-insider>.
 
 
 ## Office 365 flavors for Enterprise
@@ -57,3 +59,6 @@ However, risk-averse enterprises may also choose to be on a Deferred channel, wh
 ## Office on other platforms (Mac, iOS, Online)
 
 For non-PC platforms, there is also a span of time before different functionality lights up.  This is sometimes dependent not just on the *delay* between something being code-complete and getting in front of customers' hands (i.e., the difference between Insider and Current and Deferred), but also on the order in which functionality gets implemented on these platforms.  For the Excel APIs to date, I have seen them light up on most platforms at roughly the same time; for Word, Office for desktop has generally been ahead of Office Online.  For the non-API functionality (i.e., dialog boxes, ribbon extensibility), these have also generally come to the desktop first, followed by Office Online and Mac.  The different speeds of implementation is why it's important to keep in mind not just Office host versions, but also API versions and Requirement Sets.
+
+>**This article is an excerpt from the book "[Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins)" by Michael Zlatkovsky**. Read more by purchasing the e-book online at [LeanPub.com](https://leanpub.com/buildingofficeaddins).
+
