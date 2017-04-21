@@ -31,20 +31,21 @@ You can deploy add-ins via the admin center if your organization meets the follo
 
 Currently, add-ins for the following Office clients are supported. 
 
-|**Office application**|**Office 2016 for Windows**|**Office Online**|**Office 2016 for Mac**|
-|:---------------------|:--------------------------|:--------------|:------------------|
-|Word|X|X|X|
-|Excel|X|X|X|
-|PowerPoint|X|X|X|
-|Outlook|Coming soon|Coming soon|Coming soon|
+| Office application    | Office 2016 for Windows   | Office Online | Office 2016 for Mac   |
+|:----------------------|:-------------------------:|:-------------:|:---------------------:|
+| Word                  | X                         | X             | X                     |
+| Excel                 | X                         | X             | X                     |
+| PowerPoint            | X                         | X             | X                     |
+| Outlook               | Coming Soon               | Coming Soon   | Coming Soon           |
 
-The admin center does not support the followng:
+The admin center does not support the following:
 
-- Add-ins that target Word, Excel, PowerPoint, or Outlook in Office 2013.
+- Office 2013 (Word, Excel, PowerPoint, or Outlook).
+- Office for iPad
+- SharePoint Add-ins.
+- COM/VSTO based Add-ins.
+- Office Online Server.
 - An on-premises directory service.
-- SharePoint Add-in deployment.
-- Add-in deployment to Office Online Server.
-- Deployment of COM/VSTO add-ins.
 
 To deploy SharePoint Add-ins or add-ins that target Office 2013, use a [SharePoint add-in catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
