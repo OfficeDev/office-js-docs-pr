@@ -11,7 +11,7 @@ Provides diagnostic information to an Outlook add-in.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
 ### Members
@@ -31,7 +31,7 @@ A string that can be one of the following values: `Outlook`, `Mac Outlook`, `Out
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 ####  hostVersion :String
 
@@ -48,7 +48,7 @@ If the mail add-in is running on the Outlook desktop client or Outlook for iOS, 
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 ####  OWAView :String
 
@@ -73,5 +73,5 @@ Outlook Web App has three views that correspond to the width of the screen and t
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|

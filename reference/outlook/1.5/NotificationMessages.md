@@ -11,7 +11,7 @@ The `NotificationMessages` object is returned as the [`notificationMessages`](Of
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
-|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
 ### Methods
@@ -36,7 +36,7 @@ There are a maximum of 5 notifications per message. Setting more will return a `
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
-|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
 ##### Example
@@ -77,7 +77,7 @@ On successful completion, the `asyncResult.value` property will contain an array
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
-|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
 ##### Example
@@ -115,7 +115,7 @@ If the key is not found, a `KeyNotFound` error is returned in the `asyncResult.e
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
-|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
 ##### Example
@@ -145,7 +145,7 @@ If a notification message with the specified key doesn't exist, `replaceAsync` w
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
-|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
 ##### Example

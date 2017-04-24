@@ -9,7 +9,7 @@ The `body` object provides methods for adding and updating the content of the me
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.1|
-|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
 ### Methods
@@ -35,7 +35,7 @@ The body is provided in the requested format in the `asyncResult.value` property
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
-|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
 ##### Examples
@@ -79,7 +79,7 @@ The content type is returned as one of the [CoercionType](Office.md#coerciontype
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.1|
-|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose|
 ####  prependAsync(data, [options], [callback])
 
@@ -109,7 +109,7 @@ Office.context.mailbox.item.body.prependAsync(
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.1|
-|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadWriteItem|
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadWriteItem|
 |Applicable Outlook mode| Compose|
 ####  setAsync(data, [options], [callback])
 
@@ -139,7 +139,7 @@ Office.context.mailbox.item.body.setAsync(
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
-|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadWriteItem|
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadWriteItem|
 |Applicable Outlook mode| Compose|
 
 ##### Examples
@@ -193,5 +193,5 @@ Office.context.mailbox.item.body.setSelectedDataAsync(
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.1|
-|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadWriteItem|
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadWriteItem|
 |Applicable Outlook mode| Compose|

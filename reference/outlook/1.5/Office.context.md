@@ -114,5 +114,5 @@ The `RoamingSettings` object lets you store and access data for a mail add-in th
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Compose or read|

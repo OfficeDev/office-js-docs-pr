@@ -16,6 +16,6 @@ Requirement set 1.2 includes all of the features of [Requirement set 1.1](../1.1
 
 ## Additional resources
 
-- [Outlook add-ins](../../docs/outlook/outlook-add-ins.md)
+- [Outlook add-ins](../../../docs/outlook/outlook-add-ins.md)
 - [Outlook add-in code samples](https://dev.outlook.com/MailAppsGettingStarted/Samples)
 - [Get started](https://dev.outlook.com/MailAppsGettingStarted/GetStarted)

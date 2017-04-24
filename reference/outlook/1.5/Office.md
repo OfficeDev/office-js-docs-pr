@@ -85,7 +85,7 @@ Specifies the event associated with an event handler.
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| Preview |
+|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.5 |
 |Applicable Outlook mode| Compose or read |
 
 ---

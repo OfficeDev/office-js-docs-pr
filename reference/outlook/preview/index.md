@@ -1,4 +1,4 @@
-# Outlook add-in API requirement set 1.2
+# Outlook add-in API Preview requirement set
 
 The Outlook add-in API subset of the JavaScript API for Office includes objects, methods, properties and events that you can use in an Outlook add-in.
 
@@ -22,6 +22,6 @@ The following features are in preview.
 
 ## Additional resources
 
-- [Outlook add-ins](../../docs/outlook/outlook-add-ins.md)
+- [Outlook add-ins](../../../docs/outlook/outlook-add-ins.md)
 - [Outlook add-in code samples](https://dev.outlook.com/MailAppsGettingStarted/Samples)
 - [Get started](https://dev.outlook.com/MailAppsGettingStarted/GetStarted)
