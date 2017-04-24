@@ -21,7 +21,6 @@ Requirement set 1.5 includes all of the features of [Requirement set 1.4](../1.4
 - Modified [Office.context.mailbox.item.addFileAttachmentAsync](Office.context.mailbox.item.md#addFileAttachmentAsync): A new value in the `options` dictionary called `isInline`, used to specify that an image is used inline in the message body.
 - Modified [Office.context.mailbox.item.displayReplyAllForm](Office.context.mailbox.item.md#displayReplyAllForm): A new value in the `formData.attachments` dictionary called `isInline`, used to specify that an image is used inline in the message body.
 - Modified [Office.context.mailbox.item.displayReplyForm](Office.context.mailbox.item.md#displayReplyForm): A new value in the `formData.attachments` dictionary called `isInline`, used to specify that an image is used inline in the message body.
-- Modified [Event.completed](Event.md#completed): A new optional parameter `options`, which is a dictionary with one valid value `allowEvent`. This value is used to cancel execution of an event.
 
 ## Additional resources
 

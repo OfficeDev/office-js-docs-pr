@@ -140,7 +140,7 @@
 	</Item>
 	<Item text="Outlook" url="outlook" Scope="outlook">
 		<Item text="Understanding API requirement sets" url="outlook/tutorial-api-requirement-sets" Scope="outlook" SEODescription="API Requirement Sets for Outlook" />
-		<Item text="Requirement Set Preview" url="outlook/preview/index" Scope="outlook" Version="Preview">
+		<Item text="Preview Requirement Set" url="outlook/preview/index" Scope="outlook" Version="Preview">
 			<Item text="Object Models" url="outlook/preview" Scope="outlook" Version="Preview">
 				<Item text="Office" url="outlook/preview/Office" Scope="outlook" Version="Preview" SEODescription="The Office namespace provides shared interfaces that are used by add-ins in all of the Office apps." />
 				<Item text="Office.context" url="outlook/preview/Office.context" Scope="outlook" Version="Preview" SEODescription="The Office.context namespace provides shared interfaces that are used by add-ins in all of the Office apps." />

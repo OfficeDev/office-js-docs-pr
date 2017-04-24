@@ -94,20 +94,11 @@ function multiButton (event) {
 
 ### Methods
 
-####  completed([options])
+####  completed()
 
-Indicates that the add-in has completed processing that was triggered by an add-in command button or event handler.
+Indicates that the add-in has completed processing that was triggered by an add-in command button.
 
 This method must be called at the end of a function which was invoked by an add-in command defined with an `Action` element with an `xsi:type` attribute set to `ExecuteFunction`. Calling this method signals the host client that the function is complete and that it can clean up any state involved with invoking the function. For example, if the user closes Outlook before this method is called, Outlook will warn that a function is still executing.
-
-This method must be called in an event handler added via [Office.context.mailbox.addHandlerAsync](Office.context.mailbox.md#addHandlerAsync) after completing processing of the event.
-
-##### Parameters:
-
-| Name | Type | Attributes | Description |
-|---|---|---|---|
-| `options` | Object | &lt;optional&gt; | An object literal that contains one or more of the following properties. |
-| `options.allowEvent` | Boolean | &lt;optional&gt; | When the `completed` method is used to signal completion of an event handler, this value indicates of the handled event should continue execution or be canceled. For example, an add-in that handles the `ItemSend` event can set `allowEvent = false` to cancel sending of the message. |
 
 ##### Requirements
 
@@ -124,26 +115,5 @@ function processItem (event) {
   // Do some processing
 
   event.completed();
-}
-```
-
-In the following example, the `checkMessage` function has been registered as an event handler for `ItemSend`.
-
-```js
-function checkMessage(event) {
-  // Get the item being sent
-  var outgoingMsg = Office.context.mailbox.item;
-
-  // Check if subject contains "BLOCK"
-  outgoingMsg.subject.getAsync(function (result) {
-    // Subject is in result.value
-    if (result.value.indexOf('BLOCK') != -1) {
-      // Value is found, stop send
-      event.completed({allowEvent = false});
-    } else {
-      // Value wasn't found, allow send
-      event.completed({allowEvent = true});
-    }
-  });
 }
 ```

@@ -66,7 +66,7 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item#save
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| Preview |
+|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.5 |
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
@@ -92,7 +92,7 @@ Currently the only supported event type is `Office.EventType.ItemChanged`, which
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| Preview |
+|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.5 |
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem |
 |Applicable Outlook mode| Compose or read|
 
@@ -401,7 +401,7 @@ The add-in should use the `ewsUrl` property to determine the correct URL to use 
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| Preview |
+|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.5 |
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose and read|
 

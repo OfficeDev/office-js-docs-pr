@@ -10,14 +10,6 @@ The Preview Requirement set includes all of the features of [Requirement set 1.5
 
 The following features are in preview.
 
-- [Office.context.mailbox.addHandlerAsync](Office.context.mailbox.md#addHandlerAsync)
-- [Office.EventType](Office.md#EventType)
-- [Office.context.mailbox.restUrl](Office.context.mailbox.md#restUrl)
-- [Office.context.mailbox.getCallbackTokenAsync](Office.context.mailbox.md#getCallbackTokenAsync) - A new version of this method with a new signature (`getCallbackTokenAsync([options], callback)`) has been added. The original version is still available and is unchanged.
-- [Office.context.ui.closeContainer](Office.context.ui.md#closeContainer)
-- [Office.context.mailbox.item.addFileAttachmentAsync](Office.context.mailbox.item.md#addFileAttachmentAsync) - A new value in the `options` dictionary called `isInline`, used to specify that an image is used inline in the message body.
-- [Office.context.mailbox.item.displayReplyAllForm](Office.context.mailbox.item.md#displayReplyAllForm) - A new value in the `formData.attachments` dictionary called `isInline`, used to specify that an image is used inline in the message body.
-- [Office.context.mailbox.item.displayReplyForm](Office.context.mailbox.item.md#displayReplyForm) - A new value in the `formData.attachments` dictionary called `isInline`, used to specify that an image is used inline in the message body.
 - [Event.completed](Event.md#completed) - A new optional parameter `options`, which is a dictionary with one valid value `allowEvent`. This value is used to cancel execution of an event.
 
 ## Additional resources
