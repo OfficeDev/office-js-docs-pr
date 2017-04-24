@@ -166,6 +166,14 @@ Add-ins will run during the send event, which will then either allow or block th
 
 **Scenario 3: Mailbox delegation, where mailbox 1 has full access permissions to mailbox 2**
 
+|**Mailbox 1**|**Mailbox 2**|**Outlook Web App session**|**Result**|**Supported?**|
+|:------------|:------------|:--------------------------|:---------|:-------------|
+|On send feature enabled|Onsend feature enabled|New session|Mailbox 1 cannot send an email from Mailbox 2.|Not currently supported.|
+|On send feature disabled|On send feature enabled|New session|Mailbox 1 cannot send an email from Mailbox 2.|Not currently supported.|
+|On send feature enabled|On send feature enabled|Same session|On send add-ins assigned to Mailbox 1 run on send.|Supported.|
+|On send feature enabled|On send feature disabled|New session|No on send add-ins run; mail is sent.|Supported.|
+
+
 - Mailbox 1: On send add-in feature is enabled
 - Mailbox 2: On send add-in feature is enabled
 - Mailbox 1 opens Mailbox 2 in a new full Outlook Web App session (open another mailbox).
