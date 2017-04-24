@@ -168,9 +168,9 @@ Add-ins will run during the send event, which will then either allow or block th
 
 |**Mailbox 1**|**Mailbox 2**|**Outlook Web App session**|**Result**|**Supported?**|
 |:------------|:------------|:--------------------------|:---------|:-------------|
-|On send feature enabled|Onsend feature enabled|New session|Mailbox 1 cannot send an email from Mailbox 2.|Not currently supported.|
-|On send feature disabled|On send feature enabled|New session|Mailbox 1 cannot send an email from Mailbox 2.|Not currently supported.|
-|On send feature enabled|On send feature enabled|Same session|On send add-ins assigned to Mailbox 1 run on send.|Supported.|
+|On send feature enabled|Onsend feature enabled|New session|Mailbox 1 cannot send an email from mailbox 2.|Not currently supported.|
+|On send feature disabled|On send feature enabled|New session|Mailbox 1 cannot send an email from mailbox 2.|Not currently supported.|
+|On send feature enabled|On send feature enabled|Same session|On send add-ins assigned to mailbox 1 run on send.|Supported.|
 |On send feature enabled|On send feature disabled|New session|No on send add-ins run; mail is sent.|Supported.|
 
 
@@ -205,6 +205,11 @@ Scenario 4 is currently **not supported**. The workaround is to use scenario 5 f
 - **Results:** No on send add-ins will be executed. Mail will be sent as per normal.
 
 **Scenario 7: Group 1 is a modern group mailbox and user mailbox 1 is a member of Group 1**
+
+|**Mailbox 1**|**On send add-ins enabled?**|**Mailbox 1 action**|**Result**|
+|:------------|:-------------------------|:-------------------|:---------|
+|On send feature is enabled.|Yes|Mailbox 1 composes new message to Group 1.|On send add-ins run during send.|
+|On send add-in feature is enabled.|Yes|Mailbox 1 composes a new message to Group 1 within Group 1’s group window in Outlook Web App.|On send add-ins do not run during send.|
 
 -	Mailbox 1: On send add-in feature is enabled and some on send add-ins are enabled.
 -	Mailbox 1 composes a new message to Group 1.
