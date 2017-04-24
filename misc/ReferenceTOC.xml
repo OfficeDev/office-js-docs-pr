@@ -278,7 +278,7 @@
 		</Item>
 		<Item text="Requirement Set 1.1" url="outlook/1.1/index" Scope="outlook" Version="V1.1">
 			<Item text="Object Models" url="outlook/1.1" Scope="outlook" Version="V1.1">
-				<Item text="Office.context" url="outlook/1.1/Office.context" Scope="outlook"Version="V1.1" />
+				<Item text="Office.context" url="outlook/1.1/Office.context" Scope="outlook="V1.1" />
 				<Item text="Office.context.mailbox" url="outlook/1.1/Office.context.mailbox" Scope="outlook" Version="V1.1" />
 				<Item text="Office.context.mailbox.diagnostics" url="outlook/1.1/Office.context.mailbox.diagnostics" Scope="outlook" Version="V1.1" />
 				<Item text="Office.context.mailbox.item" url="outlook/1.1/Office.context.mailbox.item" Scope="outlook" Version="V1.1" />
