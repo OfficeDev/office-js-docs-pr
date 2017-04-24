@@ -5,7 +5,7 @@ The on send feature for Outlook add-ins provides a way to handle email or block 
 - Prevent a user from sending sensitive information or leaving the subject line blank.  
 - Add a specific recipient to the CC line.
 
->  **Note:** The on send feature is currently supported for Outlook Web App in Office 365 only. Support for other platforms is coming soon. 
+>  **Note:** The on send feature is currently supported for Outlook Web App in Office 365 only. Support for other platforms is coming soon. Add-ins that use the on send feature aren't allowed in the Office Store.
 
 The on send feature is triggered by events. Currently, the feature supports the **ItemSend** event type. Events in Outlook add-ins enable you to handle, check, or block user actions when something of interest occurs. For example, events provide ways to:
 
@@ -168,7 +168,7 @@ Add-ins will run during the send event, which will then either allow or block th
 
 |**Scenario**|**Mailbox 1 on send feature**|**Mailbox 2 on send feature**|**Outlook Web App session**|**Result**|**Supported?**|
 |:------------|:------------|:--------------------------|:---------|:-------------|:-------------|
-|1|Enabled|Enabled|New session|Mailbox 1 cannot send an email from mailbox 2. As a workaround, use scenario 3.|Not currently supported.As a workaround, use scenario 3.|
+|1|Enabled|Enabled|New session|Mailbox 1 cannot send an email from mailbox 2.|Not currently supported.As a workaround, use scenario 3.|
 |2|Disabled|Enabled|New session|Mailbox 1 cannot send an email from mailbox 2.|Not currently supported. As a workaround, use scenario 3.|
 |3|Enabled|Enabled|Same session|On send add-ins assigned to mailbox 1 run on send.|Supported.|
 |4|Enabled|Disabled|New session|No on send add-ins run; mail is sent.|Supported.|
