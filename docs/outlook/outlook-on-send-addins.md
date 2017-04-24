@@ -156,15 +156,15 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 The following are the supported and unsupported scenarios for add-ins that use the on send feature.
 
-### User mailbox has the on send add-in feature enabled but no add-ins are installed
+#### User mailbox has the on send add-in feature enabled but no add-ins are installed
 
 In this scenario the user will be able to send mail without any add-ins executing.
 
-### User mailbox has the on send add-in feature enabled and add-ins that supports on send are installed and enabled
+#### User mailbox has the on send add-in feature enabled and add-ins that supports on send are installed and enabled
 
 Add-ins will run during the send event, which will then either allow or block the user from sending.
 
-### Mailbox delegation, where mailbox 1 has full access permissions to mailbox 2
+#### Mailbox delegation, where mailbox 1 has full access permissions to mailbox 2
 
 |**Scenario**|**Mailbox 1 on send feature**|**Mailbox 2 on send feature**|**Outlook Web App session**|**Result**|**Supported?**|
 |:------------|:------------|:--------------------------|:---------|:-------------|
@@ -174,14 +174,14 @@ Add-ins will run during the send event, which will then either allow or block th
 |4|Enabled|Disabled|New session|No on send add-ins run; mail is sent.|Supported.|
 
 
-### Group 1 is a modern group mailbox and user mailbox 1 is a member of Group 1
+#### Group 1 is a modern group mailbox and user mailbox 1 is a member of Group 1
 
 |**Scenario**|**Mailbox 1**|**On send add-ins enabled?**|**Mailbox 1 action**|**Result**|**Supported?**|
 |:------------|:-------------------------|:-------------------|:---------|:----------|
 |1|On send feature is enabled.|Yes|Mailbox 1 composes new message to Group 1.|On send add-ins run during send.|Yes|
 |2|On send add-in feature is enabled.|Yes|Mailbox 1 composes a new message to Group 1 within Group 1’s group window in Outlook Web App.|On send add-ins do not run during send.|Not currently supported. As a workaround, use scenario 1.|
 
-### User mailbox with on send add-in feature enabled, add-ins that support on send are installed and enabled and offline mode is enabled
+#### User mailbox with on send add-in feature enabled, add-ins that support on send are installed and enabled and offline mode is enabled
 
 The on send add-ins will run during send if the user is online. If the user is offline, the on send add-ins will not run during send and the email will not be sent.
 
