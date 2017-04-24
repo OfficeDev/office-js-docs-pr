@@ -1,11 +1,11 @@
 # On send feature for Outlook add-ins
 
-The on send feature for Outlook add-ins provides a way to check, handle, or block email users from certain actions, and allows an add-in to set certain items on send. For example, you can use the on send feature to:
+The on send feature for Outlook add-ins provides a way to handle, or block email users from certain actions, and allows an add-in to set certain items on send. For example, you can use the on send feature to:
 
 - Prevent a user from sending sensitive information or leaving the subject line blank.  
 - Add a specific recipient to the CC line.
 
->  **Note:** The on send feature is currently supported for Outlook Web App in Office 365 only. 
+>  **Note:** The on send feature is currently supported for Outlook Web App in Office 365 only. Support for other SKUs are coming soon. 
 
 The on send feature is triggered by events. Currently, the feature supports the **ItemSend** event type. Events in Outlook add-ins enable you to handle, check, or block user actions when something of interest occurs. For example, events provide ways to:
 
