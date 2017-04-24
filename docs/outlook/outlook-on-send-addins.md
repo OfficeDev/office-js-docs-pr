@@ -1,6 +1,6 @@
 # On send feature for Outlook add-ins
 
-The on send feature for Outlook add-ins provides a way to handle, or block email users from certain actions, and allows an add-in to set certain items on send. For example, you can use the on send feature to:
+The on send feature for Outlook add-ins provides a way to handle email or block email users from certain actions, and allows an add-in to set certain items on send. For example, you can use the on send feature to:
 
 - Prevent a user from sending sensitive information or leaving the subject line blank.  
 - Add a specific recipient to the CC line.
@@ -39,9 +39,9 @@ The following screenshot shows an information bar that notifies the sender that 
 
 The on send feature currently has the following limitations:
 
-- **Office Store:**  You can't publish Outlook add-ins that use the on send feature to the Office Store. Add-ins that use the on send event will fail Office Store validation.   
-- **Manifest:**  Only one **ItemSend** event is supported per add-in. If you have two or more **ItemSend** events in a manifest, the manifest will fail validation. 
-- **Performance:**  Multiple roundtrips to the web server that hosts the add-in can affect the performance of the add-in. Consider the effects on performance when you create add-ins that require multiple email message-based operations.
+- **Office Store** - You can't publish Outlook add-ins that use the on send feature to the Office Store. Add-ins that use the on send event will fail Office Store validation.    
+- **Manifest** - Only one **ItemSend** event is supported per add-in. If you have two or more **ItemSend** events in a manifest, the manifest will fail validation. 
+- **Performance** - Multiple roundtrips to the web server that hosts the add-in can affect the performance of the add-in. Consider the effects on performance when you create add-ins that require multiple email message-based operations.
 
 ### Mailbox type limitations
 
@@ -117,7 +117,7 @@ To enable the on send feature for a specific group of users the steps are as fol
     New-OWAMailboxPolicy FinanceOWAPolicy
     ```
 
-    > **Note:** Administrators can use an existing policy, but on send functionality is only supported on certain mailbox types ((see **Mailbox type limitations** section for more information). Unsupported mailboxes will be blocked from sending by default in Outlook Web App.
+    > **Note:** Administrators can use an existing policy, but on send functionality is only supported on certain mailbox types (see **Mailbox type limitations** earlier in this article for more information). Unsupported mailboxes will be blocked from sending by default in Outlook Web App.
 
 2. Enable the on send feature.
 
