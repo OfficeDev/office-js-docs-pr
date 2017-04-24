@@ -107,7 +107,8 @@
     </Item>
     <Item text="Call Outlook REST APIs" url="outlook/use-rest-api" SEODescription="Learn how to authenticate and call REST APIs from an Outlook add-in." Scope="outlook" />
     <Item text="Get and set item data in read or compose forms" url="outlook/item-data" SEODescription="Learn about the ways to get or set data on an appointment or message from an Outlook add-in" Scope="outlook" />
-    <Item text="Get and set add-in metadata" url="outlook/metadata-for-an-outlook-add-in"  SEODescription="Learn to load and store custom data that only your Outlook add-in can access - through roaming settings and custom properties." Scope="outlook" />
+    <Item text="On send feature for Outlook add-ins" url="outlook/outlook-on-send-addins" Scope="outlook" />
+	<Item text="Get and set add-in metadata" url="outlook/metadata-for-an-outlook-add-in"  SEODescription="Learn to load and store custom data that only your Outlook add-in can access - through roaming settings and custom properties." Scope="outlook" />
     <Item text="Privacy and security" url="outlook/privacy-and-security" SEODescription="End users" Scope="outlook">
       <Item text="Understanding Outlook add-in permissions" url="outlook/understanding-outlook-add-in-permissions" SEODescription="Specify permission levels in your Outlook add-in manifest." />
     </Item>
