@@ -1,4 +1,4 @@
-# PivotTableCollection object (JavaScript API for Excel)
+# PivotTableCollection Object (JavaScript API for Excel)
 
 Represents a collection of all the PivotTables that are part of the workbook or worksheet.
 
@@ -18,13 +18,27 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|[getCount()](#getcount)|int|Gets the number of pivot tables in the collection.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItem(name: string)](#getitemname-string)|[PivotTable](pivottable.md)|Gets a PivotTable by name.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNull(name: string)](#getitemornullname-string)|[PivotTable](pivottable.md)|Gets a PivotTable by name. If the PivotTable does not exist, the return object's isNull property will be true.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[refreshAll()](#refreshall)|void|Refreshes all the PivotTables in the collection.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(name: string)](#getitemornullobjectname-string)|[PivotTable](pivottable.md)|Gets a PivotTable by name. If the PivotTable does not exist, will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[refreshAll()](#refreshall)|void|Refreshes all the pivot tables in the collection.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
+
+### getCount()
+Gets the number of pivot tables in the collection.
+
+#### Syntax
+```js
+pivotTableCollectionObject.getCount();
+```
+
+#### Parameters
+None
+
+#### Returns
+int
 
 ### getItem(name: string)
 Gets a PivotTable by name.
@@ -42,12 +56,12 @@ pivotTableCollectionObject.getItem(name);
 #### Returns
 [PivotTable](pivottable.md)
 
-### getItemOrNull(name: string)
-Gets a PivotTable by name. If the PivotTable does not exist, the return object's isNull property will be true.
+### getItemOrNullObject(name: string)
+Gets a PivotTable by name. If the PivotTable does not exist, will return a null object.
 
 #### Syntax
 ```js
-pivotTableCollectionObject.getItemOrNull(name);
+pivotTableCollectionObject.getItemOrNullObject(name);
 ```
 
 #### Parameters
@@ -58,24 +72,8 @@ pivotTableCollectionObject.getItemOrNull(name);
 #### Returns
 [PivotTable](pivottable.md)
 
-### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
-
-#### Syntax
-```js
-object.load(param);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
-
-#### Returns
-void
-
 ### refreshAll()
-Refreshes all the PivotTables in the collection.
+Refreshes all the pivot tables in the collection.
 
 #### Syntax
 ```js

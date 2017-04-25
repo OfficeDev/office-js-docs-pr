@@ -1,15 +1,14 @@
 # ShapeDataItemCollection object (JavaScript API for Visio)
 
 Applies to: _Visio Online_
->**Note:** The Visio JavaScript APIs are not currently available for use in preview or production environments.
 
 Represents the ShapeDataItemCollection for a given Shape.
 
 ## Properties
 
-| Property	   | Type	|Description| Feedback|
-|:---------------|:--------|:----------|:---|
-|items|[ShapeDataItem[]](shapedataitem.md)|A collection of shapeDataItem objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItemCollection-items)|
+| Property	   | Type	|Description|
+|:---------------|:--------|:----------|
+|items|[ShapeDataItem[]](shapedataitem.md)|A collection of shapeDataItem objects. Read-only.|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -19,11 +18,11 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description| Feedback|
-|:---------------|:--------|:----------|:---|
-|[getCount()](#getcount)|int|Gets the number of Shape Data Items.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItemCollection-getCount)|
-|[getItem(key: string)](#getitemkey-string)|[ShapeDataItem](shapedataitem.md)|Gets the ShapeDataItem using its name.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItemCollection-getItem)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItemCollection-load)|
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[getCount()](#getcount)|int|Gets the number of Shape Data Items.|
+|[getItem(key: string)](#getitemkey-string)|[ShapeDataItem](shapedataitem.md)|Gets the ShapeDataItem using its name.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 

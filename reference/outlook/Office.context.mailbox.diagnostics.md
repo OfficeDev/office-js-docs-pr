@@ -20,7 +20,7 @@ Provides diagnostic information to an Outlook add-in.
 
 Gets a string that represents the name of the host application.
 
-A string that can be one of the following values: `Outlook`, `Mac Outlook` or `OutlookWebApp`.
+A string that can be one of the following values: `Outlook`, `Mac Outlook`, `OutlookIOS`, or `OutlookWebApp`.
 
 ##### Type:
 
@@ -37,7 +37,7 @@ A string that can be one of the following values: `Outlook`, `Mac Outlook` or `O
 
 Gets a string that represents the version of either the host application or the Exchange Server.
 
-If the mail add-in is running on the Outlook desktop client, the `hostVersion` property returns the version of the host application, Outlook. In Outlook Web App, the property returns the version of the Exchange Server. An example is the string `15.0.468.0`.
+If the mail add-in is running on the Outlook desktop client or Outlook for iOS, the `hostVersion` property returns the version of the host application, Outlook. In Outlook Web App, the property returns the version of the Exchange Server. An example is the string `15.0.468.0`.
 
 ##### Type:
 

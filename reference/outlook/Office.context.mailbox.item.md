@@ -196,6 +196,8 @@ var created = Office.context.mailbox.item.dateTimeCreated;
 
 Gets the date and time that an item was last modified. Read mode only.
 
+> **Note:** This member is not supported in Outlook for iOS or Outlook for Android.
+
 ##### Type:
 
 *   Date
@@ -268,6 +270,8 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 Gets the email address of the sender of a message. Read mode only.
 
 The `from` and [`sender`](Office.context.mailbox.item.md#sender-emailaddressdetails) properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.
+
+> **Note:** The `recipientType` property of the `EmailAddressDetails` object in the `from` property is `undefined`.
 
 ##### Type:
 
@@ -565,6 +569,8 @@ function callback(asyncResult) {
 
 Gets the resources required for an appointment. Read mode only.
 
+> **Note:** This member is not supported in Outlook for iOS or Outlook for Android.
+
 ##### Type:
 
 *   [EmailAddressDetails](simple-types.md#emailaddressdetails)
@@ -581,6 +587,8 @@ Gets the resources required for an appointment. Read mode only.
 Gets the email address of the sender of an email message. Read mode only.
 
 The [`from`](Office.context.mailbox.item.md#from-emailaddressdetails) and `sender` properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.
+
+> **Note:** The `recipientType` property of the `EmailAddressDetails` object in the `sender` property is `undefined`.
 
 ##### Type:
 
@@ -839,6 +847,8 @@ In the Outlook desktop client, if the message is an inline reply, the `close` me
 
 Displays a reply form that includes the sender and all recipients of the selected message or the organizer and all attendees of the selected appointment.
 
+> **Note:** This method is not supported in Outlook for iOS or Outlook for Android.
+
 In Outlook Web App, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.
 
 If any of the string parameters exceed their limits, `displayReplyAllForm` throws an exception.
@@ -946,6 +956,8 @@ Office.context.mailbox.item.displayReplyAllForm(
 #### displayReplyForm(formData)
 
 Displays a reply form that includes only the sender of the selected message or the organizer of the selected appointment.
+
+> **Note:** This method is not supported in Outlook for iOS or Outlook for Android.
 
 In Outlook Web App, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.
 
@@ -1055,6 +1067,8 @@ Office.context.mailbox.item.displayReplyForm(
 
 Gets the entities found in the selected item.
 
+> **Note:** This method is not supported in Outlook for iOS or Outlook for Android.
+
 ##### Requirements
 
 |Requirement| Value|
@@ -1079,6 +1093,8 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 #### getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>}
 
 Gets an array of all the entities of the specified entity type found in the selected item.
+
+> **Note:** This method is not supported in Outlook for iOS or Outlook for Android.
 
 ##### Parameters:
 
@@ -1134,6 +1150,8 @@ Office.initialize = function () {
 
 Returns well-known entities in the selected item that pass the named filter defined in the manifest XML file.
 
+> **Note:** This method is not supported in Outlook for iOS or Outlook for Android.
+
 The `getFilteredEntitiesByName` method returns the entities that match the regular expression defined in the [ItemHasKnownEntity](https://msdn.microsoft.com/en-us/library/office/fp161166.aspx) rule element in the manifest XML file with the specified `FilterName` element value.
 
 ##### Parameters:
@@ -1160,6 +1178,8 @@ Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-typ
 #### getRegExMatches() → {Object}
 
 Returns string values in the selected item that match the regular expressions defined in the manifest XML file.
+
+> **Note:** This method is not supported in Outlook for iOS or Outlook for Android.
 
 The `getRegExMatches` method returns the strings that match the regular expression defined in each `ItemHasRegularExpressionMatch` or `ItemHasKnownEntity` rule element in the manifest XML file. For an `ItemHasRegularExpressionMatch` rule, a matching string has to occur in the property of the item that is specified by that rule. The `PropertyName` simple type defines the supported properties.
 
@@ -1219,6 +1239,8 @@ var veges = allMatches.veggies;
 #### getRegExMatchesByName(name) → (nullable) {Array.<String>}
 
 Returns string values in the selected item that match the named regular expression defined in the manifest XML file.
+
+> **Note:** This method is not supported in Outlook for iOS or Outlook for Android.
 
 The `getRegExMatchesByName` method returns the strings that match the regular expression defined in the `ItemHasRegularExpressionMatch` rule element in the manifest XML file with the specified `RegExName` element value.
 

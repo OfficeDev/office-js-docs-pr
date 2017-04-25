@@ -2,10 +2,16 @@
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md).
 
-Excel add-ins run across multiple versions of Office, including Office 2016 for Windows, Office for iPad, Office for Mac, and Office Online. The following table lists the Excel requirement sets, the Office host applications that support that requirement set, and the build versions or number for those applications. 
+Excel add-ins run across multiple versions of Office, including Office 2016 for Windows, Office for iPad, Office for Mac, and Office Online. The following table lists the Excel requirement sets, the Office host applications that support that requirement set, and the build versions or number for those applications.
+
+> For the requirement sets that are marked as *Beta*, use the specified (or later) version of the Office software and use the Beta library of the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js
+
+> Entires not listed as *Beta* are generally available and you can continue to use Production CDN library: https://appsforoffice.microsoft.com/lib/1/hosted/office.js
 
 |  Requirement set  |  Office 2016 for Windows*  |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
+| ExcelApi 1.5 **Beta**  | Version 1702 (Build TBD) or later| Coming soon |  Coming soon| coming soon | Coming soon|
+| ExcelApi 1.4 **Beta** | Version 1702 (Build TBD) or later| Coming soon |  Coming soon| coming soon | Coming soon|
 | ExcelApi 1.3  | Version 1608 (Build 7369.2055) or later| 1.27 or later |  15.27 or later| September 2016 | Version 1608 (Build 7601.6800) or later|
 | ExcelApi 1.2  | Version 1601 (Build 6741.2088) or later | 1.21 or later | 15.22 or later| January 2016 ||
 | ExcelApi 1.1  | Version 1509 (Build 4266.1001) or later | 1.19 or later | 15.20 or later| January 2016 ||
@@ -22,8 +28,89 @@ To find out more about versions, build numbers, and Office Online Server, see:
 ## Office common API requirement sets
 For information about common API requirement sets, see [Office common API requirement sets](office-add-in-requirement-sets.md).
 
-## What's new in Excel JavaScript API 1.3 
-The following are the new additions to the Excel JavaScript APIs in requirement set 1.3. 
+## What's new in Excel JavaScript API 1.4
+The following are the new additions to the Excel JavaScript APIs in requirement set 1.3.
+
+### Named item add and new properties
+
+New properties
+* `comment`
+* `scope` worksheet or workbook scoped items
+* `worksheet` returns the worksheet on which the named item is scoped to.
+
+New Methods
+* `add(name: string, reference: Range or string, comment: string)`Adds a new name to the collection of the given scope.
+* `addFormulaLocal(name: string, formula: string, comment: string)` Adds a new name to the collection of the given scope using the user's locale for the formula.
+
+### Settings API in in Excel namespace
+
+[Setting](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_1.4_OpenSpec/reference/excel/setting.md) object represents a key-value pair of a setting persisted to the document. Now, we've added settings related APIs under Excel namespace. This doesn't offer net new functionality - however this make easy to remain in the promise based batched API syntax reduce the dependency on common API for Excel related tasks.
+
+APIs include `getItem()` to get setting entry via the key, `add()` to add the specified key:value setting pair to the workbook.
+
+### Others
+
+* Set table column name (prior version only allows reading).
+* Add table column to the end of the table (prior version only allows anywhere but last).
+* Add multiple rows to a table at a time (prior version only allows 1 row at a time).
+* `range.getColumnsAfter(count: number)` and `range.getColumnsBefore(count: number)` to get a certain number of columns to the right/left of the current Range object.
+* Get item or null object function: This functionality allows getting object using a key. If the object does not exist, the returned object's isNullObject property will be true. This alows developers to check if an object exists or not without having to handle it thorugh exception handling. Available on worksheet, named-item, binding, chart series, etc.
+
+`worksheet.GetItemOrNullObject()`
+
+### Suspend calculation
+Suspends calculation (application.suspendCalculationUntilNextSync()) until the next "context.sync()" is called. Once set, it is the developer's responsibility to re-calc the workbook, to ensure that any dependencies are propagated.
+
+In addition, we are fixing the F9 re-calc bug that wasn't re-calculating the dirty cells.
+
+|Object| What is new| Description|Requirement set|
+|:----|:----|:----|:----|
+|[application](../excel/application.md)|_Method_ > [suspendCalculationUntilNextSync()](../excel/application.md#suspendcalculationuntilnextsync)|Suspends calculation until the next "context.sync()" is called. Once set, it is the developer's responsibility to re-calc the workbook, to ensure that any dependencies are propagated.|1.4|
+|[bindingCollection](../excel/bindingcollection.md)|_Method_ > [getCount()](../excel/bindingcollection.md#getcount)|Gets the number of bindings in the collection.|1.4|
+|[bindingCollection](../excel/bindingcollection.md)|_Method_ > [getItemOrNullObject(id: string)](../excel/bindingcollection.md#getitemornullobjectid-string)|Gets a binding object by ID. If the binding object does not exist, will return a null object.|1.4|
+|[chartCollection](../excel/chartcollection.md)|_Method_ > [getCount()](../excel/chartcollection.md#getcount)|Returns the number of charts in the worksheet.|1.4|
+|[chartCollection](../excel/chartcollection.md)|_Method_ > [getItemOrNullObject(name: string)](../excel/chartcollection.md#getitemornullobjectname-string)|Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.|1.4|
+|[chartPointsCollection](../excel/chartpointscollection.md)|_Method_ > [getCount()](../excel/chartpointscollection.md#getcount)|Returns the number of chart points in the series.|1.4|
+|[chartSeriesCollection](../excel/chartseriescollection.md)|_Method_ > [getCount()](../excel/chartseriescollection.md#getcount)|Returns the number of series in the collection.|1.4|
+|[namedItem](../excel/nameditem.md)|_Property_ > comment|Represents the comment associated with this name.|1.4|
+|[namedItem](../excel/nameditem.md)|_Property_ > scope|Indicates whether the name is scoped to the workbook or to a specific worksheet. Read-only. Possible values are: Equal, Greater, GreaterEqual, Less, LessEqual, NotEqual.|1.4|
+|[namedItem](../excel/nameditem.md)|_Relationship_ > worksheet|Returns the worksheet on which the named item is scoped to. Throws an error if the items is scoped to the workbook instead. Read-only.|1.4|
+|[namedItem](../excel/nameditem.md)|_Relationship_ > worksheetOrNullObject|Returns the worksheet on which the named item is scoped to. Returns a null object if the item is scoped to the workbook instead. Read-only.|1.4|
+|[namedItem](../excel/nameditem.md)|_Method_ > [delete()](../excel/nameditem.md#delete)|Deletes the given name.|1.4|
+|[namedItem](../excel/nameditem.md)|_Method_ > [getRangeOrNullObject()](../excel/nameditem.md#getrangeornullobject)|Returns the range object that is associated with the name. Returns a null object if the named item's type is not a range.|1.4|
+|[namedItemCollection](../excel/nameditemcollection.md)|_Method_ > [add(name: string, reference: Range or string, comment: string)](../excel/nameditemcollection.md#addname-string-reference-range-or-string-comment-string)|Adds a new name to the collection of the given scope.|1.4|
+|[namedItemCollection](../excel/nameditemcollection.md)|_Method_ > [addFormulaLocal(name: string, formula: string, comment: string)](../excel/nameditemcollection.md#addformulalocalname-string-formula-string-comment-string)|Adds a new name to the collection of the given scope using the user's locale for the formula.|1.4|
+|[namedItemCollection](../excel/nameditemcollection.md)|_Method_ > [getCount()](../excel/nameditemcollection.md#getcount)|Gets the number of named items in the collection.|1.4|
+|[namedItemCollection](../excel/nameditemcollection.md)|_Method_ > [getItemOrNullObject(name: string)](../excel/nameditemcollection.md#getitemornullobjectname-string)|Gets a nameditem object using its name. If the nameditem object does not exist, will return a null object.|1.4|
+|[pivotTableCollection](../excel/pivottablecollection.md)|_Method_ > [getCount()](../excel/pivottablecollection.md#getcount)|Gets the number of pivot tables in the collection.|1.4|
+|[pivotTableCollection](../excel/pivottablecollection.md)|_Method_ > [getItemOrNullObject(name: string)](../excel/pivottablecollection.md#getitemornullobjectname-string)|Gets a PivotTable by name. If the PivotTable does not exist, will return a null object.|1.4|
+|[range](../excel/range.md)|_Method_ > [getIntersectionOrNullObject(anotherRange: Range or string)](../excel/range.md#getintersectionornullobjectanotherrange-range-or-string)|Gets the range object that represents the rectangular intersection of the given ranges. If no intersection is found, will return a null object.|1.4|
+|[range](../excel/range.md)|_Method_ > [getUsedRangeOrNullObject(valuesOnly: bool)](../excel/range.md#getusedrangeornullobjectvaluesonly-bool)|Returns the used range of the given range object. If there are no used cells within the range, this function will return a null object.|1.4|
+|[rangeViewCollection](../excel/rangeviewcollection.md)|_Method_ > [getCount()](../excel/rangeviewcollection.md#getcount)|Gets the number of RangeView objects in the collection.|1.4|
+|[setting](../excel/setting.md)|_Property_ > key|Returns the key that represents the id of the Setting. Read-only.|1.4|
+|[setting](../excel/setting.md)|_Property_ > value|Represents the value stored for this setting.|1.4|
+|[setting](../excel/setting.md)|_Method_ > [delete()](../excel/setting.md#delete)|Deletes the setting.|1.4|
+|[settingCollection](../excel/settingcollection.md)|_Property_ > items|A collection of setting objects. Read-only.|1.4|
+|[settingCollection](../excel/settingcollection.md)|_Method_ > [add(key: string, value: (any)[])](../excel/settingcollection.md#addkey-string-value-any)|Sets or adds the specified setting to the workbook.|1.4|
+|[settingCollection](../excel/settingcollection.md)|_Method_ > [getCount()](../excel/settingcollection.md#getcount)|Gets the number of Settings in the collection.|1.4|
+|[settingCollection](../excel/settingcollection.md)|_Method_ > [getItem(key: string)](../excel/settingcollection.md#getitemkey-string)|Gets a Setting entry via the key.|1.4|
+|[settingCollection](../excel/settingcollection.md)|_Method_ > [getItemOrNullObject(key: string)](../excel/settingcollection.md#getitemornullobjectkey-string)|Gets a Setting entry via the key. If the Setting does not exist, will return a null object.|1.4|
+|[settingsChangedEventArgs](../excel/settingschangedeventargs.md)|_Relationship_ > settings|Gets the Setting object that represents the binding that raised the SettingsChanged event|1.4|
+|[tableCollection](../excel/tablecollection.md)|_Method_ > [getCount()](../excel/tablecollection.md#getcount)|Gets the number of tables in the collection.|1.4|
+|[tableCollection](../excel/tablecollection.md)|_Method_ > [getItemOrNullObject(key: number or string)](../excel/tablecollection.md#getitemornullobjectkey-number-or-string)|Gets a table by Name or ID. If the table does not exist, will return a null object.|1.4|
+|[tableColumnCollection](../excel/tablecolumncollection.md)|_Method_ > [getCount()](../excel/tablecolumncollection.md#getcount)|Gets the number of columns in the table.|1.4|
+|[tableColumnCollection](../excel/tablecolumncollection.md)|_Method_ > [getItemOrNullObject(key: number or string)](../excel/tablecolumncollection.md#getitemornullobjectkey-number-or-string)|Gets a column object by Name or ID. If the column does not exist, will return a null object.|1.4|
+|[tableRowCollection](../excel/tablerowcollection.md)|_Method_ > [getCount()](../excel/tablerowcollection.md#getcount)|Gets the number of rows in the table.|1.4|
+|[workbook](../excel/workbook.md)|_Relationship_ > settings|Represents a collection of Settings associated with the workbook. Read-only.|1.4|
+|[worksheet](../excel/worksheet.md)|_Relationship_ > names|Collection of names scoped to the current worksheet. Read-only.|1.4|
+|[worksheet](../excel/worksheet.md)|_Method_ > [getUsedRangeOrNullObject(valuesOnly: bool)](../excel/worksheet.md#getusedrangeornullobjectvaluesonly-bool)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return a null object.|1.4|
+|[worksheetCollection](../excel/worksheetcollection.md)|_Method_ > [getCount(visibleOnly: bool)](../excel/worksheetcollection.md#getcountvisibleonly-bool)|Gets the number of worksheets in the collection.|1.4|
+|[worksheetCollection](../excel/worksheetcollection.md)|_Method_ > [getItemOrNullObject(key: string)](../excel/worksheetcollection.md#getitemornullobjectkey-string)|Gets a worksheet object using its Name or ID. If the worksheet does not exist, will return a null object.|1.4|
+
+
+
+## What's new in Excel JavaScript API 1.3
+The following are the new additions to the Excel JavaScript APIs in requirement set 1.3.
 
 |Object| What's new| Description|Requirement set|
 |:----|:----|:----|:----|
@@ -76,7 +163,7 @@ The following are the new additions to the Excel JavaScript APIs in requirement 
 |[worksheet](../excel/worksheet.md)|_Relationship_ > pivotTables|Collection of PivotTables that are part of the worksheet. Read-only.|1.3|
 
 ## What's new in Excel JavaScript API 1.2
-The following are the new additions to the Excel JavaScript APIs in requirement set 1.2. 
+The following are the new additions to the Excel JavaScript APIs in requirement set 1.2.
 
 |Object| What's new| Description|Requirement set|
 |:----|:----|:----|:----|
@@ -162,7 +249,7 @@ The following are the new additions to the Excel JavaScript APIs in requirement 
 
 ## Excel JavaScript API 1.1
 Excel JavaScript API 1.1 is the first version of the API. For details about the API,  see the Excel JavaScript API reference topics.  
-    
+
 ## Additional resources
 
 - [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md)

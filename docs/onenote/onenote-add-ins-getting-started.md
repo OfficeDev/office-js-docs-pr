@@ -12,75 +12,37 @@ Follow the instructions to [Create an Office Add-in using any editor](../get-sta
 
 | Option | Value |
 |:------|:------|
-| Project name | OneNote Add-in |
-| Root folder of project | (accept the default) |
-| Office project type | Task Pane Add-in |
-| Supported Office applications | (Make sure OneNote is selected) |
-| Technology to use | HTML, CSS & JavaScript |
+| New subfolder | (accept the default) |
+| Add-in name | OneNote Add-in |
+| Supported Office application | (select OneNote) |
+| Create new add-in | Yes, I want a new add-in |
+| Add [TypeScript](https://www.typescriptlang.org/) | No |
+| Choose framework | Jquery |
 
 <a name="develop"></a>
 ## Step 2: Modify the add-in
 You can edit the add-in files using any text editor or IDE. If you haven't tried Visual Studio Code yet, you can [download it for free](https://code.visualstudio.com/) on Linux, Mac OSX, and Windows.
 
-1 - Open **home.html** in the *app/home* folder. 
+1 - Open **index.html** in the project directory. 
 
-2 - Edit the references to the Office JavaScript API and [Office UI Fabric](http://dev.office.com/fabric) styles and components.
-
-  a. Uncomment the link to fabric.components.min.css.
-  
-  b. Replace the script reference to Office.js with the following reference to the *beta* version.
-
-```
-<script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
-```
-
-  Your Office references will look like this.
-
-```
-<link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.min.css" rel="stylesheet">
-<link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css" rel="stylesheet">
-<script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
-```
-
-3 - Replace the `<body>` element with the following code. This adds a text area and a button using [Office UI Fabric components](http://dev.office.com/fabric/components). The **Responsive Grid** layout is from the set of [Office UI Fabric styles](http://dev.office.com/fabric/styles). 
+2 - Replace the `<main>` element with the following code. This adds a text area and a button using [Office UI Fabric components](http://dev.office.com/fabric/components).
 
 ```html
-<body class="ms-font-m">
-   <div class="home flex-container">
-       <div class="ms-Grid">
-           <div class="ms-Grid-row ms-bgColor-themeDarker">
-               <div class="ms-Grid-col">
-                   <span class="ms-font-xl ms-fontColor-themeLighter ms-fontWeight-semibold">OneNote Add-in</span>
-               </div>
-           </div>
-       </div>
-       <br />
-       <div class="ms-Grid">
-           <div class="ms-Grid-row">
-               <div class="ms-Grid-col">
-                   <label class="ms-Label">Enter content here</label>
-                   <div class="ms-TextField ms-TextField--placeholder">
-                       <textarea id="textBox" rows="5"></textarea>
-                   </div>
-               </div>
-           </div>
-           <div class="ms-Grid-row">
-               <div class="ms-Grid-col">
-                   <div class="ms-font-m ms-fontColor-themeLight header--text">
-                       <button class="ms-Button ms-Button--primary" id="addOutline">
-                           <span class="ms-Button-icon"><i class="ms-Icon"></i></span>
-                           <span class="ms-Button-label">Add outline</span>
-                           <span class="ms-Button-description">Adds the content above to the current page.</span>
-                       </button>
-                   </div>
-               </div>
-           </div>
-       </div>
+<main class="ms-welcome__main">
+   <br />
+   <p class="ms-font-l">Enter content below</p>
+   <div class="ms-TextField ms-TextField--placeholder">
+       <textarea id="textBox" rows="5"></textarea>
    </div>
-</body>
+   <button id="addOutline" class="ms-welcome__action ms-Button ms-Button--hero ms-u-slideUpIn20">
+        <span class="ms-Button-label">Add Outline</span>
+        <span class="ms-Button-icon"><i class="ms-Icon"></i></span>
+        <span class="ms-Button-description">Adds the content above to the current page.</span>
+    </button>
+</main>
 ```
 
-4 - Open **home.js** in the *app/home* folder. Edit the **Office.initialize** function to add a click event to the **Add outline** button, as follows.
+3 - Open **app.js** (or app.ts if using TypeScript) in the project directory. Edit the **Office.initialize** function to add a click event to the **Add outline** button, as follows.
 
 ```js
 // The initialize function is run each time the page is loaded.
@@ -94,7 +56,7 @@ Office.initialize = function (reason) {
 };
 ```
  
-5 - Replace the **getDataFromSelection** method with the following **addOutlineToPage** method. This gets the content from the text area and adds it to the page.
+4 - Replace the **run** method with the following **addOutlineToPage** method. This gets the content from the text area and adds it to the page.
 
 ```js
 // Add the contents of the text area to the page.
@@ -129,25 +91,17 @@ function addOutlineToPage() {
 
 <a name="test"></a>
 ## Step 3: Test the add-in on OneNote Online
-1 - Run the Gulp web server.  
+1 - Start the HTTPS server.  
 
-  a. Open a **cmd** prompt and go to the add-in project folder. 
+  a. Open a **cmd** prompt / Terminal and go to the add-in project folder. 
   
-  b. Run the `gulp serve-static` command, as shown below.
+  b. Run the command, as shown below.
 
   ```
-  C:\your-local-path\onenote add-in\> gulp serve-static
+  C:\your-local-path\onenote add-in\> npm start
   ```
 
-2 - Install the Gulp web server's self-signed certificate as a trusted certificate. You only need to do this one time on your computer for all add-in projects created with the Office Yeoman generator.
-
-   a. Navigate to the hosted add-in page. By default, this is the same URL that's in your manifest:
-
-  ```
-  https://localhost:8443/app/home/home.html
-  ```
-
-   b. Install the certificate as a trusted certificate. For more information, see [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/docs/trust-self-signed-cert.md).
+2 - Install the self-signed certificate as a trusted certificate. You only need to do this one time on your computer for all add-in projects created with the Office Yeoman generator. For more information, see [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
 
 3 - Go to [OneNote Online](https://www.onenote.com/notebooks) and open a notebook.
 
@@ -161,7 +115,7 @@ function addOutlineToPage() {
 
   ![The Office Add-ins dialog showing the MY ADD-INS tab](../../images/onenote-office-add-ins-dialog.png)
 
-5 - In the Upload Add-in dialog, browse to **manifest-onenote-add-in.xml** in your project folder, and then choose **Upload**. While testing, your manifest file will be stored in the browser's local storage.
+5 - In the Upload Add-in dialog, browse to **onenote-add-in-manifest.xml** in your project folder, and then choose **Upload**. While testing, your manifest file will be stored in the browser's local storage.
 
 6 - The add-in opens in an iFrame next to the OneNote page. Enter some text in the text area and then choose **Add outline**. The text you entered is added to the page. 
 

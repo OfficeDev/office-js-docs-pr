@@ -1,4 +1,4 @@
-# Range object (JavaScript API for Excel)
+# Range Object (JavaScript API for Excel)
 
 Range represents a set of one or more contiguous cells such as a cell, a row, a column, block of cells, etc.
 
@@ -42,24 +42,24 @@ _See property access [examples.](#property-access-examples)_
 |[getBoundingRect(anotherRange: Range or string)](#getboundingrectanotherrange-range-or-string)|[Range](range.md)|Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E16".|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it's stays within the worksheet grid. The returned cell is located relative to the top left cell of the range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getColumn(column: number)](#getcolumncolumn-number)|[Range](range.md)|Gets a column contained in the range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getColumnsAfter(count: number)](#getcolumnsaftercount-number)|[Range](range.md)|Gets a certain number of columns to the right of the current Range object.|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[getColumnsBefore(count: number)](#getcolumnsbeforecount-number)|[Range](range.md)|Gets a certain number of columns to the left of the current Range object.|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[getEntireColumn()](#getentirecolumn)|[Range](range.md)|Gets an object that represents the entire column of the range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getEntireRow()](#getentirerow)|[Range](range.md)|Gets an object that represents the entire row of the range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getColumnsAfter(count: number)](#getcolumnsaftercount-number)|[Range](range.md)|Gets a certain number of columns to the right of the current Range object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getColumnsBefore(count: number)](#getcolumnsbeforecount-number)|[Range](range.md)|Gets a certain number of columns to the left of the current Range object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getEntireColumn()](#getentirecolumn)|[Range](range.md)|Gets an object that represents the entire column of the range (for example, if the current range represents cells "B4:E11", it's `getEntireColumn` is a range that represents columns "B:E").|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getEntireRow()](#getentirerow)|[Range](range.md)|Gets an object that represents the entire row of the range (for example, if the current range represents cells "B4:E11", it's `GetEntireRow` is a range that represents rows "4:11").|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getIntersection(anotherRange: Range or string)](#getintersectionanotherrange-range-or-string)|[Range](range.md)|Gets the range object that represents the rectangular intersection of the given ranges.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getIntersectionOrNull(anotherRange: Range or string)](#getintersectionornullanotherrange-range-or-string)|[Range](range.md)|Gets the range object that represents the rectangular intersection of the given ranges. If no intersection is found, will return a null object.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getIntersectionOrNullObject(anotherRange: Range or string)](#getintersectionornullobjectanotherrange-range-or-string)|[Range](range.md)|Gets the range object that represents the rectangular intersection of the given ranges. If no intersection is found, will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getLastCell()](#getlastcell)|[Range](range.md)|Gets the last cell within the range. For example, the last cell of "B2:D5" is "D5".|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getLastColumn()](#getlastcolumn)|[Range](range.md)|Gets the last column within the range. For example, the last column of "B2:D5" is "D2:D5".|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getLastRow()](#getlastrow)|[Range](range.md)|Gets the last row within the range. For example, the last row of "B2:D5" is "B5:D5".|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getOffsetRange(rowOffset: number, columnOffset: number)](#getoffsetrangerowoffset-number-columnoffset-number)|[Range](range.md)|Gets an object which represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an exception will be thrown.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getResizedRange(deltaRows: number, deltaColumns: number)](#getresizedrangedeltarows-number-deltacolumns-number)|[Range](range.md)|Gets a Range object similar to the current Range object, but with its bottom-right corner expanded (or contracted) by some number of rows and columns.|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getOffsetRange(rowOffset: number, columnOffset: number)](#getoffsetrangerowoffset-number-columnoffset-number)|[Range](range.md)|Gets an object which represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an error will be thrown.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getResizedRange(deltaRows: number, deltaColumns: number)](#getresizedrangedeltarows-number-deltacolumns-number)|[Range](range.md)|Gets a Range object similar to the current Range object, but with its bottom-right corner expanded (or contracted) by some number of rows and columns.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Gets a row contained in the range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getRowsAbove(count: number)](#getrowsabovecount-number)|[Range](range.md)|Gets a certain number of rows above the current Range object.|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[getRowsBelow(count: number)](#getrowsbelowcount-number)|[Range](range.md)|Gets a certain number of rows below the current Range object.|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[getUsedRange(valuesOnly)](#getusedrangevaluesonly)|[Range](range.md)|Returns the used range of the given range object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRowsAbove(count: number)](#getrowsabovecount-number)|[Range](range.md)|Gets a certain number of rows above the current Range object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRowsBelow(count: number)](#getrowsbelowcount-number)|[Range](range.md)|Gets a certain number of rows below the current Range object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getUsedRange(valuesOnly: [ApiSet(Version)](#getusedrangevaluesonly-apisetversion)|[Range](range.md)|Returns the used range of the given range object. If there are no used cells within the range, this function will throw an ItemNotFound error.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getUsedRangeOrNullObject(valuesOnly: bool)](#getusedrangeornullobjectvaluesonly-bool)|[Range](range.md)|Returns the used range of the given range object. If there are no used cells within the range, this function will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getVisibleView()](#getvisibleview)|[RangeView](rangeview.md)|Represents the visible rows of the current range.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |[insert(shift: string)](#insertshift-string)|[Range](range.md)|Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space. Returns a new Range object at the now blank space.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[merge(across: bool)](#mergeacross-bool)|void|Merge the range cells into one region in the worksheet.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[select()](#select)|void|Selects the specified range in the Excel UI.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[unmerge()](#unmerge)|void|Unmerge the range cells into separate cells.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
@@ -284,7 +284,7 @@ rangeObject.getColumnsBefore(count);
 [Range](range.md)
 
 ### getEntireColumn()
-Gets an object that represents the entire column of the range.
+Gets an object that represents the entire column of the range (for example, if the current range represents cells "B4:E11", it's `getEntireColumn` is a range that represents columns "B:E").
 
 #### Syntax
 ```js
@@ -321,7 +321,7 @@ Excel.run(function (ctx) {
 ```
 
 ### getEntireRow()
-Gets an object that represents the entire row of the range.
+Gets an object that represents the entire row of the range (for example, if the current range represents cells "B4:E11", it's `GetEntireRow` is a range that represents rows "4:11").
 
 #### Syntax
 ```js
@@ -393,12 +393,12 @@ Excel.run(function (ctx) {
 ```
 
 
-### getIntersectionOrNull(anotherRange: Range or string)
+### getIntersectionOrNullObject(anotherRange: Range or string)
 Gets the range object that represents the rectangular intersection of the given ranges. If no intersection is found, will return a null object.
 
 #### Syntax
 ```js
-rangeObject.getIntersectionOrNull(anotherRange);
+rangeObject.getIntersectionOrNullObject(anotherRange);
 ```
 
 #### Parameters
@@ -516,7 +516,7 @@ Excel.run(function (ctx) {
 
 
 ### getOffsetRange(rowOffset: number, columnOffset: number)
-Gets an object which represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an exception will be thrown.
+Gets an object which represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an error will be thrown.
 
 #### Syntax
 ```js
@@ -638,8 +638,8 @@ rangeObject.getRowsBelow(count);
 #### Returns
 [Range](range.md)
 
-### getUsedRange(valuesOnly)
-Returns the used range of the given range object.
+### getUsedRange(valuesOnly: [ApiSet(Version)
+Returns the used range of the given range object. If there are no used cells within the range, this function will throw an ItemNotFound error.
 
 #### Syntax
 ```js
@@ -675,6 +675,22 @@ Excel.run(function (ctx) {
 });
 ```
 
+
+### getUsedRangeOrNullObject(valuesOnly: bool)
+Returns the used range of the given range object. If there are no used cells within the range, this function will return a null object.
+
+#### Syntax
+```js
+rangeObject.getUsedRangeOrNullObject(valuesOnly);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|valuesOnly|bool|Optional. Considers only cells with values as used cells.|
+
+#### Returns
+[Range](range.md)
 
 ### getVisibleView()
 Represents the visible rows of the current range.
@@ -725,22 +741,6 @@ Excel.run(function (ctx) {
 });
 ```
 
-
-### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
-
-#### Syntax
-```js
-object.load(param);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
-
-#### Returns
-void
 
 ### merge(across: bool)
 Merge the range cells into one region in the worksheet.

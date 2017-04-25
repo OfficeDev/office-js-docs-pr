@@ -1,4 +1,4 @@
-# TableSort object (JavaScript API for Excel)
+# TableSort Object (JavaScript API for Excel)
 
 Manages sorting operations on Table objects.
 
@@ -20,7 +20,6 @@ Manages sorting operations on Table objects.
 |:---------------|:--------|:----------|:----|
 |[apply(fields: SortField[], matchCase: bool, method: string)](#applyfields-sortfield-matchcase-bool-method-string)|void|Perform a sort operation.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[clear()](#clear)|void|Clears the sorting that is currently on the table. While this doesn't modify the table's ordering, it clears the state of the header buttons.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[reapply()](#reapply)|void|Reapplies the current sorting parameters to the table.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
@@ -74,22 +73,6 @@ tableSortObject.clear();
 
 #### Parameters
 None
-
-#### Returns
-void
-
-### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
-
-#### Syntax
-```js
-object.load(param);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void

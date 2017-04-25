@@ -9,7 +9,6 @@
   <Item text="Get started" url="get-started">
     <Item text="Use Visual Studio" url="get-started/create-and-debug-office-add-ins-in-visual-studio" SEODescription="Get started building an Office Add-in with Visual Studio" />
 	  <Item text="Use any editor" url="get-started/create-an-office-add-in-using-any-editor" SEODescription="Get started building Office Add-ins with any editor, on a Mac or Windows PC. " />
-    <Item text="Use Napa" url="get-started/create-an-office-add-in-with-napa" SEODescription="Get started with Office Add-ins by using Napa Office 365 Development Tools from your browser to create a basic content, task pane, or Outlook add-in for Excel, Outlook, PowerPoint, Project, or Word." />
   </Item>
   <Item text="Design" url="design/add-in-design">
       <Item text="UI Elements" url="design/ui-elements/ui-elements" SEODescription="Use add-in commands, Fabric UI, and custom HTML interfaces to make compelling add-in user interfaces.">
@@ -23,12 +22,14 @@
 	<Item text="Add-in commands for Excel, Word, and PowerPoint" url="design/add-in-commands" SEODescription="Use add-in commands in your add-in to extend the default Office UI in Excel, Word, and PowerPoint."  />
   	<Item text="Design icons for add-in commands" url="design/design-icons" SEODescription="Design icons for add-in commands that integrate seamlessly with the Office UI." />
 	<Item text="Data visualization style guidelines" url="design/data-visualization-guidelines" SEODescription="Provides guidelines for data visualizations in Office Add-ins." />
+	<Item text="Usability testing" url="design/usability-testing" />
     	<Item text="Voice guidelines" url="design/voice-guidelines" SEODescription="Find guidelines for the voice to use in UI text in Office Add-ins" />
     	<Item text="Accessibility guidelines" url="design/accessibility-guidelines" SEODescription="Find out how to make your Office Add-ins accessible for all users." />
     </Item>
   <Item text="Develop" url="develop">
 	<Item text="Add-in development lifecycle" url="develop/add-in-development-lifecycle" SEODescription="Plan the end-to-end process for developing task pane, content, and Outlook add-ins to extend Office applications." />
 	<Item text="Install the latest Office version" url="develop/install-latest-office-version" SEODescription="Find out how to opt in to get the latest builds of Office." />
+	<Item text="Understanding Office versions" url="develop/office-versions" />
 	<Item text="Develop add-ins for the iPad" url="develop/develop-office-add-ins-for-the-ipad"  SEODescription="Make your Office Add-ins available in Office for iPad." />
 	<Item text="Tips for creating add-ins with Angular 2" url="develop/add-ins-with-angular2" SEODescription="Use Angular 2 to develop Office Add-ins." />
 	<Item text="Use the Dialog API" url="develop/dialog-api-in-office-add-ins" SEODescription="Use the Dialog API to open dialog boxes in your Office Add-in." />
@@ -39,6 +40,7 @@
 		<Item text="Update API and manifest version" url="develop/update-your-javascript-api-for-office-and-manifest-schema-version" SEODescription="Update the JavaScript files (Office.js and app-specific .js files) and the add-in manifest validation file used in your Office Add-in project to version 1.1." />		
 	</Item>	
 	<Item text="Office JavaScript API" url="develop/understanding-the-javascript-api-for-office" SEODescription="Understand the functional areas of the JavaScript API for Office, which is implemented in the Office.js file.">
+		<Item text="Office.js versions" url="develop/office-js-versioning" />
 		<Item text="Support for content and task pane add-ins" url="develop/support-for-task-pane-and-content-add-ins" SEODescription="Describes the different permission levels that you can declare in your content or task pane add-in's manifest to specify the level of JavaScript API access your add-in requires for its features." />
 		<Item text="Reference Office.js" url="develop/referencing-the-javascript-api-for-office-library-from-its-cdn" SEODescription="Reference the JavaScript API for Office library (Office.js and associated application-specific .js files) from its content delivery network (CDN) location." />
 		<Item text="Load Office.js" url="develop/loading-the-dom-and-runtime-environment" SEODescription="An add-in must ensure that both the DOM and the Office Add-ins runtime environment are loaded before running its own custom logic." />
@@ -50,6 +52,7 @@
 	<Item text="Address same origin policy limitations" url="develop/addressing-same-origin-policy-limitations" SEODescription="Provides a brief overview of ways to address the same-origin policy limitations that prevent a script loaded from one domain from getting or manipulating properties of a document from another domain in an Office Add-in." />
 	<Item text="Localization" url="develop/localization" SEODescription="Provide locale-specific content for an Office Add-in, including UI strings, add-in name, description, icon, source file, and date/time format." />
     <Item text="Performance" url="develop/resource-limits-and-performance-optimization" SEODescription="Apply resource usage limits to your Office Add-ins and optimize the performance of your add-in." />
+	<Item text="Implementation details" url="develop/implementation-details" />
   </Item>
   <Item text="Test and debug" url="testing">
     	<Item text="Sideload Office Add-ins for testing" url="testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins" SEODescription="Install an Office Add-in running on Windows for testing." Scope="Excel, Word, PowerPoint, Project, Access" />
@@ -64,9 +67,10 @@
 	</Item>
   <Item text="Publish" url="publish/publish">
     <Item text="Host an Office Add-in on Microsoft Azure" url="publish/host-an-office-add-in-on-microsoft-azure" SEODescription="Use Visual Studio 2015 and the Microsoft Office Developer Tools to publish to and then host an Office Add-in on Microsoft Azure." />
-    <Item text="Package your add-in using Napa or Visual Studio" url="publish/package-your-add-in-using-napa-or-visual-studio" SEODescription="Package your Office Add-in to prepare it for publishing." />
+    <Item text="Package your add-in using Visual Studio" url="publish/package-your-add-in-using-visual-studio" SEODescription="Package your Office Add-in to prepare it for publishing." />
     <Item text="Publish task pane and content add-ins to an add-in catalog" url="publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog" SEODescription="Configure Office clients so your add-in is available from the Office Add-ins dialog box"  />
-	<Item text="Submit add-ins to the Office Store" url="https://msdn.microsoft.com/en-us/library/office/jj220037.aspx" IsExternal="true" />
+	<Item text="Submit add-ins to the Office Store" url="https://dev.office.com/officestore/docs/submit-add-ins-and-web-apps-to-the-office-store" IsExternal="true" />
+	<Item text="Office Store validation policies" url="https://dev.office.com/officestore/docs/validation-policies" IsExternal="true" />
   </Item>
   
   <Item text="Word" url="word/word-add-ins-programming-overview" SEODescription="Use the JavaScript APIs to build Word add-ins." Scope="word">
@@ -87,49 +91,53 @@
   
   <Item text="Outlook" url="outlook/outlook-add-ins" SEODescription="Create Outlook add-ins in read or compose mode." Scope="outlook" >
     <Item text="Overview" url="outlook/overview" SEODescription="Learn about Outlook add-ins architecture and features." Scope="outlook" />
+    <Item text="Outlook add-in design guidelines" url="outlook/outlook-addin-design" SEODescription="Learn about designing an Outlook add-in." Scope="outlook" />
     <Item text="Add-in commands for Outlook" url="outlook/add-in-commands-for-outlook"  SEODescription="Use add-in commands to integrate Outlook add-ins with the Outlook UI." Scope="outlook" />
+    <Item text="Add-ins for Outlook Mobile" url="outlook/outlook-mobile-addins"  SEODescription="Learn about developing add-ins for Outlook Mobile." Scope="outlook" />
     <Item text="Contextual Outlook add-ins" url="outlook/contextual-outlook-add-ins"  SEODescription="Activate an Outlook add-in based on specified text in a message or appointment." Scope="outlook" />
     <Item text="Module extension Outlook add-ins" url="outlook/extension-module-outlook-add-ins" FriendlyUrl="outlookmodule-extension-outlook-add-ins" Scope="outlook" SEODescription="Extend the Outlook UI by adding module extensions to the navigation bar."/> 
-	<Item text="APIs" url="outlook/apis" SEODescription="Learn how to specify the APIs needed for your Outlook add-in." Scope="outlook" />
-	<Item text="Manifests" url="outlook/manifests/manifests" Scope="outlook" SEODescription="Create a manifest for an Outlook add-in for read or compose form." >
-      <Item text="Activation rules" url="outlook/manifests/activation-rules" FriendlyUrl="outlook/manifestsactivation-rules" SEODescription="Define activation rules in an Outlook add-in manifest to specify when Outlook displays the add-in." Scope="outlook" />
-      <Item text="Define add-in commands" url="outlook/manifests/define-add-in-commands"  SEODescription="Use the VersionOverrides element in your Outlook add-in manifest to define add-in commands." Scope="outlook" />
-      <Item text="Pinnable taskpane" url="outlook/manifests/pinnable-taskpane"  SEODescription="Implement a pinnable taskpane in an Outlook add-in." Scope="outlook" />
-  </Item>
-  <Item text="Get and set item data in read or compose forms" url="outlook/item-data" SEODescription="Learn about the ways to get or set data on an appointment or message from an Outlook add-in" Scope="outlook" />
-	<Item text="Get and set add-in metadata" url="outlook/metadata-for-an-outlook-add-in"  SEODescription="Learn to load and store custom data that only your Outlook add-in can access - through roaming settings and custom properties." Scope="outlook" />
-	<Item text="Privacy and security" url="outlook/privacy-and-security" SEODescription="End users" Scope="outlook">
-		<Item text="Understanding Outlook add-in permissions" url="outlook/understanding-outlook-add-in-permissions" SEODescription="Specify permission levels in your Outlook add-in manifest." />
+    <Item text="Pinnable taskpane" url="outlook/manifests/pinnable-taskpane"  SEODescription="Implement a pinnable taskpane in an Outlook add-in." Scope="outlook" />
+	  <Item text="APIs" url="outlook/apis" SEODescription="Learn how to specify the APIs needed for your Outlook add-in." Scope="outlook" />
+    <Item text="Manifests" url="outlook/manifests/manifests" Scope="outlook" SEODescription="Create a manifest for an Outlook add-in for read or compose form." >
+        <Item text="Activation rules" url="outlook/manifests/activation-rules" FriendlyUrl="outlook/manifestsactivation-rules" SEODescription="Define activation rules in an Outlook add-in manifest to specify when Outlook displays the add-in." Scope="outlook" />
+        <Item text="Define add-in commands" url="outlook/manifests/define-add-in-commands"  SEODescription="Use the VersionOverrides element in your Outlook add-in manifest to define add-in commands." Scope="outlook" />
+        <Item text="Add support for Outlook Mobile" url="outlook/manifests/add-mobile-support" SEODescription="Learn how to add support for Outlook mobile to your add-in." Scope="outlook" />
     </Item>
-	<Item text="Read scenario" url="outlook/read-scenario" SEODescription="Build Outlook add-ins for the read scenario and find information for available API features." Scope="outlook">
-		<Item text="Use regular expressions to show an Outlook add-in" url="outlook/use-regular-expressions-to-show-an-outlook-add-in" SEODescription="Learn how to use regular expressions to specify the criteria for a Outlook add-in to be relevant in a read scenario and that Outlook should display the add-in in the UI." Scope="outlook" />
-		<Item text="Match strings in an item as well-known entities" url="outlook/match-strings-in-an-item-as-well-known-entities"  SEODescription="Recognize specific string patterns to activate an Outlook add-in or facilitate further processing of these string matches." Scope="outlook" />
-		<Item text="Extract entity strings from an item" url="outlook/extract-entity-strings-from-an-item"  SEODescription="Recognize specific string patterns to activate an Outlook add-in or facilitate further processing of these string matches." Scope="outlook" />
-		<Item text="Get attachments of an Outlook item" url="outlook/get-attachments-of-an-outlook-item" SEODescription="Use an Outlook add-in to enable a service to get attachments from an Exchange server." Scope="outlook" />
-	</Item>
-	<Item text="Compose scenario" url="outlook/compose-scenario" SEODescription="Build Outlook add-ins for the read scenario and find information for available API features." Scope="outlook">
-		<Item text="Add and remove attachments to an item in a compose form" url="outlook/add-and-remove-attachments-to-an-item-in-a-compose-form" SEODescription="See JavaScript examples of using asynchronous methods and an Exchange Web Services (EWS) ID from an Outlook add-in to add an attachment to an item a user is composing in Outlook." Scope="outlook"></Item><Item text="Get and set item data in a compose form" url="outlook/get-and-set-item-data-in-a-compose-form" FriendlyUrl="outlook/composeget-and-set-item-data-in-a-compose-form" SEODescription="Learn how to get or set various properties of an item in an Outlook add-in in a compose scenario" Scope="outlook" />
-		<Item text="Get, set, or add recipients" url="outlook/get-set-or-add-recipients" />
-		<Item text="Get or set the subject" url="outlook/get-or-set-the-subject"  SEODescription="Learn how to get or set the subject from an Outlook add-in when the user is composing an appointment or message in Outlook." Scope="outlook" />
-		<Item text="Insert data in the body" url="outlook/insert-data-in-the-body"  SEODescription="Learn how to insert data in the body of the appointment or message that the user is composing from an Outlook add-in." Scope="outlook" />	
-		<Item text="Get or set the location of an appointment" url="outlook/get-or-set-the-location-of-an-appointment" SEODescription="Learn how to get or set the location from an Outlook add-in when the user is composing an appointment in Outlook." Scope="outlook" />
-		<Item text="Get or set the time of an appointment" url="outlook/get-or-set-the-time-of-an-appointment" SEODescription="Learn how to get or set the time of an appointment from an Outlook add-in." Scope="outlook" />
-	</Item>
-	<Item text="Call web services" url="outlook/web-services" SEODescription="Learn about how to call EWS or other web services from an Outlook add-in for Outlook." Scope="outlook" />
-	<Item text="Authentication" url="outlook/authentication" SEODescription="Learn how to use Exchange 2013 identity tokens to authenticate your Outlook add-in." Scope="outlook" >
-		<Item text="Inside the identity token" url="outlook/inside-the-identity-token" SEODescription="Find out what's inside an Exchange 2013 identity token." Scope="outlook" />
-		<Item text="Call a service by using an identity token" url="outlook/call-a-service-by-using-an-identity-token" SEODescription="Learn how to use identity tokens to link the email accounts of your Outlook add-in customers to the information that your web service provides." Scope="outlook" />
-		<Item text="Use the token validation library" url="outlook/use-the-token-validation-library" SEODescription="Learn how to use the EWS Managed API validation library to validate an Exchange identity token." Scope="outlook" />
-		<Item text="Validate an identity token" url="outlook/validate-an-identity-token" SEODescription="Learn how to use identity tokens to link the email accounts of your Outlook add-in customers to the information that your web service provides." Scope="outlook" />
-		<Item text="Use PHP to validate an identity token" url="outlook/use-php-to-validate-an-identity-token" SEODescription="Learn how to use PHP to validate the Exchange 2013 identity token that links the email accounts of your Outlook add-in customers to the information that your service provides." Scope="outlook" />
-		<Item text="Authenticate a user with an identity token" url="outlook/authenticate-a-user-with-an-identity-token" SEODescription="See a code example showing how an authentication object matches the unique identity represented by an identity token with a set of credentials for a service." Scope="outlook" />    
-    	 </Item>
-	<Item text="Testing and tips" url="outlook/testing-and-tips" FriendlyUrl="outlook/testingtesting-and-tips" Scope="outlook" >
-		<Item text="Compare Outlook add-in support in Outlook for Mac" url="outlook/compare-outlook-add-in-support-in-outlook-for-mac" SEOKeyword="Bad links going to dev.office.com.  I fixed the bulleted list in the table." Scope="outlook" />
-		<Item text="Tips for handling date values in Outlook add-ins" url="outlook/tips-for-handling-date-values-in-outlook-add-ins"  Scope="outlook" SEODescription="Use the Date object to handle date values in Outlook add-ins."/>
-		<Item text="Limits for activation and JavaScript API for Outlook add-ins" url="outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins" Scope="outlook" SEODescription="Ensure that your Outlook add-in stays within activation and API usage guidelines."/>
-		<Item text="Troubleshoot Outlook add-in activation" url="outlook/troubleshoot-outlook-add-in-activation" SEODescription="Outlook add-in activation is contextual and based on rules in an add-in manifest. Explore reasons an installed add-in can fail to activate in Outlook." Scope="outlook" />
-	 </Item>  
+    <Item text="Call Outlook REST APIs" url="outlook/use-rest-api" SEODescription="Learn how to authenticate and call REST APIs from an Outlook add-in." Scope="outlook" />
+    <Item text="Get and set item data in read or compose forms" url="outlook/item-data" SEODescription="Learn about the ways to get or set data on an appointment or message from an Outlook add-in" Scope="outlook" />
+    <Item text="Get and set add-in metadata" url="outlook/metadata-for-an-outlook-add-in"  SEODescription="Learn to load and store custom data that only your Outlook add-in can access - through roaming settings and custom properties." Scope="outlook" />
+    <Item text="Privacy and security" url="outlook/privacy-and-security" SEODescription="End users" Scope="outlook">
+      <Item text="Understanding Outlook add-in permissions" url="outlook/understanding-outlook-add-in-permissions" SEODescription="Specify permission levels in your Outlook add-in manifest." />
+    </Item>
+    <Item text="Read scenario" url="outlook/read-scenario" SEODescription="Build Outlook add-ins for the read scenario and find information for available API features." Scope="outlook">
+      <Item text="Use regular expressions to show an Outlook add-in" url="outlook/use-regular-expressions-to-show-an-outlook-add-in" SEODescription="Learn how to use regular expressions to specify the criteria for a Outlook add-in to be relevant in a read scenario and that Outlook should display the add-in in the UI." Scope="outlook" />
+      <Item text="Match strings in an item as well-known entities" url="outlook/match-strings-in-an-item-as-well-known-entities"  SEODescription="Recognize specific string patterns to activate an Outlook add-in or facilitate further processing of these string matches." Scope="outlook" />
+      <Item text="Extract entity strings from an item" url="outlook/extract-entity-strings-from-an-item"  SEODescription="Recognize specific string patterns to activate an Outlook add-in or facilitate further processing of these string matches." Scope="outlook" />
+      <Item text="Get attachments of an Outlook item" url="outlook/get-attachments-of-an-outlook-item" SEODescription="Use an Outlook add-in to enable a service to get attachments from an Exchange server." Scope="outlook" />
+    </Item>
+    <Item text="Compose scenario" url="outlook/compose-scenario" SEODescription="Build Outlook add-ins for the read scenario and find information for available API features." Scope="outlook">
+      <Item text="Add and remove attachments to an item in a compose form" url="outlook/add-and-remove-attachments-to-an-item-in-a-compose-form" SEODescription="See JavaScript examples of using asynchronous methods and an Exchange Web Services (EWS) ID from an Outlook add-in to add an attachment to an item a user is composing in Outlook." Scope="outlook"></Item><Item text="Get and set item data in a compose form" url="outlook/get-and-set-item-data-in-a-compose-form" FriendlyUrl="outlook/composeget-and-set-item-data-in-a-compose-form" SEODescription="Learn how to get or set various properties of an item in an Outlook add-in in a compose scenario" Scope="outlook" />
+      <Item text="Get, set, or add recipients" url="outlook/get-set-or-add-recipients" />
+      <Item text="Get or set the subject" url="outlook/get-or-set-the-subject"  SEODescription="Learn how to get or set the subject from an Outlook add-in when the user is composing an appointment or message in Outlook." Scope="outlook" />
+      <Item text="Insert data in the body" url="outlook/insert-data-in-the-body"  SEODescription="Learn how to insert data in the body of the appointment or message that the user is composing from an Outlook add-in." Scope="outlook" />	
+      <Item text="Get or set the location of an appointment" url="outlook/get-or-set-the-location-of-an-appointment" SEODescription="Learn how to get or set the location from an Outlook add-in when the user is composing an appointment in Outlook." Scope="outlook" />
+      <Item text="Get or set the time of an appointment" url="outlook/get-or-set-the-time-of-an-appointment" SEODescription="Learn how to get or set the time of an appointment from an Outlook add-in." Scope="outlook" />
+    </Item>
+	  <Item text="Call web services" url="outlook/web-services" SEODescription="Learn about how to call EWS or other web services from an Outlook add-in for Outlook." Scope="outlook" />
+    <Item text="Authentication" url="outlook/authentication" SEODescription="Learn how to use Exchange 2013 identity tokens to authenticate your Outlook add-in." Scope="outlook" >
+      <Item text="Inside the identity token" url="outlook/inside-the-identity-token" SEODescription="Find out what's inside an Exchange 2013 identity token." Scope="outlook" />
+      <Item text="Call a service by using an identity token" url="outlook/call-a-service-by-using-an-identity-token" SEODescription="Learn how to use identity tokens to link the email accounts of your Outlook add-in customers to the information that your web service provides." Scope="outlook" />
+      <Item text="Use the token validation library" url="outlook/use-the-token-validation-library" SEODescription="Learn how to use the EWS Managed API validation library to validate an Exchange identity token." Scope="outlook" />
+      <Item text="Validate an identity token" url="outlook/validate-an-identity-token" SEODescription="Learn how to use identity tokens to link the email accounts of your Outlook add-in customers to the information that your web service provides." Scope="outlook" />
+      <Item text="Use PHP to validate an identity token" url="outlook/use-php-to-validate-an-identity-token" SEODescription="Learn how to use PHP to validate the Exchange 2013 identity token that links the email accounts of your Outlook add-in customers to the information that your service provides." Scope="outlook" />
+      <Item text="Authenticate a user with an identity token" url="outlook/authenticate-a-user-with-an-identity-token" SEODescription="See a code example showing how an authentication object matches the unique identity represented by an identity token with a set of credentials for a service." Scope="outlook" />    
+    </Item>
+    <Item text="Testing and tips" url="outlook/testing-and-tips" FriendlyUrl="outlook/testingtesting-and-tips" Scope="outlook" >
+      <Item text="Compare Outlook add-in support in Outlook for Mac" url="outlook/compare-outlook-add-in-support-in-outlook-for-mac" SEOKeyword="Bad links going to dev.office.com.  I fixed the bulleted list in the table." Scope="outlook" />
+      <Item text="Tips for handling date values in Outlook add-ins" url="outlook/tips-for-handling-date-values-in-outlook-add-ins"  Scope="outlook" SEODescription="Use the Date object to handle date values in Outlook add-ins."/>
+      <Item text="Limits for activation and JavaScript API for Outlook add-ins" url="outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins" Scope="outlook" SEODescription="Ensure that your Outlook add-in stays within activation and API usage guidelines."/>
+      <Item text="Troubleshoot Outlook add-in activation" url="outlook/troubleshoot-outlook-add-in-activation" SEODescription="Outlook add-in activation is contextual and based on rules in an add-in manifest. Explore reasons an installed add-in can fail to activate in Outlook." Scope="outlook" />
+    </Item>  
 	</Item>
   <Item text="PowerPoint" url="powerpoint/powerpoint-add-ins" Scope="powerpoint">
 	<Item text="Use document themes in your PowerPoint add-ins" url="powerpoint/use-document-themes-in-your-powerpoint-add-ins" Scope="powerpoint" SEODescription="Apply a theme to your PowerPoint add-ins"/>

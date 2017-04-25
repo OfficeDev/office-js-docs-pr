@@ -4,10 +4,14 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 
 Word Add-ins run across multiple versions of Office, including Office 2016 for Windows, Office for iPad, Office for Mac, and Office Online. The following table lists the Word requirement sets, the Office host applications that support that requirement set, and the build or version numbers for those applications.
 
+> For the requirement sets that are marked as Beta, use the specified (or later) version of the Office software and use the Beta library of the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js
+
+> Entires not listed as Beta are generally available and you can continue to use Production CDN library: https://appsforoffice.microsoft.com/lib/1/hosted/office.js
+
 |  Requirement set  |   Office 2016 for Windows*  |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  | Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | WordApi 1.3  | In preview, Version 1605 (Build 6925.1000) or later| In preview, May 2016, 1.22 or later | In preview, 15.22 or later| In preview. ||
-| WordApi 1.2  | December 2015 update, Version 1601 (Build 6568.1000) or later | January 2016, 1.18 or later | January 2016, 15.19 or later| September 2016 | Version 1608 (Build 7601.6800) or later|
+| WordApi 1.2  | December 2015 update, Version 1601 (Build 6568.1000) or later | January 2016, 1.18 or later | January 2016, 15.19 or later| September 2016 | |
 | WordApi 1.1  | Version 1509 (Build 4266.1001) or later| January 2016, 1.18 or later | January 2016, 15.19 or later| September 2016 | |
 
 > **Note**: The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the WordApi 1.1 requirement set.

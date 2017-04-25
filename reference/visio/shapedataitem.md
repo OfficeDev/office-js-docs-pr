@@ -1,16 +1,17 @@
 # ShapeDataItem object (JavaScript API for Visio)
 
 Applies to: _Visio Online_
->**Note:** The Visio JavaScript APIs are not currently available for use in preview or production environments.
 
 Represents the ShapeDataItem.
 
 ## Properties
 
-| Property	   | Type	|Description| Feedback|
-|:---------------|:--------|:----------|:---|
-|label|string|A string that specifies the label of the shape data item. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-label)|
-|value|string|A string that specifies the value of the shape data item. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-value)|
+| Property	   | Type	|Description|
+|:---------------|:--------|:----------|
+|format|string|A string that specifies the format of the shape data item. Read-only.|
+|formattedValue|string|A string that specifies the formatted value of the shape data item. Read-only.|
+|label|string|A string that specifies the label of the shape data item. Read-only.|
+|value|string|A string that specifies the value of the shape data item. Read-only.|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -20,9 +21,9 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description| Feedback|
-|:---------------|:--------|:----------|:---|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-load)|
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 

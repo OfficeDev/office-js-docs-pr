@@ -1,4 +1,4 @@
-# WorksheetCollection object (JavaScript API for Excel)
+# WorksheetCollection Object (JavaScript API for Excel)
 
 Represents a collection of worksheet objects that are part of the workbook.
 
@@ -20,9 +20,9 @@ None
 |:---------------|:--------|:----------|:----|
 |[add(name: string)](#addname-string)|[Worksheet](worksheet.md)|Adds a new worksheet to the workbook. The worksheet will be added at the end of existing worksheets. If you wish to activate the newly added worksheet, call ".activate() on it.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getActiveWorksheet()](#getactiveworksheet)|[Worksheet](worksheet.md)|Gets the currently active worksheet in the workbook.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount(visibleOnly: bool)](#getcountvisibleonly-bool)|int|Gets the number of worksheets in the collection.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItem(key: string)](#getitemkey-string)|[Worksheet](worksheet.md)|Gets a worksheet object using its Name or ID.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNull(key: string)](#getitemornullkey-string)|[Worksheet](worksheet.md)|Gets a worksheet object using its Name or ID. If the worksheet does not exist, the returned object's isNull property will be true.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(key: string)](#getitemornullobjectkey-string)|[Worksheet](worksheet.md)|Gets a worksheet object using its Name or ID. If the worksheet does not exist, will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -94,6 +94,22 @@ Excel.run(function (ctx) {
 ```
 
 
+### getCount(visibleOnly: bool)
+Gets the number of worksheets in the collection.
+
+#### Syntax
+```js
+worksheetCollectionObject.getCount(visibleOnly);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|visibleOnly|bool|Optional. Returns only visible worksheets if set to true. |
+
+#### Returns
+int
+
 ### getItem(key: string)
 Gets a worksheet object using its Name or ID.
 
@@ -110,12 +126,12 @@ worksheetCollectionObject.getItem(key);
 #### Returns
 [Worksheet](worksheet.md)
 
-### getItemOrNull(key: string)
-Gets a worksheet object using its Name or ID. If the worksheet does not exist, the returned object's isNull property will be true.
+### getItemOrNullObject(key: string)
+Gets a worksheet object using its Name or ID. If the worksheet does not exist, will return a null object.
 
 #### Syntax
 ```js
-worksheetCollectionObject.getItemOrNull(key);
+worksheetCollectionObject.getItemOrNullObject(key);
 ```
 
 #### Parameters
@@ -125,22 +141,6 @@ worksheetCollectionObject.getItemOrNull(key);
 
 #### Returns
 [Worksheet](worksheet.md)
-
-### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
-
-#### Syntax
-```js
-object.load(param);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
-
-#### Returns
-void
 ### Property access examples
 ```js
 Excel.run(function (ctx) { 

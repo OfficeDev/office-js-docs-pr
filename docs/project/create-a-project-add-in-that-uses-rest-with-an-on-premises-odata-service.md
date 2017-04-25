@@ -19,7 +19,6 @@ The following are the prerequisites for creating a Project task pane add-in that
      >**Note**  Project Standard 2013 can also host task pane add-ins, but cannot log on to Project Web App.
 - Visual Studio 2015 with Office Developer Tools for Visual Studio includes templates for creating Office and SharePoint Add-ins. Ensure that you have installed the most recent version of Office Developer Tools; see the  _Tools_ section of the [Office Add-ins and SharePoint downloads](http://msdn.microsoft.com/en-us/office/apps/fp123627.aspx).
     
-     >**Note**  Napa cannot be used to create Project 2013 task pane add-ins.
 - The procedures and code examples in this article access the  **ProjectData** service of Project Server 2013 in a local domain. The jQuery methods in this article do not work with Project Online.
     
     Verify that the  **ProjectData** service is accessible from your development computer.
