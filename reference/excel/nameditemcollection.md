@@ -37,7 +37,7 @@ namedItemCollectionObject.add(name, reference, comment);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |name|string|The name of the named item.|
 |reference|Range or string|The formula or the range that the name will refer to.|
 |comment|string|Optional. The comment associated with the named item|
@@ -55,7 +55,7 @@ namedItemCollectionObject.addFormulaLocal(name, formula, comment);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |name|string|The "name" of the named item.|
 |formula|string|The formula in the user's locale that the name will refer to.|
 |comment|string|Optional. The comment associated with the named item|
@@ -87,7 +87,7 @@ namedItemCollectionObject.getItem(name);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |name|string|nameditem name.|
 
 #### Returns
@@ -120,7 +120,7 @@ namedItemCollectionObject.getItemOrNullObject(name);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |name|string|nameditem name.|
 
 #### Returns

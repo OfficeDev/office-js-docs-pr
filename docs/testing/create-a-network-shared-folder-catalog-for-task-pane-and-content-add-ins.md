@@ -6,8 +6,8 @@ You can install an Office Add-in for testing in an Office client running on Wind
 If you're not testing a Word, Excel, or PowerPoint add-in on Windows, see one of the following topics to sideload your add-in:
 
 - [Sideload Office Add-ins in Office Online for testing](sideload-office-add-ins-for-testing.md)
-- [Sideload Office Add-ins on iPad and Mac for testing](sideload-an-office-add-in-on-ipad-and-mac.md )
-- [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md )
+- [Sideload Office Add-ins on iPad and Mac for testing](sideload-an-office-add-in-on-ipad-and-mac.md)
+- [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md)
 
 The following video walks you through the process of sideloading your add-in on Office desktop or Office Online.
 

@@ -5,6 +5,7 @@
 	<Item text="Requirements for running add-ins" url="overview/requirements-for-running-office-add-ins" SEODescription="Learn about the software and device requirements for running Office Add-ins." />	
 	<Item text="Add-in development best practices" url="overview/add-in-development-best-practices" SEODescription="Apply best practices to build Office Add-ins that optimize the user experience."  />
 	<Item text="Host and platform availability" url="https://dev.office.com/add-in-availability" IsExternal="true" />
+	<Item text="Changelog" url="overview/add-in-changelog" />
 	</Item>
   <Item text="Get started" url="get-started">
     <Item text="Use Visual Studio" url="get-started/create-and-debug-office-add-ins-in-visual-studio" SEODescription="Get started building an Office Add-in with Visual Studio" />
@@ -68,7 +69,8 @@
   <Item text="Publish" url="publish/publish">
     <Item text="Host an Office Add-in on Microsoft Azure" url="publish/host-an-office-add-in-on-microsoft-azure" SEODescription="Use Visual Studio 2015 and the Microsoft Office Developer Tools to publish to and then host an Office Add-in on Microsoft Azure." />
     <Item text="Package your add-in using Visual Studio" url="publish/package-your-add-in-using-visual-studio" SEODescription="Package your Office Add-in to prepare it for publishing." />
-    <Item text="Publish task pane and content add-ins to an add-in catalog" url="publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog" SEODescription="Configure Office clients so your add-in is available from the Office Add-ins dialog box"  />
+    <Item text="Publish add-ins via centralized deployment" url="publish/centralized-deployment" />
+	<Item text="Publish task pane and content add-ins to an add-in catalog" url="publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog" SEODescription="Configure Office clients so your add-in is available from the Office Add-ins dialog box"  />
 	<Item text="Submit add-ins to the Office Store" url="https://dev.office.com/officestore/docs/submit-add-ins-and-web-apps-to-the-office-store" IsExternal="true" />
 	<Item text="Office Store validation policies" url="https://dev.office.com/officestore/docs/validation-policies" IsExternal="true" />
   </Item>
@@ -105,7 +107,8 @@
     </Item>
     <Item text="Call Outlook REST APIs" url="outlook/use-rest-api" SEODescription="Learn how to authenticate and call REST APIs from an Outlook add-in." Scope="outlook" />
     <Item text="Get and set item data in read or compose forms" url="outlook/item-data" SEODescription="Learn about the ways to get or set data on an appointment or message from an Outlook add-in" Scope="outlook" />
-    <Item text="Get and set add-in metadata" url="outlook/metadata-for-an-outlook-add-in"  SEODescription="Learn to load and store custom data that only your Outlook add-in can access - through roaming settings and custom properties." Scope="outlook" />
+    <Item text="On send feature for Outlook add-ins" url="outlook/outlook-on-send-addins" Scope="outlook" />
+	<Item text="Get and set add-in metadata" url="outlook/metadata-for-an-outlook-add-in"  SEODescription="Learn to load and store custom data that only your Outlook add-in can access - through roaming settings and custom properties." Scope="outlook" />
     <Item text="Privacy and security" url="outlook/privacy-and-security" SEODescription="End users" Scope="outlook">
       <Item text="Understanding Outlook add-in permissions" url="outlook/understanding-outlook-add-in-permissions" SEODescription="Specify permission levels in your Outlook add-in manifest." />
     </Item>

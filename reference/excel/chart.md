@@ -76,7 +76,7 @@ chartObject.getImage(height, width, fittingMode);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |height|number|Optional. (Optional) The desired height of the resulting image.|
 |width|number|Optional. (Optional) The desired width of the resulting image.|
 |fittingMode|string|Optional. (Optional) The method used to scale the chart to the specified to the specified dimensions (if both height and width are set)."  Possible values are: Fit, FitAndCenter, Fill|
@@ -112,7 +112,7 @@ chartObject.setData(sourceData, seriesBy);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |sourceData|Range|The Range object corresponding to the source data.|
 |seriesBy|string|Optional. Specifies the way columns or rows are used as data series on the chart. Can be one of the following: Auto (default), Rows, Columns.  Possible values are: Auto, Columns, Rows|
 
@@ -148,7 +148,7 @@ chartObject.setPosition(startCell, endCell);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |startCell|Range or string|The start cell. This is where the chart will be moved to. The start cell is the top-left or top-right cell, depending on the user's right-to-left display settings.|
 |endCell|Range or string|Optional. (Optional) The end cell. If specified, the chart's width and height will be set to fully cover up this cell/range.|
 

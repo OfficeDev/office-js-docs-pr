@@ -34,7 +34,7 @@ applicationObject.calculate(calculationType);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |calculationType|string|Specifies the calculation type to use. Possible values are: `Recalculate` Recalculates all cells that Excel has marked as dirty, that is, dependents of volatile or changed data, and cells programmatically marked as dirty. `Full` This will mark all cells as dirty and then recalculate them. `FullRebuild` This will force a rebuild of the entire calculation chain, mark all cells as dirty and then recalculate all cells.|
 
 #### Returns

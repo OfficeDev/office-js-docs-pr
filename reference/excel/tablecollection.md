@@ -38,7 +38,7 @@ tableCollectionObject.add(address, hasHeaders);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |address|[object|A Range object, or a string address or name of the range representing the data source. If the address does not contain a sheet name, the currently-active sheet is used. For 1.1 use string parameter; for 1.3 can accept Range object as well.|
 |hasHeaders|bool|Boolean value that indicates whether the data being imported has column labels. If the source does not contain headers (i.e,. when this property set to false), Excel will automatically generate header shifting the data down by one row.|
 
@@ -86,7 +86,7 @@ tableCollectionObject.getItem(key);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |key|number or string|Name or ID of the table to be retrieved.|
 
 #### Returns
@@ -139,7 +139,7 @@ tableCollectionObject.getItemAt(index);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
@@ -173,7 +173,7 @@ tableCollectionObject.getItemOrNullObject(key);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |key|number or string|Name or ID of the table to be retrieved.|
 
 #### Returns

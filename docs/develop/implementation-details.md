@@ -1,6 +1,8 @@
 # Implementation details, for those who want to know how it *really* works
 
->**Note:** This article is an excerpt from the book "[Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins)" by Michael Zlatkovsky, available for purchase as an e-book on LeanPub.com.  Copyright © 2016-2017 by Michael Zlatkovsky, all rights reserved.
+| | |
+|:--|:--|
+|[![An image of the Building Office Add-ins using Office.js book cover](../../images/book-cover.png)](https://leanpub.com/buildingofficeaddins)|**This article is an excerpt from the book "[Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins)" by Michael Zlatkovsky, available for purchase as an e-book on [LeanPub.com](https://leanpub.com/buildingofficeaddins).**<br/><br/>Copyright © 2016-2017 by Michael Zlatkovsky, all rights reserved.|
 
 > *In writing this book and receiving feedback from early readers, I've heard a couple requests for a more thorough explanation of what happens under the covers with all this proxy-object / syncing business.  So, if you're the sort of person who likes to see the **implementation details** in order to better understand the outer behavior of an API, read on.  If you're not, feel free to skip to the next section.*
 
@@ -12,7 +14,7 @@ At the heart of the new wave of Office 2016 APIs is a Request Context -- which i
 >**Note:** Git is a particularly well-suited version-control analogy, as local changes are so perfectly isolated from the repository:  until you do a `git push` of your local state, the repository has *no knowledge whatsoever* about the changes being made!  The Request Context and proxy objects of the new Office.js model are very much the same: they are completely unknown to the document until the developer issues a `context.sync()` command!  
 
 
-The Request Context holds two arrays that allow it do it its work.  One if for **object paths**: descriptions of how to derive one object from another (i.e., "*call method `getRow` with parameter value `2` on <insert-some-preceding-object-path> in order to derive this object*").  The other is for **actions** (i.e., *set the property named "color" to a value of "purple" on the object described by object path #xyz*).  For those who are familiar with the "Command" Design Pattern, this notion of carrying around objects that represent the recipe for a particular action should sound quite familiar.
+The Request Context holds two arrays that allow it do it its work.  One is for **object paths**: descriptions of how to derive one object from another (i.e., "*call method `getRow` with parameter value `2` on <insert-some-preceding-object-path> in order to derive this object*").  The other is for **actions** (i.e., *set the property named "color" to a value of "purple" on the object described by object path #xyz*).  For those who are familiar with the "Command" Design Pattern, this notion of carrying around objects that represent the recipe for a particular action should sound quite familiar.
 
 On the Request Context is a single root object that connects it to the underlying object model.  For Excel, this object is a `workbook`; for Word, it is `document`.  From there, you can derive new objects by calling methods on that root proxy object, or on any of its descendants.  For example, to get a worksheet named "Report", you would ask the `workbook` object for its `worksheets` property (which returns a proxy object corresponding to the worksheets collection in the document), and then use `worksheets` to call a `getItem("Report")` method in order to get a proxy object corresponding to the desired "Report" worksheet.  Each of these objects carries a link to its original Request Context, which in turn keeps track of each object's path info: namely, who was the parent of this new object, and what were the circumstances under which it got created (*was it a property or a method-call? were there any parameters passed in?*).
 
@@ -26,7 +28,7 @@ Let's walk through a real example.  Suppose you have the following code:
         let range = context.workbook.getSelectedRange();
         range.clear();
         let thirdRow = range.getRow(2);
-        firstRow.format.fill.color = "purple";
+        thirdRow.format.fill.color = "purple";
 
         await context.sync();
     }).catch(OfficeHelpers.Utilities.log);
@@ -106,7 +108,7 @@ Line **#4** -- `let thirdRow = range.getRow(2)` -- follows a similar pattern as 
 ~~~
 
 
-Line **#5** -- `firstRow.format.fill.color = "purple"` -- is packed with several API calls.  We begin with creating an [anonymous] format object, by following the `format` property of the `thirdRow` variable.  We then do the same for the [anonymous] fill object.  Both follow the same pattern as before, creating an object path and an instatiation action for each.  But then, having reached the desired object, we do another document-impacting action on the object: setting the fill color of the third row to purple (see action "**A6**" below):
+Line **#5** -- `thirdRow.format.fill.color = "purple"` -- is packed with several API calls.  We begin with creating an [anonymous] format object, by following the `format` property of the `thirdRow` variable.  We then do the same for the [anonymous] fill object.  Both follow the same pattern as before, creating an object path and an instatiation action for each.  But then, having reached the desired object, we do another document-impacting action on the object: setting the fill color of the third row to purple (see action "**A6**" below):
 
 ~~~
     objectPaths:
@@ -229,3 +231,5 @@ And then, at the completion of the `run`, after a final flush of the queue, the 
 
 
 And this -- in a not so small nutshell -- is how the underlying proxy objects work, and how the runtime handles its communication to and from the host application.  
+
+>**This article is an excerpt from the book "[Building Office Add-ins using Office.js](https://leanpub.com/buildingofficeaddins)" by Michael Zlatkovsky**. Read more by purchasing the e-book online at [LeanPub.com](https://leanpub.com/buildingofficeaddins).

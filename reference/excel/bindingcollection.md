@@ -40,7 +40,7 @@ bindingCollectionObject.add(range, bindingType, id);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |range|Range or string|Range to bind the binding to. May be an Excel Range object, or a string. If string, must contain the full address, including the sheet name|
 |bindingType|string|Type of binding.  Possible values are: Range, Table, Text|
 |id|string|Name of binding.|
@@ -58,7 +58,7 @@ bindingCollectionObject.addFromNamedItem(name, bindingType, id);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |name|string|Name from which to create binding.|
 |bindingType|string|Type of binding.  Possible values are: Range, Table, Text|
 |id|string|Name of binding.|
@@ -76,7 +76,7 @@ bindingCollectionObject.addFromSelection(bindingType, id);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |bindingType|string|Type of binding.  Possible values are: Range, Table, Text|
 |id|string|Name of binding.|
 
@@ -107,7 +107,7 @@ bindingCollectionObject.getItem(id);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |id|string|Id of the binding object to be retrieved.|
 
 #### Returns
@@ -187,7 +187,7 @@ bindingCollectionObject.getItemAt(index);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
@@ -221,7 +221,7 @@ bindingCollectionObject.getItemOrNullObject(id);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |id|string|Id of the binding object to be retrieved.|
 
 #### Returns

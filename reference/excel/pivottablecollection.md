@@ -50,7 +50,7 @@ pivotTableCollectionObject.getItem(name);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |name|string|Name of the PivotTable to be retrieved.|
 
 #### Returns
@@ -66,7 +66,7 @@ pivotTableCollectionObject.getItemOrNullObject(name);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |name|string|Name of the PivotTable to be retrieved.|
 
 #### Returns
