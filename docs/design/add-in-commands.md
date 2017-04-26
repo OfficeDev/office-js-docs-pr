@@ -36,10 +36,9 @@ The following command capabilities are currently supported.
 ## Supported platforms
 Add-in commands are currently supported on the following platforms:
 
-- Office for Windows Desktop 2016 (build 16.0.6769.0000 or later)
-- Office Online with personal accounts
-- Office Online with work/school accounts (Preview)
-- Office for Mac ([Preview](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Tools/MacDevPreview.md))
+- Office for Windows Desktop 2016 (build 16.0.6769+)
+- Office for Mac (build 15.33+)
+- Office Online 
 
 More platforms are coming soon.
 
