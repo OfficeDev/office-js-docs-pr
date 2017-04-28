@@ -1,28 +1,27 @@
-# Single Sign-on to Office, your Office Web Add-in, and Microsoft Graph (Developer Preview)
+# Enable single sign-on for Office Add-ins (preview)
 
-## Introduction
+You can take advantage of single-sign on (SSO) in your Office Add-in. With SSO, users can sign in to Office (online, mobile, and desktop platforms) with either their personal Microsoft account or their work or school (Office 365) account. 
 
-For some time, users have been able to sign into Office (online, mobile, and desktop platforms) with either their personal (Microsoft Account) credentials or their school or work (Office 365) credentials. 
+<!-- Should we add a Preview notice as well, to be clear? 
+-->
 
-![Add-in commands](../../images/OfficeHostTitleBarLogin.png)
+>**Note:** This feature is currently in preview and is subject to change in future releases. For this preview, single sign-on is supported only for work or school (Office 365) accounts and only for desktop versions of Office. 
 
-Your add-in can now take advantage of this sign-in process to
+![An image showing the sign-in process for an add-in](../../images/OfficeHostTitleBarLogin.png)
 
-* authorize the user to your add-in
-* authorize the add-in to access Microsoft Graph 
+Your add-in can use SSO to do the following - without requiring the user to sign in a second time:
 
-*without requiring the user to sign-in a second time*. 
+* Authorize the user to your add-in
+* Authorize the add-in to access [Microsoft Graph](https://developer.microsoft.com/graph/docs) 
 
-For users, this makes running your add-in a smooth experience, usually involving at most a one-time consent screen. For developers, this means that your add-in can authenticate users and gain authorized access to the user’s data via Microsoft Graph with credentials that the Office application itself has already gathered.
+For users, this makes running your add-in a smooth experience that involves at most a one-time consent screen. For developers, this means that your add-in can authenticate users and gain authorized access to the user’s data via Microsoft Graph with credentials that the Office application has already gathered.
+ 
 
-> Note: For this developer preview, single sign-on is initially supported only for work or school (Office 365) accounts  and only for desktop versions of Office. 
+### SSO add-in architecture
 
-### Add-in Architecture
+In addition to hosting the pages and JavaScript of the web application, the add-in must also host, *at the same [fully qualified domain name](https://msdn.microsoft.com/en-us/library/windows/desktop/ms682135(v=vs.85).aspx#_dns_fully_qualified_domain_name_fqdn__gly)*, one or more web APIs that will get an access token to Microsoft Graph and make requests to it.
 
-In addition to hosting the pages and JavaScript of the web application, the add-in must also host, *at the same fully qualified domain*, one or more Web APIs which will obtain an access token to Microsoft Graph and make requests to it.
-
-> Note: [Fully qualified domain name](https://msdn.microsoft.com/en-us/library/windows/desktop/ms682135(v=vs.85).aspx#_dns_fully_qualified_domain_name_fqdn__gly) *- A name that unambiguously identifies, or fully qualifies, a computer within the entire DNS hierarchy – for example, server1.widgets.microsoft.com*.
-The add-in manifest contains markup that specifies how the add-in is registered in the Azure AD V2 endpoint, and it specifies any permissions to the Microsoft Graph that the add-in needs.
+The add-in manifest contains markup that specifies how the add-in is registered in the Azure AD v2.0 endpoint, and it specifies any permissions to Microsoft Graph that the add-in needs.
 
 ### How it works at runtime
 
