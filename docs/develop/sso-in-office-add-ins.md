@@ -21,7 +21,7 @@ For users, this makes running your add-in a smooth experience that involves at m
 
 In addition to hosting the pages and JavaScript of the web application, the add-in must also host, *at the same [fully qualified domain name](https://msdn.microsoft.com/en-us/library/windows/desktop/ms682135(v=vs.85).aspx#_dns_fully_qualified_domain_name_fqdn__gly)*, one or more web APIs that will get an access token to Microsoft Graph and make requests to it.
 
-The add-in manifest contains markup that specifies how the add-in is registered in the Azure AD v2.0 endpoint, and it specifies any permissions to Microsoft Graph that the add-in needs.
+The add-in manifest contains markup that specifies how the add-in is registered in the Azure Active Directory (Azure AD) v2.0 endpoint, and it specifies any permissions to Microsoft Graph that the add-in needs.
 
 ### How it works at runtime
 
