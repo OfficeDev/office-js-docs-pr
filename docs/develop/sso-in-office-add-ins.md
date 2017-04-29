@@ -25,9 +25,9 @@ The add-in manifest contains markup that specifies how the add-in is registered 
 
 ### How it works at runtime
 
-The diagram below shows how the SSO process works. 
+The following diagram shows how the SSO process works. 
 
-![Add-in commands](../../images/SSOOverviewDiagram.PNG)
+![Add-in commands](../../images/SSOOverviewDiagram.png)
 
 1. JavaScript in the add-in calls a new Office.js API `getAccessTokenAsync`. This tells the Office host application to obtain an access token to the add-in. (Hereafter, this is called the “add-in token”.)
 1. [Occurs only if needed] If the user is not signed in, the Office host application opens a popup for the user to sign in. 
