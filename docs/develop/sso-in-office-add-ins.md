@@ -48,7 +48,7 @@ The following diagram shows how the SSO process works.
 
 The following sections describe the tasks involved in creating an Office Add-in that uses SSO. These tasks are language and framework agnostic. 
 
-##### Create the service application
+#### Create the service application
 
 Register the add-in at the registration portal for the Azure v2.0 endpoint: https://apps.dev.microsoft.com. This is a 5–10 minute process that includes the following steps:
 
@@ -57,7 +57,7 @@ Register the add-in at the registration portal for the Azure v2.0 endpoint: http
 * Grant the add-in trust to the Office host application.
 * Preauthorize the Office host application to the add-in with the default permission *access_as_user*.
 
-##### Configure the add-in
+#### Configure the add-in
 
 Add new markup to the add-in manifest:
 
@@ -65,7 +65,7 @@ Add new markup to the add-in manifest:
 * **WebApplicationResource** - The URL of the add-in.
 * **WebApplicationScopes** - Specifies the permissions that the Office host needs to the add-in and that the add-in needs to Microsoft Graph. In general, you’ll always want *User.Read*, but you can request more access (like *Mail.Read* or *offline_access*).
 
-##### Add client-side code
+#### Add client-side code
 
 Add JavaScript to the add-in to:
 
@@ -79,7 +79,7 @@ function mytokenHandler(asyncResult) {
 }
 ```
 
-##### Add server-side code
+#### Add server-side code
 
 Create one or more Web API methods that get Microsoft Graph data. Depending on your language and framework, libraries might be available that will simplify the code you have to write. Your server-side code needs to do the following:
 
