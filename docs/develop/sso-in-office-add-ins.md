@@ -1,11 +1,6 @@
 # Enable single sign-on for Office Add-ins (preview)
 
-You can take advantage of single-sign on (SSO) in your Office Add-in. With SSO, users can sign in to Office (online, mobile, and desktop platforms) with either their personal Microsoft account or their work or school (Office 365) account. 
-
-<!-- Should we add a Preview notice as well, to be clear? 
--->
-
->**Note:** This feature is currently in preview and is subject to change in future releases. For this preview, single sign-on is supported only for work or school (Office 365) accounts and only for desktop versions of Office. 
+You can take advantage of the fact that users can sign in to Office (online, mobile, and desktop platforms), which they can do with either their personal Microsoft account or their work or school (Office 365) account. 
 
 ![An image showing the sign-in process for an add-in](../../images/OfficeHostTitleBarLogin.png)
 
@@ -13,6 +8,8 @@ Your add-in can use SSO to do the following - without requiring the user to sign
 
 * Authorize the user to your add-in.
 * Authorize the add-in to access [Microsoft Graph](https://developer.microsoft.com/graph/docs). 
+
+>**Note:** This feature is currently in preview and is subject to change in future releases. For this preview, single sign-on is supported only for work or school (Office 365) accounts and only for desktop versions of Office. 
 
 For users, this makes running your add-in a smooth experience that involves at most a one-time consent screen. For developers, this means that your add-in can authenticate users and gain authorized access to the user’s data via Microsoft Graph with credentials that the user has already provided to the Office application.
  
@@ -46,15 +43,15 @@ The following diagram shows how the SSO process works.
 
 ### Develop an SSO add-in
 
-The following sections describe the tasks involved in creating an Office Add-in that uses SSO. These tasks are language and framework agnostic. 
+The following sections describe the tasks involved in creating an Office Add-in that uses SSO. These tasks are described here in a language and framework agnostic way. Links to detailed walkthroughs are below.
 
 #### Create the service application
 
-Register the add-in at the registration portal for the Azure v2.0 endpoint: https://apps.dev.microsoft.com. This is a 5–10 minute process that includes the following steps:
+Register the add-in at the registration portal for the Azure v2.0 endpoint: https://apps.dev.microsoft.com. This is a 5–10 minute process that includes the following tasks:
 
 * Get a client ID and secret for the add-in.
 * Specify the permissions that your add-in needs to Microsoft Graph.
-* Grant the add-in trust to the Office host application.
+* Grant the Office host application trust to the add-in.
 * Preauthorize the Office host application to the add-in with the default permission *access_as_user*.
 
 #### Configure the add-in
@@ -75,7 +72,7 @@ Add JavaScript to the add-in to:
 ```js
 function mytokenHandler(asyncResult) {
     // Passes asyncResult.value (which has the add-in access token)
-    // to the add-in’s web API as a Bearer type Authorization header.
+    // to the add-in’s web API as an Authorization header.
 }
 ```
 
