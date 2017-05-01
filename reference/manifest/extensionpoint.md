@@ -75,6 +75,7 @@ The following examples show how to use the  **ExtensionPoint** element with **Pr
 - [Module](#module) (Can only be used in the [DesktopFormFactor](./desktopformfactor.md).)
 - [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
 - [Events](#events)
+- [DetectedEntity](#detectedentity)
 
 ### MessageReadCommandSurface
 This extension point puts buttons in the command surface for the mail read view. In Outlook desktop, this appears in the ribbon.
@@ -247,6 +248,38 @@ This extension point adds an event handler for a specified event.
 #### ItemSend event example
 ```xml
 <ExtensionPoint xsi:type="Events"> 
-  <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
+  <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
 </ExtensionPoint> 
+```
+
+### DetectedEntity
+This extension point adds a contextual add-in activation on a specified entity type.
+
+The containing [VersionOverrides](./versionoverrides.md) element must have an `xsi:type` attribute value of `VersionOverridesV1_1`.
+
+> **Note:** This element type is only supported by Outlook on the web in Office 365.
+
+|  Element |  Description  |
+|:-----|:-----|
+|  [Label](#label) |  Specifies the label for the add-in in the contextual window.  |
+|  [RequestedHeight](./requestedheight.md) |  Specifies the height of the contextual window.  |
+|  [SourceLocation](./sourcelocation.md) |  Specifies the URL for the contextual window.  |
+|  [Rule](./rule.md) |  Specifies the rule or rules that determine when an add-in activates.  |
+
+#### Label
+
+Required. The label of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the [ShortStrings](./resources.md#shortstrings) element in the [Resources](./resources.md) element.
+
+#### DetectedEntity event example
+```xml
+<ExtensionPoint xsi:type="DetectedEntity">
+  <Label resid="residLabelName"/>
+  <RequestedHeight>300</RequestedHeight>
+  <SourceLocation resid="residDetectedEntityURL" />
+  <Rule xsi:type="RuleCollection" Mode="And">
+    <Rule xsi:type="ItemIs" ItemType="Message" />
+    <Rule xsi:type="ItemHasKnownEntity" EntityType="MeetingSuggestion" />
+    <Rule xsi:type="ItemHasKnownEntity" EntityType="Address" Highlight="none" />
+  </Rule>
+</ExtensionPoint> 
 ```
