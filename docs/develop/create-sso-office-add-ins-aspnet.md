@@ -1,6 +1,6 @@
 # Create an ASP.NET Office Add-in that uses Single Sign-on (preview)
 
-Users can sign into Office and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign-on a second time. For an overview, see [Single Sign-on to Office, your Office Web Add-in, and Microsoft Graph (preview)](..\docs\develop\create-sso-in-office-add-ins.md) .
+Users can sign into Office and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign-on a second time. For an overview, see [Single Sign-on to Office, your Office Web Add-in, and Microsoft Graph (preview)](..\docs\develop\sso-in-office-add-ins.md) .
 
 This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with ASP.NET, OWIN, and Microsoft Authentication Library (MSAL) for .NET. 
 
