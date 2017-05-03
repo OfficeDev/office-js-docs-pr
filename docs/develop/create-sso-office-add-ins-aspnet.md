@@ -66,7 +66,6 @@ This article walks you through the process of enabling single sign-on (SSO) in a
  * offline_access
  * openid
  * profile
- * User.Read
 
 1. Click **OK** at the bottom of the dialog.
 
@@ -140,7 +139,7 @@ https://login.microsoftonline.com/common/adminconsent?client_id={application_ID}
         <WebApplicationScope>files.read.all</WebApplicationScope>
     </WebApplicationScopes>```
 
-1. Replace the placeholder “{application_ID}” in the markup with the Application ID that you copied when you registered your add-in. This is the same ID you used in for the ClientID and Audience in the web.config.
+1. Replace the placeholder “{application_GUID here}” in the markup with the Application ID that you copied when you registered your add-in. This is the same ID you used in for the ClientID and Audience in the web.config.
 
     >Note: 
     >
@@ -156,13 +155,13 @@ https://login.microsoftonline.com/common/adminconsent?client_id={application_ID}
     * An assignment to the `Office.initialize` method that, in turn, assigns a handler to the `getGraphAccessTokenButton` button click event.
     * A `showResult` method that will display data returned from Microsoft Graph (or an error message) at the bottom of the task pane.
 
-1. Below the assignment to `Office.initialize`, add the code belo. Note the following about this code: 
+1. Below the assignment to `Office.initialize`, add the code below. Note the following about this code: 
 
  * The `getAccessTokenAsync` is the new API in Office.js that enables an add-in to ask the Office host application (Excel, PowerPoint, Word, etc.) for an access token to the add-in (for the user signed into Office). The Office host application, in turn, asks the Azure AD 2 endpoint for the token. Since you preauthorized the Office host to your add-in when you registered it, Azure AD will send the token. 
  * If no user is signed into Office, the Office host will prompt the user to sign in. 
  * The options parameter sets `forceConsent` to false, so the user will not be prompted to consent to giving the Office host access to your add-in.
 
-    ```function getOneDriveFiles() {
+    ```function getOneDriveItems() {
     Office.context.auth.getAccessTokenAsync({ forceConsent: false },
 		function (result) {
             if (result.status === "succeeded") {
@@ -322,7 +321,7 @@ UserAssertion userAssertion = new UserAssertion(bootstrapContext.Token);```
 ConfidentialClientApplication cca =
                     new ConfidentialClientApplication(ConfigurationManager.AppSettings["ida:ClientID"],
                                                       "https://localhost:44355", clientCred, null, null);
-string[] graphScopes = { "User.Read", "Files.Read.All" };
+string[] graphScopes = { "profile", "Files.Read.All" };
 AuthenticationResult result = await cca.AcquireTokenOnBehalfOfAsync(graphScopes, userAssertion, "https://login.microsoftonline.com/common/oauth2/v2.0");```
 
 1. Replace TODO7 with the following. Note:
