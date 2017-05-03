@@ -143,6 +143,7 @@ Here’s an example of what the four keys you changed should look like. *Note th
     </WebApplicationScopes>
 ```
 
+
 1. Replace the placeholder “{application_GUID here}” in the markup with the Application ID that you copied when you registered your add-in. This is the same ID you used in for the ClientID and Audience in the web.config.
 
     >Note: 
@@ -178,8 +179,7 @@ Here’s an example of what the four keys you changed should look like. *Note th
 			    document.getElementById("getGraphAccessTokenButton").disabled = true;
 	         }
 	    });
-}
-```
+}```
 
 1. Replace the TODO1 with the following lines. You create the `getData` method and the server-side “/api/values” route in later steps. A relative URL is used for the endpoint because it must be hosted on the same domain as your add-in.
 
