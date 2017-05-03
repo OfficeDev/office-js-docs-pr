@@ -112,7 +112,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 |ida:Password|TThe password you obtained when you registered the add-in.|
 
 
-    Here’s an example of what the four keys you changed should look like. *Note that ClientID and Audience are the same*.
+Here’s an example of what the four keys you changed should look like. *Note that ClientID and Audience are the same*.
 
 ```xml
     <add key=”ida:ClientID" value="12345678-1234-1234-1234-123456789012" />
@@ -121,7 +121,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     <add key="ida:Issuer" value="https://login.microsoftonline.com/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee/v2.0" />
 ```
 
-    > Note: Leave the other settings in the **appSettings** section unchanged.
+> Note: Leave the other settings in the **appSettings** section unchanged.
 
 
 1. Save and close the file.
