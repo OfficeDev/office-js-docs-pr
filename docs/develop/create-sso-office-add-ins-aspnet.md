@@ -105,18 +105,21 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Give the following values to the corresponding keys:
 
-    | **Key** | **Value** | 
+| **Key** | **Value** | 
 |:--|:--|
 | ida:ClientID | The application ID you obtained when you registered the add-in. | 
 | ida:Audience | The application ID you obtained when you registered the add-in. | 
 | ida:Password | The password you obtained when you registered the add-in. | 
 
+
     Here’s an example of what the four keys you changed should look like. *Note that ClientID and Audience are the same*.
 
-    ```<add key=”ida:ClientID" value="12345678-1234-1234-1234-123456789012" />
+    ```
+    <add key=”ida:ClientID" value="12345678-1234-1234-1234-123456789012" />
     <add key="ida:Audience" value="12345678-1234-1234-1234-123456789012" />
     <add key="ida:Password" value="rFfv17ezsoGw5XUc0CDBHiU" />
-    <add key="ida:Issuer" value="https://login.microsoftonline.com/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee/v2.0" />```
+    <add key="ida:Issuer" value="https://login.microsoftonline.com/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee/v2.0" />
+```
 
 
     >Note: Leave the other settings in the **appSettings** section unchanged.
