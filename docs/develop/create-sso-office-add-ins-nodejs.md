@@ -122,7 +122,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
         <WebApplicationScope>profile</WebApplicationScope>
         <WebApplicationScope>files.read.all</WebApplicationScope>
     </WebApplicationScopes>
-```
+   ```
 
 1. Replace the placeholder “{application_GUID here}” in the markup with the Application ID that you copied when you registered your add-in. This is the same ID you used in for the ClientID and Audience in the web.config.
 
