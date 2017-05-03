@@ -143,7 +143,6 @@ Here’s an example of what the four keys you changed should look like. *Note th
     </WebApplicationScopes>
 ```
 
-
 1. Replace the placeholder “{application_GUID here}” in the markup with the Application ID that you copied when you registered your add-in. This is the same ID you used in for the ClientID and Audience in the web.config.
 
     >Note: 
