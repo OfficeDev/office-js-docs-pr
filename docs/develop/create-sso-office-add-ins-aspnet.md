@@ -132,7 +132,7 @@ Here’s an example of what the four keys you changed should look like. *Note th
 
 1. Just above the end </VersionOverrides> tag, you will find the following markup:
 
-    ```xml
+```xml
     <WebApplicationId>{application_GUID here}</WebApplicationId>
     <WebApplicationResource>api://localhost:44355<WebApplicationResource>
     <WebApplicationScopes>
@@ -142,6 +142,7 @@ Here’s an example of what the four keys you changed should look like. *Note th
         <WebApplicationScope>files.read.all</WebApplicationScope>
     </WebApplicationScopes>
 ```
+
 
 1. Replace the placeholder “{application_GUID here}” in the markup with the Application ID that you copied when you registered your add-in. This is the same ID you used in for the ClientID and Audience in the web.config.
 
