@@ -166,19 +166,20 @@ Here’s an example of what the four keys you changed should look like. *Note th
  * If no user is signed into Office, the Office host will prompt the user to sign in. 
  * The options parameter sets `forceConsent` to false, so the user will not be prompted to consent to giving the Office host access to your add-in.
 
-```function getOneDriveItems() {
-    Office.context.auth.getAccessTokenAsync({ forceConsent: false },
-		function (result) {
-            if (result.status === "succeeded") {
-		        // TODO1: Use the access token to get Microsoft Graph data.
-	        }
-	        else {
-			    console.log("Code: " + result.error.code);
-			    console.log("Message: " + result.error.message);
-			    console.log("name: " + result.error.name);
-			    document.getElementById("getGraphAccessTokenButton").disabled = true;
-	         }
-	    });
+```js
+function getOneDriveItems() {
+Office.context.auth.getAccessTokenAsync({ forceConsent: false },
+    function (result) {
+        if (result.status === "succeeded") {
+            // TODO1: Use the access token to get Microsoft Graph data.
+        }
+        else {
+            console.log("Code: " + result.error.code);
+            console.log("Message: " + result.error.message);
+            console.log("name: " + result.error.name);
+            document.getElementById("getGraphAccessTokenButton").disabled = true;
+        }
+    });
 }
 ```
 
