@@ -114,12 +114,12 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 Here’s an example of what the four keys you changed should look like. *Note that ClientID and Audience are the same*.
 
-```xml
+    ```xml
     <add key=”ida:ClientID" value="12345678-1234-1234-1234-123456789012" />
     <add key="ida:Audience" value="12345678-1234-1234-1234-123456789012" />
     <add key="ida:Password" value="rFfv17ezsoGw5XUc0CDBHiU" />
     <add key="ida:Issuer" value="https://login.microsoftonline.com/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee/v2.0" />
-```
+    ```
 
 > Note: Leave the other settings in the **appSettings** section unchanged.
 
@@ -165,47 +165,47 @@ Here’s an example of what the four keys you changed should look like. *Note th
  * If no user is signed into Office, the Office host will prompt the user to sign in. 
  * The options parameter sets `forceConsent` to false, so the user will not be prompted to consent to giving the Office host access to your add-in.
 
-```js
-function getOneDriveItems() {
-Office.context.auth.getAccessTokenAsync({ forceConsent: false },
-    function (result) {
-        if (result.status === "succeeded") {
-            // TODO1: Use the access token to get Microsoft Graph data.
-        }
-        else {
-            console.log("Code: " + result.error.code);
-            console.log("Message: " + result.error.message);
-            console.log("name: " + result.error.name);
-            document.getElementById("getGraphAccessTokenButton").disabled = true;
-        }
-    });
-}
-```
+    ```js
+    function getOneDriveItems() {
+    Office.context.auth.getAccessTokenAsync({ forceConsent: false },
+        function (result) {
+            if (result.status === "succeeded") {
+                // TODO1: Use the access token to get Microsoft Graph data.
+            }
+            else {
+                console.log("Code: " + result.error.code);
+                console.log("Message: " + result.error.message);
+                console.log("name: " + result.error.name);
+                document.getElementById("getGraphAccessTokenButton").disabled = true;
+            }
+        });
+    }
+    ```
 
 1. Replace the TODO1 with the following lines. You create the `getData` method and the server-side “/api/values” route in later steps. A relative URL is used for the endpoint because it must be hosted on the same domain as your add-in.
 
-```js
-accessToken = result.value;
-getData("/api/values", accessToken);
-```
+    ```js
+    accessToken = result.value;
+    getData("/api/values", accessToken);
+    ```
 
 1. Below the `getOneDriveFiles` method, add the following. This utility method calls a specified Web API endpoint and passes it the same access token that the Office host application used to get access to your add-in. On the server-side, this access token will be used in the “on behalf of” flow to obtain an access token to Microsoft Graph. 
 
-```js
-function getData(relativeUrl, accessToken) {
-    $.ajax({
-        url: relativeUrl,
-        headers: { "Authorization": "Bearer " + accessToken },
-        type: "GET",
-    })
-    .done(function (result) {
-        showResult(result);
-    })
-    .fail(function (result) {
-        console.log(result.error);
-    });
-}
-```
+    ```js
+    function getData(relativeUrl, accessToken) {
+        $.ajax({
+            url: relativeUrl,
+            headers: { "Authorization": "Bearer " + accessToken },
+            type: "GET",
+        })
+        .done(function (result) {
+            showResult(result);
+        })
+        .fail(function (result) {
+            console.log(result.error);
+        });
+    }
+    ```
 
 1. Save and close the file.
 
@@ -233,14 +233,14 @@ function getData(relativeUrl, accessToken) {
 
 1. Ensure that all of the following `using` statements are at the top of the file. 
 
-```
-using Owin;
-using System.IdentityModel.Tokens;
-using System.Configuration;
-using Microsoft.Owin.Security.OAuth;
-using Microsoft.Owin.Security.Jwt;
-using Office_Add_in_ASPNET_SSO_WebAPI.App_Start;
-```
+   ```
+    using Owin;
+    using System.IdentityModel.Tokens;
+    using System.Configuration;
+    using Microsoft.Owin.Security.OAuth;
+    using Microsoft.Owin.Security.Jwt;
+    using Office_Add_in_ASPNET_SSO_WebAPI.App_Start;
+    ```
 
 1. Add the keyword `partial` to the declaration of the `Startup` class, if it is not already there. It should look like this:
 
@@ -248,14 +248,14 @@ using Office_Add_in_ASPNET_SSO_WebAPI.App_Start;
 
 1. Add the following method to the `Startup` class. This method specifies how the OWIN middleware will validate the access tokens that are passed to it from the `getData` method in the client-side Home.js file. The authorization process is triggered whenever a Web API endpoint that is decorated with the `[Authorize]` attribute is called.
 
-```
-public void ConfigureAuth(IAppBuilder app)
-{
-	// TODO2: Configure the validation settings
-	// TODO3: Specify the type of authorization and the discovery endpoint
-	// of the secure token service.
-}
-```
+    ```
+    public void ConfigureAuth(IAppBuilder app)
+    {
+        // TODO2: Configure the validation settings
+        // TODO3: Specify the type of authorization and the discovery endpoint
+        // of the secure token service.
+    }
+    ```
 
 1. Replace the TODO2 with the following. Note:
 
@@ -263,26 +263,26 @@ public void ConfigureAuth(IAppBuilder app)
  * Setting `SaveSigninToken` to `true` causes OWIN to save the raw token from the Office host. The add-in needs it to obtain an access token to Microsoft Graph with the “on behalf of” flow.
  * Scopes are not validated by the OWIN middleware. The scopes of the access token, which should include `access_as_user`, is validated in the controller.
 
-```
-var tvps = new TokenValidationParameters
-            {
-                ValidAudience = ConfigurationManager.AppSettings["ida:Audience"],
-                ValidIssuer = ConfigurationManager.AppSettings["ida:Issuer"],
-                SaveSigninToken = true
-            };
-```
+    ```
+    var tvps = new TokenValidationParameters
+        {
+            ValidAudience = ConfigurationManager.AppSettings["ida:Audience"],
+            ValidIssuer = ConfigurationManager.AppSettings["ida:Issuer"],
+            SaveSigninToken = true
+        };
+    ```
 
 1. Replace TODO3 with the following. Note:
 
  * The method `UseOAuthBearerAuthentication` is called instead of the more common `UseWindowsAzureActiveDirectoryBearerAuthentication` because the latter is not compatible with the Azure AD V2 endpoint.
  * The discovery URL that is passed to the method is where the OWIN middleware obtains instructions for getting the key it needs to verify the signature on the access token received from the Office host.
 
-```
-app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions
+    ```
+    app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions
             {
                 AccessTokenFormat = new JwtFormat(tvps, new OpenIdConnectCachingSecurityTokenProvider("https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration"))
             });
-```
+    ```
 
 1. Save and close the file.
 
@@ -292,50 +292,51 @@ app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions
 
 1. Ensure that the following `using` statements are at the top of the file.
 
-```
-using Microsoft.Identity.Client;
-using System.IdentityModel.Tokens;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using System.Web.Http;
-using Office_Add_in_ASPNET_SSO_WebAPI.Helpers;
-using Office_Add_in_ASPNET_SSO_WebAPI.Models;
-```
+    ```
+    using Microsoft.Identity.Client;
+    using System.IdentityModel.Tokens;
+    using System.Collections.Generic;
+    using System.Configuration;
+    using System.Linq;
+    using System.Security.Claims;
+    using System.Threading.Tasks;
+    using System.Web.Http;
+    using Office_Add_in_ASPNET_SSO_WebAPI.Helpers;
+    using Office_Add_in_ASPNET_SSO_WebAPI.Models;
+    ```
 
 1. Just above the line that declares the `ValuesController`, add the attribute `[Authorize]`. This ensures that your add-in will run the authorization process that you configured in the last procedure whenever a controller method is called; so only callers with a valid access token to your add-in can invoke the methods of the controller. 
 
 1. Add the following method to the `ValuesController`:
 
-```
-// GET api/values
-public async Task<IEnumerable<string>> Get()
-{
-    // TODO4: Validate the scopes of the access token.
-}
-```
+    ```
+    // GET api/values
+    public async Task<IEnumerable<string>> Get()
+    {
+        // TODO4: Validate the scopes of the access token.
+    }
+    ```
 
 1. Replace TODO4 with the following code to validate that the scopes that are specified in the token include `access_as_user`. 
 
-```
-string[] addinScopes = ClaimsPrincipal.Current.FindFirst("http://schemas.microsoft.com/identity/claims/scope").Value.Split(' ');
-if (addinScopes.Contains("access_as_user"))
-{
-    // TODO5: Get the raw token that the add-in page received from the Office host.
-    // TODO6: Get the access token for MS Graph.
-    // TODO7: Get the names of files and folders in OneDrive for Business by using the Microsoft Graph API.
-    // TODO8: Remove excess information from the data and send the data to the client.
-}
-return new string[] { "Error", "Microsoft Office does not have permission to get Microsoft Graph data on behalf of the current user." };
-```
+    ```
+    string[] addinScopes = ClaimsPrincipal.Current.FindFirst("http://schemas.microsoft.com/identity/claims/scope").Value.Split(' ');
+    if (addinScopes.Contains("access_as_user"))
+    {
+        // TODO5: Get the raw token that the add-in page received from the Office host.
+        // TODO6: Get the access token for MS Graph.
+        // TODO7: Get the names of files and folders in OneDrive for Business by using the Microsoft Graph API.
+        // TODO8: Remove excess information from the data and send the data to the client.
+    }
+    return new string[] { "Error", "Microsoft Office does not have permission to get Microsoft Graph data on behalf of the current user." };
+    ```
 
 1. Replace TODO5 with the following code which turns the raw access token received from the Office host into a `UserAssertion` object that will be passed to another method.
 
-```var bootstrapContext = ClaimsPrincipal.Current.Identities.First().BootstrapContext as BootstrapContext;
-UserAssertion userAssertion = new UserAssertion(bootstrapContext.Token);
-```
+    ```
+    var bootstrapContext = ClaimsPrincipal.Current.Identities.First().BootstrapContext as BootstrapContext;
+    UserAssertion userAssertion = new UserAssertion(bootstrapContext.Token);
+    ```
 
 1. Replace TODO6 with the following code. Note:
 
@@ -343,34 +344,35 @@ UserAssertion userAssertion = new UserAssertion(bootstrapContext.Token);
  * The third parameter to the `ConfidentialClientApplication` constructor is a redirect URL which is not actually used in the “on behalf of” flow, but it is a good practice to use the correct URL. The fourth and fifth parameters can be used to define a persistent store that would enable the reuse of unexpired tokens across different sessions with the add-in. This sample does not implement any persistent storage.
  * The `ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync` method will first look in the MSAL cache, which is in memory, for a matching access token. Only if there isn't one, does it initiate the "on behalf of" flow with the Azure AD V2 endpoint.
 
-```
-ClientCredential clientCred = new ClientCredential(ConfigurationManager.AppSettings["ida:Password"]);
-ConfidentialClientApplication cca =
+    ```
+    ClientCredential clientCred = new ClientCredential(ConfigurationManager.AppSettings["ida:Password"]);
+    ConfidentialClientApplication cca =
                     new ConfidentialClientApplication(ConfigurationManager.AppSettings["ida:ClientID"],
                                                       "https://localhost:44355", clientCred, null, null);
-string[] graphScopes = { "profile", "Files.Read.All" };
-AuthenticationResult result = await cca.AcquireTokenOnBehalfOfAsync(graphScopes, userAssertion, "https://login.microsoftonline.com/common/oauth2/v2.0");
-```
+    string[] graphScopes = { "profile", "Files.Read.All" };
+    AuthenticationResult result = await cca.AcquireTokenOnBehalfOfAsync(graphScopes, userAssertion, "https://login.microsoftonline.com/common/oauth2/v2.0");
+    ```
 
 1. Replace TODO7 with the following. Note:
 
  * The `GraphApiHelper` and `ODataHelper` classes are defined in files in the **Helpers** folder. The `OneDriveItem` class is defined in a file in the **Models** folder. Detailed discussion of these classes is not relevant to authorization or SSO, so it is out-of-scope for this article.
  * Performance is improved by asking Microsoft Graph for only the data actually needed, so the code uses a ` $select` query parameter to specify that we only want the name property, and a `$top` parameter to specify that we want only the first 3 folder of file names.
 
-```
-var fullOneDriveItemsUrl = GraphApiHelper.GetOneDriveItemNamesUrl("?$select=name&$top=3");
-var getFilesResult = await ODataHelper.GetItems<OneDriveItem>(fullOneDriveItemsUrl, result.AccessToken);
-```
+    ```
+    var fullOneDriveItemsUrl = GraphApiHelper.GetOneDriveItemNamesUrl("?$select=name&$top=3");
+    var getFilesResult = await ODataHelper.GetItems<OneDriveItem>(fullOneDriveItemsUrl, result.AccessToken);
+    ```
 
 1. Replace TODO8 with the following. Note that although the code above asked for only the *name* property of the OneDrive items, Microsoft Graph always includes the *eTag* property for OneDrive items. To reduce the payload sent to the client, the code below reconstructs the results with only the item names.
 
-```List<string> itemNames = new List<string>();
-      foreach (OneDriveItem item in getFilesResult)
-      {
-          itemNames.Add(item.Name);
-      }                    
-      return itemNames;
-```
+    ```
+    List<string> itemNames = new List<string>();
+    foreach (OneDriveItem item in getFilesResult)
+    {
+      itemNames.Add(item.Name);
+    }                    
+    return itemNames;
+    ```
 
 ## Run the add-in
 
