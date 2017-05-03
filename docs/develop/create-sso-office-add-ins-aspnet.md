@@ -132,7 +132,7 @@ Here’s an example of what the four keys you changed should look like. *Note th
 
 1. Just above the end </VersionOverrides> tag, you will find the following markup:
 
-  ```xml
+   ```xml
     <WebApplicationId>{application_GUID here}</WebApplicationId>
     <WebApplicationResource>api://localhost:44355<WebApplicationResource>
     <WebApplicationScopes>
