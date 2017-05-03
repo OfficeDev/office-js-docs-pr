@@ -161,9 +161,9 @@ Here’s an example of what the four keys you changed should look like. *Note th
 
 1. Below the assignment to `Office.initialize`, add the code below. Note the following about this code: 
 
- * The `getAccessTokenAsync` is the new API in Office.js that enables an add-in to ask the Office host application (Excel, PowerPoint, Word, etc.) for an access token to the add-in (for the user signed into Office). The Office host application, in turn, asks the Azure AD 2 endpoint for the token. Since you preauthorized the Office host to your add-in when you registered it, Azure AD will send the token. 
- * If no user is signed into Office, the Office host will prompt the user to sign in. 
- * The options parameter sets `forceConsent` to false, so the user will not be prompted to consent to giving the Office host access to your add-in.
+    * The `getAccessTokenAsync` is the new API in Office.js that enables an add-in to ask the Office host application (Excel, PowerPoint, Word, etc.) for an access token to the add-in (for the user signed into Office). The Office host application, in turn, asks the Azure AD 2 endpoint for the token. Since you preauthorized the Office host to your add-in when you registered it, Azure AD will send the token. 
+    * If no user is signed into Office, the Office host will prompt the user to sign in. 
+    * The options parameter sets `forceConsent` to false, so the user will not be prompted to consent to giving the Office host access to your add-in.
 
     ```js
     function getOneDriveItems() {
