@@ -121,7 +121,7 @@ Here’s an example of what the four keys you changed should look like. *Note th
     <add key="ida:Issuer" value="https://login.microsoftonline.com/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee/v2.0" />
     ```
 
-> Note: Leave the other settings in the **appSettings** section unchanged.
+Note: Leave the other settings in the **appSettings** section unchanged.
 
 
 1. Save and close the file.
