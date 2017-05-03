@@ -77,9 +77,8 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. In the following string, replace the placeholder “{application_ID}” with the Application ID that you copied when you registered your add-in.
 
-    ```
-https://login.microsoftonline.com/common/adminconsent?client_id={application_ID}&state=12345
-```
+    `https://login.microsoftonline.com/common/adminconsent?client_id={application_ID}&state=12345`
+
 1. Paste the resulting URL into a browser address bar and navigate to it.
 
 1. When prompted, sign-in with the admin credentials to your Office 365 tenancy.
