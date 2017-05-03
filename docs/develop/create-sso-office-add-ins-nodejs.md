@@ -65,8 +65,8 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 1. Scroll down to the **Microsoft Graph Permissions** section, the **Delegated Permissions** subsection. Use the **Add** button to open a **Select Permissions** dialog.
 
 1. In the dialog, check the boxes for the following permissions (some may already be checked by default): 
- * Files.Read.All
- * profile
+    * Files.Read.All
+    * profile
 
 
 1. Click **OK** at the bottom of the dialog.
@@ -77,9 +77,8 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. In the following string, replace the placeholder “{application_ID}” with the Application ID that you copied when you registered your add-in.
 
-    ```
-https://login.microsoftonline.com/common/adminconsent?client_id={application_ID}&state=12345
-```
+    `https://login.microsoftonline.com/common/adminconsent?client_id={application_ID}&state=12345`
+
 1. Paste the resulting URL into a browser address bar and navigate to it.
 
 1. When prompted, sign-in with the admin credentials to your Office 365 tenancy.
@@ -116,12 +115,14 @@ https://login.microsoftonline.com/common/adminconsent?client_id={application_ID}
 
 1. Just above the end `</VersionOverrides>` tag, you will find the following markup:
 
-    ```<WebApplicationId>{application_GUID here}</WebApplicationId>
+    ```
+    <WebApplicationId>{application_GUID here}</WebApplicationId>
     <WebApplicationResource>api://localhost:3000<WebApplicationResource>
     <WebApplicationScopes>
         <WebApplicationScope>profile</WebApplicationScope>
         <WebApplicationScope>files.read.all</WebApplicationScope>
-    </WebApplicationScopes>```
+    </WebApplicationScopes>
+```
 
 1. Replace the placeholder “{application_GUID here}” in the markup with the Application ID that you copied when you registered your add-in. This is the same ID you used in for the ClientID and Audience in the web.config.
 
@@ -141,45 +142,51 @@ https://login.microsoftonline.com/common/adminconsent?client_id={application_ID}
 
 1. Below the assignment to `Office.initialize`, add the code below. Note the following about this code: 
 
- * The `getAccessTokenAsync` is the new API in Office.js that enables an add-in to ask the Office host application (Excel, PowerPoint, Word, etc.) for an access token to the add-in (for the user signed into Office). The Office host application, in turn, asks the Azure AD 2 endpoint for the token. Since you preauthorized the Office host to your add-in when you registered it, Azure AD will send the token. 
- * If no user is signed into Office, the Office host will prompt the user to sign in. 
- * The options parameter sets `forceConsent` to false, so the user will not be prompted to consent to giving the Office host access to your add-in.
+     * The `getAccessTokenAsync` is the new API in Office.js that enables an add-in to ask the Office host application (Excel, PowerPoint, Word, etc.) for an access token to the add-in (for the user signed into Office). The Office host application, in turn, asks the Azure AD 2 endpoint for the token. Since you preauthorized the Office host to your add-in when you registered it, Azure AD will send the token. 
+     * If no user is signed into Office, the Office host will prompt the user to sign in. 
+     * The options parameter sets `forceConsent` to false, so the user will not be prompted to consent to giving the Office host access to your add-in.
 
-    ```function getOneDriveItems() {
+    ```
+    function getOneDriveItems() {
     Office.context.auth.getAccessTokenAsync({ forceConsent: false },
-		function (result) {
+        function (result) {
             if (result.status === "succeeded") {
-		        // TODO1: Use the access token to get Microsoft Graph data.
-	        }
-	        else {
-			    console.log("Code: " + result.error.code);
-			    console.log("Message: " + result.error.message);
-			    console.log("name: " + result.error.name);
-			    document.getElementById("getGraphAccessTokenButton").disabled = true;
-	         }
-	    });
-}```
+                // TODO1: Use the access token to get Microsoft Graph data.
+            }
+            else {
+                console.log("Code: " + result.error.code);
+                console.log("Message: " + result.error.message);
+                console.log("name: " + result.error.name);
+                document.getElementById("getGraphAccessTokenButton").disabled = true;
+             }
+        });
+    }
+    ```
 
 1. Replace the TODO1 with the following lines. You create the `getData` method and the server-side “/api/values” route in later steps. A relative URL is used for the endpoint because it must be hosted on the same domain as your add-in.
 
-    ```accessToken = result.value;
-getData("/api/onedriveitems", accessToken);```
+    ```
+    accessToken = result.value;
+    getData("/api/onedriveitems", accessToken);
+    ```
 
 1. Below the `getOneDriveFiles` method, add the following. This utility method calls a specified Web API endpoint and passes it the same access token that the Office host application used to get access to your add-in. On the server-side, this access token will be used in the “on behalf of” flow to obtain an access token to Microsoft Graph. 
 
-    ```function getData(relativeUrl, accessToken) {
-    $.ajax({
-        url: relativeUrl,
-        headers: { "Authorization": "Bearer " + accessToken },
-        type: "GET",
-    })
-    .done(function (result) {
-        showResult(result);
-    })
-    .fail(function (result) {
-        console.log(result.error);
-    });
-}```
+    ```
+    function getData(relativeUrl, accessToken) {
+        $.ajax({
+            url: relativeUrl,
+            headers: { "Authorization": "Bearer " + accessToken },
+            type: "GET",
+        })
+        .done(function (result) {
+            showResult(result);
+        })
+        .fail(function (result) {
+            console.log(result.error);
+       });
+    }
+    ```
 
 1. Save and close the file.
 
@@ -197,7 +204,8 @@ There are two server-side files that need to be modified.
     * The resource parameter is optional. It should not be used when the STS is the AAD V2 endpoint. The latter infers the resource from the scopes and it returns an error if a resource is sent in the HTTP Request. 
     
 
-    ```private async exchangeForToken(jwt: string, scopes: string[] = ['openid'], resource?: string) {
+    ```
+    private async exchangeForToken(jwt: string, scopes: string[] = ['openid'], resource?: string) {
         try {
             // TODO2: Construct the parameters that will be sent in the body of the 
             //        HTTP Request to the STS that starts the "on behalf of" flow.
@@ -209,13 +217,15 @@ There are two server-side files that need to be modified.
                                         + ' ' + exception.message, 
                                         exception);
         }
-    }```
+    }
+    ```
 
 2. Replace TODO2 with the following code. About this code, note:
     * An STS that supports the "on behalf of" flow expects certain property/value pairs in the body of the HTTP request. This code constructs an object that will become the body of the request. 
     * A resource property is added to the body if, and only if, a resource was passed to the method.
 
-    ```const v2Params = {
+    ```
+    const v2Params = {
                 client_id: this.clientId,
                 client_secret: this.clientSecret,
                 grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
@@ -232,22 +242,26 @@ There are two server-side files that need to be modified.
                 finalParams = v1Params;
             } else {
                 finalParams = v2Params;
-            } ```
+            } 
+    ```
 
 3. Replace TODO3 with the following code which sends the HTTP request to the token endpoint of the STS.
 
-    ```const res = await fetch(`${this.stsDomain}/${this.tenant}/${this.tokenURLsegment}`, {
+    ```
+    const res = await fetch(`${this.stsDomain}/${this.tenant}/${this.tokenURLsegment}`, {
                 method: 'POST',
                 body: form(finalParams),
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/x-www-form-urlencoded'
                 }
-            }); ```
+            }); 
+    ```
 
 4. Replace TODO4 with the following code. Note that the code persists the access token to the resource, and it's expiration time, in addition to returning it. Calling code can avoid unnecessary calls to the STS by reusing an unexpired access token to the resource. You'll see how to do that in the next section.
 
-    ```if (res.status !== 200) {
+    ```
+    if (res.status !== 200) {
                 const exception = await res.json();
                 throw exception;
             }
@@ -258,7 +272,8 @@ There are two server-side files that need to be modified.
             const expiresIn = json['expires_in'];  // seconds until token expires.
             const resourceTokenExpiresAt = moment().add(expiresIn, 'seconds');
             ServerStorage.persist('ResourceTokenExpiresAt', resourceTokenExpiresAt);
-            return resourceToken; ```
+            return resourceToken; 
+    ```
 5. Save the file, but don't close it.
 
 ### Create a method to get access to the resource using the "on behalf of" flow
@@ -267,7 +282,8 @@ There are two server-side files that need to be modified.
     * The comments above about the parameters to the the `exchangeForToken` method apply to the parameters of this method as well.
     * The method first checks the persistent storage for an access token to the resource that has not expired and is not going to in the next minute. It calls the method you created in the last section only if it needs to.
 
-    ```async acquireTokenOnBehalfOf(jwt: string, scopes: string[] = ['openid'], resource?: string) {
+    ```
+    async acquireTokenOnBehalfOf(jwt: string, scopes: string[] = ['openid'], resource?: string) {
         const resourceTokenExpirationTime = ServerStorage.retrieve('ResourceTokenExpiresAt');
         if (moment().add(1, 'minute').diff(resourceTokenExpirationTime) < 1 ) {
             return ServerStorage.retrieve('ResourceToken');
@@ -276,7 +292,8 @@ There are two server-side files that need to be modified.
         } else {
             return this.exchangeForToken(jwt, scopes);
         }
-    } ```
+    } 
+    ```
 
 2. Save and close the file.
 
@@ -286,47 +303,55 @@ There are two server-side files that need to be modified.
 
 2. Add the following method to the bottom of the file. This method will serve the add-in's home page. The add-in manifest specifies the home page URL.
 
-    ```app.get('/index.html', handler(async (req, res) => {
-    return res.sendfile('index.html');
-})); ```
+    ```
+    app.get('/index.html', handler(async (req, res) => {
+        return res.sendfile('index.html');
+    })); 
+    ```
 
 3. Add the following method to bottom of the file. This method will handle any requests for the `onedriveitems` API.
-    ```app.get('/api/onedriveitems', handler(async (req, res) => {
+    ```
+    app.get('/api/onedriveitems', handler(async (req, res) => {
         // TODO5: Initialize the AuthModule object and validate the access token 
         //        that the client-side received from the Office host.
         // TODO6: Get a token to Microsoft Graph from either persistent storage 
         //        or the "on behalf of" flow.
         // TODO7: Use the token to get data from Microsoft Graph.
         // TODO8: Send to the client only the data that it actually needs.
-})); ```
+    })); 
+    ```
 
 4. Replace TODO5 with the following code which validates the access token received from the Office host application. The `verifyJWT` method is defined in the src\auth.ts file. It always validates the audience and the issuer. We use the optional parameter to specify that we also want it to verify that the scope in the access token is `access_as_user`. This is the only permisison to the add-in that the user and the Office host need in order to get an access token to Microsoft Graph by means of the "on behalf flow". 
 
-    ```await auth.initialize();
-    const { jwt } = auth.verifyJWT(req, { scp: 'access_as_user' }); ```
+    ```
+    await auth.initialize();
+    const { jwt } = auth.verifyJWT(req, { scp: 'access_as_user' }); 
+    ```
 
 5. Replace TODO6 with the following line. Note the following about this code:
 
     * The call to `acquireTokenOnBehalfOf` does not include a resource parameter because we constructed the `AuthModule` object (`auth`) with the AAD V2 endpoint which does not support a resource property.
     * The second parameter of the call specifies the permissions the add-in will need to get a list of the user's files and folders on OneDrive for Business.
 
-    ```const graphToken = await auth.acquireTokenOnBehalfOf(jwt, ['profile', 'Files.Read.All']); ```
+    `const graphToken = await auth.acquireTokenOnBehalfOf(jwt, ['profile', 'Files.Read.All']);`
+
 6. Replace TODO7 with the following line. Note the following about this code:
 
     * The MSGraphHelper class is defined in src\msgraph-helper.ts. 
     * We minimize the data that must be returned by specifying that we only want the name property and only the first 3 items.
 
-    ```const graphData = await MSGraphHelper.getGraphData(graphToken, "/me/drive/root/children", "?$select=name&$top=3");   
- ```
+    `const graphData = await MSGraphHelper.getGraphData(graphToken, "/me/drive/root/children", "?$select=name&$top=3");`
 
 7. Replace TODO8 with the following code. Note that Microsoft Graph returns some OData metadata and an **eTag** property for every item, even if `name` is the only property requested. The code sends only the item names to the client.
 
-    ```const itemNames: string[] = [];
+    ```
+    const itemNames: string[] = [];
     const oneDriveItems: string[] = graphData['value'];
     for (let item of oneDriveItems){
         itemNames.push(item['name']);
     }
-    return res.json(itemNames);  ```
+    return res.json(itemNames);
+    ```
 
 8. Save and close the file.
 
