@@ -226,54 +226,55 @@ There are two server-side files that need to be modified.
 
     ```
     const v2Params = {
-                client_id: this.clientId,
-                client_secret: this.clientSecret,
-                grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
-                assertion: jwt,
-                requested_token_use: 'on_behalf_of',
-                scope: scopes.join(' ')
-            };
-            let finalParams = {};
-            if (resource) {
-                // In JavaScript we could just add the resource property to the v2Params
-                // object, but that won't compile in TypeScript.
-                let v1Params  = { resource: resource };  
-                for(var key in v2Params) { v1Params[key] = v2Params[key]; }
-                finalParams = v1Params;
-            } else {
-                finalParams = v2Params;
-            } 
+            client_id: this.clientId,
+            client_secret: this.clientSecret,
+            grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+            assertion: jwt,
+            requested_token_use: 'on_behalf_of',
+            scope: scopes.join(' ')
+        };
+        let finalParams = {};
+        if (resource) {
+            // In JavaScript we could just add the resource property to the v2Params
+            // object, but that won't compile in TypeScript.
+            let v1Params  = { resource: resource };  
+            for(var key in v2Params) { v1Params[key] = v2Params[key]; }
+            finalParams = v1Params;
+        } else {
+            finalParams = v2Params;
+        } 
     ```
 
 3. Replace TODO3 with the following code which sends the HTTP request to the token endpoint of the STS.
 
     ```
     const res = await fetch(`${this.stsDomain}/${this.tenant}/${this.tokenURLsegment}`, {
-                method: 'POST',
-                body: form(finalParams),
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                }
-            }); 
+        method: 'POST',
+        body: form(finalParams),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+    }); 
     ```
 
 4. Replace TODO4 with the following code. Note that the code persists the access token to the resource, and it's expiration time, in addition to returning it. Calling code can avoid unnecessary calls to the STS by reusing an unexpired access token to the resource. You'll see how to do that in the next section.
 
     ```
     if (res.status !== 200) {
-                const exception = await res.json();
-                throw exception;
-            }
-            const json = await res.json();
-            // Persist the token and it's expiration time.
-            const resourceToken = json['access_token'];
-            ServerStorage.persist('ResourceToken', resourceToken);
-            const expiresIn = json['expires_in'];  // seconds until token expires.
-            const resourceTokenExpiresAt = moment().add(expiresIn, 'seconds');
-            ServerStorage.persist('ResourceTokenExpiresAt', resourceTokenExpiresAt);
-            return resourceToken; 
+        const exception = await res.json();
+        throw exception;
+    }
+    const json = await res.json();
+    // Persist the token and it's expiration time.
+    const resourceToken = json['access_token'];
+    ServerStorage.persist('ResourceToken', resourceToken);
+    const expiresIn = json['expires_in'];  // seconds until token expires.
+    const resourceTokenExpiresAt = moment().add(expiresIn, 'seconds');
+    ServerStorage.persist('ResourceTokenExpiresAt', resourceTokenExpiresAt);
+    return resourceToken; 
     ```
+
 5. Save the file, but don't close it.
 
 ### Create a method to get access to the resource using the "on behalf of" flow
