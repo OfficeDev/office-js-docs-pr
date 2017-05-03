@@ -166,7 +166,7 @@ Here’s an example of what the four keys you changed should look like. *Note th
  * If no user is signed into Office, the Office host will prompt the user to sign in. 
  * The options parameter sets `forceConsent` to false, so the user will not be prompted to consent to giving the Office host access to your add-in.
 
-    ```function getOneDriveItems() {
+```function getOneDriveItems() {
     Office.context.auth.getAccessTokenAsync({ forceConsent: false },
 		function (result) {
             if (result.status === "succeeded") {
@@ -179,7 +179,8 @@ Here’s an example of what the four keys you changed should look like. *Note th
 			    document.getElementById("getGraphAccessTokenButton").disabled = true;
 	         }
 	    });
-}```
+}
+```
 
 1. Replace the TODO1 with the following lines. You create the `getData` method and the server-side “/api/values” route in later steps. A relative URL is used for the endpoint because it must be hosted on the same domain as your add-in.
 
