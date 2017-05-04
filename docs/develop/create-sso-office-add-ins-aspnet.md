@@ -4,7 +4,7 @@ Users can sign into Office and your Office Web Add-in can take advantage of this
 
 This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with ASP.NET, OWIN, and Microsoft Authentication Library (MSAL) for .NET. 
 
-> **Note:** For a similar article about a Node.js-based add-in, see [Create a Node.js Office Add-in that uses Single Sign-on](../../docs/develop/create-sso-office-add-ins-nodejs.md) .
+> **Note:** For a similar article about a Node.js-based add-in, see [Create a Node.js Office Add-in that uses single sign-on](../../docs/develop/create-sso-office-add-ins-nodejs.md) .
 
 ## Prerequisites
 
