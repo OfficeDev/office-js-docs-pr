@@ -1271,7 +1271,7 @@ An object that contains arrays of strings that match the regular expressions def
 
 ##### Example
 
-The following example shows how to access the array of matches for the regular expression <rule>elements `fruits` and `veggies`, which are specified in the manifest.</rule>
+The following example shows how to access the array of matches for the regular expression rule elements `fruits` and `veggies`, which are specified in the manifest.
 
 ```
 var allMatches = Office.context.mailbox.item.getRegExMatches();
@@ -1376,6 +1376,84 @@ function getCallback(asyncResult) {
 function setCallback(asyncResult) {
     // check for errors
 }
+```
+
+#### getSelectedEntities() → {[Entities](simple-types.md#entities)}
+
+Gets the entities found in a highlighted match a user has selected. Highlighted matches apply to [contextual add-ins](..\..\..\docs\outlook\contextual-outlook-add-ins.md).
+
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| Preview |
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|Applicable Outlook mode| Read|
+
+##### Returns:
+
+Type:
+[Entities](simple-types.md#entities)
+
+##### Example
+
+The following example accesses the addresses entities in the highlighted match selected by the user.
+
+```
+var contacts = Office.context.mailbox.item.getSelectedEntities().addresses;
+```
+
+#### getSelectedRegExMatches() → {Object}
+
+Returns string values in a highlighted match that match the regular expressions defined in the manifest XML file. Highlighted matches apply to [contextual add-ins](..\..\..\docs\outlook\contextual-outlook-add-ins.md).
+
+> **Note:** This method is not supported in Outlook for iOS or Outlook for Android.
+
+The `getSelectedRegExMatches` method returns the strings that match the regular expression defined in each `ItemHasRegularExpressionMatch` or `ItemHasKnownEntity` rule element in the manifest XML file. For an `ItemHasRegularExpressionMatch` rule, a matching string has to occur in the property of the item that is specified by that rule. The `PropertyName` simple type defines the supported properties.
+
+For example, consider an add-in manifest has the following `Rule` element:
+
+```
+<Rule xsi:type="RuleCollection" Mode="And">
+  <Rule xsi:type="ItemIs" FormType="Read" ItemType="Message" />
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="fruits" RegExValue="apple|banana|coconut" PropertyName="BodyAsPlaintext" IgnoreCase="true" />
+    <Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="veggies" RegExValue="tomato|onion|spinach|broccoli" PropertyName="BodyAsPlaintext" IgnoreCase="true" />
+  </Rule>
+</Rule>
+```
+
+The object returned from `getRegExMatches` would have two properties: `fruits` and `veggies`.
+
+```
+{
+  'fruits': ['apple','banana','Banana','coconut'],
+  'veggies': ['tomato','onion','spinach','broccoli']
+}
+```
+
+If you specify an `ItemHasRegularExpressionMatch` rule on the body property of an item, the regular expression should further filter the body and should not attempt to return the entire body of the item. Using a regular expression such as `.*` to obtain the entire body of an item does not always return the expected results. Instead, use the [`Body.getAsync`](Body.md#getasynccoerciontype-options-callback) method to retrieve the entire body.
+
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| Preview |
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|Applicable Outlook mode| Read|
+
+##### Returns:
+
+An object that contains arrays of strings that match the regular expressions defined in the manifest XML file. The name of each array is equal to the corresponding value of the `RegExName` attribute of the matching `ItemHasRegularExpressionMatch` rule or the `FilterName` attribute of the matching `ItemHasKnownEntity` rule.
+
+##### Example
+
+The following example shows how to access the array of matches for the regular expression rule elements `fruits` and `veggies`, which are specified in the manifest.
+
+```
+var selectedMatches = Office.context.mailbox.item.getSelectedRegExMatches();
+var fruits = selectedMatches.fruits;
+var veggies = selectedMatches.veggies;
 ```
 
 ####  loadCustomPropertiesAsync(callback, [userContext])
