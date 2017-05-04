@@ -35,7 +35,7 @@
 	<Item text="Tips for creating add-ins with Angular 2" url="develop/add-ins-with-angular2" SEODescription="Use Angular 2 to develop Office Add-ins." />
 	<Item text="Use the Dialog API" url="develop/dialog-api-in-office-add-ins" SEODescription="Use the Dialog API to open dialog boxes in your Office Add-in." />
 	<Item text="Authorize external services" url="develop/auth-external-add-ins" SEODescription="Use the OAuth 2.0 authorization framework in your Office Add-ins." />
-	<Item tet="Enable SSO in an add-in" url="" >
+	<Item text="Enable SSO in an add-in" url="develop/sso-in-office-add-ins" >
 		<Item text="Create an SSO add-in using ASP.NET" url="develop/create-sso-office-add-ins-aspnet" />
 		<Item text="Create an SSO add-in using Node.js" url="develop/create-sso-office-add-ins-nodejs" />
 	</Item>
