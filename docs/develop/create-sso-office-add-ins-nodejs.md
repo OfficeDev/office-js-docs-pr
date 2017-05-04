@@ -1,6 +1,6 @@
 # Create a Node.js Office Add-in that uses single sign-on (preview)
 
-Users can sign into Office, and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign-on a second time. For an overview, see [Enable SSO in an Office Add-in](../../docs/develop/sso-in-office-add-ins.md) .
+Users can sign into Office, and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign-on a second time. For an overview, see [Enable SSO in an Office Add-in](../../docs/develop/sso-in-office-add-ins.md).
 
 This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with Node.js and express. 
 
@@ -11,7 +11,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 * [Node and npm](https://nodejs.org/en/), version 6.9.4 or later.
 * [Git Bash](https://git-scm.com/downloads) (Or another git client.)
 * TypeScript version 2.2.2 or later.
-* Office 2016, Version 1704,  build 8027.nnnn or later. (The Office 365 subscription version, sometimes called “Click to Run”.)  You many need to be an Office Insider to obtain this version. For more information, see [Be an Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1) .
+* Office 2016, Version 1704, build 8027.nnnn or later (the Office 365 subscription version, sometimes called “Click to Run”). You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1).
 
 ## Set up the starter project
 
