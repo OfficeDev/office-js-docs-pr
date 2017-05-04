@@ -1,4 +1,4 @@
-# HTML Canvases – Content Add-in
+# Content Office Add-ins
  
 Content add-ins are surfaces that can be embedded directly into Word, Excel, or PowerPoint documents. Content add-ins allow users to utilize interface controls that run code to modify documents or display data from a data source for example. Content add-ins should be utilized when embedding functionality directly into the document is needed and/or wanted.  
 
