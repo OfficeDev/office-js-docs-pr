@@ -15,10 +15,9 @@ Specifies the source file location(s) for your Office Add-in as a URL between 1 
 
 ## Contained in:
 
-[DefaultSettings](../../reference/manifest/defaultsettings.md) (Content and task pane add-ins)
-
-[FormSettings](../../reference/manifest/formsettings.md) (Mail add-ins)
-
+- [DefaultSettings](../../reference/manifest/defaultsettings.md) (Content and task pane add-ins)
+- [FormSettings](../../reference/manifest/formsettings.md) (Mail add-ins)
+- [ExtensionPoint](extensionpoint.md) (Contextual mail add-ins)
 
 ## Can contain:
 
