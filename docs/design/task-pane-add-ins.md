@@ -1,4 +1,4 @@
-# Task pane Office Add-ins
+# Task panes in Office Add-ins
  
 Task Panes are interface surfaces typically docked to the right side of the window within Word, PowerPoint, Excel, and Outlook. Task Panes allow users to utilize interface controls that run code to modify documents, emails or display data from a data source for example. Task Pane surfaces should be utilized when embedding functionality directly into the document is not needed or wanted.
 
