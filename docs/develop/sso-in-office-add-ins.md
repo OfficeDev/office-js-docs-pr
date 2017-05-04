@@ -87,7 +87,7 @@ Create one or more Web API methods that get Microsoft Graph data. Depending on y
 
 ### Walkthroughs
 
-* [Create a Node.js Office Add-in that uses Single Sign-on](../../docs/develop/create-sso-office-add-ins-nodejs.md).
-* [Create an ASP.NET Office Add-in that uses Single Sign-on](../../docs/develop/create-sso-office-add-ins-aspnet.md).
+* [Create a Node.js Office Add-in that uses single sign-on](../../docs/develop/create-sso-office-add-ins-nodejs.md)
+* [Create an ASP.NET Office Add-in that uses single sign-on](../../docs/develop/create-sso-office-add-ins-aspnet.md)
 
 
