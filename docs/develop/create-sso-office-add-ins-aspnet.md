@@ -1,10 +1,10 @@
-# Create an ASP.NET Office Add-in that uses Single Sign-on (preview)
+# Create an ASP.NET Office Add-in that uses single sign-on (preview)
 
-Users can sign into Office and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign-on a second time. For an overview, see [Single Sign-on to Office, your Office Web Add-in, and Microsoft Graph (preview)](../../docs/develop/sso-in-office-add-ins.md) .
+Users can sign into Office and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign-on a second time. For an overview, see [Enable SSO in an Office Add-in](../../docs/develop/sso-in-office-add-ins.md) .
 
 This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with ASP.NET, OWIN, and Microsoft Authentication Library (MSAL) for .NET. 
 
-> Note: For a similar article about a NodeJS-based add-in, see [Create a Node.js Office Add-in that uses Single Sign-on](../../docs/develop/create-sso-office-add-ins-nodejs.md) .
+> **Note:** For a similar article about a Node.js-based add-in, see [Create a Node.js Office Add-in that uses Single Sign-on](../../docs/develop/create-sso-office-add-ins-nodejs.md) .
 
 ## Prerequisites
 
@@ -12,7 +12,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 * Office 2016, Version 1704,  build 8027.nnnn or later. (The Office 365 subscription version, sometimes called “Click to Run”.)  You many need to be an Office Insider to obtain this version. For more information, see [Be an Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1) .
 
-## Setup the starter project
+## Set up the starter project
 
 1. Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/officedev/office-add-in-aspnet-sso). 
 
@@ -27,7 +27,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 1. Press the **Show Add-in** button in this group to see the add-in’s UI in the task pane. The button in the task pane is not wired up yet. 
 2. In Visual Studio, stop the debugger.
 
-## Register the add-in with Azure AD V2 endpoint
+## Register the add-in with Azure AD v2.0 endpoint
 
 1. Navigate to [https://apps.dev.microsoft.com/?test=build2017](https://apps.dev.microsoft.com/?test=build2017) . 
 
@@ -121,7 +121,7 @@ Here’s an example of what the four keys you changed should look like. *Note th
     <add key="ida:Issuer" value="https://login.microsoftonline.com/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee/v2.0" />
     ```
 
-Note: Leave the other settings in the **appSettings** section unchanged.
+> **Note:** Leave the other settings in the **appSettings** section unchanged.
 
 
 1. Save and close the file.
