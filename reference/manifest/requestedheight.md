@@ -1,8 +1,8 @@
 
 # RequestedHeight element
-Specifies the initial height of a content or contextual add-in in pixels, which can be between 32 and 1000.
+Specifies the initial height of a content add-in in pixels, which can be between 32 and 1000.
 
- **Add-in type:** Content, Contextual
+ **Add-in type:** Content
 
 
 ## Syntax:
