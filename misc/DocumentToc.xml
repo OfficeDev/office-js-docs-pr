@@ -11,7 +11,7 @@
     <Item text="Use Visual Studio" url="get-started/create-and-debug-office-add-ins-in-visual-studio" SEODescription="Get started building an Office Add-in with Visual Studio" />
 	  <Item text="Use any editor" url="get-started/create-an-office-add-in-using-any-editor" SEODescription="Get started building Office Add-ins with any editor, on a Mac or Windows PC. " />
   </Item>
-  <Item text="Design" url="design/design-add-ins">
+  <Item text="Design" url="design/add-in-design">
       <Item text="Guidelines" url="design/add-in-design-guidelines" >
 		<Item text="Design language" url="design/add-in-design-language" />
 		<Item text="UX design templates" url="design/ux-design-patterns" SEODescription="Use the UX design pattern templates for Office Add-ins to create UI extensions." />
