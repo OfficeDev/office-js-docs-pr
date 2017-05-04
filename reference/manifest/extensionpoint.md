@@ -276,9 +276,9 @@ The only way a user can activate a contextual add-in is to interact with a highl
 However, there are some limitations to be aware of. These limitations are in place to ensure that there will always be a highlighted entity in applicable messages or appointments to give the user a way to activate the add-in.
 
 - The `EmailAddress` and `Url` entity types cannot be highlighted, and therefore cannot be used to activate an add-in.
-- If using a single rule, `Highlight` MUST be set to either `all` or `first`.
-- If using a `RuleCollection` rule type with `Mode="AND"` to combine multiple rules, at least one of the rules MUST have `Highlight` set to either `all` or `first`.
-- If using a `RuleCollection` rule type with `Mode="OR"` to combine multiple rules, all of the rules MUST have `Highlight` set to either `all` or `first`.
+- If using a single rule, `Highlight` MUST be set to `all`.
+- If using a `RuleCollection` rule type with `Mode="AND"` to combine multiple rules, at least one of the rules MUST have `Highlight` set to `all`.
+- If using a `RuleCollection` rule type with `Mode="OR"` to combine multiple rules, all of the rules MUST have `Highlight` set to `all`.
 
 #### DetectedEntity event example
 ```xml

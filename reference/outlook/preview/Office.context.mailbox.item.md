@@ -1382,6 +1382,8 @@ function setCallback(asyncResult) {
 
 Gets the entities found in a highlighted match a user has selected. Highlighted matches apply to [contextual add-ins](..\..\..\docs\outlook\contextual-outlook-add-ins.md).
 
+> **Note:** This method is not supported in Outlook for iOS or Outlook for Android.
+
 ##### Requirements
 
 |Requirement| Value|
