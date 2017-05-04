@@ -6,7 +6,8 @@ Your add-in UX design must integrate seamlessly with Office to provide an effici
 
 Office applications follow a general set of interaction guidelines. The apps share content and have elements that look and behave similarly. This commonality is built on a set of design principles. The principles help the Office team create interfaces that support customers’ tasks. Understanding and following them will help you support your customers’ goals inside of Office.
 
-Follow the Office design principles to create positive add-in experiences. 
+Follow the Office design principles to create positive add-in experiences:
+ 
 
 - **Design explicitly for Office.** The functionality, look and feel of an add-in must harmoniously complement the Office experience. Add-ins should feel native. They should fit seamlessly into Word on an iPad or PowerPoint Online. A well-designed add-in will be an appropriate blend of your experience, the platform and the Office application. Consider using Office UI Fabric as your design language. Apply document and UI theming where appropriate.
 - **Focus on a few key tasks; do them well.** Help customers get one job done without getting in the way of other jobs. Provide real value to customers. Focus on common use cases, pick carefully those that benefit users most when interacting with Office documents.
