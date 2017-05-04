@@ -1,10 +1,10 @@
-# Create a Node.js Office Add-in that uses Single Sign-on (preview)
+# Create a Node.js Office Add-in that uses single sign-on (preview)
 
-Users can sign into Office, and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign-on a second time. For an overview, see [Single Sign-on to Office, your Office Web Add-in, and Microsoft Graph (preview)](../../docs/develop/sso-in-office-add-ins.md) .
+Users can sign into Office, and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign-on a second time. For an overview, see [Enable SSO in an Office Add-in](../../docs/develop/sso-in-office-add-ins.md) .
 
-This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with NodeJS and express. 
+This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with Node.js and express. 
 
-> Note: For a similar article about an ASP.NET-based add-in, see [Create an ASP.NET Office Add-in that uses Single Sign-on](../../docs/develop/create-sso-office-add-ins-aspnet.md).
+> **Note:** For a similar article about an ASP.NET-based add-in, see [Create an ASP.NET Office Add-in that uses single sign-on](../../docs/develop/create-sso-office-add-ins-aspnet.md).
 
 ## Prerequisites
 
@@ -13,12 +13,12 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 * TypeScript version 2.2.2 or later.
 * Office 2016, Version 1704,  build 8027.nnnn or later. (The Office 365 subscription version, sometimes called “Click to Run”.)  You many need to be an Office Insider to obtain this version. For more information, see [Be an Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1) .
 
-## Setup the starter project
+## Set up the starter project
 
 1. Clone or download the repo at [Office Add-in NodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso). 
 
 
-    > Note: There are two versions of the sample. 
+    > **Note:** There are two versions of the sample. 
     > 
     > * The **Before** folder is a starter project. The UI and other aspects of the add-in that are not directly connected to SSO or authorization are already done. Later sections of this article walk you through the process of completing it. 
     > * The **Completed** version of the sample is just like the add-in that you would have if you completed the procedures of this article, except that the completed project has code comments that would be redundant with the text of this article. To use the completed version, just follow the instructions in this article, but replace "Before" with "Completed" and skip the sections **Code the client side** and **Code the server** side.
@@ -105,7 +105,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
-    >Note: Leave the other parameters in the `AuthModule` constructor unchanged.
+    > **Note:** Leave the other parameters in the `AuthModule` constructor unchanged.
 
 1. Save and close the file.
 
@@ -408,7 +408,7 @@ There are two ways to build and run the project depending on whether you are usi
 
 ## Test the add-in
 
-> Note: The preview version of the `getAccessTokenAsync` API only supports work or school (Office 365) identities. *If you are signed into Office with a personal identity (Microsoft Account), sign out before preceding.* To test the add-in, you must be either signed out entirely from Office, or signed in with a work or school account.
+> **Note:** The preview version of the `getAccessTokenAsync` API only supports work or school (Office 365) identities. *If you are signed into Office with a personal identity (Microsoft Account), sign out before preceding.* To test the add-in, you must be either signed out entirely from Office, or signed in with a work or school account.
 
 1. Make sure you have some files or folders in your OneDrive for Business account.
 
