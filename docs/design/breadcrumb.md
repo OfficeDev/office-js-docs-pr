@@ -1,6 +1,6 @@
-# Breadcrumb Component in Office UI Fabric
+# Breadcrumb component in Office UI Fabric
 
-In add-ins, breadcrumbs are used as a navigational aid. They indicate the current page’s location within a hierarchy and help the user understand where they are in relation to the rest of that hierarchy. They also afford one-click access to higher hierarchy levels.
+In add-ins, breadcrumbs are used as a navigational aid. They indicate the current page’s location within a hierarchy and help the user understand where they are in relation to the rest of that hierarchy. They also provice one-click access to higher hierarchy levels.
   
 #### Example: Breadcrumb on a task pane
 
