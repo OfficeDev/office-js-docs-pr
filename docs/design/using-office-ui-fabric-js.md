@@ -3,16 +3,16 @@
 
 Office UI Fabric is a JavaScript front-end framework for building user experiences for Office and Office 365. If you build an add-in using JavaScript only, without using a framework like Angular or React, consider using Fabric JS to create your user experience. For more information, see [Office UI Fabric JS](https://dev.office.com/fabric-js).
 
-The following steps walk you through the basics of using Fabric JS.  
+This article walks you through the basics of using Fabric JS.  
 
-## 1. Add the Fabric CDN references
+## Add the Fabric CDN references
 To reference Fabric from the CDN, add the following HTML code to your page.
 
     <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css">
     <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.components.min.css">
     <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/js/fabric.min.js"></script>
 
-## 2. Use Fabric JS UX components
+## Use Fabric JS UX components
 
 Fabric JS provides several UX components, like buttons or checkboxes, that you can use in your add-in. The following is a list of the Fabric JS UX components that we recommend for use in an add-in. To use one of the Fabric components in your add-in, follow the link to the Fabric documentation, and then follow the instructions in **Using this component**. 
 
@@ -51,7 +51,7 @@ If you're looking for an end-to-end code sample that shows you how to use Fabric
 - [Excel Sales Tracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) 
 
 ## Related resources
-If you're looking for code samples or documentation on a previous release of Fabric, see the following:
+If you're looking for code samples or documentation about a previous release of Fabric, see the following:
 
 - [UX design patterns (uses Fabric 2.6.1)](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code) 
 - [Office Add-in Fabric UI sample (uses Fabric 1.0)](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample) 
