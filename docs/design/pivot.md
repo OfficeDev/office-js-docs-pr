@@ -4,7 +4,7 @@ In Add-ins, Pivot control, “Tab pattern” are used for quick navigation to fr
   
 #### Example: Pivot on a task pane
 
-![An image showing the Pivot](../images/overview_withApp_pivot.png)
+![An image showing the Pivot](../../images/overview_withApp_pivot.png)
 
 ## Best Practices
 
@@ -20,8 +20,8 @@ In Add-ins, Pivot control, “Tab pattern” are used for quick navigation to fr
 
 |**Variation**|**Description**|**Example**|
 |:------------|:--------------|:----------|
-|**Basic Example**|Use when as the default pivot option.|![Basic Example image](../images/pivotBasic.png)|
-|**Links of Tab Style**|Use when tab style pivot buttons are preferred.|![Links of Tab Style image](../images/pivotTab.png)|
+|**Basic Example**|Use when as the default pivot option.|![Basic Example image](../../images/pivotBasic.png)|
+|**Links of Tab Style**|Use when tab style pivot buttons are preferred.|![Links of Tab Style image](../../images/pivotTab.png)|
 
 ## Implementation
 

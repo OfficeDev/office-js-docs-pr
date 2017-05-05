@@ -4,14 +4,14 @@ In add-ins, breadcrumbs are used as a navigational aid. They indicate the curren
   
 #### Example: Breadcrumb on a task pane
 
-![An image showing the Breadcrumb](../images/overview_withApp_breadcrumb.png)
+![An image showing the Breadcrumb](../../images/overview_withApp_breadcrumb.png)
 
 ## Best Practices
 
 |**Do**|**Don't**|
 |:------------|:--------------|
 |Place Breadcrumbs at the top of a layout in an add-in, above a list of items or above the main content of a layout.|Don’t use Breadcrumbs as a primary way to navigate to other related pages.|
-|![Do Breadcrumb image](../images/breadcrumbDo.png)|![Don't Breadcrumb image](../images/breadcrumbDont.png)|
+|![Do Breadcrumb image](../../images/breadcrumbDo.png)|![Don't Breadcrumb image](../../images/breadcrumbDont.png)|
 
 ## Implementation
 

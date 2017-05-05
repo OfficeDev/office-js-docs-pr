@@ -6,14 +6,14 @@ For example, use buttons for the user to submit a form, to close a dialog box, o
   
 **Example: Buttons on a task pane**
 
-![An image showing the Button](../images/overview_withApp_button.png)
+![An image showing the Button](../../images/overview_withApp_button.png)
 
 ## Best Practices
 
 |**Do**|**Don't**|
 |:-----|:--------|
 |Default buttons should always perform safe operations in add-ins.|Don’t place the default focus on a button that destroys data. Instead, place it on the button that performs the “safe act” and retains the content or cancels the action.|
-|![Do Button example](../images/buttonDo.png)|![Don't Button example](../images/buttonDont.png)|
+|![Do Button example](../../images/buttonDo.png)|![Don't Button example](../../images/buttonDont.png)|
 
 |**Do**|**Don't**|
 |:-----|:--------|
@@ -26,9 +26,9 @@ For example, use buttons for the user to submit a form, to close a dialog box, o
 
 |**Variation**|**Description**|**Example**|
 |:------------|:--------------|:----------|
-|**Primary Button**|Inherits theme color at rest state. Use this as the main call to action.|![Primary Button image](../images/button_primary.png)|
-|**Default Button**|Default button should always perform safe operations and should never delete.|![Default Button image](../images/button_default.png)|
-|**Compound Button**|Used to cause actions that complete a task or cause a transitional task.|![Compound Button image](../images/button_compound.png)|
+|**Primary Button**|Inherits theme color at rest state. Use this as the main call to action.|![Primary Button image](../../images/button_primary.png)|
+|**Default Button**|Default button should always perform safe operations and should never delete.|![Default Button image](../../images/button_default.png)|
+|**Compound Button**|Used to cause actions that complete a task or cause a transitional task.|![Compound Button image](../../images/button_compound.png)|
 
 ## Implementation
 

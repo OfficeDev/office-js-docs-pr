@@ -1,10 +1,10 @@
 # Content Office Add-ins
- 
+
 Content add-ins are surfaces that can be embedded directly into Word, Excel, or PowerPoint documents. Content add-ins allow users to utilize interface controls that run code to modify documents or display data from a data source for example. Content add-ins should be utilized when embedding functionality directly into the document is needed and/or wanted.  
 
 **Example: Content add-in**
 
-![An example image displaying a typical layout for content add-ins.](../images/overview_withApp_content.png)
+![An example image displaying a typical layout for content add-ins.](../../images/overview_withApp_content.png)
 
 ### Best Practices
 
@@ -16,9 +16,10 @@ Content add-ins are surfaces that can be embedded directly into Word, Excel, or 
 ### Variants
 
 Office 2016 Desktop & Office 365 Online Content Add-in Sizes:
-* Excel: User specified
-* PowerPoint: User specified
-* Word: User specified
+
+- Excel: User specified
+- PowerPoint: User specified
+- Word: User specified
 
 ### Personality Menu
 
@@ -26,11 +27,11 @@ Office 2016 Desktop & Office 365 Online Content Add-in Sizes:
 
 **Windows:** The personality menu measures 12x32 pixels.
 
-![Image showing the personality meny on Windows Desktop](../images/personalityMenu_Win.png)
+![Image showing the personality meny on Windows Desktop](../../images/personalityMenu_Win.png)
 
 **Mac:** The personality menu measures 26x26 pixels but floats 8 pixels in from the right and 6 pixels from the top increasing the occupied space to 34x32 pixels.
 
-![Image showing the personality meny on Mac Desktop](../images/personalityMenu_Mac.png)
+![Image showing the personality meny on Mac Desktop](../../images/personalityMenu_Mac.png)
 
 ## Implementation
 
@@ -38,6 +39,7 @@ For details, see [Office Add-ins platform overview](https://dev.office.com/docs/
 
 ## Additional resources
 
-* [UX Pattern Sample](https://office.visualstudio.com/DefaultCollection/OC/_git/GettingStarted-FabricReact)
-* [GitHub Development Resources](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+- [UX Pattern Sample](https://office.visualstudio.com/DefaultCollection/OC/_git/GettingStarted-FabricReact)
+- [GitHub Development Resources](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+
 

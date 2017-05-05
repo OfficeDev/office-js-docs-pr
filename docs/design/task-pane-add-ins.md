@@ -4,7 +4,7 @@ Task Panes are interface surfaces typically docked to the right side of the wind
 
 **Example: Task pane**
 
-![Image displaying a typical task pane layout](../images/overview_withApp_taskPane.png)
+![Image displaying a typical task pane layout](../../images/overview_withApp_taskPane.png)
 
 ### Best Practices
 
@@ -21,11 +21,11 @@ Task Panes are interface surfaces typically docked to the right side of the wind
 
 **Office 2016 Desktop Task Pane Sizes**
 
-![Image displaying the desktop Task Pane sizes at 1366x768](../images/addinTaskpaneSizes_desktop.png)
+![Image displaying the desktop Task Pane sizes at 1366x768](../../images/addinTaskpaneSizes_desktop.png)
 
 **Office 365 Online Task Pane Sizes**
 
-![Image displaying the desktop Task Pane sizes at 1366x768](../images/addinTaskpaneSizes_online.png)
+![Image displaying the desktop Task Pane sizes at 1366x768](../../images/addinTaskpaneSizes_online.png)
 
 ### Personality Menu
 
@@ -33,11 +33,11 @@ Task Panes are interface surfaces typically docked to the right side of the wind
 
 **Windows:** The personality menu measures 12x32 pixels.
 
-![Image showing the personality meny on Windows Desktop](../images/personalityMenu_Win.png)
+![Image showing the personality meny on Windows Desktop](../../images/personalityMenu_Win.png)
 
 **Mac:** The personality menu measures 26x26 pixels but floats 8 pixels in from the right and 6 pixels from the top increasing the space to 34x32 pixels.
 
-![Image showing the personality meny on Mac Desktop](../images/personalityMenu_Mac.png)
+![Image showing the personality meny on Mac Desktop](../../images/personalityMenu_Mac.png)
 
 ## Implementation
 
@@ -45,6 +45,7 @@ For details, see [Office Add-ins platform overview](https://dev.office.com/docs/
 
 ## Additional resources
 
-* [UX Pattern Sample](https://office.visualstudio.com/DefaultCollection/OC/_git/GettingStarted-FabricReact)
-* [GitHub Development Resources](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+- [UX Pattern Sample](https://office.visualstudio.com/DefaultCollection/OC/_git/GettingStarted-FabricReact)
+- [GitHub Development Resources](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+
 

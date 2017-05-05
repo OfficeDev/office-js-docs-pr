@@ -4,7 +4,7 @@ The TextField component in add-in enables a user to type text. It's typically us
   
 #### Example: TextField on a task pane
 
-![An image showing the Textfield](../images/overview_withApp_textField.png)
+![An image showing the Textfield](../../images/overview_withApp_textField.png)
 
 ## Best Practices
 
@@ -21,11 +21,11 @@ The TextField component in add-in enables a user to type text. It's typically us
 
 |**Variation**|**Description**|**Example**|
 |:------------|:--------------|:----------|
-|**Default TextField**|Use as the default textfield.|![Default TextField image](../images/textfieldDefault.png)|
-|**Disabled TextField**|Use when the textfield is inaccessable.|![Disabled TextField image](../images/textfieldDisabled.png)|
-|**Required TextField**|Use when the textfield input is required.|![Required TextField image](../images/textfieldRequired.png)|
-|**TextField with a placeholder**|Use when placeholder text is needed.|![TextField with a placeholder image](../images/textfieldPlaceholder.png)|
-|**TextField with a placeholder**|Use when many lines of text are needed.|![TextField with a placeholder image](../images/textfieldMulti.png)|
+|**Default TextField**|Use as the default textfield.|![Default TextField image](../../images/textfieldDefault.png)|
+|**Disabled TextField**|Use when the textfield is inaccessable.|![Disabled TextField image](../../images/textfieldDisabled.png)|
+|**Required TextField**|Use when the textfield input is required.|![Required TextField image](../../images/textfieldRequired.png)|
+|**TextField with a placeholder**|Use when placeholder text is needed.|![TextField with a placeholder image](../../images/textfieldPlaceholder.png)|
+|**TextField with a placeholder**|Use when many lines of text are needed.|![TextField with a placeholder image](../../images/textfieldMulti.png)|
 
 ## Implementation
 
