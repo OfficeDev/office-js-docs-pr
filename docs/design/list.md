@@ -4,7 +4,7 @@ List provides a consistent layout to interact with collections. Using List allow
   
 #### Example: List on a task pane
 
-![An image showing the List](../images/overview_withApp_list.png)
+![An image showing the List](../../images/overview_withApp_list.png)
 
 ## Best Practices
 
@@ -17,8 +17,8 @@ List provides a consistent layout to interact with collections. Using List allow
 
 |**Variation**|**Description**|**Example**|
 |:------------|:--------------|:----------|
-|**Grid List**|Use when detailed information is needed with each list item.|![Grid List image](../images/list.png)|
-|**Variable height item list**|Use when large imagery and text is needed.|![Variable height item List image](../images/listGrid.png)|
+|**Grid List**|Use when detailed information is needed with each list item.|![Grid List image](../../images/list.png)|
+|**Variable height item list**|Use when large imagery and text is needed.|![Variable height item List image](../../images/listGrid.png)|
 
 ## Implementation
 

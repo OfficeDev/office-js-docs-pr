@@ -4,7 +4,7 @@ In Add-ins, label is used as a name or title to a component or group of componen
   
 #### Example: Label on a task pane
 
-![An image showing the Label](../images/overview_withApp_label.png)
+![An image showing the Label](../../images/overview_withApp_label.png)
 
 ## Best Practices
 
@@ -18,9 +18,9 @@ In Add-ins, label is used as a name or title to a component or group of componen
 
 |**Variation**|**Description**|**Example**|
 |:------------|:--------------|:----------|
-|**Default label**|Use for standard labeling.|![Default Label image](../images/label.png)|
-|**Disabled label**|Use when the associated component is disabled.|![Disabled Label image](../images/labelDisabled.png)|
-|**Required label**|Use when the associated component is required.|![Required Label image](../images/labelRequired.png)|
+|**Default label**|Use for standard labeling.|![Default Label image](../../images/label.png)|
+|**Disabled label**|Use when the associated component is disabled.|![Disabled Label image](../../images/labelDisabled.png)|
+|**Required label**|Use when the associated component is required.|![Required Label image](../../images/labelRequired.png)|
 
 ## Implementation
 

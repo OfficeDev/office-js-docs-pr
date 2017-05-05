@@ -4,7 +4,7 @@ Dialog boxes are surfaces that float above the active Office application window.
 
 **Example: Dialog box**
 
-![An example image displaying a typical layout for a dialog.](../images/overview_withApp_dialog.png)
+![An example image displaying a typical layout for a dialog.](../../images/overview_withApp_dialog.png)
 
 ### Best Practices
 
@@ -19,6 +19,7 @@ For details, see [Dialog object](https://dev.office.com/reference/add-ins/shared
 
 ## Additional resources
 
-* [UX Pattern Sample](https://office.visualstudio.com/DefaultCollection/OC/_git/GettingStarted-FabricReact)
-* [GitHub Development Resources](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+- [UX Pattern Sample](https://office.visualstudio.com/DefaultCollection/OC/_git/GettingStarted-FabricReact)
+- [GitHub Development Resources](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+
 
