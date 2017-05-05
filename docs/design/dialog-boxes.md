@@ -10,7 +10,7 @@ Dialog boxes are surfaces that float above the active Office application window.
 
 |**Do**|**Don't**|
 |:-----|:--------|
-|Include a descriptive title that includes your add-in name along with the current task at hand.|Don't append your company name to the title.|
+|Include a descriptive title that includes your add-in name along with the current task.|Don't append your company name to the title.|
 | |Don't open a dialog box unless the schenario requires it.| 
 
 ## Implementation
