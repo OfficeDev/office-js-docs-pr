@@ -21,12 +21,12 @@ Segoe is the standard typeface for Office. Use it in your add-in to align with O
 
 |Sample |Class |Size |Weight |Recommended Usage |
 |------ |----- |---- |------ |----------------- |
-|img |.ms-font-xxl |28 px | Segoe Light |<ul><li>This class is larger than all other typographic elements in Office. Use it sparingly to avoid unseating visual hierarchy.</li><li>Avoid use on long strings in constrained spaces.</li><li>Provide ample whitespace around text using this class.</li><li>Commonly used for first run messages, hero elements, or other calls to action.</li></ul> |
-| img |.ms-font-xl |21 px |Segoe Light | <ul><li>This class matches the task pane title of Office applications.</li><li>Use it sparingly to avoid a flat typographic hierarchy.</li><li>Commonly used as the top-level element such as dialog box, page, or content titles.</li><li></ul> |
-|img |.ms-font-l |17 px |Segoe Semilight | <ul><li>This class is the first stop below titles.</li><li>Commonly used as a subtitle, navigation element, or group header.</li><ul> |
-|img |.ms-font-m |14 px |Segoe Regular |*Commonly used as body text within add-ins. |
-|img |.ms-font-xs |11 px | Segoe Regular |*Commonly used for secondary or tertiary text such as timestamps, by lines, captions, or field labels. |
-|img |.ms-font-mi |10 px |Segoe Semibold |*The smallest step in the type ramp should be used rarely. It's available for circumstances where legibility is not required. |
+|![Hero Text Image](../../images/add-in-typeramp-hero.png)|.ms-font-xxl |28 px | Segoe Light |<ul><li>This class is larger than all other typographic elements in Office. Use it sparingly to avoid unseating visual hierarchy.</li><li>Avoid use on long strings in constrained spaces.</li><li>Provide ample whitespace around text using this class.</li><li>Commonly used for first run messages, hero elements, or other calls to action.</li></ul> |
+|![Hero Text Image](../../images/add-in-typeramp-title.png)|.ms-font-xl |21 px |Segoe Light | <ul><li>This class matches the task pane title of Office applications.</li><li>Use it sparingly to avoid a flat typographic hierarchy.</li><li>Commonly used as the top-level element such as dialog box, page, or content titles.</li><li></ul> |
+|![Hero Text Image](../../images/add-in-typeramp-subtitle.png)|.ms-font-l |17 px |Segoe Semilight | <ul><li>This class is the first stop below titles.</li><li>Commonly used as a subtitle, navigation element, or group header.</li><ul> |
+|![Hero Text Image](../../images/add-in-typeramp-body.png)|.ms-font-m |14 px |Segoe Regular |*Commonly used as body text within add-ins. |
+|![Hero Text Image](../../images/add-in-typeramp-caption.png)|.ms-font-xs |11 px | Segoe Regular |*Commonly used for secondary or tertiary text such as timestamps, by lines, captions, or field labels. |
+|![Hero Text Image](../../images/add-in-typeramp-annotation.png)|.ms-font-mi |10 px |Segoe Semibold |*The smallest step in the type ramp should be used rarely. It's available for circumstances where legibility is not required. |
 > Text color is not included in these base classes. Use Fabric's "neutral primary" for most text on white backgrounds.
 
 ## Color
