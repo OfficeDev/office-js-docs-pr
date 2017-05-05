@@ -103,11 +103,12 @@ The following is a list of the Fabric React UX components that we recommend for 
 > **Note:** We will add additional components over time. 
 
 - [Breadcrumb](breadcrumb.md)
-- [Button](buttons.md)
+- [Button](button.md)
 - [Checkbox](checkbox.md)
 - [ChoiceGroup](choicegroup.md)
 - [Dropdown](dropdown.md)
 - [Label](label.md)
+- [List](list.md)
 - [Pivot](pivot.md)
 - [TextField](textfield.md)
 - [Toggle](toggle.md)
