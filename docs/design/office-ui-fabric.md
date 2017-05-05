@@ -25,16 +25,16 @@ To find more icons that are available in Office UI Fabric, use the search featur
 
 For information about font sizes and colors that are available in Office UI Fabric, see [Typography](https://dev.office.com/fabric#/styles/typography) and [Colors](https://dev.office.com/fabric#/styles/colors).
  
-## Using Fabric Components 
-Fabric provides a variety of UX components that you can use to build your add-in. There are various types of components including:
+## Use Fabric Components 
+Fabric provides a variety of UX components that you can use to build your add-in, including the following types of components:
 
-- Input components, for example Button, Checkbox, and Toggle.
-- Navigation components, for example Pivot, and Breadcrumb.
-- Notification components, for example MessageBar, and Callout.  
+- Input components - for example, Button, Checkbox, and Toggle
+- Navigation components - for example, Pivot Breadcrumb
+- Notification components - for example, MessageBar and Callout  
 
-Not all Fabric components are recommended for use in add-ins. We provide guidance on using Fabric components in add-ins. For example, see [Button](buttons.md) for guidance on using a Fabric Button in your add-in. 
+Not all Fabric components are recommended for use in add-ins. We provide guidance for how you can use the recommended components in this section. For example, for guidance for using a Fabric button in your add-in, see [Button](button.md). 
 
-You may use different JavaScript frameworks, such as Angular or React, to build your add-in. To get started using Fabric components with your framework, see the following resources.
+You can use different JavaScript frameworks, such as Angular or React, to build your add-in. To get started using Fabric components with your framework, see the following resources.
 
 |**Framework**|**Example**|
 |:------------|:----------|
