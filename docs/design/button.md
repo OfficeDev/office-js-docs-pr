@@ -4,7 +4,7 @@ Use buttons in your Office Add-in to enable a user to commit a change or complet
 
 For example, use buttons for the user to submit a form, to close a dialog box, or to move to the next settings screen to commit changes.
   
-**Example: Buttons on a task pane**
+#### Example: Buttons on a task pane
 
 ![An image showing the Button](../images/overview_withApp_button.png)
 
@@ -18,9 +18,9 @@ For example, use buttons for the user to submit a form, to close a dialog box, o
 |**Do**|**Don't**|
 |:-----|:--------|
 |Use only a single line of text in the label of the button.|Don’t put too much text in a button – try keep text to a minimum.|
-|Make sure the label conveys a clear purpose of the button to the user. Use concise, specific, self-explanatory labels, usually a single word.|Don’t use a button to navigate to another place apart from “Back” and “Next” buttons, use a link instead.|
+|Make sure the label conveys a clear purpose of the button to the user. Use concise, specific, self-explanatory labels, usually a single word.|Don’t use a button to navigate to another place apart from “Back” and “Next” buttons; use a link instead.|
 |Expose only one or two buttons to the user at a time. For example, “Accept” and “Cancel”. If you need to expose more actions to the user, consider using checkboxes or radio buttons from which the user can select actions, with a single command button to trigger those actions.|Don’t put anything other than text in a button.|
-|“Submit”, “OK”, and “Apply” buttons should always be styled as primary buttons. When “Reset” or “Cancel” buttons appear alongside one of the above, they should be styled as default buttons.| |
+|“Submit”, “OK”, and “Apply” buttons should always be styled as primary buttons. When “Reset” or “Cancel” buttons appear alongside one of these, they should be styled as default buttons.| |
 
 ## Variants
 
