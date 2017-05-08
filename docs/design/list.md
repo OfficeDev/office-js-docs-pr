@@ -1,17 +1,17 @@
-# List Component in Office UI Fabric
+# List component in Office UI Fabric
 
-List provides a consistent layout to interact with collections. Using List allows user to easily scan through a large collection of content. It is agnostic of layout, the tile component used, and selection management. These concerns can be layered separately. Use List to display content collections, particularly content that is text-heavy.
+Lists provide a consistent layout when interacting with large collections of content, even when the content is text-heavy. Lists allows users to easily scan through content. 
   
-#### Example: List on a task pane
+#### Example: List in a task pane
 
-![An image showing the List](../../images/overview_withApp_list.png)
+![An image showing a List](../../images/overview_withApp_list.png)
 
 ## Best Practices
 
 |**Do**|**Don't**|
 |:------------|:--------------|
-|End each entry with a period if all entries are complete sentences, if one or more of the entries contains both a fragment and a complete sentence that offers additional information, or if the entries all complete the introductory sentence or fragment.| |
-|Consecutive lists on a page should be separated by a heading.| |
+|End each list item with a period if all entries are complete sentences, one or more of the list items contain both a fragment and a complete sentence, or if all list items complete the introductory sentence or fragment.| |
+|Separate consecutive lists on a page by using headings.| |
 
 ## Variants
 
@@ -22,8 +22,9 @@ List provides a consistent layout to interact with collections. Using List allow
 
 ## Implementation
 
-For details, see [List](https://dev.office.com/fabric#/components/list) on the Office UI Fabric website.
+For details, see [List](https://dev.office.com/fabric#/components/list) and [Getting started with Fabric React code sample](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact).
 
-## Additional Resources
-* [UX Pattern Sample](https://office.visualstudio.com/DefaultCollection/OC/_git/GettingStarted-FabricReact)
-* [GitHub Development Resources](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+## Additional resources
+
+* [UX design patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+* [Office UI Fabric in Office Add-ins](office-ui-fabric.md)
