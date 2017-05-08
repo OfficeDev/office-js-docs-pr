@@ -6,7 +6,7 @@ Task Panes are interface surfaces that typically appear on the right side of the
 
 ![Image displaying a typical task pane layout](../../images/overview_withApp_taskPane.png)
 
-### Best Practices
+## Best practices
 
 |**Do**|**Don't**|
 |:-----|:--------|
@@ -15,7 +15,7 @@ Task Panes are interface surfaces that typically appear on the right side of the
 |<ul><li>Include some navigational or commanding element such as the CommandBar or Pivot at the top of your add-in.</li></ul>||
 |<ul><li>Include a branding element such as the BrandBar at the bottom of your add-in unless your add-in is to be used within Outlook.</li></ul>||
 
-### Variants
+## Variants
 
 The following images show the various task pane sizes with the Office ribbon at a 1366x768 resolution. For Excel, additional vertical space is required to accommodate the formula bar.  
 
@@ -37,7 +37,7 @@ The following images show the various task pane sizes with the Office ribbon at 
 - Word - 329x445
 - Outlook Web App - 320x570
 
-### Personality menu
+## Personality menu
 
 Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac.
 
