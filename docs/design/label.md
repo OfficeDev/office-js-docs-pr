@@ -1,6 +1,6 @@
 # Label component in Office UI Fabric
 
-Use Labels to name or title to a component or group of components. When paired with another component or group of components, Labels should be in close proximity to the related components or groups. Some components have predefined labels, such as a Dropdown or Toggle.
+Use Labels to name or title a component or group of components. When paired with another component or group of components, Labels should be in close proximity to the related components or groups. Some components have predefined labels, such as a Dropdown or Toggle.
   
 #### Example: Label in a task pane
 
