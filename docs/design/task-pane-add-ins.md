@@ -11,7 +11,7 @@ Task Panes are interface surfaces that typically appear on the right side of the
 |**Do**|**Don't**|
 |:-----|:--------|
 |<ul><li>Include the name of your add-in in the title.</li></ul>|<ul><li>Don't append your company name to the title.</li></ul>|
-|<ul><li>Use short descriptive names in the title.</li></ul>|Don't append strings such as “Add-in,” “For Word,” or “for Office” to the title of your add-in.</li></ul>|
+|<ul><li>Use short descriptive names in the title.</li></ul>|<ul><li>Don't append strings such as “Add-in,” “For Word,” or “for Office” to the title of your add-in.</li></ul>|
 |<ul><li>Include some navigational or commanding element such as the CommandBar or Pivot at the top of your add-in.</li></ul>||
 |<ul><li>Include a branding element such as the BrandBar at the bottom of your add-in unless your add-in is to be used within Outlook.</li></ul>||
 
@@ -43,10 +43,13 @@ Personality menus can obstruct navigational and commanding elements located near
 
 For Windows, the personality menu measures 12x32 pixels, as shown.
 
+**Personality menu on Windows**
+
 ![Image showing the personality menu on Windows desktop](../../images/personalityMenu_Win.png)
 
 For Mac, the personality menu measures 26x26 pixels, but floats 8 pixels in from the right and 6 pixels from the top, which increases the space to 34x32 pixels, as shown.
 
+**Personality menu on Windows**
 ![Image showing the personality menu on Mac desktop](../../images/personalityMenu_Mac.png)
 
 <!-- 
