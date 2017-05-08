@@ -34,7 +34,7 @@ For Mac, the personality menu measures 26x26 pixels, but floats 8 pixels in from
 
 ## Implementation
 
-For details, see [Office Add-ins platform overview](https://dev.office.com/docs/add-ins/overview/office-add-ins) on the Microsoft Dev Center website.
+For a sample that implements a content add-in, see [Excel Content Add-in Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance/compare/master) in GitHub.
 
 ## Additional resources
 
