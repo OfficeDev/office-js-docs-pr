@@ -1,30 +1,22 @@
-# SearchOptions object (JavaScript API for Word)
+# SearchOptions Object (JavaScript API for Word)
+
+_Word 2016, Word for iPad, Word for Mac, Word Online_
 
 Specifies the options to be included in a search operation.
 
-_Applies to: Word 2016, Word for iPad, Word for Mac, Word Online_
-
 ## Properties
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|ignorePunct|bool|Gets or sets a value that indicates whether to ignore all punctuation characters between words. Corresponds to the Ignore punctuation check box in the Find and Replace dialog box.|
-|ignoreSpace|bool|Gets or sets a value that indicates whether to ignore all white space between words. Corresponds to the Ignore white-space characters check box in the Find and Replace dialog box.|
-|matchCase|bool|Gets or sets a value that indicates whether to perform a case sensitive search. Corresponds to the Match case check box in the Find and Replace dialog box (Edit menu).|
-|matchPrefix|bool|Gets or sets a value that indicates whether to match words that begin with the search string. Corresponds to the Match prefix check box in the Find and Replace dialog box.|
-|matchSoundsLike|bool|**This option was deprecated in the June 2016 update**. Gets or sets a value that indicates whether to find words that sound similar to the search string. Corresponds to the Sounds like check box in the Find and Replace dialog box|
-|matchSuffix|bool|Gets or sets a value that indicates whether to match words that end with the search string. Corresponds to the Match suffix check box in the Find and Replace dialog box.|
-|matchWholeWord|bool|Gets or sets a value that indicates whether to find operation only entire words, not text that is part of a larger word. Corresponds to the Find whole words only check box in the Find and Replace dialog box.|
-|matchWildCards|bool|Gets or sets a value that indicates whether the search will be performed using special search operators. Corresponds to the Use wildcards check box in the Find and Replace dialog box. See Wildcard Guidance below for important information about using this option.|
+
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|ignorePunct|bool|Gets or sets a value that indicates whether to ignore all punctuation characters between words. Corresponds to the Ignore punctuation check box in the Find and Replace dialog box.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|ignoreSpace|bool|Gets or sets a value that indicates whether to ignore all whitespace between words. Corresponds to the Ignore whitespace characters check box in the Find and Replace dialog box.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|matchCase|bool|Gets or sets a value that indicates whether to perform a case sensitive search. Corresponds to the Match case check box in the Find and Replace dialog box (Edit menu).|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|matchPrefix|bool|Gets or sets a value that indicates whether to match words that begin with the search string. Corresponds to the Match prefix check box in the Find and Replace dialog box.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|matchSuffix|bool|Gets or sets a value that indicates whether to match words that end with the search string. Corresponds to the Match suffix check box in the Find and Replace dialog box.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|matchWholeWord|bool|Gets or sets a value that indicates whether to find operation only entire words, not text that is part of a larger word. Corresponds to the Find whole words only check box in the Find and Replace dialog box.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|matchWildcards|bool|Gets or sets a value that indicates whether the search will be performed using special search operators. Corresponds to the Use wildcards check box in the Find and Replace dialog box.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
-
-Search options are optional. The search options should be specified in all search methods by using an object literal:
-
-```js
-    search('searchstring', {searchOption1:bool, ...searchOptionN:bool}
-```
-
-You can provide one or more search option properties in the object literal to specify search options. 
 
 ## Relationships
 None
@@ -32,11 +24,12 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
-## Method details
+## Method Details
+
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -48,15 +41,15 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
+### Property access examples
 
-## Property access examples
+*Ignore punctuation search*
 
-### Ignore punctuation search
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -92,7 +85,8 @@ Word.run(function (context) {
 });
 ```
 
-### Search based on a prefix
+*Search based on a prefix*
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -128,7 +122,8 @@ Word.run(function (context) {
 });
 ```
 
-### Search based on a suffix
+*Search based on a suffix*
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -164,7 +159,8 @@ Word.run(function (context) {
 });
 ```
 
-### Search using a wildcard
+*Search using a wildcard*
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -202,7 +198,7 @@ Word.run(function (context) {
 ```
 
 
-## Wildcard Guidance 
+*Wildcard Guidance*
 
 | To find:         | Wildcard |  Sample |
 |:-----------------|:--------|:----------|
@@ -217,10 +213,3 @@ Word.run(function (context) {
 |At least n occurrences of the previous character or expression|{n,} |fe{1,}d finds fed and feed.|
 |From n to m occurrences of the previous character or expression|{n,m} |10{1,3} finds 10, 100, and 1000.|
 |One or more occurrences of the previous character or expression|@ |lo@t finds lot and loot.|
-
-### Escaping the special characters
-
-Wildcard search is essentially the same as searching on a regular expression. There are special characters in regular expressions, including '[', ']', '(', ')', '{', '}', '\*', '?', '<', '>', '!', and '@'. If one of these characters is part of the literal string the code is searching for, then it needs to be escaped, so that Word knows it should be treated literally and not as part of the logic of the regular expression. To escape a character in the Word UI search, you would precede it with a '\' character, but to escape it programmatically, put it between '[]' characters. For example, '[\*]\*' searches for any string that begins with a '\*' followed by any number of other characters. 
-
-## Support details
-Use the [requirement set](../office-add-in-requirement-sets.md) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).

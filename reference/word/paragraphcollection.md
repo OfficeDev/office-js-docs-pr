@@ -1,13 +1,14 @@
-# ParagraphCollection object (JavaScript API for Word)
+# ParagraphCollection Object (JavaScript API for Word)
+
+_Word 2016, Word for iPad, Word for Mac, Word Online_
 
 Contains a collection of [paragraph](paragraph.md) objects.
 
-_Applies to: Word 2016, Word for iPad, Word for Mac, Word Online_
-
 ## Properties
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.|
+
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Relationships
 None
@@ -15,11 +16,89 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[getFirst()](#getfirst)|[Paragraph](paragraph.md)|Gets the first paragraph in this collection. Throws if the collection is empty.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getFirstOrNullObject()](#getfirstornullobject)|[Paragraph](paragraph.md)|Gets the first paragraph in this collection. Returns a null object if the collection is empty.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getItem(index: number)](#getitemindex-number)|[Paragraph](paragraph.md)|Gets a paragraph object by its index in the collection.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[getLast()](#getlast)|[Paragraph](paragraph.md)|Gets the last paragraph in this collection. Throws if the collection is empty.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getLastOrNullObject()](#getlastornullobject)|[Paragraph](paragraph.md)|Gets the last paragraph in this collection. Returns a null object if the collection is empty.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
-## Method details
+## Method Details
+
+
+### getFirst()
+Gets the first paragraph in this collection. Throws if the collection is empty.
+
+#### Syntax
+```js
+paragraphCollectionObject.getFirst();
+```
+
+#### Parameters
+None
+
+#### Returns
+[Paragraph](paragraph.md)
+
+### getFirstOrNullObject()
+Gets the first paragraph in this collection. Returns a null object if the collection is empty.
+
+#### Syntax
+```js
+paragraphCollectionObject.getFirstOrNullObject();
+```
+
+#### Parameters
+None
+
+#### Returns
+[Paragraph](paragraph.md)
+
+### getItem(index: number)
+Gets a paragraph object by its index in the collection.
+
+#### Syntax
+```js
+paragraphCollectionObject.getItem(index);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|index|number|A number that identifies the index location of a paragraph object.|
+
+#### Returns
+[Paragraph](paragraph.md)
+
+### getLast()
+Gets the last paragraph in this collection. Throws if the collection is empty.
+
+#### Syntax
+```js
+paragraphCollectionObject.getLast();
+```
+
+#### Parameters
+None
+
+#### Returns
+[Paragraph](paragraph.md)
+
+### getLastOrNullObject()
+Gets the last paragraph in this collection. Returns a null object if the collection is empty.
+
+#### Syntax
+```js
+paragraphCollectionObject.getLastOrNullObject();
+```
+
+#### Parameters
+None
+
+#### Returns
+[Paragraph](paragraph.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -31,49 +110,8 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
-
-#### Examples
-```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-    
-    // Create a proxy object for the paragraphs collection.
-    var paragraphs = context.document.body.paragraphs;
-    
-    // Queue a commmand to load the text and style properties for all of the paragraphs.
-    context.load(paragraphs, 'text, style');
-    
-    // Synchronize the document state by executing the queued commands, 
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-        
-        // Queue a command to get the last paragraph and create a 
-        // proxy paragraph object.
-        var paragraph = paragraphs.items[paragraphs.items.length - 1]; 
-        
-        // Queue a command to select the paragraph. The Word UI will 
-        // move to the selected paragraph.
-        paragraph.select();
-        
-        // Synchronize the document state by executing the queued commands, 
-        // and return a promise to indicate task completion.
-        return context.sync().then(function () {
-            console.log('Selected the last paragraph.');
-        });      
-    });  
-})
-.catch(function (error) {
-    console.log('Error: ' + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
-
-## Support details
-Use the [requirement set](../office-add-in-requirement-sets.md) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).
