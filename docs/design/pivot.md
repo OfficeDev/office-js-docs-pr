@@ -1,6 +1,6 @@
 # Pivot component in Office UI Fabric
 
-Pivots provide quick navigation to frequently accessed content. Pivots allow for navigation between two or more content views. Text headers specify which content is in each section of the pivot. Content in each section of the pivot may belong to distinct content categories. In Office Add-ins, use the Pivot control with tab styles. The tabs may use a combination of icons and text to communicate the type of content that tab contains. 
+Pivots provide quick navigation to frequently accessed content. Pivots allow for navigation between two or more content views. Text headers specify which content is in each section of the Pivot. Content in each section of the Pivot may belong to distinct content categories. In Office Add-ins, use the Pivot control with tab styles. The tabs may use a combination of icons and text to communicate the type of content that tab contains. 
 
 #### Example: Pivot in a task pane
 
@@ -11,10 +11,10 @@ Pivots provide quick navigation to frequently accessed content. Pivots allow for
 |**Do**|**Don't**|
 |:------------|:--------------|
 |Navigation labels should be concise, ideally using only one or two words rather than a phrase.|Don’t use full sentences or complex punctuation, such as colons or semicolons.|
-|Persist pivot headers on-screen even if another tab is selected.| |
-|Limit pivot controls to 3-5 tabs.| |
-|Use pivots as navigational elements close to the top of the page. Don't mix pivots into page content.| |
-|Use pivots on content-heavy pages that require a significant amount of scrolling.| |
+|Persist Pivot headers on-screen even if another tab is selected.| |
+|Limit Pivot controls to 3-5 tabs.| |
+|Use Pivots as navigational elements close to the top of the page. Don't mix Pivots into page content.| |
+|Use Pivots on content-heavy pages that require a significant amount of scrolling.| |
 
 ## Variants
 
