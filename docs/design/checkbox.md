@@ -1,39 +1,34 @@
-# Checkbox Component in Office UI Fabric
+# Checkbox component in Office UI Fabric
 
-A Checkbox is a UI element that allows users to select or deselect actions items in add-in. It is used to switch between two mutually exclusive options through a single click and to indicate a subordinate setting or preference when paired with another control.
-
-The control has two selection states: unselected and selected.
+A checkbox is a UI element that allows users to check or uncheck options in add-ins. Use checkboxes to allow users to select between options. Additionally, a checkbox may be paired with a related control. When the checkbox is checked or unchecked, the behavior of the related control changes. For example, the related control may toggle between the visible or hidden states.
   
-#### Example: Checkbox on a task pane
+#### Example: Checkbox in a task pane
 
-![An image showing the Checkbox](../../images/overview_withApp_checkbox.png)
+![An image showing a Checkbox](../../images/overview_withApp_checkbox.png)
 
 ## Best Practices
 
 |**Do**|**Don't**|
 |:------------|:--------------|
-|Use Checkbox to indicate a status.|Don’t use Checkbox to show/indicate an action.|
-|![Do Checkbox example](../../images/checkboxDo.png)|![Don't Checkbox example](../../images/checkboxDont.png)|
-
-|**Do**|**Don't**|
-|:------------|:--------------|
-|Use multiple Checkboxes for multi-select scenarios in which a user chooses one or more items from a group of choices that are not mutually exclusive.|Don’t use a Checkbox when the user can choose only one option from the group, use radio buttons instead.|
-|Allow users to choose any combination of options when several Checkboxes are grouped together.|Don't put two groups of Checkboxes next to each other. Separate the two groups with labels.|
-|Use a single Checkbox for a subordinate setting, such as with a “remember me?” login scenario with a terms of service agreement.|Don’t use checkbox as an on/off, instead use a toggle switch.|
+|Use checkboxes to indicate status.|Don’t use checkboxes to show/indicate an action.|
+|![Do checkbox example](../../images/checkboxDo.png)|![Don't checkbox example](../../images/checkboxDont.png)|
+|Use multiple checkboxes when users can select multiple options, and the options are not mutually exclusive.|Don’t use a checkbox when users can choose only one option. Use radio buttons when selecting only one option is required.|
+|Allow users to choose any combination of options when several checkboxes are grouped together.|Don't put two groups of checkboxes next to each other. Separate the two groups with labels.|
+|Use a single checkbox for a secondary setting. For example, the “Remember me?” checkbox is a secondary setting used in a login scenario.|Don’t use checkboxes to turn settings on and off. To change between an on and off state, use a Toggle.|
 
 ## Variants
 
 |**Variation**|**Description**|**Example**|
 |:------------|:--------------|:----------|
-|**Uncontrolled checkbox**|Use as the default Checkbox state.|![Uncontrolled Checkbox image](../../images/checkbox_unchecked.png)|
-|**Uncontrolled checkbox with default checked true**|Use when the Checkbox instance is to maintain its own state|![Uncontrolled Checkbox with default checked true image](../../images/checkbox_checked.png)|
+|**Uncontrolled checkbox**|Use as the default checkbox state.|![Uncontrolled Checkbox image](../../images/checkbox_unchecked.png)|
+|**Uncontrolled checkbox with default checked true**|Use when the checkbox instance maintains its own state|![Uncontrolled Checkbox with default checked true image](../../images/checkbox_checked.png)|
 |**Disabled uncontrolled checkbox with default checked true**|Disabled state of the checkbox.|![Disabled uncontrolled Checkbox with default checked true image](../../images/checkbox_disabled.png)|
-|**Controlled checkbox**|Use when the checked state is at a higher level and you plan to pass in the correct value based on handling onChange events and re-rendering.|![Controlled Checkbox image](../../images/checkbox_unchecked.png)|
+|**Controlled checkbox**|The checked state of this checkbox is decided at another location in your UI. In this scenario, the correct value is passed to the checkbox by an onChange event and re-rendering the UI.|![Controlled Checkbox image](../../images/checkbox_unchecked.png)|
 
 ## Implementation
 
-For details, see [Checkbox](https://dev.office.com/fabric#/components/checkbox) on the Office UI Fabric website.
+For details, see [Checkbox](https://dev.office.com/fabric#/components/checkbox) and [Getting started with Fabric React code sample](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact).
 
 ## Additional Resources
-* [UX Pattern Sample](https://office.visualstudio.com/DefaultCollection/OC/_git/GettingStarted-FabricReact)
-* [GitHub Development Resources](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+* [UX design patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+* [Office UI Fabric in Office Add-ins](office-ui-fabric.md)

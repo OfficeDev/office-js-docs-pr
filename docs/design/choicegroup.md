@@ -1,26 +1,21 @@
-# ChoiceGroup Component in Office UI Fabric
+# ChoiceGroup component in Office UI Fabric
 
-In Add-ins, the ChoiceGroup component present users with two or more mutually exclusive options.
-
-Each option is represented by one ChoiceGroup button; a user can select only one ChoiceGroup in a button group. It is also known as “radio buttons.”
+The ChoiceGroup component, also known as a radio button, presents users with two or more mutually exclusive options. Users can select only one ChoiceGroup button in a group. Each option is represented by one ChoiceGroup button. 
   
-#### Example: ChoiceGroup on a task pane
+#### Example: ChoiceGroup in a task pane
 
-![An image showing the ChoiceGroup](../../images/overview_withApp_choicegroup.png)
+![An image showing a ChoiceGroup](../../images/overview_withApp_choicegroup.png)
 
 ## Best Practices
 
 |**Do**|**Don't**|
 |:------------|:--------------|
-|Keep all the ChoiceGroup options at the same level.|Don't nest with other ChoiceGroup or CheckBoxes.|
+|Keep ChoiceGroup options at the same level.|Don't use nested ChoiceGroups or CheckBoxes.|
 |![Do ChoiceGroup example](../../images/choiceDo.png)|![Don't ChoiceGroup example](../../images/choiceDont.png)|
-
-|**Do**|**Don't**|
-|:------------|:--------------|
-|Use when there are 2-7 options. Make sure there’s enough screen space. Otherwise, use a Checkbox or Dropdown list.|Don’t use ChoiceGroup if there are more than 7 options. Use a Dropdown instead.|
-|If none of the options are a valid choice, add another option to reflect this choice, such as "None" or "Does not apply."|Don’t use two ChoiceGroup for a single binary choice.|
-|Align radio buttons vertically instead of horizontally, if possible. Horizontal alignment is harder to read and localize.|Don't use when the options are numbers that have fixed steps. Instead, use a slide component.|
-|List the options in a logical order, such as most likely to be selected to least, simplest operation to most complex, or least risk to most. Alphabetical ordering is not recommended because it is language dependent and therefore not localizable.| |
+|Use ChoiceGroups with 2-7 options, ensuring there is enough screen space to show all options. Otherwise, use a Checkbox or Dropdown.|Don't use when the options are numbers with a fixed step. For example 10, 20, 30, and so on. Instead, use a slider component.|
+|If users may not choose any of the options, consider including an option like "None" or "Does not apply".|Don’t use two ChoiceGroup buttons for a single binary choice.|
+|If possible, align ChoiceGroup buttons vertically instead of horizontally. Horizontal alignment is harder to read and localize.||
+|List options in logical order. For example, most likely option to be selected to least, simplest operation to most complex, or least risk to high risk. Alphabetical ordering is not recommended because it is language dependent.| |
 
 ## Variants
 
@@ -31,8 +26,8 @@ Each option is represented by one ChoiceGroup button; a user can select only one
 
 ## Implementation
 
-For details, see [ChoiceGroup](https://dev.office.com/fabric#/components/choicegroup) on the Office UI Fabric website.
+For details, see [ChoiceGroup](https://dev.office.com/fabric#/components/choicegroup) and [Getting started with Fabric React code sample](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact).
 
 ## Additional Resources
-* [UX Pattern Sample](https://office.visualstudio.com/DefaultCollection/OC/_git/GettingStarted-FabricReact)
-* [GitHub Development Resources](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+* [UX design patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+* [Office UI Fabric in Office Add-ins](office-ui-fabric.md)

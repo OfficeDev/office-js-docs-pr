@@ -1,8 +1,8 @@
-# Label Component in Office UI Fabric
+# Label component in Office UI Fabric
 
-In Add-ins, label is used as a name or title to a component or group of components. It should be in close proximity to the related component or group, they are paired with. Some components have labels incorporated, e.g. dropdown or toggle.
+Use Labels to name or title a component or group of components. When paired with another component or group of components, Labels should be in close proximity to the related components or groups. Some components have predefined labels, such as a Dropdown or Toggle.
   
-#### Example: Label on a task pane
+#### Example: Label in a task pane
 
 ![An image showing the Label](../../images/overview_withApp_label.png)
 
@@ -10,22 +10,23 @@ In Add-ins, label is used as a name or title to a component or group of componen
 
 |**Do**|**Don't**|
 |:------------|:--------------|
-|Use sentence casing, e.g. “First name.”|Don’t use title casing, e.g. “First Name.”|
-|Be short and concise.|Don’t use full sentences or complex punctuation (colons, semicolons, etc.).|
-|When adding a Label to components, use the text as a noun or short noun phrase.| |
+|Use sentence casing, for example “First name.”|Don’t use title casing, for example “First Name.”|
+|Be short and concise.|Don’t use full sentences or complex punctuation, such as colons or semicolons.|
+|When adding a Label to components, use a noun or short noun phrase as the Label text.| |
 
 ## Variants
 
 |**Variation**|**Description**|**Example**|
 |:------------|:--------------|:----------|
-|**Default label**|Use for standard labeling.|![Default Label image](../../images/label.png)|
-|**Disabled label**|Use when the associated component is disabled.|![Disabled Label image](../../images/labelDisabled.png)|
-|**Required label**|Use when the associated component is required.|![Required Label image](../../images/labelRequired.png)|
+|**Default label**|Use for standard labels.|![Default Label image](../../images/label.png)|
+|**Disabled label**|Use when the related component is disabled.|![Disabled Label image](../../images/labelDisabled.png)|
+|**Required label**|Use when the related component is required.|![Required Label image](../../images/labelRequired.png)|
 
 ## Implementation
 
-For details, see [Label](https://dev.office.com/fabric#/components/label) on the Office UI Fabric website.
+For details, see [Label](https://dev.office.com/fabric#/components/label) and [Getting started with Fabric React code sample](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact).
 
-## Additional Resources
-* [UX Pattern Sample](https://office.visualstudio.com/DefaultCollection/OC/_git/GettingStarted-FabricReact)
-* [GitHub Development Resources](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+## Additional resources
+
+* [UX design patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+* [Office UI Fabric in Office Add-ins](office-ui-fabric.md)
