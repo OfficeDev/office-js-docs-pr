@@ -213,3 +213,11 @@ Word.run(function (context) {
 |At least n occurrences of the previous character or expression|{n,} |fe{1,}d finds fed and feed.|
 |From n to m occurrences of the previous character or expression|{n,m} |10{1,3} finds 10, 100, and 1000.|
 |One or more occurrences of the previous character or expression|@ |lo@t finds lot and loot.|
+
+
+### Escaping the special characters
+
+Wildcard search is essentially the same as searching on a regular expression. There are special characters in regular expressions, including '[', ']', '(', ')', '{', '}', '\*', '?', '<', '>', '!', and '@'. If one of these characters is part of the literal string the code is searching for, then it needs to be escaped, so that Word knows it should be treated literally and not as part of the logic of the regular expression. To escape a character in the Word UI search, you would precede it with a '\' character, but to escape it programmatically, put it between '[]' characters. For example, '[\*]\*' searches for any string that begins with a '\*' followed by any number of other characters. 
+
+## Support details
+Use the [requirement set](../office-add-in-requirement-sets.md) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).
