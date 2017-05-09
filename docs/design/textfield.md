@@ -1,8 +1,8 @@
-# TextField Component in Office UI Fabric
+# TextField component in Office UI Fabric
 
-The TextField component in add-in enables a user to type text. It's typically used to capture a single line of text but can be configured to capture multiple lines of text. The text displays on the screen in a simple, uniform format.
+TextFields enable users to type text. It's typically used to capture a single line of text but can be configured to capture multiple lines of text. The text displays on the screen in a simple, uniform format.
   
-#### Example: TextField on a task pane
+#### Example: TextField in a task pane
 
 ![An image showing the Textfield](../../images/overview_withApp_textField.png)
 
@@ -11,26 +11,27 @@ The TextField component in add-in enables a user to type text. It's typically us
 |**Do**|**Don't**|
 |:------------|:--------------|
 |Use the TextField to accept data input on a form or page.|Don’t use a TextField to render basic copy as part of a body element of a page.|
-|Label the TextField with a helpful name.|Don’t provide an unlabeled TextField and expect that users will know what to do with it.|
-|Provide concise placeholder text that specifies what content is expected to be entered.|Don’t be overly verbose with placeholder text.|
-|Provide all appropriate states for the TextField (static, hover, focus, engaged, unavailable, error).|Don’t use a text-field if the valid input options can be pre-defined. Consider using a dropdown instead.|
-|Provide clear designations for which fields are required vs. optional.|Don’t use a text-field for date or time entry. Consider using a datetime picker instead.|
-|Whenever possible, format TextField relative to the expected entry (4-digit PIN, 10-digit phone number (3 separate fields), etc).|Don’t place a TextField inline with body copy.|
+|Label the TextField with a helpful name.|Don’t use a TextField for date or time entry. Instead, use a datetime picker.|
+|Use concise placeholder text to specify what content should be entered.|Don’t use TextFields if you can predefine valid input options. Instead, use a dropdown.|
+|Provide all appropriate states for the TextField (static, hover, focus, engaged, unavailable, error).||
+|Clearly mark required and optional fields.||
+|Whenever possible, format TextFields according to the expected data format. For example, when capturing a 10-digit phone number, use 3 separate fields to store the different parts of the phone number.||
 
 ## Variants
 
 |**Variation**|**Description**|**Example**|
 |:------------|:--------------|:----------|
 |**Default TextField**|Use as the default textfield.|![Default TextField image](../../images/textfieldDefault.png)|
-|**Disabled TextField**|Use when the textfield is inaccessable.|![Disabled TextField image](../../images/textfieldDisabled.png)|
+|**Disabled TextField**|Use when the textfield is disabled.|![Disabled TextField image](../../images/textfieldDisabled.png)|
 |**Required TextField**|Use when the textfield input is required.|![Required TextField image](../../images/textfieldRequired.png)|
 |**TextField with a placeholder**|Use when placeholder text is needed.|![TextField with a placeholder image](../../images/textfieldPlaceholder.png)|
-|**TextField with a placeholder**|Use when many lines of text are needed.|![TextField with a placeholder image](../../images/textfieldMulti.png)|
+|**TextField with multiple lines**|Use when many lines of text are needed.|![TextField with a placeholder image](../../images/textfieldMulti.png)|
 
 ## Implementation
 
-For details, see [TextField](https://dev.office.com/fabric#/components/textfield) on the Office UI Fabric website.
+For details, see [TextField](https://dev.office.com/fabric#/components/textfield) and [Getting started with Fabric React code sample](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact).
 
-## Additional Resources
-* [UX Pattern Sample](https://office.visualstudio.com/DefaultCollection/OC/_git/GettingStarted-FabricReact)
-* [GitHub Development Resources](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+## Additional resources
+
+* [UX design patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+* [Office UI Fabric in Office Add-ins](office-ui-fabric.md)
