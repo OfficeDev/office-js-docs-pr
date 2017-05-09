@@ -1,8 +1,8 @@
 # Toggle Component in Office UI Fabric
 
-In add-ins, Toggles represent a physical switch to turn things on or off. Use Toggles to present two mutually exclusive options (e.g. on/off), where choosing an option results in an immediate action.
+Toggles represent a physical switch to turn things on or off. Use Toggles to present two mutually exclusive options (e.g. on/off), where choosing an option results in an immediate action.
   
-#### Example: Toggle on a task pane
+#### Example: Toggle in a task pane
 
 ![An image showing the Toggle](../../images/overview_withApp_toggle.png)
 
@@ -10,12 +10,9 @@ In add-ins, Toggles represent a physical switch to turn things on or off. Use To
 
 |**Do**|**Don't**|
 |:------------|:--------------|
-|Use a Toggle for binary settings when changes become effective immediately after the user changes them.|Don’t use a Toggle if it requires users to perform an extra step for changes to take effect.|
+|Use a Toggle for binary settings when changes become effective immediately after the user changes them (see image below).|Don’t use a Toggle if it requires users to perform an extra step for changes to take effect (see image below).|
 |![Do Toggle example](../../images/toggleDo.png)|![Don't Toggle example](../../images/toggleDont.png)|
-
-|**Do**|**Don't**|
-|:------------|:--------------|
-|Only replace the On and Off labels if there are more specific labels for the setting. If there are short (3-4 characters) labels that represent binary opposites that are more appropriate for a particular setting, use them.| |
+|Only replace the On and Off labels if there are more specific labels to use for a setting. Use short (3-4 character) labels that represent binary opposites.| |
 
 ## Variants
 
@@ -28,8 +25,9 @@ In add-ins, Toggles represent a physical switch to turn things on or off. Use To
 
 ## Implementation
 
-For details, see [Toggle](https://dev.office.com/fabric#/components/toggle) on the Office UI Fabric website.
+For details, see [Toggle](https://dev.office.com/fabric#/components/toggle) and [Getting started with Fabric React code sample](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact).
 
-## Additional Resources
-* [UX Pattern Sample](https://office.visualstudio.com/DefaultCollection/OC/_git/GettingStarted-FabricReact)
-* [GitHub Development Resources](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+## Additional resources
+
+* [UX design patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+* [Office UI Fabric in Office Add-ins](office-ui-fabric.md)
