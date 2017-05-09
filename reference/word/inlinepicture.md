@@ -12,7 +12,6 @@ Represents an inline picture.
 |altTextTitle|string|Gets or sets a string that contains the title for the inline image.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 |height|float|Gets or sets a number that describes the height of the inline image.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 |hyperlink|string|Gets or sets a hyperlink on the image. Use a '#' to separate the address part from the optional location part.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|[imageFormat](enums.md)|string|Gets the format of the inline image. Read-only. Possible values are: Unsupported, Undefined, Bmp, Jpeg, Gif, Tiff, Png, Icon, Exif, Wmf, Emf, Pict, Pdf, Svg.|[1.4](../requirement-sets/word-api-requirement-sets.md)|
 |lockAspectRatio|bool|Gets or sets a value that indicates whether the inline image retains its original proportions when you resize it.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 |width|float|Gets or sets a number that describes the width of the inline image.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 

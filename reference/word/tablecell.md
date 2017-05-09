@@ -40,7 +40,6 @@ _See property access [examples.](#property-access-examples)_
 |[insertRows(insertLocation: string, rowCount: number, values: string[][])](#insertrowsinsertlocation-string-rowcount-number-values-string)|[TableRowCollection](tablerowcollection.md)|Inserts rows above or below the cell, using the cell's row as a template. The string values, if specified, are set in the newly inserted rows.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 |[setCellPadding(cellPaddingLocation: CellPaddingLocation, cellPadding: float)](#setcellpaddingcellpaddinglocation-cellpaddinglocation-cellpadding-float)|void|Sets cell padding in points.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|[split(rowCount: number, columnCount: number)](#splitrowcount-number-columncount-number)|void|Adds columns to the left or right of the cell, using the existing column as a template. The string values, if specified, are set in the newly inserted rows.|[1.4](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -198,23 +197,6 @@ tableCellObject.setCellPadding(cellPaddingLocation, cellPadding);
 |:---------------|:--------|:----------|:---|
 |cellPaddingLocation|CellPaddingLocation|Required. The cell padding location can be 'Top', 'Left', 'Bottom' or 'Right'.|
 |cellPadding|float|Required. The cell padding.|
-
-#### Returns
-void
-
-### split(rowCount: number, columnCount: number)
-Adds columns to the left or right of the cell, using the existing column as a template. The string values, if specified, are set in the newly inserted rows.
-
-#### Syntax
-```js
-tableCellObject.split(rowCount, columnCount);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|rowCount|number|Required. The number of rows to split into. Must be a divisor of the number of underlying rows.|
-|columnCount|number|Required. The number of columns to split into.|
 
 #### Returns
 void

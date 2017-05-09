@@ -18,15 +18,32 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|[add(key: string, value: object)](#addkey-string-value-object)|[CustomProperty](customproperty.md)|Creates a new or sets an existing custom property.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[deleteAll()](#deleteall)|void|Deletes all custom properties in this collection.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[getCount()](#getcount)|int|Gets the count of custom properties.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[getItem(key: string)](#getitemkey-string)|[CustomProperty](customproperty.md)|Gets a custom property object by its key, which is case-insensitive. Throws if the custom property does not exist.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[getItemOrNullObject(key: string)](#getitemornullobjectkey-string)|[CustomProperty](customproperty.md)|Gets a custom property object by its key, which is case-insensitive. Returns a null object if the custom property does not exist.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|[set(key: string, value: object)](#setkey-string-value-object)|[CustomProperty](customproperty.md)|Creates or sets a custom property.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details
 
+
+### add(key: string, value: object)
+Creates a new or sets an existing custom property.
+
+#### Syntax
+```js
+customPropertyCollectionObject.add(key, value);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|key|string|Required. The custom property's key, which is case-insensitive.|
+|value|object|Required. The custom property's value.|
+
+#### Returns
+[CustomProperty](customproperty.md)
 
 ### deleteAll()
 Deletes all custom properties in this collection.
@@ -103,20 +120,3 @@ object.load(param);
 
 #### Returns
 void
-
-### set(key: string, value: object)
-Creates or sets a custom property.
-
-#### Syntax
-```js
-customPropertyCollectionObject.set(key, value);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|key|string|Required. The custom property's key, which is case-insensitive.|
-|value|object|Required. The custom property's value.|
-
-#### Returns
-[CustomProperty](customproperty.md)

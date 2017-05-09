@@ -69,7 +69,6 @@ _See property access [examples.](#property-access-examples)_
 |[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])](#inserttablerowcount-number-columncount-number-insertlocation-string-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|[mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)](#mergecellstoprow-number-firstcell-number-bottomrow-number-lastcell-number)|[TableCell](tablecell.md)|Merges the cells bounded inclusively by a first and last cell.|[1.4](../requirement-sets/word-api-requirement-sets.md)|
 |[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[RangeCollection](rangecollection.md)|Performs a search with the specified searchOptions on the scope of the table object. The search results are a collection of range objects.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[select(selectionMode: string)](#selectselectionmode-string)|void|Selects the table, or the position at the start or end of the table, and navigates the Word UI to it.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[setCellPadding(cellPaddingLocation: CellPaddingLocation, cellPadding: float)](#setcellpaddingcellpaddinglocation-cellpaddinglocation-cellpadding-float)|void|Sets cell padding in points.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
@@ -434,25 +433,6 @@ object.load(param);
 
 #### Returns
 void
-
-### mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)
-Merges the cells bounded inclusively by a first and last cell.
-
-#### Syntax
-```js
-tableObject.mergeCells(topRow, firstCell, bottomRow, lastCell);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|topRow|number|Required. The row of the first cell|
-|firstCell|number|Required. The index of the first cell in its row|
-|bottomRow|number|Required. The row of the last cell|
-|lastCell|number|Required. The index of the last cell in its row|
-
-#### Returns
-[TableCell](tablecell.md)
 
 ### search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)
 Performs a search with the specified searchOptions on the scope of the table object. The search results are a collection of range objects.

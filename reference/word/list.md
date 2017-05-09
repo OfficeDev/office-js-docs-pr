@@ -23,38 +23,18 @@ _See property access [examples.](#property-access-examples)_
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getLevelFont(level: number)](#getlevelfontlevel-number)|[Font](font.md)|Gets the font of the bullet, number or picture at the specified level in the list.|[1.4](../requirement-sets/word-api-requirement-sets.md)|
 |[getLevelParagraphs(level: number)](#getlevelparagraphslevel-number)|[ParagraphCollection](paragraphcollection.md)|Gets the paragraphs that occur at the specified level in the list.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|[getLevelPicture(level: number)](#getlevelpicturelevel-number)|string|Gets the base64 encoded string representation of the picture at the specified level in the list.|[1.4](../requirement-sets/word-api-requirement-sets.md)|
 |[getLevelString(level: number)](#getlevelstringlevel-number)|string|Gets the bullet, number or picture at the specified level as a string.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|[resetLevelFont(level: number, resetFontName: bool)](#resetlevelfontlevel-number-resetfontname-bool)|void|Resets the font of the bullet, number or picture at the specified level in the list.|[1.4](../requirement-sets/word-api-requirement-sets.md)|
 |[setLevelAlignment(level: number, alignment: string)](#setlevelalignmentlevel-number-alignment-string)|void|Sets the alignment of the bullet, number or picture at the specified level in the list.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[setLevelBullet(level: number, listBullet: string, charCode: number, fontName: string)](#setlevelbulletlevel-number-listbullet-string-charcode-number-fontname-string)|void|Sets the bullet format at the specified level in the list. If the bullet is 'Custom', the charCode is required.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[setLevelIndents(level: number, textIndent: float, textIndent: float)](#setlevelindentslevel-number-textindent-float-textindent-float)|void|Sets the two indents of the specified level in the list.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[setLevelNumbering(level: number, listNumbering: string, formatString: object[])](#setlevelnumberinglevel-number-listnumbering-string-formatstring-object)|void|Sets the numbering format at the specified level in the list.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|[setLevelPicture(level: number, base64EncodedImage: string)](#setlevelpicturelevel-number-base64encodedimage-string)|void|Sets the picture at the specified level in the list.|[1.4](../requirement-sets/word-api-requirement-sets.md)|
 |[setLevelStartingNumber(level: number, startingNumber: number)](#setlevelstartingnumberlevel-number-startingnumber-number)|void|Sets the starting number at the specified level in the list. Default value is 1.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details
 
-
-### getLevelFont(level: number)
-Gets the font of the bullet, number or picture at the specified level in the list.
-
-#### Syntax
-```js
-listObject.getLevelFont(level);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|level|number|Required. The level in the list.|
-
-#### Returns
-[Font](font.md)
 
 ### getLevelParagraphs(level: number)
 Gets the paragraphs that occur at the specified level in the list.
@@ -71,22 +51,6 @@ listObject.getLevelParagraphs(level);
 
 #### Returns
 [ParagraphCollection](paragraphcollection.md)
-
-### getLevelPicture(level: number)
-Gets the base64 encoded string representation of the picture at the specified level in the list.
-
-#### Syntax
-```js
-listObject.getLevelPicture(level);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|level|number|Required. The level in the list.|
-
-#### Returns
-string
 
 ### getLevelString(level: number)
 Gets the bullet, number or picture at the specified level as a string.
@@ -133,23 +97,6 @@ object.load(param);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
-
-#### Returns
-void
-
-### resetLevelFont(level: number, resetFontName: bool)
-Resets the font of the bullet, number or picture at the specified level in the list.
-
-#### Syntax
-```js
-listObject.resetLevelFont(level, resetFontName);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|level|number|Required. The level in the list.|
-|resetFontName|bool|Optional. Optional. Indicates whether to reset the font name. Default is false that indicates the font name is kept unchanged.|
 
 #### Returns
 void
@@ -222,23 +169,6 @@ listObject.setLevelNumbering(level, listNumbering, formatString);
 |level|number|Required. The level in the list.|
 |listNumbering|string|Required. The ordinal format.  Possible values are: None, Arabic, UpperRoman, LowerRoman, UpperLetter, LowerLetter|
 |formatString|object[]|Optional. Optional. The numbering string format defined as an array of strings and/or integers. Each integer is a level of number type that is higher than or equal to this level. For example, an array of ["(", level - 1, ".", level, ")"] can define the format of "(2.c)", where 2 is the parent's item number and c is this level's item number.|
-
-#### Returns
-void
-
-### setLevelPicture(level: number, base64EncodedImage: string)
-Sets the picture at the specified level in the list.
-
-#### Syntax
-```js
-listObject.setLevelPicture(level, base64EncodedImage);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|level|number|Required. The level in the list.|
-|base64EncodedImage|string|Optional. Optional. The base64 encoded image to be set. If not given, the default picture is set.|
 
 #### Returns
 void

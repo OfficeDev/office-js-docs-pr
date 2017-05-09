@@ -40,7 +40,6 @@ Represents a contiguous area in a document.
 |[delete()](#delete)|void|Deletes the range and its content from the document.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 |[expandTo(range: Range)](#expandtorange-range)|[Range](range.md)|Returns a new range that extends from this range in either direction to cover another range. This range is not changed. Throws if the two ranges do not have a union.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[expandToOrNullObject(range: Range)](#expandtoornullobjectrange-range)|[Range](range.md)|Returns a new range that extends from this range in either direction to cover another range. This range is not changed. Returns a null object if the two ranges do not have a union.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|[getBookmarks(includeHidden: bool, includeAdjacent: bool)](#getbookmarksincludehidden-bool-includeadjacent-bool)|[string[]](string[].md)|Gets the names all bookmarks in or overlapping the range. A bookmark is hidden if its name starts with the underscore character.|[1.4](../requirement-sets/word-api-requirement-sets.md)|
 |[getHtml()](#gethtml)|string|Gets the HTML representation of the range object.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 |[getHyperlinkRanges()](#gethyperlinkranges)|[RangeCollection](rangecollection.md)|Gets hyperlink child ranges within the range.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[getNextTextRange(endingMarks: string[], trimSpacing: bool)](#getnexttextrangeendingmarks-string-trimspacing-bool)|[Range](range.md)|Gets the next text range by using punctuation marks andor other ending marks. Throws if this text range is the last one.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
@@ -48,7 +47,6 @@ Represents a contiguous area in a document.
 |[getOoxml()](#getooxml)|string|Gets the OOXML representation of the range object.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 |[getRange(rangeLocation: string)](#getrangerangelocation-string)|[Range](range.md)|Clones the range, or gets the starting or ending point of the range as a new range.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[getTextRanges(endingMarks: string[], trimSpacing: bool)](#gettextrangesendingmarks-string-trimspacing-bool)|[RangeCollection](rangecollection.md)|Gets the text child ranges in the range by using punctuation marks andor other ending marks.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|[insertBookmark(name: string)](#insertbookmarkname-string)|void|Inserts a bookmark on the range. If a bookmark of the same name exists somewhere, it is deleted first.|[1.4](../requirement-sets/word-api-requirement-sets.md)|
 |[insertBreak(breakType: string, insertLocation: string)](#insertbreakbreaktype-string-insertlocation-string)|void|Inserts a break at the specified location in the main document. The insertLocation value can be 'Before' or 'After'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the range object with a rich text content control.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 |[insertFileFromBase64(base64File: string, insertLocation: string)](#insertfilefrombase64base64file-string-insertlocation-string)|[Range](range.md)|Inserts a document at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
@@ -198,52 +196,6 @@ rangeObject.expandToOrNullObject(range);
 
 #### Returns
 [Range](range.md)
-
-### getBookmarks(includeHidden: bool, includeAdjacent: bool)
-Gets the names all bookmarks in or overlapping the range. A bookmark is hidden if its name starts with the underscore character.
-
-#### Syntax
-```js
-rangeObject.getBookmarks(includeHidden, includeAdjacent);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|includeHidden|bool|Optional. Optional. Indicates whether to include hidden bookmarks. Default is false which indicates that the hidden bookmarks are excluded.|
-|includeAdjacent|bool|Optional. Optional. Indicates whether to include bookmarks that are adjacent to the range. Default is false which indicates that the adjacent bookmarks are excluded.|
-
-#### Returns
-[string[]](string[].md)
-
-#### Examples
-
-```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-
-    // Queue commands to get the current selection, add a hidden
-    // bookmark (by starting the name with the "_" character), and
-    // then get the names of the bookmarks in the selection.
-    var selectedRange = context.document.getSelection();
-    selectedRange.insertBookmark("_MyHiddenBookmark");
-    var bookmarkNames = selectedRange.getBookmarks(true);
-
-    // Synchronize the document state by executing the queued commands,
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-        for (var i = 0; i < bookmarkNames.value.length; i++) {
-            console.log(bookmarkNames.value[i]);
-        }
-    });
-}).catch(function (error) {
-    console.log('Error: ' + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
-
 
 ### getHtml()
 Gets the HTML representation of the range object.
@@ -409,52 +361,6 @@ rangeObject.getTextRanges(endingMarks, trimSpacing);
 
 #### Returns
 [RangeCollection](rangecollection.md)
-
-### insertBookmark(name: string)
-Inserts a bookmark on the range. If a bookmark of the same name exists somewhere, it is deleted first.
-
-#### Syntax
-```js
-rangeObject.insertBookmark(name);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|name|string|Required. The bookmark name, which is case-insensitive. If the name starts with an underscore character, the bookmark is an hidden one.|
-
-#### Returns
-void
-
-#### Examples
-
-```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-
-    // Queue a command to get the current selection and then
-    // create a proxy range object with the results.
-    var range = context.document.getSelection();
-
-    // Queue a commmand to insert a bookmark for the range.
-    range.insertBookmark('MyBookmark');
-
-    // Synchronize the document state by executing the queued commands,
-    // and return a promise to indicate task completion.
-    return context.sync();
-
-        // To see the new bookmark in Word, on the Insert tab
-        // click the Bookmark button.
-
-})
-.catch(function (error) {
-    console.log('Error: ' + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
-
 
 ### insertBreak(breakType: string, insertLocation: string)
 Inserts a break at the specified location in the main document. The insertLocation value can be 'Before' or 'After'.
