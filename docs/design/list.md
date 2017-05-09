@@ -8,10 +8,11 @@ Lists provide a consistent layout when interacting with large collections of con
 
 ## Best Practices
 
-|**Do**|**Don't**|
-|:------------|:--------------|
-|End each list item with a period if all entries are complete sentences, or if all list items complete the introductory sentence or fragment.| |
-|Separate consecutive Lists on a page by using headings.| |
+- End each entry with a period if all entries are complete sentences, if:
+  - One or more of the entries contains both a fragment and a complete sentence that offers additional information.
+  - The entries all complete the introductory sentence or fragment.
+- Separate consecutive lists on a page with a heading.
+
 
 ## Variants
 
