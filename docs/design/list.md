@@ -1,6 +1,6 @@
 # List component in Office UI Fabric
 
-Lists provide a consistent layout when interacting with large collections of content, even when the content is text-heavy. Lists allows users to easily scan through content. 
+Lists provide a consistent layout when interacting with large collections of content, even when the content is text-heavy. Lists allow users to easily scan through content. 
   
 #### Example: List in a task pane
 
@@ -10,8 +10,8 @@ Lists provide a consistent layout when interacting with large collections of con
 
 |**Do**|**Don't**|
 |:------------|:--------------|
-|End each list item with a period if all entries are complete sentences, one or more of the list items contain both a fragment and a complete sentence, or if all list items complete the introductory sentence or fragment.| |
-|Separate consecutive lists on a page by using headings.| |
+|End each list item with a period if all entries are complete sentences, or if all list items complete the introductory sentence or fragment.| |
+|Separate consecutive Lists on a page by using headings.| |
 
 ## Variants
 

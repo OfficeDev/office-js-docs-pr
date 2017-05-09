@@ -1,6 +1,6 @@
 # Dropdown component in Office UI Fabric
 
-A Dropdown is a list of options which is shown by clicking a dropdown button. Use dropdowns to simplify the UI design, and when users should make a choice within the UI. After making a choice, only the selected item is visible and the list of options collapse. To change the selected item, users open the list, and select a new value.
+A Dropdown is a list of options which is shown by clicking a dropdown button. Use Dropdowns to simplify the UI design, and when users should make a choice within the UI. When the list collapses, the selected items is visible. To change the selected item, users open the list, and select a new value.
   
 #### Example: Dropdown in a task pane
 
@@ -10,8 +10,7 @@ A Dropdown is a list of options which is shown by clicking a dropdown button. Us
 
 |**Do**|**Don't**|
 |:------------|:--------------|
-|Use a Dropdown when the default selected option is more likely to be selected than other options. By contrast, ChoiceGroup or radio buttons show all choices thereby putting equal emphasis on all options.|Don't use dropdowns where all options are equally likely to be selected.|
-|![Do Dropdown example](../../images/dropdownDo.png)|![Don't Dropdown example](../../images/dropdownDont.png)|
+|Use a Dropdown when the default selected option is more likely to be selected than other options. By contrast, ChoiceGroup or radio buttons show all choices thereby putting equal emphasis on all options.|Don't use Dropdowns where all options are equally likely to be selected.|
 |Use a Dropdown when there are multiple choices that can be collapsed into one field. Also, use Dropdowns for long lists of items, or when screen space is constrained.|Don’t use Dropdowns if there are fewer than two choices. Instead, use a checkbox.|
 |Use shortened statements or words in Dropdowns.| |
 
