@@ -1,6 +1,6 @@
 # Pivot component in Office UI Fabric
 
-In Add-ins, Pivot control, “Tab pattern” are used for quick navigation to frequently accessed, distinct content categories. It allows for navigation between two or more content views and relies on text headers to articulate the different sections of content. Tabs are a visual variant of Pivot that use a combination of icons and text or just icons to articulate section content.
+Pivots provide quick navigation to frequently accessed content. Pivots allow for navigation between two or more content views. Text headers specify which content is in each section of the pivot. Content in each section of the pivot may belong to distinct content categories. In Office Add-ins, use the Pivot control with tab styles. The tabs may use a combination of icons and text to communicate the type of content that tab contains. 
 
 #### Example: Pivot in a task pane
 
