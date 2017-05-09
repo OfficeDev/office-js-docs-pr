@@ -10,7 +10,7 @@ Toggles represent a physical switch to turn things on or off. Use Toggles to pre
 
 |**Do**|**Don't**|
 |:------------|:--------------|
-|Use a Toggle for binary settings when changes are immediately applied (see image below).|Don’t use a Toggle if it requires users to perform an extra step for changes to take effect (see image below).|
+|Use a Toggle for binary settings when changes are immediately applied (see image below).|Don’t use a Toggle if users must perform an extra step before changes take effect (see image below).|
 |![Do Toggle example](../../images/toggleDo.png)|![Don't Toggle example](../../images/toggleDont.png)|
 |Only replace the On and Off labels if there are more specific labels to use for a setting. Use short (3-4 character) labels that represent binary opposites.| |
 
