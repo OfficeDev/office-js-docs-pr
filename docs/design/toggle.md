@@ -1,6 +1,6 @@
-# Toggle Component in Office UI Fabric
+# Toggle component in Office UI Fabric
 
-Toggles represent a physical switch to turn things on or off. Use Toggles to present two mutually exclusive options (e.g. on/off), where choosing an option results in an immediate action.
+Toggles represent a physical switch to turn things on or off. Use Toggles to present two mutually exclusive options (for example, on and off), where choosing an option results in an immediate action.
   
 #### Example: Toggle in a task pane
 
