@@ -10,9 +10,9 @@ TextFields enable users to type text. It's typically used to capture a single li
 
 |**Do**|**Don't**|
 |:------------|:--------------|
-|Use the TextField to accept data input on a form or page.|Don’t use a TextField to render basic copy as part of a body element of a page.|
-|Label the TextField with a helpful name.|Don’t use a TextField for date or time entry. Instead, use a datetime picker.|
-|Use concise placeholder text to specify what content should be entered.|Don’t use TextFields if you can predefine valid input options. Instead, use a dropdown.|
+|Use TextFields to accept data input on a form or page.|Don’t use TextFields to render basic copy as part of a body element of a page.|
+|Label TextFields with a helpful names.|Don’t use TextFields for date or time entry. Instead, use a Datetime picker.|
+|Use concise placeholder text to specify what content should be entered.|Don’t use TextFields if you can predefine valid input options. Instead, use a Dropdown.|
 |Provide all appropriate states for the TextField (static, hover, focus, engaged, unavailable, error).||
 |Clearly mark required and optional fields.||
 |Whenever possible, format TextFields according to the expected data format. For example, when capturing a 10-digit phone number, use 3 separate fields to store the different parts of the phone number.||
@@ -21,9 +21,9 @@ TextFields enable users to type text. It's typically used to capture a single li
 
 |**Variation**|**Description**|**Example**|
 |:------------|:--------------|:----------|
-|**Default TextField**|Use as the default textfield.|![Default TextField image](../../images/textfieldDefault.png)|
-|**Disabled TextField**|Use when the textfield is disabled.|![Disabled TextField image](../../images/textfieldDisabled.png)|
-|**Required TextField**|Use when the textfield input is required.|![Required TextField image](../../images/textfieldRequired.png)|
+|**Default TextField**|Use as the default Textfield.|![Default TextField image](../../images/textfieldDefault.png)|
+|**Disabled TextField**|Use when the Textfield is disabled.|![Disabled TextField image](../../images/textfieldDisabled.png)|
+|**Required TextField**|Use when the Textfield input is required.|![Required TextField image](../../images/textfieldRequired.png)|
 |**TextField with a placeholder**|Use when placeholder text is needed.|![TextField with a placeholder image](../../images/textfieldPlaceholder.png)|
 |**TextField with multiple lines**|Use when many lines of text are needed.|![TextField with a placeholder image](../../images/textfieldMulti.png)|
 
