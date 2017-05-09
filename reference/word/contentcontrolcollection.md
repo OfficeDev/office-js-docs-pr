@@ -1,13 +1,14 @@
-# ContentControlCollection object (JavaScript API for Word)
+# ContentControlCollection Object (JavaScript API for Word)
 
-Contains a collection of ContentControl objects. Content controls are bounded and potentially labeled regions in a document that serve as containers for specific types of content. Individual content controls may contain contents such as images, tables, or paragraphs of formatted text. Currently, only rich text content controls are supported.
+_Word 2016, Word for iPad, Word for Mac, Word Online_
 
-_Applies to: Word 2016, Word for iPad, Word for Mac, Word Online_
+Contains a collection of [contentControl](contentControl.md) objects. Content controls are bounded and potentially labeled regions in a document that serve as containers for specific types of content. Individual content controls may contain contents such as images, tables, or paragraphs of formatted text. Currently, only rich text content controls are supported.
 
 ## Properties
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|items|[ContentControl[]](contentcontrol.md)|A collection of contentControl objects. Read-only.|
+
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|items|[ContentControl[]](contentcontrol.md)|A collection of contentControl objects. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Relationships
 None
@@ -15,17 +16,23 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[getById(id: number)](#getbyidid-number)|[ContentControl](contentcontrol.md)|Gets a content control by its identifier.|
-|[getByTag(tag: string)](#getbytagtag-string)|[ContentControlCollection](contentcontrolcollection.md)|Gets the content controls that have the specified tag.|
-|[getByTitle(title: string)](#getbytitletitle-string)|[ContentControlCollection](contentcontrolcollection.md)|Gets the content controls that have the specified title.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[getById(id: number)](#getbyidid-number)|[ContentControl](contentcontrol.md)|Gets a content control by its identifier. Throws if there isn't a content control with the identifier in this collection.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[getByIdOrNullObject(id: number)](#getbyidornullobjectid-number)|[ContentControl](contentcontrol.md)|Gets a content control by its identifier. Returns a null object if there isn't a content control with the identifier in this collection.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getByTag(tag: string)](#getbytagtag-string)|[ContentControlCollection](contentcontrolcollection.md)|Gets the content controls that have the specified tag.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[getByTitle(title: string)](#getbytitletitle-string)|[ContentControlCollection](contentcontrolcollection.md)|Gets the content controls that have the specified title.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[getByTypes(types: ContentControlType[])](#getbytypestypes-contentcontroltype)|[ContentControlCollection](contentcontrolcollection.md)|Gets the content controls that have the specified types andor subtypes.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getFirst()](#getfirst)|[ContentControl](contentcontrol.md)|Gets the first content control in this collection. Throws if this collection is empty.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getFirstOrNullObject()](#getfirstornullobject)|[ContentControl](contentcontrol.md)|Gets the first content control in this collection. Returns a null object if this collection is empty.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getItem(index: number)](#getitemindex-number)|[ContentControl](contentcontrol.md)|Gets a content control by its index in the collection.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
-## Method details
+## Method Details
+
 
 ### getById(id: number)
-Gets a content control by its identifier.
+Gets a content control by its identifier. Throws if there isn't a content control with the identifier in this collection.
 
 #### Syntax
 ```js
@@ -41,6 +48,7 @@ contentControlCollectionObject.getById(id);
 [ContentControl](contentcontrol.md)
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -65,6 +73,87 @@ Word.run(function (context) {
 });
 ```
 
+
+#### Examples
+
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+
+	// Create a proxy object for the content control that contains a specific id.
+    var contentControl = context.document.contentControls.getByIdOrNullObject(30086310);
+
+    // Queue a command to load the text property for a content control.
+    context.load(contentControl, 'text');
+
+    // Synchronize the document state by executing the queued commands,
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        if (contentControl.isNullObject) {
+            console.log('There is no content control with that ID.')
+        } else {
+            console.log('The content control with that ID has been found in this document.');
+        }
+    });
+})
+.catch(function (error) {
+	console.log('Error: ' + JSON.stringify(error));
+	if (error instanceof OfficeExtension.Error) {
+		console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
+
+
+### getByIdOrNullObject(id: number)
+Gets a content control by its identifier. Returns a null object if there isn't a content control with the identifier in this collection.
+
+#### Syntax
+```js
+contentControlCollectionObject.getByIdOrNullObject(id);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|id|number|Required. A content control identifier.|
+
+#### Returns
+[ContentControl](contentcontrol.md)
+
+#### Examples
+
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+
+	// Create a proxy object for the content control that contains a specific id.
+    var contentControl = context.document.contentControls.getByIdOrNullObject(30086310);
+
+    // Queue a command to load the text property for a content control.
+    context.load(contentControl, 'text');
+
+    // Synchronize the document state by executing the queued commands,
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        if (contentControl.isNullObject) {
+            console.log('There is no content control with that ID.')
+        } else {
+            console.log('The content control with that ID has been found in this document.');
+        }
+    });
+})
+.catch(function (error) {
+	console.log('Error: ' + JSON.stringify(error));
+	if (error instanceof OfficeExtension.Error) {
+		console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
+
+
 ### getByTag(tag: string)
 Gets the content controls that have the specified tag.
 
@@ -82,6 +171,7 @@ contentControlCollectionObject.getByTag(tag);
 [ContentControlCollection](contentcontrolcollection.md)
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -111,8 +201,9 @@ Word.run(function (context) {
 });
 ```
 
-#### Additional information
+*Additional information*
 The [Word-Add-in-DocumentAssembly][contentControls.getByTag] sample has another example of using the getByTag method.
+
 
 
 ### getByTitle(title: string)
@@ -132,6 +223,7 @@ contentControlCollectionObject.getByTitle(title);
 [ContentControlCollection](contentcontrolcollection.md)
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -161,8 +253,102 @@ Word.run(function (context) {
 });
 ```
 
-#### Additional information
+*Additional information*
+
 The [Word-Add-in-DocumentAssembly][contentControls.getByTitle] sample has another example of using the getByTitle method.
+
+
+### getByTypes(types: ContentControlType[])
+Gets the content controls that have the specified types andor subtypes.
+
+#### Syntax
+```js
+contentControlCollectionObject.getByTypes(types);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|types|ContentControlType[]|Required. An array of content control types and/or subtypes.|
+
+#### Returns
+[ContentControlCollection](contentcontrolcollection.md)
+
+### getFirst()
+Gets the first content control in this collection. Throws if this collection is empty.
+
+#### Syntax
+```js
+contentControlCollectionObject.getFirst();
+```
+
+#### Parameters
+None
+
+#### Returns
+[ContentControl](contentcontrol.md)
+
+#### Examples
+
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+
+    // Create a proxy object for the first content control in the document.
+	var contentControl = context.document.contentControls.getFirstOrNullObject();
+
+    // Queue a command to load the text property for a content control.
+    context.load(contentControl, 'text');
+
+    // Synchronize the document state by executing the queued commands,
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        if (contentControl.isNullObject) {
+            console.log('There are no content controls in this document.')
+        } else {
+            console.log('The first content control has been found in this document.');
+        }
+    });
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
+
+
+
+### getFirstOrNullObject()
+Gets the first content control in this collection. Returns a null object if this collection is empty.
+
+#### Syntax
+```js
+contentControlCollectionObject.getFirstOrNullObject();
+```
+
+#### Parameters
+None
+
+#### Returns
+[ContentControl](contentcontrol.md)
+
+### getItem(index: number)
+Gets a content control by its index in the collection.
+
+#### Syntax
+```js
+contentControlCollectionObject.getItem(index);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|index|number|The index.|
+
+#### Returns
+[ContentControl](contentcontrol.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -181,6 +367,7 @@ object.load(param);
 void
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -247,11 +434,3 @@ Word.run(function (context) {
 ```
 
 The [Silly stories](https://aka.ms/sillystorywordaddin) add-in sample shows how the **load** method is used to load the content control collection with the **tag** and **title** properties.
-
-## Support details
-Use the [requirement set](../office-add-in-requirement-sets.md) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).
-
-
-[contentControls.getByTag]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L300 "get by tag"
-[contentControls.getByTitle]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L331 "get by title"
-

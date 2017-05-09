@@ -1,45 +1,70 @@
-# Range object (JavaScript API for Word)
+# Range Object (JavaScript API for Word)
+
+_Word 2016, Word for iPad, Word for Mac, Word Online_
 
 Represents a contiguous area in a document.
 
-_Applies to: Word 2016, Word for iPad, Word for Mac, Word Online_
-
 ## Properties
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|style|string|Gets or sets the style used for the range. This is the name of the preinstalled or custom style. In Word Online, if a style name only contains alphabetic characters, the style *must* be all lower case, except for the first character, which *must* be upper case. If the style contains at least one non-alphabetic character, it is matched against known styles regardless of case, and if multiple styles match, the last style defined is applied.|
-|text|string|Gets the text of the range. Read-only.|
+
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|hyperlink|string|Gets the first hyperlink in the range, or sets a hyperlink on the range. All hyperlinks in the range are deleted when you set a new hyperlink on the range. Use a '#' to separate the address part from the optional location part.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|isEmpty|bool|Checks whether the range length is zero. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|style|string|Gets or sets the style name for the range. Use this property for custom styles and localized style names. To use the built-in styles that are portable between locales, see the "styleBuiltIn" property.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[styleBuiltIn](enums.md)|string|Gets or sets the built-in style name for the range. Use this property for built-in styles that are portable between locales. To use custom styles or localized style names, see the "style" property. Possible values are: Other, Normal, Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, Heading7, Heading8, Heading9, Toc1, more...|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|text|string|Gets the text of the range. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Relationships
-| Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of content control objects that are in the range. Read-only.|
-|font|[Font](font.md)|Gets the text format of the range. Use this to get and set font name, size, color, and other properties. Read-only.|
-|inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Gets the collection of inlinePicture objects that are in the range. Read-only.|
-|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the collection of paragraph objects that are in the range. Read-only.|
-|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the range. Returns null if there isn't a parent content control. Read-only.|
+| Relationship | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of content control objects in the range. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|font|[Font](font.md)|Gets the text format of the range. Use this to get and set font name, size, color, and other properties. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Gets the collection of inline picture objects in the range. Read-only.|[1.2](../requirement-sets/word-api-requirement-sets.md)|
+|lists|[ListCollection](listcollection.md)|Gets the collection of list objects in the range. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the collection of paragraph objects in the range. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|parentBody|[Body](body.md)|Gets the parent body of the range. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the range. Throws if there isn't a parent content control. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|parentContentControlOrNullObject|[ContentControl](contentcontrol.md)|Gets the content control that contains the range. Returns a null object if there isn't a parent content control. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|parentTable|[Table](table.md)|Gets the table that contains the range. Throws if it is not contained in a table. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|parentTableCell|[TableCell](tablecell.md)|Gets the table cell that contains the range. Throws if it is not contained in a table cell. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|parentTableCellOrNullObject|[TableCell](tablecell.md)|Gets the table cell that contains the range. Returns a null object if it is not contained in a table cell. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|parentTableOrNullObject|[Table](table.md)|Gets the table that contains the range. Returns a null object if it is not contained in a table. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|tables|[TableCollection](tablecollection.md)|Gets the collection of table objects in the range. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[clear()](#clear)|void|Clears the contents of the range object. The user can perform the undo operation on the cleared content.|
-|[delete()](#delete)|void|Deletes the range and its content from the document.|
-|[getHtml()](#gethtml)|string|Gets the HTML representation of the range object.|
-|[getOoxml()](#getooxml)|string|Gets the OOXML representation of the range object.|
-|[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location. A break can only be inserted into range objects that are contained within the main document body, except if it is a line break which can be inserted into any body object. The insertLocation value can be 'Before' or 'After'.|
-|[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the range object with a rich text content control.|
-|[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Inserts a document into the range at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
-|[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts HTML into the range at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
-|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](#insertInlinePictureFromBase64base64EncodedImage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|Inserts a picture into the range at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.
-|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts OOXML or wordProcessingML into the range at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.|
-|[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserts a paragraph into the range at the specified location. The insertLocation value can be 'Before' or 'After'.|
-|[insertText(text: string, insertLocation: InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|Inserts text into the range at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
-|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the range object. The search results are a collection of range objects.|
-|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects and navigates the Word UI to the range. The selectionMode values can be 'Select', 'Start', or 'End'.|
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[clear()](#clear)|void|Clears the contents of the range object. The user can perform the undo operation on the cleared content.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[compareLocationWith(range: Range)](#comparelocationwithrange-range)|Enum string: [LocationRelation](enums.md)|Compares this range's location with another range's location.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[delete()](#delete)|void|Deletes the range and its content from the document.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[expandTo(range: Range)](#expandtorange-range)|[Range](range.md)|Returns a new range that extends from this range in either direction to cover another range. This range is not changed. Throws if the two ranges do not have a union.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[expandToOrNullObject(range: Range)](#expandtoornullobjectrange-range)|[Range](range.md)|Returns a new range that extends from this range in either direction to cover another range. This range is not changed. Returns a null object if the two ranges do not have a union.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getHtml()](#gethtml)|string|Gets the HTML representation of the range object.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[getHyperlinkRanges()](#gethyperlinkranges)|[RangeCollection](rangecollection.md)|Gets hyperlink child ranges within the range.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getNextTextRange(endingMarks: string[], trimSpacing: bool)](#getnexttextrangeendingmarks-string-trimspacing-bool)|[Range](range.md)|Gets the next text range by using punctuation marks andor other ending marks. Throws if this text range is the last one.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getNextTextRangeOrNullObject(endingMarks: string[], trimSpacing: bool)](#getnexttextrangeornullobjectendingmarks-string-trimspacing-bool)|[Range](range.md)|Gets the next text range by using punctuation marks andor other ending marks. Returns a null object if this text range is the last one.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getOoxml()](#getooxml)|string|Gets the OOXML representation of the range object.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[getRange(rangeLocation: string)](#getrangerangelocation-string)|[Range](range.md)|Clones the range, or gets the starting or ending point of the range as a new range.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getTextRanges(endingMarks: string[], trimSpacing: bool)](#gettextrangesendingmarks-string-trimspacing-bool)|[RangeCollection](rangecollection.md)|Gets the text child ranges in the range by using punctuation marks andor other ending marks.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[insertBreak(breakType: string, insertLocation: string)](#insertbreakbreaktype-string-insertlocation-string)|void|Inserts a break at the specified location in the main document. The insertLocation value can be 'Before' or 'After'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the range object with a rich text content control.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertFileFromBase64(base64File: string, insertLocation: string)](#insertfilefrombase64base64file-string-insertlocation-string)|[Range](range.md)|Inserts a document at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertHtml(html: string, insertLocation: string)](#inserthtmlhtml-string-insertlocation-string)|[Range](range.md)|Inserts HTML at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-string)|[InlinePicture](inlinepicture.md)|Inserts a picture at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.|[1.2](../requirement-sets/word-api-requirement-sets.md)|
+|[insertOoxml(ooxml: string, insertLocation: string)](#insertooxmlooxml-string-insertlocation-string)|[Range](range.md)|Inserts OOXML at the specified location.  The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])](#inserttablerowcount-number-columncount-number-insertlocation-string-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[insertText(text: string, insertLocation: string)](#inserttexttext-string-insertlocation-string)|[Range](range.md)|Inserts text at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[intersectWith(range: Range)](#intersectwithrange-range)|[Range](range.md)|Returns a new range as the intersection of this range with another range. This range is not changed. Throws if the two ranges are not overlapped or adjacent.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[intersectWithOrNullObject(range: Range)](#intersectwithornullobjectrange-range)|[Range](range.md)|Returns a new range as the intersection of this range with another range. This range is not changed. Returns a null object if the two ranges are not overlapped or adjacent.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[RangeCollection](rangecollection.md)|Performs a search with the specified searchOptions on the scope of the range object. The search results are a collection of range objects.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[select(selectionMode: string)](#selectselectionmode-string)|void|Selects and navigates the Word UI to the range.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[split(delimiters: string[], multiParagraphs: bool, trimDelimiters: bool, trimSpacing: bool)](#splitdelimiters-string-multiparagraphs-bool-trimdelimiters-bool-trimspacing-bool)|[RangeCollection](rangecollection.md)|Splits the range into child ranges by using delimiters.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 
-## Method details
+## Method Details
+
 
 ### clear()
 Clears the contents of the range object. The user can perform the undo operation on the cleared content.
@@ -56,6 +81,7 @@ None
 void
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -80,6 +106,23 @@ Word.run(function (context) {
     }
 });
 ```
+
+### compareLocationWith(range: Range)
+Compares this range's location with another range's location.
+
+#### Syntax
+```js
+rangeObject.compareLocationWith(range);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|range|Range|Required. The range to compare with this range.|
+
+#### Returns
+Enum string: [LocationRelation](enums.md)
+
 ### delete()
 Deletes the range and its content from the document.
 
@@ -95,6 +138,7 @@ None
 void
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -120,6 +164,39 @@ Word.run(function (context) {
 });
 ```
 
+
+### expandTo(range: Range)
+Returns a new range that extends from this range in either direction to cover another range. This range is not changed. Throws if the two ranges do not have a union.
+
+#### Syntax
+```js
+rangeObject.expandTo(range);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|range|Range|Required. Another range.|
+
+#### Returns
+[Range](range.md)
+
+### expandToOrNullObject(range: Range)
+Returns a new range that extends from this range in either direction to cover another range. This range is not changed. Returns a null object if the two ranges do not have a union.
+
+#### Syntax
+```js
+rangeObject.expandToOrNullObject(range);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|range|Range|Required. Another range.|
+
+#### Returns
+[Range](range.md)
+
 ### getHtml()
 Gets the HTML representation of the range object.
 
@@ -135,6 +212,7 @@ None
 string
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -160,6 +238,55 @@ Word.run(function (context) {
 });
 ```
 
+
+### getHyperlinkRanges()
+Gets hyperlink child ranges within the range.
+
+#### Syntax
+```js
+rangeObject.getHyperlinkRanges();
+```
+
+#### Parameters
+None
+
+#### Returns
+[RangeCollection](rangecollection.md)
+
+### getNextTextRange(endingMarks: string[], trimSpacing: bool)
+Gets the next text range by using punctuation marks andor other ending marks. Throws if this text range is the last one.
+
+#### Syntax
+```js
+rangeObject.getNextTextRange(endingMarks, trimSpacing);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|endingMarks|string[]|Required. The punctuation marks and/or other ending marks as an array of strings.|
+|trimSpacing|bool|Optional. Optional. Indicates whether to trim spacing characters (spaces, tabs, column breaks and paragraph end marks) from the start and end of the returned range. Default is false which indicates that spacing characters at the start and end of the range are included.|
+
+#### Returns
+[Range](range.md)
+
+### getNextTextRangeOrNullObject(endingMarks: string[], trimSpacing: bool)
+Gets the next text range by using punctuation marks andor other ending marks. Returns a null object if this text range is the last one.
+
+#### Syntax
+```js
+rangeObject.getNextTextRangeOrNullObject(endingMarks, trimSpacing);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|endingMarks|string[]|Required. The punctuation marks and/or other ending marks as an array of strings.|
+|trimSpacing|bool|Optional. Optional. Indicates whether to trim spacing characters (spaces, tabs, column breaks and paragraph end marks) from the start and end of the returned range. Default is false which indicates that spacing characters at the start and end of the range are included.|
+
+#### Returns
+[Range](range.md)
+
 ### getOoxml()
 Gets the OOXML representation of the range object.
 
@@ -175,6 +302,7 @@ None
 string
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -200,8 +328,42 @@ Word.run(function (context) {
 });
 ```
 
-### insertBreak(breakType: BreakType, insertLocation: InsertLocation)
-Inserts a break at the specified location. A break can only be inserted into range objects that are contained within the main document body, except if it is a line break which can be inserted into any body object. The insertLocation value can be 'Before' or 'After'.
+
+### getRange(rangeLocation: string)
+Clones the range, or gets the starting or ending point of the range as a new range.
+
+#### Syntax
+```js
+rangeObject.getRange(rangeLocation);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|rangeLocation|string|Optional. Optional. The range location can be 'Whole', 'Start', 'End', 'After' or 'Content'.  Possible values are: Whole, Start, End, Before, After, Content|
+
+#### Returns
+[Range](range.md)
+
+### getTextRanges(endingMarks: string[], trimSpacing: bool)
+Gets the text child ranges in the range by using punctuation marks andor other ending marks.
+
+#### Syntax
+```js
+rangeObject.getTextRanges(endingMarks, trimSpacing);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|endingMarks|string[]|Required. The punctuation marks and/or other ending marks as an array of strings.|
+|trimSpacing|bool|Optional. Optional. Indicates whether to trim spacing characters (spaces, tabs, column breaks and paragraph end marks) from the start and end of the ranges returned in the range collection. Default is false which indicates that spacing characters at the start and end of the ranges are included in the range collection.|
+
+#### Returns
+[RangeCollection](rangecollection.md)
+
+### insertBreak(breakType: string, insertLocation: string)
+Inserts a break at the specified location in the main document. The insertLocation value can be 'Before' or 'After'.
 
 #### Syntax
 ```js
@@ -211,16 +373,14 @@ rangeObject.insertBreak(breakType, insertLocation);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|breakType|BreakType|Required. The break type to add to the range.|
-|insertLocation|InsertLocation|Required. The value can be 'Before' or 'After'.|
+|breakType|string|Required. The break type to add. Possible values are: `Page` Page break at the insertion point.,`Column` Column break at the insertion point.,`Next` Section break on next page.,`SectionContinuous` New section without a corresponding page break.,`SectionEven` Section break with the next section beginning on the next even-numbered page. If the section break falls on an even-numbered page, Word leaves the next odd-numbered page blank.,`SectionOdd` Section break with the next section beginning on the next odd-numbered page. If the section break falls on an odd-numbered page, Word leaves the next even-numbered page blank.,`Line` Line break.,`LineClearLeft` Line break.,`LineClearRight` Line break.,`TextWrapping` Ends the current line and forces the text to continue below a picture, table, or other item. The text continues on the next blank line that does not contain a table aligned with the left or right margin.|
+|insertLocation|string|Required. The value can be 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 void
 
-#### Additional details
-With the exception of line breaks, you can not insert a break in header, footer, footnote, endnote, comment, and textbox objects.
-
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -246,6 +406,7 @@ Word.run(function (context) {
 });
 ```
 
+
 ### insertContentControl()
 Wraps the range object with a rich text content control.
 
@@ -261,6 +422,7 @@ None
 [ContentControl](contentcontrol.md)
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -293,8 +455,9 @@ Word.run(function (context) {
 });
 ```
 
-### insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
-Inserts a document into the range at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
+
+### insertFileFromBase64(base64File: string, insertLocation: string)
+Inserts a document at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.
 
 #### Syntax
 ```js
@@ -304,13 +467,14 @@ rangeObject.insertFileFromBase64(base64File, insertLocation);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|base64File|string|Required. The file base64 encoded file contents to be inserted.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start' or 'End'.|
+|base64File|string|Required. The base64 encoded content of a .docx file.|
+|insertLocation|string|Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [Range](range.md)
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -337,8 +501,9 @@ Word.run(function (context) {
 });
 ```
 
-### insertHtml(html: string, insertLocation: InsertLocation)
-Inserts HTML into the range at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
+
+### insertHtml(html: string, insertLocation: string)
+Inserts HTML at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.
 
 #### Syntax
 ```js
@@ -348,13 +513,14 @@ rangeObject.insertHtml(html, insertLocation);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|html|string|Required. The HTML to be inserted in the range.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start' or 'End'.|
+|html|string|Required. The HTML to be inserted.|
+|insertLocation|string|Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [Range](range.md)
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -380,23 +546,26 @@ Word.run(function (context) {
 });
 ```
 
-### insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
-Inserts a picture into the range at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.
+
+### insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)
+Inserts a picture at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.
 
 #### Syntax
-rangeObject.insertInlinePictureFromBase64(image, insertLocation);
+```js
+rangeObject.insertInlinePictureFromBase64(base64EncodedImage, insertLocation);
+```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|base64EncodedImage|string|Required. The base64 encoded image to be inserted in the range.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'.|
+|base64EncodedImage|string|Required. The base64 encoded image to be inserted.|
+|insertLocation|string|Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [InlinePicture](inlinepicture.md)
 
-### insertOoxml(ooxml: string, insertLocation: InsertLocation)
-Inserts OOXML or wordProcessingML into the range at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.
+### insertOoxml(ooxml: string, insertLocation: string)
+Inserts OOXML at the specified location.  The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.
 
 #### Syntax
 ```js
@@ -406,16 +575,14 @@ rangeObject.insertOoxml(ooxml, insertLocation);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|ooxml|string|Required. The OOXML or wordProcessingML to be inserted in the range.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start' or 'End'.|
+|ooxml|string|Required. The OOXML to be inserted.|
+|insertLocation|string|Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [Range](range.md)
 
-#### Known issues
-This method results in long latency in Word Online, which can affect users' experience of your add-in. We recommend that you use this method only when no other solution is available. 
-
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -441,11 +608,12 @@ Word.run(function (context) {
 });
 ```
 
-#### Additional information
+*Additional information* 
 Read [Create better add-ins for Word with Office Open XML](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx) for guidance on working with OOXML.
 
-### insertParagraph(paragraphText: string, insertLocation: InsertLocation)
-Inserts a paragraph into the range at the specified location. The insertLocation value can be 'Before' or 'After'.
+
+### insertParagraph(paragraphText: string, insertLocation: string)
+Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.
 
 #### Syntax
 ```js
@@ -456,12 +624,13 @@ rangeObject.insertParagraph(paragraphText, insertLocation);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |paragraphText|string|Required. The paragraph text to be inserted.|
-|insertLocation|InsertLocation|Required. The value can be 'Before' or 'After'.|
+|insertLocation|string|Required. The value can be 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [Paragraph](paragraph.md)
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -487,8 +656,28 @@ Word.run(function (context) {
 });
 ```
 
-### insertText(text: string, insertLocation: InsertLocation)
-Inserts text into the range at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', ‘Before’ or ‘After’.
+
+### insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])
+Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.
+
+#### Syntax
+```js
+rangeObject.insertTable(rowCount, columnCount, insertLocation, values);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|rowCount|number|Required. The number of rows in the table.|
+|columnCount|number|Required. The number of columns in the table.|
+|insertLocation|string|Required. The value can be 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
+|values|string[][]|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
+
+#### Returns
+[Table](table.md)
+
+### insertText(text: string, insertLocation: string)
+Inserts text at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.
 
 #### Syntax
 ```js
@@ -499,12 +688,13 @@ rangeObject.insertText(text, insertLocation);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |text|string|Required. Text to be inserted.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start', 'End', ‘Before’ or ‘After’.|
+|insertLocation|string|Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [Range](range.md)
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -530,6 +720,39 @@ Word.run(function (context) {
 });
 ```
 
+
+### intersectWith(range: Range)
+Returns a new range as the intersection of this range with another range. This range is not changed. Throws if the two ranges are not overlapped or adjacent.
+
+#### Syntax
+```js
+rangeObject.intersectWith(range);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|range|Range|Required. Another range.|
+
+#### Returns
+[Range](range.md)
+
+### intersectWithOrNullObject(range: Range)
+Returns a new range as the intersection of this range with another range. This range is not changed. Returns a null object if the two ranges are not overlapped or adjacent.
+
+#### Syntax
+```js
+rangeObject.intersectWithOrNullObject(range);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|range|Range|Required. Another range.|
+
+#### Returns
+[Range](range.md)
+
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -546,39 +769,6 @@ object.load(param);
 #### Returns
 void
 
-#### Examples
-```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-
-    // Queue a command to get the current selection and then
-    // create a proxy range object with the results.
-    var range = context.document.getSelection();
-
-    // Queue a commmand to load font and style information for the range.
-    context.load(range, 'font/size, font/name, font/color, style');
-
-    // Synchronize the document state by executing the queued commands,
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-
-        // Show the results of the load method. Here we show the
-        // property values on the range object.
-        var results = "  ---Font size: " + range.font.size +
-                      "  ---Font name: " + range.font.name +
-                      "  ---Font color: " + range.font.color +
-                      "  ---Style: " + range.style;
-        console.log(results);
-    });
-})
-.catch(function (error) {
-    console.log('Error: ' + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
-
 ### search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)
 Performs a search with the specified searchOptions on the scope of the range object. The search results are a collection of range objects.
 
@@ -591,29 +781,13 @@ rangeObject.search(searchText, searchOptions);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |searchText|string|Required. The search text.|
-|[searchOptions](searchoptions.md)|ParamTypeStrings.SearchOptions|Optional. Options for the search.|
+|searchOptions|ParamTypeStrings.SearchOptions|Optional. Optional. Options for the search.|
 
 #### Returns
-[SearchResultCollection](searchresultcollection.md)
-
-
-### select(selectionMode: SelectionMode)
-Selects and navigates the Word UI to the range. The selectionMode values can be 'Select', 'Start', or 'End'.
-
-#### Syntax
-```js
-rangeObject.select(selectionMode);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|selectionMode|SelectionMode|Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.|
-
-#### Returns
-void
+[RangeCollection](rangecollection.md)
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -642,5 +816,37 @@ Word.run(function (context) {
 });
 ```
 
-## Support details
-Use the [requirement set](../office-add-in-requirement-sets.md) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).
+### select(selectionMode: string)
+Selects and navigates the Word UI to the range.
+
+#### Syntax
+```js
+rangeObject.select(selectionMode);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|selectionMode|string|Optional. Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.  Possible values are: Select, Start, End|
+
+#### Returns
+void
+
+### split(delimiters: string[], multiParagraphs: bool, trimDelimiters: bool, trimSpacing: bool)
+Splits the range into child ranges by using delimiters.
+
+#### Syntax
+```js
+rangeObject.split(delimiters, multiParagraphs, trimDelimiters, trimSpacing);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|delimiters|string[]|Required. The delimiters as an array of strings.|
+|multiParagraphs|bool|Optional. Optional. Indicates whether a returned child range can cover multiple paragraphs. Default is false which indicates that the paragraph boundaries are also used as delimiters.|
+|trimDelimiters|bool|Optional. Optional. Indicates whether to trim delimiters from the ranges in the range collection. Default is false which indicates that the delimiters are included in the ranges returned in the range collection.|
+|trimSpacing|bool|Optional. Optional. Indicates whether to trim spacing characters (spaces, tabs, column breaks and paragraph end marks) from the start and end of the ranges returned in the range collection. Default is false which indicates that spacing characters at the start and end of the ranges are included in the range collection.|
+
+#### Returns
+[RangeCollection](rangecollection.md)
