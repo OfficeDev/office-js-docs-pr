@@ -10,7 +10,7 @@ Toggles represent a physical switch to turn things on or off. Use Toggles to pre
 
 |**Do**|**Don't**|
 |:------------|:--------------|
-|Use a Toggle for binary settings when changes are immediately applied (see image below).|Don’t use a Toggle if users must perform an extra step before changes take effect (see image below).|
+|Use Toggles for binary settings when changes are immediately applied (see image below).|Don’t use Toggles if users must perform an extra step before changes take effect (see image below).|
 |![Do Toggle example](../../images/toggleDo.png)|![Don't Toggle example](../../images/toggleDont.png)|
 |Only replace the On and Off labels if there are more specific labels to use for a setting. Use short (3-4 character) labels that represent binary opposites.| |
 
@@ -18,8 +18,8 @@ Toggles represent a physical switch to turn things on or off. Use Toggles to pre
 
 |**Variation**|**Description**|**Example**|
 |:------------|:--------------|:----------|
-|**Enabled and checked**|Use when toggled state is active.|![Enabled and checked image](../../images/toggleEnabledOn.png)|
-|**Enabled and unchecked**|Use when toggled state is inactive.|![Enabled and unchecked image](../../images/toggleEnabledOff.png)|
+|**Enabled and checked**|Use when the toggled state is active.|![Enabled and checked image](../../images/toggleEnabledOn.png)|
+|**Enabled and unchecked**|Use when the toggled state is inactive.|![Enabled and unchecked image](../../images/toggleEnabledOff.png)|
 |**Disabled and checked**|Use when the active state cannot be changed.|![Disabled and checked image](../../images/toggleDisabledOn.png)|
 |**Disabled and unchecked**|Use when the inactive state cannot be changed.|![Disabled and unchecked image](../../images/toggleDisabledOff.png)|
 
