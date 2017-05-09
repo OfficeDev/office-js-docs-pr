@@ -40,7 +40,7 @@ listItemObject.getAncestor(parentOnly);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |parentOnly|bool|Optional. Optional. Specified only the list item's parent will be returned. The default is false that specifies to get the lowest ancestor.|
 
 #### Returns
@@ -56,7 +56,7 @@ listItemObject.getAncestorOrNullObject(parentOnly);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |parentOnly|bool|Optional. Optional. Specified only the list item's parent will be returned. The default is false that specifies to get the lowest ancestor.|
 
 #### Returns
@@ -72,7 +72,7 @@ listItemObject.getDescendants(directChildrenOnly);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |directChildrenOnly|bool|Optional. Optional. Specified only the list item's direct children will be returned. The default is false that indicates to get all descendant items.|
 
 #### Returns
@@ -88,7 +88,7 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns

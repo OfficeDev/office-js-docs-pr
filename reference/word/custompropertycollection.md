@@ -38,7 +38,7 @@ customPropertyCollectionObject.add(key, value);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |key|string|Required. The custom property's key, which is case-insensitive.|
 |value|object|Required. The custom property's value.|
 
@@ -83,7 +83,7 @@ customPropertyCollectionObject.getItem(key);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |key|string|The key that identifies the custom property object.|
 
 #### Returns
@@ -99,7 +99,7 @@ customPropertyCollectionObject.getItemOrNullObject(key);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |key|string|Required. The key that identifies the custom property object.|
 
 #### Returns
@@ -115,7 +115,7 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns

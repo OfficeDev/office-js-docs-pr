@@ -46,7 +46,7 @@ listObject.getLevelParagraphs(level);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |level|number|Required. The level in the list.|
 
 #### Returns
@@ -62,7 +62,7 @@ listObject.getLevelString(level);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |level|number|Required. The level in the list.|
 
 #### Returns
@@ -78,7 +78,7 @@ listObject.insertParagraph(paragraphText, insertLocation);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |paragraphText|string|Required. The paragraph text to be inserted.|
 |insertLocation|string|Required. The value can be 'Start', 'End', 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
@@ -95,7 +95,7 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
@@ -111,7 +111,7 @@ listObject.setLevelAlignment(level, alignment);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |level|number|Required. The level in the list.|
 |alignment|string|Required. The level alignment that can be 'left', 'centered' or 'right'. Possible values are: `Unknown` Unknown alignment.,`Left` Alignment to the left.,`Centered` Alignment to the center.,`Right` Alignment to the right.,`Justified` Fully justified alignment.|
 
@@ -128,7 +128,7 @@ listObject.setLevelBullet(level, listBullet, charCode, fontName);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |level|number|Required. The level in the list.|
 |listBullet|string|Required. The bullet.  Possible values are: Custom , Solid, Hollow, Square, Diamonds, Arrow, Checkmark|
 |charCode|number|Optional. Optional. The bullet character's code value. Used only if the bullet is 'Custom'.|
@@ -147,7 +147,7 @@ listObject.setLevelIndents(level, textIndent, textIndent);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |level|number|Required. The level in the list.|
 |textIndent|float|Required. The text indent in points. It is the same as paragraph left indent.|
 |textIndent|float|Required. The relative indent, in points, of the bullet, number or picture. It is the same as paragraph first line indent.|
@@ -165,7 +165,7 @@ listObject.setLevelNumbering(level, listNumbering, formatString);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |level|number|Required. The level in the list.|
 |listNumbering|string|Required. The ordinal format.  Possible values are: None, Arabic, UpperRoman, LowerRoman, UpperLetter, LowerLetter|
 |formatString|object[]|Optional. Optional. The numbering string format defined as an array of strings and/or integers. Each integer is a level of number type that is higher than or equal to this level. For example, an array of ["(", level - 1, ".", level, ")"] can define the format of "(2.c)", where 2 is the parent's item number and c is this level's item number.|
@@ -183,7 +183,7 @@ listObject.setLevelStartingNumber(level, startingNumber);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |level|number|Required. The level in the list.|
 |startingNumber|number|Required. The number to start with.|
 
