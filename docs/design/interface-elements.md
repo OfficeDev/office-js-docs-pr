@@ -2,6 +2,8 @@
 
 You can use several types of UI elements to extend the Office UI. The following Office UI elements look like a natural extension of Office and work across platforms. You can insert your custom web-based code into any of these elements.
 
+![Interface Elements](../../images/overview_withApp_interfaceElements.png)
+
 ## Add-in commands
 
 Use [add-in commands](add-in-commands.md) to add entry points to your add-in to the Office ribbon. Commands start actions in your add-in either by running JavaScript code, or by launching an HTML container. You can create two types of add-in commands.
