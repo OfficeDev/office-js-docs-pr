@@ -36,7 +36,7 @@ Outlook add-ins offer many rich features that can be used to support various sce
 
 ## Get started building Outlook add-ins
 
-To get started building Outlook add-ins, see [Get Started with Outlook add-ins for Office 365](https://dev.outlook.com/MailAppsGettingStarted/GetStarted) or [Integrate your Outlook add-in with Outlook's navigation bar](../outlook/extension-module-outlook-add-ins.md).
+To get started building Outlook add-ins, see [Get Started with Outlook add-ins for Office 365](https://docs.microsoft.com/en-us/outlook/add-ins/addin-tutorial) or [Integrate your Outlook add-in with Outlook's navigation bar](../outlook/extension-module-outlook-add-ins.md).
 
 
 ## Additional resources

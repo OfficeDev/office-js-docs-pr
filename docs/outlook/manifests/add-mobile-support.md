@@ -57,9 +57,9 @@ Designing an add-in for mobile introduces some additional considerations.
 
 ### Use REST instead of Exchange Web Services
 
-The [Office.context.mailbox.makeEwsRequestAsync](../../../reference/outlook/Office.context.mailbox.md) method is not supported in Outlook Mobile. Add-ins should prefer to get information from the Office.js API when possible. If add-ins require information not exposed by the Office.js API, then they should use the [Outlook REST APIs](https://dev.outlook.com/restapi/reference) to access the user's mailbox. 
+The [Office.context.mailbox.makeEwsRequestAsync](../../../reference/outlook/1.5/Office.context.mailbox.md) method is not supported in Outlook Mobile. Add-ins should prefer to get information from the Office.js API when possible. If add-ins require information not exposed by the Office.js API, then they should use the [Outlook REST APIs](https://docs.microsoft.com/en-us/outlook/rest/) to access the user's mailbox. 
 
-Mailbox requirement set 1.5 introduces a new version of [Office.context.mailbox.getCallbackTokenAsync](https://dev.outlook.com/reference/add-ins/1.5/Office.context.mailbox.html#getCallbackTokenAsync) that can request an access token compatible with the REST APIs, and a new [Office.context.mailbox.restUrl](https://dev.outlook.com/reference/add-ins/1.5/Office.context.mailbox.html#restUrl) property that can be used to find the REST API endpoint for the user.
+Mailbox requirement set 1.5 introduces a new version of [Office.context.mailbox.getCallbackTokenAsync](../../../reference/outlook/1.5/Office.context.mailbox.md) that can request an access token compatible with the REST APIs, and a new [Office.context.mailbox.restUrl](../../../reference/outlook/1.5/Office.context.mailbox.md) property that can be used to find the REST API endpoint for the user.
 
 ### Pinch zoom
 
@@ -67,7 +67,7 @@ By default users can use the "pinch zoom" gesture to zoom in on taskpanes. If th
 
 ### Closing taskpanes
 
-In Outlook Mobile, taskpanes take up the entire screen and by default require the user to close them to return to the message. Consider using the [Office.context.ui.closeContainer](https://dev.outlook.com/reference/add-ins/1.5/Office.context.ui.html#closeContainer) method to close the taskpane when your scenario is complete.
+In Outlook Mobile, taskpanes take up the entire screen and by default require the user to close them to return to the message. Consider using the [Office.context.ui.closeContainer](../../../reference/shared/officeui.closecontainer.md) method to close the taskpane when your scenario is complete.
 
 ### Compose mode and appointments
 

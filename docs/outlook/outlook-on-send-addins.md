@@ -241,7 +241,6 @@ The on send API requires **VersionOverrides v1_1**. The following shows you how 
 ```
 
  >  **Note:** For more information, see the following:
- >- [Running an Outlook add-in in an Office 365 account](https://dev.outlook.com/MailAppsGettingStarted/GetStarted)
  >- [Outlook add-in manifests](https://dev.office.com/docs/add-ins/outlook/manifests/manifests)
  >- [VersionOverrides](https://dev.office.com/docs/add-ins/outlook/manifests/define-add-in-commands#versionoverrides)
  >- [Office Add-ins XML manifest](https://dev.office.com/docs/add-ins/overview/add-in-manifests)
@@ -267,7 +266,7 @@ To access the currently selected message (in this example, the newly composed  m
 
 The `validateBody`function gets the current body in the specified format (HTML) and passes the **ItemSend** event object that the code wants to access in the callback method. In addition to the **getAsync** method, the **Body** object also provides a **setAsync** method that you can use to replace the body with the specified text. 
 
->  **Note:** For more information, see [Event Object](https://dev.outlook.com/reference/add-ins/Event.html) and [getAsync](https://dev.outlook.com/reference/add-ins/Body.html).
+>  **Note:** For more information, see [Event Object](../../reference/outlook/1.5/Event.md) and [Body.getAsync](../../reference/outlook/1.5/Body.md).
   
 
 ### NotificationMessages object and event.completed method
@@ -300,16 +299,16 @@ The `checkBodyOnlyOnSendCallBack` function uses a regular expression to determin
 The following are the parameters for the **addAsync** method:
 
 - *NoSend* - A string that is a developer-specified key to reference a notification message. You can use it to modify this message later. The key can’t be longer than 32 characters. 
-- *type* - One of the properties of the  JSON object parameter. Represents the type of a message; the types correspond to the values of the [Office.MailboxEnums.ItemNotificationMessageType](https://dev.outlook.com/reference/add-ins/Office.MailboxEnums.html#.ItemNotificationMessageType) enumeration. Possible values are progress indicator, information message, or error message. In this example, *type* is an error message.  
+- *type* - One of the properties of the  JSON object parameter. Represents the type of a message; the types correspond to the values of the [Office.MailboxEnums.ItemNotificationMessageType](../../reference/outlook/1.5/Office.MailboxEnums.md) enumeration. Possible values are progress indicator, information message, or error message. In this example, *type* is an error message.  
 - *message* - One of the properties of the JSON object parameter. In this example, *message* is the text of the notification message. 
 
 To signal that the add-in has finished processing the **ItemSend** event triggered by the send operation, call the **event.completed({allowEvent:Boolean}** method. The **allowEvent** property is a Boolean. If set to **true**, send is allowed. If set to **false**, the email message is blocked from sending.
 
->  **Note:** For more information, see [notificationMessages](https://dev.outlook.com/reference/add-ins/Office.context.mailbox.item.html#notificationMessages) and [completed](https://dev.outlook.com/reference/add-ins/Event.html#completed).
+>  **Note:** For more information, see [notificationMessages](../../reference/outlook/1.5/Office.context.mailbox.item.md) and [completed](../../reference/outlook/1.5/Event.md).
 
 ### replaceAsync, removeAsync, and getAllAsync methods
 
-In addition to the **addAsync** method, the **NotificationMessages** object also includes **replaceAsync, removeAsync and getAllAsync** methods.  These methods are not used in this code sample.  For more information, see [NotificationMessages](https://dev.outlook.com/reference/add-ins/NotificationMessages.html).
+In addition to the **addAsync** method, the **NotificationMessages** object also includes **replaceAsync, removeAsync and getAllAsync** methods.  These methods are not used in this code sample.  For more information, see [NotificationMessages](../../reference/outlook/1.5/NotificationMessages.md).
 
 
 ### Subject and CC checker

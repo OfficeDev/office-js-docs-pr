@@ -1,10 +1,10 @@
 # Use the Outlook REST APIs from an Outlook add-in
 
-The [Office.context.mailbox.item](..\..\reference\outlook\Office.context.mailbox.item.md) namespace provides access to many of the common fields of messages and appointments. However, in some scenarios an add-in may need to access data that is not exposed by the namespace. For example, the add-in may rely on custom properties set by an outside app, or it needs to search the user's mailbox for messages from the same sender. In these scenarios, the [Outlook REST APIs](https://dev.outlook.com/restapi/reference) is the recommended method to retrieve the information.
+The [Office.context.mailbox.item](..\..\reference\outlook\Office.context.mailbox.item.md) namespace provides access to many of the common fields of messages and appointments. However, in some scenarios an add-in may need to access data that is not exposed by the namespace. For example, the add-in may rely on custom properties set by an outside app, or it needs to search the user's mailbox for messages from the same sender. In these scenarios, the [Outlook REST APIs](https://docs.microsoft.com/en-us/outlook/rest/) is the recommended method to retrieve the information.
 
 ## Get an access token
 
-The Outlook REST APIs require a bearer token in the `Authorization` header. Typically apps use OAuth2 flows to retrieve a token. However, add-ins can retrieve a token without implementing OAuth2 by using the new [Office.context.mailbox.getCallbackTokenAsync](https://dev.outlook.com/reference/add-ins/1.5/Office.context.mailbox.html#getCallbackTokenAsync) method introduced in the Mailbox requirement set 1.5 preview.
+The Outlook REST APIs require a bearer token in the `Authorization` header. Typically apps use OAuth2 flows to retrieve a token. However, add-ins can retrieve a token without implementing OAuth2 by using the new [Office.context.mailbox.getCallbackTokenAsync](../../reference/outlook/1.5/Office.context.mailbox.md) method introduced in the Mailbox requirement set 1.5 preview.
 
 > **Note**: Because Mailbox requirement set 1.5 is in preview, you cannot specify it as a requirement in the manifest. 
 
@@ -61,7 +61,7 @@ function getItemRestId() {
 
 ## Get the REST API URL
 
-The final piece of information your add-in needs to call the REST API is the hostname it should use to send API requests. This information is in the [Office.context.mailbox.restUrl](https://dev.outlook.com/reference/add-ins/1.5/Office.context.mailbox.html#restUrl) property.
+The final piece of information your add-in needs to call the REST API is the hostname it should use to send API requests. This information is in the [Office.context.mailbox.restUrl](../../reference/outlook/1.5/Office.context.mailbox.md) property.
 
 ### Example
 
