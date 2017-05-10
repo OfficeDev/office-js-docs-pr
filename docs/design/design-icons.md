@@ -147,13 +147,14 @@ Office icons have a limited color palette. Use the colors listed in the followin
 |Purple 16|137, 89, 171|#8959AB|![Purple 16 color image](../../images/purple_16.gif)|16 and below|
 
 ## Icons in high contrast modes
-Office icons are designed to render well in high contrast modes. Foreground elements are well differentiated from backgrounds to maximize  legibility and enable recoloring. In high contrast modes Office will recolor any pixel of your icon with a red, green or blue value less than 190 to full black. All other pixels will be white. In other words, each RGB channel is assessed where 0-189 values are black and 190-255 values are white. Other high contrast themes recolor using the same 190 value threshold but with different rules. For example, the high contrast white theme will recolor all pixels greater than 190 opaque but all other pixels as transparent. Apply the following guidelines to maximize legibility in high contrast settings:
 
-- Aim to differentiate foreground and background elements along the 190 value threshold
-- Follow Office icon visual styles
-- Use colors from our icon palette
-- Avoid the use of gradients
-- Avoid large blocks of color with similar value
+Office icons are designed to render well in high contrast modes. Foreground elements are well differentiated from backgrounds to maximize legibility and enable recoloring. In high contrast modes, Office will recolor any pixel of your icon with a red, green, or blue value less than 190 to full black. All other pixels will be white. In other words, each RGB channel is assessed where 0-189 values are black and 190-255 values are white. Other high-contrast themes recolor using the same 190 value threshold but with different rules. For example, the high-contrast white theme will recolor all pixels greater than 190 opaque but all other pixels as transparent. Apply the following guidelines to maximize legibility in high-contrast settings:
+
+- Aim to differentiate foreground and background elements along the 190 value threshold.
+- Follow Office icon visual styles.
+- Use colors from our icon palette.
+- Avoid the use of gradients.
+- Avoid large blocks of color with similar values.
 
 ## Additional resources
 
