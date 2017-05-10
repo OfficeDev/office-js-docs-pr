@@ -17,5 +17,5 @@ Follow the Office design principles to create positive add-in experiences:
 
 ## Additional resources
 - [Office UI Fabric](https://dev.office.com/fabric) 
-- [Add-in development best practices](overview/add-in-development-best-practices.md)
+- [Add-in development best practices](../overview/add-in-development-best-practices.md)
 
