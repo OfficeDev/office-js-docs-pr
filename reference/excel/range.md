@@ -29,6 +29,7 @@ _See property access [examples.](#property-access-examples)_
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|conditionalFormats|[ConditionalFormatCollection](conditionalformatcollection.md)|Collection of ConditionalFormats that intersect the range. Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 |format|[RangeFormat](rangeformat.md)|Returns a format object, encapsulating the range's font, fill, borders, alignment, and other properties. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |sort|[RangeSort](rangesort.md)|Represents the range sort of the current range. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |worksheet|[Worksheet](worksheet.md)|The worksheet containing the current range. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -37,6 +38,7 @@ _See property access [examples.](#property-access-examples)_
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|[calculate()](#calculate)|void|Calculates a range of cells on a worksheet.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 |[clear(applyTo: string)](#clearapplyto-string)|void|Clear range values, format, fill, border, etc.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[delete(shift: string)](#deleteshift-string)|void|Deletes the cells associated with the range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getBoundingRect(anotherRange: Range or string)](#getboundingrectanotherrange-range-or-string)|[Range](range.md)|Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E16".|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -66,6 +68,20 @@ _See property access [examples.](#property-access-examples)_
 
 ## Method Details
 
+
+### calculate()
+Calculates a range of cells on a worksheet.
+
+#### Syntax
+```js
+rangeObject.calculate();
+```
+
+#### Parameters
+None
+
+#### Returns
+void
 
 ### clear(applyTo: string)
 Clear range values, format, fill, border, etc.
@@ -638,7 +654,7 @@ rangeObject.getRowsBelow(count);
 #### Returns
 [Range](range.md)
 
-### getUsedRange(valuesOnly: [ApiSet(Version)
+### getUsedRange(valuesOnly: bool)
 Returns the used range of the given range object. If there are no used cells within the range, this function will throw an ItemNotFound error.
 
 #### Syntax
@@ -649,7 +665,7 @@ rangeObject.getUsedRange(valuesOnly);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|valuesOnly|[ApiSet(Version|Considers only cells with values as used cells.|
+|valuesOnly|bool|Optional. Considers only cells with values as used cells.|
 
 #### Returns
 [Range](range.md)

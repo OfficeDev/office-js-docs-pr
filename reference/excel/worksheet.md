@@ -27,8 +27,13 @@ _See property access [examples.](#property-access-examples)_
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |[activate()](#activate)|void|Activate the worksheet in the Excel UI.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[calculate(markAllDirty: bool)](#calculatemarkalldirty-bool)|void|Calculates all cells on a worksheet.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 |[delete()](#delete)|void|Deletes the worksheet from the workbook.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it's stays within the worksheet grid.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getNext(visibleOnly: bool)](#getnextvisibleonly-bool)|[Worksheet](worksheet.md)|Gets the worksheet that follows this one. If there are no worksheets following this one, this method will throw an error.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|[getNextOrNullObject(visibleOnly: bool)](#getnextornullobjectvisibleonly-bool)|[Worksheet](worksheet.md)|Gets the worksheet that follows this one. If there are no worksheets following this one, this method will return a null object.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|[getPrevious(visibleOnly: bool)](#getpreviousvisibleonly-bool)|[Worksheet](worksheet.md)|Gets the worksheet that precedes this one. If there are no previous worksheets, this method will throw an error.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|[getPreviousOrNullObject(visibleOnly: bool)](#getpreviousornullobjectvisibleonly-bool)|[Worksheet](worksheet.md)|Gets the worksheet that precedes this one. If there are no previous worksheets, this method will return a null objet.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRange(address: string)](#getrangeaddress-string)|[Range](range.md)|Gets the range object specified by the address or name.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getUsedRange(valuesOnly: bool)](#getusedrangevaluesonly-bool)|[Range](range.md)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return the top left cell (i.e.,: it will *not* throw an error).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getUsedRangeOrNullObject(valuesOnly: bool)](#getusedrangeornullobjectvaluesonly-bool)|[Range](range.md)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
@@ -66,6 +71,22 @@ Excel.run(function (ctx) {
 });
 ```
 
+
+### calculate(markAllDirty: bool)
+Calculates all cells on a worksheet.
+
+#### Syntax
+```js
+worksheetObject.calculate(markAllDirty);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|markAllDirty|bool|Boolean to mark as dirty.|
+
+#### Returns
+void
 
 ### delete()
 Deletes the worksheet from the workbook.
@@ -135,6 +156,70 @@ Excel.run(function (ctx) {
 ```
 
 
+### getNext(visibleOnly: bool)
+Gets the worksheet that follows this one. If there are no worksheets following this one, this method will throw an error.
+
+#### Syntax
+```js
+worksheetObject.getNext(visibleOnly);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
+
+#### Returns
+[Worksheet](worksheet.md)
+
+### getNextOrNullObject(visibleOnly: bool)
+Gets the worksheet that follows this one. If there are no worksheets following this one, this method will return a null object.
+
+#### Syntax
+```js
+worksheetObject.getNextOrNullObject(visibleOnly);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
+
+#### Returns
+[Worksheet](worksheet.md)
+
+### getPrevious(visibleOnly: bool)
+Gets the worksheet that precedes this one. If there are no previous worksheets, this method will throw an error.
+
+#### Syntax
+```js
+worksheetObject.getPrevious(visibleOnly);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
+
+#### Returns
+[Worksheet](worksheet.md)
+
+### getPreviousOrNullObject(visibleOnly: bool)
+Gets the worksheet that precedes this one. If there are no previous worksheets, this method will return a null objet.
+
+#### Syntax
+```js
+worksheetObject.getPreviousOrNullObject(visibleOnly);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
+
+#### Returns
+[Worksheet](worksheet.md)
+
 ### getRange(address: string)
 Gets the range object specified by the address or name.
 
@@ -203,7 +288,7 @@ worksheetObject.getUsedRange(valuesOnly);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|valuesOnly|[ApiSet(Version|Considers only cells with values as used cells (ignoring formatting).|
+|valuesOnly|bool|Optional. Considers only cells with values as used cells (ignoring formatting).|
 
 #### Returns
 [Range](range.md)

@@ -21,8 +21,10 @@ None
 |[add(name: string)](#addname-string)|[Worksheet](worksheet.md)|Adds a new worksheet to the workbook. The worksheet will be added at the end of existing worksheets. If you wish to activate the newly added worksheet, call ".activate() on it.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getActiveWorksheet()](#getactiveworksheet)|[Worksheet](worksheet.md)|Gets the currently active worksheet in the workbook.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCount(visibleOnly: bool)](#getcountvisibleonly-bool)|int|Gets the number of worksheets in the collection.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[getFirst(visibleOnly: bool)](#getfirstvisibleonly-bool)|[Worksheet](worksheet.md)|Gets the first worksheet in the collection.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItem(key: string)](#getitemkey-string)|[Worksheet](worksheet.md)|Gets a worksheet object using its Name or ID.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemOrNullObject(key: string)](#getitemornullobjectkey-string)|[Worksheet](worksheet.md)|Gets a worksheet object using its Name or ID. If the worksheet does not exist, will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[getLast(visibleOnly: bool)](#getlastvisibleonly-bool)|[Worksheet](worksheet.md)|Gets the last worksheet in the collection.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -105,10 +107,26 @@ worksheetCollectionObject.getCount(visibleOnly);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|visibleOnly|bool|Optional. Returns only visible worksheets if set to true. |
+|visibleOnly|bool|Optional. Considers only the visible cells.|
 
 #### Returns
 int
+
+### getFirst(visibleOnly: bool)
+Gets the first worksheet in the collection.
+
+#### Syntax
+```js
+worksheetCollectionObject.getFirst(visibleOnly);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
+
+#### Returns
+[Worksheet](worksheet.md)
 
 ### getItem(key: string)
 Gets a worksheet object using its Name or ID.
@@ -138,6 +156,22 @@ worksheetCollectionObject.getItemOrNullObject(key);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |key|string|The Name or ID of the worksheet.|
+
+#### Returns
+[Worksheet](worksheet.md)
+
+### getLast(visibleOnly: bool)
+Gets the last worksheet in the collection.
+
+#### Syntax
+```js
+worksheetCollectionObject.getLast(visibleOnly);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
 
 #### Returns
 [Worksheet](worksheet.md)

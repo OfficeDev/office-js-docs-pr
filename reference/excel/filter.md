@@ -25,7 +25,7 @@ None
 |[applyIconFilter(icon: Icon)](#applyiconfiltericon-icon)|void|Apply a "Icon" filter to the column for the given icon.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[applyTopItemsFilter(count: number)](#applytopitemsfiltercount-number)|void|Apply a "Top Item" filter to the column for the given number of elements.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[applyTopPercentFilter(percent: number)](#applytoppercentfilterpercent-number)|void|Apply a "Top Percent" filter to the column for the given percentage of elements.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|[applyValuesFilter(values: ()[])](#applyvaluesfiltervalues-)|void|Apply a "Values" filter to the column for the given values.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[applyValuesFilter(values: object[])](#applyvaluesfiltervalues-object)|void|Apply a "Values" filter to the column for the given values.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[clear()](#clear)|void|Clear the filter on the given column.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
@@ -193,7 +193,7 @@ filterObject.applyTopPercentFilter(percent);
 #### Returns
 void
 
-### applyValuesFilter(values: ()[])
+### applyValuesFilter(values: object[])
 Apply a "Values" filter to the column for the given values.
 
 #### Syntax
@@ -204,7 +204,7 @@ filterObject.applyValuesFilter(values);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|values|()[]|The list of values to show.|
+|values|object[]|The list of values to show.|
 
 #### Returns
 void
