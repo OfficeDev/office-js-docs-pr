@@ -10,7 +10,7 @@ The Preview Requirement set includes all of the features of [Requirement set 1.5
 
 The following features are in preview.
 
-- [Event.completed](Event.md#completed) - A new optional parameter `options`, which is a dictionary with one valid value `allowEvent`. This value is used to cancel execution of an event.
+- [Event.completed](https://dev.office.com/reference/add-ins/outlook/preview/Event?product=outlook&version=preview#completedoptions) - A new optional parameter `options`, which is a dictionary with one valid value `allowEvent`. This value is used to cancel execution of an event.
 
 ## Additional resources
 
