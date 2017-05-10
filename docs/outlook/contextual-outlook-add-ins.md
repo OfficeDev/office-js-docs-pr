@@ -61,6 +61,6 @@ The following contextual add-ins are installed by default for users with Outlook
 
 ## Additional Resources
 
-- [Get Started with Outlook add-ins for Office 365](https://dev.outlook.com/MailAppsGettingStarted/GetStarted.aspx)
+- [Get Started with Outlook add-ins for Office 365](https://docs.microsoft.com/en-us/outlook/add-ins/addin-tutorial)
 - [Use regular expression activation rules to show an Outlook add-in](../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)
 - [Entities object](../../reference/outlook/simple-types.md)
