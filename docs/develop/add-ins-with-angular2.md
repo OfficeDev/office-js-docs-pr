@@ -79,7 +79,7 @@ import { ApplicationRef } from '@angular/core';
         constructor(private appRef: ApplicationRef) {}
         myMethod() {
             // Code that changes the DOM is here
-            appRef.tick();
+            this.appRef.tick();
         }
 }
 ``` 
