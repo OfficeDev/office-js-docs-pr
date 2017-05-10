@@ -32,7 +32,7 @@ Defines a rule that evaluates to true if the selected item is of the specified t
 | Attribute | Required | Description |
 |:-----|:-----|:-----|
 | **ItemType** | Yes | Specifies the item type to match. Can be `Message` or `Appointment`. `Message` item type includes email, meeting requests, meeting responses, and meeting cancellations. |
-| **FormType** | No (within [ExtensionPoint](extensionpoint.md)), Yes (within [OfficeApp](officeapp.md)) | Specifies whether the app should appear in read or edit form for the item. Can be one of the following: `Read`, `Edit`, `ReadOrEdit`. |
+| **FormType** | No (within [ExtensionPoint](extensionpoint.md)), Yes (within [OfficeApp](officeapp.md)) | Specifies whether the app should appear in read or edit form for the item. Can be one of the following: `Read`, `Edit`, `ReadOrEdit`. If specified on a `Rule` within an `ExtensionPoint`, this value MUST be `Read`. |
 | **ItemClass** | No | Specifies the custom message class to match. For more information, see [Activate a mail add-in in Outlook for a specific message class](../../docs/outlook/manifests/activation-rules.md). |
 | **IncludeSubClasses** | No | Specifies whether the rule should evaluate to true if the item is of a subclass of the specified message class; the default is `false`. |
 
@@ -64,7 +64,7 @@ Defines a rule that evaluates to true if the item contains text of the specified
 | **RegExFilter** | No | Specifies a regular expression to run against this entity for activation. |
 | **FilterName** | No | Specifies the name of the regular expression filter, so that it is subsequently possible to refer to it in your add-in's code. |
 | **IgnoreCase** | No | Specifies to ignore case when running the regular expression specified by the  **RegExFilter** attribute. |
-| **Highlight** | No | **Note:** this only applies to **Rule** elements within **ExtensionPoint** elements. Specifies how the client should highlight matching entities. Can be one of the following: `all`, `first`, `none`. If not specified, the default value is `all`. |
+| **Highlight** | No | **Note:** this only applies to **Rule** elements within **ExtensionPoint** elements. Specifies how the client should highlight matching entities. Can be one of the following: `all` or `none`. If not specified, the default value is `all`. |
 
 ### Example
 
@@ -84,7 +84,7 @@ Defines a rule that evaluates to true if a match for the specified regular expre
 | **RegExValue** | Yes | Specifies the regular expression that will be evaluated to determine whether the mail add-in should be shown. |
 | **PropertyName** | Yes | Specifies the name of the property that the regular expression will be evaluated against. Can be one of the following: `Subject`, `BodyAsPlaintext`, `BodyAsHtml`, or `SenderSTMPAddress`. |
 | **IgnoreCase** | No | Specifies to ignore the case when executing the regular expression. |
-| **Highlight** | No | **Note:** this only applies to **Rule** elements within **ExtensionPoint** elements. Specifies how the client should highlight matching text. Can be one of the following: `all`, `first`, `none`. If not specified, the default value is `all`. |
+| **Highlight** | No | **Note:** this only applies to **Rule** elements within **ExtensionPoint** elements. Specifies how the client should highlight matching text. Can be one of the following: `all` or `none`. If not specified, the default value is `all`. |
 
 ### Example
 
