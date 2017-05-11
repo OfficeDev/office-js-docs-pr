@@ -33,5 +33,5 @@ Requirement set 1.3 includes all of the features of [Requirement set 1.2](../1.2
 ## Additional resources
 
 - [Outlook add-ins](../../../docs/outlook/outlook-add-ins.md)
-- [Outlook add-in code samples](https://dev.outlook.com/MailAppsGettingStarted/Samples)
-- [Get started](https://dev.outlook.com/MailAppsGettingStarted/GetStarted)
+- [Outlook add-in code samples](https://developer.microsoft.com/en-us/outlook/code-samples)
+- [Get started](https://docs.microsoft.com/en-us/outlook/add-ins/addin-tutorial)
