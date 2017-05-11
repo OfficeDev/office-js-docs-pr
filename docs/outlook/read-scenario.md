@@ -55,7 +55,7 @@ See also:
 
 
 
-- [Get Started with Outlook add-ins for Office 365](https://dev.outlook.com/MailAppsGettingStarted/GetStarted.aspx)
+- [Write your first Outlook add-in](https://docs.microsoft.com/en-us/outlook/add-ins/addin-tutorial)
     
 - [Outlook add-ins](../outlook/outlook-add-ins.md)
     

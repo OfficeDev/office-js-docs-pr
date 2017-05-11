@@ -53,7 +53,7 @@ function itemChanged(eventArgs) {
 
 ### Register the event handler
 
-Use the [Office.context.mailbox.addHandlerAsync](https://dev.outlook.com/reference/add-ins/1.5/Office.context.mailbox.html#addHandlerAsync) method to register your event handler for the `Office.EventType.ItemChanged` event. This should be done in the `Office.initialize` function for your taskpane.
+Use the [Office.context.mailbox.addHandlerAsync](../../../reference/outlook/1.5/Office.context.mailbox.md) method to register your event handler for the `Office.EventType.ItemChanged` event. This should be done in the `Office.initialize` function for your taskpane.
 
 ```js
 Office.initialize = function (reason) {

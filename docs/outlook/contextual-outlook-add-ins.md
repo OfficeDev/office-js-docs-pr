@@ -10,7 +10,7 @@ The following are examples of contextual add-ins:
 
 ## How to make a contextual add-in
 
-A contextual add-in's manifest must include an [ExtensionPoint](../../reference/manifest/extensionpoint.md) element with an `xsi:type` attribute set to `DetectedEntity`. Within the **ExtensionPoint** element, the addin specifies the entity or regular expression that can activate it. If specifying an entity, the entity can be any of the properties in the [Entities](../../reference/outlook/simple-types.md) object *except* `EmailAddress` or `Url`. Thus, the add-in manifest must contain a rule of type **ItemHasKnownEntity** or **ItemHasRegularExpressionMatch**. The following example shows how to specify an entity that is a phone number:
+A contextual add-in's manifest must include an [ExtensionPoint](../../reference/manifest/extensionpoint.md) element with an `xsi:type` attribute set to `DetectedEntity`. Within the **ExtensionPoint** element, the addin specifies the entities or regular expression that can activate it. If specifying an entity, the entity can be any of the properties in the [Entities](../../reference/outlook/simple-types.md) object. Thus, the add-in manifest must contain a rule of type **ItemHasKnownEntity** or **ItemHasRegularExpressionMatch**. The following example shows how to specify an entity that is a phone number:
 
 ```XML
 <Rule xsi:type="ItemHasKnownEntity" EntityType="PhoneNumber" Highlight="all" />
@@ -26,6 +26,8 @@ There are several restrictions on contextual add-ins:
 
 Because an entity or regular expression that is not highlighted will not launch a contextual add-in, add-ins must include at least one `Rule` element with the `Highlight` attribute set to `all` or `first`.
 
+> **Note:** The `EmailAddress` and `Url` entity types do not support highlighting, so they cannot be used to launch a contextual add-in. They can however be combined in a `RuleCollection` rule type as an additional activation criteria.
+
 ## How to launch a contextual add-in
 
 A user launches a contextual add-in through text, either a known entity or a developer's regular expression. Typically, a user identifies a contextual add-in because the entity is highlighted. The following example shows how highlighting appears in a message. Here the entity (an address) is colored blue and underlined with a dotted blue line. A user launches the contextual add-in by clicking the highlighted entity. 
@@ -37,7 +39,7 @@ A user launches a contextual add-in through text, either a known entity or a dev
 When there are multiple entities or contextual add-ins in a message, there are a few user interaction rules:
 
 - If there are multiple entities, the user has to click a different entity to launch the add-in for it.
-- If an entity activates multiple add-ins, each add-in opens a new tab. The user switches between tabs, similar to the add-in bar, to change between add-ins. For example, a name and address might trigger a phone add-in and a map.
+- If an entity activates multiple add-ins, each add-in opens a new tab. The user switches between tabs to change between add-ins. For example, a name and address might trigger a phone add-in and a map.
 - If a single string contains multiple entities that activate multiple add-ins, the entire string is highlighted, and clicking the string shows all add-ins relevant to the string on separate tabs. For example, a string that describes a proposed meeting at a restaurant might activate the Suggested Meeting add-in and a restaurant rating add-in.
 
 ## How a contextual add-in displays
@@ -59,6 +61,6 @@ The following contextual add-ins are installed by default for users with Outlook
 
 ## Additional Resources
 
-- [Get Started with Outlook add-ins for Office 365](https://dev.outlook.com/MailAppsGettingStarted/GetStarted.aspx)
+- [Get Started with Outlook add-ins for Office 365](https://docs.microsoft.com/en-us/outlook/add-ins/addin-tutorial)
 - [Use regular expression activation rules to show an Outlook add-in](../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)
 - [Entities object](../../reference/outlook/simple-types.md)

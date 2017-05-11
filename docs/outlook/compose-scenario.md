@@ -60,7 +60,7 @@ Compose add-ins are implemented as [Add-in commands for Outlook](../outlook/add-
 
 
 
-- [Get Started with Outlook add-ins for Office 365](https://dev.outlook.com/MailAppsGettingStarted/GetStarted)
+- [Get Started with Outlook add-ins for Office 365](https://docs.microsoft.com/en-us/outlook/add-ins/addin-tutorial)
     
 - [Outlook add-ins](../outlook/outlook-add-ins.md)
     
