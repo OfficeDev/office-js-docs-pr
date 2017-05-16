@@ -11,6 +11,8 @@ The Preview Requirement set includes all of the features of [Requirement set 1.5
 The following features are in preview.
 
 - [Event.completed](https://dev.office.com/reference/add-ins/outlook/preview/Event?product=outlook&version=preview#completedoptions) - A new optional parameter `options`, which is a dictionary with one valid value `allowEvent`. This value is used to cancel execution of an event.
+- [Office.context.mailbox.item.getSelectedEntities](https://dev.office.com/reference/add-ins/outlook/preview/Office.context.mailbox.item?product=outlook&version=preview#getselectedentities--entities) - Added a new function that gets the entities found in a highlighted match a user has selected. Highlighted matches apply to contextual add-ins.
+- [Office.context.mailbox.item.getSelectedRegExMatches](https://dev.office.com/reference/add-ins/outlook/preview/Office.context.mailbox.item?product=outlook&version=preview#getselectedregexmatches--object) - Added a new function that returns string values in a highlighted match that match the regular expressions defined in the manifest XML file. Highlighted matches apply to contextual add-ins.
 
 ## Additional resources
 
