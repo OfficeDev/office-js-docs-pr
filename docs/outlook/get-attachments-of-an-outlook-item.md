@@ -52,10 +52,10 @@ The [Office.context.mailbox](../../reference/outlook/Office.context.mailbox.md) 
 
 ```
 function getAttachmentToken() {
-    if (serviceRequest.attachmentToken == "" {
+    if (serviceRequest.attachmentToken == "") {
         Office.context.mailbox.getCallbackTokenAsync(attachmentTokenCallback);
     }
-};
+}
 function attachmentTokenCallback(asyncResult, userContext) {
     if (asyncResult.status === "succeeded") {
         // Cache the result from the server.
@@ -65,7 +65,7 @@ function attachmentTokenCallback(asyncResult, userContext) {
     } else {
         showToast("Error", "Could not get callback token: " + asyncResult.error.message);
     }
-};
+}
 ```
 
 
@@ -79,10 +79,11 @@ The remote service that your add-in calls defines the specifics of how you shoul
 // Initialize a context object for the add-in.
 //   Set the fields that are used on the request
 //   object to default values.
-serviceRequest = new Object();
-serviceRequest.attachmentToken = "";
-serviceRequest.ewsUrl = Office.context.mailbox.ewsUrl;
-serviceRequest.attachments = new Array();
+ var serviceRequest = {
+    attachmentToken: '',
+    ewsUrl         : Office.context.mailbox.ewsUrl,
+    attachments    : []
+ };
 ```
 
 The  `Office.context.mailbox.item.attachments` property contains a collection of **AttachmentDetails** objects, one for each attachment to the item. In most cases, the add-in can pass just the attachment ID property of an **AttachmentDetails** object to the remote service. If the remote service needs more details about the attachment, you can pass all or part of the **AttachmentDetails** object. The following code defines a method that puts the entire **AttachmentDetails** array in the `serviceRequest` object and sends a request to the remote service.
@@ -121,7 +122,7 @@ The  `Office.context.mailbox.item.attachments` property contains a collection of
       }).always(function () {
         $('.disable-while-sending').prop('disabled', false);
       })
-    };
+    }
 
 ```
 
