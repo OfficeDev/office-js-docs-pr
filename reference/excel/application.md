@@ -19,7 +19,7 @@ None
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |[calculate(calculationType: string)](#calculatecalculationtype-string)|void|Recalculate all currently opened workbooks in Excel.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-
+|[suspendApiCalculationUntilNextSync()](#suspendapicalculationuntilnextsync)|void|Suspends calculation until the next "context.sync()" is called. Once set, it is the developer's responsibility to re-calc the workbook, to ensure that any dependencies are propagated.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -35,7 +35,7 @@ applicationObject.calculate(calculationType);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|calculationType|string|Specifies the calculation type to use. Possible values are: `Recalculate` Recalculates all cells that Excel has marked as dirty, that is, dependents of volatile or changed data, and cells programmatically marked as dirty. `Full` This will mark all cells as dirty and then recalculate them. `FullRebuild` This will force a rebuild of the entire calculation chain, mark all cells as dirty and then recalculate all cells.|
+|calculationType|string|Specifies the calculation type to use. Possible values are: `Recalculate` Default-option. Performs normal calculation by calculating all the formulas in the workbook,`Full` Forces a full calculation of the data,`FullRebuild`  Forces a full calculation of the data and rebuilds the dependencies.|
 
 #### Returns
 void
@@ -52,6 +52,20 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
+### suspendApiCalculationUntilNextSync()
+Suspends calculation until the next "context.sync()" is called. Once set, it is the developer's responsibility to re-calc the workbook, to ensure that any dependencies are propagated.
+
+#### Syntax
+```js
+applicationObject.suspendApiCalculationUntilNextSync();
+```
+
+#### Parameters
+None
+
+#### Returns
+void
 ### Property access examples
 ```js
 Excel.run(function (ctx) {

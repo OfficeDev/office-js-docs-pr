@@ -16,7 +16,7 @@ Exchange 2013 uses a JSON Web Token (JWT) for the identity token. For informatio
 
 ### Identity token header
 
-The header identifies the token and lets your web service know what kind of token is being presented. The following example shows what he header of the token looks like.
+The header identifies the token and lets your web service know what kind of token is being presented. The following example shows what the header of the token looks like.
 
 ```js
 { "typ" : "JWT", "alg" : "RS256", "x5t" : "Un6V7lYN-rMgaCoFSTO5z707X-4" }

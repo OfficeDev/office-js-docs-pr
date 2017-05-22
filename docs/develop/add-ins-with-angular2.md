@@ -6,6 +6,9 @@ This article provides guidance for using Angular 2 to create an Office Add-in as
 
 For an Office Add-ins sample that's built using the Angular 2 framework, see [Word Style Checking Add-in Built on Angular 2](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker).
 
+## Install the TypeScript type definitions
+Open an nodejs window and enter the following at the command line: `npm install --save-dev @types/office-js`.
+
 ## Bootstrapping must be inside Office.initialize
 
 On any page that calls the Office, Word, or Excel JavaScript APIs, your code must first assign a method to the `Office.initialize` property. (If you have no initialization code, the method body can be just empty "`{}`" symbols, but you must not leave the `Office.initialize` property undefined. For details, see [Initializing your add-in](http://dev.office.com/docs/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in).) Office calls this method immediately after it has initialized the Office JavaScript libraries.
@@ -76,7 +79,7 @@ import { ApplicationRef } from '@angular/core';
         constructor(private appRef: ApplicationRef) {}
         myMethod() {
             // Code that changes the DOM is here
-            appRef.tick();
+            this.appRef.tick();
         }
 }
 ``` 

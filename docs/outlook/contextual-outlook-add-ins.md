@@ -24,7 +24,7 @@ There are several restrictions on contextual add-ins:
 - You cannot specify the color of the highlighted entity.
 - An entity that is not highlighted will not launch a contextual add-in in a card.
 
-Because an entity or regular expression that is not highlighted will not launch a contextual add-in, add-ins must include at least one `Rule` element with the `Highlight` attribute set to `all` or `first`.
+Because an entity or regular expression that is not highlighted will not launch a contextual add-in, add-ins must include at least one `Rule` element with the `Highlight` attribute set to `all`.
 
 > **Note:** The `EmailAddress` and `Url` entity types do not support highlighting, so they cannot be used to launch a contextual add-in. They can however be combined in a `RuleCollection` rule type as an additional activation criteria.
 

@@ -12,20 +12,35 @@
 	  <Item text="Use any editor" url="get-started/create-an-office-add-in-using-any-editor" SEODescription="Get started building Office Add-ins with any editor, on a Mac or Windows PC. " />
   </Item>
   <Item text="Design" url="design/add-in-design">
-      <Item text="UI Elements" url="design/ui-elements/ui-elements" SEODescription="Use add-in commands, Fabric UI, and custom HTML interfaces to make compelling add-in user interfaces.">
-      	<Item text="Interaction patterns" url="design/ui-elements/interaction-patterns" SEODescription="Create a consistent look and feel for your design patterns by using the recommended design layout." />
-      	<Item text="Layout for content add-ins" url="design/ui-elements/layout-for-content-add-ins" SEODescription="Create a consistent look and feel for your content add-ins by using the recommended design layout."  />
-      	<Item text="Layout for task pane add-ins" url="design/ui-elements/layout-for-task-pane-add-ins" SEODescription="Create a consistent look and feel for task pane add-ins by using the recommended design layout." />
-      	<Item text="Layouts for Outlook add-ins" url="design/ui-elements/layouts-for-outlook-add-ins" SEODescription="Use these layouts for mail add-ins" Scope="outlook" />
-      </Item>	
-    	<Item text="Using Office UI Fabric JS" url="design/using-office-ui-fabric-js" SEODescription="Walks you through the basics for using Fabric JS."/>
-		<Item text="UX design patterns" url="design/ux-design-patterns" SEODescription="Use the UX design pattern templates for Office Add-ins to create UI extensions." />
-	<Item text="Add-in commands for Excel, Word, and PowerPoint" url="design/add-in-commands" SEODescription="Use add-in commands in your add-in to extend the default Office UI in Excel, Word, and PowerPoint."  />
-  	<Item text="Design icons for add-in commands" url="design/design-icons" SEODescription="Design icons for add-in commands that integrate seamlessly with the Office UI." />
-	<Item text="Data visualization style guidelines" url="design/data-visualization-guidelines" SEODescription="Provides guidelines for data visualizations in Office Add-ins." />
-	<Item text="Usability testing" url="design/usability-testing" />
-    	<Item text="Voice guidelines" url="design/voice-guidelines" SEODescription="Find guidelines for the voice to use in UI text in Office Add-ins" />
-    	<Item text="Accessibility guidelines" url="design/accessibility-guidelines" SEODescription="Find out how to make your Office Add-ins accessible for all users." />
+      <Item text="Guidelines" url="design/add-in-design-guidelines" >
+		<Item text="Design language" url="design/add-in-design-language" />
+		<Item text="UX design templates" url="design/ux-design-patterns" SEODescription="Use the UX design pattern templates for Office Add-ins to create UI extensions." />
+		<Item text="Usability testing" url="design/usability-testing" />
+	  </Item>	
+	  <Item text="Interface elements" url="design/interface-elements" >
+		<Item text="Add-in commands" url="design/add-in-commands" SEODescription="Use add-in commands in your add-in to extend the default Office UI in Excel, Word, and PowerPoint." >
+			<Item text="Icon guidelines" url="design/design-icons" SEODescription="Design icons for add-in commands that integrate seamlessly with the Office UI." />
+		</Item>	
+		<Item text="Task panes" url="design/task-pane-add-ins" />
+		<Item text="Dialog boxes" url="design/dialog-boxes" />
+		<Item text="Content add-ins" url="design/content-add-ins" >
+			<Item text="Data visualization style guidelines" url="design/data-visualization-guidelines" SEODescription="Provides guidelines for data visualizations in Office Add-ins." />
+		</Item>	
+       </Item>
+	   <Item text="Office UI Fabric" url="design/office-ui-fabric" >
+			<Item text="Get started with Fabric JS" url="design/using-office-ui-fabric-js" SEODescription="Walks you through the basics for using Fabric JS."/>
+			<Item text="Get started with Fabric React" url="design/using-office-ui-fabric-react" SEODescription="Walks you through the basics for using Fabric React."/>
+			<Item text="Breadcrumb" url="design/breadcrumb" />
+			<Item text="Buttons" url="design/button" />
+			<Item text="Checkbox" url="design/checkbox" />
+			<Item text="ChoiceGroup" url="design/choicegroup" />
+			<Item text="DropDown" url="design/dropdown" />
+			<Item text="Label" url="design/label" />
+			<Item text="List" url="design/list" />
+			<Item text="Pivot" url="design/pivot" />
+			<Item text="TextField" url="design/textfield" />
+			<Item text="Toggle" url="design/toggle" />
+  		</Item>
     </Item>
   <Item text="Develop" url="develop">
 	<Item text="Add-in development lifecycle" url="develop/add-in-development-lifecycle" SEODescription="Plan the end-to-end process for developing task pane, content, and Outlook add-ins to extend Office applications." />
@@ -34,6 +49,11 @@
 	<Item text="Develop add-ins for the iPad" url="develop/develop-office-add-ins-for-the-ipad"  SEODescription="Make your Office Add-ins available in Office for iPad." />
 	<Item text="Tips for creating add-ins with Angular 2" url="develop/add-ins-with-angular2" SEODescription="Use Angular 2 to develop Office Add-ins." />
 	<Item text="Use the Dialog API" url="develop/dialog-api-in-office-add-ins" SEODescription="Use the Dialog API to open dialog boxes in your Office Add-in." />
+	<Item text="Authorize external services" url="develop/auth-external-add-ins" SEODescription="Use the OAuth 2.0 authorization framework in your Office Add-ins." />
+	<Item text="Enable SSO in an add-in" url="develop/sso-in-office-add-ins" >
+		<Item text="Create an SSO add-in using ASP.NET" url="develop/create-sso-office-add-ins-aspnet" />
+		<Item text="Create an SSO add-in using Node.js" url="develop/create-sso-office-add-ins-nodejs" />
+	</Item>
 	<Item text="Manifest" url="overview/add-in-manifests">	
 		<Item text="Define add-in commands" url="outlook/manifests/define-add-in-commands"  SEODescription="Use the VersionOverrides element in your add-in manifest to define add-in commands." />
 		<Item text="Specify Office hosts" url="overview/specify-office-hosts-and-api-requirements" SEODescription="Find out how to specify Office hosts and API requirements in your manifest." /> 	
@@ -48,7 +68,6 @@
 		<Item text="Asynchronous programming in Office Add-ins" url="develop/asynchronous-programming-in-office-add-ins" SEODescription="Develop Office Add-ins using the nested callbacks and promises patterns asynchronous programming patterns supported by the JavaScript API for Office." />
 		<Item text="Persist state and settings" url="develop/persisting-add-in-state-and-settings" SEODescription="Understand the options for persisting add-in state and settings data for content, task pane, and Outlook add-ins." />
 	</Item>
-	<Item text="Authorize external services" url="develop/auth-external-add-ins" SEODescription="Use the OAuth 2.0 authorization framework in your Office Add-ins." />
 	<Item text="Privacy and security" url="develop/privacy-and-security" SEODescription="Office Add-ins are secured by a runtime framework, a multiple-tier permissions model, and the ability to govern use of memory, CPU, and network resources." />
 	<Item text="Address same origin policy limitations" url="develop/addressing-same-origin-policy-limitations" SEODescription="Provides a brief overview of ways to address the same-origin policy limitations that prevent a script loaded from one domain from getting or manipulating properties of a document from another domain in an Office Add-in." />
 	<Item text="Localization" url="develop/localization" SEODescription="Provide locale-specific content for an Office Add-in, including UI strings, add-in name, description, icon, source file, and date/time format." />
