@@ -22,7 +22,7 @@ You can use sideloading to install an Outlook add-in for testing without having 
     
 ## Sideload an add-in in Outlook on the desktop
 
-1. Open Outlook 2016 or Outlook 2013.
+1. Open Outlook 2016, Outlook 2013, or Outlook 2016 for Mac.
 
 1. Select the **Store** button on the ribbon.
 
