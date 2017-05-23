@@ -6,22 +6,30 @@ You can use sideloading to install an Outlook add-in for testing without having 
  >**Note**  You can also sideload add-ins for other Office suite applications. For more information, see [Sideload Office Add-ins for testing](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
 
 
-## To sideload Outlook add-ins
+## Sideload an add-in in Outlook on the web
 
-
-1. Go to [Outlook Web App](https://outlook.office365.com).
+1. Go to [Outlook on the web](https://outlook.office.com).
     
-2. Choose the gear icon in the top-right section and select  **Manage add-ins**.
+1. Choose the gear icon in the top-right section and select  **Manage integrations**.
     
-    ![Outlook Web App screenshot pointing to Manage add-ins option](../../images/cd83b62e-94e7-4010-ad49-150fcc0a3dd4.PNG)
+    ![Outlook on the web screenshot pointing to Manage integrations option](../../images/outlook-sideload-web-manage-integrations.PNG)
 
-3. On the  **Manage add-ins** page, select the **+** icon and then select **Add from a file**.
+1. On the  **Manage integrations** page, select **Add-Ins**, select the **Click here to add a custom add-in** link, and then select **Add from file...**.
     
-    ![Manage add-ins screenshot pointing to Add from a file option](../../images/c0161290-c65a-45d2-9fc7-b54283e13e6f.PNG)
+    ![Manage integrations screenshot pointing to Add from a file option](../../images/outlook-sideload-web-add-from-file.PNG)
 
-4. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
+1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
     
-When that's done, select an existing email and you will see a horizontal bar below the email header that includes the add-in. Next, create an email, and then choose the  **Add-ins** (or **Apps**) menu item to get the task pane to appear. Select the add-in and see it appear in the task pane.
+## Sideload an add-in in Outlook on the desktop
 
+1. Open Outlook 2016, Outlook 2013, or Outlook 2016 for Mac.
 
+1. Select the **Store** button on the ribbon.
+
+    ![Outlook 2016 ribbon pointing to Store button](../../images/outlook-sideload-desktop-store.PNG)
+
+1. On the  **Store** page, select **Add-Ins**, select the **Click here to add a custom add-in** link, and then select **Add from file...**.
     
+    ![Store screenshot pointing to Add from a file option](../../images/outlook-sideload-web-add-from-file.PNG)
+
+1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
