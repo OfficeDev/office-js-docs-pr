@@ -1,18 +1,18 @@
-# Create an ASP.NET Office Add-in that uses single sign-on (preview)
+# Create an ASP.NET Office Add-in that uses Single Sign-on (preview)
 
-Users can sign into Office and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign-on a second time. For an overview, see [Enable SSO in an Office Add-in](../../docs/develop/sso-in-office-add-ins.md).
+Users can sign into Office and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign-on a second time. For an overview, see [Single Sign-on to Office, your Office Web Add-in, and Microsoft Graph (preview)](../../docs/develop/sso-in-office-add-ins.md) .
 
 This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with ASP.NET, OWIN, and Microsoft Authentication Library (MSAL) for .NET. 
 
-> **Note:** For a similar article about a Node.js-based add-in, see [Create a Node.js Office Add-in that uses single sign-on](../../docs/develop/create-sso-office-add-ins-nodejs.md).
+> Note: For a similar article about a NodeJS-based add-in, see [Create a Node.js Office Add-in that uses Single Sign-on](../../docs/develop/create-sso-office-add-ins-nodejs.md) .
 
 ## Prerequisites
 
 * Visual Studio 2017 Version 15.3 (26424.2-Preview) or later.
 
-* Office 2016, Version 1704, build 8027.nnnn or later (the Office 365 subscription version, sometimes called “Click to Run”). You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1).
+* Office 2016, Version 1704,  build 8027.nnnn or later. (The Office 365 subscription version, sometimes called “Click to Run”.)  You many need to be an Office Insider to obtain this version. For more information, see [Be an Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1) .
 
-## Set up the starter project
+## Setup the starter project
 
 1. Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/officedev/office-add-in-aspnet-sso). 
 
@@ -27,9 +27,9 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 1. Press the **Show Add-in** button in this group to see the add-in’s UI in the task pane. The button in the task pane is not wired up yet. 
 2. In Visual Studio, stop the debugger.
 
-## Register the add-in with Azure AD v2.0 endpoint
+## Register the add-in with Azure AD V2 endpoint
 
-1. Navigate to [https://apps.dev.microsoft.com/?test=build2017](https://apps.dev.microsoft.com/?test=build2017) . 
+1. Navigate to [https://apps.dev.microsoft.com/?test=build2017](https://apps.dev.microsoft.com) . 
 
 1. Sign-in with the admin credentials to your Office 365 tenancy. For example, MyName@contoso.onmicrosoft.com
 
@@ -47,21 +47,21 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. In the dialog that opens, select **Web API**.
 
-1. An **Application ID URI** has been generated of the form “api://{App ID GUID}”. Replace the GUID with “localhost:44355”. The entire ID should read `api://localhost:44355`. (The domain part of the **Scope** name just below the **Application ID URI** will automatically change to match. It should read `api://localhost:44355/access_as_user`.)
+1. An **Application ID URI** has been generated of the form “api://{App ID GUID}”. Insert the string “localhost:44355/” between the double forward slashes and the GUID. The entire ID should read `api://localhost:44355/{App ID GUID}`. (The domain part of the **Scope** name just below the **Application ID URI** will automatically change to match. It should read `api://localhost:44355/{App ID GUID}/access_as_user`.)
 
 1. In the **Pre-authorized applications** section, there is an empty **Application ID** box. Enter the following ID in the box (this is the ID of Microsoft Office):  `d3590ed6-52b3-4102-aeff-aad2292ab01c`.
 
-1. Open the **Scope** drop down beside the **Application ID** and check the box for `api://localhost:44355/access_as_user`.
+1. Open the **Scope** drop down beside the **Application ID** and check the box for `api://localhost:44355/{App ID GUID}/access_as_user`.
 
 1. Near the top of the **Platforms** section, click **Add Platform** again and select **Web**.
 
 1. In the new **Web** section under **Platforms**, enter the following as a **Redirect URL**: `https://localhost:44355`. 
 
-    > Note: As of this writing, the **Web API** platform sometimes disappears from the **Platforms** section, particularly if the page is refreshed after the **Web** platform is added *and the registration page is saved*. For reassurance that your **Web API** platform is still part of the registration, click the **Edit Application Manifest** button near the bottom of the page. You should see the `api://localhost:44355` string in the **identifierUris** property of the manifest. There will also be a **oauth2Permissions** property whose **value** subproperty has the value `access_as_user`.
+    > Note: As of this writing, the **Web API** platform sometimes disappears from the **Platforms** section, particularly if the page is refreshed after the **Web** platform is added *and the registration page is saved*. For reassurance that your **Web API** platform is still part of the registration, click the **Edit Application Manifest** button near the bottom of the page. You should see the `api://localhost:44355/{App ID GUID}` string in the **identifierUris** property of the manifest. There will also be a **oauth2Permissions** property whose **value** subproperty has the value `access_as_user`.
 
 1. Scroll down to the **Microsoft Graph Permissions** section, the **Delegated Permissions** subsection. Use the **Add** button to open a **Select Permissions** dialog.
 
-1. In the dialog, check the boxes for the following permissions (some may already be checked by default): 
+1. In the dialog, check the boxes for the following permissions (some may already be checked by default). (Only the first is really required by your add-in itself; but the MSAL library that the server-side code uses requires the other three. 
  * Files.Read.All
  * offline_access
  * openid
@@ -121,7 +121,7 @@ Here’s an example of what the four keys you changed should look like. *Note th
     <add key="ida:Issuer" value="https://login.microsoftonline.com/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee/v2.0" />
     ```
 
-> **Note:** Leave the other settings in the **appSettings** section unchanged.
+Note: Leave the other settings in the **appSettings** section unchanged.
 
 
 1. Save and close the file.
@@ -134,7 +134,7 @@ Here’s an example of what the four keys you changed should look like. *Note th
 
     ```xml
     <WebApplicationId>{application_GUID here}</WebApplicationId>
-    <WebApplicationResource>api://localhost:44355<WebApplicationResource>
+    <WebApplicationResource>api://localhost:44355/{application_GUID here}<WebApplicationResource>
     <WebApplicationScopes>
         <WebApplicationScope>profile</WebApplicationScope>
         <WebApplicationScope>openid</WebApplicationScope>
@@ -143,12 +143,12 @@ Here’s an example of what the four keys you changed should look like. *Note th
     </WebApplicationScopes>
     ```
 
-1. Replace the placeholder “{application_GUID here}” in the markup with the Application ID that you copied when you registered your add-in. This is the same ID you used in for the ClientID and Audience in the web.config.
+1. Replace the placeholder “{application_GUID here}” *in both places where it appears* in the markup with the Application ID that you copied when you registered your add-in. This is the same ID you used in for the ClientID and Audience in the web.config.
 
     >Note: 
     >
     >* The **WebApplicationResource** value is the **Application ID URI** you set when you added the Web API platform to the registration of the add-in.
-    >* The **WebApplicationScopes** section is used only to generate a consent dialog if the add-in is sold through the Office Store.
+    >* The **WebApplicationScopes** section is used only to generate a consent dialog if the add-in is sold through the Office Store. You need to include `profile`, `openid`, and `offline_access` because the MSAL library which you will be using to code the server side requires these permissions at a miniumum.
 
 1. Save and close the file.
 
@@ -342,6 +342,7 @@ Here’s an example of what the four keys you changed should look like. *Note th
 
     * Your add-in is no longer playing the role of a resource (or audience) to which the Office host and user need access. Now it is itself a client that needs access to Microsoft Graph. `ConfidentialClientApplication` is the MSAL “client context” object. 
     * The third parameter to the `ConfidentialClientApplication` constructor is a redirect URL which is not actually used in the “on behalf of” flow, but it is a good practice to use the correct URL. The fourth and fifth parameters can be used to define a persistent store that would enable the reuse of unexpired tokens across different sessions with the add-in. This sample does not implement any persistent storage.
+    * MSAL needs the `profile`, `openid`, and `offline_access` scopes to execute, but it throws an error if any of them are redundantly included in the explicit scopes that you request, so only `Files.Read.All` is requested.
     * The `ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync` method will first look in the MSAL cache, which is in memory, for a matching access token. Only if there isn't one, does it initiate the "on behalf of" flow with the Azure AD V2 endpoint.
 
     ```
@@ -349,7 +350,7 @@ Here’s an example of what the four keys you changed should look like. *Note th
     ConfidentialClientApplication cca =
                     new ConfidentialClientApplication(ConfigurationManager.AppSettings["ida:ClientID"],
                                                       "https://localhost:44355", clientCred, null, null);
-    string[] graphScopes = { "profile", "Files.Read.All" };
+    string[] graphScopes = { "Files.Read.All" };
     AuthenticationResult result = await cca.AcquireTokenOnBehalfOfAsync(graphScopes, userAssertion, "https://login.microsoftonline.com/common/oauth2/v2.0");
     ```
 
