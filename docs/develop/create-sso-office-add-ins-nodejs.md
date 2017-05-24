@@ -1,24 +1,24 @@
-# Create a Node.js Office Add-in that uses Single Sign-on (preview)
+# Create a Node.js Office Add-in that uses single sign-on (preview)
 
-Users can sign into Office, and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign-on a second time. For an overview, see [Single Sign-on to Office, your Office Web Add-in, and Microsoft Graph (preview)](../../docs/develop/sso-in-office-add-ins.md) .
+Users can sign into Office, and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign-on a second time. For an overview, see [Enable SSO in an Office Add-in](../../docs/develop/sso-in-office-add-ins.md).
 
-This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with NodeJS and express. 
+This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with Node.js and express. 
 
-> Note: For a similar article about an ASP.NET-based add-in, see [Create an ASP.NET Office Add-in that uses Single Sign-on](../../docs/develop/create-sso-office-add-ins-aspnet.md).
+> **Note:** For a similar article about an ASP.NET-based add-in, see [Create an ASP.NET Office Add-in that uses single sign-on](../../docs/develop/create-sso-office-add-ins-aspnet.md).
 
 ## Prerequisites
 
 * [Node and npm](https://nodejs.org/en/), version 6.9.4 or later.
 * [Git Bash](https://git-scm.com/downloads) (Or another git client.)
 * TypeScript version 2.2.2 or later.
-* Office 2016, Version 1704,  build 8027.nnnn or later. (The Office 365 subscription version, sometimes called “Click to Run”.)  You many need to be an Office Insider to obtain this version. For more information, see [Be an Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1) .
+* Office 2016, Version 1704, build 8027.nnnn or later (the Office 365 subscription version, sometimes called “Click to Run”). You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1).
 
-## Setup the starter project
+## Set up the starter project
 
 1. Clone or download the repo at [Office Add-in NodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso). 
 
 
-    > Note: There are two versions of the sample. 
+    > **Note:** There are two versions of the sample. 
     > 
     > * The **Before** folder is a starter project. The UI and other aspects of the add-in that are not directly connected to SSO or authorization are already done. Later sections of this article walk you through the process of completing it. 
     > * The **Completed** version of the sample is just like the add-in that you would have if you completed the procedures of this article, except that the completed project has code comments that would be redundant with the text of this article. To use the completed version, just follow the instructions in this article, but replace "Before" with "Completed" and skip the sections **Code the client side** and **Code the server** side.
@@ -32,7 +32,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Register the add-in with Azure AD V2 endpoint
 
-1. Navigate to [https://apps.dev.microsoft.com/?test=build2017](https://apps.dev.microsoft.com) . 
+1. Navigate to [https://apps.dev.microsoft.com/?test=build2017](https://apps.dev.microsoft.com/?test=build2017) . 
 
 1. Sign-in with the admin credentials to your Office 365 tenancy. For example, MyName@contoso.onmicrosoft.com
 
@@ -50,17 +50,17 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. In the dialog that opens, select **Web API**.
 
-1. An **Application ID URI** has been generated of the form “api://{App ID GUID}”. Insert the string  “localhost:3000/” between the double forward slashes and the GUID. The entire ID should read `api://localhost:3000/{App ID GUID}`. (The domain part of the **Scope** name just below the **Application ID URI** will automatically change to match. It should read `api://localhost:3000/{App ID GUID}/access_as_user`.)
+1. An **Application ID URI** has been generated of the form “api://{App ID GUID}”. Replace the GUID with “localhost:3000”. The entire ID should read `api://localhost:3000`. (The domain part of the **Scope** name just below the **Application ID URI** will automatically change to match. It should read `api://localhost:3000/access_as_user`.)
 
 1. This step and the next one give the Office host application access to your add-in. In the **Pre-authorized applications** section, there is an empty **Application ID** box. Enter the following ID in the box (this is the ID of Microsoft Office):  `d3590ed6-52b3-4102-aeff-aad2292ab01c`.
 
-1. Open the **Scope** drop down beside the **Application ID** and check the box for `api://localhost:3000/{App ID GUID}/access_as_user`.
+1. Open the **Scope** drop down beside the **Application ID** and check the box for `api://localhost:3000/access_as_user`.
 
 1. Near the top of the **Platforms** section, click **Add Platform** again and select **Web**.
 
 1. In the new **Web** section under **Platforms**, enter the following as a **Redirect URL**: `https://localhost:3000`. 
 
-    > Note: As of this writing, the **Web API** platform sometimes disappears from the **Platforms** section, particularly if the page is refreshed after the **Web** platform is added *and the registration page is saved*. For reassurance that your **Web API** platform is still part of the registration, click the **Edit Application Manifest** button near the bottom of the page. You should see the `api://localhost:3000/{App ID GUID}` string in the **identifierUris** property of the manifest. There will also be a **oauth2Permissions** property whose **value** subproperty has the value `access_as_user`.
+    > Note: As of this writing, the **Web API** platform sometimes disappears from the **Platforms** section, particularly if the page is refreshed after the **Web** platform is added *and the registration page is saved*. For reassurance that your **Web API** platform is still part of the registration, click the **Edit Application Manifest** button near the bottom of the page. You should see the `api://localhost:3000` string in the **identifierUris** property of the manifest. There will also be a **oauth2Permissions** property whose **value** subproperty has the value `access_as_user`.
 
 1. Scroll down to the **Microsoft Graph Permissions** section, the **Delegated Permissions** subsection. Use the **Add** button to open a **Select Permissions** dialog.
 
@@ -105,7 +105,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
-    >Note: Leave the other parameters in the `AuthModule` constructor unchanged.
+    > **Note:** Leave the other parameters in the `AuthModule` constructor unchanged.
 
 1. Save and close the file.
 
@@ -117,14 +117,14 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
     ```
     <WebApplicationId>{application_GUID here}</WebApplicationId>
-    <WebApplicationResource>api://localhost:3000/{application_GUID here}<WebApplicationResource>
+    <WebApplicationResource>api://localhost:3000<WebApplicationResource>
     <WebApplicationScopes>
         <WebApplicationScope>profile</WebApplicationScope>
         <WebApplicationScope>files.read.all</WebApplicationScope>
     </WebApplicationScopes>
    ```
 
-1. Replace the placeholder “{application_GUID here}” *in both places where it appears* in the markup with the Application ID that you copied when you registered your add-in. This is the same ID you used in for the ClientID and Audience in the web.config.
+1. Replace the placeholder “{application_GUID here}” in the markup with the Application ID that you copied when you registered your add-in. This is the same ID you used in for the ClientID and Audience in the web.config.
 
     >Note: 
     >
@@ -408,7 +408,7 @@ There are two ways to build and run the project depending on whether you are usi
 
 ## Test the add-in
 
-> Note: The preview version of the `getAccessTokenAsync` API only supports work or school (Office 365) identities. *If you are signed into Office with a personal identity (Microsoft Account), sign out before preceding.* To test the add-in, you must be either signed out entirely from Office, or signed in with a work or school account.
+> **Note:** The preview version of the `getAccessTokenAsync` API only supports work or school (Office 365) identities. *If you are signed into Office with a personal identity (Microsoft Account), sign out before preceding.* To test the add-in, you must be either signed out entirely from Office, or signed in with a work or school account.
 
 1. Make sure you have some files or folders in your OneDrive for Business account.
 
