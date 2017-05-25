@@ -32,7 +32,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Register the add-in with Azure AD V2 endpoint
 
-1. Navigate to [https://apps.dev.microsoft.com/?test=build2017](https://apps.dev.microsoft.com/?test=build2017) . 
+1. Navigate to [https://apps.dev.microsoft.com](https://apps.dev.microsoft.com) . 
 
 1. Sign-in with the admin credentials to your Office 365 tenancy. For example, MyName@contoso.onmicrosoft.com
 
@@ -50,17 +50,17 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. In the dialog that opens, select **Web API**.
 
-1. An **Application ID URI** has been generated of the form “api://{App ID GUID}”. Replace the GUID with “localhost:3000”. The entire ID should read `api://localhost:3000`. (The domain part of the **Scope** name just below the **Application ID URI** will automatically change to match. It should read `api://localhost:3000/access_as_user`.)
+1. An **Application ID URI** has been generated of the form “api://{App ID GUID}”. Insert the string “localhost:3000” between the double forward slashes and the GUID. The entire ID should read `api://localhost:3000/{App ID GUID}`. (The domain part of the **Scope** name just below the **Application ID URI** will automatically change to match. It should read `api://localhost:3000/{App ID GUID}/access_as_user`.)
 
 1. This step and the next one give the Office host application access to your add-in. In the **Pre-authorized applications** section, there is an empty **Application ID** box. Enter the following ID in the box (this is the ID of Microsoft Office):  `d3590ed6-52b3-4102-aeff-aad2292ab01c`.
 
-1. Open the **Scope** drop down beside the **Application ID** and check the box for `api://localhost:3000/access_as_user`.
+1. Open the **Scope** drop down beside the **Application ID** and check the box for `api://localhost:3000/{App ID GUID}/access_as_user`.
 
 1. Near the top of the **Platforms** section, click **Add Platform** again and select **Web**.
 
 1. In the new **Web** section under **Platforms**, enter the following as a **Redirect URL**: `https://localhost:3000`. 
 
-    > Note: As of this writing, the **Web API** platform sometimes disappears from the **Platforms** section, particularly if the page is refreshed after the **Web** platform is added *and the registration page is saved*. For reassurance that your **Web API** platform is still part of the registration, click the **Edit Application Manifest** button near the bottom of the page. You should see the `api://localhost:3000` string in the **identifierUris** property of the manifest. There will also be a **oauth2Permissions** property whose **value** subproperty has the value `access_as_user`.
+    > Note: As of this writing, the **Web API** platform sometimes disappears from the **Platforms** section, particularly if the page is refreshed after the **Web** platform is added *and the registration page is saved*. For reassurance that your **Web API** platform is still part of the registration, click the **Edit Application Manifest** button near the bottom of the page. You should see the `api://localhost:3000/{App ID GUID}` string in the **identifierUris** property of the manifest. There will also be a **oauth2Permissions** property whose **value** subproperty has the value `access_as_user`.
 
 1. Scroll down to the **Microsoft Graph Permissions** section, the **Delegated Permissions** subsection. Use the **Add** button to open a **Select Permissions** dialog.
 
@@ -117,14 +117,14 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
     ```
     <WebApplicationId>{application_GUID here}</WebApplicationId>
-    <WebApplicationResource>api://localhost:3000<WebApplicationResource>
+    <WebApplicationResource>api://localhost:3000/{application_GUID here}<WebApplicationResource>
     <WebApplicationScopes>
         <WebApplicationScope>profile</WebApplicationScope>
         <WebApplicationScope>files.read.all</WebApplicationScope>
     </WebApplicationScopes>
    ```
 
-1. Replace the placeholder “{application_GUID here}” in the markup with the Application ID that you copied when you registered your add-in. This is the same ID you used in for the ClientID and Audience in the web.config.
+1. Replace the placeholder “{application_GUID here}” *in both places* in the markup with the Application ID that you copied when you registered your add-in. This is the same ID you used in for the ClientID and Audience in the web.config.
 
     >Note: 
     >

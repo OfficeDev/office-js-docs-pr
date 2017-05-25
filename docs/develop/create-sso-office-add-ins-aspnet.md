@@ -29,7 +29,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Register the add-in with Azure AD v2.0 endpoint
 
-1. Navigate to [https://apps.dev.microsoft.com/?test=build2017](https://apps.dev.microsoft.com/?test=build2017) . 
+1. Navigate to [https://apps.dev.microsoft.com/](https://apps.dev.microsoft.com) . 
 
 1. Sign-in with the admin credentials to your Office 365 tenancy. For example, MyName@contoso.onmicrosoft.com
 
@@ -47,21 +47,21 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. In the dialog that opens, select **Web API**.
 
-1. An **Application ID URI** has been generated of the form “api://{App ID GUID}”. Replace the GUID with “localhost:44355”. The entire ID should read `api://localhost:44355`. (The domain part of the **Scope** name just below the **Application ID URI** will automatically change to match. It should read `api://localhost:44355/access_as_user`.)
+1. An **Application ID URI** has been generated of the form “api://{App ID GUID}”. Insert the string “localhost:44355/” between the double forward slashes and the GUID. The entire ID should read `api://localhost:44355/{App ID GUID}`. (The domain part of the **Scope** name just below the **Application ID URI** will automatically change to match. It should read `api://localhost:44355/{App ID GUID}/access_as_user`.)
 
 1. In the **Pre-authorized applications** section, there is an empty **Application ID** box. Enter the following ID in the box (this is the ID of Microsoft Office):  `d3590ed6-52b3-4102-aeff-aad2292ab01c`.
 
-1. Open the **Scope** drop down beside the **Application ID** and check the box for `api://localhost:44355/access_as_user`.
+1. Open the **Scope** drop down beside the **Application ID** and check the box for `api://localhost:44355/{App ID GUID}/access_as_user`.
 
 1. Near the top of the **Platforms** section, click **Add Platform** again and select **Web**.
 
 1. In the new **Web** section under **Platforms**, enter the following as a **Redirect URL**: `https://localhost:44355`. 
 
-    > Note: As of this writing, the **Web API** platform sometimes disappears from the **Platforms** section, particularly if the page is refreshed after the **Web** platform is added *and the registration page is saved*. For reassurance that your **Web API** platform is still part of the registration, click the **Edit Application Manifest** button near the bottom of the page. You should see the `api://localhost:44355` string in the **identifierUris** property of the manifest. There will also be a **oauth2Permissions** property whose **value** subproperty has the value `access_as_user`.
+    > Note: As of this writing, the **Web API** platform sometimes disappears from the **Platforms** section, particularly if the page is refreshed after the **Web** platform is added *and the registration page is saved*. For reassurance that your **Web API** platform is still part of the registration, click the **Edit Application Manifest** button near the bottom of the page. You should see the `api://localhost:44355/{App ID GUID}` string in the **identifierUris** property of the manifest. There will also be a **oauth2Permissions** property whose **value** subproperty has the value `access_as_user`.
 
 1. Scroll down to the **Microsoft Graph Permissions** section, the **Delegated Permissions** subsection. Use the **Add** button to open a **Select Permissions** dialog.
 
-1. In the dialog, check the boxes for the following permissions (some may already be checked by default): 
+1. In the dialog, check the boxes for the following permissions (some may already be checked by default). (Only the first is really required by your add-in itself; but the MSAL library that the server-side code uses requires the other three.) 
  * Files.Read.All
  * offline_access
  * openid
@@ -134,7 +134,7 @@ Here’s an example of what the four keys you changed should look like. *Note th
 
     ```xml
     <WebApplicationId>{application_GUID here}</WebApplicationId>
-    <WebApplicationResource>api://localhost:44355<WebApplicationResource>
+    <WebApplicationResource>api://localhost:44355/{application_GUID here}<WebApplicationResource>
     <WebApplicationScopes>
         <WebApplicationScope>profile</WebApplicationScope>
         <WebApplicationScope>openid</WebApplicationScope>
@@ -143,7 +143,7 @@ Here’s an example of what the four keys you changed should look like. *Note th
     </WebApplicationScopes>
     ```
 
-1. Replace the placeholder “{application_GUID here}” in the markup with the Application ID that you copied when you registered your add-in. This is the same ID you used in for the ClientID and Audience in the web.config.
+1. Replace the placeholder “{application_GUID here}” *in both places* in the markup with the Application ID that you copied when you registered your add-in. This is the same ID you used in for the ClientID and Audience in the web.config.
 
     >Note: 
     >
@@ -342,6 +342,7 @@ Here’s an example of what the four keys you changed should look like. *Note th
 
     * Your add-in is no longer playing the role of a resource (or audience) to which the Office host and user need access. Now it is itself a client that needs access to Microsoft Graph. `ConfidentialClientApplication` is the MSAL “client context” object. 
     * The third parameter to the `ConfidentialClientApplication` constructor is a redirect URL which is not actually used in the “on behalf of” flow, but it is a good practice to use the correct URL. The fourth and fifth parameters can be used to define a persistent store that would enable the reuse of unexpired tokens across different sessions with the add-in. This sample does not implement any persistent storage.
+    * MSAL requires the `profile`, `openid`, and `offline_access` scopes to function, but it throws an error if your code redundantly requests them, so only `Files.Read.All` is explicitly requested.
     * The `ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync` method will first look in the MSAL cache, which is in memory, for a matching access token. Only if there isn't one, does it initiate the "on behalf of" flow with the Azure AD V2 endpoint.
 
     ```
@@ -349,7 +350,7 @@ Here’s an example of what the four keys you changed should look like. *Note th
     ConfidentialClientApplication cca =
                     new ConfidentialClientApplication(ConfigurationManager.AppSettings["ida:ClientID"],
                                                       "https://localhost:44355", clientCred, null, null);
-    string[] graphScopes = { "profile", "Files.Read.All" };
+    string[] graphScopes = { "Files.Read.All" };
     AuthenticationResult result = await cca.AcquireTokenOnBehalfOfAsync(graphScopes, userAssertion, "https://login.microsoftonline.com/common/oauth2/v2.0");
     ```
 
