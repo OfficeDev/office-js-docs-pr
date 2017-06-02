@@ -60,7 +60,7 @@ Add new markup to the add-in manifest:
 
 * **WebApplicationID** - The client ID of the add-in.
 * **WebApplicationResource** - The URL of the add-in.
-* **WebApplicationScopes** - Specifies the permissions that the Office host needs to the add-in and that the add-in needs to Microsoft Graph. In general, you’ll always want *User.Read*, but you can request more access (like *Mail.Read* or *offline_access*).
+* **WebApplicationScopes** - Specifies the permissions that the Office host needs to the add-in and that the add-in needs to Microsoft Graph. In general, you’ll always want *User.Read*, but you can request more access (like Mail.Read or offline_access).
 
 For Office hosts other than Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` section. For Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_1">` section.
 
