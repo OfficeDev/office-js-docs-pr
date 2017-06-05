@@ -32,7 +32,7 @@ May 2017
 1.  Open Visual Studio and go to *File > New > Project*. 
 2.  Under **Office/SharePoint**, choose **Excel Add-in** and then choose **OK**.
 
-![Visual Studio Excel Add-in template](../images/visual-studio-addin-template.png)
+![Visual Studio Excel Add-in template](../../images/visual-studio-addin-template.png)
 
 3.  In the app creation wizard, choose **Add new functionalities to Excel** and choose **Finish**.
 4.  Do a quick test of the newly created Excel add-in by pressing F5 or the green **Start** button to launch the add-in. The add-in will be hosted locally on IIS, and Excel will be opened with the add-in loaded.
@@ -43,13 +43,13 @@ May 2017
 2. Select **Yes** when asked if you're sure you want to change file name extension.  
 3. Select **Yes** when asked if you want to search for TypeScript typings search on nuget as shown in the following screenshot.  This opens the **Nuget Package Manager**.
 
-![Search for TypeScript typings dialog](../images/search-typescript-typings.png)
+![Search for TypeScript typings dialog](../../images/search-typescript-typings.png)
 
 4. Choose **Browse** in the **Nuget Package Manager**.  
 5. In the search box, type **office-js tag:typescript**.
 6. Install **office.js.TypeScript.DefinitelyTyped** and **jquery.TypeScript.DefinitelyTyped** as shown in the following screenshot.
 
-![TypeScript DefinitelyTyped NuGets](../images/typescript-definitelytyped-nugets.png)
+![TypeScript DefinitelyTyped NuGets](../../images/typescript-definitelytyped-nugets.png)
 
 7. Open Home.ts (formerly Home.js). Remove the following reference from top of Home.ts:
 
