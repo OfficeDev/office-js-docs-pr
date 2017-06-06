@@ -75,7 +75,7 @@ Launch the local HTTPS site on https://localhost:3000 by typing the following co
 
 ```
 npm start
-```
+docs/```
 
 Browsersync will start a HTTPS server, and launch the index.html file in your project. You will see an error that states "There is a problem with this website's security certificate."
 
@@ -112,7 +112,7 @@ You can debug your add-in in several ways:
 
 In Office 2016 for Windows, Build 77xx.xxxx or later, you can attach the debugger from the task pane. The attach debugger feature will directly attach the debugger to the correct Internet Explorer process for you.  You can attach to the debugger regardless even if the add-ins is written using a non-Visual Studio flow, eg. Yeoman Generator, Visual Studio Code, node.js, Angular, etc. 
 
-For more information, see [Attach debugger from the task pane](../testing/attach-debugger-from-task-pane.md)
+For more information, see [Attach debugger from the task pane](../testing/attach-debugger-from-task-pane.md).
 
 
 ### Browser developer tools 
