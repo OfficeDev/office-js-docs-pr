@@ -30,7 +30,7 @@ The following sections briefly describe how the runtime architecture supports ru
 
 In supported clients for desktop and tablet devices, such as Excel, Outlook, and Outlook for Mac, Office Add-ins are supported by integrating an in-process component, the Office Add-ins runtime, which manages the add-in lifecycle and enables interoperability between the add-in and the client application. The add-in webpage itself is hosted out-of-process. As shown in figure 1, on a Windows desktop or tablet device, the add-in webpage is hosted inside an Internet Explorer control which, in turn, is hosted inside an add-in runtime process that provides security and performance isolation.
 
-On Windows desktops, Internet Explorer's Protect Mode must be enabled for the Restricted Site Zone. This is typically not a problem as this is enabled by default. In cases where it is disabled, an [error will occur](https://support.microsoft.com/en-us/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer) when attempting to launch an add-in.
+On Windows desktops, Protect Mode in Internet Explorer must be enabled for the Restricted Site Zone. This is typically enabled by default. If it is disabled, an [error will occur](https://support.microsoft.com/en-us/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer) when you try to launch an add-in.
 
 **Figure 1. Office Add-ins runtime environment in Windows-based desktop and tablet clients**
 
@@ -48,7 +48,7 @@ The Office Add-ins runtime manages interprocess communication, the translation o
 
 ### Web clients
 
-In supported Web clients, such as Excel Online and Outlook Web App, Office Add-ins are hosted in an  **iframe** that runs using the HTML5 **sandbox** attribute. ActiveX components or navigating the main page of the web client are not allowed. Office Add-ins support is enabled in the web clients by the integration of the JavaScript API for Office. In a similar way to the desktop client applications, the JavaScript API manages the add-in lifecycle and interoperability between the add-in and the web client. This interoperability is implemented by using a special cross-frame post message communication infrastructure. The same JavaScript library (Office.js) that is used on desktop clients is available to interact with the web client. Figure 3 illustrates the infrastructure that supports Office Add-ins in the Office Online (running in the browser), and the relevant components (the web client, **iframe**, Office Add-ins runtime, and JavaScript API for Office) that are required to support them.
+In supported Web clients, such as Excel Online and Outlook Web App, Office Add-ins are hosted in an  **iframe** that runs using the HTML5 **sandbox** attribute. ActiveX components or navigating the main page of the web client are not allowed. Office Add-ins support is enabled in the web clients by the integration of the JavaScript API for Office. In a similar way to the desktop client applications, the JavaScript API manages the add-in lifecycle and interoperability between the add-in and the web client. This interoperability is implemented by using a special cross-frame post message communication infrastructure. The same JavaScript library (Office.js) that is used on desktop clients is available to interact with the web client. Figure 3 shows the infrastructure that supports Office Add-ins in the Office Online (running in the browser), and the relevant components (the web client, **iframe**, Office Add-ins runtime, and JavaScript API for Office) that are required to support them.
 
 
 **Figure 3. Infrastructure that supports Office Add-ins in Office web clients**
@@ -71,7 +71,7 @@ You can make your Office Add-ins available to the public by publishing them in t
 
 ## Addressing end users' privacy concerns
 
-This section addresses end users' privacy concerns when using Office Add-ins. First, it describes the protection offered by the Office Add-ins platform from the customer's (end user's) perspective. Then, it provides you as the developer with guidelines about how to support users' expectations and how to securely handle users' personally identifiable information (PII).
+This section describes the protection offered by the Office Add-ins platform from the customer's (end user's) perspective, and provides guidelines for how to support users' expectations and how to securely handle users' personally identifiable information (PII).
 
 
 ### End users' perspective
@@ -276,7 +276,5 @@ In a corporate setting, IT administrators have ultimate authority over enabling 
 - [Same Origin Policy Part 1: No Peeking](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
 
 - [Same origin policy for JavaScript](https://developer.mozilla.org/En/Same_origin_policy_for_JavaScript)
-
-- [Defining Safer JSON-P](http://json-p.org/)
 
 - [IE Protect Mode](https://support.microsoft.com/en-us/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)
