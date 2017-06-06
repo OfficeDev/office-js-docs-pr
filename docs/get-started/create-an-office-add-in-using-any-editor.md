@@ -110,7 +110,7 @@ You can debug your add-in in several ways:
 
 ### Attach debugger from the task pane
 
-In Office 2016 for Windows, Build 77xx.xxxx or later, you can attach the debugger from the task pane. The attach debugger feature will directly attach the debugger to the correct Internet Explorer process for you.  You can attach to the debugger regardless even if the add-ins is written using a non-Visual Studio flow, eg. Yeoman Generator, Visual Studio Code, node.js, Angular, etc. 
+In Office 2016 for Windows, Build 77xx.xxxx or later, you can attach the debugger from the task pane. The attach debugger feature will directly attach the debugger to the correct Internet Explorer process for you. You can attach a debugger regardless of whether you are using Yeoman Generator, Visual Studio Code, node.js, Angular, or another tool. 
 
 For more information, see [Attach debugger from the task pane](../testing/attach-debugger-from-task-pane.md).
 
