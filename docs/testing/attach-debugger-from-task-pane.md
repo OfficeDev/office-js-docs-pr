@@ -1,5 +1,5 @@
 
-# Attach debugger from the task pane
+# Attach a debugger from the task pane
 
 In Office 2016 for Windows, Build 77xx.xxxx or later, you can attach the debugger from the task pane. The attach debugger feature will directly attach the debugger to the correct Internet Explorer process for you. You can attach a debugger regardless of whether you are using Yeoman Generator, Visual Studio Code, node.js, Angular, or another tool. 
 
