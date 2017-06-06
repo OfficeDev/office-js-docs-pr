@@ -1,8 +1,11 @@
+
 # Attach debugger from the task pane
 
 In Office 2016 for Windows, Build 77xx.xxxx or later, you can attach the debugger from the task pane.  This attach debugger feature will directly attach the debugger to the correct Internet Explorer process for you.  You can attach to the debugger regardless even if the add-ins is written using a non-Visual Studio flow, eg. Yeoman Generator, Visual Studio Code, node.js, Angular, etc. 
 
 To launch the **Attach Debugger** tool, choose the top right corner of the task pane to activate the **Personality** menu (as shown in the red circle in the following image).   
+
+ >  **Note**:  Currently the only supported debugger tool is [Visual Studio 2015](https://www.visualstudio.com/downloads/) with [Update 3](https://msdn.microsoft.com/en-us/library/mt752379.aspx). If you don't have Visual Studio installed, selecting the **Attach Debugger** option doesn’t result in any action.   
 
 ![Screenshot of Attach Debugger menu](../../images/attach-debugger.png)
 
