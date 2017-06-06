@@ -123,9 +123,7 @@ You can use the Office web clients and open the browser's developer tools to deb
 
 If you're using the Office desktop client on Windows 10, you can [Debug add-ins using F12 developer tools on Windows 10](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md).
     
-## Additional resources
+## Next steps
 
-
-- [Create and debug Office Add-ins in Visual Studio](../../docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md)
-- [Publish your Office Add-in](../publish/publish.md)
+- [Deploy and publish your Office Add-in](../publish/publish.md)
     
