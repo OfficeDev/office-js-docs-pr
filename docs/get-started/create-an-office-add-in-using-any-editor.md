@@ -75,7 +75,7 @@ Launch the local HTTPS site on https://localhost:3000 by typing the following co
 
 ```
 npm start
-docs/```
+```
 
 Browsersync will start a HTTPS server, and launch the index.html file in your project. You will see an error that states "There is a problem with this website's security certificate."
 
