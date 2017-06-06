@@ -786,6 +786,23 @@ rangeObject.search(searchText, searchOptions);
 #### Returns
 [RangeCollection](rangecollection.md)
 
+
+### select(selectionMode: string)
+Selects and navigates the Word UI to the range.
+
+#### Syntax
+```js
+rangeObject.select(selectionMode);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|selectionMode|string|Optional. Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.  Possible values are: Select, Start, End|
+
+#### Returns
+void
+
 #### Examples
 
 ```js
@@ -815,22 +832,6 @@ Word.run(function (context) {
     }
 });
 ```
-
-### select(selectionMode: string)
-Selects and navigates the Word UI to the range.
-
-#### Syntax
-```js
-rangeObject.select(selectionMode);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|selectionMode|string|Optional. Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.  Possible values are: Select, Start, End|
-
-#### Returns
-void
 
 ### split(delimiters: string[], multiParagraphs: bool, trimDelimiters: bool, trimSpacing: bool)
 Splits the range into child ranges by using delimiters.

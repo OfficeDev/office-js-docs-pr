@@ -79,7 +79,8 @@
 		<Item text="Sideload Office Add-ins in Office Online for testing" url="testing/sideload-office-add-ins-for-testing" SEODescription="See how to load an add-in into an Office application for testing." />
 	    <Item text="Sideload Outlook add-ins for testing" url="testing/sideload-outlook-add-ins-for-testing" SEODescription="Install an Outlook add-in for testing." />
     	<Item text="Sideload on iPad and Mac" url="testing/sideload-an-office-add-in-on-ipad-and-mac" SEODescription="Sideload your Office Add-in onto an iPad or Mac to test how it will run in Office for iOS or Office for Mac." />
-    	<Item text="Debug using F12 developer tools" url="testing/debug-add-ins-using-f12-developer-tools-on-windows-10" SEODescription="Use the Debugger from the F12 developer tools on Windows 10 to debug Office add-ins." />
+    	<Item text="Attach a debugger from the task pane" url="testing/attach-debugger-from-task-pane" />
+	<Item text="Debug using F12 developer tools" url="testing/debug-add-ins-using-f12-developer-tools-on-windows-10" SEODescription="Use the Debugger from the F12 developer tools on Windows 10 to debug Office add-ins." />
     	<Item text="Debug in Office Online" url="testing/debug-add-ins-in-office-online" SEODescription="Use Office Online to debug add-ins without running Office on the Windows platform - for example, if you're developing on a Mac." />
     	<Item text="Debug on iPad and Mac" url="testing/debug-office-add-ins-on-ipad-and-mac" SEODescription="Debug Office Add-ins running on an iPad or Mac by using the Weinre remote web inspector." />
         <Item text="Troubleshoot user errors" url="testing/testing-and-troubleshooting" SEODescription="Troubleshoot issues your users are having with Office Add-ins."  />
