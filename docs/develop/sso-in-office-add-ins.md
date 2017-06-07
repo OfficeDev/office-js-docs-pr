@@ -9,7 +9,7 @@ Your add-in can use SSO to do the following - without requiring the user to sign
 * Authorize the user to your add-in.
 * Authorize the add-in to access [Microsoft Graph](https://developer.microsoft.com/graph/docs). 
 
->**Note:** This feature is currently in preview and is subject to change in future releases. For this preview, single sign-on is supported only for work or school (Office 365) accounts and only for desktop versions of Office. 
+>**Note:** This feature is currently in preview and is subject to change in future releases. For this preview, single sign-on is supported only for work or school (Office 365) accounts and only for desktop versions of Office. Also, for Outlook, SSO only works if the Outlook account matches the Office user account listed in **File** > **Office account**.
 
 For users, this makes running your add-in a smooth experience that involves at most a one-time consent screen. For developers, this means that your add-in can authenticate users and gain authorized access to the user’s data via Microsoft Graph with credentials that the user has already provided to the Office application.
  
@@ -60,7 +60,9 @@ Add new markup to the add-in manifest:
 
 * **WebApplicationID** - The client ID of the add-in.
 * **WebApplicationResource** - The URL of the add-in.
-* **WebApplicationScopes** - Specifies the permissions that the Office host needs to the add-in and that the add-in needs to Microsoft Graph. In general, you’ll always want *User.Read*, but you can request more access (like *Mail.Read* or *offline_access*).
+* **WebApplicationScopes** - Specifies the permissions that the Office host needs to the add-in and that the add-in needs to Microsoft Graph. In general, you’ll always want *User.Read*, but you can request more access (like Mail.Read or offline_access).
+
+For Office hosts other than Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` section. For Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_1">` section.
 
 #### Add client-side code
 
