@@ -2,6 +2,8 @@
 
 If you're using Visual Studio to create an Office Add-in that uses TypeScript, you can leverage the Visual Studio Office Add-in JavaScript template instead of starting from scratch.  After creating the new add-in using Visual Studio, you then convert the project to TypeScript.
 
+   > **Note:** To learn how to create an Office Add-in TypeScript project using a the Yeoman generator, see  [Create an Office Add-in using any editor](../../docs/get-started/create-an-office-add-in-using-any-editor.md).
+
 In your TypeScript project, you can have a mix of TypeScript and JavaScript files and your project will compile fine. This is because TypeScript is a typed superset of JavaScript that compiles JavaScript. 
 
 This walkthrough shows you how to convert a Visual Studio Excel JavaScript add-in taskpane template to TypeScript.   You can use the same steps and apply it to other Visual Studio Office add-in JavaScript templates.
@@ -207,6 +209,6 @@ declare var fabric: any;
 
 ## Additional resources
 
-* [Office Dev Center](http://dev.office.com/)
+* Use any TypeScript features with Script Lab at [Script Lab] (https://github.com/OfficeDev/script-lab/)
 * More Office Add-in samples at [OfficeDev on Github](https://github.com/officedev)
 
