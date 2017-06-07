@@ -1,9 +1,14 @@
-# Convert a Visual Studio Excel JavaScript add-in taskpane template to TypeScript
+# Convert a Visual Studio Office add-in taskpane template to TypeScript
 
-You can leverage the Visual Studio Office Add-in JavaScript template and convert it to TypeScript.   That way, you don't have to create an Office Add-in project in Visual Studio  from scratch.
+If you're using Visual Studio to create an Office Add-in that uses TypeScript, you can leverage the Visual Studio Office Add-in JavaScript template instead of starting from scratch.  After creating the new add-in using Visual Studio, you then convert the project to TypeScript.
 
+In your TypeScript project, you can have a mix of TypeScript and JavaScript files and your project will compile fine. This is because TypeScript is a typed superset of JavaScript that compiles JavaScript. 
+
+This walkthrough shows you how to convert a Visual Studio Excel JavaScript add-in taskpane template to TypeScript.   You can use the same steps and apply it to other Visual Studio Office add-in JavaScript templates.
 
 ## Prerequisites
+
+The following are the softwares that must be installed on your computer to do the walkthrough.
 
 * [Visual Studio 2015 or later](https://www.visualstudio.com/downloads/).
 * [Office Developer Tools for Visual Studio](https://www.visualstudio.com/en-us/features/office-tools-vs.aspx).
