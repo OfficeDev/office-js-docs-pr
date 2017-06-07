@@ -1,20 +1,7 @@
-Learn how to convert a Visual Studio Excel JavaScript add-in taskpane template to TypeScript. 
+# Convert a Visual Studio Excel JavaScript add-in taskpane template to TypeScript
 
-## Table of Contents
-* [Change history](#change-history)
-* [Prerequisites](#prerequisites)
-* [Create new add-in project](#create-new-add-in)
-* [Convert add-in project to TypeScript](#convert-to-typescript)
-* [Run the converted add-in project](#test-the-add-in)
-* [Home.ts code file](#home-ts-code)
-* [Questions and comments](#questions-and-comments)
-* [Additional resources](#additional-resources)
+You can leverage the Visual Studio Office Add-in JavaScript template and convert it to TypeScript.   That way, you don't have to create an Office Add-in project in Visual Studio  from scratch.
 
-## Change history
-
-May 2017
-
-* Initial version.
 
 ## Prerequisites
 
@@ -39,7 +26,7 @@ May 2017
 
 ## Convert add-in project to TypeScript
 
-1. In **Solution Explorer", change Home.js file to Home.ts.
+1. In **Solution Explorer"** change Home.js file to Home.ts.
 2. Select **Yes** when asked if you're sure you want to change file name extension.  
 3. Select **Yes** when asked if you want to search for TypeScript typings search on nuget as shown in the following screenshot.  This opens the **Nuget Package Manager**.
 
@@ -213,17 +200,8 @@ declare var fabric: any;
 
 ```
 
-## Questions and comments
-
-We'd love to get your feedback about this sample. You can send your feedback to us in the *Issues* section of this repository.
-
-Questions about Microsoft Office 365 development in general should be posted to [Stack Overflow](http://stackoverflow.com/questions/tagged/office-js+API). If your question is about the Office JavaScript APIs, make sure that your questions are tagged with [office-js] and [API].
-
 ## Additional resources
 
-* [Office add-in documentation](https://msdn.microsoft.com/en-us/library/office/jj220060.aspx)
 * [Office Dev Center](http://dev.office.com/)
 * More Office Add-in samples at [OfficeDev on Github](https://github.com/officedev)
 
-## Copyright
-Copyright (c) 2016 Microsoft Corporation. All rights reserved.
