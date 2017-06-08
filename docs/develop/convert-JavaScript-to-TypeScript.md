@@ -1,3 +1,4 @@
+
 # Convert a Visual Studio Office add-in taskpane template to TypeScript
 
 If you're using Visual Studio to create an Office Add-in that uses TypeScript, you can leverage the Visual Studio Office Add-in JavaScript template instead of starting from scratch.  After creating the new add-in using Visual Studio, you then convert the project to TypeScript.
@@ -20,6 +21,8 @@ The following are the softwares that must be installed on your computer to do th
    > **Note:**  For more information about installing TypeScript 2.1, see [Announcing TypeScript 2.1](https://blogs.msdn.microsoft.com/typescript/2016/12/07/announcing-typescript-2-1/).
 
 * Excel 2016.
+
+ > **Note:** You can view or download the completed code sample for this walkthrough at [Excel-Add-In-TS-Start](https://github.com/OfficeDev/Excel-Add-In-TS-Start).
 
 ## Create new add-in project
 
