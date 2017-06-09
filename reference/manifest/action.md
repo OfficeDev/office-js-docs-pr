@@ -16,6 +16,7 @@ Specifies the action to perform when the user selects a  [Button](./control.md#b
 |  [SourceLocation](#sourcelocation) |    Specifies the source file location for this action. |
 |  [TaskpaneId](#taskpaneid) | Specifies the ID of the task pane container.|
 |  [SupportsPinning](#supportspinning) | Specifies that a task pane supports pinning, which keeps the task pane open when the user changes the selection.|
+|  [Title](#title) | Specifies the title of the task pane.|
   
 
 ## xsi:type
@@ -75,3 +76,6 @@ Optional element when **xsi:type** is "ShowTaskpane". The containing [VersionOve
   <SupportsPinning>true</SupportsPinning>
 </Action>
 ```
+## Title
+Optional element when  **xsi:type** is "ShowTaskpane". Specifies the title of the source file for this action. 
+
