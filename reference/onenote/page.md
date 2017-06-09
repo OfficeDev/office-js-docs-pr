@@ -31,7 +31,6 @@ _See property access [examples.](#property-access-examples)_
 |[addOutline(left: double, top: double, html: String)](#addoutlineleft-double-top-double-html-string)|[Outline](outline.md)|Adds an Outline to the page at the specified position.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-addOutline)|
 |[copyToSection(destinationSection: Section)](#copytosectiondestinationsection-section)|[Page](page.md)|Copies this page to specified section.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-copyToSection)|
 |[insertPageAsSibling(location: string, title: string)](#insertpageassiblinglocation-string-title-string)|[Page](page.md)|Inserts a new page before or after the current page.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-insertPageAsSibling)|
-|[getRestApiId()](#getrestapiid)|string|Get the OneNote REST API ID of the page.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-getRestApiId)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-load)|
 
 ## Method Details
