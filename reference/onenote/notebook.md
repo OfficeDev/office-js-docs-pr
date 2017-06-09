@@ -27,6 +27,7 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|:-------|
 |[addSection(name: String)](#addsectionname-string)|[Section](section.md)|Adds a new section to the end of the notebook.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-addSection)|
 |[addSectionGroup(name: String)](#addsectiongroupname-string)|[SectionGroup](sectiongroup.md)|Adds a new section group to the end of the notebook.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-addSectionGroup)|
+|[getRestApiId()](#getrestapiid)|string|Get the OneNote REST API compatible Notebook ID.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-getRestApiId)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-load)|
 
 ## Method Details
