@@ -212,6 +212,7 @@ declare var fabric: any;
 
 ## Additional resources
 
-* Use any TypeScript features with Script Lab at [Script Lab] (https://github.com/OfficeDev/script-lab/)
+* Use any TypeScript features with Script Lab at [Script Lab](https://github.com/OfficeDev/script-lab/)
 * More Office Add-in samples at [OfficeDev on Github](https://github.com/officedev)
+* Promise polyfill discussion at [Promise implementation](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
 
