@@ -18,12 +18,10 @@ Make sure that you have the following installed:
 * [Visual Studio 2015 or later](https://www.visualstudio.com/downloads/)
 * [Office Developer Tools for Visual Studio](https://www.visualstudio.com/en-us/features/office-tools-vs.aspx)
 * [Cumulative Servicing Release for Microsoft Visual Studio 2015 Update 3 (KB3165756)](https://msdn.microsoft.com/en-us/library/mt752379.aspx)
+* Excel 2016
 * [TypeScript 2.1 for Visual Studio 2015](http://download.microsoft.com/download/6/D/8/6D8381B0-03C1-4BD2-AE65-30FF0A4C62DA/TS2.1-dev14update3-20161206.2/TypeScript_Dev14Full.exe) (after you install Visual Studio 2015 Update 3)
 
    	> **Note:**  For more information about installing TypeScript 2.1, see [Announcing TypeScript 2.1](https://blogs.msdn.microsoft.com/typescript/2016/12/07/announcing-typescript-2-1/).
-
-* Excel 2016
-
 
 ## Create new add-in project
 
@@ -72,7 +70,7 @@ Make sure that you have the following installed:
 
 For your reference, the following is the code included in the Home.ts file. This file includes the minimum number of changes needed in order for your add-in to run.
 
->**Note:** To see a complete example of a JavaScript file that has been converted to TypeScript, see [Excel-Add-In-TS-StartWeb/Home.ts](https://github.com/OfficeDev/Excel-Add-In-TS-Start/blob/master/Excel-Add-In-TS-StartWeb/Home.ts). 
+>**Note:** For a complete example of a JavaScript file that has been converted to TypeScript, see [Excel-Add-In-TS-StartWeb/Home.ts](https://github.com/OfficeDev/Excel-Add-In-TS-Start/blob/master/Excel-Add-In-TS-StartWeb/Home.ts). 
 
 ```
 declare var fabric: any;
