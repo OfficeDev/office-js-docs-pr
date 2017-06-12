@@ -1,12 +1,15 @@
 # Convert an Office Add-in task pane template in Visual Studio to TypeScript
 
-If you're using Visual Studio to create an Office Add-in that uses TypeScript, you can use the Office Add-in JavaScript template in Visual Studio instead of starting from scratch. After you create a new add-in in Visual Studio, you can then convert the project to TypeScript.
+
+You can use the Office Add-in JavaScript template in Visual Studio to create an add-in that uses TypeScript. After you create the new add-in in Visual Studio, you can convert the project to TypeScript.
 
    > **Note:** To learn how to create an Office Add-in TypeScript project without using Visual Studio, see  [Create an Office Add-in using any editor](../../docs/get-started/create-an-office-add-in-using-any-editor.md).
 
-In your TypeScript project, you can have a mix of TypeScript and JavaScript files and your project will compile fine. This is because TypeScript is a typed superset of JavaScript that compiles JavaScript. 
+In your TypeScript project, you can have a mix of TypeScript and JavaScript files and your project will compile. This is because TypeScript is a typed superset of JavaScript that compiles JavaScript. 
 
-This article shows you how to convert a Visual Studio Excel add-in task pane template that uses JavaScript to TypeScript. You can apply the same steps to convert other Office Add-in JavaScript templates in Visual Studio in TypeScript.
+This article shows you how to convert an Excel add-in task pane template in Visual Studio from JavaScript to TypeScript. You can use the same steps to convert other Office Add-in JavaScript templates to TypeScript.
+
+> **Note:** To view or download the code sample that this article is based on, see [Excel-Add-In-TS-Start](https://github.com/OfficeDev/Excel-Add-In-TS-Start) on GitHub.
 
 ## Prerequisites
 
@@ -17,9 +20,10 @@ Make sure that you have the following installed:
 * [Cumulative Servicing Release for Microsoft Visual Studio 2015 Update 3 (KB3165756)](https://msdn.microsoft.com/en-us/library/mt752379.aspx)
 * [TypeScript 2.1 for Visual Studio 2015](http://download.microsoft.com/download/6/D/8/6D8381B0-03C1-4BD2-AE65-30FF0A4C62DA/TS2.1-dev14update3-20161206.2/TypeScript_Dev14Full.exe) (after you install Visual Studio 2015 Update 3)
 
-   > **Note:**  For more information about installing TypeScript 2.1, see [Announcing TypeScript 2.1](https://blogs.msdn.microsoft.com/typescript/2016/12/07/announcing-typescript-2-1/).
+   	> **Note:**  For more information about installing TypeScript 2.1, see [Announcing TypeScript 2.1](https://blogs.msdn.microsoft.com/typescript/2016/12/07/announcing-typescript-2-1/).
 
 * Excel 2016
+
 
 ## Create new add-in project
 
@@ -45,30 +49,30 @@ Make sure that you have the following installed:
 
 	![TypeScript DefinitelyTyped NuGets](../../images/typescript-definitelytyped-nugets.png)
 
-7. Open Home.ts (formerly Home.js). Remove the following reference from top of Home.ts:
+7. Open Home.ts (formerly Home.js). Remove the following reference from the top of the Home.ts file:
 
 	```///<reference path="/Scripts/FabricUI/MessageBanner.js" />```
 
-8. Add the following declaration at the top Home.ts:
+8. Add the following declaration at the top of the Home.ts file:
 
 	```declare var fabric: any;```
 
-9. Change **‘1.1’** to **1.1**; that is, remove the quotes from the following line in Home.ts:
+9. Change **‘1.1’** to **1.1**; that is, remove the quotes from the following line in the Home.ts file:
 
-```if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {```
+	```if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {```
  
 ## Run the converted add-in project
 
 1. Press F5 or the green **Start** button to launch the add-in. 
 2. After Excel launches, press the **Show Taskpane** button on the **Home** ribbon.
 3. Select all the cells with numbers.
-4. Press the **Highlight** button on the taskpane. 
+4. Press the **Highlight** button on the task pane. 
 
 ## Home.ts code file
 
-For your reference, the Home.ts code is as follows (with minimal change just enough to get it to run):
+For your reference, the following is the code included in the Home.ts file. This file includes the minimum number of changes needed in order for your add-in to run.
 
-> **Note**:  For the fully converted JavaScript to TypeScript code, see [Excel-Add-In-TS-StartWeb/Home.ts](https://github.com/OfficeDev/Excel-Add-In-TS-Start/blob/master/Excel-Add-In-TS-StartWeb/Home.ts). 
+>**Note:** To see an example of a file that includes JavaScript code that has been converted to TypeScript, see [Excel-Add-In-TS-StartWeb/Home.ts](https://github.com/OfficeDev/Excel-Add-In-TS-Start/blob/master/Excel-Add-In-TS-StartWeb/Home.ts). 
 
 ```
 declare var fabric: any;
@@ -118,7 +122,7 @@ declare var fabric: any;
                         [Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000)]
         ];
 
-        // Run a batch operation against the Excel object model
+        // Run a batch operation against the Excel object model.
         Excel.run(function (ctx) {
             // Create a proxy object for the active sheet
             var sheet = ctx.workbook.worksheets.getActiveWorksheet();
@@ -133,14 +137,14 @@ declare var fabric: any;
 
     function hightlightHighestValue() {
 
-        // Run a batch operation against the Excel object model
+        // Run a batch operation against the Excel object model.
         Excel.run(function (ctx) {
 
-            // Create a proxy object for the selected range and load its address and values properties
+            // Create a proxy object for the selected range and load its address and values properties.
             var sourceRange = ctx.workbook.getSelectedRange().load("values, address, rowIndex, columnIndex, rowCount, columnCount");
 
             // Run the queued-up command, and return a promise to indicate task completion
-            return ctx.sync()
+            return ctx.sync().
                 .then(function () {
                     var highestRow = 0;
                     var highestCol = 0;
@@ -163,7 +167,7 @@ declare var fabric: any;
 
                     cellToHighlight.load("values");
                 })
-                   // Run the queued-up commands
+                   // Run the queued-up commands.
                 .then(ctx.sync)
                 .then(function () {
                     // Highlight the cell
@@ -186,7 +190,7 @@ declare var fabric: any;
             });
     }
 
-    // Helper function for treating errors
+    // Helper function for treating errors.
     function errorHandler(error) {
         // Always be sure to catch any accumulated errors that bubble up from the Excel.run execution
         showNotification("Error", error);
@@ -209,6 +213,7 @@ declare var fabric: any;
 
 ## Additional resources
 
-* Use any TypeScript features with Script Lab at [Script Lab] (https://github.com/OfficeDev/script-lab/)
-* More Office Add-in samples at [OfficeDev on Github](https://github.com/officedev)
+* [Script Lab](https://github.com/OfficeDev/script-lab/)
+* [Promise implementation discussion on StackOverflow](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
+* [Office Add-in samples on GitHub](https://github.com/officedev)
 
