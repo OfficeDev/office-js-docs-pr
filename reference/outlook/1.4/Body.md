@@ -20,15 +20,15 @@ Returns the current body in a specified format.
 
 This method returns the entire current body in the format specified by `coercionType`.
 
+When working with HTML-formatted bodies, it is important to note that the `Body.getAsync` and `Body.setAsync` methods are not idempotent. The value returned from the `getAsync` method will not necessarily be exactly the same as the value that was passed in the `setAsync` method previously. The client may modify the value passed to `setAsync` in order to make it render efficiently with its rendering engine.
+
 ##### Parameters:
 
 |Name| Type| Attributes| Description|
 |---|---|---|---|
 |`coercionType`| [Office.CoercionType](Office.md#coerciontype-string)||The format for the returned body.|
 |`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Developers can provide any object they wish to access in the callback method.</td></tr></tbody></table>|
-|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object.
-
-The body is provided in the requested format in the `asyncResult.value` property.|
+|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. The body is provided in the requested format in the `asyncResult.value` property.|
 
 ##### Requirements
 
@@ -70,9 +70,7 @@ Gets a value that indicates whether the content is in HTML or text format.
 |Name| Type| Attributes| Description|
 |---|---|---|---|
 |`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Developers can provide any object they wish to access in the callback method.</td></tr></tbody></table>|
-|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object.
-
-The content type is returned as one of the [CoercionType](Office.md#coerciontype-string) values in the `asyncResult.value` property.|
+|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. The content type is returned as one of the [CoercionType](Office.md#coerciontype-string) values in the `asyncResult.value` property.|
 
 ##### Requirements
 
@@ -116,6 +114,8 @@ Office.context.mailbox.item.body.prependAsync(
 Replaces the entire body with the specified text.
 
 The `setAsync` method replaces the existing body of the item with the specified string or, if text is selected in the editor, it replaces the selected text.
+
+When working with HTML-formatted bodies, it is important to note that the `Body.getAsync` and `Body.setAsync` methods are not idempotent. The value returned from the `getAsync` method will not necessarily be exactly the same as the value that was passed in the `setAsync` method previously. The client may modify the value passed to `setAsync` in order to make it render efficiently with its rendering engine.
 
 When including links in HTML markup, you can disable online link preview by setting the `id` attribute on the anchor (`<a>`) to `LPNoLP`. For example:
 
