@@ -1,7 +1,7 @@
 # Convert an Office Add-in task pane template in Visual Studio to TypeScript
 
 
-You can use the Office Add-in JavaScript template in Visual Studio to create an add-in that uses TypeScript. After you create the new add-in in Visual Studio, you can convert the project to TypeScript.
+You can use the Office Add-in JavaScript template in Visual Studio to create an add-in that uses TypeScript. After you create the new add-in in Visual Studio, you can convert the project to TypeScript.  That way, you don't have to start the Office Add-in TypeScript project from scratch.  
 
    > **Note:** To learn how to create an Office Add-in TypeScript project without using Visual Studio, see  [Create an Office Add-in using any editor](../../docs/get-started/create-an-office-add-in-using-any-editor.md).
 
@@ -72,7 +72,7 @@ Make sure that you have the following installed:
 
 For your reference, the following is the code included in the Home.ts file. This file includes the minimum number of changes needed in order for your add-in to run.
 
->**Note:** To see an example of a file that includes JavaScript code that has been converted to TypeScript, see [Excel-Add-In-TS-StartWeb/Home.ts](https://github.com/OfficeDev/Excel-Add-In-TS-Start/blob/master/Excel-Add-In-TS-StartWeb/Home.ts). 
+>**Note:** To see a complete example of a JavaScript file that has been converted to TypeScript, see [Excel-Add-In-TS-StartWeb/Home.ts](https://github.com/OfficeDev/Excel-Add-In-TS-Start/blob/master/Excel-Add-In-TS-StartWeb/Home.ts). 
 
 ```
 declare var fabric: any;
