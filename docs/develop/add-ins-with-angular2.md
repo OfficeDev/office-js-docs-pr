@@ -17,11 +17,12 @@ On any page that calls the Office, Word, or Excel JavaScript APIs, your code mus
 
 ```js
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-    import { AppModule } from './app.module';
-	Office.initialize = function () {
-    	const platform = platformBrowserDynamic();
-        platform.bootstrapModule(AppModule);
-  };
+import { AppModule } from './app.module';
+
+Office.initialize = function () {
+  const platform = platformBrowserDynamic();
+  platform.bootstrapModule(AppModule);
+};
 ```
 
 ## Use the hash location strategy in the Angular application
@@ -31,14 +32,15 @@ Navigating between routes in the application might not work if you don't specify
 ```js
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 // Other imports suppressed for brevity
-    @NgModule({
-        providers: [
-            {provide: LocationStrategy, useClass: HashLocationStrategy},
-            // Other providers suppressed
-        ],
-        // Other module properties suppressed
-  })
-  export class AppModule {}
+
+@NgModule({
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    // Other providers suppressed
+  ],
+  // Other module properties suppressed
+})
+export class AppModule { }
 ``` 
 
 If you define your routes in a separate routing module, there is an alternative way to specify the hash location strategy. In your routing module's .ts file, pass a configuration object to the `forRoot` function that specifies the strategy. The following code is an example. 
@@ -46,12 +48,14 @@ If you define your routes in a separate routing module, there is an alternative 
 ```js
 import { RouterModule, Routes } from '@angular/router';
 // Other imports suppressed for brevity
-    const routes: Routes = // route definitions go here
-    @NgModule({
-      imports: [ RouterModule.forRoot(routes, {useHash: true}) ],
-      exports: [ RouterModule ]
-    })
-    export class AppRoutingModule {}
+
+const routes: Routes = // route definitions go here
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
 ```   
 
 
@@ -75,12 +79,14 @@ In any Angular 2 application, notifications to update the DOM occasionally do no
 
 ```js
 import { ApplicationRef } from '@angular/core';
-    export class MyComponent {
-        constructor(private appRef: ApplicationRef) {}
-        myMethod() {
-            // Code that changes the DOM is here
-            this.appRef.tick();
-        }
+
+export class MyComponent {
+  constructor(private appRef: ApplicationRef) { }
+  
+  myMethod() {
+    // Code that changes the DOM is here
+    this.appRef.tick();
+  }
 }
 ``` 
 
@@ -108,17 +114,14 @@ myPromise.all([x, y, z]).then(// TODO: Callback logic goes here.)
 To do the same thing with an `Observable` object, you use the [Observable.forkJoin()](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/forkjoin.md) method.  
 
 ```js
-var source = Rx.Observable.forkJoin([x, y, z]);
+const source = Observable.forkJoin([x, y, z]);
 
-var subscription = source.subscribe(
-  function (x) {
+const subscription = source.subscribe(
+  x => {
     // TODO: Callback logic goes here
   },
-  function (err) {
-    console.log('Error: ' + err);
-  },
-  function () {
-    console.log('Completed');
-  });
+  err => console.log('Error: ' + err),
+  () => console.log('Completed')
+);
 ``` 
 
