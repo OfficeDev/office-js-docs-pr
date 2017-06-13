@@ -1,10 +1,10 @@
-# Tips for creating Office Add-ins with Angular 2 
+# Tips for creating Office Add-ins with Angular
 
-This article provides guidance for using Angular 2 to create an Office Add-in as a single page application.
+This article provides guidance for using Angular 2+ to create an Office Add-in as a single page application.
 
->**Note:** Do you have something to contribute based on your experience using Angular 2 to create Office Add-ins? You can contribute to this article in [GitHub](https://github.com/OfficeDev/office-js-docs) or provide your feedback by submitting an [issue](https://github.com/OfficeDev/office-js-docs/issues) in the repo. 
+>**Note:** Do you have something to contribute based on your experience using Angular to create Office Add-ins? You can contribute to this article in [GitHub](https://github.com/OfficeDev/office-js-docs) or provide your feedback by submitting an [issue](https://github.com/OfficeDev/office-js-docs/issues) in the repo. 
 
-For an Office Add-ins sample that's built using the Angular 2 framework, see [Word Style Checking Add-in Built on Angular 2](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker).
+For an Office Add-ins sample that's built using the Angular framework, see [Word Style Checking Add-in Built on Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker).
 
 ## Install the TypeScript type definitions
 Open an nodejs window and enter the following at the command line: `npm install --save-dev @types/office-js`.
@@ -59,9 +59,9 @@ export class AppRoutingModule { }
 ```   
 
 
-## Consider wrapping Fabric components with Angular 2 components
+## Consider wrapping Fabric components with Angular components
 
-We recommend using [Office UI Fabric](http://dev.office.com/fabric#/fabric-js) styling in your add-in. Fabric includes components that come in several versions, including a version [based on TypeScript](https://github.com/OfficeDev/office-ui-fabric-js). Consider using Fabric components in your add-in by wrapping them in Angular 2 components. For an example that shows you how to do this, see [Word Style Checking Add-in Built on Angular 2](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker). Note, for example, how the Angular component defined in [fabric.textfield.wrapper](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/shared/office-fabric-component-wrappers/fabric.textfield.wrapper.component.ts) imports the Fabric file TextField.ts, where the Fabric component is defined. 
+We recommend using [Office UI Fabric](http://dev.office.com/fabric#/fabric-js) styling in your add-in. Fabric includes components that come in several versions, including a version [based on TypeScript](https://github.com/OfficeDev/office-ui-fabric-js). Consider using Fabric components in your add-in by wrapping them in Angular components. For an example that shows you how to do this, see [Word Style Checking Add-in Built on Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker). Note, for example, how the Angular component defined in [fabric.textfield.wrapper](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/shared/office-fabric-component-wrappers/fabric.textfield.wrapper.component.ts) imports the Fabric file TextField.ts, where the Fabric component is defined. 
 
 
 ## Using the Office Dialog API with Angular
@@ -75,7 +75,7 @@ It is important to remember, if you pass a route, that the dialog box creates a 
 
 ## Forcing an update of the DOM
 
-In any Angular 2 application, notifications to update the DOM occasionally do not fire. The framework provides a `tick()` method on the `ApplicationRef` object that will force an update. The following code is an example.
+In any Angular application, notifications to update the DOM occasionally do not fire. The framework provides a `tick()` method on the `ApplicationRef` object that will force an update. The following code is an example.
 
 ```js
 import { ApplicationRef } from '@angular/core';
@@ -92,7 +92,7 @@ export class MyComponent {
 
 ## Using observables
 
-Angular 2 uses RxJS (Reactive Extensions for JavaScript), and RxJS introduces `Observable` and `Observer` objects to implement asynchronous processing. This section provides a brief introduction to using `Observables`; for more detailed information, see the official [RxJS](http://reactivex.io/rxjs/) documentation.
+Angular uses RxJS (Reactive Extensions for JavaScript), and RxJS introduces `Observable` and `Observer` objects to implement asynchronous processing. This section provides a brief introduction to using `Observables`; for more detailed information, see the official [RxJS](http://reactivex.io/rxjs/) documentation.
 
 An `Observable` is like a `Promise` object in some ways - it is returned immediately from an asynchronous call, but it might not resolve until some time later. However, while a `Promise` is a single value (which can be an array object), an `Observable` is an array of objects (possibly with only a single member). This enables code to call [array methods](http://www.w3schools.com/jsref/jsref_obj_array.asp), such as `concat`, `map`, and `filter`, on `Observable` objects. 
 
@@ -108,7 +108,9 @@ The `Observer` is configured to process each new object (called the "next" objec
 When you want to ensure that a callback only runs when every member of a set of `Promise` objects has resolved, use the `Promise.all()` method.
 
 ```js
-myPromise.all([x, y, z]).then(// TODO: Callback logic goes here.)
+myPromise.all([x, y, z]).then(
+  // TODO: Callback logic goes here
+)
 ``` 
 
 To do the same thing with an `Observable` object, you use the [Observable.forkJoin()](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/forkjoin.md) method.  
