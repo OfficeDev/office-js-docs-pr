@@ -21,3 +21,9 @@ Required. The description / body content for the callout. The **resid** attribut
 Required. The URL to a page where the user can learn more about your add-in. The **resid** attribute references a valid ID in the [Urls](./resources.md#urls) element in the [Resources](./resources.md) section.
 
 > **NOTE:** **LearnMoreUrl** does not currently render in Word, Excel, or PowerPoint clients. We recommend that you add this URL for all clients so that the URL will render when it becomes available. 
+
+## Code samples
+The following are code samples that implement this feature:
+* [Excel Web Add-in for Manipulating Table and Chart Formatting]https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker
+* [Word Add-in JavaScript SpecKit]https://github.com/OfficeDev/Word-Add-in-JS-SpecKit
+* [Insert Excel charts using Microsoft Graph in a PowerPoint Add-in]https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart
