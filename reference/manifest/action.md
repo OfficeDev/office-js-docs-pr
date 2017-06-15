@@ -32,7 +32,7 @@ Required element when **xsi:type** is "ExecuteFunction". Specifies the name of t
 ```xml
 <Action xsi:type="ExecuteFunction">
   <FunctionName>getSubject</FunctionName>
-</Action>
+.</Action>
 ```
 
 ## SourceLocation
@@ -84,6 +84,13 @@ The following examples show two different Actions that use the **Title** element
 </Action>
 ``` 
 
+```xml
+<bt:Urls>
+<bt:Url id="PG.Code.Url" DefaultValue="https://localhost:3000?commands=1" />
+<bt:Url id="PG.Run.Url" DefaultValue="https://localhost:3000/run.html" />
+</bt:Urls>
+``` 
+      
 ## SupportsPinning
 
 Optional element when **xsi:type** is "ShowTaskpane". The containing [VersionOverrides](./versionoverrides.md) elements must have an `xsi:type` attribute value of `VersionOverridesV1_1`. Include this element with a value of `true` to support taskpane pinning. The user will be able to "pin" the taskpane, causing it to stay open when changing the selection. For more information, see [Implement a pinnable taskpane in Outlook](../../docs/outlook/manifests/pinnable-taskpane).
