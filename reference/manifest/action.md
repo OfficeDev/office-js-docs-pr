@@ -32,7 +32,7 @@ Required element when **xsi:type** is "ExecuteFunction". Specifies the name of t
 ```xml
 <Action xsi:type="ExecuteFunction">
   <FunctionName>getSubject</FunctionName>
-.</Action>
+</Action>
 ```
 
 ## SourceLocation
@@ -49,7 +49,7 @@ Optional element when  **xsi:type** is "ShowTaskpane". Specifies the ID of the 
 
 >**Note:** This element is not supported in Outlook.
 
-The following example shows two Actions that share the same **TaskpaneId**. 
+The following example shows two actions that share the same **TaskpaneId**. 
 
 
 ```xml
@@ -67,7 +67,7 @@ The following example shows two Actions that share the same **TaskpaneId**.
 ## Title
 Optional element when  **xsi:type** is "ShowTaskpane". Specifies the custom title for the task pane for this action. 
 
-The following examples show two different Actions that use the **Title** element. To see the examples in their entirety, see [Script Lab manifest](https://github.com/OfficeDev/script-lab/blob/master/manifests/script-lab-local.xml)
+The following examples show two different actions that use the **Title** element. To see these examples in their context, see [Script Lab manifest](https://github.com/OfficeDev/script-lab/blob/master/manifests/script-lab-local.xml)
 
 ```xml
 <Action xsi:type="ShowTaskpane">
