@@ -40,12 +40,12 @@ Currently, add-ins for the following Office clients are supported.
 
 The admin center does not support the following:
 
-- Office 2013 (Word, Excel, PowerPoint, or Outlook).
+- Office 2013 (Word, Excel, PowerPoint, or Outlook)
 - Office for iPad
-- SharePoint Add-ins.
-- COM/VSTO based Add-ins.
-- Office Online Server.
-- An on-premises directory service.
+- SharePoint Add-ins
+- COM/VSTO based Add-ins
+- Office Online Server
+- An on-premises directory service
 
 To deploy SharePoint Add-ins or add-ins that target Office 2013, use a [SharePoint add-in catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
