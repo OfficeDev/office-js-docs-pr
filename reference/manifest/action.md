@@ -15,8 +15,8 @@ Specifies the action to perform when the user selects a  [Button](./control.md#b
 |  [FunctionName](#functionname) |    Specifies the name of the function to execute. |
 |  [SourceLocation](#sourcelocation) |    Specifies the source file location for this action. |
 |  [TaskpaneId](#taskpaneid) | Specifies the ID of the task pane container.|
+|  [Title](#title) | Specifies the custom title for the task pane.|
 |  [SupportsPinning](#supportspinning) | Specifies that a task pane supports pinning, which keeps the task pane open when the user changes the selection.|
-|  [Title](#title) | Specifies the title of the task pane.|
   
 
 ## xsi:type
@@ -49,7 +49,7 @@ Optional element when  **xsi:type** is "ShowTaskpane". Specifies the ID of the 
 
 >**Note:** This element is not supported in Outlook.
 
-The following example shows two Actions that share the same **TaskpaneId**. 
+The following example shows two actions that share the same **TaskpaneId**. 
 
 
 ```xml
@@ -64,6 +64,40 @@ The following example shows two Actions that share the same **TaskpaneId**.
 </Action>
 ```  
 
+## Title
+Optional element when  **xsi:type** is "ShowTaskpane". Specifies the custom title for the task pane for this action. 
+
+The following examples show two different actions that use the **Title** element. To see these examples in their context, see [Script Lab manifest](https://github.com/OfficeDev/script-lab/blob/master/manifests/script-lab-local.xml)
+
+```xml
+<Action xsi:type="ShowTaskpane">
+<TaskpaneId>Office.AutoShowTaskpaneWithDocument</TaskpaneId>
+<SourceLocation resid="PG.Code.Url" />
+<Title resid="PG.CodeCommand.Title" />
+</Action>
+``` 
+
+```xml
+<Action xsi:type="ShowTaskpane">
+<SourceLocation resid="PG.Run.Url" />
+<Title resid="PG.RunCommand.Title" />
+</Action>
+``` 
+
+```xml
+<bt:Urls>
+<bt:Url id="PG.Code.Url" DefaultValue="https://localhost:3000?commands=1" />
+<bt:Url id="PG.Run.Url" DefaultValue="https://localhost:3000/run.html" />
+</bt:Urls>
+``` 
+
+```xml
+<bt:ShortStrings>
+<bt:String id="PG.CodeCommand.Title" DefaultValue="Code" />
+<bt:String id="PG.RunCommand.Title" DefaultValue="Run" />
+</bt:ShortStrings>
+``` 
+
 ## SupportsPinning
 
 Optional element when **xsi:type** is "ShowTaskpane". The containing [VersionOverrides](./versionoverrides.md) elements must have an `xsi:type` attribute value of `VersionOverridesV1_1`. Include this element with a value of `true` to support taskpane pinning. The user will be able to "pin" the taskpane, causing it to stay open when changing the selection. For more information, see [Implement a pinnable taskpane in Outlook](../../docs/outlook/manifests/pinnable-taskpane).
@@ -76,6 +110,5 @@ Optional element when **xsi:type** is "ShowTaskpane". The containing [VersionOve
   <SupportsPinning>true</SupportsPinning>
 </Action>
 ```
-## Title
-Optional element when  **xsi:type** is "ShowTaskpane". Specifies the title of the source file for this action. 
+
 
