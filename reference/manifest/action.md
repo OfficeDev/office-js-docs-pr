@@ -90,7 +90,13 @@ The following examples show two different actions that use the **Title** element
 <bt:Url id="PG.Run.Url" DefaultValue="https://localhost:3000/run.html" />
 </bt:Urls>
 ``` 
-      
+
+```xml
+<bt:ShortStrings>
+<bt:String id="PG.CodeCommand.Title" DefaultValue="Code" />
+<bt:String id="PG.RunCommand.Title" DefaultValue="Run" />
+``` 
+
 ## SupportsPinning
 
 Optional element when **xsi:type** is "ShowTaskpane". The containing [VersionOverrides](./versionoverrides.md) elements must have an `xsi:type` attribute value of `VersionOverridesV1_1`. Include this element with a value of `true` to support taskpane pinning. The user will be able to "pin" the taskpane, causing it to stay open when changing the selection. For more information, see [Implement a pinnable taskpane in Outlook](../../docs/outlook/manifests/pinnable-taskpane).
