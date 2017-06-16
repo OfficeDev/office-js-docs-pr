@@ -95,6 +95,7 @@ The following examples show two different actions that use the **Title** element
 <bt:ShortStrings>
 <bt:String id="PG.CodeCommand.Title" DefaultValue="Code" />
 <bt:String id="PG.RunCommand.Title" DefaultValue="Run" />
+</bt:ShortStrings>
 ``` 
 
 ## SupportsPinning
