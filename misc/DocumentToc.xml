@@ -47,7 +47,7 @@
 	<Item text="Install the latest Office version" url="develop/install-latest-office-version" SEODescription="Find out how to opt in to get the latest builds of Office." />
 	<Item text="Understanding Office versions" url="develop/office-versions" />
 	<Item text="Develop add-ins for the iPad" url="develop/develop-office-add-ins-for-the-ipad"  SEODescription="Make your Office Add-ins available in Office for iPad." />
-	<Item text="Tips for creating add-ins with Angular 2" url="develop/add-ins-with-angular2" SEODescription="Use Angular 2 to develop Office Add-ins." />
+	<Item text="Tips for creating add-ins with Angular" url="develop/add-ins-with-angular2" SEODescription="Use Angular 2 to develop Office Add-ins." />
   <Item text="Convert JavaScript to TypeScript" url="develop/convert-javascript-to-typescript" SEODescription="Use the Office Add-in JavaScript template in Visual Studio to create an add-in that uses TypeScript." />
   <Item text="Use the Dialog API" url="develop/dialog-api-in-office-add-ins" SEODescription="Use the Dialog API to open dialog boxes in your Office Add-in." />
 	<Item text="Authorize external services" url="develop/auth-external-add-ins" SEODescription="Use the OAuth 2.0 authorization framework in your Office Add-ins." />
