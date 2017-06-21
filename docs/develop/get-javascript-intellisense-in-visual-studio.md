@@ -6,7 +6,7 @@ When you use Visual Studio 2017 to develop Office Add-ins, you can enable Intell
 
 You need to provide the definitions of the types in Office.js to Visual Studio. To do this, you can:
 
-- Have a local copy of the Office.js files in a folder in your solution named `\Office\1\`. The Office Add-in project templates in Visual Studio adds this local copy when you create an add-in project. 
+- Have a local copy of the Office.js files in a folder in your solution named `\Office\1\`. The Office Add-in project templates in Visual Studio add this local copy when you create an add-in project. 
 - Use an online version of Office.js by adding a tsconfig.json file to the root of the web application project in the add-in solution. The file should include the following content.
 
     ```json
@@ -17,7 +17,7 @@ You need to provide the definitions of the types in Office.js to Visual Studio. 
             },
             "exclude": [
                 "node_modules",             // Don't include any JavaScript found under "node_modules".
-                "Scripts/Office/1"          // Suppress loading all the JavaScript files from the Office NuGet package
+                "Scripts/Office/1"          // Suppress loading all the JavaScript files from the Office NuGet package.
             ],
             "typeAcquisition": {
                 "enable": true,             // Enable automatic fetching of type definitions for detected JavaScript libraries.
@@ -28,7 +28,7 @@ You need to provide the definitions of the types in Office.js to Visual Studio. 
 
 ## JSDoc syntax
 
-The basic technique is to precede the variable (or parameter, and son on) with a comment that identifies its data type. This allows IntelliSense in Visual Studio to infer its members. The following are examples.
+The basic technique is to precede the variable (or parameter, and so on) with a comment that identifies its data type. This allows IntelliSense in Visual Studio to infer its members. The following are examples.
 
 ### Variable
 
@@ -70,3 +70,6 @@ function myFunc() {
 ```
 ![Intellisense for complex type](../../images/IntellisenseVS17ComplexType.png)
 
+##Additional resources
+
+- [Create and debug add-ins in Visual Studio](get-started/create-and-debug-office-add-ins-in-visual-studio.md)
