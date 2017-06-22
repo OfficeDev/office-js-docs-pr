@@ -97,7 +97,7 @@ The webextension part includes a property bag and a property named **Office.Auto
 
 The webextension part also includes a reference to the store or catalog with attributes for `id`, `storeType`, `store`, and `version`. Of the `storeType` values, only four are relevant to the autoopen feature. The values for the other three attributes depend on the value for `storeType`, as shown in the following table. 
 
-| **`storeType` value** | **`id` value**	|**`store` value** | **version` value**|
+| **`storeType` value** | **`id` value**	|**`store` value** | **`version` value**|
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (the Office Store)|The Office Store asset ID of the add-in.\*|The locale of the Office Store; for example, "en-us".|The version in the Office Store catalog.\*|
 |FileSystem (a network share)|The GUID of the add-in in the add-in manifest.|The path of the network share; for example, "\\\\MyComputer\\MySharedFolder".|The version in the add-in manifest.|
