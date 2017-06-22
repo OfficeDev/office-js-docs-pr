@@ -21,7 +21,9 @@
 		<Item text="Add-in commands" url="design/add-in-commands" SEODescription="Use add-in commands in your add-in to extend the default Office UI in Excel, Word, and PowerPoint." >
 			<Item text="Icon guidelines" url="design/design-icons" SEODescription="Design icons for add-in commands that integrate seamlessly with the Office UI." />
 		</Item>	
-		<Item text="Task panes" url="design/task-pane-add-ins" />
+		<Item text="Task panes" url="design/task-pane-add-ins" >
+			<Item text="Automatically open a task pane with a document" url="design/automatically-open-a-task-pane-with-a-document" />
+		</Item>
 		<Item text="Dialog boxes" url="design/dialog-boxes" />
 		<Item text="Content add-ins" url="design/content-add-ins" >
 			<Item text="Data visualization style guidelines" url="design/data-visualization-guidelines" SEODescription="Provides guidelines for data visualizations in Office Add-ins." />
