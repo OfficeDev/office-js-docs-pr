@@ -8,7 +8,9 @@
 	<Item text="Changelog" url="overview/add-in-changelog" />
 	</Item>
   <Item text="Get started" url="get-started">
-    <Item text="Use Visual Studio" url="get-started/create-and-debug-office-add-ins-in-visual-studio" SEODescription="Get started building an Office Add-in with Visual Studio" />
+    <Item text="Use Visual Studio" url="get-started/create-and-debug-office-add-ins-in-visual-studio" SEODescription="Get started building an Office Add-in with Visual Studio" >
+		<Item text="Get JavaScript IntelliSense in Visual Studio" url="get-started/get-javascript-intellisense-in-visual-studio" />
+	</Item>
 	  <Item text="Use any editor" url="get-started/create-an-office-add-in-using-any-editor" SEODescription="Get started building Office Add-ins with any editor, on a Mac or Windows PC. " />
   </Item>
   <Item text="Design" url="design/add-in-design">
