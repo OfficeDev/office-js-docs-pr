@@ -64,6 +64,27 @@ The following example shows two actions that share the same **TaskpaneId**.
 </Action>
 ```  
 
+The following examples show two actions that use a different **TaskpaneId**. To see these examples in context, see [Simple Add-in Commands Sample](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Simple/Manifest/SimpleAddin.xml).
+
+```xml
+<Action xsi:type="ShowTaskpane">
+   <TaskpaneId>MyTaskPaneID1</TaskpaneId>
+   <SourceLocation resid="Contoso.Taskpane1.Url" />
+</Action>
+
+<Action xsi:type="ShowTaskpane">
+   <TaskpaneId>MyTaskPaneID2</TaskpaneId>
+   <SourceLocation resid="Contoso.Taskpane2.Url" />
+</Action>
+```  
+
+```xml
+<bt:Urls>
+   <bt:Url id="Contoso.Taskpane1.Url" DefaultValue="https://commandsimple.azurewebsites.net/Taskpane.html" />
+   <bt:Url id="Contoso.Taskpane2.Url" DefaultValue="https://commandsimple.azurewebsites.net/Taskpane2.html" />
+</bt:Urls>
+```  
+
 ## Title
 Optional element when  **xsi:type** is "ShowTaskpane". Specifies the custom title for the task pane for this action. 
 

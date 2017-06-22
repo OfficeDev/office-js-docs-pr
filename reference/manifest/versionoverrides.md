@@ -83,8 +83,7 @@ For example, in order to implement both the VersionOverrides v1.0 and v1.1 schem
       <Resources> 
         <!-- add information on resources -->
       </Resources>
-    </VersionOverrides>
-  </VersionOverrides>
+    </VersionOverrides>  
 ...
 </OfficeApp>
 ```

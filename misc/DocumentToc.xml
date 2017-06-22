@@ -8,7 +8,9 @@
 	<Item text="Changelog" url="overview/add-in-changelog" />
 	</Item>
   <Item text="Get started" url="get-started">
-    <Item text="Use Visual Studio" url="get-started/create-and-debug-office-add-ins-in-visual-studio" SEODescription="Get started building an Office Add-in with Visual Studio" />
+    <Item text="Use Visual Studio" url="get-started/create-and-debug-office-add-ins-in-visual-studio" SEODescription="Get started building an Office Add-in with Visual Studio" >
+		<Item text="Get JavaScript IntelliSense in Visual Studio" url="get-started/get-javascript-intellisense-in-visual-studio" />
+	</Item>
 	  <Item text="Use any editor" url="get-started/create-an-office-add-in-using-any-editor" SEODescription="Get started building Office Add-ins with any editor, on a Mac or Windows PC. " />
   </Item>
   <Item text="Design" url="design/add-in-design">
@@ -21,7 +23,9 @@
 		<Item text="Add-in commands" url="design/add-in-commands" SEODescription="Use add-in commands in your add-in to extend the default Office UI in Excel, Word, and PowerPoint." >
 			<Item text="Icon guidelines" url="design/design-icons" SEODescription="Design icons for add-in commands that integrate seamlessly with the Office UI." />
 		</Item>	
-		<Item text="Task panes" url="design/task-pane-add-ins" />
+		<Item text="Task panes" url="design/task-pane-add-ins" >
+			<Item text="Automatically open a task pane with a document" url="design/automatically-open-a-task-pane-with-a-document" />
+		</Item>
 		<Item text="Dialog boxes" url="design/dialog-boxes" />
 		<Item text="Content add-ins" url="design/content-add-ins" >
 			<Item text="Data visualization style guidelines" url="design/data-visualization-guidelines" SEODescription="Provides guidelines for data visualizations in Office Add-ins." />
@@ -47,7 +51,7 @@
 	<Item text="Install the latest Office version" url="develop/install-latest-office-version" SEODescription="Find out how to opt in to get the latest builds of Office." />
 	<Item text="Understanding Office versions" url="develop/office-versions" />
 	<Item text="Develop add-ins for the iPad" url="develop/develop-office-add-ins-for-the-ipad"  SEODescription="Make your Office Add-ins available in Office for iPad." />
-	<Item text="Tips for creating add-ins with Angular 2" url="develop/add-ins-with-angular2" SEODescription="Use Angular 2 to develop Office Add-ins." />
+	<Item text="Tips for creating add-ins with Angular" url="develop/add-ins-with-angular2" SEODescription="Use Angular 2 to develop Office Add-ins." />
   <Item text="Convert JavaScript to TypeScript" url="develop/convert-javascript-to-typescript" SEODescription="Use the Office Add-in JavaScript template in Visual Studio to create an add-in that uses TypeScript." />
   <Item text="Use the Dialog API" url="develop/dialog-api-in-office-add-ins" SEODescription="Use the Dialog API to open dialog boxes in your Office Add-in." />
 	<Item text="Authorize external services" url="develop/auth-external-add-ins" SEODescription="Use the OAuth 2.0 authorization framework in your Office Add-ins." />
