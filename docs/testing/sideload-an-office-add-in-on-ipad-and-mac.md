@@ -76,7 +76,7 @@ To see how your add-in will run in Office for iOS, you can sideload your add-in'
     
     ![My Add-ins in Office for Mac](../../images/4593430c-b33e-4895-b2be-63fe3c4d08bc.png)
 
-  > **Important:** Sideloaded add-ins will not show up in the My Add-ins dialog. They are only visible within the drop-down menu (small   down-arrow to the right of My Add-ins). Sideloaded add-ins are displayed in this list under the heading "Developer Add-ins". 
+  > **Important:** Sideloaded add-ins will not show up in the My Add-ins dialog box. They are only visible within the drop-down menu (small down-arrow to the right of My Add-ins on the **Insert** tab). Sideloaded add-ins are listed under the **Developer Add-ins** heading in this menu. 
     
 5. Verify that your add-in is displayed in Word.
     
