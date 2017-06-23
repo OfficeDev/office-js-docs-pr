@@ -211,28 +211,20 @@ This extension point puts buttons in the command surface for the mail read view 
 |  Element |  Description  |
 |:-----|:-----|
 |  [Group](./group.md) |  Adds a group of buttons to the command surface.  |
-|  [Control](./control.md) |  Adds a single of button to the command surface.  |
 
-**ExtensionPoint** elements of this type can only have one child element, either a **Group** element or a **Control** element.
+**ExtensionPoint** elements of this type can only have one child element: a **Group** element.
 
 **Control** elements contained in this extension point must have the **xsi:type** attribute set to `MobileButton`.
 
-#### Group example
+#### Example
 ```xml
 <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
   <Group id="mobileGroupID">
     <Label resid="residAppName"/>
-    <!-- one or more Control elements -->
+      <Control id="mobileButton1" xsi:type="MobileButton">
+        <!-- Control definition -->
+      </Control>
   </Group>
-</ExtensionPoint>
-```
-
-#### Control example
-```xml
-<ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
-  <Control id="mobileButton1" xsi:type="MobileButton">
-    <!-- Control definition -->
-  </Control>
 </ExtensionPoint>
 ```
 
