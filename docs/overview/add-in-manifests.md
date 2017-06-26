@@ -428,7 +428,7 @@ For troubleshooting issues with your manifest, see [Validate and troubleshoot is
 ## Additional resources
 
 
-- [Define add-in commands in your manifest](../../docs/outlook/manifests/define-add-in-commands.md)
+- [Define add-in commands in your manifest](../../docs/develop/define-add-in-commands.md)
 - [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md)
 - [Localization for Office Add-ins](../../docs/develop/localization.md)
 - [Schema reference for Office Add-ins manifests](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas)
