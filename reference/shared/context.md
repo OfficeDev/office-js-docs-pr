@@ -26,7 +26,7 @@ Office.context
 |requirements|object|Offers `requirements.isSetSupported()` method to check if the specified requirement set is supported by the host Office application. <br/> `isSetSupported(name: string, minVersion?: number): boolean;` <br> @param name - Set name. e.g.: "MatrixBindings". <br/>|
 |roamingSettings| [RoamingSettings object](office.context.roamingsettings.md)|Gets an object that represents the saved custom settings of the add-in.|
 |touchEnabled|bool|Gets whether the add-in is running in an Office host application that is touch enabled.|
-|ui|[Ui object](office.context.ui.md)|Provides objects and methods that you can use to create and manipulate UI components, such as dialog boxes.|
+|ui|[Ui object](officeui.md)|Provides objects and methods that you can use to create and manipulate UI components, such as dialog boxes.|
 ## Remarks
 
 The  **Context** object provides access to key objects in the JavaScript API for Office.
