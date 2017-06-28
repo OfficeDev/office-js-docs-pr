@@ -31,7 +31,6 @@ The following are the new additions to the Word JavaScript APIs in requirement s
 
 |Object| What's new| Description|Requirement set| 
 |:-----|-----|:----|:----| 
-|[application](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/application.md)|_Method_ > [createDocument(base64File: string)](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/application.md#createdocumentbase64file-string)|Creates a new document by using a base64 encoded .docx file.|1.3|
 |[body](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/body.md)|_Relationship_ > lists|Gets the collection of list objects in the body. Read-only.|1.3|
 |[body](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/body.md)|_Relationship_ > parentBody|Gets the parent body of the body. For example, a table cell body's parent body could be a header. Read-only.|1.3|
 |[body](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/body.md)|_Relationship_ > parentSection|Gets the parent section of the body. Read-only.|1.3|
