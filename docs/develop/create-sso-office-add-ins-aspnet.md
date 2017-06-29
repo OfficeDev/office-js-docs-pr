@@ -219,7 +219,7 @@ Here’s an example of what the four keys you changed should look like. *Note th
 
     `public partial class Startup`
 
-1. Add the following line to the body of the `Configure` method. You create the `ConfigureAuth` method in a later step.
+1. Add the following line to the body of the `Configuration` method. You create the `ConfigureAuth` method in a later step.
 
     `ConfigureAuth(app);`
 
