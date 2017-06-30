@@ -2,14 +2,14 @@
 
 Applies to: _Visio Online_
 
-Provides information about the shape that raised the MouseLeave event.
+Provides information about the shape that raised the ShapeMouseLeave event.
 
 ## Properties
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|shapeName|string|Gets the name of the shape object that raised the MouseLeave event.|
-|pageName|string|Gets the name of the page which has the shape object that raised the MouseLeave event.|
+|shapeName|string|Gets the name of the shape object that raised the ShapeMouseLeave event.|
+|pageName|string|Gets the name of the page which has the shape object that raised the ShapeMouseLeave event.|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -24,9 +24,9 @@ None
 Visio.run(function (ctx) { 
   var document1= ctx.document;
                var page = document1.getActivePage();
-	eventResult2 = document1.onMouseLeave.add(
+	eventResult2 = document1.onShapeMouseLeave.add(
 				function (args){			
-		                 console.log(Date.now()+":OnMouseLeave Event"+JSON.stringify(args));
+		                 console.log(Date.now()+":OnShapeMouseLeave Event"+JSON.stringify(args));
 			});
 	return ctx.sync().then(function () {
 		   console.log("Success");

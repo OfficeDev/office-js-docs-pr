@@ -14,19 +14,19 @@ Office.context
 
 ## Members
 
-|||
-|:-----|:-----|
-|Name|Description|
-|[commerceAllowed](../../reference/shared/office.context.commerceallowed.md)|Gets whether the add-in is running on a platform that allows links to external payment systems.|
-|[contentLanguage](../../reference/shared/office.context.contentlanguage.md)|Gets the locale (language) for data as it is stored in the document or item.|
-|[displayLanguage](../../reference/shared/office.context.displaylanguage.md)|Gets the locale (language) for the UI of the hosting application.|
-|[document](../../reference/shared/office.context.document.md)|Gets an object that represents the document the content or task pane add-in is interacting with.|
-|[mailbox](../../reference/shared/office.context.mailbox.md)|Gets the  **mailbox** object that provides access to members of the API that are specifically for Outlook add-ins.|
-|[officeTheme](../../reference/shared/office.context.officetheme.md)|Provides access to the properties for Office theme colors.|
-|[ui](../../reference/shared/officeui)|Provides objects and methods that you can use to create and manipulate UI components, such as dialog boxes.|
-|[roamingSettings](../../reference/shared/office.context.roamingsettings.md)|Gets an object that represents the saved custom settings of the add-in.|
-|[touchEnabled](../../reference/shared/office.context.touchenabled.md)|Gets whether the add-in is running in an Office host application that is touch enabled.|
-
+| Member | Type | Description | 
+|:-------|:-----|:------------|
+|commerceAllowed |bool|Returns True if developers can display sell or upgrade UI in the add-in on that platform; otherwise returns False.|
+|contentLanguage | string | Gets the locale (language) specified by the user for editing the document or item.|
+|displayLanguage|string|Gets the locale (language) specified by the user for the UI of the Office host application.|
+|document| [Document object](office.context.document.md)|Gets an object that represents the document the content or task pane add-in is interacting with.|
+|host|string|Contains the host in which the add-in (web application) is running in. Possible values are: Word, Excel, PowerPoint, Outlook, OneNote, Project, Access|
+|officeTheme|[OfficeTheme object](office.context.officetheme.md)|Provides access to the properties for Office theme colors.|
+|platform|string|Provides the platform on which the add-in is running. Possible values are: PC, OfficeOnline, Mac, iOS|
+|requirements|object|Offers `requirements.isSetSupported()` method to check if the specified requirement set is supported by the host Office application. <br/> `isSetSupported(name: string, minVersion?: number): boolean;` <br> @param name - Set name. e.g.: "MatrixBindings". <br/>|
+|roamingSettings| [RoamingSettings object](office.context.roamingsettings.md)|Gets an object that represents the saved custom settings of the add-in.|
+|touchEnabled|bool|Gets whether the add-in is running in an Office host application that is touch enabled.|
+|ui|[Ui object](officeui.md)|Provides objects and methods that you can use to create and manipulate UI components, such as dialog boxes.|
 ## Remarks
 
 The  **Context** object provides access to key objects in the JavaScript API for Office.

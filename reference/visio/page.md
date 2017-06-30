@@ -18,7 +18,8 @@ Represents the Page class.
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
 |comments|[CommentCollection](commentcollection.md)|Returns the Comments Collection. Read-only.|
-|shapes|[ShapeCollection](shapecollection.md)|Shapes in the Page. Read-only.|
+|allShapes|[ShapeCollection](shapecollection.md)|All shapes in the Page, including subshapes. Read-only.|
+|shapes|[ShapeCollection](shapecollection.md)|All top-level shapes in the Page. Read-only.|
 |view|[PageView](pageview.md)|Returns the view of the page. Read-only.|
 
 ## Methods

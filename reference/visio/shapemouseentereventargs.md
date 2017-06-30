@@ -2,14 +2,14 @@
 
 Applies to: _Visio Online_
 
-Provides information about the shape that raised the MouseEnter event.
+Provides information about the shape that raised the ShapeMouseEnter event.
 
 ## Properties
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|shapeName|string|Gets the name of the shape object that raised the MouseEnter event.|
-|pageName|string|Gets the name of the page which has the shape object that raised the MouseEnter event.|
+|shapeName|string|Gets the name of the shape object that raised the ShapeMouseEnter event.|
+|pageName|string|Gets the name of the page which has the shape object that raised the ShapeMouseEnter event.|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -24,9 +24,9 @@ None
 Visio.run(function (ctx) { 
   var document1= ctx.document;
                var page = document1.getActivePage();
-	eventResult2 = document1.onMouseEnter.add(
+	eventResult2 = document1.onShapeMouseEnter.add(
 			function (args){			
-		                 console.log(Date.now()+":OnMouseEnter Event"+JSON.stringify(args));
+		                 console.log(Date.now()+":OnShapeMouseEnter Event"+JSON.stringify(args));
 			});
 	return ctx.sync().then(function () {
 		   console.log("Success");
