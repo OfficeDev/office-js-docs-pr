@@ -27,6 +27,7 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|:-------|
 |[addSection(name: String)](#addsectionname-string)|[Section](section.md)|Adds a new section to the end of the notebook.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-addSection)|
 |[addSectionGroup(name: String)](#addsectiongroupname-string)|[SectionGroup](sectiongroup.md)|Adds a new section group to the end of the notebook.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-addSectionGroup)|
+|[getRestApiId()](#getRestApiId)|string|Gets the id that is compatible with the REST API.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-getRestApiId)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-load)|
 
 ## Method Details
@@ -117,6 +118,35 @@ OneNote.run(function (context) {
 		console.log("Debug info: " + JSON.stringify(error.debugInfo));
 	}
 }); 
+```
+
+### getRestApiId()
+Gets the id that is compatible with the REST API.
+
+#### Syntax
+```js
+notebookObject.getRestApiId();
+```
+
+#### Parameters
+None
+
+#### Returns
+string
+
+#### Examples
+```js
+
+OneNote.run(function(ctx){
+    // Get the current notebook.         
+    var notebook = ctx.application.getActiveNotebook();
+    var restApiId = notebook.getRestApiId();
+
+    return ctx.sync().
+        then(function(){
+            console.log("The rest api id is " + restApiId.value);
+        });
+});
 ```
 
 ### load(param: object)
