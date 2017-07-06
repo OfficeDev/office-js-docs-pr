@@ -9,7 +9,7 @@ Represents a OneNote notebook. Notebooks contain section groups and sections.
 
 | Property	   | Type	|Description|Feedback|
 |:---------------|:--------|:----------|:-------|
-|baseUrl|string|The base site url for the notebook, if it is in a SharePoint site (it will be null for OneDrive notebooks) - this is to be used for interacting with the OneNote REST API, according to our [OneNote API documentation](https://blogs.msdn.microsoft.com/onenotedev/2015/06/11/and-sharepoint-makes-three/) Read only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-baseUrl)|
+|baseUrl|string|The base site url for the notebook, if it is in a SharePoint site (it will be null for OneDrive notebooks) - this is to be used for interacting with the OneNote REST API, according to our [OneNote API documentation](https://blogs.msdn.microsoft.com/onenotedev/2015/06/11/and-sharepoint-makes-three/) to fetch the SiteCollectionId and SiteId (using FromUrl). Read only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-baseUrl)|
 |clientUrl|string|The client url of the notebook. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-clientUrl)|
 |id|string|Gets the ID of the notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-id)|
 |name|string|Gets the name of the notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-name)|
