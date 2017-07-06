@@ -66,7 +66,6 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. In the dialog, check the boxes for the following permissions (some may already be checked by default): 
     * Files.Read.All
-    * profile
 
 
 1. Click **OK** at the bottom of the dialog.
@@ -119,7 +118,6 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     <WebApplicationId>{application_GUID here}</WebApplicationId>
     <WebApplicationResource>api://localhost:3000/{application_GUID here}<WebApplicationResource>
     <WebApplicationScopes>
-        <WebApplicationScope>profile</WebApplicationScope>
         <WebApplicationScope>files.read.all</WebApplicationScope>
     </WebApplicationScopes>
    ```
@@ -334,7 +332,7 @@ There are two server-side files that need to be modified.
     * The call to `acquireTokenOnBehalfOf` does not include a resource parameter because we constructed the `AuthModule` object (`auth`) with the AAD V2 endpoint which does not support a resource property.
     * The second parameter of the call specifies the permissions the add-in will need to get a list of the user's files and folders on OneDrive for Business.
 
-    `const graphToken = await auth.acquireTokenOnBehalfOf(jwt, ['profile', 'Files.Read.All']);`
+    `const graphToken = await auth.acquireTokenOnBehalfOf(jwt, ['Files.Read.All']);`
 
 6. Replace TODO7 with the following line. Note the following about this code:
 
