@@ -9,6 +9,7 @@ Represents a OneNote notebook. Notebooks contain section groups and sections.
 
 | Property	   | Type	|Description|Feedback|
 |:---------------|:--------|:----------|:-------|
+|baseUrl|string|The base site url for the notebook, if it is in a SharePoint site (it will be null for OneDrive notebooks) - this is to be used for interacting with the OneNote REST API, according to our [OneNote API documentation](https://blogs.msdn.microsoft.com/onenotedev/2015/06/11/and-sharepoint-makes-three/) Read only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-baseUrl)|
 |clientUrl|string|The client url of the notebook. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-clientUrl)|
 |id|string|Gets the ID of the notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-id)|
 |name|string|Gets the name of the notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-name)|
@@ -145,6 +146,8 @@ OneNote.run(function(ctx){
     return ctx.sync().
         then(function(){
             console.log("The rest api id is " + restApiId.value);
+            // Note that the rest API id isn't all you need to interact with the OneNote Rest API. For SharePoint notebooks, the notebook baseUrl should be used to talk to OneNote REST APIs according to https://blogs.msdn.microsoft.com/onenotedev/2015/06/11/and-sharepoint-makes-three/
+            // (this is only required for SharePoint notebooks, baseUrl will be null for OneDrive notebooks)
         });
 });
 ```
@@ -165,6 +168,32 @@ object.load(param);
 #### Returns
 void
 ### Property access examples
+**baseUrl**
+```js
+OneNote.run(function (context) {
+        
+    // Get the current notebook.
+    var notebook = context.application.getActiveNotebook();
+            
+    // Queue a command to load the notebook. 
+    // For best performance, request specific properties.           
+    notebook.load('baseUrl');
+            
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function () {
+            console.log("Base url: " + notebook.baseUrl);
+            // This baseUrl should be used to talk to OneNote REST APIs according to https://blogs.msdn.microsoft.com/onenotedev/2015/06/11/and-sharepoint-makes-three/ (only required for SharePoint notebooks, will be null for OneDrive notebooks)
+        });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
 **id**
 ```js
 OneNote.run(function (context) {

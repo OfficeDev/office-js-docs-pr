@@ -172,6 +172,8 @@ OneNote.run(function(ctx){
     return ctx.sync().
         then(function(){
             console.log("The rest api id is " + restApiId.value);
+            // Note that the rest API id isn't all you need to interact with the OneNote Rest API. For SharePoint notebooks, the notebook baseUrl should be used to talk to OneNote REST APIs according to https://blogs.msdn.microsoft.com/onenotedev/2015/06/11/and-sharepoint-makes-three/
+            // (this is only required for SharePoint notebooks, baseUrl will be null for OneDrive notebooks)
         });
 });
 ```
