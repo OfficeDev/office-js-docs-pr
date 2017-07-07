@@ -64,7 +64,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Scroll down to the **Microsoft Graph Permissions** section, the **Delegated Permissions** subsection. Use the **Add** button to open a **Select Permissions** dialog.
 
-1. In the dialog, check the boxes for the following permissions (some may already be checked by default): 
+1. In the dialog box, check the box for the following permission: 
     * Files.Read.All
 
 
