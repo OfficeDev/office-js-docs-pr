@@ -30,7 +30,7 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|:-------|
 |[addOutline(left: double, top: double, html: String)](#addoutlineleft-double-top-double-html-string)|[Outline](outline.md)|Adds an Outline to the page at the specified position.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-addOutline)|
 |[copyToSection(destinationSection: Section)](#copytosectiondestinationsection-section)|[Page](page.md)|Copies this page to specified section.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-copyToSection)|
-|[getRestApiId()](#getRestApiId)|string|Gets the id that is compatible with the REST API.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-getRestApiId)|
+|[getRestApiId()](#getRestApiId)|string|Gets the ID that is compatible with the REST API.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-getRestApiId)|
 |[insertPageAsSibling(location: string, title: string)](#insertpageassiblinglocation-string-title-string)|[Page](page.md)|Inserts a new page before or after the current page.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-insertPageAsSibling)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-load)|
 
@@ -148,7 +148,7 @@ OneNote.run(function(ctx) {
 ```
 
 ### getRestApiId()
-Gets the id that is compatible with the REST API.
+Gets the ID that is compatible with the REST API.
 
 #### Syntax
 ```js
@@ -171,8 +171,8 @@ OneNote.run(function(ctx){
 
     return ctx.sync().
         then(function(){
-            console.log("The rest api id is " + restApiId.value);
-            // Note that the rest API id isn't all you need to interact with the OneNote Rest API. For SharePoint notebooks, the notebook baseUrl should be used to talk to OneNote REST APIs according to https://blogs.msdn.microsoft.com/onenotedev/2015/06/11/and-sharepoint-makes-three/
+            console.log("The REST API ID is " + restApiId.value);
+            // Note that the REST API ID isn't all you need to interact with the OneNote REST API. For SharePoint notebooks, the notebook baseUrl should be used to talk to the OneNote REST API according to [OneNote Development Blog](https://blogs.msdn.microsoft.com/onenotedev/2015/06/11/and-sharepoint-makes-three/)
             // (this is only required for SharePoint notebooks, baseUrl will be null for OneDrive notebooks)
         });
 });

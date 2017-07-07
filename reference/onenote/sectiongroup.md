@@ -30,7 +30,7 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|:-------|
 |[addSection(title: String)](#addsectiontitle-string)|[Section](section.md)|Adds a new section to the end of the section group.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-addSection)|
 |[addSectionGroup(name: String)](#addsectiongroupname-string)|[SectionGroup](sectiongroup.md)|Adds a new section group to the end of this sectionGroup.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-addSectionGroup)|
-|[getRestApiId()](#getRestApiId)|string|Gets the id that is compatible with the REST API.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-getRestApiId)|
+|[getRestApiId()](#getRestApiId)|string|Gets the ID that is compatible with the REST API.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-getRestApiId)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-load)|
 
 ## Method Details
