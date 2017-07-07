@@ -375,8 +375,7 @@ Here’s an example of what the four keys you changed should look like. *Note th
 
 ## Run the add-in
 
-1. Make sure you have some files in your OneDrive for B
-2. usiness.
+1. Make sure you have some files in your OneDrive for Business.
 
 1. In Visual Studio, press F5. PowerPoint opens and there is an **SSO ASP.NET** group on the **Home** ribbon. 
 
