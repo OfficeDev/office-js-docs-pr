@@ -13,13 +13,13 @@ The initial release of add-in commands doesn't have a corresponding requirement 
 
 A revision of the add-in commands feature includes a new feature which is the ability to autoopen taskpane with documents. The autoopen feature is included in the add-in commands 1.1 requirement set. For more information about the autoopen taskpane feature, see [Automatically open a task pane with a document](../../docs/add-ins/design/automatically-open-a-task-pane-with-a-document). 
 
-The following table lists the Office Add-in commands 1.1 requirement set, the Office host applications that support that requirement set, and the build or version numbers for the Office application. 
+The following table lists the add-in commands 1.1 requirement set, the Office host applications that support that requirement set, and the build or version numbers for the Office application. 
 
-|  Requirement set  |  Office 2013 for Windows | Office 2016 for Windows*   |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  Office Online Server  |
+|  Requirement set  |  Office 2013 for Windows | Office 2016 for Windows\*   |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|
 | AddInCommands 1.1  | Not applicable | Version 1705 (Build 8121.1000) or later | Not applicable | 15.34 or later| May 2017 | |
 
->**\*Note:** The build number for Office 2016 installed via MSI is 16.0.4266.1001. In order to use the Office Add-in commands, please run Office update to get the latest version. 
+>**\*Note:** The build number for Office 2016 installed via MSI is 16.0.4266.1001. To use add-in commands, run Office update to get the latest version. 
 
 To find out more about versions, build numbers, and Office Online Server, see:
 
