@@ -65,9 +65,9 @@ Apply the following best practices when you develop add-in commands:
     ![A screenshot that shows a task pane add-in in Office 2013 and the same add-in using add-in commands in Office 2016](../../images/4f90a3cc-8cc4-4879-9a03-0bb2b6079026.png)
 
 
-## Get started with add-in commands
+## Next steps to get started
 
-The best way to get started using add-in commands is via **samples**. See the [Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) on GitHub.
+The best way to get started using add-in commands is to take a look at the [Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) on GitHub.
 
 For more information about specifying add-in commands in your manifest, see [Define add-in commands in your manifest](../develop/define-add-in-commands.md) and the [VersionOverrides](../../reference/manifest/versionoverrides.md) reference content.
 
