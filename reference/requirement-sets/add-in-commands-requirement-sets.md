@@ -19,7 +19,7 @@ The following table lists the Office Add-in commands 1.1 requirement set, the Of
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|
 | AddInCommands 1.1  | Not applicable | Version 1705 (Build 8121.1000) or later | Not applicable | 15.34 or later| May 2017 | |
 
->**Note:** The build number for Office 2016 installed via MSI is 16.0.4266.1001. In order to use the Office Add-in commands, please run Office update to get the latest version. 
+>**\*Note:** The build number for Office 2016 installed via MSI is 16.0.4266.1001. In order to use the Office Add-in commands, please run Office update to get the latest version. 
 
 To find out more about versions, build numbers, and Office Online Server, see:
 
