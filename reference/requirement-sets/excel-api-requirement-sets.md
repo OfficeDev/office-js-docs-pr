@@ -57,7 +57,7 @@ The following code example shows an add-in that loads in all Office host applica
 ## Office common API requirement sets
 For information about common API requirement sets, see [Office common API requirement sets](office-add-in-requirement-sets.md).
 
-## Upcoming Excel 1.6 Release Features
+## Upcoming Excel 1.6 release features
 
 ### Conditional formatting
 
@@ -77,9 +77,9 @@ In addiiton:
 
 For API details, please refer to the Excel API [open specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec). 
 
-## Upcoming Excel 1.5 Release Features
+## Upcoming Excel 1.5 release features
 
-### Custom XML Part
+### Custom XML part
 
 * Addition of custom XML parts collection to workbook object.
 * Get custom XML part using ID
@@ -113,12 +113,14 @@ The following are the new additions to the Excel JavaScript APIs in requirement 
 
 ### Named item add and new properties
 
-New properties
+New properties:
+
 * `comment`
 * `scope` worksheet or workbook scoped items
 * `worksheet` returns the worksheet on which the named item is scoped to.
 
-New Methods
+New methods:
+
 * `add(name: string, reference: Range or string, comment: string)`Adds a new name to the collection of the given scope.
 * `addFormulaLocal(name: string, formula: string, comment: string)` Adds a new name to the collection of the given scope using the user's locale for the formula.
 
