@@ -22,7 +22,7 @@ Office.context
 |document| [Document object](office.context.document.md)|Gets an object that represents the document the content or task pane add-in is interacting with.|
 |host|string|Contains the host in which the add-in (web application) is running in. Possible values are: Word, Excel, PowerPoint, Outlook, OneNote, Project, Access|
 |officeTheme|[OfficeTheme object](office.context.officetheme.md)|Provides access to the properties for Office theme colors.|
-|platform|string|Provides the platform on which the add-in is running. Possible values are: PC, OfficeOnline, Mac, iOS|
+|platform|string|Provides the platform on which the add-in is running. Possible values are: PC, OfficeOnline, Mac, iOS, Android, Universal|
 |requirements|object|Offers `requirements.isSetSupported()` method to check if the specified requirement set is supported by the host Office application. <br/> `isSetSupported(name: string, minVersion?: number): boolean;` <br> @param name - Set name. e.g.: "MatrixBindings". <br/>|
 |roamingSettings| [RoamingSettings object](office.context.roamingsettings.md)|Gets an object that represents the saved custom settings of the add-in.|
 |touchEnabled|bool|Gets whether the add-in is running in an Office host application that is touch enabled.|
@@ -52,6 +52,7 @@ The  **Context** object provides access to key objects in the JavaScript API for
 
 |**Version**|**Changes**|
 |:-----|:-----|
+|1.1|Added Android and Universal as possible values for the platform property.|
 |1.1|Added  **commerceAllowed** and **touchEnabledAdded** properties (Excel, PowerPoint and Word on Office for iPad only).|
 |1.1|Added support for add-ins with Excel and Word on Office for iPad.|
 |1.1|For [contentLanguage](../../reference/shared/office.context.contentlanguage.md), [displayLanguage](../../reference/shared/office.context.displaylanguage.md), and [document](../../reference/shared/office.context.document.md), added support for content add-ins for Access.|
