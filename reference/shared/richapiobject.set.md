@@ -28,7 +28,7 @@ void
 
 #### Examples
 
-Below example sets several format properties with a JavaScript object. 
+The following example sets several format properties with a JavaScript object. 
 
 ```js
 Excel.run(function (ctx) { 
@@ -55,7 +55,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-Below example sets the properties of one range by copying the properties of another range. Note that the source object must be loaded first.
+The following example sets the properties of one range by copying the properties of another range. Note that the source object must be loaded first.
 
 ```js
 Excel.run(function (ctx) { 
