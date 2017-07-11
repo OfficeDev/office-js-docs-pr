@@ -8,7 +8,7 @@ Excel add-ins run across multiple versions of Office, including Office 2016 for 
 
 > For the requirement sets that are marked as *Beta*, use the specified (or later) version of the Office software and use the Beta library of the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js. Entires not listed as *Beta* are generally available and you can continue to use Production CDN library: https://appsforoffice.microsoft.com/lib/1/hosted/office.js
 
-|  Requirement set  |  Office 2016 for Windows*  |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  Office Online Server  |
+|  Requirement set  |  Office 2016 for Windows\*  |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | ExcelApi1.7 **Beta**  | Version 1704 (Build 8201.2001) or later| Coming soon |  Coming soon| April 2017 | Coming soon|
 | ExcelApi1.6  | Version 1704 (Build 8201.2001) or later| Coming soon |  Coming soon| April 2017 | Coming soon|
@@ -18,7 +18,7 @@ Excel add-ins run across multiple versions of Office, including Office 2016 for 
 | ExcelApi1.2  | Version 1601 (Build 6741.2088) or later | 1.21 or later | 15.22 or later| January 2016 ||
 | ExcelApi1.1  | Version 1509 (Build 4266.1001) or later | 1.19 or later | 15.20 or later| January 2016 ||
 
-> **Note**: The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1 requirement set.
+> **\*Note**: The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1 requirement set.
 
 To find out more about versions, build numbers, and Office Online Server, see:
 
@@ -57,7 +57,7 @@ The following code example shows an add-in that loads in all Office host applica
 ## Office common API requirement sets
 For information about common API requirement sets, see [Office common API requirement sets](office-add-in-requirement-sets.md).
 
-## Upcoming Excel 1.6 Release Features
+## Upcoming Excel 1.6 release features
 
 ### Conditional formatting
 
@@ -77,9 +77,9 @@ In addiiton:
 
 For API details, please refer to the Excel API [open specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec). 
 
-## Upcoming Excel 1.5 Release Features
+## Upcoming Excel 1.5 release features
 
-### Custom XML Part
+### Custom XML part
 
 * Addition of custom XML parts collection to workbook object.
 * Get custom XML part using ID
@@ -113,12 +113,14 @@ The following are the new additions to the Excel JavaScript APIs in requirement 
 
 ### Named item add and new properties
 
-New properties
+New properties:
+
 * `comment`
 * `scope` worksheet or workbook scoped items
 * `worksheet` returns the worksheet on which the named item is scoped to.
 
-New Methods
+New methods:
+
 * `add(name: string, reference: Range or string, comment: string)`Adds a new name to the collection of the given scope.
 * `addFormulaLocal(name: string, formula: string, comment: string)` Adds a new name to the collection of the given scope using the user's locale for the formula.
 
