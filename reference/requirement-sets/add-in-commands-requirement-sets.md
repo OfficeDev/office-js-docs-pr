@@ -7,11 +7,11 @@ Add-in commands are UI elements that extend the Office UI and start actions in y
 
 The initial release of add-in commands doesn't have a corresponding requirement set (that is, there isn't an AddInCommands 1.0 requirement set). The following table lists the Office host applications that support the initial release version, and the build versions or number for those applications.  
 
-| Release   |  Office 2013 for Windows | Office 2016 for Windows*   |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  Office Online Server  |
+| Release   |  Office 2013 for Windows | Office 2016 for Windows\*   |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|
 | Add-in commands (initial release, no requirement set) | Not applicable | Version 1603 (Build 6769.0000) or later | Not applicable | 15.33 or later| January 2016 | |
 
-A revision of the add-in commands feature includes a new feature which is the ability to autoopen taskpane with documents. The autoopen feature is included in the add-in commands 1.1 requirement set. For more information about the autoopen taskpane feature, see [Automatically open a task pane with a document](../../docs/add-ins/design/automatically-open-a-task-pane-with-a-document). 
+A new version of the add-in commands feature includes the ability to autoopen a task pane with documents. The autoopen feature is included in the add-in commands 1.1 requirement set. For more information, see [Automatically open a task pane with a document](../../docs/add-ins/design/automatically-open-a-task-pane-with-a-document). 
 
 The following table lists the add-in commands 1.1 requirement set, the Office host applications that support that requirement set, and the build or version numbers for the Office application. 
 
