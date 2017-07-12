@@ -52,7 +52,7 @@ The following methods in the JavaScript API for Office aren't part of a requirem
 |**Method name**|**Office host support**|
 |:-----|:-----|
 |Bindings.addFromPromptAsync|Access web apps, Excel, and Excel Online|
-|Document.getFilePropertiesAsync|Excel, Excel Online, Word, and PowerPoint|
+|Document.getFilePropertiesAsync|Excel, Excel Online, Word, Word Online, and PowerPoint|
 |Document.getProjectFieldAsync|Project Standard 2013 and Project Professional 2013|
 |Document.getResourceFieldAsync|Project Standard 2013 and Project Professional 2013|
 |Document.getSelectedResourceAsync|Project Standard 2013 and Project Professional 2013|
