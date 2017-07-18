@@ -15,6 +15,7 @@ For information about Excel, Word, OneNote, Outlook, and Dialog API requirement 
 - [OneNote JavaScript API requirement sets](onenote-api-requirement-sets.md) (OneNoteApi)
 - [Understanding Outlook API requirement sets](../outlook/tutorial-api-requirement-sets.md) (MailBox)
 - [Dialog API requirement sets](dialog-api-requirement-sets.md) (DialogApi)
+- [Add-in command requirement sets](add-in-commands-requirement-sets.md) (AddInCommands)
 
 ## Common API requirement sets
 
