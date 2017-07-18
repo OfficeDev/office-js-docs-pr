@@ -7,16 +7,16 @@ Add-in commands are UI elements that extend the Office UI and start actions in y
 
 The initial release of add-in commands doesn't have a corresponding requirement set (that is, there isn't an AddInCommands 1.0 requirement set). The following table lists the Office host applications that support the initial release version, and the build versions or number for those applications.  
 
-| Release   |  Office 2013 for Windows | Office 2016 for Windows\*   |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  Office Online Server  |
-|:-----|-----|:-----|:-----|:-----|:-----|:-----|
+| Release   |  Office 2013 for Windows | Office 2016 for Windows\*   |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  
+|:-----|-----|:-----|:-----|:-----|:-----|
 | Add-in commands (initial release, no requirement set) | Not applicable | Version 1603 (Build 6769.0000) or later | Not applicable | 15.33 or later| January 2016 | |
 
 The add-in commands 1.1 requirement set introduces the ability to [autoopen a task pane with documents](../../docs/add-ins/design/automatically-open-a-task-pane-with-a-document).  
 
 The following table lists the add-in commands 1.1 requirement set, the Office host applications that support that requirement set, and the build or version numbers for the Office application. 
 
-|  Requirement set  |  Office 2013 for Windows | Office 2016 for Windows\*   |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  Office Online Server  |
-|:-----|-----|:-----|:-----|:-----|:-----|:-----|
+|  Requirement set  |  Office 2013 for Windows | Office 2016 for Windows\*   |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  
+|:-----|-----|:-----|:-----|:-----|:-----|
 | AddInCommands 1.1  | Not applicable | Version 1705 (Build 8121.1000) or later | Not applicable | 15.34 or later| May 2017 | |
 
 >**\*Note:** The build number for Office 2016 installed via MSI is 16.0.4266.1001. To use add-in commands, run Office update to get the latest version. 
