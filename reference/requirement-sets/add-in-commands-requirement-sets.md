@@ -1,5 +1,5 @@
 
-# Office Add-in commands requirement sets
+# Add-in command requirement sets
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md).
 
@@ -9,7 +9,7 @@ The initial release of add-in commands doesn't have a corresponding requirement 
 
 | Release   |  Office 2013 for Windows | Office 2016 for Windows\*   |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  
 |:-----|-----|:-----|:-----|:-----|:-----|
-| Add-in commands (initial release, no requirement set) | Not applicable | Version 1603 (Build 6769.0000) or later | Not applicable | 15.33 or later| January 2016 | |
+| Add-in commands (initial release, no requirement set) | Not applicable | Version 1603 (Build 6769.0000) or later | N/A | 15.33 or later| January 2016 | |
 
 The add-in commands 1.1 requirement set introduces the ability to [autoopen a task pane with documents](../../docs/add-ins/design/automatically-open-a-task-pane-with-a-document).  
 
@@ -17,7 +17,7 @@ The following table lists the add-in commands 1.1 requirement set, the Office ho
 
 |  Requirement set  |  Office 2013 for Windows | Office 2016 for Windows\*   |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  
 |:-----|-----|:-----|:-----|:-----|:-----|
-| AddInCommands 1.1  | Not applicable | Version 1705 (Build 8121.1000) or later | Not applicable | 15.34 or later| May 2017 | |
+| AddInCommands 1.1  | N/A | Version 1705 (Build 8121.1000) or later | N/A | 15.34 or later| May 2017 | |
 
 >**\*Note:** The build number for Office 2016 installed via MSI is 16.0.4266.1001. To use add-in commands, run Office update to get the latest version. 
 
