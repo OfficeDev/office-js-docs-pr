@@ -147,9 +147,9 @@ You might want to provide additional functionality in your add-in if certain req
 
 
 ```js
-if (Office.context.requirements.isSetSupported(RequirementSetName , VersionNumber )
+if (Office.context.requirements.isSetSupported(RequirementSetName , VersionNumber))
 {
-   // Code that uses API members from RequirementSetName .
+   // Code that uses API members from RequirementSetName.
 }
 
 ```
@@ -170,11 +170,11 @@ The following code example shows how an add-in can provide different functionali
 
 
 ```js
-if (Office.context.requirements.isSetSupported('WordApi', 1.1)
+if (Office.context.requirements.isSetSupported('WordApi', 1.1))
 {
    	// Run code that provides additional functionality using the JavaScript API for Word when the add-in runs in Word 2016.
 }
-else if (Office.context.requirements.isSetSupported('CustomXmlParts')
+else if (Office.context.requirements.isSetSupported('CustomXmlParts'))
 {
 	  // Run code that uses API members from the CustomXmlParts requirement set.
 }
@@ -215,5 +215,5 @@ if (Office.context.document.setSelectedDataAsync)
     
 - [Office add-in requirement sets](../../reference/requirement-sets/office-add-in-requirement-sets.md)
     
-- [Word-Add-in-Get-Set-EditOpen-XML ](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)
+- [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)
     
