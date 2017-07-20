@@ -73,24 +73,25 @@ The [displayDialogAsync](http://dev.office.com/reference/add-ins/shared/officeui
 It is important to remember, if you pass a route, that the dialog box creates a new window with its own execution context. Your base page and all its initialization and bootstrapping code run again in this new context, and any variables are set to their initial values in the dialog box. So this technique launches a second instance of your single page application in the dialog box. Code that changes variables in the dialog box does not change the task pane version of the same variables. Similarly, the dialog box has its own session storage, which is not accessible from code in the task pane.  
 
 
-## Forcing an update of the DOM
+## Trigger the UI update
 
-In any Angular application, notifications to update the DOM occasionally do not fire. The framework provides a `tick()` method on the `ApplicationRef` object that will force an update. The following code is an example.
+In an Angular app, the UI sometimes does not update. This is because that part of the code runs out of the Angular zone. The solution is to put the code in the zone, as shown in the following example.
 
-```js
-import { ApplicationRef } from '@angular/core';
+```ts
+import { NgZone } from '@angular/core';
 
 export class MyComponent {
-  constructor(private appRef: ApplicationRef) { }
-  
-  myMethod() {
-    // Code that changes the DOM is here
-    this.appRef.tick();
+  constructor(private zone: NgZone) { }
+
+  myFunction() {
+    this.zone.run(() => {
+      // the codes that need update the UI
+    });
   }
 }
 ``` 
 
-## Using observables
+## Using Observable
 
 Angular uses RxJS (Reactive Extensions for JavaScript), and RxJS introduces `Observable` and `Observer` objects to implement asynchronous processing. This section provides a brief introduction to using `Observables`; for more detailed information, see the official [RxJS](http://reactivex.io/rxjs/) documentation.
 
