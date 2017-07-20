@@ -75,7 +75,7 @@ It is important to remember, if you pass a route, that the dialog box creates a 
 
 ## Trigger the UI update
 
-This is because that part of the code runs in the Zone in Angular. The solution is to put the UI code in the Zone, as shown in the following example.
+In an Angular app, the UI sometimes does not update. This is because that part of the code runs out of the Angular zone. The solution is to put the code in the zone, as shown in the following example.
 
 ```ts
 import { NgZone } from '@angular/core';
