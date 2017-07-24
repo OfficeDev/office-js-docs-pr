@@ -51,7 +51,7 @@ The typical development lifecycle of an Office Add-in includes the following ste
     
 6.  **Install and test the add-in.**
     
-    Place the HTML files and any JavaScript and CSS files on the web servers that are specified in the add-in manifest file. The process to install an add-in depends on the type of the add-in.
+    Place the HTML files and any JavaScript and CSS files on the web servers that are specified in the add-in manifest file. The process to install an add-in depends on the type of the add-in. For details, see [Sideload Office Add-ins for testing](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
     
     For Outlook add-ins, install it in an Exchange mailbox, and specify the location of the add-in manifest file in the Exchange Admin Center (EAC). For more information, see [Deploy and install Outlook add-ins for testing](../outlook/testing-and-tips.md).
     
@@ -59,7 +59,7 @@ The typical development lifecycle of an Office Add-in includes the following ste
     
     You can submit the add-in to the Office Store, from which customers can install the add-in. In addition, you can publish task pane and content add-ins to a private folder add-in catalog on SharePoint or to a shared network folder, and you can deploy an Outlook add-in directly on an for your organization. For details, see [Publish your Office Add-in](../publish/publish.md).
     
-8.  **Updating the add-in**
+8.  **Maintain the add-in**
     
     If your add-in calls a web service, and if you make updates to the web service after publishing the add-in, you do not have to republish the add-in. However, if you change any items or data you submitted for your add-in, such as the add-in manifest, screenshots, icons, HTML or JavaScript files, you will need to republish the add-in. In particular, if you have published the add-in to the Office Store, you'll need to resubmit your add-in so that the Office Store can implement those changes. You must resubmit your add-in with an updated add-in manifest that includes a new version number. You must also make sure to update the add-in version number in the submission form to match the new manifest's version number. For Outlook add-ins, you should make sure the [Id](../../reference/manifest/id.md) element contains a different UUID in the add-in manifest.
     
