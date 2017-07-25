@@ -10,7 +10,9 @@ You’ll start by creating a web app using HTML and JQuery. Then you'll create a
 
 ### Code it
 
-1- Create a folder on your local drive named QuarterlySalesReport (for example, C:\\QuarterlySalesReport). Save all files created in the steps that follow into this folder.
+#### Create the web app
+
+1-  Create a folder on your local drive named QuarterlySalesReport (for example, C:\\QuarterlySalesReport). Then within that folder, create a folder named QuarterlySalesReportWeb (for example, C:\\QuarterlySalesReport\\QuarterlySalesReportWeb). Save all of the web app files created in the steps that follow into this folder.
 
 2- Create the HTML page that will load into the task pane add-in. Name the file **Home.html** and paste the code below into the file.
 
@@ -195,7 +197,6 @@ You’ll start by creating a web app using HTML and JQuery. Then you'll create a
     })();
 ```
 
-
 5- Create a file to contain the programming logic for providing notifications in the add-in in case of errors. This is helpful while debugging. Name the file **Notification.js** and paste the following script into the file.
 
 ```js
@@ -235,7 +236,11 @@ You’ll start by creating a web app using HTML and JQuery. Then you'll create a
     })();
 ```
 
-6- Create an XML manifest file to specify where your web app is located and how you want it to appear in Excel. Name the file **QuarterlySalesReportManifest.xml** and paste the following XML into the file.
+6-	Save all of the web app files. 
+
+#### Create the XML manifest file
+
+1-  Within the QuarterlySalesReport folder on your local drive (for example, C:\\QuarterlySalesReport), create an XML manifest file to specify the settings and capabilities of the add-in. Name the file **QuarterlySalesReportManifest.xml** and paste the following XML into the file.
 
 ```xml
 	<?xml version="1.0" encoding="UTF-8"?>
@@ -251,45 +256,55 @@ You’ll start by creating a web app using HTML and JQuery. Then you'll create a
         <Capability Name="Workbook" />
       </Capabilities>
       <DefaultSettings>
-        <SourceLocation DefaultValue="\\MyShare\QuarterlySalesReport\Home.html" />
+        <SourceLocation DefaultValue="~remoteAppUrl/QuarterlySalesReportWeb/Home.html" />
       </DefaultSettings>
       <Permissions>ReadWriteDocument</Permissions>
     </OfficeApp>
 ```
 
-7-  Generate a GUID using an online generator of your choice. Then, replace the value in the **Id** tag shown in the previous step with that GUID.
+2-  Generate a GUID using an online generator of your choice. Then, replace the value of the **Id** element shown in the previous step with that GUID.
 
-8-	Save all the files. You’ve now written your first Excel add-in.
+3-	Save the XML manifest file. 
+
+Now that you've created the web app and the XML manifest file, you’ve officially written your first Excel add-in.
 
 ### Try it out
 
-The simplest way to deploy and test your add-in is to copy the files to a network share.
+#### Deploy the web app and update the manifest
 
-1-  Create a folder on a network share (for example, \\\MyShare\\QuarterlySalesReport) and copy all the files to that folder.
+1-  Deploy the QuarterlySalesReportWeb folder to the web server of your choice.
 
-2-  Edit the **SourceLocation** element of the manifest file so that it points to the share location for the .html page from step 1.
+2-  Edit the attribute value within the **SourceLocation** element of the XML manifest file (**QuarterlySalesReportManifest.xml**) to specify the location of the **Home.html** file on the web server.
 
-3-  Copy the manifest (QuarterlySalesReportManifest.xml) to a network share (for example, \\\MyShare\\MyManifests).
+#### Test the add-in
 
-4-  Now, let's add the share location that contains the manifest as a trusted app catalog in Excel. Launch Excel and open a blank spreadsheet.
+To test your add-in on Windows, complete the following steps to publish the XML manifest file to a network file share and [sideload the add-in](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) in Excel. 
 
-5-  Choose the **File** tab, and then choose **Options**.
+> **Note:** For details about testing your add-in in either Office Online or on iPad or Mac, see [Sideload Office Add-ins in Office Online for testing](../testing/sideload-office-add-ins-for-testing.md) or [Sideload Office Add-ins on iPad and Mac for testing](../testing/sideload-an-office-add-in-on-ipad-and-mac.htm.md).
 
-6-  Choose **Trust Center**, and then choose the **Trust Center Settings** button.
+1-  Create a folder on a network share (for example, \\\MyShare\\MyManifests) and copy the XML manifest file to that folder.
 
-7-  Choose **Trusted Add-in Catalogs**.
+2-  Now, let's add the share location that contains the manifest as a trusted app catalog in Excel. Launch Excel and open a blank workbook.
 
-8-  In the **Catalog Url** box, enter the path to the network share you created in step 3, and then choose **Add Catalog**. Select the **Show in Menu** check box, and then choose **OK**. A message appears to inform you that your settings will be applied the next time you start Office.
+3-  Choose the **File** tab, and then choose **Options**.
 
-9-  Now, let's test and run the add-in. On the **Insert tab** in Excel 2016, choose **My Add-ins**.
+4-  Choose **Trust Center**, and then choose the **Trust Center Settings** button.
 
-10- In the **Office Add-ins** dialog box, choose **Shared Folder**.
+5-  Choose **Trusted Add-in Catalogs**.
 
-11-  Choose **Quarterly Sales Report Sample**>**Insert**. The add-in opens in a task pane to the right of the current worksheet, as shown in the following figure.
+6-  In the **Catalog Url** box, enter the path to the network share you created in step 1, and then choose **Add Catalog**. Select the **Show in Menu** check box, and then choose **OK**. A message appears to inform you that your settings will be applied the next time you start Office.
+
+7-  Restart Excel and open a blank workbook.
+
+8-  Now, let's test and run the add-in. On the **Insert tab** in Excel 2016, choose **My Add-ins**.
+
+9- In the **Office Add-ins** dialog box, choose **Shared Folder**.
+
+10-  Choose **Quarterly Sales Report Sample** and click **Add**. The add-in opens in a task pane to the right of the current worksheet, as shown in the following figure.
 
  ![Quarterly Sales Report Add-in](../../images/QuarterlySalesReport_taskpane.PNG)
 
-12-  Click the **Click me!** button to render the data and the chart inside the worksheet, as shown in the following figure.  To see the chart update dynamically, just change the data in the range.
+11-  Click the **Click me!** button to render the data and the chart inside the worksheet, as shown in the following figure.  To see the chart update dynamically, just change the data in the range.
 
 ![Quarterly Sales Report Add-in](../../images/QuarterlySalesReport_report.PNG)
 
@@ -297,6 +312,6 @@ The simplest way to deploy and test your add-in is to copy the files to a networ
 ### Additional resources
 
 *  [Excel add-ins programming overview](excel-add-ins-javascript-programming-overview.md)
-* [Explore snippets with Script Lab](https://store.office.com/en-001/app.aspx?assetid=WA104380862&ui=en-US&rs=en-001&ad=US&appredirect=false)
+*  [Explore snippets with Script Lab](https://store.office.com/en-001/app.aspx?assetid=WA104380862&ui=en-US&rs=en-001&ad=US&appredirect=false)
 *  [Excel add-in code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
 *  [Excel add-ins JavaScript API reference](excel-add-ins-javascript-api-reference.md)
