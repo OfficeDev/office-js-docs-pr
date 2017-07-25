@@ -37,7 +37,7 @@ The run method takes in RequestContext and returns a promise (typically, just th
 The load() method is used to fill in the proxy objects created in the add-in JavaScript layer. When trying to retrieve an object, a worksheet for example, a local proxy object is created first in the JavaScript layer. Such an object can be used to queue the setting of its properties and invoking methods. However, for reading object properties or relations, the load() and sync() methods need to be invoked first. The load() method takes in the properties and relations that need to be loaded when the sync() method is called.
 
 _Syntax:_
-a
+
 ```js
 object.load(string: properties);
 //or
@@ -45,9 +45,9 @@ object.load(array: properties);
 //or
 object.load({loadOption});
 ```
-Where,
+Where:
 
-o* `properties` is the list of properties and/or relationship names to be loaded specified as comma-delimited strings or array of names. See .load() methods under each object for details.
+* `properties` is the list of properties and/or relationship names to be loaded specified as comma-delimited strings or array of names. See .load() methods under each object for details.
 * `loadOption` specifies an object that describes the selection, expansion, top, and skip options. See object load [options](../../reference/excel/loadoption.md) for details.
 
 ## Example: Write values from an array to a range object
@@ -57,7 +57,7 @@ The following example shows you how to write values from an array to a range obj
 The Excel.run() contains a batch of instructions. As part of this batch, a proxy object is created that references a range (address A1:B2) on the active worksheet. The value of this proxy range object is set locally. In order to read the values back, the `text` property of the range is instructed to be loaded onto the proxy object. All these commands are queued and run when ctx.sync() is called. The sync() method returns a promise that can be used to chain it with other operations.
 
 ```js
-l// Run a batch operation against the Excel object model. Use the context argument to get access to the Excel document.
+// Run a batch operation against the Excel object model. Use the context argument to get access to the Excel document.
 Excel.run(function (ctx) {
 
 	// Create a proxy object for the sheet
