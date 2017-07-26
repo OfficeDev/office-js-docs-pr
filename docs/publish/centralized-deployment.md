@@ -12,9 +12,7 @@ The admin center currently supports the following scenarios:
 - Add-in URLs hosted within a firewall.
 - Deployment of Office Store add-ins (coming soon).
 
-<!--
-The admin center also includes a pre-deployment validation checking service.
--->
+The admin center also includes a deployment compatibility checking service.
 
 Future investments in add-in deployment scenarios will focus on the Office 365 admin center. We recommend that you use the admin center to deploy add-ins to your organization, if your organization meets the prerequisites.
 
@@ -53,9 +51,7 @@ To deploy SharePoint Add-ins or add-ins that target Office 2013, use a [SharePoi
 
 To deploy COM/VSTO add-ins, use ClickOnce or Windows Installer. For details, see [Deploying an Office solution](https://msdn.microsoft.com/en-us/library/bb386179.aspx).
 
-<!-- Need URL on SOC site.
-For more information about requirements, see [centralized deployment eligibility]().
--->
+For more information about prerequisites and compatibility checking, see [Determine whether centralized deployment of add-ins works for your Office 365 organization](https://support.office.com/en-us/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92?ui=en-US&rs=en-US&ad=US).
 
 ## Publish an add-in via centralized deployment
 
