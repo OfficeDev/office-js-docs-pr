@@ -284,7 +284,7 @@ To test your add-in on Windows, complete the following steps to publish the XML 
 
 1-  Create a folder on a network share (for example, \\\MyShare\\MyManifests) and copy the XML manifest file to that folder.
 
-2-  Now, let's add the share location that contains the manifest as a trusted app catalog in Excel. Launch Excel and open a blank workbook.
+2-  Add the share location that contains the manifest as a trusted app catalog in Excel. Launch Excel and open a blank workbook.
 
 3-  Choose the **File** tab, and then choose **Options**.
 
@@ -296,15 +296,15 @@ To test your add-in on Windows, complete the following steps to publish the XML 
 
 7-  Restart Excel and open a blank workbook.
 
-8-  Now, let's test and run the add-in. On the **Insert tab** in Excel 2016, choose **My Add-ins**.
+8-  On the **Insert tab** in Excel 2016, choose **My Add-ins**.
 
-9- In the **Office Add-ins** dialog box, choose **Shared Folder**.
+9-  In the **Office Add-ins** dialog box, choose **Shared Folder**.
 
-10-  Choose **Quarterly Sales Report Sample** and click **Add**. The add-in opens in a task pane to the right of the current worksheet, as shown in the following figure.
+10-  Choose **Quarterly Sales Report Sample** and choose **Add**. The add-in opens in a task pane to the right of the current worksheet, as shown in the following figure.
 
  ![Quarterly Sales Report Add-in](../../images/QuarterlySalesReport_taskpane.PNG)
 
-11-  Click the **Click me!** button to render the data and the chart inside the worksheet, as shown in the following figure.  To see the chart update dynamically, just change the data in the range.
+11-  Choose the **Click me!** button to render the data and the chart inside the worksheet, as shown in the following figure.  To see the chart update dynamically, just change the data in the range.
 
 ![Quarterly Sales Report Add-in](../../images/QuarterlySalesReport_report.PNG)
 
