@@ -7,10 +7,7 @@ This article describes how to use the Excel JavaScript API to build an add-in fo
 
 You’ll start by creating a web app using HTML and JQuery. Then you'll create an XML manifest file that specifies where you want to locate your web app, and how it should appear within Excel.
 
-
-### Code it
-
-#### Create the web app
+## Create the web app
 
 1-  Create a folder on your local drive named QuarterlySalesReport (for example, C:\\QuarterlySalesReport). Within that folder, create a folder named QuarterlySalesReportWeb (for example, C:\\QuarterlySalesReport\\QuarterlySalesReportWeb). Save all the web app files that you create in the steps that follow into this folder.
 
@@ -238,7 +235,7 @@ You’ll start by creating a web app using HTML and JQuery. Then you'll create a
 
 6-	Save all of the web app files. 
 
-#### Create the XML manifest file
+## Create the XML manifest file
 
 1-  Within the QuarterlySalesReport folder on your local drive (for example, C:\\QuarterlySalesReport), create an XML manifest file to specify the settings and capabilities of the add-in. Name the file **QuarterlySalesReportManifest.xml** and paste the following XML into the file.
 
@@ -268,15 +265,13 @@ You’ll start by creating a web app using HTML and JQuery. Then you'll create a
 
 Now that you've created the web app and the XML manifest file, you’ve officially written your first Excel add-in.
 
-### Try it out
-
-#### Deploy the web app and update the manifest
+## Deploy the web app and update the manifest
 
 1-  Deploy the QuarterlySalesReportWeb folder to the web server of your choice.
 
 2-  Edit the attribute value within the **SourceLocation** element of the XML manifest file (**QuarterlySalesReportManifest.xml**) to specify the location of the **Home.html** file on the web server.
 
-#### Test the add-in
+## Try it out
 
 To test your add-in on Windows, complete the following steps to publish the XML manifest file to a network file share and [sideload the add-in](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) in Excel. 
 
@@ -308,8 +303,7 @@ To test your add-in on Windows, complete the following steps to publish the XML 
 
 ![Quarterly Sales Report Add-in](../../images/QuarterlySalesReport_report.PNG)
 
-
-### Additional resources
+## Additional resources
 
 *  [Excel add-ins programming overview](excel-add-ins-javascript-programming-overview.md)
 *  [Explore snippets with Script Lab](https://store.office.com/en-001/app.aspx?assetid=WA104380862&ui=en-US&rs=en-001&ad=US&appredirect=false)
