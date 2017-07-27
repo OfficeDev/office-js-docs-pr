@@ -12,6 +12,16 @@ The `body` object provides methods for adding and updating the content of the me
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
+##### Members and methods
+
+| Member | Type |
+|--------|------|
+| [getAsync](#getasynccoerciontype-options-callback) | Method |
+| [getTypeAsync](#gettypeasyncoptions-callback) | Method |
+| [prependAsync](#prependasyncdata-options-callback) | Method |
+| [setAsync](#setasyncdata-options-callback) | Method |
+| [setSelectedDataAsync](#setselecteddataasyncdata-options-callback) | Method |
+
 ### Methods
 
 ####  getAsync(coercionType, [options], [callback])

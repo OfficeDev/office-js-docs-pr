@@ -1,5 +1,3 @@
-
-
 # context
 
 ## [Office](Office.md).context
@@ -12,6 +10,14 @@ The Office.context namespace provides shared interfaces that are used by add-ins
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
 |Applicable Outlook mode| Compose or read|
+
+##### Members and methods
+
+| Member | Type |
+|--------|------|
+| [displayLanguage](#displaylanguage-string) | Member |
+| [officeTheme](#officetheme-object) | Member |
+| [roamingSettings](#roamingsettings-roamingsettings) | Member |
 
 ### Namespaces
 
