@@ -57,7 +57,7 @@ The typical development lifecycle of an Office Add-in includes the following ste
     
 7.  **Publish the add-in.**
     
-    You can submit the add-in to the Office Store, from which customers can install the add-in. In addition, you can publish task pane and content add-ins to a private folder add-in catalog on SharePoint or to a shared network folder, and you can deploy an Outlook add-in directly on an for your organization. For details, see [Publish your Office Add-in](../publish/publish.md).
+    You can submit the add-in to the Office Store, from which customers can install the add-in. In addition, you can publish task pane and content add-ins to a private folder add-in catalog on SharePoint or to a shared network folder, and you can deploy an Outlook add-in directly on an Exchange Server for your organization. For details, see [Publish your Office Add-in](../publish/publish.md).
     
 8.  **Updating the add-in**
     
