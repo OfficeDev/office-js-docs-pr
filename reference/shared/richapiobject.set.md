@@ -28,11 +28,11 @@ void
 
 #### Examples
 
-The following example sets several format properties with a JavaScript object. 
+The following example sets several format properties with a JavaScript object. The example assumes that there is data in range B2:E2.
 
 ```js
 Excel.run(function (ctx) { 
-    var sheet = context.workbook.worksheets.getItem("Sample");
+    var sheet = ctx.workbook.worksheets.getItem("Sample");
     var range = sheet.getRange("B2:E2");
     range.set({
         format: {
@@ -55,19 +55,22 @@ Excel.run(function (ctx) {
 });
 ```
 
-The following example sets the properties of one range by copying the properties of another range. Note that the source object must be loaded first.
+The following example sets the properties of one range by copying the properties of another range. Note that the source object must be loaded first. The example assumes there is data two ranges, B2:E2 and B7:E7, and that they are initially formatted differently.
 
 ```js
 Excel.run(function (ctx) { 
-    var sheet = context.workbook.worksheets.getItem("Sample");
+    var sheet = ctx.workbook.worksheets.getItem("Sample");
     var sourceRange = sheet.getRange("B2:E2");
     sourceRange.load("format/fill/color, format/font/name, format/font/color");
-    return ctx.sync(); 
 
-    var targetRange = sheet.getRange("B7:E7");
-    targetRange.set(sourceRange); 
-    targetRange.format.autofitColumns();
-	return ctx.sync(); 
+    return ctx.sync()
+        .then(function () {
+            var targetRange = sheet.getRange("B7:E7");
+            targetRange.set(sourceRange); 
+            targetRange.format.autofitColumns();
+
+            return ctx.sync()        
+        })     
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {
