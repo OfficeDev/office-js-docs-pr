@@ -1,5 +1,3 @@
-
-
 # Recipients
 
 ##### Requirements
@@ -9,6 +7,14 @@
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose|
+
+##### Members and methods
+
+| Member | Type |
+|--------|------|
+| [addAsync](#addasyncrecipients-options-callback) | Method |
+| [getAsync](#getasyncoptions-callback) | Method |
+| [setAsync](#setasyncrecipients-options-callback) | Method |
 
 ### Methods
 

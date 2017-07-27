@@ -12,6 +12,13 @@ Provides methods to get and set the location of a meeting in an Outlook add-in.
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose|
 
+##### Members and methods
+
+| Member | Type |
+|--------|------|
+| [getAsync](#getasyncoptions-callback) | Method |
+| [setAsync](#setasynclocation-options-callback) | Method |
+
 ### Methods
 
 ####  getAsync([options], callback)

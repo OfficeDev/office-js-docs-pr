@@ -1,5 +1,3 @@
-
-
 # Subject
 
 Provides methods to get and set the subject of an appointment or message in an Outlook add-in.
@@ -11,6 +9,13 @@ Provides methods to get and set the subject of an appointment or message in an O
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose|
+
+##### Members and methods
+
+| Member | Type |
+|--------|------|
+| [getAsync](#getasyncoptions-callback) | Method |
+| [setAsync](#setasyncsubject-options-callback) | Method |
 
 ### Methods
 

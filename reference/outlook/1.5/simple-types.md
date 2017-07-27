@@ -1,6 +1,18 @@
-
-
 # Simple Types
+
+The following simple types are used in Outlook add-ins.
+
+- [AsyncResult](#asyncresult)
+- [AttachmentDetails](#attachmentdetails)
+- [Contact](#contact)
+- [EmailAddressDetails](#emailaddressdetails)
+- [EmailUser](#emailuser)
+- [Entities](#entities)
+- [LocalClientTime](#localclienttime)
+- [MeetingSuggestion](#meetingsuggestion)
+- [NotificationMessageDetails](#notificationmessagedetails)
+- [PhoneNumber](#phonenumber)
+- [TaskSuggestion](#tasksuggestion)
 
 ####  AsyncResult
 

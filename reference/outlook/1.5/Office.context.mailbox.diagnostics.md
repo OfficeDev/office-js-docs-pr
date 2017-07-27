@@ -1,5 +1,3 @@
-
-
 # diagnostics
 
 ## [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md). diagnostics
@@ -13,6 +11,14 @@ Provides diagnostic information to an Outlook add-in.
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
+
+##### Members and methods
+
+| Member | Type |
+|--------|------|
+| [hostName](#hostname-string) | Member |
+| [hostVersion](#hostversion-string) | Member |
+| [OWAView](#owaview-string) | Member |
 
 ### Members
 

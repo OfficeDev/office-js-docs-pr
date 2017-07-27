@@ -1,5 +1,3 @@
- 
-
 # MailboxEnums
 
 ## [Office](Office.md). MailboxEnums
@@ -10,6 +8,18 @@
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
 |Applicable Outlook mode| Compose or read|
+
+##### Members and methods
+
+| Member | Type |
+|--------|------|
+| [AttachmentType](#attachmenttype-string) | Member |
+| [EntityType](#entitytype-string) | Member |
+| [ItemNotificationMessageType](#itemnotificationmessagetype-string) | Member |
+| [ItemType](#itemtype-string) | Member |
+| [RecipientType](#recipienttype-string) | Member |
+| [ResponseType](#responsetype-string) | Member |
+| [RestVersion](#restversion-string) | Member |
 
 ### Members
 

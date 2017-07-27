@@ -1,5 +1,3 @@
-
-
 # RoamingSettings
 
 The settings created by using the methods of the `RoamingSettings` object are saved per add-in and per user. That is, they are available only to the add-in that created them, and only from the user's mail box in which they are saved.
@@ -17,6 +15,15 @@ The `RoamingSettings` object is accessible via the [`roamingSettings`](Office.co
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Compose or read|
+
+##### Members and methods
+
+| Member | Type |
+|--------|------|
+| [get](#getname--nullable-stringnumberbooleanobjectarray) | Method |
+| [remove](#removename) | Method |
+| [saveAsync](#saveasynccallback) | Method |
+| [set](#setname-value) | Method |
 
 ### Example
 

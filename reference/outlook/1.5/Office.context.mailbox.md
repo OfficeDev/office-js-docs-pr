@@ -14,6 +14,25 @@ Provides access to the Outlook Add-in object model for Microsoft Outlook and Mic
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Compose or read|
 
+##### Members and methods
+
+| Member | Type |
+|--------|------|
+| [ewsUrl](#ewsurl-string) | Member |
+| [restUrl](#resturl-string) | Member |
+| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | Method |
+| [convertToEwsId](#converttoewsiditemid-restversion--string) | Method |
+| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | Method |
+| [convertToRestId](#converttorestiditemid-restversion--string) | Method |
+| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | Method |
+| [displayAppointmentForm](#displayappointmentformitemid) | Method |
+| [displayMessageForm](#displaymessageformitemid) | Method |
+| [displayNewAppointmentForm](#displaynewappointmentformparameters) | Method |
+| [getCallbackTokenAsync](#getcallbacktokenasyncoptions-callback) | Method |
+| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | Method |
+| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | Method |
+| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | Method |
+
 ### Namespaces
 
 [diagnostics](Office.context.mailbox.diagnostics.md): Provides diagnostic information to an Outlook add-in.
