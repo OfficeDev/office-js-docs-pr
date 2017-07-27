@@ -8,7 +8,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Prerequisites
 
-* Visual Studio 2017 Version 15.3 (26424.2-Preview) or later.
+* Visual Studio 2017 Version 15.3.0 Preview 3 or later.
 
 * Office 2016, Version 1704, build 8027.nnnn or later (the Office 365 subscription version, sometimes called “Click to Run”). You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1).
 
@@ -61,11 +61,10 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Scroll down to the **Microsoft Graph Permissions** section, the **Delegated Permissions** subsection. Use the **Add** button to open a **Select Permissions** dialog.
 
-1. In the dialog, check the boxes for the following permissions (some may already be checked by default). (Only the first is really required by your add-in itself; but the MSAL library that the server-side code uses requires the other three.) 
+1. In the dialog box, check the boxes for the following permissions (some may already be checked by default). (Only the first is really required by your add-in itself; but the MSAL library that the server-side code uses requires the other two.) 
  * Files.Read.All
  * offline_access
  * openid
- * profile
 
 1. Click **OK** at the bottom of the dialog.
 
@@ -136,7 +135,6 @@ Here’s an example of what the four keys you changed should look like. *Note th
     <WebApplicationId>{application_GUID here}</WebApplicationId>
     <WebApplicationResource>api://localhost:44355/{application_GUID here}<WebApplicationResource>
     <WebApplicationScopes>
-        <WebApplicationScope>profile</WebApplicationScope>
         <WebApplicationScope>openid</WebApplicationScope>
         <WebApplicationScope>offline_access</WebApplicationScope>
         <WebApplicationScope>files.read.all</WebApplicationScope>
@@ -219,7 +217,7 @@ Here’s an example of what the four keys you changed should look like. *Note th
 
     `public partial class Startup`
 
-1. Add the following line to the body of the `Configure` method. You create the `ConfigureAuth` method in a later step.
+1. Add the following line to the body of the `Configuration` method. You create the `ConfigureAuth` method in a later step.
 
     `ConfigureAuth(app);`
 
@@ -342,7 +340,7 @@ Here’s an example of what the four keys you changed should look like. *Note th
 
     * Your add-in is no longer playing the role of a resource (or audience) to which the Office host and user need access. Now it is itself a client that needs access to Microsoft Graph. `ConfidentialClientApplication` is the MSAL “client context” object. 
     * The third parameter to the `ConfidentialClientApplication` constructor is a redirect URL which is not actually used in the “on behalf of” flow, but it is a good practice to use the correct URL. The fourth and fifth parameters can be used to define a persistent store that would enable the reuse of unexpired tokens across different sessions with the add-in. This sample does not implement any persistent storage.
-    * MSAL requires the `profile`, `openid`, and `offline_access` scopes to function, but it throws an error if your code redundantly requests them, so only `Files.Read.All` is explicitly requested.
+    * MSAL requires the `openid`, and `offline_access` scopes to function, but it throws an error if your code redundantly requests them, so only `Files.Read.All` is explicitly requested.
     * The `ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync` method will first look in the MSAL cache, which is in memory, for a matching access token. Only if there isn't one, does it initiate the "on behalf of" flow with the Azure AD V2 endpoint.
 
     ```

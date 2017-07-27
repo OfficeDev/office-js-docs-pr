@@ -8,13 +8,13 @@ Word Add-ins run across multiple versions of Office, including Office 2016 for W
 
 > Entires not listed as Beta are generally available and you can continue to use Production CDN library: https://appsforoffice.microsoft.com/lib/1/hosted/office.js
 
-|  Requirement set  |   Office 2016 for Windows*  |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  | Office Online Server  |
+|  Requirement set  |   Office 2016 for Windows\*  |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  | Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | WordApi 1.3 | Version 1612 (Build 7668.1000) or later| March 2017, 2.22 or later | March 2017, 15.32 or later| March 2017. ||
 | WordApi 1.2  | December 2015 update, Version 1601 (Build 6568.1000) or later | January 2016, 1.18 or later | January 2016, 15.19 or later| September 2016 | |
 | WordApi 1.1  | Version 1509 (Build 4266.1001) or later| January 2016, 1.18 or later | January 2016, 15.19 or later| September 2016 | |
 
-> **Note**: The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the WordApi 1.1 requirement set.
+> **\*Note**: The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the WordApi 1.1 requirement set.
 
 To find out more about versions, build numbers, and Office Online Server, see:
 
@@ -31,7 +31,6 @@ The following are the new additions to the Word JavaScript APIs in requirement s
 
 |Object| What's new| Description|Requirement set| 
 |:-----|-----|:----|:----| 
-|[application](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/application.md)|_Method_ > [createDocument(base64File: string)](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/application.md#createdocumentbase64file-string)|Creates a new document by using a base64 encoded .docx file.|1.3|
 |[body](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/body.md)|_Relationship_ > lists|Gets the collection of list objects in the body. Read-only.|1.3|
 |[body](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/body.md)|_Relationship_ > parentBody|Gets the parent body of the body. For example, a table cell body's parent body could be a header. Read-only.|1.3|
 |[body](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/body.md)|_Relationship_ > parentSection|Gets the parent section of the body. Read-only.|1.3|

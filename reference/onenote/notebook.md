@@ -9,7 +9,8 @@ Represents a OneNote notebook. Notebooks contain section groups and sections.
 
 | Property	   | Type	|Description|Feedback|
 |:---------------|:--------|:----------|:-------|
-|clientUrl|string|The client url of the notebook. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-clientUrl)|
+|baseUrl|string|The base site URL for the notebook, if it is in a SharePoint site (it will be null for OneDrive notebooks) - Use this property to interact with the OneNote REST API to fetch the **SiteCollectionId** and **SiteId** (using **FromUrl**). Read-only. For details, see the [OneNote development blog](https://blogs.msdn.microsoft.com/onenotedev/2015/06/11/and-sharepoint-makes-three/). Read only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-baseUrl)|
+|clientUrl|string|The client URL of the notebook. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-clientUrl)|
 |id|string|Gets the ID of the notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-id)|
 |name|string|Gets the name of the notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-name)|
 
@@ -18,8 +19,8 @@ _See property access [examples.](#property-access-examples)_
 ## Relationships
 | Relationship | Type	|Description| Feedback|
 |:---------------|:--------|:----------|:-------|
-|sectionGroups|[SectionGroupCollection](sectiongroupcollection.md)|The section groups in the notebook. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-sectionGroups)|
-|sections|[SectionCollection](sectioncollection.md)|The the sections of the notebook. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-sections)|
+|sectionGroups|[SectionGroupCollection](sectiongroupcollection.md)|The section groups in the notebook. Read only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-sectionGroups)|
+|sections|[SectionCollection](sectioncollection.md)|The the sections of the notebook. Read only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-sections)|
 
 ## Methods
 
@@ -27,6 +28,7 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|:-------|
 |[addSection(name: String)](#addsectionname-string)|[Section](section.md)|Adds a new section to the end of the notebook.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-addSection)|
 |[addSectionGroup(name: String)](#addsectiongroupname-string)|[SectionGroup](sectiongroup.md)|Adds a new section group to the end of the notebook.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-addSectionGroup)|
+|[getRestApiId()](#getRestApiId)|string|Gets the ID that is compatible with the REST API.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-getRestApiId)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-load)|
 
 ## Method Details
@@ -119,6 +121,37 @@ OneNote.run(function (context) {
 }); 
 ```
 
+### getRestApiId()
+Gets the ID that is compatible with the REST API.
+
+#### Syntax
+```js
+notebookObject.getRestApiId();
+```
+
+#### Parameters
+None
+
+#### Returns
+string
+
+#### Examples
+```js
+
+OneNote.run(function(ctx){
+    // Get the current notebook.         
+    var notebook = ctx.application.getActiveNotebook();
+    var restApiId = notebook.getRestApiId();
+
+    return ctx.sync().
+        then(function(){
+            console.log("The REST API ID is " + restApiId.value);
+            // Note that the REST API ID isn't all you need to interact with the OneNote REST API. For SharePoint notebooks, the notebook baseUrl should be used to talk to the OneNote REST API according to [OneNote Development Blog](https://blogs.msdn.microsoft.com/onenotedev/2015/06/11/and-sharepoint-makes-three/)
+            // (this is only required for SharePoint notebooks, baseUrl will be null for OneDrive notebooks)
+        });
+});
+```
+
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -135,6 +168,32 @@ object.load(param);
 #### Returns
 void
 ### Property access examples
+**baseUrl**
+```js
+OneNote.run(function (context) {
+        
+    // Get the current notebook.
+    var notebook = context.application.getActiveNotebook();
+            
+    // Queue a command to load the notebook. 
+    // For best performance, request specific properties.           
+    notebook.load('baseUrl');
+            
+    // Run the queued commands, and return a promise to indicate task completion.
+    return context.sync()
+        .then(function () {
+            console.log("Base url: " + notebook.baseUrl);
+            // This baseUrl should be used to talk to OneNote REST APIs according to https://blogs.msdn.microsoft.com/onenotedev/2015/06/11/and-sharepoint-makes-three/ (only required for SharePoint notebooks, will be null for OneDrive notebooks)
+        });
+})
+.catch(function(error) {
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
 **id**
 ```js
 OneNote.run(function (context) {

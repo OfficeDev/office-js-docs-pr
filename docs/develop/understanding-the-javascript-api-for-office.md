@@ -142,7 +142,7 @@ If the data can't be coerced to the specified type, the [AsyncResult.status](../
 ## Working with selections using the Document object
 
 
-The  **Document** object exposes methods that let you to read and write to the user's current selection in a "get and forget" fashion. To do that, the **Document** object provides the **getSelectedDataAsync** and **setSelectedDataAsync** methods.
+The  **Document** object exposes methods that let you to read and write to the user's current selection in a "get and set" fashion. To do that, the **Document** object provides the **getSelectedDataAsync** and **setSelectedDataAsync** methods.
 
 For code examples that demonstrate how to perform tasks with selections, see [Read and write data to the active selection in a document or spreadsheet](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md).
 

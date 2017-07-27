@@ -15,6 +15,7 @@ For information about Excel, Word, OneNote, Outlook, and Dialog API requirement 
 - [OneNote JavaScript API requirement sets](onenote-api-requirement-sets.md) (OneNoteApi)
 - [Understanding Outlook API requirement sets](../outlook/tutorial-api-requirement-sets.md) (MailBox)
 - [Dialog API requirement sets](dialog-api-requirement-sets.md) (DialogApi)
+- [Add-in command requirement sets](add-in-commands-requirement-sets.md) (AddInCommands)
 
 ## Common API requirement sets
 
@@ -52,7 +53,7 @@ The following methods in the JavaScript API for Office aren't part of a requirem
 |**Method name**|**Office host support**|
 |:-----|:-----|
 |Bindings.addFromPromptAsync|Access web apps, Excel, and Excel Online|
-|Document.getFilePropertiesAsync|Excel, Excel Online, Word, and PowerPoint|
+|Document.getFilePropertiesAsync|Excel, Excel Online, Word, Word Online, PowerPoint and PowerPoint Online|
 |Document.getProjectFieldAsync|Project Standard 2013 and Project Professional 2013|
 |Document.getResourceFieldAsync|Project Standard 2013 and Project Professional 2013|
 |Document.getSelectedResourceAsync|Project Standard 2013 and Project Professional 2013|
@@ -61,9 +62,9 @@ The following methods in the JavaScript API for Office aren't part of a requirem
 |Document.getTaskAsync|Project Standard 2013 and Project Professional 2013|
 |Document.getTaskFieldAsync|Project Standard 2013 and Project Professional 2013|
 |Document.goToByIdAsync|Excel, Excel Online, Word, and PowerPoint|
-|Settings.addHandlerAsync|Access web apps, Excel, Excel Online, Word, and PowerPoint|
-|Settings.refreshAsync|Access web apps, Excel, Excel Online, Word, PowerPoint, and PowerPoint Online|
-|Settings.removeHandlerAsync|Access web apps, Excel, Excel Online, Word, and PowerPoint|
+|Settings.addHandlerAsync|Access web apps, Excel, Excel Online, Word, Word Online, PowerPoint and PowerPoint Online|
+|Settings.refreshAsync|Access web apps, Excel, Excel Online, Word, Word Online, PowerPoint, and PowerPoint Online|
+|Settings.removeHandlerAsync|Access web apps, Excel, Excel Online, Word, Word Online, PowerPoint and PowerPoint Online|
 |TableBinding.clearFormatsAsync|Excel, Excel Online|
 |TableBinding.setFormatsAsync|Excel, Excel Online|
 |TableBinding.setTableOptionsAsync|Excel, Excel Online|
