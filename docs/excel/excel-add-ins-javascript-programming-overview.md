@@ -247,7 +247,7 @@ When an update operation is attempted on such a Range, the API will return an er
 
 Large range implies a Range whose size is too large for a single API call. Many factors such as number of cells, values, numberFormat, and formulas contained in the range can make the response so large that it becomes unsuitable for API interaction. The API makes a best attempt to return or write to the requested data. However, the large size involved might result in an API error condition because of the large resource utilization.
 
-To avoid sthis, we recommend that you use read or write for large Range in multiple smaller range sizes.
+To avoid this, we recommend that you use read or write for large Range in multiple smaller range sizes.
 
 
 ## Single input copy

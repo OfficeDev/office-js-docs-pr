@@ -177,8 +177,7 @@ For  `format:` values, available settings correspond to a subset of those in the
  >**Important**:  The methods of the formatting API support only the options and values summarized below. If you specify formatting options or values other than these, the handling behavior is undefined. These undefined handling behaviors aren't necessarily consistent across supported platforms; you shouldn't develop your add-ins based on any of the side effects of these undefined behaviors for any specific platform. However, the undefined handling behaviors shouldn't harm the state and UI of your add-in or the documents they interact with.
 
 
-**Alignment**
-
+### Alignment
 
 |**Key**|**Values**|**Notes**|
 |:-----|:-----|:-----|
@@ -187,8 +186,7 @@ For  `format:` values, available settings correspond to a subset of those in the
 
 
 
-**Background**
-
+### Background
 
 |**Key**|**Values**|**Notes**|
 |:-----|:-----|:-----|
@@ -196,8 +194,7 @@ For  `format:` values, available settings correspond to a subset of those in the
 
 
 
-**Border**
-
+### Border
 
 |**Key**|**Values**|**Notes**|
 |:-----|:-----|:-----|
@@ -218,8 +215,7 @@ For  `format:` values, available settings correspond to a subset of those in the
 
 
 
-**Cell width, height and wrapping**
-
+### Cell width, height and wrapping
 
 |**Key**|**Values**|
 |:-----|:-----|
@@ -229,8 +225,7 @@ For  `format:` values, available settings correspond to a subset of those in the
 
 
 
-**Font**
-
+### Font
 
 |**Key**|**Values**|**Notes**|
 |:-----|:-----|:-----|
@@ -247,8 +242,7 @@ For  `format:` values, available settings correspond to a subset of those in the
 
 
 
-**Indent**
-
+### Indent
 
 |**Key**|**Values**|**Notes**|
 |:-----|:-----|:-----|
@@ -258,8 +252,7 @@ For  `format:` values, available settings correspond to a subset of those in the
 
 
 
-**Number formatting**
-
+### Number formatting
 
 |**Key**|**Values**|**Notes**|
 |:-----|:-----|:-----|
@@ -267,8 +260,7 @@ For  `format:` values, available settings correspond to a subset of those in the
 
 
 
-**Table options**
-
+### Table options
 
 |**Key**|**Values**|**Notes**|
 |:-----|:-----|:-----|
