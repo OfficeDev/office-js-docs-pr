@@ -204,7 +204,7 @@ function write(message){
 ### Asynchronous programming using the promises pattern to access data in bindings
 
 
-Instead of passing a callback function and waiting for the function to return before execution continues, the promises programming pattern immediately returns apromise object that represents its intended result. However, unlike true synchronous programming, under the covers the fulfillment of the promised result is actually deferred until the Office Add-ins runtime environment can complete the request. An _onError_ handler is provided to cover situations when the request can't be fulfilled.
+Instead of passing a callback function and waiting for the function to return before execution continues, the promises programming pattern immediately returns a promise object that represents its intended result. However, unlike true synchronous programming, under the covers the fulfillment of the promised result is actually deferred until the Office Add-ins runtime environment can complete the request. An _onError_ handler is provided to cover situations when the request can't be fulfilled.
 
 The JavaScript API for Office provides the [Office.select](../../reference/shared/office.select.md) method to support the promises pattern for working with existing binding objects. The promise object returned to the **Office.select** method supports only the four methods that you can access directly from the [Binding](../../reference/shared/binding.md) object: [getDataAsync](../../reference/shared/binding.getdataasync.md), [setDataAsync](../../reference/shared/binding.setdataasync.md), [addHandlerAsync](../../reference/shared/asyncresult.value.md), and [removeHandlerAsync](../../reference/shared/binding.removehandlerasync.md).
 
@@ -250,7 +250,7 @@ function addBindingDataChangedEventHandler() {
 ```
 
 
- >**Important**  The  **Binding** object promise returned by the **Office.select** method provides access to only the four methods of the **Binding** object. If you need to access any of the other members of the **Binding** object, instead you must use the **Document.bindings** property and **Bindings.getByIdAsync** or **Bindings.getAllAsync** methods to retrieve the **Binding** object. For example, if you need to access any of the **Binding** object's properties (the **document**,  **id**, or  **type** properties), or need to access the properties of the [MatrixBinding](../../reference/shared/binding.matrixbinding.md) or [TableBinding](../../reference/shared/binding.tablebinding.md) objects, you must use the **getByIdAsync** or **getAllAsync** methods to retrieve a **Binding** object.
+ >**Important:** The  **Binding** object promise returned by the **Office.select** method provides access to only the four methods of the **Binding** object. If you need to access any of the other members of the **Binding** object, instead you must use the **Document.bindings** property and **Bindings.getByIdAsync** or **Bindings.getAllAsync** methods to retrieve the **Binding** object. For example, if you need to access any of the **Binding** object's properties (the **document**,  **id**, or  **type** properties), or need to access the properties of the [MatrixBinding](../../reference/shared/binding.matrixbinding.md) or [TableBinding](../../reference/shared/binding.tablebinding.md) objects, you must use the **getByIdAsync** or **getAllAsync** methods to retrieve a **Binding** object.
 
 
 ## Passing optional parameters to asynchronous methods
@@ -267,7 +267,7 @@ You can create the JSON object that contains optional parameters inline, or by c
 
 ### Passing optional parameters inline
 
-For example, the syntax for calling the [Document.setSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) method with optional parameters inline looks like this:
+For example, the syntax for calling the [Document.setSelectedDataAsync](../../reference/shared/document.setselecteddataasync.md) method with optional parameters inline looks like this:
 
 ```js
  Office.context.document.setSelectedDataAsync(data, {coercionType: 'coercionType', asyncContext:' asyncContext},callback);
