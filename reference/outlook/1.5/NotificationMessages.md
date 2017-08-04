@@ -1,8 +1,4 @@
-
-
 # NotificationMessages
-
-## NotificationMessages
 
 The `NotificationMessages` object is returned as the [`notificationMessages`](Office.context.mailbox.item.md#notificationmessages-notificationmessages) property of an item.
 
@@ -13,6 +9,15 @@ The `NotificationMessages` object is returned as the [`notificationMessages`](Of
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
+
+##### Members and methods
+
+| Member | Type |
+|--------|------|
+| [addAsync](#addasynckey-jsonmessage-options-callback) | Method |
+| [getAllAsync](#getallasyncoptions-callback) | Method |
+| [removeAsync](#removeasynckey-options-callback) | Method |
+| [replaceAsync](#replaceasynckey-jsonmessage-options-callback) | Method |
 
 ### Methods
 

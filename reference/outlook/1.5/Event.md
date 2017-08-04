@@ -1,10 +1,25 @@
-
-
 # Event
 
 The `event` object is passed as a parameter to add-in functions invoked by UI-less command buttons. The object allows the add-in to identify which button was clicked and to signal the host that it has completed its processing.
 
-For example, consider a button defined in an add-in manifest as follows:
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
+|Applicable Outlook mode| Compose or read|
+
+##### Members and methods
+
+| Member | Type |
+|--------|------|
+| [source](#source-object) | Member |
+| [completed](#completed) | Method |
+
+### Example
+
+Consider a button defined in an add-in manifest as follows:
 
 ```
 <Control xsi:type="Button" id="eventTestButton">
@@ -38,14 +53,6 @@ function testEventObject(event) {
   event.completed();
 }
 ```
-
-##### Requirements
-
-|Requirement| Value|
-|---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
-|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
-|Applicable Outlook mode| Compose or read|
 
 ### Members
 

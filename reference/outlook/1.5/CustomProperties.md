@@ -14,6 +14,15 @@ Because Outlook for Mac doesn’t cache custom properties, if the user’s netwo
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
+##### Members and methods
+
+| Member | Type |
+|--------|------|
+| [get](#getname--string) | Method |
+| [remove](#removename) | Method |
+| [saveAsync](#saveasynccallback-asynccontext) | Method |
+| [set](#setname-value) | Method |
+
 ### Example
 
 The following example shows how to use the `loadCustomPropertiesAsync` method to asynchronously load custom properties that are specific to the current item. The example also shows how to use the [`saveAsync`](#saveasynccallback-asynccontext) method to save these properties back to the server. After loading the custom properties, the example uses the [`get`](CustomProperties.md#getname--string) method to read the custom property `myProp`, the [`set`](CustomProperties.md#setname-value) method to write the custom property `otherProp`, and then finally calls the `saveAsync` method to save the custom properties.

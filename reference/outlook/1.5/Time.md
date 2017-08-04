@@ -1,5 +1,3 @@
-
-
 # Time
 
 The `Time` object is returned as the [`start`](Office.context.mailbox.item.md#start-datetime) or [`end`](Office.context.mailbox.item.md#end-datetime) property of an appointment in compose mode.
@@ -11,6 +9,13 @@ The `Time` object is returned as the [`start`](Office.context.mailbox.item.md#st
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose|
+
+##### Members and methods
+
+| Member | Type |
+|--------|------|
+| [getAsync](#getasyncoptions-callback) | Method |
+| [setAsync](#setasyncdatetime-options-callback) | Method |
 
 ### Methods
 

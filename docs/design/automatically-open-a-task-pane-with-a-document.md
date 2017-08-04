@@ -7,7 +7,7 @@ Some scenarios require that a task pane open automatically when a document opens
 
 ## How is the autoopen feature different from inserting a task pane? 
 
-Add-ins that don't use add-in commands - for example, add-ins that run in Office 2013 - are inserted into the document by default, and persist in that document without explicit user or developer intent. As a result, when other users open the document, they are prompted to install the add-in, and the task pane opens. The challenge with this model is that in many cases, users don’t want the add-in to persist in the document. For example, a student who uses a dictionary add-in in a Word document might not want their classmates or teachers to be prompted to install that add-in when they open the document.  
+When a user launches add-ins that don't use add-in commands - for example, add-ins that run in Office 2013 - they are inserted into the document, and persist in that document. As a result, when other users open the document, they are prompted to install the add-in, and the task pane opens. The challenge with this model is that in many cases, users don’t want the add-in to persist in the document. For example, a student who uses a dictionary add-in in a Word document might not want their classmates or teachers to be prompted to install that add-in when they open the document.  
 
 With the autoopen feature, you can explicitly define or allow the user to define whether a specific task pane add-in persists in a specific document. 
 
@@ -42,7 +42,7 @@ To implement the autoopen feature:
 - Specify the task pane to be opened automatically.
 - Tag the document to automatically open the task pane.
 
->**Important:** The pane that you designate to open automatically will only open if the add-in is already installed on the user's device. If the user does not have the add-in installed when they open a document, the autoopen feature will not work and the setting will be ignored. 
+>**Important:** The pane that you designate to open automatically will only open if the add-in is already installed on the user's device. If the user does not have the add-in installed when they open a document, the autoopen feature will not work and the setting will be ignored. If you also require the add-in to be distributed with the document you need to set the visibility property to 1; this can only be done using OpenXML, an example is provided later in this article. 
 
 ### Specify the task pane to open
 To specify the task pane to open automatically, set the [TaskpaneId](https://dev.office.com/reference/add-ins/manifest/action#taskpaneid) value to **Office.AutoShowTaskpaneWithDocument**. You can only set this value on one task pane. If you set this value on multiple task panes, the first occurrence of the value will be recognized and the others will be ignored. 

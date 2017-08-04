@@ -1,5 +1,3 @@
- 
-
 # Office
 
 The Office namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office namespace, see the [Shared API](../shared/shared-api.md).
@@ -10,6 +8,15 @@ The Office namespace provides shared interfaces that are used by add-ins in all 
 |---|---|
 |[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
 |Applicable Outlook mode| Compose or read|
+
+##### Members and methods
+
+| Member | Type |
+|--------|------|
+| [AsyncResultStatus](#asyncresultstatus-string) | Member |
+| [CoercionType](#coerciontype-string) | Member |
+| [EventType](#eventtype-string) | Member |
+| [SourceProperty](#sourceproperty-string) | Member |
 
 ### Namespaces
 
