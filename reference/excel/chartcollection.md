@@ -43,6 +43,12 @@ chartCollectionObject.add(type, sourceData, seriesBy);
 |sourceData|object|The Range object corresponding to the source data.|
 |seriesBy|string|Optional. Specifies the way columns or rows are used as data series on the chart.  Possible values are: Auto, Columns, Rows|
 
+**Below are the valid chart types**:
+
+`ColumnClustered `, `ColumnStacked `, `ColumnStacked100 `, `_3DColumnClustered `, `_3DColumnStacked `, `_3DColumnStacked100 `, `BarClustered `, `BarStacked `, `BarStacked100 `, `_3DBarClustered `, `_3DBarStacked `, `_3DBarStacked100 `, `LineStacked `, `LineStacked100 `, `LineMarkers `, `LineMarkersStacked `, `LineMarkersStacked100 `, `PieOfPie `, `PieExploded `, `_3DPieExploded `, `BarOfPie `, `XYScatterSmooth `, `XYScatterSmoothNoMarkers `, `XYScatterLines `, `XYScatterLinesNoMarkers `, `AreaStacked `, `AreaStacked100 `, `_3DAreaStacked `, `_3DAreaStacked100 `, `DoughnutExploded `, `RadarMarkers `, `RadarFilled `, `Surface `, `SurfaceWireframe `, `SurfaceTopView `, `SurfaceTopViewWireframe `, `Bubble `, `Bubble3DEffect `, `StockHLC `, `StockOHLC `, `StockVHLC `, `StockVOHLC `, `CylinderColClustered `, `CylinderColStacked `, `CylinderColStacked100 `, `CylinderBarClustered `, `CylinderBarStacked `, `CylinderBarStacked100 `, `CylinderCol `, `ConeColClustered `, `ConeColStacked `, `ConeColStacked100 `, `ConeBarClustered `, `ConeBarStacked `, `ConeBarStacked100 `, `ConeCol `, `PyramidColClustered `, `PyramidColStacked `, `PyramidColStacked100 `, `PyramidBarClustered `, `PyramidBarStacked `, `PyramidBarStacked100 `, `PyramidCol `, `_3DColumn `, `Line `, `_3DLine `, `_3DPie `, `Pie `, `XYScatter `, `_3DArea `, `Area `, `Doughnut `, `Radar `,
+
+
+
 #### Returns
 [Chart](chart.md)
 
