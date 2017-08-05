@@ -58,9 +58,11 @@ Register the add-in at the registration portal for the Azure v2.0 endpoint: http
 
 Add new markup to the add-in manifest:
 
-* **WebApplicationID** - The client ID of the add-in.
-* **WebApplicationResource** - The URL of the add-in.
-* **WebApplicationScopes** - Specifies the permissions that the Office host needs to the add-in and that the add-in needs to Microsoft Graph. In general, you’ll always want *User.Read*, but you can request more access (like Mail.Read or offline_access).
+* **WebApplicationInfo** - The parent of the following elements.
+* **Id** - The client ID of the add-in.
+* **Resource** - The URL of the add-in.
+* **Scopes** - The the parent of one or more **Scope**.
+* **Scope** - Specifies a permission that the add-in needs to Microsoft Graph. For example, `User.Read`, `Mail.Read` or `offline_access`).
 
 For Office hosts other than Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` section. For Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_1">` section.
 
