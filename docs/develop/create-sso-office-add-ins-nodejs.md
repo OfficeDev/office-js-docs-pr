@@ -11,7 +11,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 * [Node and npm](https://nodejs.org/en/), version 6.9.4 or later.
 * [Git Bash](https://git-scm.com/downloads) (Or another git client.)
 * TypeScript version 2.2.2 or later.
-* Office 2016, Version 1704, build 8027.nnnn or later (the Office 365 subscription version, sometimes called “Click to Run”). You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1).
+* Office 2016, Version 1708, build 8424.nnnn or later (the Office 365 subscription version, sometimes called “Click to Run”). You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1).
 
 ## Set up the starter project
 
@@ -114,20 +114,22 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Just above the end `</VersionOverrides>` tag, you will find the following markup:
 
+    ```xml
+    <WebApplicationInfo>
+      <Id>{application_GUID here}</Id>
+      <Resource>api://localhost:3000/{application_GUID here}<Resource>
+      <Scopes>
+          <Scope>files.read.all</Scope>
+      </Scopes>
+    </WebApplicationInfo>
     ```
-    <WebApplicationId>{application_GUID here}</WebApplicationId>
-    <WebApplicationResource>api://localhost:3000/{application_GUID here}<WebApplicationResource>
-    <WebApplicationScopes>
-        <WebApplicationScope>files.read.all</WebApplicationScope>
-    </WebApplicationScopes>
-   ```
 
 1. Replace the placeholder “{application_GUID here}” *in both places* in the markup with the Application ID that you copied when you registered your add-in. This is the same ID you used in for the ClientID and Audience in the web.config.
 
     >Note: 
     >
-    >* The **WebApplicationResource** value is the **Application ID URI** you set when you added the Web API platform to the registration of the add-in.
-    >* The **WebApplicationScopes** section is used only to generate a consent dialog if the add-in is sold through the Office Store.
+    >* The **Resource** value is the **Application ID URI** you set when you added the Web API platform to the registration of the add-in.
+    >* The **Scopes** section is used only to generate a consent dialog if the add-in is sold through the Office Store.
 
 1. Save and close the file.
 
