@@ -2,7 +2,7 @@
 
 # item
 
-### [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).item
+## [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md). item
 
 The `item` namespace is used to access the currently selected message, meeting request, or appointment. You can determine the type of the `item` by using the [itemType](Office.context.mailbox.item.md#itemtype-officemailboxenumsitemtype) property.
 
@@ -33,8 +33,6 @@ Office.initialize = function () {
 ```
 
 ### Members
-
-## attachments
 
 #### attachments :Array.<[AttachmentDetails](simple-types.md#attachmentdetails)>
 
@@ -76,8 +74,6 @@ if (_Item.attachments.length > 0) {
 // Do something with outputString
 ```
 
-## bcc
-
 ####  bcc :[Recipients](Recipients.md)
 
 Gets or sets the recipients on the Bcc (blind carbon copy) line of a message. Compose mode only.
@@ -105,8 +101,6 @@ function callback(asyncResult) {
 }
 ```
 
-## body
-
 ####  body :[Body](Body.md)
 
 Gets an object that provides methods for manipulating the body of an item.
@@ -122,9 +116,6 @@ Gets an object that provides methods for manipulating the body of an item.
 |[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
-
-## cc
-
 ####  cc :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>|[Recipients](Recipients.md)
 
 Gets or sets the Cc (carbon copy) recipients of a message.
@@ -160,8 +151,6 @@ function callback(asyncResult) {
 }
 ```
 
-## conversationId
-
 ####  (nullable) conversationId :String
 
 Gets an identifier for the email conversation that contains a particular message.
@@ -181,9 +170,6 @@ You get null for this property for a new item in a compose form. If the user set
 |[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
-
-## dateTimeCreated
-
 #### dateTimeCreated :Date
 
 Gets the date and time that an item was created. Read mode only.
@@ -205,8 +191,6 @@ Gets the date and time that an item was created. Read mode only.
 ```JavaScript
 var created = Office.context.mailbox.item.dateTimeCreated;
 ```
-
-## dateTimeModified
 
 #### dateTimeModified :Date
 
@@ -231,8 +215,6 @@ Gets the date and time that an item was last modified. Read mode only.
 ```JavaScript
 var modified = Office.context.mailbox.item.dateTimeModified;
 ```
-
-## end
 
 ####  end :Date|[Time](Time.md)
 
@@ -283,8 +265,6 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 });
 ```
 
-## from
-
 #### from :[EmailAddressDetails](simple-types.md#emailaddressdetails)
 
 Gets the email address of the sender of a message. Read mode only.
@@ -304,9 +284,6 @@ The `from` and [`sender`](Office.context.mailbox.item.md#sender) properties repr
 |[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Read|
-
-## internetMessageId
-
 #### internetMessageId :String
 
 Gets the Internet message identifier for an email message. Read mode only.
@@ -328,8 +305,6 @@ Gets the Internet message identifier for an email message. Read mode only.
 ```JavaScript
 var internetMessageId = Office.context.mailbox.item.internetMessageId;
 ```
-
-## itemClass
 
 #### itemClass :String
 
@@ -362,13 +337,11 @@ You can create custom message classes that extends a default message class, for 
 var itemClass = Office.context.mailbox.item.itemClass;
 ```
 
-## itemId
-
 #### (nullable) itemId :String
 
 Gets the Exchange Web Services item identifier for the current item. Read mode only.
 
-The identifier returned by the `itemId` property is the same as the Exchange Web Services item identifier. The `itemId` property is not identical to the Outlook Entry ID.
+> **Note:** The identifier returned by the `itemId` property is the same as the Exchange Web Services item identifier. The `itemId` property is not identical to the Outlook Entry ID or the ID used by the Outlook REST API. Before making REST API calls using this value, it should be converted using `Office.context.mailbox.convertToRestId`, which is available starting in requirement set 1.3. For more details, see [Use the Outlook REST APIs from an Outlook add-in](https://docs.microsoft.com/outlook/add-ins/use-rest-api#get-the-item-id).
 
 The `itemId` property is not available in compose mode. If an item identifier is required, the [`saveAsync`](Office.context.mailbox.item.md#saveAsync) method can be used to save the item to the store, which will return the item identifier in the [`AsyncResult.value`](simple-types.md#asyncresult) parameter in the callback function.
 
@@ -397,8 +370,6 @@ if (itemId === null || itemId == undefined) {
 }
 ```
 
-## itemType
-
 ####  itemType :[Office.MailboxEnums.ItemType](Office.MailboxEnums.md#itemtype-string)
 
 Gets the type of item that an instance represents.
@@ -425,8 +396,6 @@ if (Office.context.mailbox.item.itemType == Office.MailboxEnums.ItemType.Message
 else
   // do something else
 ```
-
-## location
 
 ####  location :String|[Location](Location.md)
 
@@ -464,8 +433,6 @@ function callback(asyncResult) {
 }
 ```
 
-## normalizedSubject
-
 #### normalizedSubject :String
 
 Gets the subject of an item, with all prefixes removed (including `RE:` and `FWD:`). Read mode only.
@@ -489,8 +456,6 @@ The normalizedSubject property gets the subject of the item, with any standard p
 ```JavaScript
 var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
 ```
-
-## optionalAttendees
 
 ####  optionalAttendees :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>|[Recipients](Recipients.md)
 
@@ -527,8 +492,6 @@ function callback(asyncResult) {
 }
 ```
 
-## organizer
-
 #### organizer :[EmailAddressDetails](simple-types.md#emailaddressdetails)
 
 Gets the email address of the meeting organizer for a specified meeting. Read mode only.
@@ -551,8 +514,6 @@ Gets the email address of the meeting organizer for a specified meeting. Read mo
 var organizerName = Office.context.mailbox.item.organizer.displayName;
 var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 ```
-
-## requiredAttendees
 
 ####  requiredAttendees :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>|[Recipients](Recipients.md)
 
@@ -589,8 +550,6 @@ function callback(asyncResult) {
 }
 ```
 
-## resources
-
 #### resources :[EmailAddressDetails](simple-types.md#emailaddressdetails)
 
 Gets the resources required for an appointment. Read mode only.
@@ -608,9 +567,6 @@ Gets the resources required for an appointment. Read mode only.
 |[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Read|
-
-## sender
-
 #### sender :[EmailAddressDetails](simple-types.md#emailaddressdetails)
 
 Gets the email address of the sender of an email message. Read mode only.
@@ -637,8 +593,6 @@ The [`from`](Office.context.mailbox.item.md#from) and `sender` properties repres
 var senderName = Office.context.mailbox.item.sender.displayName;
 var senderAddress = Office.context.mailbox.item.sender.emailAddress;
 ```
-
-## start
 
 ####  start :Date|[Time](Time.md)
 
@@ -689,8 +643,6 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 });
 ```
 
-## subject
-
 ####  subject :String|[Subject](Subject.md)
 
 Gets or sets the description that appears in the subject field of an item.
@@ -728,9 +680,6 @@ function callback(asyncResult) {
 |[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
-
-## to
-
 ####  to :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>|[Recipients](Recipients.md)
 
 Gets or sets the recipients of an email message.
@@ -767,8 +716,6 @@ function callback(asyncResult) {
 ```
 
 ### Methods
-
-## addFileAttachmentAsync
 
 ####  addFileAttachmentAsync(uri, attachmentName, [options], [callback])
 
@@ -814,8 +761,6 @@ function addAttachment() {
   Office.context.mailbox.item.addFileAttachmentAsync(attachmentURL, attachmentURL, options, callback);
 }
 ```
-
-## addItemAttachmentAsync
 
 ####  addItemAttachmentAsync(itemId, attachmentName, [options], [callback])
 
@@ -868,8 +813,6 @@ function addAttachment() {
   Office.context.mailbox.item.addItemAttachmentAsync(itemId, "My Attachment", options, callback);
 }
 ```
-
-## displayReplyAllForm
 
 #### displayReplyAllForm(formData)
 
@@ -934,8 +877,6 @@ Office.context.mailbox.item.displayReplyAllForm(
 });
 ```
 
-## displayReplyForm
-
 #### displayReplyForm(formData)
 
 Displays a reply form that includes only the sender of the selected message or the organizer of the selected appointment.
@@ -999,8 +940,6 @@ Office.context.mailbox.item.displayReplyForm(
 });
 ```
 
-## getEntities
-
 #### getEntities() → {[Entities](simple-types.md#entities)}
 
 Gets the entities found in the selected item.
@@ -1027,8 +966,6 @@ The following example accesses the contacts entities on the current item.
 ```JavaScript
 var contacts = Office.context.mailbox.item.getEntities().contacts;
 ```
-
-## getEntitiesByType
 
 #### getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>}
 
@@ -1087,8 +1024,6 @@ Office.initialize = function () {
 }
 ```
 
-## getFilteredEntitiesByName
-
 #### getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>}
 
 Returns well-known entities in the selected item that pass the named filter defined in the manifest XML file.
@@ -1118,7 +1053,6 @@ If there is no `ItemHasKnownEntity` element in the manifest with a `FilterName` 
 
 Type: Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>
 
-## getRegExMatches
 
 #### getRegExMatches() → {Object}
 
@@ -1181,8 +1115,6 @@ var fruits = allMatches.fruits;
 var veges = allMatches.veggies;
 ```
 
-## getRegExMatchesByName
-
 #### getRegExMatchesByName(name) → (nullable) {Array.<String>}
 
 Returns string values in the selected item that match the named regular expression defined in the manifest XML file.
@@ -1225,8 +1157,6 @@ An array that contains the strings that match the regular expression defined in 
 var fruits = Office.context.mailbox.item.getRegExMatchesByName("fruits");
 var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 ```
-
-## getSelectedDataAsync
 
 ####  getSelectedDataAsync(coercionType, [options], callback) → {String}
 
@@ -1284,8 +1214,6 @@ function setCallback(asyncResult) {
 }
 ```
 
-## loadCustomPropertiesAsync
-
 ####  loadCustomPropertiesAsync(callback, [userContext])
 
 Asynchronously loads custom properties for this add-in on the selected item.
@@ -1335,8 +1263,6 @@ function customPropsCallback(asyncResult) {
 function saveCallback(asyncResult) {
 }
 ```
-
-## removeAttachmentAsync
 
 ####  removeAttachmentAsync(attachmentId, [options], [callback])
 
