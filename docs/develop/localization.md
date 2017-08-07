@@ -51,7 +51,9 @@ Every Office Add-in specifies a [DefaultLocale] element and a locale in its mani
 |[DisplayName]   |Users in each locale you specify can see a localized description for the add-in in the Office Store (or private catalog).<br/>For Outlook add-ins, users can see the display name as a label for the Outlook add-in button and in the EAC after installation.<br/>For content and task pane add-ins, users can see the display name in the ribbon after installing the add-in.|
 |[IconUrl]        |The icon image is optional. You can use the same override technique to specify a certain image for a specific culture. If you use and localize an icon, users in each locale you specify can see a localized icon image for the add-in.<br/>For Outlook add-ins, users can see the icon in the EAC after installing the add-in.<br/>For content and task pane add-ins, users can see the icon in the ribbon after installing the add-in.|
 |[HighResolutionIconUrl] <br/><br/>**Important**  This element is available only when using add-in manifest version 1.1.|The high resolution icon image is optional but if it is specified, it must occur after the  [IconUrl] element. When [HighResolutionIconUrl] is specified, and the add-in is installed on a device that supports high dpi resolution, the [HighResolutionIconUrl] value is used instead of the value for [IconUrl].<br/>You can use the same override technique to specify a certain image for a specific culture. If you use and localize an icon, users in each locale you specify can see a localized icon image for the add-in.<br/>For Outlook add-ins, users can see the icon in the EAC after installing the add-in.<br/>For content and task pane add-ins, users can see the icon in the ribbon after installing the add-in.|
+|[Resources] <br/><br/>**Important**  This element is available only when using add-in manifest version 1.1.   |Users in each locale you specify can see string and icon resources that you specifically create for the add-in for that locale. |
 |[SourceLocation]   |Users in each locale you specify can see a webpage that you specifically design for the add-in for that locale. |
+
 
  > **Note:** You can localize the description and display name for only the locales that Office supports. See [Language identifiers and OptionState Id values in Office 2013](http://technet.microsoft.com/en-us/library/cc179219.aspx) for a list of languages and locales for the current release of Office.
 
@@ -68,6 +70,8 @@ For example, an Office Add-in can specify the  [DefaultLocale] as `en-us`. For t
     <Override Locale="fr-fr" Value="Lecteur vidéo" />
 </DisplayName>
 ```
+
+ > **Note:** If you need to localize for more than one area within a language family, such as `de-de` and `de-at`, we recommend that you use separate `Override` elements for each area. Using just the language name alone, in this case, `de`, is not supported across all combinations of Office host applications and platforms.
 
 This means that the add-in assumes the  `en-us` locale by default. Users see the English display name of "Video player" for all locales unless the client computer's locale is `fr-fr`, in which case users would see the French display name "Lecteur vidéo".
 
@@ -97,6 +101,18 @@ In the following example, the add-in specifies a separate image that's more appr
 <IconUrl DefaultValue="https://<domain>/DefaultLogo.png"/>
     <Override Locale="fr-fr" Value="https://<domain>/FrenchLogo.png"/>
 ```
+
+The following example shows how to localize a resource in the `Resources` section. It applies a locale override for an image that is more appropriate for the `ja-jp` culture.
+
+```xml
+<Resources>
+      <bt:Images>
+        <bt:Image id="icon1_16x16" DefaultValue="https://www.contoso.com/icon_default.png">
+          <bt:Override Locale="ja-jp" Value="https://www.contoso.com/ja-jp16-icon_default.png" />
+        </bt:Image>
+ ...
+```
+
 
 For the  [SourceLocation] element, supporting additional locales means providing a separate source HTML file for each of the specified locales. Users in each locale you specify can see a customized webpage that you design for that them.
 
@@ -431,6 +447,7 @@ Run the sample add-in. The taskpane add-in loads in Word 2013, and the strings i
 [DisplayName]: 			 ../../reference/manifest/displayname.md
 [IconUrl]: 				 ../../reference/manifest/iconurl.md
 [HighResolutionIconUrl]: ../../reference/manifest/highresolutioniconurl.md
+[Resources]: 		     ../../reference/manifest/resources
 [SourceLocation]: 		 ../../reference/manifest/sourcelocation.md
 [Override]:  			 ../../reference/manifest/override.md
 [DesktopSettings]: 		 ../../reference/manifest/desktopsettings.md
@@ -438,4 +455,4 @@ Run the sample add-in. The taskpane add-in loads in Word 2013, and the strings i
 [PhoneSettings]: 		 ../../reference/manifest/phonesettings.md
 [displayLanguage]: 	../../reference/shared/office.context.displaylanguage.md 
 [contentLanguage]: 	../../reference/shared/office.context.contentlanguage.md 
-[RFC 3066]: http://www.ietf.org/rfc/rfc3066.txt
+[RFC 3066]: https://www.rfc-editor.org/info/rfc3066
