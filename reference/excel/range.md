@@ -557,7 +557,7 @@ Excel.run(function (ctx) {
 	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getOffsetRange(-1,4);
 	range.load('address');
 	return ctx.sync().then(function() {
-		console.log(range.address); // prints Sheet1!H3:K5
+		console.log(range.address); // prints Sheet1!H3:J5
 	});
 }).catch(function(error) {
 		console.log("Error: " + error);
