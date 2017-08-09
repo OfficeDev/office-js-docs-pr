@@ -61,8 +61,8 @@ Add new markup to the add-in manifest:
 * **WebApplicationInfo** - The parent of the following elements.
 * **Id** - The client ID of the add-in.
 * **Resource** - The URL of the add-in.
-* **Scopes** - The the parent of one or more **Scope**.
-* **Scope** - Specifies a permission that the add-in needs to Microsoft Graph. For example, `User.Read`, `Mail.Read` or `offline_access`).
+* **Scopes** - The the parent of one or more **Scope** elements.
+* **Scope** - Specifies a permission that the add-in needs to Microsoft Graph. For example, User.Read, Mail.Read, or offline_access.
 
 For Office hosts other than Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` section. For Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_1">` section.
 
