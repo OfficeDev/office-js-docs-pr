@@ -28,7 +28,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 2. Enter `npm install` in the console to install all of the dependencies itemized in the package.json file.
 
 3. Enter `npm run build ` in the console to build the project. 
-     > Note: You may see some build errors saying that some variables are declared but not used. Ignore these errors. They are a side effect of the fact that the "Before" version of the sample missing some code that will be added later.
+     > Note: You may see some build errors saying that some variables are declared but not used. Ignore these errors. They are a side effect of the fact that the "Before" version of the sample is missing some code that will be added later.
 
 ## Register the add-in with Azure AD V2 endpoint
 
@@ -74,6 +74,8 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Grant admin consent to the add-in
 
+> **Note:** This procedure is only needed when you are developing the add-in. When your production add-in is deployed to the Office Store or an add-in catalog, users will individually trust it when they install it.
+
 1. In the following string, replace the placeholder “{application_ID}” with the Application ID that you copied when you registered your add-in.
 
     `https://login.microsoftonline.com/common/adminconsent?client_id={application_ID}&state=12345`
@@ -84,7 +86,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. You are then prompted to grant permission for your add-in to access your Microsoft Graph data. Click **Accept**. 
 
-1. The browser window/tab is then redirected to the **Redirect URL** that you specified when you registered the add-in; so, if the add-in is running, you the home page of the add-in opens in the browser. If the add-in is not running, you will get an error saying that the resource at localhost:3000 cannot be found or opened. *But the fact that the redirection was attempted means that the admin consent process completed successfully*. So regardless of whether the home page opened or you got the error, you can go on to the next step.
+1. The browser window/tab is then redirected to the **Redirect URL** that you specified when you registered the add-in; so, if the add-in is running, the home page of the add-in opens in the browser. If the add-in is not running, you will get an error saying that the resource at localhost:3000 cannot be found or opened. *But the fact that the redirection was attempted means that the admin consent process completed successfully*. So regardless of whether the home page opened or you got the error, you can go on to the next step.
 
 2. In the browser's address bar you'll see a "tenant" query parameter with a GUID value. This is the ID of your Office 365 tenancy. Copy and save this value. You will use it in a later step.
 
@@ -104,9 +106,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
-    > **Note:** Leave the other parameters in the `AuthModule` constructor unchanged.
-
-1. Save and close the file.
+1. Leave the other parameters in the `AuthModule` constructor unchanged. Save and close the file.
 
 1. In the root of the project, open the add-in manifest file “Office-Add-in-NodeJS-SSO.xml”.
 
@@ -124,7 +124,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     </WebApplicationInfo>
     ```
 
-1. Replace the placeholder “{application_GUID here}” *in both places* in the markup with the Application ID that you copied when you registered your add-in. This is the same ID you used in for the ClientID and Audience in the web.config.
+1. Replace the placeholder “{application_GUID here}” *in both places* in the markup with the Application ID that you copied when you registered your add-in. (The "{}" are not part of the ID, so don't include them.) This is the same ID you used in for the ClientID and Audience in the web.config.
 
     >Note: 
     >
@@ -163,7 +163,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     }
     ```
 
-1. Replace the TODO1 with the following lines. You create the `getData` method and the server-side “/api/values” route in later steps. A relative URL is used for the endpoint because it must be hosted on the same domain as your add-in.
+1. Replace the TODO1 with the following lines. You create the `getData` method and the server-side “/api/onedriveitems” route in later steps. A relative URL is used for the endpoint because it must be hosted on the same domain as your add-in.
 
     ```
     accessToken = result.value;
@@ -332,7 +332,7 @@ There are two server-side files that need to be modified.
 5. Replace TODO6 with the following line. Note the following about this code:
 
     * The call to `acquireTokenOnBehalfOf` does not include a resource parameter because we constructed the `AuthModule` object (`auth`) with the AAD V2 endpoint which does not support a resource property.
-    * The second parameter of the call specifies the permissions the add-in will need to get a list of the user's files and folders on OneDrive for Business.
+    * The second parameter of the call specifies the permissions the add-in will need to get a list of the user's files and folders on OneDrive.
 
     `const graphToken = await auth.acquireTokenOnBehalfOf(jwt, ['Files.Read.All']);`
 
@@ -383,15 +383,15 @@ Now you need to let Office know where to find the add-in.
 There are two ways to build and run the project depending on whether you are using Visual Studio Code. For both ways, the project builds and automatically rebuilds and reruns when you make changes to the code.
 
 1. If you are not using Visual Studio Code: 
- 2. Open a node terminal and navigate to the root folder of the project.
- 3. In the terminal, enter **npm run build**. 
- 4. Open a second node terminal and navigate to the root folder of the project.
- 5. In the terminal, enter **npm run start**.
+ 1. Open a node terminal and navigate to the root folder of the project.
+ 2. In the terminal, enter **npm run build**. 
+ 3. Open a second node terminal and navigate to the root folder of the project.
+ 4. In the terminal, enter **npm run start**.
 
 2. If you are using VS Code:
- 3. Open the project in VS Code.
- 4. Press CTRL-SHIFT-B to build the project.
- 5. Press F5 to run the project in a debugging session.
+ 1. Open the project in VS Code.
+ 2. Press CTRL-SHIFT-B to build the project.
+ 3. Press F5 to run the project in a debugging session.
 
 
 ## Add the add-in to an Office document
@@ -408,16 +408,14 @@ There are two ways to build and run the project depending on whether you are usi
 
 ## Test the add-in
 
-> **Note:** The preview version of the `getAccessTokenAsync` API only supports work or school (Office 365) identities. *If you are signed into Office with a personal identity (Microsoft Account), sign out before preceding.* To test the add-in, you must be either signed out entirely from Office, or signed in with a work or school account.
-
-1. Make sure you have some files or folders in your OneDrive for Business account.
+1. Make sure you have some files or folders in your OneDrive account.
 
 2. Click **Show Add-in** button to open the add-in.
 
-2. The add-in opens with a Welcome page. Click the **Get my files from OneDrive** button.
+2. The add-in opens with a Welcome page. Click the **Get My Files from OneDrive** button.
 
 2. If you are are signed into Office, a list of your files and folders on OneDrive will appear below the button. This may take more than 15 seconds the first time.
 
 3. If you are not signed into Office, a popup will open and prompt you to sign in. After you have completed the sign-in, the list of your files and folders will appear after a few seconds. *You do not press the button a second time.*
-
+> **Note:** If you were previously signed on to Office with a different ID, and some Office applications that were open at the time are still open, Office may not reliably change your ID even if it appears to have done so in PowerPoint. If this happens, the call to Microsoft Graph may fail or data from the previous ID may be returned. To prevent this, be sure to *close all other Office applications* before you press **Get My Files from OneDrive**.
 

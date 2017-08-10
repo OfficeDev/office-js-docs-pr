@@ -16,6 +16,7 @@ Office.context
 
 | Member | Type | Description | 
 |:-------|:-----|:------------|
+|auth|[Auth object](officeauth.md)|provides a method that you can use to enable the Office host to obtain and access token to your add-in and, indirectly, enable the add-in to get access to the signed-in user's Microsoft Graph data without requiring the user to sign-in a second time.|
 |commerceAllowed |bool|Returns True if developers can display sell or upgrade UI in the add-in on that platform; otherwise returns False.|
 |contentLanguage | string | Gets the locale (language) specified by the user for editing the document or item.|
 |displayLanguage|string|Gets the locale (language) specified by the user for the UI of the Office host application.|

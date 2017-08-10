@@ -72,6 +72,8 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Grant admin consent to the add-in
 
+> **Note:** This procedure is only needed when you are developing the add-in. When your production add-in is deployed to the Office Store or an add-in catalog, users will individually trust it when they install it.
+
 1. If the add-in is not running in Visual Studio, press F5 to run it. It needs to be running in IIS for this procedure to complete smoothly. 
 
 1. In the following string, replace the placeholder “{application_ID}” with the Application ID that you copied when you registered your add-in.
@@ -111,7 +113,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 |ida:Password|TThe password you obtained when you registered the add-in.|
 
 
-Here’s an example of what the four keys you changed should look like. (*Note that ClientID and Audience are the same*. You could, of course, use a single key for both purposes, but your web.config markup will be more reusable if you keep them separate because they aren't always the same. Also, it separate keys reinforce the idea that your add-in is both an OAuth resource - relative to the Office host - and an OAuth client - relative to Microsoft Graph.)
+Here’s an example of what the four keys you changed should look like. (*Note that ClientID and Audience are the same*. You could, of course, use a single key for both purposes, but your web.config markup will be more reusable if you keep them separate because they aren't always the same. Also, separate keys reinforce the idea that your add-in is both an OAuth resource - relative to the Office host - and an OAuth client - relative to Microsoft Graph.)
 
     ```xml
     <add key=”ida:ClientID" value="12345678-1234-1234-1234-123456789012" />
@@ -143,7 +145,7 @@ Here’s an example of what the four keys you changed should look like. (*Note t
     </WebApplicationInfo>
     ```
 
-1. Replace the placeholder “{application_GUID here}” *in both places* in the markup with the Application ID that you copied when you registered your add-in. This is the same ID you used in for the ClientID and Audience in the web.config.
+1. Replace the placeholder “{application_GUID here}” *in both places* in the markup with the Application ID that you copied when you registered your add-in. (The "{}" are not part of the ID, so do not include them.) This is the same ID you used in for the ClientID and Audience in the web.config.
 
     >Note: 
     >
@@ -152,7 +154,7 @@ Here’s an example of what the four keys you changed should look like. (*Note t
 
 1. Open the **Warnings** tab of the **Error List** in Visual Studio. If there is a warning that `<WebApplicationInfo>` is not a valid child of `<VersionOverrides>`, then your version of Visual Studio 2017 Preview does not  recognize the SSO markup. You need to carry out the following workaround:
 
-   > 1. Remove the `<WebApplicationInfo>` section from the manifest and save it in a text file.
+   > 1. Cut (not Copy) the `<WebApplicationInfo>` section from the manifest and save this markup in a text file.
 
    > 2. Press F5 to start a debugging session. This will create a copy of the manifest in the following folder (which is easier to access in **File Explorer** than in Visual Studio): `Office-Add-in-ASP.NET-SSO\Complete\Office-Add-in-ASPNET-SSO\bin\Debug\OfficeAppManifests`
 
@@ -160,11 +162,11 @@ Here’s an example of what the four keys you changed should look like. (*Note t
 
    > 4. Save the copy of the manifest.
 
-   > 5. Now you must prevent Visual Studio from overwriting the copy of the manifest when you end the next time you press F5. Right-click the solution node at the very top of **Solution Explorer** (not either of the project nodes).
+   > 5. Now you must prevent Visual Studio from overwriting the copy of the manifest the next time you press F5. Right-click the solution node at the very top of **Solution Explorer** (not either of the project nodes).
 
    > 6. Select **Properties** from the context menu and a **Solution Property Pages** dialog opens.
 
-   > 7. Expand**Configuration Properties** and select **Configuration**.
+   > 7. Expand **Configuration Properties** and select **Configuration**.
 
    > 8. Deselect **Build** and **Deploy** in the row for the **Office-Add-in-ASPNET-SSO** project (*not* the **Office-Add-in-ASPNET-SSO-WebAPI** project).
 
@@ -254,7 +256,7 @@ Here’s an example of what the four keys you changed should look like. (*Note t
 
 1. Ensure that all of the following `using` statements are at the top of the file. 
 
-   ```
+    ```
     using Owin;
     using System.IdentityModel.Tokens;
     using System.Configuration;
@@ -346,7 +348,7 @@ Here’s an example of what the four keys you changed should look like. (*Note t
     {
         // TODO5: Get the raw token that the add-in page received from the Office host.
         // TODO6: Get the access token for MS Graph.
-        // TODO7: Get the names of files and folders in OneDrive for Business by using the Microsoft Graph API.
+        // TODO7: Get the names of files and folders in OneDrive by using the Microsoft Graph API.
         // TODO8: Remove excess information from the data and send the data to the client.
     }
     return new string[] { "Error", "Microsoft Office does not have permission to get Microsoft Graph data on behalf of the current user." };
@@ -398,15 +400,17 @@ Here’s an example of what the four keys you changed should look like. (*Note t
 
 ## Run the add-in
 
-1. Make sure you have some files in your OneDrive for Business.
+1. Make sure you have some files in your OneDrive.
 
 1. In Visual Studio, press F5. PowerPoint opens and there is an **SSO ASP.NET** group on the **Home** ribbon. 
 
 1. Press the **Show Add-in** button in this group to see the add-in’s UI in the task pane. 
 
 1. Press the button **Get My Files from OneDrive**. If you are not signed into Office, you will be prompted to sign in.
+    > **Note:** If you were previously signed on to Office with a different ID, and some Office applications that were open at the time are still open, Office may not reliably change your ID even if it appears to have done so in PowerPoint. If this happens, the call to Microsoft Graph may fail or data from the previous ID may be returned. To prevent this, be sure to *close all other Office applications* before you press **Get My Files from OneDrive**.
 
-1. After you are signed in, a list of your files and folders on OneDrive for Business will appear below the button. This may take over 15 seconds, especially the first time. 
+
+1. After you are signed in, a list of your files and folders on OneDrive will appear below the button. This may take over 15 seconds, especially the first time. 
 
 
 

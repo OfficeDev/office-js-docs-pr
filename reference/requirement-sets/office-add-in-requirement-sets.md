@@ -8,14 +8,12 @@ For information about where add-ins are supported by Office host, see  [Office A
 
 ## Host-specific API requirement sets
 
-For information about Excel, Word, OneNote, Outlook, and Dialog API requirement sets, see:
+For information about Excel, Word, OneNote, Outlook, Dialog, and Single Sign-on API requirement sets, see:
 
 - [Excel JavaScript API requirement sets](excel-api-requirement-sets.md) (ExcelApi)
 - [Word JavaScript API requirement sets](word-api-requirement-sets.md) (WordApi)
 - [OneNote JavaScript API requirement sets](onenote-api-requirement-sets.md) (OneNoteApi)
 - [Understanding Outlook API requirement sets](../outlook/tutorial-api-requirement-sets.md) (MailBox)
-- [Dialog API requirement sets](dialog-api-requirement-sets.md) (DialogApi)
-- [Add-in command requirement sets](add-in-commands-requirement-sets.md) (AddInCommands)
 
 ## Common API requirement sets
 
@@ -25,9 +23,11 @@ The following table lists the common API requirement sets, the methods in each s
 |  Requirement set  |  Office host  |  Methods in set  |
 |:-----|-----|:-----|:-----|
 | ActiveView | PowerPoint<br>PowerPoint&nbsp;Online|Document.getActiveViewAsync|
+| AddInCommands | For details see [Add-in command requirement sets](add-in-commands-requirement-sets.md). | |
 | BindingEvents  | Access Web Apps<br>Excel<br>Excel Online<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Binding.addHanderAsync<br>Binding.removeHanderAsync|
 | CompressedFile    | PowerPoint<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad<br/>Excel Online<br/>PowerPoint Online|Supports output to Office Open XML (OOXML) format as a byte array<br>(Office.FileType.Compressed) when using the Document.getFileAsync method.|
 | CustomXmlParts    | Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|CustomXmlNode.getNodesAsync<br>CustomXmlNode.getNodeValueAsync<br>CustomXmlNode.getXmlAsync<br>CustomXmlNode.setNodeValueAsync<br>CustomXmlNode.setXmlAsync<br>CustomXmlPart.addHandlerAsync<br>CustomXmlPart.deleteAsync<br>CustomXmlPart.getNodesAsync<br>CustomXmlPart.getXmlAsync<br>CustomXmlPart.removeHandlerAsync<br>CustomXmlParts.addAsync<br>CustomXmlParts.getByIdAsync<br>CustomXmlParts.getByNamespaceAsync<br>CustomXmlPrefixMappings.addNamespaceAsync<br>CustomXmlPrefixMappings.getNamespaceAsync<br>CustomXmlPrefixMappings.getPrefixAsync|
+| Dialog | For details see [Dialog API requirement sets](dialog-api-requirement-sets.md). | UI.messageParent<br>UI.displayDialogAsync<br>UI.closeContainer<br>UI.Dialog |
 | DocumentEvents    | Excel<br>Excel Online<br>PowerPoint Online<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Document.addHandlerAsync<br>Document.removeHandlerAsync|
 | File  | PowerPoint<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad<br>PowerPoint Online|Document.getFileAsync<br>File.closeAsync<br>File.getSliceAsync|
 | HtmlCoercion  | Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Supports coercion to HTML (Office.CoercionType.Html) when reading and writing data using the Document.getSelectedDataAsync,<br>Document.setSelectedDataAsync, Binding.getDataAsync, or Binding.setDataAsync methods.|
@@ -40,6 +40,7 @@ The following table lists the common API requirement sets, the methods in each s
 | PdfFile   | PowerPoint<br/>PowerPoint Online<br/>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Supports output to PDF format (Office.FileType.Pdf)<br>when using the Document.getFileAsync method.|
 | Selection | Excel<br>Excel Online<br>PowerPoint<br>Project<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Document.getSelectedDataAsync<br>Document.setSelectedDataAsync|
 | Settings  | Access Web Apps<br>Excel<br>Excel Online<br>PowerPoint<br>PowerPoint Online<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Settings.get<br>Settings.remove<br>Settings.saveAsync<br>Settings.set|
+| SingleSignOn | For details see [Single Sign-on API requirement sets](singlesignon-api-requirement-sets.md). | Auth.getAccessTokenAsync |
 | TableBindings | Access Web Apps<br>Excel<br>Excel Online<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncTable<br>Binding.addColumnsAsyncTable<br>Binding.addRowsAsyncTable<br>Binding.deleteAllDataValuesAsyncTable<br>Binding.getDataAsyncTable<br>Binding.setDataAsync|
 | TableCoercion | Access Web Apps<br>Excel<br>Excel Online<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Supports coercion to the "table" data structure (Office.CoercionType.Table) when reading and writing data using the Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync, or Binding.setDataAsync methods.|
 | TextBindings  | Excel<br>Excel Online<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncText<br>Binding.getDataAsyncText<br>Binding.setDataAsync|
