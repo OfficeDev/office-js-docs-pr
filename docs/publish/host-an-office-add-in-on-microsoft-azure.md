@@ -41,9 +41,9 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
     
 2.  Choose **File** > **Options**.
     
-3.  In the **Word Options** dialog, choose **Trust Center** and then choose **Trust Center Settings**. 
+3.  In the **Word Options** dialog box, choose **Trust Center** and then choose **Trust Center Settings**. 
     
-4.  In the **Trust Center** dialog, click **Trusted Add-in Catalogs**. Enter the universal naming convention (UNC) path for the file share you created earlier as the **Catalog URL** (for example, \\\YourMachineName\AddinManifests), and then choose **Add catalog**. 
+4.  In the **Trust Center** dialog box, choose **Trusted Add-in Catalogs**. Enter the universal naming convention (UNC) path for the file share you created earlier as the **Catalog URL** (for example, \\\YourMachineName\AddinManifests), and then choose **Add catalog**. 
     
 5. Select the check box for **Show in Menu**. 
 
@@ -59,7 +59,7 @@ Create an empty web app in Azure either by using [Visual Studio 2017](../publish
 
 To create the web app using Visual Studio 2017, complete the following steps.
 
-1. In Visual Studio, in the **View** menu choose **Server Explorer**. Right click **Azure** and choose **Connect to Microsoft Azure subscription**. Follow the instructions for connecting to your Azure subscription.
+1. In Visual Studio, in the **View** menu, choose **Server Explorer**. Right-click **Azure** and choose **Connect to Microsoft Azure subscription**. Follow the instructions for connecting to your Azure subscription.
     
 2. In Visual Studio, in **Server Explorer**, expand **Azure**, right-click **App Service**, and then choose **Create New App Service**.
     
@@ -89,7 +89,7 @@ To create the web app using the Azure portal, complete the following steps.
     
 2. Choose **New** > **Web + Mobile** > **Web App**. 
 
-3. In the **Web App Create** dialog, provide this information:
+3. In the **Web App Create** dialog box, provide this information:
     
       - Enter a unique **App name** for your site. Azure verifies that the site name is unique across the azureweb apps.net domain.
 
@@ -97,7 +97,7 @@ To create the web app using the Azure portal, complete the following steps.
 
       - Choose the **Resource Group** for your site. If you create a new group, you also need to name it.
 
-      - Choose **OS** for your site.
+      - Choose the **OS** for your site.
     
       - Choose the **App Service plan** to use for creating this site. If you create a new plan, you also need to name it.
        
@@ -121,7 +121,7 @@ To create the web app using the Azure portal, complete the following steps.
     
 4. Choose **Word Web Add-in**, and then choose **OK** to accept the default settings.
        
-Visual Studio creates a basic Word Web Add-in that you'll be able to publish as-is, without making any changes to its web project.
+Visual Studio creates a basic Word add-in that you'll be able to publish as-is, without making any changes to its web project.
 
 ## Step 5: Publish your Office Add-in web app to Azure
 
@@ -141,7 +141,7 @@ Visual Studio creates a basic Word Web Add-in that you'll be able to publish as-
 
     Visual Studio publishes the web project for your Office Add-in to your Azure web app. When Visual Studio finishes publishing the web project, your browser opens and shows a webpage with the text "Your App Service app has been created." This is the current default page for the web app.
 
-7. To see the webpage for your add-in, change the URL so that it uses HTTPS and specifies the path of your add-in's HTML page (for example: https://YourDomain.azurewebsites.net/Home.html). This confirms that your add-in's web app is now hosted on Azure. Copy the root URL (for example: https://YourDomain.azurewebsites.net); you'll need it when you edit the add-in manifest file later in this walkthrough.
+7. To see the webpage for your add-in, change the URL so that it uses HTTPS and specifies the path of your add-in's HTML page (for example: https://YourDomain.azurewebsites.net/Home.html). This confirms that your add-in's web app is now hosted on Azure. Copy the root URL (for example: https://YourDomain.azurewebsites.net); you'll need it when you edit the add-in manifest file later in this article.
     
 ## Step 6: Edit and deploy the add-in XML manifest file
 
@@ -165,13 +165,13 @@ Visual Studio creates a basic Word Web Add-in that you'll be able to publish as-
     
 2. On the ribbon, choose **Insert** > **My Add-ins**. 
     
-3. In the **Office Add-ins** dialog box, choose **SHARED FOLDER**. Word scans the folder that you listed as a trusted add-ins catalog (in [Step 2: Add the file share to the Trusted Add-ins catalog](../publish/host-an-office-add-in-on-microsoft-azure.md#step-2-add-the-file-share-to-the-trusted-add-ins-catalog)) and shows the add-ins in the dialog. You should see an icon for your sample add-in.
+3. In the **Office Add-ins** dialog box, choose **SHARED FOLDER**. Word scans the folder that you listed as a trusted add-ins catalog (in [Step 2: Add the file share to the Trusted Add-ins catalog](../publish/host-an-office-add-in-on-microsoft-azure.md#step-2-add-the-file-share-to-the-trusted-add-ins-catalog)) and shows the add-ins in the dialog box. You should see an icon for your sample add-in.
     
 4. Choose the icon for your add-in and then choose **Add**. A **Show Taskpane** button for your add-in is added to the ribbon. 
 
 5. On the ribbon of the **Home** tab, choose the **Show Taskpane** button. The add-in opens in a task pane to the right of the current document.
     
-6. Test that the add-in works by selecting some text in the document and choosing the **Highlight!** button in the task pane. 
+6. Verify that the add-in works by selecting some text in the document and choosing the **Highlight!** button in the task pane. 
 
 ## Additional resources
 
