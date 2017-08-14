@@ -943,14 +943,14 @@ When attachments are specified in the `formData.attachments` parameter, Outlook 
 
 | Name | Type | Attributes | Description |
 |---|---|---|---|
-|`formData`| String &#124; Object|A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.<br/>**OR**<br/>An object that contains body or attachment data and a callback function. The object is defined as follows. |
+|`formData`| String &#124; Object| |A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.<br/>**OR**<br/>An object that contains body or attachment data and a callback function. The object is defined as follows. |
 | `formData.htmlBody` | String | &lt;optional&gt; | A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.
 | `formData.attachments` | Array.&lt;Object&gt; | &lt;optional&gt; | An array of JSON objects that are either file or item attachments. |
-| `formData.attachments[].type` | String | Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment. |
-| `formData.attachments[].name` | String | A string that contains the name of the attachment, up to 255 characters in length.| 
-| `formData.attachments[].url` | String | Only used if `type` is set to `file`. The URI of the location for the file. |
-| `formData.attachments[].url` | String | Only used if `type` is set to `file`. If `true`, indicates that the attachment will be shown inline in the message body, and should not be displayed in the attachment list. |
-| `formData.attachments[].itemId` | String | Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters. |
+| `formData.attachments[].type` | String | | Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment. |
+| `formData.attachments[].name` | String | | A string that contains the name of the attachment, up to 255 characters in length.| 
+| `formData.attachments[].url` | String | | Only used if `type` is set to `file`. The URI of the location for the file. |
+| `formData.attachments[].isInline` | Boolean | | Only used if `type` is set to `file`. If `true`, indicates that the attachment will be shown inline in the message body, and should not be displayed in the attachment list. |
+| `formData.attachments[].itemId` | String | | Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters. |
 | `callback` | function | &lt;optional&gt; | When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](simple-types.md#asyncresult) object. |
 
 ##### Requirements
@@ -1061,14 +1061,14 @@ When attachments are specified in the `formData.attachments` parameter, Outlook 
 
 | Name | Type | Attributes | Description |
 |---|---|---|---|
-|`formData`| String &#124; Object|A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.<br/>**OR**<br/>An object that contains body or attachment data and a callback function. The object is defined as follows. |
+|`formData`| String &#124; Object| | A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.<br/>**OR**<br/>An object that contains body or attachment data and a callback function. The object is defined as follows. |
 | `formData.htmlBody` | String | &lt;optional&gt; | A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.
 | `formData.attachments` | Array.&lt;Object&gt; | &lt;optional&gt; | An array of JSON objects that are either file or item attachments. |
-| `formData.attachments[].type` | String | Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment. |
-| `formData.attachments[].name` | String | A string that contains the name of the attachment, up to 255 characters in length.| 
-| `formData.attachments[].url` | String | Only used if `type` is set to `file`. The URI of the location for the file. |
-| `formData.attachments[].url` | String | Only used if `type` is set to `file`. If `true`, indicates that the attachment will be shown inline in the message body, and should not be displayed in the attachment list. |
-| `formData.attachments[].itemId` | String | Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters. |
+| `formData.attachments[].type` | String | | Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment. |
+| `formData.attachments[].name` | String | | A string that contains the name of the attachment, up to 255 characters in length.| 
+| `formData.attachments[].url` | String | | Only used if `type` is set to `file`. The URI of the location for the file. |
+| `formData.attachments[].isInline` | Boolean | | Only used if `type` is set to `file`. If `true`, indicates that the attachment will be shown inline in the message body, and should not be displayed in the attachment list. |
+| `formData.attachments[].itemId` | String | | Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters. |
 | `callback` | function | &lt;optional&gt; | When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](simple-types.md#asyncresult) object. |
 
 ##### Requirements
@@ -1587,7 +1587,7 @@ Asynchronously inserts data into the body or subject of a message.
 |`data`| String||The data to be inserted. Data is not to exceed 1,000,000 characters. If more than 1,000,000 characters are passed in, an `ArgumentOutOfRange` exception is thrown.|
 |`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
 |`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
-|`options.coercionType`| [Office.CoercionType](Office.md#coerciontype-string)]| &lt;optional&gt;|If `text`, the current style is applied in Outlook Web App and Outlook. If the field is an HTML editor, only the text data is inserted, even if the data is HTML.<br/><br/>If `html` and the field supports HTML (the subject doesn't), the current style is applied in Outlook Web App and the default style is applied in Outlook. If the field is a text field, an `InvalidDataFormat` error is returned.<br/><br/>If `coercionType` is not set, the result depends on the field: if the field is HTML then HTML is used; if the field is text, then plain text is used.|
+|`options.coercionType`| [Office.CoercionType](Office.md)| &lt;optional&gt;|If `text`, the current style is applied in Outlook Web App and Outlook. If the field is an HTML editor, only the text data is inserted, even if the data is HTML.<br/><br/>If `html` and the field supports HTML (the subject doesn't), the current style is applied in Outlook Web App and the default style is applied in Outlook. If the field is a text field, an `InvalidDataFormat` error is returned.<br/><br/>If `coercionType` is not set, the result depends on the field: if the field is HTML then HTML is used; if the field is text, then plain text is used.|
 |`callback`| function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. |
 
 ##### Requirements
