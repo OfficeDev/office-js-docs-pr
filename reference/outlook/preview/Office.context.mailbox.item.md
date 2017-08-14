@@ -740,7 +740,7 @@ The `addFileAttachmentAsync` method uploads the file at the specified URI and at
 
 You can subsequently use the identifier with the [`removeAttachmentAsync`](Office.context.mailbox.item.md#removeattachmentasyncattachmentid-options-callback) method to remove the attachment in the same session.
 
-##### Parameters:removeattachmentasyncattachmentid-options-callback
+##### Parameters:
 |Name| Type| Attributes| Description|
 |---|---|---|---|
 |`uri`| String||The URI that provides the location of the file to attach to the message or appointment. The maximum length is 2048 characters.|
