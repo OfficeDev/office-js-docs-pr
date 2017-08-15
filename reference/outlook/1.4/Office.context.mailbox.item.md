@@ -745,8 +745,17 @@ You can subsequently use the identifier with the [`removeAttachmentAsync`](Offic
 |---|---|---|---|
 |`uri`| String||The URI that provides the location of the file to attach to the message or appointment. The maximum length is 2048 characters.|
 |`attachmentName`| String||The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.|
-|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Developers can provide any object they wish to access in the callback method.</td></tr></tbody></table>|
-|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. <br/>On success, the attachment identifier will be provided in the `asyncResult.value` property.<br/>If uploading the attachment fails, the `asyncResult` object will contain an `Error` object that provides a description of the error.<br/><table class="nested-table"><thead><tr><th>Error code</th><th>Description</th></tr></thead><tbody><tr><td><code>AttachmentSizeExceeded</code></td><td>The attachment is larger than allowed.</td></tr><tr><td><code>FileTypeNotSupported</code></td><td>The attachment has an extension that is not allowed.</td></tr><tr><td><code>NumberOfAttachmentsExceeded</code></td><td>The message or appointment has too many attachments.</td></tr></tbody></table>|
+|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. <br/>On success, the attachment identifier will be provided in the `asyncResult.value` property.<br/>If uploading the attachment fails, the `asyncResult` object will contain an `Error` object that provides a description of the error.|
+
+##### Errors
+
+| Error code | Description |
+|------------|-------------|
+| `AttachmentSizeExceeded` | The attachment is larger than allowed. |
+| `FileTypeNotSupported` | The attachment has an extension that is not allowed. |
+| `NumberOfAttachmentsExceeded` | The message or appointment has too many attachments. |
 
 ##### Requirements
 
@@ -792,8 +801,15 @@ If your Office add-in is running in Outlook Web App, the `addItemAttachmentAsync
 |---|---|---|---|
 |`itemId`| String||The Exchange identifier of the item to attach. The maximum length is 100 characters.|
 |`attachmentName`| String||The sujbect of the item to be attached. The maximum length is 255 characters.|
-|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Developers can provide any object they wish to access in the callback method.</td></tr></tbody></table>|
-|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. <br/>On success, the attachment identifier will be provided in the `asyncResult.value` property.<br/>If adding the attachment fails, the `asyncResult` object will contain an `Error` object that provides a description of the error.<br/><table class="nested-table"><thead><tr><th>Error code</th><th>Description</th></tr></thead><tbody><tr><td><code>NumberOfAttachmentsExceeded</code></td><td>The message or appointment has too many attachments.</td></tr></tbody></table>|
+|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. <br/>On success, the attachment identifier will be provided in the `asyncResult.value` property.<br/>If adding the attachment fails, the `asyncResult` object will contain an `Error` object that provides a description of the error.|
+
+##### Errors
+
+| Error code | Description |
+|------------|-------------|
+| `NumberOfAttachmentsExceeded` | The message or appointment has too many attachments. |
 
 ##### Requirements
 
@@ -859,7 +875,14 @@ When attachments are specified in the `formData.attachments` parameter, Outlook 
 
 |Name| Type| Description|
 |---|---|---|
-|`formData`| String &#124; Object|A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.<br/>**OR**<br/>An object that contains body or attachment data and a callback function. The object is defined as follows:<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>htmlBody</code></td><td>String</td><td>&lt;optional&gt;</td><td>A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</td></tr><tr><td><code>attachments</code></td><td>Array.&lt;Object&gt;</td><td>&lt;optional&gt;</td><td>An array of JSON objects that are either file or item attachments.<br/><br/><strong>Properties</strong><br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>String</td><td>Indicates the type of attachment. Must be <code>file</code> for a file attachment or <code>item</code> for an item attachment.</td></tr><tr><td><code>name</code></td><td>String</td><td>A string that contains the name of the attachment, up to 255 characters in length.</td></tr><tr><td><code>url</code></td><td>String</td><td>Only used if <code>type</code> is set to <code>file</code>. The URI of the location for the file.</td></tr><tr><td><code>itemId</code></td><td>String</td><td>Only used if <code>type</code> is set to <code>item</code>. The EWS item id of the attachment. This is a string up to 100 characters.</td></tr></tbody></table></td></tr><tr><td><code>callback</code></td><td>function</td><td>&lt;optional&gt;</td><td>When the method completes, the function passed in the <code>callback</code> parameter is called with a single parameter, <code>asyncResult</code>, which is an <a href="simple-types.md#asyncresult"><code>AsyncResult</code></a> object. For more information, see <a href="tutorial-asynchronous.html">Using asynchronous methods</a>.</td></tr></tbody></table>|
+|`formData`| String &#124; Object| |A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.<br/>**OR**<br/>An object that contains body or attachment data and a callback function. The object is defined as follows. |
+| `formData.htmlBody` | String | &lt;optional&gt; | A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.
+| `formData.attachments` | Array.&lt;Object&gt; | &lt;optional&gt; | An array of JSON objects that are either file or item attachments. |
+| `formData.attachments[].type` | String | | Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment. |
+| `formData.attachments[].name` | String | | A string that contains the name of the attachment, up to 255 characters in length.| 
+| `formData.attachments[].url` | String | | Only used if `type` is set to `file`. The URI of the location for the file. |
+| `formData.attachments[].itemId` | String | | Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters. |
+| `callback` | function | &lt;optional&gt; | When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](simple-types.md#asyncresult) object. |
 
 ##### Requirements
 
@@ -969,7 +992,14 @@ When attachments are specified in the `formData.attachments` parameter, Outlook 
 
 |Name| Type| Description|
 |---|---|---|
-|`formData`| String &#124; Object|A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.<br/>**OR**<br/>An object that contains body or attachment data and a callback function. The object is defined as follows:<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>htmlBody</code></td><td>String</td><td>&lt;optional&gt;</td><td>A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</td></tr><tr><td><code>attachments</code></td><td>Array.&lt;Object&gt;</td><td>&lt;optional&gt;</td><td>An array of JSON objects that are either file or item attachments.<br/><br/><strong>Properties</strong><br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>String</td><td>Indicates the type of attachment. Must be <code>file</code> for a file attachment or <code>item</code> for an item attachment.</td></tr><tr><td><code>name</code></td><td>String</td><td>Only used if <code>type</code> is set to <code>file</code>. A string that contains the name of the attachment, up to 255 characters in length.</td></tr><tr><td><code>url</code></td><td>String</td><td>Only used if <code>type</code> is set to <code>file</code>. The URI of the location for the file.</td></tr><tr><td><code>itemId</code></td><td>String</td><td>Only used if <code>type</code> is set to <code>item</code>. The EWS item id of the attachment. This is a string up to 100 characters.</td></tr></tbody></table></td></tr><tr><td><code>callback</code></td><td>function</td><td>&lt;optional&gt;</td><td>When the method completes, the function passed in the <code>callback</code> parameter is called with a single parameter, <code>asyncResult</code>, which is an <a href="simple-types.md#asyncresult"><code>AsyncResult</code></a> object. For more information, see <a href="tutorial-asynchronous.html">Using asynchronous methods</a>.</td></tr></tbody></table>|
+|`formData`| String &#124; Object| | A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.<br/>**OR**<br/>An object that contains body or attachment data and a callback function. The object is defined as follows. |
+| `formData.htmlBody` | String | &lt;optional&gt; | A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.
+| `formData.attachments` | Array.&lt;Object&gt; | &lt;optional&gt; | An array of JSON objects that are either file or item attachments. |
+| `formData.attachments[].type` | String | | Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment. |
+| `formData.attachments[].name` | String | | A string that contains the name of the attachment, up to 255 characters in length.| 
+| `formData.attachments[].url` | String | | Only used if `type` is set to `file`. The URI of the location for the file. |
+| `formData.attachments[].itemId` | String | | Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters. |
+| `callback` | function | &lt;optional&gt; | When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](simple-types.md#asyncresult) object. |
 
 ##### Requirements
 
@@ -1290,7 +1320,8 @@ If there is no selection but the cursor is in the body or subject, the method re
 |Name| Type| Attributes| Description|
 |---|---|---|---|
 |`coercionType`| [Office.CoercionType](Office.md#coerciontype-string)||Requests a format for the data. If Text, the method returns the plain text as a string , removing any HTML tags present. If HTML, the method returns the selected text, whether it is plaintext or HTML.|
-|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Developers can provide any object they wish to access in the callback method.</td></tr></tbody></table>|
+|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
 |`callback`| function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object.
 
 To access the selected data from the callback method, call `asyncResult.value.data`. To access the source property that the selection comes from, call `asyncResult.value.sourceProperty`, which will be either `body` or `subject`.|
@@ -1396,8 +1427,15 @@ The `removeAttachmentAsync` method removes the attachment with the specified ide
 |Name| Type| Attributes| Description|
 |---|---|---|---|
 |`attachmentId`| String||The identifier of the attachment to remove. The maximum length of the string is 100 characters.|
-|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Developers can provide any object they wish to access in the callback method.</td></tr></tbody></table>|
-|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. <br/>If removing the attachment fails, the `asyncResult.error` property will contain an error code with the reason for the failure.<br/><table class="nested-table"><thead><tr><th>Error code</th><th>Description</th></tr></thead><tbody><tr><td><code>InvalidAttachmentId</code></td><td>The attachment identifier does not exist.</td></tr></tbody></table>|
+|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. <br/>If removing the attachment fails, the `asyncResult.error` property will contain an error code with the reason for the failure.|
+
+##### Errors
+
+| Error code | Description |
+|------------|-------------|
+| `InvalidAttachmentId` | The attachment identifier does not exist. |
 
 ##### Requirements
 
@@ -1436,7 +1474,8 @@ Since appointments have no draft state, if `saveAsync` is called on an appointme
 
 |Name| Type| Attributes| Description|
 |---|---|---|---|
-|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Developers can provide any object they wish to access in the callback method.</td></tr></tbody></table>|
+|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.||
 |`callback`| function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object.
 
 On success, the item identifier is provided in the `asyncResult.value` property.|
@@ -1476,7 +1515,7 @@ Asynchronously inserts data into the body or subject of a message.
 |Name| Type| Attributes| Description|
 |---|---|---|---|
 |`data`| String||The data to be inserted. Data is not to exceed 1,000,000 characters. If more than 1,000,000 characters are passed in, an `ArgumentOutOfRange` exception is thrown.|
-|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Developers can provide any object they wish to access in the callback method.</td></tr><tr><td><code>coercionType</code></td><td><a href="Office.md#coerciontype-string">Office.CoercionType</a></td><td>&lt;optional&gt;</td><td>If <code>text</code>, the current style is applied in Outlook Web App and Outlook. If the field is an HTML editor, only the text data is inserted, even if the data is HTML.</td></tr></tbody></table><p>If <code>html</code> and the field supports HTML (the subject doesn&#39;t), the current style is applied in Outlook Web App and the default style is applied in Outlook. If the field is a text field, an <code>InvalidDataFormat</code> error is returned.</p><p>If <code>coercionType</code> is not set, the result depends on the field: if the field is HTML then HTML is used; if the field is text, then plain text is used.|</p>|
+|`options.coercionType`| [Office.CoercionType](Office.md)| &lt;optional&gt;|If `text`, the current style is applied in Outlook Web App and Outlook. If the field is an HTML editor, only the text data is inserted, even if the data is HTML.<br/><br/>If `html` and the field supports HTML (the subject doesn't), the current style is applied in Outlook Web App and the default style is applied in Outlook. If the field is a text field, an `InvalidDataFormat` error is returned.<br/><br/>If `coercionType` is not set, the result depends on the field: if the field is HTML then HTML is used; if the field is text, then plain text is used.|
 |`callback`| function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. |
 
 ##### Requirements
