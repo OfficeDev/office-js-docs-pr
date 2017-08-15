@@ -1,12 +1,12 @@
 # Scopes element
 
-Contains permissions to Microsoft Graph that the Add-in needs. This element is used by the Office Store to create a consent dialog. When a user installs the add-in from the store he or she is  prompted to grant the add-in the specified permissions to the user's Microsoft Graph data.
+Contains permissions to Microsoft Graph that the add-in needs. This element is used by the Office Store to create a consent dialog box. When users install the add-in from the Store, they are prompted to grant the add-in the specified permissions to the user's Microsoft Graph data.
 
 ## Child elements
 
 |  Element |  Type  |  Description  |
 |:-----|:-----|:-----|
-|  **Scope**                |  string     |   The name of a permission to Microsoft Graph; for example, "files.all.read". |
+|  **Scope**                |  string     |   The name of a permission to Microsoft Graph; for example, Files.Read.All. |
 
 
 ## Scopes example 
