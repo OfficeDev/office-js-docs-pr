@@ -8,7 +8,7 @@ Provides methods to get and set the location of a meeting in an Outlook add-in.
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.1|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose|
 
@@ -33,7 +33,7 @@ The location of the appointment is provided as a string in the `asyncResult.valu
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.1|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose|
 ####  setAsync(location, [options], [callback])
@@ -54,6 +54,6 @@ The `setAsync` method starts an asynchronous call to the Exchange server to set 
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.1|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose|
