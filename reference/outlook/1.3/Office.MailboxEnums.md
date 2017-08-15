@@ -8,7 +8,7 @@
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |Applicable Outlook mode| Compose or read|
 
 ### Members
@@ -34,7 +34,7 @@ AttachmentType
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |Applicable Outlook mode| Compose or read|
 #### EntityType :String
 
@@ -62,7 +62,7 @@ EntityType
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |Applicable Outlook mode| Compose or read|
 #### ItemNotificationMessageType :String
 
@@ -86,7 +86,7 @@ ItemNotificationMessageType
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.3|
 |Applicable Outlook mode| Compose or read|
 #### ItemType :String
 
@@ -109,7 +109,7 @@ ItemType
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |Applicable Outlook mode| Compose or read|
 #### RecipientType :String
 
@@ -134,7 +134,7 @@ RecipientType
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.1|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.1|
 |Applicable Outlook mode| Compose or read|
 #### ResponseType :String
 
@@ -160,7 +160,7 @@ ResponseType
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |Applicable Outlook mode| Compose or read|
 
 #### RestVersion :String
@@ -185,5 +185,5 @@ RestVersion
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.3|
 |Applicable Outlook mode| Compose or read|

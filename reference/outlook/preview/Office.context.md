@@ -10,7 +10,7 @@ The Office.context namespace provides shared interfaces that are used by add-ins
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |Applicable Outlook mode| Compose or read|
 
 ### Namespaces
@@ -33,7 +33,7 @@ The `displayLanguage` value reflects the current **Display Language** setting sp
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |Applicable Outlook mode| Compose or read|
 
 ##### Example
@@ -81,7 +81,7 @@ Using Office theme colors let's you coordinate the color scheme of your add-in w
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.3|
 |Applicable Outlook mode| Compose or read|
 
 ##### Example
@@ -113,6 +113,6 @@ The `RoamingSettings` object lets you store and access data for a mail add-in th
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Compose or read|
