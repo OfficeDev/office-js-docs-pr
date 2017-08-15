@@ -1,9 +1,9 @@
 # WebApplicationInfo element
 
-This element supports single sign-on (SSO) in Office Add-ins. It contains information for the add-in as both:
-- An OAuth 2.0 *resource* to which the Office host application may need permissions.
-- An OAuth 2.0 *client* that may need permissions to Microsoft Graph.
-. 
+Supports single sign-on (SSO) in Office Add-ins. This element contains information for the add-in as both:
+
+- An OAuth 2.0 *resource* to which the Office host application might need permissions.
+- An OAuth 2.0 *client* that might need permissions to Microsoft Graph. 
 
 **WebApplicationInfo** is a child element of the [VersionOverrides](./versionoverrides.md) element in the manifest.  
 
@@ -11,8 +11,8 @@ This element supports single sign-on (SSO) in Office Add-ins. It contains inform
 
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  **Id**    |  Yes   |  The **Application Id** of the add-in as registered in the Azure Active Directory v 2.0 endpoint.|
-|  **Resource**  |  Yes   |  Specifies the **Application ID URI** of the add-in as registered in the Azure Active Directory v 2.0 endpoint.| 
+|  **Id**    |  Yes   |  The **Application Id** of the add-in as registered in the Azure Active Directory (Azure AD) v2.0 endpoint.|
+|  **Resource**  |  Yes   |  Specifies the **Application ID URI** of the add-in as registered in the Azure AD v2.0 endpoint.| 
 |  [Scopes](./scopes.md)                |  No  |  Specifies the permissions that the add-in needs to Microsoft Graph.  |
 
 
