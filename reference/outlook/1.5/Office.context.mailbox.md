@@ -2,7 +2,7 @@
 
 # mailbox
 
-## [Office](Office.md)[.context](Office.context.md). mailbox
+### [Office](Office.md)[.context](Office.context.md). mailbox
 
 Provides access to the Outlook Add-in object model for Microsoft Outlook and Microsoft Outlook on the web.
 
@@ -10,7 +10,7 @@ Provides access to the Outlook Add-in object model for Microsoft Outlook and Mic
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Compose or read|
 
@@ -63,7 +63,7 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item#save
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
@@ -87,7 +87,7 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item#save
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.5 |
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.5 |
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
@@ -113,7 +113,7 @@ Currently the only supported event type is `Office.EventType.ItemChanged`, which
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.5 |
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.5 |
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem |
 |Applicable Outlook mode| Compose or read|
 
@@ -155,7 +155,7 @@ Item IDs retrieved via a REST API (such as the [Outlook Mail API](https://msdn.m
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.3|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Compose or read|
 
@@ -193,7 +193,7 @@ If the mail app is running in Outlook, the `convertToLocalClientTime` method wil
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
@@ -221,7 +221,7 @@ Item IDs retrieved via EWS or via the `itemId` property use a different format t
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.3|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Compose or read|
 
@@ -257,7 +257,7 @@ The `convertToUtcClientTime` method converts a dictionary containing a local dat
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
@@ -297,7 +297,7 @@ If the specified item identifier does not identify an existing appointment, a bl
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
@@ -331,7 +331,7 @@ Do not use the `displayMessageForm` with an `itemId` that represents an appointm
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
@@ -359,19 +359,27 @@ If any of the parameters exceed the specified size limits, or if an unknown para
 
 |Name| Type| Description|
 |---|---|---|
-|`parameters`| Object|A dictionary of parameters describing the new appointment.<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>requiredAttendees</code></td><td>Array.&lt;String&gt; &#124; Array.&lt;<a href="simple-types.md#emailaddressdetails">EmailAddressDetails</a>&gt;</td><td>An array of strings containing the email addresses or an array containing an <code>EmailAddressDetails</code> object for each of the required attendees for the appointment. The array is limited to a maximum of 100 entries.</td></tr><tr><td><code>optionalAttendees</code></td><td>Array.&lt;String&gt; &#124; Array.&lt;<a href="simple-types.md#emailaddressdetails">EmailAddressDetails</a>&gt;</td><td>An array of strings containing the email addresses or an array containing an EmailAddressDetails object for each of the optional attendees for the appointment. The array is limited to a maximum of 100 entries.</td></tr><tr><td><code>start</code></td><td>Date</td><td>A Date object specifying the start date and time of the appointment.</td></tr><tr><td><code>end</code></td><td>Date</td><td>A Date object specifying the end date and time of the appointment.</td></tr><tr><td><code>location</code></td><td>String</td><td>A string containing the location of the appointment. The string is limited to a maximum of 255 characters.</td></tr><tr><td><code>resources</code></td><td>Array.&lt;String&gt;</td><td>An array of strings containing the resources required for the appointment. The array is limited to a maximum of 100 entries.</td></tr><tr><td><code>subject</code></td><td>String</td><td>A string containing the subject of the appointment. The string is limited to a maximum of 255 characters.</td></tr><tr><td><code>body</code></td><td>String</td><td>The body of the appointment message. The body content is limited to a maximum size of 32 KB.</td></tr></tbody></table>|
+| `parameters` | Object | A dictionary of parameters describing the new appointment. |
+| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](simple-types.md#emailaddressdetails)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the required attendees for the appointment. The array is limited to a maximum of 100 entries. |
+| `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](simple-types.md#emailaddressdetails)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the optional attendees for the appointment. The array is limited to a maximum of 100 entries. |
+| `parameters.start` | Date | A `Date` object specifying the start date and time of the appointment. |
+| `parameters.end` | Date | A `Date` object specifying the end date and time of the appointment. |
+| `parameters.location` | String | A string containing the location of the appointment. The string is limited to a maximum of 255 characters. |
+| `parameters.resources` | Array.&lt;String&gt; | An array of strings containing the resources required for the appointment. The array is limited to a maximum of 100 entries. |
+| `parameters.subject` | String | A string containing the subject of the appointment. The string is limited to a maximum of 255 characters. |
+| `parameters.body` | String | The body of the appointment. The body content is limited to a maximum size of 32 KB. |
 
 ##### Requirements
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Read|
 
 ##### Example
 
-```
+```js
 var start = new Date();
 var end = new Date();
 end.setHours(start.getHours() + 1);
@@ -422,7 +430,7 @@ The add-in should use the `ewsUrl` property to determine the correct URL to use 
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.5 |
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.5 |
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose and read|
 
@@ -466,7 +474,7 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item#save
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.3|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose and read|
 
@@ -501,7 +509,7 @@ The token is provided as a string in the `asyncResult.value` property.|
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
@@ -529,7 +537,7 @@ You cannot request Folder Associated Items with the `makeEwsRequestAsync` method
 
 The XML request must specify UTF-8 encoding.
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 ```
 
@@ -541,7 +549,7 @@ Your add-in must have the **ReadWriteMailbox** permission to use the `makeEwsReq
 
 When you use the `makeEwsRequestAsync` method in mail apps running in Outlook versions earlier than version 15.0.4535.1004, you should set the encoding value to `ISO-8859-1`.
 
-```
+```xml
 <?xml version="1.0" encoding="iso-8859-1"?>
 ```
 
@@ -561,7 +569,7 @@ The XML result of the EWS call is provided as a string in the `asyncResult.value
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadWriteMailbox|
 |Applicable Outlook mode| Compose or read|
 
