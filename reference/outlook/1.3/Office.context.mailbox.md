@@ -2,7 +2,7 @@
 
 # mailbox
 
-## [Office](Office.md)[.context](Office.context.md). mailbox
+### [Office](Office.md)[.context](Office.context.md). mailbox
 
 Provides access to the Outlook Add-in object model for Microsoft Outlook and Microsoft Outlook on the web.
 
@@ -10,7 +10,7 @@ Provides access to the Outlook Add-in object model for Microsoft Outlook and Mic
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Compose or read|
 
@@ -44,7 +44,7 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item#save
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
@@ -69,7 +69,7 @@ Item IDs retrieved via a REST API (such as the [Outlook Mail API](https://msdn.m
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.3|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Compose or read|
 
@@ -107,7 +107,7 @@ If the mail app is running in Outlook, the `convertToLocalClientTime` method wil
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
@@ -135,7 +135,7 @@ Item IDs retrieved via EWS or via the `itemId` property use a different format t
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.3|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Compose or read|
 
@@ -171,7 +171,7 @@ The `convertToUtcClientTime` method converts a dictionary containing a local dat
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
@@ -211,7 +211,7 @@ If the specified item identifier does not identify an existing appointment, a bl
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
@@ -245,7 +245,7 @@ Do not use the `displayMessageForm` with an `itemId` that represents an appointm
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
@@ -279,7 +279,7 @@ If any of the parameters exceed the specified size limits, or if an unknown para
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Read|
 
@@ -326,7 +326,7 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item#save
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.3|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose and read|
 
@@ -361,7 +361,7 @@ The token is provided as a string in the `asyncResult.value` property.|
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
@@ -421,7 +421,7 @@ The XML result of the EWS call is provided as a string in the `asyncResult.value
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadWriteMailbox|
 |Applicable Outlook mode| Compose or read|
 

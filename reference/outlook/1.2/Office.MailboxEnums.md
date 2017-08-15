@@ -2,7 +2,7 @@
 
 # MailboxEnums
 
-## [Office](Office.md). MailboxEnums
+### [Office](Office.md). MailboxEnums
 
 ##### Requirements
 
