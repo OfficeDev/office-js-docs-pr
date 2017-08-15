@@ -16,7 +16,7 @@ Supports single sign-on (SSO) in Office Add-ins. This element contains informati
 |  [Scopes](./scopes.md)                |  No  |  Specifies the permissions that the add-in needs to Microsoft Graph.  |
 
 
-### WebApplicationInfo example
+## WebApplicationInfo example
 ```xml
 <OfficeApp>
 ...
