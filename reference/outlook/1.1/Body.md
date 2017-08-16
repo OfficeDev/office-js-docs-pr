@@ -22,7 +22,8 @@ Gets a value that indicates whether the content is in HTML or text format.
 
 |Name| Type| Attributes| Description|
 |---|---|---|---|
-|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Developers can provide any object they wish to access in the callback method.</td></tr></tbody></table>|
+|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
 |`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object.
 
 The content type is returned as one of the [CoercionType](Office.md#coerciontype-string) values in the `asyncResult.value` property.|
@@ -54,8 +55,16 @@ Office.context.mailbox.item.body.prependAsync(
 |Name| Type| Attributes| Description|
 |---|---|---|---|
 |`data`| String||The string to be inserted at the beginning of the body. The string is limited to 1,000,000 characters.|
-|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>coercionType</code></td><td><a href="Office.md#coerciontype-string">Office.CoercionType</a></td><td>&lt;optional&gt;</td><td>The desired format for the body. The string in the <code>data</code> parameter will be converted to this format.</td></tr><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Developers can provide any object they wish to access in the callback method.</td></tr></tbody></table>|
-|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. <br/>Any errors encountered will be provided in the `asyncResult.error` property.<br/><table class="nested-table"><thead><tr><th>Error code</th><th>Description</th></tr></thead><tbody><tr><td><code>DataExceedsMaximumSize</code></td><td>The <code>data</code> parameter is longer than 1,000,000 characters.</td></tr></tbody></table>|
+|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|`options.coercionType`| [Office.CoercionType](Office.md)| &lt;optional&gt;|The desired format for the body. The string in the `data` parameter will be converted to this format.|
+|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. <br/>Any errors encountered will be provided in the `asyncResult.error` property.|
+
+##### Errors
+
+| Error code | Description |
+|------------|-------------|
+| `DataExceedsMaximumSize` | The `data` parameter is longer than 1,000,000 characters. |
 
 ##### Requirements
 
@@ -84,8 +93,17 @@ Office.context.mailbox.item.body.setSelectedDataAsync(
 |Name| Type| Attributes| Description|
 |---|---|---|---|
 |`data`| String||The string to be inserted in the body. The string is limited to 1,000,000 characters.|
-|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>coercionType</code></td><td><a href="Office.md#coerciontype-string">Office.CoercionType</a></td><td>&lt;optional&gt;</td><td>The desired format for the body. The string in the <code>data</code> parameter will be converted to this format.</td></tr><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Developers can provide any object they wish to access in the callback method.</td></tr></tbody></table>|
-|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. <br/>Any errors encountered will be provided in the `asyncResult.error` property.<br/><table class="nested-table"><thead><tr><th>Error code</th><th>Description</th></tr></thead><tbody><tr><td><code>DataExceedsMaximumSize</code></td><td>The <code>data</code> parameter is longer than 1,000,000 characters.</td></tr><tr><td><code>InvalidFormatError</code></td><td>The body type is set to HTML and the data parameter contains plain text.</td></tr></tbody></table>|
+|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|`options.coercionType`| [Office.CoercionType](Office.md)| &lt;optional&gt;|The desired format for the body. The string in the `data` parameter will be converted to this format.|
+|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. <br/>Any errors encountered will be provided in the `asyncResult.error` property.|
+
+##### Errors
+
+| Error code | Description |
+|------------|-------------|
+| `DataExceedsMaximumSize` | The `data` parameter is longer than 1,000,000 characters. |
+| `InvalidFormatError` | The `options.coercionType` parameter is set to `Office.CoercionType.Html` and the message body is in plain text. |
 
 ##### Requirements
 

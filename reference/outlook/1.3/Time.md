@@ -22,7 +22,8 @@ Gets the start or end time of an appointment.
 
 |Name| Type| Attributes| Description|
 |---|---|---|---|
-|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Developers can provide any object they wish to access in the callback method.</td></tr></tbody></table>|
+|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
 |`callback`| function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object.
 
 The date and time is provided as a Date object in the `asyncResult.value` property. The value is in Coordinated Universal Time (UTC). You can convert the UTC time to the local client time by using the [`convertToLocalClientTime`](Office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttime) method.|
@@ -47,8 +48,15 @@ The time must be in UTC; you can get the correct UTC time by using the [`convert
 |Name| Type| Attributes| Description|
 |---|---|---|---|
 |`dateTime`| Date||A Date object in Coordinated Universal Time (UTC).|
-|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Developers can provide any object they wish to access in the callback method.</td></tr></tbody></table>|
-|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. <br/>If setting the date and time fails, the `asyncResult.error` property will contain an error code.<br/><table class="nested-table"><thead><tr><th>Error code</th><th>Description</th></tr></thead><tbody><tr><td><code>InvalidEndTime</code></td><td>The appointment end time is before the appointment start time.</td></tr></tbody></table>|
+|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. <br/>If setting the date and time fails, the `asyncResult.error` property will contain an error code.|
+
+##### Errors
+
+| Error code | Description |
+|------------|-------------|
+| `InvalidEndTime` | The appointment end time is before the appointment start time. |
 
 ##### Requirements
 
