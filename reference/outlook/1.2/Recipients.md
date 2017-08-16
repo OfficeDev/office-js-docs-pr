@@ -27,8 +27,15 @@ The `recipients` parameter can be an array of one of the following:
 |Name| Type| Attributes| Description|
 |---|---|---|---|
 |`recipients`| Array.&lt;(String&#124;[EmailUser](simple-types.md#emailuser)&#124;[EmailAddressDetails](simple-types.md#emailaddressdetails))&gt;||The recipients to add to the recipients list.|
-|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Developers can provide any object they wish to access in the callback method.</td></tr></tbody></table>|
-|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. <br/>If adding the recipients fails, the `asyncResult.error` property will contain an error code.<br/><table class="nested-table"><thead><tr><th>Error code</th><th>Description</th></tr></thead><tbody><tr><td>`NumberOfRecipientsExceeded</td><td>The number of recipients exceeded 100 entries.</td></tr></tbody></table>|
+|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. <br/>If adding the recipients fails, the `asyncResult.error` property will contain an error code.|
+
+##### Errors
+
+| Error code | Description |
+|------------|-------------|
+| `NumberOfRecipientsExceeded` | The number of recipients exceeded 100 entries. |
 
 ##### Requirements
 
@@ -71,7 +78,8 @@ Gets a recipient list for an appointment or message.
 
 |Name| Type| Attributes| Description|
 |---|---|---|---|
-|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Developers can provide any object they wish to access in the callback method.</td></tr></tbody></table>|
+|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
 |`callback`| function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object.
 
 When the call completes, the `asyncResult.value` property will contain an array of [`EmailAddressDetails`](simple-types.md#emailaddressdetails) objects.|
@@ -119,8 +127,15 @@ The `recipients` parameter can be an array of one of the following:
 |Name| Type| Attributes| Description|
 |---|---|---|---|
 |`recipients`| Array.&lt;(String&#124;[EmailUser](simple-types.md#emailuser)&#124;[EmailAddressDetails](simple-types.md#emailaddressdetails))&gt;||The recipients to add to the recipients list.|
-|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.<br/><br/>**Properties**<br/><table class="nested-table"><thead><tr><th>Name</th><th>Type</th><th>Attributes</th><th>Description</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Developers can provide any object they wish to access in the callback method.</td></tr></tbody></table>|
-|`callback`| function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. <br/>If setting the recipients fails the `asyncResult.error` property will contain a code that indicates any error that occurred while adding the data.<br/><table class="nested-table"><thead><tr><th>Error code</th><th>Description</th></tr></thead><tbody><tr><td>`NumberOfRecipientsExceeded</td><td>The number of recipients exceeded 100 entries.</td></tr></tbody></table>|
+|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|`callback`| function||When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. <br/>If setting the recipients fails the `asyncResult.error` property will contain a code that indicates any error that occurred while adding the data.|
+
+##### Errors
+
+| Error code | Description |
+|------------|-------------|
+| `NumberOfRecipientsExceeded` | The number of recipients exceeded 100 entries. |
 
 ##### Requirements
 
