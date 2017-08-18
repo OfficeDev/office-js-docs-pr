@@ -58,7 +58,9 @@
 			<Item text="OfficeMenu" url="manifest/officemenu" Scope="excel, word, powerpoint" SEODescription="Defines a collection of controls to be added to the Office context menu." />
 			<Item text="OfficeTab" url="manifest/officetab" Scope="excel, word, powerpoint, outlook" SEODescription="Specifies the pre-existing tab to use for an add-in command." />
 			<Item text="Resources" url="manifest/resources" Scope="excel, word, powerpoint, outlook" SEODescription="Contains icons, strings, and URLs for the VersionOverrides node." />
+			<Item text="Scopes" url="manifest/scopes" Scope="excel, word, powerpoint, outlook" SEODescription="Contains permissions to Microsoft Graph that the add-in needs. " />
 			<Item text="SuperTip" url="manifest/supertip" Scope="excel, word, powerpoint, outlook" SEODescription="Defines a rich tooltip (both Title and Description)." />
+			<Item text="WebApplicationInfo" url="manifest/webapplicationinfo" Scope="excel, word, powerpoint, outlook" SEODescription="Supports single sign-on (SSO) in Office Add-ins." />
 		</Item>
 	</Item>
 	<Item text="Word" url="word/word-add-ins-reference-overview" Scope="word" SEODescription="Provides an overview of the Word Javascript API.">
