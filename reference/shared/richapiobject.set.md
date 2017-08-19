@@ -1,7 +1,9 @@
 
 
-# Rich API object set method
-Sets multiple properties of an object at once by passing either another object of the same type or a JavaScript object with properties that are structured isomorphically to the properties of the object on which the method is called.
+# object.set method
+Sets multiple properties of an object at once by passing either another object of the same Office type or a JavaScript object with properties that are structured isomorphically to the properties of the object on which the method is called.
+
+> Note: This method is implemented only on the objects of the host-specific Office JavaScript APIs, such as the Word or Excel JavaScript APIs. The method is not supported on the Common APIs. For more information about the distinction, see [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)
 
 ## Method Details
 
@@ -12,7 +14,7 @@ If the `properties` parameter is a JavaScript object, then properties in the pas
 #### Syntax
 
 ```js
-someRichAPIObject.set(properties[, options]);
+object.set(properties[, options]);
 ```
 
 #### Parameters
