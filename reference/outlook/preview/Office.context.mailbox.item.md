@@ -1620,6 +1620,8 @@ The following is an example of the `result` parameter passed to the callback fun
 
 Asynchronously inserts data into the body or subject of a message.
 
+The `setSelectedDataAsync` method inserts the specified string at the cursor location in the subject or body of the item, or, if text is selected in the editor, it replaces the selected text. If the cursor is not in the body or subject field, an error is returned. After insertion, the cursor is placed at the end of the inserted content.
+
 ##### Parameters:
 
 |Name| Type| Attributes| Description|
