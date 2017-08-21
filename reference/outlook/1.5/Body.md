@@ -91,11 +91,12 @@ Gets a value that indicates whether the content is in HTML or text format.
 |[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose|
+
 ####  prependAsync(data, [options], [callback])
 
 Adds the specified content to the beginning of the item body.
 
-The `prependAsync` method inserts the specified string at the beginning of the item body. Calling the `prependAsync` method is the same as calling the [`setSelectedDataAsync`](#setselecteddataasyncdata-options-callback) method with the insertion point at the beginning of the body content.
+The `prependAsync` method inserts the specified string at the beginning of the item body. After insertion, the cursor is returned to it's original place, relative to the inserted content.
 
 When including links in HTML markup, you can disable online link preview by setting the `id` attribute on the anchor (`<a>`) to `LPNoLP`. For example:
 
@@ -129,11 +130,10 @@ Office.context.mailbox.item.body.prependAsync(
 |[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadWriteItem|
 |Applicable Outlook mode| Compose|
+
 ####  setAsync(data, [options], [callback])
 
 Replaces the entire body with the specified text.
-
-The `setAsync` method replaces the existing body of the item with the specified string or, if text is selected in the editor, it replaces the selected text.
 
 When working with HTML-formatted bodies, it is important to note that the `Body.getAsync` and `Body.setAsync` methods are not idempotent. The value returned from the `getAsync` method will not necessarily be exactly the same as the value that was passed in the `setAsync` method previously. The client may modify the value passed to `setAsync` in order to make it render efficiently with its rendering engine.
 
@@ -198,7 +198,7 @@ The following is an example of the `result` parameter passed to the callback fun
 
 Replaces the selection in the body with the specified text.
 
-The `setSelectedDataAsync` method inserts the specified string at the cursor location in the body of the item, or, if text is selected in the editor, it replaces the selected text. If the cursor was never in the body of the item, or if the body of the item lost focus in the UI, the string will be inserted at the top of the body content.
+The `setSelectedDataAsync` method inserts the specified string at the cursor location in the body of the item, or, if text is selected in the editor, it replaces the selected text. If the cursor was never in the body of the item, or if the body of the item lost focus in the UI, the string will be inserted at the top of the body content. After insertion, the cursor is placed at the end of the inserted content.
 
 When including links in HTML markup, you can disable online link preview by setting the `id` attribute on the anchor (`<a>`) to `LPNoLP`. For example:
 

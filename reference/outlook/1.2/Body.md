@@ -35,11 +35,12 @@ The content type is returned as one of the [CoercionType](Office.md#coerciontype
 |[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose|
+
 ####  prependAsync(data, [options], [callback])
 
 Adds the specified content to the beginning of the item body.
 
-The `prependAsync` method inserts the specified string at the beginning of the item body. Calling the `prependAsync` method is the same as calling the [`setSelectedDataAsync`](#setselecteddataasyncdata-options-callback) method with the insertion point at the beginning of the body content.
+The `prependAsync` method inserts the specified string at the beginning of the item body. After insertion, the cursor is returned to it's original place, relative to the inserted content.
 
 When including links in HTML markup, you can disable online link preview by setting the `id` attribute on the anchor (`<a>`) to `LPNoLP`. For example:
 
@@ -73,11 +74,12 @@ Office.context.mailbox.item.body.prependAsync(
 |[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.1|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadWriteItem|
 |Applicable Outlook mode| Compose|
+
 ####  setSelectedDataAsync(data, [options], [callback])
 
 Replaces the selection in the body with the specified text.
 
-The `setSelectedDataAsync` method inserts the specified string at the cursor location in the body of the item, or, if text is selected in the editor, it replaces the selected text. If the cursor was never in the body of the item, or if the body of the item lost focus in the UI, the string will be inserted at the top of the body content.
+The `setSelectedDataAsync` method inserts the specified string at the cursor location in the body of the item, or, if text is selected in the editor, it replaces the selected text. If the cursor was never in the body of the item, or if the body of the item lost focus in the UI, the string will be inserted at the top of the body content. After insertion, the cursor is placed at the end of the inserted content.
 
 When including links in HTML markup, you can disable online link preview by setting the `id` attribute on the anchor (`<a>`) to `LPNoLP`. For example:
 
