@@ -1,21 +1,34 @@
 
 # Office Add-ins platform overview
 
-Office Add-ins enable you to extend Office clients such as Word, Excel, PowerPoint, and Outlook using web technologies like HTML, CSS and JavaScript. 
+You can use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad.
 
-You can use Office Add-ins to: 
+Office Add-ins can do almost anything a webpage can do inside a browser. Use the Office Add-ins platform to:
 
 
--  **Add new functionality to Office clients** - For example, augment Word, Excel, PowerPoint, and Outlook by interacting with Office documents and mail items, bringing external data into Office, processing Office documents, exposing third-party functionality into Office clients, and much more. 
+-  **Add new functionality to Office clients** - Bring external data into Office, automate Office documents, expose third-party functionality in Office clients, and more.  For example, use Microsoft Graph API to connect to data that drives productivity. 
     
--  **Create new rich, interactive objects that can be embedded into Office documents** - For example, maps, charts, and interactive visualizations that users can add to their own Excel spreadsheets and PowerPoint presentations.
+-  **Create new rich, interactive objects that can be embedded in Office documents** - Embed maps, charts, and interactive visualizations that users can add to their own Excel spreadsheets and PowerPoint presentations. 
     
-**Office Add-ins run across multiple versions of Office** including Office for Windows Desktop, Office Online, Office for the Mac, and Office for the iPad.
+## How are Office Add-ins different than COM and VSTO add-ins? 
 
->**Note:** When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in **must work across all platforms** that support the methods that you define (for more information, see [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
+COM or VSTO add-ins are earlier Office integration solutions that run only on Office for Windows. Unlike COM add-ins, Office Add-ins don't involve code that runs on the user's device or in the Office client. For an Office Add-in, the host application, for example Excel, reads the add-in manifest and hooks up the add-in’s custom ribbon buttons and menu commands in the UI, then loads the JavaScript and HTML. This all executes in the context of a browser in a sandbox. 
 
+Office Add-ins provide the following advantages over add-ins built using VBA, COM or VSTO: 
 
-For a high-level view of where Office Add-ins are currently supported, see the [Office Add-in host and platform availability](http://dev.office.com/add-in-availability) page. 
+- Cross-platform support. Office Add-ins run in Office for Windows, Mac, iOS, and Office Online. 
+
+- Single sign on (SSO). Office Add-ins integrate easily with users' Office 365 accounts. 
+
+- Centralized deployment and distribution. Admins can deploy Office Add-ins centrally across an organization. 
+
+- Easy access via the Office Store. You can make your solution available to a broad audience by submitting it to the Office Store. 
+
+- Based on standard web technology. You can use any library you like to build Office Add-ins. 
+
+## Components of an Office Add-in 
+
+An Office Add-in includes two basic components: an XML manifest file, and your own web application. The manifest defines various settings, including how your add-in integrates with Office clients. Your web application needs to be hosted on a web server, or web hosting service, such as Microsoft Azure.
 
 ## What can an Office Add-in do?
 
