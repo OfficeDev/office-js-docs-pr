@@ -74,8 +74,6 @@ Custom UI and task panes are specified in the add-in manifest.  
 
 You can add custom ribbon buttons and menu items to the ribbon in Office for Windows Desktop and Office Online. This makes it easy for users to access your add-in directly from their Office application. Command buttons can launch different actions such as showing a task pane with custom HTML or executing a JavaScript function.  
 
-We recommend that you [watch this Channel9 video](https://channel9.msdn.com/events/Build/2016/P551) for a deeper overview of this feature. 
-
 **Add-in commands running in Excel Desktop**
 ![Custom buttons and menu commands](../../images/add-in-commands-overview..png)
 
@@ -109,8 +107,6 @@ For an overview of Outlook add-ins, see [Outlook add-ins overview](https://docs.
 ## Office JavaScript APIs 
 
 The Office JavaScript APIs contain objects and members for building add-ins and interacting with Office content and web services. The Excel, Outlook, Word, PowerPoint, OneNote and Project JavaScript APIs provide host-specific object models that you can use in an Office Add-in. These APIs provide access to well-known objects such as paragraphs and workbooks, which makes it easier to create an add-in for a specific host.  
-
-To learn more about these APIs, see [Understanding the JavaScript API for Office](../../docs/develop/understanding-the-javascript-api-for-office.md) and the [JavaScript API for Office](../../reference/javascript-api-for-office.md) reference.
 
 ## Next steps 
 
