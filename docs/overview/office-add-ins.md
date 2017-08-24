@@ -51,7 +51,7 @@ The most basic Office Add-in consists of a static HTML page that is displayed in
 
 ![Components of a Hello World add-in](../../images/DK2_AgaveOverview07.png)
 
-### Extending and interacting with Office clients 
+## Extending and interacting with Office clients 
 
 Office Add-ins can do the following within an Office host application: 
 
@@ -59,7 +59,7 @@ Office Add-ins can do the following within an Office host application: 
 
 -  Create new objects (Excel or PowerPoint) 
  
-## Extend Office functionality 
+### Extend Office functionality 
 
 You can add new functionality to Office applications via the following:  
 
@@ -69,7 +69,7 @@ You can add new functionality to Office applications via the following:  
 
 Custom UI and task panes are specified in the add-in manifest.  
 
-### Custom buttons and menu commands  
+#### Custom buttons and menu commands  
 
 You can add custom ribbon buttons and menu items to the ribbon in Office for Windows Desktop and Office Online. This makes it easy for users to access your add-in directly from their Office application. Command buttons can launch different actions such as showing a task pane with custom HTML or executing a JavaScript function.  
 
@@ -78,7 +78,7 @@ We recommend that you [watch this Channel9 video](https://channel9.msdn.com/even
 **Add-in commands running in Excel Desktop**
 ![Add-in commands in the ribbon](../../images/add-in-commands-overview.jpg)
 
-### Task panes  
+#### Task panes  
 
 You can use task panes in addition to add-in commands to enable users to interact with your solution. Clients that do not support add-in commands (Office 2013 and Office for iPad) will run your add-in as a task pane. Users launch task pane add-ins via the **My Add-ins** button on the Insert tab. 
 
@@ -123,7 +123,7 @@ To start planning solutions that create effective and compelling user experience
     
 - [API Reference](../../docs/develop/understanding-the-javascript-api-for-office.md)
 
-- [Office Add-in host and platform availability](https://dev.office.com/add-in-availability).
+- [Office Add-in host and platform availability](https://dev.office.com/add-in-availability)
 
 
     
