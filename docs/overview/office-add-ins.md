@@ -20,6 +20,7 @@ Office Add-ins provide the following advantages over add-ins built using VBA, CO
 
 - Single sign on (SSO). Office Add-ins integrate easily with users' Office 365 accounts. 
 
+
 - Centralized deployment and distribution. Admins can deploy Office Add-ins centrally across an organization. 
 
 - Easy access via the Office Store. You can make your solution available to a broad audience by submitting it to the Office Store. 
@@ -76,6 +77,7 @@ You can add custom ribbon buttons and menu items to the ribbon in Office for Win
 We recommend that you [watch this Channel9 video](https://channel9.msdn.com/events/Build/2016/P551) for a deeper overview of this feature. 
 
 **Add-in commands running in Excel Desktop**
+
 ![Add-in commands in the ribbon](../../images/add-in-commands-overview.jpg)
 
 #### Task panes  
