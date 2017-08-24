@@ -84,15 +84,7 @@ You can use task panes in addition to add-in commands to enable users to interac
 **Task pane**
 ![Task pane](../../images/task-pane-overview.jpg)
 
-### Create new objects in Office documents 
-
-You can embed web-based objects within Excel and PowerPoint documents – called content add-ins. With content add-ins, you can integrate rich, web-based data visualizations, media (such as a YouTube video player or a picture gallery), and other external content.
-
-**Content add-in**
-
-![In content add-in](../../images/DK2_AgaveOverview05.png)
-
-## Outlook add-ins that extend functionality 
+### Extend Outlook functionality 
 
 Outlook add-ins can extend the Office ribbon and also display contextually next to an Outlook item when you're viewing or composing it. They can work with an email message, meeting request, meeting response, meeting cancellation, or appointment when a user is viewing a received item or replying or creating a new item. 
 
@@ -100,9 +92,13 @@ Outlook add-ins can access contextual information from the item, such as address
 
 For an overview of Outlook add-ins, see [Outlook add-ins overview](https://docs.microsoft.com/en-us/outlook/add-ins/). 
 
-**Contextual Outlook add-in**
+### Create new objects in Office documents 
 
-![Contextual add-in](../../images/DK2_AgaveOverview06.png)
+You can embed web-based objects within Excel and PowerPoint documents – called content add-ins. With content add-ins, you can integrate rich, web-based data visualizations, media (such as a YouTube video player or a picture gallery), and other external content.
+
+**Content add-in**
+
+![In content add-in](../../images/DK2_AgaveOverview05.png)
 
 ## Office JavaScript APIs 
 
@@ -118,7 +114,7 @@ To start planning solutions that create effective and compelling user experience
 
 - [Office Add-in samples](https://dev.office.com/code-samples)
     
-- [API Reference](../../docs/develop/understanding-the-javascript-api-for-office.md)
+- [Understanding the JavaScript API for Office](../../docs/develop/understanding-the-javascript-api-for-office.md)
 
 - [Office Add-in host and platform availability](https://dev.office.com/add-in-availability)
 
