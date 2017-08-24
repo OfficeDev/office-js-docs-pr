@@ -77,8 +77,7 @@ You can add custom ribbon buttons and menu items to the ribbon in Office for Win
 We recommend that you [watch this Channel9 video](https://channel9.msdn.com/events/Build/2016/P551) for a deeper overview of this feature. 
 
 **Add-in commands running in Excel Desktop**
-
-![Add-in commands in the ribbon](../../images/add-in-commands-overview.png)
+![Custom buttons and menu commands](../../images/add-in-commands-overview..png)
 
 #### Task panes  
 
