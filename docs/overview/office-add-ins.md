@@ -78,7 +78,7 @@ We recommend that you [watch this Channel9 video](https://channel9.msdn.com/even
 
 **Add-in commands running in Excel Desktop**
 
-![Add-in commands in the ribbon](../../images/add-in-commands-overview.jpg)
+![Add-in commands in the ribbon](../../images/add-in-commands-overview.png)
 
 #### Task panes  
 
