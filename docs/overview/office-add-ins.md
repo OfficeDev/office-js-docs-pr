@@ -30,6 +30,50 @@ Office Add-ins provide the following advantages over add-ins built using VBA, CO
 
 An Office Add-in includes two basic components: an XML manifest file, and your own web application. The manifest defines various settings, including how your add-in integrates with Office clients. Your web application needs to be hosted on a web server, or web hosting service, such as Microsoft Azure.
 
+​**Manifest + webpage = an Office Add-in**
+![Manifest plus webpage equals Office Add-in](../../images/DK2_AgaveOverview01.png)
+
+### Manifest 
+
+The manifest is an XML file that specifies settings and capabilities of the add-in, such as: 
+
+- The add-in's display name, description, ID, version, and default locale. 
+
+- How the add-in integrates with Office.  
+
+- The permission level and data access requirements for the add-in. 
+
+### Web app 
+
+The most basic Office Add-in consists of a static HTML page that is displayed inside an Office application, but doesn't interact with either the Office document or any other Internet resource. However, to create an experience that interacts with Office documents or allows the user to interact with online resources from an Office host application, you can use any technologies, both client and server side, that your hosting provider supports (such as ASP.NET, PHP, or Node.js). To interact with Office clients and documents, you use the Office.js JavaScript APIs. 
+
+### Extending and interacting with Office clients 
+
+Office Add-ins can do the following within an Office host application: 
+
+-  Extend functionality (any Office application) 
+
+-  Create new objects (Excel or PowerPoint) 
+ 
+## Extend Office functionality 
+
+You can add new functionality to Office applications via the following:  
+
+-  Custom ribbon buttons and menu commands (collectively called “add-in commands”) 
+
+-  Insertable task panes 
+
+Custom UI and task panes are specified in the add-in manifest.  
+
+### Custom buttons and menu commands  
+
+You can add custom ribbon buttons and menu items to the ribbon in Office for Windows Desktop and Office Online. This makes it easy for users to access your add-in directly from their Office application. Command buttons can launch different actions such as showing a task pane with custom HTML or executing a JavaScript function.  
+
+We recommend that you [watch this Channel9 video](https://channel9.msdn.com/events/Build/2016/P551) for a deeper overview of this feature. 
+
+**Add-in commands running in Excel Desktop**
+![Add-in commands in the ribbon](../../images/add-in-commands.png)
+
 ## What can an Office Add-in do?
 
 An Office Add-in can do almost anything a webpage can do inside the browser, such as the following:
