@@ -5,7 +5,7 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 
 Add-in commands are UI elements that extend the Office UI and start actions in your add-in. You can use add-in commands to add a button on the ribbon or an item to a context menu. For more information, see [Add-in commands for Excel, Word, and PowerPoint](../../docs/design/add-in-commands.md). 
 
-The initial release of add-in commands doesn't have a corresponding requirement set (that is, there isn't an AddInCommands 1.0 requirement set). The following table lists the Office host applications that support the initial release version, and the build versions or number for those applications.  
+The initial release of add-in commands doesn't have a corresponding requirement set (that is, there isn't an AddinCommands 1.0 requirement set). The following table lists the Office host applications that support the initial release version, and the build versions or number for those applications.  
 
 | Release   |  Office 2013 for Windows | Office 2016 for Windows\*   |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  
 |:-----|-----|:-----|:-----|:-----|:-----|
@@ -17,7 +17,7 @@ The following table lists the add-in commands 1.1 requirement set, the Office ho
 
 |  Requirement set  |  Office 2013 for Windows | Office 2016 for Windows\*   |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  
 |:-----|-----|:-----|:-----|:-----|:-----|
-| AddInCommands 1.1  | N/A | Version 1705 (Build 8121.1000) or later | N/A | 15.34 or later| May 2017 | |
+| AddinCommands 1.1  | N/A | Version 1705 (Build 8121.1000) or later | N/A | 15.34 or later| May 2017 | |
 
 >**\*Note:** The build number for Office 2016 installed via MSI is 16.0.4266.1001. To use add-in commands, run Office update to get the latest version. 
 
