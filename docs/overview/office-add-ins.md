@@ -74,8 +74,6 @@ Custom UI and task panes are specified in the add-in manifest.  
 
 You can add custom ribbon buttons and menu items to the ribbon in Office for Windows Desktop and Office Online. This makes it easy for users to access your add-in directly from their Office application. Command buttons can launch different actions such as showing a task pane with custom HTML or executing a JavaScript function.  
 
-We recommend that you [watch this Channel9 video](https://channel9.msdn.com/events/Build/2016/P551) for a deeper overview of this feature. 
-
 **Add-in commands running in Excel Desktop**
 ![Custom buttons and menu commands](../../images/add-in-commands-overview..png)
 
@@ -86,6 +84,14 @@ You can use task panes in addition to add-in commands to enable users to interac
 **Task pane**
 ![Task pane](../../images/task-pane-overview.jpg)
 
+### Extend Outlook functionality 
+
+Outlook add-ins can extend the Office ribbon and also display contextually next to an Outlook item when you're viewing or composing it. They can work with an email message, meeting request, meeting response, meeting cancellation, or appointment when a user is viewing a received item or replying or creating a new item. 
+
+Outlook add-ins can access contextual information from the item, such as address or tracking ID, and then use that data to access additional information on the server and from web services to create compelling user experiences. In most cases, an Outlook add-in runs without modification on the various supporting host applications, including Outlook, Outlook for Mac, Outlook Web App, and Outlook Web App for devices, to provide a seamless experience on the desktop, web, and tablet and mobile devices. 
+
+For an overview of Outlook add-ins, see [Outlook add-ins overview](https://docs.microsoft.com/en-us/outlook/add-ins/). 
+
 ### Create new objects in Office documents 
 
 You can embed web-based objects within Excel and PowerPoint documents – called content add-ins. With content add-ins, you can integrate rich, web-based data visualizations, media (such as a YouTube video player or a picture gallery), and other external content.
@@ -94,23 +100,9 @@ You can embed web-based objects within Excel and PowerPoint documents – called
 
 ![In content add-in](../../images/DK2_AgaveOverview05.png)
 
-## Outlook add-ins that extend functionality 
-
-Outlook add-ins can extend the Office ribbon and also display contextually next to an Outlook item when you're viewing or composing it. They can work with an email message, meeting request, meeting response, meeting cancellation, or appointment when a user is viewing a received item or replying or creating a new item. 
-
-Outlook add-ins can access contextual information from the item, such as address or tracking ID, and then use that data to access additional information on the server and from web services to create compelling user experiences. In most cases, an Outlook add-in runs without modification on the various supporting host applications, including Outlook, Outlook for Mac, Outlook Web App, and Outlook Web App for devices, to provide a seamless experience on the desktop, web, and tablet and mobile devices. 
-
-For an overview of Outlook add-ins, see [Outlook add-ins overview](https://docs.microsoft.com/en-us/outlook/add-ins/). 
-
-**Contextual Outlook add-in**
-
-![Contextual add-in](../../images/DK2_AgaveOverview06.png)
-
 ## Office JavaScript APIs 
 
 The Office JavaScript APIs contain objects and members for building add-ins and interacting with Office content and web services. The Excel, Outlook, Word, PowerPoint, OneNote and Project JavaScript APIs provide host-specific object models that you can use in an Office Add-in. These APIs provide access to well-known objects such as paragraphs and workbooks, which makes it easier to create an add-in for a specific host.  
-
-To learn more about these APIs, see [Understanding the JavaScript API for Office](../../docs/develop/understanding-the-javascript-api-for-office.md) and the [JavaScript API for Office](../../reference/javascript-api-for-office.md) reference.
 
 ## Next steps 
 
