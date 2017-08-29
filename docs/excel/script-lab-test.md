@@ -23,14 +23,14 @@ In this way, we will add a Try it out button, which we recommend is associated w
 
 
 ## Embed script lab as an iframe
-In this mode, we will embed a snippet directly as an iframe into our documents. The width has been set to take 100% and we recommend you remove the fameborder of the iframe.  Height typically should be adjusted to match the snippet.
+In this mode, we will embed a snippet directly as an iframe into our documents. The width has been set 95% (based on width of all other snippets) and we recommend you remove the fameborder of the iframe.  Height typically should be adjusted to match the snippet.
 
 **Demo:**
-<iframe src="https://bornholm-edge.azurewebsites.net/#/view/gist/excel/0cc24cee687141d1c2726c0feea70911" height="600px" width="100%" frameborder="0"></iframe>
+<iframe src="https://bornholm-edge.azurewebsites.net/#/view/gist/excel/0cc24cee687141d1c2726c0feea70911" height="600px" width="95%" frameborder="0"></iframe>
 
 **Code:**
 ```html
-<iframe src="https://bornholm-edge.azurewebsites.net/#/view/gist/excel/0cc24cee687141d1c2726c0feea70911" height="600px" width="100%" frameborder="0"></iframe>
+<iframe src="https://bornholm-edge.azurewebsites.net/#/view/gist/excel/0cc24cee687141d1c2726c0feea70911" height="600px" width="95%" frameborder="0"></iframe>
 ```
 
 ## Testing Considerations
