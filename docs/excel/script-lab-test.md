@@ -12,12 +12,12 @@ In this way, we will add a Try it out button, which we recommend is associated w
 
 **Demo:**
 
-<a href="https://dev.microsoft.com" class="ms-Button" aria-label="Open this snippet in Script Lab, an Office Add-in">Try it out</a>
+<a href="https://bornholm-edge.azurewebsites.net/#/view/gist/excel/0cc24cee687141d1c2726c0feea70911" class="ms-Button" aria-label="Open this snippet in Script Lab, an Office Add-in">Try it out</a>
 
 
 **Code:**
 ```html
-<a href="add link to protocal handler or 'online' scriptlab version if available" class="ms-Button" aria-label="Open this snippet in Script Lab, an Office Add-in">Try it out</a>
+<a href="ahttps://bornholm-edge.azurewebsites.net/#/view/gist/excel/0cc24cee687141d1c2726c0feea70911" class="ms-Button" aria-label="Open this snippet in Script Lab, an Office Add-in">Try it out</a>
 ```
 
 
