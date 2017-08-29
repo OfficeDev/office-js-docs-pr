@@ -17,7 +17,7 @@ In this way, we will add a Try it out button, which we recommend is associated w
 
 **Code:**
 ```html
-<a href="<add link to protocal handler or 'online' scriptlab version if available" class="ms-Button" aria-label="Open this snippet in Script Lab, an Office Add-in">Try it out</a>
+<a href="add link to protocal handler or 'online' scriptlab version if available" class="ms-Button" aria-label="Open this snippet in Script Lab, an Office Add-in">Try it out</a>
 ```
 
 
