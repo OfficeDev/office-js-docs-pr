@@ -233,7 +233,7 @@ In addition to general platform and system errors, three errors are specific to 
 |:-----|:-----|
 |12004|The domain of the URL passed to `displayDialogAsync` is not trusted. The domain must be the same domain as the host page (including protocol and port number).|
 |12005|The URL passed to `displayDialogAsync` uses the HTTP protocol. HTTPS is required. (In some versions of Office, the error message returned with 12005 is the same one returned for 12004.)|
-|12007|A dialog box is already opened from this host window. A host window, such as a task pane, can only have one dialog box open at a time.|
+|<span id="12007">12007</span>|A dialog box is already opened from this host window. A host window, such as a task pane, can only have one dialog box open at a time.|
 
 When `displayDialogAsync` is called, it always passes an [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object to its callback function. When the call is successful - that is, the dialog window is opened - the `value` property of the `AsyncResult` object is a [Dialog](https://dev.office.com/reference/add-ins/shared/officeui.dialog) object. An example of this is in the section [Sending information from the dialog to the host page](#sending-information-from-the-dialog-to-the-host-page). When the call to `displayDialogAsync` fails, the window is not created, the `status` property of the `AsyncResult` object is set to "failed", and the `error` property of the object is populated. You should always have a callback that tests the `status` and responds when it's an error. The following is an example that simply reports the error message regardless of its code number. 
 
