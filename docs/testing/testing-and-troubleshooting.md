@@ -78,6 +78,18 @@ This issue occurs when the Dialog API is used in pop-up mode. To prevent this is
 Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callback);
 ```
 
+## Changes to add-in commands including ribbon buttons and menu items do not take effect
+Sometimes changes to add-in commands such as the icon for a ribbon button or the text of a menu item do not seem to take effect. Clear the Office cache of the old versions.
+
+#### For Windows:
+Delete the content of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
+
+#### For Mac:
+Delete the content of the folder `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
+
+#### For iOS:
+Call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, you can reinstall Office.
+
 ## Additional resources
 
 - [Debug add-ins in Office Online](../testing/debug-add-ins-in-office-online.md) 
