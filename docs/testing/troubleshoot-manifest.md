@@ -83,6 +83,19 @@ You might see messages in the log file that are confusing or that are classified
 - If you see the message `Unexpected	Add-in is missing required manifest fields	DisplayName` and it doesn't contain a SolutionId, the error is most likely not related to the add-in you are debugging. 
 - Any `Monitorable` messages are expected errors from a system point of view. Sometimes they indicate an issue with your manifest, such as a misspelled element that was skipped but didn't cause the manifest to fail. 
 
+## Clear the Office cache
+
+If changes you've made in the manifest, such as filenames of ribbon button icons, or text of add-in commands, do not seem to take effect, try clearing the Office cache on your computer. 
+
+#### For Windows:
+Delete the content of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
+
+#### For Mac:
+Delete the content of the folder `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
+
+#### For iOS:
+Call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, you can reinstall Office.
+
 ## Additional resources
 
 - [Office Add-ins XML manifest](../overview/add-in-manifests.md)
