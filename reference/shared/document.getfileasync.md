@@ -19,11 +19,20 @@ Office.context.document.getFileAsync(fileType [, options], callback);
 
 |**Name**|**Type**|**Description**|**Support notes**|
 |:-----|:-----|:-----|:-----|
-| _fileType_|[FileType](../../reference/shared/filetype-enumeration.md)|Specifies the format in which the file will be returned. Required.<br/><table><tr><th>Host</th><th>Supported fileType</th></tr><tr><td>Excel Online, Win32, Mac and iOS</td><td>Office.FileType.Compressed</td></tr><tr><td>PowerPoint on Windows desktop, Mac, and iPad and PowerPoint Online</td><td>Office.FileType.Compressed, Office.FileType.Pdf</td></tr><tr><td>Word on Windows desktop, Word on Mac and Word Online</td><td>Office.FileType.Compressed, Office.FileType.Pdf, Office.FileType.Text</td></tr><tr><td>Word on iPad</td><td>Office.FileType.Compressed, Office.FileType.Text</td></tr></table>|**Changed in** 1.1, see [Support history](#support-history)|
+| _fileType_|[FileType](../../reference/shared/filetype-enumeration.md)|Specifies the format in which the file will be returned. Required.<br/>|**Changed in** 1.1, see [Support history](#support-history)|
 | _options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)||
 | _sliceSize_|**number**|Specifies the desired slice size (in bytes) up to 4194304 bytes (4MB). If not specified, a default slice size of 4194304 bytes (4MB) will be used. ||
 | _asyncContext_|**array**,  **boolean**,  **null**,  **number**,  **object**, **string**, or  **undefined**|A user-defined item of any type that is returned in the  **AsyncResult** object without being altered.||
 | _callback_|**object**|A function that is invoked when the callback returns, whose only parameter is of type  **AsyncResult**.||
+
+## fileType Value
+
+|**Host**|**Supported fileType**|
+|:-----|:-----|
+|Excel Online, Win32, Mac and iOS|Office.FileType.Compressed|
+|PowerPoint on Windows desktop, Mac, and iPad and PowerPoint Online|Office.FileType.Compressed, Office.FileType.Pdf|
+|Word on Windows desktop, Word on Mac and Word Online|Office.FileType.Compressed, Office.FileType.Pdf, Office.FileType.Text|
+Word on iPad|Office.FileType.Compressed, Office.FileType.Text|
 
 ## Callback Value
 
