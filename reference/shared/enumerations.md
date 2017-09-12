@@ -59,8 +59,8 @@ Office.context.document.getSelectedDataAsync("text", {valueFormat:"unformatted",
 |[EntityType](http://msdn.microsoft.com/library/0035be38-8a65-4693-bcc4-0a8dd7b1495b%28Office.15%29.aspx)|Specifies an entity's type.|
 |[EventType](eventtype-enumeration.md)|Specifies the kind of event that was raised.|
 |[FileType](filetype-enumeration.md)|Specifies the format in which to return the document.|
-|[GoToType](gototype-enumeration.md)|Specifies the type of place or object to navigate to.|
 |[FilterType](filtertype-enumeration.md)|Specifies whether filtering from the host application is applied when the data is retrieved.|
+|[GoToType](gototype-enumeration.md)|Specifies the type of place or object to navigate to.|
 |[InitializationReason](initializationreason-enumeration.md)|Specifies whether the add-in was just inserted or was already contained in the document.|
 |[ItemType](http://msdn.microsoft.com/library/e0bb23fd-f360-4b0f-b72c-1cf08d4cab3f%28Office.15%29.aspx)|Specifies an item's type.|
 |[notificationMessageType](http://msdn.microsoft.com/library/ff00c89d-0019-4545-a95b-7ed0db712ce9%28Office.15%29.aspx)|Specifies the notification message for an appointment or message.|
