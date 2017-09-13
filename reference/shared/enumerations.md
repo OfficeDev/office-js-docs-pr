@@ -61,9 +61,11 @@ Office.context.document.getSelectedDataAsync("text", {valueFormat:"unformatted",
 |[FileType](filetype-enumeration.md)|Specifies the format in which to return the document.|
 |[FilterType](filtertype-enumeration.md)|Specifies whether filtering from the host application is applied when the data is retrieved.|
 |[GoToType](gototype-enumeration.md)|Specifies the type of place or object to navigate to.|
+|[HostType](hosttype-enumeration.md)|pecifies the host Office application in which the add-in is running.|
 |[InitializationReason](initializationreason-enumeration.md)|Specifies whether the add-in was just inserted or was already contained in the document.|
 |[ItemType](http://msdn.microsoft.com/library/e0bb23fd-f360-4b0f-b72c-1cf08d4cab3f%28Office.15%29.aspx)|Specifies an item's type.|
 |[notificationMessageType](http://msdn.microsoft.com/library/ff00c89d-0019-4545-a95b-7ed0db712ce9%28Office.15%29.aspx)|Specifies the notification message for an appointment or message.|
+|[PlatformType](platformtype-enumeration.md)|Specifies the OS or other platform on which the Office host application is running.|
 |[ProjectProjectFields](projectprojectfields-enumeration.md)|Specifies the project fields that are available as a parameter for the [getProjectFieldAsync](projectdocument.getprojectfieldasync.md) method.|
 |[ProjectResourceFields](projectresourcefields-enumeration.md)|Specifies the resource fields that are available as a parameter for the [getResourceFieldAsync](projectdocument.gettaskfieldasync.md) method.|
 |[ProjectTaskFields](projecttaskfields-enumeration.md)|Specifies the task fields that are available as a parameter for the [getTaskFieldAsync](projectdocument.gettaskfieldasync.md) method.|
