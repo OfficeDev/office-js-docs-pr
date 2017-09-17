@@ -1,9 +1,9 @@
-# WebApplicationInfo element
+WebApplicationInfo element
 
-This element supports single sign-on (SSO) in Office Add-ins. It contains information for the add-in as both:
-- An OAuth 2.0 *resource* to which the Office host application may need permissions.
-- An OAuth 2.0 *client* that may need permissions to Microsoft Graph.
-. 
+Supports single sign-on (SSO) in Office Add-ins. This element contains information for the add-in as both:
+
+- An OAuth 2.0 *resource* to which the Office host application might need permissions.
+- An OAuth 2.0 *client* that might need permissions to Microsoft Graph. 
 
 **WebApplicationInfo** is a child element of the [VersionOverrides](./versionoverrides.md) element in the manifest.  
 
@@ -17,7 +17,7 @@ This element supports single sign-on (SSO) in Office Add-ins. It contains inform
 
 > Note: Currently, it's necessary that your add-in's Resource matches its Host. Office will not request a Token for an add-in unless it can prove ownership, and today this is done by hosting the add-in under the Resource's fully-qualified domain name.
 
-### WebApplicationInfo example
+## WebApplicationInfo example
 ```xml
 <OfficeApp>
 ...

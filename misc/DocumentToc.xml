@@ -49,7 +49,6 @@
   <Item text="Develop" url="develop">
 	<Item text="Add-in development lifecycle" url="develop/add-in-development-lifecycle" SEODescription="Plan the end-to-end process for developing task pane, content, and Outlook add-ins to extend Office applications." />
 	<Item text="Install the latest Office version" url="develop/install-latest-office-version" SEODescription="Find out how to opt in to get the latest builds of Office." />
-	<Item text="Understanding Office versions" url="develop/office-versions" />
 	<Item text="Develop add-ins for the iPad" url="develop/develop-office-add-ins-for-the-ipad"  SEODescription="Make your Office Add-ins available in Office for iPad." />
 	<Item text="Tips for creating add-ins with Angular" url="develop/add-ins-with-angular2" SEODescription="Use Angular 2 to develop Office Add-ins." />
   <Item text="Convert JavaScript to TypeScript" url="develop/convert-javascript-to-typescript" SEODescription="Use the Office Add-in JavaScript template in Visual Studio to create an add-in that uses TypeScript." />
@@ -66,7 +65,6 @@
 		<Item text="Update API and manifest version" url="develop/update-your-javascript-api-for-office-and-manifest-schema-version" SEODescription="Update the JavaScript files (Office.js and app-specific .js files) and the add-in manifest validation file used in your Office Add-in project to version 1.1." />		
 	</Item>	
 	<Item text="Office JavaScript API" url="develop/understanding-the-javascript-api-for-office" SEODescription="Understand the functional areas of the JavaScript API for Office, which is implemented in the Office.js file.">
-		<Item text="Office.js versions" url="develop/office-js-versioning" />
 		<Item text="Support for content and task pane add-ins" url="develop/support-for-task-pane-and-content-add-ins" SEODescription="Describes the different permission levels that you can declare in your content or task pane add-in's manifest to specify the level of JavaScript API access your add-in requires for its features." />
 		<Item text="Reference Office.js" url="develop/referencing-the-javascript-api-for-office-library-from-its-cdn" SEODescription="Reference the JavaScript API for Office library (Office.js and associated application-specific .js files) from its content delivery network (CDN) location." />
 		<Item text="Load Office.js" url="develop/loading-the-dom-and-runtime-environment" SEODescription="An add-in must ensure that both the DOM and the Office Add-ins runtime environment are loaded before running its own custom logic." />
@@ -77,7 +75,6 @@
 	<Item text="Address same origin policy limitations" url="develop/addressing-same-origin-policy-limitations" SEODescription="Provides a brief overview of ways to address the same-origin policy limitations that prevent a script loaded from one domain from getting or manipulating properties of a document from another domain in an Office Add-in." />
 	<Item text="Localization" url="develop/localization" SEODescription="Provide locale-specific content for an Office Add-in, including UI strings, add-in name, description, icon, source file, and date/time format." />
     <Item text="Performance" url="develop/resource-limits-and-performance-optimization" SEODescription="Apply resource usage limits to your Office Add-ins and optimize the performance of your add-in." />
-	<Item text="Implementation details" url="develop/implementation-details" />
   </Item>
   <Item text="Test and debug" url="testing">
     	<Item text="Sideload Office Add-ins for testing" url="testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins" SEODescription="Install an Office Add-in running on Windows for testing." Scope="Excel, Word, PowerPoint, Project, Access" />
@@ -114,6 +111,7 @@
 	<Item text="Format tables in add-ins for Excel" url="excel/format-tables-in-add-ins-for-excel" SEODescription="Specify formatting for tables in add-ins for Excel." Scope="excel" />
 	  <Item text="Read and write data to the active selection in a document or spreadsheet" url="develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet" SEODescription="Read and write data to the active selection in a document or spreadsheet." />	
 	  <Item text="Bind to regions in a document or spreadsheet" url="develop/bind-to-regions-in-a-document-or-spreadsheet"  Scope="excel" SEODescription="Bind to regions in a document or spreadsheet."/>
+		 <Item text="Coauthoring in Excel add-ins" url="excel/co-authoring-in-excel-add-ins"  Scope="excel" SEODescription="Learn about coauthoring in Excel and using add-ins."/>
 	</Item>
   
   <Item text="Outlook" url="https://docs.microsoft.com/outlook/add-ins/" IsExternal="true" Scope="outlook"/>

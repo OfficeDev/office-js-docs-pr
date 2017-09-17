@@ -167,7 +167,7 @@ You will create a simple web app and the app manifest in this section. The web a
     </OfficeApp>
 ```
 
-5- Generate a GUID and replace the value in the <code>OfficeApp/Id</code> element with your GUID.
+5- Generate a GUID and replace the value in the <code>OfficeApp/Id</code> element with your GUID. Many IDEs have a built in tool that generates GUIDs. In Visual Studio it is on the **Tools** menu. There are also many online tools for generating GUIDs. Just search for "Get GUID" or "Generate GUID".  
 
 6- Save all the files. You’ve now written your first Word add-in.
 
