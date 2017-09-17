@@ -49,9 +49,13 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. An **Application ID URI** has been generated of the form “api://{App ID GUID}”. Insert the string “localhost:44355/” between the double forward slashes and the GUID. The entire ID should read `api://localhost:44355/{App ID GUID}`. (The domain part of the **Scope** name just below the **Application ID URI** will automatically change to match. It should read `api://localhost:44355/{App ID GUID}/access_as_user`.)
 
-1. In the **Pre-authorized applications** section, there is an empty **Application ID** box. Enter the following ID in the box (this is the ID of Microsoft Office):  `d3590ed6-52b3-4102-aeff-aad2292ab01c`.
+1. In the **Pre-authorized applications** section, you identify the applications that you want to authorize to your add-in's web application. Each of the following IDs needs to be pre-authorized. Each time you enter one, a new empty textbox appears. (Enter only the GUID.)
 
-1. Open the **Scope** drop down beside the **Application ID** and check the box for `api://localhost:44355/{App ID GUID}/access_as_user`.
+ * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
+ * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office Online)
+ * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office Online) 
+
+1. Open the **Scope** drop down beside each **Application ID** and check the box for `api://localhost:44355/{App ID GUID}/access_as_user`.
 
 1. Near the top of the **Platforms** section, click **Add Platform** again and select **Web**.
 
@@ -61,10 +65,11 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Scroll down to the **Microsoft Graph Permissions** section, the **Delegated Permissions** subsection. Use the **Add** button to open a **Select Permissions** dialog.
 
-1. In the dialog box, check the boxes for the following permissions (some may already be checked by default). (Only the first is really required by your add-in itself; but the MSAL library that the server-side code uses requires the other two.) 
+1. In the dialog box, check the boxes for the following permissions (some may already be checked by default). (Only the first is really required by your add-in itself; but the MSAL library that the server-side code uses requires `offline_access` and `openid`. The `profile` permission is required for the Office host to get a token to your add-in web application.) 
  * Files.Read.All
  * offline_access
  * openid
+ * profile
 
 1. Click **OK** at the bottom of the dialog.
 
@@ -72,7 +77,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Grant admin consent to the add-in
 
-> **Note:** This procedure is only needed when you are developing the add-in. When your production add-in is deployed to the Office Store or an add-in catalog, users will individually trust it when they install it.
+> **Note:** This procedure is only needed when you are developing the add-in. When your production add-in is deployed to the Office Store or an add-in catalog, users will individually trust it or an admin will consent for organization at installation.
 
 1. If the add-in is not running in Visual Studio, press F5 to run it. It needs to be running in IIS for this procedure to complete smoothly. 
 
@@ -138,9 +143,10 @@ Here’s an example of what the four keys you changed should look like. (*Note t
       <Id>{application_GUID here}</Id>
       <Resource>api://localhost:44355/{application_GUID here}<Resource>
       <Scopes>
-          <Scope>openid</Scope>
+          <Scope>Files.Read.All</Scope>
           <Scope>offline_access</Scope>
-          <Scope>files.read.all</Scope>
+          <Scope>openid</Scope>
+          <Scope>profile</Scope>
       </Scopes>
     </WebApplicationInfo>
     ```
@@ -154,11 +160,11 @@ Here’s an example of what the four keys you changed should look like. (*Note t
 
 1. Open the **Warnings** tab of the **Error List** in Visual Studio. If there is a warning that `<WebApplicationInfo>` is not a valid child of `<VersionOverrides>`, then your version of Visual Studio 2017 Preview does not  recognize the SSO markup. You need to carry out the following workaround:
 
-   > 1. Cut (not Copy) the `<WebApplicationInfo>` section from the manifest and save this markup in a text file.
+   > 1. Comment out the `<WebApplicationInfo>` section from the manifest just above the end of `</VersionOverrides>`.
 
    > 2. Press F5 to start a debugging session. This will create a copy of the manifest in the following folder (which is easier to access in **File Explorer** than in Visual Studio): `Office-Add-in-ASP.NET-SSO\Complete\Office-Add-in-ASPNET-SSO\bin\Debug\OfficeAppManifests`
 
-   > 3. Open the copy of the manifest in a text editor and paste in the `<WebApplicationInfo>` section just above the end `</VersionOverrides>`. 
+   > 3. In the copy of the manifest, remove the comment syntax around the `<WebApplicationInfo>` section. 
 
    > 4. Save the copy of the manifest.
 
@@ -189,19 +195,23 @@ Here’s an example of what the four keys you changed should look like. (*Note t
     * The options parameter sets `forceConsent` to false, so the user will not be prompted to consent to giving the Office host access to your add-in.
 
     ```js
-    function getOneDriveItems() {
-    Office.context.auth.getAccessTokenAsync({ forceConsent: false },
-        function (result) {
-            if (result.status === "succeeded") {
-                // TODO1: Use the access token to get Microsoft Graph data.
-            }
-            else {
-                console.log("Code: " + result.error.code);
-                console.log("Message: " + result.error.message);
-                console.log("name: " + result.error.name);
-                document.getElementById("getGraphAccessTokenButton").disabled = true;
-            }
-        });
+    function getOneDriveFiles() {
+        getDataWithToken({ forceConsent: false });
+    }
+
+    function getDataWithToken(options) {
+        Office.context.auth.getAccessTokenAsync(options,
+            function (result) {
+                if (result.status === "succeeded") {
+                    TODO1: Use the access token to get Microsoft Graph data.
+                }
+                else {
+                    console.log("Code: " + result.error.code);
+                    console.log("Message: " + result.error.message);
+                    console.log("name: " + result.error.name);
+                    document.getElementById("getGraphAccessTokenButton").disabled = true;
+                }
+            });
     }
     ```
 
@@ -225,8 +235,25 @@ Here’s an example of what the four keys you changed should look like. (*Note t
             showResult(result);
         })
         .fail(function (result) {
-            console.log(result.error);
+            TODO2: Handle errors and the case where Microsoft Graph 
+                   requires additional form of authentication.
         });
+    }
+    ```
+
+1. Replace the TODO2 with the following lines. Note the following about this code:
+
+    * When the failure is because Microsoft Graph requires an additional form of authentication, the `exceptionMessage` will be a JSON string containing "capolids". In that case, the Office host needs to get a new token.  
+    * The exception message tells AAD to prompt the user for all required forms of authentication, so it must be passed to the Office host, which in turn passes it to AAD when it asks for a new token.
+    * The `authChallenge` option is the method of passing this string to the Office host.
+    * If the error is something other than a request for additional authentication, it is logged to the console.
+
+    ```js
+    var exceptionMessage = JSON.parse(result.responseText).ExceptionMessage;
+    if (exceptionMessage.indexOf("capolids") !== -1) {
+        getDataWithToken({ authChallenge: exceptionMessage });
+    } else {
+        console.log(result.error);
     }
     ```
 
@@ -274,13 +301,13 @@ Here’s an example of what the four keys you changed should look like. (*Note t
     ```
     public void ConfigureAuth(IAppBuilder app)
     {
-        // TODO2: Configure the validation settings
-        // TODO3: Specify the type of authorization and the discovery endpoint
+        // TODO3: Configure the validation settings
+        // TODO4: Specify the type of authorization and the discovery endpoint
         // of the secure token service.
     }
     ```
 
-1. Replace the TODO2 with the following. Note:
+1. Replace the TODO3 with the following. Note:
 
     * The code instructs OWIN to ensure that the audience and token issuer specified in the access token that comes from the Office host (and is passed on by the client-side call of `getData`) must match the values specified in the web.config.
     * Setting `SaveSigninToken` to `true` causes OWIN to save the raw token from the Office host. The add-in needs it to obtain an access token to Microsoft Graph with the “on behalf of” flow.
@@ -295,7 +322,7 @@ Here’s an example of what the four keys you changed should look like. (*Note t
         };
     ```
 
-1. Replace TODO3 with the following. Note:
+1. Replace TODO4 with the following. Note:
 
     * The method `UseOAuthBearerAuthentication` is called instead of the more common `UseWindowsAzureActiveDirectoryBearerAuthentication` because the latter is not compatible with the Azure AD V2 endpoint.
     * The discovery URL that is passed to the method is where the OWIN middleware obtains instructions for getting the key it needs to verify the signature on the access token received from the Office host.
@@ -317,12 +344,14 @@ Here’s an example of what the four keys you changed should look like. (*Note t
 
     ```
     using Microsoft.Identity.Client;
+    using System;
     using System.IdentityModel.Tokens;
     using System.Collections.Generic;
     using System.Configuration;
     using System.Linq;
     using System.Security.Claims;
     using System.Threading.Tasks;
+    using System.Web;
     using System.Web.Http;
     using Office_Add_in_ASPNET_SSO_WebAPI.Helpers;
     using Office_Add_in_ASPNET_SSO_WebAPI.Models;
@@ -336,58 +365,77 @@ Here’s an example of what the four keys you changed should look like. (*Note t
     // GET api/values
     public async Task<IEnumerable<string>> Get()
     {
-        // TODO4: Validate the scopes of the access token.
+        // TODO5: Validate the scopes of the access token.
     }
     ```
 
-1. Replace TODO4 with the following code to validate that the scopes that are specified in the token include `access_as_user`. 
+1. Replace TODO5 with the following code to validate that the scopes that are specified in the token include `access_as_user`. 
 
     ```
     string[] addinScopes = ClaimsPrincipal.Current.FindFirst("http://schemas.microsoft.com/identity/claims/scope").Value.Split(' ');
     if (addinScopes.Contains("access_as_user"))
     {
-        // TODO5: Get the raw token that the add-in page received from the Office host.
-        // TODO6: Get the access token for MS Graph.
-        // TODO7: Get the names of files and folders in OneDrive by using the Microsoft Graph API.
-        // TODO8: Remove excess information from the data and send the data to the client.
+        // TODO6: Assemble all the information that is needed to get a token for Microsoft Graph using the "on behalf of" flow.
+        // TODO7: Get the access token for Microsoft Graph.
+        // TODO8: Get the names of files and folders in OneDrive by using the Microsoft Graph API.
+        // TODO9: Remove excess information from the data and send the data to the client.
     }
     return new string[] { "Error", "Microsoft Office does not have permission to get Microsoft Graph data on behalf of the current user." };
     ```
 
-1. Replace TODO5 with the following code which turns the raw access token received from the Office host into a `UserAssertion` object that will be passed to another method.
+1. Replace TODO6 with the following code. Note:
+    * It turns the raw access token received from the Office host into a `UserAssertion` object that will be passed to another method.
+    * Your add-in is no longer playing the role of a resource (or audience) to which the Office host and user need access. Now it is itself a client that needs access to Microsoft Graph. `ConfidentialClientApplication` is the MSAL “client context” object. 
+    * The third parameter to the `ConfidentialClientApplication` constructor is a redirect URL which is not actually used in the “on behalf of” flow, but it is a good practice to use the correct URL. The fourth and fifth parameters can be used to define a persistent store that would enable the reuse of unexpired tokens across different sessions with the add-in. This sample does not implement any persistent storage.
+    * MSAL requires the `openid` and `offline_access` scopes to function, but it throws an error if your code redundantly requests them. It will also throw an error if your code requests `profile`, which is really only used when the Office host application gets the token to your add-in's web application. So only `Files.Read.All` is explicitly requested.
 
     ```
     var bootstrapContext = ClaimsPrincipal.Current.Identities.First().BootstrapContext as BootstrapContext;
     UserAssertion userAssertion = new UserAssertion(bootstrapContext.Token);
-    ```
-
-1. Replace TODO6 with the following code. Note:
-
-    * Your add-in is no longer playing the role of a resource (or audience) to which the Office host and user need access. Now it is itself a client that needs access to Microsoft Graph. `ConfidentialClientApplication` is the MSAL “client context” object. 
-    * The third parameter to the `ConfidentialClientApplication` constructor is a redirect URL which is not actually used in the “on behalf of” flow, but it is a good practice to use the correct URL. The fourth and fifth parameters can be used to define a persistent store that would enable the reuse of unexpired tokens across different sessions with the add-in. This sample does not implement any persistent storage.
-    * MSAL requires the `openid`, and `offline_access` scopes to function, but it throws an error if your code redundantly requests them, so only `Files.Read.All` is explicitly requested.
-    * The `ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync` method will first look in the MSAL cache, which is in memory, for a matching access token. Only if there isn't one, does it initiate the "on behalf of" flow with the Azure AD V2 endpoint.
-
-    ```
     ClientCredential clientCred = new ClientCredential(ConfigurationManager.AppSettings["ida:Password"]);
     ConfidentialClientApplication cca =
                     new ConfidentialClientApplication(ConfigurationManager.AppSettings["ida:ClientID"],
                                                       "https://localhost:44355", clientCred, null, null);
     string[] graphScopes = { "Files.Read.All" };
-    AuthenticationResult result = await cca.AcquireTokenOnBehalfOfAsync(graphScopes, userAssertion, "https://login.microsoftonline.com/common/oauth2/v2.0");
     ```
 
-1. Replace TODO7 with the following. Note:
+1. Replace TODO7 with the following code. Note:
+
+    * The `ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync` method will first look in the MSAL cache, which is in memory, for a matching access token. Only if there isn't one, does it initiate the "on behalf of" flow with the Azure AD V2 endpoint.
+    * If multi-factor authentication is required by the MS Graph resource and the user has not yet provided it, AAD will throw an exception containing a Claims property.
+    * The Claims property value must be passed to the client which will pass it to the Office host, which will then include it in a request for a new token. AAD will prompt the user for all required forms of authentication.
+    * Any exceptions that are not of type `MsalUiRequiredException` are intentionally not caught, so they will propagate to the client.
+
+    ```
+    AuthenticationResult result = null;
+    try
+    {
+        result = await cca.AcquireTokenOnBehalfOfAsync(graphScopes, userAssertion, "https://login.microsoftonline.com/common/oauth2/v2.0");
+    }
+    catch (MsalUiRequiredException e)
+    {        
+        if (String.IsNullOrEmpty(e.Claims))
+        {
+            throw e;
+        }
+        else
+        {
+            throw new HttpException(e.Claims);
+        }   
+    }
+    ```
+
+1. Replace TODO8 with the following. Note:
 
     * The `GraphApiHelper` and `ODataHelper` classes are defined in files in the **Helpers** folder. The `OneDriveItem` class is defined in a file in the **Models** folder. Detailed discussion of these classes is not relevant to authorization or SSO, so it is out-of-scope for this article.
-    * Performance is improved by asking Microsoft Graph for only the data actually needed, so the code uses a ` $select` query parameter to specify that we only want the name property, and a `$top` parameter to specify that we want only the first 3 folder of file names.
+    * Performance is improved by asking Microsoft Graph for only the data actually needed, so the code uses a ` $select` query parameter to specify that we only want the name property, and a `$top` parameter to specify that we want only the first 3 folder or file names.
 
     ```
     var fullOneDriveItemsUrl = GraphApiHelper.GetOneDriveItemNamesUrl("?$select=name&$top=3");
     var getFilesResult = await ODataHelper.GetItems<OneDriveItem>(fullOneDriveItemsUrl, result.AccessToken);
     ```
 
-1. Replace TODO8 with the following. Note that although the code above asked for only the *name* property of the OneDrive items, Microsoft Graph always includes the *eTag* property for OneDrive items. To reduce the payload sent to the client, the code below reconstructs the results with only the item names.
+1. Replace TODO9 with the following. Note that although the code above asked for only the *name* property of the OneDrive items, Microsoft Graph always includes the *eTag* property for OneDrive items. To reduce the payload sent to the client, the code below reconstructs the results with only the item names.
 
     ```
     List<string> itemNames = new List<string>();
@@ -400,7 +448,7 @@ Here’s an example of what the four keys you changed should look like. (*Note t
 
 ## Run the add-in
 
-1. Make sure you have some files in your OneDrive.
+1. Ensure that you have some files in your OneDrive so that you can verify the results.
 
 1. In Visual Studio, press F5. PowerPoint opens and there is an **SSO ASP.NET** group on the **Home** ribbon. 
 

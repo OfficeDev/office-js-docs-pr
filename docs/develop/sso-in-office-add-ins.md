@@ -10,7 +10,7 @@ Your add-in can use SSO to do the following - without requiring the user to sign
 * Authorize the add-in to access [Microsoft Graph](https://developer.microsoft.com/graph/docs). 
 
 >**Note:** 
-> The Single Sign-on API is currently supported for Word, Excel, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [SingleSignOn API requirement sets](../../reference/requirement-sets/singlesignon-api-requirement-sets.md). 
+> The Single Sign-on API is currently supported for Word, Excel, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets](../../reference/requirement-sets/identity-api-requirement-sets.md). 
 
 
 For users, this makes running your add-in a smooth experience that involves at most a one-time consent screen. For developers, this means that your add-in can authenticate users and gain authorized access to the user’s data via Microsoft Graph with credentials that the user has already provided to the Office application.
@@ -64,7 +64,7 @@ Add new markup to the add-in manifest:
 * **Id** - The client ID of the add-in.
 * **Resource** - The URL of the add-in.
 * **Scopes** - The the parent of one or more **Scope** elements.
-* **Scope** - Specifies a permission that the add-in needs to Microsoft Graph. For example, `User.Read`, `Mail.Read` or `offline_access`).
+* **Scope** - Specifies a permission that the add-in needs to Microsoft Graph. For example, `User.Read`, `Mail.Read` or `offline_access`). For more information, see [Microsoft Graph permissions](https://developer.microsoft.com/en-us/graph/docs/concepts/permissions_reference)
 
 For Office hosts other than Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` section. For Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_1">` section.
 

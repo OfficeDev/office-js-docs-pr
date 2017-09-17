@@ -6,7 +6,7 @@ The Office Auth namespace, Office.context.auth, provides a method that you can u
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[getAccessTokenAsync](office.context.auth.getAccessTokenAsync.md)|void|Calls the Azure Active Directory V 2.0 endpoint to get an access token to your add-in's web application for the Office host application. Server side code can then use this token to obtain access to Microsoft Graph for the add-in's web application by using the "on behalf of" OAuth flow.|
+|[getAccessTokenAsync](office.context.auth.getAccessTokenAsync.md)|void|Calls the Azure Active Directory V 2.0 endpoint to get an access token to your add-in's Web application. Allows add-ins to identify users. Server side code can use this token to access Microsoft Graph for the add-in's web application by using the ["on behalf of" OAuth flow](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of).|
 
 ##Examples
 For examples, see:

@@ -1,4 +1,4 @@
-# Office common and host-specific API requirement sets
+# Office common API requirement sets
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md).
 
@@ -6,14 +6,11 @@ For information about where add-ins are supported by Office host, see  [Office A
 
 >**Important:** We no longer recommend that you create and use Access web apps and databases in SharePoint. As an alternative, we recommend that you use [Microsoft PowerApps](https://powerapps.microsoft.com/) to build no-code business solutions for web and mobile devices.
 
-## Host-specific API requirement sets
-
-For information about Excel, Word, OneNote, Outlook, Dialog, and Single Sign-on API requirement sets, see:
-
-- [Excel JavaScript API requirement sets](excel-api-requirement-sets.md) (ExcelApi)
-- [Word JavaScript API requirement sets](word-api-requirement-sets.md) (WordApi)
-- [OneNote JavaScript API requirement sets](onenote-api-requirement-sets.md) (OneNoteApi)
-- [Understanding Outlook API requirement sets](../outlook/tutorial-api-requirement-sets.md) (MailBox)
+ > Note: Looking for the *host-specific* API requirement sets? See:
+ > - [Excel JavaScript API requirement sets](excel-api-requirement-sets.md) (ExcelApi)
+ > - [Word JavaScript API requirement sets](word-api-requirement-sets.md) (WordApi)
+ > - [OneNote JavaScript API requirement sets](onenote-api-requirement-sets.md) (OneNoteApi)
+ > - [Understanding Outlook API requirement sets](../outlook/tutorial-api-requirement-sets.md) (MailBox)
 
 ## Common API requirement sets
 
@@ -31,6 +28,7 @@ The following table lists the common API requirement sets, the methods in each s
 | DocumentEvents    | Excel<br>Excel Online<br>PowerPoint Online<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Document.addHandlerAsync<br>Document.removeHandlerAsync|
 | File  | PowerPoint<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad<br>PowerPoint Online|Document.getFileAsync<br>File.closeAsync<br>File.getSliceAsync|
 | HtmlCoercion  | Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Supports coercion to HTML (Office.CoercionType.Html) when reading and writing data using the Document.getSelectedDataAsync,<br>Document.setSelectedDataAsync, Binding.getDataAsync, or Binding.setDataAsync methods.|
+| IdentityAPI | For details see [Identity API requirement sets](identity-api-requirement-sets.md). | Auth.getAccessTokenAsync |
 | ImageCoercion | Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Supports conversion to an image (Office.CoercionType.Image) when writing data using the Document.setSelectedDataAsync method.|
 | Mailbox   |Outlook for Windows<br>Outlook for web<br>Outlook for Mac<br>Outlook Web App |See [Understanding Outlook API requirement sets](./outlook/tutorial-api-requirement-sets.md).|
 | MatrixBindings    | Excel<br>Excel Online<br>Word<br>Word Online|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncMatrix<br>Binding.getDataAsyncMatrix<br>Binding.setDataAsync|
@@ -40,7 +38,6 @@ The following table lists the common API requirement sets, the methods in each s
 | PdfFile   | PowerPoint<br/>PowerPoint Online<br/>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Supports output to PDF format (Office.FileType.Pdf)<br>when using the Document.getFileAsync method.|
 | Selection | Excel<br>Excel Online<br>PowerPoint<br>Project<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Document.getSelectedDataAsync<br>Document.setSelectedDataAsync|
 | Settings  | Access Web Apps<br>Excel<br>Excel Online<br>PowerPoint<br>PowerPoint Online<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Settings.get<br>Settings.remove<br>Settings.saveAsync<br>Settings.set|
-| SingleSignOn | For details see [Single Sign-on API requirement sets](singlesignon-api-requirement-sets.md). | Auth.getAccessTokenAsync |
 | TableBindings | Access Web Apps<br>Excel<br>Excel Online<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncTable<br>Binding.addColumnsAsyncTable<br>Binding.addRowsAsyncTable<br>Binding.deleteAllDataValuesAsyncTable<br>Binding.getDataAsyncTable<br>Binding.setDataAsync|
 | TableCoercion | Access Web Apps<br>Excel<br>Excel Online<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Supports coercion to the "table" data structure (Office.CoercionType.Table) when reading and writing data using the Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync, or Binding.setDataAsync methods.|
 | TextBindings  | Excel<br>Excel Online<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncText<br>Binding.getDataAsyncText<br>Binding.setDataAsync|

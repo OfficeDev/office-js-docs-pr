@@ -6,7 +6,7 @@ You can use the [Dialog API](../../reference/shared/officeui.md) to open dialog 
 
 > For information about where the Dialog API is currently supported, see [Dialog API requirement sets](../../reference/requirement-sets/dialog-api-requirement-sets.md). The Dialog API is currently supported for Word, Excel, PowerPoint, and Outlook.
 
-> A primary scenario for the Dialog APIs is to enable authentication with a resource such as Google or Facebook. If the resource is accessible through Microsoft Graph, such as Office 365 or OneDrive, we recommend that you use single sign-on system whenever you can. That system provides its own popup dialog, so you don't need the Dialog API. For details, see [Enable single sign-on for Office Add-ins](http://dev.office.com/docs/add-ins/develop/sso-in-office-add-ins).
+> A primary scenario for the Dialog APIs is to enable authentication with a resource such as Google or Facebook. If your add-in requires data about the Office user or their resources accessible through Microsoft Graph, such as Office 365 or OneDrive, we recommend that you use the single sign-on API whenever you can. If you use the APIs for single sign-on, then you will not need the Dialog API. For details, see [Enable single sign-on for Office Add-ins](http://dev.office.com/docs/add-ins/develop/sso-in-office-add-ins).
 
 You might want to open a dialog box from a task pane or content add-in or [add-in command](https://dev.office.com/docs/add-ins/design/add-in-commands) to: 
 

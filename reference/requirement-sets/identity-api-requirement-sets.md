@@ -1,5 +1,5 @@
 
-# SingleSignOn API requirement sets
+# Identity API requirement sets
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md).
 
@@ -7,9 +7,9 @@ Office Add-ins run across multiple versions of Office. The following table lists
 
 |  Requirement set  | Office 2013 for Windows | Office 2016 for Windows\*   |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|
-| SingleSignOn 1.1  | Build 15.0.????.1000 or later | Version 1708 (Build 6???.0000) or later | coming soon | 15.?? or later| August 2017 | coming soon|
+| IdentityAPI 1.1  | N/A | Version 1708 (Build 8528.1000) or later | coming soon | 15.nn or later| Available | coming soon|
 
->**\*Note:** The build number for Office 2016 installed via MSI is 16.0.4266.1001. In order to use the SingleSignOn API, please run Office update to get the latest version. 
+>**\*Note:** The build number for Office 2016 installed via MSI is 16.0.4266.1001. In order to use the Single Sign On API, please run Office update to get the latest version. 
 
 To find out more about versions, build numbers, and Office Online Server, see:
 
@@ -21,8 +21,8 @@ To find out more about versions, build numbers, and Office Online Server, see:
 ## Office common API requirement sets
 For information about common API requirement sets, see [Office common API requirement sets](office-add-in-requirement-sets.md).
 
-## SingleSignOn API 1.1 
-The SingleSignOn API 1.1 is the first version of the API. For details about the API, see the [getAccessTokenAsync](../shared/office.context.auth.getAccessTokenAsync.md) reference topic.
+## IdentityAPI 1.1 
+The Single Sign On IdentityAPI 1.1 is the first version of the API. For details about the API, see the [getAccessTokenAsync](../shared/office.context.auth.getAccessTokenAsync.md) reference topic.
 
 ## Additional resources
 
