@@ -22,6 +22,9 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. After the project opens, build it in Visual Studio, which will cause Visual Studio to install the packages listed in the packages.config file. This can take a few seconds to several minutes depending on how many of the packages are in the computer's local package cache.
 
+    > **Important!** The packages.config in the root of the web API project, specifies version `1.1.1-alpha0393` of Microsoft.Identity.Client, the MSAL library. You should verify that this version (or later) gets installed after you press F5 for the first time: On the **Tools** menu, navigate to **Nuget Package Manager** | **Manage Nuget Packages for Solution** | **Installed**. Scroll to **Microsoft.Identity.Client** to see the installed version. If it is earlier than `1.1.1-alpha0393` (or does not appear on the **Installed** list), then navigate to **Nuget Package Manager** | **Package Manager Console**. At the console run the command `Install-Package Microsoft.Identity.Client -Version 1.1.1-alpha0393 -Source https://www.myget.org/F/aad-clients-nightly/api/v3/index.json`.
+
+
 1. After the project has completely built, press F5. PowerPoint opens and there is an **SSO ASP.NET** group on the **Home** ribbon. 
 
 1. Press the **Show Add-in** button in this group to see the add-in’s UI in the task pane. The button in the task pane is not wired up yet. 
