@@ -15,7 +15,7 @@ Establishing a binding also allows you to subscribe to data and selection change
 The [Bindings] object exposes a [getAllAsync] method that gives access to the set of all bindings established on the document or spreadsheet. An individual binding can be accessed by its ID using either the Bindings.[getByIdAsync] or [Office.select] methods. You can establish new bindings as well as remove existing ones by using one of the following methods of the [Bindings] object: [addFromSelectionAsync], [addFromPromptAsync], [addFromNamedItemAsync], or [releaseByIdAsync].
 
 
-## Binding Types
+## Binding types
 
 There are [three different types of bindings][Office.BindingType] that you specify with the  _bindingType_ parameter when you create a binding with the [addFromSelectionAsync], [addFromPromptAsync] or [addFromNamedItemAsync] methods:
 
@@ -36,9 +36,7 @@ After a binding is created by using one of the three "addFrom" methods of the  `
 > **When should you use matrix versus table bindings?** 
 > When the tabular data you are working with contains a total row, you must use a matrix binding if your add-in's script needs to access values in the total row or detect that the user's selection is in the total row. If you establish a table binding for tabular data that contains a total row, the [TableBinding.rowCount] property and the `rowCount` and `startRow` properties of the [BindingSelectionChangedEventArgs] object in event handlers won't reflect the total row in their values. To work around this limitation, you must use establish a matrix binding to work with the total row.
 
-
-
-### Add a binding to the user's current selection
+## Add a binding to the user's current selection
 
 The following example shows how to add a text binding called  `myBinding` to the current selection in a document by using the [addFromSelectionAsync] method.
 
@@ -64,7 +62,7 @@ The second optional parameter is an object that specifies the ID of the new bind
 
 The anonymous function that is passed into the function as the final  _callback_ parameter is executed when the creation of the binding is complete. The function is called with a single parameter, `asyncResult`, which provides access to an [AsyncResult] object that provides the status of the call. The `AsyncResult.value` property contains a reference to a [Binding] object of the type that is specified for the newly created binding. You can use this [Binding] object to get and set data.
 
-### Add a binding from a prompt
+## Add a binding from a prompt
 
 The following example shows how to add a text binding called  `myBinding` by using the [addFromPromptAsync] method. This method lets the user specify the range for the binding by using the application's built-in range selection prompt.
 
@@ -100,7 +98,7 @@ Figure 1 shows the built-in range selection prompt in Excel.
 ![Excel Select Data UI](../../images/AgaveAPIOverview_ExcelSelectionUI.png)
 
 
-### Add a binding to a named item
+## Add a binding to a named item
 
 
 The following example shows how to add a binding to the existing  `myRange` named item as a "matrix" binding by using the [addFromNamedItemAsync] method, and assigns the binding's `id` as "myMatrix".
@@ -182,8 +180,7 @@ function write(message){
 }
 ```
 
-
-### Get all bindings
+## Get all bindings
 
 
 The following example shows how to get all bindings in a document by using the Bindings.[getAllAsync] method.
@@ -207,7 +204,7 @@ function write(message){
 The anonymous function that is passed into the function as the  `callback` parameter is executed when the operation is complete. The function is called with a single parameter, `asyncResult`, which contains an  array of the bindings in the document. The array is iterated to build a string that contains the IDs of the bindings. The string is then displayed in a message box.
 
 
-### Get a binding by ID using the getByIdAsync method of the Bindings object
+## Get a binding by ID using the getByIdAsync method of the Bindings object
 
 
 The following example shows how to use the [getByIdAsync] method to get a binding in a document by specifying its ID. This example assumes that a binding named `'myBinding'` was added to the document using one of the methods described earlier in this topic.
@@ -234,7 +231,7 @@ In the example, the first  `id` parameter is the ID of the binding to retrieve.
 The anonymous function that is passed into the function as the second  _callback_ parameter is executed when the operation is completed. The function is called with a single parameter, _asyncResult_, which contains the status of the call and the binding with the ID "myBinding".
 
 
-### Get a binding by ID using the select method of the Office object
+## Get a binding by ID using the select method of the Office object
 
 
 The following example shows how to use the [Office.select] method to get a [Binding] object promise in a document by specifying its ID in a selector string. It then calls the Binding.[getDataAsync] method to get data from the specified binding. This example assumes that a binding named `'myBinding'` was added to the document using one of the methods described earlier in this topic.
@@ -258,7 +255,7 @@ function write(message){
 
  > **Note:**  If the  `select` method promise successfully returns a [Binding] object, that object exposes only the following four methods of the object: [getDataAsync], [setDataAsync], [addHandlerAsync], and [removeHandlerAsync]. If the promise cannot return a  Binding object, the `onError` callback can be used to access an [asyncResult].error object to get more information.If you need to call a member of the Binding object other than the four methods exposed by the Binding object promise returned by the `select` method, instead use the [getByIdAsync] method by using the [Document.bindings] property and Bindings.[getByIdAsync] method to retrieve the Binding** object.
 
-### Release a binding by ID
+## Release a binding by ID
 
 
 The following example shows how use the [releaseByIdAsync] method to release a binding in a document by specifying its ID.
@@ -279,7 +276,7 @@ In the example, the first `id` parameter is the ID of the binding to release.
 The anonymous function that is passed into the function as the second parameter is a callback that is executed when the operation is complete. The function is called with a single parameter,  [asyncResult], which contains the status of the call.
 
 
-### Read data from a binding
+## Read data from a binding
 
 
 The following example shows how to use the [getDataAsync] method to get data from an existing binding.
@@ -310,7 +307,7 @@ Office.select("bindings#myBindingID").getDataAsync
 The anonymous function that is passed into the function is a callback that is executed when the operation is complete. The [AsyncResult].value property contains the data within `myBinding`. The type of the value depends on the binding type. The binding in this example is a text binding. Therefore, the value will contain a string. For additional examples of working with matrix and table bindings, see the [getDataAsync] method topic.
 
 
-### Write data to a binding
+## Write data to a binding
 
 The following example shows how to use the [setDataAsync] method to set data in an existing binding.
 
@@ -327,7 +324,7 @@ The anonymous function that is passed into the function is a callback that is ex
  > **Note:** Starting with the release of the Excel 2013 SP1 and the corresponding build of Excel Online, you can now [set formatting when writing and updating data in bound tables](../../docs/excel/format-tables-in-add-ins-for-excel.md).
 
 
-### Detect changes to data or the selection in a binding
+## Detect changes to data or the selection in a binding
 
 
 The following example shows how to attach an event handler to the [DataChanged](../../reference/shared/binding.bindingdatachangedevent.md) event of a binding with an id of "MyBinding".

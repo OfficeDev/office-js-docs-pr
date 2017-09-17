@@ -16,10 +16,8 @@ The autoopen feature is currently <!-- in **developer preview** and it is only -
 
 |**Products**|**Platforms**|
 |:-----------|:------------|
-|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|<ul><li>Office for Windows Desktop. Build 16.0.8121.1000+ (Insiders Fast)</li><li>Office for Mac. Build 15.34.17051500+ (Insiders Fast)</li><li>Office Online</li></ul>|
+|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|<ul><li>Office for Windows Desktop. Build 16.0.8121.1000+</li><li>Office for Mac. Build 15.34.17051500+</li><li>Office Online</li></ul>|
 
-
-<!-- >**Note:** For Windows and Mac, you need to be on **[Insiders Fast](https://products.office.com/en-us/office-insider?tab=tab-1)** and have updates turned on to have access to this feature during the preview. The feature won't work if you are not part of Insiders Fast, even if you have a more recent build. -->
 
 ## Best practices
 

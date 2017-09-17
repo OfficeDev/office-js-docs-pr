@@ -9,7 +9,7 @@ This article describes how to use the Excel JavaScript API to build add-ins for 
 The RequestContext object facilitates requests to the Excel application. Because the Office Add-in and the Excel application run in two different processes, request context is required to get access to Excel and related objects such as worksheets and tables, from the add-in. A request context is created as shown.
 
 ```js
-var ctx = new Excel.RequestContext();
+const ctx = new Excel.RequestContext();
 ```
 
 ## Proxy objects
@@ -19,14 +19,14 @@ The Excel JavaScript objects declared and used in an add-in are proxy objects fo
 For example, the local JavaScript object `selectedRange` is declared to reference the selected range. This can be used to queue the setting of its properties and invoking methods. The actions on such objects are not realized until the sync() method is run.
 
 ```js
-var selectedRange = ctx.workbook.getSelectedRange();
+const selectedRange = ctx.workbook.getSelectedRange();
 ```
 
 ## sync()
 
 The sync() method available on the request context synchronizes the state between JavaScript proxy objects and real objects in Excel by executing instructions queued on the context and retrieving properties of loaded Office objects for use in your code.  This method returns a promise, which is resolved when  synchronization is complete.
 
-## Excel.run(function(context) { batch })
+## Excel.run(function (context) { batch })
 
 Excel.run() executes a batch script that performs actions on the Excel object model. The batch commands include definitions of local JavaScript proxy objects and sync() methods that synchronize the state between local and Excel objects and promise resolution. The advantage of batching requests in Excel.run() is that when the promise is resolved, any tracked range objects that were allocated during the execution will be automatically released.
 
@@ -40,10 +40,10 @@ _Syntax:_
 
 ```js
 object.load(string: properties);
-//or
+// or
 object.load(array: properties);
-//or
-object.load({loadOption});
+// or
+object.load({ loadOption });
 ```
 Where:
 
@@ -58,30 +58,32 @@ The Excel.run() contains a batch of instructions. As part of this batch, a proxy
 
 ```js
 // Run a batch operation against the Excel object model. Use the context argument to get access to the Excel document.
-Excel.run(function (ctx) {
+Excel.run(ctx => {
+  // Create a proxy object for the sheet
+  const sheet = ctx.workbook.worksheets.getActiveWorksheet();
 
-	// Create a proxy object for the sheet
-	var sheet = ctx.workbook.worksheets.getActiveWorksheet();
-	// Values to be updated
-	var values = [
-				 ["Type", "Estimate"],
-				 ["Transportation", 1670]
-				 ];
-.	// Create a proxy object for the range
-	var range = sheet.getRange("A1:B2");
+  // Values to be updated
+  const values = [
+    ['Type', 'Estimate'],
+    ['Transportation', 1670]
+  ];
 
-	// Assign array value to the proxy object's values property.
-	range.values = values;
+  // Create a proxy object for the range
+  const range = sheet.getRange('A1:B2');
 
-	// Synchronizes the state between JavaScript proxy objects and real objects in Excel by executing instructions queued on the context
-	return ctx.sync().then(function() {
-			console.log("Done");
-	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+  // Assign array value to the proxy object's values property.
+  range.values = values;
+
+  // Synchronizes the state between JavaScript proxy objects and real objects in Excel by executing instructions queued on the context
+  return ctx.sync().then(() => {
+    console.log('Done');
+  });
+}).catch(error => {
+  console.log('error: ' + error);
+
+  if (error instanceof OfficeExtension.Error) {
+    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+  }
 });
 ```
 
@@ -90,24 +92,23 @@ Excel.run(function (ctx) {
 The following example shows how to copy the values from Range A1:A2 to B1:B2 of the active worksheet by using load() method on the range object.
 
 ```js
-// Run a batch operation against the Excel object model. Use the context argument to get access to the Excel document.
-Excel.run(function (ctx) {
+Excel.run(ctx => {
+  // Create a proxy object for the range and load the values property
+  const range = ctx.workbook.worksheets.getActiveWorksheet().getRange('A1:A2').load('values');
 
-	// Create a proxy object for the range and load the values property
-	var range = ctx.workbook.worksheets.getActiveWorksheet().getRange("A1:A2").load("values");
+  // Synchronizes the state between JavaScript proxy objects and real objects in Excel by executing instructions queued on the context
+  return ctx.sync().then(() => {
+    // Assign the previously loaded values to the new range proxy object. The values will be updated once the following .then() function is invoked.
+    ctx.workbook.worksheets.getActiveWorksheet().getRange('B1:B2').values = range.values;
+  });
+}).then(() => {
+  console.log('done');
+}).catch(error => {
+  console.log('Error: ' + error);
 
-	// Synchronizes the state between JavaScript proxy objects and real objects in Excel by executing instructions queued on the context
-	return ctx.sync().then(function() {
-		// Assign the previously loaded values to the new range proxy object. The values will be updated once the following .then() function is invoked.
-		ctx.workbook.worksheets.getActiveWorksheet().getRange("B1:B2").values = range.values;
-	});
-}).then(function() {
-	  console.log("done");
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+  if (error instanceof OfficeExtension.Error) {
+    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+  }
 });
 ```
 
@@ -122,7 +123,7 @@ By default, object.load() selects all scalar and complex properties of the objec
 object.load  ('<var1>,<relation1/var2>');
 
 // Pass the parameter as an array.
-object.load (["var1", "relation1/var2"]);
+object.load (['var1', 'relation1/var2']);
 ```
 
 ### Example
@@ -130,26 +131,28 @@ object.load (["var1", "relation1/var2"]);
 The following load statement loads all the properties of the Range, and then expands on the format and format/fill.
 
 ```js
-Excel.run(function (ctx) {
-	var sheetName = "Sheet1";
-	var rangeAddress = "A1:B2";
-	var myRange = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+Excel.run(ctx => {
+  const sheetName = 'Sheet1';
+  const rangeAddress = 'A1:B2';
+  const myRange = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 
-	myRange.load(["address", "format/*", "format/fill", "entireRow" ]);
-	return ctx.sync().then(function() {
-		console.log (myRange.address); //ok
-		console.log (myRange.format.wrapText); //ok
-		console.log (myRange.format.fill.color); //ok
-		//console.log (myRange.format.font.color); //not ok as it was not loaded
+  myRange.load(['address', 'format/*', 'format/fill', 'entireRow' ]);
 
-	});
-}).then(function() {
-	  console.log("done");
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+  return ctx.sync().then(() => {
+    console.log (myRange.address);              // ok
+    console.log (myRange.format.wrapText);      // ok
+    console.log (myRange.format.fill.color);    // ok
+    //console.log (myRange.format.font.color);  // not ok as it was not loaded
+
+  });
+}).then(() => {
+  console.log('done');
+}).catch(error => {
+  console.log('Error: ' + error);
+
+  if (error instanceof OfficeExtension.Error) {
+    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+  }
 });
 ```
 
@@ -164,22 +167,22 @@ Example: In order to only update specific parts of the Range, such as some cell'
 In the following set request, only some parts of the Range Number Format are set while retaining the existing Number Format on the remaining part (by passing nulls).
 
 ```js
-  range.values = [["Eurasia", "29.96", "0.25", "15-Feb" ]];
-  range.numberFormat = [[null, null, null, "m/d/yyyy;@"]];
+range.values = [['Eurasia', '29.96', '0.25', '15-Feb' ]];
+range.numberFormat = [[null, null, null, 'm/d/yyyy;@']];
 ```
+
 ### null input for a property
 
 `null` is not a valid single input for the entire property. For example, the following is not valid as the entire values cannot be set to null or ignored.
 
 ```js
- range.values= null;
-
+range.values= null;
 ```
 
 The following is not valid either as null is not a valid color value.
 
 ```js
- range.format.fill.color =  null;
+range.format.fill.color =  null;
 ```
 
 ### Null-Response
@@ -189,13 +192,13 @@ Representation of formatting properties that consists of non-uniform values woul
 Example: A Range can consist of one of more cells. In cases where the individual cells contained in the Range specified don't have uniform formatting values, the range level representation will be undefined.
 
 ```js
-  "size" : null,
-  "color" : null,
+size: null,
+color: null,
 ```
 
 ### Blank input and output
 
-Blank values in update requests are treated as instruction to clear or reset the respective property. Blank value is represented by two double quotation marks with no space in-between. `""`
+Blank values in update requests are treated as instruction to clear or reset the respective property. Blank value is represented by two quotation marks with no space in-between. `''`
 
 Example:
 
@@ -209,11 +212,11 @@ Example:
 For read operations, expect to receive blank values if the contents of the cells are blanks. If the cell contains no data or value, then the API returns a blank value. Blank value is represented by two double quotation marks with no space in-between. `""`.
 
 ```js
-  range.values = [["", "some", "data", "in", "other", "cells", ""]];
+range.values = [['', 'some', 'data', 'in', 'other', 'cells', '']];
 ```
 
 ```js
-  range.formula = [["", "", "=Rand()"]];
+range.formula = [['', '', '=Rand()']];
 ```
 
 ## Unbounded range
@@ -234,21 +237,17 @@ Setting cell level properties (such as values, numberFormat, etc.) on unbounded 
 Example: The following is not a valid update request because the requested range is unbounded.
 
 ```js
-...
-	var range = ctx.workbook.worksheets.getActiveWorksheet().getRange("A:B");
-	range.values = 'Due Date';
-...
+const range = ctx.workbook.worksheets.getActiveWorksheet().getRange('A:B');
+range.values = 'Due Date';
 ```
 
 When an update operation is attempted on such a Range, the API will return an error.
-
 
 ## Large range
 
 Large range implies a Range whose size is too large for a single API call. Many factors such as number of cells, values, numberFormat, and formulas contained in the range can make the response so large that it becomes unsuitable for API interaction. The API makes a best attempt to return or write to the requested data. However, the large size involved might result in an API error condition because of the large resource utilization.
 
-To avoid sthis, we recommend that you use read or write for large Range in multiple smaller range sizes.
-
+To avoid this, we recommend that you use read or write for large Range in multiple smaller range sizes.
 
 ## Single input copy
 
@@ -261,67 +260,76 @@ The API will look for a *single cell value* and, if the target range dimension d
 The following request updates the selected range with the text of "Due Date". Note that Range has 20 cells, whereas the provided input only has 1 cell value.
 
 ```js
-Excel.run(function (ctx) {
-	var sheetName = 'Sheet1';
-	var rangeAddress = 'A1:A20';
-	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
-	var range = worksheet.getRange(rangeAddress);
-	range.values = 'Due Date';
-	range.load('text');
-	return ctx.sync().then(function() {
-		console.log(range.text);
-	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+Excel.run(ctx => {
+  const sheetName = 'Sheet1';
+  const rangeAddress = 'A1:A20';
+  const worksheet = ctx.workbook.worksheets.getItem(sheetName);
+  
+  const range = worksheet.getRange(rangeAddress);
+  range.values = 'Due Date';
+  range.load('text');
+  
+  return ctx.sync().then(() => {
+    console.log(range.text);
+  });
+}).catch(error => {
+  console.log('Error: ' + error);
+  
+  if (error instanceof OfficeExtension.Error) {
+    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+  }
 });
 ```
 
 The following request updates the selected range with the date of '3/11/2015'.
 
 ```js
-Excel.run(function (ctx) {
-	var sheetName = 'Sheet1';
-	var rangeAddress = 'A1:A20';
-	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
-	var range = worksheet.getRange(rangeAddress);
-	range.numberFormat = 'm/d/yyyy';
-	range.values = '3/11/2015';
-	range.load('text');
-	return ctx.sync().then(function() {
-		console.log(range.text);
-	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+Excel.run(ctx => {
+  const sheetName = 'Sheet1';
+  const rangeAddress = 'A1:A20';
+  const worksheet = ctx.workbook.worksheets.getItem(sheetName);
+  
+  const range = worksheet.getRange(rangeAddress);
+  range.numberFormat = 'm/d/yyyy';
+  range.values = '3/11/2015';
+  range.load('text');
+
+  return ctx.sync().then(() => {
+    console.log(range.text);
+  });
+}).catch(error => {
+  console.log('Error: ' + error);
+  
+  if (error instanceof OfficeExtension.Error) {
+    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+  }
 });
 ```
+
 The following request updates the selected range with a formula that will be applied across the range in the CTRL+Enter mode.
 
 ```js
-Excel.run(function (ctx) {
-	var sheetName = 'Sheet1';
-	var rangeAddress = 'A1:A20';
-	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
-	var range = worksheet.getRange(rangeAddress);
-	range.numberFormat = 'm/d/yyyy';
-	range.values = '3/11/2015';
-	range.load('text');
-	return ctx.sync().then(function() {
-		console.log(range.text);
-	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+Excel.run(ctx => {
+  const sheetName = 'Sheet1';
+  const rangeAddress = 'A1:A20';
+  const worksheet = ctx.workbook.worksheets.getItem(sheetName);
+
+  const range = worksheet.getRange(rangeAddress);
+  range.numberFormat = 'm/d/yyyy';
+  range.values = '3/11/2015';
+  range.load('text');
+
+  return ctx.sync().then(() => {
+    console.log(range.text);
+  });
+}).catch(error => {
+  console.log('Error: ' + error);
+
+  if (error instanceof OfficeExtension.Error) {
+    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+  }
 });
 ```
-
 
 ## Error messages
 

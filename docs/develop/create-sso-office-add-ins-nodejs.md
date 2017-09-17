@@ -134,7 +134,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     >Note: 
     >
     >* The **Resource** value is the **Application ID URI** you set when you added the Web API platform to the registration of the add-in.
-    >* The **Scopes** section is used only to generate a consent dialog if the add-in is sold through the Office Store.
+    >* The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through the Office Store.
 
 1. Save and close the file.
 

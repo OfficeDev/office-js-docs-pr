@@ -8,7 +8,9 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Prerequisites
 
-* Visual Studio 2017 Preview. Get the latest version of the preview available. As of this writing, the latest version was not compatible with the add-in manifest markup that is required for SSO. Instructions about how to cope with this are below in the step where they might be needed.
+* The latest available version of Visual Studio 2017 Preview. 
+
+>**Note:** The latest version of Visual Studio 2017 Preview is not currently compatible with the add-in manifest markup that is required for SSO. Details about how to work around this are provided in the procedures that follow.
 
 * Office 2016, Version 1708, build 8424.nnnn or later (the Office 365 subscription version, sometimes called “Click to Run”). You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1).
 
@@ -121,7 +123,8 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 |ida:Password|TThe password you obtained when you registered the add-in.|
 
 
-Here’s an example of what the four keys you changed should look like. (*Note that ClientID and Audience are the same*. You could, of course, use a single key for both purposes, but your web.config markup will be more reusable if you keep them separate because they aren't always the same. Also, separate keys reinforce the idea that your add-in is both an OAuth resource - relative to the Office host - and an OAuth client - relative to Microsoft Graph.)
+The following is an example of what the four keys you changed should look like. (*Note that ClientID and Audience are the same*. You can also use a single key for both purposes, but your web.config markup will be more reusable if you keep them separate because they aren't always the same. Also, having separate keys reinforces the idea that your add-in is both an OAuth resource - relative to the Office host - and an OAuth client - relative to Microsoft Graph.)
+
 
     ```xml
     <add key=”ida:ClientID" value="12345678-1234-1234-1234-123456789012" />
@@ -159,9 +162,9 @@ Here’s an example of what the four keys you changed should look like. (*Note t
     >Note: 
     >
     >* The **Resource** value is the **Application ID URI** you set when you added the Web API platform to the registration of the add-in.
-    >* The **Scopes** section is used only to generate a consent dialog if the add-in is sold through the Office Store.
+    >* The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through the Office Store.
 
-1. Open the **Warnings** tab of the **Error List** in Visual Studio. If there is a warning that `<WebApplicationInfo>` is not a valid child of `<VersionOverrides>`, then your version of Visual Studio 2017 Preview does not  recognize the SSO markup. You need to carry out the following workaround:
+1. Open the **Warnings** tab of the **Error List** in Visual Studio. If there is a warning that `<WebApplicationInfo>` is not a valid child of `<VersionOverrides>`, your version of Visual Studio 2017 Preview does not  recognize the SSO markup. As a workaround, do the following:
 
    > 1. Comment out the `<WebApplicationInfo>` section from the manifest just above the end of `</VersionOverrides>`.
 
@@ -173,16 +176,16 @@ Here’s an example of what the four keys you changed should look like. (*Note t
 
    > 5. Now you must prevent Visual Studio from overwriting the copy of the manifest the next time you press F5. Right-click the solution node at the very top of **Solution Explorer** (not either of the project nodes).
 
-   > 6. Select **Properties** from the context menu and a **Solution Property Pages** dialog opens.
+   > 6. Select **Properties** from the context menu and a **Solution Property Pages** dialog box opens.
 
    > 7. Expand **Configuration Properties** and select **Configuration**.
 
    > 8. Deselect **Build** and **Deploy** in the row for the **Office-Add-in-ASPNET-SSO** project (*not* the **Office-Add-in-ASPNET-SSO-WebAPI** project).
 
-   > 9. Press **OK** to close the dialog.
+   > 9. Press **OK** to close the dialog box.
   
 
-1. Regardless of whether you needed the workaround, save and close the main manifest file in Visual Studio.
+1. Save and close the main manifest file in Visual Studio.
 
 ## Code the client side
 
@@ -459,7 +462,6 @@ Here’s an example of what the four keys you changed should look like. (*Note t
 
 1. Press the button **Get My Files from OneDrive**. If you are not signed into Office, you will be prompted to sign in.
     > **Note:** If you were previously signed on to Office with a different ID, and some Office applications that were open at the time are still open, Office may not reliably change your ID even if it appears to have done so in PowerPoint. If this happens, the call to Microsoft Graph may fail or data from the previous ID may be returned. To prevent this, be sure to *close all other Office applications* before you press **Get My Files from OneDrive**.
-
 
 1. After you are signed in, a list of your files and folders on OneDrive will appear below the button. This may take over 15 seconds, especially the first time. 
 

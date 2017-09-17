@@ -2,13 +2,13 @@
 
 # Office
 
-The Office namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office namespace, see the [Shared API](../shared/shared-api.md).
+The Office namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office namespace, see the [Shared API](../../reference/shared/office.md).
 
 ##### Requirements
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |Applicable Outlook mode| Compose or read|
 
 ### Namespaces
@@ -38,7 +38,7 @@ Specifies the result of an asynchronous call.
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |Applicable Outlook mode| Compose or read|
 
 ---
@@ -62,7 +62,7 @@ Specifies how to coerce data returned or set by the invoked method.
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |Applicable Outlook mode| Compose or read|
 
 ---
@@ -85,7 +85,7 @@ Specifies the event associated with an event handler.
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.5 |
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.5 |
 |Applicable Outlook mode| Compose or read |
 
 ---
@@ -109,5 +109,5 @@ Specifies the source of the data returned by the invoked method.
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.0|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |Applicable Outlook mode| Compose or read|

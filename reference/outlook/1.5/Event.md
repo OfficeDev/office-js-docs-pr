@@ -6,7 +6,7 @@ The `event` object is passed as a parameter to add-in functions invoked by UI-le
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.3|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Compose or read|
 
@@ -76,7 +76,7 @@ This value can be used when more than one button invokes the same function, but 
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.3|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Compose or read|
 
@@ -111,7 +111,7 @@ This method must be called at the end of a function which was invoked by an add-
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](./tutorial-api-requirement-sets.md)| 1.3|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.3|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Applicable Outlook mode| Compose or read|
 
