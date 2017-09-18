@@ -1,4 +1,4 @@
-# Enable single sign-on for Office Add-ins (preview)
+# Enable single sign-on for Office Add-ins
 
 You can take advantage of the fact that users can sign in to Office (online, mobile, and desktop platforms), which they can do with either their personal Microsoft account or their work or school (Office 365) account. 
 
@@ -9,7 +9,9 @@ Your add-in can use SSO to do the following - without requiring the user to sign
 * Authorize the user to your add-in.
 * Authorize the add-in to access [Microsoft Graph](https://developer.microsoft.com/graph/docs). 
 
->**Note:** This feature is currently in preview and is subject to change in future releases. For this preview, single sign-on is supported only for work or school (Office 365) accounts and only for desktop versions of Office. Also, for Outlook, SSO only works if the Outlook account matches the Office user account listed in **File** > **Office account**.
+>**Note:** 
+> The Single Sign-on API is currently supported for Word, Excel, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets](../../reference/requirement-sets/identity-api-requirement-sets.md). 
+
 
 For users, this makes running your add-in a smooth experience that involves at most a one-time consent screen. For developers, this means that your add-in can authenticate users and gain authorized access to the user’s data via Microsoft Graph with credentials that the user has already provided to the Office application.
  
@@ -62,7 +64,8 @@ Add new markup to the add-in manifest:
 * **Id** - The client ID of the add-in.
 * **Resource** - The URL of the add-in.
 * **Scopes** - The the parent of one or more **Scope** elements.
-* **Scope** - Specifies a permission that the add-in needs to Microsoft Graph. For example, User.Read, Mail.Read, or offline_access.
+* **Scope** - Specifies a permission that the add-in needs to Microsoft Graph. For example, `User.Read`, `Mail.Read` or `offline_access`). For more information, see [Microsoft Graph permissions](https://developer.microsoft.com/en-us/graph/docs/concepts/permissions_reference)
+
 
 For Office hosts other than Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` section. For Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_1">` section.
 
@@ -79,6 +82,10 @@ function mytokenHandler(asyncResult) {
     // to the add-in’s web API as an Authorization header.
 }
 ```
+##### When to call the method
+If your add-in cannot be used when a no user is logged into Office and Office does not have an access token to your add-in, then you should call `getAccessTokenAsync` *when the add-in launches*.
+
+If the add-in has some functionality that does not require access to Microsoft Graph or even a logged in user, then you call `getAccessTokenAsync` *when the user takes an action that requires access to Microsoft Graph or, at least, a logged in user*. There is no significant preformance degradation with redundant calls of `getAccessTokenAsync` because Office caches the access token and will reuse it, until it expires, without making another call to the AAD V. 2.0 endpoint whenever `getAccessTokenAsync` is called. So you can add calls of `getAccessTokenAsync` to all functions and handlers that initiate an action where the token is needed.
 
 #### Add server-side code
 

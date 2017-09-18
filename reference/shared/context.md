@@ -16,6 +16,7 @@ Office.context
 
 | Member | Type | Description | 
 |:-------|:-----|:------------|
+|auth|[Auth object](officeauth.md)|Provides information and access to the signed-in user.|
 |commerceAllowed |bool|Returns True if developers can display sell or upgrade UI in the add-in on that platform; otherwise returns False.|
 |contentLanguage | string | Gets the locale (language) specified by the user for editing the document or item.|
 |displayLanguage|string|Gets the locale (language) specified by the user for the UI of the Office host application.|
