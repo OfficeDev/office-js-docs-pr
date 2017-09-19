@@ -11,7 +11,7 @@ Excel add-ins run across multiple versions of Office, including Office 2016 for 
 |  Requirement set  |  Office 2016 for Windows\*  |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | ExcelApi1.7 **Beta**  | Version 1704 (Build 8201.2001) or later| Coming soon |  Coming soon| April 2017 | Coming soon|
-| ExcelApi1.6  | Version 1704 (Build 8201.2001) or later| Coming soon |15.36 or later| April 2017 | Coming soon|
+| ExcelApi1.6  | Version 1704 (Build 8201.2001) or later| 2.2 or later |15.36 or later| April 2017 | Coming soon|
 | ExcelApi1.5  | Version 1703 (Build 8067.2070) or later| 2.2 or later |15.36 or later| March 2017 | Coming soon|
 | ExcelApi1.4 | Version 1701 (Build 7870.2024) or later| 2.2 or later |15.36 or later| January 2017 | Coming soon|
 | ExcelApi1.3  | Version 1608 (Build 7369.2055) or later| 1.27 or later |  15.27 or later| September 2016 | Version 1608 (Build 7601.6800) or later|
