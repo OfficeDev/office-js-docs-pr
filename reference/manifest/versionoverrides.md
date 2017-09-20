@@ -20,7 +20,7 @@ The root element that contains information for the add-in commands implemented b
 |  [Hosts](./hosts.md)                |  Yes  |  Specifies a collection of Office hosts. The child  Hosts element overrides the Hosts element in the parent portion of the manifest.  |
 |  [Resources](./resources.md)    |  Yes  | Defines a collection of resources (strings, URLs, and images) that other manifest elements reference.|
 |  **VersionOverrides**    |  No  | Defines add-in commands under a newer schema version. See [Implementing multiple versions](#implementing_multiple_versions) for details. |
-|  **WebApplicationInfo**    |  No  | Specifies data about the add-in as an OAuth 2.0 resource and client. |
+|  **WebApplicationInfo**    |  No  | Specifies details about the add-in's associated Web application. |
 
 
 

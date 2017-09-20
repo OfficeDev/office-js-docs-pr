@@ -1,4 +1,4 @@
-# WebApplicationInfo element
+WebApplicationInfo element
 
 Supports single sign-on (SSO) in Office Add-ins. This element contains information for the add-in as both:
 
@@ -11,10 +11,11 @@ Supports single sign-on (SSO) in Office Add-ins. This element contains informati
 
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  **Id**    |  Yes   |  The **Application Id** of the add-in as registered in the Azure Active Directory (Azure AD) v2.0 endpoint.|
-|  **Resource**  |  Yes   |  Specifies the **Application ID URI** of the add-in as registered in the Azure AD v2.0 endpoint.| 
+|  **Id**    |  Yes   |  The **Application Id** of the add-in's associated service as registered in the Azure Active Directory v 2.0 endpoint.|
+|  **Resource**  |  Yes   |  Specifies the **Application ID URI** of the add-in as registered in the Azure Active Directory v 2.0 endpoint.| 
 |  [Scopes](./scopes.md)                |  No  |  Specifies the permissions that the add-in needs to Microsoft Graph.  |
 
+> Note: Currently, it's necessary that your add-in's Resource matches its Host. Office will not request a Token for an add-in unless it can prove ownership, and today this is done by hosting the add-in under the Resource's fully-qualified domain name.
 
 ## WebApplicationInfo example
 ```xml
@@ -26,9 +27,10 @@ Supports single sign-on (SSO) in Office Add-ins. This element contains informati
       <Id>12345678-abcd-1234-efab-123456789abc</Id>
       <Resource>api://myDomain.com/12345678-abcd-1234-efab-123456789abc<Resource>
       <Scopes>
-        <Scope>openid</Scope>
+        <Scope>Files.Read.All</Scope>
         <Scope>offline_access</Scope>
-        <Scope>files.read.all</Scope>
+        <Scope>openid</Scope>
+        <Scope>profile</Scope>        
       </Scopes>
     </WebApplicationInfo>
   </VersionOverrides>

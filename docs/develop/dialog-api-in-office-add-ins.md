@@ -2,7 +2,11 @@
 
 You can use the [Dialog API](../../reference/shared/officeui.md) to open dialog boxes in your Office Add-in. This article provides guidance for using the Dialog API in your Office Add-in.
 
-> **Note:** For information about where the Dialog API is currently supported, see [Dialog API requirement sets](../../reference/requirement-sets/dialog-api-requirement-sets.md). The Dialog API is currently supported for Word, Excel, PowerPoint, and Outlook.
+> **Notes:** 
+
+> For information about where the Dialog API is currently supported, see [Dialog API requirement sets](../../reference/requirement-sets/dialog-api-requirement-sets.md). The Dialog API is currently supported for Word, Excel, PowerPoint, and Outlook.
+
+> A primary scenario for the Dialog APIs is to enable authentication with a resource such as Google or Facebook. If your add-in requires data about the Office user or their resources accessible through Microsoft Graph, such as Office 365 or OneDrive, we recommend that you use the single sign-on API whenever you can. If you use the APIs for single sign-on, then you will not need the Dialog API. For details, see [Enable single sign-on for Office Add-ins](http://dev.office.com/docs/add-ins/develop/sso-in-office-add-ins).
 
 You might want to open a dialog box from a task pane or content add-in or [add-in command](https://dev.office.com/docs/add-ins/design/add-in-commands) to: 
 
@@ -10,7 +14,7 @@ You might want to open a dialog box from a task pane or content add-in or [add-i
 - Provide more screen space, or even a full screen, for some tasks in your add-in.
 - Host a video that would be too small if confined to a task pane.
 
->**Note:** Because overlapping UI can annoy users, avoid opening a dialog from a task pane unless your scenario requires it. When you consider how to use the surface area of a task pane, note that task panes can be tabbed. For an example, see the [Excel Add-in JavaScriptSalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) sample.
+>**Note:** Because overlapping UI can annoy users, avoid opening a dialog from a task pane unless your scenario requires it. When you consider how to use the surface area of a task pane, note that task panes can be tabbed. For an example, see the [Excel Add-in JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) sample.
 
 The following image shows an example of a dialog box. 
 

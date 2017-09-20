@@ -9,6 +9,7 @@ Contains permissions to Microsoft Graph that the add-in needs. This element is u
 |  **Scope**                |  string     |   The name of a permission to Microsoft Graph; for example, Files.Read.All. |
 
 
+
 ## Scopes example 
 
 ```xml
@@ -20,9 +21,10 @@ Contains permissions to Microsoft Graph that the add-in needs. This element is u
       <Id>12345678-abcd-1234-efab-123456789abc</Id>
       <Resource>api://myDomain.com/12345678-abcd-1234-efab-123456789abc<Resource>
       <Scopes>
-        <Scope>openid</Scope>
+        <Scope>Files.Read.All</Scope>
         <Scope>offline_access</Scope>
-        <Scope>files.read.all</Scope>
+        <Scope>openid</Scope>
+        <Scope>profile</Scope>
       </Scopes>
     </WebApplicationInfo>
   </VersionOverrides>

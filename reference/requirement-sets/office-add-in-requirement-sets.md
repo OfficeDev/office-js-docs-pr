@@ -6,16 +6,11 @@ For information about where add-ins are supported by Office host, see  [Office A
 
 >**Important:** We no longer recommend that you create and use Access web apps and databases in SharePoint. As an alternative, we recommend that you use [Microsoft PowerApps](https://powerapps.microsoft.com/) to build no-code business solutions for web and mobile devices.
 
-## Host-specific API requirement sets
-
-For information about Excel, Word, OneNote, Outlook, and Dialog API requirement sets, see:
-
-- [Excel JavaScript API requirement sets](excel-api-requirement-sets.md) (ExcelApi)
-- [Word JavaScript API requirement sets](word-api-requirement-sets.md) (WordApi)
-- [OneNote JavaScript API requirement sets](onenote-api-requirement-sets.md) (OneNoteApi)
-- [Understanding Outlook API requirement sets](../outlook/tutorial-api-requirement-sets.md) (MailBox)
-- [Dialog API requirement sets](dialog-api-requirement-sets.md) (DialogApi)
-- [Add-in command requirement sets](add-in-commands-requirement-sets.md) (AddInCommands)
+ > Note: Looking for the *host-specific* API requirement sets? See:
+ > - [Excel JavaScript API requirement sets](excel-api-requirement-sets.md) (ExcelApi)
+ > - [Word JavaScript API requirement sets](word-api-requirement-sets.md) (WordApi)
+ > - [OneNote JavaScript API requirement sets](onenote-api-requirement-sets.md) (OneNoteApi)
+ > - [Understanding Outlook API requirement sets](../outlook/tutorial-api-requirement-sets.md) (MailBox)
 
 ## Common API requirement sets
 
@@ -25,12 +20,15 @@ The following table lists the common API requirement sets, the methods in each s
 |  Requirement set  |  Office host  |  Methods in set  |
 |:-----|-----|:-----|:-----|
 | ActiveView | PowerPoint<br>PowerPoint&nbsp;Online|Document.getActiveViewAsync|
+| AddInCommands | For details see [Add-in command requirement sets](add-in-commands-requirement-sets.md). | |
 | BindingEvents  | Access Web Apps<br>Excel<br>Excel Online<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Binding.addHanderAsync<br>Binding.removeHanderAsync|
 | CompressedFile    | PowerPoint<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad<br/>Excel Online<br/>PowerPoint Online|Supports output to Office Open XML (OOXML) format as a byte array<br>(Office.FileType.Compressed) when using the Document.getFileAsync method.|
 | CustomXmlParts    | Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|CustomXmlNode.getNodesAsync<br>CustomXmlNode.getNodeValueAsync<br>CustomXmlNode.getXmlAsync<br>CustomXmlNode.setNodeValueAsync<br>CustomXmlNode.setXmlAsync<br>CustomXmlPart.addHandlerAsync<br>CustomXmlPart.deleteAsync<br>CustomXmlPart.getNodesAsync<br>CustomXmlPart.getXmlAsync<br>CustomXmlPart.removeHandlerAsync<br>CustomXmlParts.addAsync<br>CustomXmlParts.getByIdAsync<br>CustomXmlParts.getByNamespaceAsync<br>CustomXmlPrefixMappings.addNamespaceAsync<br>CustomXmlPrefixMappings.getNamespaceAsync<br>CustomXmlPrefixMappings.getPrefixAsync|
+| Dialog | For details see [Dialog API requirement sets](dialog-api-requirement-sets.md). | UI.messageParent<br>UI.displayDialogAsync<br>UI.closeContainer<br>UI.Dialog |
 | DocumentEvents    | Excel<br>Excel Online<br>PowerPoint Online<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Document.addHandlerAsync<br>Document.removeHandlerAsync|
 | File  | PowerPoint<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad<br>PowerPoint Online|Document.getFileAsync<br>File.closeAsync<br>File.getSliceAsync|
 | HtmlCoercion  | Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Supports coercion to HTML (Office.CoercionType.Html) when reading and writing data using the Document.getSelectedDataAsync,<br>Document.setSelectedDataAsync, Binding.getDataAsync, or Binding.setDataAsync methods.|
+| IdentityAPI | For details see [Identity API requirement sets](identity-api-requirement-sets.md). | Auth.getAccessTokenAsync |
 | ImageCoercion | Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Supports conversion to an image (Office.CoercionType.Image) when writing data using the Document.setSelectedDataAsync method.|
 | Mailbox   |Outlook for Windows<br>Outlook for web<br>Outlook for Mac<br>Outlook Web App |See [Understanding Outlook API requirement sets](../outlook/tutorial-api-requirement-sets.md).|
 | MatrixBindings    | Excel<br>Excel Online<br>Word<br>Word Online|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncMatrix<br>Binding.getDataAsyncMatrix<br>Binding.setDataAsync|
