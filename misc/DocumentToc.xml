@@ -105,13 +105,25 @@
   	<Item text="Read and write data to the active selection in a document or spreadsheet" url="develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet" SEODescription="Use the Document object to read and write data to the active selection in a document or spreadsheet." />
   	<Item text="Bind to regions in a document or spreadsheet" url="develop/bind-to-regions-in-a-document-or-spreadsheet" SEODescription="Use an identifier to access a region of a document or spreadsheet." />
   </Item>
-    <Item text="Excel" url="excel" Scope="excel">
-    <Item text="Excel JavaScript API programming overview" url="excel/excel-add-ins-javascript-programming-overview" SEODescription="Use the JavaScript APIs to build add-ins for Excel 2016." Scope="excel" />
-	<Item text="Build your first Excel add-in" url="excel/build-your-first-excel-add-in" SEODescription="Create a simple task pane add-in for Excel 2016." Scope="excel" />
-	<Item text="Format tables in add-ins for Excel" url="excel/format-tables-in-add-ins-for-excel" SEODescription="Specify formatting for tables in add-ins for Excel." Scope="excel" />
-	  <Item text="Read and write data to the active selection in a document or spreadsheet" url="develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet" SEODescription="Read and write data to the active selection in a document or spreadsheet." />	
-	  <Item text="Bind to regions in a document or spreadsheet" url="develop/bind-to-regions-in-a-document-or-spreadsheet"  Scope="excel" SEODescription="Bind to regions in a document or spreadsheet."/>
-		 <Item text="Coauthoring in Excel add-ins" url="excel/co-authoring-in-excel-add-ins"  Scope="excel" SEODescription="Learn about coauthoring in Excel and using add-ins."/>
+    
+	<Item text="Excel" url="excel/excel-add-ins-overview" SEODescription="Excel add-ins" Scope="excel">
+    <Item text="Quickstart" url="excel/excel-add-ins-get-started-overview" SEODescription="Excel add-ins" Scope="excel">
+	    <Item text="Use React" url="excel/excel-add-ins-get-started-react" SEODescription="Excel add-ins" Scope="excel" />
+		  <Item text="Use Angular" url="excel/excel-add-ins-get-started-angular" SEODescription="Excel add-ins" Scope="excel" />
+		  <Item text="Use jQuery" url="excel/excel-add-ins-get-started-jquery" SEODescription="Excel add-ins" Scope="excel" />
+	  </Item>
+    <Item text="Core concepts" url="excel/excel-add-ins-core-concepts" SEODescription="Excel add-ins" Scope="excel">
+      <Item text="Extend Excel functionality" url="excel/excel-add-ins-extend-excel" SEODescription="Excel add-ins" Scope="excel" />
+		  <Item text="Work with Worksheets" url="excel/excel-add-ins-worksheets" SEODescription="Excel add-ins" Scope="excel" />
+		  <Item text="Work with Ranges" url="excel/excel-add-ins-ranges" SEODescription="Excel add-ins" Scope="excel" />
+		  <Item text="Work with Tables" url="excel/excel-add-ins-tables" SEODescription="Excel add-ins" Scope="excel" />
+		  <Item text="Work with Charts" url="excel/excel-add-ins-charts" SEODescription="Excel add-ins" Scope="excel" />
+		</Item>
+		<Item text="Advanced concepts" url="excel/excel-add-ins-advanced-concepts" SEODescription="Excel add-ins" Scope="excel">
+		  <Item text="Coauthoring in Excel add-ins" url="excel/co-authoring-in-excel-add-ins"  Scope="excel" SEODescription="Learn about coauthoring in Excel and using add-ins."/>
+      <Item text="Error handling" url="excel/excel-add-ins-error-handling" SEODescription="Excel add-ins" Scope="excel" />
+		</Item>
+		<Item text="Excel JavaScript API reference" url="https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview" IsExternal="true" />
 	</Item>
   
   <Item text="Outlook" url="https://docs.microsoft.com/outlook/add-ins/" IsExternal="true" Scope="outlook"/>

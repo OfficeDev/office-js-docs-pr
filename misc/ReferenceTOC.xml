@@ -84,7 +84,7 @@
 		<Item text="SectionCollection" url="word/sectioncollection" FriendlyUrl="word/referencesectioncollection" Scope="word" SEODescription="Contains the collection of the document's section objects." />
 		<Item text="Word JavaScript API requirement sets" url="requirement-sets/word-api-requirement-sets" Scope="word" SEODescription="Find information about the Word requirement sets, the Office host applications that support that requirement set, and the build or version numbers for those applications." />
 	</Item>
-	<Item text="Excel" url="excel" Scope="excel/excel-add-ins-reference-overview" SEODescription="Provides an overview of the Excel Javascript API.">
+	<Item text="Excel" url="excel/excel-add-ins-reference-overview" Scope="excel" SEODescription="Provides an overview of the Excel Javascript API.">
 		<Item text="Application" url="excel/application" SEODescription="Represents the Excel application that manages the workbook." />
 		<Item text="Binding" url="excel/binding" SEODescription="Represents an Office.js binding that is defined in the workbook." />
 		<Item text="BindingCollection" url="excel/bindingcollection" SEODescription="Represents the collection of all the binding objects that are part of the workbook." />
