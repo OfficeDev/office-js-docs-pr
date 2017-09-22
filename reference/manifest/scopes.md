@@ -1,6 +1,6 @@
 # Scopes element
 
-Contains permissions to Microsoft Graph that the add-in needs. This element is used by the Office Store to create a consent dialog box. When users install the add-in from the Store, they are prompted to grant the add-in the specified permissions to the user's Microsoft Graph data.
+Contains permissions to Microsoft Graph that the add-in needs. The Office Store uses the Scopes element to create a consent dialog box. When users install the add-in from the Store, they are prompted to grant the add-in the specified permissions to the user's Microsoft Graph data.
 
 ## Child elements
 
@@ -9,7 +9,8 @@ Contains permissions to Microsoft Graph that the add-in needs. This element is u
 |  **Scope**                |  string     |   The name of a permission to Microsoft Graph; for example, Files.Read.All. |
 
 
-## Scopes example 
+
+## Scopes example
 
 ```xml
 <OfficeApp>
@@ -20,13 +21,13 @@ Contains permissions to Microsoft Graph that the add-in needs. This element is u
       <Id>12345678-abcd-1234-efab-123456789abc</Id>
       <Resource>api://myDomain.com/12345678-abcd-1234-efab-123456789abc<Resource>
       <Scopes>
-        <Scope>openid</Scope>
+        <Scope>Files.Read.All</Scope>
         <Scope>offline_access</Scope>
-        <Scope>files.read.all</Scope>
+        <Scope>openid</Scope>
+        <Scope>profile</Scope>
       </Scopes>
     </WebApplicationInfo>
   </VersionOverrides>
 ...
 </OfficeApp>
 ```
-

@@ -102,7 +102,7 @@ You can embed web-based objects within Excel and PowerPoint documents – called
 
 ## Office JavaScript APIs 
 
-The Office JavaScript APIs contain objects and members for building add-ins and interacting with Office content and web services. The Excel, Outlook, Word, PowerPoint, OneNote and Project JavaScript APIs provide host-specific object models that you can use in an Office Add-in. These APIs provide access to well-known objects such as paragraphs and workbooks, which makes it easier to create an add-in for a specific host.  
+The Office JavaScript APIs contain objects and members for building add-ins and interacting with Office content and web services. There is a common object model that is shared by Excel, Outlook, Word, PowerPoint, OneNote and Project. There are also more extensive host-specific object models for Excel and Word.  These APIs provide access to well-known objects such as paragraphs and workbooks, which makes it easier to create an add-in for a specific host.  
 
 ## Next steps 
 

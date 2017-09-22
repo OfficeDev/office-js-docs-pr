@@ -84,10 +84,12 @@
 		<Item text="SectionCollection" url="word/sectioncollection" FriendlyUrl="word/referencesectioncollection" Scope="word" SEODescription="Contains the collection of the document's section objects." />
 		<Item text="Word JavaScript API requirement sets" url="requirement-sets/word-api-requirement-sets" Scope="word" SEODescription="Find information about the Word requirement sets, the Office host applications that support that requirement set, and the build or version numbers for those applications." />
 	</Item>
-	<Item text="Excel" url="excel" Scope="excel">
+	<Item text="Excel" url="excel/excel-add-ins-reference-overview" Scope="excel" SEODescription="Provides an overview of the Excel Javascript API.">
 		<Item text="Application" url="excel/application" SEODescription="Represents the Excel application that manages the workbook." />
 		<Item text="Binding" url="excel/binding" SEODescription="Represents an Office.js binding that is defined in the workbook." />
 		<Item text="BindingCollection" url="excel/bindingcollection" SEODescription="Represents the collection of all the binding objects that are part of the workbook." />
+		<Item text="BindingDataChangedEventArgs" url="excel/bindingdatachangedeventargs" SEODescription="Provides information about the binding that raised the DataChanged event." />
+		<Item text="BindingSelectionChangedEventArgs" url="excel/bindingselectionchangedeventargs" SEODescription="Provides information about the binding that raised the SelectionChanged event." />
 		<Item text="Chart" url="excel/chart" SEODescription="Represents a chart object in a workbook." />
 		<Item text="ChartAreaFormat" url="excel/chartareaformat" SEODescription="Encapsulates the format properties for the overall chart area." />
 		<Item text="ChartAxes" url="excel/chartaxes" SEODescription="Represents the chart axes." />
@@ -113,19 +115,56 @@
 		<Item text="ChartSeriesFormat" url="excel/chartseriesformat" SEODescription="Encapsulates the format properties for the chart series." />
 		<Item text="ChartTitle" url="excel/charttitle" SEODescription="Represents a chart title object of a chart." />
 		<Item text="ChartTitleFormat" url="excel/charttitleformat" SEODescription="Provides access to the Office art formatting for the chart title." />
-		<Item text="Error" url="excel/error" SEODescription="Represents errors that occur when you use the Excel JavaScript API." />
-		<Item text="Filter" url="excel/filter" SEODescription="Manages the filtering of a table's column." />
-		<Item text="LoadOption" url="excel/loadoption" SEODescription="Represents an object that can be passed to the load method to specify the set of properties and relations to be loaded upon execution of sync() method that synchronizes the states between Excel objects and corresponding JavaScript proxy objects in the add-in. " />
+		<Item text="ColorScaleConditionalFormat" url="excel/colorscaleconditionalformat" SEODescription="Represents an IconSet criteria for conditional formatting." />
+		<Item text="ConditionalCellValueRule"  url="excel/conditionalcolorscalecriteria" SEODescription="Represents a Cell Value Conditional Format Rule" />
+		<Item text="ConditionalColorScaleCriteria" url="excel/conditionalcolorscalecriteria" SEODescription="Represents the criteria of the color scale." />
+		<Item text="ConditionalColorScaleCriterion" url="excel/conditionalcolorscalecriterion" SEODescription="Represents a Color Scale Criterion which contains a type, value and a color." />
+		<Item text="ConditionalDatabarNegativeFormat" url="excel/conditionaldatabarnegativeformat" SEODescription="Represents a conditional format DataBar Format for the negative side of the data bar." />
+		<Item text="ConditionalDatabarPositiveFormat" url="excel/conditionaldatabarpositiveformat" SEODescription="Represents a conditional format DataBar Format for the positive side of the data bar." />
+		<Item text="ConditionalDataBarRule" url="excel/conditionaldatabarpositiveformat" SEODescription="Represents a rule-type for a Data Bar." />
+		<Item text="ConditionalFormat" url="excel/conditionalformat" SEODescription="An object encapsulating a conditional format range, format, rule, and other properties." />
+		<Item text="ConditionalFormatCollection" url="excel/conditionalformatcollection" SEODescription="Represents a collection of all the conditional formats that are overlap the range." />
+		<Item text="ConditionalFormatRule" url="excel/conditionalformatrule" SEODescription="Represents a rule, for all traditional ruleformat pairings." />
+		<Item text="ConditionalIconCriterion" url="excel/conditionaliconcriterion" SEODescription="Represents an Icon Criterion which contains a type, value, an Operator, and an optional custom icon, if not using an iconset." />
+		<Item text="ConditionalPresetCriteriaRule" url="excel/conditionalpresetcriteriarule" SEODescription="Represents the Preset Criteria Conditional Format Rule." />
+		<Item text="ConditionalRangeBorder" url="excel/conditionalrangeborder" SEODescription="Represents the border of an object." />
+		<Item text="ConditionalRangeborderCollection" url="excel/conditionalrangebordercollection" SEODescription="Represents the border objects that make up range border." />
+		<Item text="ConditionalRangeFill" url="excel/conditionalrangefill" SEODescription="Represents the background of a conditional range object." />
+		<Item text="ConditionalRangeFont" url="excel/conditionalrangefont" SEODescription="This object represents the font attributes (font style,, color, etc.) for an object." />
+		<Item text="ConditionalRangeFormat" url="excel/conditionalrangeformat" SEODescription="A format object encapsulating the conditional formats range font, fill, borders, and other properties." />
+		<Item text="ConditionalTextComparisonRule" url="excel/conditionaltextcomparisonrule" SEODescription="Represents a Cell Value Conditional Format Rule." />
+		<Item text="ConditionalTopBottomRule" url="excel/conditionaltopbottomrule" SEODescription="Represents the rule of the topbottom conditional format." />
+		<Item text="CustomConditionalFormat" url="excel/customconditionalformat" SEODescription="Represents a custom conditional format type." />
+		<Item text="CustomXmlPart" url="excel/customxmlpart" SEODescription="Represents a custom XML part object in a workbook." />
+		<Item text="CustomXmlPartCollection" url="excel/customxmlpartcollection" SEODescription="A collection of custom XML parts." />
+		<Item text="CustomXmlPartScopedCollection" url="excel/customxmlpartscopedcollection" SEODescription="A scoped collection of custom XML parts." />
+		<Item text="DatabarConditionalFormat" url="excel/databarconditionalformat" SEODescription="Represents an Excel Conditional Data Bar Type." />
+		<Item text="Filter" url="excel/filter" SEODescription="Manages the filtering of a tables column." />
+		<Item text="FilterCriteria" url="excel/filtercriteria" SEODescription="Represents the filtering criteria applied to a column." />
+		<Item text="FilterDatetime" url="excel/filterdatetime" SEODescription="Represents how to filter a date when filtering on values." />
+		<Item text="FormatProtection" url="excel/formatprotection" SEODescription="Represents the format protection of a range object." />
+		<Item text="Icon" url="excel/icon" SEODescription="Represents a cell icon." />
+		<Item text="IconSetConditionalFormat" url="excel/iconsetconditionalformat" SEODescription="Represents an IconSet criteria for conditional formatting." />
 		<Item text="NamedItem" url="excel/nameditem" SEODescription="Represents a defined name for a range of cells or a value. " />
 		<Item text="NamedItemCollection" url="excel/nameditemcollection" SEODescription="A collection of all the nameditem objects that are part of the workbook." />
+		<Item text="PivotTable" url="excel/pivottable" SEODescription="Represents an Excel PivotTable." />
+		<Item text="PivotTableCollection" url="excel/pivottablecollection" SEODescription="Represents a collection of all the PivotTables that are part of the workbook or worksheet." />
+		<Item text="PresetCriteriaConditionalFormat" url="excel/presetcriteriaconditionalformat" SEODescription="Represents the the preset criteria conditional format such as above averagebelow averageunique valuescontains blanknonblankerrornoerror." />
 		<Item text="Range" url="excel/range" SEODescription="Represents a set of one or more contiguous cells such as a cell, a row, a column, block of cells, etc." />
 		<Item text="RangeBorder" url="excel/rangeborder" SEODescription="Represents the border of an object." />
 		<Item text="RangeBorderCollection" url="excel/rangebordercollection" SEODescription="Represents the border objects that make up range border." />
 		<Item text="RangeFill" url="excel/rangefill" SEODescription="Represents the background of a range object." />
 		<Item text="RangeFont" url="excel/rangefont" SEODescription="Represents the font attributes (font name, font size, color, etc.) for an object." />
-		<Item text="RangeFormat" url="excel/rangeformat" SEODescription="A format object encapsulating the range's font, fill, borders, alignment, and other properties." />
+		<Item text="RangeFormat" url="excel/rangeformat" SEODescription="A format object encapsulating the ranges font, fill, borders, alignment, and other properties." />
+		<Item text="rangereference" url="excel/rangereference" SEODescription="Represents a string reference of the form SheetName!A1:B5, or a global or local named range." />
 		<Item text="RangeSort" url="excel/rangesort" SEODescription="Manages sorting operations on Range objects." />
-		<Item text="Requestcontext" url="excel/requestcontext" SEODescription="Facilitates requests to the Excel application. " />
+		<Item text="RangeView" url="excel/rangeview" SEODescription="RangeView represents a set of visible cells of the parent range." />
+		<Item text="RangeViewCollection" url="excel/rangeviewcollection" SEODescription="Represents a collection of RangeView objects." />
+		<Item text="SelectionChangedEventArgs" url="excel/selectionchangedeventargs" SEODescription="" />
+		<Item text="Setting" url="excel/setting" SEODescription="Setting represents a key-value pair of a setting persisted to the document." />
+		<Item text="SettingCollection" url="excel/settingcollection" SEODescription="Represents a collection of worksheet objects that are part of the workbook." />
+		<Item text="SettingsChangedEventArgs" url="excel/settingschangedeventargs" SEODescription="Provides information about the document that raised the SelectionChanged event." />
+		<Item text="Sortfield" url="excel/sortfield" SEODescription="Represents a condition in a sorting operation." />
 		<Item text="Table" url="excel/table" SEODescription="Represents an Excel table." />
 		<Item text="TableCollection" url="excel/tablecollection" SEODescription="Represents a collection of all the tables that are part of the workbook." />
 		<Item text="TableColumn" url="excel/tablecolumn" SEODescription="Represents a column in a table." />
@@ -133,13 +172,14 @@
 		<Item text="TableRow" url="excel/tablerow" SEODescription="Represents a row in a table." />
 		<Item text="TableRowCollection" url="excel/tablerowcollection" SEODescription="Represents a collection of all the rows that are part of the table." />
 		<Item text="TableSort" url="excel/tablesort" SEODescription="Manages sorting operations on Table objects." />
-		<Item text="TrackedObjectsCollection" url="excel/trackedobjectscollection" SEODescription="Allows add-ins to manage range object references across sync() batches." />
+		<Item text="TextConditionalFormat" url="excel/textconditionalformat" SEODescription="Represents a specific text conditional format." />
+		<Item text="TopBottomConditionalFormat" url="excel/topbottomconditionalformat" SEODescription="Represents a TopBottom conditional format." />
 		<Item text="Workbook" url="excel/workbook" SEODescription="Contains related workbook objects such as worksheets, tables, ranges, etc." />
 		<Item text="Worksheet" url="excel/worksheet" SEODescription="Represents a grid of cells that contain data, tables, and charts." />
 		<Item text="WorksheetCollection" url="excel/worksheetcollection" SEODescription="Represents a collection of worksheet objects that are part of the workbook." />
 		<Item text="WorksheetFunctions" url="excel/functions" SEODescription="Used as a container for Excel worksheet functions that can be called through JavaScript or REST." />
 		<Item text="WorksheetProtection" url="excel/worksheetprotection" SEODescription="Represents the protection of a sheet object." />
-		<Item text="Excel JavaScript API requirement sets" url="requirement-sets/excel-api-requirement-sets" Scope="excel" SEODescription="Find information about the Excel requirement sets, the Office host applications that support that requirement set, and the build or version numbers for those applications." />
+		<Item text="worksheetprotectionoptions" url="excel/worksheetprotectionoptions" SEODescription="Represents the options in sheet protection." />
 	</Item>
 	<Item text="Outlook" url="outlook" Scope="outlook">
 		<Item text="Understanding API requirement sets" url="outlook/tutorial-api-requirement-sets" Scope="outlook" SEODescription="API Requirement Sets for Outlook" />
