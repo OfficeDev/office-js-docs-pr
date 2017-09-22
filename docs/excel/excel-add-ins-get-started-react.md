@@ -154,11 +154,11 @@ npm start
 
 ## Next steps
 
-Congratulations, you've successfully created an Excel add-in using React! Next, learn more about the [core concepts](excel-add-ins-core-concepts.md?product=excel) of building Excel add-ins.
+Congratulations, you've successfully created an Excel add-in using React! Next, learn more about the [core concepts](excel-add-ins-core-concepts.md) of building Excel add-ins.
 
 ## Additional resources
 
-* [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md?product=excel)
+* [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
 * [Explore snippets with Script Lab](https://store.office.com/en-001/app.aspx?assetid=WA104380862&ui=en-US&rs=en-001&ad=US&appredirect=false)
 * [Excel add-in code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API reference](../../reference/excel/excel-add-ins-reference-overview.md?product=excel)
+* [Excel JavaScript API reference](../../reference/excel/excel-add-ins-reference-overview.md)
