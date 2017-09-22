@@ -32,8 +32,8 @@
 		</Item>	
        </Item>
 	   <Item text="Office UI Fabric" url="design/office-ui-fabric" >
-			<Item text="Get started with Fabric JS" url="design/using-office-ui-fabric-js" SEODescription="Walks you through the basics for using Fabric JS."/>
-			<Item text="Get started with Fabric React" url="design/using-office-ui-fabric-react" SEODescription="Walks you through the basics for using Fabric React."/>
+			<Item text="Get started using Fabric JS" url="design/using-office-ui-fabric-js" SEODescription="Walks you through the basics for using Fabric JS."/>
+			<Item text="Get started using Fabric React" url="design/using-office-ui-fabric-react" SEODescription="Walks you through the basics for using Fabric React."/>
 			<Item text="Breadcrumb" url="design/breadcrumb" />
 			<Item text="Buttons" url="design/button" />
 			<Item text="Checkbox" url="design/checkbox" />

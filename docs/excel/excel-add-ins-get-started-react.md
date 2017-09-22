@@ -6,12 +6,12 @@ In this article, you'll walk through the process of building an Excel add-in usi
 
 If you haven't done so previously, you'll need to install the following tools:
 
-1.  Install [Create React App](https://github.com/facebookincubator/create-react-app) globally.
+- Install [Create React App](https://github.com/facebookincubator/create-react-app) globally.
 ```bash
 npm install -g create-react-app
 ```
 
-2. Install [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
+- Install [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
 ```bash
 npm install -g yo generator-office
 ```
@@ -28,21 +28,21 @@ create-react-app my-addin
 
 Each add-in requires a manifest file to define its settings and capabilities.
 
-1. Navigate to your app folder.
+- Navigate to your app folder.
 ```bash
 cd my-addin
 ```
 
-2. Use the Yeoman generator to generate the manifest file for your add-in. Run the following command and then answer the prompts as shown in the following screenshot:
+- Use the Yeoman generator to generate the manifest file for your add-in. Run the following command and then answer the prompts as shown in the following screenshot:
 ```bash
 yo office
 ```
 ![Yeoman generator](../../images/yo-office.png)
 >**Note**: If you're prompted to overwrite **package.json**, answer **No** (do not overwrite).
 
-3. Open the manifest file (i.e., the file in the root directory of your app with a name ending in "manifest.xml"). Replace all occurrences of `https://localhost:3000` with `http://localhost:3000` and save the file.
+- Open the manifest file (i.e., the file in the root directory of your app with a name ending in "manifest.xml"). Replace all occurrences of `https://localhost:3000` with `http://localhost:3000` and save the file.
 
-4. Follow the instructions for the platform you'll be using to run your add-in and sideload the add-in within Excel.
+- Follow the instructions for the platform you'll be using to run your add-in and sideload the add-in within Excel.
     - Windows: [Sideload Office Add-ins for testing on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
     - Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
@@ -141,24 +141,26 @@ export default App;
 
 ## Try it out
 
-1. From the terminal, run the following command to start the dev server.
+- From the terminal, run the following command to start the dev server.
 ```bash
 npm start
 ```
 
-2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+- In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+
 ![Excel Add-in button](../../images/excel_quickstart_addin_2a.png)
 
-3. In the task pane, choose the **Color Me** button pane to set the color of the selected range to green.
+- In the task pane, choose the **Color Me** button pane to set the color of the selected range to green.
+
 ![Excel Add-in](../../images/excel_quickstart_addin_2b.png)
 
 ## Next steps
 
-Congratulations, you've successfully created an Excel add-in using React! Next, learn more about the [core concepts](excel-add-ins-core-concepts.md?product=excel) of building Excel add-ins.
+Congratulations, you've successfully created an Excel add-in using React! Next, learn more about the [core concepts](excel-add-ins-core-concepts.md) of building Excel add-ins.
 
 ## Additional resources
 
-* [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md?product=excel)
+* [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
 * [Explore snippets with Script Lab](https://store.office.com/en-001/app.aspx?assetid=WA104380862&ui=en-US&rs=en-001&ad=US&appredirect=false)
 * [Excel add-in code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API reference](../../reference/excel/excel-add-ins-reference-overview.md?product=excel)
+* [Excel JavaScript API reference](../../reference/excel/excel-add-ins-reference-overview.md)

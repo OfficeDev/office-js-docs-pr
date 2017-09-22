@@ -1,6 +1,6 @@
 # Excel JavaScript API core concepts
  
-This article describes how to use the [Excel JavaScript API](../../reference/excel/excel-add-ins-reference-overview.md?product=excel) to build add-ins for Excel 2016. It introduces core concepts that are fundamental to using the API and provides guidance for performing specific tasks such as reading or writing to a large range, updating all cells in range, and more.
+This article describes how to use the [Excel JavaScript API](../../reference/excel/excel-add-ins-reference-overview.md) to build add-ins for Excel 2016. It introduces core concepts that are fundamental to using the API and provides guidance for performing specific tasks such as reading or writing to a large range, updating all cells in range, and more.
 
 ## Asynchronous nature of Excel APIs
 
@@ -126,14 +126,14 @@ object.load({ loadOption });
  
 _Where:_
  
-* `properties` is the list of properties and/or relationship names to be loaded specified as comma-delimited strings, or an array of names. For more information, see the **load()** methods defined for objects in [Excel JavaScript API reference](../../reference/excel/excel-add-ins-reference-overview.md?product=excel).
-* `loadOption` specifies an object that describes the selection, expansion, top, and skip options. See object load [options](../../reference/excel/loadoption.md?product=excel) for details.
+* `properties` is the list of properties and/or relationship names to be loaded specified as comma-delimited strings, or an array of names. For more information, see the **load()** methods defined for objects in [Excel JavaScript API reference](../../reference/excel/excel-add-ins-reference-overview.md).
+* `loadOption` specifies an object that describes the selection, expansion, top, and skip options. See object load [options](../../reference/excel/loadoption.md) for details.
 
 For more information about the **load()** method, see [Excel JavaScript API advanced concepts](excel-add-ins-advanced-concepts.md).
 
-## `null` or blank property values
+## null or blank property values
  
-### `null` input in 2-D Array
+### null input in 2-D Array
  
 In Excel, a range is represented by a 2-D array, where the first dimension is rows and the second dimension is columns. To set values, number format, or formula for only specific cells within a range, specify the values, number format, or formula for those cells in the 2-D array, and specify `null` for all other cells in the 2-D array.
  
@@ -144,7 +144,7 @@ range.values = [['Eurasia', '29.96', '0.25', '15-Feb' ]];
 range.numberFormat = [[null, null, null, 'm/d/yyyy;@']];
 ```
  
-### `null` input for a property
+### null input for a property
  
 `null` is not a valid input for single property. For example, the following code snippet is not valid, as the **values** property of the range cannot be set to `null`.
  
@@ -158,7 +158,7 @@ Likewise, the following code snippet is not valid, as `null` is not a valid valu
 range.format.fill.color =  null;
 ```
  
-### `null` property values in the response
+### null property values in the response
  
 Formatting properties such as `size` and `color` will contain `null` values in the response when different values exist in the specified range. For example, if you retrieve a range and load its `format.font.color` property:
  
@@ -268,6 +268,6 @@ When an API error occurs, the API will return an **error** object that contains 
  
 ## Additional resources
  
-* [Get started with Excel add-ins](excel-add-ins-get-started-overview.md?product=excel)
+* [Get started with Excel add-ins](excel-add-ins-get-started-overview.md)
 * [Excel add-ins code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API reference](../../reference/excel/excel-add-ins-reference-overview.md?product=excel)
+* [Excel JavaScript API reference](../../reference/excel/excel-add-ins-reference-overview.md)
