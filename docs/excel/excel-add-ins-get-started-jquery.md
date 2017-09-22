@@ -4,14 +4,14 @@ In this article, you'll walk through the process of building an Excel add-in by 
 
 ## Create the web app
 
-1. Create a folder on your local drive and name it **my-addin**. This is where you'll create the files for your app.
+- Create a folder on your local drive and name it **my-addin**. This is where you'll create the files for your app.
 
-2. Navigate to your app folder.
+- Navigate to your app folder.
 ```bash
 cd my-addin
 ```
 
-3. In your app folder, create a file named **Home.html** to specify the HTML that will be rendered in the add-in's task pane. Add the following code and save the file.
+- In your app folder, create a file named **Home.html** to specify the HTML that will be rendered in the add-in's task pane. Add the following code and save the file.
 ```html
 <html>
     <head>
@@ -48,7 +48,7 @@ cd my-addin
 </html>
 ```
 
-4. In your app folder, create a file named **Home.js** to specify the jQuery script for the add-in. Add the following code and save the file.
+- In your app folder, create a file named **Home.js** to specify the jQuery script for the add-in. Add the following code and save the file.
 ```js
 (function () {
     "use strict";
@@ -75,7 +75,7 @@ cd my-addin
 })();
 ```
 
-5. In your app folder, create a file named **Common.css** to specify the custom styles for the add-in. Add the following code and save the file.
+- In your app folder, create a file named **Common.css** to specify the custom styles for the add-in. Add the following code and save the file.
 
 ```css
 #content-header {
@@ -106,7 +106,7 @@ cd my-addin
 
 ## Create the manifest file and sideload the add-in
 
-1. In your app folder, create a file named **my-excel-add-in-manifest.xml** to define the add-in's settings and capabilities. Add the following XML to the file.
+- In your app folder, create a file named **my-excel-add-in-manifest.xml** to define the add-in's settings and capabilities. Add the following XML to the file.
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
@@ -126,9 +126,9 @@ cd my-addin
 </OfficeApp>
 ```
 
-2.  Generate a GUID using an online generator of your choice. Then, replace the value of the **Id** element shown in the previous step with that GUID.
+- Generate a GUID using an online generator of your choice. Then, replace the value of the **Id** element shown in the previous step with that GUID.
 
-3.	Save the manifest file. 
+- Save the manifest file. 
 
 ## Deploy the web app and update the manifest
 
