@@ -217,7 +217,6 @@ The following code sample sets the visibility of worksheet named **Sample** to h
 
 ```js
 Excel.run(function (context) {
-
     var sheet = context.workbook.worksheets.getItem("Sample");
     sheet.visibility = Excel.SheetVisibility.hidden;
     sheet.load("name");
@@ -235,7 +234,6 @@ The following code sample sets the visibility of worksheet named **Sample** to v
 
 ```js
 Excel.run(function (context) {
-
     var sheet = context.workbook.worksheets.getItem("Sample");
     sheet.visibility = Excel.SheetVisibility.visible;
     sheet.load("name");

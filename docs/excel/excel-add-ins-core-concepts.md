@@ -131,9 +131,9 @@ _Where:_
 
 For more information about the **load()** method, see [Excel JavaScript API advanced concepts](excel-add-ins-advanced-concepts.md).
 
-## `null` or blank property values
+## null or blank property values
  
-### `null` input in 2-D Array
+### null input in 2-D Array
  
 In Excel, a range is represented by a 2-D array, where the first dimension is rows and the second dimension is columns. To set values, number format, or formula for only specific cells within a range, specify the values, number format, or formula for those cells in the 2-D array, and specify `null` for all other cells in the 2-D array.
  
@@ -144,7 +144,7 @@ range.values = [['Eurasia', '29.96', '0.25', '15-Feb' ]];
 range.numberFormat = [[null, null, null, 'm/d/yyyy;@']];
 ```
  
-### `null` input for a property
+### null input for a property
  
 `null` is not a valid input for single property. For example, the following code snippet is not valid, as the **values** property of the range cannot be set to `null`.
  
@@ -158,7 +158,7 @@ Likewise, the following code snippet is not valid, as `null` is not a valid valu
 range.format.fill.color =  null;
 ```
  
-### `null` property values in the response
+### null property values in the response
  
 Formatting properties such as `size` and `color` will contain `null` values in the response when different values exist in the specified range. For example, if you retrieve a range and load its `format.font.color` property:
  

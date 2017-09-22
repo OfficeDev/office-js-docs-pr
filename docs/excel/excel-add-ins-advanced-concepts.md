@@ -199,7 +199,7 @@ Excel.run(function (ctx) {
 	}
 });
 ```
-## &#42;OrNull objects
+## &#42;OrNullObject methods
 
 Many Excel JavaScript API methods will return an exception when the condition of the API is not met. For example, if you attempt to get a worksheet by specifying a worksheet name that doesn't exist in the the workbook, the `getItem()` method will return an `ItemNotFound` exception. 
 
