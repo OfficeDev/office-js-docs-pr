@@ -1,9 +1,9 @@
-WebApplicationInfo element
+# WebApplicationInfo element
 
 Supports single sign-on (SSO) in Office Add-ins. This element contains information for the add-in as both:
 
 - An OAuth 2.0 *resource* to which the Office host application might need permissions.
-- An OAuth 2.0 *client* that might need permissions to Microsoft Graph. 
+- An OAuth 2.0 *client* that might need permissions to Microsoft Graph.
 
 **WebApplicationInfo** is a child element of the [VersionOverrides](./versionoverrides.md) element in the manifest.  
 
@@ -12,12 +12,13 @@ Supports single sign-on (SSO) in Office Add-ins. This element contains informati
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
 |  **Id**    |  Yes   |  The **Application Id** of the add-in's associated service as registered in the Azure Active Directory v 2.0 endpoint.|
-|  **Resource**  |  Yes   |  Specifies the **Application ID URI** of the add-in as registered in the Azure Active Directory v 2.0 endpoint.| 
+|  **Resource**  |  Yes   |  Specifies the **Application ID URI** of the add-in as registered in the Azure Active Directory v 2.0 endpoint.|
 |  [Scopes](./scopes.md)                |  No  |  Specifies the permissions that the add-in needs to Microsoft Graph.  |
 
-> Note: Currently, it's necessary that your add-in's Resource matches its Host. Office will not request a Token for an add-in unless it can prove ownership, and today this is done by hosting the add-in under the Resource's fully-qualified domain name.
+> **Note:** Currently, it's necessary that your add-in's Resource matches its Host. Office will not request a Token for an add-in unless it can prove ownership, and today this is done by hosting the add-in under the Resource's fully-qualified domain name.
 
 ## WebApplicationInfo example
+
 ```xml
 <OfficeApp>
 ...
@@ -37,4 +38,3 @@ Supports single sign-on (SSO) in Office Add-ins. This element contains informati
 ...
 </OfficeApp>
 ```
-

@@ -1,16 +1,16 @@
 # Office common API requirement sets
 
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md).
-
-For information about where add-ins are supported by Office host, see  [Office Add-in host and platform availability](https://dev.office.com/add-in-availability).
-
 >**Important:** We no longer recommend that you create and use Access web apps and databases in SharePoint. As an alternative, we recommend that you use [Microsoft PowerApps](https://powerapps.microsoft.com/) to build no-code business solutions for web and mobile devices.
 
- > Note: Looking for the *host-specific* API requirement sets? See:
- > - [Excel JavaScript API requirement sets](excel-api-requirement-sets.md) (ExcelApi)
- > - [Word JavaScript API requirement sets](word-api-requirement-sets.md) (WordApi)
- > - [OneNote JavaScript API requirement sets](onenote-api-requirement-sets.md) (OneNoteApi)
- > - [Understanding Outlook API requirement sets](../outlook/tutorial-api-requirement-sets.md) (MailBox)
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md).
+
+Need information about where add-ins are supported by Office host? See  [Office Add-in host and platform availability](https://dev.office.com/add-in-availability).
+
+ Looking for the *host-specific* API requirement sets? See the following API sets:
+ - [Excel JavaScript API requirement sets](excel-api-requirement-sets.md) (ExcelApi)
+ - [Word JavaScript API requirement sets](word-api-requirement-sets.md) (WordApi)
+ - [OneNote JavaScript API requirement sets](onenote-api-requirement-sets.md) (OneNoteApi)
+ - [Understanding Outlook API requirement sets](../outlook/tutorial-api-requirement-sets.md) (MailBox)
 
 ## Common API requirement sets
 
@@ -67,11 +67,7 @@ The following methods in the JavaScript API for Office aren't part of a requirem
 |TableBinding.setFormatsAsync|Excel, Excel Online|
 |TableBinding.setTableOptionsAsync|Excel, Excel Online|
 
-## Additional resources
+## See also
 
 - [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md)
 - [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md)
-
-
-
-

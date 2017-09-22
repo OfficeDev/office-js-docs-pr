@@ -1,6 +1,6 @@
 # Office Auth Namespace (JavaScript API for Office)
 
-The Office Auth namespace, Office.context.auth, provides a method that you can use to enable the Office host to obtain and access token to your add-in and, indirectly, enable the add-in to access the signed-in user's Microsoft Graph data without requiring the user to sign in a second time.
+The Office Auth namespace, Office.context.auth, provides a method that allows the Office host to obtain and access the add-in token. Indirectly, enable the add-in to access the signed-in user's Microsoft Graph data without requiring the user to sign in a second time.
 
 ## Methods
 
