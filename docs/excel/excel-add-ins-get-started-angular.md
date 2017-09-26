@@ -6,14 +6,16 @@ In this article, you'll walk you through the process of building an Excel add-in
 
 If you haven't done so previously, install the following tools:
 
-- Check whether you already have the [Angular CLI prerequisites](https://github.com/angular/angular-cli#prerequisites) and install any prerequistes that you are missing.
+1- Check whether you already have the [Angular CLI prerequisites](https://github.com/angular/angular-cli#prerequisites) and install any prerequistes that you are missing.
 
-- Install the [Angular CLI](https://github.com/angular/angular-cli) globally. 
+2- Install the [Angular CLI](https://github.com/angular/angular-cli) globally. 
+
 ```bash
 npm install -g @angular/cli
 ```
 
-- Install [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
+3- Install [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
+
 ```bash
 npm install -g yo generator-office
 ```
@@ -30,12 +32,14 @@ ng new my-addin
 
 An add-in's manifest file defines its settings and capabilities.
 
-- Navigate to your app folder.
+1- Navigate to your app folder.
+
 ```bash
 cd my-addin
 ```
 
-- Use the Yeoman generator to generate the manifest file for your add-in. Run the following command and then answer the prompts as shown in the screenshot below.
+2- Use the Yeoman generator to generate the manifest file for your add-in. Run the following command and then answer the prompts as shown in the screenshot below.
+
 ```bash
 yo office
 ```
@@ -43,24 +47,24 @@ yo office
 
 > **Note**: If you're prompted to overwrite **package.json**, answer **No** (do not overwrite).
 
-- Open the manifest file (i.e., the file in the root directory of your app with a name ending in "manifest.xml"). Replace all occurrences of `https://localhost:3000` with `http://localhost:4200` and save the file.
+3- Open the manifest file (i.e., the file in the root directory of your app with a name ending in "manifest.xml"). Replace all occurrences of `https://localhost:3000` with `http://localhost:4200` and save the file.
 
 > **Note**: Be sure to change the protocol to **http** in addition to changing the port number to **4200**.
 
-- Follow the instructions for the platform you'll be using to run your add-in and sideload the add-in within Excel.
+4- Follow the instructions for the platform you'll be using to run your add-in and sideload the add-in within Excel.
     - Windows: [Sideload Office Add-ins for testing on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
     - Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 ## Update the app
 
-- Open **src/index.html**, add the following `<script>` tag immediately before the `</head>` tag, and save the file.
+1- Open **src/index.html**, add the following `<script>` tag immediately before the `</head>` tag, and save the file.
 
 ```html
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
 ```
 
-- Open **src/main.ts**, replace `platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.log(err));` with the following code, and save the file. 
+2- Open **src/main.ts**, replace `platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.log(err));` with the following code, and save the file. 
 
 ```typescript 
 declare const Office: any;
@@ -71,13 +75,13 @@ Office.initialize = () => {
 };
 ```
 
-- Open **src/polyfills.ts**, add the following line of code above all other existing `import` statements, and save the file.
+3- Open **src/polyfills.ts**, add the following line of code above all other existing `import` statements, and save the file.
 
 ```typescript
 import 'core-js/client/shim';
 ```
 
-- In **src/polyfills.ts**, uncomment the following lines, and save the file.
+4- In **src/polyfills.ts**, uncomment the following lines, and save the file.
 
 ```typescript
 import 'core-js/es6/symbol';
@@ -96,7 +100,7 @@ import 'core-js/es6/weak-map';
 import 'core-js/es6/set';
 ```
 
-- Open **src/app/app.component.html**, replace file contents with the following HTML, and save the file. 
+5- Open **src/app/app.component.html**, replace file contents with the following HTML, and save the file. 
 
 ```html
 <div id="content-header">
@@ -114,7 +118,7 @@ import 'core-js/es6/set';
 </div>
 ```
 
-- Open **src/app/app.component.css**, replace file contents with the following CSS code, and save the file.
+6- Open **src/app/app.component.css**, replace file contents with the following CSS code, and save the file.
 
 ```css
 #content-header {
@@ -143,7 +147,7 @@ import 'core-js/es6/set';
 }
 ```
 
-- Open **src/app/app.component.ts**, replace file contents with the following code, and save the file. 
+7- Open **src/app/app.component.ts**, replace file contents with the following code, and save the file. 
 
 ```typescript
 import { Component } from '@angular/core';
@@ -168,16 +172,17 @@ export class AppComponent {
 
 ## Try it out
 
-- From the terminal, run the following command to start the dev server.
+1- From the terminal, run the following command to start the dev server.
+
 ```bash
 npm start
 ```
 
-- In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+2- In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
 ![Excel Add-in button](../../images/excel_quickstart_addin_2a.png)
 
-- Choose the **Color Me** button in the task pane to set the color of the selected range to green.
+3- Choose the **Color Me** button in the task pane to set the color of the selected range to green.
 
 ![Excel Add-in](../../images/excel_quickstart_addin_2b.png)
 

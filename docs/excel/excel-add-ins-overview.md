@@ -44,19 +44,19 @@ In addition to interacting with the content in the workbook, Excel add-ins can a
 
 **Custom ribbon buttons**
 
-![Add-in commands](../../images/Excel_add-in_commands.png)
+![Add-in commands](../../images/Excel_add-in_commands_Script-Lab.png)
 
 **Task pane**
 
-![Add-in task pane](../../images/Excel_add-in_task_pane.png)
+![Add-in task pane](../../images/Excel_add-in_task_pane_Insights.png)
 
 **Dialog box**
 
-![Add-in dialog box](../../images/Excel_add-in_dialog.png)
+![Add-in dialog box](../../images/Excel_add-in_dialog_choose-number.png)
 
-**Embedded web-based object**
+**Content add-in**
 
-![Content add-in](../../images/Excel_add-in_content.png)
+![Content add-in](../../images/Excel_add-in_content_map.png)
 
 ## JavaScript APIs to interact with workbook content
 

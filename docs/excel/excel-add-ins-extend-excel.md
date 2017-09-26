@@ -8,7 +8,7 @@ Add-in commands are UI elements that extend the Excel UI and start actions in yo
 
 **Add-in commands**
 
-![Add-in commands in Excel](../../images/Excel_add-in_commands.png)
+![Add-in commands in Excel](../../images/Excel_add-in_commands_Script-Lab.png)
 
 For more information about command capabilities, supported platforms, and best practices for developing add-in commands, see [Add-in commands for Excel, Word, and PowerPoint](../design/add-in-commands.md).
 
@@ -18,7 +18,7 @@ Task panes are interface surfaces that typically appear on the right side of the
 
 **Task pane**
 
-![Task pane add-in in Excel](../../images/Excel_add-in_task_pane.png)
+![Task pane add-in in Excel](../../images/Excel_add-in_task_pane_Insights.png)
 
 For more information about task panes, see [Task panes in Office Add-ins](../design/task-pane-add-ins.md). For a sample that implements a task pane in Excel, see [Excel Add-in JS WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends).
 
@@ -28,7 +28,7 @@ Dialog boxes are surfaces that float above the active Excel application window. 
 
 **Dialog box**
 
-![Add-in dialog box in Excel](../../images/Excel_add-in_dialog.png)
+![Add-in dialog box in Excel](../../images/Excel_add-in_dialog_choose-number.png)
 
 For more information about dialog boxes and the Dialog API, see [Dialog boxes in Office Add-ins](../design/dialog-boxes.md) and [Use the Dialog API in your Office Add-ins](../develop/dialog-api-in-office-add-ins.md).
 
@@ -38,7 +38,7 @@ Content add-ins are surfaces that you can embed directly into Excel documents. Y
 
 **Content add-in**
 
-![Content add-in in Excel](../../images/Excel_add-in_content.png)
+![Content add-in in Excel](../../images/Excel_add-in_content_map.png)
 
 For more information about content add-ins, see [Content Office Add-ins](../design/content-add-ins.md). For a sample that implements a content add-in in Excel, see [Excel Content Add-in Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance) in GitHub.
 
