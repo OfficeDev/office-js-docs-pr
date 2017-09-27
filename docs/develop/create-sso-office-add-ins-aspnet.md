@@ -158,7 +158,9 @@ The following is an example of what the four keys you changed should look like. 
     >* The **Resource** value is the **Application ID URI** you set when you added the Web API platform to the registration of the add-in.
     >* The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through the Office Store.
 
-1. Open the **Warnings** tab of the **Error List** in Visual Studio. If there is a warning that `<WebApplicationInfo>` is not a valid child of `<VersionOverrides>`, your version of Visual Studio 2017 Preview does not  recognize the SSO markup. As a workaround, do the following:
+1. Open the **Warnings** tab of the **Error List** in Visual Studio. If there is a warning that `<WebApplicationInfo>` is not a valid child of `<VersionOverrides>`, your version of Visual Studio 2017 Preview does not  recognize the SSO markup. As a workaround, do the following for a Word, Excel, or PowerPoint add-in. (If you are working with an Outlook add-in see the workaround below.)
+
+   - **Workaround for Word, Excel, and Powerpoint**
 
    > 1. Comment out the `<WebApplicationInfo>` section from the manifest just above the end of `</VersionOverrides>`.
 
@@ -177,6 +179,14 @@ The following is an example of what the four keys you changed should look like. 
    > 8. Deselect **Build** and **Deploy** in the row for the **Office-Add-in-ASPNET-SSO** project (*not* the **Office-Add-in-ASPNET-SSO-WebAPI** project).
 
    > 9. Press **OK** to close the dialog box.
+
+   - **Workaround for Outlook**
+
+   > 1. On your development machine, locate the existing `MailAppVersionOverridesV1_1.xsd`. This should be located in your Visual Studio installation directory under `./Xml/Schemas/{lcid}`. For example, on a typical installation of VS 2017 32-bit on an English (US) system, the full path would be `C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Xml\Schemas\1033`.
+
+   > 2. Rename the existing file to `MailAppVersionOverridesV1_1.old`.
+
+   > 3. Copy this modified version of the file into the folder: [Modified MailAppVersionOverrides Schema](https://github.com/OfficeDev/outlook-add-in-attachments-demo/blob/sso-conversion/manifest-schema-fix/MailAppVersionOverridesV1_1.xsd)
 
 1. Save and close the main manifest file in Visual Studio.
 
