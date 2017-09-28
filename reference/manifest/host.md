@@ -43,7 +43,7 @@ When defined in [VersionOverrides](./versionoverrides.md), the host type is dete
 
 |  Attribute  |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  [xsi:type](#xsitype)  |  Yes  | Describes the Office host these settings apply to.|
+|  [xsi:type](#xsitype)  |  Yes  | Describes the Office host where these settings apply.|
 
 ### Child elements
 
@@ -51,10 +51,11 @@ When defined in [VersionOverrides](./versionoverrides.md), the host type is dete
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](./desktopformfactor.md)    |  Yes   |  Defines the settings for the desktop form factor. |
 |  [MobileFormFactor](./mobileformfactor.md)    |  No   |  Defines the settings for the mobile form factor. **Note:** this element is only supported in Outlook for iOS. |
+|  [AllFormFactors](./allformfactors.md)    |  No   |  Defines the settings for all form factors. Only used by custom functions in Excel. |
 
 
 ### xsi:type
-Controls which Office host (Word, Excel, PowerPoint, Outlook, OneNote) the contained settings apply too. The value must be one of the following:
+Controls which Office host (Word, Excel, PowerPoint, Outlook, OneNote) where the contained settings apply. The value must be one of the following:
 
 - `Document` (Word)
 - `MailHost` (Outlook)    
