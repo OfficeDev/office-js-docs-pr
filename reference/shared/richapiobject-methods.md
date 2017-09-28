@@ -1,10 +1,14 @@
-# object.load method
+# Load or set properties of an object
 
-> Note: This method is implemented only on the objects of the host-specific Office JavaScript APIs, such as the Word or Excel JavaScript APIs. The method is not supported on the Common APIs. For more information about the distinction, see [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)
+You can use the **object.load** method and the **object.set** method to load or set properties of an object in host-specific Office JavaScript APIs, such as the Excel JavaScript APIs and the Word JavaScript APIs.
 
-## Method Details
+## object.load method
 
-### load(param: object)
+> **Note**: This method is implemented only on objects in host-specific Office JavaScript APIs, such as the Excel JavaScript APIs and the Word JavaScript APIs. It is not implmented on objects in the Common APIs. For more information about the distinction between host-specific APIs and Common APIs, see [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office).
+
+### Method Details
+
+#### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
@@ -66,14 +70,14 @@ async function copyPropertiesFromParagraph() {
 
 
 
-# object.set method
+## object.set method
 Sets multiple properties of an object at once by passing either another object of the same Office type or a JavaScript object with properties that are structured isomorphically to the properties of the object on which the method is called.
 
-> Note: This method is implemented only on the objects of the host-specific Office JavaScript APIs, such as the Word or Excel JavaScript APIs. The method is not supported on the Common APIs. For more information about the distinction, see [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)
+> **Note**: This method is implemented only on objects in host-specific Office JavaScript APIs, such as the Excel JavaScript APIs and the Word JavaScript APIs. It is not implmented on objects in the Common APIs. For more information about the distinction between host-specific APIs and Common APIs, see [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office).
 
-## Method Details
+### Method Details
 
-### set(properties: object, options: object)
+#### set(properties: object, options: object)
 The *non-read-only* properties of the object on which the method is called are set to the same values as the corresponding properties of the passed-in object.
 If the `properties` parameter is a JavaScript object, then properties in the passed-in object that correspond to a read-only property in the object on which the method is called are either ignored or cause an exception, depending on the `options` parameter.
 
