@@ -52,13 +52,15 @@
 	<Item text="Develop add-ins for the iPad" url="develop/develop-office-add-ins-for-the-ipad"  SEODescription="Make your Office Add-ins available in Office for iPad." />
 	<Item text="Tips for creating add-ins with Angular" url="develop/add-ins-with-angular2" SEODescription="Use Angular 2 to develop Office Add-ins." />
   <Item text="Convert JavaScript to TypeScript" url="develop/convert-javascript-to-typescript" SEODescription="Use the Office Add-in JavaScript template in Visual Studio to create an add-in that uses TypeScript." />
-  <Item text="Use the Dialog API" url="develop/dialog-api-in-office-add-ins" SEODescription="Use the Dialog API to open dialog boxes in your Office Add-in." />
-	<Item text="Authorize external services" url="develop/auth-external-add-ins" SEODescription="Use the OAuth 2.0 authorization framework in your Office Add-ins." />
-	<Item text="Enable SSO in an add-in" url="develop/sso-in-office-add-ins" >
-		<Item text="Create an SSO add-in using ASP.NET" url="develop/create-sso-office-add-ins-aspnet" />
-		<Item text="Create an SSO add-in using Node.js" url="develop/create-sso-office-add-ins-nodejs" />
-	</Item>
-	<Item text="Manifest" url="overview/add-in-manifests">	
+	<Item text="Use the Dialog API" url="develop/dialog-api-in-office-add-ins" SEODescription="Use the Dialog API to open dialog boxes in your Office Add-in." />
+  <Item text="Authentication and authorization" url="develop/sso-in-office-add-ins" SEODescription="Authenticate and authorize using single sign-on (SSO)" >
+		  <Item text="Enable SSO in an add-in" url="develop/sso-in-office-add-ins" SEODescription="Enable single sign-on (SSO) in an add-in." >
+		  <Item text="Create an SSO add-in using ASP.NET" url="develop/create-sso-office-add-ins-aspnet" SEODescription="Create a single sign-on (SSO) add-in using ASP.NET." />
+		  <Item text="Create an SSO add-in using Node.js" url="develop/create-sso-office-add-ins-nodejs" SEODescription="Create a single sign-on (SSO add-in using Node.js." />
+	    			</Item>
+			<Item text="Authorize external services" url="develop/authorize-external-services" />
+			</Item>
+	<Item text="Manifest" url="overview/add-in-manifests" >	
 		<Item text="Define add-in commands" url="develop/define-add-in-commands"  SEODescription="Use the VersionOverrides element in your add-in manifest to define add-in commands." />
 		<Item text="Specify Office hosts" url="overview/specify-office-hosts-and-api-requirements" SEODescription="Find out how to specify Office hosts and API requirements in your manifest." /> 	
 		<Item text="Requesting permissions for API use in content and task pane add-ins" url="develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins" SEODescription="Specify the level of API access your add-in requires in your manifest."  />

@@ -109,7 +109,7 @@ You can use the example in this section to get started. This example shows you h
 To begin, create a page in SharePoint Online or edit an existing page. Add a script editor webpart on the page, and copy and paste the following code. After that, all you need is to add the URL of a Visio diagram that is stored in SharePoint Online.
 
 ```js
-<script src='https://visioonlineapi.azurewebsites.net/visio.js' type='text/javascript'></script>
+<script src='https://appsforoffice.microsoft.com/embedded/1.0/visio-web-embedded.js' type='text/javascript'></script>
 
 Enter Visio File Url:<br/>
 <script language="javascript">

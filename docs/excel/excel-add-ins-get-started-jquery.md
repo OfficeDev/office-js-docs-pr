@@ -4,14 +4,16 @@ In this article, you'll walk through the process of building an Excel add-in by 
 
 ## Create the web app
 
-- Create a folder on your local drive and name it **my-addin**. This is where you'll create the files for your app.
+1- Create a folder on your local drive and name it **my-addin**. This is where you'll create the files for your app.
 
-- Navigate to your app folder.
+2- Navigate to your app folder.
+
 ```bash
 cd my-addin
 ```
 
-- In your app folder, create a file named **Home.html** to specify the HTML that will be rendered in the add-in's task pane. Add the following code and save the file.
+3- In your app folder, create a file named **Home.html** to specify the HTML that will be rendered in the add-in's task pane. Add the following code and save the file.
+
 ```html
 <html>
     <head>
@@ -48,7 +50,8 @@ cd my-addin
 </html>
 ```
 
-- In your app folder, create a file named **Home.js** to specify the jQuery script for the add-in. Add the following code and save the file.
+4- In your app folder, create a file named **Home.js** to specify the jQuery script for the add-in. Add the following code and save the file.
+
 ```js
 (function () {
     "use strict";
@@ -75,7 +78,7 @@ cd my-addin
 })();
 ```
 
-- In your app folder, create a file named **Common.css** to specify the custom styles for the add-in. Add the following code and save the file.
+5- In your app folder, create a file named **Common.css** to specify the custom styles for the add-in. Add the following code and save the file.
 
 ```css
 #content-header {
@@ -106,7 +109,8 @@ cd my-addin
 
 ## Create the manifest file and sideload the add-in
 
-- In your app folder, create a file named **my-excel-add-in-manifest.xml** to define the add-in's settings and capabilities. Add the following XML to the file.
+1- In your app folder, create a file named **my-excel-add-in-manifest.xml** to define the add-in's settings and capabilities. Add the following XML to the file.
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
@@ -126,26 +130,27 @@ cd my-addin
 </OfficeApp>
 ```
 
-- Generate a GUID using an online generator of your choice. Then, replace the value of the **Id** element shown in the previous step with that GUID.
+2- Generate a GUID using an online generator of your choice. Then, replace the value of the **Id** element shown in the previous step with that GUID.
 
-- Save the manifest file. 
+3- Save the manifest file. 
 
 ## Deploy the web app and update the manifest
 
-1. Deploy your web app (i.e., the contents of your app folder) to the web server of your choice.
+1- Deploy your web app (i.e., the contents of your app folder) to the web server of your choice.
 
-2. In your local app folder, open the manifest file (**my-excel-add-in-manifest.xml**). Edit the attribute value within the **SourceLocation** element to specify the location of the **Home.html** file on the web server and save the file.
+2- In your local app folder, open the manifest file (**my-excel-add-in-manifest.xml**). Edit the attribute value within the **SourceLocation** element to specify the location of the **Home.html** file on the web server and save the file.
 
 ## Try it out
 
-1. Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within Excel.
-    - Windows: [Sideload Office Add-ins for testing on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+1- Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within Excel.
 
-2. In the right task pane, choose the **Set color** button to set the color of the selected range to green.
+- Windows: [Sideload Office Add-ins for testing on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+- Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+- iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-    ![Excel Add-in](../../images/excel_quickstart_addin_1.png)
+2- In the right task pane, choose the **Set color** button to set the color of the selected range to green.
+
+![Excel Add-in](../../images/excel_quickstart_addin_1.png)
 
 ## Next steps
 
