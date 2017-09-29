@@ -18,11 +18,19 @@ Future investments in add-in deployment scenarios will focus on the Office 365 a
 
 ## Prerequisites for centralized deployment 
 
-You can deploy add-ins via the admin center if your organization meets the following criteria:
+For Word, Excel and PowerPoint 
+- Your users must be using Office Professional Plus 2016 on the following operating systems:
+  * Win32: build 16.0.8067 or later 
+  * Mac: build 15.34.17051500 or later 
+  
+For Outlook 
+- 2013 Click to Run version: 15.0.4819.1000 or later 
+- 2013 MSI version: 15.0.4937.1000 or later* 
+- 2016 Click to Run version: 16.0.7726.5702 or later 
+- 2016 MSI version: 16.0.4494.1000 or later* 
 
-- Users are running a version of Office 2016 ProPlus:
-    - Windows build 16.0.8027 or later
-    - Mac build 15.33.170327 or later
+*In MSI version of Outlook, admin-installed add-ins will show in the appropriate ribbon in Outlook but will not show the add-in in 'My add-ins' section 
+
 - Users sign in to Office 2016 with their work or school account.
 - Your organization uses the Azure Active Directory (Azure AD) identity service.
 - Users' Exchange mailboxes have [OAuth enabled](https://msdn.microsoft.com/en-us/library/office/dn626019(v=exchg.150).aspx#Anchor_0).
@@ -34,7 +42,7 @@ Currently, add-ins for the following Office clients are supported.
 | Word                  | X                         | X             | X                     |
 | Excel                 | X                         | X             | X                     |
 | PowerPoint            | X                         | X             | X                     |
-| Outlook               | Coming Soon               | Coming Soon   | Coming Soon           |
+| Outlook               | X                         | X             | X                     |
 
 The admin center does not support the following:
 
@@ -47,7 +55,7 @@ The admin center does not support the following:
 
 To deploy SharePoint Add-ins or add-ins that target Office 2013, use a [SharePoint add-in catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
->**Important!** SharePoint add-in catalogs do not support add-in features that are implemented in the [VersionOverrides](../../reference/manifest/versionoverrides.md) node of the add-in manifest, such as [add-in commands](../design/add-in-commands.md). 
+>**Important** SharePoint add-in catalogs do not support add-in features that are implemented in the [VersionOverrides](../../reference/manifest/versionoverrides.md) node of the add-in manifest, such as [add-in commands](../design/add-in-commands.md). 
 
 To deploy COM/VSTO add-ins, use ClickOnce or Windows Installer. For details, see [Deploying an Office solution](https://msdn.microsoft.com/en-us/library/bb386179.aspx).
 
