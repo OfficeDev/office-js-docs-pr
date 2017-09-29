@@ -58,7 +58,7 @@
 		  <Item text="Create an SSO add-in using ASP.NET" url="develop/create-sso-office-add-ins-aspnet" SEODescription="Create a single sign-on (SSO) add-in using ASP.NET." />
 		  <Item text="Create an SSO add-in using Node.js" url="develop/create-sso-office-add-ins-nodejs" SEODescription="Create a single sign-on (SSO add-in using Node.js." />
 	    			</Item>
-			<Item text="Authorize external services" url="develop/authorize-external-services" />
+			<Item text="Authorize external services" url="develop/authorize-external-add-ins" />
 			</Item>
 	<Item text="Manifest" url="overview/add-in-manifests" >	
 		<Item text="Define add-in commands" url="develop/define-add-in-commands"  SEODescription="Use the VersionOverrides element in your add-in manifest to define add-in commands." />
