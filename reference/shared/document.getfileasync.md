@@ -19,8 +19,8 @@ Office.context.document.getFileAsync(fileType [, options], callback);
 
 |**Name**|**Type**|**Description**|**Support notes**|
 |:-----|:-----|:-----|:-----|
-| _fileType_|[FileType](../../reference/shared/filetype-enumeration.md)|Specifies the format in which the file will be returned. Required. See [fileType Value](#filetype-value) <br/>|**Changed in** 1.1, see [Support history](#support-history)|
-| _options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)||
+| _fileType_|[FileType](../../reference/shared/filetype-enumeration.md)|Specifies the format in which the file will be returned. Required. See [fileType Value](#filetype-value). <br/>|**Changed in** 1.1, see [Support history](#support-history)|
+| _options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods).||
 | _sliceSize_|**number**|Specifies the desired slice size (in bytes) up to 4194304 bytes (4 MB). If not specified, a default slice size of 4194304 bytes (4 MB) will be used. ||
 | _asyncContext_|**array**, **boolean**, **null**, **number**, **object**, **string**, or **undefined**|A user-defined item of any type that is returned in the  **AsyncResult** object without being altered.||
 | _callback_|**object**|A function that is invoked when the callback returns, whose only parameter is of type  **AsyncResult**.||
