@@ -93,8 +93,7 @@ The value passed for _data_ contains the data to write to the current selection.
     
 -  **A [TableData](../../reference/shared/tabledata.md) object:** A table with headers will be inserted.
 
-     **NOTE:**
-     In Excel, if you specify formulas in the **TableData** object you pass for the *data* parameter, you might not get the results you expect due to the "calculated columns" feature of Excel, which automatically duplicates formulas within a column. To work around this when you want to write _data_ that contains formulas to a selected table, try specifying the data as an array of arrays (instead of a **TableData** object), and specify the _coercionType_ as **Microsoft.Office.Matrix** or "matrix".
+**NOTE:** In Excel, if you specify formulas in the **TableData** object you pass for the *data* parameter, you might not get the results you expect due to the "calculated columns" feature of Excel, which automatically duplicates formulas within a column. To work around this when you want to write _data_ that contains formulas to a selected table, try specifying the data as an array of arrays (instead of a **TableData** object), and specify the _coercionType_ as **Microsoft.Office.Matrix** or "matrix".
     
 ### Application-specific behaviors
 
