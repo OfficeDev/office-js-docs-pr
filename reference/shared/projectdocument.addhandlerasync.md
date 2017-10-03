@@ -37,7 +37,7 @@ The following table shows valid _eventType_ arguments for a [ProjectDocument](..
 
 When the  _callback_ function executes, it receives an [AsyncResult](../../reference/shared/asyncresult.md) object that you can access from the parameter in the callback function.
 
-For the  **addHandlerAsync** method, the returned [AsyncResult](../../reference/shared/asyncresult.md) object contains the following properties:
+For the  **addHandlerAsync** method, the returned [AsyncResult](../../reference/shared/asyncresult.md) object contains the following properties.
 
 |**Name**|**Description**|
 |:-----|:-----|
@@ -59,6 +59,7 @@ The example assumes that your add-in has a reference to the jQuery library and t
 <span id="message"></span>
 ```
 
+<br/>
 
 ```js
 (function () {
@@ -129,6 +130,8 @@ The example assumes that your add-in has a reference to the jQuery library and t
 })();
 ```
 
+<br/>
+
 For a complete code sample that shows how to use a [TaskSelectionChanged](../../reference/shared/projectdocument.taskselectionchanged.event.md) event handler in a Project add-in, see [Create your first task pane add-in for Project by using a text editor](../../docs/project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md).
 
 
@@ -140,7 +143,7 @@ For more information about Office host application and server requirements, see 
 
 
 ||**Office for Windows desktop**|**Office Online (in browser)**|
-|:-----|:-----|:-----|
+|:-----|:---:|:-----|
 |**Project**|Y||
 
 |||
@@ -153,19 +156,14 @@ For more information about Office host application and server requirements, see 
 
 ## Support history
 
-
-
-****
-
-
 |**Version**|**Changes**|
 |:-----|:-----|
 |1.0|Introduced|
 
 ## See also
 
-[TaskSelectionChanged event](../../reference/shared/projectdocument.taskselectionchanged.event.md)
+- [TaskSelectionChanged event](../../reference/shared/projectdocument.taskselectionchanged.event.md)
 
-[removeHandlerAsync method](../../reference/shared/projectdocument.addhandlerasync.md)
+- [removeHandlerAsync method](../../reference/shared/projectdocument.addhandlerasync.md)
 
-[ProjectDocument object](../../reference/shared/projectdocument.projectdocument.md)
+- [ProjectDocument object](../../reference/shared/projectdocument.projectdocument.md)
