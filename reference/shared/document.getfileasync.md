@@ -201,5 +201,5 @@ For more information about Office host application and server requirements, see 
 |1.1| In Excel Online, added support for **Office.FileType.Compressed** as the _fileType_ parameter.|
 |1.1| In Word Online, added support for **Office.FileType.Compressed** and **Office.FileType.Pdf** as the _fileType_ parameter.|
 |1.1| In PowerPoint and Word on Office for iPad, added support for all  **FileType** values as the _fileType_ parameter.|
-|1.1| In PowerPoint and Word on Windows desktop, added support for  **Office.FileType.Pdf** as the _fileType_ parameter..|
+|1.1| In PowerPoint and Word on Windows desktop, added support for  **Office.FileType.Pdf** as the _fileType_ parameter.|
 |1.0| Introduced|
