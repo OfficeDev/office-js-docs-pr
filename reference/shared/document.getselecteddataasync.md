@@ -37,7 +37,7 @@ Office.context.document.getSelectedDataAsync(coercionType [, options], callback)
 |**Name**|**Type**|**Description**|
 |:-----|:-----|:-----|
 |valueFormat|[valueFormat](../../reference/shared/valueformat-enumeration.md)|Specifies whether to return the result with its number or date values formatted or unformatted.|
-|filterType|[filterType](../../reference/shared/filtertype-enumeration.md)|Specifies whether to apply filtering when the data is retrieved. Optional. <br/> This parameter is ignored in Word documents.|
+|filterType|[filterType](../../reference/shared/filtertype-enumeration.md)|Specifies whether to apply filtering when the data is retrieved. Optional. <br/><br/> This parameter is ignored in Word documents.|
 |asyncContext|**array**, **boolean**, **null**, **number**, **object**, **string**, or **undefined**|A user-defined item of any type that is returned in the **AsyncResult** object without being altered.|
 
 ## Callback value
