@@ -17,7 +17,7 @@ Office.context.document.removeHandlerAsync(eventType[, options][, callback]);
 ## Parameters
 |**Name**|**Type**|**Description**|**Support notes**|
 |:-----|:-----|:-----|:-----|
-|_eventType_|[EventType](../../reference/shared/eventtype-enumeration.md)|The type of event to remove, as an [EventType](../../reference/shared/eventtype-enumeration.md) constant or its corresponding text value. Required. See [eventType value](#eventype-value).||
+|_eventType_|[EventType](../../reference/shared/eventtype-enumeration.md)|The type of event to remove, as an [EventType](../../reference/shared/eventtype-enumeration.md) constant or its corresponding text value. Required. See [eventType value](#eventtype-value). ||
 |_options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods).||
 |_asyncContext_|**array**, **boolean**, **null**, **number**, **object**, **string**, or **undefined**|A user-defined item of any type that is returned in the  **AsyncResult** object without being altered.||
 |_callback_|**object**|A function that is invoked when the callback returns, whose only parameter is of type **AsyncResult**.||
@@ -37,7 +37,7 @@ The following table shows valid eventType arguments for a [ProjectDocument](../.
 
 When the _callback_ function executes, it receives an [AsyncResult](../../reference/shared/asyncresult.md) object that you can access from the parameter in the callback function.
 
-For the  **removeHandlerAsync** method, the returned [AsyncResult](../../reference/shared/asyncresult.md) object contains the following properties
+For the  **removeHandlerAsync** method, the returned [AsyncResult](../../reference/shared/asyncresult.md) object contains the following properties.
 
 |**Name**|**Description**|
 |:-----|:-----|
@@ -125,7 +125,7 @@ For more information about Office host application and server requirements, see 
 
 
 ||**Office for Windows desktop**|**Office Online (in browser)**|
-|:-----|:-----|:-----|
+|:-----|:---:|:-----|
 |**Project**|Y||
 
 |||
