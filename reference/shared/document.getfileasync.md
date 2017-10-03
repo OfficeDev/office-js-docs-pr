@@ -1,6 +1,6 @@
 
 # Document.getFileAsync method
-Returns the entire document file in slices of up to 4194304 bytes (4MB). For add-ins for iOS file slice is supported up to 65536 (64KB). Note that specifying file slice size of above permitted limit will result in an "Internal Error" failure. 
+Returns the entire document file in slices of up to 4194304 bytes (4 MB). For add-ins for iOS, file slice is supported up to 65536 (64 KB). Note that specifying file slice size of above permitted limit will result in an "Internal Error" failure. 
 
 |||
 |:-----|:-----|
@@ -16,30 +16,28 @@ Office.context.document.getFileAsync(fileType [, options], callback);
 ## Parameters
 
 
-
 |**Name**|**Type**|**Description**|**Support notes**|
 |:-----|:-----|:-----|:-----|
-| _fileType_|[FileType](../../reference/shared/filetype-enumeration.md)|Specifies the format in which the file will be returned. Required.<br/>|**Changed in** 1.1, see [Support history](#support-history)|
-| _options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)||
-| _sliceSize_|**number**|Specifies the desired slice size (in bytes) up to 4194304 bytes (4MB). If not specified, a default slice size of 4194304 bytes (4MB) will be used. ||
-| _asyncContext_|**array**,  **boolean**,  **null**,  **number**,  **object**, **string**, or  **undefined**|A user-defined item of any type that is returned in the  **AsyncResult** object without being altered.||
+| _fileType_|[FileType](../../reference/shared/filetype-enumeration.md)|Specifies the format in which the file will be returned. Required. See [fileType Value](#filetype-value). <br/>|**Changed in** 1.1, see [Support history](#support-history)|
+| _options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods).||
+| _sliceSize_|**number**|Specifies the desired slice size (in bytes) up to 4194304 bytes (4 MB). If not specified, a default slice size of 4194304 bytes (4 MB) will be used. ||
+| _asyncContext_|**array**, **boolean**, **null**, **number**, **object**, **string**, or **undefined**|A user-defined item of any type that is returned in the  **AsyncResult** object without being altered.||
 | _callback_|**object**|A function that is invoked when the callback returns, whose only parameter is of type  **AsyncResult**.||
 
-## fileType Value
+## fileType value
 
 |**Host**|**Supported fileType**|
 |:-----|:-----|
-|Excel Online, Win32, Mac and iOS|Office.FileType.Compressed|
-|PowerPoint on Windows desktop, Mac, and iPad and PowerPoint Online|Office.FileType.Compressed, Office.FileType.Pdf|
-|Word on Windows desktop, Word on Mac and Word Online|Office.FileType.Compressed, Office.FileType.Pdf, Office.FileType.Text|
+|Excel Online, Win32, Mac, and iOS|Office.FileType.Compressed|
+|PowerPoint on Windows desktop, Mac, and iPad, and PowerPoint Online|Office.FileType.Compressed, Office.FileType.Pdf|
+|Word on Windows desktop, Word on Mac, and Word Online|Office.FileType.Compressed, Office.FileType.Pdf, Office.FileType.Text|
 Word on iPad|Office.FileType.Compressed, Office.FileType.Text|
 
-## Callback Value
+## Callback value
 
 When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](../../reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
 
 In the callback function passed to the  **getFileAsync** method, you can use the properties of the **AsyncResult** object to return the following information.
-
 
 
 |**Property**|**Use to...**|
@@ -51,9 +49,9 @@ In the callback function passed to the  **getFileAsync** method, you can use the
 
 ## Remarks
 
-For add-ins running in Office host applications other than Office for iOS, the  **getFileAsync** method supports getting files in slices of up to 4194304 bytes (4MB). For add-ins running in Office of iOS apps, the **getFileAsync** method supports getting files in slices of up to 65536 (64KB).
+For add-ins running in Office host applications other than Office for iOS, the  **getFileAsync** method supports getting files in slices of up to 4194304 bytes (4 MB). For add-ins running in Office for iOS apps, the **getFileAsync** method supports getting files in slices of up to 65536 (64 KB).
 
-The  _fileType_ parameter can be specified using the following enumerations or text values.
+The _fileType_ parameter can be specified by using the following enumerations or text values.
 
 
 **FileType enumeration**
@@ -69,7 +67,7 @@ No more than two documents are allowed to be in memory; otherwise the  **getFile
 
 ## Example - Get a document in Office Open XML ("compressed") format
 
-The following example gets the document in Office Open XML ("compressed") format in 65536 bytes (64KB) slices. Note: The implementation of  `app.showNotification` in this example is from the Visual Studio template for Office Add-ins.
+The following example gets the document in Office Open XML ("compressed") format in 65536 bytes (64 KB) slices. Note: The implementation of  `app.showNotification` in this example is from the Visual Studio template for Office Add-ins.
 
 
 ```js
@@ -177,7 +175,7 @@ For more information about Office host application and server requirements, see 
 
 
 ||**Office for Windows desktop**|**Office Online (in browser)**|**Office for iPad**|
-|:-----|:-----|:-----|:-----|
+|:-----|:---:|:---:|:---:|
 |**Excel**||Y||
 |**PowerPoint**|Y|Y|Y|
 |**Word**|Y|Y|Y|
@@ -200,6 +198,6 @@ For more information about Office host application and server requirements, see 
 |1.1| In Word Online, added support for **Office.FileType.Text** as the _fileType_ parameter.|
 |1.1| In Excel Online, added support for **Office.FileType.Compressed** as the _fileType_ parameter.|
 |1.1| In Word Online, added support for **Office.FileType.Compressed** and **Office.FileType.Pdf** as the _fileType_ parameter.|
-|1.1|In PowerPointWord on Office for iPad, added support for all  **FileType** values as the _fileType_ parameter.|
-|1.1|In Word and PowerPoint on Windows desktop, added support for  **Office.FileType.Pdf** as the _fileType_ parameter..|
-|1.0|Introduced|
+|1.1| In PowerPoint and Word on Office for iPad, added support for all  **FileType** values as the _fileType_ parameter.|
+|1.1| In PowerPoint and Word on Windows desktop, added support for  **Office.FileType.Pdf** as the _fileType_ parameter.|
+|1.0| Introduced|
