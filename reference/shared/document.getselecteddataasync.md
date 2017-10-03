@@ -32,7 +32,7 @@ Office.context.document.getSelectedDataAsync(coercionType [, options], callback)
 |Word and Word Online only|Office.CoercionType.Ooxml (Office Open XML)|
 |PowerPoint and PowerPoint Online only|Office.CoercionType.SlideRange|
 
-## Options value
+## options value
 
 |**Name**|**Type**|**Description**|
 |:-----|:-----|:-----|
