@@ -227,8 +227,6 @@ A mobile button performs a single action when the user selects it. It can either
 
 The `MobileButton` value for **xsi:type** is defined in VersionOverrides schema 1.1. The containing [VersionOverrides](./versionoverrides.md) element must have an `xsi:type` attribute value of `VersionOverridesV1_1`.
 
-> **Note**: **Control** elements of this type are only supported by Outlook for iOS.
-
 ### Child elements
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|

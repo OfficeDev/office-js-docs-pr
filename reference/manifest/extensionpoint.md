@@ -1,6 +1,6 @@
 # ExtensionPoint element
 
- Defines where an add-in exposes functionality in the Office UI. The **ExtensionPoint** element is a child element of [DesktopFormFactor](./desktopformfactor.md) or [MobileFormFactor](./mobileformfactor.md). 
+ Defines where an add-in exposes functionality in the Office UI. The **ExtensionPoint** element is a child element of [AllFormFactors](./allformfactors.md), [DesktopFormFactor](./desktopformfactor.md) or [MobileFormFactor](./mobileformfactor.md). 
 
 ## Attributes
 
@@ -8,6 +8,22 @@
 |:-----|:-----|:-----|
 |  **xsi:type**  |  Yes  | The type of extension point being defined.|
 
+# Extension points for Excel only
+- **CustomFunctions** - a custom function written in JavaScript for Excel.
+
+The following examples show how to use the **ExtensionPoint** element with the **CustomFunctions** attribute value, and the child elements to be used.
+
+```XML
+<ExtensionPoint xsi:type="CustomFunctions">
+	<Script>
+		<SourceLocation resid="scriptURL" />
+                 <!-- The Script element is not used in the Developer Preview. -->
+	</Script>
+	<Page>
+		<SourceLocation resid="pageURL"/>
+	</Page>
+</ExtensionPoint>
+```
 
 ## Extension points for Word, Excel, PowerPoint, and OneNote add-in commands
 
@@ -64,7 +80,9 @@ The following examples show how to use the  **ExtensionPoint** element with **Pr
 |**Label**|Required. The label of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element.|
 |**Icon**|Required. Specifies the group's icon to be used on small form factor devices, or when too many buttons are displayed. The  **resid** attribute must be set to the value of the **id** attribute of an **Image** element. The **Image** element is a child element of the **Images** element, which is a child element of the **Resources** element. The **size** attribute gives the size, in pixels, of the image. Three image sizes are required: 16, 32, and 80. Five optional sizes are also supported: 20, 24, 40, 48, and 64.|
 |**Tooltip**|Optional. The tooltip of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element.|
-|**Control**|Each group requires at least one control. A  **Control** element can be either a **Button** or a **Menu**. Use  **Menu** to specify a drop-down list of button controls. Currently, only buttons and menus are supported.See the [Button controls](#button-controls) and [Menu controls](#menu-controls) sections for more information.<br/>**Note**  To make troubleshooting easier, we recommend that a  **Control** element and the related **Resources** child elements be added one at a time.
+|**Control**|Each group requires at least one control. A  **Control** element can be either a **Button** or a **Menu**. Use  **Menu** to specify a drop-down list of button controls. Currently, only buttons and menus are supported. See the [Button controls](#button-controls) and [Menu controls](#menu-controls) sections for more information.<br/>**Note**  To make troubleshooting easier, we recommend that a  **Control** element and the related **Resources** child elements be added one at a time.|
+|**Script**|Links to the JavaScript file with the custom function definition and registration code. This element is not used in the Developer Preview. Instead, the HTML page is responsible for loading all JavaScript files.|
+|**Page**|Links to the HTML page for your custom functions.|
 
 ## Extension points for Outlook add-in commands
 
@@ -204,7 +222,6 @@ This extension point puts buttons on the ribbon for the module extension.
 ### MobileMessageReadCommandSurface
 This extension point puts buttons in the command surface for the mail read view in the mobile form factor.
 
-> **Note:** This element type is only supported in Outlook for iOS.
 
 **Child elements**
 

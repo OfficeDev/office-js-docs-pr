@@ -52,7 +52,7 @@ You can use runtime logging to debug your add-in's manifest. This feature can he
 
 1. Make sure that you are running Office 2016 desktop build **16.0.7019** or later. 
 2. Add the `RuntimeLogging` registry key under 'HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\'. 
-3. Set the default value of the key to the full path of the file where you want the log to be written. For an example, see [EnableRuntimeLogging.zip](RuntimeLogging/EnableRuntimeLogging.zip). 
+3. Set the default value of the key to the full path of the file where you want the log to be written. For an example, see [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip). 
 
  > **Note:** The directory in which the log file will be written must already exist and you must have write permissions to it. 
  
@@ -83,9 +83,21 @@ You might see messages in the log file that are confusing or that are classified
 - If you see the message `Unexpected	Add-in is missing required manifest fields	DisplayName` and it doesn't contain a SolutionId, the error is most likely not related to the add-in you are debugging. 
 - Any `Monitorable` messages are expected errors from a system point of view. Sometimes they indicate an issue with your manifest, such as a misspelled element that was skipped but didn't cause the manifest to fail. 
 
+## Clear the Office cache
+
+If changes you've made in the manifest, such as filenames of ribbon button icons, or text of add-in commands, do not seem to take effect, try clearing the Office cache on your computer. 
+
+#### For Windows:
+Delete the content of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
+
+#### For Mac:
+Delete the content of the folder `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
+
+#### For iOS:
+Call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, you can reinstall Office.
+
 ## Additional resources
 
 - [Office Add-ins XML manifest](../overview/add-in-manifests.md)
 - [Sideload Office Add-ins for testing](sideload-office-add-ins-for-testing.md)
 - [Debug Office Add-ins](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
-

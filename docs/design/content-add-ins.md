@@ -15,7 +15,6 @@ Content add-ins are surfaces that can be embedded directly into Word, Excel, or 
 
 Content add-in sizes for Word, Excel, and PowerPoint in Office 2016 desktop and Office 365 are user specified.
 
-
 ## Personality menu
 
 Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac.
@@ -34,12 +33,9 @@ For Mac, the personality menu measures 26x26 pixels, but floats 8 pixels in from
 
 ## Implementation
 
-For a sample that implements a content add-in, see [Excel Content Add-in Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance/compare/master) in GitHub.
+For a sample that implements a content add-in, see [Excel Content Add-in Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance) in GitHub.
 
 ## Additional resources
 
 - [Office UI Fabric in Office Add-ins](office-ui-fabric.md) 
-- [UX design patterns for Office Add-ins](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
-
-
-
+- [UX design patterns for Office Add-ins](ux-design-patterns.md)

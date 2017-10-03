@@ -15,21 +15,36 @@ Office.context.document.getSelectedDataAsync(coercionType [, options], callback)
 
 ## Parameters
 
-
-
 |**Name**|**Type**|**Description**|**Support notes**|
 |:-----|:-----|:-----|:-----|
-| _coercionType_|[CoercionType](../../reference/shared/coerciontype-enumeration.md)<br/><table><tr><td></td><td><b>Host support</b></td></tr><tr><td><b>Office.CoercionType.Text</b> (string)</td><td>Excel, Excel Online, PowerPoint, PowerPoint Online, Word, and Word Online only</td></tr><tr><td><b>Office.CoercionType.Matrix</b> (array of arrays)</td><td>Excel, Word, and Word Online only</td></tr><tr><td><b>Office.CoercionType.Table</b> ([TableData](../../reference/shared/tabledata.md) object)</td><td>Access, Excel, Word, and Word Online only</td></tr><tr><td><b>Office.CoercionType.Html</b></td><td>Word only.</td></tr><tr><td><b>Office.CoercionType.Ooxml</b> (Office Open XML)</td><td>Word and Word Online only</td></tr><tr><td><b>Office.CoercionType.SlideRange</b></td><td>PowerPoint, and PowerPoint Online only</td></tr></table>|The type of data structure to return. Required.||
-| _options_|**object**<br/><table><tr><td><i>valueFormat</i></td><td><b>[ValueFormat](../../reference/shared/valueformat-enumeration.md)</b></td><td>Specifies whether to return the result with its number or date values formatted or unformatted.</td><td></td></tr><tr><td><i>filterType</i></td><td>[FilterType](../../reference/shared/filtertype-enumeration.md)</td><td>Specifies whether to apply filtering when the data is retrieved. Optional.</td><td>This parameter is ignored in Word documents.</td></tr><tr><td><i>asyncContext</i></td><td><b>array</b>,  <b>boolean</b>,  <b>null</b>,  <b>number</b>,  <b>object</b>,  <b>string</b>, or <b>undefined</b></td><td>A user-defined item of any type that is returned in the  <b>AsyncResult</b> object without being altered.</td><td></td></tr></table>|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)||
+| _coercionType_|[CoercionType](../../reference/shared/coerciontype-enumeration.md)<br/>|The type of data structure to return. Required. See [coercionType value](#coerciontype-value).||
+| _options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods). See [options value](#options-value).||
 | _callback_|**object**|A function that is invoked when the callback returns, whose only parameter is of type  **AsyncResult**.||
 
-## Callback Value
+## coercionType value
 
-When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](../../reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
+|**Host**|**Supported coercionType**|
+|:-----|:-----|
+|Excel, Excel Online, PowerPoint, PowerPoint Online, Word, and Word Online only|Office.CoercionType.Text (string)| 
+|Excel, Word, and Word Online only|Office.CoercionType.Matrix (array of arrays)|
+|Access, Excel, Word, and Word Online only|Office.CoercionType.Table ([TableData](../../reference/shared/tabledata.md) object)|
+|Word only|Office.CoercionType.Html|
+|Word and Word Online only|Office.CoercionType.Ooxml (Office Open XML)|
+|PowerPoint and PowerPoint Online only|Office.CoercionType.SlideRange|
 
-In the callback function passed to the  **getSelectedDataAsync** method, you can use the properties of the **AsyncResult** object to return the following information.
+## options value
 
+|**Name**|**Type**|**Description**|
+|:-----|:-----|:-----|
+|valueFormat|[valueFormat](../../reference/shared/valueformat-enumeration.md)|Specifies whether to return the result with its number or date values formatted or unformatted.|
+|filterType|[filterType](../../reference/shared/filtertype-enumeration.md)|Specifies whether to apply filtering when the data is retrieved. Optional. <br/><br/> This parameter is ignored in Word documents.|
+|asyncContext|**array**, **boolean**, **null**, **number**, **object**, **string**, or **undefined**|A user-defined item of any type that is returned in the **AsyncResult** object without being altered.|
 
+## Callback value
+
+When the function you passed to the _callback_ parameter executes, it receives an [AsyncResult](../../reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
+
+In the callback function that is passed to the  **getSelectedDataAsync** method, you can use the properties of the **AsyncResult** object to return the following information.
 
 |**Property**|**Use to...**|
 |:-----|:-----|
@@ -47,8 +62,6 @@ After reading the selection, you can also use the [setSelectedDataAsync](../../r
 The  **getSelectedDataAsync** method can read from the selection only as long as it's active. In add-ins for Word and Excel, if you need to make a persistent association to read and write to the user's selection, instead use the [Bindings.addFromSelectionAsync](../../reference/shared/bindings.addfromselectionasync.md) method to [bind to that selection](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md).
 
 Use the  _coercionType_ parameter of the **getSelectedDataAsync** method to specify the data structure or format of the selected data being read.
-
-
 
 |**Specified  _coercionType_**|**Data returned**|**Office host application support**|
 |:-----|:-----|:-----|
@@ -96,11 +109,7 @@ function write(message){
 }
 ```
 
-
-
-
 ## Support details
-
 
 A capital Y in the following matrix indicates that this method is supported in the corresponding Office host application. An empty cell indicates that the Office host application doesn't support this method.
 

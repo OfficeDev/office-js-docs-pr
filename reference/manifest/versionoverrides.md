@@ -1,6 +1,6 @@
 # VersionOverrides element
 
-The root element that contains information for the add-in commands implemented by the add-in. **VersionOverrides** is a child element of the [OfficeApp](./officeapp.md) element in the manifest. This element is supported in manifest schema v1.1 and later but is defined in the VersionOverrides v1.0 or v1.1 schema. 
+The root element that contains information for the add-in commands implemented by the add-in. **VersionOverrides** is a child element of the [OfficeApp](./officeapp.md) element in the manifest. This element is supported in manifest schema v1.1 and later but is defined in the VersionOverrides v1.0 or v1.1 schema.
 
 ## Attributes
 
@@ -16,11 +16,11 @@ The root element that contains information for the add-in commands implemented b
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
 |  **Description**    |  No   |  Describes the add-in. This overrides the `Description` element in any parent portion of the manifest. The text of the description is contained in a child element of the **LongString** element contained in the [Resources](./resources.md) element. The `resid` attribute of the **Description** element is set to the value of the `id` attribute of the `String` element that contains the text.|
-|  **Requirements**  |  No   |  Specifies the minimum requirement set and version of Office.js that the add-in requires. This overrides the  `Requirements` element in the parent portion of the manifest.| 
+|  **Requirements**  |  No   |  Specifies the minimum requirement set and version of Office.js that the add-in requires. This overrides the  `Requirements` element in the parent portion of the manifest.|
 |  [Hosts](./hosts.md)                |  Yes  |  Specifies a collection of Office hosts. The child  Hosts element overrides the Hosts element in the parent portion of the manifest.  |
 |  [Resources](./resources.md)    |  Yes  | Defines a collection of resources (strings, URLs, and images) that other manifest elements reference.|
 |  **VersionOverrides**    |  No  | Defines add-in commands under a newer schema version. See [Implementing multiple versions](#implementing_multiple_versions) for details. |
-|  **WebApplicationInfo**    |  No  | Specifies data about the add-in as an OAuth 2.0 resource and client. |
+|  **WebApplicationInfo**    |  No  | Specifies details about the add-in's associated Web application. |
 
 
 
@@ -38,7 +38,7 @@ The root element that contains information for the add-in commands implemented b
         <!-- add information on form factors -->
       </Host>
     </Hosts>
-    <Resources> 
+    <Resources>
       <!-- add information on resources -->
     </Resources>
   </VersionOverrides>
@@ -50,9 +50,9 @@ The root element that contains information for the add-in commands implemented b
 
 A manifest can implement multiple versions of the `VersionOverrides` element which support different versions of the VersionOverrides schema. This can be done to optionally support new features in a newer schema while still supporting older clients that do not support the new features.
 
-In order to implement multiple versions, the `VersionOverrides` element for the newer version must be a child of the `VersionOverrides` element for the older version. The child `VersionOverrides` element does not inherit any values from the parent.
+In order to implement multiple versions, the `VersionOverrides` element for the newer version must be a child of the `VersionOverrides` element for the older version. The child `VersionOverrides` element doesn't inherit any values from the parent.
 
-For example, in order to implement both the VersionOverrides v1.0 and v1.1 schema, the manifest would look similar to the following example.
+To implement both the VersionOverrides v1.0 and v1.1 schema, the manifest would look similar to the following example:
 
 ```xml
 <OfficeApp>
@@ -67,7 +67,7 @@ For example, in order to implement both the VersionOverrides v1.0 and v1.1 schem
         <!-- add information on form factors -->
       </Host>
     </Hosts>
-    <Resources> 
+    <Resources>
       <!-- add information on resources -->
     </Resources>
 
@@ -81,7 +81,7 @@ For example, in order to implement both the VersionOverrides v1.0 and v1.1 schem
           <!-- add information on form factors -->
         </Host>
       </Hosts>
-      <Resources> 
+      <Resources>
         <!-- add information on resources -->
       </Resources>
     </VersionOverrides>  

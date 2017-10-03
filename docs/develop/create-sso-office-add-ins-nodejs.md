@@ -1,4 +1,4 @@
-# Create a Node.js Office Add-in that uses single sign-on (preview)
+# Create a Node.js Office Add-in that uses single sign-on
 
 Users can sign into Office, and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign-on a second time. For an overview, see [Enable SSO in an Office Add-in](../../docs/develop/sso-in-office-add-ins.md).
 
@@ -28,7 +28,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 2. Enter `npm install` in the console to install all of the dependencies itemized in the package.json file.
 
 3. Enter `npm run build ` in the console to build the project. 
-     > Note: You may see some build errors saying that some variables are declared but not used. Ignore these errors. They are a side effect of the fact that the "Before" version of the sample missing some code that will be added later.
+     > Note: You may see some build errors saying that some variables are declared but not used. Ignore these errors. They are a side effect of the fact that the "Before" version of the sample is missing some code that will be added later.
 
 ## Register the add-in with Azure AD V2 endpoint
 
@@ -52,9 +52,13 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. An **Application ID URI** has been generated of the form “api://{App ID GUID}”. Insert the string “localhost:3000” between the double forward slashes and the GUID. The entire ID should read `api://localhost:3000/{App ID GUID}`. (The domain part of the **Scope** name just below the **Application ID URI** will automatically change to match. It should read `api://localhost:3000/{App ID GUID}/access_as_user`.)
 
-1. This step and the next one give the Office host application access to your add-in. In the **Pre-authorized applications** section, there is an empty **Application ID** box. Enter the following ID in the box (this is the ID of Microsoft Office):  `d3590ed6-52b3-4102-aeff-aad2292ab01c`.
+1. This step and the next one give the Office host application access to your add-in. In the **Pre-authorized applications** section, you identify the applications that you want to authorize to your add-in's web application. Each of the following IDs needs to be pre-authorized. Each time you enter one, a new empty textbox appears. (Enter only the GUID.)
 
-1. Open the **Scope** drop down beside the **Application ID** and check the box for `api://localhost:3000/{App ID GUID}/access_as_user`.
+ * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
+ * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office Online)
+ * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office Online) 
+
+1. Open the **Scope** drop down beside each **Application ID** and check the box for `api://localhost:44355/{App ID GUID}/access_as_user`.
 
 1. Near the top of the **Platforms** section, click **Add Platform** again and select **Web**.
 
@@ -64,15 +68,17 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Scroll down to the **Microsoft Graph Permissions** section, the **Delegated Permissions** subsection. Use the **Add** button to open a **Select Permissions** dialog.
 
-1. In the dialog box, check the box for the following permission: 
+1. In the dialog box, check the boxes for the following permissions: 
     * Files.Read.All
-
+    * profile
 
 1. Click **OK** at the bottom of the dialog.
 
 1. Click **Save** at the bottom of the registration page.
 
 ## Grant admin consent to the add-in
+
+> **Note:** This procedure is only needed when you are developing the add-in. When your production add-in is deployed to the Office Store or an add-in catalog, users will individually trust it when they install it.
 
 1. In the following string, replace the placeholder “{application_ID}” with the Application ID that you copied when you registered your add-in.
 
@@ -84,7 +90,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. You are then prompted to grant permission for your add-in to access your Microsoft Graph data. Click **Accept**. 
 
-1. The browser window/tab is then redirected to the **Redirect URL** that you specified when you registered the add-in; so, if the add-in is running, you the home page of the add-in opens in the browser. If the add-in is not running, you will get an error saying that the resource at localhost:3000 cannot be found or opened. *But the fact that the redirection was attempted means that the admin consent process completed successfully*. So regardless of whether the home page opened or you got the error, you can go on to the next step.
+1. The browser window/tab is then redirected to the **Redirect URL** that you specified when you registered the add-in; so, if the add-in is running, the home page of the add-in opens in the browser. If the add-in is not running, you will get an error saying that the resource at localhost:3000 cannot be found or opened. *But the fact that the redirection was attempted means that the admin consent process completed successfully*. So regardless of whether the home page opened or you got the error, you can go on to the next step.
 
 2. In the browser's address bar you'll see a "tenant" query parameter with a GUID value. This is the ID of your Office 365 tenancy. Copy and save this value. You will use it in a later step.
 
@@ -104,9 +110,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
-    > **Note:** Leave the other parameters in the `AuthModule` constructor unchanged.
-
-1. Save and close the file.
+1. Leave the other parameters in the `AuthModule` constructor unchanged. Save and close the file.
 
 1. In the root of the project, open the add-in manifest file “Office-Add-in-NodeJS-SSO.xml”.
 
@@ -119,12 +123,13 @@ This article walks you through the process of enabling single sign-on (SSO) in a
       <Id>{application_GUID here}</Id>
       <Resource>api://localhost:3000/{application_GUID here}<Resource>
       <Scopes>
-          <Scope>files.read.all</Scope>
+          <Scope>Files.Read.All</Scope>
+          <Scope>profile</Scope>
       </Scopes>
     </WebApplicationInfo>
     ```
 
-1. Replace the placeholder “{application_GUID here}” *in both places* in the markup with the Application ID that you copied when you registered your add-in. This is the same ID you used in for the ClientID and Audience in the web.config.
+1. Replace the placeholder “{application_GUID here}” *in both places* in the markup with the Application ID that you copied when you registered your add-in. (The "{}" are not part of the ID, so don't include them.) This is the same ID you used in for the ClientID and Audience in the web.config.
 
     >Note: 
     >
@@ -142,28 +147,33 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Below the assignment to `Office.initialize`, add the code below. Note the following about this code: 
 
-     * The `getAccessTokenAsync` is the new API in Office.js that enables an add-in to ask the Office host application (Excel, PowerPoint, Word, etc.) for an access token to the add-in (for the user signed into Office). The Office host application, in turn, asks the Azure AD 2 endpoint for the token. Since you preauthorized the Office host to your add-in when you registered it, Azure AD will send the token. 
+    * The `getDataWithoutAuthChallenge` function is called in a first attempt to use the on-behalf-of flow. The assumption is that single factor authentication is all that is needed. You'll add code in a later step to handle the case where multi-factor authenticatiion is needed.
+    * The `getAccessTokenAsync` is the new API in Office.js that enables an add-in to ask the Office host application (Excel, PowerPoint, Word, etc.) for an access token to the add-in (for the user signed into Office). The Office host application, in turn, asks the Azure AD 2.0 endpoint for the token. Since you preauthorized the Office host to your add-in when you registered it, Azure AD will send the token. 
      * If no user is signed into Office, the Office host will prompt the user to sign in. 
      * The options parameter sets `forceConsent` to false, so the user will not be prompted to consent to giving the Office host access to your add-in.
 
-    ```
+    ```js
     function getOneDriveItems() {
-    Office.context.auth.getAccessTokenAsync({ forceConsent: false },
-        function (result) {
-            if (result.status === "succeeded") {
-                // TODO1: Use the access token to get Microsoft Graph data.
-            }
-            else {
-                console.log("Code: " + result.error.code);
-                console.log("Message: " + result.error.message);
-                console.log("name: " + result.error.name);
-                document.getElementById("getGraphAccessTokenButton").disabled = true;
-             }
-        });
+        getDataWithoutAuthChallenge();
+    }	
+    
+    function getDataWithoutAuthChallenge() {       
+        Office.context.auth.getAccessTokenAsync({forceConsent: false},
+            function (result) {
+                if (result.status === "succeeded") {
+                    // TODO1: Use the access token to get Microsoft Graph data.
+                }
+                else {
+                    console.log("Code: " + result.error.code);
+                    console.log("Message: " + result.error.message);
+                    console.log("name: " + result.error.name);
+                    document.getElementById("getGraphAccessTokenButton").disabled = true;
+                }
+            });
     }
     ```
 
-1. Replace the TODO1 with the following lines. You create the `getData` method and the server-side “/api/values” route in later steps. A relative URL is used for the endpoint because it must be hosted on the same domain as your add-in.
+1. Replace the TODO1 with the following lines. You create the `getData` method and the server-side “/api/onedriveitems” route in later steps. A relative URL is used for the endpoint because it must be hosted on the same domain as your add-in.
 
     ```
     accessToken = result.value;
@@ -180,11 +190,48 @@ This article walks you through the process of enabling single sign-on (SSO) in a
             type: "GET",
         })
         .done(function (result) {
-            showResult(result);
+            TODO2: Display data and handle demand for multi-factor authentication.
         })
         .fail(function (result) {
             console.log(result.error);
        });
+    }
+    ```
+
+1. Replace TODO2 with the following code. About this code, note:
+    * If the Microsoft Graph target requests addtional authentication factor(s), the result will not be data. It will be a Claims JSON telling AAD what addtional factors the user must provide. In that case, the client must start a new sign-on that passes this Claims string to AAD so that AAD will provide the needed prompts.
+    * If the result is the Claims JSON, then it will contain the string "capolids".
+    * You will create the `getDataUsingAuthChallenge` function in a latter step.
+
+    ```
+    if (result[0].indexOf('capolids') !== -1) {                
+        result[0] = JSON.parse(result[0])
+        getDataUsingAuthChallenge(result[0]);
+    } else {  
+        showResult(result);
+    }
+    ```
+
+1. Add the following function to the file just below the `getData` function. About this function, note:
+    * The function is used when AAD has requested additional authentication factor(s). 
+    * The function triggers a second sign-on in which the user will be prompted to provide additional authentication factor(s). 
+    * The `authChallenge` option contains a string that tells AAD what factor(s) it should prompt for. The Office host passes this string to AAD when it requests the add-in token to your add-in.
+
+    ```
+    function getDataUsingAuthChallenge(authChallengeString) {       
+        Office.context.auth.getAccessTokenAsync({authChallenge: authChallengeString},
+            function (result) {
+                if (result.status === "succeeded") {
+                    accessToken = result.value;
+                    getData("/api/onedriveitems", accessToken);
+                }
+                else {
+                    console.log("Code: " + result.error.code);
+                    console.log("Message: " + result.error.message);
+                    console.log("name: " + result.error.name);
+                    document.getElementById("getGraphAccessTokenButton").disabled = true;
+                }
+            });
     }
     ```
 
@@ -207,20 +254,20 @@ There are two server-side files that need to be modified.
     ```
     private async exchangeForToken(jwt: string, scopes: string[] = ['openid'], resource?: string) {
         try {
-            // TODO2: Construct the parameters that will be sent in the body of the 
+            // TODO3: Construct the parameters that will be sent in the body of the 
             //        HTTP Request to the STS that starts the "on behalf of" flow.
-            // TODO3: Send the request to the STS.
-            // TODO4: Process the response and persist the access token to resource.
+            // TODO4: Send the request to the STS.
+            // TODO5: Process the response and persist the access token to resource.
         }
         catch (exception) {
             throw new UnauthorizedError('Unable to obtain an access token to the resource' 
-                                        + ' ' + exception.message, 
+                                        + JSON.stringify(exception), 
                                         exception);
         }
     }
     ```
 
-2. Replace TODO2 with the following code. About this code, note:
+2. Replace TODO3 with the following code. About this code, note:
     * An STS that supports the "on behalf of" flow expects certain property/value pairs in the body of the HTTP request. This code constructs an object that will become the body of the request. 
     * A resource property is added to the body if, and only if, a resource was passed to the method.
 
@@ -245,7 +292,7 @@ There are two server-side files that need to be modified.
         } 
     ```
 
-3. Replace TODO3 with the following code which sends the HTTP request to the token endpoint of the STS.
+3. Replace TODO4 with the following code which sends the HTTP request to the token endpoint of the STS.
 
     ```
     const res = await fetch(`${this.stsDomain}/${this.tenant}/${this.tokenURLsegment}`, {
@@ -258,12 +305,12 @@ There are two server-side files that need to be modified.
     }); 
     ```
 
-4. Replace TODO4 with the following code. Note that the code persists the access token to the resource, and it's expiration time, in addition to returning it. Calling code can avoid unnecessary calls to the STS by reusing an unexpired access token to the resource. You'll see how to do that in the next section.
+4. Replace TODO5 with the following code. Note that the code persists the access token to the resource, and it's expiration time, in addition to returning it. Calling code can avoid unnecessary calls to the STS by reusing an unexpired access token to the resource. You'll see how to do that in the next section.
 
     ```
     if (res.status !== 200) {
-        const exception = await res.json();
-        throw exception;
+        TODO6: Handle failure and the case where AAD asks for additional
+               authentication factors.
     }
     const json = await res.json();
     // Persist the token and it's expiration time.
@@ -275,13 +322,35 @@ There are two server-side files that need to be modified.
     return resourceToken; 
     ```
 
+5. Replace the TODO6 with the following code. About this code, note:
+
+    * There are configurations of Azure Active Directory in which the user is required to provide additional authentication factor(s) to access some Microsoft Graph targets (e.g., OneDrive), even if the user can sign on to Office with just a password. In that case, AAD will send a response that has a `Claims` property. 
+    * This `Claims` value needs to be passed back to the client which should initiate a second sign-on for the user and include the `Claims` value in the call to the AAD. AAD will prompt the user to provide the addtional factor(s).
+    * As a precaution, the code clears the cache of any access tokens that were obtained when the user logged in with only a password.  
+
+    ```
+    const exception = await res.json();
+    // Check if AAD is the STS.
+    if (this.stsDomain === 'https://login.microsoftonline.com') {
+        if (JSON.stringify(exception.claims)) {                       
+            ServerStorage.clear();
+            return JSON.stringify(exception.claims);    
+        } else {                    
+            throw exception;
+        }
+    }
+    else {                    
+        throw exception;
+    }
+    ```
+
 5. Save the file, but don't close it.
 
 ### Create a method to get access to the resource using the "on behalf of" flow
 
 1. Still in src/auth.ts, add the method below to the `AuthModule` class. Note the following about this code:
     * The comments above about the parameters to the the `exchangeForToken` method apply to the parameters of this method as well.
-    * The method first checks the persistent storage for an access token to the resource that has not expired and is not going to in the next minute. It calls the method you created in the last section only if it needs to.
+    * The method first checks the persistent storage for an access token to the resource that has not expired and is not going to expire in the next minute. It calls the `exchangeForToken` method you created in the last section only if it needs to.
 
     ```
     async acquireTokenOnBehalfOf(jwt: string, scopes: string[] = ['openid'], resource?: string) {
@@ -313,37 +382,50 @@ There are two server-side files that need to be modified.
 3. Add the following method to bottom of the file. This method will handle any requests for the `onedriveitems` API.
     ```
     app.get('/api/onedriveitems', handler(async (req, res) => {
-        // TODO5: Initialize the AuthModule object and validate the access token 
+        // TODO7: Initialize the AuthModule object and validate the access token 
         //        that the client-side received from the Office host.
-        // TODO6: Get a token to Microsoft Graph from either persistent storage 
+        // TODO8: Get a token to Microsoft Graph from either persistent storage 
         //        or the "on behalf of" flow.
-        // TODO7: Use the token to get data from Microsoft Graph.
-        // TODO8: Send to the client only the data that it actually needs.
+        // TODO9: Use the token to get data from Microsoft Graph.
+        // TODO10: Send to the client only the data that it actually needs.
     })); 
     ```
 
-4. Replace TODO5 with the following code which validates the access token received from the Office host application. The `verifyJWT` method is defined in the src\auth.ts file. It always validates the audience and the issuer. We use the optional parameter to specify that we also want it to verify that the scope in the access token is `access_as_user`. This is the only permisison to the add-in that the user and the Office host need in order to get an access token to Microsoft Graph by means of the "on behalf flow". 
+4. Replace TODO7 with the following code which validates the access token received from the Office host application. The `verifyJWT` method is defined in the src\auth.ts file. It always validates the audience and the issuer. We use the optional parameter to specify that we also want it to verify that the scope in the access token is `access_as_user`. This is the only permisison to the add-in that the user and the Office host need in order to get an access token to Microsoft Graph by means of the "on behalf flow". 
 
     ```
     await auth.initialize();
     const { jwt } = auth.verifyJWT(req, { scp: 'access_as_user' }); 
     ```
 
-5. Replace TODO6 with the following line. Note the following about this code:
+5. Replace TODO8 with the following code. Note the following about this code:
 
-    * The call to `acquireTokenOnBehalfOf` does not include a resource parameter because we constructed the `AuthModule` object (`auth`) with the AAD V2 endpoint which does not support a resource property.
-    * The second parameter of the call specifies the permissions the add-in will need to get a list of the user's files and folders on OneDrive for Business.
+    * The call to `acquireTokenOnBehalfOf` does not include a resource parameter because we constructed the `AuthModule` object (`auth`) with the AAD V2.0 endpoint which does not support a resource property.
+    * The second parameter of the call specifies the permissions the add-in will need to get a list of the user's files and folders on OneDrive. (The `profile` permission is not requested because it is only needed when the Office host gets the access token to your add-in, not when you are trading in that token for an access token to Microsoft Graph.)
+    * If the response is a string containing 'capolids", then this is a claims message from AAD that multi-factor auth is required. The message is passed to the client, which uses it to start a second sign-on. The string tells AAD what additional authentication factor(s) it should prompt the user to provide.
 
-    `const graphToken = await auth.acquireTokenOnBehalfOf(jwt, ['Files.Read.All']);`
+    ```
+    let graphToken = null;
+    const tokenAcquisitionResponse = await auth.acquireTokenOnBehalfOf(jwt, ['Files.Read.All']);
+    if (tokenAcquisitionResponse.includes('capolids')) {
+        const claims: string[] = [];
+        claims.push(tokenAcquisitionResponse);
+        return res.json(claims);
+    } else {
+        // The response is the token to Microsoft Graph itself. Rename it so remaining code
+        // is self-documenting.
+        graphToken = tokenAcquisitionResponse;
+    }
+    ```
 
-6. Replace TODO7 with the following line. Note the following about this code:
+6. Replace TODO9 with the following line. Note the following about this code:
 
     * The MSGraphHelper class is defined in src\msgraph-helper.ts. 
     * We minimize the data that must be returned by specifying that we only want the name property and only the first 3 items.
 
     `const graphData = await MSGraphHelper.getGraphData(graphToken, "/me/drive/root/children", "?$select=name&$top=3");`
 
-7. Replace TODO8 with the following code. Note that Microsoft Graph returns some OData metadata and an **eTag** property for every item, even if `name` is the only property requested. The code sends only the item names to the client.
+7. Replace TODO10 with the following code. Note that Microsoft Graph returns some OData metadata and an **eTag** property for every item, even if `name` is the only property requested. The code sends only the item names to the client.
 
     ```
     const itemNames: string[] = [];
@@ -383,15 +465,15 @@ Now you need to let Office know where to find the add-in.
 There are two ways to build and run the project depending on whether you are using Visual Studio Code. For both ways, the project builds and automatically rebuilds and reruns when you make changes to the code.
 
 1. If you are not using Visual Studio Code: 
- 2. Open a node terminal and navigate to the root folder of the project.
- 3. In the terminal, enter **npm run build**. 
- 4. Open a second node terminal and navigate to the root folder of the project.
- 5. In the terminal, enter **npm run start**.
+ 1. Open a node terminal and navigate to the root folder of the project.
+ 2. In the terminal, enter **npm run build**. 
+ 3. Open a second node terminal and navigate to the root folder of the project.
+ 4. In the terminal, enter **npm run start**.
 
 2. If you are using VS Code:
- 3. Open the project in VS Code.
- 4. Press CTRL-SHIFT-B to build the project.
- 5. Press F5 to run the project in a debugging session.
+ 1. Open the project in VS Code.
+ 2. Press CTRL-SHIFT-B to build the project.
+ 3. Press F5 to run the project in a debugging session.
 
 
 ## Add the add-in to an Office document
@@ -408,16 +490,13 @@ There are two ways to build and run the project depending on whether you are usi
 
 ## Test the add-in
 
-> **Note:** The preview version of the `getAccessTokenAsync` API only supports work or school (Office 365) identities. *If you are signed into Office with a personal identity (Microsoft Account), sign out before preceding.* To test the add-in, you must be either signed out entirely from Office, or signed in with a work or school account.
-
-1. Make sure you have some files or folders in your OneDrive for Business account.
+1. Ensure that you have some files in your OneDrive so that you can verify the results.
 
 2. Click **Show Add-in** button to open the add-in.
 
-2. The add-in opens with a Welcome page. Click the **Get my files from OneDrive** button.
+2. The add-in opens with a Welcome page. Click the **Get My Files from OneDrive** button.
 
 2. If you are are signed into Office, a list of your files and folders on OneDrive will appear below the button. This may take more than 15 seconds the first time.
 
 3. If you are not signed into Office, a popup will open and prompt you to sign in. After you have completed the sign-in, the list of your files and folders will appear after a few seconds. *You do not press the button a second time.*
-
-
+> **Note:** If you were previously signed on to Office with a different ID, and some Office applications that were open at the time are still open, Office may not reliably change your ID even if it appears to have done so in PowerPoint. If this happens, the call to Microsoft Graph may fail or data from the previous ID may be returned. To prevent this, be sure to *close all other Office applications* before you press **Get My Files from OneDrive**.
