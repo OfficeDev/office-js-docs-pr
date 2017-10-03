@@ -16,7 +16,6 @@ Office.context.document.getFileAsync(fileType [, options], callback);
 ## Parameters
 
 
-
 |**Name**|**Type**|**Description**|**Support notes**|
 |:-----|:-----|:-----|:-----|
 | _fileType_|[FileType](../../reference/shared/filetype-enumeration.md)|Specifies the format in which the file will be returned. Required. See [fileType Value](#filetype-value). <br/>|**Changed in** 1.1, see [Support history](#support-history)|
@@ -39,7 +38,6 @@ Word on iPad|Office.FileType.Compressed, Office.FileType.Text|
 When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](../../reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
 
 In the callback function passed to the  **getFileAsync** method, you can use the properties of the **AsyncResult** object to return the following information.
-
 
 
 |**Property**|**Use to...**|
@@ -177,7 +175,7 @@ For more information about Office host application and server requirements, see 
 
 
 ||**Office for Windows desktop**|**Office Online (in browser)**|**Office for iPad**|
-|:-----|:-----|:-----|:-----|
+|:-----|:---:|:---:|:---:|
 |**Excel**||Y||
 |**PowerPoint**|Y|Y|Y|
 |**Word**|Y|Y|Y|
