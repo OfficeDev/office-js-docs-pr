@@ -18,22 +18,22 @@ Future investments in add-in deployment scenarios will focus on the Office 365 a
 
 ## Prerequisites for centralized deployment 
 
-For Word, Excel and PowerPoint 
-- Your users must be using Office Professional Plus 2016 on the following operating systems:
-  * Win32: build 16.0.8067 or later 
-  * Mac: build 15.34.17051500 or later 
-  
-For Outlook 
-- 2013 Click to Run version: 15.0.4819.1000 or later 
-- 2013 MSI version: 15.0.4937.1000 or later* 
-- 2016 Click to Run version: 16.0.7726.5702 or later 
-- 2016 MSI version: 16.0.4494.1000 or later* 
-
-*In MSI version of Outlook, admin-installed add-ins will show in the appropriate ribbon in Outlook but will not show the add-in in 'My add-ins' section 
+You can deploy add-ins via the admin center if your organization meets the following criteria:
 
 - Users sign in to Office 2016 with their work or school account.
 - Your organization uses the Azure Active Directory (Azure AD) identity service.
 - Users' Exchange mailboxes have [OAuth enabled](https://msdn.microsoft.com/en-us/library/office/dn626019(v=exchg.150).aspx#Anchor_0).
+- For Word, Excel and PowerPoint:
+    - Users must be using Office Professional Plus 2016 on the following operating systems:
+        - Win32: build 16.0.8067 or later 
+        - Mac: build 15.34.17051500 or later 
+- For Outlook:
+    - 2013 Click to Run version: 15.0.4819.1000 or later 
+    - 2013 MSI version: 15.0.4937.1000 or later* 
+    - 2016 Click to Run version: 16.0.7726.5702 or later 
+    - 2016 MSI version: 16.0.4494.1000 or later* 
+
+>*In MSI version of Outlook, admin-installed add-ins will show in the appropriate ribbon in Outlook but will not show in the 'My add-ins' section.
 
 Currently, add-ins for the following Office clients are supported. 
 
@@ -55,7 +55,7 @@ The admin center does not support the following:
 
 To deploy SharePoint Add-ins or add-ins that target Office 2013, use a [SharePoint add-in catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
->**Important** SharePoint add-in catalogs do not support add-in features that are implemented in the [VersionOverrides](../../reference/manifest/versionoverrides.md) node of the add-in manifest, such as [add-in commands](../design/add-in-commands.md). 
+>**Important**: SharePoint add-in catalogs do not support add-in features that are implemented in the [VersionOverrides](../../reference/manifest/versionoverrides.md) node of the add-in manifest, such as [add-in commands](../design/add-in-commands.md). 
 
 To deploy COM/VSTO add-ins, use ClickOnce or Windows Installer. For details, see [Deploying an Office solution](https://msdn.microsoft.com/en-us/library/bb386179.aspx).
 
@@ -77,9 +77,8 @@ To publish an add-in via centralized deployment:
 6.	If you're adding an add-in from the Office Store, select the add-in. The add-in is now enabled. 
 7.	Choose **Edit** to assign the add-in to users. 
 8.	Search for the people or groups to whom you want to deploy the add-in, and choose **Add** next to their name.
-    >**Note:** For single sign-on (SSO) add-ins, the users and groups assigned will also be shared with add-ins that share the same Azure App ID. Any changes to user assignments will also apply to those add-ins. The related add-ins will be shown on this page.
-9.  For SSO add-ins only: This page will display the list of Microsoft Graph permissions that the add-in requires.
-10.	Choose **Save**, review the add-in settings, and then choose **Close**. 
+    >**Note:** For single sign-on (SSO) add-ins, the users and groups assigned will also be shared with add-ins that share the same Azure App ID. Any changes to user assignments will also apply to those add-ins. The related add-ins will be shown on this page. For SSO add-ins only, this page will display the list of Microsoft Graph permissions that the add-in requires.
+9.	Choose **Save**, review the add-in settings, and then choose **Close**. 
     >**Note:** When an administrator chooses **Save**, consent is given for all users. 
 
 
