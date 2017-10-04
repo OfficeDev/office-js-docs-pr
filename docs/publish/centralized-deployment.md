@@ -23,6 +23,8 @@ You can deploy add-ins via the admin center if your organization meets the follo
 - Users sign in to Office 2016 with their work or school account.
 - Your organization uses the Azure Active Directory (Azure AD) identity service.
 - Users' Exchange mailboxes have [OAuth enabled](https://msdn.microsoft.com/en-us/library/office/dn626019(v=exchg.150).aspx#Anchor_0).
+
+    
 - For Word, Excel and PowerPoint:
     - Users must be using Office Professional Plus 2016 on the following operating systems:
         - Win32: build 16.0.8067 or later 
