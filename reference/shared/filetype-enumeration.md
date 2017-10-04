@@ -39,6 +39,9 @@ For more information about Office host application and server requirements, see 
 |:-----|:-----|:-----|:-----|
 |**PowerPoint**|Y|Y|Y|
 |**Word**|Y|Y|Y|
+|**Excel**|Y|Y|Y|
+
+> **Note:** FileType.Text is only supported in Word, FileType.Pdf is only supported in Word for Windows, Word for Mac, Word Online, and PowerPoint.
 
 |||
 |:-----|:-----|
