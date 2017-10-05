@@ -31,7 +31,7 @@ Office.context.document.getFileAsync(fileType [, options], callback);
 |Excel Online, Win32, Mac, and iOS|Office.FileType.Compressed|
 |PowerPoint on Windows desktop, Mac, and iPad, and PowerPoint Online|Office.FileType.Compressed, Office.FileType.Pdf|
 |Word on Windows desktop, Word on Mac, and Word Online|Office.FileType.Compressed, Office.FileType.Pdf, Office.FileType.Text|
-Word on iPad|Office.FileType.Compressed, Office.FileType.Text|
+|Word on iPad|Office.FileType.Compressed, Office.FileType.Text|
 
 ## Callback value
 
