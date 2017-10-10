@@ -121,7 +121,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     ```xml
     <WebApplicationInfo>
       <Id>{application_GUID here}</Id>
-      <Resource>api://localhost:3000/{application_GUID here}<Resource>
+      <Resource>api://localhost:3000/{application_GUID here}</Resource>
       <Scopes>
           <Scope>Files.Read.All</Scope>
           <Scope>profile</Scope>
