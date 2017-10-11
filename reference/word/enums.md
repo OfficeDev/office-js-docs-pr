@@ -5,9 +5,9 @@
 * **Unknown**
 * **RichTextInline**
 * **RichTextParagraphs**
-* **RichTextTableCell**: contains whole cell
-* **RichTextTableRow**: contains whole row
-* **RichTextTable**: contains whole table
+* **RichTextTableCell**: Contains a whole cell.
+* **RichTextTableRow**: Contains a whole row.
+* **RichTextTable**: Contains a whole table.
 * **PlainTextInline**
 * **PlainTextParagraph**
 * **Picture**
@@ -123,20 +123,20 @@
 
 
 ## Word.LocationRelation
-* **Unrelated**: this instance and the range are in different sub-documents
-* **Equal**: this instance and the range represent the same range
-* **ContainsStart**: this instance contains the range and that it shares the same start character. The range does not share the same end character as this instance
-* **ContainsEnd**: this  instance contains the range and that it shares the same end character. The range does not share the same start character as this instance
-* **Contains**: this instance contains the range, with the exception of the start and end character of this instance
-* **InsideStart**: this  instance is inside the range and that it shares the same start character. The range does not share the same end character as this instance
-* **InsideEnd**: this instance is inside the range and that it shares the same end character. The range does not share the same start character as this instance
-* **Inside**: this instance is inside the range. The range does not share the same start and end characters as this instance
-* **AdjacentBefore**: this instance occurs before, and is adjacent to, the range
-* **OverlapsBefore**: this instance starts before the range and overlaps the range’s first character
-* **Before**: this instance occurs before the range
-* **AdjacentAfter**: this instance occurs after, and is adjacent to, the range
-* **OverlapsAfter**: this instance starts inside the range and overlaps the range’s last character
-* **After**: this instance occurs after the range
+* **Unrelated**: This instance and the range are in different sub-documents.
+* **Equal**: This instance and the range represent the same range.
+* **ContainsStart**: This instance contains the range and that it shares the same start character. The range does not share the same end character as this instance.
+* **ContainsEnd**: This  instance contains the range and that it shares the same end character. The range does not share the same start character as this instance.
+* **Contains**: This instance contains the range, with the exception of the start and end character of this instance.
+* **InsideStart**: This  instance is inside the range and that it shares the same start character. The range does not share the same end character as this instance.
+* **InsideEnd**: This instance is inside the range and that it shares the same end character. The range does not share the same start character as this instance.
+* **Inside**: This instance is inside the range. The range does not share the same start and end characters as this instance.
+* **AdjacentBefore**: This instance occurs before, and is adjacent to, the range.
+* **OverlapsBefore**: This instance starts before the range and overlaps the range’s first character.
+* **Before**: This instance occurs before the range.
+* **AdjacentAfter**: This instance occurs after, and is adjacent to, the range.
+* **OverlapsAfter**: This instance starts inside the range and overlaps the range’s last character.
+* **After**: This instance occurs after the range.
 
 
 ## Word.BorderLocation
@@ -188,7 +188,7 @@
 
 
 ## Word.ListBullet
-* **Custom **
+* **Custom**
 * **Solid**
 * **Hollow**
 * **Square**
@@ -219,7 +219,7 @@
 * **Heading8**
 * **Heading9**
 * **Toc1**
-* **more..**
+* **[more...]**
 
 ## Word.DocumentPropertyType
 * **String**

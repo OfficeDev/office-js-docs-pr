@@ -25,7 +25,7 @@ Office.context.document.getSelectedDataAsync(coercionType [, options], callback)
 
 |**Host**|**Supported coercionType**|
 |:-----|:-----|
-|Excel, Excel Online, PowerPoint, PowerPoint Online, Word, and Word Online only|Office.CoercionType.Text (string)| 
+|Excel, Excel Online, PowerPoint, PowerPoint Online, Word, and Word Online only|Office.CoercionType.Text (string)|
 |Excel, Word, and Word Online only|Office.CoercionType.Matrix (array of arrays)|
 |Access, Excel, Word, and Word Online only|Office.CoercionType.Table ([TableData](../../reference/shared/tabledata.md) object)|
 |Word only|Office.CoercionType.Html|

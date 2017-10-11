@@ -992,32 +992,32 @@ None
 [List](list.md)
 
 
-[attachToList(listId: number, level: number)]: #attachtolist-listid-number-level-number-
-[clear()]: #clear-
-[delete()]: #delete-
-[detachFromList()]: #detachfromlist-
-[getHtml()]: #gethtml-
-[getNext()]: #getnext-
-[getNextOrNullObject()]: #getnextornullobject-
-[getOoxml()]: #getooxml-
-[getPrevious()]: #getprevious-
-[getPreviousOrNullObject()]: #getpreviousornullobject-
-[getRange(rangeLocation: string)]: #getrange-rangelocation-string-
-[getTextRanges]: #gettextranges-endingmarks-string-trimspacing-bool-
-[insertBreak(breakType: string, insertLocation: string)]: #insertbreak-breaktype-string-insertlocation-string-
-[insertContentControl()]: #insertcontentcontrol-
-[insertFileFromBase64(base64File: string, insertLocation: string)]: #insertfilefrombase64-base64file-string-insertlocation-string-
-[insertHtml(html: string, insertLocation: string)]: #inserthtmlhtml-string-insertlocation-string-
-[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)]: #insertinlinepicturefrombase64base64encodedimage-string-insertlocation-string-
-[insertOoxml(ooxml: string, insertLocation: string)]: #insertooxml-ooxml-string-insertlocation-string-
-[insertParagraph(paragraphText: string, insertLocation: string)]: #insertparagraph-paragraphtext-string-insertlocation-string-
-[insertTable]: #inserttable-rowcount-number-columncount-number-insertlocation-string-values-string-
-[insertText(text: string, insertLocation: string)]: #inserttext-text-string-insertlocation-string-
-[load(param: object)]: #load-param-object-
-[search]: #search-searchtext-string-searchoptions-searchoptions-
-[select(selectionMode: string)]: #select-selectionmode-string-
-[split]: #split-delimiters-string-trimdelimiters-bool-trimspacing-bool-
-[startNewList()]: #startnewlist-
+[attachToList(listId: number, level: number)]: #attachtolistlistid-number-level-number
+[clear()]: #clear
+[delete()]: #delete
+[detachFromList()]: #detachfromlist
+[getHtml()]: #gethtml
+[getNext()]: #getnext
+[getNextOrNullObject()]: #getnextornullobject
+[getOoxml()]: #getooxml
+[getPrevious()]: #getprevious
+[getPreviousOrNullObject()]: #getpreviousornullobject
+[getRange(rangeLocation: string)]: #getrangerangelocation-string
+[getTextRanges]: #gettextrangesendingmarks-string-trimspacing-bool
+[insertBreak(breakType: string, insertLocation: string)]: #insertbreakbreaktype-string-insertlocation-string
+[insertContentControl()]: #insertcontentcontrol
+[insertFileFromBase64(base64File: string, insertLocation: string)]: #insertfilefrombase64base64file-string-insertlocation-string
+[insertHtml(html: string, insertLocation: string)]: #inserthtmlhtml-string-insertlocation-string
+[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)]: #insertinlinepicturefrombase64base64encodedimage-string-insertlocation-string
+[insertOoxml(ooxml: string, insertLocation: string)]: #insertooxmlooxml-string-insertlocation-string
+[insertParagraph(paragraphText: string, insertLocation: string)]: #insertparagraphparagraphtext-string-insertlocation-string
+[insertTable]: #inserttablerowcount-number-columncount-number-insertlocation-string-values-string
+[insertText(text: string, insertLocation: string)]: #inserttexttext-string-insertlocation-string
+[load(param: object)]: #loadparam-object
+[search]: #searchsearchtext-string-searchoptions-searchoptions
+[select(selectionMode: string)]: #selectselectionmode-string
+[split]: #splitdelimiters-string-trimdelimiters-bool-trimspacing-bool
+[startNewList()]: #startnewlist
 [SearchOptions]: searchoptions.md
 [1.1]: ../requirement-sets/word-api-requirement-sets.md
 [1.3]: ../requirement-sets/word-api-requirement-sets.md

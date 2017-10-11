@@ -759,22 +759,22 @@ Word.run(function (context) {
 ```
 
 
-[clear()]: #clear-
-[getHtml()]: #gethtml-
-[getOoxml()]: #getooxml-
-[getRange(rangeLocation: string)]: #getrange-rangelocation-string-
-[insertBreak(breakType: string, insertLocation: string)]: #insertbreak-breaktype-string-insertlocation-string-
-[insertContentControl()]: #insertcontentcontrol-
-[insertFileFromBase64(base64File: string, insertLocation: string)]: #insertfilefrombase64-base64file-string-insertlocation-string-
-[insertHtml(html: string, insertLocation: string)]: #iinserthtml-html-string-insertlocation-string-
-[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)]: #insertinlinepicturefrombase64-base64encodedimage-string-insertlocation-string-
-[insertOoxml(ooxml: string, insertLocation: string)]: #insertooxml-ooxml-string-insertlocation-string-
-[insertParagraph(paragraphText: string, insertLocation: string)]: #insertparagraph-paragraphtext-string-insertlocation-string-
-[insertTable]: #inserttable-rowcount-number-columncount-number-insertlocation-string-values-string-
-[insertText(text: string, insertLocation: string)]: #inserttext-text-string-insertlocation-string-
-[load(param: object)]: #load-param-object-
-[search(searchText: string, searchOptions: SearchOptions)]: #search-searchtext-string-searchoptions-searchoptions-
-[select(selectionMode: string)]: #select-selectionmode-string-
+[clear()]: #clear
+[getHtml()]: #gethtml
+[getOoxml()]: #getooxml
+[getRange(rangeLocation: string)]: #getrangerangelocation-string
+[insertBreak(breakType: string, insertLocation: string)]: #insertbreakbreaktype-string-insertlocation-string
+[insertContentControl()]: #insertcontentcontrol
+[insertFileFromBase64(base64File: string, insertLocation: string)]: #insertfilefrombase64base64file-string-insertlocation-string
+[insertHtml(html: string, insertLocation: string)]: #inserthtmlhtml-string-insertlocation-string
+[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)]: #insertinlinepicturefrombase64base64encodedimage-string-insertlocation-string
+[insertOoxml(ooxml: string, insertLocation: string)]: #insertooxmlooxml-string-insertlocation-string
+[insertParagraph(paragraphText: string, insertLocation: string)]: #insertparagraphparagraphtext-string-insertlocation-string
+[insertTable]: #inserttablerowcount-number-columncount-number-insertlocation-string-values-string
+[insertText(text: string, insertLocation: string)]: #inserttexttext-string-insertlocation-string
+[load(param: object)]: #loadparam-object
+[search(searchText: string, searchOptions: SearchOptions)]: #searchsearchtext-string-searchoptions-searchoptions
+[select(selectionMode: string)]: #selectselectionmode-string
 
 [SearchOptions]: searchoptions.md
 [1.1]: ../requirement-sets/word-api-requirement-sets.md
