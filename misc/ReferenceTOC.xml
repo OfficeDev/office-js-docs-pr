@@ -405,6 +405,7 @@
 			<Item text="office.context.commerceAllowed " url="shared/office.context.commerceallowed" FriendlyUrl="reference/common/contextoffice.context.commerceallowed" Scope="Word,Excel,OneNote,PowerPoint,Project,Access,Visio" SEODescription="Gets whether the add-in is running on a platform that allows links to external payment systems." />
 			<Item text="office.context.contentLanguage" url="shared/office.context.contentlanguage" Scope="Word,Excel,OneNote,PowerPoint,Project,Access,Visio" SEODescription="Gets the locale (language) specified by the user for editing the document or item." />
 			<Item text="office.context.displaylanguage" url="shared/office.context.displaylanguage" SEODescription="Gets the locale (language) specified by the user for the UI of the Office host application." />
+			<Item text="office.context.auth.getAccessTokenAsync" url="shared/office.context.auth.getAccessTokenAsync" SEODescription="Requests an authentication Token for the user currently signed into Office." />
 			<Item text="office.context.touchEnabled" url="shared/office.context.touchenabled" FriendlyUrl="reference/common/contextoffice.context.touchenabled"  Scope="Word,Excel,OneNote,PowerPoint,Project,Access,Visio" SEODescription="Gets whether the add-in is running in an Office host application that is touch enabled." />
 			<Item text="office.context.officetheme" url="shared/office.context.officetheme" SEODescription="Provides access to the properties for Office theme colors." />
 			<Item text="office.context.bodyBackgroundColor" url="shared/office.context.bodybackgroundcolor" FriendlyUrl="reference/common/contextoffice.context.bodybackgroundcolor" SEOKeyword="OL" Scope="Word,Excel,OneNote,PowerPoint,Project,Access,Visio" SEODescription="Gets the Office theme body background color" />
@@ -416,14 +417,14 @@
 			<Item text="office.context.roamingsettings" url="shared/office.context.roamingsettings" Scope="outlook" SEODescription="Gets an object that represents the custom settings or state of a Outlook add-in saved to a user's mailbox." />
 		</Item>
 		<Item text="Binding" url="shared/binding" Scope="access, excel, word">
-			<Item text="Binding.addHandlerAsync" url="shared/binding.addhandlerasync" SEODescription="Adds a handler to the binding for the specified event type." />
-			<Item text="Binding.bindingDataChanged event" url="shared/binding.bindingdatachangedevent" SEODescription="Occurs when data within the binding is changed." />
+			<Item text="addHandlerAsync" url="shared/binding.addhandlerasync" SEODescription="Adds a handler to the binding for the specified event type." />
+			<Item text="bindingDataChanged event" url="shared/binding.bindingdatachangedevent" SEODescription="Occurs when data within the binding is changed." />
 			<!--<Item text="bindingDataChangedEventArgs object" url="shared/binding.bindingdatachangedeventargs" FriendlyUrl="reference/common/binding-object/data-changed-event/argsbinding.bindingdatachangedeventargs"   />
 				<Item text="type " url="shared/binding.bindingdatachangedeventargs.type" FriendlyUrl="reference/common/binding-object/data-changed-event/argsbinding.bindingdatachangedeventargs.type"   />
 				<Item text="binding " url="shared/binding.bindingdatachangedeventargs.binding" FriendlyUrl="reference/common/binding-object/data-changed-event/argsbinding.bindingdatachangedeventargs.binding"   />
 			<Item text="bindingselectionchangedevent.binding " url="shared/binding.bindingselectionchangedevent.binding" FriendlyUrl="reference/common/binding-object/selection-changed-event-argsbinding.bindingselectionchangedevent.binding"   />
 			-->
-			<Item text="Binding.bindingSelectionChanged event" url="shared/binding.bindingselectionchangedevent" FriendlyUrl="reference/common/binding-object/selection-changed-eventbinding.bindingselectionchangedevent">
+			<Item text="bindingSelectionChanged event" url="shared/binding.bindingselectionchangedevent" FriendlyUrl="reference/common/binding-object/selection-changed-eventbinding.bindingselectionchangedevent">
 				<Item text="columnCount" url="shared/binding.bindingselectionchangedevent.columncount" FriendlyUrl="reference/common/binding-object/selection-changed-event-argsbinding.bindingselectionchangedevent.columncount"   SEODescription="Gets the number of columns selected." />
 				<Item text="rowCount" url="shared/binding.bindingselectionchangedevent.rowcount" FriendlyUrl="reference/common/binding-object/selection-changed-event-argsbinding.bindingselectionchangedevent.rowcount"   SEODescription="Gets the number of rows selected" />
 				<Item text="startColumn" url="shared/binding.bindingselectionchangedevent.startcolumn" FriendlyUrl="reference/common/binding-object/selection-changed-event-argsbinding.bindingselectionchangedevent.startcolumn"   SEODescription="Gets the index of the first column of the selection (zero-based)." />
@@ -518,7 +519,7 @@
 			<Item text="getActiveViewAsync" url="shared/document.getactiveviewasync" FriendlyUrl="reference/common/documentdocument.getactiveviewasync" SEODescription="Returns the state of the current view of the presentation (edit or read)." />
 			<Item text="getFileAsync" url="shared/document.getfileasync" FriendlyUrl="reference/common/documentdocument.getfileasync"   SEODescription="Returns the document file associated with an Office Add-in." />
 			<Item text="getFilePropertiesAsync" url="shared/document.getfilepropertiesasync" FriendlyUrl="reference/common/documentdocument.getfilepropertiesasync"   SEODescription="Gets file properties of the current document." />
-			<Item text="getselecteddataasync" url="shared/document.getselecteddataasync" SEODescription="Asynchronously gets the text value of the data that is contained in the current selection of one or more cells in the view." />
+			<Item text="getSelectedDataAsync" url="shared/document.getselecteddataasync" SEODescription="Asynchronously gets the text value of the data that is contained in the current selection of one or more cells in the view." />
 			<Item text="goToByIdAsync" url="shared/document.gotobyidasync"  SEODescription="Goes to the specified object or location in the document." />
 			<Item text="mode" url="shared/document.mode" SEODescription="The current mode of the lab, either edit mode or view mode." />
 			<Item text="removeHandlerAsync" url="shared/document.removehandlerasync" SEODescription="Removes the specified handler from the binding for the specified event type." />
@@ -596,7 +597,7 @@
 		<Item text="Office UI" url="shared/officeui" Scope="outlook, excel, word, powerpoint" SEODescription="Provides objects and methods used to create UI components for add-ins.">
 			<Item text="Dialog object" url="shared/officeui.dialog" Scope="outlook, excel, word, powerpoint" SEODescription="The object that is returned when the displayDialogAsync method is called." />
 			<Item text="closeContainer method" url="shared/officeui.closecontainer" Scope="outlook, excel, word, powerpoint" SEODescription="Closes the active UI container for the add-in." />
-			<Item text="displayDialog method" url="shared/officeui.displaydialogasync" Scope="outlook, excel, word, powerpoint" SEODescription="Displays a web dialog inside Office hosts." />
+			<Item text="displayDialogAsync method" url="shared/officeui.displaydialogasync" Scope="outlook, excel, word, powerpoint" SEODescription="Displays a web dialog inside Office hosts." />
 			<Item text="messageParent method" url="shared/officeui.messageparent" Scope="outlook, excel, word, powerpoint" SEODescription="Delivers a message from the dialog box to its parent/opener page." />
 			<Item text="Dialog API requirement sets" url="requirement-sets/dialog-api-requirement-sets" Scope="outlook, excel, word, powerpoint" SEODescription="Find information about the Dialog API requirement sets, the Office host applications that support that requirement set, and the build or version numbers for the Office application." />
 		</Item>

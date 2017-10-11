@@ -75,7 +75,9 @@ The  **AsyncResult** object is available from the function passed as the argumen
 |**CustomXmlNode** (Word only)|[getNodesAsync][]
 |          |[getNodeValueAsync][]
 |          |[getXmlAsync][]
+|          |[getTextAsync][]
 |          |[setNodeValueAsync][]
+|          |[getTextAsync][]
 |          |[setXmlAsync][]
 |**CustomXmlPart** (Word only)|[deleteAsync][]
 |          |[getNodesAsync][]
@@ -92,6 +94,7 @@ The  **AsyncResult** object is available from the function passed as the argumen
 |          |[getFilePropertiesAsync][]
 |          |[getActiveViewAsync][]
 |**File**|[getSliceAsync][]
+|        |[closeAsync][]
 |**Mailbox** (Outlook only)|[getUserIdentityTokenAsync][]
 |          |[makeEwsRequestAsync][]
 |**Item** (Outlook only)|[loadCustomPropertiesAsync][]
@@ -119,8 +122,9 @@ The  **AsyncResult** object is available from the function passed as the argumen
 [addFromSelectionAsync]: bindings.addfromselectionasync.md
 [addAsync]: customxmlparts.addasync.md
 [addNamespaceAsync]: customxmlprefixmappings.addnamespaceasync.md
+[closeAsync]: file.closeasync.md
 [deleteAllDataValuesAsync]: binding.tablebinding.deletealldatavaluesasync.md
-[displayDialogAsync]: office.ui.displaydialogasync.md
+[displayDialogAsync]: officeui.displaydialogasync.md
 [deleteAsync]: customxmlpart.deleteasync.md
 [getActiveViewAsync]: document.getactiveviewasync.md
 [getAccessTokenAsync]: office.context.auth.getAccessTokenAsync.md
@@ -136,6 +140,7 @@ The  **AsyncResult** object is available from the function passed as the argumen
 [getPrefixAsync]: customxmlprefixmappings.getprefixasync.md
 [getSliceAsync]: file.getsliceasync.md
 [getSelectedDataAsync]: document.getselecteddataasync.md
+[getTextAsync]: customxmlnode.gettextasync.md
 [getUserIdentityTokenAsync]: ../../reference/outlook/1.5/Office.context.mailbox.md
 [getXmlAsync]: customxmlpart.getxmlasync.md
 [loadCustomPropertiesAsync]: ../../reference/outlook/1.5/CustomProperties.md
@@ -147,4 +152,5 @@ The  **AsyncResult** object is available from the function passed as the argumen
 [setXmlAsync]: customxmlnode.setxmlasync.md
 [saveAsync]: settings.saveasync.md
 [setSelectedDataAsync]: document.setselecteddataasync.md
+[setTextAsync]: customxmlnode.settextasync.md
 [setDataAsync]: binding.setdataasync.md
