@@ -77,7 +77,7 @@ The  **AsyncResult** object is available from the function passed as the argumen
 |          |[getXmlAsync][]
 |          |[getTextAsync][]
 |          |[setNodeValueAsync][]
-|          |[getTextAsync][]
+|          |[setTextAsync][]
 |          |[setXmlAsync][]
 |**CustomXmlPart** (Word only)|[deleteAsync][]
 |          |[getNodesAsync][]

@@ -402,10 +402,10 @@
 		</Item>
 		<Item text="Context " url="shared/context" >
 			<Item text="office.context" url="shared/office.context" SEODescription="Gets the Context object that represents the runtime environment of the add-in " />
+			<Item text="office.context.auth.getAccessTokenAsync" url="shared/office.context.auth.getAccessTokenAsync" SEODescription="Requests an authentication Token for the user currently signed into Office." />
 			<Item text="office.context.commerceAllowed " url="shared/office.context.commerceallowed" FriendlyUrl="reference/common/contextoffice.context.commerceallowed" Scope="Word,Excel,OneNote,PowerPoint,Project,Access,Visio" SEODescription="Gets whether the add-in is running on a platform that allows links to external payment systems." />
 			<Item text="office.context.contentLanguage" url="shared/office.context.contentlanguage" Scope="Word,Excel,OneNote,PowerPoint,Project,Access,Visio" SEODescription="Gets the locale (language) specified by the user for editing the document or item." />
 			<Item text="office.context.displaylanguage" url="shared/office.context.displaylanguage" SEODescription="Gets the locale (language) specified by the user for the UI of the Office host application." />
-			<Item text="office.context.auth.getAccessTokenAsync" url="shared/office.context.auth.getAccessTokenAsync" SEODescription="Requests an authentication Token for the user currently signed into Office." />
 			<Item text="office.context.touchEnabled" url="shared/office.context.touchenabled" FriendlyUrl="reference/common/contextoffice.context.touchenabled"  Scope="Word,Excel,OneNote,PowerPoint,Project,Access,Visio" SEODescription="Gets whether the add-in is running in an Office host application that is touch enabled." />
 			<Item text="office.context.officetheme" url="shared/office.context.officetheme" SEODescription="Provides access to the properties for Office theme colors." />
 			<Item text="office.context.bodyBackgroundColor" url="shared/office.context.bodybackgroundcolor" FriendlyUrl="reference/common/contextoffice.context.bodybackgroundcolor" SEOKeyword="OL" Scope="Word,Excel,OneNote,PowerPoint,Project,Access,Visio" SEODescription="Gets the Office theme body background color" />
