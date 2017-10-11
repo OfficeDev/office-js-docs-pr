@@ -9,14 +9,8 @@ Represents a collection of worksheet objects that are part of the workbook.
 | items             | [Setting[]][setting]  | A collection of setting objects. Read-only. | [1.4][]
 | onSettingsChanged | [SettingsChangedEvent][]  | Occurs when the Settings in the document are changed. | [1.4][]
 
-_See property access [examples.](#property-access-examples)_
-
 ## Relationships
 None
-
-
-
-
 
 ## Methods
 
@@ -96,6 +90,6 @@ settingCollectionObject.getItemOrNullObject(key);
 
 
 [Setting]: setting.md
-[SettingsChangedEvent]: SettingsChangedEventArgs.md
+[SettingsChangedEvent]: settingschangedeventargs.md
 [1.4]: ../requirement-sets/excel-api-requirement-sets.md
 
