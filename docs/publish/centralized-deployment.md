@@ -44,7 +44,7 @@ Currently, add-ins for the following Office clients are supported.
 | Word                  | X                         | X             | X                     |
 | Excel                 | X                         | X             | X                     |
 | PowerPoint            | X                         | X             | X                     |
-| Outlook               | X                         | X             | X                     |
+| Outlook               | Coming soon               | Coming soon   | Coming soon           |
 
 The admin center does not support the following:
 
