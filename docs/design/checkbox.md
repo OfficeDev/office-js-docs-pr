@@ -23,10 +23,10 @@ A check box is a UI element that allows users to select or clear options in add-
 
 |**Variation**|**Description**|**Example**|
 |:------------|:--------------|:----------|
-|**Uncontrolled check box**|Use as the default check box state.|![Uncontrolled check box image](../../images/checkbox_unchecked.png)|
-|**Uncontrolled check box with default checked true**|Use when the check box instance maintains its own state|![Uncontrolled check box with default checked true image](../../images/checkbox_checked.png)|
-|**Disabled uncontrolled check box with default checked true**|Disabled state of the check box.|![Disabled uncontrolled check box with default checked true image](../../images/checkbox_disabled.png)|
-|**Controlled check box**|The checked state of this check box is decided at another location in your UI. In this scenario, the correct value is passed to the check box by an **onChange** event and re-rendering of the UI.|![Controlled check box image](../../images/checkbox_unchecked.png)|
+|**Uncontrolled check box**|Use as the default check box state. |![Uncontrolled check box image](../../images/checkbox_unchecked.png)|
+|**Uncontrolled check box with default checked true**|Use when the check box instance maintains its own state. |![Uncontrolled check box with default checked true image](../../images/checkbox_checked.png)|
+|**Disabled uncontrolled check box with default checked true**|Disabled state of the check box. |![Disabled uncontrolled check box with default checked true image](../../images/checkbox_disabled.png)|
+|**Controlled check box**|The checked state of this check box is decided at another location in your UI. In this scenario, the correct value is passed to the check box by an **onChange** event and re-rendering of the UI. |![Controlled check box image](../../images/checkbox_unchecked.png)|
 
 ## Implementation
 
