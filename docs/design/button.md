@@ -17,7 +17,7 @@ Use buttons in your Office Add-in to enable users to commit changes or complete 
 |Default buttons should always perform safe operations in add-ins. |Don’t place the default focus on a button that destroys data. Instead, place the focus on the button that performs the safe operation or cancels the action.|
 |Use only a single line of text in the label of the button. Keep text to a minimum.|Don’t put anything other than text in a button.|
 |Make sure the label conveys a clear purpose of the button to the user. Use concise, specific, self-explanatory labels. Consider using a single word only.|Don’t use buttons for navigation, except for **Back** and **Next** steps. For navigation, consider using a link.|
-|Expose only one or two buttons (actions) to the user. For example, **Accept** and **Cancel**. If you need to expose more actions, consider using check boxes or radio buttons for users to select actions, and provide a single button to start the selected actions.||
+|Expose only one or two buttons (actions) to the user, for example, **Accept** and **Cancel**. If you need to expose more actions, consider using check boxes or radio buttons for users to select actions, and provide a single button to start the selected actions.||
 |Style **Submit**, **OK**, and **Apply** buttons as primary buttons. When **Reset** or **Cancel** buttons appear alongside one of these, style them as default buttons.| |
 
 ## Variants
