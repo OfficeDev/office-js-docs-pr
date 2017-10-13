@@ -348,49 +348,6 @@ None
 #### Returns
 [Paragraph](paragraph.md)
 
-#### Examples
-
-```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-
-    // Create a proxy object for the paragraphs collection.
-    var paragraphs = context.document.body.paragraphs;
-
-    // Queue a commmand to load the text property for all of the paragraphs.
-    context.load(paragraphs, 'text');
-
-    // Synchronize the document state by executing the queued commands,
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-
-        // Queue commands to create a proxy object for the next-to-last paragraph.
-        var indexOfLastParagraph = paragraphs.items.length - 1;
-        var precedingParagraph = paragraphs.items[indexOfLastParagraph].getPreviousOrNullObject();
-
-        // Queue a command to load the text of the preceding paragraph.
-        context.load(precedingParagraph, 'text');
-
-        // Synchronize the document state by executing the queued commands,
-        // and return a promise to indicate task completion.
-        return context.sync().then(function () {
-            if (precedingParagraph.isNullObject) {
-                console.log('There are no paragraphs before the current one.');
-            } else {
-                console.log('The preceding paragraph is: ' + precedingParagraph.text);
-            }                    
-        });
-    });
-})
-.catch(function (error) {
-    console.log('Error: ' + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
-
-
 
 ### getPreviousOrNullObject()
 Gets the previous paragraph. Returns a null object if the paragraph is the first one.
@@ -436,11 +393,10 @@ Word.run(function (context) {
                 console.log('There are no paragraphs before the current one.');
             } else {
                 console.log('The preceding paragraph is: ' + precedingParagraph.text);
-            }                    
+            }
         });
     });
-})
-.catch(function (error) {
+}).catch(function (error) {
     console.log('Error: ' + JSON.stringify(error));
     if (error instanceof OfficeExtension.Error) {
         console.log('Debug info: ' + JSON.stringify(error.debugInfo));

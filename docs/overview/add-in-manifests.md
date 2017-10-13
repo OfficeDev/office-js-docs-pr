@@ -146,7 +146,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
           	<!--Use OfficeTab to extend an existing Tab. Use CustomTab to create a new tab -->
             <!-- Documentation includes all the IDs currently tested to work -->
             <CustomTab id="Contoso.Tab1">
-				<!--Group. Ensure you provide a unique id. Recommendation for any IDs is to namespace using your company name-->
+				<!--Group ID-->
               <Group id="Contoso.Tab1.Group1">
               	 <!--Label for your group. resid must point to a ShortString resource -->
                 <Label resid="Contoso.Tab1.GroupLabel" />
