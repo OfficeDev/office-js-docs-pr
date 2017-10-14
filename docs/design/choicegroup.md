@@ -16,7 +16,7 @@ The ChoiceGroup component, also known as a radio button, presents users with two
 |Use ChoiceGroups with 2-7 options, ensuring there is enough screen space to show all options. Otherwise, use a check box or drop-down list.|Don't use when the options are numbers with a fixed step, for example 10, 20, 30, and so on. Instead, use a slider component.|
 |If users may not choose any of the options, consider including an option such as **None** or **Does not apply**.|Don’t use two ChoiceGroup buttons for a single binary choice.|
 |If possible, align ChoiceGroup buttons vertically instead of horizontally. Horizontal alignment is harder to read and localize.||
-|List options in logical order, for example, the most likely option to be selected to the least, the simplest operation to the most complex, or the least risk to the highest risk. Alphabetical ordering is not recommended because it is language dependent.| |
+|List options in logical order, for example, the most likely option to be selected to the least, the simplest operation to the most complex, or the least risk to the highest risk. |Don't use alphabetical ordering because it is language dependent.|
 
 ## Variants
 
