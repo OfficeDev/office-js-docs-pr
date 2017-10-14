@@ -4,6 +4,8 @@ OneNote introduces a JavaScript API for OneNote Online add-ins. You can create t
 
 >**Note:** When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
 
+## Components of an Office Add-in
+
 Add-ins consist of two basic components:
 
 - A **web application** consisting of a webpage and any required JavaScript, CSS, or other files. These files are hosted on a web server or web hosting service, such as Microsoft Azure. In OneNote Online, the web application displays in a browser control or iframe.
@@ -14,26 +16,26 @@ Add-ins consist of two basic components:
 
 ![An Office add-in consists of a manifest and webpage](../../images/onenote-add-in.png)
 
-### Using the JavaScript API
+## Using the JavaScript API
 
 Add-ins use the runtime context of the host application to access the JavaScript API. The API has two layers: 
 
 - A **rich API** for OneNote-specific operations, accessed through the **Application** object.
 - A **common API** that's shared across Office applications, accessed through the **Document** object.
 
-#### Accessing the rich API through the *Application* object
+### Accessing the rich API through the *Application* object
 
 Use the **Application** object to access OneNote objects such as **Notebook**, **Section**, and **Page**. With rich APIs, you run batch operations on proxy objects. The basic flow goes something like this: 
 
-1- Get the application instance from the context.
+1. Get the application instance from the context.
 
-2- Create a proxy that represents the OneNote object you want to work with. You interact synchronously with proxy objects by reading and writing their properties and calling their methods. 
+2. Create a proxy that represents the OneNote object you want to work with. You interact synchronously with proxy objects by reading and writing their properties and calling their methods. 
 
-3- Call **load** on the proxy to fill it with the property values specified in the parameter. This call is added to the queue of commands. 
+3. Call **load** on the proxy to fill it with the property values specified in the parameter. This call is added to the queue of commands. 
 
    Method calls to the API (such as `context.application.getActiveSection().pages;`) are also added to the queue.
     
-4- Call **context.sync** to run all queued commands in the order that they were queued. This synchronizes the state between your running script and the real objects, and by retrieving properties of loaded OneNote objects for use in your script. You can use the returned promise object for chaining additional actions.
+4. Call **context.sync** to run all queued commands in the order that they were queued. This synchronizes the state between your running script and the real objects, and by retrieving properties of loaded OneNote objects for use in your script. You can use the returned promise object for chaining additional actions.
 
 For example: 
 

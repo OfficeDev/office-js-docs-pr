@@ -9,11 +9,11 @@ Users sign in to Office (online, mobile, and desktop platforms) using either the
 
 >**Note:**
 > The Single Sign-on API is currently supported for Word, Excel, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets](../../reference/requirement-sets/identity-api-requirement-sets.md).
-> Single Sign-on is currently in preview for Outlook. If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Office 365 tenancy. Details are at [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)
+> Single Sign-on is currently in preview for Outlook. If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Office 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 For users, this makes running your add-in a smooth experience that involves at signing in only once. For developers, this means that your add-in can authenticate users and gain authorized access to the user’s data via Microsoft Graph with credentials that the user has already provided to the Office application.
 
-### SSO add-in architecture
+## SSO add-in architecture
 
 In addition to hosting the pages and JavaScript of the web application, the add-in must also host, at the same [fully qualified domain name](https://msdn.microsoft.com/en-us/library/windows/desktop/ms682135.aspx#_dns_fully_qualified_domain_name_fqdn__gly), one or more web APIs that will get an access token to Microsoft Graph and make requests to it.
 
@@ -40,23 +40,23 @@ The following diagram shows how the SSO process works.
 1. Microsoft Graph returns data to the add-in, which can pass it on to the add-in’s UI.
 1. When the MSG token expires, the server-side code can use its refresh token to get a new **MSG token**.
 
-### Develop an SSO add-in
+## Develop an SSO add-in
 
 This section describes the tasks involved in creating an Office Add-in that uses SSO. These tasks are described here in a language- and framework-agnostic way. For examples of detailed walkthroughs, see:
 
 * [Create a Node.js Office Add-in that uses single sign-on](../../docs/develop/create-sso-office-add-ins-nodejs.md)
 * [Create an ASP.NET Office Add-in that uses single sign-on](../../docs/develop/create-sso-office-add-ins-aspnet.md)
 
-#### Create the service application
+### Create the service application
 
 Register the add-in at the registration portal for the Azure v2.0 endpoint: https://apps.dev.microsoft.com. This is a 5–10 minute process that includes the following tasks:
 
-* Get a client ID and name for the add-in.
+* Get a client ID and secret for the add-in.
 * Specify the permissions that your add-in needs to Microsoft Graph.
 * Grant the Office host application trust to the add-in.
 * Preauthorize the Office host application to the add-in with the default permission *access_as_user*.
 
-#### Configure the add-in
+### Configure the add-in
 
 Add new markup to the add-in manifest:
 
@@ -68,7 +68,7 @@ Add new markup to the add-in manifest:
 
 For Office hosts other than Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` section. For Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_1">` section.
 
-#### Add client-side code
+### Add client-side code
 
 Add JavaScript to the add-in to:
 
@@ -82,13 +82,13 @@ function mytokenHandler(asyncResult) {
 }
 ```
 
-#### When to call the method
+### When to call the method
 
 If your add-in cannot be used when a no user is logged into Office and Office does not have an access token to your add-in, then you should call `getAccessTokenAsync` *when the add-in launches*.
 
 If the add-in has some functionality that doesn't require access to Microsoft Graph or even a logged in user, then you call `getAccessTokenAsync` *when the user takes an action that requires access to Microsoft Graph or, at least, a logged in user*. There is no significant performance degradation with redundant calls of `getAccessTokenAsync` because Office caches the access token and will reuse it, until it expires, without making another call to the AAD V. 2.0 endpoint whenever `getAccessTokenAsync` is called. So you can add calls of `getAccessTokenAsync` to all functions and handlers that initiate an action where the token is needed.
 
-#### Add server-side code
+### Add server-side code
 
 Create one or more Web API methods that get Microsoft Graph data. Depending on your language and framework, libraries might be available that will simplify the code you have to write. Your server-side code should do the following:
 

@@ -8,7 +8,7 @@ Office Add-ins run across multiple versions of Office. The following table lists
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | IdentityAPI 1.1  | N/A | Version 1708 (Build 8528.1000) or later | Coming soon | 15.nn or later| Available | Available| Coming soon | Coming soon |
 
->**Note:** The build number for Office 2016 installed via MSI is 16.0.4266.1001. You'll need to run Office update to get the latest version to use the Single Sign-On API,
+>**Note:** The build number for Office 2016 installed via MSI is 16.0.4266.1001. You'll need to run Office update to get the latest version to use the Single Sign-On API.
 
 To find out more about versions, build numbers, and Office Online Server, see:
 

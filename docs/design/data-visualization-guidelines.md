@@ -81,18 +81,17 @@ To optimize for readability and accessibility, map legend markers to the relevan
 
 Ensure that data labels and tooltips have adequate white space and type variation. Use algorithms to minimize occlusion and collision. For example, a tooltip might surface to the right of a data point by default, but surface to the left if right edges are detected.
 
-## Design Principles
+## Design principles
 
 The Office Design team created the following set of design principles, which we use when designing new data visualizations for the Office product suite.
 
-## Visual design principles
-
+### Visual design principles
 
 - Visualizations should honor and enhance the data, making it easy to understand. Highlight the data, adding supporting elements only as needed to provide context. Avoid unnecessary embellishments (drop shadows, outlines, etc), chart junk, or data distortion.
 - Visualizations should encourage exploration by providing rich visual feedback. Use well-established interaction patterns, interface controls, and clear system feedback.
 - Embody time-honored design principles. Use established typographic and visual communication design principles to enhance form, readability, and meaning.
 
-## Interaction design principles
+### Interaction design principles
 
 - Design to allow for exploration.
 - Allow for direct interactions with objects that reveal new insights (sorting via drag, for example).
@@ -100,10 +99,9 @@ The Office Design team created the following set of design principles, which we 
 
 For more information about how to design user-friendly interactive data visualizations, see [UI Tenets and Traps](http://uitraps.com/).
 
-## Motion design principles
+### Motion design principles
 
 Motion follows stimulus. Visual elements should move in the same direction at the same rate. This applies to:
-
 
 - Chart creation
 - Transition from one chart type to another chart type
@@ -115,14 +113,12 @@ Motion follows stimulus. Visual elements should move in the same direction at th
 
 Create a perception of causality. When staging animations:
 
-
 - Stage one thing at a time. 
 - Stage changes to axes before changes to data ink.
 - Stage and animate objects as a group if they are moving at the same speed in the same direction.
 - Stage data elements in groups of no more than 4-5 objects. Viewers have difficulty tracking more than 4-5 objects independently.
 
 Motion adds meaning.
-
 
 - Animations increase user comprehension of changes to the data, provide context, and act as a non-verbal annotation layer.
 - Motion should occur in a meaningful coordinate space of the visualization.
