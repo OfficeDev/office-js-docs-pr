@@ -2,60 +2,66 @@
 
 _Applies to: OneNote Online_   
 
-
 Represents a OneNote page.
+
+To provide feedback on this API, you can [file an issue in GitHub](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page).
 
 ## Properties
 
-| Property	   | Type	|Description|Feedback|
-|:---------------|:--------|:----------|:-------|
-|clientUrl|string|The client url of the page. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-clientUrl)|
-|id|string|Gets the ID of the page. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-id)|
-|pageLevel|int|Gets or sets the indentation level of the page.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-pageLevel)|
-|title|string|Gets or sets the title of the page.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-title)|
-|webUrl|string|The web url of the page. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-webUrl)|
+| Property	   | Type	|Description|
+|:---------------|:--------|:----------|
+|clientUrl|string|The client URL of the page. Read-only.|
+|id|string|Gets the ID of the page. Read-only.|
+|pageLevel|int|Gets or sets the indentation level of the page.|
+|title|string|Gets or sets the title of the page.|
+|webUrl|string|The web URL of the page. Read-only.|
 
-_See property access [examples.](#property-access-examples)_
+_See [property access examples](#property-access-examples)_.
 
 ## Relationships
-| Relationship | Type	|Description| Feedback|
-|:---------------|:--------|:----------|:-------|
-|contents|[PageContentCollection](pagecontentcollection.md)|The collection of PageContent objects on the page. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-contents)|
-|inkAnalysisOrNull|[InkAnalysis](inkanalysis.md)|Text interpretation for the ink on the page. Returns null if there is no ink analysis information. Read only. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-inkAnalysisOrNull)|
-|parentSection|[Section](section.md)|Gets the section that contains the page. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-parentSection)|
+
+| Relationship | Type	|Description| 
+|:---------------|:--------|:----------|
+|contents|[PageContentCollection](pagecontentcollection.md)|The collection of PageContent objects on the page. Read-only.|
+|inkAnalysisOrNull|[InkAnalysis](inkanalysis.md)|Text interpretation for the ink on the page. Returns null if there is no ink analysis information. Read-only.|
+|parentSection|[Section](section.md)|Gets the section that contains the page. Read-only.|
 
 ## Methods
 
-| Method		   | Return Type	|Description| Feedback|
-|:---------------|:--------|:----------|:-------|
-|[addOutline(left: double, top: double, html: String)](#addoutlineleft-double-top-double-html-string)|[Outline](outline.md)|Adds an Outline to the page at the specified position.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-addOutline)|
-|[copyToSection(destinationSection: Section)](#copytosectiondestinationsection-section)|[Page](page.md)|Copies this page to specified section.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-copyToSection)|
-|[getRestApiId()](#getRestApiId)|string|Gets the ID that is compatible with the REST API.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-getRestApiId)|
-|[insertPageAsSibling(location: string, title: string)](#insertpageassiblinglocation-string-title-string)|[Page](page.md)|Inserts a new page before or after the current page.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-insertPageAsSibling)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-load)|
+| Method	 | Return Type	| Description| 
+|:---------------|:-------------|:----------|
+|[addOutline(left: double, top: double, html: String)](#addoutlineleft-double-top-double-html-string)|[outline](outline.md)|Adds an Outline to the page at the specified position.|
+|[copyToSection(destinationSection: Section)](#copytosectiondestinationsection-section)|[page](page.md)|Copies this page to specified section.|
+|[getRestApiId()](#getRestApiId)|string|Gets the ID that is compatible with the REST API.|
+|[insertPageAsSibling(location: string, title: string)](#insertpageassiblinglocation-string-title-string)|[page](page.md)|Inserts a new page before or after the current page.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## Method Details
-
+## Method details
 
 ### addOutline(left: double, top: double, html: String)
-Adds an Outline to the page at the specified position.
+
+Adds an outline to the page at the specified position.
 
 #### Syntax
+
 ```js
 pageObject.addOutline(left, top, html);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|left|double|The left position of the top, left corner of the Outline.|
-|top|double|The top position of the top, left corner of the Outline.|
-|html|String|An HTML string that describes the visual presentation of the Outline. See [supported HTML](../../docs/onenote/onenote-add-ins-page-content.md#supported-html) for the OneNote add-ins JavaScript API.|
+|left|double|The left position of the top, left corner of the outline.|
+|top|double|The top position of the top, left corner of the outline.|
+|html|string|An HTML string that describes the visual presentation of the outline. For the OneNote add-ins JavaScript API, see [supported HTML](../../docs/onenote/onenote-add-ins-page-content.md#supported-html).|
 
 #### Returns
+
 [Outline](outline.md)
 
 #### Examples
+
 ```js
 OneNote.run(function (context) {
 
@@ -92,24 +98,30 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
 
 ### copyToSection(destinationSection: Section)
+
 Copies this page to specified section.
 
 #### Syntax
+
 ```js
 pageObject.copyToSection(destinationSection);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|destinationSection|Section|The section to copy this page to.|
+|destinationSection|section|The section to copy this page to.|
 
 #### Returns
+
 [Page](page.md)
 
 #### Examples
+
 ```js
 OneNote.run(function(ctx) {
 	var app = ctx.application;
@@ -147,21 +159,28 @@ OneNote.run(function(ctx) {
 });
 ```
 
+<br/>
+
 ### getRestApiId()
+
 Gets the ID that is compatible with the REST API.
 
 #### Syntax
+
 ```js
 pageObject.getRestApiId();
 ```
 
 #### Parameters
+
 None
 
 #### Returns
+
 string
 
 #### Examples
+
 ```js
 
 OneNote.run(function(ctx){
