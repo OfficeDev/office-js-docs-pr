@@ -1,4 +1,4 @@
-# Drop-down component in Office UI Fabric
+# DropDown component in Office UI Fabric
 
 A drop-down is a list of options that is shown by clicking a drop-down button. Use a drop-down list or menu to simplify the UI design, and when users should make a choice within the UI. When the list collapses, the selected item is visible. To change the selected item, users open the list, and select a new value.
   
