@@ -48,7 +48,7 @@ notebookObject.addSection(name);
 
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|name|String|The name of the new section.|
+|name|string|The name of the new section.|
 
 #### Returns
 
@@ -97,7 +97,7 @@ notebookObject.addSectionGroup(name);
 
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|name|String|The name of the new section group.|
+|name|string|The name of the new section group.|
 
 #### Returns
 
