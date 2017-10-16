@@ -30,11 +30,11 @@ _See [property access examples](#property-access-examples)_.
 
 | Method	 | Return Type	| Description| 
 |:---------------|:-------------|:----------|
-|[addOutline(left: double, top: double, html: String)](#addoutlineleft-double-top-double-html-string)|[outline](outline.md)|Adds an Outline to the page at the specified position.|
-|[copyToSection(destinationSection: Section)](#copytosectiondestinationsection-section)|[page](page.md)|Copies this page to specified section.|
+|[addOutline(left: double, top: double, html: String)](#addoutlineleft-double-top-double-html-string)|[outline](outline.md)|Adds an outline to the page at the specified position.|
+|[copyToSection(destinationSection: Section)](#copytosectiondestinationsection-section)|[page](page.md)|Copies this page to a specified section.|
 |[getRestApiId()](#getRestApiId)|string|Gets the ID that is compatible with the REST API.|
 |[insertPageAsSibling(location: string, title: string)](#insertpageassiblinglocation-string-title-string)|[page](page.md)|Inserts a new page before or after the current page.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.|
 
 ## Method details
 
@@ -177,7 +177,7 @@ None
 
 #### Returns
 
-string
+String
 
 #### Examples
 
@@ -197,24 +197,30 @@ OneNote.run(function(ctx){
 });
 ```
 
+<br/>
+
 ### insertPageAsSibling(location: string, title: string)
 Inserts a new page before or after the current page.
 
 #### Syntax
+
 ```js
 pageObject.insertPageAsSibling(location, title);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|location|string|The location of the new page relative to the current page.  Possible values are: Before, After|
+|location|string|The location of the new page relative to the current page.  Possible values are Before, After.|
 |title|string|The title of the new page.|
 
 #### Returns
+
 [Page](page.md)
 
 #### Examples
+
 ```js
 OneNote.run(function (context) {
 
@@ -241,25 +247,33 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
 
 ### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
+
 ```js
 object.load(param);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
-void
+
+Void
+
+<br/>
+
 ### Property access examples
 
 **contents**
+
 ```js
 OneNote.run(function (context) {
 
@@ -301,7 +315,10 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
+
 **webUrl**
+
 ```js
 OneNote.run(function (context) {
 
@@ -327,7 +344,10 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
+
 **inkAnalysisOrNull**
+
 ```js
 OneNote.run(function (ctx) {		
 	var app = ctx.application;
