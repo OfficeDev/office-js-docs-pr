@@ -16,7 +16,6 @@ Office.context.document.getFileAsync(fileType [, options], callback);
 ## Parameters
 
 
-
 |**Name**|**Type**|**Description**|**Support notes**|
 |:-----|:-----|:-----|:-----|
 | _fileType_|[FileType](../../reference/shared/filetype-enumeration.md)|Specifies the format in which the file will be returned. Required. See [fileType Value](#filetype-value). <br/>|**Changed in** 1.1, see [Support history](#support-history)|
@@ -32,14 +31,13 @@ Office.context.document.getFileAsync(fileType [, options], callback);
 |Excel Online, Win32, Mac, and iOS|Office.FileType.Compressed|
 |PowerPoint on Windows desktop, Mac, and iPad, and PowerPoint Online|Office.FileType.Compressed, Office.FileType.Pdf|
 |Word on Windows desktop, Word on Mac, and Word Online|Office.FileType.Compressed, Office.FileType.Pdf, Office.FileType.Text|
-Word on iPad|Office.FileType.Compressed, Office.FileType.Text|
+|Word on iPad|Office.FileType.Compressed, Office.FileType.Text|
 
 ## Callback value
 
 When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](../../reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
 
 In the callback function passed to the  **getFileAsync** method, you can use the properties of the **AsyncResult** object to return the following information.
-
 
 
 |**Property**|**Use to...**|
@@ -175,12 +173,11 @@ For more information about Office host application and server requirements, see 
 
 **Supported hosts, by platform**
 
-
-||**Office for Windows desktop**|**Office Online (in browser)**|**Office for iPad**|
-|:-----|:-----|:-----|:-----|
-|**Excel**||Y||
-|**PowerPoint**|Y|Y|Y|
-|**Word**|Y|Y|Y|
+|               |**Office for Windows desktop** |**Office Online (in browser)** |**Office for iPad**|
+|:--------------|:-----------------------------:|:-----------------------------:|:-----------------:|
+|**Excel**      | Y                             | Y                             |                   |
+|**PowerPoint** | Y                             | Y                             | Y                 |
+|**Word**       | Y                             | Y                             | Y                 |
 
 |||
 |:-----|:-----|

@@ -17,8 +17,8 @@ Need information about where add-ins are supported by Office host? See  [Office 
 The following table lists the common API requirement sets, the methods in each set, and the Office host applications that support that requirement set. All of these API requirement sets are version 1.1.
 
 
-|  Requirement set  |  Office host  |  Methods in set  |
-|:-----|-----|:-----|:-----|
+|**Requirement set**|**Office host**|**Methods in set**|
+|:-----|:-----|:-----|
 | ActiveView | PowerPoint<br>PowerPoint&nbsp;Online|Document.getActiveViewAsync|
 | AddInCommands | For details see [Add-in command requirement sets](add-in-commands-requirement-sets.md). | |
 | BindingEvents  | Access Web Apps<br>Excel<br>Excel Online<br>Word 2013 and later<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Binding.addHanderAsync<br>Binding.removeHanderAsync|

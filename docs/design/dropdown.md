@@ -1,26 +1,30 @@
-# Dropdown component in Office UI Fabric
+# DropDown component in Office UI Fabric
 
-A Dropdown is a list of options which is shown by clicking a dropdown button. Use Dropdowns to simplify the UI design, and when users should make a choice within the UI. When the list collapses, the selected items is visible. To change the selected item, users open the list, and select a new value.
+A drop-down is a list of options that is shown by clicking a drop-down button. Use a drop-down list or menu to simplify the UI design, and when users should make a choice within the UI. When the list collapses, the selected item is visible. To change the selected item, users open the list, and select a new value.
   
-#### Example: Dropdown in a task pane
+#### Example: Drop-down in a task pane
 
-![An image showing the Dropdown](../../images/overview_withApp_dropdown.png)
+<br/>
 
-## Best Practices
+![An image showing the drop-down](../../images/overview_withApp_dropdown.png)
+
+<br/>
+
+## Best practices
 
 |**Do**|**Don't**|
 |:------------|:--------------|
-|Use a Dropdown when the default selected option is more likely to be selected than other options. By contrast, ChoiceGroup or radio buttons show all choices thereby putting equal emphasis on all options.|Don't use Dropdowns where all options are equally likely to be selected.|
-|Use a Dropdown when there are multiple choices that can be collapsed into one field. Also, use Dropdowns for long lists of items, or when screen space is constrained.|Don’t use Dropdowns if there are fewer than two choices. Instead, use a checkbox.|
-|Use shortened statements or words in Dropdowns.| |
+|Use a drop-down when the default selected option is more likely to be selected than other options. By contrast, ChoiceGroup or radio buttons show all choices, thereby putting equal emphasis on all options.|Don't use a drop-down when all options are equally likely to be selected.|
+|Use a drop-down when there are multiple choices that can be collapsed into one field. Also, use a drop-down for long lists of items, or when screen space is constrained.|Don’t use a drop-down if there are fewer than two choices. Instead, use a check box.|
+|Use shortened statements or words in a drop-down.| |
 
 ## Variants
 
 |**Variation**|**Description**|**Example**|
 |:------------|:--------------|:----------|
-|**Basic uncontrolled Dropdown**|Use when many options are available for selection.|![Basic uncontrolled Dropdown image](../../images/dropdownUncontrolled.png)|
-|**Disabled uncontrolled Dropdown with defaultSelectedKey**|Disabled state of the Dropdown.|![Disabled uncontrolled Dropdown with defaultSelectedKey image](../../images/dropdownDisabled.png)|
-|**Controlled Dropdown**|Use when the default selected item is influenced by another location in your UI, and the selected item in the DropDown must be maintained.|![Controlled Dropdown image](../../images/dropdownControlled.png)|
+|**Basic uncontrolled drop-down**|Use when many options are available for selection.|![Basic uncontrolled drop-down image](../../images/dropdownUncontrolled.png)<br/>|
+|**Disabled uncontrolled drop-down with defaultSelectedKey**|Disabled state of the drop-down.|![Disabled uncontrolled drop-down with defaultSelectedKey image](../../images/dropdownDisabled.png)<br/>|
+|**Controlled drop-down**|Use when the default selected item is influenced by another location in your UI, and the selected item in the drop-down must be maintained.|![Controlled drop-down image](../../images/dropdownControlled.png)<br/>|
 
 ## Implementation
 
@@ -28,5 +32,6 @@ For details, see [Dropdown](https://dev.office.com/fabric#/components/dropdown) 
 
 ## Additional resources
 
-* [UX design patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
-* [Office UI Fabric in Office Add-ins](office-ui-fabric.md)
+- [UX Design Patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+
+- [Office UI Fabric in Office Add-ins](office-ui-fabric.md)

@@ -15,17 +15,17 @@ Office.context.document.getSelectedDataAsync(coercionType [, options], callback)
 
 ## Parameters
 
-|**Name**|**Type**|**Description**|**Support notes**|
-|:-----|:-----|:-----|:-----|
-| _coercionType_|[CoercionType](../../reference/shared/coerciontype-enumeration.md)<br/>|The type of data structure to return. Required. See [coercionType value](#coerciontype-value).||
-| _options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods). See [options value](#options-value).||
-| _callback_|**object**|A function that is invoked when the callback returns, whose only parameter is of type  **AsyncResult**.||
+|**Name**|**Type**|**Description**|
+|:-------|:-------|:--------------|
+| _coercionType_|[CoercionType](../../reference/shared/coerciontype-enumeration.md)<br/>|The type of data structure to return. Required. See [coercionType value](#coerciontype-value).|
+| _options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods). See [options value](#options-value).|
+| _callback_|**object**|A function that is invoked when the callback returns, whose only parameter is of type  **AsyncResult**.|
 
 ## coercionType value
 
 |**Host**|**Supported coercionType**|
 |:-----|:-----|
-|Excel, Excel Online, PowerPoint, PowerPoint Online, Word, and Word Online only|Office.CoercionType.Text (string)| 
+|Excel, Excel Online, PowerPoint, PowerPoint Online, Word, and Word Online only|Office.CoercionType.Text (string)|
 |Excel, Word, and Word Online only|Office.CoercionType.Matrix (array of arrays)|
 |Access, Excel, Word, and Word Online only|Office.CoercionType.Table ([TableData](../../reference/shared/tabledata.md) object)|
 |Word only|Office.CoercionType.Html|
