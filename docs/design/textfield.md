@@ -13,7 +13,7 @@ A text field enables users to type text. It's typically used to capture a single
 |**Do**|**Don't**|
 |:------------|:--------------|
 |Use text fields to accept data input on a form or page.|Don’t use text fields to render basic copy as part of a body element of a page.|
-|Label text fields with a helpful names.|Don’t use text fields for date or time entry. Instead, use a Datetime picker.|
+|Label text fields with helpful names.|Don’t use text fields for date or time entry. Instead, use a date-time picker.|
 |Use concise placeholder text to specify what content should be entered.|Don’t use text fields if you can predefine valid input options. Instead, use a drop-down.|
 |Provide all appropriate states for the text fields (static, hover, focus, engaged, unavailable, error).||
 |Clearly mark required and optional text fields.||
