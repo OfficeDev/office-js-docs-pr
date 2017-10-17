@@ -348,7 +348,7 @@ The following is an example of what the four keys you changed should look like. 
 
 1. Open the file **Controllers\ValueController.cs**.
 
-1. Ensure that the following `using` statements are at the top of the file.
+2. Ensure that the following `using` statements are at the top of the file.
 
     ```
     using Microsoft.Identity.Client;
@@ -365,9 +365,9 @@ The following is an example of what the four keys you changed should look like. 
     using Office_Add_in_ASPNET_SSO_WebAPI.Models;
     ```
 
-1. Just above the line that declares the `ValuesController`, add the `[Authorize]` attribute. This ensures that your add-in will run the authorization process that you configured in the last procedure whenever a controller method is called. Only callers with a valid access token to your add-in can invoke the methods of the controller.
+3. Just above the line that declares the `ValuesController`, add the `[Authorize]` attribute. This ensures that your add-in will run the authorization process that you configured in the last procedure whenever a controller method is called. Only callers with a valid access token to your add-in can invoke the methods of the controller.
 
-1. Add the following method to the `ValuesController`:
+4. Add the following method to the `ValuesController`:
 
     ```
     // GET api/values
@@ -377,7 +377,7 @@ The following is an example of what the four keys you changed should look like. 
     }
     ```
 
-1. Replace TODO5 with the following code to validate that the scopes that are specified in the token include `access_as_user`.
+5. Replace TODO5 with the following code to validate that the scopes that are specified in the token include `access_as_user`.
 
     ```
     string[] addinScopes = ClaimsPrincipal.Current.FindFirst("http://schemas.microsoft.com/identity/claims/scope").Value.Split(' ');
@@ -391,7 +391,9 @@ The following is an example of what the four keys you changed should look like. 
     return new string[] { "Error", "Microsoft Office does not have permission to get Microsoft Graph data on behalf of the current user." };
     ```
 
-1. Replace TODO6 with the following code. Note:
+> **Note:** You should only use the `access_as_user` scope to authorize the API that handles the on-behalf-of flow for Office add-ins. Other APIs in your service should have their own scope requirements. This limits what can be accessed with the tokens that Office acquires.
+
+6. Replace TODO6 with the following code. Note:
     * It turns the raw access token received from the Office host into a `UserAssertion` object that will be passed to another method.
     * Your add-in is no longer playing the role of a resource (or audience) to which the Office host and user need access. Now it is itself a client that needs access to Microsoft Graph. `ConfidentialClientApplication` is the MSAL “client context” object.
     * The third parameter to the `ConfidentialClientApplication` constructor is a redirect URL which is not actually used in the “on behalf of” flow, but it is a good practice to use the correct URL. The fourth and fifth parameters can be used to define a persistent store that would enable the reuse of unexpired tokens across different sessions with the add-in. This sample does not implement any persistent storage.
@@ -407,7 +409,7 @@ The following is an example of what the four keys you changed should look like. 
     string[] graphScopes = { "Files.Read.All" };
     ```
 
-1. Replace TODO7 with the following code. Note:
+7. Replace TODO7 with the following code. Note:
 
     * The `ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync` method will first look in the MSAL cache, which is in memory, for a matching access token. Only if there isn't one, does it initiate the "on behalf of" flow with the Azure AD V2 endpoint.
     * If multi-factor authentication is required by the MS Graph resource and the user has not yet provided it, AAD will throw an exception containing a Claims property.
@@ -433,7 +435,7 @@ The following is an example of what the four keys you changed should look like. 
     }
     ```
 
-1. Replace TODO8 with the following. Note:
+8. Replace TODO8 with the following. Note:
 
     * The `GraphApiHelper` and `ODataHelper` classes are defined in files in the **Helpers** folder. The `OneDriveItem` class is defined in a file in the **Models** folder. Detailed discussion of these classes is not relevant to authorization or SSO, so it is out-of-scope for this article.
     * Performance is improved by asking Microsoft Graph for only the data actually needed, so the code uses a ` $select` query parameter to specify that we only want the name property, and a `$top` parameter to specify that we want only the first 3 folder or file names.
@@ -443,7 +445,7 @@ The following is an example of what the four keys you changed should look like. 
     var getFilesResult = await ODataHelper.GetItems<OneDriveItem>(fullOneDriveItemsUrl, result.AccessToken);
     ```
 
-1. Replace TODO9 with the following. Note that although the code above asked for only the *name* property of the OneDrive items, Microsoft Graph always includes the *eTag* property for OneDrive items. To reduce the payload sent to the client, the code below reconstructs the results with only the item names.
+9. Replace TODO9 with the following. Note that although the code above asked for only the *name* property of the OneDrive items, Microsoft Graph always includes the *eTag* property for OneDrive items. To reduce the payload sent to the client, the code below reconstructs the results with only the item names.
 
     ```
     List<string> itemNames = new List<string>();
