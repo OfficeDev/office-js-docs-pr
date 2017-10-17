@@ -398,6 +398,8 @@ There are two server-side files that need to be modified.
     const { jwt } = auth.verifyJWT(req, { scp: 'access_as_user' }); 
     ```
 
+> **Note:** You should only use the `access_as_user` scope to authorize the API that handles the on-behalf-of flow for Office add-ins. Other APIs in your service should have their own scope requirements. This limits what can be accessed with the tokens that Office acquires.
+
 5. Replace TODO8 with the following code. Note the following about this code:
 
     * The call to `acquireTokenOnBehalfOf` does not include a resource parameter because we constructed the `AuthModule` object (`auth`) with the AAD V2.0 endpoint which does not support a resource property.
