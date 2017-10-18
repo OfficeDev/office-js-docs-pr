@@ -350,8 +350,8 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   <Description DefaultValue=
     "Watch YouTube videos referenced in the e-mails you  
     receive without leaving your email client.">
-    <Override Locale="fr-fr" Value="Visualisez les vid????os
-      YouTube r????f????renc????es dans vos courriers ????lectronique
+    <Override Locale="fr-fr" Value="Visualisez les vidéos
+      YouTube références dans vos courriers électronique
       directement depuis Outlook et Outlook Web App."/>
   </Description>
   <!-- Change the following line to specify    -->
