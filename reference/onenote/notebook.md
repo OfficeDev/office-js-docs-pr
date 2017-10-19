@@ -2,55 +2,60 @@
 
 _Applies to: OneNote Online_   
 
+Represents a OneNote notebook. Notebooks contain section groups and sections. 
 
-Represents a OneNote notebook. Notebooks contain section groups and sections.
+To provide feedback on this API, you can [file an issue in GitHub](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook).
 
 ## Properties
 
-| Property	   | Type	|Description|Feedback|
-|:---------------|:--------|:----------|:-------|
-|baseUrl|string|The base site URL for the notebook, if it is in a SharePoint site (it will be null for OneDrive notebooks) - Use this property to interact with the OneNote REST API to fetch the **SiteCollectionId** and **SiteId** (using **FromUrl**). Read-only. For details, see the [OneNote development blog](https://blogs.msdn.microsoft.com/onenotedev/2015/06/11/and-sharepoint-makes-three/). Read only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-baseUrl)|
-|clientUrl|string|The client URL of the notebook. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-clientUrl)|
-|id|string|Gets the ID of the notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-id)|
-|name|string|Gets the name of the notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-name)|
+| Property	   | Type	|Description|
+|:---------------|:--------|:----------|
+|baseUrl|string|The base site URL for the notebook, if it is in a SharePoint site (it will be null for OneDrive notebooks). Use this property to interact with the OneNote REST API to fetch the **SiteCollectionId** and **SiteId** (using **FromUrl**). Read-only.<br/><br/>For details, see the [OneNote development blog](https://blogs.msdn.microsoft.com/onenotedev/2015/06/11/and-sharepoint-makes-three/).|
+|clientUrl|string|The client URL of the notebook. Read-only.|
+|id|string|Gets the ID of the notebook. Read-only.|
+|name|string|Gets the name of the notebook. Read-only.|
 
-_See property access [examples.](#property-access-examples)_
+_See [property access examples](#property-access-examples)_.
 
 ## Relationships
-| Relationship | Type	|Description| Feedback|
-|:---------------|:--------|:----------|:-------|
-|sectionGroups|[SectionGroupCollection](sectiongroupcollection.md)|The section groups in the notebook. Read only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-sectionGroups)|
-|sections|[SectionCollection](sectioncollection.md)|The the sections of the notebook. Read only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-sections)|
+| Relationship | Type	|Description|
+|:---------------|:--------|:----------|
+|sectionGroups|[SectionGroupCollection](sectiongroupcollection.md)|The section groups in the notebook. Read-only.|
+|sections|[SectionCollection](sectioncollection.md)|The sections of the notebook. Read-only.|
 
 ## Methods
 
-| Method		   | Return Type	|Description| Feedback|
-|:---------------|:--------|:----------|:-------|
-|[addSection(name: String)](#addsectionname-string)|[Section](section.md)|Adds a new section to the end of the notebook.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-addSection)|
-|[addSectionGroup(name: String)](#addsectiongroupname-string)|[SectionGroup](sectiongroup.md)|Adds a new section group to the end of the notebook.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-addSectionGroup)|
-|[getRestApiId()](#getRestApiId)|string|Gets the ID that is compatible with the REST API.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-getRestApiId)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-load)|
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[addSection(name: String)](#addsectionname-string)|[Section](section.md)|Adds a new section to the end of the notebook.|
+|[addSectionGroup(name: String)](#addsectiongroupname-string)|[SectionGroup](sectiongroup.md)|Adds a new section group to the end of the notebook.|
+|[getRestApiId()](#getRestApiId)|string|Gets the ID that is compatible with the REST API.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.|
 
-## Method Details
+## Method details
 
 
 ### addSection(name: String)
 Adds a new section to the end of the notebook.
 
 #### Syntax
+
 ```js
 notebookObject.addSection(name);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|name|String|The name of the new section.|
+|name|string|The name of the new section.|
 
 #### Returns
+
 [Section](section.md)
 
 #### Examples
+
 ```js          
 OneNote.run(function (context) {
 
@@ -77,24 +82,29 @@ OneNote.run(function (context) {
 }); 
 ```
 
+<br/>
 
 ### addSectionGroup(name: String)
 Adds a new section group to the end of the notebook.
 
 #### Syntax
+
 ```js
 notebookObject.addSectionGroup(name);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|name|String|The name of the new section.|
+|name|string|The name of the new section group.|
 
 #### Returns
+
 [SectionGroup](sectiongroup.md)
 
 #### Examples
+
 ```js          
 OneNote.run(function (context) {
 
@@ -121,10 +131,14 @@ OneNote.run(function (context) {
 }); 
 ```
 
+<br/>
+
 ### getRestApiId()
+
 Gets the ID that is compatible with the REST API.
 
 #### Syntax
+
 ```js
 notebookObject.getRestApiId();
 ```
@@ -133,9 +147,11 @@ notebookObject.getRestApiId();
 None
 
 #### Returns
-string
+
+String
 
 #### Examples
+
 ```js
 
 OneNote.run(function(ctx){
@@ -152,23 +168,33 @@ OneNote.run(function(ctx){
 });
 ```
 
+<br/>
+
 ### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
+
 ```js
 object.load(param);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
-void
+
+Void
+
+<br/>
+
 ### Property access examples
+
 **baseUrl**
+
 ```js
 OneNote.run(function (context) {
         
@@ -194,7 +220,10 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
+
 **id**
+
 ```js
 OneNote.run(function (context) {
         
@@ -220,7 +249,10 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
+
 **name**
+
 ```js
 OneNote.run(function (context) {
         
@@ -246,7 +278,10 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
+
 **sectionGroups**
+
 ```js          
 OneNote.run(function (context) {
 
@@ -272,7 +307,10 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
+
 **sections**
+
 ```js
 OneNote.run(function (context) {
 

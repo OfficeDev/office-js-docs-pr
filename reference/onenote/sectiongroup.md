@@ -2,57 +2,63 @@
 
 _Applies to: OneNote Online_   
 
-
 Represents a OneNote section group. Section groups can contain sections and other section groups.
+
+To provide feedback on this API, you can [file an issue in GitHub](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup).
 
 ## Properties
 
-| Property	   | Type	|Description|Feedback|
-|:---------------|:--------|:----------|:-------|
-|clientUrl{|string|The client url of the section group. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-clientUrl{)|
-|id|string|Gets the ID of the section group. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-id)|
-|name|string|Gets the name of the section group. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-name)|
+| Property	   | Type	|Description|
+|:---------------|:--------|:----------|
+|clientUrl{|string|The client URL of the section group. Read-only.|
+|id|string|Gets the ID of the section group. Read-only.|
+|name|string|Gets the name of the section group. Read-only.|
 
-_See property access [examples.](#property-access-examples)_
+_See [property access examples](#property-access-examples)_.
 
 ## Relationships
-| Relationship | Type	|Description| Feedback|
-|:---------------|:--------|:----------|:-------|
-|notebook|[Notebook](notebook.md)|Gets the notebook that contains the section group. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-notebook)|
-|parentSectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section group. Throws ItemNotFound if the section group is a direct child of the notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-parentSectionGroup)|
-|parentSectionGroupOrNull|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section group. Returns null if the section group is a direct child of the notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-parentSectionGroupOrNull)|
-|sectionGroups|[SectionGroupCollection](sectiongroupcollection.md)|The collection of section groups in the section group. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-sectionGroups)|
-|sections|[SectionCollection](sectioncollection.md)|The collection of sections in the section group. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-sections)|
+
+| Relationship | Type	|Description| 
+|:---------------|:--------|:----------|
+|notebook|[Notebook](notebook.md)|Gets the notebook that contains the section group. Read-only.|
+|parentSectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section group. Throws ItemNotFound if the section group is a direct child of the notebook. Read-only.|
+|parentSectionGroupOrNull|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section group. Returns null if the section group is a direct child of the notebook. Read-only.|
+|sectionGroups|[SectionGroupCollection](sectiongroupcollection.md)|The collection of section groups in the section group. Read-only.|
+|sections|[SectionCollection](sectioncollection.md)|The collection of sections in the section group. Read-only.|
 
 ## Methods
 
-| Method		   | Return Type	|Description| Feedback|
-|:---------------|:--------|:----------|:-------|
-|[addSection(title: String)](#addsectiontitle-string)|[Section](section.md)|Adds a new section to the end of the section group.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-addSection)|
-|[addSectionGroup(name: String)](#addsectiongroupname-string)|[SectionGroup](sectiongroup.md)|Adds a new section group to the end of this sectionGroup.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-addSectionGroup)|
-|[getRestApiId()](#getRestApiId)|string|Gets the ID that is compatible with the REST API.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-getRestApiId)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-load)|
+| Method		   | Return Type	|Description| 
+|:---------------|:--------|:----------|
+|[addSection(title: String)](#addsectiontitle-string)|[Section](section.md)|Adds a new section to the end of the section group.|
+|[addSectionGroup(name: String)](#addsectiongroupname-string)|[SectionGroup](sectiongroup.md)|Adds a new section group to the end of this sectionGroup.|
+|[getRestApiId()](#getRestApiId)|string|Gets the ID that is compatible with the REST API.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.|
 
-## Method Details
-
+## Method details
 
 ### addSection(title: String)
+
 Adds a new section to the end of the section group.
 
 #### Syntax
+
 ```js
 sectionGroupObject.addSection(title);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|title|String|The name of the new section.|
+|title|string|The name of the new section.|
 
 #### Returns
+
 [Section](section.md)
 
 #### Examples
+
 ```js
 OneNote.run(function (context) {
 
@@ -84,24 +90,30 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
 
 ### addSectionGroup(name: String)
+
 Adds a new section group to the end of this sectionGroup.
 
 #### Syntax
+
 ```js
 sectionGroupObject.addSectionGroup(name);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|name|String|The name of the new section.|
+|name|string|The name of the new section group.|
 
 #### Returns
+
 [SectionGroup](sectiongroup.md)
 
 #### Examples
+
 ```js          
 OneNote.run(function (context) {
 	var sectionGroup;
@@ -140,24 +152,34 @@ OneNote.run(function (context) {
 }); 
 ```
 
+<br/>
+
 ### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
+
 ```js
 object.load(param);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
-void
+
+Void
+
+<br/>
+
 ### Property access examples
 
 **id**
+
 ```js
 OneNote.run(function (context) {
         
@@ -186,7 +208,10 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
+
 **name and notebook**
+
 ```js
 OneNote.run(function (context) {
         
@@ -213,7 +238,10 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
+
 **sectionGroups**
+
 ```js
 OneNote.run(function (context) {
 
@@ -249,7 +277,10 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
+
 **sections**
+
 ```js
 OneNote.run(function (context) {
 

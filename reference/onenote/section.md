@@ -2,58 +2,64 @@
 
 _Applies to: OneNote Online_   
 
-
 Represents a OneNote section. Sections can contain pages.
+
+To provide feedback on this API, you can [file an issue in GitHub](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section).
 
 ## Properties
 
-| Property	   | Type	|Description|Feedback|
-|:---------------|:--------|:----------|:-------|
-|clientUrl|string|The client url of the section. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-clientUrl)|
-|id|string|Gets the ID of the section. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-id)|
-|name|string|Gets the name of the section. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-name)|
+| Property	   | Type	|Description|
+|:---------------|:--------|:----------|
+|clientUrl|string|The client URL of the section. Read-only.|
+|id|string|Gets the ID of the section. Read-only.|
+|name|string|Gets the name of the section. Read-only.|
 
-_See property access [examples.](#property-access-examples)_
+_See [property access examples](#property-access-examples)_.
 
 ## Relationships
-| Relationship | Type	|Description| Feedback|
-|:---------------|:--------|:----------|:-------|
-|notebook|[Notebook](notebook.md)|Gets the notebook that contains the section. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-notebook)|
-|pages|[PageCollection](pagecollection.md)|The collection of pages in the section. Read only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-pages)|
-|parentSectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section. Throws ItemNotFound if the section is a direct child of the notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-parentSectionGroup)|
-|parentSectionGroupOrNull|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section. Returns null if the section is a direct child of the notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-parentSectionGroupOrNull)|
+
+| Relationship | Type	|Description| 
+|:---------------|:--------|:----------|
+|notebook|[Notebook](notebook.md)|Gets the notebook that contains the section. Read-only.|
+|pages|[PageCollection](pagecollection.md)|The collection of pages in the section. Read-only.|
+|parentSectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section. Throws ItemNotFound if the section is a direct child of the notebook. Read-only.|
+|parentSectionGroupOrNull|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section. Returns null if the section is a direct child of the notebook. Read-only.|
 
 ## Methods
 
-| Method		   | Return Type	|Description| Feedback|
-|:---------------|:--------|:----------|:-------|
-|[addPage(title: string)](#addpagetitle-string)|[Page](page.md)|Adds a new page to the end of the section.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-addPage)|
-|[copyToNotebook(destinationNotebook: Notebook)](#copytonotebookdestinationnotebook-notebook)|[Section](section.md)|Copies this section to specified notebook.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-copyToNotebook)|
-|[copyToSectionGroup(destinationSectionGroup: SectionGroup)](#copytosectiongroupdestinationsectiongroup-sectiongroup)|[Section](section.md)|Copies this section to specified section group.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-copyToSectionGroup)|
-|[insertSectionAsSibling(location: string, title: string)](#insertsectionassiblinglocation-string-title-string)|[Section](section.md)|Inserts a new section before or after the current section.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-insertSectionAsSibling)|
-|[getRestApiId()](#getRestApiId)|string|Gets the ID that is compatible with the REST API.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-getRestApiId)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-load)|
+| Method		   | Return Type	|Description| 
+|:---------------|:--------|:----------|
+|[addPage(title: string)](#addpagetitle-string)|[Page](page.md)|Adds a new page to the end of the section.|
+|[copyToNotebook(destinationNotebook: Notebook)](#copytonotebookdestinationnotebook-notebook)|[Section](section.md)|Copies this section to the specified notebook.|
+|[copyToSectionGroup(destinationSectionGroup: SectionGroup)](#copytosectiongroupdestinationsectiongroup-sectiongroup)|[Section](section.md)|Copies this section to the specified section group.|
+|[insertSectionAsSibling(location: string, title: string)](#insertsectionassiblinglocation-string-title-string)|[Section](section.md)|Inserts a new section before or after the current section.|
+|[getRestApiId()](#getRestApiId)|string|Gets the ID that is compatible with the REST API.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.|
 
-## Method Details
-
+## Method details
 
 ### addPage(title: string)
+
 Adds a new page to the end of the section.
 
 #### Syntax
+
 ```js
 sectionObject.addPage(title);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |title|string|The title of the new page.|
 
 #### Returns
+
 [Page](page.md)
 
 #### Examples
+
 ```js
 OneNote.run(function (context) {
             
@@ -82,24 +88,30 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
 
 ### copyToNotebook(destinationNotebook: Notebook)
-Copies this section to specified notebook.
+
+Copies this section to the specified notebook.
 
 #### Syntax
+
 ```js
 sectionObject.copyToNotebook(destinationNotebook);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |destinationNotebook|Notebook|The notebook to copy this section to.|
 
 #### Returns
+
 [Section](section.md)
 
 #### Examples
+
 ```js
 OneNote.run(function (context) {
 	var app = context.application;
@@ -130,24 +142,30 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
 
 ### copyToSectionGroup(destinationSectionGroup: SectionGroup)
-Copies this section to specified section group.
+
+Copies this section to the specified section group.
 
 #### Syntax
+
 ```js
 sectionObject.copyToSectionGroup(destinationSectionGroup);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |destinationSectionGroup|SectionGroup|The section group to copy this section to.|
 
 #### Returns
+
 [Section](section.md)
 
 #### Examples
+
 ```js
 OneNote.run(function (ctx) {
 	var app = ctx.application;
@@ -179,25 +197,30 @@ OneNote.run(function (ctx) {
 });
 ```
 
+<br/>
 
 ### insertSectionAsSibling(location: string, title: string)
 Inserts a new section before or after the current section.
 
 #### Syntax
+
 ```js
 sectionObject.insertSectionAsSibling(location, title);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|location|string|The location of the new section relative to the current section.  Possible values are: Before, After|
+|location|string|The location of the new section relative to the current section.  Possible values are Before, After.|
 |title|string|The name of the new section.|
 
 #### Returns
+
 [Section](section.md)
 
 #### Examples
+
 ```js
 OneNote.run(function (context) {
             
@@ -225,10 +248,14 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
+
 ### getRestApiId()
+
 Gets the ID that is compatible with the REST API.
 
 #### Syntax
+
 ```js
 sectionObject.getRestApiId();
 ```
@@ -237,9 +264,11 @@ sectionObject.getRestApiId();
 None
 
 #### Returns
-string
+
+String
 
 #### Examples
+
 ```js
 
 OneNote.run(function(ctx){
@@ -256,25 +285,34 @@ OneNote.run(function(ctx){
 });
 ```
 
+<br/>
 
 ### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
+
 ```js
 object.load(param);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
-void
+
+Void
+
+<br/>
+
 ### Property access examples
 
 **id**
+
 ```js
 OneNote.run(function (context) {
         
@@ -299,7 +337,10 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
+
 **name and notebook**
+
 ```js
 OneNote.run(function (context) {
         
@@ -324,7 +365,10 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
+
 **parentSectionGroupOrNull**
+
 ```js
 OneNote.run(function (context) {
     // Queue a command to add a page to the current section.
