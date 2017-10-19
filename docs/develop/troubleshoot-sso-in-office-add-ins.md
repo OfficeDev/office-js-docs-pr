@@ -1,6 +1,6 @@
-# Troubleshooting and error-handling single sign-on for Office Add-ins
+# Troubleshoot error messages for single sign-on (SSO) in Office Add-ins
 
-This article provides some guidance about how to troubleshoot problems with single sign-on (SSO) in Office  Add-ins, and how to make your SSO-enabled add-in robustly handle special conditions or errors.
+This article provides some guidance about how to troubleshoot problems with single sign-on (SSO) in Office Add-ins, and how to make your SSO-enabled add-in robustly handle special conditions or errors.
 
 ## Debugging tools
 
