@@ -57,7 +57,7 @@
 		  <Item text="Enable SSO in an add-in" url="develop/sso-in-office-add-ins" SEODescription="Enable single sign-on (SSO) in an add-in." >
 		  	<Item text="Create an SSO add-in using ASP.NET" url="develop/create-sso-office-add-ins-aspnet" SEODescription="Create a single sign-on (SSO) add-in using ASP.NET." />
 		  	<Item text="Create an SSO add-in using Node.js" url="develop/create-sso-office-add-ins-nodejs" SEODescription="Create a single sign-on (SSO) add-in using Node.js." />
-		  	<Item text="Troubleshoot error messages for single sign-on (SSO)" url="troubleshoot-sso-in-office-add-ins.md" SEODescription="Troubleshoot problems with single sign-on (SSO) in Office Add-ins, and how to make your SSO-enabled add-in robustly handle special conditions or errors." />
+		  	<Item text="Troubleshoot error messages for single sign-on (SSO)" url="troubleshoot-sso-in-office-add-ins" SEODescription="Troubleshoot problems with single sign-on (SSO) in Office Add-ins, and how to make your SSO-enabled add-in robustly handle special conditions or errors." />
 			</Item>
 			<Item text="Authorize external services" url="develop/auth-external-add-ins" SEODescription="Authorize external single sign-on services (SSO) add-in" />
 	</Item>
