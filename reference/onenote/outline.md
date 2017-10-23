@@ -2,51 +2,57 @@
 
 _Applies to: OneNote Online_  
 
-
 Represents a container for Paragraph objects.
+
+To provide feedback on this API, you can [file an issue in GitHub](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline).
 
 ## Properties
 
-| Property	   | Type	|Description|Feedback|
-|:---------------|:--------|:----------|:-------|
-|id|string|Gets the ID of the Outline object. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-id)|
+| Property	   | Type	|Description|
+|:---------------|:--------|:----------|
+|id|string|Gets the ID of the Outline object. Read-only.|
 
 ## Relationships
-| Relationship | Type	|Description| Feedback|
-|:---------------|:--------|:----------|:-------|
-|pageContent|[PageContent](pagecontent.md)|Gets the PageContent object that contains the Outline. This object defines the position of the Outline on the page. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-pageContent)|
-|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the collection of Paragraph objects in the Outline. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-paragraphs)|
+
+| Relationship | Type	|Description| 
+|:---------------|:--------|:----------|
+|pageContent|[PageContent](pagecontent.md)|Gets the PageContent object that contains the Outline. This object defines the position of the Outline on the page. Read-only.|
+|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the collection of Paragraph objects in the Outline. Read-only.|
 
 ## Methods
 
-| Method		   | Return Type	|Description| Feedback|
-|:---------------|:--------|:----------|:-------|
-|[appendHtml(html: string)](#appendhtmlhtml-string)|void|Adds the specified HTML to the bottom of the Outline.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-appendHtml)|
-|[appendImage(base64EncodedImage: string, width: double, height: double)](#appendimagebase64encodedimage-string-width-double-height-double)|[Image](image.md)|Adds the specified image to the bottom of the Outline.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-appendImage)|
-|[appendRichText(paragraphText: string)](#appendrichtextparagraphtext-string)|[RichText](richtext.md)|Adds the specified text to the bottom of the Outline.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-appendRichText)|
-|[appendTable(rowCount: number, columnCount: number, values: string[][])](#appendtablerowcount-number-columncount-number-values-string)|[Table](table.md)|Adds a table with the specified number of rows and columns to the bottom of the outline.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-appendTable)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-load)|
+| Method		   | Return Type	|Description| 
+|:---------------|:--------|:----------|
+|[appendHtml(html: string)](#appendhtmlhtml-string)|void|Adds the specified HTML to the bottom of the Outline.|
+|[appendImage(base64EncodedImage: string, width: double, height: double)](#appendimagebase64encodedimage-string-width-double-height-double)|[Image](image.md)|Adds the specified image to the bottom of the Outline.|
+|[appendRichText(paragraphText: string)](#appendrichtextparagraphtext-string)|[RichText](richtext.md)|Adds the specified text to the bottom of the Outline.|
+|[appendTable(rowCount: number, columnCount: number, values: string[][])](#appendtablerowcount-number-columncount-number-values-string)|[Table](table.md)|Adds a table with the specified number of rows and columns to the bottom of the outline.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.|
 
-## Method Details
-
+## Method details
 
 ### appendHtml(html: string)
+
 Adds the specified HTML to the bottom of the Outline.
 
 #### Syntax
+
 ```js
 outlineObject.appendHtml(html);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |html|string|The HTML string to append. See [supported HTML](../../docs/onenote/onenote-add-ins-page-content.md#supported-html) for the OneNote add-ins JavaScript API.|
 
 #### Returns
-void
+
+Void
 
 #### Examples
+
 ```js
 OneNote.run(function (context) {
 
@@ -83,50 +89,66 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
 
 ### appendImage(base64EncodedImage: string, width: double, height: double)
+
 Adds the specified image to the bottom of the Outline.
 
 #### Syntax
+
 ```js
 outlineObject.appendImage(base64EncodedImage, width, height);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |base64EncodedImage|string|HTML string to append.|
-|width|double|Optional. Width in the unit of Points. The default value is null and image width will be respected.|
-|height|double|Optional. Height in the unit of Points. The default value is null and image height will be respected.|
+|width|double|Optional. Width in the unit of Points. The default value is null, and image width will be respected.|
+|height|double|Optional. Height in the unit of Points. The default value is null, and image height will be respected.|
 
 #### Returns
+
 [Image](image.md)
 
+<br/>
+
 ### appendRichText(paragraphText: string)
+
 Adds the specified text to the bottom of the Outline.
 
 #### Syntax
+
 ```js
 outlineObject.appendRichText(paragraphText);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |paragraphText|string|HTML string to append.|
 
 #### Returns
+
 [RichText](richtext.md)
 
+<br/>
+
 ### appendTable(rowCount: number, columnCount: number, values: string[][])
+
 Adds a table with the specified number of rows and columns to the bottom of the outline.
 
 #### Syntax
+
 ```js
 outlineObject.appendTable(rowCount, columnCount, values);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |rowCount|number|Required. The number of rows in the table.|
@@ -134,9 +156,11 @@ outlineObject.appendTable(rowCount, columnCount, values);
 |values|string[][]|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
 
 #### Returns
+
 [Table](table.md)
 
 #### Examples
+
 ```js
 OneNote.run(function (context) {
 
@@ -172,18 +196,27 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
+
 ### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
+
 ```js
 object.load(param);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
-void
+
+Void
+
+<br/>
+
