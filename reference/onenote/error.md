@@ -14,7 +14,7 @@ To provide feedback on this API, you can [file an issue in GitHub](https://githu
 |debugInfo|string|Gets a value that indicates what happened when the error occurred. This value is only intended for use during development and debugging.  |
 |message |string| Gets a localized human readable string that corresponds to the error code.|
 |name |string| Gets a value that is always **OfficeExtension.Error**. |
-|traceMessages |string[]| Gets an array of values that correspond to the instrumention messages set with context.trace(); |
+|traceMessages |string[]| Gets an array of values that correspond to the instrumention messages set with `context.trace();`. |
 
 
 ## Methods
