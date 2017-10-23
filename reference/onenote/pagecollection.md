@@ -2,51 +2,57 @@
 
 _Applies to: OneNote Online_  
 
-
 Represents a collection of pages.
+
+To provide feedback on this API, you can [file an issue in GitHub](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageCollection).
 
 ## Properties
 
-| Property	   | Type	|Description|Feedback|
-|:---------------|:--------|:----------|:-------|
-|count|int|Returns the number of pages in the collection. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageCollection-count)|
-|items|[Page[]](page.md)|A collection of page objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageCollection-items)|
+| Property	   | Type	|Description|
+|:---------------|:--------|:----------|
+|count|int|Returns the number of pages in the collection. Read-only.|
+|items|[Page[]](page.md)|A collection of page objects. Read-only.|
 
-_See property access [examples.](#property-access-examples)_
+_See [property access examples](#property-access-examples)_.
 
 ## Relationships
+
 None
 
 
 ## Methods
 
-| Method		   | Return Type	|Description| Feedback|
-|:---------------|:--------|:----------|:-------|
-|[getByTitle(title: string)](#getbytitletitle-string)|[PageCollection](pagecollection.md)|Gets the collection of pages with the specified title.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageCollection-getByTitle)|
-|[getItem(index: number or string)](#getitemindex-number-or-string)|[Page](page.md)|Gets a page by ID or by its index in the collection. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageCollection-getItem)|
-|[getItemAt(index: number)](#getitematindex-number)|[Page](page.md)|Gets a page on its position in the collection.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageCollection-getItemAt)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageCollection-load)|
+| Method		   | Return Type	|Description| 
+|:---------------|:--------|:----------|
+|[getByTitle(title: string)](#getbytitletitle-string)|[PageCollection](pagecollection.md)|Gets the collection of pages with the specified title.|
+|[getItem(index: number or string)](#getitemindex-number-or-string)|[Page](page.md)|Gets a page by ID or by its index in the collection. Read-only.|
+|[getItemAt(index: number)](#getitematindex-number)|[Page](page.md)|Gets a page on its position in the collection.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.|
 
-## Method Details
-
+## Method details
 
 ### getByTitle(title: string)
+
 Gets the collection of pages with the specified title.
 
 #### Syntax
+
 ```js
 pageCollectionObject.getByTitle(title);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |title|string|The title of the page.|
 
 #### Returns
+
 [PageCollection](pagecollection.md)
 
 #### Examples
+
 ```js
 OneNote.run(function (context) {
 
@@ -87,56 +93,78 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
+
 ### getItem(index: number or string)
+
 Gets a page by ID or by its index in the collection. Read-only.
 
 #### Syntax
+
 ```js
 pageCollectionObject.getItem(index);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |index|number or string|The ID of the page, or the index location of the page in the collection.|
 
 #### Returns
+
 [Page](page.md)
 
+<br/>
+
 ### getItemAt(index: number)
+
 Gets a page on its position in the collection.
 
 #### Syntax
+
 ```js
 pageCollectionObject.getItemAt(index);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
+
 [Page](page.md)
 
+<br/>
+
 ### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
+
 ```js
 object.load(param);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
-void
+
+Void
+
+<br/>
+
 ### Property access examples
 
 **items**
+
 ```js
 OneNote.run(function (context) {
     
