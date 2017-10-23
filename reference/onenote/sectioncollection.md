@@ -2,51 +2,56 @@
 
 _Applies to: OneNote Online_  
 
-
 Represents a collection of sections.
+
+To provide feedback on this API, you can [file an issue in GitHub](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionCollection).
 
 ## Properties
 
-| Property	   | Type	|Description|Feedback|
-|:---------------|:--------|:----------|:-------|
-|count|int|Returns the number of sections in the collection. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionCollection-count)|
-|items|[Section[]](section.md)|A collection of section objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionCollection-items)|
+| Property	   | Type	|Description|
+|:---------------|:--------|:----------|
+|count|int|Returns the number of sections in the collection. Read-only.|
+|items|[Section[]](section.md)|A collection of section objects. Read-only.|
 
-_See property access [examples.](#property-access-examples)_
+_See [property access examples](#property-access-examples)_.
 
 ## Relationships
-None
 
+None
 
 ## Methods
 
-| Method		   | Return Type	|Description| Feedback|
-|:---------------|:--------|:----------|:-------|
-|[getByName(name: string)](#getbynamename-string)|[SectionCollection](sectioncollection.md)|Gets the collection of sections with the specified name.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionCollection-getByName)|
-|[getItem(index: number or string)](#getitemindex-number-or-string)|[Section](section.md)|Gets a section by ID or by its index in the collection. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionCollection-getItem)|
-|[getItemAt(index: number)](#getitematindex-number)|[Section](section.md)|Gets a section on its position in the collection.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionCollection-getItemAt)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionCollection-load)|
+| Method		   | Return Type	|Description| 
+|:---------------|:--------|:----------|
+|[getByName(name: string)](#getbynamename-string)|[SectionCollection](sectioncollection.md)|Gets the collection of sections with the specified name.|
+|[getItem(index: number or string)](#getitemindex-number-or-string)|[Section](section.md)|Gets a section by ID or by its index in the collection. Read-only.|
+|[getItemAt(index: number)](#getitematindex-number)|[Section](section.md)|Gets a section on its position in the collection.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.|
 
-## Method Details
-
+## Method details
 
 ### getByName(name: string)
+
 Gets the collection of sections with the specified name.
 
 #### Syntax
+
 ```js
 sectionCollectionObject.getByName(name);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |name|string|The name of the section.|
 
 #### Returns
+
 [SectionCollection](sectioncollection.md)
 
 #### Examples
+
 ```js
 OneNote.run(function (context) {
 
@@ -82,56 +87,78 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
+
 ### getItem(index: number or string)
+
 Gets a section by ID or by its index in the collection. Read-only.
 
 #### Syntax
+
 ```js
 sectionCollectionObject.getItem(index);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |index|number or string|The ID of the section, or the index location of the section in the collection.|
 
 #### Returns
+
 [Section](section.md)
 
+<br/>
+
 ### getItemAt(index: number)
+
 Gets a section on its position in the collection.
 
 #### Syntax
+
 ```js
 sectionCollectionObject.getItemAt(index);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
+
 [Section](section.md)
 
+<br/>
+
 ### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
+
 ```js
 object.load(param);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
-void
+
+Void
+
+<br/>
+
 ### Property access examples
 
 **items**
+
 ```js
 OneNote.run(function (context) {
 
@@ -164,4 +191,6 @@ OneNote.run(function (context) {
 	}
 });
 ```
+
+<br/>
 
