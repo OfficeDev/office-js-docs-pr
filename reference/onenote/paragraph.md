@@ -2,61 +2,67 @@
 
 _Applies to: OneNote Online_  
 
-
 A container for the visible content on a page. A Paragraph can contain any one ParagraphType type of content.
+
+To provide feedback on this API, you can [file an issue in GitHub](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph).
 
 ## Properties
 
-| Property	   | Type	|Description|Feedback|
-|:---------------|:--------|:----------|:-------|
-|id|string|Gets the ID of the Paragraph object. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-id)|
-|type|string|Gets the type of the Paragraph object. Read-only. Possible values are: RichText, Image, Table, Other.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-type)|
+| Property	   | Type	|Description|
+|:---------------|:--------|:----------|
+|id|string|Gets the ID of the Paragraph object. Read-only.|
+|type|string|Gets the type of the Paragraph object. Read-only. Possible values are RichText, Image, Table, Other.|
 
-_See property access [examples.](#property-access-examples)_
+_See [property access examples](#property-access-examples)_.
 
 ## Relationships
-| Relationship | Type	|Description| Feedback|
-|:---------------|:--------|:----------|:-------|
-|image|[Image](image.md)|Gets the Image object in the Paragraph. Throws an exception if ParagraphType is not Image. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-image)|
-|inkWords|[InkWordCollection](inkwordcollection.md)|Gets the Ink collection in the Paragraph. Throws an exception if ParagraphType is not Ink. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-inkWords)|
-|outline|[Outline](outline.md)|Gets the Outline object that contains the Paragraph. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-outline)|
-|paragraphs|[ParagraphCollection](paragraphcollection.md)|The collection of paragraphs under this paragraph. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-paragraphs)|
-|parentParagraph|[Paragraph](paragraph.md)|Gets the parent paragraph object. Throws if a parent paragraph does not exist. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-parentParagraph)|
-|parentParagraphOrNull|[Paragraph](paragraph.md)|Gets the parent paragraph object. Returns null if a parent paragraph does not exist. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-parentParagraphOrNull)|
-|parentTableCell|[TableCell](tablecell.md)|Gets the TableCell object that contains the Paragraph if one exists. If parent is not a TableCell, throws ItemNotFound. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-parentTableCell)|
-|parentTableCellOrNull|[TableCell](tablecell.md)|Gets the TableCell object that contains the Paragraph if one exists. If parent is not a TableCell, returns null. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-parentTableCellOrNull)|
-|richText|[RichText](richtext.md)|Gets the RichText object in the Paragraph. Throws an exception if ParagraphType is not RichText. Read-only Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-richText)|
-|table|[Table](table.md)|Gets the Table object in the Paragraph. Throws an exception if ParagraphType is not Table. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-table)|
+
+| Relationship | Type	|Description| 
+|:---------------|:--------|:----------|
+|image|[Image](image.md)|Gets the Image object in the Paragraph. Throws an exception if ParagraphType is not Image. Read-only.|
+|inkWords|[InkWordCollection](inkwordcollection.md)|Gets the Ink collection in the Paragraph. Throws an exception if ParagraphType is not Ink. Read-only.|
+|outline|[Outline](outline.md)|Gets the Outline object that contains the Paragraph. Read-only.|
+|paragraphs|[ParagraphCollection](paragraphcollection.md)|The collection of paragraphs under this paragraph. Read-only.|
+|parentParagraph|[Paragraph](paragraph.md)|Gets the parent paragraph object. Throws an exception if a parent paragraph does not exist. Read-only.|
+|parentParagraphOrNull|[Paragraph](paragraph.md)|Gets the parent paragraph object. Returns null if a parent paragraph does not exist. Read-only.|
+|parentTableCell|[TableCell](tablecell.md)|Gets the TableCell object that contains the Paragraph if one exists. If parent is not a TableCell, throws ItemNotFound. Read-only.|
+|parentTableCellOrNull|[TableCell](tablecell.md)|Gets the TableCell object that contains the Paragraph if one exists. If parent is not a TableCell, returns null. Read-only.|
+|richText|[RichText](richtext.md)|Gets the RichText object in the Paragraph. Throws an exception if ParagraphType is not RichText. Read-only.|
+|table|[Table](table.md)|Gets the Table object in the Paragraph. Throws an exception if ParagraphType is not Table. Read-only.|
 
 ## Methods
 
-| Method		   | Return Type	|Description| Feedback|
-|:---------------|:--------|:----------|:-------|
-|[delete()](#delete)|void|Deletes the paragraph|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-delete)|
-|[insertHtmlAsSibling(insertLocation: string, html: string)](#inserthtmlassiblinginsertlocation-string-html-string)|void|Inserts the specified HTML content|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-insertHtmlAsSibling)|
-|[insertImageAsSibling(insertLocation: string, base64EncodedImage: string, width: double, height: double)](#insertimageassiblinginsertlocation-string-base64encodedimage-string-width-double-height-double)|[Image](image.md)|Inserts the image at the specified insert location..|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-insertImageAsSibling)|
-|[insertRichTextAsSibling(insertLocation: string, paragraphText: string)](#insertrichtextassiblinginsertlocation-string-paragraphtext-string)|[RichText](richtext.md)|Inserts the paragraph text at the specifiec insert location.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-insertRichTextAsSibling)|
-|[insertTableAsSibling(insertLocation: string, rowCount: number, columnCount: number, values: string[][])](#inserttableassiblinginsertlocation-string-rowcount-number-columncount-number-values-string)|[Table](table.md)|Adds a table with the specified number of rows and columns before or after the current paragraph.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-insertTableAsSibling)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-load)|
+| Method		   | Return Type	|Description| 
+|:---------------|:--------|:----------|
+|[delete()](#delete)|void|Deletes the paragraph.|
+|[insertHtmlAsSibling(insertLocation: string, html: string)](#inserthtmlassiblinginsertlocation-string-html-string)|void|Inserts the specified HTML content.|
+|[insertImageAsSibling(insertLocation: string, base64EncodedImage: string, width: double, height: double)](#insertimageassiblinginsertlocation-string-base64encodedimage-string-width-double-height-double)|[Image](image.md)|Inserts the image at the specified insert location.|
+|[insertRichTextAsSibling(insertLocation: string, paragraphText: string)](#insertrichtextassiblinginsertlocation-string-paragraphtext-string)|[RichText](richtext.md)|Inserts the paragraph text at the specified insert location.|
+|[insertTableAsSibling(insertLocation: string, rowCount: number, columnCount: number, values: string[][])](#inserttableassiblinginsertlocation-string-rowcount-number-columncount-number-values-string)|[Table](table.md)|Adds a table with the specified number of rows and columns before or after the current paragraph.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.|
 
-## Method Details
-
+## Method details
 
 ### delete()
-Deletes the paragraph
+
+Deletes the paragraph.
 
 #### Syntax
+
 ```js
 paragraphObject.delete();
 ```
 
 #### Parameters
+
 None
 
 #### Returns
-void
+
+Void
 
 #### Examples
+
 ```js
 OneNote.run(function (context) {
 
@@ -93,25 +99,31 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
 
 ### insertHtmlAsSibling(insertLocation: string, html: string)
-Inserts the specified HTML content
+
+Inserts the specified HTML content.
 
 #### Syntax
+
 ```js
 paragraphObject.insertHtmlAsSibling(insertLocation, html);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|insertLocation|string|The location of new contents relative to the current Paragraph.  Possible values are: Before, After|
+|insertLocation|string|The location of new contents relative to the current Paragraph. Possible values are Before, After.|
 |html|string|An HTML string that describes the visual presentation of the content. See [supported HTML](../../docs/onenote/onenote-add-ins-page-content.md#supported-html) for the OneNote add-ins JavaScript API.|
 
 #### Returns
-void
+
+Void
 
 #### Examples
+
 ```js
 OneNote.run(function (context) {
 
@@ -147,27 +159,33 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
 
 ### insertImageAsSibling(insertLocation: string, base64EncodedImage: string, width: double, height: double)
-Inserts the image at the specified insert location..
+
+Inserts the image at the specified insert location.
 
 #### Syntax
+
 ```js
 paragraphObject.insertImageAsSibling(insertLocation, base64EncodedImage, width, height);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|insertLocation|string|The location of the table relative to the current Paragraph.  Possible values are: Before, After|
+|insertLocation|string|The location of the table relative to the current Paragraph. Possible values are Before, After.|
 |base64EncodedImage|string|HTML string to append.|
-|width|double|Optional. Width in the unit of Points. The default value is null and image width will be respected.|
-|height|double|Optional. Height in the unit of Points. The default value is null and image height will be respected.|
+|width|double|Optional. Width in the unit of Points. The default value is null, and image width will be respected.|
+|height|double|Optional. Height in the unit of Points. The default value is null, and image height will be respected.|
 
 #### Returns
+
 [Image](image.md)
 
 #### Examples
+
 ```js
 OneNote.run(function (context) {
 
@@ -203,25 +221,31 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
 
 ### insertRichTextAsSibling(insertLocation: string, paragraphText: string)
-Inserts the paragraph text at the specifiec insert location.
+
+Inserts the paragraph text at the specified insert location.
 
 #### Syntax
+
 ```js
 paragraphObject.insertRichTextAsSibling(insertLocation, paragraphText);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|insertLocation|string|The location of the table relative to the current Paragraph.  Possible values are: Before, After|
+|insertLocation|string|The location of the table relative to the current Paragraph. Possible values are Before, After.|
 |paragraphText|string|HTML string to append.|
 
 #### Returns
+
 [RichText](richtext.md)
 
 #### Examples
+
 ```js
 OneNote.run(function (context) {
 
@@ -257,44 +281,59 @@ OneNote.run(function (context) {
 }); 
 ```
 
+<br/>
 
 ### insertTableAsSibling(insertLocation: string, rowCount: number, columnCount: number, values: string[][])
+
 Adds a table with the specified number of rows and columns before or after the current paragraph.
 
 #### Syntax
+
 ```js
 paragraphObject.insertTableAsSibling(insertLocation, rowCount, columnCount, values);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|insertLocation|string|The location of the table relative to the current Paragraph.  Possible values are: Before, After|
+|insertLocation|string|The location of the table relative to the current Paragraph. Possible values are Before, After.|
 |rowCount|number|The number of rows in the table.|
 |columnCount|number|The number of columns in the table.|
 |values|string[][]|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
 
 #### Returns
+
 [Table](table.md)
 
+<br/>
+
 ### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
+
 ```js
 object.load(param);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
-void
+
+Void
+
+<br/>
+
 ### Property access examples
 
 **id and type**
+
 ```js
 OneNote.run(function (context) {
 
@@ -330,7 +369,10 @@ OneNote.run(function (context) {
 }); 
 ```
 
+<br/>
+
 **paragraphs**
+
 ```js
 OneNote.run(function(context) {
 	var app = context.application;
@@ -366,3 +408,4 @@ OneNote.run(function(context) {
 });
 ```
 
+<br/>
