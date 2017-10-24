@@ -335,6 +335,11 @@
 		<Item text="SectionCollection" url="onenote/sectioncollection" SEODescription="OneNote Add-ins Reference." />
 		<Item text="SectionGroup" url="onenote/sectiongroup" SEODescription="OneNote Add-ins Reference." />
 		<Item text="SectionGroupCollection" url="onenote/sectiongroupcollection" SEODescription="OneNote Add-ins Reference." />
+		<Item text="Table" url="onenote/table" SEODescription="OneNote Add-ins Reference." />
+		<Item text="TableCell" url="onenote/tablecell" SEODescription="OneNote Add-ins Reference." />
+		<Item text="TableCellCollection" url="onenote/tablecellcollection" SEODescription="OneNote Add-ins Reference." />
+		<Item text="TableRow" url="onenote/tablerow" SEODescription="OneNote Add-ins Reference." />
+		<Item text="TableRowCollection" url="onenote/tablerowcollection" SEODescription="OneNote Add-ins Reference." />
 		<Item text="OneNote JavaScript API requirement sets" url="requirement-sets/onenote-api-requirement-sets" SEODescription="Find information about the OneNote requirement sets, the Office host applications that support those requirement sets, and the build versions or availability date." />
 	</Item>
 	<Item text="Visio" url="visio/visio-javascript-reference-overview" Scope="visio"> 
