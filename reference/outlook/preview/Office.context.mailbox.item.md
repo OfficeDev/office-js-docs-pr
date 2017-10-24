@@ -1233,6 +1233,54 @@ If there is no `ItemHasKnownEntity` element in the manifest with a `FilterName` 
 Type:
 Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>
 
+#### getInitializationContextAsync([options], [callback])
+
+Gets initialization data passed when the add-in is [activated by an actionable message](https://docs.microsoft.com/outlook/actionable-messages/invoke-add-in-from-actionable-message).
+
+> **Note:** This method is only supported by Outlook 2016 for Windows (Click-to-Run versions greater than 16.0.8413.1000) and Outlook on the web for Office 365.
+
+##### Parameters:
+|Name| Type| Attributes| Description|
+|---|---|---|---|
+|`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
+| `options.asyncContext` | Object | &lt;optional&gt; | Developers can provide any object they wish to access in the callback method. |
+|`callback`| function| &lt;optional&gt;| When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. <br/>On success, the intialization data is provided in the `asyncResult.value` property as a string.<br/>If there is no initialization context, the `asyncResult` object will contain an `Error` object with its `code` property set to `9020` and its `name` property set to `GenericResponseError`. |
+
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| Preview |
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|Applicable Outlook mode| Read|
+
+##### Example
+
+```
+// Get the intialization context (if present)
+Office.context.mailbox.item.getInitializationContextAsync(
+  function(asyncResult) {
+    if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
+      if (asyncResult.value != null && asyncResult.value.length > 0) {
+        // The value is a string, parse to an object
+        var context = JSON.parse(asyncResult.value);
+        // Do something with context
+      } else {
+        // Empty context, treat as no context
+      }
+    } else {
+      if (asyncResult.error.code == 9020) {
+        // GenericResponseError returned when there is
+        // no context
+        // Treat as no context
+      } else {
+        // Handle the error
+      }
+    }
+  }
+);
+```
+
 #### getRegExMatches() → {Object}
 
 Returns string values in the selected item that match the regular expressions defined in the manifest XML file.

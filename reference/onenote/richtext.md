@@ -2,66 +2,81 @@
 
 _Applies to: OneNote Online_  
 
-
 Represents a RichText object in a Paragraph.
+
+To provide feedback on this API, you can [file an issue in GitHub](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText).
 
 ## Properties
 
-| Property	   | Type	|Description|Feedback|
-|:---------------|:--------|:----------|:-------|
-|id|string|Gets the ID of the RichText object. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-id)|
-|languageId|string|The language id of the text. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-languageId)|
-|text|string|Gets the text content of the RichText object. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-text)|
+| Property	   | Type	|Description|
+|:---------------|:--------|:----------|
+|id|string|Gets the ID of the RichText object. Read-only.|
+|languageId|string|The language ID of the text. Read-only.|
+|text|string|Gets the text content of the RichText object. Read-only.|
 
-_See property access [examples.](#property-access-examples)_
+_See [property access examples](#property-access-examples)_.
 
 ## Relationships
-| Relationship | Type	|Description| Feedback|
-|:---------------|:--------|:----------|:-------|
-|paragraph|[Paragraph](paragraph.md)|Gets the Paragraph object that contains the RichText object. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-paragraph)|
+
+| Relationship | Type	|Description| 
+|:---------------|:--------|:----------|
+|paragraph|[Paragraph](paragraph.md)|Gets the Paragraph object that contains the RichText object. Read-only.|
 
 ## Methods
 
-| Method		   | Return Type	|Description| Feedback|
-|:---------------|:--------|:----------|:-------|
-|[getHtml()](#gethtml)|string|Get the HTML of the rich text|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-getHtml)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-load)|
+| Method		   | Return Type	|Description| 
+|:---------------|:--------|:----------|
+|[getHtml()](#gethtml)|string|Gets the HTML of the rich text.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.|
 
-## Method Details
-
+## Method details
 
 ### getHtml()
-Get the HTML of the rich text
+
+Gets the HTML of the rich text.
 
 #### Syntax
+
 ```js
 richTextObject.getHtml();
 ```
 
 #### Parameters
+
 None
 
 #### Returns
-string
+
+String
+
+<br/>
 
 ### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
+
 ```js
 object.load(param);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
-void
+
+Void
+
+<br/>
+
 ### Property access examples
 
 **id and text**
+
 ```js
 OneNote.run(function (context) {
 
@@ -119,3 +134,5 @@ OneNote.run(function (context) {
 	}
 }); 
 ```
+
+<br/>
