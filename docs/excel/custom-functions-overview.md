@@ -17,7 +17,6 @@ function add42 (a, b) {
 Custom functions are now available in preview. Follow these steps to try them:
 
 1.  Install Office 2016 for Windows and join the [Office Insider](https://products.office.com/en-us/office-insider) program.
-2.  Clone the Excel-Custom-Functions repo and follow the instructions in the README.md to start the add-in in Excel.
 2.  Clone the *Excel-Custom-Functions* repo and follow the instructions in *README.md* to start the add-in in Excel.
 3.  Type `=CONTOSO.ADD42(1,2)` into any cell, and press **Enter** to run the custom function.
 
