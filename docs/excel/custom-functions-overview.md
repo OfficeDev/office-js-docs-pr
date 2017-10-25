@@ -216,9 +216,9 @@ function refreshTemperature(thermometerID){
 
 ## Working with ranges of data
 
-You can use a range of data in your custom function. You can pass a range as a parameter, or you can return a range from a custom function.
+Your custom function can take a range of data as a parameter, or you can return a range of data from a custom function.
 
-For example, suppose that your function returns the second highest temperature from a range of temperature values stored in Excel. The following function takes the parameter temperatures, which is an Excel.CustomFunctionDimensionality.matrix parameter type.
+For example, suppose that your function returns the second highest temperature from a range of temperature values stored in Excel. The following function takes the parameter `temperatures`, which is an `Excel.CustomFunctionDimensionality.matrix` parameter type.
 
 ```js
 function secondHighestTemp(temperatures){ 
