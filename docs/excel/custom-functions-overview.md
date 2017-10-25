@@ -145,9 +145,9 @@ The previous code specifies:
 
 If your custom function retrieves data from the web, you need to make an asynchronous call to fetch it. When calling external web services, your custom function must:
 
--   Return a JavaScript Promise to Excel.
--   Make the http request to call the external service (for example, the following code uses sendWebRequestExample).
--   Resolve the promise using the setResult callback. setResult sends the result to Excel.
+1.   Return a JavaScript Promise to Excel.
+2.   Make the http request to call the external service.
+3.   Resolve the promise using the `setResult` callback. `setResult` sends the value to Excel.
 
 The following code shows an example of a custom function that retrieves the temperature of a thermometer.
 
