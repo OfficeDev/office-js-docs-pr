@@ -163,7 +163,7 @@ function getTemperature(thermometerID){
 
 ## Streamed functions
 
-Streamed custom functions let you output data to cells repeatedly over time, without waiting for Excel or users to request recalculations. For example, as shown in the following code, the custom function incrementValue adds a number to the result every second, and Excel displays each new value automatically using the setResult callback. To see the registration code used with incrementValue, see the customfunctions.js file.
+Streamed custom functions let you output data to cells repeatedly over time, without waiting for Excel or users to request recalculations. For example, the `incrementValue` custom function in the following example adds a number to the result every second, and Excel displays each new value automatically using the `setResult` callback. To see the registration code used with `incrementValue`, read the *customfunctions.js* file.
 
 ```js
 function incrementValue(increment, setResult){ 
@@ -175,19 +175,19 @@ function incrementValue(increment, setResult){
 }
 ```
 
-For streamed functions, the final parameter, setResult, is never specified in your registration code, and it does not display in the autocomplete menu to Excel users when they enter the function. It’s a callback function that’s used to pass data from the function to Excel to update the value of a cell. In order for Excel to pass the setResult function, you must declare support for streaming during your function registration by setting the parameter stream to true.
+For streamed functions, the final parameter, `setResult`, is never specified in your registration code, and it does not display in the autocomplete menu to Excel users when they enter the function. It’s a callback function that’s used to pass data from the function to Excel to update the value of a cell. In order for Excel to pass the `setResult` function, you must declare support for streaming during your function registration by setting the parameter `stream` to `true`.
 
 ## Saving state
 
-Custom functions can save data in global JavaScript variables. In subsequent calls, your custom function may use the values saved in the global variables. Saved state is useful when users enter multiple instances of the same custom function, and each instance needs to share the same data. For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.
+Custom functions can save data in global JavaScript variables. In subsequent calls, your custom function may use the values saved there. Saved state is useful when users enter multiple instances of the same custom function, and they need to share data with each other. For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.
 
-The following code shows an implementation of the previous temperature streaming function that saves state using the savedTemperatures variable. The code demonstrates the following concepts:
+The following code shows an implementation of the previous temperature-streaming function that saves state using the `savedTemperatures` variable. The code demonstrates the following concepts:
 
--   **Saving data.** refreshTemperature is a streamed function that reads the temperature of a particular thermometer every second. New temperatures are saved in the savedTemperatures variable.
+-   **Saving data.** `refreshTemperature` is a streamed function that reads the temperature of a particular thermometer every second. New temperatures are saved in the savedTemperatures variable.
 
--   **Using saved data.** streamTemperature updates the temperature values displayed in the Excel UI every second. Temperatures are read from savedTemperature, and then sent to the Excel UI using setResult. Users may call streamTemperature from several cells in the Excel UI. Each call to streamTemperature will read data from savedTemperatures.
+-   **Using saved data.** `streamTemperature` updates the temperature values displayed in the Excel UI every second. Temperatures are read from `savedTemperature`, and then sent to the Excel UI using `setResult`. Users may call `streamTemperature` from several cells in the Excel UI. Each call to `streamTemperature` will read data from `savedTemperatures`.
 
-> Note: In this case, we register streamTemperature as the custom function in Excel.
+> In this case, we register `streamTemperature` as the custom function in Excel.
 
 ```js
 var savedTemperatures{};
@@ -198,8 +198,8 @@ function streamTemperature(thermometerID, setResult){
      }
 
      function getNextTemperature(){
-         setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to the Excel UI.
-         setTimeout(getNextTemperature, 1000); // Wait 1 second before updating the Excel UI again.
+         setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
+         setTimeout(getNextTemperature, 1000); // Wait 1 second before updating Excel again.
      }
      getNextTemperature();
 }
