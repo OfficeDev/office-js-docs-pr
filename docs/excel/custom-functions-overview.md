@@ -72,32 +72,32 @@ Excel.run(function(ctx) {
 });
 ```
 
-**Registration** of the custom function takes place within the `Excel.Script.customFunctions["CONTOSO"]["ADD42"]` code block. You need the following parameters to register the function in Excel:
+**Registration** of the custom function uses the `Excel.Script.customFunctions["CONTOSO"]["ADD42"]` code block. You need the following parameters to register the function in Excel:
 
--   Prefix and function name: The first value in `Excel.Script.customFunctions` is the prefix (in this case, CONTOSO is the prefix). The second value in `Excel.Script.customFunctions` is the function name (in this case ADD42 is the function name). The prefix and the function name are separated using a period. To use your custom function, combine the function's prefix (CONTOSO) with the function's name (ADD42) and enter `=CONTOSO.ADD42` into a cell. By convention, prefixes and function names use upper case letters. The prefix is intended to be used as an identifier for your add-in.
--   call: Defines the JavaScript function to call (for example, add42). The name of the JavaScript function does not need to match the name that you register in Excel.
--   description: The description appears in the autocomplete menu in Excel.
--   helpUrl: When the user requests help for a function, Excel opens a task pane and displays the web page found at this URL.
--   result: The result types of your function can be either a number or string, and either a single value of group of values.
+-   Prefix and function name: The first value in `Excel.Script.customFunctions` is the prefix (in this case, CONTOSO is the prefix). The second value in `Excel.Script.customFunctions` is the function name (in this case ADD42 is the function name). In Excel, the prefix and the function name are separated using a period: to use your custom function, combine the function's prefix (CONTOSO) with the function's name (ADD42) and enter `=CONTOSO.ADD42` into a cell. By convention, prefixes and function names use upper case letters. The prefix is intended to be used as an identifier for your add-in.
+-   `call`: Defines the JavaScript function to call (for example, `add42`). The name of the JavaScript function does not need to match the name that you register in Excel.
+-   `description`: The description appears in the autocomplete menu in Excel.
+-   `helpUrl`: When the user requests help for a function, Excel opens a task pane and displays the web page found at this URL.
+-   `result`: Defines the type of information returned by the function to Excel.
 
-    -   resultType: Your function can return either a number or a string. For more information see &lt;&lt;LINK&gt;&gt;
+    -   `resultType`: Your function can return either a `"string"` or a `"number"` (also used for dates and currencies). For more information see &lt;&lt;LINK&gt;&gt;.
 
-    -   resultDimensionality: Your function can return either a single value or a matrix of values. When returning a matrix of values, your function returns an array, where each array element is another array of values. For more information, see &lt;&lt;LINK&gt;&gt;. The following example returns a 3-row, 2-column matrix of values from a custom function.
+    -   resultDimensionality: Your function can return either a single (`"scalar"`) value or a `"matrix"` of values. When returning a matrix of values, your function returns an array, where each array element is another array that represents a row of values. For more information, see &lt;&lt;LINK&gt;&gt;. The following example returns a 3-row, 2-column matrix of values from a custom function.
 
 ```js
-return [[1,1],[2,2],[3,3]];
+return [["first","row"],["second","row"],["third","row"]];
 ```
 
--   Your custom function may take arguments as input. The arguments passed to your custom function are specified in the *parameters* property. If you declare more than 1 parameter, ensure the order of the parameter definition matches your JavaScript function. The parameter property arguments are described as follows:
+-   Your custom function may take arguments as input. The arguments passed to your custom function are specified in the *parameters* property. The order of the parameters in the definition must match the order in the JavaScript function. For each parameter, define these properties:
 
-    -   name: The string displayed in Excel representing the parameter name.
-    -   description: A description of the parameter.
-    -   valueType: A number or string, that is similar to the resultType described earlier.
-    -   valueDimensionality: A single value or matrix of values, that is similar to the resultDimensionality described previously. Matrix-type parameters allow the user to select ranges larger than a single cell.
+    -   `name`: The string displayed in Excel to represent the parameter.
+    -   `description`: The string displayed for more information about the parameter.
+    -   `valueType`: A `"number"` or `"string"`, similar to the resultType property described earlier.
+    -   `valueDimensionality`: A `"scalar"` value or `"matrix"` of values, similar to the resultDimensionality property described previously. Matrix-type parameters allow the user to select ranges larger than a single cell.
 
--   options: { batch: false, stream: false } specifies special types of custom functions that are described in more detail later in this article.
+-   `options`: enables special types of custom functions that are described in more detail later in this article.
 
-To complete registration of all functions defined using `Excel.Script.Customfunctions`, ensure you call `customFunctions.addAll()`.
+To complete registration of all functions defined using `Excel.Script.customFunctions`, ensure you call `CustomFunctions.addAll()`.
 
 After registration, custom functions are available in all workbooks (not only the one where the add-in ran initially) for a user. The functions are displayed in the autocomplete menu when the user starts typing it.
 
@@ -245,6 +245,8 @@ The following features aren't yet supported in the Developer Preview.
 -   Batching, which allows you to aggregate multiple calls to the same function to improve performance.
 
 -   Cancelation, which notifies you when a streaming function is no longer required (for example, when users clear a cell). Today, the functions can’t determine when to stop writing new values into the cell.
+
+-   Help URLs and parameter descriptions are not yet used by Excel.
 
 -   Publishing add-ins to the Office Store or Office 365 centralized deployment that use custom functions.
 
