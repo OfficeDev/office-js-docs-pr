@@ -35,7 +35,7 @@ In the cloned sample repo, you’ll see the following files:
 -   *customfunctions.html*, which provides a &lt;Script&gt; reference to customfunctions.js. This file does not display UI in Excel.
 -   *manifest.xml*, which tells Excel the location of your HTML and JS files needed to run custom functions.
 
-### JavaScript file (customfunctions.js)
+### JavaScript file (*customfunctions.js*)
 
 The following code in customfunctions.js declares the custom function `add42`, and then registers the function in Excel.
 
@@ -103,7 +103,7 @@ To complete registration of all functions defined using `Excel.Script.Customfunc
 
 After registration, custom functions are available in all workbooks (not only the one where the add-in ran initially) for a user. The functions are displayed in the autocomplete menu when the user starts typing it.
 
-### Manifest file (manifest.xml)
+### Manifest file (*manifest.xml*)
 
 The following code in manifest.xml allows Excel to locate the code for your functions.
 
