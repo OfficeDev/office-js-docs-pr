@@ -52,8 +52,7 @@ Excel.Script.customFunctions["CONTOSO"]["ADD42"] = {
         resultType: Excel.CustomFunctionValueType.number,
         resultDimensionality: Excel.CustomFunctionDimensionality.scalar,
     },
-    parameters: [
-    {
+    parameters: [{
         name: "num 1",
         description: "The first number",
         valueType: Excel.CustomFunctionValueType.number,
@@ -64,8 +63,7 @@ Excel.Script.customFunctions["CONTOSO"]["ADD42"] = {
         description: "The second number",
         valueType: Excel.CustomFunctionValueType.number,
         valueDimensionality: Excel.CustomFunctionDimensionality.scalar,
-    }
-    ],
+    }],
     options:{ batch: false, stream: false }
 };
 
