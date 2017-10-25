@@ -21,7 +21,7 @@ Custom functions are now available in preview. Follow these steps to try them:
 2.  Clone the *Excel-Custom-Functions* repo and follow the instructions in *README.md* to start the add-in in Excel.
 3.  Type `=CONTOSO.ADD42(1,2)` into any cell, and press **Enter** to run the custom function.
 
-See the Known Issues section at the end of this article, which includes current limitations of custom functions which will be updated over time.
+See the Known Issues section at the end of this article, which includes current limitations of custom functions and will be updated over time.
 
 ## Learn the basics
 
