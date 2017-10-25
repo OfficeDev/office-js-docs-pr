@@ -32,7 +32,7 @@ In the cloned sample repo, you’ll see the following files:
 
     -   The custom function code to add to Excel.
     -   The registration code to connect your custom function to Excel. Registration makes your custom functions appear in the list of available functions displayed when users type in cells.
--   *customfunctions.html*, which provides a &lt;Script&gt; reference to customfunctions.js. This file does not display UI in Excel.
+-   *customfunctions.html*, which provides a &lt;Script&gt; reference to *customfunctions.js*. This file does not display UI in Excel.
 -   *manifest.xml*, which tells Excel the location of your HTML and JS files needed to run custom functions.
 
 ### JavaScript file (*customfunctions.js*)
