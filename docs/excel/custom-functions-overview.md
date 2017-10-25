@@ -103,7 +103,7 @@ After registration, custom functions are available in all workbooks (not only th
 
 ### Manifest file (*manifest.xml*)
 
-The following code in manifest.xml allows Excel to locate the code for your functions.
+The following example in manifest.xml allows Excel to locate the code for your functions.
 
 ```xml
 
@@ -138,8 +138,8 @@ The following code in manifest.xml allows Excel to locate the code for your func
 
 The previous code specifies:
 
--   A &lt;Script&gt; element, which is required but not used in the Developer Preview.
--   A &lt;Page&gt; element, which links to the HTML page of your add-in. The HTML page includes a &lt;Script&gt; reference to the JavaScript file (customfunctions.js) that contains the custom function and registration code. The HTML page is a hidden page and is never displayed in the UI.
+-   A &lt;`Script`&gt; element, which is required but not used in the Developer Preview.
+-   A &lt;`Page`&gt; element, which links to the HTML page of your add-in. The HTML page includes a &lt;Script&gt; reference to the JavaScript file (*customfunctions.js*) that contains the custom function and registration code. The HTML page is a hidden page and is never displayed in the UI.
 
 ## Asynchronous functions
 
