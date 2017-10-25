@@ -163,7 +163,6 @@ function getTemperature(thermometerID){
 ```
 
 ## Streamed functions
-------------------
 
 Streamed custom functions let you output data to cells repeatedly over time, without waiting for Excel or users to request recalculations. For example, as shown in the following code, the custom function incrementValue adds a number to the result every second, and Excel displays each new value automatically using the setResult callback. To see the registration code used with incrementValue, see the customfunctions.js file.
 
@@ -240,8 +239,7 @@ function secondHighestTemp(temperatures){
  }
 ```
 
-Known issues
-------------
+## Known issues
 
 The following features aren't yet supported in the Developer Preview.
 
