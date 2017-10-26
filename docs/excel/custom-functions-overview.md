@@ -162,7 +162,7 @@ function getTemperature(thermometerID){
 
 ## Streamed functions
 
-Streamed custom functions let you output data to cells repeatedly over time, without waiting for Excel or users to request recalculations. For example, the `incrementValue` custom function in the following example adds a number to the result every second, and Excel displays each new value automatically using the `setResult` callback. To see the registration code used with `incrementValue`, read the *customfunctions.js* file.
+Streamed custom functions let you output data to cells repeatedly over time, without waiting for Excel or users to request recalculations. For example, the `incrementValue` custom function in the following code adds a number to the result every second, and Excel displays each new value automatically using the `setResult` callback. To see the registration code used with `incrementValue`, read the *customfunctions.js* file.
 
 ```js
 function incrementValue(increment, setResult){ 
@@ -178,7 +178,7 @@ For streamed functions, the final parameter, `setResult`, is never specified in 
 
 ## Saving state
 
-Custom functions can save data in global JavaScript variables. In subsequent calls, your custom function may use the values saved there. Saved state is useful when users enter multiple instances of the same custom function, and they need to share data with each other. For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.
+Custom functions can save data in global JavaScript variables. In subsequent calls, your custom function may use the values saved in these variables. Saved state is useful when users enter multiple instances of the same custom function, and they need to share data with each other. For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.
 
 The following code shows an implementation of the previous temperature-streaming function that saves state using the `savedTemperatures` variable. The code demonstrates the following concepts:
 
