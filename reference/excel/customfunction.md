@@ -5,7 +5,7 @@ Defines a custom function object in Excel.
 ## Properties
 
 | Property	   | Type	|Description| 
-|:---------------|:--------|:----------|:----|
+|:---------------|:--------|:----------|
 |description|string|A description of the custom function. Read-only.|
 |id|string|The ID of the function. Read-only.|
 |name|string|The name of the function. Read-only.|
@@ -18,7 +18,7 @@ None
 ## Methods
 
 | Method		   | Return Type	|Description| 
-|:---------------|:--------|:----------|:----|
+|:---------------|:--------|:----------|
 |[delete()](#delete)|void|Deletes this function from Excel.|
 
 ## Method Details
