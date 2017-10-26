@@ -121,9 +121,6 @@ The following table summarizes binding behavior in Word.
 |Text|Invalid selection (for example, multiple, invalid objects, etc.)|The binding cannot be created.|
 
 ## Additional resources
-
-
-- [Office Add-ins API and schema references](../reference/reference.md)
-    
+   
 - [Office Add-ins development lifecycle](../docs/develop/add-in-development-lifecycle.md)
     
