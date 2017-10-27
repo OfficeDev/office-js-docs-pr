@@ -1,0 +1,19 @@
+samples:
+    - name: Convert an Office Add-in task pane template in Visual Studio to TypeScript
+      relPath: docs/develop
+      description: A sample that converts JavaScript to TypeScript
+      readme: https://github.com/dend/testing/README.md
+      screenshots:
+          - relPath: images/typescript-definitelytyped-nugets.png
+            description: Excel Add-in TS Start
+            alt: Screenshot of Excel Add-in with code window
+      generateZip: true
+      indexed: true
+      reviewOnly: true
+      tags:
+          - Excel
+          - add-in
+          - TypeScript
+      azureDeploy: https://path/to/template.json
+      tryNow: https://link/to/try/now/for/sample
+      author: dend
