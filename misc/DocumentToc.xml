@@ -94,9 +94,9 @@
   <Item text="Publish" url="publish/publish">
     <Item text="Host an Office Add-in on Microsoft Azure" url="publish/host-an-office-add-in-on-microsoft-azure" SEODescription="Use Visual Studio 2015 and the Microsoft Office Developer Tools to publish to and then host an Office Add-in on Microsoft Azure." />
     <Item text="Package your add-in using Visual Studio" url="publish/package-your-add-in-using-visual-studio" SEODescription="Package your Office Add-in to prepare it for publishing." />
-    <Item text="Publish add-ins via centralized deployment" url="publish/centralized-deployment" />
-	<Item text="Publish task pane and content add-ins to an add-in catalog" url="publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog" SEODescription="Configure Office clients so your add-in is available from the Office Add-ins dialog box"  />
-	<Item text="Submit add-ins to the Office Store" url="https://dev.office.com/officestore/docs/submit-add-ins-and-web-apps-to-the-office-store" IsExternal="true" />
+    <Item text="Publish add-ins via Centralized Deployment" url="publish/centralized-deployment" />
+	<Item text="Publish add-ins to a SharePoint catalog" url="publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog" SEODescription="Configure Office clients so your add-in is available from the Office Add-ins dialog box"  />
+	<Item text="Publish add-ins to the Office Store" url="https://dev.office.com/officestore/docs/submit-add-ins-and-web-apps-to-the-office-store" IsExternal="true" />
 	<Item text="Office Store validation policies" url="https://dev.office.com/officestore/docs/validation-policies" IsExternal="true" />
   </Item>
   

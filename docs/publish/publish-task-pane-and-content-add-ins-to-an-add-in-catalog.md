@@ -1,15 +1,21 @@
 
 # Publish task pane and content add-ins to a SharePoint catalog
 
->**Important!** Add-in catalogs on SharePoint do not support add-in features that are implemented in the VersionOverrides node of the [add-in manifest](../overview/add-in-manifests.md), such as add-in commands. 
+An add-in catalog is a dedicated site collection in a SharePoint web application or SharePoint Online tenancy that hosts document libraries for Office and SharePoint Add-ins. To make Office Add-ins accessible to users within their organization, administrators can upload Office Add-ins manifest files to the add-in catalog for their organization. When an administrator registers an add-in catalog as a trusted catalog, users can insert the add-in from the insertion UI in an Office client application.
 
->If you’re targeting a cloud or hybrid environment, we recommend that you use **centralized deployment** via the [admin center (preview)](publish/publish.md#office-365-admin-center-preview-deployment) to publish your add-ins.
+**Important Notes:** 
 
-An add-in catalog is a dedicated site collection in a SharePoint web application or SharePoint Online tenancy that hosts document libraries for Office and SharePoint Add-ins. Administrators can upload Office Add-ins manifest files to the add-in catalog for their organization. When an administrator registers an add-in catalog as a trusted catalog, users can insert the add-in from the insertion UI in an Office client application.
+- Add-in catalogs on SharePoint do not support add-in features that are implemented in the VersionOverrides node of the [add-in manifest](../overview/add-in-manifests.md), such as add-in commands.
 
-SharePoint catalogs are not supported for Office 2016 for Mac. To deploy Office Add-ins to Mac clients, you must submit them to the [Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx).   
+- If you’re targeting a cloud or hybrid environment, we recommend that you [use Centralized Deployment via the Office 365 admin center](publish/centralized-deployment.md) to publish your add-ins.
 
-## To set up an add-in catalog on SharePoint
+- SharePoint catalogs are not supported for Office 2016 for Mac. To deploy Office Add-ins to Mac clients, you must submit them to the [Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx).   
+
+## Set up an add-in catalog
+
+Complete the steps in one of the following sections to set up an add-in catalog on SharePoint or on Office 365.
+
+### To set up an add-in catalog on SharePoint
 
 1. Browse to the  **Central Administration Site** ( **Start** > **All Programs** > **Microsoft SharePoint 2013 Products** > **SharePoint 2013 Central Administration**).
     
@@ -27,9 +33,9 @@ SharePoint catalogs are not supported for Office 2016 for Mac. To deploy Office 
     
 8. In the  **Share 'App Catalog Site'** dialog box, specify one or more site users, set the appropriate permissions for them, optionally set other options, and then choose **Share**.
     
-9. To add add-ins to the Office Add-ins add-in catalog, choose  **Office Add-ins**.
+9. To add an add-in to the Office Add-ins add-in catalog, choose **Office Add-ins**.
 
-## To set up an add-in catalog on Office 365
+### To set up an add-in catalog on Office 365
 
 1. On the Office 365 admin center page, choose  **Admin**, and then choose  **SharePoint**.
     
@@ -49,10 +55,11 @@ SharePoint catalogs are not supported for Office 2016 for Mac. To deploy Office 
     
 9. Choose  **OK**.
     
-To add add-in to the Add-in Catalog Site, browse to the site you have just created. In the left navigation pane, choose  **Office Add-ins**, and then, to upload an Office Add-in manifest file, choose  **new add-in**.    
+10. To add an add-in to the Add-in Catalog Site, browse to the site you have just created. In the left navigation pane, choose  **Office Add-ins**, and then, to upload an Office Add-in manifest file, choose  **new add-in**.
 
-## Publish to an add-in catalog
+## Publish an add-in to an add-in catalog
 
+To publish an add-in to an add-in catalog, complete the following steps.
 
 1. Browse to the add-in catalog:
 
@@ -69,21 +76,22 @@ To add add-in to the Add-in Catalog Site, browse to the site you have just creat
 3. Choose  **Browse**, and then specify the [manifest](../../docs/overview/add-in-manifests.md) to upload.
     
     Content and task pane add-ins in this catalog are now available from the  **Office Add-ins** dialog box. To access them, choose **My Add-ins** on the **Insert** tab, and then choose **MY ORGANIZATION**.
-    
-After you upload add-in manifests to the Office Add-ins catalog, users can access the add-ins by doing the following:
 
+## End user experience with the add-in catalog
+
+End users can access the add-in catalog in an Office application by completing the following steps:
 
 1. In the Office application, go to  **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**.
     
 2. Specify the URL of the  _parent SharePoint site collection_ of the add-in catalog. For example, if the URL of the Office Add-ins catalog is:
     
-    `https:// _domain_ /sites/ _AddinCatalogSiteCollection_ /AgaveCatalog`
+    - `https:// _domain_ /sites/ _AddinCatalogSiteCollection_ /AgaveCatalog`
     
     Specify just the URL of the parent site collection:
     
-    `https:// _domain_ /sites/ _AddinCatalogSiteCollection_`
+    - `https:// _domain_ /sites/ _AddinCatalogSiteCollection_`
     
-3. Close and reopen the Office application. The add-in catalog will be available in the  **Office Add-ins** dialog box.
-    
-Alternatively, an administrator can specify an Office Add-in catalog on SharePoint by using group policy. For details, see the section "Using Group Policy to manage how users can install and use Office Add-ins" in [Overview of Office Add-ins](https://technet.microsoft.com/en-us/library/jj219429.aspx) on TechNet.
+3. Close and reopen the Office application. The add-in catalog will be available in the **Office Add-ins** dialog box.
+
+Alternatively, an administrator can specify an Office Add-in catalog on SharePoint by using group policy. For details, see the section [Using Group Policy to manage how users can install and use Office Add-ins](https://technet.microsoft.com/en-us/library/jj219429.aspx#BKMK_GP) on TechNet.
 
