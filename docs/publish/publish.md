@@ -18,8 +18,8 @@ The deployment options that are available depend on the Office host that you're 
 
 ### Deployment options for Word, Excel, and PowerPoint add-ins
 
-| Extension point            | Sideloading | Office 365 admin center  |Office Store| SharePoint catalog*  |
-|:----------------|:-----------:|:------------------:|:-------------------------------:|:------------:|
+| Extension point | Sideloading | Office 365 admin center |Office Store| SharePoint catalog*  |
+|:----------------|:------------|:-------------------|:--------------------------------|:-------------|
 | Content         | X           | X                  | X                               | X|
 | Task pane       | X           | X                  | X                               | X|
 | Command 		  | X           | X                  | X                               |  |
@@ -28,8 +28,8 @@ The deployment options that are available depend on the Office host that you're 
 
 ### Deployment options for Outlook add-ins
 
-| Extension point     | Sideloading | Exchange server | Office Store |
-|:---------|:-----------:|:---------------:|:------------:|
+| Extension point | Sideloading | Exchange server | Office Store |
+|:---------|:------------|:----------------|:-------------|
 | Mail app | X           | X               | X            |
 | Command  | X           | X               | X            |
 
@@ -47,11 +47,11 @@ For more information, see [Publish Office Add-ins using Centralized Deployment v
 
 ### SharePoint catalog deployment
 
-A SharePoint add-in catalog is a special site collection that you can create to host Word, Excel, and PowerPoint add-ins. Because SharePoint catalogs don't support new add-in features implemented in the VersionOverrides node of the manifest, including add-in commands, we recommend that you use Centralized Deployment via the admin center if possible. Add-in commands deployed via a SharePoint catalog open in a task pane by default.
+A SharePoint add-in catalog is a special site collection that you can create to host Word, Excel, and PowerPoint add-ins. Because SharePoint catalogs don't support new add-in features implemented in the `VersionOverrides` node of the manifest, including add-in commands, we recommend that you use Centralized Deployment via the admin center if possible. Add-in commands deployed via a SharePoint catalog open in a task pane by default.
 
 If you are deploying add-ins in an on-premises environment, use a SharePoint catalog. For details, see [Publish task pane and content add-ins to a SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
-> **Note:** SharePoint catalogs do not support Office 2016 for Mac. To deploy Office Add-ins to Mac clients, you must submit them to the [Office Store]. 
+>**Note:** SharePoint catalogs do not support Office 2016 for Mac. To deploy Office Add-ins to Mac clients, you must submit them to the [Office Store]. 
 
 ### Outlook add-in deployment
 
@@ -74,4 +74,3 @@ To assign add-ins to tenants, you use the Exchange admin center to upload a mani
 
 [Office Store]: http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx
 [Office Add-in host and platform availability]: http://dev.office.com/add-in-availability
- 

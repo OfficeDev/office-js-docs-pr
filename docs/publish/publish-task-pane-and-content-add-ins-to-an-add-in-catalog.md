@@ -1,11 +1,10 @@
-
 # Publish task pane and content add-ins to a SharePoint catalog
 
 An add-in catalog is a dedicated site collection in a SharePoint web application or SharePoint Online tenancy that hosts document libraries for Office and SharePoint Add-ins. To make Office Add-ins accessible to users within their organization, administrators can upload Office Add-ins manifest files to the add-in catalog for their organization. When an administrator registers an add-in catalog as a trusted catalog, users can insert the add-in from the insertion UI in an Office client application.
 
 **Important Notes:** 
 
-- Add-in catalogs on SharePoint do not support add-in features that are implemented in the VersionOverrides node of the [add-in manifest](../overview/add-in-manifests.md), such as add-in commands.
+- Add-in catalogs on SharePoint do not support add-in features that are implemented in the `VersionOverrides` node of the [add-in manifest](../overview/add-in-manifests.md), such as add-in commands.
 
 - If you’re targeting a cloud or hybrid environment, we recommend that you [use Centralized Deployment via the Office 365 admin center](publish/centralized-deployment.md) to publish your add-ins.
 
