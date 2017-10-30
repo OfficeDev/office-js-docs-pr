@@ -2,6 +2,14 @@
 
 In this article, you'll walk through the process of building an Excel add-in by using jQuery and the Excel JavaScript API.
 
+## Prerequisites
+
+If you haven't done so previously, you'll need to install [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
+
+    ```bash
+    npm install -g yo generator-office
+    ```
+
 ## Create the web app
 
 1. Create a folder on your local drive and name it **my-addin**. This is where you'll create the files for your app.
@@ -12,45 +20,40 @@ In this article, you'll walk through the process of building an Excel add-in by 
     cd my-addin
     ```
 
-3. In your app folder, create a file named **Home.html** to specify the HTML that will be rendered in the add-in's task pane. Add the following code and save the file.
+3. Use the Yeoman generator to generate the manifest file for your add-in. Run the following command and then answer the prompts as shown in the following screenshot:
 
+    ```bash
+    yo office
+    ```
+    ![Yeoman generator](../../images/yo-office-jquery.png)
+
+
+4. In your code editor, open **index.html** in the root of the project. This file specifies the HTML that will be rendered in the add-in's task pane. 
+ 
+5. Replace the generated `header` tag with the following markup.
+ 
     ```html
-    <html>
-        <head>
-            <meta charset="UTF-8" />
-            <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-            <title>My Excel Add-in</title>
-            <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
-
-            <link href="Office.css" rel="stylesheet" type="text/css" />
-            <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
-
-            <link href="Common.css" rel="stylesheet" type="text/css" />
-            <script src="Notification.js" type="text/javascript"></script>
-            <script src="Home.js" type="text/javascript"></script>
-
-            <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.min.css">
-            <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css">
-        </head>
-        <body class="ms-font-m">
-            <div id="content-header">
-                <div class="padding">
-                    <h1>Welcome</h1>
-                </div>
-            </div>
-            <div id="content-main">
-                <div class="padding">
-                    <p>Choose the button below to set the color of the selected range to green.</p>
-                    <br />
-                    <h3>Try it out</h3>
-                    <button class="ms-Button" id="set-color">Set color</button>
-                </div>
-            </div>
-        </body>
-    </html>
+    <div id="content-header">
+        <div class="padding">
+            <h1>Welcome</h1>
+        </div>
+    </div>
     ```
 
-4. In your app folder, create a file named **Home.js** to specify the jQuery script for the add-in. Add the following code and save the file.
+6. Replace the generated `main` tag with the following markup and save the file.
+
+    ```html
+    <div id="content-main">
+        <div class="padding">
+            <p>Choose the button below to set the color of the selected range to green.</p>
+            <br />
+            <h3>Try it out</h3>
+            <button class="ms-Button" id="set-color">Set color</button>
+        </div>
+    </div>
+    ```
+
+7. Open the file **app.js** to specify the script for the add-in. Replace the generated immediately invoked function expression with the following code and save the file.
 
     ```js
     (function () {
@@ -67,7 +70,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
                 var range = context.workbook.getSelectedRange();
                 range.format.fill.color = 'green';
 
-                return ctx.sync();
+                return context.sync();
             }).catch(function (error) {
                 console.log("Error: " + error);
                 if (error instanceof OfficeExtension.Error) {
@@ -78,7 +81,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
     })();
     ```
 
-5. In your app folder, create a file named **Common.css** to specify the custom styles for the add-in. Add the following code and save the file.
+8. Open the file **app.css** to specify the custom styles for the add-in. Replace the contents (except the copyright comment) with the following and save the file.
 
     ```css
     #content-header {
@@ -107,38 +110,24 @@ In this article, you'll walk through the process of building an Excel add-in by 
     }
     ```
 
-## Create the manifest file and sideload the add-in
+## Configure the manifest file and sideload the add-in
 
-1. In your app folder, create a file named **my-excel-add-in-manifest.xml** to define the add-in's settings and capabilities. Add the following XML to the file.
+1. Open the file **my-office-add-in-manifest.xml** to define the add-in's settings and capabilities. 
 
-    ```xml
-    <?xml version="1.0" encoding="UTF-8"?>
-    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
-        <Id>ab2991e7-fe64-465b-a2f1-c865247ef434</Id>
-        <Version>1.0.0.0</Version>
-        <ProviderName>Microsoft</ProviderName>
-        <DefaultLocale>en-US</DefaultLocale>
-        <DisplayName DefaultValue="My Office Add-in" />
-        <Description DefaultValue="A task pane add-in for Excel built using jQuery"/>
-        <Capabilities>
-        <Capability Name="Workbook" />
-        </Capabilities>
-        <DefaultSettings>
-        <SourceLocation DefaultValue="~remoteAppUrl/my-addin/Home.html" />
-        </DefaultSettings>
-        <Permissions>ReadWriteDocument</Permissions>
-    </OfficeApp>
-    ```
+2. The **ProviderName** tag has a placeholder value. Change it to `Microsoft`.
 
-2. Generate a GUID using an online generator of your choice. Then, replace the value of the **Id** element shown in the previous step with that GUID.
+3. The **DefaultValue** of the **DisplayName** tag has a placeholder value. Change it to `A task pane add-in for Excel`. 
 
-3. Save the manifest file. 
+4. Save the file but don't close it yet.
 
-## Deploy the web app and update the manifest
+## Configure to use HTTP
 
-1. Deploy your web app (i.e., the contents of your app folder) to the web server of your choice.
+Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. However, to get the add-in up and running fast, this quick start will use HTTP. To enable this, take these steps:
 
-2. In your local app folder, open the manifest file (**my-excel-add-in-manifest.xml**). Edit the attribute value within the **SourceLocation** element to specify the location of the **Home.html** file on the web server and save the file.
+1. In the manifest file **my-office-add-in-manifest.xml**, replace "https" with "http" everywhere. Then save and close the file.
+
+2. Open the **bsconfig.json** file in the root of the project. Change the value of the **https** property to `false`. Save the file.
+
 
 ## Try it out
 
@@ -148,9 +137,23 @@ In this article, you'll walk through the process of building an Excel add-in by 
     - Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. In the right task pane, choose the **Set color** button to set the color of the selected range to green.
+2. Open a bash terminial in the root of the project and run the following command to start the dev server.
 
-    ![Excel Add-in](../../images/excel_quickstart_addin_1.png)
+    ```bash
+    npm start
+    ```
+
+   > **Note**: A browser window will open with the add-in in it. Close this window.
+
+3. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+
+    ![Excel Add-in button](../../images/excel_quickstart_addin_2a.png)
+
+4. Select any range of cells in the worksheet.
+
+5. In the task pane, choose the **Color Me** button pane to set the color of the selected range to green.
+
+    ![Excel Add-in](../../images/excel_quickstart_addin_2b.png)
 
 ## Next steps
 
