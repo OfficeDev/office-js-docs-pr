@@ -5,7 +5,7 @@ Add-in commands are UI elements that extend the Office UI and start actions in y
 
 For an overview of the feature, see the video [Add-in Commands in the Office Ribbon](https://channel9.msdn.com/events/Build/2016/P551).
 
->**Note:** SharePoint catalogs do not support add-in commands. You can deploy add-in commands via [centralized deployment](../publish/centralized-deployment.md) or the [Office Store](https://dev.office.com/officestore/docs/submit-to-the-office-store), or use [sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins) to deploy your add-in command for testing. 
+>**Note:** SharePoint catalogs do not support add-in commands. You can deploy add-in commands via [Centralized Deployment](../publish/centralized-deployment.md) or the [Office Store](https://dev.office.com/officestore/docs/submit-to-the-office-store), or use [sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins) to deploy your add-in command for testing. 
 
 **Add-in with commands running in Excel Desktop**
 
