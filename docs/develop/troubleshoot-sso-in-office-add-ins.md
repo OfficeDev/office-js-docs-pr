@@ -51,7 +51,7 @@ Client Error. Your code should suggest that the user sign out and restart Office
 ### 13007
 
 The Office host was unable to get an access token to the add-in's web service.
-- Be sure that your add-in registration and add-in manifest specify `profile` permission. For more information, see [Register the add-in with Azure AD v2.0 endpoint](../../docs/develop/create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (ASP.NET) or [Register the add-in with Azure AD v2.0 endpoint](../../docs/develop/create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (Node JS), and [Configure the add-in](../../docs/develop/create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) or [Configure the add-in](../../docs/develop/create-sso-office-add-ins-nodejs.md#configure-the-add-in) (Node JS).
+- Be sure that your add-in registration and add-in manifest specify the `openid` and `profile` permissions. For more information, see [Register the add-in with Azure AD v2.0 endpoint](../../docs/develop/create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (ASP.NET) or [Register the add-in with Azure AD v2.0 endpoint](../../docs/develop/create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (Node JS), and [Configure the add-in](../../docs/develop/create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) or [Configure the add-in](../../docs/develop/create-sso-office-add-ins-nodejs.md#configure-the-add-in) (Node JS).
 - Your code could suggest that the user retry the operation later.
 
 ### 13008
