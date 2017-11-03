@@ -117,10 +117,11 @@
 	  </Item>
     <Item text="Core concepts" url="excel/excel-add-ins-core-concepts" SEODescription="Learn about core concepts for using the Excel JavaScript API to build add-ins for Excel 2016." Scope="excel">
       <Item text="Extend Excel functionality" url="excel/excel-add-ins-extend-excel" SEODescription="Learn about the different ways that an Excel add-in can extend Excel functionality." Scope="excel" />
-		  <Item text="Work with Worksheets" url="excel/excel-add-ins-worksheets" SEODescription="Learn how to perform common tasks with worksheets using the Excel JavaScript API." Scope="excel" />
-		  <Item text="Work with Ranges" url="excel/excel-add-ins-ranges" SEODescription="Learn how to perform common tasks with ranges using the Excel JavaScript API." Scope="excel" />
-		  <Item text="Work with Tables" url="excel/excel-add-ins-tables" SEODescription="Learn how to perform common tasks with tables using the Excel JavaScript API." Scope="excel" />
-		  <Item text="Work with Charts" url="excel/excel-add-ins-charts" SEODescription="Learn how to perform common tasks with charts using the Excel JavaScript API." Scope="excel" />
+		  <Item text="Custom functions" url="excel/custom-functions-overview" SEODescription="Write JavaScript functions that users can include in Excel formulas, similar to UDFs." Scope="excel" />
+		  <Item text="Work with Charts" url="excel/excel-add-ins-charts" SEODescription="Perform common tasks with charts using the Excel JavaScript API." Scope="excel" />
+		  <Item text="Work with Ranges" url="excel/excel-add-ins-ranges" SEODescription="Perform common tasks with ranges using the Excel JavaScript API." Scope="excel" />
+		  <Item text="Work with Tables" url="excel/excel-add-ins-tables" SEODescription="Perform common tasks with tables using the Excel JavaScript API." Scope="excel" />
+		  <Item text="Work with Worksheets" url="excel/excel-add-ins-worksheets" SEODescription="Perform common tasks with worksheets using the Excel JavaScript API." Scope="excel" />
 		</Item>
 		<Item text="Advanced concepts" url="excel/excel-add-ins-advanced-concepts" SEODescription="Learn about advanced concepts for using the Excel JavaScript API to build add-ins for Excel 2016." Scope="excel">
 		  <Item text="Coauthoring in Excel add-ins" url="excel/co-authoring-in-excel-add-ins"  Scope="excel" SEODescription="Learn about coauthoring in Excel and using add-ins."/>
