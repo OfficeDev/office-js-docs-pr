@@ -1,4 +1,4 @@
-# Custom Function Enumerations
+# Custom Functions Enumerations
 
 Custom functions in Excel uses the following list of enumerations. 
 
