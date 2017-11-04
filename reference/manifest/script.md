@@ -1,4 +1,4 @@
-# Script element
+|# Script element
 Defines script settings used by a custom function in Excel.
 
 ## Attributes
@@ -7,7 +7,7 @@ None
 ## Child elements
 Elements  |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  [SourceLocation](customfunctionssourcelocation.md)  |  Yes  | String with resource id of the JavaScript file used by custom functions. |
+|  [SourceLocation](customfunctionssourcelocation.md)  |  Yes  | String with resource id of the JavaScript file used by custom functions.|
 
 ## Example
 
