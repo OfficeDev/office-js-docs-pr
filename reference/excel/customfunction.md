@@ -4,7 +4,7 @@ Defines a custom function object in Excel.
 
 ## Properties
 
-| Property	   | Type	|Description| 
+| Property	   | Type	|Description|
 |:---------------|:--------|:----------|
 |description|string|A description of the custom function. Read-only.|
 |id|string|The ID of the function. Read-only.|
