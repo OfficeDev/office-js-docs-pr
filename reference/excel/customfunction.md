@@ -17,7 +17,7 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description| 
+| Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[delete()](#delete)|void|Deletes this function from Excel.|
 
