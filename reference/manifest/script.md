@@ -5,7 +5,7 @@ Defines script settings used by a custom function in Excel.
 None
 
 ## Child elements
-Elements  |  Required  |  Description  |
+|Elements  |  Required  |  Description  |
 |:-----|:-----|:-----|
 |  [SourceLocation](customfunctionssourcelocation.md)  |  Yes  | String with resource id of the JavaScript file used by custom functions.|
 
