@@ -43,7 +43,7 @@
 		<Item text="Version" url="manifest/version" SEODescription="Specifies the version of your Office Add-in." />
 		<Item text="VersionOverrides" url="manifest/versionoverrides" Scope="excel, word, powerpoint, outlook" SEODescription="The root element that contains information for the add-in commands implemented by the add-in.">
 			<Item text="Action" url="manifest/action" Scope="excel, word, powerpoint, outlook" SEODescription="Specifies the action to perform when the user selects a Button or Menu control." />
-			<Item text="AllFormFactors" url="manifest/allformafactors" SEODescription="Specifies the settings for an add-in for all form factors." Scope="excel" />
+			<Item text="AllFormFactors" url="manifest/allformfactors" SEODescription="Specifies the settings for an add-in for all form factors." Scope="excel" />
 			<Item text="Control" url="manifest/control" SEODescription="Specifies the control to perform when the user selects a Button or Menu." />
 
 			<Item text="CustomTab" url="manifest/customtab" Scope="excel, word, powerpoint, outlook" SEODescription="Specifies the tab and group for add-in commands." />
