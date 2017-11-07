@@ -15,11 +15,11 @@ You can use the [UX Design Pattern specifications](https://github.com/OfficeDev/
 
 To use the specifications to build a mock-up of your own add-in UI:
 
-1. Download design assets files and begin designing your own user interfaces:
+1. Download design assets files and begin designing your own UI:
     * [Office Add-in UX Design Components](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/addin_ux_design_components.ai) (Adobe Illustrator file)
     * [Office Add-in UX Design Patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/addin_ux_design_patterns.ai) (Adobe Illustrator file) or the
     * [Office Add-in UX Design Prototype](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/addin_ux_design_prototype.xd) (Adobe Experience Design file)
-2. Refer to Office Add-ins documentation
+2. Refer to the following articles for guidance:
     * [UX design Patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/README.md)
     * Best practices for [Designing your Office Add-ins](https://dev.office.com/docs/add-ins/design/add-in-design)
     * [Office UI Fabric Toolkits](https://developer.microsoft.com/en-us/fabric#/resources)
@@ -33,7 +33,7 @@ To add the source code:
 	- Use the UX design pattern as a template for other pages.
 	- Link to or from the UX design pattern.
 
-> **Note** Some UX pattern specifications do not match source code. We're working hard to bring all assets into alignment. Also notice that some specifications are presented as archived. These archived specifications are being assessed for value to the platform. Each pattern aims to represent a unique template and pattern of interaction. Patterns should have little overlap with each other and be well differentiated from Office Fabric UI components.
+> **Note:** Some UX pattern specifications do not match the source code. We're working hard to bring all assets into alignment. Also notice that some specifications are presented as archived. We're assessing these archived specifications for value to the platform. Each pattern aims to represent a unique template and pattern of interaction. The patterns should not overlap with each other and should be well differentiated from Office Fabric UI components.
 
 ## Types of UX design patterns
 ### Generic pages
@@ -76,7 +76,7 @@ The [Office Store](https://msdn.microsoft.com/en-us/library/office/jj220033.aspx
 
 * **Trial** - Shows users how to get started with a trial version of your add-in.
 	* [Trial specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/archived-patterns/fre_trialVersion.pdf)
-        * This UX design pattern has been archived. As we assess its value please reference the above PDF.
+        * This UX design pattern has been archived. As we assess its value, please refer to the PDF.
 	* [Trial code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/trial-placemat)
 * **Trial feature** - Advises users that the feature they are trying to use is not available in the trial version of the add-in. Alternatively, if your add-in is free but it includes a feature that requires a subscription, consider using this pattern. You might also use this pattern to provide a downgraded experience after a trial has ended.
 	* [Trial feature specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/archived-patterns/fre_trialFeature.pdf)
