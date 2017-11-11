@@ -20,16 +20,21 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Open the **Before** folder and open the .sln file in Visual Studio. This is a starter project. The UI and other aspects of the add-in that are not directly connected to SSO or authorization are already done.
 
-    > Note: There is also a completed version of the sample in the same repo. It is just like the add-in that you would have if you completed the procedures in this article, except that the completed project has code comments that would be redundant with the text of this article. To use the completed version, just open the *.sln file and follow the instructions in this article, but skip the sections **Code the client side** and **Code the server** side..
+    > **Note**: There is also a completed version of the sample in the same repo. It is just like the add-in that you would have if you completed the procedures in this article, except that the completed project has code comments that would be redundant with the text of this article. To use the completed version, just open the *.sln file and follow the instructions in this article, but skip the sections **Code the client side** and **Code the server** side.
 
 1. After the project opens, build it in Visual Studio, which will install the packages listed in the packages.config file. This can take a few seconds to several minutes depending on how many of the packages are in the computer's local package cache.
 
-    > **Important!** The packages.config in the root of the web API project, specifies version `1.1.1-alpha0393` of Microsoft.Identity.Client, the MSAL library. You should verify that this version (or later) gets installed after you press F5 for the first time: On the **Tools** menu, navigate to **Nuget Package Manager** > **Manage Nuget Packages for Solution** > **Installed**. Scroll to **Microsoft.Identity.Client** to see the installed version. If it is earlier than `1.1.1-alpha0393` (or does not appear on the **Installed** list), then navigate to **Nuget Package Manager** > **Package Manager Console**. At the console, run the command `Install-Package Microsoft.Identity.Client -Version 1.1.1-alpha0393 -Source https://www.myget.org/F/aad-clients-nightly/api/v3/index.json`.
+    > **Note**: You will get an error about the Identity namespace. This is a side effect of a configuration issue that you will fix with the next step. The important thing is that the packages are installed.
 
-1. After the project has completely built, press F5. PowerPoint opens and there is an **SSO ASP.NET** group on the **Home** ribbon.
+1. Currently, the version of the MSAL library (Microsoft.Identity.Client) that you need for SSO (version `1.1.1-alpha0393) is not part of the standard nuget catalog, so it is not listed in the package.config, and it must be installed separately. 
 
-1. Press the **Show add-in** button in this group to see the add-in’s UI in the task pane. The button in the task pane is not wired up yet.
-2. In Visual Studio, stop the debugger.
+   > 1. On the **Tools** menu, navigate to **Nuget Package Manager** > **Package Manager Console**. 
+
+   > 2. At the console, run the command `Install-Package Microsoft.Identity.Client -Version 1.1.1-alpha0393 -Source https://www.myget.org/F/aad-clients-nightly/api/v3/index.json`. It may take a minute or more to complete even with a fast Internet connection. When it finishes you should see "Successfully installed 'Microsoft.Identity.Client 1.1.1-alpha0393' ... " near the end of the output in the console.
+
+   > 3. In **Solution Explorer**, right-click **References**. Verify that **Microsoft.Identity.Client** is listed. If it is not or there is a warning icon on its entry, delete the entry and then use the Visual Studio Add Reference wizard to add a reference to the assembly at ... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.1-alpha0393\lib\net45\Microsoft.Identity.Client.dll
+
+1. Build the project a second time.
 
 ## Register the add-in with Azure AD v2.0 endpoint
 
@@ -51,7 +56,9 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. In the dialog that opens, select **Web API**.
 
-1. An **Application ID URI** has been generated of the form “api://{App ID GUID}”. Insert the string “localhost:44355/” between the double forward slashes and the GUID. The entire ID should read `api://localhost:44355/{App ID GUID}`. (The domain part of the **Scope** name just below the **Application ID URI** will automatically change to match. It should read `api://localhost:44355/{App ID GUID}/access_as_user`.)
+1. An **Application ID URI** has been generated of the form “api://{App ID GUID}”. Insert the string “localhost:44355/” between the double forward slashes and the GUID. The entire ID should read `api://localhost:44355/{App ID GUID}`. 
+
+    > **Note**: The domain part of the **Scope** name just below the **Application ID URI** will automatically change to match. It should read `api://localhost:44355/{App ID GUID}/access_as_user`.
 
 1. In the **Pre-authorized applications** section, you identify the applications that you want to authorize to your add-in's web application. Each of the following IDs needs to be pre-authorized. Each time you enter one, a new empty textbox appears. (Enter only the GUID.)
  * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
@@ -64,15 +71,17 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. In the new **Web** section under **Platforms**, enter the following as a **Redirect URL**: `https://localhost:44355`.
 
-    > Note: As of this writing, the **Web API** platform sometimes disappears from the **Platforms** section, particularly if the page is refreshed after the **Web** platform is added *and the registration page is saved*. For reassurance that your **Web API** platform is still part of the registration, click the **Edit Application Manifest** button near the bottom of the page. You should see the `api://localhost:44355/{App ID GUID}` string in the **identifierUris** property of the manifest. There will also be a **oauth2Permissions** property whose **value** subproperty has the value `access_as_user`.
+    > **Note**: As of this writing, the **Web API** platform sometimes disappears from the **Platforms** section, particularly if the page is refreshed after the **Web** platform is added *and the registration page is saved*. For reassurance that your **Web API** platform is still part of the registration, click the **Edit Application Manifest** button near the bottom of the page. You should see the `api://localhost:44355/{App ID GUID}` string in the **identifierUris** property of the manifest. There will also be a **oauth2Permissions** property whose **value** subproperty has the value `access_as_user`.
 
 1. Scroll down to the **Microsoft Graph Permissions** section, the **Delegated Permissions** subsection. Use the **Add** button to open a **Select Permissions** dialog.
 
-1. In the dialog box, check the boxes for the following permissions (some may already be checked by default). Only the first is really required by your add-in itself; but the MSAL library that the server-side code uses requires `offline_access` and `openid`. The `profile` permission is required for the Office host to get a token to your add-in web application.
+1. In the dialog box, check the boxes for the following permissions. Only the first is really required by your add-in itself; but the MSAL library that the server-side code uses requires `offline_access` and `openid`. The `profile` permission is required for the Office host to get a token to your add-in web application.
  * Files.Read.All
  * offline_access
  * openid
  * profile
+
+    > **Note**: The `User.Read` permission may already be listed by default. It is a good practice not to ask for permissions that are not needed, so we recommend that you uncheck the box for this permission.
 
 1. At the bottom of the dialog, click **OK**.
 
