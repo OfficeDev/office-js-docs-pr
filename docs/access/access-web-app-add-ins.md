@@ -20,7 +20,7 @@ To create an Office Add-in that targets Access web apps, you need:
 
 - Visual Studio 2015
 
-- A SharePoint Online site (included in many Office 365 subscriptions). This site must have an add-in catalog. For more information, see [Set up an add-in catalog on SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
+- A SharePoint Online site (included in many Office 365 subscriptions). This site must have an add-in catalog. For more information, see [Set up an add-in catalog on SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md#set-up-an-add-in-catalog).
 
 > [!NOTE]
 > Office Add-ins work with Access web apps hosted on SharePoint Online or Office 365. The Access 2013 desktop application doesn't support Office Add-ins. Office Add-ins targeting Access web apps are supported by version 1.1 and later of Office.js.
