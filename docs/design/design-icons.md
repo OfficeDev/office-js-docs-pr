@@ -133,7 +133,7 @@ Office icons have a limited color palette. Use the colors listed in the followin
 
 |**Color name**|**RGB**|**Hex**|**Color**|**Category**|
 |:---|:---|:---|:---|:---|
-|Text Gray (80)|80, 80, 80|#505050| ![Text gray 80 color image](../images/text-gray-80.gif) |Text|
+|Text Gray (80)|80, 80, 80|#505050| ![Text gray 80 color image](./images/text-gray-80.gif) |Text|
 |Text Gray (95)|95, 95, 95|#5F5F5F| ![Text gray 95 color image](../images/text-gray-95.gif) |Text|
 |Text Gray (105)|105, 105, 105|#696969| ![Text gray 105 color image](../images/text-gray-105.gif) |Text|
 |Dark Gray 32|128, 128, 128|#808080| ![Dark gray 32 color image](../images/color-dark-gray-32.gif) |32 and above|
@@ -154,8 +154,6 @@ Office icons have a limited color palette. Use the colors listed in the followin
 |Purple 32|152, 104, 185|#9868B9| ![Purple 32 color image](../images/color-purple-32.gif) |32 and above|
 |Purple 16|137, 89, 171|#8959AB| ![Purple 16 color image](../images/color-purple-16.gif) |16 and below|
 
-
-![Text gray 80 color image](../images/text-gray-80.gif)
 
 ## Icons in high contrast modes
 
