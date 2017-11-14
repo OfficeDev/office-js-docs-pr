@@ -154,6 +154,9 @@ Office icons have a limited color palette. Use the colors listed in the followin
 |Purple 32|152, 104, 185|#9868B9| ![Purple 32 color image](../images/color-purple-32.gif) |32 and above|
 |Purple 16|137, 89, 171|#8959AB| ![Purple 16 color image](../images/color-purple-16.gif) |16 and below|
 
+
+![Text gray 80 color image](../images/text-gray-80.gif)
+
 ## Icons in high contrast modes
 
 Office icons are designed to render well in high contrast modes. Foreground elements are well differentiated from backgrounds to maximize legibility and enable recoloring. In high contrast modes, Office will recolor any pixel of your icon with a red, green, or blue value less than 190 to full black. All other pixels will be white. In other words, each RGB channel is assessed where 0-189 values are black and 190-255 values are white. Other high-contrast themes recolor using the same 190 value threshold but with different rules. For example, the high-contrast white theme will recolor all pixels greater than 190 opaque but all other pixels as transparent. Apply the following guidelines to maximize legibility in high-contrast settings:
