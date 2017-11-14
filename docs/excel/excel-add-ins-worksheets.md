@@ -1,8 +1,16 @@
+---
+title: Work with Worksheets using the Excel JavaScript API
+description: 
+ms.date: 11/20/2017 
+---
+
+
 # Work with Worksheets using the Excel JavaScript API
 
 This article provides code samples that show how to perform common tasks with worksheets using the Excel JavaScript API. For the complete list of properties and methods that the **Worksheet** and **WorksheetCollection** objects support, see [Worksheet Object (JavaScript API for Excel)](../../reference/excel/worksheet.md) and [WorksheetCollection Object (JavaScript API for Excel)](../../reference/excel/worksheetcollection.md).
 
-**Note**: The information in this article applies only to regular worksheets; it does not apply to "chart" sheets or "macro" sheets.
+> [!NOTE]
+> The information in this article applies only to regular worksheets; it does not apply to "chart" sheets or "macro" sheets.
 
 ## Get worksheets
 
@@ -27,7 +35,8 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Note**: The **id** property of a worksheet uniquely identifies the worksheet in a given workbook and its value will remain the same even when the worksheet is renamed or moved. When a worksheet is deleted from a workbook in Excel for Mac, the **id** of the deleted worksheet may be reassigned to a new worksheet that is subsequently created.
+> [!NOTE]
+> The **id** property of a worksheet uniquely identifies the worksheet in a given workbook and its value will remain the same even when the worksheet is renamed or moved. When a worksheet is deleted from a workbook in Excel for Mac, the **id** of the deleted worksheet may be reassigned to a new worksheet that is subsequently created.
 
 ## Get the active worksheet
 

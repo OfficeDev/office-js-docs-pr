@@ -1,3 +1,10 @@
+---
+title: Excel add-ins overview
+description: 
+ms.date: 11/20/2017 
+---
+
+
 # Excel add-ins overview
 
 An Excel add-in allows you to extend Excel application functionality across multiple platforms including Office for Windows, Office Online, Office for the Mac, and Office for the iPad. Use Excel add-ins within a workbook to:
@@ -15,7 +22,8 @@ The Office Add-ins platform provides the framework and Office.js JavaScript APIs
 * **Use of standard web technology**: Create your Excel add-in using familiar web technologies such as HTML, CSS, and JavaScript.
 * **Distribution via the Office Store**: Share your Excel add-in with a broad audience by publishing it to the [Office Store](https://store.office.com/en-us/appshome.aspx).
 
-> **Note**: Excel add-ins are different from COM and VSTO add-ins, which are earlier Office integration solutions that run only on Office for Windows. Unlike COM add-ins, Excel add-ins do not require you to install any code on a user's device, or within Excel. 
+> [!NOTE]
+> Excel add-ins are different from COM and VSTO add-ins, which are earlier Office integration solutions that run only on Office for Windows. Unlike COM add-ins, Excel add-ins do not require you to install any code on a user's device, or within Excel. 
 
 ## Components of an Excel add-in 
 
@@ -44,19 +52,19 @@ In addition to interacting with the content in the workbook, Excel add-ins can a
 
 **Custom ribbon buttons**
 
-![Add-in commands](../../images/Excel_add-in_commands_Script-Lab.png)
+![Add-in commands](../images/excel-add-in-commands-script-lab.png)
 
 **Task pane**
 
-![Add-in task pane](../../images/Excel_add-in_task_pane_Insights.png)
+![Add-in task pane](../images/excel-add-in-task-pane-insights.png)
 
 **Dialog box**
 
-![Add-in dialog box](../../images/Excel_add-in_dialog_choose-number.png)
+![Add-in dialog box](../images/excel-add-in-dialog-choose-number.png)
 
 **Content add-in**
 
-![Content add-in](../../images/Excel_add-in_content_map.png)
+![Content add-in](../images/excel-add-in-content-map.png)
 
 ## JavaScript APIs to interact with workbook content
 

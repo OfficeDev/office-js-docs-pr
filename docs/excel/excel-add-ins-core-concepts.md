@@ -1,3 +1,10 @@
+---
+title: Excel JavaScript API core concepts
+description: 
+ms.date: 11/20/2017 
+---
+
+
 # Excel JavaScript API core concepts
  
 This article describes how to use the [Excel JavaScript API](../../reference/excel/excel-add-ins-reference-overview.md) to build add-ins for Excel 2016. It introduces core concepts that are fundamental to using the API and provides guidance for performing specific tasks such as reading or writing to a large range, updating all cells in range, and more.
@@ -46,7 +53,8 @@ selectedRange.format.autofitColumns();
  
 Calling the **sync()** method on the request context synchronizes the state between proxy objects and objects in the Excel document. The **sync()** method runs any commands that are queued on the request context and retrieves values for any properties that should be loaded on the proxy objects. The **sync()** method executes asynchronously and returns a [promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), which is resolved when the **sync()** method completes.
  
->**Note**: In the Excel JavaScript API, **sync()** is the only asynchronous operation. To optimize performance, you should queue up as many changes as possible before calling **sync()** and minimize the number of times you call **sync()**.
+> [!NOTE]
+> In the Excel JavaScript API, **sync()** is the only asynchronous operation. To optimize performance, you should queue up as many changes as possible before calling **sync()** and minimize the number of times you call **sync()**.
  
 The following example shows a batch function that defines a local JavaScript proxy object (**selectedRange**), loads a property of that object, and then uses the JavaScript Promises pattern to call **context.sync()** to synchronize the state between proxy objects and objects in the Excel document.
  
@@ -74,7 +82,8 @@ Because **sync()** is an asynchronous operation that returns a promise, you shou
  
 Before you can read the properties of a proxy object, you must explicitly load the properties to populate the proxy object with data from the Excel document, and then call **context.sync()**. For example, if you create a proxy object to reference a selected range, and then want to read the selected range's **address** property, you need to load the **address** property before you can read it. To request properties of a proxy object be loaded, call the **load()** method on the object and specify the properties to load. 
 
->**Note**: If you are only calling methods or setting properties on a proxy object, you do not need to call the **load()** method. The **load()** method is only required when you want to read properties on a proxy object.
+> [!NOTE]
+> If you are only calling methods or setting properties on a proxy object, you do not need to call the **load()** method. The **load()** method is only required when you want to read properties on a proxy object.
  
 Just like requests to set properties or invoke methods on proxy objects, requests to load properties on proxy objects get added to the queue of pending commands on the request context, which will run the next time you call the **sync()** method. You can queue up as many **load()** calls on the request context as necessary.
  

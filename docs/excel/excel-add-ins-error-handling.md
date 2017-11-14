@@ -1,8 +1,16 @@
+---
+title: Error handling
+description: 
+ms.date: 11/20/2017 
+---
+
+
 # Error handling
 
 When you build an add-in using the Excel JavaScript API, be sure to include error handling logic to account for runtime errors. Doing so is critical, due to the asynchronous nature of the API.
 
-**Note**: For more information about the **sync()** method and the asynchronous nature of Excel JavaScript API, see [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md).
+> [!NOTE]
+> For more information about the **sync()** method and the asynchronous nature of Excel JavaScript API, see [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md).
 
 ## Best practices
 
@@ -31,7 +39,8 @@ When an Excel JavaScript API request fails to run successfully, the API returns 
 
 - **debugInfo**: When present, the `debugInfo` property of the error message provides additional information that you can use to understand the root cause of the error. 
 
-**Note**: If you use `console.log()` to print error messages to the console, those messages will only be visible on the server. End-users will not see those error messages in the add-in taskpane or anywhere in the host application.
+> [!NOTE]
+> If you use `console.log()` to print error messages to the console, those messages will only be visible on the server. End-users will not see those error messages in the add-in taskpane or anywhere in the host application.
 
 ## Additional resources
 

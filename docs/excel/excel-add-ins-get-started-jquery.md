@@ -1,3 +1,10 @@
+---
+title: Build an Excel add-in using jQuery
+description: 
+ms.date: 11/20/2017 
+---
+
+
 # Build an Excel add-in using jQuery
 
 In this article, you'll walk through the process of building an Excel add-in by using jQuery and the Excel JavaScript API.
@@ -25,7 +32,7 @@ If you haven't done so previously, you'll need to install [Yeoman](https://githu
     ```bash
     yo office
     ```
-    ![Yeoman generator](../../images/yo-office-jquery.png)
+    ![Yeoman generator](../images/yo-office-jquery.png)
 
 
 4. In your code editor, open **index.html** in the root of the project. This file specifies the HTML that will be rendered in the add-in's task pane. 
@@ -143,17 +150,18 @@ Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. How
     npm start
     ```
 
-   > **Note**: A browser window will open with the add-in in it. Close this window.
+   > [!NOTE]
+   > A browser window will open with the add-in in it. Close this window.
 
 3. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Excel Add-in button](../../images/excel_quickstart_addin_2a.png)
+    ![Excel Add-in button](../images/excel-quickstart-addin-2a.png)
 
 4. Select any range of cells in the worksheet.
 
 5. In the task pane, choose the **Color Me** button pane to set the color of the selected range to green.
 
-    ![Excel Add-in](../../images/excel_quickstart_addin_2b.png)
+    ![Excel Add-in](../images/excel-quickstart-addin-2b.png)
 
 ## Next steps
 

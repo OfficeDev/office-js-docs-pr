@@ -1,4 +1,11 @@
-# Work with Tables using the Excel JavaScript API
+---
+title: Work with tables using the Excel JavaScript API
+description: 
+ms.date: 11/20/2017 
+---
+
+
+# Work with tables using the Excel JavaScript API
 
 This article provides code samples that show how to perform common tasks with tables using the Excel JavaScript API. For the complete list of properties and methods that the **Table** and **TableCollection** objects support, see [Table Object (JavaScript API for Excel)](../../reference/excel/table.md) and [TableCollection Object (JavaScript API for Excel)](../../reference/excel/tablecollection.md).
 
@@ -6,7 +13,8 @@ This article provides code samples that show how to perform common tasks with ta
 
 The following code sample creates a table in the worksheet named **Sample**. The table has headers and contains four columns and seven rows of data. If the Excel host application where the code is running supports [requirement set](../../reference/requirement-sets/excel-api-requirement-sets.md) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
 
->**Note**: To specify a name for a table, you must first create the table and then set its **name** property, as shown in the example below.
+> [!NOTE]
+> To specify a name for a table, you must first create the table and then set its **name** property, as shown in the example below.
 
 ```js
 Excel.run(function (context) {
@@ -39,13 +47,14 @@ Excel.run(function (context) {
 
 **New table**
 
-![New table in Excel](../../images/Excel-table-create.png)
+![New table in Excel](../images/excel-tables-create.png)
 
 ## Add rows to a table
 
 The following code sample adds seven new rows to the table named **ExpensesTable** within the worksheet named **Sample**. The new rows are added to the end of the table. If the Excel host application where the code is running supports [requirement set](../../reference/requirement-sets/excel-api-requirement-sets.md) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
 
->**Note**: The **index** property of a [TableRow](../../reference/excel/tablerow.md) object indicates the index number of the row within the rows collection of the table. A **TableRow** object does not contain an **id** property that can be used as a unique key to identify the row.
+> [!NOTE]
+> The **index** property of a [TableRow](../../reference/excel/tablerow.md) object indicates the index number of the row within the rows collection of the table. A **TableRow** object does not contain an **id** property that can be used as a unique key to identify the row.
 
 ```js
 Excel.run(function (context) {
@@ -73,13 +82,14 @@ Excel.run(function (context) {
 
 **Table with new rows**
 
-![Table with new rows in Excel](../../images/Excel-table-add-rows.png)
+![Table with new rows in Excel](../images/excel-tables-add-rows.png)
 
 ## Add a column to a table
 
 These examples show how to add a column to a table. The first example populates the new column with static values; the second example populates the new column with formulas.
 
->**Note**: The **index** property of a [TableColumn](../../reference/excel/tablecolumn.md) object indicates the index number of the column within the columns collection of the table. The **id** property of a **TableColumn** object contains a unique key that identifies the column.
+> [!NOTE]
+> The **index** property of a [TableColumn](../../reference/excel/tablecolumn.md) object indicates the index number of the column within the columns collection of the table. The **id** property of a **TableColumn** object contains a unique key that identifies the column.
 
 ### Add a column that contains static values
 
@@ -112,7 +122,7 @@ Excel.run(function (context) {
 
 **Table with new column**
 
-![Table with new column in Excel](../../images/Excel-table-add-column.png)
+![Table with new column in Excel](../images/excel-tables-add-column.png)
 
 ### Add a column that contains formulas
 
@@ -145,7 +155,7 @@ Excel.run(function (context) {
 
 **Table with new calculated column**
 
-![Table with new calculated column in Excel](../../images/Excel-table-add-calculated-column.png)
+![Table with new calculated column in Excel](../images/excel-tables-add-calculated-column.png)
 
 ## Update column name
 
@@ -174,7 +184,7 @@ Excel.run(function (context) {
 
 **Table with new column name**
 
-![Table with new column name in Excel](../../images/Excel-table-update-column-name.png)
+![Table with new column name in Excel](../images/excel-tables-update-column-name.png)
 
 ## Get data from a table
 
@@ -220,7 +230,7 @@ Excel.run(function (context) {
 
 **Table and data output**
 
-![Table data in Excel](../../images/Excel-table-get-data.png)
+![Table data in Excel](../images/excel-tables-get-data.png)
 
 ## Sort data in a table
 
@@ -247,7 +257,7 @@ Excel.run(function (context) {
 
 **Table data sorted by Amount (descending)**
 
-![Table data in Excel](../../images/Excel-table-sort.png)
+![Table data in Excel](../images/excel-tables-sort.png)
 
 ## Apply filters to a table
 
@@ -279,7 +289,7 @@ Excel.run(function (context) {
 
 **Table data with filters applied for Category and Amount**
 
-![Table data filtered in Excel](../../images/Excel-table-filters-apply.png)
+![Table data filtered in Excel](../images/excel-tables-filters-apply.png)
 
 ## Clear table filters
 
@@ -298,7 +308,7 @@ Excel.run(function (context) {
 
 **Table data with no filters applied**
 
-![Table data non-filtered in Excel](../../images/Excel-table-filters-clear.png)
+![Table data non-filtered in Excel](../images/excel-tables-filters-clear.png)
 
 ## Get the visible range from a filtered table
 
@@ -339,7 +349,7 @@ Excel.run(function (context) {
 
 **Table after formatting is applied**
 
-![Table after formatting is applied in Excel](../../images/Excel-table-formatting-after.png)
+![Table after formatting is applied in Excel](../images/excel-tables-formatting-after.png)
 
 ## Convert a range to a table
 
@@ -379,11 +389,11 @@ Excel.run(function (context) {
 
 **Data in the range (before the range is converted to a table)**
 
-![Data in range in Excel](../../images/Excel-range.png)
+![Data in range in Excel](../images/excel-range.png)
 
 **Data in the table (after the range is converted to a table)**
 
-![Data in table in Excel](../../images/Excel-table-from-range.png)
+![Data in table in Excel](../images/excel-tables-from-range.png)
 
 ## Import JSON data into a table
 
@@ -430,7 +440,7 @@ Excel.run(function (context) {
 
 **New table**
 
-![New table in Excel](../../images/Excel-table-create-from-json.png)
+![New table in Excel](../images/excel-tables-create-from-json.png)
 
 ## Additional resources
 
