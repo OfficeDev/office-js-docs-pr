@@ -1,3 +1,10 @@
+---
+title: DropDown component in Office UI Fabric
+description: 
+ms.date: 11/20/2017 
+---
+
+
 # DropDown component in Office UI Fabric
 
 A drop-down is a list of options that is shown by clicking a drop-down button. Use a drop-down list or menu to simplify the UI design, and when users should make a choice within the UI. When the list collapses, the selected item is visible. To change the selected item, users open the list, and select a new value.
@@ -6,7 +13,7 @@ A drop-down is a list of options that is shown by clicking a drop-down button. U
 
 <br/>
 
-![An image showing the drop-down](../../images/overview_withApp_dropdown.png)
+![An image showing the drop-down](../images/overview-with-app-dropdown.png)
 
 <br/>
 
@@ -22,9 +29,9 @@ A drop-down is a list of options that is shown by clicking a drop-down button. U
 
 |**Variation**|**Description**|**Example**|
 |:------------|:--------------|:----------|
-|**Basic uncontrolled drop-down**|Use when many options are available for selection.|![Basic uncontrolled drop-down image](../../images/dropdownUncontrolled.png)<br/>|
-|**Disabled uncontrolled drop-down with defaultSelectedKey**|Disabled state of the drop-down.|![Disabled uncontrolled drop-down with defaultSelectedKey image](../../images/dropdownDisabled.png)<br/>|
-|**Controlled drop-down**|Use when the default selected item is influenced by another location in your UI, and the selected item in the drop-down must be maintained.|![Controlled drop-down image](../../images/dropdownControlled.png)<br/>|
+|**Basic uncontrolled drop-down**|Use when many options are available for selection.|![Basic uncontrolled drop-down image](../images/dropdown-uncontrolled.png)<br/>|
+|**Disabled uncontrolled drop-down with defaultSelectedKey**|Disabled state of the drop-down.|![Disabled uncontrolled drop-down with defaultSelectedKey image](../images/dropdown-disabled.png)<br/>|
+|**Controlled drop-down**|Use when the default selected item is influenced by another location in your UI, and the selected item in the drop-down must be maintained.|![Controlled drop-down image](../images/dropdown-controlled.png)<br/>|
 
 ## Implementation
 
@@ -33,5 +40,4 @@ For details, see [Dropdown](https://dev.office.com/fabric#/components/dropdown) 
 ## Additional resources
 
 - [UX Design Patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
-
 - [Office UI Fabric in Office Add-ins](office-ui-fabric.md)

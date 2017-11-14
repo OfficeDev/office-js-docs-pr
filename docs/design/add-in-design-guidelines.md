@@ -1,3 +1,11 @@
+---
+title: Office Add-in design guidelines
+description: 
+ms.date: 11/20/2017 
+---
+
+
+
 # Office Add-in design guidelines
 
 Enhance the user experience in your Office Add-in by developing UI that matches the Office voice, and apply accessibility guidelines to ensure that your add-in is accessible to all users.

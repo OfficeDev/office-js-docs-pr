@@ -1,3 +1,11 @@
+---
+title: Usability testing for Office Add-ins
+description: 
+ms.date: 11/20/2017 
+---
+
+
+
 # Usability testing for Office Add-ins
 
 A great add-in design takes user behaviors into account. Because your own preconceptions influence your design decisions, it’s important to test designs with real users to make sure that your add-ins work well for your customers. 
@@ -12,7 +20,8 @@ These testing services help you to streamline test plan creation and remove the 
 
 You need only five participants to uncover most usability issues in your design. Incorporate small tests regularly throughout your development cycle to ensure that your product is user-centered.
 
-> **Note:** We recommend that you test the usability of your add-in across multiple platforms. To [publish your add-in to the Office Store](https://msdn.microsoft.com/en-us/library/office/jj220037.aspx), it must work on all [platforms that support the methods that you define](https://dev.office.com/add-in-availability).
+> [!NOTE]
+> We recommend that you test the usability of your add-in across multiple platforms. To [publish your add-in to the Office Store](https://msdn.microsoft.com/en-us/library/office/jj220037.aspx), it must work on all [platforms that support the methods that you define](https://dev.office.com/add-in-availability).
 
 ## 1.	Sign up for a testing service
 
@@ -24,7 +33,7 @@ Research questions define the objectives of your research and guide your test pl
  
 The following are some examples of research questions:
   
- **Specific**  
+**Specific**  
 
  - Do users notice the "free trial" link on the landing page?
  - When users insert content from the add-in to their document, do they understand where in the document it is inserted?

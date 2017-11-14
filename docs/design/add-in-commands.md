@@ -1,3 +1,9 @@
+---
+title: Add-in commands for Excel, Word, and PowerPoint
+description: 
+ms.date: 11/20/2017 
+---
+
 
 # Add-in commands for Excel, Word, and PowerPoint
 
@@ -5,20 +11,22 @@ Add-in commands are UI elements that extend the Office UI and start actions in y
 
 For an overview of the feature, see the video [Add-in Commands in the Office Ribbon](https://channel9.msdn.com/events/Build/2016/P551).
 
->**Note:** SharePoint catalogs do not support add-in commands. You can deploy add-in commands via [Centralized Deployment](../publish/centralized-deployment.md) or the [Office Store](https://dev.office.com/officestore/docs/submit-to-the-office-store), or use [sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins) to deploy your add-in command for testing. 
+> [!NOTE]
+> SharePoint catalogs do not support add-in commands. You can deploy add-in commands via [Centralized Deployment](../publish/centralized-deployment.md) or the [Office Store](https://dev.office.com/officestore/docs/submit-to-the-office-store), or use [sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins) to deploy your add-in command for testing. 
 
 **Add-in with commands running in Excel Desktop**
 
-![Screenshot of an add-in command in Excel](../../images/addincommands1.png)
+![Screenshot of an add-in command in Excel](../images/add-in-commands-1.png)
 
 **Add-in with commands running in Excel Online**
 
-![Screenshot of an add-in command in Excel Online](../../images/addincommands2.png)
+![Screenshot of an add-in command in Excel Online](../images/add-in-commands-2.png)
 
 ## Command capabilities
 The following command capabilities are currently supported.
 
-> **Note:** Content add-ins do not currently support add-in commands.
+> [!NOTE]
+> Content add-ins do not currently support add-in commands.
 
 **Extension points**
 
@@ -57,12 +65,13 @@ Apply the following best practices when you develop add-in commands:
     - Name your group to match the name of your add-in. If you have multiple groups, name each group based on the functionality that the commands in that group provide.
     - Do not add superfluous buttons to increase the real estate of your add-in.
 
-     >**Note:**  Add-ins that take up too much space might not pass [Office Store validation](https://dev.office.com/officestore/docs/validation-policies).
+     > [!NOTE]
+     > Add-ins that take up too much space might not pass [Office Store validation](https://dev.office.com/officestore/docs/validation-policies).
 
 - For all icons, follow the [icon design guidelines](../design/design-icons.md).
 - Provide a version of your add-in that also works on hosts that do not support commands. A single add-in manifest can work in both command-aware (with commands) and non-command-aware (as a taskpane) hosts.
 
-    ![A screenshot that shows a task pane add-in in Office 2013 and the same add-in using add-in commands in Office 2016](../../images/4f90a3cc-8cc4-4879-9a03-0bb2b6079026.png)
+    ![A screenshot that shows a task pane add-in in Office 2013 and the same add-in using add-in commands in Office 2016](../images/office-task-pane-add-ins.png)
 
 
 ## Next steps to get started
@@ -71,6 +80,8 @@ The best way to get started using add-in commands is to take a look at the [Offi
 
 For more information about specifying add-in commands in your manifest, see [Define add-in commands in your manifest](../develop/define-add-in-commands.md) and the [VersionOverrides](../../reference/manifest/versionoverrides.md) reference content.
 
+
+## Additional resources
 
 
 

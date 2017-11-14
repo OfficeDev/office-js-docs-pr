@@ -1,10 +1,17 @@
+---
+title: Office UI elements for Office Add-ins
+description: 
+ms.date: 11/20/2017 
+---
+
+
 # Office UI elements for Office Add-ins
 
 You can use several types of UI elements to extend the Office UI, including add-in commands and HTML containers. These UI elements look like a natural extension of Office and work across platforms. You can insert your custom web-based code into any of these elements.
 
 The following image shows the types of Office UI elements that you can create.
 
-![An image that shows add-in commands on the ribbon, a task pane, and a dialog box in an Office document](../../images/overview_withApp_interfaceElements.png)
+![An image that shows add-in commands on the ribbon, a task pane, and a dialog box in an Office document](../images/overview-with-app-interface-elements.png)
 
 ## Add-in commands
 
@@ -25,7 +32,7 @@ Use HTML containers to embed HTML-based UI code within Office clients. These web
 |[Content add-ins](content-add-ins.md)|Display custom UI embedded within Office documents. Use content add-ins to allow users to interact with your add-in directly within the Office document. For example, you might want to show external content such as videos or data visualizations from other sources. |
 |[Dialog boxes](dialog-boxes.md)|Display custom UI in a dialog box that overlays the Office document. Use a dialog box for interactions that require focus and more real estate, and do not require a side-by-side interaction with the document.|
 
-## Related Resources
+## Additional resources
 
 - [Add-in commands for Excel, Word, and PowerPoint](add-in-commands.md)
 - [Task panes](task-pane-add-ins.md)

@@ -1,10 +1,17 @@
+---
+title: Task panes in Office Add-ins
+description: 
+ms.date: 11/20/2017 
+---
+
+
 # Task panes in Office Add-ins
  
-Task Panes are interface surfaces that typically appear on the right side of the window within Word, PowerPoint, Excel, and Outlook. Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source. Use task panes when you don't need to embed functionality directly into the document.
+Task panes are interface surfaces that typically appear on the right side of the window within Word, PowerPoint, Excel, and Outlook. Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source. Use task panes when you don't need to embed functionality directly into the document.
 
 **Example: Task pane**
 
-![Image displaying a typical task pane layout](../../images/overview_withApp_taskPane.png)
+![Image displaying a typical task pane layout](../images/overview-with-app-task-pane.png)
 
 ## Best practices
 
@@ -22,7 +29,7 @@ The following images show the various task pane sizes with the Office ribbon at 
 
 **Office 2016 desktop task pane sizes**
 
-![Image displaying the desktop task pane sizes at 1366x768](../../images/addinTaskpaneSizes_desktop.png)
+![Image displaying the desktop task pane sizes at 1366x768](../images/add-in-taskpane-sizes-desktop.png)
 
 - Excel - 320x455
 - PowerPoint - 320x531
@@ -31,7 +38,7 @@ The following images show the various task pane sizes with the Office ribbon at 
 
 **Office 365 task pane sizes**
 
-![Image displaying the desktop task pane sizes at 1366x768](../../images/addinTaskpaneSizes_online.png)
+![Image displaying the desktop task pane sizes at 1366x768](../images/add-in-taskpane-sizes-online.png)
 
 - Excel - 350x378
 - PowerPoint - 348x391
@@ -46,13 +53,13 @@ Personality menus can obstruct navigational and commanding elements located near
 
 For Windows, the personality menu measures 12x32 pixels, as shown.
 
-![Image showing the personality menu on Windows desktop](../../images/personalityMenu_Win.png)
+![Image showing the personality menu on Windows desktop](../images/personality-menu-win.png)
 
 **Personality menu on Windows**
 
 For Mac, the personality menu measures 26x26 pixels, but floats 8 pixels in from the right and 6 pixels from the top, which increases the space to 34x32 pixels, as shown.
 
-![Image showing the personality menu on Mac desktop](../../images/personalityMenu_Mac.png)
+![Image showing the personality menu on Mac desktop](../images/personality-menu-mac.png)
 
 ## Implementation
 

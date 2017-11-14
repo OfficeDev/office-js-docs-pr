@@ -1,10 +1,19 @@
+---
+title: Use Office UI Fabric React in Office Add-ins
+description: 
+ms.date: 11/20/2017 
+---
+
+
+
 # Use Office UI Fabric React in Office Add-ins
 
 Office UI Fabric is a JavaScript front-end framework for building user experiences for Office and Office 365. If you build your add-in using React, consider using Fabric React to create your user experience. Fabric provides several React-based UX components, like buttons or checkboxes, that you can use in your add-in. 
 
 To get started using Fabric React's components in your add-in, perform the following steps.
 
-> **Note:** If you follow the steps in this section, Fabric Core is also available in your add-in.
+> [!NOTE]
+> If you follow the steps in this section, Fabric Core is also available in your add-in.
 
 ## Step 1 - Create your project with the Yeoman generator for Office
 
@@ -100,7 +109,8 @@ Save your changes. All open browser instances, including the add-in, update auto
 
 The following is a list of the Fabric React UX components that we recommend for use in an add-in.  
 
-> **Note:** We will add additional components over time. 
+> [!NOTE]
+> We will add additional components over time. 
 
 - [Breadcrumb](breadcrumb.md)
 - [Button](button.md)
@@ -113,7 +123,7 @@ The following is a list of the Fabric React UX components that we recommend for 
 - [TextField](textfield.md)
 - [Toggle](toggle.md)
 
-## Related resources
+## Additional resources
 
 - [Office UI Fabric React](https://dev.office.com/fabric#/)
 - [Getting started with Fabric React code sample](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)

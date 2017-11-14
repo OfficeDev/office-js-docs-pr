@@ -1,3 +1,10 @@
+---
+title: Pivot component in Office UI Fabric
+description: 
+ms.date: 11/20/2017 
+---
+
+
 # Pivot component in Office UI Fabric
 
 Pivots provide quick navigation to frequently accessed content. Pivots allow for navigation between two or more content views. Text headers specify which content is in each section of the pivot. Content in each section of the pivot may belong to distinct content categories. In Office Add-ins, use the Pivot control with tab styles. The tabs may use a combination of icons and text to communicate the type of content that the tab contains. 
@@ -6,7 +13,7 @@ Pivots provide quick navigation to frequently accessed content. Pivots allow for
 
 <br/>
 
-![An image showing the pivot](../../images/overview_withApp_pivot.png)
+![An image showing the pivot](../images/overview-with-app-pivot.png)
 
 <br/>
 
@@ -24,8 +31,8 @@ Pivots provide quick navigation to frequently accessed content. Pivots allow for
 
 |**Variation**|**Description**|**Example**|
 |:------------|:--------------|:----------|
-|**Basic example**|Use as the default pivot option.|![Basic Example image](../../images/pivotBasic.png)<br/>|
-|**Links of tab style**|Use when tab style pivot buttons are preferred.|![Links of Tab Style image](../../images/pivotTab.png)<br/>|
+|**Basic example**|Use as the default pivot option.|![Basic Example image](../images/pivot-basic.png)<br/>|
+|**Links of tab style**|Use when tab style pivot buttons are preferred.|![Links of Tab Style image](../images/pivot-tab.png)<br/>|
 
 ## Implementation
 
@@ -34,5 +41,4 @@ For details, see [Pivot](https://dev.office.com/fabric#/components/pivot) and [G
 ## Additional resources
 
 - [UX Design Patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
-
 - [Office UI Fabric in Office Add-ins](office-ui-fabric.md)

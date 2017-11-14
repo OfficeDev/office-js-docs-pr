@@ -1,3 +1,10 @@
+---
+title: Use Office UI Fabric JS in Office Add-ins
+description: 
+ms.date: 11/20/2017 
+---
+
+
 
 # Use Office UI Fabric JS in Office Add-ins
 
@@ -50,7 +57,7 @@ If you're looking for an end-to-end code sample that shows you how to use Fabric
 
 - [Excel Sales Tracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) 
 
-## Related resources
+## Additional resources
 If you're looking for code samples or documentation about a previous release of Fabric, see the following:
 
 - [UX design patterns (uses Fabric 2.6.1)](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code) 

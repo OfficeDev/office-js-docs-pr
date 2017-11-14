@@ -1,3 +1,10 @@
+---
+title: Label component in Office UI Fabric
+description: 
+ms.date: 11/20/2017 
+---
+
+
 # Label component in Office UI Fabric
 
 Use labels to name or title a component or group of components. When paired with another component or group of components, labels should be in close proximity to the related components or groups. Some components have predefined labels, such as a drop-down or toggle.
@@ -6,7 +13,7 @@ Use labels to name or title a component or group of components. When paired with
 
 <br/>
 
-![An image showing the label](../../images/overview_withApp_label.png)
+![An image showing the label](../images/overview-with-app-label.png)
 
 <br/>
 
@@ -22,9 +29,9 @@ Use labels to name or title a component or group of components. When paired with
 
 |**Variation**|**Description**|**Example**|
 |:------------|:--------------|:----------|
-|**Default label**|Use for standard labels.|![Default Label image](../../images/label.png)<br/>|
-|**Disabled label**|Use when the related component is disabled.|![Disabled Label image](../../images/labelDisabled.png)<br/>|
-|**Required label**|Use when the related component is required.|![Required Label image](../../images/labelRequired.png)<br/>|
+|**Default label**|Use for standard labels.|![Default Label image](../images/label.png)<br/>|
+|**Disabled label**|Use when the related component is disabled.|![Disabled Label image](../images/label-disabled.png)<br/>|
+|**Required label**|Use when the related component is required.|![Required Label image](../images/label-required.png)<br/>|
 
 ## Implementation
 

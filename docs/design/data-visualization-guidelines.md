@@ -1,3 +1,11 @@
+---
+title: Data visualization style guidelines for Office Add-ins
+description: 
+ms.date: 11/20/2017 
+---
+
+
+
 # Data visualization style guidelines for Office Add-ins
 
 Good data visualizations help users find insights in their data. They can use those insights to tell stories that inform and persuade. This article provides guidelines to help you design effective data visualizations in your add-ins for Excel and other Office apps.
@@ -14,8 +22,8 @@ We recommend that you use [Office UI Fabric](http://dev.office.com/fabric) to cr
 
 Data visualizations share a general framework and common visual and interactive elements, including titles, labels, and data plots, as shown in the following figures.
 
-![Image of a line chart with title, axes, legend, and plot area labeled](../images/data_visualization_line_chart.png)
-![Image of a column chart with axes, gridlines, legend, and data plot labeled](../images/data_visualization_column_chart.png)
+![Image of a line chart with title, axes, legend, and plot area labeled](../images/data-visualization-line-chart.png)
+![Image of a column chart with axes, gridlines, legend, and data plot labeled](../images/data-visualization-column-chart.png)
 
 ### Chart titles
 
@@ -28,8 +36,8 @@ Follow these guidelines for chart titles:
 
 The following examples show serif and sans-serif typefaces used in chart titles. Notice how the scale contrast and effective use of white space create a strong visual hierarchy.
 
-![Image of a data visualization with serif font](../images/data_visualization_serif.png)
-![Image of a data visualization with sans-serif font](../images/data_visualization_san_serif.png)
+![Image of a data visualization with serif font](../images/data-visualization-serif.png)
+![Image of a data visualization with sans-serif font](../images/data-visualization-sans-serif.png)
 
 ### Axis labels
 
@@ -60,7 +68,7 @@ Light grays are most effective for gridlines. If you’re using Fabric, see the 
 
 The following image shows a data visualization with gridlines.
 
-![Image of a data visualization with gridlines](../images/data_visualization_gridlines.png)
+![Image of a data visualization with gridlines](../images/data-visualization-gridlines.png)
 
 ### Legends
 
