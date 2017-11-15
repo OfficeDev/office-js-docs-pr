@@ -1,9 +1,16 @@
+---
+title: Create and debug Office Add-ins in Visual Studio
+description: 
+ms.date: 11/20/2017 
+---
+
 
 # Create and debug Office Add-ins in Visual Studio
 
 This article describes how to use Visual Studio to create your first Office Add-in. The steps in this article based on Visual Studio 2015. If you're using another version of Visual Studio, the procedures might vary slightly.
 
->**Note:** To get started with an add-in for OneNote, see [Build your first OneNote add-in](../onenote/onenote-add-ins-getting-started.md).
+> [!NOTE]
+> To get started with an add-in for OneNote, see [Build your first OneNote add-in](../onenote/onenote-add-ins-getting-started.md).
 
 ## Create an Office Add-in project in Visual Studio
 
@@ -27,7 +34,8 @@ In Visual Studio 2015, some of the add-in project templates have been updated to
 - Outlook add-ins include options not just for including your add-in in email messages or appointments, but also for specifying whether the add-in is available when an email message or appointment is being composed as well as read.
     
 
- >**Note**  In Visual Studio most options are understandable from their descriptions except for the  **Email Message** checkbox. Use that checkbox if you want to create an Outlook add-in that appears not just with mail items, but also with meeting requests, responses, and cancellations.
+> [!NOTE]
+> In Visual Studio most options are understandable from their descriptions except for the  **Email Message** checkbox. Use that checkbox if you want to create an Outlook add-in that appears not just with mail items, but also with meeting requests, responses, and cancellations.
 
 When you've completed the wizard, Visual Studio creates a solution for you that contains two projects.
 
@@ -61,7 +69,8 @@ As your add-in becomes more sophisticated, you can add more HTML and JavaScript 
 |**Home.js**|Located in the  **Home** folder of the project, this is the JavaScript file associated with the Home.js page. You can place any code that is specific to the behavior of the Home.html page in the Home.js file. The Home.js file contains some example code to get you started.|
 |**App.js**|Located in the  **Add-in** folder of the project, this is the default JavaScript file of the entire add-in. You can place code that is common to the behavior of multiple pages of your add-in in the App.js file. The App.js file contains some example code to get you started.|
 
- >**Note**  You don't have to use these files. Feel free to add other files to the project and use those instead. If you want another HTML file to appear as the initial page of the add-in, open the manifest editor, and then point the  **SourceLocation** property to the name of the file.
+> [!NOTE]
+> You don't have to use these files. Feel free to add other files to the project and use those instead. If you want another HTML file to appear as the initial page of the add-in, open the manifest editor, and then point the  **SourceLocation** property to the name of the file.
 
 
 ## Debug your add-in
@@ -109,7 +118,9 @@ You can add documents to the add-in project. If you have a document that contain
 
 1. In  **Solution Explorer**, choose the add-in project folder.
     
-     >**Note**  Choose the add-in project and not the web application project.
+    > [!NOTE]
+    > Choose the add-in project and not the web application project.
+
 2. On the  **Project** menu, choose **Add Existing Item**.
     
 3. In the  **Add Existing Item** dialog box, locate and select the document that you want to add.
@@ -129,7 +140,8 @@ You can add documents to the add-in project. If you have a document that contain
 Visual Studio will automatically build the solution when you start it. You can start the solution from the  **Menu** bar by choosing **Debug**,  **Start**. 
 
 
- >**Note**  If script debugging isn't enabled in Internet Explorer, you won't be able to start the debugger in Visual Studio. You can enable script debugging by opening the  **Internet Options** dialog box, choosing the **Advanced** tab, and then clearing the **Disable Script Debugging (Internet Explorer)** and **Disable Script Debugging (Other)** check boxes.
+> [!NOTE]
+> If script debugging isn't enabled in Internet Explorer, you won't be able to start the debugger in Visual Studio. You can enable script debugging by opening the  **Internet Options** dialog box, choosing the **Advanced** tab, and then clearing the **Disable Script Debugging (Internet Explorer)** and **Disable Script Debugging (Other)** check boxes.
 
 Visual Studio builds the project and does the following:
 

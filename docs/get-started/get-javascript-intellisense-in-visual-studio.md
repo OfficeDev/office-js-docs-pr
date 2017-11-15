@@ -1,3 +1,10 @@
+---
+title: Get JavaScript IntelliSense in Visual Studio 2017 
+description: 
+ms.date: 11/20/2017 
+---
+
+
 # Get JavaScript IntelliSense in Visual Studio 2017 
 
 When you use Visual Studio 2017 to develop Office Add-ins, you can use JSDoc to enable IntelliSense for your JavaScript variables, objects, parameters, and return values. This article provides an overview of JSDoc and how you can use it to create IntellSense in Visual Studio. For more details, see [JavaScript IntelliSense](https://docs.microsoft.com/en-us/visualstudio/ide/javascript-intellisense) and [JSDoc support in JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript). 
@@ -36,7 +43,7 @@ The basic technique is to precede the variable (or parameter, and so on) with a 
 /** @type {Excel.Range} */
 var subsetRange;
 ```
-![Intellisense for variable](../../images/IntellisenseVS17Var.png)
+![Intellisense for variable](../images/intellisense-vs17-var.png)
 
 ### Parameter
 
@@ -46,7 +53,7 @@ function myFunc(paragraphs){
 
 }
 ```
-![Intellisense for parameter](../../images/IntellisenseVS17Param.png)
+![Intellisense for parameter](../images/intellisense-vs17-param.png)
 
 ### Return value
 
@@ -56,7 +63,7 @@ function myFunc() {
 
 }
 ```
-![Intellisense for return value](../../images/IntellisenseVS17Return.png)
+![Intellisense for return value](../images/intellisense-vs17-return.png)
 
 ### Complex types
 
@@ -68,8 +75,8 @@ function myFunc() {
 
 }
 ```
-![Intellisense for complex type](../../images/IntellisenseVS17ComplexType.png)
+![Intellisense for complex type](../images/intellisense-vs17-complex-type.png)
 
-##Additional resources
+## Additional resources
 
 - [Create and debug add-ins in Visual Studio](get-started/create-and-debug-office-add-ins-in-visual-studio.md)
