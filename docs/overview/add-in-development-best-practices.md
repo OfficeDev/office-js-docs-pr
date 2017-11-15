@@ -1,10 +1,18 @@
+---
+title: Best practices for developing Office Add-ins
+description: 
+ms.date: 11/20/2017 
+---
+
+
 
 # Best practices for developing Office Add-ins
 
 
 Effective add-ins offer unique and compelling functionality that extends Office applications in a visually appealing way. To create a great add-in, provide an engaging first-time experience for your users, design a first-class UI experience, and optimize your add-in's performance. Apply the best practices described in this article to create add-ins that help your users complete their tasks quickly and efficiently.
 
->**Note:** When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
+> [!NOTE]
+> When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
 
 ## Provide clear value
 
@@ -29,11 +37,11 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
  - Provide teaching UI to guide users and make your UI personal.
 
-    ![A screenshot that shows an add-in task pane with get started steps next to an add-in with no get started steps](../../images/586202ad-333b-417c-ad31-cc6eb952b239.png)
+    ![A screenshot that shows an add-in task pane with get started steps next to an add-in with no get started steps](../images/contoso-part-catalog-do-dont.png)
 
   - If your content add-in binds to data in the user's document, include sample data or a template to show users the data format to use.
 
-    ![A screenshot that shows a content add-in with data next to a content add-in with no data](../../images/7de2215f-ccef-4f82-aa9d-babcbddae0c6.png)
+    ![A screenshot that shows a content add-in with data next to a content add-in with no data](../images/add-in-title.png)
 
 - Offer [free trials](https://msdn.microsoft.com/en-us/library/dn456317.aspx#Anchor_1). If your add-in requires a subscription, make some functionality available without a subscription.
 
@@ -77,7 +85,9 @@ For templates that apply design principles that you can use and customize as you
 
 - Use the [Context.touchEnabled](../../reference/shared/office.context.touchenabled.md) property to detect whether the host application your add-in runs on is touch enabled.
 
-     >**Note**  This property is not supported in Outlook.
+  > [!NOTE]
+  > This property is not supported in Outlook.
+
 - Ensure that all controls are appropriately sized for touch interaction. For example, buttons have adequate touch targets, and input boxes are large enough for users to enter input.
 
 - Do not rely on non-touch input methods like hover or right-click.
@@ -87,7 +97,8 @@ For templates that apply design principles that you can use and customize as you
 - Test your add-in on a real device by using [sideloading](../testing/sideload-an-office-add-in-on-ipad-and-mac.md).
 
 
- >**Note**  If you're using [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric) for your design elements, many of these elements are taken care of.
+> [!NOTE]
+> If you're using [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric) for your design elements, many of these elements are taken care of.
 
 
 ## Optimize and monitor add-in performance
@@ -133,4 +144,6 @@ For templates that apply design principles that you can use and customize as you
 - Convey the value proposition of your add-in in your title and description. Don't rely on your brand.
 
 - Create a website to help users find and use your add-in.
+
+## Additional resources
 

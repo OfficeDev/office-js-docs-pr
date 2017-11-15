@@ -1,3 +1,10 @@
+---
+title: Changelog for Office Add-ins 
+description: 
+ms.date: 11/20/2017 
+---
+
+
 # Changelog for Office Add-ins
 
 This changelog covers what's changed on the Office Add-in platform, including updates to the APIs as well as new features and tools available to Office developers.

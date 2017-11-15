@@ -1,3 +1,9 @@
+---
+title: Office Add-ins platform overview
+description: 
+ms.date: 11/20/2017 
+---
+
 
 # Office Add-ins platform overview
 
@@ -32,7 +38,7 @@ Office Add-ins provide the following advantages over add-ins built using VBA, CO
 An Office Add-in includes two basic components: an XML manifest file, and your own web application. The manifest defines various settings, including how your add-in integrates with Office clients. Your web application needs to be hosted on a web server, or web hosting service, such as Microsoft Azure.
 
 ​**Manifest + webpage = an Office Add-in**
-![Manifest plus webpage equals Office Add-in](../../images/DK2_AgaveOverview01.png)
+![Manifest plus webpage equals Office Add-in](../images/dk2-agave-overview-01.png)
 
 ### Manifest 
 
@@ -50,7 +56,7 @@ The most basic Office Add-in consists of a static HTML page that is displayed in
 
 **Components of a Hello World Office Add-in**
 
-![Components of a Hello World add-in](../../images/DK2_AgaveOverview07.png)
+![Components of a Hello World add-in](../images/dk2-agave-overview-07.png)
 
 ## Extending and interacting with Office clients 
 
@@ -75,14 +81,14 @@ Custom UI and task panes are specified in the add-in manifest.  
 You can add custom ribbon buttons and menu items to the ribbon in Office for Windows Desktop and Office Online. This makes it easy for users to access your add-in directly from their Office application. Command buttons can launch different actions such as showing a task pane with custom HTML or executing a JavaScript function.  
 
 **Add-in commands running in Excel Desktop**
-![Custom buttons and menu commands](../../images/add-in-commands-overview..png)
+![Custom buttons and menu commands](../images/add-in-commands-overview.png)
 
 #### Task panes  
 
 You can use task panes in addition to add-in commands to enable users to interact with your solution. Clients that do not support add-in commands (Office 2013 and Office for iPad) will run your add-in as a task pane. Users launch task pane add-ins via the **My Add-ins** button on the Insert tab. 
 
 **Task pane**
-![Task pane](../../images/task-pane-overview.jpg)
+![Task pane](../images/task-pane-overview.jpg)
 
 ### Extend Outlook functionality 
 
@@ -98,7 +104,7 @@ You can embed web-based objects within Excel and PowerPoint documents – called
 
 **Content add-in**
 
-![In content add-in](../../images/DK2_AgaveOverview05.png)
+![In content add-in](../images/dk2-agave-overview-05.png)
 
 ## Office JavaScript APIs 
 
@@ -113,9 +119,7 @@ To start planning solutions that create effective and compelling user experience
 ## Additional resources
 
 - [Office Add-in samples](https://dev.office.com/code-samples)
-    
 - [Understanding the JavaScript API for Office](../../docs/develop/understanding-the-javascript-api-for-office.md)
-
 - [Office Add-in host and platform availability](https://dev.office.com/add-in-availability)
 
 
