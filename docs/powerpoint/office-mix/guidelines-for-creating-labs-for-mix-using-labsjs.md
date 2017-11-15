@@ -1,3 +1,9 @@
+---
+title: Guidelines for creating labs for Mix using LabsJS
+description: 
+ms.date: 11/20/2017 
+---
+
 
 # Guidelines for creating labs for Mix using LabsJS
 
@@ -23,7 +29,8 @@ You can reference the office.js library here:  `<script src="https://sforoffice.
 The labs.js library is included with the LabsJS SDK. Alternatively, you can reference the labs.js library on a CDN at  <code>https://az592748.vo.msecnd.net/sdk/LabsJS-1.0.4/labs-1.0.4.js</code>. Note that the production version of your lab must reference the version stored on the CDN.
 
 
- >**Note**:  In addition to the JavaScript file (labs-1.0.4.js), we provide a TypeScript definition file of the labs API (labs-1.0.4.d.ts). The definition file was built against TypeScript version 0.9.1.1.
+> [!NOTE]
+> In addition to the JavaScript file (labs-1.0.4.js), we provide a TypeScript definition file of the labs API (labs-1.0.4.d.ts). The definition file was built against TypeScript version 0.9.1.1.
 
 
 ### Callbacks and error handling
@@ -162,8 +169,6 @@ Labs.getTimeline().next({}, (err, unused) => { });
 
 
 ## Additional resources
-
-
 
 - [Office Mix add-ins](../../powerpoint/office-mix/office-mix-add-ins.md)
     

@@ -1,3 +1,9 @@
+---
+title: LabsJS lab components
+description: 
+ms.date: 11/20/2017 
+---
+
 
 # LabsJS lab components
 
@@ -19,11 +25,7 @@ Office Mix supports the following four lab component types:
 
 ## Additional resources
 
-
-
 - [Office Mix add-ins](../../powerpoint/office-mix/office-mix-add-ins.md)
-    
 - [Configuring and editing LabsJS labs for Office Mix](../../powerpoint/office-mix/configuring-and-editing-labsjs-labs-for-office-mix.md)
-    
 - [Walkthrough: Creating your first lab for Office Mix](../../powerpoint/office-mix/creating-your-first-lab-for-office-mix.md#walkthrough-creating-your-first-lab-for-office-mix)
     

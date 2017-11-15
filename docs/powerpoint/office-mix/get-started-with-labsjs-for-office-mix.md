@@ -1,3 +1,9 @@
+---
+title: Get started with LabsJS for Office Mix
+description: 
+ms.date: 11/20/2017 
+---
+
 
 # Get started with LabsJS for Office Mix
 
@@ -88,11 +94,7 @@ To submit your lab to the Office Store, see [Publish your Office Add-in](../../p
 
 ## Additional resources
 
-
-
 - [Office Mix add-ins](../../powerpoint/office-mix/office-mix-add-ins.md)
-    
 - [Office Add-ins](../../../docs/overview/office-add-ins.md)
-    
 - [Creating your first lab for Office Mix](../../powerpoint/office-mix/creating-your-first-lab-for-office-mix.md)
     
