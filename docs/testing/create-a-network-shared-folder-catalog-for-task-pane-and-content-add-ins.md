@@ -1,3 +1,8 @@
+---
+title: Sideload Office Add-ins for testing
+description: 
+ms.date: 11/20/2017 
+---
 
 # Sideload Office Add-ins for testing
 
@@ -26,29 +31,30 @@ The following video walks you through the process of sideloading your add-in on 
 
 5. Choose **Share** > **Done** > **Close**.
 
+
 ## Specify the shared folder as a trusted catalog
-
       
-3. Open a new document in Excel, Word, or PowerPoint.
+1. Open a new document in Excel, Word, or PowerPoint.
     
-4. Choose the **File** tab, and then choose **Options**.
+2. Choose the **File** tab, and then choose **Options**.
     
-5. Choose **Trust Center**, and then choose the  **Trust Center Settings** button.
+3. Choose **Trust Center**, and then choose the  **Trust Center Settings** button.
     
-6. Choose  **Trusted Add-in Catalogs**.
+4. Choose  **Trusted Add-in Catalogs**.
     
-7. In the  **Catalog Url** box, enter the full network path to the shared folder catalog, and then choose **Add Catalog**.
+5. In the  **Catalog Url** box, enter the full network path to the shared folder catalog, and then choose **Add Catalog**.
     
-8. Select the **Show in Menu** check box, and then choose **OK**.
+6. Select the **Show in Menu** check box, and then choose **OK**.
 
-9. Close the Office application so your changes will take effect.
+7. Close the Office application so your changes will take effect.
     
+
 ## Sideload your add-in
-
 
 1. Put the manifest file of any add-in that you are testing in the shared folder catalog. Note that you deploy the web application itself to a web server. Be sure to specify the URL in the **SourceLocation** element of the manifest file.
 
-    >**Important:**  To help make add-ins that access external data and services more secure, your add-in should use a secure protocol such as HTTPS to connect to external data and services. You must use HTTPS if your add-in uses add-in commands.
+    > [!IMPORTANT]
+    > To help make add-ins that access external data and services more secure, your add-in should use a secure protocol such as HTTPS to connect to external data and services. You must use HTTPS if your add-in uses add-in commands.
 
 2. In Excel, Word, or PowerPoint, select **My Add-ins** on the **Insert** tab of the ribbon.
 

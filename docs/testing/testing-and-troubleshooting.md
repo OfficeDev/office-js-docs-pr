@@ -1,3 +1,9 @@
+---
+title: Troubleshoot user errors with Office Add-ins
+description: 
+ms.date: 11/20/2017 
+---
+
 # Troubleshoot user errors with Office Add-ins
 
 At times your users might encounter issues with Office Add-ins that you develop. For example, an add-in fails to load or is inaccessible. Use the information in this article to help resolve common issues that your users encounter with your Office Add-in. 
@@ -18,6 +24,7 @@ The following table lists common error messages that users might encounter and s
 |APP ERROR: This app could not be started. Close this dialog to ignore the problem or click "Restart" to try again.|Verify that the latest Office updates are installed, or download the [update for Office 2013](https://support.microsoft.com/en-us/kb/2986156/).|
 |Error: Object doesn't support property or method 'defineProperty'|Confirm that Internet Explorer is not running in Compatibility Mode. Go to Tools >  **Compatibility View Settings**.|
 |Sorry, we couldn't load the app because your browser version is not supported. Click here for a list of supported browser versions.|Make sure that the browser supports HTML5 local storage, or reset your Internet Explorer settings. For information about supported browsers, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).|
+
 
 ## Outlook add-in doesn't work correctly
 
@@ -44,9 +51,11 @@ If the add-in doesn't activate when the user performs the following steps:
     
 Verify that the latest Office updates are installed, or download the [update for Office 2013](https://support.microsoft.com/en-us/kb/2986156/).
 
+
 ## Add-in doesn't load in task pane or other issues with the add-in manifest
 
 See [Validate and troubleshoot issues with your manifest](troubleshoot-manifest.md) to debug add-in manifest issues.
+
 
 ## Add-in dialog box cannot be displayed
 
@@ -62,7 +71,8 @@ When using an Office Add-in, the user is asked to allow a dialog box to be displ
 
 To resolve the issue, end users or administrators can add the domain of the add-in to the list of trusted sites in Internet Explorer. Use the same procedure whether you're using the Internet Explorer or Microsoft Edge browser.
 
->**Important:** Do not add the URL for an add-in to your list of trusted sites if you don't trust the add-in.
+> [!IMPORTANT]
+> Do not add the URL for an add-in to your list of trusted sites if you don't trust the add-in.
 
 To add a URL to your list of trusted sites:
 

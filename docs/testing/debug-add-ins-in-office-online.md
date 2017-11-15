@@ -1,3 +1,8 @@
+---
+title: Debug add-ins in Office Online
+description: 
+ms.date: 11/20/2017 
+---
 
 # Debug add-ins in Office Online
 
@@ -9,7 +14,8 @@ To get started:
 
 - Get an Office 365 developer account, if you don't already have one, or have access to a SharePoint site.
     
-     >**Note**  To sign up for a free Office 365 developer account, join our [Office 365 developer program](https://dev.office.com/devprogram).
+  > [!NOTE]
+  > To sign up for a free Office 365 developer account, join our [Office 365 developer program](https://dev.office.com/devprogram).
      
 - Set up an add-in catalog on Office 365 (SharePoint Online). An add-in catalog is a dedicated site collection in SharePoint Online that hosts document libraries for Office Add-ins. If you have your own SharePoint site, you can set up an add-in catalog document library. For information, see [Publish task pane and content add-ins to an add-in catalog on SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
     
@@ -21,13 +27,14 @@ To debug your add-in by using Office Online:
 
 1. Deploy your add-in to a server that supports SSL.
     
-     >**Note:**  We recommend that you use the [Yeoman generator](https://github.com/OfficeDev/generator-office) to create and host your add-in.
+    > [!NOTE]
+    > We recommend that you use the [Yeoman generator](https://github.com/OfficeDev/generator-office) to create and host your add-in.
      
 2. In your [add-in manifest file](../../docs/overview/add-in-manifests.md), update the  **SourceLocation** element value to include an absolute, rather than a relative, URI. For example:
-    
-	```xml
-	<SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
-	```
+      
+    ```xml
+    <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
+    ```
     
 3. Upload the manifest to the Office Add-ins library in the add-in catalog on SharePoint.
     
@@ -37,23 +44,20 @@ To debug your add-in by using Office Online:
     
 6. Use your favorite browser tool debugger to debug your add-in.
     
-    The following are some issues that you might encounter as you debug:
+
+The following are some issues that you might encounter as you debug:
     
-  - Some JavaScript errors that you see might originate from Office Online.
-    
-  - The browser might show an invalid certificate error that you will need to bypass.
-    
-  - If you set breakpoints in your code, Office Online might throw an error indicating that it is unable to save.
+- Some JavaScript errors that you see might originate from Office Online.
+      
+- The browser might show an invalid certificate error that you will need to bypass.
+      
+- If you set breakpoints in your code, Office Online might throw an error indicating that it is unable to save.
     
 
 ## Additional resources
 
-
 - [Best practices for developing Office Add-ins](../overview/add-in-development-best-practices.md)
-    
-- [Validation policies for apps and add-ins submitted to the Office Store (version 1.9)](http://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe%28Office.15%29.aspx)
-    
-- [Create effective Office Store apps and add-ins](http://msdn.microsoft.com/library/c66a6e6b-2e96-458f-8f8c-2a499fe942c9%28Office.15%29.aspx)
-    
-- [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)
+- [Validation policies for apps and add-ins submitted to the Office Store (version 1.9)](http://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe%28Office.15%29.aspx)  
+- [Create effective Office Store apps and add-ins](http://msdn.microsoft.com/library/c66a6e6b-2e96-458f-8f8c-2a499fe942c9%28Office.15%29.aspx)  
+- [Troubleshoot user errors with Office Add-ins](testing-and-troubleshooting.md)
     

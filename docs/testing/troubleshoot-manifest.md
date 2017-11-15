@@ -1,3 +1,9 @@
+---
+title: Validate and troubleshoot issues with your manifest
+description: 
+ms.date: 11/20/2017 
+---
+
 # Validate and troubleshoot issues with your manifest
 
 Use these methods to validate and troubleshoot issues in your manifest. 
@@ -18,7 +24,8 @@ To use the Office Add-in Validator to validate your manifest:
 	npm install -g office-addin-validator
 	```
 	
-    > **Note:** If you already have Yo Office installed, upgrade to the latest version, and the validator will be installed as a dependency.
+	> [!NOTE]
+	> If you already have Yo Office installed, upgrade to the latest version, and the validator will be installed as a dependency.
 
 3. Run the following command to validate your manifest. Replace MANIFEST.XML with the path to the manifest XML file.
 
@@ -36,6 +43,7 @@ To use a command-line XML schema validation tool to validate your manifest:
 
 1.	Install [tar](https://www.gnu.org/software/tar/) and [libxml](http://xmlsoft.org/FAQ.html), if you haven't already. 
 2.	Run the following command. Replace XSD_FILE with the path to the manifest XSD file and XML_FILE with the path to the manifest XML file.
+	
 	```
 	xmllint --noout --schema XSD_FILE XML_FILE
 	```
@@ -44,17 +52,20 @@ To use a command-line XML schema validation tool to validate your manifest:
 
 You can use runtime logging to debug your add-in's manifest. This feature can help you identify and fix issues with your manifest that are not detected by XSD schema validation, such as a mismatch between resource IDs. Runtime logging is particularly  useful for debugging add-ins that implement add-in commands.  
 
->**Note:** The runtime logging feature is currently available for Office 2016 desktop.
+> [!NOTE]
+> The runtime logging feature is currently available for Office 2016 desktop.
 
 ### Turn on runtime logging
 
->**Important**: Runtime Logging affects performance. Turn it on only when you need to debug issues with your add-in manifest.
+> [!IMPORTANT]
+> Runtime Logging affects performance. Turn it on only when you need to debug issues with your add-in manifest.
 
 1. Make sure that you are running Office 2016 desktop build **16.0.7019** or later. 
 2. Add the `RuntimeLogging` registry key under 'HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\'. 
 3. Set the default value of the key to the full path of the file where you want the log to be written. For an example, see [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip). 
 
- > **Note:** The directory in which the log file will be written must already exist and you must have write permissions to it. 
+> [!NOTE]
+> The directory in which the log file will be written must already exist and you must have write permissions to it. 
  
 The following image shows what the registry should look like.
 ![Screenshot of the registry editor with a RuntimeLogging registry key](http://i.imgur.com/Sa9TyI6.png)
@@ -67,7 +78,9 @@ To use runtime logging to troubleshoot issues loading an add-in:
  
 1. [Sideload your add-in](sideload-office-add-ins-for-testing.md) for testing. 
 
-	>Note: We recommend that you sideload only the add-in that you are testing to minimize the number of messages in the log file.
+	> [!NOTE]
+	> We recommend that you sideload only the add-in that you are testing to minimize the number of messages in the log file.
+
 2. If nothing happens and you don't see your add-in (and it's not appearing in the add-ins dialog box), open the log file.
 3. Search the log file for your add-in ID, which you define in your manifest. In the log file, this ID is labeled `SolutionId`. 
 
