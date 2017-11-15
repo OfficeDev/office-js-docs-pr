@@ -1,3 +1,9 @@
+---
+title: Get the whole document from an add-in for PowerPoint or Word
+description: 
+ms.date: 11/20/2017 
+---
+
 
 # Get the whole document from an add-in for PowerPoint or Word
 
@@ -33,32 +39,32 @@ Before you begin creating this add-in for PowerPoint or Word, you should be fami
 The XML manifest file for the add-in for PowerPoint provides important information about the add-in: what applications can host it, the location of the HTML file, the add-in title and description, and many other characteristics.
 
 
-- In a text editor, add the following code to the manifest file.
+1. In a text editor, add the following code to the manifest file.
     
-```xml  
-<?xml version="1.0" encoding="utf-8" ?> 
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-  xsi:type="TaskPaneApp">
-    <Id>[Replace_With_Your_GUID]</Id> 
-    <Version>1.0</Version> 
-    <ProviderName>[Provider Name]</ProviderName> 
-    <DefaultLocale>EN-US</DefaultLocale> 
-    <DisplayName DefaultValue="Get Doc add-in" /> 
-    <Description DefaultValue="My get PowerPoint or Word document add-in." /> 
-    <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg" /> 
-    <Hosts>
-      <Host Name="Document" /> 
-      <Host Name="Presentation" /> 
-    </Hosts>
-    <DefaultSettings>
-      <SourceLocation DefaultValue="[Network location of app]/GetDoc_App.html" /> 
-    </DefaultSettings>
-    <Permissions>ReadWriteDocument</Permissions> 
-</OfficeApp>
-```
+    ```xml  
+    <?xml version="1.0" encoding="utf-8" ?> 
+    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:type="TaskPaneApp">
+        <Id>[Replace_With_Your_GUID]</Id> 
+        <Version>1.0</Version> 
+        <ProviderName>[Provider Name]</ProviderName> 
+        <DefaultLocale>EN-US</DefaultLocale> 
+        <DisplayName DefaultValue="Get Doc add-in" /> 
+        <Description DefaultValue="My get PowerPoint or Word document add-in." /> 
+        <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg" /> 
+        <Hosts>
+        <Host Name="Document" /> 
+        <Host Name="Presentation" /> 
+        </Hosts>
+        <DefaultSettings>
+        <SourceLocation DefaultValue="[Network location of app]/GetDoc_App.html" /> 
+        </DefaultSettings>
+        <Permissions>ReadWriteDocument</Permissions> 
+    </OfficeApp>
+    ```
 
-- Save the file as GetDoc_App.xml using UTF-8 encoding to a network location or to an add-in catalog.
+2. Save the file as GetDoc_App.xml using UTF-8 encoding to a network location or to an add-in catalog.
     
 
 ## Create the user interface for the add-in
@@ -69,66 +75,66 @@ For the user interface of the add-in, you can use HTML, written directly into th
 Use the following procedure to create a simple user interface for the add-in that includes a heading and a single button.
 
 
-- In a new file in the text editor, add the following HTML.
-    
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-        <title>Publish presentation</title>
-        <link rel="stylesheet" type="text/css" href="Program.css" />
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
-        <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
-        <script src="GetDoc_App.js"></script>
-    </head>
-    <body>
-      <form>
-        <h1>Publish presentation</h1>
-        <br />
-        <div><input id='submit' type="button" value="Submit" /></div>
-        <br />
-        <div><h2>Status</h2> 
-            <div id="status"></div>
-        </div>
-      </form>
-    </body>
-</html>
-```
+1. In a new file in the text editor, add the following HTML.
+        
+    ```html
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+            <title>Publish presentation</title>
+            <link rel="stylesheet" type="text/css" href="Program.css" />
+            <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+            <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+            <script src="GetDoc_App.js"></script>
+        </head>
+        <body>
+        <form>
+            <h1>Publish presentation</h1>
+            <br />
+            <div><input id='submit' type="button" value="Submit" /></div>
+            <br />
+            <div><h2>Status</h2> 
+                <div id="status"></div>
+            </div>
+        </form>
+        </body>
+    </html>
+    ```
 
-- Save the file as GetDoc_App.html using UTF-8 encoding to a network location or to a web server.
-    
+2. Save the file as GetDoc_App.html using UTF-8 encoding to a network location or to a web server.
 
- >**Note**  Be sure that the **head** tags of the add-in contains a **script** tag with a valid link to the office.js file. 
+    > [!NOTE]
+    > Be sure that the **head** tags of the add-in contains a **script** tag with a valid link to the office.js file. 
 
-We'll use some CSS to give the add-in a simple, yet modern and professional appearance. Use the following CSS to define the style of the add-in.
+    We'll use some CSS to give the add-in a simple, yet modern and professional appearance. Use the following CSS to define the style of the add-in.
 
 
-- In a new file in the text editor, add the following CSS.
-    
-```css  
-body
-{
-    font-family: "Segoe UI Light","Segoe UI",Tahoma,sans-serif;
-}
-h1,h2
-{
-    text-decoration-color:#4ec724;
-}
-input [type="submit"], input[type="button"] 
-{ 
-    height:24px; 
-    padding-left:1em; 
-    padding-right:1em; 
-    background-color:white; 
-    border:1px solid grey; 
-    border-color: #dedfe0 #b9b9b9 #b9b9b9 #dedfe0; 
-    cursor:pointer; 
-}
-```
+3. In a new file in the text editor, add the following CSS.
+        
+    ```css  
+    body
+    {
+        font-family: "Segoe UI Light","Segoe UI",Tahoma,sans-serif;
+    }
+    h1,h2
+    {
+        text-decoration-color:#4ec724;
+    }
+    input [type="submit"], input[type="button"] 
+    { 
+        height:24px; 
+        padding-left:1em; 
+        padding-right:1em; 
+        background-color:white; 
+        border:1px solid grey; 
+        border-color: #dedfe0 #b9b9b9 #b9b9b9 #dedfe0; 
+        cursor:pointer; 
+    }
+    ```
 
-- Save the file as Program.css using UTF-8 encoding to the network location or to the web server where the GetDoc_App.html file is located.
+4. Save the file as Program.css using UTF-8 encoding to the network location or to the web server where the GetDoc_App.html file is located.
     
 
 ## Add the JavaScript to get the document
@@ -137,8 +143,6 @@ input [type="submit"], input[type="button"]
 In the code for the add-in, a handler to the [Office.initialize](../../reference/shared/office.initialize.md) event adds a handler to the click event of the **Submit** button on the form and informs the user that the add-in is ready.
 
 The following code example shows the event handler for the  **Office.initialize** event along with a helper function, `updateStatus`, for writing to the status div.
-
-
 
 
 ```js
@@ -166,7 +170,6 @@ function updateStatus(message) {
 ```
 
 
-
 When you choose the  **Submit** button in the UI, the add-in calls the `sendFile` function, which contains a call to the [Document.getFileAsync](../../reference/shared/document.getfileasync.md) method. The **getFileAsync** method uses the asynchronous pattern, similar to other methods in the JavaScript API for Office. It has one required parameter, _fileType_, and two optional parameters,  _options_ and _callback_. 
 
 The  _fileType_ parameter expects one of three constants from the [FileType](../../reference/shared/filetype-enumeration.md) enumeration: **Office.FileType.Compressed** ("compressed"), **Office.FileType.PDF** ("pdf"), or **Office.FileType.Text** ("text"). PowerPoint supports only **Compressed** as an argument; Word supports all three. When you pass in **Compressed** for the _fileType_ parameter, the **getFileAsync** method returns the document as a PowerPoint 2013 presentation file (*.pptx) or Word 2013 document file (*.docx) by creating a temporary copy of the file on the local computer.
@@ -174,8 +177,6 @@ The  _fileType_ parameter expects one of three constants from the [FileType](../
 The  **getFileAsync** method returns a reference to the file as a [File](../../reference/shared/file.md) object. The **File** object exposes four members: the [size](../../reference/shared/file.size.md) property, [sliceCount](../../reference/shared/file.slicecount.md) property, [getSliceAsync](../../reference/shared/file.getsliceasync.md) method, and [closeAsync](../../reference/shared/file.closeasync.md) method. The **size** property returns the number of bytes in the file. The **sliceCount** returns the number of [Slice](../../reference/shared/document.md) objects (discussed later in this article) in the file.
 
 Use the following code to get the PowerPoint or Word document as a  **File** object using the **Document.getFileAsync** method and then makes a call to the locally defined `getSlice` function. Note that the **File** object, a counter variable, and the total number of slices in the file are passed along in the call to `getSlice` in an anonymous object.
-
-
 
 
 ```js
@@ -213,7 +214,6 @@ The  **Slice** object gives you access to the data contained in the file. Unless
 
 
 
-
 ```js
 // Get a slice from the file and then call sendSlice.
 function getSlice(state) {
@@ -238,7 +238,8 @@ Once you have converted the data to Base64, you can then transmit it to a web se
 Add the following code to send a slice to a web service.
 
 
- >**Note**  This code sends a PowerPoint or Word file to the web server in multiple slices. The web server or service must compile each individual slice into a single .pptx file before you can perform any manipulations on it.
+> [!NOTE]
+> This code sends a PowerPoint or Word file to the web server in multiple slices. The web server or service must compile each individual slice into a single .pptx file before you can perform any manipulations on it.
 
 
 

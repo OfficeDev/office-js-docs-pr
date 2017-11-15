@@ -1,3 +1,9 @@
+---
+title: Office JavaScript API support for content and task pane add-ins in Office 2013
+description: 
+ms.date: 11/20/2017 
+---
+
 
 # Office JavaScript API support for content and task pane add-ins in Office 2013
 
@@ -22,7 +28,8 @@ You can use the [Office JavaScript API](../../reference/javascript-api-for-offic
     - The [Settings](../../reference/shared/settings.md) object to save custom data, such as user preferences, and add-in state.
     
 
- >**Important**  Some of the API members aren't supported across all Office applications that can host content and task pane add-ins. To determine which members are supported, see any of the following:
+> [!IMPORTANT]
+> Some of the API members aren't supported across all Office applications that can host content and task pane add-ins. To determine which members are supported, see any of the following:
 
 For a summary of Office JavaScript API support across Office host applications, see [Understanding the JavaScript API for Office](../../docs/develop/understanding-the-javascript-api-for-office.md).
 
@@ -153,10 +160,7 @@ For more information, see [Requesting permissions for API use in content and tas
 
 ## Additional resources
 
-
 - [Office JavaScript API](../../reference/javascript-api-for-office.md)
-    
 - [Schema reference for Office Add-ins manifests](http://msdn.microsoft.com/en-us/library/7e0cadc3-f613-8eb9-57ef-9032cbb97f92.aspx)
-    
 - [Troubleshoot user errors with Office Add-ins](../../docs/testing/testing-and-troubleshooting.md)
     

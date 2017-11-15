@@ -1,3 +1,9 @@
+---
+title: Bind to regions in a document or spreadsheet
+description: 
+ms.date: 11/20/2017 
+---
+
 
 # Bind to regions in a document or spreadsheet
 
@@ -93,9 +99,9 @@ The anonymous function passed into the function as the third  _callback_ paramet
 Figure 1 shows the built-in range selection prompt in Excel.
 
 
-**Figure 1. Excel Select Data UI**
+*Figure 1. Excel Select Data UI*
 
-![Excel Select Data UI](../../images/AgaveAPIOverview_ExcelSelectionUI.png)
+![Excel Select Data UI](../images/agave-api-overview-excel-selection-ui.png)
 
 
 ## Add a binding to a named item
@@ -125,7 +131,8 @@ function write(message){
  **For Excel**, the  `itemName` parameter of the [addFromNamedItemAsync] method can refer to an existing named range, a range specified with the `A1` reference style `("A1:A3")`, or a table. By default, adding a table in Excel assigns the name "Table1" for the first table you add, "Table2" for the second table you add, and so on. To assign a meaningful name for a table in the Excel UI, use the **Table Name** property on the **Table Tools | Design** tab of the ribbon.
 
 
- >**Note**  In Excel, when specifying a table as a named item, you must fully qualify the name to include the worksheet name in the name of the table in this format:  `"Sheet1!Table1"`
+> [!NOTE]
+> In Excel, when specifying a table as a named item, you must fully qualify the name to include the worksheet name in the name of the table in this format:  `"Sheet1!Table1"`
 
 The following example creates a binding in Excel to the first three cells in column A ( `"A1:A3"`), assigns the  id `"MyCities"`, and then writes three city names to that binding.
 
@@ -253,7 +260,8 @@ function write(message){
 ```
 
 
- > **Note:**  If the  `select` method promise successfully returns a [Binding] object, that object exposes only the following four methods of the object: [getDataAsync], [setDataAsync], [addHandlerAsync], and [removeHandlerAsync]. If the promise cannot return a  Binding object, the `onError` callback can be used to access an [asyncResult].error object to get more information.If you need to call a member of the Binding object other than the four methods exposed by the Binding object promise returned by the `select` method, instead use the [getByIdAsync] method by using the [Document.bindings] property and Bindings.[getByIdAsync] method to retrieve the Binding** object.
+> [!NOTE]
+> If the  `select` method promise successfully returns a [Binding] object, that object exposes only the following four methods of the object: [getDataAsync], [setDataAsync], [addHandlerAsync], and [removeHandlerAsync]. If the promise cannot return a  Binding object, the `onError` callback can be used to access an [asyncResult].error object to get more information.If you need to call a member of the Binding object other than the four methods exposed by the Binding object promise returned by the `select` method, instead use the [getByIdAsync] method by using the [Document.bindings] property and Bindings.[getByIdAsync] method to retrieve the Binding** object.
 
 ## Release a binding by ID
 
@@ -321,7 +329,8 @@ In the example, the first parameter is the value to set on  `myBinding`. Because
 
 The anonymous function that is passed into the function is a callback that is executed when the operation is complete. The function is called with a single parameter,  `asyncResult`, which contains the status of the result.
 
- > **Note:** Starting with the release of the Excel 2013 SP1 and the corresponding build of Excel Online, you can now [set formatting when writing and updating data in bound tables](../../docs/excel/format-tables-in-add-ins-for-excel.md).
+> [!NOTE]
+> Starting with the release of the Excel 2013 SP1 and the corresponding build of Excel Online, you can now [set formatting when writing and updating data in bound tables](../../docs/excel/format-tables-in-add-ins-for-excel.md).
 
 
 ## Detect changes to data or the selection in a binding
@@ -369,15 +378,14 @@ function removeEventHandlerFromBinding() {
 ```
 
 
- >**Important:**  If the optional  _handler_ parameter is omitted when the [removeHandlerAsync] method is called, all event handlers for the specified `eventType` will be removed.
+> [!IMPORTANT]
+> If the optional  _handler_ parameter is omitted when the [removeHandlerAsync] method is called, all event handlers for the specified `eventType` will be removed.
 
 
 ## Additional resources
 
-- [Understanding the JavaScript API for Office](../../docs/develop/understanding-the-javascript-api-for-office.md)
-    
+- [Understanding the JavaScript API for Office](../../docs/develop/understanding-the-javascript-api-for-office.md) 
 - [Asynchronous programming in Office Add-ins](../../docs/develop/asynchronous-programming-in-office-add-ins.md)
-    
 - [Read and write data to the active selection in a document or spreadsheet](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
 [Binding]: 				 ../../reference/shared/binding.md

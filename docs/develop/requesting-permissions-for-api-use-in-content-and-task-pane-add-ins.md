@@ -1,5 +1,12 @@
+---
+title: Requesting permissions for API use in content and task pane add-ins
+description: 
+ms.date: 11/20/2017 
+---
+
 
 # Requesting permissions for API use in content and task pane add-ins
+
 This article describes the different permission levels that you can declare in your content or task pane add-in's manifest to specify the level of JavaScript API access your add-in requires for its features. 
 
 
@@ -11,9 +18,9 @@ This article describes the different permission levels that you can declare in y
 A five-level JavaScript API access-permissions model provides the basis for privacy and security for users of your content and task pane add-ins. Figure 1 shows the five levels of API permissions you can declare in your add-in's manifest.
 
 
-**Figure 1. The five-level permission model for content and task pane add-ins**
+*Figure 1. The five-level permission model for content and task pane add-ins*
 
-![Levels of permissions for task pane apps](../../images/off15appsdk_TaskPaneAppPermission.gif)
+![Levels of permissions for task pane apps](../images/office15-app-sdk-task-pane-app-permission.gif)
 
 
 
@@ -42,7 +49,6 @@ The following table describes the subset of the JavaScript API that is enabled b
 
 ## Additional resources
 
-    
 - [Privacy and security for Office Add-ins](../../docs/develop/privacy-and-security.md)
     
 

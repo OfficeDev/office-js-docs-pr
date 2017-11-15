@@ -1,11 +1,16 @@
+---
+title: Understanding the JavaScript API for Office
+description: 
+ms.date: 11/20/2017 
+---
+
 
 # Understanding the JavaScript API for Office
 
-
-
 This article provides information about the JavaScript API for Office and how to use it. For reference information, see [JavaScript API for Office](../../reference/javascript-api-for-office.md). For information about updating Visual Studio project files to the most current version of the JavaScript API for Office, see [Update the version of your JavaScript API for Office and manifest schema files](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md).
 
->**Note:** When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
+> [!NOTE]
+> When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
 
 ## Referencing the JavaScript API for Office library in your add-in
 
@@ -42,12 +47,13 @@ Office.initialize = function () {
     });
   };
 ```
+
 All pages within an Office Add-ins are required to assign an event handler to the initialize event, **Office.initialize**.
 If you fail to assign an event handler, your add-in may raise an error when it starts. Also, if a user attempts to use your add-in with an Office Online web client, such as Excel Online, PowerPoint Online, or Outlook Web App, it will fail to run. If you don't need any initialization code, then the body of the function you assign to **Office.initialize** can be empty, as it is in the first example above.
 
 For more detail about the sequence of events when an add-in is initialized, see [Loading the DOM and runtime environment](../../docs/develop/loading-the-dom-and-runtime-environment.md).
 
-#### Initialization Reason
+#### Initialization reason
 For task pane and content add-ins, Office.initialize provides an additional _reason_ parameter. This parameter can be used to determine how an add-in was added to the current document. You can use this to provide different logic for when an add-in is first inserted versus when it already existed within the document. 
 
 ```js
@@ -61,7 +67,7 @@ Office.initialize = function (reason) {
 ```
 For more information, see [Office.initialize Event](../../reference/shared/office.initialize.md) and [InitializationReason Enumeration](../../reference/shared/initializationreason-enumeration.md) 
 
-## Context Object
+## Context object
 
  **Applies to:** All add-in types
 
@@ -134,7 +140,8 @@ In both selection-based and binding-based data access, document contents are exp
 The data access methods on the  **Document** and [Binding](../../reference/shared/binding.md) objects support specifying the desired data type using the _coercionType_ parameter of these methods, and corresponding [CoercionType](../../reference/shared/coerciontype-enumeration.md) enumeration values. Regardless of the actual shape of the binding, the different Office applications support the common data types by trying to coerce the data into the requested data type. For example, if a Word table or paragraph is selected, the developer can specify to read it as plain text, HTML, Office Open XML, or a table, and the API implementation handles the necessary transformations and data conversions.
 
 
- >**Tip**   **When should you use the matrix versus table coercionType for data access?** If you need your tabular data to grow dynamically when rows and columns are added, and you must work with table headers, you should use the table data type (by specifying the _coercionType_ parameter of a **Document** or **Binding** object data access method as `"table"` or **Office.CoercionType.Table**). Adding rows and columns within the data structure is supported in both table and matrix data, but appending rows and columns is supported only for table data. If you aren't planning on adding rows and columns, and your data doesn't require header functionality, then you should use the matrix data type (by specifying the  _coercionType_ parameter of the data access method as `"matrix"` or **Office.CoercionType.Matrix**), which provides a simpler model of interacting with the data.
+> [!TIP]
+> **When should you use the matrix versus table coercionType for data access?** If you need your tabular data to grow dynamically when rows and columns are added, and you must work with table headers, you should use the table data type (by specifying the _coercionType_ parameter of a **Document** or **Binding** object data access method as `"table"` or **Office.CoercionType.Table**). Adding rows and columns within the data structure is supported in both table and matrix data, but appending rows and columns is supported only for table data. If you aren't planning on adding rows and columns, and your data doesn't require header functionality, then you should use the matrix data type (by specifying the  _coercionType_ parameter of the data access method as `"matrix"` or **Office.CoercionType.Matrix**), which provides a simpler model of interacting with the data.
 
 If the data can't be coerced to the specified type, the [AsyncResult.status](../../reference/shared/asyncresult.error.md) property in the callback returns `"failed"`, and you can use the [AsyncResult.error](../../reference/shared/asyncresult.context.md) property to access an [Error](../../reference/shared/error.md) object with information about why the method call failed.
 

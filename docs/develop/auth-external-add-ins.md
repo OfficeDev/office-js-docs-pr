@@ -1,8 +1,15 @@
+---
+title: Authorize external services in your Office Add-in
+description: 
+ms.date: 11/20/2017 
+---
+
 # Authorize external services in your Office Add-in
 
 Popular online services, including Office 365, Google, Facebook, LinkedIn, SalesForce, and GitHub, let developers give users access to their accounts in other applications. This gives you the ability to include these services in your Office Add-in.
 
->**Note:** If the external service is accessible through Microsoft Graph, such as Office 365 or OneDrive, then you can provide the best experience for your users, and the easiest development experience for yourself, by using the single sign-on system described at [Enable single sign-on for Office Add-ins](http://dev.office.com/docs/add-ins/develop/sso-in-office-add-ins) and its related articles. The techniques described in this article are best used for external services that are not accessible with Microsoft Graph. However, they *can* be used to access Microsoft Graph, and you might prefer them to the advantages of single sign-on. For example, the single sign-on system requires server-side code, so it cannot be used with a true single page app. Also, the single sign-on system is not yet supported on all platforms.
+> [!NOTE]
+> If the external service is accessible through Microsoft Graph, such as Office 365 or OneDrive, then you can provide the best experience for your users, and the easiest development experience for yourself, by using the single sign-on system described at [Enable single sign-on for Office Add-ins](http://dev.office.com/docs/add-ins/develop/sso-in-office-add-ins) and its related articles. The techniques described in this article are best used for external services that are not accessible with Microsoft Graph. However, they *can* be used to access Microsoft Graph, and you might prefer them to the advantages of single sign-on. For example, the single sign-on system requires server-side code, so it cannot be used with a true single page app. Also, the single sign-on system is not yet supported on all platforms.
 
 The industry standard framework for enabling web application access to an online service is **OAuth 2.0**. In most situations, you don't need to know the details of how the framework works to use it in your add-in. Many libraries are available that simplify the details for you.
 
@@ -17,7 +24,8 @@ The purpose of an OAuth flow is to secure the identity and authorization of the 
 
 You should be familiar with the pros and cons of the Implicit flow and the Authorization Code flow. For more infomation about these two flows, see [Authorization Code](https://tools.ietf.org/html/rfc6749#section-1.3.1) and [Implicit](https://tools.ietf.org/html/rfc6749#section-1.3.2).
 
->**Note:** You also have the option of using a middleman service to perform authorization and pass the access token to your add-in. For details about this scenario, see the **Middleman services** section later in this article.
+> [!NOTE]
+> You also have the option of using a middleman service to perform authorization and pass the access token to your add-in. For details about this scenario, see the **Middleman services** section later in this article.
 
 ## Using the Implicit flow in Office Add-ins
 The best way to find out if an online service supports the Implicit flow is to consult the service's documentation. For services that support the Implicit flow, you can use the **Office-js-helpers** JavaScript library to do all the detailed work for you:

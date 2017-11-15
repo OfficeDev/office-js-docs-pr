@@ -1,6 +1,13 @@
+---
+title: Loading the DOM and runtime environment
+description: 
+ms.date: 11/20/2017 
+---
+
 
 # Loading the DOM and runtime environment
-
+
+
 
 An add-in must ensure that both the DOM and the Office Add-ins runtime environment are loaded before running its own custom logic. 
 
@@ -8,7 +15,7 @@ An add-in must ensure that both the DOM and the Office Add-ins runtime environme
 
 The following figure shows the flow of events involved in starting a content or task pane add-in in Excel, PowerPoint, Project, Word, or Access.
 
-![Flow of events when starting a content or task pane add-in](../../images/off15appsdk_LoadingDOMAgaveRuntime.png)
+![Flow of events when starting a content or task pane add-in](../images/office15-app-sdk-loading-dom-agave-runtime.png)
 
 The following events occur when a content or task pane add-in starts: 
 
@@ -35,7 +42,7 @@ The following events occur when a content or task pane add-in starts:
 
 The following figure shows the flow of events involved in starting an Outlook add-in running on the desktop, tablet, or smartphone.
 
-![Flow of events when starting Outlook add-in](../../images/olowawecon15_LoadingDOMAgaveRuntime.png)
+![Flow of events when starting Outlook add-in](../images/outlook15-loading-dom-agave-runtime.png)
 
 The following events occur when an Outlook add-in starts: 
 
@@ -94,8 +101,6 @@ If your add-in includes more than one page, whenever it loads a new page that pa
 
 
 ## Additional resources
-
-
 
 - [Understanding the JavaScript API for Office](../../docs/develop/understanding-the-javascript-api-for-office.md)
     

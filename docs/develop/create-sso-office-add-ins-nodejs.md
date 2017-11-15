@@ -1,10 +1,17 @@
+---
+title: Create a Node.js Office Add-in that uses single sign-on
+description: 
+ms.date: 11/20/2017 
+---
+
 # Create a Node.js Office Add-in that uses single sign-on
 
 Users can sign into Office, and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign-on a second time. For an overview, see [Enable SSO in an Office Add-in](../../docs/develop/sso-in-office-add-ins.md).
 
 This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with Node.js and express. 
 
-> **Note:** For a similar article about an ASP.NET-based add-in, see [Create an ASP.NET Office Add-in that uses single sign-on](../../docs/develop/create-sso-office-add-ins-aspnet.md).
+> [!NOTE]
+> For a similar article about an ASP.NET-based add-in, see [Create an ASP.NET Office Add-in that uses single sign-on](../../docs/develop/create-sso-office-add-ins-aspnet.md).
 
 ## Prerequisites
 
@@ -18,17 +25,19 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 1. Clone or download the repo at [Office Add-in NodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso). 
 
 
-    > **Note:** There are two versions of the sample. 
-    > 
+    > [!NOTE]
+    > There are two versions of the sample:  
     > * The **Before** folder is a starter project. The UI and other aspects of the add-in that are not directly connected to SSO or authorization are already done. Later sections of this article walk you through the process of completing it. 
     > * The **Completed** version of the sample is just like the add-in that you would have if you completed the procedures of this article, except that the completed project has code comments that would be redundant with the text of this article. To use the completed version, just follow the instructions in this article, but replace "Before" with "Completed" and skip the sections **Code the client side** and **Code the server** side.
 
-1. Open a Git bash console in the **Before** folder.
+2. Open a Git bash console in the **Before** folder.
 
-2. Enter `npm install` in the console to install all of the dependencies itemized in the package.json file.
+3. Enter `npm install` in the console to install all of the dependencies itemized in the package.json file.
 
-3. Enter `npm run build ` in the console to build the project. 
-     > Note: You may see some build errors saying that some variables are declared but not used. Ignore these errors. They are a side effect of the fact that the "Before" version of the sample is missing some code that will be added later.
+4. Enter `npm run build ` in the console to build the project. 
+     
+    > [!NOTE]
+    > You may see some build errors saying that some variables are declared but not used. Ignore these errors. They are a side effect of the fact that the "Before" version of the sample is missing some code that will be added later.
 
 ## Register the add-in with Azure AD V2 endpoint
 
@@ -42,7 +51,8 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. When the configuration page for the app opens, copy the **Application Id** and save it. You will use it in a later procedure. 
 
-    > Note: This ID is the “audience” value when other applications, such as the Office host application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the “client ID” of the application when it, in turn, seeks authorized access to Microsoft Graph.
+    > [!NOTE]
+    > This ID is the “audience” value when other applications, such as the Office host application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the “client ID” of the application when it, in turn, seeks authorized access to Microsoft Graph.
 
 1. In the **Application Secrets** section, press **Generate New Password**. A popup dialog opens with a new password (also called an “app secret”) displayed. *Copy the password immediately and save it with the application ID.* You will need it in a later procedure. Then close the dialog.
 
@@ -54,17 +64,18 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. This step and the next one give the Office host application access to your add-in. In the **Pre-authorized applications** section, you identify the applications that you want to authorize to your add-in's web application. Each of the following IDs needs to be pre-authorized. Each time you enter one, a new empty textbox appears. (Enter only the GUID.)
 
- * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
- * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office Online)
- * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office Online) 
+    * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
+    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office Online)
+    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office Online) 
 
-1. Open the **Scope** drop down beside each **Application ID** and check the box for `api://localhost:44355/{App ID GUID}/access_as_user`.
+1. Open the **Scope** dropdown beside each **Application ID** and check the box for `api://localhost:44355/{App ID GUID}/access_as_user`.
 
 1. Near the top of the **Platforms** section, click **Add Platform** again and select **Web**.
 
 1. In the new **Web** section under **Platforms**, enter the following as a **Redirect URL**: `https://localhost:3000`. 
 
-    > Note: As of this writing, the **Web API** platform sometimes disappears from the **Platforms** section, particularly if the page is refreshed after the **Web** platform is added *and the registration page is saved*. For reassurance that your **Web API** platform is still part of the registration, click the **Edit Application Manifest** button near the bottom of the page. You should see the `api://localhost:3000/{App ID GUID}` string in the **identifierUris** property of the manifest. There will also be a **oauth2Permissions** property whose **value** subproperty has the value `access_as_user`.
+    > [!NOTE]
+    > As of this writing, the **Web API** platform sometimes disappears from the **Platforms** section, particularly if the page is refreshed after the **Web** platform is added *and the registration page is saved*. For reassurance that your **Web API** platform is still part of the registration, click the **Edit Application Manifest** button near the bottom of the page. You should see the `api://localhost:3000/{App ID GUID}` string in the **identifierUris** property of the manifest. There will also be a **oauth2Permissions** property whose **value** subproperty has the value `access_as_user`.
 
 1. Scroll down to the **Microsoft Graph Permissions** section, the **Delegated Permissions** subsection. Use the **Add** button to open a **Select Permissions** dialog.
 
@@ -78,7 +89,8 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Grant admin consent to the add-in
 
-> **Note:** This procedure is only needed when you are developing the add-in. When your production add-in is deployed to the Office Store or an add-in catalog, users will individually trust it when they install it.
+> [!NOTE]
+> This procedure is only needed when you are developing the add-in. When your production add-in is deployed to the Office Store or an add-in catalog, users will individually trust it when they install it.
 
 1. In the following string, replace the placeholder “{application_ID}” with the Application ID that you copied when you registered your add-in.
 
@@ -131,10 +143,9 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Replace the placeholder “{application_GUID here}” *in both places* in the markup with the Application ID that you copied when you registered your add-in. (The "{}" are not part of the ID, so don't include them.) This is the same ID you used in for the ClientID and Audience in the web.config.
 
-    >Note: 
-    >
-    >* The **Resource** value is the **Application ID URI** you set when you added the Web API platform to the registration of the add-in.
-    >* The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through the Office Store.
+    > [!NOTE]
+    > * The **Resource** value is the **Application ID URI** you set when you added the Web API platform to the registration of the add-in.
+    > * The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through the Office Store.
 
 1. Save and close the file.
 
@@ -398,7 +409,8 @@ There are two server-side files that need to be modified.
     const { jwt } = auth.verifyJWT(req, { scp: 'access_as_user' }); 
     ```
 
-> **Note:** You should only use the `access_as_user` scope to authorize the API that handles the on-behalf-of flow for Office add-ins. Other APIs in your service should have their own scope requirements. This limits what can be accessed with the tokens that Office acquires.
+    > [!NOTE]
+    > You should only use the `access_as_user` scope to authorize the API that handles the on-behalf-of flow for Office add-ins. Other APIs in your service should have their own scope requirements. This limits what can be accessed with the tokens that Office acquires.
 
 5. Replace TODO8 with the following code. Note the following about this code:
 
@@ -501,4 +513,6 @@ There are two ways to build and run the project depending on whether you are usi
 2. If you are are signed into Office, a list of your files and folders on OneDrive will appear below the button. This may take more than 15 seconds the first time.
 
 3. If you are not signed into Office, a popup will open and prompt you to sign in. After you have completed the sign-in, the list of your files and folders will appear after a few seconds. *You do not press the button a second time.*
-> **Note:** If you were previously signed on to Office with a different ID, and some Office applications that were open at the time are still open, Office may not reliably change your ID even if it appears to have done so in PowerPoint. If this happens, the call to Microsoft Graph may fail or data from the previous ID may be returned. To prevent this, be sure to *close all other Office applications* before you press **Get My Files from OneDrive**.
+
+> [!NOTE]
+> If you were previously signed on to Office with a different ID, and some Office applications that were open at the time are still open, Office may not reliably change your ID even if it appears to have done so in PowerPoint. If this happens, the call to Microsoft Graph may fail or data from the previous ID may be returned. To prevent this, be sure to *close all other Office applications* before you press **Get My Files from OneDrive**.

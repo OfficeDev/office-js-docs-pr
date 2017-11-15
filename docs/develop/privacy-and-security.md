@@ -1,3 +1,9 @@
+---
+title: Privacy and security for Office Add-ins
+description: 
+ms.date: 11/20/2017 
+---
+
 
 # Privacy and security for Office Add-ins
 
@@ -25,7 +31,8 @@ Also, the use of memory, CPU, and network resources by Office Add-ins is governa
 
 The following sections briefly describe how the runtime architecture supports running add-ins in Office clients on Windows-based devices, on OS X Mac devices, and in Office Online clients on the web.
 
-> **Note:** To learn about using WIP and Intune with Office Add-ins, see  [Use WIP and Intune to protect enterprise data in documents running Office Add-ins](https://docs.microsoft.com/en-us/microsoft-365-enterprise/office-add-ins-wip).
+> [!NOTE]
+> To learn about using WIP and Intune with Office Add-ins, see  [Use WIP and Intune to protect enterprise data in documents running Office Add-ins](https://docs.microsoft.com/en-us/microsoft-365-enterprise/office-add-ins-wip).
 
 ### Clients for Windows and OS X devices
 
@@ -33,16 +40,16 @@ In supported clients for desktop and tablet devices, such as Excel, Outlook, and
 
 On Windows desktops, Protect Mode in Internet Explorer must be enabled for the Restricted Site Zone. This is typically enabled by default. If it is disabled, an [error will occur](https://support.microsoft.com/en-us/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer) when you try to launch an add-in.
 
-**Figure 1. Office Add-ins runtime environment in Windows-based desktop and tablet clients**
+*Figure 1. Office Add-ins runtime environment in Windows-based desktop and tablet clients*
 
-![Rich-client infrastructure](../../images/DK2_AgaveOverview02.png)
+![Rich-client infrastructure](../images/dk2-agave-overview-02.png)
 
 As shown in figure 2, on an OS X Mac desktop, the add-in web page is hosted inside a sandboxed WebKit runtime host process which helps provide similar level of security and performance protection. 
 
 
-**Figure 2. Office Add-ins runtime environment in OS X Mac clients**
+*Figure 2. Office Add-ins runtime environment in OS X Mac clients*
 
-![Apps for Office runtime environment on OS X Mac](../../images/DK2_AgaveOverview_Mac_02.png)
+![Apps for Office runtime environment on OS X Mac](../images/dk2-agave-overview-mac-02.png)
 
 The Office Add-ins runtime manages interprocess communication, the translation of JavaScript API calls and events into native ones, as well as UI remoting support to enable the add-in to be rendered inside the document, in a task pane, or adjacent to an email message, meeting request, or appointment.
 
@@ -52,9 +59,9 @@ The Office Add-ins runtime manages interprocess communication, the translation o
 In supported Web clients, such as Excel Online and Outlook Web App, Office Add-ins are hosted in an  **iframe** that runs using the HTML5 **sandbox** attribute. ActiveX components or navigating the main page of the web client are not allowed. Office Add-ins support is enabled in the web clients by the integration of the JavaScript API for Office. In a similar way to the desktop client applications, the JavaScript API manages the add-in lifecycle and interoperability between the add-in and the web client. This interoperability is implemented by using a special cross-frame post message communication infrastructure. The same JavaScript library (Office.js) that is used on desktop clients is available to interact with the web client. Figure 3 shows the infrastructure that supports Office Add-ins in the Office Online (running in the browser), and the relevant components (the web client, **iframe**, Office Add-ins runtime, and JavaScript API for Office) that are required to support them.
 
 
-**Figure 3. Infrastructure that supports Office Add-ins in Office web clients**
+*Figure 3. Infrastructure that supports Office Add-ins in Office web clients*
 
-![Web-client infrastructure](../../images/DK2_AgaveOverview03.png)
+![Web-client infrastructure](../images/dk2-agave-overview-03.png)
 
 
 ## Add-in integrity in the Office Store
@@ -261,21 +268,12 @@ In a corporate setting, IT administrators have ultimate authority over enabling 
 
 ## Additional resources
 
-
 - [Requesting permissions for API use in content and task pane add-ins](http://msdn.microsoft.com/library/da2efadc-4ebf-45fe-be39-397ac1eb1dbd.aspx)
-
 - [Privacy, permissions, and security for Outlook add-ins](http://msdn.microsoft.com/library/44208fc4-05d4-42d8-ab20-faa89624de1c.aspx)
-
 - [Understanding Outlook add-in permissions](http://msdn.microsoft.com/library/5bca69f2-b287-4e19-8f0f-78d896b2a3d3.aspx)
-
 - [Limits for activation and JavaScript API for Outlook add-ins](http://msdn.microsoft.com/library/e0c9e3d0-517e-4333-b8bd-e169c51a07f6.aspx)
-
 - [Addressing same-origin policy limitations in Office Add-ins](http://msdn.microsoft.com/library/36c800ae-1dda-4ea8-a558-37c89ffb161b.aspx)
-
 - [Same Origin Policy](http://www.w3.org/Security/wiki/Same_Origin_Policy)
-
 - [Same Origin Policy Part 1: No Peeking](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
-
 - [Same origin policy for JavaScript](https://developer.mozilla.org/En/Same_origin_policy_for_JavaScript)
-
 - [IE Protect Mode](https://support.microsoft.com/en-us/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)

@@ -1,3 +1,9 @@
+---
+title: Develop Office Add-ins for the iPad
+description: 
+ms.date: 11/20/2017 
+---
+
 
 # Develop Office Add-ins for the iPad
 
@@ -35,10 +41,7 @@ For general add-in development best practices, see [Best practices for developin
 
 
 ## Additional resources
-<a name="bk_addresources"> </a>
 
-
-- [Sideload an Office Add-in on iPad and Mac](../../docs/testing/sideload-an-office-add-in-on-ipad-and-mac.md)
-    
+- [Sideload an Office Add-in on iPad and Mac](../../docs/testing/sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [Debug Office Add-ins on iPad and Mac](../../docs/testing/debug-office-add-ins-on-ipad-and-mac.md)
     

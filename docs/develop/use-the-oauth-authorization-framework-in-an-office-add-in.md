@@ -1,3 +1,9 @@
+---
+title: Use the OAuth authorization framework in an Office Add-in
+description: 
+ms.date: 11/20/2017 
+---
+
 
 # Use the OAuth authorization framework in an Office Add-in
 
@@ -7,11 +13,12 @@ Online service providers may provide public APIs exposed via REST. Developers ca
 
 This topic describes how to implement an authentication flow in your add-in to perform user authentication. Code segments included in this topic are taken from the [Office-Add-in-NodeJS-ServerAuth](https://github.com/OfficeDev/Office-Add-in-NodeJS-ServerAuth) code sample.
 
- **Note**  For security reasons, browsers are not allowed to display sign-in pages in an IFrame. Depending on the version of Office that your customers use, most notably web-based versions, your add-in is displayed in an IFrame. This imposes some considerations on how to manage the authentication flow. 
+> [!NOTE]
+> For security reasons, browsers are not allowed to display sign-in pages in an IFrame. Depending on the version of Office that your customers use, most notably web-based versions, your add-in is displayed in an IFrame. This imposes some considerations on how to manage the authentication flow. 
 
 The following diagram shows the required components and the flow of events that occur when implementing authentication in your add-in.
 
-![Perform OAuth authentication in an Office Add-in](../../images/OAuthInOfficeAddin.png)
+![Perform OAuth authentication in an Office Add-in](../images/oauth-in-office-add-in.png)
 
 The diagram shows how the following required components are used:
 
@@ -24,7 +31,8 @@ The diagram shows how the following required components are used:
     
 
     
- **Important**  Access tokens can't be returned to the task pane, but they can be used on the server. In this code sample, the access tokens are stored in the database for 2 minutes. After 2 minutes, tokens are purged from the database and users are prompted to re-authenticate. Before changing this time period in your own implementation, consider the security risks associated with storing access tokens in a database for a time period that is longer than 2 minutes.
+> [!IMPORTANT]
+> Access tokens can't be returned to the task pane, but they can be used on the server. In this code sample, the access tokens are stored in the database for 2 minutes. After 2 minutes, tokens are purged from the database and users are prompted to re-authenticate. Before changing this time period in your own implementation, consider the security risks associated with storing access tokens in a database for a time period that is longer than 2 minutes.
 
 
 ## Step 1 - Start socket and open a pop-up window
@@ -115,8 +123,6 @@ The following code segment, taken from connect.js, updates the add-in's UI with 
 
 
 ## Additional resources
-<a name="bk_addresources"> </a>
-
 
 - [Office Add-in Server Authentication Sample for Node.js](https://github.com/OfficeDev/Office-Add-in-Nodejs-ServerAuth/blob/master/README.md)
     

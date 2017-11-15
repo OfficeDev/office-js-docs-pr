@@ -1,3 +1,9 @@
+---
+title: Localization for Office Add-ins
+description: 
+ms.date: 11/20/2017 
+---
+
 # Localization for Office Add-ins
 
 You can implement any localization scheme that's appropriate for your Office Add-in. The JavaScript API and manifest schema of the Office Add-ins platform provide some choices. You can use the JavaScript API for Office to determine a locale and display strings based on the locale of the host application, or to interpret or display data based on the locale of the data. You can use the manifest to specify locale-specific add-in file location and descriptive information. Alternatively, you can use Microsoft Ajax script to support globalization and localization.
@@ -51,7 +57,8 @@ Every Office Add-in specifies a [DefaultLocale] element and a locale in its mani
 |[SourceLocation]   |Users in each locale you specify can see a webpage that you specifically design for the add-in for that locale. |
 
 
- > **Note:** You can localize the description and display name for only the locales that Office supports. See [Language identifiers and OptionState Id values in Office 2013](http://technet.microsoft.com/en-us/library/cc179219.aspx) for a list of languages and locales for the current release of Office.
+> [!NOTE]
+> You can localize the description and display name for only the locales that Office supports. See [Language identifiers and OptionState Id values in Office 2013](http://technet.microsoft.com/en-us/library/cc179219.aspx) for a list of languages and locales for the current release of Office.
 
 
 ### Examples
@@ -67,11 +74,13 @@ For example, an Office Add-in can specify the  [DefaultLocale] as `en-us`. For t
 </DisplayName>
 ```
 
- > **Note:** If you need to localize for more than one area within a language family, such as `de-de` and `de-at`, we recommend that you use separate `Override` elements for each area. Using just the language name alone, in this case, `de`, is not supported across all combinations of Office host applications and platforms.
+> [!NOTE]
+> If you need to localize for more than one area within a language family, such as `de-de` and `de-at`, we recommend that you use separate `Override` elements for each area. Using just the language name alone, in this case, `de`, is not supported across all combinations of Office host applications and platforms.
 
 This means that the add-in assumes the  `en-us` locale by default. Users see the English display name of "Video player" for all locales unless the client computer's locale is `fr-fr`, in which case users would see the French display name "Lecteur vidéo".
 
-> **Note:** You may only specify a single override per language, including for the default locale. For example, if your default locale is `en-us` you cannot not specify an  override for `en-us` as well. 
+> [!NOTE]
+> You may only specify a single override per language, including for the default locale. For example, if your default locale is `en-us` you cannot not specify an  override for `en-us` as well. 
 
 The following example applies a locale override for the  [Description] element. It first specifies a default locale of `en-us` and an English description, and then specifies an [Override] statement with a French description for the `fr-fr` locale:
 
@@ -162,13 +171,15 @@ To run the sample code provided, configure Microsoft Office 2013 on your compute
 
 Also, you'll need to create a Visual Studio 2015 Office Add-in project.
 
- > **Note:**  To download Visual Studio 2015, see the [Office Developer Tools page](https://www.visualstudio.com/features/office-tools-vs). This page also has a link for the Office Developer Tools.
+> [!NOTE]
+> To download Visual Studio 2015, see the [Office Developer Tools page](https://www.visualstudio.com/features/office-tools-vs). This page also has a link for the Office Developer Tools.
 
 ### Configure Office 2013 to use additional languages for display or editing
 
 You can use an Office 2013 Language pack to install an additional language. For more information about Language Packs and where to get them, see [Office 2013 Language Options](http://office.microsoft.com/en-us/language-packs/).
 
- > **Note:**  If you are an MSDN Subscriber, you might already have the Office 2013 Language Packs available to you. To determine whether your subscription offers Office 2013 Language Packs for download, go to [MSDN Subscriptions Home](https://msdn.microsoft.com/subscriptions/manage/), enter Office 2013 Language Pack in **Software downloads**, choose  **Search**, and then select  **Products available with my subscription**. Under  **Language**, select the check box for the Language Pack you want to download, and then choose  **Go**. 
+> [!NOTE]
+> If you are an MSDN Subscriber, you might already have the Office 2013 Language Packs available to you. To determine whether your subscription offers Office 2013 Language Packs for download, go to [MSDN Subscriptions Home](https://msdn.microsoft.com/subscriptions/manage/), enter Office 2013 Language Pack in **Software downloads**, choose  **Search**, and then select  **Products available with my subscription**. Under  **Language**, select the check box for the Language Pack you want to download, and then choose  **Go**. 
 
 After you install the Language Pack, you can configure Office 2013 to use the installed language for display in the UI, for editing document content, or both. The example in this article uses an installation of Office 2013 that has the Spanish Language Pack applied.
 
@@ -195,9 +206,10 @@ To localize the add-in display name and description:
 
 1. In  **Solution Explorer**, expand  **WorldReadyAddIn**,  **WorldReadyAddInManifest**, and then choose  **WorldReadyAddIn.xml**.
     
-2. In WorldReadyAddInManifest.xml, replace the  [DisplayName] and [Description] elements with the following block of code:.
+2. In WorldReadyAddInManifest.xml, replace the  [DisplayName] and [Description] elements with the following block of code:
     
-     > **Note:**  You can replace the Spanish language localized strings used in this example for the  [DisplayName] and [Description] elements with the localized strings for any other language.
+    > [!NOTE]
+    > You can replace the Spanish language localized strings used in this example for the  [DisplayName] and [Description] elements with the localized strings for any other language.
 
     ```xml
     <DisplayName DefaultValue="World Ready add-in">
@@ -258,9 +270,9 @@ To lay out the add-in UI:
     
 Figure 3 shows the heading (h1) element and the paragraph (p) element that will display localized text when your sample add-in runs.
 
-**Figure 3. The add-in UI**
+*Figure 3. The add-in UI*
 
-![App user interface with sections highlighted.](../../images/off15App_HowToLocalize_fig03.png)
+![App user interface with sections highlighted](../images/office15-app-how-to-localize-fig03.png)
 
 ### Add the resource file that contains the localized strings
 
@@ -346,7 +358,8 @@ After you know the language the host application is using, you can use  **UIStri
 
 Replace the code in the Home.js file with the following code. The code shows how you can change the strings used in the UI elements on Home.html based on either the display language of the host application or the editing language of the host application.
 
- > **Note:**  To switch between changing the localization of the add-in based on the language used for editing, uncomment the line of code  `var myLanguage = Office.context.contentLanguage;` and comment out the line of code `var myLanguage = Office.context.displayLanguage;`
+> [!NOTE]
+> To switch between changing the localization of the add-in based on the language used for editing, uncomment the line of code  `var myLanguage = Office.context.contentLanguage;` and comment out the line of code `var myLanguage = Office.context.displayLanguage;`
 
 ```js
 /// <reference path="../App.js" />
@@ -393,9 +406,9 @@ To change the language used for display or editing in your add-in:
 
 1. In Word 2013, choose  **File**,  **Options**,  **Language**. Figure 4 shows the  **Word Options** dialog box opened to the Language tab.
     
-    **Figure 4. Language options in the Word 2013 Options dialog box**
+    *Figure 4. Language options in the Word 2013 Options dialog box*
 
-    ![Word 2013 Options dialog.](../../images/off15App_HowToLocalize_fig04.png)
+    ![Word 2013 Options dialog](../images/office15-app-how-to-localize-fig04.png)
 
 2. Under  **Choose Display and Help Languages**, select the language that you want for display, for example Spanish, and then choose the up arrow to move the Spanish language to the first position in the list. Alternatively, to change the language used for editing, under  **Choose editing languages**, choose the language you want to use for editing, for example, Spanish, and then choose  **Set as Default**.
     
@@ -404,14 +417,13 @@ To change the language used for display or editing in your add-in:
 Run the sample add-in. The taskpane add-in loads in Word 2013, and the strings in the add-in UI change to match the language used by the host application, as shown in Figure 5.
 
 
-**Figure 5. Add-in UI with localized text**
+*Figure 5. Add-in UI with localized text*
 
-![App with localized UI text.](../../images/off15App_HowToLocalize_fig05.png)
+![App with localized UI text](../images/office15-app-how-to-localize-fig05.png)
 
 ## Additional resources
 
-- [Design guidelines for Office Add-ins](../../docs/design/add-in-design.md)
-    
+- [Design guidelines for Office Add-ins](../../docs/design/add-in-design.md)    
 - [Language identifiers and OptionState Id values in Office 2013](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)
 
 [DefaultLocale]: 		 ../../reference/manifest/defaultlocale.md

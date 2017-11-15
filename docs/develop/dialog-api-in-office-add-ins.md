@@ -1,9 +1,14 @@
+---
+title: Use the Dialog API in your Office Add-ins
+description: 
+ms.date: 11/20/2017 
+---
+
 # Use the Dialog API in your Office Add-ins
 
 You can use the [Dialog API](../../reference/shared/officeui.md) to open dialog boxes in your Office Add-in. This article provides guidance for using the Dialog API in your Office Add-in.
 
-> **Notes:**
-
+> [!NOTE]
 > For information about where the Dialog API is currently supported, see [Dialog API requirement sets](../../reference/requirement-sets/dialog-api-requirement-sets.md). The Dialog API is currently supported for Word, Excel, PowerPoint, and Outlook.
 
 > A primary scenario for the Dialog APIs is to enable authentication with a resource such as Google or Facebook. If your add-in requires data about the Office user or their resources accessible through Microsoft Graph, such as Office 365 or OneDrive, we recommend that you use the single sign-on API whenever you can. If you use the APIs for single sign-on, then you will not need the Dialog API. For details, see [Enable single sign-on for Office Add-ins](http://dev.office.com/docs/add-ins/develop/sso-in-office-add-ins).
@@ -14,11 +19,12 @@ Consider opening a dialog box from a task pane or content add-in or [add-in comm
 - Provide more screen space, or even a full screen, for some tasks in your add-in.
 - Host a video that would be too small if confined to a task pane.
 
->**Note:** Because overlapping UI elements are discouraged, avoid opening a dialog from a task pane unless your scenario requires it. When you consider how to use the surface area of a task pane, note that task panes can be tabbed. For an example, see the [Excel Add-in JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) sample.
+> [!NOTE]
+> Because overlapping UI elements are discouraged, avoid opening a dialog from a task pane unless your scenario requires it. When you consider how to use the surface area of a task pane, note that task panes can be tabbed. For an example, see the [Excel Add-in JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) sample.
 
 The following image shows an example of a dialog box:
 
-![Add-in commands](../../images/Auth0DialogOpen.PNG)
+![Add-in commands](../images/auth-o-dialog-open.png)
 
 Note that the dialog box always opens in the center of the screen. The user can move and resize it. The window is *nonmodal*--a user can continue to interact with both the document in the host Office application and with the host page in the task pane, if there is one.
 
@@ -34,8 +40,7 @@ To open a dialog box, your code in the task pane calls the [displayDialogAsync](
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 ```
 
-> **Notes:**
-
+> [!NOTE]
 > - The URL uses the HTTP**S** protocol. This is mandatory for all pages loaded in a dialog box, not just the first page loaded.
 > - The domain is the same as the domain of the host page, which can be the page in a task pane or the [function file](https://dev.office.com/reference/add-ins/manifest/functionfile) of an add-in command. This is required: the page, controller method, or other resource that is passed to the `displayDialogAsync` method must be in the same domain as the host page.
 
@@ -51,7 +56,8 @@ For a sample add-in that does this, see [Office Add-in Dialog API Example](https
 
 Set both values to 100% to get what is effectively a full screen experience. (The effective maximum is 99.5%, and the window is still moveable and resizable.)
 
->**Note:** You can open only one dialog box from a host window. An attempt to open another dialog box generates an error. For example, if a user opens a dialog box from a task pane, she cannot open a second dialog box, from a different page in the task pane. However, when a dialog box is opened from an [add-in command](https://dev.office.com/docs/add-ins/design/add-in-commands), the command opens a new (but unseen) HTML file each time it is selected. This creates a new (unseen) host window, so each such window can launch its own dialog box. For more information, see [Errors from displayDialogAsync](#errors-from-displaydialogAsync).
+> [!NOTE]
+> You can open only one dialog box from a host window. An attempt to open another dialog box generates an error. For example, if a user opens a dialog box from a task pane, she cannot open a second dialog box, from a different page in the task pane. However, when a dialog box is opened from an [add-in command](https://dev.office.com/docs/add-ins/design/add-in-commands), the command opens a new (but unseen) HTML file each time it is selected. This creates a new (unseen) host window, so each such window can launch its own dialog box. For more information, see [Errors from displayDialogAsync](#errors-from-displaydialogAsync).
 
 ### Take advantage of a performance option in Office Online
 
@@ -63,7 +69,8 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 
 The default value is `false`, which is the same as omitting the property entirely. If the add-in is not running in Office Online, the `displayInIframe` is ignored.
 
-> **Note:** You should ***not*** use `displayInIframe: true` if the dialog will at any point redirect to a page that cannot be opened in an iframe. For example, the sign in pages of many popular web services, such as Google and Microsoft Account, cannot be opened in an iframe.
+> [!NOTE]
+> You should ***not*** use `displayInIframe: true` if the dialog will at any point redirect to a page that cannot be opened in an iframe. For example, the sign in pages of many popular web services, such as Google and Microsoft Account, cannot be opened in an iframe.
 
 ### Send information from the dialog box to the host page
 
@@ -80,8 +87,7 @@ if (loginSuccess) {
 }
 ```
 
->**Notes:**
-
+> [!NOTE]
 > - The `messageParent` function is one of *only* two Office APIs that can be called in the dialog box. The other is `Office.context.requirements.isSetSupported`. For information about it, see [Specify Office hosts and API requirements](https://github.com/OfficeDev/office-js-docs/blob/master/docs/overview/specify-office-hosts-and-api-requirements.md).
 > - The `messageParent` function can only be called on a page with the same domain (including protocol and port) as the host page.
 
@@ -105,8 +111,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 );
 ```
 
->**Notes:**
-
+> [!NOTE]
 > - Office passes an [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object to the callback. It represents the result of the attempt to open the dialog box. It does not represent the outcome of any events in the dialog box. For more on this distinction, see the section [Handling errors and events](#handling-errors-and-events).
 > - The `value` property of the `asyncResult` is set to a [Dialog](https://dev.office.com/reference/add-ins/shared/officeui.dialog) object, which exists in the host page, not in the dialog box's execution context.
 > - The `processMessage` is the function that handles the event. You can give it any name you want.
@@ -121,8 +126,7 @@ function processMessage(arg) {
 }
 ```
 
-> **Notes:**
-
+> [!NOTE]
 > - Office passes the `arg` object to the handler. Its `message` property is the Boolean or string sent by the call of `messageParent` in the dialog. In this example, it is a stringified representation of a user's profile from a service such as Microsoft Account or Google, so it is deserialized back to an object with `JSON.parse`.
 > - The `showUserName` implementation is not shown. It might display a personalized welcome message on the task pane.
 
@@ -135,8 +139,7 @@ function processMessage(arg) {
 }
 ```
 
-> **Notes:**
-
+> [!NOTE]
 > - The `dialog` object must be the same one that is returned by the call of `displayDialogAsync`.
 > - The call of `dialog.close` tells Office to immediately close the dialog box.
 
@@ -172,8 +175,7 @@ if (loginSuccess) {
 }
 ```
 
-> **Notes:**
-
+> [!NOTE]
 > - The `loginSuccess` variable would be initialized by reading the HTTP response from the identity provider.
 > - The the implementation of the `getProfile` and `getError` functions are not not shown. They each get data from a query parameter or from the body of the HTTP response.
 > - Anonymous objects of different types are sent depending on whether the sign in was successful. Both have a `messageType` property, but one has a `profile` property and the other has an `error` property.
@@ -343,7 +345,8 @@ For a sample that uses this technique, see [Insert Excel charts using Microsoft 
 
 Code in your dialog window can parse the URL and read the parameter value.
 
-> **Note**: Office automatically adds a query parameter called `_host_info` to the URL that is passed to `displayDialogAsync`. (It is appended after your custom query parameters, if any. It is not appended to any subsequent URLs that the dialog box navigates to.) Microsoft may change the content of this value, or remove it entirely, in the future, so your code should not read it. The same value is added to the dialog box's session storage. Again, *your code should neither read nor write to this value*.
+> [!NOTE]
+> Office automatically adds a query parameter called `_host_info` to the URL that is passed to `displayDialogAsync`. (It is appended after your custom query parameters, if any. It is not appended to any subsequent URLs that the dialog box navigates to.) Microsoft may change the content of this value, or remove it entirely, in the future, so your code should not read it. The same value is added to the dialog box's session storage. Again, *your code should neither read nor write to this value*.
 
 ## Use the Dialog APIs to show a video
 
@@ -362,13 +365,14 @@ To show a video in a dialog box:
 
 For a sample that shows a video in a dialog box, see the [video placemat design pattern](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/video-placemat) in the [UX design patterns for Office Add-ins](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code) repo.
 
-![Screenshot of a video showing in an add-in dialog box.](../../images/VideoPlacematDialogOpen.PNG)
+![Screenshot of a video showing in an add-in dialog box](../images/video-placemats-dialog-open.png)
 
 ## Use the Dialog APIs in an authentication flow
 
 A primary scenario for the Dialog APIs is to enable authentication with a resource or identity provider that does not allow its sign-in page to open in an Iframe, such as Microsoft Account, Office 365, Google, and Facebook.
 
->**Note:** When you are using the Dialog APIs for this scenario, do *not* use the `displayInIframe: true` option in the call to `displayDialogAsync`. See [Take advantage of a performance option in Office Online](#take-advantage-of-a-performance-option-in-Office-Online) previously in this article for details about this option.
+> [!NOTE]
+> When you are using the Dialog APIs for this scenario, do *not* use the `displayInIframe: true` option in the call to `displayDialogAsync`. See [Take advantage of a performance option in Office Online](#take-advantage-of-a-performance-option-in-Office-Online) previously in this article for details about this option.
 
 The following is a simple and typical authentication flow:
 
@@ -413,6 +417,8 @@ For more information about authentication and authorization in add-ins, see:
 
 
 ## Use the Office Dialog API with single-page applications and client-side routing
+
 If your add-in uses client-side routing, as single-page applications typically do, you have the option to pass the URL of a route to the [displayDialogAsync](http://dev.office.com/reference/add-ins/shared/officeui.displaydialogasync) method, instead of the URL of a complete and separate HTML page.
 
-> **Important:** The dialog box is in an new window with its own execution context. If you pass a route, your base page and all its initialization and bootstrapping code run again in this new context, and any variables are set to their initial values in the dialog window. So this technique launches a second instance of your application in the dialog window. Code that changes variables in the dialog window does not change the task pane version of the same variables. Similarly, the dialog window has its own session storage, which is not accessible from code in the task pane.
+> [!IMPORTANT]
+>The dialog box is in a new window with its own execution context. If you pass a route, your base page and all its initialization and bootstrapping code run again in this new context, and any variables are set to their initial values in the dialog window. So this technique launches a second instance of your application in the dialog window. Code that changes variables in the dialog window does not change the task pane version of the same variables. Similarly, the dialog window has its own session storage, which is not accessible from code in the task pane.

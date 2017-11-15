@@ -1,3 +1,9 @@
+---
+title: Addressing same-origin policy limitations in Office Add-ins
+description: 
+ms.date: 11/20/2017 
+---
+
 
 # Addressing same-origin policy limitations in Office Add-ins
 
@@ -63,7 +69,6 @@ For an example of how to build your own proxy using IFRAME and POST MESSAGE, see
 
 
 ## Additional resources
-
 
 - [Privacy and security for Office Add-ins](../../docs/develop/privacy-and-security.md)
     

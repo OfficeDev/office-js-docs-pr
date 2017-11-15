@@ -1,3 +1,9 @@
+---
+title: Asynchronous programming in Office Add-ins
+description: 
+ms.date: 11/20/2017 
+---
+
 
 # Asynchronous programming in Office Add-ins
 
@@ -7,10 +13,9 @@ The names of all asynchronous methods in the API end with "Async", such as the  
 
 The following diagram shows the flow of execution for a call to an "Async" method that reads the data the user selected in a document open in the server-based Word Online or Excel Online. At the point when the "Async" call is made, the JavaScript execution thread is free to perform any additional client-side processing. (Although none are shown in the diagram.) When the "Async" method returns, the callback resumes execution on the thread, and the add-in can the access data, do something with it, and display the result. The same asynchronous execution pattern holds when working with the Office rich client host applications, such as Word 2013 or Excel 2013.
 
-**Figure 1. Asynchronous programing execution flow**
+*Figure 1. Asynchronous programing execution flow*
 
-
-![Asynchronous programming thread execution flow](../../images/off15appAsyncProgFig01.png)
+![Asynchronous programming thread execution flow](../images/office15-app-async-prog-fig01.png)
 
 Support for this asynchronous design in both rich and web clients is part of the "write once-run cross-platform" design goals of the Office Add-ins development model. For example, you can create a content or task pane add-in with a single code base that will run in both Excel 2013 and Excel Online.
 
@@ -250,7 +255,8 @@ function addBindingDataChangedEventHandler() {
 ```
 
 
- >**Important:** The  **Binding** object promise returned by the **Office.select** method provides access to only the four methods of the **Binding** object. If you need to access any of the other members of the **Binding** object, instead you must use the **Document.bindings** property and **Bindings.getByIdAsync** or **Bindings.getAllAsync** methods to retrieve the **Binding** object. For example, if you need to access any of the **Binding** object's properties (the **document**,  **id**, or  **type** properties), or need to access the properties of the [MatrixBinding](../../reference/shared/binding.matrixbinding.md) or [TableBinding](../../reference/shared/binding.tablebinding.md) objects, you must use the **getByIdAsync** or **getAllAsync** methods to retrieve a **Binding** object.
+> [!IMPORTANT]
+> The  **Binding** object promise returned by the **Office.select** method provides access to only the four methods of the **Binding** object. If you need to access any of the other members of the **Binding** object, instead you must use the **Document.bindings** property and **Bindings.getByIdAsync** or **Bindings.getAllAsync** methods to retrieve the **Binding** object. For example, if you need to access any of the **Binding** object's properties (the **document**,  **id**, or  **type** properties), or need to access the properties of the [MatrixBinding](../../reference/shared/binding.matrixbinding.md) or [TableBinding](../../reference/shared/binding.tablebinding.md) objects, you must use the **getByIdAsync** or **getAllAsync** methods to retrieve a **Binding** object.
 
 
 ## Passing optional parameters to asynchronous methods
@@ -295,7 +301,8 @@ function write(message){
 ```
 
 
-> **Note:**  You can specify optional parameters in any order in the JSON object as long as their names are specified correctly.
+> [!NOTE]
+> You can specify optional parameters in any order in the JSON object as long as their names are specified correctly.
 
 
 ### Passing optional parameters in an options object
@@ -352,7 +359,8 @@ options["FilterType"] = "all";
 ```
 
 
- >**Note**  When using either method of creating the  `options` object, you can specify optional parameters in any order as long as their names are specified correctly.
+> [!NOTE]
+> When using either method of creating the  `options` object, you can specify optional parameters in any order as long as their names are specified correctly.
 
 The following example shows how to call to the  **Document.setSelectedDataAsync** method by specifying optional parameters in an `options` object.
 
@@ -385,8 +393,6 @@ In both optional parameter examples, the  _callback_ parameter is specified as t
 
 ## Additional resources
 
-
-- [Understanding the JavaScript API for Office](../../docs/develop/understanding-the-javascript-api-for-office.md)
-    
+- [Understanding the JavaScript API for Office](../../docs/develop/understanding-the-javascript-api-for-office.md) 
 - [JavaScript API for Office](../../reference/javascript-api-for-office.md)
      
