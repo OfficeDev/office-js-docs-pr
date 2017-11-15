@@ -25,11 +25,11 @@ The deployment options that are available depend on the Office host that you're 
 
 ### Deployment options for Word, Excel, and PowerPoint add-ins
 
-| Extension point | Sideloading | Office 365 admin center |Office Store| SharePoint catalog*  |
+| Extension point | Sideloading | Office 365 admin center |Office Store| SharePoint catalog\*  |
 |:----------------|:-----------:|:-----------------------:|:----------:|:--------------------:|
 | Content         | X           | X                       | X          | X                    |
 | Task pane       | X           | X                       | X          | X                    |
-| Command 		  | X           | X                       | X          |                      |
+| Command 		    | X           | X                       | X          |                      |
 
 &#42; SharePoint catalogs do not support Office 2016 for Mac.
 
