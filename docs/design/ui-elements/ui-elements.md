@@ -1,3 +1,10 @@
+---
+title: Office Add-in UI elements
+description: 
+ms.date: 11/20/2017 
+---
+
+
 # Office Add-in UI elements
 
 You can use two types of UI elements in your Office Add-ins: 
@@ -8,13 +15,13 @@ You can use two types of UI elements in your Office Add-ins:
 ## Add-in commands
 Commands are defined in the [add-in XML manifest](../../../docs/develop/define-add-in-commands.md) and are rendered as native UX extensions to the Office UI. For example, you can use add-in commands to add buttons to the Office ribbon. 
 
-![An image showing add-in commands and custom HTML UI elements in an add-in](../../../images/layouts_addInCommands_v0.03.png)
+![An image showing add-in commands and custom HTML UI elements in an add-in](../../images/layouts-add-in-commands-v0.03.png)
 
 Currently, add-in commands are only supported for mail add-ins. To learn more, see [Add-in commmands for mail](../../outlook/add-in-commands-for-outlook.md). 
 
 Excel, PowerPoint, and Word have predefined entry points for task pane and content add-ins on the Insert tab in the Office ribbon. Custom command functionality for content and task pane add-ins will be available soon. 
 
-![An image that shows the Insert Tab on the Word ribbon](../../../images/Word-insert-tab.png)
+![An image that shows the Insert Tab on the Word ribbon](../../images/word-doc-insert-tab.png)
 
 ## Custom HTML-based UI
 Add-ins can embed custom HTML-based UI within Office clients. The containers that are available to display the UI vary based on the type of add-in. For example, task pane add-ins display custom HTML-based UI in the right pane of the document; content add-ins display the custom UI directly within Office documents.
@@ -35,7 +42,8 @@ You can download [Office UI Fabric from Github](https://github.com/OfficeDev/Off
 
 For a sample that shows how to use Office UI Fabric in add-ins, see [Office Add-in Fabric UI Sample](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample).
 
-**Note:** If you decide to use your own set of fonts and icons, make sure they don't conflict with those of Office. For example, don't use icons that are the same as or similar to those in Office, but represent something different in your add-in. 
+> [!NOTE]
+> If you decide to use your own set of fonts and icons, make sure they don't conflict with those of Office. For example, don't use icons that are the same as or similar to those in Office, but represent something different in your add-in. 
 
 ### Creating a customized color palette
 If you decide to use your own color palette, keep the following in mind: 
@@ -56,4 +64,6 @@ Whether you decide to adopt the Office color scheme or to use your own, we encou
 <!-- Link to theming API docs and Humberto's seed sample. Add screenshot of themed add-in. -->
 
 
+## Additional resources
 
+- [Design guidelines for Office Add-ins](../add-in-design.md)

@@ -1,24 +1,32 @@
+---
+title: Use Office UI Fabric 2.6.1 in Office Add-ins
+description: 
+ms.date: 11/20/2017 
+---
 
-#Use Office UI Fabric 2.6.1 in Office Add-ins
+
+
+# Use Office UI Fabric 2.6.1 in Office Add-ins
 
 If you are building an Office Add-in, we encourage you to use [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric) to create your user experience. The following steps walk you through the basics for using Fabric.  
 
-> **Note:** For information about Office UI Fabric JS, see [Use Office UI Fabric in Office Add-ins](https://dev.office.com/docs/add-ins/design/using-office-ui-fabric-js).
+> [!NOTE]
+> For information about Office UI Fabric JS, see [Use Office UI Fabric in Office Add-ins](https://dev.office.com/docs/add-ins/design/using-office-ui-fabric-js).
 
-##1. Set up Fabric
+## 1. Set up Fabric
 Add the following lines to your HTML in the head section to reference Fabric from the CDN.
 
      <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.min.css">
 	 <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css">
 
 
-##2. Use Fabric icons and fonts
+## 2. Use Fabric icons and fonts
 Using icons is simple. All you have to do is use an "i" element and reference the appropriate classes. You can control the size of the icon by changing the font size.
 
     <i class="ms-Icon ms-Icon--group" style="font-size:xx-large" aria-hidden="true"></i>
 
 
-##3. Use styles for simple components
+## 3. Use styles for simple components
 Fabric comes with styles for various UI elements, such as buttons and check boxes. All you have to do is reference the appropriate classes to add the corresponding style, as shown in the following example.
 
     <button class="ms-Button" id="get-data-from-selection">
@@ -27,7 +35,7 @@ Fabric comes with styles for various UI elements, such as buttons and check boxe
     <span class="ms-Button-description">Get Data from the document selection</span>
     </button>
 
-##4. Use components with sample behavior
+## 4. Use components with sample behavior
 Fabric includes some components that support behaviors (such as what happens on click). To get you started, **Fabric 2.6.1** includes some **sample code** in the form of JQuery UI plug-ins that you can use. You can also use any other framework you want to wire things up. If you do opt to use the samples, note that the code is not distributed as part of the CDN, so you have to download it from the **2.6.1 release** of the [Fabric GitHub project](https://github.com/OfficeDev/office-ui-fabric-core/tree/release/2.6.1), reference it, and then initialize it in your code. 
 
 For example, to use the SearchBox component:
@@ -36,9 +44,14 @@ For example, to use the SearchBox component:
 2. Add the following reference to your code: `<script src="SearchBox/Jquery.SearchBox.js"></script>`
 3. Initialize the component by making sure this line executes when your page is loaded: `$(".ms-SearchBox").SearchBox();`. We recommend that you include this in the `Office.Initialize` block of your add-in.     
 
-**Note:** If you don't intend to use all the Fabric components, you can reduce the size of the resources you download by opting instead to host the individual CSS files for each component. You can get the CSS files from the component folders in the [Fabric 2.6.1 GitHub repository](https://github.com/OfficeDev/office-ui-fabric-core/tree/release/2.6.1). 
+> [!NOTE]
+> If you don't intend to use all the Fabric components, you can reduce the size of the resources you download by opting instead to host the individual CSS files for each component. You can get the CSS files from the component folders in the [Fabric 2.6.1 GitHub repository](https://github.com/OfficeDev/office-ui-fabric-core/tree/release/2.6.1). 
 
 
-##Next steps
+## Next steps
+
 If you're looking for end-to-end samples that show you how to use Fabric, we've got you covered. See the [Office Add-in Fabric UI sample](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample). You can also explore the interactive [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric) website.
 
+## Additional resources
+
+- [Design guidelines for Office Add-ins](../add-in-design.md)
