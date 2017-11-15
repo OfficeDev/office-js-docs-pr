@@ -1,10 +1,18 @@
+---
+title: Task pane add-ins for Project
+description: 
+ms.date: 11/20/2017 
+---
+
+
 
 # Task pane add-ins for Project
 
 
 Project Standard 2013 and Project Professional 2013 both include support for task pane add-ins. You can run general task pane add-ins that are developed for Word 2013 or Excel 2013. You can also develop custom add-ins that handle selection events in Project and integrate task, resource, view, and other cell-level data in a project with SharePoint lists, SharePoint Add-ins, Web Parts, web services, and enterprise applications.
 
- >**Note**  The [Project 2013 SDK download](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20) includes sample add-ins that show how to use the add-in object model for Project, and how to use the OData service for reporting data in Project Server 2013. When you extract and install the SDK, see the `\Samples\Apps\` subdirectory.
+> [!NOTE]
+> The [Project 2013 SDK download](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20) includes sample add-ins that show how to use the add-in object model for Project, and how to use the OData service for reporting data in Project Server 2013. When you extract and install the SDK, see the `\Samples\Apps\` subdirectory.
 
 For an introduction to Office Add-ins, see [Office Add-ins platform overview](../../docs/overview/office-add-ins.md).
 
@@ -14,7 +22,8 @@ For an introduction to Office Add-ins, see [Office Add-ins platform overview](..
 Project managers can use Project task pane add-ins to help with project management activities. Instead of leaving Project and opening another application to search for frequently used information, project managers can directly access the information within Project. The content in a task pane add-in can be context-sensitive, based on the selected task, resource, view, or other data in a cell in a Gantt chart, task usage view, or resource usage view.
 
 
- >**Note**  With Project Professional 2013, you can develop task pane add-ins that access on-premises installations of Project Server 2013, Project Online, and on-premises or online SharePoint 2013.Project Standard 2013 does not support direct integration with Project Server data or SharePoint task lists that are synchronized with Project Server.
+> [!NOTE]
+> With Project Professional 2013, you can develop task pane add-ins that access on-premises installations of Project Server 2013, Project Online, and on-premises or online SharePoint 2013.Project Standard 2013 does not support direct integration with Project Server data or SharePoint task lists that are synchronized with Project Server.
 
 Add-in scenarios for Project include the following:
 
@@ -145,7 +154,8 @@ In Project 2013, you can install add-ins as stand-alone solutions on a file shar
 There can be multiple add-in manifest XML files and subdirectories in a file share. You can add or remove manifest directory locations and catalogs by using the  **Trusted Add-in Catalogs** tab in the **Trust Center** dialog box in Project 2013. To show an add-in in Project, the **SourceLocation** element in a manifest must point to an existing website or HTML source file.
 
 
- >**Note**  Internet Explorer 9 (or later) must be installed, but does not have to be the default browser. Office Add-ins require components in Internet Explorer 9. The default browser can be Internet Explorer 9, Safari 5.0.6, Firefox 5, Chrome 13, or a later version of one of these browsers.
+> [!NOTE]
+> Internet Explorer 9 (or later) must be installed, but does not have to be the default browser. Office Add-ins require components in Internet Explorer 9. The default browser can be Internet Explorer 9, Safari 5.0.6, Firefox 5, Chrome 13, or a later version of one of these browsers.
 
 In Procedure 2, the Bing Search add-in is installed on the local computer where Project 2013 is installed. However, because the add-in infrastructure does not directly use local file paths such as  `C:\Project\AppManifests`, you can create a network share on the local computer. If you prefer, you can create a file share on a remote computer.
 
@@ -165,25 +175,26 @@ In Procedure 2, the Bing Search add-in is installed on the local computer where 
     
 6. In the  **Trusted Add-in Catalogs** pane (see Figure 1), add the `\\ServerName\AppManifests` path in the **Catalog Url** text box, choose **Add Catalog**, and then choose  **OK**.
     
-     >**Note**  Figure 1 shows two file shares and one hypothetical URL for a private catalog in the  **Trusted Catalog Address** list. Only one file share can be the default file share and only one catalog URL can be the default catalog. For example, if you set `\\Server2\AppManifests` as the default, Project clears the **Default** check box for `\\ServerName\AppManifests`.If you change the default selection, you can choose  **Clear** to remove installed add-ins, and then restart Project. If you add an add-in to the default file share or SharePoint catalog while Project is open, you should restart Project.
+    > [!NOTE]
+    > Figure 1 shows two file shares and one hypothetical URL for a private catalog in the  **Trusted Catalog Address** list. Only one file share can be the default file share and only one catalog URL can be the default catalog. For example, if you set `\\Server2\AppManifests` as the default, Project clears the **Default** check box for `\\ServerName\AppManifests`.If you change the default selection, you can choose  **Clear** to remove installed add-ins, and then restart Project. If you add an add-in to the default file share or SharePoint catalog while Project is open, you should restart Project.
 
-    **Figure 1. Using the Trust Center to add catalogs of add-in manifests**
+    *Figure 1. Using the Trust Center to add catalogs of add-in manifests*
 
-    ![Using the Trust Center to add app manifests](../../images/pj15_AgaveOverview_TrustCenter.PNG)
+    ![Using the Trust Center to add app manifests](../images/pj15-agave-overview-trust-centers.png)
 
 7. On the  **Project** ribbon, choose the **Office Add-ins** drop-down menu, and then choose **See All**. In the  **Insert Add-in** dialog box, choose **SHARED FOLDER** (see Figure 2).
     
-    **Figure 2. Starting an add-in that is on a file share**
+    *Figure 2. Starting an add-in that is on a file share*
 
-    ![Starting an Office app that is on a file share](../../images/pj15_AgaveOverview_StartAgaveApp.PNG)
+    ![Starting an Office app that is on a file share](../images/pj15-agave-overview-start-agave-apps.png)
 
 8. Select the Bing Search add-in, and then choose  **Insert**.
     
-The Bing Search add-in shows in a task pane, as in Figure 3. You can manually resize the task pane, and use the Bing Search add-in.
+    The Bing Search add-in shows in a task pane, as in Figure 3. You can manually resize the task pane, and use the Bing Search add-in.
 
-**Figure 3. Using the Bing Search add-in**
+    *Figure 3. Using the Bing Search add-in*
 
-![Using the Bing Search app](../../images/pj15_AgaveOverview_BingSearch.gif)
+    ![Using the Bing Search app](../images/pj15-agave-overview-bing-search.gif)
 
 
 ## Distributing Project add-ins
@@ -194,19 +205,11 @@ You can distribute add-ins through a file share, an add-in catalog in a SharePoi
 
 ## Additional resources
 
-
-
-- [Office Add-ins platform overview](../../docs/overview/office-add-ins.md)
-    
-- [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md)
-    
+- [Office Add-ins platform overview](../overview/office-add-ins.md)
+- [Office Add-ins XML manifest](../overview/add-in-manifests.md)
 - [JavaScript API for Office](../../reference/javascript-api-for-office.md)
-    
-- [Create your first task pane add-in for Project 2013 by using a text editor](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
-    
-- [Create a Project add-in that uses REST with an on-premises Project Server OData service](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
-    
+- [Create your first task pane add-in for Project 2013 by using a text editor](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
+- [Create a Project add-in that uses REST with an on-premises Project Server OData service](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
 - [Connecting a Project task pane add-in to PWA](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx)
-    
 - [Project 2013 SDK download](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)
     

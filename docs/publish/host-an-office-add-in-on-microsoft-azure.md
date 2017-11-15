@@ -1,3 +1,10 @@
+---
+title: Host an Office Add-in on Microsoft Azure
+description: 
+ms.date: 11/20/2017 
+---
+
+
 
 # Host an Office Add-in on Microsoft Azure
 
@@ -9,15 +16,18 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
 
 1. Install [Visual Studio 2017](https://www.visualstudio.com/downloads) and choose to include the **Azure development** workload.
 
-    >**Note:** If you've previously installed Visual Studio 2017, [use the Visual Studio Installer](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio) to ensure that the **Azure development** workload is installed. 
+    > [!NOTE]
+    > If you've previously installed Visual Studio 2017, [use the Visual Studio Installer](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio) to ensure that the **Azure development** workload is installed. 
 
 2. Install Office 2016. 
     
-     >**Note:** If you don't already have Office 2016, you can [register for a free 1-month trial](http://office.microsoft.com/en-us/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786).
+    > [!NOTE]
+    > If you don't already have Office 2016, you can [register for a free 1-month trial](http://office.microsoft.com/en-us/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786).
 
 3.  Obtain an Azure subscription.
     
-     >**Note:** If don't already have an Azure subscription, you can [get one as part of your MSDN subscription](http://www.windowsazure.com/en-us/pricing/member-offers/msdn-benefits/) or [register for free trial](https://azure.microsoft.com/en-us/pricing/free-trial). 
+    > [!NOTE]
+    > If don't already have an Azure subscription, you can [get one as part of your MSDN subscription](http://www.windowsazure.com/en-us/pricing/member-offers/msdn-benefits/) or [register for a free trial](https://azure.microsoft.com/en-us/pricing/free-trial). 
 
 ## Step 1: Create a shared folder to host your add-in XML manifest file
 
@@ -31,13 +41,15 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
     
 5. In **File Sharing**, choose the drop-down arrow and then choose **Everyone** > **Add** > **Share**.
     
-> **Note:** In this walkthrough, you're using a local file share as a trusted catalog where you'll store the add-in XML manifest file. In a real-world scenario, you might instead choose to [deploy the XML manifest file to a SharePoint catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) or [publish the add-in to the Office Store](https://dev.office.com/officestore/docs/submit-to-the-office-store).
+> [!NOTE]
+> In this walkthrough, you're using a local file share as a trusted catalog where you'll store the add-in XML manifest file. In a real-world scenario, you might instead choose to [deploy the XML manifest file to a SharePoint catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) or [publish the add-in to the Office Store](https://dev.office.com/officestore/docs/submit-to-the-office-store).
 
 ## Step 2: Add the file share to the Trusted Add-ins catalog
 
 1.  Start Word 2016 and create a document.
 
-    >**Note:** Although this example uses Word 2016, you can use any Office application that supports Office Add-ins such as Excel, Outlook, PowerPoint, or Project 2016.
+    > [!NOTE]
+    > Although this example uses Word 2016, you can use any Office application that supports Office Add-ins such as Excel, Outlook, PowerPoint, or Project 2016.
     
 2.  Choose **File** > **Options**.
     
@@ -47,7 +59,8 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
     
 5. Select the check box for **Show in Menu**. 
 
-    >**Note:** When you store an add-in XML manifest file on a share that is specified as a trusted web add-in catalog, the add-in appears under **Shared Folder** in the **Office Add-ins** dialog box when the user navigates to the **Insert** tab in the ribbon and chooses **My Add-ins**.
+    > [!NOTE]
+    > When you store an add-in XML manifest file on a share that is specified as a trusted web add-in catalog, the add-in appears under **Shared Folder** in the **Office Add-ins** dialog box when the user navigates to the **Insert** tab in the ribbon and chooses **My Add-ins**.
 
 6. Close Word 2016.
 
@@ -105,7 +118,8 @@ To create the web app using the Azure portal, complete the following steps.
 
 4. Choose **Notifications** (the bell icon that is located along the top edge of the Azure portal) and then choose the **Deployments succeeded** notification to open the site's **Overview** page in the Azure portal.
 
-    >**Note:** The notification will change from **Deployment in progress** to **Deployments succeeded** when the site deployment completes.
+    > [!NOTE]
+    > The notification will change from **Deployment in progress** to **Deployments succeeded** when the site deployment completes.
 
 5. In the **Essentials** section of the site's **Overview** page in the Azure portal, choose the URL that is displayed under **URL**. Your browser opens and displays a webpage with the message "Your App Service app has been created." 
     
@@ -176,6 +190,5 @@ Visual Studio creates a basic Word add-in that you'll be able to publish as-is, 
 ## Additional resources
 
 - [Publish your Office Add-in](../publish/publish.md)
-    
 - [Package your add-in using Visual Studio to prepare for publishing](../publish/package-your-add-in-using-visual-studio.md)
     

@@ -1,3 +1,10 @@
+---
+title: Package your add-in using Visual Studio to prepare for publishing
+description: 
+ms.date: 11/20/2017 
+---
+
+
 # Package your add-in using Visual Studio to prepare for publishing
 
 Your Office Add-in package contains an XML [manifest file](../overview/add-in-manifests.md) that you'll use to publish the add-in. You'll have to publish the web application files of your project separately. This article describes how to deploy your web project and package your add-in by using Visual Studio 2015.
@@ -12,7 +19,8 @@ Complete the following steps to deploy your web project using Visual Studio 2015
     
 2. In the  **Current profile** drop-down list, select a profile or choose **New ...** to create a new profile.
     
-     >**Note:**  A publish profile specifies the server you are deploying to, the credentials needed to log on to the server, the databases to deploy, and other deployment options.
+    > [!NOTE]
+    > A publish profile specifies the server you are deploying to, the credentials needed to log on to the server, the databases to deploy, and other deployment options.
 
     If you choose  **New ...**, the  **Create publishing profile** wizard appears. You can use this wizard to import a publishing profile from a web site hosting provider such as Microsoft Azure or create a new profile and add your server, credentials, and other settings in the next procedure.
     
@@ -35,7 +43,8 @@ Complete the following steps to package your add-in using Visual Studio 2015.
     
     You must specify an address that begins with the HTTPS prefix to complete this wizard. Although using an HTTPS endpoint for your website is generally recommended, doing so is not required if you don't plan to publish your add-in to the Office Store. If you want to use an HTTP endpoint for your website, you can open the XML manifest file in a text editor after the package has been created and replace the HTTPS prefix of your website with an HTTP prefix. For more information, see [Why do my apps and add-ins have to be SSL-secured?](http://msdn.microsoft.com/en-us/library/jj591603#bk_q7).
     
-     >**Note:**  Azure websites automatically provide an HTTPS endpoint.
+    > [!NOTE]
+    > Azure websites automatically provide an HTTPS endpoint.
 
     Visual Studio generates the files that you need to publish your add-in and then opens the publish output folder. 
     
@@ -48,9 +57,6 @@ You can now upload your XML manifest to the appropriate location to [publish you
 
 ## Additional resources
 
-
-
 - [Publish your Office Add-in](../publish/publish.md)
-    
 - [Submit Office and SharePoint Add-ins and Office 365 web apps to the Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)
     

@@ -1,3 +1,10 @@
+---
+title: Create your first task pane add-in for Project 2013 by using a text editor
+description: 
+ms.date: 11/20/2017 
+---
+
+
 
 # Create your first task pane add-in for Project 2013 by using a text editor
 
@@ -88,7 +95,8 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
 
     The  **textarea** element specifies a text box that shows results of the JavaScript functions.
     
-     >**Note**  For the Project OM Test sample to work, copy the following files from the Project 2013 SDK download to the same directory as the JSOMCall.html file: Office.js, Project-15.js, and MicrosoftAjax.js.
+    > [!NOTE]
+    > For the Project OM Test sample to work, copy the following files from the Project 2013 SDK download to the same directory as the JSOMCall.html file: Office.js, Project-15.js, and MicrosoftAjax.js.
 
     Step 2 adds the JSOM_Sample.js file for specific functions that the Project OM Test sample add-in uses. In later steps, you will add other HTML elements for buttons that call JavaScript functions.
     
@@ -169,14 +177,16 @@ function getApplicationDisplayLanguage() {
     
   - The  **getTaskAsync** function gets the task name and the names of the assigned resources. If the task is in a synchronized SharePoint task list, **getTaskAsync** gets the task ID in the SharePoint list; otherwise, the SharePoint task ID is 0.
     
-     >**Note**  For demonstration purposes, the example code includes a bug. If  **taskGuid** is undefined, the **getTaskAsync** function errors off. If you get a valid task GUID and then select a different task, the **getTaskAsync** function gets data for the most recent task that was operated on by the **getSelectedTaskAsync** function.
+    > [!NOTE]
+    > For demonstration purposes, the example code includes a bug. If  **taskGuid** is undefined, the **getTaskAsync** function errors off. If you get a valid task GUID and then select a different task, the **getTaskAsync** function gets data for the most recent task that was operated on by the **getSelectedTaskAsync** function.
   -  **getTaskFields**,  **getResourceFields**, and  **getProjectFields** are local functions that call **getTaskFieldAsync**,  **getResourceFieldAsync**, or  **getProjectFieldAsync** multiple times to get specified fields of a task or a resource. In the project-15.debug.js file, the **ProjectTaskFields** enumeration and the **ProjectResourceFields** enumeration show which fields are supported.
     
   - The  **getSelectedViewAsync** function gets the type of view (defined in the **ProjectViewTypes** enumeration in project-15.debug.js) and the name of the view.
     
   - If the project is synchronized with a SharePoint tasks list, the  **getWSSUrlAsync** function gets the URL and the name of the tasks list. If the project is not synchronized with a SharePoint tasks list, the **getWSSUrlAsync** function errors off.
     
-     >**Note**  To get the SharePoint URL and name of the tasks list, we recommend that you use the  **getProjectFieldAsync** function with the **WSSUrl** and **WSSList** constants in the [ProjectProjectFields](../../reference/shared/projectprojectfields-enumeration.md) enumeration.
+    > [!NOTE]
+    > To get the SharePoint URL and name of the tasks list, we recommend that you use the  **getProjectFieldAsync** function with the **WSSUrl** and **WSSList** constants in the [ProjectProjectFields](../../reference/shared/projectprojectfields-enumeration.md) enumeration.
 
     Each of the functions in the following code includes an anonymous function that is specified by  `function (asyncResult)`, which is a callback that gets the asynchronous result. Instead of anonymous functions, you could use named functions, which can help with maintainability of complex add-ins.
     
@@ -695,7 +705,8 @@ function manageViewEventHandler(docMethod) {
 ```
 
 
-     >**Note**  The  **Task Pane Add-in (Project)** template in Visual Studio 2015 includes default .css files for a common look and feel of add-ins.
+> [!NOTE]
+> The  **Task Pane Add-in (Project)** template in Visual Studio 2015 includes default .css files for a common look and feel of add-ins.
 Procedure 3 shows how to install and use the Project OM Test add-in features.
 
 ## Procedure 3. To install and use the Project OM Test add-in
@@ -723,21 +734,21 @@ Procedure 3 shows how to install and use the Project OM Test add-in features.
     
 5. If you have already added the  `\\ServerName\AppManifests` path for the Bing Search add-in, skip this step. Otherwise, in the **Trusted Add-in Catalogs** pane, add the `\\ServerName\AppManifests` path in the **Catalog Url** text box, choose **Add catalog**, enable the network share as a default source (see Figure 1), and then choose  **OK**.
     
-    **Figure 1. Adding a network file share for add-in manifests**
+    *Figure 1. Adding a network file share for add-in manifests*
 
-    ![Adding a network file share for app manifests](../../images/pj15_CreateSimpleAgave_ManageCatalogs.png)
+    ![Adding a network file share for app manifests](../images/pj15-create-simple-agave-manage-catalogs.png)
 
 6. After you add new add-ins, or change the source code, restart Project. On the  **PROJECT** ribbon, choose the **Office Add-ins** drop-down menu, and then choose **See All**. In the  **Insert Add-in** dialog box, choose **SHARED FOLDER** (see Figure 2), select **Project OM Test**, and then choose  **Insert**. The Project OM Test add-in starts in a task pane.
     
-    **Figure 2. Starting the Project OM Test add-in that is on a file share**
+    *Figure 2. Starting the Project OM Test add-in that is on a file share*
 
-    ![Inserting an app](../../images/pj15_CreateSimpleAgave_StartAgaveApp.png)
+    ![Inserting an app](../images/pj15-create-simple-agave-start-agave-app.png)
 
 7. In Project, create and save a simple project that has at least two tasks. For example, create tasks named T1, T2, and a milestone named M1, and then set the task durations and predecessors to be similar to those in Figure 3. Choose the  **PROJECT** tab on the ribbon, select the entire row for task T2, and then choose the **getSelectedDataAsync** button in the task pane. Figure 3 shows the data that is selected in the text box of the **Project OM Test** add-in.
     
-    **Figure 3. Using the Project OM Test add-in**
+    *Figure 3. Using the Project OM Test add-in*
 
-    ![Using the Project OM Test app](../../images/pj15_CreateSimpleAgave_ProjectOMTest.gif)
+    ![Using the Project OM Test app](../images/pj15-create-simple-agave-project-om-test.gif)
 
 8. Select the cell in the  **Duration** column for the first task, and then choose the **getSelectedDataAsync** button in the **Project OM Test** add-in. The **getSelectedDataAsync** function sets the text box value to show `2 days`. 
     
@@ -779,7 +790,8 @@ Notes: This is a note for task T2. It is only a test note. If it had been a real
     
   - A SharePoint task list that was imported to Project Professional, and then saved back in SharePoint (not using Project Server).
     
-     >**Note**  If Project Professional is installed on a Windows Server computer, to be able to save the project back to SharePoint, you can use the  **Server Manager** to add the **Desktop Experience** feature.
+    > [!NOTE]
+    > If Project Professional is installed on a Windows Server computer, to be able to save the project back to SharePoint, you can use the  **Server Manager** to add the **Desktop Experience** feature.
 
     If the project is a local project, or if you use Project Professional to open a project that is managed by Project Server, the  **getWSSUrlAsync** method shows an undefined error.
     
@@ -1080,7 +1092,8 @@ var Toast = {
 To use the  **throwError** function, include the JQuery library and the SurfaceErrors.js script in the JSOMCall.html file, and then add a call to **throwError** in other JavaScript functions such as **logMethodError**.
 
 
- >**Note**  Before you deploy the add-in, change the office.js reference and the jQuery reference to the content delivery network (CDN) reference. The CDN reference provides the most recent version and better performance.
+> [!NOTE]
+> Before you deploy the add-in, change the office.js reference and the jQuery reference to the content delivery network (CDN) reference. The CDN reference provides the most recent version and better performance.
 
 
 
@@ -1121,22 +1134,16 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 ```
 
 
-**Figure 4. Functions in the SurfaceErrors.js file can show a "toast" notification**
+*Figure 4. Functions in the SurfaceErrors.js file can show a "toast" notification*
 
-![Using the SurfaceError routines to show an error](../../images/pj15_CreateSimpleAgave_SurfaceError.gif)
+![Using the SurfaceError routines to show an error](../images/pj15-create-simple-agave-surface-error.gif)
 
 
 ## Additional resources
 
-
-
 - [Task pane add-ins for Project](../project/project-add-ins.md)
-    
 - [Understanding the JavaScript API for add-ins](../develop/understanding-the-javascript-api-for-office.md)
-    
 - [JavaScript API for Office add-ins](../../reference/javascript-api-for-office.md)
-
 - [Schema reference for Office Add-ins manifests (v1.1)](../overview/add-in-manifests.md)     
-    
 - [Project 2013 SDK download](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)
     
