@@ -1,8 +1,15 @@
+---
+title: OneNote JavaScript API programming overview
+description: 
+ms.date: 11/20/2017 
+---
+
 # OneNote JavaScript API programming overview
 
 OneNote introduces a JavaScript API for OneNote Online add-ins. You can create task pane add-ins, content add-ins, and add-in commands that interact with OneNote objects and connect to web services or other web-based resources.
 
->**Note:** When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
+> [!NOTE]
+> When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
 
 ## Components of an Office Add-in
 
@@ -14,7 +21,7 @@ Add-ins consist of two basic components:
 
 **Office Add-in = Manifest + Webpage**
 
-![An Office add-in consists of a manifest and webpage](../../images/onenote-add-in.png)
+![An Office add-in consists of a manifest and webpage](../images/onenote-add-in.png)
 
 ## Using the JavaScript API
 
@@ -33,7 +40,8 @@ Use the **Application** object to access OneNote objects such as **Notebook**, *
 
 3. Call **load** on the proxy to fill it with the property values specified in the parameter. This call is added to the queue of commands.
 
-    > **Note**: Method calls to the API (such as `context.application.getActiveSection().pages;`) are also added to the queue.
+   > [!NOTE]
+   > Method calls to the API (such as `context.application.getActiveSection().pages;`) are also added to the queue.
 
 4. Call **context.sync** to run all queued commands in the order that they were queued. This synchronizes the state between your running script and the real objects, and by retrieving properties of loaded OneNote objects for use in your script. You can use the returned promise object for chaining additional actions.
 
@@ -111,10 +119,10 @@ In general, you only use the common API to do something that isn't supported in 
 ## OneNote object model diagram 
 The following diagram represents what's currently available in the OneNote JavaScript API.
 
-  ![OneNote object model diagram](../../images/onenote-om.png)
+  ![OneNote object model diagram](../images/onenote-om.png)
 
 
-## Additional Resources
+## Additional resources
 
 - [Build your first OneNote add-in](onenote-add-ins-getting-started.md)
 - [OneNote JavaScript API reference](../../reference/onenote/onenote-add-ins-javascript-reference.md)

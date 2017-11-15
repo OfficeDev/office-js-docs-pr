@@ -1,3 +1,9 @@
+---
+title: Get the whole document from an add-in for PowerPoint or Word
+description: 
+ms.date: 11/20/2017 
+---
+
 
 # Get the whole document from an add-in for PowerPoint or Word
 
@@ -101,7 +107,8 @@ Use the following procedure to create a simple user interface for the add-in tha
 - Save the file as GetDoc_App.html using UTF-8 encoding to a network location or to a web server.
     
 
- >**Note**  Be sure that the **head** tags of the add-in contains a **script** tag with a valid link to the office.js file. 
+   > [!NOTE]
+   > Be sure that the **head** tags of the add-in contains a **script** tag with a valid link to the office.js file. 
 
 We'll use some CSS to give the add-in a simple, yet modern and professional appearance. Use the following CSS to define the style of the add-in.
 
@@ -235,12 +242,13 @@ The  **Slice.data** property returns the raw data of the file as a byte array. I
 
 You must implement your own function (or use an available library) to convert byte array data to a Base64-encoded string. For information about Base64 encoding with JavaScript, see [Base64 encoding and decoding](https://developer.mozilla.org/docs/Web/JavaScript/Base64_encoding_and_decoding).
 
-Once you have converted the data to Base64, you can then transmit it to a web server in several ways -- including as the body of an HTTP POST request.
+After you have converted the data to Base64, you can then transmit it to a web server in several ways -- including as the body of an HTTP POST request.
 
 Add the following code to send a slice to a web service.
 
 
- >**Note**  This code sends a PowerPoint or Word file to the web server in multiple slices. The web server or service must compile each individual slice into a single .pptx file before you can perform any manipulations on it.
+> [!NOTE]
+> This code sends a PowerPoint or Word file to the web server in multiple slices. The web server or service must compile each individual slice into a single .pptx file before you can perform any manipulations on it.
 
 
 

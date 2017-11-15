@@ -1,3 +1,9 @@
+---
+title: Build your first Word add-in
+description: 
+ms.date: 11/20/2017 
+---
+
 # Build your first Word add-in
 
 _Applies to: Word 2016, Word for iPad, Word for Mac_
@@ -6,7 +12,8 @@ A Word add-in runs inside Word and can interact with the contents of the documen
 
 In this article, you'll walk through the process of building a Word add-in by using jQuery and the Word JavaScript API. 
 
-> **Note**: To develop an add-in for Word 2013, you'll need to use the shared [Office Javascript API]( https://dev.office.com/docs/add-ins/word/word-add-ins-programming-overview#javascript-apis-for-word). To learn more about the platforms and the different APIs that are available, see [Office Add-in host and platform availability](https://dev.office.com/add-in-availability). 
+> [!NOTE]
+> To develop an add-in for Word 2013, you'll need to use the shared [Office Javascript API]( https://dev.office.com/docs/add-ins/word/word-add-ins-programming-overview#javascript-apis-for-word). To learn more about the platforms and the different APIs that are available, see [Office Add-in host and platform availability](https://dev.office.com/add-in-availability). 
 
 ## Create the web app 
 
@@ -187,7 +194,7 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 2. In the right task pane, choose any of the buttons to add boilerplate text to the document.
 
-![Picture of the Word application with the boilerplate add-in loaded.](../../images/boilerplateAddin.png)
+![Picture of the Word application with the boilerplate add-in loaded.](../images/boilerplate-add-in.png)
 
 ## Next steps
 

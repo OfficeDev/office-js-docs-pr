@@ -1,10 +1,16 @@
+---
+title: Build your first OneNote add-in
+description: 
+ms.date: 11/20/2017 
+---
+
 # Build your first OneNote add-in
 
 This article walks you through building a simple task pane add-in that adds some text to a OneNote page.
 
 The following image shows the add-in that you'll create.
 
-   ![The OneNote add-in built from this walkthrough](../../images/onenote-first-add-in.png)
+   ![The OneNote add-in built from this walkthrough](../images/onenote-first-add-in.png)
 
 <a name="setup"></a>
 ## Step 1: Set up your dev environment and create an add-in project
@@ -113,7 +119,7 @@ function addOutlineToPage() {
   
   The following image shows the **MY ADD-INS** tab for consumer notebooks.
 
-  ![The Office Add-ins dialog showing the MY ADD-INS tab](../../images/onenote-office-add-ins-dialog.png)
+  ![The Office Add-ins dialog showing the MY ADD-INS tab](../images/onenote-office-add-ins-dialog.png)
 
 5 - In the Upload Add-in dialog, browse to **onenote-add-in-manifest.xml** in your project folder, and then choose **Upload**. While testing, your manifest file will be stored in the browser's local storage.
 
@@ -124,13 +130,13 @@ function addOutlineToPage() {
 
 -When you inspect a OneNote object, the properties that are currently available for use display actual values. Properties that need to be loaded display *undefined*. Expand the `_proto_` node to see properties that are defined on the object but are not yet loaded.
 
-![Unloaded OneNote object in the debugger](../../images/onenote-debug.png)
+![Unloaded OneNote object in the debugger](../images/onenote-debug.png)
 
 -You need to enable mixed content in the browser if your add-in uses any HTTP resources. Production add-ins should use only secure HTTPS resources.
 
 -Task pane add-ins can be opened from anywhere, but content add-ins can only be inserted inside regular page content (i.e. not in titles, images, iFrames, etc.). 
 
-## Additional Resources
+## Additional resources
 
 - [OneNote JavaScript API programming overview](onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API reference](../../reference/onenote/onenote-add-ins-javascript-reference.md)

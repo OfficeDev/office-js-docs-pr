@@ -1,3 +1,9 @@
+---
+title: Create a dictionary task pane add-in
+description: 
+ms.date: 11/20/2017 
+---
+
 
 # Create a dictionary task pane add-in
 
@@ -10,34 +16,31 @@ In a typical dictionary task pane add-in, a user selects a word or phrase in the
 The XML web service component returns up to three definitions in the format defined by the OfficeDefinitions XML schema, which are then displayed to the user in other places in the hosting Office application's UI. 
 Figure 1 shows the selection and display experience for a Bing-branded dictionary add-in that is running in Word 2013.
 
-**Figure 1. Dictionary add-in displaying definitions for the selected word**
+*Figure 1. Dictionary add-in displaying definitions for the selected word*
 
-
-![A dictionary app displaying a definition](../../images/DictionaryAgave01.jpg)
+![A dictionary app displaying a definition](../images/dictionary-agave-01.jpg)
 
 It is up to you to determine whether clicking the  **See More** link in the dictionary add-in's HTML UI displays more information within the task pane or opens a separate browser window to the full webpage for the selected word or phrase.
 Figure 2 shows the  **Define** context menu command that enables users to quickly launch installed dictionaries. Figures 3 through 5 show the places in the Office UI where the dictionary XML services are used to provide definitions in Word 2013.
 
-**Figure 2. Define command in the context menu**
+*Figure 2. Define command in the context menu*
+
+![Define context menu](../images/dictionary-agave-02.jpg)
 
 
+*Figure 3. Definitions in the Spelling and Grammar panes*
 
-![Define context menu](../../images/DictionaryAgave02.jpg)
-
-**Figure 3. Definitions in the Spelling and Grammar panes**
-
-
-![Definitions in the Spelling and Grammar panes](../../images/DictionaryAgave03.jpg)
-
-**Figure 4. Definitions in the Thesaurus pane**
+![Definitions in the Spelling and Grammar panes](../images/dictionary-agave-03.jpg)
 
 
-![Definitions in the Thesaurus pane](../../images/DictionaryAgave04.jpg)
+*Figure 4. Definitions in the Thesaurus pane*
 
-**Figure 5. Definitions in Reading Mode**
+![Definitions in the Thesaurus pane](../images/dictionary-agave-04.jpg)
 
 
-![Definitions in Reading Mode](../../images/DictionaryAgave05.jpg)
+*Figure 5. Definitions in Reading Mode*
+
+![Definitions in Reading Mode](../images/dictionary-agave-05.jpg)
 
 To create a task pane add-in that provides a dictionary lookup, you create two main components: 
 
@@ -534,9 +537,9 @@ a:hover, a:active
 ```
 
 
-**Figure 6. Demo dictionary UI**
+*Figure 6. Demo dictionary UI*
 
-![Demo dictionary UI](../../images/DictionaryAgave06.jpg)
+![Demo dictionary UI](../images/dictionary-agave-06.jpg)
 
 
 ### Writing the JavaScript implementation
