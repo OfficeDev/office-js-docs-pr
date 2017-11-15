@@ -1,8 +1,8 @@
-# Create add-in commands in your manifest for Excel, Word, and PowerPoint (Preview)
+# Create add-in commands in your manifest for Excel, Word, and PowerPoint
 Use **VersionOverrides** in your manifest to define add-in commands for Excel, Word, and PowerPoint.
-**Applies to:** apps for Office | Excel 2016 | Office Add-ins | PowerPoint 2016 | Word 201
+**Applies to:** Excel 2016 | Office Add-ins | PowerPoint 2016 | Word 2016
       
-Add-in commands provide an easy way to customize the default Office UI with specified UI elements that perform actions. You can use add-in commands to:
+Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. You can use add-in commands to:
 - Create UI elements or entry points that make your add-in's functionality easier to use.  
   
 - Add buttons or a drop-down list of buttons to the ribbon.    
@@ -24,7 +24,7 @@ This article describes how to edit your manifest to define add-in commands. The 
  
 ## Step 1: Start from a sample
 
-We strongly recommend that you start from one of the samples we provide in  [Office Add-in Commands Samples](https://github.com/OfficeDev/Office-Add-in-Command-Sample). Optionally, you can create your own manifest by following the steps in this guide. You can validate your manifest using the XSD file in the Office Add-in Commands Samples site. Ensure that you have read  [Add-in commands for Excel, Word and PowerPoint (Preview)](http://msdn.microsoft.com/library/5c898275-e47f-4e97-97df-098b769620d6%28Office.15%29.aspx) before using add-in commands.
+We strongly recommend that you start from one of the samples we provide in  [Office Add-in Commands Samples](https://github.com/OfficeDev/Office-Add-in-Command-Sample). Optionally, you can create your own manifest by following the steps in this guide. You can validate your manifest using the XSD file in the Office Add-in Commands Samples site. Ensure that you have read  [Add-in commands for Excel, Word and PowerPoint](http://msdn.microsoft.com/library/5c898275-e47f-4e97-97df-098b769620d6%28Office.15%29.aspx) before using add-in commands.
 
 ## Step 2: Create a task pane add-in
 
@@ -456,7 +456,7 @@ In Excel and Word, you can add your add-in commands to the ribbon by using the d
    
 
 ### Additional resources
--  [Add-in commands for Excel, Word and PowerPoint (Preview)](http://msdn.microsoft.com/library/5c898275-e47f-4e97-97df-098b769620d6%28Office.15%29.aspx)
+-  [Add-in commands for Excel, Word and PowerPoint](http://msdn.microsoft.com/library/5c898275-e47f-4e97-97df-098b769620d6%28Office.15%29.aspx)
       
 -  [Define add-in commands in your Outlook add-in manifest](http://msdn.microsoft.com/library/4d57d987-cb49-484d-8a54-a55c2850c2aa%28Office.15%29.aspx)  
   
