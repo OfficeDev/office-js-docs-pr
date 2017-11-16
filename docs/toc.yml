@@ -1,8 +1,6 @@
 - name: Overview
-  href: overview.md
+  href: overview/office-add-ins.md
   items:
-  - name: Platform overview
-    href: overview/office-add-ins.md
   - name: Requirements for running add-ins
     href: overview/requirements-for-running-office-add-ins.md
   - name: Add-in development best practices
@@ -81,10 +79,8 @@
     - name: Toggle
       href: design/toggle.md
 - name: Develop
-  href: develop.md
+  href: develop/add-in-development-lifecycle.md
   items:
-  - name: Add-in development lifecycle
-    href: develop/add-in-development-lifecycle.md
   - name: Install the latest Office version
     href: develop/install-latest-office-version.md
   - name: Develop add-ins for the iPad
@@ -229,7 +225,7 @@
   - name: Excel JavaScript API reference
     href: https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview.md
 - name: Outlook
-  href: https://docs.microsoft.com/outlook/add-ins/.md
+  href: https://docs.microsoft.com/en-us/outlook/add-ins/
 - name: PowerPoint
   href: powerpoint/powerpoint-add-ins.md
   items:
