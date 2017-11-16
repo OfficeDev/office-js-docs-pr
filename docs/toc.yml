@@ -251,4 +251,4 @@
   - name: Access web app add-ins
     href: access/access-web-app-add-ins.md
 - name: JavaScript API reference
-  href: https://dev.office.com/reference/add-ins/javascript-api-for-office.md
+  href: https://dev.office.com/reference/add-ins/javascript-api-for-office
