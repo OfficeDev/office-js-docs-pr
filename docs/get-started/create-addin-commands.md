@@ -1,8 +1,8 @@
 # Create add-in commands in your manifest for Excel, Word, and PowerPoint
-Use **VersionOverrides** in your manifest to define add-in commands for Excel, Word, and PowerPoint.
+
 **Applies to:** Excel 2016 | Office Add-ins | PowerPoint 2016 | Word 2016
-      
-Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. You can use add-in commands to:
+
+Use **[VersionOverrides](../../reference/manifest/versionoverrides.md)** in your manifest to define add-in commands for Excel, Word, and PowerPoint. Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. You can use add-in commands to:
 - Create UI elements or entry points that make your add-in's functionality easier to use.  
   
 - Add buttons or a drop-down list of buttons to the ribbon.    
@@ -19,16 +19,16 @@ Add-in commands provide an easy way to customize the default Office user interfa
       
 This article describes how to edit your manifest to define add-in commands. The following diagram shows the hierarchy of elements used to define add-in commands. These elements are described in more detail in this article. 
       
-    
-![Overview of add-in commands elements in the manifest](images/080da303-51c4-4882-b74a-7ba11517c0ad.png)
+The following image is an overview of add-in commands elements in the manifest. 
+![Overview of add-in commands elements in the manifest](https://github.com/OfficeDev/office-js-docs/images/080da303-51c4-4882-b74a-7ba11517c0ad.png)
  
 ## Step 1: Start from a sample
 
-We strongly recommend that you start from one of the samples we provide in  [Office Add-in Commands Samples](https://github.com/OfficeDev/Office-Add-in-Command-Sample). Optionally, you can create your own manifest by following the steps in this guide. You can validate your manifest using the XSD file in the Office Add-in Commands Samples site. Ensure that you have read  [Add-in commands for Excel, Word and PowerPoint](http://msdn.microsoft.com/library/5c898275-e47f-4e97-97df-098b769620d6%28Office.15%29.aspx) before using add-in commands.
+We strongly recommend that you start from one of the samples we provide in  [Office Add-in Commands Samples](https://github.com/OfficeDev/Office-Add-in-Command-Sample). Optionally, you can create your own manifest by following the steps in this guide. You can validate your manifest using the XSD file in the Office Add-in Commands Samples site. Ensure that you have read  [Add-in commands for Excel, Word and PowerPoint](https://dev.office.com/docs/add-ins/design/add-in-commands) before using add-in commands.
 
 ## Step 2: Create a task pane add-in
 
-To start using add-in commands, you must first create a task pane add-in, and then modify the add-in's manifest as described in this article. You can't use add-in commands with content add-ins. If you're updating an existing manifest, you can add the **VersionOverrides** element to the manifest as described in [Step 3: Add VersionOverrides element](90d8cdc2-9996-4370-b8d4-ed062e43079d.md#versionoverrides).
+To start using add-in commands, you must first create a task pane add-in, and then modify the add-in's manifest as described in this article. You can't use add-in commands with content add-ins. If you're updating an existing manifest, you can add the **VersionOverrides** element to the manifest as described in [Step 3: Add VersionOverrides element](#Step-3:-Add-VersionOverrides-element).
    
 The following example shows an Office 2013 add-in's manifest. There are no add-in commands in this manifest because there is no **VersionOverrides** element. Office 2013 doesn't support add-in commands, but by adding **VersionOverrides** to this manifest, your add-in will run in both Office 2013 and Office 2016. In Office 2013, your add-in won't display add-in commands, and uses the value of **SourceLocation** to run your add-in as a single task pane add-in. In Office 2016, if no **VersionOverrides** element is included, **SourceLocation** is used to run your add-in. If you include **VersionOverrides**, however, your add-in displays the add-in commands only, and doesn't display your add-in as a single task pane add-in.
   
@@ -77,9 +77,9 @@ The following table identifies the child elements of **VersionOverrides**.
 |**Element**|**Description**|
 |:-----|:-----|
 |**Description** <br/> |Optional. Describes the add-in. This child **Description** element overrides a previous **Description** element in the parent portion of the manifest. The **resid** attribute for this **Description** element is set to the **id** of a **String** element. The **String** element contains the text for **Description**. <br/> |
-|**Requirements** <br/> |Optional. Specifies the minimum requirement set and version of Office.js that the add-in requires. This child **Requirements** element overrides the **Requirements** element in the parent portion of the manifest. For more information, see [Specify Office hosts and API requirements](http://msdn.microsoft.com/library/6b6702f2-b0a5-46ab-a356-8dda897ca8ae%28Office.15%29.aspx).  <br/> |
+|**Requirements** <br/> |Optional. Specifies the minimum requirement set and version of Office.js that the add-in requires. This child **Requirements** element overrides the **Requirements** element in the parent portion of the manifest. For more information, see [Specify Office hosts and API requirements](https://dev.office.com/docs/add-ins/overview/specify-office-hosts-and-api-requirements).  <br/> |
 |**Hosts** <br/> |Required. Specifies a collection of Office hosts. The child **Hosts** element overrides the **Hosts** element in the parent portion of the manifest. You must include a **xsi:type** attribute set to "Workbook" or "Document". <br/> |
-|**Resources** <br/> |Defines a collection of resources (strings, URLs, and images) that other manifest elements reference. For example, the **Description** element's value refers to a child element in **Resources**. The **Resources** element is described in [Step 7: Add the Resources element](90d8cdc2-9996-4370-b8d4-ed062e43079d.md#VersionOverrides10_Resources) later in this article. <br/> |
+|**Resources** <br/> |Defines a collection of resources (strings, URLs, and images) that other manifest elements reference. For example, the **Description** element's value refers to a child element in **Resources**. The **Resources** element is described in [Step 7: Add the Resources element](#Step-7:-Add-the-Resources-element) later in this article. <br/> |
    
 The following example shows how to use the **VersionOverrides** element and its child elements.
 
@@ -138,7 +138,7 @@ The following is an example of **Hosts**, **Host**, and **DesktopFormFactor** el
 ```
 
 ## Step 5: Add the FunctionFile element
- The **FunctionFile** element specifies a file that contains JavaScript code to run when an add-in command uses the **ExecuteFunction** action (see [Button controls](90d8cdc2-9996-4370-b8d4-ed062e43079d.md#VersionOverrides10_Buttons) for a description). The **FunctionFile** element's **resid** attribute is set to a HTML file that includes all the JavaScript files your add-in commands require. You can't link directly to a JavaScript file. You can only link to an HTML file. The file name is specified as a **Url** element in the **Resources** element.
+ The **FunctionFile** element specifies a file that contains JavaScript code to run when an add-in command uses the **ExecuteFunction** action (see [Button controls](https://dev.office.com/reference/add-ins/manifest/control#Button-control) for a description). The **FunctionFile** element's **resid** attribute is set to a HTML file that includes all the JavaScript files your add-in commands require. You can't link directly to a JavaScript file. You can only link to an HTML file. The file name is specified as a **Url** element in the **Resources** element.
         
 The following is an example of the **FunctionFile** element.
   
@@ -157,7 +157,7 @@ The following is an example of the **FunctionFile** element.
 
 **IMPORTANT**  Make sure your JavaScript code calls  `Office.initialize`. 
    
-The JavaScript in the HTML file referenced by the **FunctionFile** element must call `Office.initialize`. The **FunctionName** element (see [Button controls](90d8cdc2-9996-4370-b8d4-ed062e43079d.md#VersionOverrides10_Buttons) for a description) uses the functions in **FunctionFile**.
+The JavaScript in the HTML file referenced by the **FunctionFile** element must call `Office.initialize`. The **FunctionName** element (see [Button controls](https://dev.office.com/reference/add-ins/manifest/control#Button-control) for a description) uses the functions in **FunctionFile**.
  
      
 The following code shows how to implement the function used by **FunctionName**.
@@ -247,13 +247,13 @@ The following examples show how to use the **ExtensionPoint** element with **Pri
 |**Element**|**Description**|
 |:-----|:-----|
 |**CustomTab** <br/> |Required if you want to add a custom tab to the ribbon (using **PrimaryCommandSurface**). If you use the **CustomTab** element, you can't use the **OfficeTab** element. The **id** attribute is required. <br/> |
-|**OfficeTab** <br/> |Required if you want to extend a default Office ribbon tab (using **PrimaryCommandSurface**). If you use the **OfficeTab** element, you can't use the **CustomTab** element. <br/> For more tab values to use with the **id** attribute, see [Tab values for default Office ribbon tabs](90d8cdc2-9996-4370-b8d4-ed062e43079d.md#OfficeTabs).  <br/> |
+|**OfficeTab** <br/> |Required if you want to extend a default Office ribbon tab (using **PrimaryCommandSurface**). If you use the **OfficeTab** element, you can't use the **CustomTab** element. <br/> For more tab values to use with the **id** attribute, see [Tab values for default Office ribbon tabs](https://dev.office.com/reference/add-ins/manifest/officetab).  <br/> |
 |**OfficeMenu** <br/> | Required if you're adding add-in commands to a default context menu (using **ContextMenu**). The **id** attribute must be set to: <br/> **ContextMenuText** for Excel or Word. Displays the item on the context menu when text is selected and then the user right-clicks on the selected text. <br/> **ContextMenuCell** for Excel. Displays the item on the context menu when the user right-clicks on a cell on the spreadsheet. <br/> |
 |**Group** <br/> |A group of user interface extension points on a tab. A group can have up to six controls. The **id** attribute is required. It's a string with a maximum of 125 characters. <br/> |
 |**Label** <br/> |Required. The label of the group. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element. <br/> |
 |**Icon** <br/> |Required. Specifies the group's icon to be used on small form factor devices, or when too many buttons are displayed. The **resid** attribute must be set to the value of the **id** attribute of an **Image** element. The **Image** element is a child element of the **Images** element, which is a child element of the **Resources** element. The **size** attribute gives the size, in pixels, of the image. Three image sizes are required: 16, 32, and 80. Five optional sizes are also supported: 20, 24, 40, 48, and 64. <br/> |
 |**Tooltip** <br/> |Optional. The tooltip of the group. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element. <br/> |
-|**Control** <br/> |Each group requires at least one control. A **Control** element can be either a **Button** or a **Menu**. Use **Menu** to specify a drop-down list of button controls. Currently, only buttons and menus are supported. <br/> See the  [Button controls](90d8cdc2-9996-4370-b8d4-ed062e43079d.md#VersionOverrides10_Buttons) and [Menu controls](90d8cdc2-9996-4370-b8d4-ed062e43079d.md#VersionOverrides10_Menus) sections for more information. <br/> > [!NOTE]> To make troubleshooting easier, we recommend that a **Control** element and the related **Resources** child elements be added one at a time.          |
+|**Control** <br/> |Each group requires at least one control. A **Control** element can be either a **Button** or a **Menu**. Use **Menu** to specify a drop-down list of button controls. Currently, only buttons and menus are supported. <br/> See the  [Button controls](https://dev.office.com/reference/add-ins/manifest/control) and [Menu controls](https://dev.office.com/reference/add-ins/manifest/control) sections for more information. <br/> > [!NOTE]> To make troubleshooting easier, we recommend that a **Control** element and the related **Resources** child elements be added one at a time.          |
    
 
 ### Button controls
@@ -324,17 +324,14 @@ A **Menu** control can be used with either **PrimaryCommandSurface** or **Contex
 - A list of submenu items.
  
 When used with **PrimaryCommandSurface**, the root menu item displays as a button on the ribbon. When the button is selected, the submenu displays as a drop-down list. When used with **ContextMenu**, a menu item with a submenu is inserted on the context menu. In both cases, individual submenu items can either execute a JavaScript function or show a task pane. Only one level of submenus is supported at this time.
-  
-     
+       
 The following example shows how to define a menu item with two submenu items. The first submenu item shows a task pane, and the second submenu item runs a JavaScript function. In the **Control** element:
     
 - The **xsi:type** attribute is required, and must be set to **Menu**.
   
 - The **id** attribute is a string with a maximum of 125 characters.
-   
- 
+    
 ```
-
 <Control xsi:type="Menu" id="TestMenu2">
               <Label resid="residLabel3" />
               <Tooltip resid="residToolTip" />
@@ -456,7 +453,7 @@ In Excel and Word, you can add your add-in commands to the ribbon by using the d
    
 
 ### Additional resources
--  [Add-in commands for Excel, Word and PowerPoint](http://msdn.microsoft.com/library/5c898275-e47f-4e97-97df-098b769620d6%28Office.15%29.aspx)
+-  [Add-in commands for Excel, Word and PowerPoint](https://dev.office.com/docs/add-ins/design/add-in-commands-for-excel-and-word-preview)
       
--  [Define add-in commands in your Outlook add-in manifest](http://msdn.microsoft.com/library/4d57d987-cb49-484d-8a54-a55c2850c2aa%28Office.15%29.aspx)  
+-  [Define add-in commands in your manifest](https://dev.office.com/docs/add-ins/develop/define-add-in-commands)  
   
