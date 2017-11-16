@@ -10,7 +10,6 @@
   - name: Changelog
     href: overview/add-in-changelog.md
 - name: Get started
-  href: get-started.md
   items:
   - name: Use Visual Studio
     href: get-started/create-and-debug-office-add-ins-in-visual-studio.md
@@ -92,7 +91,6 @@
   - name: Use the Dialog API
     href: develop/dialog-api-in-office-add-ins.md
   - name: Authentication and authorization
-    href: authentication.md
     items:
     - name: Enable SSO in an add-in
       href: develop/sso-in-office-add-ins.md
@@ -138,7 +136,6 @@
   - name: Performance
     href: develop/resource-limits-and-performance-optimization.md
 - name: Test and debug
-  href: testing.md
   items:
   - name: Sideload Office Add-ins for testing
     href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
@@ -234,7 +231,6 @@
   - name: Get the whole document from an add-in for PowerPoint or Word
     href: develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md
 - name: OneNote
-  href: onenote.md
   items:
   - name: OneNote JavaScript API programming overview
     href: onenote/onenote-add-ins-programming-overview.md
@@ -243,7 +239,6 @@
   - name: Work with OneNote page content
     href: onenote/onenote-add-ins-page-content.md
 - name: Project
-  href: project.md
   items:
   - name: Project add-ins
     href: project/project-add-ins.md
