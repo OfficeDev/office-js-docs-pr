@@ -905,7 +905,7 @@ When attachments are specified in the `formData.attachments` parameter, Outlook 
 | `formData.htmlBody` | String | &lt;optional&gt; | A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.
 | `formData.attachments` | Array.&lt;Object&gt; | &lt;optional&gt; | An array of JSON objects that are either file or item attachments. |
 | `formData.attachments[].type` | String | | Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment. |
-| `formData.attachments[].name` | String | | A string that contains the name of the attachment, up to 255 characters in length.| 
+| `formData.attachments[].name` | String | | A string that contains the name of the attachment, up to 255 characters in length.|
 | `formData.attachments[].url` | String | | Only used if `type` is set to `file`. The URI of the location for the file. |
 | `formData.attachments[].isInline` | Boolean | | Only used if `type` is set to `file`. If `true`, indicates that the attachment will be shown inline in the message body, and should not be displayed in the attachment list. |
 | `formData.attachments[].itemId` | String | | Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters. |
@@ -1023,7 +1023,7 @@ When attachments are specified in the `formData.attachments` parameter, Outlook 
 | `formData.htmlBody` | String | &lt;optional&gt; | A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.
 | `formData.attachments` | Array.&lt;Object&gt; | &lt;optional&gt; | An array of JSON objects that are either file or item attachments. |
 | `formData.attachments[].type` | String | | Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment. |
-| `formData.attachments[].name` | String | | A string that contains the name of the attachment, up to 255 characters in length.| 
+| `formData.attachments[].name` | String | | A string that contains the name of the attachment, up to 255 characters in length.|
 | `formData.attachments[].url` | String | | Only used if `type` is set to `file`. The URI of the location for the file. |
 | `formData.attachments[].isInline` | Boolean | | Only used if `type` is set to `file`. If `true`, indicates that the attachment will be shown inline in the message body, and should not be displayed in the attachment list. |
 | `formData.attachments[].itemId` | String | | Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters. |

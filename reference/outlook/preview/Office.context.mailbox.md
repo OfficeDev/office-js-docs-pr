@@ -400,7 +400,7 @@ If any of the parameters exceed the specified size limits, or if an unknown para
 | `parameters.htmlBody` | String | The HTML body of the message. The body content is limited to a maximum size of 32 KB. |
 | `parameters.attachments` | Array.&lt;Object&gt; | An array of JSON objects that are either file or item attachments. |
 | `parameters.attachments[].type` | String | Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment. |
-| `parameters.attachments[].name` | String | A string that contains the name of the attachment, up to 255 characters in length.| 
+| `parameters.attachments[].name` | String | A string that contains the name of the attachment, up to 255 characters in length.|
 | `parameters.attachments[].url` | String | Only used if `type` is set to `file`. The URI of the location for the file. |
 | `parameters.attachments[].isInline` | Boolean | Only used if `type` is set to `file`. If `true`, indicates that the attachment will be shown inline in the message body, and should not be displayed in the attachment list. |
 | `parameters.attachments[].itemId` | String | Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters. |
