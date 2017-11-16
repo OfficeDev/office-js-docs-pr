@@ -20,7 +20,7 @@ Use **[VersionOverrides](../../reference/manifest/versionoverrides.md)** in your
 This article describes how to edit your manifest to define add-in commands. The following diagram shows the hierarchy of elements used to define add-in commands. These elements are described in more detail in this article. 
       
 The following image is an overview of add-in commands elements in the manifest. 
-![Overview of add-in commands elements in the manifest](https://github.com/OfficeDev/office-js-docs/images/080da303-51c4-4882-b74a-7ba11517c0ad.png)
+![Overview of add-in commands elements in the manifest](office-js-docs/images/080da303-51c4-4882-b74a-7ba11517c0ad.png)
  
 ## Step 1: Start from a sample
 
@@ -253,7 +253,7 @@ The following examples show how to use the **ExtensionPoint** element with **Pri
 |**Label** <br/> |Required. The label of the group. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element. <br/> |
 |**Icon** <br/> |Required. Specifies the group's icon to be used on small form factor devices, or when too many buttons are displayed. The **resid** attribute must be set to the value of the **id** attribute of an **Image** element. The **Image** element is a child element of the **Images** element, which is a child element of the **Resources** element. The **size** attribute gives the size, in pixels, of the image. Three image sizes are required: 16, 32, and 80. Five optional sizes are also supported: 20, 24, 40, 48, and 64. <br/> |
 |**Tooltip** <br/> |Optional. The tooltip of the group. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element. <br/> |
-|**Control** <br/> |Each group requires at least one control. A **Control** element can be either a **Button** or a **Menu**. Use **Menu** to specify a drop-down list of button controls. Currently, only buttons and menus are supported. <br/> See the  [Button controls](https://dev.office.com/reference/add-ins/manifest/control) and [Menu controls](https://dev.office.com/reference/add-ins/manifest/control) sections for more information. <br/> > [!NOTE]> To make troubleshooting easier, we recommend that a **Control** element and the related **Resources** child elements be added one at a time.          |
+|**Control** <br/> |Each group requires at least one control. A **Control** element can be either a **Button** or a **Menu**. Use **Menu** to specify a drop-down list of button controls. Currently, only buttons and menus are supported. <br/> See the  [Button controls](https://dev.office.com/reference/add-ins/manifest/control) and [Menu controls](https://dev.office.com/reference/add-ins/manifest/control) sections for more information. <br/> > **NOTE**> To make troubleshooting easier, we recommend that you add a **Control** element and the related **Resources** child elements one at a time.          |
    
 
 ### Button controls
