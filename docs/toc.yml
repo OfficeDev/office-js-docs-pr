@@ -1,4 +1,4 @@
-- name: Overview
+- name: Office Add-ins Overview
   href: overview/office-add-ins.md
   items:
   - name: Requirements for running add-ins
