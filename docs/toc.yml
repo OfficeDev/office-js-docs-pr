@@ -252,7 +252,6 @@
   - name: Create your first task pane add-in for Project by using a text editor
     href: project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md
 - name: Access
-  href: access.md
   items:
   - name: Access web app add-ins
     href: access/access-web-app-add-ins.md
