@@ -61,6 +61,7 @@
 			<Item text="Authorize external services" url="develop/auth-external-add-ins" SEODescription="Authorize external single sign-on services (SSO) add-in" />
 			</Item>
 	<Item text="Manifest" url="overview/add-in-manifests" >	
+		<Item text="Create add-in commands" url="get-started/create-addin-commands"  SEODescription="Create UI elements such as entry points, buttons, menus, or menu items. Add-in commands provide a way to customize the default Office user interface." />
 		<Item text="Define add-in commands" url="develop/define-add-in-commands"  SEODescription="Use the VersionOverrides element in your add-in manifest to define add-in commands." />
 		<Item text="Specify Office hosts" url="overview/specify-office-hosts-and-api-requirements" SEODescription="Find out how to specify Office hosts and API requirements in your manifest." /> 	
 		<Item text="Requesting permissions for API use in content and task pane add-ins" url="develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins" SEODescription="Specify the level of API access your add-in requires in your manifest."  />
