@@ -37,7 +37,7 @@ The typical development lifecycle of an Office Add-in includes the following ste
     
   	- Will customers use the add-in while viewing or composing an email message or appointment? Is being able to expose the add-in according to the current context important? Is making the add-in available on not just the desktop, but also on tablets and phones a priority?
     
-    	If you answer yes to any of these questions, consider creating an Outlook add-in. Then identify the context that will trigger your add-in (for example, the user being in a compose form, specific message types, the presence of an attachment, address, task suggestion, or meeting suggestion, or certain string patterns in the contents of an email or appointment). See [Activation rules for Outlook add-ins](../outlook/manifests/activation-rules.md) to find out how you can contextually activate the Outlook add-in.
+    	If you answer yes to any of these questions, consider creating an Outlook add-in. Then identify the context that will trigger your add-in (for example, the user being in a compose form, specific message types, the presence of an attachment, address, task suggestion, or meeting suggestion, or certain string patterns in the contents of an email or appointment). See [Activation rules for Outlook add-ins](https://docs.microsoft.com/en-us/outlook/add-ins/activation-rules) to find out how you can contextually activate the Outlook add-in.
     
   	- Will customers use the add-in to enhance the viewing or authoring experience of a document? If so, you may want to consider creating a task pane add-in. 
 
@@ -59,7 +59,7 @@ The typical development lifecycle of an Office Add-in includes the following ste
     
     Place the HTML files and any JavaScript and CSS files on the web servers that are specified in the add-in manifest file. The process to install an add-in depends on the type of the add-in. For details, see [Sideload Office Add-ins for testing](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
     
-    For Outlook add-ins, install it in an Exchange mailbox, and specify the location of the add-in manifest file in the Exchange Admin Center (EAC). For more information, see [Deploy and install Outlook add-ins for testing](../outlook/add-ins/testing-and-tips.md).
+    For Outlook add-ins, install it in an Exchange mailbox, and specify the location of the add-in manifest file in the Exchange Admin Center (EAC). For more information, see [Deploy and install Outlook add-ins for testing](https://docs.microsoft.com/en-us/outlook/add-ins/testing-and-tips).
     
 7.  **Publish the add-in.**
     
