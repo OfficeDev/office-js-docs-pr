@@ -15,7 +15,7 @@ var rowCount = bindingObj.rowCount;
 
 ## Return Value
 
-The number of rows in the specified [MatrixBinding](../../reference/shared/binding.matrixbinding.md) object.
+The number of rows in the specified [MatrixBinding](/reference/shared/binding.matrixbinding.md) object.
 
 
 ## Example

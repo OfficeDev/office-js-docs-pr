@@ -1,7 +1,7 @@
 
 
 # Settings.settingsChanged event
-Occurs when the in-memory copy of the settings property bag is saved into the document with the [Settings.saveAsync](../../reference/shared/settings.saveasync.md) method.
+Occurs when the in-memory copy of the settings property bag is saved into the document with the [Settings.saveAsync](/reference/shared/settings.saveasync.md) method.
 
 |||
 |:-----|:-----|
@@ -16,9 +16,9 @@ Office.EventType.SettingsChanged
 
 ## Remarks
 
-To add an event handler for the  **settingsChanged** event, use the [addHandlerAsync](../../reference/shared/settings.addhandlerasync.md) method of the **Settings** object.
+To add an event handler for the  **settingsChanged** event, use the [addHandlerAsync](/reference/shared/settings.addhandlerasync.md) method of the **Settings** object.
 
-The  **settingsChanged** event fires only when your add-in's script calls the **Settings.saveAsync** method to persist the in-memory copy of the settings into the document file. The **settingsChanged** event is not triggered when the [Settings.set](../../reference/shared/settings.set.md) or [Settings.remove](../../reference/shared/settings.remove.md) methods are called.
+The  **settingsChanged** event fires only when your add-in's script calls the **Settings.saveAsync** method to persist the in-memory copy of the settings into the document file. The **settingsChanged** event is not triggered when the [Settings.set](/reference/shared/settings.set.md) or [Settings.remove](/reference/shared/settings.remove.md) methods are called.
 
 The  **settingsChanged** event was designed to let you to handle potential conflicts when two or more users are attempting to save settings at the same time when your add-in is used in a shared (co-authored) document.
 

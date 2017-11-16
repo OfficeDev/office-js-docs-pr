@@ -12,7 +12,7 @@ Add-in commands are UI elements that extend the Office UI and start actions in y
 For an overview of the feature, see the video [Add-in Commands in the Office Ribbon](https://channel9.msdn.com/events/Build/2016/P551).
 
 > [!NOTE]
-> SharePoint catalogs do not support add-in commands. You can deploy add-in commands via [Centralized Deployment](../publish/centralized-deployment.md) or the [Office Store](https://dev.office.com/officestore/docs/submit-to-the-office-store), or use [sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins) to deploy your add-in command for testing. 
+> SharePoint catalogs do not support add-in commands. You can deploy add-in commands via [Centralized Deployment](../publish/centralized-deployment.md) or the [Office Store](https://dev.office.com/officestore/docs/submit-to-the-office-store), or use [sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) to deploy your add-in command for testing. 
 
 **Add-in with commands running in Excel Desktop**
 
@@ -68,7 +68,7 @@ Apply the following best practices when you develop add-in commands:
      > [!NOTE]
      > Add-ins that take up too much space might not pass [Office Store validation](https://dev.office.com/officestore/docs/validation-policies).
 
-- For all icons, follow the [icon design guidelines](../design/design-icons.md).
+- For all icons, follow the [icon design guidelines](design-icons.md).
 - Provide a version of your add-in that also works on hosts that do not support commands. A single add-in manifest can work in both command-aware (with commands) and non-command-aware (as a taskpane) hosts.
 
     ![A screenshot that shows a task pane add-in in Office 2013 and the same add-in using add-in commands in Office 2016](../images/office-task-pane-add-ins.png)
@@ -78,7 +78,7 @@ Apply the following best practices when you develop add-in commands:
 
 The best way to get started using add-in commands is to take a look at the [Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) on GitHub.
 
-For more information about specifying add-in commands in your manifest, see [Define add-in commands in your manifest](../develop/define-add-in-commands.md) and the [VersionOverrides](../../reference/manifest/versionoverrides.md) reference content.
+For more information about specifying add-in commands in your manifest, see [Define add-in commands in your manifest](../develop/define-add-in-commands.md) and the [VersionOverrides](/reference/manifest/versionoverrides.md) reference content.
 
 
 ## Additional resources

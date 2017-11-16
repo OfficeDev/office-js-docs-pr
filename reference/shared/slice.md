@@ -21,13 +21,13 @@ slice
 
 |**Name**|**Description**|
 |:-----|:-----|
-|**[data](../../reference/shared/slice.data.md)**|Gets the raw data of the file slice.|
-|**[index](../../reference/shared/slice.index.md)**|Gets the index of the file slice.|
-|**[size](../../reference/shared/slice.size.md)**|Gets the size of the slice in bytes.|
+|**[data](/reference/shared/slice.data.md)**|Gets the raw data of the file slice.|
+|**[index](/reference/shared/slice.index.md)**|Gets the index of the file slice.|
+|**[size](/reference/shared/slice.size.md)**|Gets the size of the slice in bytes.|
 
 ## Remarks
 
-The  **Slice** object is accessed with the [File.getSliceAsync](../../reference/shared/file.getsliceasync.md) method.
+The  **Slice** object is accessed with the [File.getSliceAsync](/reference/shared/file.getsliceasync.md) method.
 
 
 ## Support details

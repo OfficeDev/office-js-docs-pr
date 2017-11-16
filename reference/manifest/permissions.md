@@ -26,7 +26,7 @@ For mail add-ins:
 
 ## Contained in:
 
- _[OfficeApp](../../reference/manifest/officeapp.md)_
+ _[OfficeApp](/reference/manifest/officeapp.md)_
 
 
 ## Remarks

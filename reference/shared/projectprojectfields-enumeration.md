@@ -1,6 +1,6 @@
 
 # ProjectProjectFields enumeration
-Specifies the project fields that are available as a parameter for the  **[getProjectFieldAsync](../../reference/shared/projectdocument.getprojectfieldasync.md)** method.
+Specifies the project fields that are available as a parameter for the  **[getProjectFieldAsync](/reference/shared/projectdocument.getprojectfieldasync.md)** method.
 
 |||
 |:-----|:-----|
@@ -49,7 +49,7 @@ ProjectProjectFields={
 
 ## Remarks
 
-A  **ProjectProjectFields** constant can be used as a parameter of the **[getProjectFieldAsync](../../reference/shared/projectdocument.getprojectfieldasync.md)** method.
+A  **ProjectProjectFields** constant can be used as a parameter of the **[getProjectFieldAsync](/reference/shared/projectdocument.getprojectfieldasync.md)** method.
 
 
 ## Support details
@@ -91,4 +91,4 @@ For more information about Office host application and server requirements, see 
 #### Other resources
 
 
-[getProjectFieldAsync method](../../reference/shared/projectdocument.getprojectfieldasync.md)
+[getProjectFieldAsync method](/reference/shared/projectdocument.getprojectfieldasync.md)

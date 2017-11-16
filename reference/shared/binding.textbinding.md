@@ -15,7 +15,7 @@ TextBinding
 
 ## Remarks
 
-The  **TextBinding** object inherits the [id](../../reference/shared/binding.id.md) property, [type](../../reference/shared/binding.type.md) property, [getDataAsync](../../reference/shared/binding.getdataasync.md) method, and [setDataAsync](../../reference/shared/binding.setdataasync.md) method from the [Binding](../../reference/shared/binding.md) object. It does not implement any additional properties or methods of its own.
+The  **TextBinding** object inherits the [id](/reference/shared/binding.id.md) property, [type](/reference/shared/binding.type.md) property, [getDataAsync](/reference/shared/binding.getdataasync.md) method, and [setDataAsync](/reference/shared/binding.setdataasync.md) method from the [Binding](/reference/shared/binding.md) object. It does not implement any additional properties or methods of its own.
 
 
 ## Support details

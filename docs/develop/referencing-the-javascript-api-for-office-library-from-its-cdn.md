@@ -8,7 +8,7 @@ ms.date: 11/20/2017
 # Referencing the JavaScript API for Office library from its content delivery network (CDN)
 
 
-The [JavaScript API for Office](../../reference/javascript-api-for-office.md) library consists of the Office.js file and associated host application-specific .js files, such as Excel-15.js and Outlook-15.js. 
+The [JavaScript API for Office](/reference/javascript-api-for-office.md) library consists of the Office.js file and associated host application-specific .js files, such as Excel-15.js and Outlook-15.js. 
 
 
 The simplest way to reference the API is to use our CDN by adding the following `<script>` to your page's `<head>` tag:  
@@ -26,6 +26,6 @@ If you plan to publish your Office Add-in from the Office Store, you must use th
 
 ## Additional resources
 
-- [Understanding the JavaScript API for Office](../../docs/develop/understanding-the-javascript-api-for-office.md)    
-- [JavaScript API for Office](../../reference/javascript-api-for-office.md)
+- [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md)    
+- [JavaScript API for Office](/reference/javascript-api-for-office.md)
     

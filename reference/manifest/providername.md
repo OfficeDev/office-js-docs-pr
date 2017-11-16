@@ -15,5 +15,5 @@ Specifies the name of the individual or company that developed this Office Add-i
 
 ## Contained in:
 
-[OfficeApp](../../reference/manifest/officeapp.md)
+[OfficeApp](/reference/manifest/officeapp.md)
 

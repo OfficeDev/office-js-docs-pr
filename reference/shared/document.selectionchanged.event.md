@@ -13,7 +13,7 @@ Office.EventType.DocumentSelectionChanged
 
 ## Remarks
 
-To add an event handler for the  **SelectionChanged** event of a document, use the [addHandlerAsync](../../reference/shared/document.addhandlerasync.md) method of the **Document** object.
+To add an event handler for the  **SelectionChanged** event of a document, use the [addHandlerAsync](/reference/shared/document.addhandlerasync.md) method of the **Document** object.
 
 
 ## Example

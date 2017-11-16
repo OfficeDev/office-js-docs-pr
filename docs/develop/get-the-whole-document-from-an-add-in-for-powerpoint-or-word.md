@@ -140,7 +140,7 @@ Use the following procedure to create a simple user interface for the add-in tha
 ## Add the JavaScript to get the document
 
 
-In the code for the add-in, a handler to the [Office.initialize](../../reference/shared/office.initialize.md) event adds a handler to the click event of the **Submit** button on the form and informs the user that the add-in is ready.
+In the code for the add-in, a handler to the [Office.initialize](/reference/shared/office.initialize.md) event adds a handler to the click event of the **Submit** button on the form and informs the user that the add-in is ready.
 
 The following code example shows the event handler for the  **Office.initialize** event along with a helper function, `updateStatus`, for writing to the status div.
 
@@ -170,11 +170,11 @@ function updateStatus(message) {
 ```
 
 
-When you choose the  **Submit** button in the UI, the add-in calls the `sendFile` function, which contains a call to the [Document.getFileAsync](../../reference/shared/document.getfileasync.md) method. The **getFileAsync** method uses the asynchronous pattern, similar to other methods in the JavaScript API for Office. It has one required parameter, _fileType_, and two optional parameters,  _options_ and _callback_. 
+When you choose the  **Submit** button in the UI, the add-in calls the `sendFile` function, which contains a call to the [Document.getFileAsync](/reference/shared/document.getfileasync.md) method. The **getFileAsync** method uses the asynchronous pattern, similar to other methods in the JavaScript API for Office. It has one required parameter, _fileType_, and two optional parameters,  _options_ and _callback_. 
 
-The  _fileType_ parameter expects one of three constants from the [FileType](../../reference/shared/filetype-enumeration.md) enumeration: **Office.FileType.Compressed** ("compressed"), **Office.FileType.PDF** ("pdf"), or **Office.FileType.Text** ("text"). PowerPoint supports only **Compressed** as an argument; Word supports all three. When you pass in **Compressed** for the _fileType_ parameter, the **getFileAsync** method returns the document as a PowerPoint 2013 presentation file (*.pptx) or Word 2013 document file (*.docx) by creating a temporary copy of the file on the local computer.
+The  _fileType_ parameter expects one of three constants from the [FileType](/reference/shared/filetype-enumeration.md) enumeration: **Office.FileType.Compressed** ("compressed"), **Office.FileType.PDF** ("pdf"), or **Office.FileType.Text** ("text"). PowerPoint supports only **Compressed** as an argument; Word supports all three. When you pass in **Compressed** for the _fileType_ parameter, the **getFileAsync** method returns the document as a PowerPoint 2013 presentation file (*.pptx) or Word 2013 document file (*.docx) by creating a temporary copy of the file on the local computer.
 
-The  **getFileAsync** method returns a reference to the file as a [File](../../reference/shared/file.md) object. The **File** object exposes four members: the [size](../../reference/shared/file.size.md) property, [sliceCount](../../reference/shared/file.slicecount.md) property, [getSliceAsync](../../reference/shared/file.getsliceasync.md) method, and [closeAsync](../../reference/shared/file.closeasync.md) method. The **size** property returns the number of bytes in the file. The **sliceCount** returns the number of [Slice](../../reference/shared/document.md) objects (discussed later in this article) in the file.
+The  **getFileAsync** method returns a reference to the file as a [File](/reference/shared/file.md) object. The **File** object exposes four members: the [size](/reference/shared/file.size.md) property, [sliceCount](/reference/shared/file.slicecount.md) property, [getSliceAsync](/reference/shared/file.getsliceasync.md) method, and [closeAsync](/reference/shared/file.closeasync.md) method. The **size** property returns the number of bytes in the file. The **sliceCount** returns the number of [Slice](/reference/shared/document.md) objects (discussed later in this article) in the file.
 
 Use the following code to get the PowerPoint or Word document as a  **File** object using the **Document.getFileAsync** method and then makes a call to the locally defined `getSlice` function. Note that the **File** object, a counter variable, and the total number of slices in the file are passed along in the call to `getSlice` in an anonymous object.
 
@@ -210,7 +210,7 @@ function sendFile() {
 
 The local function  `getSlice` makes a call to the **File.getSliceAsync** method to retrieve a slice from the **File** object. The **getSliceAsync** method returns a **Slice** object from the collection of slices. It has two required parameters, _sliceIndex_ and _callback_. The  _sliceIndex_ parameter takes an integer as an indexer into the collection of slices. Like other functions in the JavaScript API for Office, the **getSliceAsync** method also takes a callback function as a parameter to handle the results from the method call.
 
-The  **Slice** object gives you access to the data contained in the file. Unless otherwise specified in the _options_ parameter of the **getFileAsync** method, the **Slice** object is 4 MB in size. The **Slice** object exposes three properties: [size](../../reference/shared/slice.size.md), [data](../../reference/shared/slice.data.md), and [index](../../reference/shared/slice.index.md). The  **size** property gets the size, in bytes, of the slice. The **index** property gets an integer that represents the slice's position in the collection of slices.
+The  **Slice** object gives you access to the data contained in the file. Unless otherwise specified in the _options_ parameter of the **getFileAsync** method, the **Slice** object is 4 MB in size. The **Slice** object exposes three properties: [size](/reference/shared/slice.size.md), [data](/reference/shared/slice.data.md), and [index](/reference/shared/slice.index.md). The  **size** property gets the size, in bytes, of the slice. The **index** property gets an integer that represents the slice's position in the collection of slices.
 
 
 

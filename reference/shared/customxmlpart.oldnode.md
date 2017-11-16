@@ -15,7 +15,7 @@ var myNode = eventArgsObj.oldNode;
 
 ## Return Value
 
-A [CustomXmlNode](../../reference/shared/customxmlnode.customxmlnode.md) that represents the node that was just deleted.
+A [CustomXmlNode](/reference/shared/customxmlnode.customxmlnode.md) that represents the node that was just deleted.
 
 
 ## Remarks

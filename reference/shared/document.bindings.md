@@ -14,7 +14,7 @@ var docBindings = Office.context.document.bindings;
 
 ## Return Value
 
-A [Bindings](../../reference/shared/bindings.bindings.md) object.
+A [Bindings](/reference/shared/bindings.bindings.md) object.
 
 
 ## Example

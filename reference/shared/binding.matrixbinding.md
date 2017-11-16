@@ -18,12 +18,12 @@ MatrixBinding
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[columnCount](../../reference/shared/binding.matrixbinding.columncount.md)|Gets the number of columns in the matrix data structure, as an integer value.|
-|[rowCount](../../reference/shared/binding.matrixbinding.rowcount.md)|Gets the number of rows in the matrix data structure, as an integer value.|
+|[columnCount](/reference/shared/binding.matrixbinding.columncount.md)|Gets the number of columns in the matrix data structure, as an integer value.|
+|[rowCount](/reference/shared/binding.matrixbinding.rowcount.md)|Gets the number of rows in the matrix data structure, as an integer value.|
 
 ## Remarks
 
-The  **MatrixBinding** object inherits the [id](../../reference/shared/binding.id.md) property, [type](../../reference/shared/binding.type.md) property, [getDataAsync](../../reference/shared/binding.getdataasync.md) method, and [setDataAsync](../../reference/shared/binding.setdataasync.md) method from the [Binding](../../reference/shared/binding.md) object.
+The  **MatrixBinding** object inherits the [id](/reference/shared/binding.id.md) property, [type](/reference/shared/binding.type.md) property, [getDataAsync](/reference/shared/binding.getdataasync.md) method, and [setDataAsync](/reference/shared/binding.setdataasync.md) method from the [Binding](/reference/shared/binding.md) object.
 
 
 ## Support details

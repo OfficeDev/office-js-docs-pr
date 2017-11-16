@@ -14,7 +14,7 @@ var errorObj = asyncResult.error;
 
 ## Return Value
 
-An  **[Error](../../reference/shared/error.md)** object.
+An  **[Error](/reference/shared/error.md)** object.
 
 
 ## Example

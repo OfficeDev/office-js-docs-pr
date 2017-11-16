@@ -15,7 +15,7 @@ Specifies the URL of the home page for the dictionary.
 
 ## Contained in:
 
-[Dictionary](../../reference/manifest/dictionary.md)
+[Dictionary](/reference/manifest/dictionary.md)
 
 
 ## Additional resources

@@ -11,7 +11,7 @@ ms.date: 11/20/2017
 
 The LabsJS library (labs.js) supports writing specialized Office Add-ins (called labs) that integrate with Office Mix. Office Mix then renders the labs using Microsoft PowerPoint. While we call these components "labs," let's be clear that what we're creating are special Office Add-ins that are Office Mix Add-ins.
 
-The LabsJS content helps you implementing the labs.js JavaScript API by providing guidance and examples. This library is built on top of the [JavaScript API for Office](../../../reference/javascript-api-for-office.md) (Office.js) and provides an abstraction layer that is optimized for add-ins embedded in Office Mix.
+The LabsJS content helps you implementing the labs.js JavaScript API by providing guidance and examples. This library is built on top of the [JavaScript API for Office](..//reference/javascript-api-for-office.md) (Office.js) and provides an abstraction layer that is optimized for add-ins embedded in Office Mix.
 
 
 ## General guidelines
@@ -93,7 +93,7 @@ Initialization establishes the communication pathway between the lab and its hos
 Labs.connect((err, connectionResponse) => {});
 ```
 
-After you initialize, you can call other methods of the labs.js API. The  _connectionResponse_ parameter contains information about the host, user, and other connection-related information. For more information about the values returned, see the [Labs.Core.IConnectionResponse](../../../reference/office-mix/labs.core.iconnectionresponse.md).
+After you initialize, you can call other methods of the labs.js API. The  _connectionResponse_ parameter contains information about the host, user, and other connection-related information. For more information about the values returned, see the [Labs.Core.IConnectionResponse](..//reference/office-mix/labs.core.iconnectionresponse.md).
 
 
 ### Time format

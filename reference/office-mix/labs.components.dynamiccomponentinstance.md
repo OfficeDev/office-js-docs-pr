@@ -26,7 +26,7 @@ class DynamicComponentInstance extends Labs.ComponentInstanceBase
 
  `function constructor(component: Components.IDynamicComponentInstance)`
 
-Creates a new dynamic component instance using the [Labs.Components.IDynamicComponentInstance](../../reference/office-mix/labs.components.idynamiccomponentinstance.md) definition.
+Creates a new dynamic component instance using the [Labs.Components.IDynamicComponentInstance](/reference/office-mix/labs.components.idynamiccomponentinstance.md) definition.
 
 
 ### getComponents
@@ -53,7 +53,7 @@ Creates a new component using the dynamic component as component base.
 
 |Parameter|Description|
 |:-----|:-----|
-| _component_|The component ([Labs.Core.IComponent](../../reference/office-mix/labs.core.icomponent.md)) from which to create the instance.|
+| _component_|The component ([Labs.Core.IComponent](/reference/office-mix/labs.core.icomponent.md)) from which to create the instance.|
 | _callback_|Callback function that fires once the component is created.|
 
 ### close

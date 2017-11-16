@@ -3,7 +3,7 @@
 
  _**Applies to:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
 
-An [Labs.Core.IValue](../../reference/office-mix/labs.core.ivalue.md) object instance that contains value data, if any.
+An [Labs.Core.IValue](/reference/office-mix/labs.core.ivalue.md) object instance that contains value data, if any.
 
 ```
 interface IValueInstance

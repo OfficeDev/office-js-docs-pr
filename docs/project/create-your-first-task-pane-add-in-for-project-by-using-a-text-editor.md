@@ -13,13 +13,13 @@ You can create a task pane add-in for Project Standard 2013 or Project Professio
 Project 2013 uses the same add-in manifest schema that other Microsoft Office 2013 clients use, and much of the same JavaScript API. The complete code for the add-in that is described in this article is available in the  `Samples\Apps` subdirectory of the Project 2013 SDK download.
 
 Project OM Test sample add-in can get the GUID of a task and properties of the application and the active project. If Project Professional 2013 opens a project that is in a SharePoint library, the add-in can show the URL of the project. The [Project 2013 SDK download](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20) includes the complete source code. When you extract and install the SDK and samples that are in the Project2013SDK.msi file, see the `\Samples\Apps\Copy_to_AppManifests_FileShare` subdirectory for the manifest file and the `\Samples\Apps\Copy_to_AppSource_FileShare` subdirectory for the source code. The JSOMCall.html sample uses JavaScript functions in the office.js file and project-15.js file, which are included. You can use the corresponding debug files (office.debug.js and project-15.debug.js) to examine the functions.
-For an introduction to using JavaScript in Office Add-ins, see [Understanding the JavaScript API for Office](../../docs/develop/understanding-the-javascript-api-for-office.md).
+For an introduction to using JavaScript in Office Add-ins, see [Understanding the JavaScript API for Office](../develop/understanding-the-javascript-api-for-office.md).
 
 ## Procedure 1. To create the add-in manifest file
 
 
 
-- Create an XML file in a local directory. The XML file includes the  **OfficeApp** element and child elements, which are described in the [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md). For example, create a file named JSOM_SimpleOMCalls.xml that contains the following XML (change the GUID value of the **Id** element).
+- Create an XML file in a local directory. The XML file includes the  **OfficeApp** element and child elements, which are described in the [Office Add-ins XML manifest](../overview/add-in-manifests.md). For example, create a file named JSOM_SimpleOMCalls.xml that contains the following XML (change the GUID value of the **Id** element).
     
 ```XML
      <?xml version="1.0" encoding="utf-8"?>
@@ -102,7 +102,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
     
 2. Create a JavaScript file named JSOM_Sample.js in the same directory as the JSOMCall.html file. The following code gets the application context and document information by using functions in the Office.js file. The **text** object is the ID of the **textarea** control in the HTML file.
     
-    The  **_projDoc** variable is initialized with a **ProjectDocument** object. The code includes some simple error handling functions, and the **getContextValues** function that gets application context and project document context properties. For more information about the JavaScript object model for Project, see [JavaScript API for Office](../../reference/javascript-api-for-office.md).
+    The  **_projDoc** variable is initialized with a **ProjectDocument** object. The code includes some simple error handling functions, and the **getContextValues** function that gets application context and project document context properties. For more information about the JavaScript object model for Project, see [JavaScript API for Office](/reference/javascript-api-for-office.md).
     
 
 
@@ -167,11 +167,11 @@ function getApplicationDisplayLanguage() {
 ```
 
 
-    For information about the functions in the Office.debug.js file, see [JavaScript API for Office](../../reference/javascript-api-for-office.md). For example, the  **getDocumentUrl** function gets the URL or file path of the open project.
+    For information about the functions in the Office.debug.js file, see [JavaScript API for Office](/reference/javascript-api-for-office.md). For example, the  **getDocumentUrl** function gets the URL or file path of the open project.
     
 3. Add JavaScript functions that call asynchronous functions in Office.js and Project-15.js to get selected data:
     
-      - For example,  **getSelectedDataAsync** is a general function in Office.js that gets unformatted text for the selected data. For more information, see [AsyncResult object](../../reference/shared/asyncresult.md).
+      - For example,  **getSelectedDataAsync** is a general function in Office.js that gets unformatted text for the selected data. For more information, see [AsyncResult object](/reference/shared/asyncresult.md).
     
   - The  **getSelectedTaskAsync** function in Project-15.js gets the GUID of the selected task. Similarly, the **getSelectedResourceAsync** function gets the GUID of the selected resource. If you call those functions when a task or a resource is not selected, the functions show an undefined error.
     
@@ -186,7 +186,7 @@ function getApplicationDisplayLanguage() {
   - If the project is synchronized with a SharePoint tasks list, the  **getWSSUrlAsync** function gets the URL and the name of the tasks list. If the project is not synchronized with a SharePoint tasks list, the **getWSSUrlAsync** function errors off.
     
     > [!NOTE]
-    > To get the SharePoint URL and name of the tasks list, we recommend that you use the  **getProjectFieldAsync** function with the **WSSUrl** and **WSSList** constants in the [ProjectProjectFields](../../reference/shared/projectprojectfields-enumeration.md) enumeration.
+    > To get the SharePoint URL and name of the tasks list, we recommend that you use the  **getProjectFieldAsync** function with the **WSSUrl** and **WSSList** constants in the [ProjectProjectFields](/reference/shared/projectprojectfields-enumeration.md) enumeration.
 
     Each of the functions in the following code includes an anonymous function that is specified by  `function (asyncResult)`, which is a callback that gets the asynchronous result. Instead of anonymous functions, you could use named functions, which can help with maintainability of complex add-ins.
     
@@ -1143,7 +1143,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 
 - [Task pane add-ins for Project](../project/project-add-ins.md)
 - [Understanding the JavaScript API for add-ins](../develop/understanding-the-javascript-api-for-office.md)
-- [JavaScript API for Office add-ins](../../reference/javascript-api-for-office.md)
+- [JavaScript API for Office add-ins](/reference/javascript-api-for-office.md)
 - [Schema reference for Office Add-ins manifests (v1.1)](../overview/add-in-manifests.md)     
 - [Project 2013 SDK download](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)
     

@@ -6,10 +6,10 @@ ms.date: 11/20/2017
 
 # Use the Dialog API in your Office Add-ins
 
-You can use the [Dialog API](../../reference/shared/officeui.md) to open dialog boxes in your Office Add-in. This article provides guidance for using the Dialog API in your Office Add-in.
+You can use the [Dialog API](/reference/shared/officeui.md) to open dialog boxes in your Office Add-in. This article provides guidance for using the Dialog API in your Office Add-in.
 
 > [!NOTE]
-> For information about where the Dialog API is currently supported, see [Dialog API requirement sets](../../reference/requirement-sets/dialog-api-requirement-sets.md). The Dialog API is currently supported for Word, Excel, PowerPoint, and Outlook.
+> For information about where the Dialog API is currently supported, see [Dialog API requirement sets](/reference/requirement-sets/dialog-api-requirement-sets.md). The Dialog API is currently supported for Word, Excel, PowerPoint, and Outlook.
 
 > A primary scenario for the Dialog APIs is to enable authentication with a resource such as Google or Facebook. If your add-in requires data about the Office user or their resources accessible through Microsoft Graph, such as Office 365 or OneDrive, we recommend that you use the single sign-on API whenever you can. If you use the APIs for single sign-on, then you will not need the Dialog API. For details, see [Enable single sign-on for Office Add-ins](http://dev.office.com/docs/add-ins/develop/sso-in-office-add-ins).
 
@@ -30,11 +30,11 @@ Note that the dialog box always opens in the center of the screen. The user can 
 
 ## Dialog API scenarios
 
-The Office JavaScript APIs support the following scenarios with a [Dialog](../../reference/shared/officeui.dialog.md) object and two functions in the [Office.context.ui namespace](../../reference/shared/officeui.md).
+The Office JavaScript APIs support the following scenarios with a [Dialog](/reference/shared/officeui.dialog.md) object and two functions in the [Office.context.ui namespace](/reference/shared/officeui.md).
 
 ### Open a dialog box
 
-To open a dialog box, your code in the task pane calls the [displayDialogAsync](../../reference/shared/officeui.displaydialogasync.md) method and passes to it the URL of the resource that you want to open. This is usually a page, but it can be a controller method in an MVC application, a route, a web service method, or any other resource. In this article, 'page' or 'website' refers to the resource in the dialog. The following code is a simple example:
+To open a dialog box, your code in the task pane calls the [displayDialogAsync](/reference/shared/officeui.displaydialogasync.md) method and passes to it the URL of the resource that you want to open. This is usually a page, but it can be a controller method in an MVC application, a route, a web service method, or any other resource. In this article, 'page' or 'website' refers to the resource in the dialog. The following code is a simple example:
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');

@@ -15,5 +15,5 @@ Specifies the version of your Office Add-in.
 
 ## Contained in:
 
-[OfficeApp](../../reference/manifest/officeapp.md)
+[OfficeApp](/reference/manifest/officeapp.md)
 

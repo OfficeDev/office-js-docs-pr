@@ -15,4 +15,4 @@ function takeLab(callback: Core.ILabCallback<LabInstance>): void
 
 |**Name**|**Description**|
 |:-----|:-----|
-| _callback_|The callback method fired once the [Labs.LabInstance](../../reference/office-mix/labs.labinstance.md) object is created.|
+| _callback_|The callback method fired once the [Labs.LabInstance](/reference/office-mix/labs.labinstance.md) object is created.|

@@ -15,10 +15,10 @@ Specifies the description of your Office Add-in as a string no longer than 250 c
 
 ## Contained in:
 
-[OfficeApp](../../reference/manifest/officeapp.md)
+[OfficeApp](/reference/manifest/officeapp.md)
 
 
 ## Can contain:
 
-[Override](../../reference/manifest/override.md)
+[Override](/reference/manifest/override.md)
 

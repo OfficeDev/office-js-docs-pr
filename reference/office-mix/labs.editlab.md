@@ -15,4 +15,4 @@ function editLab(callback: Core.ILabCallback<LabEditor>): void
 
 |**Name**|**Description**|
 |:-----|:-----|
-| _callback_|The callback method that is fired once the [Labs.LabInstance](../../reference/office-mix/labs.labinstance.md) object is created.|
+| _callback_|The callback method that is fired once the [Labs.LabInstance](/reference/office-mix/labs.labinstance.md) object is created.|

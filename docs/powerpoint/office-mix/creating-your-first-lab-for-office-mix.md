@@ -1,5 +1,5 @@
 ---
-title: Walkthrough: Creating your first lab for Office Mix
+title: Walkthrough - Creating your first lab for Office Mix
 description: 
 ms.date: 11/20/2017 
 ---

@@ -15,7 +15,7 @@ var colCount = bindingObj.columnCount;
 
 ## Return Value
 
-The number of columns in the specified [MatrixBinding](../../reference/shared/binding.matrixbinding.md) object.
+The number of columns in the specified [MatrixBinding](/reference/shared/binding.matrixbinding.md) object.
 
 
 ## Example

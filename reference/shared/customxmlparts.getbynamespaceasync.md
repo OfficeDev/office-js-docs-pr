@@ -26,7 +26,7 @@ Office.context.document.customXmlParts.getByNamespaceAsync(ns [, options], callb
 
 ## Callback Value
 
-When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](../../reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
+When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
 
 In the callback function passed to the  **getByNamespaceAsync** method, you can use the properties of the **AsyncResult** object to return the following information.
 
@@ -34,10 +34,10 @@ In the callback function passed to the  **getByNamespaceAsync** method, you can 
 
 |**Property**|**Use to...**|
 |:-----|:-----|
-|[AsyncResult.value](../../reference/shared/asyncresult.value.md)|Access an  **array** of [CustomXMLPart](../../reference/shared/customxmlnode.getnodesasync.md) objects that match the specified namespace.|
-|[AsyncResult.status](../../reference/shared/asyncresult.status.md)|Determine the success or failure of the operation.|
-|[AsyncResult.error](../../reference/shared/asyncresult.error.md)|Access an [Error](../../reference/shared/error.md) object that provides error information if the operation failed.|
-|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
+|[AsyncResult.value](/reference/shared/asyncresult.value.md)|Access an  **array** of [CustomXMLPart](/reference/shared/customxmlnode.getnodesasync.md) objects that match the specified namespace.|
+|[AsyncResult.status](/reference/shared/asyncresult.status.md)|Determine the success or failure of the operation.|
+|[AsyncResult.error](/reference/shared/asyncresult.error.md)|Access an [Error](/reference/shared/error.md) object that provides error information if the operation failed.|
+|[AsyncResult.asyncContext](/reference/shared/asyncresult.asynccontext.md)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
 
 ## Example
 

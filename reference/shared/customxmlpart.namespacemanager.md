@@ -15,7 +15,7 @@ var nsManager = customXmlPart.namespaceManager);
 
 ## Return Value
 
-A [CustomXmlPrefixMappings](../../reference/shared/customxmlprefixmappings.customxmlprefixmappings.md) object.
+A [CustomXmlPrefixMappings](/reference/shared/customxmlprefixmappings.customxmlprefixmappings.md) object.
 
 
 ## Example

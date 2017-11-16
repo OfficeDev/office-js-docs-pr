@@ -8,12 +8,12 @@ ms.date: 11/20/2017
 
 _Applies to: Word 2016, Word for iPad, Word for Mac_
 
-A Word add-in runs inside Word and can interact with the contents of the document using the Word JavaScript API, which is part of the Office Add-ins programming model for extending Office applications. In this add-in programming model, you can use the platform and language of your choice to create the web application that hosts your extension to Word and then use the add-in's [manifest](../../docs/overview/add-in-manifests.md) to define its settings and capabilities.
+A Word add-in runs inside Word and can interact with the contents of the document using the Word JavaScript API, which is part of the Office Add-ins programming model for extending Office applications. In this add-in programming model, you can use the platform and language of your choice to create the web application that hosts your extension to Word and then use the add-in's [manifest](../overview/add-in-manifests.md) to define its settings and capabilities.
 
 In this article, you'll walk through the process of building a Word add-in by using jQuery and the Word JavaScript API. 
 
 > [!NOTE]
-> To develop an add-in for Word 2013, you'll need to use the shared [Office Javascript API]( https://dev.office.com/docs/add-ins/word/word-add-ins-programming-overview#javascript-apis-for-word). To learn more about the platforms and the different APIs that are available, see [Office Add-in host and platform availability](https://dev.office.com/add-in-availability). 
+> To develop an add-in for Word 2013, you'll need to use the shared [Office Javascript API](https://dev.office.com/docs/add-ins/word/word-add-ins-programming-overview#javascript-apis-for-word). To learn more about the platforms and the different APIs that are available, see [Office Add-in host and platform availability](https://dev.office.com/add-in-availability). 
 
 ## Create the web app 
 
@@ -205,4 +205,4 @@ Congratulations, you've successfully created a Word add-in using jQuery! Next, l
 * [Word add-ins overview](word-add-ins-programming-overview.md)
 * [Explore snippets with Script Lab](https://store.office.com/en-001/app.aspx?assetid=WA104380862&ui=en-US&rs=en-001&ad=US&appredirect=false)
 * [Word add-in code samples](http://dev.office.com/code-samples#?filters=word,office%20add-ins)
-* [Word JavaScript API reference](../../reference/word/word-add-ins-reference-overview.md)
+* [Word JavaScript API reference](/reference/word/word-add-ins-reference-overview.md)

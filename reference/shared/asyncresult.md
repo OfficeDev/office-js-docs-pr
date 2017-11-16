@@ -141,10 +141,10 @@ The  **AsyncResult** object is available from the function passed as the argumen
 [getSliceAsync]: file.getsliceasync.md
 [getSelectedDataAsync]: document.getselecteddataasync.md
 [getTextAsync]: customxmlnode.gettextasync.md
-[getUserIdentityTokenAsync]: ../../reference/outlook/1.5/Office.context.mailbox.md
+[getUserIdentityTokenAsync]: /reference/outlook/1.5/Office.context.mailbox.md
 [getXmlAsync]: customxmlpart.getxmlasync.md
-[loadCustomPropertiesAsync]: ../../reference/outlook/1.5/CustomProperties.md
-[makeEwsRequestAsync]: ../../reference/outlook/1.5/Office.context.mailbox.md
+[loadCustomPropertiesAsync]: /reference/outlook/1.5/CustomProperties.md
+[makeEwsRequestAsync]: /reference/outlook/1.5/Office.context.mailbox.md
 [releaseByIdAsync]: bindings.releasebyidasync.md
 [removeHandlerAsync]: binding.removehandlerasync.md
 [refreshAsync]: settings.refreshasync.md

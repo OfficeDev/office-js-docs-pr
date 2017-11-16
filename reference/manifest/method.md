@@ -15,7 +15,7 @@ Specifies an individual method from the JavaScript API for Office that your Offi
 
 ## Contained in:
 
- _ [Methods](../../reference/manifest/methods.md)_
+ _ [Methods](/reference/manifest/methods.md)_
 
 
 ## Attributes

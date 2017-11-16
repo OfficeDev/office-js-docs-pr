@@ -21,12 +21,12 @@ The zero-based index of the first row of the selection counting from the first r
 
 If the user makes a non-contiguous selection, the coordinates for the last contiguous selection within the binding are returned. 
 
-For Word, this property will work only for bindings of [BindingType](../../reference/shared/bindingtype-enumeration.md) "table". If the binding is of type "matrix", **null** is returned. Also, the call will fail if the table contains merged cells, because the structure of the table must be uniform for this property to work correctly.
+For Word, this property will work only for bindings of [BindingType](/reference/shared/bindingtype-enumeration.md) "table". If the binding is of type "matrix", **null** is returned. Also, the call will fail if the table contains merged cells, because the structure of the table must be uniform for this property to work correctly.
 
 
 ## Example
 
-The following example adds an event handler for the [SelectionChanged](../../reference/shared/binding.bindingselectionchangedevent.md) event to the binding with an [id](../../reference/shared/binding.id.md) of `myTable`. When the user changes the selection, the handler displays the coordinates of the first cell in the selection, and the number of row and columns selected.
+The following example adds an event handler for the [SelectionChanged](/reference/shared/binding.bindingselectionchangedevent.md) event to the binding with an [id](/reference/shared/binding.id.md) of `myTable`. When the user changes the selection, the handler displays the coordinates of the first cell in the selection, and the number of row and columns selected.
 
 
 ```js

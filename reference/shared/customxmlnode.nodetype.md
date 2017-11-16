@@ -1,6 +1,6 @@
 
 # CustomXmlNode.nodeType property
-Gets the type of the [CustomXMLNode](../../reference/shared/customxmlnode.customxmlnode.md).
+Gets the type of the [CustomXMLNode](/reference/shared/customxmlnode.customxmlnode.md).
 
 |||
 |:-----|:-----|
@@ -15,7 +15,7 @@ var myNodeType = customXmlNodeObj.nodeType;
 
 ## Return Value
 
-A [CustomXMLNodeType](../../reference/shared/customxmlnodetype-enumeration.md) that specifies the type of the node.
+A [CustomXMLNodeType](/reference/shared/customxmlnodetype-enumeration.md) that specifies the type of the node.
 
 
 ## Example

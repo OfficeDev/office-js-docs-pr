@@ -1,6 +1,6 @@
 
 # SelectionMode enumeration
-Specifies whether to select (highlight) the location to navigate to (when using the [Document.goToByIdAsync](../../reference/shared/document.gotobyidasync.md) method).
+Specifies whether to select (highlight) the location to navigate to (when using the [Document.goToByIdAsync](/reference/shared/document.gotobyidasync.md) method).
 
 |||
 |:-----|:-----|

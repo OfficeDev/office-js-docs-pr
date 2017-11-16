@@ -4,7 +4,7 @@ Variable declarations in the Labs.Core.Actions module of the Labs.js API.
 
  _**Applies to:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
 
-The following table lists the variable declarations, with descriptions, for the [LabsJS.Labs.Core.Actions](../../reference/office-mix/labsjs.labs.core.actions.md) module of the Labs.js API.
+The following table lists the variable declarations, with descriptions, for the [LabsJS.Labs.Core.Actions](/reference/office-mix/labsjs.labs.core.actions.md) module of the Labs.js API.
 
 ## 
 

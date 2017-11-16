@@ -69,5 +69,5 @@ Submits a new answer that was graded by the lab and will not use the host to com
 
  `public function processAction(action: Labs.Core.IAction): void`
 
-Initiates processing of the [Labs.Core.IAction](../../reference/office-mix/labs.core.iaction.md) action.
+Initiates processing of the [Labs.Core.IAction](/reference/office-mix/labs.core.iaction.md) action.
 

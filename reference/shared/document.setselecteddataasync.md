@@ -20,7 +20,7 @@ Office.context.document.setSelectedDataAsync(data [, options], callback(asyncRes
 |:----------|:------|:-----
 | data      |object | The data can be any supported [coercion types](#coerciontype).
 | options   |object | Specifies a set of [optional parameters](#options).
-| callback  |object | [AsyncResult](../../reference/shared/asyncresult.md) object. 
+| callback  |object | [AsyncResult](/reference/shared/asyncresult.md) object. 
 
 
 
@@ -74,9 +74,9 @@ A user-defined object that is available on the AsyncResult object's asyncContext
 
 ## Callback value
 
-When the function you passed to the _callback_ parameter executes, it receives an [AsyncResult](../../reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
+When the function you passed to the _callback_ parameter executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
 
-In the callback function passed to the  **setSelectedDataAsync** method, the [AsyncResult.value](../../reference/shared/asyncresult.value.md) property always returns **undefined** because there is no object or data to retrieve.
+In the callback function passed to the  **setSelectedDataAsync** method, the [AsyncResult.value](/reference/shared/asyncresult.value.md) property always returns **undefined** because there is no object or data to retrieve.
 
 
 ## Remarks
@@ -85,13 +85,13 @@ The value passed for _data_ contains the data to write to the current selection.
 
 -  **A string:** Plain text or anything that can be coerced to a **string** will be inserted.
    
-    In Excel, you can also specify _data_ as a valid formula to add that formula to the selected cell. For example, setting _data_ to `"=SUM(A1:A5)"` will total the values in the specified range. However, when you set a formula on the bound cell, after doing so, you can't read the added formula (or any pre-existing formula) from the bound cell. If you call the [Document.getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) method on the selected cell to read its data, the method can return only the data displayed in the cell (the formula's result).
+    In Excel, you can also specify _data_ as a valid formula to add that formula to the selected cell. For example, setting _data_ to `"=SUM(A1:A5)"` will total the values in the specified range. However, when you set a formula on the bound cell, after doing so, you can't read the added formula (or any pre-existing formula) from the bound cell. If you call the [Document.getSelectedDataAsync](/reference/shared/document.getselecteddataasync.md) method on the selected cell to read its data, the method can return only the data displayed in the cell (the formula's result).
     
 -  **An array of arrays ("matrix"):** Tabular data without headers will be inserted. For example, to write data to three rows in two columns, you can pass an array like this: `[["R1C1", "R1C2"], ["R2C1", "R2C2"], ["R3C1", "R3C2"]]`. To write a single column of three rows, pass an array like this:  `[["R1C1"], ["R2C1"], ["R3C1"]]`
 
     In Excel, you can also specify _data_ as an array of arrays that contains valid formulas to add them to the selected cells. For example if no other data will be overwritten, setting _data_ to `[["=SUM(A1:A5)","=AVERAGE(A1:A5)"]]` will add those two formulas to the selection. Just as when setting a formula on a single cell as "text", you can't read the added formulas (or any pre-existing formulas) after they have been set - you can only read the formulas' results.
     
--  **A [TableData](../../reference/shared/tabledata.md) object:** A table with headers will be inserted.
+-  **A [TableData](/reference/shared/tabledata.md) object:** A table with headers will be inserted.
 
 **NOTE:** In Excel, if you specify formulas in the **TableData** object you pass for the *data* parameter, you might not get the results you expect due to the "calculated columns" feature of Excel, which automatically duplicates formulas within a column. To work around this when you want to write _data_ that contains formulas to a selected table, try specifying the data as an array of arrays (instead of a **TableData** object), and specify the _coercionType_ as **Microsoft.Office.Matrix** or "matrix".
     
@@ -159,7 +159,7 @@ Inserted images are floating. The position  **imageLeft** and **imageTop** param
 
 ## Example
 
-The following example sets the selected text or cell to "Hello World!", and if that fails, displays the value of the [error.message](../../reference/shared/error.message.md) property.
+The following example sets the selected text or cell to "Hello World!", and if that fails, displays the value of the [error.message](/reference/shared/error.message.md) property.
 
 ```js
 function writeText() {
@@ -178,7 +178,7 @@ function write(message){
 }
 ```
 
-Specifying the optional _coercionType_ parameter lets you specify the kind of data you want to write to a selection. The following example writes data as an array of three rows of two columns, specifying the _coercionType_ as `"matrix"` for that data structure, and if that fails, displays the value of the [error.message](../../reference/shared/error.message.md) property.
+Specifying the optional _coercionType_ parameter lets you specify the kind of data you want to write to a selection. The following example writes data as an array of three rows of two columns, specifying the _coercionType_ as `"matrix"` for that data structure, and if that fails, displays the value of the [error.message](/reference/shared/error.message.md) property.
 
 
 
@@ -200,7 +200,7 @@ function write(message){
 }
 ```
 
-The following example writes data as a one column table with a header and four rows, specifying the  _coercionType_ as `"table"` for that data structure, and if that fails, displays the value of the [error.message](../../reference/shared/error.message.md) property.
+The following example writes data as a one column table with a header and four rows, specifying the  _coercionType_ as `"table"` for that data structure, and if that fails, displays the value of the [error.message](/reference/shared/error.message.md) property.
 
 ```js
 function writeTable() {

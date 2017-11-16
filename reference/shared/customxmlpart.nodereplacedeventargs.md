@@ -1,6 +1,6 @@
 
 # NodeReplacedEventArgs object
-Provides information about the replaced node that raised the [dataNodeReplaced](../../reference/shared/customxmlpart.datanodereplaced.event.md) event.
+Provides information about the replaced node that raised the [dataNodeReplaced](/reference/shared/customxmlpart.datanodereplaced.event.md) event.
 
 |||
 |:-----|:-----|
@@ -21,9 +21,9 @@ NodeReplacedEventArgs
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[isUndoRedo](../../reference/shared/customxmlpart.isundoredo.md)|Gets whether the replaced node was inserted as part of an undo or redo operation by the user.|
-|[newNode](../../reference/shared/customxmlpart.newnode.md)|Gets the new node.|
-|[oldNode](../../reference/shared/customxmlpart.oldnode.md)|Gets the old (replaced) node.|
+|[isUndoRedo](/reference/shared/customxmlpart.isundoredo.md)|Gets whether the replaced node was inserted as part of an undo or redo operation by the user.|
+|[newNode](/reference/shared/customxmlpart.newnode.md)|Gets the new node.|
+|[oldNode](/reference/shared/customxmlpart.oldnode.md)|Gets the old (replaced) node.|
 
 ## Support details
 

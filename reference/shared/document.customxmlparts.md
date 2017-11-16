@@ -14,7 +14,7 @@ var xmlParts = Office.context.document.customXmlParts;
 
 ## Return Value
 
-A [CustomXmlParts](../../reference/shared/customxmlparts.customxmlparts.md) object.
+A [CustomXmlParts](/reference/shared/customxmlparts.customxmlparts.md) object.
 
 
 ## Example

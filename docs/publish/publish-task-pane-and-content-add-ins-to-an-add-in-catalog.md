@@ -10,7 +10,7 @@ An add-in catalog is a dedicated site collection in a SharePoint web application
 
 > [!IMPORTANT]
 > - Add-in catalogs on SharePoint do not support add-in features that are implemented in the `VersionOverrides` node of the [add-in manifest](../overview/add-in-manifests.md), such as add-in commands.
-> - If you’re targeting a cloud or hybrid environment, we recommend that you [use Centralized Deployment via the Office 365 admin center](publish/centralized-deployment.md) to publish your add-ins.
+> - If you’re targeting a cloud or hybrid environment, we recommend that you [use Centralized Deployment via the Office 365 admin center](../publish/centralized-deployment.md) to publish your add-ins.
 > - SharePoint catalogs are not supported for Office 2016 for Mac. To deploy Office Add-ins to Mac clients, you must submit them to the [Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx).   
 
 ## Set up an add-in catalog
@@ -75,7 +75,7 @@ To publish an add-in to an add-in catalog, complete the following steps.
     
 2. Choose the  **Click to add new item** link.
     
-3. Choose  **Browse**, and then specify the [manifest](../../docs/overview/add-in-manifests.md) to upload.
+3. Choose  **Browse**, and then specify the [manifest](../overview/add-in-manifests.md) to upload.
     
     Content and task pane add-ins in this catalog are now available from the  **Office Add-ins** dialog box. To access them, choose **My Add-ins** on the **Insert** tab, and then choose **MY ORGANIZATION**.
 

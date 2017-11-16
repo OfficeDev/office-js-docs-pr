@@ -1,6 +1,6 @@
 
 # ProjectTaskFields enumeration
-Specifies the task fields that are available as a parameter for the  **[getTaskFieldAsync](../../reference/shared/projectdocument.gettaskfieldasync.md)** method.
+Specifies the task fields that are available as a parameter for the  **[getTaskFieldAsync](/reference/shared/projectdocument.gettaskfieldasync.md)** method.
 
 |||
 |:-----|:-----|
@@ -590,7 +590,7 @@ The  **ProjectTaskFields** enumeration contains the following members.
 ## Remarks
 
 
-A  **ProjectTaskFields** constant can be used as a parameter of the **[getTaskFieldAsync](../../reference/shared/projectdocument.gettaskfieldasync.md)** method.<br/><br/>
+A  **ProjectTaskFields** constant can be used as a parameter of the **[getTaskFieldAsync](/reference/shared/projectdocument.gettaskfieldasync.md)** method.<br/><br/>
 For more information about working with fields in Project, see the [Available fields reference](http://office.microsoft.com/en-us/project-help/available-fields-reference-HA102749299.aspx?CTT=1). In Project Help, search for  _Available fields_.
 
 
@@ -625,6 +625,6 @@ For more information about Office host application and server requirements, see 
 
 #### Other resources
 
-[getTaskFieldAsync method](../../reference/shared/projectdocument.gettaskfieldasync.md)
+[getTaskFieldAsync method](/reference/shared/projectdocument.gettaskfieldasync.md)
 
 [Available fields reference](http://office.microsoft.com/en-us/project-help/available-fields-reference-HA102749299.aspx?CTT=1)

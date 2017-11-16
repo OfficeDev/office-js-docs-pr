@@ -5,7 +5,7 @@
 
 Initializes a connection with the host.
 
-Compare overload [Labs.connect (overload)](../../reference/office-mix/labs.connect-overload.md).
+Compare overload [Labs.connect (overload)](/reference/office-mix/labs.connect-overload.md).
 
 
 ```

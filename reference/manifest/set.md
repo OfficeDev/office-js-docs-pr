@@ -15,7 +15,7 @@ Specifies a requirement set from the JavaScript API for Office that your Office 
 
 ## Contained in:
 
-[Sets](../../reference/manifest/sets.md)
+[Sets](/reference/manifest/sets.md)
 
 
 ## Attributes
@@ -25,7 +25,7 @@ Specifies a requirement set from the JavaScript API for Office that your Office 
 |**Attribute**|**Type**|**Required**|**Description**|
 |:-----|:-----|:-----|:-----|
 |Name|string|required|The name of a [requirement set](../../docs/overview/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest).|
-|MinVersion|string|optional|Specifies the minimum version of the API set required by your add-in. Overrides the value of  **DefaultMinVersion**, if it is specified in the parent [Sets](../../reference/manifest/sets.md) element.|
+|MinVersion|string|optional|Specifies the minimum version of the API set required by your add-in. Overrides the value of  **DefaultMinVersion**, if it is specified in the parent [Sets](/reference/manifest/sets.md) element.|
 
 ## Remarks
 

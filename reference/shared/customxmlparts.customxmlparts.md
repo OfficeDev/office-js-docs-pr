@@ -1,6 +1,6 @@
 
 # CustomXmlParts object
-Represents a collection of [CustomXMLPart](../../reference/shared/customxmlpart.customxmlpart.md) objects.
+Represents a collection of [CustomXMLPart](/reference/shared/customxmlpart.customxmlpart.md) objects.
 
 |||
 |:-----|:-----|
@@ -21,9 +21,9 @@ Office.context.document.customXmlParts
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[addAsync](../../reference/shared/customxmlparts.addasync.md)|Asynchronously adds a new custom XML part to a file.|
-|[getByIdAsync](../../reference/shared/customxmlparts.getbyidasync.md)|Asynchronously gets a custom XML part by its ID.|
-|[getByNamespaceAsync](../../reference/shared/customxmlparts.getbynamespaceasync.md)|Asynchronously gets an array of custom XML parts that match the specified namespace.|
+|[addAsync](/reference/shared/customxmlparts.addasync.md)|Asynchronously adds a new custom XML part to a file.|
+|[getByIdAsync](/reference/shared/customxmlparts.getbyidasync.md)|Asynchronously gets a custom XML part by its ID.|
+|[getByNamespaceAsync](/reference/shared/customxmlparts.getbynamespaceasync.md)|Asynchronously gets an array of custom XML parts that match the specified namespace.|
 
 ## Support details
 

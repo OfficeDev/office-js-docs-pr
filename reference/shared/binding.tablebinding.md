@@ -21,26 +21,26 @@ TableBinding
 
 |**Name**|**Description**|**Updates for Office.js v1.1**|
 |:-----|:-----|:-----|
-|[columnCount](../../reference/shared/binding.tablebinding.columncount.md)|Gets the number of columns in the specified  **TableBinding** object.|Added support for table binding in content add-ins for Access.|
-|[hasHeaders](../../reference/shared/binding.tablebinding.hasheaders.md)|If the specified  **TableBinding** has headers, returns true; otherwise false.|Added support for table binding in content add-ins for Access.|
-|[rowCount](../../reference/shared/binding.tablebinding.rowcount.md)|The number of rows in the specified  **TableBinding** object.|For performance reasons, always returns -1 in content add-ins for Access.|
+|[columnCount](/reference/shared/binding.tablebinding.columncount.md)|Gets the number of columns in the specified  **TableBinding** object.|Added support for table binding in content add-ins for Access.|
+|[hasHeaders](/reference/shared/binding.tablebinding.hasheaders.md)|If the specified  **TableBinding** has headers, returns true; otherwise false.|Added support for table binding in content add-ins for Access.|
+|[rowCount](/reference/shared/binding.tablebinding.rowcount.md)|The number of rows in the specified  **TableBinding** object.|For performance reasons, always returns -1 in content add-ins for Access.|
 
 **Methods**
 
 
 |**Name**|**Description**|**Updates for Office.js v1.1**|
 |:-----|:-----|:-----|
-|[addColumnsAsync](../../reference/shared/binding.tablebinding.addcolumnsasync.md)|Adds columns and values to a table.||
-|[addRowsAsync](../../reference/shared/binding.tablebinding.addrowsasync.md)|Adds rows and values to a table.|Added support for table binding in content add-ins for Access.|
-|[clearFormatsAsync](../../reference/shared/binding.tablebinding.clearformatsasync.md)|Clears formatting on the bound table.|New in Office.js v1.1 for add-ins for Excel.|
-|[deleteAllDataValuesAsync](../../reference/shared/binding.tablebinding.deletealldatavaluesasync.md)|Deletes all non-header rows and their values in the table, shifting appropriately for the host application.|Added support for table binding in content add-ins for Access.|
-|[setDataAsync](../../reference/shared/binding.setdataasync.md)|Writes data to the bound section of the document represented by the specified binding object.|<ul><li>Added support for table binding in content add-ins for Access.</li><li>Added support for setting formatting when writing data to bound tables in add-ins for Excel.</li></ul>|
-|[setFormatsAsync](../../reference/shared/binding.tablebinding.setformatsasync.md)|Sets cell and table formatting on specified items and data in the bound table.|Can set table formatting in add-ins for Excel.|
-|[setTableOptionsAsync](../../reference/shared/binding.tablebinding.settableoptionsasync.md)|Updates table formatting options on the bound table.|Can set table formatting in add-ins for Excel.|
+|[addColumnsAsync](/reference/shared/binding.tablebinding.addcolumnsasync.md)|Adds columns and values to a table.||
+|[addRowsAsync](/reference/shared/binding.tablebinding.addrowsasync.md)|Adds rows and values to a table.|Added support for table binding in content add-ins for Access.|
+|[clearFormatsAsync](/reference/shared/binding.tablebinding.clearformatsasync.md)|Clears formatting on the bound table.|New in Office.js v1.1 for add-ins for Excel.|
+|[deleteAllDataValuesAsync](/reference/shared/binding.tablebinding.deletealldatavaluesasync.md)|Deletes all non-header rows and their values in the table, shifting appropriately for the host application.|Added support for table binding in content add-ins for Access.|
+|[setDataAsync](/reference/shared/binding.setdataasync.md)|Writes data to the bound section of the document represented by the specified binding object.|<ul><li>Added support for table binding in content add-ins for Access.</li><li>Added support for setting formatting when writing data to bound tables in add-ins for Excel.</li></ul>|
+|[setFormatsAsync](/reference/shared/binding.tablebinding.setformatsasync.md)|Sets cell and table formatting on specified items and data in the bound table.|Can set table formatting in add-ins for Excel.|
+|[setTableOptionsAsync](/reference/shared/binding.tablebinding.settableoptionsasync.md)|Updates table formatting options on the bound table.|Can set table formatting in add-ins for Excel.|
 
 ## Remarks
 
-The  **TableBinding** object inherits the [id](../../reference/shared/binding.id.md) property, [type](../../reference/shared/binding.type.md) property, [getDataAsync](../../reference/shared/binding.getdataasync.md) method, and [setDataAsync](../../reference/shared/binding.setdataasync.md) method from the [Binding](../../reference/shared/binding.md) abstract object.
+The  **TableBinding** object inherits the [id](/reference/shared/binding.id.md) property, [type](/reference/shared/binding.type.md) property, [getDataAsync](/reference/shared/binding.getdataasync.md) method, and [setDataAsync](/reference/shared/binding.setdataasync.md) method from the [Binding](/reference/shared/binding.md) abstract object.
 
 After you establish a table binding in Excel, each new row a user adds to the table is automatically included in the binding ( **rowCount** will increase).
 

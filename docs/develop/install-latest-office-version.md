@@ -33,8 +33,8 @@ When the installation process finishes, you will have the latest Office 2016 app
 
 For information about the minimum product builds for each platform for the API requirement sets, see the following:
 
-- [Word JavaScript API requirement sets](../../reference/requirement-sets/word-api-requirement-sets.md)
-- [Excel JavaScript API requirement sets](../../reference/requirement-sets/excel-api-requirement-sets.md)
-- [OneNote JavaScript API requirement sets](../../reference/requirement-sets/onenote-api-requirement-sets.md)
-- [Dialog API requirement sets](../../reference/requirement-sets/dialog-api-requirement-sets.md)
-- [Office common API requirement sets](../../reference/requirement-sets/office-add-in-requirement-sets.md)
+- [Word JavaScript API requirement sets](/reference/requirement-sets/word-api-requirement-sets.md)
+- [Excel JavaScript API requirement sets](/reference/requirement-sets/excel-api-requirement-sets.md)
+- [OneNote JavaScript API requirement sets](/reference/requirement-sets/onenote-api-requirement-sets.md)
+- [Dialog API requirement sets](/reference/requirement-sets/dialog-api-requirement-sets.md)
+- [Office common API requirement sets](/reference/requirement-sets/office-add-in-requirement-sets.md)

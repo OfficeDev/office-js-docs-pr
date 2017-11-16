@@ -14,7 +14,7 @@ var myView = eventArgsObj.activeView;
 
 ## Return Value
 
-The [ActiveView](../../reference/shared/activeview-enumeration.md) of the view that raised the event.
+The [ActiveView](/reference/shared/activeview-enumeration.md) of the view that raised the event.
 
 
 ## Support details

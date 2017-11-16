@@ -17,12 +17,12 @@ var dataValue = asyncResult.value;
 Returns the value of the request at the time the asynchronous call was made. 
 
 
- >**Note**:  What the  **value** property returns for a particular "Async" method varies depending on the purpose and context of that method. To determine what is returned by the **value** property for an "Async" method, refer to the "Callback value" section of the method's topic. For a complete listing of the "Async" methods, see the Remarks section of the [AsyncResult](../../reference/shared/asyncresult.md) object topic.
+ >**Note**:  What the  **value** property returns for a particular "Async" method varies depending on the purpose and context of that method. To determine what is returned by the **value** property for an "Async" method, refer to the "Callback value" section of the method's topic. For a complete listing of the "Async" methods, see the Remarks section of the [AsyncResult](/reference/shared/asyncresult.md) object topic.
 
 
 ## Remarks
 
-You access the  **AsyncResult** object in the function passed as the argument to the _callback_ parameter of an "Async" method, such as the [getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) and [setSelectedDataAsync](../../reference/shared/document.setselecteddataasync.md) methods of the **Document** object.
+You access the  **AsyncResult** object in the function passed as the argument to the _callback_ parameter of an "Async" method, such as the [getSelectedDataAsync](/reference/shared/document.getselecteddataasync.md) and [setSelectedDataAsync](/reference/shared/document.setselecteddataasync.md) methods of the **Document** object.
 
 
 ## Example

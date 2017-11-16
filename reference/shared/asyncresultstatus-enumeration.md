@@ -25,7 +25,7 @@ Office.AsyncResultStatus
 
 ## Remarks
 
-Returned by the [status](../../reference/shared/asyncresult.status.md) property of the [AsyncResult](../../reference/shared/asyncresult.md) object.
+Returned by the [status](/reference/shared/asyncresult.status.md) property of the [AsyncResult](/reference/shared/asyncresult.md) object.
 
 
 ## Support details

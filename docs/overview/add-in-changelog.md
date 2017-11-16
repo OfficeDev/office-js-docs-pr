@@ -13,7 +13,7 @@ This changelog covers what's changed on the Office Add-in platform, including up
 |**Category**|**Description**|**Link**|
 |-|-|-|
 |Office Add-in tooling| Released the [Office Add-in Validator](https://github.com/OfficeDev/office-addin-validator) to help developers validate the add-in manifests. | [Validating your Office Add-in manifest just got easier - Introducing the Office Add-in Validator](https://dev.office.com/blogs/creating-add-ins-gets-easier-announcing-updates-to-yo-officehttps://dev.office.com/blogs/introducing-the-office-add-in-validator)|
-|Office Add-in publishing|Released centralized deployment for deploying add-ins to organizations via the Office 365 admin center.|[Publish Office Add-ins using Centralized Deployment via the Office 365 admin center](publish/centralized-deployment)|
+|Office Add-in publishing|Released centralized deployment for deploying add-ins to organizations via the Office 365 admin center.|[Publish Office Add-ins using Centralized Deployment via the Office 365 admin center](../publish/centralized-deployment)|
 
 ## March 2017
 |**Category**|**Description**|**Link**|

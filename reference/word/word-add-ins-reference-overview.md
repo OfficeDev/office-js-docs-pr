@@ -26,7 +26,7 @@ If you use TypeScript and have npm, you can get the the TypeScript definitions b
 
 To run your add-in, use an Office.initialize event handler. For more information about add-in initialization, see [Understanding the API](../../docs/develop/understanding-the-javascript-api-for-office.md) .
 
-Add-ins that target Word 2016 execute by passing a function into the **Word.run()** method. The function passed into the **run** method must have a context argument. This [context object](../../reference/word/requestcontext.md) is different than the context object you get from the Office object, but it is also used to interact with the Word runtime environment. The context object provides access to the Word JavaScript API object model. The following example shows how to initialize and execute a Word add-in by using the **Word.run()** method.
+Add-ins that target Word 2016 execute by passing a function into the **Word.run()** method. The function passed into the **run** method must have a context argument. This [context object](/reference/word/requestcontext.md) is different than the context object you get from the Office object, but it is also used to interact with the Word runtime environment. The context object provides access to the Word JavaScript API object model. The following example shows how to initialize and execute a Word add-in by using the **Word.run()** method.
 
 ```js
     (function () {
@@ -85,7 +85,7 @@ The Word JavaScript API object model is loosely coupled with the objects in Word
 
 The Word proxy objects have methods for accessing and updating the object model. These methods are executed sequentially in the order in which they were queued in the batch. All of the commands that are queued in the batch are executed when context.sync() is called.
 
-The following example shows how the command queue works. When **context.sync()** is called, the [command to load](../../reference/word/loadoption.md) the body text is executed in Word. Then, the command to insert text into the body in Word occurs. The results are then returned to the body proxy object. The value of the **body.text** property in the Word JavaScript API is the value of the Word document body <u>before</u> the text was inserted into Word document.
+The following example shows how the command queue works. When **context.sync()** is called, the [command to load](/reference/word/loadoption.md) the body text is executed in Word. Then, the command to insert text into the body in Word occurs. The results are then returned to the body proxy object. The value of the **body.text** property in the Word JavaScript API is the value of the Word document body <u>before</u> the text was inserted into Word document.
 
 
 ```js
@@ -112,7 +112,7 @@ The following example shows how the command queue works. When **context.sync()**
 
 ## Open Word API specifications
 
-As we design and develop new APIs for Word add-ins, we'll make them available for your feedback on our [Open API specifications](../../reference/openspec.md) page. Find out what new features are in the pipeline for the Word JavaScript APIs, and provide your input on our design specifications.
+As we design and develop new APIs for Word add-ins, we'll make them available for your feedback on our [Open API specifications](/reference/openspec.md) page. Find out what new features are in the pipeline for the Word JavaScript APIs, and provide your input on our design specifications.
 
 ## Additional resources
 

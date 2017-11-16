@@ -26,7 +26,7 @@ bindingObj.setFormatsAsync(cellFormat [,options] , callback);
 
 ## Callback Value
 
-When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](../../reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
+When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
 
 In the callback function passed to the  **goToByIdAsync** method, you can use the properties of the **AsyncResult** object to return the following information.
 
@@ -34,10 +34,10 @@ In the callback function passed to the  **goToByIdAsync** method, you can use th
 
 |**Property**|**Use to...**|
 |:-----|:-----|
-|[AsyncResult.value](../../reference/shared/asyncresult.value.md)|Always returns  **undefined** because there is no data or object to retrieve when setting formats.|
-|[AsyncResult.status](../../reference/shared/asyncresult.status.md)|Determine the success or failure of the operation.|
-|[AsyncResult.error](../../reference/shared/asyncresult.error.md)|Access an [Error](../../reference/shared/error.md) object that provides error information if the operation failed.|
-|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
+|[AsyncResult.value](/reference/shared/asyncresult.value.md)|Always returns  **undefined** because there is no data or object to retrieve when setting formats.|
+|[AsyncResult.status](/reference/shared/asyncresult.status.md)|Determine the success or failure of the operation.|
+|[AsyncResult.error](/reference/shared/asyncresult.error.md)|Access an [Error](/reference/shared/error.md) object that provides error information if the operation failed.|
+|[AsyncResult.asyncContext](/reference/shared/asyncresult.asynccontext.md)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
 
 ## Remarks
 
@@ -140,9 +140,9 @@ Setting formatting with the optional parameters of the  **Document.setSelectedDa
 
 - To update cell formatting, such as font color and style, use the  **TableBinding.setFormatsAsync** method (this method).
     
-- To update table options, such as banded rows and filter buttons, use the [TableBinding.setTableOptions](../../reference/shared/binding.tablebinding.settableoptionsasync.md) method.
+- To update table options, such as banded rows and filter buttons, use the [TableBinding.setTableOptions](/reference/shared/binding.tablebinding.settableoptionsasync.md) method.
     
-- To clear formatting, use the [TableBinding.clearFormats](../../reference/shared/binding.tablebinding.clearformatsasync.md) method.
+- To clear formatting, use the [TableBinding.clearFormats](/reference/shared/binding.tablebinding.clearformatsasync.md) method.
     
  **Additional remarks for Excel Online**
 

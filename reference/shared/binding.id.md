@@ -14,7 +14,7 @@ var bindingID = bindingObj.id;
 
 ## Return Value
 
-A string which uniquely identifies this binding among the bindings in the same [Document](../../reference/shared/document.md) object.
+A string which uniquely identifies this binding among the bindings in the same [Document](/reference/shared/document.md) object.
 
 
 ## Example

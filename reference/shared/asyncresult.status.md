@@ -14,7 +14,7 @@ var myStatus = asyncResult.status;
 
 ## Return Value
 
-An  **[AsyncResultStatus](../../reference/shared/asyncresultstatus-enumeration.md)** value.
+An  **[AsyncResultStatus](/reference/shared/asyncresultstatus-enumeration.md)** value.
 
 
 ## Example

@@ -17,10 +17,10 @@ Specifies source location and control settings for your mail add-in.
 
 ## Contained in:
 
-[OfficeApp](../../reference/manifest/officeapp.md)
+[OfficeApp](/reference/manifest/officeapp.md)
 
 
 ## Can contain:
 
-[Form](../../reference/manifest/form.md)
+[Form](/reference/manifest/form.md)
 

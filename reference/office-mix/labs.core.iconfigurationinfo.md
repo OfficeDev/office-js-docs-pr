@@ -15,4 +15,4 @@ interface IConfigurationInfo
 
 |||
 |:-----|:-----|
-| `hostVersion: Core.IVersion`|The version ([Labs.Core.IVersion](../../reference/office-mix/labs.core.iversion.md)) of the host used to create the lab configuration.|
+| `hostVersion: Core.IVersion`|The version ([Labs.Core.IVersion](/reference/office-mix/labs.core.iversion.md)) of the host used to create the lab configuration.|

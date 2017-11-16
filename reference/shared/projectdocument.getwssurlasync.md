@@ -26,17 +26,17 @@ Office.context.document.getWSSUrlAsync([options,] [callback]);
 
 ## Callback Value
 
-When the  _callback_ function executes, it receives an [AsyncResult](../../reference/shared/asyncresult.md) object that you can access from the parameter in the callback function.
+When the  _callback_ function executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the parameter in the callback function.
 
-For the  **getWSSUrlAsync** method, the returned [AsyncResult](../../reference/shared/asyncresult.md) object contains following properties.
+For the  **getWSSUrlAsync** method, the returned [AsyncResult](/reference/shared/asyncresult.md) object contains following properties.
 
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[asyncContext](../../reference/shared/asyncresult.asynccontext.md)|The data passed in the optional  _asyncContext_ parameter, if the parameter was used.|
-|[error](../../reference/shared/asyncresult.error.md)|Information about the error, if the  **status** property equals **failed**.|
-|[status](../../reference/shared/asyncresult.status.md)|The  **succeeded** or **failed** status of the asynchronous call.|
-|[value](../../reference/shared/asyncresult.value.md)|Contains the following properties:<br/><br/><ul><li>The <b>listName</b> property is the name of the synchronized SharePoint task list.</li><li>The <b>serverUrl</b> property is the URL of the synchronized SharePoint task list.</li></ul>|
+|[asyncContext](/reference/shared/asyncresult.asynccontext.md)|The data passed in the optional  _asyncContext_ parameter, if the parameter was used.|
+|[error](/reference/shared/asyncresult.error.md)|Information about the error, if the  **status** property equals **failed**.|
+|[status](/reference/shared/asyncresult.status.md)|The  **succeeded** or **failed** status of the asynchronous call.|
+|[value](/reference/shared/asyncresult.value.md)|Contains the following properties:<br/><br/><ul><li>The <b>listName</b> property is the name of the synchronized SharePoint task list.</li><li>The <b>serverUrl</b> property is the URL of the synchronized SharePoint task list.</li></ul>|
 
 ## Remarks
 
@@ -131,5 +131,5 @@ For more information about Office host application and server requirements, see 
 #### Other resources
 
 
-[AsyncResult object](../../reference/shared/asyncresult.md)
-[ProjectDocument object](../../reference/shared/projectdocument.projectdocument.md)
+[AsyncResult object](/reference/shared/asyncresult.md)
+[ProjectDocument object](/reference/shared/projectdocument.projectdocument.md)

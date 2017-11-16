@@ -17,5 +17,5 @@ Specifies source location and control settings that apply when your mail add-in 
 
 ## Contained in:
 
-[Form](../../reference/manifest/form.md)
+[Form](/reference/manifest/form.md)
 

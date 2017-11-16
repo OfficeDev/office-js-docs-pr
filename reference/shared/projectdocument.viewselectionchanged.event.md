@@ -16,7 +16,7 @@ Office.EventType.ViewSelectionChanged
 
 ## Remarks
 
- **ViewSelectionChanged** is an [EventType](../../reference/shared/eventtype-enumeration.md) enumeration constant that can be used in the [ProjectDocument.addHandlerAsync](../../reference/shared/projectdocument.addhandlerasync.md) and [ProjectDocument.removeHandlerAsync](../../reference/shared/projectdocument.removehandlerasync.md) methods to add or remove a handler for the event.
+ **ViewSelectionChanged** is an [EventType](/reference/shared/eventtype-enumeration.md) enumeration constant that can be used in the [ProjectDocument.addHandlerAsync](/reference/shared/projectdocument.addhandlerasync.md) and [ProjectDocument.removeHandlerAsync](/reference/shared/projectdocument.removehandlerasync.md) methods to add or remove a handler for the event.
 
 
 ## Example
@@ -115,8 +115,8 @@ For more information about Office host application and server requirements, see 
 
 
 [Create your first task pane add-in for Project 2013 by using a text editor](../../docs/project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
-[EventType enumeration](../../reference/shared/eventtype-enumeration.md)
-[ProjectDocument.addHandlerAsync method](../../reference/shared/projectdocument.addhandlerasync.md)
-[ProjectDocument.removeHandlerAsync method](../../reference/shared/projectdocument.removehandlerasync.md)
-[ProjectDocument object](../../reference/shared/projectdocument.projectdocument.md)
+[EventType enumeration](/reference/shared/eventtype-enumeration.md)
+[ProjectDocument.addHandlerAsync method](/reference/shared/projectdocument.addhandlerasync.md)
+[ProjectDocument.removeHandlerAsync method](/reference/shared/projectdocument.removehandlerasync.md)
+[ProjectDocument object](/reference/shared/projectdocument.projectdocument.md)
 

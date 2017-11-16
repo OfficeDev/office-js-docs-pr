@@ -17,7 +17,7 @@ Specifies the minimum set of JavaScript API for Office requirements ([requiremen
 
 ## Contained in:
 
-[OfficeApp](../../reference/manifest/officeapp.md)
+[OfficeApp](/reference/manifest/officeapp.md)
 
 
 ## Can contain:
@@ -26,8 +26,8 @@ Specifies the minimum set of JavaScript API for Office requirements ([requiremen
 
 |**Element**|**Content**|**Mail**|**TaskPane**|
 |:-----|:-----|:-----|:-----|
-|[Sets](../../reference/manifest/sets.md)|x|x|x|
-|[Methods](../../reference/manifest/methods.md)|x||x|
+|[Sets](/reference/manifest/sets.md)|x|x|x|
+|[Methods](/reference/manifest/methods.md)|x||x|
 
 ## Remarks
 

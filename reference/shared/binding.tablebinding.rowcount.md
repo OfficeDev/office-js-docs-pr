@@ -15,12 +15,12 @@ var rowCount = bindingObj.rowCount;
 
 ## Return Value
 
-The number of rows in the specified [TableBinding](../../reference/shared/binding.tablebinding.md) object.
+The number of rows in the specified [TableBinding](/reference/shared/binding.tablebinding.md) object.
 
 
 ## Remarks
 
-When you insert an empty table by selecting a single row in Excel 2013 and Excel Online (using  **Table** on the **Insert** tab), both Office host applications create a single row of headers followed by a single blank row. However, if your add-in's script creates a binding for this newly inserted table (for example, by using the [addFromSelectionAsync](../../reference/shared/bindings.addfromselectionasync.md) method), and then checks the value of the **rowCount** property, the value returned will differ depending whether the spreadsheet is open in Excel 2013 or Excel Online.
+When you insert an empty table by selecting a single row in Excel 2013 and Excel Online (using  **Table** on the **Insert** tab), both Office host applications create a single row of headers followed by a single blank row. However, if your add-in's script creates a binding for this newly inserted table (for example, by using the [addFromSelectionAsync](/reference/shared/bindings.addfromselectionasync.md) method), and then checks the value of the **rowCount** property, the value returned will differ depending whether the spreadsheet is open in Excel 2013 or Excel Online.
 
 
 - In Excel on the desktop,  **rowCount** will return 0 (the blank row following the headers is not counted).

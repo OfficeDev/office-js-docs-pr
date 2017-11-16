@@ -20,14 +20,14 @@ Office.EventType
 
 |Enumeration|Value|Description|
 |:-----|:-----|:-----|
-|Office.EventType.ActiveViewChanged|"documentActiveViewChanged"|A [Document.ActiveViewChanged](../../reference/shared/document.activeviewchanged.md) event was raised.|
-|Office.EventType.DocumentSelectionChanged|"documentSelectionChanged"|A [Document.SelectionChanged](../../reference/shared/document.selectionchanged.event.md) event was raised.|
-|Office.EventType.BindingSelectionChanged|"bindingSelectionChanged"|A [Binding.BindingSelectionChanged](../../reference/shared/binding.bindingselectionchangedevent.md) event was raised.|
-|Office.EventType.BindingDataChanged|"bindingDataChanged"|A [Binding.BindingDataChanged](../../reference/shared/binding.bindingdatachangedevent.md) event was raised.|
-|Office.EventType.DataNodeDeleted|"nodeDeleted"|A [CustomXmlPart.dataNodeDeleted](../../reference/shared/customxmlpart.datanodedeleted.event.md) event was raised.|
-|Office.EventType.DataNodeInserted|"nodeInserted"|A [CustomXmlPart.dataNodeInserted](../../reference/shared/customxmlpart.datanodeinserted.event.md) event was raised.|
-|Office.EventType.DataNodeReplaced|"nodeReplaced"|A [CustomXmlPart.dataNodeReplaced](../../reference/shared/customxmlpart.datanodereplaced.event.md) event was raised.|
-|Office.EventType.SettingsChanged|"settingsChanged"|A [Settings.settingsChanged](../../reference/shared/settings.settingschangedevent.md) event was raised.|
+|Office.EventType.ActiveViewChanged|"documentActiveViewChanged"|A [Document.ActiveViewChanged](/reference/shared/document.activeviewchanged.md) event was raised.|
+|Office.EventType.DocumentSelectionChanged|"documentSelectionChanged"|A [Document.SelectionChanged](/reference/shared/document.selectionchanged.event.md) event was raised.|
+|Office.EventType.BindingSelectionChanged|"bindingSelectionChanged"|A [Binding.BindingSelectionChanged](/reference/shared/binding.bindingselectionchangedevent.md) event was raised.|
+|Office.EventType.BindingDataChanged|"bindingDataChanged"|A [Binding.BindingDataChanged](/reference/shared/binding.bindingdatachangedevent.md) event was raised.|
+|Office.EventType.DataNodeDeleted|"nodeDeleted"|A [CustomXmlPart.dataNodeDeleted](/reference/shared/customxmlpart.datanodedeleted.event.md) event was raised.|
+|Office.EventType.DataNodeInserted|"nodeInserted"|A [CustomXmlPart.dataNodeInserted](/reference/shared/customxmlpart.datanodeinserted.event.md) event was raised.|
+|Office.EventType.DataNodeReplaced|"nodeReplaced"|A [CustomXmlPart.dataNodeReplaced](/reference/shared/customxmlpart.datanodereplaced.event.md) event was raised.|
+|Office.EventType.SettingsChanged|"settingsChanged"|A [Settings.settingsChanged](/reference/shared/settings.settingschangedevent.md) event was raised.|
 
 ## Remarks
 

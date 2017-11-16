@@ -28,14 +28,14 @@ Specifies the URL of a page that provides support information for your add-in.
 
 |**Attribute**|**Type**|**Required**|**Description**|
 |:-----|:-----|:-----|:-----|
-|DefaultValue|URL|required|Specifies the default value for this setting, expressed for the locale specified in the [DefaultLocale](../../reference/manifest/defaultlocale.md) element.|
+|DefaultValue|URL|required|Specifies the default value for this setting, expressed for the locale specified in the [DefaultLocale](/reference/manifest/defaultlocale.md) element.|
 
 ## Child elements
 
 |  Element | Required | Description  |
 |:-----|:-----|:-----|
-|  [Override](../../reference/manifest/override.md)   | No | Specifies the setting for additional locale urls |
+|  [Override](/reference/manifest/override.md)   | No | Specifies the setting for additional locale urls |
 
 ## Parent element
-[OfficeApp](../../reference/manifest/officeapp.md)
+[OfficeApp](/reference/manifest/officeapp.md)
 

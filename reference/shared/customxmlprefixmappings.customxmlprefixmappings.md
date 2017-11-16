@@ -21,9 +21,9 @@ CustomXmlPrefixMappings
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[addNamespaceAsync](../../reference/shared/customxmlprefixmappings.addnamespaceasync.md)|Asynchronously adds a prefix to namespace mapping to use when querying an item.|
-|[getNamespaceAsync](../../reference/shared/customxmlprefixmappings.getnamespaceasync.md)|Asynchronously gets the namespace mapped to the specified prefix.|
-|[getPrefixAsync](../../reference/shared/customxmlprefixmappings.getprefixasync.md)|Asynchronously gets the prefix for the specified namespace.|
+|[addNamespaceAsync](/reference/shared/customxmlprefixmappings.addnamespaceasync.md)|Asynchronously adds a prefix to namespace mapping to use when querying an item.|
+|[getNamespaceAsync](/reference/shared/customxmlprefixmappings.getnamespaceasync.md)|Asynchronously gets the namespace mapped to the specified prefix.|
+|[getPrefixAsync](/reference/shared/customxmlprefixmappings.getprefixasync.md)|Asynchronously gets the prefix for the specified namespace.|
 
 ## Support details
 

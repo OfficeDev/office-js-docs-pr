@@ -28,7 +28,7 @@ _callback_<br/>
 
 ## Callback Value
 
-When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](../../reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
+When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
 
 In the callback function passed to the  **saveAsync** method, you can use the properties of the **AsyncResult** object to return the following information.
 
@@ -36,19 +36,19 @@ In the callback function passed to the  **saveAsync** method, you can use the pr
 
 |**Property**|**Use to...**|
 |:-----|:-----|
-|[AsyncResult.value](../../reference/shared/asyncresult.value.md)|Always returns  **undefined** because there is no object or data to retrieve.|
-|[AsyncResult.status](../../reference/shared/asyncresult.status.md)|Determine the success or failure of the operation.|
-|[AsyncResult.error](../../reference/shared/asyncresult.error.md)|Access an [Error](../../reference/shared/error.md) object that provides error information if the operation failed.|
-|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
+|[AsyncResult.value](/reference/shared/asyncresult.value.md)|Always returns  **undefined** because there is no object or data to retrieve.|
+|[AsyncResult.status](/reference/shared/asyncresult.status.md)|Determine the success or failure of the operation.|
+|[AsyncResult.error](/reference/shared/asyncresult.error.md)|Access an [Error](/reference/shared/error.md) object that provides error information if the operation failed.|
+|[AsyncResult.asyncContext](/reference/shared/asyncresult.asynccontext.md)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
 
 ## Remarks
 
-Any settings previously saved by an add-in are loaded when it is initialized, so during the lifetime of the session you can just use the [set](../../reference/shared/settings.set.md) and [get](../../reference/shared/settings.get.md) methods to work with the in-memory copy of the settings property bag. When you want to persist the settings so that they are available the next time the add-in is used, use the **saveAsync** method.
+Any settings previously saved by an add-in are loaded when it is initialized, so during the lifetime of the session you can just use the [set](/reference/shared/settings.set.md) and [get](/reference/shared/settings.get.md) methods to work with the in-memory copy of the settings property bag. When you want to persist the settings so that they are available the next time the add-in is used, use the **saveAsync** method.
 
 
  >**Note**:  The  **saveAsync** method persists the in-memory settings property bag into the document file; however, the changes to the document file itself are saved only when the user (or **AutoRecover** setting) saves the document to the file system.
 
-The [refreshAsync](../../reference/shared/settings.refreshasync.md) method is only useful in coauthoring scenarios (which are only supported in Word) when other instances of the same add-in might change the settings and those changes should be made available to all instances.
+The [refreshAsync](/reference/shared/settings.refreshasync.md) method is only useful in coauthoring scenarios (which are only supported in Word) when other instances of the same add-in might change the settings and those changes should be made available to all instances.
 
 
 ## Example

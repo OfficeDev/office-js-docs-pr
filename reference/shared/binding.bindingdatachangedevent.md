@@ -14,7 +14,7 @@ Office.EventType.BindingDataChanged
 
 ## Remarks
 
-To add an event handler for the  **BindingDataChanged** event of a binding, use the [addHandlerAsync](../../reference/shared/binding.addhandlerasync.md) method of the **Binding** object. The event handler receives an argument of type [BindingDataChangedEventArgs](../../reference/shared/binding.bindingdatachangedeventargs.md).
+To add an event handler for the  **BindingDataChanged** event of a binding, use the [addHandlerAsync](/reference/shared/binding.addhandlerasync.md) method of the **Binding** object. The event handler receives an argument of type [BindingDataChangedEventArgs](/reference/shared/binding.bindingdatachangedeventargs.md).
 
 
 ## Example

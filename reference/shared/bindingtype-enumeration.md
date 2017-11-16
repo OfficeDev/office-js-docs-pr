@@ -21,7 +21,7 @@ Office.BindingType
 |**Enumeration**|**Value**|**Description**|
 |:-----|:-----|:-----|
 |Office.BindingType.Matrix|"matrix"|Tabular data without a header row. Data is returned as an array of arrays, for example in this form: ` [[row1column1, row1column2],[row2column1, row2column2]]`|
-|Office.BindingType.Table|"table"|Tabular data with a header row. Data is returned as a [TableData](../../reference/shared/tabledata.md) object.|
+|Office.BindingType.Table|"table"|Tabular data with a header row. Data is returned as a [TableData](/reference/shared/tabledata.md) object.|
 |Office.BindingType.Text|"text"|Plain text. Data is returned as a run of characters.|
 
 ## Support details

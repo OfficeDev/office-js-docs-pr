@@ -17,12 +17,12 @@ Specifies the list of JavaScript API for Office methods that your Office Add-in 
 
 ## Contained in:
 
-[Requirements](../../reference/manifest/requirements.md)
+[Requirements](/reference/manifest/requirements.md)
 
 
 ## Can contain:
 
-[Method](../../reference/manifest/method.md)
+[Method](/reference/manifest/method.md)
 
 
 ## Remarks

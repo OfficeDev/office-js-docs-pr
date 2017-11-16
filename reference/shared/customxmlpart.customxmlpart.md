@@ -1,6 +1,6 @@
 
 # CustomXmlPart object
-Represents a single  **CustomXMLPart** in a [CustomXMLParts](../../reference/shared/customxmlparts.customxmlparts.md) collection.
+Represents a single  **CustomXMLPart** in a [CustomXMLParts](/reference/shared/customxmlparts.customxmlparts.md) collection.
 
 |||
 |:-----|:-----|
@@ -21,29 +21,29 @@ Office.context.document.customXmlParts.getByIdAsync(id);
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[builtIn](../../reference/shared/customxmlpart.builtin.md)|Get a value that indicates whether the CustomXMLPart is built-in.|
-|[id](../../reference/shared/customxmlpart.id.md)|Gets the GUID of the CustomXMLPart|
-|[namespaceManager](../../reference/shared/customxmlpart.namespacemanager.md)|Gets the set of namespace prefix mappings (CustomXMLPrefixMappings) used against the current CustomXMLPart.|
+|[builtIn](/reference/shared/customxmlpart.builtin.md)|Get a value that indicates whether the CustomXMLPart is built-in.|
+|[id](/reference/shared/customxmlpart.id.md)|Gets the GUID of the CustomXMLPart|
+|[namespaceManager](/reference/shared/customxmlpart.namespacemanager.md)|Gets the set of namespace prefix mappings (CustomXMLPrefixMappings) used against the current CustomXMLPart.|
 
 **Methods**
 
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[addHandlerAsync](../../reference/shared/customxmlpart.addhandlerasync.md)|Asynchronously adds an event handler for a  **CustomXmlPart** object event.|
-|[deleteAsync](../../reference/shared/customxmlpart.deleteasync.md)|Asynchronously deletes this custom XML part from the collection.|
-|[getNodesAsync](../../reference/shared/customxmlpart.getnodesasync.md)|Asynchronously gets any CustomXmlNodes in this custom XML part which match the specified XPath.|
-|[getXmlAsync](../../reference/shared/customxmlpart.getxmlasync.md)|Asynchronously gets the XML inside this custom XML part.|
-|[removeHandlerAsync](../../reference/shared/customxmlpart.removehandlerasync.md)|Removes an event handler for a  **CustomXmlPart** object event.|
+|[addHandlerAsync](/reference/shared/customxmlpart.addhandlerasync.md)|Asynchronously adds an event handler for a  **CustomXmlPart** object event.|
+|[deleteAsync](/reference/shared/customxmlpart.deleteasync.md)|Asynchronously deletes this custom XML part from the collection.|
+|[getNodesAsync](/reference/shared/customxmlpart.getnodesasync.md)|Asynchronously gets any CustomXmlNodes in this custom XML part which match the specified XPath.|
+|[getXmlAsync](/reference/shared/customxmlpart.getxmlasync.md)|Asynchronously gets the XML inside this custom XML part.|
+|[removeHandlerAsync](/reference/shared/customxmlpart.removehandlerasync.md)|Removes an event handler for a  **CustomXmlPart** object event.|
 
 **Events**
 
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[dataNodeDeleted](../../reference/shared/customxmlpart.datanodedeleted.event.md)|Occurs when a node is deleted.|
-|[dataNodeInserted](../../reference/shared/customxmlpart.datanodeinserted.event.md)|Occurs when a node is inserted.|
-|[dataNodeReplaced](../../reference/shared/customxmlpart.datanodereplaced.event.md)|Occurs when a node is replaced.|
+|[dataNodeDeleted](/reference/shared/customxmlpart.datanodedeleted.event.md)|Occurs when a node is deleted.|
+|[dataNodeInserted](/reference/shared/customxmlpart.datanodeinserted.event.md)|Occurs when a node is inserted.|
+|[dataNodeReplaced](/reference/shared/customxmlpart.datanodereplaced.event.md)|Occurs when a node is replaced.|
 
 ## Support details
 

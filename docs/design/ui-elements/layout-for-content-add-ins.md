@@ -15,7 +15,7 @@ Create a consistent look and feel for your content add-ins by using the recommen
 
 ![Layout of a content add-in, content and a command bar](../../images/layouts-content-v0.02.png)
 
-You can also add [custom HTML-based UI](ui-elements.md#custom-HTML-based-UI) to your content add-in.
+You can also add [custom HTML-based UI](ui-elements.md#custom-html-based-ui) to your content add-in.
 
 For a sample that shows how to use Office UI Fabric in Office Add-ins, see [Office Add-in Fabric UI Sample](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample).
 

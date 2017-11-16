@@ -1,6 +1,6 @@
 
 # ProjectDocument.addHandlerAsync method
-Asynchronously adds an event handler for a change event in a [ProjectDocument](../../reference/shared/projectdocument.projectdocument.md) object.
+Asynchronously adds an event handler for a change event in a [ProjectDocument](/reference/shared/projectdocument.projectdocument.md) object.
 
 |||
 |:-----|:-----|
@@ -16,7 +16,7 @@ Office.context.document.addHandlerAsync(eventType, handler[, options][, callback
 
 |**Name**|**Type**|**Description**|
 |:-----|:-----|:-----|
-| _eventType_|[EventType](../../reference/shared/eventtype-enumeration.md)|The type of event to add, as an [EventType](../../reference/shared/eventtype-enumeration.md) constant or its corresponding text value. Required. See [eventType value](#eventtype-value).|
+| _eventType_|[EventType](/reference/shared/eventtype-enumeration.md)|The type of event to add, as an [EventType](/reference/shared/eventtype-enumeration.md) constant or its corresponding text value. Required. See [eventType value](#eventtype-value).|
 | _handler_|**function**|The name of the event handler. Required.|
 | _options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods).|
 | _asyncContext_|**array**,  **boolean**,  **null**,  **number**,  **object**, **string**, or  **undefined**|A user-defined item of any type that is returned in the  **AsyncResult** object without being altered.|
@@ -25,30 +25,30 @@ Office.context.document.addHandlerAsync(eventType, handler[, options][, callback
 
 ## eventType value
 
-The following table shows valid _eventType_ arguments for a [ProjectDocument](../../reference/shared/projectdocument.projectdocument.md) object.
+The following table shows valid _eventType_ arguments for a [ProjectDocument](/reference/shared/projectdocument.projectdocument.md) object.
 
 |**Enumeration**|**Text value**|
 |:-----|:-----|
-|[Office.EventType.ResourceSelectionChanged](../../reference/shared/projectdocument.resourceselectionchanged.event.md)|resourceSelectionChanged|
-|[Office.EventType.TaskSelectionChanged](../../reference/shared/projectdocument.taskselectionchanged.event.md)|taskSelectionChanged|
-|[Office.EventType.ViewSelectionChanged](../../reference/shared/projectdocument.viewselectionchanged.event.md)|viewSelectionChanged|
+|[Office.EventType.ResourceSelectionChanged](/reference/shared/projectdocument.resourceselectionchanged.event.md)|resourceSelectionChanged|
+|[Office.EventType.TaskSelectionChanged](/reference/shared/projectdocument.taskselectionchanged.event.md)|taskSelectionChanged|
+|[Office.EventType.ViewSelectionChanged](/reference/shared/projectdocument.viewselectionchanged.event.md)|viewSelectionChanged|
 
 ## Callback value
 
-When the  _callback_ function executes, it receives an [AsyncResult](../../reference/shared/asyncresult.md) object that you can access from the parameter in the callback function.
+When the  _callback_ function executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the parameter in the callback function.
 
-For the  **addHandlerAsync** method, the returned [AsyncResult](../../reference/shared/asyncresult.md) object contains the following properties.
+For the  **addHandlerAsync** method, the returned [AsyncResult](/reference/shared/asyncresult.md) object contains the following properties.
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[asyncContext](../../reference/shared/asyncresult.asynccontext.md)|The data passed in the optional  _asyncContext_ parameter, if the parameter was used.|
-|[error](../../reference/shared/asyncresult.error.md)|Information about the error, if the  **status** property equals **failed**.|
-|[status](../../reference/shared/asyncresult.status.md)|The  **succeeded** or **failed** status of the asynchronous call.|
-|[value](../../reference/shared/asyncresult.value.md)|**addHandlerAsync** always returns **undefined**.|
+|[asyncContext](/reference/shared/asyncresult.asynccontext.md)|The data passed in the optional  _asyncContext_ parameter, if the parameter was used.|
+|[error](/reference/shared/asyncresult.error.md)|Information about the error, if the  **status** property equals **failed**.|
+|[status](/reference/shared/asyncresult.status.md)|The  **succeeded** or **failed** status of the asynchronous call.|
+|[value](/reference/shared/asyncresult.value.md)|**addHandlerAsync** always returns **undefined**.|
 
 ## Example
 
-The following code example uses  **addHandlerAsync** to add an event handler for the [ViewSelectionChanged](../../reference/shared/projectdocument.viewselectionchanged.event.md) event.
+The following code example uses  **addHandlerAsync** to add an event handler for the [ViewSelectionChanged](/reference/shared/projectdocument.viewselectionchanged.event.md) event.
 
 When the active view changes, the handler checks the view type. It enables a button if the view is a resource view and disables the button if it isn't a resource view. Choosing the button gets the GUID of the selected resource and displays it in the add-in.
 
@@ -132,7 +132,7 @@ The example assumes that your add-in has a reference to the jQuery library and t
 
 <br/>
 
-For a complete code sample that shows how to use a [TaskSelectionChanged](../../reference/shared/projectdocument.taskselectionchanged.event.md) event handler in a Project add-in, see [Create your first task pane add-in for Project by using a text editor](../../docs/project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md).
+For a complete code sample that shows how to use a [TaskSelectionChanged](/reference/shared/projectdocument.taskselectionchanged.event.md) event handler in a Project add-in, see [Create your first task pane add-in for Project by using a text editor](../../docs/project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md).
 
 
 ## Support details
@@ -162,8 +162,8 @@ For more information about Office host application and server requirements, see 
 
 ## See also
 
-- [TaskSelectionChanged event](../../reference/shared/projectdocument.taskselectionchanged.event.md)
+- [TaskSelectionChanged event](/reference/shared/projectdocument.taskselectionchanged.event.md)
 
-- [removeHandlerAsync method](../../reference/shared/projectdocument.addhandlerasync.md)
+- [removeHandlerAsync method](/reference/shared/projectdocument.addhandlerasync.md)
 
-- [ProjectDocument object](../../reference/shared/projectdocument.projectdocument.md)
+- [ProjectDocument object](/reference/shared/projectdocument.projectdocument.md)

@@ -14,7 +14,7 @@ Project Standard 2013 and Project Professional 2013 both include support for tas
 > [!NOTE]
 > The [Project 2013 SDK download](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20) includes sample add-ins that show how to use the add-in object model for Project, and how to use the OData service for reporting data in Project Server 2013. When you extract and install the SDK, see the `\Samples\Apps\` subdirectory.
 
-For an introduction to Office Add-ins, see [Office Add-ins platform overview](../../docs/overview/office-add-ins.md).
+For an introduction to Office Add-ins, see [Office Add-ins platform overview](../overview/office-add-ins.md).
 
 ## Add-in scenarios for Project
 
@@ -52,7 +52,7 @@ Add-in scenarios for Project include the following:
 
 The JavaScript library for Project add-ins includes extensions of the  **Office** namespace alias that enable developers to access properties of the Project application and tasks, resources, and views in a project. The JavaScript library extensions in the Project-15.js file are used in a Project add-in created with Visual Studio 2015. The Office.js, Office.debug.js, Project-15.js, Project-15.debug.js, and related files are also provided in the Project 2013 SDK download.
 
-To create an add-in, you can use a simple text editor to create an HTML webpage and related JavaScript files, CSS files, and REST queries. In addition to an HTML page or a web application, an add-in requires an XML manifest file for configuration. Project can use a manifest file that includes a  **type** attribute that is specified as **TaskPaneExtension**. The manifest file can be used by multiple Office 2013 client applications, or you can create a manifest file that is specific for Project 2013. For more information, see the  _Development basics_ section in [Office Add-ins platform overview](../../docs/overview/office-add-ins.md).
+To create an add-in, you can use a simple text editor to create an HTML webpage and related JavaScript files, CSS files, and REST queries. In addition to an HTML page or a web application, an add-in requires an XML manifest file for configuration. Project can use a manifest file that includes a  **type** attribute that is specified as **TaskPaneExtension**. The manifest file can be used by multiple Office 2013 client applications, or you can create a manifest file that is specific for Project 2013. For more information, see the  _Development basics_ section in [Office Add-ins platform overview](../overview/office-add-ins.md).
 
 For complex custom applications, and for easier debugging, we recommend that you use Visual Studio 2015 to develop websites for add-ins. Visual Studio 2015 include templates for add-in projects, where you can choose the kind of add-in (task pane, content, or mail) and the host application (Project, Word, Excel, or Outlook).  For an example that integrates with data from Project Online, see [Connecting a Project task pane add-in to PWA](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx) in the Project Programmability blog on MSDN.
 
@@ -75,7 +75,7 @@ The manifest file specifies the URL of the add-in webpage or web application, th
 ### Procedure 1. To create the add-in manifest file for Bing Search
 
 
-- Create an XML file in a local directory. The XML file includes the  **OfficeApp** element and child elements, which are described in the [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md). For example, create a file named BingSearch.xml that contains the following XML.
+- Create an XML file in a local directory. The XML file includes the  **OfficeApp** element and child elements, which are described in the [Office Add-ins XML manifest](../overview/add-in-manifests.md). For example, create a file named BingSearch.xml that contains the following XML.
     
 ```XML
    <?xml version="1.0" encoding="utf-8"?>
@@ -207,7 +207,7 @@ You can distribute add-ins through a file share, an add-in catalog in a SharePoi
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Office Add-ins XML manifest](../overview/add-in-manifests.md)
-- [JavaScript API for Office](../../reference/javascript-api-for-office.md)
+- [JavaScript API for Office](/reference/javascript-api-for-office.md)
 - [Create your first task pane add-in for Project 2013 by using a text editor](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [Create a Project add-in that uses REST with an on-premises Project Server OData service](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
 - [Connecting a Project task pane add-in to PWA](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx)

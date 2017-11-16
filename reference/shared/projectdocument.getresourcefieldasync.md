@@ -20,16 +20,16 @@ Office.context.document.getResourceFieldAsync(resourceId, fieldId[, options][, c
 |**Name**|**Type**|**Description**|**Support notes**|
 |:-----|:-----|:-----|:-----|
 | _resourceId_|**string**|The GUID of the resource. Required.||
-| _fieldId_|[ProjectResourceFields](../../reference/shared/projectresourcefields-enumeration.md)|The ID of the target field. Required.||
+| _fieldId_|[ProjectResourceFields](/reference/shared/projectresourcefields-enumeration.md)|The ID of the target field. Required.||
 | _options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods).||
 | _asyncContext_|**array**,  **boolean**,  **null**,  **number**,  **object**, **string**, or  **undefined**|A user-defined item of any type that is returned in the  **AsyncResult** object without being altered.||
 | _callback_|**object**|A function that is invoked when the callback returns, whose only parameter is of type  **AsyncResult**.||
 
 ## Callback Value
 
-When the  _callback_ function executes, it receives an [AsyncResult](../../reference/shared/asyncresult.md) object that you can access from the parameter in the callback function.
+When the  _callback_ function executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the parameter in the callback function.
 
-For the  **getResourceFieldAsync** method, the returned [AsyncResult](../../reference/shared/asyncresult.md) object contains the following properties.
+For the  **getResourceFieldAsync** method, the returned [AsyncResult](/reference/shared/asyncresult.md) object contains the following properties.
 
 
 ****
@@ -37,19 +37,19 @@ For the  **getResourceFieldAsync** method, the returned [AsyncResult](../../refe
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[asyncContext](../../reference/shared/asyncresult.asynccontext.md)|The data passed in the optional  _asyncContext_ parameter, if the parameter was used.|
-|[error](../../reference/shared/asyncresult.error.md)|Information about the error, if the  **status** property equals **failed**.|
-|[status](../../reference/shared/asyncresult.status.md)|The  **succeeded** or **failed** status of the asynchronous call.|
-|[value](../../reference/shared/asyncresult.value.md)|Contains the  **fieldValue** property, which represents the value of the specified field.|
+|[asyncContext](/reference/shared/asyncresult.asynccontext.md)|The data passed in the optional  _asyncContext_ parameter, if the parameter was used.|
+|[error](/reference/shared/asyncresult.error.md)|Information about the error, if the  **status** property equals **failed**.|
+|[status](/reference/shared/asyncresult.status.md)|The  **succeeded** or **failed** status of the asynchronous call.|
+|[value](/reference/shared/asyncresult.value.md)|Contains the  **fieldValue** property, which represents the value of the specified field.|
 
 ## Remarks
 
-First call the [getSelectedResourceAsync](../../reference/shared/projectdocument.getselectedtaskasync.md) method to get the resource GUID, and then pass it as the _resourceId_ argument to **getResourceFieldAsync**. If the active view is not a resource view (for example a Resource Usage or Resource Sheet view), or if no resource is selected in a resource view, [getSelectedResourceAsync](../../reference/shared/projectdocument.getselectedtaskasync.md) returns a 5001 error (Internal Error). See [addHandlerAsync method](../../reference/shared/projectdocument.addhandlerasync.md) for an example that uses the [ViewSelectionChanged](../../reference/shared/projectdocument.viewselectionchanged.event.md) event and the [getSelectedViewAsync](../../reference/shared/projectdocument.getselectedviewasync.md) method to activate a button based on the active view type.
+First call the [getSelectedResourceAsync](/reference/shared/projectdocument.getselectedtaskasync.md) method to get the resource GUID, and then pass it as the _resourceId_ argument to **getResourceFieldAsync**. If the active view is not a resource view (for example a Resource Usage or Resource Sheet view), or if no resource is selected in a resource view, [getSelectedResourceAsync](/reference/shared/projectdocument.getselectedtaskasync.md) returns a 5001 error (Internal Error). See [addHandlerAsync method](/reference/shared/projectdocument.addhandlerasync.md) for an example that uses the [ViewSelectionChanged](/reference/shared/projectdocument.viewselectionchanged.event.md) event and the [getSelectedViewAsync](/reference/shared/projectdocument.getselectedviewasync.md) method to activate a button based on the active view type.
 
 
 ## Example
 
-The following code example calls [getSelectedResourceAsync](../../reference/shared/projectdocument.getselectedtaskasync.md) to get the GUID of the resource that's currently selected in a resource view. Then it gets three resource field values by calling **getResourceFieldAsync** recursively.
+The following code example calls [getSelectedResourceAsync](/reference/shared/projectdocument.getselectedtaskasync.md) to get the GUID of the resource that's currently selected in a resource view. Then it gets three resource field values by calling **getResourceFieldAsync** recursively.
 
 The example assumes your add-in has a reference to the jQuery library and that the following page controls are defined in the content div in the page body.
 
@@ -184,10 +184,10 @@ For more information about Office host application and server requirements, see 
 #### Other resources
 
 
-[getSelectedResourceAsync method](../../reference/shared/projectdocument.getselectedresourceasync.md)
+[getSelectedResourceAsync method](/reference/shared/projectdocument.getselectedresourceasync.md)
 
-[ProjectResourceFields enumeration](../../reference/shared/projectresourcefields-enumeration.md)
+[ProjectResourceFields enumeration](/reference/shared/projectresourcefields-enumeration.md)
 
-[AsyncResult object](../../reference/shared/asyncresult.md)
+[AsyncResult object](/reference/shared/asyncresult.md)
 
-[ProjectDocument object](../../reference/shared/projectdocument.projectdocument.md)
+[ProjectDocument object](/reference/shared/projectdocument.projectdocument.md)

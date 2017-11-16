@@ -16,5 +16,5 @@ interface ICreateComponentOptions extends Core.IActionOptions
 |||
 |:-----|:-----|
 | `componentId: string`|The component invoking the create component action.|
-| `component: Core.IComponent`|The [Labs.Core.IComponent](../../reference/office-mix/labs.core.icomponent.md) component to create|
+| `component: Core.IComponent`|The [Labs.Core.IComponent](/reference/office-mix/labs.core.icomponent.md) component to create|
 | `correlationId?: string`|Optional field to correlate this component across all instances of a lab. Allows the host to identify different attempts at the same component.|

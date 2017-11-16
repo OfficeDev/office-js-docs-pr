@@ -15,7 +15,7 @@ Specifies the citation boilerplate text for this dictionary.
 
 ## Contained in:
 
-[Dictionary](../../reference/manifest/dictionary.md)
+[Dictionary](/reference/manifest/dictionary.md)
 
 
 ## Additional resources

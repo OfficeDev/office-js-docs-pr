@@ -20,15 +20,15 @@ Office.context.document.goToByIdAsync(id, goToType, [,options], callback);
 |**Name**|**Type**|**Description**|**Support notes**|
 |:-----|:-----|:-----|:-----|
 | _id_|**string** or **number**|The identifier of the object or location to go to. Required.||
-| _goToType_|[GoToType](../../reference/shared/gototype-enumeration.md)|The type of the location to go to. Required.||
+| _goToType_|[GoToType](/reference/shared/gototype-enumeration.md)|The type of the location to go to. Required.||
 | _options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)||
-| _selectionMode_|[SelectionMode](../../reference/shared/selectionmode-enumeration.md)|Specifies whether the location specified by the  _id_ parameter is selected (highlighted).|**In Excel:**<br/> **Office.SelectionMode.Selected** selects all content in the binding, or named item. <br/>**Office.SelectionMode.None** for text bindings, selects the cell; for matrix bindings, table bindings, and named items, selects the first data cell (not first cell in header row for tables).<br/><br/> **In PowerPoint:**<br/> **Office.SelectionMode.Selected** selects the slide title or first textbox on the slide.<br/> **Office.SelectionMode.None** Doesn't select anything.<br/><br/> **In Word:**<br/> **Office.SelectionMode.Selected** selects all content in the binding. <br/>**Office.SelectionMode.None** for text bindings, moves the cursor to the beginning of the text; for matrix bindings and table bindings, selects the first data cell (not first cell in header row for tables).|
+| _selectionMode_|[SelectionMode](/reference/shared/selectionmode-enumeration.md)|Specifies whether the location specified by the  _id_ parameter is selected (highlighted).|**In Excel:**<br/> **Office.SelectionMode.Selected** selects all content in the binding, or named item. <br/>**Office.SelectionMode.None** for text bindings, selects the cell; for matrix bindings, table bindings, and named items, selects the first data cell (not first cell in header row for tables).<br/><br/> **In PowerPoint:**<br/> **Office.SelectionMode.Selected** selects the slide title or first textbox on the slide.<br/> **Office.SelectionMode.None** Doesn't select anything.<br/><br/> **In Word:**<br/> **Office.SelectionMode.Selected** selects all content in the binding. <br/>**Office.SelectionMode.None** for text bindings, moves the cursor to the beginning of the text; for matrix bindings and table bindings, selects the first data cell (not first cell in header row for tables).|
 | _asyncContext_|**array**,  **boolean**,  **null**,  **number**,  **object**, **string**, or  **undefined**|A user-defined item of any type that is returned in the  **AsyncResult** object without being altered.||
 | _callback_|**object**|A function that is invoked when the callback returns, whose only parameter is of type  **AsyncResult**.||
 
 ## Callback Value
 
-When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](../../reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
+When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
 
 In the callback function passed to the  **goToByIdAsync** method, you can use the properties of the **AsyncResult** object to return the following information.
 
@@ -36,10 +36,10 @@ In the callback function passed to the  **goToByIdAsync** method, you can use th
 
 |**Property**|**Use to...**|
 |:-----|:-----|
-|[AsyncResult.value](../../reference/shared/asyncresult.value.md)|Return the current view.|
-|[AsyncResult.status](../../reference/shared/asyncresult.status.md)|Determine the success or failure of the operation.|
-|[AsyncResult.error](../../reference/shared/asyncresult.error.md)|Access an [Error](../../reference/shared/error.md) object that provides error information if the operation failed.|
-|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
+|[AsyncResult.value](/reference/shared/asyncresult.value.md)|Return the current view.|
+|[AsyncResult.status](/reference/shared/asyncresult.status.md)|Determine the success or failure of the operation.|
+|[AsyncResult.error](/reference/shared/asyncresult.error.md)|Access an [Error](/reference/shared/error.md) object that provides error information if the operation failed.|
+|[AsyncResult.asyncContext](/reference/shared/asyncresult.asynccontext.md)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
 
 ## Remarks
 
@@ -53,7 +53,7 @@ PowerPoint doesn't support the  **goToByIdAsync** method in **Master Views**.
 The following example shows how to:
 
 
--  **Create a table binding** using the [addFromSelectionAsync](../../reference/shared/bindings.addfromselectionasync.md) method as a sample binding to work with.
+-  **Create a table binding** using the [addFromSelectionAsync](/reference/shared/bindings.addfromselectionasync.md) method as a sample binding to work with.
     
 -  **Specify that binding** as the binding to go to.
     
@@ -124,7 +124,7 @@ function goToTable() {
 The following example shows how to:
 
 
--  **Get the id** of the currently selected slides using the [getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) method.
+-  **Get the id** of the currently selected slides using the [getSelectedDataAsync](/reference/shared/document.getselecteddataasync.md) method.
     
 -  **Specify the returned id** as the slide to go to.
     

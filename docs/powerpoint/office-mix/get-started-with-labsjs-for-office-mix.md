@@ -63,7 +63,7 @@ After you create your lab, you can publish it and submit it to the store.
 
 The application manifest is an XML document that describes your LabJS lab. It provides a reference to the URL where the lab is hosted and provides details about the lab, including display name, description, icons, size, and so on.
 
-We include a sample manifest, "SampleManifest.xml". For more information about the manifest schema as well as a link to the schema definition, see [Office Add-ins XML manifest](../../../docs/overview/add-in-manifests.md).
+We include a sample manifest, "SampleManifest.xml". For more information about the manifest schema as well as a link to the schema definition, see [Office Add-ins XML manifest](../../overview/add-in-manifests.md).
 
 To upload your manifest to your SharePoint site, first navigate to your application catalog, which you'll typically find at the URL <code>https://\<your site\>/sites/AppCatalog</code>. Then, choose the  **New app** button and follow the steps to upload your application manifest.
 
@@ -95,6 +95,6 @@ To submit your lab to the Office Store, see [Publish your Office Add-in](../../p
 ## Additional resources
 
 - [Office Mix add-ins](../../powerpoint/office-mix/office-mix-add-ins.md)
-- [Office Add-ins](../../../docs/overview/office-add-ins.md)
+- [Office Add-ins](../../overview/office-add-ins.md)
 - [Creating your first lab for Office Mix](../../powerpoint/office-mix/creating-your-first-lab-for-office-mix.md)
     

@@ -15,10 +15,10 @@ Specifies the name for your Office Add-in as a string up to 125 characters long.
 
 ## Contained in:
 
-[OfficeApp](../../reference/manifest/officeapp.md)
+[OfficeApp](/reference/manifest/officeapp.md)
 
 
 ## Can contain:
 
-[Override](../../reference/manifest/override.md)
+[Override](/reference/manifest/override.md)
 

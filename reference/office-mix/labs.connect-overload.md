@@ -15,7 +15,7 @@ function connect(labHost: Core.ILabHost, callback: Core.ILabCallback<Core.IConne
 
 |||
 |:-----|:-----|
-| _labHost_|Optional. The [Labs.Core.ILabHost](../../reference/office-mix/labs.core.ilabhost.md)instance to which to connect. If the host is not specified, one will be constructed using [Labs.DefaultHostBuilder](../../reference/office-mix/labs.defaulthostbuilder.md).|
+| _labHost_|Optional. The [Labs.Core.ILabHost](/reference/office-mix/labs.core.ilabhost.md)instance to which to connect. If the host is not specified, one will be constructed using [Labs.DefaultHostBuilder](/reference/office-mix/labs.defaulthostbuilder.md).|
 | _callback_|Callback that fires once the connection has been established.|
 
 ## Return value

@@ -259,7 +259,7 @@ The following is an example manifest file for a dictionary add-in.
 </OfficeApp>
 ```
 
-The  **Dictionary** element and its child elements that are specific to creating a dictionary add-in's manifest file are described in the following sections. For information about the other elements in the manifest file, see [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md).
+The  **Dictionary** element and its child elements that are specific to creating a dictionary add-in's manifest file are described in the following sections. For information about the other elements in the manifest file, see [Office Add-ins XML manifest](../overview/add-in-manifests.md).
 
 
 ### Dictionary element
@@ -385,7 +385,7 @@ Specifies the text to use in citations. Required (for dictionary add-ins).
 
 This element specifies the beginning of the citation text that will be displayed on a line below the content that is returned from the web service (for example, "Results by: " or "Powered by: ").
 
-For this element, you can specify values for additional locales by using the  **Override** element. For example, if a user is running the Spanish SKU of Office, but using an English dictionary, this allows the citation line to read "Resultados por: Bing" rather than "Results by: Bing". For more information about how to specify values for additional locales, see the section "Providing settings for different locales" in [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md).
+For this element, you can specify values for additional locales by using the  **Override** element. For example, if a user is running the Spanish SKU of Office, but using an English dictionary, this allows the citation line to read "Resultados por: Bing" rather than "Results by: Bing". For more information about how to specify values for additional locales, see the section "Providing settings for different locales" in [Office Add-ins XML manifest](../overview/add-in-manifests.md).
 
  **Example**
 
@@ -550,13 +550,13 @@ The following example shows the JavaScript implementation in the Dictionary.js f
 The primary members of the JavaScript API for Office (Office.js) that are called from this implementation are as follows:
 
 
-- The [initialize](../../reference/shared/office.initialize.md) event of the **Office** object, which is raised when the add-in context is initialized, and provides access to a [Document](../../reference/shared/document.md) object instance that represents the document the add-in is interacting with.
+- The [initialize](/reference/shared/office.initialize.md) event of the **Office** object, which is raised when the add-in context is initialized, and provides access to a [Document](/reference/shared/document.md) object instance that represents the document the add-in is interacting with.
     
-- The [addHandlerAsync](../../reference/shared/document.addhandlerasync.md) method of the **Document** object, which is called in the **initialize** function to add an event handler for the [SelectionChanged](../../reference/shared/document.selectionchanged.event.md) event of the document to listen for user selection changes.
+- The [addHandlerAsync](/reference/shared/document.addhandlerasync.md) method of the **Document** object, which is called in the **initialize** function to add an event handler for the [SelectionChanged](/reference/shared/document.selectionchanged.event.md) event of the document to listen for user selection changes.
     
-- The [getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) method of the **Document** object, which is called in the `tryUpdatingSelectedWord()` function when the **SelectionChanged** event handler is raised to get the word or phrase the user selected, coerce it to plain text, and then execute the `selectedTextCallback` asynchronous callback function.
+- The [getSelectedDataAsync](/reference/shared/document.getselecteddataasync.md) method of the **Document** object, which is called in the `tryUpdatingSelectedWord()` function when the **SelectionChanged** event handler is raised to get the word or phrase the user selected, coerce it to plain text, and then execute the `selectedTextCallback` asynchronous callback function.
     
-- When the  `selectTextCallback` asynchronous callback function that is passed as the _callback_ argument of the **getSelectedDataAsync** method executes, it gets the value of the selected text when the callback returns. It gets that value from the callback's _selectedText_ argument (which is of type [AsyncResult](../../reference/shared/asyncresult.md)) by using the [value](../../reference/shared/asyncresult.status.md) property of the returned **AsyncResult** object.
+- When the  `selectTextCallback` asynchronous callback function that is passed as the _callback_ argument of the **getSelectedDataAsync** method executes, it gets the value of the selected text when the callback returns. It gets that value from the callback's _selectedText_ argument (which is of type [AsyncResult](/reference/shared/asyncresult.md)) by using the [value](/reference/shared/asyncresult.status.md) property of the returned **AsyncResult** object.
     
 - The rest of the code in the  `selectedTextCallback` function queries the XML web service for definitions. It also calls into the Microsoft Translator APIs to provide the URL of a .wav file that has the selected word's pronunciation.
     

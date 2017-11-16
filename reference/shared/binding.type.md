@@ -14,7 +14,7 @@ var bindingType = bindingObj.type;
 
 ## Return Value
 
-A [BindingType](../../reference/shared/bindingtype-enumeration.md).
+A [BindingType](/reference/shared/bindingtype-enumeration.md).
 
 
 ## Example

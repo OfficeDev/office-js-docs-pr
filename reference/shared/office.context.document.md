@@ -14,7 +14,7 @@ var _document = Office.context.document;
 
 ## Return Value
 
-A [Document](../../reference/shared/document.md) object.
+A [Document](/reference/shared/document.md) object.
 
 
 ## Remarks

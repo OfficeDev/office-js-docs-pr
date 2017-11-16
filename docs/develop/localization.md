@@ -423,20 +423,20 @@ Run the sample add-in. The taskpane add-in loads in Word 2013, and the strings i
 
 ## Additional resources
 
-- [Design guidelines for Office Add-ins](../../docs/design/add-in-design.md)    
+- [Design guidelines for Office Add-ins](../design/add-in-design.md)    
 - [Language identifiers and OptionState Id values in Office 2013](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)
 
-[DefaultLocale]: 		 ../../reference/manifest/defaultlocale.md
-[Description]: 			 ../../reference/manifest/description.md
-[DisplayName]: 			 ../../reference/manifest/displayname.md
-[IconUrl]: 				 ../../reference/manifest/iconurl.md
-[HighResolutionIconUrl]: ../../reference/manifest/highresolutioniconurl.md
-[Resources]: 		     ../../reference/manifest/resources
-[SourceLocation]: 		 ../../reference/manifest/sourcelocation.md
-[Override]:  			 ../../reference/manifest/override.md
-[DesktopSettings]: 		 ../../reference/manifest/desktopsettings.md
-[TabletSettings]: 		 ../../reference/manifest/tabletsettings.md
-[PhoneSettings]: 		 ../../reference/manifest/phonesettings.md
-[displayLanguage]: 	../../reference/shared/office.context.displaylanguage.md 
-[contentLanguage]: 	../../reference/shared/office.context.contentlanguage.md 
+[DefaultLocale]: 		 /reference/manifest/defaultlocale.md
+[Description]: 			 /reference/manifest/description.md
+[DisplayName]: 			 /reference/manifest/displayname.md
+[IconUrl]: 				 /reference/manifest/iconurl.md
+[HighResolutionIconUrl]: /reference/manifest/highresolutioniconurl.md
+[Resources]: 		     /reference/manifest/resources
+[SourceLocation]: 		 /reference/manifest/sourcelocation.md
+[Override]:  			 /reference/manifest/override.md
+[DesktopSettings]: 		 /reference/manifest/desktopsettings.md
+[TabletSettings]: 		 /reference/manifest/tabletsettings.md
+[PhoneSettings]: 		 /reference/manifest/phonesettings.md
+[displayLanguage]: 	/reference/shared/office.context.displaylanguage.md 
+[contentLanguage]: 	/reference/shared/office.context.contentlanguage.md 
 [RFC 3066]: https://www.rfc-editor.org/info/rfc3066

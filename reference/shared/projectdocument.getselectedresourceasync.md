@@ -25,9 +25,9 @@ Office.context.document.getSelectedResourceAsync([options,] [callback]);
 
 ## Callback Value
 
-When the  _callback_ function executes, it receives an [AsyncResult](../../reference/shared/asyncresult.md) object that you can access from the parameter in the callback function.
+When the  _callback_ function executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the parameter in the callback function.
 
-For the  **getSelectedResourceAsync** method, the returned [AsyncResult](../../reference/shared/asyncresult.md) object contains the following properties.
+For the  **getSelectedResourceAsync** method, the returned [AsyncResult](/reference/shared/asyncresult.md) object contains the following properties.
 
 
 ****
@@ -35,21 +35,21 @@ For the  **getSelectedResourceAsync** method, the returned [AsyncResult](../../r
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[asyncContext](../../reference/shared/asyncresult.asynccontext.md)|The data passed in the optional  _asyncContext_ parameter, if the parameter was used.|
-|[error](../../reference/shared/asyncresult.error.md)|Information about the error, if the  **status** property equals **failed**.|
-|[status](../../reference/shared/asyncresult.status.md)|The  **succeeded** or **failed** status of the asynchronous call.|
-|[value](../../reference/shared/asyncresult.value.md)|The GUID of the selected resource as a  **string**.|
+|[asyncContext](/reference/shared/asyncresult.asynccontext.md)|The data passed in the optional  _asyncContext_ parameter, if the parameter was used.|
+|[error](/reference/shared/asyncresult.error.md)|Information about the error, if the  **status** property equals **failed**.|
+|[status](/reference/shared/asyncresult.status.md)|The  **succeeded** or **failed** status of the asynchronous call.|
+|[value](/reference/shared/asyncresult.value.md)|The GUID of the selected resource as a  **string**.|
 
 ## Remarks
 
-The GUID of a resource is more useful in Project add-ins than the resource name. The resource GUID can be used to access resource information, such as data about resources in Project Online that is available through the client object model (CSOM). You can also save the resource GUID in a local variable and use it for the [getResourceFieldAsync](../../reference/shared/projectdocument.gettaskasync.md) method.
+The GUID of a resource is more useful in Project add-ins than the resource name. The resource GUID can be used to access resource information, such as data about resources in Project Online that is available through the client object model (CSOM). You can also save the resource GUID in a local variable and use it for the [getResourceFieldAsync](/reference/shared/projectdocument.gettaskasync.md) method.
 
-If the active view is not a resource view (for example a Resource Usage or Resource Sheet view), or if no resource is selected in a resource view,  **getSelectedResourceAsync** returns a 5001 error (Internal Error). See [addHandlerAsync method](../../reference/shared/projectdocument.addhandlerasync.md) for an example that uses the [ViewSelectionChanged](../../reference/shared/projectdocument.viewselectionchanged.event.md) event and the [getSelectedViewAsync](../../reference/shared/projectdocument.getselectedviewasync.md) method to activate a button based on the active view type.
+If the active view is not a resource view (for example a Resource Usage or Resource Sheet view), or if no resource is selected in a resource view,  **getSelectedResourceAsync** returns a 5001 error (Internal Error). See [addHandlerAsync method](/reference/shared/projectdocument.addhandlerasync.md) for an example that uses the [ViewSelectionChanged](/reference/shared/projectdocument.viewselectionchanged.event.md) event and the [getSelectedViewAsync](/reference/shared/projectdocument.getselectedviewasync.md) method to activate a button based on the active view type.
 
 
 ## Example
 
-The following code example calls  **getSelectedResourceAsync** to get the GUID of the resource that's currently selected in a resource view. Then it gets three resource field values by calling [getResourceFieldAsync](../../reference/shared/projectdocument.gettaskasync.md) recursively.
+The following code example calls  **getSelectedResourceAsync** to get the GUID of the resource that's currently selected in a resource view. Then it gets three resource field values by calling [getResourceFieldAsync](/reference/shared/projectdocument.gettaskasync.md) recursively.
 
 The example assumes your add-in has a reference to the jQuery library and that the following page controls are defined in the content div in the page body.
 
@@ -184,8 +184,8 @@ For more information about Office host application and server requirements, see 
 #### Other resources
 
 
-[getResourceFieldAsync method](../../reference/shared/projectdocument.getresourcefieldasync.md)
+[getResourceFieldAsync method](/reference/shared/projectdocument.getresourcefieldasync.md)
 
-[AsyncResult object](../../reference/shared/asyncresult.md)
+[AsyncResult object](/reference/shared/asyncresult.md)
 
-[ProjectDocument object](../../reference/shared/projectdocument.projectdocument.md)
+[ProjectDocument object](/reference/shared/projectdocument.projectdocument.md)

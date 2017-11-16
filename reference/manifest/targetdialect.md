@@ -17,7 +17,7 @@
 
 ## Contained in:
 
-[TargetDialects](../../reference/manifest/targetdialects.md)
+[TargetDialects](/reference/manifest/targetdialects.md)
 
 
 ## Remarks

@@ -1,6 +1,6 @@
 
 # BindingSelectionChangedEventArgs object
-Provides information about the binding that raised the [SelectionChanged](../../reference/shared/binding.bindingselectionchangedevent.md) event.
+Provides information about the binding that raised the [SelectionChanged](/reference/shared/binding.bindingselectionchangedevent.md) event.
 
 |||
 |:-----|:-----|
@@ -20,12 +20,12 @@ Office.EventType.BindingSelectionChanged
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[binding](../../reference/shared/binding.bindingselectionchangedevent.binding.md)|Gets a [Binding](../../reference/shared/binding.md) object that represents the binding that raised the **SelectionChanged** event.|
-|[columnCount](../../reference/shared/binding.bindingselectionchangedevent.columncount.md)|Gets the number of columns selected.|
-|[rowCount](../../reference/shared/binding.bindingselectionchangedevent.rowcount.md)|Gets the number of rows selected.|
-|[startRow](../../reference/shared/binding.bindingselectionchangedevent.startrow.md)|Gets the index of the first row of the selection (zero-based).|
-|[startColumn](../../reference/shared/binding.bindingselectionchangedevent.startcolumn.md)|Gets the index of the first column of the selection (zero-based).|
-|[type](../../reference/shared/binding.bindingselectionchangedevent.type.md)|Gets an [EventType](../../reference/shared/eventtype-enumeration.md) enumeration value that identifies the kind of event that was raised.|
+|[binding](/reference/shared/binding.bindingselectionchangedevent.binding.md)|Gets a [Binding](/reference/shared/binding.md) object that represents the binding that raised the **SelectionChanged** event.|
+|[columnCount](/reference/shared/binding.bindingselectionchangedevent.columncount.md)|Gets the number of columns selected.|
+|[rowCount](/reference/shared/binding.bindingselectionchangedevent.rowcount.md)|Gets the number of rows selected.|
+|[startRow](/reference/shared/binding.bindingselectionchangedevent.startrow.md)|Gets the index of the first row of the selection (zero-based).|
+|[startColumn](/reference/shared/binding.bindingselectionchangedevent.startcolumn.md)|Gets the index of the first column of the selection (zero-based).|
+|[type](/reference/shared/binding.bindingselectionchangedevent.type.md)|Gets an [EventType](/reference/shared/eventtype-enumeration.md) enumeration value that identifies the kind of event that was raised.|
 
 ## Support details
 

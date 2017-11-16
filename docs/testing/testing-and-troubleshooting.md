@@ -23,7 +23,7 @@ The following table lists common error messages that users might encounter and s
 |App error: Catalog could not be reached|Verify firewall settings."Catalog" refers to the Office Store. This message indicates that the user cannot access the Office Store.|
 |APP ERROR: This app could not be started. Close this dialog to ignore the problem or click "Restart" to try again.|Verify that the latest Office updates are installed, or download the [update for Office 2013](https://support.microsoft.com/en-us/kb/2986156/).|
 |Error: Object doesn't support property or method 'defineProperty'|Confirm that Internet Explorer is not running in Compatibility Mode. Go to Tools >  **Compatibility View Settings**.|
-|Sorry, we couldn't load the app because your browser version is not supported. Click here for a list of supported browser versions.|Make sure that the browser supports HTML5 local storage, or reset your Internet Explorer settings. For information about supported browsers, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).|
+|Sorry, we couldn't load the app because your browser version is not supported. Click here for a list of supported browser versions.|Make sure that the browser supports HTML5 local storage, or reset your Internet Explorer settings. For information about supported browsers, see [Requirements for running Office Add-ins](../overview/requirements-for-running-office-add-ins.md).|
 
 
 ## Outlook add-in doesn't work correctly
@@ -81,7 +81,7 @@ To add a URL to your list of trusted sites:
 3. Enter the URL that appears in the error message, and choose **Add**.
 4. Try to use the add-in again. If the problem persists, verify the settings for the other security zones and ensure that the add-in domain is in the same zone as the URL that is displayed in the address bar of the Office application.
 
-This issue occurs when the Dialog API is used in pop-up mode. To prevent this issue from occurring, use the [displayInFrame](../../reference/shared/officeui.displaydialogasync.md) flag. This requires that your page support display within an iframe. The following example shows how to use the flag.
+This issue occurs when the Dialog API is used in pop-up mode. To prevent this issue from occurring, use the [displayInFrame](/reference/shared/officeui.displaydialogasync.md) flag. This requires that your page support display within an iframe. The following example shows how to use the flag.
 
 ```js
 

@@ -15,5 +15,5 @@ Specifies the unique ID of your Office Add-in as a GUID.
 
 ## Contained in:
 
-[OfficeApp](../../reference/manifest/officeapp.md)
+[OfficeApp](/reference/manifest/officeapp.md)
 

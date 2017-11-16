@@ -21,7 +21,7 @@ bindingObj.setDataAsync(data [, options] ,callback);
 |:-----|:-----|:-----|:-----|
 | _data_|<table><tr><td><b>string</b></td><td>Excel, Excel Online, Word, and Word Online only</td></tr><tr><td><b>array</b> (array of arrays – "matrix")</td><td>Excel and Word only</td></tr><tr><td><a href="https://msdn.microsoft.com/en-us/library/office/fp161002"><b>TableData</b></a></td><td>Access, Excel, and Word only</td></tr><tr><td><b>HTML</b></td><td>Word and Word Online only</td></tr><tr><td><b>Office Open XML</b></td><td>Word only</td></tr></table>|The data to be set in the current selection. Required.|**Changed in:** 1.1.Support for content add-ins for Access requires  **TableBinding** requirement set 1.1 or later.|
 | _options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)||
-| _coercionType_|**[CoercionType](../../reference/shared/coerciontype-enumeration.md)**|Specifies how to coerce the data being set. ||
+| _coercionType_|**[CoercionType](/reference/shared/coerciontype-enumeration.md)**|Specifies how to coerce the data being set. ||
 | _columns_|**array of strings**| Specifies the column names.|**Added in:** v1.1.Only for table bindings in content add-ins for Access.|
 | _rows_|**Office.TableRange.ThisRow**|Specifies the pre-defined string "thisRow" to set data in the currently selected row. |**Added in:** v1.1.Only for table bindings in content add-ins for Access.|
 | _startColumn_|**number**|Specifies the zero-based starting column for a subset of the data. |Only for table or matrix bindings. If omitted, data is set starting in the first column.|
@@ -33,7 +33,7 @@ bindingObj.setDataAsync(data [, options] ,callback);
 
 ## Callback Value
 
-When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](../../reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
+When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
 
 In the callback function passed to the  **setDataAsync** method, you can use the properties of the **AsyncResult** object to return the following information.
 
@@ -41,10 +41,10 @@ In the callback function passed to the  **setDataAsync** method, you can use the
 
 |**Property**|**Use to...**|
 |:-----|:-----|
-|[AsyncResult.value](../../reference/shared/asyncresult.value.md)|Always returns  **undefined** because there is no object or data to retrieve.|
-|[AsyncResult.status](../../reference/shared/asyncresult.status.md)|Determine the success or failure of the operation.|
-|[AsyncResult.error](../../reference/shared/asyncresult.error.md)|Access an [Error](../../reference/shared/error.md) object that provides error information if the operation failed.|
-|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
+|[AsyncResult.value](/reference/shared/asyncresult.value.md)|Always returns  **undefined** because there is no object or data to retrieve.|
+|[AsyncResult.status](/reference/shared/asyncresult.status.md)|Determine the success or failure of the operation.|
+|[AsyncResult.error](/reference/shared/asyncresult.error.md)|Access an [Error](/reference/shared/error.md) object that provides error information if the operation failed.|
+|[AsyncResult.asyncContext](/reference/shared/asyncresult.asynccontext.md)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
 
 ## Remarks
 
@@ -56,7 +56,7 @@ The value passed for  _data_ contains the data to be written in the binding. The
 |:-----|:-----|
 |A  **string**|Plain text or anything that can be coerced to a  **string** will be written.|
 |An array of arrays ("matrix")|Tabular data without headers will be written. For example, to write data to three rows in two columns, you can pass an array like this:  ` [["R1C1", "R1C2"], ["R2C1", "R2C2"], ["R3C1", "R3C2"]]`To write a single column of three rows, pass an array like this:  `[["R1C1"], ["R2C1"], ["R3C1"]]`|
-|A [TableData](../../reference/shared/tabledata.md) object|A table with headers will be written.|
+|A [TableData](/reference/shared/tabledata.md) object|A table with headers will be written.|
 Additionally, these application-specific actions apply when writing data to a binding.
 
  **For Word**, the specified  _data_ is written to the binding as follows:
@@ -78,7 +78,7 @@ Additionally, these application-specific actions apply when writing data to a bi
 
 |**_data_ value**|**Data written**|
 |:-----|:-----|
-|A  **string**|The specified text is inserted as the value of the first bound cell.You can also specify a valid formula to add that formula to the bound cell. For example, setting  _data_ to `"=SUM(A1:A5)"` will total the values in the specified range. However, when you set a formula on the bound cell, after doing so, you can't read the added formula (or any pre-existing formula) from the bound cell. If you call the [Binding.getDataAsync](../../reference/shared/binding.getdataasync.md) method on the bound cell to read its data, the method can return only the data displayed in the cell (the formula's result).|
+|A  **string**|The specified text is inserted as the value of the first bound cell.You can also specify a valid formula to add that formula to the bound cell. For example, setting  _data_ to `"=SUM(A1:A5)"` will total the values in the specified range. However, when you set a formula on the bound cell, after doing so, you can't read the added formula (or any pre-existing formula) from the bound cell. If you call the [Binding.getDataAsync](/reference/shared/binding.getdataasync.md) method on the bound cell to read its data, the method can return only the data displayed in the cell (the formula's result).|
 |An array of arrays ("matrix"), and the shape exactly matches the shape of the binding specified|The set of rows and columns are written.You can also specify an array of arrays that contain valid formulas to add them to the bound cells. For example, setting  _data_ to `[["=SUM(A1:A5)","=AVERAGE(A1:A5)"]]` will add those two formulas to a binding that contains two cells. Just as when setting a formula on a single bound cell, you can't read the added formulas (or any pre-existing formulas) from the binding with the **Binding.getDataAsync** method - it returns only the data displayed in the bound cells.|
 |A  **TableData** object, and the shape of the table matches the bound table.|The specified set of rows and/or headers are written, if no other data in surrounding cells will be overwritten. **Note:** If you specify formulas in the **TableData** object you pass for the _data_ parameter, you might not get the results you expect due to the "calculated columns" feature of Excel, which automatically duplicates formulas within a column. To work around this when you want to write _data_ that contains formulas to a bound table, try specifying the data as an array of arrays (instead of a **TableData** object), and specify the _coercionType_ as **Microsoft.Office.Matrix** or "matrix".|
  **Additional remarks for Excel Online**

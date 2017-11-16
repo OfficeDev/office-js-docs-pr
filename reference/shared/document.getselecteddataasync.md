@@ -17,7 +17,7 @@ Office.context.document.getSelectedDataAsync(coercionType [, options], callback)
 
 |**Name**|**Type**|**Description**|
 |:-------|:-------|:--------------|
-| _coercionType_|[CoercionType](../../reference/shared/coerciontype-enumeration.md)<br/>|The type of data structure to return. Required. See [coercionType value](#coerciontype-value).|
+| _coercionType_|[CoercionType](/reference/shared/coerciontype-enumeration.md)<br/>|The type of data structure to return. Required. See [coercionType value](#coerciontype-value).|
 | _options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods). See [options value](#options-value).|
 | _callback_|**object**|A function that is invoked when the callback returns, whose only parameter is of type  **AsyncResult**.|
 
@@ -27,7 +27,7 @@ Office.context.document.getSelectedDataAsync(coercionType [, options], callback)
 |:-----|:-----|
 |Excel, Excel Online, PowerPoint, PowerPoint Online, Word, and Word Online only|Office.CoercionType.Text (string)|
 |Excel, Word, and Word Online only|Office.CoercionType.Matrix (array of arrays)|
-|Access, Excel, Word, and Word Online only|Office.CoercionType.Table ([TableData](../../reference/shared/tabledata.md) object)|
+|Access, Excel, Word, and Word Online only|Office.CoercionType.Table ([TableData](/reference/shared/tabledata.md) object)|
 |Word only|Office.CoercionType.Html|
 |Word and Word Online only|Office.CoercionType.Ooxml (Office Open XML)|
 |PowerPoint and PowerPoint Online only|Office.CoercionType.SlideRange|
@@ -36,30 +36,30 @@ Office.context.document.getSelectedDataAsync(coercionType [, options], callback)
 
 |**Name**|**Type**|**Description**|
 |:-----|:-----|:-----|
-|valueFormat|[valueFormat](../../reference/shared/valueformat-enumeration.md)|Specifies whether to return the result with its number or date values formatted or unformatted.|
-|filterType|[filterType](../../reference/shared/filtertype-enumeration.md)|Specifies whether to apply filtering when the data is retrieved. Optional. <br/><br/> This parameter is ignored in Word documents.|
+|valueFormat|[valueFormat](/reference/shared/valueformat-enumeration.md)|Specifies whether to return the result with its number or date values formatted or unformatted.|
+|filterType|[filterType](/reference/shared/filtertype-enumeration.md)|Specifies whether to apply filtering when the data is retrieved. Optional. <br/><br/> This parameter is ignored in Word documents.|
 |asyncContext|**array**, **boolean**, **null**, **number**, **object**, **string**, or **undefined**|A user-defined item of any type that is returned in the **AsyncResult** object without being altered.|
 
 ## Callback value
 
-When the function you passed to the _callback_ parameter executes, it receives an [AsyncResult](../../reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
+When the function you passed to the _callback_ parameter executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
 
 In the callback function that is passed to the  **getSelectedDataAsync** method, you can use the properties of the **AsyncResult** object to return the following information.
 
 |**Property**|**Use to...**|
 |:-----|:-----|
-|[AsyncResult.value](../../reference/shared/asyncresult.value.md)|Access the values in the current selection, which are returned in the data structure or format you specified with the  _coercionType_ parameter. (See **Remarks** for more information about data coercion.)|
-|[AsyncResult.status](../../reference/shared/asyncresult.status.md)|Determine the success or failure of the operation.|
-|[AsyncResult.error](../../reference/shared/asyncresult.error.md)|Access an [Error](../../reference/shared/error.md) object that provides error information if the operation failed.|
-|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
+|[AsyncResult.value](/reference/shared/asyncresult.value.md)|Access the values in the current selection, which are returned in the data structure or format you specified with the  _coercionType_ parameter. (See **Remarks** for more information about data coercion.)|
+|[AsyncResult.status](/reference/shared/asyncresult.status.md)|Determine the success or failure of the operation.|
+|[AsyncResult.error](/reference/shared/asyncresult.error.md)|Access an [Error](/reference/shared/error.md) object that provides error information if the operation failed.|
+|[AsyncResult.asyncContext](/reference/shared/asyncresult.asynccontext.md)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
 
 ## Remarks
 
 In your task pane or content add-in, use the  **getSelectedDataAsync** method to write script that reads the data from the user's selection in a document, spreadsheet, presentation, or project. For example, after a user selects content in a Word document, you can use the **getSelectedDataAsync** method to read that selection, and then submit it to a web service as a query or some other operation.
 
-After reading the selection, you can also use the [setSelectedDataAsync](../../reference/shared/document.setselecteddataasync.md) and [addHandlerAsync](../../reference/shared/document.addhandlerasync.md) methods of the **Document** object to [write back to the selection or add an event handler](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md) to detect if the user changes the selection.
+After reading the selection, you can also use the [setSelectedDataAsync](/reference/shared/document.setselecteddataasync.md) and [addHandlerAsync](/reference/shared/document.addhandlerasync.md) methods of the **Document** object to [write back to the selection or add an event handler](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md) to detect if the user changes the selection.
 
-The  **getSelectedDataAsync** method can read from the selection only as long as it's active. In add-ins for Word and Excel, if you need to make a persistent association to read and write to the user's selection, instead use the [Bindings.addFromSelectionAsync](../../reference/shared/bindings.addfromselectionasync.md) method to [bind to that selection](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md).
+The  **getSelectedDataAsync** method can read from the selection only as long as it's active. In add-ins for Word and Excel, if you need to make a persistent association to read and write to the user's selection, instead use the [Bindings.addFromSelectionAsync](/reference/shared/bindings.addfromselectionasync.md) method to [bind to that selection](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md).
 
 Use the  _coercionType_ parameter of the **getSelectedDataAsync** method to specify the data structure or format of the selected data being read.
 
@@ -67,9 +67,9 @@ Use the  _coercionType_ parameter of the **getSelectedDataAsync** method to spec
 |:-----|:-----|:-----|
 |**Office.CoercionType.Text** or `"text"`|A string.|Word, Excel, PowerPoint, and Project.<br/><br/> **Note**: In Excel, even when a subset of a cell is selected, the entire cell contents are returned.|
 |**Office.CoercionType.Matrix** or `"matrix"`|An array of arrays. For example,  ` [['a','b'], ['c','d']]` for a selection of two rows in two columns.|Word and Excel.|
-|**Office.CoercionType.Table** or `"table"`|A [TableData](../../reference/shared/tabledata.md) object for reading a table with headers.|Word and Excel.|
+|**Office.CoercionType.Table** or `"table"`|A [TableData](/reference/shared/tabledata.md) object for reading a table with headers.|Word and Excel.|
 |**Office.CoercionType.Html** or `"html"`|In HTML format.|Word only.|
-|**Office.CoercionType.Ooxml** or `"ooxml"`|In Open Office XML (OpenXML) format.|Word only.<br/><br/> **Tip**: When developing your add-in's code, you can use the  `"ooxml"` _coercionType_ of the **getSelectedDataAsync** method to see how the content you select in a Word document is defined as OpenXML tags. Then, use those tags in the data parameter of the [Document.setSelectedDataAsync](../../reference/shared/document.setselecteddataasync.md) method to write content with that formatting or structure to a document. For example, you can [insert an image into a document](http://blogs.msdn.com/b/officeapps/archive/2012/10/26/inserting-images-with-apps-for-office.aspx) as OpenXML.|
+|**Office.CoercionType.Ooxml** or `"ooxml"`|In Open Office XML (OpenXML) format.|Word only.<br/><br/> **Tip**: When developing your add-in's code, you can use the  `"ooxml"` _coercionType_ of the **getSelectedDataAsync** method to see how the content you select in a Word document is defined as OpenXML tags. Then, use those tags in the data parameter of the [Document.setSelectedDataAsync](/reference/shared/document.setselecteddataasync.md) method to write content with that formatting or structure to a document. For example, you can [insert an image into a document](http://blogs.msdn.com/b/officeapps/archive/2012/10/26/inserting-images-with-apps-for-office.aspx) as OpenXML.|
 |**Office.CoercionType.SlideRange** or "slideRange"|A JSON object that contains an array named "slides" that contains the ids, titles, and indexes of the selected slides.  **Note:** To select more than one slide, the user must be editing the presentation in **Normal**,  **Outline View**, or  **Slide Sorter** view. Also, this method isn't supported in **Master Views**.For example,  `{"slides":[{"id":257,"title":"Slide 2","index":2},{"id":256,"title":"Slide 1","index":1}]}` for a selection of two slides.|PowerPoint only.|
 If the data structure of the selection doesn't match the specified  _coercionType_, the  **getSelectedDataAsync** method will attempt to coerce the data into that type or structure. If the selection can't be coerced into the **Office.CoercionType** you specified, the **AsyncResult.status** property returns `"failed"`.
 
@@ -145,5 +145,5 @@ For more information about Office host application and server requirements, see 
 |1.1| In Word Online, added support for **Office.CoercionType.Matrix** and **Office.CoercionType.Table** as the _coercionType_ parameter.|
 |1.1|In Excel, PowerPoint, and Word in Office for iPad, added the same level of support as Excel, PowerPoint and Word on Windows desktop.|
 |1.1| In Word Online, added support for **Office.CoercionType.Text** as the _coercionType_ parameter.|
-|1.1|In content add-ins for PowerPoint, you can get the ids, titles, and indexes of the selected range of slides by passing  **Office.CoercionType.SlideRange** as the _coercionType_ parameter of the **getSelectedDataAsync** method. See the [Document.goToByIdAsync](../../reference/shared/document.gotobyidasync.md) method topic for an example of how to use this value to navigate to the currently selected slide.|
+|1.1|In content add-ins for PowerPoint, you can get the ids, titles, and indexes of the selected range of slides by passing  **Office.CoercionType.SlideRange** as the _coercionType_ parameter of the **getSelectedDataAsync** method. See the [Document.goToByIdAsync](/reference/shared/document.gotobyidasync.md) method topic for an example of how to use this value to navigate to the currently selected slide.|
 |1.0|Introduced|

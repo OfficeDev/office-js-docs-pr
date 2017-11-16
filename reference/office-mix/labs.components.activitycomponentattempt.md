@@ -55,4 +55,4 @@ Function that runs over the actions that are retrieved for a given attempt, then
 
 |**Name**|**Description**|
 |:-----|:-----|
-| _action_|The action instance ([Labs.Core.IAction](../../reference/office-mix/labs.core.iaction.md)).|
+| _action_|The action instance ([Labs.Core.IAction](/reference/office-mix/labs.core.iaction.md)).|

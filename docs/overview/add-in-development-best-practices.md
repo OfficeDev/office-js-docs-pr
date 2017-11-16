@@ -49,7 +49,7 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
 - Avoid pop ups. If you have to use them, guide the user to enable your pop up.
 
-- Use [single sign-on (SSO) authentication](../outlook/authenticate-a-user-with-an-identity-token.md).
+- Use [single sign-on (SSO) authentication](https://docs.microsoft.com/en-us/outlook/add-ins/authenticate-a-user-with-an-identity-token).
 
 For templates that illustrate patterns that you can apply as you develop your first-run experience, see [UX design patterns for Office Add-ins](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
 
@@ -71,9 +71,9 @@ For templates that illustrate patterns that you can apply as you develop your fi
 
 - Do not include unlicensed images.
 
-- Use [clear and simple language](../design/voice-guidelines.md) in your add-in.
+- Use [clear and simple language](../design/ui-elements/voice-guidelines.md) in your add-in.
 
-- Account for [accessibility](../design/accessibility-guidelines.md) - make your add-in easy for all users to interact with, and accommodate assistive technologies such as screen readers.
+- Account for [accessibility](../design/ui-elements/accessibility-guidelines.md) - make your add-in easy for all users to interact with, and accommodate assistive technologies such as screen readers.
 
 - Design for all platforms and input methods, including mouse/keyboard and [touch](#optimize-for-touch). Ensure that your UI is responsive to different form factors.
 
@@ -83,7 +83,7 @@ For templates that apply design principles that you can use and customize as you
 
 
 
-- Use the [Context.touchEnabled](../../reference/shared/office.context.touchenabled.md) property to detect whether the host application your add-in runs on is touch enabled.
+- Use the [Context.touchEnabled](/reference/shared/office.context.touchenabled.md) property to detect whether the host application your add-in runs on is touch enabled.
 
   > [!NOTE]
   > This property is not supported in Outlook.
@@ -115,7 +115,7 @@ For templates that apply design principles that you can use and customize as you
 
 - Follow standard web practices to optimize your web page. In production, use only minified versions of libraries. Only load resources that you need, and optimize how resources are loaded.
 
-- If operations take time to execute, provide feedback to users. Note the thresholds listed in the following table. See also [Resource limits and performance optimization for Office Add-ins](../../docs/develop/resource-limits-and-performance-optimization.md)
+- If operations take time to execute, provide feedback to users. Note the thresholds listed in the following table. See also [Resource limits and performance optimization for Office Add-ins](../develop/resource-limits-and-performance-optimization.md)
 
 
 |**Interaction class**|**Target**|**Upper bound**|**Human perception**|

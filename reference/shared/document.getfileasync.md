@@ -18,7 +18,7 @@ Office.context.document.getFileAsync(fileType [, options], callback);
 
 |**Name**|**Type**|**Description**|**Support notes**|
 |:-----|:-----|:-----|:-----|
-| _fileType_|[FileType](../../reference/shared/filetype-enumeration.md)|Specifies the format in which the file will be returned. Required. See [fileType Value](#filetype-value). <br/>|**Changed in** 1.1, see [Support history](#support-history)|
+| _fileType_|[FileType](/reference/shared/filetype-enumeration.md)|Specifies the format in which the file will be returned. Required. See [fileType Value](#filetype-value). <br/>|**Changed in** 1.1, see [Support history](#support-history)|
 | _options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods).||
 | _sliceSize_|**number**|Specifies the desired slice size (in bytes) up to 4194304 bytes (4 MB). If not specified, a default slice size of 4194304 bytes (4 MB) will be used. ||
 | _asyncContext_|**array**, **boolean**, **null**, **number**, **object**, **string**, or **undefined**|A user-defined item of any type that is returned in the  **AsyncResult** object without being altered.||
@@ -35,17 +35,17 @@ Office.context.document.getFileAsync(fileType [, options], callback);
 
 ## Callback value
 
-When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](../../reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
+When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
 
 In the callback function passed to the  **getFileAsync** method, you can use the properties of the **AsyncResult** object to return the following information.
 
 
 |**Property**|**Use to...**|
 |:-----|:-----|
-|[AsyncResult.value](../../reference/shared/asyncresult.value.md)|Access the [File](../../reference/shared/file.md) object.|
-|[AsyncResult.status](../../reference/shared/asyncresult.status.md)|Determine the success or failure of the operation.|
-|[AsyncResult.error](../../reference/shared/asyncresult.error.md)|Access an [Error](../../reference/shared/error.md) object that provides error information if the operation failed.|
-|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
+|[AsyncResult.value](/reference/shared/asyncresult.value.md)|Access the [File](/reference/shared/file.md) object.|
+|[AsyncResult.status](/reference/shared/asyncresult.status.md)|Determine the success or failure of the operation.|
+|[AsyncResult.error](/reference/shared/asyncresult.error.md)|Access an [Error](/reference/shared/error.md) object that provides error information if the operation failed.|
+|[AsyncResult.asyncContext](/reference/shared/asyncresult.asynccontext.md)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
 
 ## Remarks
 
@@ -62,7 +62,7 @@ The _fileType_ parameter can be specified by using the following enumerations or
 |Office.FileType.Compressed|"compressed"|Returns the entire document (.docx, .pptx , or .xslx) in Office Open XML (OOXML) format as a byte array.|
 |Office.FileType.Pdf|"pdf"|Returns the entire document in PDF format as a byte array.|
 |Office.FileType.Text|"text"|Returns only the text of the document as a  **string**. |
-No more than two documents are allowed to be in memory; otherwise the  **getFileAsync** operation will fail. Use the [File.closeAsync](../../reference/shared/file.closeasync.md) method to close the file when you are finished working with it.
+No more than two documents are allowed to be in memory; otherwise the  **getFileAsync** operation will fail. Use the [File.closeAsync](/reference/shared/file.closeasync.md) method to close the file when you are finished working with it.
 
 
 ## Example - Get a document in Office Open XML ("compressed") format

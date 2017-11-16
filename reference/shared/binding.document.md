@@ -14,7 +14,7 @@ var bindingDoc = bindingObj.document;
 
 ## Return Value
 
-A [Document](../../reference/shared/document.md) object.
+A [Document](/reference/shared/document.md) object.
 
 
 ## Example

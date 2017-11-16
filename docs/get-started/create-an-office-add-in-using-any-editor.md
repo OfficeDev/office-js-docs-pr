@@ -99,7 +99,7 @@ You can use sideloading to install your add-in for testing within the Office cli
 
 - [Sideload Office Add-ins for testing](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 - [Sideload Office Add-ins on iPad and Mac for testing](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)   
-- [Sideload Outlook add-ins for testing](../outlook/testing-and-tips.md)
+- [Sideload Outlook add-ins for testing](https://docs.microsoft.com/en-us/outlook/add-ins/testing-and-tips)
 
 ## Develop your Office Add-in
 
