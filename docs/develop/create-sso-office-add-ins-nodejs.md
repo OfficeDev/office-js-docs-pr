@@ -39,7 +39,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     > [!NOTE]
     > You may see some build errors saying that some variables are declared but not used. Ignore these errors. They are a side effect of the fact that the "Before" version of the sample is missing some code that will be added later.
 
-## Register the add-in with Azure AD V2 endpoint
+## Register the add-in with Azure AD v2.0 endpoint
 
 1. Navigate to [https://apps.dev.microsoft.com](https://apps.dev.microsoft.com) . 
 

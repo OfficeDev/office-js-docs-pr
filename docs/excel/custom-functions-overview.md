@@ -12,7 +12,7 @@ Custom functions (similar to user-defined functions, or UDFs), allow developers 
 
 The following illustration shows you how custom functions work in the Excel UI.
 
-<img src="../images/custom-function.gif" width="579" height="383" />
+<img src="../images/custom-function.png" width="579" height="383" />
 
 Here’s the code for a sample custom function that adds 42 to a pair of numbers.
 

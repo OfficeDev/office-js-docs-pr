@@ -748,7 +748,7 @@ Procedure 3 shows how to install and use the Project OM Test add-in features.
     
     *Figure 3. Using the Project OM Test add-in*
 
-    ![Using the Project OM Test app](../images/pj15-create-simple-agave-project-om-test.gif)
+    ![Using the Project OM Test app](../images/pj15-create-simple-agave-project-om-test.png)
 
 8. Select the cell in the  **Duration** column for the first task, and then choose the **getSelectedDataAsync** button in the **Project OM Test** add-in. The **getSelectedDataAsync** function sets the text box value to show `2 days`. 
     
@@ -1136,7 +1136,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 
 *Figure 4. Functions in the SurfaceErrors.js file can show a "toast" notification*
 
-![Using the SurfaceError routines to show an error](../images/pj15-create-simple-agave-surface-error.gif)
+![Using the SurfaceError routines to show an error](../images/pj15-create-simple-agave-surface-error.png)
 
 
 ## Additional resources

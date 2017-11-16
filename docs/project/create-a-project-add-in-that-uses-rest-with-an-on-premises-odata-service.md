@@ -601,7 +601,7 @@ Basic tests should include the following:
     
     *Figure 6. Viewing results of the REST query*
 
-    ![Viewing results of the REST query](../images/pj15-hello-project-data-rest-results.gif)
+    ![Viewing results of the REST query](../images/pj15-hello-project-data-rest-results.png)
 
 6. Examine output in the text box. It should show the document path, REST query, status information, and JSON results from the calls to  **ajax** and **parseODataResult**. The output helps to understand, create, and debug code in the  **parseODataResult** method such as `projCost += Number(res.d.results[i].ProjectCost);`.
     
@@ -659,7 +659,7 @@ Basic tests should include the following:
     
     *Figure 7. Using the add-in without a Project web app connection*
 
-    ![Using the app without a Project Web App connection](../images/pj15-hello-project-data-no-connection.gif)
+    ![Using the app without a Project Web App connection](../images/pj15-hello-project-data-no-connection.png)
 
 8. Stop debugging, and then press  **F5** again. Log on to Project Web App, and then create a project that contains cost and work data. You can save the project, but don't publish it.
     
@@ -668,7 +668,7 @@ Basic tests should include the following:
 
     *Figure 8. Comparing an unpublished project with other projects*
 
-    ![Comparing an unpublished project with others](../images/pj15-hello-project-data-not-published.gif)
+    ![Comparing an unpublished project with others](../images/pj15-hello-project-data-not-published.png)
 
 Even if your add-in is working correctly in the previous tests, there are other tests that should be run. For example:
 

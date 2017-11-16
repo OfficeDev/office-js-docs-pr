@@ -20,7 +20,7 @@ A five-level JavaScript API access-permissions model provides the basis for priv
 
 *Figure 1. The five-level permission model for content and task pane add-ins*
 
-![Levels of permissions for task pane apps](../images/office15-app-sdk-task-pane-app-permission.gif)
+![Levels of permissions for task pane apps](../images/office15-app-sdk-task-pane-app-permission.png)
 
 
 

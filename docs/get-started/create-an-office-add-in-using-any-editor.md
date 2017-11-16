@@ -70,7 +70,7 @@ The generator will prompt you for the following:
 > - Add [TypeScript](https://www.typescriptlang.org/) -- use _Y_
 > - Choose framework -- use _React_
 
-![Gif of yeoman generator prompting for project input](../images/gettingstarted-fast.gif)
+![Gif of yeoman generator prompting for project input](../images/gettingstarted-fast.png)
 
 This creates the structure and basic files for your add-in.
 
@@ -89,7 +89,7 @@ npm start
 Browsersync will start a HTTPS server, and launch the index.html file in your project. You will see an error that states "There is a problem with this website's security certificate."
 
 
-![Gif showing process to bypass error and see default index.html file](../images/ssl-chrome-bypass.gif)
+![Gif showing process to bypass error and see default index.html file](../images/ssl-chrome-bypass.png)
 
 This error occurs because Browsersync includes a self-signed SSL certificate that your development environment must trust. For information about how to resolve this error, see [adding self-signed certificates](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
 

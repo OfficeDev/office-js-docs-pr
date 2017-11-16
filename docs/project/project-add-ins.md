@@ -194,7 +194,7 @@ In Procedure 2, the Bing Search add-in is installed on the local computer where 
 
     *Figure 3. Using the Bing Search add-in*
 
-    ![Using the Bing Search app](../images/pj15-agave-overview-bing-search.gif)
+    ![Using the Bing Search app](../images/pj15-agave-overview-bing-search.png)
 
 
 ## Distributing Project add-ins
