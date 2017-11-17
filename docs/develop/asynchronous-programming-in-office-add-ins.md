@@ -22,7 +22,7 @@ Support for this asynchronous design in both rich and web clients is part of the
 ## Writing the callback function for an "Async" method
 
 
-The callback function you pass as the  _callback_ argument to an "Async" method must declare a single parameter that the add-in runtime will use to provide access to an [AsyncResult](/reference/shared/asyncresult.md) object when the callback function executes. You can write:
+The callback function you pass as the  _callback_ argument to an "Async" method must declare a single parameter that the add-in runtime will use to provide access to an [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object when the callback function executes. You can write:
 
 
 - An anonymous function that must be written and passed directly in line with the call to the "Async" method as the  _callback_ parameter of the "Async" method.
@@ -66,7 +66,7 @@ function write(message){
 }
 ```
 
-You can also use the parameter of your callback function to access other properties of the  **AsyncResult** object. Use the [AsyncResult.status](/reference/shared/asyncresult.error.md) property to determine if the call succeeded or failed. If your call fails you can use the [AsyncResult.error](/reference/shared/asyncresult.context.md) property to access an [Error](/reference/shared/error.md) object for error information.
+You can also use the parameter of your callback function to access other properties of the  **AsyncResult** object. Use the [AsyncResult.status](/reference/shared/asyncresult.error.md) property to determine if the call succeeded or failed. If your call fails you can use the [AsyncResult.error](/reference/shared/asyncresult.context.md) property to access an [Error](https://dev.office.com/reference/add-ins/shared/error) object for error information.
 
 For more information about using the  **getSelectedDataAsync** method, see [Read and write data to the active selection in a document or spreadsheet](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md). 
 
@@ -97,11 +97,11 @@ function write(message){
 
 The  **asyncContext**,  **status**, and  **error** properties of the **AsyncResult** object return the same kinds of information to the callback function passed to all "Async" methods. However, what's returned to the **AsyncResult.value** property varies depending on the functionality of the "Async" method.
 
-For example, the  **addHandlerAsync** methods (of the [Binding](/reference/shared/binding.md), [CustomXmlPart](/reference/shared/customxmlpart.customxmlpart.md), [Document](/reference/shared/document.md), [RoamingSettings](/reference/outlook/RoamingSettings.md), and [Settings](/reference/shared/settings.md) objects) are used to add event handler functions to the items represented by these objects. You can access the **AsyncResult.value** property from the callback function you pass to any of the **addHandlerAsync** methods, but since no data or object is being accessed when you add an event handler, the **value** property always returns **undefined** if you attempt to access it.
+For example, the  **addHandlerAsync** methods (of the [Binding](https://dev.office.com/reference/add-ins/shared/binding), [CustomXmlPart](/reference/shared/customxmlpart.customxmlpart.md), [Document](https://dev.office.com/reference/add-ins/shared/document), [RoamingSettings](https://dev.office.com/reference/add-ins/outlook/RoamingSettings), and [Settings](https://dev.office.com/reference/add-ins/shared/settings) objects) are used to add event handler functions to the items represented by these objects. You can access the **AsyncResult.value** property from the callback function you pass to any of the **addHandlerAsync** methods, but since no data or object is being accessed when you add an event handler, the **value** property always returns **undefined** if you attempt to access it.
 
 On the other hand, if you call the  **Document.getSelectedDataAsync** method, it returns the data the user selected in the document to the **AsyncResult.value** property in the callback. Or, if you call the [Bindings.getAllAsync](/reference/shared/bindings.getallasync.md) method, it returns an array of all of the **Binding** objects in the document. And, if you call the [Bindings.getByIdAsync](/reference/shared/bindings.getbyidasync.md) method, it returns a single **Binding** object.
 
-For a description of what's returned to the  **AsyncResult.value** property for an "Async" method, see the "Callback value" section of that method's reference topic. For a summary of all of the objects that provide "Async" methods, see the table at the bottom of the [AsyncResult](/reference/shared/asyncresult.md) object topic.
+For a description of what's returned to the  **AsyncResult.value** property for an "Async" method, see the "Callback value" section of that method's reference topic. For a summary of all of the objects that provide "Async" methods, see the table at the bottom of the [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object topic.
 
 
 ## Asynchronous programming patterns
@@ -211,7 +211,7 @@ function write(message){
 
 Instead of passing a callback function and waiting for the function to return before execution continues, the promises programming pattern immediately returns a promise object that represents its intended result. However, unlike true synchronous programming, under the covers the fulfillment of the promised result is actually deferred until the Office Add-ins runtime environment can complete the request. An _onError_ handler is provided to cover situations when the request can't be fulfilled.
 
-The JavaScript API for Office provides the [Office.select](/reference/shared/office.select.md) method to support the promises pattern for working with existing binding objects. The promise object returned to the **Office.select** method supports only the four methods that you can access directly from the [Binding](/reference/shared/binding.md) object: [getDataAsync](/reference/shared/binding.getdataasync.md), [setDataAsync](/reference/shared/binding.setdataasync.md), [addHandlerAsync](/reference/shared/asyncresult.value.md), and [removeHandlerAsync](/reference/shared/binding.removehandlerasync.md).
+The JavaScript API for Office provides the [Office.select](/reference/shared/office.select.md) method to support the promises pattern for working with existing binding objects. The promise object returned to the **Office.select** method supports only the four methods that you can access directly from the [Binding](https://dev.office.com/reference/add-ins/shared/binding) object: [getDataAsync](/reference/shared/binding.getdataasync.md), [setDataAsync](/reference/shared/binding.setdataasync.md), [addHandlerAsync](/reference/shared/asyncresult.value.md), and [removeHandlerAsync](/reference/shared/binding.removehandlerasync.md).
 
 The promises pattern for working with bindings takes this form:
 
@@ -324,7 +324,7 @@ var options = {
 
 ```
 
-Which looks like the following example when used to specify the [ValueFormat](/reference/shared/valueformat-enumeration.md) and [FilterType](/reference/shared/filtertype-enumeration.md) parameters.
+Which looks like the following example when used to specify the [ValueFormat](https://dev.office.com/reference/add-ins/shared/valueformat-enumeration) and [FilterType](https://dev.office.com/reference/add-ins/shared/filtertype-enumeration) parameters.
 
 
 
@@ -394,5 +394,5 @@ In both optional parameter examples, the  _callback_ parameter is specified as t
 ## Additional resources
 
 - [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md) 
-- [JavaScript API for Office](/reference/javascript-api-for-office.md)
+- [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)
      

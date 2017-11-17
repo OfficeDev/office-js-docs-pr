@@ -7,14 +7,14 @@ ms.date: 11/20/2017
 
 # Understanding the JavaScript API for Office
 
-This article provides information about the JavaScript API for Office and how to use it. For reference information, see [JavaScript API for Office](/reference/javascript-api-for-office.md). For information about updating Visual Studio project files to the most current version of the JavaScript API for Office, see [Update the version of your JavaScript API for Office and manifest schema files](update-your-javascript-api-for-office-and-manifest-schema-version.md).
+This article provides information about the JavaScript API for Office and how to use it. For reference information, see [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office). For information about updating Visual Studio project files to the most current version of the JavaScript API for Office, see [Update the version of your JavaScript API for Office and manifest schema files](update-your-javascript-api-for-office-and-manifest-schema-version.md).
 
 > [!NOTE]
 > When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
 
 ## Referencing the JavaScript API for Office library in your add-in
 
-The [JavaScript API for Office](/reference/javascript-api-for-office.md) library consists of the Office.js file and associated host application-specific .js files, such as Excel-15.js and Outlook-15.js. The simplest method of referencing the API is using our CDN by adding the following `<script>` to your page's `<head>` tag:  
+The [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office) library consists of the Office.js file and associated host application-specific .js files, such as Excel-15.js and Outlook-15.js. The simplest method of referencing the API is using our CDN by adding the following `<script>` to your page's `<head>` tag:  
 
 ```html
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
@@ -65,17 +65,17 @@ Office.initialize = function (reason) {
     }
 }
 ```
-For more information, see [Office.initialize Event](/reference/shared/office.initialize.md) and [InitializationReason Enumeration](/reference/shared/initializationreason-enumeration.md) 
+For more information, see [Office.initialize Event](/reference/shared/office.initialize.md) and [InitializationReason Enumeration](https://dev.office.com/reference/add-ins/shared/initializationreason-enumeration) 
 
 ## Context object
 
  **Applies to:** All add-in types
 
-When an add-in is initialized, it has many different objects that it can interact with in the runtime environment. The add-in's runtime context is reflected in the API by the [Context](/reference/shared/office.context.md) object. The **Context** is the main object that provides access to the most important objects of the API, such as the [Document](/reference/shared/document.md) and [Mailbox](/reference/outlook/Office.context.mailbox.md) objects, which in turn provide access to document and mailbox content.
+When an add-in is initialized, it has many different objects that it can interact with in the runtime environment. The add-in's runtime context is reflected in the API by the [Context](/reference/shared/office.context.md) object. The **Context** is the main object that provides access to the most important objects of the API, such as the [Document](https://dev.office.com/reference/add-ins/shared/document) and [Mailbox](/reference/outlook/Office.context.mailbox.md) objects, which in turn provide access to document and mailbox content.
 
 For example, in task pane or content add-ins, you can use the [document](/reference/shared/office.context.document.md) property of the **Context** object to access the properties and methods of the **Document** object to interact with the content of Word documents, Excel worksheets, or Project schedules. Similarly, in Outlook add-ins, you can use the [mailbox](/reference/outlook/Office.context.mailbox.md) property of the **Context** object to access the properties and methods of the **Mailbox** object to interact with the message, meeting request, or appointment content.
 
-The  **Context** object also provides access to the [contentLanguage](/reference/shared/office.context.contentlanguage.md) and [displayLanguage](/reference/shared/office.context.displaylanguage.md) properties that let you determine the locale (language) used in the document or item, or by the host application. And, the [roamingSettings](/reference/outlook/Office.context.md) property that lets you access the members of the [RoamingSettings](/reference/outlook/RoamingSettings.md) object. Finally, the **Context** object provides a [ui](/reference/shared/officeui.md) property that enables your add-in to launch pop-up dialogs.
+The  **Context** object also provides access to the [contentLanguage](/reference/shared/office.context.contentlanguage.md) and [displayLanguage](/reference/shared/office.context.displaylanguage.md) properties that let you determine the locale (language) used in the document or item, or by the host application. And, the [roamingSettings](/reference/outlook/Office.context.md) property that lets you access the members of the [RoamingSettings](https://dev.office.com/reference/add-ins/outlook/RoamingSettings) object. Finally, the **Context** object provides a [ui](https://dev.office.com/reference/add-ins/shared/officeui) property that enables your add-in to launch pop-up dialogs.
 
 
 ## Document object
@@ -83,7 +83,7 @@ The  **Context** object also provides access to the [contentLanguage](/reference
 
  **Applies to:** Content and task pane add-in types
 
-To interact with document data in Excel, PowerPoint, and Word, the API provides the [Document](/reference/shared/document.md) object. You can use **Document** object members to access data from the following ways:
+To interact with document data in Excel, PowerPoint, and Word, the API provides the [Document](https://dev.office.com/reference/add-ins/shared/document) object. You can use **Document** object members to access data from the following ways:
 
 
 - Read and write to active selections in the form of text, contiguous cells (matrices), or tables.
@@ -133,17 +133,17 @@ In both selection-based and binding-based data access, document contents are exp
 |:-----|:-----|:-----|
 |Text|Provides a string representation of the data in the selection or binding.|In Excel 2013, Project 2013, and PowerPoint 2013 only plain text is supported. In Word 2013, three text formats are supported: plain text, HTML, and Office Open XML (OOXML).When text is selected in a cell in Excel, selection-based methods read and write to the entire contents of the cell, even if only a portion of the text is selected in the cell. When text is selected in Word and PowerPoint, selection-based methods read and write only to the run of characters that are selected.Project 2013 and PowerPoint 2013 support only selection-based data access.|
 |Matrix|Provides the data in the selection or binding as a two dimensional  **Array**, which in JavaScript is implemented as an array of arrays.For example, two rows of  **string** values in two columns would be ` [['a', 'b'], ['c', 'd']]`, and a single column of three rows would be  `[['a'], ['b'], ['c']]`.|Matrix data access is supported only in Excel 2013 and Word 2013.|
-|Table|Provides the data in the selection or binding as a [TableData](/reference/shared/tabledata.md) object. The **TableData** object exposes the data through the **headers** and **rows** properties.|Table data access is supported only in Excel 2013 and Word 2013.|
+|Table|Provides the data in the selection or binding as a [TableData](https://dev.office.com/reference/add-ins/shared/tabledata) object. The **TableData** object exposes the data through the **headers** and **rows** properties.|Table data access is supported only in Excel 2013 and Word 2013.|
 
 #### Data type coercion
 
-The data access methods on the  **Document** and [Binding](/reference/shared/binding.md) objects support specifying the desired data type using the _coercionType_ parameter of these methods, and corresponding [CoercionType](/reference/shared/coerciontype-enumeration.md) enumeration values. Regardless of the actual shape of the binding, the different Office applications support the common data types by trying to coerce the data into the requested data type. For example, if a Word table or paragraph is selected, the developer can specify to read it as plain text, HTML, Office Open XML, or a table, and the API implementation handles the necessary transformations and data conversions.
+The data access methods on the  **Document** and [Binding](https://dev.office.com/reference/add-ins/shared/binding) objects support specifying the desired data type using the _coercionType_ parameter of these methods, and corresponding [CoercionType](https://dev.office.com/reference/add-ins/shared/coerciontype-enumeration) enumeration values. Regardless of the actual shape of the binding, the different Office applications support the common data types by trying to coerce the data into the requested data type. For example, if a Word table or paragraph is selected, the developer can specify to read it as plain text, HTML, Office Open XML, or a table, and the API implementation handles the necessary transformations and data conversions.
 
 
 > [!TIP]
 > **When should you use the matrix versus table coercionType for data access?** If you need your tabular data to grow dynamically when rows and columns are added, and you must work with table headers, you should use the table data type (by specifying the _coercionType_ parameter of a **Document** or **Binding** object data access method as `"table"` or **Office.CoercionType.Table**). Adding rows and columns within the data structure is supported in both table and matrix data, but appending rows and columns is supported only for table data. If you aren't planning on adding rows and columns, and your data doesn't require header functionality, then you should use the matrix data type (by specifying the  _coercionType_ parameter of the data access method as `"matrix"` or **Office.CoercionType.Matrix**), which provides a simpler model of interacting with the data.
 
-If the data can't be coerced to the specified type, the [AsyncResult.status](/reference/shared/asyncresult.error.md) property in the callback returns `"failed"`, and you can use the [AsyncResult.error](/reference/shared/asyncresult.context.md) property to access an [Error](/reference/shared/error.md) object with information about why the method call failed.
+If the data can't be coerced to the specified type, the [AsyncResult.status](/reference/shared/asyncresult.error.md) property in the callback returns `"failed"`, and you can use the [AsyncResult.error](/reference/shared/asyncresult.context.md) property to access an [Error](https://dev.office.com/reference/add-ins/shared/error) object with information about why the method call failed.
 
 
 ## Working with selections using the Document object
@@ -178,7 +178,7 @@ There are three different types of bindings that you specify with the  _bindingT
 |:-----|:-----|:-----|
 |Text binding|Binds to a region of the document that can be represented as text.|In Word, most contiguous selections are valid, while in Excel only single cell selections can be the target of a text binding. In Excel, only plain text is supported. In Word, three formats are supported: plain text, HTML, and Open XML for Office.|
 |Matrix binding|Binds to a fixed region of a document that contains tabular data without headers.Data in a matrix binding is written or read as a two dimensional  **Array**, which in JavaScript is implemented as an array of arrays. For example, two rows of  **string** values in two columns can be written or read as ` [['a', 'b'], ['c', 'd']]`, and a single column of three rows can be written or read as  `[['a'], ['b'], ['c']]`.|In Excel, any contiguous selection of cells can be used to establish a matrix binding. In Word, only tables support matrix binding.|
-|Table binding|Binds to a region of a document that contains a table with headers.Data in a table binding is written or read as a [TableData](/reference/shared/tabledata.md) object. The **TableData** object exposes the data through the **headers** and **rows** properties.|Any Excel or Word table can be the basis for a table binding. After you establish a table binding, each new row or column a user adds to the table is automatically included in the binding. |
+|Table binding|Binds to a region of a document that contains a table with headers.Data in a table binding is written or read as a [TableData](https://dev.office.com/reference/add-ins/shared/tabledata) object. The **TableData** object exposes the data through the **headers** and **rows** properties.|Any Excel or Word table can be the basis for a table binding. After you establish a table binding, each new row or column a user adds to the table is automatically included in the binding. |
 After a binding is created by using one of the three "add" methods of the  **Bindings** object, you can work with the binding's data and properties by using the methods of the corresponding object: [MatrixBinding](/reference/shared/binding.matrixbinding.md), [TableBinding](/reference/shared/binding.tablebinding.md), or [TextBinding](/reference/shared/binding.textbinding.md). All three of these objects inherit the [getDataAsync](/reference/shared/binding.getdataasync.md) and [setDataAsync](/reference/shared/binding.setdataasync.md) methods of the **Binding** object that enable to you interact with the bound data.
 
 For code examples that demonstrate how to perform tasks with bindings, see [Bind to regions in a document or spreadsheet](bind-to-regions-in-a-document-or-spreadsheet.md).
@@ -197,7 +197,7 @@ The [CustomXmlParts](/reference/shared/customxmlparts.customxmlparts.md) and [Cu
 
  **Applies to:** Task pane add-ins for Word and PowerPoint
 
-The [Document.getFileAsync](/reference/shared/document.getfileasync.md) method and members of the [File](/reference/shared/file.md) and [Slice](/reference/shared/slice.md) objects to provide functionality for getting entire Word and PowerPoint document files in slices (chunks) of up to 4 MB at a time. For more information, see [How to: Get all file content from a document in an add-in](get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md).
+The [Document.getFileAsync](/reference/shared/document.getfileasync.md) method and members of the [File](https://dev.office.com/reference/add-ins/shared/file) and [Slice](https://dev.office.com/reference/add-ins/shared/slice) objects to provide functionality for getting entire Word and PowerPoint document files in slices (chunks) of up to 4 MB at a time. For more information, see [How to: Get all file content from a document in an add-in](get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md).
 
 
 ## Mailbox object

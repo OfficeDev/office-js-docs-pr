@@ -31,7 +31,7 @@ The following events occur when a content or task pane add-in starts:
     
 4. The browser control loads the DOM and HTML body, and calls the event handler for the  **window.onload** event.
     
-5. The Office host application loads the runtime environment, which downloads and caches the JavaScript API for JavaScript library files from the content distribution network (CDN) server, and then calls the add-in's event handler for the [initialize](/reference/shared/office.initialize.md) event of the [Office](/reference/shared/office.md) object.
+5. The Office host application loads the runtime environment, which downloads and caches the JavaScript API for JavaScript library files from the content distribution network (CDN) server, and then calls the add-in's event handler for the [initialize](/reference/shared/office.initialize.md) event of the [Office](https://dev.office.com/reference/add-ins/shared/office) object.
     
 6. When the DOM and HTML body finish loading and the add-in finishes initializing, the main function of the add-in can proceed.
     
@@ -58,7 +58,7 @@ The following events occur when an Outlook add-in starts:
     
 5. The browser control loads the DOM and HTML body, and calls the event handler for the  **onload** event.
     
-6. Outlook calls the event handler for the [initialize](/reference/shared/office.initialize.md) event of the [Office](/reference/shared/office.md) object of the add-in.
+6. Outlook calls the event handler for the [initialize](/reference/shared/office.initialize.md) event of the [Office](https://dev.office.com/reference/add-ins/shared/office) object of the add-in.
     
 7. When the DOM and HTML body finish loading and the add-in finishes initializing, the main function of the add-in can proceed.
     

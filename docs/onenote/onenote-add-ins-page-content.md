@@ -17,14 +17,14 @@ In the OneNote add-ins JavaScript API, page content is represented by the follow
 
 To create an empty OneNote page, use one of the following methods:
 
-- [Section.addPage](/reference/onenote/section.md#addpagetitle-string)
-- [Page.insertPageAsSibling](/reference/onenote/page.md#insertpageassiblinglocation-string-title-string)
+- [Section.addPage](https://dev.office.com/reference/add-ins/onenote/section#addpagetitle-string)
+- [Page.insertPageAsSibling](https://dev.office.com/reference/add-ins/onenote/page#insertpageassiblinglocation-string-title-string)
 
 Then use methods in the following objects to work with the page content, such as Page.addOutline and Outline.appendHtml. 
 
-- [Page](/reference/onenote/page.md)
-- [Outline](/reference/onenote/outline.md)
-- [Paragraph](/reference/onenote/paragraph.md)
+- [Page](https://dev.office.com/reference/add-ins/onenote/page)
+- [Outline](https://dev.office.com/reference/add-ins/onenote/outline)
+- [Paragraph](https://dev.office.com/reference/add-ins/onenote/paragraph)
 
 The content and structure of a OneNote page are represented by HTML. Only a subset of HTML is supported for creating or updating page content, as described below.
 
@@ -51,6 +51,6 @@ Metadata such as title can still be queried for any page.
 ## Additional resources
 
 - [OneNote JavaScript API programming overview](onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API reference](/reference/onenote/onenote-add-ins-javascript-reference.md)
+- [OneNote JavaScript API reference](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
 - [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office Add-ins platform overview](https://dev.office.com/docs/add-ins/overview/office-add-ins)

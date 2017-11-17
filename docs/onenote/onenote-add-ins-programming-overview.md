@@ -79,7 +79,7 @@ For example:
     }
 ```
 
-You can find supported OneNote objects and operations in the [API reference](/reference/onenote/onenote-add-ins-javascript-reference.md).
+You can find supported OneNote objects and operations in the [API reference](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference).
 
 ### Accessing the common API through the *Document* object
 
@@ -125,6 +125,6 @@ The following diagram represents what's currently available in the OneNote JavaS
 ## Additional resources
 
 - [Build your first OneNote add-in](onenote-add-ins-getting-started.md)
-- [OneNote JavaScript API reference](/reference/onenote/onenote-add-ins-javascript-reference.md)
+- [OneNote JavaScript API reference](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
 - [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office Add-ins platform overview](https://dev.office.com/docs/add-ins/overview/office-add-ins)

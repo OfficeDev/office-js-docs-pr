@@ -205,4 +205,4 @@ Congratulations, you've successfully created a Word add-in using jQuery! Next, l
 * [Word add-ins overview](word-add-ins-programming-overview.md)
 * [Explore snippets with Script Lab](https://store.office.com/en-001/app.aspx?assetid=WA104380862&ui=en-US&rs=en-001&ad=US&appredirect=false)
 * [Word add-in code samples](http://dev.office.com/code-samples#?filters=word,office%20add-ins)
-* [Word JavaScript API reference](/reference/word/word-add-ins-reference-overview.md)
+* [Word JavaScript API reference](https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview)

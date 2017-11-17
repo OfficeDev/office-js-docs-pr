@@ -45,4 +45,4 @@ When an Excel JavaScript API request fails to run successfully, the API returns 
 ## Additional resources
 
 - [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
-- [OfficeExtension.Error object (JavaScript API for Excel)](/reference/excel/error.md)
+- [OfficeExtension.Error object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/error)

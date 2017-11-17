@@ -33,7 +33,7 @@ There are [three different types of bindings][Office.BindingType] that you speci
 
 	In Excel, any contiguous selection of cells can be used to establish a matrix binding. In Word, only tables support matrix binding.
 
-3. **[Table Binding][TableBinding]** - Binds to a region of a document that contains a table with headers.Data in a table binding is written or read as a [TableData](/reference/shared/tabledata.md) object. The `TableData` object exposes the data through the `headers` and `rows` properties.
+3. **[Table Binding][TableBinding]** - Binds to a region of a document that contains a table with headers.Data in a table binding is written or read as a [TableData](https://dev.office.com/reference/add-ins/shared/tabledata) object. The `TableData` object exposes the data through the `headers` and `rows` properties.
 
 	Any Excel or Word table can be the basis for a table binding. After you establish a table binding, each new row or column a user adds to the table is automatically included in the binding.
 
@@ -388,7 +388,7 @@ function removeEventHandlerFromBinding() {
 - [Asynchronous programming in Office Add-ins](asynchronous-programming-in-office-add-ins.md)
 - [Read and write data to the active selection in a document or spreadsheet](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
-[Binding]: 				 /reference/shared/binding.md
+[Binding]: 				https://dev.office.com/reference/add-ins/shared/binding
 [MatrixBinding]:		 /reference/shared/binding.matrixbinding.md
 [TableBinding]: 		 /reference/shared/binding.tablebinding.md
 [TextBinding]: 			 /reference/shared/binding.textbinding.md
@@ -406,10 +406,10 @@ function removeEventHandlerFromBinding() {
 [addFromPromptAsync]: 	 /reference/shared/bindings.addfrompromptasync.md
 [releaseByIdAsync]: 	 /reference/shared/bindings.releasebyidasync.md
 
-[AsyncResult]: 			/reference/shared/asyncresult.md
-[Office.BindingType]: 	/reference/shared/bindingtype-enumeration.md
+[AsyncResult]: 			https://dev.office.com/reference/add-ins/shared/asyncresult
+[Office.BindingType]: 	https://dev.office.com/reference/add-ins/shared/bindingtype-enumeration
 [Office.select]:		/reference/shared/office.select.md 
-[Office.EventType]: 	/reference/shared/eventtype-enumeration.md 
+[Office.EventType]: 	https://dev.office.com/reference/add-ins/shared/eventtype-enumeration 
 [Document.bindings]: 	/reference/shared/document.bindings.md
 
 

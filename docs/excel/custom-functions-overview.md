@@ -88,9 +88,9 @@ Excel.run(function(ctx) {
 -   `result`: Defines the type of information returned by the function to Excel.
 
     -   `resultType`: Your function can return either a `"string"` or a `"number"` (also used for dates and currencies). For more information see [
-Custom Function Enumerations](/reference/excel/customfunctionsenumerations.md).
+Custom Function Enumerations](https://dev.office.com/reference/add-ins/excel/customfunctionsenumerations).
     -   `resultDimensionality`: Your function can return either a single (`"scalar"`) value or a `"matrix"` of values. When returning a matrix of values, your function returns an array, where each array element is another array that represents a row of values. For more information, see [
-Custom Function Enumerations](/reference/excel/customfunctionsenumerations.md). The following example returns a 3-row, 2-column matrix of values from a custom function.
+Custom Function Enumerations](https://dev.office.com/reference/add-ins/excel/customfunctionsenumerations). The following example returns a 3-row, 2-column matrix of values from a custom function.
 
 ```js
 return [["first","row"],["second","row"],["third","row"]];

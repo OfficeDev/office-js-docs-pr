@@ -426,17 +426,17 @@ Run the sample add-in. The taskpane add-in loads in Word 2013, and the strings i
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)    
 - [Language identifiers and OptionState Id values in Office 2013](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)
 
-[DefaultLocale]: 		 /reference/manifest/defaultlocale.md
-[Description]: 			 /reference/manifest/description.md
-[DisplayName]: 			 /reference/manifest/displayname.md
-[IconUrl]: 				 /reference/manifest/iconurl.md
-[HighResolutionIconUrl]: /reference/manifest/highresolutioniconurl.md
+[DefaultLocale]: 		https://dev.office.com/reference/add-ins/manifest/defaultlocale
+[Description]: 			https://dev.office.com/reference/add-ins/manifest/description
+[DisplayName]: 			https://dev.office.com/reference/add-ins/manifest/displayname
+[IconUrl]: 				https://dev.office.com/reference/add-ins/manifest/iconurl
+[HighResolutionIconUrl]:https://dev.office.com/reference/add-ins/manifest/highresolutioniconurl
 [Resources]: 		     /reference/manifest/resources
-[SourceLocation]: 		 /reference/manifest/sourcelocation.md
-[Override]:  			 /reference/manifest/override.md
-[DesktopSettings]: 		 /reference/manifest/desktopsettings.md
-[TabletSettings]: 		 /reference/manifest/tabletsettings.md
-[PhoneSettings]: 		 /reference/manifest/phonesettings.md
+[SourceLocation]: 		https://dev.office.com/reference/add-ins/manifest/sourcelocation
+[Override]:  			https://dev.office.com/reference/add-ins/manifest/override
+[DesktopSettings]: 		https://dev.office.com/reference/add-ins/manifest/desktopsettings
+[TabletSettings]: 		https://dev.office.com/reference/add-ins/manifest/tabletsettings
+[PhoneSettings]: 		https://dev.office.com/reference/add-ins/manifest/phonesettings
 [displayLanguage]: 	/reference/shared/office.context.displaylanguage.md 
 [contentLanguage]: 	/reference/shared/office.context.contentlanguage.md 
 [RFC 3066]: https://www.rfc-editor.org/info/rfc3066

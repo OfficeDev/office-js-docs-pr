@@ -6,7 +6,7 @@ ms.date: 11/20/2017
 
 # Define add-in commands in your manifest
 
-Add-in commands provide an easy way to customize the default Office UI with UI elements that perform actions; for example, you can add custom buttons on the ribbon. To create commands, you add a **[VersionOverrides](/reference/manifest/versionoverrides.md)** node to an existing manifest. 
+Add-in commands provide an easy way to customize the default Office UI with UI elements that perform actions; for example, you can add custom buttons on the ribbon. To create commands, you add a **[VersionOverrides](https://dev.office.com/reference/add-ins/manifest/versionoverrides)** node to an existing manifest. 
 
 When a manifest contains the **VersionOverrides** element, versions of Word, Excel, Outlook, and PowerPoint that support add-in commands will use the information within that element to load the add-in. Earlier versions of Office products that do not support add-in commands will ignore the element.
 
@@ -14,7 +14,7 @@ When client applications recognize the  **VersionOverrides** node, the add-in na
  
 ## VersionOverrides
 
-The  [VersionOverrides](/reference/manifest/versionoverrides.md) element is the root element that contains information for the add-in commands implemented by the add-in. It is supported in manifest schema v1.1 and later.
+The  [VersionOverrides](https://dev.office.com/reference/add-ins/manifest/versionoverrides) element is the root element that contains information for the add-in commands implemented by the add-in. It is supported in manifest schema v1.1 and later.
 
 There are two versions of the **VersionOverrides** schema.
 
@@ -23,15 +23,15 @@ There are two versions of the **VersionOverrides** schema.
 | 1.0 | Supports add-in commands for desktop versions of Office apps. | 
 | 1.1 | Adds support for [pinnable taskpanes](https://docs.microsoft.com/outlook/add-ins/pinnable-taskpane) and mobile add-ins.<br/><br/>**Note:** Currently only supported by Outlook 2016 for Windows and Outlook for iOS |
 
-An add-in can support multiple versions of the **VersionOverrides** schema by nesting newer versions inside of the previous version. This allows clients to support the newer versions to take advantage of the new features, while allowing older clients to load the older version. For details, see [Implementing multiple versions](/reference/manifest/versionoverrides.md#implementing-multiple-versions).
+An add-in can support multiple versions of the **VersionOverrides** schema by nesting newer versions inside of the previous version. This allows clients to support the newer versions to take advantage of the new features, while allowing older clients to load the older version. For details, see [Implementing multiple versions](https://dev.office.com/reference/add-ins/manifest/versionoverrides#implementing-multiple-versions).
 
 The **VersionOverrides** element includes the following child elements:
 
-- [Description](/reference/manifest/description.md)
-- [Requirements](/reference/manifest/requirements.md)
-- [Hosts](/reference/manifest/hosts.md)
-- [Resources](/reference/manifest/resources.md)
-- [VersionOverrides](/reference/manifest/versionoverrides.md)
+- [Description](https://dev.office.com/reference/add-ins/manifest/description)
+- [Requirements](https://dev.office.com/reference/add-ins/manifest/requirements)
+- [Hosts](https://dev.office.com/reference/add-ins/manifest/hosts)
+- [Resources](https://dev.office.com/reference/add-ins/manifest/resources)
+- [VersionOverrides](https://dev.office.com/reference/add-ins/manifest/versionoverrides)
 
 The following diagram shows the hierarchy of elements used to define add-in commands. 
 

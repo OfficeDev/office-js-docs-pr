@@ -7,7 +7,7 @@ ms.date: 11/20/2017
 
 # Excel JavaScript API core concepts
  
-This article describes how to use the [Excel JavaScript API](/reference/excel/excel-add-ins-reference-overview.md) to build add-ins for Excel 2016. It introduces core concepts that are fundamental to using the API and provides guidance for performing specific tasks such as reading or writing to a large range, updating all cells in range, and more.
+This article describes how to use the [Excel JavaScript API](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) to build add-ins for Excel 2016. It introduces core concepts that are fundamental to using the API and provides guidance for performing specific tasks such as reading or writing to a large range, updating all cells in range, and more.
 
 ## Asynchronous nature of Excel APIs
 
@@ -136,8 +136,8 @@ object.load({ loadOption });
  
 _Where:_
  
-* `properties` is the list of properties and/or relationship names to be loaded specified as comma-delimited strings, or an array of names. For more information, see the **load()** methods defined for objects in [Excel JavaScript API reference](/reference/excel/excel-add-ins-reference-overview.md).
-* `loadOption` specifies an object that describes the selection, expansion, top, and skip options. See object load [options](/reference/excel/loadoption.md) for details.
+* `properties` is the list of properties and/or relationship names to be loaded specified as comma-delimited strings, or an array of names. For more information, see the **load()** methods defined for objects in [Excel JavaScript API reference](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview).
+* `loadOption` specifies an object that describes the selection, expansion, top, and skip options. See object load [options](https://dev.office.com/reference/add-ins/excel/loadoption) for details.
 
 For more information about the **load()** method, see [Excel JavaScript API advanced concepts](excel-add-ins-advanced-concepts.md).
 
@@ -280,4 +280,4 @@ When an API error occurs, the API will return an **error** object that contains 
  
 * [Get started with Excel add-ins](excel-add-ins-get-started-overview.md)
 * [Excel add-ins code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API reference](/reference/excel/excel-add-ins-reference-overview.md)
+* [Excel JavaScript API reference](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

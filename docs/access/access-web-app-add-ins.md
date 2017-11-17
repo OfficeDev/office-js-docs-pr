@@ -150,4 +150,4 @@ To learn more about how to implement an Office Add-in that manipulates data in a
 ## Additional resources
 
 - [Understanding the JavaScript API for add-ins](../develop/understanding-the-javascript-api-for-office.md)
-- [JavaScript API for Office](/reference/javascript-api-for-office.md)
+- [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)
