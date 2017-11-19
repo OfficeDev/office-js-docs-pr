@@ -1,4 +1,4 @@
-# Create an ASP.NET Office Add-in that uses single sign-on
+# Create an ASP.NET Office Add-in that uses single sign-on (preview)
 
 When users are signed in to Office, your add-in can use the same credentials to permit users to access multiple applications without requiring them to sign in a second time. For an overview, see [Enable SSO in an Office Add-in](../../docs/develop/sso-in-office-add-ins.md).
 

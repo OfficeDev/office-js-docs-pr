@@ -1,4 +1,4 @@
-# Enable single sign-on for Office Add-ins
+# Enable single sign-on for Office Add-ins (preview)
 
 Users sign in to Office (online, mobile, and desktop platforms) using either their personal Microsoft account or their work or school (Office 365) account. You can take advantage of this and use SSO to do the following--without requiring the user to sign in a second time:
 
