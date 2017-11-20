@@ -13,9 +13,9 @@ In this article, you'll walk through the process of building an Excel add-in by 
 
 If you haven't done so previously, you'll need to install [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
 
-    ```bash
+```bash
     npm install -g yo generator-office
-    ```
+```
 
 ## Create the web app
 
