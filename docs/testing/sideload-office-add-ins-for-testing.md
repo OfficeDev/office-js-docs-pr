@@ -21,7 +21,7 @@ The following video walks you through the process of sideloading your add-in on 
 ## Sideload an Office Add-in on Office 365
 
 
-1. Log on to your Office 365 account.
+1. Sign in to your Office 365 account.
     
 2. Open the App Launcher on the left end of the toolbar and select  **Excel**,  **Word**, or  **PowerPoint**, and then create a new document.
     
@@ -65,6 +65,6 @@ If you're currently developing your add-in, locate your add-in manifest.xml file
 
 For example: 
 
-	```xml
-	<SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
-	```
+```xml
+<SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
+```
