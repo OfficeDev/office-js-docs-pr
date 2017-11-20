@@ -106,12 +106,13 @@ The webextension part also includes a reference to the store or catalog with att
 
 | **`storeType` value** | **`id` value**	|**`store` value** | **`version` value**|
 |:---------------|:---------------|:---------------|:---------------|
-|OMEX (the Office Store)|The Office Store asset ID of the add-in.\*|The locale of the Office Store; for example, "en-us".|The version in the Office Store catalog.\*|
+|OMEX (the Office Store)|The Office Store asset ID of the add-in (see Note)|The locale of the Office Store; for example, "en-us".|The version in the Office Store catalog (see Note)|
 |FileSystem (a network share)|The GUID of the add-in in the add-in manifest.|The path of the network share; for example, "\\\\MyComputer\\MySharedFolder".|The version in the add-in manifest.|
 |EXCatalog (deployment via the Exchange server) |The GUID of the add-in in the add-in manifest.|"EXCatalog"|The version in the add-in manifest.
 |Registry (System registry)|The GUID of the add-in in the add-in manifest.|"developer"|The version in the add-in manifest.|
 
->\* To find the asset ID and version of an add-in in the Office Store, go to the Office Store landing page for the add-in. The asset ID appears in the address bar in the browser. The version is listed in the **Details** section of the page.
+> [!NOTE]
+> To find the asset ID and version of an add-in in the Office Store, go to the Office Store landing page for the add-in. The asset ID appears in the address bar in the browser. The version is listed in the **Details** section of the page.
 
 For more information about the webextension markup, see [[MS-OWEXML] 2.2.5. WebExtensionReference](https://msdn.microsoft.com/en-us/library/hh695383(v=office.12).aspx).
 
