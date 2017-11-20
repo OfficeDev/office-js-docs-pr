@@ -132,8 +132,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     |ida:Audience|The application ID you obtained when you registered the add-in.|
     |ida:Password|TThe password you obtained when you registered the add-in.|
 
-
-   The following is an example of what the four keys you changed should look like. *Note that ClientID and Audience are the same*. You can also use a single key for both purposes, but your web.config markup will be more reusable if you keep them separate because they aren't always the same. Also, having separate keys reinforces the idea that your add-in is both an OAuth resource - relative to the Office host - and an OAuth client - relative to Microsoft Graph.
+  The following is an example of what the four keys you changed should look like. *Note that ClientID and Audience are the same*. You can also use a single key for both purposes, but your web.config markup is more reusable if you keep them separate because they aren't always the same. Also, having separate keys reinforces the idea that your add-in is both an OAuth resource, relative to the Office host, and an OAuth client, relative to Microsoft Graph.
 
     ```xml
     <add key=”ida:ClientID" value="12345678-1234-1234-1234-123456789012" />
@@ -142,8 +141,8 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     <add key="ida:Issuer" value="https://login.microsoftonline.com/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee/v2.0" />
     ```
 
-   > [!NOTE]
-   > Leave the other settings in the **appSettings** section unchanged.
+  > [!NOTE]
+  > Leave the other settings in the **appSettings** section unchanged.
 
 1. Save and close the file.
 
