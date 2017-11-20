@@ -83,8 +83,5 @@ The best way to get started using add-in commands is to take a look at the [Offi
 For more information about specifying add-in commands in your manifest, see [Define add-in commands in your manifest](../develop/define-add-in-commands.md) and the [VersionOverrides](https://dev.office.com/reference/add-ins/manifest/versionoverrides) reference content.
 
 
-## Additional resources
-
-- [Office Add-in design guidelines](add-in-design-guidelines.md)
 
 
