@@ -282,7 +282,7 @@ To enable localized strings for the heading and paragraph, you place the strings
 
 To add the resource file to the add-in project:
 
-1. In  **Solution Explorer** in Visual Studio, choose the **Add-in** folder in the web project for the sample add-in, and choose **Add** > **JavaScript file**.
+1. In **Solution Explorer** in Visual Studio, choose the **Add-in** folder in the web project for the sample add-in, and choose **Add** > **JavaScript file**.
     
 2. In the  **Specify Name for Item** dialog box, enterUIStrings.js.
     
@@ -303,7 +303,6 @@ To add the resource file to the add-in project:
             "Greeting": "Welcome",
             "Introduction": "This is my localized add-in."        
         };
-    
     
         // JSON object for Spanish strings
         UIStrings.ES =
