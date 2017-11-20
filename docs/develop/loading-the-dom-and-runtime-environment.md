@@ -85,10 +85,8 @@ This same technique can be used in the  **initialize** handler of any Office Add
 
 The phone dialer sample Outlook add-in shows a slightly different approach using only JavaScript to check these same conditions. 
 
- **Important:** Even if your add-in has no initialization tasks to perform, you must include at least a minimal **Office.initialize** event handler function like the following example.
-
-
-
+> [!IMPORTANT]
+> Even if your add-in has no initialization tasks to perform, you must include at least a minimal **Office.initialize** event handler function like the following example.
 
 ```js
 Office.initialize = function () {
