@@ -9,7 +9,7 @@ ms.date: 11/20/2017
  
 Task panes are interface surfaces that typically appear on the right side of the window within Word, PowerPoint, Excel, and Outlook. Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source. Use task panes when you don't need to embed functionality directly into the document.
 
-**Example: Task pane**
+*Figure 1. Typical task pane layout*
 
 ![Image displaying a typical task pane layout](../images/overview-with-app-task-pane.png)
 
@@ -27,7 +27,7 @@ Task panes are interface surfaces that typically appear on the right side of the
 
 The following images show the various task pane sizes with the Office ribbon at a 1366x768 resolution. For Excel, additional vertical space is required to accommodate the formula bar.  
 
-**Office 2016 desktop task pane sizes**
+*Figure 2. Office 2016 desktop task pane sizes*
 
 ![Image displaying the desktop task pane sizes at 1366x768](../images/add-in-taskpane-sizes-desktop.png)
 
@@ -36,7 +36,9 @@ The following images show the various task pane sizes with the Office ribbon at 
 - Word - 320x531
 - Outlook - 348x535
 
-**Office 365 task pane sizes**
+<br/>
+
+*Figure 3. Office 365 task pane sizes*
 
 ![Image displaying the desktop task pane sizes at 1366x768](../images/add-in-taskpane-sizes-online.png)
 
@@ -49,15 +51,15 @@ The following images show the various task pane sizes with the Office ribbon at 
 
 Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac.
 
-**Personality menu on Windows**
-
 For Windows, the personality menu measures 12x32 pixels, as shown.
+
+*Figure 4. Personality menu on Windows*
 
 ![Image showing the personality menu on Windows desktop](../images/personality-menu-win.png)
 
-**Personality menu on Windows**
-
 For Mac, the personality menu measures 26x26 pixels, but floats 8 pixels in from the right and 6 pixels from the top, which increases the space to 34x32 pixels, as shown.
+
+*Figure 5. Personality menu on Mac*
 
 ![Image showing the personality menu on Mac desktop](../images/personality-menu-mac.png)
 
