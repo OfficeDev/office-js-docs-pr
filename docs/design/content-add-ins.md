@@ -12,7 +12,7 @@ Content add-ins are surfaces that can be embedded directly into Word, Excel, or 
 
 *Figure 1. Typical layout for content add-ins**
 
-![An example image displaying a typical layout for content add-ins.](../images/overview-with-app-content.png
+![An example image displaying a typical layout for content add-ins.](../images/overview-with-app-content.png)
 
 ## Best practices
 
