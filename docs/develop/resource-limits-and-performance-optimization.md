@@ -68,7 +68,8 @@ For each event that the Telemetry Log tracks for an add-in, there is a date/time
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 |10/8/2012 5:57:10 PM|7||add-in manifest downloaded successfully|Who's Who|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
 |10/8/2012 5:57:01 PM|7||add-in manifest downloaded successfully|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
- The following table lists the events that the Telemetry Log tracks for Office Add-ins in general.
+
+The following table lists the events that the Telemetry Log tracks for Office Add-ins in general.
 
 |**Event ID**|**Title**|**Severity**|**Description**|
 |:-----|:-----|:-----|:-----|
@@ -80,7 +81,8 @@ For each event that the Telemetry Log tracks for an add-in, there is a date/time
 |18|Add-in closed successfully||The host application was able to close the Office Add-in successfully.|
 |19|Add-in encountered runtime error|Critical|The Office Add-in had a problem that caused it to fail. For more details, look at the  **Microsoft Office Alerts** log using the Windows Event Viewer on the computer that encountered the error.|
 |20|Add-in failed to verify licensing|Critical|The licensing information for the Office Add-in could not be verified and may have expired. For more details, look at the  **Microsoft Office Alerts** log using the Windows Event Viewer on the computer that encountered the error.|
-For more information, see [Deploying Telemetry Dashboard](http://msdn.microsoft.com/en-us/library/f69cde72-689d-421f-99b8-c51676c77717%28Office.15%29.aspx) and [Troubleshooting Office files and custom solutions with the telemetry log](http://msdn.microsoft.com/library/ef88e30e-7537-488e-bc72-8da29810f7aa%28Office.15%29.aspx)
+
+For more information, see [Deploying Telemetry Dashboard](http://msdn.microsoft.com/en-us/library/f69cde72-689d-421f-99b8-c51676c77717%28Office.15%29.aspx) and [Troubleshooting Office files and custom solutions with the telemetry log](http://msdn.microsoft.com/library/ef88e30e-7537-488e-bc72-8da29810f7aa%28Office.15%29.aspx).
 
 
 ## Design and implementation techniques
