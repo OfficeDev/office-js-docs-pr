@@ -16,8 +16,11 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 ## Prerequisites
 
 * [Node and npm](https://nodejs.org/en/), version 6.9.4 or later
+
 * [Git Bash](https://git-scm.com/downloads) (or another git client)
+
 * TypeScript version 2.2.2 or later
+
 * Office 2016, Version 1708, build 8424.nnnn or later (the Office 365 subscription version, sometimes called “Click to Run”)
 
   You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1).
