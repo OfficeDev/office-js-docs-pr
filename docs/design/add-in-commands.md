@@ -14,11 +14,11 @@ For an overview of the feature, see the video [Add-in Commands in the Office Rib
 > [!NOTE]
 > SharePoint catalogs do not support add-in commands. You can deploy add-in commands via [Centralized Deployment](../publish/centralized-deployment.md) or the [Office Store](https://dev.office.com/officestore/docs/submit-to-the-office-store), or use [sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) to deploy your add-in command for testing. 
 
-**Add-in with commands running in Excel Desktop**
+*Figure 1. Add-in with commands running in Excel Desktop*
 
 ![Screenshot of an add-in command in Excel](../images/add-in-commands-1.png)
 
-**Add-in with commands running in Excel Online**
+*Figure 2. Add-in with commands running in Excel Online*
 
 ![Screenshot of an add-in command in Excel Online](../images/add-in-commands-2.png)
 
@@ -71,7 +71,9 @@ Apply the following best practices when you develop add-in commands:
 - For all icons, follow the [icon design guidelines](design-icons.md).
 - Provide a version of your add-in that also works on hosts that do not support commands. A single add-in manifest can work in both command-aware (with commands) and non-command-aware (as a taskpane) hosts.
 
-    ![A screenshot that shows a task pane add-in in Office 2013 and the same add-in using add-in commands in Office 2016](../images/office-task-pane-add-ins.png)
+   *Figure 3. Task pane add-in in Office 2013 and the same add-in using add-in commands in Office 2016*
+
+   ![A screenshot that shows a task pane add-in in Office 2013 and the same add-in using add-in commands in Office 2016](../images/office-task-pane-add-ins.png)
 
 
 ## Next steps to get started
@@ -83,6 +85,6 @@ For more information about specifying add-in commands in your manifest, see [Def
 
 ## Additional resources
 
-
+- [Office Add-in design guidelines](add-in-design-guidelines.md)
 
 
