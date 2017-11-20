@@ -24,7 +24,6 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Clone or download the repo at [Office Add-in NodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso). 
 
-
     > [!NOTE]
     > There are two versions of the sample:  
     > * The **Before** folder is a starter project. The UI and other aspects of the add-in that are not directly connected to SSO or authorization are already done. Later sections of this article walk you through the process of completing it. 
@@ -261,47 +260,46 @@ There are two server-side files that need to be modified.
     * The scopes parameter has a default value, but in this sample it will be overridden by the calling code.
     * The resource parameter is optional. It should not be used when the STS is the AAD V2 endpoint. The latter infers the resource from the scopes and it returns an error if a resource is sent in the HTTP Request. 
     
-
-    ```
-    private async exchangeForToken(jwt: string, scopes: string[] = ['openid'], resource?: string) {
-        try {
-            // TODO3: Construct the parameters that will be sent in the body of the 
-            //        HTTP Request to the STS that starts the "on behalf of" flow.
-            // TODO4: Send the request to the STS.
-            // TODO5: Process the response and persist the access token to resource.
+        ```
+        private async exchangeForToken(jwt: string, scopes: string[] = ['openid'], resource?: string) {
+            try {
+                // TODO3: Construct the parameters that will be sent in the body of the 
+                //        HTTP Request to the STS that starts the "on behalf of" flow.
+                // TODO4: Send the request to the STS.
+                // TODO5: Process the response and persist the access token to resource.
+            }
+            catch (exception) {
+                throw new UnauthorizedError('Unable to obtain an access token to the resource' 
+                                            + JSON.stringify(exception), 
+                                            exception);
+            }
         }
-        catch (exception) {
-            throw new UnauthorizedError('Unable to obtain an access token to the resource' 
-                                        + JSON.stringify(exception), 
-                                        exception);
-        }
-    }
-    ```
+        ```
 
 2. Replace TODO3 with the following code. About this code, note:
     * An STS that supports the "on behalf of" flow expects certain property/value pairs in the body of the HTTP request. This code constructs an object that will become the body of the request. 
     * A resource property is added to the body if, and only if, a resource was passed to the method.
 
-    ```
-    const v2Params = {
-            client_id: this.clientId,
-            client_secret: this.clientSecret,
-            grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
-            assertion: jwt,
-            requested_token_use: 'on_behalf_of',
-            scope: scopes.join(' ')
-        };
-        let finalParams = {};
-        if (resource) {
-            // In JavaScript we could just add the resource property to the v2Params
-            // object, but that won't compile in TypeScript.
-            let v1Params  = { resource: resource };  
-            for(var key in v2Params) { v1Params[key] = v2Params[key]; }
-            finalParams = v1Params;
-        } else {
-            finalParams = v2Params;
-        } 
-    ```
+        ```
+        const v2Params = {
+                client_id: this.clientId,
+                client_secret: this.clientSecret,
+                grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+                assertion: jwt,
+                requested_token_use: 'on_behalf_of',
+                scope: scopes.join(' ')
+            };
+            let finalParams = {};
+            if (resource) {
+                // In JavaScript we could just add the resource property to the v2Params
+                // object, but that won't compile in TypeScript.
+                let v1Params  = { resource: resource };  
+                for(var key in v2Params) { v1Params[key] = v2Params[key]; }
+                finalParams = v1Params;
+            } else {
+                finalParams = v2Params;
+            } 
+        ```
 
 3. Replace TODO4 with the following code which sends the HTTP request to the token endpoint of the STS.
 
