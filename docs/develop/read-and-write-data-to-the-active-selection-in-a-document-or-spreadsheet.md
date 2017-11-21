@@ -78,7 +78,7 @@ The anonymous function passed into the [setSelectedDataAsync](https://dev.office
 The following example shows how to detect changes in the selection by using the [Document.addHandlerAsync](https://dev.office.com/reference/add-ins/shared/document.addhandlerasync) method to add an event handler for the [SelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) event on the document.
 
 
-```
+```js
 Office.context.document.addHandlerAsync("documentSelectionChanged", myHandler, function(result){} 
 );
 
@@ -108,7 +108,7 @@ The  `myHander()` function that is passed into the function as the second _handl
 The following example shows how to stop listening to the [Document.SelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) event by calling the [document.removeHandlerAsync](https://dev.office.com/reference/add-ins/shared/document.removehandlerasync) method.
 
 
-```
+```js
 Office.context.document.removeHandlerAsync("documentSelectionChanged", {handler:myHandler}, function(result){});
 ```
 
