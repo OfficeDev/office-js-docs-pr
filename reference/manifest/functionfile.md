@@ -17,7 +17,7 @@ The following is an example of the  **FunctionFile** element.
 </DesktopFormFactor>
 ```
 
-The JavaScript in the HTML file indicated by the  **FunctionFile** element must call `Office.initialize` and define named functions that take a single parameter: `event`. The functions should use the [item.notificationMessages](/reference/outlook/Office.context.mailbox.item.md) API to indicate progress, success, or failure to the user. It should also call [event.completed](/reference/shared/event.completed.md) when it has finished execution. The name of the functions are used in the **FunctionName** element for UI-less buttons.
+The JavaScript in the HTML file indicated by the  **FunctionFile** element must call `Office.initialize` and define named functions that take a single parameter: `event`. The functions should use the [item.notificationMessages](/reference/outlook/Office.context.mailbox.item.md) API to indicate progress, success, or failure to the user. It should also call [event.completed](https://dev.office.com/reference/add-ins/shared/event.completed) when it has finished execution. The name of the functions are used in the **FunctionName** element for UI-less buttons.
 
 The following is an example of an HTML file defining a **trackMessage** function.
 

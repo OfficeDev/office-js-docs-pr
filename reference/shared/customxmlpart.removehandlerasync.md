@@ -19,7 +19,7 @@ customXmlPart.removeHandlerAsync(eventType, handler [,options], callback);
 
 |**Name**|**Type**|**Description**|**Support notes**|
 |:-----|:-----|:-----|:-----|
-| _eventType_|[EventType](/reference/shared/eventtype-enumeration.md)|Specifies the type of event to remove. Required.For a  **CustomXmlPart** object event, the _eventType_ parameter can be specified as **Office.EventType.DataNodeDeleted**,  **Office.EventType.DataNodeInserted**,  **Office.EventType.DataNodeReplaced**, or the corresponding text values of these enumerations.||
+| _eventType_|[EventType](https://dev.office.com/reference/add-ins/shared/eventtype-enumeration)|Specifies the type of event to remove. Required.For a  **CustomXmlPart** object event, the _eventType_ parameter can be specified as **Office.EventType.DataNodeDeleted**,  **Office.EventType.DataNodeInserted**,  **Office.EventType.DataNodeReplaced**, or the corresponding text values of these enumerations.||
 | _options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)||
 | _handler_|**string**|Specifies the name of the handler to remove. ||
 | _asyncContext_|**array**,  **boolean**,  **null**,  **number**,  **object**, **string**, or  **undefined**|A user-defined item of any type that is returned in the  **AsyncResult** object without being altered.||
@@ -27,7 +27,7 @@ customXmlPart.removeHandlerAsync(eventType, handler [,options], callback);
 
 ## Callback Value
 
-When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
+When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object that you can access from the callback function's only parameter.
 
 In the callback function passed to the  **removeHandlerAsync** method, you can use the properties of the **AsyncResult** object to return the following information.
 
@@ -35,10 +35,10 @@ In the callback function passed to the  **removeHandlerAsync** method, you can u
 
 |**Property**|**Use to...**|
 |:-----|:-----|
-|[AsyncResult.value](/reference/shared/asyncresult.value.md)|Always returns  **undefined** because there is no data or object to retrieve when removing an event handler.|
-|[AsyncResult.status](/reference/shared/asyncresult.status.md)|Determine the success or failure of the operation.|
-|[AsyncResult.error](/reference/shared/asyncresult.error.md)|Access an [Error](/reference/shared/error.md) object that provides error information if the operation failed.|
-|[AsyncResult.asyncContext](/reference/shared/asyncresult.asynccontext.md)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
+|[AsyncResult.value](https://dev.office.com/reference/add-ins/shared/asyncresult.value)|Always returns  **undefined** because there is no data or object to retrieve when removing an event handler.|
+|[AsyncResult.status](https://dev.office.com/reference/add-ins/shared/asyncresult.status)|Determine the success or failure of the operation.|
+|[AsyncResult.error](https://dev.office.com/reference/add-ins/shared/asyncresult.error)|Access an [Error](https://dev.office.com/reference/add-ins/shared/error) object that provides error information if the operation failed.|
+|[AsyncResult.asyncContext](https://dev.office.com/reference/add-ins/shared/asyncresult.asynccontext)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
 
 ## Remarks
 

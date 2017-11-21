@@ -2,7 +2,7 @@
 
 # Office
 
-The Office namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office namespace, see the [Shared API](/reference/shared/office.md).
+The Office namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office namespace, see the [Shared API](https://dev.office.com/reference/add-ins/shared/office).
 
 ##### Requirements
 

@@ -337,7 +337,7 @@ The anonymous function that is passed into the function is a callback that is ex
 ## Detect changes to data or the selection in a binding
 
 
-The following example shows how to attach an event handler to the [DataChanged](/reference/shared/binding.bindingdatachangedevent.md) event of a binding with an id of "MyBinding".
+The following example shows how to attach an event handler to the [DataChanged](https://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) event of a binding with an id of "MyBinding".
 
 
 ```js
@@ -390,29 +390,29 @@ function removeEventHandlerFromBinding() {
 - [Read and write data to the active selection in a document or spreadsheet](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
 [Binding]: 				https://dev.office.com/reference/add-ins/shared/binding
-[MatrixBinding]:		 /reference/shared/binding.matrixbinding.md
-[TableBinding]: 		 /reference/shared/binding.tablebinding.md
-[TextBinding]: 			 /reference/shared/binding.textbinding.md
-[getDataAsync]: 		 /reference/shared/binding.getdataasync.md
-[setDataAsync]: 		 /reference/shared/binding.setdataasync.md
-[SelectionChanged]: 	 /reference/shared/binding.bindingselectionchangedevent.md
-[addHandlerAsync]: 		 /reference/shared/binding.addhandlerasync.md
-[removeHandlerAsync]: 	 /reference/shared/binding.removehandlerasync.md
+[MatrixBinding]:		 https://dev.office.com/reference/add-ins/shared/binding.matrixbinding
+[TableBinding]: 		 https://dev.office.com/reference/add-ins/shared/binding.tablebinding
+[TextBinding]: 			 https://dev.office.com/reference/add-ins/shared/binding.textbinding
+[getDataAsync]: 		 https://dev.office.com/reference/add-ins/shared/binding.getdataasync
+[setDataAsync]: 		 https://dev.office.com/reference/add-ins/shared/binding.setdataasync
+[SelectionChanged]: 	 https://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedevent
+[addHandlerAsync]: 		 https://dev.office.com/reference/add-ins/shared/binding.addhandlerasync
+[removeHandlerAsync]: 	 https://dev.office.com/reference/add-ins/shared/binding.removehandlerasync
 
-[Bindings]:				 /reference/shared/bindings.bindings.md
-[getByIdAsync]: 		 /reference/shared/bindings.getbyidasync.md 
-[getAllAsync]: 			 /reference/shared/bindings.getallasync.md
-[addFromNamedItemAsync]: /reference/shared/bindings.addfromnameditemasync.md
-[addFromSelectionAsync]: /reference/shared/bindings.addfromselectionasync.md
-[addFromPromptAsync]: 	 /reference/shared/bindings.addfrompromptasync.md
-[releaseByIdAsync]: 	 /reference/shared/bindings.releasebyidasync.md
+[Bindings]:				 https://dev.office.com/reference/add-ins/shared/bindings.bindings
+[getByIdAsync]: 		 https://dev.office.com/reference/add-ins/shared/bindings.getbyidasync 
+[getAllAsync]: 			 https://dev.office.com/reference/add-ins/shared/bindings.getallasync
+[addFromNamedItemAsync]: https://dev.office.com/reference/add-ins/shared/bindings.addfromnameditemasync
+[addFromSelectionAsync]: https://dev.office.com/reference/add-ins/shared/bindings.addfromselectionasync
+[addFromPromptAsync]: 	 https://dev.office.com/reference/add-ins/shared/bindings.addfrompromptasync
+[releaseByIdAsync]: 	 https://dev.office.com/reference/add-ins/shared/bindings.releasebyidasync
 
 [AsyncResult]: 			https://dev.office.com/reference/add-ins/shared/asyncresult
 [Office.BindingType]: 	https://dev.office.com/reference/add-ins/shared/bindingtype-enumeration
-[Office.select]:		/reference/shared/office.select.md 
+[Office.select]:		https://dev.office.com/reference/add-ins/shared/office.select 
 [Office.EventType]: 	https://dev.office.com/reference/add-ins/shared/eventtype-enumeration 
-[Document.bindings]: 	/reference/shared/document.bindings.md
+[Document.bindings]: 	https://dev.office.com/reference/add-ins/shared/document.bindings
 
 
-[TableBinding.rowCount]: /reference/shared/binding.tablebinding.rowcount.1md
-[BindingSelectionChangedEventArgs]: /reference/shared/binding.bindingselectionchangedeventargs.md
+[TableBinding.rowCount]: https://dev.office.com/reference/add-ins/shared/binding.tablebinding.rowcount.
+[BindingSelectionChangedEventArgs]: https://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedeventargs

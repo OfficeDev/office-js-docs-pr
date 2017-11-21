@@ -1,6 +1,6 @@
 
 # BindingDataChangedEventArgs.binding property
-Gets a  **Binding** object that represents the binding that raised the [DataChanged](/reference/shared/binding.bindingdatachangedevent.md) event.
+Gets a  **Binding** object that represents the binding that raised the [DataChanged](https://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) event.
 
 |||
 |:-----|:-----|
@@ -14,7 +14,7 @@ var myBinding = eventArgsObj.binding;
 
 ## Return Value
 
-A [Binding](/reference/shared/binding.md) object.
+A [Binding](https://dev.office.com/reference/add-ins/shared/binding) object.
 
 
 ## Support details

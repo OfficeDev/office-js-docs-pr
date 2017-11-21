@@ -32,7 +32,7 @@ _value_<br/>
 
 ## Remarks
 
-The  **set** method creates a new setting of the specified name if it does not already exist, or sets an existing setting of the specified name in the in-memory copy of the settings property bag. After you call the [Settings.saveAsync](/reference/shared/settings.saveasync.md) method, the value is stored in the document as the serialized JSON representation of its data type. A maximum of 2MB is available for the settings of each add-in.
+The  **set** method creates a new setting of the specified name if it does not already exist, or sets an existing setting of the specified name in the in-memory copy of the settings property bag. After you call the [Settings.saveAsync](https://dev.office.com/reference/add-ins/shared/settings.saveasync) method, the value is stored in the document as the serialized JSON representation of its data type. A maximum of 2MB is available for the settings of each add-in.
 
 
  >**Important**:  Be aware that the  **Settings.set** method affects only the in-memory copy of the settings property bag. To make sure that additions or changes to settings will be available to your add-in the next time the document is opened, at some point after calling the **Settings.set** method and before the add-in is closed, you must call the **Settings.saveAsync** method to persist settings in the document.

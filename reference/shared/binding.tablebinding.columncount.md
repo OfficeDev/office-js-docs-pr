@@ -15,7 +15,7 @@ var colCount = bindingObj.columnCount;
 
 ## Return Value
 
-The number of columns in the specified [TableBinding](/reference/shared/binding.tablebinding.md) object.
+The number of columns in the specified [TableBinding](https://dev.office.com/reference/add-ins/shared/binding.tablebinding) object.
 
 
 ## Example

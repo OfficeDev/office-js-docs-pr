@@ -15,7 +15,7 @@ The  **getSelectedDataAsync** method only works against the user's current selec
 ## Read selected data
 
 
-The following example shows how to get data from a selection in a document by using the [getSelectedDataAsync](/reference/shared/document.getselecteddataasync.md) method.
+The following example shows how to get data from a selection in a document by using the [getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) method.
 
 
 ```js
@@ -34,15 +34,15 @@ function write(message){
 }
 ```
 
-In this example, the first  _coercionType_ parameter is specified as **Office.CoercionType.Text** (you can also specify this parameter by using the literal string `"text"`). This means that the [value](/reference/shared/asyncresult.status.md) property of the [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object that is available from the _asyncResult_ parameter in the callback function will return a **string** that contains the selected text in the document. Specifying different coercion types will result in different values. [Office.CoercionType](https://dev.office.com/reference/add-ins/shared/coerciontype-enumeration) is an enumeration of available coercion type values. **Office.CoercionType.Text** evaluates to the string "text".
+In this example, the first  _coercionType_ parameter is specified as **Office.CoercionType.Text** (you can also specify this parameter by using the literal string `"text"`). This means that the [value](https://dev.office.com/reference/add-ins/shared/asyncresult.status) property of the [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object that is available from the _asyncResult_ parameter in the callback function will return a **string** that contains the selected text in the document. Specifying different coercion types will result in different values. [Office.CoercionType](https://dev.office.com/reference/add-ins/shared/coerciontype-enumeration) is an enumeration of available coercion type values. **Office.CoercionType.Text** evaluates to the string "text".
 
 
 > [!TIP]
 > **When should you use the matrix versus table coercionType for data access?** If you need your selected tabular data to grow dynamically when rows and columns are added, and you must work with table headers, you should use the table data type (by specifying the _coercionType_ parameter of the **getSelectedDataAsync** method as `"table"` or **Office.CoercionType.Table**). Adding rows and columns within the data structure is supported in both table and matrix data, but appending rows and columns is supported only for table data. If you are you aren't planning on adding rows and columns, and your data doesn't require header functionality, then you should use the matrix data type (by specifying the  _coercionType_ parameter of **getSelecteDataAsync** method as `"matrix"` or **Office.CoercionType.Matrix**), which provides a simpler model of interacting with the data.
 
-The anonymous function that is passed into the function as the second  _callback_ parameter is executed when the **getSelectedDataAsync** operation is completed. The function is called with a single parameter, _asyncResult_, which contains the result and the status of the call. If the call fails, the [error](/reference/shared/asyncresult.context.md) property of the **AsyncResult** object provides access to the [Error](https://dev.office.com/reference/add-ins/shared/error) object. You can check the value of the [Error.name](/reference/shared/error.name.md) and [Error.message](/reference/shared/error.message.md) properties to determine why the set operation failed. Otherwise, the selected text in the document is displayed.
+The anonymous function that is passed into the function as the second  _callback_ parameter is executed when the **getSelectedDataAsync** operation is completed. The function is called with a single parameter, _asyncResult_, which contains the result and the status of the call. If the call fails, the [error](https://dev.office.com/reference/add-ins/shared/asyncresult.context) property of the **AsyncResult** object provides access to the [Error](https://dev.office.com/reference/add-ins/shared/error) object. You can check the value of the [Error.name](https://dev.office.com/reference/add-ins/shared/error.name) and [Error.message](https://dev.office.com/reference/add-ins/shared/error.message) properties to determine why the set operation failed. Otherwise, the selected text in the document is displayed.
 
-The [AsyncResult.status](/reference/shared/asyncresult.error.md) property is used in the **if** statement to test whether the call succeeded. [Office.AsyncResultStatus](https://dev.office.com/reference/add-ins/shared/asyncresultstatus-enumeration) is an enumeration of available **AsyncResult.status** property values. **Office.AsyncResultStatus.Failed** evaluates to the string "failed" (and, again, can also be specified as that literal string).
+The [AsyncResult.status](https://dev.office.com/reference/add-ins/shared/asyncresult.error) property is used in the **if** statement to test whether the call succeeded. [Office.AsyncResultStatus](https://dev.office.com/reference/add-ins/shared/asyncresultstatus-enumeration) is an enumeration of available **AsyncResult.status** property values. **Office.AsyncResultStatus.Failed** evaluates to the string "failed" (and, again, can also be specified as that literal string).
 
 
 ## Write data to the selection
@@ -66,7 +66,7 @@ function write(message){
 
 Passing in different object types for the  _data_ parameter will have different results. The result depends on what is currently selected in the document, which application is hosting your add-in, and whether the data passed in can be coerced to the current selection.
 
-The anonymous function passed into the [setSelectedDataAsync](/reference/shared/document.setselecteddataasync.md) method as the _callback_ parameter is executed when the asynchronous call is completed. When you write data to the selection by using the **setSelectedDataAsync** method, the _asyncResult_ parameter of the callback provides access only to the status of the call, and to the [Error](https://dev.office.com/reference/add-ins/shared/error) object if the call fails.
+The anonymous function passed into the [setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) method as the _callback_ parameter is executed when the asynchronous call is completed. When you write data to the selection by using the **setSelectedDataAsync** method, the _asyncResult_ parameter of the callback provides access only to the status of the call, and to the [Error](https://dev.office.com/reference/add-ins/shared/error) object if the call fails.
 
 > [!NOTE]
 > Starting with the release of the Excel 2013 SP1 and the corresponding build of Excel Online, you can now [set formatting when writing a table to the current selection](../excel/excel-add-ins-tables.md).
@@ -75,7 +75,7 @@ The anonymous function passed into the [setSelectedDataAsync](/reference/shared/
 ## Detect changes in the selection
 
 
-The following example shows how to detect changes in the selection by using the [Document.addHandlerAsync](/reference/shared/document.addhandlerasync.md) method to add an event handler for the [SelectionChanged](/reference/shared/document.selectionchanged.event.md) event on the document.
+The following example shows how to detect changes in the selection by using the [Document.addHandlerAsync](https://dev.office.com/reference/add-ins/shared/document.addhandlerasync) method to add an event handler for the [SelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) event on the document.
 
 
 ```
@@ -95,7 +95,7 @@ function write(message){
 
 The first  _eventType_ parameter specifies the name of the event to subscribe to. Passing the string `"documentSelectionChanged"` for this parameter is equivalent to passing the **Office.EventType.DocumentSelectionChanged** event type of the [Office.EventType](https://dev.office.com/reference/add-ins/shared/eventtype-enumeration) enumeration.
 
-The  `myHander()` function that is passed into the function as the second _handler_ parameter is an event handler that is executed when the selection is changed on the document. The function is called with a single parameter, _eventArgs_, which will contain a reference to a [DocumentSelectionChangedEventArgs](/reference/shared/document.selectionchangedeventargs.md) object when the asynchronous operation completes. You can use the [DocumentSelectionChangedEventArgs.document](/reference/shared/document.selectionchangedeventargs.document.md) property to access the document that raised the event.
+The  `myHander()` function that is passed into the function as the second _handler_ parameter is an event handler that is executed when the selection is changed on the document. The function is called with a single parameter, _eventArgs_, which will contain a reference to a [DocumentSelectionChangedEventArgs](https://dev.office.com/reference/add-ins/shared/document.selectionchangedeventargs) object when the asynchronous operation completes. You can use the [DocumentSelectionChangedEventArgs.document](https://dev.office.com/reference/add-ins/shared/document.selectionchangedeventargs.document) property to access the document that raised the event.
 
 
 > [!NOTE]
@@ -105,7 +105,7 @@ The  `myHander()` function that is passed into the function as the second _handl
 ## Stop detecting changes in the selection
 
 
-The following example shows how to stop listening to the [Document.SelectionChanged](/reference/shared/document.selectionchanged.event.md) event by calling the [document.removeHandlerAsync](/reference/shared/document.removehandlerasync.md) method.
+The following example shows how to stop listening to the [Document.SelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) event by calling the [document.removeHandlerAsync](https://dev.office.com/reference/add-ins/shared/document.removehandlerasync) method.
 
 
 ```

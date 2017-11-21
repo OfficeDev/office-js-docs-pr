@@ -1,6 +1,6 @@
 
 # DocumentActiveViewChangedEventArgs object
-Provides information about the view that raised the [ActiveViewChanged](/reference/shared/document.activeviewchanged.md) event.
+Provides information about the view that raised the [ActiveViewChanged](https://dev.office.com/reference/add-ins/shared/document.activeviewchanged) event.
 
 |||
 |:-----|:-----|
@@ -17,8 +17,8 @@ Provides information about the view that raised the [ActiveViewChanged](/referen
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[activeView](/reference/shared/document.activeviewchangedeventargs.activeview.md)|Gets an  **ActiveView** enumeration value that identifies the state of the active view of the document, for example, whether the user can edit the document.|
-|[type](/reference/shared/document.activeviewchangedeventargs.type.md)|Get an  **EventType** enumeration value that identifies the kind of event that was raised.|
+|[activeView](https://dev.office.com/reference/add-ins/shared/document.activeviewchangedeventargs.activeview)|Gets an  **ActiveView** enumeration value that identifies the state of the active view of the document, for example, whether the user can edit the document.|
+|[type](https://dev.office.com/reference/add-ins/shared/document.activeviewchangedeventargs.type)|Get an  **EventType** enumeration value that identifies the kind of event that was raised.|
 
 ## Support details
 

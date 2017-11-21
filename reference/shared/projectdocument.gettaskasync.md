@@ -27,9 +27,9 @@ Office.context.document.getTaskAsync(taskId [,options][, callback]);
 
 ## Callback Value
 
-When the  _callback_ function executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the parameter in the callback function.
+When the  _callback_ function executes, it receives an [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object that you can access from the parameter in the callback function.
 
-For the  **getTaskAsync** method, the returned [AsyncResult](/reference/shared/asyncresult.md) object contains following properties.
+For the  **getTaskAsync** method, the returned [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object contains following properties.
 
 
 ****
@@ -37,19 +37,19 @@ For the  **getTaskAsync** method, the returned [AsyncResult](/reference/shared/a
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[asyncContext](/reference/shared/asyncresult.asynccontext.md)|The data passed in the optional  _asyncContext_ parameter, if the parameter was used.|
-|[error](/reference/shared/asyncresult.error.md)|Information about the error, if the  **status** property equals **failed**.|
-|[status](/reference/shared/asyncresult.status.md)|The  **succeeded** or **failed** status of the asynchronous call.|
-|[value](/reference/shared/asyncresult.value.md)|Contains the following properties:<br/><br/><ul><li><b>taskName</b> - The name of the task.</li><li><b>wssTaskId</b> - The ID of the task in the synchronized SharePoint task list. If the project is not synchronized with a SharePoint task list, the value is <b>0</b>.</li><li><b>resourceNames</b> - The comma-separated list of the names of resources that are assigned to the task.</li></ul>|
+|[asyncContext](https://dev.office.com/reference/add-ins/shared/asyncresult.asynccontext)|The data passed in the optional  _asyncContext_ parameter, if the parameter was used.|
+|[error](https://dev.office.com/reference/add-ins/shared/asyncresult.error)|Information about the error, if the  **status** property equals **failed**.|
+|[status](https://dev.office.com/reference/add-ins/shared/asyncresult.status)|The  **succeeded** or **failed** status of the asynchronous call.|
+|[value](https://dev.office.com/reference/add-ins/shared/asyncresult.value)|Contains the following properties:<br/><br/><ul><li><b>taskName</b> - The name of the task.</li><li><b>wssTaskId</b> - The ID of the task in the synchronized SharePoint task list. If the project is not synchronized with a SharePoint task list, the value is <b>0</b>.</li><li><b>resourceNames</b> - The comma-separated list of the names of resources that are assigned to the task.</li></ul>|
 
 ## Remarks
 
-Before you call the  **getTaskAsync** method, call the [getSelectedTaskAsync](/reference/shared/projectdocument.getselectedtaskasync.md) method to get the GUID of the task.
+Before you call the  **getTaskAsync** method, call the [getSelectedTaskAsync](https://dev.office.com/reference/add-ins/shared/projectdocument.getselectedtaskasync) method to get the GUID of the task.
 
 
 ## Example
 
-The following code example calls [getSelectedTaskAsync](/reference/shared/projectdocument.getselectedtaskasync.md) to get the task GUID of the currently selected task. Then it calls **getTaskAsync** to get the properties for the task that are available from the JavaScript API for Office.
+The following code example calls [getSelectedTaskAsync](https://dev.office.com/reference/add-ins/shared/projectdocument.getselectedtaskasync) to get the task GUID of the currently selected task. Then it calls **getTaskAsync** to get the properties for the task that are available from the JavaScript API for Office.
 
 The example assumes your add-in has a reference to the jQuery library and that the following page controls are defined in the content div in the page body.
 
@@ -164,6 +164,6 @@ For more information about Office host application and server requirements, see 
 #### Other resources
 
 
-[getSelectedTaskAsync method](/reference/shared/projectdocument.getselectedtaskasync.md)
-[AsyncResult object](/reference/shared/asyncresult.md)
-[ProjectDocument object](/reference/shared/projectdocument.projectdocument.md)
+[getSelectedTaskAsync method](https://dev.office.com/reference/add-ins/shared/projectdocument.getselectedtaskasync)
+[AsyncResult object](https://dev.office.com/reference/add-ins/shared/asyncresult)
+[ProjectDocument object](https://dev.office.com/reference/add-ins/shared/projectdocument.projectdocument)

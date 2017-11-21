@@ -21,20 +21,20 @@ Office.context.document.settings
 |||
 |:-----|:-----|
 |Name|Description|
-|[addHandlerAsync](/reference/shared/settings.addhandlerasync.md)|Adds an event handler for the  **settingsChanged** event.|
-|[get](/reference/shared/settings.get.md)|Retrieves the specified setting.|
-|[refreshAsync](/reference/shared/settings.refreshasync.md)|Reads all settings persisted in the document and refreshes the add-in's copy of those settings held in memory.|
-|[remove](/reference/shared/settings.remove.md)|Removes the specified setting.|
-|[removeHandlerAsync](/reference/shared/settings.removehandlerasync.md)|Removes an event handler for the  **settingsChanged** event.|
-|[saveAsync](/reference/shared/settings.saveasync.md)|Saves the settings.|
-|[set](/reference/shared/settings.set.md)|Sets or creates the specified setting.|
+|[addHandlerAsync](https://dev.office.com/reference/add-ins/shared/settings.addhandlerasync)|Adds an event handler for the  **settingsChanged** event.|
+|[get](https://dev.office.com/reference/add-ins/shared/settings.get)|Retrieves the specified setting.|
+|[refreshAsync](https://dev.office.com/reference/add-ins/shared/settings.refreshasync)|Reads all settings persisted in the document and refreshes the add-in's copy of those settings held in memory.|
+|[remove](https://dev.office.com/reference/add-ins/shared/settings.remove)|Removes the specified setting.|
+|[removeHandlerAsync](https://dev.office.com/reference/add-ins/shared/settings.removehandlerasync)|Removes an event handler for the  **settingsChanged** event.|
+|[saveAsync](https://dev.office.com/reference/add-ins/shared/settings.saveasync)|Saves the settings.|
+|[set](https://dev.office.com/reference/add-ins/shared/settings.set)|Sets or creates the specified setting.|
 
 **Events**
 
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[settingsChanged](/reference/shared/settings.settingschangedevent.md)|Occurs when a setting is changed.|
+|[settingsChanged](https://dev.office.com/reference/add-ins/shared/settings.settingschangedevent)|Occurs when a setting is changed.|
 
 ## Remarks
 
@@ -42,7 +42,7 @@ The settings created by using the methods of the  **Settings** object are saved 
 
 The name of a setting is a  **string**, while the value can be a  **string**,  **number**,  **boolean**,  **null**,  **object**, or  **array**.
 
-The  **Settings** object is automatically loaded as part of the [Document](/reference/shared/document.md) object, and is available by calling the [settings](/reference/shared/document.settings.md) property of that object when the add-in is activated. The developer is responsible for calling the [saveAsync](/reference/shared/settings.saveasync.md) method after adding or deleting settings to save the settings in the document.
+The  **Settings** object is automatically loaded as part of the [Document](https://dev.office.com/reference/add-ins/shared/document) object, and is available by calling the [settings](https://dev.office.com/reference/add-ins/shared/document.settings) property of that object when the add-in is activated. The developer is responsible for calling the [saveAsync](https://dev.office.com/reference/add-ins/shared/settings.saveasync) method after adding or deleting settings to save the settings in the document.
 
 
 ## Support details

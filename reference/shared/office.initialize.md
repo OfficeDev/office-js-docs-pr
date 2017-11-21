@@ -14,7 +14,7 @@ Office.initialize = function (reason) {/* initialization code */}
 
 ## Remarks
 
-The  _reason_ parameter of the **initialize** event listener function returns an [InitializationReason](/reference/shared/initializationreason-enumeration.md) enumeration value that specifies how initialization occurred. A task pane or content add-in can be initialized in two ways:
+The  _reason_ parameter of the **initialize** event listener function returns an [InitializationReason](https://dev.office.com/reference/add-ins/shared/initializationreason-enumeration) enumeration value that specifies how initialization occurred. A task pane or content add-in can be initialized in two ways:
 
 
 - The user just inserted it from  **Recently Used Add-ins** section of the **Add-in** drop-down list on the **Insert** tab of the ribbon in the Office host application, or from **Insert add-in** dialog box.

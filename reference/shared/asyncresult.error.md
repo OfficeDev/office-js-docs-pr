@@ -14,7 +14,7 @@ var errorObj = asyncResult.error;
 
 ## Return Value
 
-An  **[Error](/reference/shared/error.md)** object.
+An  **[Error](https://dev.office.com/reference/add-ins/shared/error)** object.
 
 
 ## Example

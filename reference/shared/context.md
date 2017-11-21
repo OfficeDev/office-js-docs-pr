@@ -55,5 +55,5 @@ The  **Context** object provides access to key objects in the JavaScript API for
 |1.1|Added Android and Universal as possible values for the platform property.|
 |1.1|Added  **commerceAllowed** and **touchEnabledAdded** properties (Excel, PowerPoint and Word on Office for iPad only).|
 |1.1|Added support for add-ins with Excel and Word on Office for iPad.|
-|1.1|For [contentLanguage](/reference/shared/office.context.contentlanguage.md), [displayLanguage](/reference/shared/office.context.displaylanguage.md), and [document](/reference/shared/office.context.document.md), added support for content add-ins for Access.|
+|1.1|For [contentLanguage](https://dev.office.com/reference/add-ins/shared/office.context.contentlanguage), [displayLanguage](https://dev.office.com/reference/add-ins/shared/office.context.displaylanguage), and [document](https://dev.office.com/reference/add-ins/shared/office.context.document), added support for content add-ins for Access.|
 |1.0|Introduced|

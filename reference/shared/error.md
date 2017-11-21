@@ -20,13 +20,13 @@ asyncResult.error
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[code](/reference/shared/error.code.md)|Gets the numeric code of the error.|
-|[name](/reference/shared/error.name.md)|Gets the name of the error.|
-|[message](/reference/shared/error.message.md)|Gets a detailed description of the error.|
+|[code](https://dev.office.com/reference/add-ins/shared/error.code)|Gets the numeric code of the error.|
+|[name](https://dev.office.com/reference/add-ins/shared/error.name)|Gets the name of the error.|
+|[message](https://dev.office.com/reference/add-ins/shared/error.message)|Gets a detailed description of the error.|
 
 ## Remarks
 
-The  **Error** object is accessed from the [AsyncResult](/reference/shared/asyncresult.md) object that is returned in the function passed as the _callback_ argument of an asynchronous data operation, such as the [setSelectedDataAsync](/reference/shared/document.setselecteddataasync.md) method of the **Document** object.
+The  **Error** object is accessed from the [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object that is returned in the function passed as the _callback_ argument of an asynchronous data operation, such as the [setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) method of the **Document** object.
 
 
 ## Example

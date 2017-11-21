@@ -436,6 +436,6 @@ Run the sample add-in. The taskpane add-in loads in Word 2013, and the strings i
 [DesktopSettings]: 		https://dev.office.com/reference/add-ins/manifest/desktopsettings
 [TabletSettings]: 		https://dev.office.com/reference/add-ins/manifest/tabletsettings
 [PhoneSettings]: 		https://dev.office.com/reference/add-ins/manifest/phonesettings
-[displayLanguage]: 	/reference/shared/office.context.displaylanguage.md 
-[contentLanguage]: 	/reference/shared/office.context.contentlanguage.md 
+[displayLanguage]: 	https://dev.office.com/reference/add-ins/shared/office.context.displaylanguage 
+[contentLanguage]: 	https://dev.office.com/reference/add-ins/shared/office.context.contentlanguage 
 [RFC 3066]: https://www.rfc-editor.org/info/rfc3066

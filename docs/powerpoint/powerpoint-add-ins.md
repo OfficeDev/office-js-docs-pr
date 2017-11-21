@@ -28,13 +28,13 @@ These code examples require your project to [reference Office.js v1.1 library or
 If you are building a content add-in, you will need to get the presentation's active view and handle the ActiveViewChanged event, as part of your Office.Initialize handler.
 
 
-- The  `getActiveFileView` function calls the [Document.getActiveViewAsync](/reference/shared/document.getactiveviewasync.md) method to return whether the presentation's current view is "edit" (any of the views in which you can edit slides, such as **Normal** or **Outline View**) or "read" ( **Slide Show** or **Reading View**) view.
+- The  `getActiveFileView` function calls the [Document.getActiveViewAsync](https://dev.office.com/reference/add-ins/shared/document.getactiveviewasync) method to return whether the presentation's current view is "edit" (any of the views in which you can edit slides, such as **Normal** or **Outline View**) or "read" ( **Slide Show** or **Reading View**) view.
 
 
-- The  `registerActiveViewChanged` function calls the [addHandlerAsync](/reference/shared/document.addhandlerasync.md) method to register a handler for the [Document.ActiveViewChanged](/reference/shared/document.activeviewchanged.md) event. 
+- The  `registerActiveViewChanged` function calls the [addHandlerAsync](https://dev.office.com/reference/add-ins/shared/document.addhandlerasync) method to register a handler for the [Document.ActiveViewChanged](https://dev.office.com/reference/add-ins/shared/document.activeviewchanged) event. 
 
 > [!NOTE]
-> In PowerPoint Online, the [Document.ActiveViewChanged](/reference/shared/document.activeviewchanged.md) event will never fire as Slide Show mode is treated as a new session. In this case, the add-in must fetch the active view on load, as noted below.
+> In PowerPoint Online, the [Document.ActiveViewChanged](https://dev.office.com/reference/add-ins/shared/document.activeviewchanged) event will never fire as Slide Show mode is treated as a new session. In this case, the add-in must fetch the active view on load, as noted below.
 
 
 
@@ -87,7 +87,7 @@ function registerActiveViewChanged() {
 
 ## Navigate to a particular slide in the presentation
 
-The  `getSelectedRange` function calls the [Document.getSelectedDataAsync](/reference/shared/document.getselecteddataasync.md) method to get a JSON object returned by `asyncResult.value`, which contains an array named "slides" that contains the ids, titles, and indexes of selected range of slides (or just the current slide). It also saves the id of the first slide in the selected range to a global variable.
+The  `getSelectedRange` function calls the [Document.getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) method to get a JSON object returned by `asyncResult.value`, which contains an array named "slides" that contains the ids, titles, and indexes of selected range of slides (or just the current slide). It also saves the id of the first slide in the selected range to a global variable.
 
 
 ```js
@@ -107,7 +107,7 @@ function getSelectedRange() {
 }
 ```
 
-The  `goToFirstSlide` function calls the [Document.goToByIdAsync](/reference/shared/document.gotobyidasync.md) method to go to the id of the first slide stored by the `getSelectedRange` function above.
+The  `goToFirstSlide` function calls the [Document.goToByIdAsync](https://dev.office.com/reference/add-ins/shared/document.gotobyidasync) method to go to the id of the first slide stored by the `getSelectedRange` function above.
 
 
 
@@ -151,7 +151,7 @@ function goToSlideByIndex() {
 
 ## Get the URL of the presentation
 
-The  `getFileUrl` function calls the [Document.getFileProperties](/reference/shared/document.getfilepropertiesasync.md) method to get the URL of the presentation file.
+The  `getFileUrl` function calls the [Document.getFileProperties](https://dev.office.com/reference/add-ins/shared/document.getfilepropertiesasync) method to get the URL of the presentation file.
 
 
 ```js

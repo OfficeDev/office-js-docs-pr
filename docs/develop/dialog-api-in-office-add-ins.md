@@ -30,11 +30,11 @@ Note that the dialog box always opens in the center of the screen. The user can 
 
 ## Dialog API scenarios
 
-The Office JavaScript APIs support the following scenarios with a [Dialog](/reference/shared/officeui.dialog.md) object and two functions in the [Office.context.ui namespace](https://dev.office.com/reference/add-ins/shared/officeui).
+The Office JavaScript APIs support the following scenarios with a [Dialog](https://dev.office.com/reference/add-ins/shared/officeui.dialog) object and two functions in the [Office.context.ui namespace](https://dev.office.com/reference/add-ins/shared/officeui).
 
 ### Open a dialog box
 
-To open a dialog box, your code in the task pane calls the [displayDialogAsync](/reference/shared/officeui.displaydialogasync.md) method and passes to it the URL of the resource that you want to open. This is usually a page, but it can be a controller method in an MVC application, a route, a web service method, or any other resource. In this article, 'page' or 'website' refers to the resource in the dialog. The following code is a simple example:
+To open a dialog box, your code in the task pane calls the [displayDialogAsync](https://dev.office.com/reference/add-ins/shared/officeui.displaydialogasync) method and passes to it the URL of the resource that you want to open. This is usually a page, but it can be a controller method in an MVC application, a route, a web service method, or any other resource. In this article, 'page' or 'website' refers to the resource in the dialog. The following code is a simple example:
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');

@@ -17,7 +17,7 @@ var myDoc = eventArgsObj.document;
 
 ## Return Value
 
-A [Document](/reference/shared/document.md) object that represents the document that raised the [SelectionChanged](/reference/shared/document.selectionchanged.event.md) event.
+A [Document](https://dev.office.com/reference/add-ins/shared/document) object that represents the document that raised the [SelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) event.
 
 
 ## Support details

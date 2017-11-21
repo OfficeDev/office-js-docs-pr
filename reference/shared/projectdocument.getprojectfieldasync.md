@@ -19,16 +19,16 @@ Office.context.document.getProjectFieldAsync(fieldId[, options][, callback]);
 
 |**Name**|**Type**|**Description**|
 |:-----|:-----|:-----|:-----|
-| _fieldId_|[ProjectProjectFields](/reference/shared/projectprojectfields-enumeration.md)|The ID of the target field. Required.|
+| _fieldId_|[ProjectProjectFields](https://dev.office.com/reference/add-ins/shared/projectprojectfields-enumeration)|The ID of the target field. Required.|
 | _options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods).|
 | _asyncContext_|**array**,  **boolean**,  **null**,  **number**,  **object**, **string**, or  **undefined**|A user-defined item of any type that is returned in the  **AsyncResult** object without being altered.|
 | _callback_|**object**|A function that is invoked when the callback returns, whose only parameter is of type  **AsyncResult**.|
 
 ## Callback Value
 
-When the  _callback_ function executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the parameter in the callback function.
+When the  _callback_ function executes, it receives an [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object that you can access from the parameter in the callback function.
 
-For the  **getProjectFieldAsync** method, the returned [AsyncResult](/reference/shared/asyncresult.md) object contains the following properties.
+For the  **getProjectFieldAsync** method, the returned [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object contains the following properties.
 
 
 ****
@@ -36,10 +36,10 @@ For the  **getProjectFieldAsync** method, the returned [AsyncResult](/reference/
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[asyncContext](/reference/shared/asyncresult.asynccontext.md)|The data passed in the optional  _asyncContext_ parameter, if the parameter was used.|
-|[error](/reference/shared/asyncresult.error.md)|Information about the error, if the  **status** property equals **failed**.|
-|[status](/reference/shared/asyncresult.status.md)|The  **succeeded** or **failed** status of the asynchronous call.|
-|[value](/reference/shared/asyncresult.value.md)|Contains the  **fieldValue** property, which represents the value of the specified field.|
+|[asyncContext](https://dev.office.com/reference/add-ins/shared/asyncresult.asynccontext)|The data passed in the optional  _asyncContext_ parameter, if the parameter was used.|
+|[error](https://dev.office.com/reference/add-ins/shared/asyncresult.error)|Information about the error, if the  **status** property equals **failed**.|
+|[status](https://dev.office.com/reference/add-ins/shared/asyncresult.status)|The  **succeeded** or **failed** status of the asynchronous call.|
+|[value](https://dev.office.com/reference/add-ins/shared/asyncresult.value)|Contains the  **fieldValue** property, which represents the value of the specified field.|
 
 ## Example
 
@@ -153,8 +153,8 @@ For more information about Office host application and server requirements, see 
 #### Other resources
 
 
-[ProjectProjectFields enumeration](/reference/shared/projectprojectfields-enumeration.md)
+[ProjectProjectFields enumeration](https://dev.office.com/reference/add-ins/shared/projectprojectfields-enumeration)
 
-[AsyncResult object](/reference/shared/asyncresult.md)
+[AsyncResult object](https://dev.office.com/reference/add-ins/shared/asyncresult)
 
-[ProjectDocument object](/reference/shared/projectdocument.projectdocument.md)
+[ProjectDocument object](https://dev.office.com/reference/add-ins/shared/projectdocument.projectdocument)

@@ -14,7 +14,7 @@ var myBinding = eventArgsObj.binding;
 
 ## Return Value
 
-A [Binding](/reference/shared/binding.md) object that represents the binding that raised the [SelectionChanged](/reference/shared/binding.bindingselectionchangedevent.md) event.
+A [Binding](https://dev.office.com/reference/add-ins/shared/binding) object that represents the binding that raised the [SelectionChanged](https://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedevent) event.
 
 
 ## Support details

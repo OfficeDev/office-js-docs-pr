@@ -15,7 +15,7 @@ var myNode = eventArgsObj.newNode;
 
 ## Return Value
 
-A [CustomXmlNode](/reference/shared/customxmlnode.customxmlnode.md) that represents the node that was just inserted.
+A [CustomXmlNode](https://dev.office.com/reference/add-ins/shared/customxmlnode.customxmlnode) that represents the node that was just inserted.
 
 
 ## Remarks

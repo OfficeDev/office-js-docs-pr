@@ -14,7 +14,7 @@ var docObj = bindingsObj.document;
 
 ## Return Value
 
-A [Document](/reference/shared/bindings.document.md) object.
+A [Document](https://dev.office.com/reference/add-ins/shared/bindings.document) object.
 
 
 ## Support details

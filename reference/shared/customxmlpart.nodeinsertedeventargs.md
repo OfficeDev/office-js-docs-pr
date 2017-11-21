@@ -1,6 +1,6 @@
 
 # NodeInsertedEventArgs object
-Provides information about the inserted node that raised the [dataNodeInserted](/reference/shared/customxmlpart.datanodeinserted.event.md) event.
+Provides information about the inserted node that raised the [dataNodeInserted](https://dev.office.com/reference/add-ins/shared/customxmlpart.datanodeinserted.event) event.
 
 |||
 |:-----|:-----|
@@ -21,8 +21,8 @@ NodeInsertedEventArgs
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[isUndoRedo](/reference/shared/customxmlpart.isundoredo.md)|Gets whether the node was inserted as part of an Undo/Redo action by the user.|
-|[newNode](/reference/shared/customxmlpart.newnode.md)|Gets the node that was just added to the  **CustomXMLPart** object.|
+|[isUndoRedo](https://dev.office.com/reference/add-ins/shared/customxmlpart.isundoredo)|Gets whether the node was inserted as part of an Undo/Redo action by the user.|
+|[newNode](https://dev.office.com/reference/add-ins/shared/customxmlpart.newnode)|Gets the node that was just added to the  **CustomXMLPart** object.|
 
 ## Support details
 

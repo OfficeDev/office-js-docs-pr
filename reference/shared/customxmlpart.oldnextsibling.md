@@ -15,7 +15,7 @@ var myNode = eventArgsObj.oldNextSibling;
 
 ## Return Value
 
-A [CustomXmlNode](/reference/shared/customxmlnode.customxmlnode.md) that represents former next sibling of the node that was just deleted.
+A [CustomXmlNode](https://dev.office.com/reference/add-ins/shared/customxmlnode.customxmlnode) that represents former next sibling of the node that was just deleted.
 
 
 ## Support details

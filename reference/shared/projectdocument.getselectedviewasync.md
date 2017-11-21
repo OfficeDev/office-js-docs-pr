@@ -26,9 +26,9 @@ Office.context.document.getSelectedViewAsync([options,] [callback]);
 
 ## Callback Value
 
-When the  _callback_ function executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the parameter in the callback function.
+When the  _callback_ function executes, it receives an [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object that you can access from the parameter in the callback function.
 
-For the  **getSelectedViewAsync** method, the returned [AsyncResult](/reference/shared/asyncresult.md) object contains the following properties.
+For the  **getSelectedViewAsync** method, the returned [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object contains the following properties.
 
 
 ****
@@ -36,14 +36,14 @@ For the  **getSelectedViewAsync** method, the returned [AsyncResult](/reference/
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[asyncContext](/reference/shared/asyncresult.asynccontext.md)|The data passed in the optional  _asyncContext_ parameter, if the parameter was used.|
-|[error](/reference/shared/asyncresult.error.md)|Information about the error, if the  **status** property equals **failed**.|
-|[status](/reference/shared/asyncresult.status.md)|The  **succeeded** or **failed** status of the asynchronous call.|
-|[value](/reference/shared/asyncresult.value.md)|Contains the following properties:<br/><br/><div>* **viewName** - The name of the view, as a [ProjectViewTypes](/reference/shared/projectviewtypes-enumeration.md) constant.<br/>* **viewType** - The type of view, as the integer value of a [ProjectViewTypes](/reference/shared/projectviewtypes-enumeration.md) constant.</div>|
+|[asyncContext](https://dev.office.com/reference/add-ins/shared/asyncresult.asynccontext)|The data passed in the optional  _asyncContext_ parameter, if the parameter was used.|
+|[error](https://dev.office.com/reference/add-ins/shared/asyncresult.error)|Information about the error, if the  **status** property equals **failed**.|
+|[status](https://dev.office.com/reference/add-ins/shared/asyncresult.status)|The  **succeeded** or **failed** status of the asynchronous call.|
+|[value](https://dev.office.com/reference/add-ins/shared/asyncresult.value)|Contains the following properties:<br/><br/><div>* **viewName** - The name of the view, as a [ProjectViewTypes](https://dev.office.com/reference/add-ins/shared/projectviewtypes-enumeration) constant.<br/>* **viewType** - The type of view, as the integer value of a [ProjectViewTypes](https://dev.office.com/reference/add-ins/shared/projectviewtypes-enumeration) constant.</div>|
 
 ## Example
 
-The following code example calls adds a [ViewSelectionChanged](/reference/shared/projectdocument.viewselectionchanged.event.md) event handler that calls **getSelectedViewAsync** to get the name and type of the active view in the document.
+The following code example calls adds a [ViewSelectionChanged](https://dev.office.com/reference/add-ins/shared/projectdocument.viewselectionchanged.event) event handler that calls **getSelectedViewAsync** to get the name and type of the active view in the document.
 
 The example assumes your add-in has a reference to the jQuery library and that the following page control is defined in the content div in the page body.
 
@@ -135,7 +135,7 @@ For more information about Office host application and server requirements, see 
 #### Other resources
 
 
-[ProjectViewTypes enumeration](/reference/shared/projectviewtypes-enumeration.md)
-[AsyncResult object](/reference/shared/asyncresult.md)
-[ViewSelectionChanged event](/reference/shared/projectdocument.viewselectionchanged.event.md)
-[ProjectDocument object](/reference/shared/projectdocument.projectdocument.md)
+[ProjectViewTypes enumeration](https://dev.office.com/reference/add-ins/shared/projectviewtypes-enumeration)
+[AsyncResult object](https://dev.office.com/reference/add-ins/shared/asyncresult)
+[ViewSelectionChanged event](https://dev.office.com/reference/add-ins/shared/projectdocument.viewselectionchanged.event)
+[ProjectDocument object](https://dev.office.com/reference/add-ins/shared/projectdocument.projectdocument)

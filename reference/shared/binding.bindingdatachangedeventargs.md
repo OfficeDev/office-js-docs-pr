@@ -1,6 +1,6 @@
 
 # BindingDataChangedEventArgs object
-Provides information about the binding that raised the [DataChanged](/reference/shared/binding.bindingdatachangedevent.md) event.
+Provides information about the binding that raised the [DataChanged](https://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) event.
 
 |||
 |:-----|:-----|
@@ -20,8 +20,8 @@ Office.EventType.BindingDataChanged
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[binding](/reference/shared/binding.bindingdatachangedeventargs.binding.md)|Gets a [Binding](/reference/shared/binding.md) object that represents the binding that raised the **DataChanged** event.|
-|[type](/reference/shared/binding.bindingdatachangedeventargs.type.md)|Gets an [EventType](/reference/shared/eventtype-enumeration.md) enumeration value that identifies the kind of event that was raised.|
+|[binding](https://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedeventargs.binding)|Gets a [Binding](https://dev.office.com/reference/add-ins/shared/binding) object that represents the binding that raised the **DataChanged** event.|
+|[type](https://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedeventargs.type)|Gets an [EventType](https://dev.office.com/reference/add-ins/shared/eventtype-enumeration) enumeration value that identifies the kind of event that was raised.|
 
 ## Support details
 

@@ -25,9 +25,9 @@ Office.context.document.getSelectedTaskAsync([options,] [callback]);
 
 ## Callback Value
 
-When the  _callback_ function executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the parameter in the callback function.
+When the  _callback_ function executes, it receives an [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object that you can access from the parameter in the callback function.
 
-For the  **getSelectedTaskAsync** method, the returned [AsyncResult](/reference/shared/asyncresult.md) object contains the following properties.
+For the  **getSelectedTaskAsync** method, the returned [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object contains the following properties.
 
 
 ****
@@ -35,21 +35,21 @@ For the  **getSelectedTaskAsync** method, the returned [AsyncResult](/reference/
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[asyncContext](/reference/shared/asyncresult.asynccontext.md)|The data passed in the optional  _asyncContext_ parameter, if the parameter was used.|
-|[error](/reference/shared/asyncresult.error.md)|Information about the error, if the  **status** property equals **failed**.|
-|[status](/reference/shared/asyncresult.status.md)|The  **succeeded** or **failed** status of the asynchronous call.|
-|[value](/reference/shared/asyncresult.value.md)|The GUID of the selected task as a  **string**.|
+|[asyncContext](https://dev.office.com/reference/add-ins/shared/asyncresult.asynccontext)|The data passed in the optional  _asyncContext_ parameter, if the parameter was used.|
+|[error](https://dev.office.com/reference/add-ins/shared/asyncresult.error)|Information about the error, if the  **status** property equals **failed**.|
+|[status](https://dev.office.com/reference/add-ins/shared/asyncresult.status)|The  **succeeded** or **failed** status of the asynchronous call.|
+|[value](https://dev.office.com/reference/add-ins/shared/asyncresult.value)|The GUID of the selected task as a  **string**.|
 
 ## Remarks
 
-The GUID of a task is more useful in Project add-ins than the task ID number (for example, the ID of the first task in the Gantt Chart is  **1**). The task GUID can be used to access Project task information, such as tasks in a SharePoint project that is synchronized with Project Server in Visibility mode. You can also save the task GUID in a local variable and use it for the [getTaskAsync](/reference/shared/projectdocument.gettaskasync.md) and [getTaskFieldAsync](/reference/shared/projectdocument.gettaskfieldasync.md) methods.
+The GUID of a task is more useful in Project add-ins than the task ID number (for example, the ID of the first task in the Gantt Chart is  **1**). The task GUID can be used to access Project task information, such as tasks in a SharePoint project that is synchronized with Project Server in Visibility mode. You can also save the task GUID in a local variable and use it for the [getTaskAsync](https://dev.office.com/reference/add-ins/shared/projectdocument.gettaskasync) and [getTaskFieldAsync](https://dev.office.com/reference/add-ins/shared/projectdocument.gettaskfieldasync) methods.
 
-If the active view is not a task view (for example a Gantt Chart or Task Usage view), or if no task is selected in a task view,  **getSelectedTaskAsync** returns a 5001 error (Internal Error). See [addHandlerAsync method](/reference/shared/projectdocument.addhandlerasync.md) for an example that uses the [ViewSelectionChanged](/reference/shared/projectdocument.viewselectionchanged.event.md) event and the [getSelectedViewAsync](/reference/shared/projectdocument.getselectedviewasync.md) method to activate a button based on the active view type.
+If the active view is not a task view (for example a Gantt Chart or Task Usage view), or if no task is selected in a task view,  **getSelectedTaskAsync** returns a 5001 error (Internal Error). See [addHandlerAsync method](https://dev.office.com/reference/add-ins/shared/projectdocument.addhandlerasync) for an example that uses the [ViewSelectionChanged](https://dev.office.com/reference/add-ins/shared/projectdocument.viewselectionchanged.event) event and the [getSelectedViewAsync](https://dev.office.com/reference/add-ins/shared/projectdocument.getselectedviewasync) method to activate a button based on the active view type.
 
 
 ## Example
 
-The following code example calls  **getSelectedTaskAsync** to get the GUID of the task that's currently selected in a task view. Then it gets task properties by calling [getTaskAsync](/reference/shared/projectdocument.gettaskasync.md).
+The following code example calls  **getSelectedTaskAsync** to get the GUID of the task that's currently selected in a task view. Then it gets task properties by calling [getTaskAsync](https://dev.office.com/reference/add-ins/shared/projectdocument.gettaskasync).
 
 The example assumes your add-in has a reference to the jQuery library and that the following page controls are defined in the content div in the page body.
 
@@ -170,8 +170,8 @@ For more information about Office host application and server requirements, see 
 #### Other resources
 
 
-[getTaskAsync method](/reference/shared/projectdocument.gettaskasync.md)
+[getTaskAsync method](https://dev.office.com/reference/add-ins/shared/projectdocument.gettaskasync)
 
-[AsyncResult object](/reference/shared/asyncresult.md)
+[AsyncResult object](https://dev.office.com/reference/add-ins/shared/asyncresult)
 
-[ProjectDocument object](/reference/shared/projectdocument.projectdocument.md)
+[ProjectDocument object](https://dev.office.com/reference/add-ins/shared/projectdocument.projectdocument)

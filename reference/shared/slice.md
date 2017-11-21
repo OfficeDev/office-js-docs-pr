@@ -21,13 +21,13 @@ slice
 
 |**Name**|**Description**|
 |:-----|:-----|
-|**[data](/reference/shared/slice.data.md)**|Gets the raw data of the file slice.|
-|**[index](/reference/shared/slice.index.md)**|Gets the index of the file slice.|
-|**[size](/reference/shared/slice.size.md)**|Gets the size of the slice in bytes.|
+|**[data](https://dev.office.com/reference/add-ins/shared/slice.data)**|Gets the raw data of the file slice.|
+|**[index](https://dev.office.com/reference/add-ins/shared/slice.index)**|Gets the index of the file slice.|
+|**[size](https://dev.office.com/reference/add-ins/shared/slice.size)**|Gets the size of the slice in bytes.|
 
 ## Remarks
 
-The  **Slice** object is accessed with the [File.getSliceAsync](/reference/shared/file.getsliceasync.md) method.
+The  **Slice** object is accessed with the [File.getSliceAsync](https://dev.office.com/reference/add-ins/shared/file.getsliceasync) method.
 
 
 ## Support details

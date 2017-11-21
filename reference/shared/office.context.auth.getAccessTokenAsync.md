@@ -66,7 +66,7 @@ The following actions are available during authentication.
 |**asyncContext**|any|Optional. A user-defined item of any type that is returned in the AsyncResult object without being altered.|
 
 ### callback method
-When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
+When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object that you can access from the callback function's only parameter.
 
 In the callback function passed to the  **getAccessTokenAsync** method, you can use the properties of the **AsyncResult** object to access the access token.
 

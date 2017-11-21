@@ -20,15 +20,15 @@ Office.context.document.addHandlerAsync(eventType, handler  [, options], callbac
 
 |**Name**|**Type**|**Description**|**Support notes**|
 |:-----|:-----|:-----|:-----|
-| _eventType_|[EventType](/reference/shared/eventtype-enumeration.md)|For a  **Document** object event, the _eventType_ parameter can be specified as **Office.EventType.DocumentSelectionChanged**, or the corresponding text value of this enumeration.||
-| _handler_|**object**|The event handler function to add, whose only parameter is of type [DocumentSelectionChangedEventArgs](/reference/shared/document.selectionchangedeventargs.md). Required.||
+| _eventType_|[EventType](https://dev.office.com/reference/add-ins/shared/eventtype-enumeration)|For a  **Document** object event, the _eventType_ parameter can be specified as **Office.EventType.DocumentSelectionChanged**, or the corresponding text value of this enumeration.||
+| _handler_|**object**|The event handler function to add, whose only parameter is of type [DocumentSelectionChangedEventArgs](https://dev.office.com/reference/add-ins/shared/document.selectionchangedeventargs). Required.||
 | _options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods):||
 | _asyncContext_|**array**,  **boolean**,  **null**,  **number**,  **object**, **string**, or  **undefined**|A user-defined item of any type that is returned in the  **AsyncResult** object without being altered.||
 | _callback_|**object**|A function that is invoked when the callback returns, whose only parameter is of type  **AsyncResult**.||
 
 ## Callback Value
 
-When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
+When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object that you can access from the callback function's only parameter.
 
 In the callback function passed to the  **addHandlerAsync** method, you can use the properties of the **AsyncResult** object to return the following information.
 
@@ -36,10 +36,10 @@ In the callback function passed to the  **addHandlerAsync** method, you can use 
 
 |**Property**|**Use to...**|
 |:-----|:-----|
-|[AsyncResult.value](/reference/shared/asyncresult.value.md)|Always returns  **undefined** because there is no data or object to retrieve when adding an event handler.|
-|[AsyncResult.status](/reference/shared/asyncresult.status.md)|Determine the success or failure of the operation.|
-|[AsyncResult.error](/reference/shared/asyncresult.error.md)|Access an [Error](/reference/shared/error.md) object that provides error information if the operation failed.|
-|[AsyncResult.asyncContext](/reference/shared/asyncresult.asynccontext.md)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
+|[AsyncResult.value](https://dev.office.com/reference/add-ins/shared/asyncresult.value)|Always returns  **undefined** because there is no data or object to retrieve when adding an event handler.|
+|[AsyncResult.status](https://dev.office.com/reference/add-ins/shared/asyncresult.status)|Determine the success or failure of the operation.|
+|[AsyncResult.error](https://dev.office.com/reference/add-ins/shared/asyncresult.error)|Access an [Error](https://dev.office.com/reference/add-ins/shared/error) object that provides error information if the operation failed.|
+|[AsyncResult.asyncContext](https://dev.office.com/reference/add-ins/shared/asyncresult.asynccontext)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
 
 ## Remarks
 

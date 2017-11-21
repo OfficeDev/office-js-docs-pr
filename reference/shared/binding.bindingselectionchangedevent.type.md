@@ -14,7 +14,7 @@ var myEvent = eventArgsObj.type;
 
 ## Return Value
 
-The [EventType](/reference/shared/eventtype-enumeration.md) of the event that was raised.
+The [EventType](https://dev.office.com/reference/add-ins/shared/eventtype-enumeration) of the event that was raised.
 
 
 ## Support details

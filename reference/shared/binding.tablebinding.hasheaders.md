@@ -15,7 +15,7 @@ var colCount = bindingObj.hasHeaders;
 
 ## Return Value
 
-If the specified [TableBinding](/reference/shared/binding.tablebinding.md) has headers, returns **true**; otherwise **false**.
+If the specified [TableBinding](https://dev.office.com/reference/add-ins/shared/binding.tablebinding) has headers, returns **true**; otherwise **false**.
 
 
 ## Example

@@ -14,7 +14,7 @@ var myStatus = asyncResult.status;
 
 ## Return Value
 
-An  **[AsyncResultStatus](/reference/shared/asyncresultstatus-enumeration.md)** value.
+An  **[AsyncResultStatus](https://dev.office.com/reference/add-ins/shared/asyncresultstatus-enumeration)** value.
 
 
 ## Example

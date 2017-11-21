@@ -1,6 +1,6 @@
 
 # DocumentSelectionChangedEventArgs object
-Provides information about the document that raised the [SelectionChanged](/reference/shared/document.selectionchanged.event.md) event.
+Provides information about the document that raised the [SelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) event.
 
 |||
 |:-----|:-----|
@@ -20,8 +20,8 @@ Provides information about the document that raised the [SelectionChanged](/refe
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[document](/reference/shared/document.selectionchangedeventargs.document.md)|Gets a  **Document** object that represents the document that raised the **SelectionChanged** event.|
-|[type](/reference/shared/document.selectionchangedeventargs.type.md)|Get an  **EventType** enumeration value that identifies the kind of event that was raised.|
+|[document](https://dev.office.com/reference/add-ins/shared/document.selectionchangedeventargs.document)|Gets a  **Document** object that represents the document that raised the **SelectionChanged** event.|
+|[type](https://dev.office.com/reference/add-ins/shared/document.selectionchangedeventargs.type)|Get an  **EventType** enumeration value that identifies the kind of event that was raised.|
 
 ## Support details
 

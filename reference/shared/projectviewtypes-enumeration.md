@@ -1,6 +1,6 @@
 
 # ProjectViewTypes enumeration
-Specifies the types of views that the  **[getSelectedViewAsync](/reference/shared/projectdocument.getselectedviewasync.md)** method can recognize.
+Specifies the types of views that the  **[getSelectedViewAsync](https://dev.office.com/reference/add-ins/shared/projectdocument.getselectedviewasync)** method can recognize.
 
 |||
 |:-----|:-----|
@@ -57,7 +57,7 @@ ProjectViewTypes={
 
 ## Remarks
 
-The  **[getSelectedViewAsync](/reference/shared/projectdocument.getselectedviewasync.md)** method returns the **ProjectViewTypes** constant value and name that corresponds to the active view.
+The  **[getSelectedViewAsync](https://dev.office.com/reference/add-ins/shared/projectdocument.getselectedviewasync)** method returns the **ProjectViewTypes** constant value and name that corresponds to the active view.
 
 
 ## Support details
@@ -99,4 +99,4 @@ For more information about Office host application and server requirements, see 
 #### Other resources
 
 
-[getSelectedViewAsync method](/reference/shared/projectdocument.getselectedviewasync.md)
+[getSelectedViewAsync method](https://dev.office.com/reference/add-ins/shared/projectdocument.getselectedviewasync)

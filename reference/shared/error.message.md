@@ -19,7 +19,7 @@ The description of the error as a  **string**.
 
 ## Remarks
 
-The  **Error** object and its properties are accessed from the [AsyncResult](/reference/shared/asyncresult.md) object that is returned in the function passed as the _callback_ argument of an asynchronous data operation.
+The  **Error** object and its properties are accessed from the [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object that is returned in the function passed as the _callback_ argument of an asynchronous data operation.
 
 
 ## Example

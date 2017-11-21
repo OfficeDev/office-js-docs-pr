@@ -27,11 +27,11 @@ _options_<br/>
     
 &nbsp;&nbsp;&nbsp;&nbsp;_asyncContext_<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Type: **array, boolean, null, number, object, string, or undefined**<br/><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A user-defined item of any type that is returned in the [AsyncResult](/reference/shared/asyncresult.md) object without being altered. Optional.<br/><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A user-defined item of any type that is returned in the [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object without being altered. Optional.<br/><br/>
 
 _callback_<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Type:  **object**
     
-&nbsp;&nbsp;&nbsp;&nbsp;A function that is invoked when the callback returns, whose only parameter is of type [AsyncResult](/reference/shared/asyncresult.md). Optional.
+&nbsp;&nbsp;&nbsp;&nbsp;A function that is invoked when the callback returns, whose only parameter is of type [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult). Optional.
 
 
 
@@ -44,7 +44,7 @@ _callback_<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Type:  **object*
 
 ## Callback Value
 
-When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
+When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object that you can access from the callback function's only parameter.
 
 In the callback function passed to the  **addRowsAsync** method, you can use the properties of the **AsyncResult** object to return the following information.
 
@@ -52,10 +52,10 @@ In the callback function passed to the  **addRowsAsync** method, you can use the
 
 |**Property**|**Use to...**|
 |:-----|:-----|
-|[AsyncResult.value](/reference/shared/asyncresult.value.md)|Always returns  **undefined** because there is no object or data to retrieve.|
-|[AsyncResult.status](/reference/shared/asyncresult.status.md)|Determine the success or failure of the operation.|
-|[AsyncResult.error](/reference/shared/asyncresult.error.md)|Access an [Error](/reference/shared/error.md) object that provides error information if the operation failed.|
-|[AsyncResult.asyncContext](/reference/shared/asyncresult.asynccontext.md)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
+|[AsyncResult.value](https://dev.office.com/reference/add-ins/shared/asyncresult.value)|Always returns  **undefined** because there is no object or data to retrieve.|
+|[AsyncResult.status](https://dev.office.com/reference/add-ins/shared/asyncresult.status)|Determine the success or failure of the operation.|
+|[AsyncResult.error](https://dev.office.com/reference/add-ins/shared/asyncresult.error)|Access an [Error](https://dev.office.com/reference/add-ins/shared/error) object that provides error information if the operation failed.|
+|[AsyncResult.asyncContext](https://dev.office.com/reference/add-ins/shared/asyncresult.asynccontext)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
 
 ## Remarks
 

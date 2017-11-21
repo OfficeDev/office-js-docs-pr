@@ -11,7 +11,7 @@ The following table lists the error codes, names, and messages displayed, and th
 
 
 
-|**[Error.code](../reference/shared/error.code.md)**|**[Error.name](../reference/shared/error.name.md)**|**[Error.message](../reference/shared/error.message.md)**|**Condition**|
+|**[Error.code](..https://dev.office.com/reference/add-ins/shared/error.code)**|**[Error.name](..https://dev.office.com/reference/add-ins/shared/error.name)**|**[Error.message](..https://dev.office.com/reference/add-ins/shared/error.message)**|**Condition**|
 |:-----|:-----|:-----|:-----|
 |1000|Invalid Coercion Type|The specified coercion type is not supported|The coercion type is not supported in the host application. (For example, OOXML and HTML coercion types are not supported in Excel.)|
 |1001|Data Read Error|The current selection is not supported.|The user's current selection is not supported. (That is, it is something different than the supported coercion types.)|

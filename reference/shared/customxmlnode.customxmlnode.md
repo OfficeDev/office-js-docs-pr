@@ -21,22 +21,22 @@ CustomXmlNode
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[baseName](/reference/shared/customxmlnode.basename.md)|Gets the base name of the node without the namespace prefix, if one exists.|
-|[nodeType](/reference/shared/customxmlnode.nodetype.md)|Gets the type of the  **CustomXMLNode**.|
-|[namespaceUri](/reference/shared/customxmlnode.namespaceuri.md)|Retrieves the string GUID of the  **CustomXMLPart**.|
+|[baseName](https://dev.office.com/reference/add-ins/shared/customxmlnode.basename)|Gets the base name of the node without the namespace prefix, if one exists.|
+|[nodeType](https://dev.office.com/reference/add-ins/shared/customxmlnode.nodetype)|Gets the type of the  **CustomXMLNode**.|
+|[namespaceUri](https://dev.office.com/reference/add-ins/shared/customxmlnode.namespaceuri)|Retrieves the string GUID of the  **CustomXMLPart**.|
 
 **Methods**
 
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[getNodesAsync](/reference/shared/customxmlnode.getnodesasync.md)|Asynchronously gets the nodes as an array of  **CustomXMLNode** objects matching the relative XPath expression.|
-|[getNodeValueAsync](/reference/shared/customxmlnode.getnodevalueasync.md)|Asynchronously gets the value of the node.|
+|[getNodesAsync](https://dev.office.com/reference/add-ins/shared/customxmlnode.getnodesasync)|Asynchronously gets the nodes as an array of  **CustomXMLNode** objects matching the relative XPath expression.|
+|[getNodeValueAsync](https://dev.office.com/reference/add-ins/shared/customxmlnode.getnodevalueasync)|Asynchronously gets the value of the node.|
 |[getTextAsync](customxmlnode.gettextasync.md)|Asynchronously gets the text of an XML node in a custom XML part.|
-|[getXmlAsync](/reference/shared/customxmlnode.getxmlasync.md)|Asynchronously gets the XML of the node.|
-|[setNodeValueAsync](/reference/shared/customxmlnode.setnodevalueasync.md)|Asynchronously sets the value of the node.|
+|[getXmlAsync](https://dev.office.com/reference/add-ins/shared/customxmlnode.getxmlasync)|Asynchronously gets the XML of the node.|
+|[setNodeValueAsync](https://dev.office.com/reference/add-ins/shared/customxmlnode.setnodevalueasync)|Asynchronously sets the value of the node.|
 |[setTextAsync](customxmlnode.settextasync.md)|Asynchronously sets the text of an XML node in a custom XML part.|
-|[setXmlAsync](/reference/shared/customxmlnode.setxmlasync.md)|Asynchronously sets the XML of the node.|
+|[setXmlAsync](https://dev.office.com/reference/add-ins/shared/customxmlnode.setxmlasync)|Asynchronously sets the XML of the node.|
 
 ## Support details
 

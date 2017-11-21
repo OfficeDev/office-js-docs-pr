@@ -1,6 +1,6 @@
 
 # NodeDeletedEventArgs object
-Provides information about the deleted node that raised the [dataNodeDeleted](/reference/shared/customxmlpart.datanodedeleted.event.md) event.
+Provides information about the deleted node that raised the [dataNodeDeleted](https://dev.office.com/reference/add-ins/shared/customxmlpart.datanodedeleted.event) event.
 
 |||
 |:-----|:-----|
@@ -21,9 +21,9 @@ NodeDeletedEventArgs
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[isUndoRedo](/reference/shared/customxmlpart.isundoredo.md)|Gets whether the node was deleted as part of an Undo/Redo action by the user.|
-|[oldNextSibling](/reference/shared/customxmlpart.oldnextsibling.md)|Gets the former next sibling of the node that was just deleted from the  **CustomXMLPart** object.|
-|[oldNode](/reference/shared/customxmlpart.oldnode.md)|Gets the node which was just deleted from the  **CustomXmlPart** object.|
+|[isUndoRedo](https://dev.office.com/reference/add-ins/shared/customxmlpart.isundoredo)|Gets whether the node was deleted as part of an Undo/Redo action by the user.|
+|[oldNextSibling](https://dev.office.com/reference/add-ins/shared/customxmlpart.oldnextsibling)|Gets the former next sibling of the node that was just deleted from the  **CustomXMLPart** object.|
+|[oldNode](https://dev.office.com/reference/add-ins/shared/customxmlpart.oldnode)|Gets the node which was just deleted from the  **CustomXmlPart** object.|
 
 ## Support details
 

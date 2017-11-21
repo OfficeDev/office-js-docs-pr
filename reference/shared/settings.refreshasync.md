@@ -27,7 +27,7 @@ _callback_<br/>
 
 ## Callback Value
 
-When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
+When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object that you can access from the callback function's only parameter.
 
 In the callback function passed to the  **refreshAsync** method, you can use the properties of the **AsyncResult** object to return the following information.
 
@@ -35,14 +35,14 @@ In the callback function passed to the  **refreshAsync** method, you can use the
 
 |**Property**|**Use to...**|
 |:-----|:-----|
-|[AsyncResult.value](/reference/shared/asyncresult.value.md)|Access a [Settings](/reference/shared/settings.md) object with the refreshed values.|
-|[AsyncResult.status](/reference/shared/asyncresult.status.md)|Determine the success or failure of the operation.|
-|[AsyncResult.error](/reference/shared/asyncresult.error.md)|Access an [Error](/reference/shared/error.md) object that provides error information if the operation failed.|
-|[AsyncResult.asyncContext](/reference/shared/asyncresult.asynccontext.md)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
+|[AsyncResult.value](https://dev.office.com/reference/add-ins/shared/asyncresult.value)|Access a [Settings](https://dev.office.com/reference/add-ins/shared/settings) object with the refreshed values.|
+|[AsyncResult.status](https://dev.office.com/reference/add-ins/shared/asyncresult.status)|Determine the success or failure of the operation.|
+|[AsyncResult.error](https://dev.office.com/reference/add-ins/shared/asyncresult.error)|Access an [Error](https://dev.office.com/reference/add-ins/shared/error) object that provides error information if the operation failed.|
+|[AsyncResult.asyncContext](https://dev.office.com/reference/add-ins/shared/asyncresult.asynccontext)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
 
 ## Remarks
 
-This method is useful in Word and PowerPoint coauthoring scenarios when multiple instances of the same add-in are working against the same document. Because each add-in is working against an in-memory copy of the settings loaded from the document at the time the user opened it, the settings values used by each user can get out of sync. This can happen whenever an instance of the add-in calls the [Settings.saveAsync](/reference/shared/settings.saveasync.md) method to persist all of that user's settings to the document. Calling the **refreshAsync** method from the event handler for the [settingsChanged](/reference/shared/settings.settingschangedevent.md) event of the add-in will refresh the settings values for all users.
+This method is useful in Word and PowerPoint coauthoring scenarios when multiple instances of the same add-in are working against the same document. Because each add-in is working against an in-memory copy of the settings loaded from the document at the time the user opened it, the settings values used by each user can get out of sync. This can happen whenever an instance of the add-in calls the [Settings.saveAsync](https://dev.office.com/reference/add-ins/shared/settings.saveasync) method to persist all of that user's settings to the document. Calling the **refreshAsync** method from the event handler for the [settingsChanged](https://dev.office.com/reference/add-ins/shared/settings.settingschangedevent) event of the add-in will refresh the settings values for all users.
 
 The  **refreshAsync** method can be called from add-ins created for Excel, but since it doesn't support coauthoring there is no reason to do so.
 

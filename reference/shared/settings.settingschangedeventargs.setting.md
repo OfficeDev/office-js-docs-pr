@@ -16,7 +16,7 @@ var mySettings = eventArgsObj.settings;
 
 ## Return Value
 
-A [Settings](/reference/shared/document.settings.md) object that represents the settings that raised the [settingsChanged](/reference/shared/settings.settingschangedevent.md) event.
+A [Settings](https://dev.office.com/reference/add-ins/shared/document.settings) object that represents the settings that raised the [settingsChanged](https://dev.office.com/reference/add-ins/shared/settings.settingschangedevent) event.
 
 
 ## Support details

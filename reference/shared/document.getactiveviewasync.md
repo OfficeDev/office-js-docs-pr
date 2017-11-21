@@ -25,9 +25,9 @@ Office.context.document.getActiveViewAsync([,options], callback);
 
 ## Callback Value
 
-When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
+When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object that you can access from the callback function's only parameter.
 
-In the callback function passed to the  **getActiveViewAsync** method, the [AsyncResult.value](/reference/shared/asyncresult.value.md) property returns the state of the presentation's current view. The value returned can be either `edit` or `read`.  `edit` corresponds to any of the views in which you can edit slides, such as **Normal** or **Outline View**.  `read` corresponds to either **Slide Show** or **Reading View**.
+In the callback function passed to the  **getActiveViewAsync** method, the [AsyncResult.value](https://dev.office.com/reference/add-ins/shared/asyncresult.value) property returns the state of the presentation's current view. The value returned can be either `edit` or `read`.  `edit` corresponds to any of the views in which you can edit slides, such as **Normal** or **Outline View**.  `read` corresponds to either **Slide Show** or **Reading View**.
 
 
 ## Remarks

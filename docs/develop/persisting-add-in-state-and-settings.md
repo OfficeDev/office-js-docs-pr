@@ -61,14 +61,14 @@ After the settings property bag is saved during the previous add-in session, it 
 
 To persist state or custom settings of a content or task pane add-in for Word, Excel, or PowerPoint, you use the [Settings](https://dev.office.com/reference/add-ins/shared/settings) object and its methods. The property bag created with the methods of the **Settings** object are available only to the instance of the content or task pane add-in that created it, and only from the document in which it is saved.
 
-The  **Settings** object is automatically loaded as part of the [Document](https://dev.office.com/reference/add-ins/shared/document) object, and is available when the task pane or content add-in is activated. After the **Document** object is instantiated, you can access the **Settings** object with the [settings](/reference/shared/document.settings.md) property of the **Document** object. During the lifetime of the session, you can just use the **Settings.get**,  **Settings.set**, and  **Settings.remove** methods to read, write, or remove persisted settings and add-in state from the in-memory copy of the property bag.
+The  **Settings** object is automatically loaded as part of the [Document](https://dev.office.com/reference/add-ins/shared/document) object, and is available when the task pane or content add-in is activated. After the **Document** object is instantiated, you can access the **Settings** object with the [settings](https://dev.office.com/reference/add-ins/shared/document.settings) property of the **Document** object. During the lifetime of the session, you can just use the **Settings.get**,  **Settings.set**, and  **Settings.remove** methods to read, write, or remove persisted settings and add-in state from the in-memory copy of the property bag.
 
-Because the set and remove methods operate against only the in-memory copy of the settings property bag, to save new or changed settings back to the document the add-in is associated with you must call the [Settings.saveAsync](/reference/shared/settings.saveasync.md) method.
+Because the set and remove methods operate against only the in-memory copy of the settings property bag, to save new or changed settings back to the document the add-in is associated with you must call the [Settings.saveAsync](https://dev.office.com/reference/add-ins/shared/settings.saveasync) method.
 
 
 ### Creating or updating a setting value
 
-The following code example shows how to use the [Settings.set](/reference/shared/settings.set.md) method to create a setting called `'themeColor'` with a value `'green'`. The first parameter of the set method is the case-sensitive  _name_ (Id) of the setting to set or create. The second parameter is the _value_ of the setting.
+The following code example shows how to use the [Settings.set](https://dev.office.com/reference/add-ins/shared/settings.set) method to create a setting called `'themeColor'` with a value `'green'`. The first parameter of the set method is the case-sensitive  _name_ (Id) of the setting to set or create. The second parameter is the _value_ of the setting.
 
 
 ```
@@ -80,7 +80,7 @@ Office.context.document.settings.set('themeColor', 'green');
 
 ### Getting the value of a setting
 
-The following example shows how use the [Settings.get](/reference/shared/settings.get.md) method to get the value of a setting called "themeColor". The only parameter of the **get** method is the case-sensitive _name_ of the setting.
+The following example shows how use the [Settings.get](https://dev.office.com/reference/add-ins/shared/settings.get) method to get the value of a setting called "themeColor". The only parameter of the **get** method is the case-sensitive _name_ of the setting.
 
 
 ```js
@@ -97,7 +97,7 @@ function write(message){
 
 ### Removing a setting
 
-The following example shows how to use the [Settings.remove](/reference/shared/settings.removehandlerasync.md) method to remove a setting with the name "themeColor". The only parameter of the **remove** method is the case-sensitive _name_ of the setting.
+The following example shows how to use the [Settings.remove](https://dev.office.com/reference/add-ins/shared/settings.removehandlerasync) method to remove a setting with the name "themeColor". The only parameter of the **remove** method is the case-sensitive _name_ of the setting.
 
 
 ```
@@ -109,7 +109,7 @@ Nothing will happen if the setting does not exist. Use the  **Settings.saveAsync
 
 ### Saving your settings
 
-To save any additions, changes, or deletions your add-in made to the in-memory copy of the settings property bag during the current session, you must call the [Settings.saveAsync](/reference/shared/settings.saveasync.md) method to store them in the document. The only parameter of the **saveAsync** method is _callback_, which is a callback function with a single parameter. 
+To save any additions, changes, or deletions your add-in made to the in-memory copy of the settings property bag during the current session, you must call the [Settings.saveAsync](https://dev.office.com/reference/add-ins/shared/settings.saveasync) method to store them in the document. The only parameter of the **saveAsync** method is _callback_, which is a callback function with a single parameter. 
 
 
 ```js
@@ -138,7 +138,7 @@ An Outlook add-in can use the [RoamingSettings](https://dev.office.com/reference
 ### Loading roaming settings
 
 
-An Outlook add-in typically loads roaming settings in the [Office.initialize](/reference/shared/office.initialize.md) event handler. The following JavaScript code example shows how to load existing roaming settings.
+An Outlook add-in typically loads roaming settings in the [Office.initialize](https://dev.office.com/reference/add-ins/shared/office.initialize) event handler. The following JavaScript code example shows how to load existing roaming settings.
 
 
 ```

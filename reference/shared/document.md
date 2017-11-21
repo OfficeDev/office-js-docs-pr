@@ -21,33 +21,33 @@ Office.context.document
 
 |**Name**|**Description**|**Support notes**|
 |:-----|:-----|:-----|
-|[bindings](/reference/shared/document.bindings.md)|Gets an object that provides access to the bindings defined in the document.|In 1.1, added support for content add-ins for Access.|
-|[customXmlParts](/reference/shared/document.customxmlparts.md)|Gets an object that represents the custom XML parts in the document.||
-|[mode](/reference/shared/document.mode.md)|Gets the mode the document is in.|In 1.1, added support for content add-ins for Access.|
-|[settings](/reference/shared/document.settings.md)|Gets an object that represents the saved custom settings of the content or task pane add-in for the current document.|In 1.1, added support for content add-ins for Access.|
-|[url](/reference/shared/document.url.md)|Gets the URL of the document that the host application currently has open.|In 1.1, added support for content add-ins for Access.|
+|[bindings](https://dev.office.com/reference/add-ins/shared/document.bindings)|Gets an object that provides access to the bindings defined in the document.|In 1.1, added support for content add-ins for Access.|
+|[customXmlParts](https://dev.office.com/reference/add-ins/shared/document.customxmlparts)|Gets an object that represents the custom XML parts in the document.||
+|[mode](https://dev.office.com/reference/add-ins/shared/document.mode)|Gets the mode the document is in.|In 1.1, added support for content add-ins for Access.|
+|[settings](https://dev.office.com/reference/add-ins/shared/document.settings)|Gets an object that represents the saved custom settings of the content or task pane add-in for the current document.|In 1.1, added support for content add-ins for Access.|
+|[url](https://dev.office.com/reference/add-ins/shared/document.url)|Gets the URL of the document that the host application currently has open.|In 1.1, added support for content add-ins for Access.|
 
 **Methods**
 
 
 |**Name**|**Description**|**Support notes**|
 |:-----|:-----|:-----|
-|[addHandlerAsync](/reference/shared/document.addhandlerasync.md)|Adds an event handler for a  **Document** object event.||
-|[getActiveViewAsync](/reference/shared/document.getactiveviewasync.md)|Returns the current view of the presentation.|In 1.1, added to support [add-ins for PowerPoint](../../docs/powerpoint/powerpoint-add-ins.md).|
-|[getFileAsync](/reference/shared/document.getfileasync.md)|Returns the entire document file in slices of up to 4194304 bytes (4MB).|In 1.1, added support getting file as PDF in add-ins for PowerPoint and Word.|
-|[getFilePropertiesAsync](/reference/shared/document.getfilepropertiesasync.md)|Gets file properties of the current document.In this release, can get only the URL of the document.|In 1.1, added to get the document's URL in add-ins for Excel, Word, and PowerPoint.|
-|[getSelectedDataAsync](/reference/shared/document.getselecteddataasync.md)|Reads the data contained in the current selection of the document.|In 1.1, added support for getting the id, title, and index for the selected range of slides in add-ins for PowerPoint.|
-|[goToByIdAsync](/reference/shared/document.gotobyidasync.md)|Goes to the specified object or location in the document.|In 1.1, added to support navigation within the document in add-ins for Excel and PowerPoint.|
-|[removeHandlerAsync](/reference/shared/document.removehandlerasync.md)|Removes an event handler for a  **Document** object event.||
-|[setSelectedDataAsync](/reference/shared/document.setselecteddataasync.md)|Writes data to the current selection in the document.|In 1.1, added support for [setting formatting on the selected table when writing data in add-ins for Excel](../../docs/excel/format-tables-in-add-ins-for-excel.md).|
+|[addHandlerAsync](https://dev.office.com/reference/add-ins/shared/document.addhandlerasync)|Adds an event handler for a  **Document** object event.||
+|[getActiveViewAsync](https://dev.office.com/reference/add-ins/shared/document.getactiveviewasync)|Returns the current view of the presentation.|In 1.1, added to support [add-ins for PowerPoint](../../docs/powerpoint/powerpoint-add-ins.md).|
+|[getFileAsync](https://dev.office.com/reference/add-ins/shared/document.getfileasync)|Returns the entire document file in slices of up to 4194304 bytes (4MB).|In 1.1, added support getting file as PDF in add-ins for PowerPoint and Word.|
+|[getFilePropertiesAsync](https://dev.office.com/reference/add-ins/shared/document.getfilepropertiesasync)|Gets file properties of the current document.In this release, can get only the URL of the document.|In 1.1, added to get the document's URL in add-ins for Excel, Word, and PowerPoint.|
+|[getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync)|Reads the data contained in the current selection of the document.|In 1.1, added support for getting the id, title, and index for the selected range of slides in add-ins for PowerPoint.|
+|[goToByIdAsync](https://dev.office.com/reference/add-ins/shared/document.gotobyidasync)|Goes to the specified object or location in the document.|In 1.1, added to support navigation within the document in add-ins for Excel and PowerPoint.|
+|[removeHandlerAsync](https://dev.office.com/reference/add-ins/shared/document.removehandlerasync)|Removes an event handler for a  **Document** object event.||
+|[setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync)|Writes data to the current selection in the document.|In 1.1, added support for [setting formatting on the selected table when writing data in add-ins for Excel](../../docs/excel/format-tables-in-add-ins-for-excel.md).|
 
 **Events**
 
 
 |**Name**|**Description**|**Support notes**||
 |:-----|:-----|:-----|:-----|
-|[ActiveViewChanged](/reference/shared/document.activeviewchanged.md)|Occurs when the user changes the current view of the document.|In 1.1, added to support add-ins for PowerPoint.||
-|[SelectionChanged](/reference/shared/document.selectionchanged.event.md)|Occurs when the selection in the document is changed.|||
+|[ActiveViewChanged](https://dev.office.com/reference/add-ins/shared/document.activeviewchanged)|Occurs when the user changes the current view of the document.|In 1.1, added to support add-ins for PowerPoint.||
+|[SelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event)|Occurs when the selection in the document is changed.|||
 
 ## Remarks
 

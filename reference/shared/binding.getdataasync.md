@@ -20,9 +20,9 @@ bindingObj.getDataAsync([, options] , callback );
 |**Name**|**Type**|**Description**|**Support notes**|
 |:-----|:-----|:-----|:-----|
 | _options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)||
-| _coercionType_|**[CoercionType](/reference/shared/coerciontype-enumeration.md)**|Specifies how to coerce the data being set. ||
-| _valueFormat_|[ValueFormat](/reference/shared/valueformat-enumeration.md)|Specifies whether values, such as numbers and dates, are returned with their formatting applied.||
-| _filterType_|[FilterType](/reference/shared/filtertype-enumeration.md)|Specifies if a filter must be applied when the data is retrieved.||
+| _coercionType_|**[CoercionType](https://dev.office.com/reference/add-ins/shared/coerciontype-enumeration)**|Specifies how to coerce the data being set. ||
+| _valueFormat_|[ValueFormat](https://dev.office.com/reference/add-ins/shared/valueformat-enumeration)|Specifies whether values, such as numbers and dates, are returned with their formatting applied.||
+| _filterType_|[FilterType](https://dev.office.com/reference/add-ins/shared/filtertype-enumeration)|Specifies if a filter must be applied when the data is retrieved.||
 | _rows_|**Office.TableRange.ThisRow**| Specifies the pre-defined string "thisRow" to get data in the currently selected row.|Only for table bindings in content add-ins for Access.|
 | _startRow_|**number**|For table or matrix bindings, specifies the zero-based starting row for a subset of the data in the binding. ||
 | _startColumn_|**number**|For table or matrix bindings, specifies the zero-based starting column for a subset of the data in the binding. ||
@@ -33,7 +33,7 @@ bindingObj.getDataAsync([, options] , callback );
 
 ## Callback Value
 
-When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
+When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object that you can access from the callback function's only parameter.
 
 In the callback function passed to the  **Binding.getDataAsync** method, you can use the properties of the **AsyncResult** object to return the following information.
 
@@ -41,10 +41,10 @@ In the callback function passed to the  **Binding.getDataAsync** method, you can
 
 |**Property**|**Use to...**|
 |:-----|:-----|
-|[AsyncResult.value](/reference/shared/asyncresult.value.md)|Access the values in the specified binding.If the  _coercionType_ parameter is specified (and the call is successful), the data is returned in the format described in the [CoercionType](/reference/shared/coerciontype-enumeration.md) enumeration topic.|
-|[AsyncResult.status](/reference/shared/asyncresult.status.md)|Determine the success or failure of the operation.|
-|[AsyncResult.error](/reference/shared/asyncresult.error.md)|Access an [Error](/reference/shared/error.md) object that provides error information if the operation failed.|
-|[AsyncResult.asyncContext](/reference/shared/asyncresult.asynccontext.md)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
+|[AsyncResult.value](https://dev.office.com/reference/add-ins/shared/asyncresult.value)|Access the values in the specified binding.If the  _coercionType_ parameter is specified (and the call is successful), the data is returned in the format described in the [CoercionType](https://dev.office.com/reference/add-ins/shared/coerciontype-enumeration) enumeration topic.|
+|[AsyncResult.status](https://dev.office.com/reference/add-ins/shared/asyncresult.status)|Determine the success or failure of the operation.|
+|[AsyncResult.error](https://dev.office.com/reference/add-ins/shared/asyncresult.error)|Access an [Error](https://dev.office.com/reference/add-ins/shared/error) object that provides error information if the operation failed.|
+|[AsyncResult.asyncContext](https://dev.office.com/reference/add-ins/shared/asyncresult.asynccontext)|Access your user-defined  **object** or value, if you passed one as the _asyncContext_ parameter.|
 
 ## Remarks
 
@@ -61,7 +61,7 @@ If an optional parameter is omitted, the following default value is used (when a
 | _startColumn_|The first column.|
 | _rowCount_|All rows.|
 | _columnCount_|All columns.|
-When called from a [MatrixBinding](/reference/shared/binding.matrixbinding.md) or [TableBinding](/reference/shared/binding.tablebinding.md), the  **getDataAsync** method will return a subset of the bound values if the optional _startRow_,  _startColumn_,  _rowCount_, and  _columnCount_ parameters are specified (and they specify a contiguous and valid range).
+When called from a [MatrixBinding](https://dev.office.com/reference/add-ins/shared/binding.matrixbinding) or [TableBinding](https://dev.office.com/reference/add-ins/shared/binding.tablebinding), the  **getDataAsync** method will return a subset of the bound values if the optional _startRow_,  _startColumn_,  _rowCount_, and  _columnCount_ parameters are specified (and they specify a contiguous and valid range).
 
 
 ## Example
@@ -84,9 +84,9 @@ function write(message){
 
 
 
-There is an important difference in behavior between using the  `"table"` and `"matrix"` _coercionType_ with the **Binding.getDataAsync** method, with respect to data formatted with header rows, as shown in the following two examples. These code examples show event handler functions for the [Binding.SelectionChanged](/reference/shared/binding.bindingselectionchangedevent.md) event.
+There is an important difference in behavior between using the  `"table"` and `"matrix"` _coercionType_ with the **Binding.getDataAsync** method, with respect to data formatted with header rows, as shown in the following two examples. These code examples show event handler functions for the [Binding.SelectionChanged](https://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedevent) event.
 
-If you specify the  `"table"` _coercionType_, the [TableData.rows](/reference/shared/tabledata.rows.md) property ( `result.value.rows` in the following code example) returns an array that contains only the body rows of the table. So, its 0th row will be the first non-header row in the table.
+If you specify the  `"table"` _coercionType_, the [TableData.rows](https://dev.office.com/reference/add-ins/shared/tabledata.rows) property ( `result.value.rows` in the following code example) returns an array that contains only the body rows of the table. So, its 0th row will be the first non-header row in the table.
 
 
 

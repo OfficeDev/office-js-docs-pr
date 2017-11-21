@@ -14,7 +14,7 @@ var docMode = Office.context.document.mode;
 
 ## Return Value
 
-A [DocumentMode](/reference/shared/documentmode-enumeration.md).
+A [DocumentMode](https://dev.office.com/reference/add-ins/shared/documentmode-enumeration).
 
 
 ## Example

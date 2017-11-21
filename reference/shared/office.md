@@ -21,27 +21,27 @@ Office
 |||
 |:-----|:-----|
 |Name|Description|
-|[context](/reference/shared/office.context.md)|Gets the Context object that represents the runtime environment of the add-in and provides access to the top-level objects of the API.|
-|[cast.item](/reference/shared/office.cast.item.md)|Provides IntelliSense in Visual Studio specific to compose or read mode messages and appointments. <br/><br/><blockquote>**Note**  Only applicable at design time when developing Outlook add-ins in Visual Studio. </blockquote>|
+|[context](https://dev.office.com/reference/add-ins/shared/office.context)|Gets the Context object that represents the runtime environment of the add-in and provides access to the top-level objects of the API.|
+|[cast.item](https://dev.office.com/reference/add-ins/shared/office.cast.item)|Provides IntelliSense in Visual Studio specific to compose or read mode messages and appointments. <br/><br/><blockquote>**Note**  Only applicable at design time when developing Outlook add-ins in Visual Studio. </blockquote>|
 
 **Methods**
 
 |||
 |:-----|:-----|
 |Name|Description|
-|[select](/reference/shared/office.select.md)|Creates a promise to return a binding based on the selector string passed in.|
-|[useShortNamespace](/reference/shared/office.useshortnamespace.md)|Toggles on and off the  **Office** alias for the full **Microsoft.Office.WebExtension** namespace.|
+|[select](https://dev.office.com/reference/add-ins/shared/office.select)|Creates a promise to return a binding based on the selector string passed in.|
+|[useShortNamespace](https://dev.office.com/reference/add-ins/shared/office.useshortnamespace)|Toggles on and off the  **Office** alias for the full **Microsoft.Office.WebExtension** namespace.|
 
 **Events**
 
 |||
 |:-----|:-----|
 |Name|Description|
-|[initialize](/reference/shared/office.initialize.md)|Occurs when the runtime environment is loaded and the add-in is ready to start interacting with the application and hosted document.|
+|[initialize](https://dev.office.com/reference/add-ins/shared/office.initialize)|Occurs when the runtime environment is loaded and the add-in is ready to start interacting with the application and hosted document.|
 
 ## Remarks
 
-The  **Office** object enables the developer to implement a callback function for the Initialize event and provides access to the [Context](/reference/shared/context.md) object.
+The  **Office** object enables the developer to implement a callback function for the Initialize event and provides access to the [Context](https://dev.office.com/reference/add-ins/shared/context) object.
 
 
 ## Support details

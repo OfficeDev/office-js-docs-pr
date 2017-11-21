@@ -26,10 +26,10 @@ Office.context.officeTheme
 |||
 |:-----|:-----|
 |Name|Description|
-|[bodyBackgroundColor ](/reference/shared/office.context.bodybackgroundcolor.md)|Gets the Office theme body background color.|
-|[bodyForegroundColor](/reference/shared/office.context.bodyforegroundcolor.md)|Gets the Office theme body foreground color.|
-|[controlBackgroundColor](/reference/shared/office.context.controlbackgroundcolor.md)|Gets the Office theme control background color.|
-|[controlForegroundColor](/reference/shared/office.context.controlforegroundcolor.md)|Gets the Office theme control foreground color.|
+|[bodyBackgroundColor ](https://dev.office.com/reference/add-ins/shared/office.context.bodybackgroundcolor)|Gets the Office theme body background color.|
+|[bodyForegroundColor](https://dev.office.com/reference/add-ins/shared/office.context.bodyforegroundcolor)|Gets the Office theme body foreground color.|
+|[controlBackgroundColor](https://dev.office.com/reference/add-ins/shared/office.context.controlbackgroundcolor)|Gets the Office theme control background color.|
+|[controlForegroundColor](https://dev.office.com/reference/add-ins/shared/office.context.controlforegroundcolor)|Gets the Office theme control foreground color.|
 
 ## Remarks
 

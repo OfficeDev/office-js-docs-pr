@@ -21,12 +21,12 @@ The number of rows selected. If a single cell is selected returns 1.
 
 If the user makes a non-contiguous selection, the count for the last contiguous selection within the binding is returned. 
 
-For Word, this property will work only for bindings of [BindingType](/reference/shared/bindingtype-enumeration.md) "table". If the binding is of type "matrix", **null** is returned. Also, the call will fail if the table contains merged cells, because the structure of the table must be uniform for this property to work correctly.
+For Word, this property will work only for bindings of [BindingType](https://dev.office.com/reference/add-ins/shared/bindingtype-enumeration) "table". If the binding is of type "matrix", **null** is returned. Also, the call will fail if the table contains merged cells, because the structure of the table must be uniform for this property to work correctly.
 
 
 ## Example
 
-The following example adds an event handler for the [SelectionChanged](/reference/shared/binding.bindingselectionchangedevent.md) event to the binding with an [id](/reference/shared/binding.id.md) of `myTable`. When the user changes the selection, the handler displays the coordinates of the first cell in the selection, and the number of row and columns selected.
+The following example adds an event handler for the [SelectionChanged](https://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedevent) event to the binding with an [id](https://dev.office.com/reference/add-ins/shared/binding.id) of `myTable`. When the user changes the selection, the handler displays the coordinates of the first cell in the selection, and the number of row and columns selected.
 
 
 ```js

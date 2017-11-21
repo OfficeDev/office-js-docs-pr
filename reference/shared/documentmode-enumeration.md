@@ -25,7 +25,7 @@ Office.DocumentMode
 
 ## Remarks
 
-Returned by the  **mode** property of the [Document](/reference/shared/document.md) object.
+Returned by the  **mode** property of the [Document](https://dev.office.com/reference/add-ins/shared/document) object.
 
 
 ## Support details

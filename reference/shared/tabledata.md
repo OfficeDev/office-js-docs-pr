@@ -1,6 +1,6 @@
 
 # TableData object
-Represents the data in a table or a [TableBinding](/reference/shared/binding.tablebinding.md).
+Represents the data in a table or a [TableBinding](https://dev.office.com/reference/add-ins/shared/binding.tablebinding).
 
 |||
 |:-----|:-----|
@@ -20,8 +20,8 @@ TableData
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[headers](/reference/shared/tabledata.headers.md)|Gets or sets the headers in the table.|
-|[rows](/reference/shared/tabledata.rows.md)|Gets or sets the rows in the table.|
+|[headers](https://dev.office.com/reference/add-ins/shared/tabledata.headers)|Gets or sets the headers in the table.|
+|[rows](https://dev.office.com/reference/add-ins/shared/tabledata.rows)|Gets or sets the rows in the table.|
 
 ## Support details
 

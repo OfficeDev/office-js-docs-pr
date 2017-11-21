@@ -1,7 +1,7 @@
 
 
 # ProjectDocument.removeHandlerAsync method
-Asynchronously removes an event handler for the task selection changed event in a [ProjectDocument](/reference/shared/projectdocument.projectdocument.md) object.
+Asynchronously removes an event handler for the task selection changed event in a [ProjectDocument](https://dev.office.com/reference/add-ins/shared/projectdocument.projectdocument) object.
 
 |||
 |:-----|:-----|
@@ -17,14 +17,14 @@ Office.context.document.removeHandlerAsync(eventType[, options][, callback]);
 ## Parameters
 |**Name**|**Type**|**Description**|**Support notes**|
 |:-----|:-----|:-----|:-----|
-|_eventType_|[EventType](/reference/shared/eventtype-enumeration.md)|The type of event to remove, as an [EventType](/reference/shared/eventtype-enumeration.md) constant or its corresponding text value. Required. See [eventType value](#eventtype-value). ||
+|_eventType_|[EventType](https://dev.office.com/reference/add-ins/shared/eventtype-enumeration)|The type of event to remove, as an [EventType](https://dev.office.com/reference/add-ins/shared/eventtype-enumeration) constant or its corresponding text value. Required. See [eventType value](#eventtype-value). ||
 |_options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods).||
 |_asyncContext_|**array**, **boolean**, **null**, **number**, **object**, **string**, or **undefined**|A user-defined item of any type that is returned in the  **AsyncResult** object without being altered.||
 |_callback_|**object**|A function that is invoked when the callback returns, whose only parameter is of type **AsyncResult**.||
 
 ## eventType value
 
-The following table shows valid eventType arguments for a [ProjectDocument](/reference/shared/projectdocument.projectdocument.md) object.
+The following table shows valid eventType arguments for a [ProjectDocument](https://dev.office.com/reference/add-ins/shared/projectdocument.projectdocument) object.
 
 |**Enumeration**|**Text value**|
 |:-----|:-----|
@@ -35,20 +35,20 @@ The following table shows valid eventType arguments for a [ProjectDocument](/ref
 
 ## Callback value
 
-When the _callback_ function executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the parameter in the callback function.
+When the _callback_ function executes, it receives an [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object that you can access from the parameter in the callback function.
 
-For the  **removeHandlerAsync** method, the returned [AsyncResult](/reference/shared/asyncresult.md) object contains the following properties.
+For the  **removeHandlerAsync** method, the returned [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object contains the following properties.
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[asyncContext](/reference/shared/asyncresult.asynccontext.md)|The data passed in the optional  _asyncContext_ parameter, if the parameter was used.|
-|[error](/reference/shared/asyncresult.error.md)|Information about the error, if the  **status** property equals **failed**.|
-|[status](/reference/shared/asyncresult.status.md)|The  **succeeded** or **failed** status of the asynchronous call.|
-|[value](/reference/shared/asyncresult.value.md)|**removeHandlerAsync** always returns **undefined**.|
+|[asyncContext](https://dev.office.com/reference/add-ins/shared/asyncresult.asynccontext)|The data passed in the optional  _asyncContext_ parameter, if the parameter was used.|
+|[error](https://dev.office.com/reference/add-ins/shared/asyncresult.error)|Information about the error, if the  **status** property equals **failed**.|
+|[status](https://dev.office.com/reference/add-ins/shared/asyncresult.status)|The  **succeeded** or **failed** status of the asynchronous call.|
+|[value](https://dev.office.com/reference/add-ins/shared/asyncresult.value)|**removeHandlerAsync** always returns **undefined**.|
 
 ## Example
 
-The following code example uses [addHandlerAsync](/reference/shared/projectdocument.addhandlerasync.md) to add an event handler for the [ResourceSelectionChanged](/reference/shared/projectdocument.resourceselectionchanged.event.md) event and **removeHandlerAsync** to remove the handler.
+The following code example uses [addHandlerAsync](https://dev.office.com/reference/add-ins/shared/projectdocument.addhandlerasync) to add an event handler for the [ResourceSelectionChanged](https://dev.office.com/reference/add-ins/shared/projectdocument.resourceselectionchanged.event) event and **removeHandlerAsync** to remove the handler.
 
 When a resource is selected in a resource view, the handler displays the resource GUID. When the handler is removed, the GUID is not displayed.
 
@@ -144,9 +144,9 @@ For more information about Office host application and server requirements, see 
 
 ## See also
 
-- [addHandlerAsync method](/reference/shared/projectdocument.addhandlerasync.md)
+- [addHandlerAsync method](https://dev.office.com/reference/add-ins/shared/projectdocument.addhandlerasync)
 
-- [EventType enumeration](/reference/shared/eventtype-enumeration.md)
+- [EventType enumeration](https://dev.office.com/reference/add-ins/shared/eventtype-enumeration)
 
-- [ProjectDocument object](/reference/shared/projectdocument.projectdocument.md)
+- [ProjectDocument object](https://dev.office.com/reference/add-ins/shared/projectdocument.projectdocument)
 

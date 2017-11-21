@@ -21,20 +21,20 @@ file
 
 |**Name**|**Description**|
 |:-----|:-----|
-|**[size](/reference/shared/file.size.md)**|Gets the document file size in bytes.|
-|**[sliceCount](/reference/shared/file.slicecount.md)**|Gets the number of slices into which the file is divided.|
+|**[size](https://dev.office.com/reference/add-ins/shared/file.size)**|Gets the document file size in bytes.|
+|**[sliceCount](https://dev.office.com/reference/add-ins/shared/file.slicecount)**|Gets the number of slices into which the file is divided.|
 
 **Methods**
 
 
 |**Name**|**Description**|
 |:-----|:-----|
-|**[closeAsync](/reference/shared/file.closeasync.md)**|Closes the document file.|
-|**[getSliceAsync](/reference/shared/file.getsliceasync.md)**|Returns the specified slice.|
+|**[closeAsync](https://dev.office.com/reference/add-ins/shared/file.closeasync)**|Closes the document file.|
+|**[getSliceAsync](https://dev.office.com/reference/add-ins/shared/file.getsliceasync)**|Returns the specified slice.|
 
 ## Remarks
 
-Access the  **File** object with the [AsyncResult.value](/reference/shared/asyncresult.value.md) property in the callback function passed to the [Document.getFileAsync](/reference/shared/document.getfileasync.md) method.
+Access the  **File** object with the [AsyncResult.value](https://dev.office.com/reference/add-ins/shared/asyncresult.value) property in the callback function passed to the [Document.getFileAsync](https://dev.office.com/reference/add-ins/shared/document.getfileasync) method.
 
 
 ## Support details

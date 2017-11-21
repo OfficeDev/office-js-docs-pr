@@ -21,7 +21,7 @@ _resourceId_<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;The GUID of the resource. Required.
     
 _fieldId_<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;The ID of the target field, as a [ProjectResourceFields](/reference/shared/projectresourcefields-enumeration.md) constant or its corresponding integer value. Required.
+&nbsp;&nbsp;&nbsp;&nbsp;The ID of the target field, as a [ProjectResourceFields](https://dev.office.com/reference/add-ins/shared/projectresourcefields-enumeration) constant or its corresponding integer value. Required.
     
 _fieldValue_<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;The value for the target field, as  **string**,  **number**,  **boolean**, or  **object**. Required.
@@ -30,40 +30,40 @@ _options_<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;The following [optional parameter](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods):
 
 &nbsp;&nbsp;&nbsp;&nbsp;_asyncContext_<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Type: **array, boolean, null, number, object, string,** or **undefined**<br/></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A user-defined item of any type that is returned in the [AsyncResult](/reference/shared/asyncresult.md) object without being altered. Optional.</br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For example, you can pass the _asyncContext_ argument by using the format `{asyncContext: 'Some text'}` or `{asyncContext: <object>}`.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Type: **array, boolean, null, number, object, string,** or **undefined**<br/></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A user-defined item of any type that is returned in the [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object without being altered. Optional.</br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For example, you can pass the _asyncContext_ argument by using the format `{asyncContext: 'Some text'}` or `{asyncContext: <object>}`.
 
 
 _callback_<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Type:  **function**
 
-&nbsp;&nbsp;&nbsp;&nbsp;A function that is invoked when the method call returns, where the only parameter is of type [AsyncResult](/reference/shared/asyncresult.md). Optional.
+&nbsp;&nbsp;&nbsp;&nbsp;A function that is invoked when the method call returns, where the only parameter is of type [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult). Optional.
 
     
 
 ## Callback Value
 
-When the  _callback_ function executes, it receives an [AsyncResult](/reference/shared/asyncresult.md) object that you can access from the parameter in the callback function.
+When the  _callback_ function executes, it receives an [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object that you can access from the parameter in the callback function.
 
-For the  **setResourceFieldAsync** method, the returned [AsyncResult](/reference/shared/asyncresult.md) object contains following properties.
+For the  **setResourceFieldAsync** method, the returned [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) object contains following properties.
 
 
 |**Name**|**Description**|
 |:-----|:-----|
-|[asyncContext](/reference/shared/asyncresult.asynccontext.md)|The data passed in the optional  _asyncContext_ parameter, if the parameter was used.|
-|[error](/reference/shared/asyncresult.error.md)|Information about the error, if the  **status** property equals **failed**.|
-|[status](/reference/shared/asyncresult.status.md)|The  **succeeded** or **failed** status of the asynchronous call.|
-|[value](/reference/shared/asyncresult.value.md)|This method does not return a value.|
+|[asyncContext](https://dev.office.com/reference/add-ins/shared/asyncresult.asynccontext)|The data passed in the optional  _asyncContext_ parameter, if the parameter was used.|
+|[error](https://dev.office.com/reference/add-ins/shared/asyncresult.error)|Information about the error, if the  **status** property equals **failed**.|
+|[status](https://dev.office.com/reference/add-ins/shared/asyncresult.status)|The  **succeeded** or **failed** status of the asynchronous call.|
+|[value](https://dev.office.com/reference/add-ins/shared/asyncresult.value)|This method does not return a value.|
 
 ## Remarks
 
-First call the [getSelectedResourceAsync](/reference/shared/projectdocument.getselectedtaskasync.md) or [getResourceByIndexAsync](/reference/shared/projectdocument.getresourcebyindexasync.md) method to get the resource GUID, and then pass the GUID as the _resourceId_ argument to **setResourceFieldAsync**. Only a single field for a single resource can be updated in each asynchronous call.
+First call the [getSelectedResourceAsync](https://dev.office.com/reference/add-ins/shared/projectdocument.getselectedtaskasync) or [getResourceByIndexAsync](https://dev.office.com/reference/add-ins/shared/projectdocument.getresourcebyindexasync) method to get the resource GUID, and then pass the GUID as the _resourceId_ argument to **setResourceFieldAsync**. Only a single field for a single resource can be updated in each asynchronous call.
 
 
 ## Example
 
-The following code example calls [getSelectedResourceAsync](/reference/shared/projectdocument.getselectedtaskasync.md) to get the GUID of the resource that's currently selected in a resource view. Then it sets two resource field values by calling **setResourceFieldAsync** recursively.
+The following code example calls [getSelectedResourceAsync](https://dev.office.com/reference/add-ins/shared/projectdocument.getselectedtaskasync) to get the GUID of the resource that's currently selected in a resource view. Then it sets two resource field values by calling **setResourceFieldAsync** recursively.
 
-The [getSelectedTaskAsync](/reference/shared/projectdocument.getselectedtaskasync.md) method used in the example requires that a task view (for example, Task Usage) is the active view and that a task is selected. See the [addHandlerAsync](/reference/shared/projectdocument.addhandlerasync.md) method for an example that activates a button based on the active view type.
+The [getSelectedTaskAsync](https://dev.office.com/reference/add-ins/shared/projectdocument.getselectedtaskasync) method used in the example requires that a task view (for example, Task Usage) is the active view and that a task is selected. See the [addHandlerAsync](https://dev.office.com/reference/add-ins/shared/projectdocument.addhandlerasync) method for an example that activates a button based on the active view type.
 
 The example assumes your add-in has a reference to the jQuery library and that the following page controls are defined in the content div in the page body.
 
@@ -181,9 +181,9 @@ For more information about Office host application and server requirements, see 
 #### Other resources
 
 
-[getSelectedResourceAsync](/reference/shared/projectdocument.getselectedtaskasync.md)
-[getResourceByIndexAsync](/reference/shared/projectdocument.getresourcebyindexasync.md)
-[AsyncResult object](/reference/shared/asyncresult.md)
-[ProjectResourceFields enumeration](/reference/shared/projectresourcefields-enumeration.md)
-[ProjectDocument object](/reference/shared/projectdocument.projectdocument.md)
+[getSelectedResourceAsync](https://dev.office.com/reference/add-ins/shared/projectdocument.getselectedtaskasync)
+[getResourceByIndexAsync](https://dev.office.com/reference/add-ins/shared/projectdocument.getresourcebyindexasync)
+[AsyncResult object](https://dev.office.com/reference/add-ins/shared/asyncresult)
+[ProjectResourceFields enumeration](https://dev.office.com/reference/add-ins/shared/projectresourcefields-enumeration)
+[ProjectDocument object](https://dev.office.com/reference/add-ins/shared/projectdocument.projectdocument)
 

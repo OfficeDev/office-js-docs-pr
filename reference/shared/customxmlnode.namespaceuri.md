@@ -1,6 +1,6 @@
 
 # CustomXmlNode.namespaceUri property
-Retrieves the string GUID of the [CustomXMLPart](/reference/shared/customxmlpart.customxmlpart.md).
+Retrieves the string GUID of the [CustomXMLPart](https://dev.office.com/reference/add-ins/shared/customxmlpart.customxmlpart).
 
 |||
 |:-----|:-----|

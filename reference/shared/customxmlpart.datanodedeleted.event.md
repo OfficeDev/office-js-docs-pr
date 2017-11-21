@@ -15,7 +15,7 @@ Office.EventType.DataNodeDeleted
 
 ## Remarks
 
-To add an event handler for the  **dataNodeDeleted** event, use the [addHandlerAsync](/reference/shared/customxmlpart.addhandlerasync.md) method of the **CustomXmlPart** object.
+To add an event handler for the  **dataNodeDeleted** event, use the [addHandlerAsync](https://dev.office.com/reference/add-ins/shared/customxmlpart.addhandlerasync) method of the **CustomXmlPart** object.
 
 
 ## Example
