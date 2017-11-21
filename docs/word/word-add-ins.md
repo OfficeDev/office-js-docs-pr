@@ -186,7 +186,7 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 ## Try it out
 
-1. Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within Word.
+1. To sideload the add-in within Word, follow the instructions for the platform you'll use to run your add-in.
 
     - Windows: [Sideload Office Add-ins for testing on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
     - Word Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
