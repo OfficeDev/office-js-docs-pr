@@ -106,7 +106,7 @@ You can edit the add-in files using any text editor or IDE. If you haven't tried
 
    b. Run the following command.
 
-      ```
+      ```bash
       C:\your-local-path\onenote add-in\> npm start
       ```
 2. Install the self-signed certificate as a trusted certificate. You only need to do this one time on your computer for all add-in projects created with the Office Yeoman generator. For more information, see [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
