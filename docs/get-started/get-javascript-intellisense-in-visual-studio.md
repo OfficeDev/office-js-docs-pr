@@ -39,7 +39,7 @@ The basic technique is to precede the variable (or parameter, and so on) with a 
 
 ### Variable
 
-```
+```js
 /** @type {Excel.Range} */
 var subsetRange;
 ```
@@ -47,7 +47,7 @@ var subsetRange;
 
 ### Parameter
 
-```
+```js
 /** @param {Word.ParagraphCollection} paragraphs */
 function myFunc(paragraphs){
 
@@ -57,7 +57,7 @@ function myFunc(paragraphs){
 
 ### Return value
 
-```
+```js
 /** @returns {Word.Range} */
 function myFunc() {
 
@@ -67,7 +67,7 @@ function myFunc() {
 
 ### Complex types
 
-```
+```js
 /** @typedef {{range: Word.Range, paragraphs: Word.ParagraphCollection}} MyType
 
 /** @returns {MyType} */
