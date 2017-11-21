@@ -236,7 +236,7 @@ This table summarizes the API and features supported across add-in types (conten
 |||||||||
 |:-----|:-----|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 ||**Host name**|Database|Workbook|Mailbox|Presentation|Document|Project|
-||**Supported** **Host applications**|Access web apps|Excel<br/>Excel Online|Outlook<br/>Outlook Web App<br/>OWA for Devices|PowerPoint<br/>PowerPoint Online|Word|Project|
+||**Supported** **Host applications**|Access web apps|Excel,<br/>Excel Online|Outlook,<br/>Outlook Web App,<br/>OWA for Devices|PowerPoint,<br/>PowerPoint Online|Word|Project|
 |**Supported add-in types**|Content|Y|Y||Y|||
 ||Task pane||Y||Y|Y|Y|
 ||Outlook|||Y||||
@@ -248,8 +248,8 @@ This table summarizes the API and features supported across add-in types (conten
 ||Read task, resource, view, and field properties||||||Y|
 ||Selection changed events||Y|||Y||
 ||Get whole document||||Y|Y||
-||Bindingsand binding events|Y<br/>(Only full and partial table bindings)|Y|||Y||
-||Read/WriteCustom XML Parts|||||Y||
+||Bindings and binding events|Y<br/>(Only full and partial table bindings)|Y|||Y||
+||Read/Write Custom XML Parts|||||Y||
 ||Persist add-in state data (settings)|Y<br/>(Per host add-in)|Y<br/>(Per document)|Y<br/>(Per mailbox)|Y<br/>(Per document)|Y<br/>(Per document)||
 ||Settings changed events|Y|Y||Y|Y||
 ||Get active view mode<br/>and view changed events||||Y|||
