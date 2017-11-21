@@ -172,7 +172,7 @@
 		<Item text="Setting" url="excel/setting" SEODescription="Setting represents a key-value pair of a setting persisted to the document." />
 		<Item text="SettingCollection" url="excel/settingcollection" SEODescription="Represents a collection of worksheet objects that are part of the workbook." />
 		<Item text="SettingsChangedEventArgs" url="excel/settingschangedeventargs" SEODescription="Provides information about the document that raised the SelectionChanged event." />
-		<Item text="Sortfield" url="excel/sortfield" SEODescription="Represents a condition in a sorting operation." />
+		<Item text="SortField" url="excel/sortfield" SEODescription="Represents a condition in a sorting operation." />
 		<Item text="Table" url="excel/table" SEODescription="Represents an Excel table." />
 		<Item text="TableCollection" url="excel/tablecollection" SEODescription="Represents a collection of all the tables that are part of the workbook." />
 		<Item text="TableColumn" url="excel/tablecolumn" SEODescription="Represents a column in a table." />
