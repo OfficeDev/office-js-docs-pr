@@ -4,8 +4,6 @@ description:
 ms.date: 11/20/2017 
 ---
 
-
-
 # Create your first task pane add-in for Project 2013 by using a text editor
 
 You can create a task pane add-in for Project Standard 2013 or Project Professional 2013 by using Visual Studio 2015 to create a complex web application or by using a text editor to create files for a local add-in. This article describes how to create a simple add-in that uses an XML manifest that points to an HTML file on a file share. The Project OM Test sample add-in tests some JavaScript functions that use the object model for add-ins. After you use the  **Trust Center** in Project 2013 to register the file share that contains the manifest file, you can open the task pane add-in from the **PROJECT** tab on the ribbon. (The sample code in this article is based on a test application by Arvind Iyer, Microsoft Corporation.)
@@ -484,7 +482,6 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
                 }
             }
         );
-
 
         _projDoc.getProjectFieldAsync(Office.ProjectProjectFields.CurrencySymbol,
             function (asyncResult) {
