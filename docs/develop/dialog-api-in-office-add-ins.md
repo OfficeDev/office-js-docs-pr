@@ -353,12 +353,12 @@ Code in your dialog window can parse the URL and read the parameter value.
 To show a video in a dialog box:
 
 1.  Create a page whose only content is an iframe. The `src` attribute of the iframe points to an online video. The protocol of the video's URL must be HTTP**S**. In this article we'll call this page "video.dialogbox.html". The following is an example of the markup:
- ```html
+
 		<iframe class="ms-firstrun-video__player"  width="640" height="360"
 			src="https://www.youtube.com/embed/XVfOe5mFbAE?rel=0&autoplay=1"
 			frameborder="0" allowfullscreen>
 		</iframe>
-    ```
+
 2.  The video.dialogbox.html page must be in the same domain as the host page.
 3.  Use a call of `displayDialogAsync` in the host page to open video.dialogbox.html.
 4.  If your add-in needs to know when the user closes the dialog box, register a handler for the `DialogEventReceived` event and handle the 12006 event. For details, see the section [Errors and events in the dialog window](#errors-and-events-in-the-dialog-window).

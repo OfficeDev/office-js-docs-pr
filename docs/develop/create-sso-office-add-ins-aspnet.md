@@ -305,7 +305,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Ensure that all of the following `using` statements are at the top of the file.
 
-    ```
+    ```csharp
     using Owin;
     using System.IdentityModel.Tokens;
     using System.Configuration;
@@ -320,7 +320,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Add the following method to the `Startup` class. This method specifies how the OWIN middleware will validate the access tokens that are passed to it from the `getData` method in the client-side Home.js file. The authorization process is triggered whenever a Web API endpoint that is decorated with the `[Authorize]` attribute is called.
 
-    ```
+    ```csharp
     public void ConfigureAuth(IAppBuilder app)
     {
         // TODO3: Configure the validation settings
@@ -335,7 +335,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     * Setting `SaveSigninToken` to `true` causes OWIN to save the raw token from the Office host. The add-in needs it to obtain an access token to Microsoft Graph with the “on behalf of” flow.
     * Scopes are not validated by the OWIN middleware. The scopes of the access token, which should include `access_as_user`, is validated in the controller.
 
-    ```
+    ```csharp
     var tvps = new TokenValidationParameters
         {
             ValidAudience = ConfigurationManager.AppSettings["ida:Audience"],
@@ -349,7 +349,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     * The method `UseOAuthBearerAuthentication` is called instead of the more common `UseWindowsAzureActiveDirectoryBearerAuthentication` because the latter is not compatible with the Azure AD V2 endpoint.
     * The discovery URL that is passed to the method is where the OWIN middleware obtains instructions for getting the key it needs to verify the signature on the access token received from the Office host.
 
-    ```
+    ```csharp
     app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions
             {
                 AccessTokenFormat = new JwtFormat(tvps, new OpenIdConnectCachingSecurityTokenProvider("https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration"))
@@ -364,7 +364,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 2. Ensure that the following `using` statements are at the top of the file.
 
-    ```
+    ```csharp
     using Microsoft.Identity.Client;
     using System;
     using System.IdentityModel.Tokens;
@@ -383,7 +383,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 4. Add the following method to the `ValuesController`:
 
-    ```
+    ```csharp
     // GET api/values
     public async Task<IEnumerable<string>> Get()
     {
@@ -393,7 +393,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 5. Replace TODO5 with the following code to validate that the scopes that are specified in the token include `access_as_user`.
 
-    ```
+    ```csharp
     string[] addinScopes = ClaimsPrincipal.Current.FindFirst("http://schemas.microsoft.com/identity/claims/scope").Value.Split(' ');
     if (addinScopes.Contains("access_as_user"))
     {
@@ -414,7 +414,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     * The third parameter to the `ConfidentialClientApplication` constructor is a redirect URL which is not actually used in the “on behalf of” flow, but it is a good practice to use the correct URL. The fourth and fifth parameters can be used to define a persistent store that would enable the reuse of unexpired tokens across different sessions with the add-in. This sample does not implement any persistent storage.
     * MSAL requires the `openid` and `offline_access` scopes to function, but it throws an error if your code redundantly requests them. It will also throw an error if your code requests `profile`, which is really only used when the Office host application gets the token to your add-in's web application. So only `Files.Read.All` is explicitly requested.
 
-    ```
+    ```csharp
     var bootstrapContext = ClaimsPrincipal.Current.Identities.First().BootstrapContext as BootstrapContext;
     UserAssertion userAssertion = new UserAssertion(bootstrapContext.Token);
     ClientCredential clientCred = new ClientCredential(ConfigurationManager.AppSettings["ida:Password"]);
@@ -431,7 +431,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     * The Claims property value must be passed to the client which will pass it to the Office host, which will then include it in a request for a new token. AAD will prompt the user for all required forms of authentication.
     * Any exceptions that are not of type `MsalUiRequiredException` are intentionally not caught, so they will propagate to the client.
 
-    ```
+    ```csharp
     AuthenticationResult result = null;
     try
     {
@@ -455,14 +455,14 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     * The `GraphApiHelper` and `ODataHelper` classes are defined in files in the **Helpers** folder. The `OneDriveItem` class is defined in a file in the **Models** folder. Detailed discussion of these classes is not relevant to authorization or SSO, so it is out-of-scope for this article.
     * Performance is improved by asking Microsoft Graph for only the data actually needed, so the code uses a ` $select` query parameter to specify that we only want the name property, and a `$top` parameter to specify that we want only the first 3 folder or file names.
 
-    ```
+    ```csharp
     var fullOneDriveItemsUrl = GraphApiHelper.GetOneDriveItemNamesUrl("?$select=name&$top=3");
     var getFilesResult = await ODataHelper.GetItems<OneDriveItem>(fullOneDriveItemsUrl, result.AccessToken);
     ```
 
 9. Replace TODO9 with the following. Note that although the code above asked for only the *name* property of the OneDrive items, Microsoft Graph always includes the *eTag* property for OneDrive items. To reduce the payload sent to the client, the code below reconstructs the results with only the item names.
 
-    ```
+    ```csharp
     List<string> itemNames = new List<string>();
     foreach (OneDriveItem item in getFilesResult)
     {

@@ -16,24 +16,28 @@ If you are building an Office Add-in, we encourage you to use [Office UI Fabric]
 ## 1. Set up Fabric
 Add the following lines to your HTML in the head section to reference Fabric from the CDN.
 
-     <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.min.css">
-	 <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css">
+```html
+<link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.min.css">
+<link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css">
+```
 
 
 ## 2. Use Fabric icons and fonts
 Using icons is simple. All you have to do is use an "i" element and reference the appropriate classes. You can control the size of the icon by changing the font size.
 
-    <i class="ms-Icon ms-Icon--group" style="font-size:xx-large" aria-hidden="true"></i>
+```html<i class="ms-Icon ms-Icon--group" style="font-size:xx-large" aria-hidden="true"></i>
+```
 
 
 ## 3. Use styles for simple components
 Fabric comes with styles for various UI elements, such as buttons and check boxes. All you have to do is reference the appropriate classes to add the corresponding style, as shown in the following example.
 
-    <button class="ms-Button" id="get-data-from-selection">
-    <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
-    <span class="ms-Button-label">Get Data from selection</span>
-    <span class="ms-Button-description">Get Data from the document selection</span>
-    </button>
+```html<button class="ms-Button" id="get-data-from-selection">
+<span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+<span class="ms-Button-label">Get Data from selection</span>
+<span class="ms-Button-description">Get Data from the document selection</span>
+</button>
+```
 
 ## 4. Use components with sample behavior
 Fabric includes some components that support behaviors (such as what happens on click). To get you started, **Fabric 2.6.1** includes some **sample code** in the form of JQuery UI plug-ins that you can use. You can also use any other framework you want to wire things up. If you do opt to use the samples, note that the code is not distributed as part of the CDN, so you have to download it from the **2.6.1 release** of the [Fabric GitHub project](https://github.com/OfficeDev/office-ui-fabric-core/tree/release/2.6.1), reference it, and then initialize it in your code. 
