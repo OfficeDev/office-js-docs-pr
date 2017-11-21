@@ -15,7 +15,7 @@ Specifies whether a snapshot image of your content add-in is saved with the host
 
 ## Contained in:
 
-[OfficeApp](/reference/manifest/officeapp.md)
+[OfficeApp](https://dev.office.com/reference/add-ins/manifest/officeapp)
 
 
 ## Remarks

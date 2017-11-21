@@ -15,7 +15,7 @@ Specifies the URL of the home page for the dictionary.
 
 ## Contained in:
 
-[Dictionary](/reference/manifest/dictionary.md)
+[Dictionary](https://dev.office.com/reference/add-ins/manifest/dictionary)
 
 
 ## Additional resources

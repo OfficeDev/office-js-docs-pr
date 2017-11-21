@@ -29,7 +29,7 @@ Creates a new instance of the  **InputComponentAttempt** class.
 | _labs_|The labs ([Labs.LabsInternal](http://msdn.microsoft.com/library/599fb2c4-bb16-4422-84ad-10ed85a14018.aspx)) associated with the attempt.|
 | _componentID_|ID of the component associated with the attempt.|
 | _attemptId_|ID of the specific attempt.|
-| _values_|An array containing the value instances ([Labs.Core.IValueInstance](/reference/office-mix/labs.core.ivalueinstance.md)).|
+| _values_|An array containing the value instances ([Labs.Core.IValueInstance](https://dev.office.com/reference/add-ins/office-mix/labs.core.ivalueinstance)).|
 
 ### processAction
 

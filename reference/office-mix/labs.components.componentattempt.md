@@ -17,10 +17,10 @@ class ComponentAttempt
 |:-----|:-----|
 | `public var _componentId: string`|ID of the specified component.|
 | `public var _id: string`|ID of the associated lab.|
-| `public var _labs: Labs.LabsInternal`|The lab ([Labs.LabsInternal](http://msdn.microsoft.com/library/599fb2c4-bb16-4422-84ad-10ed85a14018.aspx)) object that is used to interact with the underlying [Labs.Core.ILabHost](/reference/office-mix/labs.core.ilabhost.md).|
+| `public var _labs: Labs.LabsInternal`|The lab ([Labs.LabsInternal](http://msdn.microsoft.com/library/599fb2c4-bb16-4422-84ad-10ed85a14018.aspx)) object that is used to interact with the underlying [Labs.Core.ILabHost](https://dev.office.com/reference/add-ins/office-mix/labs.core.ilabhost).|
 | `public var _resumed: boolean`|**True** if the lab has resumed progress on a given attempt.|
-| `public var _state: Labs.ProblemState`|Current state of the attempt as provided by the enum [Labs.ProblemState](/reference/office-mix/labs.problemstate.md).|
-| `public var _values: { [type:string]: Labs.ValueHolder<any>[]}`|Values associated with the attempt, if any, as contained in the [Labs.ValueHolder](/reference/office-mix/labs.valueholder.md)object.|
+| `public var _state: Labs.ProblemState`|Current state of the attempt as provided by the enum [Labs.ProblemState](https://dev.office.com/reference/add-ins/office-mix/labs.problemstate).|
+| `public var _values: { [type:string]: Labs.ValueHolder<any>[]}`|Values associated with the attempt, if any, as contained in the [Labs.ValueHolder](https://dev.office.com/reference/add-ins/office-mix/labs.valueholder)object.|
 
 ## Methods
 
@@ -40,7 +40,7 @@ Creates a new instance of the ComponentAttempt class and provides input paramete
 |:-----|:-----|
 | _labs_|The [Labs.LabsInternal](http://msdn.microsoft.com/library/599fb2c4-bb16-4422-84ad-10ed85a14018.aspx) instance to use with the attempt.|
 | _attemptId_|The ID associated with the attempt.|
-| _values_|Array of values ([Labs.Core.IValueInstance](/reference/office-mix/labs.core.ivalueinstance.md)) associated with the attempt.|
+| _values_|Array of values ([Labs.Core.IValueInstance](https://dev.office.com/reference/add-ins/office-mix/labs.core.ivalueinstance)) associated with the attempt.|
 
 ### isResumed
 

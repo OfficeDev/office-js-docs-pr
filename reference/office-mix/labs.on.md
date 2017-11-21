@@ -16,7 +16,7 @@ function on(event: string, handler: Core.IEventCallback): void
 |**Name**|**Description**|
 |:-----|:-----|
 |event|The event you wish to add.|
-|handler|The event handler you wish to add, using [Labs.Core.IEventCallback](/reference/office-mix/labs.core.ieventcallback.md) interface.|
+|handler|The event handler you wish to add, using [Labs.Core.IEventCallback](https://dev.office.com/reference/add-ins/office-mix/labs.core.ieventcallback) interface.|
 
 ## Return value
 

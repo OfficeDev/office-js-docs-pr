@@ -15,7 +15,7 @@ Specifies the URL of the image that is used to represent your Office Add-in in t
 
 ## Can contain:
 
-[Override](/reference/manifest/override.md)
+[Override](https://dev.office.com/reference/add-ins/manifest/override)
 
 
 ## Attributes
@@ -24,7 +24,7 @@ Specifies the URL of the image that is used to represent your Office Add-in in t
 
 |**Attribute**|**Type**|**Required**|**Description**|
 |:-----|:-----|:-----|:-----|
-|DefaultValue|string (URL)|required|Specifies the default value for this setting, expressed for the locale specified in the [DefaultLocale](/reference/manifest/defaultlocale.md) element.|
+|DefaultValue|string (URL)|required|Specifies the default value for this setting, expressed for the locale specified in the [DefaultLocale](https://dev.office.com/reference/add-ins/manifest/defaultlocale) element.|
 
 ## Remarks
 

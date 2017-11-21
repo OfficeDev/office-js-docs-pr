@@ -15,7 +15,7 @@ Specifies the name of this dictionary.
 
 ## Contained in:
 
-[Dictionary](/reference/manifest/dictionary.md)
+[Dictionary](https://dev.office.com/reference/add-ins/manifest/dictionary)
 
 
 ## Additional resources

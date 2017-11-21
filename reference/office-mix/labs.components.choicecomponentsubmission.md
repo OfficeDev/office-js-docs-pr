@@ -15,8 +15,8 @@ class ChoiceComponentSubmission
 
 |Property|Description|
 |:-----|:-----|
-| `public var answer: Components.ChoiceComponentAnswer`|The answer ([Labs.Components.ChoiceComponentAnswer](/reference/office-mix/labs.components.choicecomponentanswer.md)) associated with the submission.|
-| `public var result: Components.ChoiceComponentResult`|The result ([Labs.Components.ChoiceComponentResult](/reference/office-mix/labs.components.choicecomponentresult.md)) of the submission.|
+| `public var answer: Components.ChoiceComponentAnswer`|The answer ([Labs.Components.ChoiceComponentAnswer](https://dev.office.com/reference/add-ins/office-mix/labs.components.choicecomponentanswer)) associated with the submission.|
+| `public var result: Components.ChoiceComponentResult`|The result ([Labs.Components.ChoiceComponentResult](https://dev.office.com/reference/add-ins/office-mix/labs.components.choicecomponentresult)) of the submission.|
 | `public var time: number`|The time at which the submission was received.|
 
 ## Methods
@@ -35,6 +35,6 @@ Represents the submission associated with a choice component.
 
 |Parameter|Description|
 |:-----|:-----|
-| _answer_|The answer ([Labs.Components.ChoiceComponentAnswer](/reference/office-mix/labs.components.choicecomponentanswer.md)) associated with the submission.|
-| _result_|The result ([Labs.Components.ChoiceComponentResult](/reference/office-mix/labs.components.choicecomponentresult.md)) of the submission.|
+| _answer_|The answer ([Labs.Components.ChoiceComponentAnswer](https://dev.office.com/reference/add-ins/office-mix/labs.components.choicecomponentanswer)) associated with the submission.|
+| _result_|The result ([Labs.Components.ChoiceComponentResult](https://dev.office.com/reference/add-ins/office-mix/labs.components.choicecomponentresult)) of the submission.|
 | _time_|The time at which the submission was received.|

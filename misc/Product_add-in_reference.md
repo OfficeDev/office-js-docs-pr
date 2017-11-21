@@ -28,7 +28,7 @@
 
 ## Open *Product* API specifications
 
-<!-- Optional. Link to the [Open API specifications](/reference/openspec.md) page for details about new APIs in development.
+<!-- Optional. Link to the [Open API specifications](https://dev.office.com/reference/add-ins/openspec) page for details about new APIs in development.
 
 -->
 

@@ -3,7 +3,7 @@
 
  _**Applies to:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
 
-Configuration options for the [Labs.Timeline](/reference/office-mix/labs.timeline.md). Allows you to specify a set of timeline configuration options.
+Configuration options for the [Labs.Timeline](https://dev.office.com/reference/add-ins/office-mix/labs.timeline). Allows you to specify a set of timeline configuration options.
 
 ```
 interface ITimelineConfiguration

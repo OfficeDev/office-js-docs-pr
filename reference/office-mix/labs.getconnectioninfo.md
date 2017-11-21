@@ -17,5 +17,5 @@ None.
 
 ## Remarks
 
-Configuration information is provided using initialization information on the [Labs.Core.IConnectionResponse](/reference/office-mix/labs.core.iconnectionresponse.md) interface.
+Configuration information is provided using initialization information on the [Labs.Core.IConnectionResponse](https://dev.office.com/reference/add-ins/office-mix/labs.core.iconnectionresponse) interface.
 

@@ -17,7 +17,7 @@ Specifies the default source location and other default settings for your conten
 
 ## Contained in:
 
-[OfficeApp](/reference/manifest/officeapp.md)
+[OfficeApp](https://dev.office.com/reference/add-ins/manifest/officeapp)
 
 
 ## Can contain:
@@ -26,11 +26,11 @@ Specifies the default source location and other default settings for your conten
 
 |**Element**|**Content**|**Mail**|**TaskPane**|
 |:-----|:-----|:-----|:-----|
-|[SourceLocation](/reference/manifest/sourcelocation.md)|x||x|
-|[RequestedWidth](/reference/manifest/requestedwidth.md)|x|||
-|[RequestedHeight](/reference/manifest/requestedheight.md)|x|||
+|[SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation)|x||x|
+|[RequestedWidth](https://dev.office.com/reference/add-ins/manifest/requestedwidth)|x|||
+|[RequestedHeight](https://dev.office.com/reference/add-ins/manifest/requestedheight)|x|||
 
 ## Remarks
 
-The source location and other settings in the  **DefaultSettings** element apply only to content and task pane add-ins. For mail add-ins, you specify the default locations for source files and other default settings in the [FormSettings](/reference/manifest/formsettings.md) element.
+The source location and other settings in the  **DefaultSettings** element apply only to content and task pane add-ins. For mail add-ins, you specify the default locations for source files and other default settings in the [FormSettings](https://dev.office.com/reference/add-ins/manifest/formsettings) element.
 

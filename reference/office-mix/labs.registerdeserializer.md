@@ -15,9 +15,9 @@ function registerDeserializer(type: string, deserialize: (json: Core.ILabObject)
 
 |**Name**|**Description**|
 |:-----|:-----|
-|json|The [Labs.Core.ILabObject](/reference/office-mix/labs.core.ilabobject.md) to deserialize.|
+|json|The [Labs.Core.ILabObject](https://dev.office.com/reference/add-ins/office-mix/labs.core.ilabobject) to deserialize.|
 
 ## Return value
 
-Returns an [Labs.Core.ILabObject](/reference/office-mix/labs.core.ilabobject.md) instance.
+Returns an [Labs.Core.ILabObject](https://dev.office.com/reference/add-ins/office-mix/labs.core.ilabobject) instance.
 

@@ -15,7 +15,7 @@ class ActivityComponentInstance extends Labs.ComponentInstance<Components.Activi
 
 |**Name**|**Description**|
 |:-----|:-----|
-| `public var component: Components.IActivityComponentInstance`|The underlying [Labs.Components.IActivityComponentInstance](/reference/office-mix/labs.components.iactivitycomponentinstance.md) this class represents|
+| `public var component: Components.IActivityComponentInstance`|The underlying [Labs.Components.IActivityComponentInstance](https://dev.office.com/reference/add-ins/office-mix/labs.components.iactivitycomponentinstance) this class represents|
 
 ## Methods
 
@@ -26,7 +26,7 @@ class ActivityComponentInstance extends Labs.ComponentInstance<Components.Activi
 
  `function constructor(component: Components.IActivityComponentInstance)`
 
-Creates a new instance of the [Labs.Components.IActivityComponentInstance](/reference/office-mix/labs.components.iactivitycomponentinstance.md) class.
+Creates a new instance of the [Labs.Components.IActivityComponentInstance](https://dev.office.com/reference/add-ins/office-mix/labs.components.iactivitycomponentinstance) class.
 
  **Parameters**
 

@@ -15,4 +15,4 @@ interface ILabHostVersionInfo
 
 |||
 |:-----|:-----|
-| `version: Core.IVersion`|The [Labs.Core.IVersion](/reference/office-mix/labs.core.iversion.md) version of the host.|
+| `version: Core.IVersion`|The [Labs.Core.IVersion](https://dev.office.com/reference/add-ins/office-mix/labs.core.iversion) version of the host.|

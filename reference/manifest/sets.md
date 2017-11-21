@@ -17,12 +17,12 @@ Specifies the minimum subset of the JavaScript API for Office that your Office A
 
 ## Contained in:
 
-[Requirements](/reference/manifest/requirements.md)
+[Requirements](https://dev.office.com/reference/add-ins/manifest/requirements)
 
 
 ## Can contain:
 
-[Set](/reference/manifest/set.md)
+[Set](https://dev.office.com/reference/add-ins/manifest/set)
 
 
 ## Attributes
@@ -31,7 +31,7 @@ Specifies the minimum subset of the JavaScript API for Office that your Office A
 
 |**Attribute**|**Type**|**Required**|**Description**|
 |:-----|:-----|:-----|:-----|
-|DefaultMinVersion|string|optional|Specifies the default  **MinVersion** attribute value for all child [Set](/reference/manifest/set.md) elements. The default value is "1.1".|
+|DefaultMinVersion|string|optional|Specifies the default  **MinVersion** attribute value for all child [Set](https://dev.office.com/reference/add-ins/manifest/set) elements. The default value is "1.1".|
 
 ## Remarks
 

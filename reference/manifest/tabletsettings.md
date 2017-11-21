@@ -17,5 +17,5 @@ Specifies control settings that apply when your mail add-in is used on a tablet.
 
 ## Contained in:
 
-[Form](/reference/manifest/form.md)
+[Form](https://dev.office.com/reference/add-ins/manifest/form)
 

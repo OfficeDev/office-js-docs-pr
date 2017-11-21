@@ -10,17 +10,17 @@ Variables in the LabsJS object model function either as constants, or as placeho
 
 |||
 |:-----|:-----|
-|[Labs.DefaultHostBuilder](/reference/office-mix/labs.defaulthostbuilder.md)|Use this object to construct a default [Labs.Core.ILabHost](/reference/office-mix/labs.core.ilabhost.md) instance.|
+|[Labs.DefaultHostBuilder](https://dev.office.com/reference/add-ins/office-mix/labs.defaulthostbuilder)|Use this object to construct a default [Labs.Core.ILabHost](https://dev.office.com/reference/add-ins/office-mix/labs.core.ilabhost) instance.|
 
 ## Additional resources
 
 
 
-- [Labs Functions](/reference/office-mix/labs-functions.md)
+- [Labs Functions](https://dev.office.com/reference/add-ins/office-mix/labs-functions)
     
-- [Labs Classes](/reference/office-mix/labs-classes.md)
+- [Labs Classes](https://dev.office.com/reference/add-ins/office-mix/labs-classes)
     
-- [Labs Interfaces](/reference/office-mix/labs-interfaces.md)
+- [Labs Interfaces](https://dev.office.com/reference/add-ins/office-mix/labs-interfaces)
     
-- [Labs Enumerations](/reference/office-mix/labs-enumerations.md)
+- [Labs Enumerations](https://dev.office.com/reference/add-ins/office-mix/labs-enumerations)
     

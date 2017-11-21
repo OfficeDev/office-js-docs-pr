@@ -4,7 +4,7 @@ The JavaScript API for Office is periodically updated with new and updated objec
 
 To develop add-ins using new API members, you need to [update the JavaScript API for Office files in your project](../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md).
 
-To view all API members including those that are unchanged from previous updates, see [JavaScript API for Office](../reference/javascript-api-for-office.md).
+To view all API members including those that are unchanged from previous updates, see [JavaScript API for Office](..https://dev.office.com/reference/add-ins/javascript-api-for-office).
 
 
 ## New and updated APIs
@@ -43,7 +43,7 @@ To view all API members including those that are unchanged from previous updates
 ## Additional resources
 
 
-- [Office Add-ins API and schema references](../reference/reference.md)
+- [Office Add-ins API and schema references](..https://dev.office.com/reference/add-ins/reference)
     
 - [Office Add-ins](../docs/overview/office-add-ins.md)
     
