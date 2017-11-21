@@ -47,7 +47,7 @@ Use the **Application** object to access OneNote objects such as **Notebook**, *
 
 For example: 
 
-```
+```js
     function getPagesInSection() {
         OneNote.run(function (context) {
             
@@ -88,7 +88,7 @@ and [setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/docum
 
 For example:  
 
-```
+```js
 function getSelectionFromPage() {
     Office.context.document.getSelectedDataAsync(
         Office.CoercionType.Text,
