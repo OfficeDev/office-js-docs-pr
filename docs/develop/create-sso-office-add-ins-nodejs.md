@@ -167,7 +167,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
      * If no user is signed into Office, the Office host will prompt the user to sign in. 
      * The options parameter sets `forceConsent` to false, so the user will not be prompted to consent to giving the Office host access to your add-in.
 
-    ```js
+    ```javascript
     function getOneDriveItems() {
         getDataWithoutAuthChallenge();
     }	
@@ -190,14 +190,14 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Replace the TODO1 with the following lines. You create the `getData` method and the server-side “/api/onedriveitems” route in later steps. A relative URL is used for the endpoint because it must be hosted on the same domain as your add-in.
 
-    ```
+    ```javascript
     accessToken = result.value;
     getData("/api/onedriveitems", accessToken);
     ```
 
 1. Below the `getOneDriveFiles` method, add the following. This utility method calls a specified Web API endpoint and passes it the same access token that the Office host application used to get access to your add-in. On the server-side, this access token will be used in the “on behalf of” flow to obtain an access token to Microsoft Graph. 
 
-    ```
+    ```javascript
     function getData(relativeUrl, accessToken) {
         $.ajax({
             url: relativeUrl,
@@ -218,7 +218,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     * If the result is the Claims JSON, then it will contain the string "capolids".
     * You will create the `getDataUsingAuthChallenge` function in a latter step.
 
-    ```
+    ```javascript
     if (result[0].indexOf('capolids') !== -1) {                
         result[0] = JSON.parse(result[0])
         getDataUsingAuthChallenge(result[0]);
@@ -232,7 +232,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     * The function triggers a second sign-on in which the user will be prompted to provide additional authentication factor(s). 
     * The `authChallenge` option contains a string that tells AAD what factor(s) it should prompt for. The Office host passes this string to AAD when it requests the add-in token to your add-in.
 
-    ```
+    ```javascript
     function getDataUsingAuthChallenge(authChallengeString) {       
         Office.context.auth.getAccessTokenAsync({authChallenge: authChallengeString},
             function (result) {
@@ -265,7 +265,7 @@ There are two server-side files that need to be modified.
     * The scopes parameter has a default value, but in this sample it will be overridden by the calling code.
     * The resource parameter is optional. It should not be used when the STS is the AAD V2 endpoint. The latter infers the resource from the scopes and it returns an error if a resource is sent in the HTTP Request. 
     
-        ```
+        ```javascript
         private async exchangeForToken(jwt: string, scopes: string[] = ['openid'], resource?: string) {
             try {
                 // TODO3: Construct the parameters that will be sent in the body of the 
@@ -285,7 +285,7 @@ There are two server-side files that need to be modified.
     * An STS that supports the "on behalf of" flow expects certain property/value pairs in the body of the HTTP request. This code constructs an object that will become the body of the request. 
     * A resource property is added to the body if, and only if, a resource was passed to the method.
 
-        ```
+        ```javascript
         const v2Params = {
                 client_id: this.clientId,
                 client_secret: this.clientSecret,
@@ -308,7 +308,7 @@ There are two server-side files that need to be modified.
 
 3. Replace TODO4 with the following code which sends the HTTP request to the token endpoint of the STS.
 
-    ```
+    ```javascript
     const res = await fetch(`${this.stsDomain}/${this.tenant}/${this.tokenURLsegment}`, {
         method: 'POST',
         body: form(finalParams),
@@ -321,7 +321,7 @@ There are two server-side files that need to be modified.
 
 4. Replace TODO5 with the following code. Note that the code persists the access token to the resource, and it's expiration time, in addition to returning it. Calling code can avoid unnecessary calls to the STS by reusing an unexpired access token to the resource. You'll see how to do that in the next section.
 
-    ```
+    ```javascript
     if (res.status !== 200) {
         TODO6: Handle failure and the case where AAD asks for additional
                authentication factors.
@@ -342,7 +342,7 @@ There are two server-side files that need to be modified.
     * This `Claims` value needs to be passed back to the client which should initiate a second sign-on for the user and include the `Claims` value in the call to the AAD. AAD will prompt the user to provide the addtional factor(s).
     * As a precaution, the code clears the cache of any access tokens that were obtained when the user logged in with only a password.  
 
-    ```
+    ```javascript
     const exception = await res.json();
     // Check if AAD is the STS.
     if (this.stsDomain === 'https://login.microsoftonline.com') {
@@ -366,7 +366,7 @@ There are two server-side files that need to be modified.
     * The comments above about the parameters to the the `exchangeForToken` method apply to the parameters of this method as well.
     * The method first checks the persistent storage for an access token to the resource that has not expired and is not going to expire in the next minute. It calls the `exchangeForToken` method you created in the last section only if it needs to.
 
-    ```
+    ```javascript
     async acquireTokenOnBehalfOf(jwt: string, scopes: string[] = ['openid'], resource?: string) {
         const resourceTokenExpirationTime = ServerStorage.retrieve('ResourceTokenExpiresAt');
         if (moment().add(1, 'minute').diff(resourceTokenExpirationTime) < 1 ) {
@@ -387,14 +387,14 @@ There are two server-side files that need to be modified.
 
 2. Add the following method to the bottom of the file. This method will serve the add-in's home page. The add-in manifest specifies the home page URL.
 
-    ```
+    ```javascript
     app.get('/index.html', handler(async (req, res) => {
         return res.sendfile('index.html');
     })); 
     ```
 
 3. Add the following method to bottom of the file. This method will handle any requests for the `onedriveitems` API.
-    ```
+    ```javascript
     app.get('/api/onedriveitems', handler(async (req, res) => {
         // TODO7: Initialize the AuthModule object and validate the access token 
         //        that the client-side received from the Office host.
@@ -407,7 +407,7 @@ There are two server-side files that need to be modified.
 
 4. Replace TODO7 with the following code which validates the access token received from the Office host application. The `verifyJWT` method is defined in the src\auth.ts file. It always validates the audience and the issuer. We use the optional parameter to specify that we also want it to verify that the scope in the access token is `access_as_user`. This is the only permisison to the add-in that the user and the Office host need in order to get an access token to Microsoft Graph by means of the "on behalf flow". 
 
-    ```
+    ```javascript
     await auth.initialize();
     const { jwt } = auth.verifyJWT(req, { scp: 'access_as_user' }); 
     ```
@@ -421,7 +421,7 @@ There are two server-side files that need to be modified.
     * The second parameter of the call specifies the permissions the add-in will need to get a list of the user's files and folders on OneDrive. (The `profile` permission is not requested because it is only needed when the Office host gets the access token to your add-in, not when you are trading in that token for an access token to Microsoft Graph.)
     * If the response is a string containing 'capolids", then this is a claims message from AAD that multi-factor auth is required. The message is passed to the client, which uses it to start a second sign-on. The string tells AAD what additional authentication factor(s) it should prompt the user to provide.
 
-    ```
+    ```javascript
     let graphToken = null;
     const tokenAcquisitionResponse = await auth.acquireTokenOnBehalfOf(jwt, ['Files.Read.All']);
     if (tokenAcquisitionResponse.includes('capolids')) {
@@ -444,7 +444,7 @@ There are two server-side files that need to be modified.
 
 7. Replace TODO10 with the following code. Note that Microsoft Graph returns some OData metadata and an **eTag** property for every item, even if `name` is the only property requested. The code sends only the item names to the client.
 
-    ```
+    ```javascript
     const itemNames: string[] = [];
     const oneDriveItems: string[] = graphData['value'];
     for (let item of oneDriveItems){

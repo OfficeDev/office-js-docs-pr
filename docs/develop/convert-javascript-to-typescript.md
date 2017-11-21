@@ -57,15 +57,21 @@ Make sure that you have the following installed:
 
 7. Open Home.ts (formerly Home.js). Remove the following reference from the top of the Home.ts file:
 
-	```///<reference path="/Scripts/FabricUI/MessageBanner.js" />```
+	```javascript
+	///<reference path="/Scripts/FabricUI/MessageBanner.js" />
+	```
 
 8. Add the following declaration at the top of the Home.ts file:
 
-	```declare var fabric: any;```
+	```javascript
+	declare var fabric: any;
+	```
 
 9. Change **‘1.1’** to **1.1**; that is, remove the quotes from the following line in the Home.ts file:
 
-	```if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {```
+	```javascript
+	if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
+	```
  
 ## Run the converted add-in project
 
@@ -81,7 +87,7 @@ For your reference, the following is the code included in the Home.ts file. This
 > [!NOTE]
 > For a complete example of a JavaScript file that has been converted to TypeScript, see [Excel-Add-In-TS-StartWeb/Home.ts](https://github.com/OfficeDev/Excel-Add-In-TS-Start/blob/master/Excel-Add-In-TS-StartWeb/Home.ts). 
 
-```
+```javascript
 declare var fabric: any;
 
 (function () {
@@ -215,8 +221,8 @@ declare var fabric: any;
         messageBanner.toggleExpansion();
     }
 })();
-
 ```
+
 
 ## Additional resources
 

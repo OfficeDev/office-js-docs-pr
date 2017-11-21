@@ -354,7 +354,7 @@ function write(message){
 }
 ```
 
- `myBinding` is a variable that contains an existing text binding in the document.
+The `myBinding` is a variable that contains an existing text binding in the document.
 
 The first  `eventType` parameter of the [addHandlerAsync] method specifies the name of the event to subscribe to. [Office.EventType] is an enumeration of available event type values. `Office.EventType.BindingDataChanged evaluates to the string `"bindingDataChanged"`.
 
@@ -371,7 +371,7 @@ You can add multiple event handlers for a given event by calling the [addHandler
 To remove an event handler for an event, call the [removeHandlerAsync] method passing in the event type as the first _eventType_ parameter, and the name of the event handler function to remove as the second _handler_ parameter. For example, the following function will remove the `dataChanged` event handler function added in the previous section's example.
 
 
-```
+```js
 function removeEventHandlerFromBinding() {
     Office.select("bindings#MyBinding").removeHandlerAsync(
         Office.EventType.BindingDataChanged, {handler:dataChanged});

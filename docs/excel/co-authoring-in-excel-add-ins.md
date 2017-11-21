@@ -25,9 +25,9 @@ Coauthoring is available on the following platforms:
  
 When you change a workbook’s content, Excel automatically synchronizes those changes across all coauthors. Coauthors can change the content of a workbook, but so can code running within an Excel add-in. For example, when the following JavaScript code runs in an Office add-in, the value of a range is set to Contoso:
 
-
+```js
     range.values = [[‘Contoso’]];
-
+```
 After ‘Contoso’ synchronizes across all coauthors, any user or add-in running in the same workbook will see the new value of the range. 
 
 Coauthoring only synchronizes the content within the shared workbook. Values copied from the workbook to JavaScript variables in an Excel add-in are not synchronized. For example, if your add-in stores the value of a cell (such as ‘Contoso’) in a JavaScript variable, and then a coauthor changes the value of the cell to ‘Example’, after synchronization all co-authors see ‘Example’ in the cell. However, the value of the JavaScript variable is still set to ‘Contoso’. Furthermore, when multiple coauthors use the same add-in, each coauthor has their own copy of the variable, which is not synchronized. When you use variables that use workbook content, be sure you check for updated values in the workbook before you use the variable. 
