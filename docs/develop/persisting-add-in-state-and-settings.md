@@ -8,7 +8,6 @@ ms.date: 11/20/2017
 # Persisting add-in state and settings
 
 Office Add-ins are essentially web applications running in the stateless environment of a browser control. As a result, your add-in may need to persist data to maintain the continuity of certain operations or features across sessions of using your add-in. For example, your add-in may have custom settings or other values that it needs to save and reload the next time it's initialized, such as a user's preferred view or default location.
-
 To do that, you can:
 
 
@@ -19,7 +18,7 @@ To do that, you can:
 This article focuses on how to use the JavaScript API for Office to persist add-in state. For examples of using browser cookies and web storage, see the [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings).
 
 ## Persisting add-in state and settings with the JavaScript API for Office
-
+j
 
 The JavaScript API for Office provides the [Settings](https://dev.office.com/reference/add-ins/shared/settings), [RoamingSettings](https://dev.office.com/reference/add-ins/outlook/RoamingSettings), and [CustomProperties](https://dev.office.com/reference/add-ins/outlook/CustomProperties) objects for saving add-in state across sessions as described in the following table. In all cases, the saved settings values are associated with the [Id](http://msdn.microsoft.com/en-us/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx) of the add-in that created them.
 
@@ -41,7 +40,7 @@ This example of the property bag structure contains three defined  **string** va
 
 
 
-```
+```js
 {
 "firstName":"Erik",
 "location":"98052",
@@ -71,7 +70,7 @@ Because the set and remove methods operate against only the in-memory copy of th
 The following code example shows how to use the [Settings.set](https://dev.office.com/reference/add-ins/shared/settings.set) method to create a setting called `'themeColor'` with a value `'green'`. The first parameter of the set method is the case-sensitive  _name_ (Id) of the setting to set or create. The second parameter is the _value_ of the setting.
 
 
-```
+```js
 Office.context.document.settings.set('themeColor', 'green');
 ```
 
@@ -100,7 +99,7 @@ function write(message){
 The following example shows how to use the [Settings.remove](https://dev.office.com/reference/add-ins/shared/settings.removehandlerasync) method to remove a setting with the name "themeColor". The only parameter of the **remove** method is the case-sensitive _name_ of the setting.
 
 
-```
+```js
 Office.context.document.settings.remove('themeColor');
 ```
 
@@ -141,7 +140,7 @@ An Outlook add-in can use the [RoamingSettings](https://dev.office.com/reference
 An Outlook add-in typically loads roaming settings in the [Office.initialize](https://dev.office.com/reference/add-ins/shared/office.initialize) event handler. The following JavaScript code example shows how to load existing roaming settings.
 
 
-```
+```js
 var _mailbox;
 var _settings;
 
@@ -165,7 +164,7 @@ Office.initialize = function (reason) {
 Continuing with the preceding example, the following  `setAppSetting` function shows how to use the [RoamingSettings.set](https://dev.office.com/reference/add-ins/outlook/RoamingSettings) method to set or update a setting named `cookie` with today's date. Then, it saves all the roaming settings back to the Exchange Server with the [RoamingSettings.saveAsync](https://dev.office.com/reference/add-ins/outlook/RoamingSettings) method.
 
 
-```
+```js
 // Set an add-in setting.
 function setAppSetting() {
     _settings.set("cookie", Date());
@@ -189,7 +188,7 @@ The  **saveAsync** method saves roaming settings asynchronously and takes an opt
 Also extending the preceding examples, the following  `removeAppSetting` function, shows how to use the [RoamingSettings.remove](https://dev.office.com/reference/add-ins/outlook/RoamingSettings) method to remove the `cookie` setting and save all the roaming settings back to the Exchange Server.
 
 
-```
+```js
 // Remove an application setting.
 function removeAppSetting()
 {
@@ -216,7 +215,7 @@ An Outlook add-in that uses these functions retrieves any custom properties by c
 
 
 
-```
+```js
 var property = _customProps.get("propertyName");
 ```
 
@@ -234,7 +233,7 @@ This example includes the following functions:
 
 
 
-```
+```js
 var _mailbox;
 var _customProps;
 
