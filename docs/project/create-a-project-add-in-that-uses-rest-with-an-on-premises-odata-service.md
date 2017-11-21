@@ -189,7 +189,7 @@ The task pane shows the add-in display name at the top, which is the value of th
     
     Following is the updated HTML code for the  **head** element, with the additional line for the SurfaceErrors.js file:
     
-    ```html
+    ```HTML
         <!DOCTYPE html>
         <html>
         <head>
@@ -223,69 +223,66 @@ The task pane shows the add-in display name at the top, which is the value of th
         </html>
     ```
 
-3. In the  **body** element, delete the existing code from the template, and then add the code for the user interface. If an element is to be filled with data or manipulated by a jQuery statement, the element must include a unique **id** attribute. In the following code, the **id** attributes for the **button**,  **span**, and  **td** (table cell definition) elements that jQuery functions use are shown in bold font.
+3. In the **body** element, delete the existing code from the template, and then add the code for the user interface. If an element is to be filled with data or manipulated by a jQuery statement, the element must include a unique **id** attribute. In the following code, the **id** attributes for the **button**,  **span**, and  **td** (table cell definition) elements that jQuery functions use are shown in bold font.
     
-    The following HTML adds a graphic image, which could be a company logo. You can use a logo of your choice, or copy the NewLogo.png file from the Project 2013 SDK download, and then use  **Solution Explorer** to add the file to the `HelloProjectODataWeb\Images` folder.
+   The following HTML adds a graphic image, which could be a company logo. You can use a logo of your choice, or copy the NewLogo.png file from the Project 2013 SDK download, and then use  **Solution Explorer** to add the file to the `HelloProjectODataWeb\Images` folder.
     
-
-
-```HTML
-      <body>
-      <div id="SectionContent">
-        <div id="odataQueries">
-          ODATA REST QUERY
-        </div>
-        <div id="odataInfo">
-          <button class="button-wide" onclick="setOdataUrl()">Get ProjectData Endpoint</button>
-          <br /><br />
-          <span class="rest" id="projectDataEndPoint">Endpoint of the 
-            <strong>ProjectData</strong> service</span>
+    ```HTML
+          <body>
+          <div id="SectionContent">
+            <div id="odataQueries">
+              ODATA REST QUERY
+            </div>
+            <div id="odataInfo">
+              <button class="button-wide" onclick="setOdataUrl()">Get ProjectData Endpoint</button>
+              <br /><br />
+              <span class="rest" id="projectDataEndPoint">Endpoint of the 
+                <strong>ProjectData</strong> service</span>
+              <br />
+            </div>
+            <div id="compareProjectData">
+              <button class="button-wide" disabled="disabled" id="compareProjects"
+                onclick="retrieveOData()">Compare All Projects</button>
+              <br />
+            </div>
+          </div>
+          <div id="corpInfo">
+            <table class="infoTable" aria-readonly="True" style="width: 100%;">
+              <tr>
+                <td class="heading_leftCol"></td>
+                <td class="heading_midCol"><strong>Average</strong></td>
+                <td class="heading_rightCol"><strong>Current</strong></td>
+              </tr>
+              <tr>
+                <td class="row_leftCol"><strong>Project Cost</strong></td>
+                <td class="row_midCol" id="AverageProjectCost">&amp;nbsp;</td>
+                <td class="row_rightCol" id="CurrentProjectCost">&amp;nbsp;</td>
+              </tr>
+              <tr>
+                <td class="row_leftCol"><strong>Project Actual Cost</strong></td>
+                <td class="row_midCol" id="AverageProjectActualCost">&amp;nbsp;</td>
+                <td class="row_rightCol" id="CurrentProjectActualCost">&amp;nbsp;</td>
+              </tr>
+              <tr>
+                <td class="row_leftCol"><strong>Project Work</strong></td>
+                <td class="row_midCol" id="AverageProjectWork">&amp;nbsp;</td>
+                <td class="row_rightCol" id="CurrentProjectWork">&amp;nbsp;</td>
+              </tr>
+              <tr>
+                <td class="row_leftCol"><strong>Project % Complete</strong></td>
+                <td class="row_midCol" id="AverageProjectPercentComplete">&amp;nbsp;</td>
+                <td class="row_rightCol" id="CurrentProjectPercentComplete">&amp;nbsp;</td>
+              </tr>
+            </table>
+          </div>
+          <img alt="Corporation" class="logo" src="../../images/NewLogo.png" />
           <br />
-        </div>
-        <div id="compareProjectData">
-          <button class="button-wide" disabled="disabled" id="compareProjects"
-            onclick="retrieveOData()">Compare All Projects</button>
-          <br />
-        </div>
-      </div>
-      <div id="corpInfo">
-        <table class="infoTable" aria-readonly="True" style="width: 100%;">
-          <tr>
-            <td class="heading_leftCol"></td>
-            <td class="heading_midCol"><strong>Average</strong></td>
-            <td class="heading_rightCol"><strong>Current</strong></td>
-          </tr>
-          <tr>
-            <td class="row_leftCol"><strong>Project Cost</strong></td>
-            <td class="row_midCol" id="AverageProjectCost">&amp;nbsp;</td>
-            <td class="row_rightCol" id="CurrentProjectCost">&amp;nbsp;</td>
-          </tr>
-          <tr>
-            <td class="row_leftCol"><strong>Project Actual Cost</strong></td>
-            <td class="row_midCol" id="AverageProjectActualCost">&amp;nbsp;</td>
-            <td class="row_rightCol" id="CurrentProjectActualCost">&amp;nbsp;</td>
-          </tr>
-          <tr>
-            <td class="row_leftCol"><strong>Project Work</strong></td>
-            <td class="row_midCol" id="AverageProjectWork">&amp;nbsp;</td>
-            <td class="row_rightCol" id="CurrentProjectWork">&amp;nbsp;</td>
-          </tr>
-          <tr>
-            <td class="row_leftCol"><strong>Project % Complete</strong></td>
-            <td class="row_midCol" id="AverageProjectPercentComplete">&amp;nbsp;</td>
-            <td class="row_rightCol" id="CurrentProjectPercentComplete">&amp;nbsp;</td>
-          </tr>
-        </table>
-      </div>
-      <img alt="Corporation" class="logo" src="../../images/NewLogo.png" />
-      <br />
-      <textarea id="odataText" rows="12" cols="40"></textarea>
-    </body>
-```
+          <textarea id="odataText" rows="12" cols="40"></textarea>
+        </body>
+    ```
 
 
 ## Creating the JavaScript code for the add-in
-
 
 The template for a Project task pane add-in includes default initialization code that is designed to demonstrate basic get and set actions for data in a document for a typical Office 2013 add-in. Because Project 2013 does not support actions that write to the active project, and the  **HelloProjectOData** add-in does not use the **getSelectedDataAsync** method, you can delete the script within the **Office.initialize** function, and delete the **setData** function and **getData** function in the default HelloProjectOData.js file.
 
@@ -293,9 +290,7 @@ The JavaScript includes global constants for the REST query and global variables
 
 The remainder of the HelloProjectOData.js file includes two functions: the  **retrieveOData** function is called when the user selects **Compare All Projects**; and the  **parseODataResult** function calculates averages and then populates the comparison table with values that are formatted for color and units.
 
-
 ### Procedure 5. To create the JavaScript code
-
 
 1. Delete all code in the default HelloProjectOData.js file, and then add the global variables and  **Office.initialize** function. Variable names that are all capitals imply that they are constants; they are later used with the **_pwa** variable to create the REST query in this example.
     
@@ -321,8 +316,8 @@ The remainder of the HelloProjectOData.js file includes two functions: the  **re
 
 2. Add  **setOdataUrl** and related functions. The **setOdataUrl** function calls **getProjectGuid** and **getDocumentUrl** to initialize the global variables. In the [getProjectFieldAsync method](/reference/shared/projectdocument.getprojectfieldasync.md), the anonymous function for the  _callback_ parameter enables the **Compare All Projects** button by using the **removeAttr** method in the jQuery library, and then displays the URL of the **ProjectData** service. If Project is not connected with Project Web App, the function throws an error, which displays a pop-up error message. The SurfaceErrors.js file includes the **throwError** method.
     
-    > [!NOTE]
-    > If you run Visual Studio on the Project Server computer, to use  **F5** debugging, uncomment the code after the line that initializes the **_pwa** global variable. To enable using the jQuery **ajax** method when debugging on the Project Server computer, you must set the **localhost** value for the PWA URL.If you run Visual Studio on a remote computer, the  **localhost** URL is not required. Before you deploy the add-in, comment out that code.
+   > [!NOTE]
+   > If you run Visual Studio on the Project Server computer, to use  **F5** debugging, uncomment the code after the line that initializes the **_pwa** global variable. To enable using the jQuery **ajax** method when debugging on the Project Server computer, you must set the **localhost** value for the PWA URL.If you run Visual Studio on a remote computer, the  **localhost** URL is not required. Before you deploy the add-in, comment out that code.
 
     ```js
             function setOdataUrl() {
@@ -382,12 +377,10 @@ The remainder of the HelloProjectOData.js file includes two functions: the  **re
 
 3. Add the  **retrieveOData** function, which concatenates values for the REST query and then calls the **ajax** function in jQuery to get the requested data from the **ProjectData** service. The **support.cors** variable enables cross-origin resource sharing (CORS) with the **ajax** function. If the **support.cors** statement is missing or is set to **false**, the  **ajax** function returns a **No transport** error.
     
-    > [!NOTE]
-    > The following code works with an on-premises installation of Project Server 2013. For Project Online, you can use OAuth for token-based authentication. For more information, see [Addressing same-origin policy limitations in Office Add-ins](../develop/addressing-same-origin-policy-limitations.md).
+   > [!NOTE]
+   > The following code works with an on-premises installation of Project Server 2013. For Project Online, you can use OAuth for token-based authentication. For more information, see [Addressing same-origin policy limitations in Office Add-ins](../develop/addressing-same-origin-policy-limitations.md).
 
-    In the  **ajax** call, you can use either the _headers_ parameter or the _beforeSend_ parameter. The _complete_ parameter is an anonymous function so that it is in the same scope as the variables in **retrieveOData**. The function for the  _complete_ parameter displays results in the **odataText** control and also calls the **parseODataResult** method to parse and display the JSON response. The _error_ parameter specifies the named **getProjectDataErrorHandler** function, which writes an error message to the **odataText** control and also uses the **throwError** method to display a pop-up message.
-    
-
+   In the **ajax** call, you can use either the _headers_ parameter or the _beforeSend_ parameter. The _complete_ parameter is an anonymous function so that it is in the same scope as the variables in **retrieveOData**. The function for the  _complete_ parameter displays results in the **odataText** control and also calls the **parseODataResult** method to parse and display the JSON response. The _error_ parameter specifies the named **getProjectDataErrorHandler** function, which writes an error message to the **odataText** control and also uses the **throwError** method to display a pop-up message.
 
     ```js
         /****************************************************************
@@ -445,10 +438,9 @@ The remainder of the HelloProjectOData.js file includes two functions: the  **re
         }
     ```
 
-4. Add the  **parseODataResult** method, which deserializes and processes the JSON response from the OData service. The **parseODataResult** method calculates average values of the cost and work data to an accuracy of one or two decimal places, formats values with the correct color and adds a unit ( **$**,  **hrs**, or  **%**), and then displays the values in specified table cells.
+4. Add the **parseODataResult** method, which deserializes and processes the JSON response from the OData service. The **parseODataResult** method calculates average values of the cost and work data to an accuracy of one or two decimal places, formats values with the correct color and adds a unit ( **$**,  **hrs**, or  **%**), and then displays the values in specified table cells.
     
-    If the GUID of the active project matches the  **ProjectId** value, the **myProjectIndex** variable is set to the project index. If **myProjectIndex** indicates the active project is published on Project Server, the **parseODataResult** method formats and displays cost and work data for that project. If the active project is not published, values for the active project are displayed as a blue **NA**.
-    
+   If the GUID of the active project matches the  **ProjectId** value, the **myProjectIndex** variable is set to the project index. If **myProjectIndex** indicates the active project is published on Project Server, the **parseODataResult** method formats and displays cost and work data for that project. If the active project is not published, values for the active project are displayed as a blue **NA**.
 
     ```js
         // Calculate the average values of actual cost, cost, work, and percent complete   
@@ -562,9 +554,7 @@ The remainder of the HelloProjectOData.js file includes two functions: the  **re
 
 ## Testing the HelloProjectOData add-in
 
-
 To test and debug the  **HelloProjectOData** add-in with Visual Studio 2015, Project Professional 2013 must be installed on the development computer. To enable different test scenarios, ensure that you can choose whether Project opens for files on the local computer or connects with Project Web App. For example, do the following steps:
-
 
 1. On the  **FILE** tab on the ribbon, choose the **Info** tab in the Backstage view, and then choose **Manage Accounts**.
     
@@ -574,7 +564,6 @@ To test and debug the  **HelloProjectOData** add-in with Visual Studio 2015, Pro
     
 Basic tests should include the following:
 
-
 - Run the add-in from Visual Studio, and then open a published project from Project Web App that contains cost and work data. Verify that the add-in displays the  **ProjectData** endpoint and correctly displays the cost and work data in the table. You can use the output in the **odataText** control to check the REST query and other information.
     
 - Run the add-in again, where you choose the local computer profile in the  **Login** dialog box when Project starts. Open a local .mpp file, and then test the add-in. Verify that the add-in displays an error message when you try to get the **ProjectData** endpoint.
@@ -583,7 +572,6 @@ Basic tests should include the following:
     
 
 ### Procedure 6. To test the add-in
-
 
 1. Run Project Professional 2013, connect with Project Web App, and then create a test project. Assign tasks to local resources or to enterprise resources, set various values of percent complete on some tasks, and then publish the project. Quit Project, which enables Visual Studio to start Project for debugging the add-in.
     
@@ -606,8 +594,6 @@ Basic tests should include the following:
 6. Examine output in the text box. It should show the document path, REST query, status information, and JSON results from the calls to  **ajax** and **parseODataResult**. The output helps to understand, create, and debug code in the  **parseODataResult** method such as `projCost += Number(res.d.results[i].ProjectCost);`.
     
     Following is an example of the output with line breaks and spaces added to the text for clarity, for three projects in a Project Web App instance:
-    
-
 
     ```
           Document path: <>\WinProj test1
@@ -657,18 +643,17 @@ Basic tests should include the following:
 
 7. Stop debugging (press  **Shift + F5**), and then press  **F5** again to run a new instance of Project. In the **Login** dialog box, choose the local **Computer** profile, not Project Web App. Create or open a local project .mpp file, open the **Hello ProjectData** task pane, and then select **Get ProjectData Endpoint**. The add-in should show a  **No connection!** error (see Figure 7), and the **Compare All Projects** button should remain disabled.
     
-    *Figure 7. Using the add-in without a Project web app connection*
+   *Figure 7. Using the add-in without a Project web app connection*
 
-    ![Using the app without a Project Web App connection](../images/pj15-hello-project-data-no-connection.png)
+   ![Using the app without a Project Web App connection](../images/pj15-hello-project-data-no-connection.png)
 
 8. Stop debugging, and then press  **F5** again. Log on to Project Web App, and then create a project that contains cost and work data. You can save the project, but don't publish it.
     
-    In the  **Hello ProjectData** task pane, when you select **Compare All Projects**, you should see a blue  **NA** for fields in the **Current** column (see Figure 8).
+   In the  **Hello ProjectData** task pane, when you select **Compare All Projects**, you should see a blue  **NA** for fields in the **Current** column (see Figure 8).
     
+   *Figure 8. Comparing an unpublished project with other projects*
 
-    *Figure 8. Comparing an unpublished project with other projects*
-
-    ![Comparing an unpublished project with others](../images/pj15-hello-project-data-not-published.png)
+   ![Comparing an unpublished project with others](../images/pj15-hello-project-data-not-published.png)
 
 Even if your add-in is working correctly in the previous tests, there are other tests that should be run. For example:
 
@@ -691,7 +676,7 @@ Even if your add-in is working correctly in the previous tests, there are other 
 The following code is in the `Pages\HelloProjectOData.html` file of the **HelloProjectODataWeb** project.
 
 
-```html
+```HTML
     <!DOCTYPE html>
     <html>
     <head>
@@ -779,7 +764,6 @@ The following code is in the `Pages\HelloProjectOData.html` file of the **HelloP
 ### HelloProjectOData.js file
 
 The following code is in the `Scripts\Office\HelloProjectOData.js` file of the **HelloProjectODataWeb** project.
-
 
 ```js
     /* File: HelloProjectOData.js
@@ -1031,7 +1015,6 @@ The following code is in the `Scripts\Office\HelloProjectOData.js` file of the *
 
 The following code is in the `Content\App.css` file of the **HelloProjectODataWeb** project.
 
-
 ```
 /*
 *  File: App.css for the HelloProjectOData app.
@@ -1131,7 +1114,6 @@ You can copy code for the SurfaceErrors.js file from the _Robust Programming_ se
 
 ## Next steps
 
-
 If  **HelloProjectOData** were a production add-in to be sold in the Office Store or distributed in a SharePoint add-in catalog, it would be designed differently. For example, there would be no debug output in a text box, and probably no button to get the **ProjectData** endpoint. You would also have to rewrite the **retireveOData** function to handle Project Web App instances that have more than 100 projects.
 
 The add-in should contain additional error checks, plus logic to catch and explain or show edge cases. For example, if a Project Web App instance has 1000 projects with an average duration of five days and average cost of $2400, and the active project is the only one that has a duration longer than 20 days, the cost and work comparison would be skewed. That could be shown with a frequency graph. You could add options to display duration, compare similar length projects, or compare projects from the same or different departments. Or, add a way for the user to select from a list of fields to display.
@@ -1148,7 +1130,7 @@ If you modify the  **HelloProjectOData** add-in for production use, do the follo
 
 - Rewrite the  **retrieveOData** function to enable queries of more than 100 projects. For example, you could get the number of projects with a `~/ProjectData/Projects()/$count` query, and use the _$skip_ operator and _$top_ operator in the REST query for project data. Run multiple queries in a loop, and then average the data from each query. Each query for project data would be of the form, `~/ProjectData/Projects()?skip= [numSkipped]&amp;$top=100&amp;$filter=[filter]&amp;$select=[field1,field2, ???????]`.
     
-    For more information, see [OData System Query Options Using the REST Endpoint](http://msdn.microsoft.com/library/8a938b9b-7fdb-45a3-a04c-4d2d5cf2e353.aspx). You can also use the [Set-SPProjectOdataConfiguration](http://technet.microsoft.com/library/jj219516%28v=office.15%29.aspx) command in Windows PowerShell to override the default page size for a query of the **Projects** entity set (or any of the 33 entity sets). See [ProjectData - Project OData service reference](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx).
+  For more information, see [OData System Query Options Using the REST Endpoint](http://msdn.microsoft.com/library/8a938b9b-7fdb-45a3-a04c-4d2d5cf2e353.aspx). You can also use the [Set-SPProjectOdataConfiguration](http://technet.microsoft.com/library/jj219516%28v=office.15%29.aspx) command in Windows PowerShell to override the default page size for a query of the **Projects** entity set (or any of the 33 entity sets). See [ProjectData - Project OData service reference](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx).
     
 - To deploy the add-in, see [Publish your Office Add-in](../publish/publish.md).
     
