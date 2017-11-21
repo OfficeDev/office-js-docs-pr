@@ -13,7 +13,6 @@ You can use the Yeoman generator to create your Office Add-in. The Yeoman genera
 > [!NOTE]
 > These instructions use Terminal on a Mac, but you can also use other shell environments. 
 
-
 ## Prerequisites for the Yeoman generator
 
 To install the Yeoman Office generator, you must have [git](https://git-scm.com/downloads) and node.js installed on your computer. If you're on a Mac, we recommend that you use [Node Version Manager](https://github.com/creationix/nvm) to install node.js with the right permissions. If you're on Windows, you can install node.js from [nodejs.org](https://nodejs.org/en/).
@@ -25,7 +24,7 @@ To install the Yeoman Office generator, you must have [git](https://git-scm.com/
 
 After you install node.js, open a Terminal and install the generator globally.
 
-```
+```bash
 npm install -g yo generator-office
 ```
 
@@ -39,7 +38,7 @@ In Terminal, move to the parent folder where you want to create your project. Th
 
 
 
-```
+```bash
 mkdir myHelloWorldaddin
 cd myHelloWorldaddin
 ```
@@ -49,7 +48,7 @@ Use the Yeoman generator to create the add-in of your choice. The steps in this 
 
 
 
-```
+```bash
 yo office
 ```
 
@@ -82,7 +81,7 @@ Office Add-ins must be hosted, even in development, via HTTPS. Yo Office creates
 Launch the local HTTPS site on https://localhost:3000 by typing the following command in your console:
 
 
-```
+```bash
 npm start
 ```
 
