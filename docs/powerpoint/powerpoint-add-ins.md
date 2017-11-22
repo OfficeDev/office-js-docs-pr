@@ -178,7 +178,7 @@ function getFileUrl() {
 
 - [Read and write data to the active selection in a document or spreadsheet](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
-- [Get the whole document from an add-in for PowerPoint or Word](../develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)
+- [Get the whole document from an add-in for PowerPoint or Word](../powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md)
     
 - [Use document themes in your PowerPoint add-ins](use-document-themes-in-your-powerpoint-add-ins.md)
     

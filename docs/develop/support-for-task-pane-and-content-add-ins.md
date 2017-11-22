@@ -96,7 +96,7 @@ If your task pane add-in runs in PowerPoint or Word, you can use the [Document.g
 
 When you call  **Document.getFileAsync**, you get a copy of the document in a [File](https://dev.office.com/reference/add-ins/shared/file) object. The **File** object provides access to the document in "chunks" represented as [Slice](https://dev.office.com/reference/add-ins/shared/document) objects. When you call **getFileAsync**, you can specify the file type (text or compressed Open Office XML format), and size of the slices (up to 4MB). To access the contents of the  **File** object, you then call **File.getSliceAsync** which returns the raw data in the [Slice.data](https://dev.office.com/reference/add-ins/shared/slice.data) property. If you specified compressed format, you will get the file data as a byte array. If you are transmitting the file to a web service, you can transform the compressed raw data to a base64-encoded string before submission. Finally, when you are finished getting slices of the file, use the **File.closeAsync** method to close the document.
 
-For more details, see how to [get the whole document from an add-in for PowerPoint or Word](get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md). 
+For more details, see how to [get the whole document from an add-in for PowerPoint or Word](../word/get-the-whole-document-from-an-add-in-for-word.md). 
 
 
 ## Reading and writing custom XML parts of a Word document

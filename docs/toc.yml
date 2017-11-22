@@ -180,7 +180,7 @@
   - name: Dictionary task pane add-ins
     href: word/dictionary-task-pane-add-ins.md
   - name: Get the whole document from an add-in for PowerPoint or Word
-    href: develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md
+    href: word/get-the-whole-document-from-an-add-in-for-word.md
   - name: Read and write data to the active selection in a document or spreadsheet
     href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
   - name: Bind to regions in a document or spreadsheet
@@ -229,7 +229,7 @@
   - name: Use document themes in your PowerPoint add-ins
     href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
   - name: Get the whole document from an add-in for PowerPoint or Word
-    href: develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md
+    href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
 - name: OneNote
   items:
   - name: OneNote JavaScript API programming overview
