@@ -70,7 +70,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 The default value is `false`, which is the same as omitting the property entirely. If the add-in is not running in Office Online, the `displayInIframe` is ignored.
 
 > [!NOTE]
-> You should ***not*** use `displayInIframe: true` if the dialog will at any point redirect to a page that cannot be opened in an iframe. For example, the sign in pages of many popular web services, such as Google and Microsoft Account, cannot be opened in an iframe.
+> You should **not** use `displayInIframe: true` if the dialog will at any point redirect to a page that cannot be opened in an iframe. For example, the sign in pages of many popular web services, such as Google and Microsoft Account, cannot be opened in an iframe.
 
 ### Send information from the dialog box to the host page
 
