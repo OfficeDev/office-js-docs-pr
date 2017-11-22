@@ -3,7 +3,7 @@
 
  _**Applies to:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
 
-Represents an activity component. Extends [Labs.Core.IComponent](/reference/office-mix/labs.core.icomponent.md).
+Represents an activity component. Extends [Labs.Core.IComponent](https://dev.office.com/reference/add-ins/office-mix/labs.core.icomponent).
 
 ```
 interface IActivityComponent extends Labs.Core.IComponent

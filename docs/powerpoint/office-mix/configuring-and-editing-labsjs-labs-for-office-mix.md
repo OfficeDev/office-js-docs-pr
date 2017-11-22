@@ -14,7 +14,7 @@ Office Mix provides office.js methods to get and set lab configurations. The con
 
 ## Getting the lab editor
 
-The lab editor, the [Labs.LabEditor](/reference/office-mix/labs.labeditor.md) object, allows you to edit your lab and get and set your lab configuration. When you have finished editing your lab, you must call the **Done** method. However, calling the **Done** method is not required except when you are trying to take or run a lab that you are editing. Note that only one instance of the lab can be opened at a time.
+The lab editor, the [Labs.LabEditor](https://dev.office.com/reference/add-ins/office-mix/labs.labeditor) object, allows you to edit your lab and get and set your lab configuration. When you have finished editing your lab, you must call the **Done** method. However, calling the **Done** method is not required except when you are trying to take or run a lab that you are editing. Note that only one instance of the lab can be opened at a time.
 
 The following code shows how to get the lab editor.
 
@@ -31,7 +31,7 @@ Labs.editLab((err, labEditor) => {
 });
 ```
 
-Use the  **getConfiguration** and **setConfiguration** methods on [Labs.LabEditor](/reference/office-mix/labs.labeditor.md) to store the configuration for a given lab. The configuration ([Labs.Core.IConfiguration](/reference/office-mix/labs.core.iconfiguration.md)) indicates to Office Mix what data will be collected and processed by the lab. A configuration contains general information about a lab, including the name, version, and other configuration options. The most important part of the configuration is the definition of the lab components.
+Use the  **getConfiguration** and **setConfiguration** methods on [Labs.LabEditor](https://dev.office.com/reference/add-ins/office-mix/labs.labeditor) to store the configuration for a given lab. The configuration ([Labs.Core.IConfiguration](https://dev.office.com/reference/add-ins/office-mix/labs.core.iconfiguration)) indicates to Office Mix what data will be collected and processed by the lab. A configuration contains general information about a lab, including the name, version, and other configuration options. The most important part of the configuration is the definition of the lab components.
 
 The following code shows how to set and get a configuration. To set a configuration, simply create the configuration object, and then call the  **setConfiguration** method. To then retrieve the configuration, you call the **getConfiguration** method on the lab editor object.
 
@@ -86,7 +86,7 @@ After you have set the lab configuration, you are ready to begin interacting wit
 
 ### Getting the lab instance
 
-You interact with the lab using the [Labs.LabInstance](/reference/office-mix/labs.labinstance.md) object, which is an instance of the configured lab for the current user. To run (or "take") the lab, call the [Labs.takeLab](/reference/office-mix/labs.takelab.md) function.
+You interact with the lab using the [Labs.LabInstance](https://dev.office.com/reference/add-ins/office-mix/labs.labinstance) object, which is an instance of the configured lab for the current user. To run (or "take") the lab, call the [Labs.takeLab](https://dev.office.com/reference/add-ins/office-mix/labs.takelab) function.
 
 
 ```js
@@ -97,7 +97,7 @@ Labs.takeLab((err, labInstance) => {
 });
 ```
 
-The instance object contains an array of component instances ([Labs.ComponentInstanceBase](/reference/office-mix/labs.componentinstancebase.md), [Labs.ComponentInstance](/reference/office-mix/labs.componentinstance.md)) that map to the components that you specified in the configuration. In fact, an instance is simply a transformed version of the configuration that is used to attach server side IDs to instance objects, as well as to hide certain fields from the user when applicable (for example, hints, answers, and so on).
+The instance object contains an array of component instances ([Labs.ComponentInstanceBase](https://dev.office.com/reference/add-ins/office-mix/labs.componentinstancebase), [Labs.ComponentInstance](https://dev.office.com/reference/add-ins/office-mix/labs.componentinstance)) that map to the components that you specified in the configuration. In fact, an instance is simply a transformed version of the configuration that is used to attach server side IDs to instance objects, as well as to hide certain fields from the user when applicable (for example, hints, answers, and so on).
 
 
 ### Managing state

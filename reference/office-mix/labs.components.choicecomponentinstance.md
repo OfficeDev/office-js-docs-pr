@@ -15,7 +15,7 @@ class ChoiceComponentInstance extends Labs.ComponentInstance<Components.ChoiceCo
 
 |Property|Description|
 |:-----|:-----|
-| `public var component: Components.IChoiceComponentInstance`|The underlying [Labs.Components.IChoiceComponentInstance](/reference/office-mix/labs.components.ichoicecomponentinstance.md) which this class represents.|
+| `public var component: Components.IChoiceComponentInstance`|The underlying [Labs.Components.IChoiceComponentInstance](https://dev.office.com/reference/add-ins/office-mix/labs.components.ichoicecomponentinstance) which this class represents.|
 
 ## Methods
 
@@ -33,7 +33,7 @@ Creates a new instance of the  **ChoiceComponentInstance** class.
 
 |Parameter|Description|
 |:-----|:-----|
-| _component_|The [Labs.Components.IChoiceComponentInstance](/reference/office-mix/labs.components.ichoicecomponentinstance.md) object from which to create this class.|
+| _component_|The [Labs.Components.IChoiceComponentInstance](https://dev.office.com/reference/add-ins/office-mix/labs.components.ichoicecomponentinstance) object from which to create this class.|
 
 ### buildAttempt
 

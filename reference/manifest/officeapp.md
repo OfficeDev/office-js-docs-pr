@@ -29,16 +29,16 @@ The root element in the manifest of an Office Add-in.
 
 |**Element**|**Content**|**Mail**|**TaskPane**|
 |:-----|:-----|:-----|:-----|
-|[Id](/reference/manifest/id.md)|x|x|x|
-|[Version](/reference/manifest/version.md)|x|x|x|
-|[ProviderName](/reference/manifest/providername.md)|x|x|x|
-|[DefaultLocale](/reference/manifest/defaultlocale.md)|x|x|x|
-|[DefaultSettings](/reference/manifest/defaultsettings.md)|x|x|x|
-|[DisplayName](/reference/manifest/displayname.md)|x|x|x|
-|[Description](/reference/manifest/description.md)|x|x|x|
-|[FormSettings](/reference/manifest/formsettings.md)||x||
-|[Permissions](/reference/manifest/permissions.md)|x||x|
-|[Rule](/reference/manifest/rule.md)||x||
+|[Id](https://dev.office.com/reference/add-ins/manifest/id)|x|x|x|
+|[Version](https://dev.office.com/reference/add-ins/manifest/version)|x|x|x|
+|[ProviderName](https://dev.office.com/reference/add-ins/manifest/providername)|x|x|x|
+|[DefaultLocale](https://dev.office.com/reference/add-ins/manifest/defaultlocale)|x|x|x|
+|[DefaultSettings](https://dev.office.com/reference/add-ins/manifest/defaultsettings)|x|x|x|
+|[DisplayName](https://dev.office.com/reference/add-ins/manifest/displayname)|x|x|x|
+|[Description](https://dev.office.com/reference/add-ins/manifest/description)|x|x|x|
+|[FormSettings](https://dev.office.com/reference/add-ins/manifest/formsettings)||x||
+|[Permissions](https://dev.office.com/reference/add-ins/manifest/permissions)|x||x|
+|[Rule](https://dev.office.com/reference/add-ins/manifest/rule)||x||
 
 ## Can contain:
 
@@ -46,18 +46,18 @@ The root element in the manifest of an Office Add-in.
 
 |**Element**|**Content**|**Mail**|**TaskPane**|
 |:-----|:-----|:-----|:-----|
-|[AlternateId](/reference/manifest/alternateid.md)|x|x|x|
-|[IconUrl](/reference/manifest/iconurl.md)|x|x|x|
-|[HighResolutionIconUrl](/reference/manifest/highresolutioniconurl.md)|x|x|x|
-|[SupportUrl](/reference/manifest/supporturl.md)|x|x|x|
-|[AppDomains](/reference/manifest/appdomains.md)|x|x|x|
-|[Hosts](/reference/manifest/hosts.md)|x|x|x|
-|[Requirements](/reference/manifest/requirements.md)|x|x|x|
-|[AllowSnapshot](/reference/manifest/allowsnapshot.md)|x|||
-|[Permissions](/reference/manifest/permissions.md)||x||
-|[DisableEntityHighlighting](/reference/manifest/disableentityhighlighting.md)||x||
-|[Dictionary](/reference/manifest/dictionary.md)|||x|
-|[VersionOverrides](/reference/manifest/versionoverrides.md)|X|X|X|
+|[AlternateId](https://dev.office.com/reference/add-ins/manifest/alternateid)|x|x|x|
+|[IconUrl](https://dev.office.com/reference/add-ins/manifest/iconurl)|x|x|x|
+|[HighResolutionIconUrl](https://dev.office.com/reference/add-ins/manifest/highresolutioniconurl)|x|x|x|
+|[SupportUrl](https://dev.office.com/reference/add-ins/manifest/supporturl)|x|x|x|
+|[AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains)|x|x|x|
+|[Hosts](https://dev.office.com/reference/add-ins/manifest/hosts)|x|x|x|
+|[Requirements](https://dev.office.com/reference/add-ins/manifest/requirements)|x|x|x|
+|[AllowSnapshot](https://dev.office.com/reference/add-ins/manifest/allowsnapshot)|x|||
+|[Permissions](https://dev.office.com/reference/add-ins/manifest/permissions)||x||
+|[DisableEntityHighlighting](https://dev.office.com/reference/add-ins/manifest/disableentityhighlighting)||x||
+|[Dictionary](https://dev.office.com/reference/add-ins/manifest/dictionary)|||x|
+|[VersionOverrides](https://dev.office.com/reference/add-ins/manifest/versionoverrides)|X|X|X|
 
 ## Attributes
 

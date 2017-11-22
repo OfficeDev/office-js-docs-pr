@@ -11,4 +11,4 @@ The  **LabsJS.Labs.Core** module contains the following classes.
 
 |||
 |:-----|:-----|
-|[Labs.Core.Permissions](/reference/office-mix/labs.core.permissions.md)|Static class representing the permissions enabled for a given user of the lab.|
+|[Labs.Core.Permissions](https://dev.office.com/reference/add-ins/office-mix/labs.core.permissions)|Static class representing the permissions enabled for a given user of the lab.|

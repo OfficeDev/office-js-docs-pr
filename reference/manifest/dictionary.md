@@ -17,7 +17,7 @@ Defines settings for a task pane add-in that implements additional dictionary su
 
 ## Contained in:
 
-[OfficeApp](/reference/manifest/officeapp.md)
+[OfficeApp](https://dev.office.com/reference/add-ins/manifest/officeapp)
 
 
 ## Can contain:
@@ -26,11 +26,11 @@ Defines settings for a task pane add-in that implements additional dictionary su
 
 |**Element**|
 |:-----|
-|[TargetDialects](/reference/manifest/targetdialects.md)|
-|[QueryUri](/reference/manifest/queryuri.md)|
-|[CitationText](/reference/manifest/citationtext.md)|
-|[DictionaryName](/reference/manifest/dictionaryname.md)|
-|[DictionaryHomePage](/reference/manifest/dictionaryhomepage.md)|
+|[TargetDialects](https://dev.office.com/reference/add-ins/manifest/targetdialects)|
+|[QueryUri](https://dev.office.com/reference/add-ins/manifest/queryuri)|
+|[CitationText](https://dev.office.com/reference/add-ins/manifest/citationtext)|
+|[DictionaryName](https://dev.office.com/reference/add-ins/manifest/dictionaryname)|
+|[DictionaryHomePage](https://dev.office.com/reference/add-ins/manifest/dictionaryhomepage)|
 
 ## Additional resources
 

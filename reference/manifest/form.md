@@ -17,7 +17,7 @@ UX settings for the forms that your mail add-in will use when running on a parti
 
 ## Contained in:
 
-[FormSettings](/reference/manifest/formsettings.md)
+[FormSettings](https://dev.office.com/reference/add-ins/manifest/formsettings)
 
 
 ## Can contain:
@@ -25,6 +25,6 @@ UX settings for the forms that your mail add-in will use when running on a parti
 
 ||
 |:-----|
-|[DesktopSettings](/reference/manifest/desktopsettings.md)|
-|[TabletSettings](/reference/manifest/tabletsettings.md)|
-|[PhoneSettings](/reference/manifest/phonesettings.md)|
+|[DesktopSettings](https://dev.office.com/reference/add-ins/manifest/desktopsettings)|
+|[TabletSettings](https://dev.office.com/reference/add-ins/manifest/tabletsettings)|
+|[PhoneSettings](https://dev.office.com/reference/add-ins/manifest/phonesettings)|

@@ -15,7 +15,7 @@ Specifies the alternate ID for your Office Add-in as issued by the Office Store.
 
 ## Contained in:
 
-[OfficeApp](/reference/manifest/officeapp.md)
+[OfficeApp](https://dev.office.com/reference/add-ins/manifest/officeapp)
 
 
 ## Remarks

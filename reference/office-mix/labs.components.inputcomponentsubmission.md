@@ -15,8 +15,8 @@ class InputComponentSubmission
 
 |Property|Description|
 |:-----|:-----|
-| `public var answer: Components.InputComponentAnswer`|The answer ([Labs.Components.InputComponentAnswer](/reference/office-mix/labs.components.inputcomponentanswer.md)) associated with the submission.|
-| `public var result: Components.InputComponentResult`|The result ([Labs.Components.InputComponentResult](/reference/office-mix/labs.components.inputcomponentresult.md)) of the submission.|
+| `public var answer: Components.InputComponentAnswer`|The answer ([Labs.Components.InputComponentAnswer](https://dev.office.com/reference/add-ins/office-mix/labs.components.inputcomponentanswer)) associated with the submission.|
+| `public var result: Components.InputComponentResult`|The result ([Labs.Components.InputComponentResult](https://dev.office.com/reference/add-ins/office-mix/labs.components.inputcomponentresult)) of the submission.|
 | `public var time: number`|The time at which the submission was received.|
 
 ## Methods

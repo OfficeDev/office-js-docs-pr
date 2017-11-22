@@ -18,16 +18,16 @@ Provides a way to specify the value of a setting for an additional locale.
 
 ||
 |:-----|
-|[CitationText](/reference/manifest/citationtext.md)|
-|[Description](/reference/manifest/description.md)|
-|[DictionaryName](/reference/manifest/dictionaryname.md)|
-|[DictionaryHomePage](/reference/manifest/dictionaryhomepage.md)|
-|[DisplayName](/reference/manifest/displayname.md)|
-|[HighResolutionIconUrl](/reference/manifest/highresolutioniconurl.md)|
-|[IconUrl](/reference/manifest/iconurl.md)|
-|[QueryUri](/reference/manifest/queryuri.md)|
-|[SourceLocation](/reference/manifest/sourcelocation.md)|
-|[SupportUrl](/reference/manifest/supporturl.md)|
+|[CitationText](https://dev.office.com/reference/add-ins/manifest/citationtext)|
+|[Description](https://dev.office.com/reference/add-ins/manifest/description)|
+|[DictionaryName](https://dev.office.com/reference/add-ins/manifest/dictionaryname)|
+|[DictionaryHomePage](https://dev.office.com/reference/add-ins/manifest/dictionaryhomepage)|
+|[DisplayName](https://dev.office.com/reference/add-ins/manifest/displayname)|
+|[HighResolutionIconUrl](https://dev.office.com/reference/add-ins/manifest/highresolutioniconurl)|
+|[IconUrl](https://dev.office.com/reference/add-ins/manifest/iconurl)|
+|[QueryUri](https://dev.office.com/reference/add-ins/manifest/queryuri)|
+|[SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation)|
+|[SupportUrl](https://dev.office.com/reference/add-ins/manifest/supporturl)|
 
 ## Attributes
 

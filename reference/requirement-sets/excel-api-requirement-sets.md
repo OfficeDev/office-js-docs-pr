@@ -61,7 +61,7 @@ For information about common API requirement sets, see [Office common API requir
 
 ### Conditional formatting
 
-Introduces [Conditional formating](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/conditionalformat.md) of a range. Allows follwoing types of conditional formatting:
+Introduces [Conditional formating](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpechttps://dev.office.com/reference/add-ins/excel/conditionalformat) of a range. Allows follwoing types of conditional formatting:
 
 * Color scale
 * Data bar
@@ -126,7 +126,7 @@ New methods:
 
 ### Settings API in in Excel namespace
 
-[Setting](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_1.4_OpenSpec/reference/excel/setting.md) object represents a key-value pair of a setting persisted to the document. Now, we've added settings related APIs under Excel namespace. This doesn't offer net new functionality - however this make easy to remain in the promise based batched API syntax reduce the dependency on common API for Excel related tasks.
+[Setting](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_1.4_OpenSpechttps://dev.office.com/reference/add-ins/excel/setting) object represents a key-value pair of a setting persisted to the document. Now, we've added settings related APIs under Excel namespace. This doesn't offer net new functionality - however this make easy to remain in the promise based batched API syntax reduce the dependency on common API for Excel related tasks.
 
 APIs include `getItem()` to get setting entry via the key, `add()` to add the specified key:value setting pair to the workbook.
 

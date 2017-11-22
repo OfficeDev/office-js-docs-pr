@@ -17,7 +17,7 @@ This article assumes that you are using a text editor to create the task pane ad
 
 - On a shared network folder or on a web server, you need the following files:
     
-      - An HTML file (GetDoc_App.html) that contains the user interface plus links to the JavaScript files (including office.js and host-specific .js files) and Cascading Style Sheet (CSS) files.
+  - An HTML file (GetDoc_App.html) that contains the user interface plus links to the JavaScript files (including office.js and host-specific .js files) and Cascading Style Sheet (CSS) files.
     
   - A JavaScript file (GetDoc_App.js) to contain the programming logic of the add-in.
     
@@ -110,7 +110,7 @@ Use the following procedure to create a simple user interface for the add-in tha
    > [!NOTE]
    > Be sure that the **head** tags of the add-in contains a **script** tag with a valid link to the office.js file. 
 
-We'll use some CSS to give the add-in a simple, yet modern and professional appearance. Use the following CSS to define the style of the add-in.
+We'll use some CSS to give the add-in a simple, modern, and professional appearance. Use the following CSS to define the style of the add-in.
 
 
 - In a new file in the text editor, add the following CSS.
@@ -175,7 +175,7 @@ function updateStatus(message) {
 
 When you choose the  **Submit** button in the UI, the add-in calls the `sendFile` function, which contains a call to the [Document.getFileAsync](https://dev.office.com/reference/add-ins/shared/document.getfileasync) method. The **getFileAsync** method uses the asynchronous pattern, similar to other methods in the JavaScript API for Office. It has one required parameter, _fileType_, and two optional parameters,  _options_ and _callback_. 
 
-The  _fileType_ parameter expects one of three constants from the [FileType](https://dev.office.com/reference/add-ins/shared/filetype-enumeration) enumeration: **Office.FileType.Compressed** ("compressed"), **Office.FileType.PDF** ("pdf"), or **Office.FileType.Text** ("text"). PowerPoint supports only **Compressed** as an argument; Word supports all three. When you pass in **Compressed** for the _fileType_ parameter, the **getFileAsync** method returns the document as a PowerPoint 2013 presentation file (*.pptx) or Word 2013 document file (*.docx) by creating a temporary copy of the file on the local computer.
+The  _fileType_ parameter expects one of three constants from the [FileType](https://dev.office.com/reference/add-ins/shared/filetype-enumeration) enumeration: **Office.FileType.Compressed** ("compressed"), **Office.FileType.PDF** ("pdf"), or **Office.FileType.Text** ("text"). PowerPoint supports only **Compressed** as an argument; Word supports all three. When you pass in **Compressed** for the _fileType_ parameter, the **getFileAsync** method returns the document as a PowerPoint 2013 presentation file (*.pptx*) or Word 2013 document file (*.docx*) by creating a temporary copy of the file on the local computer.
 
 The  **getFileAsync** method returns a reference to the file as a [File](https://dev.office.com/reference/add-ins/shared/file) object. The **File** object exposes four members: the [size](https://dev.office.com/reference/add-ins/shared/file.size) property, [sliceCount](https://dev.office.com/reference/add-ins/shared/file.slicecount) property, [getSliceAsync](https://dev.office.com/reference/add-ins/shared/file.getsliceasync) method, and [closeAsync](https://dev.office.com/reference/add-ins/shared/file.closeasync) method. The **size** property returns the number of bytes in the file. The **sliceCount** returns the number of [Slice](https://dev.office.com/reference/add-ins/shared/document) objects (discussed later in this article) in the file.
 
@@ -242,7 +242,7 @@ The  **Slice.data** property returns the raw data of the file as a byte array. I
 
 You must implement your own function (or use an available library) to convert byte array data to a Base64-encoded string. For information about Base64 encoding with JavaScript, see [Base64 encoding and decoding](https://developer.mozilla.org/docs/Web/JavaScript/Base64_encoding_and_decoding).
 
-After you have converted the data to Base64, you can then transmit it to a web server in several ways -- including as the body of an HTTP POST request.
+After you have converted the data to Base64, you can then transmit it to a web server in several ways including as the body of an HTTP POST request.
 
 Add the following code to send a slice to a web service.
 

@@ -19,7 +19,7 @@ object.load(param);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide a host-relative loadOption object. Excel: [loadOption](/reference/excel/loadoption.md) Word: [loadOption](/reference/word/loadoption.md).|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide a host-relative loadOption object. Excel: [loadOption](https://dev.office.com/reference/add-ins/excel/loadoption) Word: [loadOption](https://dev.office.com/reference/add-ins/word/loadoption).|
 
 #### Returns
 void

@@ -17,7 +17,7 @@
 
 ## Contained in:
 
-[TargetDialects](/reference/manifest/targetdialects.md)
+[TargetDialects](https://dev.office.com/reference/add-ins/manifest/targetdialects)
 
 
 ## Remarks

@@ -3,7 +3,7 @@
 
  _**Applies to:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
 
-Use this object to construct a default [Labs.Core.ILabHost](/reference/office-mix/labs.core.ilabhost.md) instance.
+Use this object to construct a default [Labs.Core.ILabHost](https://dev.office.com/reference/add-ins/office-mix/labs.core.ilabhost) instance.
 
 ```
 var DefaultHostBuilder: (): Core.ILabHost
@@ -21,4 +21,4 @@ None.
 #### Reference
 
 
-[Labs.Core.ILabHost](/reference/office-mix/labs.core.ilabhost.md)
+[Labs.Core.ILabHost](https://dev.office.com/reference/add-ins/office-mix/labs.core.ilabhost)

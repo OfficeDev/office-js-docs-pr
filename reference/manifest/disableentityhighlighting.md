@@ -15,5 +15,5 @@ Specifies whether entity highlighting should be turned off for your mail add-in.
 
 ## Contained in:
 
-[OfficeApp](/reference/manifest/officeapp.md)
+[OfficeApp](https://dev.office.com/reference/add-ins/manifest/officeapp)
 
