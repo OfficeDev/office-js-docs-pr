@@ -16,7 +16,7 @@ When you sideload an add-in, the add-in manifest is stored in the browser's loca
 
 The following video walks you through the process of sideloading your add-in on Office desktop or Office Online.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XXsAw2UUiQo" frameborder="0" allowfullscreen></iframe>
+[!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
 
 ## Sideload an Office Add-in on Office 365
 
