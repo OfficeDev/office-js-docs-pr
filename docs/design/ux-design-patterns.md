@@ -29,7 +29,7 @@ To use the specifications to build a mock-up of your own add-in UI:
     * [Office Add-in UX Design Prototype](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/addin_ux_design_prototype.xd) (Adobe Experience Design file)
 2. Refer to the following articles for guidance:
     * [UX design Patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/README.md)
-    * Best practices for [Designing your Office Add-ins](https://dev.office.com/docs/add-ins/design/add-in-design)
+    * Best practices for [Designing your Office Add-ins](add-in-design.md)
     * [Office UI Fabric Toolkits](https://developer.microsoft.com/en-us/fabric#/resources)
 
 To add the source code:
@@ -41,7 +41,8 @@ To add the source code:
 	- Use the UX design pattern as a template for other pages.
 	- Link to or from the UX design pattern.
 
-> **Note:** Some UX pattern specifications do not match the source code. We're working hard to bring all assets into alignment. Also notice that some specifications are presented as archived. We're assessing these archived specifications for value to the platform. Each pattern aims to represent a unique template and pattern of interaction. The patterns should not overlap with each other and should be well differentiated from Office Fabric UI components.
+> [!NOTE]
+> Some UX pattern specifications do not match the source code. We're working hard to bring all assets into alignment. Also notice that some specifications are presented as archived. We're assessing these archived specifications for value to the platform. Each pattern aims to represent a unique template and pattern of interaction. The patterns should not overlap with each other and should be well differentiated from Office Fabric UI components.
 
 ## Types of UX design patterns
 ### Generic pages
@@ -49,7 +50,7 @@ To add the source code:
 Generic page templates can be applied to any page in your add-in and don't have a special purpose. An example of a special purpose page, would be any of the first-run patterns. The following list describes the generic pages available:
 
 * **Landing page** - A standard add-in page, for example the page a user lands on after a first-run experience or sign-in process. 
-	* Learn about guidelines for adopting the [Office design language](https://dev.office.com/docs/add-ins/design/add-in-design-language) in your add-in.
+	* Learn about guidelines for adopting the [Office design language](add-in-design-language.md) in your add-in.
 	* [Landing page code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/generic/landing-page)
 * **Brand image in brand bar** - The landing page with an image in the footer that represents your brand. 
 	* [Brand bar specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/patterns/brand-bar.md)
@@ -66,8 +67,7 @@ Generic page templates can be applied to any page in your add-in and don't have 
 A first-run experience is the experience a user has when they open your add-in for the first time. The following first-run design pattern templates are available: 
 
 * **Steps to start** - Provides users with an ordered list of steps to perform to get started using your add-in. 
-	* [Steps to start specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/archived-patterns/fre_stepsToStart.pdf)
-        * This ux design pattern has been archived. As we assess its value please also refer to the [First-Run Value specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/patterns/value-placemat.md)  
+	* [Steps to start specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/archived-patterns/fre_stepsToStart.pdf) (This UX design pattern has been archived. As we assess its value, see [First-Run Value specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/patterns/value-placemat.md).)  
 	* [Steps to start code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/instruction-step)
 * **Value** - Communicates your add-in's value proposition.
 	* [Value specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/patterns/value-placemat.md)
@@ -76,19 +76,16 @@ A first-run experience is the experience a user has when they open your add-in f
 	* [Video specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/patterns/video-placemat.md)
 	* [Video code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/video-placemat)
 * **Walkthrough** - Takes users through a series of features or information before they start using the add-in.
-	* [Carousel specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/patterns/carousel.md)
-        * Note: This UX design pattern has been renamed to "Carousel". Former specifications refered to it as a "Paging Panel". Code assets refer to it as a "First-run Walkthrough". 
+	* [Carousel specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/patterns/carousel.md) (Note that this UX design pattern has been renamed to "Carousel." Former specifications refered to it as a "Paging Panel." Code assets refer to it as a "First-run Walkthrough." 
 	* [Walkthrough code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/walkthrough)
 
 The [Office Store](https://msdn.microsoft.com/en-us/library/office/jj220033.aspx) has a system that manages trial versions of an add-in, but if you want to control the UI of the trial experience for your add-in, use the following patterns:
 
 * **Trial** - Shows users how to get started with a trial version of your add-in.
-	* [Trial specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/archived-patterns/fre_trialVersion.pdf)
-        * This UX design pattern has been archived. As we assess its value, please refer to the PDF.
+	* [Trial specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/archived-patterns/fre_trialVersion.pdf) (This UX design pattern has been archived. As we assess its value, refer to this PDF.)
 	* [Trial code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/trial-placemat)
 * **Trial feature** - Advises users that the feature they are trying to use is not available in the trial version of the add-in. Alternatively, if your add-in is free but it includes a feature that requires a subscription, consider using this pattern. You might also use this pattern to provide a downgraded experience after a trial has ended.
-	* [Trial feature specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/archived-patterns/fre_trialFeature.pdf)
-        * This UX design pattern has been archived. As we assess its value please reference the above PDF.
+	* [Trial feature specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/archived-patterns/fre_trialFeature.pdf) (This UX design pattern has been archived. As we assess its value, refer to this PDF.)
 	* [Trial feature code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/trial-placemat-feature)
 
 > [!IMPORTANT]
@@ -116,7 +113,7 @@ Consider whether showing users the first-run experience once or many times is im
 
 Users need to navigate between the different pages of your add-in. The following navigation templates show different options you can use to organize pages and commands in your add-in.
 
-* **Back Button and Next Page** - Shows a task pane with Back and Next Page buttons. Use this pattern to ensure users follow an ordered series of steps.
+* **Back button and Next page** - Shows a task pane with Back and Next page buttons. Use this pattern to ensure users follow an ordered series of steps.
 	* [Back Button and Next Page specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/patterns/back-button.md)
 	* [Back Button and Next Page code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/back-button) 
 * **Navigation** - Shows a menu, commonly referred to as the hamburger menu, with page menu items in a task pane. 
@@ -167,12 +164,10 @@ Your add-in can notify users of events, such as errors, or of progress in a vari
 	* [Embedded dialog box specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/patterns/embedded-dialog.md)
 	* [Embedded dialog box code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/embedded-dialog)
 * **Inline message** - Indicates error, success, or information, and can appear at a specified location in the task pane. For example, if a user enters an incorrectly formatted email address in a text box, an error message appears just below the text box. 
-	* [Inline message specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/archived-patterns/notification_inlineMessage.pdf)
-        * This UX design pattern has been archived. As we assess its value please reference the above PDF.
+	* [Inline message specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/archived-patterns/notification_inlineMessage.pdf) (This UX design pattern has been archived. As we assess its value, refer to this PDF.)
 	* [Inline message code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/inline-message)
 * **Message banner** - Provides information and, optionally, a simple call to action, in a banner that can be collapsed to a single line, expanded to multiple lines, or dismissed. Use message banners to report a service update or a helpful tip when the add-in starts. 
-	* [Message banner specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/archived-patterns/message_bar.pdf)
-        * This UX design pattern has been archived. As we assess its value please reference the above PDF.
+	* [Message banner specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/archived-patterns/message_bar.pdf) (This UX design pattern has been archived. As we assess its value, refer to this PDF.)
 	* [Message banner code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/message-banner)
 * **Progress bar** - Indicates the progress of a long-running, synchronous process, such as a configuration task that must complete before the user can take any further action. It is a separate interstitial page that also reinforces the add-in brand. Use a progress bar when the process can send periodic measures of how far along it is back to the add-in.
 	* [Progress bar specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/patterns/progress-indicator.md)
@@ -209,32 +204,31 @@ The following are general components that you can use in your add-ins in a varie
 Client dialog boxes provide another way for users to work with your add-in outside of a task pane. The following dialog box templates are available:
 
 * **Typeramp dialog box** - Shows a dialog box with textual content. Use the typeramp dialog to display elaborative information to users. 
-	* Learn about designing [dialog boxes in Office Add-ins](https://dev.office.com/docs/add-ins/design/dialog-boxes). Also follow our guidelines for [Typography in Office Add-ins](https://dev.office.com/docs/add-ins/design/add-in-design-language#typography).
+	* Learn about designing [dialog boxes in Office Add-ins](dialog-boxes.md). Also follow our guidelines for [Typography in Office Add-ins](add-in-design-language.md#typography).
 	* [Typeramp dialog box code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/typeramp)
 * **Alert dialog box** - Shows an alert box with important information, such as errors or notifications, to users. 	
-	* [Alert dialog box specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/archived-patterns/notification_alert.pdf)
-        * This UX design pattern has been archived. As we assess its value please reference the above PDF.
+	* [Alert dialog box specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/archived-patterns/notification_alert.pdf) (This UX design pattern has been archived. As we assess its value, refer to this PDF.)
 	* [Alert dialog box code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/alert)
 * **Navigation dialog box** - Shows a dialog box with navigation. Use the navigation dialog box to allow users to navigate between different content. 
-	* Learn about designing [dialog boxes in Office Add-ins](https://dev.office.com/docs/add-ins/design/dialog-boxes). Also learn about using Office UI Fabric [Pivot components in Office Add-ins](https://dev.office.com/docs/add-ins/design/pivot).
+	* Learn about designing [dialog boxes in Office Add-ins](dialog-boxes.md). Also learn about using Office UI Fabric [Pivot components in Office Add-ins](pivot.md).
 	* [Navigation dialog box code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/navigation)
 
 <table>
  <tr><th>Typeramp dialog</th><th>Alert dialog</th></tr>
 <tr>
-<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/typeramp"><img src="../images/typeramp-dialog.png" alt="typeramp dialog" style="width: 300px;"/></A></td>
-<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/alert"><img src="../images/alert-dialog.png" alt="alert dialog" style="width: 264px;"/></A></td>
+<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/typeramp"><img src="../images/typeramp-dialog.png" alt="typeramp dialog" style="width: 350px;"/></A></td>
+<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/alert"><img src="../images/alert-dialog.png" alt="alert dialog" style="width: 350px;"/></A></td>
 </tr></tr>
  </table>
  
  <table>
  <tr><th>Navigation dialog</th></tr>
-<tr><td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/navigation"><img src="../images/navigation-dialog.png" alt="navigation dialog" style="width: 300px;"/></A></td></tr>
+<tr><td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/navigation"><img src="../images/navigation-dialog.png" alt="navigation dialog" style="width: 350px;"/></A></td></tr>
 </tr>
  </table>
 
 
-#### Feedback and Ratings
+#### Feedback and ratings
 
 To improve the visibility and adoption of your add-in, it is helpful to provide users with the ability to rate and review your add-in in the Office Store. This pattern shows two methods for presenting feedback and ratings from within the add-in:
 
@@ -243,8 +237,7 @@ To improve the visibility and adoption of your add-in, it is helpful to provide 
 
 Either method opens a dialog box that contains the Office Store page for the add-in.
 
-* [Feedback and ratings specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/archived-patterns/notification_feedback.pdf)
-    * This UX design pattern has been archived. As we assess its value please reference the above PDF.
+* [Feedback and ratings specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/archived-patterns/notification_feedback.pdf) (This UX design pattern has been archived. As we assess its value, refer to this PDF.)
 * [Feedback and ratings code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/feedback/office-store)
 
 > [!IMPORTANT]
@@ -253,20 +246,19 @@ Either method opens a dialog box that contains the Office Store page for the add
 
  <table>
  <tr><th>Feedback and ratings</th></tr>
-<tr><td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/feedback/office-store"><img src="../images/feedback-rating.png" alt="Feedback and Ratings" style="width: 264px;"/></A></td></tr>
+<tr><td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/feedback/office-store"><img src="../images/feedback-rating.png" alt="Feedback and Ratings" style="width: 350px;"/></A></td></tr>
 </tr>
  </table>
 
-#### Settings and Privacy
+#### Settings and privacy
 
 Add-ins may need a Settings page that allows users to configure settings that control the behavior of the add-in. Also, you may want to provide users with the privacy policies your add-in adheres to. 
 
 * **Settings** - Shows a task pane with configuration components that controls the behavior of the add-in. A settings page provides options for the user to choose.
 	* [Settings specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/patterns/settings.md)
 	* [Settings code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/settings)
-* **Privacy Policy** - Shows task pane with important information about privacy policies. 
-	* [Privacy Policy specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/archived-patterns/general_multiSection.pdf)
-        * This UX design pattern has been archived. As we assess its value please reference the above PDF.
+* **Privacy policy** - Shows task pane with important information about privacy policies. 
+	* [Privacy Policy specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/archived-patterns/general_multiSection.pdf) (This UX design pattern has been archived. As we assess its value, refer to this PDF.)
 	* [Privacy Policy code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/settings)
 
 <table>
