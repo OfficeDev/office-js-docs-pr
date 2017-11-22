@@ -226,6 +226,5 @@ declare var fabric: any;
 
 ## Additional resources
 
-* [Script Lab](https://github.com/OfficeDev/script-lab/)
 * [Promise implementation discussion on StackOverflow](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
 * [Office Add-in samples on GitHub](https://github.com/officedev)

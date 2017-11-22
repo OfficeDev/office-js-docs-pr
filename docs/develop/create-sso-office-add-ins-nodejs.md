@@ -4,7 +4,7 @@ description:
 ms.date: 11/20/2017 
 ---
 
-# Create a Node.js Office Add-in that uses single sign-on
+# Create a Node.js Office Add-in that uses single sign-on (preview)
 
 Users can sign in to Office, and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign in a second time. For an overview, see [Enable SSO in an Office Add-in](sso-in-office-add-ins.md).
 
@@ -39,7 +39,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 3. Enter `npm install` in the console to install all of the dependencies itemized in the package.json file.
 
 4. Enter `npm run build ` in the console to build the project. 
-     
+
     > [!NOTE]
     > You may see some build errors saying that some variables are declared but not used. Ignore these errors. They are a side effect of the fact that the "Before" version of the sample is missing some code that will be added later.
 
@@ -64,7 +64,10 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. In the dialog that opens, select **Web API**.
 
-1. An **Application ID URI** has been generated of the form “api://{App ID GUID}”. Insert the string “localhost:3000” between the double forward slashes and the GUID. The entire ID should read `api://localhost:3000/{App ID GUID}`. (The domain part of the **Scope** name just below the **Application ID URI** will automatically change to match. It should read `api://localhost:3000/{App ID GUID}/access_as_user`.)
+1. An **Application ID URI** has been generated of the form “api://{App ID GUID}”. Insert the string “localhost:3000” between the double forward slashes and the GUID. The entire ID should read `api://localhost:3000/{App ID GUID}`. 
+
+    > [!NOTE]
+    > The domain part of the **Scope** name just below the **Application ID URI** will automatically change to match. It should read `api://localhost:3000/{App ID GUID}/access_as_user`.
 
 1. This step and the next one give the Office host application access to your add-in. In the **Pre-authorized applications** section, you identify the applications that you want to authorize to your add-in's web application. Each of the following IDs needs to be pre-authorized. Each time you enter one, a new empty textbox appears. (Enter only the GUID.)
 
@@ -86,6 +89,8 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 1. In the dialog box, check the boxes for the following permissions: 
     * Files.Read.All
     * profile
+
+    > **Note**: The `User.Read` permission may already be listed by default. It is a good practice not to ask for permissions that are not needed, so we recommend that you uncheck the box for this permission.
 
 1. Click **OK** at the bottom of the dialog.
 

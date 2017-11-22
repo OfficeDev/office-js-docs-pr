@@ -106,6 +106,8 @@
   - name: Manifest
     href: overview/add-in-manifests.md
     items:
+    - name: Create add-in commands
+      href: get-started/create-addin-commands.md
     - name: Define add-in commands
       href: develop/define-add-in-commands.md
     - name: Specify Office hosts
@@ -204,13 +206,13 @@
       href: excel/excel-add-ins-extend-excel.md
     - name: Custom functions
       href: excel/custom-functions-overview.md
-    - name: Work with Charts
+    - name: Charts
       href: excel/excel-add-ins-charts.md
-    - name: Work with Ranges
+    - name: Ranges
       href: excel/excel-add-ins-ranges.md
-    - name: Work with Tables
+    - name: Tables
       href: excel/excel-add-ins-tables.md
-    - name: Work with Worksheets
+    - name: Worksheets
       href: excel/excel-add-ins-worksheets.md
   - name: Advanced concepts
     href: excel/excel-add-ins-advanced-concepts.md
