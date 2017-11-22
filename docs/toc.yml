@@ -107,7 +107,7 @@
     href: overview/add-in-manifests.md
     items:
     - name: Create add-in commands
-      href: get-started/create-addin-commands
+      href: get-started/create-addin-commands.md
     - name: Define add-in commands
       href: develop/define-add-in-commands.md
     - name: Specify Office hosts
