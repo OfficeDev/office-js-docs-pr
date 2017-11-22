@@ -31,7 +31,7 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
-      "breadcrumb_path": "/office/dev/breadcrumb/toc.json",
+      "breadcrumb_path": "/office/dev/add-ins/breadcrumb/toc.json",
       "extendBreadcrumb": true
     },
     "fileMetadata": {},
