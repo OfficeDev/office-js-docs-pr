@@ -10,7 +10,7 @@ This article describes how to update your JavaScript files (Office.js and app-sp
 
 ## Using the most up-to-date project files
 
-If you use Visual Studio to develop your add-in, to use the [newest API members](/reference/what's-changed-in-the-javascript-api-for-office.md) of the JavaScript API for Office and the [v1.1 features of the add-in manifest](../overview/add-in-manifests.md) (which is validated against offappmanifest-1.1.xsd), you need to download and install the [Visual Studio 2015 and the latest Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs).
+If you use Visual Studio to develop your add-in, to use the [newest API members](https://dev.office.com/reference/add-ins/what's-changed-in-the-javascript-api-for-office) of the JavaScript API for Office and the [v1.1 features of the add-in manifest](../overview/add-in-manifests.md) (which is validated against offappmanifest-1.1.xsd), you need to download and install the [Visual Studio 2015 and the latest Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs).
 
 If you use a text editor or IDE other than Visual Studio to develop your add-in, you need to update the references to the CDN for Office.js and the version of schema referenced in your add-in's manifest.
 
