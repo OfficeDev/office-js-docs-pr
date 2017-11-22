@@ -2,7 +2,7 @@
 
 **Applies to:** Excel 2016 | Office Add-ins | PowerPoint 2016 | Word 2016
 
-Use **[VersionOverrides](../../reference/manifest/versionoverrides.md)** in your manifest to define add-in commands for Excel, Word, and PowerPoint. Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. You can use add-in commands to:
+Use **[VersionOverrides](https://dev.office.com/reference/add-ins/manifest/versionoverrides)** in your manifest to define add-in commands for Excel, Word, and PowerPoint. Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. You can use add-in commands to:
 - Create UI elements or entry points that make your add-in's functionality easier to use.  
   
 - Add buttons or a drop-down list of buttons to the ribbon.    
@@ -20,7 +20,7 @@ Use **[VersionOverrides](../../reference/manifest/versionoverrides.md)** in your
 This article describes how to edit your manifest to define add-in commands. The following diagram shows the hierarchy of elements used to define add-in commands. These elements are described in more detail in this article. 
       
 The following image is an overview of add-in commands elements in the manifest. 
-![Overview of add-in commands elements in the manifest](office-js-docs/images/080da303-51c4-4882-b74a-7ba11517c0ad.png)
+![Overview of add-in commands elements in the manifest](../images/version-overrides.png)
  
 ## Step 1: Start from a sample
 
