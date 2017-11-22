@@ -67,7 +67,7 @@ To debug an application using Vorlon.JS, you add a `<script>` tag to the opening
 
 1. Add the following script tag to the `<head>` section of the home.html file (or main HTML file) of your add-in:
 
-    ```    
+    ```html
     <script src="https://localhost:1337/vorlon.js"></script>    
     ```  
 

@@ -62,7 +62,7 @@ The XML web service must return queries to the web service as XML that conforms 
 The following code shows the XSD for the OfficeDefinitions XML Schema.
 
 
-```XML
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -96,7 +96,7 @@ Returned XML that conforms to the OfficeDefinitions schema consists of a root  *
 
 
 
-```XML
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <Result xmlns="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions">
   <SeeMoreURL xmlns="">www.bing.com/dictionary/search?q=example</SeeMoreURL>
@@ -115,7 +115,7 @@ Returned XML that conforms to the OfficeDefinitions schema consists of a root  *
 The following C# code provides a simple example of how to write code for an XML web service that returns the result of a dictionary query in the OfficeDefinitions XML format.
 
 
-```C#
+```c#
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -202,7 +202,7 @@ A dictionary add-in consists of three main component files.
 The following is an example manifest file for a dictionary add-in.
 
 
-```XML
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
   <Id>7164e750-dc86-49c0-b548-1bac57abdc7c</Id>
@@ -302,7 +302,7 @@ The  **TargetDialects** element and its child elements specify the set of region
 
 
 
-```XML
+```xml
 <TargetDialects>
   <TargetDialect>EN-AU</TargetDialect>
   <TargetDialect>EN-BZ</TargetDialect>
@@ -344,7 +344,7 @@ Specify the value for a regional language in the RFC1766  `language` tag format,
 
 
 
-```XML
+```xml
 <TargetDialect>EN-US</TargetDialect>
 ```
 
@@ -367,7 +367,7 @@ This is the URI of the XML web service for the dictionary provider. The properly
 
 
 
-```XML
+```xml
 <QueryUri DefaultValue="http://msranlc-lingo1/proof.aspx?q="/>
 ```
 
@@ -392,7 +392,7 @@ For this element, you can specify values for additional locales by using the  **
 
 
 
-```XML
+```xml
 <CitationText DefaultValue="Results by: " />
 ```
 
@@ -417,7 +417,7 @@ For this element, you can specify values for additional locales.
 
 
 
-```XML
+```xml
 <DictionaryName DefaultValue="Bing Dictionary" />
 ```
 
@@ -442,7 +442,7 @@ For this element, you can specify values for additional locales.
 
 
 
-```XML
+```xml
 <DictionaryHomePage DefaultValue="http://www.bing.com" />
 ```
 
@@ -453,7 +453,7 @@ For this element, you can specify values for additional locales.
 The following two examples show the HTML and CSS files for the UI of the Demo Dictionary add-in. To view how the UI is displayed in the add-in's task pane, see Figure 6 following the code. To see how the implementation of the JavaScript in the Dictionary.js file provides programming logic for this HTML UI, see "Writing the JavaScript implementation" immediately following this section.
 
 
-```HTML
+```html
 <!DOCTYPE html>
 <html>
 
@@ -565,7 +565,7 @@ The primary members of the JavaScript API for Office (Office.js) that are called
 
 
 
-```
+```javascript
 // The document the dictionary add-in is interacting with.
 var _doc; 
 // The last looked-up word, which is also the currently displayed word.

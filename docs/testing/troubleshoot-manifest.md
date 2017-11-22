@@ -23,7 +23,7 @@ To help ensure that the manifest file that describes your Office Add-in is corre
 
 2. Open a command prompt / terminal as an administrator, and install the Office Add-in Validator and its dependencies globally by using the following command:
 
-	```
+	```nodejs
 	npm install -g office-addin-validator
 	```
 	
@@ -32,7 +32,7 @@ To help ensure that the manifest file that describes your Office Add-in is corre
 
 3. Run the following command to validate your manifest. Replace MANIFEST.XML with the path to the manifest XML file.
 
-	```
+	```nodejs
 	validate-office-addin MANIFEST.XML
 	```
 
@@ -47,7 +47,7 @@ To help ensure that the manifest file follows the correct schema, validate it ag
 
 2.	Run the following command. Replace `XSD_FILE` with the path to the manifest XSD file, and replace `XML_FILE` with the path to the manifest XML file.
 	
-	```
+	```nodejs
 	xmllint --noout --schema XSD_FILE XML_FILE
 	```
 

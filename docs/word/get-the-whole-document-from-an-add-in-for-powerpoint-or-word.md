@@ -149,7 +149,7 @@ The following code example shows the event handler for the  **Office.initialize*
 
 
 
-```js
+```javascript
 // The initialize function is required for all add-ins.
 Office.initialize = function (reason) {
     // Checks for the DOM to load using the jQuery ready function.
@@ -181,7 +181,7 @@ The  **getFileAsync** method returns a reference to the file as a [File](https:/
 
 The following code retrieves a PowerPoint or Word document as a **File** object using the **document.getFileAsync()** method. It then packages the resulting **File** object, a zeroed counter, and [sliceCount](https://dev.office.com/reference/add-ins/shared/file.slicecount) into an anonymous object. This object is subsequently passed in to a locally defined `getSlice` function. 
 
-```js
+```javascript
 // Get all the content from a PowerPoint or Word document in 100-KB chunks of text.
 function sendFile() {
 
@@ -218,7 +218,7 @@ The  **Slice** object gives you access to the data contained in the file. Unless
 
 
 
-```js
+```javascript
 
 // Get a slice from the file and then call sendSlice.
 function getSlice(state) {
@@ -253,7 +253,7 @@ Add the following code to send a slice to a web service.
 
 
 
-```js
+```javascript
 
 function sendSlice(slice, state) {
     var data = slice.data;
@@ -305,7 +305,7 @@ As the name implies, the  **File.closeAsync** method closes the connection to th
 
 
 
-```js
+```javascript
 
 function closeFile(state) {
 
