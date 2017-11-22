@@ -595,7 +595,7 @@ Basic tests should include the following:
     
     Following is an example of the output with line breaks and spaces added to the text for clarity, for three projects in a Project Web App instance:
 
-    ```
+    ```json
           Document path: <>\WinProj test1
     
         REST query:
