@@ -13,9 +13,10 @@ If you're not testing a Word, Excel, or PowerPoint add-in on Windows, see one of
 - [Sideload Office Add-ins in Office Online for testing](sideload-office-add-ins-for-testing.md)
 - [Sideload Office Add-ins on iPad and Mac for testing](sideload-an-office-add-in-on-ipad-and-mac.md)
 
-The following video walks you through the process of sideloading your add-in on Office desktop or Office Online.
+The following video walks you through the process of sideloading your add-in on Office desktop or Office Online.  
 
-[!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
+
+> [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
 
 
 ## Share a folder
