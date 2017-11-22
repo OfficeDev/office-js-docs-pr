@@ -25,7 +25,7 @@ To use the specifications to build a mock-up of your own add-in UI:
 
 1. Download the [UX Design Patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns).
 2. Use the [Word](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Helpful%20Templates/AddIn_Template_Word_Desktop_reference.pdf), [Excel](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Helpful%20Templates/AddIn_Template_Excel_Desktop_reference.pdf), or [PowerPoint](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Helpful%20Templates/AddIn_Template_PowerPoint_Desktop_reference.pdf) templates to mock up your extension points for desktop or tablet.
-3. Copy and modify [ux design patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/tree/master/Patterns) to meet your specific needs.
+3. Copy and modify [ux design patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/tree/master/patterns) to meet your specific needs.
 4. Refer to templates to browse an [Office UI Fabric icon master sheet](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Helpful%20Templates/OfficeUIFabric_icon_mastersheet.pdf), view extension points for Word, Excel and PowerPoint (for example, [Excel iPad](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Helpful%20Templates/AddIn_Template_Excel_iPad_reference.pdf) and [Excel Windows Desktop](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Helpful%20Templates/AddIn_Template_Excel_Desktop_reference.pdf)), or [finalize icons for add-in commands](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Helpful%20Templates/Icon_production.pdf).
 
 To add the source code:
@@ -46,11 +46,11 @@ Generic page templates can be applied to any page in your add-in and don't have 
 	* [Landing page specification](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Helpful%20Templates/AddIn_Template_Standard_Layout.pdf "PDF")
 	* [Landing page code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/generic/landing-page)
 * **Brand image in brand bar** - The landing page with an image in the footer that represents your brand. 
-	* [Brand bar specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Brand_Bar.md)
+	* [Brand bar specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/patterns/brand-bar.md)   
 	* [Brand bar code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/generic/brand-bar)
 
-<table>
- <tr><th>Landing</th><th>Brand Bar</th></tr>
+<table style="width:80%">
+ <tr><th style="width:40%">Landing</th><th style="width:40%">Brand Bar</th></tr>
  <tr><td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/generic/landing-page"><img src="../images/landing-pages.png" alt="landing page" style="width: 264px;"/></A></td>
 <td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/generic/brand-bar"><img src="../images/word-brand-bar.png" alt="brand bar" style="width: 264px;"/></A></td></tr>
  </table>
