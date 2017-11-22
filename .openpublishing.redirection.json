@@ -1,0 +1,9 @@
+{ 
+    "redirections": [ 
+      {   
+          "source_path": "office-js-docs-pr/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md", 
+          "redirect_url": "/office-js-docs-pr/word/get-the-whole-document-from-an-add-in-for-word.md", 
+          "redirect_document_id": true 
+      } 
+    ] 
+} 
