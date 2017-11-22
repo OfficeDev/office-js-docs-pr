@@ -15,7 +15,7 @@ If you're not testing a Word, Excel, or PowerPoint add-in on Windows, see one of
 
 The following video walks you through the process of sideloading your add-in on Office desktop or Office Online.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XXsAw2UUiQo" frameborder="0" allowfullscreen></iframe>
+[!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
 
 
 ## Share a folder

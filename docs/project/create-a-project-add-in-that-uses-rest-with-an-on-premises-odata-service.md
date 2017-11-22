@@ -595,7 +595,7 @@ Basic tests should include the following:
     
     Following is an example of the output with line breaks and spaces added to the text for clarity, for three projects in a Project Web App instance:
 
-    ```
+    ```json
           Document path: <>\WinProj test1
     
         REST query:
@@ -1015,7 +1015,7 @@ The following code is in the `Scripts\Office\HelloProjectOData.js` file of the *
 
 The following code is in the `Content\App.css` file of the **HelloProjectODataWeb** project.
 
-```
+```css
 /*
 *  File: App.css for the HelloProjectOData app.
 *  Updated: 10/2/2012

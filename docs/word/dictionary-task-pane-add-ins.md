@@ -8,11 +8,11 @@ ms.date: 11/20/2017
 # Create a dictionary task pane add-in
 
 
-This article shows you an example of a task pane add-in and accompanying web service that provides dictionary definitions or thesaurus synonyms for the user's current selection in a Word 2013 document. 
+This article shows you an example of a task pane add-in with an accompanying web service that provides dictionary definitions or thesaurus synonyms for the user's current selection in a Word 2013 document. 
 
 A dictionary Office Add-in is based on the standard task pane add-in with additional features to support querying and displaying definitions from a dictionary XML web service in additional places in the Office application's UI. 
 
-In a typical dictionary task pane add-in, a user selects a word or phrase in their document, and then the JavaScript logic behind the add-in passes this selection to the dictionary provider's XML web service. The dictionary provider's webpage then updates to show the definitions for the selection to the user.
+In a typical dictionary task pane add-in, a user selects a word or phrase in their document, and the JavaScript logic behind the add-in passes this selection to the dictionary provider's XML web service. The dictionary provider's webpage then updates to show the definitions for the selection to the user.
 The XML web service component returns up to three definitions in the format defined by the OfficeDefinitions XML schema, which are then displayed to the user in other places in the hosting Office application's UI. 
 Figure 1 shows the selection and display experience for a Bing-branded dictionary add-in that is running in Word 2013.
 
@@ -20,7 +20,7 @@ Figure 1 shows the selection and display experience for a Bing-branded dictionar
 
 ![A dictionary app displaying a definition](../images/dictionary-agave-01.jpg)
 
-It is up to you to determine whether clicking the  **See More** link in the dictionary add-in's HTML UI displays more information within the task pane or opens a separate browser window to the full webpage for the selected word or phrase.
+It is up to you to determine if clicking the  **See More** link in the dictionary add-in's HTML UI displays more information within the task pane or opens a separate browser window to the full webpage for the selected word or phrase.
 Figure 2 shows the  **Define** context menu command that enables users to quickly launch installed dictionaries. Figures 3 through 5 show the places in the Office UI where the dictionary XML services are used to provide definitions in Word 2013.
 
 *Figure 2. Define command in the context menu*
@@ -62,7 +62,7 @@ The XML web service must return queries to the web service as XML that conforms 
 The following code shows the XSD for the OfficeDefinitions XML Schema.
 
 
-```XML
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -96,7 +96,7 @@ Returned XML that conforms to the OfficeDefinitions schema consists of a root  *
 
 
 
-```XML
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <Result xmlns="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions">
   <SeeMoreURL xmlns="">www.bing.com/dictionary/search?q=example</SeeMoreURL>
@@ -115,7 +115,7 @@ Returned XML that conforms to the OfficeDefinitions schema consists of a root  *
 The following C# code provides a simple example of how to write code for an XML web service that returns the result of a dictionary query in the OfficeDefinitions XML format.
 
 
-```C#
+```c#
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -187,7 +187,7 @@ public class WebService : System.Web.Services.WebService {
 ## Creating the components of a dictionary add-in
 
 
-A dictionary add-in consists of three main component files.
+A dictionary add-in consists of three main component files:
 
 
 - An XML manifest file that describes the add-in.
@@ -202,7 +202,7 @@ A dictionary add-in consists of three main component files.
 The following is an example manifest file for a dictionary add-in.
 
 
-```XML
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
   <Id>7164e750-dc86-49c0-b548-1bac57abdc7c</Id>
@@ -283,7 +283,7 @@ The  **Dictionary** element and its child elements are added to the manifest of 
 #### TargetDialects element
 
 
-Specifies the regional languages that this dictionary supports. Required (for dictionary add-ins).
+Specifies the regional languages that this dictionary supports. Required for dictionary add-ins.
 
  **Parent element**
 
@@ -295,14 +295,14 @@ Specifies the regional languages that this dictionary supports. Required (for di
 
  **Remarks**
 
-The  **TargetDialects** element and its child elements specify the set of regional languages your dictionary contains. For example, if your dictionary applies to both Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that in this element. Do not specify more than one language (for example, Spanish and English) in this manifest. Publish separate languages as separate dictionaries.
+The  **TargetDialects** element and its child elements specify the set of regional languages your dictionary contains. For example, if your dictionary applies to both Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that in this element. Do not specify more than one language (e.g., Spanish and English) in this manifest. Publish separate languages as separate dictionaries.
 
  **Example**
 
 
 
 
-```XML
+```xml
 <TargetDialects>
   <TargetDialect>EN-AU</TargetDialect>
   <TargetDialect>EN-BZ</TargetDialect>
@@ -329,7 +329,7 @@ The  **TargetDialects** element and its child elements specify the set of region
 #### TargetDialect element
 
 
-Specifies a regional language that this dictionary supports. Required (for dictionary add-ins).
+Specifies a regional language that this dictionary supports. Required for dictionary add-ins.
 
  **Parent element**
 
@@ -344,7 +344,7 @@ Specify the value for a regional language in the RFC1766  `language` tag format,
 
 
 
-```XML
+```xml
 <TargetDialect>EN-US</TargetDialect>
 ```
 
@@ -352,7 +352,7 @@ Specify the value for a regional language in the RFC1766  `language` tag format,
 #### QueryUri element
 
 
-Specifies the endpoint for the dictionary query service. Required (for dictionary add-ins).
+Specifies the endpoint for the dictionary query service. Required for dictionary add-ins.
 
  **Parent element**
 
@@ -367,7 +367,7 @@ This is the URI of the XML web service for the dictionary provider. The properly
 
 
 
-```XML
+```xml
 <QueryUri DefaultValue="http://msranlc-lingo1/proof.aspx?q="/>
 ```
 
@@ -375,7 +375,7 @@ This is the URI of the XML web service for the dictionary provider. The properly
 #### CitationText element
 
 
-Specifies the text to use in citations. Required (for dictionary add-ins).
+Specifies the text to use in citations. Required for dictionary add-ins.
 
  **Parent element**
 
@@ -392,7 +392,7 @@ For this element, you can specify values for additional locales by using the  **
 
 
 
-```XML
+```xml
 <CitationText DefaultValue="Results by: " />
 ```
 
@@ -400,7 +400,7 @@ For this element, you can specify values for additional locales by using the  **
 #### DictionaryName element
 
 
-Specifies the name of this dictionary. Required (for dictionary add-ins).
+Specifies the name of this dictionary. Required for dictionary add-ins.
 
  **Parent element**
 
@@ -417,7 +417,7 @@ For this element, you can specify values for additional locales.
 
 
 
-```XML
+```xml
 <DictionaryName DefaultValue="Bing Dictionary" />
 ```
 
@@ -425,7 +425,7 @@ For this element, you can specify values for additional locales.
 #### DictionaryHomePage element
 
 
-Specifies the URL of the home page for the dictionary. Required (for dictionary add-ins).
+Specifies the URL of the home page for the dictionary. Required for dictionary add-ins.
 
  **Parent element**
 
@@ -442,7 +442,7 @@ For this element, you can specify values for additional locales.
 
 
 
-```XML
+```xml
 <DictionaryHomePage DefaultValue="http://www.bing.com" />
 ```
 
@@ -453,7 +453,7 @@ For this element, you can specify values for additional locales.
 The following two examples show the HTML and CSS files for the UI of the Demo Dictionary add-in. To view how the UI is displayed in the add-in's task pane, see Figure 6 following the code. To see how the implementation of the JavaScript in the Dictionary.js file provides programming logic for this HTML UI, see "Writing the JavaScript implementation" immediately following this section.
 
 
-```HTML
+```html
 <!DOCTYPE html>
 <html>
 
@@ -565,7 +565,7 @@ The primary members of the JavaScript API for Office (Office.js) that are called
 
 
 
-```
+```javascript
 // The document the dictionary add-in is interacting with.
 var _doc; 
 // The last looked-up word, which is also the currently displayed word.
