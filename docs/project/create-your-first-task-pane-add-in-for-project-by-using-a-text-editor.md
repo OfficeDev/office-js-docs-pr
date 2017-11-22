@@ -22,7 +22,7 @@ For an introduction to using JavaScript in Office Add-ins, see [Understanding th
 
 Create an XML file in a local directory. The XML file includes the **OfficeApp** element and child elements, which are described in the [Office Add-ins XML manifest](../overview/add-in-manifests.md). For example, create a file named JSOM_SimpleOMCalls.xml that contains the following XML (change the GUID value of the **Id** element).
     
-```xml
+```XML
      <?xml version="1.0" encoding="utf-8"?>
    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -67,7 +67,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
     
    The JSOMCall.html file uses the common MicrosoftAjax.js file for AJAX functionality and the Office.js file for the add-in functionality in Microsoft Office 2013 applications.
 
-    ```html
+    ```HTML
       <!DOCTYPE html>
     <html>
     <head>
@@ -618,7 +618,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
 
 5. For the body of the HTML document, add buttons that call the JavaScript functions for testing. For example, in the  **div** element for the common JSOM API, add an input button that calls the general **getSelectedDataAsync** function.
     
-    ```html
+    ```HTML
       <body>
         <div id="Common_JSOM_API">
         OBJECT MODEL TESTS
@@ -633,7 +633,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
 
 6. Add a **div** section with buttons for project-specific task functions and for the **TaskSelectionChanged** event.
     
-    ```html
+    ```HTML
       <div id="ProjectSpecificTask">
       <br />
       <strong>Project-specific task methods:</strong><br />
@@ -649,7 +649,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
 
 7. Add  **div** sections with buttons for the resource methods and events, view methods and events, project properties, and context properties
     
-    ```html
+    ```HTML
       <div id="ResourceMethods">
       <br />
       <strong>Resource methods:</strong>
@@ -681,7 +681,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
 
 8. To format the button elements, add a CSS  **style** element. For example, add the following as a child of the **head** element.
     
-    ```html
+    ```HTML
       <style type="text/css">
         .button-wide
         {
@@ -753,9 +753,7 @@ Procedure 3 shows how to install and use the Project OM Test add-in features.
         WSS Id: 0
         ResourceNames: R1[50%],R2[50%]
 
-
 12. Select the **Get Task Fields** button. The **getTaskFields** function calls the **getTaskfieldAsync** function multiple times for the task name, index, start date, duration, priority, and task notes.
-    
 
         Name: T2
         ID: 2
@@ -763,7 +761,6 @@ Procedure 3 shows how to install and use the Project OM Test add-in features.
         Duration: 4d
         Priority: 500
         Notes: This is a note for task T2. It is only a test note. If it had been a real note, there would be some real information.
-
 
 13. Select the **getWSSUrlAsync** button. If the project is one of the following kinds, the results show the task list URL and name.
     
@@ -827,7 +824,7 @@ Procedure 3 shows how to install and use the Project OM Test add-in features.
 
 The Project 2013 SDK download contains the complete code in the JSOMCall.html file, the JSOM_Sample.js file, and the related Office.js, Office.debug.js, Project-15.js, and Project-15.debug.js files. Following is the code in the JSOMCall.html file.
 
-```html
+```HTML
 <!DOCTYPE html>
 <html>
     <head>
@@ -1059,7 +1056,7 @@ To use the  **throwError** function, include the JQuery library and the SurfaceE
 > [!NOTE]
 > Before you deploy the add-in, change the office.js reference and the jQuery reference to the content delivery network (CDN) reference. The CDN reference provides the most recent version and better performance.
 
-```html
+```HTML
 <!DOCTYPE html>
 <html>
 <head>
