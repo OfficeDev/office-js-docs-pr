@@ -62,6 +62,7 @@
 			<Item text="Authorize external services" url="develop/auth-external-add-ins" SEODescription="Authorize external single sign-on services (SSO) add-in" />
 	</Item>
 	<Item text="Manifest" url="overview/add-in-manifests" >	
+		<Item text="Create add-in commands" url="get-started/create-addin-commands"  SEODescription="Create UI elements such as entry points, buttons, menus, or menu items. Add-in commands provide a way to customize the default Office user interface." />
 		<Item text="Define add-in commands" url="develop/define-add-in-commands"  SEODescription="Use the VersionOverrides element in your add-in manifest to define add-in commands." />
 		<Item text="Specify Office hosts" url="overview/specify-office-hosts-and-api-requirements" SEODescription="Find out how to specify Office hosts and API requirements in your manifest." /> 	
 		<Item text="Requesting permissions for API use in content and task pane add-ins" url="develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins" SEODescription="Specify the level of API access your add-in requires in your manifest."  />
@@ -117,11 +118,11 @@
 	  </Item>
     <Item text="Core concepts" url="excel/excel-add-ins-core-concepts" SEODescription="Learn about core concepts for using the Excel JavaScript API to build add-ins for Excel 2016." Scope="excel">
       <Item text="Extend Excel functionality" url="excel/excel-add-ins-extend-excel" SEODescription="Learn about the different ways that an Excel add-in can extend Excel functionality." Scope="excel" />
-		  <Item text="Custom functions" url="excel/custom-functions-overview" SEODescription="Write JavaScript functions that users can include in Excel formulas, similar to UDFs." Scope""excel" />
-		  <Item text="Work with Charts" url="excel/excel-add-ins-charts" SEODescription="Perform common tasks with charts using the Excel JavaScript API." Scope="excel" />
-		  <Item text="Work with Ranges" url="excel/excel-add-ins-ranges" SEODescription="Perform common tasks with ranges using the Excel JavaScript API." Scope="excel" />
-		  <Item text="Work with Tables" url="excel/excel-add-ins-tables" SEODescription="Perform common tasks with tables using the Excel JavaScript API." Scope="excel" />
-		  <Item text="Work with Worksheets" url="excel/excel-add-ins-worksheets" SEODescription="Perform common tasks with worksheets using the Excel JavaScript API." Scope="excel" />
+		  <Item text="Custom functions" url="excel/custom-functions-overview" SEODescription="Write JavaScript functions that users can include in Excel formulas, similar to UDFs." Scope="excel" />
+		  <Item text="Charts" url="excel/excel-add-ins-charts" SEODescription="Perform common tasks with charts using the Excel JavaScript API." Scope="excel" />
+		  <Item text="Ranges" url="excel/excel-add-ins-ranges" SEODescription="Perform common tasks with ranges using the Excel JavaScript API." Scope="excel" />
+		  <Item text="Tables" url="excel/excel-add-ins-tables" SEODescription="Perform common tasks with tables using the Excel JavaScript API." Scope="excel" />
+		  <Item text="Worksheets" url="excel/excel-add-ins-worksheets" SEODescription="Perform common tasks with worksheets using the Excel JavaScript API." Scope="excel" />
 		</Item>
 		<Item text="Advanced concepts" url="excel/excel-add-ins-advanced-concepts" SEODescription="Learn about advanced concepts for using the Excel JavaScript API to build add-ins for Excel 2016." Scope="excel">
 		  <Item text="Coauthoring in Excel add-ins" url="excel/co-authoring-in-excel-add-ins"  Scope="excel" SEODescription="Learn about coauthoring in Excel and using add-ins."/>

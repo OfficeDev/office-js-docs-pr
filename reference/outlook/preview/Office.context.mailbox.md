@@ -336,6 +336,8 @@ If any of the parameters exceed the specified size limits, or if an unknown para
 
 ##### Parameters:
 
+> **Note:** All parameters are optional.
+
 |Name| Type| Description|
 |---|---|---|
 | `parameters` | Object | A dictionary of parameters describing the new appointment. |
@@ -373,6 +375,62 @@ Office.context.mailbox.displayNewAppointmentForm(
     resources: ['projector@contoso.com'],
     subject: 'meeting',
     body: 'Hello World!'
+  });
+```
+
+#### displayNewMessageForm(parameters)
+
+Displays a form for creating a new message.
+
+The `displayNewMessageForm` method opens a form that enables the user to create a new message. If parameters are specified, the message form fields are automatically populated with the contents of the parameters.
+
+If any of the parameters exceed the specified size limits, or if an unknown parameter name is specified, an exception is thrown.
+
+##### Parameters:
+
+> **Note:** All parameters are optional.
+
+|Name| Type| Description|
+|---|---|---|
+| `parameters` | Object | A dictionary of parameters describing the new message. |
+| `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](simple-types.md#emailaddressdetails)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the recipients on the To line. The array is limited to a maximum of 100 entries. |
+| `parameters.ccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](simple-types.md#emailaddressdetails)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the recipients on the Cc line. The array is limited to a maximum of 100 entries. |
+| `parameters.bccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](simple-types.md#emailaddressdetails)&gt; | An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the recipients on the Bcc line. The array is limited to a maximum of 100 entries. |
+| `parameters.subject` | String | A string containing the subject of the message. The string is limited to a maximum of 255 characters. |
+| `parameters.htmlBody` | String | The HTML body of the message. The body content is limited to a maximum size of 32 KB. |
+| `parameters.attachments` | Array.&lt;Object&gt; | An array of JSON objects that are either file or item attachments. |
+| `parameters.attachments[].type` | String | Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment. |
+| `parameters.attachments[].name` | String | A string that contains the name of the attachment, up to 255 characters in length.|
+| `parameters.attachments[].url` | String | Only used if `type` is set to `file`. The URI of the location for the file. |
+| `parameters.attachments[].isInline` | Boolean | Only used if `type` is set to `file`. If `true`, indicates that the attachment will be shown inline in the message body, and should not be displayed in the attachment list. |
+| `parameters.attachments[].itemId` | String | Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters. |
+
+
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| preview |
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|Applicable Outlook mode| Read|
+
+##### Example
+
+```
+Office.context.mailbox.displayNewMessageForm(
+  {
+    toRecipients: Office.context.mailbox.item.to, // Copy the To line from current item
+    ccRecipients: ['sam@contoso.com'],
+    subject: 'Outlook add-ins are cool!',
+    htmlBody: 'Hello <b>World</b>!<br/><img src="cid:image.png"></i>',
+    attachments: [
+      {
+        type: 'file',
+        name: 'image.png',
+        url: 'http://contoso.com/image.png',
+        isInline: true
+      }
+    ]
   });
 ```
 
