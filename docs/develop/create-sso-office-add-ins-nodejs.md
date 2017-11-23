@@ -87,10 +87,12 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 1. Scroll down to the **Microsoft Graph Permissions** section, the **Delegated Permissions** subsection. Use the **Add** button to open a **Select Permissions** dialog.
 
 1. In the dialog box, check the boxes for the following permissions: 
+
     * Files.Read.All
     * profile
 
-    > **Note**: The `User.Read` permission may already be listed by default. It is a good practice not to ask for permissions that are not needed, so we recommend that you uncheck the box for this permission.
+    > [!NOTE]
+    > The `User.Read` permission may already be listed by default. It is a good practice not to ask for permissions that are not needed, so we recommend that you uncheck the box for this permission.
 
 1. Click **OK** at the bottom of the dialog.
 
@@ -266,7 +268,8 @@ There are two server-side files that need to be modified.
 ### Create a method to exchange tokens
 
 1. Open the \src\auth.ts file. Add the method below to the `AuthModule` class. Note the following about this code:
-    * The jwt parameter is the access token to the application. In the "on behalf of" flow, it is exchanged with AAD for an access token to the resource.
+
+    * The `jwt` parameter is the access token to the application. In the "on behalf of" flow, it is exchanged with AAD for an access token to the resource.
     * The scopes parameter has a default value, but in this sample it will be overridden by the calling code.
     * The resource parameter is optional. It should not be used when the STS is the AAD V2 endpoint. The latter infers the resource from the scopes and it returns an error if a resource is sent in the HTTP Request. 
     
@@ -368,6 +371,7 @@ There are two server-side files that need to be modified.
 ### Create a method to get access to the resource using the "on behalf of" flow
 
 1. Still in src/auth.ts, add the method below to the `AuthModule` class. Note the following about this code:
+
     * The comments above about the parameters to the the `exchangeForToken` method apply to the parameters of this method as well.
     * The method first checks the persistent storage for an access token to the resource that has not expired and is not going to expire in the next minute. It calls the `exchangeForToken` method you created in the last section only if it needs to.
 
@@ -425,6 +429,7 @@ There are two server-side files that need to be modified.
     * The call to `acquireTokenOnBehalfOf` does not include a resource parameter because we constructed the `AuthModule` object (`auth`) with the AAD V2.0 endpoint which does not support a resource property.
     * The second parameter of the call specifies the permissions the add-in will need to get a list of the user's files and folders on OneDrive. (The `profile` permission is not requested because it is only needed when the Office host gets the access token to your add-in, not when you are trading in that token for an access token to Microsoft Graph.)
     * If the response is a string containing 'capolids", then this is a claims message from AAD that multi-factor auth is required. The message is passed to the client, which uses it to start a second sign-on. The string tells AAD what additional authentication factor(s) it should prompt the user to provide.
+
 
     ```javascript
     let graphToken = null;
