@@ -430,7 +430,7 @@ Run the sample add-in. The taskpane add-in loads in Word 2013, and the strings i
 [DisplayName]: 			https://dev.office.com/reference/add-ins/manifest/displayname
 [IconUrl]: 				https://dev.office.com/reference/add-ins/manifest/iconurl
 [HighResolutionIconUrl]:https://dev.office.com/reference/add-ins/manifest/highresolutioniconurl
-[Resources]: 		     /reference/manifest/resources
+[Resources]: 		    https://dev.office.com/reference/manifest/resources
 [SourceLocation]: 		https://dev.office.com/reference/add-ins/manifest/sourcelocation
 [Override]:  			https://dev.office.com/reference/add-ins/manifest/override
 [DesktopSettings]: 		https://dev.office.com/reference/add-ins/manifest/desktopsettings
