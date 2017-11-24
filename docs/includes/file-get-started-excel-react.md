@@ -164,10 +164,10 @@ Each add-in requires a manifest file to define its settings and capabilities.
 
 ## Next steps
 
-Congratulations, you've successfully created an Excel add-in using React! Next, learn more about the [core concepts](excel-add-ins-core-concepts.md) of building Excel add-ins.
+Congratulations, you've successfully created an Excel add-in using React! Next, learn more about the [core concepts](../excel/excel-add-ins-core-concepts.md) of building Excel add-ins.
 
 ## Additional resources
 
-* [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
+* [Excel JavaScript API core concepts](../excel/excel-add-ins-core-concepts.md)
 * [Excel add-in code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
 * [Excel JavaScript API reference](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
