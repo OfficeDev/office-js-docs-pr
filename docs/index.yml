@@ -9,12 +9,12 @@ metadata:
   ms.date: 11/02/2017
   ms.author: kibrandl
 abstract:
-  description: The <a href="https://review.docs.microsoft.com/en-us/test-ops-office-js-docs/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad. Learn how to create Office Add-ins with our quickstarts, how-to guides, and API reference documentation.<br/><br/><b>Note:</b> For information about COM or VSTO add-ins, see the <a href="https://msdn.microsoft.com/en-us/library/fp161347.aspx" target="_blank">MSDN documentation</a>.
+  description: The <a href="https://review.docs.microsoft.com/en-us/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad. Learn how to create Office Add-ins with our quickstarts, how-to guides, and API reference documentation.<br/><br/><b>Note:</b> For information about COM or VSTO add-ins, see the <a href="https://msdn.microsoft.com/en-us/library/fp161347.aspx" target="_blank">MSDN documentation</a>.
   aside:
     image:
       alt: 
       height: 130
-      src: https://review.docs.microsoft.com/en-us/test-ops-office-js-docs/images/office-add-ins-video-thumbnail.png
+      src: https://review.docs.microsoft.com/en-us/office/dev/add-ins/images/office-add-ins-video-thumbnail.png
       width: 250  
     title: Get started with Office Add-ins. (14:10)
     href: https://channel9.msdn.com/Events/Connect/2017/T192
@@ -28,29 +28,29 @@ sections:
     style: icon48
     items: 
     - image: 
-        src: https://review.docs.microsoft.com/en-us/test-ops-office-js-docs/images/index/ExcelLogoColor.svg
+        src: https://review.docs.microsoft.com/en-us/office/dev/add-ins/images/index/ExcelLogoColor.svg
       text: Excel
-      href: https://review.docs.microsoft.com/en-us/test-ops-office-js-docs/quickstarts/excel-quickstart-jquery
+      href: https://review.docs.microsoft.com/en-us/office/dev/add-ins/quickstarts/excel-quickstart-jquery
     - image: 
-        src: https://review.docs.microsoft.com/en-us/test-ops-office-js-docs/images/index/WordLogoColor.svg
+        src: https://review.docs.microsoft.com/en-us/office/dev/add-ins/images/index/WordLogoColor.svg
       text: Word
-      href: https://review.docs.microsoft.com/en-us/test-ops-office-js-docs/quickstarts/word-quickstart
+      href: https://review.docs.microsoft.com/en-us/office/dev/add-ins/quickstarts/word-quickstart
     - image: 
-        src: https://review.docs.microsoft.com/en-us/test-ops-office-js-docs/images/index/OneNoteLogoColor.svg
+        src: https://review.docs.microsoft.com/en-us/office/dev/add-ins/images/index/OneNoteLogoColor.svg
       text: OneNote
-      href: https://review.docs.microsoft.com/en-us/test-ops-office-js-docs/quickstarts/onenote-quickstart
+      href: https://review.docs.microsoft.com/en-us/office/dev/add-ins/quickstarts/onenote-quickstart
     - image: 
-        src: https://review.docs.microsoft.com/en-us/test-ops-office-js-docs/images/index/OutlookLogoColor.svg
+        src: https://review.docs.microsoft.com/en-us/office/dev/add-ins/images/index/OutlookLogoColor.svg
       text: Outlook
       href: https://docs.microsoft.com/en-us/outlook/add-ins/quick-start
     - image: 
-        src: https://review.docs.microsoft.com/en-us/test-ops-office-js-docs/images/index/PowerPointLogoColor.svg
+        src: https://review.docs.microsoft.com/en-us/office/dev/add-ins/images/index/PowerPointLogoColor.svg
       text: PowerPoint
-      href: https://review.docs.microsoft.com/en-us/test-ops-office-js-docs/quickstarts/powerpoint-quickstart
+      href: https://review.docs.microsoft.com/en-us/office/dev/add-ins/quickstarts/powerpoint-quickstart
     - image: 
-        src: https://review.docs.microsoft.com/en-us/test-ops-office-js-docs/images/index/ProjectLogoColor.svg
+        src: https://review.docs.microsoft.com/en-us/office/dev/add-ins/images/index/ProjectLogoColor.svg
       text: Project
-      href: https://review.docs.microsoft.com/en-us/test-ops-office-js-docs/quickstarts/project-quickstart
+      href: https://review.docs.microsoft.com/en-us/office/dev/add-ins/quickstarts/project-quickstart
 - title: How-to Guides
   items:
   - type: paragraph
