@@ -59,15 +59,15 @@ sections:
     style: unordered
     className: spaced bullet
     items:
-    - html: <a href="/en-us/test-ops-office-js-docs/design/add-in-design">Design the User Interface of an Office Add-in</a>
-    - html: <a href="/en-us/test-ops-office-js-docs/excel/excel-add-ins-overview">Build an Excel add-in</a>
-    - html: <a href="/en-us/test-ops-office-js-docs/word/word-add-ins-programming-overview">Build a Word add-in</a>
-    - html: <a href="/en-us/test-ops-office-js-docs/onenote/onenote-add-ins-programming-overview">Build a OneNote add-in</a>
+    - html: <a href="/en-us/office/dev/add-ins/design/add-in-design">Design the User Interface of an Office Add-in</a>
+    - html: <a href="/en-us/office/dev/add-ins/excel/excel-add-ins-overview">Build an Excel add-in</a>
+    - html: <a href="/en-us/office/dev/add-ins/word/word-add-ins-programming-overview">Build a Word add-in</a>
+    - html: <a href="/en-us/office/dev/add-ins/onenote/onenote-add-ins-programming-overview">Build a OneNote add-in</a>
     - html: <a href="https://docs.microsoft.com/outlook/add-ins">Build an Outlook add-in</a>
-    - html: <a href="/en-us/test-ops-office-js-docs/powerpoint/powerpoint-add-ins">Build a PowerPoint add-in</a>
-    - html: <a href="/en-us/test-ops-office-js-docs/powerpoint/powerpoint-add-ins">Build a Project add-in</a>
-    - html: <a href="/en-us/test-ops-office-js-docs/testing/test-debug-office-add-ins">Test and debug an Office Add-in</a>
-    - html: <a href="/en-us/test-ops-office-js-docs/publish/publish">Publish an Office Add-in</a>
+    - html: <a href="/en-us/office/dev/add-ins/powerpoint/powerpoint-add-ins">Build a PowerPoint add-in</a>
+    - html: <a href="/en-us/office/dev/add-ins/powerpoint/powerpoint-add-ins">Build a Project add-in</a>
+    - html: <a href="/en-us/office/dev/add-ins/testing/test-debug-office-add-ins">Test and debug an Office Add-in</a>
+    - html: <a href="/en-us/office/dev/add-ins/publish/publish">Publish an Office Add-in</a>
 - title: Reference
   items:
   - type: list
