@@ -1,4 +1,6 @@
-- name: Office Add-ins Overview
+- name: Office Add-ins Documentation
+  href: index.yml
+- name: Overview
   href: overview/office-add-ins.md
   items:
   - name: Requirements for running add-ins
