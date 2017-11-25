@@ -76,7 +76,7 @@ Apply the following best practices when you develop add-in commands:
    ![A screenshot that shows a task pane add-in in Office 2013 and the same add-in using add-in commands in Office 2016](../images/office-task-pane-add-ins.png)
 
 
-## Next steps to get started
+## Next steps
 
 The best way to get started using add-in commands is to take a look at the [Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) on GitHub.
 
