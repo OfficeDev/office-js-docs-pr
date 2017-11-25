@@ -4,19 +4,13 @@ description:
 ms.date: 11/20/2017 
 ---
 
-
-
 # Checkbox component in Office UI Fabric
 
 A check box is a UI element that allows users to select or clear options in add-ins. Use check boxes to allow users to select among options. Additionally, a check box may be paired with a related control. When the check box is selected or cleared, the behavior of the related control changes. For example, the related control may toggle between the visible or hidden states.
   
 #### Example: Check box in a task pane
 
-<br/>
-
 ![An image showing a check box](../images/overview-with-app-checkbox.png)
-
-<br/>
 
 ## Best practices
 

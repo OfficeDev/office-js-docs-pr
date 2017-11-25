@@ -11,11 +11,7 @@ Pivots provide quick navigation to frequently accessed content. Pivots allow for
 
 #### Example: Pivot in a task pane
 
-<br/>
-
 ![An image showing the pivot](../images/overview-with-app-pivot.png)
-
-<br/>
 
 ## Best practices
 

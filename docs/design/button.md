@@ -4,19 +4,13 @@ description:
 ms.date: 11/20/2017 
 ---
 
-
-
 # Button component in Office UI Fabric
 
 Use buttons in your Office Add-in to enable users to commit changes or complete steps in a task. Make sure that the text of the button communicates the intent of the interaction. Place buttons at the bottom of the UI container of a task pane, dialog, or content pane. For example, use buttons to allow users to submit a form, close a dialog, or move to the next page.
   
 #### Example: Buttons in a task pane
 
-<br/>
-
 ![An image showing the button](../images/overview-with-app-button.png)
-
-<br/>
 
 ## Best practices
 
