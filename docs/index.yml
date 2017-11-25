@@ -4,10 +4,10 @@ title: Office Add-ins Documentation
 metadata:
   title: Office Add-ins Documentation - Quickstarts, API Reference
   meta.description: Learn how to build Office Add-ins.
-  author: OfficeDev
+  author: o365devx
   ms.topic: landing-page
-  ms.date: 11/02/2017
-  ms.author: kibrandl
+  ms.date: 11/29/2017
+  ms.author: o365devx
 abstract:
   description: The <a href="https://review.docs.microsoft.com/en-us/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad. Learn how to create Office Add-ins with our quickstarts, how-to guides, and API reference documentation.<br/><br/><b>Note:</b> For information about COM or VSTO add-ins, see the <a href="https://msdn.microsoft.com/en-us/library/fp161347.aspx" target="_blank">MSDN documentation</a>.
   aside:
