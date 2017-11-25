@@ -12,19 +12,13 @@ In Office Add-ins, use breadcrumbs for navigation. They show the current page’
   
 #### Example: Breadcrumb in a task pane
 
-<br/>
-
 ![An image showing the breadcrumb](../images/overview-with-app-breadcrumb.png)
-
-<br/>
 
 ## Best practices
 
 |**Do**|**Don't**|
 |:------------|:--------------|
 |Place breadcrumbs at the top of a layout in an add-in, above a list of items, or above the main content of a layout.<br/><br/>![Do Breadcrumb image](../images/breadcrumb-do.png) |Don’t use breadcrumbs as the primary way to navigate to other pages.<br/><br/>![Don't Breadcrumb image](../images/breadcrumb-dont.png)|
-
-<br/>
 
 ## Implementation
 
