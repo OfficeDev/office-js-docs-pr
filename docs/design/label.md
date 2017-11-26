@@ -35,5 +35,4 @@ For details, see [Label](https://dev.office.com/fabric#/components/label) and [G
 ## Additional resources
 
 - [UX Design Patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
-
 - [Office UI Fabric in Office Add-ins](office-ui-fabric.md)
