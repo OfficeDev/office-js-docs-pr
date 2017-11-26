@@ -86,6 +86,7 @@ End users can access the add-in catalog in an Office application by completing t
 1. In the Office application, go to  **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**.
     
 2. Specify the URL of the  _parent SharePoint site collection_ of the add-in catalog. 
+
     For example, if the URL of the Office Add-ins catalog is:
     
     - `https:// _domain_ /sites/ _AddinCatalogSiteCollection_ /AgaveCatalog`
