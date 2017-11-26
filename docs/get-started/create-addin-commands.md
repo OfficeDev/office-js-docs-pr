@@ -62,8 +62,7 @@ The following example shows an Office 2013 add-in's manifest. There are no add-i
 
 ## Step 3: Add VersionOverrides element
 The **VersionOverrides** element is the root element that contains the definition of your add-in command. **VersionOverrides** is a child element of the **OfficeApp** element in the manifest. The following table lists the attributes of the **VersionOverrides** element.
-   
-    
+
 |**Attribute**|**Description**|
 |:-----|:-----|
 |**xmlns** <br/> | Required. The schema location, which must be "http://schemas.microsoft.com/office/taskpaneappversionoverrides". <br/> |
@@ -71,7 +70,6 @@ The **VersionOverrides** element is the root element that contains the definitio
    
 The following table identifies the child elements of **VersionOverrides**.
   
-
 |**Element**|**Description**|
 |:-----|:-----|
 |**Description** <br/> |Optional. Describes the add-in. This child **Description** element overrides a previous **Description** element in the parent portion of the manifest. The **resid** attribute for this **Description** element is set to the **id** of a **String** element. The **String** element contains the text for **Description**. <br/> |
@@ -80,7 +78,6 @@ The following table identifies the child elements of **VersionOverrides**.
 |**Resources** <br/> |Defines a collection of resources (strings, URLs, and images) that other manifest elements reference. For example, the **Description** element's value refers to a child element in **Resources**. The **Resources** element is described in [Step 7: Add the Resources element](#Step-7:-Add-the-Resources-element) later in this article. <br/> |
    
 The following example shows how to use the **VersionOverrides** element and its child elements.
-
 
 ```xml
 <OfficeApp>
@@ -100,8 +97,8 @@ The following example shows how to use the **VersionOverrides** element and its 
     </Hosts>
     <Resources> 
       <!-- add information about resources -->
-   </Resources>
-</VersionOverrides>
+    </Resources>
+  </VersionOverrides>
 ...
 </OfficeApp>
 ```
@@ -431,7 +428,6 @@ In Excel and Word, you can add your add-in commands to the ribbon by using the d
 |PowerPoint  <br/> |**TabHome**         **TabInsert**         **TabDesign**         **TabTransitions**         **TabAnimations**         **TabSlideShow**         **TabReview**         **TabView**         **TabDeveloper**         **TabAddIns**         **TabPrintPreview**         **TabMerge**         **TabGrayscale**         **TabBlackAndWhite**         **TabBroadcastPresentation**         **TabSlideMaster**         **TabHandoutMaster**         **TabNotesMaster**         **TabBackgroundRemoval**         **TabSlideMasterHome**          <br/> |
    
 ## Additional resources
--  [Add-in commands for Excel, Word and PowerPoint](https://dev.office.com/docs/add-ins/design/add-in-commands-for-excel-and-word-preview)
-      
+-  [Add-in commands for Excel, Word and PowerPoint](https://dev.office.com/docs/add-ins/design/add-in-commands-for-excel-and-word-preview)      
 -  [Define add-in commands in your manifest](https://dev.office.com/docs/add-ins/develop/define-add-in-commands)  
   
