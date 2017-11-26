@@ -14,7 +14,11 @@ This article provides guidance for using Angular 2+ to create an Office Add-in a
 For an Office Add-ins sample that's built using the Angular framework, see [Word Style Checking Add-in Built on Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker).
 
 ## Install the TypeScript type definitions
-Open an nodejs window and enter the following at the command line: `npm install --save-dev @types/office-js`.
+Open an nodejs window and enter the following at the command line: 
+
+```bash
+npm install --save-dev @types/office-js`
+```
 
 ## Bootstrapping must be inside Office.initialize
 
