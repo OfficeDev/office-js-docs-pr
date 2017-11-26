@@ -32,8 +32,7 @@ To start using add-in commands, you must first create a task pane add-in, and th
    
 The following example shows an Office 2013 add-in's manifest. There are no add-in commands in this manifest because there is no **VersionOverrides** element. Office 2013 doesn't support add-in commands, but by adding **VersionOverrides** to this manifest, your add-in will run in both Office 2013 and Office 2016. In Office 2013, your add-in won't display add-in commands, and uses the value of **SourceLocation** to run your add-in as a single task pane add-in. In Office 2016, if no **VersionOverrides** element is included, **SourceLocation** is used to run your add-in. If you include **VersionOverrides**, however, your add-in displays the add-in commands only, and doesn't display your add-in as a single task pane add-in.
   
-```XML
-
+```xml
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
   <Id>657a32a9-ab8a-4579-ac9f-df1a11a64e52</Id>
   <Version>1.0.0.0</Version>
@@ -59,7 +58,6 @@ The following example shows an Office 2013 add-in's manifest. There are no add-i
  <!-- The VersionOverrides element is inserted at this location in the manifest. -->
 
 </OfficeApp>
-
 ```
 
 ## Step 3: Add VersionOverrides element
@@ -84,8 +82,7 @@ The following table identifies the child elements of **VersionOverrides**.
 The following example shows how to use the **VersionOverrides** element and its child elements.
 
 
-```XML
-
+```xml
 <OfficeApp>
 ...
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -116,8 +113,7 @@ The **DesktopFormFactor** element specifies the settings for an add-in that runs
       
 The following is an example of **Hosts**, **Host**, and **DesktopFormFactor** elements.
 
-```XML
-
+```xml
 <OfficeApp>
 ...
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -142,106 +138,100 @@ The following is an example of **Hosts**, **Host**, and **DesktopFormFactor** el
         
 The following is an example of the **FunctionFile** element.
   
-```XML
-
+```xml
 <DesktopFormFactor>
-          <FunctionFile resid="residDesktopFuncUrl" />
-          <ExtensionPoint xsi:type="PrimaryCommandSurface">
-            <!-- information about this extension point -->
-          </ExtensionPoint> 
+    <FunctionFile resid="residDesktopFuncUrl" />
+    <ExtensionPoint xsi:type="PrimaryCommandSurface">
+      <!-- information about this extension point -->
+    </ExtensionPoint> 
 
-          <!-- You can define more than one ExtensionPoint element as needed -->
-
-        </DesktopFormFactor>
+    <!-- You can define more than one ExtensionPoint element as needed -->
+</DesktopFormFactor>
 ```
 
-**IMPORTANT**  Make sure your JavaScript code calls  `Office.initialize`. 
+> [!IMPORTANT]
+> Make sure your JavaScript code calls  `Office.initialize`. 
    
 The JavaScript in the HTML file referenced by the **FunctionFile** element must call `Office.initialize`. The **FunctionName** element (see [Button controls](https://dev.office.com/reference/add-ins/manifest/control#Button-control) for a description) uses the functions in **FunctionFile**.
- 
      
 The following code shows how to implement the function used by **FunctionName**.
- 
 
-```
+```javascript
 <script>
-        // The initialize function must be run each time a new page is loaded.
-        (function () {
-            Office.initialize = function (reason) {
-               // If you need to initialize something you can do so here. 
-            };
-        })();
+    // The initialize function must be run each time a new page is loaded.
+    (function () {
+        Office.initialize = function (reason) {
+            // If you need to initialize something you can do so here. 
+        };
+    })();
 
-            // Your function must be in the global namespace.
-        function writeText(event) {
+    // Your function must be in the global namespace.
+    function writeText(event) {
 
-            // Implement your custom code here. The following code is a simple example.  
-
-            Office.context.document.setSelectedDataAsync("ExecuteFunction works. Button ID=" + event.source.id,
-                function (asyncResult) {
-                    var error = asyncResult.error;
-                    if (asyncResult.status === "failed") {
-                        // Show error message. 
-                    }
-                    else {
-                        // Show success message.
-                    }
-                });
-           // Calling event.completed is required. event.completed lets the platform know that processing has completed. 
-	   event.completed();
-        }
-
-    </script>
-
+        // Implement your custom code here. The following code is a simple example.  
+        Office.context.document.setSelectedDataAsync("ExecuteFunction works. Button ID=" + event.source.id,
+            function (asyncResult) {
+                var error = asyncResult.error;
+                if (asyncResult.status === "failed") {
+                    // Show error message. 
+                }
+                else {
+                    // Show success message.
+                }
+            });
+        
+        // Calling event.completed is required. event.completed lets the platform know that processing has completed. 
+        event.completed();
+    }
+</script>
 ```
 
-**IMPORTANT**  The call to **event.completed** signals that you have successfully handled the event. When a function is called multiple times, such as multiple clicks on the same add-in command, all events are automatically queued. The first event runs automatically, while the other events remain on the queue. When your function calls **event.completed**, the next queued call to that function runs. You must implement **event.completed**, otherwise your function will not run.
+> [!IMPORTANT]
+> The call to **event.completed** signals that you have successfully handled the event. When a function is called multiple times, such as multiple clicks on the same add-in command, all events are automatically queued. The first event runs automatically, while the other events remain on the queue. When your function calls **event.completed**, the next queued call to that function runs. You must implement **event.completed**, otherwise your function will not run.
  
 ## Step 6: Add ExtensionPoint elements
+
 The **ExtensionPoint** element defines where add-in commands should appear in the Office UI. You can define **ExtensionPoint** elements with these **xsi:type** values:
    
 - **PrimaryCommandSurface**, which refers to the ribbon in Office.
      
 - **ContextMenu**, which is the shortcut menu that appears when you right-click in the Office UI.
     
- 
 The following examples show how to use the **ExtensionPoint** element with **PrimaryCommandSurface** and **ContextMenu** attribute values, and the child elements that should be used with each.
     
-**IMPORTANT**  For elements that contain an ID attribute, make sure you provide a unique ID. We recommend that you use your company's name along with your ID. For example, use the following format. > <CustomTab id="mycompanyname.mygroupname"> 
+> [!IMPORTANT]
+> For elements that contain an ID attribute, make sure you provide a unique ID. We recommend that you use your company's name along with your ID. For example, use the following format: `<CustomTab id="mycompanyname.mygroupname">`. 
   
-
-```XML
-
+```xml
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
-            <CustomTab id="Contoso Tab">
-            <!-- If you want to use a default tab that comes with Office, remove the above CustomTab element, and then uncomment the following OfficeTab element -->
-             <!-- <OfficeTab id="TabData"> -->
-              <Label resid="residLabel4" />
-              <Group id="Group1Id12">
-                <Label resid="residLabel4" />
-                <Icon>
-                  <bt:Image size="16" resid="icon1_32x32" />
-                  <bt:Image size="32" resid="icon1_32x32" />
-                  <bt:Image size="80" resid="icon1_32x32" />
-                </Icon>
-                <Tooltip resid="residToolTip" />
-                <Control xsi:type="Button" id="Button1Id1">
-                  
-                   <!-- information about the control -->
-                </Control>   
-                <!-- other controls, as needed -->                                    
-              </Group>
-            </CustomTab>
-          </ExtensionPoint>
-
-        <ExtensionPoint xsi:type="ContextMenu">
-          <OfficeMenu id="ContextMenuCell">
-            <Control xsi:type="Menu" id="ContextMenu2">
-                   <!-- information about the control -->
-            </Control>   
-           <!-- other controls, as needed -->         
-          </OfficeMenu>
-         </ExtensionPoint>
+  <CustomTab id="Contoso Tab">
+  <!-- If you want to use a default tab that comes with Office, remove the above CustomTab element, and then uncomment the following OfficeTab element -->
+  <!-- <OfficeTab id="TabData"> -->
+    <Label resid="residLabel4" />
+    <Group id="Group1Id12">
+      <Label resid="residLabel4" />
+      <Icon>
+        <bt:Image size="16" resid="icon1_32x32" />
+        <bt:Image size="32" resid="icon1_32x32" />
+        <bt:Image size="80" resid="icon1_32x32" />
+      </Icon>
+      <Tooltip resid="residToolTip" />
+      <Control xsi:type="Button" id="Button1Id1">
+        
+        <!-- information about the control -->
+      </Control>   
+      <!-- other controls, as needed -->                                    
+    </Group>
+  </CustomTab>
+</ExtensionPoint>
+<ExtensionPoint xsi:type="ContextMenu">
+  <OfficeMenu id="ContextMenuCell">
+    <Control xsi:type="Menu" id="ContextMenu2">
+            <!-- information about the control -->
+    </Control>   
+    <!-- other controls, as needed -->         
+  </OfficeMenu>
+</ExtensionPoint>
 ```
 
 |**Element**|**Description**|
@@ -261,51 +251,45 @@ A button performs a single action when the user selects it. It can either execut
 
 - The **type** attribute is required, and must be set to **Button**.
     
- - The **id** attribute of the **Control** element is a string with a maximum of 125 characters.
+- The **id** attribute of the **Control** element is a string with a maximum of 125 characters.
     
- 
-```XML
-
+```xml
 <!-- Define a control that calls a JavaScript function. -->
+<Control xsi:type="Button" id="Button1Id1">
+  <Label resid="residLabel" />
+  <Tooltip resid="residToolTip" />
+  <Supertip>
+    <Title resid="residLabel" />
+    <Description resid="residToolTip" />
+  </Supertip>
+  <Icon>
+    <bt:Image size="16" resid="icon1_32x32" />
+    <bt:Image size="32" resid="icon1_32x32" />
+    <bt:Image size="80" resid="icon1_32x32" />
+  </Icon>
+  <Action xsi:type="ExecuteFunction">
+    <FunctionName>getData</FunctionName>
+  </Action>
+</Control>
 
-                 <Control xsi:type="Button" id="Button1Id1">
-                  <Label resid="residLabel" />
-                  <Tooltip resid="residToolTip" />
-                  <Supertip>
-                    <Title resid="residLabel" />
-                    <Description resid="residToolTip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon1_32x32" />
-                    <bt:Image size="32" resid="icon1_32x32" />
-                    <bt:Image size="80" resid="icon1_32x32" />
-                  </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>getData</FunctionName>
-                  </Action>
-                </Control>
-
-
-                <!-- Define a control that shows a task pane. -->
-
-                <Control xsi:type="Button" id="Button2Id1">
-                  <Label resid="residLabel2" />
-                  <Tooltip resid="residToolTip" />
-                  <Supertip>
-                    <Title resid="residLabel" />
-                    <Description resid="residToolTip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon2_32x32" />
-                    <bt:Image size="32" resid="icon2_32x32" />
-                    <bt:Image size="80" resid="icon2_32x32" />
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="residUnitConverterUrl" />
-                  </Action>
-                </Control>
+<!-- Define a control that shows a task pane. -->
+<Control xsi:type="Button" id="Button2Id1">
+  <Label resid="residLabel2" />
+  <Tooltip resid="residToolTip" />
+  <Supertip>
+    <Title resid="residLabel" />
+    <Description resid="residToolTip" />
+  </Supertip>
+  <Icon>
+    <bt:Image size="16" resid="icon2_32x32" />
+    <bt:Image size="32" resid="icon2_32x32" />
+    <bt:Image size="80" resid="icon2_32x32" />
+  </Icon>
+  <Action xsi:type="ShowTaskpane">
+    <SourceLocation resid="residUnitConverterUrl" />
+  </Action>
+</Control>
 ```
-
 
 |**Elements**|**Description**|
 |:-----|:-----|
@@ -331,54 +315,53 @@ The following example shows how to define a menu item with two submenu items. Th
   
 - The **id** attribute is a string with a maximum of 125 characters.
     
-```
+```xml
 <Control xsi:type="Menu" id="TestMenu2">
-              <Label resid="residLabel3" />
-              <Tooltip resid="residToolTip" />
-              <Supertip>
-                <Title resid="residLabel" />
-                <Description resid="residToolTip" />
-              </Supertip>
-              <Icon>
-                <bt:Image size="16" resid="icon1_32x32" />
-                <bt:Image size="32" resid="icon1_32x32" />
-                <bt:Image size="80" resid="icon1_32x32" />
-              </Icon>
-              <Items>
-                <Item id="showGallery2">
-                  <Label resid="residLabel3"/>
-                  <Supertip>
-                    <Title resid="residLabel" />
-                    <Description resid="residToolTip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon1_32x32" />
-                    <bt:Image size="32" resid="icon1_32x32" />
-                    <bt:Image size="80" resid="icon1_32x32" />
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <TaskpaneId>MyTaskPaneID1</TaskpaneId>
-                    <SourceLocation resid="residUnitConverterUrl" />
-                  </Action>
-                </Item>
-              <Item id="showGallery3">
-                  <Label resid="residLabel5"/>
-                  <Supertip>
-                    <Title resid="residLabel" />
-                    <Description resid="residToolTip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon4_32x32" />
-                    <bt:Image size="32" resid="icon4_32x32" />
-                    <bt:Image size="80" resid="icon4_32x32" />
-                  </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>getButton</FunctionName>
-                  </Action>
-                </Item>
-              </Items>
-            </Control>
-
+  <Label resid="residLabel3" />
+  <Tooltip resid="residToolTip" />
+  <Supertip>
+    <Title resid="residLabel" />
+    <Description resid="residToolTip" />
+  </Supertip>
+  <Icon>
+    <bt:Image size="16" resid="icon1_32x32" />
+    <bt:Image size="32" resid="icon1_32x32" />
+    <bt:Image size="80" resid="icon1_32x32" />
+  </Icon>
+  <Items>
+    <Item id="showGallery2">
+      <Label resid="residLabel3"/>
+      <Supertip>
+        <Title resid="residLabel" />
+        <Description resid="residToolTip" />
+      </Supertip>
+      <Icon>
+        <bt:Image size="16" resid="icon1_32x32" />
+        <bt:Image size="32" resid="icon1_32x32" />
+        <bt:Image size="80" resid="icon1_32x32" />
+      </Icon>
+      <Action xsi:type="ShowTaskpane">
+        <TaskpaneId>MyTaskPaneID1</TaskpaneId>
+        <SourceLocation resid="residUnitConverterUrl" />
+      </Action>
+    </Item>
+    <Item id="showGallery3">
+      <Label resid="residLabel5"/>
+      <Supertip>
+        <Title resid="residLabel" />
+        <Description resid="residToolTip" />
+      </Supertip>
+      <Icon>
+        <bt:Image size="16" resid="icon4_32x32" />
+        <bt:Image size="32" resid="icon4_32x32" />
+        <bt:Image size="80" resid="icon4_32x32" />
+      </Icon>
+      <Action xsi:type="ExecuteFunction">
+        <FunctionName>getButton</FunctionName>
+      </Action>
+    </Item>
+  </Items>
+</Control>
 ```
 
 |**Elements**|**Description**|
@@ -397,36 +380,35 @@ The **Resources** element contains resources used by the different child element
 The following shows an example of how to use the **Resources** element. Each resource can have one or more **Override** child elements to define a different resource for a specific locale.
 
 
-```XML
-
+```xml
 <Resources>
-      <bt:Images>
-        <bt:Image id="icon1_16x16" DefaultValue="https://www.contoso.com/Images/icon_default.png">
-          <bt:Override Locale="ja-jp" Value="https://www.contoso.com/Images/ja-jp16-icon_default.png" />
-        </bt:Image>
-        <bt:Image id="icon1_32x32" DefaultValue="https://www.contoso.com/Images/icon_default.png">
-          <bt:Override Locale="ja-jp" Value="https://www.contoso.com/Images/ja-jp32-icon_default.png" />
-        </bt:Image>
-        <bt:Image id="icon1_80x80" DefaultValue="https://www.contoso.com/Images/icon_default.png">
-          <bt:Override Locale="ja-jp" Value="https://www.contoso.com/Images/ja-jp80-icon_default.png" />
-        </bt:Image>        
-      </bt:Images>
-      <bt:Urls>
-        <bt:Url id="residDesktopFuncUrl" DefaultValue="https://www.contoso.com/Pages/Home.aspx">
-          <bt:Override Locale="ja-jp" Value="https://www.contoso.com/Pages/Home.aspx" />
-        </bt:Url>        
-      </bt:Urls>
-      <bt:ShortStrings>
-        <bt:String id="residLabel" DefaultValue="GetData">
-          <bt:Override Locale="ja-jp" Value="JA-JP-GetData" />
-        </bt:String>      
-      </bt:ShortStrings>
-      <bt:LongStrings>
-        <bt:String id="residToolTip" DefaultValue="Get data for your document.">
-          <bt:Override Locale="ja-jp" Value="JA-JP - Get data for your document." />
-        </bt:String>
-      </bt:LongStrings>
-    </Resources>
+  <bt:Images>
+    <bt:Image id="icon1_16x16" DefaultValue="https://www.contoso.com/Images/icon_default.png">
+      <bt:Override Locale="ja-jp" Value="https://www.contoso.com/Images/ja-jp16-icon_default.png" />
+    </bt:Image>
+    <bt:Image id="icon1_32x32" DefaultValue="https://www.contoso.com/Images/icon_default.png">
+      <bt:Override Locale="ja-jp" Value="https://www.contoso.com/Images/ja-jp32-icon_default.png" />
+    </bt:Image>
+    <bt:Image id="icon1_80x80" DefaultValue="https://www.contoso.com/Images/icon_default.png">
+      <bt:Override Locale="ja-jp" Value="https://www.contoso.com/Images/ja-jp80-icon_default.png" />
+    </bt:Image>        
+  </bt:Images>
+  <bt:Urls>
+    <bt:Url id="residDesktopFuncUrl" DefaultValue="https://www.contoso.com/Pages/Home.aspx">
+      <bt:Override Locale="ja-jp" Value="https://www.contoso.com/Pages/Home.aspx" />
+    </bt:Url>        
+  </bt:Urls>
+  <bt:ShortStrings>
+    <bt:String id="residLabel" DefaultValue="GetData">
+      <bt:Override Locale="ja-jp" Value="JA-JP-GetData" />
+    </bt:String>      
+  </bt:ShortStrings>
+  <bt:LongStrings>
+    <bt:String id="residToolTip" DefaultValue="Get data for your document.">
+      <bt:Override Locale="ja-jp" Value="JA-JP - Get data for your document." />
+    </bt:String>
+  </bt:LongStrings>
+</Resources>
 ```
 
 |**Resource**|**Description**|
@@ -435,15 +417,12 @@ The following shows an example of how to use the **Resources** element. Each res
 |**Urls**/ **Url** <br/> |Provides an HTTPS URL location. A URL can be a maximum of 2048 characters.  <br/> |
 |**ShortStrings**/ **String** <br/> |The text for **Label** and **Title** elements. Each **String** contains a maximum of 125 characters. <br/> |
 |**LongStrings**/ **String** <br/> |The text for **Tooltip** and **Description** elements. Each **String** contains a maximum of 250 characters. <br/> |
-       
-    
-**NOTE**  You must use Secure Sockets Layer (SSL) for all URLs in the **Image** and **Url** elements.
-    
    
+> [!NOTE] 
+> You must use Secure Sockets Layer (SSL) for all URLs in the **Image** and **Url** elements.
 
 ### Tab values for default Office ribbon tabs
 In Excel and Word, you can add your add-in commands to the ribbon by using the default Office UI tabs. The following table lists the values that you can use for the **id** attribute of the **OfficeTab** element. The tab values are case sensitive.
-
 
 |**Office host application**|**Tab values**|
 |:-----|:-----|
@@ -451,8 +430,7 @@ In Excel and Word, you can add your add-in commands to the ribbon by using the d
 |Word  <br/> |**TabHome**         **TabInsert**         **TabWordDesign**         **TabPageLayoutWord**         **TabReferences**         **TabMailings**         **TabReviewWord**         **TabView**         **TabDeveloper**         **TabAddIns**         **TabBlogPost**         **TabBlogInsert**         **TabPrintPreview**         **TabOutlining**         **TabConflicts**         **TabBackgroundRemoval**         **TabBroadcastPresentation** <br/> |
 |PowerPoint  <br/> |**TabHome**         **TabInsert**         **TabDesign**         **TabTransitions**         **TabAnimations**         **TabSlideShow**         **TabReview**         **TabView**         **TabDeveloper**         **TabAddIns**         **TabPrintPreview**         **TabMerge**         **TabGrayscale**         **TabBlackAndWhite**         **TabBroadcastPresentation**         **TabSlideMaster**         **TabHandoutMaster**         **TabNotesMaster**         **TabBackgroundRemoval**         **TabSlideMasterHome**          <br/> |
    
-
-### Additional resources
+## Additional resources
 -  [Add-in commands for Excel, Word and PowerPoint](https://dev.office.com/docs/add-ins/design/add-in-commands-for-excel-and-word-preview)
       
 -  [Define add-in commands in your manifest](https://dev.office.com/docs/add-ins/develop/define-add-in-commands)  
