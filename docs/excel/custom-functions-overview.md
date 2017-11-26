@@ -4,8 +4,6 @@ description:
 ms.date: 11/20/2017 
 ---
 
-
-
 # Create custom functions in Excel (Preview)
 
 Custom functions (similar to user-defined functions, or UDFs), allow developers to add any JavaScript function to Excel using an add-in. Users can then access custom functions like any other native function in Excel (like =SUM()). This article explains how to create custom functions in Excel.
@@ -90,12 +88,11 @@ Excel.run(function(ctx) {
 
     -   `resultType`: Your function can return either a `"string"` or a `"number"` (also used for dates and currencies). For more information see [
 Custom Function Enumerations](https://dev.office.com/reference/add-ins/excel/customfunctionsenumerations).
-    -   `resultDimensionality`: Your function can return either a single (`"scalar"`) value or a `"matrix"` of values. When returning a matrix of values, your function returns an array, where each array element is another array that represents a row of values. For more information, see [
-Custom Function Enumerations](https://dev.office.com/reference/add-ins/excel/customfunctionsenumerations). The following example returns a 3-row, 2-column matrix of values from a custom function.
+    -   `resultDimensionality`: Your function can return either a single (`"scalar"`) value or a `"matrix"` of values. When returning a matrix of values, your function returns an array, where each array element is another array that represents a row of values. For more information, see [Custom Function Enumerations](https://dev.office.com/reference/add-ins/excel/customfunctionsenumerations). The following example returns a 3-row, 2-column matrix of values from a custom function.
 
-```js
-return [["first","row"],["second","row"],["third","row"]];
-```
+        ```js
+        return [["first","row"],["second","row"],["third","row"]];
+        ```
 
 -   Your custom function may take arguments as input. The arguments passed to your custom function are specified in the *parameters* property. The order of the parameters in the definition must match the order in the JavaScript function. For each parameter, define these properties:
 
@@ -115,7 +112,6 @@ After registration, custom functions are available in all workbooks (not only th
 The following example in manifest.xml allows Excel to locate the code for your functions.
 
 ```xml
-
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1\_0">
 
     <Hosts>
@@ -147,8 +143,8 @@ The following example in manifest.xml allows Excel to locate the code for your f
 
 The previous code specifies:
 
--   A &lt;`Script`&gt; element, which is required but not used in the Developer Preview.
--   A &lt;`Page`&gt; element, which links to the HTML page of your add-in. The HTML page includes a &lt;Script&gt; reference to the JavaScript file (*customfunctions.js*) that contains the custom function and registration code. The HTML page is a hidden page and is never displayed in the UI.
+-   A `<Script>` element, which is required but not used in the Developer Preview.
+-   A `<Page>` element, which links to the HTML page of your add-in. The HTML page includes a &lt;Script&gt; reference to the JavaScript file (*customfunctions.js*) that contains the custom function and registration code. The HTML page is a hidden page and is never displayed in the UI.
 
 ## Asynchronous functions
 
@@ -262,5 +258,3 @@ The following features aren't yet supported in the Developer Preview.
 -   Custom functions are not available on Excel on Mac, Excel for iOS, and Excel Online.
 
 -   Currently, add-ins rely on a hidden browser process to run custom functions. In the future, JavaScript will run directly on some platforms to ensure custom functions are faster and use less memory. Additionally, the HTML page referenced by the &lt;Page&gt; element in the manifest won’t be needed for most platforms because Excel will run the JavaScript directly. To prepare for this change, ensure your custom functions do not use the webpage DOM.
-
-## Additional resources
