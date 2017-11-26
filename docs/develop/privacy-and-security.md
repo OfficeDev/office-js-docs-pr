@@ -4,13 +4,11 @@ description:
 ms.date: 11/20/2017 
 ---
 
-
 # Privacy and security for Office Add-ins
 
 ## Understanding the add-in runtime
 
 Office Add-ins are secured by an add-in runtime environment, a multiple-tier permissions model, and performance governors. This framework protects the user's experience in the following ways: 
-
 
 - Access to the host application's UI frame is managed.
 
@@ -19,7 +17,6 @@ Office Add-ins are secured by an add-in runtime environment, a multiple-tier per
 - Modal interactions aren't allowed - for example, calls to JavaScript  **alert**,  **confirm**, and  **prompt** functions aren't allowed because they're modal.
 
 Further, the runtime framework provides the following benefits to ensure that an Office Add-in can't damage the user's environment:
-
 
 - Isolates the process the add-in runs in.
 
@@ -46,23 +43,19 @@ On Windows desktops, Protect Mode in Internet Explorer must be enabled for the R
 
 As shown in figure 2, on an OS X Mac desktop, the add-in web page is hosted inside a sandboxed WebKit runtime host process which helps provide similar level of security and performance protection. 
 
-
 *Figure 2. Office Add-ins runtime environment in OS X Mac clients*
 
 ![Apps for Office runtime environment on OS X Mac](../images/dk2-agave-overview-mac-02.png)
 
 The Office Add-ins runtime manages interprocess communication, the translation of JavaScript API calls and events into native ones, as well as UI remoting support to enable the add-in to be rendered inside the document, in a task pane, or adjacent to an email message, meeting request, or appointment.
 
-
 ### Web clients
 
 In supported Web clients, such as Excel Online and Outlook Web App, Office Add-ins are hosted in an  **iframe** that runs using the HTML5 **sandbox** attribute. ActiveX components or navigating the main page of the web client are not allowed. Office Add-ins support is enabled in the web clients by the integration of the JavaScript API for Office. In a similar way to the desktop client applications, the JavaScript API manages the add-in lifecycle and interoperability between the add-in and the web client. This interoperability is implemented by using a special cross-frame post message communication infrastructure. The same JavaScript library (Office.js) that is used on desktop clients is available to interact with the web client. Figure 3 shows the infrastructure that supports Office Add-ins in the Office Online (running in the browser), and the relevant components (the web client, **iframe**, Office Add-ins runtime, and JavaScript API for Office) that are required to support them.
 
-
 *Figure 3. Infrastructure that supports Office Add-ins in Office web clients*
 
 ![Web-client infrastructure](../images/dk2-agave-overview-03.png)
-
 
 ## Add-in integrity in the Office Store
 
@@ -81,13 +74,11 @@ You can make your Office Add-ins available to the public by publishing them in t
 
 This section describes the protection offered by the Office Add-ins platform from the customer's (end user's) perspective, and provides guidelines for how to support users' expectations and how to securely handle users' personally identifiable information (PII).
 
-
 ### End users' perspective
 
 Office Add-ins are built using web technologies that run in a browser control or  **iframe**. Because of this, using add-ins is similar to browsing to web sites on the Internet or intranet. Add-ins can be external to an organization (if you acquire the add-in from the Office Store) or internal (if you acquire the add-in from an Exchange Server add-in catalog, SharePoint add-in catalog, or file share on an organization's network). Add-ins have limited access to the network and most add-ins can read or write to the active document or mail item. The add-in platform applies certain constraints before a user or administrator installs or starts an add-in. But as with any extensibility model, users should be cautious before starting an unknown add-in.
 
 The add-in platform addresses end users' privacy concerns in the following ways:
-
 
 - Data communicated with the web server that hosts a content, Outlook or task pane add-in as well as communication between the add-in and any web services it uses must be encrypted using the Secure Socket Layer (SSL) protocol.
 
@@ -105,11 +96,9 @@ The add-in platform addresses end users' privacy concerns in the following ways:
 
 Outlook add-ins provide additional security and performance features through Outlook add-in specific resource usage monitoring. For more information, see [Privacy, permissions, and security for Outlook add-ins](https://docs.microsoft.com/en-us/outlook/add-ins/privacy-and-security).
 
-
 ### Developer guidelines to handle PII
 
 You can read general PII protection guidelines for IT administrators and developers in [Protecting Privacy in the Development and Testing of Human Resources Applications](http://technet.microsoft.com/en-us/library/gg447064.aspx). The following lists some specific PII protection guidelines for you as a developer of Office Add-ins:
-
 
 - The [Settings](https://dev.office.com/reference/add-ins/shared/settings) object is intended for persisting add-in settings and state data across sessions for a content or task pane add-in, but don't store passwords and other sensitive PII in the **Settings** object. The data in the **Settings** object isn't visible to end users, but it is stored as part of the document's file format which is readily accessible. You should limit your add-in's use of PII and store any PII required by your add-in on the server hosting your add-in as a user-secured resource.
 
@@ -119,11 +108,9 @@ You can read general PII protection guidelines for IT administrators and develop
 
 - If you store users' PII, make sure you reveal that fact, and provide a way for users to inspect and delete it. If you submit your add-in to the Office Store, you can outline the data you collect and how it's used in the privacy statement.
 
-
 ## Developers' permission choices and security practices
 
 Follow these general guidelines to support the security model of Office Add-ins, and drill down on more details for each add-in type.
-
 
 ### Permissions choices
 
@@ -134,9 +121,6 @@ As a best practice, you should request permissions based on the principle of  _l
 You specify permissions in the manifest of your add-in, as shown in the example in this section below, and end users can see the requested permission level of an add-in before they decide to install or activate the add-in for the first time. Additionally, Outlook add-ins that request the  **ReadWriteMailbox** permission require explicit administrator privilege to install.
 
 The following example shows how a task pane add-in specifies the  **ReadDocument** permission in its manifest. To keep permissions as the focus, other elements in the manifest aren't displayed.
-
-
-
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -158,7 +142,6 @@ For more information about this for Outlook add-ins, see the following topics:
 - [Privacy, permissions, and security for Outlook add-ins](https://docs.microsoft.com/en-us/outlook/add-ins/privacy-and-security)
 
 - [Understanding Outlook add-in permissions](https://docs.microsoft.com/en-us/outlook/add-ins/understanding-outlook-add-in-permissions)
-
 
 ### Same origin policy
 
@@ -184,7 +167,6 @@ function loadVideoDetails(videoIndex) {
 
 Exchange and SharePoint provide client-side proxies to enable cross-domain access. In general, same origin policy on an intranet isn't as strict as on the Internet. For more information, see [Same Origin Policy Part 1: No Peeking](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx) and [Addressing same-origin policy limitations in Office Add-ins](addressing-same-origin-policy-limitations.md).
 
-
 ### Tips to prevent malicious cross-site scripting
 
 An ill-intentioned user could attack the origin of an add-in by entering malicious script through the document or fields in the add-in. A developer should process user input to avoid executing a malicious user's JavaScript within his or her domain. The following are some good practices to follow to handle user input from a document or mail message, or via fields in an add-in:
@@ -192,11 +174,11 @@ An ill-intentioned user could attack the origin of an add-in by entering malicio
 
 - Instead of the DOM property [innerHTML](http://msdn.microsoft.com/en-us/library/ie/ms533897.aspx), use the [innerText](https://msdn.microsoft.com/library/ms533899.aspx) and [textContent](https://developer.mozilla.org/en-US/docs/DOM/Node.textContent) properties where appropriate. Do the following for Internet Explorer and Firefox cross-browser support:
 
-```js
+    ```js
      var text = x.innerText || x.textContent
-```
+    ```
 
-   For information about the differences between  **innerText** and **textContent**, see [Node.textContent](https://developer.mozilla.org/en-US/docs/DOM/Node.textContent). For more information about DOM compatibility across common browsers, see [W3C DOM Compatibility - HTML](http://www.quirksmode.org/dom/w3c_html.html#t07).
+    For information about the differences between  **innerText** and **textContent**, see [Node.textContent](https://developer.mozilla.org/en-US/docs/DOM/Node.textContent). For more information about DOM compatibility across common browsers, see [W3C DOM Compatibility - HTML](http://www.quirksmode.org/dom/w3c_html.html#t07).
 
 - If you must use  **innerHTML**, make sure the user's input doesn't contain malicious content before passing it to  **innerHTML**. For more information and an example of how to use  **innerHTML** safely, see [innerHTML](http://msdn.microsoft.com/en-us/library/ie/ms533897.aspx) property.
 
@@ -207,7 +189,6 @@ An ill-intentioned user could attack the origin of an add-in by entering malicio
 - Use the [encodeURIComponent](http://msdn.microsoft.com/en-us/library/8202bce6-1342-40dc-a5ef-ac6d210a7d15.aspx) or [encodeURI](http://msdn.microsoft.com/en-us/library/17bab5a2-bcd4-46c2-8b52-b2b5a0ed98a3.aspx) function to encode text that is intended to be a URL that comes from or contains user input.
 
 - See [Developing secure add-ins](http://msdn.microsoft.com/en-us/library/windows/apps/hh849625.aspx) for more best practices to create more secure web solutions.
-
 
 ### Tips to prevent "Clickjacking"
 
@@ -221,7 +202,6 @@ Third, to ensure that no potential attacker can hide or mask the confirmation, y
 
 Here are some examples of how you could get confirmation:
 
-
 - Send an email to the user that contains a confirmation link.
 
 - Send a text message to the user that includes a confirmation code that the user can enter in the add-in.
@@ -229,7 +209,6 @@ Here are some examples of how you could get confirmation:
 - Open a confirmation dialog in a new browser window to a page that cannot be iframed. This is typically the pattern that is used by login pages. Use the [dialog api](https://dev.office.com/docs/add-ins/develop/dialog-api-in-office-add-ins) to create a new dialog.
 
 Also, ensure that the address you use for contacting the user couldn't have been provided by a potential attacker. For example, for payment confirmations use the address on file for the authorized user's account.
-
 
 ### Other security practices
 
@@ -260,11 +239,9 @@ Developers should also take note of the following security practices:
 
 Other than resource usage rules, developers for Outlook add-ins should also make sure their add-ins observe limits for specifying activation rules and using the JavaScript API. For more information, see [Limits for activation and JavaScript API for Outlook add-ins](http://msdn.microsoft.com/library/e0c9e3d0-517e-4333-b8bd-e169c51a07f6.aspx).
 
-
 ## IT administrators' control
 
 In a corporate setting, IT administrators have ultimate authority over enabling or disabling access to the Office Store and any private catalogs.
-
 
 ## Additional resources
 
