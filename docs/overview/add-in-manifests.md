@@ -4,9 +4,7 @@ description:
 ms.date: 11/20/2017 
 ---
 
-
 # Office Add-ins XML manifest
-
 
 The XML manifest file of an Office Add-in describes how your add-in should be activated when an end user installs and uses it with Office documents and applications. 
 
@@ -25,15 +23,11 @@ An XML manifest file based on this schema enables an Office Add-in to do the fol
 > [!NOTE]
 > When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
 
-
 ## Required elements
-
 
 The following table specifies the elements that are required for the three types of Office Add-ins.
 
-
 **Required elements by Office Add-in type**
-
 
 |**Element**|**Content**|**Task pane**|**Outlook**|
 |:-----|:-----|:-----|:-----|
@@ -61,15 +55,15 @@ The following table specifies the elements that are required for the three types
 *Added in the Office Add-in Manifest Schema version 1.1.
 
 > [!IMPORTANT]
-> - Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID. 
+> <ul><li>Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID.</li>
 
-> - All URLs, such as the source file locations specified in the [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) element, must be **SSL-secured (HTTPS)**.
+> <li>All URLs, such as the source file locations specified in the [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) element, must be **SSL-secured (HTTPS)**.</li>
 
-> - All icon URLs, such as those used on command surfaces, must **allow caching**. The web server should NOT return HTTP headers like no-cache/no-store. 
+> <li>All icon URLs, such as those used on command surfaces, must **allow caching**. The web server should NOT return HTTP headers like no-cache/no-store.</li>
 
-> - Add-ins submitted to the Office Store must also include the [SupportUrl](https://dev.office.com/reference/add-ins/manifest/supporturl) element. For more information, see [What are some common submission errors to avoid?](http://msdn.microsoft.com/library/0ceb385c-a608-40cc-8314-78e39d6c75d0%28Office.15%29.aspx#bk_q2)
+> <li>Add-ins submitted to the Office Store must also include the [SupportUrl](https://dev.office.com/reference/add-ins/manifest/supporturl) element. For more information, see [What are some common submission errors to avoid?](http://msdn.microsoft.com/library/0ceb385c-a608-40cc-8314-78e39d6c75d0%28Office.15%29.aspx#bk_q2)</li>
 
-> - As a best practice, only use the [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) element to specify domains other than the one specified in the [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) element for authentication scenarios.
+> <li>As a best practice, only use the [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) element to specify domains other than the one specified in the [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) element for authentication scenarios.</li></ul>
 
 ## Specify domains you want to open in the add-in window
 
