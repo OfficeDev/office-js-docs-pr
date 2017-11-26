@@ -59,7 +59,7 @@ If any content or task pane add-in exceeds the preceding thresholds on CPU core 
 
 Office provides a Telemetry Log that maintains a record of certain events (loading, opening, closing, and errors) of Office solutions running on the local computer, including resource usage issues in an Office Add-in. If you have the Telemetry Log set up, you can use Excel to open the Telemetry Log in the following default location on your local drive:
 
-`%Users%\ \<Current user \> \AppData\Local\Microsoft\Office\15.0\Telemetry`
+`%Users%\<Current user>\AppData\Local\Microsoft\Office\15.0\Telemetry`
 
 For each event that the Telemetry Log tracks for an add-in, there is a date/time of the occurrence, event ID, severity, and short descriptive title for the event, the friendly name and unique ID of the add-in, and the application that logged the event. You can refresh the Telemetry Log to see the current tracked events. The following table shows examples of Outlook add-ins that were tracked in the Telemetry log. 
 
