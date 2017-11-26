@@ -104,7 +104,7 @@ In the following example, the add-in specifies a separate image that's more appr
 ```xml
 <!-- Replace "domain" with a real web server name and path. -->
 <IconUrl DefaultValue="https://<domain>/DefaultLogo.png"/>
-    <Override Locale="fr-fr" Value="https://<domain>/FrenchLogo.png"/>
+<Override Locale="fr-fr" Value="https://<domain>/FrenchLogo.png"/>
 ```
 
 The following example shows how to localize a resource in the `Resources` section. It applies a locale override for an image that is more appropriate for the `ja-jp` culture.
@@ -141,9 +141,7 @@ For Outlook add-ins, the  [SourceLocation] element also aligns to the form facto
    <SourceLocation DefaultValue="https://contoso.com/Mobile.html">
       <Override Locale="fr-fr" Value="https://contoso.com/fr/Mobile.html" />
    </SourceLocation>
-
 </PhoneSettings>
-
 ```
 
 ## Match date/time format with client locale
