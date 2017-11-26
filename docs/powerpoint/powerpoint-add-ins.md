@@ -36,10 +36,7 @@ If you are building a content add-in, you will need to get the presentation's ac
 > [!NOTE]
 > In PowerPoint Online, the [Document.ActiveViewChanged](https://dev.office.com/reference/add-ins/shared/document.activeviewchanged) event will never fire as Slide Show mode is treated as a new session. In this case, the add-in must fetch the active view on load, as noted below.
 
-
-
 ```js
-
 //general Office.initialize function. Fires on load of the add-in.
 Office.initialize = function(){
 
@@ -65,7 +62,6 @@ function getActiveFileView()
     });
 
 }
-
 
 function registerActiveViewChanged() {
     Globals.activeViewHandler = function (args) {
@@ -173,12 +169,8 @@ function getFileUrl() {
 
 ## Additional resources
 - [PowerPoint Code Samples](https://dev.office.com/code-samples#?filters=powerpoint)
-
 - [How to save add-in state and settings per document for content and task pane add-ins](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
-
 - [Read and write data to the active selection in a document or spreadsheet](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
-    
 - [Get the whole document from an add-in for PowerPoint or Word](../powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md)
-    
 - [Use document themes in your PowerPoint add-ins](use-document-themes-in-your-powerpoint-add-ins.md)
     
