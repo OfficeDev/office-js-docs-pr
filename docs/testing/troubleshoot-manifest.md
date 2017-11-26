@@ -23,7 +23,7 @@ To help ensure that the manifest file that describes your Office Add-in is corre
 
 2. Open a command prompt / terminal as an administrator, and install the Office Add-in Validator and its dependencies globally by using the following command:
 
-	```nodejs
+	```bash
 	npm install -g office-addin-validator
 	```
 	
@@ -32,10 +32,9 @@ To help ensure that the manifest file that describes your Office Add-in is corre
 
 3. Run the following command to validate your manifest. Replace MANIFEST.XML with the path to the manifest XML file.
 
-	```nodejs
+	```bash
 	validate-office-addin MANIFEST.XML
 	```
-
 
 ## Validate your manifest against the XML schema
 
@@ -47,10 +46,9 @@ To help ensure that the manifest file follows the correct schema, validate it ag
 
 2.	Run the following command. Replace `XSD_FILE` with the path to the manifest XSD file, and replace `XML_FILE` with the path to the manifest XML file.
 	
-	```nodejs
+	```bash
 	xmllint --noout --schema XSD_FILE XML_FILE
 	```
-
 
 ## Use runtime logging to debug your add-in manifest
 
@@ -64,14 +62,16 @@ You can use runtime logging to debug your add-in's manifest. This feature can he
 > [!IMPORTANT]
 > Runtime Logging affects performance. Turn it on only when you need to debug issues with your add-in manifest.
 
+To turn on runtime logging:
+
 1. Make sure that you are running Office 2016 desktop build **16.0.7019** or later. 
 
 2. Add the `RuntimeLogging` registry key under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\`. 
 
 3. Set the default value of the key to the full path of the file where you want the log to be written. For an example, see [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip). 
 
-> [!NOTE]
-> The directory in which the log file will be written must already exist, and you must have write permissions to it. 
+    > [!NOTE]
+    > The directory in which the log file will be written must already exist, and you must have write permissions to it. 
  
 The following image shows what the registry should look like. To turn the feature off, remove the `RuntimeLogging` key from the registry. 
 

@@ -9,8 +9,9 @@ ms.date: 11/20/2017
 
 You can build and debug add-ins on a computer that isn't running Windows or the Office 2013 or Office 2016 desktop client - for example, if you're developing on a Mac. This article describes how to use Office Online to test and debug your add-ins. 
 
-To get started:
+## Prerequisites
 
+To get started:
 
 - Get an Office 365 developer account, if you don't already have one, or have access to a SharePoint site.
     
@@ -23,7 +24,6 @@ To get started:
 ## Debug your add-in from Excel Online or Word Online
 
 To debug your add-in by using Office Online:
-
 
 1. Deploy your add-in to a server that supports SSL.
     
@@ -43,7 +43,8 @@ To debug your add-in by using Office Online:
 5. On the Insert tab, choose  **My Add-ins** or **Office Add-ins** to insert your add-in and test it in the app.
     
 6. Use your favorite browser tool debugger to debug your add-in.
-    
+
+## Potential issues    
 
 The following are some issues that you might encounter as you debug:
     
@@ -52,7 +53,6 @@ The following are some issues that you might encounter as you debug:
 - The browser might show an invalid certificate error that you will need to bypass.
       
 - If you set breakpoints in your code, Office Online might throw an error indicating that it is unable to save.
-    
 
 ## Additional resources
 
