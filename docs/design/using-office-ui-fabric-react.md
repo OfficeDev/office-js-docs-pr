@@ -91,17 +91,17 @@ Add `ButtonPrimaryExample` to your add-in by opening **src\components\app.tsx** 
 
 - Replace the default `render()` function with the following code that uses `<ButtonPrimaryExample />`. 
 
-  ```
+  ```js
   render() {
-          return (
-              <div className='ms-welcome'>
-                  <Header logo='assets/logo-filled.png' title={this.props.title} message='Welcome' />
-                  <HeroList message='Discover what this add-in can do for you today!' items={this.state.listItems}>                    
-                      <ButtonPrimaryExample />
-                  </HeroList>
-              </div>
-          );
-      };
+      return (
+          <div className='ms-welcome'>
+              <Header logo='assets/logo-filled.png' title={this.props.title} message='Welcome' />
+              <HeroList message='Discover what this add-in can do for you today!' items={this.state.listItems}>                    
+                  <ButtonPrimaryExample />
+              </HeroList>
+          </div>
+      );
+  };
   ```
 
 Save your changes. All open browser instances, including the add-in, update automatically and show the `ButtonPrimaryExample` React component. Notice that the default text and button is replaced with the text and primary button defined in `ButtonPrimaryExample`. 
