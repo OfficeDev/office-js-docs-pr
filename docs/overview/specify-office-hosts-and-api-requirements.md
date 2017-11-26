@@ -4,8 +4,6 @@ description:
 ms.date: 11/20/2017 
 ---
 
-
-
 # Specify Office hosts and API requirements
 
 Your Office Add-in might depend on a specific Office host, a requirement set, an API member, or a version of the API in order to work as expected. For example, your add-in might:
@@ -23,7 +21,6 @@ This article helps you understand which options you should choose to ensure that
 
 The following table lists core concepts discussed throughout this article.
 
-
 |**Concept**|**Description**|
 |:-----|:-----|
 |Office application, Office host application, Office host, or host|The Office application used to run your add-in. For example, Word, Word Online, Excel, and so on.|
@@ -35,32 +32,25 @@ The following table lists core concepts discussed throughout this article.
 
 Your add-in must use the most current version of the add-in manifest schema. If you use runtime checks in your add-in, ensure that you use the latest JavaScript API for Office (office.js) library.
 
-
 ### Specify the latest add-in manifest schema
 
 Your add-in's manifest must use version 1.1 of the add-in manifest schema. Set the  **OfficeApp** element in your add-in manifest as follows.
-
 
 ```XML
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
 ```
 
-
 ### Specify the latest JavaScript API for Office library
 
-
 If you use runtime checks, reference the most current version of the JavaScript API for Office library from the content delivery network (CDN). To do this, add the following  `script` tag to your HTML. Using `/1/` in the CDN URL ensures that you reference the most recent version of Office.js.
-
 
 ```HTML
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
 ```
 
-
 ## Options to specify Office hosts or API requirements
 
 When you specify Office hosts or API requirements, there are several factors to consider. The following diagram shows how to decide which technique to use in your add-in.
-
 
 ![Choose the best option for your add-in when specifying Office hosts or API requirements](../images/options-for-office-hosts.png)
 
@@ -70,17 +60,16 @@ When you specify Office hosts or API requirements, there are several factors to 
     
 - If you would like to provide additional functionality if specific requirement sets or API members are available in the Office host, perform a runtime check in your add-in's JavaScript code. For example, if your add-in runs in Excel 2016, use API members from the new JavaScript API for Excel to provide additional functionality. For more information, see [Use runtime checks in your JavaScript code](#use-runtime-checks-in-your-javascript-code).
     
-
 ## Set the Hosts element
 
 To make your add-in run in one Office host application, use the  **Hosts** and **Host** elements in the manifest. If you don't specify the **Hosts** element, your add-in will run in all hosts.
 
 For example, the following  **Hosts** and **Host** declaration specifies that the add-in will work with any release of Excel, which includes Excel for Windows, Excel Online, and Excel for iPad.
 
-```XML
-  <Hosts>
-    <Host Name="Workbook" />
-  </Hosts>
+```xml
+<Hosts>
+  <Host Name="Workbook" />
+</Hosts>
 ```
 
 The  **Hosts** element can contain one or more **Host** elements. The **Host** element specifies the Office host your add-in requires. The **Name** attribute is required and can be set to one of the following values.

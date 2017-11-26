@@ -4,10 +4,7 @@ description:
 ms.date: 11/20/2017 
 ---
 
-
-
 # Task pane add-ins for Project
-
 
 Project Standard 2013 and Project Professional 2013 both include support for task pane add-ins. You can run general task pane add-ins that are developed for Word 2013 or Excel 2013. You can also develop custom add-ins that handle selection events in Project and integrate task, resource, view, and other cell-level data in a project with SharePoint lists, SharePoint Add-ins, Web Parts, web services, and enterprise applications.
 
@@ -18,15 +15,12 @@ For an introduction to Office Add-ins, see [Office Add-ins platform overview](..
 
 ## Add-in scenarios for Project
 
-
 Project managers can use Project task pane add-ins to help with project management activities. Instead of leaving Project and opening another application to search for frequently used information, project managers can directly access the information within Project. The content in a task pane add-in can be context-sensitive, based on the selected task, resource, view, or other data in a cell in a Gantt chart, task usage view, or resource usage view.
-
 
 > [!NOTE]
 > With Project Professional 2013, you can develop task pane add-ins that access on-premises installations of Project Server 2013, Project Online, and on-premises or online SharePoint 2013.Project Standard 2013 does not support direct integration with Project Server data or SharePoint task lists that are synchronized with Project Server.
 
 Add-in scenarios for Project include the following:
-
 
 -  **Project scheduling** View data from related projects that can affect scheduling. A task pane add-in can integrate relevant data from other projects in Project Server 2013. For example, you can view the departmental collection of projects and milestone dates, or view specified data from other projects that are based on a selected custom field.
     
@@ -46,9 +40,7 @@ Add-in scenarios for Project include the following:
     
     For example, see [Create a Project add-in that uses REST with an on-premises Project Server OData  service](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md).
     
-
 ## Developing Project add-ins
-
 
 The JavaScript library for Project add-ins includes extensions of the  **Office** namespace alias that enable developers to access properties of the Project application and tasks, resources, and views in a project. The JavaScript library extensions in the Project-15.js file are used in a Project add-in created with Visual Studio 2015. The Office.js, Office.debug.js, Project-15.js, Project-15.debug.js, and related files are also provided in the Project 2013 SDK download.
 
@@ -77,31 +69,31 @@ The manifest file specifies the URL of the add-in webpage or web application, th
 
 - Create an XML file in a local directory. The XML file includes the  **OfficeApp** element and child elements, which are described in the [Office Add-ins XML manifest](../overview/add-in-manifests.md). For example, create a file named BingSearch.xml that contains the following XML.
     
-```XML
-   <?xml version="1.0" encoding="utf-8"?>
- <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" 
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-           xsi:type="TaskPaneApp">
-   <Id>1234-5678</Id>
-   <Version>15.0</Version>
-   <ProviderName>Microsoft</ProviderName>
-   <DefaultLocale>en-us</DefaultLocale>
-   <DisplayName DefaultValue="Bing Search">
-   </DisplayName>
-   <Description DefaultValue="Search selected data on Bing">
-   </Description>
-   <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg">
-   </IconUrl>
-   <Capabilities>
-     <Capability Name="Project"/>
-   </Capabilities>
-   <DefaultSettings>
-     <SourceLocation DefaultValue="http://m.bing.com">
-     </SourceLocation>
-   </DefaultSettings>
-   <Permissions>ReadWriteDocument</Permissions>
- </OfficeApp>
-```
+    ```XML
+    <?xml version="1.0" encoding="utf-8"?>
+    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" 
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:type="TaskPaneApp">
+      <Id>1234-5678</Id>
+      <Version>15.0</Version>
+      <ProviderName>Microsoft</ProviderName>
+      <DefaultLocale>en-us</DefaultLocale>
+      <DisplayName DefaultValue="Bing Search">
+      </DisplayName>
+      <Description DefaultValue="Search selected data on Bing">
+      </Description>
+      <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg">
+      </IconUrl>
+      <Capabilities>
+        <Capability Name="Project"/>
+      </Capabilities>
+      <DefaultSettings>
+        <SourceLocation DefaultValue="http://m.bing.com">
+        </SourceLocation>
+      </DefaultSettings>
+      <Permissions>ReadWriteDocument</Permissions>
+    </OfficeApp>
+    ```
 
 - Following are the required elements in the add-in manifest:
   - In the  **OfficeApp** element, the `xsi:type="TaskPaneApp"` attribute specifies that the add-in is a task pane type.
@@ -115,35 +107,35 @@ The manifest file specifies the URL of the add-in webpage or web application, th
     
 - (Optional) Add  **Override** elements that have values for other locales. For example, the following manifest provides **Override** elements for French values of **DisplayName**,  **Description**,  **IconUrl**, and  **SourceLocation**.
     
-```XML
-   <?xml version="1.0" encoding="utf-8"?>
- <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" 
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-           xsi:type="TaskPaneApp">
-   <Id>1234-5678</Id>
-   <Version>15.0</Version>
-   <ProviderName>Microsoft</ProviderName>
-   <DefaultLocale>en-us</DefaultLocale>
-   <DisplayName DefaultValue="Bing Search">
-     <Override Locale="fr-fr" Value="Bing Search"/>
-   </DisplayName>
-   <Description DefaultValue="Search selected data on Bing">
-     <Override Locale="fr-fr" Value="Search selected data on Bing"></Override>
-   </Description>
-   <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg">
-     <Override Locale="fr-fr" Value="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg"/>
-   </IconUrl>
-   <Capabilities>
-     <Capability Name="Project"/>
-   </Capabilities>
-   <DefaultSettings>
-     <SourceLocation DefaultValue="http://m.bing.com">
-       <Override Locale="fr-fr" Value="http://m.bing.com"/>
-     </SourceLocation>
-   </DefaultSettings>
-   <Permissions>ReadWriteDocument</Permissions>
- </OfficeApp>
-```
+    ```XML
+    <?xml version="1.0" encoding="utf-8"?>
+    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" 
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:type="TaskPaneApp">
+      <Id>1234-5678</Id>
+      <Version>15.0</Version>
+      <ProviderName>Microsoft</ProviderName>
+      <DefaultLocale>en-us</DefaultLocale>
+      <DisplayName DefaultValue="Bing Search">
+        <Override Locale="fr-fr" Value="Bing Search"/>
+      </DisplayName>
+      <Description DefaultValue="Search selected data on Bing">
+        <Override Locale="fr-fr" Value="Search selected data on Bing"></Override>
+      </Description>
+      <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg">
+        <Override Locale="fr-fr" Value="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg"/>
+      </IconUrl>
+      <Capabilities>
+        <Capability Name="Project"/>
+      </Capabilities>
+      <DefaultSettings>
+        <SourceLocation DefaultValue="http://m.bing.com">
+          <Override Locale="fr-fr" Value="http://m.bing.com"/>
+        </SourceLocation>
+      </DefaultSettings>
+      <Permissions>ReadWriteDocument</Permissions>
+    </OfficeApp>
+    ```
 
 
 ## Installing Project add-ins

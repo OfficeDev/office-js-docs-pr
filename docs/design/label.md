@@ -4,18 +4,13 @@ description:
 ms.date: 11/20/2017 
 ---
 
-
 # Label component in Office UI Fabric
 
 Use labels to name or title a component or group of components. When paired with another component or group of components, labels should be in close proximity to the related components or groups. Some components have predefined labels, such as a drop-down or toggle.
   
 #### Example: Label in a task pane
 
-<br/>
-
 ![An image showing the label](../images/overview-with-app-label.png)
-
-<br/>
 
 ## Best practices
 
@@ -40,5 +35,4 @@ For details, see [Label](https://dev.office.com/fabric#/components/label) and [G
 ## Additional resources
 
 - [UX Design Patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
-
 - [Office UI Fabric in Office Add-ins](office-ui-fabric.md)

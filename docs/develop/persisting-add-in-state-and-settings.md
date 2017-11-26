@@ -4,12 +4,10 @@ description:
 ms.date: 11/20/2017 
 ---
 
-
 # Persisting add-in state and settings
 
 Office Add-ins are essentially web applications running in the stateless environment of a browser control. As a result, your add-in may need to persist data to maintain the continuity of certain operations or features across sessions of using your add-in. For example, your add-in may have custom settings or other values that it needs to save and reload the next time it's initialized, such as a user's preferred view or default location.
 To do that, you can:
-
 
 - Use members of the JavaScript API for Office that store data as name/value pairs in a property bag stored in a location that depends on add-in type.
     
@@ -18,11 +16,8 @@ To do that, you can:
 This article focuses on how to use the JavaScript API for Office to persist add-in state. For examples of using browser cookies and web storage, see the [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings).
 
 ## Persisting add-in state and settings with the JavaScript API for Office
-j
 
 The JavaScript API for Office provides the [Settings](https://dev.office.com/reference/add-ins/shared/settings), [RoamingSettings](https://dev.office.com/reference/add-ins/outlook/RoamingSettings), and [CustomProperties](https://dev.office.com/reference/add-ins/outlook/CustomProperties) objects for saving add-in state across sessions as described in the following table. In all cases, the saved settings values are associated with the [Id](http://msdn.microsoft.com/en-us/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx) of the add-in that created them.
-
-
 
 |**Object**|**Add-in type support**|**Storage location**|**Office host support**|
 |:-----|:-----|:-----|:-----|
@@ -32,19 +27,15 @@ The JavaScript API for Office provides the [Settings](https://dev.office.com/ref
 
 ## Settings data is managed in memory at runtime
 
-
 Internally, the data in the property bag accessed with the  **Settings**,  **CustomProperties**, or  **RoamingSettings** objects is stored as a serialized JavaScript Object Notation (JSON) object that contains name/value pairs. The name (key) for each value must be a **string**, and the stored value can be a JavaScript  **string**,  **number**,  **date**, or  **object**, but not a  **function**.
 
 This example of the property bag structure contains three defined  **string** values named `firstName`,  `location`, and  `defaultView`.
 
-
-
-
-```js
+```json
 {
-"firstName":"Erik",
-"location":"98052",
-"defaultView":"basic"
+    "firstName":"Erik",
+    "location":"98052",
+    "defaultView":"basic"
 }
 ```
 

@@ -263,16 +263,16 @@ The following markup shows the required .rels part before editing. Since we're d
 
 
 ```XML
-  <pkg:part pkg:name="/_rels/.rels" pkg:contentType="application/vnd.openxmlformats-package.relationships+xml" pkg:padding="512">
-    <pkg:xmlData>
-      <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
-        <Relationship Id="rId3" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml"/>
-        <Relationship Id="rId2" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/thumbnail" Target="docProps/thumbnail.emf"/>
-        <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>
-        <Relationship Id="rId4" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties" Target="docProps/app.xml"/>
-      </Relationships>
-    </pkg:xmlData>
-  </pkg:part>
+<pkg:part pkg:name="/_rels/.rels" pkg:contentType="application/vnd.openxmlformats-package.relationships+xml" pkg:padding="512">
+  <pkg:xmlData>
+    <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+      <Relationship Id="rId3" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml"/>
+      <Relationship Id="rId2" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/thumbnail" Target="docProps/thumbnail.emf"/>
+      <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>
+      <Relationship Id="rId4" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties" Target="docProps/app.xml"/>
+    </Relationships>
+  </pkg:xmlData>
+</pkg:part>
 ```
 
 
@@ -280,9 +280,6 @@ The following markup shows the required .rels part before editing. Since we're d
 > Remove the relationships (that is, the **Relationship** tag) for any parts that you completely remove from the package. Including a part without a corresponding relationship, or excluding a part and leaving its relationship in the package, will result in an error.
 
 The following markup shows the document.xml part, which includes our sample formatted text content before editing.
-
-
-
 
 ```XML
 <pkg:part pkg:name="/word/document.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml">
@@ -316,7 +313,7 @@ The following markup shows the document.xml part, which includes our sample form
         </w:body>
       </w:document>
     </pkg:xmlData>
-  </pkg:part>
+</pkg:part>
 ```
 
 Since document.xml is the primary document part where you place your content, let's take a quick walk through that part. (Figure 14, which follows this list, provides a visual reference to show how some of the core content and formatting tags explained here relate to what you see in a Word document.) 
@@ -539,22 +536,22 @@ As you examine the JavaScript that follows, consider these requirements:
 
 ```js
 function addAndBindControl() {
-        Office.context.document.bindings.addFromNamedItemAsync("MyContentControlTitle", "text", { id: 'myBinding' }, function (result) {
-            if (result.status == "failed") {
-                if (result.error.message == "The named item does not exist.")
-                    var myOOXMLRequest = new XMLHttpRequest();
-                    var myXML;
-                    myOOXMLRequest.open('GET', '../../Snippets_BindAndPopulate/ContentControl.xml', false);
-                    myOOXMLRequest.send();
-                    if (myOOXMLRequest.status === 200) {
-                        myXML = myOOXMLRequest.responseText;
-                    }
-                    Office.context.document.setSelectedDataAsync(myXML, { coercionType: 'ooxml' }, function (result) {
-                        Office.context.document.bindings.addFromNamedItemAsync("MyContentControlTitle", "text", { id: 'myBinding' });
-                    });
-            }
-            });
+    Office.context.document.bindings.addFromNamedItemAsync("MyContentControlTitle", "text", { id: 'myBinding' }, function (result) {
+        if (result.status == "failed") {
+            if (result.error.message == "The named item does not exist.")
+                var myOOXMLRequest = new XMLHttpRequest();
+                var myXML;
+                myOOXMLRequest.open('GET', '../../Snippets_BindAndPopulate/ContentControl.xml', false);
+                myOOXMLRequest.send();
+                if (myOOXMLRequest.status === 200) {
+                    myXML = myOOXMLRequest.responseText;
+                }
+                Office.context.document.setSelectedDataAsync(myXML, { coercionType: 'ooxml' }, function (result) {
+                    Office.context.document.bindings.addFromNamedItemAsync("MyContentControlTitle", "text", { id: 'myBinding' });
+                });
         }
+    });
+}
 ```
 
 The code shown here takes the following steps:
@@ -587,15 +584,15 @@ The code for writing content to a binding is similar to that for writing content
 
 ```js
 function populateBinding(filename) {
-        var myOOXMLRequest = new XMLHttpRequest();
-        var myXML;
-        myOOXMLRequest.open('GET', filename, false);
-            myOOXMLRequest.send();
-            if (myOOXMLRequest.status === 200) {
-                myXML = myOOXMLRequest.responseText;
-            }
-            Office.select("bindings#myBinding").setDataAsync(myXML, { coercionType: 'ooxml' });
-        }
+  var myOOXMLRequest = new XMLHttpRequest();
+  var myXML;
+  myOOXMLRequest.open('GET', filename, false);
+  myOOXMLRequest.send();
+  if (myOOXMLRequest.status === 200) {
+      myXML = myOOXMLRequest.responseText;
+  }
+  Office.select("bindings#myBinding").setDataAsync(myXML, { coercionType: 'ooxml' });
+}
 ```
 
 As with  **setSelectedDataAsync**, you specify the content to be inserted and the coercion type. The only additional requirement for writing to a binding is to identify the binding by ID. Notice how the binding ID used in this code (bindings#myBinding) corresponds to the binding ID established (myBinding) when the binding was created in the previous function.

@@ -6,7 +6,11 @@ ms.date: 11/20/2017
 
 # Install the latest version of Office 2016
 
-New developer features, including those still in preview, are delivered first to subscribers who opt in to get the latest builds of Office. To opt in the latest builds of Office 2016: 
+New developer features, including those still in preview, are delivered first to subscribers who opt in to get the latest builds of Office. 
+
+## Opt in to getting the latest builds
+
+To opt in to getting the latest builds of Office 2016: 
 
 - If you're an Office 365 Home, Personal, or University subscriber, see [Be an Office Insider](https://products.office.com/en-us/office-insider).
 - If you're an Office 365 for business customer, see [Install the First Release build for Office 365 for business customers](https://support.office.com/en-us/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead?ui=en-US&rs=en-US&ad=US).
@@ -15,7 +19,9 @@ New developer features, including those still in preview, are delivered first to
 	- Select **Check for Updates** on the Help menu.
 	- In the Microsoft AutoUpdate box, check the box to join the Office Insider program. 
 
-To get the latest build: 
+## Get the latest build
+
+To get the latest build of Office 2016: 
 
 1. Download the [Office 2016 Deployment Tool](https://www.microsoft.com/en-us/download/details.aspx?id=49117). 
 2. Run the tool. This extracts the following two files: Setup.exe and configuration.xml.

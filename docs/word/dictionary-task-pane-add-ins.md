@@ -115,7 +115,7 @@ Returned XML that conforms to the OfficeDefinitions schema consists of a root  *
 The following C# code provides a simple example of how to write code for an XML web service that returns the result of a dictionary query in the OfficeDefinitions XML format.
 
 
-```c#
+```cs
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -178,8 +178,6 @@ public class WebService : System.Web.Services.WebService {
 
         return doc;
     }
-   
-
 }
 ```
 
@@ -298,9 +296,6 @@ Specifies the regional languages that this dictionary supports. Required for dic
 The  **TargetDialects** element and its child elements specify the set of regional languages your dictionary contains. For example, if your dictionary applies to both Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that in this element. Do not specify more than one language (e.g., Spanish and English) in this manifest. Publish separate languages as separate dictionaries.
 
  **Example**
-
-
-
 
 ```xml
 <TargetDialects>
@@ -449,9 +444,7 @@ For this element, you can specify values for additional locales.
 
 ### Creating a dictionary add-in's HTML user interface
 
-
 The following two examples show the HTML and CSS files for the UI of the Demo Dictionary add-in. To view how the UI is displayed in the add-in's task pane, see Figure 6 following the code. To see how the implementation of the JavaScript in the Dictionary.js file provides programming logic for this HTML UI, see "Writing the JavaScript implementation" immediately following this section.
-
 
 ```html
 <!DOCTYPE html>
@@ -494,10 +487,7 @@ The following two examples show the HTML and CSS files for the UI of the Demo Di
 
 The following example shows the contents of Style.css.
 
-
-
-
-```
+```css
 #mainContainer
 {
     font-family: Segoe UI;
@@ -535,7 +525,6 @@ a:hover, a:active
     text-decoration: underline;
 }
 ```
-
 
 *Figure 6. Demo dictionary UI*
 

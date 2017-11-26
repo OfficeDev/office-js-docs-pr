@@ -4,8 +4,6 @@ description:
 ms.date: 11/20/2017 
 ---
 
-
-
 # Use Office UI Fabric JS in Office Add-ins
 
 Office UI Fabric is a JavaScript front-end framework for building user experiences for Office and Office 365. If you build an add-in using JavaScript only, without using a framework like Angular or React, consider using Fabric JS to create your user experience. For more information, see [Office UI Fabric JS](https://dev.office.com/fabric-js).
@@ -54,7 +52,7 @@ If you've been using a previous version of Office UI Fabric and you'd like to mo
 - Some icon class names and styles have been updated.
 - The most notable change is the use of the `<label>` element in many components. The `<label>` element controls the style of the component. You might have to update your UX code to use the `<label>` element. For example, changing the value of the `<input>` element's checked attribute on a Fabric JS checkbox has no effect on the checkbox. Instead, you  use the `check`, `unCheck`, or `toggle` functions.   
 
-## Next steps
+## Implementation
 If you're looking for an end-to-end code sample that shows you how to use Fabric JS, we've got you covered. See the following resource:
 
 - [Excel Sales Tracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) 

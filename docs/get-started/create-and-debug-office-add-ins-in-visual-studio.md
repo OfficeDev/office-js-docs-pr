@@ -226,5 +226,5 @@ You can change your code and review the effects of those changes in your add-in 
 
 ## Next steps
 
-- [Publish your Office Add-in](../publish/publish.md)
+- [Deploy and publish your Office Add-in](../publish/publish.md)
     

@@ -14,8 +14,6 @@ The ChoiceGroup component, also known as a radio button, presents users with two
 
  ![An image showing a ChoiceGroup](../images/overview-with-app-choicegroup.png)
 
-<br/>
-
 ## Best practices
 
 |**Do**|**Don't**|

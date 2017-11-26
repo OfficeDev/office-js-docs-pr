@@ -23,7 +23,7 @@ For an introduction to using JavaScript in Office Add-ins, see [Understanding th
 Create an XML file in a local directory. The XML file includes the **OfficeApp** element and child elements, which are described in the [Office Add-ins XML manifest](../overview/add-in-manifests.md). For example, create a file named JSOM_SimpleOMCalls.xml that contains the following XML (change the GUID value of the **Id** element).
     
 ```XML
-     <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
               xsi:type="TaskPaneApp">
@@ -68,25 +68,25 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
    The JSOMCall.html file uses the common MicrosoftAjax.js file for AJAX functionality and the Office.js file for the add-in functionality in Microsoft Office 2013 applications.
 
     ```HTML
-      <!DOCTYPE html>
+    <!DOCTYPE html>
     <html>
-    <head>
-        <title>Project OM Sample Code</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <script type="text/javascript" src="MicrosoftAjax.js"></script>
+        <head>
+            <title>Project OM Sample Code</title>
+            <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+            <script type="text/javascript" src="MicrosoftAjax.js"></script>
 
-        <!-- Use the CDN reference to office.js when deploying your add-in. -->
-        <!-- <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js"></script> -->
-        <script type="text/javascript" src="Office.js"></script>
-        <script type="text/javascript" src="JSOM_Sample.js"></script>
-    </head>
-    <body>
-        <div id="Common_JSOM_API">
-            OBJECT MODEL TESTS
-        </div>
+            <!-- Use the CDN reference to office.js when deploying your add-in. -->
+            <!-- <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js"></script> -->
+            <script type="text/javascript" src="Office.js"></script>
+            <script type="text/javascript" src="JSOM_Sample.js"></script>
+        </head>
+        <body>
+            <div id="Common_JSOM_API">
+                OBJECT MODEL TESTS
+            </div>
 
-        <textarea id="text" rows="6" cols="25">This is the text result.</textarea>
-    </body>
+            <textarea id="text" rows="6" cols="25">This is the text result.</textarea>
+        </body>
     </html>
     ```
 
@@ -104,7 +104,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
    The **\_projDoc** variable is initialized with a **ProjectDocument** object. The code includes some simple error handling functions, and the **getContextValues** function that gets application context and project document context properties. For more information about the JavaScript object model for Project, see [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office).
 
     ```javascript
-      /*
+    /*
     * JavaScript functions for the Project OM Test example app
     * in the Project 2013 SDK.
     */
@@ -188,7 +188,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
    Each of the functions in the following code includes an anonymous function that is specified by  `function (asyncResult)`, which is a callback that gets the asynchronous result. Instead of anonymous functions, you could use named functions, which can help with maintainability of complex add-ins.
 
     ```javascript
-      // Get the data in the selected cells of the grid in the active view.
+    // Get the data in the selected cells of the grid in the active view.
     function getSelectedDataAsync() {
         _projDoc.getSelectedDataAsync(
             Office.CoercionType.Text,
@@ -545,7 +545,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
    The **manageTaskEventHandler**, **manageResourceEventHandler**, and **manageViewEventHandler** functions can add or remove an event handler, as specified by the _docMethod_ parameter.
 
     ```javascript
-      // Task selection changed event handler.
+    // Task selection changed event handler.
     function onTaskSelectionChanged(eventArgs) {
         text.value = "In task selection change event handler";
     }
@@ -619,7 +619,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
 5. For the body of the HTML document, add buttons that call the JavaScript functions for testing. For example, in the  **div** element for the common JSOM API, add an input button that calls the general **getSelectedDataAsync** function.
     
     ```HTML
-      <body>
+    <body>
         <div id="Common_JSOM_API">
         OBJECT MODEL TESTS
         <br /><br />       
@@ -628,13 +628,13 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
         <input id="Button5" class="button-wide" type="button" onclick="getSelectedDataAsync()" 
             value="getSelectedDataAsync" />
         </div>
-       <!--  more code . . .  -->
+        <!--  more code . . .  -->
     ```
 
 6. Add a **div** section with buttons for project-specific task functions and for the **TaskSelectionChanged** event.
     
     ```HTML
-      <div id="ProjectSpecificTask">
+    <div id="ProjectSpecificTask">
       <br />
       <strong>Project-specific task methods:</strong><br />
       <button class="button-wide" onclick="getSelectedTaskAsync()">getSelectedTaskAsync</button><br />
@@ -650,7 +650,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
 7. Add  **div** sections with buttons for the resource methods and events, view methods and events, project properties, and context properties
     
     ```HTML
-      <div id="ResourceMethods">
+    <div id="ResourceMethods">
       <br />
       <strong>Resource methods:</strong>
       <button class="button-wide" onclick="getSelectedResourceAsync()">getSelectedResourceAsync</button><br />
@@ -682,7 +682,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
 8. To format the button elements, add a CSS  **style** element. For example, add the following as a child of the **head** element.
     
     ```HTML
-      <style type="text/css">
+    <style type="text/css">
         .button-wide
         {
             width: 210px;
@@ -852,60 +852,57 @@ The Project 2013 SDK download contains the complete code in the JSOMCall.html fi
     </head>
 
     <body>
-      <div id="Common_JSOM_API">
-        OBJECT MODEL TESTS
-        <br /><br />       
-        <strong>General method:</strong>
+        <div id="Common_JSOM_API">
+            OBJECT MODEL TESTS
+            <br /><br />       
+            <strong>General method:</strong>
+            <br />
+            <input id="Button5" class="button-wide" type="button" onclick="getSelectedDataAsync()" 
+                value="getSelectedDataAsync" />
+        </div>
+        <div id="ProjectSpecificTask">
+            <br />
+            <strong>Project-specific task methods:</strong><br />
+            <button class="button-wide" onclick="getSelectedTaskAsync()">getSelectedTaskAsync</button><br />
+            <button class="button-wide" onclick="getTaskAsync()">getTaskAsync</button><br />
+            <button class="button-wide" onclick="getTaskFields()">Get Task Fields</button><br />
+            <button class="button-wide" onclick="getWSSUrlAsync()">getWSSUrlAsync</button>
+            <strong>Task selection changed:</strong>
+            <button class="button-narrow" onclick="manageTaskEventHandler('addHandlerAsync')">Add</button>
+            <button class="button-narrow" onclick="manageTaskEventHandler('removeHandlerAsync')">Remove</button>         
+        </div>
+        <div id="ResourceMethods">
+            <br />
+            <strong>Resource methods:</strong>
+            <button class="button-wide" onclick="getSelectedResourceAsync()">getSelectedResourceAsync</button><br />
+            <button class="button-wide" onclick="getResourceFields()">Get Resource Fields</button><br />
+            <strong>Resource selection changed:</strong>
+            <button class="button-narrow" onclick="manageResourceEventHandler('addHandlerAsync')">Add</button>
+            <button class="button-narrow" onclick="manageResourceEventHandler('removeHandlerAsync')">Remove</button>
+        </div>
+        <div id="ViewMethods">
+            <br />
+            <strong>View method:</strong>
+            <button class="button-wide" onclick="getSelectedViewAsync()">getSelectedViewAsync</button><br />
+            <strong>View selection changed:</strong>
+            <button class="button-narrow" onclick="manageViewEventHandler('addHandlerAsync')">Add</button>
+            <button class="button-narrow" onclick="manageViewEventHandler('removeHandlerAsync')">Remove</button>         
+        </div>
+        <div id="ProjectMethods">
+            <br />
+            <strong>Project properties:</strong>
+            <button class="button-wide" onclick="getProjectFields()">Get Project Fields</button><br />
+        </div>
+        <div id="ContextVariables">
+            <br />
+            <strong>Context properties:</strong>
+            <button class="button-wide" onclick="getContextValues()">Get Context Values</button>
+        </div>
         <br />
-        <input id="Button5" class="button-wide" type="button" onclick="getSelectedDataAsync()" 
-            value="getSelectedDataAsync" />
-      </div>
-
-      <div id="ProjectSpecificTask">
-        <br />
-        <strong>Project-specific task methods:</strong><br />
-        <button class="button-wide" onclick="getSelectedTaskAsync()">getSelectedTaskAsync</button><br />
-        <button class="button-wide" onclick="getTaskAsync()">getTaskAsync</button><br />
-        <button class="button-wide" onclick="getTaskFields()">Get Task Fields</button><br />
-        <button class="button-wide" onclick="getWSSUrlAsync()">getWSSUrlAsync</button>
-        <strong>Task selection changed:</strong>
-        <button class="button-narrow" onclick="manageTaskEventHandler('addHandlerAsync')">Add</button>
-        <button class="button-narrow" onclick="manageTaskEventHandler('removeHandlerAsync')">Remove</button>         
-      </div>
-<div id="ResourceMethods">
-  <br />
-  <strong>Resource methods:</strong>
-  <button class="button-wide" onclick="getSelectedResourceAsync()">getSelectedResourceAsync</button><br />
-  <button class="button-wide" onclick="getResourceFields()">Get Resource Fields</button><br />
-  <strong>Resource selection changed:</strong>
-  <button class="button-narrow" onclick="manageResourceEventHandler('addHandlerAsync')">Add</button>
-  <button class="button-narrow" onclick="manageResourceEventHandler('removeHandlerAsync')">Remove</button>
-</div>
-<div id="ViewMethods">
-  <br />
-  <strong>View method:</strong>
-  <button class="button-wide" onclick="getSelectedViewAsync()">getSelectedViewAsync</button><br />
-  <strong>View selection changed:</strong>
-  <button class="button-narrow" onclick="manageViewEventHandler('addHandlerAsync')">Add</button>
-  <button class="button-narrow" onclick="manageViewEventHandler('removeHandlerAsync')">Remove</button>         
-</div>
-<div id="ProjectMethods">
-  <br />
-  <strong>Project properties:</strong>
-  <button class="button-wide" onclick="getProjectFields()">Get Project Fields</button><br />
-</div>
-<div id="ContextVariables">
-  <br />
-  <strong>Context properties:</strong>
-  <button class="button-wide" onclick="getContextValues()">Get Context Values</button>
-</div>
-
-      <br />
-      <textarea id="text" rows="10" cols="25">This is the text result.</textarea>
+        <textarea id="text" rows="10" cols="25">This is the text result.</textarea>
     </body>
 </html
 ```
-
 
 ## Robust programming
 
@@ -923,6 +920,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
         + "\nMessage: " + errorMessage
         + "\n\nAction: " + actionMessage);
 }
+
 // Get the GUID of the selected resource.
 function getSelectedResourceAsync() {
     _projDoc.getSelectedResourceAsync(function (asyncResult) {
@@ -1073,7 +1071,7 @@ To use the  **throwError** function, include the JQuery library and the SurfaceE
     <script type="text/javascript" src="JSOM_Sample.js"></script>
     <script type="text/javascript" src="SurfaceErrors.js"></script>
 
-    <!-- . . . INVALID USE OF SYMBOLS
+    <!-- . . . INVALID USE OF SYMBOLS . . . -->
 </head>
 
 ```

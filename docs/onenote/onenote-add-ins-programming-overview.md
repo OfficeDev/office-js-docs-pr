@@ -48,35 +48,35 @@ Use the **Application** object to access OneNote objects such as **Notebook**, *
 For example: 
 
 ```js
-    function getPagesInSection() {
-        OneNote.run(function (context) {
-            
-            // Get the pages in the current section.
-            var pages = context.application.getActiveSection().pages;
-            
-            // Queue a command to load the id and title for each page.            
-            pages.load('id,title');
-            
-            // Run the queued commands, and return a promise to indicate task completion.
-            return context.sync()
-                .then(function () {
-                    
-                    // Read the id and title of each page. 
-                    $.each(pages.items, function(index, page) {
-                        var pageId = page.id;
-                        var pageTitle = page.title;
-                        console.log(pageTitle + ': ' + pageId); 
-                    });
-                })
-                .catch(function (error) {
-                    app.showNotification("Error: " + error);
-                    console.log("Error: " + error);
-                    if (error instanceof OfficeExtension.Error) {
-                        console.log("Debug info: " + JSON.stringify(error.debugInfo));
-                    }
+function getPagesInSection() {
+    OneNote.run(function (context) {
+        
+        // Get the pages in the current section.
+        var pages = context.application.getActiveSection().pages;
+        
+        // Queue a command to load the id and title for each page.            
+        pages.load('id,title');
+        
+        // Run the queued commands, and return a promise to indicate task completion.
+        return context.sync()
+            .then(function () {
+                
+                // Read the id and title of each page. 
+                $.each(pages.items, function(index, page) {
+                    var pageId = page.id;
+                    var pageTitle = page.title;
+                    console.log(pageTitle + ': ' + pageId); 
                 });
-        });
-    }
+            })
+            .catch(function (error) {
+                app.showNotification("Error: " + error);
+                console.log("Error: " + error);
+                if (error instanceof OfficeExtension.Error) {
+                    console.log("Debug info: " + JSON.stringify(error.debugInfo));
+                }
+            });
+    });
+}
 ```
 
 You can find supported OneNote objects and operations in the [API reference](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference).

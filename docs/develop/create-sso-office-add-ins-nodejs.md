@@ -430,7 +430,6 @@ There are two server-side files that need to be modified.
     * The second parameter of the call specifies the permissions the add-in will need to get a list of the user's files and folders on OneDrive. (The `profile` permission is not requested because it is only needed when the Office host gets the access token to your add-in, not when you are trading in that token for an access token to Microsoft Graph.)
     * If the response is a string containing 'capolids", then this is a claims message from AAD that multi-factor auth is required. The message is passed to the client, which uses it to start a second sign-on. The string tells AAD what additional authentication factor(s) it should prompt the user to provide.
 
-
     ```javascript
     let graphToken = null;
     const tokenAcquisitionResponse = await auth.acquireTokenOnBehalfOf(jwt, ['Files.Read.All']);
@@ -450,7 +449,9 @@ There are two server-side files that need to be modified.
     * The MSGraphHelper class is defined in src\msgraph-helper.ts. 
     * We minimize the data that must be returned by specifying that we only want the name property and only the first 3 items.
 
-    `const graphData = await MSGraphHelper.getGraphData(graphToken, "/me/drive/root/children", "?$select=name&$top=3");`
+    ```javascript
+    const graphData = await MSGraphHelper.getGraphData(graphToken, "/me/drive/root/children", "?$select=name&$top=3");
+    ```
 
 7. Replace TODO10 with the following code. Note that Microsoft Graph returns some OData metadata and an **eTag** property for every item, even if `name` is the only property requested. The code sends only the item names to the client.
 

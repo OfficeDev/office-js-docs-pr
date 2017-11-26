@@ -13,8 +13,7 @@ This article shows how you how to use the Debugger tool from the F12 developer t
 > [!NOTE]
 > The Debugger is part of the F12 developer tools in Windows 10 and Internet Explorer. Earlier versions of Windows do not include the Debugger. 
 
-
-### Prerequisites
+## Prerequisites
 
 You need the following software:
 
@@ -23,9 +22,8 @@ You need the following software:
 - The Office client application that hosts your add-in. 
     
 - Your add-in. 
-    
 
-### Using the Debugger
+## Using the Debugger
 
 This example uses Word and a free add-in from the Office Store.
 

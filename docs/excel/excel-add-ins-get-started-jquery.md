@@ -14,7 +14,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
 If you haven't done so previously, you'll need to install [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
 
 ```bash
-    npm install -g yo generator-office
+npm install -g yo generator-office
 ```
 
 ## Create the web app
@@ -117,7 +117,7 @@ If you haven't done so previously, you'll need to install [Yeoman](https://githu
     }
     ```
 
-## Configure the manifest file and sideload the add-in
+## Configure the manifest file
 
 1. Open the file **my-office-add-in-manifest.xml** to define the add-in's settings and capabilities. 
 
@@ -135,7 +135,6 @@ Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. How
 
 2. Open the **bsconfig.json** file in the root of the project. Change the value of the **https** property to `false`. Save the file.
 
-
 ## Try it out
 
 1. Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within Excel.
@@ -144,7 +143,7 @@ Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. How
     - Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. Open a bash terminial in the root of the project and run the following command to start the dev server.
+2. Open a bash terminal in the root of the project and run the following command to start the dev server.
 
     ```bash
     npm start

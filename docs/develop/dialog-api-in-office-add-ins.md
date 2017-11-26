@@ -354,10 +354,12 @@ To show a video in a dialog box:
 
 1.  Create a page whose only content is an iframe. The `src` attribute of the iframe points to an online video. The protocol of the video's URL must be HTTP**S**. In this article we'll call this page "video.dialogbox.html". The following is an example of the markup:
 
-		<iframe class="ms-firstrun-video__player"  width="640" height="360"
-			src="https://www.youtube.com/embed/XVfOe5mFbAE?rel=0&autoplay=1"
-			frameborder="0" allowfullscreen>
-		</iframe>
+    ```html
+    <iframe class="ms-firstrun-video__player"  width="640" height="360"
+        src="https://www.youtube.com/embed/XVfOe5mFbAE?rel=0&autoplay=1"
+        frameborder="0" allowfullscreen>
+    </iframe>
+    ```
 
 2.  The video.dialogbox.html page must be in the same domain as the host page.
 3.  Use a call of `displayDialogAsync` in the host page to open video.dialogbox.html.

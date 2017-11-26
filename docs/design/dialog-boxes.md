@@ -13,7 +13,7 @@ Dialog boxes are surfaces that float above the active Office application window.
 
 ![An example image displaying a typical layout for a dialog box](../images/overview-with-app-dialog.png)
 
-### Best practices
+## Best practices
 
 |**Do**|**Don't**|
 |:-----|:--------|

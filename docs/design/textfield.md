@@ -4,7 +4,6 @@ description:
 ms.date: 11/20/2017 
 ---
 
-
 # TextField component in Office UI Fabric
 
 A text field enables users to type text. It's typically used to capture a single line of text but can be configured to capture multiple lines of text. The text displays on the screen in a simple, uniform format.
@@ -12,8 +11,6 @@ A text field enables users to type text. It's typically used to capture a single
 #### Example: TextField in a task pane
 
 ![An image showing the Textfield](../images/overview-with-app-text-field.png)
-
-<br/>
 
 ## Best practices
 
