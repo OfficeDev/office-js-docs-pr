@@ -11,7 +11,7 @@ ms.date: 11/27/2017
 If you are building an Office Add-in, we encourage you to use [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric) to create your user experience. The following steps walk you through the basics for using Fabric.  
 
 > [!NOTE]
-> For information about Office UI Fabric JS, see [Use Office UI Fabric in Office Add-ins](../using-office-ui-fabric-js).
+> For information about Office UI Fabric JS, see [Use Office UI Fabric in Office Add-ins](../using-office-ui-fabric-js.md).
 
 ## 1. Set up Fabric
 
