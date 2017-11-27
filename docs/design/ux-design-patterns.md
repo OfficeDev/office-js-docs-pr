@@ -271,5 +271,5 @@ Add-ins may need a Settings page that allows users to configure settings that co
 
 ## Additional resources
 
-* [Best practices for developing Office Add-ins](https://dev.office.com/docs/add-ins/overview/add-in-development-best-practices)
+* [Best practices for developing Office Add-ins](../overview/add-in-development-best-practices.md)
 * [Office UI Fabric](http://dev.office.com/fabric/)

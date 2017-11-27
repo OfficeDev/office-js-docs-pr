@@ -46,7 +46,7 @@ Office applications allow customers to personalize their interfaces by applying 
 
 > [!NOTE]
 > - For mail and task pane add-ins, use the [Context.officeTheme](https://dev.office.com/docs/reference/shared/office.context.officetheme.htm) property to match the theme of the Office applications. This API is currently only available in Office 2016.
-> - For PowerPoint content add-ins, see [Use Office themes in your PowerPoint add-ins](https://dev.office.com/docs/add-ins/powerpoint/use-document-themes-in-your-powerpoint-add-ins.htm).
+> - For PowerPoint content add-ins, see [Use Office themes in your PowerPoint add-ins](../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md).
 
 Apply the following general guidelines for color:
 
