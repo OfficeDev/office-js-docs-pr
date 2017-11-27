@@ -1,7 +1,7 @@
 ---
 title: Use Office UI Fabric 2.6.1 in Office Add-ins
 description: 
-ms.date: 11/20/2017 
+ms.date: 11/27/2017 
 ---
 
 
@@ -11,28 +11,33 @@ ms.date: 11/20/2017
 If you are building an Office Add-in, we encourage you to use [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric) to create your user experience. The following steps walk you through the basics for using Fabric.  
 
 > [!NOTE]
-> For information about Office UI Fabric JS, see [Use Office UI Fabric in Office Add-ins](https://dev.office.com/docs/add-ins/design/using-office-ui-fabric-js).
+> For information about Office UI Fabric JS, see [Use Office UI Fabric in Office Add-ins](../using-office-ui-fabric-js).
 
 ## 1. Set up Fabric
+
 Add the following lines to your HTML in the head section to reference Fabric from the CDN.
 
-```html
+```HTML
 <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.min.css">
 <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css">
 ```
 
 
 ## 2. Use Fabric icons and fonts
+
 Using icons is simple. All you have to do is use an "i" element and reference the appropriate classes. You can control the size of the icon by changing the font size.
 
-```html<i class="ms-Icon ms-Icon--group" style="font-size:xx-large" aria-hidden="true"></i>
+```HTML
+<i class="ms-Icon ms-Icon--group" style="font-size:xx-large" aria-hidden="true"></i>
 ```
 
 
 ## 3. Use styles for simple components
+
 Fabric comes with styles for various UI elements, such as buttons and check boxes. All you have to do is reference the appropriate classes to add the corresponding style, as shown in the following example.
 
-```html<button class="ms-Button" id="get-data-from-selection">
+```HTML
+<button class="ms-Button" id="get-data-from-selection">
 <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
 <span class="ms-Button-label">Get Data from selection</span>
 <span class="ms-Button-description">Get Data from the document selection</span>
@@ -40,6 +45,7 @@ Fabric comes with styles for various UI elements, such as buttons and check boxe
 ```
 
 ## 4. Use components with sample behavior
+
 Fabric includes some components that support behaviors (such as what happens on click). To get you started, **Fabric 2.6.1** includes some **sample code** in the form of JQuery UI plug-ins that you can use. You can also use any other framework you want to wire things up. If you do opt to use the samples, note that the code is not distributed as part of the CDN, so you have to download it from the **2.6.1 release** of the [Fabric GitHub project](https://github.com/OfficeDev/office-ui-fabric-core/tree/release/2.6.1), reference it, and then initialize it in your code. 
 
 For example, to use the SearchBox component:
@@ -54,7 +60,7 @@ For example, to use the SearchBox component:
 
 ## Next steps
 
-If you're looking for end-to-end samples that show you how to use Fabric, we've got you covered. See the [Office Add-in Fabric UI sample](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample). You can also explore the interactive [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric) website.
+If you're looking for end-to-end samples that show you how to use Fabric, we've got you covered. See the [Office Add-in Fabric UI sample](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample). You can also explore the interactive [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric)website.
 
 ## Additional resources
 

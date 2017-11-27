@@ -62,7 +62,7 @@ The XML web service must return queries to the web service as XML that conforms 
 The following code shows the XSD for the OfficeDefinitions XML Schema.
 
 
-```xml
+```XML
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -93,10 +93,7 @@ The following code shows the XSD for the OfficeDefinitions XML Schema.
 
 Returned XML that conforms to the OfficeDefinitions schema consists of a root  **Result** element that contains a **Definitions** element with from zero to three **Definition** child elements, each of which contains definitions that are no more than 400 characters in length. Additionally, the URL to the full page on the dictionary site must be provided in the **SeeMoreURL** element. The following example shows the structure of returned XML that conforms to the OfficeDefinitions schema.
 
-
-
-
-```xml
+```XML
 <?xml version="1.0" encoding="utf-8"?>
 <Result xmlns="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions">
   <SeeMoreURL xmlns="">www.bing.com/dictionary/search?q=example</SeeMoreURL>
@@ -200,7 +197,7 @@ A dictionary add-in consists of three main component files:
 The following is an example manifest file for a dictionary add-in.
 
 
-```xml
+```XML
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
   <Id>7164e750-dc86-49c0-b548-1bac57abdc7c</Id>
@@ -297,7 +294,7 @@ The  **TargetDialects** element and its child elements specify the set of region
 
  **Example**
 
-```xml
+```XML
 <TargetDialects>
   <TargetDialect>EN-AU</TargetDialect>
   <TargetDialect>EN-BZ</TargetDialect>
@@ -337,9 +334,7 @@ Specify the value for a regional language in the RFC1766  `language` tag format,
  **Example**
 
 
-
-
-```xml
+```XML
 <TargetDialect>EN-US</TargetDialect>
 ```
 
@@ -360,9 +355,7 @@ This is the URI of the XML web service for the dictionary provider. The properly
  **Example**
 
 
-
-
-```xml
+```XML
 <QueryUri DefaultValue="http://msranlc-lingo1/proof.aspx?q="/>
 ```
 
@@ -385,9 +378,7 @@ For this element, you can specify values for additional locales by using the  **
  **Example**
 
 
-
-
-```xml
+```XML
 <CitationText DefaultValue="Results by: " />
 ```
 
@@ -409,10 +400,7 @@ For this element, you can specify values for additional locales.
 
  **Example**
 
-
-
-
-```xml
+```XML
 <DictionaryName DefaultValue="Bing Dictionary" />
 ```
 
@@ -435,9 +423,7 @@ For this element, you can specify values for additional locales.
  **Example**
 
 
-
-
-```xml
+```XML
 <DictionaryHomePage DefaultValue="http://www.bing.com" />
 ```
 
@@ -446,7 +432,7 @@ For this element, you can specify values for additional locales.
 
 The following two examples show the HTML and CSS files for the UI of the Demo Dictionary add-in. To view how the UI is displayed in the add-in's task pane, see Figure 6 following the code. To see how the implementation of the JavaScript in the Dictionary.js file provides programming logic for this HTML UI, see "Writing the JavaScript implementation" immediately following this section.
 
-```html
+```HTML
 <!DOCTYPE html>
 <html>
 
@@ -487,7 +473,7 @@ The following two examples show the HTML and CSS files for the UI of the Demo Di
 
 The following example shows the contents of Style.css.
 
-```css
+```CSS
 #mainContainer
 {
     font-family: Segoe UI;

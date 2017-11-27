@@ -414,5 +414,5 @@ function removeEventHandlerFromBinding() {
 [Document.bindings]: 	https://dev.office.com/reference/add-ins/shared/document.bindings
 
 
-[TableBinding.rowCount]: https://dev.office.com/reference/add-ins/shared/binding.tablebinding.rowcount.
+[TableBinding.rowCount]: https://dev.office.com/reference/add-ins/shared/binding.tablebinding.rowcount
 [BindingSelectionChangedEventArgs]: https://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedeventargs

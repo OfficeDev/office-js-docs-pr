@@ -1,6 +1,12 @@
+---
+title: Create add-in commands in your manifest for Excel, Word, and PowerPoint
+description: Use VersionOverrides in your manifest to define add-in commands for Excel, Word, and PowerPoint. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
+ms.date: 11/27/2017 
+---
+
+
 # Create add-in commands in your manifest for Excel, Word, and PowerPoint
 
-**Applies to:** Excel 2016 | Office Add-ins | PowerPoint 2016 | Word 2016
 
 Use **[VersionOverrides](https://dev.office.com/reference/add-ins/manifest/versionoverrides)** in your manifest to define add-in commands for Excel, Word, and PowerPoint. Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. You can use add-in commands to:
 - Create UI elements or entry points that make your add-in's functionality easier to use.  
@@ -24,11 +30,11 @@ The following image is an overview of add-in commands elements in the manifest.
  
 ## Step 1: Start from a sample
 
-We strongly recommend that you start from one of the samples we provide in  [Office Add-in Commands Samples](https://github.com/OfficeDev/Office-Add-in-Command-Sample). Optionally, you can create your own manifest by following the steps in this guide. You can validate your manifest using the XSD file in the Office Add-in Commands Samples site. Ensure that you have read  [Add-in commands for Excel, Word and PowerPoint](https://dev.office.com/docs/add-ins/design/add-in-commands) before using add-in commands.
+We strongly recommend that you start from one of the samples we provide in  [Office Add-in Commands Samples](https://github.com/OfficeDev/Office-Add-in-Command-Sample). Optionally, you can create your own manifest by following the steps in this guide. You can validate your manifest using the XSD file in the Office Add-in Commands Samples site. Ensure that you have read  [Add-in commands for Excel, Word and PowerPoint](../design/add-in-commands.md) before using add-in commands.
 
 ## Step 2: Create a task pane add-in
 
-To start using add-in commands, you must first create a task pane add-in, and then modify the add-in's manifest as described in this article. You can't use add-in commands with content add-ins. If you're updating an existing manifest, you can add the **VersionOverrides** element to the manifest as described in [Step 3: Add VersionOverrides element](#Step-3:-Add-VersionOverrides-element).
+To start using add-in commands, you must first create a task pane add-in, and then modify the add-in's manifest as described in this article. You can't use add-in commands with content add-ins. If you're updating an existing manifest, you can add the **VersionOverrides** element to the manifest as described in [Step 3: Add VersionOverrides element](#step-3-add-versionoverrides-element).
    
 The following example shows an Office 2013 add-in's manifest. There are no add-in commands in this manifest because there is no **VersionOverrides** element. Office 2013 doesn't support add-in commands, but by adding **VersionOverrides** to this manifest, your add-in will run in both Office 2013 and Office 2016. In Office 2013, your add-in won't display add-in commands, and uses the value of **SourceLocation** to run your add-in as a single task pane add-in. In Office 2016, if no **VersionOverrides** element is included, **SourceLocation** is used to run your add-in. If you include **VersionOverrides**, however, your add-in displays the add-in commands only, and doesn't display your add-in as a single task pane add-in.
   
@@ -75,7 +81,7 @@ The following table identifies the child elements of **VersionOverrides**.
 |**Description** <br/> |Optional. Describes the add-in. This child **Description** element overrides a previous **Description** element in the parent portion of the manifest. The **resid** attribute for this **Description** element is set to the **id** of a **String** element. The **String** element contains the text for **Description**. <br/> |
 |**Requirements** <br/> |Optional. Specifies the minimum requirement set and version of Office.js that the add-in requires. This child **Requirements** element overrides the **Requirements** element in the parent portion of the manifest. For more information, see [Specify Office hosts and API requirements](https://dev.office.com/docs/add-ins/overview/specify-office-hosts-and-api-requirements).  <br/> |
 |**Hosts** <br/> |Required. Specifies a collection of Office hosts. The child **Hosts** element overrides the **Hosts** element in the parent portion of the manifest. You must include a **xsi:type** attribute set to "Workbook" or "Document". <br/> |
-|**Resources** <br/> |Defines a collection of resources (strings, URLs, and images) that other manifest elements reference. For example, the **Description** element's value refers to a child element in **Resources**. The **Resources** element is described in [Step 7: Add the Resources element](#Step-7:-Add-the-Resources-element) later in this article. <br/> |
+|**Resources** <br/> |Defines a collection of resources (strings, URLs, and images) that other manifest elements reference. For example, the **Description** element's value refers to a child element in **Resources**. The **Resources** element is described in [Step 7: Add the Resources element](#step-7-add-the-resources-element) later in this article. <br/> |
    
 The following example shows how to use the **VersionOverrides** element and its child elements.
 
@@ -104,6 +110,7 @@ The following example shows how to use the **VersionOverrides** element and its 
 ```
 
 ## Step 4: Add Hosts, Host, and DesktopFormFactor elements
+
 The **Hosts** element contains one or more **Host** elements. A **Host** element specifies a particular Office host. The **Host** element contains child elements that specify the add-in commands to display after your add-in is installed in that Office host. To show the same add-in commands in two or more different Office hosts, you must duplicate the child elements in each **Host**.
        
 The **DesktopFormFactor** element specifies the settings for an add-in that runs in Office on Windows desktop, and Office Online (in browser).
@@ -131,7 +138,8 @@ The following is an example of **Hosts**, **Host**, and **DesktopFormFactor** el
 ```
 
 ## Step 5: Add the FunctionFile element
- The **FunctionFile** element specifies a file that contains JavaScript code to run when an add-in command uses the **ExecuteFunction** action (see [Button controls](https://dev.office.com/reference/add-ins/manifest/control#Button-control) for a description). The **FunctionFile** element's **resid** attribute is set to a HTML file that includes all the JavaScript files your add-in commands require. You can't link directly to a JavaScript file. You can only link to an HTML file. The file name is specified as a **Url** element in the **Resources** element.
+
+The **FunctionFile** element specifies a file that contains JavaScript code to run when an add-in command uses the **ExecuteFunction** action (see [Button controls](https://dev.office.com/reference/add-ins/manifest/control#Button-control) for a description). The **FunctionFile** element's **resid** attribute is set to a HTML file that includes all the JavaScript files your add-in commands require. You can't link directly to a JavaScript file. You can only link to an HTML file. The file name is specified as a **Url** element in the **Resources** element.
         
 The following is an example of the **FunctionFile** element.
   
@@ -154,6 +162,7 @@ The JavaScript in the HTML file referenced by the **FunctionFile** element must 
 The following code shows how to implement the function used by **FunctionName**.
 
 ```javascript
+
 <script>
     // The initialize function must be run each time a new page is loaded.
     (function () {
@@ -313,6 +322,7 @@ The following example shows how to define a menu item with two submenu items. Th
 - The **id** attribute is a string with a maximum of 125 characters.
     
 ```xml
+
 <Control xsi:type="Menu" id="TestMenu2">
   <Label resid="residLabel3" />
   <Tooltip resid="residToolTip" />
@@ -370,6 +380,7 @@ The following example shows how to define a menu item with two submenu items. Th
 |**Items** <br/> |Required. Contains the **Item** elements for each submenu item. Each **Item** element contains the same child elements as [Button controls](https://dev.office.com/reference/add-ins/manifest/control).  <br/> |
    
 ## Step 7: Add the Resources element
+
 The **Resources** element contains resources used by the different child elements of the **VersionOverrides** element. Resources include icons, strings, and URLs. An element in the manifest can use a resource by referencing the **id** of the resource. Using the **id** helps organize the manifest, especially when there are different versions of the resource for different locales. An **id** has a maximum of 32 characters.
   
     
@@ -428,6 +439,7 @@ In Excel and Word, you can add your add-in commands to the ribbon by using the d
 |PowerPoint  <br/> |**TabHome**         **TabInsert**         **TabDesign**         **TabTransitions**         **TabAnimations**         **TabSlideShow**         **TabReview**         **TabView**         **TabDeveloper**         **TabAddIns**         **TabPrintPreview**         **TabMerge**         **TabGrayscale**         **TabBlackAndWhite**         **TabBroadcastPresentation**         **TabSlideMaster**         **TabHandoutMaster**         **TabNotesMaster**         **TabBackgroundRemoval**         **TabSlideMasterHome**          <br/> |
    
 ## Additional resources
--  [Add-in commands for Excel, Word and PowerPoint](https://dev.office.com/docs/add-ins/design/add-in-commands-for-excel-and-word-preview)      
--  [Define add-in commands in your manifest](https://dev.office.com/docs/add-ins/develop/define-add-in-commands)  
+
+-  [Add-in commands for Excel, Word and PowerPoint](../design/add-in-commands-for-excel-and-word-preview.md)      
+-  [Define add-in commands in your manifest](../develop/define-add-in-commands.md)  
   
