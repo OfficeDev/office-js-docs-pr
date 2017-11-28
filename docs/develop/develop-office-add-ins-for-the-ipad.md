@@ -35,7 +35,7 @@ Apply the following best practices for developing add-ins that run on iOS:
     
 -  **Specify API requirements in your add-in's manifest or with runtime checks.**
     
-    When you specify API requirements in your add-in's manifest, Office will determine if the host application supports those API members. If the API members are available in the host, then your add-in will be available in that host application. Alternatively, you can perform a runtime check to determine if a method is available in the host before using it in your add-in. Runtime checks ensure that your add-in is always available in the host, and provides additional functionality if the methods are available. For more information, see [Specify Office hosts and API requirements](../overview/specify-office-hosts-and-api-requirements.md).
+    When you specify API requirements in your add-in's manifest, Office will determine if the host application supports those API members. If the API members are available in the host, then your add-in will be available in that host application. Alternatively, you can perform a runtime check to determine if a method is available in the host before using it in your add-in. Runtime checks ensure that your add-in is always available in the host, and provides additional functionality if the methods are available. For more information, see [Specify Office hosts and API requirements](specify-office-hosts-and-api-requirements.md).
     
 For general add-in development best practices, see [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md).
 

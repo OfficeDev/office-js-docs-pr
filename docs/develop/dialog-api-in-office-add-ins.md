@@ -88,7 +88,7 @@ if (loginSuccess) {
 ```
 
 > [!NOTE]
-> - The `messageParent` function is one of *only* two Office APIs that can be called in the dialog box. The other is `Office.context.requirements.isSetSupported`. For information about it, see [Specify Office hosts and API requirements](../overview/specify-office-hosts-and-api-requirements.md).
+> - The `messageParent` function is one of *only* two Office APIs that can be called in the dialog box. The other is `Office.context.requirements.isSetSupported`. For information about it, see [Specify Office hosts and API requirements](specify-office-hosts-and-api-requirements.md).
 > - The `messageParent` function can only be called on a page with the same domain (including protocol and port) as the host page.
 
 In the next example, `googleProfile` is a stringified version of the user's Google profile.
