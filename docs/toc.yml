@@ -114,61 +114,64 @@
       - name: Toggle
         href: design/toggle.md
 
-- name: Develop
-  items:
-  - name: Install the latest Office version
-    href: develop/install-latest-office-version.md
-  - name: Develop add-ins for the iPad
-    href: develop/develop-office-add-ins-for-the-ipad.md
-  - name: Tips for creating add-ins with Angular
-    href: develop/add-ins-with-angular2.md
-  - name: Convert JavaScript to TypeScript
-    href: develop/convert-javascript-to-typescript.md
-  - name: Use the Dialog API
-    href: develop/dialog-api-in-office-add-ins.md
-  - name: Authentication and authorization
+  - name: Development fundamentals
     items:
-    - name: Enable SSO in an add-in
-      href: develop/sso-in-office-add-ins.md
+    - name: Install the latest Office version
+      href: develop/install-latest-office-version.md
+      
+    - name: Office JavaScript API
+      href: develop/understanding-the-javascript-api-for-office.md
       items:
-      - name: Create an SSO add-in using ASP.NET
-        href: develop/create-sso-office-add-ins-aspnet.md
-      - name: Create an SSO add-in using Node.js
-        href: develop/create-sso-office-add-ins-nodejs.md
-      - name: Troubleshoot error messages for single sign-on (SSO)
-        href: develop/troubleshoot-sso-in-office-add-ins.md
-    - name: Authorize external services
-      href: develop/auth-external-add-ins.md
-  - name: Manifest
-    href: develop/add-in-manifests.md
-    items:
-    - name: Create add-in commands
-      href: develop/create-addin-commands.md
-    - name: Define add-in commands
-      href: develop/define-add-in-commands.md
-    - name: Specify Office hosts
-      href: develop/specify-office-hosts-and-api-requirements.md
-    - name: Requesting permissions for API use in content and task pane add-ins
-      href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
-    - name: Update API and manifest version
-      href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
-  - name: Office JavaScript API
-    href: develop/understanding-the-javascript-api-for-office.md
-    items:
-    - name: Support for content and task pane add-ins
-      href: develop/support-for-task-pane-and-content-add-ins.md
-    - name: Reference Office.js
-      href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
-    - name: Load Office.js
-      href: develop/loading-the-dom-and-runtime-environment.md
-    - name: Asynchronous programming in Office Add-ins
-      href: develop/asynchronous-programming-in-office-add-ins.md
-    - name: Persist state and settings
-      href: develop/persisting-add-in-state-and-settings.md
-  - name: Address same origin policy limitations
-    href: develop/addressing-same-origin-policy-limitations.md
-  - name: Localization
-    href: develop/localization.md
+      - name: Support for content and task pane add-ins
+        href: develop/support-for-task-pane-and-content-add-ins.md
+      - name: Reference Office.js
+        href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
+      - name: Load Office.js
+        href: develop/loading-the-dom-and-runtime-environment.md
+      - name: Asynchronous programming in Office Add-ins
+        href: develop/asynchronous-programming-in-office-add-ins.md
+      - name: Persist state and settings
+        href: develop/persisting-add-in-state-and-settings.md
+
+    - name: Manifest
+      href: develop/add-in-manifests.md
+      items:
+      - name: Create add-in commands
+        href: develop/create-addin-commands.md
+      - name: Specify Office hosts
+        href: develop/specify-office-hosts-and-api-requirements.md
+      - name: Requesting permissions for API use in content and task pane add-ins
+        href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
+      - name: Update API and manifest version
+        href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
+
+    - name: Authentication and authorization
+      items:
+      - name: Enable SSO in an add-in
+        href: develop/sso-in-office-add-ins.md
+        items:
+        - name: Create an SSO add-in using ASP.NET
+          href: develop/create-sso-office-add-ins-aspnet.md
+        - name: Create an SSO add-in using Node.js
+          href: develop/create-sso-office-add-ins-nodejs.md
+        - name: Troubleshoot error messages for single sign-on (SSO)
+          href: develop/troubleshoot-sso-in-office-add-ins.md
+      - name: Authorize external services
+        href: develop/auth-external-add-ins.md
+
+    - name: Use the Dialog API
+      href: develop/dialog-api-in-office-add-ins.md
+    - name: Address same origin policy limitations
+      href: develop/addressing-same-origin-policy-limitations.md
+    - name: Localization
+      href: develop/localization.md
+    - name: Develop add-ins for the iPad
+      href: develop/develop-office-add-ins-for-the-ipad.md
+    - name: Tips for creating add-ins with Angular
+      href: develop/add-ins-with-angular2.md
+    - name: Convert JavaScript to TypeScript
+      href: develop/convert-javascript-to-typescript.md
+
 - name: Test and debug
   items:
   - name: Sideload Office Add-ins for testing

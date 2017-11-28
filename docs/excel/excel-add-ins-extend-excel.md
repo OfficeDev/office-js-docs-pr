@@ -52,7 +52,7 @@ For more information about content add-ins, see [Content Office Add-ins](../desi
 ## Additional resources
 
 - [Add-in commands for Excel, Word, and PowerPoint](../design/add-in-commands.md)
-- [Define add-in commands in your manifest](../develop/define-add-in-commands.md)
+- [Create add-in commands in your manifest](../develop/create-addin-commands.md)
 - [Office Add-in Commands Samples on Github](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/)
 - [Task panes in Office Add-ins](../design/task-pane-add-ins.md)
 - [Excel add-in: JS WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends)

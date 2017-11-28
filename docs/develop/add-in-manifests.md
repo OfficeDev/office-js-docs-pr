@@ -430,7 +430,7 @@ For troubleshooting issues with your manifest, see [Validate and troubleshoot is
 ## Additional resources
 
 
-- [Define add-in commands in your manifest](define-add-in-commands.md)
+- [Create add-in commands in your manifest](create-addin-commands.md)
 - [Specify Office hosts and API requirements](specify-office-hosts-and-api-requirements.md)
 - [Localization for Office Add-ins](localization.md)
 - [Schema reference for Office Add-ins manifests](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas)

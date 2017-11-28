@@ -441,5 +441,5 @@ In Excel and Word, you can add your add-in commands to the ribbon by using the d
 ## Additional resources
 
 -  [Add-in commands for Excel, Word and PowerPoint](../design/add-in-commands.md)      
--  [Define add-in commands in your manifest](../develop/define-add-in-commands.md)  
+-  [Create add-in commands in your manifest](../develop/create-addin-commands.md)
   
