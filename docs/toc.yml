@@ -1,25 +1,57 @@
 - name: Office Add-ins Documentation
   href: index.yml
+  
 - name: Overview
-  href: overview/office-add-ins.md
   items:
-  - name: Requirements for running add-ins
-    href: overview/requirements-for-running-office-add-ins.md
-  - name: Add-in development best practices
-    href: overview/add-in-development-best-practices.md
+  - name: About Office Add-ins
+    href: overview/office-add-ins.md
   - name: Host and platform availability
     href: https://dev.office.com/add-in-availability
-  - name: Changelog
-    href: overview/add-in-changelog.md
+
+- name: Quickstarts
+  items:
+  - name: Excel add-in
+    items:
+    - name: Use React
+      href: quickstarts/excel-quickstart-react.md
+    - name: Use Angular
+      href: quickstarts/excel-quickstart-angular.md
+    - name: Use jQuery
+      href: quickstarts/excel-quickstart-jquery.md
+  - name: Word add-in
+    href: quickstarts/word-quickstart.md
+  - name: OneNote add-in
+    href: quickstarts/onenote-quickstart.md
+  - name: Outlook add-in
+    href: https://docs.microsoft.com/en-us/outlook/add-ins/quick-start
+  - name: PowerPoint add-in
+    href: quickstarts/powerpoint-quickstart.md
+  - name: Project add-in
+    href: quickstarts/project-quickstart.md
+
 - name: Get started
   items:
-  - name: Use Visual Studio
+  - name: Use Visual Studio to create an Office Add-in
     href: get-started/create-and-debug-office-add-ins-in-visual-studio.md
     items:
     - name: Get JavaScript IntelliSense in Visual Studio
       href: get-started/get-javascript-intellisense-in-visual-studio.md
-  - name: Use any editor
+  - name: Use any editor to create an Office Add-in
     href: get-started/create-an-office-add-in-using-any-editor.md
+
+- name: Concepts
+  items:
+  - name: Requirements for running add-ins
+    href: concepts/requirements-for-running-office-add-ins.md
+  - name: Add-in development best practices
+    href: concepts/add-in-development-best-practices.md
+  - name: Add-in development lifecycle
+    href: concepts/add-in-development-lifecycle.md
+  - name: Privacy and security
+    href: concepts/privacy-and-security.md
+  - name: Performance
+    href: concepts/resource-limits-and-performance-optimization.md
+
 - name: Design
   href: design/add-in-design.md
   items:
@@ -80,7 +112,6 @@
     - name: Toggle
       href: design/toggle.md
 - name: Develop
-  href: develop/add-in-development-lifecycle.md
   items:
   - name: Install the latest Office version
     href: develop/install-latest-office-version.md
@@ -131,14 +162,10 @@
       href: develop/asynchronous-programming-in-office-add-ins.md
     - name: Persist state and settings
       href: develop/persisting-add-in-state-and-settings.md
-  - name: Privacy and security
-    href: develop/privacy-and-security.md
   - name: Address same origin policy limitations
     href: develop/addressing-same-origin-policy-limitations.md
   - name: Localization
     href: develop/localization.md
-  - name: Performance
-    href: develop/resource-limits-and-performance-optimization.md
 - name: Test and debug
   items:
   - name: Sideload Office Add-ins for testing
