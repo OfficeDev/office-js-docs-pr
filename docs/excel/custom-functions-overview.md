@@ -165,16 +165,39 @@ function getTemperature(thermometerID){
 Streamed custom functions let you output data to cells repeatedly over time, without waiting for Excel or users to request recalculations. For example, the `incrementValue` custom function in the following code adds a number to the result every second, and Excel displays each new value automatically using the `setResult` callback. To see the registration code used with `incrementValue`, read the *customfunctions.js* file.
 
 ```js
-function incrementValue(increment, setResult){ 
-     var result = 0;
-     setInterval(function(){
+function incrementValue(increment, caller){ 
+    var result = 0;
+    setInterval(function(){
          result += increment;
-         setResult(result);
+         caller.setResult(result);
     }, 1000);
 }
 ```
 
-For streamed functions, the final parameter, `setResult`, is never specified in your registration code, and it does not display in the autocomplete menu to Excel users when they enter the function. It’s a callback function that’s used to pass data from the function to Excel to update the value of a cell. In order for Excel to pass the `setResult` function, you must declare support for streaming during your function registration by setting the parameter `stream` to `true`.
+For streamed functions, the final parameter, `caller`, is never specified in your registration code, and it does not display in the autocomplete menu to Excel users when they enter the function. It’s an object that contains a `setResult` callback function that’s used to pass data from the function to Excel to update the value of a cell. In order for Excel to pass the `setResult` function in the `caller` object, you must declare support for streaming during your function registration by setting the parameter `stream` to `true`.
+
+## Cancellation
+
+Streamed functions and asynchronous functions are cancelable. Canceling your function calls is important to reduce their bandwith consumption, working memory, and CPU load. Here are some situations where Excel cancels function calls:
+- The user edits or deletes a cell that references the function.
+- One of the arguments (inputs) for the function changes. In this case, a new function call is triggered in addition to the cancelation.
+- The user triggers recalculation manually. As with the above case, a new function call is also triggered in addition to the cancelation.
+
+Here's the example above with cancellation implemented. As you can see, the `caller` object contains an `onCanceled` function which you should define for each custom function:
+
+```js
+function incrementValue(increment, caller){ 
+    var result = 0;
+    var timer = setInterval(function(){
+         result += increment;
+         caller.setResult(result);
+    }, 1000);
+
+    caller.onCanceled = function(){
+        clearInterval(timer);
+    }
+}
+```
 
 ## Saving state
 
@@ -191,13 +214,13 @@ The following code shows an implementation of the previous temperature-streaming
 ```js
 var savedTemperatures{};
 
-function streamTemperature(thermometerID, setResult){ 
+function streamTemperature(thermometerID, caller){ 
      if(!savedTemperatures[thermometerID]){
          refreshTemperatures(thermometerID);
      }
 
      function getNextTemperature(){
-         setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
+         caller.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
          setTimeout(getNextTemperature, 1000); // Wait 1 second before updating Excel again.
      }
      getNextTemperature();
@@ -243,8 +266,6 @@ The following features aren't yet supported in the Developer Preview.
 
 -   Batching, which allows you to aggregate multiple calls to the same function to improve performance.
 
--   Cancelation, which notifies you when a streaming function is no longer required (for example, when users clear a cell). Today, the functions can’t determine when to stop writing new values into the cell.
-
 -   Help URLs and parameter descriptions are not yet used by Excel.
 
 -   Publishing add-ins to the Office Store or Office 365 centralized deployment that use custom functions.
@@ -252,3 +273,9 @@ The following features aren't yet supported in the Developer Preview.
 -   Custom functions are not available on Excel on Mac, Excel for iOS, and Excel Online.
 
 -   Currently, add-ins rely on a hidden browser process to run custom functions. In the future, JavaScript will run directly on some platforms to ensure custom functions are faster and use less memory. Additionally, the HTML page referenced by the &lt;Page&gt; element in the manifest won’t be needed for most platforms because Excel will run the JavaScript directly. To prepare for this change, ensure your custom functions do not use the webpage DOM.
+
+## Changelog
+
+- **Nov 7, 2017**: Shipped the custom functions preview and samples
+- **Nov 20, 2017**: Fixed compatibility bug for those using builds 8801 and later
+- **Nov 28, 2017**: Shipped support for cancellation on asynchronous functions (requires change for streaming functions)
