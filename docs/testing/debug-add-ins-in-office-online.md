@@ -57,7 +57,7 @@ The following are some issues that you might encounter as you debug:
 ## Additional resources
 
 - [Best practices for developing Office Add-ins](../overview/add-in-development-best-practices.md)
-- [Validation policies for apps and add-ins submitted to the Office Store (version 1.9)](http://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe%28Office.15%29.aspx)  
-- [Create effective Office Store apps and add-ins](http://msdn.microsoft.com/library/c66a6e6b-2e96-458f-8f8c-2a499fe942c9%28Office.15%29.aspx)  
+- [Validation policies for apps and add-ins submitted to the Office Store (version 2.2)](https://dev.office.com/officestore/docs/validation-policies)  
+- [Create effective Office Store apps and add-ins](https://dev.office.com/officestore/docs/create-effective-office-store-listings)  
 - [Troubleshoot user errors with Office Add-ins](testing-and-troubleshooting.md)
     

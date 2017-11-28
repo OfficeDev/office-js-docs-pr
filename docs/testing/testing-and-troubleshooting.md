@@ -10,7 +10,7 @@ At times your users might encounter issues with Office Add-ins that you develop.
 
 You can also use [Fiddler](http://www.telerik.com/fiddler) to identify and debug issues with your add-ins.
 
-After you resolve the user's issue, you can [respond directly to customer reviews in the Office Store](https://msdn.microsoft.com/library/jj635874.aspx).
+After you resolve the user's issue, you can [respond directly to customer reviews in the Office Store](https://dev.office.com/officestore/docs/create-effective-office-store-listings).
 
 ## Common errors and troubleshooting steps
 
@@ -102,8 +102,8 @@ Call `window.location.reload(true)` from JavaScript in the add-in to force a rel
 
 ## Additional resources
 
-- [Debug add-ins in Office Online](../testing/debug-add-ins-in-office-online.md) 
-- [Sideload an Office Add-in on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)  
-- [Debug Office Add-ins on iPad and Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)  
+- [Debug add-ins in Office Online](debug-add-ins-in-office-online.md) 
+- [Sideload an Office Add-in on iPad and Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
+- [Debug Office Add-ins on iPad and Mac](debug-office-add-ins-on-ipad-and-mac.md)  
 - [Validate and troubleshoot issues with your manifest](troubleshoot-manifest.md)
     

@@ -39,7 +39,7 @@ The labs.js library serves as an abstraction layer on top of the office.js libra
 
 Your first step is to sign up for an Office 365 Developer Site. This allows you to host and test your lab before submitting it to the Office Store. The site allows you to publish your add-in to Office Mix and test it in a live environment.
 
-For more information, see [Set up a development environment for SharePoint Add-ins on Office 365](http://msdn.microsoft.com/library/b22ce52a-ae9e-4831-9b68-c9210af6dc54%28Office.15%29.aspx). 
+For more information, see [Set up a development environment for SharePoint Add-ins on Office 365](https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/set-up-a-development-environment-for-sharepoint-add-ins-on-office-365). 
 
 
 ### Set up an app catalog on SharePoint Online

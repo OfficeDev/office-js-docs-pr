@@ -25,7 +25,7 @@ Follow the Office design principles to create positive add-in experiences:
 
 - **Make it enjoyable and keep users in control.** People enjoy using products that are both functional and visual appealing. Craft your experience carefully. Get the details right by considering every interaction and visual detail. Allow users to control their experience. The necessary steps to complete a task must be clear and relevant. Important decisions should be easy to understand. Actions should be easily reversible. An add-in is not a destination – it’s an enhancement to Office functionality.
 
-- **Design for all platforms and input methods**. Add-ins are designed to work on all the platforms that Office supports, and your add-in UX should be optimized to work across platforms and form factors. Support mouse/keyboard and touch input devices, and ensure that your custom HTML UI is responsive to adapt to different form factors. For more information, see [Touch](https://msdn.microsoft.com/EN-US/library/mt590883.aspx#bk_Touch). 
+- **Design for all platforms and input methods**. Add-ins are designed to work on all the platforms that Office supports, and your add-in UX should be optimized to work across platforms and form factors. Support mouse/keyboard and touch input devices, and ensure that your custom HTML UI is responsive to adapt to different form factors. For more information, see [Touch](../overview/add-in-development-best-practices.md#optimize-for-touch). 
 
 ## Additional resources
 - [Office UI Fabric](https://dev.office.com/fabric) 

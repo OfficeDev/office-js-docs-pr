@@ -389,7 +389,7 @@ function removeEventHandlerFromBinding() {
 - [Asynchronous programming in Office Add-ins](asynchronous-programming-in-office-add-ins.md)
 - [Read and write data to the active selection in a document or spreadsheet](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
-[Binding]: 				https://dev.office.com/reference/add-ins/shared/binding
+[Binding]: 				 https://dev.office.com/reference/add-ins/shared/binding
 [MatrixBinding]:		 https://dev.office.com/reference/add-ins/shared/binding.matrixbinding
 [TableBinding]: 		 https://dev.office.com/reference/add-ins/shared/binding.tablebinding
 [TextBinding]: 			 https://dev.office.com/reference/add-ins/shared/binding.textbinding

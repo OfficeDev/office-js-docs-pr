@@ -6,4 +6,4 @@ ms.date: 11/20/2017
 
 # Understanding Office versions
 
-This content is no longer available and will redirect to [Office Add-ins platform overview](https://dev.office.com/docs/add-ins/overview/office-add-ins).
+This content is no longer available and will redirect to [Office Add-ins platform overview](../overview/office-add-ins.md).
