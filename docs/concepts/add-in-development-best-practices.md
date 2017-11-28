@@ -137,4 +137,4 @@ For templates that apply design principles that you can use and customize as you
 
 ## Additional resources
 
-- [Office Add-ins platform overview](office-add-ins.md)
+- [Office Add-ins platform overview](../overview/office-add-ins.md)
