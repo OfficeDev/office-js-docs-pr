@@ -10,6 +10,7 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 |[Office Store](https://dev.office.com/officestore/docs/submit-to-the-office-store)|To distribute your add-in publicly to users.|
 |[SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|In an on-premises environment, to distribute your add-in to users in your organization.|
 |[Exchange server](#outlook-add-in-deployment)|In an on-premises or online environment, to distribute Outlook add-ins to users.|
+|[Network share](https://dev.office.com/docs/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins)|On a Windows computer on a network where you want to host your add-in, go to the parent folder, or drive letter, of the folder you want to use as your shared folder catalog.|
 
 The options that are available depend on the Office host that you're targeting and the type of add-in you create.
 
@@ -65,7 +66,7 @@ To assign add-ins to tenants, you use the Exchange admin center to upload a mani
 
 ## Additional resources
 
-- [Sideload Office Add-ins for testing](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) 
+- [Sideload Outlook add-ins for testing (https://dev.office.com/docs/add-ins/testing/sideload-outlook-add-ins-for-testing)
 - [Submit to the Office Store][Office Store]
 - [Design guidelines for Office Add-ins](../design/add-in-design)
 - [Create effective Office Store listings](https://dev.office.com/officestore/docs/create-effective-office-store-listings)
