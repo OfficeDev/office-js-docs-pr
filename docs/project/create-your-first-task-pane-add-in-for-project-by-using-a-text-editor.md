@@ -1,7 +1,7 @@
 ---
 title: Create your first task pane add-in for Project 2013 by using a text editor
 description: 
-ms.date: 11/20/2017 
+ms.date: 11/27/2017 
 ---
 
 # Create your first task pane add-in for Project 2013 by using a text editor
@@ -748,19 +748,19 @@ Procedure 3 shows how to install and use the Project OM Test add-in features.
     
     Create two local resources R1 andR2, assign them to task T2 at 50% each, and choose  **getTaskAsync** again. The results in the text box include the resource information. If the task is in a synchronized SharePoint task list, the results also include the SharePoint task ID.
     
-    Task name: `T2`
-    GUID: `{25D3E03B-9A7D-E111-92FC-00155D3BA208}`
-    WSS Id: `0`
-    ResourceNames: `R1[50%],R2[50%]`
+    - Task name: `T2`
+    - GUID: `{25D3E03B-9A7D-E111-92FC-00155D3BA208}`
+    - WSS Id: `0`
+    - ResourceNames: `R1[50%],R2[50%]`
 
 12. Select the **Get Task Fields** button. The **getTaskFields** function calls the **getTaskfieldAsync** function multiple times for the task name, index, start date, duration, priority, and task notes.
 
-    Name: `T2`
-    ID: `2`
-    Start: `Thu 6/14/12`
-    Duration: `4d`
-    Priority: `500`
-    Notes: This is a note for task T2. It is only a test note. If it had been a real note, there would be some real information.
+    - Name: `T2`
+    - ID: `2`
+    - Start: `Thu 6/14/12`
+    - Duration: `4d`
+    - Priority: `500`
+    - Notes: This is a note for task T2. It is only a test note. If it had been a real note, there would be some real information.
 
 13. Select the **getWSSUrlAsync** button. If the project is one of the following kinds, the results show the task list URL and name.
     
@@ -772,50 +772,43 @@ Procedure 3 shows how to install and use the Project OM Test add-in features.
 
     If the project is a local project, or if you use Project Professional to open a project that is managed by Project Server, the  **getWSSUrlAsync** method shows an undefined error.
 
-    SharePoint URL: `http://ServerName`
-    List name: `Test task list`
+    - SharePoint URL: `http://ServerName`
+    - List name: `Test task list`
     
 
 14. Select the **Add** button in the **TaskSelectionChanged event** section, which calls the **manageTaskEventHandler** function to register a task selection changed event and returns `In onComplete function for addHandlerAsync Status: succeeded` in the text box. Select a different task; the text box shows `In task selection changed event handler`, which is the output of the callback function for the task selection changed event. Choose the  **Remove** button to unregister the event handler.
     
 15. To use the resource methods, first select a view such as  **Resource Sheet**,  **Resource Usage**, or  **Resource Form**, and then select a resource in that view. Choose  **getSelectedResourceAsync** to initialize the **resourceGuid** variable, and then choose **Get Resource Fields** to call **getResourceFieldAsync** multiple times for the resource properties. You can also add or remove the resource selection changed event handler.
     
-    Resource name: `R1`
-    Cost: `$800.00`
-    Standard Rate: `$50.00/h`
-    Actual Cost: `$0.00`
-    Actual Work: `0h`
-    Units: `100%`
-   
+    - Resource name: `R1`
+    - Cost: `$800.00`
+    - Standard Rate: `$50.00/h`
+    - Actual Cost: `$0.00`
+    - Actual Work: `0h`
+    - Units: `100%`
 
 16. Select **getSelectedViewAsync** to show the type and name of the active view. You can also add or remove the view selection changed event handler. For example, if **Resource Form** is the active view, the **getSelectedViewAsync** function shows the following in the text box:
     
-    View type: `6`
-    Name: `Resource Form`
+    - View type: `6`
+    - Name: `Resource Form`
     
-
 17. Select **Get Project Fields** to call the **getProjectFieldAsync** function multiple times for different properties of the active project. If the project is opened from Project Web App, the **getProjectFieldAsync** function can get the URL of the Project Web App instance.
     
-    Project GUID: `9845922E-DAB4-E111-8AF3-00155D3BA208`
-
-    Start: `Tue 6/12/12`
-    Finish: `Tue 6/19/12`
-
-    Currency digits: `2`
-    Currency symbol: `$`
-    Symbol position: `0`
-
-    Project web app URL: `http://servername/pwa`
+    - Project GUID: `9845922E-DAB4-E111-8AF3-00155D3BA208`
+    - Start: `Tue 6/12/12`
+    - Finish: `Tue 6/19/12`
+    - Currency digits: `2`
+    - Currency symbol: `$`
+    - Symbol position: `0`
+    - Project web app URL: `http://servername/pwa`
   
-
 18. Select  the **Get Context Values** button get properties of the document and the application in which the add-in is running, by getting properties of the **Office.Context.document** object and the **Office.context.application** object. For example, if the Project1.mpp file is on the local computer desktop, the document URL is `C:\Users\UserAlias\Desktop\Project1.mpp`. If the .mpp file is in a SharePoint library, the value is the URL of the document. If you use Project Professional 2013 to open a project named Project1 from Project Web App, the document URL is  `<>\Project1`.
     
-    Document URL: `<>\Project1`
-    Document mode: `readWrite`
-    App language: `en-US`
-    Display language: `en-US`
+    - Document URL: `<>\Project1`
+    - Document mode: `readWrite`
+    - App language: `en-US`
+    - Display language: `en-US`
     
-
 19. You can refresh the add-in after you edit the source code by closing and restarting Project. In the  **Project** ribbon, the **Office Add-ins** drop-down list maintains the list of recently used add-ins.
     
 ## Example
