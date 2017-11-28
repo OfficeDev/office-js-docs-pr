@@ -137,7 +137,7 @@
     - name: Authorize external services
       href: develop/auth-external-add-ins.md
   - name: Manifest
-    href: overview/add-in-manifests.md
+    href: develop/add-in-manifests.md
     items:
     - name: Create add-in commands
       href: develop/create-addin-commands.md

@@ -20,7 +20,7 @@ For an introduction to using JavaScript in Office Add-ins, see [Understanding th
 
 ## Procedure 1. To create the add-in manifest file
 
-Create an XML file in a local directory. The XML file includes the **OfficeApp** element and child elements, which are described in the [Office Add-ins XML manifest](../overview/add-in-manifests.md). For example, create a file named JSOM_SimpleOMCalls.xml that contains the following XML (change the GUID value of the **Id** element).
+Create an XML file in a local directory. The XML file includes the **OfficeApp** element and child elements, which are described in the [Office Add-ins XML manifest](../develop/add-in-manifests.md). For example, create a file named JSOM_SimpleOMCalls.xml that contains the following XML (change the GUID value of the **Id** element).
     
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -1092,6 +1092,6 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 - [Task pane add-ins for Project](../project/project-add-ins.md)
 - [Understanding the JavaScript API for add-ins](../develop/understanding-the-javascript-api-for-office.md)
 - [JavaScript API for Office add-ins](https://dev.office.com/reference/add-ins/javascript-api-for-office)
-- [Schema reference for Office Add-ins manifests (v1.1)](../overview/add-in-manifests.md)     
+- [Schema reference for Office Add-ins manifests (v1.1)](../develop/add-in-manifests.md)     
 - [Project 2013 SDK download](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)
     

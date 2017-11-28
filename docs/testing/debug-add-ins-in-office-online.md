@@ -30,7 +30,7 @@ To debug your add-in by using Office Online:
     > [!NOTE]
     > We recommend that you use the [Yeoman generator](https://github.com/OfficeDev/generator-office) to create and host your add-in.
      
-2. In your [add-in manifest file](../overview/add-in-manifests.md), update the **SourceLocation** element value to include an absolute, rather than a relative, URI. For example:
+2. In your [add-in manifest file](../develop/add-in-manifests.md), update the **SourceLocation** element value to include an absolute, rather than a relative, URI. For example:
       
     ```xml
     <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
