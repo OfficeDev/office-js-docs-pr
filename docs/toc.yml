@@ -29,15 +29,15 @@
   - name: Project add-in
     href: quickstarts/project-quickstart.md
 
-- name: Get started
+- name: Tutorials
   items:
   - name: Use Visual Studio to create an Office Add-in
-    href: get-started/create-and-debug-office-add-ins-in-visual-studio.md
+    href: tutorials/create-and-debug-office-add-ins-in-visual-studio.md
     items:
     - name: Get JavaScript IntelliSense in Visual Studio
-      href: get-started/get-javascript-intellisense-in-visual-studio.md
+      href: tutorials/get-javascript-intellisense-in-visual-studio.md
   - name: Use any editor to create an Office Add-in
-    href: get-started/create-an-office-add-in-using-any-editor.md
+    href: tutorials/create-an-office-add-in-using-any-editor.md
 
 - name: Concepts
   items:
@@ -140,7 +140,7 @@
     href: overview/add-in-manifests.md
     items:
     - name: Create add-in commands
-      href: get-started/create-addin-commands.md
+      href: develop/create-addin-commands.md
     - name: Define add-in commands
       href: develop/define-add-in-commands.md
     - name: Specify Office hosts

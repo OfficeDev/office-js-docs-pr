@@ -80,8 +80,6 @@ After you develop your add-in, you can [publish](../publish/publish.md) it to a 
 
 As we design and develop new APIs for Word add-ins, we'll make them available for your feedback on our [Open API specifications](https://dev.office.com/reference/add-ins/openspec) page. Find out what new features are in the pipeline for the Word JavaScript APIs, and provide your input on our design specifications.
 
-You can also see what's new in the Word JavaScript API on the [change log](http://dev.office.com/changelog) page.
-
 ## Additional resources
 
 * [Office Add-ins platform overview](../overview/office-add-ins.md)
