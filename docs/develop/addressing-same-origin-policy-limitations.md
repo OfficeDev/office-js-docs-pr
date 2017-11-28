@@ -53,7 +53,7 @@ Another way to address same-origin policy limitations is to implement the add-in
 
 For an example that uses OAuth for authentication, see [Twitter SharePoint web part with OAuth](http://aidangarnish.net/post/Twitter-SharePoint-Web-Part-With-OAuth).
 
-For an example of server-side code that shows how to use the  `Cookie` object in `System.Net` to get and set cookie values, see the [Value](http://msdn2.microsoft.com/EN-US/library/4f772twc) property.
+For an example of server-side code that shows how to use the  `Cookie` object in `System.Net` to get and set cookie values, see the [Value](https://msdn.microsoft.com/EN-US/library/4f772twc) property.
 
 
 ## Using cross-origin resource sharing (CORS)

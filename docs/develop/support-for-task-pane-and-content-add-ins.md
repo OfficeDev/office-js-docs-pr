@@ -161,6 +161,6 @@ For more information, see [Requesting permissions for API use in content and tas
 ## Additional resources
 
 - [Office JavaScript API](https://dev.office.com/reference/add-ins/javascript-api-for-office)
-- [Schema reference for Office Add-ins manifests](http://msdn.microsoft.com/en-us/library/7e0cadc3-f613-8eb9-57ef-9032cbb97f92.aspx)
+- [Schema reference for Office Add-ins manifests](../overview/add-in-manifests.md)
 - [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)
     

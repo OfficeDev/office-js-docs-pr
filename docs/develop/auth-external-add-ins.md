@@ -9,7 +9,7 @@ ms.date: 11/20/2017
 Popular online services, including Office 365, Google, Facebook, LinkedIn, SalesForce, and GitHub, let developers give users access to their accounts in other applications. This gives you the ability to include these services in your Office Add-in.
 
 > [!NOTE]
-> If the external service is accessible through Microsoft Graph, such as Office 365 or OneDrive, then you can provide the best experience for your users, and the easiest development experience for yourself, by using the single sign-on system described at [Enable single sign-on for Office Add-ins](http://dev.office.com/docs/add-ins/develop/sso-in-office-add-ins) and its related articles. The techniques described in this article are best used for external services that are not accessible with Microsoft Graph. However, they *can* be used to access Microsoft Graph, and you might prefer them to the advantages of single sign-on. For example, the single sign-on system requires server-side code, so it cannot be used with a true single page app. Also, the single sign-on system is not yet supported on all platforms.
+> If the external service is accessible through Microsoft Graph, such as Office 365 or OneDrive, then you can provide the best experience for your users, and the easiest development experience for yourself, by using the single sign-on system described at [Enable single sign-on for Office Add-ins](sso-in-office-add-ins.md) and its related articles. The techniques described in this article are best used for external services that are not accessible with Microsoft Graph. However, they *can* be used to access Microsoft Graph, and you might prefer them to the advantages of single sign-on. For example, the single sign-on system requires server-side code, so it cannot be used with a true single page app. Also, the single sign-on system is not yet supported on all platforms.
 
 The industry standard framework for enabling web application access to an online service is **OAuth 2.0**. In most situations, you don't need to know the details of how the framework works to use it in your add-in. Many libraries are available that simplify the details for you.
 
@@ -74,4 +74,4 @@ For examples of add-ins that use a middleman service for authorization, see the 
 
 ## What is CORS?
 
-CORS stands for [Cross Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS). For information about how to use CORS inside add-ins, see [Addressing same-origin policy limitations in Office Add-ins](http://dev.office.com/docs/add-ins/develop/addressing-same-origin-policy-limitations).
+CORS stands for [Cross Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS). For information about how to use CORS inside add-ins, see [Addressing same-origin policy limitations in Office Add-ins](addressing-same-origin-policy-limitations.md).

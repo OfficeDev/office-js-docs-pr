@@ -98,7 +98,7 @@ After you initialize, you can call other methods of the labs.js API. The  _conne
 
 ### Time format
 
-Labs.js stores numbers as milliseconds elapsed since January 1st 1970 UTC. This matches date format of the JavaScript [Date object](http://msdn.microsoft.com/en-us/library/ie/cd9w2te4%28v=vs.94%29.aspx),
+Labs.js stores numbers as milliseconds elapsed since January 1st 1970 UTC. This matches date format of the JavaScript [Date object](https://docs.microsoft.com/en-us/scripting/javascript/reference/date-object-javascript),
 
 
 ### Timeline

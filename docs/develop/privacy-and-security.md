@@ -206,7 +206,7 @@ Here are some examples of how you could get confirmation:
 
 - Send a text message to the user that includes a confirmation code that the user can enter in the add-in.
 
-- Open a confirmation dialog in a new browser window to a page that cannot be iframed. This is typically the pattern that is used by login pages. Use the [dialog api](https://dev.office.com/docs/add-ins/develop/dialog-api-in-office-add-ins) to create a new dialog.
+- Open a confirmation dialog in a new browser window to a page that cannot be iframed. This is typically the pattern that is used by login pages. Use the [dialog api](dialog-api-in-office-add-ins.md) to create a new dialog.
 
 Also, ensure that the address you use for contacting the user couldn't have been provided by a potential attacker. For example, for payment confirmations use the address on file for the authorized user's account.
 

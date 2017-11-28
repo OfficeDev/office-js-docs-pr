@@ -10,7 +10,7 @@ Custom functions (similar to user-defined functions, or UDFs), allow developers 
 
 Here's what custom functions look like in Excel:
 
-<img src="../images/custom-function.png" width="579" height="383" />
+<img alt="custom functions" src="../images/custom-function.png" width="579" height="383" />
 
 Here’s the code for a sample custom function that adds 42 to a pair of numbers.
 
