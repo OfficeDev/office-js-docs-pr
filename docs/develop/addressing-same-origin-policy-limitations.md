@@ -70,5 +70,5 @@ For an example of how to build your own proxy using IFRAME and POST MESSAGE, see
 
 ## Additional resources
 
-- [Privacy and security for Office Add-ins](privacy-and-security.md)
+- [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md)
     
