@@ -52,65 +52,68 @@
   - name: Performance
     href: concepts/resource-limits-and-performance-optimization.md
 
-- name: Design
-  href: design/add-in-design.md
-  items:
-  - name: Guidelines
-    href: design/add-in-design-guidelines.md
+- name: How-to guides
+
+  - name: Design the User Interface
+    href: design/add-in-design.md
     items:
-    - name: Design language
-      href: design/add-in-design-language.md
-    - name: UX design templates
-      href: design/ux-design-patterns.md
-    - name: Usability testing
-      href: design/usability-testing.md
-  - name: Interface elements
-    href: design/interface-elements.md
-    items:
-    - name: Add-in commands
-      href: design/add-in-commands.md
+    - name: Guidelines
+      href: design/add-in-design-guidelines.md
       items:
-      - name: Icon guidelines
-        href: design/design-icons.md
-    - name: Task panes
-      href: design/task-pane-add-ins.md
+      - name: Design language
+        href: design/add-in-design-language.md
+      - name: UX design templates
+        href: design/ux-design-patterns.md
+      - name: Usability testing
+        href: design/usability-testing.md
+    - name: Interface elements
+      href: design/interface-elements.md
       items:
-      - name: Automatically open a task pane with a document
-        href: design/automatically-open-a-task-pane-with-a-document.md
-    - name: Dialog boxes
-      href: design/dialog-boxes.md
-    - name: Content add-ins
-      href: design/content-add-ins.md
+      - name: Add-in commands
+        href: design/add-in-commands.md
+        items:
+        - name: Icon guidelines
+          href: design/design-icons.md
+      - name: Task panes
+        href: design/task-pane-add-ins.md
+        items:
+        - name: Automatically open a task pane with a document
+          href: design/automatically-open-a-task-pane-with-a-document.md
+      - name: Dialog boxes
+        href: design/dialog-boxes.md
+      - name: Content add-ins
+        href: design/content-add-ins.md
+        items:
+        - name: Data visualization style guidelines
+          href: design/data-visualization-guidelines.md
+    - name: Office UI Fabric
+      href: design/office-ui-fabric.md
       items:
-      - name: Data visualization style guidelines
-        href: design/data-visualization-guidelines.md
-  - name: Office UI Fabric
-    href: design/office-ui-fabric.md
-    items:
-    - name: Get started using Fabric JS
-      href: design/using-office-ui-fabric-js.md
-    - name: Get started using Fabric React
-      href: design/using-office-ui-fabric-react.md
-    - name: Breadcrumb
-      href: design/breadcrumb.md
-    - name: Buttons
-      href: design/button.md
-    - name: Checkbox
-      href: design/checkbox.md
-    - name: ChoiceGroup
-      href: design/choicegroup.md
-    - name: DropDown
-      href: design/dropdown.md
-    - name: Label
-      href: design/label.md
-    - name: List
-      href: design/list.md
-    - name: Pivot
-      href: design/pivot.md
-    - name: TextField
-      href: design/textfield.md
-    - name: Toggle
-      href: design/toggle.md
+      - name: Get started using Fabric JS
+        href: design/using-office-ui-fabric-js.md
+      - name: Get started using Fabric React
+        href: design/using-office-ui-fabric-react.md
+      - name: Breadcrumb
+        href: design/breadcrumb.md
+      - name: Buttons
+        href: design/button.md
+      - name: Checkbox
+        href: design/checkbox.md
+      - name: ChoiceGroup
+        href: design/choicegroup.md
+      - name: DropDown
+        href: design/dropdown.md
+      - name: Label
+        href: design/label.md
+      - name: List
+        href: design/list.md
+      - name: Pivot
+        href: design/pivot.md
+      - name: TextField
+        href: design/textfield.md
+      - name: Toggle
+        href: design/toggle.md
+
 - name: Develop
   items:
   - name: Install the latest Office version
