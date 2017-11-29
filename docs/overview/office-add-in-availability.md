@@ -18,26 +18,26 @@ If a table cell is empty, that means we're working on it.
   </tr>
   <tr>
     <td>Office Online</td>
-    <td>Taskpane<br>
-        Content<br>
-        <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a>
+    <td>- Taskpane<br>
+        - Content<br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a>
     </td>
-    <td><a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
-        <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
-        <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
-        <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
-        <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td><br>
-        BindingEvents<br>
-        DocumentEvents<br>
-        MatrixBindings<br>
-        MatrixCoercion<br>
-        TableBindings<br>
-        TableCoercion<br>
-        TextBindings<br>
-        CompressedFile<br>
-        Settings<br>
-        TextCoercion</td>
+        - BindingEvents<br>
+        - DocumentEvents<br>
+        - MatrixBindings<br>
+        - MatrixCoercion<br>
+        - TableBindings<br>
+        - TableCoercion<br>
+        - TextBindings<br>
+        - CompressedFile<br>
+        - Settings<br>
+        - TextCoercion</td>
   </tr>
   <tr>
     <td>Office 2013 for Windows</td>
@@ -336,5 +336,6 @@ If a table cell is empty, that means we're working on it.
 ## Additional resources
 
 - [Office Add-ins platform overview](office-add-ins.md)
+- [Office common API requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets)
 - [JavaScript API for Office reference](https://dev.office.com/reference/add-ins/javascript-api-for-office)
-- [Office common requirement sets for Project and Access](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets)
+
