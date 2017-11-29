@@ -235,51 +235,142 @@ If a table cell is empty, that means we're working on it.
   </tr>
   <tr>
     <td>Office Online</td>
-    <td>Description</td>
-    <td>Description</td>
-    <td>Description</td>
+    <td> - Taskpane<br>
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td> - BindingEvents<br>
+         - CustomXmlParts<br>
+         - MatrixBindings<br>
+         - MatrixCoercion<br>
+         - TableBindings<br>
+         - TableCoercion<br>
+         - TextBindings<br>
+         - DocumentEvents<br>
+         - TextFile<br>
+         - ImageCoercion<br>
+         - Settings<br>
+         - TextCoercion</td>
   </tr>
   <tr>
     <td>Office 2013 for Windows</td>
-    <td>Description</td>
-    <td>Description</td>
-    <td>Description</td>
+    <td> - Taskpane</td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1 (Build 15.0.4855.1000+)</a></td>
+    <td> - BindingEvents<br>
+         - CompressedFile<br>
+         - CustomXmlPart<br>
+         - DocumentEvents<br>
+         - File<br>
+         - HtmlCoercion<br>
+         - ImageCoercion<br>
+         - OoxmlCoercion<br>
+         - TableBindings<br>
+         - TableCoercion<br>
+         - TextBindings<br>
+         - TextFile<br>
+         - Settings<br>
+         - TextCoercion<br>
+         - MatrixCoercion<br>
+         - Matrix Bindings</td>
   </tr>
   <tr>
     <td>Office 2016 for Windows</td>
-    <td>Description</td>
-    <td>Description</td>
-    <td>Description</td> 
+    <td> - Taskpane<br>
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands (Build 16.0.6868.1000+)</a></td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1 (Build 4266.1001+)</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2 (Build 6568.1000+)</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3 (Build 6925.1000+)</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1 (Build 6741.0000+)</a></td>
+    <td> - BindingEvents<br>
+         - CompressedFile<br>
+         - CustomXmlPart<br>
+         - DocumentEvents<br>
+         - File<br>
+         - HtmlCoercion<br>
+         - ImageCoercion<br>
+         - OoxmlCoercion<br>
+         - TableBindings<br>
+         - TableCoercion<br>
+         - TextBindings<br>
+         - TextFile<br>
+         - Settings<br>
+         - TextCoercion<br>
+         - MatrixCoercion<br>
+         - Matrix Bindings
+    </td> 
   </tr>
   <tr>
     <td>Office for iPad</td>
-    <td>Description</td>
-    <td>Description</td>
-    <td>Description</td>
+    <td> - Taskpane</td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1 (Build 1.18+)</a><br>
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2 (Build 1.18+)</a><br>
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3 (Build 1.22+)</a><br>
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1 (Build 1.22+)</a>
+</td>
+    <td> - BindingEvents<br>
+         - CompressedFile<br>
+         - CustomXmlPart<br>
+         - DocumentEvents<br>
+         - File<br>
+         - HtmlCoercion<br>
+         - ImageCoercion<br>
+         - OoxmlCoercion<br>
+         - TableBindings<br>
+         - TableCoercion<br>
+         - TextBindings<br>
+         - TextFile<br>
+         - Settings<br>
+         - TextCoercion<br>
+         - MatrixCoercion<br>
+         - Matrix Bindings
+    </td> 
   </tr>
   <tr>
     <td>Office 2016 for Mac</td>
-    <td>Description</td>
-    <td>Description</td>
-    <td>Description</td>
+    <td> - Taskpane<br>
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands (Build 15.33+)</a></td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1 (Build 15.19+)</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2 (Build 15.19+)</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3 (Build 15.22+)</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1 (Build 15.20+)</a>
+</td>
+    <td> - BindingEvents<br>
+         - CompressedFile<br>
+         - CustomXmlPart<br>
+         - DocumentEvents<br>
+         - File<br>
+         - HtmlCoercion<br>
+         - ImageCoercion<br>
+         - OoxmlCoercion<br>
+         - TableBindings<br>
+         - TableCoercion<br>
+         - TextBindings<br>
+         - TextFile<br>
+         - Settings<br>
+         - TextCoercion<br>
+         - MatrixCoercion<br>
+         - Matrix Bindings
+    </td> 
   </tr>
   <tr>
     <td>Office for iPhone</td>
-    <td>Description</td>
-    <td>Description</td>
-    <td>Description</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
   </tr>
   <tr>
     <td>Office for Android</td>
-    <td>Description</td>
-    <td>Description</td>
-    <td>Description</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
   </tr>
   <tr>
     <td>Office Mobile for Windows 10</td>
-    <td>Description</td>
-    <td>Description</td>
-    <td>Description</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
   </tr>
 </table>
 
