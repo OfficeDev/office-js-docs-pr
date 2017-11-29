@@ -319,3 +319,6 @@
     href: https://dev.office.com/reference/add-ins/openspec
   - name: Office Add-in Manifest
     href: https://dev.office.com/reference/add-ins/manifest/allowsnapshot
+
+- name: Resources
+  href: resources/resources-links-help.md
