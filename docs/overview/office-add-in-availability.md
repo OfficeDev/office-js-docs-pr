@@ -8,7 +8,7 @@ See the following tables to find the Office application and platform that you wa
 If a table cell is empty, that means we're working on it.
 
 ## Excel
-<style> .equal-width td { width: 20%; } </style> <table class="equal-width"> 
+
 <table style="width:80%">
   <tr>
     <th style="width:10%">Platform</th>
@@ -18,16 +18,18 @@ If a table cell is empty, that means we're working on it.
   </tr>
   <tr>
     <td>Office Online</td>
-    <td>- Taskpane<br>
+    <td> - Taskpane<br>
         - Content<br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a>
     </td>
-    <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
+    <td>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
-    <td>- BindingEvents<br>
+    <td>
+        - BindingEvents<br>
         - DocumentEvents<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
@@ -40,9 +42,10 @@ If a table cell is empty, that means we're working on it.
   </tr>
   <tr>
     <td>Office 2013 for Windows</td>
-    <td>- Taskpane<br>
+    <td>
+        - Taskpane<br>
         - Content</td>
-    <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1 (Build 15.0.4855.1000+)</a></td>
+    <td>  - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1 (Build 15.0.4855.1000+)</a></td>
     <td>
         - BindingEvents<br>
         - DocumentEvents<br>
