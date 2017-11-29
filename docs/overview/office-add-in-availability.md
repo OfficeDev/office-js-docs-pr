@@ -11,10 +11,10 @@ If a table cell is empty, that means we're working on it.
 
 <table style="width:80%">
   <tr>
-    <th style="width:20%">Platform</th>
-    <th style="width:20%">Extension points</th> 
-    <th style="width:20%">APIs</th> 
-    <th style="width:20%"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Shared APIs</b></a></th> 
+    <th style="width:15%">Platform</th>
+    <th style="width:15%">Extension points</th> 
+    <th style="width:25%">APIs</th> 
+    <th style="width:25%"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Shared APIs</b></a></th> 
   </tr>
   <tr>
     <td>Office Online</td>
