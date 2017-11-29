@@ -159,6 +159,7 @@ If a table cell is empty, that means we're working on it.
   </tr>
   <tr>
     <td>Office 2013 for Windows</td>
+    <td>  
       - Mail Read<br>
       - Mail Compose<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
@@ -168,10 +169,11 @@ If a table cell is empty, that means we're working on it.
       - Mailbox 1.2<br>
       - Mailbox 1.3<br>
       - Mailbox 1.4</td>
-    <td>Description</td>
+    <td> </td>
   </tr>
   <tr>
     <td>Office 2016 for Windows</td>
+    <td>
       - Mail Read<br>
       - Mail Compose<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands (Build 16.0+)</a></td>
@@ -186,6 +188,7 @@ If a table cell is empty, that means we're working on it.
   </tr>
   <tr>
     <td>Office for iPad</td>
+    <td>  
       - Mail Read<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td>Mailbox 1.4</td>
@@ -193,6 +196,7 @@ If a table cell is empty, that means we're working on it.
   </tr>
   <tr>
     <td>Office 2016 for Mac</td>
+    <td>  
       - Mail Read<br>
       - Mail Compose<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands (Build 15.32+)</a></td>
@@ -207,6 +211,7 @@ If a table cell is empty, that means we're working on it.
   </tr>
   <tr>
     <td>Office for iPhone</td>
+    <td>  
       - Mail Read<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td>Mailbox 1.4</td>
@@ -214,6 +219,7 @@ If a table cell is empty, that means we're working on it.
   </tr>
   <tr>
     <td>Office for Android</td>
+    <td>  
       - Mail Read<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td>Mailbox 1.4</td>
