@@ -140,7 +140,7 @@ If a table cell is empty, that means we're working on it.
     <th>Platform</th>
     <th>Extension points</th> 
     <th>APIs</th> 
-    <th>Shared APIs</th> 
+    <th><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Shared APIs</b></a></th> 
   </tr>
   <tr>
     <td>Office Online</td>
@@ -230,7 +230,8 @@ If a table cell is empty, that means we're working on it.
     <th>Platform</th>
     <th>Extension points</th> 
     <th>APIs</th> 
-    <th>Shared APIs</th> 
+    <th><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Shared APIs</b></a></th> 
+  </tr> 
   </tr>
   <tr>
     <td>Office Online</td>
@@ -380,7 +381,8 @@ If a table cell is empty, that means we're working on it.
     <th>Platform</th>
     <th>Extension points</th> 
     <th>APIs</th> 
-    <th>Shared APIs</th> 
+    <th><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Shared APIs</b></a></th> 
+  </tr> 
   </tr>
   <tr>
     <td>Office Online</td>
@@ -482,7 +484,8 @@ If a table cell is empty, that means we're working on it.
     <th>Platform</th>
     <th>Extension points</th> 
     <th>APIs</th> 
-    <th>Shared APIs</th> 
+    <th><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Shared APIs</b></a></th> 
+  </tr> 
   </tr>
   <tr>
     <td>Office Online</td>
@@ -542,8 +545,6 @@ If a table cell is empty, that means we're working on it.
 </table>
 
 
-> [!NOTE]
-> The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1, WordApi 1.1, and common API requirement sets.
 
 ## Additional resources
 
