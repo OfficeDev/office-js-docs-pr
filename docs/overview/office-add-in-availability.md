@@ -40,19 +40,19 @@ If a table cell is empty, that means we're working on it.
   </tr>
   <tr>
     <td>Office 2013 for Windows</td>
-    <td>Taskpane<br>
-        Content</td>
-    <td><a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1 (Build 15.0.4855.1000+)</a></td>
+    <td>- Taskpane<br>
+        - Content</td>
+    <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1 (Build 15.0.4855.1000+)</a></td>
     <td>
-        BindingEvents<br>
-        DocumentEvents<br>
-        MatrixBindings<br>
-        MatrixCoercion<br>
-        TableBindings<br>
-        TableCoercion<br>
-        TextBindings<br>
-        Settings<br>
-        TextCoercion</td>
+        - BindingEvents<br>
+        - DocumentEvents<br>
+        - MatrixBindings<br>
+        - MatrixCoercion<br>
+        - TableBindings<br>
+        - TableCoercion<br>
+        - TextBindings<br>
+        - Settings<br>
+        - TextCoercion</td>
   </tr>
   <tr>
     <td>Office 2016 for Windows</td>
