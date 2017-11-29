@@ -303,7 +303,7 @@
     - name: Office Store validation policies
       href: https://dev.office.com/officestore/docs/validation-policies
 
-- Reference
+- name: Reference
   items:
   - name: Office JavaScript API
     href: https://dev.office.com/reference/add-ins/javascript-api-for-office
@@ -319,5 +319,3 @@
     href: https://dev.office.com/reference/add-ins/openspec
   - name: Office Add-in Manifest
     href: https://dev.office.com/reference/add-ins/manifest/allowsnapshot
-
-  
