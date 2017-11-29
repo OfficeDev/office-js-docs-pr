@@ -8,7 +8,7 @@ See the following tables to find the Office application and platform that you wa
 If a table cell is empty, that means we're working on it.
 
 ## Excel
-
+<style> .equal-width td { width: 20%; } </style> <table class="equal-width"> 
 <table style="width:80%">
   <tr>
     <th style="width:10%">Platform</th>
