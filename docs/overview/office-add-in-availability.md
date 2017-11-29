@@ -486,51 +486,58 @@ If a table cell is empty, that means we're working on it.
   </tr>
   <tr>
     <td>Office Online</td>
-    <td>Description</td>
-    <td>Description</td>
-    <td>Description</td>
+    <td> - Content<br>
+         - Taskpane<br>
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/onenote-api-requirement-sets">OneNoteApi 1.1</a><br>
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td> - DocumentEvents<br>
+         - Settings<br>
+         - TextCoercion<br>
+         - HtmlCoercion<br>
+         - ImageCoercion</td>
   </tr>
   <tr>
     <td>Office 2013 for Windows</td>
-    <td>Description</td>
-    <td>Description</td>
-    <td>Description</td>
-  </tr>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+  </tr> 
   <tr>
     <td>Office 2016 for Windows</td>
-    <td>Description</td>
-    <td>Description</td>
-    <td>Description</td> 
+    <td> </td>
+    <td> </td>
+    <td> </td> 
   </tr>
   <tr>
     <td>Office for iPad</td>
-    <td>Description</td>
-    <td>Description</td>
-    <td>Description</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
   </tr>
   <tr>
     <td>Office 2016 for Mac</td>
-    <td>Description</td>
-    <td>Description</td>
-    <td>Description</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
   </tr>
   <tr>
     <td>Office for iPhone</td>
-    <td>Description</td>
-    <td>Description</td>
-    <td>Description</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
   </tr>
   <tr>
     <td>Office for Android</td>
-    <td>Description</td>
-    <td>Description</td>
-    <td>Description</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
   </tr>
   <tr>
     <td>Office Mobile for Windows 10</td>
-    <td>Description</td>
-    <td>Description</td>
-    <td>Description</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
   </tr>
 </table>
 
