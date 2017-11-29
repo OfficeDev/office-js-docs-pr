@@ -208,6 +208,58 @@
     - name: Excel JavaScript API reference
       href: https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview
 
+  - name: Word add-in development
+    href: word/word-add-ins-programming-overview.md
+    items:
+    - name: Build your first Word add-in
+      href: word/word-add-ins.md
+    - name: Create better add-ins for Word with Office Open XML
+      href: word/create-better-add-ins-for-word-with-office-open-xml.md
+    - name: Dictionary task pane add-ins
+      href: word/dictionary-task-pane-add-ins.md
+    - name: Get the whole document from an add-in
+      href: word/get-the-whole-document-from-an-add-in-for-word.md
+    - name: Read and write data to the active selection
+      href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
+    - name: Bind to regions in a document or spreadsheet
+      href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
+    - name: Word JavaScript API reference
+      href: https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview
+
+  - name: Outlook add-in development
+    href: https://docs.microsoft.com/en-us/outlook/add-ins/
+
+  - name: PowerPoint add-in development
+    href: powerpoint/powerpoint-add-ins.md
+    items:
+    - name: Build your first PowerPoint add-in
+      href: powerpoint/powerpoint-add-ins-get-started.md
+    - name: Use document themes in your PowerPoint add-ins
+      href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
+    - name: Get the whole document from an add-in
+      href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
+
+  - name: OneNote add-in development
+    href: onenote/onenote-add-ins-programming-overview.md
+    items:
+    - name: Build your first OneNote add-in
+      href: onenote/onenote-add-ins-getting-started.md
+    - name: Work with OneNote page content
+      href: onenote/onenote-add-ins-page-content.md
+    - name: OneNote JavaScript API reference
+      href: https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference
+
+  - name: Project add-in development
+    href: project/project-add-ins.md
+    items:
+    - name: Build your first Project add-in
+      href: project/project-add-ins-get-started.md
+    - name: Create a Project add-in that uses REST with an on-premises OData service
+      href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
+    - name: Create your first task pane add-in for Project by using a text editor
+      href: project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md
+
+
 - name: Test and debug
   items:
   - name: Sideload Office Add-ins for testing
@@ -245,50 +297,5 @@
   - name: Office Store validation policies
     href: https://dev.office.com/officestore/docs/validation-policies
 
-- name: Word
-  href: word/word-add-ins-programming-overview.md
-  items:
-  - name: Build your first Word add-in
-    href: word/word-add-ins.md
-  - name: Create better add-ins for Word with Office Open XML
-    href: word/create-better-add-ins-for-word-with-office-open-xml.md
-  - name: Dictionary task pane add-ins
-    href: word/dictionary-task-pane-add-ins.md
-  - name: Get the whole document from an add-in for PowerPoint or Word
-    href: word/get-the-whole-document-from-an-add-in-for-word.md
-  - name: Read and write data to the active selection in a document or spreadsheet
-    href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
-  - name: Bind to regions in a document or spreadsheet
-    href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
-
-- name: Outlook
-  href: https://docs.microsoft.com/en-us/outlook/add-ins/
-- name: PowerPoint
-  href: powerpoint/powerpoint-add-ins.md
-  items:
-  - name: Use document themes in your PowerPoint add-ins
-    href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
-  - name: Get the whole document from an add-in for PowerPoint or Word
-    href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
-- name: OneNote
-  items:
-  - name: OneNote JavaScript API programming overview
-    href: onenote/onenote-add-ins-programming-overview.md
-  - name: Build your first OneNote add-in
-    href: onenote/onenote-add-ins-getting-started.md
-  - name: Work with OneNote page content
-    href: onenote/onenote-add-ins-page-content.md
-- name: Project
-  items:
-  - name: Project add-ins
-    href: project/project-add-ins.md
-  - name: Create a Project add-in that uses REST with an on-premises OData service
-    href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
-  - name: Create your first task pane add-in for Project by using a text editor
-    href: project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md
-- name: Access
-  items:
-  - name: Access web app add-ins
-    href: access/access-web-app-add-ins.md
 - name: JavaScript API reference
   href: https://dev.office.com/reference/add-ins/javascript-api-for-office
