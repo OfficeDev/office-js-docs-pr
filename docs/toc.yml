@@ -54,7 +54,7 @@
 
 - name: How-to guides
   items:
-  
+
   - name: Design the User Interface
     href: design/add-in-design.md
     items:
@@ -173,6 +173,41 @@
     - name: Convert JavaScript to TypeScript
       href: develop/convert-javascript-to-typescript.md
 
+  - name: Excel add-in development
+    href: excel/excel-add-ins-overview.md
+    items:
+    - name: Build your first Excel add-in
+      href: excel/excel-add-ins-get-started-overview.md
+      items:
+      - name: Use React
+        href: excel/excel-add-ins-get-started-react.md
+      - name: Use Angular
+        href: excel/excel-add-ins-get-started-angular.md
+      - name: Use jQuery
+        href: excel/excel-add-ins-get-started-jquery.md
+    - name: Core concepts
+      href: excel/excel-add-ins-core-concepts.md
+      items:
+      - name: Custom functions
+        href: excel/custom-functions-overview.md
+      - name: Charts
+        href: excel/excel-add-ins-charts.md
+      - name: Ranges
+        href: excel/excel-add-ins-ranges.md
+      - name: Tables
+        href: excel/excel-add-ins-tables.md
+      - name: Worksheets
+        href: excel/excel-add-ins-worksheets.md
+    - name: Advanced concepts
+      href: excel/excel-add-ins-advanced-concepts.md
+      items:
+      - name: Coauthoring in Excel add-ins
+        href: excel/co-authoring-in-excel-add-ins.md
+      - name: Error handling
+        href: excel/excel-add-ins-error-handling.md
+    - name: Excel JavaScript API reference
+      href: https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview
+
 - name: Test and debug
   items:
   - name: Sideload Office Add-ins for testing
@@ -193,6 +228,7 @@
     href: testing/testing-and-troubleshooting.md
   - name: Validate and troubleshoot issues with your manifest
     href: testing/troubleshoot-manifest.md
+
 - name: Publish
   href: publish/publish.md
   items:
@@ -208,6 +244,7 @@
     href: https://dev.office.com/officestore/docs/submit-add-ins-and-web-apps-to-the-office-store
   - name: Office Store validation policies
     href: https://dev.office.com/officestore/docs/validation-policies
+
 - name: Word
   href: word/word-add-ins-programming-overview.md
   items:
@@ -223,42 +260,7 @@
     href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
   - name: Bind to regions in a document or spreadsheet
     href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
-- name: Excel
-  href: excel/excel-add-ins-overview.md
-  items:
-  - name: Quickstart
-    href: excel/excel-add-ins-get-started-overview.md
-    items:
-    - name: Use React
-      href: excel/excel-add-ins-get-started-react.md
-    - name: Use Angular
-      href: excel/excel-add-ins-get-started-angular.md
-    - name: Use jQuery
-      href: excel/excel-add-ins-get-started-jquery.md
-  - name: Core concepts
-    href: excel/excel-add-ins-core-concepts.md
-    items:
-    - name: Extend Excel functionality
-      href: excel/excel-add-ins-extend-excel.md
-    - name: Custom functions
-      href: excel/custom-functions-overview.md
-    - name: Charts
-      href: excel/excel-add-ins-charts.md
-    - name: Ranges
-      href: excel/excel-add-ins-ranges.md
-    - name: Tables
-      href: excel/excel-add-ins-tables.md
-    - name: Worksheets
-      href: excel/excel-add-ins-worksheets.md
-  - name: Advanced concepts
-    href: excel/excel-add-ins-advanced-concepts.md
-    items:
-    - name: Coauthoring in Excel add-ins
-      href: excel/co-authoring-in-excel-add-ins.md
-    - name: Error handling
-      href: excel/excel-add-ins-error-handling.md
-  - name: Excel JavaScript API reference
-    href: https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview
+
 - name: Outlook
   href: https://docs.microsoft.com/en-us/outlook/add-ins/
 - name: PowerPoint
