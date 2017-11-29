@@ -145,85 +145,85 @@ If a table cell is empty, that means we're working on it.
   <tr>
     <td>Office Online</td>
     <td>
-    - Mail Read<br>
-    - Mail Compose<br>
-    - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
+      - Mail Read<br>
+      - Mail Compose<br>
+      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td>
-    - Mailbox 1.0<br>
-    - Mailbox 1.1<br>
-    - Mailbox 1.2<br>
-    - Mailbox 1.3<br>
-    - Mailbox 1.4<br>
-    - Mailbox 1.5</td>
+      - Mailbox 1.0<br>
+      - Mailbox 1.1<br>
+      - Mailbox 1.2<br>
+      - Mailbox 1.3<br>
+      - Mailbox 1.4<br>
+      - Mailbox 1.5</td>
     <td> </td>
   </tr>
   <tr>
     <td>Office 2013 for Windows</td>
-    - Mail Read<br>
-    - Mail Compose<br>
-    - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
+      - Mail Read<br>
+      - Mail Compose<br>
+      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td>
-    - Mailbox 1.0<br>
-    - Mailbox 1.1<br>
-    - Mailbox 1.2<br>
-    - Mailbox 1.3<br>
-    - Mailbox 1.4</td>
+      - Mailbox 1.0<br>
+      - Mailbox 1.1<br>
+      - Mailbox 1.2<br>
+      - Mailbox 1.3<br>
+      - Mailbox 1.4</td>
     <td>Description</td>
   </tr>
   <tr>
     <td>Office 2016 for Windows</td>
-    - Mail Read<br>
-    - Mail Compose<br>
-    - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands (Build 16.0+)</a></td>
+      - Mail Read<br>
+      - Mail Compose<br>
+      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands (Build 16.0+)</a></td>
     <td>    
-    - Mailbox 1.0<br>
-    - Mailbox 1.1<br>
-    - Mailbox 1.2<br>
-    - Mailbox 1.3<br>
-    - Mailbox 1.4<br>
-    - Mailbox 1.5</td></td>
+      - Mailbox 1.0<br>
+      - Mailbox 1.1<br>
+      - Mailbox 1.2<br>
+      - Mailbox 1.3<br>
+      - Mailbox 1.4<br>
+      - Mailbox 1.5</td></td>
     <td> </td> 
   </tr>
   <tr>
     <td>Office for iPad</td>
-    - Mail Read<br>
-    - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
+      - Mail Read<br>
+      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td>Mailbox 1.4</td>
     <td> </td>
   </tr>
   <tr>
     <td>Office 2016 for Mac</td>
-    - Mail Read<br>
-    - Mail Compose<br>
-    - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands (Build 15.32+)</a></td>
+      - Mail Read<br>
+      - Mail Compose<br>
+      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands (Build 15.32+)</a></td>
     <td>
-    - Mailbox 1.0<br>
-    - Mailbox 1.1<br>
-    - Mailbox 1.2<br>
-    - Mailbox 1.3<br>
-    - Mailbox 1.4<br>
-    - Mailbox 1.5</td>
+      - Mailbox 1.0<br>
+      - Mailbox 1.1<br>
+      - Mailbox 1.2<br>
+      - Mailbox 1.3<br>
+      - Mailbox 1.4<br>
+      - Mailbox 1.5</td>
     <td> </td>
   </tr>
   <tr>
     <td>Office for iPhone</td>
-    - Mail Read<br>
-    - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
+      - Mail Read<br>
+      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td>Mailbox 1.4</td>
     <td> </td>
   </tr>
   <tr>
     <td>Office for Android</td>
-    - Mail Read<br>
-    - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
+      - Mail Read<br>
+      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td>Mailbox 1.4</td>
     <td> </td>
   </tr>
   <tr>
     <td>Office Mobile for Windows 10</td>
-    <td>Description</td>
-    <td>Description</td>
-    <td>Description</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
   </tr>
 </table>
 
