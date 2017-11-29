@@ -11,10 +11,10 @@ If a table cell is empty, that means we're working on it.
 
 <table style="width:80%">
   <tr>
-    <th style="width:15%">Platform</th>
+    <th style="width:10%">Platform</th>
     <th style="width:15%">Extension points</th> 
     <th style="width:25%">APIs</th> 
-    <th style="width:25%"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Shared APIs</b></a></th> 
+    <th style="width:30%"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Shared APIs</b></a></th> 
   </tr>
   <tr>
     <td>Office Online</td>
@@ -56,19 +56,35 @@ If a table cell is empty, that means we're working on it.
   </tr>
   <tr>
     <td>Office 2016 for Windows</td>
-    <td>Description</td>
-    <td>Description</td>
-    <td>Description</td> 
+    <td>- Taskpane<br>
+        - Content</td>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands (Build 16.0.6868.1000+)</a>
+    <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1 (Build 4266.1001+)</a><br>
+- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2 (Build 6741.2088+)</a><br>
+- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3 (Build 7369.2055+)</a><br>
+- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4 (Build 7870.2024+)</a><br>
+- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1 (Build 6741.0000+)</a></td>
+    <td>- BindingEvents<br>
+        - DocumentEvents<br>
+        - MatrixBindings<br>
+        - MatrixCoercion<br>
+        - TableBindings<br>
+        - TableCoercion<br>
+        - TextBindings<br>
+        - Settings<br>
+        - TextCoercion</td> 
   </tr>
   <tr>
     <td>Office for iPad</td>
-    <td>Description</td>
+    <td>- Taskpane<br>
+        - Content</td>
     <td>Description</td>
     <td>Description</td>
   </tr>
   <tr>
     <td>Office 2016 for Mac</td>
-    <td>Description</td>
+    <td>- Taskpane<br>
+        - Content</td>
     <td>Description</td>
     <td>Description</td>
   </tr>
