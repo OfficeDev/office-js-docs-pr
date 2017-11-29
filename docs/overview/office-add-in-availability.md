@@ -144,12 +144,10 @@ If a table cell is empty, that means we're working on it.
   </tr>
   <tr>
     <td>Office Online</td>
-    <td>
-      - Mail Read<br>
+    <td> - Mail Read<br>
       - Mail Compose<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
-    <td>
-      - Mailbox 1.0<br>
+    <td> - Mailbox 1.0<br>
       - Mailbox 1.1<br>
       - Mailbox 1.2<br>
       - Mailbox 1.3<br>
@@ -159,12 +157,10 @@ If a table cell is empty, that means we're working on it.
   </tr>
   <tr>
     <td>Office 2013 for Windows</td>
-    <td>  
-      - Mail Read<br>
+    <td> - Mail Read<br>
       - Mail Compose<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
-    <td>
-      - Mailbox 1.0<br>
+    <td> - Mailbox 1.0<br>
       - Mailbox 1.1<br>
       - Mailbox 1.2<br>
       - Mailbox 1.3<br>
@@ -173,12 +169,11 @@ If a table cell is empty, that means we're working on it.
   </tr>
   <tr>
     <td>Office 2016 for Windows</td>
-    <td>
-      - Mail Read<br>
+    <td> - Mail Read<br>
       - Mail Compose<br>
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands (Build 16.0+)</a></td>
-    <td>    
-      - Mailbox 1.0<br>
+      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands (Build 16.0+)</a><br>
+      - Modules</td>
+    <td> - Mailbox 1.0<br>
       - Mailbox 1.1<br>
       - Mailbox 1.2<br>
       - Mailbox 1.3<br>
@@ -188,20 +183,17 @@ If a table cell is empty, that means we're working on it.
   </tr>
   <tr>
     <td>Office for iPad</td>
-    <td>  
-      - Mail Read<br>
+    <td> - Mail Read<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
-    <td>Mailbox 1.4</td>
+    <td> - Mailbox 1.4</td>
     <td> </td>
   </tr>
   <tr>
     <td>Office 2016 for Mac</td>
-    <td>  
-      - Mail Read<br>
+    <td> - Mail Read<br>
       - Mail Compose<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands (Build 15.32+)</a></td>
-    <td>
-      - Mailbox 1.0<br>
+    <td> - Mailbox 1.0<br>
       - Mailbox 1.1<br>
       - Mailbox 1.2<br>
       - Mailbox 1.3<br>
@@ -211,10 +203,9 @@ If a table cell is empty, that means we're working on it.
   </tr>
   <tr>
     <td>Office for iPhone</td>
-    <td>  
-      - Mail Read<br>
+    <td> - Mail Read<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
-    <td>Mailbox 1.4</td>
+    <td> - Mailbox 1.4</td>
     <td> </td>
   </tr>
   <tr>
@@ -222,7 +213,7 @@ If a table cell is empty, that means we're working on it.
     <td>  
       - Mail Read<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
-    <td>Mailbox 1.4</td>
+    <td> - Mailbox 1.4</td>
     <td> </td>
   </tr>
   <tr>
