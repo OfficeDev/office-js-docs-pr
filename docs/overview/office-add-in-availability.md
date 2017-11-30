@@ -1,11 +1,15 @@
+---
+title: Office Add-in host and platform availability
+description: Supported requirement sets for Excel, Word, Outlook, PowerPoint, and OneNote.
+ms.date: 11/30/2017 
+---
+
 # Office Add-in host and platform availability
 
-See the following tables to find the Office application and platform that you want to work with to learn about the [supported requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets). 
+To work as expected, your Office Add-in might depend on a specific Office host, a requirement set, an API member, or a version of the API. The following tables contain the available platform, extension points, API requirement sets, and shared APIS that are currently supported for each Office application. For requirement sets for Project or Access, see [Office common requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets). If a table cell is empty, that means we’re working on it. 
 
 > [!NOTE]
 > The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1, WordApi 1.1, and common API requirement sets.
-
-If a table cell is empty, that means we're working on it.
 
 ## Excel
 
@@ -13,7 +17,7 @@ If a table cell is empty, that means we're working on it.
   <tr>
     <th style="width:10%">Platform</th>
     <th style="width:10%">Extension points</th> 
-    <th style="width:20%">APIs</th> 
+    <th style="width:20%">API requirement sets</th> 
     <th style="width:40%"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Shared APIs</b></a></th> 
   </tr>
   <tr>
@@ -45,7 +49,7 @@ If a table cell is empty, that means we're working on it.
     <td>
         - Taskpane<br>
         - Content</td>
-    <td>  - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1 (Build 15.0.4855.1000+)</a></td>
+    <td>  - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1<br> (Build 15.0.4855.1000+)</a></td>
     <td>
         - BindingEvents<br>
         - DocumentEvents<br>
@@ -139,7 +143,7 @@ If a table cell is empty, that means we're working on it.
   <tr>
     <th>Platform</th>
     <th>Extension points</th> 
-    <th>APIs</th> 
+    <th>API requirement sets</th> 
     <th><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Shared APIs</b></a></th> 
   </tr>
   <tr>
@@ -229,7 +233,7 @@ If a table cell is empty, that means we're working on it.
   <tr>
     <th>Platform</th>
     <th>Extension points</th> 
-    <th>APIs</th> 
+    <th>API requirement sets</th> 
     <th><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Shared APIs</b></a></th> 
   </tr> 
   </tr>
@@ -257,7 +261,7 @@ If a table cell is empty, that means we're working on it.
   <tr>
     <td>Office 2013 for Windows</td>
     <td> - Taskpane</td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1 (Build 15.0.4855.1000+)</a></td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1<br> (Build 15.0.4855.1000+)</a></td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
          - CustomXmlPart<br>
@@ -380,7 +384,7 @@ If a table cell is empty, that means we're working on it.
   <tr>
     <th>Platform</th>
     <th>Extension points</th> 
-    <th>APIs</th> 
+    <th>API requirement sets</th> 
     <th><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Shared APIs</b></a></th> 
   </tr> 
   </tr>
@@ -403,7 +407,7 @@ If a table cell is empty, that means we're working on it.
     <td> - Content<br>
          - Taskpane<br>
     </td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1 (Build 15.0.4855.1000+)</a>
+    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1<br> (Build 15.0.4855.1000+)</a>
 </td>
     <td> - ActiveView<br>
          - CompressedFile<br>
@@ -418,7 +422,7 @@ If a table cell is empty, that means we're working on it.
     <td> - Content<br>
          - Taskpane<br>
          - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands (Build 16.0.6868.1000+)</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1 (Build 6741.0000+)</a></td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1<br> (Build 6741.0000+)</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
@@ -432,7 +436,7 @@ If a table cell is empty, that means we're working on it.
     <td>Office for iPad</td>
     <td> - Content<br>
          - Taskpane</td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1 (Build 1.22+)</a></td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1<br> (Build 1.22+)</a></td>
      <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
@@ -483,7 +487,7 @@ If a table cell is empty, that means we're working on it.
   <tr>
     <th>Platform</th>
     <th>Extension points</th> 
-    <th>APIs</th> 
+    <th>API requirement sets</th> 
     <th><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Shared APIs</b></a></th> 
   </tr> 
   </tr>
@@ -549,6 +553,7 @@ If a table cell is empty, that means we're working on it.
 ## Additional resources
 
 - [Office Add-ins platform overview](office-add-ins.md)
-- [Office common API requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets)
+- [Common API requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets)
+- [Add-in Commands requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets)
 - [JavaScript API for Office reference](https://dev.office.com/reference/add-ins/javascript-api-for-office)
 
