@@ -31,12 +31,12 @@
 
 - name: Tutorials
   items:
-  - name: Use Visual Studio to create an Office Add-in
+  - name: Create and debug Office Add-ins in Visual Studio
     href: tutorials/create-and-debug-office-add-ins-in-visual-studio.md
     items:
     - name: Get JavaScript IntelliSense in Visual Studio
       href: tutorials/get-javascript-intellisense-in-visual-studio.md
-  - name: Use any editor to create an Office Add-in
+  - name: Create an Office Add-in using any editor
     href: tutorials/create-an-office-add-in-using-any-editor.md
 
 - name: Concepts
