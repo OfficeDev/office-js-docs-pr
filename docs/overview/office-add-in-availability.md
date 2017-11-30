@@ -175,7 +175,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Office 2016 for Windows</td>
     <td> - Mail Read<br>
       - Mail Compose<br>
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands<br> (Build 16.0+)</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands (Build 16.0+)</a><br>
       - Modules</td>
     <td> - Mailbox 1.0<br>
       - Mailbox 1.1<br>
@@ -196,7 +196,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Office 2016 for Mac</td>
     <td> - Mail Read<br>
       - Mail Compose<br>
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands<br> (Build 15.32+)</a></td>
+      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands (Build 15.32+)</a></td>
     <td> - Mailbox 1.0<br>
       - Mailbox 1.1<br>
       - Mailbox 1.2<br>
