@@ -115,7 +115,7 @@
       - name: Toggle
         href: design/toggle.md
 
-  - name: Develop an add-in
+  - name: Develop
     items:
     - name: Install the latest Office version
       href: develop/install-latest-office-version.md
