@@ -10,7 +10,7 @@
 
 - name: Quickstarts
   items:
-  - name: Create add-in - Excel
+  - name: Create Excel add-in
     items:
     - name: Use React
       href: quickstarts/excel-quickstart-react.md
@@ -18,15 +18,15 @@
       href: quickstarts/excel-quickstart-angular.md
     - name: Use jQuery
       href: quickstarts/excel-quickstart-jquery.md
-  - name: Create add-in - Word
+  - name: Create Word add-in
     href: quickstarts/word-quickstart.md
-  - name: Create add-in - OneNote
+  - name: Create OneNote add-in
     href: quickstarts/onenote-quickstart.md
-  - name: Create add-in - Outlook
+  - name: Create Outlook add-in
     href: https://docs.microsoft.com/en-us/outlook/add-ins/quick-start
-  - name: Create add-in - PowerPoint
+  - name: Create PowerPoint add-in
     href: quickstarts/powerpoint-quickstart.md
-  - name: Create add-in - Project
+  - name: Create Project add-in
     href: quickstarts/project-quickstart.md
 
 - name: Tutorials
