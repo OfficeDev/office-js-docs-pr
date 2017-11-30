@@ -65,7 +65,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Office 2016 for Windows</td>
     <td>- Taskpane<br>
         - Content<br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands (Build 16.0.6868.1000+)</a></td>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands<br> (Build 16.0.6868.1000+)</a></td>
     <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1 (Build 4266.1001+)</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2 (Build 6741.2088+)</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3 (Build 7369.2055+)</a><br>
@@ -282,7 +282,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   <tr>
     <td>Office 2016 for Windows</td>
     <td> - Taskpane<br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands (Build 16.0.6868.1000+)</a></td>
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands<br> (Build 16.0.6868.1000+)</a></td>
     <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1 (Build 4266.1001+)</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2 (Build 6568.1000+)</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3 (Build 6925.1000+)</a><br>
@@ -421,7 +421,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td>Office 2016 for Windows</td>
     <td> - Content<br>
          - Taskpane<br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands (Build 16.0.6868.1000+)</a></td>
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands<br> (Build 16.0.6868.1000+)</a></td>
     <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1<br> (Build 6741.0000+)</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
