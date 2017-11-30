@@ -10,7 +10,7 @@
 
 - name: Quickstarts
   items:
-  - name: Excel add-in
+  - name: Create add-in - Excel
     items:
     - name: Use React
       href: quickstarts/excel-quickstart-react.md
@@ -18,15 +18,15 @@
       href: quickstarts/excel-quickstart-angular.md
     - name: Use jQuery
       href: quickstarts/excel-quickstart-jquery.md
-  - name: Word add-in
+  - name: Create add-in - Word
     href: quickstarts/word-quickstart.md
-  - name: OneNote add-in
+  - name: Create add-in - OneNote
     href: quickstarts/onenote-quickstart.md
-  - name: Outlook add-in
+  - name: Create add-in - Outlook
     href: https://docs.microsoft.com/en-us/outlook/add-ins/quick-start
-  - name: PowerPoint add-in
+  - name: Create add-in - PowerPoint
     href: quickstarts/powerpoint-quickstart.md
-  - name: Project add-in
+  - name: Create add-in - Project
     href: quickstarts/project-quickstart.md
 
 - name: Tutorials
@@ -305,6 +305,8 @@
 
 - name: Reference
   items:
+  - name: Office Add-in Manifest
+    href: https://dev.office.com/reference/add-ins/manifest/allowsnapshot
   - name: Office JavaScript API
     href: https://dev.office.com/reference/add-ins/javascript-api-for-office
   - name: Excel JavaScript API
@@ -317,8 +319,6 @@
     href: https://dev.office.com/reference/add-ins/outlook/tutorial-api-requirement-sets
   - name: Open API specifications
     href: https://dev.office.com/reference/add-ins/openspec
-  - name: Office Add-in Manifest
-    href: https://dev.office.com/reference/add-ins/manifest/allowsnapshot
 
 - name: Resources
   href: resources/resources-links-help.md
