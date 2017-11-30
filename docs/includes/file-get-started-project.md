@@ -209,4 +209,7 @@ Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. How
 
 ## Next steps
 
-Congratulations, you've successfully created a Project add-in! Next, learn more about the capabilities of a Project add-in and explore common scenarios in [Project add-ins](../project/project-add-ins.md).
+Congratulations, you've successfully created a Project add-in! Next, learn more about the capabilities of a Project add-in and explore common scenarios.
+
+> [!div class="nextstepaction"]
+> [Project add-ins](../project/project-add-ins.md)

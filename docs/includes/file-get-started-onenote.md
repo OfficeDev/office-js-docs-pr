@@ -132,6 +132,13 @@ You can edit the add-in files using any text editor or IDE. If you haven't tried
 
 - Task pane add-ins can be opened from anywhere, but content add-ins can only be inserted inside regular page content (i.e. not in titles, images, iFrames, etc.). 
 
+## Next steps
+
+Congratulations, you've successfully created a OneNote add-in! Next, learn more about the core concepts of building OneNote add-ins.
+
+> [!div class="nextstepaction"]
+> [OneNote JavaScript API programming overview](../onenote/onenote-add-ins-programming-overview.md)
+
 ## Additional resources
 
 - [OneNote JavaScript API programming overview](../onenote/onenote-add-ins-programming-overview.md)
