@@ -173,7 +173,7 @@
     - name: Convert JavaScript to TypeScript
       href: develop/convert-javascript-to-typescript.md
 
-  - name: Excel add-in development
+  - name: Excel add-ins
     href: excel/excel-add-ins-overview.md
     items:
     - name: Build your first Excel add-in
@@ -208,7 +208,7 @@
     - name: Excel JavaScript API reference
       href: https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview
 
-  - name: Word add-in development
+  - name: Word add-ins
     href: word/word-add-ins-programming-overview.md
     items:
     - name: Build your first Word add-in
@@ -226,10 +226,10 @@
     - name: Word JavaScript API reference
       href: https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview
 
-  - name: Outlook add-in development
+  - name: Outlook add-ins
     href: https://docs.microsoft.com/en-us/outlook/add-ins/
 
-  - name: PowerPoint add-in development
+  - name: PowerPoint add-ins
     href: powerpoint/powerpoint-add-ins.md
     items:
     - name: Build your first PowerPoint add-in
@@ -239,7 +239,7 @@
     - name: Get the whole document from an add-in
       href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
 
-  - name: OneNote add-in development
+  - name: OneNote add-ins
     href: onenote/onenote-add-ins-programming-overview.md
     items:
     - name: Build your first OneNote add-in
@@ -249,7 +249,7 @@
     - name: OneNote JavaScript API reference
       href: https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference
 
-  - name: Project add-in development
+  - name: Project add-ins
     href: project/project-add-ins.md
     items:
     - name: Build your first Project add-in
