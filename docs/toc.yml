@@ -221,7 +221,7 @@
       href: word/get-the-whole-document-from-an-add-in-for-word.md
     - name: Read and write data to the active selection
       href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
-    - name: Bind to regions in a document or spreadsheet
+    - name: Bind to regions in a document
       href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
     - name: Word JavaScript API reference
       href: https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview
