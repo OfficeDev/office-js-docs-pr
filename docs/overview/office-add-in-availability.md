@@ -410,7 +410,7 @@ If a table cell contains an asterisk, that means we’re working on it. For requ
     <td> - Content<br>
          - Taskpane<br>
          - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands<br> (Build 15.33+)</a></td>
-    <td> </td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1<br> (Build 15.20+)</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
