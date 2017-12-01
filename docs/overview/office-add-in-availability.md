@@ -8,7 +8,7 @@ ms.date: 11/30/2017
 
 To work as expected, your Office Add-in might depend on a specific Office host, a requirement set, an API member, or a version of the API. The following tables contain the available platform, extension points, API requirement sets, and common API requirement sets that are currently supported for each Office application. 
 
-If a table cell contains an asterisk, that means we’re working on it. For requirement sets for Project or Access, see [Office common requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets).  
+If a table cell contains an asterisk ( * ), that means we’re working on it. For requirement sets for Project or Access, see [Office common requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets).  
 
 > [!NOTE]
 > The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1, WordApi 1.1, and common API requirement sets.
@@ -143,7 +143,7 @@ If a table cell contains an asterisk, that means we’re working on it. For requ
       - Mailbox 1.3<br>
       - Mailbox 1.4<br>
       - Mailbox 1.5</td>
-    <td> </td>
+    <td> * </td>
   </tr>
   <tr>
     <td>Office 2013 for Windows</td>
@@ -155,7 +155,7 @@ If a table cell contains an asterisk, that means we’re working on it. For requ
       - Mailbox 1.2<br>
       - Mailbox 1.3<br>
       - Mailbox 1.4</td>
-    <td> </td>
+    <td> * </td>
   </tr>
   <tr>
     <td>Office 2016 for Windows</td>
@@ -169,14 +169,14 @@ If a table cell contains an asterisk, that means we’re working on it. For requ
       - Mailbox 1.3<br>
       - Mailbox 1.4<br>
       - Mailbox 1.5</td></td>
-    <td> </td> 
+    <td> * </td> 
   </tr>
   <tr>
     <td>Office for iOS</td>
     <td> - Mail Read<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - Mailbox 1.4</td>
-    <td> </td>
+    <td> * </td>
   </tr>
   <tr>
     <td>Office 2016 for Mac</td>
@@ -189,14 +189,14 @@ If a table cell contains an asterisk, that means we’re working on it. For requ
       - Mailbox 1.3<br>
       - Mailbox 1.4<br>
       - Mailbox 1.5</td>
-    <td> </td>
+    <td> * </td>
   </tr>
   <tr>
     <td>Office for Android</td>
     <td> - Mail Read<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - Mailbox 1.4</td>
-    <td> </td>
+    <td> * </td>
   </tr>
 </table>
 
@@ -449,27 +449,27 @@ If a table cell contains an asterisk, that means we’re working on it. For requ
   </tr>
   <tr>
     <td>Office 2013 for Windows</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
+    <td> * </td>
+    <td> * </td>
+    <td> * </td>
   </tr> 
   <tr>
     <td>Office 2016 for Windows</td>
-    <td> </td>
-    <td> </td>
-    <td> </td> 
+    <td> * </td>
+    <td> * </td>
+    <td> * </td> 
   </tr>
   <tr>
     <td>Office for iOS</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
+    <td> * </td>
+    <td> * </td>
+    <td> * </td>
   </tr>
   <tr>
     <td>Office 2016 for Mac</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
+    <td> * </td>
+    <td> * </td>
+    <td> * </td>
   </tr>
 </table>
 
