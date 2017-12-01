@@ -6,7 +6,9 @@ ms.date: 11/30/2017
 
 # Office Add-in host and platform availability
 
-To work as expected, your Office Add-in might depend on a specific Office host, a requirement set, an API member, or a version of the API. The following tables contain the available platform, extension points, API requirement sets, and shared APIS that are currently supported for each Office application. For requirement sets for Project or Access, see [Office common requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets). If a table cell is empty, that means we’re working on it. 
+To work as expected, your Office Add-in might depend on a specific Office host, a requirement set, an API member, or a version of the API. The following tables contain the available platform, extension points, API requirement sets, and common API requirement sets that are currently supported for each Office application. 
+
+If a table cell contains an asterisk, that means we’re working on it. For requirement sets for Project or Access, see [Office common requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets).  
 
 > [!NOTE]
 > The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1, WordApi 1.1, and common API requirement sets.
@@ -18,7 +20,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <th style="width:10%">Platform</th>
     <th style="width:10%">Extension points</th> 
     <th style="width:20%">API requirement sets</th> 
-    <th style="width:40%"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Shared APIs</b></a></th> 
+    <th style="width:40%"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th> 
   </tr>
   <tr>
     <td>Office Online</td>
@@ -82,7 +84,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - TextCoercion</td> 
   </tr>
   <tr>
-    <td>Office for iPad</td>
+    <td>Office for iOS</td>
     <td>- Taskpane<br>
         - Content</td>
     <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1 (Build 1.19+)</a><br>
@@ -117,25 +119,9 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - TextBindings<br>
         - TextCoercion</td>
   </tr>
-  <tr>
-    <td>Office for iPhone</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr>
-    <td>Office for Android</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr>
-    <td>Office Mobile for Windows 10</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-  </tr>
 </table>
+
+<br/>
 
 ## Outlook
 
@@ -144,7 +130,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <th>Platform</th>
     <th>Extension points</th> 
     <th>API requirement sets</th> 
-    <th><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Shared APIs</b></a></th> 
+    <th><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th> 
   </tr>
   <tr>
     <td>Office Online</td>
@@ -186,7 +172,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td> </td> 
   </tr>
   <tr>
-    <td>Office for iPad</td>
+    <td>Office for iOS</td>
     <td> - Mail Read<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - Mailbox 1.4</td>
@@ -206,26 +192,15 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td> </td>
   </tr>
   <tr>
-    <td>Office for iPhone</td>
-    <td> - Mail Read<br>
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
-    <td> - Mailbox 1.4</td>
-    <td> </td>
-  </tr>
-  <tr>
     <td>Office for Android</td>
     <td> - Mail Read<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - Mailbox 1.4</td>
     <td> </td>
   </tr>
-  <tr>
-    <td>Office Mobile for Windows 10</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-  </tr>
 </table>
+
+<br/>
 
 ## Word
 
@@ -234,7 +209,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <th>Platform</th>
     <th>Extension points</th> 
     <th>API requirement sets</th> 
-    <th><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Shared APIs</b></a></th> 
+    <th><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th> 
   </tr> 
   </tr>
   <tr>
@@ -306,7 +281,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td> 
   </tr>
   <tr>
-    <td>Office for iPad</td>
+    <td>Office for iOS</td>
     <td> - Taskpane</td>
     <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1 (Build 1.18+)</a><br>
          - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2 (Build 1.18+)</a><br>
@@ -358,25 +333,9 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - Matrix Bindings
     </td> 
   </tr>
-  <tr>
-    <td>Office for iPhone</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr>
-    <td>Office for Android</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr>
-    <td>Office Mobile for Windows 10</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-  </tr>
 </table>
+
+<br/>
 
 ## PowerPoint
 
@@ -385,7 +344,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <th>Platform</th>
     <th>Extension points</th> 
     <th>API requirement sets</th> 
-    <th><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Shared APIs</b></a></th> 
+    <th><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th> 
   </tr> 
   </tr>
   <tr>
@@ -433,7 +392,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - ImageCoercion</td>
   </tr>
   <tr>
-    <td>Office for iPad</td>
+    <td>Office for iOS</td>
     <td> - Content<br>
          - Taskpane</td>
     <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1<br> (Build 1.22+)</a></td>
@@ -461,25 +420,9 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - TextCoercion<br>
          - ImageCoercion</td>
   </tr>
-  <tr>
-    <td>Office for iPhone</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr>
-    <td>Office for Android</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr>
-    <td>Office Mobile for Windows 10</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-  </tr>
 </table>
+
+<br/>
 
 ## OneNote
 
@@ -488,7 +431,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <th>Platform</th>
     <th>Extension points</th> 
     <th>API requirement sets</th> 
-    <th><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Shared APIs</b></a></th> 
+    <th><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th> 
   </tr> 
   </tr>
   <tr>
@@ -517,31 +460,13 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <td> </td> 
   </tr>
   <tr>
-    <td>Office for iPad</td>
+    <td>Office for iOS</td>
     <td> </td>
     <td> </td>
     <td> </td>
   </tr>
   <tr>
     <td>Office 2016 for Mac</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr>
-    <td>Office for iPhone</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr>
-    <td>Office for Android</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr>
-    <td>Office Mobile for Windows 10</td>
     <td> </td>
     <td> </td>
     <td> </td>
