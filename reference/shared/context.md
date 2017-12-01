@@ -20,7 +20,7 @@ Office.context
 |contentLanguage | string | Gets the locale (language) specified by the user for editing the document or item.|
 |displayLanguage|string|Gets the locale (language) specified by the user for the UI of the Office host application.|
 |document| [Document object](office.context.document.md)|Gets an object that represents the document the content or task pane add-in is interacting with.|
-|host|string|Contains the host in which the add-in (web application) is running in. Possible values are: Word, Excel, PowerPoint, Outlook, OneNote, Project, Access|
+|host|string|Contains the host in which the add-in (web application) is running in. Possible values are: Word, Excel, PowerPoint|
 |officeTheme|[OfficeTheme object](office.context.officetheme.md)|Provides access to the properties for Office theme colors.|
 |platform|string|Provides the platform on which the add-in is running. Possible values are: PC, OfficeOnline, Mac, iOS, Android, Universal|
 |requirements|object|Offers `requirements.isSetSupported()` method to check if the specified requirement set is supported by the host Office application. <br/> `isSetSupported(name: string, minVersion?: number): boolean;` <br> @param name - Set name. e.g.: "MatrixBindings". <br/>|
