@@ -69,7 +69,7 @@ The generator will prompt you for the following:
 > - Add [TypeScript](https://www.typescriptlang.org/) -- use _Y_
 > - Choose framework -- use _React_
 
-![Gif of yeoman generator prompting for project input](../images/gettingstarted-fast.png)
+![Gif of yeoman generator prompting for project input](../images/gettingstarted-fast.gif)
 
 This creates the structure and basic files for your add-in.
 
