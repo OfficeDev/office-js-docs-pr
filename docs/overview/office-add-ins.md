@@ -121,7 +121,7 @@ To start planning solutions that create effective and compelling user experience
 
 - [Office Add-in samples](https://dev.office.com/code-samples)
 - [Understanding the JavaScript API for Office](../develop/understanding-the-javascript-api-for-office.md)
-- [Office Add-in host and platform availability](https://dev.office.com/add-in-availability)
+- [Office Add-in host and platform availability](../overview/office-add-in-availability.md)
 
 
     
