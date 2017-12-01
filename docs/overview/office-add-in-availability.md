@@ -467,13 +467,15 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
   </tr>
   <tr>
     <td>Office 2016 for Mac</td>
-    <td> * </td>
-    <td> * </td>
-    <td> * </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
   </tr>
 </table>
 
+<br/>
 
+\* = We're working on it. 
 
 ## Additional resources
 
