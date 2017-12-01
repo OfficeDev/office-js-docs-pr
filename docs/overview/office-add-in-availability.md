@@ -1,7 +1,7 @@
 ---
 title: Office Add-in host and platform availability
 description: Supported requirement sets for Excel, Word, Outlook, PowerPoint, and OneNote.
-ms.date: 11/30/2017 
+ms.date: 12/01/2017 
 ---
 
 # Office Add-in host and platform availability
@@ -143,7 +143,7 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
       - Mailbox 1.3<br>
       - Mailbox 1.4<br>
       - Mailbox 1.5</td>
-    <td> * </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
   </tr>
   <tr>
     <td>Office 2013 for Windows</td>
@@ -155,7 +155,7 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
       - Mailbox 1.2<br>
       - Mailbox 1.3<br>
       - Mailbox 1.4</td>
-    <td> * </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
   </tr>
   <tr>
     <td>Office 2016 for Windows</td>
@@ -169,14 +169,14 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
       - Mailbox 1.3<br>
       - Mailbox 1.4<br>
       - Mailbox 1.5</td></td>
-    <td> * </td> 
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td> 
   </tr>
   <tr>
     <td>Office for iOS</td>
     <td> - Mail Read<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - Mailbox 1.4</td>
-    <td> * </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
   </tr>
   <tr>
     <td>Office 2016 for Mac</td>
@@ -189,14 +189,14 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
       - Mailbox 1.3<br>
       - Mailbox 1.4<br>
       - Mailbox 1.5</td>
-    <td> * </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
   </tr>
   <tr>
     <td>Office for Android</td>
     <td> - Mail Read<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - Mailbox 1.4</td>
-    <td> * </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
   </tr>
 </table>
 
@@ -449,27 +449,27 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
   </tr>
   <tr>
     <td>Office 2013 for Windows</td>
-    <td> * </td>
-    <td> * </td>
-    <td> * </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
   </tr> 
   <tr>
     <td>Office 2016 for Windows</td>
-    <td> * </td>
-    <td> * </td>
-    <td> * </td> 
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td> 
   </tr>
   <tr>
     <td>Office for iOS</td>
-    <td> * </td>
-    <td> * </td>
-    <td> * </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
   </tr>
   <tr>
     <td>Office 2016 for Mac</td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
   </tr>
 </table>
 
