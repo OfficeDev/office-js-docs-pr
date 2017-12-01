@@ -51,7 +51,7 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
     <td>
         - Taskpane<br>
         - Content</td>
-    <td>  - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1<br> (Build 15.0.4855.1000+)</a></td>
+    <td>  - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>
         - BindingEvents<br>
         - DocumentEvents<br>
@@ -67,12 +67,12 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
     <td>Office 2016 for Windows</td>
     <td>- Taskpane<br>
         - Content<br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands<br> (Build 16.0.6868.1000+)</a></td>
-    <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1 (Build 4266.1001+)</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2 (Build 6741.2088+)</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3 (Build 7369.2055+)</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4 (Build 7870.2024+)</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1 (Build 6741.0000+)</a></td>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
+    <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - DocumentEvents<br>
         - MatrixBindings<br>
@@ -87,10 +87,10 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
     <td>Office for iOS</td>
     <td>- Taskpane<br>
         - Content</td>
-    <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1 (Build 1.19+)</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2 (Build 1.21+)</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3 (Build 1.27+)</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1 (Build 1.22+)</a></td>
+    <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - DocumentEvents<br>
         - MatrixBindings<br>
@@ -105,11 +105,11 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
     <td>Office 2016 for Mac</td>
     <td>- Taskpane<br>
         - Content<br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands<br> (Build 15.33+)</a></td>
-    <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1 (Build 15.20+)</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2 (Build 15.22+)</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3 (Build 15.27+)</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1 (Build 15.20+)</a></td>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
+    <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - DocumentEvents<br>
         - MatrixBindings<br>
@@ -143,7 +143,7 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
       - Mailbox 1.3<br>
       - Mailbox 1.4<br>
       - Mailbox 1.5</td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
+    <td>not available</td>
   </tr>
   <tr>
     <td>Office 2013 for Windows</td>
@@ -155,13 +155,13 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
       - Mailbox 1.2<br>
       - Mailbox 1.3<br>
       - Mailbox 1.4</td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
+    <td>not available</td>
   </tr>
   <tr>
     <td>Office 2016 for Windows</td>
     <td> - Mail Read<br>
       - Mail Compose<br>
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands (Build 16.0+)</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a><br>
       - Modules</td>
     <td> - Mailbox 1.0<br>
       - Mailbox 1.1<br>
@@ -169,34 +169,34 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
       - Mailbox 1.3<br>
       - Mailbox 1.4<br>
       - Mailbox 1.5</td></td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td> 
+    <td>not available</td> 
   </tr>
   <tr>
     <td>Office for iOS</td>
     <td> - Mail Read<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - Mailbox 1.4</td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
+    <td>not available</td>
   </tr>
   <tr>
     <td>Office 2016 for Mac</td>
     <td> - Mail Read<br>
       - Mail Compose<br>
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands (Build 15.32+)</a></td>
+      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - Mailbox 1.0<br>
       - Mailbox 1.1<br>
       - Mailbox 1.2<br>
       - Mailbox 1.3<br>
       - Mailbox 1.4<br>
       - Mailbox 1.5</td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
+    <td>not available</td>
   </tr>
   <tr>
     <td>Office for Android</td>
     <td> - Mail Read<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - Mailbox 1.4</td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
+    <td>not available</td>
   </tr>
 </table>
 
@@ -236,7 +236,7 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
   <tr>
     <td>Office 2013 for Windows</td>
     <td> - Taskpane</td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1<br> (Build 15.0.4855.1000+)</a></td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
          - CustomXmlPart<br>
@@ -257,11 +257,11 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
   <tr>
     <td>Office 2016 for Windows</td>
     <td> - Taskpane<br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands<br> (Build 16.0.6868.1000+)</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1 (Build 4266.1001+)</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2 (Build 6568.1000+)</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3 (Build 6925.1000+)</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1 (Build 6741.0000+)</a></td>
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
          - CustomXmlPart<br>
@@ -283,10 +283,10 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
   <tr>
     <td>Office for iOS</td>
     <td> - Taskpane</td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1 (Build 1.18+)</a><br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2 (Build 1.18+)</a><br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3 (Build 1.22+)</a><br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1 (Build 1.22+)</a>
+    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
 </td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
@@ -309,11 +309,11 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
   <tr>
     <td>Office 2016 for Mac</td>
     <td> - Taskpane<br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands<br> (Build 15.33+)</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1 (Build 15.19+)</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2 (Build 15.19+)</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3 (Build 15.22+)</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1 (Build 15.20+)</a>
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
 </td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
@@ -366,7 +366,7 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
     <td> - Content<br>
          - Taskpane<br>
     </td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1<br> (Build 15.0.4855.1000+)</a>
+    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
 </td>
     <td> - ActiveView<br>
          - CompressedFile<br>
@@ -380,8 +380,8 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
     <td>Office 2016 for Windows</td>
     <td> - Content<br>
          - Taskpane<br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands<br> (Build 16.0.6868.1000+)</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1<br> (Build 6741.0000+)</a></td>
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
@@ -395,7 +395,7 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
     <td>Office for iOS</td>
     <td> - Content<br>
          - Taskpane</td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1<br> (Build 1.22+)</a></td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
      <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
@@ -409,8 +409,8 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
     <td>Office 2016 for Mac</td>
     <td> - Content<br>
          - Taskpane<br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands<br> (Build 15.33+)</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1<br> (Build 15.20+)</a></td>
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
