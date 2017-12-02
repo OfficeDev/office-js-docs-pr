@@ -8,49 +8,52 @@ Represents the body of a document or a section.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|style|string|Gets or sets the style name for the body. Use this property for custom styles and localized style names. To use the built-in styles that are portable between locales, see the "styleBuiltIn" property.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|[styleBuiltIn](enums.md)|string|Gets or sets the built-in style name for the body. Use this property for built-in styles that are portable between locales. To use custom styles or localized style names, see the "style" property. Possible values are: Other, Normal, Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, Heading7, Heading8, Heading9, Toc1, more...|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|text|string|Gets the text of the body. Use the insertText method to insert text. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|[type](enums.md)|string|Gets the type of the body. The type can be 'MainDoc', 'Section', 'Header', 'Footer', or 'TableCell'. Read-only. Possible values are: Unknown, MainDoc, Section, Header, Footer, TableCell.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|style|string|Gets or sets the style name for the body. Use this property for custom styles and localized style names. To use the built-in styles that are portable between locales, see the "styleBuiltIn" property.|[1.1][]|
+|[styleBuiltIn](enums.md)|string|Gets or sets the built-in style name for the body. Use this property for built-in styles that are portable between locales. To use custom styles or localized style names, see the "style" property. Possible values are: Other, Normal, Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, Heading7, Heading8, Heading9, Toc1, more...|[1.3][]|
+|text|string|Gets the text of the body. Use the insertText method to insert text. Read-only.|[1.1][]|
+|[type](enums.md)|string|Gets the type of the body. The type can be 'MainDoc', 'Section', 'Header', 'Footer', or 'TableCell'. Read-only. Possible values are: Unknown, MainDoc, Section, Header, Footer, TableCell.|[1.3][]|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of rich text content control objects in the body. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|font|[Font](font.md)|Gets the text format of the body. Use this to get and set font name, size, color and other properties. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Gets the collection of inlinePicture objects in the body. The collection does not include floating images. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|lists|[ListCollection](listcollection.md)|Gets the collection of list objects in the body. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the collection of paragraph objects in the body. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|parentBody|[Body](body.md)|Gets the parent body of the body. For example, a table cell body's parent body could be a header. Throws if there isn't a parent body. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|parentBodyOrNullObject|[Body](body.md)|Gets the parent body of the body. For example, a table cell body's parent body could be a header. Returns a null object if there isn't a parent body. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the body. Throws if there isn't a parent content control. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|parentContentControlOrNullObject|[ContentControl](contentcontrol.md)|Gets the content control that contains the body. Returns a null object if there isn't a parent content control. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|parentSection|[Section](section.md)|Gets the parent section of the body. Throws if there isn't a parent section. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|parentSectionOrNullObject|[Section](section.md)|Gets the parent section of the body. Returns a null object if there isn't a parent section. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|tables|[TableCollection](tablecollection.md)|Gets the collection of table objects in the body. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of rich text content control objects in the body. Read-only.|[1.1][]|
+|font|[Font](font.md)|Gets the text format of the body. Use this to get and set font name, size, color and other properties. Read-only.|[1.1][]|
+|inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Gets the collection of inlinePicture objects in the body. The collection does not include floating images. Read-only.|[1.1][]|
+|lists|[ListCollection](listcollection.md)|Gets the collection of list objects in the body. Read-only.|[1.3][]|
+|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the collection of paragraph objects in the body. Read-only.|[1.1][]|
+|parentBody|[Body](body.md)|Gets the parent body of the body. For example, a table cell body's parent body could be a header. Throws if there isn't a parent body. Read-only.|[1.3][]|
+|parentBodyOrNullObject|[Body](body.md)|Gets the parent body of the body. For example, a table cell body's parent body could be a header. Returns a null object if there isn't a parent body. Read-only.|[1.3][]|
+|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the body. Throws if there isn't a parent content control. Read-only.|[1.1][]|
+|parentContentControlOrNullObject|[ContentControl](contentcontrol.md)|Gets the content control that contains the body. Returns a null object if there isn't a parent content control. Read-only.|[1.3][]|
+|parentSection|[Section](section.md)|Gets the parent section of the body. Throws if there isn't a parent section. Read-only.|[1.3][]|
+|parentSectionOrNullObject|[Section](section.md)|Gets the parent section of the body. Returns a null object if there isn't a parent section. Read-only.|[1.3][]|
+|tables|[TableCollection](tablecollection.md)|Gets the collection of table objects in the body. Read-only.|[1.3][]|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[clear()](#clear)|void|Clears the contents of the body object. The user can perform the undo operation on the cleared content.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|[getHtml()](#gethtml)|string|Gets the HTML representation of the body object.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|[getOoxml()](#getooxml)|string|Gets the OOXML (Office Open XML) representation of the body object.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|[getRange(rangeLocation: string)](#getrangerangelocation-string)|[Range](range.md)|Gets the whole body, or the starting or ending point of the body, as a range.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|[insertBreak(breakType: string, insertLocation: string)](#insertbreakbreaktype-string-insertlocation-string)|void|Inserts a break at the specified location in the main document. The insertLocation value can be 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the body object with a Rich Text content control.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|[insertFileFromBase64(base64File: string, insertLocation: string)](#insertfilefrombase64base64file-string-insertlocation-string)|[Range](range.md)|Inserts a document into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|[insertHtml(html: string, insertLocation: string)](#inserthtmlhtml-string-insertlocation-string)|[Range](range.md)|Inserts HTML at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-string)|[InlinePicture](inlinepicture.md)|Inserts a picture into the body at the specified location. The insertLocation value can be 'Start' or 'End'.|[1.2](../requirement-sets/word-api-requirement-sets.md)|
-|[insertOoxml(ooxml: string, insertLocation: string)](#insertooxmlooxml-string-insertlocation-string)|[Range](range.md)|Inserts OOXML at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|[insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])](#inserttablerowcount-number-columncount-number-insertlocation-string-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Start' or 'End'.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|[insertText(text: string, insertLocation: string)](#inserttexttext-string-insertlocation-string)|[Range](range.md)|Inserts text into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[RangeCollection](rangecollection.md)|Performs a search with the specified searchOptions on the scope of the body object. The search results are a collection of range objects.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|[select(selectionMode: string)](#selectselectionmode-string)|void|Selects the body and navigates the Word UI to it.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[clear()][]|void|Clears the contents of the body object. The user can perform the undo operation on the cleared content.|[1.1][]|
+|[getHtml()][]|string|Gets the HTML representation of the body object.|[1.1][]|
+|[getOoxml()][]|string|Gets the OOXML (Office Open XML) representation of the body object.|[1.1][]|
+|[getRange(rangeLocation: string)][]|[Range](range.md)|Gets the whole body, or the starting or ending point of the body, as a range.|[1.3][]|
+|[insertBreak(breakType: string, insertLocation: string)][]|void|Inserts a break at the specified location in the main document. The insertLocation value can be 'Start' or 'End'.|[1.1][]|
+|[insertContentControl()][]|[ContentControl](contentcontrol.md)|Wraps the body object with a Rich Text content control.|[1.1][]|
+|[insertFileFromBase64(base64File: string, insertLocation: string)][]|[Range](range.md)|Inserts a document into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1][]|
+|[insertHtml(html: string, insertLocation: string)][]|[Range](range.md)|Inserts HTML at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1][]|
+|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)][]|[InlinePicture](inlinepicture.md)|Inserts a picture into the body at the specified location. The insertLocation value can be 'Start' or 'End'.|[1.2][]|
+|[insertOoxml(ooxml: string, insertLocation: string)][]|[Range](range.md)|Inserts OOXML at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1][]|
+|[insertParagraph(paragraphText: string, insertLocation: string)][]|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Start' or 'End'.|[1.1][]|
+|[insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[])][insertTable] |[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Start' or 'End'.|[1.3][]|
+|[insertText(text: string, insertLocation: string)][]|[Range](range.md)|Inserts text into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1][]|
+|[load(param: object)][]|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1][]|
+|[search(searchText: string, searchOptions: SearchOptions)][]|[RangeCollection](rangecollection.md)|Performs a search with the specified searchOptions on the scope of the body object. The search results are a collection of range objects.|[1.1][]|
+|[select(selectionMode: string)][]|void|Selects the body and navigates the Word UI to it.|[1.1][]|
+
+
+
 
 ## Method Details
 
@@ -589,7 +592,7 @@ Word.run(function (context) {
 });
 ```
 
-### search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)
+### search(searchText: string, searchOptions: SearchOptions)
 Performs a search with the specified searchOptions on the scope of the body object. The search results are a collection of range objects.
 
 #### Syntax
@@ -601,7 +604,7 @@ bodyObject.search(searchText, searchOptions);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |searchText|string|Required. The search text.|
-|searchOptions|ParamTypeStrings.SearchOptions|Optional. Optional. Options for the search.|
+|searchOptions|[SearchOptions]|Optional. Optional. Options for the search.|
 
 #### Returns
 [RangeCollection](rangecollection.md)
@@ -754,3 +757,27 @@ Word.run(function (context) {
     }
 });
 ```
+
+
+[clear()]: #clear
+[getHtml()]: #gethtml
+[getOoxml()]: #getooxml
+[getRange(rangeLocation: string)]: #getrangerangelocation-string
+[insertBreak(breakType: string, insertLocation: string)]: #insertbreakbreaktype-string-insertlocation-string
+[insertContentControl()]: #insertcontentcontrol
+[insertFileFromBase64(base64File: string, insertLocation: string)]: #insertfilefrombase64base64file-string-insertlocation-string
+[insertHtml(html: string, insertLocation: string)]: #inserthtmlhtml-string-insertlocation-string
+[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)]: #insertinlinepicturefrombase64base64encodedimage-string-insertlocation-string
+[insertOoxml(ooxml: string, insertLocation: string)]: #insertooxmlooxml-string-insertlocation-string
+[insertParagraph(paragraphText: string, insertLocation: string)]: #insertparagraphparagraphtext-string-insertlocation-string
+[insertTable]: #inserttablerowcount-number-columncount-number-insertlocation-string-values-string
+[insertText(text: string, insertLocation: string)]: #inserttexttext-string-insertlocation-string
+[load(param: object)]: #loadparam-object
+[search(searchText: string, searchOptions: SearchOptions)]: #searchsearchtext-string-searchoptions-searchoptions
+[select(selectionMode: string)]: #selectselectionmode-string
+
+[SearchOptions]: searchoptions.md
+[1.1]: ../requirement-sets/word-api-requirement-sets.md
+[1.2]: ../requirement-sets/word-api-requirement-sets.md
+[1.3]: ../requirement-sets/word-api-requirement-sets.md
+[1.4]: ../requirement-sets/word-api-requirement-sets.md

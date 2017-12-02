@@ -1,7 +1,4 @@
-
-# Update the version of your JavaScript API for Office and manifest schema files
-
-
+# Update to the latest JavaScript API for Office library and version 1.1 add-in manifest schema
 
 This article describes how to update your JavaScript files (Office.js and app-specific .js files) and add-in manifest validation file in your Office Add-in project to version 1.1.
 
@@ -15,7 +12,6 @@ To run an add-in developed using new and updated Office.js API and add-in manife
 
 To download Office, SharePoint, and Exchange SP1 products, see the following:
 
-
 - [List of all Service Pack 1 (SP1) updates for Microsoft Office 2013 and related desktop products](http://support.microsoft.com/kb/2850036)
     
 - [List of all Service Pack 1 (SP1) updates for Microsoft SharePoint Server 2013 and related server products](http://support.microsoft.com/kb/2850035)
@@ -23,7 +19,7 @@ To download Office, SharePoint, and Exchange SP1 products, see the following:
 - [Description of Exchange Server 2013 Service Pack 1](http://support.microsoft.com/kb/2926248)
     
 
-## Updating an Office Add-in project created with Visual Studio to use the latest JavaScript API for Office library and version 1.1 add-in manifest schema
+## Updating an Office Add-in project created with Visual Studio
 
 For projects created before the release of v1.1 of the JavaScript API for Office and add-in manifest schema, you can update a project's files using the  **NuGet Package Manager**, and then update your add-in's HTML pages to reference them. 
 
@@ -51,7 +47,7 @@ Note that the update process is applied on a  _per-project basis_ - you'll need 
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
 ```
 
-> Info: The `/1/` in front of `office.js` in the CDN URL specifies to use the latest incremental release within version 1 of Office.js.   
+> **Note**: The `/1/` in front of `office.js` in the CDN URL specifies to use the latest incremental release within version 1 of Office.js.   
 
 
 ### To update the manifest file in your project to use schema version 1.1
@@ -71,7 +67,7 @@ In your Add-in's Manifest file, update the **xmlns** attribute of the **OfficeAp
 
 > **Note:** After updating the version of the add-in manifest schema to 1.1, you will need to remove the  **Capabilities** and **Capability** elements, and replace them with either the [Hosts](../../reference/manifest/hosts.md) and [Host](../../reference/manifest/hosts.md) elements or the [Requirements and Requirement elements](../../docs/overview/specify-office-hosts-and-api-requirements.md).
 
-## Updating an Office Add-in project created with a text editor or other IDE to use the newest JavaScript API for Office library and version 1.1 add-in manifest schema
+## Updating an Office Add-in project created with a text editor or other IDE
 
 For projects created before the release of v1.1 of the JavaScript API for Office and add-in manifest schema, you need to update your add-in's HTML pages to reference CDN of the v1.1 library, and update your add-in's manifest file to use schema v1.1. 
 
@@ -92,7 +88,7 @@ You don't need local copies of the JavaScript API for Office files (Office.js an
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
 ```
 
-> Info: The `/1/` in front of `office.js` in the CDN URL specifies to use the latest incremental release within version 1 of Office.js.   
+> **Note**: The `/1/` in front of `office.js` in the CDN URL specifies to use the latest incremental release within version 1 of Office.js.   
 
 ### To update the manifest file in your project to use schema version 1.1
 

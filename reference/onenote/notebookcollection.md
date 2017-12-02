@@ -2,51 +2,57 @@
 
 _Applies to: OneNote Online_  
 
-
 Represents a collection of notebooks.
+
+To provide feedback on this API, you can [file an issue in GitHub](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebookCollection).
 
 ## Properties
 
-| Property	   | Type	|Description|Feedback|
-|:---------------|:--------|:----------|:-------|
-|count|int|Returns the number of notebooks in the collection. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebookCollection-count)|
-|items|[Notebook[]](notebook.md)|A collection of notebook objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebookCollection-items)|
+| Property	   | Type	|Description|
+|:---------------|:--------|:----------|
+|count|int|Returns the number of notebooks in the collection. Read-only.|
+|items|[Notebook[]](notebook.md)|A collection of notebook objects. Read-only.|
 
-_See property access [examples.](#property-access-examples)_
+_See [property access examples](#property-access-examples)_.
 
 ## Relationships
+
 None
 
 
 ## Methods
 
-| Method		   | Return Type	|Description| Feedback|
-|:---------------|:--------|:----------|:-------|
-|[getByName(name: string)](#getbynamename-string)|[NotebookCollection](notebookcollection.md)|Gets the collection of notebooks with the specified name that are open in the application instance.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebookCollection-getByName)|
-|[getItem(index: number or string)](#getitemindex-number-or-string)|[Notebook](notebook.md)|Gets a notebook by ID or by its index in the collection. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebookCollection-getItem)|
-|[getItemAt(index: number)](#getitematindex-number)|[Notebook](notebook.md)|Gets a notebook on its position in the collection.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebookCollection-getItemAt)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebookCollection-load)|
+| Method		   | Return Type	|Description| 
+|:---------------|:--------|:----------|
+|[getByName(name: string)](#getbynamename-string)|[NotebookCollection](notebookcollection.md)|Gets the collection of notebooks with the specified name that are open in the application instance.|
+|[getItem(index: number or string)](#getitemindex-number-or-string)|[Notebook](notebook.md)|Gets a notebook by ID or by its index in the collection. Read-only.|
+|[getItemAt(index: number)](#getitematindex-number)|[Notebook](notebook.md)|Gets a notebook on its position in the collection.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.|
 
-## Method Details
-
+## Method details
 
 ### getByName(name: string)
+
 Gets the collection of notebooks with the specified name that are open in the application instance.
 
 #### Syntax
+
 ```js
 notebookCollectionObject.getByName(name);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |name|string|The name of the notebook.|
 
 #### Returns
+
 [NotebookCollection](notebookcollection.md)
 
 #### Examples
+
 ```js
 OneNote.run(function (context) {
 
@@ -77,56 +83,78 @@ OneNote.run(function (context) {
 });
 ```
 
+<br/>
+
 ### getItem(index: number or string)
+
 Gets a notebook by ID or by its index in the collection. Read-only.
 
 #### Syntax
+
 ```js
 notebookCollectionObject.getItem(index);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |index|number or string|The ID of the notebook, or the index location of the notebook in the collection.|
 
 #### Returns
+
 [Notebook](notebook.md)
 
+<br/>
+
 ### getItemAt(index: number)
+
 Gets a notebook on its position in the collection.
 
 #### Syntax
+
 ```js
 notebookCollectionObject.getItemAt(index);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
+
 [Notebook](notebook.md)
 
+<br/>
+
 ### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
+
 ```js
 object.load(param);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
-void
+
+Void
+
+<br/>
+
 ### Property access examples
 
 **items**
+
 ```js
 OneNote.run(function (context) {
 

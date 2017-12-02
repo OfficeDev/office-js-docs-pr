@@ -88,7 +88,7 @@ The following examples show two actions that use a different **TaskpaneId**. To 
 ## Title
 Optional element when  **xsi:type** is "ShowTaskpane". Specifies the custom title for the task pane for this action. 
 
-The following examples show two different actions that use the **Title** element. To see these examples in context, see [Script Lab manifest](https://github.com/OfficeDev/script-lab/blob/master/manifests/script-lab-local.xml).
+The following examples show two different actions that use the **Title** element.
 
 ```xml
 <Action xsi:type="ShowTaskpane">

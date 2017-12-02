@@ -53,13 +53,14 @@
 	<Item text="Tips for creating add-ins with Angular" url="develop/add-ins-with-angular2" SEODescription="Use Angular 2 to develop Office Add-ins." />
   <Item text="Convert JavaScript to TypeScript" url="develop/convert-javascript-to-typescript" SEODescription="Use the Office Add-in JavaScript template in Visual Studio to create an add-in that uses TypeScript." />
 	<Item text="Use the Dialog API" url="develop/dialog-api-in-office-add-ins" SEODescription="Use the Dialog API to open dialog boxes in your Office Add-in." />
-  <Item text="Authentication and authorization" url="develop/sso-in-office-add-ins" SEODescription="Authenticate and authorize using single sign-on (SSO)" >
+  <Item text="Authentication and authorization" url="authentication">
 		  <Item text="Enable SSO in an add-in" url="develop/sso-in-office-add-ins" SEODescription="Enable single sign-on (SSO) in an add-in." >
-		  <Item text="Create an SSO add-in using ASP.NET" url="develop/create-sso-office-add-ins-aspnet" SEODescription="Create a single sign-on (SSO) add-in using ASP.NET." />
-		  <Item text="Create an SSO add-in using Node.js" url="develop/create-sso-office-add-ins-nodejs" SEODescription="Create a single sign-on (SSO) add-in using Node.js." />
-	    			</Item>
-			<Item text="Authorize external services" url="develop/auth-external-add-ins" SEODescription="Authorize external single sign-on services (SSO) add-in" />
+		  	<Item text="Create an SSO add-in using ASP.NET" url="develop/create-sso-office-add-ins-aspnet" SEODescription="Create a single sign-on (SSO) add-in using ASP.NET." />
+		  	<Item text="Create an SSO add-in using Node.js" url="develop/create-sso-office-add-ins-nodejs" SEODescription="Create a single sign-on (SSO) add-in using Node.js." />
+		  	<Item text="Troubleshoot error messages for single sign-on (SSO)" url="develop/troubleshoot-sso-in-office-add-ins" SEODescription="Troubleshoot problems with single sign-on (SSO) in Office Add-ins, and how to make your SSO-enabled add-in robustly handle special conditions or errors." />
 			</Item>
+			<Item text="Authorize external services" url="develop/auth-external-add-ins" SEODescription="Authorize external single sign-on services (SSO) add-in" />
+	</Item>
 	<Item text="Manifest" url="overview/add-in-manifests" >	
 		<Item text="Create add-in commands" url="get-started/create-addin-commands"  SEODescription="Create UI elements such as entry points, buttons, menus, or menu items. Add-in commands provide a way to customize the default Office user interface." />
 		<Item text="Define add-in commands" url="develop/define-add-in-commands"  SEODescription="Use the VersionOverrides element in your add-in manifest to define add-in commands." />
@@ -94,9 +95,9 @@
   <Item text="Publish" url="publish/publish">
     <Item text="Host an Office Add-in on Microsoft Azure" url="publish/host-an-office-add-in-on-microsoft-azure" SEODescription="Use Visual Studio 2015 and the Microsoft Office Developer Tools to publish to and then host an Office Add-in on Microsoft Azure." />
     <Item text="Package your add-in using Visual Studio" url="publish/package-your-add-in-using-visual-studio" SEODescription="Package your Office Add-in to prepare it for publishing." />
-    <Item text="Publish add-ins via centralized deployment" url="publish/centralized-deployment" />
-	<Item text="Publish task pane and content add-ins to an add-in catalog" url="publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog" SEODescription="Configure Office clients so your add-in is available from the Office Add-ins dialog box"  />
-	<Item text="Submit add-ins to the Office Store" url="https://dev.office.com/officestore/docs/submit-add-ins-and-web-apps-to-the-office-store" IsExternal="true" />
+    <Item text="Publish add-ins via Centralized Deployment" url="publish/centralized-deployment" />
+	<Item text="Publish add-ins to a SharePoint catalog" url="publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog" SEODescription="Configure Office clients so your add-in is available from the Office Add-ins dialog box"  />
+	<Item text="Publish add-ins to the Office Store" url="https://dev.office.com/officestore/docs/submit-add-ins-and-web-apps-to-the-office-store" IsExternal="true" />
 	<Item text="Office Store validation policies" url="https://dev.office.com/officestore/docs/validation-policies" IsExternal="true" />
   </Item>
   
@@ -117,10 +118,11 @@
 	  </Item>
     <Item text="Core concepts" url="excel/excel-add-ins-core-concepts" SEODescription="Learn about core concepts for using the Excel JavaScript API to build add-ins for Excel 2016." Scope="excel">
       <Item text="Extend Excel functionality" url="excel/excel-add-ins-extend-excel" SEODescription="Learn about the different ways that an Excel add-in can extend Excel functionality." Scope="excel" />
-		  <Item text="Work with Worksheets" url="excel/excel-add-ins-worksheets" SEODescription="Learn how to perform common tasks with worksheets using the Excel JavaScript API." Scope="excel" />
-		  <Item text="Work with Ranges" url="excel/excel-add-ins-ranges" SEODescription="Learn how to perform common tasks with ranges using the Excel JavaScript API." Scope="excel" />
-		  <Item text="Work with Tables" url="excel/excel-add-ins-tables" SEODescription="Learn how to perform common tasks with tables using the Excel JavaScript API." Scope="excel" />
-		  <Item text="Work with Charts" url="excel/excel-add-ins-charts" SEODescription="Learn how to perform common tasks with charts using the Excel JavaScript API." Scope="excel" />
+		  <Item text="Custom functions" url="excel/custom-functions-overview" SEODescription="Write JavaScript functions that users can include in Excel formulas, similar to UDFs." Scope="excel" />
+		  <Item text="Charts" url="excel/excel-add-ins-charts" SEODescription="Perform common tasks with charts using the Excel JavaScript API." Scope="excel" />
+		  <Item text="Ranges" url="excel/excel-add-ins-ranges" SEODescription="Perform common tasks with ranges using the Excel JavaScript API." Scope="excel" />
+		  <Item text="Tables" url="excel/excel-add-ins-tables" SEODescription="Perform common tasks with tables using the Excel JavaScript API." Scope="excel" />
+		  <Item text="Worksheets" url="excel/excel-add-ins-worksheets" SEODescription="Perform common tasks with worksheets using the Excel JavaScript API." Scope="excel" />
 		</Item>
 		<Item text="Advanced concepts" url="excel/excel-add-ins-advanced-concepts" SEODescription="Learn about advanced concepts for using the Excel JavaScript API to build add-ins for Excel 2016." Scope="excel">
 		  <Item text="Coauthoring in Excel add-ins" url="excel/co-authoring-in-excel-add-ins"  Scope="excel" SEODescription="Learn about coauthoring in Excel and using add-ins."/>
@@ -149,5 +151,5 @@
   <Item text="Access" url="access" Scope="access">
     <Item text="Access web app add-ins" url="access/access-web-app-add-ins" SEOKeyword="Access add-ins" SEODescription="Create an Office Add-in that extends Access web apps with custom HTML and JavaScript." Scope="access" />
   </Item>
-<Item text="JavaScript API reference" url="https://dev.office.com/reference/add-ins/javascript-api-for-office" IsExternal="true" />
+<Item text="JavaScript API reference" url="https://dev.office.com/reference/add-ins/javascript-api-for-office" IsExternal="true" Scope="word, powerpoint, project, access, onenote" />
 </Menu>

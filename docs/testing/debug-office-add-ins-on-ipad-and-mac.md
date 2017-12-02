@@ -56,9 +56,10 @@ To debug an application using Vorlon.JS, you add a `<script>` tag to the opening
 ### Configure the add-in for Vorlon.JS debugging
 
 1. Add the following script tag to the `<head>` section of the home.html file (or main HTML file) of your add-in:
-```    
-<script src="https://localhost:1337/vorlon.js"></script>    
-```  
+
+    ```    
+    <script src="https://localhost:1337/vorlon.js"></script>    
+    ```  
 
 2. Deploy the add-in web application to a web server that is accessible from the Mac or iPad, such as an Azure website. 
 

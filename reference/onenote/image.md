@@ -2,53 +2,59 @@
 
 _Applies to: OneNote Online_  
 
-
 Represents an Image. An Image can be a direct child of a PageContent object or a Paragraph object.
+
+To provide feedback on this API, you can [file an issue in GitHub](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image).
 
 ## Properties
 
-| Property	   | Type	|Description|Feedback|
-|:---------------|:--------|:----------|:-------|
-|description|string|Gets or sets the description of the Image.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-description)|
-|height|double|Gets or sets the height of the Image layout.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-height)|
-|hyperlink|string|Gets or sets the hyperlink of the Image.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-hyperlink)|
-|id|string|Gets the ID of the Image object. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-id)|
-|width|double|Gets or sets the width of the Image layout.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-width)|
+| Property	   | Type	|Description|
+|:---------------|:--------|:----------|
+|description|string|Gets or sets the description of the Image.|
+|height|double|Gets or sets the height of the Image layout.|
+|hyperlink|string|Gets or sets the hyperlink of the Image.|
+|id|string|Gets the ID of the Image object. Read-only.|
+|width|double|Gets or sets the width of the Image layout.|
 
-_See property access [examples.](#property-access-examples)_
+_See [property access examples](#property-access-examples)_.
 
 ## Relationships
-| Relationship | Type	|Description| Feedback|
-|:---------------|:--------|:----------|:-------|
-|ocrData|[ImageOcrData](imageocrdata.md)|Gets the data obtained by OCR (Optical Character Recognition) of this Image, such as OCR text and language. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-ocrData)|
-|pageContent|[PageContent](pagecontent.md)|Gets the PageContent object that contains the Image. Throws if the Image is not a direct child of a PageContent. This object defines the position of the Image on the page. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-pageContent)|
-|paragraph|[Paragraph](paragraph.md)|Gets the Paragraph object that contains the Image. Throws if the Image is not a direct child of a Paragraph. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-paragraph)|
+
+| Relationship | Type	|Description| 
+|:---------------|:--------|:----------|
+|ocrData|[ImageOcrData](imageocrdata.md)|Gets the data obtained by OCR (Optical Character Recognition) of this Image, such as OCR text and language. Read-only.|
+|pageContent|[PageContent](pagecontent.md)|Gets the PageContent object that contains the Image. Throws an exception if the Image is not a direct child of a PageContent. This object defines the position of the Image on the page. Read-only.|
+|paragraph|[Paragraph](paragraph.md)|Gets the Paragraph object that contains the Image. Throws an exception if the Image is not a direct child of a Paragraph. Read-only.|
 
 ## Methods
 
-| Method		   | Return Type	|Description| Feedback|
-|:---------------|:--------|:----------|:-------|
-|[getBase64Image()](#getbase64image)|string|Gets the base64-encoded binary representation of the Image.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-getBase64Image)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-load)|
+| Method		   | Return Type	|Description| 
+|:---------------|:--------|:----------|
+|[getBase64Image()](#getbase64image)|string|Gets the base64-encoded binary representation of the Image.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.|
 
-## Method Details
-
+## Method details
 
 ### getBase64Image()
+
 Gets the base64-encoded binary representation of the Image.
 
 #### Syntax
+
 ```js
 imageObject.getBase64Image();
 ```
 
 #### Parameters
+
 None
 
 #### Returns
-string
+
+String
 
 #### Examples
+
 ```js
 
 var image = null;
@@ -83,23 +89,35 @@ OneNote.run(function(ctx){
         });
 });
 ```
+
+<br/>
+
 ### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
+
 ```js
 object.load(param);
 ```
 
 #### Parameters
+
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
-void
+
+Void
+
+<br/>
+
 ### Property access examples
+
 **id, width, height, description and hyperlink**
+
 ```js
 OneNote.run(function(ctx){
     // Get the current outline.         
@@ -138,7 +156,10 @@ OneNote.run(function(ctx){
 });
 ```
 
+<br/>
+
 **ocrData**
+
 ```js
 var image = null;
 
@@ -175,7 +196,10 @@ OneNote.run(function(ctx){
 });
 ```
 
+<br/>
+
 **paragraph**
+
 ```js
 OneNote.run(function(ctx){
     // Get the current outline.         
@@ -221,4 +245,6 @@ OneNote.run(function(ctx){
     }
 }); 
 ```
+
+<br/>
 

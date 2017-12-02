@@ -4,22 +4,30 @@ Lists provide a consistent layout when interacting with large collections of con
   
 #### Example: List in a task pane
 
-![An image showing a List](../../images/overview_withApp_list.png)
+<br/>
 
-## Best Practices
+![An image showing a list](../../images/overview_withApp_list.png)
 
-- End each entry with a period if all entries are complete sentences, if:
+<br/>
+
+## Best practices
+
+- End each entry in a list with a period if:
+  - All entries are complete sentences.
   - One or more of the entries contains both a fragment and a complete sentence that offers additional information.
   - The entries all complete the introductory sentence or fragment.
-- Separate consecutive lists on a page with a heading.
+- Separate consecutive lists on a page with headings.
 
+<br/>
 
 ## Variants
 
 |**Variation**|**Description**|**Example**|
 |:------------|:--------------|:----------|
-|**Grid List**|Use when detailed information is needed with each list item.|![Grid List image](../../images/list.png)|
-|**Variable height item list**|Use when large imagery and text is needed.|![Variable height item List image](../../images/listGrid.png)|
+|**Grid list**|Use when detailed information is needed with each list item.|![Grid List image](../../images/list.png)<br/>|
+|**Variable height item list**|Use when large imagery and text is needed.|![Variable height item List image](../../images/listGrid.png)<br/>|
+
+<br/>
 
 ## Implementation
 
@@ -27,5 +35,6 @@ For details, see [List](https://dev.office.com/fabric#/components/list) and [Get
 
 ## Additional resources
 
-* [UX design patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
-* [Office UI Fabric in Office Add-ins](office-ui-fabric.md)
+- [UX Design Patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+
+- [Office UI Fabric in Office Add-ins](office-ui-fabric.md)

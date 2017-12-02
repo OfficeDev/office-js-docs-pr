@@ -28,7 +28,8 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 2. Enter `npm install` in the console to install all of the dependencies itemized in the package.json file.
 
 3. Enter `npm run build ` in the console to build the project. 
-     > Note: You may see some build errors saying that some variables are declared but not used. Ignore these errors. They are a side effect of the fact that the "Before" version of the sample is missing some code that will be added later.
+
+     > **Note**: You may see some build errors saying that some variables are declared but not used. Ignore these errors. They are a side effect of the fact that the "Before" version of the sample is missing some code that will be added later.
 
 ## Register the add-in with Azure AD V2 endpoint
 
@@ -42,7 +43,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. When the configuration page for the app opens, copy the **Application Id** and save it. You will use it in a later procedure. 
 
-    > Note: This ID is the “audience” value when other applications, such as the Office host application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the “client ID” of the application when it, in turn, seeks authorized access to Microsoft Graph.
+    > **Note**: This ID is the “audience” value when other applications, such as the Office host application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the “client ID” of the application when it, in turn, seeks authorized access to Microsoft Graph.
 
 1. In the **Application Secrets** section, press **Generate New Password**. A popup dialog opens with a new password (also called an “app secret”) displayed. *Copy the password immediately and save it with the application ID.* You will need it in a later procedure. Then close the dialog.
 
@@ -50,7 +51,9 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. In the dialog that opens, select **Web API**.
 
-1. An **Application ID URI** has been generated of the form “api://{App ID GUID}”. Insert the string “localhost:3000” between the double forward slashes and the GUID. The entire ID should read `api://localhost:3000/{App ID GUID}`. (The domain part of the **Scope** name just below the **Application ID URI** will automatically change to match. It should read `api://localhost:3000/{App ID GUID}/access_as_user`.)
+1. An **Application ID URI** has been generated of the form “api://{App ID GUID}”. Insert the string “localhost:3000” between the double forward slashes and the GUID. The entire ID should read `api://localhost:3000/{App ID GUID}`. 
+
+    > **Note**: The domain part of the **Scope** name just below the **Application ID URI** will automatically change to match. It should read `api://localhost:3000/{App ID GUID}/access_as_user`.
 
 1. This step and the next one give the Office host application access to your add-in. In the **Pre-authorized applications** section, you identify the applications that you want to authorize to your add-in's web application. Each of the following IDs needs to be pre-authorized. Each time you enter one, a new empty textbox appears. (Enter only the GUID.)
 
@@ -64,13 +67,15 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. In the new **Web** section under **Platforms**, enter the following as a **Redirect URL**: `https://localhost:3000`. 
 
-    > Note: As of this writing, the **Web API** platform sometimes disappears from the **Platforms** section, particularly if the page is refreshed after the **Web** platform is added *and the registration page is saved*. For reassurance that your **Web API** platform is still part of the registration, click the **Edit Application Manifest** button near the bottom of the page. You should see the `api://localhost:3000/{App ID GUID}` string in the **identifierUris** property of the manifest. There will also be a **oauth2Permissions** property whose **value** subproperty has the value `access_as_user`.
+    > **Note**: As of this writing, the **Web API** platform sometimes disappears from the **Platforms** section, particularly if the page is refreshed after the **Web** platform is added *and the registration page is saved*. For reassurance that your **Web API** platform is still part of the registration, click the **Edit Application Manifest** button near the bottom of the page. You should see the `api://localhost:3000/{App ID GUID}` string in the **identifierUris** property of the manifest. There will also be a **oauth2Permissions** property whose **value** subproperty has the value `access_as_user`.
 
 1. Scroll down to the **Microsoft Graph Permissions** section, the **Delegated Permissions** subsection. Use the **Add** button to open a **Select Permissions** dialog.
 
 1. In the dialog box, check the boxes for the following permissions: 
     * Files.Read.All
     * profile
+
+    > **Note**: The `User.Read` permission may already be listed by default. It is a good practice not to ask for permissions that are not needed, so we recommend that you uncheck the box for this permission.
 
 1. Click **OK** at the bottom of the dialog.
 
@@ -121,7 +126,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     ```xml
     <WebApplicationInfo>
       <Id>{application_GUID here}</Id>
-      <Resource>api://localhost:3000/{application_GUID here}<Resource>
+      <Resource>api://localhost:3000/{application_GUID here}</Resource>
       <Scopes>
           <Scope>Files.Read.All</Scope>
           <Scope>profile</Scope>
@@ -131,7 +136,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Replace the placeholder “{application_GUID here}” *in both places* in the markup with the Application ID that you copied when you registered your add-in. (The "{}" are not part of the ID, so don't include them.) This is the same ID you used in for the ClientID and Audience in the web.config.
 
-    >Note: 
+    >**Note**: 
     >
     >* The **Resource** value is the **Application ID URI** you set when you added the Web API platform to the registration of the add-in.
     >* The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through the Office Store.
@@ -397,6 +402,8 @@ There are two server-side files that need to be modified.
     await auth.initialize();
     const { jwt } = auth.verifyJWT(req, { scp: 'access_as_user' }); 
     ```
+
+> **Note:** You should only use the `access_as_user` scope to authorize the API that handles the on-behalf-of flow for Office add-ins. Other APIs in your service should have their own scope requirements. This limits what can be accessed with the tokens that Office acquires.
 
 5. Replace TODO8 with the following code. Note the following about this code:
 

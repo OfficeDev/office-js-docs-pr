@@ -122,6 +122,7 @@ function processMessage(arg) {
 ```
 
 > **Notes:**
+
 > - Office passes the `arg` object to the handler. Its `message` property is the Boolean or string sent by the call of `messageParent` in the dialog. In this example, it is a stringified representation of a user's profile from a service such as Microsoft Account or Google, so it is deserialized back to an object with `JSON.parse`.
 > - The `showUserName` implementation is not shown. It might display a personalized welcome message on the task pane.
 
@@ -135,6 +136,7 @@ function processMessage(arg) {
 ```
 
 > **Notes:**
+
 > - The `dialog` object must be the same one that is returned by the call of `displayDialogAsync`.
 > - The call of `dialog.close` tells Office to immediately close the dialog box.
 
@@ -171,6 +173,7 @@ if (loginSuccess) {
 ```
 
 > **Notes:**
+
 > - The `loginSuccess` variable would be initialized by reading the HTTP response from the identity provider.
 > - The the implementation of the `getProfile` and `getError` functions are not not shown. They each get data from a query parameter or from the body of the HTTP response.
 > - Anonymous objects of different types are sent depending on whether the sign in was successful. Both have a `messageType` property, but one has a `profile` property and the other has an `error` property.
@@ -223,7 +226,7 @@ For a sample that uses this technique, see the [dialog navigation design pattern
 
 Even when you don't have your own close dialog UI, an end user can close the dialog box by choosing the **X** in the upper-right corner. This action triggers the `DialogEventReceived` event. If your host pane needs to know when this happens, it should declare a handler for this event. See the section [Errors and events in the dialog window](#errors-and-events-in-the-dialog-window) for details.
 
-## handle errors and events
+## Handle errors and events
 
 Your code should handle two categories of events:
 

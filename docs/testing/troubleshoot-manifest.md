@@ -52,7 +52,7 @@ You can use runtime logging to debug your add-in's manifest. This feature can he
 
 1. Make sure that you are running Office 2016 desktop build **16.0.7019** or later. 
 2. Add the `RuntimeLogging` registry key under 'HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\'. 
-3. Set the default value of the key to the full path of the file where you want the log to be written. For an example, see [EnableRuntimeLogging.zip](RuntimeLogging/EnableRuntimeLogging.zip). 
+3. Set the default value of the key to the full path of the file where you want the log to be written. For an example, see [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip). 
 
  > **Note:** The directory in which the log file will be written must already exist and you must have write permissions to it. 
  
@@ -101,4 +101,3 @@ Call `window.location.reload(true)` from JavaScript in the add-in to force a rel
 - [Office Add-ins XML manifest](../overview/add-in-manifests.md)
 - [Sideload Office Add-ins for testing](sideload-office-add-ins-for-testing.md)
 - [Debug Office Add-ins](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
-
