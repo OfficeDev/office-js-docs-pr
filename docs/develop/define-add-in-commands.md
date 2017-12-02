@@ -1,7 +1,7 @@
 ---
 title: Define add-in commands in your manifest
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Define add-in commands in your manifest

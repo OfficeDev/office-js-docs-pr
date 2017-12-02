@@ -1,7 +1,7 @@
 ---
-title: Work with OneNote page content 
-description: 
-ms.date: 11/20/2017 
+title: Work with OneNote page content
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Work with OneNote page content 

@@ -1,7 +1,7 @@
 ---
 title: Attach a debugger from the task pane
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Attach a debugger from the task pane

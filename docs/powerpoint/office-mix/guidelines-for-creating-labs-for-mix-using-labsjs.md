@@ -1,7 +1,7 @@
 ---
 title: Guidelines for creating labs for Mix using LabsJS
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 

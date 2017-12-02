@@ -1,7 +1,7 @@
 ---
 title: Publish task pane and content add-ins to a SharePoint catalog
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Publish task pane and content add-ins to a SharePoint catalog

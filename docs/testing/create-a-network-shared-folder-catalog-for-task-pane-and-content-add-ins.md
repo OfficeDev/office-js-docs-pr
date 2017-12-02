@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins for testing
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Sideload Office Add-ins for testing

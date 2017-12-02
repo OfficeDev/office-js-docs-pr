@@ -1,7 +1,7 @@
 ---
 title: Word add-ins overview
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 

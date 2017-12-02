@@ -1,7 +1,7 @@
 ---
 title: Use Office UI Fabric 2.6.1 in Office Add-ins
-description: 
-ms.date: 11/27/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 

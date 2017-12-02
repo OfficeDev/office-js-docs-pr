@@ -1,7 +1,7 @@
 ---
 title: Update to the latest JavaScript API for Office library and version 1.1 add-in manifest schema
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Update to the latest JavaScript API for Office library and version 1.1 add-in manifest schema

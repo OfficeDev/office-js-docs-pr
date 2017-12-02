@@ -1,7 +1,7 @@
 ---
 title: Use Office UI Fabric JS in Office Add-ins
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Use Office UI Fabric JS in Office Add-ins

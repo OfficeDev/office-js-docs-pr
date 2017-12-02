@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins platform overview
-description: 
-ms.date: 11/27/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 

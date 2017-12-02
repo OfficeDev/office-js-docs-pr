@@ -1,7 +1,7 @@
 ---
 title: Create your first task pane add-in for Project 2013 by using a text editor
-description: 
-ms.date: 11/27/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Create your first task pane add-in for Project 2013 by using a text editor

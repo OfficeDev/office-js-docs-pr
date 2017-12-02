@@ -1,7 +1,7 @@
 ---
 title: Persisting add-in state and settings
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Persisting add-in state and settings
