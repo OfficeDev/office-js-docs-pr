@@ -34,6 +34,7 @@
     "externalReference": [],
     "globalMetadata": {
       "uhfHeaderId": "MSDocsHeader-Dev_Office",
+      "searchScope": ["Office Add-ins"],
       "breadcrumb_path": "/office/dev/add-ins/breadcrumb/toc.json",
       "extendBreadcrumb": true,
       "ms.suite": "office365",
