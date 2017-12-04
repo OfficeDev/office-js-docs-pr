@@ -178,12 +178,12 @@ For streamed functions, the final parameter, `caller`, is never specified in you
 
 ## Cancellation
 
-Streamed functions and asynchronous functions are cancelable. Canceling your function calls is important to reduce their bandwith consumption, working memory, and CPU load. Here are some situations where Excel cancels function calls:
+You can cancel streamed functions and asynchronous functions. Canceling your function calls is important to reduce their bandwith consumption, working memory, and CPU load. Excel cancels function calls in the following situations:
 - The user edits or deletes a cell that references the function.
 - One of the arguments (inputs) for the function changes. In this case, a new function call is triggered in addition to the cancelation.
-- The user triggers recalculation manually. As with the above case, a new function call is also triggered in addition to the cancelation.
+- The user triggers recalculation manually. As with the above case, a new function call is triggered in addition to the cancelation.
 
-Here's the example above with cancellation implemented. As you can see, the `caller` object contains an `onCanceled` function which you should define for each custom function:
+The following code shows the previous example with cancellation implemented. In the code, the `caller` object contains an `onCanceled` function which should be defined for each custom function.
 
 ```js
 function incrementValue(increment, caller){ 
