@@ -1,6 +1,13 @@
+---
+title: LabsJS labs for Office Mix examples
+description: ''
+ms.date: 12/04/2017
+---
+
 
 # LabsJS labs for Office Mix examples
-
+
+
 
 The [Office Mix Gallery](https://mix.office.com/Gallery) is an important resource for learning about the power of Office Mix in general, and about implementations of LabsJS labs specifically. The Gallery contains several labs that are implemented in Office Mix examples.
 
@@ -18,11 +25,7 @@ The following Office Mix instances in the [Office Mix Gallery](https://mix.offic
 
 ## Additional resources
 
-
-
 - [Office Mix add-ins](../../powerpoint/office-mix/office-mix-add-ins.md)
-    
 - [Get started with LabsJS for Office Mix](../../powerpoint/office-mix/get-started-with-labsjs-for-office-mix.md)
-    
 - [Walkthrough: Creating your first lab for Office Mix](../../powerpoint/office-mix/creating-your-first-lab-for-office-mix.md)
     

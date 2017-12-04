@@ -1,3 +1,9 @@
+---
+title: Deploy and publish your Office Add-in
+description: ''
+ms.date: 12/04/2017
+---
+
 # Deploy and publish your Office Add-in
 
 You can use one of several methods to deploy your Office Add-in for testing or distribution to users.
@@ -9,8 +15,10 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 |[SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|In an on-premises environment, to distribute your add-in to users in your organization.|
 |[Office Store](https://dev.office.com/officestore/docs/submit-to-the-office-store)|To distribute your add-in publicly to users.|
 |[Exchange server](#outlook-add-in-deployment)|In an on-premises or online environment, to distribute Outlook add-ins to users.|
+|[Network share](https://dev.office.com/docs/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins)|On a Windows computer on a network where you want to host your add-in, go to the parent folder, or drive letter, of the folder you want to use as your shared folder catalog.|
 
->**Note:** If you plan to submit your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://dev.office.com/officestore/docs/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
+> [!NOTE]
+> If you plan to submit your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://dev.office.com/officestore/docs/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://dev.office.com/officestore/docs/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
 
 ## Deployment options by Office host
 
@@ -18,20 +26,20 @@ The deployment options that are available depend on the Office host that you're 
 
 ### Deployment options for Word, Excel, and PowerPoint add-ins
 
-| Extension point | Sideloading | Office 365 admin center |Office Store| SharePoint catalog*  |
-|:----------------|:------------|:-------------------|:--------------------------------|:-------------|
-| Content         | X           | X                  | X                               | X|
-| Task pane       | X           | X                  | X                               | X|
-| Command 		  | X           | X                  | X                               |  |
+| Extension point | Sideloading | Office 365 admin center |Office Store| SharePoint catalog\*  |
+|:----------------|:-----------:|:-----------------------:|:----------:|:--------------------:|
+| Content         | X           | X                       | X          | X                    |
+| Task pane       | X           | X                       | X          | X                    |
+| Command 		    | X           | X                       | X          |                      |
 
 &#42; SharePoint catalogs do not support Office 2016 for Mac.
 
 ### Deployment options for Outlook add-ins
 
 | Extension point | Sideloading | Exchange server | Office Store |
-|:---------|:------------|:----------------|:-------------|
-| Mail app | X           | X               | X            |
-| Command  | X           | X               | X            |
+|:----------------|:-----------:|:---------------:|:------------:|
+| Mail app        | X           | X               | X            |
+| Command         | X           | X               | X            |
 
 ## Deployment methods
 
@@ -51,7 +59,8 @@ A SharePoint add-in catalog is a special site collection that you can create to 
 
 If you are deploying add-ins in an on-premises environment, use a SharePoint catalog. For details, see [Publish task pane and content add-ins to a SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
->**Note:** SharePoint catalogs do not support Office 2016 for Mac. To deploy Office Add-ins to Mac clients, you must submit them to the [Office Store]. 
+> [!NOTE]
+> SharePoint catalogs do not support Office 2016 for Mac. To deploy Office Add-ins to Mac clients, you must submit them to the [Office Store]. 
 
 ### Outlook add-in deployment
 
@@ -66,11 +75,11 @@ To assign add-ins to tenants, you use the Exchange admin center to upload a mani
 
 ## Additional resources
 
-- [Deploy and install Outlook add-ins for testing](../outlook/testing-and-tips.md) 
+- [Sideload Outlook add-ins for testing](https://dev.office.com/docs/add-ins/testing/sideload-outlook-add-ins-for-testing)
 - [Submit to the Office Store][Office Store]
-- [Design guidelines for Office Add-ins](../design/add-in-design)
-- [Create effective Office Store add-ins](https://msdn.microsoft.com/en-us/library/jj635874.aspx)
+- [Design guidelines for Office Add-ins](../design/add-in-design.md)
+- [Create effective Office Store listings](https://dev.office.com/officestore/docs/create-effective-office-store-listings)
 - [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)
 
-[Office Store]: http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx
+[Office Store]: https://dev.office.com/officestore/docs/submit-to-the-office-store
 [Office Add-in host and platform availability]: http://dev.office.com/add-in-availability

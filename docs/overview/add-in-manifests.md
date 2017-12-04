@@ -1,6 +1,10 @@
+---
+title: Office Add-ins XML manifest
+description: ''
+ms.date: 12/04/2017
+---
 
 # Office Add-ins XML manifest
-
 
 The XML manifest file of an Office Add-in describes how your add-in should be activated when an end user installs and uses it with Office documents and applications. 
 
@@ -16,17 +20,14 @@ An XML manifest file based on this schema enables an Office Add-in to do the fol
     
 - For Outlook add-ins, define the rule or rules that specify the context in which they will be activated and interact with a message, appointment, or meeting request item.
 
->**Note:** When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
-
+> [!NOTE]
+> When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
 
 ## Required elements
 
-
 The following table specifies the elements that are required for the three types of Office Add-ins.
 
-
 **Required elements by Office Add-in type**
-
 
 |**Element**|**Content**|**Task pane**|**Outlook**|
 |:-----|:-----|:-----|:-----|
@@ -53,23 +54,22 @@ The following table specifies the elements that are required for the three types
 
 *Added in the Office Add-in Manifest Schema version 1.1.
 
-**Important Notes**: 
+> [!IMPORTANT]
+> <ul><li>Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID.</li>
 
-- Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID. 
+> <li>All URLs, such as the source file locations specified in the [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) element, must be **SSL-secured (HTTPS)**.</li>
 
-- All URLs, such as the source file locations specified in the [SourceLocation](../../reference/manifest/sourcelocation.md) element, must be **SSL-secured (HTTPS)**.
+> <li>All icon URLs, such as those used on command surfaces, must **allow caching**. The web server should NOT return HTTP headers like no-cache/no-store.</li>
 
-- All icon URLs, such as those used on command surfaces, must **allow caching**. The web server should NOT return HTTP headers like no-cache/no-store. 
+> <li>Add-ins submitted to the Office Store must also include the [SupportUrl](https://dev.office.com/reference/add-ins/manifest/supporturl) element. For more information, see [What are some common submission errors to avoid?](http://msdn.microsoft.com/library/0ceb385c-a608-40cc-8314-78e39d6c75d0%28Office.15%29.aspx#bk_q2)</li>
 
-- Add-ins submitted to the Office Store must also include the [SupportUrl](../../reference/manifest/supporturl.md) element. For more information, see [What are some common submission errors to avoid?](http://msdn.microsoft.com/library/0ceb385c-a608-40cc-8314-78e39d6c75d0%28Office.15%29.aspx#bk_q2)
-
-- As a best practice, only use the [AppDomains](../../reference/manifest/appdomains.md) element to specify domains other than the one specified in the [SourceLocation](../../reference/manifest/sourcelocation.md) element for authentication scenarios.
+> <li>As a best practice, only use the [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) element to specify domains other than the one specified in the [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) element for authentication scenarios.</li></ul>
 
 ## Specify domains you want to open in the add-in window
 
-By default, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](../../reference/manifest/sourcelocation.md) element of the manifest file), that URL will open in a new browser window outside the add-in pane of the Office host application. This default behavior protects the user against unexpected page navigation within the add-in pane from embedded **iframe** elements.
+By default, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) element of the manifest file), that URL will open in a new browser window outside the add-in pane of the Office host application. This default behavior protects the user against unexpected page navigation within the add-in pane from embedded **iframe** elements.
 
-To override this behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](../../reference/manifest/appdomains.md) element of the manifest file. If the add-in tries to go to a URL in a domain that isn't in the list, that URL will open in a new browser window (outside the add-in pane).
+To override this behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) element of the manifest file. If the add-in tries to go to a URL in a domain that isn't in the list, that URL will open in a new browser window (outside the add-in pane).
 
 The following XML manifest example hosts its main add-in page in the  `https://www.contoso.com` domain as specified in the **SourceLocation** element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](http://msdn.microsoft.com/en-us/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx) element within the **AppDomains** element list. If the add-in goes to a page in the www.northwindtraders.com domain, that page will open in the add-in pane.
 
@@ -425,14 +425,14 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 
 ## Validate and troubleshoot issues with your manifest
 
-For troubleshooting issues with your manifest, see [Validate and troubleshoot issues with your manifest](../../docs/testing/troubleshoot-manifest.md). There, you will find information on how to validate the manifest against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas), and also how to use runtime logging to debug the manifest.
+For troubleshooting issues with your manifest, see [Validate and troubleshoot issues with your manifest](../testing/troubleshoot-manifest.md). There, you will find information on how to validate the manifest against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas), and also how to use runtime logging to debug the manifest.
 
 ## Additional resources
 
 
-- [Define add-in commands in your manifest](../../docs/develop/define-add-in-commands.md)
-- [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md)
-- [Localization for Office Add-ins](../../docs/develop/localization.md)
+- [Define add-in commands in your manifest](../develop/define-add-in-commands.md)
+- [Specify Office hosts and API requirements](specify-office-hosts-and-api-requirements.md)
+- [Localization for Office Add-ins](../develop/localization.md)
 - [Schema reference for Office Add-ins manifests](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas)
-- [Validate and troubleshoot issues with your manifest](../../docs/testing/troubleshoot-manifest.md)
+- [Validate and troubleshoot issues with your manifest](../testing/troubleshoot-manifest.md)
 

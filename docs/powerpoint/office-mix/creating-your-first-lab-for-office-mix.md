@@ -1,8 +1,13 @@
+---
+title: Walkthrough - Creating your first lab for Office Mix
+description: ''
+ms.date: 12/04/2017
+---
+
 
 # Walkthrough: Creating your first lab for Office Mix
+
 Build your first LabsJS lab using a step-by-step walkthrough.
-
-
 
 In this walkthrough you'll create a simple LabsJS lab from scratch. Your lab will be a simple true/false quiz that provides just a single question. 
 
@@ -27,9 +32,8 @@ The walkthrough is going to cover four main lab features:
 - Taking (or running) the lab
     
 
- **Note**  
- ---
- The file labhost.html runs on a web server and provides the hosting environment for lab development and testing. This greatly simplifies lab development. See [Get started with LabsJS for Office Mix](get-started-with-labsjs-for-office-mix.md) for information about setting up your development environment.<br/><br/>
+   > [!NOTE]
+   > The file labhost.html runs on a web server and provides the hosting environment for lab development and testing. This greatly simplifies lab development. See [Get started with LabsJS for Office Mix](get-started-with-labsjs-for-office-mix.md) for information about setting up your development environment.<br/><br/>
 
 Finally, you can view the completed JavaScript file (TrueFalse.js) among the files distributed with this SDK. What follows is a walkthrough of the coding process.
 
@@ -432,8 +436,6 @@ $(document).ready(function () {
 
 
 ## Additional resources
-<a name="bk_addresources"> </a>
-
 
 - [Office Mix add-ins](office-mix-add-ins.md)
     

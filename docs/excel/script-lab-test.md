@@ -1,10 +1,17 @@
-# Testing Script Lab Integration
+---
+title: Testing Script Lab integration
+description: ''
+ms.date: 12/04/2017
+---
+
+
+# Testing Script Lab integration
 
 This is a sample test file, meant to demonstrate an upcoming ScriptLab feature which will enable developers to try out their snippets in Excel, Word, PowerPoint.  
 
-## Pre-reqs:
+## Prerequisites
 - You'll need a View URL from a ScriptLab snippet
-- Note: We *should* indicated ScriptLab needs Office 365 to explore the most recent snippets.  Developers can obtain a Office 365 Subscription through our [Office 365 developer program](https://dev.office.com/devprogram), for development purposes only.  
+- Note: We *should* indicate that ScriptLab needs Office 365 to explore the most recent snippets.  Developers can obtain a Office 365 Subscription through our [Office 365 developer program](https://dev.office.com/devprogram), for development purposes only.  
 
 
 ## Try it out 'Button'
@@ -36,7 +43,9 @@ In this mode, we will embed a snippet directly as an iframe into our documents. 
 <iframe src="https://bornholm-edge.azurewebsites.net/#/view/gist/excel/0cc24cee687141d1c2726c0feea70911" height="600px" width="95%" frameborder="0"></iframe>
 ```
 
-## Testing Considerations
+## Testing considerations
 We need to verify mobile, non-Office 365 subscriptions (we have feedback on the office js docs where lots of developers were one 2013 or earlier.  
 
 For the Embed path, we need final sign off and need to make sure the content exposed in the view gist page meets our Accessibility guidelines.
+
+## Additional resources

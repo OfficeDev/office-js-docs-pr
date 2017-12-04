@@ -1,10 +1,16 @@
+---
+title: Update to the latest JavaScript API for Office library and version 1.1 add-in manifest schema
+description: ''
+ms.date: 12/04/2017
+---
+
 # Update to the latest JavaScript API for Office library and version 1.1 add-in manifest schema
 
 This article describes how to update your JavaScript files (Office.js and app-specific .js files) and add-in manifest validation file in your Office Add-in project to version 1.1.
 
 ## Using the most up-to-date project files
 
-If you use Visual Studio to develop your add-in, to use the [newest API members](../../reference/what's-changed-in-the-javascript-api-for-office.md) of the JavaScript API for Office and the [v1.1 features of the add-in manifest](../../docs/overview/add-in-manifests.md) (which is validated against offappmanifest-1.1.xsd), you need to download and install the [Visual Studio 2015 and the latest Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs).
+If you use Visual Studio to develop your add-in, to use the [newest API members](https://dev.office.com/reference/add-ins/what's-changed-in-the-javascript-api-for-office) of the JavaScript API for Office and the [v1.1 features of the add-in manifest](../overview/add-in-manifests.md) (which is validated against offappmanifest-1.1.xsd), you need to download and install the [Visual Studio 2015 and the latest Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs).
 
 If you use a text editor or IDE other than Visual Studio to develop your add-in, you need to update the references to the CDN for Office.js and the version of schema referenced in your add-in's manifest.
 
@@ -33,7 +39,7 @@ Note that the update process is applied on a  _per-project basis_ - you'll need 
     
       - In the left pane, choose **Update** and complete the package update process.
     
-  - Go to step 6.
+      - Go to step 6.
     
 2. Choose  **Tools** > **NuGet Package Manager** > **Manage Nuget Packages for Solution**.
     
@@ -41,13 +47,14 @@ Note that the update process is applied on a  _per-project basis_ - you'll need 
     
 4. In the left pane, choose **Update** and complete the package update process.
     
-5. In the **head** tag of your add-in's HTML pages, comment out or delete any existing office.js script references and reference the updated JavaScript API for Office library like as follows (:
+5. In the **head** tag of your add-in's HTML pages, comment out or delete any existing office.js script references, and reference the updated JavaScript API for Office library as follows:
     
-```html
-<script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
-```
+    ```html
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
+    ```
 
-> **Note**: The `/1/` in front of `office.js` in the CDN URL specifies to use the latest incremental release within version 1 of Office.js.   
+    > [!NOTE]
+    > The `/1/` in front of `office.js` in the CDN URL specifies to use the latest incremental release within version 1 of Office.js.   
 
 
 ### To update the manifest file in your project to use schema version 1.1
@@ -65,7 +72,8 @@ In your Add-in's Manifest file, update the **xmlns** attribute of the **OfficeAp
 </OfficeApp>
 ```
 
-> **Note:** After updating the version of the add-in manifest schema to 1.1, you will need to remove the  **Capabilities** and **Capability** elements, and replace them with either the [Hosts](../../reference/manifest/hosts.md) and [Host](../../reference/manifest/hosts.md) elements or the [Requirements and Requirement elements](../../docs/overview/specify-office-hosts-and-api-requirements.md).
+> [!NOTE]
+> After updating the version of the add-in manifest schema to 1.1, you will need to remove the  **Capabilities** and **Capability** elements, and replace them with either the [Hosts](https://dev.office.com/reference/add-ins/manifest/hosts) and [Host](https://dev.office.com/reference/add-ins/manifest/hosts) elements or the [Requirements and Requirement elements](../overview/specify-office-hosts-and-api-requirements.md).
 
 ## Updating an Office Add-in project created with a text editor or other IDE
 
@@ -75,20 +83,22 @@ The update process is applied on a  _per-project basis_ - you'll need to repeat 
 
 You don't need local copies of the JavaScript API for Office files (Office.js and app-specific .js files) to develop anOffice Add-in (referencing the CDN for Office.js downloads the necessary files at runtime), but if you want a local copy of the library files you can use the [NuGet Command-Line Utility](http://docs.nuget.org/consume/installing-nuget) and the `Install-Package Microsoft.Office.js` command to download them.
 
- > **Note:** To get a copy of the XSD (XML Schema Definition) for the v1.1 add-in manifest, see the listing in [Schema reference for Office Add-ins manifests (v1.1)](../overview/add-in-manifests.md).
+> [!NOTE]
+> To get a copy of the XSD (XML Schema Definition) for the v1.1 add-in manifest, see the listing in [Schema reference for Office Add-ins manifests (v1.1)](../overview/add-in-manifests.md).
 
 
 ### To update the JavaScript API for Office library files in your project to use the newest release
 
 1. Open the HTML pages for your add-in in your text editor or IDE.
     
-2. In the **head** tag of your add-in's HTML pages, comment out or delete any existing office.js script references and reference the updated JavaScript API for Office library like as follows (:
+2. In the **head** tag of your add-in's HTML pages, comment out or delete any existing office.js script references, and reference the updated JavaScript API for Office library as follows:
     
-```html
-<script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
-```
+    ```html
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
+    ```
 
-> **Note**: The `/1/` in front of `office.js` in the CDN URL specifies to use the latest incremental release within version 1 of Office.js.   
+    > [!NOTE]
+    > The `/1/` in front of `office.js` in the CDN URL specifies to use the latest incremental release within version 1 of Office.js.   
 
 ### To update the manifest file in your project to use schema version 1.1
 
@@ -105,16 +115,14 @@ In your Add-in's Manifest file, update the **xmlns** attribute of the **OfficeAp
 </OfficeApp>
 ```
 
-> **Note:** After updating the version of the add-in manifest schema to 1.1, you will need to remove the  **Capabilities** and **Capability** elements, and replace them with either the [Hosts](../../reference/manifest/hosts.md) and [Host](../../reference/manifest/hosts.md) elements or the [Requirements and Requirement elements](../../docs/overview/specify-office-hosts-and-api-requirements.md).
+> [!NOTE]
+> After updating the version of the add-in manifest schema to 1.1, you will need to remove the  **Capabilities** and **Capability** elements, and replace them with either the [Hosts](https://dev.office.com/reference/add-ins/manifest/hosts) and [Host](https://dev.office.com/reference/add-ins/manifest/hosts) elements or the [Requirements and Requirement elements](../overview/specify-office-hosts-and-api-requirements.md).
     
 
 ## Additional resources
 
-- [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md)
-    
-- [Understanding the JavaScript API for Office](../../docs/develop/understanding-the-javascript-api-for-office.md)
-    
-- [JavaScript API for Office](../../reference/javascript-api-for-office.md)
-    
+- [Specify Office hosts and API requirements](../overview/specify-office-hosts-and-api-requirements.md) 
+- [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md)    
+- [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)   
 - [Schema reference for Office Add-ins manifests (v1.1)](../overview/add-in-manifests.md)
     

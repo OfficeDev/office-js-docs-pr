@@ -1,8 +1,14 @@
+---
+title: Referencing the JavaScript API for Office library from its content delivery network (CDN)
+description: ''
+ms.date: 12/04/2017
+---
+
 
 # Referencing the JavaScript API for Office library from its content delivery network (CDN)
 
 
-The [JavaScript API for Office](../../reference/javascript-api-for-office.md) library consists of the Office.js file and associated host application-specific .js files, such as Excel-15.js and Outlook-15.js. 
+The [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office) library consists of the Office.js file and associated host application-specific .js files, such as Excel-15.js and Outlook-15.js. 
 
 
 The simplest way to reference the API is to use our CDN by adding the following `<script>` to your page's `<head>` tag:  
@@ -15,13 +21,11 @@ The  `/1/` in front of `office.js` in the CDN URL specifies the latest increment
 
 If you plan to publish your Office Add-in from the Office Store, you must use this CDN reference. Local references are only appropriate for internal, development, and debugging scenarios.
 
-> **Important:** 
-When you develop an add-in for any Office host application, reference the JavaScript API for Office from inside the `<head>` section of the page. This ensures that the API is fully initialized prior to any body elements. Office hosts require that add-ins initialize within 5 seconds of activation. If your add-in doesn't activate within this threshold, it will be declared unresponsive and an error message will be displayed to the user.       
+> [!IMPORTANT]
+>  When you develop an add-in for any Office host application, reference the JavaScript API for Office from inside the `<head>` section of the page. This ensures that the API is fully initialized prior to any body elements. Office hosts require that add-ins initialize within 5 seconds of activation. If your add-in doesn't activate within this threshold, it will be declared unresponsive and an error message will be displayed to the user.       
 
 ## Additional resources
 
-
-
-- [Understanding the JavaScript API for Office](../../docs/develop/understanding-the-javascript-api-for-office.md)    
-- [JavaScript API for Office](../../reference/javascript-api-for-office.md)
+- [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md)    
+- [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)
     

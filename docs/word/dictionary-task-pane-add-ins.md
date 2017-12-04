@@ -1,43 +1,46 @@
+---
+title: Create a dictionary task pane add-in
+description: ''
+ms.date: 12/04/2017
+---
+
 
 # Create a dictionary task pane add-in
 
 
-This article shows you an example of a task pane add-in and accompanying web service that provides dictionary definitions or thesaurus synonyms for the user's current selection in a Word 2013 document. 
+This article shows you an example of a task pane add-in with an accompanying web service that provides dictionary definitions or thesaurus synonyms for the user's current selection in a Word 2013 document. 
 
 A dictionary Office Add-in is based on the standard task pane add-in with additional features to support querying and displaying definitions from a dictionary XML web service in additional places in the Office application's UI. 
 
-In a typical dictionary task pane add-in, a user selects a word or phrase in their document, and then the JavaScript logic behind the add-in passes this selection to the dictionary provider's XML web service. The dictionary provider's webpage then updates to show the definitions for the selection to the user.
+In a typical dictionary task pane add-in, a user selects a word or phrase in their document, and the JavaScript logic behind the add-in passes this selection to the dictionary provider's XML web service. The dictionary provider's webpage then updates to show the definitions for the selection to the user.
 The XML web service component returns up to three definitions in the format defined by the OfficeDefinitions XML schema, which are then displayed to the user in other places in the hosting Office application's UI. 
 Figure 1 shows the selection and display experience for a Bing-branded dictionary add-in that is running in Word 2013.
 
-**Figure 1. Dictionary add-in displaying definitions for the selected word**
+*Figure 1. Dictionary add-in displaying definitions for the selected word*
 
+![A dictionary app displaying a definition](../images/dictionary-agave-01.jpg)
 
-![A dictionary app displaying a definition](../../images/DictionaryAgave01.jpg)
-
-It is up to you to determine whether clicking the  **See More** link in the dictionary add-in's HTML UI displays more information within the task pane or opens a separate browser window to the full webpage for the selected word or phrase.
+It is up to you to determine if clicking the  **See More** link in the dictionary add-in's HTML UI displays more information within the task pane or opens a separate browser window to the full webpage for the selected word or phrase.
 Figure 2 shows the  **Define** context menu command that enables users to quickly launch installed dictionaries. Figures 3 through 5 show the places in the Office UI where the dictionary XML services are used to provide definitions in Word 2013.
 
-**Figure 2. Define command in the context menu**
+*Figure 2. Define command in the context menu*
+
+![Define context menu](../images/dictionary-agave-02.jpg)
 
 
+*Figure 3. Definitions in the Spelling and Grammar panes*
 
-![Define context menu](../../images/DictionaryAgave02.jpg)
-
-**Figure 3. Definitions in the Spelling and Grammar panes**
-
-
-![Definitions in the Spelling and Grammar panes](../../images/DictionaryAgave03.jpg)
-
-**Figure 4. Definitions in the Thesaurus pane**
+![Definitions in the Spelling and Grammar panes](../images/dictionary-agave-03.jpg)
 
 
-![Definitions in the Thesaurus pane](../../images/DictionaryAgave04.jpg)
+*Figure 4. Definitions in the Thesaurus pane*
 
-**Figure 5. Definitions in Reading Mode**
+![Definitions in the Thesaurus pane](../images/dictionary-agave-04.jpg)
 
 
-![Definitions in Reading Mode](../../images/DictionaryAgave05.jpg)
+*Figure 5. Definitions in Reading Mode*
+
+![Definitions in Reading Mode](../images/dictionary-agave-05.jpg)
 
 To create a task pane add-in that provides a dictionary lookup, you create two main components: 
 
@@ -90,9 +93,6 @@ The following code shows the XSD for the OfficeDefinitions XML Schema.
 
 Returned XML that conforms to the OfficeDefinitions schema consists of a root  **Result** element that contains a **Definitions** element with from zero to three **Definition** child elements, each of which contains definitions that are no more than 400 characters in length. Additionally, the URL to the full page on the dictionary site must be provided in the **SeeMoreURL** element. The following example shows the structure of returned XML that conforms to the OfficeDefinitions schema.
 
-
-
-
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <Result xmlns="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions">
@@ -112,7 +112,7 @@ Returned XML that conforms to the OfficeDefinitions schema consists of a root  *
 The following C# code provides a simple example of how to write code for an XML web service that returns the result of a dictionary query in the OfficeDefinitions XML format.
 
 
-```C#
+```cs
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -175,8 +175,6 @@ public class WebService : System.Web.Services.WebService {
 
         return doc;
     }
-   
-
 }
 ```
 
@@ -184,7 +182,7 @@ public class WebService : System.Web.Services.WebService {
 ## Creating the components of a dictionary add-in
 
 
-A dictionary add-in consists of three main component files.
+A dictionary add-in consists of three main component files:
 
 
 - An XML manifest file that describes the add-in.
@@ -256,7 +254,7 @@ The following is an example manifest file for a dictionary add-in.
 </OfficeApp>
 ```
 
-The  **Dictionary** element and its child elements that are specific to creating a dictionary add-in's manifest file are described in the following sections. For information about the other elements in the manifest file, see [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md).
+The  **Dictionary** element and its child elements that are specific to creating a dictionary add-in's manifest file are described in the following sections. For information about the other elements in the manifest file, see [Office Add-ins XML manifest](../overview/add-in-manifests.md).
 
 
 ### Dictionary element
@@ -280,7 +278,7 @@ The  **Dictionary** element and its child elements are added to the manifest of 
 #### TargetDialects element
 
 
-Specifies the regional languages that this dictionary supports. Required (for dictionary add-ins).
+Specifies the regional languages that this dictionary supports. Required for dictionary add-ins.
 
  **Parent element**
 
@@ -292,12 +290,9 @@ Specifies the regional languages that this dictionary supports. Required (for di
 
  **Remarks**
 
-The  **TargetDialects** element and its child elements specify the set of regional languages your dictionary contains. For example, if your dictionary applies to both Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that in this element. Do not specify more than one language (for example, Spanish and English) in this manifest. Publish separate languages as separate dictionaries.
+The  **TargetDialects** element and its child elements specify the set of regional languages your dictionary contains. For example, if your dictionary applies to both Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that in this element. Do not specify more than one language (e.g., Spanish and English) in this manifest. Publish separate languages as separate dictionaries.
 
  **Example**
-
-
-
 
 ```XML
 <TargetDialects>
@@ -326,7 +321,7 @@ The  **TargetDialects** element and its child elements specify the set of region
 #### TargetDialect element
 
 
-Specifies a regional language that this dictionary supports. Required (for dictionary add-ins).
+Specifies a regional language that this dictionary supports. Required for dictionary add-ins.
 
  **Parent element**
 
@@ -339,8 +334,6 @@ Specify the value for a regional language in the RFC1766  `language` tag format,
  **Example**
 
 
-
-
 ```XML
 <TargetDialect>EN-US</TargetDialect>
 ```
@@ -349,7 +342,7 @@ Specify the value for a regional language in the RFC1766  `language` tag format,
 #### QueryUri element
 
 
-Specifies the endpoint for the dictionary query service. Required (for dictionary add-ins).
+Specifies the endpoint for the dictionary query service. Required for dictionary add-ins.
 
  **Parent element**
 
@@ -362,8 +355,6 @@ This is the URI of the XML web service for the dictionary provider. The properly
  **Example**
 
 
-
-
 ```XML
 <QueryUri DefaultValue="http://msranlc-lingo1/proof.aspx?q="/>
 ```
@@ -372,7 +363,7 @@ This is the URI of the XML web service for the dictionary provider. The properly
 #### CitationText element
 
 
-Specifies the text to use in citations. Required (for dictionary add-ins).
+Specifies the text to use in citations. Required for dictionary add-ins.
 
  **Parent element**
 
@@ -382,11 +373,9 @@ Specifies the text to use in citations. Required (for dictionary add-ins).
 
 This element specifies the beginning of the citation text that will be displayed on a line below the content that is returned from the web service (for example, "Results by: " or "Powered by: ").
 
-For this element, you can specify values for additional locales by using the  **Override** element. For example, if a user is running the Spanish SKU of Office, but using an English dictionary, this allows the citation line to read "Resultados por: Bing" rather than "Results by: Bing". For more information about how to specify values for additional locales, see the section "Providing settings for different locales" in [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md).
+For this element, you can specify values for additional locales by using the  **Override** element. For example, if a user is running the Spanish SKU of Office, but using an English dictionary, this allows the citation line to read "Resultados por: Bing" rather than "Results by: Bing". For more information about how to specify values for additional locales, see the section "Providing settings for different locales" in [Office Add-ins XML manifest](../overview/add-in-manifests.md).
 
  **Example**
-
-
 
 
 ```XML
@@ -397,7 +386,7 @@ For this element, you can specify values for additional locales by using the  **
 #### DictionaryName element
 
 
-Specifies the name of this dictionary. Required (for dictionary add-ins).
+Specifies the name of this dictionary. Required for dictionary add-ins.
 
  **Parent element**
 
@@ -411,9 +400,6 @@ For this element, you can specify values for additional locales.
 
  **Example**
 
-
-
-
 ```XML
 <DictionaryName DefaultValue="Bing Dictionary" />
 ```
@@ -422,7 +408,7 @@ For this element, you can specify values for additional locales.
 #### DictionaryHomePage element
 
 
-Specifies the URL of the home page for the dictionary. Required (for dictionary add-ins).
+Specifies the URL of the home page for the dictionary. Required for dictionary add-ins.
 
  **Parent element**
 
@@ -437,8 +423,6 @@ For this element, you can specify values for additional locales.
  **Example**
 
 
-
-
 ```XML
 <DictionaryHomePage DefaultValue="http://www.bing.com" />
 ```
@@ -446,9 +430,7 @@ For this element, you can specify values for additional locales.
 
 ### Creating a dictionary add-in's HTML user interface
 
-
 The following two examples show the HTML and CSS files for the UI of the Demo Dictionary add-in. To view how the UI is displayed in the add-in's task pane, see Figure 6 following the code. To see how the implementation of the JavaScript in the Dictionary.js file provides programming logic for this HTML UI, see "Writing the JavaScript implementation" immediately following this section.
-
 
 ```HTML
 <!DOCTYPE html>
@@ -491,10 +473,7 @@ The following two examples show the HTML and CSS files for the UI of the Demo Di
 
 The following example shows the contents of Style.css.
 
-
-
-
-```
+```CSS
 #mainContainer
 {
     font-family: Segoe UI;
@@ -533,10 +512,9 @@ a:hover, a:active
 }
 ```
 
+*Figure 6. Demo dictionary UI*
 
-**Figure 6. Demo dictionary UI**
-
-![Demo dictionary UI](../../images/DictionaryAgave06.jpg)
+![Demo dictionary UI](../images/dictionary-agave-06.jpg)
 
 
 ### Writing the JavaScript implementation
@@ -547,13 +525,13 @@ The following example shows the JavaScript implementation in the Dictionary.js f
 The primary members of the JavaScript API for Office (Office.js) that are called from this implementation are as follows:
 
 
-- The [initialize](../../reference/shared/office.initialize.md) event of the **Office** object, which is raised when the add-in context is initialized, and provides access to a [Document](../../reference/shared/document.md) object instance that represents the document the add-in is interacting with.
+- The [initialize](https://dev.office.com/reference/add-ins/shared/office.initialize) event of the **Office** object, which is raised when the add-in context is initialized, and provides access to a [Document](https://dev.office.com/reference/add-ins/shared/document) object instance that represents the document the add-in is interacting with.
     
-- The [addHandlerAsync](../../reference/shared/document.addhandlerasync.md) method of the **Document** object, which is called in the **initialize** function to add an event handler for the [SelectionChanged](../../reference/shared/document.selectionchanged.event.md) event of the document to listen for user selection changes.
+- The [addHandlerAsync](https://dev.office.com/reference/add-ins/shared/document.addhandlerasync) method of the **Document** object, which is called in the **initialize** function to add an event handler for the [SelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) event of the document to listen for user selection changes.
     
-- The [getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) method of the **Document** object, which is called in the `tryUpdatingSelectedWord()` function when the **SelectionChanged** event handler is raised to get the word or phrase the user selected, coerce it to plain text, and then execute the `selectedTextCallback` asynchronous callback function.
+- The [getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) method of the **Document** object, which is called in the `tryUpdatingSelectedWord()` function when the **SelectionChanged** event handler is raised to get the word or phrase the user selected, coerce it to plain text, and then execute the `selectedTextCallback` asynchronous callback function.
     
-- When the  `selectTextCallback` asynchronous callback function that is passed as the _callback_ argument of the **getSelectedDataAsync** method executes, it gets the value of the selected text when the callback returns. It gets that value from the callback's _selectedText_ argument (which is of type [AsyncResult](../../reference/shared/asyncresult.md)) by using the [value](../../reference/shared/asyncresult.status.md) property of the returned **AsyncResult** object.
+- When the  `selectTextCallback` asynchronous callback function that is passed as the _callback_ argument of the **getSelectedDataAsync** method executes, it gets the value of the selected text when the callback returns. It gets that value from the callback's _selectedText_ argument (which is of type [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult)) by using the [value](https://dev.office.com/reference/add-ins/shared/asyncresult.status) property of the returned **AsyncResult** object.
     
 - The rest of the code in the  `selectedTextCallback` function queries the XML web service for definitions. It also calls into the Microsoft Translator APIs to provide the URL of a .wav file that has the selected word's pronunciation.
     
@@ -562,7 +540,7 @@ The primary members of the JavaScript API for Office (Office.js) that are called
 
 
 
-```
+```javascript
 // The document the dictionary add-in is interacting with.
 var _doc; 
 // The last looked-up word, which is also the currently displayed word.

@@ -1,36 +1,49 @@
-# Create a Node.js Office Add-in that uses single sign-on
+---
+title: Create a Node.js Office Add-in that uses single sign-on
+description: ''
+ms.date: 12/04/2017
+---
 
-Users can sign into Office, and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign-on a second time. For an overview, see [Enable SSO in an Office Add-in](../../docs/develop/sso-in-office-add-ins.md).
+# Create a Node.js Office Add-in that uses single sign-on (preview)
 
-This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with Node.js and express. 
+Users can sign in to Office, and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign in a second time. For an overview, see [Enable SSO in an Office Add-in](sso-in-office-add-ins.md).
 
-> **Note:** For a similar article about an ASP.NET-based add-in, see [Create an ASP.NET Office Add-in that uses single sign-on](../../docs/develop/create-sso-office-add-ins-aspnet.md).
+This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with Node.js and Express. 
+
+> [!NOTE]
+> For a similar article about an ASP.NET-based add-in, see [Create an ASP.NET Office Add-in that uses single sign-on](create-sso-office-add-ins-aspnet.md).
 
 ## Prerequisites
 
-* [Node and npm](https://nodejs.org/en/), version 6.9.4 or later.
-* [Git Bash](https://git-scm.com/downloads) (Or another git client.)
-* TypeScript version 2.2.2 or later.
-* Office 2016, Version 1708, build 8424.nnnn or later (the Office 365 subscription version, sometimes called “Click to Run”). You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1).
+* [Node and npm](https://nodejs.org/en/), version 6.9.4 or later
+
+* [Git Bash](https://git-scm.com/downloads) (or another git client)
+
+* TypeScript version 2.2.2 or later
+
+* Office 2016, Version 1708, build 8424.nnnn or later (the Office 365 subscription version, sometimes called “Click to Run”)
+
+  You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1).
 
 ## Set up the starter project
 
 1. Clone or download the repo at [Office Add-in NodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso). 
 
-
-    > **Note:** There are two versions of the sample. 
-    > 
+    > [!NOTE]
+    > There are two versions of the sample:  
     > * The **Before** folder is a starter project. The UI and other aspects of the add-in that are not directly connected to SSO or authorization are already done. Later sections of this article walk you through the process of completing it. 
     > * The **Completed** version of the sample is just like the add-in that you would have if you completed the procedures of this article, except that the completed project has code comments that would be redundant with the text of this article. To use the completed version, just follow the instructions in this article, but replace "Before" with "Completed" and skip the sections **Code the client side** and **Code the server** side.
 
-1. Open a Git bash console in the **Before** folder.
+2. Open a Git bash console in the **Before** folder.
 
-2. Enter `npm install` in the console to install all of the dependencies itemized in the package.json file.
+3. Enter `npm install` in the console to install all of the dependencies itemized in the package.json file.
 
-3. Enter `npm run build ` in the console to build the project. 
-     > Note: You may see some build errors saying that some variables are declared but not used. Ignore these errors. They are a side effect of the fact that the "Before" version of the sample is missing some code that will be added later.
+4. Enter `npm run build ` in the console to build the project. 
 
-## Register the add-in with Azure AD V2 endpoint
+    > [!NOTE]
+    > You may see some build errors saying that some variables are declared but not used. Ignore these errors. They are a side effect of the fact that the "Before" version of the sample is missing some code that will be added later.
+
+## Register the add-in with Azure AD v2.0 endpoint
 
 1. Navigate to [https://apps.dev.microsoft.com](https://apps.dev.microsoft.com) . 
 
@@ -42,7 +55,8 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. When the configuration page for the app opens, copy the **Application Id** and save it. You will use it in a later procedure. 
 
-    > Note: This ID is the “audience” value when other applications, such as the Office host application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the “client ID” of the application when it, in turn, seeks authorized access to Microsoft Graph.
+    > [!NOTE]
+    > This ID is the “audience” value when other applications, such as the Office host application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the “client ID” of the application when it, in turn, seeks authorized access to Microsoft Graph.
 
 1. In the **Application Secrets** section, press **Generate New Password**. A popup dialog opens with a new password (also called an “app secret”) displayed. *Copy the password immediately and save it with the application ID.* You will need it in a later procedure. Then close the dialog.
 
@@ -50,27 +64,35 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. In the dialog that opens, select **Web API**.
 
-1. An **Application ID URI** has been generated of the form “api://{App ID GUID}”. Insert the string “localhost:3000” between the double forward slashes and the GUID. The entire ID should read `api://localhost:3000/{App ID GUID}`. (The domain part of the **Scope** name just below the **Application ID URI** will automatically change to match. It should read `api://localhost:3000/{App ID GUID}/access_as_user`.)
+1. An **Application ID URI** has been generated of the form “api://{App ID GUID}”. Insert the string “localhost:3000” between the double forward slashes and the GUID. The entire ID should read `api://localhost:3000/{App ID GUID}`. 
+
+    > [!NOTE]
+    > The domain part of the **Scope** name just below the **Application ID URI** will automatically change to match. It should read `api://localhost:3000/{App ID GUID}/access_as_user`.
 
 1. This step and the next one give the Office host application access to your add-in. In the **Pre-authorized applications** section, you identify the applications that you want to authorize to your add-in's web application. Each of the following IDs needs to be pre-authorized. Each time you enter one, a new empty textbox appears. (Enter only the GUID.)
 
- * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
- * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office Online)
- * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office Online) 
+    * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
+    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office Online)
+    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office Online) 
 
-1. Open the **Scope** drop down beside each **Application ID** and check the box for `api://localhost:44355/{App ID GUID}/access_as_user`.
+1. Open the **Scope** dropdown beside each **Application ID** and check the box for `api://localhost:44355/{App ID GUID}/access_as_user`.
 
 1. Near the top of the **Platforms** section, click **Add Platform** again and select **Web**.
 
 1. In the new **Web** section under **Platforms**, enter the following as a **Redirect URL**: `https://localhost:3000`. 
 
-    > Note: As of this writing, the **Web API** platform sometimes disappears from the **Platforms** section, particularly if the page is refreshed after the **Web** platform is added *and the registration page is saved*. For reassurance that your **Web API** platform is still part of the registration, click the **Edit Application Manifest** button near the bottom of the page. You should see the `api://localhost:3000/{App ID GUID}` string in the **identifierUris** property of the manifest. There will also be a **oauth2Permissions** property whose **value** subproperty has the value `access_as_user`.
+    > [!NOTE]
+    > As of this writing, the **Web API** platform sometimes disappears from the **Platforms** section, particularly if the page is refreshed after the **Web** platform is added *and the registration page is saved*. For reassurance that your **Web API** platform is still part of the registration, click the **Edit Application Manifest** button near the bottom of the page. You should see the `api://localhost:3000/{App ID GUID}` string in the **identifierUris** property of the manifest. There will also be a **oauth2Permissions** property whose **value** subproperty has the value `access_as_user`.
 
 1. Scroll down to the **Microsoft Graph Permissions** section, the **Delegated Permissions** subsection. Use the **Add** button to open a **Select Permissions** dialog.
 
 1. In the dialog box, check the boxes for the following permissions: 
+
     * Files.Read.All
     * profile
+
+    > [!NOTE]
+    > The `User.Read` permission may already be listed by default. It is a good practice not to ask for permissions that are not needed, so we recommend that you uncheck the box for this permission.
 
 1. Click **OK** at the bottom of the dialog.
 
@@ -78,7 +100,8 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Grant admin consent to the add-in
 
-> **Note:** This procedure is only needed when you are developing the add-in. When your production add-in is deployed to the Office Store or an add-in catalog, users will individually trust it when they install it.
+> [!NOTE]
+> This procedure is only needed when you are developing the add-in. When your production add-in is deployed to the Office Store or an add-in catalog, users will individually trust it when they install it.
 
 1. In the following string, replace the placeholder “{application_ID}” with the Application ID that you copied when you registered your add-in.
 
@@ -131,10 +154,9 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Replace the placeholder “{application_GUID here}” *in both places* in the markup with the Application ID that you copied when you registered your add-in. (The "{}" are not part of the ID, so don't include them.) This is the same ID you used in for the ClientID and Audience in the web.config.
 
-    >Note: 
-    >
-    >* The **Resource** value is the **Application ID URI** you set when you added the Web API platform to the registration of the add-in.
-    >* The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through the Office Store.
+    > [!NOTE]
+    > * The **Resource** value is the **Application ID URI** you set when you added the Web API platform to the registration of the add-in.
+    > * The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through the Office Store.
 
 1. Save and close the file.
 
@@ -152,7 +174,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
      * If no user is signed into Office, the Office host will prompt the user to sign in. 
      * The options parameter sets `forceConsent` to false, so the user will not be prompted to consent to giving the Office host access to your add-in.
 
-    ```js
+    ```javascript
     function getOneDriveItems() {
         getDataWithoutAuthChallenge();
     }	
@@ -175,14 +197,14 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Replace the TODO1 with the following lines. You create the `getData` method and the server-side “/api/onedriveitems” route in later steps. A relative URL is used for the endpoint because it must be hosted on the same domain as your add-in.
 
-    ```
+    ```javascript
     accessToken = result.value;
     getData("/api/onedriveitems", accessToken);
     ```
 
 1. Below the `getOneDriveFiles` method, add the following. This utility method calls a specified Web API endpoint and passes it the same access token that the Office host application used to get access to your add-in. On the server-side, this access token will be used in the “on behalf of” flow to obtain an access token to Microsoft Graph. 
 
-    ```
+    ```javascript
     function getData(relativeUrl, accessToken) {
         $.ajax({
             url: relativeUrl,
@@ -203,7 +225,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     * If the result is the Claims JSON, then it will contain the string "capolids".
     * You will create the `getDataUsingAuthChallenge` function in a latter step.
 
-    ```
+    ```javascript
     if (result[0].indexOf('capolids') !== -1) {                
         result[0] = JSON.parse(result[0])
         getDataUsingAuthChallenge(result[0]);
@@ -217,7 +239,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     * The function triggers a second sign-on in which the user will be prompted to provide additional authentication factor(s). 
     * The `authChallenge` option contains a string that tells AAD what factor(s) it should prompt for. The Office host passes this string to AAD when it requests the add-in token to your add-in.
 
-    ```
+    ```javascript
     function getDataUsingAuthChallenge(authChallengeString) {       
         Office.context.auth.getAccessTokenAsync({authChallenge: authChallengeString},
             function (result) {
@@ -246,55 +268,55 @@ There are two server-side files that need to be modified.
 ### Create a method to exchange tokens
 
 1. Open the \src\auth.ts file. Add the method below to the `AuthModule` class. Note the following about this code:
-    * The jwt parameter is the access token to the application. In the "on behalf of" flow, it is exchanged with AAD for an access token to the resource.
+
+    * The `jwt` parameter is the access token to the application. In the "on behalf of" flow, it is exchanged with AAD for an access token to the resource.
     * The scopes parameter has a default value, but in this sample it will be overridden by the calling code.
     * The resource parameter is optional. It should not be used when the STS is the AAD V2 endpoint. The latter infers the resource from the scopes and it returns an error if a resource is sent in the HTTP Request. 
     
-
-    ```
-    private async exchangeForToken(jwt: string, scopes: string[] = ['openid'], resource?: string) {
-        try {
-            // TODO3: Construct the parameters that will be sent in the body of the 
-            //        HTTP Request to the STS that starts the "on behalf of" flow.
-            // TODO4: Send the request to the STS.
-            // TODO5: Process the response and persist the access token to resource.
+        ```javascript
+        private async exchangeForToken(jwt: string, scopes: string[] = ['openid'], resource?: string) {
+            try {
+                // TODO3: Construct the parameters that will be sent in the body of the 
+                //        HTTP Request to the STS that starts the "on behalf of" flow.
+                // TODO4: Send the request to the STS.
+                // TODO5: Process the response and persist the access token to resource.
+            }
+            catch (exception) {
+                throw new UnauthorizedError('Unable to obtain an access token to the resource' 
+                                            + JSON.stringify(exception), 
+                                            exception);
+            }
         }
-        catch (exception) {
-            throw new UnauthorizedError('Unable to obtain an access token to the resource' 
-                                        + JSON.stringify(exception), 
-                                        exception);
-        }
-    }
-    ```
+        ```
 
 2. Replace TODO3 with the following code. About this code, note:
     * An STS that supports the "on behalf of" flow expects certain property/value pairs in the body of the HTTP request. This code constructs an object that will become the body of the request. 
     * A resource property is added to the body if, and only if, a resource was passed to the method.
 
-    ```
-    const v2Params = {
-            client_id: this.clientId,
-            client_secret: this.clientSecret,
-            grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
-            assertion: jwt,
-            requested_token_use: 'on_behalf_of',
-            scope: scopes.join(' ')
-        };
-        let finalParams = {};
-        if (resource) {
-            // In JavaScript we could just add the resource property to the v2Params
-            // object, but that won't compile in TypeScript.
-            let v1Params  = { resource: resource };  
-            for(var key in v2Params) { v1Params[key] = v2Params[key]; }
-            finalParams = v1Params;
-        } else {
-            finalParams = v2Params;
-        } 
-    ```
+        ```javascript
+        const v2Params = {
+                client_id: this.clientId,
+                client_secret: this.clientSecret,
+                grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+                assertion: jwt,
+                requested_token_use: 'on_behalf_of',
+                scope: scopes.join(' ')
+            };
+            let finalParams = {};
+            if (resource) {
+                // In JavaScript we could just add the resource property to the v2Params
+                // object, but that won't compile in TypeScript.
+                let v1Params  = { resource: resource };  
+                for(var key in v2Params) { v1Params[key] = v2Params[key]; }
+                finalParams = v1Params;
+            } else {
+                finalParams = v2Params;
+            } 
+        ```
 
 3. Replace TODO4 with the following code which sends the HTTP request to the token endpoint of the STS.
 
-    ```
+    ```javascript
     const res = await fetch(`${this.stsDomain}/${this.tenant}/${this.tokenURLsegment}`, {
         method: 'POST',
         body: form(finalParams),
@@ -307,7 +329,7 @@ There are two server-side files that need to be modified.
 
 4. Replace TODO5 with the following code. Note that the code persists the access token to the resource, and it's expiration time, in addition to returning it. Calling code can avoid unnecessary calls to the STS by reusing an unexpired access token to the resource. You'll see how to do that in the next section.
 
-    ```
+    ```javascript
     if (res.status !== 200) {
         TODO6: Handle failure and the case where AAD asks for additional
                authentication factors.
@@ -328,7 +350,7 @@ There are two server-side files that need to be modified.
     * This `Claims` value needs to be passed back to the client which should initiate a second sign-on for the user and include the `Claims` value in the call to the AAD. AAD will prompt the user to provide the addtional factor(s).
     * As a precaution, the code clears the cache of any access tokens that were obtained when the user logged in with only a password.  
 
-    ```
+    ```javascript
     const exception = await res.json();
     // Check if AAD is the STS.
     if (this.stsDomain === 'https://login.microsoftonline.com') {
@@ -349,10 +371,11 @@ There are two server-side files that need to be modified.
 ### Create a method to get access to the resource using the "on behalf of" flow
 
 1. Still in src/auth.ts, add the method below to the `AuthModule` class. Note the following about this code:
+
     * The comments above about the parameters to the the `exchangeForToken` method apply to the parameters of this method as well.
     * The method first checks the persistent storage for an access token to the resource that has not expired and is not going to expire in the next minute. It calls the `exchangeForToken` method you created in the last section only if it needs to.
 
-    ```
+    ```javascript
     async acquireTokenOnBehalfOf(jwt: string, scopes: string[] = ['openid'], resource?: string) {
         const resourceTokenExpirationTime = ServerStorage.retrieve('ResourceTokenExpiresAt');
         if (moment().add(1, 'minute').diff(resourceTokenExpirationTime) < 1 ) {
@@ -373,14 +396,14 @@ There are two server-side files that need to be modified.
 
 2. Add the following method to the bottom of the file. This method will serve the add-in's home page. The add-in manifest specifies the home page URL.
 
-    ```
+    ```javascript
     app.get('/index.html', handler(async (req, res) => {
         return res.sendfile('index.html');
     })); 
     ```
 
 3. Add the following method to bottom of the file. This method will handle any requests for the `onedriveitems` API.
-    ```
+    ```javascript
     app.get('/api/onedriveitems', handler(async (req, res) => {
         // TODO7: Initialize the AuthModule object and validate the access token 
         //        that the client-side received from the Office host.
@@ -393,12 +416,13 @@ There are two server-side files that need to be modified.
 
 4. Replace TODO7 with the following code which validates the access token received from the Office host application. The `verifyJWT` method is defined in the src\auth.ts file. It always validates the audience and the issuer. We use the optional parameter to specify that we also want it to verify that the scope in the access token is `access_as_user`. This is the only permisison to the add-in that the user and the Office host need in order to get an access token to Microsoft Graph by means of the "on behalf flow". 
 
-    ```
+    ```javascript
     await auth.initialize();
     const { jwt } = auth.verifyJWT(req, { scp: 'access_as_user' }); 
     ```
 
-> **Note:** You should only use the `access_as_user` scope to authorize the API that handles the on-behalf-of flow for Office add-ins. Other APIs in your service should have their own scope requirements. This limits what can be accessed with the tokens that Office acquires.
+    > [!NOTE]
+    > You should only use the `access_as_user` scope to authorize the API that handles the on-behalf-of flow for Office add-ins. Other APIs in your service should have their own scope requirements. This limits what can be accessed with the tokens that Office acquires.
 
 5. Replace TODO8 with the following code. Note the following about this code:
 
@@ -406,7 +430,7 @@ There are two server-side files that need to be modified.
     * The second parameter of the call specifies the permissions the add-in will need to get a list of the user's files and folders on OneDrive. (The `profile` permission is not requested because it is only needed when the Office host gets the access token to your add-in, not when you are trading in that token for an access token to Microsoft Graph.)
     * If the response is a string containing 'capolids", then this is a claims message from AAD that multi-factor auth is required. The message is passed to the client, which uses it to start a second sign-on. The string tells AAD what additional authentication factor(s) it should prompt the user to provide.
 
-    ```
+    ```javascript
     let graphToken = null;
     const tokenAcquisitionResponse = await auth.acquireTokenOnBehalfOf(jwt, ['Files.Read.All']);
     if (tokenAcquisitionResponse.includes('capolids')) {
@@ -425,11 +449,13 @@ There are two server-side files that need to be modified.
     * The MSGraphHelper class is defined in src\msgraph-helper.ts. 
     * We minimize the data that must be returned by specifying that we only want the name property and only the first 3 items.
 
-    `const graphData = await MSGraphHelper.getGraphData(graphToken, "/me/drive/root/children", "?$select=name&$top=3");`
+    ```javascript
+    const graphData = await MSGraphHelper.getGraphData(graphToken, "/me/drive/root/children", "?$select=name&$top=3");
+    ```
 
 7. Replace TODO10 with the following code. Note that Microsoft Graph returns some OData metadata and an **eTag** property for every item, even if `name` is the only property requested. The code sends only the item names to the client.
 
-    ```
+    ```javascript
     const itemNames: string[] = [];
     const oneDriveItems: string[] = graphData['value'];
     for (let item of oneDriveItems){
@@ -501,4 +527,6 @@ There are two ways to build and run the project depending on whether you are usi
 2. If you are are signed into Office, a list of your files and folders on OneDrive will appear below the button. This may take more than 15 seconds the first time.
 
 3. If you are not signed into Office, a popup will open and prompt you to sign in. After you have completed the sign-in, the list of your files and folders will appear after a few seconds. *You do not press the button a second time.*
-> **Note:** If you were previously signed on to Office with a different ID, and some Office applications that were open at the time are still open, Office may not reliably change your ID even if it appears to have done so in PowerPoint. If this happens, the call to Microsoft Graph may fail or data from the previous ID may be returned. To prevent this, be sure to *close all other Office applications* before you press **Get My Files from OneDrive**.
+
+> [!NOTE]
+> If you were previously signed on to Office with a different ID, and some Office applications that were open at the time are still open, Office may not reliably change your ID even if it appears to have done so in PowerPoint. If this happens, the call to Microsoft Graph may fail or data from the previous ID may be returned. To prevent this, be sure to *close all other Office applications* before you press **Get My Files from OneDrive**.

@@ -1,7 +1,15 @@
+---
+title: Work with Charts using the Excel JavaScript API
+description: ''
+ms.date: 12/04/2017
+---
+
+
+
 # Work with Charts using the Excel JavaScript API
 
 This article provides code samples that show how to perform common tasks with charts using the Excel JavaScript API. 
-For the complete list of properties and methods that the **Chart** and **ChartCollection** objects support, see [Chart Object (JavaScript API for Excel)](../../reference/excel/chart.md) and [Chart Collection Object (JavaScript API for Excel)](../../reference/excel/chartcollection.md).
+For the complete list of properties and methods that the **Chart** and **ChartCollection** objects support, see [Chart Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/chart) and [Chart Collection Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/chartcollection).
 
 ## Create a chart
 
@@ -25,14 +33,15 @@ Excel.run(function (context) {
 
 **New line chart**
 
-![New line chart in Excel](../../images/Excel-chart-create-line.png)
+![New line chart in Excel](../images/excel-charts-create-line.png)
 
 
 ## Add a data series to a chart
 
 The following code sample adds a data series to the first chart in the worksheet. The new data series corresponds to the column named **2016** and is based upon data in the range **D2:D5**.
 
-**Note**: This sample uses APIs that are currently available only in public preview (beta). To run this sample, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> [!NOTE]
+> This sample uses APIs that are currently available only in public preview (beta). To run this sample, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
 ```js
 Excel.run(function (context) {
@@ -49,11 +58,11 @@ Excel.run(function (context) {
 
 **Chart before the 2016 data series is added**
 
-![Chart in Excel before 2016 data series added](../../images/Excel-chart-data-series-before.png)
+![Chart in Excel before 2016 data series added](../images/excel-charts-data-series-before.png)
 
 **Chart after the 2016 data series is added**
 
-![Chart in Excel after 2016 data series added](../../images/Excel-chart-data-series-after.png)
+![Chart in Excel after 2016 data series added](../images/excel-charts-data-series-after.png)
 
 ## Set chart title
 
@@ -72,7 +81,7 @@ Excel.run(function (context) {
 
 **Chart after title is set**
 
-![Chart with title in Excel](../../images/Excel-chart-title-set.png)
+![Chart with title in Excel](../images/excel-charts-title-set.png)
 
 ## Set properties of an axis in a chart
 
@@ -95,13 +104,14 @@ Excel.run(function (context) {
 
 **Chart after title of category axis is set**
 
-![Chart with axis title in Excel](../../images/Excel-chart-axis-title-set.png)
+![Chart with axis title in Excel](../images/excel-charts-axis-title-set.png)
 
 ### Set axis display unit
 
 The following code sample sets the display unit of the value axis for the first chart in the worksheet to **Hundreds**.
 
-**Note**: This sample uses APIs that are currently available only in public preview (beta). To run this sample, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> [!NOTE]
+> This sample uses APIs that are currently available only in public preview (beta). To run this sample, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
 ```js
 Excel.run(function (context) {
@@ -116,7 +126,7 @@ Excel.run(function (context) {
 
 **Chart after display unit of value axis is set**
 
-![Chart with axis display unit in Excel](../../images/Excel-chart-axis-display-unit-set.png)
+![Chart with axis display unit in Excel](../images/excel-charts-axis-display-unit-set.png)
 
 ## Set visibility of gridlines in a chart
 
@@ -135,7 +145,7 @@ Excel.run(function (context) {
 
 **Chart with gridlines hidden**
 
-![Chart with gridlines hidden in Excel](../../images/Excel-chart-gridlines-removed.png)
+![Chart with gridlines hidden in Excel](../images/excel-charts-gridlines-removed.png)
 
 ## Chart trendlines
 
@@ -143,7 +153,8 @@ Excel.run(function (context) {
 
 The following code sample adds a moving average trendline to the first series in the first chart in the worksheet named **Sample**. The trendline shows a moving average over 5 periods.
 
-**Note**: This sample uses APIs that are currently available only in public preview (beta). To run this sample, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> [!NOTE]
+> This sample uses APIs that are currently available only in public preview (beta). To run this sample, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
 ```js
 Excel.run(function (context) {
@@ -159,13 +170,14 @@ Excel.run(function (context) {
 
 **Chart with moving average trendline**
 
-![Chart with moving average trendline in Excel](../../images/Excel-chart-create-trendline.png)
+![Chart with moving average trendline in Excel](../images/excel-charts-create-trendline.png)
 
 ### Update a trendline
 
 The following code sample sets the trendline to type **Linear** for the first series in the first chart in the worksheet named **Sample**.
 
-**Note**: This sample uses APIs that are currently available only in public preview (beta). To run this sample, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> [!NOTE]
+> This sample uses APIs that are currently available only in public preview (beta). To run this sample, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
 ```js
 Excel.run(function (context) {
@@ -182,10 +194,10 @@ Excel.run(function (context) {
 
 **Chart with linear trendline**
 
-![Chart with linear trendline in Excel](../../images/Excel-chart-trendline-linear.png)
+![Chart with linear trendline in Excel](../images/excel-charts-trendline-linear.png)
 
 ## Additional resources
 
 - [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
-- [Chart Object (JavaScript API for Excel)](../../reference/excel/chart.md) 
-- [Chart Collection Object (JavaScript API for Excel)](../../reference/excel/chartcollection.md)
+- [Chart Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/chart) 
+- [Chart Collection Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/chartcollection)

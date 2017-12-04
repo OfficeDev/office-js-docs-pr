@@ -1,3 +1,8 @@
+---
+title: Use Office UI Fabric JS in Office Add-ins
+description: ''
+ms.date: 12/04/2017
+---
 
 # Use Office UI Fabric JS in Office Add-ins
 
@@ -8,9 +13,11 @@ This article walks you through the basics of using Fabric JS.
 ## Add the Fabric CDN references
 To reference Fabric from the CDN, add the following HTML code to your page.
 
-    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css">
-    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.components.min.css">
-    <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/js/fabric.min.js"></script>
+```html
+<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css">
+<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.components.min.css">
+<script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/js/fabric.min.js"></script>
+```
 
 ## Use Fabric JS UX components
 
@@ -45,16 +52,16 @@ If you've been using a previous version of Office UI Fabric and you'd like to mo
 - Some icon class names and styles have been updated.
 - The most notable change is the use of the `<label>` element in many components. The `<label>` element controls the style of the component. You might have to update your UX code to use the `<label>` element. For example, changing the value of the `<input>` element's checked attribute on a Fabric JS checkbox has no effect on the checkbox. Instead, you  use the `check`, `unCheck`, or `toggle` functions.   
 
-## Next steps
+## Implementation
 If you're looking for an end-to-end code sample that shows you how to use Fabric JS, we've got you covered. See the following resource:
 
 - [Excel Sales Tracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) 
 
-## Related resources
+## Additional resources
 If you're looking for code samples or documentation about a previous release of Fabric, see the following:
 
 - [UX design patterns (uses Fabric 2.6.1)](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code) 
 - [Office Add-in Fabric UI sample (uses Fabric 1.0)](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample) 
-- [Using Fabric 2.6.1 in an Office Add-in](https://dev.office.com/docs/add-ins/design/ui-elements/using-office-ui-fabric)
+- [Using Fabric 2.6.1 in an Office Add-in](ui-elements/using-office-ui-fabric.md)
  
 

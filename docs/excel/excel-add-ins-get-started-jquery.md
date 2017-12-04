@@ -1,3 +1,10 @@
+---
+title: Build an Excel add-in using jQuery
+description: ''
+ms.date: 12/04/2017
+---
+
+
 # Build an Excel add-in using jQuery
 
 In this article, you'll walk through the process of building an Excel add-in by using jQuery and the Excel JavaScript API.
@@ -6,9 +13,9 @@ In this article, you'll walk through the process of building an Excel add-in by 
 
 If you haven't done so previously, you'll need to install [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
 
-    ```bash
-    npm install -g yo generator-office
-    ```
+```bash
+npm install -g yo generator-office
+```
 
 ## Create the web app
 
@@ -25,7 +32,7 @@ If you haven't done so previously, you'll need to install [Yeoman](https://githu
     ```bash
     yo office
     ```
-    ![Yeoman generator](../../images/yo-office-jquery.png)
+    ![Yeoman generator](../images/yo-office-jquery.png)
 
 
 4. In your code editor, open **index.html** in the root of the project. This file specifies the HTML that will be rendered in the add-in's task pane. 
@@ -110,7 +117,7 @@ If you haven't done so previously, you'll need to install [Yeoman](https://githu
     }
     ```
 
-## Configure the manifest file and sideload the add-in
+## Configure the manifest file
 
 1. Open the file **my-office-add-in-manifest.xml** to define the add-in's settings and capabilities. 
 
@@ -128,7 +135,6 @@ Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. How
 
 2. Open the **bsconfig.json** file in the root of the project. Change the value of the **https** property to `false`. Save the file.
 
-
 ## Try it out
 
 1. Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within Excel.
@@ -137,23 +143,24 @@ Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. How
     - Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. Open a bash terminial in the root of the project and run the following command to start the dev server.
+2. Open a bash terminal in the root of the project and run the following command to start the dev server.
 
     ```bash
     npm start
     ```
 
-   > **Note**: A browser window will open with the add-in in it. Close this window.
+   > [!NOTE]
+   > A browser window will open with the add-in in it. Close this window.
 
 3. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Excel Add-in button](../../images/excel_quickstart_addin_2a.png)
+    ![Excel Add-in button](../images/excel-quickstart-addin-2a.png)
 
 4. Select any range of cells in the worksheet.
 
 5. In the task pane, choose the **Color Me** button pane to set the color of the selected range to green.
 
-    ![Excel Add-in](../../images/excel_quickstart_addin_2b.png)
+    ![Excel Add-in](../images/excel-quickstart-addin-2b.png)
 
 ## Next steps
 
@@ -162,6 +169,5 @@ Congratulations, you've successfully created an Excel add-in using jQuery! Next,
 ## Additional resources
 
 * [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
-* [Explore snippets with Script Lab](https://store.office.com/en-001/app.aspx?assetid=WA104380862&ui=en-US&rs=en-001&ad=US&appredirect=false)
 * [Excel add-in code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API reference](../../reference/excel/excel-add-ins-reference-overview.md)
+* [Excel JavaScript API reference](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

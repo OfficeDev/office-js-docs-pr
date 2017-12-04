@@ -1,6 +1,13 @@
-# Work with Ranges using the Excel JavaScript API
+---
+title: Work with ranges using the Excel JavaScript API
+description: ''
+ms.date: 12/04/2017
+---
 
-This article provides code samples that show how to perform common tasks with ranges using the Excel JavaScript API. For the complete list of properties and methods that the **Range** object supports, see [Range Object (JavaScript API for Excel)](../../reference/excel/range.md).
+
+# Work with ranges using the Excel JavaScript API
+
+This article provides code samples that show how to perform common tasks with ranges using the Excel JavaScript API. For the complete list of properties and methods that the **Range** object supports, see [Range Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/range).
 
 ## Get a range
 
@@ -91,11 +98,11 @@ Excel.run(function (context) {
 
 **Data before range is inserted**
 
-![Data in Excel before range is inserted](../../images/Excel-range-start.png)
+![Data in Excel before range is inserted](../images/excel-ranges-start.png)
 
 **Data after range is inserted**
 
-![Data in Excel after range is inserted](../../images/Excel-range-after-insert.png)
+![Data in Excel after range is inserted](../images/excel-ranges-after-insert.png)
 
 ## Clear a range of cells
 
@@ -114,11 +121,11 @@ Excel.run(function (context) {
 
 **Data before range is cleared**
 
-![Data in Excel before range is cleared](../../images/Excel-range-start.png)
+![Data in Excel before range is cleared](../images/excel-ranges-start.png)
 
 **Data after range is cleared**
 
-![Data in Excel after range is cleared](../../images/Excel-range-after-clear.png)
+![Data in Excel after range is cleared](../images/excel-ranges-after-clear.png)
 
 ## Delete a range of cells
 
@@ -137,11 +144,11 @@ Excel.run(function (context) {
 
 **Data before range is deleted**
 
-![Data in Excel before range is deleted](../../images/Excel-range-start.png)
+![Data in Excel before range is deleted](../images/excel-ranges-start.png)
 
 **Data after range is deleted**
 
-![Data in Excel after range is deleted](../../images/Excel-range-after-delete.png)
+![Data in Excel after range is deleted](../images/excel-ranges-after-delete.png)
 
 ## Set the selected range
 
@@ -160,7 +167,7 @@ Excel.run(function (context) {
 
 **Selected range B2:E6**
 
-![Selected range in Excel](../../images/Excel-range-set-selection.png)
+![Selected range in Excel](../images/excel-ranges-set-selection.png)
 
 ## Get the selected range
 
@@ -200,11 +207,11 @@ Excel.run(function (context) {
 
 **Data before cell value is updated**
 
-![Data in Excel before cell value is updated](../../images/Excel-range-set-start.png)
+![Data in Excel before cell value is updated](../images/excel-ranges-set-start.png)
 
 **Data after cell value is updated**
 
-![Data in Excel after cell value is updated](../../images/Excel-range-set-cell-value.png)
+![Data in Excel after cell value is updated](../images/excel-ranges-set-cell-value.png)
 
 ### Set values for a range of cells
 
@@ -228,11 +235,11 @@ Excel.run(function (context) {
 
 **Data before cell values are updated**
 
-![Data in Excel before cell values are updated](../../images/Excel-range-set-start.png)
+![Data in Excel before cell values are updated](../images/excel-ranges-set-start.png)
 
 **Data after cell values are updated**
 
-![Data in Excel after cell values are updated](../../images/Excel-range-set-cell-values.png)
+![Data in Excel after cell values are updated](../images/excel-ranges-set-cell-values.png)
 
 ### Set formula for a single cell
 
@@ -252,11 +259,11 @@ Excel.run(function (context) {
 
 **Data before cell formula is set**
 
-![Data in Excel before cell formula is set](../../images/Excel-range-start-set-formula.png)
+![Data in Excel before cell formula is set](../images/excel-ranges-start-set-formula.png)
 
 **Data after cell formula is set**
 
-![Data in Excel after cell formula is set](../../images/Excel-range-set-formula.png)
+![Data in Excel after cell formula is set](../images/excel-ranges-set-formula.png)
 
 ### Set formulas for a range of cells
 
@@ -283,11 +290,11 @@ Excel.run(function (context) {
 
 **Data before cell formulas are set**
 
-![Data in Excel before cell formulas are set](../../images/Excel-range-start-set-formula.png)
+![Data in Excel before cell formulas are set](../images/excel-ranges-start-set-formula.png)
 
 **Data after cell formulas are set**
 
-![Data in Excel after cell formulas are set](../../images/Excel-range-set-formulas.png)
+![Data in Excel after cell formulas are set](../images/excel-ranges-set-formulas.png)
 
 ## Get values, text, or formulas
 
@@ -312,7 +319,7 @@ Excel.run(function (context) {
 
 **Data in range (values in column E are a result of formulas)**
 
-![Data in Excel after cell formulas are set](../../images/Excel-range-set-formulas.png)
+![Data in Excel after cell formulas are set](../images/excel-ranges-set-formulas.png)
 
 **range.values (as logged to the console by the code sample above)**
 
@@ -370,7 +377,7 @@ Excel.run(function (context) {
 
 **Data in range (values in column E are a result of formulas)**
 
-![Data in Excel after cell formulas are set](../../images/Excel-range-set-formulas.png)
+![Data in Excel after cell formulas are set](../images/excel-ranges-set-formulas.png)
 
 **range.text (as logged to the console by the code sample above)**
 
@@ -428,7 +435,7 @@ Excel.run(function (context) {
 
 **Data in range (values in column E are a result of formulas)**
 
-![Data in Excel after cell formulas are set](../../images/Excel-range-set-formulas.png)
+![Data in Excel after cell formulas are set](../images/excel-ranges-set-formulas.png)
 
 **range.formulas (as logged to the console by the code sample above)**
 
@@ -489,11 +496,11 @@ Excel.run(function (context) {
 
 **Data in range before font color and fill color are set**
 
-![Data in Excel before format is set](../../images/Excel-range-format-before.png)
+![Data in Excel before format is set](../images/excel-ranges-format-before.png)
 
 **Data in range after font color and fill color are set**
 
-![Data in Excel after format is set](../../images/Excel-range-format-font-and-fill.png)
+![Data in Excel after format is set](../images/excel-ranges-format-font-and-fill.png)
 
 ### Set number format
 
@@ -518,13 +525,13 @@ Excel.run(function (context) {
 
 **Data in range before number format is set**
 
-![Data in Excel before format is set](../../images/Excel-range-format-font-and-fill.png)
+![Data in Excel before format is set](../images/excel-ranges-format-font-and-fill.png)
 
 **Data in range after number format is set**
 
-![Data in Excel after format is set](../../images/Excel-range-format-numbers.png)
+![Data in Excel after format is set](../images/excel-ranges-format-numbers.png)
 
 ## Additional resources
 
 - [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
-- [Range Object (JavaScript API for Excel)](../../reference/excel/range.md)
+- [Range Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/range)

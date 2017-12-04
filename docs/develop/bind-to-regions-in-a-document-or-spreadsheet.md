@@ -1,3 +1,9 @@
+---
+title: Bind to regions in a document or spreadsheet
+description: ''
+ms.date: 12/04/2017
+---
+
 
 # Bind to regions in a document or spreadsheet
 
@@ -27,12 +33,13 @@ There are [three different types of bindings][Office.BindingType] that you speci
 
 	In Excel, any contiguous selection of cells can be used to establish a matrix binding. In Word, only tables support matrix binding.
 
-3. **[Table Binding][TableBinding]** - Binds to a region of a document that contains a table with headers.Data in a table binding is written or read as a [TableData](../../reference/shared/tabledata.md) object. The `TableData` object exposes the data through the `headers` and `rows` properties.
+3. **[Table Binding][TableBinding]** - Binds to a region of a document that contains a table with headers.Data in a table binding is written or read as a [TableData](https://dev.office.com/reference/add-ins/shared/tabledata) object. The `TableData` object exposes the data through the `headers` and `rows` properties.
 
 	Any Excel or Word table can be the basis for a table binding. After you establish a table binding, each new row or column a user adds to the table is automatically included in the binding.
 
 After a binding is created by using one of the three "addFrom" methods of the  `Bindings` object, you can work with the binding's data and properties by using the methods of the corresponding object: [MatrixBinding], [TableBinding], or [TextBinding]. All three of these objects inherit the [getDataAsync] and [setDataAsync] methods of the `Binding` object that enable you to interact with the bound data.
 
+> [!NOTE]
 > **When should you use matrix versus table bindings?** 
 > When the tabular data you are working with contains a total row, you must use a matrix binding if your add-in's script needs to access values in the total row or detect that the user's selection is in the total row. If you establish a table binding for tabular data that contains a total row, the [TableBinding.rowCount] property and the `rowCount` and `startRow` properties of the [BindingSelectionChangedEventArgs] object in event handlers won't reflect the total row in their values. To work around this limitation, you must use establish a matrix binding to work with the total row.
 
@@ -93,9 +100,9 @@ The anonymous function passed into the function as the third  _callback_ paramet
 Figure 1 shows the built-in range selection prompt in Excel.
 
 
-**Figure 1. Excel Select Data UI**
+*Figure 1. Excel Select Data UI*
 
-![Excel Select Data UI](../../images/AgaveAPIOverview_ExcelSelectionUI.png)
+![Excel Select Data UI](../images/agave-api-overview-excel-selection-ui.png)
 
 
 ## Add a binding to a named item
@@ -122,10 +129,11 @@ function write(message){
 
 ```
 
- **For Excel**, the  `itemName` parameter of the [addFromNamedItemAsync] method can refer to an existing named range, a range specified with the `A1` reference style `("A1:A3")`, or a table. By default, adding a table in Excel assigns the name "Table1" for the first table you add, "Table2" for the second table you add, and so on. To assign a meaningful name for a table in the Excel UI, use the **Table Name** property on the **Table Tools | Design** tab of the ribbon.
+**For Excel**, the  `itemName` parameter of the [addFromNamedItemAsync] method can refer to an existing named range, a range specified with the `A1` reference style `("A1:A3")`, or a table. By default, adding a table in Excel assigns the name "Table1" for the first table you add, "Table2" for the second table you add, and so on. To assign a meaningful name for a table in the Excel UI, use the **Table Name** property on the **Table Tools | Design** tab of the ribbon.
 
 
- >**Note**  In Excel, when specifying a table as a named item, you must fully qualify the name to include the worksheet name in the name of the table in this format:  `"Sheet1!Table1"`
+> [!NOTE]
+> In Excel, when specifying a table as a named item, you must fully qualify the name to include the worksheet name in the name of the table in this format:  `"Sheet1!Table1"`
 
 The following example creates a binding in Excel to the first three cells in column A ( `"A1:A3"`), assigns the  id `"MyCities"`, and then writes three city names to that binding.
 
@@ -154,7 +162,7 @@ function write(message){
 }
 ```
 
- **For Word**, the  `itemName` parameter of the [addFromNamedItemAsync] method refers to the `Title` property of a `Rich Text` content control. (You can't bind to content controls other than the `Rich Text` content control.)
+**For Word**, the  `itemName` parameter of the [addFromNamedItemAsync] method refers to the `Title` property of a `Rich Text` content control. (You can't bind to content controls other than the `Rich Text` content control.)
 
 By default, a content control has no  `Title*`value assigned. To assign a meaningful name in the Word UI, after inserting a **Rich Text** content control from the **Controls** group on the **Developer** tab of the ribbon, use the **Properties** command in the **Controls** group to display the **Content Control Properties** dialog box. Then set the **Title** property of the content control to the name you want to reference from your code.
 
@@ -253,7 +261,8 @@ function write(message){
 ```
 
 
- > **Note:**  If the  `select` method promise successfully returns a [Binding] object, that object exposes only the following four methods of the object: [getDataAsync], [setDataAsync], [addHandlerAsync], and [removeHandlerAsync]. If the promise cannot return a  Binding object, the `onError` callback can be used to access an [asyncResult].error object to get more information.If you need to call a member of the Binding object other than the four methods exposed by the Binding object promise returned by the `select` method, instead use the [getByIdAsync] method by using the [Document.bindings] property and Bindings.[getByIdAsync] method to retrieve the Binding** object.
+> [!NOTE]
+> If the  `select` method promise successfully returns a [Binding] object, that object exposes only the following four methods of the object: [getDataAsync], [setDataAsync], [addHandlerAsync], and [removeHandlerAsync]. If the promise cannot return a  Binding object, the `onError` callback can be used to access an [asyncResult].error object to get more information.If you need to call a member of the Binding object other than the four methods exposed by the Binding object promise returned by the `select` method, instead use the [getByIdAsync] method by using the [Document.bindings] property and Bindings.[getByIdAsync] method to retrieve the Binding** object.
 
 ## Release a binding by ID
 
@@ -321,13 +330,14 @@ In the example, the first parameter is the value to set on  `myBinding`. Because
 
 The anonymous function that is passed into the function is a callback that is executed when the operation is complete. The function is called with a single parameter,  `asyncResult`, which contains the status of the result.
 
- > **Note:** Starting with the release of the Excel 2013 SP1 and the corresponding build of Excel Online, you can now [set formatting when writing and updating data in bound tables](../../docs/excel/format-tables-in-add-ins-for-excel.md).
+> [!NOTE]
+> Starting with the release of the Excel 2013 SP1 and the corresponding build of Excel Online, you can now [set formatting when writing and updating data in bound tables](../excel/excel-add-ins-tables.md).
 
 
 ## Detect changes to data or the selection in a binding
 
 
-The following example shows how to attach an event handler to the [DataChanged](../../reference/shared/binding.bindingdatachangedevent.md) event of a binding with an id of "MyBinding".
+The following example shows how to attach an event handler to the [DataChanged](https://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) event of a binding with an id of "MyBinding".
 
 
 ```js
@@ -344,7 +354,7 @@ function write(message){
 }
 ```
 
- `myBinding` is a variable that contains an existing text binding in the document.
+The `myBinding` is a variable that contains an existing text binding in the document.
 
 The first  `eventType` parameter of the [addHandlerAsync] method specifies the name of the event to subscribe to. [Office.EventType] is an enumeration of available event type values. `Office.EventType.BindingDataChanged evaluates to the string `"bindingDataChanged"`.
 
@@ -361,7 +371,7 @@ You can add multiple event handlers for a given event by calling the [addHandler
 To remove an event handler for an event, call the [removeHandlerAsync] method passing in the event type as the first _eventType_ parameter, and the name of the event handler function to remove as the second _handler_ parameter. For example, the following function will remove the `dataChanged` event handler function added in the previous section's example.
 
 
-```
+```js
 function removeEventHandlerFromBinding() {
     Office.select("bindings#MyBinding").removeHandlerAsync(
         Office.EventType.BindingDataChanged, {handler:dataChanged});
@@ -369,41 +379,40 @@ function removeEventHandlerFromBinding() {
 ```
 
 
- >**Important:**  If the optional  _handler_ parameter is omitted when the [removeHandlerAsync] method is called, all event handlers for the specified `eventType` will be removed.
+> [!IMPORTANT]
+> If the optional  _handler_ parameter is omitted when the [removeHandlerAsync] method is called, all event handlers for the specified `eventType` will be removed.
 
 
 ## Additional resources
 
-- [Understanding the JavaScript API for Office](../../docs/develop/understanding-the-javascript-api-for-office.md)
+- [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md) 
+- [Asynchronous programming in Office Add-ins](asynchronous-programming-in-office-add-ins.md)
+- [Read and write data to the active selection in a document or spreadsheet](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
-- [Asynchronous programming in Office Add-ins](../../docs/develop/asynchronous-programming-in-office-add-ins.md)
-    
-- [Read and write data to the active selection in a document or spreadsheet](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
-    
-[Binding]: 				 ../../reference/shared/binding.md
-[MatrixBinding]:		 ../../reference/shared/binding.matrixbinding.md
-[TableBinding]: 		 ../../reference/shared/binding.tablebinding.md
-[TextBinding]: 			 ../../reference/shared/binding.textbinding.md
-[getDataAsync]: 		 ../../reference/shared/binding.getdataasync.md
-[setDataAsync]: 		 ../../reference/shared/binding.setdataasync.md
-[SelectionChanged]: 	 ../../reference/shared/binding.bindingselectionchangedevent.md
-[addHandlerAsync]: 		 ../../reference/shared/binding.addhandlerasync.md
-[removeHandlerAsync]: 	 ../../reference/shared/binding.removehandlerasync.md
+[Binding]: 				 https://dev.office.com/reference/add-ins/shared/binding
+[MatrixBinding]:		 https://dev.office.com/reference/add-ins/shared/binding.matrixbinding
+[TableBinding]: 		 https://dev.office.com/reference/add-ins/shared/binding.tablebinding
+[TextBinding]: 			 https://dev.office.com/reference/add-ins/shared/binding.textbinding
+[getDataAsync]: 		 https://dev.office.com/reference/add-ins/shared/binding.getdataasync
+[setDataAsync]: 		 https://dev.office.com/reference/add-ins/shared/binding.setdataasync
+[SelectionChanged]: 	 https://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedevent
+[addHandlerAsync]: 		 https://dev.office.com/reference/add-ins/shared/binding.addhandlerasync
+[removeHandlerAsync]: 	 https://dev.office.com/reference/add-ins/shared/binding.removehandlerasync
 
-[Bindings]:				 ../../reference/shared/bindings.bindings.md
-[getByIdAsync]: 		 ../../reference/shared/bindings.getbyidasync.md 
-[getAllAsync]: 			 ../../reference/shared/bindings.getallasync.md
-[addFromNamedItemAsync]: ../../reference/shared/bindings.addfromnameditemasync.md
-[addFromSelectionAsync]: ../../reference/shared/bindings.addfromselectionasync.md
-[addFromPromptAsync]: 	 ../../reference/shared/bindings.addfrompromptasync.md
-[releaseByIdAsync]: 	 ../../reference/shared/bindings.releasebyidasync.md
+[Bindings]:				 https://dev.office.com/reference/add-ins/shared/bindings.bindings
+[getByIdAsync]: 		 https://dev.office.com/reference/add-ins/shared/bindings.getbyidasync 
+[getAllAsync]: 			 https://dev.office.com/reference/add-ins/shared/bindings.getallasync
+[addFromNamedItemAsync]: https://dev.office.com/reference/add-ins/shared/bindings.addfromnameditemasync
+[addFromSelectionAsync]: https://dev.office.com/reference/add-ins/shared/bindings.addfromselectionasync
+[addFromPromptAsync]: 	 https://dev.office.com/reference/add-ins/shared/bindings.addfrompromptasync
+[releaseByIdAsync]: 	 https://dev.office.com/reference/add-ins/shared/bindings.releasebyidasync
 
-[AsyncResult]: 			../../reference/shared/asyncresult.md
-[Office.BindingType]: 	../../reference/shared/bindingtype-enumeration.md
-[Office.select]:		../../reference/shared/office.select.md 
-[Office.EventType]: 	../../reference/shared/eventtype-enumeration.md 
-[Document.bindings]: 	../../reference/shared/document.bindings.md
+[AsyncResult]: 			https://dev.office.com/reference/add-ins/shared/asyncresult
+[Office.BindingType]: 	https://dev.office.com/reference/add-ins/shared/bindingtype-enumeration
+[Office.select]:		https://dev.office.com/reference/add-ins/shared/office.select 
+[Office.EventType]: 	https://dev.office.com/reference/add-ins/shared/eventtype-enumeration 
+[Document.bindings]: 	https://dev.office.com/reference/add-ins/shared/document.bindings
 
 
-[TableBinding.rowCount]: ../../reference/shared/binding.tablebinding.rowcount.1md
-[BindingSelectionChangedEventArgs]: ../../reference/shared/binding.bindingselectionchangedeventargs.md
+[TableBinding.rowCount]: https://dev.office.com/reference/add-ins/shared/binding.tablebinding.rowcount
+[BindingSelectionChangedEventArgs]: https://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedeventargs

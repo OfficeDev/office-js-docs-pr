@@ -1,3 +1,9 @@
+---
+title: Office Add-in design language
+description: ''
+ms.date: 12/04/2017
+---
+
 # Office Add-in design language
 
 The Office design language is a clean and simple visual system that ensures consistency across experiences. It contains a set of visual elements that define Office interfaces, including: 
@@ -21,12 +27,14 @@ Segoe is the standard typeface for Office. Use it in your add-in to align with O
 
 |Sample |Class |Size |Weight |Recommended Usage |
 |------ |----- |---- |------ |----------------- |
-|![Hero Text Image](../../images/add-in-typeramp-hero.png)|.ms-font-xxl |28 px | Segoe Light |<ul><li>This class is larger than all other typographic elements in Office. Use it sparingly to avoid unseating visual hierarchy.</li><li>Avoid use on long strings in constrained spaces.</li><li>Provide ample whitespace around text using this class.</li><li>Commonly used for first run messages, hero elements, or other calls to action.</li></ul> |
-|![Hero Text Image](../../images/add-in-typeramp-title.png)|.ms-font-xl |21 px |Segoe Light | <ul><li>This class matches the task pane title of Office applications.</li><li>Use it sparingly to avoid a flat typographic hierarchy.</li><li>Commonly used as the top-level element such as dialog box, page, or content titles.</li><li></ul> |
-|![Hero Text Image](../../images/add-in-typeramp-subtitle.png)|.ms-font-l |17 px |Segoe Semilight | <ul><li>This class is the first stop below titles.</li><li>Commonly used as a subtitle, navigation element, or group header.</li><ul> |
-|![Hero Text Image](../../images/add-in-typeramp-body.png)|.ms-font-m |14 px |Segoe Regular |*Commonly used as body text within add-ins. |
-|![Hero Text Image](../../images/add-in-typeramp-caption.png)|.ms-font-xs |11 px | Segoe Regular |*Commonly used for secondary or tertiary text such as timestamps, by lines, captions, or field labels. |
-|![Hero Text Image](../../images/add-in-typeramp-annotation.png)|.ms-font-mi |10 px |Segoe Semibold |*The smallest step in the type ramp should be used rarely. It's available for circumstances where legibility is not required. |
+|![Hero Text Image](../images/add-in-typeramp-hero.png)|.ms-font-xxl |28 px | Segoe Light |<ul><li>This class is larger than all other typographic elements in Office. Use it sparingly to avoid unseating visual hierarchy.</li><li>Avoid use on long strings in constrained spaces.</li><li>Provide ample whitespace around text using this class.</li><li>Commonly used for first run messages, hero elements, or other calls to action.</li></ul> |
+|![Hero Text Image](../images/add-in-typeramp-title.png)|.ms-font-xl |21 px |Segoe Light | <ul><li>This class matches the task pane title of Office applications.</li><li>Use it sparingly to avoid a flat typographic hierarchy.</li><li>Commonly used as the top-level element such as dialog box, page, or content titles.</li></ul> |
+|![Hero Text Image](../images/add-in-typeramp-subtitle.png)|.ms-font-l |17 px |Segoe Semilight | <ul><li>This class is the first stop below titles.</li><li>Commonly used as a subtitle, navigation element, or group header.</li><ul> |
+|![Hero Text Image](../images/add-in-typeramp-body.png)|.ms-font-m |14 px |Segoe Regular |<ul><li>Commonly used as body text within add-ins.</li><ul>|
+|![Hero Text Image](../images/add-in-typeramp-caption.png)|.ms-font-xs |11 px | Segoe Regular |<ul><li>Commonly used for secondary or tertiary text such as timestamps, by lines, captions, or field labels.</li><ul>|
+|![Hero Text Image](../images/add-in-typeramp-annotation.png)|.ms-font-mi |10 px |Segoe Semibold |<ul><li>The smallest step in the type ramp should be used rarely. It's available for circumstances where legibility is not required.</li><ul>|
+
+> [!NOTE]
 > Text color is not included in these base classes. Use Fabric's "neutral primary" for most text on white backgrounds.
 
 ## Color
@@ -36,9 +44,9 @@ Office UI Fabric includes a set of default theme colors. When Fabric is applied 
 
 Office applications allow customers to personalize their interfaces by applying an Office UI theme. Customers can choose between four UI themes to vary styling of backgrounds and buttons in Word, PowerPoint, Excel and other apps in the Office suite. To make your add-ins feel like a natural part of Office and respond to personalization, use our Themeing APIs. For example, task pane background colors switch to a dark gray in some themes. Our theming APIs allow you to follow suit and adjust foreground text to ensure [accessibility](add-in-design-guidelines.md#accessibility-guidelines).
 
->  For mail and task pane add-ins, use the [Context.officeTheme](https://dev.office.com/docs/reference/shared/office.context.officetheme.htm) property to match the theme of the Office applications. This API is currently only available in Office 2016.
-
-> For PowerPoint content add-ins, see [Use Office themes in your PowerPoint add-ins](https://dev.office.com/docs/add-ins/powerpoint/use-document-themes-in-your-powerpoint-add-ins.htm).
+> [!NOTE]
+> - For mail and task pane add-ins, use the [Context.officeTheme](https://dev.office.com/docs/reference/shared/office.context.officetheme.htm) property to match the theme of the Office applications. This API is currently only available in Office 2016.
+> - For PowerPoint content add-ins, see [Use Office themes in your PowerPoint add-ins](../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md).
 
 Apply the following general guidelines for color:
 
@@ -83,7 +91,7 @@ Apply the following general guidelines for components:
 ## Icons
 Icons are the visual representation of a behavior or concept. They are often used to add meaning to controls and commands. Visuals, either realistic or symbolic, enable the user to navigate the UI the same way signs help users navigate their environment. They should be simple and clear, and contain only the necessary details, to enable customers to quickly parse what action will occur when they choose a control.
 
-Office ribbon interfaces have a standard visual style. If you are designing an add-in command for the Office ribbon, follow our [icon guidelines](design-icons). This ensures consistency and familiarity across Office apps. The guidelines will help you design a set of PNG assets for your solution that fit in as a natural part of Office.
+Office ribbon interfaces have a standard visual style. If you are designing an add-in command for the Office ribbon, follow our [icon guidelines](design-icons.md). This ensures consistency and familiarity across Office apps. The guidelines will help you design a set of PNG assets for your solution that fit in as a natural part of Office.
 
 Many HTML containers contain controls with iconography. Use Office UI Fabric’s custom font to render Office styled icons in your add-in. Fabric’s icon font contains many glyphs for common Office metaphors that you can scale, color, and style to suit your needs. If you have an existing visual language with your own set of icons, feel free to use it in your HTML canvases. Building continuity with your own brand with a standard set of icons is an important part of any design language. Be careful to avoid creating confusion for customers by conflicting with Office metaphors.
 
@@ -109,3 +117,7 @@ Apply the following general guidelines for animations:
 * Use motion to guide the user and provide compositional focus on key elements for task completion. 
 * Consider the origin of your triggering element. Use motion to create a link between the action and the resulting UI.
 * Consider tone and purpose of your content when choosing animations. Handle critical messages differently than exploratory navigations.
+
+## Additional resources
+
+- [Office Add-in design guidelines](add-in-design-guidelines.md)

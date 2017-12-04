@@ -1,12 +1,19 @@
+---
+title: Dialog boxes in Office Add-ins
+description: ''
+ms.date: 12/04/2017
+---
+
+
 # Dialog boxes in Office Add-ins
  
 Dialog boxes are surfaces that float above the active Office application window. You can use dialog boxes to provide additional screen space for tasks such as sign-in pages that can't be opened directly in a task pane or requests to confirm an action taken by a user, or to show videos that might be too small if confined to a task pane.
 
-**Example: Dialog box**
+*Figure 1. Typical layout for a dialog box*
 
-![An example image displaying a typical layout for a dialog box](../../images/overview_withApp_dialog.png)
+![An example image displaying a typical layout for a dialog box](../images/overview-with-app-dialog.png)
 
-### Best practices
+## Best practices
 
 |**Do**|**Don't**|
 |:-----|:--------|

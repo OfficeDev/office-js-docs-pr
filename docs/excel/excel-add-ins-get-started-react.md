@@ -1,3 +1,10 @@
+---
+title: Build an Excel add-in using React
+description: ''
+ms.date: 12/04/2017
+---
+
+
 # Build an Excel add-in using React
 
 In this article, you'll walk through the process of building an Excel add-in using React and the Excel JavaScript API.
@@ -41,8 +48,10 @@ Each add-in requires a manifest file to define its settings and capabilities.
     ```bash
     yo office
     ```
-    ![Yeoman generator](../../images/yo-office.png)
-    >**Note**: If you're prompted to overwrite **package.json**, answer **No** (do not overwrite).
+    ![Yeoman generator](../images/yo-office.png)
+    
+    > [!NOTE]
+    > If you're prompted to overwrite **package.json**, answer **No** (do not overwrite).
 
 3. Open the manifest file (i.e., the file in the root directory of your app with a name ending in "manifest.xml"). Replace all occurrences of `https://localhost:3000` with `http://localhost:3000` and save the file.
 
@@ -154,11 +163,11 @@ Each add-in requires a manifest file to define its settings and capabilities.
 
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Excel Add-in button](../../images/excel_quickstart_addin_2a.png)
+    ![Excel Add-in button](../images/excel-quickstart-addin-2a.png)
 
 3. In the task pane, choose the **Color Me** button pane to set the color of the selected range to green.
 
-    ![Excel Add-in](../../images/excel_quickstart_addin_2b.png)
+    ![Excel Add-in](../images/excel-quickstart-addin-2b.png)
 
 ## Next steps
 
@@ -167,6 +176,5 @@ Congratulations, you've successfully created an Excel add-in using React! Next, 
 ## Additional resources
 
 * [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
-* [Explore snippets with Script Lab](https://store.office.com/en-001/app.aspx?assetid=WA104380862&ui=en-US&rs=en-001&ad=US&appredirect=false)
 * [Excel add-in code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API reference](../../reference/excel/excel-add-ins-reference-overview.md)
+* [Excel JavaScript API reference](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

@@ -1,3 +1,9 @@
+---
+title: Guidelines for creating labs for Mix using LabsJS
+description: ''
+ms.date: 12/04/2017
+---
+
 
 # Guidelines for creating labs for Mix using LabsJS
 
@@ -5,7 +11,7 @@
 
 The LabsJS library (labs.js) supports writing specialized Office Add-ins (called labs) that integrate with Office Mix. Office Mix then renders the labs using Microsoft PowerPoint. While we call these components "labs," let's be clear that what we're creating are special Office Add-ins that are Office Mix Add-ins.
 
-The LabsJS content helps you implementing the labs.js JavaScript API by providing guidance and examples. This library is built on top of the [JavaScript API for Office](../../../reference/javascript-api-for-office.md) (Office.js) and provides an abstraction layer that is optimized for add-ins embedded in Office Mix.
+The LabsJS content helps you implementing the labs.js JavaScript API by providing guidance and examples. This library is built on top of the [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office) (Office.js) and provides an abstraction layer that is optimized for add-ins embedded in Office Mix.
 
 
 ## General guidelines
@@ -23,7 +29,8 @@ You can reference the office.js library here:  `<script src="https://sforoffice.
 The labs.js library is included with the LabsJS SDK. Alternatively, you can reference the labs.js library on a CDN at  <code>https://az592748.vo.msecnd.net/sdk/LabsJS-1.0.4/labs-1.0.4.js</code>. Note that the production version of your lab must reference the version stored on the CDN.
 
 
- >**Note**:  In addition to the JavaScript file (labs-1.0.4.js), we provide a TypeScript definition file of the labs API (labs-1.0.4.d.ts). The definition file was built against TypeScript version 0.9.1.1.
+> [!NOTE]
+> In addition to the JavaScript file (labs-1.0.4.js), we provide a TypeScript definition file of the labs API (labs-1.0.4.d.ts). The definition file was built against TypeScript version 0.9.1.1.
 
 
 ### Callbacks and error handling
@@ -86,12 +93,12 @@ Initialization establishes the communication pathway between the lab and its hos
 Labs.connect((err, connectionResponse) => {});
 ```
 
-After you initialize, you can call other methods of the labs.js API. The  _connectionResponse_ parameter contains information about the host, user, and other connection-related information. For more information about the values returned, see the [Labs.Core.IConnectionResponse](../../../reference/office-mix/labs.core.iconnectionresponse.md).
+After you initialize, you can call other methods of the labs.js API. The  _connectionResponse_ parameter contains information about the host, user, and other connection-related information. For more information about the values returned, see the [Labs.Core.IConnectionResponse](https://dev.office.com/reference/add-ins/office-mix/labs.core.iconnectionresponse).
 
 
 ### Time format
 
-Labs.js stores numbers as milliseconds elapsed since January 1st 1970 UTC. This matches date format of the JavaScript [Date object](http://msdn.microsoft.com/en-us/library/ie/cd9w2te4%28v=vs.94%29.aspx),
+Labs.js stores numbers as milliseconds elapsed since January 1st 1970 UTC. This matches date format of the JavaScript [Date object](https://docs.microsoft.com/en-us/scripting/javascript/reference/date-object-javascript),
 
 
 ### Timeline
@@ -162,8 +169,6 @@ Labs.getTimeline().next({}, (err, unused) => { });
 
 
 ## Additional resources
-
-
 
 - [Office Mix add-ins](../../powerpoint/office-mix/office-mix-add-ins.md)
     

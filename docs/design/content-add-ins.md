@@ -1,10 +1,18 @@
+---
+title: Content Office Add-ins
+description: ''
+ms.date: 12/04/2017
+---
+
+
+
 # Content Office Add-ins
 
 Content add-ins are surfaces that can be embedded directly into Word, Excel, or PowerPoint documents. Content add-ins give users access to interface controls that run code to modify documents or display data from a data source. Use content add-ins when you want to embed functionality directly into the document.  
 
-**Example: Content add-in**
+*Figure 1. Typical layout for content add-ins*
 
-![An example image displaying a typical layout for content add-ins.](../../images/overview_withApp_content.png)
+![An example image displaying a typical layout for content add-ins.](../images/overview-with-app-content.png)
 
 ## Best practices
 
@@ -19,17 +27,18 @@ Content add-in sizes for Word, Excel, and PowerPoint in Office 2016 desktop and 
 
 Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac.
 
-**Personality menu on Windows** 
-
 For Windows, the personality menu measures 12x32 pixels, as shown.
 
-![Image showing the personality menu on Windows desktop](../../images/personalityMenu_Win.png)
+*Figure 2. Personality menu on Windows* 
 
-**Personality menu on Mac**
+![Image showing the personality menu on Windows desktop](../images/personality-menu-win.png)
+
 
 For Mac, the personality menu measures 26x26 pixels, but floats 8 pixels in from the right and 6 pixels from the top, which increases the occupied space to 34x32 pixels, as shown.
 
-![Image showing the personality menu on Mac desktop](../../images/personalityMenu_Mac.png)
+*Figure 3. Personality menu on Mac*
+
+![Image showing the personality menu on Mac desktop](../images/personality-menu-mac.png)
 
 ## Implementation
 

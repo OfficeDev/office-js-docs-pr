@@ -1,3 +1,11 @@
+---
+title: Usability testing for Office Add-ins
+description: ''
+ms.date: 12/04/2017
+---
+
+
+
 # Usability testing for Office Add-ins
 
 A great add-in design takes user behaviors into account. Because your own preconceptions influence your design decisions, it’s important to test designs with real users to make sure that your add-ins work well for your customers. 
@@ -12,7 +20,8 @@ These testing services help you to streamline test plan creation and remove the 
 
 You need only five participants to uncover most usability issues in your design. Incorporate small tests regularly throughout your development cycle to ensure that your product is user-centered.
 
-> **Note:** We recommend that you test the usability of your add-in across multiple platforms. To [publish your add-in to the Office Store](https://msdn.microsoft.com/en-us/library/office/jj220037.aspx), it must work on all [platforms that support the methods that you define](https://dev.office.com/add-in-availability).
+> [!NOTE]
+> We recommend that you test the usability of your add-in across multiple platforms. To [publish your add-in to the Office Store](https://dev.office.com/officestore/docs/submit-to-the-office-store), it must work on all [platforms that support the methods that you define](https://dev.office.com/add-in-availability).
 
 ## 1.	Sign up for a testing service
 
@@ -24,7 +33,7 @@ Research questions define the objectives of your research and guide your test pl
  
 The following are some examples of research questions:
   
- **Specific**  
+**Specific**  
 
  - Do users notice the "free trial" link on the landing page?
  - When users insert content from the add-in to their document, do they understand where in the document it is inserted?
@@ -64,17 +73,16 @@ For example, if you want to find participants who are familiar with GitHub, to f
  d.	BitBucket  [*May select*]  
  e.	CloudForge  [*May select*]  
 
-
 If you are planning to test a live build of your add-in, the following questions can screen for users who will be able to do this. 
 
-   **This test requires you to have Microsoft PowerPoint 2016. Do you have PowerPoint 2016?**  
-   a.	Yes [*Must select*]  
-   b.	No [*Reject*]  
-   c.	I don’t know [*Reject*]  
+**This test requires you to have Microsoft PowerPoint 2016. Do you have PowerPoint 2016?**  
+ a.	Yes [*Must select*]  
+ b.	No [*Reject*]  
+ c.	I don’t know [*Reject*]  
 
-   **This test requires you to install a free add-in for PowerPoint 2016, and create a free account to use it. Are you willing to install an add-in and create a free account?**  
-    a.	Yes [*Must select*]  
-    b.	No [*Reject*]  
+**This test requires you to install a free add-in for PowerPoint 2016, and create a free account to use it. Are you willing to install an add-in and create a free account?**  
+ a.	Yes [*Must select*]  
+ b.	No [*Reject*]  
 
 For more information, see [Screener Questions Best Practices.](http://help.usertesting.com/customer/en/portal/articles/2077835-screener-question-best-practices)
  

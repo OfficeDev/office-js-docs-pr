@@ -1,3 +1,10 @@
+---
+title: Automatically open a task pane with a document
+description: ''
+ms.date: 12/04/2017
+---
+
+
 # Automatically open a task pane with a document
 
 You can use add-in commands in your Office Add-in to extend the Office UI by adding buttons to the Office ribbon. When users click your command button, an action occurs, such as opening a task pane. 
@@ -30,7 +37,8 @@ Apply the following best practices when you use the autoopen feature:
 - Use requirement set detection to determine whether the autoopen feature is available, and provide a fallback behavior if it isn’t.
 - Don't use the autoopen feature to artificially increase usage of your add-in. If it doesn’t make sense for your add-in to open automatically with certain documents, this feature can annoy users. 
 
-    >**Note:** If Microsoft detects abuse of the autoopen feature, your add-in might be rejected from the Office Store. 
+    > [!NOTE]
+    > If Microsoft detects abuse of the autoopen feature, your add-in might be rejected from the Office Store. 
 
 - Don't use this feature to pin multiple task panes. You can only set one pane of your add-in to open automatically with a document.  
 
@@ -40,7 +48,8 @@ To implement the autoopen feature:
 - Specify the task pane to be opened automatically.
 - Tag the document to automatically open the task pane.
 
->**Important:** The pane that you designate to open automatically will only open if the add-in is already installed on the user's device. If the user does not have the add-in installed when they open a document, the autoopen feature will not work and the setting will be ignored. If you also require the add-in to be distributed with the document you need to set the visibility property to 1; this can only be done using OpenXML, an example is provided later in this article. 
+> [!IMPORTANT]
+> The pane that you designate to open automatically will only open if the add-in is already installed on the user's device. If the user does not have the add-in installed when they open a document, the autoopen feature will not work and the setting will be ignored. If you also require the add-in to be distributed with the document you need to set the visibility property to 1; this can only be done using OpenXML, an example is provided later in this article. 
 
 ### Step 1: Specify the task pane to open
 To specify the task pane to open automatically, set the [TaskpaneId](https://dev.office.com/reference/add-ins/manifest/action#taskpaneid) value to **Office.AutoShowTaskpaneWithDocument**. You can only set this value on one task pane. If you set this value on multiple task panes, the first occurrence of the value will be recognized and the others will be ignored. 
@@ -97,12 +106,13 @@ The webextension part also includes a reference to the store or catalog with att
 
 | **`storeType` value** | **`id` value**	|**`store` value** | **`version` value**|
 |:---------------|:---------------|:---------------|:---------------|
-|OMEX (the Office Store)|The Office Store asset ID of the add-in.\*|The locale of the Office Store; for example, "en-us".|The version in the Office Store catalog.\*|
+|OMEX (the Office Store)|The Office Store asset ID of the add-in (see Note)|The locale of the Office Store; for example, "en-us".|The version in the Office Store catalog (see Note)|
 |FileSystem (a network share)|The GUID of the add-in in the add-in manifest.|The path of the network share; for example, "\\\\MyComputer\\MySharedFolder".|The version in the add-in manifest.|
 |EXCatalog (deployment via the Exchange server) |The GUID of the add-in in the add-in manifest.|"EXCatalog"|The version in the add-in manifest.
 |Registry (System registry)|The GUID of the add-in in the add-in manifest.|"developer"|The version in the add-in manifest.|
 
->\* To find the asset ID and version of an add-in in the Office Store, go to the Office Store landing page for the add-in. The asset ID appears in the address bar in the browser. The version is listed in the **Details** section of the page.
+> [!NOTE]
+> To find the asset ID and version of an add-in in the Office Store, go to the Office Store landing page for the add-in. The asset ID appears in the address bar in the browser. The version is listed in the **Details** section of the page.
 
 For more information about the webextension markup, see [[MS-OWEXML] 2.2.5. WebExtensionReference](https://msdn.microsoft.com/en-us/library/hh695383(v=office.12).aspx).
 
@@ -120,7 +130,8 @@ If `visibility` is set to "1", the task pane opens automatically the first time 
 
 Setting `visibility` to "1" is a good choice when the add-in and the template or content of the document are so closely integrated that the user would not opt out of the autoopen feature. 
 
->**Note:** If you want to distribute your add-in with the document, so that users are prompted to install it, you must set the visibility property to 1. You can only do this via Open XML.
+> [!NOTE]
+> If you want to distribute your add-in with the document, so that users are prompted to install it, you must set the visibility property to 1. You can only do this via Open XML.
 
 An easy way to write the XML is to first run your add-in and [tag the document on the client side](#tag-the-document-on-the-client-side) to write the value, and then save the document and inspect the XML that is generated. Office will detect and provide the appropriate attribute values. You can also use the [Open XML SDK 2.5 Productivity Tool](https://www.microsoft.com/en-us/download/details.aspx?id=30425) tool to generate C# code to programmatically add the markup based on the XML you generate.
 

@@ -1,9 +1,16 @@
+---
+title: Create and debug Office Add-ins in Visual Studio
+description: ''
+ms.date: 12/04/2017
+---
+
 
 # Create and debug Office Add-ins in Visual Studio
 
 This article describes how to use Visual Studio to create your first Office Add-in. The steps in this article based on Visual Studio 2015. If you're using another version of Visual Studio, the procedures might vary slightly.
 
->**Note:** To get started with an add-in for OneNote, see [Build your first OneNote add-in](../onenote/onenote-add-ins-getting-started.md).
+> [!NOTE]
+> To get started with an add-in for OneNote, see [Build your first OneNote add-in](../onenote/onenote-add-ins-getting-started.md).
 
 ## Create an Office Add-in project in Visual Studio
 
@@ -27,7 +34,8 @@ In Visual Studio 2015, some of the add-in project templates have been updated to
 - Outlook add-ins include options not just for including your add-in in email messages or appointments, but also for specifying whether the add-in is available when an email message or appointment is being composed as well as read.
     
 
- >**Note**  In Visual Studio most options are understandable from their descriptions except for the  **Email Message** checkbox. Use that checkbox if you want to create an Outlook add-in that appears not just with mail items, but also with meeting requests, responses, and cancellations.
+> [!NOTE]
+> In Visual Studio most options are understandable from their descriptions except for the  **Email Message** checkbox. Use that checkbox if you want to create an Outlook add-in that appears not just with mail items, but also with meeting requests, responses, and cancellations.
 
 When you've completed the wizard, Visual Studio creates a solution for you that contains two projects.
 
@@ -41,7 +49,7 @@ When you've completed the wizard, Visual Studio creates a solution for you that 
 ## Modify your add-in settings
 
 
-To modify the settings of your add-in, edit the XML manifest file of the project. In  **Solution Explorer**, expand the add-in project node, expand the folder that contains the XML manifest, and choose the XML manifest. You can point to any element in the file to view a tooltip that describes the purpose of the element. For more information about the manfiest file, see [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md).
+To modify the settings of your add-in, edit the XML manifest file of the project. In  **Solution Explorer**, expand the add-in project node, expand the folder that contains the XML manifest, and choose the XML manifest. You can point to any element in the file to view a tooltip that describes the purpose of the element. For more information about the manfiest file, see [Office Add-ins XML manifest](../overview/add-in-manifests.md).
 
 
 ## Develop the contents of your add-in
@@ -61,7 +69,8 @@ As your add-in becomes more sophisticated, you can add more HTML and JavaScript 
 |**Home.js**|Located in the  **Home** folder of the project, this is the JavaScript file associated with the Home.js page. You can place any code that is specific to the behavior of the Home.html page in the Home.js file. The Home.js file contains some example code to get you started.|
 |**App.js**|Located in the  **Add-in** folder of the project, this is the default JavaScript file of the entire add-in. You can place code that is common to the behavior of multiple pages of your add-in in the App.js file. The App.js file contains some example code to get you started.|
 
- >**Note**  You don't have to use these files. Feel free to add other files to the project and use those instead. If you want another HTML file to appear as the initial page of the add-in, open the manifest editor, and then point the  **SourceLocation** property to the name of the file.
+> [!NOTE]
+> You don't have to use these files. Feel free to add other files to the project and use those instead. If you want another HTML file to appear as the initial page of the add-in, open the manifest editor, and then point the  **SourceLocation** property to the name of the file.
 
 
 ## Debug your add-in
@@ -109,7 +118,9 @@ You can add documents to the add-in project. If you have a document that contain
 
 1. In  **Solution Explorer**, choose the add-in project folder.
     
-     >**Note**  Choose the add-in project and not the web application project.
+    > [!NOTE]
+    > Choose the add-in project and not the web application project.
+
 2. On the  **Project** menu, choose **Add Existing Item**.
     
 3. In the  **Add Existing Item** dialog box, locate and select the document that you want to add.
@@ -129,7 +140,8 @@ You can add documents to the add-in project. If you have a document that contain
 Visual Studio will automatically build the solution when you start it. You can start the solution from the  **Menu** bar by choosing **Debug**,  **Start**. 
 
 
- >**Note**  If script debugging isn't enabled in Internet Explorer, you won't be able to start the debugger in Visual Studio. You can enable script debugging by opening the  **Internet Options** dialog box, choosing the **Advanced** tab, and then clearing the **Disable Script Debugging (Internet Explorer)** and **Disable Script Debugging (Other)** check boxes.
+> [!NOTE]
+> If script debugging isn't enabled in Internet Explorer, you won't be able to start the debugger in Visual Studio. You can enable script debugging by opening the  **Internet Options** dialog box, choosing the **Advanced** tab, and then clearing the **Disable Script Debugging (Internet Explorer)** and **Disable Script Debugging (Other)** check boxes.
 
 Visual Studio builds the project and does the following:
 
@@ -149,16 +161,15 @@ Next, Visual Studio does the following:
     
 3. Opens the host application. 
     
-Visual Studio doesn't show validation errors in the  **OUTPUT** window when you build the project. Visual Studio reports errors and warnings in the **ERRORLIST** window as they occur. Visual Studio also reports validation errors by showing wavy underlines (known as squiggles) of different colors in the code and text editor. These marks notify you of problems that Visual Studio detected in your code. For more information, see [Code and Text Editor](http://go.microsoft.com/fwlink/?LinkID=128497). For more information about how to enable or disable validation, see: 
+Visual Studio doesn't show validation errors in the  **OUTPUT** window when you build the project. Visual Studio reports errors and warnings in the **ERRORLIST** window as they occur. Visual Studio also reports validation errors by showing wavy underlines (known as squiggles) of different colors in the code and text editor. These marks notify you of problems that Visual Studio detected in your code. For more information, see [Code and Text Editor](https://msdn.microsoft.com/en-us/library/se2f663y(v=vs.140).aspx). For more information about how to enable or disable validation, see: 
 
-
-- [Options, Text Editor, JavaScript, IntelliSense](http://go.microsoft.com/fwlink/?LinkID=238779)
+- [Options, Text Editor, JavaScript, IntelliSense](https://msdn.microsoft.com/en-us/library/hh362485(v=vs.140).aspx)
     
-- [How to: Set Validation Options for HTML Editing in Visual Web Developer](http://msdn.microsoft.com/en-us/library/vstudio/0byxkfet%28v=vs.100%29.aspx)
+- [How to: Set Validation Options for HTML Editing in Visual Web Developer](https://msdn.microsoft.com/en-us/library/0byxkfet(v=vs.100).aspx)
     
-- [CSS, see Validation, CSS, Text Editor, Options Dialog Box](http://go.microsoft.com/fwlink/?LinkID=238780)
+- [CSS, see Validation, CSS, Text Editor, Options Dialog Box](https://msdn.microsoft.com/en-us/library/se2f663y(v=vs.140).aspx)
     
-To review the validation rules of the XML manifest file in your project, see [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md).
+To review the validation rules of the XML manifest file in your project, see [Office Add-ins XML manifest](../overview/add-in-manifests.md).
 
 
 ### Show an add-in in Excel, Word, or Project and step through your code
@@ -215,5 +226,5 @@ You can change your code and review the effects of those changes in your add-in 
 
 ## Next steps
 
-- [Publish your Office Add-in](../publish/publish.md)
+- [Deploy and publish your Office Add-in](../publish/publish.md)
     

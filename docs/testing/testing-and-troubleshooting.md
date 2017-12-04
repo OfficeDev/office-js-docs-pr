@@ -1,10 +1,16 @@
+---
+title: Troubleshoot user errors with Office Add-ins
+description: ''
+ms.date: 12/04/2017
+---
+
 # Troubleshoot user errors with Office Add-ins
 
 At times your users might encounter issues with Office Add-ins that you develop. For example, an add-in fails to load or is inaccessible. Use the information in this article to help resolve common issues that your users encounter with your Office Add-in. 
 
 You can also use [Fiddler](http://www.telerik.com/fiddler) to identify and debug issues with your add-ins.
 
-After you resolve the user's issue, you can [respond directly to customer reviews in the Office Store](https://msdn.microsoft.com/library/jj635874.aspx).
+After you resolve the user's issue, you can [respond directly to customer reviews in the Office Store](https://dev.office.com/officestore/docs/create-effective-office-store-listings).
 
 ## Common errors and troubleshooting steps
 
@@ -17,7 +23,8 @@ The following table lists common error messages that users might encounter and s
 |App error: Catalog could not be reached|Verify firewall settings."Catalog" refers to the Office Store. This message indicates that the user cannot access the Office Store.|
 |APP ERROR: This app could not be started. Close this dialog to ignore the problem or click "Restart" to try again.|Verify that the latest Office updates are installed, or download the [update for Office 2013](https://support.microsoft.com/en-us/kb/2986156/).|
 |Error: Object doesn't support property or method 'defineProperty'|Confirm that Internet Explorer is not running in Compatibility Mode. Go to Tools >  **Compatibility View Settings**.|
-|Sorry, we couldn't load the app because your browser version is not supported. Click here for a list of supported browser versions.|Make sure that the browser supports HTML5 local storage, or reset your Internet Explorer settings. For information about supported browsers, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).|
+|Sorry, we couldn't load the app because your browser version is not supported. Click here for a list of supported browser versions.|Make sure that the browser supports HTML5 local storage, or reset your Internet Explorer settings. For information about supported browsers, see [Requirements for running Office Add-ins](../overview/requirements-for-running-office-add-ins.md).|
+
 
 ## Outlook add-in doesn't work correctly
 
@@ -44,9 +51,11 @@ If the add-in doesn't activate when the user performs the following steps:
     
 Verify that the latest Office updates are installed, or download the [update for Office 2013](https://support.microsoft.com/en-us/kb/2986156/).
 
+
 ## Add-in doesn't load in task pane or other issues with the add-in manifest
 
 See [Validate and troubleshoot issues with your manifest](troubleshoot-manifest.md) to debug add-in manifest issues.
+
 
 ## Add-in dialog box cannot be displayed
 
@@ -62,7 +71,8 @@ When using an Office Add-in, the user is asked to allow a dialog box to be displ
 
 To resolve the issue, end users or administrators can add the domain of the add-in to the list of trusted sites in Internet Explorer. Use the same procedure whether you're using the Internet Explorer or Microsoft Edge browser.
 
->**Important:** Do not add the URL for an add-in to your list of trusted sites if you don't trust the add-in.
+> [!IMPORTANT]
+> Do not add the URL for an add-in to your list of trusted sites if you don't trust the add-in.
 
 To add a URL to your list of trusted sites:
 
@@ -71,7 +81,7 @@ To add a URL to your list of trusted sites:
 3. Enter the URL that appears in the error message, and choose **Add**.
 4. Try to use the add-in again. If the problem persists, verify the settings for the other security zones and ensure that the add-in domain is in the same zone as the URL that is displayed in the address bar of the Office application.
 
-This issue occurs when the Dialog API is used in pop-up mode. To prevent this issue from occurring, use the [displayInFrame](../../reference/shared/officeui.displaydialogasync.md) flag. This requires that your page support display within an iframe. The following example shows how to use the flag.
+This issue occurs when the Dialog API is used in pop-up mode. To prevent this issue from occurring, use the [displayInFrame](https://dev.office.com/reference/add-ins/shared/officeui.displaydialogasync) flag. This requires that your page support display within an iframe. The following example shows how to use the flag.
 
 ```js
 
@@ -92,8 +102,8 @@ Call `window.location.reload(true)` from JavaScript in the add-in to force a rel
 
 ## Additional resources
 
-- [Debug add-ins in Office Online](../testing/debug-add-ins-in-office-online.md) 
-- [Sideload an Office Add-in on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)  
-- [Debug Office Add-ins on iPad and Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)  
+- [Debug add-ins in Office Online](debug-add-ins-in-office-online.md) 
+- [Sideload an Office Add-in on iPad and Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
+- [Debug Office Add-ins on iPad and Mac](debug-office-add-ins-on-ipad-and-mac.md)  
 - [Validate and troubleshoot issues with your manifest](troubleshoot-manifest.md)
     

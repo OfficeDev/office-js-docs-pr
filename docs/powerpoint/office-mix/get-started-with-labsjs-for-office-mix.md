@@ -1,3 +1,9 @@
+---
+title: Get started with LabsJS for Office Mix
+description: ''
+ms.date: 12/04/2017
+---
+
 
 # Get started with LabsJS for Office Mix
 
@@ -33,7 +39,7 @@ The labs.js library serves as an abstraction layer on top of the office.js libra
 
 Your first step is to sign up for an Office 365 Developer Site. This allows you to host and test your lab before submitting it to the Office Store. The site allows you to publish your add-in to Office Mix and test it in a live environment.
 
-For more information, see [Set up a development environment for SharePoint Add-ins on Office 365](http://msdn.microsoft.com/library/b22ce52a-ae9e-4831-9b68-c9210af6dc54%28Office.15%29.aspx). 
+For more information, see [Set up a development environment for SharePoint Add-ins on Office 365](https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/set-up-a-development-environment-for-sharepoint-add-ins-on-office-365). 
 
 
 ### Set up an app catalog on SharePoint Online
@@ -57,7 +63,7 @@ After you create your lab, you can publish it and submit it to the store.
 
 The application manifest is an XML document that describes your LabJS lab. It provides a reference to the URL where the lab is hosted and provides details about the lab, including display name, description, icons, size, and so on.
 
-We include a sample manifest, "SampleManifest.xml". For more information about the manifest schema as well as a link to the schema definition, see [Office Add-ins XML manifest](../../../docs/overview/add-in-manifests.md).
+We include a sample manifest, "SampleManifest.xml". For more information about the manifest schema as well as a link to the schema definition, see [Office Add-ins XML manifest](../../overview/add-in-manifests.md).
 
 To upload your manifest to your SharePoint site, first navigate to your application catalog, which you'll typically find at the URL <code>https://\<your site\>/sites/AppCatalog</code>. Then, choose the  **New app** button and follow the steps to upload your application manifest.
 
@@ -88,11 +94,7 @@ To submit your lab to the Office Store, see [Publish your Office Add-in](../../p
 
 ## Additional resources
 
-
-
 - [Office Mix add-ins](../../powerpoint/office-mix/office-mix-add-ins.md)
-    
-- [Office Add-ins](../../../docs/overview/office-add-ins.md)
-    
+- [Office Add-ins](../../overview/office-add-ins.md)
 - [Creating your first lab for Office Mix](../../powerpoint/office-mix/creating-your-first-lab-for-office-mix.md)
     

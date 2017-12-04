@@ -1,14 +1,20 @@
-# Enable single sign-on for Office Add-ins
+---
+title: Enable single sign-on for Office Add-ins
+description: ''
+ms.date: 12/04/2017
+---
+
+# Enable single sign-on for Office Add-ins (preview)
 
 Users sign in to Office (online, mobile, and desktop platforms) using either their personal Microsoft account or their work or school (Office 365) account. You can take advantage of this and use SSO to do the following--without requiring the user to sign in a second time:
 
 * Authorize the user to sign in to your add-in.
 * Authorize the add-in to access [Microsoft Graph](https://developer.microsoft.com/graph/docs).
 
-![An image showing the sign-in process for an add-in](../../images/OfficeHostTitleBarLogin.png)
+![An image showing the sign-in process for an add-in](../images/office-host-title-bar-sign-in.png)
 
->**Note:**
-> The Single Sign-on API is currently supported for Word, Excel, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets](../../reference/requirement-sets/identity-api-requirement-sets.md).
+> [!NOTE]
+> The Single Sign-on API is currently supported for Word, Excel, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/identity-api-requirement-sets).
 > Single Sign-on is currently in preview for Outlook. If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Office 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 For users, this makes running your add-in a smooth experience that involves at signing in only once. For developers, this means that your add-in can authenticate users and gain authorized access to the user’s data via Microsoft Graph with credentials that the user has already provided to the Office application.
@@ -23,7 +29,8 @@ The add-in manifest contains markup that specifies how the add-in is registered 
 
 The following diagram shows how the SSO process works.
 <!-- Minor fixes to the text in the diagram - change V2 to v2.0, and change "(e.g. Word, Excel, etc.)" to "(for example, Word, Excel)". -->
-![A diagram that shows the SSO process](../../images/SSOOverviewDiagram.png)
+
+![A diagram that shows the SSO process](../images/sso-overview-diagram.png)
 
 1. In the add-in, JavaScript calls a new Office.js API `getAccessTokenAsync`. This tells the Office host application to obtain an access token to the add-in. (Hereafter, this is called the **add-in token**.)
 1. If the user is not signed in, the Office host application opens a pop-up window for the user to sign in.
@@ -44,8 +51,8 @@ The following diagram shows how the SSO process works.
 
 This section describes the tasks involved in creating an Office Add-in that uses SSO. These tasks are described here in a language- and framework-agnostic way. For examples of detailed walkthroughs, see:
 
-* [Create a Node.js Office Add-in that uses single sign-on](../../docs/develop/create-sso-office-add-ins-nodejs.md)
-* [Create an ASP.NET Office Add-in that uses single sign-on](../../docs/develop/create-sso-office-add-ins-aspnet.md)
+* [Create a Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md)
+* [Create an ASP.NET Office Add-in that uses single sign-on](create-sso-office-add-ins-aspnet.md)
 
 ### Create the service application
 

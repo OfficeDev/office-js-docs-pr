@@ -1,16 +1,24 @@
-# Create an ASP.NET Office Add-in that uses single sign-on
+---
+title: Create an ASP.NET Office Add-in that uses single sign-on
+description: ''
+ms.date: 12/04/2017
+---
 
-When users are signed in to Office, your add-in can use the same credentials to permit users to access multiple applications without requiring them to sign in a second time. For an overview, see [Enable SSO in an Office Add-in](../../docs/develop/sso-in-office-add-ins.md).
+# Create an ASP.NET Office Add-in that uses single sign-on (preview)
+
+When users are signed in to Office, your add-in can use the same credentials to permit users to access multiple applications without requiring them to sign in a second time. For an overview, see [Enable SSO in an Office Add-in](sso-in-office-add-ins.md).
 
 This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with ASP.NET, OWIN, and Microsoft Authentication Library (MSAL) for .NET.
 
-> **Note:** For a similar article about a Node.js-based add-in, see [Create a Node.js Office Add-in that uses single sign-on](../../docs/develop/create-sso-office-add-ins-nodejs.md).
+> [!NOTE]
+> For a similar article about a Node.js-based add-in, see [Create a Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md).
 
 ## Prerequisites
 
 * The latest available version of Visual Studio 2017 Preview.
 
->**Note:** The latest version of Visual Studio 2017 Preview is not currently compatible with the add-in manifest markup that is required for SSO. Details about how to work around this are provided in the following procedures.
+  > [!NOTE]
+  > The latest version of Visual Studio 2017 Preview is not currently compatible with the add-in manifest markup that is required for SSO. Details about how to work around this are provided in the following procedures.
 
 * Office 2016, Version 1708, build 8424.nnnn or later (the Office 365 subscription version, sometimes called “Click to Run”). You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1).
 
@@ -20,16 +28,25 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Open the **Before** folder and open the .sln file in Visual Studio. This is a starter project. The UI and other aspects of the add-in that are not directly connected to SSO or authorization are already done.
 
-    > Note: There is also a completed version of the sample in the same repo. It is just like the add-in that you would have if you completed the procedures in this article, except that the completed project has code comments that would be redundant with the text of this article. To use the completed version, just open the *.sln file and follow the instructions in this article, but skip the sections **Code the client side** and **Code the server** side..
+    > [!NOTE]
+    > There is also a completed version of the sample in the same repo. It is just like the add-in that you would have if you completed the procedures in this article, except that the completed project has code comments that would be redundant with the text of this article. To use the completed version, just open the `sln` file and follow the instructions in this article, but skip the sections **Code the client side** and **Code the server** side.
 
 1. After the project opens, build it in Visual Studio, which will install the packages listed in the packages.config file. This can take a few seconds to several minutes depending on how many of the packages are in the computer's local package cache.
 
-    > **Important!** The packages.config in the root of the web API project, specifies version `1.1.1-alpha0393` of Microsoft.Identity.Client, the MSAL library. You should verify that this version (or later) gets installed after you press F5 for the first time: On the **Tools** menu, navigate to **Nuget Package Manager** > **Manage Nuget Packages for Solution** > **Installed**. Scroll to **Microsoft.Identity.Client** to see the installed version. If it is earlier than `1.1.1-alpha0393` (or does not appear on the **Installed** list), then navigate to **Nuget Package Manager** > **Package Manager Console**. At the console, run the command `Install-Package Microsoft.Identity.Client -Version 1.1.1-alpha0393 -Source https://www.myget.org/F/aad-clients-nightly/api/v3/index.json`.
+    > [!NOTE]
+    > You will get an error about the Identity namespace. This is a side effect of a configuration issue that you will fix with the next step. The important thing is that the packages are installed.
 
-1. After the project has completely built, press F5. PowerPoint opens and there is an **SSO ASP.NET** group on the **Home** ribbon.
+1. Currently, the version of the MSAL library (Microsoft.Identity.Client) that you need for SSO (version `1.1.1-alpha0393`) is not part of the standard nuget catalog, so it is not listed in the package.config, and it must be installed separately. 
 
-1. Press the **Show add-in** button in this group to see the add-in’s UI in the task pane. The button in the task pane is not wired up yet.
-2. In Visual Studio, stop the debugger.
+    1. On the **Tools** menu, navigate to **Nuget Package Manager** > **Package Manager Console**. 
+
+    2. At the console, run the following command. It may take a minute or more to complete even with a fast Internet connection. When it finishes you should see **Successfully installed 'Microsoft.Identity.Client 1.1.1-alpha0393' ...** near the end of the output in the console.
+
+        `Install-Package Microsoft.Identity.Client -Version 1.1.1-alpha0393 -Source https://www.myget.org/F/aad-clients-nightly/api/v3/index.json`
+
+    3. In **Solution Explorer**, right-click **References**. Verify that **Microsoft.Identity.Client** is listed. If it is not or there is a warning icon on its entry, delete the entry and then use the Visual Studio Add Reference wizard to add a reference to the assembly at **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.1-alpha0393\lib\net45\Microsoft.Identity.Client.dll**
+
+1. Build the project a second time.
 
 ## Register the add-in with Azure AD v2.0 endpoint
 
@@ -43,7 +60,8 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. When the configuration page for the app opens, copy the **Application Id** and save it. You'll use it in a later procedure.
 
-    > **Note**: This ID is the “audience” value when other applications, such as the Office host application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the “client ID” of the application when it, in turn, seeks authorized access to Microsoft Graph.
+    > [!NOTE]
+    > This ID is the “audience” value when other applications, such as the Office host application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the “client ID” of the application when it, in turn, seeks authorized access to Microsoft Graph.
 
 1. In the **Application Secrets** section, press **Generate New Password**. A popup dialog opens with a new password (also called an “app secret”) displayed. *Copy the password immediately and save it with the application ID.* You'll need it in a later procedure. Then close the dialog.
 
@@ -51,12 +69,15 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. In the dialog that opens, select **Web API**.
 
-1. An **Application ID URI** has been generated of the form “api://{App ID GUID}”. Insert the string “localhost:44355/” between the double forward slashes and the GUID. The entire ID should read `api://localhost:44355/{App ID GUID}`. (The domain part of the **Scope** name just below the **Application ID URI** will automatically change to match. It should read `api://localhost:44355/{App ID GUID}/access_as_user`.)
+1. An **Application ID URI** has been generated of the form “api://{App ID GUID}”. Insert the string “localhost:44355/” between the double forward slashes and the GUID. The entire ID should read `api://localhost:44355/{App ID GUID}`. 
+
+    > [!NOTE]
+    > The domain part of the **Scope** name just below the **Application ID URI** will automatically change to match. It should read `api://localhost:44355/{App ID GUID}/access_as_user`.
 
 1. In the **Pre-authorized applications** section, you identify the applications that you want to authorize to your add-in's web application. Each of the following IDs needs to be pre-authorized. Each time you enter one, a new empty textbox appears. (Enter only the GUID.)
- * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
- * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office Online)
- * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office Online)
+    * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
+    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office Online)
+    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office Online)
 
 1. Open the **Scope** drop-down beside each **Application ID** and check the box for `api://localhost:44355/{App ID GUID}/access_as_user`.
 
@@ -64,15 +85,19 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. In the new **Web** section under **Platforms**, enter the following as a **Redirect URL**: `https://localhost:44355`.
 
-    > Note: As of this writing, the **Web API** platform sometimes disappears from the **Platforms** section, particularly if the page is refreshed after the **Web** platform is added *and the registration page is saved*. For reassurance that your **Web API** platform is still part of the registration, click the **Edit Application Manifest** button near the bottom of the page. You should see the `api://localhost:44355/{App ID GUID}` string in the **identifierUris** property of the manifest. There will also be a **oauth2Permissions** property whose **value** subproperty has the value `access_as_user`.
+    > [!NOTE]
+    > As of this writing, the **Web API** platform sometimes disappears from the **Platforms** section, particularly if the page is refreshed after the **Web** platform is added *and the registration page is saved*. For reassurance that your **Web API** platform is still part of the registration, click the **Edit Application Manifest** button near the bottom of the page. You should see the `api://localhost:44355/{App ID GUID}` string in the **identifierUris** property of the manifest. There will also be a **oauth2Permissions** property whose **value** subproperty has the value `access_as_user`.
 
 1. Scroll down to the **Microsoft Graph Permissions** section, the **Delegated Permissions** subsection. Use the **Add** button to open a **Select Permissions** dialog.
 
-1. In the dialog box, check the boxes for the following permissions (some may already be checked by default). Only the first is really required by your add-in itself; but the MSAL library that the server-side code uses requires `offline_access` and `openid`. The `profile` permission is required for the Office host to get a token to your add-in web application.
- * Files.Read.All
- * offline_access
- * openid
- * profile
+1. In the dialog box, check the boxes for the following permissions. Only the first is really required by your add-in itself; but the MSAL library that the server-side code uses requires `offline_access` and `openid`. The `profile` permission is required for the Office host to get a token to your add-in web application.
+    * Files.Read.All
+    * offline_access
+    * openid
+    * profile
+
+    > [!NOTE]
+    > The `User.Read` permission may already be listed by default. It is a good practice not to ask for permissions that are not needed, so we recommend that you uncheck the box for this permission.
 
 1. At the bottom of the dialog, click **OK**.
 
@@ -80,7 +105,8 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Grant admin consent to the add-in
 
-> **Note:** This procedure is only needed when you're developing the add-in. When your production add-in is deployed to the Office Store or an add-in catalog, users will individually trust it or an admin will consent for organization at installation.
+> [!NOTE]
+> This procedure is only needed when you're developing the add-in. When your production add-in is deployed to the Office Store or an add-in catalog, users will individually trust it or an admin will consent for organization at installation.
 
 1. If the add-in isn't running in Visual Studio, press **F5** to run it. It needs to be running in IIS for this procedure to complete smoothly.
 
@@ -107,29 +133,30 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
     `https://login.microsoftonline.com/{tenant_ID}/v2.0`
 
-1. In Visual Studio, open the web.config. There are some keys in the **appSettings** section to which you need to assign values.
+2. In Visual Studio, open the web.config. There are some keys in the **appSettings** section to which you need to assign values.
 
-1. Use the string you constructed in step 1 as the value to the key named “ida:Issuer”. Be sure there are no blank spaces in the value.
+3. Use the string you constructed in step 1 as the value to the key named “ida:Issuer”. Be sure there are no blank spaces in the value.
 
-1. Assign the following values to the corresponding keys:
+4. Assign the following values to the corresponding keys:
 
-|Key|Value|
-|:-----|:-----|
-|ida:ClientID|The application ID you obtained when you registered the add-in.|
-|ida:Audience|The application ID you obtained when you registered the add-in.|
-|ida:Password|TThe password you obtained when you registered the add-in.|
+    |Key|Value|
+    |:-----|:-----|
+    |ida:ClientID|The application ID you obtained when you registered the add-in.|
+    |ida:Audience|The application ID you obtained when you registered the add-in.|
+    |ida:Password|TThe password you obtained when you registered the add-in.|
 
-
-The following is an example of what the four keys you changed should look like. *Note that ClientID and Audience are the same*. You can also use a single key for both purposes, but your web.config markup will be more reusable if you keep them separate because they aren't always the same. Also, having separate keys reinforces the idea that your add-in is both an OAuth resource - relative to the Office host - and an OAuth client - relative to Microsoft Graph.
+   The following is an example of what the four keys you changed should look like. *Note that ClientID and Audience are the same*. You can also use a single key for both purposes, but your web.config markup is more reusable if you keep them separate because they aren't always the same. Also, having separate keys reinforces the idea that your add-in is both an OAuth resource, relative to the Office host, and an OAuth client, relative to Microsoft Graph.
 
     ```xml
     <add key=”ida:ClientID" value="12345678-1234-1234-1234-123456789012" />
     <add key="ida:Audience" value="12345678-1234-1234-1234-123456789012" />
     <add key="ida:Password" value="rFfv17ezsoGw5XUc0CDBHiU" />
     <add key="ida:Issuer" value="https://login.microsoftonline.com/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee/v2.0" />
+    
     ```
 
-> **Note:** Leave the other settings in the **appSettings** section unchanged.
+   > [!NOTE]
+   > Leave the other settings in the **appSettings** section unchanged.
 
 1. Save and close the file.
 
@@ -154,39 +181,39 @@ The following is an example of what the four keys you changed should look like. 
 
 1. Replace the placeholder “{application_GUID here}” *in both places* in the markup with the Application ID that you copied when you registered your add-in. The "{}" are not part of the ID, so do not include them. This is the same ID you used in for the ClientID and Audience in the web.config.
 
-    > **Note**:
-    >* The **Resource** value is the **Application ID URI** you set when you added the Web API platform to the registration of the add-in.
-    >* The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through the Office Store.
+    > [!NOTE]
+    > * The **Resource** value is the **Application ID URI** you set when you added the Web API platform to the registration of the add-in.
+    > * The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through the Office Store.
 
 1. Open the **Warnings** tab of the **Error List** in Visual Studio. If there is a warning that `<WebApplicationInfo>` is not a valid child of `<VersionOverrides>`, your version of Visual Studio 2017 Preview does not  recognize the SSO markup. As a workaround, do the following for a Word, Excel, or PowerPoint add-in. (If you are working with an Outlook add-in see the workaround below.)
 
    - **Workaround for Word, Excel, and Powerpoint**
 
-   > 1. Comment out the `<WebApplicationInfo>` section from the manifest just above the end of `</VersionOverrides>`.
+        1. Comment out the `<WebApplicationInfo>` section from the manifest just above the end of `</VersionOverrides>`.
 
-   > 2. Press F5 to start a debugging session. This will create a copy of the manifest in the following folder (which is easier to access in **File Explorer** than in Visual Studio): `Office-Add-in-ASP.NET-SSO\Complete\Office-Add-in-ASPNET-SSO\bin\Debug\OfficeAppManifests`
+        2. Press F5 to start a debugging session. This will create a copy of the manifest in the following folder (which is easier to access in **File Explorer** than in Visual Studio): `Office-Add-in-ASP.NET-SSO\Complete\Office-Add-in-ASPNET-SSO\bin\Debug\OfficeAppManifests`
 
-   > 3. In the copy of the manifest, remove the comment syntax around the `<WebApplicationInfo>` section.
+        3. In the copy of the manifest, remove the comment syntax around the `<WebApplicationInfo>` section.
 
-   > 4. Save the copy of the manifest.
+        4. Save the copy of the manifest.
 
-   > 5. Now you must prevent Visual Studio from overwriting the copy of the manifest the next time you press F5. Right-click the solution node at the very top of **Solution Explorer** (not either of the project nodes).
+        5. Now you must prevent Visual Studio from overwriting the copy of the manifest the next time you press F5. Right-click the solution node at the very top of **Solution Explorer** (not either of the project nodes).
 
-   > 6. Select **Properties** from the context menu and a **Solution Property Pages** dialog box opens.
+        6. Select **Properties** from the context menu and a **Solution Property Pages** dialog box opens.
 
-   > 7. Expand **Configuration Properties** and select **Configuration**.
+        7. Expand **Configuration Properties** and select **Configuration**.
 
-   > 8. Deselect **Build** and **Deploy** in the row for the **Office-Add-in-ASPNET-SSO** project (*not* the **Office-Add-in-ASPNET-SSO-WebAPI** project).
+        8. Deselect **Build** and **Deploy** in the row for the **Office-Add-in-ASPNET-SSO** project (*not* the **Office-Add-in-ASPNET-SSO-WebAPI** project).
 
-   > 9. Press **OK** to close the dialog box.
+        9. Press **OK** to close the dialog box.
 
    - **Workaround for Outlook**
 
-   > 1. On your development machine, locate the existing `MailAppVersionOverridesV1_1.xsd`. This should be located in your Visual Studio installation directory under `./Xml/Schemas/{lcid}`. For example, on a typical installation of VS 2017 32-bit on an English (US) system, the full path would be `C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Xml\Schemas\1033`.
+        1. On your development machine, locate the existing `MailAppVersionOverridesV1_1.xsd`. This should be located in your Visual Studio installation directory under `./Xml/Schemas/{lcid}`. For example, on a typical installation of VS 2017 32-bit on an English (US) system, the full path would be `C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Xml\Schemas\1033`.
 
-   > 2. Rename the existing file to `MailAppVersionOverridesV1_1.old`.
+        2. Rename the existing file to `MailAppVersionOverridesV1_1.old`.
 
-   > 3. Copy this modified version of the file into the folder: [Modified MailAppVersionOverrides Schema](https://github.com/OfficeDev/outlook-add-in-attachments-demo/blob/sso-conversion/manifest-schema-fix/MailAppVersionOverridesV1_1.xsd)
+        3. Copy this modified version of the file into the folder: [Modified MailAppVersionOverrides Schema](https://github.com/OfficeDev/outlook-add-in-attachments-demo/blob/master/manifest-schema-fix/MailAppVersionOverridesV1_1.xsd)
 
 1. Save and close the main manifest file in Visual Studio.
 
@@ -291,7 +318,7 @@ The following is an example of what the four keys you changed should look like. 
 
 1. Ensure that all of the following `using` statements are at the top of the file.
 
-    ```
+    ```csharp
     using Owin;
     using System.IdentityModel.Tokens;
     using System.Configuration;
@@ -306,7 +333,7 @@ The following is an example of what the four keys you changed should look like. 
 
 1. Add the following method to the `Startup` class. This method specifies how the OWIN middleware will validate the access tokens that are passed to it from the `getData` method in the client-side Home.js file. The authorization process is triggered whenever a Web API endpoint that is decorated with the `[Authorize]` attribute is called.
 
-    ```
+    ```csharp
     public void ConfigureAuth(IAppBuilder app)
     {
         // TODO3: Configure the validation settings
@@ -321,7 +348,7 @@ The following is an example of what the four keys you changed should look like. 
     * Setting `SaveSigninToken` to `true` causes OWIN to save the raw token from the Office host. The add-in needs it to obtain an access token to Microsoft Graph with the “on behalf of” flow.
     * Scopes are not validated by the OWIN middleware. The scopes of the access token, which should include `access_as_user`, is validated in the controller.
 
-    ```
+    ```csharp
     var tvps = new TokenValidationParameters
         {
             ValidAudience = ConfigurationManager.AppSettings["ida:Audience"],
@@ -335,7 +362,7 @@ The following is an example of what the four keys you changed should look like. 
     * The method `UseOAuthBearerAuthentication` is called instead of the more common `UseWindowsAzureActiveDirectoryBearerAuthentication` because the latter is not compatible with the Azure AD V2 endpoint.
     * The discovery URL that is passed to the method is where the OWIN middleware obtains instructions for getting the key it needs to verify the signature on the access token received from the Office host.
 
-    ```
+    ```csharp
     app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions
             {
                 AccessTokenFormat = new JwtFormat(tvps, new OpenIdConnectCachingSecurityTokenProvider("https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration"))
@@ -350,7 +377,7 @@ The following is an example of what the four keys you changed should look like. 
 
 2. Ensure that the following `using` statements are at the top of the file.
 
-    ```
+    ```csharp
     using Microsoft.Identity.Client;
     using System;
     using System.IdentityModel.Tokens;
@@ -369,7 +396,7 @@ The following is an example of what the four keys you changed should look like. 
 
 4. Add the following method to the `ValuesController`:
 
-    ```
+    ```csharp
     // GET api/values
     public async Task<IEnumerable<string>> Get()
     {
@@ -379,7 +406,7 @@ The following is an example of what the four keys you changed should look like. 
 
 5. Replace TODO5 with the following code to validate that the scopes that are specified in the token include `access_as_user`.
 
-    ```
+    ```csharp
     string[] addinScopes = ClaimsPrincipal.Current.FindFirst("http://schemas.microsoft.com/identity/claims/scope").Value.Split(' ');
     if (addinScopes.Contains("access_as_user"))
     {
@@ -391,7 +418,8 @@ The following is an example of what the four keys you changed should look like. 
     return new string[] { "Error", "Microsoft Office does not have permission to get Microsoft Graph data on behalf of the current user." };
     ```
 
-> **Note:** You should only use the `access_as_user` scope to authorize the API that handles the on-behalf-of flow for Office add-ins. Other APIs in your service should have their own scope requirements. This limits what can be accessed with the tokens that Office acquires.
+    > [!NOTE]
+    > You should only use the `access_as_user` scope to authorize the API that handles the on-behalf-of flow for Office add-ins. Other APIs in your service should have their own scope requirements. This limits what can be accessed with the tokens that Office acquires.
 
 6. Replace TODO6 with the following code. Note:
     * It turns the raw access token received from the Office host into a `UserAssertion` object that will be passed to another method.
@@ -399,7 +427,7 @@ The following is an example of what the four keys you changed should look like. 
     * The third parameter to the `ConfidentialClientApplication` constructor is a redirect URL which is not actually used in the “on behalf of” flow, but it is a good practice to use the correct URL. The fourth and fifth parameters can be used to define a persistent store that would enable the reuse of unexpired tokens across different sessions with the add-in. This sample does not implement any persistent storage.
     * MSAL requires the `openid` and `offline_access` scopes to function, but it throws an error if your code redundantly requests them. It will also throw an error if your code requests `profile`, which is really only used when the Office host application gets the token to your add-in's web application. So only `Files.Read.All` is explicitly requested.
 
-    ```
+    ```csharp
     var bootstrapContext = ClaimsPrincipal.Current.Identities.First().BootstrapContext as BootstrapContext;
     UserAssertion userAssertion = new UserAssertion(bootstrapContext.Token);
     ClientCredential clientCred = new ClientCredential(ConfigurationManager.AppSettings["ida:Password"]);
@@ -416,7 +444,7 @@ The following is an example of what the four keys you changed should look like. 
     * The Claims property value must be passed to the client which will pass it to the Office host, which will then include it in a request for a new token. AAD will prompt the user for all required forms of authentication.
     * Any exceptions that are not of type `MsalUiRequiredException` are intentionally not caught, so they will propagate to the client.
 
-    ```
+    ```csharp
     AuthenticationResult result = null;
     try
     {
@@ -440,14 +468,14 @@ The following is an example of what the four keys you changed should look like. 
     * The `GraphApiHelper` and `ODataHelper` classes are defined in files in the **Helpers** folder. The `OneDriveItem` class is defined in a file in the **Models** folder. Detailed discussion of these classes is not relevant to authorization or SSO, so it is out-of-scope for this article.
     * Performance is improved by asking Microsoft Graph for only the data actually needed, so the code uses a ` $select` query parameter to specify that we only want the name property, and a `$top` parameter to specify that we want only the first 3 folder or file names.
 
-    ```
+    ```csharp
     var fullOneDriveItemsUrl = GraphApiHelper.GetOneDriveItemNamesUrl("?$select=name&$top=3");
     var getFilesResult = await ODataHelper.GetItems<OneDriveItem>(fullOneDriveItemsUrl, result.AccessToken);
     ```
 
 9. Replace TODO9 with the following. Note that although the code above asked for only the *name* property of the OneDrive items, Microsoft Graph always includes the *eTag* property for OneDrive items. To reduce the payload sent to the client, the code below reconstructs the results with only the item names.
 
-    ```
+    ```csharp
     List<string> itemNames = new List<string>();
     foreach (OneDriveItem item in getFilesResult)
     {
@@ -465,6 +493,8 @@ The following is an example of what the four keys you changed should look like. 
 1. Press the **Show Add-in** button in this group to see the add-in’s UI in the task pane.
 
 1. Press the button **Get My Files from OneDrive**. If you are not signed into Office, you'll be prompted to sign in.
-    > **Note:** If you were previously signed on to Office with a different ID, and some Office applications that were open at the time are still open, Office may not reliably change your ID even if it appears to have done so in PowerPoint. If this happens, the call to Microsoft Graph may fail or data from the previous ID may be returned. To prevent this, be sure to *close all other Office applications* before you press **Get My Files from OneDrive**.
+    
+    > [!NOTE]
+    > If you were previously signed on to Office with a different ID, and some Office applications that were open at the time are still open, Office may not reliably change your ID even if it appears to have done so in PowerPoint. If this happens, the call to Microsoft Graph may fail or data from the previous ID may be returned. To prevent this, be sure to *close all other Office applications* before you press **Get My Files from OneDrive**.
 
 1. After you are signed in, a list of your files and folders on OneDrive will appear below the button. This may take over 15 seconds, especially the first time.

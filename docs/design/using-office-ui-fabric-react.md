@@ -1,16 +1,23 @@
+---
+title: Use Office UI Fabric React in Office Add-ins
+description: ''
+ms.date: 12/04/2017
+---
+
 # Use Office UI Fabric React in Office Add-ins
 
 Office UI Fabric is a JavaScript front-end framework for building user experiences for Office and Office 365. If you build your add-in using React, consider using Fabric React to create your user experience. Fabric provides several React-based UX components, like buttons or checkboxes, that you can use in your add-in. 
 
 To get started using Fabric React's components in your add-in, perform the following steps.
 
-> **Note:** If you follow the steps in this section, Fabric Core is also available in your add-in.
+> [!NOTE]
+> If you follow the steps in this article, Fabric Core is also available in your add-in.
 
 ## Step 1 - Create your project with the Yeoman generator for Office
 
 To create an add-in that uses Fabric React, we recommend that you use the Yeoman generator for Office. The Yeoman generator for Office provides the project scaffolding and build management needed to develop an Office add-in. 
 
-To create your project, perform the following steps from [Create an Office Add-in using any editor](https://dev.office.com/docs/add-ins/get-started/create-an-office-add-in-using-any-editor) using **Windows PowerShell** (not the command prompt): 
+To create your project, perform the following steps from [Create an Office Add-in using any editor](../get-started/create-an-office-add-in-using-any-editor.md) using **Windows PowerShell** (not the command prompt): 
 
 1. Install the prerequisites.
 2. Run `yo office` to create the project files for your add-in. 
@@ -26,7 +33,7 @@ Next, add Fabric React components to your add-in. Create a new React component, 
 2. Create **button.tsx**.
 3. In **button.tsx**, enter the following code to create the `ButtonPrimaryExample` component. 
 
-```
+```javascript
 import * as React from 'react';
 import { PrimaryButton, IButtonProps } from 'office-ui-fabric-react/lib/Button';
 import { Label } from 'office-ui-fabric-react/lib/Label';
@@ -63,6 +70,7 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
   }
 }
 ```
+
 This code does the following:
 
 - References the React library using `import * as React from 'react';`.
@@ -76,31 +84,34 @@ This code does the following:
 Add `ButtonPrimaryExample` to your add-in by opening **src\components\app.tsx** and doing the following: 
 
 - Add the following import statement to reference `ButtonPrimaryExample` from **button.tsx** created in step 2 (no file extension is needed). 
-`
-import {ButtonPrimaryExample} from './button';
-` 
+
+    ```javascript
+    import {ButtonPrimaryExample} from './button';
+    ``` 
 
 - Replace the default `render()` function with the following code that uses `<ButtonPrimaryExample />`. 
-```
-render() {
-        return (
-            <div className='ms-welcome'>
-                <Header logo='assets/logo-filled.png' title={this.props.title} message='Welcome' />
-                <HeroList message='Discover what this add-in can do for you today!' items={this.state.listItems}>                    
-                    <ButtonPrimaryExample />
-                </HeroList>
-            </div>
-        );
-    };
-```
+
+  ```javascript
+  render() {
+      return (
+          <div className='ms-welcome'>
+              <Header logo='assets/logo-filled.png' title={this.props.title} message='Welcome' />
+              <HeroList message='Discover what this add-in can do for you today!' items={this.state.listItems}>                    
+                  <ButtonPrimaryExample />
+              </HeroList>
+          </div>
+      );
+  };
+  ```
 
 Save your changes. All open browser instances, including the add-in, update automatically and show the `ButtonPrimaryExample` React component. Notice that the default text and button is replaced with the text and primary button defined in `ButtonPrimaryExample`. 
 	
-### Recommended components
+## Recommended components
 
 The following is a list of the Fabric React UX components that we recommend for use in an add-in.  
 
-> **Note:** We will add additional components over time. 
+> [!NOTE]
+> We will add additional components over time. 
 
 - [Breadcrumb](breadcrumb.md)
 - [Button](button.md)
@@ -113,13 +124,13 @@ The following is a list of the Fabric React UX components that we recommend for 
 - [TextField](textfield.md)
 - [Toggle](toggle.md)
 
-## Related resources
+## Additional resources
 
 - [Office UI Fabric React](https://dev.office.com/fabric#/)
 - [Getting started with Fabric React code sample](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
 - [UX design patterns (uses Fabric 2.6.1)](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code) 
 - [Office Add-in Fabric UI sample (uses Fabric 1.0)](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample) 
-- [Using Fabric 2.6.1 in an Office Add-in](https://dev.office.com/docs/add-ins/design/ui-elements/using-office-ui-fabric)
+- [Using Fabric 2.6.1 in an Office Add-in](ui-elements/using-office-ui-fabric.md)
 - [Yeoman generator for Office](https://github.com/OfficeDev/generator-office)
  
 

@@ -1,3 +1,10 @@
+---
+title: Publish Office Add-ins using Centralized Deployment via the Office 365 admin center
+description: ''
+ms.date: 12/04/2017
+---
+
+
 # Publish Office Add-ins using Centralized Deployment via the Office 365 admin center
 
 The Office 365 admin center makes it easy for an administrator to deploy Office Add-ins to users and groups within their organization. Add-ins deployed via the admin center are available to users in their Office applications right away, with no client configuration required. You can use Centralized Deployment to deploy internal add-ins as well as add-ins provided by ISVs.
@@ -15,7 +22,8 @@ The Office 365 admin center currently supports the following scenarios:
 
 Centralized Deployment is the recommended way for an Office 365 admin to deploy Office add-ins within an organization, provided that the organization meets all requirements for using Centralized Deployment. For information about how to determine if your organization can use Centralized Deployment, see [Determine if Centralized Deployment of add-ins works for your Office 365 organization](https://support.office.com/en-us/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92).
 
->**Note:** In an on-premises environment with no connection to Office 365, or to deploy SharePoint add-ins or Office Add-ins that target Office 2013, use a [SharePoint add-in catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md). To deploy COM/VSTO add-ins, use ClickOnce or Windows Installer, as described in [Deploying an Office solution](https://msdn.microsoft.com/en-us/library/bb386179.aspx).
+> [!NOTE]
+> In an on-premises environment with no connection to Office 365, or to deploy SharePoint add-ins or Office Add-ins that target Office 2013, use a [SharePoint add-in catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md). To deploy COM/VSTO add-ins, use ClickOnce or Windows Installer, as described in [Deploying an Office solution](https://msdn.microsoft.com/en-us/library/bb386179.aspx).
 
 ## Recommended approach for deploying Office Add-ins
 
@@ -46,32 +54,37 @@ If your organization meets all requirements, complete the following steps to pub
     - **I have the manifest file (.xml) on this device.** For this option, choose **Browse** to locate the manifest file (.xml) that you want to use.
     - **I have a URL for the manifest file.** For this option, type the manifest's URL in the field provided.
 
-    ![New Add-In dialog in Office 365 admin center](../../images/b3abd42f-63d8-4a5f-8893-d1ae38f4e9b2.png)
+    ![New Add-In dialog in Office 365 admin center](../images/new-add-in.png)
 
 7.	Choose **Next**.
 
 8.	If you selected the option to add an Add-in from the Office Store, select the add-in. Notice that you can view available add-ins via categories of **Suggested for you**, **Rating**, or **Name**. You may only add free add-ins from the Office Store; adding paid add-ins isn't currently supported.
 
-    >**Note:** With the Office Store option, updates and enhancements to the add-in will automatically be made available to users without your intervention.
+    > [!NOTE]
+    > With the Office Store option, updates and enhancements to the add-in will automatically be made available to users without your intervention.
 
-    ![Select an Add-In dialog in Office 365 admin center](../../images/2a8de1f4-03b0-4ab6-aa99-4451ee30a64c.png)
+    ![Select an Add-In dialog in Office 365 admin center](../images/select-an-add-in.png)
 
 9. The add-in is now enabled. On the page for the add-in, its status is **On**, like that shown for the Power BI Tiles add-in in the screenshot below. In the **Who has access** section, choose **Edit** to assign the add-in to users and/or groups.
 
-    ![Power BI Tiles add-in page in Office 365 admin center](../../images/0faa60e8-1e71-4ed1-bbc1-5a2f85ebf981.png)
+    ![Power BI Tiles add-in page in Office 365 admin center](../images/power-bi-tiles.png)
 
 10.	On the **Edit who has access page**, choose either **Everyone** or **Specific Users/Groups**. Use the Search box to find the users and/or groups to whom you want to deploy the add-in.
 
-    ![Edit who has access page in Office 365 admin center](../../images/46571963-5938-4c7d-b60e-a3ad06758ddf.png)
+    ![Edit who has access page in Office 365 admin center](../images/power-bi-tiles-edit.png)
 
-    >**Note:** For single sign-on (SSO) add-ins, the users and groups assigned will also be shared with add-ins that share the same Azure App ID. Any changes to user assignments will also apply to those add-ins. The related add-ins will be shown on this page. For SSO add-ins only, this page will display the list of Microsoft Graph permissions that the add-in requires.
+    > [!NOTE]
+    > For single sign-on (SSO) add-ins, the users and groups assigned will also be shared with add-ins that share the same Azure App ID. Any changes to user assignments will also apply to those add-ins. The related add-ins will be shown on this page. For SSO add-ins only, this page will display the list of Microsoft Graph permissions that the add-in requires.
 
 11.	When finished, choose **Save**, review the add-in settings, and then choose **Close**. You now see your add-in along with other apps in Office 365.
-    >**Note:** When an administrator chooses **Save**, consent is given for all users. 
 
-    ![list of apps in Office 365 admin center](../../images/71bfd837-20bc-4517-9513-33fc70147669.png)
+    > [!NOTE]
+    >  When an administrator chooses **Save**, consent is given for all users. 
 
->**Tip:** When you deploy a new add-in to users and/or groups in your organization, consider sending them an email that describes when and how to use the add-in, and includes links to relevant Help content, FAQs, or other support resources.
+    ![list of apps in Office 365 admin center](../images/citations.png)
+
+> [!TIP]
+> When you deploy a new add-in to users and/or groups in your organization, consider sending them an email that describes when and how to use the add-in, and includes links to relevant Help content, FAQs, or other support resources.
 
 ## Considerations when granting access to an add-in
 
@@ -109,7 +122,7 @@ After an add-in has been published via Centralized Deployment, end users may sta
 
 If the add-in supports add-in commands, the commands will appear on the Office application ribbon for all users to whom the add-in is deployed. In the following example, the command **Search Citation** appears in the ribbon for the **Citations** add-in. 
 
-![Screenshot shows a section of the Office ribbon with the Search Citation command highlighted in the Citations add-in](../../images/553b0c0a-65e9-4746-b3b0-8c1b81715a86.png)
+![Screenshot shows a section of the Office ribbon with the Search Citation command highlighted in the Citations add-in](../images/search-citation.png)
 
 If the add-in does not support add-in commands, users can add it to their Office application by doing the following:
 
@@ -117,4 +130,4 @@ If the add-in does not support add-in commands, users can add it to their Office
 2.	Choose the **Admin Managed** tab in the add-in window.
 3.	Choose the add-in, and then choose **Add**. 
 
-    ![Screenshot shows the Admin Managed tab of the Office Add-ins page of an Office application. The Citations add-in is shown on the tab.](../../images/fd36ba81-9882-40f0-9fce-74f991aa97d5.png)
+    ![Screenshot shows the Admin Managed tab of the Office Add-ins page of an Office application. The Citations add-in is shown on the tab.](../images/office-add-ins-admin-managed.png)
