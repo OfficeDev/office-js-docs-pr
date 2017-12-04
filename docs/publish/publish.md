@@ -77,7 +77,7 @@ To assign add-ins to tenants, you use the Exchange admin center to upload a mani
 
 - [Sideload Outlook add-ins for testing](https://dev.office.com/docs/add-ins/testing/sideload-outlook-add-ins-for-testing)
 - [Submit to the Office Store][Office Store]
-- [Design guidelines for Office Add-ins](../design/add-in-design)
+- [Design guidelines for Office Add-ins](../design/add-in-design.md)
 - [Create effective Office Store listings](https://dev.office.com/officestore/docs/create-effective-office-store-listings)
 - [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)
 
