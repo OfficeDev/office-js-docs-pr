@@ -9,7 +9,7 @@ The following image shows the add-in that you'll create.
 <a name="setup"></a>
 ## Step 1: Set up your dev environment and create an add-in project
 
-Follow the instructions to [Create an Office Add-in using any editor](../get-started/create-an-office-add-in-using-any-editor.md) to install the necessary prerequisites and run the Office Yeoman generator to create a new add-in project. The following table lists  the project attributes to select in the Yeoman generator.
+Follow the instructions to [Create an Office Add-in using any editor](../tutorials/create-an-office-add-in-using-any-editor.md) to install the necessary prerequisites and run the Office Yeoman generator to create a new add-in project. The following table lists  the project attributes to select in the Yeoman generator.
 
 | Option | Value |
 |:------|:------|
@@ -132,6 +132,13 @@ You can edit the add-in files using any text editor or IDE. If you haven't tried
 - You need to enable mixed content in the browser if your add-in uses any HTTP resources. Production add-ins should use only secure HTTPS resources.
 
 - Task pane add-ins can be opened from anywhere, but content add-ins can only be inserted inside regular page content (i.e. not in titles, images, iFrames, etc.). 
+
+## Next steps
+
+Congratulations, you've successfully created a OneNote add-in! Next, learn more about the core concepts of building OneNote add-ins.
+
+> [!div class="nextstepaction"]
+> [OneNote JavaScript API programming overview](../onenote/onenote-add-ins-programming-overview.md)
 
 ## See also
 

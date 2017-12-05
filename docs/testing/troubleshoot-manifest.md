@@ -120,6 +120,6 @@ Call `window.location.reload(true)` from JavaScript in the add-in to force a rel
 
 ## See also
 
-- [Office Add-ins XML manifest](../overview/add-in-manifests.md)
+- [Office Add-ins XML manifest](../develop/add-in-manifests.md)
 - [Sideload Office Add-ins for testing](sideload-office-add-ins-for-testing.md)
 - [Debug Office Add-ins](debug-add-ins-using-f12-developer-tools-on-windows-10.md)

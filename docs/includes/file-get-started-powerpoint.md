@@ -197,4 +197,8 @@ Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. How
 
 ## Next steps
 
-Congratulations, you've successfully created a PowerPoint add-in! Next, learn more about the capabilities of a PowerPoint add-in and explore code samples for common scenarios in [PowerPoint add-ins](../powerpoint/powerpoint-add-ins.md).
+Congratulations, you've successfully created a PowerPoint add-in! Next, learn more about the capabilities of a PowerPoint add-in and explore code samples for common scenarios.
+
+> [!div class="nextstepaction"]
+> [PowerPoint add-ins](../powerpoint/powerpoint-add-ins.md)
+

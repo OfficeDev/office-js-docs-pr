@@ -167,5 +167,5 @@ Office icons are designed to render well in high contrast modes. Foreground elem
 
 ## See also
 
-- [Add-in development best practices](../overview/add-in-development-best-practices.md)
+- [Add-in development best practices](../concepts/add-in-development-best-practices.md)
 - [Add-in commands for Excel, Word, and PowerPoint](../design/add-in-commands.md)

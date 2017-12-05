@@ -7,7 +7,7 @@ ms.date: 12/04/2017
 
 # Package your add-in using Visual Studio to prepare for publishing
 
-Your Office Add-in package contains an XML [manifest file](../overview/add-in-manifests.md) that you'll use to publish the add-in. You'll have to publish the web application files of your project separately. This article describes how to deploy your web project and package your add-in by using Visual Studio 2015.
+Your Office Add-in package contains an XML [manifest file](../develop/add-in-manifests.md) that you'll use to publish the add-in. You'll have to publish the web application files of your project separately. This article describes how to deploy your web project and package your add-in by using Visual Studio 2015.
 
 ## To deploy your web project using Visual Studio 2015
 

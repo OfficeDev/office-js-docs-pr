@@ -2,7 +2,7 @@
 
 _Applies to: Word 2016, Word for iPad, Word for Mac_
 
-A Word add-in runs inside Word and can interact with the contents of the document using the Word JavaScript API, which is part of the Office Add-ins programming model for extending Office applications. In this add-in programming model, you can use the platform and language of your choice to create the web application that hosts your extension to Word and then use the add-in's [manifest](../overview/add-in-manifests.md) to define its settings and capabilities.
+A Word add-in runs inside Word and can interact with the contents of the document using the Word JavaScript API, which is part of the Office Add-ins programming model for extending Office applications. In this add-in programming model, you can use the platform and language of your choice to create the web application that hosts your extension to Word and then use the add-in's [manifest](../develop/add-in-manifests.md) to define its settings and capabilities.
 
 In this article, you'll walk through the process of building a Word add-in by using jQuery and the Word JavaScript API. 
 
@@ -192,7 +192,10 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 ## Next steps
 
-Congratulations, you've successfully created a Word add-in using jQuery! Next, learn more about the [core concepts](../word/word-add-ins-programming-overview.md) of building Word add-ins.
+Congratulations, you've successfully created a Word add-in using jQuery! Next, learn more about the core concepts of building Word add-ins.
+
+> [!div class="nextstepaction"]
+> [Word add-ins overview](../word/word-add-ins-programming-overview.md)
 
 ## See also
 

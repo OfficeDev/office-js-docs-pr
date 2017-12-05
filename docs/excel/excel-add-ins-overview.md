@@ -37,7 +37,7 @@ The web application uses the [JavaScript API for Office](https://dev.office.com/
 
 The web application can be hosted on any web server, and can be built using client-side frameworks (such as Angular, React, jQuery) or server-side technologies (such as ASP.NET, Node.js, PHP).
 
-The [manifest](../overview/add-in-manifests.md) is an XML configuration file that defines how the add-in integrates with Office clients by specifying settings and capabilities such as: 
+The [manifest](../develop/add-in-manifests.md) is an XML configuration file that defines how the add-in integrates with Office clients by specifying settings and capabilities such as: 
 
 * The URL of the add-in's web application.
 * The add-in's display name, description, ID, version, and default locale.
@@ -48,23 +48,47 @@ To enable end-users to install and use an Excel add-in, you must publish its man
 
 ## Capabilities of an Excel add-in
 
-In addition to interacting with the content in the workbook, Excel add-ins can add custom ribbon buttons or menu commands, insert task panes, open dialog boxes, and even embed rich, web-based objects such as charts or interactive visualizations within a worksheet, as shown in the following screenshots. For more information about each of these capabilities, see [Extend Excel functionality](excel-add-ins-extend-excel.md).
+In addition to interacting with the content in the workbook, Excel add-ins can add custom ribbon buttons or menu commands, insert task panes, open dialog boxes, and even embed rich, web-based objects such as charts or interactive visualizations within a worksheet.
 
-**Custom ribbon buttons**
+### Add-in commands
 
-![Add-in commands](../images/excel-add-in-commands-script-lab.png)
+Add-in commands are UI elements that extend the Excel UI and start actions in your add-in. You can use add-in commands to add a button on the ribbon or an item to a context menu in Excel. When users select an add-in command, they initiate actions such as running JavaScript code, or showing a page of the add-in in a task pane. 
+
+**Add-in commands**
+
+![Add-in commands in Excel](../images/excel-add-in-commands-script-lab.png)
+
+For more information about command capabilities, supported platforms, and best practices for developing add-in commands, see [Add-in commands for Excel, Word, and PowerPoint](../design/add-in-commands.md).
+
+### Task panes
+
+Task panes are interface surfaces that typically appear on the right side of the window within Excel. Task panes give users access to interface controls that run code to modify the Excel document or display data from a data source. 
 
 **Task pane**
 
-![Add-in task pane](../images/excel-add-in-task-pane-insights.png)
+![Task pane add-in in Excel](../images/excel-add-in-task-pane-insights.png)
+
+For more information about task panes, see [Task panes in Office Add-ins](../design/task-pane-add-ins.md). For a sample that implements a task pane in Excel, see [Excel Add-in JS WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends).
+
+### Dialog boxes
+
+Dialog boxes are surfaces that float above the active Excel application window. You can use dialog boxes for tasks such as displaying sign-in pages that can't be opened directly in a task pane, requesting that the user confirm an action, or hosting videos that might be too small if confined to a task pane. To open dialog boxes in your Excel add-in, use the [Dialog API](https://dev.office.com/reference/add-ins/shared/officeui).
 
 **Dialog box**
 
-![Add-in dialog box](../images/excel-add-in-dialog-choose-number.png)
+![Add-in dialog box in Excel](../images/excel-add-in-dialog-choose-number.png)
+
+For more information about dialog boxes and the Dialog API, see [Dialog boxes in Office Add-ins](../design/dialog-boxes.md) and [Use the Dialog API in your Office Add-ins](../develop/dialog-api-in-office-add-ins.md).
+
+### Content add-ins
+
+Content add-ins are surfaces that you can embed directly into Excel documents. You can use content add-ins to embed rich, web-based objects such as charts, data visualizations, or media into a worksheet or to give users access to interface controls that run code to modify the Excel document or display data from a data source. Use content add-ins when you want to embed functionality directly into the document.
 
 **Content add-in**
 
-![Content add-in](../images/excel-add-in-content-map.png)
+![Content add-in in Excel](../images/excel-add-in-content-map.png)
+
+For more information about content add-ins, see [Content Office Add-ins](../design/content-add-ins.md). For a sample that implements a content add-in in Excel, see [Excel Content Add-in Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance) in GitHub.
 
 ## JavaScript APIs to interact with workbook content
 
@@ -81,7 +105,7 @@ Get started by [creating your first Excel add-in](excel-add-ins-get-started-over
 ## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
-- [Best practices for developing Office Add-ins](../overview/add-in-development-best-practices.md)
+- [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)
 - [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API reference](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

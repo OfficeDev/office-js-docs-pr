@@ -83,6 +83,5 @@ Specifically for OWA for Devices, and Outlook Web App running in a browser on sm
 
 ## See also
 
-- [Office Add-ins platform overview](office-add-ins.md)
+- [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Office Add-in host and platform availability](../overview/office-add-in-availability.md)
-

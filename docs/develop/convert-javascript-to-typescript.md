@@ -10,7 +10,7 @@ ms.date: 12/04/2017
 You can use the Office Add-in JavaScript template in Visual Studio to create an add-in that uses TypeScript. After you create the new add-in in Visual Studio, you can convert the project to TypeScript.  That way, you don't have to start the Office Add-in TypeScript project from scratch.  
 
 > [!NOTE]
-> To learn how to create an Office Add-in TypeScript project without using Visual Studio, see  [Create an Office Add-in using any editor](../get-started/create-an-office-add-in-using-any-editor.md).
+> To learn how to create an Office Add-in TypeScript project without using Visual Studio, see  [Create an Office Add-in using any editor](../tutorials/create-an-office-add-in-using-any-editor.md).
 
 In your TypeScript project, you can have a mix of TypeScript and JavaScript files and your project will compile. This is because TypeScript is a typed superset of JavaScript that compiles JavaScript. 
 

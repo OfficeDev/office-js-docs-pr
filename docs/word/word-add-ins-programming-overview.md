@@ -70,17 +70,15 @@ Use the shared JavaScript API for Office when you need to:
 
 ## Next steps
 
-Ready to create your first Word add-in? See [Build your first Word add-in](word-add-ins.md). You can also try our interactive [Get started experience](http://dev.office.com/getting-started/addins?product=Word). Use the [add-in manifest](../overview/add-in-manifests.md) to describe where your add-in is hosted, how it is displayed, and define permissions and other information.
+Ready to create your first Word add-in? See [Build your first Word add-in](word-add-ins.md). You can also try our interactive [Get started experience](http://dev.office.com/getting-started/addins?product=Word). Use the [add-in manifest](../develop/add-in-manifests.md) to describe where your add-in is hosted, how it is displayed, and define permissions and other information.
 
-To learn more about how to design a world class Word add-in that creates a compelling experience for your users, see [Design guidelines](../design/add-in-design.md) and [Best practices](../overview/add-in-development-best-practices.md).
+To learn more about how to design a world class Word add-in that creates a compelling experience for your users, see [Design guidelines](../design/add-in-design.md) and [Best practices](../concepts/add-in-development-best-practices.md).
 
 After you develop your add-in, you can [publish](../publish/publish.md) it to a network share, an app catalog, or to the Office Store.
 
 ## What's coming up for Word add-ins?
 
 As we design and develop new APIs for Word add-ins, we'll make them available for your feedback on our [Open API specifications](https://dev.office.com/reference/add-ins/openspec) page. Find out what new features are in the pipeline for the Word JavaScript APIs, and provide your input on our design specifications.
-
-You can also see what's new in the Word JavaScript API on the [change log](http://dev.office.com/changelog) page.
 
 ## See also
 
