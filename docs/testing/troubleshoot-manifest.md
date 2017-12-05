@@ -1,7 +1,7 @@
 ---
 title: Validate and troubleshoot issues with your manifest
 description: Use these methods to validate the Office Add-ins manifest.
-ms.date: 11/20/2017 
+ms.date: 12/04/2017
 ---
 
 # Validate and troubleshoot issues with your manifest
@@ -118,7 +118,7 @@ Delete the content of the folder `/Users/{your_name_on_the_device}/Library/Conta
 #### For iOS:
 Call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, you can reinstall Office.
 
-## Additional resources
+## See also
 
 - [Office Add-ins XML manifest](../develop/add-in-manifests.md)
 - [Sideload Office Add-ins for testing](sideload-office-add-ins-for-testing.md)

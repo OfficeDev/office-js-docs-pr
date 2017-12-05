@@ -1,7 +1,7 @@
 ---
 title: Specify Office hosts and API requirements
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Specify Office hosts and API requirements
@@ -17,7 +17,7 @@ Your Office Add-in might depend on a specific Office host, a requirement set, an
 This article helps you understand which options you should choose to ensure that your add-in works as expected and reaches the broadest audience possible.
 
 > [!NOTE]
-> For a high-level view of where Office Add-ins are currently supported, see the [Office Add-in host and platform availability](http://dev.office.com/add-in-availability) page. 
+> For a high-level view of where Office Add-ins are currently supported, see the [Office Add-in host and platform availability](../overview/office-add-in-availability.md) page. 
 
 The following table lists core concepts discussed throughout this article.
 
@@ -194,9 +194,8 @@ if (Office.context.document.setSelectedDataAsync)
 ```
 
 
-## Additional resources
+## See also
 
 - [Office Add-ins XML manifest](add-in-manifests.md)
 - [Office add-in requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets)
 - [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)
-    

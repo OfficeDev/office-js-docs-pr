@@ -1,7 +1,7 @@
 ---
 title: Design icons for add-in commands
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -165,7 +165,7 @@ Office icons are designed to render well in high contrast modes. Foreground elem
 - Avoid the use of gradients.
 - Avoid large blocks of color with similar values.
 
-## Additional resources
+## See also
 
 - [Add-in development best practices](../concepts/add-in-development-best-practices.md)
 - [Add-in commands for Excel, Word, and PowerPoint](../design/add-in-commands.md)

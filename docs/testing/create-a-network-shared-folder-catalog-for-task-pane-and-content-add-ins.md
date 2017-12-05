@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins for testing
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Sideload Office Add-ins for testing
@@ -63,7 +63,7 @@ The following video walks you through the process of sideloading your add-in on 
 4. Select the name of the add-in and choose **OK** to insert the add-in.
 
 
-## Additional resources
+## See also
 
 - [Validate and troubleshoot issues with your manifest](troubleshoot-manifest.md)
 - [Publish your Office Add-in](../publish/publish.md)

@@ -1,7 +1,7 @@
 ---
 title: Understanding Office versions
 description: This topic is no longer available. Open it to redirect.
-ms.date: 11/20/2017 
+ms.date: 12/04/2017
 ---
 
 # Understanding Office versions

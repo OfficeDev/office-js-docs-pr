@@ -1,7 +1,7 @@
 ---
 title: Task pane add-ins for Project
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Task pane add-ins for Project
@@ -195,7 +195,7 @@ In Procedure 2, the Bing Search add-in is installed on the local computer where 
 You can distribute add-ins through a file share, an add-in catalog in a SharePoint library, or an Project Add-in in the Office Store. For more information, see [Publish your Office Add-in](../publish/publish.md).
 
 
-## Additional resources
+## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Office Add-ins XML manifest](../develop/add-in-manifests.md)

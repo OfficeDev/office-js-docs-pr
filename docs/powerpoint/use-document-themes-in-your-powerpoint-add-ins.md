@@ -1,7 +1,7 @@
 ---
 title: Use document themes in your PowerPoint add-ins
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Use document themes in your PowerPoint add-ins
@@ -204,6 +204,6 @@ The OfficeThemes.css file provides classes that correspond to the 4 colors assig
 | `office-officeTheme-secondary-fontColor`|Secondary font color. Default #262626|
 | `office-officeTheme-secondary-bgColor`|Secondary background color. Default #FFFFFF|
 
-## Additional resources
+## See also
 
 - [Create content and task pane add-ins for PowerPoint](../powerpoint/powerpoint-add-ins.md)

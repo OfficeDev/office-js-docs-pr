@@ -1,7 +1,7 @@
 ---
 title: Configuring and editing LabsJS labs for Office Mix
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -305,7 +305,7 @@ dynamicComponentInstance.close((err, unused) => {
 ```
 
 
-## Additional resources
+## See also
 
 - [Office Mix add-ins](office-mix-add-ins.md)
 - [Walkthrough: Creating your first lab for Office Mix](creating-your-first-lab-for-office-mix.md)

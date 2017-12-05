@@ -1,7 +1,7 @@
 ---
 title: Convert an Office Add-in task pane template in Visual Studio to TypeScript
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Convert an Office Add-in task pane template in Visual Studio to TypeScript
@@ -224,7 +224,7 @@ declare var fabric: any;
 ```
 
 
-## Additional resources
+## See also
 
 * [Promise implementation discussion on StackOverflow](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
 * [Office Add-in samples on GitHub](https://github.com/officedev)

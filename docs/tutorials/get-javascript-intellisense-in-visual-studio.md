@@ -1,7 +1,7 @@
 ---
-title: Get JavaScript IntelliSense in Visual Studio 2017 
-description: 
-ms.date: 11/20/2017 
+title: Get JavaScript IntelliSense in Visual Studio 2017
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -77,6 +77,6 @@ function myFunc() {
 ```
 ![Intellisense for complex type](../images/intellisense-vs17-complex-type.png)
 
-## Additional resources
+## See also
 
 - [Create and debug add-ins in Visual Studio](create-and-debug-office-add-ins-in-visual-studio.md)

@@ -1,7 +1,7 @@
 ---
 title: Data visualization style guidelines for Office Add-ins
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -144,7 +144,7 @@ Motion follows data.
 - Make all interactive elements, such as push buttons or pick lists, accessible from a keyboard.
 - Send accessibility events to screen readers to announce focus changes, tooltips, and so on.
 
-## Additional resources 
+## See also 
 
 - [Data + Design: A Simple Introduction to Preparing and Visualizing Information](https://infoactive.co/data-design)
 - [The Five Best Libraries for Building Data Visualizations](http://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)

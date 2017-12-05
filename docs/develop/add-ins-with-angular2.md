@@ -1,7 +1,7 @@
 ---
 title: Tips for creating Office Add-ins with Angular
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Tips for creating Office Add-ins with Angular

@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins on iPad and Mac for testing
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Sideload Office Add-ins on iPad and Mac for testing
@@ -88,7 +88,7 @@ To see how your add-in will run in Office for iOS, you can sideload your add-in'
     > [!NOTE]
     > Add-ins are cached often in Office for Mac, for performance reasons. If you need to force a reload of your add-in while you're developing it, you can clear the `Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/` folder. 
 
-## Additional resources
+## See also
 
 - [Debug Office Add-ins on iPad and Mac](debug-office-add-ins-on-ipad-and-mac.md)
     

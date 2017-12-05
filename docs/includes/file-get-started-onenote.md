@@ -122,6 +122,7 @@ You can edit the add-in files using any text editor or IDE. If you haven't tried
 6. The add-in opens in an iFrame next to the OneNote page. Enter some text in the text area, and then select **Add outline**. The text you entered is added to the page. 
 
 ## Troubleshooting and tips
+
 - You can debug the add-in using your browser's developer tools. When you're using the Gulp web server and debugging in Internet Explorer or Chrome, you can save your changes locally and then just refresh the add-in's iFrame.
 
 - When you inspect a OneNote object, the properties that are currently available for use display actual values. Properties that need to be loaded display *undefined*. Expand the `_proto_` node to see properties that are defined on the object but are not yet loaded.
@@ -139,9 +140,9 @@ Congratulations, you've successfully created a OneNote add-in! Next, learn more 
 > [!div class="nextstepaction"]
 > [OneNote JavaScript API programming overview](../onenote/onenote-add-ins-programming-overview.md)
 
-## Additional resources
+## See also
 
 - [OneNote JavaScript API programming overview](../onenote/onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API reference](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
 - [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-- [Office Add-ins platform overview](https://dev.office.com/docs/add-ins/overview/office-add-ins)
+- [Office Add-ins platform overview](../overview/office-add-ins.md)

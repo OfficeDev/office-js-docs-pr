@@ -1,7 +1,7 @@
 ---
 title: Work with Charts using the Excel JavaScript API
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -196,7 +196,7 @@ Excel.run(function (context) {
 
 ![Chart with linear trendline in Excel](../images/excel-charts-trendline-linear.png)
 
-## Additional resources
+## See also
 
 - [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
 - [Chart Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/chart) 

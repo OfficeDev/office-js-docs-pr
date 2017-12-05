@@ -1,7 +1,7 @@
 ---
 title: Loading the DOM and runtime environment
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -98,7 +98,7 @@ If you fail to include an  **Office.initialize** event handler, your add-in may 
 If your add-in includes more than one page, whenever it loads a new page that page must include or call an  **Office.initialize** event handler.
 
 
-## Additional resources
+## See also
 
 - [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md)
     

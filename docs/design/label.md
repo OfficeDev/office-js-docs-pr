@@ -1,7 +1,7 @@
 ---
 title: Label component in Office UI Fabric
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Label component in Office UI Fabric
@@ -32,7 +32,7 @@ Use labels to name or title a component or group of components. When paired with
 
 For details, see [Label](https://dev.office.com/fabric#/components/label) and [Getting started with Fabric React code sample](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact).
 
-## Additional resources
+## See also
 
 - [UX Design Patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
 - [Office UI Fabric in Office Add-ins](office-ui-fabric.md)

@@ -1,7 +1,7 @@
 ---
 title: LabsJS lab components
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -23,7 +23,7 @@ Office Mix supports the following four lab component types:
 -  **Dynamic component** ( **IDynamicComponent**). Generates other component types at runtime. Use this component type when you have branching questions, for example, where follow-up component types vary depending on a previous user input. This type also enables creating quiz banks or generating problems at runtime. For more information, see [Labs.Components.DynamicComponentInstance](https://dev.office.com/reference/add-ins/office-mix/labs.components.dynamiccomponentinstance).
     
 
-## Additional resources
+## See also
 
 - [Office Mix add-ins](office-mix-add-ins.md)
 - [Configuring and editing LabsJS labs for Office Mix](configuring-and-editing-labsjs-labs-for-office-mix.md)

@@ -128,7 +128,6 @@ Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. How
 
 2. Open the **bsconfig.json** file in the root of the project. Change the value of the **https** property to `false`. Save the file.
 
-
 ## Try it out
 
 1. Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within Excel.
@@ -163,7 +162,7 @@ Congratulations, you've successfully created an Excel add-in using jQuery! Next,
 > [!div class="nextstepaction"]
 > [Excel JavaScript API core concepts](../excel/excel-add-ins-core-concepts.md)
 
-## Additional resources
+## See also
 
 * [Excel JavaScript API core concepts](../excel/excel-add-ins-core-concepts.md)
 * [Excel add-in code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)

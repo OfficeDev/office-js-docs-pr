@@ -1,7 +1,7 @@
 ---
 title: Interaction patterns for Office Add-ins
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -201,7 +201,7 @@ Best suited for:
 Best suited for:
 <ul><li><p>Add-ins that require data entry.</p></li><li><p>An entry-point to a results and details pattern.</p></li></ul>
 
-## Additional resources
+## See also
 
 - [Design guidelines for Office Add-ins](../add-in-design.md)
     

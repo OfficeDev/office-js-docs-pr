@@ -1,7 +1,7 @@
 ---
 title: Addressing same-origin policy limitations in Office Add-ins
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -68,7 +68,7 @@ For an example of using the cross-origin resource sharing feature of [XmlHttpReq
 For an example of how to build your own proxy using IFRAME and POST MESSAGE, see [Cross-Window Messaging](http://ejohn.org/blog/cross-window-messaging/).
 
 
-## Additional resources
+## See also
 
 - [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md)
     

@@ -1,7 +1,7 @@
 ---
 title: Resource limits and performance optimization for Office Add-ins
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -99,7 +99,7 @@ While the resources limits on CPU and memory usage, crash tolerance, UI responsi
 - Test your add-in against the highest volume of data you expect, and restrict your add-in to process up to that limit.
     
 
-## Additional resources
+## See also
 
 - [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md)
 - [Limits for activation and JavaScript API for Outlook add-ins](https://docs.microsoft.com/en-us/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
