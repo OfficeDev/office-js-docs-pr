@@ -108,7 +108,7 @@ The  **AddIn** folder (see the next screenshot) contains the App.css file for cu
 
 The manifest for the  **HelloProjectOData** project is the HelloProjectOData.xml file. You can optionally modify the manifest to add a description of the add-in, a reference to an icon, information for additional languages, and other settings. Procedure 3 simply modifies the add-in display name and description, and adds an icon.
 
-For more information about the manifest, see [Office Add-ins XML manifest](../overview/add-in-manifests.md) and [Schema reference for Office Add-ins manifests (v1.1)](../overview/add-in-manifests.md#additional-resources).
+For more information about the manifest, see [Office Add-ins XML manifest](../overview/add-in-manifests.md) and [Schema reference for Office Add-ins manifests (v1.1)](../overview/add-in-manifests.md#see-also).
 
 
 ### Procedure 3. To modify the add-in manifest
