@@ -17,7 +17,7 @@ Your Office Add-in might depend on a specific Office host, a requirement set, an
 This article helps you understand which options you should choose to ensure that your add-in works as expected and reaches the broadest audience possible.
 
 > [!NOTE]
-> For a high-level view of where Office Add-ins are currently supported, see the [Office Add-in host and platform availability](http://dev.office.com/add-in-availability) page. 
+> For a high-level view of where Office Add-ins are currently supported, see the [Office Add-in host and platform availability](../overview/office-add-in-availability.md) page. 
 
 The following table lists core concepts discussed throughout this article.
 
