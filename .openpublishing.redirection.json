@@ -4,6 +4,81 @@
           "source_path": "docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md", 
           "redirect_url": "/office/dev/add-ins/word/get-the-whole-document-from-an-add-in-for-word", 
           "redirect_document_id": true 
-      } 
+      },
+      {   
+        "source_path": "docs/overview/add-in-changelog.md", 
+        "redirect_url": "/office/dev/add-ins/overview/office-add-ins", 
+        "redirect_document_id": true 
+      }, 
+      {   
+        "source_path": "docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md", 
+        "redirect_url": "/office/dev/add-ins/tutorials/create-and-debug-office-add-ins-in-visual-studio", 
+        "redirect_document_id": true 
+      }, 
+      {   
+        "source_path": "docs/get-started/get-javascript-intellisense-in-visual-studio.md", 
+        "redirect_url": "/office/dev/add-ins/tutorials/get-javascript-intellisense-in-visual-studio", 
+        "redirect_document_id": true 
+      }, 
+      {   
+        "source_path": "docs/get-started/create-an-office-add-in-using-any-editor.md", 
+        "redirect_url": "/office/dev/add-ins/tutorials/create-an-office-add-in-using-any-editor", 
+        "redirect_document_id": true 
+      }, 
+      {   
+        "source_path": "docs/get-started/create-addin-commands.md", 
+        "redirect_url": "/office/dev/add-ins/develop/create-addin-commands", 
+        "redirect_document_id": true 
+      }, 
+      {   
+        "source_path": "docs/overview/requirements-for-running-office-add-ins.md", 
+        "redirect_url": "/office/dev/add-ins/concepts/requirements-for-running-office-add-ins", 
+        "redirect_document_id": true 
+      }, 
+      {   
+        "source_path": "docs/overview/add-in-development-best-practices.md", 
+        "redirect_url": "/office/dev/add-ins/concepts/add-in-development-best-practices", 
+        "redirect_document_id": true 
+      }, 
+      {   
+        "source_path": "docs/overview/add-in-manifests.md", 
+        "redirect_url": "/office/dev/add-ins/develop/add-in-manifests", 
+        "redirect_document_id": true 
+      }, 
+      {   
+        "source_path": "docs/overview/specify-office-hosts-and-api-requirements.md", 
+        "redirect_url": "/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements", 
+        "redirect_document_id": true 
+      }, 
+      {   
+        "source_path": "docs/develop/add-in-development-lifecycle.md", 
+        "redirect_url": "/office/dev/add-ins/concepts/add-in-development-lifecycle", 
+        "redirect_document_id": true 
+      }, 
+      {   
+        "source_path": "docs/develop/privacy-and-security.md", 
+        "redirect_url": "/office/dev/add-ins/concepts/privacy-and-security", 
+        "redirect_document_id": true 
+      }, 
+      {   
+        "source_path": "docs/develop/resource-limits-and-performance-optimization.md", 
+        "redirect_url": "/office/dev/add-ins/concepts/resource-limits-and-performance-optimization", 
+        "redirect_document_id": true 
+      }, 
+      {   
+        "source_path": "docs/develop/define-add-in-commands.md", 
+        "redirect_url": "/office/dev/add-ins/develop/create-addin-commands", 
+        "redirect_document_id": true 
+      }, 
+      {   
+        "source_path": "docs/excel/excel-add-ins-extend-excel.md", 
+        "redirect_url": "/office/dev/add-ins/excel/excel-add-ins-overview", 
+        "redirect_document_id": true 
+      }, 
+      {   
+        "source_path": "docs/access/access-web-app-add-ins.md", 
+        "redirect_url": "https://powerapps.microsoft.com/en-us/", 
+        "redirect_document_id": true 
+      }
     ] 
 }
