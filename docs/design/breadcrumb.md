@@ -24,7 +24,7 @@ In Office Add-ins, use breadcrumbs for navigation. They show the current page’
 
 For details, see [Breadcrumb](https://dev.office.com/fabric#/components/breadcrumb) and [Getting started with Fabric React code sample](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact).
 
-## Additional resources
+## See also
 
 - [UX Design Patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
 - [Office UI Fabric in Office Add-ins](office-ui-fabric.md)

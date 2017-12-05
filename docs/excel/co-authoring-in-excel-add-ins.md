@@ -51,7 +51,7 @@ As described earlier, in some scenarios, triggering events for all coauthors pro
 
 For example, in data validation scenarios, it is common to display UI in response to events. The [BindingDataChanged](https://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) event described in the previous section runs when either a local user or coauthor (remote) changes the workbook content within the binding. If the event handler of the **BindingDataChanged** event displays UI, users will see UI that is unrelated to changes they were working on in the workbook, leading to a poor user experience. Avoid displaying UI when using events in your add-in.
 
-## Additional resources 
+## See also 
 
 - [About coauthoring in Excel (VBA)](https://msdn.microsoft.com/en-us/vba/excel-vba/articles/about-coauthoring-in-excel) 
 - [How AutoSave impacts add-ins and macros (VBA)](https://msdn.microsoft.com/en-us/vba/office-shared-vba/articles/how-autosave-impacts-addins-and-macros) 

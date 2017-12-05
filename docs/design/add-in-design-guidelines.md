@@ -57,7 +57,7 @@ As you design and develop your Office Add-ins, you'll want to ensure that all po
 - Provide a way for users to turn on captions or audio description with audio sources.
 - Provide alternatives to sound as a means to alert users, such as visual cues or vibrations.
 
-## Additional resources
+## See also
 
 - [Web Content Accessibility Guidelines (WCAG) 2.0](http://www.w3.org/TR/wcag2ict/#REF-WCAG20)
 - [Guidance on Applying WCAG 2.0 to Non-Web Information and Communications Technologies (WCAG2ICT)](http://www.w3.org/TR/wcag2ict/)

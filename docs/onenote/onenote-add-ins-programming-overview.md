@@ -122,7 +122,7 @@ The following diagram represents what's currently available in the OneNote JavaS
   ![OneNote object model diagram](../images/onenote-om.png)
 
 
-## Additional resources
+## See also
 
 - [Build your first OneNote add-in](onenote-add-ins-getting-started.md)
 - [OneNote JavaScript API reference](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)

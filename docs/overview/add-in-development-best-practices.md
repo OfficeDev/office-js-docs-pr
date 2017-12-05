@@ -135,6 +135,6 @@ For templates that apply design principles that you can use and customize as you
 
 - Create a website to help users find and use your add-in.
 
-## Additional resources
+## See also
 
 - [Office Add-ins platform overview](office-add-ins.md)

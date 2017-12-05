@@ -305,7 +305,7 @@ dynamicComponentInstance.close((err, unused) => {
 ```
 
 
-## Additional resources
+## See also
 
 - [Office Mix add-ins](office-mix-add-ins.md)
 - [Walkthrough: Creating your first lab for Office Mix](creating-your-first-lab-for-office-mix.md)

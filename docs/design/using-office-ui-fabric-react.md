@@ -124,7 +124,7 @@ The following is a list of the Fabric React UX components that we recommend for 
 - [TextField](textfield.md)
 - [Toggle](toggle.md)
 
-## Additional resources
+## See also
 
 - [Office UI Fabric React](https://dev.office.com/fabric#/)
 - [Getting started with Fabric React code sample](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)

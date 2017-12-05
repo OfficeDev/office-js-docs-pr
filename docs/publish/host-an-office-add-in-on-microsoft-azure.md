@@ -187,7 +187,7 @@ Visual Studio creates a basic Word add-in that you'll be able to publish as-is, 
     
 6. Verify that the add-in works by selecting some text in the document and choosing the **Highlight!** button in the task pane. 
 
-## Additional resources
+## See also
 
 - [Publish your Office Add-in](../publish/publish.md)
 - [Package your add-in using Visual Studio to prepare for publishing](../publish/package-your-add-in-using-visual-studio.md)

@@ -100,7 +100,7 @@ Delete the content of the folder `/Users/{your_name_on_the_device}/Library/Conta
 #### For iOS:
 Call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, you can reinstall Office.
 
-## Additional resources
+## See also
 
 - [Debug add-ins in Office Online](debug-add-ins-in-office-online.md) 
 - [Sideload an Office Add-in on iPad and Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  

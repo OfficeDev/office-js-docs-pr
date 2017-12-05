@@ -42,7 +42,7 @@ When an Excel JavaScript API request fails to run successfully, the API returns 
 > [!NOTE]
 > If you use `console.log()` to print error messages to the console, those messages will only be visible on the server. End-users will not see those error messages in the add-in taskpane or anywhere in the host application.
 
-## Additional resources
+## See also
 
 - [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
 - [OfficeExtension.Error object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/error)

@@ -158,7 +158,7 @@ Your add-in uses the  **Permissions** element in its manifest to request permiss
 For more information, see [Requesting permissions for API use in content and task pane add-ins](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md).
 
 
-## Additional resources
+## See also
 
 - [Office JavaScript API](https://dev.office.com/reference/add-ins/javascript-api-for-office)
 - [Schema reference for Office Add-ins manifests](../overview/add-in-manifests.md)

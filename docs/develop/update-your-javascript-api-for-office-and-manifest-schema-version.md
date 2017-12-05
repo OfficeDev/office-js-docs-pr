@@ -119,7 +119,7 @@ In your Add-in's Manifest file, update the **xmlns** attribute of the **OfficeAp
 > After updating the version of the add-in manifest schema to 1.1, you will need to remove the  **Capabilities** and **Capability** elements, and replace them with either the [Hosts](https://dev.office.com/reference/add-ins/manifest/hosts) and [Host](https://dev.office.com/reference/add-ins/manifest/hosts) elements or the [Requirements and Requirement elements](../overview/specify-office-hosts-and-api-requirements.md).
     
 
-## Additional resources
+## See also
 
 - [Specify Office hosts and API requirements](../overview/specify-office-hosts-and-api-requirements.md) 
 - [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md)    

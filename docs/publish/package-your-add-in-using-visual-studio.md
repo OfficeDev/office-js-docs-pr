@@ -55,7 +55,7 @@ You can now upload your XML manifest to the appropriate location to [publish you
  `%UserProfile%\Documents\Visual Studio 2015\Projects\MyApp\bin\Debug\app.publish\OfficeAppManifests`
 
 
-## Additional resources
+## See also
 
 - [Publish your Office Add-in](../publish/publish.md)
 - [Submit Office and SharePoint Add-ins and Office 365 web apps to the Office Store](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store)

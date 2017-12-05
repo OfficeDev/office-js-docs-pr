@@ -118,6 +118,6 @@ Apply the following general guidelines for animations:
 * Consider the origin of your triggering element. Use motion to create a link between the action and the resulting UI.
 * Consider tone and purpose of your content when choosing animations. Handle critical messages differently than exploratory navigations.
 
-## Additional resources
+## See also
 
 - [Office Add-in design guidelines](add-in-design-guidelines.md)

@@ -165,7 +165,7 @@ Office icons are designed to render well in high contrast modes. Foreground elem
 - Avoid the use of gradients.
 - Avoid large blocks of color with similar values.
 
-## Additional resources
+## See also
 
 - [Add-in development best practices](../overview/add-in-development-best-practices.md)
 - [Add-in commands for Excel, Word, and PowerPoint](../design/add-in-commands.md)

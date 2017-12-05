@@ -269,7 +269,7 @@ Add-ins may need a Settings page that allows users to configure settings that co
 </tr></tr>
  </table>
 
-## Additional resources
+## See also
 
 * [Best practices for developing Office Add-ins](../overview/add-in-development-best-practices.md)
 * [Office UI Fabric](http://dev.office.com/fabric/)

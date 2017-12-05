@@ -43,7 +43,7 @@ For a sample manifest that implements add-in commands for Word, Excel, and Power
 
 For a sample manifest that implements add-in commands for Outlook, see [Sample manifest file for an Outlook add-in](https://github.com/OfficeDev/outlook-add-in-command-demo/blob/master/command-demo-manifest.xml).
 
-## Additional resources
+## See also
 
 - [Add-in commands for Outlook](https://docs.microsoft.com/outlook/add-ins/add-in-commands-for-outlook)
 - [Outlook add-in manifests](https://docs.microsoft.com/outlook/add-ins/manifests)

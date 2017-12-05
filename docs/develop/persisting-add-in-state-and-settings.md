@@ -266,7 +266,7 @@ function saveCallback(asyncResult) {
 ```
 
 
-## Additional resources
+## See also
 
 - [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md)
 - [Outlook add-ins](https://docs.microsoft.com/en-us/outlook/add-ins/)

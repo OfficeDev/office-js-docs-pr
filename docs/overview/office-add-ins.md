@@ -117,7 +117,7 @@ To learn more about how to start building your Office Add-in, try out the [Get s
 
 To start planning solutions that create effective and compelling user experiences, get familiar with the [design guidelines](../design/add-in-design.md) and [best practices](add-in-development-best-practices.md) for Office Add-ins.    
    
-## Additional resources
+## See also
 
 - [Office Add-in samples](https://dev.office.com/code-samples)
 - [Understanding the JavaScript API for Office](../develop/understanding-the-javascript-api-for-office.md)

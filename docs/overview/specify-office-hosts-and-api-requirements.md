@@ -194,7 +194,7 @@ if (Office.context.document.setSelectedDataAsync)
 ```
 
 
-## Additional resources
+## See also
 
 - [Office Add-ins XML manifest](add-in-manifests.md)
 - [Office add-in requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets)

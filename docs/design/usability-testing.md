@@ -134,7 +134,7 @@ A single participant having a usability issue is not enough to warrant making a 
 In general, be careful about how you use your data to draw conclusions. Don’t fall into the trap of trying to make the data fit a certain narrative; be honest about what the data actually proves, disproves, or simply fails to provide any insight about. Keep an open mind; user behavior frequently defies designer’s expectations.
  
 
-## Additional resources
+## See also
  
  - [How to Conduct Usability Testing](http://whatpixel.com/howto-conduct-usability-testing/)  
  - [Best Practices](http://help.usertesting.com/customer/en/portal/articles/1680726-best-practices)  

@@ -200,7 +200,7 @@ An add-in's manifest file defines its settings and capabilities.
 
 Congratulations, you've successfully created an Excel add-in using Angular! Next, learn more about the [core concepts](excel-add-ins-core-concepts.md) of building Excel add-ins.
 
-## Additional resources
+## See also
 
 * [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
 * [Excel add-in code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)

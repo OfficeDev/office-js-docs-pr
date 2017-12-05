@@ -82,7 +82,7 @@ As we design and develop new APIs for Word add-ins, we'll make them available fo
 
 You can also see what's new in the Word JavaScript API on the [change log](http://dev.office.com/changelog) page.
 
-## Additional resources
+## See also
 
 * [Office Add-ins platform overview](../overview/office-add-ins.md)
 * [Word JavaScript API reference](https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview)

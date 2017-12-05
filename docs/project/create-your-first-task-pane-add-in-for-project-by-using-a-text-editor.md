@@ -1087,7 +1087,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 ![Using the SurfaceError routines to show an error](../images/pj15-create-simple-agave-surface-error.png)
 
 
-## Additional resources
+## See also
 
 - [Task pane add-ins for Project](../project/project-add-ins.md)
 - [Understanding the JavaScript API for add-ins](../develop/understanding-the-javascript-api-for-office.md)

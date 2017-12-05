@@ -229,7 +229,7 @@ dataSheet.position = 1;
 //...
 ```
 
-## Additional resources
+## See also
  
 * [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
 * [Excel add-ins code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)

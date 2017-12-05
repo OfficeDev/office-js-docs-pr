@@ -1135,7 +1135,7 @@ If you modify the  **HelloProjectOData** add-in for production use, do the follo
 - To deploy the add-in, see [Publish your Office Add-in](../publish/publish.md).
     
 
-## Additional resources
+## See also
 
 - [Task pane add-ins for Project](project-add-ins.md)
 - [Create your first task pane add-in for Project 2013 by using a text editor](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)

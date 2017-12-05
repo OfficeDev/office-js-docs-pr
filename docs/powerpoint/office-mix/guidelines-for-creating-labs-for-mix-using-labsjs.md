@@ -168,7 +168,7 @@ Labs.getTimeline().next({}, (err, unused) => { });
 ```
 
 
-## Additional resources
+## See also
 
 - [Office Mix add-ins](../../powerpoint/office-mix/office-mix-add-ins.md)
     

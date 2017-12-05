@@ -204,6 +204,6 @@ The OfficeThemes.css file provides classes that correspond to the 4 colors assig
 | `office-officeTheme-secondary-fontColor`|Secondary font color. Default #262626|
 | `office-officeTheme-secondary-bgColor`|Secondary background color. Default #FFFFFF|
 
-## Additional resources
+## See also
 
 - [Create content and task pane add-ins for PowerPoint](../powerpoint/powerpoint-add-ins.md)

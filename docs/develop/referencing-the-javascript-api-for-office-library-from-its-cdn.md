@@ -24,7 +24,7 @@ If you plan to publish your Office Add-in from the Office Store, you must use th
 > [!IMPORTANT]
 >  When you develop an add-in for any Office host application, reference the JavaScript API for Office from inside the `<head>` section of the page. This ensures that the API is fully initialized prior to any body elements. Office hosts require that add-ins initialize within 5 seconds of activation. If your add-in doesn't activate within this threshold, it will be declared unresponsive and an error message will be displayed to the user.       
 
-## Additional resources
+## See also
 
 - [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md)    
 - [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)

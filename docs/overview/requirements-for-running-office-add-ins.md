@@ -81,7 +81,7 @@ Specifically for OWA for Devices, and Outlook Web App running in a browser on sm
 |Outlook Web App|iPhone 4 or later, iPad 2 or later, iPod Touch 4 or later|iOS 5 or later|On Office 365, Exchange Online, or on premise on Exchange Server 2013 or later|Safari|
 
 
-## Additional resources
+## See also
 
 - [Office Add-ins platform overview](office-add-ins.md)
 - [Office Add-in host and platform availability](../overview/office-add-in-availability.md)

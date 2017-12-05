@@ -32,7 +32,7 @@ Use HTML containers to embed HTML-based UI code within Office clients. These web
 |[Content add-ins](content-add-ins.md)|Display custom UI embedded within Office documents. Use content add-ins to allow users to interact with your add-in directly within the Office document. For example, you might want to show external content such as videos or data visualizations from other sources. |
 |[Dialog boxes](dialog-boxes.md)|Display custom UI in a dialog box that overlays the Office document. Use a dialog box for interactions that require focus and more real estate, and do not require a side-by-side interaction with the document.|
 
-## Additional resources
+## See also
 
 - [Add-in commands for Excel, Word, and PowerPoint](add-in-commands.md)
 - [Task panes](task-pane-add-ins.md)

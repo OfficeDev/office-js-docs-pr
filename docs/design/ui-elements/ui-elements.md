@@ -65,6 +65,6 @@ Whether you decide to adopt the Office color scheme or to use your own, we encou
 <!-- Link to theming API docs and Humberto's seed sample. Add screenshot of themed add-in. -->
 
 
-## Additional resources
+## See also
 
 - [Design guidelines for Office Add-ins](../add-in-design.md)

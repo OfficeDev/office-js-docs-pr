@@ -200,7 +200,7 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 Congratulations, you've successfully created a Word add-in using jQuery! Next, learn more about the [core concepts](word-add-ins-programming-overview.md) of building Word add-ins.
 
-## Additional resources
+## See also
 
 * [Word add-ins overview](word-add-ins-programming-overview.md)
 * [Word add-in code samples](http://dev.office.com/code-samples#?filters=word,office%20add-ins)

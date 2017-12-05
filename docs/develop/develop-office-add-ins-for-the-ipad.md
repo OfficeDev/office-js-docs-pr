@@ -40,7 +40,7 @@ Apply the following best practices for developing add-ins that run on iOS:
 For general add-in development best practices, see [Best practices for developing Office Add-ins](../overview/add-in-development-best-practices.md).
 
 
-## Additional resources
+## See also
 
 - [Sideload an Office Add-in on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [Debug Office Add-ins on iPad and Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)

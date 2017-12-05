@@ -54,7 +54,7 @@ The following are some issues that you might encounter as you debug:
       
 - If you set breakpoints in your code, Office Online might throw an error indicating that it is unable to save.
 
-## Additional resources
+## See also
 
 - [Best practices for developing Office Add-ins](../overview/add-in-development-best-practices.md)
 - [Validation policies for apps and add-ins submitted to the Office Store (version 2.2)](https://docs.microsoft.com/en-us/office/dev/store/validation-policies)  
