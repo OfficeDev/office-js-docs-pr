@@ -4,8 +4,6 @@ description: ''
 ms.date: 12/04/2017
 ---
 
-
-
 # Create a Project add-in that uses REST with an on-premises Project Server OData service
 
 This article describes how to build a task pane add-in for Project Professional 2013 that compares cost and work data in the active project with the averages for all projects in the current Project Web App instance. The add-in uses REST with the jQuery library to access the  **ProjectData** OData reporting service in Project Server 2013.
