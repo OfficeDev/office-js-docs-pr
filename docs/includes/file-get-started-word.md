@@ -7,7 +7,7 @@ A Word add-in runs inside Word and can interact with the contents of the documen
 In this article, you'll walk through the process of building a Word add-in by using jQuery and the Word JavaScript API. 
 
 > [!NOTE]
-> To develop an add-in for Word 2013, you'll need to use the shared [Office Javascript API](word-add-ins-programming-overview.md#javascript-apis-for-word). To learn more about the platforms and the different APIs that are available, see [Office Add-in host and platform availability](../overview/office-add-in-availability.md). 
+> To develop an add-in for Word 2013, you'll need to use the shared [Office Javascript API](../word/word-add-ins-programming-overview.md#javascript-apis-for-word). To learn more about the platforms and the different APIs that are available, see [Office Add-in host and platform availability](../overview/office-add-in-availability.md). 
 
 ## Create the web app 
 
@@ -192,10 +192,10 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 ## Next steps
 
-Congratulations, you've successfully created a Word add-in using jQuery! Next, learn more about the [core concepts](word-add-ins-programming-overview.md) of building Word add-ins.
+Congratulations, you've successfully created a Word add-in using jQuery! Next, learn more about the [core concepts](../word/word-add-ins-programming-overview.md) of building Word add-ins.
 
 ## See also
 
-* [Word add-ins overview](word-add-ins-programming-overview.md)
+* [Word add-ins overview](../word/word-add-ins-programming-overview.md)
 * [Word add-in code samples](http://dev.office.com/code-samples#?filters=word,office%20add-ins)
 * [Word JavaScript API reference](https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview)
