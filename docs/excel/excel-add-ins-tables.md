@@ -1,7 +1,7 @@
 ---
 title: Work with tables using the Excel JavaScript API
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -442,7 +442,7 @@ Excel.run(function (context) {
 
 ![New table in Excel](../images/excel-tables-create-from-json.png)
 
-## Additional resources
+## See also
 
 - [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
 - [Table Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/table)

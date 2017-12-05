@@ -1,7 +1,7 @@
 ---
 title: Excel add-ins overview
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -78,7 +78,7 @@ An Excel add-in interacts with objects in Excel by using the [JavaScript API for
 
 Get started by [creating your first Excel add-in](excel-add-ins-get-started-overview.md). Then, learn about the [core concepts](excel-add-ins-core-concepts.md) of building Excel add-ins.
 
-## Additional resources
+## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Best practices for developing Office Add-ins](../overview/add-in-development-best-practices.md)

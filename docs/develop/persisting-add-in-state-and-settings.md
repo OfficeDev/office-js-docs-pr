@@ -1,7 +1,7 @@
 ---
 title: Persisting add-in state and settings
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Persisting add-in state and settings
@@ -266,7 +266,7 @@ function saveCallback(asyncResult) {
 ```
 
 
-## Additional resources
+## See also
 
 - [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md)
 - [Outlook add-ins](https://docs.microsoft.com/en-us/outlook/add-ins/)

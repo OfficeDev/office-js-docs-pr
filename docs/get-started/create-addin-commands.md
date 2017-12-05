@@ -1,7 +1,7 @@
 ---
 title: Create add-in commands in your manifest for Excel, Word, and PowerPoint
 description: Use VersionOverrides in your manifest to define add-in commands for Excel, Word, and PowerPoint. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
-ms.date: 11/27/2017 
+ms.date: 12/04/2017
 ---
 
 
@@ -438,7 +438,7 @@ In Excel and Word, you can add your add-in commands to the ribbon by using the d
 |Word  <br/> |**TabHome**         **TabInsert**         **TabWordDesign**         **TabPageLayoutWord**         **TabReferences**         **TabMailings**         **TabReviewWord**         **TabView**         **TabDeveloper**         **TabAddIns**         **TabBlogPost**         **TabBlogInsert**         **TabPrintPreview**         **TabOutlining**         **TabConflicts**         **TabBackgroundRemoval**         **TabBroadcastPresentation** <br/> |
 |PowerPoint  <br/> |**TabHome**         **TabInsert**         **TabDesign**         **TabTransitions**         **TabAnimations**         **TabSlideShow**         **TabReview**         **TabView**         **TabDeveloper**         **TabAddIns**         **TabPrintPreview**         **TabMerge**         **TabGrayscale**         **TabBlackAndWhite**         **TabBroadcastPresentation**         **TabSlideMaster**         **TabHandoutMaster**         **TabNotesMaster**         **TabBackgroundRemoval**         **TabSlideMasterHome**          <br/> |
    
-## Additional resources
+## See also
 
 -  [Add-in commands for Excel, Word and PowerPoint](../design/add-in-commands.md)      
 -  [Define add-in commands in your manifest](../develop/define-add-in-commands.md)  

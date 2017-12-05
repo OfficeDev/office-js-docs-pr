@@ -1,7 +1,7 @@
 ---
 title: Layout for task pane containers
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -22,6 +22,6 @@ For a sample that shows how to use Office UI Fabric in Office Add-ins, see [Offi
 
 <!-- Add sample template for content add-in and individual building blocks - Branding, Navigation bar or pivot, input, layout components -->
 
-## Additional resources
+## See also
 
 - [Design guidelines for Office Add-ins](../add-in-design.md)

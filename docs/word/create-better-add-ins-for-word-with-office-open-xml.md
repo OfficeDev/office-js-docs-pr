@@ -1,7 +1,7 @@
 ---
 title: Create better add-ins for Word with Office Open XML
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -857,7 +857,7 @@ The markup for a given content type and methods for inserting it are the same wh
 When using templates with your app, whether the add-in will be resident in the template at the time that the user created the document or the add-in will be inserting a template, you might also want to incorporate other elements of the API to help you create a more robust, interactive experience. For example, you may want to include identifying data in a customXML part that you can use to determine the template type in order to provide template-specific options to the user. To learn more about how to work with custom XML in your add-ins, see the additional resources that follow.
 
 
-## Additional resources
+## See also
 
 - [JavaScript API for Office ](https://dev.office.com/reference/add-ins/javascript-api-for-office) 
 - [Standard ECMA-376: Office Open XML File Formats](http://www.ecma-international.org/publications/standards/Ecma-376.htm) (access the complete language reference and related documentation on Open XML here) 

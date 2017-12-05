@@ -1,7 +1,7 @@
 ---
 title: Layouts for mail add-ins
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -33,6 +33,6 @@ In addition to using a task pane or contextual pane to display custom HTML UI in
 For more information, see [add-in commands for mail](https://docs.microsoft.com/en-us/outlook/add-ins/add-in-commands-for-outlook). 
 
 
-## Additional resources
+## See also
 
 - [Design guidelines for Office Add-ins](../add-in-design.md)

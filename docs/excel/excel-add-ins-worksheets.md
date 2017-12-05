@@ -1,7 +1,7 @@
 ---
 title: Work with Worksheets using the Excel JavaScript API
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -275,7 +275,7 @@ Excel.run(function (context) {
 
 For examples that show how to get a range within a worksheet, see [Work with Ranges using the Excel JavaScript API](excel-add-ins-ranges.md).
 
-## Additional resources
+## See also
 
 - [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
 - [Worksheet Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/worksheet)

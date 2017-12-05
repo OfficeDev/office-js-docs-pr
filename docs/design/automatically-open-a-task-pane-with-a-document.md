@@ -1,7 +1,7 @@
 ---
 title: Automatically open a task pane with a document
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -135,7 +135,7 @@ Setting `visibility` to "1" is a good choice when the add-in and the template or
 
 An easy way to write the XML is to first run your add-in and [tag the document on the client side](#tag-the-document-on-the-client-side) to write the value, and then save the document and inspect the XML that is generated. Office will detect and provide the appropriate attribute values. You can also use the [Open XML SDK 2.5 Productivity Tool](https://www.microsoft.com/en-us/download/details.aspx?id=30425) tool to generate C# code to programmatically add the markup based on the XML you generate.
 
-## Additional resources
+## See also
 
 For a sample that shows you how to use the autoopen feature, see [Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane). 
 

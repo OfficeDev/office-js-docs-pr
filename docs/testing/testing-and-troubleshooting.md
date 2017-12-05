@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot user errors with Office Add-ins
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Troubleshoot user errors with Office Add-ins
@@ -10,7 +10,7 @@ At times your users might encounter issues with Office Add-ins that you develop.
 
 You can also use [Fiddler](http://www.telerik.com/fiddler) to identify and debug issues with your add-ins.
 
-After you resolve the user's issue, you can [respond directly to customer reviews in the Office Store](https://dev.office.com/officestore/docs/create-effective-office-store-listings).
+After you resolve the user's issue, you can [respond directly to customer reviews in the Office Store](https://docs.microsoft.com/en-us/office/dev/store/create-effective-office-store-listings).
 
 ## Common errors and troubleshooting steps
 
@@ -100,7 +100,7 @@ Delete the content of the folder `/Users/{your_name_on_the_device}/Library/Conta
 #### For iOS:
 Call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, you can reinstall Office.
 
-## Additional resources
+## See also
 
 - [Debug add-ins in Office Online](debug-add-ins-in-office-online.md) 
 - [Sideload an Office Add-in on iPad and Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  

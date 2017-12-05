@@ -1,7 +1,7 @@
 ---
 title: Button component in Office UI Fabric
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Button component in Office UI Fabric
@@ -34,7 +34,7 @@ Use buttons in your Office Add-in to enable users to commit changes or complete 
 
 For details, see [Button](https://dev.office.com/fabric#/components/button) and [Getting started with Fabric React code sample](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact).
 
-## Additional resources
+## See also
 
 - [UX Design Patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
 - [Office UI Fabric in Office Add-ins](office-ui-fabric.md)

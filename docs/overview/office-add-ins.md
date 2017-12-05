@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins platform overview
-description: 
-ms.date: 11/27/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -117,11 +117,11 @@ To learn more about how to start building your Office Add-in, try out the [Get s
 
 To start planning solutions that create effective and compelling user experiences, get familiar with the [design guidelines](../design/add-in-design.md) and [best practices](add-in-development-best-practices.md) for Office Add-ins.    
    
-## Additional resources
+## See also
 
 - [Office Add-in samples](https://dev.office.com/code-samples)
 - [Understanding the JavaScript API for Office](../develop/understanding-the-javascript-api-for-office.md)
-- [Office Add-in host and platform availability](https://dev.office.com/add-in-availability)
+- [Office Add-in host and platform availability](../overview/office-add-in-availability.md)
 
 
     

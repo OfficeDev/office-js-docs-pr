@@ -1,7 +1,7 @@
 ---
 title: Attach a debugger from the task pane
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Attach a debugger from the task pane
@@ -28,7 +28,7 @@ For more information about debugging in Visual Studio, see the following:
 -	To set breakpoints, see [Using Breakpoints](https://msdn.microsoft.com/en-US/library/5557y8b4.aspx).
 -	To use F12, see [Using the F12 developer tools](https://msdn.microsoft.com/en-us/library/bg182326(v=vs.85).aspx).
 
-## Additional resources
+## See also
 
 - [Create and debug Office Add-ins in Visual Studio](../get-started/create-and-debug-office-add-ins-in-visual-studio.md)
 - [Create an Office Add-in using any editor](../get-started/create-an-office-add-in-using-any-editor.md)

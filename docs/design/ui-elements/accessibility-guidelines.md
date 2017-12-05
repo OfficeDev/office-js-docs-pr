@@ -1,7 +1,7 @@
 ---
 title: Accessibility guidelines for Office Add-ins
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -44,6 +44,6 @@ As you design and develop your Office Add-ins, you'll want to ensure that all po
 - [European Standard on accessibility requirements for Information and Communication Technologies (ICT)](http://www.etsi.org/deliver/etsi_en/301500_301599/301549/01.00.00_20/en_301549v010000c.pdf)
 
 
-## Additional resources
+## See also
 
 - [Design guidelines for Office Add-ins](../add-in-design.md)

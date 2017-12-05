@@ -1,7 +1,7 @@
 ---
 title: Create add-ins for Access web apps
 description: Develop an Office Add-in that targets Access web apps by using Visual Studio.
-ms.date: 11/20/2017 
+ms.date: 12/04/2017
 ---
 
 # Create add-ins for Access web apps
@@ -147,7 +147,7 @@ At this point, you can set breakpoints, step through your JavaScript code, explo
 
 To learn more about how to implement an Office Add-in that manipulates data in an Access web app, download the sample [Office 365: Bind and manipulate data in an Access web app](https://code.msdn.microsoft.com/officeapps/Office-365-Bind-and-4876274e).
 
-## Additional resources
+## See also
 
 - [Understanding the JavaScript API for add-ins](../develop/understanding-the-javascript-api-for-office.md)
 - [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)

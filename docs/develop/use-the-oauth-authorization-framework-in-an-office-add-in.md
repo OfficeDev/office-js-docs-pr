@@ -1,7 +1,7 @@
 ---
 title: Use the OAuth authorization framework in an Office Add-in
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -122,7 +122,7 @@ The following code segment, taken from connect.js, updates the add-in's UI with 
 ```
 
 
-## Additional resources
+## See also
 
 - [Office Add-in Server Authentication Sample for Node.js](https://github.com/OfficeDev/Office-Add-in-Nodejs-ServerAuth/blob/master/README.md)
     

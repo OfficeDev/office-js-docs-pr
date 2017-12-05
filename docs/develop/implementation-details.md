@@ -1,7 +1,7 @@
 ---
 title: Implementation details, for those who want to know how it *really* works
 description: This topic is no longer available. Open it to redirect.
-ms.date: 11/20/2017 
+ms.date: 12/04/2017
 ---
 
 # Implementation details, for those who want to know how it *really* works

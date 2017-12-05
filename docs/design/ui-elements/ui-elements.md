@@ -1,7 +1,7 @@
 ---
 title: Office Add-in UI elements
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -65,6 +65,6 @@ Whether you decide to adopt the Office color scheme or to use your own, we encou
 <!-- Link to theming API docs and Humberto's seed sample. Add screenshot of themed add-in. -->
 
 
-## Additional resources
+## See also
 
 - [Design guidelines for Office Add-ins](../add-in-design.md)

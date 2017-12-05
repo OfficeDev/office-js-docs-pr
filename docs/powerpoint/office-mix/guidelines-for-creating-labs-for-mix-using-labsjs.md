@@ -1,7 +1,7 @@
 ---
 title: Guidelines for creating labs for Mix using LabsJS
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -168,7 +168,7 @@ Labs.getTimeline().next({}, (err, unused) => { });
 ```
 
 
-## Additional resources
+## See also
 
 - [Office Mix add-ins](../../powerpoint/office-mix/office-mix-add-ins.md)
     

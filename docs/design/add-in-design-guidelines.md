@@ -1,7 +1,7 @@
 ---
 title: Office Add-in design guidelines
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -10,7 +10,7 @@ ms.date: 11/20/2017
 
 Enhance the user experience in your Office Add-in by developing UI that matches the Office voice, and apply accessibility guidelines to ensure that your add-in is accessible to all users.
 
-If you plan to make your add-in [available in the Office Store](https://dev.office.com/officestore/docs/submit-to-the-office-store), make sure that your language and content complies with the [Validation policies](https://dev.office.com/officestore/docs/validation-policies).
+If you plan to make your add-in [available in the Office Store](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store), make sure that your language and content complies with the [Validation policies](https://docs.microsoft.com/en-us/office/dev/store/validation-policies).
 
 ## Voice guidelines 
 
@@ -57,7 +57,7 @@ As you design and develop your Office Add-ins, you'll want to ensure that all po
 - Provide a way for users to turn on captions or audio description with audio sources.
 - Provide alternatives to sound as a means to alert users, such as visual cues or vibrations.
 
-## Additional resources
+## See also
 
 - [Web Content Accessibility Guidelines (WCAG) 2.0](http://www.w3.org/TR/wcag2ict/#REF-WCAG20)
 - [Guidance on Applying WCAG 2.0 to Non-Web Information and Communications Technologies (WCAG2ICT)](http://www.w3.org/TR/wcag2ict/)

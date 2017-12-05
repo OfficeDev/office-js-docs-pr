@@ -1,7 +1,7 @@
 ---
 title: Testing Script Lab integration
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -48,4 +48,4 @@ We need to verify mobile, non-Office 365 subscriptions (we have feedback on the 
 
 For the Embed path, we need final sign off and need to make sure the content exposed in the view gist page meets our Accessibility guidelines.
 
-## Additional resources
+## See also

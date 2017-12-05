@@ -1,7 +1,7 @@
 ---
 title: Asynchronous programming in Office Add-ins
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -391,7 +391,7 @@ function write(message){
 In both optional parameter examples, the  _callback_ parameter is specified as the last parameter (following the inline optional parameters, or following the _options_ argument object). Alternatively, you can specify the _callback_ parameter inside either the inline JSON object, or in the `options` object. However, you can pass the _callback_ parameter in only one location: either in the _options_ object (inline or created externally), or as the last parameter, but not both.
 
 
-## Additional resources
+## See also
 
 - [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md) 
 - [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)

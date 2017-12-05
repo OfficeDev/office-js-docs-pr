@@ -1,7 +1,7 @@
 ---
 title: Extend Excel functionality
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -49,7 +49,7 @@ Content add-ins are surfaces that you can embed directly into Excel documents. Y
 
 For more information about content add-ins, see [Content Office Add-ins](../design/content-add-ins.md). For a sample that implements a content add-in in Excel, see [Excel Content Add-in Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance) in GitHub.
 
-## Additional resources
+## See also
 
 - [Add-in commands for Excel, Word, and PowerPoint](../design/add-in-commands.md)
 - [Define add-in commands in your manifest](../develop/define-add-in-commands.md)

@@ -1,7 +1,7 @@
 ---
-title: Work with OneNote page content 
-description: 
-ms.date: 11/20/2017 
+title: Work with OneNote page content
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Work with OneNote page content 
@@ -48,7 +48,7 @@ active page. To change the active  page, invoke `navigateToPage($page)`.
 
 Metadata such as title can still be queried for any page.
 
-## Additional resources
+## See also
 
 - [OneNote JavaScript API programming overview](onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API reference](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)

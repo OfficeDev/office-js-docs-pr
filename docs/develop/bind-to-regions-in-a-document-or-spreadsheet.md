@@ -1,7 +1,7 @@
 ---
 title: Bind to regions in a document or spreadsheet
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -383,7 +383,7 @@ function removeEventHandlerFromBinding() {
 > If the optional  _handler_ parameter is omitted when the [removeHandlerAsync] method is called, all event handlers for the specified `eventType` will be removed.
 
 
-## Additional resources
+## See also
 
 - [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md) 
 - [Asynchronous programming in Office Add-ins](asynchronous-programming-in-office-add-ins.md)

@@ -1,7 +1,7 @@
 ---
 title: Use the Dialog API in your Office Add-ins
-description: 
-ms.date: 11/27/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Use the Dialog API in your Office Add-ins

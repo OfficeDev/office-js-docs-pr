@@ -8,7 +8,7 @@
   - name: Add-in development best practices
     href: overview/add-in-development-best-practices.md
   - name: Host and platform availability
-    href: https://dev.office.com/add-in-availability
+    href: overview/office-add-in-availability.md
   - name: Changelog
     href: overview/add-in-changelog.md
 - name: Get started
@@ -171,9 +171,9 @@
   - name: Publish add-ins to a SharePoint catalog
     href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
   - name: Publish add-ins to the Office Store
-    href: https://dev.office.com/officestore/docs/submit-add-ins-and-web-apps-to-the-office-store
+    href: https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store
   - name: Office Store validation policies
-    href: https://dev.office.com/officestore/docs/validation-policies
+    href: https://docs.microsoft.com/en-us/office/dev/store/validation-policies
 - name: Word
   href: word/word-add-ins-programming-overview.md
   items:

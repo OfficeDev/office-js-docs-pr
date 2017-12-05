@@ -1,7 +1,7 @@
 ---
 title: Content Office Add-ins
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -44,7 +44,7 @@ For Mac, the personality menu measures 26x26 pixels, but floats 8 pixels in from
 
 For a sample that implements a content add-in, see [Excel Content Add-in Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance) in GitHub.
 
-## Additional resources
+## See also
 
 - [Office UI Fabric in Office Add-ins](office-ui-fabric.md) 
 - [UX design patterns for Office Add-ins](ux-design-patterns.md)

@@ -1,7 +1,7 @@
 ---
 title: Use Office UI Fabric 2.6.1 in Office Add-ins
-description: 
-ms.date: 11/27/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -62,6 +62,6 @@ For example, to use the SearchBox component:
 
 If you're looking for end-to-end samples that show you how to use Fabric, we've got you covered. See the [Office Add-in Fabric UI sample](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample). You can also explore the interactive [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric)website.
 
-## Additional resources
+## See also
 
 - [Design guidelines for Office Add-ins](../add-in-design.md)

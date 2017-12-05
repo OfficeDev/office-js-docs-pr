@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins XML manifest
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Office Add-ins XML manifest
@@ -21,7 +21,7 @@ An XML manifest file based on this schema enables an Office Add-in to do the fol
 - For Outlook add-ins, define the rule or rules that specify the context in which they will be activated and interact with a message, appointment, or meeting request item.
 
 > [!NOTE]
-> When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
+> When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).
 
 ## Required elements
 
@@ -427,7 +427,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 
 For troubleshooting issues with your manifest, see [Validate and troubleshoot issues with your manifest](../testing/troubleshoot-manifest.md). There, you will find information on how to validate the manifest against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas), and also how to use runtime logging to debug the manifest.
 
-## Additional resources
+## See also
 
 
 - [Define add-in commands in your manifest](../develop/define-add-in-commands.md)

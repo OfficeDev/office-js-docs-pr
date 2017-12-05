@@ -1,7 +1,7 @@
 ---
 title: Office Add-in design language
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Office Add-in design language
@@ -45,7 +45,7 @@ Office UI Fabric includes a set of default theme colors. When Fabric is applied 
 Office applications allow customers to personalize their interfaces by applying an Office UI theme. Customers can choose between four UI themes to vary styling of backgrounds and buttons in Word, PowerPoint, Excel and other apps in the Office suite. To make your add-ins feel like a natural part of Office and respond to personalization, use our Themeing APIs. For example, task pane background colors switch to a dark gray in some themes. Our theming APIs allow you to follow suit and adjust foreground text to ensure [accessibility](add-in-design-guidelines.md#accessibility-guidelines).
 
 > [!NOTE]
-> - For mail and task pane add-ins, use the [Context.officeTheme](https://dev.office.com/docs/reference/shared/office.context.officetheme.htm) property to match the theme of the Office applications. This API is currently only available in Office 2016.
+> - For mail and task pane add-ins, use the [Context.officeTheme](https://dev.office.com/reference/add-ins/shared/office.context.officetheme) property to match the theme of the Office applications. This API is currently only available in Office 2016.
 > - For PowerPoint content add-ins, see [Use Office themes in your PowerPoint add-ins](../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md).
 
 Apply the following general guidelines for color:
@@ -118,6 +118,6 @@ Apply the following general guidelines for animations:
 * Consider the origin of your triggering element. Use motion to create a link between the action and the resulting UI.
 * Consider tone and purpose of your content when choosing animations. Handle critical messages differently than exploratory navigations.
 
-## Additional resources
+## See also
 
 - [Office Add-in design guidelines](add-in-design-guidelines.md)

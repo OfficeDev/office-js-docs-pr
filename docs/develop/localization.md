@@ -1,7 +1,7 @@
 ---
 title: Localization for Office Add-ins
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Localization for Office Add-ins
@@ -418,7 +418,7 @@ Run the sample add-in. The taskpane add-in loads in Word 2013, and the strings i
 
 ![App with localized UI text](../images/office15-app-how-to-localize-fig05.png)
 
-## Additional resources
+## See also
 
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)    
 - [Language identifiers and OptionState Id values in Office 2013](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)

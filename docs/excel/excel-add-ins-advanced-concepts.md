@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API advanced concepts
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -229,7 +229,7 @@ dataSheet.position = 1;
 //...
 ```
 
-## Additional resources
+## See also
  
 * [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
 * [Excel add-ins code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)

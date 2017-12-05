@@ -1,7 +1,7 @@
 ---
 title: Privacy and security for Office Add-ins
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Privacy and security for Office Add-ins
@@ -243,7 +243,7 @@ Other than resource usage rules, developers for Outlook add-ins should also make
 
 In a corporate setting, IT administrators have ultimate authority over enabling or disabling access to the Office Store and any private catalogs.
 
-## Additional resources
+## See also
 
 - [Requesting permissions for API use in content and task pane add-ins](http://msdn.microsoft.com/library/da2efadc-4ebf-45fe-be39-397ac1eb1dbd.aspx)
 - [Privacy, permissions, and security for Outlook add-ins](http://msdn.microsoft.com/library/44208fc4-05d4-42d8-ab20-faa89624de1c.aspx)

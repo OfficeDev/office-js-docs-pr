@@ -1,13 +1,13 @@
 ---
 title: Office Add-ins development lifecycle
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 # Office Add-ins development lifecycle
 
 > [!NOTE]
-> When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://dev.office.com/officestore/docs/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://dev.office.com/officestore/docs/validation-policies) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
+> When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://docs.microsoft.com/en-us/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://docs.microsoft.com/en-us/office/dev/store/validation-policies) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).
 
 The typical development lifecycle of an Office Add-in includes the following steps:
 
@@ -48,7 +48,7 @@ Consider the following to identify the scenarios:
     
 - Will customers use the add-in to enhance the viewing or authoring experience of a document? If so, you may want to consider creating a **task pane add-in**. 
 
-Support for certain Add-in APIs may differ between Office applications and the platform they are running on (Windows, Mac, Web, Mobile). To see the current API coverage by client and platform, see our [Office Add-in host and platform availability](https://dev.office.com/add-in-availability) page.  
+Support for certain Add-in APIs may differ between Office applications and the platform they are running on (Windows, Mac, Web, Mobile). To see the current API coverage by client and platform, see our [Office Add-in host and platform availability](../overview/office-add-in-availability.md) page.  
 
     
 ## 4. Design and implement the user experience and user interface for the add-in

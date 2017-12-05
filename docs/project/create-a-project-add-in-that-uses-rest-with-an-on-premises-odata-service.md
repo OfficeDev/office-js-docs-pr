@@ -1,7 +1,7 @@
 ---
 title: Create a Project add-in that uses REST with an on-premises Project Server OData service
-description: 
-ms.date: 11/20/2017 
+description: ''
+ms.date: 12/04/2017
 ---
 
 
@@ -1135,7 +1135,7 @@ If you modify the  **HelloProjectOData** add-in for production use, do the follo
 - To deploy the add-in, see [Publish your Office Add-in](../publish/publish.md).
     
 
-## Additional resources
+## See also
 
 - [Task pane add-ins for Project](project-add-ins.md)
 - [Create your first task pane add-in for Project 2013 by using a text editor](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
