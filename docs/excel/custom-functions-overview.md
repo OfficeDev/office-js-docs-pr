@@ -105,7 +105,8 @@ Custom Function Enumerations](https://dev.office.com/reference/add-ins/excel/cus
 
 To complete registration of all functions defined using `Excel.Script.customFunctions`, ensure you call `CustomFunctions.addAll()`.
 
-After registration, custom functions are available in all workbooks (not only the one where the add-in ran initially) for a user. The functions are displayed in the autocomplete menu when the user starts typing it.
+After registration, custom functions are available in all workbooks (not only the one where the add-in ran initially) for a user. The functions are displayed in the autocomplete menu when the user starts typing it. During development and testing, you can manually clear your computer's cache of registration metadata by deleting the folder `<user>\AppData\Local\Microsoft\Office\16.0\Wef\CustomFunctions`.
+
 
 ### Manifest file (*manifest.xml*)
 
