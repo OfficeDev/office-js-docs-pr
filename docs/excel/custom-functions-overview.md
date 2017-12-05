@@ -22,7 +22,7 @@ function add42 (a, b) {
 
 Custom functions are now available in preview. Follow these steps to try them:
 
-1.  Join the [Office Insider](https://products.office.com/en-us/office-insider) program to install the version of Excel 2016 that's required for custom functions on your computer (version 16.8711 or later).
+1.  Join the [Office Insider](https://products.office.com/en-us/office-insider) program to install the version of Excel 2016 that's required for custom functions on your computer (version 16.8711 or later). You must choose the "Insider" channel for the custom functions preview to work.
 2.  Clone the [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) repo and follow the instructions in *README.md* to start the add-in in Excel.
 3.  Type `=CONTOSO.ADD42(1,2)` into any cell, and press **Enter** to run the custom function.
 4.  If you have questions, ask them on Stack Overflow with the [office-js](https://stackoverflow.com/questions/tagged/office-js) tag.
