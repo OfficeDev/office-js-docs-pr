@@ -68,7 +68,7 @@ For templates that illustrate patterns that you can apply as you develop your fi
 
 - Do not include unlicensed images.
 
-- Use [clear and simple language](../design/ui-elements/voice-guidelines.md) in your add-in.
+- Use [clear and simple language](../design/add-in-design-guidelines.md#voice-guidelines) in your add-in.
 
 - Account for [accessibility](../design/ui-elements/accessibility-guidelines.md) - make your add-in easy for all users to interact with, and accommodate assistive technologies such as screen readers.
 
