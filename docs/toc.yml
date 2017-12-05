@@ -6,7 +6,7 @@
   - name: Add-in development best practices
     href: overview/add-in-development-best-practices.md
   - name: Host and platform availability
-    href: https://dev.office.com/add-in-availability
+    href: overview/office-add-in-availability.md
   - name: Changelog
     href: overview/add-in-changelog.md
 - name: Get started
