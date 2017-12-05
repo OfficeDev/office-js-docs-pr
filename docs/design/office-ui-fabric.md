@@ -51,4 +51,4 @@ You can use different JavaScript frameworks, such as Angular or React, to build 
 |:------------|:----------|
 |**JavaScript only** (no framework)|[Using Office UI Fabric JS in Office Add-ins](using-office-ui-fabric-js.md).|
 |**React**|[Using Office UI Fabric React in Office Add-ins](using-office-ui-fabric-react.md )|
-|**Angular**| See [ngOfficeUIFabric](http://ngofficeuifabric.com/), which is a community project with Angular 1.5 directives, and [Consider wrapping Fabric components with Angular 2 components](https://dev.office.com/docs/add-ins/develop/add-ins-with-angular2#consider-wrapping-fabric-components-with-angular-2-components)|
+|**Angular**| See [ngOfficeUIFabric](http://ngofficeuifabric.com/), which is a community project with Angular 1.5 directives, and [Consider wrapping Fabric components with Angular 2 components](../develop/add-ins-with-angular2.md#consider-wrapping-fabric-components-with-angular-components)|
