@@ -22,7 +22,7 @@ function add42 (a, b) {
 
 Custom functions are now available in preview. Follow these steps to try them:
 
-1.  Join the [Office Insider](https://products.office.com/en-us/office-insider) program to install the version of Excel 2016 that's required for custom functions on your computer (version 16.8711 or later).
+1.  Join the [Office Insider](https://products.office.com/en-us/office-insider) program to install the version of Excel 2016 that's required for custom functions on your computer (version 16.8711 or later). You must choose the "Insider" channel for the custom functions preview to work.
 2.  Clone the [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) repo and follow the instructions in *README.md* to start the add-in in Excel.
 3.  Type `=CONTOSO.ADD42(1,2)` into any cell, and press **Enter** to run the custom function.
 4.  If you have questions, ask them on Stack Overflow with the [office-js](https://stackoverflow.com/questions/tagged/office-js) tag.
@@ -105,7 +105,8 @@ Custom Function Enumerations](https://dev.office.com/reference/add-ins/excel/cus
 
 To complete registration of all functions defined using `Excel.Script.customFunctions`, ensure you call `CustomFunctions.addAll()`.
 
-After registration, custom functions are available in all workbooks (not only the one where the add-in ran initially) for a user. The functions are displayed in the autocomplete menu when the user starts typing it.
+After registration, custom functions are available in all workbooks (not only the one where the add-in ran initially) for a user. The functions are displayed in the autocomplete menu when the user starts typing it. During development and testing, you can manually clear your computer's cache of registration metadata by deleting the folder `<user>\AppData\Local\Microsoft\Office\16.0\Wef\CustomFunctions`.
+
 
 ### Manifest file (*manifest.xml*)
 
@@ -265,6 +266,8 @@ function secondHighestTemp(temperatures){
      return secondHighest;
  }
 ```
+
+If you create a function that returns a range of data, it's necessary to enter an Array Formula in Excel to see the whole range of values. For more information, see [Guidelines and examples of array formulas](https://support.office.com/en-us/article/Guidelines-and-examples-of-array-formulas-7d94a64e-3ff3-4686-9372-ecfd5caa57c7).
 
 ## Known issues
 
