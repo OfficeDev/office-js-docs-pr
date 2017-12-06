@@ -267,7 +267,7 @@ function secondHighestTemp(temperatures){
  }
 ```
 
-If you create a function that returns a range of data, it's necessary to enter an Array Formula in Excel to see the whole range of values. Learn more at the [array formulas support page](https://support.office.com/en-us/article/Guidelines-and-examples-of-array-formulas-7d94a64e-3ff3-4686-9372-ecfd5caa57c7).
+If you create a function that returns a range of data, it's necessary to enter an Array Formula in Excel to see the whole range of values. For more information, see [Guidelines and examples of array formulas](https://support.office.com/en-us/article/Guidelines-and-examples-of-array-formulas-7d94a64e-3ff3-4686-9372-ecfd5caa57c7).
 
 ## Known issues
 
