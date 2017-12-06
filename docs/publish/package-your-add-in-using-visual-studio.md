@@ -7,7 +7,7 @@ ms.date: 12/04/2017
 
 # Package your add-in using Visual Studio to prepare for publishing
 
-Your Office Add-in package contains an XML [manifest file](../overview/add-in-manifests.md) that you'll use to publish the add-in. You'll have to publish the web application files of your project separately. This article describes how to deploy your web project and package your add-in by using Visual Studio 2015.
+Your Office Add-in package contains an XML [manifest file](../develop/add-in-manifests.md) that you'll use to publish the add-in. You'll have to publish the web application files of your project separately. This article describes how to deploy your web project and package your add-in by using Visual Studio 2015.
 
 ## To deploy your web project using Visual Studio 2015
 
@@ -41,7 +41,7 @@ Complete the following steps to package your add-in using Visual Studio 2015.
     
 2. In the **Where is your website hosted?** dropdown list, select or enter the URL of the website that will host the content files of your add-in, and then choose **Finish**.
     
-    You must specify an address that begins with the HTTPS prefix to complete this wizard. Although using an HTTPS endpoint for your website is generally recommended, doing so is not required if you don't plan to publish your add-in to the Office Store. If you want to use an HTTP endpoint for your website, you can open the XML manifest file in a text editor after the package has been created and replace the HTTPS prefix of your website with an HTTP prefix. For more information, see [Why do my apps and add-ins have to be SSL-secured?](https://dev.office.com/officestore/docs/office-store-submission-faq#why-do-my-apps-and-add-ins-have-to-be-ssl-secured).
+    You must specify an address that begins with the HTTPS prefix to complete this wizard. Although using an HTTPS endpoint for your website is generally recommended, doing so is not required if you don't plan to publish your add-in to the Office Store. If you want to use an HTTP endpoint for your website, you can open the XML manifest file in a text editor after the package has been created and replace the HTTPS prefix of your website with an HTTP prefix. For more information, see [Why do my apps and add-ins have to be SSL-secured?](https://docs.microsoft.com/en-us/office/dev/store/office-store-submission-faq#why-do-my-apps-and-add-ins-have-to-be-ssl-secured).
     
     > [!NOTE]
     > Azure websites automatically provide an HTTPS endpoint.
@@ -55,8 +55,8 @@ You can now upload your XML manifest to the appropriate location to [publish you
  `%UserProfile%\Documents\Visual Studio 2015\Projects\MyApp\bin\Debug\app.publish\OfficeAppManifests`
 
 
-## Additional resources
+## See also
 
 - [Publish your Office Add-in](../publish/publish.md)
-- [Submit Office and SharePoint Add-ins and Office 365 web apps to the Office Store](https://dev.office.com/officestore/docs/submit-to-the-office-store)
+- [Submit Office and SharePoint Add-ins and Office 365 web apps to the Office Store](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store)
     

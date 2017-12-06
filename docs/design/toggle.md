@@ -32,7 +32,7 @@ Toggles represent a physical switch to turn things on or off. Use toggles to pre
 
 For details, see [Toggle](https://dev.office.com/fabric#/components/toggle) and [Getting started with Fabric React code sample](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact).
 
-## Additional resources
+## See also
 
 - [UX Design Patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
 - [Office UI Fabric in Office Add-ins](office-ui-fabric.md)

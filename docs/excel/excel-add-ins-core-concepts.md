@@ -276,7 +276,7 @@ When an API error occurs, the API will return an **error** object that contains 
 |InsertDeleteConflict|The insert or delete operation attempted resulted in a conflict.|
 |InvalidOperation|The operation attempted is invalid on the object.|
  
-## Additional resources
+## See also
  
 * [Get started with Excel add-ins](excel-add-ins-get-started-overview.md)
 * [Excel add-ins code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)

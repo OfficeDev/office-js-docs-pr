@@ -21,7 +21,7 @@ These testing services help you to streamline test plan creation and remove the 
 You need only five participants to uncover most usability issues in your design. Incorporate small tests regularly throughout your development cycle to ensure that your product is user-centered.
 
 > [!NOTE]
-> We recommend that you test the usability of your add-in across multiple platforms. To [publish your add-in to the Office Store](https://dev.office.com/officestore/docs/submit-to-the-office-store), it must work on all [platforms that support the methods that you define](../overview/office-add-in-availability.md).
+> We recommend that you test the usability of your add-in across multiple platforms. To [publish your add-in to the Office Store](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store), it must work on all [platforms that support the methods that you define](../overview/office-add-in-availability.md).
 
 ## 1.	Sign up for a testing service
 
@@ -134,7 +134,7 @@ A single participant having a usability issue is not enough to warrant making a 
 In general, be careful about how you use your data to draw conclusions. Don’t fall into the trap of trying to make the data fit a certain narrative; be honest about what the data actually proves, disproves, or simply fails to provide any insight about. Keep an open mind; user behavior frequently defies designer’s expectations.
  
 
-## Additional resources
+## See also
  
  - [How to Conduct Usability Testing](http://whatpixel.com/howto-conduct-usability-testing/)  
  - [Best Practices](http://help.usertesting.com/customer/en/portal/articles/1680726-best-practices)  

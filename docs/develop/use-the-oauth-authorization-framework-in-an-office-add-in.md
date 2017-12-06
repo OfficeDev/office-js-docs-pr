@@ -122,7 +122,7 @@ The following code segment, taken from connect.js, updates the add-in's UI with 
 ```
 
 
-## Additional resources
+## See also
 
 - [Office Add-in Server Authentication Sample for Node.js](https://github.com/OfficeDev/Office-Add-in-Nodejs-ServerAuth/blob/master/README.md)
     

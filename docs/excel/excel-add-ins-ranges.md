@@ -531,7 +531,7 @@ Excel.run(function (context) {
 
 ![Data in Excel after format is set](../images/excel-ranges-format-numbers.png)
 
-## Additional resources
+## See also
 
 - [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
 - [Range Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/range)

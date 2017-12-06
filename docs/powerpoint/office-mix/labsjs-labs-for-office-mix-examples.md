@@ -23,7 +23,7 @@ The following Office Mix instances in the [Office Mix Gallery](https://mix.offic
 - [Code Hunt](https://mix.office.com/watch/q4tnp5au9mbo)
     
 
-## Additional resources
+## See also
 
 - [Office Mix add-ins](../../powerpoint/office-mix/office-mix-add-ins.md)
 - [Get started with LabsJS for Office Mix](../../powerpoint/office-mix/get-started-with-labsjs-for-office-mix.md)

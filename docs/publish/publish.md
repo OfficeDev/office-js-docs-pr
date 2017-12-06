@@ -13,12 +13,12 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 |[Sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|As part of your development process, to test your add-in running on Windows, Office Online, iPad, or Mac.|
 |[Centralized Deployment](centralized-deployment.md)|In a cloud or hybrid deployment, to distribute your add-in to users in your organization by using the Office 365 admin center.|
 |[SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|In an on-premises environment, to distribute your add-in to users in your organization.|
-|[Office Store](https://dev.office.com/officestore/docs/submit-to-the-office-store)|To distribute your add-in publicly to users.|
+|[Office Store](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store)|To distribute your add-in publicly to users.|
 |[Exchange server](#outlook-add-in-deployment)|In an on-premises or online environment, to distribute Outlook add-ins to users.|
-|[Network share](https://dev.office.com/docs/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins)|On a Windows computer on a network where you want to host your add-in, go to the parent folder, or drive letter, of the folder you want to use as your shared folder catalog.|
+|[Network share](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|On a Windows computer on a network where you want to host your add-in, go to the parent folder, or drive letter, of the folder you want to use as your shared folder catalog.|
 
 > [!NOTE]
-> If you plan to submit your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://dev.office.com/officestore/docs/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://dev.office.com/officestore/docs/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).
+> If you plan to submit your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://docs.microsoft.com/en-us/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).
 
 ## Deployment options by Office host
 
@@ -73,13 +73,13 @@ Outlook add-in deployment requires:
 
 To assign add-ins to tenants, you use the Exchange admin center to upload a manifest directly, either from a file or a URL, or add an add-in from the Office Store. To assign add-ins to individual users, you must use Exchange PowerShell. For details, see [Install or remove Outlook add-ins for your organization](https://technet.microsoft.com/en-us/library/jj943752(v=exchg.150).aspx) on TechNet.
 
-## Additional resources
+## See also
 
-- [Sideload Outlook add-ins for testing](https://dev.office.com/docs/add-ins/testing/sideload-outlook-add-ins-for-testing)
+- [Sideload Outlook add-ins for testing](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 - [Submit to the Office Store][Office Store]
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)
-- [Create effective Office Store listings](https://dev.office.com/officestore/docs/create-effective-office-store-listings)
+- [Create effective Office Store listings](https://docs.microsoft.com/en-us/office/dev/store/create-effective-office-store-listings)
 - [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)
 
-[Office Store]: https://dev.office.com/officestore/docs/submit-to-the-office-store
-[Office Add-in host and platform availability]: http://dev.office.com/add-in-availability
+[Office Store]: https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store
+[Office Add-in host and platform availability]: ../overview/office-add-in-availability

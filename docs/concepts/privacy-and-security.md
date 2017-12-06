@@ -135,7 +135,7 @@ The following example shows how a task pane add-in specifies the  **ReadDocument
 </OfficeApp>
 ```
 
-For more information about this for task pane and content add-ins , see [Requesting permissions for API use in content and task pane add-ins](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md).
+For more information about this for task pane and content add-ins , see [Requesting permissions for API use in content and task pane add-ins](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md).
 
 For more information about this for Outlook add-ins, see the following topics:
 
@@ -165,7 +165,7 @@ function loadVideoDetails(videoIndex) {
 }
 ```
 
-Exchange and SharePoint provide client-side proxies to enable cross-domain access. In general, same origin policy on an intranet isn't as strict as on the Internet. For more information, see [Same Origin Policy Part 1: No Peeking](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx) and [Addressing same-origin policy limitations in Office Add-ins](addressing-same-origin-policy-limitations.md).
+Exchange and SharePoint provide client-side proxies to enable cross-domain access. In general, same origin policy on an intranet isn't as strict as on the Internet. For more information, see [Same Origin Policy Part 1: No Peeking](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx) and [Addressing same-origin policy limitations in Office Add-ins](../develop/addressing-same-origin-policy-limitations.md).
 
 ### Tips to prevent malicious cross-site scripting
 
@@ -206,7 +206,7 @@ Here are some examples of how you could get confirmation:
 
 - Send a text message to the user that includes a confirmation code that the user can enter in the add-in.
 
-- Open a confirmation dialog in a new browser window to a page that cannot be iframed. This is typically the pattern that is used by login pages. Use the [dialog api](dialog-api-in-office-add-ins.md) to create a new dialog.
+- Open a confirmation dialog in a new browser window to a page that cannot be iframed. This is typically the pattern that is used by login pages. Use the [dialog api](../develop/dialog-api-in-office-add-ins.md) to create a new dialog.
 
 Also, ensure that the address you use for contacting the user couldn't have been provided by a potential attacker. For example, for payment confirmations use the address on file for the authorized user's account.
 
@@ -243,7 +243,7 @@ Other than resource usage rules, developers for Outlook add-ins should also make
 
 In a corporate setting, IT administrators have ultimate authority over enabling or disabling access to the Office Store and any private catalogs.
 
-## Additional resources
+## See also
 
 - [Requesting permissions for API use in content and task pane add-ins](http://msdn.microsoft.com/library/da2efadc-4ebf-45fe-be39-397ac1eb1dbd.aspx)
 - [Privacy, permissions, and security for Outlook add-ins](http://msdn.microsoft.com/library/44208fc4-05d4-42d8-ab20-faa89624de1c.aspx)

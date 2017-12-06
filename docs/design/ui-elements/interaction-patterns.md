@@ -201,7 +201,7 @@ Best suited for:
 Best suited for:
 <ul><li><p>Add-ins that require data entry.</p></li><li><p>An entry-point to a results and details pattern.</p></li></ul>
 
-## Additional resources
+## See also
 
 - [Design guidelines for Office Add-ins](../add-in-design.md)
     

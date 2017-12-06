@@ -435,7 +435,7 @@ $(document).ready(function () {
 ```
 
 
-## Additional resources
+## See also
 
 - [Office Mix add-ins](office-mix-add-ins.md)
     

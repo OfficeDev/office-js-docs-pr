@@ -7,7 +7,7 @@ ms.date: 12/04/2017
 # Office Add-ins development lifecycle
 
 > [!NOTE]
-> When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://dev.office.com/officestore/docs/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://dev.office.com/officestore/docs/validation-policies) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).
+> When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://docs.microsoft.com/en-us/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://docs.microsoft.com/en-us/office/dev/store/validation-policies) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).
 
 The typical development lifecycle of an Office Add-in includes the following steps:
 

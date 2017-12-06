@@ -21,6 +21,6 @@ For a sample that shows how to use Office UI Fabric in Office Add-ins, see [Offi
 
 <!-- Add sample template for content add-in and individual building blocks - Command Bar, Input, layout components. -->
 
-## Additional resources
+## See also
 
 - [Design guidelines for Office Add-ins](../add-in-design.md)

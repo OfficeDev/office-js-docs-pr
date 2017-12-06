@@ -42,7 +42,7 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
 5. In **File Sharing**, choose the drop-down arrow and then choose **Everyone** > **Add** > **Share**.
     
 > [!NOTE]
-> In this walkthrough, you're using a local file share as a trusted catalog where you'll store the add-in XML manifest file. In a real-world scenario, you might instead choose to [deploy the XML manifest file to a SharePoint catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) or [publish the add-in to the Office Store](https://dev.office.com/officestore/docs/submit-to-the-office-store).
+> In this walkthrough, you're using a local file share as a trusted catalog where you'll store the add-in XML manifest file. In a real-world scenario, you might instead choose to [deploy the XML manifest file to a SharePoint catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) or [publish the add-in to the Office Store](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store).
 
 ## Step 2: Add the file share to the Trusted Add-ins catalog
 
@@ -187,7 +187,7 @@ Visual Studio creates a basic Word add-in that you'll be able to publish as-is, 
     
 6. Verify that the add-in works by selecting some text in the document and choosing the **Highlight!** button in the task pane. 
 
-## Additional resources
+## See also
 
 - [Publish your Office Add-in](../publish/publish.md)
 - [Package your add-in using Visual Studio to prepare for publishing](../publish/package-your-add-in-using-visual-studio.md)

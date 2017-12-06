@@ -60,7 +60,7 @@ This example uses Word and a free add-in from the Office Store.
    ![Debugger with results from the triggered breakpoint](../images/debugger-home-js-01.png)
 
 
-## Additional resources
+## See also
 
 - [Inspect running JavaScript with the Debugger](https://msdn.microsoft.com/library/dn255007%28v=vs.85%29.aspx)
 - [Using the F12 developer tools](https://msdn.microsoft.com/en-us/library/bg182326%28v=vs.85%29.aspx)

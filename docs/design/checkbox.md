@@ -34,7 +34,7 @@ A check box is a UI element that allows users to select or clear options in add-
 
 For details, see [Checkbox](https://dev.office.com/fabric#/components/checkbox) and [Getting started with Fabric React code sample](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact).
 
-## Additional resources
+## See also
 
 - [UX Design Patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
 - [Office UI Fabric in Office Add-ins](office-ui-fabric.md)

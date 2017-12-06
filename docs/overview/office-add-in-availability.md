@@ -477,7 +477,7 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
 
 \* = We're working on it. 
 
-## Additional resources
+## See also
 
 - [Office Add-ins platform overview](office-add-ins.md)
 - [Common API requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets)

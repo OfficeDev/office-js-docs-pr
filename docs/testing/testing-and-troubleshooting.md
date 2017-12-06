@@ -10,7 +10,7 @@ At times your users might encounter issues with Office Add-ins that you develop.
 
 You can also use [Fiddler](http://www.telerik.com/fiddler) to identify and debug issues with your add-ins.
 
-After you resolve the user's issue, you can [respond directly to customer reviews in the Office Store](https://dev.office.com/officestore/docs/create-effective-office-store-listings).
+After you resolve the user's issue, you can [respond directly to customer reviews in the Office Store](https://docs.microsoft.com/en-us/office/dev/store/create-effective-office-store-listings).
 
 ## Common errors and troubleshooting steps
 
@@ -23,7 +23,7 @@ The following table lists common error messages that users might encounter and s
 |App error: Catalog could not be reached|Verify firewall settings."Catalog" refers to the Office Store. This message indicates that the user cannot access the Office Store.|
 |APP ERROR: This app could not be started. Close this dialog to ignore the problem or click "Restart" to try again.|Verify that the latest Office updates are installed, or download the [update for Office 2013](https://support.microsoft.com/en-us/kb/2986156/).|
 |Error: Object doesn't support property or method 'defineProperty'|Confirm that Internet Explorer is not running in Compatibility Mode. Go to Tools >  **Compatibility View Settings**.|
-|Sorry, we couldn't load the app because your browser version is not supported. Click here for a list of supported browser versions.|Make sure that the browser supports HTML5 local storage, or reset your Internet Explorer settings. For information about supported browsers, see [Requirements for running Office Add-ins](../overview/requirements-for-running-office-add-ins.md).|
+|Sorry, we couldn't load the app because your browser version is not supported. Click here for a list of supported browser versions.|Make sure that the browser supports HTML5 local storage, or reset your Internet Explorer settings. For information about supported browsers, see [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md).|
 
 
 ## Outlook add-in doesn't work correctly
@@ -100,7 +100,7 @@ Delete the content of the folder `/Users/{your_name_on_the_device}/Library/Conta
 #### For iOS:
 Call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, you can reinstall Office.
 
-## Additional resources
+## See also
 
 - [Debug add-ins in Office Online](debug-add-ins-in-office-online.md) 
 - [Sideload an Office Add-in on iPad and Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  

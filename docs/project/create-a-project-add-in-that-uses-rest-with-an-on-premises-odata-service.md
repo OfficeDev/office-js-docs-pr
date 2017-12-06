@@ -4,8 +4,6 @@ description: ''
 ms.date: 12/04/2017
 ---
 
-
-
 # Create a Project add-in that uses REST with an on-premises Project Server OData service
 
 This article describes how to build a task pane add-in for Project Professional 2013 that compares cost and work data in the active project with the averages for all projects in the current Project Web App instance. The add-in uses REST with the jQuery library to access the  **ProjectData** OData reporting service in Project Server 2013.
@@ -108,8 +106,7 @@ The  **AddIn** folder (see the next screenshot) contains the App.css file for cu
 
 The manifest for the  **HelloProjectOData** project is the HelloProjectOData.xml file. You can optionally modify the manifest to add a description of the add-in, a reference to an icon, information for additional languages, and other settings. Procedure 3 simply modifies the add-in display name and description, and adds an icon.
 
-For more information about the manifest, see [Office Add-ins XML manifest](../overview/add-in-manifests.md) and [Schema reference for Office Add-ins manifests (v1.1)](../overview/add-in-manifests.md#additional-resources).
-
+For more information about the manifest, see [Office Add-ins XML manifest](../develop/add-in-manifests.md) and [Schema reference for Office Add-ins manifests (v1.1)](../develop/add-in-manifests.md#see-also).
 
 ### Procedure 3. To modify the add-in manifest
 
@@ -1135,11 +1132,11 @@ If you modify the  **HelloProjectOData** add-in for production use, do the follo
 - To deploy the add-in, see [Publish your Office Add-in](../publish/publish.md).
     
 
-## Additional resources
+## See also
 
 - [Task pane add-ins for Project](project-add-ins.md)
 - [Create your first task pane add-in for Project 2013 by using a text editor](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [ProjectData - Project OData service reference](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx) 
-- [Office Add-ins XML manifest](../overview/add-in-manifests.md) 
+- [Office Add-ins XML manifest](../develop/add-in-manifests.md) 
 - [Publish your Office Add-in](../publish/publish.md)
     

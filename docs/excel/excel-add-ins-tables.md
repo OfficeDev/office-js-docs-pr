@@ -442,7 +442,7 @@ Excel.run(function (context) {
 
 ![New table in Excel](../images/excel-tables-create-from-json.png)
 
-## Additional resources
+## See also
 
 - [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
 - [Table Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/table)

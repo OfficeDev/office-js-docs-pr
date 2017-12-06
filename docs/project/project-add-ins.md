@@ -67,7 +67,7 @@ The manifest file specifies the URL of the add-in webpage or web application, th
 ### Procedure 1. To create the add-in manifest file for Bing Search
 
 
-- Create an XML file in a local directory. The XML file includes the  **OfficeApp** element and child elements, which are described in the [Office Add-ins XML manifest](../overview/add-in-manifests.md). For example, create a file named BingSearch.xml that contains the following XML.
+- Create an XML file in a local directory. The XML file includes the  **OfficeApp** element and child elements, which are described in the [Office Add-ins XML manifest](../develop/add-in-manifests.md). For example, create a file named BingSearch.xml that contains the following XML.
     
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -195,10 +195,10 @@ In Procedure 2, the Bing Search add-in is installed on the local computer where 
 You can distribute add-ins through a file share, an add-in catalog in a SharePoint library, or an Project Add-in in the Office Store. For more information, see [Publish your Office Add-in](../publish/publish.md).
 
 
-## Additional resources
+## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
-- [Office Add-ins XML manifest](../overview/add-in-manifests.md)
+- [Office Add-ins XML manifest](../develop/add-in-manifests.md)
 - [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)
 - [Create your first task pane add-in for Project 2013 by using a text editor](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [Create a Project add-in that uses REST with an on-premises Project Server OData service](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
