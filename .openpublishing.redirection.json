@@ -83,17 +83,17 @@
       {   
         "source_path": "docs/develop/implementation-details.md", 
         "redirect_url": "/office/dev/add-ins/develop/understanding-the-javascript-api-for-office", 
-        "redirect_document_id": true 
+        "redirect_document_id": false 
       }, 
       {   
         "source_path": "docs/develop/office-js-versioning.md", 
         "redirect_url": "/office/dev/add-ins/develop/understanding-the-javascript-api-for-office", 
-        "redirect_document_id": true 
+        "redirect_document_id": false 
       }, 
       {   
         "source_path": "docs/develop/office-versions.md", 
         "redirect_url": "/office/dev/add-ins/develop/understanding-the-javascript-api-for-office", 
-        "redirect_document_id": true 
+        "redirect_document_id": false 
       }
     ] 
 }
