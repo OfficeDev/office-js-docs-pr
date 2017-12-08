@@ -77,6 +77,8 @@ function handleDataChange(event)
 The following code sample registers an event handler for the `onSelectionChanged` event in the worksheet named **Sample** and defines the `handleSelectionChange` function that will run when the event occurs. It also defines the `remove()` function that can subsequently be called to remove that event handler.
 
 ```js
+var eventResult;
+
 Excel.run(function (context) {
     var worksheet = context.workbook.worksheets.getItem("Sample");
     eventResult = worksheet.onSelectionChanged.add(handleSelectionChange);
@@ -92,9 +94,7 @@ function handleSelectionChange(event)
     return Excel.run(function(context){
         return context.sync()
             .then(function() {
-                console.log("Change type of event: " + event.changeType);
-                console.log("Address of event: " + event.address);
-                console.log("Source of event: " + event.source);
+                console.log("Address of current selection: " + event.address);
             });
     }).catch(errorHandlerFunction);
 }
