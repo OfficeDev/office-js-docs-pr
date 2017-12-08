@@ -15,14 +15,14 @@ This article describes important concepts about events in Excel and provides cod
 
 Each time certain types of changes occur in an Excel workbook, an event notification fires. By using the Excel JavaScript API, you can register event handlers that allow your add-in to automatically run a designated function when a specific event occurs. The following events are currently supported.
 
-| Event | Description |
-|:---------------|:-------------|
-| `onAdded` | Event that occurs when an object is added. Currently supported by the following object(s): **Worksheet**. |
-| `onDeleted`  | Event that occurs when an object is deleted. Currently supported by the following object(s): **Worksheet**. |
-| `onActivated` | Event that occurs when an object is activated. Currently supported by the following object(s): **Worksheet**. |
-| `onDeactivated` | Event that occurs when an object is deactivated.  Currently supported by the following object(s): **Worksheet**. |
-| `onDataChanged` | Event that occurs when data within cells is changed. Currently supported by the following object(s): **Worksheet**, **Table**, **TableCollection**, **Binding**. |
-| `onSelectionChanged` | Event that occurs when the active cell or selected range is changed. Currently supported by the following object(s): **Worksheet**, **Table**, **Binding**. |
+| Event | Description | Supported objects |
+|:---------------|:-------------|:-----------|
+| `onAdded` | Event that occurs when an object is added. | **Worksheet** |
+| `onDeleted`  | Event that occurs when an object is deleted. | **Worksheet** |
+| `onActivated` | Event that occurs when an object is activated. | **Worksheet** |
+| `onDeactivated` | Event that occurs when an object is deactivated. | **Worksheet** |
+| `onDataChanged` | Event that occurs when data within cells is changed. | **Worksheet**, **Table**, **TableCollection**, **Binding** |
+| `onSelectionChanged` | Event that occurs when the active cell or selected range is changed. | **Worksheet**, **Table**, **Binding** |
 
 ### Event triggers
 
