@@ -6,7 +6,7 @@ ms.date: 12/08/2017
 
 # Work with Events using the Excel JavaScript API
 
-This article describes important concepts about events in Excel and provides code samples that show how to register event handlers, handle events, and remove event handlers using the Excel JavaScript API. 
+This article describes important concepts related to working with events in Excel and provides code samples that show how to register event handlers, handle events, and remove event handlers using the Excel JavaScript API. 
 
 > [!IMPORTANT]
 > The APIs described in this article are currently available only in public preview (beta) and are not intended for use in production environments. To run the code samples that this article contains, you must use a sufficiently recent build of Office and reference the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
@@ -37,6 +37,10 @@ Any change that complies with default behavior of Excel will trigger the corresp
 ### Lifecycle of an event handler
 
 An event handler is created when an add-in registers the event handler and is destroyed when the add-in unregisters the event handler or when the add-in is closed. Event handlers do not persist as part of the Excel file.
+
+### Events and coauthoring
+
+With [coauthoring](excel/co-authoring-in-excel-add-ins.md), multiple people can work together and edit the same Excel workbook simultaneously. For events that can be triggered by a coauthor, such as `onDataChanged`, the corresponding **Event** object will contain a **source** property that indicates whether the event was triggered locally by the current user (`event.source = Local`) or was triggered by the remote coauthor (`event.source = Remote`).
 
 ## Register an event handler
 
