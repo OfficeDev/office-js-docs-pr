@@ -190,6 +190,8 @@
         href: excel/custom-functions-overview.md
       - name: Charts
         href: excel/excel-add-ins-charts.md
+      - name: Events
+        href: excel/excel-add-ins-events.md
       - name: Ranges
         href: excel/excel-add-ins-ranges.md
       - name: Tables
