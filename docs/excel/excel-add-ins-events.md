@@ -6,16 +6,14 @@ ms.date: 12/08/2017
 
 # Work with Events using the Excel JavaScript API
 
-By registering event handlers with the Excel JavaScript API, your add-in can be notified when events occur in the Excel workbook, thereby allowing it to run the specified function in response to each event. This article describes important concepts about events and provides code samples that show how to register event handlers, handle events, and remove event handlers using the Excel JavaScript API. 
+This article describes important concepts about events in Excel and provides code samples that show how to register event handlers, handle events, and remove event handlers using the Excel JavaScript API. 
 
 > [!IMPORTANT]
 > The APIs described in this article are currently available only in public preview (beta) and are not intended for use in production environments. To run the code samples that this article contains, you must use a sufficiently recent build of Office and reference the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
 ## Events in Excel
 
-Each time certain types of changes occur in an Excel workbook, an event notification fires. By using the Excel JavaScript API, you can register event handlers that enable your add-in to run a designated function in response to each event.
-
-The following events are currently supported by the Excel JavaScript API.
+Each time certain types of changes occur in an Excel workbook, an event notification fires. By using the Excel JavaScript API, you can register event handlers that allow your add-in to automatically run a designated function when a specific event occurs. The following events are currently supported.
 
 | Event | Description |
 |:---------------|:-------------|
@@ -38,7 +36,7 @@ Any change that complies with default behavior of Excel will trigger the corresp
 
 ### Lifecycle of an event handler
 
-An event handler is created when an add-in registers the event handler and is destroyed when the add-in unregisters the event handler or when the add-in is closed. Event handlers do not persist as part of the Excel file itself.
+An event handler is created when an add-in registers the event handler and is destroyed when the add-in unregisters the event handler or when the add-in is closed. Event handlers do not persist as part of the Excel file.
 
 ## Register an event handler
 
