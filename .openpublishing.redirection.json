@@ -79,6 +79,21 @@
         "source_path": "docs/access/access-web-app-add-ins.md", 
         "redirect_url": "https://powerapps.microsoft.com/en-us/", 
         "redirect_document_id": true 
+      }, 
+      {   
+        "source_path": "docs/develop/implementation-details.md", 
+        "redirect_url": "/office/dev/add-ins/develop/understanding-the-javascript-api-for-office", 
+        "redirect_document_id": false 
+      }, 
+      {   
+        "source_path": "docs/develop/office-js-versioning.md", 
+        "redirect_url": "/office/dev/add-ins/develop/understanding-the-javascript-api-for-office", 
+        "redirect_document_id": false 
+      }, 
+      {   
+        "source_path": "docs/develop/office-versions.md", 
+        "redirect_url": "/office/dev/add-ins/develop/understanding-the-javascript-api-for-office", 
+        "redirect_document_id": false 
       }
     ] 
 }
