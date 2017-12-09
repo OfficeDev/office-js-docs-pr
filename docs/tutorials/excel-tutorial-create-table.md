@@ -9,7 +9,7 @@ ms.date: 12/08/2017
 
 This is the first step in a series of tutorials. Each one adds to the same project. 
 
->**Note**: If you haven't already, please read [Excel add-in quickstart that uses jQuery](excel-add-ins-get-started-jquery.md). In particular, be sure that you know how to sideload an Excel add-in for testing.
+>**Note**: If you haven't already, please read [Excel add-in quickstart that uses jQuery](../quickstarts/excel-quickstart-jquery.md). In particular, be sure that you know how to sideload an Excel add-in for testing.
 
 This first tutorial shows you how to programmatically add a table to a worksheet, populate the table with data, and then format it. It also shows you how to test that your add-in supports the user's current version of Excel.
 
@@ -128,7 +128,7 @@ To use this tutorial, you need to have the following installed.
 1. Open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
 3. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used under-the-hood by Excel to run Excel add-ins).
 4. Run the command `npm start` to start a web server running on localhost.   
-5. Sideload the add-in using one of the methods specified in [Excel add-in quickstart that uses jQuery](excel-add-ins-get-started-jquery.md).
+5. Sideload the add-in using one of the methods specified in [Excel add-in quickstart that uses jQuery](../quickstarts/excel-quickstart-jquery.md).
 6. On the **Home** menu, choose **Show Taskpane**.
 7. In the taskpane, choose **Create Table**. 
 

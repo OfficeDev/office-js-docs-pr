@@ -90,7 +90,7 @@ In this tutorial, you'll learn how to programmatically create a chart from table
 1. Open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
 3. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used by Excel to run Excel add-ins).
 4. Run the command `npm start` to start a web server running on localhost.
-5. Sideload the add-in using one of the methods described in [Excel add-in quickstart that uses jQuery](excel-add-ins-get-started-jquery.md).
+5. Sideload the add-in using one of the methods described in [Excel add-in quickstart that uses jQuery](../quickstarts/excel-quickstart-jquery.md).
 6. On the **Home** menu, select **Show Taskpane**.
 7. In the taskpane, choose **Create Table**. 
 8. Choose the **Filter Table** and **Sort Table** buttons, in either order.
