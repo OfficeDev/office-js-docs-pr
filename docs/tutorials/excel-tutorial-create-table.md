@@ -130,8 +130,7 @@ To use this tutorial, you need to have the following installed.
 4. Run the command `npm start` to start a web server running on localhost.   
 5. Sideload the add-in using one of the methods specified in [Excel add-in quickstart that uses jQuery](../quickstarts/excel-quickstart-jquery.md).
 6. On the **Home** menu, choose **Show Taskpane**.
-7. In the taskpane, choose **Create Table**. 
-
+7. In the taskpane, choose **Create Table**.
 
     ![Excel tutorial - Create Table](../images/excel-tutorial-create-table.png)
 
