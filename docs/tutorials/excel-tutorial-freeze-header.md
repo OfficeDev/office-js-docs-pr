@@ -89,7 +89,7 @@ When a table is long enough that a user must scroll to see some rows, the header
 	white-space: nowrap; 
 	cursor: pointer; 
 	background-color: rgb(0, 120, 215);
-}" href="excel-tutorial-filter-and-sort-table.md">I'm ready for the <b>Protect Worksheet</b> tutorial</a>     
+}" href="excel-tutorial-protect-worksheet.md">I'm ready for the <b>Protect Worksheet</b> tutorial</a>     
 <a style="padding: 13px 33px; 
 	border-radius: 4px; 
 	border: 2px solid rgb(0, 120, 215); 
