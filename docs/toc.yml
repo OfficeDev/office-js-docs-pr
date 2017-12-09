@@ -37,7 +37,17 @@
       href: tutorials/get-javascript-intellisense-in-visual-studio.md
   - name: Create and debug an Office Add-in using any editor
     href: tutorials/create-an-office-add-in-using-any-editor.md
-
+  - name: Create a table in Excel
+    href: tutorials/excel-tutorial-create-table.md
+  - name: Filter and sort a table in Excel
+    href: tutorials/excel-tutorial-filter-and-sort-table.md
+  - name: Create a chart in Excel
+    href: tutorials/excel-tutorial-create-chart.md
+  - name: Freeze a table header in Excel
+    href: tutorials/excel-tutorial-freeze-header.md
+  - name: Protect a worksheet in Excel
+    href: tutorials/excel-tutorial-protect-worksheet.md
+    
 - name: Concepts
   items:
   - name: Requirements for running add-ins

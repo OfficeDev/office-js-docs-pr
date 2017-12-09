@@ -96,7 +96,6 @@ In this tutorial, you'll learn how to programmatically create a chart from table
 8. Choose the **Filter Table** and **Sort Table** buttons, in either order.
 9. Choose the **Create Chart** button. A chart is created and only the data from the rows that have been filtered are included. The labels on the data points across the bottom are in the sort order of the chart; that is, merchant names in reverse alphabetical order.
 
-
     ![Excel tutorial - Create Chart](../images/excel-tutorial-create-chart.png)
 
 
