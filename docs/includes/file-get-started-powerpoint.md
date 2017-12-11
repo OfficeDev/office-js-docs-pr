@@ -22,7 +22,7 @@ Content here under VS Heading 2. Content here under VS Heading 2. Content here u
 
 - [Node.js](https://nodejs.org)
 
-If you haven't done so previously, you'll need to install [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
+- If you haven't done so previously, you'll need to install [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
 
     ```bash
     npm install -g yo generator-office
