@@ -232,6 +232,5 @@ These steps must be completed whenever your code needs to *read* information fro
 ## Additional resources
 
 * [Excel JavaScript API core concepts](../excel/excel-add-ins-core-concepts.md)
-* [Explore snippets with Script Lab](https://store.office.com/en-001/app.aspx?assetid=WA104380862&ui=en-US&rs=en-001&ad=US&appredirect=false)
 * [Excel add-in code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API reference](../../reference/excel/excel-add-ins-reference-overview.md)
+* [Excel JavaScript API reference](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
