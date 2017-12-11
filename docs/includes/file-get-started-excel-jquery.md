@@ -4,6 +4,8 @@ In this article, you'll walk through the process of building an Excel add-in by 
 
 [!include[Tip: choose your editor in the next section](../includes/alert-choose-editor.md)]
 
+## Create the add-in 
+
 # [Visual Studio](#tab/visual-studio)
 
 ### VS Heading 1
@@ -20,9 +22,9 @@ Content here under VS Heading 2. Content here under VS Heading 2. Content here u
 
 If you haven't done so previously, you'll need to install [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
 
-```bash
-npm install -g yo generator-office
-```
+    ```bash
+    npm install -g yo generator-office
+    ```
 
 ### Create the web app
 
@@ -134,7 +136,7 @@ npm install -g yo generator-office
 
 4. Save the file but don't close it yet.
 
-## Configure to use HTTP
+### Configure to use HTTP
 
 Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. However, to get the add-in up and running fast, this quick start will use HTTP. To enable this, take these steps:
 

@@ -4,12 +4,11 @@ _Applies to: Word 2016, Word for iPad, Word for Mac_
 
 A Word add-in runs inside Word and can interact with the contents of the document using the Word JavaScript API, which is part of the Office Add-ins programming model for extending Office applications. In this add-in programming model, you can use the platform and language of your choice to create the web application that hosts your extension to Word and then use the add-in's [manifest](../develop/add-in-manifests.md) to define its settings and capabilities.
 
-> [!NOTE]
-> To develop an add-in for Word 2013, you'll need to use the shared [Office Javascript API](../word/word-add-ins-programming-overview.md#javascript-apis-for-word). To learn more about the platforms and the different APIs that are available, see [Office Add-in host and platform availability](../overview/office-add-in-availability.md). 
-
 In this article, you'll walk through the process of building a Word add-in by using jQuery and the Word JavaScript API. 
 
 [!include[Tip: choose your editor in the next section](../includes/alert-choose-editor.md)]
+
+## Create the add-in 
 
 # [Visual Studio](#tab/visual-studio)
 
@@ -202,7 +201,7 @@ Content here under VS Heading 2. Content here under VS Heading 2. Content here u
 
 2. In the right task pane, choose any of the buttons to add boilerplate text to the document.
 
-![Picture of the Word application with the boilerplate add-in loaded.](../images/boilerplate-add-in.png)
+    ![Picture of the Word application with the boilerplate add-in loaded.](../images/boilerplate-add-in.png)
 
 ---
 
