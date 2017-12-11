@@ -4,12 +4,26 @@ _Applies to: Word 2016, Word for iPad, Word for Mac_
 
 A Word add-in runs inside Word and can interact with the contents of the document using the Word JavaScript API, which is part of the Office Add-ins programming model for extending Office applications. In this add-in programming model, you can use the platform and language of your choice to create the web application that hosts your extension to Word and then use the add-in's [manifest](../develop/add-in-manifests.md) to define its settings and capabilities.
 
-In this article, you'll walk through the process of building a Word add-in by using jQuery and the Word JavaScript API. 
-
 > [!NOTE]
 > To develop an add-in for Word 2013, you'll need to use the shared [Office Javascript API](../word/word-add-ins-programming-overview.md#javascript-apis-for-word). To learn more about the platforms and the different APIs that are available, see [Office Add-in host and platform availability](../overview/office-add-in-availability.md). 
 
-## Create the web app 
+In this article, you'll walk through the process of building a Word add-in by using jQuery and the Word JavaScript API. 
+
+[!include[Tip: choose your editor in the next section](../includes/alert-choose-editor.md)]
+
+# [Visual Studio](#tab/visual-studio)
+
+### VS Heading 1
+
+Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. 
+
+### VS Heading 2
+
+Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. 
+
+# [Any editor](#tab/visual-studio-code)
+
+### Create the web app 
 
 1. Create a folder on your local drive and name it **BoilerplateAddin**. This is where you'll create the files for your app.
 
@@ -143,7 +157,7 @@ In this article, you'll walk through the process of building a Word add-in by us
     })();
     ```
 
-## Create the manifest file
+### Create the manifest file
 
 1. In your app folder, create a file named **BoilerplateManifest.xml** to define the add-in's settings and capabilities. Add the following code to the file. 
 
@@ -172,13 +186,13 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 3. Save the manifest file.
 
-## Deploy the web app and update the manifest
+### Deploy the web app and update the manifest
 
 1. Deploy your web app (i.e., the contents of your app folder) to the web server of your choice.
 
 2. In your local app folder, open the manifest file (**BoilerplateManifest.xml**). Edit the attribute value within the **SourceLocation** element to specify the location of the **home.html** file on the web server and save the file.
 
-## Try it out
+### Try it out
 
 1. To sideload the add-in within Word, follow the instructions for the platform you'll use to run your add-in.
 
@@ -189,6 +203,8 @@ In this article, you'll walk through the process of building a Word add-in by us
 2. In the right task pane, choose any of the buttons to add boilerplate text to the document.
 
 ![Picture of the Word application with the boilerplate add-in loaded.](../images/boilerplate-add-in.png)
+
+---
 
 ## Next steps
 

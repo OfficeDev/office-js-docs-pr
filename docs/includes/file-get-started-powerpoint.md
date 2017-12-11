@@ -2,7 +2,21 @@
 
 In this article, you'll walk through the process of building a PowerPoint add-in by using jQuery and the Office JavaScript API.
 
-## Prerequisites
+[!include[Tip: choose your editor in the next section](../includes/alert-choose-editor.md)]
+
+# [Visual Studio](#tab/visual-studio)
+
+### VS Heading 1
+
+Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. 
+
+### VS Heading 2
+
+Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. 
+
+# [Any editor](#tab/visual-studio-code)
+
+### Prerequisites
 
 - [Node.js](https://nodejs.org)
 
@@ -12,7 +26,7 @@ If you haven't done so previously, you'll need to install [Yeoman](https://githu
 npm install -g yo generator-office
 ```
 
-## Create the add-in
+### Create the add-in
 
 1. Create a folder on your local drive and name it `my-powerpoint-addin`. This is where you'll create the files for your add-in.
 
@@ -39,7 +53,7 @@ npm install -g yo generator-office
 
     ![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-powerpoint-jquery.png)
 
-## Update the code
+### Update the code
 
 1. In your code editor, open **index.html** in the root of the project. This files contains the HTML that will be rendered in the add-in's task pane.
 
@@ -142,7 +156,7 @@ npm install -g yo generator-office
     }
     ```
 
-## Update the manifest
+### Update the manifest
 
 1. Open the **my-office-add-in-manifest.xml** file.
 2. The `ProviderName` element has a placeholder value. Replace it with your name.
@@ -159,7 +173,7 @@ npm install -g yo generator-office
     ...
     ```
 
-## Configure to use HTTP
+### Configure to use HTTP
 
 Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. However, to get the add-in up and running fast, this quickstart will use HTTP. To enable this, take these steps:
 
@@ -167,7 +181,7 @@ Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. How
 
 2. Open the **bsconfig.json** file in the root of the project. Change the value of the **https** property to `false`. Save the file.
 
-## Try it out
+### Try it out
 
 1. Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within PowerPoint.
 
@@ -194,6 +208,8 @@ Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. How
 6. In the task pane, choose the **Insert Text** button to add text to the selected slide.
 
     ![A screenshot of PowerPoint with an image of a dog and the text 'Hello World` displayed on the slide](../images/powerpoint_quickstart_addin_3.png)
+
+---
 
 ## Next steps
 
