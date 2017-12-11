@@ -1,11 +1,14 @@
 - name: Office Add-ins Documentation
   href: index.yml
+  displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
 - name: Overview
   items:
   - name: About Office Add-ins
     href: overview/office-add-ins.md
+    displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
   - name: Host and platform availability
     href: overview/office-add-in-availability.md
+    displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
 
 - name: Quickstarts
   items:
@@ -13,320 +16,450 @@
     items:
     - name: Use React
       href: quickstarts/excel-quickstart-react.md
+      displayName: Excel
     - name: Use Angular
       href: quickstarts/excel-quickstart-angular.md
+      displayName: Excel
     - name: Use jQuery
       href: quickstarts/excel-quickstart-jquery.md
+      displayName: Excel
   - name: Create Word add-in
     href: quickstarts/word-quickstart.md
+    displayName: Word
   - name: Create OneNote add-in
     href: quickstarts/onenote-quickstart.md
+    displayName: OneNote
   - name: Create Outlook add-in
     href: https://docs.microsoft.com/en-us/outlook/add-ins/quick-start
+    displayName: Outlook
   - name: Create PowerPoint add-in
     href: quickstarts/powerpoint-quickstart.md
+    displayName: PowerPoint
   - name: Create Project add-in
     href: quickstarts/project-quickstart.md
+    displayName: Project
 
 - name: Tutorials
   items:
   - name: Create and debug an Office Add-in using Visual Studio
     href: tutorials/create-and-debug-office-add-ins-in-visual-studio.md
+    displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     items:
     - name: Get JavaScript IntelliSense in Visual Studio
       href: tutorials/get-javascript-intellisense-in-visual-studio.md
+      displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
   - name: Create and debug an Office Add-in using any editor
     href: tutorials/create-an-office-add-in-using-any-editor.md
+    displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
   - name: Create a table in Excel
     href: tutorials/excel-tutorial-create-table.md
+    displayName: Excel
   - name: Filter and sort a table in Excel
     href: tutorials/excel-tutorial-filter-and-sort-table.md
+    displayName: Excel
   - name: Create a chart in Excel
     href: tutorials/excel-tutorial-create-chart.md
+    displayName: Excel
   - name: Freeze a table header in Excel
     href: tutorials/excel-tutorial-freeze-header.md
+    displayName: Excel
   - name: Protect a worksheet in Excel
     href: tutorials/excel-tutorial-protect-worksheet.md
+    displayName: Excel
     
 - name: Concepts
   items:
   - name: Requirements for running add-ins
     href: concepts/requirements-for-running-office-add-ins.md
+    displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
   - name: Add-in development best practices
     href: concepts/add-in-development-best-practices.md
+    displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
   - name: Add-in development lifecycle
     href: concepts/add-in-development-lifecycle.md
+    displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
   - name: Privacy and security
     href: concepts/privacy-and-security.md
+    displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
   - name: Performance
     href: concepts/resource-limits-and-performance-optimization.md
+    displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
 
 - name: How-to guides
   items:
 
   - name: Design the User Interface
     href: design/add-in-design.md
+    displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     items:
     - name: Guidelines
       href: design/add-in-design-guidelines.md
+      displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       items:
       - name: Design language
         href: design/add-in-design-language.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: UX design templates
         href: design/ux-design-patterns.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: Usability testing
         href: design/usability-testing.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     - name: Interface elements
       href: design/interface-elements.md
+      displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       items:
       - name: Add-in commands
         href: design/add-in-commands.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
         items:
         - name: Icon guidelines
           href: design/design-icons.md
+          displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: Task panes
         href: design/task-pane-add-ins.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
         items:
         - name: Automatically open a task pane with a document
           href: design/automatically-open-a-task-pane-with-a-document.md
+          displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: Dialog boxes
         href: design/dialog-boxes.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: Content add-ins
         href: design/content-add-ins.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
         items:
         - name: Data visualization style guidelines
           href: design/data-visualization-guidelines.md
+          displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     - name: Office UI Fabric
       href: design/office-ui-fabric.md
+      displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       items:
       - name: Get started using Fabric JS
         href: design/using-office-ui-fabric-js.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: Get started using Fabric React
         href: design/using-office-ui-fabric-react.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: Breadcrumb
         href: design/breadcrumb.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: Buttons
         href: design/button.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: Checkbox
         href: design/checkbox.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: ChoiceGroup
         href: design/choicegroup.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: DropDown
         href: design/dropdown.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: Label
         href: design/label.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: List
         href: design/list.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: Pivot
         href: design/pivot.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: TextField
         href: design/textfield.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: Toggle
         href: design/toggle.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
 
   - name: Develop
     items:
     - name: Install the latest Office version
-      href: develop/install-latest-office-version.md      
+      href: develop/install-latest-office-version.md
+      displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     - name: Office JavaScript API
       href: develop/understanding-the-javascript-api-for-office.md
+      displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       items:
       - name: Support for content and task pane add-ins
         href: develop/support-for-task-pane-and-content-add-ins.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: Reference Office.js
         href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: Load Office.js
         href: develop/loading-the-dom-and-runtime-environment.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: Asynchronous programming in Office Add-ins
         href: develop/asynchronous-programming-in-office-add-ins.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: Persist state and settings
         href: develop/persisting-add-in-state-and-settings.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
 
     - name: Manifest
       href: develop/add-in-manifests.md
+      displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       items:
       - name: Create add-in commands
         href: develop/create-addin-commands.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: Specify Office hosts
         href: develop/specify-office-hosts-and-api-requirements.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: Requesting permissions for API use in content and task pane add-ins
         href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: Update API and manifest version
         href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
 
     - name: Authentication and authorization
       items:
       - name: Enable SSO in an add-in
         href: develop/sso-in-office-add-ins.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
         items:
         - name: Create an SSO add-in using ASP.NET
           href: develop/create-sso-office-add-ins-aspnet.md
+          displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
         - name: Create an SSO add-in using Node.js
           href: develop/create-sso-office-add-ins-nodejs.md
+          displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
         - name: Troubleshoot error messages for single sign-on (SSO)
           href: develop/troubleshoot-sso-in-office-add-ins.md
+          displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: Authorize external services
         href: develop/auth-external-add-ins.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
 
     - name: Use the Dialog API
       href: develop/dialog-api-in-office-add-ins.md
+      displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     - name: Address same origin policy limitations
       href: develop/addressing-same-origin-policy-limitations.md
+      displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     - name: Localization
       href: develop/localization.md
+      displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     - name: Develop add-ins for the iPad
       href: develop/develop-office-add-ins-for-the-ipad.md
+      displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     - name: Tips for creating add-ins with Angular
       href: develop/add-ins-with-angular2.md
+      displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     - name: Convert JavaScript to TypeScript
       href: develop/convert-javascript-to-typescript.md
+      displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
 
   - name: Excel add-ins
     href: excel/excel-add-ins-overview.md
+    displayName: Excel
     items:
     - name: Build your first Excel add-in
       href: excel/excel-add-ins-get-started-overview.md
+      displayName: Excel
       items:
       - name: Use React
         href: excel/excel-add-ins-get-started-react.md
+        displayName: Excel
       - name: Use Angular
         href: excel/excel-add-ins-get-started-angular.md
+        displayName: Excel
       - name: Use jQuery
         href: excel/excel-add-ins-get-started-jquery.md
+        displayName: Excel
     - name: Core concepts
       href: excel/excel-add-ins-core-concepts.md
+      displayName: Excel
       items:
       - name: Custom functions
         href: excel/custom-functions-overview.md
+        displayName: Excel
       - name: Charts
         href: excel/excel-add-ins-charts.md
+        displayName: Excel
       - name: Ranges
         href: excel/excel-add-ins-ranges.md
+        displayName: Excel
       - name: Tables
         href: excel/excel-add-ins-tables.md
+        displayName: Excel
       - name: Worksheets
         href: excel/excel-add-ins-worksheets.md
+        displayName: Excel
     - name: Advanced concepts
       href: excel/excel-add-ins-advanced-concepts.md
+      displayName: Excel
       items:
       - name: Coauthoring in Excel add-ins
         href: excel/co-authoring-in-excel-add-ins.md
+        displayName: Excel
       - name: Error handling
         href: excel/excel-add-ins-error-handling.md
+        displayName: Excel
     - name: Excel JavaScript API reference
       href: https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview
+      displayName: Excel
 
   - name: Word add-ins
     href: word/word-add-ins-programming-overview.md
+    displayName: Word
     items:
     - name: Build your first Word add-in
       href: word/word-add-ins.md
+      displayName: Word
     - name: Create better add-ins for Word with Office Open XML
       href: word/create-better-add-ins-for-word-with-office-open-xml.md
+      displayName: Word
     - name: Dictionary task pane add-ins
       href: word/dictionary-task-pane-add-ins.md
+      displayName: Word
     - name: Get the whole document from an add-in
       href: word/get-the-whole-document-from-an-add-in-for-word.md
+      displayName: Word
     - name: Read and write data to the active selection
       href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
+      displayName: Word
     - name: Bind to regions in a document
       href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
+      displayName: Word
     - name: Word JavaScript API reference
       href: https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview
+      displayName: Word
 
   - name: Outlook add-ins
     href: https://docs.microsoft.com/en-us/outlook/add-ins/
 
   - name: PowerPoint add-ins
     href: powerpoint/powerpoint-add-ins.md
+    displayName: PowerPoint
     items:
     - name: Build your first PowerPoint add-in
       href: powerpoint/powerpoint-add-ins-get-started.md
+      displayName: PowerPoint
     - name: Use document themes in your PowerPoint add-ins
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
+      displayName: PowerPoint
     - name: Get the whole document from an add-in
       href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
+      displayName: PowerPoint
 
   - name: OneNote add-ins
     href: onenote/onenote-add-ins-programming-overview.md
+    displayName: OneNote
     items:
     - name: Build your first OneNote add-in
       href: onenote/onenote-add-ins-getting-started.md
+      displayName: OneNote
     - name: Work with OneNote page content
       href: onenote/onenote-add-ins-page-content.md
+      displayName: OneNote
     - name: OneNote JavaScript API reference
       href: https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference
+      displayName: OneNote
 
   - name: Project add-ins
     href: project/project-add-ins.md
+    displayName: Project
     items:
     - name: Build your first Project add-in
       href: project/project-add-ins-get-started.md
+      displayName: Project
     - name: Create a Project add-in that uses REST with an on-premises OData service
       href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
+      displayName: Project
     - name: Create your first task pane add-in for Project by using a text editor
       href: project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md
+      displayName: Project
 
   - name: Test and debug
     href: testing/test-debug-office-add-ins.md
+    displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     items:
     - name: Windows
       items: 
       - name: Sideload Office Add-ins on Windows
         href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: Attach a debugger from the task pane
         href: testing/attach-debugger-from-task-pane.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: Debug using F12 developer tools
         href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     - name: Office Online
       items: 
       - name: Sideload Office Add-ins in Office Online
         href: testing/sideload-office-add-ins-for-testing.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: Debug in Office Online
         href: testing/debug-add-ins-in-office-online.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     - name: iPad and Mac
       items:
       - name: Sideload Office Add-ins on iPad and Mac
         href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
       - name: Debug on iPad and Mac
         href: testing/debug-office-add-ins-on-ipad-and-mac.md
+        displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     - name: Troubleshoot user errors
       href: testing/testing-and-troubleshooting.md
+      displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     - name: Validate an add-in manifest and troubleshoot issues
       href: testing/troubleshoot-manifest.md
+      displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
 
   - name: Publish
     href: publish/publish.md
+    displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     items:
     - name: Host an Office Add-in on Microsoft Azure
       href: publish/host-an-office-add-in-on-microsoft-azure.md
+      displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     - name: Package your add-in using Visual Studio
       href: publish/package-your-add-in-using-visual-studio.md
+      displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     - name: Publish add-ins via Centralized Deployment
       href: publish/centralized-deployment.md
+      displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     - name: Publish add-ins to a SharePoint catalog
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
+      displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     - name: Publish add-ins to the Office Store
       href: https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store
+      displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     - name: Office Store validation policies
       href: https://docs.microsoft.com/en-us/office/dev/store/validation-policies
+      displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
 
 - name: Reference
   items:
   - name: Office Add-in Manifest
     href: https://dev.office.com/reference/add-ins/manifest/allowsnapshot
+    displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
   - name: Office JavaScript API
     href: https://dev.office.com/reference/add-ins/javascript-api-for-office
+    displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
   - name: Excel JavaScript API
     href: https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview
+    displayName: Excel
   - name: Word JavaScript API
     href: https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview
+    displayName: Word
   - name: OneNote JavaScript API
     href: https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference
+    displayName: OneNote
   - name: Outlook JavaScript API
     href: https://dev.office.com/reference/add-ins/outlook/tutorial-api-requirement-sets
+    displayName: Outlook
   - name: Open API specifications
     href: https://dev.office.com/reference/add-ins/openspec
+    displayName: Excel, Word
 
 - name: Resources
   href: resources/resources-links-help.md
+  displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
