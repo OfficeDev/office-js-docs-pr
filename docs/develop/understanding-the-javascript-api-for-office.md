@@ -57,11 +57,12 @@ For task pane and content add-ins, Office.initialize provides an additional _rea
 ```js
 Office.initialize = function (reason) {
     $(document).ready(function () {
-      switch (reason) {
-        case 'inserted': console.log('The add-in was just inserted.');
-        case 'documentOpened': console.log('The add-in is already part of the document.');
-    }
-}
+        switch (reason) {
+            case 'inserted': console.log('The add-in was just inserted.');
+            case 'documentOpened': console.log('The add-in is already part of the document.');
+        }
+    });
+ };
 ```
 For more information, see [Office.initialize Event](https://dev.office.com/reference/add-ins/shared/office.initialize) and [InitializationReason Enumeration](https://dev.office.com/reference/add-ins/shared/initializationreason-enumeration). 
 

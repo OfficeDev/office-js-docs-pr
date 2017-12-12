@@ -30,7 +30,7 @@ range.values = [['Contoso']];
 ```
 After 'Contoso' synchronizes across all coauthors, any user or add-in running in the same workbook will see the new value of the range. 
 
-Coauthoring only synchronizes the content within the shared workbook. Values copied from the workbook to JavaScript variables in an Excel add-in are not synchronized. For example, if your add-in stores the value of a cell (such as 'Contoso') in a JavaScript variable, and then a coauthor changes the value of the cell to 'Example', after synchronization all co-authors see 'Example' in the cell. However, the value of the JavaScript variable is still set to 'Contoso'. Furthermore, when multiple coauthors use the same add-in, each coauthor has their own copy of the variable, which is not synchronized. When you use variables that use workbook content, be sure you check for updated values in the workbook before you use the variable. 
+Coauthoring only synchronizes the content within the shared workbook. Values copied from the workbook to JavaScript variables in an Excel add-in are not synchronized. For example, if your add-in stores the value of a cell (such as 'Contoso') in a JavaScript variable, and then a coauthor changes the value of the cell to 'Example', after synchronization all coauthors see 'Example' in the cell. However, the value of the JavaScript variable is still set to 'Contoso'. Furthermore, when multiple coauthors use the same add-in, each coauthor has their own copy of the variable, which is not synchronized. When you use variables that use workbook content, be sure you check for updated values in the workbook before you use the variable. 
 
 ## Use events to manage the in-memory state of your add-in
  
@@ -45,7 +45,7 @@ For example, you might build a content add-in that displays custom visualization
 
 If you want User A's custom visualizations to respond to changes made by coauthors on the hidden worksheet, use the [BindingDataChanged](https://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) event. This ensures that changes to workbook content made by coauthors is reflected in the state of your add-in.
 
-## Caveats to using events with co-authoring 
+## Caveats to using events with coauthoring 
 
 As described earlier, in some scenarios, triggering events for all coauthors provides an improved user experience. However, be aware that in some scenarios this behavior can produce poor user experiences. 
 
