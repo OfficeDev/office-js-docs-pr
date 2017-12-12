@@ -155,9 +155,12 @@ npm install -g yo generator-office
 ## Update the manifest
 
 1. Open the **my-office-add-in-manifest.xml** file.
+
 2. The `ProviderName` element has a placeholder value. Replace it with your name.
+
 3. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Project**.
-5. Save the file but don't close it yet.
+
+4. Save the file but don't close it yet.
 
     ```xml
     ...
