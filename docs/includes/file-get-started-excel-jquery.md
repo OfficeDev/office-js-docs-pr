@@ -44,7 +44,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
                 <p>Choose the button below to set the color of the selected range to green.</p>
                 <br />
                 <h3>Try it out</h3>
-                <button class="ms-Button" id="set-color">Set color</button>
+                <button class="ms-Button" id="set-color">Color me</button>
             </div>
         </div>
     </body>
@@ -135,7 +135,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
 
 3. Select any range of cells in the worksheet.
 
-4. In the task pane, choose the **Set color** button pane to set the color of the selected range to green.
+4. In the task pane, choose the **Color me** button pane to set the color of the selected range to green.
 
     ![Excel Add-in](../images/excel-quickstart-addin-2b.png)
 
@@ -189,7 +189,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
             <p>Choose the button below to set the color of the selected range to green.</p>
             <br />
             <h3>Try it out</h3>
-            <button class="ms-Button" id="set-color">Set color</button>
+            <button class="ms-Button" id="set-color">Color me</button>
         </div>
     </div>
     ```
@@ -304,7 +304,7 @@ Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. How
 
 4. Select any range of cells in the worksheet.
 
-5. In the task pane, choose the **Set color** button pane to set the color of the selected range to green.
+5. In the task pane, choose the **Color me** button pane to set the color of the selected range to green.
 
     ![Excel Add-in](../images/excel-quickstart-addin-2b.png)
 
