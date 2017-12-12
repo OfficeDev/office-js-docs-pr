@@ -237,7 +237,7 @@ In this article, you'll walk through the process of building a Word add-in by us
         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
         <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
         <script src="home.js" type="text/javascript"></script>
-        <link href="app.css" rel="stylesheet" type="text/css" />
+        <link href="home.css" rel="stylesheet" type="text/css" />
       </head>
         <body>
             <div id="content-header">
@@ -398,23 +398,23 @@ In this article, you'll walk through the process of building a Word add-in by us
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
-        <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                xsi:type="TaskPaneApp">
-            <Id>2b88100c-656e-4bab-9f1e-f6731d86e464</Id>
-            <Version>1.0.0.0</Version>
-            <ProviderName>Microsoft</ProviderName>
-            <DefaultLocale>en-US</DefaultLocale>
-            <DisplayName DefaultValue="My Office Add-in" />
-            <Description DefaultValue="Insert boilerplate content into a Word document." />
-            <Hosts>
-                <Host Name="Document"/>
-            </Hosts>
-            <DefaultSettings>
-                <SourceLocation DefaultValue="\\MyShare\boilerplate\home.html" />
-            </DefaultSettings>
-            <Permissions>ReadWriteDocument</Permissions>
-        </OfficeApp>
+    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:type="TaskPaneApp">
+        <Id>2b88100c-656e-4bab-9f1e-f6731d86e464</Id>
+        <Version>1.0.0.0</Version>
+        <ProviderName>Microsoft</ProviderName>
+        <DefaultLocale>en-US</DefaultLocale>
+        <DisplayName DefaultValue="My Office Add-in" />
+        <Description DefaultValue="Insert boilerplate content into a Word document." />
+        <Hosts>
+            <Host Name="Document"/>
+        </Hosts>
+        <DefaultSettings>
+            <SourceLocation DefaultValue="\\MyShare\boilerplate\home.html" />
+        </DefaultSettings>
+        <Permissions>ReadWriteDocument</Permissions>
+    </OfficeApp>
     ```
 
 2. Generate a GUID using an online generator of your choice. Then, replace the value of the **Id** element shown in the previous step with that GUID.
