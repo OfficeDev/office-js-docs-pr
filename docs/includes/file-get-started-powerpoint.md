@@ -22,7 +22,7 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 
 4. In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint**, and then choose **Finish** to create the project.
 
-5. Visual Studio creates the project and its files appear in  **Solution Explorer**. The default Home.html page opens in Visual Studio.
+5. Visual Studio creates the project and its files appear in  **Solution Explorer**. The **Home.html** file opens in Visual Studio.
     
 ### Explore the Visual Studio solution
 
@@ -30,9 +30,7 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 
 ### Update the code
 
-1. In Visual Studio, open **Home.html** in the root of the web application project. This files contains the HTML that will be rendered in the add-in's task pane.
-
-2. In **Home.html**, replace the `<body>` element with the following markup.
+1. **Home.html** contains the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup.
  
     ```html
     <body class="ms-font-m ms-welcome">
@@ -54,7 +52,7 @@ In this article, you'll walk through the process of building a PowerPoint add-in
     </body>
     ```
 
-3. Open **Home.js** in the root of the web application project, replace the entire contents with the following code, and save the file.
+2. Open **Home.js** in the root of the web application project, replace the entire contents with the following code, and save the file.
 
     ```js
     'use strict';
@@ -99,7 +97,7 @@ In this article, you'll walk through the process of building a PowerPoint add-in
     })();
     ```
 
-4. Open **Home.css** in the root of the web application project, replace the entire contents with the following code, and save the file.
+3. Open **Home.css** in the root of the web application project, replace the entire contents with the following code, and save the file.
 
     ```css
     #content-header {
@@ -130,7 +128,7 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 
 ### Update the manifest
 
-1. Open the manifest XML file in the Add-in project.
+1. Open the XML manifest file in the Add-in project.
 2. The `ProviderName` element has a placeholder value. Replace it with your name.
 3. The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.
 4. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for PowerPoint**.
