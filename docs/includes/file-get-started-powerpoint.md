@@ -24,12 +24,9 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 
 1. On the Visual Studio menu bar, choose  **File** > **New** > **Project**.
     
-2. In the list of project types under **Visual C#** or **Visual Basic**:
-    a. Expand  **Office/SharePoint**.
-    b. Choose **Add-ins**.
-    c. Choose the **PowerPoint Web Add-in** as the project type. 
+2. In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **PowerPoint Web Add-in** as the project type. 
 
-3. Name the project, and then choose  **OK**.
+3. Name the project, and then choose **OK**.
 
 4. In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint** and then choose **Finish** to create the project.
 
@@ -42,13 +39,13 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 |**Project**|**Description**|
 |:-----|:-----|
 |Add-in project|Contains only an XML manifest file, which contains all the settings that describe your add-in. These settings help the Office host determine when your add-in should be activated and where the add-in should appear. Visual Studio generates the contents of this file for you so that you can run the project and use your add-in immediately. You change these settings any time by using the Manifest editor.|
-|Web application project|Contains the content pages of your add-in, including all the files and file references that you need to develop Office-aware HTML and JavaScript pages. While you develop your add-in, Visual Studio hosts the web application on your local IIS server. When you're ready to publish, you'll have to find a server to host this project.To learn more about ASP.NET web application projects, see [ASP.NET Web Projects](http://msdn.microsoft.com/en-us/library/cdcd712f-96b0-4165-8b5d-9d0566650a28%28Office.15%29.aspx).|
+|Web application project|Contains the content pages of your add-in, including all the files and file references that you need to develop Office-aware HTML and JavaScript pages. While you develop your add-in, Visual Studio hosts the web application on your local IIS server. When you're ready to publish, you'll need to deploy this web application project to a web server. To learn more about ASP.NET web application projects, see [ASP.NET Web Projects](http://msdn.microsoft.com/en-us/library/cdcd712f-96b0-4165-8b5d-9d0566650a28%28Office.15%29.aspx).|
 
-### Update the manifest
+### Update the code
 
 ...
 
-### Update the code
+### Update the manifest
 
 ...
 
