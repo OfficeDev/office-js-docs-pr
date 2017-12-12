@@ -22,9 +22,7 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 3. Name the project, and then choose **OK**.
 
-4. In the **Create Office Add-in** dialog window, choose **Add new functionalities to Word**, and then choose **Finish** to create the project.
-
-5. Visual Studio creates the project and its files appear in  **Solution Explorer**. The **Home.html** file opens in Visual Studio.
+4. Visual Studio creates the project and its files appear in  **Solution Explorer**. The **Home.html** file opens in Visual Studio.
     
 ### Explore the Visual Studio solution
 
@@ -44,10 +42,13 @@ In this article, you'll walk through the process of building a Word add-in by us
             <br />
             <h3>Try it out</h3>
             <button id="emerson">Add quote from Ralph Waldo Emerson</button>
+            <br/>
             <button id="checkhov">Add quote from Anton Chekhov</button>
+            <br/>
             <button id="proverb">Add Chinese proverb</button>
         </div>
-        <h3><div id="supportedVersion"/></h3>
+        <br/>
+        <div id="supportedVersion"/>
     </body>
     ```
 
@@ -211,10 +212,13 @@ In this article, you'll walk through the process of building a Word add-in by us
                 <br />
                 <h3>Try it out</h3>
                 <button id="emerson">Add quote from Ralph Waldo Emerson</button>
+                <br/>
                 <button id="checkhov">Add quote from Anton Chekhov</button>
+                <br/>
                 <button id="proverb">Add Chinese proverb</button>
             </div>
-            <h3><div id="supportedVersion"/></h3>
+            <br/>
+            <div id="supportedVersion"/>
         </body>
     </html>
     ```
