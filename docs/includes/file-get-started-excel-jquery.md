@@ -22,7 +22,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
 
 4. In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.
 
-5. Visual Studio creates the project and its files appear in  **Solution Explorer**. The **Home.html** file opens in Visual Studio.
+5. Visual Studio creates a solution its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
     
 ### Explore the Visual Studio solution
 
@@ -131,7 +131,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
 
 ### Try it out
 
-1. Using Visual Studio, test the newly created Excel add-in by pressing F5 or the green **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
+1. Using Visual Studio, test the newly created Excel add-in by pressing F5 or choosing the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 

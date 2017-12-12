@@ -22,7 +22,7 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 3. Name the project, and then choose **OK**.
 
-4. Visual Studio creates the project and its files appear in  **Solution Explorer**. The **Home.html** file opens in Visual Studio.
+4. Visual Studio creates a solution its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
     
 ### Explore the Visual Studio solution
 
@@ -41,17 +41,17 @@ In this article, you'll walk through the process of building a Word add-in by us
         </div>    
         <div id="content-main">
             <div class="padding">
-                <p>This sample shows how to add boilerplate text to a document by using the Word JavaScript API.</p>
+                <p>Choose the buttons below to add boilerplate text to the document by using the Word JavaScript API.</p>
                 <br />
                 <h3>Try it out</h3>
                 <button id="emerson">Add quote from Ralph Waldo Emerson</button>
-                <br/>
+                <br /><br />
                 <button id="checkhov">Add quote from Anton Chekhov</button>
-                <br/>
+                <br /><br />
                 <button id="proverb">Add Chinese proverb</button>
             </div>
         </div>
-        <br/>
+        <br />
         <div id="supportedVersion"/>
     </body>
     ```
@@ -209,13 +209,15 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 ### Try it out
 
-1. Using Visual Studio, test the newly created Word add-in by pressing F5 or the green **Start** button to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
+1. Using Visual Studio, test the newly created Word add-in by pressing F5 or choosing the **Start** button to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
 2. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-2. In the task pane, choose any of the buttons to add boilerplate text to the document.
+    ![A screenshot of the Word application with the Show Taskpane button highlighted](../images/word-quickstart-addin-0.png)
 
-    ![Picture of the Word application with the boilerplate add-in loaded.](../images/boilerplate-add-in.png)
+3. In the task pane, choose any of the buttons to add boilerplate text to the document.
+
+    ![Picture of the Word application with the boilerplate add-in loaded](../images/word-quickstart-addin-1.png)
 
 # [Any editor](#tab/visual-studio-code)
 
@@ -245,17 +247,17 @@ In this article, you'll walk through the process of building a Word add-in by us
             </div>    
             <div id="content-main">
                 <div class="padding">
-                    <p>This sample shows how to add boilerplate text to a document by using the Word JavaScript API.</p>
+                    <p>Choose the buttons below to add boilerplate text to the document by using the Word JavaScript API.</p>
                     <br />
                     <h3>Try it out</h3>
                     <button id="emerson">Add quote from Ralph Waldo Emerson</button>
-                    <br/>
+                    <br /><br />
                     <button id="checkhov">Add quote from Anton Chekhov</button>
-                    <br/>
+                    <br /><br />
                     <button id="proverb">Add Chinese proverb</button>
                 </div>
             </div>
-            <br/>
+            <br />
             <div id="supportedVersion"/>
         </body>
     </html>
@@ -403,7 +405,7 @@ In this article, you'll walk through the process of building a Word add-in by us
             <Version>1.0.0.0</Version>
             <ProviderName>Microsoft</ProviderName>
             <DefaultLocale>en-US</DefaultLocale>
-            <DisplayName DefaultValue="Boilerplate content" />
+            <DisplayName DefaultValue="My Office Add-in" />
             <Description DefaultValue="Insert boilerplate content into a Word document." />
             <Hosts>
                 <Host Name="Document"/>
@@ -435,7 +437,7 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 2. In the right task pane, choose any of the buttons to add boilerplate text to the document.
 
-    ![Picture of the Word application with the boilerplate add-in loaded.](../images/boilerplate-add-in.png)
+    ![Picture of the Word application with the boilerplate add-in loaded](../images/word-quickstart-addin-1.png)
 
 ---
 
