@@ -32,28 +32,28 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 
 1. In Visual Studio, open **Home.html** in the root of the web application project. This files contains the HTML that will be rendered in the add-in's task pane.
 
-2. In **Home.html**, replace the contents of the first `<div>` element inside the `<body>` element (`<div id="content-main">`) with the following markup.
+2. In **Home.html**, replace the contents of the `<body>` element with the following markup.
  
     ```html
-    <body>
-        <div id="content-main">
-            <div id="content-header">
-                <div class="padding">
-                    <h1>Welcome</h1>
-                </div>
-            </div>
-            <div id="content-main">
-                <div class="padding">
-                    <p>Select a slide and then choose the buttons to below to add content to it.</p>
-                    <br />
-                    <h3>Try it out</h3>
-                    <button class="ms-Button" id="insert-image">Insert Image</button>
-                    <br/><br/>
-                    <button class="ms-Button" id="insert-text">Insert Text</button>
-                </div>
+    . . .
+    <body class="ms-font-m ms-welcome">
+        <div id="content-header">
+            <div class="padding">
+                <h1>Welcome</h1>
             </div>
         </div>
-        . . .
+        <div id="content-main">
+            <div class="padding">
+                <p>Select a slide and then choose the buttons to below to add content to it.</p>
+                <br />
+                <h3>Try it out</h3>
+                <button class="ms-Button" id="insert-image">Insert Image</button>
+                <br/><br/>
+                <button class="ms-Button" id="insert-text">Insert Text</button>
+            </div>
+        </div>
+    </body>
+    . . .
     ```
 
 3. Open **Home.js** in the root of the web application project, replace the entire contents with the following code, and save the file.
@@ -101,7 +101,7 @@ In this article, you'll walk through the process of building a PowerPoint add-in
     })();
     ```
 
-4. Open **Home.css** in the root of the web application project, add the following code after all existing content, and save the file.
+4. Open **Home.css** in the root of the web application project, replace the entire contents with the following code, and save the file.
 
     ```css
     #content-header {
@@ -123,6 +123,10 @@ In this article, you'll walk through the process of building a PowerPoint add-in
         right: 0;
         bottom: 0;
         overflow: auto; 
+    }
+
+    .padding {
+        padding: 15px;
     }
     ```
 
@@ -146,9 +150,9 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 
 ### Try it out
 
-1. Test the newly created PowerPoint add-in by pressing F5 or the green **Start** button to launch the add-in. The add-in will be hosted locally on IIS, and PowerPoint will open.
+1. Test the newly created PowerPoint add-in by pressing F5 or the green **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
-2. In PowerPoint, create a new file, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+2. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
     ![A screenshot of PowerPoint with the Show Taskpane button highlighted](../images/powerpoint_quickstart_addin_1.png)
 
