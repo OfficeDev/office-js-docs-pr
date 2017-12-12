@@ -65,7 +65,7 @@ When you've completed the wizard, Visual Studio creates a solution that contains
     npm install -g yo generator-office
     ```
 
-### Create the add-in
+### Create the add-in project
 
 1. Create a folder on your local drive and name it `my-powerpoint-addin`. This is where you'll create the files for your add-in.
 
