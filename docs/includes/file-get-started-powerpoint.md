@@ -8,13 +8,53 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 
 # [Visual Studio](#tab/visual-studio)
 
-### VS Heading 1
+### Prerequisites
 
-Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. 
+- [Visual Studio 2017](https://www.visualstudio.com/vs/) with the **Office/SharePoint development** workload installed
 
-### VS Heading 2
+    > [!NOTE]
+    > If you've previously installed Visual Studio 2017, [use the Visual Studio Installer](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed. 
 
-Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. 
+- Office 2016 
+    
+    > [!NOTE]
+    > If you don't already have Office 2016, you can [register for a free 1-month trial](http://office.microsoft.com/en-us/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786).
+
+### Create the add-in project
+
+1. On the Visual Studio menu bar, choose  **File** > **New** > **Project**.
+    
+2. In the list of project types under **Visual C#** or **Visual Basic**:
+    a. Expand  **Office/SharePoint**.
+    b. Choose **Add-ins**.
+    c. Choose the **PowerPoint Web Add-in** as the project type. 
+
+3. Name the project, and then choose  **OK**.
+
+4. In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint** and then choose **Finish** to create the project.
+
+5. Visual Studio creates the project and its files appear in  **Solution Explorer**. The default Home.html page opens in Visual Studio.
+    
+### Explore the Visual Studio solution
+
+When you've completed the wizard, Visual Studio creates a solution that contains two projects.
+
+|**Project**|**Description**|
+|:-----|:-----|
+|Add-in project|Contains only an XML manifest file, which contains all the settings that describe your add-in. These settings help the Office host determine when your add-in should be activated and where the add-in should appear. Visual Studio generates the contents of this file for you so that you can run the project and use your add-in immediately. You change these settings any time by using the Manifest editor.|
+|Web application project|Contains the content pages of your add-in, including all the files and file references that you need to develop Office-aware HTML and JavaScript pages. While you develop your add-in, Visual Studio hosts the web application on your local IIS server. When you're ready to publish, you'll have to find a server to host this project.To learn more about ASP.NET web application projects, see [ASP.NET Web Projects](http://msdn.microsoft.com/en-us/library/cdcd712f-96b0-4165-8b5d-9d0566650a28%28Office.15%29.aspx).|
+
+### Update the manifest
+
+...
+
+### Update the code
+
+...
+
+### Try it out
+
+...
 
 # [Any editor](#tab/visual-studio-code)
 
