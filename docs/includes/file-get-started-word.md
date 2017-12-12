@@ -34,18 +34,22 @@ In this article, you'll walk through the process of building a Word add-in by us
  
     ```html
     <body>
-        <div>
-            <h1>Welcome</h1>
-        </div>
-        <div>
-            <p>This sample shows how to add boilerplate text to a document by using the Word JavaScript API.</p>
-            <br />
-            <h3>Try it out</h3>
-            <button id="emerson">Add quote from Ralph Waldo Emerson</button>
-            <br/>
-            <button id="checkhov">Add quote from Anton Chekhov</button>
-            <br/>
-            <button id="proverb">Add Chinese proverb</button>
+        <div id="content-header">
+            <div class="padding">
+                <h1>Welcome</h1>
+            </div>
+        </div>    
+        <div id="content-main">
+            <div class="padding">
+                <p>This sample shows how to add boilerplate text to a document by using the Word JavaScript API.</p>
+                <br />
+                <h3>Try it out</h3>
+                <button id="emerson">Add quote from Ralph Waldo Emerson</button>
+                <br/>
+                <button id="checkhov">Add quote from Anton Chekhov</button>
+                <br/>
+                <button id="proverb">Add Chinese proverb</button>
+            </div>
         </div>
         <br/>
         <div id="supportedVersion"/>
@@ -152,6 +156,35 @@ In this article, you'll walk through the process of building a Word add-in by us
     })();
     ```
 
+3. Open **Home.css** in the root of the web application project, replace the entire contents with the following code, and save the file.
+
+    ```css
+    #content-header {
+        background: #2a8dd4;
+        color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px; 
+        overflow: hidden;
+    }
+
+    #content-main {
+        background: #fff;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: auto; 
+    }
+
+    .padding {
+        padding: 15px;
+    }
+    ```
+
 ### Update the manifest
 
 1. Open the XML manifest file in the Add-in project.
@@ -202,20 +235,25 @@ In this article, you'll walk through the process of building a Word add-in by us
         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
         <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
         <script src="home.js" type="text/javascript"></script>
-        </head>
+        <link href="app.css" rel="stylesheet" type="text/css" />
+      </head>
         <body>
-            <div>
-                <h1>Welcome</h1>
-            </div>
-            <div>
-                <p>This sample shows how to add boilerplate text to a document by using the Word JavaScript API.</p>
-                <br />
-                <h3>Try it out</h3>
-                <button id="emerson">Add quote from Ralph Waldo Emerson</button>
-                <br/>
-                <button id="checkhov">Add quote from Anton Chekhov</button>
-                <br/>
-                <button id="proverb">Add Chinese proverb</button>
+            <div id="content-header">
+                <div class="padding">
+                    <h1>Welcome</h1>
+                </div>
+            </div>    
+            <div id="content-main">
+                <div class="padding">
+                    <p>This sample shows how to add boilerplate text to a document by using the Word JavaScript API.</p>
+                    <br />
+                    <h3>Try it out</h3>
+                    <button id="emerson">Add quote from Ralph Waldo Emerson</button>
+                    <br/>
+                    <button id="checkhov">Add quote from Anton Chekhov</button>
+                    <br/>
+                    <button id="proverb">Add Chinese proverb</button>
+                </div>
             </div>
             <br/>
             <div id="supportedVersion"/>
@@ -321,6 +359,35 @@ In this article, you'll walk through the process of building a Word add-in by us
             });
         }
     })();
+    ```
+
+4. In your app folder, create a file named **home.css** to specify the custom styles for the add-in. Add the following code to **home.css** and save the file.
+
+    ```css
+    #content-header {
+        background: #2a8dd4;
+        color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px; 
+        overflow: hidden;
+    }
+
+    #content-main {
+        background: #fff;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: auto; 
+    }
+
+    .padding {
+        padding: 15px;
+    }
     ```
 
 ### Create the manifest file
