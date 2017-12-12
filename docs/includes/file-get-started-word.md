@@ -12,13 +12,74 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 # [Visual Studio](#tab/visual-studio)
 
-### VS Heading 1
+### Prerequisites
 
-Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. Content here under VS Heading 1. 
+[!include[Quickstart prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
-### VS Heading 2
+### Create the add-in project
 
-Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. Content here under VS Heading 2. 
+1. On the Visual Studio menu bar, choose  **File** > **New** > **Project**.
+    
+2. In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **Word Web Add-in** as the project type. 
+
+3. Name the project, and then choose **OK**.
+
+4. In the **Create Office Add-in** dialog window, choose **Add new functionalities to Word**, and then choose **Finish** to create the project.
+
+5. Visual Studio creates the project and its files appear in  **Solution Explorer**. The **Home.html** file opens in Visual Studio.
+    
+### Explore the Visual Studio solution
+
+[!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
+
+### Update the code
+
+1. **Home.html** contains the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup.
+ 
+    ```html
+    ```
+
+2. Open **Home.js** in the root of the web application project, replace the entire contents with the following code, and save the file.
+
+    ```js
+    ```
+
+3. Open **Home.css** in the root of the web application project, replace the entire contents with the following code, and save the file.
+
+    ```css
+    ```
+
+### Update the manifest
+
+1. Open the XML manifest file in the Add-in project.
+
+2. The `ProviderName` element has a placeholder value. Replace it with your name.
+
+3. The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.
+
+4. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Word**.
+
+5. Save the file.
+
+    ```xml
+    ...
+    <ProviderName>John Doe</ProviderName>
+    <DefaultLocale>en-US</DefaultLocale>
+    <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
+    <DisplayName DefaultValue="My Office Add-in" />
+    <Description DefaultValue="A task pane add-in for Word"/>
+    ...
+    ```
+
+### Try it out
+
+1. Using Visual Studio, test the newly created Word add-in by pressing F5 or the green **Start** button to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
+
+2. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+
+    
+    
+
 
 # [Any editor](#tab/visual-studio-code)
 
