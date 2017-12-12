@@ -35,16 +35,120 @@ In this article, you'll walk through the process of building a Word add-in by us
 1. **Home.html** contains the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup.
  
     ```html
+    <body>
+        <div>
+            <h1>Welcome</h1>
+        </div>
+        <div>
+            <p>This sample shows how to add boilerplate text to a document by using the Word JavaScript API.</p>
+            <br />
+            <h3>Try it out</h3>
+            <button id="emerson">Add quote from Ralph Waldo Emerson</button>
+            <button id="checkhov">Add quote from Anton Chekhov</button>
+            <button id="proverb">Add Chinese proverb</button>
+        </div>
+        <h3><div id="supportedVersion"/></h3>
+    </body>
     ```
 
 2. Open **Home.js** in the root of the web application project, replace the entire contents with the following code, and save the file.
 
     ```js
-    ```
+    (function () {
+        "use strict";
 
-3. Open **Home.css** in the root of the web application project, replace the entire contents with the following code, and save the file.
+        // The initialize function is run each time the page is loaded.
+        Office.initialize = function (reason) {
+            $(document).ready(function () {
 
-    ```css
+                // Use this to check whether the API is supported in the Word client.
+                if (Office.context.requirements.isSetSupported('WordApi', 1.1)) {
+                    // Do something that is only available via the new APIs
+                    $('#emerson').click(insertEmersonQuoteAtSelection);
+                    $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
+                    $('#proverb').click(insertChineseProverbAtTheEnd);
+                    $('#supportedVersion').html('This code is using Word 2016 or greater.');
+                }
+                else {
+                    // Just letting you know that this code will not work with your version of Word.
+                    $('#supportedVersion').html('This code requires Word 2016 or greater.');
+                }
+            });
+        };
+
+        function insertEmersonQuoteAtSelection() {
+            Word.run(function (context) {
+
+                // Create a proxy object for the document.
+                var thisDocument = context.document;
+
+                // Queue a command to get the current selection.
+                // Create a proxy range object for the selection.
+                var range = thisDocument.getSelection();
+
+                // Queue a command to replace the selected text.
+                range.insertText('"Hitch your wagon to a star."\n', Word.InsertLocation.replace);
+
+                // Synchronize the document state by executing the queued commands,
+                // and return a promise to indicate task completion.
+                return context.sync().then(function () {
+                    console.log('Added a quote from Ralph Waldo Emerson.');
+                });
+            })
+            .catch(function (error) {
+                console.log('Error: ' + JSON.stringify(error));
+                if (error instanceof OfficeExtension.Error) {
+                    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+                }
+            });
+        }
+
+        function insertChekhovQuoteAtTheBeginning() {
+            Word.run(function (context) {
+
+                // Create a proxy object for the document body.
+                var body = context.document.body;
+
+                // Queue a command to insert text at the start of the document body.
+                body.insertText('"Knowledge is of no value unless you put it into practice."\n', Word.InsertLocation.start);
+
+                // Synchronize the document state by executing the queued commands,
+                // and return a promise to indicate task completion.
+                return context.sync().then(function () {
+                    console.log('Added a quote from Anton Chekhov.');
+                });
+            })
+            .catch(function (error) {
+                console.log('Error: ' + JSON.stringify(error));
+                if (error instanceof OfficeExtension.Error) {
+                    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+                }
+            });
+        }
+
+        function insertChineseProverbAtTheEnd() {
+            Word.run(function (context) {
+
+                // Create a proxy object for the document body.
+                var body = context.document.body;
+
+                // Queue a command to insert text at the end of the document body.
+                body.insertText('"To know the road ahead, ask those coming back."\n', Word.InsertLocation.end);
+
+                // Synchronize the document state by executing the queued commands,
+                // and return a promise to indicate task completion.
+                return context.sync().then(function () {
+                    console.log('Added a quote from a Chinese proverb.');
+                });
+            })
+            .catch(function (error) {
+                console.log('Error: ' + JSON.stringify(error));
+                if (error instanceof OfficeExtension.Error) {
+                    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+                }
+            });
+        }
+    })();
     ```
 
 ### Update the manifest
@@ -75,9 +179,9 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 2. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    
-    
+2. In the task pane, choose any of the buttons to add boilerplate text to the document.
 
+    ![Picture of the Word application with the boilerplate add-in loaded.](../images/boilerplate-add-in.png)
 
 # [Any editor](#tab/visual-studio-code)
 
