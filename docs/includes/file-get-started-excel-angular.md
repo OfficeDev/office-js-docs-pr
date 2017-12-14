@@ -116,7 +116,7 @@ An add-in's manifest file defines its settings and capabilities.
             <p>Choose the button below to set the color of the selected range to green.</p>
             <br />
             <h3>Try it out</h3>
-            <button (click)="onColorMe()">Color Me</button>
+            <button (click)="onSetColor()">Set color</button>
         </div>
     </div>
     ```
@@ -163,7 +163,7 @@ An add-in's manifest file defines its settings and capabilities.
     styleUrls: ['./app.component.css']
     })
     export class AppComponent {
-    onColorMe() {
+    onSetColor() {
         Excel.run(async (context) => {
         const range = context.workbook.getSelectedRange();
         range.format.fill.color = 'green';
@@ -185,9 +185,9 @@ An add-in's manifest file defines its settings and capabilities.
 
     ![Excel Add-in button](../images/excel-quickstart-addin-2a.png)
 
-3. Choose the **Color Me** button in the task pane to set the color of the selected range to green.
+3. In the task pane, choose the **Set color** button to set the color of the selected range to green.
 
-    ![Excel Add-in](../images/excel-quickstart-addin-2b.png)
+    ![Excel Add-in](../images/excel-quickstart-addin-2c.png)
 
 ## Next steps
 
