@@ -43,6 +43,13 @@ An add-in's manifest file defines its settings and capabilities.
     ```bash
     yo office
     ```
+    - **Would you like to create a new subfolder for your project?:** `No`
+    - **What do you want to name your add-in?:** `My Office Add-in`
+    - **Which Office client application would you like to support?:** `Excel`
+    - **Would you like to create a new add-in?:** `No`
+
+    The generator will then ask you if you want to open **resource.html**. It isn't necessary to open it for this tutorial, but feel free to open it if you're curious! Choose yes or no to complete the wizard and allow the generator to do its work.
+
     ![Yeoman generator](../images/yo-office.png)
     
     > [!NOTE]
