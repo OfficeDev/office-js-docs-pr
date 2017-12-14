@@ -192,7 +192,9 @@ An add-in's manifest file defines its settings and capabilities.
 
     ![Excel Add-in button](../images/excel-quickstart-addin-2a.png)
 
-3. In the task pane, choose the **Set color** button to set the color of the selected range to green.
+3. Select any range of cells in the worksheet.
+
+4. In the task pane, choose the **Set color** button to set the color of the selected range to green.
 
     ![Excel Add-in](../images/excel-quickstart-addin-2c.png)
 
