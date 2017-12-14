@@ -30,7 +30,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
 
 ### Update the code
 
-1. **Home.html** contains the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup.
+1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.
  
     ```html
     <body class="ms-font-m ms-welcome">
@@ -50,7 +50,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
     </body>
     ```
 
-2. Open **Home.js** in the root of the web application project, replace the entire contents with the following code, and save the file.
+2. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file. 
 
     ```js
     'use strict';
@@ -78,7 +78,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
     })();
     ```
 
-3. Open **Home.css** in the root of the web application project, replace the entire contents with the following code, and save the file.
+3. Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file. 
 
     ```css
     #content-header {
@@ -109,7 +109,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
 
 ### Update the manifest
 
-1. Open the XML manifest file in the Add-in project.
+1. Open the XML manifest file in the Add-in project. This file defines the add-in's settings and capabilities.
 
 2. The `ProviderName` element has a placeholder value. Replace it with your name.
 
@@ -226,7 +226,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
     })();
     ```
 
-8. Open the file **app.css** to specify the custom styles for the add-in. Replace the enitre contents with the following and save the file.
+8. Open the file **app.css** to specify the custom styles for the add-in. Replace the enitre contents with the following code and save the file.
 
     ```css
     #content-header {
