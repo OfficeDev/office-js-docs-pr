@@ -188,6 +188,9 @@ An add-in's manifest file defines its settings and capabilities.
     npm start
     ```
 
+   > [!NOTE]
+   > A browser window will open with the add-in in it. Close this window.
+   
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
     ![Excel Add-in button](../images/excel-quickstart-addin-2a.png)
