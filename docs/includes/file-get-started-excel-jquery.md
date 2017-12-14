@@ -185,7 +185,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
 
 4. In your code editor, open **index.html** in the root of the project. This file specifies the HTML that will be rendered in the add-in's task pane. 
  
-5. Replace the generated `header` tag with the following markup.
+5. Within **index.html**, replace the generated `header` tag with the following markup.
  
     ```html
     <div id="content-header">
@@ -195,7 +195,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
     </div>
     ```
 
-6. Replace the generated `main` tag with the following markup and save the file.
+6. Within **index.html**, replace the generated `main` tag with the following markup, and save the file.
 
     ```html
     <div id="content-main">
@@ -208,7 +208,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
     </div>
     ```
 
-7. Open the file **app.js** to specify the script for the add-in. Replace the generated immediately invoked function expression with the following code and save the file.
+7. Open the file **app.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.
 
     ```js
     'use strict';
