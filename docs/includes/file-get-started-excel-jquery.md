@@ -226,7 +226,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
     })();
     ```
 
-8. Open the file **app.css** to specify the custom styles for the add-in. Replace the enitre contents with the following code and save the file.
+8. Open the file **app.css** to specify the custom styles for the add-in. Replace the entire contents with the following code and save the file.
 
     ```css
     #content-header {
