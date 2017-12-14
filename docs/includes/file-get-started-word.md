@@ -59,8 +59,9 @@ In this article, you'll walk through the process of building a Word add-in by us
 2. Open **Home.js** in the root of the web application project, replace the entire contents with the following code, and save the file.
 
     ```js
+    'use strict';
+    
     (function () {
-        "use strict";
 
         // The initialize function is run each time the page is loaded.
         Office.initialize = function (reason) {
@@ -266,8 +267,9 @@ In this article, you'll walk through the process of building a Word add-in by us
 3. In your app folder, create a file named **home.js** to specify the jQuery script for the add-in. This script contains initialization code as well as the code that makes changes to the Word document, by inserting text into the document when a button is chosen. Add the following code to **home.js** and save the file.
 
     ```javascript
+    'use strict';
+    
     (function () {
-        "use strict";
 
         // The initialize function is run each time the page is loaded.
         Office.initialize = function (reason) {
