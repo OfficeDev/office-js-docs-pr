@@ -57,7 +57,7 @@ An add-in's manifest file defines its settings and capabilities.
 
 3. Open the manifest file (i.e., the file in the root directory of your app with a name ending in "manifest.xml"). Replace all occurrences of `https://localhost:3000` with `http://localhost:4200` and save the file.
 
-    > [!NOTE]
+    > [!TIP]
     > Be sure to change the protocol to **http** in addition to changing the port number to **4200**.
 
 4. Follow the instructions for the platform you'll be using to run your add-in and sideload the add-in within Excel.
