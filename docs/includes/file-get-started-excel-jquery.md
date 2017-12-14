@@ -308,7 +308,7 @@ Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. How
 
 4. Select any range of cells in the worksheet.
 
-5. In the task pane, choose the **Set color** button pane to set the color of the selected range to green.
+5. In the task pane, choose the **Set color** button to set the color of the selected range to green.
 
     ![Excel Add-in](../images/excel-quickstart-addin-2c.png)
 
