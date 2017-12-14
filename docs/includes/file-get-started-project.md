@@ -70,7 +70,7 @@ npm install -g yo generator-office
     </div>
     ```
 
-4. Open **app.js** in the root of the project, replace the entire contents with the following code, and save the file.
+4. Open the file **app.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.
 
     ```js
     'use strict';
@@ -123,7 +123,7 @@ npm install -g yo generator-office
     })();
     ```
 
-4. Open **app.css** in the root of the project, replace the entire contents with the following code, and save the file.
+4. Open the file **app.css** in the root of the project to specify the custom styles for the add-in. Replace the enitre contents with the following and save the file.
 
     ```css
     #content-header {
@@ -154,7 +154,7 @@ npm install -g yo generator-office
 
 ## Update the manifest
 
-1. Open the **my-office-add-in-manifest.xml** file.
+1. Open the file **my-office-add-in-manifest.xml** to define the add-in's settings and capabilities.
 
 2. The `ProviderName` element has a placeholder value. Replace it with your name.
 
