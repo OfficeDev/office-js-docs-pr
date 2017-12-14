@@ -4,7 +4,7 @@ description: Supported requirement sets for Excel, Word, Outlook, PowerPoint, an
 ms.date: 12/01/2017 
 ---
 
-# Office Add-in host and platform availability
+# Office Add-in host and platform availability 
 
 To work as expected, your Office Add-in might depend on a specific Office host, a requirement set, an API member, or a version of the API. The following tables contain the available platform, extension points, API requirement sets, and common API requirement sets that are currently supported for each Office application. 
 
