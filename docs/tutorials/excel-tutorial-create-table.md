@@ -142,5 +142,5 @@ To use this tutorial, you need to have the following installed.
 > [!div class="nextstepaction"]
 > [I'm ready for the <b>Filter and Sort a Table</b> tutorial](excel-tutorial-filter-and-sort-table.md)
 
-<br /><br />
+<br />
 [I ran into an issue](https://github.com/OfficeDev/office-js-docs/issues)
