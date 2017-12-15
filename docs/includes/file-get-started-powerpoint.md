@@ -181,7 +181,8 @@ Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. How
     npm start
     ```
 
-    > **Note**: A browser window will open with the add-in in it. Close this window.
+    > [!NOTE]
+    > A browser window will open with the add-in in it. Close this window.
 
 3. In PowerPoint, create a new file, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 

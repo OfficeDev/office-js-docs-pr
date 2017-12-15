@@ -38,7 +38,7 @@ To help ensure that the manifest file that describes your Office Add-in is corre
 
 ## Validate your manifest against the XML schema
 
-To help ensure that the manifest file follows the correct schema, validate it against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas) files. You can use an XML schema validation tool to perform this validation. 
+To help ensure that the manifest file follows the correct schema, validate it against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) files. You can use an XML schema validation tool to perform this validation. 
 
 ### To use a command-line XML schema validation tool to validate your manifest
 
