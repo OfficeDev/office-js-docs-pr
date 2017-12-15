@@ -84,7 +84,8 @@ To insert your add-in into the catalog, choose the  **Insert** ribbon, then choo
 Now you can take advantage of all the available Office Mix functionality to publish your lesson with your new lab.
 
 
- >**Important**:  To view the application, you must log on to your SharePoint catalog with the same browser that you view your lesson from. SharePoint catalogs only allow access from authenticated users, so to see your application you need to log on first. 
+> [!IMPORTANT]
+> To view the application, you must log on to your SharePoint catalog with the same browser that you view your lesson from. SharePoint catalogs only allow access from authenticated users, so to see your application you need to log on first. 
 
 
 ### Submit your lab to the Office Store

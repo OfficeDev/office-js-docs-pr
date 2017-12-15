@@ -185,7 +185,8 @@ Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. How
     npm start
     ```
 
-    > **Note**: A browser window will open with the add-in in it. Close this window.
+    > [!NOTE]
+    > A browser window will open with the add-in in it. Close this window.
 
 2. In Project, create a simple project that has at least one task.
 

@@ -102,30 +102,8 @@ In this tutorial, you'll learn how to programmatically create a chart from table
 
 ## Next steps
 
-<div style="display: flex; flex-direction: row; justify-content:space-around">
-<a style="padding: 15px 35px; 
-	border-radius: 4px; 
-	color: rgb(255, 255, 255); 
-	line-height: 3em; 
-	font-family: wf_segoe-ui_semibold,wf_segoe-ui_normal,Helvetica Neue,Helvetica,Arial,sans-serif; 
-	font-size: 16px; 
-	font-weight: 400; 
-	margin-left: 20px; 
-	white-space: nowrap; 
-	cursor: pointer; 
-	background-color: rgb(0, 120, 215);
-}" href="excel-tutorial-freeze-header.md">I'm ready for the <b>Freeze Header</b> tutorial</a>     
-<a style="padding: 13px 33px; 
-	border-radius: 4px; 
-	border: 2px solid rgb(0, 120, 215); 
-	border-image: none; 
-	color: rgb(0, 120, 215); 
-	line-height: 3em; 
-	font-family: wf_segoe-ui_semibold,wf_segoe-ui_normal,Helvetica Neue,Helvetica,Arial,sans-serif; 
-	font-size: 16px; 
-	font-weight: 400; 
-	white-space: nowrap; 
-	cursor: pointer;" href="https://github.com/OfficeDev/office-js-docs/issues">I ran into an issue</a>
-          
-</div>
+> [!div class="nextstepaction"]
+> [I'm ready for the <b>Freeze Header</b> tutorial](excel-tutorial-freeze-header.md)
 
+<br />
+[I ran into an issue](https://github.com/OfficeDev/office-js-docs-pr/issues)
