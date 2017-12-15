@@ -100,7 +100,7 @@ When a table is long enough that a user must scroll to see some rows, the header
 	font-size: 16px; 
 	font-weight: 400; 
 	white-space: nowrap; 
-	cursor: pointer;" href="https://github.com/OfficeDev/office-js-docs/issues">I ran into an issue</a>
+	cursor: pointer;" href="https://github.com/OfficeDev//office-js-docs-pr/issues">I ran into an issue</a>
           
 </div>
 

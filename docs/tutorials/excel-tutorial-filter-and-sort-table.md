@@ -156,7 +156,7 @@ This tutorial shows you how to programmatically filter and sort a table.
 	font-size: 16px; 
 	font-weight: 400; 
 	white-space: nowrap; 
-	cursor: pointer;" href="https://github.com/OfficeDev/office-js-docs/issues">I ran into an issue</a>
+	cursor: pointer;" href="https://github.com/OfficeDev//office-js-docs-pr/issues">I ran into an issue</a>
           
 </div>
 
