@@ -9,7 +9,8 @@ ms.date: 12/08/2017
 
 This is the first step in a series of tutorials. Each one adds to the same project. 
 
->**Note**: If you haven't already, please read [Excel add-in quickstart that uses jQuery](../quickstarts/excel-quickstart-jquery.md). In particular, be sure that you know how to sideload an Excel add-in for testing.
+> [!NOTE]
+> If you haven't already, please read [Excel add-in quickstart that uses jQuery](../quickstarts/excel-quickstart-jquery.md). In particular, be sure that you know how to sideload an Excel add-in for testing.
 
 This first tutorial shows you how to programmatically add a table to a worksheet, populate the table with data, and then format it. It also shows you how to test that your add-in supports the user's current version of Excel.
 
@@ -112,16 +113,17 @@ To use this tutorial, you need to have the following installed.
 10. Replace `TODO6` with the following code. Note:
    - The code gets a reference to the **Amount** column by passing its zero-based index to the `getItemAt` method of the table's column collection. 
 
-     >**Note**: Excel.js collection objects, such as `TableCollection`, `WorksheetCollection`, and `TableColumnCollection` have an `items` property that is an array of the child object types, such as `Table` or `Worksheet` or `TableColumn`; but a `*Collection` object is not itself an array.
+     > [!NOTE]
+     > Excel.js collection objects, such as `TableCollection`, `WorksheetCollection`, and `TableColumnCollection` have an `items` property that is an array of the child object types, such as `Table` or `Worksheet` or `TableColumn`; but a `*Collection` object is not itself an array.
 
    - The code then formats the range of the **Amount** column as Euros to the second decimal. 
    - Finally, it ensures that the width of the columns and height of the rows is big enough to fit the longest (or tallest) data item. Notice that the code must get `Range` objects to format. `TableColumn` and `TableRow` objects do not have format properties.
 
-    ```js
-    expensesTable.columns.getItemAt(3).getRange().numberFormat = [['€#,##0.00']];
-    expensesTable.getRange().format.autofitColumns();
-    expensesTable.getRange().format.autofitRows();
-    ``` 
+        ```js
+        expensesTable.columns.getItemAt(3).getRange().numberFormat = [['€#,##0.00']];
+        expensesTable.getRange().format.autofitColumns();
+        expensesTable.getRange().format.autofitRows();
+        ``` 
 
 ## Test the add-in
 
@@ -137,30 +139,8 @@ To use this tutorial, you need to have the following installed.
 
 ## Next steps
 
-<div style="display: flex; flex-direction: row; justify-content:space-around">
-<a style="padding: 15px 35px; 
-	border-radius: 4px; 
-	color: rgb(255, 255, 255); 
-	line-height: 3em; 
-	font-family: wf_segoe-ui_semibold,wf_segoe-ui_normal,Helvetica Neue,Helvetica,Arial,sans-serif; 
-	font-size: 16px; 
-	font-weight: 400; 
-	margin-left: 20px; 
-	white-space: nowrap; 
-	cursor: pointer; 
-	background-color: rgb(0, 120, 215);
-}" href="excel-tutorial-filter-and-sort-table.md">I'm ready for the <b>Filter and Sort a Table</b> tutorial</a>     
-<a style="padding: 13px 33px; 
-	border-radius: 4px; 
-	border: 2px solid rgb(0, 120, 215); 
-	border-image: none; 
-	color: rgb(0, 120, 215); 
-	line-height: 3em; 
-	font-family: wf_segoe-ui_semibold,wf_segoe-ui_normal,Helvetica Neue,Helvetica,Arial,sans-serif; 
-	font-size: 16px; 
-	font-weight: 400; 
-	white-space: nowrap; 
-	cursor: pointer;" href="https://github.com/OfficeDev/office-js-docs/issues">I ran into an issue</a>
-          
-</div>
+> [!div class="nextstepaction"]
+> [I'm ready for the <b>Filter and Sort a Table</b> tutorial](excel-tutorial-filter-and-sort-table.md)
 
+<br />
+[I ran into an issue](https://github.com/OfficeDev/office-js-docs-pr/issues)

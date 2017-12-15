@@ -99,7 +99,7 @@ The following XML manifest example hosts its main add-in page in the  `https://w
 The following sections show examples of manifest v1.1 XML files for content, task pane,  and Outlook add-ins.
 
 ### Office Add-in manifest v1.1 example with commands and fallback task pane
-[Task pane manifest schema](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas/taskpane)
+[Task pane manifest schema](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/taskpane)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -295,7 +295,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 ```
 
 ### Content add-in manifest v1.1 example
-[Content manifest schema](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas/content)
+[Content manifest schema](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/content)
 
 
 ```XML
@@ -332,7 +332,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 ```
 
 ### Outlook add-in manifest v1.1 example
-[Content manifest schema](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas/mail)
+[Content manifest schema](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/mail)
 
 
 ```XML
@@ -425,7 +425,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 
 ## Validate and troubleshoot issues with your manifest
 
-For troubleshooting issues with your manifest, see [Validate and troubleshoot issues with your manifest](../testing/troubleshoot-manifest.md). There, you will find information on how to validate the manifest against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas), and also how to use runtime logging to debug the manifest.
+For troubleshooting issues with your manifest, see [Validate and troubleshoot issues with your manifest](../testing/troubleshoot-manifest.md). There, you will find information on how to validate the manifest against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas), and also how to use runtime logging to debug the manifest.
 
 ## See also
 
@@ -433,6 +433,6 @@ For troubleshooting issues with your manifest, see [Validate and troubleshoot is
 - [Create add-in commands in your manifest](create-addin-commands.md)
 - [Specify Office hosts and API requirements](specify-office-hosts-and-api-requirements.md)
 - [Localization for Office Add-ins](localization.md)
-- [Schema reference for Office Add-ins manifests](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas)
+- [Schema reference for Office Add-ins manifests](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas)
 - [Validate and troubleshoot issues with your manifest](../testing/troubleshoot-manifest.md)
 
