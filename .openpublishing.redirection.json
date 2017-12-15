@@ -94,6 +94,34 @@
         "source_path": "docs/develop/office-versions.md", 
         "redirect_url": "/office/dev/add-ins/develop/understanding-the-javascript-api-for-office", 
         "redirect_document_id": false 
+      }, 
+      {   
+        "source_path": "docs/powerpoint/office-mix/configuring-and-editing-labsjs-labs-for-office-mix.md", 
+        "redirect_url": "https://mix.office.com/en-us/Home"
+      }, 
+      {   
+        "source_path": "docs/powerpoint/office-mix/creating-your-first-lab-for-office-mix.md", 
+        "redirect_url": "https://mix.office.com/en-us/Home"
+      }, 
+      {   
+        "source_path": "docs/powerpoint/office-mix/get-started-with-labsjs-for-office-mix.md", 
+        "redirect_url": "https://mix.office.com/en-us/Home"
+      }, 
+      {   
+        "source_path": "docs/powerpoint/office-mix/guidelines-for-creating-labs-for-mix-using-labsjs.md", 
+        "redirect_url": "https://mix.office.com/en-us/Home"
+      }, 
+      {   
+        "source_path": "docs/powerpoint/office-mix/labsjs-lab-components.md", 
+        "redirect_url": "https://mix.office.com/en-us/Home"
+      }, 
+      {   
+        "source_path": "docs/powerpoint/office-mix/labsjs-labs-for-office-mix-examples.md", 
+        "redirect_url": "https://mix.office.com/en-us/Home"
+      }, 
+      {   
+        "source_path": "docs/powerpoint/office-mix/office-mix-add-ins.md", 
+        "redirect_url": "https://mix.office.com/en-us/Home"
       }
     ] 
 }

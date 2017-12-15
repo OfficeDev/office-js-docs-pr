@@ -224,6 +224,9 @@
       - name: Charts
         href: excel/excel-add-ins-charts.md
         displayName: Excel
+      - name: Events
+        href: excel/excel-add-ins-events.md
+        displayName: Excel
       - name: Ranges
         href: excel/excel-add-ins-ranges.md
         displayName: Excel
