@@ -7,7 +7,7 @@ ms.date: 12/08/2017
 
 # Protect a worksheet from changes
 
-This is the fifth step of a tutorial that begins with [Excel Tutorial Create Table](excel-tutorial-create-table.md). You need to completel the preceding steps to get the project in the state that this step assumes. 
+This is the fifth step of a tutorial that begins with [Excel Tutorial Create Table](excel-tutorial-create-table.md). You need to complete the preceding steps to get the project in the state that this step assumes. 
 
 ## Configure the manifest to add a second ribbon button
 
@@ -53,7 +53,8 @@ This is the fifth step of a tutorial that begins with [Excel Tutorial Create Tab
     </Supertip>
     ```
 
-   > **Note**: In a production add-in, you would not want to use the same icon for two different buttons; but to simplify this tutorial, we'll do that. So the `Icon` markup in our new `Control` is just a copy of the `Icon` element from the existing `Control`. 
+   > [!NOTE] 
+   > In a production add-in, you would not want to use the same icon for two different buttons; but to simplify this tutorial, we'll do that. So the `Icon` markup in our new `Control` is just a copy of the `Icon` element from the existing `Control`. 
 
 6. The `Action` element inside the original `Control` element that was already present in the manifest, has its type set to `ShowTaskpane`, but our new button isn't going to open a task pane; it's going to run a custom function that you create in a later step. So replace `TODO5` with `ExecuteFunction` which is the action type for buttons that trigger custom functions. The start `Action` tag should look like the following code:
  
@@ -214,7 +215,8 @@ These steps must be completed whenever your code needs to *read* information fro
 1. Open the /function-file/function-file.html file. This is a UI-less HTML file that is called when the user presses the **Toggle Worksheet Protection** button. Its purpose is to load the JavaScript method that should run when the button is pushed.
 2. There are two `<script>` tags in the file. The first one loads Office.js. Replace the **1** or **1.1** in the `src` attribute with **beta**.
 
-   > **Note**: The function-file.html file and the function-file.js file that it loads run in an entirely separate IE process from the add-in's task pane. If the function-file.js was transpiled into the same bundle.js file as the app.js file, then the add-in would have to load two copies of the bundle.js file, which defeats the purpose of bundling. In addition, the function-file.js file does not contain any JavaScript that is unsupported by IE. For these two reasons, this add-in does not transpile the function-file.js at all. 
+   > [!NOTE]
+   > The function-file.html file and the function-file.js file that it loads run in an entirely separate IE process from the add-in's task pane. If the function-file.js was transpiled into the same bundle.js file as the app.js file, then the add-in would have to load two copies of the bundle.js file, which defeats the purpose of bundling. In addition, the function-file.js file does not contain any JavaScript that is unsupported by IE. For these two reasons, this add-in does not transpile the function-file.js at all. 
 
 ## Test the add-in
 
@@ -229,7 +231,7 @@ These steps must be completed whenever your code needs to *read* information fro
     ![Excel tutorial - Ribbon with Protection On](../images/excel-tutorial-ribbon-with-protection-on.png)
 
 
-## Additional resources
+## See also
 
 * [Excel JavaScript API core concepts](../excel/excel-add-ins-core-concepts.md)
 * [Excel add-in code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
