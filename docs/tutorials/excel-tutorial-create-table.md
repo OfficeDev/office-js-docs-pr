@@ -119,11 +119,11 @@ To use this tutorial, you need to have the following installed.
    - The code then formats the range of the **Amount** column as Euros to the second decimal. 
    - Finally, it ensures that the width of the columns and height of the rows is big enough to fit the longest (or tallest) data item. Notice that the code must get `Range` objects to format. `TableColumn` and `TableRow` objects do not have format properties.
 
-    ```js
-    expensesTable.columns.getItemAt(3).getRange().numberFormat = [['€#,##0.00']];
-    expensesTable.getRange().format.autofitColumns();
-    expensesTable.getRange().format.autofitRows();
-    ``` 
+        ```js
+        expensesTable.columns.getItemAt(3).getRange().numberFormat = [['€#,##0.00']];
+        expensesTable.getRange().format.autofitColumns();
+        expensesTable.getRange().format.autofitRows();
+        ``` 
 
 ## Test the add-in
 

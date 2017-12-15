@@ -5,7 +5,7 @@ ms.date: 12/08/2017
 ---
 
 
-# Filter and Sort a Table
+# Filter and sort a table
 
 This is the second step of a tutorial that begins with [Excel Tutorial Create Table](excel-tutorial-create-table.md). You need to complete the preceding steps to get the project in the state that this step assumes. 
 
