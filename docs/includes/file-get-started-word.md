@@ -22,7 +22,7 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 3. Name the project, and then choose **OK**.
 
-4. Visual Studio creates a solution its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
+4. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
     
 ### Explore the Visual Studio solution
 
