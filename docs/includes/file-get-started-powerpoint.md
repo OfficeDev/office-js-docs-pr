@@ -277,7 +277,7 @@ In this article, you'll walk through the process of building a PowerPoint add-in
     })();
     ```
 
-5. Open the file **app.css** in the root of the project to specify the custom styles for the add-in. Replace the enitre contents with the following and save the file.
+5. Open the file **app.css** in the root of the project to specify the custom styles for the add-in. Replace the entire contents with the following and save the file.
 
     ```css
     #content-header {
