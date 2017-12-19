@@ -1,7 +1,7 @@
 ---
 title: Work with Events using the Excel JavaScript API
 description: ''
-ms.date: 12/08/2017
+ms.date: 12/15/2017
 ---
 
 # Work with Events using the Excel JavaScript API
