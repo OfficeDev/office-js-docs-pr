@@ -24,7 +24,7 @@ To get started, make sure you have the [Office Developer Tools](https://www.visu
     
 3. Name the project, and then choose  **OK** to create the project.
     
-4. Visual Studio creates the project, and its files appear in  **Solution Explorer**. The default Home.html page opens in Visual Studio.
+4. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The default Home.html page opens in Visual Studio.
     
 In Visual Studio 2015, some of the add-in project templates have been updated to reflect additional functionality:
 

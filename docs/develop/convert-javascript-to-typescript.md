@@ -39,7 +39,7 @@ Make sure that you have the following installed:
 	![Visual Studio Excel Add-in template](../images/visual-studio-addin-template.png)
 
 3.  In the app creation wizard, choose **Add new functionalities to Excel** and choose **Finish**.
-4.  Do a quick test of the newly created Excel add-in by pressing F5 or the green **Start** button to launch the add-in. The add-in will be hosted locally on IIS, and Excel will open with the add-in loaded.
+4.  Do a quick test of the newly created Excel add-in by pressing F5 or choosing the **Start** button to launch the add-in. The add-in will be hosted locally on IIS, and Excel will open with the add-in loaded.
 
 ## Convert the add-in project to TypeScript
 
@@ -75,7 +75,7 @@ Make sure that you have the following installed:
  
 ## Run the converted add-in project
 
-1. Press F5 or the green **Start** button to launch the add-in. 
+1. Press F5 or choose the **Start** button to launch the add-in. 
 2. After Excel launches, press the **Show Taskpane** button on the **Home** ribbon.
 3. Select all the cells with numbers.
 4. Press the **Highlight** button on the task pane. 
