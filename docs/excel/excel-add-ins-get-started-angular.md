@@ -1,7 +1,7 @@
 ---
 title: Build an Excel add-in using Angular
 description: ''
-ms.date: 12/04/2017
+ms.date: 12/19/2017
 ROBOTS: NOINDEX
 ---
 
