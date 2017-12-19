@@ -6,11 +6,11 @@ In this article, you'll walk through the process of building a Project add-in by
 
 - [Node.js](https://nodejs.org)
 
-If you haven't done so previously, you'll need to install [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
+- If you haven't done so previously, you'll need to install [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
 
-```bash
-npm install -g yo generator-office
-```
+    ```bash
+    npm install -g yo generator-office
+    ```
 
 ## Create the add-in
 
@@ -70,7 +70,7 @@ npm install -g yo generator-office
     </div>
     ```
 
-4. Open **app.js** in the root of the project, replace the entire contents with the following code, and save the file.
+4. Open the file **app.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.
 
     ```js
     'use strict';
@@ -123,7 +123,7 @@ npm install -g yo generator-office
     })();
     ```
 
-4. Open **app.css** in the root of the project, replace the entire contents with the following code, and save the file.
+4. Open the file **app.css** in the root of the project to specify the custom styles for the add-in. Replace the entire contents with the following and save the file.
 
     ```css
     #content-header {
@@ -154,10 +154,13 @@ npm install -g yo generator-office
 
 ## Update the manifest
 
-1. Open the **my-office-add-in-manifest.xml** file.
+1. Open the file **my-office-add-in-manifest.xml** to define the add-in's settings and capabilities.
+
 2. The `ProviderName` element has a placeholder value. Replace it with your name.
+
 3. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Project**.
-5. Save the file but don't close it yet.
+
+4. Save the file but don't close it yet.
 
     ```xml
     ...

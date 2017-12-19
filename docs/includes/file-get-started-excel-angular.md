@@ -43,6 +43,13 @@ An add-in's manifest file defines its settings and capabilities.
     ```bash
     yo office
     ```
+    - **Would you like to create a new subfolder for your project?:** `No`
+    - **What do you want to name your add-in?:** `My Office Add-in`
+    - **Which Office client application would you like to support?:** `Excel`
+    - **Would you like to create a new add-in?:** `No`
+
+    The generator will then ask you if you want to open **resource.html**. It isn't necessary to open it for this tutorial, but feel free to open it if you're curious! Choose yes or no to complete the wizard and allow the generator to do its work.
+
     ![Yeoman generator](../images/yo-office.png)
     
     > [!NOTE]
@@ -50,7 +57,7 @@ An add-in's manifest file defines its settings and capabilities.
 
 3. Open the manifest file (i.e., the file in the root directory of your app with a name ending in "manifest.xml"). Replace all occurrences of `https://localhost:3000` with `http://localhost:4200` and save the file.
 
-    > [!NOTE]
+    > [!TIP]
     > Be sure to change the protocol to **http** in addition to changing the port number to **4200**.
 
 4. Follow the instructions for the platform you'll be using to run your add-in and sideload the add-in within Excel.
@@ -116,7 +123,7 @@ An add-in's manifest file defines its settings and capabilities.
             <p>Choose the button below to set the color of the selected range to green.</p>
             <br />
             <h3>Try it out</h3>
-            <button (click)="onColorMe()">Color Me</button>
+            <button (click)="onSetColor()">Set color</button>
         </div>
     </div>
     ```
@@ -163,7 +170,7 @@ An add-in's manifest file defines its settings and capabilities.
     styleUrls: ['./app.component.css']
     })
     export class AppComponent {
-    onColorMe() {
+    onSetColor() {
         Excel.run(async (context) => {
         const range = context.workbook.getSelectedRange();
         range.format.fill.color = 'green';
@@ -180,14 +187,16 @@ An add-in's manifest file defines its settings and capabilities.
     ```bash
     npm start
     ```
-
+   
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
     ![Excel Add-in button](../images/excel-quickstart-addin-2a.png)
 
-3. Choose the **Color Me** button in the task pane to set the color of the selected range to green.
+3. Select any range of cells in the worksheet.
 
-    ![Excel Add-in](../images/excel-quickstart-addin-2b.png)
+4. In the task pane, choose the **Set color** button to set the color of the selected range to green.
+
+    ![Excel Add-in](../images/excel-quickstart-addin-2c.png)
 
 ## Next steps
 

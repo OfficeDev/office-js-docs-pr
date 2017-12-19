@@ -41,6 +41,14 @@ Each add-in requires a manifest file to define its settings and capabilities.
     ```bash
     yo office
     ```
+
+    - **Would you like to create a new subfolder for your project?:** `No`
+    - **What do you want to name your add-in?:** `My Office Add-in`
+    - **Which Office client application would you like to support?:** `Excel`
+    - **Would you like to create a new add-in?:** `No`
+
+    The generator will then ask you if you want to open **resource.html**. It isn't necessary to open it for this tutorial, but feel free to open it if you're curious! Choose yes or no to complete the wizard and allow the generator to do its work.
+
     ![Yeoman generator](../images/yo-office.png)
     
     > [!NOTE]
@@ -82,10 +90,10 @@ Each add-in requires a manifest file to define its settings and capabilities.
       constructor(props) {
         super(props);
 
-        this.onColorMe = this.onColorMe.bind(this);
+        this.onSetColor = this.onSetColor.bind(this);
       }
 
-      onColorMe() {
+      onSetColor() {
         window.Excel.run(async (context) => {
           const range = context.workbook.getSelectedRange();
           range.format.fill.color = 'green';
@@ -106,7 +114,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
                   <p>Choose the button below to set the color of the selected range to green.</p>
                   <br />
                   <h3>Try it out</h3>
-                  <button onClick={this.onColorMe}>Color Me</button>
+                  <button onClick={this.onSetColor}>Set color</button>
               </div>
             </div>
           </div>
@@ -154,13 +162,18 @@ Each add-in requires a manifest file to define its settings and capabilities.
     npm start
     ```
 
+   > [!NOTE]
+   > A browser window will open with the add-in in it. Close this window.
+
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
     ![Excel Add-in button](../images/excel-quickstart-addin-2a.png)
 
-3. In the task pane, choose the **Color Me** button pane to set the color of the selected range to green.
+3. Select any range of cells in the worksheet.
 
-    ![Excel Add-in](../images/excel-quickstart-addin-2b.png)
+4. In the task pane, choose the **Set color** button to set the color of the selected range to green.
+
+    ![Excel Add-in](../images/excel-quickstart-addin-2c.png)
 
 ## Next steps
 
