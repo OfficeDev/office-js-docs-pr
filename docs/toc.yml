@@ -48,6 +48,8 @@
       href: tutorials/get-javascript-intellisense-in-visual-studio.md
   - name: Create and debug an Office Add-in using any editor
     href: tutorials/create-an-office-add-in-using-any-editor.md
+  - name: Excel add-in tutorial
+    href: tutorials/excel-tutorial.yml
   - name: Create a table in Excel
     href: tutorials/excel-tutorial-create-table.md
     displayName: Excel
