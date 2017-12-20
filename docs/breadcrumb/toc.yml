@@ -6,6 +6,6 @@
     tocHref: /office/dev/add-ins/
     topicHref: /office/dev/add-ins/overview/office-add-ins
     items:
-    - name: Excel Tutorial
-      topicHref: /office/dev/add-ins/tutorials/excel-tutorial
+    - name: Tutorial
+      tocHref: /office/dev/add-ins/tutorials
       topicHref: /office/dev/add-ins/tutorials/excel-tutorial
