@@ -6,10 +6,7 @@ metadata:
   description: Descriptive text for metadata.
   audience: Developer
   level: Beginner
-  nextTutorialHref: http://www.bing.com
-  nextTutorialTitle: Load balance highly available VMs
-  displayType: two-column
-  interactive: azurecli
+  displayType: one-column
 items:
 - durationInMinutes: 1
   href: ./introduction.md
