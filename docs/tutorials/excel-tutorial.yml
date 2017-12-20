@@ -10,8 +10,6 @@ metadata:
 items:
 - durationInMinutes: 1
   href: ./introduction.md
-  content: |
-    Markdown goes here.
 - title: Create A Virtual Machine
   durationInMinutes: 2
   href: ./virtual-machines-linux-tutorial-vm-1-create.md
