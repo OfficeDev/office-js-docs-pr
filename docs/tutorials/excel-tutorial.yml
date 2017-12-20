@@ -9,42 +9,23 @@ metadata:
   displayType: one-column
 items:
 - durationInMinutes: 1
-  href: ./introduction.md
-- title: Create A Virtual Machine
-  durationInMinutes: 2
-  href: ./virtual-machines-linux-tutorial-vm-1-create.md
   content: |
     Markdown goes here.
-- title: Add A Data Disk
-  durationInMinutes: 3
-  href: ./virtual-machines-linux-tutorial-vm-2-add-disk.md
-  content: |
-    Markdown goes here.
-- title: Install Software
-  durationInMinutes: 4
-  href: ./virtual-machines-linux-tutorial-vm-3-install-app.md
-  content: |
-    Markdown goes here.
-- title: Configure a Firewall
-  durationInMinutes: 2
-  href: ./virtual-machines-linux-tutorial-vm-4-configure-firewall.md
-  content: |
-    Markdown goes here.
-- title: Install Software
-  durationInMinutes: 4
-  href: ./virtual-machines-linux-tutorial-vm-3-install-app.md
-  content: |
-    Markdown goes here.
-- title: Snapshot The Virtual Machine
-  durationInMinutes: 3
-  href: ./virtual-machines-linux-tutorial-vm-5-create-snapshot.md
-  content: |
-    Markdown goes here.
-- title: Perform Common Management Tasks
-  durationInMinutes: 4
-  href: ./virtual-machines-linux-tutorial-vm-6-common-tasks.md
-  content: |
-    Markdown goes here.
+- title: Create a table
+  durationInMinutes: 10
+  href: ~/tutorials/excel-tutorial-create-table.md
+- title: Filter and sort a table
+  durationInMinutes: 10
+  href: ~/tutorials/excel-tutorial-filter-and-sort-table.md
+- title: Create a chart
+  durationInMinutes: 10
+  href: ~/tutorials/excel-tutorial-create-chart.md
+- title: Freeze a table header
+  durationInMinutes: 10
+  href: ~/tutorials/excel-tutorial-freeze-header.md
+- title: Protect a worksheet
+  durationInMinutes: 10
+  href: ~/tutorials/excel-tutorial-protect-worksheet.md
 - href: ./next-steps.md
   content: |
     Markdown goes here.
