@@ -1,1 +1,0 @@
-This tutorial teaches you how to build an Excel add-in that interacts with tables, charts, and worksheets in an Excel workbook. In the first step of the tutorial, you'll build an Excel add-in that creates and populates a table. Then, in each subsequent step, you'll add more functionality to the add-in.

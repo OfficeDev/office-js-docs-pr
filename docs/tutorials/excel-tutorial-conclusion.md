@@ -1,1 +1,0 @@
-You've completed the Excel add-in tutorial. To learn more about building Excel add-ins, see <a href="~/excel/excel-add-ins-overview.md">Excel add-ins overview</a>.
