@@ -4,8 +4,12 @@
   items:
   - name: Add-ins
     tocHref: /office/dev/add-ins/
-    topicHref: /office/dev/add-ins/overview/office-add-ins
+    topicHref: /office/dev/add-ins
     items:
-    - name: Tutorial
+    - name: Tutorials
+      tocHref: /office/dev/add-ins/tutorials
+      topicHref: /office/dev/add-ins/tutorials
+      items:
+    - name: Excel Tutorial
       tocHref: /office/dev/add-ins/tutorials
       topicHref: /office/dev/add-ins/tutorials/excel-tutorial
