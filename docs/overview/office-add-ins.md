@@ -113,7 +113,7 @@ The Office JavaScript APIs contain objects and members for building add-ins and 
 
 ## Next steps 
 
-To learn more about how to start building your Office Add-in, try out the [Get started](https://dev.office.com/getting-started/addins) experience. You can start building add-ins right away using [Visual Studio](../tutorials/create-and-debug-office-add-ins-in-visual-studio.md) or [your own tools](../tutorials/create-an-office-add-in-using-any-editor.md). 
+To learn more about how to start building your Office Add-in, try out our [5-minute Quickstarts](https://docs.microsoft.com/en-us/office/dev/add-ins/). You can start building add-ins right away using [Visual Studio](../tutorials/create-and-debug-office-add-ins-in-visual-studio.md) or [your own tools](../tutorials/create-an-office-add-in-using-any-editor.md). 
 
 To start planning solutions that create effective and compelling user experiences, get familiar with the [design guidelines](../design/add-in-design.md) and [best practices](../concepts/add-in-development-best-practices.md) for Office Add-ins.    
    
