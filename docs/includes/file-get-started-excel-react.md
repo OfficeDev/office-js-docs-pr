@@ -4,15 +4,13 @@ In this article, you'll walk through the process of building an Excel add-in usi
 
 ## Prerequisites
 
-If you haven't done so previously, you'll need to install the following tools:
-
-1. Install [Create React App](https://github.com/facebookincubator/create-react-app) globally.
+- Install [Create React App](https://github.com/facebookincubator/create-react-app) globally.
 
     ```bash
     npm install -g create-react-app
     ```
 
-2. Install [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
+- Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
 
     ```bash
     npm install -g yo generator-office

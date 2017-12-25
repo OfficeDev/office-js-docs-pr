@@ -4,17 +4,15 @@ In this article, you'll walk you through the process of building an Excel add-in
 
 ## Prerequisites
 
-If you haven't done so previously, install the following tools:
+- Check whether you already have the [Angular CLI prerequisites](https://github.com/angular/angular-cli#prerequisites) and install any prerequistes that you are missing.
 
-1. Check whether you already have the [Angular CLI prerequisites](https://github.com/angular/angular-cli#prerequisites) and install any prerequistes that you are missing.
-
-2. Install the [Angular CLI](https://github.com/angular/angular-cli) globally. 
+- Install the [Angular CLI](https://github.com/angular/angular-cli) globally. 
 
     ```bash
     npm install -g @angular/cli
     ```
 
-3. Install [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
+- Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
 
     ```bash
     npm install -g yo generator-office
