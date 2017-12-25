@@ -187,7 +187,7 @@ In this article, you'll walk through the process of building a Project add-in by
     > [!NOTE]
     > Chrome (web browser) may continue to indicate the the site's certificate is not trusted, even after you have completed the process described in [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md). You can disregard this warning in Chrome and can verify that the certificate is trusted by navigating to `https://localhost:3000` in either Internet Explorer or Microsoft Edge. 
 
-3. After your browser loads the add-in page without any certificate errors, you're ready to try out your add-in. 
+3. After your browser loads the add-in page without any certificate errors, you're ready test your add-in. 
 
 ## Try it out
 
