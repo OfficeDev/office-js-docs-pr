@@ -6,7 +6,7 @@ In this article, you'll walk through the process of building a Project add-in by
 
 - [Node.js](https://nodejs.org)
 
-- If you haven't done so previously, you'll need to install [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
+- Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
 
     ```bash
     npm install -g yo generator-office
@@ -160,7 +160,7 @@ In this article, you'll walk through the process of building a Project add-in by
 
 3. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Project**.
 
-4. Save the file but don't close it yet.
+4. Save the file.
 
     ```xml
     ...
@@ -172,15 +172,7 @@ In this article, you'll walk through the process of building a Project add-in by
     ...
     ```
 
-## Configure to use HTTP
-
-Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. However, to get the add-in up and running fast, this quickstart will use HTTP. To enable this, take these steps:
-
-1. In the manifest file **my-office-add-in-manifest.xml**, replace "https" with "http" everywhere. Then save and close the file.
-
-2. Open the **bsconfig.json** file in the root of the project. Change the value of the **https** property to `false`. Save the file.
-
-## Try it out
+## Start the dev server
 
 1. Open a bash terminal in the root of the project and run the following command to start the dev server.
 
@@ -188,22 +180,30 @@ Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. How
     npm start
     ```
 
+    This will start a web server at `https://localhost:3000` and open your default browser to that address.
+
+2. Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. If your browser indicates that the site's certificate is not trusted, you will need to add the certificate as a trusted certificate. See [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) for details.
+
     > [!NOTE]
-    > A browser window will open with the add-in in it. Close this window.
+    > Chrome (web browser) may continue to indicate the the site's certificate is not trusted, even after you have completed the process described in [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md). You can disregard this warning in Chrome and can verify that the certificate is trusted by navigating to `https://localhost:3000` in either Internet Explorer or Microsoft Edge. 
 
-2. In Project, create a simple project that has at least one task.
+3. After your browser loads the add-in page without any certificate errors, you're ready test your add-in. 
 
-3. Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within Project.
+## Try it out
+
+1. In Project, create a simple project that has at least one task.
+
+2. Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within Project.
 
     - Windows: [Sideload Office Add-ins for testing on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
     - Project Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-4. In Project, select a task.
+3. In Project, select a task.
 
     ![A screenshot of a project plan in Project with one task selected](../images/project_quickstart_addin_1.png)
 
-5. In the task pane, choose the **Get Task GUID** button to write the task GUID to the **Results** textbox.
+4. In the task pane, choose the **Get Task GUID** button to write the task GUID to the **Results** textbox.
 
     ![A screenshot of a project plan in Project with one task selected and the task GUID written to the textbox in the task pane](../images/project_quickstart_addin_2.png)
 
