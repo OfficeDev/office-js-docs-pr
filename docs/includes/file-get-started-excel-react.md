@@ -4,15 +4,13 @@ In this article, you'll walk through the process of building an Excel add-in usi
 
 ## Prerequisites
 
-If you haven't done so previously, you'll need to install the following tools:
-
-1. Install [Create React App](https://github.com/facebookincubator/create-react-app) globally.
+- Install [Create React App](https://github.com/facebookincubator/create-react-app) globally.
 
     ```bash
     npm install -g create-react-app
     ```
 
-2. Install [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
+- Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
 
     ```bash
     npm install -g yo generator-office
@@ -177,13 +175,14 @@ Each add-in requires a manifest file to define its settings and capabilities.
 
 ## Next steps
 
-Congratulations, you've successfully created an Excel add-in using React! Next, learn more about the core concepts of building Excel add-ins.
+Congratulations, you've successfully created an Excel add-in using React! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.
 
 > [!div class="nextstepaction"]
-> [Excel JavaScript API core concepts](../excel/excel-add-ins-core-concepts.md)
+> [Excel add-in tutorial](../tutorials/excel-tutorial-create-table.md)
 
 ## See also
 
+* [Excel add-in tutorial](../tutorials/excel-tutorial-create-table.md)
 * [Excel JavaScript API core concepts](../excel/excel-add-ins-core-concepts.md)
 * [Excel add-in code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
 * [Excel JavaScript API reference](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

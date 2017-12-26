@@ -170,7 +170,7 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 
 - [Node.js](https://nodejs.org)
 
-- If you haven't done so previously, you'll need to install [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
+- Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
 
     ```bash
     npm install -g yo generator-office
@@ -314,7 +314,7 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 
 3. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for PowerPoint**.
 
-4. Save the file but don't close it yet.
+4. Save the file.
 
     ```xml
     ...
@@ -326,13 +326,22 @@ In this article, you'll walk through the process of building a PowerPoint add-in
     ...
     ```
 
-### Configure to use HTTP
+### Start the dev server
 
-Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. However, to get the add-in up and running fast, this quickstart will use HTTP. To enable this, take these steps:
+1. Open a bash terminal in the root of the project and run the following command to start the dev server.
 
-1. In the manifest file **my-office-add-in-manifest.xml**, replace "https" with "http" everywhere. Then save and close the file.
+    ```bash
+    npm start
+    ```
 
-2. Open the **bsconfig.json** file in the root of the project. Change the value of the **https** property to `false`. Save the file.
+    This will start a web server at `https://localhost:3000` and open your default browser to that address.
+
+2. Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. If your browser indicates that the site's certificate is not trusted, you will need to add the certificate as a trusted certificate. See [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) for details.
+
+    > [!NOTE]
+    > Chrome (web browser) may continue to indicate the the site's certificate is not trusted, even after you have completed the process described in [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md). You can disregard this warning in Chrome and can verify that the certificate is trusted by navigating to `https://localhost:3000` in either Internet Explorer or Microsoft Edge. 
+
+3. After your browser loads the add-in page without any certificate errors, you're ready to test your add-in. 
 
 ### Try it out
 
@@ -342,24 +351,15 @@ Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. How
     - PowerPoint Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. Open a bash terminial in the root of the project and run the following command to start the dev server.
-
-    ```bash
-    npm start
-    ```
-
-    > [!NOTE]
-    > A browser window will open with the add-in in it. Close this window.
-
-3. In PowerPoint, create a new file, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+2. In PowerPoint, create a new file, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
     ![A screenshot of PowerPoint with the Show Taskpane button highlighted](../images/powerpoint_quickstart_addin_1.png)
 
-4. In the task pane, choose the **Insert Image** button to add an image to the selected slide.
+3. In the task pane, choose the **Insert Image** button to add an image to the selected slide.
 
     ![A screenshot of PowerPoint with an image of a dog displayed on the slide](../images/powerpoint_quickstart_addin_2.png)
 
-5. In the task pane, choose the **Insert Text** button to add text to the selected slide.
+4. In the task pane, choose the **Insert Text** button to add text to the selected slide.
 
     ![A screenshot of PowerPoint with an image of a dog and the text 'Hello World` displayed on the slide](../images/powerpoint_quickstart_addin_3.png)
 
