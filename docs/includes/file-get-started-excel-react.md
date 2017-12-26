@@ -158,8 +158,14 @@ Each add-in requires a manifest file to define its settings and capabilities.
 
 1. From the terminal, run the following command to start the dev server.
 
+    Windows:
     ```bash
-    npm start
+    set HTTPS=true&&npm start
+    ```
+
+    macOS:
+    ```bash
+    HTTPS=true npm start
     ```
 
    > [!NOTE]
