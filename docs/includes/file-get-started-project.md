@@ -172,7 +172,7 @@ In this article, you'll walk through the process of building a Project add-in by
     ...
     ```
 
-## Sideload the manifest
+## Start the dev server
 
 1. Open a bash terminal in the root of the project and run the following command to start the dev server.
 
