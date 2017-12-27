@@ -67,6 +67,7 @@ In this article, you'll walk through the process of building a OneNote add-in by
     'use strict';
 
     (function () {
+
         Office.initialize = function (reason) {
             $(document).ready(function () {
                 app.initialize();
@@ -78,30 +79,30 @@ In this article, you'll walk through the process of building a OneNote add-in by
 
         // Add the contents of the text area to the page.
         function addOutlineToPage() {        
-        OneNote.run(function (context) {
-            var html = '<p>' + $('#textBox').val() + '</p>';
+            OneNote.run(function (context) {
+                var html = '<p>' + $('#textBox').val() + '</p>';
 
-            // Get the current page.
-            var page = context.application.getActivePage();
+                // Get the current page.
+                var page = context.application.getActivePage();
 
-            // Queue a command to load the page with the title property.             
-            page.load('title'); 
+                // Queue a command to load the page with the title property.             
+                page.load('title'); 
 
-            // Add an outline with the specified HTML to the page.
-            var outline = page.addOutline(40, 90, html);
+                // Add an outline with the specified HTML to the page.
+                var outline = page.addOutline(40, 90, html);
 
-            // Run the queued commands, and return a promise to indicate task completion.
-            return context.sync()
-                .then(function() {
-                    console.log('Added outline to page ' + page.title);
-                })
-                .catch(function(error) {
-                    app.showNotification("Error: " + error); 
-                    console.log("Error: " + error); 
-                    if (error instanceof OfficeExtension.Error) { 
-                        console.log("Debug info: " + JSON.stringify(error.debugInfo)); 
-                    } 
-                }); 
+                // Run the queued commands, and return a promise to indicate task completion.
+                return context.sync()
+                    .then(function() {
+                        console.log('Added outline to page ' + page.title);
+                    })
+                    .catch(function(error) {
+                        app.showNotification("Error: " + error); 
+                        console.log("Error: " + error); 
+                        if (error instanceof OfficeExtension.Error) { 
+                            console.log("Debug info: " + JSON.stringify(error.debugInfo)); 
+                        } 
+                    }); 
             });
         }
     })();
