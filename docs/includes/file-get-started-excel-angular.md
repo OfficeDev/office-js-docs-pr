@@ -4,17 +4,15 @@ In this article, you'll walk you through the process of building an Excel add-in
 
 ## Prerequisites
 
-If you haven't done so previously, install the following tools:
+- Check whether you already have the [Angular CLI prerequisites](https://github.com/angular/angular-cli#prerequisites) and install any prerequistes that you are missing.
 
-1. Check whether you already have the [Angular CLI prerequisites](https://github.com/angular/angular-cli#prerequisites) and install any prerequistes that you are missing.
-
-2. Install the [Angular CLI](https://github.com/angular/angular-cli) globally. 
+- Install the [Angular CLI](https://github.com/angular/angular-cli) globally. 
 
     ```bash
     npm install -g @angular/cli
     ```
 
-3. Install [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
+- Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
 
     ```bash
     npm install -g yo generator-office
@@ -200,13 +198,14 @@ An add-in's manifest file defines its settings and capabilities.
 
 ## Next steps
 
-Congratulations, you've successfully created an Excel add-in using Angular! Next, learn more about the core concepts of building Excel add-ins.
+Congratulations, you've successfully created an Excel add-in using Angular! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.
 
 > [!div class="nextstepaction"]
-> [Excel JavaScript API core concepts](../excel/excel-add-ins-core-concepts.md)
+> [Excel add-in tutorial](../tutorials/excel-tutorial-create-table.md)
 
 ## See also
 
+* [Excel add-in tutorial](../tutorials/excel-tutorial-create-table.md)
 * [Excel JavaScript API core concepts](../excel/excel-add-ins-core-concepts.md)
 * [Excel add-in code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
 * [Excel JavaScript API reference](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

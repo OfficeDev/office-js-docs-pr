@@ -4,15 +4,13 @@ In this article, you'll walk through the process of building an Excel add-in usi
 
 ## Prerequisites
 
-If you haven't done so previously, you'll need to install the following tools:
-
-1. Install [Create React App](https://github.com/facebookincubator/create-react-app) globally.
+- Install [Create React App](https://github.com/facebookincubator/create-react-app) globally.
 
     ```bash
     npm install -g create-react-app
     ```
 
-2. Install [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
+- Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
 
     ```bash
     npm install -g yo generator-office
@@ -54,9 +52,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
     > [!NOTE]
     > If you're prompted to overwrite **package.json**, answer **No** (do not overwrite).
 
-3. Open the manifest file (i.e., the file in the root directory of your app with a name ending in "manifest.xml"). Replace all occurrences of `https://localhost:3000` with `http://localhost:3000` and save the file.
-
-4. Follow the instructions for the platform you'll be using to run your add-in and sideload the add-in within Excel.
+3. Follow the instructions for the platform you'll be using to run your add-in and sideload the add-in within Excel.
 
     - Windows: [Sideload Office Add-ins for testing on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
     - Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
@@ -158,8 +154,14 @@ Each add-in requires a manifest file to define its settings and capabilities.
 
 1. From the terminal, run the following command to start the dev server.
 
+    Windows:
     ```bash
-    npm start
+    set HTTPS=true&&npm start
+    ```
+
+    macOS:
+    ```bash
+    HTTPS=true npm start
     ```
 
    > [!NOTE]
@@ -177,13 +179,14 @@ Each add-in requires a manifest file to define its settings and capabilities.
 
 ## Next steps
 
-Congratulations, you've successfully created an Excel add-in using React! Next, learn more about the core concepts of building Excel add-ins.
+Congratulations, you've successfully created an Excel add-in using React! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.
 
 > [!div class="nextstepaction"]
-> [Excel JavaScript API core concepts](../excel/excel-add-ins-core-concepts.md)
+> [Excel add-in tutorial](../tutorials/excel-tutorial-create-table.md)
 
 ## See also
 
+* [Excel add-in tutorial](../tutorials/excel-tutorial-create-table.md)
 * [Excel JavaScript API core concepts](../excel/excel-add-ins-core-concepts.md)
 * [Excel add-in code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
 * [Excel JavaScript API reference](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
