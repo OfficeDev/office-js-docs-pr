@@ -267,13 +267,13 @@ In this article, you'll walk through the process of building a Word add-in by us
     <!DOCTYPE html>
     <html>
         <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <title>Boilerplate text app</title>
-        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
-        <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
-        <script src="app.js" type="text/javascript"></script>
-        <link href="app.css" rel="stylesheet" type="text/css" />
+            <meta charset="UTF-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+            <title>Boilerplate text app</title>
+            <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+            <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+            <script src="app.js" type="text/javascript"></script>
+            <link href="app.css" rel="stylesheet" type="text/css" />
         </head>
         <body>
             <div id="content-header">
