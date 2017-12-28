@@ -128,7 +128,9 @@ In this article, you'll walk through the process of building a OneNote add-in by
     ...
     ```
 
-[!include[Start dev server section](../includes/quickstart-yo-start-server.md)]
+## Start the dev server
+
+[!include[Start server section](../includes/quickstart-yo-start-server.md)]
 
 ## Try it out
 
