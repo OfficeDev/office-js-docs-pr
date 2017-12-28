@@ -214,11 +214,11 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 2. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![A screenshot of the Word application with the Show Taskpane button highlighted](../images/word-quickstart-addin-0.png)
+    ![A screenshot of the Word application with the Show Taskpane button highlighted](../images/word-quickstart-addin-2.png)
 
 3. In the task pane, choose any of the buttons to add boilerplate text to the document.
 
-    ![Picture of the Word application with the boilerplate add-in loaded](../images/word-quickstart-addin-1.png)
+    ![Screenshot of the Word application with the boilerplate add-in loaded](../images/word-quickstart-addin-1.png)
 
 # [Any editor](#tab/visual-studio-code)
 
@@ -461,9 +461,13 @@ In this article, you'll walk through the process of building a Word add-in by us
     - Word Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. In the task pane, choose any of the buttons to add boilerplate text to the document.
+2. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Picture of the Word application with the boilerplate add-in loaded](../images/word-quickstart-addin-1.png)
+    ![A screenshot of the Word application with the Show Taskpane button highlighted](../images/word-quickstart-addin-2.png)
+
+3. In the task pane, choose any of the buttons to add boilerplate text to the document.
+
+    ![Screenshot of the Word application with the boilerplate add-in loaded](../images/word-quickstart-addin-1.png)
 
 ---
 
