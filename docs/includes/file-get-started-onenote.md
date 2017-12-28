@@ -42,7 +42,7 @@ In this article, you'll walk through the process of building a OneNote add-in by
 
 ## Update the code
 
-1. In your code editor, open **index.html** in the root of the project. This files contains the HTML that will be rendered in the add-in's task pane.
+1. In your code editor, open **index.html** in the root of the project. This file contains the HTML that will be rendered in the add-in's task pane.
 
 2. Replace the `<main>` element inside the `<body>` element with the following markup and save the file. This adds a text area and a button using [Office UI Fabric components](http://dev.office.com/fabric/components).
 

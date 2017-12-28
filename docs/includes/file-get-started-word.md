@@ -222,11 +222,46 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 # [Any editor](#tab/visual-studio-code)
 
-### Create the web app 
+### Prerequisites
 
-1. Create a folder on your local drive and name it **BoilerplateAddin**. This is where you'll create the files for your app.
+- [Node.js](https://nodejs.org)
 
-2. In your app folder, create a file named **home.html** to specify the HTML that will be rendered in the add-in's task pane. This add-in will display three buttons and when any of the buttons are chosen, boilerplate text will be added to the document. Add the following code to **home.html** and save the file.
+- Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
+
+    ```bash
+    npm install -g yo generator-office
+    ```
+
+### Create the add-in project
+
+1. Create a folder on your local drive and name it `my-word-addin`. This is where you'll create the files for your add-in.
+
+2. Navigate to your new folder.
+
+    ```bash
+    cd my-word-addin
+    ```
+
+3. Use the Yeoman generator to create a Word add-in project. Run the following command and then answer the prompts as follows:
+
+    ```bash
+    yo office
+    ```
+
+    - **Would you like to create a new subfolder for your project?:** `No`
+    - **What do you want to name your add-in?:** `My Office Add-in`
+    - **Which Office client application would you like to support?:** `Word`
+    - **Would you like to create a new add-in?:** `Yes`
+    - **Would you like to use TypeScript?:** `No`
+    - **Choose a framework:** `Jquery`
+
+    The generator will then ask you if you want to open **resource.html**. It isn't necessary to open it for this tutorial, but feel free to open it if you're curious! Choose yes or no to complete the wizard and allow the generator to do its work.
+
+    ![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-word-jquery.png)
+
+### Update the code
+
+1. In your code editor, open **index.html** in the root of the project. This file contains the HTML that will be rendered in the add-in's task pane. Replace the entire contents with the following code and save the file. This add-in will display three buttons and when any of the buttons are chosen, boilerplate text will be added to the document.
 
     ```html
     <!DOCTYPE html>
@@ -264,9 +299,9 @@ In this article, you'll walk through the process of building a Word add-in by us
     </html>
     ```
 
-3. In your app folder, create a file named **home.js** to specify the jQuery script for the add-in. This script contains initialization code as well as the code that makes changes to the Word document, by inserting text into the document when a button is chosen. Add the following code to **home.js** and save the file.
+2. Open the file **app.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file. This script contains initialization code as well as the code that makes changes to the Word document, by inserting text into the document when a button is chosen. 
 
-    ```javascript
+    ```js
     'use strict';
     
     (function () {
@@ -365,7 +400,7 @@ In this article, you'll walk through the process of building a Word add-in by us
     })();
     ```
 
-4. In your app folder, create a file named **home.css** to specify the custom styles for the add-in. Add the following code to **home.css** and save the file.
+3. Open the file **app.css** in the root of the project to specify the custom styles for the add-in. Replace the entire contents with the following and save the file.
 
     ```css
     #content-header {
@@ -394,40 +429,29 @@ In this article, you'll walk through the process of building a Word add-in by us
     }
     ```
 
-### Create the manifest file
+### Update the manifest
 
-1. In your app folder, create a file named **BoilerplateManifest.xml** to define the add-in's settings and capabilities. Add the following code to the file. 
+1. Open the file **my-office-add-in-manifest.xml** to define the add-in's settings and capabilities.
+
+2. The `ProviderName` element has a placeholder value. Replace it with your name.
+
+3. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Word**.
+
+4. Save the file.
 
     ```xml
-    <?xml version="1.0" encoding="UTF-8"?>
-    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:type="TaskPaneApp">
-        <Id>2b88100c-656e-4bab-9f1e-f6731d86e464</Id>
-        <Version>1.0.0.0</Version>
-        <ProviderName>Microsoft</ProviderName>
-        <DefaultLocale>en-US</DefaultLocale>
-        <DisplayName DefaultValue="My Office Add-in" />
-        <Description DefaultValue="Insert boilerplate content into a Word document." />
-        <Hosts>
-            <Host Name="Document"/>
-        </Hosts>
-        <DefaultSettings>
-            <SourceLocation DefaultValue="\\MyShare\boilerplate\home.html" />
-        </DefaultSettings>
-        <Permissions>ReadWriteDocument</Permissions>
-    </OfficeApp>
+    ...
+    <ProviderName>John Doe</ProviderName>
+    <DefaultLocale>en-US</DefaultLocale>
+    <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
+    <DisplayName DefaultValue="My Office Add-in" />
+    <Description DefaultValue="A task pane add-in for Word"/>
+    ...
     ```
 
-2. Generate a GUID using an online generator of your choice. Then, replace the value of the **Id** element shown in the previous step with that GUID.
+### Start the dev server
 
-3. Save the manifest file.
-
-### Deploy the web app and update the manifest
-
-1. Deploy your web app (i.e., the contents of your app folder) to the web server of your choice.
-
-2. In your local app folder, open the manifest file (**BoilerplateManifest.xml**). Edit the attribute value within the **SourceLocation** element to specify the location of the **home.html** file on the web server and save the file.
+[!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
 ### Try it out
 
@@ -437,7 +461,7 @@ In this article, you'll walk through the process of building a Word add-in by us
     - Word Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. In the right task pane, choose any of the buttons to add boilerplate text to the document.
+2. In the task pane, choose any of the buttons to add boilerplate text to the document.
 
     ![Picture of the Word application with the boilerplate add-in loaded](../images/word-quickstart-addin-1.png)
 
