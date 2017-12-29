@@ -386,7 +386,7 @@
   - name: Outlook JavaScript API
     href: https://dev.office.com/reference/add-ins/outlook/tutorial-api-requirement-sets
     displayName: Outlook
-  - name: Open API specifications
+  - name: API open specifications
     href: https://dev.office.com/reference/add-ins/openspec
     displayName: Excel, Word
 
