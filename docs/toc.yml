@@ -46,8 +46,6 @@
     items:
     - name: Get JavaScript IntelliSense in Visual Studio
       href: tutorials/get-javascript-intellisense-in-visual-studio.md
-  - name: Create and debug an Office Add-in using any editor
-    href: tutorials/create-an-office-add-in-using-any-editor.md
   - name: Create a table in Excel
     href: tutorials/excel-tutorial-create-table.md
     displayName: Excel

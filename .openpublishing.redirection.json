@@ -22,8 +22,7 @@
       }, 
       {   
         "source_path": "docs/get-started/create-an-office-add-in-using-any-editor.md", 
-        "redirect_url": "/office/dev/add-ins/tutorials/create-an-office-add-in-using-any-editor", 
-        "redirect_document_id": true 
+        "redirect_url": "/office/dev/add-ins/index"
       }, 
       {   
         "source_path": "docs/get-started/create-addin-commands.md", 
@@ -122,6 +121,10 @@
       {   
         "source_path": "docs/powerpoint/office-mix/office-mix-add-ins.md", 
         "redirect_url": "https://mix.office.com/en-us/Home"
+      },
+      {   
+        "source_path": "docs/tutorials/create-an-office-add-in-using-any-editor.md", 
+        "redirect_url": "/office/dev/add-ins/index"
       }
     ] 
 }

@@ -31,5 +31,4 @@ For more information about debugging in Visual Studio, see the following:
 ## See also
 
 - [Create and debug Office Add-ins in Visual Studio](../tutorials/create-and-debug-office-add-ins-in-visual-studio.md)
-- [Create an Office Add-in using any editor](../tutorials/create-an-office-add-in-using-any-editor.md)
 - [Publish your Office Add-in](../publish/publish.md)
