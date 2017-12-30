@@ -41,15 +41,6 @@
 
 - name: Tutorials
   items:
-  - name: Create and debug an Office Add-in using Visual Studio
-    href: tutorials/create-and-debug-office-add-ins-in-visual-studio.md
-    items:
-    - name: Get JavaScript IntelliSense in Visual Studio
-      href: tutorials/get-javascript-intellisense-in-visual-studio.md
-  - name: Create and debug an Office Add-in using any editor
-    href: tutorials/create-an-office-add-in-using-any-editor.md
-  - name: Excel add-in tutorial
-    href: tutorials/excel-tutorial.yml
   - name: Create a table in Excel
     href: tutorials/excel-tutorial-create-table.md
     displayName: Excel
@@ -192,12 +183,21 @@
       href: develop/addressing-same-origin-policy-limitations.md
     - name: Localization
       href: develop/localization.md
+
+    - name: Develop add-ins with Visual Studio
+      items:
+      - name: Create and debug Office Add-ins in Visual Studio
+        href: develop/create-and-debug-office-add-ins-in-visual-studio.md
+        items:
+      - name: Get JavaScript IntelliSense in Visual Studio
+        href: develop/get-javascript-intellisense-in-visual-studio.md
+      - name: Convert JavaScript to TypeScript
+        href: develop/convert-javascript-to-typescript.md
+
     - name: Develop add-ins for the iPad
       href: develop/develop-office-add-ins-for-the-ipad.md
-    - name: Tips for creating add-ins with Angular
+    - name: Develop add-ins with Angular
       href: develop/add-ins-with-angular2.md
-    - name: Convert JavaScript to TypeScript
-      href: develop/convert-javascript-to-typescript.md
 
   - name: Excel add-ins
     href: excel/excel-add-ins-overview.md
@@ -388,7 +388,7 @@
   - name: Outlook JavaScript API
     href: https://dev.office.com/reference/add-ins/outlook/tutorial-api-requirement-sets
     displayName: Outlook
-  - name: Open API specifications
+  - name: API open specifications
     href: https://dev.office.com/reference/add-ins/openspec
     displayName: Excel, Word
 

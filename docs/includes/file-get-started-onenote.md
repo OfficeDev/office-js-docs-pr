@@ -1,125 +1,156 @@
 # Build your first OneNote add-in
 
-In this article, you'll walk through the process of building a simple task pane add-in that adds some text to a OneNote page.
+In this article, you'll walk through the process of building a OneNote add-in by using jQuery and the Office JavaScript API.
 
-The following image shows the add-in that you'll create.
+## Prerequisites
 
-![The OneNote add-in built from this walkthrough](../images/onenote-first-add-in.png)
+- [Node.js](https://nodejs.org)
 
-<a name="setup"></a>
-## Step 1: Set up your dev environment and create an add-in project
+- Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
 
-Follow the instructions to [Create an Office Add-in using any editor](../tutorials/create-an-office-add-in-using-any-editor.md) to install the necessary prerequisites and run the Office Yeoman generator to create a new add-in project. The following table lists  the project attributes to select in the Yeoman generator.
+    ```bash
+    npm install -g yo generator-office
+    ```
 
-| Option | Value |
-|:------|:------|
-| New subfolder | (accept the default) |
-| Add-in name | OneNote Add-in |
-| Supported Office application | (select OneNote) |
-| Create new add-in | Yes, I want a new add-in |
-| Add [TypeScript](https://www.typescriptlang.org/) | No |
-| Choose framework | Jquery |
+## Create the add-in project
 
-<a name="develop"></a>
-## Step 2: Modify the add-in
+1. Create a folder on your local drive and name it `my-onenote-addin`. This is where you'll create the files for your add-in.
 
-You can edit the add-in files using any text editor or IDE. If you haven't tried Visual Studio Code yet, you can [download it for free](https://code.visualstudio.com/) on Linux, Mac OSX, and Windows.
+2. Navigate to your new folder.
 
-1. Open **index.html** in the project directory. 
+    ```bash
+    cd my-onenote-addin
+    ```
 
-2. Replace the `<main>` element with the following code. This adds a text area and a button using [Office UI Fabric components](http://dev.office.com/fabric/components).
+3. Use the Yeoman generator to create a OneNote add-in project. Run the following command and then answer the prompts as follows:
 
-      ```html
-      <main class="ms-welcome__main">
-         <br />
-         <p class="ms-font-l">Enter content below</p>
-         <div class="ms-TextField ms-TextField--placeholder">
-             <textarea id="textBox" rows="5"></textarea>
-         </div>
-         <button id="addOutline" class="ms-welcome__action ms-Button ms-Button--hero ms-u-slideUpIn20">
-              <span class="ms-Button-label">Add Outline</span>
-              <span class="ms-Button-icon"><i class="ms-Icon"></i></span>
-              <span class="ms-Button-description">Adds the content above to the current page.</span>
-          </button>
-      </main>
-      ```
+    ```bash
+    yo office
+    ```
 
-3. Open **app.js** (or app.ts if using TypeScript) in the project directory. Edit the **Office.initialize** function to add a click event to the **Add outline** button, as follows.
+    - **Would you like to create a new subfolder for your project?:** `No`
+    - **What do you want to name your add-in?:** `OneNote Add-in`
+    - **Which Office client application would you like to support?:** `OneNote`
+    - **Would you like to create a new add-in?:** `Yes`
+    - **Would you like to use TypeScript?:** `No`
+    - **Choose a framework:** `Jquery`
 
-      ```js
-      // The initialize function is run each time the page is loaded.
-      Office.initialize = function (reason) {
-         $(document).ready(function () {
-             app.initialize();
+    The generator will then ask you if you want to open **resource.html**. It isn't necessary to open it for this tutorial, but feel free to open it if you're curious! Choose yes or no to complete the wizard and allow the generator to do its work.
 
-             // Set up event handler for the UI.
-             $('#addOutline').click(addOutlineToPage);
-         });
-      };
-      ```
- 
-4. Replace the **run** method with the following **addOutlineToPage** method. This gets the content from the text area and adds it to the page.
+    ![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-onenote-jquery.png)
 
-      ```js
-      // Add the contents of the text area to the page.
-      function addOutlineToPage() {        
-         OneNote.run(function (context) {
-            var html = '<p>' + $('#textBox').val() + '</p>';
 
-             // Get the current page.
-             var page = context.application.getActivePage();
+## Update the code
 
-             // Queue a command to load the page with the title property.             
-             page.load('title'); 
+1. In your code editor, open **index.html** in the root of the project. This file contains the HTML that will be rendered in the add-in's task pane.
 
-             // Add an outline with the specified HTML to the page.
-             var outline = page.addOutline(40, 90, html);
+2. Replace the `<main>` element inside the `<body>` element with the following markup and save the file. This adds a text area and a button using [Office UI Fabric components](http://dev.office.com/fabric/components).
 
-             // Run the queued commands, and return a promise to indicate task completion.
-             return context.sync()
-                 .then(function() {
-                     console.log('Added outline to page ' + page.title);
-                 })
-                 .catch(function(error) {
-                     app.showNotification("Error: " + error); 
-                     console.log("Error: " + error); 
-                     if (error instanceof OfficeExtension.Error) { 
-                         console.log("Debug info: " + JSON.stringify(error.debugInfo)); 
-                     } 
-                 }); 
-             });
-      }
-      ```
+    ```html
+    <main class="ms-welcome__main">
+        <br />
+        <p class="ms-font-l">Enter content below</p>
+        <div class="ms-TextField ms-TextField--placeholder">
+            <textarea id="textBox" rows="5"></textarea>
+        </div>
+        <button id="addOutline" class="ms-welcome__action ms-Button ms-Button--hero ms-u-slideUpIn20">
+            <span class="ms-Button-label">Add Outline</span>
+            <span class="ms-Button-icon"><i class="ms-Icon"></i></span>
+            <span class="ms-Button-description">Adds the content above to the current page.</span>
+        </button>
+    </main>
+    ```
 
-<a name="test"></a>
-## Step 3: Test the add-in on OneNote Online
+3. Open the file **app.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.
 
-1. Start the HTTPS server.  
+    ```js
+    'use strict';
 
-   a. Open a **cmd** prompt / Terminal and go to the add-in project folder. 
+    (function () {
 
-   b. Run the following command.
+        Office.initialize = function (reason) {
+            $(document).ready(function () {
+                app.initialize();
 
-      ```bash
-      C:\your-local-path\onenote add-in\> npm start
-      ```
-2. Install the self-signed certificate as a trusted certificate. You only need to do this one time on your computer for all add-in projects created with the Office Yeoman generator. For more information, see [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
+                // Set up event handler for the UI.
+                $('#addOutline').click(addOutlineToPage);
+            });
+        };
 
-3. Go to [OneNote Online](https://www.onenote.com/notebooks) and open a notebook.
+        // Add the contents of the text area to the page.
+        function addOutlineToPage() {        
+            OneNote.run(function (context) {
+                var html = '<p>' + $('#textBox').val() + '</p>';
 
-4. Select **Insert > Office Add-ins**. This opens the Office Add-ins dialog.
+                // Get the current page.
+                var page = context.application.getActivePage();
 
-   - If you're signed in with your consumer account, select the **MY ADD-INS** tab, and then select **Upload My Add-in**.
+                // Queue a command to load the page with the title property.             
+                page.load('title'); 
 
-   - If you're signed in with your work or school account, select the **MY ORGANIZATION** tab, and then select **Upload My Add-in**. 
-  
-   The following image shows the **MY ADD-INS** tab for consumer notebooks.
+                // Add an outline with the specified HTML to the page.
+                var outline = page.addOutline(40, 90, html);
 
-   <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
+                // Run the queued commands, and return a promise to indicate task completion.
+                return context.sync()
+                    .then(function() {
+                        console.log('Added outline to page ' + page.title);
+                    })
+                    .catch(function(error) {
+                        app.showNotification("Error: " + error); 
+                        console.log("Error: " + error); 
+                        if (error instanceof OfficeExtension.Error) { 
+                            console.log("Debug info: " + JSON.stringify(error.debugInfo)); 
+                        } 
+                    }); 
+            });
+        }
+    })();
+    ```
 
-5. In the Upload Add-in dialog, browse to **onenote-add-in-manifest.xml** in your project folder, and then select **Upload**. While testing, your manifest file is stored in the browser's local storage.
+## Update the manifest
 
-6. The add-in opens in an iFrame next to the OneNote page. Enter some text in the text area, and then select **Add outline**. The text you entered is added to the page. 
+1. Open the file **one-note-add-in-manifest.xml** to define the add-in's settings and capabilities.
+
+2. The `ProviderName` element has a placeholder value. Replace it with your name.
+
+3. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for OneNote**.
+
+4. Save the file.
+
+    ```xml
+    ...
+    <ProviderName>John Doe</ProviderName>
+    <DefaultLocale>en-US</DefaultLocale>
+    <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
+    <DisplayName DefaultValue="OneNote Add-in" />
+    <Description DefaultValue="A task pane add-in for OneNote"/>
+    ...
+    ```
+
+## Start the dev server
+
+[!include[Start server section](../includes/quickstart-yo-start-server.md)]
+
+## Try it out
+
+1. In [OneNote Online](https://www.onenote.com/notebooks), open a notebook.
+
+2. Choose **Insert > Office Add-ins** to open the Office Add-ins dialog.
+
+    - If you're signed in with your consumer account, select the **MY ADD-INS** tab, and then choose **Upload My Add-in**.
+
+    - If you're signed in with your work or school account, select the **MY ORGANIZATION** tab, and then select **Upload My Add-in**. 
+
+    The following image shows the **MY ADD-INS** tab for consumer notebooks.
+
+    <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
+
+3. In the Upload Add-in dialog, browse to **one-note-add-in-manifest.xml** in your project folder, and then choose **Upload**. 
+
+4. The add-in opens in an iFrame next to the OneNote page. Enter some text in the text area, and then choose **Add outline**. The text you entered is added to the page. 
+
+    ![The OneNote add-in built from this walkthrough](../images/onenote-first-add-in.png)
 
 ## Troubleshooting and tips
 
