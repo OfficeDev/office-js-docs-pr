@@ -12,13 +12,11 @@
       }, 
       {   
         "source_path": "docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md", 
-        "redirect_url": "/office/dev/add-ins/develop/create-and-debug-office-add-ins-in-visual-studio", 
-        "redirect_document_id": true 
+        "redirect_url": "/office/dev/add-ins/develop/create-and-debug-office-add-ins-in-visual-studio"
       }, 
       {   
         "source_path": "docs/get-started/get-javascript-intellisense-in-visual-studio.md", 
-        "redirect_url": "/office/dev/add-ins/develop/get-javascript-intellisense-in-visual-studio", 
-        "redirect_document_id": true 
+        "redirect_url": "/office/dev/add-ins/develop/get-javascript-intellisense-in-visual-studio"
       }, 
       {   
         "source_path": "docs/get-started/create-an-office-add-in-using-any-editor.md", 
