@@ -12,12 +12,12 @@
       }, 
       {   
         "source_path": "docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md", 
-        "redirect_url": "/office/dev/add-ins/tutorials/create-and-debug-office-add-ins-in-visual-studio", 
+        "redirect_url": "/office/dev/add-ins/develop/create-and-debug-office-add-ins-in-visual-studio", 
         "redirect_document_id": true 
       }, 
       {   
         "source_path": "docs/get-started/get-javascript-intellisense-in-visual-studio.md", 
-        "redirect_url": "/office/dev/add-ins/tutorials/get-javascript-intellisense-in-visual-studio", 
+        "redirect_url": "/office/dev/add-ins/develop/get-javascript-intellisense-in-visual-studio", 
         "redirect_document_id": true 
       }, 
       {   
@@ -125,6 +125,16 @@
       {   
         "source_path": "docs/tutorials/create-an-office-add-in-using-any-editor.md", 
         "redirect_url": "/office/dev/add-ins/index"
+      }, 
+      {   
+        "source_path": "docs/tutorials/get-javascript-intellisense-in-visual-studio.md", 
+        "redirect_url": "/office/dev/add-ins/develop/get-javascript-intellisense-in-visual-studio", 
+        "redirect_document_id": true 
+      }, 
+      {   
+        "source_path": "docs/tutorials/create-and-debug-office-add-ins-in-visual-studio.md", 
+        "redirect_url": "/office/dev/add-ins/develop/create-and-debug-office-add-ins-in-visual-studio", 
+        "redirect_document_id": true 
       }
     ] 
 }
