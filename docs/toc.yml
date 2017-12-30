@@ -183,12 +183,8 @@
       href: develop/addressing-same-origin-policy-limitations.md
     - name: Localization
       href: develop/localization.md
-    - name: Develop add-ins for the iPad
-      href: develop/develop-office-add-ins-for-the-ipad.md
-    - name: Tips for creating add-ins with Angular
-      href: develop/add-ins-with-angular2.md
 
-    - name: Develop with Visual Studio
+    - name: Develop add-ins with Visual Studio
       items:
       - name: Create and debug an Office Add-in using Visual Studio
         href: develop/create-and-debug-office-add-ins-in-visual-studio.md
@@ -197,6 +193,11 @@
         href: develop/get-javascript-intellisense-in-visual-studio.md
       - name: Convert JavaScript to TypeScript
         href: develop/convert-javascript-to-typescript.md
+
+    - name: Develop add-ins for the iPad
+      href: develop/develop-office-add-ins-for-the-ipad.md
+    - name: Develop add-ins with Angular
+      href: develop/add-ins-with-angular2.md
 
   - name: Excel add-ins
     href: excel/excel-add-ins-overview.md
