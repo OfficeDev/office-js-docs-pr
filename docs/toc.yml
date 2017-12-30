@@ -186,7 +186,7 @@
 
     - name: Develop add-ins with Visual Studio
       items:
-      - name: Create and debug an Office Add-in using Visual Studio
+      - name: Create and debug Office Add-ins in Visual Studio
         href: develop/create-and-debug-office-add-ins-in-visual-studio.md
         items:
       - name: Get JavaScript IntelliSense in Visual Studio
