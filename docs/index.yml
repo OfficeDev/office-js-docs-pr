@@ -79,4 +79,4 @@ sections:
     - title: Host-specific APIs (2016)
       html: <p><a href="https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview" target="_blank">Excel JavaScript API</a></p><p><a href="https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview" target="_blank">Word JavaScript API</a></p><p><a href="https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference" target="_blank">OneNote JavaScript API</a></p><p><a href="https://dev.office.com/reference/add-ins/outlook/tutorial-api-requirement-sets" target="_blank">Outlook JavaScript API</a></p>
     - title: Other
-      html: <p><a href="https://dev.office.com/reference/add-ins/openspec" target="_blank">Open API specifications</a></p><p><a href="https://dev.office.com/reference/add-ins/manifest/allowsnapshot" target="_blank">Office Add-ins Manifest</a></p>
+      html: <p><a href="https://dev.office.com/reference/add-ins/openspec" target="_blank">API open specifications</a></p><p><a href="https://dev.office.com/reference/add-ins/manifest/allowsnapshot" target="_blank">Office Add-ins Manifest</a></p>

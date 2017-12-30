@@ -1,10 +1,10 @@
 ---
-title: Tips for creating Office Add-ins with Angular
+title: Develop Office Add-ins with Angular
 description: ''
 ms.date: 12/04/2017
 ---
 
-# Tips for creating Office Add-ins with Angular
+# Develop Office Add-ins with Angular
 
 This article provides guidance for using Angular 2+ to create an Office Add-in as a single page application.
 

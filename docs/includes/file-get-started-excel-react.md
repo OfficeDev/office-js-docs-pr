@@ -169,7 +169,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
 
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Excel Add-in button](../images/excel-quickstart-addin-2a.png)
+    ![Excel Add-in button](../images/excel-quickstart-addin-2b.png)
 
 3. Select any range of cells in the worksheet.
 
