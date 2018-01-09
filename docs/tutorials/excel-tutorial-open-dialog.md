@@ -6,7 +6,7 @@ ms.date: 1/08/2017
 
 # Create and use a dialog
 
-This is the sixth step of a tutorial that begins with [Excel Tutorial Create Table](excel-tutorial-create-table.md). You need to go through all the preceding steps to get the project in the state that this step assumes. 
+This is the sixth step of a tutorial that begins with [Excel Tutorial Create Table](excel-tutorial-create-table.md). You need to complete the preceding steps to get the project in the state that this step assumes. 
 
 Is this tutorial, you learn how to open a dialog in an add-in, pass a message from the dialog process to the task pane process, and close the dialog. Office Add-in dialogs are *nonmodal*: a user can continue to interact with both the document in the host Office application and with the host page in the task pane. 
 
@@ -18,7 +18,6 @@ Is this tutorial, you learn how to open a dialog in an add-in, pass a message fr
    - The page has a `<textarea>` where the user will enter his or her name and a button that will send the name to the page in the task pane where it will be displayed.
    - The markup loads a script called popup.js that you will create in a later step.
    - It also loads the Office.JS library and jQuery because they will be used in popup.js.
-
 
     ```html
     <!DOCTYPE html>
@@ -49,9 +48,9 @@ Is this tutorial, you learn how to open a dialog in an add-in, pass a message fr
     </html>
     ```
 
-5. Create a file in the root of the project called popup.js.
-6. Add the following code to popup.js. Note:
-   - *Every page that calls APIs in the Office.JS library must assign a function to the `Office.initialize` property.* If no initialization is needed, then the function can have an empty body, but the property must not be left undefined, assigned to null or to a non-function value. Take a look at the app.js file in the project root for another example. The code that makes the assignment must run before any calls to Office.JS; hence the assignment is frequrently in a Immediately Invoked Function Expression in a script file that is loaded by the page, as it is in this case.
+4. Create a file in the root of the project called popup.js.
+5. Add the following code to popup.js. Note:
+   - *Every page that calls APIs in the Office.JS library must assign a function to the `Office.initialize` property.* If no initialization is needed, then the function can have an empty body, but the property must not be left undefined, assigned to null or to a non-function value. For an example, see the app.js file in the project root. The code that makes the assignment must run before any calls to Office.JS; hence the assignment is in a script file that is loaded by the page, as it is in this case.
    - The jQuery `ready` function is called inside the `initialize` method. It is an almost universal rule that the loading, initializing, or bootstrapping code of other JavaScript libraries should be inside the `Office.initialize` function.
 
     ```js
@@ -71,13 +70,13 @@ Is this tutorial, you learn how to open a dialog in an add-in, pass a message fr
     }());    
     ```
 
-1. Replace `TODO1` with the following code. You will create the `sendStringToParentPage` function in the next step.
+6. Replace `TODO1` with the following code. You'll create the `sendStringToParentPage` function in the next step.
 
     ```js
     $('#ok-button').click(sendStringToParentPage);
     ```
 
-1. Replace `TODO2` with the following code. The `messageParent` method passes its parameter to the parent page, in this case, the page in the task pane. The parameter can be a boolean or a string, which would include anything that can serialized as a string, such as XML or JSON. 
+7. Replace `TODO2` with the following code. The `messageParent` method passes its parameter to the parent page, in this case, the page in the task pane. The parameter can be a boolean or a string, which includes anything that can be serialized as a string, such as XML or JSON. 
 
     ```js
     function sendStringToParentPage() {
@@ -86,7 +85,7 @@ Is this tutorial, you learn how to open a dialog in an add-in, pass a message fr
     }
     ```
 
-1. Save the file.
+8. Save the file.
 
    > [!NOTE]
    > The popup.html file, and the popup.js file that it loads, run in an entirely separate Internet Explorer process from the add-in's task pane. If the popup.js was transpiled into the same bundle.js file as the app.js file, then the add-in would have to load two copies of the bundle.js file, which defeats the purpose of bundling. In addition, the popup.js file does not contain any JavaScript that is unsupported by IE. For these two reasons, this add-in does not transpile the popup.js file at all. 
@@ -94,8 +93,8 @@ Is this tutorial, you learn how to open a dialog in an add-in, pass a message fr
 
 ## Open the dialog from the task pane
 
-2. Open the file index.html.
-3. Just below the `div` that contains the `freeze-header` button, add the following markup:
+1. Open the file index.html.
+2. Below the `div` that contains the `freeze-header` button, add the following markup:
 
     ```html
     <div class="padding">            
@@ -103,7 +102,7 @@ Is this tutorial, you learn how to open a dialog in an add-in, pass a message fr
     </div>
     ```
 
-4. The dialog will prompt the user to enter a name and pass the user's name to the task pane. The task pane will display it in a label. Immediately below the `div` that you just added, add the following markup:
+3. The dialog will prompt the user to enter a name and pass the user's name to the task pane. The task pane will display it in a label. Immediately below the `div` that you just added, add the following markup:
 
     ```html
     <div class="padding">            
@@ -111,21 +110,21 @@ Is this tutorial, you learn how to open a dialog in an add-in, pass a message fr
     </div>
     ```
 
-1. Open the app.js file.
+4. Open the app.js file.
 
-5. Just below the line that assigns a click handler to the `freeze-header` button, add the following code. You will create the `openDialog` method in a later step.
+5. Below the line that assigns a click handler to the `freeze-header` button, add the following code. You'll create the `openDialog` method in a later step.
 
     ```js
     $('#open-dialog').click(openDialog);
     ```
 
-6. Just below the `freezeHeader` function add the following declaration. This variable will be used to hold an object in the parent page's execution context that acts as a kind of middleman to the dialog page's execution context.
+6. Below the `freezeHeader` function add the following declaration. This variable is used to hold an object in the parent page's execution context that acts as an intermediator to the dialog page's execution context.
 
     ```js
     let dialog = null;
     ```
 
-1. Just the declaration of `dialog`, add the following function. The important thing to notice about this code is what is *not* there: there is no call of `Excel.run`. This is because the API to open a dialog is shared among all Office hosts, so it is part of the Office JavaScript Common API, not the Excel-specific API.
+7. Below the declaration of `dialog`, add the following function. The important thing to notice about this code is what is *not* there: there is no call of `Excel.run`. This is because the API to open a dialog is shared among all Office hosts, so it is part of the Office JavaScript Common API, not the Excel-specific API.
 
     ```js
     function openDialog() {
@@ -133,7 +132,7 @@ Is this tutorial, you learn how to open a dialog in an add-in, pass a message fr
     }
     ``` 
 
-7. Replace `TODO1` with the following code. Note:
+8. Replace `TODO1` with the following code. Note:
    - The `displayDialogAsync` method opens a dialog in the center of the screen.
    - The first parameter is the URL of the page to open.
    - The second parameter passes options. `height` and `width` are percentages of the size of the Office application's window. 
@@ -149,7 +148,7 @@ Is this tutorial, you learn how to open a dialog in an add-in, pass a message fr
 
 ## Process the message from the dialog and close the dialog
 
-9. Still in the app.js file, replace `TODO2` with the following code. Note:
+1. Continue in the app.js file, and replace `TODO2` with the following code. Note:
    - The callback is executed immediately after the dialog successfully opens and before the user has taken any action in the dialog.
    - The `result.value` is the object that acts as a kind of middleman between the execution contexts of the parent and dialog pages.
    - The `processMessage` function will be created in a later step. This handler will process any values that are sent from the dialog page with calls of the `messageParent` function.
@@ -161,7 +160,7 @@ Is this tutorial, you learn how to open a dialog in an add-in, pass a message fr
     }
     ```
 
-10. Just below the `openDialog` function, add the following function.
+2. Below the `openDialog` function, add the following function.
 
     ```js
     function processMessage(arg) {
@@ -172,19 +171,17 @@ Is this tutorial, you learn how to open a dialog in an add-in, pass a message fr
 
 ## Test the add-in
 
-2. Open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
-3. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used internally by Excel to run Excel add-ins).
-4. Run the command `npm start` to start a web server running on localhost.
-5. Sideload the add-in using one of the methods described in [Excel add-in quickstart that uses jQuery](excel-add-ins-get-started-jquery.md).
-6. Click **Show Taskpane** on the **Home** menu.
-7. Click the **Open Dialog** button in the task pane. 
-8. While the dialog is open, drag it and resize it. Note that you can interact with the worksheet and press other buttons on the taskpane. But you cannot launch a second dialog from the same task pane page.
-9. In the dialog, enter a name and click the **OK** button. The name appears on the task pane and the dialog closes.
-10. Optionally, comment out the line `dialog.close();` in the `processMessage` function. Then repeat the steps of this section. The dialog stays open and you can change the name. You can close it manually with the **X** button in the upper right.
-
+1. Open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
+2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used internally by Excel to run Excel add-ins).
+3. Run the command `npm start` to start a web server running on localhost.
+4. Sideload the add-in using one of the methods described in [Excel add-in quickstart that uses jQuery](excel-add-ins-get-started-jquery.md).
+5. Select **Show Taskpane** on the **Home** menu.
+6. Choose the **Open Dialog** button in the task pane. 
+7. While the dialog is open, drag it and resize it. Note that you can interact with the worksheet and press other buttons on the taskpane. But you cannot launch a second dialog from the same task pane page.
+8. In the dialog, enter a name and choose **OK**. The name appears on the task pane and the dialog closes.
+9. Optionally, comment out the line `dialog.close();` in the `processMessage` function. Then repeat the steps of this section. The dialog stays open and you can change the name. You can close it manually by pressing the **X** button in the upper right corner.
 
     ![Excel tutorial - Dialog](../../images/excel-tutorial-dialog-open.png)
-
 
 ## See also
 
