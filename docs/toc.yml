@@ -56,6 +56,9 @@
   - name: Protect a worksheet in Excel
     href: tutorials/excel-tutorial-protect-worksheet.md
     displayName: Excel
+  - name: Open a dialog in Excel
+    href: tutorials/excel-tutorial-open-dialog.md
+    displayName: Excel
     
 - name: Concepts
   items:

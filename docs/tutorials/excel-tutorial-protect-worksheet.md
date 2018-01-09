@@ -231,8 +231,13 @@ These steps must be completed whenever your code needs to *read* information fro
     ![Excel tutorial - Ribbon with Protection On](../images/excel-tutorial-ribbon-with-protection-on.png)
 
 
-## See also
+## Next steps
 
-* [Excel JavaScript API core concepts](../excel/excel-add-ins-core-concepts.md)
-* [Excel add-in code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API reference](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+> [!div class="nextstepaction"]
+> [I'm ready for the <b>Open Dialog</b> tutorial](excel-tutorial-open-dialog.md)
+
+<br />
+[I ran into an issue](https://github.com/OfficeDev/office-js-docs-pr/issues)
+
+
+     
