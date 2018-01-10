@@ -1,12 +1,12 @@
 ---
 title: Convert an Office Add-in task pane template in Visual Studio to TypeScript
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/10/2018
 ---
 
 # Convert an Office Add-in task pane template in Visual Studio to TypeScript
 
-You can use the Office Add-in JavaScript template in Visual Studio to create an add-in that uses TypeScript. After you create the new add-in in Visual Studio, you can convert the project to TypeScript.  That way, you don't have to start the Office Add-in TypeScript project from scratch.  
+You can use the Office Add-in JavaScript template in Visual Studio to create an add-in that uses TypeScript. After you create the new add-in in Visual Studio, you can convert the project to TypeScript. That way, you don't have to start the Office Add-in TypeScript project from scratch.  
 
 > [!NOTE]
 > To create an Office Add-in TypeScript project without using Visual Studio, follow the instructions in the "Any editor" section of any [5-minute quickstart](../index.yml) and choose `TypeScript` when prompted by the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
@@ -19,65 +19,67 @@ To view or download the code sample that this article is based on, see [Excel-Ad
 
 ## Prerequisites
 
-Make sure that you have the following installed:
+- [Visual Studio 2017](https://www.visualstudio.com/vs/) with the **Office/SharePoint development** workload installed
 
-* [Visual Studio 2015 or later](https://www.visualstudio.com/downloads/)
-* [Office Developer Tools for Visual Studio](https://www.visualstudio.com/en-us/features/office-tools-vs.aspx)
-* [Cumulative Servicing Release for Microsoft Visual Studio 2015 Update 3 (KB3165756)](https://msdn.microsoft.com/en-us/library/mt752379.aspx)
-* Excel 2016
-* [TypeScript 2.1 for Visual Studio 2015](http://download.microsoft.com/download/6/D/8/6D8381B0-03C1-4BD2-AE65-30FF0A4C62DA/TS2.1-dev14update3-20161206.2/TypeScript_Dev14Full.exe) (after you install Visual Studio 2015 Update 3)
+    > [!NOTE]
+    > If you've previously installed Visual Studio 2017, [use the Visual Studio Installer](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed. 
 
-> [!NOTE]
-> For more information about installing TypeScript 2.1, see [Announcing TypeScript 2.1](https://blogs.msdn.microsoft.com/typescript/2016/12/07/announcing-typescript-2-1/).
+- TypeScript 2.3 for Visual Studio 2017
 
-## Create new add-in project
+    > [!NOTE]
+    > If you've previously installed Visual Studio 2017, [use the Visual Studio Installer](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio) to ensure that the **TypeScript 2.3 SDK** is installed. In the Visula Studio Installer, select the **Individaul components** tab and then verify that **TypeScript 2.3 SDK** is selected under **SDKs, libraries, and frameworks**.
 
-1.  Open Visual Studio and go to **File** > **New** > **Project**. 
-2.  Under **Office/SharePoint**, choose **Excel Add-in** and then choose **OK**.
+- Excel 2016
 
-	![Visual Studio Excel Add-in template](../images/visual-studio-addin-template.png)
+## Create the add-in project
 
-3.  In the app creation wizard, choose **Add new functionalities to Excel** and choose **Finish**.
-4.  Do a quick test of the newly created Excel add-in by pressing F5 or choosing the **Start** button to launch the add-in. The add-in will be hosted locally on IIS, and Excel will open with the add-in loaded.
+1. Open Visual Studio and on the Visual Studio menu bar, choose  **File** > **New** > **Project**.
+    
+2. In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **Excel Web Add-in** as the project type. 
 
+3. Name the project, and then choose **OK**.
+
+4. In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.
+
+5. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
+    
 ## Convert the add-in project to TypeScript
 
-1. In **Solution Explorer**, change the Home.js file to Home.ts.
-2. Select **Yes** when asked if you're sure you want to change file name extension.  
-3. Select **Yes** when asked if you want to search for TypeScript typings search on nuget, as shown in the following screenshot. This opens the **Nuget Package Manager**.
+1. In **Solution Explorer**, rename the Home.js file to Home.ts.
 
-	![Search for TypeScript typings dialog box](../images/search-typescript-typings.png)
+2. Select **Yes** when prompted to confirm that you want to change file name extension.
 
-4. Choose **Browse** in the **Nuget Package Manager**.  
-5. In the search box, type **office-js tag:typescript**.
-6. Install **office.js.TypeScript.DefinitelyTyped** and **jquery.TypeScript.DefinitelyTyped**, as shown in the following screenshot.
+3. In **Solution Explorer**, right-click on the project and select **Manage NuGet Packages**.
+
+4. In the NuGet Package Manager, choose the **Browse** tab and type `office-js tag:typescript` into the search box.
+
+5. Select **office.js.TypeScript.DefinitelyTyped** in the list of search results and choose the **Install** button. Follow the prompts to accept the changes and install the package.
+
+6. Locate **jquery.TypeScript.DefinitelyTyped** in the list of search results and choose the **Install** button. Follow the prompts to accept the changes and install the package.
 
 	![TypeScript DefinitelyTyped NuGets](../images/typescript-definitely-typed-nugets.png)
 
-7. Open Home.ts (formerly Home.js). Remove the following reference from the top of the Home.ts file:
-
-	```javascript
-	///<reference path="/Scripts/FabricUI/MessageBanner.js" />
-	```
-
-8. Add the following declaration at the top of the Home.ts file:
+7. Open the Home.ts file and add the following declaration at the top of the file:
 
 	```javascript
 	declare var fabric: any;
 	```
 
-9. Change **‘1.1’** to **1.1**; that is, remove the quotes from the following line in the Home.ts file:
+8. In the Home.ts file, change **'1.1'** to **1.1** (that is, remove the quotation marks) in the following line:
 
 	```javascript
-	if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
+	if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
 	```
- 
+
 ## Run the converted add-in project
 
-1. Press F5 or choose the **Start** button to launch the add-in. 
-2. After Excel launches, press the **Show Taskpane** button on the **Home** ribbon.
-3. Select all the cells with numbers.
-4. Press the **Highlight** button on the task pane. 
+1. In Visual Studio, press F5 or choose the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
+
+2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+
+3. In the worksheet, select the nine cells that contain numbers.
+
+4. Press the **Highlight** button on the task pane to highlight the cell in the selected range that contains the highest value.
 
 ## Home.ts code file
 
