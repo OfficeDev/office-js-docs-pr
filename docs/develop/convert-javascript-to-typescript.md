@@ -6,16 +6,12 @@ ms.date: 01/10/2018
 
 # Convert an Office Add-in task pane template in Visual Studio to TypeScript
 
-You can use the Office Add-in template in Visual Studio to create an add-in that uses JavaScript, and then convert that add-in project to TypeScript. By using Visual Studio to initially create the add-in project, you avoid having to create your Office Add-in TypeScript project from scratch.  
+You can use the Office Add-in template in Visual Studio to create an add-in that uses JavaScript, and then convert that add-in project to TypeScript. By using Visual Studio to create the add-in project, you avoid having to create your Office Add-in TypeScript project from scratch. 
+
+This article shows you how to create an Excel add-in using Visual Studio and then convert the add-in project from JavaScript to TypeScript. You can use the same process to convert other types of Office Add-in JavaScript projects to TypeScript.
 
 > [!NOTE]
 > To create an Office Add-in TypeScript project without using Visual Studio, follow the instructions in the "Any editor" section of any [5-minute quickstart](../index.yml) and choose `TypeScript` when prompted by the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
-
-In your TypeScript project, you can have a mix of TypeScript and JavaScript files and your project will compile. This is because TypeScript is a typed superset of JavaScript that compiles JavaScript. 
-
-This article shows you how to convert an Excel add-in task pane template in Visual Studio from JavaScript to TypeScript. You can use the same steps to convert other Office Add-in JavaScript templates to TypeScript.
-
-To view or download the code sample that this article is based on, see [Excel-Add-In-TS-Start](https://github.com/OfficeDev/Excel-Add-In-TS-Start) on GitHub.
 
 ## Prerequisites
 
@@ -46,6 +42,9 @@ To view or download the code sample that this article is based on, see [Excel-Ad
 ## Convert the add-in project to TypeScript
 
 1. In **Solution Explorer**, rename the Home.js file to Home.ts.
+
+    > [!NOTE]
+    > In your TypeScript project, you can have a mix of TypeScript and JavaScript files and your project will compile. This is because TypeScript is a typed superset of JavaScript that compiles JavaScript. 
 
 2. Select **Yes** when prompted to confirm that you want to change file name extension.
 
