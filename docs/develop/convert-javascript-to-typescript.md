@@ -8,7 +8,7 @@ ms.date: 01/10/2018
 
 You can use the Office Add-in template in Visual Studio to create an add-in that uses JavaScript, and then convert that add-in project to TypeScript. By using Visual Studio to create the add-in project, you avoid having to create your Office Add-in TypeScript project from scratch. 
 
-This article shows you how to create an Excel add-in using Visual Studio and then convert the add-in project from JavaScript to TypeScript. You can use the same process to convert other types of Office Add-in JavaScript projects to TypeScript.
+This article shows you how to create an Excel add-in using Visual Studio and then convert the add-in project from JavaScript to TypeScript. You can use the same process to convert other types of Office Add-in JavaScript projects to TypeScript in Visual Studio.
 
 > [!NOTE]
 > To create an Office Add-in TypeScript project without using Visual Studio, follow the instructions in the "Any editor" section of any [5-minute quickstart](../index.yml) and choose `TypeScript` when prompted by the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
