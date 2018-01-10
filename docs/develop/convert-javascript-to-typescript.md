@@ -30,7 +30,7 @@ This article shows you how to create an Excel add-in using Visual Studio and the
 ## Create the add-in project
 
 1. Open Visual Studio and on the Visual Studio menu bar, choose  **File** > **New** > **Project**.
-    
+
 2. In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **Excel Web Add-in** as the project type. 
 
 3. Name the project, and then choose **OK**.
@@ -38,33 +38,47 @@ This article shows you how to create an Excel add-in using Visual Studio and the
 4. In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.
 
 5. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
-    
+
 ## Convert the add-in project to TypeScript
 
-1. In **Solution Explorer**, rename the Home.js file to Home.ts.
+1. In **Solution Explorer**, rename the **Home.js** file to **Home.ts**.
 
     > [!NOTE]
     > In your TypeScript project, you can have a mix of TypeScript and JavaScript files and your project will compile. This is because TypeScript is a typed superset of JavaScript that compiles JavaScript. 
 
 2. Select **Yes** when prompted to confirm that you want to change file name extension.
 
-3. In **Solution Explorer**, right-click on the project and select **Manage NuGet Packages**.
+3. Create a new file named **Office.d.ts** in the root of the web application project.
 
-4. In the NuGet Package Manager, choose the **Browse** tab and type `office-js tag:typescript` into the search box.
+4. In a web browser, open the [type definitions file for Office.js](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js/index.d.ts). Copy the contents of this file to your clipboard.
 
-5. Select **office.js.TypeScript.DefinitelyTyped** in the list of search results and choose the **Install** button. Follow the prompts to accept the changes and install the package.
+5. Open the **Office.d.ts** file, paste the contents of your clipboard into this file, and save the file.
 
-6. Locate **jquery.TypeScript.DefinitelyTyped** in the list of search results and choose the **Install** button. Follow the prompts to accept the changes and install the package.
+6. Create a new file named **jQuery.d.ts** in the root of the web application project.
 
-	![TypeScript DefinitelyTyped NuGets](../images/typescript-definitely-typed-nugets.png)
+7. In a web browser, open the [type definitions file for jQuery](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/jquery/index.d.ts). Copy the contents of this file to your clipboard.
 
-7. Open the Home.ts file and add the following declaration at the top of the file:
+8. Open the **jQuery.d.ts** file, paste the contents of your clipboard into this file, and save the file.
+
+9. Create a new file named **tsconfig.json** in the root of the web application project.
+
+10. Open the **tsconfig.json** file and add the following content to the file:
+
+    ```javascript
+    {
+        "compilerOptions": {
+            "skipLibCheck": true
+        }
+    }
+    ```
+
+10. Open the **Home.ts** file and add the following declaration at the top of the file:
 
 	```javascript
 	declare var fabric: any;
 	```
 
-8. In the Home.ts file, change **'1.1'** to **1.1** (that is, remove the quotation marks) in the following line:
+10. In the **Home.ts** file, change **'1.1'** to **1.1** (that is, remove the quotation marks) in the following line:
 
 	```javascript
 	if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
