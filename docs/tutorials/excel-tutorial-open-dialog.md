@@ -15,7 +15,7 @@ Is this tutorial, you learn how to open a dialog in an add-in, pass a message fr
 1. Open the project in your code editor.
 2. Create a file in the root of the project (where index.html is) called popup.html.
 3. Add the following markup to popup.html. Note:
-   - The page has a `<textarea>` where the user will enter his or her name and a button that will send the name to the page in the task pane where it will be displayed.
+   - The page has a `<input>` where the user will enter his or her name and a button that will send the name to the page in the task pane where it will be displayed.
    - The markup loads a script called popup.js that you will create in a later step.
    - It also loads the Office.JS library and jQuery because they will be used in popup.js.
 
@@ -36,15 +36,17 @@ Is this tutorial, you learn how to open a dialog in an add-in, pass a message fr
             <script type="text/javascript" src="popup.js"></script>
     
         </head>
-         <body style="display:flex; align-items:center; justify-content:center">
+         <body style="display:flex;flex-direction:column;align-items:center;justify-content:center">
+         <div class="padding">
             <p class="ms-font-xl">ENTER YOUR NAME</p>
-                <div class="padding">
-                <textarea id="name-box" cols="50" rows="1" />
-            <div>
-            <div class="padding">
-                <button id="ok-button" class="ms-Button">OK</button>
-            </div>
-        </body>
+         </div>        
+        <div class="padding">
+            <input id="name-box" type="text"/>
+        <div>
+        <div class="padding">
+            <button id="ok-button" class="ms-Button">OK</button>
+        </div>
+    </body>
     </html>
     ```
 
