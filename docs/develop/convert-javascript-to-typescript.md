@@ -78,7 +78,7 @@ This article shows you how to create an Excel add-in using Visual Studio and the
 	declare var fabric: any;
 	```
 
-12. In the **Home.ts** file, change **'1.1'** to **1.1** (that is, remove the quotation marks) in the following line, and save the file.
+12. In the **Home.ts** file, change **'1.1'** to **1.1** (that is, remove the quotation marks) in the following line, and save the file:
 
 	```javascript
 	if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
@@ -96,7 +96,7 @@ This article shows you how to create an Excel add-in using Visual Studio and the
 
 ## Home.ts code file
 
-For your reference, the following is the code included in the Home.ts file. This file includes the minimum number of changes needed in order for your add-in to run.
+For your reference, the following code snippet shows the contents of the **Home.ts** file after the previously described changes have been applied. This code includes the minimum number of changes needed in order for your add-in to run.
 
 ```javascript
 declare var fabric: any;
