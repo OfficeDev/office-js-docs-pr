@@ -52,17 +52,17 @@ This article shows you how to create an Excel add-in using Visual Studio and the
 
 4. In a web browser, open the [type definitions file for Office.js](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js/index.d.ts). Copy the contents of this file to your clipboard.
 
-5. Open the **Office.d.ts** file, paste the contents of your clipboard into this file, and save the file.
+5. In Visual Studio, open the **Office.d.ts** file, paste the contents of your clipboard into this file, and save the file.
 
 6. Create a new file named **jQuery.d.ts** in the root of the web application project.
 
 7. In a web browser, open the [type definitions file for jQuery](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/jquery/index.d.ts). Copy the contents of this file to your clipboard.
 
-8. Open the **jQuery.d.ts** file, paste the contents of your clipboard into this file, and save the file.
+8. In Visual Studio, open the **jQuery.d.ts** file, paste the contents of your clipboard into this file, and save the file.
 
-9. Create a new file named **tsconfig.json** in the root of the web application project.
+9. In Visual Studio, create a new file named **tsconfig.json** in the root of the web application project.
 
-10. Open the **tsconfig.json** file and add the following content to the file:
+10. Open the **tsconfig.json** file, add the following content to the file, and save the file:
 
     ```javascript
     {
@@ -72,13 +72,13 @@ This article shows you how to create an Excel add-in using Visual Studio and the
     }
     ```
 
-10. Open the **Home.ts** file and add the following declaration at the top of the file:
+11. Open the **Home.ts** file and add the following declaration at the top of the file:
 
 	```javascript
 	declare var fabric: any;
 	```
 
-10. In the **Home.ts** file, change **'1.1'** to **1.1** (that is, remove the quotation marks) in the following line:
+12. In the **Home.ts** file, change **'1.1'** to **1.1** (that is, remove the quotation marks) in the following line, and save the file.
 
 	```javascript
 	if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
@@ -97,9 +97,6 @@ This article shows you how to create an Excel add-in using Visual Studio and the
 ## Home.ts code file
 
 For your reference, the following is the code included in the Home.ts file. This file includes the minimum number of changes needed in order for your add-in to run.
-
-> [!NOTE]
-> For a complete example of a JavaScript file that has been converted to TypeScript, see [Excel-Add-In-TS-StartWeb/Home.ts](https://github.com/OfficeDev/Excel-Add-In-TS-Start/blob/master/Excel-Add-In-TS-StartWeb/Home.ts). 
 
 ```javascript
 declare var fabric: any;
@@ -120,12 +117,11 @@ declare var fabric: any;
             
             // If not using Excel 2016, use fallback logic.
             if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
-                $("#template-description").text("This sample will display the value of the cells you have selected in the spreadsheet.");
+                $("#template-description").text("This sample will display the value of the cells that you have selected in the spreadsheet.");
                 $('#button-text').text("Display!");
                 $('#button-desc').text("Display the selection");
 
-                $('#highlight-button').click(
-                    displaySelectedCells);
+                $('#highlight-button').click(displaySelectedCells);
                 return;
             }
 
@@ -136,20 +132,18 @@ declare var fabric: any;
             loadSampleData();
 
             // Add a click event handler for the highlight button.
-            $('#highlight-button').click(
-                hightlightHighestValue);
+            $('#highlight-button').click(hightlightHighestValue);
         });
-    }
+    };
 
     function loadSampleData() {
-
         var values = [
-                        [Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000)],
-                        [Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000)],
-                        [Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000)]
+            [Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000)],
+            [Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000)],
+            [Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000)]
         ];
 
-        // Run a batch operation against the Excel object model.
+        // Run a batch operation against the Excel object model
         Excel.run(function (ctx) {
             // Create a proxy object for the active sheet
             var sheet = ctx.workbook.worksheets.getActiveWorksheet();
@@ -163,15 +157,13 @@ declare var fabric: any;
     }
 
     function hightlightHighestValue() {
-
-        // Run a batch operation against the Excel object model.
+        // Run a batch operation against the Excel object model
         Excel.run(function (ctx) {
-
-            // Create a proxy object for the selected range and load its address and values properties.
-            var sourceRange = ctx.workbook.getSelectedRange().load("values, address, rowIndex, columnIndex, rowCount, columnCount");
+            // Create a proxy object for the selected range and load its properties
+            var sourceRange = ctx.workbook.getSelectedRange().load("values, rowCount, columnCount");
 
             // Run the queued-up command, and return a promise to indicate task completion
-            return ctx.sync().
+            return ctx.sync()
                 .then(function () {
                     var highestRow = 0;
                     var highestCol = 0;
@@ -192,16 +184,11 @@ declare var fabric: any;
                     sourceRange.worksheet.getUsedRange().format.fill.clear();
                     sourceRange.worksheet.getUsedRange().format.font.bold = false;
 
-                    cellToHighlight.load("values");
-                })
-                   // Run the queued-up commands.
-                .then(ctx.sync)
-                .then(function () {
                     // Highlight the cell
                     cellToHighlight.format.fill.color = "orange";
                     cellToHighlight.format.font.bold = true;
                 })
-                .then(ctx.sync)
+                .then(ctx.sync);
         })
         .catch(errorHandler);
     }
@@ -217,7 +204,7 @@ declare var fabric: any;
             });
     }
 
-    // Helper function for treating errors.
+    // Helper function for treating errors
     function errorHandler(error) {
         // Always be sure to catch any accumulated errors that bubble up from the Excel.run execution
         showNotification("Error", error);
@@ -229,14 +216,13 @@ declare var fabric: any;
 
     // Helper function for displaying notifications
     function showNotification(header, content) {
-        $("#notificationHeader").text(header);
-        $("#notificationBody").text(content);
+        $("#notification-header").text(header);
+        $("#notification-body").text(content);
         messageBanner.showBanner();
         messageBanner.toggleExpansion();
     }
 })();
 ```
-
 
 ## See also
 
