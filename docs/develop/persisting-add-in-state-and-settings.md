@@ -31,7 +31,7 @@ The JavaScript API for Office provides the [Settings](https://dev.office.com/ref
 ## Settings data is managed in memory at runtime
 
 > [!NOTE]
-> This section and the next one discuss settings in the context of the Office Common JavaScript API. The host-specific Excel JavaScript API also provides access to the custom settings. The Excel APIs and programming patterns are somewhat different. For more information, see [Excel SettingCollection](https://dev.office.com/reference/add-ins/excel/settingcollection).
+> The following two sections discuss settings in the context of the Office Common JavaScript API. The host-specific Excel JavaScript API also provides access to the custom settings. The Excel APIs and programming patterns are somewhat different. For more information, see [Excel SettingCollection](https://dev.office.com/reference/add-ins/excel/settingcollection).
 
 Internally, the data in the property bag accessed with the  **Settings**,  **CustomProperties**, or  **RoamingSettings** objects is stored as a serialized JavaScript Object Notation (JSON) object that contains name/value pairs. The name (key) for each value must be a **string**, and the stored value can be a JavaScript  **string**,  **number**,  **date**, or  **object**, but not a  **function**.
 
@@ -147,7 +147,7 @@ function createCustomXmlPart() {
 }
 ```
 
-To retrieve a custom XML part, you use the [getByIdAsync](https://dev.office.com/reference/add-ins/shared/customxmlparts.getbyidasync) method, but the ID is an unmemorable GUID. So, it is a good practice when creating an XML part to immediately store the ID of the XML part as a setting and give it a memorable key. The following method shows how to do this. (But see above for details and best practices when working with custom settings).
+To retrieve a custom XML part, you use the [getByIdAsync](https://dev.office.com/reference/add-ins/shared/customxmlparts.getbyidasync) method, but the ID is an unmemorable GUID. So, it is a good practice when creating an XML part to immediately store the ID of the XML part as a setting and give it a memorable key. The following method shows how to do this. (See previous sections for details and best practices when working with custom settings).
 
  ```js
 function createCustomXmlPartAndStoreId() {
