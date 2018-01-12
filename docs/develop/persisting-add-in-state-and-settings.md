@@ -129,7 +129,7 @@ The anonymous function passed into the  **saveAsync** method as the _callback_ p
 > [!NOTE]
 > This section discusses custom XML parts in the context of the Office Common JavaScript API. The host-specific Excel JavaScript API also provides access to the custom XML parts. The Excel APIs and programming patterns are somewhat different. For more information, see [Excel CustomXmlPart](https://dev.office.com/reference/add-ins/excel/customxmlpart).
 
-To persist custom XML markup in a content or task pane add-in for Word, Excel, or PowerPoint, you use the [CustomXmlPart](https://dev.office.com/reference/add-ins/shared/customxmlpart.customxmlpart) object and its methods. The following code creates a custom XML part and displays its ID and then its content in divs on the page. Note that there must be an `xmlns` attribute in the XML string.
+To persist custom XML markup in a task pane add-in for Word, Excel, or PowerPoint, you use the [CustomXmlPart](https://dev.office.com/reference/add-ins/shared/customxmlpart.customxmlpart) object and its methods. The following code creates a custom XML part and displays its ID and then its content in divs on the page. Note that there must be an `xmlns` attribute in the XML string.
 
 ```js
 function createCustomXmlPart() {
