@@ -169,7 +169,7 @@ Is this tutorial, you learn how to open a dialog in an add-in, pass a message fr
 2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used internally by Excel to run Excel add-ins).
 3. Run the command `npm start` to start a web server running on localhost.
 4. Sideload the add-in by using one of the following methods:
-    - Windows: [Sideload Office Add-ins for testing on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
     - Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 5. Select **Show Taskpane** on the **Home** menu.
