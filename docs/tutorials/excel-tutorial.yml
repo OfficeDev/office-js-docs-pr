@@ -1,4 +1,4 @@
-### YamlMime:YamlDocument
+### YamlMime:Tutorial
 documentType: Tutorial
 title: Excel add-in tutorial
 metadata:
@@ -7,6 +7,7 @@ metadata:
   audience: Developer
   level: Beginner
   displayType: one-column
+  ms.date: 01/17/2018
 items:
 - durationInMinutes: 1
   content: |
@@ -14,8 +15,6 @@ items:
 - title: Create a table
   durationInMinutes: 25
   content: |
-    > [!Video https://docs.microsoft.com/en-us/office/dev/add-ins/images/office-add-ins-video-thumbnail.png]
-    
     [!INCLUDE [](includes/excel-tutorial-create-table.md)]
 - title: Filter and sort a table
   durationInMinutes: 10
