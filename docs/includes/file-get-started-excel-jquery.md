@@ -2,9 +2,9 @@
 
 In this article, you'll walk through the process of building an Excel add-in by using jQuery and the Excel JavaScript API. 
 
-[!include[Tip: choose your editor in the next section](../includes/alert-choose-editor.md)]
-
 ## Create the add-in 
+
+[!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
 # [Visual Studio](#tab/visual-studio)
 
