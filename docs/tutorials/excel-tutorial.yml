@@ -14,6 +14,8 @@ items:
 - title: Create a table
   durationInMinutes: 25
   content: |
+    > [!Video https://docs.microsoft.com/en-us/office/dev/add-ins/images/office-add-ins-video-thumbnail.png]
+    
     [!INCLUDE [](includes/excel-tutorial-create-table.md)]
 - title: Filter and sort a table
   durationInMinutes: 10
