@@ -1,10 +1,7 @@
-This is the first step in a series of tutorials. Each one adds to the same project. 
+In this step, you'll programmatically add a table to a worksheet, populate the table with data, and then format it. You'll also test that your add-in supports the user's current version of Excel.
 
-> [!NOTE]
-> If you haven't already, please read [Excel add-in quickstart that uses jQuery](../quickstarts/excel-quickstart-jquery.md?tabs=visual-studio-code). In particular, be sure that you know how to sideload an Excel add-in for testing.
-
-This first tutorial shows you how to programmatically add a table to a worksheet, populate the table with data, and then format it. It also shows you how to test that your add-in supports the user's current version of Excel.
-
+> [!TIP]
+> If you haven't already done so, please read [Excel add-in quickstart that uses jQuery](../quickstarts/excel-quickstart-jquery.md?tabs=visual-studio-code). In particular, be sure that you know how to sideload an Excel add-in for testing.
 
 ## Prerequisites
 
