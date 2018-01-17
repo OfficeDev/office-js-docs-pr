@@ -1,4 +1,4 @@
-This is the fifth step of a tutorial that begins with [Excel Tutorial Create Table](excel-tutorial-create-table.md). You need to complete the preceding steps to get the project in the state that this step assumes. 
+This is the fifth step of a tutorial that begins with **Excel Tutorial Create Table**. You need to complete the preceding steps to get the project in the state that this step assumes. 
 
 ## Configure the manifest to add a second ribbon button
 
@@ -220,15 +220,3 @@ These steps must be completed whenever your code needs to *read* information fro
 8. Choose **Toggle Worksheet Protection** again, and the controls are reenabled, and you can change cell values again.
 
     ![Excel tutorial - Ribbon with Protection On](../images/excel-tutorial-ribbon-with-protection-on.png)
-
-
-## Next steps
-
-> [!div class="nextstepaction"]
-> [I'm ready for the <b>Open Dialog</b> tutorial](excel-tutorial-open-dialog.md)
-
-<br />
-[I ran into an issue](https://github.com/OfficeDev/office-js-docs-pr/issues)
-
-
-     

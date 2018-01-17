@@ -129,10 +129,3 @@ To use this tutorial, you need to have the following installed.
     ![Excel tutorial - Create Table](../images/excel-tutorial-create-table.png)
 
 
-## Next steps
-
-> [!div class="nextstepaction"]
-> [I'm ready for the <b>Filter and Sort a Table</b> tutorial](excel-tutorial-filter-and-sort-table.md)
-
-<br />
-[I ran into an issue](https://github.com/OfficeDev/office-js-docs-pr/issues)

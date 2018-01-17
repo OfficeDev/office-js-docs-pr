@@ -1,4 +1,4 @@
-This is the second step of a tutorial that begins with [Excel Tutorial Create Table](excel-tutorial-create-table.md). You need to complete the preceding steps to get the project in the state that this step assumes. 
+This is the second step of a tutorial that begins with **Excel Tutorial Create Table**. You need to complete the preceding steps to get the project in the state that this step assumes. 
 
 This tutorial shows you how to programmatically filter and sort a table.
 
@@ -121,11 +121,3 @@ This tutorial shows you how to programmatically filter and sort a table.
 
     ![Excel tutorial - Filter and Sort Table](../images/excel-tutorial-filter-and-sort-table.png)
 
-
-## Next steps
-
-> [!div class="nextstepaction"]
-> [I'm ready for the <b>Create Chart</b> tutorial](excel-tutorial-create-chart.md)
-
-<br />
-[I ran into an issue](https://github.com/OfficeDev/office-js-docs-pr/issues)

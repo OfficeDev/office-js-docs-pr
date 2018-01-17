@@ -1,4 +1,4 @@
-This is the third step of a tutorial that begins with [Excel Tutorial Create Table](excel-tutorial-create-table.md). You need to complete the preceding steps to get the project in the state that this step assumes. 
+This is the third step of the tutorial that begins with **Excel Tutorial Create Table**. You need to complete the preceding steps to get the project in the state that this step assumes. 
 
 In this tutorial, you'll learn how to programmatically create a chart from table data and how to format the chart. 
 
@@ -91,10 +91,3 @@ In this tutorial, you'll learn how to programmatically create a chart from table
 
 
 
-## Next steps
-
-> [!div class="nextstepaction"]
-> [I'm ready for the <b>Freeze Header</b> tutorial](excel-tutorial-freeze-header.md)
-
-<br />
-[I ran into an issue](https://github.com/OfficeDev/office-js-docs-pr/issues)
