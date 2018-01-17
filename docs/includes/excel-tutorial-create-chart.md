@@ -79,13 +79,16 @@ In this tutorial, you'll learn how to programmatically create a chart from table
 ## Test the add-in
 
 1. Open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
-3. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used by Excel to run Excel add-ins).
-4. Run the command `npm start` to start a web server running on localhost.
-5. Sideload the add-in using one of the methods described in [Excel add-in quickstart that uses jQuery](../quickstarts/excel-quickstart-jquery.md?tabs=visual-studio-code).
-6. On the **Home** menu, select **Show Taskpane**.
-7. In the taskpane, choose **Create Table**. 
-8. Choose the **Filter Table** and **Sort Table** buttons, in either order.
-9. Choose the **Create Chart** button. A chart is created and only the data from the rows that have been filtered are included. The labels on the data points across the bottom are in the sort order of the chart; that is, merchant names in reverse alphabetical order.
+2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used by Excel to run Excel add-ins).
+3. Run the command `npm start` to start a web server running on localhost.
+4. Sideload the add-in by using one of the following methods:
+    - Windows: [Sideload Office Add-ins for testing on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+5. On the **Home** menu, select **Show Taskpane**.
+6. In the taskpane, choose **Create Table**. 
+7. Choose the **Filter Table** and **Sort Table** buttons, in either order.
+8. Choose the **Create Chart** button. A chart is created and only the data from the rows that have been filtered are included. The labels on the data points across the bottom are in the sort order of the chart; that is, merchant names in reverse alphabetical order.
 
     ![Excel tutorial - Create Chart](../images/excel-tutorial-create-chart.png)
 
