@@ -168,7 +168,7 @@ Is this tutorial, you learn how to open a dialog in an add-in, pass a message fr
 1. Open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
 2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used internally by Excel to run Excel add-ins).
 3. Run the command `npm start` to start a web server running on localhost.
-4. Sideload the add-in using one of the methods described in [Excel add-in quickstart that uses jQuery](../quickstarts/excel-quickstart-jquery.md).
+4. Sideload the add-in using one of the methods described in [Excel add-in quickstart that uses jQuery](../quickstarts/excel-quickstart-jquery.md?tabs=visual-studio-code).
 5. Select **Show Taskpane** on the **Home** menu.
 6. Choose the **Open Dialog** button in the task pane. 
 7. While the dialog is open, drag it and resize it. Note that you can interact with the worksheet and press other buttons on the taskpane. But you cannot launch a second dialog from the same task pane page.

@@ -56,7 +56,7 @@ When a table is long enough that a user must scroll to see some rows, the header
 1. Open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
 2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used under-the-hood by Excel to run Excel add-ins).
 3. Run the command `npm start` to start a web server running on localhost.
-4. Sideload the add-in using one of the methods described in [Excel add-in quickstart that uses jQuery](../quickstarts/excel-quickstart-jquery.md).
+4. Sideload the add-in using one of the methods described in [Excel add-in quickstart that uses jQuery](../quickstarts/excel-quickstart-jquery.md?tabs=visual-studio-code).
 5. On the **Home** menu, choose **Show Taskpane**.
 6. In the taskpane, choose **Create Table**. 
 7. Choose the **Freeze Header** button.

@@ -214,7 +214,7 @@ These steps must be completed whenever your code needs to *read* information fro
 1. Open a Git Bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
 3. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used under-the-hood by Excel to run Excel add-ins).
 4. Run the command `npm start` to start a web server running on localhost.
-5. Sideload the add-in using one of the methods described in [Excel add-in quickstart that uses jQuery](../quickstarts/excel-quickstart-jquery.md).
+5. Sideload the add-in using one of the methods described in [Excel add-in quickstart that uses jQuery](../quickstarts/excel-quickstart-jquery.md?tabs=visual-studio-code).
 6. On the **Home** ribbon, choose **Toggle Worksheet Protection**. Note that most of the controls on the ribbon are disabled (and visually grayed-out) as seen in screenshot below. 
 7. Choose a cell as you would if you wanted to change its content. You get an error telling you that the worksheet is protected.
 8. Choose **Toggle Worksheet Protection** again, and the controls are reenabled, and you can change cell values again.
