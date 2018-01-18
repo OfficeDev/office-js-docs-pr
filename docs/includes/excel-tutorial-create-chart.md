@@ -1,6 +1,4 @@
-This is the third step of the tutorial that begins with **Excel Tutorial Create Table**. You need to complete the preceding steps to get the project in the state that this step assumes. 
-
-In this tutorial, you'll learn how to programmatically create a chart from table data and how to format the chart. 
+In this step of the tutorial, you'll create a chart using data from the table that you created previously, and then format the chart.
 
 ## Chart table data
 
@@ -91,6 +89,3 @@ In this tutorial, you'll learn how to programmatically create a chart from table
 8. Choose the **Create Chart** button. A chart is created and only the data from the rows that have been filtered are included. The labels on the data points across the bottom are in the sort order of the chart; that is, merchant names in reverse alphabetical order.
 
     ![Excel tutorial - Create Chart](../images/excel-tutorial-create-chart.png)
-
-
-

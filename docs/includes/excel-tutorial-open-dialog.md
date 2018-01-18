@@ -1,6 +1,4 @@
-This is the sixth step of a tutorial that begins with **Excel Tutorial Create Table**. You need to complete the preceding steps to get the project in the state that this step assumes. 
-
-Is this tutorial, you learn how to open a dialog in an add-in, pass a message from the dialog process to the task pane process, and close the dialog. Office Add-in dialogs are *nonmodal*: a user can continue to interact with both the document in the host Office application and with the host page in the task pane. 
+In this final step of the tutorial, you'll open a dialog in your add-in, pass a message from the dialog process to the task pane process, and close the dialog. Office Add-in dialogs are *nonmodal*: a user can continue to interact with both the document in the host Office application and with the host page in the task pane.
 
 ## Create the dialog page
 
@@ -185,4 +183,3 @@ Is this tutorial, you learn how to open a dialog in an add-in, pass a message fr
 * [Excel JavaScript API core concepts](../excel/excel-add-ins-core-concepts.md)
 * [Excel add-in code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
 * [Excel JavaScript API reference](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
-

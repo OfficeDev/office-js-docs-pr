@@ -1,6 +1,4 @@
-This is the fourth step of a tutorial that begins with **Excel Tutorial Create Table**. You need to complete the preceding steps to get the project in the state that this step assumes. 
-
-When a table is long enough that a user must scroll to see some rows, the header row can scroll out of sight. In this tutorial, you learn how to freeze a row so that it remains visible even if the user scrolls a great deal. 
+When a table is long enough that a user must scroll to see some rows, the header row can scroll out of sight. In this step of the tutorial, you'll freeze the header row of the table that you created previously, so that it remains visible even as the user scrolls down the worksheet. 
 
 ## Freeze the table's header row
 
@@ -50,7 +48,6 @@ When a table is long enough that a user must scroll to see some rows, the header
     currentWorksheet.freezePanes.freezeRows(1);
     ``` 
 
-
 ## Test the add-in
 
 1. Open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
@@ -66,4 +63,3 @@ When a table is long enough that a user must scroll to see some rows, the header
 8. Scroll the worksheet enough to to see that the table header remains visible at the top even when the higher rows scroll out of sight.
 
     ![Excel tutorial - Freeze Header](../images/excel-tutorial-freeze-header.png)
-

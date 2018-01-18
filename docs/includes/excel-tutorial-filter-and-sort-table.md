@@ -1,6 +1,4 @@
-This is the second step of a tutorial that begins with **Excel Tutorial Create Table**. You need to complete the preceding steps to get the project in the state that this step assumes. 
-
-This tutorial shows you how to programmatically filter and sort a table.
+In this step of the tutorial, you'll filter and sort the table that you created previously.
 
 ## Filter the table
 
@@ -123,4 +121,3 @@ This tutorial shows you how to programmatically filter and sort a table.
 7. Choose the **Filter Table** and **Sort Table** buttons, in either order.
 
     ![Excel tutorial - Filter and Sort Table](../images/excel-tutorial-filter-and-sort-table.png)
-

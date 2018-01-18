@@ -1,4 +1,4 @@
-This is the fifth step of a tutorial that begins with **Excel Tutorial Create Table**. You need to complete the preceding steps to get the project in the state that this step assumes. 
+In this step of the tutorial, you'll add another button to the ribbon that, when chosen, executes a function that you'll define to toggle worksheet protection on and off.
 
 ## Configure the manifest to add a second ribbon button
 
