@@ -13,7 +13,7 @@ items:
   content: |
     This tutorial teaches you how to build an Excel add-in that interacts with tables, charts, worksheets, and dialogs in an Excel workbook. You'll start by building an Excel add-in that creates, populates, and formats a table. In each subsequent step of the tutorial, you'll add more functionality to the add-in. If you run into any issues along the way, please <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">let us know</a>.
 - title: Create your add-in project
-  durationInMinutes: 10
+  durationInMinutes: 5
   content: |
     [!INCLUDE [](../includes/excel-tutorial-setup.md)]
 - title: Create a table
@@ -33,11 +33,11 @@ items:
   content: |
     [!INCLUDE [](../includes/excel-tutorial-freeze-header.md)]
 - title: Protect a worksheet
-  durationInMinutes: 23
+  durationInMinutes: 20
   content: |
     [!INCLUDE [](../includes/excel-tutorial-protect-worksheet.md)]
 - title: Open a dialog
-  durationInMinutes: 20
+  durationInMinutes: 7
   content: |
     [!INCLUDE [](../includes/excel-tutorial-open-dialog.md)]
 - content: |
