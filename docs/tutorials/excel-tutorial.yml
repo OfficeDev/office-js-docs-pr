@@ -3,17 +3,23 @@ documentType: Tutorial
 title: Excel add-in tutorial
 metadata:
   title: Excel add-in tutorial
-  description: In this tutorial, you'll build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, and protects a worksheet.
+  description: In this tutorial, you'll build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.
   audience: Developer
   level: Beginner
   displayType: one-column
-  ms.date: 01/17/2018
+  ms.date: 01/18/2018
 items:
 - durationInMinutes: 1
   content: |
-    This tutorial teaches you how to build an Excel add-in that interacts with tables, charts, worksheets, and dialogs in an Excel workbook. In the first step of the tutorial, you'll build an Excel add-in that creates, populates, and formats a table. In each subsequent step, you'll add more functionality to the add-in. If you run into any issues along the way, please <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">let us know</a>.
+    This tutorial teaches you how to build an Excel add-in that interacts with tables, charts, worksheets, and dialogs in an Excel workbook. You'll start by building an Excel add-in that creates, populates, and formats a table. In each subsequent step of the tutorial, you'll add more functionality to the add-in. If you run into any issues along the way, please <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">let us know</a>.
+- title: Create your add-in project
+  durationInMinutes: 10
+  content: |
+    [!INCLUDE [](../includes/excel-tutorial-setup.md)]
+- title: Filter and sort a table
+
 - title: Create a table
-  durationInMinutes: 25
+  durationInMinutes: 15
   content: |
     [!INCLUDE [](../includes/excel-tutorial-create-table.md)]
 - title: Filter and sort a table
