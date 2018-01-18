@@ -3,7 +3,7 @@ In this step of the tutorial, you'll add another button to the ribbon that, when
 ## Configure the manifest to add a second ribbon button
 
 1. Open the manifest file **my-office-add-in-manifest.xml**.
-2. Find the `<Control>` element. This element defines the **Home** ribbon button you have been using to launch the add-in. We're going to add a second button to the same group on the **Home** ribbon. In between the end Control tag (`</Control>`) and the end Group tag (`</Group>`), add the following markup.
+2. Find the `<Control>` element. This element defines the **Show Taskpane** button on the **Home** ribbon you have been using to launch the add-in. We're going to add a second button to the same group on the **Home** ribbon. In between the end Control tag (`</Control>`) and the end Group tag (`</Group>`), add the following markup.
 
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">
@@ -119,7 +119,7 @@ In this step of the tutorial, you'll add another button to the ribbon that, when
     }
     ```
 
-3. Replace TODO1 with the following code. This code uses the worksheet object's protection property in a standard toggle pattern. The `TODO2` will be explained in the next section.
+3. Replace `TODO1` with the following code. This code uses the worksheet object's protection property in a standard toggle pattern. The `TODO2` will be explained in the next section.
 
     ```javascript
     const sheet = context.workbook.worksheets.getActiveWorksheet();
@@ -136,7 +136,7 @@ In this step of the tutorial, you'll add another button to the ribbon that, when
 
 ## Add code to fetch document properties into the task pane's script objects
 
-In all the earlier functions in this series of tutorials, you queued commands to *write* to the Office document. Each function ended with a call to the `context.sync()` method which sends the queued commands to the document to be executed. But the code you added in the last step calls the `sheet.protection.protected` property, and this is a significant difference from the earlier functions you wrote, because the `sheet` object is only a proxy object that exists in your task pane's script. It doesn't know what the actual protection state of the document is, so it's `protection.protected` property can't have a real value. It is necessary to first fetch the protection status from the document and use it set the value of `sheet.protection.protected`. Only then can `sheet.protection.protected` be called without causing an exception to be thrown. This fetching process has three steps:
+In all the earlier functions in this series of tutorials, you queued commands to *write* to the Office document. Each function ended with a call to the `context.sync()` method which sends the queued commands to the document to be executed. But the code you added in the last step calls the `sheet.protection.protected` property, and this is a significant difference from the earlier functions you wrote, because the `sheet` object is only a proxy object that exists in your task pane's script. It doesn't know what the actual protection state of the document is, so its `protection.protected` property can't have a real value. It is necessary to first fetch the protection status from the document and use it set the value of `sheet.protection.protected`. Only then can `sheet.protection.protected` be called without causing an exception to be thrown. This fetching process has three steps:
 
    1. Queue a command to load (that is; fetch) the properties that your code needs to read.
    2. Call the context object's `sync` method to send the queued command to the document for execution and return the requested information.
@@ -144,7 +144,7 @@ In all the earlier functions in this series of tutorials, you queued commands to
 
 These steps must be completed whenever your code needs to *read* information from the Office document.
 
-1. In the `toggleProtection` method, replace `TODO2` with the following code. Note:
+1. In the `toggleProtection` function, replace `TODO2` with the following code. Note:
    - Every Excel object has a `load` method. You specify the properties of the object that you want to read in the parameter as a string of comma-delimited names. In this case, the property you need to read is a subproperty of the `protection` property. You reference the subproperty almost exactly as you would anywhere else in your code, with the exception that you use a forward slash ('/') character instead of a "." character.
    - To ensure that the toggle logic, which reads `sheet.protection.protected`, does not run until after the `sync` is complete and the `sheet.protection.protected` has been assigned the correct value that is fetched from the document, it will be moved (in the next step) into a `then` function that won't run until the `sync` has completed. 
 
@@ -161,7 +161,7 @@ These steps must be completed whenever your code needs to *read* information fro
     ``` 
 
 2. You can't have two `return` statements in the same unbranching code path, so delete the final line `return context.sync();` at the end of the `Excel.run`. You will add a new final `context.sync`, in a later step.
-3. Cut the `if ... else` structure in the `toggleProtection` method and paste it in place of `TODO3`.
+3. Cut the `if ... else` structure in the `toggleProtection` function and paste it in place of `TODO3`.
 4. Replace `TODO4` with the following code. Note:
    - Passing the `sync` method to a `then` function ensures that it does not run until either `sheet.protection.unprotect()` or `sheet.protection.protect()` has been queued.
    - The `then` method invokes whatever function is passed to it, and you don't want `sync` to be invoked twice, so leave off the "()" from the end of `context.sync`.

@@ -41,7 +41,7 @@ When a table is long enough that a user must scroll to see some rows, the header
 
 7. Replace `TODO1` with the following code. Note:
    - The `Worksheet.freezePanes` collection is a set of panes in the worksheet that are pinned, or frozen, in place when the worksheet is scrolled.
-   - The `freezeRows` method takes as a parameter the number of rows, from the top that are to be pinned in place. We pass `1`
+   - The `freezeRows` method takes as a parameter the number of rows, from the top that are to be pinned in place. We pass `1` to pin the first row in place.
 
     ```js
     const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -60,6 +60,6 @@ When a table is long enough that a user must scroll to see some rows, the header
 5. On the **Home** menu, choose **Show Taskpane**.
 6. In the taskpane, choose **Create Table**. 
 7. Choose the **Freeze Header** button.
-8. Scroll the worksheet enough to to see that the table header remains visible at the top even when the higher rows scroll out of sight.
+8. Scroll down the worksheet enough to to see that the table header remains visible at the top even when the higher rows scroll out of sight.
 
     ![Excel tutorial - Freeze Header](../images/excel-tutorial-freeze-header.png)

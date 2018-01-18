@@ -20,7 +20,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
     $('#filter-table').click(filterTable);
     ```
 
-6. Just below the `createTable` function add the following function:
+6. Just below the `createTable` function, add the following function:
 
     ```js
     function filterTable() {
