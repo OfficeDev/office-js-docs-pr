@@ -9,3 +9,7 @@
     - name: Tutorials
       tocHref: /office/dev/add-ins/tutorials
       topicHref: /office/dev/add-ins/tutorials
+      items: 
+      - name: Excel add-in tutorial
+        tocHref: /office/dev/add-ins/tutorials/excel-tutorial
+        topicHref: /office/dev/add-ins/tutorials/excel-tutorial
