@@ -178,8 +178,3 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 
     ![Excel tutorial - Dialog](../images/excel-tutorial-dialog-open.png)
 
-## See also
-
-* [Excel JavaScript API core concepts](../excel/excel-add-ins-core-concepts.md)
-* [Excel add-in code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API reference](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
