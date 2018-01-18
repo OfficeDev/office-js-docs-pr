@@ -16,8 +16,6 @@ items:
   durationInMinutes: 10
   content: |
     [!INCLUDE [](../includes/excel-tutorial-setup.md)]
-- title: Filter and sort a table
-
 - title: Create a table
   durationInMinutes: 15
   content: |
