@@ -1,7 +1,7 @@
 ---
 title: Convert an Office Add-in project in Visual Studio to TypeScript
 description: ''
-ms.date: 01/10/2018
+ms.date: 01/19/2018
 ---
 
 # Convert an Office Add-in project in Visual Studio to TypeScript
@@ -67,7 +67,8 @@ This article shows you how to create an Excel add-in using Visual Studio and the
     ```javascript
     {
         "compilerOptions": {
-            "skipLibCheck": true
+            "skipLibCheck": true,
+            "lib": [ "es5", "dom", "es2015.promise" ]
         }
     }
     ```
