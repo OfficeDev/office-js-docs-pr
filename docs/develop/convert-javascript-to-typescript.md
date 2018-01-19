@@ -67,7 +67,8 @@ This article shows you how to create an Excel add-in using Visual Studio and the
     ```javascript
     {
         "compilerOptions": {
-            "skipLibCheck": true
+            "skipLibCheck": true,
+            "lib": [ "es5", "dom", "es2015.promise" ]
         }
     }
     ```
