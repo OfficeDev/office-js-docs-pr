@@ -46,7 +46,7 @@ Excel.run(function (context) {
     var sumOfTwoLookups = context.workbook.functions.sum(
         context.workbook.functions.vlookup("Wrench", range, 2, false), 
         context.workbook.functions.vlookup("Wrench", range, 3, false)
-        );
+    );
     sumOfTwoLookups.load();
 
     return context.sync()
