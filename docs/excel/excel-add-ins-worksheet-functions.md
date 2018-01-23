@@ -29,7 +29,7 @@ Excel.run(function (context) {
 
     return context.sync()
         .then(function () {
-            console.log(unitSoldInNov.value + ' wrenches were sold in November.');
+            console.log(' Number of wrenches sold in November = ' + unitSoldInNov.value);
         });
 }).catch(errorHandlerFunction);
 ```
@@ -51,7 +51,7 @@ Excel.run(function (context) {
 
     return context.sync()
         .then(function () {
-            console.log(sumOfTwoLookups.value);
+            console.log(' Number of wrenches sold in November and December = ' + sumOfTwoLookups.value);
         });
 }).catch(errorHandlerFunction);
 ```
