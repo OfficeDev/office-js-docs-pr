@@ -17,7 +17,7 @@ The following image shows a table in an Excel worksheet that contains sales data
 
 ![Screenshot of sales data in Excel for Hammer, Wrench, and Saw in months November, December, and January](../images/worksheet-functions-chaining-results.jpg)
 
-## Example 1: `VLOOKUP`
+## Example 1: Calling a single function
 
 The following code sample applies the `VLOOKUP` function to the sample data described previously to identify the number of wrenches sold in November.
 
@@ -34,7 +34,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## Example 2: `VLOOKUP` and `SUM`
+## Example 2: Calling multiple functions
 
 The following code sample applies the `VLOOKUP` function to the sample data described previously to identify the number of wrenches sold in November and the number of wrenches sold in December, and then applies the `SUM` function to calculate the total number of wrenches sold during these two months. 
 
