@@ -13,13 +13,13 @@ This article explains how to call built-in Excel worksheet functions such as `VL
 
 ## Sample data
 
-Here's a sample table tracking sales of different tools in Excel. We will use the data in this table to explain how worksheet functions work.
+The following image shows a table in an Excel worksheet that contains sales data for various types of tools over a three month period. Each number in the table represents the number of units sold for a specific tool in a specific month. The code samples in this article will show how to apply built-in worksheet functions to this data.
 
 ![Screenshot of sales data in Excel for Hammer, Wrench, and Saw in months November, December, and January](../images/worksheet-functions-chaining-results.jpg)
 
-## Example 1
+## Example 1: `VLOOKUP`
 
-The following code sample applies the `VLOOKUP` function to the sample data in the table described previously to identify the number of wrenches sold in November.
+The following code sample applies the `VLOOKUP` function to the sample data described previously to identify the number of wrenches sold in November.
 
 ```js
 Excel.run(function (context) {
@@ -34,11 +34,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## Example 2
+## Example 2: `VLOOKUP` and `SUM`
 
-The following code sample applies the `VLOOKUP` function to identify the number of wrenches sold in November and the number of wrenches sold in December, and then applies the `SUM` function to calculate the total number of wrenches sold during these two months. 
+The following code sample applies the `VLOOKUP` function to the sample data described previously to identify the number of wrenches sold in November and the number of wrenches sold in December, and then applies the `SUM` function to calculate the total number of wrenches sold during these two months. 
 
-As this example shows, you only need to load the final result (in this example, `sumOfTwoLookups`). Any intermediate results (in this example, the result of each `VLOOKUP` function) will be calculated and used when applying the final formula.
+As this example shows, you only need to load the final result (in this example, `sumOfTwoLookups`). Any intermediate results (in this example, the result of each `VLOOKUP` function) will be calculated and used when calculating the final result.
 
 ```js
 Excel.run(function (context) {
@@ -56,7 +56,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## Supported Worksheet Functions
+## Supported worksheet functions
 
 The following built-in Excel worksheet functions can be called using the Excel JavaScript API.
 
