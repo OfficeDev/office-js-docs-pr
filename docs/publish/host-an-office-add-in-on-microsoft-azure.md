@@ -1,7 +1,7 @@
 ---
 title: Host an Office Add-in on Microsoft Azure
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/23/2018
 ---
 
 
@@ -42,7 +42,7 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
 5. In **File Sharing**, choose the drop-down arrow and then choose **Everyone** > **Add** > **Share**.
     
 > [!NOTE]
-> In this walkthrough, you're using a local file share as a trusted catalog where you'll store the add-in XML manifest file. In a real-world scenario, you might instead choose to [deploy the XML manifest file to a SharePoint catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) or [publish the add-in to the Office Store](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store).
+> In this walkthrough, you're using a local file share as a trusted catalog where you'll store the add-in XML manifest file. In a real-world scenario, you might instead choose to [deploy the XML manifest file to a SharePoint catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) or [publish the add-in to AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store).
 
 ## Step 2: Add the file share to the Trusted Add-ins catalog
 

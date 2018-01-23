@@ -1,7 +1,7 @@
 ---
 title: Word add-ins overview
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/23/2018
 ---
 
 
@@ -12,7 +12,7 @@ Do you want to create a solution that extends the functionality of Word? For exa
 Word add-ins are one of the many development options that you have on the [Office Add-ins platform](../overview/office-add-ins.md). You can use add-in commands to extend the Word UI and launch task panes that run JavaScript that interacts with the content in a Word document. Any code that you can run in a browser can run in a Word add-in. Add-ins that interact with content in a Word document create requests to act on Word objects and synchronize object state. 
 
 > [!NOTE]
-> When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://docs.microsoft.com/en-us/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).
+> When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to AppSource, make sure that you conform to the [AppSource validation policies](https://docs.microsoft.com/en-us/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).
 
 The following figure shows an example of a Word add-in that runs in a task pane.
 
@@ -74,7 +74,7 @@ Ready to create your first Word add-in? See [Build your first Word add-in](word-
 
 To learn more about how to design a world class Word add-in that creates a compelling experience for your users, see [Design guidelines](../design/add-in-design.md) and [Best practices](../concepts/add-in-development-best-practices.md).
 
-After you develop your add-in, you can [publish](../publish/publish.md) it to a network share, an app catalog, or to the Office Store.
+After you develop your add-in, you can [publish](../publish/publish.md) it to a network share, an app catalog, or AppSource.
 
 ## What's coming up for Word add-ins?
 

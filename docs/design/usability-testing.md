@@ -1,7 +1,7 @@
 ---
 title: Usability testing for Office Add-ins
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/23/2018
 ---
 
 
@@ -21,7 +21,7 @@ These testing services help you to streamline test plan creation and remove the 
 You need only five participants to uncover most usability issues in your design. Incorporate small tests regularly throughout your development cycle to ensure that your product is user-centered.
 
 > [!NOTE]
-> We recommend that you test the usability of your add-in across multiple platforms. To [publish your add-in to the Office Store](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store), it must work on all [platforms that support the methods that you define](../overview/office-add-in-availability.md).
+> We recommend that you test the usability of your add-in across multiple platforms. To [publish your add-in to AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store), it must work on all [platforms that support the methods that you define](../overview/office-add-in-availability.md).
 
 ## 1.	Sign up for a testing service
 

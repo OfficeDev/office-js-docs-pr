@@ -366,9 +366,9 @@
       href: publish/centralized-deployment.md
     - name: Publish add-ins to a SharePoint catalog
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
-    - name: Publish add-ins to the Office Store
+    - name: Publish add-ins to AppSource
       href: https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store
-    - name: Office Store validation policies
+    - name: AppSource validation policies
       href: https://docs.microsoft.com/en-us/office/dev/store/validation-policies
 
 - name: Reference

@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins platform overview
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/23/2018
 ---
 
 
@@ -27,7 +27,7 @@ Office Add-ins provide the following advantages over add-ins built using VBA, CO
 
 - Centralized deployment and distribution. Admins can deploy Office Add-ins centrally across an organization. 
 
-- Easy access via the Office Store. You can make your solution available to a broad audience by submitting it to the Office Store. 
+- Easy access via AppSource. You can make your solution available to a broad audience by submitting it to AppSource. 
 
 - Based on standard web technology. You can use any library you like to build Office Add-ins. 
 

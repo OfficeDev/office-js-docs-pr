@@ -1,7 +1,7 @@
 ---
 title: Create custom functions in Excel (Preview)
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/23/2018
 ---
 
 # Create custom functions in Excel (Preview)
@@ -277,7 +277,7 @@ The following features aren't yet supported in the Developer Preview.
 
 -   Help URLs and parameter descriptions are not yet used by Excel.
 
--   Publishing add-ins to the Office Store or Office 365 centralized deployment that use custom functions.
+-   Publishing add-ins that use custom functions to AppSource or via Office 365 centralized deployment.
 
 -   Custom functions are not available on Excel on Mac, Excel for iOS, and Excel Online.
 
