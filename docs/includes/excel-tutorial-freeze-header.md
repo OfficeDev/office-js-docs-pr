@@ -50,16 +50,17 @@ When a table is long enough that a user must scroll to see some rows, the header
 
 ## Test the add-in
 
-1. Open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
-2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used under-the-hood by Excel to run Excel add-ins).
-3. Run the command `npm start` to start a web server running on localhost.
-4. Sideload the add-in by using one of the following methods:
-    - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
-5. On the **Home** menu, choose **Show Taskpane**.
-6. In the taskpane, choose **Create Table**. 
-7. Choose the **Freeze Header** button.
-8. Scroll down the worksheet enough to to see that the table header remains visible at the top even when the higher rows scroll out of sight.
+1. If the Git bash window, or Node.JS-enabled system prompt, from the previous stage tutorial is still open, enter Cntl-C twice to stop the running web server. Otherwise, open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
+
+     > [!NOTE]
+     > Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process in so that you can get a prompt to enter the build command. After the build, you restart the server. The next few steps carry out this process.
+
+1. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used under-the-hood by Excel to run Excel add-ins).
+2. Run the command `npm start` to start a web server running on localhost.
+4. Reload the task pane by closing it, and then on the **Home** menu, select **Show Taskpane** to reopen the add-in.
+6. If the table is in the worksheet, delete it.
+7. In the taskpane, choose **Create Table**. 
+8. Choose the **Freeze Header** button.
+9. Scroll down the worksheet enough to to see that the table header remains visible at the top even when the higher rows scroll out of sight.
 
     ![Excel tutorial - Freeze Header](../images/excel-tutorial-freeze-header.png)

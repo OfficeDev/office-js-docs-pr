@@ -203,23 +203,25 @@ These steps must be completed whenever your code needs to *read* information fro
 
 ## Configure the script-loading HTML file
 
-1. Open the /function-file/function-file.html file. This is a UI-less HTML file that is called when the user presses the **Toggle Worksheet Protection** button. Its purpose is to load the JavaScript method that should run when the button is pushed.
-2. There are two `<script>` tags in the file. The first one loads Office.js. Replace the **1** or **1.1** in the `src` attribute with **beta**.
+Open the /function-file/function-file.html file. This is a UI-less HTML file that is called when the user presses the **Toggle Worksheet Protection** button. Its purpose is to load the JavaScript method that should run when the button is pushed. You are not going to change this file. Simply note that the second `<script>` tag loads the functionfile.js.
 
    > [!NOTE]
    > The function-file.html file and the function-file.js file that it loads run in an entirely separate IE process from the add-in's task pane. If the function-file.js was transpiled into the same bundle.js file as the app.js file, then the add-in would have to load two copies of the bundle.js file, which defeats the purpose of bundling. In addition, the function-file.js file does not contain any JavaScript that is unsupported by IE. For these two reasons, this add-in does not transpile the function-file.js at all. 
 
 ## Test the add-in
 
-1. Open a Git Bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
-2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used under-the-hood by Excel to run Excel add-ins).
-3. Run the command `npm start` to start a web server running on localhost.
-4. Sideload the add-in by using one of the following methods:
+1. Close all Office applications, including Excel. 
+2. Delete the Office cache by deleting the contents of the cache folder. This is necessary to completely clear the old version of the add-in from the host. 
+    - For Windows: `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
+    - For Mac: `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
+3. If for any reason, your server is not running, then in a Git Bash window, or Node.JS-enabled system prompt, navigate to the **Start** folder of the project and run the command `npm start`. You do not need to rebuild the project because the only JavaScript file you changed is not part of the built bundle.js.
+4. Using the new version of the changed manifest file, repeat the sideloading process by using one of the following methods. *You should overwrite the previous copy of the manifest file.*
     - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
     - Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
-5. On the **Home** ribbon, choose **Toggle Worksheet Protection**. Note that most of the controls on the ribbon are disabled (and visually grayed-out) as seen in screenshot below. 
-6. Choose a cell as you would if you wanted to change its content. You get an error telling you that the worksheet is protected.
-7. Choose **Toggle Worksheet Protection** again, and the controls are reenabled, and you can change cell values again.
+7. Open any worksheet in Excel.
+8. On the **Home** ribbon, choose **Toggle Worksheet Protection**. Note that most of the controls on the ribbon are disabled (and visually grayed-out) as seen in screenshot below. 
+9. Choose a cell as you would if you wanted to change its content. You get an error telling you that the worksheet is protected.
+10. Choose **Toggle Worksheet Protection** again, and the controls are reenabled, and you can change cell values again.
 
     ![Excel tutorial - Ribbon with Protection On](../images/excel-tutorial-ribbon-with-protection-on.png)

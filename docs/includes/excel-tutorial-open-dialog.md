@@ -163,14 +163,14 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 
 ## Test the add-in
 
-1. Open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
-2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used internally by Excel to run Excel add-ins).
-3. Run the command `npm start` to start a web server running on localhost.
-4. Sideload the add-in by using one of the following methods:
-    - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
-5. Select **Show Taskpane** on the **Home** menu.
+1. If the Git bash window, or Node.JS-enabled system prompt, from the previous stage tutorial is still open, enter Cntl-C twice to stop the running web server. Otherwise, open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
+
+     > [!NOTE]
+     > Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process in so that you can get a prompt to enter the build command. After the build, you restart the server. The next few steps carry out this process.
+
+1. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used under-the-hood by Excel to run Excel add-ins).
+2. Run the command `npm start` to start a web server running on localhost.
+4. Reload the task pane by closing it, and then on the **Home** menu, select **Show Taskpane** to reopen the add-in.
 6. Choose the **Open Dialog** button in the task pane. 
 7. While the dialog is open, drag it and resize it. Note that you can interact with the worksheet and press other buttons on the taskpane. But you cannot launch a second dialog from the same task pane page.
 8. In the dialog, enter a name and choose **OK**. The name appears on the task pane and the dialog closes.
