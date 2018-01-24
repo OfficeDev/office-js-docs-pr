@@ -46,7 +46,7 @@ The following are some examples of research questions:
 
 It’s important to get data on the entire user journey – from discovering your add-in, to installing and using it. Consider research questions that address the following aspects of the add-in user experience:
  
- - Finding your add-in in the Store
+ - Finding your add-in in AppSource
  - Choosing to install your add-in
  - First run experience
  - Ribbon commands
