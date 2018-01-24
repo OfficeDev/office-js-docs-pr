@@ -1,7 +1,7 @@
 ---
 title: Calling built-in Excel worksheet functions using the Excel JavaScript API
 description: ''
-ms.date: 01/26/2017
+ms.date: 01/24/2017
 ---
 
 # Call built-in Excel worksheet functions
