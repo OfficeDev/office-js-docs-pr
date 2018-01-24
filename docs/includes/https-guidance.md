@@ -1,0 +1,1 @@
+Using an HTTPS endpoint for your add-in is strongly recommended, for a variety of reasons.
