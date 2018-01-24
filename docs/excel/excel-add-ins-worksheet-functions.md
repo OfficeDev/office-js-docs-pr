@@ -13,10 +13,10 @@ This article explains how to call built-in Excel worksheet functions such as `VL
 
 ## Calling a worksheet function
 
-The following code snippet shows how to call a worksheet function, where `functionMethod()` is a placeholder value that should be replaced with the name of the function to call and the input parameters that the function requires. The **value** property of the **FunctionResult** object that's returned by a worksheet function contains the result of the specified function. 
+The following code snippet shows how to call a worksheet function, where `sampleFunction()` is a placeholder that should be replaced with the name of the function to call and the input parameters that the function requires. The **value** property of the **FunctionResult** object that's returned by a worksheet function contains the result of the specified function. 
 
 ```js
-var functionResult = context.workbook.functions.functionMethod(); 
+var functionResult = context.workbook.functions.sampleFunction(); 
 functionResult.load();
 return context.sync()
     .then(function () {
