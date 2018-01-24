@@ -1,7 +1,7 @@
 ---
 title: Loading the DOM and runtime environment
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/23/2018
 ---
 
 
@@ -23,7 +23,7 @@ The following events occur when a content or task pane add-in starts:
 
 1. The user opens a document that already contains an add-in or inserts an add-in in the document.
     
-2. The Office host application reads the add-in's XML manifest from the Office Store, add-in catalog on SharePoint, or shared folder catalog it originates from.
+2. The Office host application reads the add-in's XML manifest from AppSource, an add-in catalog on SharePoint, or the shared folder catalog it originates from.
     
 3. The Office host application opens the add-in's HTML page in a browser control.
     

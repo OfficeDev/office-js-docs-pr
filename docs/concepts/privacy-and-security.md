@@ -1,7 +1,7 @@
 ---
 title: Privacy and security for Office Add-ins
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/23/2018
 ---
 
 # Privacy and security for Office Add-ins
@@ -57,9 +57,9 @@ In supported Web clients, such as Excel Online and Outlook Web App, Office Add-i
 
 ![Web-client infrastructure](../images/dk2-agave-overview-03.png)
 
-## Add-in integrity in the Office Store
+## Add-in integrity in AppSource
 
-You can make your Office Add-ins available to the public by publishing them in the Office Store. The Office Store enforces the following measures to maintain the integrity of add-ins:
+You can make your Office Add-ins available to the public by publishing them to AppSource. AppSource enforces the following measures to maintain the integrity of add-ins:
 
 
 - Requires the host server of an Office Add-in to always use Secure Sockets Layer (SSL) to communicate.
@@ -76,17 +76,17 @@ This section describes the protection offered by the Office Add-ins platform fro
 
 ### End users' perspective
 
-Office Add-ins are built using web technologies that run in a browser control or  **iframe**. Because of this, using add-ins is similar to browsing to web sites on the Internet or intranet. Add-ins can be external to an organization (if you acquire the add-in from the Office Store) or internal (if you acquire the add-in from an Exchange Server add-in catalog, SharePoint add-in catalog, or file share on an organization's network). Add-ins have limited access to the network and most add-ins can read or write to the active document or mail item. The add-in platform applies certain constraints before a user or administrator installs or starts an add-in. But as with any extensibility model, users should be cautious before starting an unknown add-in.
+Office Add-ins are built using web technologies that run in a browser control or  **iframe**. Because of this, using add-ins is similar to browsing to web sites on the Internet or intranet. Add-ins can be external to an organization (if you acquire the add-in from AppSource) or internal (if you acquire the add-in from an Exchange Server add-in catalog, SharePoint add-in catalog, or file share on an organization's network). Add-ins have limited access to the network and most add-ins can read or write to the active document or mail item. The add-in platform applies certain constraints before a user or administrator installs or starts an add-in. But as with any extensibility model, users should be cautious before starting an unknown add-in.
 
 The add-in platform addresses end users' privacy concerns in the following ways:
 
 - Data communicated with the web server that hosts a content, Outlook or task pane add-in as well as communication between the add-in and any web services it uses must be encrypted using the Secure Socket Layer (SSL) protocol.
 
-- Before a user installs an add-in from the Office Store, the user can view the privacy policy and requirements of that add-in. In addition, Outlook add-ins that interact with users' mailboxes surface the specific permissions that they require; the user can review the terms of use, requested permissions and privacy policy before installing an Outlook add-in.
+- Before a user installs an add-in from AppSource, the user can view the privacy policy and requirements of that add-in. In addition, Outlook add-ins that interact with users' mailboxes surface the specific permissions that they require; the user can review the terms of use, requested permissions and privacy policy before installing an Outlook add-in.
 
 - When sharing a document, users also share add-ins that have been inserted in or associated with that document. If a user opens a document that contains an add-in that the user hasn't used before, the host application prompts the user to grant permission for the add-in to run in the document. In an organizational environment, the Office host application also prompts the user if the document comes from an external source.
 
-- Users can enable or disable the access to the Office Store. For content and task pane add-ins, users manage access to trusted add-ins and catalogs from the  **Trust Center** on the host Office client (opened from **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**). For Outlook add-ins, uses can manage add-ins by choosing the  **Manage Add-ins** button: in Outlook for Windows, choose **File** > **Manage Add-ins**. In Outlook for Mac, choose the  **Manage Add-ins** button on the add-in bar. In Outlook Web App choose the **Settings** menu (gear icon) > **Manage add-ins**. Administrators can also manage this access [by using group policy](http://technet.microsoft.com/en-us/library/jj219429.aspx#BKMK_Managing).
+- Users can enable or disable the access to AppSource. For content and task pane add-ins, users manage access to trusted add-ins and catalogs from the  **Trust Center** on the host Office client (opened from **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**). For Outlook add-ins, uses can manage add-ins by choosing the  **Manage Add-ins** button: in Outlook for Windows, choose **File** > **Manage Add-ins**. In Outlook for Mac, choose the  **Manage Add-ins** button on the add-in bar. In Outlook Web App choose the **Settings** menu (gear icon) > **Manage add-ins**. Administrators can also manage this access [by using group policy](http://technet.microsoft.com/en-us/library/jj219429.aspx#BKMK_Managing).
 
 - The design of the add-in platform provides security and performance for end users in the following ways:
 
@@ -104,9 +104,9 @@ You can read general PII protection guidelines for IT administrators and develop
 
 - Using some applications can reveal PII. Make sure that you securely store data for your users' identity, location, access times, and any other credentials so that data won't become available to other users of the add-in.
 
-- If your add-in is available in the Office Store, the Office Store requirement for HTTPS protects PII transmitted between your web server and the client computer or device. However, if you re-transmit that data to other servers, make sure you observe the same level of protection.
+- If your add-in is available in AppSource, the AppSource requirement for HTTPS protects PII transmitted between your web server and the client computer or device. However, if you re-transmit that data to other servers, make sure you observe the same level of protection.
 
-- If you store users' PII, make sure you reveal that fact, and provide a way for users to inspect and delete it. If you submit your add-in to the Office Store, you can outline the data you collect and how it's used in the privacy statement.
+- If you store users' PII, make sure you reveal that fact, and provide a way for users to inspect and delete it. If you submit your add-in to AppSource, you can outline the data you collect and how it's used in the privacy statement.
 
 ## Developers' permission choices and security practices
 
@@ -231,7 +231,7 @@ Developers should also take note of the following security practices:
 
 - Developers shouldn't embed keys that they use to access third-party APIs or services (such as Bing, Google, or Facebook) directly in the HTML pages of their add-in. Instead, they should create a custom web service or store the keys in some other form of secure web storage that they can then call to pass the key value to their add-in.
 
-- Developers should do the following when submitting an add-in to the Office Store:
+- Developers should do the following when submitting an add-in to AppSource:
 
   - Host the add-in they are submitting on a web server that supports SSL.
   - Produce a statement outlining a compliant privacy policy.
@@ -241,7 +241,7 @@ Other than resource usage rules, developers for Outlook add-ins should also make
 
 ## IT administrators' control
 
-In a corporate setting, IT administrators have ultimate authority over enabling or disabling access to the Office Store and any private catalogs.
+In a corporate setting, IT administrators have ultimate authority over enabling or disabling access to AppSource and any private catalogs.
 
 ## See also
 

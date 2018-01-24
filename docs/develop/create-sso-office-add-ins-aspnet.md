@@ -1,7 +1,7 @@
 ---
 title: Create an ASP.NET Office Add-in that uses single sign-on
 description: 
-ms.date: 12/08/2017 
+ms.date: 01/23/2018
 ---
 
 # Create an ASP.NET Office Add-in that uses single sign-on (preview)
@@ -103,7 +103,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 ## Grant admin consent to the add-in
 
 > [!NOTE]
-> This procedure is only needed when you're developing the add-in. When your production add-in is deployed to the Office Store or an add-in catalog, users will individually trust it or an admin will consent for organization at installation.
+> This procedure is only needed when you're developing the add-in. When your production add-in is deployed to AppSource or an add-in catalog, users will individually trust it or an admin will consent for organization at installation.
 
 1. If the add-in isn't running in Visual Studio, press **F5** to run it. It needs to be running in IIS for this procedure to complete smoothly.
 
@@ -180,7 +180,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
     > [!NOTE]
     > * The **Resource** value is the **Application ID URI** you set when you added the Web API platform to the registration of the add-in.
-    > * The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through the Office Store.
+    > * The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through AppSource.
 
 1. Open the **Warnings** tab of the **Error List** in Visual Studio. If there is a warning that `<WebApplicationInfo>` is not a valid child of `<VersionOverrides>`, your version of Visual Studio 2017 Preview does not  recognize the SSO markup. As a workaround, do the following for a Word, Excel, or PowerPoint add-in. (If you are working with an Outlook add-in see the workaround below.)
 
