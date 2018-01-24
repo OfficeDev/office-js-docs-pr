@@ -13,7 +13,7 @@ This article explains how to call built-in Excel worksheet functions such as `VL
 
 ## Calling a worksheet function
 
-The following code snippet shows how to call a worksheet function, where `sampleFunction()` is a placeholder that should be replaced with the name of the function to call and the input parameters that the function requires. The **value** property of the **FunctionResult** object that's returned by a worksheet function contains the result of the specified function. In this example, the result of the function is written to the console.
+The following code snippet shows how to call a worksheet function, where `sampleFunction()` is a placeholder that should be replaced with the name of the function to call and the input parameters that the function requires. The **value** property of the **FunctionResult** object that's returned by a worksheet function contains the result of the specified function. As this example shows, you must `load` the **value** property of the **FunctionResult** object before you can read it. In this example, the result of the function is simply written to the console. 
 
 ```js
 var functionResult = context.workbook.functions.sampleFunction(); 
@@ -54,7 +54,7 @@ Excel.run(function (context) {
 
 The following code sample applies the `VLOOKUP` function to the sample data described previously to identify the number of wrenches sold in November and the number of wrenches sold in December, and then applies the `SUM` function to calculate the total number of wrenches sold during those two months. 
 
-As this example shows, when one or more function calls are nested within another function call, you only need to load the final result (in this example, `sumOfTwoLookups`). Any intermediate results (in this example, the result of each `VLOOKUP` function) will be calculated and used to calculate the final result.
+As this example shows, when one or more function calls are nested within another function call, you only need to `load` the final result that you subsequently want to read (in this example, `sumOfTwoLookups`). Any intermediate results (in this example, the result of each `VLOOKUP` function) will be calculated and used to calculate the final result.
 
 ```js
 Excel.run(function (context) {
