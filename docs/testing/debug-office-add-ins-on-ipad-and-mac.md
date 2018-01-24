@@ -24,7 +24,9 @@ Vorlon.JS is a debugger for web pages, similar to the F12 tools. It is designed 
 
 ### Configure Vorlon.JS to use HTTPS
 
-To debug an application using Vorlon.JS, you add a `<script>` tag to the opening page of the application that loads a Vorlon.JS script from a well-known location (for details, see the following procedure). Add-ins require the HTTPS protocol; that is, SSL. By extension, any scripts that they use must be hosted from an HTTPS server, including the Vorlon.JS script. Therefore, you have to configure Vorlon.JS to use SSL in order to use Vorlon.JS with add-ins. 
+[!include[HTTPS guidance](../includes/https-guidance.md)]
+
+To debug an application using Vorlon.JS, you add a `<script>` tag to the opening page of the application that loads a Vorlon.JS script from a well-known location (for details, see the following procedure). If an add-in is SSL-secured (HTTPS), any scripts that it uses must be hosted from an HTTPS server, including the Vorlon.JS script. Therefore, you must configure Vorlon.JS to use SSL in order to use Vorlon.JS with add-ins. 
 
 1.	In **Finder**, go to `/usr/local/lib/node_modules/vorlon`, open the context menu for (right-click) the `/Server` folder, and then select **Get Info**.
 
