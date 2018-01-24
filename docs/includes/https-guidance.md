@@ -1,1 +1,1 @@
-Using an HTTPS endpoint for your add-in is strongly recommended, for a variety of reasons.
+While not strictly required in all scenarios, using an HTTPS endpoint for your add-in is strongly recommended. Add-ins that are not SSL-secured (HTTPS) generate unsecure content warnings and errors during use. If you plan to run your add-in in Office Online or publish your add-in to AppSource, it must be SSL-secured (HTTPS). 
