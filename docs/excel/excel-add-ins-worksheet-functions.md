@@ -17,7 +17,7 @@ The following code snippet shows how to call a worksheet function, where `sample
 
 ```js
 var functionResult = context.workbook.functions.sampleFunction(); 
-functionResult.load();
+functionResult.load('value');
 return context.sync()
     .then(function () {
         console.log('Result of the function: ' + functionResult.value);
@@ -41,7 +41,7 @@ The following code sample applies the `VLOOKUP` function to the sample data desc
 Excel.run(function (context) {
     var range = context.workbook.worksheets.getItem("Sheet1").getRange("A1:D4");
     var unitSoldInNov = context.workbook.functions.vlookup("Wrench", range, 2, false);
-    unitSoldInNov.load();
+    unitSoldInNov.load('value');
 
     return context.sync()
         .then(function () {
@@ -63,7 +63,7 @@ Excel.run(function (context) {
         context.workbook.functions.vlookup("Wrench", range, 2, false), 
         context.workbook.functions.vlookup("Wrench", range, 3, false)
     );
-    sumOfTwoLookups.load();
+    sumOfTwoLookups.load('value');
 
     return context.sync()
         .then(function () {
