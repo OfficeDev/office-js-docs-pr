@@ -235,6 +235,9 @@
       - name: Error handling
         href: excel/excel-add-ins-error-handling.md
         displayName: Excel
+      - name: Calling built-in functions
+        href: excel/excel-add-ins-worksheet-functions.md
+        displayName: Excel
     - name: Excel JavaScript API reference
       href: https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview
       displayName: Excel
