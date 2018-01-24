@@ -29,7 +29,7 @@ return context.sync()
 
 ## Sample data
 
-The following image shows a table in an Excel worksheet that contains sales data for various types of tools over a three month period. Each number in the table represents the number of units sold for a specific tool in a specific month. The code samples in this article will show how to apply built-in worksheet functions to this data.
+The following image shows a table in an Excel worksheet that contains sales data for various types of tools over a three month period. Each number in the table represents the number of units sold for a specific tool in a specific month. The examples that follow will show how to apply built-in worksheet functions to this data.
 
 ![Screenshot of sales data in Excel for Hammer, Wrench, and Saw in months November, December, and January](../images/worksheet-functions-chaining-results.jpg)
 
