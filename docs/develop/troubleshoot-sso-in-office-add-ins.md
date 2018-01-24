@@ -36,6 +36,8 @@ The [getAccessTokenAsync](https://dev.office.com/reference/add-ins/shared/office
 
 The user is not signed into Office. Your code should recall the `getAccessTokenAsync` method and pass the option `forceAddAccount: true` in the [options](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync#parameters) parameter. 
 
+This error is never seen in Office Online. If the user's cookie expires, Office Online returns error 13006. 
+
 ### 13002
 
 The user aborted sign in or consent. 
@@ -56,7 +58,7 @@ Invalid Grant. This usually means that Office has not been pre-authorized to the
 
 ### 13006
 
-Client Error. Your code should suggest that the user sign out and restart Office.
+Client Error. Your code should suggest that the user sign out and restart Office, or restart the Office Online session.
 
 ### 13007
 
@@ -75,6 +77,9 @@ The add-in called the `getAccessTokenAsync` method with the option `forceConsent
 > [!NOTE]
 > Microsoft will not necessarilly impose this restriction on any types of add-in catalogs. If it doesn't, then this error will never be seen.
 
+### 13010
+
+The user is running the add-in on Office Online and is using Edge or Internet Explorer. The user’s Office 365 domain, and the login.microsoftonline.com domain, are in a different security zones in the browser settings. If this error is returned, the user will have already seen an error explaining this and linking to a page about how to change the zone configuration. If your add-in provides functions that don't require the user to be signed in, then your code should catch this error and allow the add-in to stay running.
 
 ## Errors on the server-side from Azure Active Directory
 
