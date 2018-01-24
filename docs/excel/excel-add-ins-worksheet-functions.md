@@ -20,9 +20,12 @@ var functionResult = context.workbook.functions.functionMethod();
 functionResult.load();
 return context.sync()
     .then(function () {
-        console.log('Result of the function: ' + functionResult.value);unitSoldInNov.value);
+        console.log('Result of the function: ' + functionResult.value);
     });
 ```
+
+> [!TIP]
+> See the [Supported worksheet functions](#supported-worksheet-functions) section of this article for a list of functions that can be called using the Excel JavaScript API.
 
 ## Sample data
 
