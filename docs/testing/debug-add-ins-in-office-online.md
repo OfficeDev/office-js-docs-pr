@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins in Office Online
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/23/2018
 ---
 
 # Debug add-ins in Office Online
@@ -57,7 +57,7 @@ The following are some issues that you might encounter as you debug:
 ## See also
 
 - [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
-- [Validation policies for apps and add-ins submitted to the Office Store (version 2.2)](https://docs.microsoft.com/en-us/office/dev/store/validation-policies)  
-- [Create effective Office Store apps and add-ins](https://docs.microsoft.com/en-us/office/dev/store/create-effective-office-store-listings)  
+- [AppSource validation policies](https://docs.microsoft.com/en-us/office/dev/store/validation-policies)  
+- [Create effective AppSource apps and add-ins](https://docs.microsoft.com/en-us/office/dev/store/create-effective-office-store-listings)  
 - [Troubleshoot user errors with Office Add-ins](testing-and-troubleshooting.md)
     
