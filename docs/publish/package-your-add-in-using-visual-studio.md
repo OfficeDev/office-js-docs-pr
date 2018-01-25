@@ -1,7 +1,7 @@
 ---
 title: Package your add-in using Visual Studio to prepare for publishing
 description: ''
-ms.date: 01/23/2018
+ms.date: 01/25/2018
 ---
 
 
@@ -39,12 +39,12 @@ Complete the following steps to package your add-in using Visual Studio 2015.
     
     The **Publish Office and SharePoint Add-ins** wizard appears.
     
-2. In the **Where is your website hosted?** dropdown list, select or enter the URL of the website that will host the content files of your add-in, and then choose **Finish**.
+2. In the **Where is your website hosted?** dropdown list, select or enter the HTTPS URL of the website that will host the content files of your add-in, and then choose **Finish**. 
     
-    You must specify an address that begins with the HTTPS prefix to complete this wizard. Although using an HTTPS endpoint for your website is generally recommended, doing so is not required if you don't plan to publish your add-in to AppSource. If you want to use an HTTP endpoint for your website, you can open the XML manifest file in a text editor after the package has been created and replace the HTTPS prefix of your website with an HTTP prefix. For more information, see [Why do my apps and add-ins have to be SSL-secured?](https://docs.microsoft.com/en-us/office/dev/store/office-store-submission-faq#why-do-my-apps-and-add-ins-have-to-be-ssl-secured).
-    
-    > [!NOTE]
-    > Azure websites automatically provide an HTTPS endpoint.
+    You must specify a URL that begins with the HTTPS prefix to complete this wizard. If you want to use an HTTP endpoint for your website, you can open the XML manifest file in a text editor after the package has been created and replace the HTTPS prefix of your website with an HTTP prefix. 
+
+    > [!IMPORTANT]
+    > [!include[HTTPS guidance](../includes/https-guidance.md)] Azure websites automatically provide an HTTPS endpoint.
 
     Visual Studio generates the files that you need to publish your add-in and then opens the publish output folder. 
     
