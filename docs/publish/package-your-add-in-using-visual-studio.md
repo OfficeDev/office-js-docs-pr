@@ -1,7 +1,7 @@
 ---
 title: Package your add-in using Visual Studio to prepare for publishing
 description: ''
-ms.date: 01/23/2018
+ms.date: 01/25/2018
 ---
 
 

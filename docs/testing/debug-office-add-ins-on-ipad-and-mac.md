@@ -1,7 +1,7 @@
 ---
 title: Debug Office Add-ins on iPad and Mac
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/25/2018
 ---
 
 # Debug Office Add-ins on iPad and Mac

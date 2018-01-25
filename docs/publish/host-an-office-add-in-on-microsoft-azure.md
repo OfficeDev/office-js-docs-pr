@@ -1,7 +1,7 @@
 ---
 title: Host an Office Add-in on Microsoft Azure
 description: ''
-ms.date: 01/23/2018
+ms.date: 01/25/2018
 ---
 
 
