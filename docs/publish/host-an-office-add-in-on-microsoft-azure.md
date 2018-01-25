@@ -95,7 +95,7 @@ To create the web app using Visual Studio 2017, complete the following steps.
 5. In the browser address bar, change the URL for the web app so that it uses HTTPS and press **Enter** to confirm that the HTTPS protocol is enabled. 
 
     > [!IMPORTANT]
-    > [!include[HTTPS guidance](../includes/https-guidance.md)]
+    > [!include[HTTPS guidance](../includes/https-guidance.md)] Azure websites automatically provide an HTTPS endpoint.
     
 ### Using the Azure portal
 
@@ -129,7 +129,7 @@ To create the web app using the Azure portal, complete the following steps.
 6. In the browser address bar, change the URL for the web app so that it uses HTTPS and press **Enter** to confirm that the HTTPS protocol is enabled. 
 
     > [!IMPORTANT]
-    > [!include[HTTPS guidance](../includes/https-guidance.md)]
+    > [!include[HTTPS guidance](../includes/https-guidance.md)] Azure websites automatically provide an HTTPS endpoint.
 
 ## Step 4: Create an Office Add-in in Visual Studio
 
