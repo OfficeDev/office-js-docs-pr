@@ -28,8 +28,7 @@ Also, the use of memory, CPU, and network resources by Office Add-ins is governa
 
 The following sections briefly describe how the runtime architecture supports running add-ins in Office clients on Windows-based devices, on OS X Mac devices, and in Office Online clients on the web.
 
-> [!NOTE]
-> To learn about using WIP and Intune with Office Add-ins, see  [Use WIP and Intune to protect enterprise data in documents running Office Add-ins](https://docs.microsoft.com/en-us/microsoft-365-enterprise/office-add-ins-wip).
+> **NOTE**  To learn about using WIP and Intune with Office Add-ins, see [Use WIP and Intune to protect enterprise data in documents running Office Add-ins](https://docs.microsoft.com/en-us/microsoft-365-enterprise/office-add-ins-wip).
 
 ### Clients for Windows and OS X devices
 
@@ -41,7 +40,7 @@ On Windows desktops, Protect Mode in Internet Explorer must be enabled for the R
 
 ![Rich-client infrastructure](../images/dk2-agave-overview-02.png)
 
-As shown in figure 2, on an OS X Mac desktop, the add-in web page is hosted inside a sandboxed WebKit runtime host process which helps provide similar level of security and performance protection. 
+As shown in the following figure, on an OS X Mac desktop, the add-in web page is hosted inside a sandboxed WebKit runtime host process which helps provide similar level of security and performance protection. 
 
 *Figure 2. Office Add-ins runtime environment in OS X Mac clients*
 
@@ -51,7 +50,7 @@ The Office Add-ins runtime manages interprocess communication, the translation o
 
 ### Web clients
 
-In supported Web clients, such as Excel Online and Outlook Web App, Office Add-ins are hosted in an  **iframe** that runs using the HTML5 **sandbox** attribute. ActiveX components or navigating the main page of the web client are not allowed. Office Add-ins support is enabled in the web clients by the integration of the JavaScript API for Office. In a similar way to the desktop client applications, the JavaScript API manages the add-in lifecycle and interoperability between the add-in and the web client. This interoperability is implemented by using a special cross-frame post message communication infrastructure. The same JavaScript library (Office.js) that is used on desktop clients is available to interact with the web client. Figure 3 shows the infrastructure that supports Office Add-ins in the Office Online (running in the browser), and the relevant components (the web client, **iframe**, Office Add-ins runtime, and JavaScript API for Office) that are required to support them.
+In supported Web clients, such as Excel Online and Outlook Web App, Office Add-ins are hosted in an  **iframe** that runs using the HTML5 **sandbox** attribute. ActiveX components or navigating the main page of the web client are not allowed. Office Add-ins support is enabled in the web clients by the integration of the JavaScript API for Office. In a similar way to the desktop client applications, the JavaScript API manages the add-in lifecycle and interoperability between the add-in and the web client. This interoperability is implemented by using a special cross-frame post message communication infrastructure. The same JavaScript library (Office.js) that is used on desktop clients is available to interact with the web client. The following figure shows the infrastructure that supports Office Add-ins in Office Online (running in the browser), and the relevant components (the web client, **iframe**, Office Add-ins runtime, and JavaScript API for Office) that are required to support them.
 
 *Figure 3. Infrastructure that supports Office Add-ins in Office web clients*
 
@@ -76,7 +75,7 @@ This section describes the protection offered by the Office Add-ins platform fro
 
 ### End users' perspective
 
-Office Add-ins are built using web technologies that run in a browser control or  **iframe**. Because of this, using add-ins is similar to browsing to web sites on the Internet or intranet. Add-ins can be external to an organization (if you acquire the add-in from AppSource) or internal (if you acquire the add-in from an Exchange Server add-in catalog, SharePoint add-in catalog, or file share on an organization's network). Add-ins have limited access to the network and most add-ins can read or write to the active document or mail item. The add-in platform applies certain constraints before a user or administrator installs or starts an add-in. But as with any extensibility model, users should be cautious before starting an unknown add-in.
+Office Add-ins are built using web technologies that run in a browser control or **iframe**. Because of this, using add-ins is similar to browsing to web sites on the Internet or intranet. Add-ins can be external to an organization (if you acquire the add-in from AppSource) or internal (if you acquire the add-in from an Exchange Server add-in catalog, SharePoint add-in catalog, or file share on an organization's network). Add-ins have limited access to the network and most add-ins can read or write to the active document or mail item. The add-in platform applies certain constraints before a user or administrator installs or starts an add-in. But as with any extensibility model, users should be cautious before starting an unknown add-in.
 
 The add-in platform addresses end users' privacy concerns in the following ways:
 
@@ -135,13 +134,13 @@ The following example shows how a task pane add-in specifies the  **ReadDocument
 </OfficeApp>
 ```
 
-For more information about this for task pane and content add-ins , see [Requesting permissions for API use in content and task pane add-ins](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md).
+For more information about permissions for task pane and content add-ins, see [Requesting permissions for API use in content and task pane add-ins](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins).
 
-For more information about this for Outlook add-ins, see the following topics:
+For more information about permissions for Outlook add-ins, see the following topics:
 
-- [Privacy, permissions, and security for Outlook add-ins](https://docs.microsoft.com/en-us/outlook/add-ins/privacy-and-security)
+- [Privacy, permissions, and security for Outlook add-ins](https://docs.microsoft.com/outlook/add-ins/privacy-and-security)
 
-- [Understanding Outlook add-in permissions](https://docs.microsoft.com/en-us/outlook/add-ins/understanding-outlook-add-in-permissions)
+- [Understanding Outlook add-in permissions](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)
 
 ### Same origin policy
 
