@@ -41,24 +41,8 @@
 
 - name: Tutorials
   items:
-  - name: Create a table in Excel
-    href: tutorials/excel-tutorial-create-table.md
-    displayName: Excel
-  - name: Filter and sort a table in Excel
-    href: tutorials/excel-tutorial-filter-and-sort-table.md
-    displayName: Excel
-  - name: Create a chart in Excel
-    href: tutorials/excel-tutorial-create-chart.md
-    displayName: Excel
-  - name: Freeze a table header in Excel
-    href: tutorials/excel-tutorial-freeze-header.md
-    displayName: Excel
-  - name: Protect a worksheet in Excel
-    href: tutorials/excel-tutorial-protect-worksheet.md
-    displayName: Excel
-  - name: Open a dialog in Excel
-    href: tutorials/excel-tutorial-open-dialog.md
-    displayName: Excel
+  - name: Excel add-in tutorial
+    href: tutorials/excel-tutorial.yml
     
 - name: Concepts
   items:
@@ -245,6 +229,9 @@
       href: excel/excel-add-ins-advanced-concepts.md
       displayName: Excel
       items:
+      - name: Calling built-in functions
+        href: excel/excel-add-ins-worksheet-functions.md
+        displayName: Excel
       - name: Coauthoring in Excel add-ins
         href: excel/co-authoring-in-excel-add-ins.md
         displayName: Excel
@@ -366,9 +353,9 @@
       href: publish/centralized-deployment.md
     - name: Publish add-ins to a SharePoint catalog
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
-    - name: Publish add-ins to the Office Store
+    - name: Publish add-ins to AppSource
       href: https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store
-    - name: Office Store validation policies
+    - name: AppSource validation policies
       href: https://docs.microsoft.com/en-us/office/dev/store/validation-policies
 
 - name: Reference

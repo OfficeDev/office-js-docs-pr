@@ -1,7 +1,7 @@
 ---
 title: Publish Office Add-ins using Centralized Deployment via the Office 365 admin center
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/23/2018
 ---
 
 
@@ -16,7 +16,7 @@ The Office 365 admin center currently supports the following scenarios:
 - Deployment to English language and worldwide tenants.
 - Deployment of cloud-hosted add-ins.
 - Deployment of add-ins that are hosted within a firewall.
-- Deployment of Office Store add-ins.
+- Deployment of AppSource add-ins.
 - Automatic installation of an add-in for users when they launch the Office application.
 - Automatic removal of an add-in for users if the admin turns off or deletes the add-in, or if users are removed from Azure Active Directory or from a group to which the add-in has been deployed.
 
@@ -50,7 +50,7 @@ If your organization meets all requirements, complete the following steps to pub
 5. Choose **Upload Add-in** at the top of the page. 
 6. Choose one of the following options on the **Centralized Deployment** page:
 
-    - **I want to add an Add-in from the Office Store.**
+    - **I want to add an Add-in from AppSource.**
     - **I have the manifest file (.xml) on this device.** For this option, choose **Browse** to locate the manifest file (.xml) that you want to use.
     - **I have a URL for the manifest file.** For this option, type the manifest's URL in the field provided.
 
@@ -58,10 +58,10 @@ If your organization meets all requirements, complete the following steps to pub
 
 7.	Choose **Next**.
 
-8.	If you selected the option to add an Add-in from the Office Store, select the add-in. Notice that you can view available add-ins via categories of **Suggested for you**, **Rating**, or **Name**. You may only add free add-ins from the Office Store; adding paid add-ins isn't currently supported.
+8.	If you selected the option to add an Add-in from AppSource, select the add-in. Notice that you can view available add-ins via categories of **Suggested for you**, **Rating**, or **Name**. You may only add free add-ins from AppSource; adding paid add-ins isn't currently supported.
 
     > [!NOTE]
-    > With the Office Store option, updates and enhancements to the add-in will automatically be made available to users without your intervention.
+    > With the AppSource option, updates and enhancements to the add-in will automatically be made available to users without your intervention.
 
     ![Select an Add-In dialog in Office 365 admin center](../images/select-an-add-in.png)
 
@@ -114,7 +114,7 @@ After an Office Add-in has been published via Centralized Deployment, any change
 
 - **Line-of-business add-in**: If an admin explicitly uploaded a manifest file when implementing Centralized Deployment via the Office 365 admin center, the admin must upload a new manifest file that contains the desired changes. After the updated manifest file has been uploaded, the next time the relevant Office applications start, the add-in will update.
 
-- **Office Store add-in**: If an admin selected an add-in from the Office Store when implementing Centralized Deployment via the Office 365 admin center, and the add-in updates in the Office Store, the add-in will update later via Centralized Deployment. The next time the relevant Office applications start, the add-in will update.
+- **AppSource add-in**: If an admin selected an add-in from AppSource when implementing Centralized Deployment via the Office 365 admin center, and the add-in updates in AppSource, the add-in will update later via Centralized Deployment. The next time the relevant Office applications start, the add-in will update.
 
 ## End user experience with add-ins
 

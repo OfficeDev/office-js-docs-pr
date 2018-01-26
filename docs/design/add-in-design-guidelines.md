@@ -1,7 +1,7 @@
 ---
 title: Office Add-in design guidelines
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/23/2018
 ---
 
 
@@ -10,7 +10,7 @@ ms.date: 12/04/2017
 
 Enhance the user experience in your Office Add-in by developing UI that matches the Office voice, and apply accessibility guidelines to ensure that your add-in is accessible to all users.
 
-If you plan to make your add-in [available in the Office Store](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store), make sure that your language and content complies with the [Validation policies](https://docs.microsoft.com/en-us/office/dev/store/validation-policies).
+If you plan to make your add-in [available in AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store), make sure that your language and content complies with the [Validation policies](https://docs.microsoft.com/en-us/office/dev/store/validation-policies).
 
 ## Voice guidelines 
 

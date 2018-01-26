@@ -1,7 +1,7 @@
 ---
 title: Excel add-ins overview
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/23/2018
 ---
 
 
@@ -20,7 +20,7 @@ The Office Add-ins platform provides the framework and Office.js JavaScript APIs
 * **Centralized deployment**: Admins can quickly and easily deploy Excel add-ins to users throughout an organization.
 * **Single sign on (SSO)**: Easily integrate your Excel add-in with the Microsoft Graph.
 * **Use of standard web technology**: Create your Excel add-in using familiar web technologies such as HTML, CSS, and JavaScript.
-* **Distribution via the Office Store**: Share your Excel add-in with a broad audience by publishing it to the [Office Store](https://store.office.com/en-us/appshome.aspx).
+* **Distribution via AppSource**: Share your Excel add-in with a broad audience by publishing it to [AppSource](https://appsource.microsoft.com/en-us/marketplace/apps?product=office&page=1&src=office&corrid=53245fad-fcbe-41f8-9f97-b0840264f97c&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d).
 
 > [!NOTE]
 > Excel add-ins are different from COM and VSTO add-ins, which are earlier Office integration solutions that run only on Office for Windows. Unlike COM add-ins, Excel add-ins do not require you to install any code on a user's device, or within Excel. 
@@ -44,7 +44,7 @@ The [manifest](../develop/add-in-manifests.md) is an XML configuration file that
 * How the add-in integrates with Excel, including any custom UI that the add-in creates (ribbon buttons, context menus, and so on).
 * Permissions that the add-in requires, such as reading and writing to the document.
 
-To enable end-users to install and use an Excel add-in, you must publish its manifest to either the Office Store or to an Add-ins catalog. 
+To enable end-users to install and use an Excel add-in, you must publish its manifest either to AppSource or to an Add-ins catalog. 
 
 ## Capabilities of an Excel add-in
 

@@ -1,7 +1,7 @@
 ---
 title: Host an Office Add-in on Microsoft Azure
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/25/2018
 ---
 
 
@@ -42,7 +42,7 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
 5. In **File Sharing**, choose the drop-down arrow and then choose **Everyone** > **Add** > **Share**.
     
 > [!NOTE]
-> In this walkthrough, you're using a local file share as a trusted catalog where you'll store the add-in XML manifest file. In a real-world scenario, you might instead choose to [deploy the XML manifest file to a SharePoint catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) or [publish the add-in to the Office Store](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store).
+> In this walkthrough, you're using a local file share as a trusted catalog where you'll store the add-in XML manifest file. In a real-world scenario, you might instead choose to [deploy the XML manifest file to a SharePoint catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) or [publish the add-in to AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store).
 
 ## Step 2: Add the file share to the Trusted Add-ins catalog
 
@@ -92,7 +92,10 @@ To create the web app using Visual Studio 2017, complete the following steps.
     
 4. Right-click the new web app and then choose **View in Browser**. Your browser opens and displays a webpage with the message "Your App Service app has been created."
     
-5. In the browser address bar, change the URL for the web app so that it uses HTTPS and press **Enter** to confirm that the HTTPS protocol is enabled. The Office Add-in model requires add-ins to use the HTTPS protocol.
+5. In the browser address bar, change the URL for the web app so that it uses HTTPS and press **Enter** to confirm that the HTTPS protocol is enabled. 
+
+    > [!IMPORTANT]
+    > [!include[HTTPS guidance](../includes/https-guidance.md)] Azure websites automatically provide an HTTPS endpoint.
     
 ### Using the Azure portal
 
@@ -123,7 +126,10 @@ To create the web app using the Azure portal, complete the following steps.
 
 5. In the **Essentials** section of the site's **Overview** page in the Azure portal, choose the URL that is displayed under **URL**. Your browser opens and displays a webpage with the message "Your App Service app has been created." 
     
-6. In the browser address bar, change the URL for the web app so that it uses HTTPS and press **Enter** to confirm that the HTTPS protocol is enabled. The Office Add-in model requires add-ins to use the HTTPS protocol.    
+6. In the browser address bar, change the URL for the web app so that it uses HTTPS and press **Enter** to confirm that the HTTPS protocol is enabled. 
+
+    > [!IMPORTANT]
+    > [!include[HTTPS guidance](../includes/https-guidance.md)] Azure websites automatically provide an HTTPS endpoint.
 
 ## Step 4: Create an Office Add-in in Visual Studio
 
