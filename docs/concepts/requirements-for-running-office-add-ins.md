@@ -22,8 +22,9 @@ To be able to install and run any Office Add-in, you first need to deploy the ma
 
 For all types of add-ins (content, Outlook, and task pane add-ins and add-in commands), you need to deploy your add-in's webpage files to a web server, or web hosting service, such as [Microsoft Azure](../publish/host-an-office-add-in-on-microsoft-azure.md).
 
+Add-ins and assets must be served over secure transport (`HTTPS`) in both Development and Production environments. Self-signed certificates can be used for development and testing, so long as the certificated is trusted on the local machine.
 
-> [!NOTE]
+> [!TIP]
 > When you develop and debug an add-in in Visual Studio, Visual Studio deploys and runs your add-in's webpage files locally with IIS Express, and doesn't require an additional web server. 
 
 For content and task pane add-ins, in the supported Office host applications - Access web apps, Word, Excel, PowerPoint, or Project - you also need an [add-in catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) on SharePoint to upload the add-in's XML manifest file.
@@ -32,9 +33,6 @@ To test and run an Outlook add-in, the user's Outlook email account must reside 
 
 > [!NOTE]
 > POP and IMAP email accounts in Outlook don't support Office Add-ins.
-
-
-
 
 ## Client requirements: Windows desktop and tablet
 
