@@ -88,7 +88,7 @@ _\*Added in the Office Add-in Manifest Schema version 1.1._
 
 ## Hosting Requirements
 
-All image URIs, such as those used for [Add-in Commands][], **must support caching**. The server hosting the image should not return a `Cache-Control` header specifying `no-cache`, `no-store`, or similar options in the HTTP response.
+All image URIs, such as those used for [Add-in Commands][], must support caching. The server hosting the image should not return a `Cache-Control` header specifying `no-cache`, `no-store`, or similar options in the HTTP response.
 
 All URLs, such as the source file locations specified in the [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) element, must be **SSL-secured (HTTPS)**.
 
