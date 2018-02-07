@@ -32,7 +32,7 @@ Next, add Fabric React components to your add-in. Create a new React component, 
 2. Create **button.tsx**.
 3. In **button.tsx**, enter the following code to create the `ButtonPrimaryExample` component.
 
-```javascript
+```typescript
 import * as React from 'react';
 import { PrimaryButton, IButtonProps } from 'office-ui-fabric-react/lib/Button';
 import { Label } from 'office-ui-fabric-react/lib/Label';
@@ -81,13 +81,13 @@ Add `ButtonPrimaryExample` to your add-in by opening **src\components\app.tsx** 
 
 - Add the following import statement to reference `ButtonPrimaryExample` from **button.tsx** created in step 2 (no file extension is needed).
 
-  ```javascript
+  ```typescript
   import {ButtonPrimaryExample} from './button';
   ```
 
 - Replace the default `render()` function with the following code that uses `<ButtonPrimaryExample />`.
 
-  ```javascript
+  ```typescript
   render() {
       return (
           <div className="ms-welcome">
