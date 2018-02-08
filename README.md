@@ -1,4 +1,4 @@
-# Office JavaScript APIs
+# Office JavaScript APIs 
 
 Welcome to the Office JavaScript API conceptual documentation. In this repository, you can find the documentation source files for Office JavaScript API concepts, quickstarts, tutorials, and how-to guides. For the best experience, we recommend you view this content on [docs.microsoft.com](https://docs.microsoft.com/en-us/office/dev/add-ins/).
 
