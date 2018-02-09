@@ -130,9 +130,9 @@ The following XML manifest example hosts its main add-in page in the `https://ww
 ## Manifest v1.1 XML file examples and schemas
 The following sections show examples of manifest v1.1 XML files for content, task pane, and Outlook add-ins.
 
-# [TaskPaneApp](#tab/tabid-1)
+# [Task pane](#tab/tabid-1)
 
-[TaskPaneApp Manifest Schema](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/taskpane)
+[Task pane app manifest schema](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/taskpane)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -327,9 +327,9 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 </OfficeApp>
 ```
 
-# [ContentApp](#tab/tabid-2)
+# [Content](#tab/tabid-2)
 
-[ContentApp Manifest Schema](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/content)
+[Content app manifest schema](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/content)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -364,9 +364,9 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 </OfficeApp>
 ```
 
-# [MailApp](#tab/tabid-3)
+# [Mail](#tab/tabid-3)
 
-[MailApp Manifest Schema](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/mail)
+[Mail app manifest schema](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/mail)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
