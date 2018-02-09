@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins XML manifest
 description: ''
-ms.date: 01/23/2018
+ms.date: 02/09/2018
 ---
 
 # Office Add-ins XML manifest
@@ -86,7 +86,7 @@ _\*Added in the Office Add-in Manifest Schema version 1.1._
 [sets (requirements)*]: http://msdn.microsoft.com/en-us/library/509be287-b532-87c6-71ac-64f3a4bbd3af%28Office.15%29.aspx
 [hosts*]: http://msdn.microsoft.com/library/f9a739c1-3daf-c03a-2bd9-4a2a6b870101%28Office.15%29.aspx
 
-## Hosting Requirements
+## Hosting requirements
 
 All image URIs, such as those used for [Add-in Commands][], must support caching. The server hosting the image should not return a `Cache-Control` header specifying `no-cache`, `no-store`, or similar options in the HTTP response.
 
@@ -461,7 +461,7 @@ For troubleshooting issues with your manifest, see [Validate and troubleshoot is
 
 ## See also
 
-* [Create add-in commands in your manifest][add-in commands]
+* [Create add-in commands in your manifest](create-addin-commands.md)
 * [Specify Office hosts and API requirements](specify-office-hosts-and-api-requirements.md)
 * [Localization for Office Add-ins](localization.md)
 * [Schema reference for Office Add-ins manifests](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas)
