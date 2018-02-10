@@ -22,9 +22,9 @@ In this article, you'll walk you through the process of building an Excel add-in
 
 Use the Angular CLI to generate your Angular app. From the terminal, run the following command:
 
-    ```bash
-    ng new my-addin
-    ```
+```bash
+ng new my-addin
+```
 
 ## Generate the manifest file
 
