@@ -22,9 +22,9 @@ In this article, you'll walk you through the process of building an Excel add-in
 
 Use the Angular CLI to generate your Angular app. From the terminal, run the following command:
 
-```bash
-ng new my-addin
-```
+    ```bash
+    ng new my-addin
+    ```
 
 ## Generate the manifest file and sideload the add-in
 
@@ -58,6 +58,28 @@ An add-in's manifest file defines its settings and capabilities.
     - Windows: [Sideload Office Add-ins for testing on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
     - Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+
+## Enable SSL for the app
+
+[!include[HTTPS guidance](../includes/https-guidance.md)]
+
+For this quickstart, you can use the certificates from the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) repository by completing the following steps.
+
+1. In a web browser, navigate to the [OfficeDev/generator-office](https://github.com/OfficeDev/generator-office) GitHub repository.
+
+2. Select the **Clone or download** button for the repository.
+
+    ![Screenshot highlighting the Clone or download button for a repository in GitHub](../images/yeoman-generator-repo-download.png)
+
+3. Select the **Download ZIP** button to download a compressed (zipped) folder of repository contents to your computer.
+
+    ![Screenshot highlighting the Download ZIP button for a repository in GitHub](../images/yeoman-generator-repo-download-zip.png)
+
+4. Using File Explorer, navigate to the downloaded folder on your computer and extract the contents of the folder to another location on your computer.
+
+5. Navigate to the location where you extracted contents of the zipped folder, and copy the `src\app\templates\js\base\certs` folder to your clipboard.
+
+6. Navigate to the root folder of your Angular app that you created in step 1 of the previous section, and paste the `certs` folder from your clipboard into that folder.
 
 ## Update the app
 
