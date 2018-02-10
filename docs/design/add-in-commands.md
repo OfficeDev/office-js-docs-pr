@@ -1,7 +1,7 @@
 ---
 title: Add-in commands for Excel, Word, and PowerPoint
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/23/2018
 ---
 
 
@@ -12,7 +12,7 @@ Add-in commands are UI elements that extend the Office UI and start actions in y
 For an overview of the feature, see the video [Add-in Commands in the Office Ribbon](https://channel9.msdn.com/events/Build/2016/P551).
 
 > [!NOTE]
-> SharePoint catalogs do not support add-in commands. You can deploy add-in commands via [Centralized Deployment](../publish/centralized-deployment.md) or the [Office Store](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store), or use [sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) to deploy your add-in command for testing. 
+> SharePoint catalogs do not support add-in commands. You can deploy add-in commands via [Centralized Deployment](../publish/centralized-deployment.md) or [AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store), or use [sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) to deploy your add-in command for testing. 
 
 *Figure 1. Add-in with commands running in Excel Desktop*
 
@@ -66,7 +66,7 @@ Apply the following best practices when you develop add-in commands:
     - Do not add superfluous buttons to increase the real estate of your add-in.
 
      > [!NOTE]
-     > Add-ins that take up too much space might not pass [Office Store validation](https://docs.microsoft.com/en-us/office/dev/store/validation-policies).
+     > Add-ins that take up too much space might not pass [AppSource validation](https://docs.microsoft.com/en-us/office/dev/store/validation-policies).
 
 - For all icons, follow the [icon design guidelines](design-icons.md).
 - Provide a version of your add-in that also works on hosts that do not support commands. A single add-in manifest can work in both command-aware (with commands) and non-command-aware (as a taskpane) hosts.

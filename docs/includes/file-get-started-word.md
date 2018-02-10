@@ -4,9 +4,9 @@ _Applies to: Word 2016, Word for iPad, Word for Mac_
 
 In this article, you'll walk through the process of building a Word add-in by using jQuery and the Word JavaScript API. 
 
-[!include[Tip: choose your editor in the next section](../includes/alert-choose-editor.md)]
-
 ## Create the add-in 
+
+[!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
 # [Visual Studio](#tab/visual-studio)
 
@@ -457,7 +457,7 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 1. To sideload the add-in within Word, follow the instructions for the platform you'll use to run your add-in.
 
-    - Windows: [Sideload Office Add-ins for testing on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
     - Word Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 

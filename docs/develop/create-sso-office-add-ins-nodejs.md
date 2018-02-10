@@ -1,7 +1,6 @@
 ---
 title: Create a Node.js Office Add-in that uses single sign-on
-description: 
-ms.date: 12/08/2017 
+description: 01/23/2018
 ---
 
 # Create a Node.js Office Add-in that uses single sign-on (preview)
@@ -98,7 +97,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 ## Grant admin consent to the add-in
 
 > [!NOTE]
-> This procedure is only needed when you are developing the add-in. When your production add-in is deployed to the Office Store or an add-in catalog, users will individually trust it when they install it.
+> This procedure is only needed when you are developing the add-in. When your production add-in is deployed to AppSource or an add-in catalog, users will individually trust it when they install it.
 
 1. In the following string, replace the placeholder “{application_ID}” with the Application ID that you copied when you registered your add-in.
 
@@ -153,7 +152,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
     > [!NOTE]
     > * The **Resource** value is the **Application ID URI** you set when you added the Web API platform to the registration of the add-in.
-    > * The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through the Office Store.
+    > * The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through AppSource.
 
 1. Save and close the file.
 

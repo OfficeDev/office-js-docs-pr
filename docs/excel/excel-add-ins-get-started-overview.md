@@ -1,7 +1,7 @@
 ---
 title: Get started with Excel add-ins
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/23/2018
 ---
 
 
@@ -15,6 +15,6 @@ To get started, complete one of the walkthroughs in this section to create an Ex
 
 ## Explore snippets with Script Lab
 
-Script Lab is a tool that enables you to create, run, and share your Office Add-in code directly from Office applications such as Excel, Word, and PowerPoint. You can [install Script Lab for free from the Office Store](https://store.office.com/app.aspx?assetid=WA104380862) and launch it in Excel to explore its collection of built-in samples that interact with data in the workbook. Then, use it to write and execute your own Excel JavaScript API code that interacts with your spreadsheet. For more information, see [Script Lab, a Microsoft Garage project](https://github.com/OfficeDev/script-lab/blob/master/README.md).
+Script Lab is a tool that enables you to create, run, and share your Office Add-in code directly from Office applications such as Excel, Word, and PowerPoint. You can [install Script Lab for free from AppSource](https://appsource.microsoft.com/en-us/product/office/WA104380862?src=office&corrid=ed93ce54-3f2c-48ab-9df7-d9913f7b190b&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d) and launch it in Excel to explore its collection of built-in samples that interact with data in the workbook. Then, use it to write and execute your own Excel JavaScript API code that interacts with your spreadsheet. For more information, see [Script Lab, a Microsoft Garage project](https://github.com/OfficeDev/script-lab/blob/master/README.md).
 
 [!include[Script Lab support](../includes/alert-script-lab-support.md)]

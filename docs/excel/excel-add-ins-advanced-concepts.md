@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API advanced concepts
 description: ''
-ms.date: 12/04/2017
+ms.date: 1/18/2018
 ---
 
 
@@ -220,13 +220,17 @@ Instead of implementing complex exception handling logic for scenarios like this
 The following code sample attempts to retrieve a worksheet named "Data" by using the `getItemOrNullObject()` method. If the method returns a null object, a new sheet needs to be created before actions can taken on the sheet.
 
 ```js
-let dataSheet = context.workbook.worksheets.getItemOrNullObject("Data"); 
-if (dataSheet.isNullObject) { 
-    // Create the sheet
-}
+var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data"); 
 
-dataSheet.position = 1;
-//...
+return context.sync()
+  .then(function() {
+	if (dataSheet.isNullObject) { 
+		// Create the sheet
+	}
+
+	dataSheet.position = 1;
+	//...
+  })
 ```
 
 ## See also

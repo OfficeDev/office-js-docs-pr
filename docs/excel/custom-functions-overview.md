@@ -1,7 +1,7 @@
 ---
 title: Create custom functions in Excel (Preview)
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/23/2018
 ---
 
 # Create custom functions in Excel (Preview)
@@ -152,7 +152,7 @@ The previous code specifies:
 If your custom function retrieves data from the web, you need to make an asynchronous call to fetch it. When calling external web services, your custom function must:
 
 1.   Return a JavaScript Promise to Excel.
-2.   Make the http request to call the external service.
+2.   Make the HTTP request to call the external service.
 3.   Resolve the promise using the `setResult` callback. `setResult` sends the value to Excel.
 
 The following code shows an example of a custom function that retrieves the temperature of a thermometer.
@@ -277,7 +277,7 @@ The following features aren't yet supported in the Developer Preview.
 
 -   Help URLs and parameter descriptions are not yet used by Excel.
 
--   Publishing add-ins to the Office Store or Office 365 centralized deployment that use custom functions.
+-   Publishing add-ins that use custom functions to AppSource or via Office 365 centralized deployment.
 
 -   Custom functions are not available on Excel on Mac, Excel for iOS, and Excel Online.
 
