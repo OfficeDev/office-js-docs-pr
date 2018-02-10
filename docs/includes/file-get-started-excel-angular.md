@@ -36,7 +36,7 @@ An add-in's manifest file defines its settings and capabilities.
     cd my-addin
     ```
 
-2. Use the Yeoman generator to generate the manifest file for your add-in. Run the following command and then answer the prompts as shown in the screenshot below.
+2. Use the Yeoman generator to generate the manifest file for your add-in. Run the following command and then answer the prompts as shown below.
 
     ```bash
     yo office
