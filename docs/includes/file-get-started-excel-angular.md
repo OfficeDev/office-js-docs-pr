@@ -71,9 +71,9 @@ For this quickstart, you can use the certificates from the [Yeoman generator for
 
 4. Using File Explorer, navigate to the downloaded folder on your computer and extract the contents of the folder to another location on your computer.
 
-5. Navigate to the location where you extracted contents of the zipped folder, and copy the `src\app\templates\js\base\certs` folder to your clipboard.
+5. Navigate to the location that contains the content that was extracted zipped folder in the previous step, and copy the `src\app\templates\js\base\certs` folder to your clipboard.
 
-6. Navigate to the root folder of your Angular app that you created in step 1 of the previous section, and paste the `certs` folder from your clipboard into that folder.
+6. Navigate to the root folder of the Angular app that you created in step 1 of the previous section, and paste the `certs` folder from your clipboard into that folder.
 
 ## Update the app
 
