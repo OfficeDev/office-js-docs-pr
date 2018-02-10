@@ -57,7 +57,7 @@ An add-in's manifest file defines its settings and capabilities.
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-For this quickstart, you can use the certificates from the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) repository by completing the following steps.
+For this quickstart, you can use the certificates from the **OfficeDev/generator-office** repository by completing the following steps.
 
 1. In a web browser, navigate to the [OfficeDev/generator-office](https://github.com/OfficeDev/generator-office) GitHub repository.
 
