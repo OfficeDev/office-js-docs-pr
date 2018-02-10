@@ -77,13 +77,32 @@ For this quickstart, you can use the certificates from the [Yeoman generator for
 
 ## Update the app
 
-1. Open **src/index.html**, add the following `<script>` tag immediately before the `</head>` tag, and save the file.
+1. In your code editor, open **package.json** in the root of the project. Modify the `start` script to specify that the server should run on using SSL and port 3000.
+
+    ```json
+    "start": "ng serve --ssl true --port 3000"
+    ```
+
+2. Open **.angular-cli.json** in the root of the project. Modify the **defaults** object to specify the location of the certificate files.
+
+    ```json
+    "defaults": {
+      "styleExt": "css",
+      "component": {},
+	  "serve": {
+        "sslKey": "certs/server.key",
+        "sslCert": "certs/server.crt"
+      }
+    }
+    ```
+
+3. Open **src/index.html**, add the following `<script>` tag immediately before the `</head>` tag, and save the file.
 
     ```html
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     ```
 
-2. Open **src/main.ts**, replace `platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.log(err));` with the following code, and save the file. 
+4. Open **src/main.ts**, replace `platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.log(err));` with the following code, and save the file. 
 
     ```typescript 
     declare const Office: any;
@@ -94,13 +113,13 @@ For this quickstart, you can use the certificates from the [Yeoman generator for
     };
     ```
 
-3. Open **src/polyfills.ts**, add the following line of code above all other existing `import` statements, and save the file.
+5. Open **src/polyfills.ts**, add the following line of code above all other existing `import` statements, and save the file.
 
     ```typescript
     import 'core-js/client/shim';
     ```
 
-4. In **src/polyfills.ts**, uncomment the following lines, and save the file.
+6. In **src/polyfills.ts**, uncomment the following lines, and save the file.
 
     ```typescript
     import 'core-js/es6/symbol';
@@ -119,7 +138,7 @@ For this quickstart, you can use the certificates from the [Yeoman generator for
     import 'core-js/es6/set';
     ```
 
-5. Open **src/app/app.component.html**, replace file contents with the following HTML, and save the file. 
+7. Open **src/app/app.component.html**, replace file contents with the following HTML, and save the file. 
 
     ```html
     <div id="content-header">
@@ -137,7 +156,7 @@ For this quickstart, you can use the certificates from the [Yeoman generator for
     </div>
     ```
 
-6. Open **src/app/app.component.css**, replace file contents with the following CSS code, and save the file.
+8. Open **src/app/app.component.css**, replace file contents with the following CSS code, and save the file.
 
     ```css
     #content-header {
@@ -166,7 +185,7 @@ For this quickstart, you can use the certificates from the [Yeoman generator for
     }
     ```
 
-7. Open **src/app/app.component.ts**, replace file contents with the following code, and save the file. 
+9. Open **src/app/app.component.ts**, replace file contents with the following code, and save the file. 
 
     ```typescript
     import { Component } from '@angular/core';
@@ -197,7 +216,7 @@ For this quickstart, you can use the certificates from the [Yeoman generator for
     npm run start
     ```
 
-2. Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. If your browser indicates that the site's certificate is not trusted, you will need to add the certificate as a trusted certificate. See [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) for details.
+2. In a web browser, navigate to `https://localhost:3000`. If your browser indicates that the site's certificate is not trusted, you will need to add the certificate as a trusted certificate. See [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) for details.
 
     > [!NOTE]
     > Chrome (web browser) may continue to indicate the the site's certificate is not trusted, even after you have completed the process described in [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md). You can disregard this warning in Chrome and can verify that the certificate is trusted by navigating to `https://localhost:3000` in either Internet Explorer or Microsoft Edge. 
