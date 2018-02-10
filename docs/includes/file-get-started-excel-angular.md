@@ -77,13 +77,13 @@ For this quickstart, you can use the certificates from the **OfficeDev/generator
 
 ## Update the app
 
-1. In your code editor, open **package.json** in the root of the project. Modify the `start` script to specify that the server should run using SSL and port 3000.
+1. In your code editor, open **package.json** in the root of the project. Modify the `start` script to specify that the server should run using SSL and port 3000, and save the file.
 
     ```json
     "start": "ng serve --ssl true --port 3000"
     ```
 
-2. Open **.angular-cli.json** in the root of the project. Modify the **defaults** object to specify the location of the certificate files.
+2. Open **.angular-cli.json** in the root of the project. Modify the **defaults** object to specify the location of the certificate files, and save the file.
 
     ```json
     "defaults": {
