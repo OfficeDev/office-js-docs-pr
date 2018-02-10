@@ -26,7 +26,7 @@ Use the Angular CLI to generate your Angular app. From the terminal, run the fol
     ng new my-addin
     ```
 
-## Generate the manifest file and sideload the add-in
+## Generate the manifest file
 
 An add-in's manifest file defines its settings and capabilities.
 
@@ -52,12 +52,6 @@ An add-in's manifest file defines its settings and capabilities.
     
     > [!NOTE]
     > If you're prompted to overwrite **package.json**, answer **No** (do not overwrite).
-
-3. Follow the instructions for the platform you'll be using to run your add-in and sideload the add-in within Excel.
-
-    - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 ## Enable SSL for the app
 
@@ -195,13 +189,29 @@ For this quickstart, you can use the certificates from the [Yeoman generator for
     }
     ```
 
-## Try it out
+## Start the dev server
 
 1. From the terminal, run the following command to start the dev server.
 
     ```bash
     npm run start
     ```
+
+2. Office Web Add-ins should use HTTPS, not HTTP, even when you are developing. If your browser indicates that the site's certificate is not trusted, you will need to add the certificate as a trusted certificate. See [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) for details.
+
+    > [!NOTE]
+    > Chrome (web browser) may continue to indicate the the site's certificate is not trusted, even after you have completed the process described in [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md). You can disregard this warning in Chrome and can verify that the certificate is trusted by navigating to `https://localhost:3000` in either Internet Explorer or Microsoft Edge. 
+
+3. After your browser loads the add-in page without any certificate errors, you're ready test your add-in. 
+
+## Try it out
+
+1. Follow the instructions for the platform you'll be using to run your add-in and sideload the add-in within Excel.
+
+    - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+
    
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
