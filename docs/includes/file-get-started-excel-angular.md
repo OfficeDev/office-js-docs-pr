@@ -53,11 +53,11 @@ An add-in's manifest file defines its settings and capabilities.
     > [!NOTE]
     > If you're prompted to overwrite **package.json**, answer **No** (do not overwrite).
 
-## Enable SSL for the app
+## Secure the app
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-For this quickstart, you can use the certificates that the **Yeoman generator for Office Add-ins** provides. Since you've already installed the generator globally (as part of the **Prerequisites** in this quickstart), you can copy the certificates from the global install location into your app folder. The following steps describe how to complete this process.
+For this quickstart, you can use the certificates that the **Yeoman generator for Office Add-ins** provides. You've already installed the generator globally (as part of the **Prerequisites** for this quickstart), so you'll just need to copy the certificates from the global install location into your app folder. The following steps describe how to complete this process.
 
 1. From the terminal, run the following command to identify the folder where global **npm** libraries are installed:
 
