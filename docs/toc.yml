@@ -14,14 +14,17 @@
   items:
   - name: Create Excel add-in
     items:
-    - name: Use React
-      href: quickstarts/excel-quickstart-react.md
-      displayName: Excel
     - name: Use Angular
       href: quickstarts/excel-quickstart-angular.md
       displayName: Excel
     - name: Use jQuery
       href: quickstarts/excel-quickstart-jquery.md
+      displayName: Excel
+    - name: Use React
+      href: quickstarts/excel-quickstart-react.md
+      displayName: Excel
+    - name: Use Vue
+      href: quickstarts/excel-quickstart-vue.md
       displayName: Excel
   - name: Create Word add-in
     href: quickstarts/word-quickstart.md
