@@ -175,7 +175,9 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
     <td>Office for iOS</td>
     <td> - Mail Read<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
-    <td> - Mailbox 1.4</td>
+    <td> - Mailbox 1.4 <br>
+      - Mailbox 1.5
+    </td>    
     <td>not available</td>
   </tr>
   <tr>

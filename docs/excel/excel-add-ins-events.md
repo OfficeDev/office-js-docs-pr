@@ -1,7 +1,7 @@
 ---
 title: Work with Events using the Excel JavaScript API
 description: ''
-ms.date: 12/15/2017
+ms.date: 01/29/2018
 ---
 
 # Work with Events using the Excel JavaScript API
@@ -17,10 +17,10 @@ Each time certain types of changes occur in an Excel workbook, an event notifica
 
 | Event | Description | Supported objects |
 |:---------------|:-------------|:-----------|
-| `onAdded` | Event that occurs when an object is added. | **Worksheet** |
-| `onDeleted`  | Event that occurs when an object is deleted. | **Worksheet** |
-| `onActivated` | Event that occurs when an object is activated. | **Worksheet** |
-| `onDeactivated` | Event that occurs when an object is deactivated. | **Worksheet** |
+| `onAdded` | Event that occurs when an object is added. | **WorksheetCollection** |
+| `onDeleted`  | Event that occurs when an object is deleted. | **WorksheetCollection** |
+| `onActivated` | Event that occurs when an object is activated. | **WorksheetCollection**, **Worksheet** |
+| `onDeactivated` | Event that occurs when an object is deactivated. | **WorksheetCollection**, **Worksheet** |
 | `onDataChanged` | Event that occurs when data within cells is changed. | **Worksheet**, **Table**, **TableCollection**, **Binding** |
 | `onSelectionChanged` | Event that occurs when the active cell or selected range is changed. | **Worksheet**, **Table**, **Binding** |
 
