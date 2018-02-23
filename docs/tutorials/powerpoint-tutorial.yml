@@ -1,0 +1,28 @@
+### YamlMime:Tutorial
+documentType: Tutorial
+title: PowerPoint add-in tutorial
+metadata:
+  title: PowerPoint add-in tutorial
+  description: In this tutorial, you'll build an PowerPoint add-in that...TODO.
+  audience: Developer
+  level: Beginner
+  displayType: one-column
+  ms.date: 01/18/2018
+items:
+- durationInMinutes: 1
+  content: |
+    This tutorial teaches you how to build an PowerPoint add-in that...TODO. If you run into any issues along the way, please <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">let us know</a>.
+- title: Create your add-in project
+  durationInMinutes: 5
+  content: |
+    [!INCLUDE [](../includes/powerpoint-tutorial-setup.md)]
+- title: Step 2
+  durationInMinutes: 10
+  content: |
+    [!INCLUDE [](../includes/powerpoint-tutorial-setup.md)]
+- title: Step 3
+  durationInMinutes: 10
+  content: |
+    [!INCLUDE [](../includes/powerpoint-tutorial-setup.md)]
+- content: |
+    You've completed the PowerPoint add-in tutorial. To learn more about building PowerPoint add-ins, see <a href="../powerpoint/powerpoint-add-ins.md">PowerPoint add-ins overview</a>.
