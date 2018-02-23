@@ -64,8 +64,61 @@ Use the following steps to add and reference the OfficeThemes.css file to your a
 3. Delete the default **body** class (`body {}`) in the file, and copy and paste the following CSS code into the file.
     
     ```css
-       /* The following classes describe the common theme information for office documents */ /* Basic Font and Background Colors for text */ .office-docTheme-primary-fontColor { color:#000000; } .office-docTheme-primary-bgColor { background-color:#ffffff; } .office-docTheme-secondary-fontColor { color: #000000; } .office-docTheme-secondary-bgColor { background-color: #ffffff; } /* Accent color definitions for fonts */ .office-contentAccent1-color { color:#5b9bd5; } .office-contentAccent2-color { color:#ed7d31; } .office-contentAccent3-color { color:#a5a5a5; } .office-contentAccent4-color { color:#ffc000; } .office-contentAccent5-color { color:#4472c4; } .office-contentAccent6-color { color:#70ad47; } /* Accent color for backgrounds */ .office-contentAccent1-bgColor { background-color:#5b9bd5; } .office-contentAccent2-bgColor { background-color:#ed7d31; } .office-contentAccent3-bgColor { background-color:#a5a5a5; } .office-contentAccent4-bgColor { background-color:#ffc000; } .office-contentAccent5-bgColor { background-color:#4472c4; } .office-contentAccent6-bgColor { background-color:#70ad47; } /* Accent color for borders */ .office-contentAccent1-borderColor { border-color:#5b9bd5; } .office-contentAccent2-borderColor { border-color:#ed7d31; } .office-contentAccent3-borderColor { border-color:#a5a5a5; } .office-contentAccent4-borderColor { border-color:#ffc000; } .office-contentAccent5-borderColor { border-color:#4472c4; } .office-contentAccent6-borderColor { border-color:#70ad47; } /* links */ .office-a { color: #0563c1; } .office-a:visited { color: #954f72; } /* Body Fonts */ .office-bodyFont-eastAsian { } /* East Asian name of the Font */ .office-bodyFont-latin { font-family:"Calibri"; } /* Latin name of the Font */ .office-bodyFont-script { } /* Script name of the Font */ .office-bodyFont-localized { font-family:"Calibri"; } /* Localized name of the Font. Corresponds to the default font of the culture currently used in Office.*/ /* Headers Font */ .office-headerFont-eastAsian { } .office-headerFont-latin { font-family:"Calibri Light"; } .office-headerFont-script { } .office-headerFont-localized { font-family:"Calibri Light"; } /* The following classes define font and background colors for Office UI themes. These classes should only be used in task pane add-ins */ /* Basic Font and Background Colors for PPT */ .office-officeTheme-primary-fontColor { color:#b83b1d; } .office-officeTheme-primary-bgColor { background-color:#dedede; } .office-officeTheme-secondary-fontColor { color:#262626; } .office-officeTheme-secondary-bgColor { background-color:#ffffff; } 
+    /* The following classes describe the common theme information for office documents */ 
 
+    /* Basic Font and Background Colors for text */ 
+    .office-docTheme-primary-fontColor { color:#000000; } 
+    .office-docTheme-primary-bgColor { background-color:#ffffff; } 
+    .office-docTheme-secondary-fontColor { color: #000000; } 
+    .office-docTheme-secondary-bgColor { background-color: #ffffff; } 
+
+    /* Accent color definitions for fonts */ 
+    .office-contentAccent1-color { color:#5b9bd5; } 
+    .office-contentAccent2-color { color:#ed7d31; } 
+    .office-contentAccent3-color { color:#a5a5a5; } 
+    .office-contentAccent4-color { color:#ffc000; } 
+    .office-contentAccent5-color { color:#4472c4; } 
+    .office-contentAccent6-color { color:#70ad47; } 
+
+    /* Accent color for backgrounds */ 
+    .office-contentAccent1-bgColor { background-color:#5b9bd5; } 
+    .office-contentAccent2-bgColor { background-color:#ed7d31; } 
+    .office-contentAccent3-bgColor { background-color:#a5a5a5; } 
+    .office-contentAccent4-bgColor { background-color:#ffc000; } 
+    .office-contentAccent5-bgColor { background-color:#4472c4; } 
+    .office-contentAccent6-bgColor { background-color:#70ad47; } 
+
+    /* Accent color for borders */ 
+    .office-contentAccent1-borderColor { border-color:#5b9bd5; } 
+    .office-contentAccent2-borderColor { border-color:#ed7d31; } 
+    .office-contentAccent3-borderColor { border-color:#a5a5a5; } 
+    .office-contentAccent4-borderColor { border-color:#ffc000; } 
+    .office-contentAccent5-borderColor { border-color:#4472c4; } 
+    .office-contentAccent6-borderColor { border-color:#70ad47; } 
+
+    /* links */ 
+    .office-a { color: #0563c1; } 
+    .office-a:visited { color: #954f72; } 
+
+    /* Body Fonts */ 
+    .office-bodyFont-eastAsian { } /* East Asian name of the Font */ 
+    .office-bodyFont-latin { font-family:"Calibri"; } /* Latin name of the Font */ 
+    .office-bodyFont-script { } /* Script name of the Font */ 
+    .office-bodyFont-localized { font-family:"Calibri"; } /* Localized name of the Font. Corresponds to the default font of the culture currently used in Office.*/ 
+
+    /* Headers Font */ 
+    .office-headerFont-eastAsian { } 
+    .office-headerFont-latin { font-family:"Calibri Light"; } 
+    .office-headerFont-script { } 
+    .office-headerFont-localized { font-family:"Calibri Light"; } 
+
+    /* The following classes define font and background colors for Office UI themes. These classes should only be used in task pane add-ins */ 
+
+    /* Basic Font and Background Colors for PPT */ 
+    .office-officeTheme-primary-fontColor { color:#b83b1d; } 
+    .office-officeTheme-primary-bgColor { background-color:#dedede; } 
+    .office-officeTheme-secondary-fontColor { color:#262626; } 
+    .office-officeTheme-secondary-bgColor { background-color:#ffffff; }
     ```
 4. If you are using a tool other than Visual Studio to create your add-in, copy the CSS code from step 3 into a text file, making sure to save the file as OfficeThemes.css.   
 
