@@ -1,10 +1,10 @@
 ---
 title: Create your add-in project
 description: ''
-ms.date: 1/18/2018
+ms.date: 02/26/2018
 ---
 
 
 # Create your add-in project
 
-[!INCLUDE[](../includes/excel-tutorial-setup.md)]
+[!INCLUDE[](../includes/powerpoint-tutorial-setup.md)]
