@@ -11,7 +11,7 @@ metadata:
 items:
 - durationInMinutes: 1
   content: |
-    This tutorial teaches you how to build an PowerPoint add-in that adds the <a href="https://www.bing.com">Bing</a> photo of the day to a slide, adds text to a slide, gets slide metadata, and navigates between slides. If you run into any issues along the way, please <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">let us know</a>.
+    This tutorial teaches you how to build an PowerPoint task pane add-in that adds the <a href="https://www.bing.com">Bing</a> photo of the day to a slide, adds text to a slide, gets slide metadata, and navigates between slides. If you run into any issues along the way, please <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">let us know</a>.
 - title: Create your add-in project
   durationInMinutes: 5
   content: |
