@@ -60,39 +60,27 @@ Finally, edit the add-in code as follows, to create the framework that you'll us
                 messageBanner = new fabric.MessageBanner(element);
                 messageBanner.hideBanner();
 
-                // TODO1: assign event handler for insert-image button.
-                // TODO3: assign event handler for insert-text button.
-                // TODO5: assign event handler for get-slide-metadata button.
-                // TODO7: assign event handler for go-to-slide buttons.
+                // TODO1: assign event handler for insert-image button
+                // TODO4: assign event handler for insert-text button
+                // TODO6: assign event handler for get-slide-metadata button
+                // TODO8: assign event handler for go-to-slide buttons
             });
         };
 
-        function insertImageFromBing() {
+        // TODO2: insertImage function 
 
-            //Get image from from webservice. 
-            //The service should fetch the photo return it as a base 64 embedded string
-            $.ajax({
-                url: "/api/Photo/", success: function (result) {
-                    insertImageFromBase64String(result);
-                }, error: function (xhr, status, error) {
+        // TODO3: insertImageFromBase64String function
 
-                    showNotification("Error", "Oops, something went wrong.");
-                }
-            });
-        }
+        // TODO5: insertText function
 
-        // TODO2: Insert image function. 
-    
-        // TODO4: Insert text function.
+        // TODO7: getSlideMetadata function
 
-        // TODO6: Get slide metadata function.
-
-        // TODO8: Navigate slides functions.
+        // TODO9: goTo_Slide functions
 
         // Helper function for displaying notifications
         function showNotification(header, content) {
-            $("#notificationHeader").text(header);
-            $("#notificationBody").text(content);
+            $("#notification-header").text(header);
+            $("#notification-body").text(content);
             messageBanner.showBanner();
             messageBanner.toggleExpansion();
         }
