@@ -28,25 +28,24 @@ In this step of the tutorial, you'll retrieve the [Bing](https://www.bing.com) p
         {
             public string Get()
             {
-                //you can also set format=js to get a JSON response back. For now, we'll use XML.
                 string url = "http://www.bing.com/HPImageArchive.aspx?format=xml&idx=0&n=1";
 
-                //create the request
+                // Create the request.
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
                 WebResponse response = request.GetResponse();
 
                 using (Stream responseStream = response.GetResponseStream())
                 {
-                    //process the result
+                    // Process the result.
                     StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
                     string result = reader.ReadToEnd();
 
-                    //parse the xml response and to get the URL 
+                    // Parse the xml response and to get the URL.
                     XmlDocument doc = new XmlDocument();
                     doc.LoadXml(result);
                     string photoURL = "http://bing.com" + doc.SelectSingleNode("/images/image/url").InnerText;
 
-                    //fetch the photo and return it as a Base64Encoded string
+                    // Fetch the photo and return it as a Base64 encoded string.
                     return getPhotoFromURL(photoURL);
                 }
             }
