@@ -22,7 +22,7 @@ In this tutorial, you'll create an add-in using Visual Studio.
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
-### Update code 
+### Update the code 
 
 Finally, edit the add-in code as follows to create the framework that you'll use implement add-in functionality in subsequent steps of this tutorial.
 
