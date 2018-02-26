@@ -1,4 +1,4 @@
-In this step of the tutorial, you'll retrieve the [Bing.com](https://www.bing.com) photo of the day and insert that image into a slide.
+In this step of the tutorial, you'll retrieve the [Bing](https://www.bing.com) photo of the day and insert that image into a slide.
 
 ## Code the add-in 
 
@@ -67,7 +67,7 @@ In this step of the tutorial, you'll retrieve the [Bing.com](https://www.bing.co
     <button class="ms-Button ms-Button--primary" id="insert-image">
         <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
         <span class="ms-Button-label">Insert Image</span>
-        <span class="ms-Button-description">Gets the photo of the day that shows on Bing.com's home page and adds it to the slide.</span>
+        <span class="ms-Button-description">Gets the photo of the day that shows on the Bing home page and adds it to the slide.</span>
     </button>
     ```
 
