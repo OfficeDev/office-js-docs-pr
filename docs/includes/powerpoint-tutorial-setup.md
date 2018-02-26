@@ -14,7 +14,7 @@ In this tutorial, you'll create an add-in using Visual Studio.
     
 2. In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **PowerPoint Web Add-in** as the project type. 
 
-3. Name the project **HelloWorld**, and then choose **OK**.
+3. Name the project **HelloWorld**, and then choose the **OK** button.
 
 4. In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint**, and then choose **Finish** to create the project.
 
@@ -28,7 +28,7 @@ In this tutorial, you'll create an add-in using Visual Studio.
 
 ### Update code 
 
-Finally, edit the add-in code as follows, to create the framework that you'll use implement add-in functionality in subsequent steps of this tutorial.
+Finally, edit the add-in code as follows, to create the framework that you'll use to implement add-in functionality in subsequent steps of this tutorial.
 
 1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, find the **div** with `id="content-main"`, replace that entire **div** with the following markup, and save the file.
 
