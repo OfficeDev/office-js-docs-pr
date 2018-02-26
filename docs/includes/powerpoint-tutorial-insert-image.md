@@ -109,7 +109,7 @@ In this step of the tutorial, you'll retrieve the [Bing](https://www.bing.com) p
 
 ## Test the add-in
 
-1. Using Visual Studio, test the newly created PowerPoint add-in by pressing F5 or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
+1. Using Visual Studio, test the newly created PowerPoint add-in by pressing `F5` or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
     ![A screenshot of Visual Studio with the Start button highlighted](../images/powerpoint-tutorial-start.png)
 
@@ -121,3 +121,6 @@ In this step of the tutorial, you'll retrieve the [Bing](https://www.bing.com) p
 
     ![A screenshot of PowerPoint add-in with the Insert Image button highlighted](../images/powerpoint-tutorial-insert-image-button.png)
 
+4. In Visual Studio, stop the add-in by pressing `Shift + F5` or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
+
+    ![A screenshot of Visual Studio with the Stop button highlighted](../images/powerpoint-tutorial-stop.png)
