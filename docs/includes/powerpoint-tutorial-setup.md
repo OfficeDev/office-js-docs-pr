@@ -8,6 +8,8 @@ You'll begin this tutorial by setting up your development project.
 
 In this tutorial, you'll create an add-in using Visual Studio.
 
+### Create the add-in project
+
 1. On the Visual Studio menu bar, choose  **File** > **New** > **Project**.
     
 2. In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **PowerPoint Web Add-in** as the project type. 
@@ -22,9 +24,9 @@ In this tutorial, you'll create an add-in using Visual Studio.
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
-### Update the code 
+### Update code 
 
-Finally, edit the add-in code as follows to create the framework that you'll use implement add-in functionality in subsequent steps of this tutorial.
+Finally, edit the add-in code as follows, to create the framework that you'll use implement add-in functionality in subsequent steps of this tutorial.
 
 1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, find the **div** with `id="content-main"`, replace that entire **div** with the following markup, and save the file.
 
