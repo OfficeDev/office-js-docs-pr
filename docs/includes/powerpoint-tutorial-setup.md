@@ -20,6 +20,8 @@ In this tutorial, you'll create an add-in using Visual Studio.
 
 5. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
 
+     ![PowerPoint tutorial - Visual Studio Solution Explorer window that shows the 2 projects in the HelloWorld solution](../images/powerpoint-tutorial-solution-explorer.png)
+
 ### Explore the Visual Studio solution
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
