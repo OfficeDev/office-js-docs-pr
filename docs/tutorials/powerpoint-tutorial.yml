@@ -20,7 +20,7 @@ items:
   durationInMinutes: 8
   content: |
     [!INCLUDE [](../includes/powerpoint-tutorial-insert-image.md)]
-- title: Customize user interface (UI) elements
+- title: Customize User Interface (UI) elements
   durationInMinutes: 4
   content: |
     [!INCLUDE [](../includes/powerpoint-tutorial-customize-ui.md)]
