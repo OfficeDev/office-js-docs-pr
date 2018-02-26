@@ -1,0 +1,9 @@
+In this step of the tutorial, you'll...
+
+## Add text to a slide 
+
+...
+
+## Test the add-in
+
+...

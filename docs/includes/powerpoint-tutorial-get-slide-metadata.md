@@ -1,0 +1,9 @@
+In this step of the tutorial, you'll...
+
+## Get slide metadata
+
+...
+
+## Test the add-in
+
+...
