@@ -60,22 +60,22 @@ Finally, edit the add-in code as follows, to create the framework that you'll us
                 messageBanner = new fabric.MessageBanner(element);
                 messageBanner.hideBanner();
 
-                // TODO1: assign event handler for insert-image button
-                // TODO4: assign event handler for insert-text button
-                // TODO6: assign event handler for get-slide-metadata button
-                // TODO8: assign event handler for go-to-slide buttons
+                // TODO1: Assign event handler for insert-image button.
+                // TODO4: Assign event handler for insert-text button.
+                // TODO6: Assign event handler for get-slide-metadata button.
+                // TODO8: Assign event handler for go-to-slide buttons.
             });
         };
 
-        // TODO2: insertImage function 
+        // TODO2: Define the insertImage function. 
 
-        // TODO3: insertImageFromBase64String function
+        // TODO3: Define the insertImageFromBase64String function.
 
-        // TODO5: insertText function
+        // TODO5: Define the insertText function.
 
-        // TODO7: getSlideMetadata function
+        // TODO7: Define the getSlideMetadata function.
 
-        // TODO9: goTo_Slide functions
+        // TODO9: Define the goTo_Slide functions.
 
         // Helper function for displaying notifications
         function showNotification(header, content) {

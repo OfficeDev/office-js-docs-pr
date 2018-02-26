@@ -61,7 +61,7 @@ In this step of the tutorial, you'll retrieve the [Bing.com](https://www.bing.co
     }
     ```
 
-6. In the **Home.html** file, replace `TODO1` with the following markup. This markup defines the **Insert Image** button that will appear within the task pane.
+6. In the **Home.html** file, replace `TODO1` with the following markup. This markup defines the **Insert Image** button that will appear within the add-in's task pane.
 
     ```html
     <button class="ms-Button ms-Button--primary" id="insert-image">
@@ -77,7 +77,7 @@ In this step of the tutorial, you'll retrieve the [Bing.com](https://www.bing.co
     $('#insert-image').click(insertImage);
     ```
 
-8. In the **Home.js** file, replace `TODO2` with the following code to define the **insertImage()** function. This function fetches the image from the Bing web service and then calls the `insertImageFromBase64String` to insert that image into the document.
+8. In the **Home.js** file, replace `TODO2` with the following code to define the **insertImage** function. This function fetches the image from the Bing web service and then calls the `insertImageFromBase64String` function to insert that image into the document.
 
     ```js
     function insertImage() {
@@ -92,7 +92,7 @@ In this step of the tutorial, you'll retrieve the [Bing.com](https://www.bing.co
     }
     ```
 
-9. In the **Home.js** file, replace `TODO3` with the following code to define the `insertImageFromBase64String` function. This function uses the Office.js API to insert the image into the document.
+9. In the **Home.js** file, replace `TODO3` with the following code to define the `insertImageFromBase64String` function. This function uses the Office JavaScript API to insert the image into the document.
 
     ```js
     function insertImageFromBase64String(image) {
@@ -110,4 +110,15 @@ In this step of the tutorial, you'll retrieve the [Bing.com](https://www.bing.co
 
 ## Test the add-in
 
-...
+1. Using Visual Studio, test the newly created PowerPoint add-in by pressing F5 or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
+
+    ![A screenshot of Visual Studio with the Start button highlighted](../images/powerpoint-tutorial-start.png)
+
+2. In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.
+
+    ![A screenshot of Visual Studio with the Show Taskpane button highlighted in the Home ribbon](../images/powerpoint-tutorial-show-taskpane-button.png)
+
+3. In the task pane, choose the **Insert Image** button to add the Bing photo of the day to the current slide.
+
+    ![A screenshot of PowerPoint add-in with the Insert Image button highlighted](../images/powerpoint-tutorial-insert-image-button.png)
+
