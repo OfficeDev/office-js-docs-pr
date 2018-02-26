@@ -17,15 +17,19 @@ items:
   content: |
     [!INCLUDE [](../includes/powerpoint-tutorial-setup.md)]
 - title: Insert an image
-  durationInMinutes: 10
+  durationInMinutes: 8
   content: |
     [!INCLUDE [](../includes/powerpoint-tutorial-insert-image.md)]
+- title: Customize user interface (UI) elements
+  durationInMinutes: 4
+  content: |
+    [!INCLUDE [](../includes/powerpoint-tutorial-customize-ui.md)]
 - title: Insert text
-  durationInMinutes: 5
+  durationInMinutes: 4
   content: |
     [!INCLUDE [](../includes/powerpoint-tutorial-insert-text.md)]
 - title: Get slide metadata
-  durationInMinutes: 5
+  durationInMinutes: 4
   content: |
     [!INCLUDE [](../includes/powerpoint-tutorial-get-slide-metadata.md)]
 - title: Navigate between slides
