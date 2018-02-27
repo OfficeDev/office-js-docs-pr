@@ -176,5 +176,4 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
 7. Choose the **Insert HTML** button and note that two paragraphs are inserted at the end of the document, and that the first one has Verdana font.
 8. Choose the **Insert Table** button and note that a table is inserted after the second paragraph.
 
-
     ![Word tutorial - Insert Image, HTML, and Table](../images/word-tutorial-insert-image-html-table.png)
