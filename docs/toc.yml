@@ -43,8 +43,6 @@
   items:
   - name: Excel add-in tutorial
     href: tutorials/excel-tutorial.yml
-  - name: Word add-in tutorial
-    href: tutorials/word-tutorial.yml
     
 - name: Concepts
   items:
