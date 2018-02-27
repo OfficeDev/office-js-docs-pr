@@ -45,8 +45,8 @@ For Mac, the personality menu measures 26x26 pixels, but floats 8 pixels in from
 For a sample that implements a content add-in, see [Excel Content Add-in Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance) in GitHub.
 
 ## Support considerations
-- Check to see if your Office Add-in will work on a [specific Office host platform]9/overview/office-add-in-availability.md). 
-- Some add-ins may require the user to "trust" the add-in to read and write to Excel or PowerPoint. You can declare what [level of permissions](/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md) you want your use to have in the add-in's manifest.  
+- Check to see if your Office Add-in will work on a [specific Office host platform](/overview/office-add-in-availability.md). 
+- Some content add-ins may require the user to "trust" the add-in to read and write to Excel or PowerPoint. You can declare what [level of permissions](/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md) you want your use to have in the add-in's manifest.  
 - Content add-ins are supported in Excel and PowerPoint in Office 2013 version and later. If you open an add-in in a version of Office that doesn't support Office web add-ins, the add-in will be displayed as an image.
 
 ## See also
