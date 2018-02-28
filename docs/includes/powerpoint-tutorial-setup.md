@@ -63,7 +63,7 @@ Finally, edit the add-in code as follows, to create the framework that you'll us
                 // TODO1: Assign event handler for insert-image button.
                 // TODO4: Assign event handler for insert-text button.
                 // TODO6: Assign event handler for get-slide-metadata button.
-                // TODO8: Assign event handler for go-to-slide buttons.
+                // TODO8: Assign event handlers for the four navigation buttons.
             });
         };
 
@@ -75,7 +75,7 @@ Finally, edit the add-in code as follows, to create the framework that you'll us
 
         // TODO7: Define the getSlideMetadata function.
 
-        // TODO9: Define the goTo_Slide functions.
+        // TODO9: Define the navigation functions.
 
         // Helper function for displaying notifications
         function showNotification(header, content) {
