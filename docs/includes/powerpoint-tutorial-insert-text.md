@@ -1,4 +1,4 @@
-In this step of the tutorial, you'll...
+In this step of the tutorial, you'll add text to the title slide that contains the [Bing](https://www.bing.com) photo of the day.
 
 ## Add text to a slide 
 
