@@ -8,7 +8,7 @@ In this step of the tutorial, you'll retrieve the [Bing](https://www.bing.com) p
 
 2. Right-click the **Controllers** folder and select **Add > New Scaffolded Item...**.
 
-3. In the **Add Scaffold** dialog window, select **MVC API 2 Controller - Empty** and choose the **Add** button. 
+3. In the **Add Scaffold** dialog window, select **Web API 2 Controller - Empty** and choose the **Add** button. 
 
 4. In the **Add Controller** dialog window, enter **PhotoController** as the controller name and choose the **Add** button. Visual Studio creates and opens the **PhotoController.cs** file.
 
