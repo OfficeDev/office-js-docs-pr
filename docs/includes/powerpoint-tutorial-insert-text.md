@@ -1,5 +1,8 @@
 In this step of the tutorial, you'll add text to the title slide that contains the [Bing](https://www.bing.com) photo of the day.
 
+> [!NOTE]
+> This page describes an individual step of the PowerPoint add-in tutorial. If you’ve arrived at this page via search engine results or other direct link, please go to the [PowerPoint add-in tutorial](../tutorials/powerpoint-tutorial.yml) introduction page to start the tutorial from the beginning.
+
 ## Add text to a slide 
 
 1. In the **Home.html** file, replace `TODO3` with the following markup. This markup defines the **Insert Text** button that will appear within the add-in's task pane.

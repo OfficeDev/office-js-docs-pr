@@ -1,5 +1,8 @@
 In this step of the tutorial, you'll retrieve the [Bing](https://www.bing.com) photo of the day and insert that image into a slide.
 
+> [!NOTE]
+> This page describes an individual step of the PowerPoint add-in tutorial. If you’ve arrived at this page via search engine results or other direct link, please go to the [PowerPoint add-in tutorial](../tutorials/powerpoint-tutorial.yml) introduction page to start the tutorial from the beginning.
+
 ## Add the Bing photo of the day to a slide
 
 1. Using Solution Explorer, add a new folder named **Controllers** to the **HelloWorldWeb** project.

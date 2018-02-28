@@ -1,5 +1,8 @@
 In this step of the tutorial, you'll customize the task pane user interface (UI).
 
+> [!NOTE]
+> This page describes an individual step of the PowerPoint add-in tutorial. If you’ve arrived at this page via search engine results or other direct link, please go to the [PowerPoint add-in tutorial](../tutorials/powerpoint-tutorial.yml) introduction page to start the tutorial from the beginning.
+
 ## Customize the task pane UI 
 
 1. In the **Home.html** file, replace `TODO2` with the following markup to add a header section and title to the task pane.
