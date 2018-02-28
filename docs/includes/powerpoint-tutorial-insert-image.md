@@ -1,6 +1,6 @@
 In this step of the tutorial, you'll retrieve the [Bing](https://www.bing.com) photo of the day and insert that image into a slide.
 
-## Code the add-in 
+## Add the Bing photo of the day to a slide
 
 1. Using Solution Explorer, add a new folder named **Controllers** to the **HelloWorldWeb** project.
 
