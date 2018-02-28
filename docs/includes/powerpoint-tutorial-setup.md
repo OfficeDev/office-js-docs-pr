@@ -1,5 +1,8 @@
 You'll begin this tutorial by setting up your development project. 
 
+> [!NOTE]
+> This page describes an individual step of the PowerPoint add-in tutorial. If you’ve arrived at this page via search engine results or other direct link, please go to the [PowerPoint add-in tutorial](../tutorials/powerpoint-tutorial.yml) introduction page to start the tutorial from the beginning.
+
 ## Prerequisites
 
 [!include[Quickstart prerequisites](../includes/quickstart-vs-prerequisites.md)]
