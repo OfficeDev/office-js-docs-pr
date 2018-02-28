@@ -1,10 +1,9 @@
 ---
-title: Create your add-in project
+title: Create your PowerPoint task pane add-in project in Visual Studio
 description: ''
-ms.date: 02/26/2018
+ms.date: 02/28/2018
 ---
 
-
-# Create your add-in project
+# Create your PowerPoint task pane add-in project in Visual Studio
 
 [!INCLUDE[](../includes/powerpoint-tutorial-setup.md)]
