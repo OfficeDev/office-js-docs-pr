@@ -1,7 +1,7 @@
 You'll begin this tutorial by setting up your development project. 
 
-> [!TIP]
-> If you haven't already done so, please read [Excel add-in quickstart that uses jQuery](../quickstarts/excel-quickstart-jquery.md?tabs=visual-studio-code). In particular, be sure that you know how to sideload an Excel add-in for testing.
+> [!NOTE]
+> This page describes an individual step of the Excel add-in tutorial. If you’ve arrived at this page via search engine results or other direct link, please go to the [Excel add-in tutorial](../tutorials/excel-tutorial.yml) introduction page to start the tutorial from the beginning.
 
 ## Prerequisites
 

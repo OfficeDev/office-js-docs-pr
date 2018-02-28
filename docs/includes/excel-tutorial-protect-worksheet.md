@@ -1,5 +1,8 @@
 In this step of the tutorial, you'll add another button to the ribbon that, when chosen, executes a function that you'll define to toggle worksheet protection on and off.
 
+> [!NOTE]
+> This page describes an individual step of the Excel add-in tutorial. If you’ve arrived at this page via search engine results or other direct link, please go to the [Excel add-in tutorial](../tutorials/excel-tutorial.yml) introduction page to start the tutorial from the beginning.
+
 ## Configure the manifest to add a second ribbon button
 
 1. Open the manifest file **my-office-add-in-manifest.xml**.
