@@ -4,14 +4,14 @@ In this step of the tutorial, you'll add text to the title slide that contains t
 
 1. In the **Home.html** file, replace `TODO3` with the following markup. This markup defines the **Insert Text** button that will appear within the add-in's task pane.
 
-```html
-    <br /><br />
-    <button class="ms-Button ms-Button--primary" id="insert-text">
-        <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
-        <span class="ms-Button-label">Insert Text</span>
-        <span class="ms-Button-description">Inserts text into the slide.</span>
-    </button>
-```
+    ```html
+        <br /><br />
+        <button class="ms-Button ms-Button--primary" id="insert-text">
+            <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+            <span class="ms-Button-label">Insert Text</span>
+            <span class="ms-Button-description">Inserts text into the slide.</span>
+        </button>
+    ```
 
 2. In the **Home.js** file, replace `TODO4` with the following code to assign the event handler for the **Insert Text** button.
 
@@ -48,7 +48,9 @@ In this step of the tutorial, you'll add text to the title slide that contains t
 
 4. Put your cursor in the text box on the title slide and then in the task pane, choose the **Insert Text** button to add text to the slide.
 
-    ![A screenshot of PowerPoint add-in with the Insert Image button highlighted](../images/powerpoint-tutorial-insert-text.png)
+    ![A screenshot of PowerPoint add-in with the Insert Text button highlighted](../images/powerpoint-tutorial-insert-text.png)
 
 
-5. Leave the add-in running in PowerPoint and return to Visual Studio to proceed with the next step of this tutorial.
+5. In Visual Studio, stop the add-in by pressing `Shift + F5` or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
+
+    ![A screenshot of Visual Studio with the Stop button highlighted](../images/powerpoint-tutorial-stop.png)
