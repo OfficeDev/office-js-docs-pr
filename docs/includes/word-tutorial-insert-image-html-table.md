@@ -1,5 +1,8 @@
 In this step of the tutorial, you'll learn how to insert images, HTML, and tables into the document.
 
+> [!NOTE]
+> This page describes an individual step of a Word add-in tutorial. If you’ve arrived at this page via search engine results or other direct link, please go to the [Word add-in tutorial](../tutorials/word-tutorial.yml) introduction page to start the tutorial from the beginning.
+
 ## Insert an image
 
 1. Open the project in your code editor. 
@@ -95,7 +98,7 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
 
     ```js
     const blankParagraph = context.document.body.paragraphs.getLast().insertParagraph("", "After");
-    blankParagraph.insertHtml('<p style="font-family: verdana;">Inserted HTML.</b></p><p>Another paragraph</p>', "End");
+    blankParagraph.insertHtml('<p style="font-family: verdana;">Inserted HTML.</p><p">Another paragraph</p>'', "End");
     ``` 
 
 ## Insert Table

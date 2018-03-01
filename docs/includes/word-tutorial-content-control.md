@@ -1,4 +1,9 @@
-In this step of the tutorial, you'll learn how to create Rich Text content controls in the document, and then how to insert and replace content in the controls. Before you start this step of the tutorial, we recommend that you create and manipulate Rich Text content controls through the Word UI, so you can be familiar with what they are and their properties. For details, see [Create forms that users complete or print in Word](https://support.office.com/en-us/article/create-forms-that-users-complete-or-print-in-word-040c5cc1-e309-445b-94ac-542f732c8c8b).
+In this step of the tutorial, you'll learn how to create Rich Text content controls in the document, and then how to insert and replace content in the controls. 
+
+> [!NOTE]
+> This page describes an individual step of a Word add-in tutorial. If you’ve arrived at this page via search engine results or other direct link, please go to the [Word add-in tutorial](../tutorials/word-tutorial.yml) introduction page to start the tutorial from the beginning.
+
+Before you start this step of the tutorial, we recommend that you create and manipulate Rich Text content controls through the Word UI, so you can be familiar with what they are and their properties. For details, see [Create forms that users complete or print in Word](https://support.office.com/en-us/article/create-forms-that-users-complete-or-print-in-word-040c5cc1-e309-445b-94ac-542f732c8c8b).
 
 > [!NOTE]
 > There are several types of content controls that can be added to a Word document through the UI; but currently only Rich Text content controls are supported by Word.js.

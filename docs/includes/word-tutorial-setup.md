@@ -1,5 +1,8 @@
 You'll begin this tutorial by setting up your development project. 
 
+> [!NOTE]
+> This page describes an individual step of a Word add-in tutorial. If you’ve arrived at this page via search engine results or other direct link, please go to the [Word add-in tutorial](../tutorials/word-tutorial.yml) introduction page to start the tutorial from the beginning.
+
 > [!TIP]
 > If you haven't already done so, please read [Build your first Word add-in](../quickstarts/word-quickstart.md?tabs=visual-studio-code). In particular, be sure that you know how to sideload a Word add-in for testing.
 
