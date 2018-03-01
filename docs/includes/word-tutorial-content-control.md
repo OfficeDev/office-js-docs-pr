@@ -51,7 +51,7 @@ Before you start this step of the tutorial, we recommend that you create and man
 7. Replace `TODO1` with the following code. Note:
    - This code is intended to wrap the phrase "Office 365" in a content control. It makes a simplifying assumption that the string is present and the user has selected it.
    - The `ContentControl.title` property specifies the visible title of the content control. 
-   - The `ContentControl.tag` property specifies an tag that can be used to get a reference to a content control using the `ContentControlCollection.getByTag` method, which you will use in a later function. 
+  - The `ContentControl.tag` property specifies an tag that can be used to get a reference to a content control using the `ContentControlCollection.getByTag` method, which you will use in a later function. 
    - The `ContentControl.appearance` property specifies the visual look of the control. Using the value "Tags" means that the control will be wrapped in opening and closing tags, and the opening tag will have the content control's title. Other possible values are "BoundingBox" and "None".
    - The `ContentControl.color` property specifies the color of the tags or the border of the bounding box.
 
@@ -68,7 +68,6 @@ Before you start this step of the tutorial, we recommend that you create and man
 
 1. Open the file index.html.
 3. Below the `div` that contains the `create-content-control` button, add the following markup:
-
     ```html
     <div class="padding">            
         <button class="ms-Button" id="replace-content-in-control">Rename Service</button>            
@@ -85,8 +84,7 @@ Before you start this step of the tutorial, we recommend that you create and man
 
 6. Below the `createContentControl` function add the following function.
 
-    ```js
-    function replaceContentInControl() {
+    ```js    function replaceContentInControl() {
         Word.run(function (context) {
             
             // TODO1: Queue commands to replace the text in the Service Name
@@ -124,6 +122,5 @@ Before you start this step of the tutorial, we recommend that you create and man
 5. In the taskpane, choose **Insert Paragraph** to ensure that there is a paragraph with "Office 365" at the top of the document.
 6. Select the phrase "Office 365" in the paragraph you just added, and then choose the **Create Content Control** button. Note that the phrase is wrapped in tags labelled "Service Name".
 7. Choose the **Rename Service** button and note that the text of the content control changes to "Fabrikam Online Productivity Suite".
-
 
     ![Word tutorial - Create Content Control and Change its Text](../images/word-tutorial-content-control.png)
