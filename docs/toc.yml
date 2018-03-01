@@ -46,7 +46,11 @@
   items:
   - name: Excel add-in tutorial
     href: tutorials/excel-tutorial.yml
-    
+    displayName: Excel
+  - name: PowerPoint add-in tutorial
+    href: tutorials/powerpoint-tutorial.yml
+    displayName: PowerPoint
+
 - name: Concepts
   items:
   - name: Requirements for running add-ins
@@ -209,6 +213,9 @@
       - name: Use Vue
         href: excel/excel-add-ins-get-started-vue.md
         displayName: Excel
+    - name: Excel add-in tutorial
+      href: tutorials/excel-tutorial.yml
+      displayName: Excel
     - name: Core concepts
       href: excel/excel-add-ins-core-concepts.md
       displayName: Excel
@@ -284,6 +291,9 @@
     items:
     - name: Build your first PowerPoint add-in
       href: powerpoint/powerpoint-add-ins-get-started.md
+      displayName: PowerPoint
+    - name: PowerPoint add-in tutorial
+      href: tutorials/powerpoint-tutorial.yml
       displayName: PowerPoint
     - name: Use document themes in your PowerPoint add-ins
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
