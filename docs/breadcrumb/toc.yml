@@ -12,3 +12,6 @@
       - name: Excel add-in tutorial
         tocHref: /office/dev/add-ins/tutorials/excel-tutorial
         topicHref: /office/dev/add-ins/tutorials/excel-tutorial
+      - name: PowerPoint add-in tutorial
+        tocHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
+        topicHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
