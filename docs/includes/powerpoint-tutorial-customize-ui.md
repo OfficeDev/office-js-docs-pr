@@ -5,7 +5,9 @@ In this step of the tutorial, you'll customize the task pane user interface (UI)
 
 ## Customize the task pane UI 
 
-1. In the **Home.html** file, replace `TODO2` with the following markup to add a header section and title to the task pane.
+1. In the **Home.html** file, replace `TODO2` with the following markup to add a header section and title to the task pane. Note:
+
+    - The styles that begin with `ms-` are defined by [Office UI Fabric](../design/office-ui-fabric.md), a JavaScript front-end framework for building user experiences for Office and Office 365. Your HTML page includes the reference to the Fabric stylesheet.
 
     ```html
     <div id="content-header">

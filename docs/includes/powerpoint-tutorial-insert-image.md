@@ -15,7 +15,7 @@ In this step of the tutorial, you'll retrieve the [Bing](https://www.bing.com) p
 
 4. In the **Add Controller** dialog window, enter **PhotoController** as the controller name and choose the **Add** button. Visual Studio creates and opens the **PhotoController.cs** file.
 
-5. Replace the entire contents of the **PhotoController.cs** file with the following code that calls the Bing service to retrieve the photo of the day as a Base64 encoded string.
+5. Replace the entire contents of the **PhotoController.cs** file with the following code that calls the Bing service to retrieve the photo of the day as a Base64 encoded string. When you use the Office JavaScript API to insert the image into the document, it will require that image data be specified as a Base64 encoded string.
 
     ```csharp
     using System;
@@ -94,7 +94,11 @@ In this step of the tutorial, you'll retrieve the [Bing](https://www.bing.com) p
     }
     ```
 
-9. In the **Home.js** file, replace `TODO3` with the following code to define the `insertImageFromBase64String` function. This function uses the Office JavaScript API to insert the image into the document.
+9. In the **Home.js** file, replace `TODO3` with the following code to define the `insertImageFromBase64String` function. This function uses the Office JavaScript API to insert the image into the document. Note: 
+
+    - The `coercionType` option that's specified as the second parameter of the `setSelectedDataAsyc` method call indicates the type of data being inserted. 
+
+    - The `asyncResult` object encapsulates the result of the `setSelectedDataAsync` request, including status and error information if the request failed.
 
     ```js
     function insertImageFromBase64String(image) {

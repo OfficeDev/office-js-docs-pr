@@ -31,7 +31,7 @@ In this tutorial, you'll create an add-in using Visual Studio.
 
 ### Update code 
 
-Finally, edit the add-in code as follows, to create the framework that you'll use to implement add-in functionality in subsequent steps of this tutorial.
+Edit the add-in code as follows, to create the framework that you'll use to implement add-in functionality in subsequent steps of this tutorial.
 
 1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, find the **div** with `id="content-main"`, replace that entire **div** with the following markup, and save the file.
 
@@ -55,7 +55,6 @@ Finally, edit the add-in code as follows, to create the framework that you'll us
 
         var messageBanner;
 
-        // The initialize function must be run each time a new page is loaded.
         Office.initialize = function (reason) {
             $(document).ready(function () {
                 // Initialize the FabricUI notification mechanism and hide it
