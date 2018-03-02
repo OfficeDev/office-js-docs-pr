@@ -96,7 +96,7 @@ In this step of the tutorial, you'll retrieve the [Bing](https://www.bing.com) p
 
 9. In the **Home.js** file, replace `TODO3` with the following code to define the `insertImageFromBase64String` function. This function uses the Office JavaScript API to insert the image into the document. Note: 
 
-    - The `coercionType` option that's specified as the second parameter of the `setSelectedDataAsyc` method call indicates the type of data being inserted. 
+    - The `coercionType` option that's specified as the second parameter of the `setSelectedDataAsyc` request indicates the type of data being inserted. 
 
     - The `asyncResult` object encapsulates the result of the `setSelectedDataAsync` request, including status and error information if the request failed.
 
