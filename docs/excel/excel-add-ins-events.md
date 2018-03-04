@@ -4,7 +4,7 @@ description: ''
 ms.date: 01/29/2018
 ---
 
-# Work with Events using the Excel JavaScript API
+# Work with Events using the Excel JavaScript API 
 
 This article describes important concepts related to working with events in Excel and provides code samples that show how to register event handlers, handle events, and remove event handlers using the Excel JavaScript API. 
 
