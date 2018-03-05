@@ -98,7 +98,7 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
 
     ```js
     const blankParagraph = context.document.body.paragraphs.getLast().insertParagraph("", "After");
-    blankParagraph.insertHtml('<p style="font-family: verdana;">Inserted HTML.</p><p">Another paragraph</p>'', "End");
+    blankParagraph.insertHtml('<p style="font-family: verdana;">Inserted HTML.</p><p>Another paragraph</p>', "End");
     ``` 
 
 ## Insert Table
