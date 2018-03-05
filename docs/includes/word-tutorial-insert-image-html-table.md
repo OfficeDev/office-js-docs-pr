@@ -29,7 +29,7 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
     $('#insert-image').click(insertImage);
     ```
 
-6. Below the `replaceText` function add the following function.
+6. Below the `replaceText` function, add the following function:
 
     ```js
     function insertImage() {
@@ -48,7 +48,7 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
     }
     ``` 
 
-7. Replace `TODO1` with the following code. Note that this line inserts the base 64 encoded image at the end of the document. (The `Paragraph` object also has an `insertInlinePictureFromBase64` method and other `insert*` methods. See the insertHTML method below for an example.)
+7. Replace `TODO1` with the following code. Note that this line inserts the base 64 encoded image at the end of the document. (The `Paragraph` object also has an `insertInlinePictureFromBase64` method and other `insert*` methods. See the following insertHTML section for an example.)
 
     ```js
     context.document.body.insertInlinePictureFromBase64(base64Image, "End");
@@ -56,8 +56,8 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
 
 ## Insert HTML
 
-2. Open the file index.html.
-3. Below the `div` that contains the `insert-image` button, add the following markup:
+1. Open the file index.html.
+2. Below the `div` that contains the `insert-image` button, add the following markup:
 
     ```html
     <div class="padding">            
@@ -65,15 +65,15 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
     </div>
     ```
 
-4. Open the app.js file.
+3. Open the app.js file.
 
-5. Below the line that assigns a click handler to the `insert-image` button, add the following code:
+4. Below the line that assigns a click handler to the `insert-image` button, add the following code:
 
     ```js
     $('#insert-html').click(insertHTML);
     ```
 
-6. Below the `insertImage` function add the following function.
+5. Below the `insertImage` function, add the following function:
 
     ```js
     function insertHTML() {
@@ -92,7 +92,7 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
     }
     ``` 
 
-7. Replace `TODO1` with the following code. Note:
+6. Replace `TODO1` with the following code. Note:
    - The first line adds a blank paragraph to the end of the document. 
    - The second line inserts a string of HTML at the end of the paragraph; specifically two paragraphs, one formatted with Verdana font, the other with the default styling of the Word document. (As you saw in the `insertImage` method earlier, the `context.document.body` object also has the `insert*` methods.)
 
@@ -120,7 +120,7 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
     $('#insert-table').click(insertTable);
     ```
 
-6. Below the `insertHTML` function add the following function.
+6. Below the `insertHTML` function, add the following function:
 
     ```js
     function insertTable() {
@@ -152,7 +152,7 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
    - The first two parameters of the `insertTable` method specify the number of rows and columns.
    - The third parameter specifies where to insert the table, in this case after the paragraph.
    - The fourth parameter is a two-dimensional array that sets the values of the table cells.
-   - The table will have plain default styling, but the `insertTable` method returns a `Table` object with many members, some of which can be used to style the table.
+   - The table will have plain default styling, but the `insertTable` method returns a `Table` object with many members, some of which are used to style the table.
 
      ```js
     const tableData = [
@@ -166,13 +166,13 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
 ## Test the add-in
 
 
-1. If the Git bash window, or Node.JS-enabled system prompt, from the previous stage tutorial is still open, enter Ctrl-C twice to stop the running web server. Otherwise, open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
+1. If the Git bash window, or Node.JS-enabled system prompt, from the previous stage tutorial is still open, enter Ctrl+C twice to stop the running web server. Otherwise, open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
 
      > [!NOTE]
-     > Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process in so that you can get a prompt to enter the build command. After the build, you restart the server. The next few steps carry out this process.
+     > Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process so that the prompt appears and you can enter the build command. After the build, restart the server. The next few steps carry out this process.
 
-1. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by all the hosts where Office Add-ins can run.
-2. Run the command `npm start` to start a web server running on localhost.
+2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by all the hosts where Office Add-ins can run.
+3. Run the command `npm start` to start a web server running on localhost.
 4. Reload the task pane by closing it, and then on the **Home** menu, select **Show Taskpane** to reopen the add-in.
 5. In the taskpane, choose **Insert Paragraph** at least three times to ensure that there are a few paragraphs in the document.
 6. Choose the **Insert Image** button and note that an image is inserted at the end of the document.

@@ -14,7 +14,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     ```
 
 4. Open the app.js file.
-5. Replace the `TODO1` with the following code. This code determines whether the user's version of Word supports a version of Word.js that includes all the APIs that are used in all the stages of this tutorial. In a production add-in, use the body of the conditional block to hide or disable the UI that would call unsupported APIs. This will enable the user to still make use of the parts of the add-in that are supported by his or her version of Word.
+5. Replace the `TODO1` with the following code. This code determines whether the user's version of Word supports a version of Word.js that includes all the APIs that are used in all the stages of this tutorial. In a production add-in, use the body of the conditional block to hide or disable the UI that would call unsupported APIs. This will enable the user to still use the parts of the add-in that are supported by their version of Word.
 
     ```js
     if (!Office.context.requirements.isSetSupported('WordApi', 1.3)) {
@@ -51,7 +51,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     ``` 
 
 8. Replace `TODO4` with the following code. Note:
-   - The first parameter to the insertParagraph method is the text for the new paragraph.
+   - The first parameter to the `insertParagraph` method is the text for the new paragraph.
    - The second parameter is the location within the body where the paragraph will be inserted. Other options for insert paragraph, when the parent object is the body, are "End" and "Replace". 
 
     ```js
@@ -69,7 +69,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
     - Word Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
-5. On the **Home** menu of Word, choose **Show Taskpane**.
+5. On the **Home** menu of Word, select **Show Taskpane**.
 6. In the taskpane, choose **Insert Paragraph**.
 7. Make a change in the paragraph. 
 8. Choose **Insert Paragraph** again. Note that the new paragraph is above the previous one because the `insertParagraph` method is inserting at the "start" of the document's body.
