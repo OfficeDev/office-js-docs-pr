@@ -5,7 +5,7 @@ There are many versions of Office on several platforms, and they don't all suppo
 > [!NOTE]
 > - Office runs across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad.  
 > - Examples of Office hosts are Office Products: Excel, Word, PowerPoint, Outlook, OneNote, and so forth.  
-> - A requirement set is a named group of API members eg, `ExcelApi 1.5`, `WordApi 1.3` and so on.  
+> - A requirement set is a named group of API members e.g., `ExcelApi 1.5`, `WordApi 1.3` and so on.  
 
 
 ## How to check your Office version
