@@ -132,6 +132,8 @@
 
   - name: Develop
     items:
+    - name: Office versions and requirement sets
+      href: develop/office-versions-and-requirement-sets.md
     - name: Install the latest Office version
       href: develop/install-latest-office-version.md
     - name: Office JavaScript API
