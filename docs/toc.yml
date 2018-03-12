@@ -10,7 +10,7 @@
     href: overview/office-add-in-availability.md
     displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
 
-- name: Quickstarts
+- name: Quick Starts
   items:
   - name: Create Excel add-in
     items:
