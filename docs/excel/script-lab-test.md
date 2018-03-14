@@ -1,7 +1,7 @@
 ---
 title: Testing Script Lab integration
 description: This sample test file demonstrates an upcoming ScriptLab feature that will enable developers to try out their snippets in Excel, Word, and PowerPoint.
-ms.date: 03/09/2018
+ms.date: 03/14/2018
 ---
 
 
@@ -14,8 +14,8 @@ This sample test file demonstrates an upcoming ScriptLab feature that will enabl
 - You'll need a View URL from a ScriptLab snippet.
 
 > [!NOTE] 
-> We *should* indicate that ScriptLab needs Office 365 to explore the most recent snippets. Developers can obtain an Office 365 developer subscription through our [Office 365 Developer Program](https://aka.ms/o365devprogram) for development purposes only. 
-> See the [Office 365 Developer Program documentation](https://aka.ms/o365devprogramdocs) for step-by-step instructions about how to join the Office 365 Developer Program and sign up and configure your subscription. 
+> We *should* indicate that ScriptLab needs Office 365 to explore the most recent snippets. Developers can obtain an Office 365 developer subscription through our [Office 365 Developer Program](https://developer.microsoft.com/en-us/office/dev-program) for development purposes only. 
+> See the [Office 365 Developer Program documentation](https://docs.microsoft.com/en-us/office/developer-program/office-365-developer-program) for step-by-step instructions about how to join the Office 365 Developer Program and sign up and configure your subscription. 
 
 
 ## Try it out button
