@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins in Office Online
-description: ''
-ms.date: 01/23/2018
+description: How to use Office Online to test and debug your add-ins.
+ms.date: 03/14/2018
 ---
 
 # Debug add-ins in Office Online
@@ -13,12 +13,13 @@ You can build and debug add-ins on a computer that isn't running Windows or the 
 
 To get started:
 
-- Get an Office 365 developer account, if you don't already have one, or have access to a SharePoint site.
+- Get an Office 365 developer account if you don't already have one or have access to a SharePoint site.
     
   > [!NOTE]
-  > To sign up for a free Office 365 developer account, join our [Office 365 developer program](https://dev.office.com/devprogram).
+  > To sign up for a free Office 365 developer subscription, join our [Office 365 Developer Program](https://developer.microsoft.com/en-us/office/dev-program). 
+  > See the [Office 365 Developer Program documentation](https://docs.microsoft.com/en-us/office/developer-program/office-365-developer-program) for step-by-step instructions about how to join the Office 365 Developer Program and sign up and configure your subscription.
      
-- Set up an add-in catalog on Office 365 (SharePoint Online). An add-in catalog is a dedicated site collection in SharePoint Online that hosts document libraries for Office Add-ins. If you have your own SharePoint site, you can set up an add-in catalog document library. For information, see [Publish task pane and content add-ins to an add-in catalog on SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
+- Set up an add-in catalog on Office 365 (SharePoint Online). An add-in catalog is a dedicated site collection in SharePoint Online that hosts document libraries for Office Add-ins. If you have your own SharePoint site, you can set up an add-in catalog document library. For more information, see [Publish task pane and content add-ins to an add-in catalog on SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
     
 
 ## Debug your add-in from Excel Online or Word Online
