@@ -4,7 +4,7 @@ description: ''
 ms.date: 03/13/2017
 ---
 
-# Performance Tips for Excel JavaScript API
+# Performance optimization
 
 Some common tasks can be accomplished via the Excel JavaScript API in more than one way, and there may be significant performance differences between various approaches. This article provides guides and code samples that show how to perform common task in an efficient way using Excel JavaScript API.
 
