@@ -12,7 +12,7 @@ Some common tasks can be accomplished via the Excel JavaScript API in more than 
 
 In the Excel JavaScript API, ```sync()``` is the only asynchronous operation, and it can be slow under some circumstances. To optimize performance, minimize the number of calls to ```sync()``` by queueing up as many changes as possible before calling it.
 
-See [Core Concepts - sync()](excel-add-ins-core-concepts#sync) for code samples that follow this practice.
+See [Core Concepts - sync()](excel-add-ins-core-concepts.md#sync) for code samples that follow this practice.
 
 ## Minimize the number of proxy objects created
 
@@ -68,9 +68,9 @@ See [Application Object](https://dev.office.com/reference/add-ins/excel/applicat
 
 When you need to update all cells in a range with the same value or property, it can be slow to do this via a 2-dimensional array full of a single value, since that approach requires Excel to iterate over all of the cells in the range to set each one separately. Excel has a more efficient way to update all the cells in a range with the same value or property.
 
-If you need to apply the same value, the same number format, or the same formula to a range of cells, it's more efficient to specify a single value instead of an array of values. Doing so will significantly improve performance. For a code sample that shows this approach in action, see [Core concepts - Update all cells in a range](excel-add-ins-core-concepts#update-all-cells-in-a-range).
+If you need to apply the same value, the same number format, or the same formula to a range of cells, it's more efficient to specify a single value instead of an array of values. Doing so will significantly improve performance. For a code sample that shows this approach in action, see [Core concepts - Update all cells in a range](excel-add-ins-core-concepts#update-all-cells-in-a-range.md).
 
-A common scenario where this approach can be applied is when setting different number formats on different columns in a worksheet. In this case, you can simply iterate through the columns and set the number format on each column with a single value. Handle each column as a range, as shown in the [Update all cells in a range](excel-add-ins-core-concepts#update-all-cells-in-a-range) code sample.
+A common scenario where this approach can be applied is when setting different number formats on different columns in a worksheet. In this case, you can simply iterate through the columns and set the number format on each column with a single value. Handle each column as a range, as shown in the [Update all cells in a range](excel-add-ins-core-concepts#update-all-cells-in-a-range.md) code sample.
 
 ## Convert between range and table
 
