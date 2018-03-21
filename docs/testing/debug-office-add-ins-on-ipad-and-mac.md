@@ -8,7 +8,7 @@ ms.date: 03/12/2018
 
 You can use Visual Studio to develop and debug add-ins on Windows, but you can't use it to debug add-ins on the iPad or Mac. Because add-ins are developed using HTML and Javascript, they are designed to work across platforms, but there might be subtle differences in how different browsers render the HTML. This article describes how to debug add-ins running on an iPad or Mac. 
 
-## Debugging with Safari Web Inspector
+## Debugging with Safari Web Inspector on a Mac
 
 You can debug an Office add-in using Safari Web Inspector. 
 
@@ -25,12 +25,12 @@ Then, open up Word, Excel, PowerPoint or Outlook, and insert or sideload your ad
 
 > **Note**: Please note that this is an experimental feature and there are no guarantees that we will preserve this functionality in future versions of Office applications.
 
-## Debugging with Vorlon.JS 
+## Debugging with Vorlon.JS on a iPad or Mac
 
-Vorlon.JS is a debugger for web pages, similar to the F12 tools. It is designed to work remotely and it enables you to debug web pages across different devices. For more information, see the [Vorlon website](http://www.vorlonjs.com).  
+For debugging an add-in on an Ipad (or a Mac), you can Vorlon.JS is a debugger for web pages, similar to the F12 tools. It is designed to work remotely and it enables you to debug web pages across different devices. For more information, see the [Vorlon website](http://www.vorlonjs.com).  
 
 
-### Install and set up up Vorlon.JS on a Mac or iPad 
+### Install and set up up Vorlon.JS  
 
 1.	Log on to the device as an administrator.
 
