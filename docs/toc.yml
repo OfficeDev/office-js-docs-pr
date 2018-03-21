@@ -256,6 +256,9 @@
       - name: Error handling
         href: excel/excel-add-ins-error-handling.md
         displayName: Excel
+      - name: Performance optimization
+        href: excel/performance.md
+        displayName: Excel
     - name: Excel JavaScript API reference
       href: https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview
       displayName: Excel
