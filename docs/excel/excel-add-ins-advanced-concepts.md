@@ -237,4 +237,5 @@ return context.sync()
  
 * [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
 * [Excel add-ins code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
+* [Excel JavaScript API performance optimization](https://dev.office.com/reference/add-ins/excel/performance.md)
 * [Excel JavaScript API reference](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
