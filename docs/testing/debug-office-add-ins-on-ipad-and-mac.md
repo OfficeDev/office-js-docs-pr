@@ -1,12 +1,29 @@
 ---
 title: Debug Office Add-ins on iPad and Mac
 description: ''
-ms.date: 01/25/2018
+ms.date: 03/12/2018
 ---
 
 # Debug Office Add-ins on iPad and Mac
 
 You can use Visual Studio to develop and debug add-ins on Windows, but you can't use it to debug add-ins on the iPad or Mac. Because add-ins are developed using HTML and Javascript, they are designed to work across platforms, but there might be subtle differences in how different browsers render the HTML. This article describes how to debug add-ins running on an iPad or Mac. 
+
+## Debugging with Safari Web Inspector
+
+You can debug an Office add-in using Safari Web Inspector. 
+
+To enable debugging Office add-ins on Mac, you must have Mac OS High Sierra AND [Office Version: 16.9.1 (Build 18012504) or above]. If you don't have an Office Mac build, you can get one by joining the [Office 365 Developer program](https://aka.ms/o365devprogram).
+
+Then open a terminal and set the OfficeWebAddinDeveloperExtras property for the relevant Office application as follows:
+
+- `defaults write com.microsoft.Word OfficeWebAddinDeveloperExtras -bool true`
+- `defaults write com.microsoft.Excel OfficeWebAddinDeveloperExtras -bool true`
+- `defaults write com.microsoft.Powerpoint OfficeWebAddinDeveloperExtras -bool true`
+- `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
+
+Then, open up Word, Excel, PowerPoint or Outlook, and insert or sideload your add-in. Right click the add-in and you should see an **Inpect Element** option in the context menu.  Select that and it will pop open the inspector.
+
+> **Note**: Please note that this is an experimental feature and there are no guarantees that we will preserve this functionality in future versions of Office applications.
 
 ## Debugging with Vorlon.JS 
 
