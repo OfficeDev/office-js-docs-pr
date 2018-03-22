@@ -43,7 +43,7 @@
   items:
   - name: Excel add-in tutorial
     href: tutorials/excel-tutorial.yml
-    
+
 - name: Concepts
   items:
   - name: Requirements for running add-ins
@@ -68,6 +68,8 @@
       items:
       - name: Design language
         href: design/add-in-design-language.md
+      - name: Using motion in Office add-ins
+        href: design/using-motions-office-addins.md
       - name: UX design templates
         href: design/ux-design-patterns.md
       - name: Usability testing
@@ -318,7 +320,7 @@
     href: testing/test-debug-office-add-ins.md
     items:
     - name: Windows
-      items: 
+      items:
       - name: Sideload Office Add-ins on Windows
         href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
       - name: Attach a debugger from the task pane
@@ -326,7 +328,7 @@
       - name: Debug using F12 developer tools
         href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
     - name: Office Online
-      items: 
+      items:
       - name: Sideload Office Add-ins in Office Online
         href: testing/sideload-office-add-ins-for-testing.md
       - name: Debug in Office Online
