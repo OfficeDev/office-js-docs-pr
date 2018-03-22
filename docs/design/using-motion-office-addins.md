@@ -39,7 +39,7 @@ Use it to fit seamlessly in Office. It will help you create experiences that are
 |Ensure there is a consistent application of motion acoss similar elements.| Don't use different motions to animate the same object.|
 |Create consistency with use of direction in animation. For example, a panel that opens from the right should close to the right.|Don't animate an element using multiple directions.
 
-![gif that shows a modal opening in an expected manner next to a gif that shows a modal opening in an unexpected manner](..images/add-in-motion-expected.gif)
+![gif that shows a modal opening in an expected manner next to a gif that shows a modal opening in an unexpected manner](../images/add-in-motion-expected.gif)
 
 ## Avoid out of character motion for an element
 
