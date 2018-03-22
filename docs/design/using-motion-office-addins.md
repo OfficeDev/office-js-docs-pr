@@ -21,7 +21,7 @@ There are standard elements used in an add-in that can incorporate motion to hel
 |Identify key elements in the add-in that should have motion. Commonly animated elements in an add-in are panels, overlays, modals, tool tips, menus, and teaching call outs.| Don't overwhelm the user by animating every element. Motion shoud invite interaction, avoid animating anything that doesn't lead the user through the experience intuitively. |
 |Use simple, subtle motion that behaves in expected ways. Consider the origin of your triggering element. Use motion to create a link between the action and the resulting UI. | Don't create wait time for a motion. Motion in add-ins should not hinder task completion.|
 
-![](/Users/roberthalf75/Downloads/ MOTION/PURPOSE/01_PURPOSE-1a.gif)
+![gif that shows a panel opening with minimal moving elements next to a gif that shows a panel opening with lots of moving elements](../images/add-in-motion-purpose.gif)
 
 
 
@@ -39,8 +39,7 @@ Use it to fit seamlessly in Office. It will help you create experiences that are
 |Ensure there is a consistent application of motion acoss similar elements.| Don't use different motions to animate the same object.|
 |Create consistency with use of direction in animation. For example, a panel that opens from the right should close to the right.|Don't animate an element using multiple directions.
 
-
-![](/Users/roberthalf75/Downloads/ MOTION/EXPECTED/02_EXPECTED-1a.gif)
+![gif that shows a modal opening in an expected manner next to a gif that shows a modal opening in an unexpected manner](..images/add-in-motion-expected.gif)
 
 ## Avoid out of character motion for an element
 
@@ -53,7 +52,7 @@ Consider the size of the animation canvas (task pane) when implementing motion. 
 | Use recommended motion durations with the context of the tast pane dimensions. | Don't use exaggerated animations. Avoid creating experiences that are embellishments that only distract your customers.
 | Follow recommended easing curves in the [Microsoft Motion Guide](https://microsoft.sharepoint.com/teams/BrandCentral/Pages/The-Microsoft-brand-Core-elements-Motion.aspx#topic_0).  |Don't move elements in a jerky or disjointed manner. Avoid anticipations, bounces, rubberband, or other effects that emulate natural world physics.|
 
-![](/Users/roberthalf75/Downloads/ MOTION/CHARACTER/03_CHARACTER-1a.gif)
+![gif that shows tiles loading using a gentle fade in next to a gif that shows tiles loading with bounce](../images/add-in-motion-character.gif)
 
 ## See also
 Here are links to additional resources about the use of motion in Microsoft products.
