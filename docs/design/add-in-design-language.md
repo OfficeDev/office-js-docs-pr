@@ -106,4 +106,4 @@ Apply the following general guidelines for icons:
 ## See also
 
 - [Office Add-in design guidelines](add-in-design-guidelines.md)
-- [Using motion in Office add-ins](using-motion-in-office-addins.md)
+- [Using motion in Office add-ins](using-motion-office-addins.md)
