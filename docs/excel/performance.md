@@ -74,7 +74,7 @@ A common scenario where this approach can be applied is when setting different n
 
 ## Convert between range and table
 
-When trying to import a huge amount of data directly into a [Table](https://dev.office.com/reference/add-ins/excel/table) (for example, by using `TableRowCollection.add()`), you might experience slow performance. In this case, we recommend that you instead write the data into a range object by using `table.getDataBodyRange()`, and the table will expand automatically to accommodate the data.
+When trying to import a huge amount of data directly into a [Table](https://dev.office.com/reference/add-ins/excel/table) object directly (for example, by using `TableRowCollection.add()`), you might experience slow performance. If you are trying to add a new table, you should fill in the data first by setting `range.values`, and then call `worksheet.tables.add()` to create a table over the range. If you are trying to write data into an existing table, write the data into a range object via `table.getDataBodyRange()`, and the table will expand automatically. 
 
 > [!NOTE]
 > You can conveniently convert a Table object to a Range object by using the [Table.convertToRange()](https://dev.office.com/reference/add-ins/excel/table#converttorange) method.
