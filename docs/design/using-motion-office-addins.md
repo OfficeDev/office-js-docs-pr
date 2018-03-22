@@ -2,8 +2,7 @@
 
 When designing an Office add-in, motion can be used to enhance the user experience. UI elements, controls, and components often have interactive behaviors that require transitions, motion, or animation. Common characteristics of motion across UI elements define the animation aspects of a design language. 
 
-Because Office is focused on productivity, the Office animation language supports the goal of helping customers get things done. It strikes a balance between performant response, reliable choreography, and detailed delight. Due to the space limitations of an add-in, it is important to consider the following guidelines when applying motion. 
-
+Because Office is focused on productivity, the Office animation language supports the goal of helping customers get things done. It strikes a balance between performant response, reliable choreography, and detailed delight. Add-ins embedded in Office sit within this existing animation language. Given this context, it is important to consider the following guidelines when applying motion. 
 
 
 ## Create motion with a purpose
