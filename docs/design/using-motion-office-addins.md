@@ -17,7 +17,7 @@ There are standard elements used in an add-in that can incorporate motion to hel
 
 |Do|Don't|
 |:-----|:-----|
-|Identify key elements in the add-in that should have motion. Commonly animated elements in an add-in are panels, overlays, modals, tool tips, menus, and teaching call outs.| Don't overwhelm the user by animating every element. Avoid applying multiple motions that attempt to lead or focus the user many areas at once. |
+|Identify key elements in the add-in that should have motion. Commonly animated elements in an add-in are panels, overlays, modals, tool tips, menus, and teaching call outs.| Don't overwhelm the user by animating every element. Avoid applying multiple motions that attempt to lead or focus the user on many elements at once. |
 |Use simple, subtle motion that behaves in expected ways. Consider the origin of your triggering element. Use motion to create a link between the action and the resulting UI. | Don't create wait time for a motion. Motion in add-ins should not hinder task completion.|
 
 ![gif that shows a panel opening with minimal moving elements next to a gif that shows a panel opening with lots of moving elements](../images/add-in-motion-purpose.gif)
