@@ -136,7 +136,7 @@ Here is an example of this approach:
 ```js
 Excel.run(async (ctx) => {
     var sheet = ctx.workbook.worksheets.getItem("Sheet1");
-    // Write the data into the range first
+    // Write the data into the range first 
     var range = sheet.getRange("A1:B3");
     range.values = [["Key", "Value"], ["A", 1], ["B", 2]];
 
