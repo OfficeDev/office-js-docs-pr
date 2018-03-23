@@ -190,7 +190,7 @@ You can cancel streamed functions and asynchronous functions. Canceling your fun
 - One of the arguments (inputs) for the function changes. In this case, a new function call is triggered in addition to the cancelation.
 - The user triggers recalculation manually. As with the above case, a new function call is triggered in addition to the cancelation.
 
-The following code shows the previous example with cancellation implemented. In the code, the `caller` object contains an `onCanceled` function which should be defined for each custom function.
+The following code shows the previous example with cancellation implemented. In the code, the `caller` object contains an `onCanceled` property which should be defined for each custom function. In order for Excel to call the `onCanceled` function, you must declare support for cancellation during your function registration by setting the parameter `cancelable` to `true`.
 
 ```js
 function incrementValue(increment, caller){ 

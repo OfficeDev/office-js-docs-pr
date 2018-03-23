@@ -10,19 +10,22 @@
     href: overview/office-add-in-availability.md
     displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
 
-- name: Quickstarts
+- name: Quick Starts
   items:
   - name: Create Excel add-in
     items:
-    - name: Use React
-      href: quickstarts/excel-quickstart-react.md
-      displayName: Excel
     - name: Use Angular
       href: quickstarts/excel-quickstart-angular.md
       displayName: Excel
     - name: Use jQuery
       href: quickstarts/excel-quickstart-jquery.md
       displayName: Excel
+    - name: Use React
+      href: quickstarts/excel-quickstart-react.md
+      displayName: Excel
+    - name: Use Vue
+      href: quickstarts/excel-quickstart-vue.md
+      displayName: Excel 
   - name: Create Word add-in
     href: quickstarts/word-quickstart.md
     displayName: Word
@@ -43,6 +46,13 @@
   items:
   - name: Excel add-in tutorial
     href: tutorials/excel-tutorial.yml
+    displayName: Excel
+  - name: PowerPoint add-in tutorial
+    href: tutorials/powerpoint-tutorial.yml
+    displayName: PowerPoint
+  - name: Word add-in tutorial
+    href: tutorials/word-tutorial.yml
+    displayName: Word
 
 - name: Concepts
   items:
@@ -124,6 +134,8 @@
 
   - name: Develop
     items:
+    - name: Office versions and requirement sets
+      href: develop/office-versions-and-requirement-sets.md
     - name: Install the latest Office version
       href: develop/install-latest-office-version.md
     - name: Office JavaScript API
@@ -196,15 +208,21 @@
       href: excel/excel-add-ins-get-started-overview.md
       displayName: Excel
       items:
-      - name: Use React
-        href: excel/excel-add-ins-get-started-react.md
-        displayName: Excel
       - name: Use Angular
         href: excel/excel-add-ins-get-started-angular.md
         displayName: Excel
       - name: Use jQuery
         href: excel/excel-add-ins-get-started-jquery.md
         displayName: Excel
+      - name: Use React
+        href: excel/excel-add-ins-get-started-react.md
+        displayName: Excel
+      - name: Use Vue
+        href: excel/excel-add-ins-get-started-vue.md
+        displayName: Excel
+    - name: Excel add-in tutorial
+      href: tutorials/excel-tutorial.yml
+      displayName: Excel
     - name: Core concepts
       href: excel/excel-add-ins-core-concepts.md
       displayName: Excel
@@ -251,6 +269,9 @@
     - name: Build your first Word add-in
       href: word/word-add-ins.md
       displayName: Word
+    - name: Word add-in tutorial
+      href: tutorials/word-tutorial.yml
+      displayName: Word
     - name: Create better add-ins for Word with Office Open XML
       href: word/create-better-add-ins-for-word-with-office-open-xml.md
       displayName: Word
@@ -280,6 +301,9 @@
     items:
     - name: Build your first PowerPoint add-in
       href: powerpoint/powerpoint-add-ins-get-started.md
+      displayName: PowerPoint
+    - name: PowerPoint add-in tutorial
+      href: tutorials/powerpoint-tutorial.yml
       displayName: PowerPoint
     - name: Use document themes in your PowerPoint add-ins
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
