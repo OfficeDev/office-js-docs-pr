@@ -79,7 +79,7 @@
       - name: Design language
         href: design/add-in-design-language.md
       - name: Using motion
-        href: design/using-motions-office-addins.md
+        href: design/using-motion-office-addins.md
       - name: UX design templates
         href: design/ux-design-patterns.md
       - name: Usability testing
