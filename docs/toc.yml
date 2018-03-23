@@ -68,10 +68,6 @@
       items:
       - name: Design language
         href: design/add-in-design-language.md
-      - name: Using motion in Office add-ins
-        href: design/using-motions-office-addins.md
-      - name: UX design templates
-        href: design/ux-design-patterns.md
       - name: Usability testing
         href: design/usability-testing.md
     - name: Interface elements
@@ -94,11 +90,20 @@
         items:
         - name: Data visualization style guidelines
           href: design/data-visualization-guidelines.md
+    - name: UX design templates
+      href: design/ux-design-pattern-templates.md
+      items:
+      - name: First run experience
+        href: design/first-run-experience-patterns.md
+      - name: Authentication
+        href: design/authentication-patterns.md
+      - name: Navigation
+        href: design/navigation-patterns.md
+      - name: Branding patterns
+        href: design/branding-patterns.md
     - name: Office UI Fabric
       href: design/office-ui-fabric.md
       items:
-      - name: Get started using Fabric JS
-        href: design/using-office-ui-fabric-js.md
       - name: Get started using Fabric React
         href: design/using-office-ui-fabric-react.md
       - name: Breadcrumb
