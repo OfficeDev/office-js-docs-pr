@@ -78,7 +78,7 @@
       items:
       - name: Design language
         href: design/add-in-design-language.md
-      - name: Using motion in Office add-ins
+      - name: Using motion
         href: design/using-motions-office-addins.md
       - name: UX design templates
         href: design/ux-design-patterns.md
