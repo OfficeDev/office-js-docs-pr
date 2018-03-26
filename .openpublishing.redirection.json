@@ -133,7 +133,7 @@
         "source_path": "docs/tutorials/create-and-debug-office-add-ins-in-visual-studio.md", 
         "redirect_url": "/office/dev/add-ins/develop/create-and-debug-office-add-ins-in-visual-studio", 
         "redirect_document_id": true 
-      }
+      },
       {
             "source_path": "docs/design/ui-elements/using-office-ui-fabric.md",
             "redirect_url": "docs/design/office-ui-fabric.md",
