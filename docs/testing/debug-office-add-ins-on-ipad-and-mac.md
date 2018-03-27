@@ -12,25 +12,26 @@ You can use Visual Studio to develop and debug add-ins on Windows, but you can't
 
 You can debug an Office add-in using Safari Web Inspector. 
 
-To enable debugging Office add-ins on Mac, you must have Mac OS High Sierra AND Mac Office Version: 16.9.1 (Build 18012504) or later. If you don't have an Office Mac build, you can get one by joining the [Office 365 Developer program](https://aka.ms/o365devprogram).
+To be able to debug Office Add-ins on Mac, you must have Mac OS High Sierra AND Mac Office Version: 16.9.1 (Build 18012504) or later. If you don't have an Office Mac build, you can get one by joining the [Office 365 Developer program](https://aka.ms/o365devprogram).
 
-To start, open a terminal and set the OfficeWebAddinDeveloperExtras property for the relevant Office application as follows:
+To start, open a terminal and set the `OfficeWebAddinDeveloperExtras` property for the relevant Office application as follows:
 
 - `defaults write com.microsoft.Word OfficeWebAddinDeveloperExtras -bool true`
 - `defaults write com.microsoft.Excel OfficeWebAddinDeveloperExtras -bool true`
 - `defaults write com.microsoft.Powerpoint OfficeWebAddinDeveloperExtras -bool true`
 - `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
 
-Then, open the Office application, and insert your add-in. Right click the add-in and you should see an **Inspect Element** option in the context menu.  Select that and it will pop the Inspector, where you can set breakpoints and debug your add-in.
+Then, open the Office application and insert your add-in. Right-click the add-in and you should see an **Inspect Element** option in the context menu.  Select that option and it will pop the Inspector, where you can set breakpoints and debug your add-in.
 
-> **Note**: Please note that this is an experimental feature and there are no guarantees that we will preserve this functionality in future versions of Office applications.
+> [!NOTE]
+> Please note that this is an experimental feature and there are no guarantees that we will preserve this functionality in future versions of Office applications.
 
 ## Debugging with Vorlon.JS on a iPad or Mac
 
-For debugging an add-in on an Ipad (or a Mac), you can Vorlon.JS is a debugger for web pages, similar to the F12 tools. It is designed to work remotely and it enables you to debug web pages across different devices. For more information, see the [Vorlon website](http://www.vorlonjs.com).  
+To debug an add-in on iPad or Mac, you can use Vorlon.JS, a debugger for web pages that is similar to the F12 tools. It is designed to work remotely and it enables you to debug web pages across different devices. For more information, see the [Vorlon website](http://www.vorlonjs.com).  
 
 
-### Install and set up up Vorlon.JS  
+### Install and set up Vorlon.JS  
 
 1.	Log on to the device as an administrator.
 
