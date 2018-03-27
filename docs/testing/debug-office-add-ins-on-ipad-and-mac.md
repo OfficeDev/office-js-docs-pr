@@ -17,8 +17,11 @@ To be able to debug Office Add-ins on Mac, you must have Mac OS High Sierra AND 
 To start, open a terminal and set the `OfficeWebAddinDeveloperExtras` property for the relevant Office application as follows:
 
 - `defaults write com.microsoft.Word OfficeWebAddinDeveloperExtras -bool true`
+
 - `defaults write com.microsoft.Excel OfficeWebAddinDeveloperExtras -bool true`
+
 - `defaults write com.microsoft.Powerpoint OfficeWebAddinDeveloperExtras -bool true`
+
 - `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
 
 Then, open the Office application and insert your add-in. Right-click the add-in and you should see an **Inspect Element** option in the context menu.  Select that option and it will pop the Inspector, where you can set breakpoints and debug your add-in.
