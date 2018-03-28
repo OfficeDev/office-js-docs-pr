@@ -53,9 +53,6 @@ selectedRange.format.autofitColumns();
  
 Calling the **sync()** method on the request context synchronizes the state between proxy objects and objects in the Excel document. The **sync()** method runs any commands that are queued on the request context and retrieves values for any properties that should be loaded on the proxy objects. The **sync()** method executes asynchronously and returns a [promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), which is resolved when the **sync()** method completes.
  
-> [!NOTE]
-> In the Excel JavaScript API, **sync()** is the only asynchronous operation. To optimize performance, you should queue up as many changes as possible before calling **sync()** and minimize the number of times you call **sync()**.
- 
 The following example shows a batch function that defines a local JavaScript proxy object (**selectedRange**), loads a property of that object, and then uses the JavaScript Promises pattern to call **context.sync()** to synchronize the state between proxy objects and objects in the Excel document.
  
 ```js
@@ -76,7 +73,7 @@ Excel.run(function (context) {
  
 In the previous example, **selectedRange** is set and its **address** property is loaded when **context.sync()** is called.
  
-Because **sync()** is an asynchronous operation that returns a promise, you should always **return** the promise (in JavaScript). Doing so ensures that the **sync()** operation completes before the script continues to run.
+Because **sync()** is an asynchronous operation that returns a promise, you should always **return** the promise (in JavaScript). Doing so ensures that the **sync()** operation completes before the script continues to run. For more information about optimizing performance with **sync()**, see [Excel JavaScript API performance optimization](https://dev.office.com/reference/add-ins/excel/performance.md).
  
 ### load()
  
@@ -115,31 +112,8 @@ Excel.run(function (context) {
 ```
  
 In the previous example, because `format/font` is not specified in the call to **myRange.load()**, the `format.font.color` property cannot be read.
- 
-To optimize performance, you should explicitly specify the properties and relationships to load when using the **load()** method on an object. For example, if you only intend to read back the **address** property of a range object, specify only that property when you call the **load()** method:
- 
-```js
-range.load('address');
-```
- 
-You can call **load()** method in any of the following ways:
- 
-_Syntax:_
- 
-```js
-object.load(string: properties);
-// or
-object.load(array: properties);
-// or
-object.load({ loadOption });
-```
- 
-_Where:_
- 
-* `properties` is the list of properties and/or relationship names to be loaded specified as comma-delimited strings, or an array of names. For more information, see the **load()** methods defined for objects in [Excel JavaScript API reference](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview).
-* `loadOption` specifies an object that describes the selection, expansion, top, and skip options. See object load [options](https://dev.office.com/reference/add-ins/excel/loadoption) for details.
 
-For more information about the **load()** method, see [Excel JavaScript API advanced concepts](excel-add-ins-advanced-concepts.md).
+To optimize performance, you should explicitly specify the properties and relationships to load when using the **load()** method on an object, as covered in [Excel JavaScript API performance optimizations](performance.md). For more information about the **load()** method, see [Excel JavaScript API advanced concepts](excel-add-ins-advanced-concepts.md).
 
 ## null or blank property values
  
@@ -280,4 +254,5 @@ When an API error occurs, the API will return an **error** object that contains 
  
 * [Get started with Excel add-ins](excel-add-ins-get-started-overview.md)
 * [Excel add-ins code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
+* [Excel JavaScript API performance optimization](https://dev.office.com/reference/add-ins/excel/performance.md)
 * [Excel JavaScript API reference](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
