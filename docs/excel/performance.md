@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API performance optimization
 description: 'Optimize performance using Excel JavaScript API'
-ms.date: 03/13/2017
+ms.date: 03/28/2017
 ---
 
 # Performance optimization using the Excel JavaScript API
