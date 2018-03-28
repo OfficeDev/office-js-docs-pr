@@ -1,12 +1,12 @@
 ---
 title: Excel JavaScript API performance optimization
-description: ''
+description: 'Optimize performance using Excel JavaScript API'
 ms.date: 03/13/2017
 ---
 
-# Performance optimization
+# Performance optimization using the Excel JavaScript API
 
-Some common tasks can be accomplished via the Excel JavaScript API in more than one way, and there may be significant performance differences between various approaches. This article provides guidance and code samples that show how to perform common tasks in an efficient way using Excel JavaScript API.
+Creating apps using the Excel JavaScript API, there are multiple ways that you can perform common tasks. You'll find significant performance differences between various approaches. This article provides guidance and code samples to show you how to perform common tasks efficiently using Excel JavaScript API.
 
 ## Minimize the number of sync() calls
 
@@ -44,9 +44,9 @@ worksheet.getRange("A1").set({
 
 ## Load necessary properties only
 
-In the Excel JavaScript API, you need to explicitly load the properties of a proxy object. Although you are able to load all the properties at once with an empty ```load()``` call, that approach can have significant performance overhead. Instead, we strongly suggest that you only load the necessary properties, especially for those objects which have a large number of properties.
+In the Excel JavaScript API, you need to explicitly load the properties of a proxy object. Although you're able to load all the properties at once with an empty ```load()``` call, that approach can have significant performance overhead. Instead, we suggest that you only load the necessary properties, especially for those objects which have a large number of properties.
 
-For example, if you only intend to read back the **address** property of a range object, specify only that property when you call the **load()** method:
+For example, if you only intend to read the **address** property of a range object, specify only that property when you call the **load()** method:
  
 ```js
 range.load('address');
@@ -66,10 +66,10 @@ object.load({ loadOption });
  
 _Where:_
  
-* `properties` is the list of properties to be loaded, specified as comma-delimited strings or as an array of names. For more information, see the **load()** methods defined for objects in [Excel JavaScript API reference](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview).
+* `properties` is the list of properties to load, specified as comma-delimited strings or as an array of names. For more information, see the **load()** methods defined for objects in [Excel JavaScript API reference](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview).
 * `loadOption` specifies an object that describes the selection, expansion, top, and skip options. See object load [options](https://dev.office.com/reference/add-ins/excel/loadoption) for details.
 
-Also, please be aware that some of the “properties” under an object may actually be another object. For example, `format` is a property under range object, but `format` itself is an object as well. So, if you make a call such as `range.load("format")`, this is equivalent to `range.format.load()`, which is an empty load() call that can cause performance problems as outlined above. To avoid that, your code should only load the “leaf nodes” in an object tree. 
+Please be aware that some of the “properties” under an object may actually be another object. For example, `format` is a property under range object, but `format` itself is an object as well. So, if you make a call such as `range.load("format")`, this is equivalent to `range.format.load()`, which is an empty load() call that can cause performance problems as outlined previously. To avoid this, your code should only load the “leaf nodes” in an object tree. 
 
 ## Suspend calculation temporarily
 
