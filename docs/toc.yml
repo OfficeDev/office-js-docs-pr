@@ -3,7 +3,7 @@
   displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
 - name: Overview
   items:
-  - name: About Office Add-ins 
+  - name: About Office Add-ins
     href: overview/office-add-ins.md
     displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
   - name: Host and platform availability
