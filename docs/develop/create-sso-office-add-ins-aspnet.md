@@ -47,86 +47,25 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Register the add-in with Azure AD v2.0 endpoint
 
-1. Navigate to [https://apps.dev.microsoft.com/](https://apps.dev.microsoft.com).
-
-1. Sign-in with the admin credentials to your Office 365 tenancy. For example, MyName@contoso.onmicrosoft.com
-
-1. Click **Add an app**.
-
-1. When prompted, use “Office-Add-in-ASPNET-SSO” as the app name, and then press **Create application**.
-
-1. When the configuration page for the app opens, copy the **Application Id** and save it. You'll use it in a later procedure.
-
-    > [!NOTE]
-    > This ID is the “audience” value when other applications, such as the Office host application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the “client ID” of the application when it, in turn, seeks authorized access to Microsoft Graph.
-
-1. In the **Application Secrets** section, press **Generate New Password**. A popup dialog opens with a new password (also called an “app secret”) displayed. *Copy the password immediately and save it with the application ID.* You'll need it in a later procedure. Then close the dialog.
-
-1. In the **Platforms** section, click **Add Platform**.
-
-1. In the dialog that opens, select **Web API**.
-
-1. An **Application ID URI** has been generated of the form “api://{App ID GUID}”. Insert the string “localhost:44355/” between the double forward slashes and the GUID. The entire ID should read `api://localhost:44355/{App ID GUID}`. 
-
-    > [!NOTE]
-    > The domain part of the **Scope** name just below the **Application ID URI** will automatically change to match. It should read `api://localhost:44355/{App ID GUID}/access_as_user`.
-
-1. In the **Pre-authorized applications** section, you identify the applications that you want to authorize to your add-in's web application. Each of the following IDs needs to be pre-authorized. Each time you enter one, a new empty textbox appears. (Enter only the GUID.)
-    * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
-    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office Online)
-    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office Online)
-
-1. Open the **Scope** drop-down beside each **Application ID** and check the box for `api://localhost:44355/{App ID GUID}/access_as_user`.
-
-1. Near the top of the **Platforms** section, click **Add Platform** again and select **Web**.
-
-1. In the new **Web** section under **Platforms**, enter the following as a **Redirect URL**: `https://localhost:44355`.
-
-    > [!NOTE]
-    > As of this writing, the **Web API** platform sometimes disappears from the **Platforms** section, particularly if the page is refreshed after the **Web** platform is added *and the registration page is saved*. For reassurance that your **Web API** platform is still part of the registration, click the **Edit Application Manifest** button near the bottom of the page. You should see the `api://localhost:44355/{App ID GUID}` string in the **identifierUris** property of the manifest. There will also be a **oauth2Permissions** property whose **value** subproperty has the value `access_as_user`.
-
-1. Scroll down to the **Microsoft Graph Permissions** section, the **Delegated Permissions** subsection. Use the **Add** button to open a **Select Permissions** dialog.
-
-1. In the dialog box, check the boxes for the following permissions. Only the first is really required by your add-in itself; but the MSAL library that the server-side code uses requires `offline_access` and `openid`. The `profile` permission is required for the Office host to get a token to your add-in web application.
+The following instruction are written generically so they can be used in multiple places. For this ariticle do the following:
+- Replace the placeholder **$ADD-IN-NAME$** with `Office-Add-in-ASPNET-SSO`.
+- Replace the placeholder **$FQDN-WITHOUT-PROTOCOL$** with `localhost:44355`.
+- When you specify permissions in the **Select Permissions** dialog, check the boxes for the following permissions. Only the first is really required by your add-in itself; but the MSAL library that the server-side code uses requires `offline_access` and `openid`. The `profile` permission is required for the Office host to get a token to your add-in web application.
     * Files.Read.All
     * offline_access
     * openid
     * profile
 
-    > [!NOTE]
-    > The `User.Read` permission may already be listed by default. It is a good practice not to ask for permissions that are not needed, so we recommend that you uncheck the box for this permission.
 
-1. At the bottom of the dialog, click **OK**.
+[!INCLUDE[](../includes/register-sso-add-in-aad-v2-include.md)]
 
-1. At the bottom of the registration page, click **Save**.
+## Grant administrator consent to the add-in
 
-## Grant admin consent to the add-in
-
-> [!NOTE]
-> This procedure is only needed when you're developing the add-in. When your production add-in is deployed to AppSource or an add-in catalog, users will individually trust it or an admin will consent for organization at installation.
-
-1. If the add-in isn't running in Visual Studio, press **F5** to run it. It needs to be running in IIS for this procedure to complete smoothly.
-
-1. In the following string, replace the placeholder “{application_ID}” with the Application ID that you copied when you registered your add-in:
-    `https://login.microsoftonline.com/common/adminconsent?client_id={application_ID}&state=12345`
-
-1. Paste the resulting URL into a browser address bar and navigate to it.
-
-1. When prompted, sign in with the admin credentials to your Office 365 tenancy.
-
-1. You are then prompted to grant permission for your add-in to access your Microsoft Graph data. Click **Accept**.
-
-1. The browser window/tab is then redirected to the **Redirect URL** that you specified when you registered the add-in, so the home page of the add-in opens in the browser.
-
-2. In the browser's address bar you'll see a "tenant" query parameter with a GUID value. This is the ID of your Office 365 tenancy. Copy and save this value. You'll use it in a later step.
-
-3. Close the window/tab.
-
-1. Stop the debugger in Visual Studio.
+[!INCLUDE[](../includes/grant-admin-consent-to-an-add-in-include.md)]
 
 ## Configure the add-in
 
-1. In the following string, replace the placeholder “{tenant_ID}” with the Office 365 tenant ID you obtained earlier. If for any reason, you didn't get the ID earlier, use one of the methods in [Find your Office 365 tenant ID](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) to obtain it.
+1. In the following string, replace the placeholder “{tenant_ID}” with your Office 365 tenant ID. Use one of the methods in [Find your Office 365 tenant ID](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) to obtain it.
 
     `https://login.microsoftonline.com/{tenant_ID}/v2.0`
 
@@ -182,7 +121,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     > * The **Resource** value is the **Application ID URI** you set when you added the Web API platform to the registration of the add-in.
     > * The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through AppSource.
 
-1. Open the **Warnings** tab of the **Error List** in Visual Studio. If there is a warning that `<WebApplicationInfo>` is not a valid child of `<VersionOverrides>`, your version of Visual Studio 2017 Preview does not  recognize the SSO markup. As a workaround, do the following for a Word, Excel, or PowerPoint add-in. (If you are working with an Outlook add-in see the workaround below.)
+1. Open the **Warnings** tab of the **Error List** in Visual Studio. If there is a warning that `<WebApplicationInfo>` is not a valid child of `<VersionOverrides>`, your version of Visual Studio 2017 Preview does not recognize the SSO markup. As a workaround, do the following for a Word, Excel, or PowerPoint add-in. (If you are working with an Outlook add-in see the workaround below.)
 
    - **Workaround for Word, Excel, and Powerpoint**
 
