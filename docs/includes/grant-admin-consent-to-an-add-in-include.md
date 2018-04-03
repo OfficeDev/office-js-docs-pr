@@ -2,7 +2,7 @@
 > [!NOTE]
 > This procedure is only needed when you're developing the add-in. When your production add-in is deployed to AppSource or an add-in catalog, users will individually trust it or an admin will consent for organization at installation.
 
-Carry out this procedure *after* you have [registered the add-in](register-sso-add-in-aad-v2.md).
+Carry out this procedure *after* you have [registered the add-in](../develop/register-sso-add-in-aad-v2.md).
 
 1. In the following string, replace the placeholder “{application_ID}” with the Application ID that you copied when you registered your add-in:
     `https://login.microsoftonline.com/common/adminconsent?client_id={application_ID}&state=12345`
