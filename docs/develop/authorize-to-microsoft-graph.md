@@ -24,7 +24,7 @@ The following diagram shows how the process of signing in and getting access to 
 
 ![A diagram that shows the SSO process](../images/sso-access-to-microsoft-graph.png)
 
-1. In the add-in, JavaScript calls a new Office.js API `getAccessTokenAsync`. This tells the Office host application to obtain an access token to the add-in. (Hereafter, this is called the **bootstrap access token** because it is replaced with a second token later in the process. For an example of a decoded bootstrap access token, see [Example access token](sso-in-office-add-ins#example-access-token).)
+1. In the add-in, JavaScript calls a new Office.js API `getAccessTokenAsync`. This tells the Office host application to obtain an access token to the add-in. (Hereafter, this is called the **bootstrap access token** because it is replaced with a second token later in the process. For an example of a decoded bootstrap access token, see [Example access token](sso-in-office-add-ins.md#example-access-token).)
 1. If the user is not signed in, the Office host application opens a pop-up window for the user to sign in.
 1. If this is the first time the current user has used your add-in, he or she is prompted to consent.
 1. The Office host application requests the **bootstrap access token** from the Azure AD v2.0 endpoint for the current user.
@@ -45,7 +45,7 @@ You develop an add-in that accesses Microsoft Graph just as you would any other 
 
 Depending on your language and framework, libraries might be available that will simplify the ser-side code you have to write. Your code should do the following:
 
-* Validate the add-in bootstrap access token that is received from the token handler you created earlier. For more information, see [Validate the access token](sso-in-office-add-ins#validate-the-access-token). 
+* Validate the add-in bootstrap access token that is received from the token handler you created earlier. For more information, see [Validate the access token](sso-in-office-add-ins.md#validate-the-access-token). 
 * Initiate the “on behalf of” flow with a call to the Azure AD v2.0 endpoint that includes the bootstrap access token, some metadata about the user, and the credentials of the add-in (its ID and secret).
 * Cache the returned access token to Microsoft Graph. For more information about this flow see [Azure Active Directory v2.0 and OAuth 2.0 On-Behalf-Of flow](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of).
 * Create one or more Web API methods that get Microsoft Graph data by passing the cached access token to Microsoft Graph.
