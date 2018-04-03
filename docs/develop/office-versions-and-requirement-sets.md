@@ -1,6 +1,6 @@
 ---
 title: Office versions and requirement sets
-description: 'Use Office Add-ins requirement sets to determine whether an Office host supports the API or capabilities you need.'
+description: ''
 ms.date: 03/29/2018
 ---
 # Office versions and requirement sets
