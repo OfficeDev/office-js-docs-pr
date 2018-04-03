@@ -1,3 +1,8 @@
+---
+title: Office versions and requirement sets
+description: ''
+ms.date: 03/29/2018
+---
 # Office versions and requirement sets
 
 There are many versions of Office on several platforms, and they don't all support every API in Office JavaScript API (Office.js). You may not always have control over the version of Office your users have installed.  To handle this situation, we provide a system called requirement sets to help you determine whether an Office host supports the capabilities you need in your Office Add-in. 
