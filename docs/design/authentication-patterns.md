@@ -12,6 +12,7 @@ Apply the following patterns as applicable to create or enhance the authenticati
 
 ## Authentication flow for Single Sign On (SSO)
 
+
 While Single Sign On (SSO) support has not yet officially been released, once published it should be considered for the default authentication flow of your add-in.  SSO provides the user with the best authentication experience, esentially moving the authentication into the broader installation process.
 
 As an add-in is being installed, a user will see a consent window similar to the one below:
@@ -19,8 +20,6 @@ As an add-in is being installed, a user will see a consent window similar to the
 ![Authentication Flow - Single Sign On](../Screens/Components/Single_Sign_On_Consent@2x.png)
 
 The add-in publisher will have control over the logo and strings included in the SSO window, but the UI is pre-configured by Microsoft.
-
- 
 
 After consent has been given by the user, the installation process will conclude, and your add-in will be added and ready to use.
 
@@ -31,6 +30,7 @@ After consent has been given by the user, the installation process will conclude
 ## Authentication flow for a single identity provider
 
 If SSO is not available to a user, an alternative authentication flow is for a single or multi-identity provider.
+=======
 
 ![Authentication Dialog Single Identity - Flowchart](https://raw.githubusercontent.com/OfficeDev/Office-Add-in-UX-Design-Patterns/master/assets/images/auth_single_flow.png)
 
@@ -38,10 +38,12 @@ If SSO is not available to a user, an alternative authentication flow is for a s
 ![Authentication Flow - First run placemat](../Screens/Addin_Screens/FRE-Value@2x.png)
 
 2. Provider Sign-in - The identity provider will have their own UI. Microsoft Azure Active Directory allows customization of sign-in and access panel pages for consistent look and feel with your service. [Learn More](https://azure.microsoft.com/en-us/documentation/articles/active-directory-add-company-branding/).
+
 ![Authentication Dialog Single Identity - Provider Sign-in](../Screens/Addin_Screens/Multi_Authentication_Modal@2x.png)
 
 3. Progress - Indicate progress while settings and UI load.
 ![Authentication Dialog Single Identity - Progress](../Screens/Addin_Screens/Multi_Authentication_Modal_Interstitial@2x.png)
+=======
 
 ## More details
 
