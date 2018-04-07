@@ -28,7 +28,6 @@ For examples of the error handling described in this section, see:
 > [!NOTE]
 > Besides the suggestions made in this section, an Outlook add-in has an additional way to respond to any 13*nnn* error. For details, see [Scenario: Implement single sign-on to your service in an Outlook add-in](https://docs.microsoft.com/en-us/outlook/add-ins/implement-sso-in-outlook-add-in) and [AttachmentsDemo Sample Add-in](https://github.com/OfficeDev/outlook-add-in-attachments-demo). 
 
-
 ### 13000
 
 The [getAccessTokenAsync](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync) API is not supported by the add-in or the Office version. 
@@ -72,7 +71,7 @@ The Office host was unable to get an access token to the add-in's web service.
     - The user has revoked consent, after previously granting it. Your code should recall the `getAccessTokenAsync` method with the option `forceConsent: true`, but no more than once.
     - The user is has an Microsoft Account (MSA) identity. Some situations that would cause one of the other 13nnn errors with a Work or School account, will cause a 13007 when a MSA is used. 
 
-  For all of these cases, if you have already tried the forceConsent option once, then your code could suggest that the user retry the operation later.
+  For all of these cases, if you have already tried the `forceConsent` option once, then your code could suggest that the user retry the operation later.
 
 ### 13008
 
@@ -88,6 +87,10 @@ The add-in called the `getAccessTokenAsync` method with the option `forceConsent
 ### 13010
 
 The user is running the add-in on Office Online and is using Edge or Internet Explorer. The user’s Office 365 domain, and the login.microsoftonline.com domain, are in a different security zones in the browser settings. If this error is returned, the user will have already seen an error explaining this and linking to a page about how to change the zone configuration. If your add-in provides functions that don't require the user to be signed in, then your code should catch this error and allow the add-in to stay running.
+
+### 50001
+
+This error (which is not specific to `getAccessTokenAsync`) may indicate that the browser has cashed an old copy of the office.js files. Clear the browser's cache. Another possibility is that the version of Office is not recent enough to support SSO. See [Prerequisites](create-sso-office-add-ins-aspnet.md#prerequisites).
 
 ## Errors on the server-side from Azure Active Directory
 
