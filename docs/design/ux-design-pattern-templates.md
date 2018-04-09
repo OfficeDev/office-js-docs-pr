@@ -5,7 +5,7 @@ When designing Office Add-ins, the UX design of your add-in should provide compe
 * Apply solutions to common customer scenarios.
 * Apply design best practices.
 * Incorporate [Office UI Fabric](https://developer.microsoft.com/en-us/fabric#/get-started) components and styles.
-* Build add-ins that visually integrate with the default Office UI. 
+* Build add-ins that visually integrate with the default Office UI.
 
 <br/>
 
@@ -18,7 +18,7 @@ The patterns are organized by key actions or experiences that are common in an a
 * Navigation
 * Branding Design
 
-Browse each grouping to get an idea of how you can design your add-in using best practices. 
+Browse each grouping to get an idea of how you can design your add-in using best practices.
 
 >NOTE: The example screens shown throughout this documentation are designed and displayed at a resolution of **1366x768**
 
@@ -26,7 +26,7 @@ Browse each grouping to get an idea of how you can design your add-in using best
 
 ## Resources
 
-We've included our toolkit to help you get started. You can find all of our available patterns here with brief descriptions, layout recommendations, and a sample add-in. 
+We've included our toolkit to help you get started. You can find all of our available patterns here with brief descriptions, layout recommendations, and a sample add-in.
 
 #### Downloads
 

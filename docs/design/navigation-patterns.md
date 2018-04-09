@@ -30,7 +30,6 @@ CommandBar is a surface that houses commands that operate on the content of the 
 
 ## Tab Bar
 
-Shows navigation using buttons with vertically stacked text and icons. Use the tab bar to provide navigation using tabs with short and descriptive titles. 
+Shows navigation using buttons with vertically stacked text and icons. Use the tab bar to provide navigation using tabs with short and descriptive titles.
 
 ![Tab Bar - Specifications for desktop task pane](screens/addin_screens/tab_bar@2x.png)
- 

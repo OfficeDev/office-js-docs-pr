@@ -1,6 +1,6 @@
 # First-run experience
 
-A first-run experience is the experience a user has when they open your add-in for the first time. This experience shapes the user's impression of your add-in and can strongly influence their likelihood to continue use. Follow these best practices when crafting your first-run experience. 
+A first-run experience is the experience a user has when they open your add-in for the first time. This experience shapes the user's impression of your add-in and can strongly influence their likelihood to continue use. Follow these best practices when crafting your first-run experience.
 
 
 ## Best practices
@@ -12,9 +12,9 @@ A first-run experience is the experience a user has when they open your add-in f
 |Create an engaging experience that users will want to complete. | Don't force the users to click through the first-run experience. Give users an option to bypass the first-run experience. |
 
 
-Consider whether showing users the first-run experience once or many times is important to your scenario. For example, if users use your add-in periodically, they might forget how to use it, and it might be helpful to see the first-run experience more than once. 
+Consider whether showing users the first-run experience once or many times is important to your scenario. For example, if users use your add-in periodically, they might forget how to use it, and it might be helpful to see the first-run experience more than once.
 
-Apply the following patterns as applicable to create or enhance the first-run experience for your add-in. 
+Apply the following patterns as applicable to create or enhance the first-run experience for your add-in.
 
 ## Carousel
 
@@ -23,7 +23,7 @@ The carousel takes users through a series of features or information pages befor
 <br/>
 
 *Figure 1: Allow users to advance or skip the beginning pages of the carousel flow.*
- 
+
 ![First Run - Carousel - Specifications for desktop task pane](screens/addin_screens/FRE_step_1@2x.png)
 
 <br/>
@@ -54,7 +54,7 @@ The value placement communicates your add-in's value proposition through logo pl
 
 ## Video Placemat
 
-The video placemat shows users a video before they start using your add-in. 
+The video placemat shows users a video before they start using your add-in.
 
 <br/>
 

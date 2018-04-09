@@ -1,5 +1,5 @@
 # Authentication
-Use  dialogs to present authentication screens to your end users. Our flows provide a seamless experience that integrates the Microsoft sign-in with your brand. 
+Use  dialogs to present authentication screens to your end users. Our flows provide a seamless experience that integrates the Microsoft sign-in with your brand.
 
 ## Best practices
 
@@ -15,6 +15,7 @@ Use  dialogs to present authentication screens to your end users. Our flows prov
 Apply the following patterns as applicable to create or enhance the authentication experience for your add-in.
 
 ## Authentication flow for Single Sign On (SSO)
+
 
 While Single Sign On (SSO) support has not yet officially been released, once published it should be considered for the default authentication flow of your add-in.  SSO provides the user with the best authentication experience, esentially moving the authentication into the broader installation process.
 

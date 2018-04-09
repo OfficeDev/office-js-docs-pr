@@ -1,6 +1,6 @@
 # Branding
 
-Use the patterns to 
+Use the patterns to
 ## Best practices
 
 <br/>
