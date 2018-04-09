@@ -17,11 +17,11 @@ Apply the following patterns as applicable to create or enhance the authenticati
 ## Authentication flow for Single Sign On (SSO)
 
 
-While Single Sign On (SSO) support has not yet officially been released, once published it should be considered for the default authentication flow of your add-in.  SSO provides the user with the best authentication experience, esentially moving the authentication into the broader installation process.
+While Single Sign On (SSO) support has not yet officially been released, once published it should be considered for the default authentication flow of your add-in.  SSO provides the user with the best authentication experience, essentially moving the authentication into the broader installation process.
 
 As an add-in is being installed, a user will see a consent window similar to the one below:
 
-![Authentication Flow - Single Sign On](screens/Components/Single_Sign_On_Consent@2x.png)
+![Authentication Flow - Single Sign On](../images/SSO_consent.png)
 
 <br/>
 
@@ -31,9 +31,9 @@ As an add-in is being installed, a user will see a consent window similar to the
 
 After consent has been given by the user, the installation process will conclude, and your add-in will be added and ready to use.
 
-![Authentication Flow - Single Sign On](screens/Addin_Screens/SSO_Modal@2x.png)
+![Authentication Flow - Single Sign On](../images/SSO_modal.png)
 
-![Authentication Flow - Single Sign On](screens/Addin_Screens/TaskPane_Opened@2x.png)
+![Authentication Flow - Single Sign On](../images/taskpane_opened.png)
 
 <br/>
 
@@ -45,19 +45,19 @@ If SSO is not available to a user, an alternative authentication flow is for a s
 
 *1. First Run Placemat - Place the branded sign-in button as a clear call-to action inside your add-in's UI.*
 
-![Authentication Flow - First run placemat](screens/Addin_Screens/FRE_Value@2x.png)
+![Authentication Flow - First run placemat](../images/FRE_value.png)
 
 <br/>
 
 *2. Provider Sign-in - The identity provider will have their own UI. Microsoft Azure Active Directory allows customization of sign-in and access panel pages for consistent look and feel with your service.* [Learn More](https://azure.microsoft.com/en-us/documentation/articles/active-directory-add-company-branding/)
 
-![Authentication Dialog Single Identity - Provider Sign-in](screens/Addin_Screens/Multi_Authentication_Modal@2x.png)
+![Authentication Dialog Single Identity - Provider Sign-in](../images/multi_authentication_modal.png)
 
 <br/>
 
 *3. Progress - Indicate progress while settings and UI load.*
 
-![Authentication Dialog Single Identity - Progress](screens/Addin_Screens/Multi_Authentication_Modal_Interstitial@2x.png)
+![Authentication Dialog Single Identity - Progress](../images/multi_authentication_modal_interstitial.png)
 
 ## More details
 

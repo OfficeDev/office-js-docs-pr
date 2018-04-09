@@ -24,19 +24,19 @@ The carousel takes users through a series of features or information pages befor
 
 *Figure 1: Allow users to advance or skip the beginning pages of the carousel flow.*
 
-![First Run - Carousel - Specifications for desktop task pane](screens/addin_screens/FRE_step_1@2x.png)
+![First Run - Carousel - Specifications for desktop task pane](../images/FRE_step_1.png)
 
 <br/>
 
 *Figure 2: Minimize the number of carousel screens you present to the user to only what is needed to effectively communicate your message*
 
-![First Run - Carousel - Specifications for desktop task pane](screens/addin_screens/FRE_step_2@2x.png)
+![First Run - Carousel - Specifications for desktop task pane](../images/FRE_step_2.png)
 
 <br/>
 
 *Figure 3: Provide a clear call to action to exit the first-run-experience.*
 
-![First Run - Carousel - Specifications for desktop task pane](screens/addin_screens/FRE_step_3@2x.png)
+![First Run - Carousel - Specifications for desktop task pane](../images/FRE_step_3.png)
 
 <br/>
 
@@ -46,7 +46,7 @@ The value placement communicates your add-in's value proposition through logo pl
 
 <br/>
 
-![First Run - Value Placemat - Specifications for desktop task pane](screens/addin_screens/FRE_value@2x.png)
+![First Run - Value Placemat - Specifications for desktop task pane](../images/FRE_value.png)
 
 *Specification for desktop task pane*
 
@@ -60,10 +60,10 @@ The video placemat shows users a video before they start using your add-in.
 
 *Figure 1: First Run Placemat - The screen contains a still image from the video with a play button and clear call to action button.*
 
-![Video Placemat - Specifications for desktop task pane](screens/addin_screens/FRE_video@2x.png)
+![Video Placemat - Specifications for desktop task pane](../images/FRE_video.png)
 
 <br/>
 
 *Figure 2: Video Player - Users are presented with a video within a dialog window.*
 
-![Video Placemat - Specifications for desktop task pane](screens/addin_screens/FRE_video_dialog@2x.png)
+![Video Placemat - Specifications for desktop task pane](../images/FRE_video_dialog.png)
