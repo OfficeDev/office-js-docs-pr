@@ -17,7 +17,7 @@ For an Office Add-ins sample that's built using the Angular framework, see [Word
 Open an nodejs window and enter the following at the command line: 
 
 ```bash
-npm install --save-dev @types/office-js`
+npm install --save-dev @types/office-js
 ```
 
 ## Bootstrapping must be inside Office.initialize
