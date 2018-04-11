@@ -173,10 +173,16 @@
           href: develop/create-sso-office-add-ins-aspnet.md
         - name: Create an SSO add-in using Node.js
           href: develop/create-sso-office-add-ins-nodejs.md
+        - name: Register an Office Add-in that uses SSO with Azure AD v2.0
+          href: develop/register-sso-add-in-aad-v2.md
+        - name: Grant administrator consent to the add-in
+          href: develop/grant-admin-consent-to-an-add-in.md
         - name: Troubleshoot error messages for single sign-on (SSO)
           href: develop/troubleshoot-sso-in-office-add-ins.md
       - name: Authorize external services
         href: develop/auth-external-add-ins.md
+      - name: Authorize to Microsoft Graph
+        href: develop/authorize-to-microsoft-graph.md
 
     - name: Use the Dialog API
       href: develop/dialog-api-in-office-add-ins.md
