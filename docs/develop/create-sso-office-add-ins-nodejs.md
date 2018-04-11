@@ -44,76 +44,19 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Register the add-in with Azure AD v2.0 endpoint
 
-1. Navigate to [https://apps.dev.microsoft.com](https://apps.dev.microsoft.com) . 
-
-1. Sign-in with the admin credentials to your Office 365 tenancy. For example, MyName@contoso.onmicrosoft.com
-
-1. Click **Add an app**.
-
-1. When prompted, use “Office-Add-in-NodeJS-SSO” as the app name, and then press **Create application**.
-
-1. When the configuration page for the app opens, copy the **Application Id** and save it. You will use it in a later procedure. 
-
-    > [!NOTE]
-    > This ID is the “audience” value when other applications, such as the Office host application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the “client ID” of the application when it, in turn, seeks authorized access to Microsoft Graph.
-
-1. In the **Application Secrets** section, press **Generate New Password**. A popup dialog opens with a new password (also called an “app secret”) displayed. *Copy the password immediately and save it with the application ID.* You will need it in a later procedure. Then close the dialog.
-
-1. In the **Platforms** section, click **Add Platform**. 
-
-1. In the dialog that opens, select **Web API**.
-
-1. An **Application ID URI** has been generated of the form “api://{App ID GUID}”. Insert the string “localhost:3000” between the double forward slashes and the GUID. The entire ID should read `api://localhost:3000/{App ID GUID}`. 
-
-    > [!NOTE]
-    > The domain part of the **Scope** name just below the **Application ID URI** will automatically change to match. It should read `api://localhost:3000/{App ID GUID}/access_as_user`.
-
-1. This step and the next one give the Office host application access to your add-in. In the **Pre-authorized applications** section, you identify the applications that you want to authorize to your add-in's web application. Each of the following IDs needs to be pre-authorized. Each time you enter one, a new empty textbox appears. (Enter only the GUID.)
-
-    * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
-    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office Online)
-    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office Online) 
-
-1. Open the **Scope** dropdown beside each **Application ID** and check the box for `api://localhost:3000/{App ID GUID}/access_as_user`.
-
-1. Near the top of the **Platforms** section, click **Add Platform** again and select **Web**.
-
-1. In the new **Web** section under **Platforms**, enter the following as a **Redirect URL**: `https://localhost:3000`. 
-
-1. Scroll down to the **Microsoft Graph Permissions** section, the **Delegated Permissions** subsection. Use the **Add** button to open a **Select Permissions** dialog.
-
-1. In the dialog box, check the boxes for the following permissions: 
-
+The following instruction are written generically so they can be used in multiple places. For this ariticle do the following:
+- Replace the placeholder **$ADD-IN-NAME$** with `“Office-Add-in-NodeJS-SSO`.
+- Replace the placeholder **$FQDN-WITHOUT-PROTOCOL$** with `localhost:3000`.
+- When you specify permissions in the **Select Permissions** dialog, check the boxes for the following permissions. Only the first is really required by your add-in itself; but the `profile` permission is required for the Office host to get a token to your add-in web application.
     * Files.Read.All
     * profile
 
-    > [!NOTE]
-    > The `User.Read` permission may already be listed by default. It is a good practice not to ask for permissions that are not needed, so we recommend that you uncheck the box for this permission.
+[!INCLUDE[](../includes/register-sso-add-in-aad-v2-include.md)]
 
-1. Click **OK** at the bottom of the dialog.
 
-1. Click **Save** at the bottom of the registration page.
+## Grant administrator consent to the add-in
 
-## Grant admin consent to the add-in
-
-> [!NOTE]
-> This procedure is only needed when you are developing the add-in. When your production add-in is deployed to AppSource or an add-in catalog, users will individually trust it when they install it.
-
-1. In the following string, replace the placeholder “{application_ID}” with the Application ID that you copied when you registered your add-in.
-
-    `https://login.microsoftonline.com/common/adminconsent?client_id={application_ID}&state=12345`
-
-1. Paste the resulting URL into a browser address bar and navigate to it.
-
-1. When prompted, sign-in with the admin credentials to your Office 365 tenancy.
-
-1. You are then prompted to grant permission for your add-in to access your Microsoft Graph data. Click **Accept**. 
-
-1. The browser window/tab is then redirected to the **Redirect URL** that you specified when you registered the add-in; so, if the add-in is running, the home page of the add-in opens in the browser. If the add-in is not running, you will get an error saying that the resource at localhost:3000 cannot be found or opened. *But the fact that the redirection was attempted means that the admin consent process completed successfully*. So regardless of whether the home page opened or you got the error, you can go on to the next step.
-
-2. In the browser's address bar you'll see a "tenant" query parameter with a GUID value. This is the ID of your Office 365 tenancy. Copy and save this value. You will use it in a later step.
-
-3. Close the window/tab.
+[!INCLUDE[](../includes/grant-admin-consent-to-an-add-in-include.md)]
 
 ## Configure the add-in
 
@@ -125,7 +68,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 4. For the `audience` property, replace the placeholder `{audience GUID}` with the application ID that you saved when you registered the add-in. (The very same value that you assigned to the `client_id` property.)
   
-3. In the string assigned to the `issuer` property, you will see the placeholder *{O365 tenant GUID}*. Replace this with the Office 365 tenancy ID that you saved at the end of the last procedure. If for any reason, you didn't get the ID earlier, use one of the methods in [Find your Office 365 tenant ID](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) to obtain it. When you are done, the `issuer` property value should look something like this:
+3. In the string assigned to the `issuer` property, you will see the placeholder *{O365 tenant GUID}*. Replace this with the Office 365 tenancy ID. Use one of the methods in [Find your Office 365 tenant ID](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) to obtain it. When you are done, the `issuer` property value should look something like this:
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
