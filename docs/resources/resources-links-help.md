@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins additional resources
 description: 
-ms.date: 11/29/2017
+ms.date: 04/12/2018
 ---
 
 # Office Add-ins additional resources
