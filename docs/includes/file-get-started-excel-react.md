@@ -182,7 +182,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
 Congratulations, you've successfully created an Excel add-in using React! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.
 
 > [!div class="nextstepaction"]
-> [Excel add-in tutorial](../tutorials/excel-tutorial-create-table.md)
+> [Excel add-in tutorial](../tutorials/excel-tutorial.yml)
 
 ## See also
 
