@@ -354,8 +354,7 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 
 ## Next steps
 
-Congratulations, you've successfully created a PowerPoint add-in! Next, learn more about the capabilities of a PowerPoint add-in and explore code samples for common scenarios.
+Congratulations, you've successfully created a PowerPoint add-in! Next, learn more about the capabilities of a PowerPoint add-in and build a more complex add-in by following along with the PowerPoint add-in tutorial.
 
 > [!div class="nextstepaction"]
-> [PowerPoint add-ins](../powerpoint/powerpoint-add-ins.md)
-
+> [PowerPoint add-in tutorial](../tutorials/powerpoint-tutorial.yml)

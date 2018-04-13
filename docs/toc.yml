@@ -261,6 +261,9 @@
       - name: Coauthoring in Excel add-ins
         href: excel/co-authoring-in-excel-add-ins.md
         displayName: Excel
+      - name: Data validation
+        href: excel/excel-add-ins-data-validation.md
+        displayName: Excel
       - name: Error handling
         href: excel/excel-add-ins-error-handling.md
         displayName: Excel

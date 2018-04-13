@@ -148,7 +148,9 @@ In this article, you'll walk through the process of building a OneNote add-in by
 
 3. In the Upload Add-in dialog, browse to **one-note-add-in-manifest.xml** in your project folder, and then choose **Upload**. 
 
-4. The add-in opens in an iFrame next to the OneNote page. Enter some text in the text area, and then choose **Add outline**. The text you entered is added to the page. 
+4. From the **Home** tab, choose the **Show Taskpane** button in the ribbon. The add-in task pane opens in an iFrame next to the OneNote page.
+
+5. Enter some text in the text area, and then choose **Add outline**. The text you entered is added to the page. 
 
     ![The OneNote add-in built from this walkthrough](../images/onenote-first-add-in.png)
 
