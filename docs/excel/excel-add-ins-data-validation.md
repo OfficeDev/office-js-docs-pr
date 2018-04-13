@@ -14,7 +14,7 @@ The Excel JavaScript Library provides APIs to enable your add-in to add automati
 
 ## Programmatic control of data validation
 
-The `Range.dataValidation` property, which takes a [DataValidation](https://dev.office.com/reference/add-ins/excel/datavalidation) object, is the entry point for programmatic control of data validaiton in Excel. There are five properties to the `DataValidation` object:
+The `Range.dataValidation` property, which takes a [DataValidation](https://dev.office.com/reference/add-ins/excel/datavalidation) object, is the entry point for programmatic control of data validation in Excel. There are five properties to the `DataValidation` object:
 
 - `rule` &#8212; Defines what constitutes valid data for the range. See [DataValidationRule](https://dev.office.com/reference/add-ins/excel/datavalidationrule).
 - `errorAlert` &#8212; Specifies whether an error pops up if the user enters invalid data, and defines the alert text, title, and style; for example, **Informational**, **Warning**, and **Stop**. See [DataValidationErrorAlert](https://dev.office.com/reference/add-ins/excel/datavalidationerroralert).
@@ -84,7 +84,7 @@ The next two rule properties take a [DateTimeDataValidation](https://dev.office.
 - `date`
 - `time`
 
-The `DateTimeDataValidation` object is structured similar to the `BasicDataValidation`: it has the properties `formula1`, `formula2`, and `operator`, and is used in the same way. The difference is that you cannot use a number in the formula properties, but you can enter a [ISO 8606 datetime](https://www.iso.org/iso-8601-date-and-time-format.html) string (or an Excel formula). The following is an example that defines valid values as dates in the first week of April, 2018. 
+The `DateTimeDataValidation` object is structured similarly to the `BasicDataValidation`: it has the properties `formula1`, `formula2`, and `operator`, and is used in the same way. The difference is that you cannot use a number in the formula properties, but you can enter a [ISO 8606 datetime](https://www.iso.org/iso-8601-date-and-time-format.html) string (or an Excel formula). The following is an example that defines valid values as dates in the first week of April, 2018. 
 
 ```js
 Excel.run(function (context) {
@@ -152,7 +152,7 @@ Excel.run(function (context) {
 })
 ```
 
-### Creating validation error alerts
+### Create validation error alerts
 
 You can a create custom error alert that appears when a user tries to enter invalid data in a cell. The following is a simple example. Note the following about this code:
 
