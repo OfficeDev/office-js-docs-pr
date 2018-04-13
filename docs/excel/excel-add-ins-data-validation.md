@@ -14,7 +14,7 @@ The Excel JavaScript Library provides APIs to enable your add-in to add automati
 
 ## Programmatic control of data validation
 
-The `Range.dataValidation` property, which takes a  [DataValidation](https://dev.office.com/reference/add-ins/excel/datavalidation) object, is the entry point for programmatic control of data validaiton in Excel. There are five properties to the `DataValidation` object:
+The `Range.dataValidation` property, which takes a [DataValidation](https://dev.office.com/reference/add-ins/excel/datavalidation) object, is the entry point for programmatic control of data validaiton in Excel. There are five properties to the `DataValidation` object:
 
 - `rule` &#8212; Defines what constitutes valid data for the range. See [DataValidationRule](https://dev.office.com/reference/add-ins/excel/datavalidationrule).
 - `errorAlert` &#8212; Specifies whether an error pops up if the user enters invalid data, and defines the alert text, title, and style; for example, **Informational**, **Warning**, and **Stop**. See [DataValidationErrorAlert](https://dev.office.com/reference/add-ins/excel/datavalidationerroralert).
@@ -23,7 +23,7 @@ The `Range.dataValidation` property, which takes a  [DataValidation](https://dev
 - `type` &#8212; A read-only identification of the validation type, such as WholeNumber, Date, TextLength, etc. It is set indirectly when you set the `rule` property.
 
 > [!NOTE]
-> Data validation added programmatically behaves just like manually added data validation. In particular, note that data validation is triggered only if the user directly types a value into a cell or copies and pastes a cell from elsewhere in the workbook and takes the **Values** paste option. If the user copies a cell and does a plain paste into a range with data validation, validation is not triggered.
+> Data validation added programmatically behaves just like manually added data validation. In particular, note that data validation is triggered only if the user directly enters a value into a cell or copies and pastes a cell from elsewhere in the workbook and chooses the **Values** paste option. If the user copies a cell and does a plain paste into a range with data validation, validation is not triggered.
 
 ### Creating validation rules
 
@@ -84,7 +84,7 @@ The next two rule properties take a [DateTimeDataValidation](https://dev.office.
 - `date`
 - `time`
 
-The `DateTimeDataValidation` object is structured just like the `BasicDataValidation`: it has the properties `formula1`, `formula2`, and `operator`, and is used in the same way. The difference is that you cannot use a number in the formula properties, but you can enter a [ISO 8606 datetime](https://www.iso.org/iso-8601-date-and-time-format.html) string (or an Excel formula). The following is an example that defines valid values as dates in the first week of April, 2018. 
+The `DateTimeDataValidation` object is structured similar to the `BasicDataValidation`: it has the properties `formula1`, `formula2`, and `operator`, and is used in the same way. The difference is that you cannot use a number in the formula properties, but you can enter a [ISO 8606 datetime](https://www.iso.org/iso-8601-date-and-time-format.html) string (or an Excel formula). The following is an example that defines valid values as dates in the first week of April, 2018. 
 
 ```js
 Excel.run(function (context) {
@@ -103,13 +103,13 @@ Excel.run(function (context) {
 })
 ```
 
-#### The List validation rule type
+#### List validation rule type
 
 Use the `list` property in the `DataValidationRule` object to specify that the only valid values are those from a finite list. The following is an example. Note the following about this code:
 
 - It assumes that there is a worksheet named "Names" and that the values in the range "A1:A3" are names.
 - The `source` property specifies the list of valid values. The range with the names has been assigned to it. You can also assign a comma-delimited list; for example: "Sue, Ricky, Liz". 
-- The `inCellDropDown` property specifies whether a drop down control will appear in the cell when the user selects it. If set to `true`, then the drop down appears with the list of values from the `source`.
+- The `inCellDropDown` property specifies whether a drop-down control will appear in the cell when the user selects it. If set to `true`, then the drop-down appears with the list of values from the `source`.
 
 ```js
 Excel.run(function (context) {
@@ -128,11 +128,11 @@ Excel.run(function (context) {
 })
 ```
 
-#### The Custom validation rule type
+#### Custom validation rule type
 
 Use the `custom` property in the `DataValidationRule` object to specify a custom validation formula. The following is an example. Note the following about this code:
 
-- It assumes there is a two column table with columns **Athlete Name** and **Comments** in the A and B columns of the worksheet.
+- It assumes there is a two-column table with columns **Athlete Name** and **Comments** in the A and B columns of the worksheet.
 - To reduce verbosity in the **Comments** column, it makes data that includes the athlete's name invalid.
 - `SEARCH(A2,B2)` returns the starting position, in string in B2, of the string in A2. If A2 is not contained in B2, it does not return a number. `ISNUMBER()` returns a boolean. So the `formula` property says that valid data for the **Comment** column is data that does not include the string in the **Athlete Name** column.
 
@@ -154,10 +154,10 @@ Excel.run(function (context) {
 
 ### Creating validation error alerts
 
-You can create custom error alerts that will appear when a user tries to enter invalid data in a cell. The following is a simple example. Note the following about this code:
+You can a create custom error alert that appears when a user tries to enter invalid data in a cell. The following is a simple example. Note the following about this code:
 
-- The `style` property determines whether the user gets an informational alert, a warning, or a "stop" alert. Only `Stop` will actually prevent the user from adding invalid data. The popup for `Warning` and `Information` has options that let the user enter the invalid data anyway.
-- The `showAlert` property defaults to `true`. This means that the Excel host will popup a generic alert (of type `Stop`) unless you create a custom alert which either sets `showAlert` to `false` or sets a custom message, title, and style. This code sets a custom message and title.
+- The `style` property determines whether the user gets an informational alert, a warning, or a "stop" alert. Only `Stop` actually prevents the user from adding invalid data. The pop-up for `Warning` and `Information` has options that allow the user enter the invalid data anyway.
+- The `showAlert` property defaults to `true`. This means that the Excel host will pop-up a generic alert (of type `Stop`) unless you create a custom alert which either sets `showAlert` to `false` or sets a custom message, title, and style. This code sets a custom message and title.
 
 
 ```js
@@ -180,9 +180,9 @@ Excel.run(function (context) {
 
 For more information, see [DataValidationErrorAlert](https://dev.office.com/reference/add-ins/excel/datavalidationerroralert).
 
-### Creating validation prompts
+### Create validation prompts
 
-You can create an instructional prompt that will appear when a user hovers over, or selects, a cell to which data validation has been applied. The following is an example:
+You can create an instructional prompt that appears when a user hovers over, or selects, a cell to which data validation has been applied. The following is an example:
 
 ```js
 Excel.run(function (context) {
@@ -211,7 +211,7 @@ To remove data validation from a range, call the  [Range.dataValidation.clear()]
 myrange.dataValidation.clear()
 ```
 
-It is not necessary that the range you clear is exactly the same range as a range on which you added data validation. If it isn't, only the overlapping cells, if any, of the two ranges are cleared. 
+It isn't necessary that the range you clear is exactly the same range as a range on which you added data validation. If it isn't, only the overlapping cells, if any, of the two ranges are cleared. 
 
 > [!NOTE]
 > Clearing data validation from a range will also clear any data validation that a user has added manually to the range.
