@@ -6,6 +6,9 @@ ms.date: 2/12/2018
 
 # Add data validation to Excel ranges (Preview)
 
+> [!NOTE]
+> While the data validation APIs are in preview, you must load the beta version of the Office JavaScript library to use them. The URL is https://appsforoffice.microsoft.com/lib/beta/hosted/office.js. If you are using TypeScript or your code editor uses a TypeScript type definition file for intellisense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+
 The Excel JavaScript Library provides APIs to enable your add-in to add automatic data validation to tables, columns, rows, and other ranges in a workbook. To understand the concepts and the terminology of data validation, please see the following articles about how users add data validation through the Excel UI:
 
 - [Apply data validation to cells](https://support.office.com/en-us/article/Apply-data-validation-to-cells-29FECBCC-D1B9-42C1-9D76-EFF3CE5F7249)
