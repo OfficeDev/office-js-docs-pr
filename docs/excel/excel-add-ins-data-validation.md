@@ -1,7 +1,7 @@
 ---
 title: Add data validation to Excel ranges
 description: ''
-ms.date: 2/12/2018
+ms.date: 04/13/2018
 ---
 
 # Add data validation to Excel ranges (Preview)
