@@ -14,3 +14,6 @@
       - name: PowerPoint add-in tutorial
         tocHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
         topicHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
+      - name: Word add-in tutorial
+        tocHref: /office/dev/add-ins/tutorials/word-tutorial
+        topicHref: /office/dev/add-ins/tutorials/word-tutorial
