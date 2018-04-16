@@ -202,7 +202,7 @@ Pull requests are typically reviewed within 10 business days.
 
 ## More resources
 
-* To learn more about Markdown, go to the Git creator's site [Daring Fireball].
+* To learn more about Markdown, go to the Markdown creator's site [Daring Fireball].
 * To learn more about using Git and GitHub, first check out the [GitHub Help section] [GitHub Help].
 
 [GitHub Home]: http://github.com
