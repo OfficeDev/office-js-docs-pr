@@ -62,6 +62,6 @@ If you're looking for code samples or documentation about a previous release of 
 
 - [UX design patterns (uses Fabric 2.6.1)](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code) 
 - [Office Add-in Fabric UI sample (uses Fabric 1.0)](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample) 
-- [Using Fabric 2.6.1 in an Office Add-in](ui-elements/using-office-ui-fabric.md)
+
  
 
