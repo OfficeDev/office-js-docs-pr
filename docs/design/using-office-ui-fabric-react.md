@@ -126,5 +126,4 @@ The following is a list of the Fabric React UX components that we recommend for 
 - [Getting started with Fabric React code sample](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
 - [UX design patterns (uses Fabric 2.6.1)](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
 - [Office Add-in Fabric UI sample (uses Fabric 1.0)](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)
-- [Using Fabric 2.6.1 in an Office Add-in](ui-elements/using-office-ui-fabric.md)
 - [Yeoman generator for Office](https://github.com/OfficeDev/generator-office)
