@@ -15,7 +15,7 @@ The `Range` object has an `areas` property of type `AreaCollection`. The members
 > [!NOTE]
 > Excel JavaScript APIs that are in preview are documented in [this branch of the office-js-docs repo](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec/reference/excel). See, for example, [AreaCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec/reference/excel/areacollection.md).
 
-Setting a property on the parent range has the effect of setting the corresponding property on all the child ranges. *Reading* a property of the parent range will usually return `null`, because the corresponding properties of the ranges in its `areas` collection may have inconsistent values for those properties. This will happen even in the case where they all have the same value for the property that is being read. 
+Setting a property on the parent range has the effect of setting the corresponding property on all the child ranges. Reading a property of the parent range will return the value of the corresponding property of the first member of its `areas` collection. 
 
 > [!NOTE]
 > There is always at least one range in the `areas` collection for any `Range` object, but when there is only one, the parent range behaves like an ordinary `Range` object, so you can read as well as write its properties. The `areas` collection has no purpose for this kind of `Range` object. 
