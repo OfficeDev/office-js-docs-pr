@@ -401,7 +401,6 @@ There are two server-side files that need to be modified.
     * The resource parameter is optional. It should not be used when the STS is the AAD V 2.0 endpoint. The V 2.0 endpoint infers the resource from the scopes and it returns an error if a resource is sent in the HTTP Request. 
     * Throwing an exception in the `catch` block will *not* cause an immediate "500 Internal Server Error" to be sent to the client. Calling code in the server.js file will catch this exception and turn it into an error message that is sent to the client.
 
-    
         ```javascript
         private async exchangeForToken(jwt: string, scopes: string[] = ['openid'], resource?: string) {
             try {
@@ -542,7 +541,6 @@ There are two server-side files that need to be modified.
     * The call to `acquireTokenOnBehalfOf` does not include a resource parameter because we constructed the `AuthModule` object (`auth`) with the AAD V2.0 endpoint which does not support a resource property.
     * The second parameter of the call specifies the permissions the add-in will need to get a list of the user's files and folders on OneDrive. (The `profile` permission is not requested because it is only needed when the Office host gets the access token to your add-in, not when you are trading in that token for an access token to Microsoft Graph.)
 
-
     ```javascript
     const graphToken = await auth.acquireTokenOnBehalfOf(jwt, ['Files.Read.All']);
     ```
@@ -583,7 +581,6 @@ There are two server-side files that need to be modified.
 1. Open the file src\odata-helper.ts. The file is almost complete. What's missing is the body of the callback to the handler for the request "end" event. Replace the `TODO` with the following code. About this code note:
 
     * The response from the OData endpoint might be an error, say a 401 if the endpoint requires an access token and it was invalid or expired. But an error message is still a *message*, not an error in the call of `https.get`, so the `on('error', reject)` line at the end of `https.get` isn't triggered. So, the code distinguishes success (200) messages from error messages and sends a JSON object to the caller with either the requested OData or error information.
-
 
     ```javascript
     var error;
