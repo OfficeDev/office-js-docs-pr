@@ -159,7 +159,7 @@
         href: develop/create-addin-commands.md
       - name: Specify Office hosts
         href: develop/specify-office-hosts-and-api-requirements.md
-      - name: Requesting permissions for API use in content and task pane add-ins
+      - name: Request permissions for API use in content and task pane add-ins
         href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
       - name: Update API and manifest version
         href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
