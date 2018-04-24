@@ -4,7 +4,7 @@ Custom functions (similar to user-defined functions, or UDFs), enable developers
 
 The following illustration shows you how an end user would insert a custom function into a cell. The function that adds 42 to a pair of numbers.
 
-<img src="../../images/custom-function.gif" width="579" height="383" />
+<img alt="custom functions" src="../images/custom-function.gif" width="579" height="383" />
 
 Here’s the code for the same custom function.
 
@@ -86,7 +86,7 @@ Note the following about the properties in this example:
 ```
 
 > [!NOTE]
-> The custom functions are registered when you run the add-in for the first time. After that, they are available in all your workbooks (not only the one where the add-in ran initially.)
+> The custom functions are registered when a user runs the add-in for the first time. After that, they are available, for that same user, in all workbooks (not only the one where the add-in ran initially.)
 
 ### Manifest file (manifest.xml)
 
