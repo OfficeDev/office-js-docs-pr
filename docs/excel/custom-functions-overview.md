@@ -46,7 +46,7 @@ function add42(num) {
 The following code in customfunctions.json specifies the metadata for the same function.
 
 > [!NOTE]
-> Detailed reference for the registraion JSON of custom functions, including options not used in this example is at [Custom Functions Registration JSON](https://dev.office.com/reference/add-ins/custom-functions-json.md).
+> Detailed reference for the registraion JSON of custom functions, including options not used in this example is at [Custom Functions Registration JSON](https://dev.office.com/reference/add-ins/custom-functions-json).
 
 Note the following about the properties in this example:
 
