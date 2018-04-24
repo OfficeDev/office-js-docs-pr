@@ -33,7 +33,7 @@ In the cloned sample repo, you’ll see the following files:
 
 ### JavaScript file (customfunctions.js)
 
-The following code in customfunctions.js declares a custom function called `add42` similar to the one above, but it adds 42 to a single input instead of two.
+The following code in customfunctions.js declares a custom function called `add42` similar to the previous example, but it adds 42 to a single input instead of two.
 
 ```js
 function add42(num) {
@@ -50,8 +50,8 @@ The following code in customfunctions.json specifies the metadata for the same f
 
 Note the following about the properties in this example:
 
-- In this case there's only one custom function, so there's only one member of the `functions` array.
-- The `name` property defines the function name. As you see in the animated gif above, a namespace (`CONTOSO`) is prepended to the function name in the Excel autocomplete menu. This prefix is defined in the add-in manifest, described below. The prefix and the function name are separated using a period, and by convention prefixes and function names are uppercase. To use your custom function, a user types the namespace followed by the function's name (`ADD42`) into a cell, in this case `=CONTOSO.ADD42`. The prefix is intended to be used as an identifier for your company or the add-in. 
+- There's only one custom function, so there's only one member of the `functions` array.
+- The `name` property defines the function name. As you see in the animated gif shown previously, a namespace (`CONTOSO`) is prepended to the function name in the Excel autocomplete menu. This prefix is defined in the add-in manifest, described below. The prefix and the function name are separated using a period, and by convention prefixes and function names are uppercase. To use your custom function, a user types the namespace followed by the function's name (`ADD42`) into a cell, in this case `=CONTOSO.ADD42`. The prefix is intended to be used as an identifier for your company or the add-in. 
 - The `description` appears in the autocomplete menu in Excel.
 - When the user requests help for a function, Excel opens a task pane and displays the web page found at the URL specified in `helpUrl`.
 - The `result` property specifies the type of information returned by the function to Excel. The `type` child property can `"string"`, `"number"`, or `"boolean"`. The `dimensionality` property can be `scalar` or `matrix` (a two-dimensional array of values of the specified `type`.)
@@ -86,7 +86,7 @@ Note the following about the properties in this example:
 ```
 
 > [!NOTE]
-> The custom functions are registered when the add-in is run for the first time. After that, they are available in all workbooks (not only the one where the add-in ran initially) for a user.
+> The custom functions are registered when you run the add-in for the first time. After that, they are available in all your workbooks (not only the one where the add-in ran initially.)
 
 ### Manifest file (manifest.xml)
 
