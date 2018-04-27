@@ -20,7 +20,7 @@ Setting a property on the parent range has the effect of setting the correspondi
 > [!NOTE]
 > There is always at least one range in the `areas` collection for any `Range` object, but when there is only one, the parent range behaves like an ordinary `Range` object, so you can read as well as write its properties. The `areas` collection has no purpose for this kind of `Range` object. 
 
-The `areas` property is read only. The only way to get a range with multiple child ranges in its `areas` collection is to call an API that returns such a range. The primary API that does this is the [Worksheet.getRange](https://dev.office.com/reference/add-ins/excel/worksheet#getrangeaddress-string) method, which can now take more than one range address as its parameter. Your code passes the addresses as a comma-delimited string.
+The `areas` property is read only. The only way to get a range with multiple child ranges in its `areas` collection is to call an API that returns such a range. The primary API that does this is the [Worksheet.getRange](https://dev.office.com/reference/add-ins/excel/worksheet#getrangeaddress-string) method, which can now take more than one range address as its parameter. You can refer to multiple ranges with the **Range** property by inserting commas between two or more references. In otherwords, pass the ranges as a comma delimited string.
 
 The following is an example of setting a property on multiple ranges. Note the following about this code:
 
@@ -48,4 +48,4 @@ If your scenario requires you to discover at runtime which range addresses to pa
 ## See also
 
 - [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
-- [Range Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/range)
+- [Range Object (JavaScript API for Excel)](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/excel-add-ins-ranges)
