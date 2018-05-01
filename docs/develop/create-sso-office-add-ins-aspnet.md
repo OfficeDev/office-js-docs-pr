@@ -361,7 +361,6 @@ The following instruction are written generically so they can be used in multipl
     ```javascript
     var exceptionMessage = JSON.parse(result.responseText).ExceptionMessage;
     var message = JSON.parse(result.responseText).Message;
-    }
     ```
 
 1. Replace `TODO11` with the following code. Note about this code:
