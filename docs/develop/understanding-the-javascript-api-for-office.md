@@ -1,7 +1,7 @@
 ---
 title: Understanding the JavaScript API for Office
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/23/2018
 ---
 
 
@@ -10,7 +10,7 @@ ms.date: 12/04/2017
 This article provides information about the JavaScript API for Office and how to use it. For reference information, see [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office). For information about updating Visual Studio project files to the most current version of the JavaScript API for Office, see [Update the version of your JavaScript API for Office and manifest schema files](update-your-javascript-api-for-office-and-manifest-schema-version.md).
 
 > [!NOTE]
-> When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://docs.microsoft.com/en-us/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).
+> If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](https://docs.microsoft.com/en-us/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)). 
 
 ## Referencing the JavaScript API for Office library in your add-in
 
@@ -22,7 +22,7 @@ The [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascr
 
 This will download and cache the JavaScript API for Office files the first time your add-in loads to make sure that it is using the most up-to-date implementation of Office.js and its associated files for the specified version.
 
-For more details around the Office.js CDN, including how versioning and backward compatability is handled, see [Referencing the JavaScript API for Office library from its content delivery network (CDN)](referencing-the-javascript-api-for-office-library-from-its-cdn.md).
+For more details around the Office.js CDN, including how versioning and backward compatibility is handled, see [Referencing the JavaScript API for Office library from its content delivery network (CDN)](referencing-the-javascript-api-for-office-library-from-its-cdn.md).
 
 ## Initializing your add-in
 
@@ -57,11 +57,12 @@ For task pane and content add-ins, Office.initialize provides an additional _rea
 ```js
 Office.initialize = function (reason) {
     $(document).ready(function () {
-      switch (reason) {
-        case 'inserted': console.log('The add-in was just inserted.');
-        case 'documentOpened': console.log('The add-in is already part of the document.');
-    }
-}
+        switch (reason) {
+            case 'inserted': console.log('The add-in was just inserted.');
+            case 'documentOpened': console.log('The add-in is already part of the document.');
+        }
+    });
+ };
 ```
 For more information, see [Office.initialize Event](https://dev.office.com/reference/add-ins/shared/office.initialize) and [InitializationReason Enumeration](https://dev.office.com/reference/add-ins/shared/initializationreason-enumeration). 
 

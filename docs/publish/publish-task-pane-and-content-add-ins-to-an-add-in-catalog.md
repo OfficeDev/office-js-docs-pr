@@ -1,7 +1,7 @@
 ---
 title: Publish task pane and content add-ins to a SharePoint catalog
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/23/2018
 ---
 
 # Publish task pane and content add-ins to a SharePoint catalog
@@ -9,9 +9,9 @@ ms.date: 12/04/2017
 An add-in catalog is a dedicated site collection in a SharePoint web application or SharePoint Online tenancy that hosts document libraries for Office and SharePoint Add-ins. To make Office Add-ins accessible to users within their organization, administrators can upload Office Add-ins manifest files to the add-in catalog for their organization. When an administrator registers an add-in catalog as a trusted catalog, users can insert the add-in from the insertion UI in an Office client application.
 
 > [!IMPORTANT]
-> - Add-in catalogs on SharePoint do not support add-in features that are implemented in the `VersionOverrides` node of the [add-in manifest](../overview/add-in-manifests.md), such as add-in commands.
+> - Add-in catalogs on SharePoint do not support add-in features that are implemented in the `VersionOverrides` node of the [add-in manifest](../develop/add-in-manifests.md), such as add-in commands.
 > - If you’re targeting a cloud or hybrid environment, we recommend that you [use Centralized Deployment via the Office 365 admin center](../publish/centralized-deployment.md) to publish your add-ins.
-> - SharePoint catalogs are not supported for Office 2016 for Mac. To deploy Office Add-ins to Mac clients, you must submit them to the [Office Store](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store).   
+> - SharePoint catalogs are not supported for Office 2016 for Mac. To deploy Office Add-ins to Mac clients, you must submit them to [AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store).   
 
 ## Set up an add-in catalog
 
@@ -75,7 +75,7 @@ To publish an add-in to an add-in catalog, complete the following steps.
     
 2. Choose the  **Click to add new item** link.
     
-3. Choose  **Browse**, and then specify the [manifest](../overview/add-in-manifests.md) to upload.
+3. Choose  **Browse**, and then specify the [manifest](../develop/add-in-manifests.md) to upload.
     
     Content and task pane add-ins in this catalog are now available from the  **Office Add-ins** dialog box. To access them, choose **My Add-ins** on the **Insert** tab, and then choose **MY ORGANIZATION**.
 

@@ -38,7 +38,9 @@ To help ensure that the manifest file that describes your Office Add-in is corre
 
 ## Validate your manifest against the XML schema
 
-To help ensure that the manifest file follows the correct schema, validate it against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas) files. You can use an XML schema validation tool to perform this validation. 
+To help ensure that the manifest file follows the correct schema, including any namespaces for the elements you are using. If you copied elements from other sample manifests double check you also **include the appropiate namespaces**. You can validate a manifest against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) files. You can use an XML schema validation tool to perform this validation. 
+
+
 
 ### To use a command-line XML schema validation tool to validate your manifest
 
@@ -120,6 +122,6 @@ Call `window.location.reload(true)` from JavaScript in the add-in to force a rel
 
 ## See also
 
-- [Office Add-ins XML manifest](../overview/add-in-manifests.md)
+- [Office Add-ins XML manifest](../develop/add-in-manifests.md)
 - [Sideload Office Add-ins for testing](sideload-office-add-ins-for-testing.md)
 - [Debug Office Add-ins](debug-add-ins-using-f12-developer-tools-on-windows-10.md)

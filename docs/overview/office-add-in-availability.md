@@ -1,7 +1,7 @@
 ---
 title: Office Add-in host and platform availability
 description: Supported requirement sets for Excel, Word, Outlook, PowerPoint, and OneNote.
-ms.date: 12/01/2017 
+ms.date: 03/23/2018
 ---
 
 # Office Add-in host and platform availability
@@ -137,12 +137,12 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
     <td> - Mail Read<br>
       - Mail Compose<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
-    <td> - Mailbox 1.0<br>
-      - Mailbox 1.1<br>
-      - Mailbox 1.2<br>
-      - Mailbox 1.3<br>
-      - Mailbox 1.4<br>
-      - Mailbox 1.5</td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></td>
     <td>not available</td>
   </tr>
   <tr>
@@ -150,11 +150,10 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
     <td> - Mail Read<br>
       - Mail Compose<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
-    <td> - Mailbox 1.0<br>
-      - Mailbox 1.1<br>
-      - Mailbox 1.2<br>
-      - Mailbox 1.3<br>
-      - Mailbox 1.4</td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></td>
     <td>not available</td>
   </tr>
   <tr>
@@ -163,19 +162,23 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
       - Mail Compose<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a><br>
       - Modules</td>
-    <td> - Mailbox 1.0<br>
-      - Mailbox 1.1<br>
-      - Mailbox 1.2<br>
-      - Mailbox 1.3<br>
-      - Mailbox 1.4<br>
-      - Mailbox 1.5</td></td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></td>
     <td>not available</td> 
   </tr>
   <tr>
     <td>Office for iOS</td>
     <td> - Mail Read<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
-    <td> - Mailbox 1.4</td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></td>    
     <td>not available</td>
   </tr>
   <tr>
@@ -183,19 +186,23 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
     <td> - Mail Read<br>
       - Mail Compose<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
-    <td> - Mailbox 1.0<br>
-      - Mailbox 1.1<br>
-      - Mailbox 1.2<br>
-      - Mailbox 1.3<br>
-      - Mailbox 1.4<br>
-      - Mailbox 1.5</td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></td>
     <td>not available</td>
   </tr>
   <tr>
     <td>Office for Android</td>
     <td> - Mail Read<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
-    <td> - Mailbox 1.4</td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></td>
     <td>not available</td>
   </tr>
 </table>

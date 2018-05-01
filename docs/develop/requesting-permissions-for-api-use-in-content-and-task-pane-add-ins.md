@@ -49,7 +49,7 @@ The following table describes the subset of the JavaScript API that is enabled b
 
 ## See also
 
-- [Privacy and security for Office Add-ins](privacy-and-security.md)
+- [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md)
     
 
 

@@ -69,7 +69,8 @@ The following table shows the icon sizes that render for different modes at diff
 |250%|40px||||80px||120px|
 |300%|48px||||96px||144px
 
->**Note:** At DPI settings of 150% or greater, the icon does not get swapped out for a larger size when Touch mode is engaged. At DPI settings greater than 250%, Touch mode is turned off by default.
+> [!NOTE]
+> At DPI settings of 150% or greater, the icon does not get swapped out for a larger size when Touch mode is engaged. At DPI settings greater than 250%, Touch mode is turned off by default.
 
 The following table lists the locations for certain icon sizes.
 
@@ -167,5 +168,5 @@ Office icons are designed to render well in high contrast modes. Foreground elem
 
 ## See also
 
-- [Add-in development best practices](../overview/add-in-development-best-practices.md)
+- [Add-in development best practices](../concepts/add-in-development-best-practices.md)
 - [Add-in commands for Excel, Word, and PowerPoint](../design/add-in-commands.md)

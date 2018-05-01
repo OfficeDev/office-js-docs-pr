@@ -1,7 +1,7 @@
 ---
 title: Automatically open a task pane with a document
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/23/2018
 ---
 
 
@@ -38,7 +38,7 @@ Apply the following best practices when you use the autoopen feature:
 - Don't use the autoopen feature to artificially increase usage of your add-in. If it doesn’t make sense for your add-in to open automatically with certain documents, this feature can annoy users. 
 
     > [!NOTE]
-    > If Microsoft detects abuse of the autoopen feature, your add-in might be rejected from the Office Store. 
+    > If Microsoft detects abuse of the autoopen feature, your add-in might be rejected from AppSource. 
 
 - Don't use this feature to pin multiple task panes. You can only set one pane of your add-in to open automatically with a document.  
 
@@ -90,7 +90,7 @@ The following example shows how to add the webextension part.
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="[ADD-IN ID PER MANIFEST]">
-  <we:reference id="[GUID or Office Store asset ID]" version="[your add-in version]" store="[Pointer to store or catalog]" storeType="[Store or catalog type]"/>
+  <we:reference id="[GUID or AppSource asset ID]" version="[your add-in version]" store="[Pointer to store or catalog]" storeType="[Store or catalog type]"/>
   <we:alternateReferences/>
   <we:properties>
  	<we:property name="Office.AutoShowTaskpaneWithDocument" value="true"/>
@@ -106,13 +106,13 @@ The webextension part also includes a reference to the store or catalog with att
 
 | **`storeType` value** | **`id` value**	|**`store` value** | **`version` value**|
 |:---------------|:---------------|:---------------|:---------------|
-|OMEX (the Office Store)|The Office Store asset ID of the add-in (see Note)|The locale of the Office Store; for example, "en-us".|The version in the Office Store catalog (see Note)|
+|OMEX (AppSource)|The AppSource asset ID of the add-in (see Note)|The locale of AppSource; for example, "en-us".|The version in the AppSource catalog (see Note)|
 |FileSystem (a network share)|The GUID of the add-in in the add-in manifest.|The path of the network share; for example, "\\\\MyComputer\\MySharedFolder".|The version in the add-in manifest.|
 |EXCatalog (deployment via the Exchange server) |The GUID of the add-in in the add-in manifest.|"EXCatalog"|The version in the add-in manifest.
 |Registry (System registry)|The GUID of the add-in in the add-in manifest.|"developer"|The version in the add-in manifest.|
 
 > [!NOTE]
-> To find the asset ID and version of an add-in in the Office Store, go to the Office Store landing page for the add-in. The asset ID appears in the address bar in the browser. The version is listed in the **Details** section of the page.
+> To find the asset ID and version of an add-in in AppSource, go to the AppSource landing page for the add-in. The asset ID appears in the address bar in the browser. The version is listed in the **Details** section of the page.
 
 For more information about the webextension markup, see [[MS-OWEXML] 2.2.5. WebExtensionReference](https://msdn.microsoft.com/en-us/library/hh695383(v=office.12).aspx).
 

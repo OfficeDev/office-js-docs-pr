@@ -1,7 +1,7 @@
 ---
 title: UX design pattern templates for Office Add-ins
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/23/2018
 ---
 
 
@@ -76,10 +76,10 @@ A first-run experience is the experience a user has when they open your add-in f
 	* [Video specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/patterns/video-placemat.md)
 	* [Video code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/video-placemat)
 * **Walkthrough** - Takes users through a series of features or information before they start using the add-in.
-	* [Carousel specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/patterns/carousel.md) (Note that this UX design pattern has been renamed to "Carousel." Former specifications refered to it as a "Paging Panel." Code assets refer to it as a "First-run Walkthrough." 
+	* [Carousel specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/patterns/carousel.md) (Note that this UX design pattern has been renamed to "Carousel." Former specifications referred to it as a "Paging Panel." Code assets refer to it as a "First-run Walkthrough.") 
 	* [Walkthrough code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/walkthrough)
 
-The [Office Store](https://docs.microsoft.com/en-us/office/dev/store/use-the-seller-dashboard-to-submit-to-the-office-store) has a system that manages trial versions of an add-in, but if you want to control the UI of the trial experience for your add-in, use the following patterns:
+[AppSource](https://docs.microsoft.com/en-us/office/dev/store/use-the-seller-dashboard-to-submit-to-the-office-store) has a system that manages trial versions of an add-in, but if you want to control the UI of the trial experience for your add-in, use the following patterns:
 
 * **Trial** - Shows users how to get started with a trial version of your add-in.
 	* [Trial specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/archived-patterns/fre_trialVersion.pdf) (This UX design pattern has been archived. As we assess its value, refer to this PDF.)
@@ -89,7 +89,7 @@ The [Office Store](https://docs.microsoft.com/en-us/office/dev/store/use-the-sel
 	* [Trial feature code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/trial-placemat-feature)
 
 > [!IMPORTANT]
-> If you decide to manage your own trial, and not use the Office Store to manage the trial, make sure to include the **Additional purchase may be required** tag in the testing notes in the seller dashboard.
+> If you decide to manage your own trial, and not use AppSource to manage the trial, make sure to include the **Additional purchase may be required** tag in the testing notes in the seller dashboard.
 
 Consider whether showing users the first-run experience once or many times is important to your scenario. For example, if users use your add-in periodically, they might forget how to use it, and it might be helpful to see the first-run experience more than once. 
 
@@ -230,18 +230,18 @@ Client dialog boxes provide another way for users to work with your add-in outsi
 
 #### Feedback and ratings
 
-To improve the visibility and adoption of your add-in, it is helpful to provide users with the ability to rate and review your add-in in the Office Store. This pattern shows two methods for presenting feedback and ratings from within the add-in:
+To improve the visibility and adoption of your add-in, it is helpful to provide users with the ability to rate and review your add-in in AppSource. This pattern shows two methods for presenting feedback and ratings from within the add-in:
 
 - User-initiated feedback - A user chooses to send feedback by using either the navigation menu (for example, using the **Send Feedback** link) or an icon on the footer.
 - System-initiated feedback - After the add-in runs three times, the user is prompted to provide feedback via a Message Banner.
 
-Either method opens a dialog box that contains the Office Store page for the add-in.
+Either method opens a dialog box that contains the AppSource page for the add-in.
 
 * [Feedback and ratings specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/archived-patterns/notification_feedback.pdf) (This UX design pattern has been archived. As we assess its value, refer to this PDF.)
 * [Feedback and ratings code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/feedback/office-store)
 
 > [!IMPORTANT]
-> This pattern currently points to the Office Store home page. Be sure to update this URL to the URL of your add-in's page in the Office Store.
+> This pattern currently points to the AppSource home page. Be sure to update this URL to the URL of your add-in's page in AppSource.
 
 
  <table>
@@ -271,5 +271,5 @@ Add-ins may need a Settings page that allows users to configure settings that co
 
 ## See also
 
-* [Best practices for developing Office Add-ins](../overview/add-in-development-best-practices.md)
+* [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
 * [Office UI Fabric](http://dev.office.com/fabric/)

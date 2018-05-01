@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins platform overview
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/23/2018
 ---
 
 
@@ -27,7 +27,7 @@ Office Add-ins provide the following advantages over add-ins built using VBA, CO
 
 - Centralized deployment and distribution. Admins can deploy Office Add-ins centrally across an organization. 
 
-- Easy access via the Office Store. You can make your solution available to a broad audience by submitting it to the Office Store. 
+- Easy access via AppSource. You can make your solution available to a broad audience by submitting it to AppSource. 
 
 - Based on standard web technology. You can use any library you like to build Office Add-ins. 
 
@@ -113,13 +113,13 @@ The Office JavaScript APIs contain objects and members for building add-ins and 
 
 ## Next steps 
 
-To learn more about how to start building your Office Add-in, try out the [Get started](https://dev.office.com/getting-started/addins) experience. You can start building add-ins right away using [Visual Studio](../get-started/create-and-debug-office-add-ins-in-visual-studio.md) or [your own tools](../get-started/create-an-office-add-in-using-any-editor.md). 
+To learn more about how to start building your Office Add-in, try out our [5-minute Quickstarts](https://docs.microsoft.com/en-us/office/dev/add-ins/). You can start building add-ins right away using Visual Studio or any other editor. 
 
-To start planning solutions that create effective and compelling user experiences, get familiar with the [design guidelines](../design/add-in-design.md) and [best practices](add-in-development-best-practices.md) for Office Add-ins.    
+To start planning solutions that create effective and compelling user experiences, get familiar with the [design guidelines](../design/add-in-design.md) and [best practices](../concepts/add-in-development-best-practices.md) for Office Add-ins.    
    
 ## See also
 
-- [Office Add-in samples](https://dev.office.com/code-samples)
+- [Office Add-in samples](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples)
 - [Understanding the JavaScript API for Office](../develop/understanding-the-javascript-api-for-office.md)
 - [Office Add-in host and platform availability](../overview/office-add-in-availability.md)
 

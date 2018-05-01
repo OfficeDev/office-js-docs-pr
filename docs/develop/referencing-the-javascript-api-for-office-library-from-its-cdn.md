@@ -1,7 +1,7 @@
 ---
 title: Referencing the JavaScript API for Office library from its content delivery network (CDN)
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/23/2018
 ---
 
 
@@ -19,7 +19,7 @@ The simplest way to reference the API is to use our CDN by adding the following 
 
 The  `/1/` in front of `office.js` in the CDN URL specifies the latest incremental release within version 1 of Office.js. Because the JavaScript API for Office maintains backward compatibility, the latest release will continue to support API members that were introduced earlier in version 1. If you need to upgrade an existing project, see [Update the version of your JavaScript API for Office and manifest schema files](update-your-javascript-api-for-office-and-manifest-schema-version.md). 
 
-If you plan to publish your Office Add-in from the Office Store, you must use this CDN reference. Local references are only appropriate for internal, development, and debugging scenarios.
+If you plan to publish your Office Add-in from AppSource, you must use this CDN reference. Local references are only appropriate for internal, development, and debugging scenarios.
 
 > [!IMPORTANT]
 >  When you develop an add-in for any Office host application, reference the JavaScript API for Office from inside the `<head>` section of the page. This ensures that the API is fully initialized prior to any body elements. Office hosts require that add-ins initialize within 5 seconds of activation. If your add-in doesn't activate within this threshold, it will be declared unresponsive and an error message will be displayed to the user.       

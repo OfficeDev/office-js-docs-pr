@@ -1,7 +1,7 @@
 ---
 title: Task pane add-ins for Project
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/23/2018
 ---
 
 # Task pane add-ins for Project
@@ -67,7 +67,7 @@ The manifest file specifies the URL of the add-in webpage or web application, th
 ### Procedure 1. To create the add-in manifest file for Bing Search
 
 
-- Create an XML file in a local directory. The XML file includes the  **OfficeApp** element and child elements, which are described in the [Office Add-ins XML manifest](../overview/add-in-manifests.md). For example, create a file named BingSearch.xml that contains the following XML.
+- Create an XML file in a local directory. The XML file includes the  **OfficeApp** element and child elements, which are described in the [Office Add-ins XML manifest](../develop/add-in-manifests.md). For example, create a file named BingSearch.xml that contains the following XML.
     
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -141,7 +141,7 @@ The manifest file specifies the URL of the add-in webpage or web application, th
 ## Installing Project add-ins
 
 
-In Project 2013, you can install add-ins as stand-alone solutions on a file share, or in a private add-in catalog. You can also review and purchase add-ins in the public Office Store.
+In Project 2013, you can install add-ins as stand-alone solutions on a file share, or in a private add-in catalog. You can also review and purchase add-ins in AppSource.
 
 There can be multiple add-in manifest XML files and subdirectories in a file share. You can add or remove manifest directory locations and catalogs by using the  **Trusted Add-in Catalogs** tab in the **Trust Center** dialog box in Project 2013. To show an add-in in Project, the **SourceLocation** element in a manifest must point to an existing website or HTML source file.
 
@@ -192,13 +192,13 @@ In Procedure 2, the Bing Search add-in is installed on the local computer where 
 ## Distributing Project add-ins
 
 
-You can distribute add-ins through a file share, an add-in catalog in a SharePoint library, or an Project Add-in in the Office Store. For more information, see [Publish your Office Add-in](../publish/publish.md).
+You can distribute add-ins through a file share, an add-in catalog in a SharePoint library, or AppSource. For more information, see [Publish your Office Add-in](../publish/publish.md).
 
 
 ## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
-- [Office Add-ins XML manifest](../overview/add-in-manifests.md)
+- [Office Add-ins XML manifest](../develop/add-in-manifests.md)
 - [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)
 - [Create your first task pane add-in for Project 2013 by using a text editor](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [Create a Project add-in that uses REST with an on-premises Project Server OData service](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)

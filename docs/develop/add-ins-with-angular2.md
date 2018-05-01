@@ -1,15 +1,15 @@
 ---
-title: Tips for creating Office Add-ins with Angular
+title: Develop Office Add-ins with Angular
 description: ''
 ms.date: 12/04/2017
 ---
 
-# Tips for creating Office Add-ins with Angular
+# Develop Office Add-ins with Angular
 
 This article provides guidance for using Angular 2+ to create an Office Add-in as a single page application.
 
 > [!NOTE]
-> Do you have something to contribute based on your experience using Angular to create Office Add-ins? You can contribute to this article in [GitHub](https://github.com/OfficeDev/office-js-docs) or provide your feedback by submitting an [issue](https://github.com/OfficeDev/office-js-docs/issues) in the repo. 
+> Do you have something to contribute based on your experience using Angular to create Office Add-ins? You can contribute to this article in [GitHub](https://github.com/OfficeDev/office-js-docs) or provide your feedback by submitting an [issue](https://github.com/OfficeDev/office-js-docs-pr/issues) in the repo. 
 
 For an Office Add-ins sample that's built using the Angular framework, see [Word Style Checking Add-in Built on Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker).
 
@@ -17,7 +17,7 @@ For an Office Add-ins sample that's built using the Angular framework, see [Word
 Open an nodejs window and enter the following at the command line: 
 
 ```bash
-npm install --save-dev @types/office-js`
+npm install --save-dev @types/office-js
 ```
 
 ## Bootstrapping must be inside Office.initialize

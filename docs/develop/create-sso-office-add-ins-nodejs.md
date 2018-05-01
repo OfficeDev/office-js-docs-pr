@@ -1,7 +1,6 @@
 ---
 title: Create a Node.js Office Add-in that uses single sign-on
-description: ''
-ms.date: 12/04/2017
+description: 01/23/2018
 ---
 
 # Create a Node.js Office Add-in that uses single sign-on (preview)
@@ -45,79 +44,19 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Register the add-in with Azure AD v2.0 endpoint
 
-1. Navigate to [https://apps.dev.microsoft.com](https://apps.dev.microsoft.com) . 
-
-1. Sign-in with the admin credentials to your Office 365 tenancy. For example, MyName@contoso.onmicrosoft.com
-
-1. Click **Add an app**.
-
-1. When prompted, use “Office-Add-in-NodeJS-SSO” as the app name, and then press **Create application**.
-
-1. When the configuration page for the app opens, copy the **Application Id** and save it. You will use it in a later procedure. 
-
-    > [!NOTE]
-    > This ID is the “audience” value when other applications, such as the Office host application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the “client ID” of the application when it, in turn, seeks authorized access to Microsoft Graph.
-
-1. In the **Application Secrets** section, press **Generate New Password**. A popup dialog opens with a new password (also called an “app secret”) displayed. *Copy the password immediately and save it with the application ID.* You will need it in a later procedure. Then close the dialog.
-
-1. In the **Platforms** section, click **Add Platform**. 
-
-1. In the dialog that opens, select **Web API**.
-
-1. An **Application ID URI** has been generated of the form “api://{App ID GUID}”. Insert the string “localhost:3000” between the double forward slashes and the GUID. The entire ID should read `api://localhost:3000/{App ID GUID}`. 
-
-    > [!NOTE]
-    > The domain part of the **Scope** name just below the **Application ID URI** will automatically change to match. It should read `api://localhost:3000/{App ID GUID}/access_as_user`.
-
-1. This step and the next one give the Office host application access to your add-in. In the **Pre-authorized applications** section, you identify the applications that you want to authorize to your add-in's web application. Each of the following IDs needs to be pre-authorized. Each time you enter one, a new empty textbox appears. (Enter only the GUID.)
-
-    * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
-    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office Online)
-    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office Online) 
-
-1. Open the **Scope** dropdown beside each **Application ID** and check the box for `api://localhost:44355/{App ID GUID}/access_as_user`.
-
-1. Near the top of the **Platforms** section, click **Add Platform** again and select **Web**.
-
-1. In the new **Web** section under **Platforms**, enter the following as a **Redirect URL**: `https://localhost:3000`. 
-
-    > [!NOTE]
-    > As of this writing, the **Web API** platform sometimes disappears from the **Platforms** section, particularly if the page is refreshed after the **Web** platform is added *and the registration page is saved*. For reassurance that your **Web API** platform is still part of the registration, click the **Edit Application Manifest** button near the bottom of the page. You should see the `api://localhost:3000/{App ID GUID}` string in the **identifierUris** property of the manifest. There will also be a **oauth2Permissions** property whose **value** subproperty has the value `access_as_user`.
-
-1. Scroll down to the **Microsoft Graph Permissions** section, the **Delegated Permissions** subsection. Use the **Add** button to open a **Select Permissions** dialog.
-
-1. In the dialog box, check the boxes for the following permissions: 
-
+The following instruction are written generically so they can be used in multiple places. For this ariticle do the following:
+- Replace the placeholder **$ADD-IN-NAME$** with `“Office-Add-in-NodeJS-SSO`.
+- Replace the placeholder **$FQDN-WITHOUT-PROTOCOL$** with `localhost:3000`.
+- When you specify permissions in the **Select Permissions** dialog, check the boxes for the following permissions. Only the first is really required by your add-in itself; but the `profile` permission is required for the Office host to get a token to your add-in web application.
     * Files.Read.All
     * profile
 
-    > [!NOTE]
-    > The `User.Read` permission may already be listed by default. It is a good practice not to ask for permissions that are not needed, so we recommend that you uncheck the box for this permission.
+[!INCLUDE[](../includes/register-sso-add-in-aad-v2-include.md)]
 
-1. Click **OK** at the bottom of the dialog.
 
-1. Click **Save** at the bottom of the registration page.
+## Grant administrator consent to the add-in
 
-## Grant admin consent to the add-in
-
-> [!NOTE]
-> This procedure is only needed when you are developing the add-in. When your production add-in is deployed to the Office Store or an add-in catalog, users will individually trust it when they install it.
-
-1. In the following string, replace the placeholder “{application_ID}” with the Application ID that you copied when you registered your add-in.
-
-    `https://login.microsoftonline.com/common/adminconsent?client_id={application_ID}&state=12345`
-
-1. Paste the resulting URL into a browser address bar and navigate to it.
-
-1. When prompted, sign-in with the admin credentials to your Office 365 tenancy.
-
-1. You are then prompted to grant permission for your add-in to access your Microsoft Graph data. Click **Accept**. 
-
-1. The browser window/tab is then redirected to the **Redirect URL** that you specified when you registered the add-in; so, if the add-in is running, the home page of the add-in opens in the browser. If the add-in is not running, you will get an error saying that the resource at localhost:3000 cannot be found or opened. *But the fact that the redirection was attempted means that the admin consent process completed successfully*. So regardless of whether the home page opened or you got the error, you can go on to the next step.
-
-2. In the browser's address bar you'll see a "tenant" query parameter with a GUID value. This is the ID of your Office 365 tenancy. Copy and save this value. You will use it in a later step.
-
-3. Close the window/tab.
+[!INCLUDE[](../includes/grant-admin-consent-to-an-add-in-include.md)]
 
 ## Configure the add-in
 
@@ -129,7 +68,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 4. For the `audience` property, replace the placeholder `{audience GUID}` with the application ID that you saved when you registered the add-in. (The very same value that you assigned to the `client_id` property.)
   
-3. In the string assigned to the `issuer` property, you will see the placeholder *{O365 tenant GUID}*. Replace this with the Office 365 tenancy ID that you saved at the end of the last procedure. If for any reason, you didn't get the ID earlier, use one of the methods in [Find your Office 365 tenant ID](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) to obtain it. When you are done, the `issuer` property value should look something like this:
+3. In the string assigned to the `issuer` property, you will see the placeholder *{O365 tenant GUID}*. Replace this with the Office 365 tenancy ID. Use one of the methods in [Find your Office 365 tenant ID](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) to obtain it. When you are done, the `issuer` property value should look something like this:
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
@@ -156,7 +95,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
     > [!NOTE]
     > * The **Resource** value is the **Application ID URI** you set when you added the Web API platform to the registration of the add-in.
-    > * The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through the Office Store.
+    > * The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through AppSource.
 
 1. Save and close the file.
 
@@ -166,98 +105,286 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
     * An assignment to the `Office.initialize` method that, in turn, assigns a handler to the `getGraphAccessTokenButton` button click event.
     * A `showResult` method that will display data returned from Microsoft Graph (or an error message) at the bottom of the task pane.
+    * A `logErrors` method that will log to console errors that are not intended for the end user.
 
-1. Below the assignment to `Office.initialize`, add the code below. Note the following about this code: 
+11. Below the assignment to `Office.initialize`, add the code below. Note the following about this code:
 
-    * The `getDataWithoutAuthChallenge` function is called in a first attempt to use the on-behalf-of flow. The assumption is that single factor authentication is all that is needed. You'll add code in a later step to handle the case where multi-factor authenticatiion is needed.
-    * The `getAccessTokenAsync` is the new API in Office.js that enables an add-in to ask the Office host application (Excel, PowerPoint, Word, etc.) for an access token to the add-in (for the user signed into Office). The Office host application, in turn, asks the Azure AD 2.0 endpoint for the token. Since you preauthorized the Office host to your add-in when you registered it, Azure AD will send the token. 
-     * If no user is signed into Office, the Office host will prompt the user to sign in. 
-     * The options parameter sets `forceConsent` to false, so the user will not be prompted to consent to giving the Office host access to your add-in.
+    * The error-handling in the add-in will sometimes automatically attempt a second time to get an access token, using a different set of options. The counter variable `timesGetOneDriveFilesHasRun`, and the flag variables `triedWithoutForceConsent` and `timesMSGraphErrorReceived` are used to ensure that the user isn't cycled repeatedly through failed attempts to get a token. 
+    * You create the `getDataWithToken` method in the next step, but note that it sets an option called `forceConsent` to `false`. More about that in the next step.
 
     ```javascript
-    function getOneDriveItems() {
-        getDataWithoutAuthChallenge();
+    var timesGetOneDriveFilesHasRun = 0;
+    var triedWithoutForceConsent = false;
+    var timesMSGraphErrorReceived = false;
+
+    function getOneDriveFiles() {
+        timesGetOneDriveFilesHasRun++;
+        triedWithoutForceConsent = true;
+        getDataWithToken({ forceConsent: false });
     }	
-    
-    function getDataWithoutAuthChallenge() {       
-        Office.context.auth.getAccessTokenAsync({forceConsent: false},
-            function (result) {
-                if (result.status === "succeeded") {
-                    // TODO1: Use the access token to get Microsoft Graph data.
-                }
-                else {
-                    console.log("Code: " + result.error.code);
-                    console.log("Message: " + result.error.message);
-                    console.log("name: " + result.error.name);
-                    document.getElementById("getGraphAccessTokenButton").disabled = true;
-                }
-            });
+    ```
+
+1. Below the `getOneDriveFiles` method, add the code below. Note the following about this code:
+
+    * The `getAccessTokenAsync` is the new API in Office.js that enables an add-in to ask the Office host application (Excel, PowerPoint, Word, etc.) for an access token to the add-in (for the user signed into Office). The Office host application, in turn, asks the Azure AD 2.0 endpoint for the token. Since you preauthorized the Office host to your add-in when you registered it, Azure AD will send the token.
+    * If no user is signed into Office, the Office host will prompt the user to sign in.
+    * The options parameter sets `forceConsent` to `false`, so the user will not be prompted to consent to giving the Office host access to your add-in every time she or he uses the add-in. The first time the user runs the add-in, the call of `getAccessTokenAsync` will fail, but error-handling logic that you add in a later step will automatically re-call with the `forceConsent` option set to `true` and the user will be prompted to consent, but only that first time.
+    * You will create the `handleClientSideErrors` method in a later step.
+
+    ```javascript
+    function getDataWithToken(options) {
+    Office.context.auth.getAccessTokenAsync(options,
+        function (result) {
+            if (result.status === "succeeded") {
+                TODO1: Use the access token to get Microsoft Graph data.
+            }
+            else {
+                handleClientSideErrors(result);
+            }
+        });
     }
     ```
 
-1. Replace the TODO1 with the following lines. You create the `getData` method and the server-side “/api/onedriveitems” route in later steps. A relative URL is used for the endpoint because it must be hosted on the same domain as your add-in.
+1. Replace the TODO1 with the following lines. You create the `getData` method and the server-side “/api/values” route in later steps. A relative URL is used for the endpoint because it must be hosted on the same domain as your add-in.
 
     ```javascript
     accessToken = result.value;
-    getData("/api/onedriveitems", accessToken);
+    getData("/api/values", accessToken);
     ```
 
-1. Below the `getOneDriveFiles` method, add the following. This utility method calls a specified Web API endpoint and passes it the same access token that the Office host application used to get access to your add-in. On the server-side, this access token will be used in the “on behalf of” flow to obtain an access token to Microsoft Graph. 
+1. Below the `getOneDriveFiles` method, add the following. About this code, note:
+
+    * This method calls a specified Web API endpoint and passes it the same access token that the Office host application used to get access to your add-in. On the server-side, this access token will be used in the “on behalf of” flow to obtain an access token to Microsoft Graph.
+    * You will create the `handleServerSideErrors` method in a later step.
 
     ```javascript
     function getData(relativeUrl, accessToken) {
         $.ajax({
             url: relativeUrl,
             headers: { "Authorization": "Bearer " + accessToken },
-            type: "GET",
+            type: "GET"
         })
         .done(function (result) {
-            TODO2: Display data and handle demand for multi-factor authentication.
+            showResult(result);
         })
         .fail(function (result) {
-            console.log(result.error);
-       });
+            handleServerSideErrors(result);
+        }); 
     }
     ```
 
-1. Replace TODO2 with the following code. About this code, note:
-    * If the Microsoft Graph target requests addtional authentication factor(s), the result will not be data. It will be a Claims JSON telling AAD what addtional factors the user must provide. In that case, the client must start a new sign-on that passes this Claims string to AAD so that AAD will provide the needed prompts.
-    * If the result is the Claims JSON, then it will contain the string "capolids".
-    * You will create the `getDataUsingAuthChallenge` function in a latter step.
+### Create the error-handling methods
+
+1. Below the `getData` method, add the following method. This method will handle errors in the add-in's client when the Office host is unable to obtain an access token to the add-in's web service. These errors are reported with an error code, so the method uses a `switch` statement to distinguish them.
 
     ```javascript
-    if (result[0].indexOf('capolids') !== -1) {                
-        result[0] = JSON.parse(result[0])
-        getDataUsingAuthChallenge(result[0]);
-    } else {  
-        showResult(result);
+    function handleClientSideErrors(result) {
+
+        switch (result.error.code) {
+    
+            // TODO2: Handle the case where user is not logged in, or the user cancelled, without responding, a
+            //        prompt to provide a 2nd authentication factor. 
+    
+            // TODO3: Handle the case where the user's sign-in or consent was aborted.
+    
+            // TODO4: Handle the case where the user is logged in with an account that is neither work or school, 
+            //        nor Micrososoft Account.
+    
+            // TODO5: Handle an unspecified error from the Office host.
+    
+            // TODO6: Handle the case where the Office host cannot get an access token to the add-ins 
+            //        web service/application.
+    
+            // TODO7: Handle the case where the user tiggered an operation that calls `getAccessTokenAsync` 
+            //        before a previous call of it completed.
+    
+            // TODO8: Handle the case where the add-in does not support forcing consent.
+    
+            // TODO9: Log all other client errors.
+        }
     }
     ```
 
-1. Add the following function to the file just below the `getData` function. About this function, note:
-    * The function is used when AAD has requested additional authentication factor(s). 
-    * The function triggers a second sign-on in which the user will be prompted to provide additional authentication factor(s). 
-    * The `authChallenge` option contains a string that tells AAD what factor(s) it should prompt for. The Office host passes this string to AAD when it requests the add-in token to your add-in.
+1. Replace `TODO2` with the following code. Error 13001 occurs when the user is not logged in, or the user cancelled, without responding, a prompt to provide a 2nd authentication factor. In either case, the code re-runs the `getDataWithToken` method and sets an option to force a sign-in prompt.
 
     ```javascript
-    function getDataUsingAuthChallenge(authChallengeString) {       
-        Office.context.auth.getAccessTokenAsync({authChallenge: authChallengeString},
-            function (result) {
-                if (result.status === "succeeded") {
-                    accessToken = result.value;
-                    getData("/api/onedriveitems", accessToken);
-                }
-                else {
-                    console.log("Code: " + result.error.code);
-                    console.log("Message: " + result.error.message);
-                    console.log("name: " + result.error.name);
-                    document.getElementById("getGraphAccessTokenButton").disabled = true;
-                }
-            });
+    case 13001:
+        getDataWithToken({ forceAddAccount: true });
+        break;
+    ```
+
+1. Replace `TODO3` with the following code. Error 13002 occurs when user's sign-in or consent was aborted. Ask the user to try again but no more than once again.
+
+    ```javascript
+    case 13002:
+        if (timesGetOneDriveFilesHasRun < 2) {
+            showResult(['Your sign-in or consent was aborted before completion. Please try that operation again.']);
+        } else {
+            logError(result);
+        }          
+        break; 
+    ```
+
+1. Replace `TODO4` with the following code. Error 13003 occurs when user is logged in with an account that is neither work or school, nor Micrososoft Account. Ask the user to sign-out and then in again with a supported account type.
+
+    ```javascript
+    case 13003: 
+        showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft Account. Other kinds of accounts, like corporate domain accounts do not work.']);
+        break;   
+    ```
+
+    > [!NOTE]
+    > Errors 13004 and 13005 are not handled in this method because they should only occur in development. They cannot be fixed by runtime code and there would be no point in reporting them to an end user.
+
+1. Replace `TODO5` with the following code. Error 13006 occurs when there has been an unspecified error in the Office host that may indicate that the host is in an unstable state. Ask the user to restart Office.
+
+    ```javascript
+    case 13006:
+        showResult(['Please save your work, sign out of Office, close all Office applications, and restart this Office application.']);
+        break;        
+    ```
+
+1. Replace `TODO6` with the following code. Error 13007 occurs when something has gone wrong with the Office host's interaction with AAD so the host cannot get an access token to the add-ins web service/application. This may be a temporary network issue. Ask the user to try again later.
+
+    ```javascript
+    case 13007:
+        showResult(['That operation cannot be done at this time. Please try again later.']);
+        break;      
+    ```
+
+1. Replace `TODO7` with the following code. Error 13008 occurs when the user tiggered an operation that calls `getAccessTokenAsync` before a previous call of it completed.
+
+    ```javascript
+    case 13008:
+        showResult(['Please try that operation again after the current operation has finished.']);
+        break;
+    ```      
+
+1. Replace `TODO8` with the following code. Error 13009 occurs when the add-in does not support forcing consent, but `getAccessTokenAsync` was called with the `forceConsent` option set to `true`. In the usual case when this happens the code should automatically re-run `getAccessTokenAsync` with the consent option set to `false`. However, in some cases, calling the method with `forceConsent` set to `true` was itself an automatic response to an error in a call to the method with the option set to `false`. In that case, the code should not try again, but instead it should advise the user to sign out and sign in again.
+
+    ```javascript
+    case 13009:
+        if (triedWithoutForceConsent) {
+            showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft Account.']);
+        } else {
+            getDataWithToken({ forceConsent: false });
+        }
+        break;
+    ```      
+    
+1. Replace `TODO9` with the following code.
+
+    ```javascript
+    default:
+        logError(result);
+        break;
+    ```  
+
+1. Below the `handleClientSideErrors` method, add the following method. This method will handle errors in the add-in's web service when something goes wrong in executing the on-behalf-of flow or in getting data from Microsoft Graph.
+
+    ```javascript
+    function handleServerSideErrors(result) {
+    
+        // TODO10: Handle the case where AAD asks for an additional form of authentication.
+
+        // TODO11: Handle the case where consent has not been granted, or has been revoked.
+
+        // TODO12: Handle the case where an invalid scope (permission) was used in the on-behalf-of flow
+
+        // TODO13: Handle the case where the token that the add-in's client-side sends to it's 
+        //         server-side is not valid because it is missing `access_as_user` scope (permission).
+
+        // TODO14: Handle the case where the token sent to Microsoft Graph in the request for 
+        //         data is expired or invalid.
+
+        // TODO15: Log all other server errors.
     }
     ```
 
-1. Save and close the file.
+1. Replace `TODO10` with the following code. Note about this code:
+
+    * There are configurations of Azure Active Directory in which the user is required to provide additional authentication factor(s) to access some Microsoft Graph targets (e.g., OneDrive), even if the user can sign on to Office with just a password. In that case, AAD will send a response, with error 50076, that has a `Claims` property. 
+    * The Office host should get a new token with the **Claims** value as the `authChallenge` option. This tells AAD to prompt the user for all required forms of authentication. 
+
+    ```javascript
+    if (result.responseJSON.error.innerError
+            && result.responseJSON.error.innerError.error_codes
+            && result.responseJSON.error.innerError.error_codes[0] === 50076){
+        getDataWithToken({ authChallenge: result.responseJSON.error.innerError.claims });
+    }
+    ```
+
+1. Replace `TODO11` with the following code *just below the last closing brace of the code you added in the previous step*. Note about this code:
+
+    * Error 65001 means that consent to access Microsoft Graph was not granted (or was revoked) for one or more permissions. 
+    * The add-in should get a new token with the `forceConsent` option set to `true`.
+
+    ```javascript
+    else if (result.responseJSON.error.innerError
+            && result.responseJSON.error.innerError.error_codes
+            && result.responseJSON.error.innerError.error_codes[0] === 65001){
+        showResult(['Please grant consent to this add-in to access your Microsoft Graph data.']);        
+        /*
+            THE FORCE CONSENT OPTION IS NOT AVAILABLE IN DURING PREVIEW. WHEN SSO FOR
+            OFFICE ADD-INS IS RELEASED, REMOVE THE showResult LINE ABOVE AND UNCOMMENT
+            THE FOLLOWING LINE.
+        */
+        // getDataWithToken({ forceConsent: true });
+    }
+    ```
+
+1. Replace `TODO12` with the following code *just below the last closing brace of the code you added in the previous step*. Note about this code:
+
+    * Error 70011 means that an invalid scope (permission) has been requested. The add-in should report the error.
+    * The code logs any other error with an AAD error number.
+
+    ```javascript
+    else if (result.responseJSON.error.innerError
+            && result.responseJSON.error.innerError.error_codes
+            && result.responseJSON.error.innerError.error_codes[0] === 70011){
+        showResult(['The add-in is asking for a type of permission that is not recognized.']);
+    }
+    ```
+
+1. Replace `TODO13` with the following code *just below the last closing brace of the code you added in the previous step*. Note about this code:
+
+    * Server-side code that you create in a later step will send the message that ends with `... expected access_as_user` if the `access_as_user` scope (permission) is not in the access token that the add-in's client sends to AAD to be used in the on-behalf-of flow.
+    * The add-in should report the error.
+
+    ```javascript
+    else if (result.responseJSON.error.name
+            && result.responseJSON.error.name.indexOf('expected access_as_user') !== -1){
+        showResult(['Microsoft Office does not have permission to get Microsoft Graph data on behalf of the current user.']);
+    }
+    ```
+
+1. Replace `TODO14` with the following code *just below the last closing brace of the code you added in the previous step*. Note about this code:
+
+    * It is unlikely that an expired or invalid token will be sent to Microsoft Graph; but if it does happen, the server-side code that you will create in a later step will end with the string `Microsoft Graph error`.
+    * In this case, the add-in should start the entire authentication process over by resetting the `timesGetOneDriveFilesHasRun` counter and `timesGetOneDriveFilesHasRun` flag variables, and then re-calling the button handler method. But it should do this only once. If it happens again, it should just log the error.
+    * The code logs the error if it happens twice in succession.
+
+    ```javascript
+    else if (result.responseJSON.error.name
+            && result.responseJSON.error.name.indexOf('Microsoft Graph error') !== -1) {
+        if (!timesMSGraphErrorReceived) {
+            timesMSGraphErrorReceived = true;
+            timesGetOneDriveFilesHasRun = 0;
+            triedWithoutForceConsent = false;
+            getOneDriveFiles();
+        } else {
+            logError(result);
+        }        
+    }
+    ```
+
+1. Replace `TODO15` with the following code *just below the last closing brace of the code you added in the previous step*.
+
+    ```javascript
+    else {
+        logError(result);
+    }
+    ```
 
 ## Code the server side
 
@@ -271,15 +398,17 @@ There are two server-side files that need to be modified.
 
     * The `jwt` parameter is the access token to the application. In the "on behalf of" flow, it is exchanged with AAD for an access token to the resource.
     * The scopes parameter has a default value, but in this sample it will be overridden by the calling code.
-    * The resource parameter is optional. It should not be used when the STS is the AAD V2 endpoint. The latter infers the resource from the scopes and it returns an error if a resource is sent in the HTTP Request. 
-    
+    * The resource parameter is optional. It should not be used when the STS is the AAD V 2.0 endpoint. The V 2.0 endpoint infers the resource from the scopes and it returns an error if a resource is sent in the HTTP Request. 
+    * Throwing an exception in the `catch` block will *not* cause an immediate "500 Internal Server Error" to be sent to the client. Calling code in the server.js file will catch this exception and turn it into an error message that is sent to the client.
+
         ```javascript
         private async exchangeForToken(jwt: string, scopes: string[] = ['openid'], resource?: string) {
             try {
                 // TODO3: Construct the parameters that will be sent in the body of the 
                 //        HTTP Request to the STS that starts the "on behalf of" flow.
                 // TODO4: Send the request to the STS.
-                // TODO5: Process the response and persist the access token to resource.
+                // TODO5: Catch errors from the STS and relay them to the client.
+                // TODO6: Process the response and persist the access token to resource.
             }
             catch (exception) {
                 throw new UnauthorizedError('Unable to obtain an access token to the resource' 
@@ -289,7 +418,7 @@ There are two server-side files that need to be modified.
         }
         ```
 
-2. Replace TODO3 with the following code. About this code, note:
+2. Replace `TODO3` with the following code. About this code, note:
     * An STS that supports the "on behalf of" flow expects certain property/value pairs in the body of the HTTP request. This code constructs an object that will become the body of the request. 
     * A resource property is added to the body if, and only if, a resource was passed to the method.
 
@@ -314,7 +443,7 @@ There are two server-side files that need to be modified.
             } 
         ```
 
-3. Replace TODO4 with the following code which sends the HTTP request to the token endpoint of the STS.
+3. Replace `TODO4` with the following code which sends the HTTP request to the token endpoint of the STS.
 
     ```javascript
     const res = await fetch(`${this.stsDomain}/${this.tenant}/${this.tokenURLsegment}`, {
@@ -327,15 +456,19 @@ There are two server-side files that need to be modified.
     }); 
     ```
 
-4. Replace TODO5 with the following code. Note that the code persists the access token to the resource, and it's expiration time, in addition to returning it. Calling code can avoid unnecessary calls to the STS by reusing an unexpired access token to the resource. You'll see how to do that in the next section.
+4. Replace `TODO5` with the following code. Note that throwing an exception will *not* cause an immediate "500 Internal Server Error" to be sent to the client. Calling code in the server.js file will catch this exception and turn it into an error message that is sent to the client.
 
     ```javascript
-    if (res.status !== 200) {
-        TODO6: Handle failure and the case where AAD asks for additional
-               authentication factors.
-    }
+     if (res.status !== 200) {
+        const exception = await res.json();
+        throw exception;                
+    } 
+    ```
+
+5. Replace `TODO6` with the following code. Note that the code persists the access token to the resource, and it's expiration time, in addition to returning it. Calling code can avoid unnecessary calls to the STS by reusing an unexpired access token to the resource. You'll see how to do that in the next section.
+
+    ```javascript  
     const json = await res.json();
-    // Persist the token and it's expiration time.
     const resourceToken = json['access_token'];
     ServerStorage.persist('ResourceToken', resourceToken);
     const expiresIn = json['expires_in'];  // seconds until token expires.
@@ -344,29 +477,7 @@ There are two server-side files that need to be modified.
     return resourceToken; 
     ```
 
-5. Replace the TODO6 with the following code. About this code, note:
-
-    * There are configurations of Azure Active Directory in which the user is required to provide additional authentication factor(s) to access some Microsoft Graph targets (e.g., OneDrive), even if the user can sign on to Office with just a password. In that case, AAD will send a response that has a `Claims` property. 
-    * This `Claims` value needs to be passed back to the client which should initiate a second sign-on for the user and include the `Claims` value in the call to the AAD. AAD will prompt the user to provide the addtional factor(s).
-    * As a precaution, the code clears the cache of any access tokens that were obtained when the user logged in with only a password.  
-
-    ```javascript
-    const exception = await res.json();
-    // Check if AAD is the STS.
-    if (this.stsDomain === 'https://login.microsoftonline.com') {
-        if (JSON.stringify(exception.claims)) {                       
-            ServerStorage.clear();
-            return JSON.stringify(exception.claims);    
-        } else {                    
-            throw exception;
-        }
-    }
-    else {                    
-        throw exception;
-    }
-    ```
-
-5. Save the file, but don't close it.
+6. Save the file, but don't close it.
 
 ### Create a method to get access to the resource using the "on behalf of" flow
 
@@ -410,11 +521,12 @@ There are two server-side files that need to be modified.
         // TODO8: Get a token to Microsoft Graph from either persistent storage 
         //        or the "on behalf of" flow.
         // TODO9: Use the token to get data from Microsoft Graph.
-        // TODO10: Send to the client only the data that it actually needs.
+        // TODO10: Relay any errors from Microsoft Graph to the client.
+        // TODO11: Send to the client only the data that it actually needs.
     })); 
     ```
 
-4. Replace TODO7 with the following code which validates the access token received from the Office host application. The `verifyJWT` method is defined in the src\auth.ts file. It always validates the audience and the issuer. We use the optional parameter to specify that we also want it to verify that the scope in the access token is `access_as_user`. This is the only permisison to the add-in that the user and the Office host need in order to get an access token to Microsoft Graph by means of the "on behalf flow". 
+4. Replace `TODO7` with the following code which validates the access token received from the Office host application. The `verifyJWT` method is defined in the src\auth.ts file. It always validates the audience and the issuer. We use the optional parameter to specify that we also want it to verify that the scope in the access token is `access_as_user`. This is the only permisison to the add-in that the user and the Office host need in order to get an access token to Microsoft Graph by means of the "on behalf" flow. 
 
     ```javascript
     await auth.initialize();
@@ -424,36 +536,34 @@ There are two server-side files that need to be modified.
     > [!NOTE]
     > You should only use the `access_as_user` scope to authorize the API that handles the on-behalf-of flow for Office add-ins. Other APIs in your service should have their own scope requirements. This limits what can be accessed with the tokens that Office acquires.
 
-5. Replace TODO8 with the following code. Note the following about this code:
+5. Replace `TODO8` with the following code. Note the following about this code:
 
     * The call to `acquireTokenOnBehalfOf` does not include a resource parameter because we constructed the `AuthModule` object (`auth`) with the AAD V2.0 endpoint which does not support a resource property.
     * The second parameter of the call specifies the permissions the add-in will need to get a list of the user's files and folders on OneDrive. (The `profile` permission is not requested because it is only needed when the Office host gets the access token to your add-in, not when you are trading in that token for an access token to Microsoft Graph.)
-    * If the response is a string containing 'capolids", then this is a claims message from AAD that multi-factor auth is required. The message is passed to the client, which uses it to start a second sign-on. The string tells AAD what additional authentication factor(s) it should prompt the user to provide.
 
     ```javascript
-    let graphToken = null;
-    const tokenAcquisitionResponse = await auth.acquireTokenOnBehalfOf(jwt, ['Files.Read.All']);
-    if (tokenAcquisitionResponse.includes('capolids')) {
-        const claims: string[] = [];
-        claims.push(tokenAcquisitionResponse);
-        return res.json(claims);
-    } else {
-        // The response is the token to Microsoft Graph itself. Rename it so remaining code
-        // is self-documenting.
-        graphToken = tokenAcquisitionResponse;
-    }
+    const graphToken = await auth.acquireTokenOnBehalfOf(jwt, ['Files.Read.All']);
     ```
 
-6. Replace TODO9 with the following line. Note the following about this code:
+6. Replace `TODO9` with the following line. Note the following about this code:
 
     * The MSGraphHelper class is defined in src\msgraph-helper.ts. 
     * We minimize the data that must be returned by specifying that we only want the name property and only the first 3 items.
 
+    `const graphData = await MSGraphHelper.getGraphData(graphToken, "/me/drive/root/children", "?$select=name&$top=3");`
+
+7. Replace `TODO10` with the following code. Note that this code handles '401 Unauthorized" errors from Microsoft Graph which would indicate an expired or invalid token. It is very unlikely that this would ever happen since the token persisting logic should prevent it. (See the section **Create a method to get access to the resource using the "on behalf of" flow** above.) If it does happen, this code will relay the error to the client with "Microsoft Graph error" in the error name. (See the `handleClientSideErrors` method that you created in the program.js file in an earlier step.) Code that you add to the ODataHelper.js file in a later step helps process errors from Microsoft Graph.
+
     ```javascript
-    const graphData = await MSGraphHelper.getGraphData(graphToken, "/me/drive/root/children", "?$select=name&$top=3");
+    if (graphData.code) {
+        if (graphData.code === 401) {
+            throw new UnauthorizedError('Microsoft Graph error', graphData);
+        }
+    }
     ```
 
-7. Replace TODO10 with the following code. Note that Microsoft Graph returns some OData metadata and an **eTag** property for every item, even if `name` is the only property requested. The code sends only the item names to the client.
+
+1. Replace `TODO11` with the following code. Note that Microsoft Graph returns some OData metadata and an **eTag** property for every item, even if `name` is the only property requested. The code sends only the item names to the client.
 
     ```javascript
     const itemNames: string[] = [];
@@ -465,6 +575,48 @@ There are two server-side files that need to be modified.
     ```
 
 8. Save and close the file.
+
+### Add response handling to the ODataHelper
+
+1. Open the file src\odata-helper.ts. The file is almost complete. What's missing is the body of the callback to the handler for the request "end" event. Replace the `TODO` with the following code. About this code note:
+
+    * The response from the OData endpoint might be an error, say a 401 if the endpoint requires an access token and it was invalid or expired. But an error message is still a *message*, not an error in the call of `https.get`, so the `on('error', reject)` line at the end of `https.get` isn't triggered. So, the code distinguishes success (200) messages from error messages and sends a JSON object to the caller with either the requested OData or error information.
+
+    ```javascript
+    var error;
+    if (response.statusCode === 200) {
+        // TODO1: Return the data to the caller and resolve the Promise.
+    } else {
+       // TODO2: Return an error object to the caller and resolve the Promise.
+    }
+    ```
+
+1.  Replace `TODO1` with the following code. Note that the code assumes the data is returned as JSON.
+
+    ```javascript
+    let parsedBody = JSON.parse(body);
+    resolve(parsedBody);
+    ```
+
+1.  Replace `TODO2` with the following code. Note about this code:
+
+    * An error response from an OData source will always have a statusCode and usually a statusMessage. Some OData sources also add an error property to the body with further information, such as an inner, or more specific, code and message.
+    * The Promise object is resolved, not rejected. The `https.get` runs when a web service calls an OData endpoint server-to-server. But that call comes in the context of a call from a client to a web API in the web service. The "outer" request from the client to the web service never completes if this "inner" request is rejected. Also, resolving the request with the custom `Error` object is required if the caller of `http.get` needs to relay errors from the OData endpoint to the client.
+
+    ```javascript
+    error = new Error();
+    error.code = response.statusCode;
+    error.message = response.statusMessage;
+    
+    // The error body sometimes includes an empty space
+    // before the first character, remove it or it causes an error.
+    body = body.trim();
+    error.bodyCode = JSON.parse(body).error.code;
+    error.bodyMessage = JSON.parse(body).error.message;
+    resolve(error);
+    ```
+
+1. Save and close the file.
 
 ## Deploy the add-in
 

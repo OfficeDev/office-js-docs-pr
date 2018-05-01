@@ -64,8 +64,61 @@ Use the following steps to add and reference the OfficeThemes.css file to your a
 3. Delete the default **body** class (`body {}`) in the file, and copy and paste the following CSS code into the file.
     
     ```css
-       /* The following classes describe the common theme information for office documents */ /* Basic Font and Background Colors for text */ .office-docTheme-primary-fontColor { color:#000000; } .office-docTheme-primary-bgColor { background-color:#ffffff; } .office-docTheme-secondary-fontColor { color: #000000; } .office-docTheme-secondary-bgColor { background-color: #ffffff; } /* Accent color definitions for fonts */ .office-contentAccent1-color { color:#5b9bd5; } .office-contentAccent2-color { color:#ed7d31; } .office-contentAccent3-color { color:#a5a5a5; } .office-contentAccent4-color { color:#ffc000; } .office-contentAccent5-color { color:#4472c4; } .office-contentAccent6-color { color:#70ad47; } /* Accent color for backgrounds */ .office-contentAccent1-bgColor { background-color:#5b9bd5; } .office-contentAccent2-bgColor { background-color:#ed7d31; } .office-contentAccent3-bgColor { background-color:#a5a5a5; } .office-contentAccent4-bgColor { background-color:#ffc000; } .office-contentAccent5-bgColor { background-color:#4472c4; } .office-contentAccent6-bgColor { background-color:#70ad47; } /* Accent color for borders */ .office-contentAccent1-borderColor { border-color:#5b9bd5; } .office-contentAccent2-borderColor { border-color:#ed7d31; } .office-contentAccent3-borderColor { border-color:#a5a5a5; } .office-contentAccent4-borderColor { border-color:#ffc000; } .office-contentAccent5-borderColor { border-color:#4472c4; } .office-contentAccent6-borderColor { border-color:#70ad47; } /* links */ .office-a { color: #0563c1; } .office-a:visited { color: #954f72; } /* Body Fonts */ .office-bodyFont-eastAsian { } /* East Asian name of the Font */ .office-bodyFont-latin { font-family:"Calibri"; } /* Latin name of the Font */ .office-bodyFont-script { } /* Script name of the Font */ .office-bodyFont-localized { font-family:"Calibri"; } /* Localized name of the Font. Corresponds to the default font of the culture currently used in Office.*/ /* Headers Font */ .office-headerFont-eastAsian { } .office-headerFont-latin { font-family:"Calibri Light"; } .office-headerFont-script { } .office-headerFont-localized { font-family:"Calibri Light"; } /* The following classes define font and background colors for Office UI themes. These classes should only be used in task pane add-ins */ /* Basic Font and Background Colors for PPT */ .office-officeTheme-primary-fontColor { color:#b83b1d; } .office-officeTheme-primary-bgColor { background-color:#dedede; } .office-officeTheme-secondary-fontColor { color:#262626; } .office-officeTheme-secondary-bgColor { background-color:#ffffff; } 
+    /* The following classes describe the common theme information for office documents */ 
 
+    /* Basic Font and Background Colors for text */ 
+    .office-docTheme-primary-fontColor { color:#000000; } 
+    .office-docTheme-primary-bgColor { background-color:#ffffff; } 
+    .office-docTheme-secondary-fontColor { color: #000000; } 
+    .office-docTheme-secondary-bgColor { background-color: #ffffff; } 
+
+    /* Accent color definitions for fonts */ 
+    .office-contentAccent1-color { color:#5b9bd5; } 
+    .office-contentAccent2-color { color:#ed7d31; } 
+    .office-contentAccent3-color { color:#a5a5a5; } 
+    .office-contentAccent4-color { color:#ffc000; } 
+    .office-contentAccent5-color { color:#4472c4; } 
+    .office-contentAccent6-color { color:#70ad47; } 
+
+    /* Accent color for backgrounds */ 
+    .office-contentAccent1-bgColor { background-color:#5b9bd5; } 
+    .office-contentAccent2-bgColor { background-color:#ed7d31; } 
+    .office-contentAccent3-bgColor { background-color:#a5a5a5; } 
+    .office-contentAccent4-bgColor { background-color:#ffc000; } 
+    .office-contentAccent5-bgColor { background-color:#4472c4; } 
+    .office-contentAccent6-bgColor { background-color:#70ad47; } 
+
+    /* Accent color for borders */ 
+    .office-contentAccent1-borderColor { border-color:#5b9bd5; } 
+    .office-contentAccent2-borderColor { border-color:#ed7d31; } 
+    .office-contentAccent3-borderColor { border-color:#a5a5a5; } 
+    .office-contentAccent4-borderColor { border-color:#ffc000; } 
+    .office-contentAccent5-borderColor { border-color:#4472c4; } 
+    .office-contentAccent6-borderColor { border-color:#70ad47; } 
+
+    /* links */ 
+    .office-a { color: #0563c1; } 
+    .office-a:visited { color: #954f72; } 
+
+    /* Body Fonts */ 
+    .office-bodyFont-eastAsian { } /* East Asian name of the Font */ 
+    .office-bodyFont-latin { font-family:"Calibri"; } /* Latin name of the Font */ 
+    .office-bodyFont-script { } /* Script name of the Font */ 
+    .office-bodyFont-localized { font-family:"Calibri"; } /* Localized name of the Font. Corresponds to the default font of the culture currently used in Office.*/ 
+
+    /* Headers Font */ 
+    .office-headerFont-eastAsian { } 
+    .office-headerFont-latin { font-family:"Calibri Light"; } 
+    .office-headerFont-script { } 
+    .office-headerFont-localized { font-family:"Calibri Light"; } 
+
+    /* The following classes define font and background colors for Office UI themes. These classes should only be used in task pane add-ins */ 
+
+    /* Basic Font and Background Colors for PPT */ 
+    .office-officeTheme-primary-fontColor { color:#b83b1d; } 
+    .office-officeTheme-primary-bgColor { background-color:#dedede; } 
+    .office-officeTheme-secondary-fontColor { color:#262626; } 
+    .office-officeTheme-secondary-bgColor { background-color:#ffffff; }
     ```
 4. If you are using a tool other than Visual Studio to create your add-in, copy the CSS code from step 3 into a text file, making sure to save the file as OfficeThemes.css.   
 
@@ -74,7 +127,7 @@ Use the following steps to add and reference the OfficeThemes.css file to your a
 To use the OfficeThemes.css file in your add-in project, add a `<link>` tag that references the OfficeThemes.css file inside the `<head>` tag of the web pages (such as an .html, .aspx, or .php file) that implement the UI of your add-in in this format:
 
 ```HTML
-<link href="<local_path_to_OfficeThemes.css> " rel="stylesheet" type="text/css" />
+<link href="<local_path_to_OfficeThemes.css>" rel="stylesheet" type="text/css" />
 ```
 
 To do this in Visual Studio, follow these steps.
@@ -86,7 +139,7 @@ To do this in Visual Studio, follow these steps.
 2. In the HTML pages that implement the UI of your add-in, such as Home.html in the default template, add the following `<link>` tag inside the `<head>` tag that references the OfficeThemes.css file:
     
     ```HTML
-      <link href="../../Content/OfficeThemes.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/OfficeThemes.css" rel="stylesheet" type="text/css" />
     ```
 
 If you are creating your add-in with a tool other than Visual Studio, add a `<link>` tag with the same format specifying a relative path to the copy of OfficeThemes.css that will be deployed with your add-in.
@@ -96,7 +149,18 @@ If you are creating your add-in with a tool other than Visual Studio, add a `<li
 The following shows a simple example of HTML in a content add-in that uses the OfficeTheme.css document theme classes. For details about the OfficeThemes.css classes that correspond to the 12 colors and 2 fonts used in a document theme, see [Theme classes for content add-ins](#theme-classes-for-content-add-ins).
 
 ```HTML
-    <body> <div id="themeSample" class="office-docTheme-primary-fontColor "> <h1 class="office-headerFont-latin">Hello world!</h1> <h1 class="office-headerFont-latin office-contentAccent1-bgColor">Hello world!</h1> <h1 class="office-headerFont-latin office-contentAccent2-bgColor">Hello world!</h1> <h1 class="office-headerFont-latin office-contentAccent3-bgColor">Hello world!</h1> <h1 class="office-headerFont-latin office-contentAccent4-bgColor">Hello world!</h1> <h1 class="office-headerFont-latin office-contentAccent5-bgColor">Hello world!</h1> <h1 class="office-headerFont-latin office-contentAccent6-bgColor">Hello world!</h1> <p class="office-bodyFont-latin office-docTheme-secondary-fontColor">Hello world!</p> </div> </body>
+<body>
+    <div id="themeSample" class="office-docTheme-primary-fontColor ">
+        <h1 class="office-headerFont-latin">Hello world!</h1> 
+        <h1 class="office-headerFont-latin office-contentAccent1-bgColor">Hello world!</h1> 
+        <h1 class="office-headerFont-latin office-contentAccent2-bgColor">Hello world!</h1> 
+        <h1 class="office-headerFont-latin office-contentAccent3-bgColor">Hello world!</h1> 
+        <h1 class="office-headerFont-latin office-contentAccent4-bgColor">Hello world!</h1> 
+        <h1 class="office-headerFont-latin office-contentAccent5-bgColor">Hello world!</h1> 
+        <h1 class="office-headerFont-latin office-contentAccent6-bgColor">Hello world!</h1> 
+        <p class="office-bodyFont-latin office-docTheme-secondary-fontColor">Hello world!</p> 
+    </div>
+</body>
 ```
 
 At runtime, when inserted into a presentation that uses the default  **Office Theme**, the content add-in is rendered like this.
@@ -115,7 +179,21 @@ In addition to the document theme, users can customize the color scheme of the O
 The following shows a simple example of HTML in a task pane add-in that uses OfficeTheme.css classes to specify font color and background color. For details about the OfficeThemes.css classes that correspond to fonts and colors of the Office UI theme, see [Theme classes for task pane add-ins](#theme-classes-for-task-pane-add-ins).
 
 ```HTML
-<body> <div id="content-header" class="office-officeTheme-primary-fontColor office-officeTheme-primary-bgColor"> <div class="padding"> <h1>Welcome</h1> </div> </div> <div id="content-main" class="office-officeTheme-secondary-fontColor office-officeTheme-secondary-bgColor"> <div class="padding"> <p>Add home screen content here.</p> <p>For example:</p> <button id="get-data-from-selection">Get data from selection</button> <p> <a target="_blank" class="office-a" href="https://go.microsoft.com/fwlink/?LinkId=276812"> Find more samples online... </a> </p> </div> </div> </body> 
+<body> 
+    <div id="content-header" class="office-officeTheme-primary-fontColor office-officeTheme-primary-bgColor"> 
+        <div class="padding">
+            <h1>Welcome</h1>
+        </div> 
+    </div> 
+    <div id="content-main" class="office-officeTheme-secondary-fontColor office-officeTheme-secondary-bgColor"> 
+        <div class="padding"> 
+            <p>Add home screen content here.</p> 
+            <p>For example:</p> 
+            <button id="get-data-from-selection">Get data from selection</button> 
+            <p><a target="_blank" class="office-a" href="https://go.microsoft.com/fwlink/?LinkId=276812">Find more samples online...</a></p>
+        </div>
+    </div>
+</body> 
 ```
 
 <br/>
