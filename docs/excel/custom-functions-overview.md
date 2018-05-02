@@ -9,14 +9,14 @@ The following illustration shows you how an end user would insert a custom funct
 Here’s the code for the same custom function.
 
 ```js
-function add42(a, b) {
+function ADD42(a, b) {
     return a + b + 42;
 }
 ```
 
 Custom functions are now available in preview. Follow these steps to try them:
 
-1.  Install Office 2016 for Windows and join the [Office Insider](https://products.office.com/en-us/office-insider) program.
+1.  Install Office (build 9325 on Windows or 13.329 on Mac) and join the [Office Insider](https://products.office.com/en-us/office-insider) program. (Note that it isn't enough just to get the latest build; the feature will be disabled on any build until you join the Insider program)
 2.  Clone the [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) repo and follow the instructions in the README.md to start the add-in in Excel.
 3.  Type `=CONTOSO.ADD42(1,2)` into any cell, and press **Enter** to run the custom function.
 
@@ -26,36 +26,26 @@ See the **Known Issues** section at the end of this article, which includes curr
 
 In the cloned sample repo, you’ll see the following files:
 
-- **customfunctions.js**, which contains the custom function code.
+- **customfunctions.js**, which contains the custom function code (see the simple code example above for the `ADD42` function).
 - **customfunctions.json**, which contains the registration JSON that tells Excel about your custom function. Registration makes your custom functions appear in the list of available functions displayed when a user types in a cell.
 - **customfunctions.html**, which provides a &lt;Script&gt; reference to the JS file. This file does not display UI in Excel.
 - **manifest.xml**, which tells Excel the location of the HTML, JavaScript, and JSON files; and also specifies a namespace for all the custom functions that are installed with the add-in.
 
-### JavaScript file (customfunctions.js)
-
-The following code in customfunctions.js declares a custom function called `add42` similar to the previous example, but it adds 42 to a single input instead of two.
-
-```js
-function add42(num) {
-    return num + 42;
-}
-```
-
 ### JSON file (customfunctions.json)
 
-The following code in customfunctions.json specifies the metadata for the same function.
+The following code in customfunctions.json specifies the metadata for the same `ADD42` function.
 
 > [!NOTE]
-> Detailed reference for the registraion JSON of custom functions, including options not used in this example is at [Custom Functions Registration JSON](https://dev.office.com/reference/add-ins/custom-functions-json).
+> Detailed reference information for the JSON file, including options not used in this example, is at [Custom Functions Registration JSON](https://dev.office.com/reference/add-ins/custom-functions-json).
 
-Note the following about the properties in this example:
+Note that for this example:
 
 - There's only one custom function, so there's only one member of the `functions` array.
 - The `name` property defines the function name. As you see in the animated gif shown previously, a namespace (`CONTOSO`) is prepended to the function name in the Excel autocomplete menu. This prefix is defined in the add-in manifest, described below. The prefix and the function name are separated using a period, and by convention prefixes and function names are uppercase. To use your custom function, a user types the namespace followed by the function's name (`ADD42`) into a cell, in this case `=CONTOSO.ADD42`. The prefix is intended to be used as an identifier for your company or the add-in. 
 - The `description` appears in the autocomplete menu in Excel.
 - When the user requests help for a function, Excel opens a task pane and displays the web page found at the URL specified in `helpUrl`.
 - The `result` property specifies the type of information returned by the function to Excel. The `type` child property can `"string"`, `"number"`, or `"boolean"`. The `dimensionality` property can be `scalar` or `matrix` (a two-dimensional array of values of the specified `type`.)
-- The `parameters` array specifies, *in order*, the type of data in each parameter that is passed to the function. In this case there is only one. The `name` and `description` child properties are used in the Excel intellisense. The `type` and `dimensionality` child properties are identical to the child properties of the `result` property described above.
+- The `parameters` array specifies, *in order*, the type of data in each parameter that is passed to the function. The `name` and `description` child properties are used in the Excel intellisense. The `type` and `dimensionality` child properties are identical to the child properties of the `result` property described above.
 - The `options` property enables you to customize some aspects of how and when Excel executes the function. There is more information about these options later in this article.
 
  ```js
@@ -63,7 +53,7 @@ Note the following about the properties in this example:
 	"functions": [
 		{
 			"name": "ADD42", 
-			"description":  "Adds 42 to the input number",
+			"description":  "adds 42 to the input numbers",
 			"helpUrl": "http://dev.office.com",
 			"result": {
 				"type": "number",
@@ -71,8 +61,14 @@ Note the following about the properties in this example:
 			},
 			"parameters": [
 				{
-					"name": "num",
-					"description": "Number",
+					"name": "number 1",
+					"description": "the first number to be added",
+					"type": "number",
+					"dimensionality": "scalar"
+				},
+				{
+					"name": "number 2",
+					"description": "the second number to be added",
 					"type": "number",
 					"dimensionality": "scalar"
 				}
@@ -144,15 +140,16 @@ The following is an example of the `<ExtensionPoint>` and `<Resources>` markup t
 ```
 
 
-## Asynchronous and synchronous functions
+## Synchronous and asynchronous functions
 
-If your custom function retrieves data from the web, you need to make an asynchronous call to fetch it. When calling external web services, your custom function must:
+The function `ADD42` above is synchronous with respect to Excel (designated by setting the option `"sync": true` in the JSON file). Synchronous functions offer fast performance because they run in the same process as Excel and they run in parallel during multithreaded calculation.   
+
+On the other hand, if your custom function retrieves data from the web, it must be asynchronous with respect to Excel. Asynchronous functions must:
 
 1. Return a JavaScript Promise to Excel.
-2. Make the HTTP request to call the external service.
-3. Resolve the promise using the `setResult` callback that provided for you by Excel. `setResult` sends the value to Excel.
+3. Resolve the Promise with the final value using the callback function.
 
-The following code shows an example of an asynchronous custom function that retrieves the temperature of a thermometer. Note that `sendWebRequest` is a hypothetical function, not specified here, that makes an AJAX call to a temperature web service.
+The following code shows an example of an asynchronous custom function that retrieves the temperature of a thermometer. Note that `sendWebRequest` is a hypothetical function, not specified here, that uses XHR to call a temperature web service.
 
 ```js
 function getTemperature(thermometerID){
@@ -163,6 +160,8 @@ function getTemperature(thermometerID){
     });
 }
 ```
+
+Asynchronous functions display a `GETTING_DATA` temporary error in the cell while Excel waits for the final result. Users can interact normally with the rest of the spreadsheet while they wait for the result.
 
 > [!NOTE]
 > Custom functions are asynchronous by default. To designate functions as synchronous set the option `"sync": true` in the `options` property for the custom function in the registration JSON file.
@@ -215,7 +214,7 @@ function incrementValue(increment, caller){
 
 ## Saving and sharing state
 
-Custom functions can save data in global JavaScript variables. In subsequent calls, your custom function may use the values saved in these variables. Saved state is useful when users add the same custom function to more than one cell, because all the instances of the function can share the state. For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.
+Asynchronous custom functions can save data in global JavaScript variables. In subsequent calls, your custom function may use the values saved in these variables. Saved state is useful when users add the same custom function to more than one cell, because all the instances of the function can share the state. For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.
 
 The following code shows an implementation of the previous temperature-streaming function that saves state globally. Note the following about this code:
 
@@ -248,11 +247,14 @@ function refreshTemperature(thermometerID){
 }
 ```
 
+> [!NOTE]
+> Synchronous functions (designated by setting the option `"sync": true` in the JSON file) cannot share state because Excel parallelizes them during multithreaded calculation. Only asynchronous functions may share state because an add-in's synchronous functions share the same JavaScript context in each session.
+
 ## Working with ranges of data
 
 Your custom function can take a range of data as a parameter, or you can return a range of data from a custom function.
 
-For example, suppose that your function returns the second highest value from a range of numbers stored in Excel. The following function takes the parameter `values`, which is an `Excel.CustomFunctionDimensionality.matrix` parameter type. Note that in the registration JSON for this function, you would set the `type` child property, of the object in the `parameters` array, to `matrix`.
+For example, suppose that your function returns the second highest value from a range of numbers stored in Excel. The following function takes the parameter `values`, which is an `Excel.CustomFunctionDimensionality.matrix` parameter type. Note that in the registration JSON for this function, you would set the parameter's `type` property to `matrix`.
 
 ```js
 function secondHighest(values){ 
@@ -271,6 +273,8 @@ function secondHighest(values){
      return secondHighest;
  }
 ```
+
+As you can see, ranges are handled in JavaScript as arrays of row arrays (like a 2-dimensional array).
 
 ## Known issues
 
