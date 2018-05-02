@@ -26,26 +26,26 @@ See the **Known Issues** section at the end of this article, which includes curr
 
 In the cloned sample repo, you’ll see the following files:
 
-- **customfunctions.js**, which contains the custom function code (see the simple code example above for the ADD42 function).
+- **customfunctions.js**, which contains the custom function code (see the simple code example above for the `ADD42` function).
 - **customfunctions.json**, which contains the registration JSON that tells Excel about your custom function. Registration makes your custom functions appear in the list of available functions displayed when a user types in a cell.
 - **customfunctions.html**, which provides a &lt;Script&gt; reference to the JS file. This file does not display UI in Excel.
 - **manifest.xml**, which tells Excel the location of the HTML, JavaScript, and JSON files; and also specifies a namespace for all the custom functions that are installed with the add-in.
 
 ### JSON file (customfunctions.json)
 
-The following code in customfunctions.json specifies the metadata for the same function.
+The following code in customfunctions.json specifies the metadata for the same `ADD42` function.
 
 > [!NOTE]
-> Detailed reference for the registraion JSON of custom functions, including options not used in this example is at [Custom Functions Registration JSON](https://dev.office.com/reference/add-ins/custom-functions-json).
+> Detailed reference information for the JSON file, including options not used in this example, is at [Custom Functions Registration JSON](https://dev.office.com/reference/add-ins/custom-functions-json).
 
-Note the following about the properties in this example:
+Note that for this example:
 
 - There's only one custom function, so there's only one member of the `functions` array.
 - The `name` property defines the function name. As you see in the animated gif shown previously, a namespace (`CONTOSO`) is prepended to the function name in the Excel autocomplete menu. This prefix is defined in the add-in manifest, described below. The prefix and the function name are separated using a period, and by convention prefixes and function names are uppercase. To use your custom function, a user types the namespace followed by the function's name (`ADD42`) into a cell, in this case `=CONTOSO.ADD42`. The prefix is intended to be used as an identifier for your company or the add-in. 
 - The `description` appears in the autocomplete menu in Excel.
 - When the user requests help for a function, Excel opens a task pane and displays the web page found at the URL specified in `helpUrl`.
 - The `result` property specifies the type of information returned by the function to Excel. The `type` child property can `"string"`, `"number"`, or `"boolean"`. The `dimensionality` property can be `scalar` or `matrix` (a two-dimensional array of values of the specified `type`.)
-- The `parameters` array specifies, *in order*, the type of data in each parameter that is passed to the function. In this case there is only one. The `name` and `description` child properties are used in the Excel intellisense. The `type` and `dimensionality` child properties are identical to the child properties of the `result` property described above.
+- The `parameters` array specifies, *in order*, the type of data in each parameter that is passed to the function. The `name` and `description` child properties are used in the Excel intellisense. The `type` and `dimensionality` child properties are identical to the child properties of the `result` property described above.
 - The `options` property enables you to customize some aspects of how and when Excel executes the function. There is more information about these options later in this article.
 
  ```js
@@ -53,7 +53,7 @@ Note the following about the properties in this example:
 	"functions": [
 		{
 			"name": "ADD42", 
-			"description":  "Adds 42 to the input number",
+			"description":  "adds 42 to the input numbers",
 			"helpUrl": "http://dev.office.com",
 			"result": {
 				"type": "number",
@@ -61,8 +61,14 @@ Note the following about the properties in this example:
 			},
 			"parameters": [
 				{
-					"name": "num",
-					"description": "Number",
+					"name": "number 1",
+					"description": "the first number to be added",
+					"type": "number",
+					"dimensionality": "scalar"
+				},
+				{
+					"name": "number 2",
+					"description": "the second number to be added",
 					"type": "number",
 					"dimensionality": "scalar"
 				}
