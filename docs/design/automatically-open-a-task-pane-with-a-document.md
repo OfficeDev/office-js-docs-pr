@@ -1,7 +1,7 @@
 ---
 title: Automatically open a task pane with a document
 description: ''
-ms.date: 01/23/2018
+ms.date: 05/02/2018
 ---
 
 
@@ -108,7 +108,7 @@ The webextension part also includes a reference to the store or catalog with att
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|The AppSource asset ID of the add-in (see Note)|The locale of AppSource; for example, "en-us".|The version in the AppSource catalog (see Note)|
 |FileSystem (a network share)|The GUID of the add-in in the add-in manifest.|The path of the network share; for example, "\\\\MyComputer\\MySharedFolder".|The version in the add-in manifest.|
-|EXCatalog (deployment via the Exchange server) |The GUID of the add-in in the add-in manifest.|"EXCatalog"|The version in the add-in manifest.
+|EXCatalog (deployment via the Exchange server) |The GUID of the add-in in the add-in manifest.|"EXCatalog". EXCatalog row is the row to use with add-ins that use Centralized Deployment in the Office 365 admin center.|The version in the add-in manifest.
 |Registry (System registry)|The GUID of the add-in in the add-in manifest.|"developer"|The version in the add-in manifest.|
 
 > [!NOTE]
@@ -135,7 +135,23 @@ Setting `visibility` to "1" is a good choice when the add-in and the template or
 
 An easy way to write the XML is to first run your add-in and [tag the document on the client side](#tag-the-document-on-the-client-side) to write the value, and then save the document and inspect the XML that is generated. Office will detect and provide the appropriate attribute values. You can also use the [Open XML SDK 2.5 Productivity Tool](https://www.microsoft.com/en-us/download/details.aspx?id=30425) tool to generate C# code to programmatically add the markup based on the XML you generate.
 
+## Test and verify opening taskpanes
+You can deploy a test version of your add-in thaqt will automatically open a taskpane using Centralized Deployment via the Office 365 admin center. The following example shows how add-ins are inserted from the Centralized Deployment catalog using the EXCatalog store version.
+
+```xml
+<we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="{52811C31-4593-43B8-A697-EB873422D156}">
+    <we:reference id="af8fa5ba-4010-4bcc-9e03-a91ddadf6dd3" version="1.0.0.0" store="EXCatalog" storeType="EXCatalog"/>
+    <we:alternateReferences/>
+    <we:properties/>
+    <we:bindings/>
+    <we:snapshot xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"/>
+</we:webextension>
+```
+To test the previous example, please see [Setup your Office 365 development environment](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment) and consider signing up for an [Office 365 developer account](https://developer.microsoft.com/en-us/office/dev-program). You can actually test drive Centralized Deployment and verify that your add-in works as expected.
+
+
 ## See also
 
 For a sample that shows you how to use the autoopen feature, see [Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane). 
+[Join the Office 365 developer program](https://docs.microsoft.com/en-us/office/developer-program/office-365-developer-program). 
 
