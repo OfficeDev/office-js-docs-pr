@@ -9,7 +9,7 @@ The following illustration shows you how an end user would insert a custom funct
 Here’s the code for the same custom function.
 
 ```js
-function add42(a, b) {
+function ADD42(a, b) {
     return a + b + 42;
 }
 ```
@@ -18,7 +18,7 @@ Custom functions are now available in preview. Follow these steps to try them:
 
 1.  Install Office (build 9325 on Windows or 13.329 on Mac) and join the [Office Insider](https://products.office.com/en-us/office-insider) program. (Note that it isn't enough just to get the latest build; the feature will be disabled on any build until you join the Insider program)
 2.  Clone the [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) repo and follow the instructions in the README.md to start the add-in in Excel.
-3.  Type `=CONTOSO.ADD42(1)` into any cell, and press **Enter** to run the custom function.
+3.  Type `=CONTOSO.ADD42(1,2)` into any cell, and press **Enter** to run the custom function.
 
 See the **Known Issues** section at the end of this article, which includes current limitations of custom functions and will be updated over time.
 
@@ -26,20 +26,10 @@ See the **Known Issues** section at the end of this article, which includes curr
 
 In the cloned sample repo, you’ll see the following files:
 
-- **customfunctions.js**, which contains the custom function code.
+- **customfunctions.js**, which contains the custom function code (see the simple code example above for the ADD42 function).
 - **customfunctions.json**, which contains the registration JSON that tells Excel about your custom function. Registration makes your custom functions appear in the list of available functions displayed when a user types in a cell.
 - **customfunctions.html**, which provides a &lt;Script&gt; reference to the JS file. This file does not display UI in Excel.
 - **manifest.xml**, which tells Excel the location of the HTML, JavaScript, and JSON files; and also specifies a namespace for all the custom functions that are installed with the add-in.
-
-### JavaScript file (customfunctions.js)
-
-The following code in customfunctions.js declares a custom function called `add42` similar to the previous example, but it adds 42 to a single input instead of two.
-
-```js
-function add42(num) {
-    return num + 42;
-}
-```
 
 ### JSON file (customfunctions.json)
 
