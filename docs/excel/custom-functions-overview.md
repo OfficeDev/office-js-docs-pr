@@ -129,15 +129,16 @@ The following is an example of the `<ExtensionPoint>` and `<Resources>` markup t
 ```
 
 
-## Asynchronous and synchronous functions
+## Synchronous and asynchronous functions
 
-If your custom function retrieves data from the web, you need to make an asynchronous call to fetch it. When calling external web services, your custom function must:
+The function `ADD42` above is synchronous with respect to Excel (designated by setting the option `"sync": true` in the JSON file). Synchronous functions offer fast performance because they run in the same process as Excel and they run in parallel during multithreaded calculation.   
+
+On the other hand, if your custom function retrieves data from the web, it must be asynchronous with respect to Excel. Asynchronous functions must:
 
 1. Return a JavaScript Promise to Excel.
-2. Make the HTTP request to call the external service.
-3. Resolve the promise using the `setResult` callback that provided for you by Excel. `setResult` sends the value to Excel.
+3. Resolve the Promise with the final value using the callback function.
 
-The following code shows an example of an asynchronous custom function that retrieves the temperature of a thermometer. Note that `sendWebRequest` is a hypothetical function, not specified here, that makes an AJAX call to a temperature web service.
+The following code shows an example of an asynchronous custom function that retrieves the temperature of a thermometer. Note that `sendWebRequest` is a hypothetical function, not specified here, that uses XHR to call a temperature web service.
 
 ```js
 function getTemperature(thermometerID){
@@ -148,6 +149,8 @@ function getTemperature(thermometerID){
     });
 }
 ```
+
+Asynchronous functions display a `GETTING_DATA` temporary error in the cell while Excel waits for the final result. Users can interact normally with the rest of the spreadsheet while they wait for the result.
 
 > [!NOTE]
 > Custom functions are asynchronous by default. To designate functions as synchronous set the option `"sync": true` in the `options` property for the custom function in the registration JSON file.
@@ -200,7 +203,7 @@ function incrementValue(increment, caller){
 
 ## Saving and sharing state
 
-Custom functions can save data in global JavaScript variables. In subsequent calls, your custom function may use the values saved in these variables. Saved state is useful when users add the same custom function to more than one cell, because all the instances of the function can share the state. For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.
+Asynchronous custom functions can save data in global JavaScript variables. In subsequent calls, your custom function may use the values saved in these variables. Saved state is useful when users add the same custom function to more than one cell, because all the instances of the function can share the state. For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.
 
 The following code shows an implementation of the previous temperature-streaming function that saves state globally. Note the following about this code:
 
@@ -232,6 +235,9 @@ function refreshTemperature(thermometerID){
      }, 1000); // Wait 1 second before reading the thermometer again, and then update the saved temperature of thermometerID.
 }
 ```
+
+> [!NOTE]
+> Synchronous functions (designated by setting the option `"sync": true` in the JSON file) cannot share state because Excel parallelizes them during multithreaded calculation. Only asynchronous functions may share state because an add-in's synchronous functions share the same JavaScript context in each session.
 
 ## Working with ranges of data
 
