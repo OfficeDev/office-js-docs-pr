@@ -25,7 +25,7 @@
       displayName: Excel
     - name: Use Vue
       href: quickstarts/excel-quickstart-vue.md
-      displayName: Excel 
+      displayName: Excel
   - name: Create Word add-in
     href: quickstarts/word-quickstart.md
     displayName: Word
@@ -107,8 +107,6 @@
     - name: Office UI Fabric
       href: design/office-ui-fabric.md
       items:
-      - name: Get started using Fabric JS
-        href: design/using-office-ui-fabric-js.md
       - name: Get started using Fabric React
         href: design/using-office-ui-fabric-react.md
       - name: Breadcrumb

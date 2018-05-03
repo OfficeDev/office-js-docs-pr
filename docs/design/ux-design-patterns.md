@@ -6,7 +6,7 @@ ms.date: 01/23/2018
 
 
 
-# UX design pattern templates for Office Add-ins 
+# UX design pattern templates for Office Add-ins
 
 The [UX design patterns for Office Add-ins project](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code "UX design patterns for Office Add-ins project") includes HTML, JavaScript, and CSS files that you can use to create the UX for your add-in.   
 
@@ -19,22 +19,24 @@ Use the UX design patterns project to:
 
 ## Using the UX design patterns
 
-You can use the [UX Design Pattern specifications](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns) as a guide when you design your own Office Add-in, or you can add the [source code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates) directly to your project.
+You can use the [Office Add-ins Design Toolkit](https://aka.ms/addins_toolkit) together with the [Fabric Design Toolkit](https://aka.ms/fabric-toolkit) as a guide when you design your own Office Add-in. You can also add the [source code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates) directly to your project.
 
 To use the specifications to build a mock-up of your own add-in UI:
 
 1. Download design assets files and begin designing your own UI:
-    * [Office Add-in UX Design Components](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/addin_ux_design_components.ai) (Adobe Illustrator file)
-    * [Office Add-in UX Design Patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/addin_ux_design_patterns.ai) (Adobe Illustrator file) or the
-    * [Office Add-in UX Design Prototype](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/assets/addin_ux_design_prototype.xd) (Adobe Experience Design file)
+	* [Office Add-ins Design Toolkit](https://aka.ms/addins_toolkit)
+	* [Fabric Design Toolkit](https://aka.ms/fabric-toolkit)
+
 2. Refer to the following articles for guidance:
-    * [UX design Patterns](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/README.md)
     * Best practices for [Designing your Office Add-ins](add-in-design.md)
     * [Office UI Fabric Toolkits](https://developer.microsoft.com/en-us/fabric#/resources)
 
+> [!NOTE]
+> Some UX patterns in the Add-ins Design Toolkit do not match the UX design patterns detailed below. We're planning to release updated documentation that will align with the toolkit.
+
 To add the source code:
 
-1. Clone the [UX design patterns for Office Add-ins project repo](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code "UX design patterns for Office Add-ins project"). 
+1. Clone the [UX design patterns for Office Add-ins project repo](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code "UX design patterns for Office Add-ins project").
 2. Copy the [assets folder](https://github.com/OfficeDev/Office-Add-in-UX-Design-Pattern-Code/tree/master/assets), and the code folder for the individual pattern you choose to your add-in project.  
 3. Incorporate the individual pattern into your add-in. For example:
 	- Edit the source location or add-in command URL in the manifest.
@@ -43,6 +45,7 @@ To add the source code:
 
 > [!NOTE]
 > Some UX pattern specifications do not match the source code. We're working hard to bring all assets into alignment. Also notice that some specifications are presented as archived. We're assessing these archived specifications for value to the platform. Each pattern aims to represent a unique template and pattern of interaction. The patterns should not overlap with each other and should be well differentiated from Office Fabric UI components.
+
 
 ## Types of UX design patterns
 ### Generic pages
@@ -76,7 +79,7 @@ A first-run experience is the experience a user has when they open your add-in f
 	* [Video specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/patterns/video-placemat.md)
 	* [Video code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/video-placemat)
 * **Walkthrough** - Takes users through a series of features or information before they start using the add-in.
-	* [Carousel specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/patterns/carousel.md) (Note that this UX design pattern has been renamed to "Carousel." Former specifications referred to it as a "Paging Panel." Code assets refer to it as a "First-run Walkthrough.") 
+	* [Carousel specification](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/patterns/carousel.md) (Note that this UX design pattern has been renamed to "Carousel." Former specifications refered to it as a "Paging Panel." Code assets refer to it as a "First-run Walkthrough." 
 	* [Walkthrough code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/walkthrough)
 
 [AppSource](https://docs.microsoft.com/en-us/office/dev/store/use-the-seller-dashboard-to-submit-to-the-office-store) has a system that manages trial versions of an add-in, but if you want to control the UI of the trial experience for your add-in, use the following patterns:
