@@ -17,11 +17,11 @@ Each time certain types of changes occur in an Excel workbook, an event notifica
 
 | Event | Description | Supported objects |
 |:---------------|:-------------|:-----------|
-| `onAdded` | Event that occurs when an object is added. | **WorksheetCollection** |
-| `onActivated` | Event that occurs when an object is activated. | **WorksheetCollection**, **Worksheet** |
-| `onDeactivated` | Event that occurs when an object is deactivated. | **WorksheetCollection**, **Worksheet** |
-| `onChanged` | Event that occurs when data within cells is changed. | **Worksheet**, **Table**, **TableCollection**, **Binding** |
-| `onSelectionChanged` | Event that occurs when the active cell or selected range is changed. | **Worksheet**, **Table**, **Binding** |
+| `onAdded` | Event that occurs when an object is added. | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetaddedeventargs.md) |
+| `onActivated` | Event that occurs when an object is activated. | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetactivatedeventargs.md), [**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetactivatedeventargs.md) |
+| `onDeactivated` | Event that occurs when an object is deactivated. | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetdeactivatedeventargs.md), [**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetdeactivatedeventargs.md) |
+| `onChanged` | Event that occurs when data within cells is changed. | [**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetchangedeventargs.md), [**Table**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/tablechangedeventargs.md), [**TableCollection**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/tablechangedeventargs.md), [**Binding**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/bindingdatachangedeventargs.md) |
+| `onSelectionChanged` | Event that occurs when the active cell or selected range is changed. | [**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetselectionchangedeventargs.md), [**Table**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/tableselectionchangedeventargs.md), [**Binding**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/bindingselectionchangedeventargs.md) |
 
 ### Event triggers
 
@@ -48,7 +48,7 @@ The following code sample registers an event handler for the `onChanged` event i
 ```js
 Excel.run(function (context) {
     var worksheet = context.workbook.worksheets.getItem("Sample");
-    worksheet.onChanged.add(handleDataChange);
+    worksheet.onChanged.add(handleChange);
 
     return context.sync()
         .then(function () {
@@ -62,7 +62,7 @@ Excel.run(function (context) {
 As shown in the previous example, when you register an event handler, you indicate the function that should run when the specified event occurs. You can design that function to perform whatever actions your scenario requires. The following code sample shows an event handler function that simply writes information about the event to the console. 
 
 ```js
-function handleDataChange(event)
+function handleChange(event)
 { 
     return Excel.run(function(context){
         return context.sync()
