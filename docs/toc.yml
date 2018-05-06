@@ -10,18 +10,21 @@
     href: overview/office-add-in-availability.md
     displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
 
-- name: Quickstarts
+- name: Quick Starts
   items:
   - name: Create Excel add-in
     items:
-    - name: Use React
-      href: quickstarts/excel-quickstart-react.md
-      displayName: Excel
     - name: Use Angular
       href: quickstarts/excel-quickstart-angular.md
       displayName: Excel
     - name: Use jQuery
       href: quickstarts/excel-quickstart-jquery.md
+      displayName: Excel
+    - name: Use React
+      href: quickstarts/excel-quickstart-react.md
+      displayName: Excel
+    - name: Use Vue
+      href: quickstarts/excel-quickstart-vue.md
       displayName: Excel
   - name: Create Word add-in
     href: quickstarts/word-quickstart.md
@@ -43,6 +46,13 @@
   items:
   - name: Excel add-in tutorial
     href: tutorials/excel-tutorial.yml
+    displayName: Excel
+  - name: PowerPoint add-in tutorial
+    href: tutorials/powerpoint-tutorial.yml
+    displayName: PowerPoint
+  - name: Word add-in tutorial
+    href: tutorials/word-tutorial.yml
+    displayName: Word
 
 - name: Concepts
   items:
@@ -68,6 +78,8 @@
       items:
       - name: Design language
         href: design/add-in-design-language.md
+      - name: Using motion
+        href: design/using-motion-office-addins.md
       - name: UX design templates
         href: design/ux-design-patterns.md
       - name: Usability testing
@@ -120,6 +132,8 @@
 
   - name: Develop
     items:
+    - name: Office versions and requirement sets
+      href: develop/office-versions-and-requirement-sets.md
     - name: Install the latest Office version
       href: develop/install-latest-office-version.md
     - name: Office JavaScript API
@@ -143,7 +157,7 @@
         href: develop/create-addin-commands.md
       - name: Specify Office hosts
         href: develop/specify-office-hosts-and-api-requirements.md
-      - name: Requesting permissions for API use in content and task pane add-ins
+      - name: Request permissions for API use in content and task pane add-ins
         href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
       - name: Update API and manifest version
         href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
@@ -157,10 +171,16 @@
           href: develop/create-sso-office-add-ins-aspnet.md
         - name: Create an SSO add-in using Node.js
           href: develop/create-sso-office-add-ins-nodejs.md
+        - name: Register an Office Add-in that uses SSO with Azure AD v2.0
+          href: develop/register-sso-add-in-aad-v2.md
+        - name: Grant administrator consent to the add-in
+          href: develop/grant-admin-consent-to-an-add-in.md
         - name: Troubleshoot error messages for single sign-on (SSO)
           href: develop/troubleshoot-sso-in-office-add-ins.md
       - name: Authorize external services
         href: develop/auth-external-add-ins.md
+      - name: Authorize to Microsoft Graph
+        href: develop/authorize-to-microsoft-graph.md
 
     - name: Use the Dialog API
       href: develop/dialog-api-in-office-add-ins.md
@@ -192,15 +212,21 @@
       href: excel/excel-add-ins-get-started-overview.md
       displayName: Excel
       items:
-      - name: Use React
-        href: excel/excel-add-ins-get-started-react.md
-        displayName: Excel
       - name: Use Angular
         href: excel/excel-add-ins-get-started-angular.md
         displayName: Excel
       - name: Use jQuery
         href: excel/excel-add-ins-get-started-jquery.md
         displayName: Excel
+      - name: Use React
+        href: excel/excel-add-ins-get-started-react.md
+        displayName: Excel
+      - name: Use Vue
+        href: excel/excel-add-ins-get-started-vue.md
+        displayName: Excel
+    - name: Excel add-in tutorial
+      href: tutorials/excel-tutorial.yml
+      displayName: Excel
     - name: Core concepts
       href: excel/excel-add-ins-core-concepts.md
       displayName: Excel
@@ -233,8 +259,14 @@
       - name: Coauthoring in Excel add-ins
         href: excel/co-authoring-in-excel-add-ins.md
         displayName: Excel
+      - name: Data validation
+        href: excel/excel-add-ins-data-validation.md
+        displayName: Excel
       - name: Error handling
         href: excel/excel-add-ins-error-handling.md
+        displayName: Excel
+      - name: Performance optimization
+        href: excel/performance.md
         displayName: Excel
     - name: Excel JavaScript API reference
       href: https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview
@@ -246,6 +278,9 @@
     items:
     - name: Build your first Word add-in
       href: word/word-add-ins.md
+      displayName: Word
+    - name: Word add-in tutorial
+      href: tutorials/word-tutorial.yml
       displayName: Word
     - name: Create better add-ins for Word with Office Open XML
       href: word/create-better-add-ins-for-word-with-office-open-xml.md
@@ -276,6 +311,9 @@
     items:
     - name: Build your first PowerPoint add-in
       href: powerpoint/powerpoint-add-ins-get-started.md
+      displayName: PowerPoint
+    - name: PowerPoint add-in tutorial
+      href: tutorials/powerpoint-tutorial.yml
       displayName: PowerPoint
     - name: Use document themes in your PowerPoint add-ins
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md

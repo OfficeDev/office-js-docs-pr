@@ -2,6 +2,12 @@
 
 In this article, you'll walk through the process of building an Excel add-in using React and the Excel JavaScript API.
 
+## Environment
+
+- **Office Desktop**: Ensure that you have the latest version of Office installed. Add-in commands require build 16.0.6769.0000 or higher (**16.0.6868.0000** recommended). Learn how to [Install the latest version of Office applications](http://aka.ms/latestoffice). 
+ 
+- **Office Online**: There is no additional setup. Please note that support for commands in Office Online for work/school accounts is in preview.
+
 ## Prerequisites
 
 - Install [Create React App](https://github.com/facebookincubator/create-react-app) globally.
@@ -182,7 +188,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
 Congratulations, you've successfully created an Excel add-in using React! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.
 
 > [!div class="nextstepaction"]
-> [Excel add-in tutorial](../tutorials/excel-tutorial-create-table.md)
+> [Excel add-in tutorial](../tutorials/excel-tutorial.yml)
 
 ## See also
 

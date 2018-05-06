@@ -1,6 +1,10 @@
 { 
     "redirections": [ 
       {   
+          "source_path": "docs/excel/script-lab-test.md", 
+          "redirect_url": "docs/testing/test-debug-office-add-ins", 
+      },
+      {   
           "source_path": "docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md", 
           "redirect_url": "/office/dev/add-ins/word/get-the-whole-document-from-an-add-in-for-word", 
           "redirect_document_id": true 
@@ -133,6 +137,46 @@
         "source_path": "docs/tutorials/create-and-debug-office-add-ins-in-visual-studio.md", 
         "redirect_url": "/office/dev/add-ins/develop/create-and-debug-office-add-ins-in-visual-studio", 
         "redirect_document_id": true 
-      }
+      },
+      {
+            "source_path": "docs/design/ui-elements/using-office-ui-fabric.md",
+            "redirect_url": "docs/design/office-ui-fabric.md",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/design/ui-elements/ui-elements.md",
+            "redirect_url": "docs/design/interface-elements.md",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/design/ui-elements/layout-for-task-pane-add-ins.md",
+            "redirect_url": "docs/design/task-pane-add-ins.md",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/design/ui-elements/interaction-patterns.md",
+            "redirect_url": "docs/design/interface-elements.md",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/design/ui-elements/layout-for-content-add-ins.md",
+            "redirect_url": "docs/design/content-add-ins.md",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/design/ui-elements/layout-for-outlook-add-ins.md",
+            "redirect_url": "https://docs.microsoft.com/en-us/outlook/add-ins/",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/design/ui-elements/accessibility-guidelines.md",
+            "redirect_url": "docs/design/add-in-design-guidelines.md",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/design/ui-elements/voice-guidelines.md",
+            "redirect_url": "docs/design/add-in-design-guidelines.md",
+            "redirect_document_id": true
+        },
     ] 
 }

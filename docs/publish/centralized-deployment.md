@@ -131,3 +131,7 @@ If the add-in does not support add-in commands, users can add it to their Office
 3.	Choose the add-in, and then choose **Add**. 
 
     ![Screenshot shows the Admin Managed tab of the Office Add-ins page of an Office application. The Citations add-in is shown on the tab.](../images/office-add-ins-admin-managed.png)
+    
+## See also
+[Determine if Centralized Deployment of add-ins works for your Office 365 organization](https://support.office.com/en-us/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-b4527d49-4073-4b43-8274-31b7a3166f92)
+    

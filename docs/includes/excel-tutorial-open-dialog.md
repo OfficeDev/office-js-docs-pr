@@ -1,11 +1,14 @@
 In this final step of the tutorial, you'll open a dialog in your add-in, pass a message from the dialog process to the task pane process, and close the dialog. Office Add-in dialogs are *nonmodal*: a user can continue to interact with both the document in the host Office application and with the host page in the task pane.
 
+> [!NOTE]
+> This page describes an individual step of the Excel add-in tutorial. If you’ve arrived at this page via search engine results or other direct link, please go to the [Excel add-in tutorial](../tutorials/excel-tutorial.yml) introduction page to start the tutorial from the beginning.
+
 ## Create the dialog page
 
 1. Open the project in your code editor.
 2. Create a file in the root of the project (where index.html is) called popup.html.
 3. Add the following markup to popup.html. Note:
-   - The page has a `<input>` where the user will enter his or her name and a button that will send the name to the page in the task pane where it will be displayed.
+   - The page has a `<input>` where the user will enter their name and a button that will send the name to the page in the task pane where it will be displayed.
    - The markup loads a script called popup.js that you will create in a later step.
    - It also loads the Office.JS library and jQuery because they will be used in popup.js.
 

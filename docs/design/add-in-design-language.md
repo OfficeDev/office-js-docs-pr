@@ -6,7 +6,7 @@ ms.date: 12/04/2017
 
 # Office Add-in design language
 
-The Office design language is a clean and simple visual system that ensures consistency across experiences. It contains a set of visual elements that define Office interfaces, including: 
+The Office design language is a clean and simple visual system that ensures consistency across experiences. It contains a set of visual elements that define Office interfaces, including:
 
 - A standard typeface
 - A common color palette
@@ -38,7 +38,7 @@ Segoe is the standard typeface for Office. Use it in your add-in to align with O
 > Text color is not included in these base classes. Use Fabric's "neutral primary" for most text on white backgrounds.
 
 ## Color
-Color is often used to emphasize brand and reinforce visual hierarchy. It helps identify an interface as well as guide customers through an experience. Inside Office, color is used for the same goals but it is applied purposefully and minimally. At no point does it overwhelm customer content. Even when each Office app is branded with its own dominant color, it is used to sparingly.
+Color is often used to emphasize brand and reinforce visual hierarchy. It helps identify an interface as well as guide customers through an experience. Inside Office, color is used for the same goals but it is applied purposefully and minimally. At no point does it overwhelm customer content. Even when each Office app is branded with its own dominant color, it is used sparingly.
 
 Office UI Fabric includes a set of default theme colors. When Fabric is applied to an Office Add-in as components or in layouts, the same goals apply. Color should communicate hierarchy, purposefully guiding customers to action without interfering with content. Fabric theme colors can introduce a new accent color to the overall interface. This new accent can conflict with Office app branding and interfere with hierarchy. In other words, Fabric can introduce a new accent color to the overall interface when used inside an add-in. This new accent color can distract and interfere with the overall hierarchy. Consider ways to avoid conflicts and interference. Use neutral accents or overwrite Fabric theme colors to match Office app branding or your own brand colors.
 
@@ -65,14 +65,14 @@ For guidelines on layout, see [Task pane](task-pane-add-ins.md), [Content](conte
 
 Apply the following general guidelines for layouts:
 
-*	Avoid narrow or wide margins on your HTML containers. 20 pixels is a great default. 
+*	Avoid narrow or wide margins on your HTML containers. 20 pixels is a great default.
 *	Align elements intentionally. Extra indents and new points of alignment should aid visual hierarchy.
-*	Office interfaces are on a 4px grid. Aim to keep your padding between elements at multiples of 4. 
-*	Overcrowding your interface can lead to confusion and inhibit ease of use with touch interactions. 
-*	Keep layouts consistent across screens. Unexpected layout changes look like visual bugs that contribute to a lack of confidence and trust with your solution. 
+*	Office interfaces are on a 4px grid. Aim to keep your padding between elements at multiples of 4.
+*	Overcrowding your interface can lead to confusion and inhibit ease of use with touch interactions.
+*	Keep layouts consistent across screens. Unexpected layout changes look like visual bugs that contribute to a lack of confidence and trust with your solution.
 *	Follow common layout patterns. Conventions help users understand how to use an interface.
 *	Avoid redundant elements like branding or commands.
-*	Consolidate controls and views to avoid requiring too much mouse movement. 
+*	Consolidate controls and views to avoid requiring too much mouse movement.
 *	Create responsive experiences that adapt to HTML container widths and heights.
 
 ## Component language
@@ -86,7 +86,7 @@ Apply the following general guidelines for components:
 *	Don’t replicate the Office ribbon inside your add-in
 *	Avoid creating menus, buttons, or other components that behave differently from Office components.
 *	Use the [Office UI Fabric](office-ui-fabric.md) components the we recommend for add-ins.
-*	Use the [UX design patterns templates](ux-design-patterns.md) for common Office UI components. 
+*	Use the [UX design patterns templates](ux-design-patterns.md) for common Office UI components.
 
 ## Icons
 Icons are the visual representation of a behavior or concept. They are often used to add meaning to controls and commands. Visuals, either realistic or symbolic, enable the user to navigate the UI the same way signs help users navigate their environment. They should be simple and clear, and contain only the necessary details, to enable customers to quickly parse what action will occur when they choose a control.
@@ -102,22 +102,8 @@ Apply the following general guidelines for icons:
 * Reuse common Office visual metaphors such as paintbrush for format or magnifying glass for find.
 * Don’t misuse metaphors for unrelated actions. Using the same visual for a different behavior or concept can cause confusion for users.
 
-## Animation
-UI elements, controls, and components often have interactive behaviors that require transitions, motion, or animation. Common characteristics of motion across UI elements define the animation aspects of a design language. Because Office is focused on productivity, the Office animation language supports the goal of helping customers get things done. It strikes a balance between performant response, reliable choreography, and detailed delight.
-
-Office UI fabric includes an animation library to control motion in your HTML containers. Use it to fit seamlessly in Office. It will help you create experiences that are more felt than observed. The animation CSS classes provide directionality, enter/exit, and duration specifics that reinforce Office mental models and provide opportunities for customers to learn how to interact with your add-in. 
-
-If your add-in has its own animation language, use it. Look for opportunities to retain your branded animation while integrating with Office. Be careful not to interfere with or conflict with common motion patterns in Office. Avoid creating experiences that are embellishments that only distract your customers.
-
-Apply the following general guidelines for animations:
-
-* Animations should be felt, and experienced subconsciously, to avoid hindering task completion.
-* Avoid anticipations, bounces, rubberband, or other effects that emulate natural world physics.
-* Choreograph elements to reinforce hierarchy and mental models.
-* Use motion to guide the user and provide compositional focus on key elements for task completion. 
-* Consider the origin of your triggering element. Use motion to create a link between the action and the resulting UI.
-* Consider tone and purpose of your content when choosing animations. Handle critical messages differently than exploratory navigations.
 
 ## See also
 
 - [Office Add-in design guidelines](add-in-design-guidelines.md)
+- [Using motion in Office add-ins](using-motion-office-addins.md)

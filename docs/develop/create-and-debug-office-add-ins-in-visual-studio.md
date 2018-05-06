@@ -1,7 +1,7 @@
 ---
 title: Create and debug Office Add-ins in Visual Studio
 description: ''
-ms.date: 12/04/2017
+ms.date: 03/14/2018
 ---
 
 
@@ -15,7 +15,7 @@ This article describes how to use Visual Studio to create your first Office Add-
 ## Create an Office Add-in project in Visual Studio
 
 
-To get started, make sure you have the [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx) installed, and a version of Microsoft Office. You can join the [Office 365 Developer program](https://dev.office.com/devprogram), or follow these instructions to get the [latest version](../develop/install-latest-office-version.md).
+To get started, make sure you have the [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx) installed, and a version of Microsoft Office. You can join the [Office 365 Developer Program](https://developer.microsoft.com/en-us/office/dev-program), or follow these instructions to get the [latest version](../develop/install-latest-office-version.md).
 
 
 1. On the Visual Studio menu bar, choose  **File** > **New** > **Project**.

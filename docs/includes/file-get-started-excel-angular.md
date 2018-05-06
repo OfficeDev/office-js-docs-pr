@@ -244,7 +244,7 @@ For this quickstart, you can use the certificates that the **Yeoman generator fo
 Congratulations, you've successfully created an Excel add-in using Angular! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.
 
 > [!div class="nextstepaction"]
-> [Excel add-in tutorial](../tutorials/excel-tutorial-create-table.md)
+> [Excel add-in tutorial](../tutorials/excel-tutorial.yml)
 
 ## See also
 

@@ -119,7 +119,7 @@ To start planning solutions that create effective and compelling user experience
    
 ## See also
 
-- [Office Add-in samples](https://dev.office.com/code-samples)
+- [Office Add-in samples](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples)
 - [Understanding the JavaScript API for Office](../develop/understanding-the-javascript-api-for-office.md)
 - [Office Add-in host and platform availability](../overview/office-add-in-availability.md)
 

@@ -4,7 +4,7 @@ description: ''
 ms.date: 01/29/2018
 ---
 
-# Work with Events using the Excel JavaScript API
+# Work with Events using the Excel JavaScript API 
 
 This article describes important concepts related to working with events in Excel and provides code samples that show how to register event handlers, handle events, and remove event handlers using the Excel JavaScript API. 
 
@@ -17,12 +17,11 @@ Each time certain types of changes occur in an Excel workbook, an event notifica
 
 | Event | Description | Supported objects |
 |:---------------|:-------------|:-----------|
-| `onAdded` | Event that occurs when an object is added. | **WorksheetCollection** |
-| `onDeleted`  | Event that occurs when an object is deleted. | **WorksheetCollection** |
-| `onActivated` | Event that occurs when an object is activated. | **WorksheetCollection**, **Worksheet** |
-| `onDeactivated` | Event that occurs when an object is deactivated. | **WorksheetCollection**, **Worksheet** |
-| `onDataChanged` | Event that occurs when data within cells is changed. | **Worksheet**, **Table**, **TableCollection**, **Binding** |
-| `onSelectionChanged` | Event that occurs when the active cell or selected range is changed. | **Worksheet**, **Table**, **Binding** |
+| `onAdded` | Event that occurs when an object is added. | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetaddedeventargs.md) |
+| `onActivated` | Event that occurs when an object is activated. | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetactivatedeventargs.md), [**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetactivatedeventargs.md) |
+| `onDeactivated` | Event that occurs when an object is deactivated. | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetdeactivatedeventargs.md), [**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetdeactivatedeventargs.md) |
+| `onChanged` | Event that occurs when data within cells is changed. | [**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetchangedeventargs.md), [**Table**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/tablechangedeventargs.md), [**TableCollection**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/tablechangedeventargs.md), [**Binding**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/bindingdatachangedeventargs.md) |
+| `onSelectionChanged` | Event that occurs when the active cell or selected range is changed. | [**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetselectionchangedeventargs.md), [**Table**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/tableselectionchangedeventargs.md), [**Binding**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/bindingselectionchangedeventargs.md) |
 
 ### Event triggers
 
@@ -40,20 +39,20 @@ An event handler is created when an add-in registers the event handler and is de
 
 ### Events and coauthoring
 
-With [coauthoring](co-authoring-in-excel-add-ins.md), multiple people can work together and edit the same Excel workbook simultaneously. For events that can be triggered by a coauthor, such as `onDataChanged`, the corresponding **Event** object will contain a **source** property that indicates whether the event was triggered locally by the current user (`event.source = Local`) or was triggered by the remote coauthor (`event.source = Remote`).
+With [coauthoring](co-authoring-in-excel-add-ins.md), multiple people can work together and edit the same Excel workbook simultaneously. For events that can be triggered by a coauthor, such as `onChanged`, the corresponding **Event** object will contain a **source** property that indicates whether the event was triggered locally by the current user (`event.source = Local`) or was triggered by the remote coauthor (`event.source = Remote`).
 
 ## Register an event handler
 
-The following code sample registers an event handler for the `onDataChanged` event in the worksheet named **Sample**. The code specifies that when data changes in that worksheet, the `handleDataChange` function should run.
+The following code sample registers an event handler for the `onChanged` event in the worksheet named **Sample**. The code specifies that when data changes in that worksheet, the `handleDataChange` function should run.
 
 ```js
 Excel.run(function (context) {
     var worksheet = context.workbook.worksheets.getItem("Sample");
-    worksheet.onDataChanged.add(handleDataChange);
+    worksheet.onChanged.add(handleChange);
 
     return context.sync()
         .then(function () {
-            console.log("Event handler successfully registered for onDataChanged event in the worksheet.");
+            console.log("Event handler successfully registered for onChanged event in the worksheet.");
         });
 }).catch(errorHandlerFunction);
 ```
@@ -63,7 +62,7 @@ Excel.run(function (context) {
 As shown in the previous example, when you register an event handler, you indicate the function that should run when the specified event occurs. You can design that function to perform whatever actions your scenario requires. The following code sample shows an event handler function that simply writes information about the event to the console. 
 
 ```js
-function handleDataChange(event)
+function handleChange(event)
 { 
     return Excel.run(function(context){
         return context.sync()

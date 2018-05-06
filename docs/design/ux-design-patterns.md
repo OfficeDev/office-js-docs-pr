@@ -25,10 +25,11 @@ To use the specifications to build a mock-up of your own add-in UI:
 
 1. Download design assets files and begin designing your own UI:
   * [Office Add-ins Design Toolkit](https://aka.ms/addins_toolkit)
-  * [Fabric Design Toolkit](https://aka.ms/fabric-toolkit)
+	* [Fabric Design Toolkit](https://aka.ms/fabric-toolkit)
 
-  > [!NOTE]
-  > Some UX patterns in the Add-ins Design Toolkit do not match the UX design patterns detailed below. We're planning to release updated documentation that will align with the toolkit.
+2. Refer to the following articles for guidance:
+  * Best practices for [Designing your Office Add-ins](add-in-design.md)
+  * [Office UI Fabric Toolkits](https://developer.microsoft.com/en-us/fabric#/resources)
 
 To add the source code:
 
@@ -39,11 +40,7 @@ To add the source code:
 	- Use the UX design pattern as a template for other pages.
 	- Link to or from the UX design pattern.
 
-> [!NOTE]
-> Some UX pattern specifications do not match the source code. We're working hard to bring all assets into alignment. Also notice that some specifications are presented as archived. We're assessing these archived specifications for value to the platform. Each pattern aims to represent a unique template and pattern of interaction. The patterns should not overlap with each other and should be well differentiated from Office Fabric UI components.
-
-## Types of UX design patterns
-### Generic pages
+## Generic page templates
 
 Generic page templates can be applied to any page in your add-in and don't have a special purpose. An example of a special purpose page, would be any of the first-run patterns. The following list describes the generic pages available:
 
@@ -60,7 +57,7 @@ Generic page templates can be applied to any page in your add-in and don't have 
 <td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/generic/brand-bar"><img src="../images/word-brand-bar.png" alt="brand bar" style="width: 264px;"/></A></td></tr>
  </table>
 
-### First-run experience
+### First-run experience templates
 
 A first-run experience is the experience a user has when they open your add-in for the first time. The following first-run design pattern templates are available:
 
@@ -107,7 +104,7 @@ Consider whether showing users the first-run experience once or many times is im
 <td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/trial-placemat-feature"><img src="../images/trial-placemats-feature.png" alt="trial placemat feature" style="width: 250px;"/></A></td></tr>
  </table>
 
-### Navigation
+## Navigation templates
 
 Users need to navigate between the different pages of your add-in. The following navigation templates show different options you can use to organize pages and commands in your add-in.
 
@@ -154,7 +151,7 @@ Users need to navigate between the different pages of your add-in. The following
 </tr>
  </table>
 
-### Notifications
+## Notification templates
 
 Your add-in can notify users of events, such as errors, or of progress in a variety of ways. The following notification templates are available:
 
@@ -193,11 +190,11 @@ Your add-in can notify users of events, such as errors, or of progress in a vari
 
 
 
-### General components
+## General component templates
 
 The following are general components that you can use in your add-ins in a variety of scenarios.  
 
-#### Client dialog boxes
+### Client dialog boxes
 
 Client dialog boxes provide another way for users to work with your add-in outside of a task pane. The following dialog box templates are available:
 
@@ -226,7 +223,7 @@ Client dialog boxes provide another way for users to work with your add-in outsi
  </table>
 
 
-#### Feedback and ratings
+### Feedback and ratings
 
 To improve the visibility and adoption of your add-in, it is helpful to provide users with the ability to rate and review your add-in in AppSource. This pattern shows two methods for presenting feedback and ratings from within the add-in:
 
@@ -248,7 +245,7 @@ Either method opens a dialog box that contains the AppSource page for the add-in
 </tr>
  </table>
 
-#### Settings and privacy
+### Settings and privacy
 
 Add-ins may need a Settings page that allows users to configure settings that control the behavior of the add-in. Also, you may want to provide users with the privacy policies your add-in adheres to.
 
