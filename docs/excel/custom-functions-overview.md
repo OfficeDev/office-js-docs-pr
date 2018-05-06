@@ -84,16 +84,7 @@ Note that for this example:
 > [!NOTE]
 > The custom functions are registered when a user runs the add-in for the first time. After that, they are available, for that same user, in all workbooks (not only the one where the add-in ran initially.)
 
-#### Getting intellisense for the JSON file in Visual Studio Code
-
-1. Open the JSON file (it should have a .json extension) in Visual Studio Code.
-2. If you are starting a new file from scratch, add the following to the top of the file:
-
-     ```js
-    {
-        "$schema": "https://developer.microsoft.com/en-us/json-schemas/office-js/custom-functions.schema.json",
-    ```
-3. Press **Ctrl+Space** and intellisense will prompt you with a list of all items that are valid at the cursor point. For example, if you pressed **Ctrl+Space** immediately after the `"$schema"` line, you are prompted to enter `functions`, which is the only key that is valid at that point. Select it and the `"functions": []` array is entered. If the cursor is between the `[]`, then you are prompted to enter an empty object as a member of the array. If the cursor is in the object, then you are prompted with a list of the keys that are valid in the object.
+Your server settings for the JSON file must have [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel Online.
 
 ### Manifest file (manifest.xml)
 
