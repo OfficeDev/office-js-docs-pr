@@ -14,7 +14,7 @@ function ADD42(a, b) {
 }
 ```
 
-Custom functions are now available in preview. Follow these steps to try them:
+Custom functions are now available in Developer Preview on Windows, Mac, and Excel Online. Follow these steps to try them:
 
 1.  Install Office (build 9325 on Windows or 13.329 on Mac) and join the [Office Insider](https://products.office.com/en-us/office-insider) program. (Note that it isn't enough just to get the latest build; the feature will be disabled on any build until you join the Insider program)
 2.  Clone the [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) repo and follow the instructions in the README.md to start the add-in in Excel, make changes in the code, and debug.
@@ -269,12 +269,13 @@ As you can see, ranges are handled in JavaScript as arrays of row arrays (like a
 
 ## Known issues
 
-The following features aren't yet supported in the Developer Preview.
-
 - Help URLs and parameter descriptions are not yet used by Excel.
-- Custom functions are not available on Excel for mobile clients.
-- Currently, add-ins rely on a hidden browser process to run asynchronous custom functions. In the future, JavaScript will run directly on some platforms to ensure custom functions are faster and use less memory. Additionally, the HTML page referenced by the `<Page>` element in the manifest won’t be needed for most platforms because Excel will run the JavaScript directly. To prepare for this change, ensure your custom functions do not use the web page DOM.
+- Custom functions are not currently available on Excel for mobile clients.
+- Currently, add-ins rely on a hidden browser process to run asynchronous custom functions. In the future, JavaScript will run directly on some platforms to ensure custom functions are faster and use less memory. Additionally, the HTML page referenced by the `<Page>` element in the manifest won’t be needed for most platforms because Excel will run the JavaScript directly. To prepare for this change, ensure your custom functions do not use the web page DOM. The supported host APIs for accessing the web will be [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) and [XHR](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) using GET or POST.
 - Volatile functions (those which recalculate automatically whenever unrelated data changes in the spreadsheet) are not yet supported.
+- Debugging is only enabled for asynchronous functions on Excel for Windows.
+- Deployment via the Office 365 Admin Portal and AppSource are not yet enabled.
+- Custom functions in Excel Online may stop working during a session after a period of inactivity. Refresh the browser page (F5) and re-enter a custom function to restore the feature.
 
 ## Changelog
 
