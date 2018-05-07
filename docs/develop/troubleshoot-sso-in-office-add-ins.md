@@ -57,7 +57,7 @@ Invalid Resource. The add-in manifest hasn’t been configured correctly. Update
 
 ### 13005
 
-Invalid Grant. This usually means that Office has not been pre-authorized to the add-in's web service. For more information, see [Create the service application](sso-in-office-add-ins.md#create-the-service-application) and [Register the add-in with Azure AD v2.0 endpoint](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) or [Register the add-in with Azure AD v2.0 endpoint](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (Node JS). This also may happen if the user has not granted your service application permissions to his or her `profile`.
+Invalid Grant. This usually means that Office has not been pre-authorized to the add-in's web service. For more information, see [Create the service application](sso-in-office-add-ins.md#create-the-service-application) and [Register the add-in with Azure AD v2.0 endpoint](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) or [Register the add-in with Azure AD v2.0 endpoint](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (Node JS). This also may happen if the user has not granted your service application permissions to their `profile`.
 
 ### 13006
 
