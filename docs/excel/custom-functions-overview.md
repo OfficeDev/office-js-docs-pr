@@ -214,7 +214,7 @@ The following code shows an implementation of the previous temperature-streaming
 - Users may call `streamTemperature` from several cells in the Excel UI. Each call reads data from the same `savedTemperatures` variable.
 
 ```js
-var savedTemperatures{};
+var savedTemperatures;
 
 function streamTemperature(thermometerID, caller){ 
      if(!savedTemperatures[thermometerID]){
