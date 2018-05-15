@@ -1,4 +1,5 @@
 # Authentication
+
 Use  dialogs to present authentication screens to your end users. Our flows provide a seamless experience that integrates the Microsoft sign-in with your brand.
 
 ## Best practices
@@ -7,8 +8,8 @@ Use  dialogs to present authentication screens to your end users. Our flows prov
 
 |Do          |Don't       |
 |:-----------|:-----------|
-|Utilize the space to reinforce your company's brand. Azure Active Directory allows customization of sign-in and access panel pages for consistent look and feel with your services. [Learn More](https://azure.microsoft.com/en-us/documentation/articles/active-directory-add-company-branding/).|Don't overcrowd the task pane or dialogs with buttons.|
-| Target your dialogs to a few key widths or breakpoints for better responsive design. [Learn more](https://msdn.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)|                         
+| Utilize the space to reinforce your company's brand. Azure Active Directory allows customization of sign-in and access panel pages for consistent look and feel with your services. [Learn More](https://azure.microsoft.com/en-us/documentation/articles/active-directory-add-company-branding/).| Don't overcrowd the task pane or dialogs with buttons.|
+Target your dialogs to a few key widths or breakpoints for better responsive design. [Learn more](https://msdn.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)|                      
 
 <br/>
 
@@ -21,7 +22,7 @@ While Single Sign On (SSO) support has not yet officially been released, once pu
 
 As an add-in is being installed, a user will see a consent window similar to the one below:
 
-![Authentication Flow - Single Sign On](../images/SSO_consent.png)
+![Authentication Flow - Single Sign On](../images/add-in-SSO-consent-dialog.png)
 
 <br/>
 
@@ -31,9 +32,8 @@ As an add-in is being installed, a user will see a consent window similar to the
 
 After consent has been given by the user, the installation process will conclude, and your add-in will be added and ready to use.
 
-![Authentication Flow - Single Sign On](../images/SSO_modal.png)
 
-![Authentication Flow - Single Sign On](../images/taskpane_opened.png)
+![Authentication Flow - Single Sign On](../images/add-in-ribbon.png)
 
 <br/>
 
