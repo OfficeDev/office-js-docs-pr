@@ -1,6 +1,6 @@
 # Branding
 
-Branding patterns  
+These patterns provide brand visibilty and context to your add-in users. 
 
 ## Best practices
 

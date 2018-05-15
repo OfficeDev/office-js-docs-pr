@@ -9,7 +9,7 @@ The main features of an add-in are accessed through specific command types and l
 | Do    | Don't |
 | :---- | :---- |
 | Ensure the user has a clearly visible navigation option. | Don't complicate the navigation process by using non-standard UI. 
-| Utilize the following components as applicable to allow users to navigate through your add-in. | Don't make it difficult for the user to access navigational controls within the UI
+| Utilize the following components as applicable to allow users to navigate through your add-in. | Don't make it difficult for the user to understand their current place or context within the add-in
 
 <br/>
 

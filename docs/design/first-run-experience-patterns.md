@@ -22,7 +22,7 @@ Consider whether showing users the first-run experience once or periodically is 
 
 <br/>
 
-##Add-in Design Patterns for FREs
+## Add-in Design Patterns for FREs
 
 <br/>
 
