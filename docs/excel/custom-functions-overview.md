@@ -29,7 +29,7 @@ In the cloned sample repo, you’ll see the following files:
 - **customfunctions.js**, which contains the custom function code (see the simple code example above for the `ADD42` function).
 - **customfunctions.json**, which contains the registration JSON that tells Excel about your custom function. Registration makes your custom functions appear in the list of available functions displayed when a user types in a cell.
 - **customfunctions.html**, which provides a &lt;Script&gt; reference to the JS file. This file does not display UI in Excel.
-- **manifest.xml**, which tells Excel the location of the HTML, JavaScript, and JSON files; and also specifies a namespace for all the custom functions that are installed with the add-in.
+- **customfunctions.xml**, which tells Excel the location of the HTML, JavaScript, and JSON files; and also specifies a namespace for all the custom functions that are installed with the add-in.
 
 ### JSON file (customfunctions.json)
 
@@ -86,7 +86,9 @@ Note that for this example:
 
 Your server settings for the JSON file must have [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel Online.
 
-### Manifest file (manifest.xml)
+
+### Manifest file (customfunctions.xml)
+
 
 The following is an example of the `<ExtensionPoint>` and `<Resources>` markup that you include in the add-in's manifest to enable Excel to run your functions. Note the following about this markup:
 
@@ -130,6 +132,21 @@ The following is an example of the `<ExtensionPoint>` and `<Resources>` markup t
 
 ```
 
+## Initializing custom functions
+
+Your code must initialize the custom functions feature before using it. You can do this either in a &lt;Script&gt; tag in the HTML file (customfunctions.html) or at the top of the JavaScript file (customfunctions.js). During the preview of custom functions, you have your choice of two syntaxes for intializing. The HTML file in the repo uses the following syntax:
+
+```js
+Office.initialize = function (reason) {
+    return Excel.CustomFunctions.initialize();
+};
+```
+
+You can also use the following syntax:
+
+```js
+Office.Preview.StartCustomFunctions();
+```
 
 ## Synchronous and asynchronous functions
 
@@ -214,7 +231,7 @@ The following code shows an implementation of the previous temperature-streaming
 - Users may call `streamTemperature` from several cells in the Excel UI. Each call reads data from the same `savedTemperatures` variable.
 
 ```js
-var savedTemperatures{};
+var savedTemperatures;
 
 function streamTemperature(thermometerID, caller){ 
      if(!savedTemperatures[thermometerID]){
