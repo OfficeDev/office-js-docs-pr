@@ -86,7 +86,9 @@ Note that for this example:
 
 Your server settings for the JSON file must have [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel Online.
 
+
 ### Manifest file (customfunctions.xml)
+
 
 The following is an example of the `<ExtensionPoint>` and `<Resources>` markup that you include in the add-in's manifest to enable Excel to run your functions. Note the following about this markup:
 
