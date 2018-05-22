@@ -1,10 +1,12 @@
-# UX Design Patterns for Office Add-ins
+# UX design patterns for Office Add-ins
 
-Designing the user experience for Office Add-ins should not only provide a compelling experience for Office users but also extend the overall Office experience by fitting seamlessly within the default Office UI.  
+Designing the user experience for Office Add-ins should provide a compelling experience for Office users and extend the overall Office experience by fitting seamlessly within the default Office UI.  
 
-Providing a clean, modern user experience that incorporates and balances design elements from both Microsoft's Fabric UI design language as well as the partner's unique brand and visual identity will help increase user retention and adoption of your add-in.
+Our UX patterns are composed of components. Components are controls that help your customers interact with elements of your software or service. Buttons, navigation, and menus are examples of common components that often have consistent styles and behaviors.
 
-The provided patterns are best practice solutions based on common customer scenarios and user experience research and are meant to provide both a quick entry point to designing and developing add-ins as well as guidance to achieve balance between Microsoft and brand elements.
+Office UI Fabric renders components that look and behave like a part of Office. Take advantage of Fabric to easily integrate with Office. If your add-in has its own preexisting component language, you don't need to discard it in favor of Fabric. Look for opportunities to retain it while integrating with Office. Consider ways to swap out stylistic elements, remove conflicts, or adopt styles and behaviors that remove user confusion.
+
+The provided patterns are best practice solutions based on common customer scenarios and user experience research and are meant to provide both a quick entry point to designing and developing add-ins as well as guidance to achieve balance between Microsoft and brand elements. Providing a clean, modern user experience that balances design elements from Microsoft's Fabric design language as well as the partner's unique brand and visual identity may help increase user retention and adoption of your add-in.
 
 Use the UX pattern templates to:
 
@@ -40,9 +42,9 @@ We've included our toolkit to help you get started. You can find all of our avai
 
 #### Downloads
 
-* [Fabric Design Sketch Toolkit]()
+* [Fabric Design Sketch Toolkit](https://aka.ms/fabric-sketch-toolkit)
 * [Fabric Design Adobe XD Toolkit](https://aka.ms/fabric-toolkit)
-* [Add-in Sketch Toolkit]()
+* [Add-in Sketch Toolkit](https://aka.ms/addins_sketch_toolkit)
 * [Add-in Adobe XD Toolkit](https://aka.ms/addins_toolkit)
 * [Segoe UI and Fabric MDL2 icon font](https://static2.sharepointonline.com/files/fabric/fabric-website/files/segoeui_fabricmdl2_icon_fonts.zip)
 
