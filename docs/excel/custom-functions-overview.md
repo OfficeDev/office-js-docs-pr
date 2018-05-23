@@ -50,6 +50,7 @@ Note that for this example:
 
  ```js
 {
+	"$schema": "https://developer.microsoft.com/en-us/json-schemas/office-js/custom-functions.schema.json",
 	"functions": [
 		{
 			"name": "ADD42", 
