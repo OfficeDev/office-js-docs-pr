@@ -47,7 +47,11 @@
       "ms.prod": "office",
       "ms.technology": "office-add-ins"
     },
-    "fileMetadata": {},
+    "fileMetadata": {
+      "feedback_system": {
+        "resources/resources-links-help.md": "None"
+      }
+    },
     "template": [],
     "dest": "office-js-docs-pr"
   }
