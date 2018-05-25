@@ -2,14 +2,14 @@
 documentType: LandingData
 title: Office Add-ins Documentation
 metadata:
-  title: Office Add-ins Documentation - Quickstarts, API Reference
+  title: Office Add-ins Documentation - Quick Starts, API Reference
   meta.description: Learn how to build Office Add-ins.
   author: o365devx
   ms.topic: landing-page
   ms.date: 12/04/2017
   ms.author: o365devx
 abstract:
-  description: The <a href="https://docs.microsoft.com/en-us/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad. Learn how to create Office Add-ins with our quickstarts, how-to guides, and API reference documentation.<br/><br/><b>Note:</b> For information about COM or VSTO add-ins, see the <a href="https://msdn.microsoft.com/en-us/library/fp161347.aspx" target="_blank">MSDN documentation</a>.
+  description: The <a href="https://docs.microsoft.com/en-us/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad. Learn how to create Office Add-ins with our quick starts, how-to guides, and API reference documentation.<br/><br/><b>Note:</b> For information about COM or VSTO add-ins, see the <a href="https://msdn.microsoft.com/en-us/library/fp161347.aspx" target="_blank">MSDN documentation</a>.
   aside:
     image:
       alt: 
@@ -20,7 +20,7 @@ abstract:
     href: https://channel9.msdn.com/Events/Connect/2017/T192
     width: 250
 sections:
-- title: 5-Minute Quickstarts
+- title: 5-Minute Quick Starts
   items:
   - type: paragraph
     text: 'Learn how to create your first Office Add-in:'

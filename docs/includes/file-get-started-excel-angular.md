@@ -57,7 +57,7 @@ An add-in's manifest file defines its settings and capabilities.
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-For this quickstart, you can use the certificates that the **Yeoman generator for Office Add-ins** provides. You've already installed the generator globally (as part of the **Prerequisites** for this quickstart), so you'll just need to copy the certificates from the global install location into your app folder. The following steps describe how to complete this process.
+For this quick start, you can use the certificates that the **Yeoman generator for Office Add-ins** provides. You've already installed the generator globally (as part of the **Prerequisites** for this quick start), so you'll just need to copy the certificates from the global install location into your app folder. The following steps describe how to complete this process.
 
 1. From the terminal, run the following command to identify the folder where global **npm** libraries are installed:
 

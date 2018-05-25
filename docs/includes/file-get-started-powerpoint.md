@@ -10,7 +10,7 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 
 ### Prerequisites
 
-[!include[Quickstart prerequisites](../includes/quickstart-vs-prerequisites.md)]
+[!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
 ### Create the add-in project
 
