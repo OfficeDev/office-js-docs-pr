@@ -5,7 +5,7 @@ You'll begin this tutorial by setting up your development project.
 
 ## Prerequisites
 
-[!include[Quickstart prerequisites](../includes/quickstart-vs-prerequisites.md)]
+[!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
 ## Setup
 
