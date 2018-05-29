@@ -6,7 +6,7 @@ Our UX patterns are composed of components. Components are controls that help yo
 
 Office UI Fabric renders components that look and behave like a part of Office. Take advantage of Fabric to easily integrate with Office. If your add-in has its own preexisting component language, you don't need to discard it in favor of Fabric. Look for opportunities to retain it while integrating with Office. Consider ways to swap out stylistic elements, remove conflicts, or adopt styles and behaviors that remove user confusion.
 
-The provided patterns are best practice solutions based on common customer scenarios and user experience research and are meant to provide both a quick entry point to designing and developing add-ins as well as guidance to achieve balance between Microsoft and brand elements. Providing a clean, modern user experience that balances design elements from Microsoft's Fabric design language as well as the partner's unique brand and visual identity may help increase user retention and adoption of your add-in.
+The provided patterns are best practice solutions based on common customer scenarios and user experience research. They are meant to provide both a quick entry point to designing and developing add-ins as well as guidance to achieve balance between Microsoft and brand elements. Providing a clean, modern user experience that balances design elements from Microsoft's Fabric design language and the partner's unique brand identity may help increase user retention and adoption of your add-in.
 
 Use the UX pattern templates to:
 
@@ -14,8 +14,7 @@ Use the UX pattern templates to:
 * Apply design best practices.
 * Incorporate [Office UI Fabric](https://developer.microsoft.com/en-us/fabric#/get-started) components and styles.
 * Build add-ins that visually integrate with the default Office UI.
-* Use templates as a scaffold for partner designs.
-* Use templates and design tools to ideate and visualize UX.
+* Ideate and visualize UX.
 
 <br/>
 
@@ -23,10 +22,10 @@ Use the UX pattern templates to:
 
 The patterns are organized by key actions or experiences that are common in an add-in. The main groups are:
 
-* First run experience (FRE)
-* Authentication
-* Navigation
-* Branding Design
+* [First run experience (FRE)](../first-run-experience-patterns.md)
+* [Authentication](../authentication-patterns.md)
+* [Navigation](../navigation-patterns.md)
+* [Branding Design](../branding-patterns.md)
 
 Browse each grouping to get an idea of how you can design your add-in using best practices.
 
