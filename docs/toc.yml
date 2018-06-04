@@ -234,6 +234,10 @@
       - name: Custom functions
         href: excel/custom-functions-overview.md
         displayName: Excel
+        items:
+        - name: Excel custom functions registration JSON
+          href: excel/custom-functions-json.md
+          displayName: Excel
       - name: Charts
         href: excel/excel-add-ins-charts.md
         displayName: Excel
