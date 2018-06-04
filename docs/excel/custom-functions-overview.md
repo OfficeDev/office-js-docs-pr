@@ -36,7 +36,7 @@ In the cloned sample repo, you’ll see the following files:
 The following code in customfunctions.json specifies the metadata for the same `ADD42` function.
 
 > [!NOTE]
-> Detailed reference information for the JSON file, including options not used in this example, is at [Custom Functions Registration JSON](https://dev.office.com/reference/add-ins/custom-functions-json).
+> Detailed reference information for the JSON file, including options not used in this example, is at [Custom Functions Registration JSON](custom-functions-json.md).
 
 Note that for this example:
 
