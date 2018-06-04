@@ -1,6 +1,6 @@
 # First-run Experience
 
-A First-run Experience (FRE) is a user's introduction to your add-in. An FRE is presented when a user opens an add-in for the first time and provides them with insight into the functions, features, and/or benefits of the add-in. This experience helps shape the user's impression of an add-in and can strongly influence their likelihood to continue usage.
+A First-run Experience (FRE) is a user's introduction to your add-in. An FRE is presented when a user opens an add-in for the first time and provides them with insight into the functions, features, and/or benefits of the add-in. This experience helps shape the user's impression of an add-in and can strongly influence their likelihood to come back to and continue using your add-in..
 
 <br/> 
 
@@ -70,8 +70,6 @@ The value placement communicates your add-in's value proposition through logo pl
 ### Video Placemat
 
 The video placemat shows users a video before they start using your add-in.
-
->QUESTION: Do we have guidance as to what content is most beneficial for a FRE video (e.g. product walk-though, value prop. video, etc.)?
 
 <br/>
 
