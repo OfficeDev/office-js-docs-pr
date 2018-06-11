@@ -67,24 +67,26 @@ Before you start this step of the tutorial, we recommend that you create and man
 ## Replace the content of the content control
 
 1. Open the file index.html.
-3. Below the `div` that contains the `create-content-control` button, add the following markup:
+2. Below the `div` that contains the `create-content-control` button, add the following markup:
+
     ```html
     <div class="padding">            
         <button class="ms-Button" id="replace-content-in-control">Rename Service</button>            
     </div>
     ```
 
-4. Open the app.js file.
+3. Open the app.js file.
 
-5. Below the line that assigns a click handler to the `create-content-control` button, add the following code:
+4. Below the line that assigns a click handler to the `create-content-control` button, add the following code:
 
     ```js
     $('#replace-content-in-control').click(replaceContentInControl);
     ```
 
-6. Below the `createContentControl` function, add the following function:
+5. Below the `createContentControl` function, add the following function:
 
-    ```js    function replaceContentInControl() {
+    ```js
+    function replaceContentInControl() {
         Word.run(function (context) {
             
             // TODO1: Queue commands to replace the text in the Service Name
