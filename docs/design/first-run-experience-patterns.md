@@ -6,8 +6,6 @@ A First-run Experience (FRE) is a user's introduction to your add-in. An FRE is 
 
 ## Best practices
 
-<br/>
-
 Follow these best practices when crafting your first-run experience:
 
 |Do|Don't|
@@ -23,8 +21,6 @@ Consider whether showing users the first-run experience once or periodically is 
 <br/>
 
 ## Add-in Design Patterns for FREs
-
-<br/>
 
 Apply the following patterns as applicable to create or enhance the first-run experience for your add-in:
 
