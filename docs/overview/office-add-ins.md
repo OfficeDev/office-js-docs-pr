@@ -37,7 +37,7 @@ An Office Add-in includes two basic components: an XML manifest file, and your o
 
 *Figure 1. Add-in Manifest (XML) + Webpage (HTML, JS) = an Office Add-in*
 
-![Manifest plus webpage equals Office Add-in](../images/ManifestWebpage.png)
+![Manifest plus webpage equals Office Add-in](ManifestWebpage.png)
 
 ### Manifest 
 
@@ -55,7 +55,7 @@ The most basic Office Add-in consists of a static HTML page that is displayed in
 
 *Figure 2. Components of a Hello World Office Add-in*
 
-![Components of a Hello World add-in](../images/ComponentsHelloWorldOffice.png)
+![Components of a Hello World add-in](ComponentsHelloWorldOffice.png)
 
 ## Extending and interacting with Office clients 
 
@@ -81,7 +81,7 @@ You can add custom ribbon buttons and menu items to the ribbon in Office for Win
 
 *Figure 3. Add-in commands in the ribbon*
 
-![Custom buttons and menu commands](../images/AddInCommands.png)
+![Custom buttons and menu commands](AddInCommands.png)
 
 #### Task panes  
 
@@ -89,7 +89,7 @@ You can use task panes in addition to add-in commands to enable users to interac
 
 *Figure 4. Task pane*
 
-![Task pane](../images/TaskPane.png)
+![Task pane](TaskPane.png)
 
 ### Extend Outlook functionality 
 
@@ -105,7 +105,7 @@ You can embed web-based objects called content add-ins within Excel and PowerPoi
 
 *Figure 5. Content add-in*
 
-![Content add-in](../images/ContentAddIn.png)
+![Content add-in](ContentAddIn.png)
 
 ## Office JavaScript APIs 
 
