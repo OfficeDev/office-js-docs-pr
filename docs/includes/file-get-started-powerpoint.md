@@ -193,7 +193,7 @@ In this article, you'll walk through the process of building a PowerPoint add-in
     ```
 
     - **Choose a project type:** `Jquery`
-    - **CHoose a script type:** `Javascript`
+    - **Choose a script type:** `Javascript`
     - **What do you want to name your add-in?:** `My Office Add-in`
     - **Which Office client application would you like to support?:** `Powerpoint`
 
