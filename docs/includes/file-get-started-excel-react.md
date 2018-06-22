@@ -43,14 +43,15 @@ Each add-in requires a manifest file to define its settings and capabilities.
 2. Use the Yeoman generator to generate the manifest file for your add-in. Run the following command and then answer the prompts as shown in the following screenshot:
 
     ```bash
-    yo office manifest
+    yo office 
     ```
 
+    - **Choose a project type:** `Manifest`
     - **What do you want to name your add-in?:** `My Office Add-in`
     - **Which Office client application would you like to support?:** `Excel`
 
 
-    Once you complete the wizard, the generator will create the manifest file and a resource file to help you as you build your project.
+    Once you complete the wizard, the generator will create your manifest file, and a few other related files to help you get started with Office development.
     
     ![Yeoman generator](../images/yo-office.png)
     
