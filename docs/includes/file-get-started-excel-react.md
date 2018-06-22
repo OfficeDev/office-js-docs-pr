@@ -46,7 +46,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
     yo office manifest
     ```
 
-    - **Choose a script type:** `JavaScript`
+    - **Choose a script type:** `React`
     - **What do you want to name your add-in?:** `My Office Add-in`
     - **Which Office client application would you like to support?:** `Excel`
 
