@@ -35,9 +35,9 @@ Office Add-ins provide the following advantages over add-ins built using VBA, CO
 
 An Office Add-in includes two basic components: an XML manifest file, and your own web application. The manifest defines various settings, including how your add-in integrates with Office clients. Your web application needs to be hosted on a web server, or web hosting service, such as Microsoft Azure.
 
-*Figure 1. Manifest + webpage = an Office Add-in*
+*Figure 1. Add-in manifest (XML) + webpage (HTML, JS) = an Office Add-in*
 
-![Manifest plus webpage equals Office Add-in](../images/dk2-agave-overview-01.png)
+![Manifest plus webpage equals Office Add-in](../images/about-addins-manifestwebpage.png)
 
 ### Manifest 
 
@@ -55,7 +55,7 @@ The most basic Office Add-in consists of a static HTML page that is displayed in
 
 *Figure 2. Components of a Hello World Office Add-in*
 
-![Components of a Hello World add-in](../images/dk2-agave-overview-07.png)
+![Components of a Hello World add-in](../images/about-addins-componentshelloworldoffice.png)
 
 ## Extending and interacting with Office clients 
 
@@ -79,9 +79,9 @@ Custom UI and task panes are specified in the add-in manifest.  
 
 You can add custom ribbon buttons and menu items to the ribbon in Office for Windows Desktop and Office Online. This makes it easy for users to access your add-in directly from their Office application. Command buttons can launch different actions such as showing a task pane with custom HTML or executing a JavaScript function.  
 
-*Figure 3. Add-in commands running in Excel Desktop*
+*Figure 3. Add-in commands in the ribbon*
 
-![Custom buttons and menu commands](../images/add-in-commands-overview.png)
+![Custom buttons and menu commands](../images/about-addins-addincommands.png)
 
 #### Task panes  
 
@@ -89,7 +89,7 @@ You can use task panes in addition to add-in commands to enable users to interac
 
 *Figure 4. Task pane*
 
-![Task pane](../images/task-pane-overview.jpg)
+![Task pane](../images/about-addins-taskpane.png)
 
 ### Extend Outlook functionality 
 
@@ -105,7 +105,7 @@ You can embed web-based objects called content add-ins within Excel and PowerPoi
 
 *Figure 5. Content add-in*
 
-![Content add-in](../images/dk2-agave-overview-05.png)
+![Content add-in](../images/about-addins-contentaddin.png)
 
 ## Office JavaScript APIs 
 
