@@ -53,7 +53,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
     - **Which Office client application would you like to support?:** `Excel`
 
 
-    Once you complete the wizard, the generator will create your manifest file, and a few other related files to help you get started with Office development.
+    Once you complete the wizard, the generator will create your manifest file and associated assets to help you get started with Office development.
 
     ![Yeoman generator](../images/yo-office.png)
     
