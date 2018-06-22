@@ -47,7 +47,7 @@ An add-in's manifest file defines its settings and capabilities.
     - **Which Office client application would you like to support?:** `Excel`
 
 
-    Once you complete the wizard, the generator will create your manifest file and associated assets to help you get started with Office development.
+    Once the wizard completes, a manifest file and resource file are available for you to build your project.
 
     ![Yeoman generator](../images/yo-office.png)
     
