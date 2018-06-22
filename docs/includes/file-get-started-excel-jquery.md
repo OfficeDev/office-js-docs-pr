@@ -175,9 +175,9 @@ In this article, you'll walk through the process of building an Excel add-in by 
     - **What do you want to name your add-in?:** `My Office Add-in`
     - **Which Office client application would you like to support?:** `Excel`
 
-    Once you complete the wizard, the generator will create the project template and structure.
-
     ![Yeoman generator](../images/yo-office-jquery.png)
+    
+    Once you complete the wizard, the generator will create the project and install supporting Node components.
 
     
 
