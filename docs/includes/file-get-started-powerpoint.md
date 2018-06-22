@@ -197,9 +197,9 @@ In this article, you'll walk through the process of building a PowerPoint add-in
     - **What do you want to name your add-in?:** `My Office Add-in`
     - **Which Office client application would you like to support?:** `Powerpoint`
 
-    Once you complete the wizard, the generator will create the project template and structure.
-
     ![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-powerpoint-jquery.png)
+    
+    Once you complete the wizard, the generator will create the project and install supporting Node components.
 
 ### Update the code
 
