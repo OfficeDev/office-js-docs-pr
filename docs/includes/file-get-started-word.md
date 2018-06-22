@@ -252,10 +252,10 @@ In this article, you'll walk through the process of building a Word add-in by us
     - **Choose a script type:** `Javascript`
     - **What do you want to name your add-in?:** `My Office Add-in`
     - **Which Office client application would you like to support?:** `Word`
-    
-    Once you complete the wizard, the generator will create the project template and structure.
 
     ![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-word-jquery.png)
+    
+    Once you complete the wizard, the generator will create the project and install supporting Node components.
 
 ### Update the code
 
