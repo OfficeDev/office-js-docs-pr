@@ -177,7 +177,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
 
     ![Yeoman generator](../images/yo-office-jquery.png)
     
-    Once you complete the wizard, the generator will create the project and install supporting Node components.
+    After you complete the wizard, the generator will create the project and install supporting Node components.
 
     
 
