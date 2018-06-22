@@ -35,7 +35,7 @@ In this article, you'll walk through the process of building a Project add-in by
 
     ![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-project-jquery.png)
     
-    Once you complete the wizard, the generator will create the project and install supporting Node components.
+    After you complete the wizard, the generator will create the project and install supporting Node components.
 
 ## Update the code
 
