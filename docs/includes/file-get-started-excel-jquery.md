@@ -150,7 +150,6 @@ In this article, you'll walk through the process of building an Excel add-in by 
 - [Node.js](https://nodejs.org)
 
 - Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
-
     ```bash
     npm install -g yo generator-office
     ```
@@ -171,17 +170,16 @@ In this article, you'll walk through the process of building an Excel add-in by 
     yo office
     ```
 
-    - **Would you like to create a new subfolder for your project?:** `No`
+    - **Choose a project type:** `Jquery`
+    - **Choose a script type:** `Javascript`
     - **What do you want to name your add-in?:** `My Office Add-in`
     - **Which Office client application would you like to support?:** `Excel`
-    - **Would you like to create a new add-in?:** `Yes`
-    - **Would you like to use TypeScript?:** `No`
-    - **Choose a framework:** `Jquery`
-
-    The generator will then ask you if you want to open **resource.html**. It isn't necessary to open it for this tutorial, but feel free to open it if you're curious! Choose yes or no to complete the wizard and allow the generator to do its work.
 
     ![Yeoman generator](../images/yo-office-jquery.png)
+    
+    After you complete the wizard, the generator will create the project and install supporting Node components.
 
+    
 
 4. In your code editor, open **index.html** in the root of the project. This file specifies the HTML that will be rendered in the add-in's task pane. 
  
