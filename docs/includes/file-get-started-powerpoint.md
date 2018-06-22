@@ -199,7 +199,7 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 
     ![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-powerpoint-jquery.png)
     
-    Once you complete the wizard, the generator will create the project and install supporting Node components.
+    After you complete the wizard, the generator will create the project and install supporting Node components.
 
 ### Update the code
 
