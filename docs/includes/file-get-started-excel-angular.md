@@ -42,7 +42,6 @@ An add-in's manifest file defines its settings and capabilities.
     yo office manifest
     ```
 
-    - **Choose a script type:** `JavaScript`
     - **What do you want to name your add-in?:** `My Office Add-in`
     - **Which Office client application would you like to support?:** `Excel`
 
