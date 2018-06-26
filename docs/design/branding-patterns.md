@@ -1,10 +1,8 @@
-# Branding
+# Branding patterns
 
 These patterns provide brand visibilty and context to your add-in users. 
 
 ## Best practices
-
-<br/>
 
 |Do |Don't|
 |:---- |:----|
@@ -15,20 +13,14 @@ These patterns provide brand visibilty and context to your add-in users.
 | Build connection with a parent service or business to ensure that customers know and trust your solution. | Don't make customers learn a new brand concept if there is a useful and understandable relationship that can be leveraged to build trust and value. |
 
 
-
-<br/>
-
 Apply the following patterns and components as applicable to allow users to embrace the full utility of your add-in.
 
-<br/>
 
 ## Brand Bar
 
 The brand bar is a space in the footer to include your brand name and logo. It also serves as a link to your brand's website and an optional access location.
 
 ![Brand Bar - Specifications for desktop task pane](../images/add-in-brand-bar.png)
-
-<br/>
 
 ## Splash Screen
 

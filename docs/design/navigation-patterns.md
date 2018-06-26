@@ -1,17 +1,15 @@
-# Navigation
+# Navigation patterns
 
 The main features of an add-in are accessed through specific command types and limited screen area. It is important that navigation is intuitive, provides context, and allows the user to move easily throughout the add-in.
 
 ## Best practices
-
-<br/>
 
 | Do    | Don't |
 | :---- | :---- |
 | Ensure the user has a clearly visible navigation option. | Don't complicate the navigation process by using non-standard UI.
 | Utilize the following components as applicable to allow users to navigate through your add-in. | Don't make it difficult for the user to understand their current place or context within the add-in
 
-<br/>
+
 
 ## Command Bar
 
@@ -19,7 +17,7 @@ CommandBar is a surface that houses commands that operate on the content of the 
 
 ![Commands - Specifications for desktop task pane](../images/add-in-command-bar.png)
 
-<br/>
+
 
 ## Tab Bar
 
@@ -27,7 +25,6 @@ Shows navigation using buttons with vertically stacked text and icons. Use the t
 
 ![Tab Bar - Specifications for desktop task pane](../images/add-in-tab-bar.png)
 
-<br/>
 
 ## Back Button
 
