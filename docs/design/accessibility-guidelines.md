@@ -1,30 +1,3 @@
----
-title: Office Add-in design guidelines
-description: ''
-ms.date: 01/23/2018
----
-
-
-
-# Office Add-in design guidelines
-
-Enhance the user experience in your Office Add-in by developing UI that matches the Office voice, and apply accessibility guidelines to ensure that your add-in is accessible to all users.
-
-If you plan to make your add-in [available in AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store), make sure that your language and content complies with the [Validation policies](https://docs.microsoft.com/en-us/office/dev/store/validation-policies).
-
-## Voice guidelines 
-
-As you design your Office Add-ins, consider the voice that you use in your UI text and elements. Strive to match the voice and tone of the Office UI, which is conversational, engaging, and accessible to users. 
-
-To align your text with the principles of the Office voice:
-
-- **Use a natural style.** Write the way that you speak. Avoid jargon and overly technical words and phrases. Use terms that are familiar to your users.
-- **Use simple, direct language.** Use short words and sentences, and active voice in your text. 
-- **Be consistent.** Use the same words for the same concepts throughout.
-- **Engage the user.** Address the user as "you". Avoid using third person. Use imperatives for user tasks.
-- **Be helpful and empathetic.** Make your text positive, polite, supportive, and encouraging. Emphasize what users can accomplish ― not what they can't.
-- **Know your customers.** Be mindful of cultural considerations and globalization when you use idioms or colloquialisms.
-
 ## Accessibility guidelines
 
 As you design and develop your Office Add-ins, you'll want to ensure that all potential users and customers are able to use your add-in successfully. Apply the following guidelines to ensure that your solution is accessible to all audiences.
@@ -62,6 +35,3 @@ As you design and develop your Office Add-ins, you'll want to ensure that all po
 - [Web Content Accessibility Guidelines (WCAG) 2.0](http://www.w3.org/TR/wcag2ict/#REF-WCAG20)
 - [Guidance on Applying WCAG 2.0 to Non-Web Information and Communications Technologies (WCAG2ICT)](http://www.w3.org/TR/wcag2ict/)
 - [European Standard on accessibility requirements for Information and Communication Technologies (ICT)](http://www.etsi.org/deliver/etsi_en/301500_301599/301549/01.00.00_20/en_301549v010000c.pdf) 
-
-
-

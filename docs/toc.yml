@@ -69,66 +69,60 @@
 
 - name: How-to guides
   items:
-
   - name: Design the User Interface
     href: design/add-in-design.md
     items:
     - name: Guidelines
-      href: design/add-in-design-guidelines.md
       items:
-      - name: Design language
-        href: design/add-in-design-language.md
+      - name: Accessibility
+        href: design/accessibility-guidelines.md
+      - name: Voice
+        href: design/voice-guidelines.md
+      - name: Data visualization style guidelines
+        href: design/data-visualization-guidelines.md
+    - name: Design language
+      href: design/add-in-design-language.md
+      items:
+      - name: Typography
+        href: design/add-in-typography.md
+      - name: Color
+        href: design/add-in-color.md
+      - name: Layout
+        href: design/add-in-layout.md
+      - name: Icons
+        href: design/add-in-icons.md
       - name: Using motion
         href: design/using-motion-office-addins.md
-      - name: UX design templates
-        href: design/ux-design-patterns.md
-      - name: Usability testing
-        href: design/usability-testing.md
+        displayName: Motion
     - name: Interface elements
       href: design/interface-elements.md
       items:
       - name: Add-in commands
         href: design/add-in-commands.md
-        items:
-        - name: Icon guidelines
-          href: design/design-icons.md
       - name: Task panes
         href: design/task-pane-add-ins.md
-        items:
-        - name: Automatically open a task pane with a document
-          href: design/automatically-open-a-task-pane-with-a-document.md
       - name: Dialog boxes
         href: design/dialog-boxes.md
       - name: Content add-ins
         href: design/content-add-ins.md
-        items:
-        - name: Data visualization style guidelines
-          href: design/data-visualization-guidelines.md
-    - name: Office UI Fabric
-      href: design/office-ui-fabric.md
+    - name: UX design templates
+      href: design/ux-design-pattern-templates.md
       items:
+      - name: Authentication
+        href: design/authentication-patterns.md
+      - name: First run experience
+        href: design/first-run-experience-patterns.md
+      - name: Navigation
+        href: design/navigation-patterns.md
+      - name: Branding
+        href: design/branding-patterns.md
+    - name: Resources
+      items:
+      - name: Office UI Fabric
+        href: design/office-ui-fabric.md
       - name: Get started using Fabric React
         href: design/using-office-ui-fabric-react.md
-      - name: Breadcrumb
-        href: design/breadcrumb.md
-      - name: Buttons
-        href: design/button.md
-      - name: Checkbox
-        href: design/checkbox.md
-      - name: ChoiceGroup
-        href: design/choicegroup.md
-      - name: DropDown
-        href: design/dropdown.md
-      - name: Label
-        href: design/label.md
-      - name: List
-        href: design/list.md
-      - name: Pivot
-        href: design/pivot.md
-      - name: TextField
-        href: design/textfield.md
-      - name: Toggle
-        href: design/toggle.md
+
 
   - name: Develop
     items:
@@ -184,6 +178,8 @@
 
     - name: Use the Dialog API
       href: develop/dialog-api-in-office-add-ins.md
+    - name: Automatically open a task pane with a document
+      href: develop/automatically-open-a-task-pane-with-a-document.md
     - name: Address same origin policy limitations
       href: develop/addressing-same-origin-policy-limitations.md
     - name: Localization
@@ -377,6 +373,8 @@
         href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
       - name: Debug on iPad and Mac
         href: testing/debug-office-add-ins-on-ipad-and-mac.md
+    - name: Usability testing
+      href: develop/usability-testing.md
     - name: Troubleshoot user errors
       href: testing/testing-and-troubleshooting.md
     - name: Validate an add-in manifest and troubleshoot issues
