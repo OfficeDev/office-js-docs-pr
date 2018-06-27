@@ -118,6 +118,8 @@
         href: design/branding-patterns.md
     - name: Resources
       items:
+      - name: Design toolkits
+        href: design/design-toolkits.md
       - name: Office UI Fabric
         href: design/office-ui-fabric.md
       - name: Get started using Fabric React
