@@ -73,8 +73,13 @@
     href: design/add-in-design.md
     items:
     - name: Guidelines
-      href: design/add-in-design-guidelines.md
       items:
+      - name: Accessibility
+        href: design/accessibility-guidelines.md
+      - name: Voice
+        href: design/voice-guidelines.md
+      - name: Data visualization style guidelines
+        href: design/data-visualization-guidelines.md
       - name: Design language
         href: design/add-in-design-language.md
       - name: Using motion
@@ -98,9 +103,6 @@
         href: design/dialog-boxes.md
       - name: Content add-ins
         href: design/content-add-ins.md
-        items:
-        - name: Data visualization style guidelines
-          href: design/data-visualization-guidelines.md
     - name: UX design templates
       href: design/ux-design-pattern-templates.md
       items:
