@@ -69,7 +69,6 @@
 
 - name: How-to guides
   items:
-
   - name: Design the User Interface
     href: design/add-in-design.md
     items:
@@ -80,8 +79,6 @@
         href: design/add-in-design-language.md
       - name: Using motion
         href: design/using-motion-office-addins.md
-      - name: UX design templates
-        href: design/ux-design-patterns.md
       - name: Usability testing
         href: design/usability-testing.md
     - name: Interface elements
@@ -104,6 +101,17 @@
         items:
         - name: Data visualization style guidelines
           href: design/data-visualization-guidelines.md
+    - name: UX design templates
+      href: design/ux-design-pattern-templates.md
+      items:
+      -name: Authentication
+       href: design/authentication-patterns.md
+      -name: First run experience
+       href: design/first-run-experience-patterns.md
+      -name: Navigation
+       href: design/navigation-patterns.md
+      -name: Branding
+       href: design/branding-patterns.md
     - name: Office UI Fabric
       href: design/office-ui-fabric.md
       items:
