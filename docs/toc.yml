@@ -103,31 +103,6 @@
         items:
         - name: Data visualization style guidelines
           href: design/data-visualization-guidelines.md
-<<<<<<< HEAD
-    - name: UX design templates
-      href: design/ux-design-pattern-templates.md
-      items:
-<<<<<<< HEAD
-      -name: Authentication
-       href: design/authentication-patterns.md
-      -name: First run experience
-       href: design/first-run-experience-patterns.md
-      -name: Navigation
-       href: design/navigation-patterns.md
-      -name: Branding
-       href: design/branding-patterns.md
-=======
->>>>>>> parent of 1b1830ba... updated ux design templates page and toc
-=======
-        -name: Authentication
-         href: design/authentication-patterns.md
-        -name: First run experience
-         href: design/first-run-experience-patterns.md
-        -name: Navigation
-         href: design/navigation-patterns.md
-        -name: Branding
-         href: design/branding-patterns.md
->>>>>>> parent of b140ff81... toc fix
     - name: Office UI Fabric
       href: design/office-ui-fabric.md
       items:
