@@ -69,7 +69,6 @@
 
 - name: How-to guides
   items:
-
   - name: Design the User Interface
     href: design/add-in-design.md
     items:
