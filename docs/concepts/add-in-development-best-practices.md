@@ -56,7 +56,7 @@ For templates that illustrate patterns that you can apply as you develop your fi
 
 ## Apply UX design principles
 
-- Ensure that the look and feel and functionality of your add-in complements the Office experience. Use [Office UI Fabric](https://dev.office.com/fabric).
+- Ensure that the look and feel and functionality of your add-in complements the Office experience. Use [Office UI Fabric](https://developer.microsoft.com/en-us/fabric).
 
 - Favor content over chrome. Avoid superfluous UI elements that don't add value to the user experience.
 
@@ -68,7 +68,7 @@ For templates that illustrate patterns that you can apply as you develop your fi
 
 - Do not include unlicensed images.
 
-- Use [clear and simple language](../design/add-in-design-guidelines.md#voice-guidelines) in your add-in.
+- Use [clear and simple language](../design/voice-guidelines.md) in your add-in.
 
 - Account for accessibility - make your add-in easy for all users to interact with, and accommodate assistive technologies such as screen readers.
 
