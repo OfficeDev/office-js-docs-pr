@@ -80,18 +80,25 @@
         href: design/voice-guidelines.md
       - name: Data visualization style guidelines
         href: design/data-visualization-guidelines.md
-      - name: Design language
-        href: design/add-in-design-language.md
+    - name: Design language
+      href: design/add-in-design-language.md
+      items:
+      - name: Typography
+        href: design/add-in-typography.md
+      - name: Color
+        href: design/add-in-color.md
+      - name: Layout
+        href: design/add-in-layout.md
+      - name: Icons
+        href: design/add-in-icons.md
       - name: Using motion
         href: design/using-motion-office-addins.md
+        displayName: Motion
     - name: Interface elements
       href: design/interface-elements.md
       items:
       - name: Add-in commands
         href: design/add-in-commands.md
-        items:
-        - name: Icon guidelines
-          href: design/design-icons.md
       - name: Task panes
         href: design/task-pane-add-ins.md
       - name: Dialog boxes

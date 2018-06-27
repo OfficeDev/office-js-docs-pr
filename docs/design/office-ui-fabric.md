@@ -40,10 +40,21 @@ To get started using Fabric Core:
 Fabric provides a variety of UX components that you can use to build your add-in, including the following types of components:
 
 - Input components - for example, Button, Checkbox, and Toggle
-- Navigation components - for example, Pivot Breadcrumb
+- Navigation components - for example, Pivot and Breadcrumb
 - Notification components - for example, MessageBar and Callout  
 
-Not all Fabric components are recommended for use in add-ins. We provide guidance for how you can use the recommended components in this section. For example, for guidance for using a Fabric button in your add-in, see [Button](button.md). 
+Not all Fabric components are recommended for use in add-ins. Here is a list of Fabric React UX components that we recommend for use in an add-in:
+
+- [Breadcrumb](https://developer.microsoft.com/en-us/fabric#/components/breadcrumb)
+- [Button](https://developer.microsoft.com/en-us/fabric#/components/button)
+- [Checkbox](https://developer.microsoft.com/en-us/fabric#/components/checkbox)
+- [ChoiceGroup](https://developer.microsoft.com/en-us/fabric#/components/choicegroup)
+- [Dropdown](https://developer.microsoft.com/en-us/fabric#/components/dropdown)
+- [Label](https://developer.microsoft.com/en-us/fabric#/components/label)
+- [List](https://developer.microsoft.com/en-us/fabric#/components/list)
+- [Pivot](https://developer.microsoft.com/en-us/fabric#/components/pivot)
+- [TextField](https://developer.microsoft.com/en-us/fabric#/components/textfield)
+- [Toggle](https://developer.microsoft.com/en-us/fabric#/components/toggle)
 
 You can use different JavaScript frameworks, such as Angular or React, to build your add-in. To get started using Fabric components with your framework, see the following resources.
 

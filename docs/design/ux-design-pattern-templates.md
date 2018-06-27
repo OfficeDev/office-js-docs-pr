@@ -16,7 +16,6 @@ Use the UX pattern templates to:
 * Build add-ins that visually integrate with the default Office UI.
 * Ideate and visualize UX.
 
-<br/>
 
 ## Getting started
 
@@ -29,11 +28,11 @@ The patterns are organized by key actions or experiences that are common in an a
 
 Browse each grouping to get an idea of how you can design your add-in using best practices.
 
-<br/>
+
 
 >NOTE: The example screens shown throughout this documentation are designed and displayed at a resolution of **1366x768**
 
-<br/>
+
 
 ## Resources
 
@@ -47,7 +46,7 @@ We've included our toolkit to help you get started. You can find all of our avai
 * [Add-in Adobe XD Toolkit](https://aka.ms/addins_toolkit)
 * [Segoe UI and Fabric MDL2 icon font](https://static2.sharepointonline.com/files/fabric/fabric-website/files/segoeui_fabricmdl2_icon_fonts.zip)
 
-<br/>
+
 
 ## See also
 * [Office UI Fabric](https://developer.microsoft.com/en-us/fabric)
