@@ -84,8 +84,6 @@
         href: design/add-in-design-language.md
       - name: Using motion
         href: design/using-motion-office-addins.md
-      - name: Usability testing
-        href: design/usability-testing.md
     - name: Interface elements
       href: design/interface-elements.md
       items:
@@ -96,9 +94,6 @@
           href: design/design-icons.md
       - name: Task panes
         href: design/task-pane-add-ins.md
-        items:
-        - name: Automatically open a task pane with a document
-          href: design/automatically-open-a-task-pane-with-a-document.md
       - name: Dialog boxes
         href: design/dialog-boxes.md
       - name: Content add-ins
@@ -194,6 +189,8 @@
 
     - name: Use the Dialog API
       href: develop/dialog-api-in-office-add-ins.md
+    - name: Automatically open a task pane with a document
+      href: develop/automatically-open-a-task-pane-with-a-document.md
     - name: Address same origin policy limitations
       href: develop/addressing-same-origin-policy-limitations.md
     - name: Localization
@@ -387,6 +384,8 @@
         href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
       - name: Debug on iPad and Mac
         href: testing/debug-office-add-ins-on-ipad-and-mac.md
+    - name: Usability testing
+      href: develop/usability-testing.md
     - name: Troubleshoot user errors
       href: testing/testing-and-troubleshooting.md
     - name: Validate an add-in manifest and troubleshoot issues
