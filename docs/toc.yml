@@ -109,31 +109,13 @@
         href: design/navigation-patterns.md
       - name: Branding
         href: design/branding-patterns.md
-    - name: Office UI Fabric
-      href: design/office-ui-fabric.md
+    - name: Resources
       items:
+      - name: Office UI Fabric
+        href: design/office-ui-fabric.md
       - name: Get started using Fabric React
         href: design/using-office-ui-fabric-react.md
-      - name: Breadcrumb
-        href: design/breadcrumb.md
-      - name: Buttons
-        href: design/button.md
-      - name: Checkbox
-        href: design/checkbox.md
-      - name: ChoiceGroup
-        href: design/choicegroup.md
-      - name: DropDown
-        href: design/dropdown.md
-      - name: Label
-        href: design/label.md
-      - name: List
-        href: design/list.md
-      - name: Pivot
-        href: design/pivot.md
-      - name: TextField
-        href: design/textfield.md
-      - name: Toggle
-        href: design/toggle.md
+
 
   - name: Develop
     items:
