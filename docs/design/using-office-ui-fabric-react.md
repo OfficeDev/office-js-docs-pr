@@ -106,16 +106,16 @@ Save your changes. All open browser instances, including the add-in, update auto
 
 The following is a list of the Fabric React UX components that we recommend for use in an add-in:
 
-- [Breadcrumb](breadcrumb.md)
-- [Button](button.md)
-- [Checkbox](checkbox.md)
-- [ChoiceGroup](choicegroup.md)
-- [Dropdown](dropdown.md)
-- [Label](label.md)
-- [List](list.md)
-- [Pivot](pivot.md)
-- [TextField](textfield.md)
-- [Toggle](toggle.md)
+- [Breadcrumb](https://developer.microsoft.com/en-us/fabric#/components/breadcrumb)
+- [Button](https://developer.microsoft.com/en-us/fabric#/components/button)
+- [Checkbox](https://developer.microsoft.com/en-us/fabric#/components/checkbox)
+- [ChoiceGroup](https://developer.microsoft.com/en-us/fabric#/components/choicegroup)
+- [Dropdown](https://developer.microsoft.com/en-us/fabric#/components/dropdown)
+- [Label](https://developer.microsoft.com/en-us/fabric#/components/label)
+- [List](https://developer.microsoft.com/en-us/fabric#/components/list)
+- [Pivot](https://developer.microsoft.com/en-us/fabric#/components/pivot)
+- [TextField](https://developer.microsoft.com/en-us/fabric#/components/textfield)
+- [Toggle](https://developer.microsoft.com/en-us/fabric#/components/toggle)
 
 > [!NOTE]
 > We will add additional components over time.
