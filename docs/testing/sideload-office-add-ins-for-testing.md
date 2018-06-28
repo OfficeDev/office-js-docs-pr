@@ -58,10 +58,10 @@ The following video walks you through the process of sideloading your add-in on 
 
 6. Verify that your add-in is installed. For example, if it is an add-in command, it should appear on either the ribbon or the context menu. If it is a task pane add-in, the pane should appear.
 
-**NOTE:** To test your Office Add-in with Edge, enter “**about:flags**” in the Edge search bar to bring up the Developer Settings options.  Check the “**Allow localhost loopback**” option and restart Edge.
+> [!NOTE]
+>To test your Office Add-in with Edge, enter “**about:flags**” in the Edge search bar to bring up the Developer Settings options.  Check the “**Allow localhost loopback**” option and restart Edge.
 
-    ![The Edge Allow localhost loopback option with the box checked]
-    (../images/allow-localhost-loopback.png)
+>    ![The Edge Allow localhost loopback option with the box checked.](../images/allow-localhost-loopback.png)
 
 ## Sideload an add-in when using Visual Studio
 
