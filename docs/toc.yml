@@ -78,7 +78,7 @@
         href: design/accessibility-guidelines.md
       - name: Voice
         href: design/voice-guidelines.md
-      - name: Data visualization style guidelines
+      - name: Data visualization
         href: design/data-visualization-guidelines.md
     - name: Design language
       href: design/add-in-design-language.md
