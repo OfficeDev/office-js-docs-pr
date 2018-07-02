@@ -118,7 +118,7 @@ For templates that apply design principles that you can use and customize as you
   |Continuous|>500 ms|5 seconds|Medium wait, no longer feels responsive. Might need feedback.|
   |Captive|>500 ms|10 seconds|Long, but not long enough to do something else. Might need feedback.|
   |Extended|>500 ms|>10 seconds|Long enough to do something else while waiting. Might need feedback.|
-  |Long running|>5 ms|>1 minute|Users will certainly do something else.|
+  |Long running|>5 seconds|>1 minute|Users will certainly do something else.|
 
 - Monitor your service health, and use telemetry to monitor user success.
 
