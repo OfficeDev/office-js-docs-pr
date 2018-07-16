@@ -68,8 +68,6 @@ In this article, you'll walk through the process of building a OneNote add-in by
 
         Office.initialize = function (reason) {
             $(document).ready(function () {
-                app.initialize();
-
                 // Set up event handler for the UI.
                 $('#addOutline').click(addOutlineToPage);
             });
