@@ -166,7 +166,6 @@ Excel.run(function (context) {
 ### Update a trendline
 
 The following code sample sets the trendline to type **Linear** for the first series in the first chart in the worksheet named **Sample**.
-The following code sample sets the trendline to type **Linear** for the first series in the first chart in the worksheet named **Sample**.
 
 ```js
 Excel.run(function (context) {
