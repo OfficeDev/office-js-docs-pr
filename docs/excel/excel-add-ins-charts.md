@@ -40,9 +40,6 @@ Excel.run(function (context) {
 
 The following code sample adds a data series to the first chart in the worksheet. The new data series corresponds to the column named **2016** and is based upon data in the range **D2:D5**.
 
-> [!NOTE]
-> This sample uses APIs that are currently available only in public preview (beta). To run this sample, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
@@ -110,9 +107,6 @@ Excel.run(function (context) {
 
 The following code sample sets the display unit of the value axis for the first chart in the worksheet to **Hundreds**.
 
-> [!NOTE]
-> This sample uses APIs that are currently available only in public preview (beta). To run this sample, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
@@ -153,9 +147,6 @@ Excel.run(function (context) {
 
 The following code sample adds a moving average trendline to the first series in the first chart in the worksheet named **Sample**. The trendline shows a moving average over 5 periods.
 
-> [!NOTE]
-> This sample uses APIs that are currently available only in public preview (beta). To run this sample, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
@@ -175,9 +166,7 @@ Excel.run(function (context) {
 ### Update a trendline
 
 The following code sample sets the trendline to type **Linear** for the first series in the first chart in the worksheet named **Sample**.
-
-> [!NOTE]
-> This sample uses APIs that are currently available only in public preview (beta). To run this sample, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+The following code sample sets the trendline to type **Linear** for the first series in the first chart in the worksheet named **Sample**.
 
 ```js
 Excel.run(function (context) {
