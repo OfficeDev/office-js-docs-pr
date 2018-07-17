@@ -59,7 +59,7 @@ In this article, you'll walk through the process of building a OneNote add-in by
     </main>
     ```
 
-3. Open the file **app.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.
+3. Open the file **index/src.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.
 
     ```js
     'use strict';
