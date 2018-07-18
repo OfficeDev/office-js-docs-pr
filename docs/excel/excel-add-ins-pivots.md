@@ -53,9 +53,11 @@ await Excel.run(async (context) => {
 ## Add rows and columns to a pivot table
 
 Rows and columns pivot the data around those fields’ values. Here is some data for fruit sales from various farms.
+
 ![A collection of fruit sales of different types from different farms](../images/excel-pivots-raw-data.png)
 
 Adding the **Farm** column pivots all the sales around each farm. Adding the **Type** and **Classification** rows further breaks down the data based on what fruit was sold and whether it was organic or not.
+
 ![A pivot table with a Farm column and Type and Classification rows.](../images/excel-pivots-table-rows-and-columns.png)
 
 ```ts
@@ -89,6 +91,7 @@ await Excel.run(async (context) => {
 Data hierarchies fill the pivot table with information to combine based on the rows and columns. 
 Adding the data hierarchies of **Crates Sold at Farm** and **Crates Sold Wholesale** gives sums of those figures for each row and column. 
 In the example, both **Farm** and **Type** are rows, with the crate sales as the data. 
+
 ![A pivot table showing the total sales of different fruit based on the farm they came from.](../images/excel-pivots-data-hierarchy.png)
 
 ```ts
@@ -109,7 +112,11 @@ await Excel.run(async (context) => {
 
 Pivot tables have three layout styles: Compact, Outline, and Tabular. We’ve seen the compact style in the previous examples. 
 Here are the outline and tabular styles. The code sample shows how to cycle between the different layouts.
+
+### Outline layout
 ![A pivot table using the outline layout.](../images/excel-pivots-outline-layout.png)
+
+### Tabular layout
 ![A pivot table usingthe tabular layout.](../images/excel-pivots-tabular-layout.png)
 
 ```ts
