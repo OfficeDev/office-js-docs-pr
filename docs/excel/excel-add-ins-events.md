@@ -21,6 +21,7 @@ Each time certain types of changes occur in an Excel workbook, an event notifica
 | `onChanged` | Event that occurs when data within cells is changed. | [**Worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet), [**Table**](https://dev.office.com/reference/add-ins/excel/table), [**TableCollection**](https://dev.office.com/reference/add-ins/excel/tablecollection) |
 | `onDataChanged` | Event that occurs when data or formatting within the binding is changed. | [**Binding**](https://dev.office.com/reference/add-ins/excel/binding) |
 | `onSelectionChanged` | Event that occurs when the active cell or selected range is changed. | [**Worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet), [**Table**](https://dev.office.com/reference/add-ins/excel/table), [**Binding**](https://dev.office.com/reference/add-ins/excel/binding) |
+| `onSettingsChanged` | Event that occurs when the Settings in the document are changed. | [**SettingCollection**](https://dev.office.com/reference/add-ins/excel/settingcollection) |
 
 ### Event triggers
 
