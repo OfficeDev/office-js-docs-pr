@@ -9,7 +9,7 @@ ms.date: 7/11/2018
 # Work with Pivot Tables using the Excel JavaScript API
 
 Pivot tables streamline larger data sets. They allow the quick manipulation of grouped data. The Excel JavaScript API lets your add-in create pivot tables and interact with their components. This article provides code samples for common scenarios.
-For the complete list of properties and methods that the **PivotTable** and **PivotTableCollection** objects support, see [PivotTable API](https://dev.office.com/reference/add-ins/excel/pivottable) and [Pivot Table Collection API](https://dev.office.com/reference/add-ins/excel/pivottablecollection).
+For the complete list of properties and methods the **PivotTable** and **PivotTableCollection** objects support, see [PivotTable API](https://dev.office.com/reference/add-ins/excel/pivottable) and [Pivot Table Collection API](https://dev.office.com/reference/add-ins/excel/pivottablecollection).
 
 > [!NOTE]
 > These samples use APIs currently available only in public preview (beta). To run these samples, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
