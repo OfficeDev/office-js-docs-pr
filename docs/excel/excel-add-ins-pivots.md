@@ -8,8 +8,8 @@ ms.date: 7/11/2018
 
 # Work with Pivot Tables using the Excel JavaScript API
 
-Pivot tables streamline larger data sets. They allow the quick manipulation of grouped data. The Excel JavaScript API lets your add-in create pivot tables and interact their components. This article provides code samples for commonm scenarios.
-For the complete list of properties and methods that the **PivotTable** and **PivotTableCollection** objects support, see [PivotTable Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/pivottable) and [Pivot Table Collection Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/pivottablecollection).
+Pivot tables streamline larger data sets. They allow the quick manipulation of grouped data. The Excel JavaScript API lets your add-in create pivot tables and interact with their components. This article provides code samples for common scenarios.
+For the complete list of properties and methods that the **PivotTable** and **PivotTableCollection** objects support, see [PivotTable API](https://dev.office.com/reference/add-ins/excel/pivottable) and [Pivot Table Collection API](https://dev.office.com/reference/add-ins/excel/pivottablecollection).
 
 > [!NOTE]
 > These samples use APIs currently available only in public preview (beta). To run these samples, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
@@ -18,9 +18,9 @@ For the complete list of properties and methods that the **PivotTable** and **Pi
 ## Create a pivot table
 
 Pivot tables need a name, source, and destination. The source can be a `Range`, `string`, or `Table`. The destination can either be a `Range` or `string`. 
-Here are some various pivot table creation techniques. All three samples show a pivot table named **Farm Sales** getting created on a worksheet called **Pivot** at cell **A2**. Its data comes from the worksheet **Data** across the range **A1:E21**. 
+The following samples show various pivot table creation techniques. All three samples feature a pivot table named **Farm Sales** created on a worksheet called **Pivot** at cell **A2**. Its data comes from the worksheet **Data** across the range **A1:E21**. 
 
-### Creating a pivot table with names
+### Create a pivot table with names
 ```ts
 await Excel.run(async (context) => {
 	context.workbook.worksheets.getActiveWorksheet()
@@ -52,7 +52,7 @@ await Excel.run(async (context) => {
 
 ## Add rows and columns to a pivot table
 
-Rows and columns pivot the data around those fields’ values. Here is some data for fruit sales from various farms.
+Rows and columns pivot the data around those fields’ values. The following data describes fruit sales from various farms.
 
 ![A collection of fruit sales of different types from different farms](../images/excel-pivots-raw-data.png)
 
@@ -111,7 +111,7 @@ await Excel.run(async (context) => {
 ## Pivot table layouts
 
 Pivot tables have three layout styles: Compact, Outline, and Tabular. We’ve seen the compact style in the previous examples. 
-Here are the outline and tabular styles. The code sample shows how to cycle between the different layouts.
+The following examples use the outline and tabular styles, respectively. The code sample shows how to cycle between the different layouts.
 
 ### Outline layout
 ![A pivot table using the outline layout.](../images/excel-pivots-outline-layout.png)
@@ -142,12 +142,13 @@ Hierarchy fields are editable. The following code demonstrates how to change the
 
 ```ts
 await Excel.run(async (context) => {
-	let pivotFields = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales").dataHierarchies
+	let pivotFields = context.workbook.worksheets.getActiveWorksheet()
+		.pivotTables.getItem("Farm Sales").dataHierarchies;
 	pivotFields.load();
 	await context.sync();
 	
-	pivotFields.items[0].name = "Farm Sales"
-	pivotFields.items[1].name = "Wholesale"
+	pivotFields.items[0].name = "Farm Sales";
+	pivotFields.items[1].name = "Wholesale";
 	await context.sync();
 });
 ```
