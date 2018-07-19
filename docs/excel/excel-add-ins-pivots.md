@@ -34,7 +34,7 @@ await Excel.run(async (context) => {
 ```ts
 await Excel.run(async (context) => {	
 	var myRange = context.workbook.worksheets.getItem("Data").getRange("A1:E21");
-	var myRange2 = context.workbook.worksheets.getItem("Pivot").getRange("A2);
+	var myRange2 = context.workbook.worksheets.getItem("Pivot").getRange("A2");
 	context.workbook.worksheets.getItem("Pivot").pivotTables.add("Farm Sales", myRange, myRange2);
 	
 	await context.sync();
