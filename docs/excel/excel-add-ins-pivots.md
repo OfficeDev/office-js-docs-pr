@@ -50,6 +50,22 @@ await Excel.run(async (context) => {
 });
 ```
 
+## Use an existing pivot table
+Manually created pivot tables are also accessible through the worksheet’s pivot table collection. 
+The following code gets the first pivot table in the worksheet. It then gives the table a name for easy future reference.
+
+```ts
+await Excel.run(async (context) => {
+	let pivotTableList = context.workbook.worksheets.getActiveWorksheet().pivotTables;
+	pivotTableList.load("items");
+	await context.sync();
+
+	let pivotTable = pivotTableList.items[0];
+	pivotTable.name = "My Pivot";
+	await context.sync();
+});
+```
+
 ## Add rows and columns to a pivot table
 
 Rows and columns pivot the data around those fields’ values. The following data describes fruit sales from various farms.
