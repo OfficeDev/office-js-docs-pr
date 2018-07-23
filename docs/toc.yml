@@ -299,6 +299,9 @@
     - name: Bind to regions in a document
       href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
       displayName: Word
+    - name: Use search options to find text in your Word add-in 
+      href: word/search-option-guidance.md
+      displayName: Word
     - name: Word JavaScript API reference
       href: https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview
       displayName: Word
