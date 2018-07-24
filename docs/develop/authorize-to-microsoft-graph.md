@@ -43,7 +43,7 @@ The following diagram shows how the process of signing in and getting access to 
 
 You develop an add-in that accesses Microsoft Graph just as you would any other add-in that uses SSO. For a thorough description, see [Enable single sign-on for Office Add-ins](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/sso-in-office-add-ins). The difference is that it is mandatory that the add-in have a server-side Web API, and what's called the access token in that article is called the "bootstrap access token." 
 
-Depending on your language and framework, libraries might be available that will simplify the ser-side code you have to write. Your code should do the following:
+Depending on your language and framework, libraries might be available that will simplify the server-side code you have to write. Your code should do the following:
 
 * Validate the add-in bootstrap access token that is received from the token handler you created earlier. For more information, see [Validate the access token](sso-in-office-add-ins.md#validate-the-access-token). 
 * Initiate the “on behalf of” flow with a call to the Azure AD v2.0 endpoint that includes the bootstrap access token, some metadata about the user, and the credentials of the add-in (its ID and secret).
