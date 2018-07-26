@@ -5,7 +5,8 @@ ms.date: 07/24/2018
 ---
 
 # Sideload Office Add-ins for testing using the **sideload command**
- [!NOTE] this method only works for Excel, Word, and PowerPoint add-ins).
+ >[!NOTE]
+>The "npm run sideload" method only works for Excel, Word, and PowerPoint add-ins).
 
 1. Open a command prompt as an administrator.
 
