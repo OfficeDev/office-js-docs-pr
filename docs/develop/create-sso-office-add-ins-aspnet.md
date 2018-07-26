@@ -37,11 +37,11 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
    > 1. On the **Tools** menu, navigate to **Nuget Package Manager** > **Package Manager Console**. 
 
-   > 2. At the console, run the following command. It may take a minute or more to complete even with a fast Internet connection. When it finishes you should see **Successfully installed 'Microsoft.Identity.Client 1.1.1-alpha0393' ...** near the end of the output in the console.
+   > 2. At the console, run the following command. It may take a minute or more to complete even with a fast Internet connection. When it finishes you should see **Successfully installed 'Microsoft.Identity.Client 1.1.4-preview0002' ...** near the end of the output in the console.
 
-   >    `Install-Package Microsoft.Identity.Client -Version 1.1.1-alpha0393 -Source https://www.myget.org/F/aad-clients-nightly/api/v3/index.json`
+   >    `Install-Package Microsoft.Identity.Client -Version 1.1.4-preview0002`
 
-   > 3. In **Solution Explorer**, right-click **References**. Verify that **Microsoft.Identity.Client** is listed. If it is not or there is a warning icon on its entry, delete the entry and then use the Visual Studio Add Reference wizard to add a reference to the assembly at **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.1-alpha0393\lib\net45\Microsoft.Identity.Client.dll**
+   > 3. In **Solution Explorer**, right-click **References**. Verify that **Microsoft.Identity.Client** is listed. If it is not or there is a warning icon on its entry, delete the entry and then use the Visual Studio Add Reference wizard to add a reference to the assembly at **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.4-preview0002\lib\net45\Microsoft.Identity.Client.dll**
 
 1. Build the project a second time.
 
