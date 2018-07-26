@@ -206,7 +206,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
     </div>
     ```
 
-7. Open the file **app.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.
+7. Open the file **src\index.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.
 
     ```js
     'use strict';
