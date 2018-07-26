@@ -23,6 +23,19 @@ Each time certain types of changes occur in an Excel workbook, an event notifica
 | `onSelectionChanged` | Event that occurs when the active cell or selected range is changed. | [**Worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet), [**Table**](https://dev.office.com/reference/add-ins/excel/table), [**Binding**](https://dev.office.com/reference/add-ins/excel/binding) |
 | `onSettingsChanged` | Event that occurs when the Settings in the document are changed. | [**SettingCollection**](https://dev.office.com/reference/add-ins/excel/settingcollection) |
 
+## Preview (Beta) Events in Excel
+
+> [!NOTE]
+> These events are currently available only in public preview (beta). To use these features, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+
+| Event | Description | Supported objects |
+|:---------------|:-------------|:-----------|
+| `onAdded` | Event that occurs when a chart is added. | [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onDeleted` | Event that occurs when a chart is deleted. | [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onActivated` | Event that occurs when a chart is activated. | [**Chart**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md), [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onDeactivated` | Event that occurs when a chart is deactivated. | [**Chart**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md), [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onCalculated` | Event that occurs when a worksheet has finished calculation (or all the worksheets of the collection have finished). | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md), [**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+
 ### Event triggers
 
 Events within an Excel workbook can be triggered by:
