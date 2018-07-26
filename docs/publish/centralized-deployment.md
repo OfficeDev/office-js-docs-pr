@@ -65,7 +65,7 @@ If your organization meets all requirements, complete the following steps to pub
 
     ![Select an Add-In dialog in Office 365 admin center](../images/select-an-add-in.png)
 
-9. The add-in is now enabled. On the page for the add-in, its status is **On**, like that shown for the Power BI Tiles add-in in the screenshot below. In the **Who has access** section, choose **Edit** to assign the add-in to users and/or groups.
+9. The add-in is now available for assignment. On the page for the add-in, its status is **On**, like that shown for the Power BI Tiles add-in in the screenshot below. In the **Who has access** section, choose **Edit** to assign the add-in to users and/or groups.
 
     ![Power BI Tiles add-in page in Office 365 admin center](../images/power-bi-tiles.png)
 

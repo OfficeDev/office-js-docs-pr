@@ -230,7 +230,7 @@ In this article, you'll walk through the process of building a PowerPoint add-in
     </div>
     ```
 
-4. Open the file **app.js** in the root of the project to specify the script for the add-in. Replace the entire contents with the following code and save the file.
+4. Open the file **src\index.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.
 
     ```js
     'use strict';
