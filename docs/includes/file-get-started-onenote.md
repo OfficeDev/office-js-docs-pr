@@ -28,7 +28,7 @@ In this article, you'll walk through the process of building a OneNote add-in by
     yo office
     ```
 
-    - **Choose a project type:** `Jquery`
+    - **Choose a project type:** `Office Add-in project using Jquery framework`
     - **Choose a script type:** `Javascript`
     - **What do you want to name your add-in?:** `My Office Add-in`
     - **Which Office client application would you like to support?:** `Onenote`
