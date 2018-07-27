@@ -73,7 +73,7 @@ Excel.run(function (context) {
  
 In the previous example, **selectedRange** is set and its **address** property is loaded when **context.sync()** is called.
  
-Because **sync()** is an asynchronous operation that returns a promise, you should always **return** the promise (in JavaScript). Doing so ensures that the **sync()** operation completes before the script continues to run. For more information about optimizing performance with **sync()**, see [Excel JavaScript API performance optimization](https://dev.office.com/reference/add-ins/excel/performance.md).
+Because **sync()** is an asynchronous operation that returns a promise, you should always **return** the promise (in JavaScript). Doing so ensures that the **sync()** operation completes before the script continues to run. For more information about optimizing performance with **sync()**, see [Excel JavaScript API performance optimization](https://docs.microsoft.com/reference/add-ins/excel/performance.md).
  
 ### load()
  
@@ -253,6 +253,6 @@ When an API error occurs, the API will return an **error** object that contains 
 ## See also
  
 * [Get started with Excel add-ins](excel-add-ins-get-started-overview.md)
-* [Excel add-ins code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API performance optimization](https://dev.office.com/reference/add-ins/excel/performance.md)
+* [Excel add-ins code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
+* [Excel JavaScript API performance optimization](https://docs.microsoft.com/reference/add-ins/excel/performance.md)
 * [Excel JavaScript API reference](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
