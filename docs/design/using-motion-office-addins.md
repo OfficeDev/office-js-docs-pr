@@ -48,13 +48,13 @@ Consider the size of the HTML canvas (task pane, dialog box, or content add-in) 
 
 |Do|Don't|
 |:-----|:-----|
-| Use [recommended motion durations](https://developer.microsoft.com/en-us/fabric#/styles/animations). | Don't use exaggerated animations. Avoid creating experiences that embellish and distract your customers.
-| Follow recommended easing curves in the [Microsoft Motion Guide](https://microsoft.sharepoint.com/teams/BrandCentral/Pages/The-Microsoft-brand-Core-elements-Motion.aspx#topic_0).  |Don't move elements in a jerky or disjointed manner. Avoid anticipations, bounces, rubberband, or other effects that emulate natural world physics.|
+| Use [recommended motion durations](https://developer.microsoft.com/fabric#/styles/animations). | Don't use exaggerated animations. Avoid creating experiences that embellish and distract your customers.
+| Follow [recommended easing curves](https://docs.microsoft.com/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion).  |Don't move elements in a jerky or disjointed manner. Avoid anticipations, bounces, rubberband, or other effects that emulate natural world physics.|
 
 ![gif that shows tiles loading using a gentle fade in next to a gif that shows tiles loading with bounce](../images/add-in-motion-character.gif)
 
 ## See also
 
-* [Fabric animation guidelines](https://developer.microsoft.com/en-us/fabric#/styles/animations)
-* [Motion for Universal Windows Platform apps](https://docs.microsoft.com/en-us/windows/uwp/design/motion/)
+* [Fabric animation guidelines](https://developer.microsoft.com/fabric#/styles/animations)
+* [Motion for Universal Windows Platform apps](https://docs.microsoft.com/windows/uwp/design/motion)
 
