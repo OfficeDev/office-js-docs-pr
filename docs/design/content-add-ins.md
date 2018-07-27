@@ -52,5 +52,5 @@ For a sample that implements a content add-in, see [Excel Content Add-in Humongo
 ## See also
 - [Office Add-in host and platform availability](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-in-availability)
 - [Office UI Fabric in Office Add-ins](https://docs.microsoft.com/office/dev/add-ins/design/office-ui-fabric) 
-- [UX design patterns for Office Add-ins](https://docs.microsoft.com/office/dev/add-ins/design/ux-design-patterns)
+- [UX design patterns for Office Add-ins](https://docs.microsoft.com/office/dev/add-ins/design/ux-design-pattern-templates)
 - [Requesting permissions for API use in content and task pane add-ins](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
