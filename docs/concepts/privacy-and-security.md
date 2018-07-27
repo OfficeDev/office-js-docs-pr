@@ -251,5 +251,5 @@ In a corporate setting, IT administrators have ultimate authority over enabling 
 - [Addressing same-origin policy limitations in Office Add-ins](http://msdn.microsoft.com/library/36c800ae-1dda-4ea8-a558-37c89ffb161b.aspx)
 - [Same Origin Policy](http://www.w3.org/Security/wiki/Same_Origin_Policy)
 - [Same Origin Policy Part 1: No Peeking](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
-- [Same origin policy for JavaScript](https://developer.mozilla.org/En/Same_origin_policy_for_JavaScript)
+- [Same origin policy for JavaScript](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
 - [IE Protect Mode](https://support.microsoft.com/en-us/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)
