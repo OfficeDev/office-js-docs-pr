@@ -132,6 +132,14 @@ If the add-in does not support add-in commands, users can add it to their Office
 
     ![Screenshot shows the Admin Managed tab of the Office Add-ins page of an Office application. The Citations add-in is shown on the tab.](../images/office-add-ins-admin-managed.png)
     
+However, for Outlook, users can do the following:
+
+1.  In Outlook 2016, choose **Home** > **Store**.
+2.  Choose the **Admin-managed** item under the add-in tab.
+3.  Choose the add-in, and then choose **Add**.
+
+    ![Screenshot shows the Admin-managed area of the Store page of the Outlook application.](../images/outlook-add-ins-admin-managed.png)
+
 ## See also
 [Determine if Centralized Deployment of add-ins works for your Office 365 organization](https://support.office.com/en-us/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-b4527d49-4073-4b43-8274-31b7a3166f92)
     
