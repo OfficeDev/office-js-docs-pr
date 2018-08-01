@@ -12,7 +12,7 @@ You can install an Office Add-in for testing in an Office client running on Wind
 - [Running the "**npm run sideload**" command from the root of the add-in project folder.](sideload-office-addin-using-sideload-command.md)
 
     > [!NOTE]
-    > The "npm run sideload" method only works for Excel, Word, and PowerPoint add-ins).
+    > The "npm run sideload" method only works for Excel, Word, and PowerPoint add-ins.
 
 If you're not testing a Word, Excel, or PowerPoint add-in on Windows, see one of the following topics to sideload your add-in:
 
