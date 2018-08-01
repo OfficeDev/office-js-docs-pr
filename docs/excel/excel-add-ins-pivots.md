@@ -16,14 +16,18 @@ For the complete list of properties and methods the **PivotTable** and **PivotTa
 
 ## Hierarchies
 
-Pivot tables are organized based on four hierarchies: row, column, data, and filter. The following data describing fruit sales from various farms will be used in throughout this article.
+Pivot tables are organized based on four hierarchy categories: row, column, data, and filter. The following data describing fruit sales from various farms will be used in throughout this article.
 
 ![A collection of fruit sales of different types from different farms.](../images/excel-pivots-raw-data.png)
 
-This data has five hierarchies: **Farms**, **Type**, **Classification**, **Crates Sold at Farm**, and **Crates Sold Wholesale**. Each hierarchy can only exist in one of the four organizational types. If **Type** is added to column hierarchies and row hierarchies, it only remains in the latter.
+This data has five hierarchies: **Farms**, **Type**, **Classification**, **Crates Sold at Farm**, and **Crates Sold Wholesale**. Each hierarchy can only exist in one of the four categories. If **Type** is added to column hierarchies and then added to row hierarchies, it only remains in the latter.
+
 Row and column hierarchies define how data will be grouped. For example, having a row hierarchy of **Farms** groups together all data sets from the same farm. The choice between row and column hierarchy defines the orientation of the pivot table.
+
 Data hierarchies are the values to be aggregated based on the row and column hierarchies. A pivot table with a row hierarchy of **Farms** and a data hierarchy of **Crates Sold Wholesale** shows the sum total (by default) of all the different fruits for each farm.
-Filter hierarchies include or exclude data from the pivot based on values within that filtered type. A filter hierarchy of **Classification** which the type **Organic** selected only shows data for organic fruit.
+
+Filter hierarchies include or exclude data from the pivot based on values within that filtered type. A filter hierarchy of **Classification** with the type **Organic** selected only shows data for organic fruit.
+
 Here is the farm data again, alongside a pivot table. The pivot table is using **Farm** and **Type** as the row hierarchies, **Crates Sold at Farm** and **Crates Sold Wholesale** as the data hierarchies (with the default aggregation function of sum), and **Classification** as a filter hierarchy (with **Organic** selected). 
 
 ![A selection of fruit sales data next to a pivot table with row, data, and filter hierarchies.](../images/excel-pivot-table-and-data.png)
