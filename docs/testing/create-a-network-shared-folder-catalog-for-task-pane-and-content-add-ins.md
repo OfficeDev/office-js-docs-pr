@@ -6,18 +6,16 @@ ms.date: 01/25/2018
 
 # Sideload Office Add-ins for testing
 
-You can install an Office Add-in for testing in an Office client running on Windows by one of the following methods:
+You can install an Office Add-in for testing in an Office client running on Windows by publishing the manifest to a network file share (instructions below).
 
-- Using a shared folder catalog to publish the manifest to a network file share (instructions below)
-- [Running the "**npm run sideload**" command from the root of the add-in project folder.](sideload-office-addin-using-sideload-command.md)
+> [!NOTE]
+> If your add-in project was created with the [**yo office** tool](https://github.com/OfficeDev/generator-office), there is an alternative way of sideloading it that might work for you. For details, see [Sideload Office Add-ins using the sideload command](sideload-office-addin-using-sideload-command.md).
 
-    > [!NOTE]
-    > The "npm run sideload" method only works for Excel, Word, and PowerPoint add-ins.
-
-If you're not testing a Word, Excel, or PowerPoint add-in on Windows, see one of the following topics to sideload your add-in:
+This article applies only to testing a Word, Excel, or PowerPoint add-ins on Windows. If you want to test on another platform or want to test an Outlook add-in, see one of the following topics to sideload your add-in:
 
 - [Sideload Office Add-ins in Office Online for testing](sideload-office-add-ins-for-testing.md)
 - [Sideload Office Add-ins on iPad and Mac for testing](sideload-an-office-add-in-on-ipad-and-mac.md)
+- [Sideload Outlook Add-ins for testing](../../../../outlook/add-insSideload Outlook Add-ins for testing)
 
 The following video walks you through the process of sideloading your add-in on Office desktop or Office Online using a shared folder catalog.  
 
