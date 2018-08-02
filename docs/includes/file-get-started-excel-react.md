@@ -46,7 +46,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
     yo office 
     ```
 
-    - **Choose a project type:** `Manifest`
+    - **Choose a project type:** `Office Add-in containing the manifest only`
     - **What do you want to name your add-in?:** `My Office Add-in`
     - **Which Office client application would you like to support?:** `Excel`
 
