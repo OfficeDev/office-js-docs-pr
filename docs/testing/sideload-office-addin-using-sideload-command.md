@@ -12,7 +12,7 @@ ms.date: 07/24/2018
 > 
 > - [Sideload Office Add-ins in Office Online for testing](sideload-office-add-ins-for-testing.md)
 > - [Sideload Office Add-ins on iPad and Mac for testing](sideload-an-office-add-in-on-ipad-and-mac.md)
-> - [Sideload Outlook Add-ins for testing](../../../../outlook/add-ins/sideload-outlook-add-ins-for-testing)
+> - [Sideload Outlook Add-ins for testing](../../../../outlook/add-ins/sideload-outlook-add-ins-for-testing.md)
 
 1. Open a command prompt as an administrator.
 
