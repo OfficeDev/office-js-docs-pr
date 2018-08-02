@@ -147,6 +147,19 @@ Data hierarchies have their values aggregated into a sum by default. The `summar
 
 ## Pivot table layouts
 
+A pivot table layout defines the placement of hierarchies and their data. You access the layout to determine the ranges where data is stored. 
+The following code demonstrates how to get the last row from a pivot table by going through the layout.
+
+```ts
+    await Excel.run(async (context) => {
+        let pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+        let range = pivotTable.layout.getDataBodyRange();
+        let grandTotalRange = range.getLastRow();
+        grandTotalRange.load();
+        await context.sync();
+    });
+```
+
 Pivot tables have three layout styles: Compact, Outline, and Tabular. We’ve seen the compact style in the previous examples. 
 The following examples use the outline and tabular styles, respectively. The code sample shows how to cycle between the different layouts.
 
