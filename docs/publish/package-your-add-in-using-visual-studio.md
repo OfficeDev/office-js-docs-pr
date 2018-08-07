@@ -24,11 +24,11 @@ Complete the following steps to deploy your web project using Visual Studio 2015
 
     If you choose  **New ...**, the  **Create publishing profile** wizard appears. You can use this wizard to import a publishing profile from a web site hosting provider such as Microsoft Azure or create a new profile and add your server, credentials, and other settings in the next procedure.
     
-    For more information about importing publishing profiles or creating new publishing profiles, see [Creating a Publish Profile](http://msdn.microsoft.com/en-us/library/dd465337.aspx#creating_a_profile).
+    For more information about importing publishing profiles or creating new publishing profiles, see [Creating a Publish Profile](http://msdn.microsoft.com/library/dd465337.aspx#creating_a_profile).
     
 3. In the  **Publish your add-in** page, choose the **Deploy your web project** link.
     
-    The  **Publish Web** dialog box appears. For more information about using this wizard, see [How to: Deploy a Web Project using On-Click Publishing in Visual Studio](http://msdn.microsoft.com/en-us/library/dd465337.aspx).
+    The  **Publish Web** dialog box appears. For more information about using this wizard, see [How to: Deploy a Web Project using On-Click Publishing in Visual Studio](http://msdn.microsoft.com/library/dd465337.aspx).
     
 
 ## To package your add-in using Visual Studio 2015
@@ -58,5 +58,5 @@ You can now upload your XML manifest to the appropriate location to [publish you
 ## See also
 
 - [Publish your Office Add-in](../publish/publish.md)
-- [Make your solutions available in AppSource and within Office](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store)
+- [Make your solutions available in AppSource and within Office](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)
     

@@ -29,7 +29,7 @@ If single sign-on is not yet available to your users, consider an alternative au
 
 
 
-3. Identity Provider Sign-in - The identity provider will have their own UI. Microsoft Azure Active Directory allows customization of sign-in and access panel pages for consistent look and feel with your service. [Learn More](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/customize-branding).
+3. Identity Provider Sign-in - The identity provider will have their own UI. Microsoft Azure Active Directory allows customization of sign-in and access panel pages for consistent look and feel with your service. [Learn More](https://docs.microsoft.com/azure/active-directory/fundamentals/customize-branding).
 ![](../images/add-in-auth-identity-sign-in.png)
 
 4. Progress - Indicate progress while settings and UI load.
@@ -50,4 +50,4 @@ Single sign-on is still in preview. Once generally available, use it for the smo
 ![](../images/add-in-ribbon.png)
 
 ## See also
-- Learn more about [developing SSO Add-ins](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/sso-in-office-add-ins)
+- Learn more about [developing SSO Add-ins](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins)

@@ -13,7 +13,7 @@ To do that, you can:
     -  Name/value pairs in a property bag stored in a location that depends on add-in type.
     -  Custom XML stored in the document.
     
-- Use techniques provided by the underlying browser control: browser cookies, or HTML5 web storage ([localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) or [sessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage)).
+- Use techniques provided by the underlying browser control: browser cookies, or HTML5 web storage ([localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) or [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)).
     
 This article focuses on how to use the JavaScript API for Office to persist add-in state. For examples of using browser cookies and web storage, see the [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings).
 
@@ -329,6 +329,6 @@ function saveCallback(asyncResult) {
 ## See also
 
 - [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md)
-- [Outlook add-ins](https://docs.microsoft.com/en-us/outlook/add-ins/)
+- [Outlook add-ins](https://docs.microsoft.com/outlook/add-ins/)
 - [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)
     

@@ -11,7 +11,7 @@ ms.date: 01/23/2018
 Effective add-ins offer unique and compelling functionality that extends Office applications in a visually appealing way. To create a great add-in, provide an engaging first-time experience for your users, design a first-class UI experience, and optimize your add-in's performance. Apply the best practices described in this article to create add-ins that help your users complete their tasks quickly and efficiently.
 
 > [!NOTE]
-> If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](https://docs.microsoft.com/en-us/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)). 
+> If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](https://docs.microsoft.com/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)). 
 
 ## Provide clear value
 
@@ -21,7 +21,7 @@ Effective add-ins offer unique and compelling functionality that extends Office 
  - Embed complementary services within Office hosts.
  - Improve the Office experience to enhance productivity.
 - Make sure that the value of your add-in is clear to users right away by [creating an engaging first run experience](#create-an-engaging-first-run-experience).
-- Create an [effective AppSource listing](https://docs.microsoft.com/en-us/office/dev/store/create-effective-office-store-listings). Make the benefits of your add-in clear in your title and description. Don't rely on your brand to communicate what your add-in does.
+- Create an [effective AppSource listing](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings). Make the benefits of your add-in clear in your title and description. Don't rely on your brand to communicate what your add-in does.
 
 
 ## Create an engaging first-run experience
@@ -40,13 +40,13 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
    ![A screenshot that shows a content add-in with data next to a content add-in with no data](../images/add-in-title.png)
 
-- Offer [free trials](https://docs.microsoft.com/en-us/office/dev/store/decide-on-a-pricing-model#office-store-pricing-options). If your add-in requires a subscription, make some functionality available without a subscription.
+- Offer [free trials](https://docs.microsoft.com/office/dev/store/decide-on-a-pricing-model#office-store-pricing-options). If your add-in requires a subscription, make some functionality available without a subscription.
 
 - Make signup simple. Prefill information (email, display name) and skip email verifications.
 
 - Avoid pop ups. If you have to use them, guide the user to enable your pop up.
 
-- Use [single sign-on (SSO) authentication](https://docs.microsoft.com/en-us/outlook/add-ins/authenticate-a-user-with-an-identity-token).
+- Use [single sign-on (SSO) authentication](https://docs.microsoft.com/outlook/add-ins/authenticate-a-user-with-an-identity-token).
 
 For templates that illustrate patterns that you can apply as you develop your first-run experience, see [UX design patterns for Office Add-ins](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
 
@@ -56,7 +56,7 @@ For templates that illustrate patterns that you can apply as you develop your fi
 
 ## Apply UX design principles
 
-- Ensure that the look and feel and functionality of your add-in complements the Office experience. Use [Office UI Fabric](https://developer.microsoft.com/en-us/fabric).
+- Ensure that the look and feel and functionality of your add-in complements the Office experience. Use [Office UI Fabric](https://developer.microsoft.com/fabric).
 
 - Favor content over chrome. Avoid superfluous UI elements that don't add value to the user experience.
 
@@ -125,7 +125,7 @@ For templates that apply design principles that you can use and customize as you
 
 ## Market your add-in
 
-- Publish your add-in to [AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store) and [promote it](https://docs.microsoft.com/en-us/office/dev/store/promote-your-office-store-solution) from your website. Create an [effective AppSource listing](https://docs.microsoft.com/en-us/office/dev/store/create-effective-office-store-listings).
+- Publish your add-in to [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store) and [promote it](https://docs.microsoft.com/office/dev/store/promote-your-office-store-solution) from your website. Create an [effective AppSource listing](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings).
 
 - Use succinct and descriptive add-in titles. Include no more than 128 characters.
 

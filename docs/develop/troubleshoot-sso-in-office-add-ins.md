@@ -26,13 +26,13 @@ For examples of the error handling described in this section, see:
 - [program.js in Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/public/program.js)
 
 > [!NOTE]
-> Besides the suggestions made in this section, an Outlook add-in has an additional way to respond to any 13*nnn* error. For details, see [Scenario: Implement single sign-on to your service in an Outlook add-in](https://docs.microsoft.com/en-us/outlook/add-ins/implement-sso-in-outlook-add-in) and [AttachmentsDemo Sample Add-in](https://github.com/OfficeDev/outlook-add-in-attachments-demo). 
+> Besides the suggestions made in this section, an Outlook add-in has an additional way to respond to any 13*nnn* error. For details, see [Scenario: Implement single sign-on to your service in an Outlook add-in](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in) and [AttachmentsDemo Sample Add-in](https://github.com/OfficeDev/outlook-add-in-attachments-demo). 
 
 ### 13000
 
 The [getAccessTokenAsync](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync) API is not supported by the add-in or the Office version. 
 
-- The version of Office does not support SSO. The required version is Office 2016, Version 1710, build 8629.nnnn or later (the Office 365 subscription version, sometimes called “Click to Run”). You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1). 
+- The version of Office does not support SSO. The required version is Office 2016, Version 1710, build 8629.nnnn or later (the Office 365 subscription version, sometimes called “Click to Run”). You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). 
 - The add-in manifest is missing the proper [WebApplicationInfo](https://dev.office.com/reference/add-ins/manifest/webapplicationinfo) section.
 
 ### 13001

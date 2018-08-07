@@ -17,17 +17,17 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
 1. Install [Visual Studio 2017](https://www.visualstudio.com/downloads) and choose to include the **Azure development** workload.
 
     > [!NOTE]
-    > If you've previously installed Visual Studio 2017, [use the Visual Studio Installer](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio) to ensure that the **Azure development** workload is installed. 
+    > If you've previously installed Visual Studio 2017, [use the Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) to ensure that the **Azure development** workload is installed. 
 
 2. Install Office 2016. 
     
     > [!NOTE]
-    > If you don't already have Office 2016, you can [register for a free 1-month trial](http://office.microsoft.com/en-us/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786).
+    > If you don't already have Office 2016, you can [register for a free 1-month trial](http://office.microsoft.com/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786).
 
 3.  Obtain an Azure subscription.
     
     > [!NOTE]
-    > If don't already have an Azure subscription, you can [get one as part of your MSDN subscription](http://www.windowsazure.com/en-us/pricing/member-offers/msdn-benefits/) or [register for a free trial](https://azure.microsoft.com/en-us/pricing/free-trial). 
+    > If don't already have an Azure subscription, you can [get one as part of your MSDN subscription](http://www.windowsazure.com/pricing/member-offers/msdn-benefits/) or [register for a free trial](https://azure.microsoft.com/pricing/free-trial). 
 
 ## Step 1: Create a shared folder to host your add-in XML manifest file
 
@@ -42,7 +42,7 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
 5. In **File Sharing**, choose the drop-down arrow and then choose **Everyone** > **Add** > **Share**.
     
 > [!NOTE]
-> In this walkthrough, you're using a local file share as a trusted catalog where you'll store the add-in XML manifest file. In a real-world scenario, you might instead choose to [deploy the XML manifest file to a SharePoint catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) or [publish the add-in to AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store).
+> In this walkthrough, you're using a local file share as a trusted catalog where you'll store the add-in XML manifest file. In a real-world scenario, you might instead choose to [deploy the XML manifest file to a SharePoint catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) or [publish the add-in to AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store).
 
 ## Step 2: Add the file share to the Trusted Add-ins catalog
 

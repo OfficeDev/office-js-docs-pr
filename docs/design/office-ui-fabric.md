@@ -45,16 +45,16 @@ Fabric provides a variety of UX components that you can use to build your add-in
 
 Not all Fabric components are recommended for use in add-ins. Here is a list of Fabric React UX components that we recommend for use in an add-in:
 
-- [Breadcrumb](https://developer.microsoft.com/en-us/fabric#/components/breadcrumb)
-- [Button](https://developer.microsoft.com/en-us/fabric#/components/button)
-- [Checkbox](https://developer.microsoft.com/en-us/fabric#/components/checkbox)
-- [ChoiceGroup](https://developer.microsoft.com/en-us/fabric#/components/choicegroup)
-- [Dropdown](https://developer.microsoft.com/en-us/fabric#/components/dropdown)
-- [Label](https://developer.microsoft.com/en-us/fabric#/components/label)
-- [List](https://developer.microsoft.com/en-us/fabric#/components/list)
-- [Pivot](https://developer.microsoft.com/en-us/fabric#/components/pivot)
-- [TextField](https://developer.microsoft.com/en-us/fabric#/components/textfield)
-- [Toggle](https://developer.microsoft.com/en-us/fabric#/components/toggle)
+- [Breadcrumb](https://developer.microsoft.com/fabric#/components/breadcrumb)
+- [Button](https://developer.microsoft.com/fabric#/components/button)
+- [Checkbox](https://developer.microsoft.com/fabric#/components/checkbox)
+- [ChoiceGroup](https://developer.microsoft.com/fabric#/components/choicegroup)
+- [Dropdown](https://developer.microsoft.com/fabric#/components/dropdown)
+- [Label](https://developer.microsoft.com/fabric#/components/label)
+- [List](https://developer.microsoft.com/fabric#/components/list)
+- [Pivot](https://developer.microsoft.com/fabric#/components/pivot)
+- [TextField](https://developer.microsoft.com/fabric#/components/textfield)
+- [Toggle](https://developer.microsoft.com/fabric#/components/toggle)
 
 You can use different JavaScript frameworks, such as Angular or React, to build your add-in. To get started using Fabric components with your framework, see the following resources.
 

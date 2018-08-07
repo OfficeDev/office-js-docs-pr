@@ -10,7 +10,7 @@ At times your users might encounter issues with Office Add-ins that you develop.
 
 You can also use [Fiddler](http://www.telerik.com/fiddler) to identify and debug issues with your add-ins.
 
-After you resolve the user's issue, you can [respond directly to customer reviews in AppSource](https://docs.microsoft.com/en-us/office/dev/store/create-effective-office-store-listings).
+After you resolve the user's issue, you can [respond directly to customer reviews in AppSource](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings).
 
 ## Common errors and troubleshooting steps
 
@@ -21,7 +21,7 @@ The following table lists common error messages that users might encounter and s
 |**Error message**|**Resolution**|
 |:-----|:-----|
 |App error: Catalog could not be reached|Verify firewall settings."Catalog" refers to AppSource. This message indicates that the user cannot access AppSource.|
-|APP ERROR: This app could not be started. Close this dialog to ignore the problem or click "Restart" to try again.|Verify that the latest Office updates are installed, or download the [update for Office 2013](https://support.microsoft.com/en-us/kb/2986156/).|
+|APP ERROR: This app could not be started. Close this dialog to ignore the problem or click "Restart" to try again.|Verify that the latest Office updates are installed, or download the [update for Office 2013](https://support.microsoft.com/kb/2986156/).|
 |Error: Object doesn't support property or method 'defineProperty'|Confirm that Internet Explorer is not running in Compatibility Mode. Go to Tools >  **Compatibility View Settings**.|
 |Sorry, we couldn't load the app because your browser version is not supported. Click here for a list of supported browser versions.|Make sure that the browser supports HTML5 local storage, or reset your Internet Explorer settings. For information about supported browsers, see [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md).|
 
@@ -49,7 +49,7 @@ If the add-in doesn't activate when the user performs the following steps:
     
 3. Verifies their identity when prompted when they try to insert an add-in.
     
-Verify that the latest Office updates are installed, or download the [update for Office 2013](https://support.microsoft.com/en-us/kb/2986156/).
+Verify that the latest Office updates are installed, or download the [update for Office 2013](https://support.microsoft.com/kb/2986156/).
 
 
 ## Add-in doesn't load in task pane or other issues with the add-in manifest

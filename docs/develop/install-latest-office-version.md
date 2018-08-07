@@ -12,8 +12,8 @@ New developer features, including those still in preview, are delivered first to
 
 To opt in to getting the latest builds of Office 2016: 
 
-- If you're an Office 365 Home, Personal, or University subscriber, see [Be an Office Insider](https://products.office.com/en-us/office-insider).
-- If you're an Office 365 for business customer, see [Install the First Release build for Office 365 for business customers](https://support.office.com/en-us/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead?ui=en-US&rs=en-US&ad=US).
+- If you're an Office 365 Home, Personal, or University subscriber, see [Be an Office Insider](https://products.office.com/office-insider).
+- If you're an Office 365 for business customer, see [Install the First Release build for Office 365 for business customers](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead).
 - If you're running Office 2016 on a Mac:
 	- Start an Office 2016 for Mac program.
 	- Select **Check for Updates** on the Help menu.
@@ -23,7 +23,7 @@ To opt in to getting the latest builds of Office 2016:
 
 To get the latest build of Office 2016: 
 
-1. Download the [Office 2016 Deployment Tool](https://www.microsoft.com/en-us/download/details.aspx?id=49117). 
+1. Download the [Office 2016 Deployment Tool](https://www.microsoft.com/download/details.aspx?id=49117). 
 2. Run the tool. This extracts the following two files: Setup.exe and configuration.xml.
 3. Replace the configuration.xml file with the [First Release Configuration File](https://raw.githubusercontent.com/OfficeDev/Office-Add-in-Commands-Samples/master/Tools/FirstReleaseConfig/configuration.xml).
 4. Run the following command as an administrator:  `setup.exe /configure configuration.xml` 

@@ -22,7 +22,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 * Office 2016, Version 1708, build 8424.nnnn or later (the Office 365 subscription version, sometimes called “Click to Run”)
 
-  You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1).
+  You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1).
 
 ## Set up the starter project
 
@@ -68,7 +68,7 @@ The following instruction are written generically so they can be used in multipl
 
 4. For the `audience` property, replace the placeholder `{audience GUID}` with the application ID that you saved when you registered the add-in. (The very same value that you assigned to the `client_id` property.)
   
-3. In the string assigned to the `issuer` property, you will see the placeholder *{O365 tenant GUID}*. Replace this with the Office 365 tenancy ID. Use one of the methods in [Find your Office 365 tenant ID](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) to obtain it. When you are done, the `issuer` property value should look something like this:
+3. In the string assigned to the `issuer` property, you will see the placeholder *{O365 tenant GUID}*. Replace this with the Office 365 tenancy ID. Use one of the methods in [Find your Office 365 tenant ID](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id) to obtain it. When you are done, the `issuer` property value should look something like this:
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
@@ -622,7 +622,7 @@ There are two server-side files that need to be modified.
 
 Now you need to let Office know where to find the add-in.
 
-1. Create a network share, or [share a folder to the network](https://technet.microsoft.com/en-us/library/cc770880.aspx).
+1. Create a network share, or [share a folder to the network](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770880(v=ws.11)).
 
 2. Place a copy of the Office-Add-in-NodeJS-SSO.xml manifest file, from the root of the project, into the shared folder.
 

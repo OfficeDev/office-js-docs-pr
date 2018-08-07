@@ -7,7 +7,7 @@ ms.date: 01/23/2018
 # Office Add-ins development lifecycle
 
 > [!NOTE]
-> If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](https://docs.microsoft.com/en-us/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)). 
+> If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](https://docs.microsoft.com/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)). 
 
 The typical development lifecycle of an Office Add-in includes the following steps:
 
@@ -44,7 +44,7 @@ Consider the following to identify the scenarios:
     
 	If you answer yes to any of these questions, consider creating an **Outlook add-in**. Identify the context that will trigger your add-in (for example, the user being in a compose form, specific message types, the presence of an attachment, address, task suggestion, or meeting suggestion, or certain string patterns in the contents of an email or appointment). 
         
-	To find out how you can contextually activate the Outlook add-in, see [Activation rules for Outlook add-ins](https://docs.microsoft.com/en-us/outlook/add-ins/activation-rules). 
+	To find out how you can contextually activate the Outlook add-in, see [Activation rules for Outlook add-ins](https://docs.microsoft.com/outlook/add-ins/activation-rules). 
     
 - Will customers use the add-in to enhance the viewing or authoring experience of a document? If so, you may want to consider creating a **task pane add-in**. 
 
@@ -69,7 +69,7 @@ For Outlook add-ins, you can specify the context, based on the current message o
     
 Place the HTML files and any JavaScript and CSS files on the web servers that are specified in the add-in manifest file. The process to install an add-in depends on the type of the add-in. For details, see [Sideload Office Add-ins for testing](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
     
-For Outlook add-ins, install it in an Exchange mailbox, and specify the location of the add-in manifest file in the Exchange Admin Center (EAC). For more information, see [Deploy and install Outlook add-ins for testing](https://docs.microsoft.com/en-us/outlook/add-ins/testing-and-tips).
+For Outlook add-ins, install it in an Exchange mailbox, and specify the location of the add-in manifest file in the Exchange Admin Center (EAC). For more information, see [Deploy and install Outlook add-ins for testing](https://docs.microsoft.com/outlook/add-ins/testing-and-tips).
 
     
 ## 7. Publish the add-in

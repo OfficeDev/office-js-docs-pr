@@ -13,12 +13,12 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 |[Sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|As part of your development process, to test your add-in running on Windows, Office Online, iPad, or Mac.|
 |[Centralized Deployment](centralized-deployment.md)|In a cloud or hybrid deployment, to distribute your add-in to users in your organization by using the Office 365 admin center.|
 |[SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|In an on-premises environment, to distribute your add-in to users in your organization.|
-|[AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store)|To distribute your add-in publicly to users.|
+|[AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)|To distribute your add-in publicly to users.|
 |[Exchange server](#outlook-add-in-deployment)|In an on-premises or online environment, to distribute Outlook add-ins to users.|
 |[Network share](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|On a Windows computer on a network where you want to host your add-in, go to the parent folder, or drive letter, of the folder you want to use as your shared folder catalog.|
 
 > [!NOTE]
-> If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](https://docs.microsoft.com/en-us/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).
+> If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](https://docs.microsoft.com/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).
 
 ## Deployment options by Office host
 
@@ -71,15 +71,15 @@ Outlook add-in deployment requires:
 - Office 365, Exchange Online, or Exchange Server 2013 or later
 - Outlook 2013 or later
 
-To assign add-ins to tenants, you use the Exchange admin center to upload a manifest directly, either from a file or a URL, or add an add-in from AppSource. To assign add-ins to individual users, you must use Exchange PowerShell. For details, see [Install or remove Outlook add-ins for your organization](https://technet.microsoft.com/en-us/library/jj943752(v=exchg.150).aspx) on TechNet.
+To assign add-ins to tenants, you use the Exchange admin center to upload a manifest directly, either from a file or a URL, or add an add-in from AppSource. To assign add-ins to individual users, you must use Exchange PowerShell. For details, see [Install or remove Outlook add-ins for your organization](https://technet.microsoft.com/library/jj943752(v=exchg.150).aspx) on TechNet.
 
 ## See also
 
 - [Sideload Outlook add-ins for testing](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 - [Submit to AppSource][AppSource]
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)
-- [Create effective AppSource listings](https://docs.microsoft.com/en-us/office/dev/store/create-effective-office-store-listings)
+- [Create effective AppSource listings](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)
 - [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)
 
-[AppSource]: https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store
+[AppSource]: https://docs.microsoft.com/office/dev/store/submit-to-the-office-store
 [Office Add-in host and platform availability]: ../overview/office-add-in-availability

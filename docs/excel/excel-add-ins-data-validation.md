@@ -14,9 +14,9 @@ ms.date: 04/13/2018
 
 The Excel JavaScript Library provides APIs to enable your add-in to add automatic data validation to tables, columns, rows, and other ranges in a workbook. To understand the concepts and the terminology of data validation, please see the following articles about how users add data validation through the Excel UI:
 
-- [Apply data validation to cells](https://support.office.com/en-us/article/Apply-data-validation-to-cells-29FECBCC-D1B9-42C1-9D76-EFF3CE5F7249)
-- [More on data validation](https://support.office.com/en-us/article/More-on-data-validation-f38dee73-9900-4ca6-9301-8a5f6e1f0c4c)
-- [Description and examples of data validation in Excel](https://support.microsoft.com/en-us/help/211485/description-and-examples-of-data-validation-in-excel)
+- [Apply data validation to cells](https://support.office.com/article/Apply-data-validation-to-cells-29FECBCC-D1B9-42C1-9D76-EFF3CE5F7249)
+- [More on data validation](https://support.office.com/article/More-on-data-validation-f38dee73-9900-4ca6-9301-8a5f6e1f0c4c)
+- [Description and examples of data validation in Excel](https://support.microsoft.com/help/211485/description-and-examples-of-data-validation-in-excel)
 
 ## Programmatic control of data validation
 

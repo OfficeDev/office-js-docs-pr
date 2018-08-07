@@ -58,7 +58,7 @@ Every Office Add-in specifies a [DefaultLocale] element and a locale in its mani
 
 
 > **NOTE**
-> You can localize the description and display name for only the locales that Office supports. See [Language identifiers and OptionState Id values in Office 2013](http://technet.microsoft.com/en-us/library/cc179219.aspx) for a list of languages and locales for the current release of Office.
+> You can localize the description and display name for only the locales that Office supports. See [Language identifiers and OptionState Id values in Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15)) for a list of languages and locales for the current release of Office.
 
 
 ### Examples
@@ -174,7 +174,7 @@ Also, you'll need to create a Visual Studio 2015 Office Add-in project.
 
 ### Configure Office 2013 to use additional languages for display or editing
 
-You can use an Office 2013 Language pack to install an additional language. For more information about Language Packs and where to get them, see [Office 2013 Language Options](http://office.microsoft.com/en-us/language-packs/).
+You can use an Office 2013 Language pack to install an additional language. For more information about Language Packs and where to get them, see [Office 2013 Language Options](http://office.microsoft.com/language-packs/).
 
 > **NOTE**
 > If you are an MSDN Subscriber, you might already have the Office 2013 Language Packs available to you. To determine whether your subscription offers Office 2013 Language Packs for download, go to [MSDN Subscriptions Home](https://msdn.microsoft.com/subscriptions/manage/), enter Office 2013 Language Pack in **Software downloads**, choose **Search**, and then select **Products available with my subscription**. Under **Language**, select the check box for the Language Pack you want to download, and then choose  **Go**. 
@@ -421,7 +421,7 @@ Run the sample add-in. The taskpane add-in loads in Word 2013, and the strings i
 ## See also
 
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)    
-- [Language identifiers and OptionState Id values in Office 2013](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)
+- [Language identifiers and OptionState Id values in Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
 [DefaultLocale]: 		https://dev.office.com/reference/add-ins/manifest/defaultlocale
 [Description]: 			https://dev.office.com/reference/add-ins/manifest/description

@@ -12,7 +12,7 @@ Use the UX pattern templates to:
 
 * Apply solutions to common customer scenarios.
 * Apply design best practices.
-* Incorporate [Office UI Fabric](https://developer.microsoft.com/en-us/fabric#/get-started) components and styles.
+* Incorporate [Office UI Fabric](https://developer.microsoft.com/fabric#/get-started) components and styles.
 * Build add-ins that visually integrate with the default Office UI.
 * Ideate and visualize UX.
 
@@ -37,6 +37,6 @@ Browse each grouping to get an idea of how you can design your add-in using best
 
 ## See also
 * [Design toolkits](design-toolkits.md)
-* [Office UI Fabric](https://developer.microsoft.com/en-us/fabric)
-* [Best practices for developing Office Add-ins](https://docs.microsoft.com/en-us/office/dev/add-ins/concepts/add-in-development-best-practices)
-* [Get started using Fabric React](https://docs.microsoft.com/en-us/office/dev/add-ins/design/using-office-ui-fabric-react)
+* [Office UI Fabric](https://developer.microsoft.com/fabric)
+* [Best practices for developing Office Add-ins](https://docs.microsoft.com/office/dev/add-ins/concepts/add-in-development-best-practices)
+* [Get started using Fabric React](https://docs.microsoft.com/office/dev/add-ins/design/using-office-ui-fabric-react)
