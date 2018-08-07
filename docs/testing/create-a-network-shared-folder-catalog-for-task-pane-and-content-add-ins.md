@@ -18,6 +18,7 @@ This article applies only to testing a Word, Excel, or PowerPoint add-ins on Win
 - [Sideload Outlook Add-ins for testing](../../../../outlook/add-ins/sideload-outlook-add-ins-for-testing.md)
 
 
+
 The following video walks you through the process of sideloading your add-in on Office desktop or Office Online using a shared folder catalog.  
 
 
