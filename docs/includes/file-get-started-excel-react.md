@@ -72,7 +72,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     ```
 
-2. Open **src/index.js**, replace `ReactDOM.render(<App />, document.getElementById('root'));` with the following code, and save the file. 
+2. Open **src/index.tsx**, replace `ReactDOM.render(<App />, document.getElementById('root'));` with the following code, and save the file. 
 
     ```typescript
     const Office = window.Office;
@@ -82,7 +82,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
     };
     ```
 
-3. Open **src/App.js**, replace file contents with the following code, and save the file. 
+3. Open **src/components/App.tsx**, replace file contents with the following code, and save the file. 
 
     ```js
     import React, { Component } from 'react';
@@ -127,7 +127,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
     export default App;
     ```
 
-4. Open **src/App.css**, replace file contents with the following CSS code, and save the file. 
+4. Open **src/app.css**, replace file contents with the following CSS code, and save the file. 
 
     ```css
     #content-header {

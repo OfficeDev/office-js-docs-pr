@@ -12,7 +12,7 @@ You can implement any localization scheme that's appropriate for your Office Add
 
 The JavaScript API for Office provides two properties that support displaying or interpreting values consistent with the locale of the host application and data:
 
-- [Context.displayLanguage][displayLanguage] specifies the locale (or language) of the user interface of the host application. The following example verifies if the host application uses the en-US or fr-Fr locale, and displays a locale-specific greeting.
+- [Context.displayLanguage][displayLanguage] specifies the locale (or language) of the user interface of the host application. The following example verifies if the host application uses the en-US or fr-FR locale, and displays a locale-specific greeting.
     
     ```js
     function sayHelloWithDisplayLanguage() {

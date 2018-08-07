@@ -270,7 +270,6 @@ In this article, you'll walk through the process of building a Word add-in by us
             <title>Boilerplate text app</title>
             <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
             <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
-            <script src="app.js" type="text/javascript"></script>
             <link href="app.css" rel="stylesheet" type="text/css" />
         </head>
         <body>
@@ -297,7 +296,7 @@ In this article, you'll walk through the process of building a Word add-in by us
     </html>
     ```
 
-2. Open the file **app.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file. This script contains initialization code as well as the code that makes changes to the Word document, by inserting text into the document when a button is chosen. 
+2. Open the file **src/index.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file. This script contains initialization code as well as the code that makes changes to the Word document, by inserting text into the document when a button is chosen. 
 
     ```js
     'use strict';
