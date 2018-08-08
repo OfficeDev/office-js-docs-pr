@@ -1,50 +1,50 @@
 ---
-title: Work with Pivot Tables using the Excel JavaScript API
+title: Work with PivotTables using the Excel JavaScript API
 description: ''
 ms.date: 7/11/2018
 ---
 
 
 
-# Work with Pivot Tables using the Excel JavaScript API
+# Work with PivotTables using the Excel JavaScript API
 
-Pivot tables streamline larger data sets. They allow the quick manipulation of grouped data. The Excel JavaScript API lets your add-in create pivot tables and interact with their components. 
+PivotTables streamline larger data sets. They allow the quick manipulation of grouped data. The Excel JavaScript API lets your add-in create PivotTables and interact with their components. 
 
 If you are unfamiliar with the functionality of PivotTables, consider exploring them as an end-user. 
 See [Create a PivotTable to analyze worksheet data](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) for a good primer on these tools. 
 
 This article provides code samples for common scenarios.
-For the complete list of properties and methods the **PivotTable** and **PivotTableCollection** objects support, see [PivotTable API](https://dev.office.com/reference/add-ins/excel/pivottable) and [Pivot Table Collection API](https://dev.office.com/reference/add-ins/excel/pivottablecollection).
+For the complete list of properties and methods the **PivotTable** and **PivotTableCollection** objects support, see [PivotTable API](https://dev.office.com/reference/add-ins/excel/pivottable) and [PivotTable Collection API](https://dev.office.com/reference/add-ins/excel/pivottablecollection).
 
 > [!NOTE]
 > These samples use APIs currently available only in public preview (beta). To run these samples, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
 ## Hierarchies
 
-Pivot tables are organized based on four hierarchy categories: row, column, data, and filter. The following data describing fruit sales from various farms will be used in throughout this article.
+PivotTables are organized based on four hierarchy categories: row, column, data, and filter. The following data describing fruit sales from various farms will be used in throughout this article.
 
 ![A collection of fruit sales of different types from different farms.](../images/excel-pivots-raw-data.png)
 
 This data has five hierarchies: **Farms**, **Type**, **Classification**, **Crates Sold at Farm**, and **Crates Sold Wholesale**. Each hierarchy can only exist in one of the four categories. If **Type** is added to column hierarchies and then added to row hierarchies, it only remains in the latter.
 
-Row and column hierarchies define how data will be grouped. For example, having a row hierarchy of **Farms** groups together all data sets from the same farm. The choice between row and column hierarchy defines the orientation of the pivot table.
+Row and column hierarchies define how data will be grouped. For example, having a row hierarchy of **Farms** groups together all data sets from the same farm. The choice between row and column hierarchy defines the orientation of the PivotTable.
 
-Data hierarchies are the values to be aggregated based on the row and column hierarchies. A pivot table with a row hierarchy of **Farms** and a data hierarchy of **Crates Sold Wholesale** shows the sum total (by default) of all the different fruits for each farm.
+Data hierarchies are the values to be aggregated based on the row and column hierarchies. A PivotTable with a row hierarchy of **Farms** and a data hierarchy of **Crates Sold Wholesale** shows the sum total (by default) of all the different fruits for each farm.
 
 Filter hierarchies include or exclude data from the pivot based on values within that filtered type. A filter hierarchy of **Classification** with the type **Organic** selected only shows data for organic fruit.
 
-Here is the farm data again, alongside a pivot table. The pivot table is using **Farm** and **Type** as the row hierarchies, **Crates Sold at Farm** and **Crates Sold Wholesale** as the data hierarchies (with the default aggregation function of sum), and **Classification** as a filter hierarchy (with **Organic** selected). 
+Here is the farm data again, alongside a PivotTable. The PivotTable is using **Farm** and **Type** as the row hierarchies, **Crates Sold at Farm** and **Crates Sold Wholesale** as the data hierarchies (with the default aggregation function of sum), and **Classification** as a filter hierarchy (with **Organic** selected). 
 
-![A selection of fruit sales data next to a pivot table with row, data, and filter hierarchies.](../images/excel-pivot-table-and-data.png)
+![A selection of fruit sales data next to a PivotTable with row, data, and filter hierarchies.](../images/excel-pivot-table-and-data.png)
 
-This pivot table could be generated through the JavaScript API or through the Excel UI. Both options allow for further manipulation through add-ins.
+This PivotTable could be generated through the JavaScript API or through the Excel UI. Both options allow for further manipulation through add-ins.
 
-## Create a pivot table
+## Create a PivotTable
 
-Pivot tables need a name, source, and destination. The source can be a `Range`, `string`, or `Table`. The destination can either be a `Range` or `string`. 
-The following samples show various pivot table creation techniques. All three samples feature a pivot table named **Farm Sales** created on a worksheet called **PivotWorksheet** at cell **A2**. Its data comes from the worksheet **DataWorksheet** across the range **A1:E21**. 
+PivotTables need a name, source, and destination. The source can be a `Range`, `string`, or `Table`. The destination can either be a `Range` or `string`. 
+The following samples show various PivotTable creation techniques. All three samples feature a PivotTable named **Farm Sales** created on a worksheet called **PivotWorksheet** at cell **A2**. Its data comes from the worksheet **DataWorksheet** across the range **A1:E21**. 
 
-### Create a pivot table with strings
+### Create a PivotTable with strings
 ```ts
 await Excel.run(async (context) => {
 	context.workbook.worksheets.getActiveWorksheet()
@@ -54,7 +54,7 @@ await Excel.run(async (context) => {
 });
 ```
 
-### Create a pivot table with Range objects
+### Create a PivotTable with Range objects
 ```ts
 await Excel.run(async (context) => {	
 	const myRange = context.workbook.worksheets.getItem("DataWorksheet").getRange("A1:E21");
@@ -65,7 +65,7 @@ await Excel.run(async (context) => {
 });
 ```
 
-### Create a pivot table at the workbook level
+### Create a PivotTable at the workbook level
 ```ts
 await Excel.run(async (context) => {
 	context.workbook.pivotTables.add("Farm Sales", "DataWorksheet!A1:E21", "PivotWorksheet!A2");
@@ -74,9 +74,9 @@ await Excel.run(async (context) => {
 });
 ```
 
-## Use an existing pivot table
-Manually created pivot tables are also accessible through the pivot table collection of the workbook or of individual worksheets. 
-The following code gets the first pivot table in the worksheet. It then gives the table a name for easy future reference.
+## Use an existing PivotTable
+Manually created PivotTables are also accessible through the PivotTable collection of the workbook or of individual worksheets. 
+The following code gets the first PivotTable in the worksheet. It then gives the table a name for easy future reference.
 
 ```ts
 await Excel.run(async (context) => {
@@ -90,13 +90,13 @@ await Excel.run(async (context) => {
 });
 ```
 
-## Add rows and columns to a pivot table
+## Add rows and columns to a PivotTable
 
 Rows and columns pivot the data around those fields’ values.
 
 Adding the **Farm** column pivots all the sales around each farm. Adding the **Type** and **Classification** rows further breaks down the data based on what fruit was sold and whether it was organic or not.
 
-![A pivot table with a Farm column and Type and Classification rows.](../images/excel-pivots-table-rows-and-columns.png)
+![A PivotTable with a Farm column and Type and Classification rows.](../images/excel-pivots-table-rows-and-columns.png)
 
 ```ts
 await Excel.run(async (context) => {
@@ -111,7 +111,7 @@ await Excel.run(async (context) => {
 });
 ```
 
-You can also have a pivot table with only rows or columns.
+You can also have a PivotTable with only rows or columns.
 
 ```ts
 await Excel.run(async (context) => {
@@ -124,13 +124,13 @@ await Excel.run(async (context) => {
 });
 ```
 
-## Add data hierarchies to the pivot table
+## Add data hierarchies to the PivotTable
 
-Data hierarchies fill the pivot table with information to combine based on the rows and columns. 
+Data hierarchies fill the PivotTable with information to combine based on the rows and columns. 
 Adding the data hierarchies of **Crates Sold at Farm** and **Crates Sold Wholesale** gives sums of those figures for each row and column. 
 In the example, both **Farm** and **Type** are rows, with the crate sales as the data. 
 
-![A pivot table showing the total sales of different fruit based on the farm they came from.](../images/excel-pivots-data-hierarchy.png)
+![A PivotTable showing the total sales of different fruit based on the farm they came from.](../images/excel-pivots-data-hierarchy.png)
 
 ```ts
 await Excel.run(async (context) => {
@@ -148,7 +148,7 @@ await Excel.run(async (context) => {
 
 ## Change aggregation function
 
-Data hierarchies have their values aggregated into a sum by default. The `summarizeBy` parameter defines this behavior based on an `AggregrationFunction` type. 
+Data hierarchies have their values aggregated. For datasets of numbers, this is a sum by default. The `summarizeBy` parameter defines this behavior based on an `AggregrationFunction` type. 
 The following code samples changes the aggregation to be averages of the data.
 
 ```ts
@@ -163,10 +163,15 @@ The following code samples changes the aggregation to be averages of the data.
     });
 ```
 
-## Pivot table layouts
+## PivotTable layouts
 
-A pivot table layout defines the placement of hierarchies and their data. You access the layout to determine the ranges where data is stored. 
-The following code demonstrates how to get the last row from a pivot table by going through the layout. Those values are then summed together for a grand total.
+A PivotTable layout defines the placement of hierarchies and their data. You access the layout to determine the ranges where data is stored. 
+The following diagram shows which layout function calls correspond to which ranges of the PivotTable.
+
+![A diagram showing which sections of a PivotTable are returned by the layout's get range functions.](../images/excel-pivots-layout-breakdown.png)
+
+The following code demonstrates how to get the last row of the PivotTable data by going through the layout. Those values are then summed together for a grand total.
+
 
 ```ts
     await Excel.run(async (context) => {
@@ -182,14 +187,14 @@ The following code demonstrates how to get the last row from a pivot table by go
     });
 ```
 
-Pivot tables have three layout styles: Compact, Outline, and Tabular. We’ve seen the compact style in the previous examples. 
+PivotTables have three layout styles: Compact, Outline, and Tabular. We’ve seen the compact style in the previous examples. 
 The following examples use the outline and tabular styles, respectively. The code sample shows how to cycle between the different layouts.
 
 ### Outline layout
-![A pivot table using the outline layout.](../images/excel-pivots-outline-layout.png)
+![A PivotTable using the outline layout.](../images/excel-pivots-outline-layout.png)
 
 ### Tabular layout
-![A pivot table usingthe tabular layout.](../images/excel-pivots-tabular-layout.png)
+![A PivotTable usingthe tabular layout.](../images/excel-pivots-tabular-layout.png)
 
 ```ts
 await Excel.run(async (context) => {
@@ -225,9 +230,9 @@ await Excel.run(async (context) => {
 });
 ```
 
-## Delete a pivot table
+## Delete a PivotTable
 
-Pivot tables are deleted using their name.
+PivotTables are deleted using their name.
 
 ```ts
 await Excel.run(async (context) => {
