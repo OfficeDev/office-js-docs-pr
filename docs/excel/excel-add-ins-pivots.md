@@ -58,7 +58,8 @@ await Excel.run(async (context) => {
 ### Create a PivotTable with Range objects
 ```ts
 await Excel.run(async (context) => {	
-    // creating a PivotTable named "Farm Sales" on a worksheet called "PivotWorksheet" at cell A2 Its data comes from the worksheet "DataWorksheet" across the range A1:E21
+    // creating a PivotTable named "Farm Sales" on a worksheet called "PivotWorksheet" at cell A2
+    // the data comes from the worksheet "DataWorksheet" across the range A1:E21
 	const rangeToAnalyze = context.workbook.worksheets.getItem("DataWorksheet").getRange("A1:E21");
 	const rangeToPlacePivot = context.workbook.worksheets.getItem("PivotWorksheet").getRange("A2");
 	context.workbook.worksheets.getItem("PivotWorksheet").pivotTables.add("Farm Sales", rangeToAnalyze, rangeToPlacePivot);
@@ -70,7 +71,8 @@ await Excel.run(async (context) => {
 ### Create a PivotTable at the workbook level
 ```ts
 await Excel.run(async (context) => {
-    // creating a PivotTable named "Farm Sales" on a worksheet called "PivotWorksheet" at cell A2. with data from the worksheet "DataWorksheet" across the range A1:E21
+    // creating a PivotTable named "Farm Sales" on a worksheet called "PivotWorksheet" at cell A2
+    // the data is from the worksheet "DataWorksheet" across the range A1:E21
 	context.workbook.pivotTables.add("Farm Sales", "DataWorksheet!A1:E21", "PivotWorksheet!A2");
 
 	await context.sync();
