@@ -147,7 +147,7 @@ You can deploy a test version of your add-in thaqt will automatically open a tas
     <we:snapshot xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"/>
 </we:webextension>
 ```
-To test the previous example, please see [Setup your Office 365 development environment](https://msdn.microsoft.com/office/office365/howto/setup-development-environment) and consider signing up for an [Office 365 developer account](https://developer.microsoft.com/office/dev-program). You can actually test drive Centralized Deployment and verify that your add-in works as expected.
+To test the previous example, please see [Setup your Office 365 development environment](https://docs.microsoft.com/office/developer-program/office-365-developer-program) and consider signing up for an [Office 365 developer account](https://developer.microsoft.com/office/dev-program). You can actually test drive Centralized Deployment and verify that your add-in works as expected.
 
 
 ## See also
