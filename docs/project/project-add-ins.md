@@ -9,7 +9,7 @@ ms.date: 01/23/2018
 Project Standard 2013 and Project Professional 2013 both include support for task pane add-ins. You can run general task pane add-ins that are developed for Word 2013 or Excel 2013. You can also develop custom add-ins that handle selection events in Project and integrate task, resource, view, and other cell-level data in a project with SharePoint lists, SharePoint Add-ins, Web Parts, web services, and enterprise applications.
 
 > [!NOTE]
-> The [Project 2013 SDK download](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20) includes sample add-ins that show how to use the add-in object model for Project, and how to use the OData service for reporting data in Project Server 2013. When you extract and install the SDK, see the `\Samples\Apps\` subdirectory.
+> The [Project 2013 SDK download](https://www.microsoft.com/download/details.aspx?id=30435%20) includes sample add-ins that show how to use the add-in object model for Project, and how to use the OData service for reporting data in Project Server 2013. When you extract and install the SDK, see the `\Samples\Apps\` subdirectory.
 
 For an introduction to Office Add-ins, see [Office Add-ins platform overview](../overview/office-add-ins.md).
 
@@ -203,5 +203,5 @@ You can distribute add-ins through a file share, an add-in catalog in a SharePoi
 - [Create your first task pane add-in for Project 2013 by using a text editor](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [Create a Project add-in that uses REST with an on-premises Project Server OData service](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
 - [Connecting a Project task pane add-in to PWA](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx)
-- [Project 2013 SDK download](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)
+- [Project 2013 SDK download](https://www.microsoft.com/download/details.aspx?id=30435%20)
     

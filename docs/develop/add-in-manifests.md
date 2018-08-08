@@ -23,7 +23,7 @@ An XML manifest file based on this schema enables an Office Add-in to do the fol
 * For Outlook add-ins, define the rule or rules that specify the context in which they will be activated and interact with a message, appointment, or meeting request item.
 
 > [!NOTE]
-> If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](https://docs.microsoft.com/en-us/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).
+> If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](https://docs.microsoft.com/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).
 
 ## Required elements
 
@@ -58,33 +58,33 @@ _\*Added in the Office Add-in Manifest Schema version 1.1._
 
 <!-- Links for above table -->
 
-[officeapp]: http://msdn.microsoft.com/en-us/library/68f1cada-66f8-4341-45f5-14e0634c24fb%28Office.15%29.aspx
-[id]: http://msdn.microsoft.com/en-us/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx
-[version]: http://msdn.microsoft.com/en-us/library/6a8bbaa5-ee8c-6824-4aba-cb1a804269f6%28Office.15%29.aspx
-[providername]: http://msdn.microsoft.com/en-us/library/0062693a-fafa-ea2d-051a-75dac0f6c323%28Office.15%29.aspx
-[defaultlocale]: http://msdn.microsoft.com/en-us/library/04796a3a-3afa-dc85-db66-4677560c185c%28Office.15%29.aspx
-[displayname]: http://msdn.microsoft.com/en-us/library/529159ca-53bf-efcf-c245-e572dab0ef57%28Office.15%29.aspx
-[description]: http://msdn.microsoft.com/en-us/library/bcce6bad-23d0-7631-7d8c-1064b8453b5a%28Office.15%29.aspx
-[iconurl]: http://msdn.microsoft.com/library/c7dac2d4-4fda-6fc7-3774-49f02b2d3e1e%28Office.15%29.aspx
-[highresolutioniconurl]: http://msdn.microsoft.com/library/ff7b2647-ec8e-70dc-4e4a-e1a1377ff3f2%28Office.15%29.aspx
-[defaultsettings (contentapp)]: http://msdn.microsoft.com/en-us/library/f7edc689-551f-1a17-ea81-ffd58f534557%28Office.15%29.aspx
-[defaultsettings (taskpaneapp)]: http://msdn.microsoft.com/en-us/library/36e3d139-56a4-fb3d-0a21-cbd14e606765%28Office.15%29.aspx
-[sourcelocation (contentapp)]: http://msdn.microsoft.com/en-us/library/00d95bb0-e8f5-647f-790a-0aa3aabc8141%28Office.15%29.aspx
-[sourcelocation (taskpaneapp)]: http://msdn.microsoft.com/en-us/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx
-[desktopsettings]: http://msdn.microsoft.com/en-us/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c%28Office.15%29.aspx
-[sourcelocation (mailapp)]: http://msdn.microsoft.com/en-us/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
-[permissions (contentapp)]: http://msdn.microsoft.com/en-us/library/9f3dcf9c-fced-c115-4f0d-38d60fb7c583%28Office.15%29.aspx
-[permissions (taskpaneapp)]: http://msdn.microsoft.com/en-us/library/d4cfe645-353d-8240-8495-f76fb36602fe%28Office.15%29.aspx
-[permissions (mailapp)]: http://msdn.microsoft.com/en-us/library/c20cdf29-74b0-564c-e178-b75d148b36d1%28Office.15%29.aspx
-[rule (rulecollection)]: http://msdn.microsoft.com/en-us/library/c6ce9d52-4b53-c6a6-de7e-c64106135c81%28Office.15%29.aspx
-[rule (mailapp)]: http://msdn.microsoft.com/en-us/library/56dfc32e-2b8c-1724-05be-5595baf38aa3%28Office.15%29.aspx
-[requirements (mailapp)*]: http://msdn.microsoft.com/en-us/library/9536ea30-34f7-76b5-7f30-1508626840e4%28Office.15%29.aspx
-[set*]: http://msdn.microsoft.com/en-us/library/1506daa1-332c-30e1-6402-3371bcd0b895%28Office.15%29.aspx
-[sets (mailapprequirements)*]: http://msdn.microsoft.com/en-us/library/2a6a2484-eeee-37e4-43bc-c185e8ae0d1d%28Office.15%29.aspx
-[form*]: http://msdn.microsoft.com/en-us/library/77a8ac83-c22b-1225-4fc4-ba4038b68648%28Office.15%29.aspx
-[formsettings*]: http://msdn.microsoft.com/en-us/library/0d1a311d-939d-78c1-e968-89ddf7ebc4b4%28Office.15%29.aspx
-[sets (requirements)*]: http://msdn.microsoft.com/en-us/library/509be287-b532-87c6-71ac-64f3a4bbd3af%28Office.15%29.aspx
-[hosts*]: http://msdn.microsoft.com/library/f9a739c1-3daf-c03a-2bd9-4a2a6b870101%28Office.15%29.aspx
+[officeapp]: https://dev.office.com/reference/add-ins/manifest/officeapp
+[id]: https://dev.office.com/reference/add-ins/manifest/id
+[version]: https://dev.office.com/reference/add-ins/manifest/version
+[providername]: https://dev.office.com/reference/add-ins/manifest/providername
+[defaultlocale]: https://dev.office.com/reference/add-ins/manifest/defaultlocale
+[displayname]: https://dev.office.com/reference/add-ins/manifest/displayname
+[description]: https://dev.office.com/reference/add-ins/manifest/description
+[iconurl]: https://dev.office.com/reference/add-ins/manifest/iconurl
+[highresolutioniconurl]: https://dev.office.com/reference/add-ins/manifest/highresolutioniconurl
+[defaultsettings (contentapp)]: https://dev.office.com/reference/add-ins/manifest/defaultsettings
+[defaultsettings (taskpaneapp)]: https://dev.office.com/reference/add-ins/manifest/defaultsettings
+[sourcelocation (contentapp)]: https://dev.office.com/reference/add-ins/manifest/sourcelocation
+[sourcelocation (taskpaneapp)]: https://dev.office.com/reference/add-ins/manifest/sourcelocation
+[desktopsettings]: https://msdn.microsoft.com/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c(Office.15).aspx
+[sourcelocation (mailapp)]: http://msdn.microsoft.com/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
+[permissions (contentapp)]: https://dev.office.com/reference/add-ins/manifest/permissions
+[permissions (taskpaneapp)]: https://dev.office.com/reference/add-ins/manifest/permissions
+[permissions (mailapp)]: https://dev.office.com/reference/add-ins/manifest/permissions
+[rule (rulecollection)]: https://dev.office.com/reference/add-ins/manifest/rule
+[rule (mailapp)]: https://dev.office.com/reference/add-ins/manifest/rule
+[requirements (mailapp)*]: https://dev.office.com/reference/add-ins/manifest/requirements
+[set*]: https://dev.office.com/reference/add-ins/manifest/set
+[sets (mailapprequirements)*]: https://dev.office.com/reference/add-ins/manifest/sets
+[form*]: https://dev.office.com/reference/add-ins/manifest/form
+[formsettings*]: https://dev.office.com/reference/add-ins/manifest/formsettings
+[sets (requirements)*]: https://dev.office.com/reference/add-ins/manifest/sets
+[hosts*]: https://dev.office.com/reference/add-ins/manifest/hosts
 
 ## Hosting requirements
 

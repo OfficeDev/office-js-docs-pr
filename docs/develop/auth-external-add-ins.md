@@ -46,7 +46,7 @@ The following samples provide examples of add-ins that implement the Authorizati
 
 ### Relay/Proxy functions
 
-You can use the Authorization Code flow even with a serverless web application by storing the **client ID** and **client secret** values in a simple function that is hosted in a service such as [Azure Functions](https://azure.microsoft.com/en-us/services/functions) or [Amazon Lambda](https://aws.amazon.com/lambda).
+You can use the Authorization Code flow even with a serverless web application by storing the **client ID** and **client secret** values in a simple function that is hosted in a service such as [Azure Functions](https://azure.microsoft.com/services/functions) or [Amazon Lambda](https://aws.amazon.com/lambda).
 The function exchanges a given code for an **access token** and relays it back to the client. The security of this approach depends on how well access to the function is guarded.
 
 To use this technique, your add-in displays a UI/popup to show the login screen for the online service (Google, Facebook, and so on). When the user signs in and grants the add-in permission to her resources in the online service, the add-in receives a code which can be then sent to the online function. The services described in the **Middleman services** section later in this article use a similar flow.
@@ -55,7 +55,7 @@ To use this technique, your add-in displays a UI/popup to show the login screen 
 
 Libraries are available for many languages and platforms, for both the Implicit flow and the Authorization Code flow. Some libraries are general purpose, while others are for specific online services.
 
-**Office 365 and other services that use Azure Active Directory as the authorization provider**: [Azure Active Directory Authentication Libraries](https://azure.microsoft.com/en-us/documentation/articles/active-directory-authentication-libraries/). A preview is also available for the [Microsoft Authentication Library](https://www.nuget.org/packages/Microsoft.Identity.Client).
+**Office 365 and other services that use Azure Active Directory as the authorization provider**: [Azure Active Directory Authentication Libraries](https://azure.microsoft.com/documentation/articles/active-directory-authentication-libraries/). A preview is also available for the [Microsoft Authentication Library](https://www.nuget.org/packages/Microsoft.Identity.Client).
 
 **Google**: Search [GitHub.com/Google](https://github.com/google) for "auth" or the name of your language. Most of the relevant repos are named `google-auth-library-[name of language]`.
 
@@ -75,4 +75,4 @@ For examples of add-ins that use a middleman service for authorization, see the 
 
 ## What is CORS?
 
-CORS stands for [Cross Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS). For information about how to use CORS inside add-ins, see [Addressing same-origin policy limitations in Office Add-ins](addressing-same-origin-policy-limitations.md).
+CORS stands for [Cross Origin Resource Sharing](https://developer.mozilla.org/docs/Web/HTTP/Access_control_CORS). For information about how to use CORS inside add-ins, see [Addressing same-origin policy limitations in Office Add-ins](addressing-same-origin-policy-limitations.md).

@@ -97,7 +97,7 @@ Outlook add-ins can extend the Office ribbon and also display contextually next 
 
 Outlook add-ins can access contextual information from the item, such as an address or tracking ID, and then use that data to access additional information on the server and from web services to create compelling user experiences. In most cases, an Outlook add-in runs without modification on the various supporting host applications, including Outlook, Outlook for Mac, Outlook Web App, and Outlook Web App for devices, to provide a seamless experience on the desktop, web, and tablet and mobile devices. 
 
-For an overview of Outlook add-ins, see [Outlook add-ins overview](https://docs.microsoft.com/en-us/outlook/add-ins/). 
+For an overview of Outlook add-ins, see [Outlook add-ins overview](https://docs.microsoft.com/outlook/add-ins/). 
 
 ### Create new objects in Office documents 
 
@@ -113,13 +113,13 @@ The Office JavaScript APIs contain objects and members for building add-ins and 
 
 ## Next steps 
 
-To learn more about how to start building your Office Add-in, try out our [5-minute Quick Starts](https://docs.microsoft.com/en-us/office/dev/add-ins/). You can start building add-ins right away using Visual Studio or any other editor. 
+To learn more about how to start building your Office Add-in, try out our [5-minute Quick Starts](https://docs.microsoft.com/office/dev/add-ins/). You can start building add-ins right away using Visual Studio or any other editor. 
 
 To start planning solutions that create effective and compelling user experiences, get familiar with the [design guidelines](../design/add-in-design.md) and [best practices](../concepts/add-in-development-best-practices.md) for Office Add-ins.    
    
 ## See also
 
-- [Office Add-in samples](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples)
+- [Office Add-in samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
 - [Understanding the JavaScript API for Office](../develop/understanding-the-javascript-api-for-office.md)
 - [Office Add-in host and platform availability](../overview/office-add-in-availability.md)
 
