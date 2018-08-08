@@ -10,149 +10,59 @@ In this article, you'll walk through the process of building an Excel add-in usi
 
 ## Prerequisites
 
-- Install [Create React App](https://github.com/facebookincubator/create-react-app) globally.
-
-    ```bash
-    npm install -g create-react-app
-    ```
+- [Node.js](https://nodejs.org)
 
 - Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
-
     ```bash
     npm install -g yo generator-office
     ```
 
-## Generate a new React app
+### Create the web app
 
-Use Create React App to generate your React app. From the terminal, run the following command:
+1. Create a folder on your local drive and name it **my-addin**. This is where you'll create the files for your app.
 
-```bash
-create-react-app my-addin
-```
-
-## Generate the manifest file and sideload the add-in
-
-Each add-in requires a manifest file to define its settings and capabilities.
-
-1. Navigate to your app folder.
+2. Navigate to your app folder.
 
     ```bash
     cd my-addin
     ```
 
-2. Use the Yeoman generator to generate the manifest file for your add-in. Run the following command and then answer the prompts as shown in the following screenshot:
-
+3. Use the Yeoman generator to generate the manifest file for your add-in. Run the following command and then answer the prompts as shown in the following screenshot:
+npm r
     ```bash
-    yo office 
+    yo office
     ```
 
-    - **Choose a project type:** `Office Add-in containing the manifest only`
+    - **Choose a project type:** `Office Add-in project using React framework`
     - **What do you want to name your add-in?:** `My Office Add-in`
     - **Which Office client application would you like to support?:** `Excel`
 
-After you complete the wizard, a manifest file and resource file are available for you to build your project.
-
-![Yeoman generator](../images/yo-office.png)
-
-> [!NOTE]
-> If you're prompted to overwrite **package.json**, answer **No** (do not overwrite).
-
-3. Follow the instructions for the platform you'll be using to run your add-in and sideload the add-in within Excel.
-
-    - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
-
-## Update the app
-
-1. Open **public/index.html**, add the following `<script>` tag immediately before the `</head>` tag, and save the file.
-
-    ```html
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-    ```
-
-2. Open **src/index.tsx**, replace `ReactDOM.render(<App />, document.getElementById('root'));` with the following code, and save the file. 
-
-    ```typescript
-    const Office = window.Office;
+    ![Yeoman generator](../images/yo-office-excel-react.png)
     
-    Office.initialize = () => {
-      ReactDOM.render(<App />, document.getElementById('root'));
-    };
-    ```
+    After you complete the wizard, the generator will create the project and install supporting Node components.
 
-3. Open **src/components/App.tsx**, replace file contents with the following code, and save the file. 
+4.  Open **src/components/App.tsx**, search for the comment "Update the fill color," then change the fill color from 'yellow' to 'blue', and save the file. 
 
     ```js
-    import React, { Component } from 'react';
-    import './App.css';
+    range.format.fill.color = 'blue'
 
-    class App extends Component {
-      constructor(props) {
-        super(props);
-
-        this.onSetColor = this.onSetColor.bind(this);
-      }
-
-      onSetColor() {
-        window.Excel.run(async (context) => {
-          const range = context.workbook.getSelectedRange();
-          range.format.fill.color = 'green';
-          await context.sync();
-        });
-      }
-
-      render() {
-        return (
-          <div id="content">
-            <div id="content-header">
-              <div className="padding">
-                  <h1>Welcome</h1>
-              </div>
-            </div>
-            <div id="content-main">
-              <div className="padding">
-                  <p>Choose the button below to set the color of the selected range to green.</p>
-                  <br />
-                  <h3>Try it out</h3>
-                  <button onClick={this.onSetColor}>Set color</button>
-              </div>
-            </div>
-          </div>
-        );
-      }
-    }
-
-    export default App;
     ```
 
-4. Open **src/app.css**, replace file contents with the following CSS code, and save the file. 
+5. In the `return` block of the `render` function within **src/components/App.tsx**, update the `<Herolist>` to the code below, and save the file. 
 
-    ```css
-    #content-header {
-        background: #2a8dd4;
-        color: #fff;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 80px; 
-        overflow: hidden;
-    }
+    ```js
+      <HeroList message='Discover what My Office Add-in can do for you today!' items={this.state.listItems}>
+        <p className='ms-font-l'>Choose the button below to set the color of the selected range to blue. <b>Set color</b>.</p>
+        <Button className='ms-welcome__action' buttonType={ButtonType.hero} iconProps={{ iconName: 'ChevronRight' }} onClick={this.click}>Run</Button>
+    </HeroList>
+    ```
 
-    #content-main {
-        background: #fff;
-        position: fixed;
-        top: 80px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow: auto; 
-    }
+6. Carry out the steps in [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) to trust the certificate for your development computer's operating system.
 
-    .padding {
-        padding: 15px;
-    }
+7. Sideload your add-in so it will appear in Excel. In the terminal, run the following command: 
+    
+    ```bash
+    npm run sideload
     ```
 
 ## Try it out
@@ -161,16 +71,8 @@ After you complete the wizard, a manifest file and resource file are available f
 
     Windows:
     ```bash
-    set HTTPS=true&&npm start
+    npm start
     ```
-
-    macOS:
-    ```bash
-    HTTPS=true npm start
-    ```
-
-   > [!NOTE]
-   > A browser window will open with the add-in in it. Close this window.
 
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
@@ -178,7 +80,7 @@ After you complete the wizard, a manifest file and resource file are available f
 
 3. Select any range of cells in the worksheet.
 
-4. In the task pane, choose the **Set color** button to set the color of the selected range to green.
+4. In the task pane, choose the **Set color** button to set the color of the selected range to blue.
 
     ![Excel Add-in](../images/excel-quickstart-addin-2c.png)
 
