@@ -136,7 +136,7 @@ Setting `visibility` to "1" is a good choice when the add-in and the template or
 An easy way to write the XML is to first run your add-in and [tag the document on the client side](#tag-the-document-on-the-client-side) to write the value, and then save the document and inspect the XML that is generated. Office will detect and provide the appropriate attribute values. You can also use the [Open XML SDK 2.5 Productivity Tool](https://www.microsoft.com/download/details.aspx?id=30425) tool to generate C# code to programmatically add the markup based on the XML you generate.
 
 ## Test and verify opening taskpanes
-You can deploy a test version of your add-in thaqt will automatically open a taskpane using Centralized Deployment via the Office 365 admin center. The following example shows how add-ins are inserted from the Centralized Deployment catalog using the EXCatalog store version.
+You can deploy a test version of your add-in that will automatically open a taskpane using Centralized Deployment via the Office 365 admin center. The following example shows how add-ins are inserted from the Centralized Deployment catalog using the EXCatalog store version.
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="{52811C31-4593-43B8-A697-EB873422D156}">
@@ -147,7 +147,7 @@ You can deploy a test version of your add-in thaqt will automatically open a tas
     <we:snapshot xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"/>
 </we:webextension>
 ```
-To test the previous example, please see [Setup your Office 365 development environment](https://msdn.microsoft.com/office/office365/howto/setup-development-environment) and consider signing up for an [Office 365 developer account](https://developer.microsoft.com/office/dev-program). You can actually test drive Centralized Deployment and verify that your add-in works as expected.
+To test the previous example, please consider joining the [Office 365 Developer Program](https://docs.microsoft.com/office/developer-program/office-365-developer-program) and signing up for an [Office 365 developer account](https://developer.microsoft.com/office/dev-program) if you don't already own an Office 365 subscription. You can actually test drive Centralized Deployment and verify that your add-in works as expected.
 
 
 ## See also
