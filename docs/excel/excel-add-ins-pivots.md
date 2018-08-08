@@ -8,7 +8,12 @@ ms.date: 7/11/2018
 
 # Work with Pivot Tables using the Excel JavaScript API
 
-Pivot tables streamline larger data sets. They allow the quick manipulation of grouped data. The Excel JavaScript API lets your add-in create pivot tables and interact with their components. This article provides code samples for common scenarios.
+Pivot tables streamline larger data sets. They allow the quick manipulation of grouped data. The Excel JavaScript API lets your add-in create pivot tables and interact with their components. 
+
+If you are unfamiliar with the functionality of PivotTables, consider exploring them as an end-user. 
+See [Create a PivotTable to analyze worksheet data](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) for a good primer on these tools. 
+
+This article provides code samples for common scenarios.
 For the complete list of properties and methods the **PivotTable** and **PivotTableCollection** objects support, see [PivotTable API](https://dev.office.com/reference/add-ins/excel/pivottable) and [Pivot Table Collection API](https://dev.office.com/reference/add-ins/excel/pivottablecollection).
 
 > [!NOTE]
@@ -37,49 +42,49 @@ This pivot table could be generated through the JavaScript API or through the Ex
 ## Create a pivot table
 
 Pivot tables need a name, source, and destination. The source can be a `Range`, `string`, or `Table`. The destination can either be a `Range` or `string`. 
-The following samples show various pivot table creation techniques. All three samples feature a pivot table named **Farm Sales** created on a worksheet called **Pivot** at cell **A2**. Its data comes from the worksheet **Data** across the range **A1:E21**. 
+The following samples show various pivot table creation techniques. All three samples feature a pivot table named **Farm Sales** created on a worksheet called **PivotWorksheet** at cell **A2**. Its data comes from the worksheet **DataWorksheet** across the range **A1:E21**. 
 
-### Create a pivot table with names
+### Create a pivot table with strings
 ```ts
 await Excel.run(async (context) => {
 	context.workbook.worksheets.getActiveWorksheet()
-		.pivotTables.add("Farm Sales", "Data!A1:E21", "Pivot!A2");
+		.pivotTables.add("Farm Sales", "DataWorksheet!A1:E21", "PivotWorksheet!A2");
 
 	await context.sync();
 });
 ```
 
-### Create a pivot table with objects
+### Create a pivot table with Range objects
 ```ts
 await Excel.run(async (context) => {	
-	var myRange = context.workbook.worksheets.getItem("Data").getRange("A1:E21");
-	var myRange2 = context.workbook.worksheets.getItem("Pivot").getRange("A2");
-	context.workbook.worksheets.getItem("Pivot").pivotTables.add("Farm Sales", myRange, myRange2);
+	const myRange = context.workbook.worksheets.getItem("DataWorksheet").getRange("A1:E21");
+	const myRange2 = context.workbook.worksheets.getItem("PivotWorksheet").getRange("A2");
+	context.workbook.worksheets.getItem("PivotWorksheet").pivotTables.add("Farm Sales", myRange, myRange2);
 	
 	await context.sync();
 });
 ```
 
-### Create a pivot table from a workbook
+### Create a pivot table at the workbook level
 ```ts
 await Excel.run(async (context) => {
-	context.workbook.pivotTables.add("Farm Sales", "Data!A1:E21", "Pivot!A2");
+	context.workbook.pivotTables.add("Farm Sales", "DataWorksheet!A1:E21", "PivotWorksheet!A2");
 
 	await context.sync();
 });
 ```
 
 ## Use an existing pivot table
-Manually created pivot tables are also accessible through the worksheet’s pivot table collection. 
+Manually created pivot tables are also accessible through the pivot table collection of the workbook or of individual worksheets. 
 The following code gets the first pivot table in the worksheet. It then gives the table a name for easy future reference.
 
 ```ts
 await Excel.run(async (context) => {
-	let pivotTableList = context.workbook.worksheets.getActiveWorksheet().pivotTables;
-	pivotTableList.load("items");
+	const pivotTableList = context.workbook.worksheets.getActiveWorksheet().pivotTables;
+	pivotTableList.load("no-properties-needed");
 	await context.sync();
 
-	let pivotTable = pivotTableList.items[0];
+	const pivotTable = pivotTableList.items[0];
 	pivotTable.name = "My Pivot";
 	await context.sync();
 });
@@ -95,7 +100,7 @@ Adding the **Farm** column pivots all the sales around each farm. Adding the **T
 
 ```ts
 await Excel.run(async (context) => {
-	let pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+	const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
 
 	pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Type"));
 	pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Classification"));
@@ -110,7 +115,7 @@ You can also have a pivot table with only rows or columns.
 
 ```ts
 await Excel.run(async (context) => {
-	let pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+	const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
 	pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Farm"));
 	pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Type"));
 	pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Classification"));
@@ -129,7 +134,7 @@ In the example, both **Farm** and **Type** are rows, with the crate sales as the
 
 ```ts
 await Excel.run(async (context) => {
-	let pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+	const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
 
 	pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Farm"));
 	pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Type"));
@@ -144,18 +149,35 @@ await Excel.run(async (context) => {
 ## Change aggregation function
 
 Data hierarchies have their values aggregated into a sum by default. The `summarizeBy` parameter defines this behavior based on an `AggregrationFunction` type. 
+The following code samples changes the aggregation to be averages of the data.
+
+```ts
+	await Excel.run(async (context) => {
+        const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+        pivotTable.dataHierarchies.load("no-properties-needed");
+        await context.sync();
+
+        pivotTable.dataHierarchies.items[0].summarizeBy = Excel.AggregationFunction.average;
+        pivotTable.dataHierarchies.items[1].summarizeBy = Excel.AggregationFunction.average;
+        await context.sync();
+    });
+```
 
 ## Pivot table layouts
 
 A pivot table layout defines the placement of hierarchies and their data. You access the layout to determine the ranges where data is stored. 
-The following code demonstrates how to get the last row from a pivot table by going through the layout.
+The following code demonstrates how to get the last row from a pivot table by going through the layout. Those values are then summed together for a grand total.
 
 ```ts
     await Excel.run(async (context) => {
-        let pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
-        let range = pivotTable.layout.getDataBodyRange();
-        let grandTotalRange = range.getLastRow();
+        const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+        const range = pivotTable.layout.getDataBodyRange();
+        const grandTotalRange = range.getLastRow();
         grandTotalRange.load();
+        await context.sync();
+		
+		const masterTotalRange = context.workbook.worksheets.getActiveWorksheet().getRange("B27:C27");
+        masterTotalRange.formulas = [["All Crates", "=SUM(" + grandTotalRange.address + ")"]];
         await context.sync();
     });
 ```
@@ -171,7 +193,7 @@ The following examples use the outline and tabular styles, respectively. The cod
 
 ```ts
 await Excel.run(async (context) => {
-	let pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+	const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
 	pivotTable.layout.load("layoutType");
 	await context.sync();
 	if (pivotTable.layout.layoutType === "Compact") {
@@ -192,9 +214,9 @@ Hierarchy fields are editable. The following code demonstrates how to change the
 
 ```ts
 await Excel.run(async (context) => {
-	let dataHierarchies = context.workbook.worksheets.getActiveWorksheet()
+	const dataHierarchies = context.workbook.worksheets.getActiveWorksheet()
 		.pivotTables.getItem("Farm Sales").dataHierarchies;
-	dataHierarchies.load();
+	dataHierarchies.load("name");
 	await context.sync();
 	
 	dataHierarchies.items[0].name = "Farm Sales";
