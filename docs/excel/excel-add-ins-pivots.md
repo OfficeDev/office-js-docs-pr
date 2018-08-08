@@ -186,7 +186,7 @@ The following code demonstrates how to get the last row of the PivotTable data b
 		// get the totals for each data hierarchy from the layout
         const range = pivotTable.layout.getDataBodyRange();
         const grandTotalRange = range.getLastRow();
-        grandTotalRange.load();
+        grandTotalRange.load("address");
         await context.sync();
 		
 		// sum the totals from the PivotTable data hierarchies and place them in a new range
