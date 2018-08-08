@@ -178,5 +178,10 @@
             "redirect_url": "docs/design/add-in-design-guidelines.md",
             "redirect_document_id": true
         },
+        {
+            "source_path": "docs/design/automatically-open-a-task-pane-with-a-document.md",
+            "redirect_url": "docs/develop/automatically-open-a-task-pane-with-a-document.md",
+            "redirect_document_id": true
+        },
     ] 
 }
