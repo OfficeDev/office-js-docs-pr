@@ -255,4 +255,4 @@ await Excel.run(async (context) => {
 ```
 
 > [!NOTE]
-> We welcome feedback on our preview designs. If you have comments, suggestions, or issues with the new PivotTable API, please leave your comments on the [OpenSpec GitHub repo](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec).
+> We welcome feedback on our preview designs. If you have comments, suggestions, or issues with the new PivotTable API, please leave your comments on [UserVoice](https://officespdev.uservoice.com/forums/224641-feature-requests-and-feedback?category_id=163563) or on the [OpenSpec GitHub repo](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec).
