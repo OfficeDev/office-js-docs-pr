@@ -56,6 +56,7 @@ The following video walks you through the process of sideloading your add-in on 
 
 ## Sideload your add-in
 
+
 1. Put the manifest XML file of any add-in that you are testing in the shared folder catalog. Note that you deploy the web application itself to a web server. Be sure to specify the URL in the **SourceLocation** element of the manifest file.
 
     > [!IMPORTANT]
