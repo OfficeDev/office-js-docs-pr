@@ -170,11 +170,11 @@
       },
       {
             "source_path": "docs/design/ui-elements/accessibility-guidelines.md",
-            "redirect_url": "/office/dev/add-ins/design/add-in-design-guidelines",
+            "redirect_url": "/office/dev/add-ins/design/accessibility-guidelines",
       },
       {
             "source_path": "docs/design/ui-elements/voice-guidelines.md",
-            "redirect_url": "/office/dev/add-ins/design/add-in-design-guidelines",
+            "redirect_url": "/office/dev/add-ins/design/voice-guidelines",
       },
       {
             "source_path": "docs/design/automatically-open-a-task-pane-with-a-document.md",
