@@ -15,7 +15,7 @@ This article applies only to testing a Word, Excel, or PowerPoint add-ins on Win
 
 - [Sideload Office Add-ins in Office Online for testing](sideload-office-add-ins-for-testing.md)
 - [Sideload Office Add-ins on iPad and Mac for testing](sideload-an-office-add-in-on-ipad-and-mac.md)
-- [Sideload Outlook Add-ins for testing](../../../../outlook/add-ins/sideload-outlook-add-ins-for-testing)
+- [Sideload Outlook Add-ins for testing](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 
 
 The following video walks you through the process of sideloading your add-in on Office desktop or Office Online using a shared folder catalog.  
@@ -56,7 +56,8 @@ The following video walks you through the process of sideloading your add-in on 
 
 ## Sideload your add-in
 
-1. Put the manifest file of any add-in that you are testing in the shared folder catalog. Note that you deploy the web application itself to a web server. Be sure to specify the URL in the **SourceLocation** element of the manifest file.
+
+1. Put the manifest XML file of any add-in that you are testing in the shared folder catalog. Note that you deploy the web application itself to a web server. Be sure to specify the URL in the **SourceLocation** element of the manifest file.
 
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]

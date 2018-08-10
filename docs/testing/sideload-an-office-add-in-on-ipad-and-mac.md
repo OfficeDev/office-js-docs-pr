@@ -19,7 +19,7 @@ To see how your add-in will run in Office for iOS, you can sideload your add-in'
 
 ## Prerequisites for Office for Mac
 
-- A Mac running OS X v10.10 "Yosemite" or later with [Office for Mac](https://products.office.com/en-us/buy/compare-microsoft-office-products?tab=omac) installed.
+- A Mac running OS X v10.10 "Yosemite" or later with [Office for Mac](https://products.office.com/buy/compare-microsoft-office-products?tab=omac) installed.
     
 - Word for Mac version 15.18 (160109).
    
@@ -60,7 +60,7 @@ To see how your add-in will run in Office for iOS, you can sideload your add-in'
 ## Sideload an add-in on Office for Mac
 
 > [!NOTE]
-> To sideload Outlook 2016 for Mac add-in, see [Sideload Outlook add-ins for testing](https://docs.microsoft.com/en-us/outlook/add-ins/sideload-outlook-add-ins-for-testing).
+> To sideload Outlook 2016 for Mac add-in, see [Sideload Outlook add-ins for testing](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing).
 
 1. Open  **Terminal** and go to one of the following folders where you'll save your add-in's manifest file. If the `wef` folder doesn't exist on your computer, create it.
     

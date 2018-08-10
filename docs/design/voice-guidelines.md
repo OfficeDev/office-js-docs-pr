@@ -13,7 +13,7 @@ To align your text with the principles of the Office voice:
 
 ## See also
 
-- Guidelines for [writing for all abilities](https://docs.microsoft.com/en-us/style-guide/accessibility/writing-all-abilities)
-- [Top 10 tips for Microsoft style and voice](https://docs.microsoft.com/en-us/style-guide/top-10-tips-style-voice)
-- Guidelines on [word choice](https://docs.microsoft.com/en-us/style-guide/word-choice/)
--  Office Add-in [validation policies](https://docs.microsoft.com/en-us/office/dev/store/validation-policies)
+- Guidelines for [writing for all abilities](https://docs.microsoft.com/style-guide/accessibility/writing-all-abilities)
+- [Top 10 tips for Microsoft style and voice](https://docs.microsoft.com/style-guide/top-10-tips-style-voice)
+- Guidelines on [word choice](https://docs.microsoft.com/style-guide/word-choice/)
+-  Office Add-in [validation policies](https://docs.microsoft.com/office/dev/store/validation-policies)

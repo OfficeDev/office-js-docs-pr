@@ -33,7 +33,7 @@
     href: quickstarts/onenote-quickstart.md
     displayName: OneNote
   - name: Create Outlook add-in
-    href: https://docs.microsoft.com/en-us/outlook/add-ins/quick-start
+    href: https://docs.microsoft.com/outlook/add-ins/quick-start
     displayName: Outlook
   - name: Create PowerPoint add-in
     href: quickstarts/powerpoint-quickstart.md
@@ -309,7 +309,7 @@
       displayName: Word
 
   - name: Outlook add-ins
-    href: https://docs.microsoft.com/en-us/outlook/add-ins/
+    href: https://docs.microsoft.com/outlook/add-ins/
     displayName: Outlook
 
   - name: PowerPoint add-ins
@@ -401,9 +401,9 @@
     - name: Publish add-ins to a SharePoint catalog
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
     - name: Publish add-ins to AppSource
-      href: https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store
+      href: https://docs.microsoft.com/office/dev/store/submit-to-the-office-store
     - name: AppSource validation policies
-      href: https://docs.microsoft.com/en-us/office/dev/store/validation-policies
+      href: https://docs.microsoft.com/office/dev/store/validation-policies
 
 - name: Reference
   items:

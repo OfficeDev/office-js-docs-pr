@@ -25,7 +25,7 @@ Standard elements used in an add-in can incorporate motion to help focus the use
 
 
 ## Use expected motions
-We recommend using [Office UI Fabric](https://developer.microsoft.com/en-us/fabric) to create a visual connection with the Office platform, and we also encourage the use of [Fabric Animations](https://developer.microsoft.com/en-us/fabric#/styles/animations) to create motions that align with the Fabric motion language. 
+We recommend using [Office UI Fabric](https://developer.microsoft.com/fabric) to create a visual connection with the Office platform, and we also encourage the use of [Fabric Animations](https://developer.microsoft.com/fabric#/styles/animations) to create motions that align with the Fabric motion language. 
 
 Use it to fit seamlessly in Office. It will help you create experiences that are more felt than observed. The animation CSS classes provide directionality, enter/exit, and duration specifics that reinforce Office mental models and provide opportunities for customers to learn how to interact with your add-in.
 

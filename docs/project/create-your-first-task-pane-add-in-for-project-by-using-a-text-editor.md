@@ -12,7 +12,7 @@ Project 2013 uses the same add-in manifest schema that other Microsoft Office 20
 
 The Project OM Test sample add-in can get the GUID of a task and properties of the application and the active project. If Project Professional 2013 opens a project that is in a SharePoint library, the add-in can show the URL of the project. 
 
-The [Project 2013 SDK download](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20) includes the complete source code. When you extract and install the SDK and samples that are in the Project2013SDK.msi file, see the `\Samples\Apps\Copy_to_AppManifests_FileShare` subdirectory for the manifest file and the `\Samples\Apps\Copy_to_AppSource_FileShare` subdirectory for the source code. 
+The [Project 2013 SDK download](https://www.microsoft.com/download/details.aspx?id=30435%20) includes the complete source code. When you extract and install the SDK and samples that are in the Project2013SDK.msi file, see the `\Samples\Apps\Copy_to_AppManifests_FileShare` subdirectory for the manifest file and the `\Samples\Apps\Copy_to_AppSource_FileShare` subdirectory for the source code. 
 
 The JSOMCall.html sample uses JavaScript functions in the office.js file and project-15.js file, which are included. You can use the corresponding debug files (office.debug.js and project-15.debug.js) to examine the functions.
 
@@ -1093,5 +1093,5 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 - [Understanding the JavaScript API for add-ins](../develop/understanding-the-javascript-api-for-office.md)
 - [JavaScript API for Office add-ins](https://dev.office.com/reference/add-ins/javascript-api-for-office)
 - [Schema reference for Office Add-ins manifests (v1.1)](../develop/add-in-manifests.md)     
-- [Project 2013 SDK download](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)
+- [Project 2013 SDK download](https://www.microsoft.com/download/details.aspx?id=30435%20)
     

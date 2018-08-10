@@ -78,7 +78,7 @@
       }, 
       {   
         "source_path": "docs/access/access-web-app-add-ins.md", 
-        "redirect_url": "https://powerapps.microsoft.com/en-us/", 
+        "redirect_url": "https://powerapps.microsoft.com", 
         "redirect_document_id": true 
       }, 
       {   
@@ -98,31 +98,31 @@
       }, 
       {   
         "source_path": "docs/powerpoint/office-mix/configuring-and-editing-labsjs-labs-for-office-mix.md", 
-        "redirect_url": "https://mix.office.com/en-us/Home"
+        "redirect_url": "https://mix.office.com/Home"
       }, 
       {   
         "source_path": "docs/powerpoint/office-mix/creating-your-first-lab-for-office-mix.md", 
-        "redirect_url": "https://mix.office.com/en-us/Home"
+        "redirect_url": "https://mix.office.com/Home"
       }, 
       {   
         "source_path": "docs/powerpoint/office-mix/get-started-with-labsjs-for-office-mix.md", 
-        "redirect_url": "https://mix.office.com/en-us/Home"
+        "redirect_url": "https://mix.office.com/Home"
       }, 
       {   
         "source_path": "docs/powerpoint/office-mix/guidelines-for-creating-labs-for-mix-using-labsjs.md", 
-        "redirect_url": "https://mix.office.com/en-us/Home"
+        "redirect_url": "https://mix.office.com/Home"
       }, 
       {   
         "source_path": "docs/powerpoint/office-mix/labsjs-lab-components.md", 
-        "redirect_url": "https://mix.office.com/en-us/Home"
+        "redirect_url": "https://mix.office.com/Home"
       }, 
       {   
         "source_path": "docs/powerpoint/office-mix/labsjs-labs-for-office-mix-examples.md", 
-        "redirect_url": "https://mix.office.com/en-us/Home"
+        "redirect_url": "https://mix.office.com/Home"
       }, 
       {   
         "source_path": "docs/powerpoint/office-mix/office-mix-add-ins.md", 
-        "redirect_url": "https://mix.office.com/en-us/Home"
+        "redirect_url": "https://mix.office.com/Home"
       },
       {   
         "source_path": "docs/tutorials/create-an-office-add-in-using-any-editor.md", 
@@ -165,7 +165,7 @@
         },
         {
             "source_path": "docs/design/ui-elements/layout-for-outlook-add-ins.md",
-            "redirect_url": "https://docs.microsoft.com/en-us/outlook/add-ins/",
+            "redirect_url": "https://docs.microsoft.com/outlook/add-ins",
             "redirect_document_id": true
         },
         {
@@ -176,6 +176,11 @@
         {
             "source_path": "docs/design/ui-elements/voice-guidelines.md",
             "redirect_url": "docs/design/add-in-design-guidelines.md",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/design/automatically-open-a-task-pane-with-a-document.md",
+            "redirect_url": "docs/develop/automatically-open-a-task-pane-with-a-document.md",
             "redirect_document_id": true
         },
     ] 

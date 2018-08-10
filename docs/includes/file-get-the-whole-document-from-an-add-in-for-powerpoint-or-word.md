@@ -225,7 +225,7 @@ function sendSlice(slice, state) {
         // Encode the slice data, a byte array, as a Base64 string.
         // NOTE: The implementation of myEncodeBase64(input) function isn't 
         // included with this example. For information about Base64 encoding with
-        // JavaScript, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Base64_encoding_and_decoding.
+        // JavaScript, see https://developer.mozilla.org/docs/Web/JavaScript/Base64_encoding_and_decoding.
         var fileData = myEncodeBase64(data);
 
         // Create a new HTTP request. You need to send the request 
