@@ -20,8 +20,6 @@ Custom functions are now available in Developer Preview on Windows, Mac, and Exc
 2.  Clone the [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) repo and follow the instructions in the README.md to start the add-in in Excel, make changes in the code, and debug.
 3.  Type `=CONTOSO.ADD42(1,2)` into any cell, and press **Enter** to run the custom function.
 
-Alternative, a custom functions project can be created using the 
-
 See the **Known Issues** section at the end of this article, which includes current limitations of custom functions and will be updated over time.
 
 ## Learn the basics
