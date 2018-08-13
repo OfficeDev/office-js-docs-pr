@@ -20,18 +20,20 @@ Custom functions are now available in Developer Preview on Windows, Mac, and Exc
 2.  Clone the [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) repo and follow the instructions in the README.md to start the add-in in Excel, make changes in the code, and debug.
 3.  Type `=CONTOSO.ADD42(1,2)` into any cell, and press **Enter** to run the custom function.
 
+Alternative, a custom functions project can be created using the 
+
 See the **Known Issues** section at the end of this article, which includes current limitations of custom functions and will be updated over time.
 
 ## Learn the basics
 
 In the cloned sample repo, you’ll see the following files:
 
-- **customfunctions.js**, which contains the custom function code (see the simple code example above for the `ADD42` function).
-- **customfunctions.json**, which contains the registration JSON that tells Excel about your custom function. Registration makes your custom functions appear in the list of available functions displayed when a user types in a cell.
-- **customfunctions.html**, which provides a &lt;Script&gt; reference to the JS file. This file does not display UI in Excel.
-- **customfunctions.xml**, which tells Excel the location of the HTML, JavaScript, and JSON files; and also specifies a namespace for all the custom functions that are installed with the add-in.
+- **./src/customfunctions.js**, which contains the custom function code (see the simple code example above for the `ADD42` function).
+- **./config/customfunctions.json**, which contains the registration JSON that tells Excel about your custom function. Registration makes your custom functions appear in the list of available functions displayed when a user types in a cell.
+- **./index.html**, which provides a &lt;Script&gt; reference to the JS file. This file does not display UI in Excel.
+- **./manifest.xml**, which tells Excel the location of the HTML, JavaScript, and JSON files; and also specifies a namespace for all the custom functions that are installed with the add-in.
 
-### JSON file (customfunctions.json)
+### JSON file (./config/customfunctions.json)
 
 The following code in customfunctions.json specifies the metadata for the same `ADD42` function.
 
@@ -88,7 +90,7 @@ Note that for this example:
 Your server settings for the JSON file must have [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel Online.
 
 
-### Manifest file (customfunctions.xml)
+### Manifest file (./manifest.xml)
 
 
 The following is an example of the `<ExtensionPoint>` and `<Resources>` markup that you include in the add-in's manifest to enable Excel to run your functions. Note the following about this markup:
