@@ -33,15 +33,15 @@ This example uses Word and a free add-in from AppSource.
     
 3. Launch the F12 development tools that corresponds to your version of Office:
     
-   - For the 32-bit version of Office, use C:\Windows\System32\F12\F12Chooser.exe
+   - For the 32-bit version of Office, use C:\Windows\System32\F12\IEChooser.exe
     
-   - For the 64-bit version of Office, use C:\Windows\SysWOW64\F12\F12Chooser.exe
+   - For the 64-bit version of Office, use C:\Windows\SysWOW64\F12\IEChooser.exe
     
-   When you launch F12Chooser, a separate window named "Choose target to debug" displays the possible applications to debug. Select the application that you are interested in. If you are writing your own add-in, select the website where you have the add-in deployed, which might be a localhost URL. 
+   When you launch IEChooser, a separate window named "Choose target to debug" displays the possible applications to debug. Select the application that you are interested in. If you are writing your own add-in, select the website where you have the add-in deployed, which might be a localhost URL. 
     
    For example, select **home.html**. 
     
-   ![F12Chooser screen, pointing to bubbles add-in](../images/choose-target-to-debug.png)
+   ![IEChooser screen, pointing to bubbles add-in](../images/choose-target-to-debug.png)
 
 4. In the F12 window, select the file you want to debug.
     
