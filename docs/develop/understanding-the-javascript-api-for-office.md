@@ -28,31 +28,89 @@ For more details around the Office.js CDN, including how versioning and backward
 
 **Applies to:** All add-in types
 
-Office.js provides an initialization event which gets fired when the API is fully loaded and ready to begin interacting with the user. You can use the **initialize** event handler to implement common add-in initialization scenarios, such as prompting the user to select some cells in Excel, and then inserting a chart initialized with those selected values. You can also use the initialize event handler to initialize other custom logic for your add-in, such as establishing bindings, prompting for default add-in settings values, and so on.
+Your code must not call any Office.js APIs until the library is fully loaded. There are two events that your code can handle to ensure that the library is loaded. They are described in the sections below. We recommend that you use the newer, more flexible, `Office.onReady`. But the older `Office.initialize` is still supported. The main differences between them:
 
-At a minimum, the initialize event would look like the follow example:     
+- You can assign only one handler to `Office.initialize`. But you can assign multiple handlers, in different places in your code, to `Office.onReady`.
+
+- The `Office.initialize` event fires only once: at the end of the internal process in which Office.js initializes itself. And it fires immediately after the internal process ends. If the code in which you assign a handler to the event executes too long after the event fires, then your handler doesn't run. As a practical matter, this means that you must assign the handler as virtually the first thing your custom script does. The `Office.onReady` event fires when `Office.initialize` does but it also fires, in effect, whenever another handler is assigned to it. For example, you could have a handler with custom initialization logic assigned to `Office.onReady` as soon as your custom script loads (in, for example, an Immediately Invoked Function Expression). But you could also have a button in the task pane, whose script assigns another handler to `Office.onReady`. If so, the second handler runs when the button is clicked.
+
+- The `Office.onReady` event has a default handler that returns a Promise object. This gives you an alternative way of responding to the event. See **Initialize with Office.onReady** below.
+
+- Your code *must* assign some handler to `Office.initialize` although it can be a function that does nothing. See **Initialize with Office.initialize** below. You are not required to assign anything to `Office.onReady`.
+
+For more details about the sequence of events when an add-in is initialized, see [Loading the DOM and runtime environment](loading-the-dom-and-runtime-environment.md).
+
+### Initialize with Office.onReady
+
+`Office.onReady` fires first when the Office.js library is fully loaded and ready for user interaction. You can use the `Office.onReady` event handler to implement common add-in initialization scenarios, such as prompting the user to select some cells in Excel, and then inserting a chart initialized with those selected values. You can also use the handler to initialize other custom logic for your add-in, such as establishing bindings, prompting for default add-in settings values, and so on. For example, the following handler checks to see that the user's version of Excel supports all the APIs that the add-in might call.
 
 ```js
-Office.initialize = function () { };
+Office.onReady = function () {
+    if (!Office.context.requirements.isSetSupported('ExcelApi', '1.7')) {
+        console.log("Sorry, this add-in only works with newer versions of Excel.");
+    }
+};
 ```
-If you are using additional JavaScript frameworks that include their own initialization handler or tests, these should be placed within the Office.initialize event. For example, [JQuery's](https://jquery.com) `$(document).ready()` function would be referenced as follows:
+
+If you are using additional JavaScript frameworks that include their own initialization handler or tests, these should be placed within the `Office.onReady` event. For example, [JQuery's](https://jquery.com) `$(document).ready()` function would be referenced as follows:
 
 ```js
-Office.initialize = function () {
+Office.onReady = function () {
     // Office is ready
-    $(document).ready(function () {        
+    $(document).ready(function () {
         // The document is ready
     });
   };
 ```
 
-All pages within an Office Add-ins are required to assign an event handler to the initialize event, **Office.initialize**.
-If you fail to assign an event handler, your add-in may raise an error when it starts. Also, if a user attempts to use your add-in with an Office Online web client, such as Excel Online, PowerPoint Online, or Outlook Web App, it will fail to run. If you don't need any initialization code, then the body of the function you assign to **Office.initialize** can be empty, as it is in the first example above.
+If you prefer, you can call the default handler for `Office.onReady` and respond to the event when the Promise is resolved. This is the syntax in JavaScript:
 
-For more detail about the sequence of events when an add-in is initialized, see [Loading the DOM and runtime environment](loading-the-dom-and-runtime-environment.md).
+```js
+Office.onReady()
+    .then(function() {
+        console.log("Office is now ready");
+    });
+```
+
+Here is the same example using TypeScript:
+
+```ts
+(async () => {
+    await Office.onReady();
+    console.log("Office is now ready!");
+})();
+```
+
+> [!NOTE]
+> Even if you use `Office.onReady`, you must still assign some function to  `Office.initialize`, even if it is a function that does nothing. See **Initialize with Office.initialize** below. 
+
+### Initialize with Office.initialize
+
+`Office.initialize` fires when the Office.js library is fully loaded and ready for user interaction. You can use the `Office.initialize` event handler to implement common add-in initialization scenarios, such as prompting the user to select some cells in Excel, and then inserting a chart initialized with those selected values. You can also use the handler to initialize other custom logic for your add-in, such as establishing bindings, prompting for default add-in settings values, and so on.
+
+At a minimum, the initialize event assignment would look like the following example, in which a function that does nothing is assigned:
+
+```js
+Office.initialize = function () { };
+```
+
+If you are using additional JavaScript frameworks that include their own initialization handler or tests, these should be placed within the `Office.initialize` event. For example, [JQuery's](https://jquery.com) `$(document).ready()` function would be referenced as follows:
+
+```js
+Office.initialize = function () {
+    // Office is ready
+    $(document).ready(function () {
+        // The document is ready
+    });
+  };
+```
+
+All pages within an Office Add-ins are required to assign an event handler to the `Office.initialize` event.
+If you fail to assign an event handler, your add-in may raise an error when it starts. Also, if a user attempts to use your add-in with an Office Online web client, such as Excel Online, PowerPoint Online, or Outlook Web App, it will fail to run. If you don't need any initialization code, then the body of the function you assign to `Office.initialize` can be empty, as it is in the first example above.
 
 #### Initialization reason
-For task pane and content add-ins, Office.initialize provides an additional _reason_ parameter. This parameter can be used to determine how an add-in was added to the current document. You can use this to provide different logic for when an add-in is first inserted versus when it already existed within the document. 
+
+For task pane and content add-ins, `Office.initialize` provides an additional _reason_ parameter. This parameter can be used to determine how an add-in was added to the current document. You can use this to provide different logic for when an add-in is first inserted versus when it already existed within the document.
 
 ```js
 Office.initialize = function (reason) {
@@ -64,6 +122,7 @@ Office.initialize = function (reason) {
     });
  };
 ```
+
 For more information, see [Office.initialize Event](https://dev.office.com/reference/add-ins/shared/office.initialize) and [InitializationReason Enumeration](https://dev.office.com/reference/add-ins/shared/initializationreason-enumeration). 
 
 ## Office JavaScript API object model
