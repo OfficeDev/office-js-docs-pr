@@ -128,6 +128,34 @@ function remove() {
 }
 ```
 
+## Enable and disable events
+
+> [!NOTE}
+> This feature is currently available only in public preview (beta). To use it, you must reference the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+
+Events are turned on and off at the [runtime]( https://docs.microsoft.com/en-us/javascript/api/excel/excel.runtime?view=office-js) level. 
+The `enableEvents` property determines if events are fired and their handlers are activated. 
+Turning events off is useful when performance is critical or when editing multiple entities and want to avoid firing events until you have finished.
+
+The following code sample shows how to toggle events on and off.
+
+```ts
+async function toggleEvents() {
+    await Excel.run(async (context) => {
+        context.runtime.load("enableEvents");
+        await context.sync();
+        const eventBoolean = !context.runtime.enableEvents
+        context.runtime.enableEvents = eventBoolean;
+        if (eventBoolean) {
+            console.log("Events are currently on.");
+        } else {
+            console.log("Events are currently off.");
+        }
+        await context.sync();
+    });
+}
+```
+
 ## See also
 
 - [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
