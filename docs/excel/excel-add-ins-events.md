@@ -130,10 +130,10 @@ function remove() {
 
 ## Enable and disable events
 
-> [!NOTE}
+> [!NOTE]
 > This feature is currently available only in public preview (beta). To use it, you must reference the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
-Events are turned on and off at the [runtime]( https://docs.microsoft.com/en-us/javascript/api/excel/excel.runtime?view=office-js) level. 
+Events are turned on and off at the [runtime](https://docs.microsoft.com/en-us/javascript/api/excel/excel.runtime?view=office-js) level. 
 The `enableEvents` property determines if events are fired and their handlers are activated. 
 Turning events off is useful when performance is critical or when editing multiple entities and want to avoid firing events until you have finished.
 
