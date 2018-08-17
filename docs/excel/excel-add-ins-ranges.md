@@ -537,9 +537,8 @@ Excel.run(function (context) {
 > The copyFrom function is currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 > If you are using TypeScript or your code editor uses TypeScript type definition files for Intellisense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
 
-Range’s copyFrom function replicates the copy-and-paste behavior of the Excel UI. The range object copyFrom is called on is the destination. 
-The range argument supplied to copyFrom is the source. 
-
+Range’s copyFrom function replicates the copy-and-paste behavior of the Excel UI. The range object that copyFrom is called on is the destination. 
+The source to be copied is passed as a range or a string address representing a range. 
 The following code sample copies the data from **A1:E1** into the range starting at **G1** (which ends up pasting into **G1:K1**).
 
 ```js
@@ -551,23 +550,46 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-Range.copyFrom has three optional parameters, `copyType`, `skipBlanks`, and `transpose`. 
-These respectively determine what information gets copied from the range, whether blank cells in the source are ignored, and if the result should be transposed. 
+Range.copyFrom has three optional parameters.
 
-The following code example shows the values at range **A1:E1** being transposed onto **G1** without any blanks copied.
+```ts
+copyFrom(sourceRange: Range | string, copyType?: "All" | "Formulas" | "Values" | "Formats", skipBlanks?: boolean, transpose?: boolean): void;
+``` 
+
+`copyType` specifies what data gets copied from the source to the destination. 
+`“Formulas”` transfers the formulas in the source cells and preserves the relative positioning of those formulas’ ranges. Any non-formula entries are copied as-is. 
+`“Values”` copies the data values and, in the case of formulas, the result of the formula. 
+`“Formats”` copies the formatting of the range, including font, color, and other format settings, but no values. 
+`”All”` (the default option) copies both data and formatting, preserving cells’ formulas if found.
+
+`skipBlanks` sets whether blank cells are copied into the destination. When true, `copyFrom` skips blank cells in the source range. 
+Skipped cells will not overwrite the existing data of their corresponding cells in the destination range. The default is false.
+
+The following code sample and images demonstrate this behavior in a simple scenario. 
 
 ```js
 Excel.run(function (context) {
-        var sheet = context.workbook.worksheets.getItem("Sample");
-        // transpose a horizontal range of data into a vertical range, 
-        // only copying the values and skipping blanks
-        sheet.getRange("G1").copyFrom("A1:E1",
-            “Values”,
-            true, // skipBlanks
-            true); // transpose
-        return context.sync();
-    }).catch(errorHandlerFunction);
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    // copy a range, omitting the blank cells so existing data is not overwritten in those cells
+    sheet.getRange("D1").copyFrom("A1:C1",
+        Excel.RangeCopyType.all,
+        true, // skipBlanks
+        false); // transpose
+    // copy a range, including the blank cells which will overwrite existing data in the target cells
+    sheet.getRange("D2").copyFrom("A2:C2",
+        Excel.RangeCopyType.all,
+        false, // skipBlanks
+        false); // transpose
+    return context.sync();
+}).catch(errorHandlerFunction);
 ```
+
+*Before the preceeding function has been run.*
+![Data in Excel before range’s copy method has been run.](../images/excel-range-copyfrom-skipblanks-before.png)
+*After the preceeding function has been run.*
+![Data in Excel after range’s copy method has been run.](../images/ excel-range-copyfrom-skipblanks-after.png)
+`transpose` determines whether the data is algebraically transposed into the source location. A transposed range has its rows and columns switched; flipping the cells along the main diagonal. 
+
 
 ## See also
 
