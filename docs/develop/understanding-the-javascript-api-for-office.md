@@ -28,70 +28,77 @@ For more details around the Office.js CDN, including how versioning and backward
 
 **Applies to:** All add-in types
 
-Your code must not call any Office.js APIs until the library is fully loaded. There are two events that your code can handle to ensure that the library is loaded. They are described in the sections below. We recommend that you use the newer, more flexible, `Office.onReady`. But the older `Office.initialize` is still supported. The main differences between them:
+Your add-in will often have start-up logic to do things such as:
 
-- You can assign only one handler to `Office.initialize`. But you can assign multiple handlers, in different places in your code, to `Office.onReady`.
+- Check that the user's version of Office will support all the Office APIs that your code calls
 
-- The `Office.initialize` event fires only once: at the end of the internal process in which Office.js initializes itself. And it fires immediately after the internal process ends. If the code in which you assign a handler to the event executes too long after the event fires, then your handler doesn't run. As a practical matter, this means that you must assign the handler as virtually the first thing your custom script does. The `Office.onReady` event fires when `Office.initialize` does but it also fires, in effect, whenever another handler is assigned to it. For example, you could have a handler with custom initialization logic assigned to `Office.onReady` as soon as your custom script loads (in, for example, an Immediately Invoked Function Expression). But you could also have a button in the task pane, whose script assigns another handler to `Office.onReady`. If so, the second handler runs when the button is clicked.
+- Ensure the existence of certain artifacts, such as worksheet with a specific name
 
-- The `Office.onReady` event has a default handler that returns a Promise object. This gives you an alternative way of responding to the event. See **Initialize with Office.onReady** below.
+- Prompting the user to select some cells in Excel, and then inserting a chart initialized with those selected values
 
-- Your code *must* assign some handler to `Office.initialize` although it can be a function that does nothing. See **Initialize with Office.initialize** below. You are not required to assign anything to `Office.onReady`.
+- Establish bindings
+
+- Use the Office dialog API to prompt the user for default add-in settings values
+
+But your start-up code must not call any Office.js APIs until the library is fully loaded. There are two ways that your code can ensure that the library is loaded. They are described in the sections below. We recommend that you use the newer, more flexible, technique, calling `Office.onReady()`. But the older technique, assigning a handler to `Office.initialize`, is still supported. See also **Major differences between Office.initialize and Office.onReady()** below.
 
 For more details about the sequence of events when an add-in is initialized, see [Loading the DOM and runtime environment](loading-the-dom-and-runtime-environment.md).
 
-### Initialize with Office.onReady
+### Initialize with Office.onReady()
 
-`Office.onReady` fires first when the Office.js library is fully loaded and ready for user interaction. You can use the `Office.onReady` event handler to implement common add-in initialization scenarios, such as prompting the user to select some cells in Excel, and then inserting a chart initialized with those selected values. You can also use the handler to initialize other custom logic for your add-in, such as establishing bindings, prompting for default add-in settings values, and so on. For example, the following handler checks to see that the user's version of Excel supports all the APIs that the add-in might call.
+`Office.onReady()` is an asynchronous method that returns a Promise object while it checks to see if the Office.js library is fully loaded. When, and only when, the library is loaded, it resolves the Promise as an object that specifies the Office host application (Excel, Word, etc) and the platform (Windows, Mac, Office Online, etc.). If the library is already loaded when `Office.onReady()` is called, then the Promise resolves immediately.
 
-```js
-Office.onReady = function () {
-    if (!Office.context.requirements.isSetSupported('ExcelApi', '1.7')) {
-        console.log("Sorry, this add-in only works with newer versions of Excel.");
-    }
-};
-```
-
-If you are using additional JavaScript frameworks that include their own initialization handler or tests, these should be placed within the `Office.onReady` event. For example, [JQuery's](https://jquery.com) `$(document).ready()` function would be referenced as follows:
+One way to call `Office.onReady()` is to pass it a callback method. Here's an example:
 
 ```js
-Office.onReady = function () {
-    // Office is ready
-    $(document).ready(function () {
-        // The document is ready
-    });
-  };
+Office.onReady(function(info) {
+    console.log(`Office.js is now ready in ${info.host} on ${info.platform}`);
+});
 ```
 
-If you prefer, you can call the default handler for `Office.onReady` and respond to the event when the Promise is resolved. This is the syntax in JavaScript:
+Alternatively, you can chain a `then()` method to the call of `Office.onReady()`, instead of passing a callback. For example, the following checks to see that the user's version of Excel supports all the APIs that the add-in might call.
 
 ```js
 Office.onReady()
     .then(function() {
-        console.log("Office is now ready");
+        if (!Office.context.requirements.isSetSupported('ExcelApi', '1.7')) {
+            console.log("Sorry, this add-in only works with newer versions of Excel.");
+        }
     });
 ```
 
-Here is the same example using TypeScript:
+Here is the same example using the `async` and `await` keywords in TypeScript:
 
 ```ts
 (async () => {
     await Office.onReady();
-    console.log("Office is now ready!");
+        if (!Office.context.requirements.isSetSupported('ExcelApi', '1.7')) {
+            console.log("Sorry, this add-in only works with newer versions of Excel.");
+        }
 })();
 ```
 
-> [!NOTE]
-> Even if you use `Office.onReady`, you must still assign some function to  `Office.initialize`, even if it is a function that does nothing. See **Initialize with Office.initialize** below. 
+If you are using additional JavaScript frameworks that include their own initialization handler or tests, these should be placed within the response to `Office.onReady()`. For example, [JQuery's](https://jquery.com) `$(document).ready()` function would be referenced as follows:
+
+```js
+Office.onReady(function() {
+    // Office is ready
+    $(document).ready(function () {
+        // The document is ready
+    });
+});
+```
 
 ### Initialize with Office.initialize
 
-`Office.initialize` fires when the Office.js library is fully loaded and ready for user interaction. You can use the `Office.initialize` event handler to implement common add-in initialization scenarios, such as prompting the user to select some cells in Excel, and then inserting a chart initialized with those selected values. You can also use the handler to initialize other custom logic for your add-in, such as establishing bindings, prompting for default add-in settings values, and so on.
-
-At a minimum, the initialize event assignment would look like the following example, in which a function that does nothing is assigned:
+An initialize event fires when the Office.js library is fully loaded and ready for user interaction. You can assign a handler to `Office.initialize` that implements your initialization logic. The following is an example that checks to see that the user's version of Excel supports all the APIs that the add-in might call.
 
 ```js
-Office.initialize = function () { };
+Office.initialize = function () {
+    if (!Office.context.requirements.isSetSupported('ExcelApi', '1.7')) {
+        console.log("Sorry, this add-in only works with newer versions of Excel.");
+    }
+};
 ```
 
 If you are using additional JavaScript frameworks that include their own initialization handler or tests, these should be placed within the `Office.initialize` event. For example, [JQuery's](https://jquery.com) `$(document).ready()` function would be referenced as follows:
@@ -104,11 +111,6 @@ Office.initialize = function () {
     });
   };
 ```
-
-All pages within an Office Add-ins are required to assign an event handler to the `Office.initialize` event.
-If you fail to assign an event handler, your add-in may raise an error when it starts. Also, if a user attempts to use your add-in with an Office Online web client, such as Excel Online, PowerPoint Online, or Outlook Web App, it will fail to run. If you don't need any initialization code, then the body of the function you assign to `Office.initialize` can be empty, as it is in the first example above.
-
-#### Initialization reason
 
 For task pane and content add-ins, `Office.initialize` provides an additional _reason_ parameter. This parameter can be used to determine how an add-in was added to the current document. You can use this to provide different logic for when an add-in is first inserted versus when it already existed within the document.
 
@@ -123,14 +125,26 @@ Office.initialize = function (reason) {
  };
 ```
 
-For more information, see [Office.initialize Event](https://dev.office.com/reference/add-ins/shared/office.initialize) and [InitializationReason Enumeration](https://dev.office.com/reference/add-ins/shared/initializationreason-enumeration). 
+For more information, see [Office.initialize Event](https://dev.office.com/reference/add-ins/shared/office.initialize) and [InitializationReason Enumeration](https://dev.office.com/reference/add-ins/shared/initializationreason-enumeration).
+
+### Major differences between Office.initialize and Office.onReady()
+
+- You can assign only one handler to `Office.initialize` and it is called, only once, by the Office infrastructure. But you can call `Office.onReady()` in different places in your code and use different callbacks. For example, your code could call `Office.onReady()` as soon as your custom script loads (in, for example, an Immediately Invoked Function Expression) with a callback that runs initialization logic. But you could also have a button in the task pane, whose script calls `Office.onReady()` with a different callback. If so, the second callback runs when the button is clicked.
+
+- The `Office.initialize` event fires at the end of the internal process in which Office.js initializes itself. And it fires immediately after the internal process ends. If the code in which you assign a handler to the event executes too long after the event fires, then your handler doesn't run. For example, if you are using the WebPack task manager, it might configure the add-in's home page to load polyfill files after it loads Office.js but before it loads your custom JavaScript. By the time your script loads and assigns the handler, the initialize event has already happened. But it is never "too late" to call `Office.onReady()`. If the initialize event has already happened, the callback runs immediately.
+
+> [!NOTE]
+> Even if you have no start-up logic, it is a good practice to either call `Office.onReady()` or assign an empty function to `Office.initialize` when your add-in JavaScript loads, because some Office host and platform combinations won't load the task pane until one of these happens. The following line is often used:
+>
+>```js
+>Office.initialize = function () {};
+>```
 
 ## Office JavaScript API object model
 
 Once initialized, the add-in can interact with the host (e.g. Excel, Outlook). The [Office JavaScript API object model](/office-javascript-api-object-model.md)) page has more details on specific usage patterns. There is also detailed reference documentation for both [shared APIs](https://dev.office.com/reference/add-ins/javascript-api-for-office) and specific hosts.
 
 ## API support matrix
-
 
 This table summarizes the API and features supported across add-in types (content, task pane, and Outlook) and the Office applications that can host them when you specify the Office host applications your add-in supports by using the [1.1 add-in manifest schema and features supported by v1.1 JavaScript API for Office](update-your-javascript-api-for-office-and-manifest-schema-version.md).
 
