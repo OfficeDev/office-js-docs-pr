@@ -592,7 +592,8 @@ Excel.run(function (context) {
 
 ![Data in Excel after range’s copy method has been run.](../images/excel-range-copyfrom-skipblanks-after.png)
 
-`transpose` determines whether the data is algebraically transposed into the source location. A transposed range has its rows and columns switched; flipping the cells along the main diagonal. 
+`transpose` determines whether or not the data is transposed, meaning its rows and columns are switched, into the source location. 
+A transposed range is flipped along the main diagonal, so rows **1**, **2**, and **3** will become columns **A**, **B**, and **C**. 
 
 
 ## See also
