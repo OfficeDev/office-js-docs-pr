@@ -538,7 +538,7 @@ Excel.run(function (context) {
 > If you are using TypeScript or your code editor uses TypeScript type definition files for Intellisense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
 
 Range’s copyFrom function replicates the copy-and-paste behavior of the Excel UI. The range object copyFrom is called on is the destination. 
-The range argument is the source. The following code sample copies the data from **A1:E1** into the range starting at **G1** (which ends up pasting into **G1:K1**).
+The range argument supplied to copyFrom is the source. The following code sample copies the data from **A1:E1** into the range starting at **G1** (which ends up pasting into **G1:K1**).
 
 ```js
 Excel.run(function (context) {
