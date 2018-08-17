@@ -531,6 +531,42 @@ Excel.run(function (context) {
 
 ![Data in Excel after format is set](../images/excel-ranges-format-numbers.png)
 
+## Copy and Paste
+
+> [!NOTE]
+> The copyFrom function is currently available only in public preview (beta). To use this features, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> If you are using TypeScript or your code editor uses TypeScript type definition files for Intellisense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+
+Range’s copyFrom function replicates the copy-and-paste behavior of the Excel UI. The range object copyFrom is called on is the destination. 
+The range argument is the source. The following code sample copies the data from **A1:E1** into the range starting at **G1** (which ends up pasting into **G1:K1**).
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    // copy a range starting at a single cell destination
+    sheet.getRange("G1").copyFrom("A1:E1");
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+Range.copyFrom has three optional parameters, `copyType`, `skipBlanks`, and `transpose`. 
+These respectively determine what information gets copied from the range, whether blank cells in the source are ignored, and if the result should be transposed. 
+
+The following code example shows the values at range **A1:E1** being transposed onto **G1** without any blanks copied.
+
+```js
+Excel.run(function (context) {
+        var sheet = context.workbook.worksheets.getItem("Sample");
+        // transpose a horizontal range of data into a vertical range, 
+        // only copying the values and skipping blanks
+        sheet.getRange("G1").copyFrom("A1:E1",
+            “Values”,
+            true, // skipBlanks
+            true); // transpose
+        return context.sync();
+    }).catch(errorHandlerFunction);
+```
+
 ## See also
 
 - [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
