@@ -534,11 +534,13 @@ Excel.run(function (context) {
 ## Copy and Paste
 
 > [!NOTE]
-> The copyFrom function is currently available only in public preview (beta). To use this features, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> The copyFrom function is currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 > If you are using TypeScript or your code editor uses TypeScript type definition files for Intellisense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
 
 Range’s copyFrom function replicates the copy-and-paste behavior of the Excel UI. The range object copyFrom is called on is the destination. 
-The range argument supplied to copyFrom is the source. The following code sample copies the data from **A1:E1** into the range starting at **G1** (which ends up pasting into **G1:K1**).
+The range argument supplied to copyFrom is the source. 
+
+The following code sample copies the data from **A1:E1** into the range starting at **G1** (which ends up pasting into **G1:K1**).
 
 ```js
 Excel.run(function (context) {
