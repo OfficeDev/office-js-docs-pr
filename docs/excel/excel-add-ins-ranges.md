@@ -585,9 +585,13 @@ Excel.run(function (context) {
 ```
 
 *Before the preceeding function has been run.*
+
 ![Data in Excel before range’s copy method has been run.](../images/excel-range-copyfrom-skipblanks-before.png)
+
 *After the preceeding function has been run.*
-![Data in Excel after range’s copy method has been run.](../images/ excel-range-copyfrom-skipblanks-after.png)
+
+![Data in Excel after range’s copy method has been run.](../images/excel-range-copyfrom-skipblanks-after.png)
+
 `transpose` determines whether the data is algebraically transposed into the source location. A transposed range has its rows and columns switched; flipping the cells along the main diagonal. 
 
 
