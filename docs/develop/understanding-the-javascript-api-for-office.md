@@ -69,7 +69,7 @@ Office.onReady()
 
 Here is the same example using the `async` and `await` keywords in TypeScript:
 
-```ts
+```typescript
 (async () => {
     await Office.onReady();
         if (!Office.context.requirements.isSetSupported('ExcelApi', '1.7')) {
