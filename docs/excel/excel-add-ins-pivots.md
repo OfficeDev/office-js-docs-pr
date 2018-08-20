@@ -13,8 +13,6 @@ PivotTables streamline larger data sets. They allow the quick manipulation of gr
 If you are unfamiliar with the functionality of PivotTables, consider exploring them as an end-user. 
 See [Create a PivotTable to analyze worksheet data](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) for a good primer on these tools. 
 
-<!--I don't think you can link to office-js-docs/reference because it's going away; see office-js-docs-reference, and link these to the docs.microsoft.com versions, not to the repo (unless there's something I don't know about this-->
-
 This article provides code samples for common scenarios. The [Excel OpenSpec](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec/reference/excel) provides full reference documentation for this preview feature. 
 
 To further your understanding of the PivotTable API, see [**PivotTable**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/pivottable.md) and [**PivotTableCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/pivottablecollection.md).
