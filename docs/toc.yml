@@ -409,20 +409,31 @@
   items:
   - name: Office Add-in manifest reference
     href: https://docs.microsoft.com/javascript/office/manifest/allowsnapshot?view=office-js
+    displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
   - name: Office JavaScript API
     href: https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js
+    displayName: Excel, Word, Outlook, Visio, OneNote
   - name: Excel JavaScript API
     href: https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js
+    displayName: Excel
   - name: OneNote JavaScript API
     href: https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js
+    displayName: OneNote
   - name: Outlook JavaScript API
     href: https://docs.microsoft.com/javascript/office/requirement-sets/outlook-api-requirement-sets?view=office-js
+    displayName: Outlook
   - name: Visio JavaScript API
     href: https://docs.microsoft.com/javascript/office/overview/visio-javascript-reference-overview?view=office-js
+    displayName: Visio
   - name: Word JavaScript API
     href: https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js
+    displayName: Word
+  - name: Shared API
+    href: https://docs.microsoft.com/en-us/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js
+    displayName: PowerPoint, Project
   - name: API open specifications
     href: https://docs.microsoft.com/javascript/office/openspec?view=office-js
+    displayName: Excel, Word
 
 - name: Resources
   href: resources/resources-links-help.md
