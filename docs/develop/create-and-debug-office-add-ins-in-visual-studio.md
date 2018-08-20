@@ -87,7 +87,7 @@ Before you start the solution, verify that Visual Studio will open the host appl
 ### To open the property pages of a project
 
 
-1. In  **Solution Explorer**, choose the project name.
+1. In  **Solution Explorer**, choose the basic add-in project (not the Web project).
     
 2. On the menu bar, choose  **View**,  **Properties Window**.
     
