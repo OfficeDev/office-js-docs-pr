@@ -407,28 +407,23 @@
 
 - name: Reference
   items:
-  - name: Office Add-in Manifest
-    href: https://dev.office.com/reference/add-ins/manifest/allowsnapshot
-    displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
+  - name: Office Add-in manifest reference
+    href: https://docs.microsoft.com/javascript/office/manifest/allowsnapshot?view=office-js
   - name: Office JavaScript API
-    href: https://dev.office.com/reference/add-ins/javascript-api-for-office
-    displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
+    href: https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js
   - name: Excel JavaScript API
-    href: https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview
-    displayName: Excel
-  - name: Word JavaScript API
-    href: https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview
-    displayName: Word
+    href: https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js
   - name: OneNote JavaScript API
-    href: https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference
-    displayName: OneNote
+    href: https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js
   - name: Outlook JavaScript API
-    href: https://dev.office.com/reference/add-ins/outlook/tutorial-api-requirement-sets
-    displayName: Outlook
+    href: https://docs.microsoft.com/javascript/office/requirement-sets/outlook-api-requirement-sets?view=office-js
+  - name: Visio JavaScript API
+    href: https://docs.microsoft.com/javascript/office/overview/visio-javascript-reference-overview?view=office-js
+  - name: Word JavaScript API
+    href: https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js
   - name: API open specifications
-    href: https://dev.office.com/reference/add-ins/openspec
-    displayName: Excel, Word
-
+    href: https://docs.microsoft.com/javascript/office/openspec?view=office-js
+    
 - name: Resources
   href: resources/resources-links-help.md
-  displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
+
