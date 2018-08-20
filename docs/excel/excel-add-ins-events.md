@@ -139,7 +139,7 @@ Turning events off is useful when performance is critical or when editing multip
 
 The following code sample shows how to toggle events on and off.
 
-```ts
+```typescript
 async function toggleEvents() {
     await Excel.run(async (context) => {
         context.runtime.load("enableEvents");
