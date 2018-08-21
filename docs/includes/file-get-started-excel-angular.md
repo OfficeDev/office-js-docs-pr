@@ -46,7 +46,6 @@ An add-in's manifest file defines its settings and capabilities.
     - **What do you want to name your add-in?:** `My Office Add-in`
     - **Which Office client application would you like to support?:** `Excel`
 
-
     After you complete the wizard, a manifest file and resource file are available for you to build your project.
 
     ![Yeoman generator](../images/yo-office.png)
