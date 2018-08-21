@@ -150,7 +150,7 @@ Office.Preview.StartCustomFunctions();
 ```
 
 ## Handling errors
-Error handling for custom functions is the same as [error handling for the Excel JavaScript API at large](./excel-add-ins-error-handling). Generally, you will use `.catch` to handle errors. The code below gives an example of `.catch`. 
+Error handling for custom functions is the same as [error handling for the Excel JavaScript API at large](./excel-add-ins-error-handling.md). Generally, you will use `.catch` to handle errors. The code below gives an example of `.catch`. 
 
 ```js
 function getComment(x) {
