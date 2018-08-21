@@ -149,6 +149,25 @@ You can also use the following syntax:
 Office.Preview.StartCustomFunctions();
 ```
 
+## Handling errors
+Error handling for custom functions is the same as [error handling for the Excel JavaScript API at large](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/excel-add-ins-error-handling). Generally, you will use `.catch` to handle errors. The code below gives an example of `.catch()`. 
+
+```js
+function getComment2(x: number): Promise<string> {
+    var url = "https://jsonplaceholder.typicode.com/comments/" + x; //this delivers a section of lorem ipsum from the jsonplaceholder API
+    return fetch(url)
+        .then(function (data) {
+            return data.json()
+        })
+        .then((json) => {
+            return json.body;
+        })
+        .catch(function (error) {
+            throw error;
+        })
+}
+```
+
 ## Synchronous and asynchronous functions
 
 The function `ADD42` above is synchronous with respect to Excel (designated by setting the option `"sync": true` in the JSON file). Synchronous functions offer fast performance because they run in the same process as Excel and they run in parallel during multithreaded calculation.   
