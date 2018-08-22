@@ -47,7 +47,7 @@ Use Git to contribute substantive changes, such as:
 ### To Contribute using Git
 
 1. If you don't have a GitHub account, set one up at [GitHub](https://github.com/join). 
-2. After you have an account, install Git on your computer. Follow the steps in [Setting up Git Tutorial](https://help.github.com/articles/set-up-git/).
+2. After you have an account, install Git on your computer. Follow the steps in the [Set up Git] tutorial.
 3. To submit a pull request using Git, follow the steps in [Use GitHub, Git, and this repository](#use-github-git-and-this-repository).
 4. You will be asked to sign the Contributor's License Agreement if you are:
 
@@ -67,7 +67,7 @@ Pull requests are typically reviewed within 10 business days.
 ### To set up your fork of the repository
 
 1.	Set up a GitHub account so you can contribute to this project. If you haven't done this, go to [GitHub](https://github.com/join) and do it now.
-2.	Install Git on your computer. Follow the steps in the [Setting up Git Tutorial] [Set Up Git].
+2.	Install Git on your computer. Follow the steps in the [Set up Git] tutorial.
 3.	Create your own fork of this repository. To do this, at the top of the page,  choose the **Fork** button.
 4.	Copy your fork to your computer. To do this, open Git Bash. At the command prompt enter:
 
@@ -170,8 +170,7 @@ Congratulations, you have successfully contributed to the project!
 
 ### Markdown
 
-All of the articles in this repository use Markdown. A complete introduction (and listing of all the syntax) can be found at [Markdown Home](http://daringfireball.net/projects/markdown/ 
-).
+All of the articles in this repository use Markdown. A complete introduction (and listing of all the syntax) can be found at [Daring Fireball - Markdown].
  
 ## FAQ
 
@@ -205,6 +204,6 @@ Pull requests are typically reviewed within 10 business days.
 
 [GitHub Home]: http://github.com
 [GitHub Help]: http://help.github.com/
-[Set Up Git]: http://help.github.com/win-set-up-git/
-[Markdown Home]: http://daringfireball.net/projects/markdown/
+[Set up Git]: https://help.github.com/articles/set-up-git/
+[Daring Fireball - Markdown]: http://daringfireball.net/projects/markdown/
 [Daring Fireball]: http://daringfireball.net/
