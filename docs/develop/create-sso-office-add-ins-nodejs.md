@@ -29,9 +29,10 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 1. Clone or download the repo at [Office Add-in NodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso). 
 
     > [!NOTE]
-    > There are two versions of the sample:  
+    > There are three versions of the sample:  
     > * The **Before** folder is a starter project. The UI and other aspects of the add-in that are not directly connected to SSO or authorization are already done. Later sections of this article walk you through the process of completing it. 
     > * The **Completed** version of the sample is just like the add-in that you would have if you completed the procedures of this article, except that the completed project has code comments that would be redundant with the text of this article. To use the completed version, just follow the instructions in this article, but replace "Before" with "Completed" and skip the sections **Code the client side** and **Code the server** side.
+    > * The **Completed Multitenant** version is a completed sample that supports multitenancy. Explore this sample if you intend to support Microsoft accounts from different domains with SSO.
 
 2. Open a Git bash console in the **Before** folder.
 
