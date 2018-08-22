@@ -27,7 +27,7 @@ Use GitHub to contribute to this documentation without having to clone the repo 
 ### To Contribute using GitHub
 
 1. Find the article you want to contribute to on GitHub.
-2. Once you are on the article in GitHub, sign in to GitHub (get a free account [Join GitHub](https://github.com/join).
+2. Once you are on the article in GitHub, sign in to GitHub (get a free account [Join GitHub](https://github.com/join)).
 3. Choose the **pencil icon** (edit the file in your fork of this project) and make your changes in the **<>Edit file** window. 
 4. Scroll to the bottom and enter a description.
 5. Choose **Propose file change**>**Create pull request**.
@@ -52,7 +52,7 @@ Use Git to contribute substantive changes, such as:
 4. You will be asked to sign the Contributor's License Agreement if you are:
 
     * A member of the Microsoft Open Technologies group.
-    * A contributors who doesn't work for Microsoft.
+    * A contributor who doesn't work for Microsoft.
 
 As a community member, you must sign the Contribution License Agreement (CLA) before you can contribute large submissions to a project. You only need to complete and submit the documentation once. Carefully review the document. You may be required to have your employer sign the document.
 
@@ -201,7 +201,7 @@ Pull requests are typically reviewed within 10 business days.
 ## More resources
 
 * To learn more about Markdown, go to the Markdown creator's site [Daring Fireball].
-* To learn more about using Git and GitHub, first check out the [GitHub Help section] [GitHub Help].
+* To learn more about using Git and GitHub, first check out the [GitHub Help].
 
 [GitHub Home]: http://github.com
 [GitHub Help]: http://help.github.com/
