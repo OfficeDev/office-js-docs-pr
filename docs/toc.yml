@@ -244,6 +244,9 @@
       - name: Events
         href: excel/excel-add-ins-events.md
         displayName: Excel
+      - name: PivotTables
+        href: excel/excel-add-ins-pivottables.md
+        displayName: Excel
       - name: Ranges
         href: excel/excel-add-ins-ranges.md
         displayName: Excel
