@@ -276,7 +276,7 @@ You can create the JSON object that contains optional parameters inline, or by c
 For example, the syntax for calling the [Document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) method with optional parameters inline looks like this:
 
 ```js
- Office.context.document.setSelectedDataAsync(data, {coercionType: 'coercionType', asyncContext:' asyncContext},callback);
+ Office.context.document.setSelectedDataAsync(data, {coercionType: 'coercionType', asyncContext: 'asyncContext'},callback);
 
 ```
 
