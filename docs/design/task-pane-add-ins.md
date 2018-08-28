@@ -1,6 +1,6 @@
 ---
 title: Task panes in Office Add-ins
-description: ''
+description: Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source.
 ms.date: 12/04/2017
 ---
 
@@ -27,7 +27,7 @@ Task panes are interface surfaces that typically appear on the right side of the
 
 The following images show the various task pane sizes with the Office ribbon at a 1366x768 resolution. For Excel, additional vertical space is required to accommodate the formula bar.  
 
-*Figure 2. Office 2016 desktop task pane sizes*
+*Figure 2. Office desktop task pane sizes*
 
 ![Image displaying the desktop task pane sizes at 1366x768](../images/add-in-taskpane-sizes-desktop.png)
 

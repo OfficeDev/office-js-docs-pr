@@ -75,12 +75,12 @@ For example, if you want to find participants who are familiar with GitHub, to f
 
 If you are planning to test a live build of your add-in, the following questions can screen for users who will be able to do this. 
 
-**This test requires you to have Microsoft PowerPoint 2016. Do you have PowerPoint 2016?**  
+**This test requires you to have the latest version of Microsoft PowerPoint. Do you have the latest version of PowerPoint?**  
  a.	Yes [*Must select*]  
  b.	No [*Reject*]  
  c.	I don’t know [*Reject*]  
 
-**This test requires you to install a free add-in for PowerPoint 2016, and create a free account to use it. Are you willing to install an add-in and create a free account?**  
+**This test requires you to install a free add-in for PowerPoint, and create a free account to use it. Are you willing to install an add-in and create a free account?**  
  a.	Yes [*Must select*]  
  b.	No [*Reject*]  
 
@@ -100,13 +100,13 @@ For more information, see [Writing Great Tasks.](http://help.usertesting.com/cus
 
 ## 6. Create a prototype to match the tasks and questions
  
-You can either test your live add-in, or you can test a prototype. Keep in mind that if you want to test the live add-in, you need to screen for participants that have Office 2016, are willing to install the add-in, and are willing to sign up for an account (unless you have logon credentials to provide them.) You'll then need to make sure that they successfully install your add-in. 
+You can either test your live add-in, or you can test a prototype. Keep in mind that if you want to test the live add-in, you need to screen for participants that have the latest version of Office, are willing to install the add-in, and are willing to sign up for an account (unless you have logon credentials to provide them.) You'll then need to make sure that they successfully install your add-in. 
 
 On average, it takes about 5 minutes to walk users through how to install an add-in. The following is an example of clear, concise installation steps. Adjust the steps based on the specifics of your test.
 
-**Please install the (insert your add-in name here) add-in for PowerPoint 2016, using the following instructions:** 
+**Please install the (insert your add-in name here) add-in for PowerPoint, using the following instructions:** 
 
-1. Open Microsoft PowerPoint 2016.
+1. Open Microsoft PowerPoint.
 2. Select **Blank Presentation.**
 3. Go to **Insert > My Add-ins.**
 5. In the popup window, choose **Store.**
