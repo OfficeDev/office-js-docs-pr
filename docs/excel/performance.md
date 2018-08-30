@@ -157,6 +157,33 @@ Excel.run(async (ctx) => {
 > [!NOTE]
 > You can conveniently convert a Table object to a Range object by using the [Table.convertToRange()](https://dev.office.com/reference/add-ins/excel/table#converttorange) method.
 
+## Enable and disable events
+
+> [!NOTE]
+> This feature is currently available only in public preview (beta). To use it, you must reference the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+
+Some apps do not require handling events. This could be the pattern for the entire app or during batch-edits of multiple entities when events are only needed after the batch is done. 
+These scenarios benefit from the performance boost given by turning off events. 
+Events are turned on and off at the [runtime](https://docs.microsoft.com/en-us/javascript/api/excel/excel.runtime?view=office-js) level. 
+The `enableEvents` property determines if events are fired and their handlers are activated. 
+
+The following code sample shows how to toggle events on and off.
+
+```js
+Excel.run(async (context) => {
+	context.runtime.load("enableEvents");
+	await context.sync();
+	var eventBoolean = !context.runtime.enableEvents
+	context.runtime.enableEvents = eventBoolean;
+	if (eventBoolean) {
+		console.log("Events are currently on.");
+	} else {
+		console.log("Events are currently off.");
+	}
+	await context.sync();
+})
+```
+
 ## See also
 
 - [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
