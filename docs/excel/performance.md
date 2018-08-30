@@ -162,8 +162,9 @@ Excel.run(async (ctx) => {
 > [!NOTE]
 > This feature is currently available only in public preview (beta). To use it, you must reference the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
-Some apps do not require handling events. This could be the pattern for the entire app or during batch-edits of multiple entities when events are only needed after the batch is done. 
-These scenarios benefit from the performance boost given by turning off events. 
+Some scenarios benefit from the performance boost given by turning off events. 
+Your app might never need to receive events, or it could ignore events while performing batch-edits of multiple entities. 
+
 Events are turned on and off at the [runtime](https://docs.microsoft.com/en-us/javascript/api/excel/excel.runtime?view=office-js) level. 
 The `enableEvents` property determines if events are fired and their handlers are activated. 
 
