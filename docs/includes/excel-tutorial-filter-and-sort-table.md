@@ -95,7 +95,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 7. Replace `TODO1` with the following code. Note:
    - The code creates an array of `SortField` objects which has just one member since the add-in only sorts on the Merchant column.
    - The `key` property of a `SortField` object is the zero-based index of the column to sort-on.
-   - The `sort` member of a `Table` is a `TableSort` object, not a method. The `SortField`s are passed the `TableSort` object's `apply` method.
+   - The `sort` member of a `Table` is a `TableSort` object, not a method. The `SortField`s are passed to the `TableSort` object's `apply` method.
 
     ```js
     const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -115,7 +115,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 1. If the Git bash window, or Node.JS-enabled system prompt, from the previous stage tutorial is still open, enter Ctrl-C twice to stop the running web server. Otherwise, open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
 
      > [!NOTE]
-     > Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process in so that you can get a prompt to enter the build command. After the build, you restart the server. The next few steps carry out this process.
+     > Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process so that you can get a prompt to enter the build command. After the build, you restart the server. The next few steps carry out this process.
 
 1. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used under-the-hood by Excel to run Excel add-ins).
 2. Run the command `npm start` to start a web server running on localhost.
