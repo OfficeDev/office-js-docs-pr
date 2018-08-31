@@ -159,7 +159,7 @@ Excel.run(async (ctx) => {
 
 ## Enable and disable events
 
-You can disable events to improve performance. 
+Performance of an add-in may be improved by disabling events. 
 A code sample showing how to enable and disable events is in the [Work with Events](excel-add-ins-events.md#enable-and-disable-events) article.
 
 ## See also
