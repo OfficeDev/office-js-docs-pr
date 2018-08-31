@@ -136,7 +136,7 @@ function remove() {
 Some scenarios benefit from the performance boost given by turning off events. 
 Your app might never need to receive events, or it could ignore events while performing batch-edits of multiple entities. 
 
-Events are turned on and off at the [runtime](https://docs.microsoft.com/en-us/javascript/api/excel/excel.runtime?view=office-js) level. 
+Events are turned on and off at the [runtime](https://docs.microsoft.com/javascript/api/excel/excel.runtime) level. 
 The `enableEvents` property determines if events are fired and their handlers are activated. 
 
 The following code sample shows how to toggle events on and off.
