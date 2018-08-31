@@ -159,10 +159,8 @@ Excel.run(async (ctx) => {
 
 ## Enable and disable events
 
-> [!NOTE]
-> This feature is currently available only in public preview (beta). To use it, you must reference the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-
-You can disable events to improve performance. A code sample demonstrating this toggle is in the [Work with Events](excel-add-ins-events.md#enable-and-disable-events) article.
+You can disable events to improve performance. 
+A code sample showing how to enable and disable events is in the [Work with Events](excel-add-ins-events.md#enable-and-disable-events) article.
 
 ## See also
 
