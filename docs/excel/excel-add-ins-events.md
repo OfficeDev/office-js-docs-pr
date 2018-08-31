@@ -142,18 +142,19 @@ The `enableEvents` property determines if events are fired and their handlers ar
 The following code sample shows how to toggle events on and off.
 
 ```js
-Excel.run(async (context) => {
+Excel.run(function (context) {
 	context.runtime.load("enableEvents");
-	await context.sync();
-	var eventBoolean = !context.runtime.enableEvents
-	context.runtime.enableEvents = eventBoolean;
-	if (eventBoolean) {
-		console.log("Events are currently on.");
-	} else {
-		console.log("Events are currently off.");
-	}
-	await context.sync();
-})
+	return context.sync()
+		.then(function () {
+			var eventBoolean = !context.runtime.enableEvents;
+			context.runtime.enableEvents = eventBoolean;
+			if (eventBoolean) {
+				console.log("Events are currently on.");
+			} else {
+				console.log("Events are currently off.");
+			}
+		}).then(context.sync);
+}).catch(errorHandlerFunction);
 ```
 
 ## See also
