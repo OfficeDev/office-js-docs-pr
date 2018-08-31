@@ -175,6 +175,68 @@ The following code samples changes the aggregation to be averages of the data.
     });
 ```
 
+## Change calculations with a ShowAsRule
+
+PivotTables, by default, aggregate the data of their row and column hierarchies independently. A `ShowAsRule` changes the data hierarchy to output values based on other items in the PivotTable.
+
+The `ShowAsRule` object has three properties:
+-	`calculation`: The type of relative calculation to apply to the data hierarchy (the default is none).
+-	`baseField`: The field within the hierarchy that has the base data before the calculation is applied. This usually has the same name as its parent hierarchy.
+-	`baseItem`: The individual item compared against the values of the base fields based on the calculation type. Not all calculations require this field.
+
+The following example sets the calculation on the **Sum of Crates Sold at Farm** to be a percentage of the column total. 
+We still want the granularity to only extend to the fruit type level, so we’ll use the **Type** row hierarchy and its underlying field. 
+The example also has **Farm** as a row hierarchy, so the farm total entries will display the percentage each farm is responsible for producing as well.
+
+``` TypeScript
+    await Excel.run(async (context) => {
+        const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+        const farmDataHierarchy: Excel.DataPivotHierarchy = pivotTable.dataHierarchies.getItem("Sum of Crates Sold at Farm");
+
+        farmDataHierarchy.load("showAs");
+        await context.sync();
+
+        // show the crates of each fruit type sold at the farm as a percentage of the column's total
+        let farmShowAs = farmDataHierarchy.showAs;
+        farmShowAs.calculation = Excel.ShowAsCalculation.percentOfColumnTotal;
+        farmShowAs.baseField = pivotTable.rowHierarchies.getItem("Type").fields.getItem("Type");
+        farmDataHierarchy.showAs = farmShowAs; 
+        farmDataHierarchy.name = "Percentage of Total Farm Sales";
+
+        await context.sync();
+    });
+```
+
+![A PivotTable showing the percentages of fruit sales relative to the grand total for both individual farms and individual fruit types within each farm.](../images/excel-pivots-showas-percentage.png)
+
+The previous example expanded the calculation to the column, relative to an individual row hierarchy. 
+When the calculation needs the calculation to relate to an individual item, you need to use the `baseItem` property. 
+
+The following example shows the `differenceFrom` calculation. It displays the difference of the farm crate sales data hierarchy entries relative to those of “A Farms”. 
+The `baseField` is **Farm**, so we see the differences between the other farms, as well as breakdowns for each type of like fruit (**Type** is also a row hierarch in this example).
+
+``` TypeScript
+    await Excel.run(async (context) => {
+        const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+        const farmDataHierarchy: Excel.DataPivotHierarchy = pivotTable.dataHierarchies.getItem("Sum of Crates Sold at Farm");
+
+        farmDataHierarchy.load("showAs");
+        await context.sync();
+
+        // show the difference between crate sales of the "A Farms" and the other farms
+        // this difference is both aggregated and shown for individual fruit types (where applicable)
+        let farmShowAs = farmDataHierarchy.showAs;
+        farmShowAs.calculation = Excel.ShowAsCalculation.differenceFrom;
+        farmShowAs.baseField = pivotTable.rowHierarchies.getItem("Farm").fields.getItem("Farm");
+        farmShowAs.baseItem = pivotTable.rowHierarchies.getItem("Farm").fields.getItem("Farm").items.getItem("A Farms");
+        farmDataHierarchy.showAs = farmShowAs;
+        farmDataHierarchy.name = "Difference from A Farms";
+        await context.sync();
+    });
+```
+
+![A PivotTable showing the differences of fruit sales between “A Farms” and the others. This shows both the difference in total fruit sales of the farms and the sales of types of fruit. If “A Farms” did not sell a particular type of fruit, “#N/A” is displayed.](../images/excel-pivots-showas-differencefrom.png)
+
 ## PivotTable layouts
 
 A PivotTable layout defines the placement of hierarchies and their data. You access the layout to determine the ranges where data is stored. 
