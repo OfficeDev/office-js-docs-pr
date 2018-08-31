@@ -95,7 +95,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 7. Replace `TODO1` with the following code. Note:
    - The code creates an array of `SortField` objects which has just one member since the add-in only sorts on the Merchant column.
    - The `key` property of a `SortField` object is the zero-based index of the column to sort-on.
-   - The `sort` member of a `Table` is a `TableSort` object, not a method. The `SortField`s are passed the `TableSort` object's `apply` method.
+   - The `sort` member of a `Table` is a `TableSort` object, not a method. The `SortField`s are passed to the `TableSort` object's `apply` method.
 
     ```js
     const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
