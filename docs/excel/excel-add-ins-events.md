@@ -14,14 +14,14 @@ Each time certain types of changes occur in an Excel workbook, an event notifica
 
 | Event | Description | Supported objects |
 |:---------------|:-------------|:-----------|
-| `onAdded` | Event that occurs when an object is added. | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection) |
-| `onDeleted` | Event that occurs when an object is deleted. | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection) |
-| `onActivated` | Event that occurs when an object is activated. | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection), [**Worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet) |
-| `onDeactivated` | Event that occurs when an object is deactivated. | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection), [**Worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet) |
-| `onChanged` | Event that occurs when data within cells is changed. | [**Worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet), [**Table**](https://dev.office.com/reference/add-ins/excel/table), [**TableCollection**](https://dev.office.com/reference/add-ins/excel/tablecollection) |
-| `onDataChanged` | Event that occurs when data or formatting within the binding is changed. | [**Binding**](https://dev.office.com/reference/add-ins/excel/binding) |
-| `onSelectionChanged` | Event that occurs when the active cell or selected range is changed. | [**Worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet), [**Table**](https://dev.office.com/reference/add-ins/excel/table), [**Binding**](https://dev.office.com/reference/add-ins/excel/binding) |
-| `onSettingsChanged` | Event that occurs when the Settings in the document are changed. | [**SettingCollection**](https://dev.office.com/reference/add-ins/excel/settingcollection) |
+| `onAdded` | Event that occurs when an object is added. | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
+| `onDeleted` | Event that occurs when an object is deleted. | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
+| `onActivated` | Event that occurs when an object is activated. | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection), [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
+| `onDeactivated` | Event that occurs when an object is deactivated. | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection), [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
+| `onChanged` | Event that occurs when data within cells is changed. | [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet), [**Table**](https://docs.microsoft.com/javascript/api/excel/excel.table), [**TableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.tablecollection) |
+| `onDataChanged` | Event that occurs when data or formatting within the binding is changed. | [**Binding**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
+| `onSelectionChanged` | Event that occurs when the active cell or selected range is changed. | [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet), [**Table**](https://docs.microsoft.com/javascript/api/excel/excel.table), [**Binding**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
+| `onSettingsChanged` | Event that occurs when the Settings in the document are changed. | [**SettingCollection**](https://docs.microsoft.com/javascript/api/excel/excel.settingcollection) |
 
 ## Preview (Beta) Events in Excel
 
@@ -133,27 +133,28 @@ function remove() {
 > [!NOTE]
 > This feature is currently available only in public preview (beta). To use it, you must reference the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
-Events are turned on and off at the [runtime](https://docs.microsoft.com/en-us/javascript/api/excel/excel.runtime?view=office-js) level. 
+The performance of an add-in may be improved by disabling events. 
+For example, your app might never need to receive events, or it could ignore events while performing batch-edits of multiple entities. 
+
+Events are enabled and disabled at the [runtime](https://docs.microsoft.com/javascript/api/excel/excel.runtime) level. 
 The `enableEvents` property determines if events are fired and their handlers are activated. 
-Turning events off is useful when performance is critical or when editing multiple entities and want to avoid firing events until you have finished.
 
 The following code sample shows how to toggle events on and off.
 
-```typescript
-async function toggleEvents() {
-    await Excel.run(async (context) => {
-        context.runtime.load("enableEvents");
-        await context.sync();
-        const eventBoolean = !context.runtime.enableEvents
-        context.runtime.enableEvents = eventBoolean;
-        if (eventBoolean) {
-            console.log("Events are currently on.");
-        } else {
-            console.log("Events are currently off.");
-        }
-        await context.sync();
-    });
-}
+```js
+Excel.run(function (context) {
+	context.runtime.load("enableEvents");
+	return context.sync()
+		.then(function () {
+			var eventBoolean = !context.runtime.enableEvents;
+			context.runtime.enableEvents = eventBoolean;
+			if (eventBoolean) {
+				console.log("Events are currently on.");
+			} else {
+				console.log("Events are currently off.");
+			}
+		}).then(context.sync);
+}).catch(errorHandlerFunction);
 ```
 
 ## See also
