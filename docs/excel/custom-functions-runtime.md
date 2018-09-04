@@ -17,11 +17,11 @@ Advantages of this new runtime include:
 
 The new runtime has two configurations: synchronous, for computation-only functions, and asynchronous, for functions which make network calls via XHR or utilize the other supported APIs, such as AsyncStorage.  
 
-## Synchronous JavaScript runtime 
+## Synchronous JavaScript runtime
 
 This runtime can be parallelized, allowing for great improvements in speed and efficiency when performing calculations.
 
-## Asynchronous JavaScript runtime 
+## Asynchronous JavaScript runtime
 
 The asynchronous JavaScript runtime is optimized for asynchronous actions that custom functions may employ, like making network calls. The asynchronous JavaScript runtime supports four APIs, which you can use in your custom functions:  
 
@@ -30,7 +30,7 @@ The asynchronous JavaScript runtime is optimized for asynchronous actions that c
 - [AsyncStorage]((internal link in the doc to the corresponding section)
 - [Dialog API]((internal link in the doc to the corresponding section)
 
-## XHR in JavaScript runtime 
+## XHR in JavaScript runtime
 
 XHR stands for XmlHttpRequest, which is a standard web API which performs HTTP requests, such as `POST`, `GET`, etc, to interact with servers. XHR in the new JavaScript runtime implements additional security measures by requiring Single Origin Policy and simple CORS.  
 
@@ -64,6 +64,7 @@ function sendWebRequest(thermometerID, data)
 ## WebSockets
 
 WebSockets is a networking protocol which creates real-time communication between a server and one or more clients. It is often used for chat applications because it allows you to read and write text simultaneously.  
+
 As you can see in the sample below, custom functions can use WebSockets. In this example, the WebSocket logs any message sent to it.  
 
 ```js
@@ -89,7 +90,7 @@ AsyncStorage can be used for storing authentication tokens and settings for reus
 
 Each add-in has its own storage partition, with a default of 5MB of storage.  
 
-The code sample below illustrates the process of getting an item from AsyncStorage: 
+The code sample below illustrates the process of getting an item from AsyncStorage:
 
 ```js
 _goGetData = async () => {
@@ -114,41 +115,41 @@ The Dialog API allows you to require user authentication through an outside reso
 The code sample below illustrates the use of the Dialog API’s displayWebDialog method.  
 
 ```js 
-// Get auth token before calling my service, a hypothetical API which will deliver a stock price based on stock ticker string, such as "MSFT." 
-async function getStock(ticker: string) { 
-    const token = await getToken(); 
-    let data = await (await fetch(https://myservice.com/?token=token&ticker= + ticker).json()); 
-    return data.price; 
-} 
- 
-async function getToken(): Promise<string> { 
-    if (_cachedToken) { 
-        return _cachedToken; 
+// Get auth token before calling my service, a hypothetical API which will deliver a stock price based on stock ticker string, such as "MSFT."
+async function getStock(ticker: string) {
+    const token = await getToken();
+    let data = await (await fetch(https://myservice.com/?token=token&ticker= + ticker).json());
+    return data.price;
+}
+
+async function getToken(): Promise<string> {
+    if (_cachedToken) {
+        return _cachedToken;
     } else {
-        return await getTokenViaDialog_AsPromise(); 
+        return await getTokenViaDialog_AsPromise();
     }
   
-// Function to display dialog window 
-function getTokenViaDialog_AsPromise() { 
-    return new Promise ((resolve, reject) => { 
-        displayWebDialog("https://www.auth.com/", { 
-   height: ’50’, 
-   width: ’50%’, 
-   hideTitle: true, 
-            onMessage: (message, dialog) => { 
-                let json = JSON.parse(message); 
-                if (json.type === "token_succeeded") { 
-                    resolve(json.value); 
-                    dialog.closeDialog(); 
-                    return; 
-                } 
-                // Otherwise, handle other messages. 
-            }, 
-            onClose: () => reject("User closed dialog"), 
+// Function to display dialog window
+function getTokenViaDialog_AsPromise() {
+    return new Promise ((resolve, reject) => {
+        displayWebDialog("https://www.auth.com/", {
+   height: ’50’,
+   width: ’50%’,
+   hideTitle: true,
+            onMessage: (message, dialog) => {
+                let json = JSON.parse(message);
+                if (json.type === "token_succeeded") {
+                    resolve(json.value);
+                    dialog.closeDialog();
+                    return;
+                }
+                // Otherwise, handle other messages.
+            },
+            onClose: () => reject("User closed dialog"),
             onRuntimeErrors: (e) => reject(e)  
-        }).catch(e => reject(e)); 
-    }); 
-} 
+        }).catch(e => reject(e));
+    });
+}
 ```
 
 For more information on the Dialog API in the new JavaScript runtime, [see the reference documentation](TO DO LINK).
