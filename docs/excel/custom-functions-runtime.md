@@ -108,8 +108,6 @@ _goGetData = async () => {
 }
 ```
 
-For more information on AsyncStorage, [see the reference documentation](TO DO LINK).  
-
 ## Dialog API
 
 The Dialog API allows you to require user authentication through an outside resource, such as Google or Facebook, before they can use your function. The Dialog API allows you to open a dialog box which prompts user sign-in.  
@@ -154,7 +152,6 @@ function getTokenViaDialog_AsPromise() {
 }
 ```
 
-For more information on the Dialog API in the new JavaScript runtime, [see the reference documentation](TO DO LINK).
 
 > [!NOTE]
 > The Dialog API in the new JavaScript runtime differs from the [current Dialog API](../develop/dialog-api-in-office-add-ins.md) which works in the WebView control runtime.  
