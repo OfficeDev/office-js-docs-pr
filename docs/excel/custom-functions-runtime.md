@@ -1,5 +1,7 @@
 ---
-TODO TBD METADATA
+ms.date: 09/04/2018
+description: 'Excel custom functions has a new JavaScript runtime' 
+title: 'Runtime for Excel Custom Function Add-ins'
 ---
 
 # Runtime for Excel custom function add-ins
@@ -7,12 +9,12 @@ TODO TBD METADATA
 Excel custom functions do not use the standard Add-ins WebView control runtime, which behaves similarly to a browser. Instead, they employ a new JavaScript runtime, which behaves more like Node.js’s runtime.  
 
 Advantages of this new runtime include:  
-- **Speed**: Multiple instances of this runtime can work in parallel. 
+- **Speed**: Multiple instances of this runtime can work in parallel.
 - **Network calls**: Through XHR, you can make individual or “streaming” batched requests to get data from the web.
 - **Authentication**: AsyncStorage allows you to store tokens and set up authentication for users of your custom functions.
 - **Modern Integration**: This runtime supports familiar technologies such as WebSockets and Dialog API.
 
-> [!NOTE] 
+> [!NOTE]
 > This new JavaScript runtime does not provide access to the Document Object Model (DOM) or support libraries like JQuery which rely on the DOM.
 
 The new runtime has two configurations: synchronous, for computation-only functions, and asynchronous, for functions which make network calls via XHR or utilize the other supported APIs, such as AsyncStorage.  
@@ -25,12 +27,12 @@ This runtime can be parallelized, allowing for great improvements in speed and e
 
 The asynchronous JavaScript runtime is optimized for asynchronous actions that custom functions may employ, like making network calls. The asynchronous JavaScript runtime supports four APIs, which you can use in your custom functions:  
 
-- [XHR](internal link in the doc to the corresponding section)
-- [WebSockets](internal link in the doc to the corresponding section)
-- [AsyncStorage]((internal link in the doc to the corresponding section)
-- [Dialog API]((internal link in the doc to the corresponding section)
+- [XHR](#xhr)
+- [WebSockets](#websockets)
+- [AsyncStorage](#asyncstorage)
+- [Dialog API](#dialog-api)
 
-## XHR in JavaScript runtime
+## XHR
 
 XHR stands for XmlHttpRequest, which is a standard web API which performs HTTP requests, such as `POST`, `GET`, etc, to interact with servers. XHR in the new JavaScript runtime implements additional security measures by requiring Single Origin Policy and simple CORS.  
 
@@ -155,4 +157,4 @@ function getTokenViaDialog_AsPromise() {
 For more information on the Dialog API in the new JavaScript runtime, [see the reference documentation](TO DO LINK).
 
 > [!NOTE]
-> The Dialog API in the new JavaScript runtime differs from the [current Dialog API](TO DO RELATIVE LINK https://docs.microsoft.com/en-us/office/dev/add-ins/develop/dialog-api-in-office-add-ins) which works in the WebView control runtime.  
+> The Dialog API in the new JavaScript runtime differs from the [current Dialog API](../develop/dialog-api-in-office-add-ins.md) which works in the WebView control runtime.  
