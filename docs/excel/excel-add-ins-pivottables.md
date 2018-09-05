@@ -49,9 +49,8 @@ The following samples show various PivotTable creation techniques.
 
 ```typescript
 await Excel.run(async (context) => {
-    // creating a PivotTable named "Farm Sales" created on the current worksheet at cell A22 with data from the range A1:E21
-	context.workbook.worksheets.getActiveWorksheet()
-		.pivotTables.add("Farm Sales", "A1:E21", "A22");
+    // creating a PivotTable named "Farm Sales" on the current worksheet at cell A22 with data from the range A1:E21
+	context.workbook.worksheets.getActiveWorksheet().pivotTables.add("Farm Sales", "A1:E21", "A22");
 
 	await context.sync();
 });
@@ -65,7 +64,8 @@ await Excel.run(async (context) => {
     // the data comes from the worksheet "DataWorksheet" across the range A1:E21
 	const rangeToAnalyze = context.workbook.worksheets.getItem("DataWorksheet").getRange("A1:E21");
 	const rangeToPlacePivot = context.workbook.worksheets.getItem("PivotWorksheet").getRange("A2");
-	context.workbook.worksheets.getItem("PivotWorksheet").pivotTables.add("Farm Sales", rangeToAnalyze, rangeToPlacePivot);
+	context.workbook.worksheets.getItem("PivotWorksheet").pivotTables.add(
+	    "Farm Sales", rangeToAnalyze, rangeToPlacePivot);
 	
 	await context.sync();
 });
