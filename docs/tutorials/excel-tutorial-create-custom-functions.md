@@ -221,5 +221,5 @@ In cell C1, run the function `=CONTOSO.STOCKPRICESTREAM("MSFT")`. You do not hav
 ## Next steps
 You’ve completed the custom functions add-in tutorial. For more information about custom functions, check out [this overview article](../excel/custom-functions-overview.md).[TODO format like Ops, make a button]
 
->[!div class-"nextstepaction"]
->[Overview of Custom Functions](../excel/custom-functions-overview.md)
+> [!div class="nextstepaction"]
+> [Overview of Custom Functions](../excel/custom-functions-overview.md)
