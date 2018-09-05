@@ -5,7 +5,7 @@ ms.date: 09/05/2018
 ms.topic: tutorial
 #Customer intent: As an add-in developer, I want to create a custom function in Excel to increase productivity. 
 ---
-
+[add team as reviewers, check for bold of ''s]
 # Create a streaming Excel custom function
 
 ## Introduction
@@ -58,7 +58,7 @@ You’ll begin this tutorial by using scaffolding tool Yeoman, which will automa
 
 5. Register your custom-functions add-in. In Excel, select **Insert > My Add-ins > Insert an Add-in**. This will bring up a list of available add-ins. Under "Developer Add-ins" you will see your add-in, under the name "Excel Custom Function". Select it to register it.
 
-6. In `index.html` in the root folder, delete and replace the script tag immediately following the `<title>` tags with the code below:
+6. In **index.html** in the root folder, delete and replace the script tag immediately following the <title> tags with the code below:
 
     ```js
     <script src="https://unpkg.com/@microsoft/office-js@1.1.9-adhoc.22/dist/custom-functions-runtime.js" type="text/javascript"></script>
@@ -67,7 +67,7 @@ You’ll begin this tutorial by using scaffolding tool Yeoman, which will automa
 ## Create a basic computational custom function
 Now that your project is set up, you’ll learn how to create a function to calculate the value of multiple shares of Microsoft stock via a simple math problem.  
 
-For the sake of this exercise, assume that Microsoft’s current stock price is $105/share. You’ll create a function which takes in the number of shares and multiples that number by 105. In the `src` folder, you will see there is a file called `customfunctions.js`. There are some pre-fabricated functions in this file like ADD42, which you will be adding to. Copy and paste the below code into `customfunctions.js`.
+For the sake of this exercise, assume that Microsoft’s current stock price is $105/share. You’ll create a function which takes in the number of shares and multiples that number by 105. In the **src** folder, you will see there is a file called **customfunctions.js**. There are some pre-fabricated functions in this file like ADD42, which you will be adding to. Copy and paste the below code into **customfunctions.js**.
 
 ```js
 function STOCKMULTIPLES(num1) {
@@ -128,7 +128,7 @@ function STOCKPRICE(ticker) {
     }
 ```
 
-Again, in order for Excel to properly run this function, you must add some metadata to the `./config/customfunctions.json` file. Note that in the below code, the option for “sync” is changed from true to false, to accommodate the asynchronous nature of this function:  
+Again, in order for Excel to properly run this function, you must add some metadata to the **./config/customfunctions.json** file. Note that in the below code, the option for “sync” is changed from true to false, to accommodate the asynchronous nature of this function:  
 
 ```json
 {
@@ -165,31 +165,31 @@ When a call is made, you may see `#GETTING_DATA` appear in a cell. Once a value 
 Copy and paste the code below into `customfunctions.js`.
 
 ```js
-function STOCKPRICESTREAM(ticker, caller){
+function STOCKPRICESTREAM(ticker, caller) {
 
     let result = 0;
     //return every second
-    setInterval(function(){
-    let xhr = new XMLHttpRequest();
-    let url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
+    setInterval(function() {
+        let xhr = new XMLHttpRequest();
+        let url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
 
-    //add handler for xhr
+        //add handler for xhr
         xhr.onreadystatechange = function() {
-        if (xhr.readyState == XMLHttpRequest.DONE) {
-
-        //return result back to Excel
-        caller.setResult(xhr.responseText);
+            if (xhr.readyState == XMLHttpRequest.DONE) {
+                //return result back to Excel
+                caller.setResult(xhr.responseText);
+            }
         }
-    }
 
-    //make request
-    xhr.open('GET', url, true);
-    xhr.send();
-        }, 1000);
-    }
+        //make request
+        xhr.open('GET', url, true);
+        xhr.send();
+
+    }, 1000);
+}
 ```
 
-Once again you’ll add to the `./config/customfunctions.json` file with the code below. Note that the “stream” option is marked as true.
+Once again you’ll add to the **./config/customfunctions.json** file with the code below. Note that the `“stream”` option is marked as `true`.
 
 Re-register this change once you have saved the file. In Excel, select **Insert > Add-ins > My Add-ins**. This will bring up a list of available add-ins. Under “Developer Add-ins" you will see your add-in, under the name “Excel Custom Function.” Select it to register it.  
 
