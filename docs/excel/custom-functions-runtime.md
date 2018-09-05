@@ -1,5 +1,5 @@
 ---
-ms.date: 09/04/2018
+ms.date: 09/05/2018
 description: 'Excel custom functions use a new JavaScript runtime, which differs from the standard Add-ins WebView control runtime.' 
 title: 'Runtime for Excel Custom Function Add-ins'
 ---

@@ -2,7 +2,7 @@
 title: #Tutorial: Make a Streaming Excel Custom Function
 description: In this tutorial, you’ll create a custom function in Excel which can perform calculations, request web data, or stream web data.  
 ms.topic: tutorial
-ms.date: 09/04/2018
+ms.date: 09/05/2018
 
 #Customer intent: As a developer, I want to create a custom function so that I can automate my work and/or perform actions in Excel with web data. 
 ---

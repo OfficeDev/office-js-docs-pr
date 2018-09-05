@@ -1,5 +1,5 @@
 ---
-ms.date: 09/04/2018
+ms.date: 09/05/2018
 description: 'Learn best practices and recommended patterns for Excel custom functions.' 
 title: 'Custom Functions' best practices'
 ---
@@ -47,6 +47,43 @@ function getTokenViaDialog_AsPromise() {
             onRuntimeErrors: (e) => reject(e)  
         }).catch(e => reject(e));
     });
+}
+```
+
+## Batching of API requests
+Instead of executing individual web requests, it is possible to batch requests using custom functions.
+
+The below gives an outline of a batching pattern you can modify for your custom function:
+
+```js
+// Current batch
+var _argumentsBatch = [];
+var _isBatchScheduled = false;
+
+// Individual requests are batched into an array
+function batchRequests(a, b, c) {
+  // Push the arguments to a batch
+  _argumentsBatch.push(arguments);
+
+  // If a batch hasn't been scheduled, schedule it after one second
+  if (!_isBatchScheduled) {
+    setTimeout(_processBatch, 1000); //milliseconds
+    _isBatchScheduled = true;
+  }
+}
+
+// Internal batch processor
+function _processBatch() {
+  // If anything needs to be batched, begin batching.
+  if (_argumentsBatch.length > 0) {
+    for (var i = 0; i < _argumentsBatch.length; i++) {
+      // Process items in the batch here
+    }
+
+    // After a batch is processed
+    _argumentsBatch = [];
+    _isBatchScheduled = false;
+  }
 }
 ```
 
