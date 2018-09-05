@@ -26,6 +26,7 @@ async function getToken(): Promise<string> {
     } else {
         return await getTokenViaDialog_AsPromise();
     }
+}
   
 // Function to display dialog window
 function getTokenViaDialog_AsPromise() {
@@ -34,15 +35,15 @@ function getTokenViaDialog_AsPromise() {
            height: ’50’,
            width: ’50%’,
            hideTitle: true,
-                    onMessage: (message, dialog) => {
-                        let json = JSON.parse(message);
-                        if (json.type === "token_succeeded") {
-                            resolve(json.value);
-                            dialog.closeDialog();
-                            return;
-                        }
-                        // Otherwise, handle other messages.
-                        },
+           onMessage: (message, dialog) => {
+                let json = JSON.parse(message);
+                    if (json.type === "token_succeeded") {
+                        resolve(json.value);
+                        dialog.closeDialog();
+                        return;
+                    }
+                // Otherwise, handle other messages.
+            },
             onClose: () => reject("User closed dialog"),
             onRuntimeErrors: (e) => reject(e)  
         }).catch(e => reject(e));

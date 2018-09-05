@@ -4,9 +4,9 @@ description: 'Excel custom functions use a new JavaScript runtime, which differs
 title: 'Runtime for Excel Custom Function Add-ins'
 ---
 
-# Runtime for Excel custom function add-ins 
+# Runtime for Excel custom function add-ins
 
-Excel custom functions do not use the standard Add-ins WebView control runtime, which behaves similarly to a browser. Instead, they employ a new JavaScript runtime, which behaves more like Node.js’s runtime.  
+Excel custom functions do not use the standard Add-ins WebView control runtime, which behaves similarly to a browser. Instead, they employ a new JavaScript runtime.  
 
 Advantages of this new runtime include:  
 - **Speed**: Multiple instances of this runtime can work in parallel.
@@ -49,13 +49,12 @@ function getTemperature(thermometerID) {
 }
 
 //Helper method that uses Office's implementation of XMLHttpRequest in the new JavaScript runtime for custom functions  
-function sendWebRequest(thermometerID, data)
-{
+function sendWebRequest(thermometerID, data) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         data.temperature=xhttp.responseText; //parsing would be needed here rather than blind assignment
-        };
+      };
     xhttp.open("GET", "https://127.0.0.1:8080/temperature.aspx", true);
     xhttp.send();  
     }
@@ -71,11 +70,11 @@ As you can see in the sample below, custom functions can use WebSockets. In this
 
 ```js
 const ws = new WebSocket('wss://bundles.office.com');
-ws.onmessage = (msg) => {
-    console.log(`Received: ${msg}`);
+ws.onmessage = (message) => {
+    console.log(`Received: ${message}`);
 };
-ws.onerror = (e) => {
-    console.err(`Failed: ${e}`);
+ws.onerror = (error) => {
+    console.err(`Failed: ${error}`);
 }
 ```
 
@@ -112,10 +111,10 @@ _goGetData = async () => {
 
 The Dialog API allows you to require user authentication through an outside resource, such as Google or Facebook, before they can use your function. The Dialog API allows you to open a dialog box which prompts user sign-in.  
 
-The code sample below illustrates the use of the Dialog API’s displayWebDialog method.  
+The code sample below illustrates the use of the Dialog API’s `displayWebDialog()` method.  
 
-```ts 
-// Get auth token before calling my service, a hypothetical API which will deliver a stock price based on stock ticker string, such as "MSFT."
+```ts
+// Get auth token before calling my service, a hypothetical API which will deliver a stock price based on stock ticker string, such as "MSFT"
 async function getStock(ticker: string) {
     const token = await getToken();
     let data = await (await fetch(https://myservice.com/?token=token&ticker= + ticker).json());
@@ -128,30 +127,30 @@ async function getToken(): Promise<string> {
     } else {
         return await getTokenViaDialog_AsPromise();
     }
+}
   
 // Function to display dialog window
 function getTokenViaDialog_AsPromise() {
     return new Promise ((resolve, reject) => {
         displayWebDialog("https://www.auth.com/", {
-   height: '50',
-   width: '50%',
-   hideTitle: true,
-            onMessage: (message, dialog) => {
-                let json = JSON.parse(message);
-                if (json.type === "token_succeeded") {
-                    resolve(json.value);
-                    dialog.closeDialog();
-                    return;
-                }
+           height: ’50’,
+           width: ’50%’,
+           hideTitle: true,
+           onMessage: (message, dialog) => {
+                let json = JSON.parse(message);
+                    if (json.type === "token_succeeded") {
+                        resolve(json.value);
+                        dialog.closeDialog();
+                        return;
+                    }
                 // Otherwise, handle other messages.
-            },
+            },
             onClose: () => reject("User closed dialog"),
             onRuntimeErrors: (e) => reject(e)  
         }).catch(e => reject(e));
     });
 }
 ```
-
 
 > [!NOTE]
 > The Dialog API in the new JavaScript runtime differs from the [current Dialog API](../develop/dialog-api-in-office-add-ins.md) which works in the WebView control runtime.  

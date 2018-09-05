@@ -238,6 +238,12 @@
         href: excel/custom-functions-overview.md
         displayName: Excel
         items:
+        - name: Excel custom functions runtime
+          href: excel/custom-functions-runtime.md
+          displayName: Excel
+        - name: Excel custom functions best practices
+          href: excel/custom-functions-best-practices
+          displayName: Excel
         - name: Excel custom functions registration JSON
           href: excel/custom-functions-json.md
           displayName: Excel
