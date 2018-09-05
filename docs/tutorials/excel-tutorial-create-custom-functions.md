@@ -29,40 +29,40 @@ In this tutorial, you will learn how to:
 You’ll begin this tutorial by using scaffolding tool Yeoman, which will automatically populate the files you need for your project.
 
 1. In your command line interface, create a scaffold of your project.  
-
-```bash
-yo office
-```
-
-![Yo Office bash prompts for custom functions](../images/yo-office-excel-cfs-stock-ticker.png)
-
-Answer the prompts as directed below:  
-- Choose a project type: `Excel Custom Funtions Add-in project (Preview: Requires the Insider channel for Excel)`
-- What do you want to name your add-in? `stock-ticker`
-
-After you complete the wizard, the generator will create the project files and install supporting Node components.  
+    
+    ```bash
+    yo office
+    ```
+    
+    ![Yo Office bash prompts for custom functions](../images/yo-office-excel-cfs-stock-ticker.png)
+    
+    Answer the prompts as directed below:  
+    - Choose a project type: `Excel Custom Funtions Add-in project (Preview: Requires the Insider channel for Excel)`
+    - What do you want to name your add-in? `stock-ticker`
+    
+    After you complete the wizard, the generator will create the project files and install supporting Node components.  
 
 2. In the root folder for your project, follow [these instructions](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) to install the self-signed certificates.
 
 3. Start a localhost instance by running the below in the command line:
 
-```bash
-npm  start
-```
+    ```bash
+    npm  start
+    ```
 
 4. In a separate git bash window, navigate to the root folder of your project. Next, sideload your project so it can be used in Excel by running the below in the command line:
 
-```bash
-npm run sideload
-```
+    ```bash
+    npm run sideload
+    ```
 
 5. Register your custom-functions add-in. In Excel, select **Insert > My Add-ins > Insert an Add-in**. This will bring up a list of available add-ins. Under "Developer Add-ins" you will see your add-in, under the name "Excel Custom Function". Select it to register it.
 
 6. In `index.html` in the root folder, delete and replace the script tag immediately following the `<title>` tags with the code below:
 
-```js
-<script src="https://unpkg.com/@microsoft/office-js@1.1.9-adhoc.22/dist/custom-functions-runtime.js" type="text/javascript"></script>
-```
+    ```js
+    <script src="https://unpkg.com/@microsoft/office-js@1.1.9-adhoc.22/dist/custom-functions-runtime.js" type="text/javascript"></script>
+    ```
 
 ## Create a basic computational custom function
 Now that your project is set up, you’ll learn how to create a function to calculate the value of multiple shares of Microsoft stock via a simple math problem.  
