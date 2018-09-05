@@ -220,4 +220,4 @@ Re-register this change once you have saved the file. In Excel, select **Insert 
 In cell C1, run the function `=CONTOSO.STOCKPRICESTREAM("MSFT")`. You do not have to specify the caller because it only serves to hold the callback function, `setResult`, which passes data form the function to Excel to update the cell value.  
 
 ## Next steps
-You’ve completed the custom functions add-in tutorial. For more information about custom functions, check out [this overview article](./custom-functions-overview.md).
+You’ve completed the custom functions add-in tutorial. For more information about custom functions, check out [this overview article](../excel/custom-functions-overview.md).
