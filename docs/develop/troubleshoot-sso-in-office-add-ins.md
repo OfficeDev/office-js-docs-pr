@@ -30,14 +30,14 @@ For examples of the error handling described in this section, see:
 
 ### 13000
 
-The [getAccessTokenAsync](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync) API is not supported by the add-in or the Office version. 
+The [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) API is not supported by the add-in or the Office version. 
 
 - The version of Office does not support SSO. The required version is Office 2016, Version 1710, build 8629.nnnn or later (the Office 365 subscription version, sometimes called “Click to Run”). You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). 
 - The add-in manifest is missing the proper [WebApplicationInfo](https://dev.office.com/reference/add-ins/manifest/webapplicationinfo) section.
 
 ### 13001
 
-The user is not signed into Office. Your code should recall the `getAccessTokenAsync` method and pass the option `forceAddAccount: true` in the [options](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync#parameters) parameter. But don't do this more than once. The user may have decided not to sign-in.
+The user is not signed into Office. Your code should recall the `getAccessTokenAsync` method and pass the option `forceAddAccount: true` in the [options](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) parameter. But don't do this more than once. The user may have decided not to sign-in.
 
 This error is never seen in Office Online. If the user's cookie expires, Office Online returns error 13006. 
 
@@ -79,7 +79,7 @@ The user triggered an operation that calls `getAccessTokenAsync` before a previo
 
 ### 13009
 
-The add-in called the `getAccessTokenAsync` method with the option `forceConsent: true`, but the add-in's manifest is deployed to a type of catalog that does not support forcing consent. Your code should recall the `getAccessTokenAsync` method and pass the option `forceConsent: false` in the [options](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync#parameters) parameter. However, the call of  `getAccessTokenAsync`  with `forceConsent: true` might itself have been an automatic response to a failed call of `getAccessTokenAsync` with `forceConsent: false`, so your code should keep track of whether `getAccessTokenAsync` with `forceConsent: false` has already been called. If it has, your code should tell the user to sign out of Office and sign-in again.
+The add-in called the `getAccessTokenAsync` method with the option `forceConsent: true`, but the add-in's manifest is deployed to a type of catalog that does not support forcing consent. Your code should recall the `getAccessTokenAsync` method and pass the option `forceConsent: false` in the [options](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) parameter. However, the call of  `getAccessTokenAsync`  with `forceConsent: true` might itself have been an automatic response to a failed call of `getAccessTokenAsync` with `forceConsent: false`, so your code should keep track of whether `getAccessTokenAsync` with `forceConsent: false` has already been called. If it has, your code should tell the user to sign out of Office and sign-in again.
 
 > [!NOTE]
 > Microsoft will not necessarily impose this restriction on any types of add-in catalogs. If it doesn't, then this error will never be seen.
@@ -103,7 +103,7 @@ For samples of the error-handling described in this section, see:
  
 In certain configurations of identity in AAD and Office 365, it is possible for some resources that are accessible with Microsoft Graph to require multifactor authentication (MFA), even when the user's Office 365 tenancy does not. When AAD receives a request for a token to the MFA-protected resource, via the on-behalf-of flow, it returns to your add-in's web service a JSON message that contains a `claims` property. The claims property has information about what further authentication factors are needed. 
 
-Your server-side code should test for this message and relay the claims value to your client-side code. You need this information in the client because Office handles authentication for SSO add-ins. The message to the client can be either an error (such as `500 Server Error` or `401 Unauthorized`) or in the body of a success response (such as `200 OK`). In either case, the (failure or success) callback of your code's client-side AJAX call to your add-in's web API should test for this response. If the claims value has been relayed, your code should recall `getAccessTokenAsync` and pass the option `authChallenge: CLAIMS-STRING-HERE` in the [options](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync#parameters) parameter. When AAD sees this string, it prompts the user for the additional factor(s) and then returns a new access token which will be accepted in the on-behalf-of flow.
+Your server-side code should test for this message and relay the claims value to your client-side code. You need this information in the client because Office handles authentication for SSO add-ins. The message to the client can be either an error (such as `500 Server Error` or `401 Unauthorized`) or in the body of a success response (such as `200 OK`). In either case, the (failure or success) callback of your code's client-side AJAX call to your add-in's web API should test for this response. If the claims value has been relayed, your code should recall `getAccessTokenAsync` and pass the option `authChallenge: CLAIMS-STRING-HERE` in the [options](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) parameter. When AAD sees this string, it prompts the user for the additional factor(s) and then returns a new access token which will be accepted in the on-behalf-of flow.
 
 ### Consent missing errors
 
