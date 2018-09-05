@@ -49,7 +49,7 @@
     displayName: Excel
   - name: Excel custom functions tutorial
     href: tutorials/excel-tutorial-create-custom-functions.md
-    displayName: Excel custom functions
+    displayName: Excel
   - name: PowerPoint add-in tutorial
     href: tutorials/powerpoint-tutorial.yml
     displayName: PowerPoint

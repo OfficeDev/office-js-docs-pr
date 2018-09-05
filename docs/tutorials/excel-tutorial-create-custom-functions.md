@@ -1,11 +1,12 @@
 ---
-title: Make a Streaming Excel Custom Function
-description: In this tutorial, you’ll create a custom function in Excel which can perform calculations, request web data, or stream web data.
+title: Excel custom function tutorial
+description: In this tutorial, you’ll create an add-in, a custom function in Excel, which can perform calculations, request web data, or stream web data.
 ms.date: 09/05/2018
 ms.topic: tutorial
+#Customer intent: As an add-in developer, I want to create a custom function in Excel to increase productivity. 
 ---
 
-# Tutorial: Create a streaming Excel custom function 
+# Create a streaming Excel custom function
 
 ## Introduction
 Custom Functions give you the power to automate processes in Excel. You can use them for something as simple as creating your own custom calculation, similar to `=SUM()` or for more complex tasks, like streaming data from the web in real-time right into your worksheet.  
@@ -218,4 +219,7 @@ Re-register this change once you have saved the file. In Excel, select **Insert 
 In cell C1, run the function `=CONTOSO.STOCKPRICESTREAM("MSFT")`. You do not have to specify the caller because it only serves to hold the callback function, `setResult`, which passes data form the function to Excel to update the cell value.  
 
 ## Next steps
-You’ve completed the custom functions add-in tutorial. For more information about custom functions, check out [this overview article](../excel/custom-functions-overview.md).
+You’ve completed the custom functions add-in tutorial. For more information about custom functions, check out [this overview article](../excel/custom-functions-overview.md).[TODO format like Ops, make a button]
+
+>[!div class-"nextstepaction"]
+>[Overview of Custom Functions](../excel/custom-functions-overview.md)
