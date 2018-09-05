@@ -1,7 +1,7 @@
 ---
 ms.date: 09/05/2018
-description: 'Learn best practices and recommended patterns for Excel custom functions.' 
-title: 'Custom Functions' best practices'
+description: Learn best practices and recommended patterns for Excel custom functions.
+title: Custom Functions' best practices
 ---
 
 # Custom Functions' best practices
