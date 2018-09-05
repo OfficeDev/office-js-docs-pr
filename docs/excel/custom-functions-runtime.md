@@ -114,7 +114,7 @@ The Dialog API allows you to require user authentication through an outside reso
 
 The code sample below illustrates the use of the Dialog API’s displayWebDialog method.  
 
-```js 
+```ts 
 // Get auth token before calling my service, a hypothetical API which will deliver a stock price based on stock ticker string, such as "MSFT."
 async function getStock(ticker: string) {
     const token = await getToken();
@@ -133,8 +133,8 @@ async function getToken(): Promise<string> {
 function getTokenViaDialog_AsPromise() {
     return new Promise ((resolve, reject) => {
         displayWebDialog("https://www.auth.com/", {
-   height: ’50’,
-   width: ’50%’,
+   height: '50',
+   width: '50%',
    hideTitle: true,
             onMessage: (message, dialog) => {
                 let json = JSON.parse(message);
