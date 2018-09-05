@@ -4,6 +4,6 @@ description: 'In this tutorial, you’ll create a custom function in Excel which
 ms.date: 09/04/2018
 ---
 
-# Tutorial: Make a streaming Excel custom function
+# Tutorial: Make a streaming Excel custom function 
 
 [!INCLUDE[](../includes/excel-tutorial-create-custom-functions.md)]

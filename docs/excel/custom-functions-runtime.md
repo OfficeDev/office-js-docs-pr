@@ -4,7 +4,7 @@ description: 'Excel custom functions use a new JavaScript runtime, which differs
 title: 'Runtime for Excel Custom Function Add-ins'
 ---
 
-# Runtime for Excel custom function add-ins
+# Runtime for Excel custom function add-ins 
 
 Excel custom functions do not use the standard Add-ins WebView control runtime, which behaves similarly to a browser. Instead, they employ a new JavaScript runtime, which behaves more like Node.js’s runtime.  
 
