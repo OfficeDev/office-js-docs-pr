@@ -1,10 +1,10 @@
 ---
-title: Work with multiple ranges simultaneously in Excel Add-ins
+title: Work with multiple ranges simultaneously in Excel add-ins
 description: ''
 ms.date: 9/4/2018
 ---
 
-# Work with multiple ranges simultaneously in Excel Add-ins (Preview)
+# Work with multiple ranges simultaneously in Excel add-ins (Preview)
 
 The Excel JavaScript library enables your add-in to perform operations, and set properties, on multiple ranges simultaneously. The ranges do not have to be contiguous. In addition to making your code simpler, this way of setting a property runs much faster than setting the same property individually for each of the ranges.
 
