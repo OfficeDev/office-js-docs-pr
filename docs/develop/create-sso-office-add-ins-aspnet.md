@@ -277,11 +277,11 @@ The following instruction are written generically so they can be used in multipl
         break; 
     ```
 
-1. Replace `TODO4` with the following code. Error 13003 occurs when user is logged in with an account that is neither work or school, nor Microsoft Account. Ask the user to sign-out and then in again with a supported account type.
+1. Replace `TODO4` with the following code. Error 13003 occurs when user is logged in with an account that is neither work or school, nor Microsoft account. Ask the user to sign-out and then in again with a supported account type.
 
     ```javascript
     case 13003: 
-        showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft Account. Other kinds of accounts, like corporate domain accounts do not work.']);
+        showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft account. Other kinds of accounts, like corporate domain accounts do not work.']);
         break;   
     ```
 
@@ -317,7 +317,7 @@ The following instruction are written generically so they can be used in multipl
     ```javascript
     case 13009:
         if (triedWithoutForceConsent) {
-            showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft Account.']);
+            showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft account.']);
         } else {
             getDataWithToken({ forceConsent: false });
         }
