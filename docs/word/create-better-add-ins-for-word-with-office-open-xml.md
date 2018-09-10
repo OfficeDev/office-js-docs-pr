@@ -103,7 +103,7 @@ Office 2013 offers a wide array of SmartArt diagram layouts (and you can use Off
 
 You can insert Excel charts as live charts in Word documents, which also means you can use them in your add-in for Word.
 As you can see by the preceding examples, you can use Office Open XML coercion to insert essentially any type of content that a user can insert into their own document.
-There are two simple ways to get theOffice Open XML markup you need. Either add your rich content to an otherwise blank Word 2013 document and then save the file in Word XML Document format or use a test add-in with the [getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) method to grab the markup. Both approaches provide essentially the same result.
+There are two simple ways to get theOffice Open XML markup you need. Either add your rich content to an otherwise blank Word 2013 document and then save the file in Word XML Document format or use a test add-in with the [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js.setselecteddataasync) method to grab the markup. Both approaches provide essentially the same result.
 
     
 > [!NOTE]
@@ -118,7 +118,7 @@ In this topic, we'll use some common scenarios we've been hearing from the Offic
 ## Exploring the Office Open XML document package
 
 
-When you use [getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) to retrieve the Office Open XML for a selection of content (or when you save the document in Word XML Document format), what you're getting is not just the markup that describes your selected content; it's an entire document with many options and settings that you almost certainly don't need. In fact, if you use that method from a document that contains a task pane add-in, the markup you get even includes your task pane.
+When you use [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js.getselecteddataasync) to retrieve the Office Open XML for a selection of content (or when you save the document in Word XML Document format), what you're getting is not just the markup that describes your selected content; it's an entire document with many options and settings that you almost certainly don't need. In fact, if you use that method from a document that contains a task pane add-in, the markup you get even includes your task pane.
 
 Even a simple Word document package includes parts for document properties, styles, theme (formatting settings), web settings, fonts, and then some, in addition to parts for the actual content.
 
@@ -223,7 +223,7 @@ We've edited the Office Open XML example shown here, as described in the precedi
 
 Once you save the preceding Office Open XML as an XML file that's accessible from your solution, you can use the following function to set the formatted text content in the document using Office Open XML coercion. 
 
-In this function, notice that all but the last line are used to get your saved markup for use in the [setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) method call at the end of the function. **setSelectedDataASync** requires only that you specify the content to be inserted and the coercion type.
+In this function, notice that all but the last line are used to get your saved markup for use in the [setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js.setselecteddataasync) method call at the end of the function. **setSelectedDataASync** requires only that you specify the content to be inserted and the coercion type.
 
 
 > [!NOTE]

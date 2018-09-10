@@ -53,5 +53,5 @@ For example, in data validation scenarios, it is common to display UI in respons
 
 ## See also 
 
-- [About coauthoring in Excel (VBA)](https://msdn.microsoft.com/vba/excel-vba/articles/about-coauthoring-in-excel) 
-- [How AutoSave impacts add-ins and macros (VBA)](https://msdn.microsoft.com/vba/office-shared-vba/articles/how-autosave-impacts-addins-and-macros) 
+- [About coauthoring in Excel (VBA)](https://docs.microsoft.com/office/vba/excel/concepts/about-coauthoring-in-excel) 
+- [How AutoSave impacts add-ins and macros (VBA)](https://docs.microsoft.com/office/vba/library-reference/concepts/how-autosave-impacts-addins-and-macros) 

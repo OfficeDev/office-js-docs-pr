@@ -22,11 +22,11 @@ While you'll likely use the Excel JavaScript API to develop the majority of func
 
 - [Context](https://dev.office.com/reference/add-ins/shared/context): The **Context** object represents the runtime environment of the add-in and provides access to key objects of the API. It consists of workbook configuration details such as `contentLanguage` and `officeTheme` and also provides information about the add-in's runtime environment such as `host` and `platform`. Additionally, it provides the `requirements.isSetSupported()` method, which you can use to check whether the specified requirement set is supported by the Excel application where the add-in is running. 
 
-- [Document](https://dev.office.com/reference/add-ins/shared/document): The **Document** object provides the `getFileAsync()` method, which you can use to download the Excel file where the add-in is running. 
+- [Document](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js): The **Document** object provides the `getFileAsync()` method, which you can use to download the Excel file where the add-in is running. 
 
 ## Requirement sets
 
-Requirement sets are named groups of API members. An Office Add-in can perform a runtime check or use requirement sets specified in the manifest to determine whether an Office host supports the APIs that the add-in needs. To identify the specific requirement sets that are available on each supported platform, see [Excel JavaScript API requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets).
+Requirement sets are named groups of API members. An Office Add-in can perform a runtime check or use requirement sets specified in the manifest to determine whether an Office host supports the APIs that the add-in needs. To identify the specific requirement sets that are available on each supported platform, see [Excel JavaScript API requirement sets](https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets?view=office-js).
 
 ### Checking for requirement set support at runtime
 
@@ -60,7 +60,7 @@ The following code sample shows the **Requirements** element in an add-in manife
 
 ### Requirement sets for the Office.js Common API
 
-For information about common API requirement sets, see [Office common API requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets).
+For information about common API requirement sets, see [Office common API requirement sets](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js).
 
 ## Loading the properties of an object
 

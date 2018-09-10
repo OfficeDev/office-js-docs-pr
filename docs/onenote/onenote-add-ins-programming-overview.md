@@ -83,8 +83,8 @@ You can find supported OneNote objects and operations in the [API reference](htt
 
 ### Accessing the common API through the *Document* object
 
-Use the **Document** object to access the common API, such as the [getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync)
-and [setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) methods. 
+Use the **Document** object to access the common API, such as the [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js.getselecteddataasync)
+and [setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js.setselecteddataasync) methods. 
 
 For example:  
 
@@ -106,11 +106,11 @@ OneNote add-ins support only the following common APIs:
 
 | API | Notes |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) | **Office.CoercionType.Text** and **Office.CoercionType.Matrix** only |
-| [Office.context.document.setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) | **Office.CoercionType.Text**, **Office.CoercionType.Image**, and **Office.CoercionType.Html** only | 
+| [Office.context.document.getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js.getselecteddataasync) | **Office.CoercionType.Text** and **Office.CoercionType.Matrix** only |
+| [Office.context.document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js.setselecteddataasync) | **Office.CoercionType.Text**, **Office.CoercionType.Image**, and **Office.CoercionType.Html** only | 
 | [var mySetting = Office.context.document.settings.get(name);](https://dev.office.com/reference/add-ins/shared/settings.get) | Settings are supported by content add-ins only | 
 | [Office.context.document.settings.set(name, value);](https://dev.office.com/reference/add-ins/shared/settings.set) | Settings are supported by content add-ins only | 
-| [Office.EventType.DocumentSelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) ||
+| [Office.EventType.DocumentSelectionChanged](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js.selectionchanged.event) ||
 
 In general, you only use the common API to do something that isn't supported in the rich API. To learn more about using the common API, see the Office Add-ins [documentation](../overview/office-add-ins.md) and [reference](https://dev.office.com/reference/add-ins/javascript-api-for-office).
 

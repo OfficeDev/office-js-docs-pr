@@ -41,7 +41,7 @@ The following command capabilities are currently supported.
 **Actions**
 
 - ShowTaskpane - Displays one or multiple panes that load custom HTML pages inside them.
-- ExecuteFunction - Loads an invisible HTML page and then execute a JavaScript function within it. To show UI within your function (such as errors, progress, or additional input) you can use the [displayDialog](http://dev.office.com/reference/add-ins/shared/officeui) API.  
+- ExecuteFunction - Loads an invisible HTML page and then execute a JavaScript function within it. To show UI within your function (such as errors, progress, or additional input) you can use the [displayDialog](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) API.  
 
 ## Supported platforms
 Add-in commands are currently supported on the following platforms:
@@ -80,7 +80,7 @@ Apply the following best practices when you develop add-in commands:
 
 The best way to get started using add-in commands is to take a look at the [Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) on GitHub.
 
-For more information about specifying add-in commands in your manifest, see [Create add-in commands in your manifest](../develop/create-addin-commands.md) and the [VersionOverrides](https://dev.office.com/reference/add-ins/manifest/versionoverrides) reference content.
+For more information about specifying add-in commands in your manifest, see [Create add-in commands in your manifest](../develop/create-addin-commands.md) and the [VersionOverrides](https://docs.microsoft.com/javascript/office/manifest/versionoverrides?view=office-js) reference content.
 
 
 
