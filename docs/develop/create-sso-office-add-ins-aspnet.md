@@ -373,7 +373,7 @@ The following instruction are written generically so they can be used in multipl
     }    
     ```
 
-1. Replace ``TODO12` with the following code. (You will replace the three `TODO`s in this code with an *inner* if-else-if-else-if structure in the next few steps.)
+1. Replace `TODO12` with the following code. You will replace the three `TODO`s in this code with an *inner* conditional block in the next few steps.
 
     ```javascript
     else if (exceptionMessage) {
@@ -389,7 +389,7 @@ The following instruction are written generically so they can be used in multipl
     ```
 
 
-1. Replace `TODO12A` with the following code. (This creates the first part of an *inner* if-else-if structure.) Note about this code:
+1. Replace `TODO12A` with the following code. (This creates the first part of an *inner* conditional block.) Note about this code:
 
     * Error 65001 means that consent to access Microsoft Graph was not granted (or was revoked) for one or more permissions. 
     * The add-in should get a new token with the `forceConsent` option set to `true`.
@@ -428,7 +428,7 @@ The following instruction are written generically so they can be used in multipl
     }    
     ```
 
-1. Replace `TODO13` with the following code. (This is part of the *outer* if-else-if-else-if-else structure and should be immediately below the close bracket of the structure that begins with `else if (exceptionMessage) {` and at the same level of indentation.) Note about this code:
+1. Replace `TODO13` with the following code. (This is part of the *outer* conditional block and should be immediately after the close bracket of the structure that begins with `else if (exceptionMessage) {` and at the same level of indentation.) Note about this code:
 
     * The identity library that you will be using in the server-side code (Microsoft Authentication Library - MSAL) should ensure that no expired or invalid token is sent to Microsoft Graph; but if it does happen, the error that is returned to the add-in's web service from Microsoft Graph has the code `InvalidAuthenticationToken`. Server-side code you will create in a latter step will relay this message to the add-in's client.
     * In this case, the add-in should start the entire authentication process over by resetting the counter and flag varibles, and then re-calling the button handler method.
