@@ -342,17 +342,12 @@ The following instruction are written generically so they can be used in multipl
 
         // TODO11: Handle the case where AAD asks for an additional form of authentication.
 
-        // TODO12: Handle the case where consent has not been granted, or has been revoked.
+        // TODO12: Handle missing consent and scope (permission) related issues.
 
-        // TODO13: Handle the case where an invalid scope (permission) was used in the on-behalf-of flow.
-
-        // TODO14: Handle the case where the token that the add-in's client-side sends to it's 
-        //         server-side is not valid because it is missing `access_as_user` scope (permission).
-
-        // TODO15: Handle the case where the token sent to Microsoft Graph in the request for 
+        // TODO13: Handle the case where the token sent to Microsoft Graph in the request for 
         //         data is expired or invalid.
 
-        // TODO16: Log all other server errors.
+        // TODO14: Log all other server errors.
     }
     ```
 
@@ -378,7 +373,23 @@ The following instruction are written generically so they can be used in multipl
     }    
     ```
 
-1. Replace `TODO12` with the following code. Note about this code:
+1. Replace `TODO12` with the following code. You will replace the three `TODO`s in this code with an *inner* conditional block in the next few steps.
+
+    ```javascript
+    else if (exceptionMessage) {
+
+        // TODO12A: Handle the case where consent has not been granted, or has been revoked.
+
+        // TODO12B: Handle the case where an invalid scope (permission) was used in the on-behalf-of flow.
+
+        // TODO12C: Handle the case where the token that the add-in's client-side sends to it's 
+        //          server-side is not valid because it is missing `access_as_user` scope (permission).
+    }
+  
+    ```
+
+
+1. Replace `TODO12A` with the following code. (This creates the first part of an *inner* conditional block.) Note about this code:
 
     * Error 65001 means that consent to access Microsoft Graph was not granted (or was revoked) for one or more permissions. 
     * The add-in should get a new token with the `forceConsent` option set to `true`.
@@ -395,7 +406,7 @@ The following instruction are written generically so they can be used in multipl
     }    
     ```
 
-1. Replace `TODO13` with the following code. Note about this code:
+1. Replace `TODO12B` with the following code. Note about this code:
 
     * Error 70011 has multiple meanings. The one that matters to this add-in is when it means that an invalid scope (permission) has been requested, so the code checks for the full error description, not just the number.
     * The add-in should report the error.
@@ -406,7 +417,7 @@ The following instruction are written generically so they can be used in multipl
     }    
     ```
 
-1. Replace `TODO14` with the following code. Note about this code:
+1. Replace `TODO12C` with the following code. Note about this code:
 
     * Server-side code that you create in a later step will send the message `Missing access_as_user` if the `access_as_user` scope (permission) is not in the access token that the add-in's client sends to AAD to be used in the on-behalf-of flow.
     * The add-in should report the error.
@@ -417,7 +428,7 @@ The following instruction are written generically so they can be used in multipl
     }    
     ```
 
-1. Replace `TODO15` with the following code. Note about this code:
+1. Replace `TODO13` with the following code. (This is part of the *outer* conditional block and should be immediately after the close bracket of the structure that begins with `else if (exceptionMessage) {` and at the same level of indentation.) Note about this code:
 
     * The identity library that you will be using in the server-side code (Microsoft Authentication Library - MSAL) should ensure that no expired or invalid token is sent to Microsoft Graph; but if it does happen, the error that is returned to the add-in's web service from Microsoft Graph has the code `InvalidAuthenticationToken`. Server-side code you will create in a latter step will relay this message to the add-in's client.
     * In this case, the add-in should start the entire authentication process over by resetting the counter and flag varibles, and then re-calling the button handler method.
@@ -431,7 +442,7 @@ The following instruction are written generically so they can be used in multipl
     }    
     ```
 
-1. Replace `TODO16` with the following code.
+1. Replace `TODO14` with the following code.
 
     ```javascript
     else {
