@@ -231,13 +231,13 @@ For this quick start, you can use the certificates that the **Yeoman generator f
    
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Excel Add-in button](../images/excel-quickstart-addin-2a.png)
+    ![Excel add-in button](../images/excel-quickstart-addin-2a.png)
 
 3. Select any range of cells in the worksheet.
 
 4. In the task pane, choose the **Set color** button to set the color of the selected range to green.
 
-    ![Excel Add-in](../images/excel-quickstart-addin-2c.png)
+    ![Excel add-in](../images/excel-quickstart-addin-2c.png)
 
 ## Next steps
 

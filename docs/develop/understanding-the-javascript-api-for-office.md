@@ -28,7 +28,7 @@ For more details around the Office.js CDN, including how versioning and backward
 
 **Applies to:** All add-in types
 
-Office add-ins often have start-up logic to do things such as:
+Office Add-ins often have start-up logic to do things such as:
 
 - Check that the user's version of Office will support all the Office APIs that your code calls.
 

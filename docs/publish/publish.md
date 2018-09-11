@@ -43,7 +43,7 @@ The deployment options that are available depend on the Office host that you're 
 
 ## Deployment methods
 
-The following sections provide additional information about the deployment methods that are most commonly used to distribute Office add-ins to users within an organization.
+The following sections provide additional information about the deployment methods that are most commonly used to distribute Office Add-ins to users within an organization.
 
 For information about how end users acquire, insert, and run add-ins, see [Start using your Office Add-in](https://support.office.com/en-ie/article/Start-using-your-Office-Add-in-82e665c4-6700-4b56-a3f3-ef5441996862?ui=en-US&rs=en-IE&ad=IE).
 

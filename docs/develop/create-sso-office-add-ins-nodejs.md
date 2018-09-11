@@ -535,7 +535,7 @@ There are two server-side files that need to be modified.
     ```
 
     > [!NOTE]
-    > You should only use the `access_as_user` scope to authorize the API that handles the on-behalf-of flow for Office add-ins. Other APIs in your service should have their own scope requirements. This limits what can be accessed with the tokens that Office acquires.
+    > You should only use the `access_as_user` scope to authorize the API that handles the on-behalf-of flow for Office Add-ins. Other APIs in your service should have their own scope requirements. This limits what can be accessed with the tokens that Office acquires.
 
 5. Replace `TODO8` with the following code. Note the following about this code:
 

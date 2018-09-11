@@ -77,7 +77,7 @@ We recommend using [Office UI Fabric](https://developer.microsoft.com/fabric#/fa
 
 ## Using the Office Dialog API with Angular
 
-The Office add-in Dialog API enables your add-in to open a page in a semimodal dialog box that can exchange information with the main page, which is typically in a task pane. 
+The Office Add-in Dialog API enables your add-in to open a page in a semimodal dialog box that can exchange information with the main page, which is typically in a task pane. 
 
 The [displayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) method takes a parameter that specifies the URL of the page that should open in the dialog box. Your add-in can have a separate HTML page (different from the base page) to pass to this parameter, or you can pass the URL of a route in your Angular appication. 
 

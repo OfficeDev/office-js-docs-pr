@@ -76,13 +76,13 @@ In this article, you'll walk through the process of building an Excel add-in usi
 
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Excel Add-in button](../images/excel-quickstart-addin-2b.png)
+    ![Excel add-in button](../images/excel-quickstart-addin-2b.png)
 
 3. Select any range of cells in the worksheet.
 
 4. In the task pane, choose the **Set color** button to set the color of the selected range to blue.
 
-    ![Excel Add-in](../images/excel-quickstart-addin-2c.png)
+    ![Excel add-in](../images/excel-quickstart-addin-2c.png)
 
 ## Next steps
 

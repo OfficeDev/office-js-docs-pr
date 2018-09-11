@@ -1091,7 +1091,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 
 - [Task pane add-ins for Project](../project/project-add-ins.md)
 - [Understanding the JavaScript API for add-ins](../develop/understanding-the-javascript-api-for-office.md)
-- [JavaScript API for Office add-ins](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
+- [JavaScript API for Office Add-ins](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
 - [Schema reference for Office Add-ins manifests (v1.1)](../develop/add-in-manifests.md)     
 - [Project 2013 SDK download](https://www.microsoft.com/download/details.aspx?id=30435%20)
     

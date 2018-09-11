@@ -14,7 +14,7 @@ To get started using Fabric React's components in your add-in, perform the follo
 
 ## Step 1 - Create your project with the Yeoman generator for Office
 
-To create an add-in that uses Fabric React, we recommend that you use the Yeoman generator for Office. The Yeoman generator for Office provides the project scaffolding and build management needed to develop an Office add-in.
+To create an add-in that uses Fabric React, we recommend that you use the Yeoman generator for Office. The Yeoman generator for Office provides the project scaffolding and build management needed to develop an Office Add-in.
 
 To create your project, perform the following steps using **Windows PowerShell** (not the command prompt):
 

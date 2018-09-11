@@ -29,7 +29,7 @@ This example uses Word and a free add-in from AppSource.
 
 1. Open Word and choose a blank document. 
     
-2. On the **Insert** tab, in the Add-ins group, choose **Store** and select the QR4Office add-in. (You can load any add-in from the Store or your add-in catalog.)
+2. On the **Insert** tab, in the Add-ins group, choose **Store** and select the QR4Office Add-in. (You can load any add-in from the Store or your add-in catalog.)
     
 3. Launch the F12 development tools that corresponds to your version of Office:
     

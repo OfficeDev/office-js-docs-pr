@@ -191,7 +191,7 @@
   <xs:complexType name="Tab" abstract="true">
     <xs:annotation>
       <xs:documentation>
-        Specifies a tab in the Office client application where this Office add-in will customize the user interface.
+        Specifies a tab in the Office client application where this Office Add-in will customize the user interface.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -209,7 +209,7 @@
   <xs:complexType name="OfficeMenu">
     <xs:annotation>
       <xs:documentation>
-        Specifies a built-in menu of the Office client application to add this Office add-in
+        Specifies a built-in menu of the Office client application to add this Office Add-in
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -227,7 +227,7 @@
   <xs:complexType name="OfficeTab">
     <xs:annotation>
       <xs:documentation>
-        Specifies an extension to a pre-existing tab in the Office client application where this Office add-in will customize the user interface.
+        Specifies an extension to a pre-existing tab in the Office client application where this Office Add-in will customize the user interface.
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -238,7 +238,7 @@
   <xs:complexType name="CustomTab">
     <xs:annotation>
       <xs:documentation>
-        Specifies an Office add-in defined tab in the Office client application where this Office add-in will customize the user interface.
+        Specifies an Office Add-in defined tab in the Office client application where this Office Add-in will customize the user interface.
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -255,7 +255,7 @@
   <xs:complexType name="ExtensionPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>
-        Specifies a location in the Office client application where the Office add-in exposes functionality.
+        Specifies a location in the Office client application where the Office Add-in exposes functionality.
       </xs:documentation>
     </xs:annotation>
   </xs:complexType>
@@ -263,7 +263,7 @@
   <xs:complexType name="CommandSurfaceExtensionPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>
-        Specifies location in an Office client application's user interface where the Office add-in exposes functionality.
+        Specifies location in an Office client application's user interface where the Office Add-in exposes functionality.
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -279,7 +279,7 @@
   <xs:complexType name="PrimaryCommandSurface">
     <xs:annotation>
       <xs:documentation>
-        Specifies the ways this Office add-in exposes functionality through the primary command display of the Office client application (eg. Desktop Ribbon).
+        Specifies the ways this Office Add-in exposes functionality through the primary command display of the Office client application (eg. Desktop Ribbon).
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -290,7 +290,7 @@
   <xs:complexType name="ContextMenu">
     <xs:annotation>
       <xs:documentation>
-        Specifies the ways this Office add-in exposes functionality through the context menus of the Office client application.
+        Specifies the ways this Office Add-in exposes functionality through the context menus of the Office client application.
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -307,7 +307,7 @@
   <xs:complexType name="GetStarted">
     <xs:annotation>
       <xs:documentation>
-        Specifies the Get Started information for the Office add-in. This information is used at various places on the Office User Interface after user installs an add-in.
+        Specifies the Get Started information for the Office Add-in. This information is used at various places on the Office User Interface after user installs an add-in.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -320,23 +320,23 @@
   <xs:complexType name="FormFactor">
     <xs:annotation>
       <xs:documentation>
-        Specifies the list of settings for the Office add-in when activated for a given form factor of the Office client application.
+        Specifies the list of settings for the Office Add-in when activated for a given form factor of the Office client application.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="GetStarted" type="GetStarted" minOccurs="0" maxOccurs="1">
         <xs:annotation>
-          <xs:documentation>Specifies the Get Started information for the Office add-in. This information is used at various places on the Office User Interface after user installs an add-in.</xs:documentation>
+          <xs:documentation>Specifies the Get Started information for the Office Add-in. This information is used at various places on the Office User Interface after user installs an add-in.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="FunctionFile" type="bt:URLResourceReference" minOccurs="0" maxOccurs="1">
         <xs:annotation>
-          <xs:documentation>Specifies the source code file for the Office add-in, containing operations it exposes via its extension points, to use when loaded in this form factor.</xs:documentation>
+          <xs:documentation>Specifies the source code file for the Office Add-in, containing operations it exposes via its extension points, to use when loaded in this form factor.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="ExtensionPoint" type="ExtensionPoint" minOccurs="1" maxOccurs="unbounded">
         <xs:annotation>
-          <xs:documentation>Specifies a location in an Office client application where the Office add-in registers itself to perform operations.</xs:documentation>
+          <xs:documentation>Specifies a location in an Office client application where the Office Add-in registers itself to perform operations.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -361,7 +361,7 @@
         <xs:sequence>
           <xs:element name="DesktopFormFactor" type="FormFactor" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation>Specifies the settings of the Office add-in when running in a desktop version of Excel.</xs:documentation>
+              <xs:documentation>Specifies the settings of the Office Add-in when running in a desktop version of Excel.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -380,7 +380,7 @@
         <xs:sequence>
           <xs:element name="DesktopFormFactor" type="FormFactor" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation>Specifies the settings of the Office add-in when running in a desktop version of Word.</xs:documentation>
+              <xs:documentation>Specifies the settings of the Office Add-in when running in a desktop version of Word.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -399,7 +399,7 @@
         <xs:sequence>
           <xs:element name="DesktopFormFactor" type="FormFactor" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation>Specifies the settings of the Office add-in when running in a desktop version of OneNote.</xs:documentation>
+              <xs:documentation>Specifies the settings of the Office Add-in when running in a desktop version of OneNote.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -418,7 +418,7 @@
         <xs:sequence>
           <xs:element name="DesktopFormFactor" type="FormFactor" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation>Specifies the settings of the Office add-in when running in a desktop version of PowerPoint.</xs:documentation>
+              <xs:documentation>Specifies the settings of the Office Add-in when running in a desktop version of PowerPoint.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -429,14 +429,14 @@
   <xs:complexType name="Hosts">
     <xs:annotation>
       <xs:documentation>
-        Specifies the Office client application types where an Office add-in will be activated.
+        Specifies the Office client application types where an Office Add-in will be activated.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence minOccurs="1" maxOccurs="unbounded">
       <xs:element name="Host" type="Host">
         <xs:annotation>
           <xs:documentation>
-            Specifies the Office client application where an Office add-in will be activated.
+            Specifies the Office client application where an Office Add-in will be activated.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -470,12 +470,12 @@
     <xs:sequence>
       <xs:element name="Description" type="bt:LongResourceReference" minOccurs="0" maxOccurs="1">
         <xs:annotation>
-          <xs:documentation>Specifies a more verbose description of the Office add-in. Overrides the Description element in the parent node of this element in the manifest</xs:documentation>
+          <xs:documentation>Specifies a more verbose description of the Office Add-in. Overrides the Description element in the parent node of this element in the manifest</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="Requirements" type="bt:Requirements" minOccurs="0" maxOccurs="1">
         <xs:annotation>
-          <xs:documentation>Specifies the minimum set of Office.js requirements that the Office add-in needs to activate. Overrides the Requirements element in the parent node of this element in the manifest.</xs:documentation>
+          <xs:documentation>Specifies the minimum set of Office.js requirements that the Office Add-in needs to activate. Overrides the Requirements element in the parent node of this element in the manifest.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="Hosts" type="Hosts" minOccurs="0" maxOccurs="1">
@@ -505,7 +505,7 @@
       </xs:element>
       <xs:any id="VersionOverrides" minOccurs="0" maxOccurs="1" namespace="http://schemas.microsoft.com/office/taskpaneappversionoverrides/1.1" processContents="lax">
         <xs:annotation>
-          <xs:documentation>Contains elements for use in future versions of the Office add-in platform as they release. These elements may be overrides to previously defined elements or new elements.</xs:documentation>
+          <xs:documentation>Contains elements for use in future versions of the Office Add-in platform as they release. These elements may be overrides to previously defined elements or new elements.</xs:documentation>
         </xs:annotation>
        </xs:any>
     </xs:sequence>

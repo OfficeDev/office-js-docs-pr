@@ -41,7 +41,7 @@ Each time certain types of changes occur in an Excel workbook, an event notifica
 Events within an Excel workbook can be triggered by:
 
 - User interaction via the Excel user interface (UI) that changes the workbook
-- Office add-in (JavaScript) code that changes the workbook
+- Office Add-in (JavaScript) code that changes the workbook
 - VBA add-in (macro) code that changes the workbook
 
 Any change that complies with default behavior of Excel will trigger the corresponding event(s) in a workbook.

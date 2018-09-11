@@ -23,7 +23,7 @@ Coauthoring is available on the following platforms:
 
 ## Coauthoring overview
  
-When you change a workbook's content, Excel automatically synchronizes those changes across all coauthors. Coauthors can change the content of a workbook, but so can code running within an Excel add-in. For example, when the following JavaScript code runs in an Office add-in, the value of a range is set to Contoso:
+When you change a workbook's content, Excel automatically synchronizes those changes across all coauthors. Coauthors can change the content of a workbook, but so can code running within an Excel add-in. For example, when the following JavaScript code runs in an Office Add-in, the value of a range is set to Contoso:
 
 ```js
 range.values = [['Contoso']];

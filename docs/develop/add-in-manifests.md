@@ -12,7 +12,7 @@ An XML manifest file based on this schema enables an Office Add-in to do the fol
 
 * Describe itself by providing an ID, version, description, display name, and default locale.
 
-* Specify the images used for branding the Add-in and iconography used for [Add-in Commands][] in the Office Ribbon.
+* Specify the images used for branding the add-in and iconography used for [add-in commands][] in the Office Ribbon.
 
 * Specify how the add-in integrates with Office, including any custom UI, such as ribbon buttons the add-in creates.
 
@@ -88,7 +88,7 @@ _\*Added in the Office Add-in Manifest Schema version 1.1._
 
 ## Hosting requirements
 
-All image URIs, such as those used for [Add-in Commands][], must support caching. The server hosting the image should not return a `Cache-Control` header specifying `no-cache`, `no-store`, or similar options in the HTTP response.
+All image URIs, such as those used for [add-in commands][], must support caching. The server hosting the image should not return a `Cache-Control` header specifying `no-cache`, `no-store`, or similar options in the HTTP response.
 
 All URLs, such as the source file locations specified in the [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation) element, should be **SSL-secured (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
 

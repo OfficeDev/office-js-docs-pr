@@ -48,7 +48,7 @@ Consider the following to identify the scenarios:
     
 - Will customers use the add-in to enhance the viewing or authoring experience of a document? If so, you may want to consider creating a **task pane add-in**. 
 
-Support for certain Add-in APIs may differ between Office applications and the platform they are running on (Windows, Mac, Web, Mobile). To see the current API coverage by client and platform, see our [Office Add-in host and platform availability](../overview/office-add-in-availability.md) page.  
+Support for certain add-in APIs may differ between Office applications and the platform they are running on (Windows, Mac, Web, Mobile). To see the current API coverage by client and platform, see our [Office Add-in host and platform availability](../overview/office-add-in-availability.md) page.  
 
     
 ## 4. Design and implement the user experience and user interface for the add-in
