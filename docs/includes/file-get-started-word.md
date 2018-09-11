@@ -73,11 +73,11 @@ In this article, you'll walk through the process of building a Word add-in by us
                     $('#emerson').click(insertEmersonQuoteAtSelection);
                     $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
                     $('#proverb').click(insertChineseProverbAtTheEnd);
-                    $('#supportedVersion').html('This code is using Word 2016 or greater.');
+                    $('#supportedVersion').html('This code is using Word 2016 or later.');
                 }
                 else {
                     // Just letting you know that this code will not work with your version of Word.
-                    $('#supportedVersion').html('This code requires Word 2016 or greater.');
+                    $('#supportedVersion').html('This code requires Word 2016 or later.');
                 }
             });
         };
@@ -313,11 +313,11 @@ In this article, you'll walk through the process of building a Word add-in by us
                     $('#emerson').click(insertEmersonQuoteAtSelection);
                     $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
                     $('#proverb').click(insertChineseProverbAtTheEnd);
-                    $('#supportedVersion').html('This code is using Word 2016 or greater.');
+                    $('#supportedVersion').html('This code is using Word 2016 or later.');
                 }
                 else {
                     // Just letting you know that this code will not work with your version of Word.
-                    $('#supportedVersion').html('This code requires Word 2016 or greater.');
+                    $('#supportedVersion').html('This code requires Word 2016 or later.');
                 }
             });
         };

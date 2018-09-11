@@ -42,7 +42,7 @@ Follow these guidelines when you create your icons:
 
 ## Icon size recommendations and requirements
 
-Office 2016 desktop icons are bitmap images. Different sizes will render depending on the user's DPI setting and touch mode. Include all eight supported sizes to create the best experience in all supported resolutions and contexts. The following are the supported sizes - three are required:
+Office desktop icons are bitmap images. Different sizes will render depending on the user's DPI setting and touch mode. Include all eight supported sizes to create the best experience in all supported resolutions and contexts. The following are the supported sizes - three are required:
 
 - 16 px (Required)
 - 20 px
