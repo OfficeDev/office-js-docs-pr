@@ -60,7 +60,7 @@ A SharePoint add-in catalog is a special site collection that you can create to 
 If you are deploying add-ins in an on-premises environment, use a SharePoint catalog. For details, see [Publish task pane and content add-ins to a SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 > [!NOTE]
-> SharePoint catalogs do not support Office for Mac. To deploy Office Add-ins to Mac clients, you must submit them to [AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store). 
+> SharePoint catalogs do not support Office for Mac. To deploy Office Add-ins to Mac clients, you must submit them to [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store). 
 
 ### Outlook add-in deployment
 
