@@ -15,7 +15,7 @@ The  **getSelectedDataAsync** method only works against the user's current selec
 ## Read selected data
 
 
-The following example shows how to get data from a selection in a document by using the [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js.getselecteddataasync) method.
+The following example shows how to get data from a selection in a document by using the [getSelectedDataAsync](https://docs.microsoft.com/en-us/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) method.
 
 
 ```js
@@ -66,7 +66,7 @@ function write(message){
 
 Passing in different object types for the  _data_ parameter will have different results. The result depends on what is currently selected in the document, which application is hosting your add-in, and whether the data passed in can be coerced to the current selection.
 
-The anonymous function passed into the [setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js.setselecteddataasync) method as the _callback_ parameter is executed when the asynchronous call is completed. When you write data to the selection by using the **setSelectedDataAsync** method, the _asyncResult_ parameter of the callback provides access only to the status of the call, and to the [Error](https://docs.microsoft.com/javascript/api/office/office.error?view=office-js) object if the call fails.
+The anonymous function passed into the [setSelectedDataAsync](https://docs.microsoft.com/en-us/javascript/api/office/office.document?view=office-js#setselecteddataasync-data--options--callback-) method as the _callback_ parameter is executed when the asynchronous call is completed. When you write data to the selection by using the **setSelectedDataAsync** method, the _asyncResult_ parameter of the callback provides access only to the status of the call, and to the [Error](https://docs.microsoft.com/javascript/api/office/office.error?view=office-js) object if the call fails.
 
 > [!NOTE]
 > Starting with the release of the Excel 2013 SP1 and the corresponding build of Excel Online, you can now [set formatting when writing a table to the current selection](../excel/excel-add-ins-tables.md).
@@ -95,7 +95,7 @@ function write(message){
 
 The first  _eventType_ parameter specifies the name of the event to subscribe to. Passing the string `"documentSelectionChanged"` for this parameter is equivalent to passing the **Office.EventType.DocumentSelectionChanged** event type of the [Office.EventType](https://docs.microsoft.com/javascript/api/office/office.eventtype?view=office-js) enumeration.
 
-The  `myHander()` function that is passed into the function as the second _handler_ parameter is an event handler that is executed when the selection is changed on the document. The function is called with a single parameter, _eventArgs_, which will contain a reference to a [DocumentSelectionChangedEventArgs](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js.selectionchangedeventargs) object when the asynchronous operation completes. You can use the [DocumentSelectionChangedEventArgs.document](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js.selectionchangedeventargs.document) property to access the document that raised the event.
+The  `myHander()` function that is passed into the function as the second _handler_ parameter is an event handler that is executed when the selection is changed on the document. The function is called with a single parameter, _eventArgs_, which will contain a reference to a [DocumentSelectionChangedEventArgs](https://docs.microsoft.com/en-us/javascript/api/office/office.documentselectionchangedeventargs?view=office-js) object when the asynchronous operation completes. You can use the [DocumentSelectionChangedEventArgs.document](https://docs.microsoft.com/en-us/javascript/api/office/office.documentselectionchangedeventargs?view=office-js#document) property to access the document that raised the event.
 
 
 > [!NOTE]
@@ -105,7 +105,7 @@ The  `myHander()` function that is passed into the function as the second _handl
 ## Stop detecting changes in the selection
 
 
-The following example shows how to stop listening to the [Document.SelectionChanged](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js.selectionchanged.event) event by calling the [document.removeHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js.removehandlerasync) method.
+The following example shows how to stop listening to the [Document.SelectionChanged](https://docs.microsoft.com/en-us/javascript/api/office/office.documentselectionchangedeventargs?view=office-js) event by calling the [document.removeHandlerAsync](https://docs.microsoft.com/en-us/javascript/api/office/office.document?view=office-js#removehandlerasync-eventtype--options--callback-) method.
 
 
 ```js
