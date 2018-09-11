@@ -126,13 +126,13 @@ If the add-in supports add-in commands, the commands will appear on the Office a
 
 If the add-in does not support add-in commands, users can add it to their Office application by doing the following:
 
-1.	In Word, Excel, or PowerPoint, choose **Insert** > **My Add-ins**.
+1.	In Word 2016 or later, Excel 2016 or later, or PowerPoint 2016 or later, choose **Insert** > **My Add-ins**.
 2.	Choose the **Admin Managed** tab in the add-in window.
 3.	Choose the add-in, and then choose **Add**. 
 
     ![Screenshot shows the Admin Managed tab of the Office Add-ins page of an Office application. The Citations add-in is shown on the tab.](../images/office-add-ins-admin-managed.png)
     
-However, for Outlook, users can do the following:
+However, for Outlook 2016 or later, users can do the following:
 
 1.  In Outlook, choose **Home** > **Store**.
 2.  Choose the **Admin-managed** item under the add-in tab.
