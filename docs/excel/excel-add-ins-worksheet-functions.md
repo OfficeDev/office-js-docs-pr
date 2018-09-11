@@ -450,4 +450,4 @@ The following built-in Excel worksheet functions can be called using the Excel J
 
 - [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API Open Specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
-- [Worksheet Functions Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/functions)
+- [Worksheet Functions Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheet?view=office-js)

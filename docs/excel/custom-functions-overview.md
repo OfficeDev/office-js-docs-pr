@@ -48,38 +48,38 @@ Note that for this example:
 - The `parameters` array specifies, *in order*, the type of data in each parameter that is passed to the function. The `name` and `description` child properties are used in the Excel intellisense. The `type` and `dimensionality` child properties are identical to the child properties of the `result` property described above.
 - The `options` property enables you to customize some aspects of how and when Excel executes the function. There is more information about these options later in this article.
 
- ```js
-{
-	"$schema": "https://developer.microsoft.com/json-schemas/office-js/custom-functions.schema.json",
-	"functions": [
-		{
-			"name": "ADD42", 
-			"description":  "adds 42 to the input numbers",
-			"helpUrl": "http://dev.office.com",
-			"result": {
-				"type": "number",
-				"dimensionality": "scalar"
-			},
-			"parameters": [
-				{
-					"name": "number 1",
-					"description": "the first number to be added",
-					"type": "number",
-					"dimensionality": "scalar"
-				},
-				{
-					"name": "number 2",
-					"description": "the second number to be added",
-					"type": "number",
-					"dimensionality": "scalar"
-				}
-			],
-			"options": {
-				"sync": true
-			}
-		}
-    ]
-}
+```js
+    {
+        "$schema": "https://developer.microsoft.com/json-schemas/office-js/custom-functions.schema.json",
+        "functions": [
+            {
+                "name": "ADD42", 
+                "description":  "adds 42 to the input numbers",
+                "helpUrl": "http://dev.office.com",
+                "result": {
+                    "type": "number",
+                    "dimensionality": "scalar"
+                },
+                "parameters": [
+                    {
+                        "name": "number 1",
+                        "description": "the first number to be added",
+                        "type": "number",
+                        "dimensionality": "scalar"
+                    },
+                    {
+                        "name": "number 2",
+                        "description": "the second number to be added",
+                        "type": "number",
+                        "dimensionality": "scalar"
+                    }
+                ],
+                "options": {
+                    "sync": true
+                }
+            }
+        ]
+    }
 ```
 
 > [!NOTE]
