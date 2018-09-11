@@ -1,6 +1,6 @@
 ---
 title: Excel JavaScript API core concepts
-description: ''
+description: Use the Excel JavaScript API to build add-ins for Excel.
 ms.date: 12/04/2017
 ---
 

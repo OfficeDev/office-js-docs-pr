@@ -44,6 +44,7 @@ The following command capabilities are currently supported.
 - ExecuteFunction - Loads an invisible HTML page and then execute a JavaScript function within it. To show UI within your function (such as errors, progress, or additional input) you can use the [displayDialog](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) API.  
 
 ## Supported platforms
+
 Add-in commands are currently supported on the following platforms:
 
 - Office for Windows Desktop 2016 (build 16.0.6769+)
