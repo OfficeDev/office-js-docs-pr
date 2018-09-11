@@ -348,7 +348,7 @@
   
   <xs:complexType name="Module">
     <xs:annotation>
-      <xs:documentation>The app exposes functionality in the Add-ins Module to show a large HTML source with CommandSurfaces.</xs:documentation>
+      <xs:documentation>The app exposes functionality in the add-ins module to show a large HTML source with CommandSurfaces.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="ExtensionPoint">

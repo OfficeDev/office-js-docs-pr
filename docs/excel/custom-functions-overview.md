@@ -17,7 +17,7 @@ function ADD42(a, b) {
 Custom functions are now available in Developer Preview on Windows, Mac, and Excel Online. Follow these steps to try them:
 
 1. Install Office (build 9325 on Windows or 13.329 on Mac) and join the [Office Insider](https://products.office.com/office-insider) program. (Note that it isn't enough just to get the latest build; the feature will be disabled on any build until you join the Insider program)
-2. Create an Excel Custom Functions Add-in project using [Yo Office](https://github.com/OfficeDev/generator-office), and follow the instructions in the [project README.md](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/README.md) to start the add-in in Excel, make changes in the code, and debug.
+2. Create an Excel Custom Functions add-in project using [Yo Office](https://github.com/OfficeDev/generator-office), and follow the instructions in the [project README.md](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/README.md) to start the add-in in Excel, make changes in the code, and debug.
 3. Type `=CONTOSO.ADD42(1,2)` into any cell, and press **Enter** to run the custom function.
 
 See the **Known Issues** section at the end of this article, which includes current limitations of custom functions and will be updated over time.
@@ -48,38 +48,38 @@ Note that for this example:
 - The `parameters` array specifies, *in order*, the type of data in each parameter that is passed to the function. The `name` and `description` child properties are used in the Excel intellisense. The `type` and `dimensionality` child properties are identical to the child properties of the `result` property described above.
 - The `options` property enables you to customize some aspects of how and when Excel executes the function. There is more information about these options later in this article.
 
- ```js
-{
-	"$schema": "https://developer.microsoft.com/json-schemas/office-js/custom-functions.schema.json",
-	"functions": [
-		{
-			"name": "ADD42", 
-			"description":  "adds 42 to the input numbers",
-			"helpUrl": "http://dev.office.com",
-			"result": {
-				"type": "number",
-				"dimensionality": "scalar"
-			},
-			"parameters": [
-				{
-					"name": "number 1",
-					"description": "the first number to be added",
-					"type": "number",
-					"dimensionality": "scalar"
-				},
-				{
-					"name": "number 2",
-					"description": "the second number to be added",
-					"type": "number",
-					"dimensionality": "scalar"
-				}
-			],
-			"options": {
-				"sync": true
-			}
-		}
-    ]
-}
+```js
+    {
+        "$schema": "https://developer.microsoft.com/json-schemas/office-js/custom-functions.schema.json",
+        "functions": [
+            {
+                "name": "ADD42", 
+                "description":  "adds 42 to the input numbers",
+                "helpUrl": "http://dev.office.com",
+                "result": {
+                    "type": "number",
+                    "dimensionality": "scalar"
+                },
+                "parameters": [
+                    {
+                        "name": "number 1",
+                        "description": "the first number to be added",
+                        "type": "number",
+                        "dimensionality": "scalar"
+                    },
+                    {
+                        "name": "number 2",
+                        "description": "the second number to be added",
+                        "type": "number",
+                        "dimensionality": "scalar"
+                    }
+                ],
+                "options": {
+                    "sync": true
+                }
+            }
+        ]
+    }
 ```
 
 > [!NOTE]

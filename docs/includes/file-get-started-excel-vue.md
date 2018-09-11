@@ -190,13 +190,13 @@ To enable HTTPS for your app, open **package.json** in the root of the project, 
 
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Excel Add-in button](../images/excel-quickstart-addin-2a.png)
+    ![Excel add-in button](../images/excel-quickstart-addin-2a.png)
 
 3. Select any range of cells in the worksheet.
 
 4. In the task pane, choose the **Set color** button to set the color of the selected range to green.
 
-    ![Excel Add-in](../images/excel-quickstart-addin-2c.png)
+    ![Excel add-in](../images/excel-quickstart-addin-2c.png)
 
 ## Next steps
 
@@ -209,5 +209,5 @@ Congratulations, you've successfully created an Excel add-in using Vue! Next, le
 
 * [Excel add-in tutorial](../tutorials/excel-tutorial-create-table.md)
 * [Excel JavaScript API core concepts](../excel/excel-add-ins-core-concepts.md)
-* [Excel add-in code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API reference](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Excel add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [Excel JavaScript API reference](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

@@ -13,7 +13,7 @@ In this step of the tutorial, you'll customize the task pane user interface (UI)
     <div id="content-header">
         <div class="ms-Grid ms-bgColor-neutralPrimary">
             <div class="ms-Grid-row">
-                <div class="padding ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12"> <div class="ms-font-xl ms-fontColor-white ms-fontWeight-semibold">My PowerPoint Add-in</div></div>
+                <div class="padding ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12"> <div class="ms-font-xl ms-fontColor-white ms-fontWeight-semibold">My PowerPoint add-in</div></div>
             </div>
         </div>
     </div>

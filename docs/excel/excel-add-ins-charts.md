@@ -9,7 +9,7 @@ ms.date: 12/04/2017
 # Work with Charts using the Excel JavaScript API
 
 This article provides code samples that show how to perform common tasks with charts using the Excel JavaScript API. 
-For the complete list of properties and methods that the **Chart** and **ChartCollection** objects support, see [Chart Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/chart) and [Chart Collection Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/chartcollection).
+For the complete list of properties and methods that the **Chart** and **ChartCollection** objects support, see [Chart Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.chart?view=office-js) and [Chart Collection Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection?view=office-js).
 
 ## Create a chart
 
@@ -187,5 +187,3 @@ Excel.run(function (context) {
 ## See also
 
 - [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
-- [Chart Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/chart) 
-- [Chart Collection Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/chartcollection)

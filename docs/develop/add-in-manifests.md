@@ -12,7 +12,7 @@ An XML manifest file based on this schema enables an Office Add-in to do the fol
 
 * Describe itself by providing an ID, version, description, display name, and default locale.
 
-* Specify the images used for branding the Add-in and iconography used for [Add-in Commands][] in the Office Ribbon.
+* Specify the images used for branding the add-in and iconography used for [add-in commands][] in the Office Ribbon.
 
 * Specify how the add-in integrates with Office, including any custom UI, such as ribbon buttons the add-in creates.
 
@@ -58,58 +58,58 @@ _\*Added in the Office Add-in Manifest Schema version 1.1._
 
 <!-- Links for above table -->
 
-[officeapp]: https://dev.office.com/reference/add-ins/manifest/officeapp
-[id]: https://dev.office.com/reference/add-ins/manifest/id
-[version]: https://dev.office.com/reference/add-ins/manifest/version
-[providername]: https://dev.office.com/reference/add-ins/manifest/providername
-[defaultlocale]: https://dev.office.com/reference/add-ins/manifest/defaultlocale
-[displayname]: https://dev.office.com/reference/add-ins/manifest/displayname
-[description]: https://dev.office.com/reference/add-ins/manifest/description
-[iconurl]: https://dev.office.com/reference/add-ins/manifest/iconurl
-[highresolutioniconurl]: https://dev.office.com/reference/add-ins/manifest/highresolutioniconurl
-[defaultsettings (contentapp)]: https://dev.office.com/reference/add-ins/manifest/defaultsettings
-[defaultsettings (taskpaneapp)]: https://dev.office.com/reference/add-ins/manifest/defaultsettings
-[sourcelocation (contentapp)]: https://dev.office.com/reference/add-ins/manifest/sourcelocation
-[sourcelocation (taskpaneapp)]: https://dev.office.com/reference/add-ins/manifest/sourcelocation
+[officeapp]: https://docs.microsoft.com/javascript/office/manifest/officeapp?view=office-js
+[id]: https://docs.microsoft.com/javascript/office/manifest/id
+[version]: https://docs.microsoft.com/javascript/office/manifest/version
+[providername]: https://docs.microsoft.com/javascript/office/manifest/providername
+[defaultlocale]: https://docs.microsoft.com/javascript/office/manifest/defaultlocale
+[displayname]: https://docs.microsoft.com/javascript/office/manifest/displayname
+[description]: https://docs.microsoft.com/javascript/office/manifest/description
+[iconurl]: https://docs.microsoft.com/javascript/office/manifest/iconurl
+[highresolutioniconurl]: https://docs.microsoft.com/javascript/office/manifest/highresolutioniconurl
+[defaultsettings (contentapp)]: https://docs.microsoft.com/javascript/office/manifest/defaultsettings
+[defaultsettings (taskpaneapp)]: https://docs.microsoft.com/javascript/office/manifest/defaultsettings
+[sourcelocation (contentapp)]: https://docs.microsoft.com/javascript/office/manifest/sourcelocation
+[sourcelocation (taskpaneapp)]: https://docs.microsoft.com/javascript/office/manifest/sourcelocation
 [desktopsettings]: https://msdn.microsoft.com/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c(Office.15).aspx
 [sourcelocation (mailapp)]: http://msdn.microsoft.com/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
-[permissions (contentapp)]: https://dev.office.com/reference/add-ins/manifest/permissions
-[permissions (taskpaneapp)]: https://dev.office.com/reference/add-ins/manifest/permissions
-[permissions (mailapp)]: https://dev.office.com/reference/add-ins/manifest/permissions
-[rule (rulecollection)]: https://dev.office.com/reference/add-ins/manifest/rule
-[rule (mailapp)]: https://dev.office.com/reference/add-ins/manifest/rule
-[requirements (mailapp)*]: https://dev.office.com/reference/add-ins/manifest/requirements
-[set*]: https://dev.office.com/reference/add-ins/manifest/set
-[sets (mailapprequirements)*]: https://dev.office.com/reference/add-ins/manifest/sets
-[form*]: https://dev.office.com/reference/add-ins/manifest/form
-[formsettings*]: https://dev.office.com/reference/add-ins/manifest/formsettings
-[sets (requirements)*]: https://dev.office.com/reference/add-ins/manifest/sets
-[hosts*]: https://dev.office.com/reference/add-ins/manifest/hosts
+[permissions (contentapp)]: https://docs.microsoft.com/javascript/office/manifest/permissions
+[permissions (taskpaneapp)]: https://docs.microsoft.com/javascript/office/manifest/permissions
+[permissions (mailapp)]: https://docs.microsoft.com/javascript/office/manifest/permissions
+[rule (rulecollection)]: https://docs.microsoft.com/javascript/office/manifest/rule
+[rule (mailapp)]: https://docs.microsoft.com/javascript/office/manifest/rule
+[requirements (mailapp)*]: https://docs.microsoft.com/javascript/office/manifest/requirements
+[set*]: https://docs.microsoft.com/javascript/office/manifest/set
+[sets (mailapprequirements)*]: https://docs.microsoft.com/javascript/office/manifest/sets
+[form*]: https://docs.microsoft.com/javascript/office/manifest/form
+[formsettings*]: https://docs.microsoft.com/javascript/office/manifest/formsettings
+[sets (requirements)*]: https://docs.microsoft.com/javascript/office/manifest/sets
+[hosts*]: https://docs.microsoft.com/javascript/office/manifest/hosts
 
 ## Hosting requirements
 
-All image URIs, such as those used for [Add-in Commands][], must support caching. The server hosting the image should not return a `Cache-Control` header specifying `no-cache`, `no-store`, or similar options in the HTTP response.
+All image URIs, such as those used for [add-in commands][], must support caching. The server hosting the image should not return a `Cache-Control` header specifying `no-cache`, `no-store`, or similar options in the HTTP response.
 
-All URLs, such as the source file locations specified in the [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) element, should be **SSL-secured (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
+All URLs, such as the source file locations specified in the [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation) element, should be **SSL-secured (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
 
 ## Best practices for submitting to AppSource
 
 Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID.
 
-Add-ins submitted to AppSource must also include the [SupportUrl](https://dev.office.com/reference/add-ins/manifest/supporturl) element. For more information, see [Validation policies for apps and add-ins submitted to AppSource](https://docs.microsoft.com/office/dev/store/validation-policies).
+Add-ins submitted to AppSource must also include the [SupportUrl](https://docs.microsoft.com/javascript/office/manifest/supporturl) element. For more information, see [Validation policies for apps and add-ins submitted to AppSource](https://docs.microsoft.com/office/dev/store/validation-policies).
 
-Only use the [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) element to specify domains other than the one specified in the [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) element for authentication scenarios.
+Only use the [AppDomains](https://docs.microsoft.com/javascript/office/manifest/appdomains) element to specify domains other than the one specified in the [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation) element for authentication scenarios.
 
 ## Specify domains you want to open in the add-in window
 
-When running in Office Online, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) element of the manifest file), that URL opens in a new browser window outside the add-in pane of the Office host application.
+When running in Office Online, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation) element of the manifest file), that URL opens in a new browser window outside the add-in pane of the Office host application.
 
-To override this (desktop Office) behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) element of the manifest file. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both desktop Office and Office Online. If it tries to go to a URL that isn't in the list, then, in desktop Office, that URL opens in a new browser window (outside the add-in pane).
+To override this (desktop Office) behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](https://docs.microsoft.com/javascript/office/manifest/appdomains) element of the manifest file. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both desktop Office and Office Online. If it tries to go to a URL that isn't in the list, then, in desktop Office, that URL opens in a new browser window (outside the add-in pane).
 
 > [!NOTE]
 > This behavior applies only to the root pane of the add-in. If there is an iframe embedded in the add-in page, the iframe can be directed to any URL regardless of whether it is listed in **AppDomains**, even in desktop Office.
 
-The following XML manifest example hosts its main add-in page in the `https://www.contoso.com` domain as specified in the **SourceLocation** element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](https://dev.office.com/reference/add-ins/manifest/appdomain) element within the **AppDomains** element list. If the add-in goes to a page in the www.northwindtraders.com domain, that page opens in the add-in pane, even in Office desktop.
+The following XML manifest example hosts its main add-in page in the `https://www.contoso.com` domain as specified in the **SourceLocation** element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](https://docs.microsoft.com/javascript/office/manifest/appdomain) element within the **AppDomains** element list. If the add-in goes to a page in the www.northwindtraders.com domain, that page opens in the add-in pane, even in Office desktop.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>

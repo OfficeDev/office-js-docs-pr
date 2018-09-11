@@ -17,14 +17,14 @@ In the OneNote add-ins JavaScript API, page content is represented by the follow
 
 To create an empty OneNote page, use one of the following methods:
 
-- [Section.addPage](https://dev.office.com/reference/add-ins/onenote/section#addpagetitle-string)
-- [Page.insertPageAsSibling](https://dev.office.com/reference/add-ins/onenote/page#insertpageassiblinglocation-string-title-string)
+- [Section.addPage](https://docs.microsoft.com/javascript/api/onenote/onenote.section?view=office-js#addpage-title-)
+- [Page.insertPageAsSibling](https://docs.microsoft.com/javascript/api/onenote/onenote.section?view=office-js#insertsectionassibling-location--title-)
 
 Then use methods in the following objects to work with the page content, such as Page.addOutline and Outline.appendHtml. 
 
-- [Page](https://dev.office.com/reference/add-ins/onenote/page)
-- [Outline](https://dev.office.com/reference/add-ins/onenote/outline)
-- [Paragraph](https://dev.office.com/reference/add-ins/onenote/paragraph)
+- [Page](https://docs.microsoft.com/javascript/api/onenote/onenote.page?view=office-js)
+- [Outline](https://docs.microsoft.com/javascript/api/onenote/onenote.outline?view=office-js)
+- [Paragraph](https://docs.microsoft.com/javascript/api/onenote/onenote.paragraph?view=office-js)
 
 The content and structure of a OneNote page are represented by HTML. Only a subset of HTML is supported for creating or updating page content, as described below.
 
@@ -51,6 +51,6 @@ Metadata such as title can still be queried for any page.
 ## See also
 
 - [OneNote JavaScript API programming overview](onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API reference](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
+- [OneNote JavaScript API reference](https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js)
 - [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office Add-ins platform overview](../overview/office-add-ins.md)

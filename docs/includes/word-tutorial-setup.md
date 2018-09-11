@@ -16,7 +16,7 @@ To use this tutorial, you need to have the following installed.
 
 ## Setup
 
-1. Clone the GitHub repository [Word Add-in Tutorial](https://github.com/OfficeDev/Word-Add-in-Tutorial).
+1. Clone the GitHub repository [Word add-in tutorial](https://github.com/OfficeDev/Word-Add-in-Tutorial).
 2. Open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
 3. Run the command `npm install` to install the tools and libraries listed in the package.json file. 
 4. Carry out the steps in [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) to trust the certificate for your development computer's operating system.

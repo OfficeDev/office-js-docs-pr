@@ -51,7 +51,7 @@ function loadVideoDetails(videoIndex) {
 
 Another way to address same-origin policy limitations is to implement the add-in's webpage as an ASP page that uses OAuth or caches credentials in cookies.
 
-For an example of server-side code that shows how to use the  `Cookie` object in `System.Net` to get and set cookie values, see the [Value](https://msdn.microsoft.com/library/4f772twc) property.
+For an example of server-side code that shows how to use the  `Cookie` object in `System.Net` to get and set cookie values, see the [Value](https://docs.microsoft.com/dotnet/api/system.net.cookie.value?view=netframework-4.7.2) property.
 
 
 ## Using cross-origin resource sharing (CORS)
