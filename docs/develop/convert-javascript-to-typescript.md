@@ -25,7 +25,7 @@ This article shows you how to create an Excel add-in using Visual Studio and the
     > [!NOTE]
     > TypeScript should be installed by default with Visual Studio 2017, but you can [use the Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) to confirm that it is installed. In the Visual Studio Installer, select the **Individual components** tab and then verify that **TypeScript 2.3 SDK** is selected under **SDKs, libraries, and frameworks**.
 
-- Excel
+- Excel 2016 or later
 
 ## Create the add-in project
 
