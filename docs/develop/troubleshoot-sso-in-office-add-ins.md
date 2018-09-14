@@ -99,7 +99,7 @@ The add-in is running on a platform that does not support the `getAccessTokenAsy
 
 ### 50001
 
-This error (which is not specific to `getAccessTokenAsync`) may indicate that the browser has cashed an old copy of the office.js files. Clear the browser's cache. Another possibility is that the version of Office is not recent enough to support SSO. See [Prerequisites](create-sso-office-add-ins-aspnet.md#prerequisites).
+This error (which is not specific to `getAccessTokenAsync`) may indicate that the browser has cached an old copy of the office.js files. Clear the browser's cache. Another possibility is that the version of Office is not recent enough to support SSO. See [Prerequisites](create-sso-office-add-ins-aspnet.md#prerequisites).
 
 ## Errors on the server-side from Azure Active Directory
 
