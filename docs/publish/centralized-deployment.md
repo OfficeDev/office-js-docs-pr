@@ -75,7 +75,7 @@ If your organization meets all requirements, complete the following steps to pub
     > [!NOTE]
     > For single sign-on (SSO) add-ins, the users and groups assigned will also be shared with add-ins that share the same Azure App ID. Any changes to user assignments will also apply to those add-ins. The related add-ins will be shown on this page. For SSO add-ins only, this page will display the list of Microsoft Graph permissions that the add-in requires.
 
-11.	The manifest will now save, which may take up to three minutes. Then, finish the walkthrough by pressing **Next**. You now see your add-in along with other apps in Office 365.
+11.	The manifest then saves, which may take up to three minutes. Then, finish the walkthrough by pressing **Next**. You now see your add-in along with other apps in Office 365.
 
     > [!NOTE]
     >  When an administrator chooses **Save**, consent is given for all users. 
