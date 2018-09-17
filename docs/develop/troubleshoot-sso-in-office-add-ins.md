@@ -95,7 +95,7 @@ The user is running the add-in on Office Online and is using Edge or Internet Ex
 
 ### 13012
 
-The add-in is running on a platform that does not support the `getAccessTokenAsync` API. For example, it is not supported on iPads. See also [Identity API Requirement Sets](https://docs.microsoft.com/javascript/office/requirement-sets/identity-api-requirement-sets).
+The add-in is running on a platform that does not support the `getAccessTokenAsync` API. For example, it is not supported on iPad. See also [Identity API Requirement Sets](https://docs.microsoft.com/javascript/office/requirement-sets/identity-api-requirement-sets).
 
 ### 50001
 
