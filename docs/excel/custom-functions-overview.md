@@ -302,4 +302,4 @@ As you can see, ranges are handled in JavaScript as arrays of row arrays (like a
 - **Nov 28, 2017**: Shipped* support for cancellation on asynchronous functions (requires change for streaming functions)
 - **May 7, 2018**: Shipped* support for Mac, Excel Online, and synchronous functions running in-process
 
-/* to the Office Insiders Channel
+\* to the Office Insiders Channel
