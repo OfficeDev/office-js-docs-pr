@@ -659,7 +659,12 @@ There are two ways to build and run the project depending on whether you are usi
 
 ## Add the add-in to an Office document
 
-1. Restart PowerPoint and open or create a presentation. 
+1. Restart PowerPoint and open or create a presentation.
+
+1. If the **Developer** tab is not visible on the ribbon, enable it with the following steps:
+ 1. Navigate to **File** | **Options** | **Customize Ribbon**.
+ 2. Click the check box to enable **Developer** in the tree of control names on the right of the **Customize Ribbon** page.
+ 3. Press **OK**.
 
 2. On the **Developer** tab in PowerPoint, choose **My Add-ins**.
 
