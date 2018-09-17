@@ -28,7 +28,7 @@ In this article, you'll walk through the process of building an Excel add-in usi
     cd my-addin
     ```
 
-3. Use the Yeoman generator to generate the manifest file for your add-in. Run the following command and then answer the prompts as shown in the following screenshot.
+3. Use the Yeoman generator to generate the manifest file for your add-in. Run the following command and then answer the prompts with following choices.
 
     ```bash
     yo office
@@ -40,7 +40,7 @@ In this article, you'll walk through the process of building an Excel add-in usi
 
     ![Yeoman generator](../images/yo-office-excel-vue.png)
     
-    After you complete the wizard, the generator will create the project and install supporting Node components.
+    After you complete the wizard, the generator creates the project and installs supporting Node components.
 
 4. Open **src/App.vue**, replace contents of `<template> ... </template>` block with the following code and save the file. 
 
@@ -66,7 +66,7 @@ In this article, you'll walk through the process of building an Excel add-in usi
     </template>
     ```
 
-5.  Continue editing **src/App.vue**, in the `<script>` block, search for comment "Update the fill color." then change the fill color from 'yello' to 'blue' and save the file.
+5.  Continue editing **src/App.vue** and search for comment "Update the fill color." inside `<script>..</script>` block. Change the fill color from 'yellow' to 'blue' and save the file.
 
     ```js
     range.format.fill.color = 'blue'
@@ -139,7 +139,7 @@ In this article, you'll walk through the process of building an Excel add-in usi
 
 ## Next steps
 
-Congratulations, you've successfully created an Excel add-in using Angular! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.
+Congratulations, you've successfully created an Excel add-in using Vue! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.
 
 > [!div class="nextstepaction"]
 > [Excel add-in tutorial](../tutorials/excel-tutorial.yml)
