@@ -93,9 +93,13 @@ The add-in called the `getAccessTokenAsync` method with the option `forceConsent
 
 The user is running the add-in on Office Online and is using Edge or Internet Explorer. The user’s Office 365 domain, and the login.microsoftonline.com domain, are in a different security zones in the browser settings. If this error is returned, the user will have already seen an error explaining this and linking to a page about how to change the zone configuration. If your add-in provides functions that don't require the user to be signed in, then your code should catch this error and allow the add-in to stay running.
 
+### 13012
+
+The add-in is running on a platform that does not support the `getAccessTokenAsync` API. For example, it is not supported on iPad. See also [Identity API Requirement Sets](https://docs.microsoft.com/javascript/office/requirement-sets/identity-api-requirement-sets).
+
 ### 50001
 
-This error (which is not specific to `getAccessTokenAsync`) may indicate that the browser has cashed an old copy of the office.js files. Clear the browser's cache. Another possibility is that the version of Office is not recent enough to support SSO. See [Prerequisites](create-sso-office-add-ins-aspnet.md#prerequisites).
+This error (which is not specific to `getAccessTokenAsync`) may indicate that the browser has cached an old copy of the office.js files. Clear the browser's cache. Another possibility is that the version of Office is not recent enough to support SSO. See [Prerequisites](create-sso-office-add-ins-aspnet.md#prerequisites).
 
 ## Errors on the server-side from Azure Active Directory
 
