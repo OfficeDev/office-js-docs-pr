@@ -52,6 +52,12 @@ An add-in's manifest file defines its settings and capabilities.
     
     > [!NOTE]
     > If you're prompted to overwrite **package.json**, answer **No** (do not overwrite).
+	
+3. Navigate to the root folder of the web application project.
+
+    ```bash
+    cd "My Office Add-in"
+    ```
 
 ## Secure the app
 
@@ -207,7 +213,7 @@ For this quick start, you can use the certificates that the **Yeoman generator f
 
 ## Start the dev server
 
-1. From the terminal, run the following command to start the dev server.
+1. Open a bash terminal in the root of the project (**[...]/My Office Add-in**) and run the following command to start the dev server.
 
     ```bash
     npm run start

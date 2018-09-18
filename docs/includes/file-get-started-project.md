@@ -36,6 +36,12 @@ In this article, you'll walk through the process of building a Project add-in by
     ![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-project-jquery.png)
     
     After you complete the wizard, the generator will create the project and install supporting Node components.
+	
+4. Navigate to the root folder of the web application project.
+
+    ```bash
+    cd "My Office Add-in"
+    ```
 
 ## Update the code
 

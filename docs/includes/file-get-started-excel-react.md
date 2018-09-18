@@ -41,14 +41,20 @@ In this article, you'll walk through the process of building an Excel add-in usi
     
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
-4.  Open **src/components/App.tsx**, search for the comment "Update the fill color," then change the fill color from 'yellow' to 'blue', and save the file. 
+4. Navigate to the root folder of the web application project.
+
+    ```bash
+    cd "My Office Add-in"
+    ```
+	
+5.  Open **src/components/App.tsx**, search for the comment "Update the fill color," then change the fill color from 'yellow' to 'blue', and save the file. 
 
     ```js
     range.format.fill.color = 'blue'
 
     ```
 
-5. In the `return` block of the `render` function within **src/components/App.tsx**, update the `<Herolist>` to the code below, and save the file. 
+6. In the `return` block of the `render` function within **src/components/App.tsx**, update the `<Herolist>` to the code below, and save the file. 
 
     ```js
       <HeroList message='Discover what My Office Add-in can do for you today!' items={this.state.listItems}>
@@ -57,9 +63,9 @@ In this article, you'll walk through the process of building an Excel add-in usi
     </HeroList>
     ```
 
-6. Carry out the steps in [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) to trust the certificate for your development computer's operating system.
+7. Carry out the steps in [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) to trust the certificate for your development computer's operating system.
 
-7. Sideload your add-in so it will appear in Excel. In the terminal, run the following command: 
+8. Sideload your add-in so it will appear in Excel. In the terminal, run the following command: 
     
     ```bash
     npm run sideload
@@ -67,7 +73,7 @@ In this article, you'll walk through the process of building an Excel add-in usi
 
 ## Try it out
 
-1. From the terminal, run the following command to start the dev server.
+1. Open a bash terminal in the root of the project (**[...]/My Office Add-in**) and run the following command to start the dev server.
 
     Windows:
     ```bash
