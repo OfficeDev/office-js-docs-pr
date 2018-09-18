@@ -8,12 +8,14 @@ title: Custom Functions' best practices
 This article covers some recommended patterns and solutions to common use cases with Excel custom functions.
 
 ## Authentication
-Regular add-ins use `Office.context.displayDialogAsync` and `Office.context.asyncStorage` to accomplish authentication tasks. Custom functions differs from this approach. Because custom functions use a different runtime, they do not have access to the Office.context methods. Instead, they use methods available on the `OfficeRuntime` object, such as `OfficeRuntime.DisplayWebDialog()` and `OfficeRuntime.AsyncStorage.setItem(key, value)`.
+Non-custom functions add-ins which have web views (i.e. display information in the taskpane) accomplish authentication via `Office.context.displayDialogAsync`. Custom functions differ from this approach. Because custom functions use a different runtime, they do not have access to the Office.context methods. Instead, they use methods available on the `OfficeRuntime` object, such as `OfficeRuntime.DisplayWebDialog()` and `OfficeRuntime.AsyncStorage.setItem(key, value)`.
 
 The following code sample shows how to store a token in AsyncStorage and display a dialog box which can indicate whether or not the user is authenticated.  
 
+
+[TODO Take sample out of Typescript?]
 ```ts
-// Get auth token before calling my service, a hypothetical API which will deliver a stock price based on stock ticker string, such as "MSFT"
+// Get auth token before calling my service, a hypothetical API, which will deliver a stock price based on stock ticker string, such as "MSFT"
 async function getStock(ticker: string) {
     const token = await getToken();
     let data = await (await fetch(https://myservice.com/?token=token&ticker= + ticker).json());
@@ -50,6 +52,8 @@ function getTokenViaDialog_AsPromise() {
     });
 }
 ```
+
+Looking for a sample of authentication for a regular add-in that does not use a custom function? See the article on [authorizing external services for regular add-ins](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/auth-external-add-ins).
 
 ## Batching of API requests
 Instead of executing individual web requests, it is possible to batch requests using custom functions.
@@ -108,11 +112,11 @@ function getComment(x) {
 ```
 
 ## Error logging
-You can use runtime logging to debug your custom function's XML manifest file or to look for errors in your custom functions in real time. Runtime logging is only available for Office 2016 desktop currently.
+You can use runtime logging to debug your custom function's XML manifest file or to look for errors in your custom functions in real time via console.log statements. Runtime logging is only available for Office 2016 desktop currently.
 
 For full instructions on how to use runtime logging, [read this article](../testing/troubleshoot-manifest.md).
 
 ## Debugging
 Development on debugging tools is still proceeding for custom functions, which are still in preview.  
 
-At present, the best method for debugging is to use Excel through Office Online and use the F12 debugging tool native to your browser.  
+At present, the best method for debugging is to use [Excel through Office Online](https://www.office.com/launch/excel) and use the F12 debugging tool native to your browser. 

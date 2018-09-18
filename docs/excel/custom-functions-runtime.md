@@ -1,7 +1,7 @@
 ---
 ms.date: 09/05/2018
-description: 'Excel custom functions use a new JavaScript runtime, which differs from the standard Add-ins WebView control runtime.' 
-title: 'Runtime for Excel Custom Function Add-ins'
+description: Excel custom functions use a new JavaScript runtime, which differs from the standard Add-ins WebView control runtime.
+title: Runtime for Excel Custom Function Add-ins
 ---
 
 # Runtime for Excel custom function add-ins
@@ -9,23 +9,17 @@ title: 'Runtime for Excel Custom Function Add-ins'
 Excel custom functions do not use the standard Add-ins WebView control runtime, which behaves similarly to a browser. Instead, they employ a new JavaScript runtime.  
 
 Advantages of this new runtime include:  
-- **Speed**: Multiple instances of this runtime can work in parallel.
+- **Performance**: This runtime can more effectively serve multiple instance of an add-in.
 - **Network calls**: Through XHR, you can make individual or “streaming” batched requests to get data from the web.
 - **Authentication**: AsyncStorage allows you to store tokens and set up authentication for users of your custom functions.
-- **Modern Integration**: This runtime supports familiar technologies such as WebSockets and Dialog API.
+- **Modern Integration**: This runtime contains APIs similar to those of standard add-ins, such as WebSockets and Dialog API.
 
 > [!NOTE]
-> This new JavaScript runtime does not provide access to the Document Object Model (DOM) or support libraries like JQuery which rely on the DOM.
+> This new custom functions JavaScript runtime does not provide access to the Document Object Model (DOM) or support libraries like JQuery which rely on the DOM.
 
-The new runtime has two configurations: synchronous, for computation-only functions, and asynchronous, for functions which make network calls via XHR or utilize the other supported APIs, such as AsyncStorage.  
+## Custom functions JavaScript runtime
 
-## Synchronous JavaScript runtime
-
-This runtime can be parallelized, allowing for great improvements in speed and efficiency when performing calculations.
-
-## Asynchronous JavaScript runtime
-
-The asynchronous JavaScript runtime is optimized for asynchronous actions that custom functions may employ, like making network calls. The asynchronous JavaScript runtime supports four APIs, which you can use in your custom functions:  
+The custom functions JavaScript runtime is optimized for asynchronous actions that custom functions may employ, like making network calls. This runtime supports four APIs, which you can use in your custom functions:  
 
 - [XHR](#xhr)
 - [WebSockets](#websockets)
