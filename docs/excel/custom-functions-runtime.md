@@ -1,25 +1,24 @@
 ---
-ms.date: 09/05/2018
+ms.date: 09/18/2018
 description: Excel custom functions use a new JavaScript runtime, which differs from the standard Add-ins WebView control runtime.
 title: Runtime for Excel Custom Function Add-ins
 ---
 
 # Runtime for Excel custom function add-ins
 
-Excel custom functions do not use the standard Add-ins WebView control runtime, which behaves similarly to a browser. Instead, they employ a new JavaScript runtime.  
+Custom functions extend Excel’s capabilities using a new JavaScript runtime. This runtime utilizes a sandboxed JavaScript engine rather than a web browser. Additionally, it prioritizes performance, allowing you to run thousands of custom functions simultaneously.  
 
-Advantages of this new runtime include:  
-- **Performance**: This runtime can more effectively serve multiple instance of an add-in.
-- **Network calls**: Through XHR, you can make individual or “streaming” batched requests to get data from the web.
-- **Authentication**: AsyncStorage allows you to store tokens and set up authentication for users of your custom functions.
-- **Modern Integration**: This runtime contains APIs similar to those of standard add-ins, such as WebSockets and Dialog API.
+> [NOTE!] The code for your add-in may include other parts, such as task panes and other UI elements.  
+> These will continue to run in the browser-like WebView runtime that you are used to. The new runtime only applies to the custom functions related code in your add-in.  
 
-> [!NOTE]
-> This new custom functions JavaScript runtime does not provide access to the Document Object Model (DOM) or support libraries like JQuery which rely on the DOM.
+## Notable changes
 
-## Custom functions JavaScript runtime
+- The new JavaScript runtime used by custom functions does not provide access to the Document Object Model (DOM) or support libraries like JQuery which rely on the DOM.
+- In the JavaScript file which defines your functions (if using yo office, **customfunctions.js**), you can now return a regular JavaScript `Promise` instead of using `OfficeExtension.Promise`.
+- In the JSON file which describes your functions (if using yo office, **customfunctions.json**), you no longer need to specify “sync” or “async” under “options”.  
 
-The custom functions JavaScript runtime is optimized for asynchronous actions that custom functions may employ, like making network calls. This runtime supports four APIs, which you can use in your custom functions:  
+## New APIs 
+The new JavaScript runtime utilized by custom functions has four APIs:
 
 - [XHR](#xhr)
 - [WebSockets](#websockets)

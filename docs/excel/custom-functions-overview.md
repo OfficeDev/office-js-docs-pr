@@ -1,3 +1,9 @@
+---
+ms.date: 09/18/2018
+description: Create your own custom function add-in in Excel using JavaScript. 
+title: Create Custom Functions in Excel (Preview)
+---
+
 # Create custom functions in Excel (Preview)
 
 Custom functions (similar to user-defined functions, or UDFs), enable developers to add any JavaScript function to Excel using an add-in. Users can then access custom functions like any other native function in Excel (such as `=SUM()`). This article explains how to create custom functions in Excel.
