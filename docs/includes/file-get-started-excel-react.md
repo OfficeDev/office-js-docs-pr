@@ -40,7 +40,7 @@ In this article, you'll walk through the process of building an Excel add-in usi
     ![Yeoman generator](../images/yo-office-excel-react.png)
     
     After you complete the wizard, the generator will create the project and install supporting Node components.
-	
+
 4.  Open **src/components/App.tsx**, search for the comment "Update the fill color," then change the fill color from 'yellow' to 'blue', and save the file. 
 
     ```js
