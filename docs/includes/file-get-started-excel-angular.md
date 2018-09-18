@@ -207,7 +207,7 @@ For this quick start, you can use the certificates that the **Yeoman generator f
 
 ## Start the dev server
 
-1. From the terminal, run the following command to start the dev server. 
+1. From the terminal, run the following command to start the dev server.
 
     ```bash
     npm run start

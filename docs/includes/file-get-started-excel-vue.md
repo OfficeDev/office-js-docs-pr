@@ -170,7 +170,7 @@ To enable HTTPS for your app, open **package.json** in the root of the project, 
 
 ## Start the dev server
 
-1. From the terminal, run the following command to start the dev server. 
+1. From the terminal, run the following command to start the dev server.
 
     ```bash
     npm start

@@ -67,7 +67,7 @@ In this article, you'll walk through the process of building an Excel add-in usi
 
 ## Try it out
 
-1. From the terminal, run the following command to start the dev server. 
+1. From the terminal, run the following command to start the dev server.
 
     Windows:
     ```bash
