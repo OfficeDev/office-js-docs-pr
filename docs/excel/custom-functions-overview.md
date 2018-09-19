@@ -199,15 +199,15 @@ Asynchronous functions display a `GETTING_DATA` temporary error in the cell whil
 An asynchronous function can be streamed. Streamed custom functions let you output data to cells repeatedly over time, without waiting for Excel or users to request recalculations. The following example is a custom function that adds a number to the result every second. Note the following about this code:
 
 - Excel displays each new value automatically using the `setResult` callback.
-- The final parameter, `caller`, is never specified in your registration code, and it does not display in the autocomplete menu to Excel users when they enter the function. It’s an object that contains a `setResult` callback function that’s used to pass data from the function to Excel to update the value of a cell.
-- In order for Excel to pass the `setResult` function in the `caller` object, you must declare support for streaming during your function registration by setting the option `"stream": true` in the `options` property for the custom function in the registration JSON file.
+- The final parameter, `handler`, is never specified in your registration code, and it does not display in the autocomplete menu to Excel users when they enter the function. It’s an object that contains a `setResult` callback function that’s used to pass data from the function to Excel to update the value of a cell.
+- In order for Excel to pass the `setResult` function in the `handler` object, you must declare support for streaming during your function registration by setting the option `"stream": true` in the `options` property for the custom function in the registration JSON file.
 
 ```js
-function incrementValue(increment, caller){
+function incrementValue(increment, handler){
     var result = 0;
     setInterval(function(){
          result += increment;
-         caller.setResult(result);
+         handler.setResult(result);
     }, 1000);
 }
 ```
@@ -224,17 +224,17 @@ You *must* implement a cancellation handler for every streaming function. Asynch
 
 To make a function cancelable, set the option `"cancelable": true` in the `options` property for the custom function in the registration JSON file.
 
-The following code shows the previous example with cancellation implemented. In the code, the `caller` object contains an `onCanceled` function must be defined for each cancelable custom function.
+The following code shows the previous example with cancellation implemented. In the code, the `handler` object contains an `onCanceled` function must be defined for each cancelable custom function.
 
 ```js
-function incrementValue(increment, caller){ 
+function incrementValue(increment, handler){ 
     var result = 0;
     var timer = setInterval(function(){
          result += increment;
-         caller.setResult(result);
+         handler.setResult(result);
     }, 1000);
 
-    caller.onCanceled = function(){
+    handler.onCanceled = function(){
         clearInterval(timer);
     }
 }
@@ -253,13 +253,13 @@ The following code shows an implementation of the previous temperature-streaming
 ```js
 var savedTemperatures;
 
-function streamTemperature(thermometerID, caller){ 
+function streamTemperature(thermometerID, handler){ 
      if(!savedTemperatures[thermometerID]){
          refreshTemperatures(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
      }
 
      function getNextTemperature(){
-         caller.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
+         handler.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
          setTimeout(getNextTemperature, 1000); // Wait 1 second before updating Excel again.
      }
      getNextTemperature();
@@ -316,7 +316,9 @@ As you can see, ranges are handled in JavaScript as arrays of row arrays (like a
 
 ## Changelog
 
-- **Nov 7, 2017**: Shipped the custom functions preview and samples
+- **Nov 7, 2017**: Shipped* the custom functions preview and samples
 - **Nov 20, 2017**: Fixed compatibility bug for those using builds 8801 and later
-- **Nov 28, 2017**: Shipped support for cancellation on asynchronous functions (requires change for streaming functions)
-- **May 7, 2018**: Shipped support for Mac, Excel Online, and synchronous functions running in-process
+- **Nov 28, 2017**: Shipped* support for cancellation on asynchronous functions (requires change for streaming functions)
+- **May 7, 2018**: Shipped* support for Mac, Excel Online, and synchronous functions running in-process
+
+\* to the Office Insiders Channel

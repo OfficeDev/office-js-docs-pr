@@ -23,9 +23,8 @@ The `options` object configures how Excel processes the function. The following 
 
 |  Property  |  Data Type  |  Required?  |  Description  |
 |:-----|:-----|:-----|:-----|
-|  `cancelable`  |  boolean  |  No, default is `false`.  |  If `true`, Excel calls the `onCanceled` handler whenever the user takes an action that has the effect of canceling the function; for example, manually triggering recalculation or editing a cell that is referenced by the function. If you use this option, Excel will call the JavaScript function with an additional `caller` parameter. (Do ***not*** register this parameter in the `parameters` property). In the body of the function, a handler must be assigned to the `caller.onCanceled` member. Note, `cancelable` and `sync` cannot both be `true`.  |
-|  `stream`  |  boolean  |  No, default is `false`.  |  If `true`, the function can output repeatedly to the cell even when invoked only once. This option is useful for rapidly-changing data sources, such as a stock price. If you use this option, Excel will call the JavaScript function with an additional `caller` parameter. (Do ***not*** register this parameter in the `parameters` property). The function should have no `return` statement. Instead, the result value is passed as the argument of the `caller.setResult` callback method. Note, `stream` and `sync` may not both be `true`.|
-|  `sync`  |  boolean  |  No, default is `false`  |  If `true`, the function runs synchronously and it must return a value. If `false`, the function runs asynchronously and it must return a `OfficeExtension.Promise` object. Note, `sync`  may not be `true` if either `cancelable` or `stream` are `true`.  |
+|  `cancelable`  |  boolean  |  No, default is `false`.  |  If `true`, Excel calls the `onCanceled` handler whenever the user takes an action that has the effect of canceling the function; for example, manually triggering recalculation or editing a cell that is referenced by the function. If you use this option, Excel will call the JavaScript function with an additional `caller` parameter. (Do ***not*** register this parameter in the `parameters` property). In the body of the function, a handler must be assigned to the `caller.onCanceled` member.|
+|  `stream`  |  boolean  |  No, default is `false`.  |  If `true`, the function can output repeatedly to the cell even when invoked only once. This option is useful for rapidly-changing data sources, such as a stock price. If you use this option, Excel will call the JavaScript function with an additional `caller` parameter. (Do ***not*** register this parameter in the `parameters` property). The function should have no `return` statement. Instead, the result value is passed as the argument of the `caller.setResult` callback method.|
 
 ## Parameters array
 
@@ -69,10 +68,7 @@ The following JSON code is an example of a metadata file for custom functions.
 					"type": "number",
 					"dimensionality": "scalar"
 				}
-			],
-			"options": {
-				"sync": true
-			}
+			]
 		},
 		{
 			"name": "ADD42ASYNC", 
@@ -89,10 +85,7 @@ The following JSON code is an example of a metadata file for custom functions.
 					"type": "number",
 					"dimensionality": "scalar"
 				}
-			],
-			"options": {
-				"sync": false
-			}
+			]
 		},
 		{
 			"name": "ISEVEN", 
@@ -109,10 +102,7 @@ The following JSON code is an example of a metadata file for custom functions.
 					"type": "number",
 					"dimensionality": "scalar"
 				}
-			],
-			"options": {
-				"sync": true
-			}
+			]
 		},
 		{
 			"name": "GETDAY",
@@ -121,10 +111,7 @@ The following JSON code is an example of a metadata file for custom functions.
 			"result": {
 				"type": "string"
 			},
-			"parameters": [],
-			"options": {
-				"sync": true
-			}
+			"parameters": []
 		},
 		{
 			"name": "INCREMENTVALUE", 
@@ -143,7 +130,6 @@ The following JSON code is an example of a metadata file for custom functions.
 				}
 			],
 			"options": {
-				"sync": false,
 				"stream": true,
 				"cancelable": true
 			}
@@ -163,10 +149,7 @@ The following JSON code is an example of a metadata file for custom functions.
 					"type": "number",
 					"dimensionality": "matrix"
 				}
-			],
-			"options": {
-				"sync": true
-			}
+			]
 		}
 	]
 }

@@ -28,9 +28,53 @@ Some examples:
 - `RangeAreas.getEntireColumn` and `RangeAreas.getEntireRow` return another `RangeAreas` object that represents all of the columns (or rows) in all the ranges in the `RangeAreas`. For example, if the `RangeAreas` represents "A1:C4" and "F14:L15", then `RangeAreas.getEntireColumn` returns a `RangeAreas` object that represents "A:C" and "F:L".
 - `RangeAreas.copyFrom` can take either a `Range` or a `RangeAreas` parameter representing the source range(s) of the copy operation.
 
+#### Complete list of Range members that are also available on RangeAreas
+
+##### Properties
+
+Be familiar with [Reading properties of RangeAreas](#reading-properties-of-rangeareas) before you write code that reads any properties listed. There are subtleties to what gets returned.
+
+- address
+- addressLocal
+- cellCount
+- conditionalFormats
+- context
+- dataValidation
+- format
+- isEntireColumn
+- isEntireRow
+- style
+- worksheet
+
+##### Methods
+
+Range methods in preview are marked.
+
+- calculate()
+- clear()
+- convertDataTypeToText() (preview)
+- convertToLinkedDataType() (preview)
+- copyFrom() (preview)
+- getEntireColumn()
+- getEntireRow()
+- getIntersection()
+- getIntersectionOrNullObject()
+- getOffsetRange() (named getOffsetRangeAreas on the RangeAreas object)
+- getSpecialCells() (preview)
+- getSpecialCellsOrNullObject() (preview)
+- getTables() (preview)
+- getUsedRange() (named getUsedRangeAreas on the RangeAreas object)
+- getUsedRangeOrNullObject() (named getUsedRangeAreasOrNullObject on the RangeAreas object)
+- load()
+- set()
+- setDirty() (preview)
+- toJSON()
+- track()
+- untrack()
+
 ### RangeArea-specific properties and methods
 
-The `RangeAreas` type has some properties and methods that are not on the `Range` object:
+The `RangeAreas` type has some properties and methods that are not on the `Range` object. The following is a selection of them:
 
 - `areas`: A `RangeCollection` object that contains all of the ranges represented by the `RangeAreas` object. The `RangeCollection` object is also new and is similar to other Excel collection objects. It has an `items` property which is an array of `Range` objects representing the ranges.
 - `areaCount`: The total number of ranges in the `RangeAreas`.
@@ -102,7 +146,7 @@ Excel.run(function (context) {
 })
 ```
 
-Sometimes don't find *any* cells with the targeted characteristic. If `getSpecialCells` doesn't find any, it throws an **ItemNotFound** error. This would divert the flow of control to a `catch` block/method, if there is one. If there isn't, the error halts the function. There may be scenarios in which throwing the error is exactly what you want to happen when there are no cells with the targeted characteristic. 
+Sometimes the range doesn't have *any* cells with the targeted characteristic. If `getSpecialCells` doesn't find any, it throws an **ItemNotFound** error. This would divert the flow of control to a `catch` block/method, if there is one. If there isn't, the error halts the function. There may be scenarios in which throwing the error is exactly what you want to happen when there are no cells with the targeted characteristic. 
 
 But in scenarios in which it is normal, but perhaps uncommon, for there to be no matching cells; your code should check for this possibility and handle it gracefully without throwing an error. For these scenarios, use the `getSpecialCellsOrNullObject` method and test the `RangeAreas.isNullObject` property. The following is an example. Note about this code:
 

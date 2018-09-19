@@ -279,7 +279,7 @@
         href: excel/excel-add-ins-multiple-ranges.md
         displayName: Excel
     - name: Excel JavaScript API reference
-      href: https://docs.microsoft.com/en-us/javascript/office/overview/excel-add-ins-reference-overview?view=office-js
+      href: https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js
       displayName: Excel
 
   - name: Word add-ins
@@ -311,7 +311,7 @@
       href: word/search-option-guidance.md
       displayName: Word
     - name: Word JavaScript API reference
-      href: https://docs.microsoft.com/en-us/javascript/office/overview/word-add-ins-reference-overview?view=office-js
+      href: https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js
       displayName: Word
 
   - name: Outlook add-ins
@@ -346,7 +346,7 @@
       href: onenote/onenote-add-ins-page-content.md
       displayName: OneNote
     - name: OneNote JavaScript API reference
-      href: https://docs.microsoft.com/en-us/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js
+      href: https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js
       displayName: OneNote
 
   - name: Project add-ins
@@ -435,7 +435,7 @@
     href: https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js
     displayName: Word
   - name: Shared API
-    href: https://docs.microsoft.com/en-us/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js
+    href: https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js
     displayName: PowerPoint, Project
   - name: API open specifications
     href: https://docs.microsoft.com/javascript/office/openspec?view=office-js

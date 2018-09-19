@@ -397,7 +397,7 @@ function removeEventHandlerFromBinding() {
 [setDataAsync]: 		 https://docs.microsoft.com/javascript/api/office/Office.Binding?view=office-js#setdataasync-data--options--callback-
 [SelectionChanged]: 	 https://docs.microsoft.com/javascript/api/office/office.bindingselectionchangedeventargs?view=office-js
 [addHandlerAsync]: 		 https://docs.microsoft.com/javascript/api/office/Office.Binding?view=office-js#addhandlerasync-eventtype--handler--options--callback-
-[removeHandlerAsync]: 	 https://docs.microsoft.com/en-us/javascript/api/office/Office.Binding?view=office-js#removehandlerasync-eventtype--options--callback-
+[removeHandlerAsync]: 	 https://docs.microsoft.com/javascript/api/office/Office.Binding?view=office-js#removehandlerasync-eventtype--options--callback-
 
 [Bindings]:				 https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js
 [getByIdAsync]: 		 https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#getbyidasync-id--options--callback- 
@@ -407,12 +407,12 @@ function removeEventHandlerFromBinding() {
 [addFromPromptAsync]: 	 https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#addfrompromptasync-bindingtype--options--callback-
 [releaseByIdAsync]: 	 https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#releasebyidasync-id--options--callback-
 
-[AsyncResult]: 			https://docs.microsoft.com/en-us/javascript/api/office/office.asyncresult?view=office-js
-[Office.BindingType]: 	https://docs.microsoft.com/en-us/javascript/api/office/office.bindingtype?view=office-js
-[Office.select]:		https://docs.microsoft.com/en-us/javascript/api/office?view=office-js 
-[Office.EventType]: 	https://docs.microsoft.com/en-us/javascript/api/office/office.eventtype?view=office-js 
-[Document.bindings]: 	https://docs.microsoft.com/en-us/javascript/api/office/office.document?view=office-js
+[AsyncResult]: 			https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js
+[Office.BindingType]: 	https://docs.microsoft.com/javascript/api/office/office.bindingtype?view=office-js
+[Office.select]:		https://docs.microsoft.com/javascript/api/office?view=office-js 
+[Office.EventType]: 	https://docs.microsoft.com/javascript/api/office/office.eventtype?view=office-js 
+[Document.bindings]: 	https://docs.microsoft.com/javascript/api/office/office.document?view=office-js
 
 
-[TableBinding.rowCount]: https://docs.microsoft.com/en-us/javascript/api/office/office.tablebinding?view=office-js
-[BindingSelectionChangedEventArgs]: https://docs.microsoft.com/en-us/javascript/api/office/office.bindingselectionchangedeventargs?view=office-js
+[TableBinding.rowCount]: https://docs.microsoft.com/javascript/api/office/office.tablebinding?view=office-js
+[BindingSelectionChangedEventArgs]: https://docs.microsoft.com/javascript/api/office/office.bindingselectionchangedeventargs?view=office-js

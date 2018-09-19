@@ -12,7 +12,7 @@ This article describes how to use Visual Studio to create your first Office Add-
 > [!NOTE]
 > To get started with an add-in for OneNote, see [Build your first OneNote add-in](../onenote/onenote-add-ins-getting-started.md).
 
-## Create an Office add-in project in Visual Studio
+## Create an Office Add-in project in Visual Studio
 
 
 To get started, make sure you have the [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx) installed, and a version of Microsoft Office. You can join the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program), or follow these instructions to get the [latest version](../develop/install-latest-office-version.md).

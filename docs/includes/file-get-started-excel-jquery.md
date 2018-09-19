@@ -179,11 +179,15 @@ In this article, you'll walk through the process of building an Excel add-in by 
     
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
-    
+4. Navigate to the root folder of the web application project.
 
-4. In your code editor, open **index.html** in the root of the project. This file specifies the HTML that will be rendered in the add-in's task pane. 
+    ```bash
+    cd "My Office Add-in"
+    ```
+
+5. In your code editor, open **index.html** in the root of the project. This file specifies the HTML that will be rendered in the add-in's task pane. 
  
-5. Within **index.html**, replace the generated `header` tag with the following markup.
+6. Within **index.html**, replace the generated `header` tag with the following markup.
  
     ```html
     <div id="content-header">
@@ -193,7 +197,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
     </div>
     ```
 
-6. Within **index.html**, replace the generated `main` tag with the following markup, and save the file.
+7. Within **index.html**, replace the generated `main` tag with the following markup, and save the file.
 
     ```html
     <div id="content-main">
@@ -206,7 +210,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
     </div>
     ```
 
-7. Open the file **src\index.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.
+8. Open the file **src\index.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.
 
     ```js
     'use strict';
@@ -234,7 +238,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
     })();
     ```
 
-8. Open the file **app.css** to specify the custom styles for the add-in. Replace the entire contents with the following code and save the file.
+9. Open the file **app.css** to specify the custom styles for the add-in. Replace the entire contents with the following code and save the file.
 
     ```css
     #content-header {
