@@ -23,7 +23,7 @@ In this tutorial, you will learn how to:
 * [Node.js and npm](https://nodejs.org/en/)
 * [Git Bash](https://git-scm.com/downloads) (or another Git client)
 * [Yeoman](http://yeoman.io/) and the [Yo Office generator](https://www.npmjs.com/package/generator-office)
-* Office 2016 for Windows and [join the Office Insider program](https://products.office.com/office-insider). You must have Office build number 8711 or later.
+* Office 2016 for Windows and [join the Office Insider program](https://products.office.com/office-insider). You must have Office build number 10827 or later.
 
 ## Create your add-in project
 
@@ -61,7 +61,7 @@ You’ll begin this tutorial by using the Yo Office Yeoman generator, which will
 
     3. You will also need to register your custom-functions add-in. In Excel, select **Insert > My Add-ins > Insert an Add-in**. This will bring up a list of available add-ins. Under "Developer Add-ins" you will see your add-in, under the name "Excel Custom Function". Select it to register it.
 
-    Select **Insert > Add-ins**. Choose **Manage My Add-ins** and select **Upload My Add-in**. Click "Browse..." for your manifest file (`C:\Users\LabUser\Stock Ticker\manifest.xml`), then click Open, select **Upload**.
+    Select **Insert > Add-ins**. Choose **Manage My Add-ins** and select **Upload My Add-in**. Click "Browse..." for your manifest file (`C:\Users\YourName\stock-ticker\manifest.xml`), then click Open, select **Upload**.
 
     4. Finally, change the script tag to point to the right custom functions source. Open up your add-in project in your favorite code editor. In **index.html** in the root folder, delete and replace the script tag immediately following the <title> tags with the code below:
 
