@@ -29,45 +29,45 @@ In this tutorial, you will learn how to:
 
 You’ll begin this tutorial by using the Yo Office Yeoman generator, which will automatically populate the files you need for your project.
 
-1. In your command line interface, create a scaffold of your project (by default, this should be in your C:\Users\YourUserName folder).
+    1. In your command line interface, create a scaffold of your project (by default, this should be in your C:\Users\YourUserName folder).
 
-```bash
-yo office
-```
+    ```bash
+    yo office
+    ```
 
-![Yo Office bash prompts for custom functions](../images/yo-office-excel-cfs-stock-ticker.png)
-Answer the prompts as directed below:
+    ![Yo Office bash prompts for custom functions](../images/yo-office-excel-cfs-stock-ticker.png)
+    Answer the prompts as directed below:
 
-* Choose a project type: `Excel Custom Functions Add-in project (September 2018 Preview Refresh: Requires the Insider channel for Excel)`
-* What do you want to name your add-in? `stock-ticker`
+    * Choose a project type: `Excel Custom Functions Add-in project (September 2018 Preview Refresh: Requires the Insider channel for Excel)`
+    * What do you want to name your add-in? `stock-ticker`
 
-For this tutorial, choose Javascript as the language you would like to use to build your add-in.
+    For this tutorial, choose Javascript as the language you would like to use to build your add-in.
 
-After you complete the wizard, the generator will create the project files and install supporting Node components.
+    After you complete the wizard, the generator will create the project files and install supporting Node components.
 
-2. Next, start a localhost instance by running one of the below commands in your command line interface.
+    2. Next, start a localhost instance by running one of the below commands in your command line interface.
 
-If you are developing using the desktop version of Excel, use:
+    If you are developing using the desktop version of Excel, use:
 
-```bash
-npm start
-```
+    ```bash
+    npm start
+    ```
 
-If you are using Excel Online, use:
+    If you are using Excel Online, use:
 
-```bash
-npm start-web
-```
+    ```bash
+    npm start-web
+    ```
 
-3. You will also need to register your custom-functions add-in. In Excel, select **Insert > My Add-ins > Insert an Add-in**. This will bring up a list of available add-ins. Under "Developer Add-ins" you will see your add-in, under the name "Excel Custom Function". Select it to register it.
+    3. You will also need to register your custom-functions add-in. In Excel, select **Insert > My Add-ins > Insert an Add-in**. This will bring up a list of available add-ins. Under "Developer Add-ins" you will see your add-in, under the name "Excel Custom Function". Select it to register it.
 
-Select **Insert > Add-ins**. Choose **Manage My Add-ins** and select **Upload My Add-in**. Click "Browse..." for your manifest file (`C:\Users\LabUser\Stock Ticker\manifest.xml`), then click Open, select **Upload**. 
+    Select **Insert > Add-ins**. Choose **Manage My Add-ins** and select **Upload My Add-in**. Click "Browse..." for your manifest file (`C:\Users\LabUser\Stock Ticker\manifest.xml`), then click Open, select **Upload**. 
 
-4. Finally, change the script tag to point to the right custom functions source. Open up your add-in project in your favorite code editor. In **index.html** in the root folder, delete and replace the script tag immediately following the <title> tags with the code below:
+    4. Finally, change the script tag to point to the right custom functions source. Open up your add-in project in your favorite code editor. In **index.html** in the root folder, delete and replace the script tag immediately following the <title> tags with the code below:
 
-```js
-<script src="https://unpkg.com/@microsoft/office-js@1.1.9-adhoc.22/dist/custom-functions-runtime.js" type="text/javascript"></script>
-```
+    ```js
+    <script src="https://unpkg.com/@microsoft/office-js@1.1.9-adhoc.22/dist/custom-functions-runtime.js" type="text/javascript"></script>
+    ```
 
 ## Try out a basic computational custom function
 
@@ -81,57 +81,57 @@ What if you wanted a function which could fetch and display the price of Microso
 
 You’ll be adding a new function, called =CONTOSO.STOCKPRICE, to the **customfunctions.j** file. The function will take in the name of a stock ticker, such as "MSFT", and return the price of that stock. You'll leverage the IEX Trading API, which is free and does not require authentication.
 
-1. Open your code editor of choice and navigate to the stock-ticker project folder. 
-2. Copy and paste the function below and add it to **customfunctions.js**.
+    1. Open your code editor of choice and navigate to the stock-ticker project folder. 
+    2. Copy and paste the function below and add it to **customfunctions.js**.
 
-```js
-function STOCKPRICE(ticker) {
-    return new Promise(
-        function(resolve) {
-            let xhr = new XMLHttpRequest();
-            let url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price"
-            //add handler for xhr
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == XMLHttpRequest.DONE) {
-                //return result back to Excel
-                resolve(xhr.responseText);
+    ```js
+    function STOCKPRICE(ticker) {
+        return new Promise(
+            function(resolve) {
+                let xhr = new XMLHttpRequest();
+                let url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price"
+                //add handler for xhr
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == XMLHttpRequest.DONE) {
+                    //return result back to Excel
+                    resolve(xhr.responseText);
+                    }
                 }
-            }
-            //make request
-            xhr.open('GET', url, true);
-            xhr.send();
-    });
-}
-```
+                //make request
+                xhr.open('GET', url, true);
+                xhr.send();
+        });
+    }
+    ```
 
-You'll notice in this code that your asynchronous function returns a JavaScript Promise with the data from the IEX Trading API. Asynchronous custom functions require you to either return a new Promise or use JavaScript's async/await syntax.
+    You'll notice in this code that your asynchronous function returns a JavaScript Promise with the data from the IEX Trading API. Asynchronous custom functions require you to either return a new Promise or use JavaScript's async/await syntax.
 
-3. In order for Excel to properly run this function, you must add some metadata to the **./config/customfunctions.json** file.
+    3. In order for Excel to properly run this function, you must add some metadata to the **./config/customfunctions.json** file.
 
-```json
-{
-    "name": "STOCKPRICE",
-    "description": "Multiplies number by 105",
-    "helpUrl": "http://dev.office.com",
-    "result": {
-        "type": "number",
-        "dimensionality": "scalar"
-    },  
-    "parameters": [
-        {
-            "name": "ticker",
-            "description": "stock ticker name",
-            "type": "string",
+    ```json
+    {
+        "name": "STOCKPRICE",
+        "description": "Multiplies number by 105",
+        "helpUrl": "http://dev.office.com",
+        "result": {
+            "type": "number",
             "dimensionality": "scalar"
-        }
-    ],
-}
-```
-You'll notice that this JSON file describes the function, listing the types and dimensionality of the results and parameters.
+        },  
+        "parameters": [
+            {
+                "name": "ticker",
+                "description": "stock ticker name",
+                "type": "string",
+                "dimensionality": "scalar"
+            }
+        ],
+    }
+    ```
+    You'll notice that this JSON file describes the function, listing the types and dimensionality of the results and parameters.
 
-4. You will need to re-register this change once you have saved the file. In Excel, select **Insert > Add-ins > My Add-ins**. This will bring up a list of available add-ins. Under “Developer Add-ins" you will see your add-in, under the name “Excel Custom Function.” Select it to register it.
+    4. You will need to re-register this change once you have saved the file. In Excel, select **Insert > Add-ins > My Add-ins**. This will bring up a list of available add-ins. Under “Developer Add-ins" you will see your add-in, under the name “Excel Custom Function.” Select it to register it.
 
-In cell B1, run the function `=CONTOSO.STOCKPRICE("MSFT")`. It should show you the stock price for one share of Microsoft stock right now.
+    In cell B1, run the function `=CONTOSO.STOCKPRICE("MSFT")`. It should show you the stock price for one share of Microsoft stock right now.
 
 ## Create a streaming asynchronous custom function
 
