@@ -34,7 +34,7 @@ In the cloned sample repo, you’ll see the following files:
 
 - **./src/customfunctions.js**, which contains the custom function code (see the simple code example above for the `ADD42` function).
 - **./config/customfunctions.json**, which contains the registration JSON that tells Excel about your custom function. Registration makes your custom functions appear in the list of available functions displayed when a user types in a cell.
-- **./index.html**, which provides a &lt;Script&gt; reference to the JS file.
+- **./index.html**, which provides a &lt;Script&gt; reference to the JS file. This file controls content in the task pane in all versions of Excel except Excel Online.
 - **./manifest.xml**, which tells Excel the location of the HTML, JavaScript, and JSON files; it also specifies a namespace for all the custom functions that are installed with the add-in.
 
 ### JSON file (./config/customfunctions.json)
@@ -47,27 +47,26 @@ The following code in **customfunctions.json** specifies the metadata for the sa
 ```js
 {
     "$schema": "https://developer.microsoft.com/json-schemas/office-js/custom-functions.schema.json",
-    "functions": [ //array can contain multiple functions
+    "functions": [
         {
-            "name": "ADD42", //names your function, recommended that you use uppercase letters
-            "description":  "adds 42 to the input numbers", //appears in the autocomplete menu in Excel
-            "helpUrl": "http://dev.office.com", //Excel opens a taskpane and displays the webpage listed here when a user requests help with a function
-            "result": { //specifies the type information returned by the function to Excel
-                "type": "number", //can be string, number, boolean
-                "dimensionality": "scalar" //can be scalar or matrix (two dimensional array of values specified by type above)
+            "name": "ADD42",
+            "description":  "adds 42 to the input numbers",
+            "helpUrl": "http://dev.office.com",
+            "result": {
+                "type": "number",
+                "dimensionality": "scalar"
             },
-            "parameters": [ //parameters must be specified in order
-                {
-                    "name": "number 1", //appears in Excel IntelliSense
-                    "description": "the first number to be added", //appears in Excel IntelliSense
-                    "type": "number", //should mirror the type of result 
-                    "dimensionality": "scalar" //should mirror the dimensionality of result
+            "parameters": [                {
+                    "name": "number 1",
+                    "description": "the first number to be added",
+                    "type": "number",
+                    "dimensionality": "scalar"
                 },
                 {
-                    "name": "number 2", //appears in Excel IntelliSense. Remember that parameters are in order.
-                    "description": "the second number to be added", //appears in Excel IntelliSense
-                    "type": "number", //should mirror type of result
-                    "dimensionality": "scalar" //should mirror the dimensionality of result
+                    "name": "number 2",
+                    "description": "the second number to be added",
+                    "type": "number",
+                    "dimensionality": "scalar"
                 }
             ],
         }
