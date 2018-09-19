@@ -52,7 +52,7 @@ function getTokenViaDialog_AsPromise() {
 }
 ```
 
-Looking for a sample of authentication not specific to Excel custom functions? See the article on [authorizing external services for add-ins which do not use the new JavaScript runtime](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/auth-external-add-ins).
+Looking for information about authentication not specific to Excel custom functions? See the article on [authorizing external services for add-ins which do not use the new JavaScript runtime](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/auth-external-add-ins).
 
 ## Batching of API requests
 
