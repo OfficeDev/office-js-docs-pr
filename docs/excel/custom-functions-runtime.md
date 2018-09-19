@@ -46,7 +46,7 @@ function sendWebRequest(thermometerID, data) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        data.temperature=xhttp.responseText; //parsing would be needed here rather than blind assignment
+        data.temperature = xhttp.responseText; //parsing would be needed here rather than blind assignment
       };
     xhttp.open("GET", "https://127.0.0.1:8080/temperature.aspx", true);
     xhttp.send();  
@@ -78,9 +78,10 @@ AsyncStorage is a key-value storage system that can be used to store authenticat
 - Persistent
 - Unencrypted
 - Asynchronous
-- Global to your Excel custom function
 
-AsyncStorage can be used for storing authentication tokens and settings for reuse as well as a lightweight caching of information. Methods available on AsyncStorage include getItem, setItem, removeItem, clear, getAllKeys, flushGetRequests, multiGet, multiSet, and multiRemove. At this time, mergeItem and multiMerge are not supported methods.  
+Additionally, AsyncStorage is available globally to all parts of your add-in. For custom functions, Async Storage is exposed as a global object. For other parts of your add-in, such as taskpanes and other elements which utilize the typical WebView runtime, AsyncStorage is exposed through `Office.Runtime`.
+
+ Methods available on AsyncStorage include getItem, setItem, removeItem, clear, getAllKeys, flushGetRequests, multiGet, multiSet, and multiRemove. At this time, mergeItem and multiMerge are not supported methods.
 
 Each add-in has its own storage partition, with a default of 5MB of storage.  
 
@@ -108,13 +109,13 @@ The code sample below illustrates the use of the Dialog API’s `displayWebDialo
 
 ```ts
 // Get auth token before calling my service, a hypothetical API which will deliver a stock price based on stock ticker string, such as "MSFT"
-async function getStock(ticker: string) {
+async function getStock(ticker) {
     const token = await getToken();
     let data = await (await fetch(https://myservice.com/?token=token&ticker= + ticker).json());
     return data.price;
 }
 
-async function getToken(): Promise<string> {
+async function getToken() {
     if (_cachedToken) {
         return _cachedToken;
     } else {
@@ -136,14 +137,13 @@ function getTokenViaDialog_AsPromise() {
                         dialog.closeDialog();
                         return;
                     }
-                // Otherwise, handle other messages.
-            },
-            onClose: () => reject("User closed dialog"),
-            onRuntimeErrors: (e) => reject(e)  
+            // Otherwise, handle other messages.
+           },
+           onClose: () => reject("User closed dialog"),
         }).catch(e => reject(e));
     });
 }
 ```
 
 > [!NOTE]
-> The Dialog API in the new JavaScript runtime differs from the [current Dialog API](../develop/dialog-api-in-office-add-ins.md) which works in the WebView control runtime.  
+> The Dialog API in the new JavaScript runtime differs from the [current Dialog API](../develop/dialog-api-in-office-add-ins.md) which works for add-ins which are not custom functions.  

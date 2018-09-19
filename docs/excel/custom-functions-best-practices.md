@@ -5,24 +5,24 @@ title: Custom Functions' best practices
 ---
 
 # Custom Functions' best practices
+
 This article covers some recommended patterns and solutions to common use cases with Excel custom functions.
 
 ## Authentication
+
 Non-custom functions add-ins which have web views (i.e. display information in the taskpane) accomplish authentication via `Office.context.displayDialogAsync`. Custom functions differ from this approach. Because custom functions use a different runtime, they do not have access to the Office.context methods. Instead, they use methods available on the `OfficeRuntime` object, such as `OfficeRuntime.DisplayWebDialog()` and `OfficeRuntime.AsyncStorage.setItem(key, value)`.
 
 The following code sample shows how to store a token in AsyncStorage and display a dialog box which can indicate whether or not the user is authenticated.  
 
-
-[TODO Take sample out of Typescript?]
-```ts
+```js
 // Get auth token before calling my service, a hypothetical API, which will deliver a stock price based on stock ticker string, such as "MSFT"
-async function getStock(ticker: string) {
+async function getStock(ticker) {
     const token = await getToken();
     let data = await (await fetch(https://myservice.com/?token=token&ticker= + ticker).json());
     return data.price;
 }
 
-async function getToken(): Promise<string> {
+async function getToken() {
     if (_cachedToken) {
         return _cachedToken;
     } else {
@@ -38,61 +38,89 @@ function getTokenViaDialog_AsPromise() {
            width: ’50%’,
            hideTitle: true,
            onMessage: (message, dialog) => {
-                let json = JSON.parse(message);
-                    if (json.type === "token_succeeded") {
+               let json = JSON.parse(message);
+                if (json.type === "token_succeeded") {
                         resolve(json.value);
                         dialog.closeDialog();
                         return;
                     }
-                // Otherwise, handle other messages.
+            // Otherwise, handle other messages.
             },
-            onClose: () => reject("User closed dialog"),
-            onRuntimeErrors: (e) => reject(e)  
+          onClose: () => reject("User closed dialog")
         }).catch(e => reject(e));
     });
 }
 ```
 
-Looking for a sample of authentication for a regular add-in that does not use a custom function? See the article on [authorizing external services for regular add-ins](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/auth-external-add-ins).
+Looking for a sample of authentication not specific to Excel custom functions? See the article on [authorizing external services for add-ins which do not use the new JavaScript runtime](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/auth-external-add-ins).
 
 ## Batching of API requests
+
 Instead of executing individual web requests, it is possible to batch requests using custom functions.
 
 The below gives an outline of a batching pattern you can modify for your custom function:
 
 ```js
-// Current batch
-var _argumentsBatch = [];
-var _isBatchScheduled = false;
-
-// Individual requests are batched into an array
-function batchRequests(a, b, c) {
-  // Push the arguments to a batch
-  _argumentsBatch.push(arguments);
-
-  // If a batch hasn't been scheduled, schedule it after one second
-  if (!_isBatchScheduled) {
-    setTimeout(_processBatch, 1000); //milliseconds
-    _isBatchScheduled = true;
-  }
-}
-
-// Internal batch processor
-function _processBatch() {
-  // If anything needs to be batched, begin batching.
-  if (_argumentsBatch.length > 0) {
-    for (var i = 0; i < _argumentsBatch.length; i++) {
-      // Process items in the batch here
+// Hypothetical public async API
+function sumAsync() {
+    // Push an entry into the next batch
+    var batchEntry = {
+      "arguments": arguments,
+      "resolve": undefined,
+      "reject": undefined
+    };
+    var promise = new Promise((resolve, reject) => {
+      batchEntry.resolve = resolve;
+      batchEntry.reject = reject;
+    });
+    _batch.push(batchEntry);
+  
+    // If a batch hasn't been scheduled yet, schedule it after a certain timeout, e.g. 2 seconds
+    if (!_isBatchScheduled) {
+      setTimeout(_processBatch, 2000);
+      _isBatchScheduled = true;
     }
-
-    // After a batch is processed
-    _argumentsBatch = [];
-    _isBatchScheduled = false;
+  
+    // Return the promise
+    return promise;
   }
-}
+  
+  // Current batch
+  var _batch = [];
+  var _isBatchScheduled = false;
+  
+  // Internal batch processor
+  function _processBatch() {
+    // If there is anything batched...
+    if (_batch.length > 0) {
+      for (var i = 0; i < _batch.length; i++) {
+
+        // Sum up the arguments
+        var sum = 0;
+        for (var j = 0; j < _batch[i].arguments.length; j++) {
+          sum += _batch[i].arguments[j];
+        }
+
+        // In this simple example we always resolve, but you should also add error handling for reject
+        _batch[i].resolve(sum);
+      }
+
+      // The current batch has been processed
+      _batch = [];
+      _isBatchScheduled = false;
+    }
+  }
+  
+  
+  // Sample usage
+  console.clear();
+  sumAsync(1, 2).then((value) => { console.log("1 + 2 = " + value); });
+  sumAsync(2, 4, 6).then((value) => { console.log("2 + 4 + 6 = " + value); });
+  sumAsync(3, 5, 7, 9).then((value) => { console.log("3 + 5 + 7 + 9 = " + value); });
 ```
 
 ## Error handling
+
 Error handling for custom functions is the same as [error handling for the Excel JavaScript API at large](./excel-add-ins-error-handling.md). Generally, you will use `.catch` to handle errors. The code below gives an example of `.catch`.
 
 ```js
@@ -112,11 +140,45 @@ function getComment(x) {
 ```
 
 ## Error logging
+
 You can use runtime logging to debug your custom function's XML manifest file or to look for errors in your custom functions in real time via console.log statements. Runtime logging is only available for Office 2016 desktop currently.
 
 For full instructions on how to use runtime logging, [read this article](../testing/troubleshoot-manifest.md).
 
 ## Debugging
+
 Development on debugging tools is still proceeding for custom functions, which are still in preview.  
 
-At present, the best method for debugging is to use [Excel through Office Online](https://www.office.com/launch/excel) and use the F12 debugging tool native to your browser. 
+At present, the best method for debugging is to use [Excel through Office Online](https://www.office.com/launch/excel) and use the F12 debugging tool native to your browser.
+
+## Mapping names
+
+Custom functions are typically declared entirely in uppercase letters, although you can change this using the `CustomFunctionsMappings` object. Mapping functions in this object allows you to create any name for the function, which you can then use when you call it in Excel.  
+  
+You can declare individual functions, as shown below:  
+
+```js
+function ADD42(num) {
+    return num + 42;  
+}  
+  
+CustomFunctionsMappings = {
+    "plusFortyTwo" : ADD42 //effectively renames the add-in when invoked in Excel, so you will now call =plusFortyTwo()
+}
+```
+
+However, you can declare multiple mappings at the same time, as shown in the example below.  
+
+```js
+//assume that COUNTDOGS and COUNTCATS exist
+  
+CustomFunctionsMappings = {
+    "countdogs" : COUNTDOGS,  
+    "meow" : COUNTCATS //the mapping is not required to be the same
+}
+ ```
+
+The benefits of using `CustomFunctionsMappings` include:  
+
+- You can use web tools like webpack, as well as import syntax (commonly used in React, for example).
+- Your custom function can run through an uglifier without hassle.
