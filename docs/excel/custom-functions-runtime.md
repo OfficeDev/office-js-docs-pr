@@ -73,7 +73,7 @@ ws.onerror = (error) => {
 
 ### AsyncStorage
 
-AsyncStorage is a key-value storage system that can be used to store authentication tokens. It is: 
+AsyncStorage is a key-value storage system that can be used to store authentication tokens. It is:
 
 - Persistent
 - Unencrypted
