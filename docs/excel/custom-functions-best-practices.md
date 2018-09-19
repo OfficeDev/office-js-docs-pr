@@ -9,6 +9,7 @@ title: Custom Functions' best practices
 This article describes some recommended patterns and solutions to common use cases with Excel custom functions.
 
 ## Authentication
+
 Add-ins that contain web views (such as a task pane), but do not include any custom functions accomplish authentication via `Office.context.displayDialogAsync`. Because custom functions use a different runtime, they do not have access to the Office.context methods. Instead, they use methods available on the `OfficeRuntime` object, such as `OfficeRuntime.DisplayWebDialog()` and `OfficeRuntime.AsyncStorage.setItem(key, value)`.
 
 The following code sample shows how to store a token in AsyncStorage and display a dialog box which can indicate whether or not the user is authenticated.  
@@ -146,13 +147,11 @@ For full instructions on how to use runtime logging, [read this article](../test
 
 ## Debugging
 
-Development on debugging tools is still proceeding for custom functions, which are still in preview.  
-
-At present, the best method for debugging is to use [Excel through Office Online](https://www.office.com/launch/excel) and use the F12 debugging tool native to your browser.
+At present, the best method for debugging Excel custom functions is to use [Excel Online](https://www.office.com/launch/excel) and use the F12 debugging tool native to your browser. Additional debugging tools for custom functions may be available in the future.
 
 ## Mapping names
 
-Custom functions are typically declared entirely in uppercase letters, although you can change this using the `CustomFunctionsMappings` object. Mapping functions in this object allows you to create any name for the function, which you can then use when you call it in Excel.  
+Custom functions are typically declared entirely in uppercase letters, although you can change this by using the  `CustomFunctionsMappings` object. The key-value pairs you specify in `CustomFunctionsMappings` correspond to the function name you call in Excel (such as `=ADD42`) and the new alternate name you would like to use for this function in Excel. Use of `CustomFunctionsMapping` is not required, but can be helpful if you are using an uglifier, webpack, or import syntax - all of which have difficulty with the uppercase letters in these functions.
   
 You can declare individual functions, as shown below:  
 
@@ -173,11 +172,6 @@ However, you can declare multiple mappings at the same time, as shown in the exa
   
 CustomFunctionsMappings = {
     "countdogs" : COUNTDOGS,  
-    "meow" : COUNTCATS //the mapping is not required to be the same
+    "meow" : COUNTCATS
 }
  ```
-
-The benefits of using `CustomFunctionsMappings` include:  
-
-- You can use web tools like webpack, as well as import syntax (commonly used in React, for example).
-- Your custom function can run through an uglifier without hassle.
