@@ -44,6 +44,40 @@ The following code in **customfunctions.json** specifies the metadata for the sa
 > [!NOTE]
 > To call a function in Excel, the name listed in this JSON file will be appended to the namespace specified in your XML manifest file. To call this function, you'd call `=CONTOSO.ADD42`. The namespace is intended to be used as an identifier for your company or the add-in. A namespace and the name of a function are separated by a period.
 
+Note that for this example:
+
+- There's only one custom function, so there's only one member of the `functions` array. 
+
+
+
+ 
+- The `name` property defines the function name. As you see in the animated gif shown previously, a namespace (`CONTOSO`) is prepended to the function name in the Excel autocomplete menu. This prefix is defined in the add-in manifest, described below. The prefix and the function name are separated using a period, and by convention prefixes and function names are uppercase. To use your custom function, a user types the namespace followed by the function's name (`ADD42`) into a cell, in this case `=CONTOSO.ADD42`. The prefix is intended to be used as an identifier for your company or the add-in.  
+
+
+
+ 
+- The `description` appears in the autocomplete menu in Excel. 
+
+
+
+ 
+- When the user requests help for a function, Excel opens a task pane and displays the web page found at the URL specified in `helpUrl`. 
+
+
+
+ 
+- The `result` property specifies the type of information returned by the function to Excel. The `type` child property can `"string"`, `"number"`, or `"boolean"`. The `dimensionality` property can be `scalar` or `matrix` (a two-dimensional array of values of the specified `type`.) 
+
+
+
+ 
+- The `parameters` array specifies, *in order*, the type of data in each parameter that is passed to the function. The `name` and `description` child properties are used in the Excel intellisense. The `type` and `dimensionality` child properties are identical to the child properties of the `result` property described above. 
+
+
+
+ 
+- The `options` property enables you to customize some aspects of how and when Excel executes the function. There is more information about these options later in this article. 
+
 ```js
 {
     "$schema": "https://developer.microsoft.com/json-schemas/office-js/custom-functions.schema.json",
