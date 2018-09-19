@@ -35,7 +35,7 @@ In the cloned sample repo, you’ll see the following files:
 - **./src/customfunctions.js**, which contains the custom function code (see the simple code example above for the `ADD42` function).
 - **./config/customfunctions.json**, which contains the registration JSON that tells Excel about your custom function. Registration makes your custom functions appear in the list of available functions displayed when a user types in a cell.
 - **./index.html**, which provides a &lt;Script&gt; reference to the JS file. This file controls content in the task pane in all versions of Excel except Excel Online.
-- **./manifest.xml**, which tells Excel the location of the HTML, JavaScript, and JSON files; it also specifies a namespace for all the custom functions that are installed with the add-in.
+- **./manifest.xml**, which tells Excel the location of the HTML, JavaScript, and JSON files. It also specifies a namespace for all the custom functions that are installed with the add-in.
 
 ### JSON file (./config/customfunctions.json)
 
