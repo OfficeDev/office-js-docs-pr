@@ -6,11 +6,10 @@ title: Custom Functions' best practices
 
 # Custom Functions' best practices
 
-This article covers some recommended patterns and solutions to common use cases with Excel custom functions.
+This article describes some recommended patterns and solutions to common use cases with Excel custom functions.
 
 ## Authentication
-
-Non-custom functions add-ins which have web views (i.e. display information in the taskpane) accomplish authentication via `Office.context.displayDialogAsync`. Custom functions differ from this approach. Because custom functions use a different runtime, they do not have access to the Office.context methods. Instead, they use methods available on the `OfficeRuntime` object, such as `OfficeRuntime.DisplayWebDialog()` and `OfficeRuntime.AsyncStorage.setItem(key, value)`.
+Add-ins that contain web views (such as a task pane), but do not include any custom functions accomplish authentication via `Office.context.displayDialogAsync`. Because custom functions use a different runtime, they do not have access to the Office.context methods. Instead, they use methods available on the `OfficeRuntime` object, such as `OfficeRuntime.DisplayWebDialog()` and `OfficeRuntime.AsyncStorage.setItem(key, value)`.
 
 The following code sample shows how to store a token in AsyncStorage and display a dialog box which can indicate whether or not the user is authenticated.  
 
