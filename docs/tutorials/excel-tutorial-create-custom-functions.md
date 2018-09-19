@@ -61,7 +61,7 @@ You’ll begin this tutorial by using the Yo Office Yeoman generator, which will
 
     3. You will also need to register your custom-functions add-in. In Excel, select **Insert > My Add-ins > Insert an Add-in**. This will bring up a list of available add-ins. Under "Developer Add-ins" you will see your add-in, under the name "Excel Custom Function". Select it to register it.
 
-    Select **Insert > Add-ins**. Choose **Manage My Add-ins** and select **Upload My Add-in**. Click "Browse..." for your manifest file (`C:\Users\LabUser\Stock Ticker\manifest.xml`), then click Open, select **Upload**. 
+    Select **Insert > Add-ins**. Choose **Manage My Add-ins** and select **Upload My Add-in**. Click "Browse..." for your manifest file (`C:\Users\LabUser\Stock Ticker\manifest.xml`), then click Open, select **Upload**.
 
     4. Finally, change the script tag to point to the right custom functions source. Open up your add-in project in your favorite code editor. In **index.html** in the root folder, delete and replace the script tag immediately following the <title> tags with the code below:
 
@@ -73,16 +73,18 @@ You’ll begin this tutorial by using the Yo Office Yeoman generator, which will
 
 Now the custom functions in your file will be loaded and ready to use. There are several pre-built functions for you in the Yo Office project. All are attached to a namespace called CONTOSO which is defined in the XML manifest file. Once you start typing =CONTOSO in a cell, the list of available functions will appear.
 
-Let's call =CONTOSO.ADD42(). This function adds 42 to any two numbers you provide as arguments. In any cell, type =CONTOSO.ADD42(1,2). It should deliver the answer 45.
+Let's call `=CONTOSO.ADD42()`. This function adds 42 to any two numbers you provide as arguments. In any cell, type `=CONTOSO.ADD42(1,2)`. It should deliver the answer 45.
 
 ## Create a custom function
 
 What if you wanted a function which could fetch and display the price of Microsoft stock that day? Custom functions are designed so you can easily make requests for data from the web asynchronously.
 
-You’ll be adding a new function, called =CONTOSO.STOCKPRICE, to the **customfunctions.j** file. The function will take in the name of a stock ticker, such as "MSFT", and return the price of that stock. You'll leverage the IEX Trading API, which is free and does not require authentication.
+You’ll be adding a new function, called `=CONTOSO.STOCKPRICE`, to the **customfunctions.j** file. The function will take in the name of a stock ticker, such as "MSFT", and return the price of that stock. You'll leverage the IEX Trading API, which is free and does not require authentication.
 
     1. Open your code editor of choice and navigate to the stock-ticker project folder. 
     2. Copy and paste the function below and add it to **customfunctions.js**.
+
+    You'll notice in this code that your asynchronous function returns a JavaScript Promise with the data from the IEX Trading API. Asynchronous custom functions require you to either return a new Promise or use JavaScript's async/await syntax.
 
     ```js
     function STOCKPRICE(ticker) {
@@ -104,9 +106,9 @@ You’ll be adding a new function, called =CONTOSO.STOCKPRICE, to the **customfu
     }
     ```
 
-    You'll notice in this code that your asynchronous function returns a JavaScript Promise with the data from the IEX Trading API. Asynchronous custom functions require you to either return a new Promise or use JavaScript's async/await syntax.
-
     3. In order for Excel to properly run this function, you must add some metadata to the **./config/customfunctions.json** file.
+
+    You'll notice that this JSON file describes the function, listing the types and dimensionality of the results and parameters.
 
     ```json
     {
@@ -127,11 +129,10 @@ You’ll be adding a new function, called =CONTOSO.STOCKPRICE, to the **customfu
         ],
     }
     ```
-    You'll notice that this JSON file describes the function, listing the types and dimensionality of the results and parameters.
 
     4. You will need to re-register this change once you have saved the file. In Excel, select **Insert > Add-ins > My Add-ins**. This will bring up a list of available add-ins. Under “Developer Add-ins" you will see your add-in, under the name “Excel Custom Function.” Select it to register it.
 
-    In cell B1, run the function `=CONTOSO.STOCKPRICE("MSFT")`. It should show you the stock price for one share of Microsoft stock right now.
+    5. In cell B1, run the function `=CONTOSO.STOCKPRICE("MSFT")`. It should show you the stock price for one share of Microsoft stock right now.
 
 ## Create a streaming asynchronous custom function
 
@@ -167,6 +168,8 @@ To do this, you’ll create a new function, `=CONTOSO.STOCKPRICESTREAM`. It make
 
     3. Copy and paste the code below into to the **./config/customfunctions.json** file.
 
+     You'll notice that this JSON file is very similar to the previous function's JSON file, but that a new section has been added for "options." Because this function is streaming, you must specify this as true in the JSON.
+
     ```json
     {
         "name": "STOCKPRICESTREAM",
@@ -190,11 +193,9 @@ To do this, you’ll create a new function, `=CONTOSO.STOCKPRICESTREAM`. It make
     }
     ```
 
-    You'll notice that this JSON file is very similar to the previous function's JSON file, but that a new section has been added for "options." Because this function is streaming, you must specify this as true in the JSON.
-
     4. Re-register this change once you have saved the file. In Excel, select **Insert > Add-ins > My Add-ins**. This will bring up a list of available add-ins. Under “Developer Add-ins" you will see your add-in, under the name “Excel Custom Function.” Select it to register it.
 
-    In cell C1, run the function `=CONTOSO.STOCKPRICESTREAM("MSFT")`. You should see the price of Microsoft stock - which will update in real time right in your workbook.
+    5. In cell C1, run the function `=CONTOSO.STOCKPRICESTREAM("MSFT")`. You should see the price of Microsoft stock - which will update in real time right in your workbook.
 
 ## Next steps
 
