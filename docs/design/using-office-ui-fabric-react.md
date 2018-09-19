@@ -14,7 +14,7 @@ To get started using Fabric React's components in your add-in, perform the follo
 
 ## Step 1 - Create your project with the Yeoman generator for Office
 
-To create an add-in that uses Fabric React, we recommend that you use the Yeoman generator for Office. The Yeoman generator for Office provides the project scaffolding and build management needed to develop an Office add-in.
+To create an add-in that uses Fabric React, we recommend that you use the Yeoman generator for Office. The Yeoman generator for Office provides the project scaffolding and build management needed to develop an Office Add-in.
 
 To create your project, perform the following steps using **Windows PowerShell** (not the command prompt):
 
@@ -106,7 +106,7 @@ Save your changes. All open browser instances, including the add-in, update auto
 
 ## See also
 
-- [Office UI Fabric React](https://dev.office.com/fabric#/)
+- [Office UI Fabric React](https://developer.microsoft.com/fabric)
 - [Getting started with Fabric React code sample](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
 - [UX design patterns (uses Fabric 2.6.1)](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
 - [Office Add-in Fabric UI sample (uses Fabric 1.0)](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)

@@ -20,7 +20,7 @@ The Office 365 admin center currently supports the following scenarios:
 - Automatic installation of an add-in for users when they launch the Office application.
 - Automatic removal of an add-in for users if the admin turns off or deletes the add-in, or if users are removed from Azure Active Directory or from a group to which the add-in has been deployed.
 
-Centralized Deployment is the recommended way for an Office 365 admin to deploy Office add-ins within an organization, provided that the organization meets all requirements for using Centralized Deployment. For information about how to determine if your organization can use Centralized Deployment, see [Determine if Centralized Deployment of add-ins works for your Office 365 organization](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92).
+Centralized Deployment is the recommended way for an Office 365 admin to deploy Office Add-ins within an organization, provided that the organization meets all requirements for using Centralized Deployment. For information about how to determine if your organization can use Centralized Deployment, see [Determine if Centralized Deployment of add-ins works for your Office 365 organization](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92).
 
 > [!NOTE]
 > In an on-premises environment with no connection to Office 365, or to deploy SharePoint add-ins or Office Add-ins that target Office 2013, use a [SharePoint add-in catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md). To deploy COM/VSTO add-ins, use ClickOnce or Windows Installer, as described in [Deploying an Office solution](https://docs.microsoft.com/visualstudio/vsto/deploying-an-office-solution).
@@ -45,38 +45,37 @@ If your organization meets all requirements, complete the following steps to pub
 
 1. Sign in to Office 365 with your work or school account.
 2. Select the app launcher icon in the upper-left and choose **Admin**.
-3. In the navigation menu, choose **Settings** > **Services & add-ins**.
+3. In the navigation menu, press **Show more**, then choose **Settings** > **Services & add-ins**.
 4. If you see a message on the top of the page announcing the new Office 365 admin center, choose the message to go to the Admin Center Preview (see [About the Office 365 admin center](https://support.office.com/en-ie/article/About-the-Office-365-admin-center-758befc4-0888-4009-9f14-0d147402fd23)).
-5. Choose **Upload Add-in** at the top of the page. 
-6. Choose one of the following options on the **Centralized Deployment** page:
+5. Choose **Deploy Add-In** at the top of the page.
+6. Choose **Next** after reviewing the requirements.
+7. Choose one of the following options on the **Centralized Deployment** page:
 
-    - **I want to add an Add-in from AppSource.**
+    - **I want to add an Add-In from the Office Store.**
     - **I have the manifest file (.xml) on this device.** For this option, choose **Browse** to locate the manifest file (.xml) that you want to use.
     - **I have a URL for the manifest file.** For this option, type the manifest's URL in the field provided.
 
     ![New Add-In dialog in Office 365 admin center](../images/new-add-in.png)
 
-7.	Choose **Next**.
-
-8.	If you selected the option to add an Add-in from AppSource, select the add-in. Notice that you can view available add-ins via categories of **Suggested for you**, **Rating**, or **Name**. You may only add free add-ins from AppSource; adding paid add-ins isn't currently supported.
+8.	If you selected the option to add an add-in from the Office Store, select the add-in. You can view available add-ins via categories of **Suggested for you**, **Rating**, or **Name**. You may only add free add-ins from Office Store. Adding paid add-ins isn't currently supported.
 
     > [!NOTE]
-    > With the AppSource option, updates and enhancements to the add-in will automatically be made available to users without your intervention.
+    > With the Office Store option, updates and enhancements to the add-in are automatically available to users without your intervention.
 
     ![Select an Add-In dialog in Office 365 admin center](../images/select-an-add-in.png)
 
-9. The add-in is now available for assignment. On the page for the add-in, its status is **On**, like that shown for the Power BI Tiles add-in in the screenshot below. In the **Who has access** section, choose **Edit** to assign the add-in to users and/or groups.
+9. Choose **Next** after reviewing the add-in details.
 
     ![Power BI Tiles add-in page in Office 365 admin center](../images/power-bi-tiles.png)
 
-10.	On the **Edit who has access page**, choose either **Everyone** or **Specific Users/Groups**. Use the Search box to find the users and/or groups to whom you want to deploy the add-in.
+10.	On the **Edit who has access** page, choose **Everyone**, **Specific Users/Groups**, or **Only me**. Use the search box to find the users and groups to whom you want to deploy the add-in.
 
     ![Edit who has access page in Office 365 admin center](../images/power-bi-tiles-edit.png)
 
     > [!NOTE]
     > For single sign-on (SSO) add-ins, the users and groups assigned will also be shared with add-ins that share the same Azure App ID. Any changes to user assignments will also apply to those add-ins. The related add-ins will be shown on this page. For SSO add-ins only, this page will display the list of Microsoft Graph permissions that the add-in requires.
 
-11.	When finished, choose **Save**, review the add-in settings, and then choose **Close**. You now see your add-in along with other apps in Office 365.
+11.	When finished, choose **Save** to save the manifest. This process may take up to three minutes. Then, finish the walkthrough by pressing **Next**. You now see your add-in along with other apps in Office 365.
 
     > [!NOTE]
     >  When an administrator chooses **Save**, consent is given for all users. 
@@ -114,7 +113,7 @@ After an Office Add-in has been published via Centralized Deployment, any change
 
 - **Line-of-business add-in**: If an admin explicitly uploaded a manifest file when implementing Centralized Deployment via the Office 365 admin center, the admin must upload a new manifest file that contains the desired changes. After the updated manifest file has been uploaded, the next time the relevant Office applications start, the add-in will update.
 
-- **AppSource add-in**: If an admin selected an add-in from AppSource when implementing Centralized Deployment via the Office 365 admin center, and the add-in updates in AppSource, the add-in will update later via Centralized Deployment. The next time the relevant Office applications start, the add-in will update.
+- **Office Store add-in**: If an admin selected an add-in from the Office Store when implementing Centralized Deployment via the Office 365 admin center, and the add-in updates in the Office Store, the add-in will update later via Centralized Deployment. The next time the relevant Office applications start, the add-in will update.
 
 ## End user experience with add-ins
 
@@ -126,20 +125,21 @@ If the add-in supports add-in commands, the commands will appear on the Office a
 
 If the add-in does not support add-in commands, users can add it to their Office application by doing the following:
 
-1.	In Word 2016, Excel 2016, or PowerPoint 2016, choose **Insert** > **My Add-ins**.
+1.	In Word 2016 or later, Excel 2016 or later, or PowerPoint 2016 or later, choose **Insert** > **My Add-ins**.
 2.	Choose the **Admin Managed** tab in the add-in window.
 3.	Choose the add-in, and then choose **Add**. 
 
     ![Screenshot shows the Admin Managed tab of the Office Add-ins page of an Office application. The Citations add-in is shown on the tab.](../images/office-add-ins-admin-managed.png)
     
-However, for Outlook, users can do the following:
+However, for Outlook 2016 or later, users can do the following:
 
-1.  In Outlook 2016, choose **Home** > **Store**.
+1.  In Outlook, choose **Home** > **Store**.
 2.  Choose the **Admin-managed** item under the add-in tab.
 3.  Choose the add-in, and then choose **Add**.
 
     ![Screenshot shows the Admin-managed area of the Store page of the Outlook application.](../images/outlook-add-ins-admin-managed.png)
 
 ## See also
-[Determine if Centralized Deployment of add-ins works for your Office 365 organization](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-b4527d49-4073-4b43-8274-31b7a3166f92)
+
+- [Determine if Centralized Deployment of add-ins works for your Office 365 organization](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-b4527d49-4073-4b43-8274-31b7a3166f92)
     

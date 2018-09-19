@@ -21,7 +21,7 @@ Add-ins consist of two basic components:
 
 **Office Add-in = Manifest + Webpage**
 
-![An Office add-in consists of a manifest and webpage](../images/onenote-add-in.png)
+![An Office Add-in consists of a manifest and webpage](../images/onenote-add-in.png)
 
 ## Using the JavaScript API
 
@@ -79,12 +79,13 @@ function getPagesInSection() {
 }
 ```
 
-You can find supported OneNote objects and operations in the [API reference](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference).
+You can find supported OneNote objects and operations in the [API reference](https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js).
 
 ### Accessing the common API through the *Document* object
 
-Use the **Document** object to access the common API, such as the [getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync)
-and [setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) methods. 
+Use the **Document** object to access the common API, such as the [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-)
+and [setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#setselecteddataasync-data--options--callback-) methods. 
+
 
 For example:  
 
@@ -106,13 +107,13 @@ OneNote add-ins support only the following common APIs:
 
 | API | Notes |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) | **Office.CoercionType.Text** and **Office.CoercionType.Matrix** only |
-| [Office.context.document.setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) | **Office.CoercionType.Text**, **Office.CoercionType.Image**, and **Office.CoercionType.Html** only | 
-| [var mySetting = Office.context.document.settings.get(name);](https://dev.office.com/reference/add-ins/shared/settings.get) | Settings are supported by content add-ins only | 
-| [Office.context.document.settings.set(name, value);](https://dev.office.com/reference/add-ins/shared/settings.set) | Settings are supported by content add-ins only | 
-| [Office.EventType.DocumentSelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) ||
+| [Office.context.document.getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) | **Office.CoercionType.Text** and **Office.CoercionType.Matrix** only |
+| [Office.context.document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#setselecteddataasync-data--options--callback-) | **Office.CoercionType.Text**, **Office.CoercionType.Image**, and **Office.CoercionType.Html** only | 
+| [var mySetting = Office.context.document.settings.get(name);](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#get-name-) | Settings are supported by content add-ins only | 
+| [Office.context.document.settings.set(name, value);](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#set-name--value-) | Settings are supported by content add-ins only | 
+| [Office.EventType.DocumentSelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs?view=office-js) ||
 
-In general, you only use the common API to do something that isn't supported in the rich API. To learn more about using the common API, see the Office Add-ins [documentation](../overview/office-add-ins.md) and [reference](https://dev.office.com/reference/add-ins/javascript-api-for-office).
+In general, you only use the common API to do something that isn't supported in the rich API. To learn more about using the common API, see the Office Add-ins [documentation](../overview/office-add-ins.md) and [reference](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js).
 
 
 <a name="om-diagram"></a>
@@ -125,6 +126,6 @@ The following diagram represents what's currently available in the OneNote JavaS
 ## See also
 
 - [Build your first OneNote add-in](onenote-add-ins-getting-started.md)
-- [OneNote JavaScript API reference](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
+- [OneNote JavaScript API reference](https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js)
 - [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office Add-ins platform overview](../overview/office-add-ins.md)

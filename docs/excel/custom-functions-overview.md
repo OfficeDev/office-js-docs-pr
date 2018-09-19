@@ -23,7 +23,7 @@ function ADD42(a, b) {
 Custom functions are now available in Developer Preview on Windows, Mac, and Excel Online. Follow these steps to try them:
 
 1. Install Office (build 9325 on Windows or 13.329 on Mac) and join the [Office Insider](https://products.office.com/office-insider) program. (Note that it isn't enough just to get the latest build; the feature will be disabled on any build until you join the Insider program)
-2. Create an Excel Custom Functions Add-in project using [Yo Office](https://github.com/OfficeDev/generator-office), and follow the instructions in the [project README.md](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/README.md) to start the add-in in Excel, make changes in the code, and debug.
+2. Create an Excel Custom Functions add-in project using [Yo Office](https://github.com/OfficeDev/generator-office), and follow the instructions in the [project README.md](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/README.md) to start the add-in in Excel, make changes in the code, and debug.
 3. Type `=CONTOSO.ADD42(1,2)` into any cell, and press **Enter** to run the custom function.
 
 See the **Known Issues** section at the end of this article, which includes current limitations of custom functions and will be updated over time.
@@ -207,7 +207,7 @@ To make a function cancelable, set the option `"cancelable": true` in the `optio
 The following code shows the previous example with cancellation implemented. In the code, the `handler` object contains an `onCanceled` function must be defined for each cancelable custom function.
 
 ```js
-function incrementValue(increment, handler){ 
+function incrementValue(increment, handler){
     var result = 0;
     var timer = setInterval(function(){
          result += increment;
@@ -296,7 +296,7 @@ As you can see, ranges are handled in JavaScript as arrays of row arrays (like a
 
 ## Changelog
 
-- **Nov 7, 2017**: Shipped the custom functions preview and samples
+- **Nov 7, 2017**: Shipped* the custom functions preview and samples
 - **Nov 20, 2017**: Fixed compatibility bug for those using builds 8801 and later
-- **Nov 28, 2017**: Shipped support for cancellation on asynchronous functions (requires change for streaming functions)
-- **May 7, 2018**: Shipped support for Mac, Excel Online, and synchronous functions running in-process
+- **Nov 28, 2017**: Shipped* support for cancellation on asynchronous functions (requires change for streaming functions)
+- **May 7, 2018**: Shipped* support for Mac, Excel Online, and synchronous functions running in-process

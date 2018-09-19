@@ -1,6 +1,6 @@
 ---
 title: Localization for Office Add-ins
-description: ''
+description: You can use the JavaScript API for Office to determine a locale and display strings based on the locale of the host application, or to interpret or display data based on the locale of the data.
 ms.date: 01/23/2018
 ---
 
@@ -57,7 +57,7 @@ Every Office Add-in specifies a [DefaultLocale] element and a locale in its mani
 |[SourceLocation]   |Users in each locale you specify can see a webpage that you specifically design for the add-in for that locale. |
 
 
-> **NOTE**
+> [!NOTE] 
 > You can localize the description and display name for only the locales that Office supports. See [Language identifiers and OptionState Id values in Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15)) for a list of languages and locales for the current release of Office.
 
 
@@ -74,12 +74,12 @@ For example, an Office Add-in can specify the [DefaultLocale] as `en-us`. For th
 </DisplayName>
 ```
 
-> **NOTE**
+> [!NOTE] 
 > If you need to localize for more than one area within a language family, such as `de-de` and `de-at`, we recommend that you use separate `Override` elements for each area. Using just the language name alone, in this case, `de`, is not supported across all combinations of Office host applications and platforms.
 
 This means that the add-in assumes the  `en-us` locale by default. Users see the English display name of "Video player" for all locales unless the client computer's locale is `fr-fr`, in which case users would see the French display name "Lecteur vidéo".
 
-> **NOTE**
+> [!NOTE] 
 > You may only specify a single override per language, including for the default locale. For example, if your default locale is `en-us` you cannot not specify an  override for `en-us` as well. 
 
 The following example applies a locale override for the [Description] element. It first specifies a default locale of `en-us` and an English description, and then specifies an [Override] statement with a French description for the `fr-fr` locale:
@@ -169,14 +169,14 @@ To run the sample code provided, configure Microsoft Office 2013 on your compute
 
 Also, you'll need to create a Visual Studio 2015 Office Add-in project.
 
-> **NOTE**
+> [!NOTE] 
 > To download Visual Studio 2015, see the [Office Developer Tools page](https://www.visualstudio.com/features/office-tools-vs). This page also has a link for the Office Developer Tools.
 
 ### Configure Office 2013 to use additional languages for display or editing
 
 You can use an Office 2013 Language pack to install an additional language. For more information about Language Packs and where to get them, see [Office 2013 Language Options](http://office.microsoft.com/language-packs/).
 
-> **NOTE**
+> [!NOTE] 
 > If you are an MSDN Subscriber, you might already have the Office 2013 Language Packs available to you. To determine whether your subscription offers Office 2013 Language Packs for download, go to [MSDN Subscriptions Home](https://msdn.microsoft.com/subscriptions/manage/), enter Office 2013 Language Pack in **Software downloads**, choose **Search**, and then select **Products available with my subscription**. Under **Language**, select the check box for the Language Pack you want to download, and then choose  **Go**. 
 
 After you install the Language Pack, you can configure Office 2013 to use the installed language for display in the UI, for editing document content, or both. The example in this article uses an installation of Office 2013 that has the Spanish Language Pack applied.
@@ -206,7 +206,7 @@ To localize the add-in display name and description:
     
 2. In WorldReadyAddInManifest.xml, replace the [DisplayName] and [Description] elements with the following block of code:
     
-    > **NOTE**
+    > [!NOTE] 
     > You can replace the Spanish language localized strings used in this example for the [DisplayName] and [Description] elements with the localized strings for any other language.
 
     ```xml
@@ -355,7 +355,7 @@ After you know the language the host application is using, you can use **UIStrin
 
 Replace the code in the Home.js file with the following code. The code shows how you can change the strings used in the UI elements on Home.html based on either the display language of the host application or the editing language of the host application.
 
-> **NOTE**
+> [!NOTE] 
 > To switch between changing the localization of the add-in based on the language used for editing, uncomment the line of code  `var myLanguage = Office.context.contentLanguage;` and comment out the line of code `var myLanguage = Office.context.displayLanguage;`
 
 ```js
@@ -423,17 +423,17 @@ Run the sample add-in. The taskpane add-in loads in Word 2013, and the strings i
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)    
 - [Language identifiers and OptionState Id values in Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
-[DefaultLocale]: 		https://dev.office.com/reference/add-ins/manifest/defaultlocale
-[Description]: 			https://dev.office.com/reference/add-ins/manifest/description
-[DisplayName]: 			https://dev.office.com/reference/add-ins/manifest/displayname
-[IconUrl]: 				https://dev.office.com/reference/add-ins/manifest/iconurl
-[HighResolutionIconUrl]:https://dev.office.com/reference/add-ins/manifest/highresolutioniconurl
-[Resources]: 		    https://dev.office.com/reference/add-ins/manifest/resources
-[SourceLocation]: 		https://dev.office.com/reference/add-ins/manifest/sourcelocation
-[Override]:  			https://dev.office.com/reference/add-ins/manifest/override
-[DesktopSettings]: 		https://dev.office.com/reference/add-ins/manifest/desktopsettings
-[TabletSettings]: 		https://dev.office.com/reference/add-ins/manifest/tabletsettings
-[PhoneSettings]: 		https://dev.office.com/reference/add-ins/manifest/phonesettings
-[displayLanguage]: 	https://dev.office.com/reference/add-ins/shared/office.context.displaylanguage 
-[contentLanguage]: 	https://dev.office.com/reference/add-ins/shared/office.context.contentlanguage 
+[DefaultLocale]: 		https://docs.microsoft.com/javascript/office/manifest/defaultlocale?view=office-js
+[Description]: 			https://docs.microsoft.com/javascript/office/manifest/description?view=office-js
+[DisplayName]: 			https://docs.microsoft.com/javascript/office/manifest/displayname?view=office-js
+[IconUrl]: 				https://docs.microsoft.com/javascript/office/manifest/iconurl?view=office-js
+[HighResolutionIconUrl]:https://docs.microsoft.com/javascript/office/manifest/highresolutioniconurl?view=office-js
+[Resources]: 		    https://docs.microsoft.com/javascript/office/manifest/resources?view=office-js
+[SourceLocation]: 		https://docs.microsoft.com/javascript/office/manifest/sourcelocation?view=office-js
+[Override]:  			https://docs.microsoft.com/javascript/office/manifest/override?view=office-js
+[DesktopSettings]: 		https://docs.microsoft.com/javascript/office/manifest/desktopsettings?view=office-js
+[TabletSettings]: 		https://docs.microsoft.com/javascript/office/manifest/tabletsettings?view=office-js
+[PhoneSettings]: 		https://docs.microsoft.com/javascript/office/manifest/phonesettings?view=office-js
+[displayLanguage]: 	https://docs.microsoft.com/javascript/api/office/office.context?view=office-js#displaylanguage 
+[contentLanguage]: 	https://docs.microsoft.com/javascript/api/office/office.context?view=office-js#contentlanguage 
 [RFC 3066]: https://www.rfc-editor.org/info/rfc3066

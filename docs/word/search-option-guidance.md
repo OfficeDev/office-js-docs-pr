@@ -7,7 +7,7 @@ ms.date: 7/20/2018
 # Use search options to find text in your Word add-in 
 
 Add-ins frequently need to act based on the text of a document.
-A search function is exposed by every content control (this includes [Body](https://dev.office.com/reference/add-ins/word/body), [Paragraph](https://dev.office.com/reference/add-ins/word/paragraph), [Range](https://dev.office.com/reference/add-ins/word/range), [Table](https://dev.office.com/reference/add-ins/word/table), [TableRow](https://dev.office.com/reference/add-ins/word/tablerow), and the base [ContentControl](https://dev.office.com/reference/add-ins/word/contentcontrol) object). This function takes in a string (or wldcard expression) representing the text you are searching for and a [SearchOptions](https://dev.office.com/reference/add-ins/word/searchoptions) object. It returns a collection of ranges which match the search text.
+A search function is exposed by every content control (this includes [Body](https://docs.microsoft.com/javascript/api/word/word.body?view=office-js), [Paragraph](https://docs.microsoft.com/javascript/api/word/word.paragraph?view=office-js), [Range](https://docs.microsoft.com/javascript/api/word/word.range?view=office-js), [Table](https://docs.microsoft.com/javascript/api/word/word.table?view=office-js), [TableRow](https://docs.microsoft.com/javascript/api/word/word.tablerow?view=office-js), and the base [ContentControl](https://docs.microsoft.com/javascript/api/word/word.contentcontrol?view=office-js) object). This function takes in a string (or wldcard expression) representing the text you are searching for and a [SearchOptions](https://docs.microsoft.com/javascript/api/word/word.searchoptions?view=office-js) object. It returns a collection of ranges which match the search text.
 
 ## Search options
 The search options are a collection of boolean values defining how the search parameter should be treated. 
@@ -195,4 +195,4 @@ Word.run(function (context) {
 });
 ```
 
-More information can be found in the [Word JavaScript Reference API](https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview).
+More information can be found in the [Word JavaScript Reference API](https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js).
