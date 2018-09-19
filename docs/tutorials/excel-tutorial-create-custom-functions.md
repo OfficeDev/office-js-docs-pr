@@ -139,62 +139,62 @@ The previous function returned the stock price for Microsoft at a particular mom
 
 To do this, you’ll create a new function, `=CONTOSO.STOCKPRICESTREAM`. It makes a request for updated data every 1000 milliseconds. When a call is made, you may see `#GETTING_DATA` appear in a cell. Once a value is returned, this notification should disappear.
 
-1. Copy and paste the code below into **customfunctions.js**.
+    1. Copy and paste the code below into **customfunctions.js**.
 
-```js
-function STOCKPRICESTREAM(ticker, caller){
-    let result = 0;
+    ```js
+        function STOCKPRICESTREAM(ticker, caller){
+        let result = 0;
 
-    //return every second
-    setInterval(function(){
-    let xhr = new XMLHttpRequest();
-    let url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
+        //return every second
+        setInterval(function(){
+        let xhr = new XMLHttpRequest();
+        let url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
 
-    //add handler for xhr
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == XMLHttpRequest.DONE) {
-            //return result back to Excel
-            caller.setResult(xhr.responseText);
+        //add handler for xhr
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == XMLHttpRequest.DONE) {
+                //return result back to Excel
+                caller.setResult(xhr.responseText);
+            }
         }
-    }
 
-    //make request
-    xhr.open('GET', url, true);
-    xhr.send();
-        }, 1000);
-    }
-```
+        //make request
+        xhr.open('GET', url, true);
+        xhr.send();
+            }, 1000);
+        }
+    ```
 
-3. Copy and paste the code below into to the **./config/customfunctions.json** file.
+    3. Copy and paste the code below into to the **./config/customfunctions.json** file.
 
-```json
-{
-    "name": "STOCKPRICESTREAM",
-    "description": "Streams real time stock price",
-    "helpUrl": "http://dev.office.com",
-    "result": {
-        "type": "number",
-        "dimensionality": "scalar"
-    },  
-    "parameters": [
-        {
-            "name": "ticker",
-            "description": "stock ticker name",
-            "type": "string",
+    ```json
+    {
+        "name": "STOCKPRICESTREAM",
+        "description": "Streams real time stock price",
+        "helpUrl": "http://dev.office.com",
+        "result": {
+            "type": "number",
             "dimensionality": "scalar"
+        },  
+        "parameters": [
+            {
+                "name": "ticker",
+                "description": "stock ticker name",
+                "type": "string",
+                "dimensionality": "scalar"
+            }
+        ],
+        "options": {
+            "stream": true
         }
-    ],
-    "options": {
-        "stream": true
     }
-}
-```
+    ```
 
-You'll notice that this JSON file is very similar to the previous function's JSON file, but that a new section has been added for "options." Because this function is streaming, you must specify this as true in the JSON.
+    You'll notice that this JSON file is very similar to the previous function's JSON file, but that a new section has been added for "options." Because this function is streaming, you must specify this as true in the JSON.
 
-4. Re-register this change once you have saved the file. In Excel, select **Insert > Add-ins > My Add-ins**. This will bring up a list of available add-ins. Under “Developer Add-ins" you will see your add-in, under the name “Excel Custom Function.” Select it to register it.
+    4. Re-register this change once you have saved the file. In Excel, select **Insert > Add-ins > My Add-ins**. This will bring up a list of available add-ins. Under “Developer Add-ins" you will see your add-in, under the name “Excel Custom Function.” Select it to register it.
 
-In cell C1, run the function `=CONTOSO.STOCKPRICESTREAM("MSFT")`. You should see the price of Microsoft stock - which will update in real time right in your workbook.
+    In cell C1, run the function `=CONTOSO.STOCKPRICESTREAM("MSFT")`. You should see the price of Microsoft stock - which will update in real time right in your workbook.
 
 ## Next steps
 
