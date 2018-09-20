@@ -4,7 +4,7 @@ description: Excel custom functions use a new JavaScript runtime, which differs 
 title: Runtime for Excel custom functions
 ---
 
-# Runtime for Excel custom function
+# Runtime for Excel custom functions
 
 Custom functions extend Excel’s capabilities by using a new JavaScript runtime that uses a sandboxed JavaScript engine rather than a web browser. Because custom functions do not need to render UI elements, the new JavaScript runtime is optimized for performing calculations, enabling you to run thousands of custom functions simultaneously.
 
