@@ -6,19 +6,22 @@ title: Runtime for Excel custom functions
 
 # Runtime for Excel custom function
 
-Custom functions extend Excel’s capabilities using a new JavaScript runtime. This runtime utilizes a sandboxed JavaScript engine rather than a web browser. Because custom functions do not need to render UI elements, their runtime is optimized for performing calculations instead; you can run thousands of custom functions simultaneously.  
+Custom functions extend Excel’s capabilities by using a new JavaScript runtime that uses a sandboxed JavaScript engine rather than a web browser. Because custom functions do not need to render UI elements, their runtime is optimized for performing calculations, enabling you to run thousands of custom functions simultaneously.
 
 > [!NOTE]
-> The code for your add-in may include other parts, such as task panes and other UI elements. These will continue to run in the browser-like WebView runtime that you are used to. The new runtime only applies to the custom functions related code in your add-in.  
+> An add-in that defines custom functions may also include other components such as a task pane and other UI elements. These other components of the add-in will continue to run in the browser-like WebView runtime. Only the custom functions within your add-in will use the new JavaScript runtime that's described in this article.
 
 ## Differences between WebView runtime and the new JavaScript runtime
 
-- The new JavaScript runtime used by custom functions does not provide access to the Document Object Model (DOM) or support libraries like JQuery that rely on the Document Object Model (DOM).
-- In the JavaScript file that defines your custom functions you can now return a regular JavaScript `Promise` instead of using `OfficeExtension.Promise`. If you use [Yo Office](https://github.com/OfficeDev/generator-office) to create your custom functions project, **customfunctions.js** is the JavaScript file. 
-- In the JSON file that specifies metatdata for your custom functions, you no longer need to specify “sync” or “async” under “options”. If you use [Yo Office](https://github.com/OfficeDev/generator-office) to create your custom functions project, **customfunctions.json** is the metadata file.
+- The new JavaScript runtime used by custom functions does not provide access to the Document Object Model (DOM) or support libraries like JQuery that rely on the DOM.
+
+- A custom function that's defined in an add-in's JavaScript file can return a regular JavaScript `Promise` instead of using `OfficeExtension.Promise`. If you use [Yo Office](https://github.com/OfficeDev/generator-office) to create your custom functions project, **customfunctions.js** is the add-in's JavaScript file. 
+
+- The JSON file that specifies metatdata for an add-in's custom functions does not need to specify **sync** or **async** within **options**. If you use [Yo Office](https://github.com/OfficeDev/generator-office) to create your custom functions project, **customfunctions.json** is the JSON metadata file.
 
 ## New APIs 
-The new JavaScript runtime utilized by custom functions has four APIs:
+
+The new JavaScript runtime that's used by custom functions has the following APIs:
 
 - [XHR](#xhr)
 - [WebSockets](#websockets)
@@ -27,7 +30,7 @@ The new JavaScript runtime utilized by custom functions has four APIs:
 
 ### XHR
 
-XHR stands for [XmlHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests (e.g., `POST`, `GET`, etc.) to interact with servers. In the new JavaScript runtime, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).  
+XHR stands for [XmlHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers. In the new JavaScript runtime, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).  
 
 In the following code sample, the `getTemperature()` function sends a web request to get the temperature of a particular area based on thermometer ID. The `sendWebRequest()` function uses XHR to issue a `GET` request to an endpoint that can provide the data.  
 
@@ -59,7 +62,7 @@ function sendWebRequest(thermometerID, data) {
 
 [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) is a networking protocol that creates real-time communication between a server and one or more clients. It is often used for chat applications because it allows you to read and write text simultaneously.  
 
-As shown in the following code sample, custom functions can use WebSockets. In this example, the WebSocket logs any message sent to it.  
+As shown in the following code sample, custom functions can use WebSockets. In this example, the WebSocket logs each message that it receives.
 
 ```js
 const ws = new WebSocket('wss://bundles.office.com');
@@ -79,13 +82,23 @@ AsyncStorage is a key-value storage system that can be used to store authenticat
 - Unencrypted
 - Asynchronous
 
-Additionally, AsyncStorage is available globally to all parts of your add-in. For custom functions, AsyncStorage is exposed as a global object. For other parts of your add-in, such as task panes and other elements that utilize the typical WebView runtime, AsyncStorage is exposed through `Office.Runtime`.
+AsyncStorage is globally available to all parts of your add-in. For custom functions, `AsyncStorage` is exposed as a global object. For other parts of your add-in, such as task panes and other elements that use the WebView runtime, AsyncStorage is exposed through `Office.Runtime`. Each add-in has its own storage partition, with a default size of 5MB. 
 
- Methods available on AsyncStorage include getItem, setItem, removeItem, clear, getAllKeys, flushGetRequests, multiGet, multiSet, and multiRemove. At this time, mergeItem and multiMerge are not supported methods.
+ The following methods are available on the `AsyncStorage` object:
+ 
+ - `getItem`
+ - `setItem`
+ - `removeItem`
+ - `clear`
+ - `getAllKeys`
+ - `flushGetRequests`
+ - `multiGet`
+ - `multiSet`
+ - `multiRemove`
+ 
+At this time, the `mergeItem` and `multiMerge` methods are not supported.
 
-Each add-in has its own storage partition, with a default of 5MB of storage.  
-
-The following code sample gets an item from AsyncStorage.
+The following code sample calls the `AsyncStorage.getItem` function to retrieve a value from storage.
 
 ```js
 _goGetData = async () => {
@@ -103,7 +116,7 @@ _goGetData = async () => {
 
 ### Dialog API
 
-The Dialog API allows you to require user authentication through an outside resource, such as Google or Facebook, before they can use your function. The Dialog API enables you to open a dialog box that prompts user sign-in.  
+The Dialog API enables you to open a dialog box that prompts user sign-in. You can use the Dialog API to require user authentication through an outside resource, such as Google or Facebook, before the user can use your function.   
 
 In the following code sample, the `getTokenViaDialog()` method uses the Dialog API’s `displayWebDialog()` method to open a dialog box.
 

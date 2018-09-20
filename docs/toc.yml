@@ -235,11 +235,11 @@
         href: excel/custom-functions-overview.md
         displayName: Excel
         items:
-        - name: Custom functions metadata
-          href: excel/custom-functions-json.md
-          displayName: Excel
         - name: Custom functions runtime
           href: excel/custom-functions-runtime.md
+          displayName: Excel
+        - name: Custom functions metadata
+          href: excel/custom-functions-json.md
           displayName: Excel
         - name: Custom functions best practices
           href: excel/custom-functions-best-practices.md
