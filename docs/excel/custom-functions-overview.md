@@ -301,4 +301,4 @@ As shown in this code sample, a range is represented as a 2-dimensional array.
 
 * [Custom functions metadata](custom-functions-json.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
-* [Custom functions best practices](custom-functions-best-practice.md)
+* [Custom functions best practices](custom-functions-best-practices.md)

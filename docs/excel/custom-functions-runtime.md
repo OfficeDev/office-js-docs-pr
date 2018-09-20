@@ -193,4 +193,4 @@ function getStock (ticker) {
 
 * [Create custom functions in Excel](custom-functions-overview.md)
 * [Custom functions metadata](custom-functions-json.md)
-* [Custom functions best practices](custom-functions-best-practice.md)
+* [Custom functions best practices](custom-functions-best-practices.md)

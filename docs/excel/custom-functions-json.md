@@ -166,4 +166,4 @@ The following JSON code is an example of a metadata file for custom functions.
 
 * [Create custom functions in Excel](custom-functions-overview.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
-* [Custom functions best practices](custom-functions-best-practice.md)
+* [Custom functions best practices](custom-functions-best-practices.md)
