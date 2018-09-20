@@ -90,7 +90,7 @@ The following table lists the properties that are typcially present in the JSON 
 | `description`	| Describes what the function does. This value appears as a tooltip when the function is the selected item in the autocomplete menu within Excel. |
 | `result` 	| Object that defines the type of information that is returned by the function. The value of the `type` child property can be **string**, **number**, or **boolean**. The value of the `dimensionality` child property can be **scalar** or **matrix** (a two-dimensional array of values of the specified `type`). |
 | `parameters` | Array that defines the input parameters for the function. The `name` and `description` child properties appear in the Excel intelliSense. The `type` and `dimensionality` child properties are identical to the child properties of the `result` object that is described previously in this table. |
-| `options`	| Enables you to customize some aspects of how and when Excel executes the function. For more information about how this property can be used, see [Streamed functions](#streamed-functions) and [Cancellation](#cancellation) later in this article. |
+| `options`	| Enables you to customize some aspects of how and when Excel executes the function. For more information about how this property can be used, see [Streamed functions](#streamed-functions) and [Cancellation](#canceling-a-function) later in this article. |
 
 
 ### Manifest file 
@@ -195,19 +195,22 @@ function incrementValue(increment, handler){
 }
 ```
 
-## Cancellation
+## Canceling a function
 
-You can cancel streamed functions. Canceling your function calls is important to reduce their bandwidth consumption, working memory, and CPU load. Excel cancels function calls in the following situations:
+In some situations, you may need to cancel the execution of a streamed custom function to reduce its bandwidth consumption, working memory, and CPU load. Excel cancels the execution of a function in the following situations:
 
-- The user edits or deletes a cell that references the function.
-- One of the arguments (inputs) for the function changes. In this case, a new function call is triggered in addition to the cancellation.
-- The user triggers recalculation manually. In this case, a new function call is triggered in addition to the cancellation.
+- When the user edits or deletes a cell that references the function.
 
-You *must* implement a cancellation handler for every streaming function.
+- When one of the arguments (inputs) for the function changes. In this case, a new function call is triggered following the cancellation.
+
+- The user triggers recalculation manually. In this case, a new function call is triggered following the cancellation.
+
+> [!NOTE]
+> You must implement a cancellation handler for every streaming function.
 
 To make a function cancelable, set the option `"cancelable": true` in the `options` property for the custom function in the JSON metadata file.
 
-The following code shows the previous example with cancellation implemented. In the code, the `handler` object contains an `onCanceled` function must be defined for each cancelable custom function.
+The following code shows the same `incrementValue` function that was described previously, but this time with a cancellation handler implemented. In this example, `clearInterval()` will run when the `incrementValue` function is canceled.
 
 ```js
 function incrementValue(increment, handler){
