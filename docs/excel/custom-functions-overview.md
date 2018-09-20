@@ -303,7 +303,7 @@ function getComment(x) {
 - **Nov 20, 2017**: Fixed compatibility bug for those using builds 8801 and later
 - **Nov 28, 2017**: Shipped* support for cancellation on asynchronous functions (requires change for streaming functions)
 - **May 7, 2018**: Shipped* support for Mac, Excel Online, and synchronous functions running in-process
-- **September 20, 2018**: Shipped support for custom functions javascript runtime. It is no longer required to declare a function to be 'synchronous', as all functions will use the custom functions javascript runtime.
+- **September 20, 2018**: Shipped support for custom functions JavaScript runtime. For more information, see [Runtime for Excel custom functions](custom-functions-runtime.md).
 
 \* to the Office Insiders Channel
 
