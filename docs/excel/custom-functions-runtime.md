@@ -6,22 +6,24 @@ title: Runtime for Excel custom functions
 
 # Runtime for Excel custom function
 
-Custom functions extend Excel’s capabilities by using a new JavaScript runtime that uses a sandboxed JavaScript engine rather than a web browser. Because custom functions do not need to render UI elements, their runtime is optimized for performing calculations, enabling you to run thousands of custom functions simultaneously.
+Custom functions extend Excel’s capabilities by using a new JavaScript runtime that uses a sandboxed JavaScript engine rather than a web browser. Because custom functions do not need to render UI elements, the new JavaScript runtime is optimized for performing calculations, enabling you to run thousands of custom functions simultaneously.
 
 > [!NOTE]
-> An add-in that defines custom functions may also include other components such as a task pane and other UI elements. These other components of the add-in will continue to run in the browser-like WebView runtime. Only the custom functions within your add-in will use the new JavaScript runtime that's described in this article.
+> An add-in that defines custom functions may also include other components such as task panes and other UI elements. These other components of the add-in will continue to run in the browser-like WebView runtime. Only the custom functions within an add-in will use the new JavaScript runtime that's described in this article.
 
-## Differences between WebView runtime and the new JavaScript runtime
+## Differences between the new JavaScript runtime and the WebView runtime
 
-- The new JavaScript runtime used by custom functions does not provide access to the Document Object Model (DOM) or support libraries like JQuery that rely on the DOM.
+Some of the key differences between the new JavaScript runtime and the WebView runtime include:
 
-- A custom function that's defined in an add-in's JavaScript file can return a regular JavaScript `Promise` instead of using `OfficeExtension.Promise`. If you use [Yo Office](https://github.com/OfficeDev/generator-office) to create your custom functions project, **customfunctions.js** is the add-in's JavaScript file. 
+- The JavaScript runtime does not provide access to the Document Object Model (DOM) or support libraries like JQuery that rely on the DOM.
 
-- The JSON file that specifies metatdata for an add-in's custom functions does not need to specify **sync** or **async** within **options**. If you use [Yo Office](https://github.com/OfficeDev/generator-office) to create your custom functions project, **customfunctions.json** is the JSON metadata file.
+- A custom function that's defined in an add-in's JavaScript file can return a regular JavaScript `Promise` instead of returning `OfficeExtension.Promise`.  
+
+- The JSON file that specifies custom function metatdata does not need to specify **sync** or **async** within **options**.
 
 ## New APIs 
 
-The new JavaScript runtime that's used by custom functions has the following APIs:
+The JavaScript runtime that's used by custom functions has the following APIs:
 
 - [XHR](#xhr)
 - [WebSockets](#websockets)
