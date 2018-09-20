@@ -128,21 +128,6 @@ The following is an example of the `<ExtensionPoint>` and `<Resources>` markup t
 > [!NOTE]
 > Functions in Excel are prepended by the namespace specified in your XML manifest file. A function's namespace comes before the function name and they are separated by a period. For example, to call the function `=ADD42()` in Excel, you would type `=CONTOSO.ADD42`, because CONTOSO is the namespace and `=ADD42` is the name given in the JSON file for that function. The namespace is intended to be used as an identifier for your company or the add-in. 
 
-## Initializing custom functions
-
-Your code must initialize the custom functions feature before using it. You can do this either in a &lt;Script&gt; tag in the HTML file (customfunctions.html) or at the top of the JavaScript file (customfunctions.js). During the preview of custom functions, you have your choice of two syntaxes for intializing. The HTML file in the repo uses the following syntax:
-
-```js
-Office.initialize = function (reason) {
-    return Excel.CustomFunctions.initialize();
-};
-```
-
-You can also use the following syntax:
-
-```js
-Office.Preview.StartCustomFunctions();
-```
 
 ## Handling errors
 
