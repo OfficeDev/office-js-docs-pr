@@ -47,7 +47,7 @@ In the custom functions project that you've created using [Yo Office](https://gi
 The XML manifest file for an add-in that defines custom functions specifies the namespace for all custom functions within the add-in and the location of the JavaScript, JSON, and HTML files. The following XML markup shows an example of the `<ExtensionPoint>` and `<Resources>` elements that you must include in an add-in's manifest in order to enable Excel to run custom functions.  
 
 ```xml
-<VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1\_0">
+<VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Hosts>
         <Host xsi:type="Workbook">
             <AllFormFactors>
@@ -122,11 +122,12 @@ The following code in **customfunctions.json** specifies the metadata for the `A
 }
 ```
 
-The following table lists the properties that are typcially present in the JSON metadata file. For more detailed information about the JSON metadata file, including options not used in the previous example, see [Custom functions metadata](custom-functions-json.md).
+The following table lists the properties that are typically present in the JSON metadata file. For more detailed information about the JSON metadata file, including options not used in the previous example, see [Custom functions metadata](custom-functions-json.md).
 
 | Property 	| Description |
 |---------|---------|
 | `name` | Name of the function that is shown in the autocomplete menu as a user types a formula within a cell. In the autocomplete menu, this value will be prefixed by the custom functions namespace that's specified in the XML manifest file. |
+| `id` | A unique ID for the function. This ID should not be changed after it is set. |
 | `helpUrl`	| Url for a page that is shown when a user requests help. |
 | `description`	| Describes what the function does. This value appears as a tooltip when the function is the selected item in the autocomplete menu within Excel. |
 | `result` 	| Object that defines the type of information that is returned by the function. The value of the `type` child property can be **string**, **number**, or **boolean**. The value of the `dimensionality` child property can be **scalar** or **matrix** (a two-dimensional array of values of the specified `type`). |

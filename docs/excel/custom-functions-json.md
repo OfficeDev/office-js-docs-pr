@@ -37,7 +37,8 @@ The following example shows the contents of a JSON metadata file for an add-in t
 			]
 		},
 		{
-			"name": "ADD42ASYNC", 
+            "id": "ADD42ASYNC",
+			"name": "ADD42ASYNC",
 			"description":  "asynchronously wait 250ms, then add 42",
 			"helpUrl": "http://dev.office.com",
 			"result": {
@@ -54,6 +55,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
 			]
 		},
 		{
+            "id": "ISEVEN",
 			"name": "ISEVEN", 
 			"description":  "Determines whether a number is even",
 			"helpUrl": "http://dev.office.com",
@@ -71,6 +73,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
 			]
 		},
 		{
+            "id": "GETDAY",
 			"name": "GETDAY",
 			"description": "Gets the day of the week",
 			"helpUrl": "http://dev.office.com",
@@ -80,6 +83,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
 			"parameters": []
 		},
 		{
+            "id": "INCREMENTVALUE",
 			"name": "INCREMENTVALUE", 
 			"description":  "Counts up from zero",
 			"helpUrl": "http://dev.office.com",
@@ -101,6 +105,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
 			}
 		},
 		{
+            "id": "SECONDHIGHEST",
 			"name": "SECONDHIGHEST", 
 			"description":  "gets the second highest number from a range",
 			"helpUrl": "http://dev.office.com",
@@ -132,10 +137,10 @@ The `functions` property is an array of custom function objects. The following t
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  No  |  A description of the function that appears in the Excel UI. For example, **Converts a Celsius value to Fahrenheit**. |
 |  `helpUrl`  |  string  |   No  |  URL where users can get information about the function. (It is displayed in a taskpane.) For example, **http://contoso.com/help/convertcelsiustofahrenheit.html**. |
-|  `name`  |  string  |  No  |  The name of the function as it will appear (prepended with a namespace) in the Excel UI when a user is selecting a function. It does not need to be the same as the function's name where it is defined in the JavaScript. |
+|  `name`  |  string  |  Yes  |  The name of the function as it will appear (prepended with a namespace) in the Excel UI when a user is selecting a function. It does not need to be the same as the function's name where it is defined in the JavaScript. |
 |  `options`  |  object  |  No  |  Enables you to customize some aspects of how and when Excel executes the function. See [options object](#options-object) for details. |
-|  `parameters`  |  array  |  No  |  Array that defines the input parameters for the function. See [parameters array](#parameters-array)  for details. |
-|  `result`  |  object  |  No  |  Object that defines the type of information that is returned by the function. See [result object](#result-object) for details. |
+|  `parameters`  |  array  |  Yes  |  Array that defines the input parameters for the function. See [parameters array](#parameters-array)  for details. |
+|  `result`  |  object  |  Yes  |  Object that defines the type of information that is returned by the function. See [result object](#result-object) for details. |
 
 ## options
 
