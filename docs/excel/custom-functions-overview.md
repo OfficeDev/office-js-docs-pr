@@ -3,7 +3,6 @@ ms.date: 09/20/2018
 description: Create your own custom function add-in in Excel using JavaScript. 
 title: Create Custom Functions in Excel (Preview)
 ---
-//TODO: A what's new main refresh happened on the 20th
 # Create custom functions in Excel (Preview)
 
 Custom functions enable developers to add any JavaScript function to Excel using an add-in. Users can then access custom functions like any other native function in Excel (such as `=SUM()`). This article explains how to create custom functions in Excel.
@@ -22,8 +21,6 @@ function ADD42(a, b) {
 
 Custom functions are now available in Developer Preview on Windows, Mac, and Excel Online. Follow these steps to try them:
 
-//TO DO: list by platform
-
 1. Install Office (build 10827 on Windows or 13.329 on Mac) and join the [Office Insider](https://products.office.com/office-insider) program. (Note that it isn't enough just to get the latest build; the feature will be disabled on any build until you join the Insider program)
 2. Create an Excel Custom Functions add-in project using [Yo Office](https://github.com/OfficeDev/generator-office), and follow the instructions in the [project README.md](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/README.md) to start the add-in in Excel, make changes in the code, and debug.
 3. Type `=CONTOSO.ADD42(1,2)` into any cell, and press **Enter** to run the custom function.
@@ -38,6 +35,47 @@ In the cloned sample repo, you’ll see the following files:
 - **./config/customfunctions.json**, which contains the registration JSON that tells Excel about your custom function. Registration makes your custom functions appear in the list of available functions displayed when a user types in a cell.
 - **./index.html**, which provides a &lt;Script&gt; reference to the JS file. This file controls content in the task pane in all versions of Excel except Excel Online.
 - **./manifest.xml**, which tells Excel the location of the HTML, JavaScript, and JSON files. It also specifies a namespace for all the custom functions that are installed with the add-in.
+
+### Manifest file (./manifest.xml)
+
+The following is an example of the `<ExtensionPoint>` and `<Resources>` markup that you include in the add-in's manifest to enable Excel to run your functions. This allows you to change the locations of your JSON, JavaScript, and HTML files which make up your custom function.  
+
+```xml
+<VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1\_0">
+    <Hosts>
+        <Host xsi:type="Workbook">
+            <AllFormFactors>
+                <ExtensionPoint xsi:type="CustomFunctions">
+                    <Script>
+                        <SourceLocation resid="JS-URL" /> <!--resid points to location of JavaScript file-->
+                    </Script>
+                    <Page>
+                        <SourceLocation resid="HTML-URL"/> <!--resid points to location of HTML file-->
+                    </Page>
+                    <Metadata>
+                        <SourceLocation resid="JSON-URL" /> <!--resid points to location of JSON file-->
+                    </Metadata>
+                    <Namespace resid="namespace" />
+                </ExtensionPoint>
+            </AllFormFactors>
+        </Host>
+    </Hosts>
+    <Resources>
+        <bt:Urls>
+            <bt:Url id="JSON-URL" DefaultValue="http://127.0.0.1:8080/customfunctions.json" /> <!--specifies the location of your JSON file-->
+            <bt:Url id="JS-URL" DefaultValue="http://127.0.0.1:8080/customfunctions.js" /> <!--specifies the location of your JavaScript file-->
+            <bt:Url id="HTML-URL" DefaultValue="http://127.0.0.1:8080/index.html" /> <!--specifies the location of your HTML file-->
+        </bt:Urls>
+        <bt:ShortStrings>
+            <bt:String id="namespace" DefaultValue="CONTOSO" /> <!--specifies the namespace that will be prepended to a function's name when it is called in Excel. For example, a function named "ADD42" is invoked as `=CONTOSO.ADD42` in Excel.-->
+        </bt:ShortStrings>
+    </Resources>
+</VersionOverrides>
+```
+
+> [!NOTE]
+> Functions in Excel are prepended by the namespace specified in your XML manifest file. A function's namespace comes before the function name and they are separated by a period. For example, to call the function `=ADD42()` in Excel, you would type `=CONTOSO.ADD42`, because CONTOSO is the namespace and `=ADD42` is the name given in the JSON file for that function. The namespace is intended to be used as an identifier for your company or the add-in.
+
 
 ### JSON file (./config/customfunctions.json)
 
@@ -90,64 +128,6 @@ The JSON file:
 > The custom functions are registered when a user runs the add-in for the first time. After that, they are available, for that same user, in all workbooks (not only the one where the add-in ran initially.)
 
 Your server settings for the JSON file must have [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel Online.
-
-### Manifest file (./manifest.xml) //TO DO: Move Manifest back to first
-
-The following is an example of the `<ExtensionPoint>` and `<Resources>` markup that you include in the add-in's manifest to enable Excel to run your functions. This allows you to change the locations of your JSON, JavaScript, and HTML files which make up your custom function.  
-
-```xml
-<VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1\_0">
-    <Hosts>
-        <Host xsi:type="Workbook">
-            <AllFormFactors>
-                <ExtensionPoint xsi:type="CustomFunctions">
-                    <Script>
-                        <SourceLocation resid="JS-URL" /> <!--resid points to location of JavaScript file-->
-                    </Script>
-                    <Page>
-                        <SourceLocation resid="HTML-URL"/> <!--resid points to location of HTML file-->
-                    </Page>
-                    <Metadata>
-                        <SourceLocation resid="JSON-URL" /> <!--resid points to location of JSON file-->
-                    </Metadata>
-                    <Namespace resid="namespace" />
-                </ExtensionPoint>
-            </AllFormFactors>
-        </Host>
-    </Hosts>
-    <Resources>
-        <bt:Urls>
-            <bt:Url id="JSON-URL" DefaultValue="http://127.0.0.1:8080/customfunctions.json" /> <!--specifies the location of your JSON file-->
-            <bt:Url id="JS-URL" DefaultValue="http://127.0.0.1:8080/customfunctions.js" /> <!--specifies the location of your JavaScript file-->
-            <bt:Url id="HTML-URL" DefaultValue="http://127.0.0.1:8080/index.html" /> <!--specifies the location of your HTML file-->
-        </bt:Urls>
-        <bt:ShortStrings>
-            <bt:String id="namespace" DefaultValue="CONTOSO" /> <!--specifies the namespace that will be prepended to a function's name when it is called in Excel. For example, a function named "ADD42" is invoked as `=CONTOSO.ADD42` in Excel.-->
-        </bt:ShortStrings>
-    </Resources>
-</VersionOverrides>
-```
-
-> [!NOTE]
-> Functions in Excel are prepended by the namespace specified in your XML manifest file. A function's namespace comes before the function name and they are separated by a period. For example, to call the function `=ADD42()` in Excel, you would type `=CONTOSO.ADD42`, because CONTOSO is the namespace and `=ADD42` is the name given in the JSON file for that function. The namespace is intended to be used as an identifier for your company or the add-in. 
-
-
-## Handling errors //TODO: Move further down
-
-Error handling for custom functions is the same as [error handling for the Excel JavaScript API at large](./excel-add-ins-error-handling.md). Generally, you will use `.catch` to handle errors. The code below gives an example of `.catch`.
-
-```js
-function getComment(x) {
-    var url = "https://jsonplaceholder.typicode.com/comments/" + x; //this delivers a section of lorem ipsum from the jsonplaceholder API
-    return fetch(url)
-        .then(function (data) {
-            return data.json();
-        })
-        .then((json) => {
-            return json.body;
-        })
-}
-```
 
 ## Functions that return data from external sources
 
@@ -216,7 +196,7 @@ function incrementValue(increment, handler){
 }
 ```
 
-## Saving and sharing state //TO DO: Get feedback from Keyur and Humberto
+## Saving and sharing state
 
 Custom functions can save data in global JavaScript variables. In subsequent calls, your custom function may use the values saved in these variables. Saved state is useful when users add the same custom function to more than one cell, because all the instances of the function can share the state. For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.
 
@@ -277,7 +257,22 @@ function secondHighest(values){
 
 As you can see, ranges are handled in JavaScript as arrays of row arrays (like a 2-dimensional array).
 
-//TO DO: We can now do network calls using XHR, AsyncStorage to save state, etc. Put a reference link
+## Handling errors
+
+Error handling for custom functions is the same as [error handling for the Excel JavaScript API at large](./excel-add-ins-error-handling.md). Generally, you will use `.catch` to handle errors. The code below gives an example of `.catch`.
+
+```js
+function getComment(x) {
+    var url = "https://jsonplaceholder.typicode.com/comments/" + x; //this delivers a section of lorem ipsum from the jsonplaceholder API
+    return fetch(url)
+        .then(function (data) {
+            return data.json();
+        })
+        .then((json) => {
+            return json.body;
+        })
+}
+```
 
 ## Known issues
 
