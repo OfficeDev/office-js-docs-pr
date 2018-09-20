@@ -13,7 +13,7 @@ When you define [custom functions](custom-functions-overview.md) within your Exc
 
 ## Example metadata
 
-The following example shows the contents of a JSON metadata file for an add-in that defines custom functions. The sections that follow this example provide detailed information about the individual properties within this JSON file.
+The following example shows the contents of a JSON metadata file for an add-in that defines custom functions. The sections that follow this example provide detailed information about the individual properties within this JSON example.
 
 ```json
 {
