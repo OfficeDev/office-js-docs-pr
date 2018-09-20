@@ -6,13 +6,13 @@ title: Create custom functions in Excel (Preview)
 
 # Create custom functions in Excel (Preview)
 
-Custom functions (similar to user-defined functions, or UDFs), enable developers to add any JavaScript function to Excel using an add-in. Users can then access custom functions like any other native function in Excel (such as `SUM()`). This article explains how to create custom functions in Excel.
+Custom functions (similar to user-defined functions, or UDFs), enable developers to add any JavaScript function to Excel using an add-in. Users within Excel can access custom functions like any other native function in Excel (such as `SUM()`). This article describes how to create custom functions in Excel.
 
-The following illustration shows an end user inserting a custom function into a cell within an Excel worksheet. This custom function is designed to add 42 to the pair of numbers that the user specifies.
+The following illustration shows an end user inserting a custom function into a cell of an Excel worksheet. The `CONTOSO.ADD42` custom function is designed to add 42 to the pair of numbers that the user specifies as input parameters to the function.
 
-<img alt="custom functions" src="../images/custom-function.gif" width="579" height="383" />
+<img alt="animated image showing an end user inserting the CONTOSO.ADD42 custom function into a cell of an Excel worksheet" src="../images/custom-function.gif" width="579" height="383" />
 
-The following code sample shows the code for the `ADD42` custom function.
+The following code defines the `ADD42` custom function.
 
 ```js
 function ADD42(a, b) {
@@ -20,23 +20,27 @@ function ADD42(a, b) {
 }
 ```
 
-Custom functions are now available in Developer Preview on Windows, Mac, and Excel Online. Follow these steps to try them:
+Custom functions are now available in Developer Preview on Windows, Mac, and Excel Online. To try them, complete these steps:
 
-1. Install Office (build 10827 on Windows or 13.329 on Mac) and join the [Office Insider](https://products.office.com/office-insider) program. (Note that it isn't enough just to get the latest build; the feature will be disabled on any build until you join the Insider program)
-2. Create an Excel Custom Functions add-in project using [Yo Office](https://github.com/OfficeDev/generator-office), and follow the instructions in the [project README.md](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/README.md) to start the add-in in Excel, make changes in the code, and debug.
-3. Type `=CONTOSO.ADD42(1,2)` into any cell, and press **Enter** to run the custom function.
+1. Install Office (build 10827 on Windows or 13.329 on Mac) and join the [Office Insider](https://products.office.com/office-insider) program. You must join the Office Insider program in order to have access to custom functions; currently, custom functions are disabled across all Office builds unless you are a member of the Office Insider program.
+
+2. Use [Yo Office](https://github.com/OfficeDev/generator-office) to create an Excel Custom Functions add-in project, and then follow the instructions in the [OfficeDev/Excel-Custom-Functions README](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/README.md) to use the project.
+
+3. Type `=CONTOSO.ADD42(1,2)` into any cell of an Excel worksheet, and press **Enter** to run the custom function.
 
 > [!NOTE]
-> The [Known Issues](#known-issues) section later in this article specifies current limitations of custom functions.
+> The [Known issues](#known-issues) section later in this article specifies current limitations of custom functions.
 
 ## Learn the basics
 
 In the cloned sample repo, you’ll see the following files:
 
-- **./src/customfunctions.js**, which contains the custom function code (see the simple code example shown previously for the `ADD42` function).
-- **./config/customfunctions.json**, which contains the registration JSON that tells Excel about your custom function. Registration makes your custom functions appear in the list of available functions displayed when a user types in a cell.
-- **./index.html**, which provides a &lt;Script&gt; reference to the JS file. This file controls content in the task pane in all versions of Excel except Excel Online.
-- **./manifest.xml**, which tells Excel the location of the HTML, JavaScript, and JSON files. It also specifies a namespace for all the custom functions that are installed with the add-in.
+| File | File format | Description |
+|------|-------------|-------------|
+| **./src/customfunctions.js** | JavaScript | Contains the code that defines custom functions. |
+| **./config/customfunctions.json** | JSON | Contains metadata that describes custom functions and enables Excel to register the custom functions and make them available to end-users. |
+| **./index.html** | HTML | Provides a &lt;script&gt; reference to the JavaScript file that defines custom functions. |
+| **./manifest.xml** | XML | Specifies the location of the JavaScript, JSON, and HTML files that are described previously in this table and specifies the namespace for all custom functions within the add-in. |
 
 ### JSON file (./config/customfunctions.json)
 
