@@ -15,40 +15,81 @@ Add-ins that contain web views (such as a task pane), but do not include any cus
 The following code sample shows how to store a token in AsyncStorage and display a dialog box which can indicate whether or not the user is authenticated.  
 
 ```js
-// Get auth token before calling my service, a hypothetical API, which will deliver a stock price based on stock ticker string, such as "MSFT"
-async function getStock(ticker) {
-    const token = await getToken();
-    let data = await (await fetch(https://myservice.com/?token=token&ticker= + ticker).json());
-    return data.price;
-}
+// Get auth token before calling my service, a hypothetical API which will deliver a stock price based on stock ticker string, such as "MSFT"
+ 
+function getStock (ticker) {
+  return new Promise(function (resolve, reject) {
+    // Get a token
+    getToken("https://myauthurl")
+    .then(function (token) {
+      
+      // Use token to get stock price
+      fetch("https://myservice.com/?token=token&ticker= + ticker")
+      .then(function (result) {
 
-async function getToken() {
-    if (_cachedToken) {
-        return _cachedToken;
-    } else {
-        return await getTokenViaDialog_AsPromise();
-    }
-}
-  
-// Function to display dialog window
-function getTokenViaDialog_AsPromise() {
-    return new Promise ((resolve, reject) => {
-        displayWebDialog("https://www.auth.com/", {
-           height: ’50’,
-           width: ’50%’,
-           hideTitle: true,
-           onMessage: (message, dialog) => {
-               let json = JSON.parse(message);
-                if (json.type === "token_succeeded") {
-                        resolve(json.value);
-                        dialog.closeDialog();
-                        return;
-                    }
-            // Otherwise, handle other messages.
-            },
-          onClose: () => reject("User closed dialog")
-        }).catch(e => reject(e));
-    });
+        // Return stock price to cell
+        resolve(result);
+      });
+    })
+    .catch(function (error) {
+      reject(error);
+    });
+  });
+  
+  //Helper
+  function getToken(url) {
+    return new Promise(function (resolve,reject) {
+      if(_cachedToken) {
+        resolve(_cachedToken);
+      } else {
+        getTokenViaDialog(url)
+        .then(function (result) {
+          resolve(result);
+        })
+        .catch(function (result) {
+          reject(result);
+        });
+      }
+    });
+  }
+
+  function getTokenViaDialog(url) {
+    return new Promise (function (resolve, reject) {
+      if (_dialogOpen) {
+        // Can only have one dialog open at once, wait for previous dialog's token
+        let timeout = 5;
+        let count = 0;
+        var intervalId = setInterval(function () {
+          count++;
+          if(_cachedToken) {
+            resolve(_cachedToken);
+            clearInterval(intervalId);
+          }
+          if(count >= timeout) {
+            reject("Timeout while waiting for token");
+            clearInterval(intervalId);
+          }
+        }, 1000);
+      } else {
+        _dialogOpen = true;
+        OfficeRuntime.displayWebDialog(url, {
+          height: '50%',
+          width: '50%',
+          onMessage: function (message, dialog) {
+            _cachedToken = message;
+            resolve(message);
+            dialog.closeDialog();
+            return;
+          },
+          onRuntimeError: function(error, dialog) {
+            reject(error);
+          },
+        }).catch(function (e) {
+          reject(e);
+        });
+      }
+    });
+  }
 }
 ```
 
