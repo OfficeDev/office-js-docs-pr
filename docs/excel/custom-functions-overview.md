@@ -177,11 +177,13 @@ function getTemperature(thermometerID){
 
 ## Streamed functions
 
-Custom functions can be streamed. Streamed custom functions let you output data to cells repeatedly over time, without waiting for Excel or users to request recalculations. The following code sample is a custom function that adds a number to the result every second. Note the following about this code:
+Streamed custom functions enable you to output data to cells repeatedly over time, without requiring a user to explicitly request recalculation. The following code sample is a custom function that adds a number to the result every second. Note the following about this code:
 
 - Excel displays each new value automatically using the `setResult` callback.
+
 - The final parameter, `handler`, is never specified in your registration code, and it does not display in the autocomplete menu to Excel users when they enter the function. It’s an object that contains a `setResult` callback function that’s used to pass data from the function to Excel to update the value of a cell.
-- In order for Excel to pass the `setResult` function in the `handler` object, you must declare support for streaming during your function registration by setting the option `"stream": true` in the `options` property for the custom function in the registration JSON file.
+
+- In order for Excel to pass the `setResult` function in the `handler` object, you must declare support for streaming during your function registration by setting the option `"stream": true` in the `options` property for the custom function in the JSON metadata file.
 
 ```js
 function incrementValue(increment, handler){
@@ -203,7 +205,7 @@ You can cancel streamed functions. Canceling your function calls is important to
 
 You *must* implement a cancellation handler for every streaming function.
 
-To make a function cancelable, set the option `"cancelable": true` in the `options` property for the custom function in the registration JSON file.
+To make a function cancelable, set the option `"cancelable": true` in the `options` property for the custom function in the JSON metadata file.
 
 The following code shows the previous example with cancellation implemented. In the code, the `handler` object contains an `onCanceled` function must be defined for each cancelable custom function.
 
@@ -260,7 +262,7 @@ function refreshTemperature(thermometerID){
 
 Your custom function can take a range of data as a parameter, or you can return a range of data from a custom function.
 
-For example, suppose that your function returns the second highest value from a range of numbers stored in Excel. The following function accepts the parameter `values`, which is of type `Excel.CustomFunctionDimensionality.matrix`. Note that in the registration JSON for this function, you would set the parameter's `type` property to `matrix`.
+For example, suppose that your function returns the second highest value from a range of numbers stored in Excel. The following function accepts the parameter `values`, which is of type `Excel.CustomFunctionDimensionality.matrix`. Note that in the JSON metadata for this function, you would set the parameter's `type` property to `matrix`.
 
 ```js
 function secondHighest(values){
