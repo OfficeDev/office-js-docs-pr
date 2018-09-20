@@ -39,14 +39,9 @@ In the cloned sample repo, you’ll see the following files:
 
 ### JSON file (./config/customfunctions.json)
 
-The following code in **customfunctions.json** specifies the metadata for the same `ADD42` function. This metadata includes details on the function's name, description, returned value, parameters, and more. Detailed reference information for the JSON file, including options not used in this example, is at [Custom Functions Registration JSON](custom-functions-json.md).
+The following code in **customfunctions.json** specifies the metadata for the same `ADD42` function. This metadata includes details on the function's name, description, returned value, parameters, and more.
 
-> [!NOTE]
-> To call a function in Excel, the name listed in this JSON file will be appended to the namespace specified in your XML manifest file. To call this function, you'd call `=CONTOSO.ADD42`. The namespace is intended to be used as an identifier for your company or the add-in. A namespace and the name of a function are separated by a period.
-
-Note that for this example:
-
-- There's only one custom function, so there's only one member of the `functions` array.
+The table below shows the multiple elements you'll see in the custom functions JSON file. For more detailed reference information for the JSON file, including options not used in this example, is at [Custom Functions Registration JSON](custom-functions-json.md).
 
 | Property 	| Defines 	| Additional notes 	|  	|  	|
 |-------------	|----------------------------------------------------------------------------------------------------	|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|---	|---	|
@@ -57,7 +52,8 @@ Note that for this example:
 | parameters 	| array which specifies (in order)the type of data in each parameter that is passed to the function. 	| The `name` and `description` child properties are used in the Excel intelliSense. The `type` and `dimensionality`  child properties are identical to the child properties of the `result` property described above. 	|  	|  	|
 | options 	| enables you to customize some aspects of how and when Excel executes the function 	| See information on cancellable and streaming functions later in this document.  	|  	|  	|
 
-```js
+The JSON file:
+```json
 {
     "$schema": "https://developer.microsoft.com/json-schemas/office-js/custom-functions.schema.json",
     "functions": [
@@ -128,6 +124,9 @@ The following is an example of the `<ExtensionPoint>` and `<Resources>` markup t
     </Resources>
 </VersionOverrides>
 ```
+
+> [!NOTE]
+> Functions in Excel are prepended by the namespace specified in your XML manifest file. A function's namespace comes before the function name and they are separated by a period. For example, to call the function `=ADD42()` in Excel, you would type `=CONTOSO.ADD42`, because CONTOSO is the namespace and `=ADD42` is the name given in the JSON file for that function. The namespace is intended to be used as an identifier for your company or the add-in. 
 
 ## Initializing custom functions
 
