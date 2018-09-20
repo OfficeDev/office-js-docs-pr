@@ -57,15 +57,15 @@ You’ll begin this tutorial by using the Yo Office generator, which will automa
     
     Select **Insert > Add-ins**. Choose **Manage My Add-ins** and select **Upload My Add-in**. Click "Browse..." for your manifest file (`.\manifest.xml`), then click Open, select **Upload**.
     
-    4. Finally, change the script tag to point to the right custom functions source. Open up your add-in project in your favorite code editor. In **index.html** in the root folder, delete and replace the script tag immediately following the <title> tags with the code below:
+    4. Finally, change the script tag. Open up your add-in project in your favorite code editor. In **index.html** in the root folder, delete and replace the script tag immediately following the <title> tags with the code below:
     
     ```js
     <script src="https://unpkg.com/@microsoft/office-js@1.1.9-adhoc.22/dist/custom-functions-runtime.js" type="text/javascript"></script>
     ```
 
-## Try out a basic computational custom function
+## Try out a basic custom function
 
-Now the custom functions in your file will be loaded and ready to use. There are several pre-built functions for you in the Yo Office project. All are attached to a namespace called CONTOSO which is defined in the XML manifest file. Once you start typing =CONTOSO in a cell, the list of available functions will appear.
+Now the custom functions in your file will be loaded and ready to use. There are several pre-built functions for you in the Yo Office project. All are attached to a namespace called CONTOSO which is defined in the XML manifest file. When you start typing =CONTOSO in a cell, the list of available functions will appear.
 
 Let's call `=CONTOSO.ADD42()`. This function adds 42 to any two numbers you provide as arguments. In any cell, type `=CONTOSO.ADD42(1,2)`. It should deliver the answer 45.
 
@@ -77,9 +77,9 @@ You’ll be adding a new function, called `=CONTOSO.STOCKPRICE`, to the **custom
 
     1. Open your code editor of choice and navigate to the stock-ticker project folder. 
     2. Copy and paste the function below and add it to **customfunctions.js**.
-
+    
     You'll notice in this code that your asynchronous function returns a JavaScript Promise with the data from the IEX Trading API. Asynchronous custom functions require you to either return a new Promise or use JavaScript's async/await syntax.
-
+    
     ```js
     function STOCKPRICE(ticker) {
         return new Promise(
@@ -99,11 +99,11 @@ You’ll be adding a new function, called `=CONTOSO.STOCKPRICE`, to the **custom
         });
     }
     ```
-
+    
     3. In order for Excel to properly run this function, you must add some metadata to the **./config/customfunctions.json** file.
-
+    
     You'll notice that this JSON file describes the function, listing the types and dimensionality of the results and parameters.
-
+    
     ```json
     {
         "name": "STOCKPRICE",
@@ -123,9 +123,9 @@ You’ll be adding a new function, called `=CONTOSO.STOCKPRICE`, to the **custom
         ],
     }
     ```
-
+    
     4. You will need to re-register this change once you have saved the file. In Excel, select **Insert > Add-ins > My Add-ins**. This will bring up a list of available add-ins. Under “Developer Add-ins" you will see your add-in, under the name “Excel Custom Function.” Select it to register it.
-
+    
     5. In cell B1, run the function `=CONTOSO.STOCKPRICE("MSFT")`. It should show you the stock price for one share of Microsoft stock right now.
 
 ## Create a streaming asynchronous custom function
