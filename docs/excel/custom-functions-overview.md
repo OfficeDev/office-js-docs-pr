@@ -86,7 +86,7 @@ The following table lists the properties that are typcially present in the JSON 
 | Property 	| Description |
 |---------|---------|
 | `name` | Name of the function that is shown in the autocomplete menu as a user types a formula within a cell. In the autocomplete menu, this value will be prefixed by the custom functions namespace that's specified in the XML manifest file. |
-| `helpUrl`	| Url for a page that is shown when a user requests help. This value appears in the task pane. |
+| `helpUrl`	| Url for a page that is shown when a user requests help. |
 | `description`	| Describes what the function does. This value appears as a tooltip when the function is the selected item in the autocomplete menu within Excel. |
 | `result` 	| Object that defines the type of information that is returned by the function. The value of the `type` child property can be **string**, **number**, or **boolean**. The value of the `dimensionality` child property can be **scalar** or **matrix** (a two-dimensional array of values of the specified `type`). |
 | `parameters` | Array that defines the input parameters for the function. The `name` and `description` child properties appear in the Excel intelliSense. The `type` and `dimensionality` child properties are identical to the child properties of the `result` object that is described previously in this table. |
@@ -233,7 +233,9 @@ Custom functions can save data in global JavaScript variables. In subsequent cal
 The following code sample shows an implementation of the previous temperature-streaming function that saves state globally. Note the following about this code:
 
 - `refreshTemperature` is a streamed function that reads the temperature of a particular thermometer every second. New temperatures are saved in the `savedTemperatures` variable, but does not directly update the cell value. It should not be directly called from a worksheet cell, *so it is not registered in the JSON file*.
+
 - `streamTemperature` updates the temperature values displayed in the cell every second and it uses `savedTemperatures` variable as its data source. It must be registered in the JSON file, and named with all upper-case letters, `STREAMTEMPERATURE`.
+
 - Users may call `streamTemperature` from several cells in the Excel UI. Each call reads data from the same `savedTemperatures` variable.
 
 ```js
@@ -263,7 +265,7 @@ function refreshTemperature(thermometerID){
 
 ## Working with ranges of data
 
-Your custom function can take a range of data as a parameter, or you can return a range of data from a custom function.
+Your custom function may accept a range of data as an input parameter, or it may return a range of data. In JavaScript, a range of data is represented as a 2-dimensional array.
 
 For example, suppose that your function returns the second highest value from a range of numbers stored in Excel. The following function accepts the parameter `values`, which is of type `Excel.CustomFunctionDimensionality.matrix`. Note that in the JSON metadata for this function, you would set the parameter's `type` property to `matrix`.
 
@@ -285,8 +287,6 @@ function secondHighest(values){
  }
 ```
 
-As shown in this code sample, a range is represented as a 2-dimensional array.
-
 ## Known issues
 
 - Help URLs and parameter descriptions are not yet used by Excel.
@@ -294,8 +294,8 @@ As shown in this code sample, a range is represented as a 2-dimensional array.
 - Volatile functions (those that recalculate automatically whenever unrelated data changes in the spreadsheet) are not yet supported.
 - Deployment via the Office 365 Admin Portal and AppSource are not yet enabled.
 - Custom functions in Excel Online may stop working during a session after a period of inactivity. Refresh the browser page (F5) and re-enter a custom function to restore the feature.
-- You may see #GETTING_DATA if you have multiple add-ins running on Excel for Windows. Close all Excel windows and restart Excel.
-- Debugging for custom functions is still being worked on. You can debug on Excel Online using F12 developer tools. See more details in the Custom Functions best practices article.
+- You may see the **#GETTING_DATA** temporary result within the cell(s) of a worksheet if you have multiple add-ins running on Excel for Windows. Close all Excel windows and restart Excel.
+- Debugging tools specifically for custom functions are currently under development. In the meantime, you can debug on Excel Online using F12 developer tools. See more details in [Custom functions best practices](custom-functions-best-practices.md).
 
 ## Changelog
 
