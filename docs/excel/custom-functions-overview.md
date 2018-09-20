@@ -58,6 +58,7 @@ The JSON file:
     "$schema": "https://developer.microsoft.com/json-schemas/office-js/custom-functions.schema.json",
     "functions": [
         {
+            "id": "ADD42",
             "name": "ADD42",
             "description":  "adds 42 to the input numbers",
             "helpUrl": "http://dev.office.com",
@@ -158,9 +159,6 @@ function getComment(x) {
         .then((json) => {
             return json.body;
         })
-        .catch(function (error) {
-            throw error;
-        })
 }
 ```
 
@@ -175,7 +173,7 @@ The following code shows an example of an asynchronous custom function that retr
 
 ```js
 function getTemperature(thermometerID){
-    return new OfficeExtension.Promise(function(setResult){
+    return new Promise(function(setResult){
         sendWebRequest(thermometerID, function(data){
             setResult(data.temperature);
         });

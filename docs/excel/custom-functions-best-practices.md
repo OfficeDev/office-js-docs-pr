@@ -39,7 +39,6 @@ For full instructions on how to use runtime logging, [read this article](../test
 At present, the best method for debugging Excel custom functions is to use [Excel Online](https://www.office.com/launch/excel) and use the F12 debugging tool native to your browser. Additional debugging tools for custom functions may be available in the future.
 
 ## Mapping names
-
 Custom functions are typically declared entirely in uppercase letters, although you can change this by using the  `CustomFunctionsMappings` object. The key-value pairs you specify in `CustomFunctionsMappings` correspond to the function name you call in Excel (such as `=ADD42`) and the new alternate name you would like to use for this function in Excel. Use of `CustomFunctionsMapping` is not required, but can be helpful if you are using an uglifier, webpack, or import syntax - all of which have difficulty with the uppercase letters in these functions.
   
 You can declare individual functions, as shown below:  

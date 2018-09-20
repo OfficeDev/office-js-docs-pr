@@ -61,7 +61,7 @@ function sendWebRequest(thermometerID, data) {
 
 As you can see in the sample below, custom functions can use WebSockets. In this example, the WebSocket logs any message sent to it.  
 
-```js
+```ts
 const ws = new WebSocket('wss://bundles.office.com');
 ws.onmessage = (message) => {
     console.log(`Received: ${message}`);
@@ -79,7 +79,7 @@ AsyncStorage is a key-value storage system that can be used to store authenticat
 - Unencrypted
 - Asynchronous
 
-Additionally, AsyncStorage is available globally to all parts of your add-in. For custom functions, AsyncStorage is exposed as a global object. For other parts of your add-in, such as task panes and other elements which utilize the typical WebView runtime, AsyncStorage is exposed through `Office.Runtime`.
+Additionally, AsyncStorage is available globally to all parts of your add-in. For custom functions, AsyncStorage is exposed as a global object. For other parts of your add-in, such as task panes and other elements which utilize the typical WebView runtime, AsyncStorage is exposed through `OfficeRuntime`.
 
  Methods available on AsyncStorage include getItem, setItem, removeItem, clear, getAllKeys, flushGetRequests, multiGet, multiSet, and multiRemove. At this time, mergeItem and multiMerge are not supported methods.
 

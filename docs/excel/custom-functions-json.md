@@ -12,10 +12,10 @@ The metadata is a JSON object that contains a single `functions` property whose 
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  No  |  A description of the function that appears in the Excel UI. For example, "Converts a Celsius value to Fahrenheit". |
 |  `helpUrl`  |  string  |   No  |  URL where your users can get help about the function. (It is displayed in a taskpane.) For example, "http://contoso.com/help/convertcelsiustofahrenheit.html"  |
-|  `name`  |  string  |  Yes  |  The name of the function as it will appear (prepended with a namespace) in the Excel UI when a user is selecting a function. It should be the same as the function's name where it is defined in the JavaScript. |
+|  `name`  |  string  |  No  |  The name of the function as it will appear (prepended with a namespace) in the Excel UI when a user is selecting a function. It does not need to be the same as the function's name where it is defined in the JavaScript. |
 |  `options`  |  object  |  No  |  Configure how Excel processes the function. See [options object](#options-object) for details. |
-|  `parameters`  |  array  |  Yes  |  Metadata about the parameters to the function. See [parameters array](#parameters-array)  for details. |
-|  `result`  |  object  |  Yes  |  Metadata about the value returned by the function. See [result object](#result-object) for details. |
+|  `parameters`  |  array  |  No  |  Metadata about the parameters to the function. See [parameters array](#parameters-array)  for details. |
+|  `result`  |  object  |  No  |  Metadata about the value returned by the function. See [result object](#result-object) for details. |
 
 ## Options object
 
@@ -33,9 +33,9 @@ The `parameters` property is an array of objects. Each of these objects represen
 |  Property  |  Data Type  |  Required?  |  Description  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  No |  A description of the parameter.  |
-|  `dimensionality`  |  string  |  Yes  |  Must be either "scalar", meaning a non-array value, or "matrix", meaning an array of row arrays.  |
+|  `dimensionality`  |  string  |  No  |  Must be either "scalar", meaning a non-array value, or "matrix", meaning an array of row arrays.  |
 |  `name`  |  string  |  Yes  |  The name of the parameter. This name is displayed in Excel's IntelliSense.  |
-|  `type`  |  string  |  Yes  |  The data type of the parameter. Must be "boolean", "number", or "string".  |
+|  `type`  |  string  |  No  |  The data type of the parameter. Must be "boolean", "number", or "string".  |
 
 ## Result object
 
@@ -54,7 +54,8 @@ The following JSON code is an example of a metadata file for custom functions.
 {
 	"functions": [
 		{
-			"name": "ADD42", 
+            "id": "ADD42",
+			"name": "ADD42",
 			"description":  "Adds 42 to the input number",
 			"helpUrl": "http://dev.office.com",
 			"result": {
