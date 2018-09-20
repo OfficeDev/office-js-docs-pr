@@ -1,16 +1,16 @@
 ---
 ms.date: 09/20/2018
 description: Learn best practices and recommended patterns for Excel custom functions.
-title: Custom Functions' best practices
+title: Custom functions best practices
 ---
 
-# Custom Functions' best practices
+# Custom functions best practices
 
 This article describes some recommended patterns and solutions to common use cases with Excel custom functions.
 
 ## Error handling
 
-Error handling for custom functions is the same as [error handling for the Excel JavaScript API at large](./excel-add-ins-error-handling.md). Generally, you will use `.catch` to handle errors. The code below gives an example of `.catch`.
+Error handling for custom functions is the same as [error handling for the Excel JavaScript API at large](excel-add-ins-error-handling.md). Generally, you will use `.catch` to handle errors. In the following code sample, `.catch` will handle any errors that occur previously in the code.
 
 ```js
 function getComment(x) {
@@ -42,7 +42,7 @@ At present, the best method for debugging Excel custom functions is to use [Exce
 
 Custom functions are typically declared entirely in uppercase letters, although you can change this by using the  `CustomFunctionsMappings` object. The key-value pairs you specify in `CustomFunctionsMappings` correspond to the function name you call in Excel (such as `=ADD42`) and the new alternate name you would like to use for this function in Excel. Use of `CustomFunctionsMapping` is not required, but can be helpful if you are using an uglifier, webpack, or import syntax - all of which have difficulty with the uppercase letters in these functions.
   
-You can declare individual functions, as shown below:  
+You can declare individual functions, as shown in the following code sample.  
 
 ```js
 function ADD42(num) {
@@ -54,7 +54,7 @@ CustomFunctionsMappings = {
 }
 ```
 
-However, you can declare multiple mappings at the same time, as shown in the example below.  
+You can declare multiple mappings at the same time, as shown in the following code sample.
 
 ```js
 //assume that COUNTDOGS and COUNTCATS exist
@@ -64,3 +64,9 @@ CustomFunctionsMappings = {
     "meow" : COUNTCATS
 }
  ```
+
+ ## See also
+
+* [Create custom functions in Excel](custom-functions-overview.md)
+* [Custom functions metadata](custom-functions-json.md)
+* [Runtime for Excel custom functions](custom-functions-runtime.md)
