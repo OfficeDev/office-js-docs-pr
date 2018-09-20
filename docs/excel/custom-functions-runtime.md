@@ -8,14 +8,11 @@ title: Runtime for Excel custom functions
 
 Custom functions extend Excel’s capabilities by using a new JavaScript runtime that uses a sandboxed JavaScript engine rather than a web browser. Because custom functions do not need to render UI elements, the new JavaScript runtime is optimized for performing calculations, enabling you to run thousands of custom functions simultaneously.
 
-> [!NOTE]
-> An add-in that defines custom functions may also include other components such as task panes and other UI elements. These other components of the add-in will continue to run in the browser-like WebView runtime. Only the custom functions within an add-in will use the new JavaScript runtime that's described in this article.
+## Key facts about the new JavaScript runtime 
 
-## Differences between the new JavaScript runtime and the WebView runtime
+Only custom functions within an add-in will use the new JavaScript runtime that's described in this article. If an add-in includes other components such as task panes and other UI elements, in addition to custom functions, these other components of the add-in will continue to run in the browser-like WebView runtime.  Additionally: 
 
-Some of the key differences between the new JavaScript runtime and the WebView runtime include:
-
-- The JavaScript runtime does not provide access to the Document Object Model (DOM) or support libraries like JQuery that rely on the DOM.
+- The JavaScript runtime does not provide access to the Document Object Model (DOM) or support libraries like jQuery that rely on the DOM.
 
 - A custom function that's defined in an add-in's JavaScript file can return a regular JavaScript `Promise` instead of returning `OfficeExtension.Promise`.  
 
@@ -84,7 +81,7 @@ AsyncStorage is a key-value storage system that can be used to store authenticat
 - Unencrypted
 - Asynchronous
 
-AsyncStorage is globally available to all parts of your add-in. For custom functions, `AsyncStorage` is exposed as a global object. For other parts of your add-in, such as task panes and other elements that use the WebView runtime, AsyncStorage is exposed through `OfficeRuntime`. Each add-in has its own storage partition, with a default size of 5MB. 
+AsyncStorage is globally available to all parts of your add-in. For custom functions, `AsyncStorage` is exposed as a global object. (For other parts of your add-in, such as task panes and other elements that use the WebView runtime, AsyncStorage is exposed through `OfficeRuntime`.) Each add-in has its own storage partition, with a default size of 5MB. 
 
 The following methods are available on the `AsyncStorage` object:
  
