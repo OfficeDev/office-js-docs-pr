@@ -126,8 +126,8 @@ The following table lists the properties that are typically present in the JSON 
 
 | Property 	| Description |
 |---------|---------|
-| `name` | Name of the function that is shown in the autocomplete menu as a user types a formula within a cell. In the autocomplete menu, this value will be prefixed by the custom functions namespace that's specified in the XML manifest file. |
 | `id` | A unique ID for the function. This ID should not be changed after it is set. |
+| `name` | Name of the function that is shown in the autocomplete menu as a user types a formula within a cell. In the autocomplete menu, this value will be prefixed by the custom functions namespace that's specified in the XML manifest file. |
 | `helpUrl`	| Url for a page that is shown when a user requests help. |
 | `description`	| Describes what the function does. This value appears as a tooltip when the function is the selected item in the autocomplete menu within Excel. |
 | `result` 	| Object that defines the type of information that is returned by the function. The value of the `type` child property can be **string**, **number**, or **boolean**. The value of the `dimensionality` child property can be **scalar** or **matrix** (a two-dimensional array of values of the specified `type`). |
@@ -252,7 +252,7 @@ For example, suppose that your function returns the second highest value from a 
 
 ```js
 function secondHighest(values){
-     var highest = values[0][0], secondHighest = values[0][0];
+     let highest = values[0][0], secondHighest = values[0][0];
      for(var i = 0; i < values.length; i++){
          for(var j = 1; j < values[i].length; j++){
              if(values[i][j] >= highest){
@@ -274,7 +274,9 @@ When you build an add-in that defines custom functions, be sure to include error
 
 ```js
 function getComment(x) {
-    var url = "https://jsonplaceholder.typicode.com/comments/" + x; //this delivers a section of lorem ipsum from the jsonplaceholder API
+    //this delivers a section of lorem ipsum from the jsonplaceholder API
+    let url = "https://jsonplaceholder.typicode.com/comments/" + x;
+
     return fetch(url)
         .then(function (data) {
             return data.json();
