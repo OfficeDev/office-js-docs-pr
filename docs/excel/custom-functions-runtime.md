@@ -46,11 +46,11 @@ function getTemperature(thermometerID) {
 function sendWebRequest(thermometerID, data) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        data.temperature = xhttp.responseText; //parsing is needed here rather than blind assignment
-      };
-    xhttp.open("GET", "https://127.0.0.1:8080/temperature.aspx", true);
-    xhttp.send();  
+        if (this.readyState == 4 && this.status == 200) {
+           data.temperature = JSON.parse(xhttp.responseText).temperature
+          };
+        xhttp.open("GET", "https://contoso.com/temperature/" + thermometerID), true)
+        xhttp.send();  
     }
 }
 
