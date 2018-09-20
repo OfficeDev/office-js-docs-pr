@@ -33,31 +33,24 @@ Custom functions are now available in Developer Preview on Windows, Mac, and Exc
 
 ## Learn the basics
 
-In the cloned sample repo, you’ll see the following files:
+In the custom functions project that you've created using [Yo Office](https://github.com/OfficeDev/generator-office), you’ll see the following files:
 
 | File | File format | Description |
 |------|-------------|-------------|
 | **./src/customfunctions.js** | JavaScript | Contains the code that defines custom functions. |
-| **./config/customfunctions.json** | JSON | Contains metadata that describes custom functions and enables Excel to register the custom functions and make them available to end-users. |
+| **./config/customfunctions.json** | JSON | Contains metadata that describes custom functions and enables Excel to register the custom functions in order to make them available to end-users. |
 | **./index.html** | HTML | Provides a &lt;script&gt; reference to the JavaScript file that defines custom functions. |
-| **./manifest.xml** | XML | Specifies the location of the JavaScript, JSON, and HTML files that are described previously in this table and specifies the namespace for all custom functions within the add-in. |
+| **./manifest.xml** | XML | Specifies the namespace for all custom functions within the add-in and the location of the JavaScript, JSON, and HTML files that are listed previously in this table. |
 
-### JSON file (./config/customfunctions.json)
+### JSON metadata
 
-The following code in **customfunctions.json** specifies the metadata for the same `ADD42` function. This metadata includes details on the function's name, description, returned value, parameters, and more.
+A custom functions metadata file provides the information that Excel requires to register the custom functions and make them available to end-users. Custom functions are registered when a user runs an add-in for the first time. After that, they are available to that same user in all workbooks (i.e., not only in the workbook where the add-in initially ran.)
 
-The following table shows the multiple elements you'll see in the custom functions JSON file. For more detailed reference information for the JSON file, including options not used in this example, is at [Custom Functions Registration JSON](custom-functions-json.md).
+> [!TIP]
+> Server settings on the server that hosts the JSON file must have [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel Online.
 
-| Property 	| Defines 	| Additional notes 	|  	|  	|
-|---------|---------|---------|---------|---------|
-| name 	| function name in Excel 	| As the previous animated gif shows, a namespace (`CONTOSO`) is prepended to the function name in the Excel autocomplete menu. This prefix is defined in the add-in manifest, as described later in this article. The prefix and the function name are separated using a period, and by convention prefixes and function names are uppercase. To use your custom function, a user types the namespace followed by the function's name (`ADD42`) into a cell, in this case `=CONTOSO.ADD42`. The prefix is intended to be used as an identifier for your company or the add-in. 	|  	|  	|
-| helpUrl 	| url for a page shown when a user requests help 	| Appears in the task pane 	|  	|  	|
-| description 	| describes the function's action 	| Appears in the autocomplete menu in Excel 	|  	|  	|
-| result 	| specifies the type of information returned by the function to Excel. 	| The `type` child property can be a `"string"`, `"number"`, or `"boolean"`. The `dimensionality` property can be `scalar` or `matrix` (a two-dimensional array of values of the specified `type`.) 	|  	|  	|
-| parameters 	| array that specifies (in order)the type of data in each parameter that is passed to the function. 	| The `name` and `description` child properties are used in the Excel intelliSense. The `type` and `dimensionality`  child properties are identical to the child properties of the `result` property described previously in this table. 	|  	|  	|
-| options 	| enables you to customize some aspects of how and when Excel executes the function 	| See information on cancellable and streaming functions later in this document.  	|  	|  	|
+The following code in **customfunctions.json** specifies the metadata for the `ADD42` function that was described previously in this article. This metadata defines the function's name, description, return value, input parameters, and more. The table that follows this code sample provides detailed information about the individual properties within this JSON object.
 
-The JSON file:
 ```json
 {
     "$schema": "https://developer.microsoft.com/json-schemas/office-js/custom-functions.schema.json",
@@ -88,10 +81,17 @@ The JSON file:
 }
 ```
 
-> [!NOTE]
-> The custom functions are registered when a user runs the add-in for the first time. After that, they are available, for that same user, in all workbooks (not only the one where the add-in ran initially.)
+The following table lists the properties that are typcially present in the JSON metadata file. For more detailed information about the JSON metadata file, including options not used in the previous example, see [Custom functions metadata](custom-functions-json.md).
 
-Your server settings for the JSON file must have [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel Online.
+| Property 	| Description |
+|---------|---------|
+| `name` | Name of the function that is shown in the autocomplete menu as a user types a formula within a cell. In the autocomplete menu, this value will be prefixed by the custom functions namespace that's specified in the XML manifest file. |
+| `helpUrl`	| Url for a page that is shown when a user requests help. This value appears in the task pane. |
+| `description`	| Describes what the function does. This value appears as a tooltip when the function is the selected item in the autocomplete menu within Excel. |
+| `result` 	| Object that defines the type of information that is returned by the function. The value of the `type` child property can be **string**, **number**, or **boolean**. The value of the `dimensionality` child property can be **scalar** or **matrix** (a two-dimensional array of values of the specified `type`). |
+| `parameters` | Array that defines the input parameters for the function. The `name` and `description` child properties appear in the Excel intelliSense. The `type` and `dimensionality` child properties are identical to the child properties of the `result` object that is described previously in this table. |
+| `options`	| Enables you to customize some aspects of how and when Excel executes the function. For more information about how this property can be used, see [Streamed functions](#streamed-functions) and [Cancellation](#cancellation) later in this article. |
+
 
 ### Manifest file (./manifest.xml)
 
