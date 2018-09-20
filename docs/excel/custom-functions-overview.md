@@ -22,14 +22,14 @@ function ADD42(a, b) {
 Custom functions are now available in Developer Preview on Windows, Mac, and Excel Online. Follow these steps to try them:
 
 1. Install Office (build 10827 on Windows or 13.329 on Mac) and join the [Office Insider](https://products.office.com/office-insider) program. (Note that it isn't enough just to get the latest build; the feature will be disabled on any build until you join the Insider program)
-2. Create an Excel Custom Functions add-in project using [Yo Office](https://github.com/OfficeDev/generator-office), and follow the instructions in the [project README.md](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/README.md) to start the add-in in Excel, make changes in the code, and debug.
+2. Create an Excel Custom Functions add-in project using [the Yo Office generator](https://github.com/OfficeDev/generator-office), and follow the instructions in the [project README.md](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/README.md) to start the add-in in Excel, make changes in the code, and debug.
 3. Type `=CONTOSO.ADD42(1,2)` into any cell, and press **Enter** to run the custom function.
 
 See the **Known Issues** section at the end of this article, which includes current limitations of custom functions and will be updated over time.
 
 ## Learn the basics
 
-In the cloned sample repo, you’ll see the following files:
+In the Yo Office generator project, you’ll see the following files:
 
 - **./src/customfunctions.js**, which contains the custom function code (see the simple code example above for the `ADD42` function).
 - **./config/customfunctions.json**, which contains the registration JSON that tells Excel about your custom function. Registration makes your custom functions appear in the list of available functions displayed when a user types in a cell.
