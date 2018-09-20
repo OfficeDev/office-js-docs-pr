@@ -155,12 +155,15 @@ function getComment(x) {
 
 ## Functions that return data from external sources
 
-If your custom function retrieves data from external sources, like the web, must:
+If a custom function retrieves data from an external source such as the web, it must:
 
 1. Return a JavaScript Promise to Excel.
+
 2. Resolve the Promise with the final value using the callback function.
 
-The following code shows an example of an custom function that retrieves the temperature of a thermometer. Note that `sendWebRequest` is a hypothetical function, not specified here, that uses XHR to call a temperature web service.
+Custom functions display a `#GETTING_DATA` temporary result in the cell while Excel waits for the final result. Users can interact normally with the rest of the worksheet while they wait for the result.
+
+In the following code sample, the `getTemperature()` custom function retrieves the current temperature of a thermometer. Note that `sendWebRequest` is a hypothetical function (not specified here) that uses XHR to call a temperature web service.
 
 ```js
 function getTemperature(thermometerID){
@@ -171,8 +174,6 @@ function getTemperature(thermometerID){
     });
 }
 ```
-
-Custom functions display a `#GETTING_DATA` temporary result in the cell while Excel waits for the final result. Users can interact normally with the rest of the spreadsheet while they wait for the result.
 
 ## Streamed functions
 
