@@ -106,6 +106,7 @@ You’ll be adding a new function, called `=CONTOSO.STOCKPRICE`, to the **custom
     
     ```json
     {
+        "id": "STOCKPRICE",
         "name": "STOCKPRICE",
         "description": "Multiplies number by 105",
         "helpUrl": "http://dev.office.com",
@@ -166,6 +167,7 @@ To do this, you’ll create a new function, `=CONTOSO.STOCKPRICESTREAM`. It make
 
     ```json
     {
+        "id": "STOCKPRICESTREAM",
         "name": "STOCKPRICESTREAM",
         "description": "Streams real time stock price",
         "helpUrl": "http://dev.office.com",
