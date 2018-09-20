@@ -164,14 +164,14 @@ function getComment(x) {
 }
 ```
 
-## Asynchronous functions
+## Functions that return data from external sources
 
-If your custom function retrieves data from the web, it must be asynchronous with respect to Excel. Asynchronous functions must:
+If your custom function retrieves data from external sources, like the web, must:
 
 1. Return a JavaScript Promise to Excel.
 2. Resolve the Promise with the final value using the callback function.
 
-The following code shows an example of an asynchronous custom function that retrieves the temperature of a thermometer. Note that `sendWebRequest` is a hypothetical function, not specified here, that uses XHR to call a temperature web service.
+The following code shows an example of an custom function that retrieves the temperature of a thermometer. Note that `sendWebRequest` is a hypothetical function, not specified here, that uses XHR to call a temperature web service.
 
 ```js
 function getTemperature(thermometerID){
@@ -183,11 +183,11 @@ function getTemperature(thermometerID){
 }
 ```
 
-Asynchronous functions display a `#GETTING_DATA` temporary error in the cell while Excel waits for the final result. Users can interact normally with the rest of the spreadsheet while they wait for the result.
+Custom functions display a `#GETTING_DATA` temporary result in the cell while Excel waits for the final result. Users can interact normally with the rest of the spreadsheet while they wait for the result.
 
 ## Streamed functions
 
-An asynchronous function can be streamed. Streamed custom functions let you output data to cells repeatedly over time, without waiting for Excel or users to request recalculations. The following example is a custom function that adds a number to the result every second. Note the following about this code:
+Custom functions can be streamed. Streamed custom functions let you output data to cells repeatedly over time, without waiting for Excel or users to request recalculations. The following example is a custom function that adds a number to the result every second. Note the following about this code:
 
 - Excel displays each new value automatically using the `setResult` callback.
 - The final parameter, `handler`, is never specified in your registration code, and it does not display in the autocomplete menu to Excel users when they enter the function. It’s an object that contains a `setResult` callback function that’s used to pass data from the function to Excel to update the value of a cell.
@@ -205,13 +205,13 @@ function incrementValue(increment, handler){
 
 ## Cancellation
 
-You can cancel streamed functions and asynchronous functions. Canceling your function calls is important to reduce their bandwidth consumption, working memory, and CPU load. Excel cancels function calls in the following situations:
+You can cancel streamed functions. Canceling your function calls is important to reduce their bandwidth consumption, working memory, and CPU load. Excel cancels function calls in the following situations:
 
 - The user edits or deletes a cell that references the function.
 - One of the arguments (inputs) for the function changes. In this case, a new function call is triggered in addition to the cancellation.
 - The user triggers recalculation manually. As with the above case, a new function call is triggered in addition to the cancellation.
 
-You *must* implement a cancellation handler for every streaming function. Asynchronous, non-streaming functions may or may not be cancelable; it's up to you. Synchronous functions cannot be canceled.
+You *must* implement a cancellation handler for every streaming function.
 
 To make a function cancelable, set the option `"cancelable": true` in the `options` property for the custom function in the registration JSON file.
 
@@ -233,7 +233,7 @@ function incrementValue(increment, handler){
 
 ## Saving and sharing state
 
-Asynchronous custom functions can save data in global JavaScript variables. In subsequent calls, your custom function may use the values saved in these variables. Saved state is useful when users add the same custom function to more than one cell, because all the instances of the function can share the state. For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.
+Custom functions can save data in global JavaScript variables. In subsequent calls, your custom function may use the values saved in these variables. Saved state is useful when users add the same custom function to more than one cell, because all the instances of the function can share the state. For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.
 
 The following code shows an implementation of the previous temperature-streaming function that saves state globally. Note the following about this code:
 
@@ -266,9 +266,6 @@ function refreshTemperature(thermometerID){
 }
 ```
 
-> [!NOTE]
-> Only asynchronous functions may share state because an add-in's synchronous functions share the same JavaScript context in each session.
-
 ## Working with ranges of data
 
 Your custom function can take a range of data as a parameter, or you can return a range of data from a custom function.
@@ -299,11 +296,11 @@ As you can see, ranges are handled in JavaScript as arrays of row arrays (like a
 
 - Help URLs and parameter descriptions are not yet used by Excel.
 - Custom functions are not currently available on Excel for mobile clients.
-- Currently, add-ins rely on a hidden browser process to run asynchronous custom functions. In the future, JavaScript will run directly on some platforms to ensure custom functions are faster and use less memory. Additionally, the HTML page referenced by the `<Page>` element in the manifest won’t be needed for most platforms because Excel will run the JavaScript directly. To prepare for this change, ensure your custom functions do not use the web page DOM. The supported host APIs for accessing the web will be [WebSocket](https://developer.mozilla.org/docs/Web/API/WebSockets_API) and [XHR](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest) using GET or POST.
 - Volatile functions (those which recalculate automatically whenever unrelated data changes in the spreadsheet) are not yet supported.
-- Debugging is only enabled for asynchronous functions on Excel for Windows.
 - Deployment via the Office 365 Admin Portal and AppSource are not yet enabled.
 - Custom functions in Excel Online may stop working during a session after a period of inactivity. Refresh the browser page (F5) and re-enter a custom function to restore the feature.
+- You may see #GETTING_DATA if you have multiple add-ins running on Excel for Windows. Close all Excel windows and restart Excel.
+- Debugging for custom functions is still being worked on. You can debug on Excel Online using F12 developer tools. See more details in the Custom Functions best practices article.
 
 ## Changelog
 
@@ -311,5 +308,6 @@ As you can see, ranges are handled in JavaScript as arrays of row arrays (like a
 - **Nov 20, 2017**: Fixed compatibility bug for those using builds 8801 and later
 - **Nov 28, 2017**: Shipped* support for cancellation on asynchronous functions (requires change for streaming functions)
 - **May 7, 2018**: Shipped* support for Mac, Excel Online, and synchronous functions running in-process
+- **September 20, 2018**: Shipped support for custom functions javascript runtime. It is no longer required to declare a function to be 'synchronous', as all functions will use the custom functions javascript runtime.
 
 \* to the Office Insiders Channel
