@@ -9,8 +9,7 @@ title: Runtime for Excel Custom Function Add-ins
 Custom functions extend Excel’s capabilities using a new JavaScript runtime. This runtime utilizes a sandboxed JavaScript engine rather than a web browser. Because custom functions do not need to render UI elements, their runtime is optimized for performing calculations instead; you can run thousands of custom functions simultaneously.  
 
 > [!NOTE]
-> The code for your add-in may include other parts, such as task panes and other UI elements.  
-> These will continue to run in the browser-like WebView runtime that you are used to. The new runtime only applies to the custom functions related code in your add-in.  
+> The code for your add-in may include other parts, such as task panes and other UI elements. These will continue to run in the browser-like WebView runtime that you are used to. The new runtime only applies to the custom functions related code in your add-in.  
 
 ## Differences between WebView runtime and the new JavaScript runtime
 
