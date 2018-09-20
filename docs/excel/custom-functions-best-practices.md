@@ -45,7 +45,7 @@ Currently, the best method for debugging Excel custom functions is to use [Excel
 
 ## Mapping names
 
-By default, the name of a custom function in your JavaScript file should be declared using entirely uppercase letters, and corresponds exactly to the function name that end users see in Excel. However, you can change this by using the `CustomFunctionsMappings` object to map one or more function names from the JavaScript file to different values that end users will see as function names in Excel. Although you're not required to use `CustomFunctionsMapping`, it can be helpful if you are using an uglifier, webpack, or import syntax - all of which have difficulty with uppercase function names.
+By default, the name of a custom function in your JavaScript file is typically declared using entirely uppercase letters, and corresponds exactly to the function name that end users see in Excel. However, you can change this by using the `CustomFunctionsMappings` object to map one or more function names from the JavaScript file to different values that end users will see as function names in Excel. Although you're not required to use `CustomFunctionsMapping`, it can be helpful if you are using an uglifier, webpack, or import syntax - all of which have difficulty with uppercase function names.
   
 The following code sample defines a single key-value pair that maps the JavaScript function name `ADD42` to the `plusFortyTwo` function name in the Excel UI. When the end user chooses the `plusFortyTwo` function in Excel, the `ADD42` JavaScript function will run.
 
