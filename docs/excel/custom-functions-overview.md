@@ -1,5 +1,5 @@
 ---
-ms.date: 09/18/2018
+ms.date: 09/20/2018
 description: Create your own custom function add-in in Excel using JavaScript. 
 title: Create Custom Functions in Excel (Preview)
 ---

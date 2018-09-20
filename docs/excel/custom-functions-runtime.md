@@ -1,12 +1,12 @@
 ---
-ms.date: 09/18/2018
+ms.date: 09/20/2018
 description: Excel custom functions use a new JavaScript runtime, which differs from the standard Add-ins WebView control runtime.
 title: Runtime for Excel Custom Function Add-ins
 ---
 
 # Runtime for Excel custom function add-ins
 
-Custom functions extend Excel’s capabilities using a new JavaScript runtime. This runtime utilizes a sandboxed JavaScript engine rather than a web browser. Additionally, it prioritizes performance, allowing you to run thousands of custom functions simultaneously.  
+Custom functions extend Excel’s capabilities using a new JavaScript runtime. This runtime utilizes a sandboxed JavaScript engine rather than a web browser. Because custom functions do not need to render UI elements, their runtime is optimized for performing calculations instead; you can run thousands of custom functions simultaneously.  
 
 > [!NOTE]
 > The code for your add-in may include other parts, such as task panes and other UI elements.  
@@ -15,8 +15,8 @@ Custom functions extend Excel’s capabilities using a new JavaScript runtime. T
 ## Differences between WebView runtime and the new JavaScript runtime
 
 - The new JavaScript runtime used by custom functions does not provide access to the Document Object Model (DOM) or support libraries like JQuery which rely on the DOM.
-- In the JavaScript file which defines your functions (if using yo office, **customfunctions.js**), you can now return a regular JavaScript `Promise` instead of using `OfficeExtension.Promise`.
-- In the JSON file which describes your functions (if using yo office, **customfunctions.json**), you no longer need to specify “sync” or “async” under “options”.  
+- In the JavaScript file which defines your functions (if using the Yo Office Yeoman generator, **customfunctions.js**), you can now return a regular JavaScript `Promise` instead of using `OfficeExtension.Promise`.
+- In the JSON file which describes your functions (if using the Yo Office Yeoman generator, **customfunctions.json**), you no longer need to specify “sync” or “async” under “options”.  
 
 ## New APIs 
 The new JavaScript runtime utilized by custom functions has four APIs:
