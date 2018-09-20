@@ -3,10 +3,10 @@ ms.date: 09/20/2018
 description: Create your own custom function add-in in Excel using JavaScript. 
 title: Create Custom Functions in Excel (Preview)
 ---
-
+//TODO: A what's new main refresh happened on the 20th
 # Create custom functions in Excel (Preview)
 
-Custom functions (similar to user-defined functions, or UDFs), enable developers to add any JavaScript function to Excel using an add-in. Users can then access custom functions like any other native function in Excel (such as `=SUM()`). This article explains how to create custom functions in Excel.
+Custom functions enable developers to add any JavaScript function to Excel using an add-in. Users can then access custom functions like any other native function in Excel (such as `=SUM()`). This article explains how to create custom functions in Excel.
 
 The following illustration shows you how an end user would insert a custom function into a cell. The function that adds 42 to a pair of numbers.
 
@@ -21,6 +21,8 @@ function ADD42(a, b) {
 ```
 
 Custom functions are now available in Developer Preview on Windows, Mac, and Excel Online. Follow these steps to try them:
+
+//TO DO: list by platform
 
 1. Install Office (build 10827 on Windows or 13.329 on Mac) and join the [Office Insider](https://products.office.com/office-insider) program. (Note that it isn't enough just to get the latest build; the feature will be disabled on any build until you join the Insider program)
 2. Create an Excel Custom Functions add-in project using [Yo Office](https://github.com/OfficeDev/generator-office), and follow the instructions in the [project README.md](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/README.md) to start the add-in in Excel, make changes in the code, and debug.
@@ -89,7 +91,7 @@ The JSON file:
 
 Your server settings for the JSON file must have [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel Online.
 
-### Manifest file (./manifest.xml)
+### Manifest file (./manifest.xml) //TO DO: Move Manifest back to first
 
 The following is an example of the `<ExtensionPoint>` and `<Resources>` markup that you include in the add-in's manifest to enable Excel to run your functions. This allows you to change the locations of your JSON, JavaScript, and HTML files which make up your custom function.  
 
@@ -130,7 +132,7 @@ The following is an example of the `<ExtensionPoint>` and `<Resources>` markup t
 > Functions in Excel are prepended by the namespace specified in your XML manifest file. A function's namespace comes before the function name and they are separated by a period. For example, to call the function `=ADD42()` in Excel, you would type `=CONTOSO.ADD42`, because CONTOSO is the namespace and `=ADD42` is the name given in the JSON file for that function. The namespace is intended to be used as an identifier for your company or the add-in. 
 
 
-## Handling errors
+## Handling errors //TODO: Move further down
 
 Error handling for custom functions is the same as [error handling for the Excel JavaScript API at large](./excel-add-ins-error-handling.md). Generally, you will use `.catch` to handle errors. The code below gives an example of `.catch`.
 
@@ -214,7 +216,7 @@ function incrementValue(increment, handler){
 }
 ```
 
-## Saving and sharing state
+## Saving and sharing state //TO DO: Get feedback from Keyur and Humberto
 
 Custom functions can save data in global JavaScript variables. In subsequent calls, your custom function may use the values saved in these variables. Saved state is useful when users add the same custom function to more than one cell, because all the instances of the function can share the state. For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.
 
@@ -274,6 +276,8 @@ function secondHighest(values){
 ```
 
 As you can see, ranges are handled in JavaScript as arrays of row arrays (like a 2-dimensional array).
+
+//TO DO: We can now do network calls using XHR, AsyncStorage to save state, etc. Put a reference link
 
 ## Known issues
 
