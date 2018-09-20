@@ -67,13 +67,13 @@ You’ll begin this tutorial by using the Yo Office generator, which will automa
 
 Now the custom functions in your file will be loaded and ready to use. There are several pre-built functions for you in the Yo Office project. All are attached to a namespace called CONTOSO which is defined in the XML manifest file. When you start typing =CONTOSO in a cell, the list of available functions will appear.
 
-Let's call `=CONTOSO.ADD42()`. This function adds 42 to any two numbers you provide as arguments. In any cell, type `=CONTOSO.ADD42(1,2)`. It should deliver the answer 45.
+Let's call the CONTOSO.ADD42() function, which adds 42 to any two numbers that you specify as arguments. In any cell, type `=CONTOSO.ADD42(1,2)`. It should deliver the answer 45.
 
 ## Create a custom function
 
-What if you wanted a function which could fetch and display the price of Microsoft stock that day? Custom functions are designed so you can easily make requests for data from the web asynchronously.
+What if you wanted a function which could fetch and display the price of Microsoft stock in real time? Custom functions are designed so you can easily request data from the web asynchronously.
 
-You’ll be adding a new function, called `=CONTOSO.STOCKPRICE`, to the **customfunctions.j** file. The function will take in the name of a stock ticker, such as "MSFT", and return the price of that stock. You'll leverage the IEX Trading API, which is free and does not require authentication.
+Complete the following steps to create a custom function named STOCKPRICE that accepts a stock ticker (e.g., "MSFT") and returns the price of that stock. The custom function uses the IEX Trading API, which is free and does not require authentication.
 
     1. Open your code editor of choice and navigate to the stock-ticker project folder. 
     2. Copy and paste the function below and add it to **customfunctions.js**.
@@ -127,7 +127,7 @@ You’ll be adding a new function, called `=CONTOSO.STOCKPRICE`, to the **custom
     
     4. You will need to re-register this change once you have saved the file. In Excel, select **Insert > Add-ins > My Add-ins**. This will bring up a list of available add-ins. Under “Developer Add-ins" you will see your add-in, under the name “Excel Custom Function.” Select it to register it.
     
-    5. In cell B1, run the function `=CONTOSO.STOCKPRICE("MSFT")`. It should show you the stock price for one share of Microsoft stock right now.
+    5. In cell B1, run the function `=CONTOSO.STOCKPRICE("MSFT")`. It should show you the current stock price for one share of Microsoft stock.
 
 ## Create a streaming asynchronous custom function
 
@@ -195,6 +195,6 @@ To do this, you’ll create a new function, `=CONTOSO.STOCKPRICESTREAM`. It make
 
 ## Next steps
 
-You’ve completed the custom functions add-in tutorial. To learn more about custom functions, read [this overview article](../excel/custom-functions-overview.md).
+You’ve completed the custom functions add-in tutorial. To learn more about custom functions, see [Create custom functions in Excel](../excel/custom-functions-overview.md).
 > [!div class="nextstepaction"]
-> [Overview of Custom Functions](../excel/custom-functions-overview.md)
+> [Create custom functions in Excel](../excel/custom-functions-overview.md)
