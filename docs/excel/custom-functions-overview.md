@@ -6,7 +6,7 @@ title: Create custom functions in Excel (Preview)
 
 # Create custom functions in Excel (Preview)
 
-Custom functions (similar to user-defined functions, or UDFs), enable developers to add any JavaScript function to Excel using an add-in. Users can then access custom functions like any other native function in Excel (such as `=SUM()`). This article explains how to create custom functions in Excel.
+Custom functions (similar to user-defined functions, or UDFs), enable developers to add any JavaScript function to Excel using an add-in. Users can then access custom functions like any other native function in Excel (such as `SUM()`). This article explains how to create custom functions in Excel.
 
 The following illustration shows an end user inserting a custom function into a cell within an Excel worksheet. This custom function is designed to add 42 to the pair of numbers that the user specifies.
 
@@ -127,8 +127,7 @@ The following is an example of the `<ExtensionPoint>` and `<Resources>` markup t
 ```
 
 > [!NOTE]
-> Functions in Excel are prepended by the namespace specified in your XML manifest file. A function's namespace comes before the function name and they are separated by a period. For example, to call the function `=ADD42()` in Excel, you would type `=CONTOSO.ADD42`, because CONTOSO is the namespace and `=ADD42` is the name given in the JSON file for that function. The namespace is intended to be used as an identifier for your company or the add-in. 
-
+> Functions in Excel are prepended by the namespace specified in your XML manifest file. A function's namespace comes before the function name and they are separated by a period. For example, to call the function `ADD42()` in the cell of an Excel worksheet, you would type `=CONTOSO.ADD42`, because CONTOSO is the namespace and `ADD42` is the name of the function specified in the JSON file. The namespace is intended to be used as an identifier for your company or the add-in. 
 
 ## Handling errors
 

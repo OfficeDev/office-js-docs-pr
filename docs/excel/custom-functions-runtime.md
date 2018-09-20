@@ -14,8 +14,8 @@ Custom functions extend Excel’s capabilities using a new JavaScript runtime. T
 ## Differences between WebView runtime and the new JavaScript runtime
 
 - The new JavaScript runtime used by custom functions does not provide access to the Document Object Model (DOM) or support libraries like JQuery that rely on the Document Object Model (DOM).
-- In the JavaScript file that defines your custom functions (if using the Yo Office Yeoman generator, **customfunctions.js**), you can now return a regular JavaScript `Promise` instead of using `OfficeExtension.Promise`.
-- In the JSON file that describes your custom functions (if using the Yo Office Yeoman generator, **customfunctions.json**), you no longer need to specify “sync” or “async” under “options”.  
+- In the JavaScript file that defines your custom functions you can now return a regular JavaScript `Promise` instead of using `OfficeExtension.Promise`. If you use [Yo Office](https://github.com/OfficeDev/generator-office) to create your custom functions project, **customfunctions.js** is the JavaScript file. 
+- In the JSON file that specifies metatdata for your custom functions, you no longer need to specify “sync” or “async” under “options”. If you use [Yo Office](https://github.com/OfficeDev/generator-office) to create your custom functions project, **customfunctions.json** is the metadata file.
 
 ## New APIs 
 The new JavaScript runtime utilized by custom functions has four APIs:
