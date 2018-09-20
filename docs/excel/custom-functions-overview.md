@@ -269,7 +269,7 @@ function secondHighest(values){
 
 ## Handling errors
 
-When you build an add-in that defines custom functions, be sure to include error handling logic to account for runtime errors. Error handling for custom functions the same as [error handling for the Excel JavaScript API at large](excel-add-ins-error-handling.md). In the following code sample, `.catch` will handle any errors that occur previously in the code.
+When you build an add-in that defines custom functions, be sure to include error handling logic to account for runtime errors. Error handling for custom functions is the same as [error handling for the Excel JavaScript API at large](excel-add-ins-error-handling.md). In the following code sample, `.catch` will handle any errors that occur previously in the code.
 
 ```js
 function getComment(x) {
