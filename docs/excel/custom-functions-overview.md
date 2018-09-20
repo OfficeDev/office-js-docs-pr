@@ -93,9 +93,9 @@ The following table lists the properties that are typcially present in the JSON 
 | `options`	| Enables you to customize some aspects of how and when Excel executes the function. For more information about how this property can be used, see [Streamed functions](#streamed-functions) and [Cancellation](#cancellation) later in this article. |
 
 
-### Manifest file (./manifest.xml)
+### Manifest file 
 
-The manifest file for an add-in that defines custom functions specifies the namespace for all custom functions within the add-in and the location of the JavaScript, JSON, and HTML files. The following XML markup shows an example of the `<ExtensionPoint>` and `<Resources>` elements that you must include in an add-in's manifest in order to enable Excel to run custom functions.  
+The XML manifest file for an add-in that defines custom functions specifies the namespace for all custom functions within the add-in and the location of the JavaScript, JSON, and HTML files. The following XML markup shows an example of the `<ExtensionPoint>` and `<Resources>` elements that you must include in an add-in's manifest in order to enable Excel to run custom functions.  
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1\_0">
@@ -135,7 +135,7 @@ The manifest file for an add-in that defines custom functions specifies the name
 
 ## Handling errors
 
-Error handling for custom functions is the same as [error handling for the Excel JavaScript API at large](excel-add-ins-error-handling.md). Generally, you will use `.catch` to handle errors. In the following code sample, `.catch` will handle any errors that occur previously in the code.
+When you build an add-in that defines custom functions, be sure to include error handling logic to account for runtime errors. Error handling for custom functions the same as [error handling for the Excel JavaScript API at large](excel-add-ins-error-handling.md). In the following code sample, `.catch` will handle any errors that occur previously in the code.
 
 ```js
 function getComment(x) {
