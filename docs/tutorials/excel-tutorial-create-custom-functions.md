@@ -1,6 +1,6 @@
 ---
 title: Excel custom functions tutorial
-description: In this tutorial, you’ll create an Excel add-in which contains a custom function that can perform calculations, request web data, or stream web data.
+description: In this tutorial, you’ll create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
 ms.date: 09/20/2018
 ms.topic: tutorial
 #Customer intent: As an add-in developer, I want to create a custom function in Excel to increase productivity. 
@@ -9,14 +9,14 @@ ms.topic: tutorial
 
 ## Introduction
 
-Custom Functions give you the power to automate processes in Excel. You can use them for something as simple as creating your own custom calculation, similar to `=SUM()`, or for more complex tasks, like streaming data into your worksheet from the web in real-time.
+Custom functions enable you to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions like any other native function in Excel. You can create custom functions that perform simple tasks such as custom calculations or more complex tasks such as streaming data from the web into the worksheet in real-time.
 
 In this tutorial, you will learn how to:
 > [!div class="checklist"]
-> * Create a custom function project using the Yo Office generator
-> * Build a custom function which performs a simple calculation
-> * Use a custom function to request data from the web
-> * Create a custom function which streams real-time data from the web
+> * Create a custom function project by using the Yo Office generator
+> * Create a custom function that performs a simple calculation
+> * Create a custom function that requests data from the web
+> * Create a custom function that streams real-time data from the web
 
 ## Prerequisites
 
@@ -27,53 +27,55 @@ In this tutorial, you will learn how to:
 
 ## Create your add-in project
 
-You’ll begin this tutorial by using the Yo Office generator, which will automatically create the files you need for your project.
+You’ll begin this tutorial by using the Yo Office generator to create the files that you need for your custom functions project.
 
-1. In your command line interface, create a scaffold of your project.
+1. In your command line interface, run the following command and then answer the prompts as follows.
 
-```bash
-yo office
-```
+    ```bash
+    yo office
+    ```
 
-![Yo Office bash prompts for custom functions](../images/yo-office-excel-cfs-stock-ticker.png)
-Answer the prompts as directed below:
+    * Choose a project type: `Excel Custom Functions Add-in project (September 2018 Preview Refresh: Requires the Insider channel for Excel)`
+    * Choose a script type: `JavaScript`
+    * What do you want to name your add-in? `stock-ticker`
 
-* Choose a project type: `Excel Custom Functions Add-in project (September 2018 Preview Refresh: Requires the Insider channel for Excel)`
-* What do you want to name your add-in? `stock-ticker`
+    ![Yo Office bash prompts for custom functions](../images/yo-office-cfs-stock-ticker.png)
 
-For this tutorial, choose Javascript as the language you would like to use to build your add-in.
+    After you complete the wizard, the generator will create the project files and install supporting Node components.
 
-After you complete the wizard, the generator will create the project files and install supporting Node components.
+2. Run the following command to navigate to the project folder.
 
-2. Next, start a local web server by running one of the below commands in your command line interface.
+    ```bash
+    cd stock-ticker
+    ```
 
-If you are developing using the desktop version of Excel, use:
+3. Run the following command to start the local web server.
 
-```bash
-npm start
-```
+    ```bash
+    npm start
+    ```
 
-3. You will also need to register your custom functions add-in. In Excel, select **Insert > My Add-ins > Insert an Add-in**. This will bring up a list of available add-ins. Under "Developer Add-ins" you will see your add-in, under the name "Excel Custom Function". Select it to register it.
+4. You will also need to register your custom functions add-in. In Excel, select **Insert > My Add-ins > Insert an Add-in**. This will bring up a list of available add-ins. Under "Developer Add-ins" you will see your add-in, under the name "Excel Custom Function". Select it to register it.
 
-Select **Insert > Add-ins**. Choose **Manage My Add-ins** and select **Upload My Add-in**. Click "Browse..." for your manifest file (`.\manifest.xml`), then click Open, select **Upload**.
+    Select **Insert > Add-ins**. Choose **Manage My Add-ins** and select **Upload My Add-in**. Click "Browse..." for your manifest file (`.\manifest.xml`), then click Open, select **Upload**.
 
-4. Finally, change the script tag. Open up your add-in project in your favorite code editor. In **index.html** in the root folder, delete and replace the script tag immediately following the <title> tags with the code below:
+5. Finally, change the script tag. Open up your add-in project in your favorite code editor. In **index.html** in the root folder, delete and replace the script tag immediately following the <title> tags with the code below:
 
-```js
-<script src="https://unpkg.com/@microsoft/office-js@1.1.9-adhoc.22/dist/custom-functions-runtime.js" type="text/javascript"></script>
-```
+    ```js
+    <script src="https://unpkg.com/@microsoft/office-js@1.1.9-adhoc.22/dist/custom-functions-runtime.js" type="text/javascript"></script>
+    ```
 
 ## Try out a basic custom function
 
-Now the custom functions in your file will be loaded and ready to use. There are several pre-built functions for you in the Yo Office project. All are attached to a namespace called CONTOSO which is defined in the XML manifest file. When you start typing =CONTOSO in a cell, the list of available functions will appear.
+Now the custom functions in your file will be loaded and ready to use. There are several pre-built functions for you in the Yo Office project. All are attached to a namespace called CONTOSO that is defined in the XML manifest file. When you start typing =CONTOSO in a cell, the list of available functions will appear.
 
-Let's call the CONTOSO.ADD42() function, which adds 42 to any two numbers that you specify as arguments. In any cell, type `=CONTOSO.ADD42(1,2)`. It should deliver the answer 45.
+Let's call the CONTOSO.ADD42() function, that adds 42 to any two numbers that you specify as arguments. In any cell, type `=CONTOSO.ADD42(1,2)`. It should deliver the answer 45.
 
 ## Create a custom function
 
-What if you wanted a function which could fetch and display the price of Microsoft stock in real time? Custom functions are designed so you can easily request data from the web asynchronously.
+What if you wanted a function that could fetch and display the price of Microsoft stock in real time? Custom functions are designed so you can easily request data from the web asynchronously.
 
-Complete the following steps to create a custom function named STOCKPRICE that accepts a stock ticker (e.g., "MSFT") and returns the price of that stock. The custom function uses the IEX Trading API, which is free and does not require authentication.
+Complete the following steps to create a custom function named STOCKPRICE that accepts a stock ticker (e.g., "MSFT") and returns the price of that stock. The custom function uses the IEX Trading API, that is free and does not require authentication.
 
 1. Open your code editor of choice and navigate to the stock-ticker project folder. 
 2. Copy and paste the function below and add it to **customfunctions.js**.
@@ -191,7 +193,7 @@ To do this, you’ll create a new function, `=CONTOSO.STOCKPRICESTREAM`. It make
 
 4. Re-register this change once you have saved the file. In Excel, select **Insert > Add-ins > My Add-ins**. This will bring up a list of available add-ins. Under “Developer Add-ins" you will see your add-in, under the name “Excel Custom Function.” Select it to register it.
 
-5. In cell C1, run the function `=CONTOSO.STOCKPRICESTREAM("MSFT")`. You should see the price of Microsoft stock - which will update in real time right in your workbook.
+5. In cell C1, run the function `=CONTOSO.STOCKPRICESTREAM("MSFT")`. You should see the price of Microsoft stock - that will update in real time right in your workbook.
 
 ## Next steps
 
