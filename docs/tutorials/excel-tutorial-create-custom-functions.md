@@ -9,7 +9,7 @@ ms.topic: tutorial
 
 ## Introduction
 
-Custom functions enable you to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions like any other native function in Excel. You can create custom functions that perform simple tasks such as custom calculations or more complex tasks such as streaming data from the web into the worksheet in real-time.
+Custom functions enable you to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions like any other native function in Excel. You can create custom functions that perform simple tasks such as custom calculations or more complex tasks such as streaming real-time data from the web into a worksheet.
 
 In this tutorial, you will learn how to:
 > [!div class="checklist"]
@@ -80,52 +80,52 @@ Complete the following steps to create a custom function named STOCKPRICE that a
 1. Open your code editor of choice and navigate to the stock-ticker project folder. 
 2. Copy and paste the function below and add it to **customfunctions.js**.
 
-You'll notice in this code that your asynchronous function returns a JavaScript Promise with the data from the IEX Trading API. Asynchronous custom functions require you to either return a new Promise or use JavaScript's async/await syntax.
+    You'll notice in this code that your asynchronous function returns a JavaScript Promise with the data from the IEX Trading API. Asynchronous custom functions require you to either return a new Promise or use JavaScript's async/await syntax.
 
-```js
-function STOCKPRICE(ticker) {
-    return new Promise(
-        function(resolve) {
-            let xhr = new XMLHttpRequest();
-            let url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price"
-            //add handler for xhr
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == XMLHttpRequest.DONE) {
-                //return result back to Excel
-                resolve(xhr.responseText);
+    ```js
+    function STOCKPRICE(ticker) {
+        return new Promise(
+            function(resolve) {
+                let xhr = new XMLHttpRequest();
+                let url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price"
+                //add handler for xhr
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == XMLHttpRequest.DONE) {
+                    //return result back to Excel
+                    resolve(xhr.responseText);
+                    }
                 }
-            }
-            //make request
-            xhr.open('GET', url, true);
-            xhr.send();
-    });
-}
-```
+                //make request
+                xhr.open('GET', url, true);
+                xhr.send();
+        });
+    }
+    ```
 
 3. In order for Excel to properly run this function, you must add some metadata to the **./config/customfunctions.json** file.
 
-You'll notice that this JSON file describes the function, listing the types and dimensionality of the results and parameters.
+    You'll notice that this JSON file describes the function, listing the types and dimensionality of the results and parameters.
 
-```json
-{
-    "id": "STOCKPRICE",
-    "name": "STOCKPRICE",
-    "description": "Multiplies number by 105",
-    "helpUrl": "http://dev.office.com",
-    "result": {
-        "type": "number",
-        "dimensionality": "scalar"
-    },  
-    "parameters": [
-        {
-            "name": "ticker",
-            "description": "stock ticker name",
-            "type": "string",
+    ```json
+    {
+        "id": "STOCKPRICE",
+        "name": "STOCKPRICE",
+        "description": "Multiplies number by 105",
+        "helpUrl": "http://dev.office.com",
+        "result": {
+            "type": "number",
             "dimensionality": "scalar"
-        }
-    ],
-}
-```
+        },  
+        "parameters": [
+            {
+                "name": "ticker",
+                "description": "stock ticker name",
+                "type": "string",
+                "dimensionality": "scalar"
+            }
+        ],
+    }
+    ```
 
 4. You will need to re-register this change once you have saved the file. In Excel, select **Insert > Add-ins > My Add-ins**. This will bring up a list of available add-ins. Under “Developer Add-ins" you will see your add-in, under the name “Excel Custom Function.” Select it to register it.
 
@@ -139,57 +139,57 @@ To do this, you’ll create a new function, `=CONTOSO.STOCKPRICESTREAM`. It make
 
 1. Copy and paste the code below into **customfunctions.js**.
 
-```js
-    function STOCKPRICESTREAM(ticker, caller){
-    let result = 0;
+    ```js
+        function STOCKPRICESTREAM(ticker, caller){
+        let result = 0;
 
-    //return every second
-    setInterval(function(){
-    let xhr = new XMLHttpRequest();
-    let url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
+        //return every second
+        setInterval(function(){
+        let xhr = new XMLHttpRequest();
+        let url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
 
-    //add handler for xhr
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == XMLHttpRequest.DONE) {
-            //return result back to Excel
-            caller.setResult(xhr.responseText);
+        //add handler for xhr
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == XMLHttpRequest.DONE) {
+                //return result back to Excel
+                caller.setResult(xhr.responseText);
+            }
         }
-    }
 
-    //make request
-    xhr.open('GET', url, true);
-    xhr.send();
-        }, 1000);
-    }
-```
+        //make request
+        xhr.open('GET', url, true);
+        xhr.send();
+            }, 1000);
+        }
+    ```
 
-3. Copy and paste the code below into to the **./config/customfunctions.json** file.
+2. Copy and paste the code below into to the **./config/customfunctions.json** file.
 
     You'll notice that this JSON file is very similar to the previous function's JSON file, but that a new section has been added for "options." Because this function is streaming, you must specify this as true in the JSON.
 
-```json
-{
-    "id": "STOCKPRICESTREAM",
-    "name": "STOCKPRICESTREAM",
-    "description": "Streams real time stock price",
-    "helpUrl": "http://dev.office.com",
-    "result": {
-        "type": "number",
-        "dimensionality": "scalar"
-    },  
-    "parameters": [
-        {
-            "name": "ticker",
-            "description": "stock ticker name",
-            "type": "string",
+    ```json
+    {
+        "id": "STOCKPRICESTREAM",
+        "name": "STOCKPRICESTREAM",
+        "description": "Streams real time stock price",
+        "helpUrl": "http://dev.office.com",
+        "result": {
+            "type": "number",
             "dimensionality": "scalar"
+        },  
+        "parameters": [
+            {
+                "name": "ticker",
+                "description": "stock ticker name",
+                "type": "string",
+                "dimensionality": "scalar"
+            }
+        ],
+        "options": {
+            "stream": true
         }
-    ],
-    "options": {
-        "stream": true
     }
-}
-```
+    ```
 
 4. Re-register this change once you have saved the file. In Excel, select **Insert > Add-ins > My Add-ins**. This will bring up a list of available add-ins. Under “Developer Add-ins" you will see your add-in, under the name “Excel Custom Function.” Select it to register it.
 
