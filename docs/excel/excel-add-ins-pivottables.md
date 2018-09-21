@@ -1,10 +1,8 @@
 ---
 title: Work with PivotTables using the Excel JavaScript API
 description: Use the Excel JavaScript API to create PivotTables and interact with their components. 
-ms.date: 09/04/2018
+ms.date: 09/21/2018
 ---
-
-
 
 # Work with PivotTables using the Excel JavaScript API
 
@@ -13,12 +11,10 @@ PivotTables streamline larger data sets. They allow the quick manipulation of gr
 If you are unfamiliar with the functionality of PivotTables, consider exploring them as an end-user. 
 See [Create a PivotTable to analyze worksheet data](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) for a good primer on these tools. 
 
-This article provides code samples for common scenarios. The [Excel OpenSpec](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec/reference/excel) provides full reference documentation for this preview feature. 
+This article provides code samples for common scenarios. To further your understanding of the PivotTable API, see [**PivotTable**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable) and [**PivotTableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable).
 
-To further your understanding of the PivotTable API, see [**PivotTable**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/pivottable.md) and [**PivotTableCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/pivottablecollection.md).
-
-> [!NOTE]
-> These samples use APIs currently available only in public preview (beta). These samples require preview builds to run. Either use the beta library of the [Office.js CDN](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) or join the [Office Insider program](https://products.office.com/office-insider). PivotTable features are currently available in build 16.0.10801.20004.
+> [!IMPORTANT]
+> PivotTables created with OLAP are not currently supported.
 
 ## Hierarchies
 
@@ -306,5 +302,7 @@ await Excel.run(async (context) => {
 });
 ```
 
-> [!NOTE]
-> We welcome feedback on our preview designs. If you have comments, suggestions, or issues with the new PivotTable API, please leave your comments on [UserVoice](https://officespdev.uservoice.com/forums/224641-feature-requests-and-feedback?category_id=163563) or on the [OpenSpec GitHub repo](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec).
+## See also
+
+- [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
+- [Excel JavaScript API Reference](https://docs.microsoft.com/javascript/api/excel)

@@ -41,7 +41,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
    >    `Install-Package Microsoft.Identity.Client -Version 1.1.4-preview0002`
 
-   > 3. In **Solution Explorer**, right-click **References**. Verify that **Microsoft.Identity.Client** is listed. If it is not or there is a warning icon on its entry, delete the entry and then use the Visual Studio Add Reference wizard to add a reference to the assembly at **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.4-preview0002\lib\net45\Microsoft.Identity.Client.dll**
+   > 3. In **Solution Explorer**, right-click **References**. Verify that **Microsoft.Identity.Client** is listed. If it is not or there is a warning icon on its entry, delete the entry and then use the Visual Studio Add Reference Wizard to add a reference to the assembly at **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.4-preview0002\lib\net45\Microsoft.Identity.Client.dll**
 
 1. Build the project a second time.
 
@@ -178,7 +178,7 @@ The following instruction are written generically so they can be used in multipl
 
 1. Below the `getOneDriveFiles` method, add the code below. Note the following about this code:
 
-    * The `getAccessTokenAsync` is the new API in Office.js that enables an add-in to ask the Office host application (Excel, PowerPoint, Word, etc.) for an access token to the add-in (for the user signed into Office). The Office host application, in turn, asks the Azure AD 2.0 endpoint for the token. Since you preauthorized the Office host to your add-in when you registered it, Azure AD will send the token.
+    * The [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) is the new API in Office.js that enables an add-in to ask the Office host application (Excel, PowerPoint, Word, etc.) for an access token to the add-in (for the user signed into Office). The Office host application, in turn, asks the Azure AD 2.0 endpoint for the token. Since you preauthorized the Office host to your add-in when you registered it, Azure AD will send the token.
     * If no user is signed into Office, the Office host will prompt the user to sign in.
     * The options parameter sets `forceConsent` to `false`, so the user will not be prompted to consent to giving the Office host access to your add-in every time she or he uses the add-in. The first time the user runs the add-in, the call of `getAccessTokenAsync` will fail, but error-handling logic that you add in a later step will automatically re-call with the `forceConsent` option set to `true` and the user will be prompted to consent, but only that first time.
     * You will create the `handleClientSideErrors` method in a later step.
@@ -277,11 +277,11 @@ The following instruction are written generically so they can be used in multipl
         break; 
     ```
 
-1. Replace `TODO4` with the following code. Error 13003 occurs when user is logged in with an account that is neither work or school, nor Micrososoft Account. Ask the user to sign-out and then in again with a supported account type.
+1. Replace `TODO4` with the following code. Error 13003 occurs when user is logged in with an account that is neither work or school, nor Microsoft account. Ask the user to sign-out and then in again with a supported account type.
 
     ```javascript
     case 13003: 
-        showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft Account. Other kinds of accounts, like corporate domain accounts do not work.']);
+        showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft account. Other kinds of accounts, like corporate domain accounts do not work.']);
         break;   
     ```
 
@@ -317,7 +317,7 @@ The following instruction are written generically so they can be used in multipl
     ```javascript
     case 13009:
         if (triedWithoutForceConsent) {
-            showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft Account.']);
+            showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft account.']);
         } else {
             getDataWithToken({ forceConsent: false });
         }
@@ -342,17 +342,12 @@ The following instruction are written generically so they can be used in multipl
 
         // TODO11: Handle the case where AAD asks for an additional form of authentication.
 
-        // TODO12: Handle the case where consent has not been granted, or has been revoked.
+        // TODO12: Handle missing consent and scope (permission) related issues.
 
-        // TODO13: Handle the case where an invalid scope (permission) was used in the on-behalf-of flow.
-
-        // TODO14: Handle the case where the token that the add-in's client-side sends to it's 
-        //         server-side is not valid because it is missing `access_as_user` scope (permission).
-
-        // TODO15: Handle the case where the token sent to Microsoft Graph in the request for 
+        // TODO13: Handle the case where the token sent to Microsoft Graph in the request for 
         //         data is expired or invalid.
 
-        // TODO16: Log all other server errors.
+        // TODO14: Log all other server errors.
     }
     ```
 
@@ -378,7 +373,23 @@ The following instruction are written generically so they can be used in multipl
     }    
     ```
 
-1. Replace `TODO12` with the following code. Note about this code:
+1. Replace `TODO12` with the following code. You will replace the three `TODO`s in this code with an *inner* conditional block in the next few steps.
+
+    ```javascript
+    else if (exceptionMessage) {
+
+        // TODO12A: Handle the case where consent has not been granted, or has been revoked.
+
+        // TODO12B: Handle the case where an invalid scope (permission) was used in the on-behalf-of flow.
+
+        // TODO12C: Handle the case where the token that the add-in's client-side sends to it's 
+        //          server-side is not valid because it is missing `access_as_user` scope (permission).
+    }
+  
+    ```
+
+
+1. Replace `TODO12A` with the following code. (This creates the first part of an *inner* conditional block.) Note about this code:
 
     * Error 65001 means that consent to access Microsoft Graph was not granted (or was revoked) for one or more permissions. 
     * The add-in should get a new token with the `forceConsent` option set to `true`.
@@ -395,7 +406,7 @@ The following instruction are written generically so they can be used in multipl
     }    
     ```
 
-1. Replace `TODO13` with the following code. Note about this code:
+1. Replace `TODO12B` with the following code. Note about this code:
 
     * Error 70011 has multiple meanings. The one that matters to this add-in is when it means that an invalid scope (permission) has been requested, so the code checks for the full error description, not just the number.
     * The add-in should report the error.
@@ -406,7 +417,7 @@ The following instruction are written generically so they can be used in multipl
     }    
     ```
 
-1. Replace `TODO14` with the following code. Note about this code:
+1. Replace `TODO12C` with the following code. Note about this code:
 
     * Server-side code that you create in a later step will send the message `Missing access_as_user` if the `access_as_user` scope (permission) is not in the access token that the add-in's client sends to AAD to be used in the on-behalf-of flow.
     * The add-in should report the error.
@@ -417,7 +428,7 @@ The following instruction are written generically so they can be used in multipl
     }    
     ```
 
-1. Replace `TODO15` with the following code. Note about this code:
+1. Replace `TODO13` with the following code. (This is part of the *outer* conditional block and should be immediately after the close bracket of the structure that begins with `else if (exceptionMessage) {` and at the same level of indentation.) Note about this code:
 
     * The identity library that you will be using in the server-side code (Microsoft Authentication Library - MSAL) should ensure that no expired or invalid token is sent to Microsoft Graph; but if it does happen, the error that is returned to the add-in's web service from Microsoft Graph has the code `InvalidAuthenticationToken`. Server-side code you will create in a latter step will relay this message to the add-in's client.
     * In this case, the add-in should start the entire authentication process over by resetting the counter and flag varibles, and then re-calling the button handler method.
@@ -431,7 +442,7 @@ The following instruction are written generically so they can be used in multipl
     }    
     ```
 
-1. Replace `TODO16` with the following code.
+1. Replace `TODO14` with the following code.
 
     ```javascript
     else {
@@ -570,7 +581,7 @@ The following instruction are written generically so they can be used in multipl
     ```
 
     > [!NOTE]
-    > You should only use the `access_as_user` scope to authorize the API that handles the on-behalf-of flow for Office add-ins. Other APIs in your service should have their own scope requirements. This limits what can be accessed with the tokens that Office acquires.
+    > You should only use the `access_as_user` scope to authorize the API that handles the on-behalf-of flow for Office Add-ins. Other APIs in your service should have their own scope requirements. This limits what can be accessed with the tokens that Office acquires.
 
 6. Replace `TODO2` with the following code. Note about this code:
     * It turns the raw access token received from the Office host into a `UserAssertion` object that will be passed to another method.

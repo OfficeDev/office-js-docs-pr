@@ -19,10 +19,10 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
     > [!NOTE]
     > If you've previously installed Visual Studio 2017, [use the Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) to ensure that the **Azure development** workload is installed. 
 
-2. Install Office 2016. 
+2. Install Office. 
     
     > [!NOTE]
-    > If you don't already have Office 2016, you can [register for a free 1-month trial](http://office.microsoft.com/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786).
+    > If you don't already have Office, you can [register for a free 1-month trial](http://office.microsoft.com/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786).
 
 3.  Obtain an Azure subscription.
     
@@ -46,10 +46,10 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
 
 ## Step 2: Add the file share to the Trusted Add-ins catalog
 
-1.  Start Word 2016 and create a document.
+1.  Start Word and create a document.
 
     > [!NOTE]
-    > Although this example uses Word 2016, you can use any Office application that supports Office Add-ins such as Excel, Outlook, PowerPoint, or Project 2016.
+    > Although this example uses Word, you can use any Office application that supports Office Add-ins such as Excel, Outlook, PowerPoint, or Project.
     
 2.  Choose **File** > **Options**.
     
@@ -62,7 +62,7 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
     > [!NOTE]
     > When you store an add-in XML manifest file on a share that is specified as a trusted web add-in catalog, the add-in appears under **Shared Folder** in the **Office Add-ins** dialog box when the user navigates to the **Insert** tab in the ribbon and chooses **My Add-ins**.
 
-6. Close Word 2016.
+6. Close Word.
 
 ## Step 3: Create a web app in Azure
 
@@ -181,7 +181,7 @@ Visual Studio creates a basic Word add-in that you'll be able to publish as-is, 
 
 ## Step 7: Insert and run the add-in in the Office client application
 
-1. Start Word 2016 and create a document.
+1. Start Word and create a document.
     
 2. On the ribbon, choose **Insert** > **My Add-ins**. 
     

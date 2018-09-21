@@ -3,6 +3,7 @@ title: Office versions and requirement sets
 description: ''
 ms.date: 03/29/2018
 ---
+
 # Office versions and requirement sets
 
 There are many versions of Office on several platforms, and they don't all support every API in Office JavaScript API (Office.js). You may not always have control over the version of Office your users have installed.  To handle this situation, we provide a system called requirement sets to help you determine whether an Office host supports the capabilities you need in your Office Add-in. 
@@ -30,17 +31,17 @@ In addition, other functionality such as add-in commands (ribbon extensibility) 
 
 An add-in can only use APIs in requirement sets that are supported by the version of Office host where the add-in is running. To know exactly which requirement sets are available for a specific Office host version, refer to the following host-specific requirement set articles:
 
-- [Excel JavaScript API requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets?product=excel) (ExcelApi)
-- [Word JavaScript API requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets) (WordApi)
-- [OneNote JavaScript API requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/onenote-api-requirement-sets) (OneNoteApi)
-- [Understanding Outlook API requirement sets](https://dev.office.com/reference/add-ins/outlook/tutorial-api-requirement-sets) (MailBox)
+- [Excel JavaScript API requirement sets](https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets?view=office-js) (ExcelApi)
+- [Word JavaScript API requirement sets](https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets?view=office-js) (WordApi)
+- [OneNote JavaScript API requirement sets](https://docs.microsoft.com/javascript/office/requirement-sets/onenote-api-requirement-sets?view=office-js) (OneNoteApi)
+- [Understanding Outlook API requirement sets](https://docs.microsoft.com/javascript/office/requirement-sets/outlook-api-requirement-sets?view=office-js) (MailBox)
 
 Some requirement sets contain APIs that can be used by any Office host. For information about these requirement sets, refer to the following articles:
 
-- [Office common requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets)
-- [Add-in commands requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets?product=excel)
-- [Dialog API requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets?product=excel)
-- [Identity API requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/identity-api-requirement-sets?product=excel)
+- [Office common requirement sets](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js)
+- [Add-in commands requirement sets](https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets?view=office-js)
+- [Dialog API requirement sets](https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets?view=office-js)
+- [Identity API requirement sets](https://docs.microsoft.com/javascript/office/requirement-sets/identity-api-requirement-sets?view=office-js)
 
 The version number of a requirement set, such as the "1.1" in `ExcelApi 1.1`, is relative to the Office host. The version number of a given requirement set (e.g., `ExcelApi 1.1`) does not correspond to the version number of Office.js or to requirement sets for other Office hosts (e.g., Word, Outlook, etc.).  Requirement sets for the different Office hosts are released at different speeds and times. For example, `ExcelApi 1.5` was released before the `WordApi 1.3` requirement set.
 

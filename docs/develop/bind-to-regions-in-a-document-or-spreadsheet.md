@@ -33,7 +33,7 @@ There are [three different types of bindings][Office.BindingType] that you speci
 
 	In Excel, any contiguous selection of cells can be used to establish a matrix binding. In Word, only tables support matrix binding.
 
-3. **[Table Binding][TableBinding]** - Binds to a region of a document that contains a table with headers.Data in a table binding is written or read as a [TableData](https://dev.office.com/reference/add-ins/shared/tabledata) object. The `TableData` object exposes the data through the `headers` and `rows` properties.
+3. **[Table Binding][TableBinding]** - Binds to a region of a document that contains a table with headers.Data in a table binding is written or read as a [TableData](https://docs.microsoft.com/javascript/api/office/office.tabledata?view=office-js) object. The `TableData` object exposes the data through the `headers` and `rows` properties.
 
 	Any Excel or Word table can be the basis for a table binding. After you establish a table binding, each new row or column a user adds to the table is automatically included in the binding.
 
@@ -337,7 +337,7 @@ The anonymous function that is passed into the function is a callback that is ex
 ## Detect changes to data or the selection in a binding
 
 
-The following example shows how to attach an event handler to the [DataChanged](https://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) event of a binding with an id of "MyBinding".
+The following example shows how to attach an event handler to the [DataChanged](https://docs.microsoft.com/javascript/api/office/office.binding?view=office-js) event of a binding with an id of "MyBinding".
 
 
 ```js
@@ -389,30 +389,30 @@ function removeEventHandlerFromBinding() {
 - [Asynchronous programming in Office Add-ins](asynchronous-programming-in-office-add-ins.md)
 - [Read and write data to the active selection in a document or spreadsheet](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
-[Binding]: 				 https://dev.office.com/reference/add-ins/shared/binding
-[MatrixBinding]:		 https://dev.office.com/reference/add-ins/shared/binding.matrixbinding
-[TableBinding]: 		 https://dev.office.com/reference/add-ins/shared/binding.tablebinding
-[TextBinding]: 			 https://dev.office.com/reference/add-ins/shared/binding.textbinding
-[getDataAsync]: 		 https://dev.office.com/reference/add-ins/shared/binding.getdataasync
-[setDataAsync]: 		 https://dev.office.com/reference/add-ins/shared/binding.setdataasync
-[SelectionChanged]: 	 https://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedevent
-[addHandlerAsync]: 		 https://dev.office.com/reference/add-ins/shared/binding.addhandlerasync
-[removeHandlerAsync]: 	 https://dev.office.com/reference/add-ins/shared/binding.removehandlerasync
+[Binding]: 				 https://docs.microsoft.com/javascript/api/office/office.binding?view=office-js
+[MatrixBinding]:		 https://docs.microsoft.com/javascript/api/office/office.matrixbinding?view=office-js
+[TableBinding]: 		 https://docs.microsoft.com/javascript/api/office/office.tablebinding
+[TextBinding]: 			 https://docs.microsoft.com/javascript/api/office/office.textbinding
+[getDataAsync]: 		 https://docs.microsoft.com/javascript/api/office/Office.Binding?view=office-js#getdataasync-options--callback-
+[setDataAsync]: 		 https://docs.microsoft.com/javascript/api/office/Office.Binding?view=office-js#setdataasync-data--options--callback-
+[SelectionChanged]: 	 https://docs.microsoft.com/javascript/api/office/office.bindingselectionchangedeventargs?view=office-js
+[addHandlerAsync]: 		 https://docs.microsoft.com/javascript/api/office/Office.Binding?view=office-js#addhandlerasync-eventtype--handler--options--callback-
+[removeHandlerAsync]: 	 https://docs.microsoft.com/javascript/api/office/Office.Binding?view=office-js#removehandlerasync-eventtype--options--callback-
 
-[Bindings]:				 https://dev.office.com/reference/add-ins/shared/bindings.bindings
-[getByIdAsync]: 		 https://dev.office.com/reference/add-ins/shared/bindings.getbyidasync 
-[getAllAsync]: 			 https://dev.office.com/reference/add-ins/shared/bindings.getallasync
-[addFromNamedItemAsync]: https://dev.office.com/reference/add-ins/shared/bindings.addfromnameditemasync
-[addFromSelectionAsync]: https://dev.office.com/reference/add-ins/shared/bindings.addfromselectionasync
-[addFromPromptAsync]: 	 https://dev.office.com/reference/add-ins/shared/bindings.addfrompromptasync
-[releaseByIdAsync]: 	 https://dev.office.com/reference/add-ins/shared/bindings.releasebyidasync
+[Bindings]:				 https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js
+[getByIdAsync]: 		 https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#getbyidasync-id--options--callback- 
+[getAllAsync]: 			 https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#getallasync-options--callback-
+[addFromNamedItemAsync]: https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#addfromnameditemasync-itemname--bindingtype--options--callback-
+[addFromSelectionAsync]: https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#addfromselectionasync-bindingtype--options--callback-
+[addFromPromptAsync]: 	 https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#addfrompromptasync-bindingtype--options--callback-
+[releaseByIdAsync]: 	 https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#releasebyidasync-id--options--callback-
 
-[AsyncResult]: 			https://dev.office.com/reference/add-ins/shared/asyncresult
-[Office.BindingType]: 	https://dev.office.com/reference/add-ins/shared/bindingtype-enumeration
-[Office.select]:		https://dev.office.com/reference/add-ins/shared/office.select 
-[Office.EventType]: 	https://dev.office.com/reference/add-ins/shared/eventtype-enumeration 
-[Document.bindings]: 	https://dev.office.com/reference/add-ins/shared/document.bindings
+[AsyncResult]: 			https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js
+[Office.BindingType]: 	https://docs.microsoft.com/javascript/api/office/office.bindingtype?view=office-js
+[Office.select]:		https://docs.microsoft.com/javascript/api/office?view=office-js 
+[Office.EventType]: 	https://docs.microsoft.com/javascript/api/office/office.eventtype?view=office-js 
+[Document.bindings]: 	https://docs.microsoft.com/javascript/api/office/office.document?view=office-js
 
 
-[TableBinding.rowCount]: https://dev.office.com/reference/add-ins/shared/binding.tablebinding.rowcount
-[BindingSelectionChangedEventArgs]: https://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedeventargs
+[TableBinding.rowCount]: https://docs.microsoft.com/javascript/api/office/office.tablebinding?view=office-js
+[BindingSelectionChangedEventArgs]: https://docs.microsoft.com/javascript/api/office/office.bindingselectionchangedeventargs?view=office-js

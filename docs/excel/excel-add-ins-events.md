@@ -1,7 +1,7 @@
 ---
 title: Work with Events using the Excel JavaScript API
 description: ''
-ms.date: 05/25/2018
+ms.date: 09/21/2018
 ---
 
 # Work with Events using the Excel JavaScript API 
@@ -14,34 +14,22 @@ Each time certain types of changes occur in an Excel workbook, an event notifica
 
 | Event | Description | Supported objects |
 |:---------------|:-------------|:-----------|
-| `onAdded` | Event that occurs when an object is added. | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
-| `onDeleted` | Event that occurs when an object is deleted. | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
-| `onActivated` | Event that occurs when an object is activated. | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection), [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
-| `onDeactivated` | Event that occurs when an object is deactivated. | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection), [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
+| `onAdded` | Event that occurs when an object is added. | [**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
+| `onDeleted` | Event that occurs when an object is deleted. | [**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
+| `onActivated` | Event that occurs when an object is activated. | [**Chart**](https://docs.microsoft.com/javascript/api/excel/excel.chart), [**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection), [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
+| `onDeactivated` | Event that occurs when an object is deactivated. | [**Chart**](https://docs.microsoft.com/javascript/api/excel/excel.chart), [**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection), [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
+| `onCalculated` | Event that occurs when a worksheet has finished calculation (or all the worksheets of the collection have finished). | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection), [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
 | `onChanged` | Event that occurs when data within cells is changed. | [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet), [**Table**](https://docs.microsoft.com/javascript/api/excel/excel.table), [**TableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.tablecollection) |
 | `onDataChanged` | Event that occurs when data or formatting within the binding is changed. | [**Binding**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
 | `onSelectionChanged` | Event that occurs when the active cell or selected range is changed. | [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet), [**Table**](https://docs.microsoft.com/javascript/api/excel/excel.table), [**Binding**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
 | `onSettingsChanged` | Event that occurs when the Settings in the document are changed. | [**SettingCollection**](https://docs.microsoft.com/javascript/api/excel/excel.settingcollection) |
-
-## Preview (Beta) Events in Excel
-
-> [!NOTE]
-> These events are currently available only in public preview (beta). To use these features, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-
-| Event | Description | Supported objects |
-|:---------------|:-------------|:-----------|
-| `onAdded` | Event that occurs when a chart is added. | [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
-| `onDeleted` | Event that occurs when a chart is deleted. | [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
-| `onActivated` | Event that occurs when a chart is activated. | [**Chart**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md), [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
-| `onDeactivated` | Event that occurs when a chart is deactivated. | [**Chart**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md), [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
-| `onCalculated` | Event that occurs when a worksheet has finished calculation (or all the worksheets of the collection have finished). | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md), [**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
 
 ### Event triggers
 
 Events within an Excel workbook can be triggered by:
 
 - User interaction via the Excel user interface (UI) that changes the workbook
-- Office add-in (JavaScript) code that changes the workbook
+- Office Add-in (JavaScript) code that changes the workbook
 - VBA add-in (macro) code that changes the workbook
 
 Any change that complies with default behavior of Excel will trigger the corresponding event(s) in a workbook.
@@ -130,9 +118,6 @@ function remove() {
 
 ## Enable and disable events
 
-> [!NOTE]
-> This feature is currently available only in public preview (beta). To use it, you must reference the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-
 The performance of an add-in may be improved by disabling events. 
 For example, your app might never need to receive events, or it could ignore events while performing batch-edits of multiple entities. 
 
@@ -160,4 +145,3 @@ Excel.run(function (context) {
 ## See also
 
 - [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
-- [Excel JavaScript API Open Specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
