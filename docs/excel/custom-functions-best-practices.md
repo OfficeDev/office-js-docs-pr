@@ -41,7 +41,11 @@ You can enable error logging for your custom functions add-in in multiple ways, 
 
 ## Debugging
 
-Currently, the best method for debugging Excel custom functions is to use [Excel Online](https://www.office.com/launch/excel) and use the F12 debugging tool native to your browser. Additional debugging tools for custom functions may be available in the future.
+Currently, the best method for debugging Excel custom functions is to first [sideload](https://docs.microsoft.com/en-us/office/dev/add-ins/testing/sideload-office-add-ins-for-testing) them on Excel Online. Then you can use the [F12 debugging tool native to your browser](https://docs.microsoft.com/en-us/office/dev/add-ins/testing/debug-add-ins-in-office-online).
+
+If your add-in fails to register, please verify your SSL certificates are correctly installed.
+
+Additional debugging tools for custom functions may be available in the future.
 
 ## Mapping names
 
