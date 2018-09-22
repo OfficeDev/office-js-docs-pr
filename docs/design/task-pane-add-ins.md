@@ -1,6 +1,6 @@
 ---
 title: Task panes in Office Add-ins
-description: ''
+description: Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source.
 ms.date: 12/04/2017
 ---
 
@@ -18,7 +18,7 @@ Task panes are interface surfaces that typically appear on the right side of the
 |**Do**|**Don't**|
 |:-----|:--------|
 |<ul><li>Include the name of your add-in in the title.</li></ul>|<ul><li>Don't append your company name to the title.</li></ul>|
-|<ul><li>Use short descriptive names in the title.</li></ul>|<ul><li>Don't append strings such as “Add-in,” “For Word,” or “for Office” to the title of your add-in.</li></ul>|
+|<ul><li>Use short descriptive names in the title.</li></ul>|<ul><li>Don't append strings such as “add-in,” “for Word,” or “for Office” to the title of your add-in.</li></ul>|
 |<ul><li>Include some navigational or commanding element such as the CommandBar or Pivot at the top of your add-in.</li></ul>||
 |<ul><li>Include a branding element such as the BrandBar at the bottom of your add-in unless your add-in is to be used within Outlook.</li></ul>||
 

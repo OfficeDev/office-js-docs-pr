@@ -20,7 +20,7 @@ To get started, make sure you have the [Office Developer Tools](https://www.visu
 
 1. On the Visual Studio menu bar, choose  **File** > **New** > **Project**.
     
-2. In the list of project types under  **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose  **Web Add-ins**, and then select one of the Add-in projects.  
+2. In the list of project types under  **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose  **Web Add-ins**, and then select one of the add-in projects.  
     
 3. Name the project, and then choose  **OK** to create the project.
     
@@ -87,7 +87,7 @@ Before you start the solution, verify that Visual Studio will open the host appl
 ### To open the property pages of a project
 
 
-1. In  **Solution Explorer**, choose the project name.
+1. In  **Solution Explorer**, choose the basic add-in project (not the Web project).
     
 2. On the menu bar, choose  **View**,  **Properties Window**.
     
@@ -155,7 +155,7 @@ Visual Studio builds the project and does the following:
 Next, Visual Studio does the following:
 
 
-1. Modifies the [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) element of the XML manifest file by replacing the ~remoteAppUrl token with the fully qualified address of the start page (for example, http://localhost/MyAgave.html).
+1. Modifies the [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation?view=office-js) element of the XML manifest file by replacing the ~remoteAppUrl token with the fully qualified address of the start page (for example, http://localhost/MyAgave.html).
     
 2. Starts the web application project in IIS Express.
     
@@ -163,7 +163,7 @@ Next, Visual Studio does the following:
     
 Visual Studio doesn't show validation errors in the  **OUTPUT** window when you build the project. Visual Studio reports errors and warnings in the **ERRORLIST** window as they occur. Visual Studio also reports validation errors by showing wavy underlines (known as squiggles) of different colors in the code and text editor. These marks notify you of problems that Visual Studio detected in your code. For more information, see [Code and Text Editor](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx). For more information about how to enable or disable validation, see: 
 
-- [Options, Text Editor, JavaScript, IntelliSense](https://msdn.microsoft.com/library/hh362485(v=vs.140).aspx)
+- [Options, Text Editor, JavaScript, IntelliSense](https://docs.microsoft.com/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2015)
     
 - [How to: Set Validation Options for HTML Editing in Visual Web Developer](https://msdn.microsoft.com/library/0byxkfet(v=vs.100).aspx)
     

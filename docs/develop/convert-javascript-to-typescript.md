@@ -25,7 +25,7 @@ This article shows you how to create an Excel add-in using Visual Studio and the
     > [!NOTE]
     > TypeScript should be installed by default with Visual Studio 2017, but you can [use the Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) to confirm that it is installed. In the Visual Studio Installer, select the **Individual components** tab and then verify that **TypeScript 2.3 SDK** is selected under **SDKs, libraries, and frameworks**.
 
-- Excel 2016
+- Excel 2016 or later
 
 ## Create the add-in project
 
@@ -116,7 +116,7 @@ declare var fabric: any;
             messageBanner = new fabric.MessageBanner(element);
             messageBanner.hideBanner();
             
-            // If not using Excel 2016, use fallback logic.
+            // If not using Excel 2016 or later, use fallback logic.
             if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
                 $("#template-description").text("This sample will display the value of the cells that you have selected in the spreadsheet.");
                 $('#button-text').text("Display!");

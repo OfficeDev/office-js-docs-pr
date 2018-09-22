@@ -28,6 +28,6 @@ Follow the Office design principles to create positive add-in experiences:
 - **Design for all platforms and input methods**. Add-ins are designed to work on all the platforms that Office supports, and your add-in UX should be optimized to work across platforms and form factors. Support mouse/keyboard and touch input devices, and ensure that your custom HTML UI is responsive to adapt to different form factors. For more information, see [Touch](../concepts/add-in-development-best-practices.md#optimize-for-touch). 
 
 ## See also
-- [Office UI Fabric](https://dev.office.com/fabric) 
+- [Office UI Fabric](https://developer.microsoft.com/en-us/fabric) 
 - [Add-in development best practices](../concepts/add-in-development-best-practices.md)
 

@@ -48,7 +48,7 @@ Consider the following to identify the scenarios:
     
 - Will customers use the add-in to enhance the viewing or authoring experience of a document? If so, you may want to consider creating a **task pane add-in**. 
 
-Support for certain Add-in APIs may differ between Office applications and the platform they are running on (Windows, Mac, Web, Mobile). To see the current API coverage by client and platform, see our [Office Add-in host and platform availability](../overview/office-add-in-availability.md) page.  
+Support for certain add-in APIs may differ between Office applications and the platform they are running on (Windows, Mac, Web, Mobile). To see the current API coverage by client and platform, see our [Office Add-in host and platform availability](../overview/office-add-in-availability.md) page.  
 
     
 ## 4. Design and implement the user experience and user interface for the add-in
@@ -81,5 +81,5 @@ You can submit the add-in to AppSource, from which customers can install the add
     
 If your add-in calls a web service, and if you make updates to the web service after publishing the add-in, you do not have to republish the add-in. However, if you change any items or data you submitted for your add-in, such as the add-in manifest, screenshots, icons, HTML or JavaScript files, you will need to republish the add-in. 
     
-In particular, if you have published the add-in to AppSource, you'll need to resubmit your add-in so that AppSource can implement those changes. You must resubmit your add-in with an updated add-in manifest that includes a new version number. You must also make sure to update the add-in version number in the submission form to match the new manifest's version number. For Outlook add-ins, you should make sure the [Id](https://dev.office.com/reference/add-ins/manifest/id) element contains a different UUID in the add-in manifest.
+In particular, if you have published the add-in to AppSource, you'll need to resubmit your add-in so that AppSource can implement those changes. You must resubmit your add-in with an updated add-in manifest that includes a new version number. You must also make sure to update the add-in version number in the submission form to match the new manifest's version number. For Outlook add-ins, you should make sure the [Id](https://docs.microsoft.com/javascript/office/manifest/id?view=office-js) element contains a different UUID in the add-in manifest.
     

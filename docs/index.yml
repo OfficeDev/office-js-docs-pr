@@ -9,7 +9,7 @@ metadata:
   ms.date: 12/04/2017
   ms.author: o365devx
 abstract:
-  description: The <a href="https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad. Learn how to create Office Add-ins with our quick starts, how-to guides, and API reference documentation.<br/><br/><b>Note:</b> For information about COM or VSTO add-ins, see the <a href="https://msdn.microsoft.com/library/fp161347.aspx" target="_blank">MSDN documentation</a>.
+  description: The <a href="https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad. Learn how to create Office Add-ins with our quick starts, how-to guides, and API reference documentation.<br/><br/><b>Note:</b> For information about COM or VSTO add-ins, see the <a href="https://docs.microsoft.com/office/client-developer/office-client-development" target="_blank">Office client development documentation</a>.
   aside:
     image:
       alt: 
@@ -63,7 +63,7 @@ sections:
     - html: <a href="/office/dev/add-ins/excel/excel-add-ins-overview">Excel add-in development</a>
     - html: <a href="/office/dev/add-ins/word/word-add-ins-programming-overview">Word add-in development</a>
     - html: <a href="/office/dev/add-ins/onenote/onenote-add-ins-programming-overview">OneNote add-in development</a>
-    - html: <a href="https://docs.microsoft.com/outlook/add-ins">Outlook add-in development</a>
+    - html: <a href="/outlook/add-ins">Outlook add-in development</a>
     - html: <a href="/office/dev/add-ins/powerpoint/powerpoint-add-ins">PowerPoint add-in development</a>
     - html: <a href="/office/dev/add-ins/project/project-add-ins">Project add-in development</a>
     - html: <a href="/office/dev/add-ins/testing/test-debug-office-add-ins">Test and debug an Office Add-in</a>
@@ -75,8 +75,8 @@ sections:
     className: cardsD
     items:
     - title: Common APIs (2013)
-      html: <p><a href="https://dev.office.com/reference/add-ins/javascript-api-for-office" target="_blank">JavaScript API for Office</a></p>
+      html: <p><a href="https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js" target="_blank">JavaScript API for Office</a></p>
     - title: Host-specific APIs (2016)
-      html: <p><a href="https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview" target="_blank">Excel JavaScript API</a></p><p><a href="https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview" target="_blank">Word JavaScript API</a></p><p><a href="https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference" target="_blank">OneNote JavaScript API</a></p><p><a href="https://dev.office.com/reference/add-ins/outlook/tutorial-api-requirement-sets" target="_blank">Outlook JavaScript API</a></p>
+      html: <p><a href="https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js" target="_blank">Excel JavaScript API</a></p><p><a href="https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js" target="_blank">Word JavaScript API</a></p><p><a href="https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js" target="_blank">OneNote JavaScript API</a></p><p><a href="https://docs.microsoft.com/javascript/office/requirement-sets/outlook-api-requirement-sets?view=office-js" target="_blank">Outlook JavaScript API</a></p>
     - title: Other
-      html: <p><a href="https://dev.office.com/reference/add-ins/openspec" target="_blank">API open specifications</a></p><p><a href="https://dev.office.com/reference/add-ins/manifest/allowsnapshot" target="_blank">Office Add-ins Manifest</a></p>
+      html: <p><a href="https://docs.microsoft.com/javascript/office/openspec?view=office-js" target="_blank">API open specifications</a></p><p><a href="https://docs.microsoft.com/javascript/office/manifest/allowsnapshot?view=office-js" target="_blank">Office Add-ins Manifest</a></p>

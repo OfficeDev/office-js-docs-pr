@@ -1,4 +1,4 @@
-# Using motion in Office add-ins
+# Using motion in Office Add-ins
 
 When you design an Office Add-in, you can use motion to enhance the user experience. UI elements, controls, and components often have interactive behaviors that require transitions, motion, or animation. Common characteristics of motion across UI elements define the animation aspects of a design language. 
 

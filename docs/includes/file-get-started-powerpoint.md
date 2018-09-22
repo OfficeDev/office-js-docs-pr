@@ -128,7 +128,7 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 
 ### Update the manifest
 
-1. Open the XML manifest file in the Add-in project. This file defines the add-in's settings and capabilities.
+1. Open the XML manifest file in the add-in project. This file defines the add-in's settings and capabilities.
 
 2. The `ProviderName` element has a placeholder value. Replace it with your name.
 
@@ -200,6 +200,12 @@ In this article, you'll walk through the process of building a PowerPoint add-in
     ![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-powerpoint-jquery.png)
     
     After you complete the wizard, the generator will create the project and install supporting Node components.
+	
+4. Navigate to the root folder of the web application project.
+
+    ```bash
+    cd "My Office Add-in"
+    ```
 
 ### Update the code
 

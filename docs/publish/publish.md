@@ -26,24 +26,24 @@ The deployment options that are available depend on the Office host that you're 
 
 ### Deployment options for Word, Excel, and PowerPoint add-ins
 
-| Extension point | Sideloading | Office 365 admin center |AppSource| SharePoint catalog\*  |
+| Extension point | Sideloading | Office 365 admin center |AppSource   | SharePoint catalog\* |
 |:----------------|:-----------:|:-----------------------:|:----------:|:--------------------:|
 | Content         | X           | X                       | X          | X                    |
 | Task pane       | X           | X                       | X          | X                    |
-| Command 		    | X           | X                       | X          |                      |
+| Command 		  | X           | X                       | X          |                      |
 
-&#42; SharePoint catalogs do not support Office 2016 for Mac.
+&#42; SharePoint catalogs do not support Office for Mac.
 
 ### Deployment options for Outlook add-ins
 
-| Extension point | Sideloading | Exchange server | AppSource |
+| Extension point | Sideloading | Exchange server | AppSource    |
 |:----------------|:-----------:|:---------------:|:------------:|
 | Mail app        | X           | X               | X            |
 | Command         | X           | X               | X            |
 
 ## Deployment methods
 
-The following sections provide additional information about the deployment methods that are most commonly used to distribute Office add-ins to users within an organization.
+The following sections provide additional information about the deployment methods that are most commonly used to distribute Office Add-ins to users within an organization.
 
 For information about how end users acquire, insert, and run add-ins, see [Start using your Office Add-in](https://support.office.com/en-ie/article/Start-using-your-Office-Add-in-82e665c4-6700-4b56-a3f3-ef5441996862?ui=en-US&rs=en-IE&ad=IE).
 
@@ -60,7 +60,7 @@ A SharePoint add-in catalog is a special site collection that you can create to 
 If you are deploying add-ins in an on-premises environment, use a SharePoint catalog. For details, see [Publish task pane and content add-ins to a SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 > [!NOTE]
-> SharePoint catalogs do not support Office 2016 for Mac. To deploy Office Add-ins to Mac clients, you must submit them to [AppSource]. 
+> SharePoint catalogs do not support Office for Mac. To deploy Office Add-ins to Mac clients, you must submit them to [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store). 
 
 ### Outlook add-in deployment
 

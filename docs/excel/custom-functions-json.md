@@ -1,61 +1,26 @@
-# Custom function metadata
+---
+ms.date: 09/20/2018
+description: Define metadata for custom functions in Excel.
+title: Metadata for custom functions in Excel
+---
 
-When you include [custom functions](custom-functions-overview.md) in an Excel add-in, you must host a JSON file that contains metadata about the functions (in addition to hosting a JavaScript file with the functions and a UI-less HTML file to serve as the parent of the JavaScript file). This article describes the format of the JSON file with examples.
+# Custom functions metadata
 
-A complete sample JSON file is available [here](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/customfunctions.json).
+When you define [custom functions](custom-functions-overview.md) within your Excel add-in, your add-in project must include a JSON metadata file which provides the information that Excel requires to register the custom functions and make them available to end-users. This article describes the format of the JSON metadata file.
 
-## Functions array
+> [!NOTE]
+> For information about the other files that you must include in your add-in project to enable custom functions, see [Create custom functions in Excel](custom-functions-overview.md#learn-the-basics).
 
-The metadata is a JSON object that contains a single `functions` property whose value is an array of objects. Each of these objects represents one custom function. The following table contains its properties:
+## Example metadata
 
-|  Property  |  Data Type  |  Required?  |  Description  |
-|:-----|:-----|:-----|:-----|
-|  `description`  |  string  |  No  |  A description of the function that appears in the Excel UI. For example, "Converts a Celsius value to Fahrenheit". |
-|  `helpUrl`  |  string  |   No  |  URL where your users can get help about the function. (It is displayed in a taskpane.) For example, "http://contoso.com/help/convertcelsiustofahrenheit.html"  |
-|  `name`  |  string  |  Yes  |  The name of the function as it will appear (prepended with a namespace) in the Excel UI when a user is selecting a function. It should be the same as the function's name where it is defined in the JavaScript. |
-|  `options`  |  object  |  No  |  Configure how Excel processes the function. See [options object](#options-object) for details. |
-|  `parameters`  |  array  |  Yes  |  Metadata about the parameters to the function. See [parameters array](#parameters-array)  for details. |
-|  `result`  |  object  |  Yes  |  Metadata about the value returned by the function. See [result object](#result-object) for details. |
-
-## Options object
-
-The `options` object configures how Excel processes the function. The following table contains its properties:
-
-|  Property  |  Data Type  |  Required?  |  Description  |
-|:-----|:-----|:-----|:-----|
-|  `cancelable`  |  boolean  |  No, default is `false`.  |  If `true`, Excel calls the `onCanceled` handler whenever the user takes an action that has the effect of canceling the function; for example, manually triggering recalculation or editing a cell that is referenced by the function. If you use this option, Excel will call the JavaScript function with an additional `caller` parameter. (Do ***not*** register this parameter in the `parameters` property). In the body of the function, a handler must be assigned to the `caller.onCanceled` member. Note, `cancelable` and `sync` cannot both be `true`.  |
-|  `stream`  |  boolean  |  No, default is `false`.  |  If `true`, the function can output repeatedly to the cell even when invoked only once. This option is useful for rapidly-changing data sources, such as a stock price. If you use this option, Excel will call the JavaScript function with an additional `caller` parameter. (Do ***not*** register this parameter in the `parameters` property). The function should have no `return` statement. Instead, the result value is passed as the argument of the `caller.setResult` callback method. Note, `stream` and `sync` may not both be `true`.|
-|  `sync`  |  boolean  |  No, default is `false`  |  If `true`, the function runs synchronously and it must return a value. If `false`, the function runs asynchronously and it must return a `OfficeExtension.Promise` object. Note, `sync`  may not be `true` if either `cancelable` or `stream` are `true`.  |
-
-## Parameters array
-
-The `parameters` property is an array of objects. Each of these objects represents a parameter. The following table contains its properties:
-
-|  Property  |  Data Type  |  Required?  |  Description  |
-|:-----|:-----|:-----|:-----|
-|  `description`  |  string  |  No |  A description of the parameter.  |
-|  `dimensionality`  |  string  |  Yes  |  Must be either "scalar", meaning a non-array value, or "matrix", meaning an array of row arrays.  |
-|  `name`  |  string  |  Yes  |  The name of the parameter. This name is displayed in Excel's IntelliSense.  |
-|  `type`  |  string  |  Yes  |  The data type of the parameter. Must be "boolean", "number", or "string".  |
-
-## Result object
-
-The `results` property provides metadata about the value returned from the function. The following table contains its properties:
-
-|  Property  |  Data Type  |  Required?  |  Description  |
-|:-----|:-----|:-----|:-----|
-|  `dimensionality`  |  string  |  No  |  Must be either "scalar", meaning a non-array value, or "matrix", meaning an array of row arrays.  |
-|  `type`  |  string  |  Yes  |  The data type of the parameter. Must be "boolean", "number", or "string".  |
-
-## Example
-
-The following JSON code is an example of a metadata file for custom functions.
+The following example shows the contents of a JSON metadata file for an add-in that defines custom functions. The sections that follow this example provide detailed information about the individual properties within this JSON example.
 
 ```json
 {
 	"functions": [
 		{
-			"name": "ADD42", 
+            "id": "ADD42",
+			"name": "ADD42",
 			"description":  "Adds 42 to the input number",
 			"helpUrl": "http://dev.office.com",
 			"result": {
@@ -69,13 +34,11 @@ The following JSON code is an example of a metadata file for custom functions.
 					"type": "number",
 					"dimensionality": "scalar"
 				}
-			],
-			"options": {
-				"sync": true
-			}
+			]
 		},
 		{
-			"name": "ADD42ASYNC", 
+            "id": "ADD42ASYNC",
+			"name": "ADD42ASYNC",
 			"description":  "asynchronously wait 250ms, then add 42",
 			"helpUrl": "http://dev.office.com",
 			"result": {
@@ -89,12 +52,10 @@ The following JSON code is an example of a metadata file for custom functions.
 					"type": "number",
 					"dimensionality": "scalar"
 				}
-			],
-			"options": {
-				"sync": false
-			}
+			]
 		},
 		{
+            "id": "ISEVEN",
 			"name": "ISEVEN", 
 			"description":  "Determines whether a number is even",
 			"helpUrl": "http://dev.office.com",
@@ -109,24 +70,20 @@ The following JSON code is an example of a metadata file for custom functions.
 					"type": "number",
 					"dimensionality": "scalar"
 				}
-			],
-			"options": {
-				"sync": true
-			}
+			]
 		},
 		{
+            "id": "GETDAY",
 			"name": "GETDAY",
 			"description": "Gets the day of the week",
 			"helpUrl": "http://dev.office.com",
 			"result": {
 				"type": "string"
 			},
-			"parameters": [],
-			"options": {
-				"sync": true
-			}
+			"parameters": []
 		},
 		{
+            "id": "INCREMENTVALUE",
 			"name": "INCREMENTVALUE", 
 			"description":  "Counts up from zero",
 			"helpUrl": "http://dev.office.com",
@@ -143,12 +100,12 @@ The following JSON code is an example of a metadata file for custom functions.
 				}
 			],
 			"options": {
-				"sync": false,
 				"stream": true,
 				"cancelable": true
 			}
 		},
 		{
+            "id": "SECONDHIGHEST",
 			"name": "SECONDHIGHEST", 
 			"description":  "gets the second highest number from a range",
 			"helpUrl": "http://dev.office.com",
@@ -163,16 +120,60 @@ The following JSON code is an example of a metadata file for custom functions.
 					"type": "number",
 					"dimensionality": "matrix"
 				}
-			],
-			"options": {
-				"sync": true
-			}
+			]
 		}
 	]
 }
-
 ```
 
+> [!NOTE]
+> A complete sample JSON file is available in the [OfficeDev/Excel-Custom-Functions GitHub repository](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/config/customfunctions.json).
+
+## functions 
+
+The `functions` property is an array of custom function objects. The following table lists the properties of each object.
+
+|  Property  |  Data type  |  Required  |  Description  |
+|:-----|:-----|:-----|:-----|
+|  `description`  |  string  |  No  |  A description of the function that appears in the Excel UI. For example, **Converts a Celsius value to Fahrenheit**. |
+|  `helpUrl`  |  string  |   No  |  URL where users can get information about the function. (It is displayed in a task pane.) For example, **http://contoso.com/help/convertcelsiustofahrenheit.html**. |
+| `id`     | string | Yes | A unique ID for the function. This ID should not be changed after it is set. |
+|  `name`  |  string  |  Yes  |  The name of the function as it will appear (prepended with a namespace) in the Excel UI when a user is selecting a function. It does not need to be the same as the function's name where it is defined in the JavaScript. |
+|  `options`  |  object  |  No  |  Enables you to customize some aspects of how and when Excel executes the function. See [options object](#options-object) for details. |
+|  `parameters`  |  array  |  Yes  |  Array that defines the input parameters for the function. See [parameters array](#parameters-array)  for details. |
+|  `result`  |  object  |  Yes  |  Object that defines the type of information that is returned by the function. See [result object](#result-object) for details. |
+
+## options
+
+The `options` object enables you to customize some aspects of how and when Excel executes the function. The following table lists the properties of the `options` object.
+
+|  Property  |  Data type  |  Required  |  Description  |
+|:-----|:-----|:-----|:-----|
+|  `cancelable`  |  boolean  |  No, default is `false`.  |  If `true`, Excel calls the `onCanceled` handler whenever the user takes an action that has the effect of canceling the function; for example, manually triggering recalculation or editing a cell that is referenced by the function. If you use this option, Excel will call the JavaScript function with an additional `caller` parameter. (Do ***not*** register this parameter in the `parameters` property). In the body of the function, a handler must be assigned to the `caller.onCanceled` member. For more information, see [Canceling a function](custom-functions-overview.md#canceling-a-function). |
+|  `stream`  |  boolean  |  No, default is `false`.  |  If `true`, the function can output repeatedly to the cell even when invoked only once. This option is useful for rapidly-changing data sources, such as a stock price. If you use this option, Excel will call the JavaScript function with an additional `caller` parameter. (Do ***not*** register this parameter in the `parameters` property). The function should have no `return` statement. Instead, the result value is passed as the argument of the `caller.setResult` callback method. For more information, see [Streamed functions](custom-functions-overview.md#streamed-functions). |
+
+## parameters
+
+The `parameters` property is an array of parameter objects. The following table lists the properties of each object.
+
+|  Property  |  Data type  |  Required  |  Description  |
+|:-----|:-----|:-----|:-----|
+|  `description`  |  string  |  No |  A description of the parameter.  |
+|  `dimensionality`  |  string  |  No  |  Must be either **scalar** (a non-array value) or **matrix** (a 2-dimensional array).  |
+|  `name`  |  string  |  Yes  |  The name of the parameter. This name is displayed in Excel's intelliSense.  |
+|  `type`  |  string  |  No  |  The data type of the parameter. Must be **boolean**, **number**, or **string**.  |
+
+## result
+
+The `results` object defines the type of information that is returned by the function. The following table lists the properties of the `result` object.
+
+|  Property  |  Data type  |  Required  |  Description  |
+|:-----|:-----|:-----|:-----|
+|  `dimensionality`  |  string  |  No  |  Must be either **scalar** (a non-array value) or **matrix** (a 2-dimensional array). |
+|  `type`  |  string  |  Yes  |  The data type of the parameter. Must be **boolean**, **number**, or **string**.  |
+
 ## See also
-[Custom functions](custom-functions-overview.md)<br>
-[Guidelines and examples of array formulas](https://support.office.com/article/Guidelines-and-examples-of-array-formulas-7d94a64e-3ff3-4686-9372-ecfd5caa57c7)
+
+* [Create custom functions in Excel](custom-functions-overview.md)
+* [Runtime for Excel custom functions](custom-functions-runtime.md)
+* [Custom functions best practices](custom-functions-best-practices.md)

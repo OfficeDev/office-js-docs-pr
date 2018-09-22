@@ -109,7 +109,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
 
 ### Update the manifest
 
-1. Open the XML manifest file in the Add-in project. This file defines the add-in's settings and capabilities.
+1. Open the XML manifest file in the add-in project. This file defines the add-in's settings and capabilities.
 
 2. The `ProviderName` element has a placeholder value. Replace it with your name.
 
@@ -135,13 +135,13 @@ In this article, you'll walk through the process of building an Excel add-in by 
 
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Excel Add-in button](../images/excel-quickstart-addin-2a.png)
+    ![Excel add-in button](../images/excel-quickstart-addin-2a.png)
 
 3. Select any range of cells in the worksheet.
 
 4. In the task pane, choose the **Set color** button to set the color of the selected range to green.
 
-    ![Excel Add-in](../images/excel-quickstart-addin-2c.png)
+    ![Excel add-in](../images/excel-quickstart-addin-2c.png)
 
 # [Any editor](#tab/visual-studio-code)
 
@@ -179,11 +179,15 @@ In this article, you'll walk through the process of building an Excel add-in by 
     
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
-    
+4. Navigate to the root folder of the web application project.
 
-4. In your code editor, open **index.html** in the root of the project. This file specifies the HTML that will be rendered in the add-in's task pane. 
+    ```bash
+    cd "My Office Add-in"
+    ```
+
+5. In your code editor, open **index.html** in the root of the project. This file specifies the HTML that will be rendered in the add-in's task pane. 
  
-5. Within **index.html**, replace the generated `header` tag with the following markup.
+6. Within **index.html**, replace the generated `header` tag with the following markup.
  
     ```html
     <div id="content-header">
@@ -193,7 +197,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
     </div>
     ```
 
-6. Within **index.html**, replace the generated `main` tag with the following markup, and save the file.
+7. Within **index.html**, replace the generated `main` tag with the following markup, and save the file.
 
     ```html
     <div id="content-main">
@@ -206,7 +210,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
     </div>
     ```
 
-7. Open the file **src\index.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.
+8. Open the file **src\index.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.
 
     ```js
     'use strict';
@@ -234,7 +238,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
     })();
     ```
 
-8. Open the file **app.css** to specify the custom styles for the add-in. Replace the entire contents with the following code and save the file.
+9. Open the file **app.css** to specify the custom styles for the add-in. Replace the entire contents with the following code and save the file.
 
     ```css
     #content-header {
@@ -299,13 +303,13 @@ In this article, you'll walk through the process of building an Excel add-in by 
 
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Excel Add-in button](../images/excel-quickstart-addin-2b.png)
+    ![Excel add-in button](../images/excel-quickstart-addin-2b.png)
 
 3. Select any range of cells in the worksheet.
 
 4. In the task pane, choose the **Set color** button to set the color of the selected range to green.
 
-    ![Excel Add-in](../images/excel-quickstart-addin-2c.png)
+    ![Excel add-in](../images/excel-quickstart-addin-2c.png)
 
 ---
 
@@ -320,5 +324,5 @@ Congratulations, you've successfully created an Excel add-in using jQuery! Next,
 
 * [Excel add-in tutorial](../tutorials/excel-tutorial-create-table.md)
 * [Excel JavaScript API core concepts](../excel/excel-add-ins-core-concepts.md)
-* [Excel add-in code samples](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API reference](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Excel add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [Excel JavaScript API reference](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

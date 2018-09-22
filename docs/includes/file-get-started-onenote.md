@@ -36,13 +36,18 @@ In this article, you'll walk through the process of building a OneNote add-in by
     ![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-onenote-jquery.png)
     
     After you complete the wizard, the generator will create the project and install supporting Node components.
+	
+4. Navigate to the root folder of the web application project.
 
+    ```bash
+    cd "My Office Add-in"
+    ```
 
 ## Update the code
 
 1. In your code editor, open **index.html** in the root of the project. This file contains the HTML that will be rendered in the add-in's task pane.
 
-2. Replace the `<main>` element inside the `<body>` element with the following markup and save the file. This adds a text area and a button using [Office UI Fabric components](http://dev.office.com/fabric/components).
+2. Replace the `<main>` element inside the `<body>` element with the following markup and save the file. This adds a text area and a button using [Office UI Fabric components](https://developer.microsoft.com/en-us/fabric#/components).
 
     ```html
     <main class="ms-welcome__main">
@@ -172,6 +177,6 @@ Congratulations, you've successfully created a OneNote add-in! Next, learn more 
 ## See also
 
 - [OneNote JavaScript API programming overview](../onenote/onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API reference](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
+- [OneNote JavaScript API reference](https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js)
 - [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office Add-ins platform overview](../overview/office-add-ins.md)

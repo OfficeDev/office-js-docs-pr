@@ -15,7 +15,7 @@ Here are some ways you can contribute to this documentation:
 
 * To make small changes to an article, [Contribute using GitHub](#contribute-using-github).
 * To make large changes, or changes that involve code, [Contribute using Git](#contribute-using-git).
-* Report documentation bugs via GitHub Issues
+* Report documentation bugs via GitHub Issues.
 * Request new documentation at the [Office Developer Platform UserVoice](http://officespdev.uservoice.com) site.
 
 ## Contribute using GitHub
@@ -26,10 +26,8 @@ Use GitHub to contribute to this documentation without having to clone the repo 
 
 ### To Contribute using GitHub
 
-1. Find the article you want to contribute to on GitHub. 
-
-    If the article is in MSDN, choose the **suggest and submit changes** link in the **Contribute to this content** section and you'll be taken to the same article on GitHub.
-2. Once you are on the article in GitHub, sign in to GitHub (get a free account [Join GitHub](https://github.com/join).
+1. Find the article you want to contribute to on GitHub.
+2. Once you are on the article in GitHub, sign in to GitHub (get a free account [Join GitHub](https://github.com/join)).
 3. Choose the **pencil icon** (edit the file in your fork of this project) and make your changes in the **<>Edit file** window. 
 4. Scroll to the bottom and enter a description.
 5. Choose **Propose file change**>**Create pull request**.
@@ -49,16 +47,16 @@ Use Git to contribute substantive changes, such as:
 ### To Contribute using Git
 
 1. If you don't have a GitHub account, set one up at [GitHub](https://github.com/join). 
-2. After you have an account, install Git on your computer. Follow the steps in [Setting up Git Tutorial](https://help.github.com/articles/set-up-git/).
+2. After you have an account, install Git on your computer. Follow the steps in the [Set up Git] tutorial.
 3. To submit a pull request using Git, follow the steps in [Use GitHub, Git, and this repository](#use-github-git-and-this-repository).
 4. You will be asked to sign the Contributor's License Agreement if you are:
 
     * A member of the Microsoft Open Technologies group.
-    * A contributors who doesn't work for Microsoft.
+    * A contributor who doesn't work for Microsoft.
 
 As a community member, you must sign the Contribution License Agreement (CLA) before you can contribute large submissions to a project. You only need to complete and submit the documentation once. Carefully review the document. You may be required to have your employer sign the document.
 
-Signing the CLA does not grant you rights to commit to the main repository, but it does mean that the Office Developer and Office Developer Content Publishing teams will be able to review and approve your contributions. You will be credited for your submissions.
+Signing the CLA does not grant you rights to commit to the main repository, but it does mean that the Office Developer and Office Developer Content Publishing teams will be able to review and approve your contributions. You are credited for your submissions.
 
 Pull requests are typically reviewed within 10 business days.
 
@@ -69,7 +67,7 @@ Pull requests are typically reviewed within 10 business days.
 ### To set up your fork of the repository
 
 1.	Set up a GitHub account so you can contribute to this project. If you haven't done this, go to [GitHub](https://github.com/join) and do it now.
-2.	Install Git on your computer. Follow the steps in the [Setting up Git Tutorial] [Set Up Git].
+2.	Install Git on your computer. Follow the steps in the [Set up Git] tutorial.
 3.	Create your own fork of this repository. To do this, at the top of the page,  choose the **Fork** button.
 4.	Copy your fork to your computer. To do this, open Git Bash. At the command prompt enter:
 
@@ -170,10 +168,9 @@ Congratulations, you have successfully contributed to the project!
 
 ## How to use Markdown to format your topic
 
-### Standard Markdown
+### Markdown
 
-All of the articles in this repository use Markdown. A complete introduction (and listing of all the syntax) can be found at [Markdown Home](http://daringfireball.net/projects/markdown/ 
-).
+All of the articles in this repository use Markdown. A complete introduction (and listing of all the syntax) can be found at [Daring Fireball - Markdown].
  
 ## FAQ
 
@@ -203,10 +200,10 @@ Pull requests are typically reviewed within 10 business days.
 ## More resources
 
 * To learn more about Markdown, go to the Markdown creator's site [Daring Fireball].
-* To learn more about using Git and GitHub, first check out the [GitHub Help section] [GitHub Help].
+* To learn more about using Git and GitHub, first check out the [GitHub Help].
 
 [GitHub Home]: http://github.com
 [GitHub Help]: http://help.github.com/
-[Set Up Git]: http://help.github.com/win-set-up-git/
-[Markdown Home]: http://daringfireball.net/projects/markdown/
+[Set up Git]: https://help.github.com/articles/set-up-git/
+[Daring Fireball - Markdown]: http://daringfireball.net/projects/markdown/
 [Daring Fireball]: http://daringfireball.net/
