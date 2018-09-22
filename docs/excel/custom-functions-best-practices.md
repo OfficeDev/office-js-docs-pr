@@ -41,7 +41,7 @@ You can enable error logging for your custom functions add-in in multiple ways, 
 
 ## Debugging
 
-Currently, the best method for debugging Excel custom functions is to first [sideload](../testing/sideload-office-add-ins-for-testing.md) your add-in within Excel Online. Then you can debug your custom functions by using the [F12 debugging tool native to your browser](../testing/debug-add-ins-in-office-online).
+Currently, the best method for debugging Excel custom functions is to first [sideload](../testing/sideload-office-add-ins-for-testing.md) your add-in within Excel Online. Then you can debug your custom functions by using the [F12 debugging tool native to your browser](../testing/debug-add-ins-in-office-online.md).
 
 If your add-in fails to register, [please verify that SSL certificates are correctly configured for the web server that's hosting your add-in application](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
 
