@@ -63,7 +63,7 @@ sections:
     - html: <a href="/office/dev/add-ins/excel/excel-add-ins-overview">Excel add-in development</a>
     - html: <a href="/office/dev/add-ins/word/word-add-ins-programming-overview">Word add-in development</a>
     - html: <a href="/office/dev/add-ins/onenote/onenote-add-ins-programming-overview">OneNote add-in development</a>
-    - html: <a href="/office/dev/add-ins/outlook/add-ins">Outlook add-in development</a>
+    - html: <a href="/outlook/add-ins">Outlook add-in development</a>
     - html: <a href="/office/dev/add-ins/powerpoint/powerpoint-add-ins">PowerPoint add-in development</a>
     - html: <a href="/office/dev/add-ins/project/project-add-ins">Project add-in development</a>
     - html: <a href="/office/dev/add-ins/testing/test-debug-office-add-ins">Test and debug an Office Add-in</a>
