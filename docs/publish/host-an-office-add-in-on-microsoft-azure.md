@@ -1,6 +1,6 @@
 ---
-title: Host an Office Add-in on Microsoft Azure
-description: ''
+title: Host an Office Add-in on Microsoft Azure | Microsoft Docs
+description: Learn how to deploy an add-in web app to Azure and sideload the add-in for testing in an Office client application.
 ms.date: 01/25/2018
 ---
 
@@ -22,12 +22,12 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
 2. Install Office. 
     
     > [!NOTE]
-    > If you don't already have Office, you can [register for a free 1-month trial](http://office.microsoft.com/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786).
+    > If you don't already have Office, you can [register for a free 1-month trial](https://products.office.com/en-US/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735).
 
 3.  Obtain an Azure subscription.
     
     > [!NOTE]
-    > If don't already have an Azure subscription, you can [get one as part of your MSDN subscription](http://www.windowsazure.com/pricing/member-offers/msdn-benefits/) or [register for a free trial](https://azure.microsoft.com/pricing/free-trial). 
+    > If don't already have an Azure subscription, you can [get one as part of your Visual Studio subscription](https://azure.microsoft.com/en-us/pricing/member-offers/visual-studio-subscriptions/) or [register for a free trial](https://azure.microsoft.com/pricing/free-trial). 
 
 ## Step 1: Create a shared folder to host your add-in XML manifest file
 

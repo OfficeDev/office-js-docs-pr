@@ -64,7 +64,7 @@ In your add-in's manifest file, update the **xmlns** attribute of the **OfficeAp
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xsi:type="ContentApp" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
 	xmlns="http://schemas.microsoft.com/office/appforoffice/1.1">
   
   <!-- manifest contents -->
@@ -107,7 +107,7 @@ In your add-in's manifest file, update the **xmlns** attribute of the **OfficeAp
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xsi:type="ContentApp" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
 	xmlns="http://schemas.microsoft.com/office/appforoffice/1.1">
   
   <!-- manifest contents -->

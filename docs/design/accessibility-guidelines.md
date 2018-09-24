@@ -20,7 +20,7 @@ As you design and develop your Office Add-ins, you'll want to ensure that all po
 
 - Avoid unexpected color changes.
 - Provide meaningful and timely information to describe UI elements, titles and headings, inputs, and errors. Ensure that names of controls adequately describe the intent of the control.
-- Follow [standard guidelines](http://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html) for color contrast.
+- Follow [standard guidelines](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html) for color contrast.
 
 ## Account for assistive technologies
 
@@ -32,6 +32,6 @@ As you design and develop your Office Add-ins, you'll want to ensure that all po
 
 ## See also
 
-- [Web Content Accessibility Guidelines (WCAG) 2.0](http://www.w3.org/TR/wcag2ict/#REF-WCAG20)
-- [Guidance on Applying WCAG 2.0 to Non-Web Information and Communications Technologies (WCAG2ICT)](http://www.w3.org/TR/wcag2ict/)
+- [Web Content Accessibility Guidelines (WCAG) 2.0](https://www.w3.org/TR/wcag2ict/#REF-WCAG20)
+- [Guidance on Applying WCAG 2.0 to Non-Web Information and Communications Technologies (WCAG2ICT)](https://www.w3.org/TR/wcag2ict/)
 - [European Standard on accessibility requirements for Information and Communication Technologies (ICT)](http://www.etsi.org/deliver/etsi_en/301500_301599/301549/01.00.00_20/en_301549v010000c.pdf) 

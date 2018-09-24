@@ -113,7 +113,7 @@ The following XML manifest example hosts its main add-in page in the `https://ww
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
   <Id>c6890c26-5bbb-40ed-a321-37f07909a2f0</Id>
   <Version>1.0</Version>
   <ProviderName>Contoso, Ltd</ProviderName>
@@ -139,7 +139,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
 
 <!-- See https://github.com/OfficeDev/Office-Add-in-Commands-Samples for documentation-->
 
@@ -338,7 +338,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp
   xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
   xsi:type="ContentApp">
   <Id>01eac144-e55a-45a7-b6e3-f1cc60ab0126</Id>
   <AlternateId>en-US\WA123456789</AlternateId>
@@ -375,7 +375,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns=
   "http://schemas.microsoft.com/office/appforoffice/1.1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
   xsi:type="MailApp">
 
   <Id>971E76EF-D73E-567F-ADAE-5A76B39052CF</Id>

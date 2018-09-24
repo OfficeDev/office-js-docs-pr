@@ -41,8 +41,8 @@ The following are the prerequisites for creating a Project task pane add-in that
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
         <service xml:base="http://myserver/pwa/_api/ProjectData/" 
-        xmlns="http://www.w3.org/2007/app" 
-        xmlns:atom="http://www.w3.org/2005/Atom">
+        xmlns="https://www.w3.org/2007/app" 
+        xmlns:atom="https://www.w3.org/2005/Atom">
         <workspace>
             <atom:title>Default</atom:title>
             <collection href="Projects">
@@ -134,7 +134,7 @@ The following steps show how to add an icon file to the Visual Studio solution:
     ```XML
     <?xml version="1.0" encoding="UTF-8"?>
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+            xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
         <Id>c512df8d-a1c5-4d74-8a34-d30f6bbcbd82 </Id>
         <Version>1.0</Version>
         <ProviderName> [Provider name]</ProviderName>
