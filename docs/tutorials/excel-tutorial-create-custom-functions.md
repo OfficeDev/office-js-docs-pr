@@ -127,8 +127,8 @@ Complete the following steps to create a custom function named `STOCKPRICE` that
                 //add handler for xhr
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState == XMLHttpRequest.DONE) {
-                    //return result back to Excel
-                    resolve(xhr.responseText);
+                        //return result back to Excel
+                        resolve(xhr.responseText);
                     }
                 }
                 //make request
@@ -193,22 +193,22 @@ Complete the following steps to create a custom function named `STOCKPRICESTREAM
 
         //return every second
         setInterval(function(){
-        let xhr = new XMLHttpRequest();
-        let url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
+            let xhr = new XMLHttpRequest();
+            let url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
 
-        //add handler for xhr
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState == XMLHttpRequest.DONE) {
-                //return result back to Excel
-                caller.setResult(xhr.responseText);
+            //add handler for xhr
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == XMLHttpRequest.DONE) {
+                    //return result back to Excel
+                    caller.setResult(xhr.responseText);
+                }
             }
-        }
 
-        //make request
-        xhr.open('GET', url, true);
-        xhr.send();
-            }, 1000);
-        }
+            //make request
+            xhr.open('GET', url, true);
+            xhr.send();
+        }, 1000);
+    }
     ```
 
 2. Before Excel can make this new function available to end-users, you must specify metadata that describes this function. In the **stock-ticker** project that the Yo Office generator created, add the following object to the `functions` array within the **config/customfunctions.json** file and save the file.
