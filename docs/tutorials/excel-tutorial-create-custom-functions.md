@@ -104,7 +104,7 @@ At this point, the prebuilt custom functions in your project are loaded and avai
     =CONTOSO.ADD42(1,2)
     ```
 
-The `ADD42` custom function adds 42 to the two numbers that you specify as input parameters. Typing `=CONTOSO.ADD42(1,2)` should produce the result **45** in the cell after you press enter. When you type the formula   press enter
+The `ADD42` custom function adds 42 to the two numbers that you specify as input parameters. Typing `=CONTOSO.ADD42(1,2)` should produce the result **45** in the cell after you press enter.
 
 ## Create a custom function that requests data from the web
 
