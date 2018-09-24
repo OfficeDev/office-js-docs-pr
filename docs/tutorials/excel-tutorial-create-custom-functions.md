@@ -95,17 +95,17 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
 
 The custom functions project that you created by using the Yo Office generator contains several prebuilt custom functions, defined within the **src/customfunction.js** file. The **manifest.xml** file in the root directory of the project specifies that all custom functions belong to the `CONTOSO` namespace.
 
-At this point, the prebuilt custom functions in your project are loaded and available within Excel. Try out the `ADD42` custom function by completing the following steps in Excel:
+At this point, the prebuilt custom functions in your project are loaded and available within Excel. Try out the `ADD` custom function by completing the following steps in Excel:
 
 1. Within a cell, type **=CONTOSO**. Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.
 
-2. Run the `CONTOSO.ADD42` function, with numbers `1` and `2` as input parameters, by specifying the following value in the cell and pressing enter:
+2. Run the `CONTOSO.ADD` function, with numbers `10` and `200` as input parameters, by specifying the following value in the cell and pressing enter:
 
     ```
-    =CONTOSO.ADD42(1,2)
+    =CONTOSO.ADD(10,200)
     ```
 
-The `ADD42` custom function adds 42 to the two numbers that you specify as input parameters. Typing `=CONTOSO.ADD42(1,2)` should produce the result **45** in the cell after you press enter.
+The `ADD` custom function computes the sum of the two numbers that you specify as input parameters. Typing `=CONTOSO.ADD(10,200)` should produce the result **210** in the cell after you press enter.
 
 ## Create a custom function that requests data from the web
 
@@ -123,8 +123,8 @@ Complete the following steps to create a custom function named `STOCKPRICE` that
     function STOCKPRICE(ticker) {
         return new Promise(
             function(resolve) {
-                let xhr = new XMLHttpRequest();
-                let url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price"
+                var xhr = new XMLHttpRequest();
+                var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price"
                 //add handler for xhr
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState == XMLHttpRequest.DONE) {
@@ -190,12 +190,12 @@ Complete the following steps to create a custom function named `STOCKPRICESTREAM
 
     ```js
     function STOCKPRICESTREAM(ticker, caller){
-        let result = 0;
+        var result = 0;
 
         //return every second
-        let timer = setInterval(function(){
-            let xhr = new XMLHttpRequest();
-            let url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
+        var timer = setInterval(function(){
+            var xhr = new XMLHttpRequest();
+            var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
 
             //add handler for xhr
             xhr.onreadystatechange = function() {
