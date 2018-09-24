@@ -40,7 +40,7 @@ In this tutorial, you will learn how to:
 
 You’ll begin this tutorial by using the Yo Office generator to create the files that you need for your custom functions project.
 
-1. Run the following command via a command line interface and then answer the prompts as follows.
+1. Run the following command and then answer the prompts as follows.
 
     ```bash
     yo office
@@ -80,11 +80,11 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
         3. Choose **Browse...** and navigate to the root directory of the project that the Yo Office generator created. 
         4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
-5. Update the `<script>` tab in **index.html** by completing the following steps:
+5. Update your project to add a reference to the custom functions library, by completing the following steps.
 
-    1. In the root directory of the project that the Yo Office generator created, find **index.html** and open the file.
+    1. In the root directory of the project that the Yo Office generator created, find the file **index.html** and open it in your code editor.
 
-    2. In **index.html**, find the `<script>` tag that immediately follows the `<title>` tag. Remove that `<script>` tag and insert the following `<script>` tag in the same location:
+    2. In **index.html**, find the `<script>` tag that immediately follows the `<title>` tag. Remove that `<script>` tag and insert the following tag in the same location:
 
         ```js
         <script src="https://officedev.github.io/custom-functions/lib/custom-functions-runtime.js" type="text/javascript"></script>
@@ -92,7 +92,12 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
 
 ## Try out a prebuilt custom function
 
-Now the custom functions in your file will be loaded and ready to use. There are several pre-built functions for you in the Yo Office project. All are attached to a namespace called CONTOSO that is defined in the XML manifest file. When you start typing =CONTOSO in a cell, the list of available functions will appear.
+The custom functions project that the Yo Office generator created for you contains several prebuilt custom functions, defined within the **src/customfunction.js** file. The manifest file in the root of the project (**manifest.xml**) specifies that all custom functions belong to the `CONTOSO` namespace.
+
+At this point, the prebuilt custom functions in your project are loaded and available within Excel. 
+
+
+When you start typing =CONTOSO in a cell, the list of available functions will appear.
 
 Let's call the CONTOSO.ADD42() function, that adds 42 to any two numbers that you specify as arguments. In any cell, type `=CONTOSO.ADD42(1,2)`. It should deliver the answer 45.
 
