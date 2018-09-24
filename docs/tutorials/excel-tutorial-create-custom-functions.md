@@ -160,7 +160,7 @@ Complete the following steps to create a custom function named `STOCKPRICE` that
                 "type": "string",
                 "dimensionality": "scalar"
             }
-        ],
+        ]
     }
     ```
 
@@ -184,7 +184,7 @@ Complete the following steps to create a custom function named `STOCKPRICE` that
 
 The `STOCKPRICE` function that you just created returns the price of a stock at a specific moment in time, but stock prices are always changing. Let's create a custom function that streams data from an API to get real-time updates on a stock price.
 
-Complete the following steps to create a custom function named `STOCKPRICESTREAM` that requests the price of the specified stock every 1 second. While the initial request is in-progress, you may see the placeholder value **#GETTING_DATA** the cell where the function is being called. When a value is returned by the function, **#GETTING_DATA** will be replaced by that value in the cell.
+Complete the following steps to create a custom function named `STOCKPRICESTREAM` that requests the price of the specified stock every 1000 milliseconds. While the initial request is in-progress, you may see the placeholder value **#GETTING_DATA** the cell where the function is being called. When a value is returned by the function, **#GETTING_DATA** will be replaced by that value in the cell.
 
 1. In the **stock-ticker** project that the Yo Office generator created, add the following function to **customfunctions.js** and save the file.
 
@@ -193,7 +193,7 @@ Complete the following steps to create a custom function named `STOCKPRICESTREAM
         let result = 0;
 
         //return every second
-        setInterval(function(){
+        let timer = setInterval(function(){
             let xhr = new XMLHttpRequest();
             let url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
 
@@ -209,6 +209,10 @@ Complete the following steps to create a custom function named `STOCKPRICESTREAM
             xhr.open('GET', url, true);
             xhr.send();
         }, 1000);
+
+        caller.onCanceled = function(){
+            clearInterval(timer);
+        }
     }
     ```
 
