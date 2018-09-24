@@ -9,7 +9,7 @@ ms.date: 12/04/2017
 
 OAuth is the open standard for authorization that online service providers such as Office 365, Facebook, Google, SalesForce, LinkedIn and others use to perform user authentication. The OAuth authorization framework is the default authorization protocol used in Azure and Office 365. The OAuth authorization framework is used in both enterprise (corporate) and consumer scenarios.
 
-Online service providers may provide public APIs exposed via REST. Developers can use these public APIs in their Office add-ins to read or write data to the online service provider. Integrating data from online service providers in an add-in increases its value, which leads to greater user adoption. When using these APIs in your add-in, users will be required to authenticate using the OAuth authorization framework.
+Online service providers may provide public APIs exposed via REST. Developers can use these public APIs in their Office Add-ins to read or write data to the online service provider. Integrating data from online service providers in an add-in increases its value, which leads to greater user adoption. When using these APIs in your add-in, users will be required to authenticate using the OAuth authorization framework.
 
 This topic describes how to implement an authentication flow in your add-in to perform user authentication. Code segments included in this topic are taken from the [Office-Add-in-NodeJS-ServerAuth](https://github.com/OfficeDev/Office-Add-in-NodeJS-ServerAuth) code sample.
 

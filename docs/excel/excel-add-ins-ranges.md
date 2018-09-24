@@ -7,7 +7,7 @@ ms.date: 12/04/2017
 
 # Work with ranges using the Excel JavaScript API
 
-This article provides code samples that show how to perform common tasks with ranges using the Excel JavaScript API. For the complete list of properties and methods that the **Range** object supports, see [Range Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/range).
+This article provides code samples that show how to perform common tasks with ranges using the Excel JavaScript API. For the complete list of properties and methods that the **Range** object supports, see [Range Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range).
 
 ## Get a range
 
@@ -599,4 +599,4 @@ A transposed range is flipped along the main diagonal, so rows **1**, **2**, and
 ## See also
 
 - [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
-- [Range Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/range)
+
