@@ -71,7 +71,7 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
     * If you're using Excel 2016 for Windows:
 
         1. In Excel, select **Insert** > **My Add-ins** > **Insert an Add-in**. 
-        2. In the list of available add-ins, find the **Developer Add-ins** section and select your add-in to register it: **Excel Custom Function**.
+        2. In the list of available add-ins, find the **Developer Add-ins** section and select **Excel Custom Function** to register it.
 
     * If you're using Excel Online: 
 
@@ -86,7 +86,7 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
 
     2. In **index.html**, find the `<script>` tag that immediately follows the `<title>` tag. Remove that `<script>` tag and insert the following tag in the same location:
 
-        ```js
+        ```html
         <script src="https://officedev.github.io/custom-functions/lib/custom-functions-runtime.js" type="text/javascript"></script>
         ```
 
