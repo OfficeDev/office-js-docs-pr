@@ -26,8 +26,7 @@ For a sample that implements a dialog box, see [Office Add-in Dialog API Example
 
 ## See also
 
-- [UX Pattern Sample](https://office.visualstudio.com/DefaultCollection/OC/_git/GettingStarted-FabricReact)
 - [GitHub Development Resources](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
-- [Dialog object](https://dev.office.com/reference/add-ins/shared/officeui.dialog)
+- [Dialog object](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js)
 
 

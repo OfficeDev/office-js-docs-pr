@@ -6,12 +6,6 @@ ms.date: 04/13/2018
 
 # Add data validation to Excel ranges (Preview)
 
-> [!NOTE]
-> While the data validation APIs are in preview, you must load the beta version of the Office JavaScript library to use them. The URL is https://appsforoffice.microsoft.com/lib/beta/hosted/office.js. If you are using TypeScript or your code editor uses a TypeScript type definition file for intellisense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
-
-> [!NOTE]
-> While the data validation APIs are in preview, the links in this article to API reference will not work. In the meantime, you can use the [draft Excel API reference](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec/reference/excel).
-
 The Excel JavaScript Library provides APIs to enable your add-in to add automatic data validation to tables, columns, rows, and other ranges in a workbook. To understand the concepts and the terminology of data validation, please see the following articles about how users add data validation through the Excel UI:
 
 - [Apply data validation to cells](https://support.office.com/article/Apply-data-validation-to-cells-29FECBCC-D1B9-42C1-9D76-EFF3CE5F7249)
@@ -33,11 +27,11 @@ The `Range.dataValidation` property, which takes a [DataValidation](https://docs
 
 ### Creating validation rules
 
-To add data validation to a range, your code must set the `rule` property of the `DataValidation` object in `Range.dataValidation`. This takes a [DataValidationRule](https://dev.office.com/reference/add-ins/excel/datavalidationrule) object which has seven optional properties. *No more than one of these properties may be present in any `DataValidationRule` object.* The property that you include determines the type of validation.
+To add data validation to a range, your code must set the `rule` property of the `DataValidation` object in `Range.dataValidation`. This takes a [DataValidationRule](https://docs.microsoft.com/javascript/api/excel?view=office-js) object which has seven optional properties. *No more than one of these properties may be present in any `DataValidationRule` object.* The property that you include determines the type of validation.
 
 #### Basic and DateTime validation rule types
 
-The first three `DataValidationRule` properties (i.e., validation rule types) take a [BasicDataValidation](https://docs.microsoft.com/javascript/api/excel/excel.basicdatavalidation) object as their value.
+The first three `DataValidationRule` properties (i.e., validation rule types) take a [BasicDataValidation](https://docs.microsoft.com/javascript/api/excel) object as their value.
 
 - `wholeNumber` &#8212; Requires a whole number in addition to any other validation specified by the `BasicDataValidation` object.
 - `decimal` &#8212; Requires a decimal number in addition to any other validation specified by the `BasicDataValidation` object.

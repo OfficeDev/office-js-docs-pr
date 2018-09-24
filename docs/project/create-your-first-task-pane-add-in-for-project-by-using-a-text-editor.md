@@ -101,7 +101,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
 
    The following code gets the application context and document information by using functions in the Office.js file. The **text** object is the ID of the **textarea** control in the HTML file.
     
-   The **\_projDoc** variable is initialized with a **ProjectDocument** object. The code includes some simple error handling functions, and the **getContextValues** function that gets application context and project document context properties. For more information about the JavaScript object model for Project, see [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office).
+   The **\_projDoc** variable is initialized with a **ProjectDocument** object. The code includes some simple error handling functions, and the **getContextValues** function that gets application context and project document context properties. For more information about the JavaScript object model for Project, see [JavaScript API for Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js).
 
     ```javascript
     /*
@@ -163,11 +163,11 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
     }
     ```
 
-   For information about the functions in the Office.debug.js file, see [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office). For example, the **getDocumentUrl** function gets the URL or file path of the open project.
+   For information about the functions in the Office.debug.js file, see [JavaScript API for Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js). For example, the **getDocumentUrl** function gets the URL or file path of the open project.
     
 3. Add JavaScript functions that call asynchronous functions in Office.js and Project-15.js to get selected data:
     
-   - For example, **getSelectedDataAsync** is a general function in Office.js that gets unformatted text for the selected data. For more information, see [AsyncResult object](https://dev.office.com/reference/add-ins/shared/asyncresult).
+   - For example, **getSelectedDataAsync** is a general function in Office.js that gets unformatted text for the selected data. For more information, see [AsyncResult object](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js).
     
    - The **getSelectedTaskAsync** function in Project-15.js gets the GUID of the selected task. Similarly, the **getSelectedResourceAsync** function gets the GUID of the selected resource. If you call those functions when a task or a resource is not selected, the functions show an undefined error.
     
@@ -183,7 +183,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
    - If the project is synchronized with a SharePoint tasks list, the  **getWSSUrlAsync** function gets the URL and the name of the tasks list. If the project is not synchronized with a SharePoint tasks list, the **getWSSUrlAsync** function errors off.
     
      > [!NOTE]
-     > To get the SharePoint URL and name of the tasks list, we recommend that you use the  **getProjectFieldAsync** function with the **WSSUrl** and **WSSList** constants in the [ProjectProjectFields](https://dev.office.com/reference/add-ins/shared/projectprojectfields-enumeration) enumeration.
+     > To get the SharePoint URL and name of the tasks list, we recommend that you use the  **getProjectFieldAsync** function with the **WSSUrl** and **WSSList** constants in the [ProjectProjectFields](https://docs.microsoft.com/javascript/api/office/office.projectprojectfields?view=office-js) enumeration.
 
    Each of the functions in the following code includes an anonymous function that is specified by  `function (asyncResult)`, which is a callback that gets the asynchronous result. Instead of anonymous functions, you could use named functions, which can help with maintainability of complex add-ins.
 
@@ -1091,7 +1091,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 
 - [Task pane add-ins for Project](../project/project-add-ins.md)
 - [Understanding the JavaScript API for add-ins](../develop/understanding-the-javascript-api-for-office.md)
-- [JavaScript API for Office add-ins](https://dev.office.com/reference/add-ins/javascript-api-for-office)
+- [JavaScript API for Office Add-ins](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
 - [Schema reference for Office Add-ins manifests (v1.1)](../develop/add-in-manifests.md)     
 - [Project 2013 SDK download](https://www.microsoft.com/download/details.aspx?id=30435%20)
     

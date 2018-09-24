@@ -7,7 +7,7 @@ ms.date: 12/04/2017
 
 # Work with Worksheets using the Excel JavaScript API
 
-This article provides code samples that show how to perform common tasks with worksheets using the Excel JavaScript API. For the complete list of properties and methods that the **Worksheet** and **WorksheetCollection** objects support, see [Worksheet Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/worksheet) and [WorksheetCollection Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/worksheetcollection).
+This article provides code samples that show how to perform common tasks with worksheets using the Excel JavaScript API. For the complete list of properties and methods that the **Worksheet** and **WorksheetCollection** objects support, see [Worksheet Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheet?view=office-js) and [WorksheetCollection Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection?view=office-js).
 
 > [!NOTE]
 > The information in this article applies only to regular worksheets; it does not apply to "chart" sheets or "macro" sheets.
@@ -278,5 +278,4 @@ For examples that show how to get a range within a worksheet, see [Work with Ran
 ## See also
 
 - [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
-- [Worksheet Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/worksheet)
-- [WorksheetCollection Object (JavaScript API for Excel)](https://dev.office.com/reference/add-ins/excel/worksheetcollection)
+

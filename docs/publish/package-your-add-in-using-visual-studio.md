@@ -22,7 +22,7 @@ Complete the following steps to deploy your web project using Visual Studio 2015
     > [!NOTE]
     > A publish profile specifies the server you are deploying to, the credentials needed to log on to the server, the databases to deploy, and other deployment options.
 
-    If you choose  **New ...**, the  **Create publishing profile** wizard appears. You can use this wizard to import a publishing profile from a web site hosting provider such as Microsoft Azure or create a new profile and add your server, credentials, and other settings in the next procedure.
+    If you choose  **New ...**, the Create Publishing Profile Wizard appears. You can use this wizard to import a publishing profile from a web site hosting provider such as Microsoft Azure or create a new profile and add your server, credentials, and other settings in the next procedure.
     
     For more information about importing publishing profiles or creating new publishing profiles, see [Creating a Publish Profile](http://msdn.microsoft.com/library/dd465337.aspx#creating_a_profile).
     
@@ -37,7 +37,7 @@ Complete the following steps to package your add-in using Visual Studio 2015.
 
 1. In the **Publish your add-in** page, choose the **Package the add-in** link.
     
-    The **Publish Office and SharePoint Add-ins** wizard appears.
+    The Publish Office and SharePoint Add-ins Wizard appears.
     
 2. In the **Where is your website hosted?** dropdown list, select or enter the HTTPS URL of the website that will host the content files of your add-in, and then choose **Finish**. 
     
