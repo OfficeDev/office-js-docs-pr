@@ -52,9 +52,9 @@ To help ensure that the manifest file follows the correct schema, including any 
 	xmllint --noout --schema XSD_FILE XML_FILE
 	```
 
-## Use runtime logging to debug your add-in manifest
+## Use runtime logging to debug your add-in 
 
-You can use runtime logging to debug your add-in's manifest. This feature can help you identify and fix issues with your manifest that are not detected by XSD schema validation, such as a mismatch between resource IDs. Runtime logging is particularly  useful for debugging add-ins that implement add-in commands.  
+You can use runtime logging to debug your add-in's manifest as well as several installation errors. This feature can help you identify and fix issues with your manifest that are not detected by XSD schema validation, such as a mismatch between resource IDs. Runtime logging is particularly  useful for debugging add-ins that implement add-in commands and Excel custom functions.   
 
 > [!NOTE]
 > The runtime logging feature is currently available for Office 2016 desktop.
