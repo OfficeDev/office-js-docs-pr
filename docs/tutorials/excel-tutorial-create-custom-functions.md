@@ -5,6 +5,7 @@ ms.date: 09/20/2018
 ms.topic: tutorial
 #Customer intent: As an add-in developer, I want to create a custom function in Excel to increase productivity. 
 ---
+
 # Tutorial: Create custom functions in Excel
 
 ## Introduction
