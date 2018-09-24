@@ -81,16 +81,6 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
         3. Choose **Browse...** and navigate to the root directory of the project that the Yo Office generator created. 
         4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
-5. Update your project to add a reference to the custom functions library, by completing the following steps.
-
-    1. In the **stock-ticker** project that the Yo Office generator created, find the file **index.html** and open it in your code editor.
-
-    2. In **index.html**, find the `<script>` tag that immediately follows the `<title>` tag. Remove that `<script>` tag and insert the following tag in the same location:
-
-        ```html
-        <script src="https://officedev.github.io/custom-functions/lib/custom-functions-runtime.js" type="text/javascript"></script>
-        ```
-
 ## Try out a prebuilt custom function
 
 The custom functions project that you created by using the Yo Office generator contains several prebuilt custom functions, defined within the **src/customfunction.js** file. The **manifest.xml** file in the root directory of the project specifies that all custom functions belong to the `CONTOSO` namespace.
@@ -147,7 +137,7 @@ Complete the following steps to create a custom function named `STOCKPRICE` that
     {
         "id": "STOCKPRICE",
         "name": "STOCKPRICE",
-        "description": "Multiplies number by 105",
+        "description": "Retrieves price of specified stock",
         "helpUrl": "http://dev.office.com",
         "result": {
             "type": "number",
@@ -224,7 +214,7 @@ Complete the following steps to create a custom function named `STOCKPRICESTREAM
     {
         "id": "STOCKPRICESTREAM",
         "name": "STOCKPRICESTREAM",
-        "description": "Streams real time stock price",
+        "description": "Streams real-time stock price",
         "helpUrl": "http://dev.office.com",
         "result": {
             "type": "number",
