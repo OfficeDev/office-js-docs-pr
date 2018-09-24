@@ -9,69 +9,94 @@ ms.topic: tutorial
 
 ## Introduction
 
-Custom functions enable you to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions like any other native function in Excel. You can create custom functions that perform simple tasks such as custom calculations or more complex tasks such as streaming real-time data from the web into a worksheet.
+Custom functions enable you to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any other native function in Excel, such as `SUM()`. You can create custom functions that perform simple tasks such as custom calculations or more complex tasks such as streaming real-time data from the web into a worksheet.
 
 In this tutorial, you will learn how to:
 > [!div class="checklist"]
-> * Create a custom function project by using the Yo Office generator
-> * Create a custom function that performs a simple calculation
+> * Create a custom functions project by using the Yo Office generator
+> * Use a prebuilt custom function to perform a simple calculation
 > * Create a custom function that requests data from the web
 > * Create a custom function that streams real-time data from the web
 
 ## Prerequisites
 
 * [Node.js and npm](https://nodejs.org/en/)
-* [Git Bash](https://git-scm.com/downloads) (or another Git client)
-* [Yeoman](http://yeoman.io/) and the [Yo Office generator](https://www.npmjs.com/package/generator-office)
-* Office 2016 for Windows, build number 10827 or later. Also, you must [join the Office Insider program](https://products.office.com/office-insider). 
 
-## Create your add-in project
+* [Git Bash](https://git-scm.com/downloads) (or another Git client)
+
+* The latest version of [Yeoman](http://yeoman.io/) and the [Yo Office generator](https://www.npmjs.com/package/generator-office). To install these tools globally, run the following command via the command prompt:
+
+    ```bash
+    npm install -g yo generator-office
+    ```
+
+* Excel 2016 for Windows (build number 10827 or later) or Excel Online
+
+* [Join the Office Insider program](https://products.office.com/office-insider). 
+    > [!NOTE]
+    > Currently, you must join the Office Insider program in order to have access to custom functions. Custom functions are disabled across all Office builds unless you are a member of the Office Insider program.
+
+## Create a custom functions project
 
 You’ll begin this tutorial by using the Yo Office generator to create the files that you need for your custom functions project.
 
-1. In your command line interface, run the following command and then answer the prompts as follows.
+1. Run the following command via a command line interface and then answer the prompts as follows.
 
     ```bash
     yo office
     ```
 
-    * Choose a project type: `Excel Custom Functions Add-in project (September 2018 Preview Refresh: Requires the Insider channel for Excel)`
+    * Choose a project type: `Excel Custom Functions Add-in project (...)`
     * Choose a script type: `JavaScript`
     * What do you want to name your add-in? `stock-ticker`
 
-    ![Yo Office bash prompts for custom functions](../images/yo-office-cfs-stock-ticker.png)
+    ![Yo Office bash prompts for custom functions](../images/yo-office-cfs-stock-ticker-2.png)
 
     After you complete the wizard, the generator will create the project files and install supporting Node components.
 
-2. Run the following command to navigate to the project folder.
+2. Navigate to the project folder.
 
     ```bash
     cd stock-ticker
     ```
 
-3. Run the following command to start the local web server.
+3. Start the local web server.
 
     ```bash
     npm start
     ```
 
-4. You will also need to register your custom functions add-in. In Excel, select **Insert > My Add-ins > Insert an Add-in**. This will bring up a list of available add-ins. Under "Developer Add-ins" you will see your add-in, under the name "Excel Custom Function". Select it to register it.
+4. Register your custom functions add-in in Excel by completing the following steps:
 
-    Select **Insert > Add-ins**. Choose **Manage My Add-ins** and select **Upload My Add-in**. Click "Browse..." for your manifest file (`.\manifest.xml`), then click Open, select **Upload**.
+    * If you're using Excel 2016 for Windows:
 
-5. Finally, change the script tag. Open up your add-in project in your favorite code editor. In **index.html** in the root folder, delete and replace the script tag immediately following the <title> tags with the code below:
+        1. In Excel, select **Insert** > **My Add-ins** > **Insert an Add-in**. 
+        2. In the list of available add-ins, find the **Developer Add-ins** section and select your add-in to register it: **Excel Custom Function**.
 
-    ```js
-    <script src="https://unpkg.com/@microsoft/office-js@1.1.9-adhoc.22/dist/custom-functions-runtime.js" type="text/javascript"></script>
-    ```
+    * If you're using Excel Online: 
 
-## Try out a basic custom function
+        1. Select **Insert** > **Add-ins**. 
+        2. Choose **Manage My Add-ins** and select **Upload My Add-in**. 
+        3. Choose **Browse...** and navigate to the root directory of the project that the Yo Office generator created. 
+        4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
+
+5. Update the `<script>` tab in **index.html** by completing the following steps:
+
+    1. In the root directory of the project that the Yo Office generator created, find **index.html** and open the file.
+
+    2. In **index.html**, find the `<script>` tag that immediately follows the `<title>` tag. Remove that `<script>` tag and insert the following `<script>` tag in the same location:
+
+        ```js
+        <script src="https://officedev.github.io/custom-functions/lib/custom-functions-runtime.js" type="text/javascript"></script>
+        ```
+
+## Try out a prebuilt custom function
 
 Now the custom functions in your file will be loaded and ready to use. There are several pre-built functions for you in the Yo Office project. All are attached to a namespace called CONTOSO that is defined in the XML manifest file. When you start typing =CONTOSO in a cell, the list of available functions will appear.
 
 Let's call the CONTOSO.ADD42() function, that adds 42 to any two numbers that you specify as arguments. In any cell, type `=CONTOSO.ADD42(1,2)`. It should deliver the answer 45.
 
-## Create a custom function
+## Create a custom function that requests data from the web
 
 What if you wanted a function that could fetch and display the price of Microsoft stock in real time? Custom functions are designed so you can easily request data from the web asynchronously.
 
