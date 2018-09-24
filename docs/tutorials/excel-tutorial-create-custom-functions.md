@@ -92,14 +92,19 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
 
 ## Try out a prebuilt custom function
 
-The custom functions project that the Yo Office generator created for you contains several prebuilt custom functions, defined within the **src/customfunction.js** file. The manifest file in the root of the project (**manifest.xml**) specifies that all custom functions belong to the `CONTOSO` namespace.
+The custom functions project that you created by using the Yo Office generator contains several prebuilt custom functions, defined within the **src/customfunction.js** file. The **manifest.xml** file in the root directory of the project specifies that all custom functions belong to the `CONTOSO` namespace.
 
-At this point, the prebuilt custom functions in your project are loaded and available within Excel. 
+At this point, the prebuilt custom functions in your project are loaded and available within Excel. Try out the `ADD42` custom function by completing the following steps in Excel:
 
+1. Within a cell, type **=CONTOSO**. Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.
 
-When you start typing =CONTOSO in a cell, the list of available functions will appear.
+2. Run the `CONTOSO.ADD42` function, with numbers `1` and `2` as input parameters, by specifying the following value in the cell and pressing enter:
 
-Let's call the CONTOSO.ADD42() function, that adds 42 to any two numbers that you specify as arguments. In any cell, type `=CONTOSO.ADD42(1,2)`. It should deliver the answer 45.
+    ```
+    =CONTOSO.ADD42(1,2)
+    ```
+
+The `ADD42` custom function adds 42 to the two numbers that you specify as input parameters. Typing `=CONTOSO.ADD42(1,2)` should produce the result **45** in the cell after you press enter. When you type the formula   press enter
 
 ## Create a custom function that requests data from the web
 
