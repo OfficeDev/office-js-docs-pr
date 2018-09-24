@@ -257,7 +257,7 @@ Complete the following steps to create a custom function named `STOCKPRICESTREAM
 
 ## Next steps
 
-In this tutorial, you've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams real-time data from the web. To learn more about custom functions in Excel, see [Create custom functions in Excel](../excel/custom-functions-overview.md). 
+In this tutorial, you've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams real-time data from the web. To learn more about custom functions in Excel, continue to the following article: 
 
 > [!div class="nextstepaction"]
 > [Create custom functions in Excel](../excel/custom-functions-overview.md)
