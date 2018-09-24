@@ -1,6 +1,6 @@
 ---
-title: Package your add-in using Visual Studio to prepare for publishing
-description: ''
+title: Package your add-in using Visual Studio to prepare for publishing | Microsoft Docs
+description: How to deploy your web project and package your add-in by using Visual Studio 2015.
 ms.date: 01/25/2018
 ---
 
