@@ -65,8 +65,8 @@ The following code shows the XSD for the OfficeDefinitions XML Schema.
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xs="https://www.w3.org/2001/XMLSchema"
   targetNamespace="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions"
   xmlns="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions">
   <xs:element name="Result">
@@ -199,7 +199,7 @@ The following is an example manifest file for a dictionary add-in.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
   <Id>7164e750-dc86-49c0-b548-1bac57abdc7c</Id>
   <Version>15.0</Version>
   <ProviderName>Microsoft Office Demo Dictionary</ProviderName>

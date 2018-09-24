@@ -7,7 +7,7 @@
     xmlns:taskpanor="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
     xmlns:contentor="http://schemas.microsoft.com/office/contentappversionoverrides"
     xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    xmlns:xs="https://www.w3.org/2001/XMLSchema">
 
   <xs:import schemaLocation="OfficeAppBasicTypesV1_0.xsd" namespace="http://schemas.microsoft.com/office/officeappbasictypes/1.0" />
   <xs:import schemaLocation="MailAppVersionOverridesV1_0.xsd" namespace="http://schemas.microsoft.com/office/mailappversionoverrides" />
@@ -1039,7 +1039,7 @@
               <xs:documentation>Contains elements that override elements defined in the top level manifest for hosts that support the additional functionality that this extended schema defines. These elements may also contain new elements.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:any id="ContentAppSignature" minOccurs="0" maxOccurs="1" namespace="http://www.w3.org/2000/09/xmldsig#" processContents="lax">
+          <xs:any id="ContentAppSignature" minOccurs="0" maxOccurs="1" namespace="https://www.w3.org/2000/09/xmldsig#" processContents="lax">
             <xs:annotation>
               <xs:documentation>Reserved to store the app manifest digital signature.</xs:documentation>
             </xs:annotation>
@@ -1174,7 +1174,7 @@
               <xs:documentation>Contains elements that override elements defined in the top level manifest for hosts that support the additional functionality that this extended schema defines.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:any id="TaskPaneAppSignature" minOccurs="0" maxOccurs="1" namespace="http://www.w3.org/2000/09/xmldsig#" processContents="lax">
+          <xs:any id="TaskPaneAppSignature" minOccurs="0" maxOccurs="1" namespace="https://www.w3.org/2000/09/xmldsig#" processContents="lax">
             <xs:annotation>
               <xs:documentation>Reserved to store the app manifest digital signature.</xs:documentation>
             </xs:annotation>
@@ -1255,7 +1255,7 @@
               <xs:documentation>Contains elements that override elements defined in the top level manifest for hosts that support the additional functionality that this extended schema defines.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:any id="MailAppSignature" minOccurs="0" maxOccurs="1" namespace="http://www.w3.org/2000/09/xmldsig#" processContents="lax">
+          <xs:any id="MailAppSignature" minOccurs="0" maxOccurs="1" namespace="https://www.w3.org/2000/09/xmldsig#" processContents="lax">
             <xs:annotation>
               <xs:documentation>Reserved to store the app manifest digital signature.</xs:documentation>
             </xs:annotation>

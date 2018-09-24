@@ -4,7 +4,7 @@
     xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
     xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
     xmlns:odoc="http://schemas.microsoft.com/internal/obd"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    xmlns:xs="https://www.w3.org/2001/XMLSchema">
 
   <xs:import schemaLocation="OfficeAppBasicTypesV1_0.xsd" namespace="http://schemas.microsoft.com/office/officeappbasictypes/1.0" />
 
