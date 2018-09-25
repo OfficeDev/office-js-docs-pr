@@ -77,7 +77,24 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
 
 4. Register your custom functions add-in in Excel by completing steps for the platform that you'll be using in this tutorial.
 
-    [!include[Excel custom functions register add-in](../includes/file-tutorial-excel-custom-functions.md)]
+    * If you're using Excel 2016 for Windows:
+
+        1. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
+            ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1.png)
+
+        2. In the list of available add-ins, find the **Developer Add-ins** section and select the add-in **Excel Custom Function** to register it.
+            ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/excel-cf-register-add-in-2.png)
+
+    * If you're using Excel Online: 
+
+        1. In Excel Online, choose the **Insert** tab and then choose **Add-ins**.
+            ![Insert ribbon in Excel Online with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
+
+        2. Choose **Manage My Add-ins** and select **Upload My Add-in**. 
+
+        3. Choose **Browse...** and navigate to the root directory of the project that the Yo Office generator created. 
+        
+        4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
 ## Try out a prebuilt custom function
 
@@ -154,7 +171,24 @@ Complete the following steps to create a custom function named `STOCKPRICE` that
 
 4. You must reregister the add-in in Excel in order for the new function to be available to end-users. Reregister your custom functions add-in in Excel by completing the following steps:
 
-    [!include[Excel custom functions register add-in](../includes/file-tutorial-excel-custom-functions.md)]
+    * If you're using Excel 2016 for Windows:
+
+        1. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
+            ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1.png)
+
+        2. In the list of available add-ins, find the **Developer Add-ins** section and select the add-in **Excel Custom Function** to register it.
+            ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/excel-cf-register-add-in-2.png)
+
+    * If you're using Excel Online: 
+
+        1. In Excel Online, choose the **Insert** tab and then choose **Add-ins**.
+            ![Insert ribbon in Excel Online with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
+
+        2. Choose **Manage My Add-ins** and select **Upload My Add-in**. 
+
+        3. Choose **Browse...** and navigate to the root directory of the project that the Yo Office generator created. 
+
+        4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
 5. Now, let's try out the new function. In cell **B1**, type the text `=CONTOSO.STOCKPRICE("MSFT")` and press enter. You should see that the result in cell **B1** is the current stock price for one share of Microsoft stock.
 
@@ -224,7 +258,24 @@ Complete the following steps to create a custom function named `STOCKPRICESTREAM
 
 3. You must reregister the add-in in Excel in order for the new function to be available to end-users. Reregister your custom functions add-in in Excel by completing the following steps:
 
-    [!include[Excel custom functions register add-in](../includes/file-tutorial-excel-custom-functions.md)]
+    * If you're using Excel 2016 for Windows:
+
+        1. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
+            ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1.png)
+
+        2. In the list of available add-ins, find the **Developer Add-ins** section and select the add-in **Excel Custom Function** to register it.
+            ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/excel-cf-register-add-in-2.png)
+
+    * If you're using Excel Online: 
+
+        1. In Excel Online, choose the **Insert** tab and then choose **Add-ins**.
+            ![Insert ribbon in Excel Online with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
+
+        2. Choose **Manage My Add-ins** and select **Upload My Add-in**. 
+
+        3. Choose **Browse...** and navigate to the root directory of the project that the Yo Office generator created. 
+
+        4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
 4. Now, let's try out the new function. In cell **C1**, type the text `=CONTOSO.STOCKPRICESTREAM("MSFT")` and press enter. Provided that the stock market is open, you should see that the result in cell **C1** is constantly updated to reflect the real-time price for one share of Microsoft stock.
 
