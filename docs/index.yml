@@ -28,27 +28,27 @@ sections:
     style: icon48
     items: 
     - image: 
-        src: https://docs.microsoft.com/office/dev/add-ins/images/index/ExcelLogoColor.svg
+      src: https://docs.microsoft.com/office/dev/add-ins/images/index/ExcelLogoColor.svg
       text: Excel
       href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/excel-quickstart-jquery
     - image: 
-        src: https://docs.microsoft.com/office/dev/add-ins/images/index/WordLogoColor.svg
+      src: https://docs.microsoft.com/office/dev/add-ins/images/index/WordLogoColor.svg
       text: Word
       href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/word-quickstart
     - image: 
-        src: https://docs.microsoft.com/office/dev/add-ins/images/index/OneNoteLogoColor.svg
+      src: https://docs.microsoft.com/office/dev/add-ins/images/index/OneNoteLogoColor.svg
       text: OneNote
       href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/onenote-quickstart
     - image: 
-        src: https://docs.microsoft.com/office/dev/add-ins/images/index/OutlookLogoColor.svg
+      src: https://docs.microsoft.com/office/dev/add-ins/images/index/OutlookLogoColor.svg
       text: Outlook
       href: https://docs.microsoft.com/outlook/add-ins/quick-start
     - image: 
-        src: https://docs.microsoft.com/office/dev/add-ins/images/index/PowerPointLogoColor.svg
+      src: https://docs.microsoft.com/office/dev/add-ins/images/index/PowerPointLogoColor.svg
       text: PowerPoint
       href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/powerpoint-quickstart
     - image: 
-        src: https://docs.microsoft.com/office/dev/add-ins/images/index/ProjectLogoColor.svg
+      src: https://docs.microsoft.com/office/dev/add-ins/images/index/ProjectLogoColor.svg
       text: Project
       href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/project-quickstart
 - title: How-to Guides
