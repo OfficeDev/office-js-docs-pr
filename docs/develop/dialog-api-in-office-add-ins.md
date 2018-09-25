@@ -254,7 +254,7 @@ When `displayDialogAsync` is called, it always passes an [AsyncResult](https://d
 var dialog;
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
 function (asyncResult) {
-    if (asyncResult.status === "failed") {
+    if (asyncResult.status === Office.AsyncResultStatus.Failed) {
         showNotification(asynceResult.error.code = ": " + asyncResult.error.message);
     } else {
 	    dialog = asyncResult.value;
