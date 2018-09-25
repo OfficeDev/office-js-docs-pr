@@ -27,7 +27,7 @@ The `Range.dataValidation` property, which takes a [DataValidation](https://docs
 
 ### Creating validation rules
 
-To add data validation to a range, your code must set the `rule` property of the `DataValidation` object in `Range.dataValidation`. This takes a [DataValidationRule](https://docs.microsoft.com/javascript/api/excel?view=office-js) object which has seven optional properties. *No more than one of these properties may be present in any `DataValidationRule` object.* The property that you include determines the type of validation.
+To add data validation to a range, your code must set the `rule` property of the `DataValidation` object in `Range.dataValidation`. This takes a [DataValidationRule](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationrule) object which has seven optional properties. *No more than one of these properties may be present in any `DataValidationRule` object.* The property that you include determines the type of validation.
 
 #### Basic and DateTime validation rule types
 
@@ -205,7 +205,7 @@ For more information, see [DataValidationPrompt](https://docs.microsoft.com/java
 
 ### Remove data validation from a range
 
-To remove data validation from a range, call the  [Range.dataValidation.clear()](https://docs.microsoft.com/javascript/api/excel/excel.datavalidation#clear) method.
+To remove data validation from a range, call the  [Range.dataValidation.clear()](https://docs.microsoft.com/javascript/api/excel/excel.datavalidation#clear--) method.
 
 ```js
 myrange.dataValidation.clear()
