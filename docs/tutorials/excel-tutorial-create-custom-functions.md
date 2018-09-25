@@ -63,23 +63,21 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
 
 3. Start the local web server.
 
-    ```bash
-    npm start
-    ```
+    * If you're using Excel 2016 for Windows, run the following command to start the local web server, launch Excel, and sideload the add-in:
 
-4. Register your custom functions add-in in Excel by completing the following steps:
+        ```bash
+        npm start
+        ```
 
-    * If you're using Excel 2016 for Windows:
+    * If you're using Excel Online, run the following command to start the local web server: 
 
-        1. In Excel, select **Insert** >> **My Add-ins** > **Insert an Add-in**.
-        2. In the list of available add-ins, find the **Developer Add-ins** section and select the add-in **Excel Custom Function** to register it.
+        ```bash
+        npm run start-web
+        ```
 
-    * If you're using Excel Online: 
+4. Register your custom functions add-in in Excel by completing steps for the platform that you'll be using in this tutorial.
 
-        1. Select **Insert** > **Add-ins**. 
-        2. Choose **Manage My Add-ins** and select **Upload My Add-in**. 
-        3. Choose **Browse...** and navigate to the root directory of the project that the Yo Office generator created. 
-        4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
+    [!include[Excel custom functions register add-in](../includes/file-tutorial-create-custom-functions.md)]
 
 ## Try out a prebuilt custom function
 
