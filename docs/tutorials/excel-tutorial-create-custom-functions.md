@@ -77,7 +77,7 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
 
 4. Register your custom functions add-in in Excel by completing steps for the platform that you'll be using in this tutorial.
 
-    [!include[Excel custom functions register add-in](../includes/file-tutorial-create-custom-functions.md)]
+    [!include[Excel custom functions register add-in](../includes/file-tutorial-excel-custom-functions.md)]
 
 ## Try out a prebuilt custom function
 
@@ -154,17 +154,7 @@ Complete the following steps to create a custom function named `STOCKPRICE` that
 
 4. You must reregister the add-in in Excel in order for the new function to be available to end-users. Reregister your custom functions add-in in Excel by completing the following steps:
 
-    * If you're using Excel 2016 for Windows:
-
-        1. In Excel, select **Insert** > **My Add-ins** > **Insert an Add-in**. 
-        2. In the list of available add-ins, find the **Developer Add-ins** section and select the add-in **Excel Custom Function** to register it.
-
-    * If you're using Excel Online: 
-
-        1. Select **Insert** > **Add-ins**. 
-        2. Choose **Manage My Add-ins** and select **Upload My Add-in**. 
-        3. Choose **Browse...** and navigate to the root directory of the project that the Yo Office generator created. 
-        4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
+    [!include[Excel custom functions register add-in](../includes/file-tutorial-excel-custom-functions.md)]
 
 5. Now, let's try out the new function. In cell **B1**, type the text `=CONTOSO.STOCKPRICE("MSFT")` and press enter. You should see that the result in cell **B1** is the current stock price for one share of Microsoft stock.
 
@@ -234,17 +224,7 @@ Complete the following steps to create a custom function named `STOCKPRICESTREAM
 
 3. You must reregister the add-in in Excel in order for the new function to be available to end-users. Reregister your custom functions add-in in Excel by completing the following steps:
 
-    * If you're using Excel 2016 for Windows:
-
-        1. In Excel, select **Insert** > **My Add-ins** > **Insert an Add-in**. 
-        2. In the list of available add-ins, find the **Developer Add-ins** section and select the add-in **Excel Custom Function** to register it.
-
-    * If you're using Excel Online: 
-
-        1. Select **Insert** > **Add-ins**. 
-        2. Choose **Manage My Add-ins** and select **Upload My Add-in**. 
-        3. Choose **Browse...** and navigate to the root directory of the project that the Yo Office generator created. 
-        4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
+    [!include[Excel custom functions register add-in](../includes/file-tutorial-excel-custom-functions.md)]
 
 4. Now, let's try out the new function. In cell **C1**, type the text `=CONTOSO.STOCKPRICESTREAM("MSFT")` and press enter. Provided that the stock market is open, you should see that the result in cell **C1** is constantly updated to reflect the real-time price for one share of Microsoft stock.
 
