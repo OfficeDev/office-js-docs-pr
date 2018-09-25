@@ -71,7 +71,7 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
 
     * If you're using Excel 2016 for Windows:
 
-        1. In Excel, select **Insert** > **My Add-ins** > **Insert an Add-in**. 
+        1. In Excel, select **Insert** >> **My Add-ins** > **Insert an Add-in**.
         2. In the list of available add-ins, find the **Developer Add-ins** section and select the add-in **Excel Custom Function** to register it.
 
     * If you're using Excel Online: 
