@@ -31,7 +31,7 @@ In this tutorial, you will:
     npm install -g yo generator-office
     ```
 
-* Excel 2016 for Windows (build number 10827 or later) or Excel Online
+* Excel for Windows (build number 10827 or later) or Excel Online
 
 * [Join the Office Insider program](https://products.office.com/office-insider). 
     > [!NOTE]
@@ -63,13 +63,13 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
 
 3. Start the local web server.
 
-    * If you're using Excel 2016 for Windows, run the following command to start the local web server, launch Excel, and sideload the add-in:
+    * If you'll be using Excel for Windows to test your custom functions, run the following command to start the local web server, launch Excel, and sideload the add-in:
 
         ```bash
         npm start
         ```
 
-    * If you're using Excel Online, run the following command to start the local web server: 
+    * If you'll be using Excel Online to test your custom functions, run the following command to start the local web server: 
 
         ```bash
         npm run start-web
@@ -77,7 +77,7 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
 
 4. Register your custom functions add-in in Excel by completing steps for the platform that you'll be using in this tutorial.
 
-    * If you're using Excel 2016 for Windows:
+    * If you'll be using Excel for Windows to test your custom functions:
 
         1. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
             ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1.png)
@@ -85,7 +85,7 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
         2. In the list of available add-ins, find the **Developer Add-ins** section and select the add-in **Excel Custom Function** to register it.
             ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/excel-cf-register-add-in-2.png)
 
-    * If you're using Excel Online: 
+    * If you'll be using Excel Online to test your custom functions: 
 
         1. In Excel Online, choose the **Insert** tab and then choose **Add-ins**.
             ![Insert ribbon in Excel Online with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
@@ -93,7 +93,7 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
         2. Choose **Manage My Add-ins** and select **Upload My Add-in**. 
 
         3. Choose **Browse...** and navigate to the root directory of the project that the Yo Office generator created. 
-        
+
         4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
 ## Try out a prebuilt custom function
@@ -171,7 +171,7 @@ Complete the following steps to create a custom function named `STOCKPRICE` that
 
 4. You must reregister the add-in in Excel in order for the new function to be available to end-users. Reregister your custom functions add-in in Excel by completing the following steps:
 
-    * If you're using Excel 2016 for Windows:
+    * If you're using Excel for Windows:
 
         1. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
             ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1.png)
@@ -258,7 +258,7 @@ Complete the following steps to create a custom function named `STOCKPRICESTREAM
 
 3. You must reregister the add-in in Excel in order for the new function to be available to end-users. Reregister your custom functions add-in in Excel by completing the following steps:
 
-    * If you're using Excel 2016 for Windows:
+    * If you're using Excel for Windows:
 
         1. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
             ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1.png)
