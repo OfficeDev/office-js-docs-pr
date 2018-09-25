@@ -38,7 +38,7 @@ If you are testing your add-in in Office 2016 desktop, you can enable [runtime l
 
 ## Mapping names
 
-By default, the name of a custom function in your JavaScript file is typically declared using entirely uppercase letters, and corresponds exactly to the function name that end users see in Excel. However, you can change this by using the `CustomFunctionMappings` object to map one or more function names from the JavaScript file to different values that end users will see as function names in Excel. This is helpful if you are using an uglifier, webpack, or import syntax - all of which have difficulty with uppercase function names. `CustomFunctionMappings` required in both JavaScript and TypeScript projects. 
+By default, the name of a custom function in your JavaScript file is typically declared using entirely uppercase letters, and corresponds exactly to the function name that end users see in Excel. However, you can change this by using the `CustomFunctionMappings` object to map one or more function names from the JavaScript file to different values that end users will see as function names in Excel. This is helpful if you are using an uglifier, webpack, or import syntax - all of which have difficulty with uppercase function names. `CustomFunctionMappings` is required in both JavaScript and TypeScript projects. 
   
 The following code sample defines a single key-value pair that maps the JavaScript function name `plusFortyTwo` to the `ADD42` function name in the Excel UI. When the end user chooses the `ADD42` function in Excel, the `plusFortyTwo` JavaScript function will run.
 
