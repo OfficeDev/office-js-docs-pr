@@ -8,7 +8,7 @@ ms.date: 01/23/2018
 # Referencing the JavaScript API for Office library from its content delivery network (CDN)
 
 > [!NOTE]
-> As an alternative to referencing the library from the CDN as described in this article, you can also get Intellisense by running the following command in a Node-enabled system prompt (or git bash window) from the root of your project folder. You must have [Node.js](https://nodejs.org) installed (which includes npm).
+> In addition to the steps described in this article, if you want to use TypeScript, then to get Intellisense you will need run the following command in a Node-enabled system prompt (or git bash window) from the root of your project folder. You must have [Node.js](https://nodejs.org) installed (which includes npm).
 > 
 > ```
 > npm install --save-dev @types/office-js
