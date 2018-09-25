@@ -29,11 +29,11 @@ function getComment(x) {
 ```
 
 ## Debugging
-Currently, the best method for debugging Excel custom functions is to first [sideload](../testing/sideload-office-add-ins-for-testing.md) your add-in within **Excel Online**. Then you can debug your custom functions by using the [F12 debugging tool native to your browser](../testing/debug-add-ins-in-office-online.md). Use `console.log` statements within your custom functions code to send output to the console in real time.
+Currently, the best method for debugging Excel custom functions is to first [sideload](../testing/sideload-office-add-ins-for-testing.md) your add-in within **Excel Online**. You can then debug your custom functions by using the [F12 debugging tool native to your browser](../testing/debug-add-ins-in-office-online.md). Use `console.log` statements within your custom functions code to send output to the console in real time.
 
 If your add-in fails to register, [verify that SSL certificates are correctly configured](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) for the web server that's hosting your add-in application.
 
-If you are testing your add-in in Office 2016 desktop you can enable [runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in-manifest) to debug issues with your add-in's XML manifest file as well as several installation and runtime conditions. 
+If you are testing your add-in in Office 2016 desktop, you can enable [runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in) to debug issues with your add-in's XML manifest file as well as several installation and runtime conditions. 
 
 
 ## Mapping names
@@ -71,6 +71,6 @@ CustomFunctionsMappings = {
 
  ## See also
 
-* [Create custom functions in Excel](custom-functions-overview.md)
-* [Custom functions metadata](custom-functions-json.md)
-* [Runtime for Excel custom functions](custom-functions-runtime.md)
+- [Create custom functions in Excel](custom-functions-overview.md)
+- [Custom functions metadata](custom-functions-json.md)
+- [Runtime for Excel custom functions](custom-functions-runtime.md)
