@@ -31,7 +31,7 @@ To add data validation to a range, your code must set the `rule` property of the
 
 #### Basic and DateTime validation rule types
 
-The first three `DataValidationRule` properties (i.e., validation rule types) take a [BasicDataValidation]https://docs.microsoft.com/javascript/api/excel/excel.basicdatavalidation) object as their value.
+The first three `DataValidationRule` properties (i.e., validation rule types) take a [BasicDataValidation](https://docs.microsoft.com/javascript/api/excel/excel.basicdatavalidation) object as their value.
 
 - `wholeNumber` &#8212; Requires a whole number in addition to any other validation specified by the `BasicDataValidation` object.
 - `decimal` &#8212; Requires a decimal number in addition to any other validation specified by the `BasicDataValidation` object.
