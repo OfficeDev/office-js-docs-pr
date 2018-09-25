@@ -72,7 +72,7 @@ The manifest file specifies the URL of the add-in webpage or web application, th
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" 
-                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
               xsi:type="TaskPaneApp">
       <Id>1234-5678</Id>
       <Version>15.0</Version>
@@ -110,7 +110,7 @@ The manifest file specifies the URL of the add-in webpage or web application, th
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" 
-                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
               xsi:type="TaskPaneApp">
       <Id>1234-5678</Id>
       <Version>15.0</Version>
