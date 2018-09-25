@@ -116,7 +116,7 @@ The `ADD` custom function computes the sum of the two numbers that you specify a
 
 What if you needed a function that could retrieve and display the price of a stock in real time? Custom functions are designed so that you can easily request data from the web asynchronously.
 
-Complete the following steps to create a custom function named `STOCKPRICE` that accepts a stock ticker (e.g., **MSFT**) and returns the price of that stock. This custom function uses the IEX Trading API, which is free and does not require authentication.
+Complete the following steps to create a custom function named `stockPrice` that accepts a stock ticker (e.g., **MSFT**) and returns the price of that stock. This custom function uses the IEX Trading API, which is free and does not require authentication.
 
 1. In the **stock-ticker** project that the Yo Office generator created, find the file **src/customfunctions.js** and open it in your code editor.
 
@@ -125,35 +125,34 @@ Complete the following steps to create a custom function named `STOCKPRICE` that
     In this code, notice that the asynchronous function returns a JavaScript Promise with the data from the IEX Trading API. Asynchronous custom functions must either return a new Promise or use JavaScript's `async` / `await` syntax.
 
     ```js
-    function STOCKPRICE(ticker) {
-        return new Promise(
-            function(resolve) {
-                var xhr = new XMLHttpRequest();
-                var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price"
-                //add handler for xhr
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState == XMLHttpRequest.DONE) {
-                        //return result back to Excel
-                        resolve(xhr.responseText);
-                    }
-                }
-                //make request
-                xhr.open('GET', url, true);
-                xhr.send();
-        });
+    function stockPrice(ticker) {
+        var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
+        return fetch(url)
+            .then(function(response) {
+                return response.text();
+            })
+            .then(function(text) {
+                return parseFloat(text);
+            });
+
+        // Note: in case of an error, the returned rejected Promise
+        //    will be bubbled up to Excel to indicate an error.
     }
+
+    CustomFunctionMappings.STOCKPRICE = stockPrice;
     ```
+
 
 3. Before Excel can make this new function available to end-users, you must specify metadata that describes this function. In the **stock-ticker** project that the Yo Office generator created, find the file **config/customfunctions.json** and open it in your code editor. Add the following object to the `functions` array within the **config/customfunctions.json** file and save the file.
 
-    This JSON describes the `STOCKPRICE` function.
+    This JSON describes the `stcckPrice` function.
 
     ```json
     {
         "id": "STOCKPRICE",
         "name": "STOCKPRICE",
-        "description": "Retrieves price of specified stock",
-        "helpUrl": "http://dev.office.com",
+        "description": "Fetches current stock price",
+        "helpUrl": "http://yourhelpurl.com",
         "result": {
             "type": "number",
             "dimensionality": "scalar"
@@ -194,50 +193,54 @@ Complete the following steps to create a custom function named `STOCKPRICE` that
 
 ## Create a streaming asynchronous custom function
 
-The `STOCKPRICE` function that you just created returns the price of a stock at a specific moment in time, but stock prices are always changing. Let's create a custom function that streams data from an API to get real-time updates on a stock price.
+The `stockPrice` function that you just created returns the price of a stock at a specific moment in time, but stock prices are always changing. Let's create a custom function that streams data from an API to get real-time updates on a stock price.
 
-Complete the following steps to create a custom function named `STOCKPRICESTREAM` that requests the price of the specified stock every 1000 milliseconds. While the initial request is in-progress, you may see the placeholder value **#GETTING_DATA** the cell where the function is being called. When a value is returned by the function, **#GETTING_DATA** will be replaced by that value in the cell.
+Complete the following steps to create a custom function named `stockPriceStream` that requests the price of the specified stock every 1000 milliseconds (provided that the previous request has completed). While the initial request is in-progress, you may see the placeholder value **#GETTING_DATA** the cell where the function is being called. When a value is returned by the function, **#GETTING_DATA** will be replaced by that value in the cell.
 
 1. In the **stock-ticker** project that the Yo Office generator created, add the following function to **customfunctions.js** and save the file.
 
     ```js
-    function STOCKPRICESTREAM(ticker, caller){
-        var result = 0;
-
-        //return every second
-        var timer = setInterval(function(){
-            var xhr = new XMLHttpRequest();
-            var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
-
-            //add handler for xhr
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == XMLHttpRequest.DONE) {
-                    //return result back to Excel
-                    caller.setResult(xhr.responseText);
-                }
+    function stockPriceStream(ticker, handler) {
+        var updateFrequency = 1000 /* milliseconds*/;
+        var isPending = false;
+        var timer = setInterval(function() {
+            // If there is already a pending request, skip this iteration:
+            if (isPending) {
+                return;
             }
-
-            //make request
-            xhr.open('GET', url, true);
-            xhr.send();
-        }, 1000);
-
-        caller.onCanceled = function(){
+            var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
+            isPending = true;
+            fetch(url)
+                .then(function(response) {
+                    return response.text();
+                })
+                .then(function(text) {
+                    handler.setResult(parseFloat(text));
+                })
+                .catch(function(error) {
+                    handler.setResult(error);
+                })
+                .then(function() {
+                    isPending = false;
+                });
+        }, updateFrequency);
+        handler.onCanceled = () => {
             clearInterval(timer);
-        }
+        };
     }
+    CustomFunctionMappings.STOCKPRICESTREAM = stockPriceStream;
     ```
 
 2. Before Excel can make this new function available to end-users, you must specify metadata that describes this function. In the **stock-ticker** project that the Yo Office generator created, add the following object to the `functions` array within the **config/customfunctions.json** file and save the file.
 
-    This JSON describes the `STOCKPRICESTREAM` function. Notice that the `stream` property within the `options` object is set to `true`, to indicate that this is a streaming function.
+    This JSON describes the `stockPriceStream` function. Notice that the `stream` property within the `options` object is set to `true`, to indicate that this is a streaming function.
 
     ```json
-    {
+    { 
         "id": "STOCKPRICESTREAM",
         "name": "STOCKPRICESTREAM",
-        "description": "Streams real-time stock price",
-        "helpUrl": "http://dev.office.com",
+        "description": "Streams real time stock price",
+        "helpUrl": "http://yourhelpurl.com",
         "result": {
             "type": "number",
             "dimensionality": "scalar"
@@ -251,7 +254,8 @@ Complete the following steps to create a custom function named `STOCKPRICESTREAM
             }
         ],
         "options": {
-            "stream": true
+            "stream": true,
+            "cancelable": true
         }
     }
     ```
