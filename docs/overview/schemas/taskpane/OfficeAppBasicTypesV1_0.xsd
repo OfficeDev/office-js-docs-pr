@@ -3,7 +3,7 @@
     targetNamespace="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
     xmlns="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
     xmlns:odoc="http://schemas.microsoft.com/internal/obd"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    xmlns:xs="https://www.w3.org/2001/XMLSchema">
 
   <xs:simpleType name="NonEmptyString">
     <xs:annotation>

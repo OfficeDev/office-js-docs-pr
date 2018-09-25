@@ -1,200 +1,236 @@
 ---
 title: Excel custom functions tutorial
-description: In this tutorial, you’ll create an Excel add-in which contains a custom function that can perform calculations, request web data, or stream web data.
+description: In this tutorial, you’ll create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
 ms.date: 09/20/2018
 ms.topic: tutorial
 #Customer intent: As an add-in developer, I want to create a custom function in Excel to increase productivity. 
 ---
-# Create a streaming Excel custom function
+
+# Tutorial: Create custom functions in Excel
 
 ## Introduction
 
-Custom Functions give you the power to automate processes in Excel. You can use them for something as simple as creating your own custom calculation, similar to `=SUM()`, or for more complex tasks, like streaming data into your worksheet from the web in real-time.
+Custom functions enable you to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any other native function in Excel, such as `SUM()`. You can create custom functions that perform simple tasks such as custom calculations or more complex tasks such as streaming real-time data from the web into a worksheet.
 
-In this tutorial, you will learn how to:
+In this tutorial, you will:
 > [!div class="checklist"]
-> * Create a custom function project using the Yo Office generator
-> * Build a custom function which performs a simple calculation
-> * Use a custom function to request data from the web
-> * Create a custom function which streams real-time data from the web
+> * Create a custom functions project by using the Yo Office generator
+> * Use a prebuilt custom function to perform a simple calculation
+> * Create a custom function that requests data from the web
+> * Create a custom function that streams real-time data from the web
 
 ## Prerequisites
 
 * [Node.js and npm](https://nodejs.org/en/)
+
 * [Git Bash](https://git-scm.com/downloads) (or another Git client)
-* [Yeoman](http://yeoman.io/) and the [Yo Office generator](https://www.npmjs.com/package/generator-office)
-* Office 2016 for Windows, build number 10827 or later. Also, you must [join the Office Insider program](https://products.office.com/office-insider). 
 
-## Create your add-in project
+* The latest version of [Yeoman](http://yeoman.io/) and the [Yo Office generator](https://www.npmjs.com/package/generator-office). To install these tools globally, run the following command via the command prompt:
 
-You’ll begin this tutorial by using the Yo Office generator, which will automatically create the files you need for your project.
+    ```bash
+    npm install -g yo generator-office
+    ```
 
-1. In your command line interface, create a scaffold of your project.
+* Excel 2016 for Windows (build number 10827 or later) or Excel Online
 
-```bash
-yo office
-```
+* [Join the Office Insider program](https://products.office.com/office-insider). 
+    > [!NOTE]
+    > Currently, you must join the Office Insider program in order to have access to custom functions. Custom functions are disabled across all Office builds unless you are a member of the Office Insider program.
 
-![Yo Office bash prompts for custom functions](../images/yo-office-excel-cfs-stock-ticker.png)
-Answer the prompts as directed below:
+## Create a custom functions project
 
-* Choose a project type: `Excel Custom Functions Add-in project (September 2018 Preview Refresh: Requires the Insider channel for Excel)`
-* What do you want to name your add-in? `stock-ticker`
+You’ll begin this tutorial by using the Yo Office generator to create the files that you need for your custom functions project.
 
-For this tutorial, choose Javascript as the language you would like to use to build your add-in.
+1. Run the following command and then answer the prompts as follows.
 
-After you complete the wizard, the generator will create the project files and install supporting Node components.
+    ```bash
+    yo office
+    ```
 
-2. Next, start a local web server by running one of the below commands in your command line interface.
+    * Choose a project type: `Excel Custom Functions Add-in project (...)`
+    * Choose a script type: `JavaScript`
+    * What do you want to name your add-in? `stock-ticker`
 
-If you are developing using the desktop version of Excel, use:
+    ![Yo Office bash prompts for custom functions](../images/yo-office-cfs-stock-ticker-2.png)
 
-```bash
-npm start
-```
+    After you complete the wizard, the generator will create the project files and install supporting Node components.
 
-3. You will also need to register your custom functions add-in. In Excel, select **Insert > My Add-ins > Insert an Add-in**. This will bring up a list of available add-ins. Under "Developer Add-ins" you will see your add-in, under the name "Excel Custom Function". Select it to register it.
+2. Navigate to the project folder.
 
-Select **Insert > Add-ins**. Choose **Manage My Add-ins** and select **Upload My Add-in**. Click "Browse..." for your manifest file (`.\manifest.xml`), then click Open, select **Upload**.
+    ```bash
+    cd stock-ticker
+    ```
 
-4. Finally, change the script tag. Open up your add-in project in your favorite code editor. In **index.html** in the root folder, delete and replace the script tag immediately following the <title> tags with the code below:
+3. Start the local web server.
 
-```js
-<script src="https://unpkg.com/@microsoft/office-js@1.1.9-adhoc.22/dist/custom-functions-runtime.js" type="text/javascript"></script>
-```
+    * If you're using Excel 2016 for Windows, run the following command to start the local web server, launch Excel, and sideload the add-in:
 
-## Try out a basic custom function
+        ```bash
+        npm start
+        ```
 
-Now the custom functions in your file will be loaded and ready to use. There are several pre-built functions for you in the Yo Office project. All are attached to a namespace called CONTOSO which is defined in the XML manifest file. When you start typing =CONTOSO in a cell, the list of available functions will appear.
+    * If you're using Excel Online, run the following command to start the local web server: 
 
-Let's call the CONTOSO.ADD42() function, which adds 42 to any two numbers that you specify as arguments. In any cell, type `=CONTOSO.ADD42(1,2)`. It should deliver the answer 45.
+        ```bash
+        npm run start-web
+        ```
 
-## Create a custom function
+4. Register your custom functions add-in in Excel by completing steps for the platform that you'll be using in this tutorial.
 
-What if you wanted a function which could fetch and display the price of Microsoft stock in real time? Custom functions are designed so you can easily request data from the web asynchronously.
+    [!include[Excel custom functions register add-in](../includes/file-tutorial-excel-custom-functions.md)]
 
-Complete the following steps to create a custom function named STOCKPRICE that accepts a stock ticker (e.g., "MSFT") and returns the price of that stock. The custom function uses the IEX Trading API, which is free and does not require authentication.
+## Try out a prebuilt custom function
 
-1. Open your code editor of choice and navigate to the stock-ticker project folder. 
-2. Copy and paste the function below and add it to **customfunctions.js**.
+The custom functions project that you created by using the Yo Office generator contains several prebuilt custom functions, defined within the **src/customfunction.js** file. The **manifest.xml** file in the root directory of the project specifies that all custom functions belong to the `CONTOSO` namespace.
 
-You'll notice in this code that your asynchronous function returns a JavaScript Promise with the data from the IEX Trading API. Asynchronous custom functions require you to either return a new Promise or use JavaScript's async/await syntax.
+At this point, the prebuilt custom functions in your project are loaded and available within Excel. Try out the `ADD` custom function by completing the following steps in Excel:
 
-```js
-function STOCKPRICE(ticker) {
-    return new Promise(
-        function(resolve) {
-            let xhr = new XMLHttpRequest();
-            let url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price"
-            //add handler for xhr
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == XMLHttpRequest.DONE) {
-                //return result back to Excel
-                resolve(xhr.responseText);
+1. Within a cell, type **=CONTOSO**. Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.
+
+2. Run the `CONTOSO.ADD` function, with numbers `10` and `200` as input parameters, by specifying the following value in the cell and pressing enter:
+
+    ```
+    =CONTOSO.ADD(10,200)
+    ```
+
+The `ADD` custom function computes the sum of the two numbers that you specify as input parameters. Typing `=CONTOSO.ADD(10,200)` should produce the result **210** in the cell after you press enter.
+
+## Create a custom function that requests data from the web
+
+What if you needed a function that could retrieve and display the price of a stock in real time? Custom functions are designed so that you can easily request data from the web asynchronously.
+
+Complete the following steps to create a custom function named `STOCKPRICE` that accepts a stock ticker (e.g., **MSFT**) and returns the price of that stock. This custom function uses the IEX Trading API, which is free and does not require authentication.
+
+1. In the **stock-ticker** project that the Yo Office generator created, find the file **src/customfunctions.js** and open it in your code editor.
+
+2. Add the following function to **customfunctions.js** and save the file.
+
+    In this code, notice that the asynchronous function returns a JavaScript Promise with the data from the IEX Trading API. Asynchronous custom functions must either return a new Promise or use JavaScript's `async` / `await` syntax.
+
+    ```js
+    function STOCKPRICE(ticker) {
+        return new Promise(
+            function(resolve) {
+                var xhr = new XMLHttpRequest();
+                var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price"
+                //add handler for xhr
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == XMLHttpRequest.DONE) {
+                        //return result back to Excel
+                        resolve(xhr.responseText);
+                    }
                 }
-            }
-            //make request
-            xhr.open('GET', url, true);
-            xhr.send();
-    });
-}
-```
+                //make request
+                xhr.open('GET', url, true);
+                xhr.send();
+        });
+    }
+    ```
 
-3. In order for Excel to properly run this function, you must add some metadata to the **./config/customfunctions.json** file.
+3. Before Excel can make this new function available to end-users, you must specify metadata that describes this function. In the **stock-ticker** project that the Yo Office generator created, find the file **config/customfunctions.json** and open it in your code editor. Add the following object to the `functions` array within the **config/customfunctions.json** file and save the file.
 
-You'll notice that this JSON file describes the function, listing the types and dimensionality of the results and parameters.
+    This JSON describes the `STOCKPRICE` function.
 
-```json
-{
-    "id": "STOCKPRICE",
-    "name": "STOCKPRICE",
-    "description": "Multiplies number by 105",
-    "helpUrl": "http://dev.office.com",
-    "result": {
-        "type": "number",
-        "dimensionality": "scalar"
-    },  
-    "parameters": [
-        {
-            "name": "ticker",
-            "description": "stock ticker name",
-            "type": "string",
+    ```json
+    {
+        "id": "STOCKPRICE",
+        "name": "STOCKPRICE",
+        "description": "Retrieves price of specified stock",
+        "helpUrl": "http://dev.office.com",
+        "result": {
+            "type": "number",
             "dimensionality": "scalar"
-        }
-    ],
-}
-```
+        },  
+        "parameters": [
+            {
+                "name": "ticker",
+                "description": "stock ticker name",
+                "type": "string",
+                "dimensionality": "scalar"
+            }
+        ]
+    }
+    ```
 
-4. You will need to re-register this change once you have saved the file. In Excel, select **Insert > Add-ins > My Add-ins**. This will bring up a list of available add-ins. Under “Developer Add-ins" you will see your add-in, under the name “Excel Custom Function.” Select it to register it.
+4. You must reregister the add-in in Excel in order for the new function to be available to end-users. Reregister your custom functions add-in in Excel by completing the following steps:
 
-5. In cell B1, run the function `=CONTOSO.STOCKPRICE("MSFT")`. It should show you the current stock price for one share of Microsoft stock.
+    [!include[Excel custom functions register add-in](../includes/file-tutorial-excel-custom-functions.md)]
+
+5. Now, let's try out the new function. In cell **B1**, type the text `=CONTOSO.STOCKPRICE("MSFT")` and press enter. You should see that the result in cell **B1** is the current stock price for one share of Microsoft stock.
 
 ## Create a streaming asynchronous custom function
 
-The previous function returned the stock price for Microsoft at a particular moment in time, but stock prices are always changing. With custom functions, it is possible to “stream” data from an API to get updates on stock prices in real time.
+The `STOCKPRICE` function that you just created returns the price of a stock at a specific moment in time, but stock prices are always changing. Let's create a custom function that streams data from an API to get real-time updates on a stock price.
 
-To do this, you’ll create a new function, `=CONTOSO.STOCKPRICESTREAM`. It makes a request for updated data every 1000 milliseconds. When a call is made, you may see `#GETTING_DATA` appear in a cell. Once a value is returned, this notification should disappear.
+Complete the following steps to create a custom function named `STOCKPRICESTREAM` that requests the price of the specified stock every 1000 milliseconds. While the initial request is in-progress, you may see the placeholder value **#GETTING_DATA** the cell where the function is being called. When a value is returned by the function, **#GETTING_DATA** will be replaced by that value in the cell.
 
-1. Copy and paste the code below into **customfunctions.js**.
+1. In the **stock-ticker** project that the Yo Office generator created, add the following function to **customfunctions.js** and save the file.
 
-```js
+    ```js
     function STOCKPRICESTREAM(ticker, caller){
-    let result = 0;
+        var result = 0;
 
-    //return every second
-    setInterval(function(){
-    let xhr = new XMLHttpRequest();
-    let url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
+        //return every second
+        var timer = setInterval(function(){
+            var xhr = new XMLHttpRequest();
+            var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
 
-    //add handler for xhr
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == XMLHttpRequest.DONE) {
-            //return result back to Excel
-            caller.setResult(xhr.responseText);
-        }
-    }
+            //add handler for xhr
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == XMLHttpRequest.DONE) {
+                    //return result back to Excel
+                    caller.setResult(xhr.responseText);
+                }
+            }
 
-    //make request
-    xhr.open('GET', url, true);
-    xhr.send();
+            //make request
+            xhr.open('GET', url, true);
+            xhr.send();
         }, 1000);
-    }
-```
 
-3. Copy and paste the code below into to the **./config/customfunctions.json** file.
-
-    You'll notice that this JSON file is very similar to the previous function's JSON file, but that a new section has been added for "options." Because this function is streaming, you must specify this as true in the JSON.
-
-```json
-{
-    "id": "STOCKPRICESTREAM",
-    "name": "STOCKPRICESTREAM",
-    "description": "Streams real time stock price",
-    "helpUrl": "http://dev.office.com",
-    "result": {
-        "type": "number",
-        "dimensionality": "scalar"
-    },  
-    "parameters": [
-        {
-            "name": "ticker",
-            "description": "stock ticker name",
-            "type": "string",
-            "dimensionality": "scalar"
+        caller.onCanceled = function(){
+            clearInterval(timer);
         }
-    ],
-    "options": {
-        "stream": true
     }
-}
-```
+    ```
 
-4. Re-register this change once you have saved the file. In Excel, select **Insert > Add-ins > My Add-ins**. This will bring up a list of available add-ins. Under “Developer Add-ins" you will see your add-in, under the name “Excel Custom Function.” Select it to register it.
+2. Before Excel can make this new function available to end-users, you must specify metadata that describes this function. In the **stock-ticker** project that the Yo Office generator created, add the following object to the `functions` array within the **config/customfunctions.json** file and save the file.
 
-5. In cell C1, run the function `=CONTOSO.STOCKPRICESTREAM("MSFT")`. You should see the price of Microsoft stock - which will update in real time right in your workbook.
+    This JSON describes the `STOCKPRICESTREAM` function. Notice that the `stream` property within the `options` object is set to `true`, to indicate that this is a streaming function.
+
+    ```json
+    {
+        "id": "STOCKPRICESTREAM",
+        "name": "STOCKPRICESTREAM",
+        "description": "Streams real-time stock price",
+        "helpUrl": "http://dev.office.com",
+        "result": {
+            "type": "number",
+            "dimensionality": "scalar"
+        },  
+        "parameters": [
+            {
+                "name": "ticker",
+                "description": "stock ticker name",
+                "type": "string",
+                "dimensionality": "scalar"
+            }
+        ],
+        "options": {
+            "stream": true
+        }
+    }
+    ```
+
+3. You must reregister the add-in in Excel in order for the new function to be available to end-users. Reregister your custom functions add-in in Excel by completing the following steps:
+
+    [!include[Excel custom functions register add-in](../includes/file-tutorial-excel-custom-functions.md)]
+
+4. Now, let's try out the new function. In cell **C1**, type the text `=CONTOSO.STOCKPRICESTREAM("MSFT")` and press enter. Provided that the stock market is open, you should see that the result in cell **C1** is constantly updated to reflect the real-time price for one share of Microsoft stock.
 
 ## Next steps
 
-You’ve completed the custom functions add-in tutorial. To learn more about custom functions, see [Create custom functions in Excel](../excel/custom-functions-overview.md).
+In this tutorial, you've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams real-time data from the web. To learn more about custom functions in Excel, continue to the following article: 
+
 > [!div class="nextstepaction"]
 > [Create custom functions in Excel](../excel/custom-functions-overview.md)

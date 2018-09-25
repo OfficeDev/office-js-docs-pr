@@ -1,6 +1,6 @@
 ---
-title: Office Add-ins platform overview
-description: ''
+title: Office Add-ins platform overview | Microsoft Docs
+description:  Use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook.
 ms.date: 01/23/2018
 ---
 
@@ -89,7 +89,7 @@ You can use task panes in addition to add-in commands to enable users to interac
 
 *Figure 4. Task pane*
 
-![Task pane](../images/about-addins-taskpane.png)
+![Use task panes in addition to add-in commands](../images/about-addins-taskpane.png)
 
 ### Extend Outlook functionality 
 
@@ -105,7 +105,7 @@ You can embed web-based objects called content add-ins within Excel and PowerPoi
 
 *Figure 5. Content add-in*
 
-![Content add-in](../images/about-addins-contentaddin.png)
+![Embed web-based objects called content add-ins](../images/about-addins-contentaddin.png)
 
 ## Office JavaScript APIs 
 

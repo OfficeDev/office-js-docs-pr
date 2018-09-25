@@ -25,7 +25,7 @@ Create an XML file in a local directory. The XML file includes the **OfficeApp**
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
-              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
               xsi:type="TaskPaneApp">
      <Id>93A26520-9414-492F-994B-4983A1C7A607</Id>
      <Version>15.0</Version>

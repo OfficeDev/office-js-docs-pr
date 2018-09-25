@@ -4,7 +4,7 @@ description: Excel custom functions use a new JavaScript runtime, which differs 
 title: Runtime for Excel custom functions
 ---
 
-# Runtime for Excel custom functions
+# Runtime for Excel custom functions (Preview)
 
 Custom functions extend Excel’s capabilities by using a new JavaScript runtime that uses a sandboxed JavaScript engine rather than a web browser. Because custom functions do not need to render UI elements, the new JavaScript runtime is optimized for performing calculations, enabling you to run thousands of custom functions simultaneously.
 
@@ -206,3 +206,4 @@ function getStock (ticker) {
 * [Create custom functions in Excel](custom-functions-overview.md)
 * [Custom functions metadata](custom-functions-json.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
+* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
