@@ -22,7 +22,7 @@ Complete the steps in one of the following sections to set up an add-in catalog 
 > [!NOTE]
 > The UI in on-premises SharePoint still refers to add-ins as **apps**.
 
-1. Browse to the  **Central Administration Site** ( **Start** > **All Programs** > **Microsoft SharePoint 2013 Products** > **SharePoint 2013 Central Administration**).
+1. Browse to the  **Central Administration Site**.
     
 2. In the left task pane, choose  **Apps**.
     
