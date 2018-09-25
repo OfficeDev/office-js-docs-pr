@@ -178,7 +178,7 @@ The following code shows how to implement the function used by **FunctionName**.
         Office.context.document.setSelectedDataAsync("ExecuteFunction works. Button ID=" + event.source.id,
             function (asyncResult) {
                 var error = asyncResult.error;
-                if (asyncResult.status === "failed") {
+                if (asyncResult.status === Office.AsyncResultStatus.Failed) {
                     // Show error message. 
                 }
                 else {

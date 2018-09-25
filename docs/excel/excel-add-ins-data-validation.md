@@ -25,13 +25,13 @@ The `Range.dataValidation` property, which takes a [DataValidation](https://docs
 > [!NOTE]
 > Data validation added programmatically behaves just like manually added data validation. In particular, note that data validation is triggered only if the user directly enters a value into a cell or copies and pastes a cell from elsewhere in the workbook and chooses the **Values** paste option. If the user copies a cell and does a plain paste into a range with data validation, validation is not triggered.
 
-### Creating validation rules
+## Creating validation rules
 
-To add data validation to a range, your code must set the `rule` property of the `DataValidation` object in `Range.dataValidation`. This takes a [DataValidationRule](https://docs.microsoft.com/javascript/api/excel?view=office-js) object which has seven optional properties. *No more than one of these properties may be present in any `DataValidationRule` object.* The property that you include determines the type of validation.
+To add data validation to a range, your code must set the `rule` property of the `DataValidation` object in `Range.dataValidation`. This takes a [DataValidationRule](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationrule) object which has seven optional properties. *No more than one of these properties may be present in any `DataValidationRule` object.* The property that you include determines the type of validation.
 
-#### Basic and DateTime validation rule types
+### Basic and DateTime validation rule types
 
-The first three `DataValidationRule` properties (i.e., validation rule types) take a [BasicDataValidation](https://docs.microsoft.com/javascript/api/excel) object as their value.
+The first three `DataValidationRule` properties (i.e., validation rule types) take a [BasicDataValidation](https://docs.microsoft.com/javascript/api/excel/excel.basicdatavalidation) object as their value.
 
 - `wholeNumber` &#8212; Requires a whole number in addition to any other validation specified by the `BasicDataValidation` object.
 - `decimal` &#8212; Requires a decimal number in addition to any other validation specified by the `BasicDataValidation` object.
@@ -103,7 +103,7 @@ Excel.run(function (context) {
 })
 ```
 
-#### List validation rule type
+### List validation rule type
 
 Use the `list` property in the `DataValidationRule` object to specify that the only valid values are those from a finite list. The following is an example. Note the following about this code:
 
@@ -128,7 +128,7 @@ Excel.run(function (context) {
 })
 ```
 
-#### Custom validation rule type
+### Custom validation rule type
 
 Use the `custom` property in the `DataValidationRule` object to specify a custom validation formula. The following is an example. Note the following about this code:
 
@@ -152,7 +152,7 @@ Excel.run(function (context) {
 })
 ```
 
-### Create validation error alerts
+## Create validation error alerts
 
 You can a create custom error alert that appears when a user tries to enter invalid data in a cell. The following is a simple example. Note the following about this code:
 
@@ -180,7 +180,7 @@ Excel.run(function (context) {
 
 For more information, see [DataValidationErrorAlert](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationerroralert).
 
-### Create validation prompts
+## Create validation prompts
 
 You can create an instructional prompt that appears when a user hovers over, or selects, a cell to which data validation has been applied. The following is an example:
 
@@ -203,9 +203,9 @@ Excel.run(function (context) {
 
 For more information, see [DataValidationPrompt](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationprompt).
 
-### Remove data validation from a range
+## Remove data validation from a range
 
-To remove data validation from a range, call the  [Range.dataValidation.clear()](https://docs.microsoft.com/javascript/api/excel/excel.datavalidation#clear) method.
+To remove data validation from a range, call the  [Range.dataValidation.clear()](https://docs.microsoft.com/javascript/api/excel/excel.datavalidation#clear--) method.
 
 ```js
 myrange.dataValidation.clear()
