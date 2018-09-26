@@ -120,9 +120,7 @@ Complete the following steps to create a custom function named `stockPrice` that
 
 1. In the **stock-ticker** project that the Yo Office generator created, find the file **src/customfunctions.js** and open it in your code editor.
 
-2. Add the following function to **customfunctions.js** and save the file.
-
-    In this code, notice that the asynchronous function returns a JavaScript Promise with the data from the IEX Trading API. Asynchronous custom functions must either return a new Promise or use JavaScript's `async` / `await` syntax.
+2. Add the following code to **customfunctions.js** and save the file.
 
     ```js
     function stockPrice(ticker) {
@@ -142,10 +140,9 @@ Complete the following steps to create a custom function named `stockPrice` that
     CustomFunctionMappings.STOCKPRICE = stockPrice;
     ```
 
-
 3. Before Excel can make this new function available to end-users, you must specify metadata that describes this function. In the **stock-ticker** project that the Yo Office generator created, find the file **config/customfunctions.json** and open it in your code editor. Add the following object to the `functions` array within the **config/customfunctions.json** file and save the file.
 
-    This JSON describes the `stcckPrice` function.
+    This JSON describes the `stockPrice` function.
 
     ```json
     {
@@ -197,7 +194,7 @@ The `stockPrice` function that you just created returns the price of a stock at 
 
 Complete the following steps to create a custom function named `stockPriceStream` that requests the price of the specified stock every 1000 milliseconds (provided that the previous request has completed). While the initial request is in-progress, you may see the placeholder value **#GETTING_DATA** the cell where the function is being called. When a value is returned by the function, **#GETTING_DATA** will be replaced by that value in the cell.
 
-1. In the **stock-ticker** project that the Yo Office generator created, add the following function to **customfunctions.js** and save the file.
+1. In the **stock-ticker** project that the Yo Office generator created, add the following code to **customfunctions.js** and save the file.
 
     ```js
     function stockPriceStream(ticker, handler) {
