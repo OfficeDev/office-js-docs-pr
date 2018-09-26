@@ -22,7 +22,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
             "id": "ADD42",
 			"name": "ADD42",
 			"description":  "Adds 42 to the input number",
-			"helpUrl": "http://dev.office.com",
+			"helpUrl": "http://www.contoso.com/help",
 			"result": {
 				"type": "number",
 				"dimensionality": "scalar"
@@ -40,7 +40,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
             "id": "ADD42ASYNC",
 			"name": "ADD42ASYNC",
 			"description":  "asynchronously wait 250ms, then add 42",
-			"helpUrl": "http://dev.office.com",
+			"helpUrl": "http://www.contoso.com/help",
 			"result": {
 				"type": "number",
 				"dimensionality": "scalar"
@@ -58,7 +58,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
             "id": "ISEVEN",
 			"name": "ISEVEN", 
 			"description":  "Determines whether a number is even",
-			"helpUrl": "http://dev.office.com",
+			"helpUrl": "http://www.contoso.com/help",
 			"result": {
 				"type": "boolean",
 				"dimensionality": "scalar"
@@ -76,7 +76,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
             "id": "GETDAY",
 			"name": "GETDAY",
 			"description": "Gets the day of the week",
-			"helpUrl": "http://dev.office.com",
+			"helpUrl": "http://www.contoso.com/help",
 			"result": {
 				"type": "string"
 			},
@@ -86,7 +86,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
             "id": "INCREMENTVALUE",
 			"name": "INCREMENTVALUE", 
 			"description":  "Counts up from zero",
-			"helpUrl": "http://dev.office.com",
+			"helpUrl": "http://www.contoso.com/help",
 			"result": {
 				"type": "number",
 				"dimensionality": "scalar"
@@ -108,7 +108,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
             "id": "SECONDHIGHEST",
 			"name": "SECONDHIGHEST", 
 			"description":  "gets the second highest number from a range",
-			"helpUrl": "http://dev.office.com",
+			"helpUrl": "http://www.contoso.com/help",
 			"result": {
 				"type": "number",
 				"dimensionality": "scalar"

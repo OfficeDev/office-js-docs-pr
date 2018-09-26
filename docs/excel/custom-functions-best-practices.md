@@ -14,7 +14,7 @@ When you build an add-in that defines custom functions, be sure to include error
 
 ```js
 function getComment(x) {
-    let url = "https://yourhypotheticalapi.com/comments/" + x; 
+    let url = "https://www.contoso.com/comments/" + x;
     return fetch(url)
         .then(function (data) {
             return data.json();
