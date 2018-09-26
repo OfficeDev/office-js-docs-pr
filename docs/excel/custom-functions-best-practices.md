@@ -34,7 +34,7 @@ Currently, the best method for debugging Excel custom functions is to first [sid
 
 - Use `console.log` statements within your custom functions code to send output to the console in real time.
 
-- Use `debugger;` statements within your custom functions code to specify breakpoints where execution will pause when a debugger is active. For example, if the following function runs while a debugger is active, execution will pause on the `debugger;` statement, enabling you to manually inspect parameter values before the function returns. The `debugger;` statement has no effect in Excel Online when a debugger is not active and has no effect in Excel for Windows at any time.
+- Use `debugger;` statements within your custom functions code to specify breakpoints where execution will pause when the F12 window is open. For example, if the following function runs while the F12 window is open, execution will pause on the `debugger;` statement, enabling you to manually inspect parameter values before the function returns. The `debugger;` statement has no effect in Excel Online when the F12 window is not open. Currently, the `debugger;` statement has no effect in Excel for Windows.
 
     ```js
     function add(first, second){
