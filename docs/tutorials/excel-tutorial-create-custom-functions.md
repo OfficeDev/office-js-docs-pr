@@ -80,7 +80,7 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
     * If you'll be using Excel for Windows to test your custom functions:
 
         1. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
-            ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1.png)
+            ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)
 
         2. In the list of available add-ins, find the **Developer Add-ins** section and select the **Excel Custom Functions** add-in to register it.
             ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/excel-cf-register-add-in-2.png)
@@ -173,7 +173,7 @@ Complete the following steps to create a custom function named `stockPrice` that
     * If you're using Excel for Windows:
 
         1. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
-            ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1.png)
+            ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)
 
         2. In the list of available add-ins, find the **Developer Add-ins** section and select the **Excel Custom Functions** add-in to register it.
             ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/excel-cf-register-add-in-2.png)
@@ -265,7 +265,7 @@ Complete the following steps to create a custom function named `stockPriceStream
     * If you're using Excel for Windows:
 
         1. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
-            ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1.png)
+            ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)
 
         2. In the list of available add-ins, find the **Developer Add-ins** section and select the **Excel Custom Functions** add-in to register it.
             ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/excel-cf-register-add-in-2.png)
