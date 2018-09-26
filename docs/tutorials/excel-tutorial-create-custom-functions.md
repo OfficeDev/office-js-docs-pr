@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
 description: In this tutorial, you’ll create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 09/20/2018
+ms.date: 09/26/2018
 ms.topic: tutorial
 #Customer intent: As an add-in developer, I want to create a custom function in Excel to increase productivity. 
 ---
@@ -165,14 +165,16 @@ Complete the following steps to create a custom function named `stockPrice` that
     }
     ```
 
-4. You must reregister the add-in in Excel in order for the new function to be available to end-users. Reregister your custom functions add-in in Excel by completing the following steps:
+4. You must reregister the add-in in Excel in order for the new function to be available to end-users. Complete the following steps for the platform that you're using in this tutorial.
 
     * If you're using Excel for Windows:
 
-        1. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
+        1. Close Excel and then reopen Excel.
+
+        2. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
             ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)
 
-        2. In the list of available add-ins, find the **Developer Add-ins** section and select the **Excel Custom Functions** add-in to register it.
+        1. In the list of available add-ins, find the **Developer Add-ins** section and select the **Excel Custom Functions** add-in to register it.
             ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/excel-cf-register-add-in-2.png)
 
     * If you're using Excel Online: 
@@ -262,14 +264,16 @@ Complete the following steps to create a custom function named `stockPriceStream
     }
     ```
 
-3. You must reregister the add-in in Excel in order for the new function to be available to end-users. Reregister your custom functions add-in in Excel by completing the following steps:
+3. You must reregister the add-in in Excel in order for the new function to be available to end-users. Complete the following steps for the platform that you're using in this tutorial.
 
     * If you're using Excel for Windows:
 
-        1. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
+        1. Close Excel and then reopen Excel.
+        
+        2. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
             ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)
 
-        2. In the list of available add-ins, find the **Developer Add-ins** section and select the **Excel Custom Functions** add-in to register it.
+        3. In the list of available add-ins, find the **Developer Add-ins** section and select the **Excel Custom Functions** add-in to register it.
             ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/excel-cf-register-add-in-2.png)
 
     * If you're using Excel Online: 
