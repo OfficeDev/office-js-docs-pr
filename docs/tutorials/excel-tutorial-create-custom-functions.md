@@ -200,13 +200,16 @@ Complete the following steps to create a custom function named `stockPriceStream
     function stockPriceStream(ticker, handler) {
         var updateFrequency = 1000 /* milliseconds*/;
         var isPending = false;
+
         var timer = setInterval(function() {
             // If there is already a pending request, skip this iteration:
             if (isPending) {
                 return;
             }
+
             var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
             isPending = true;
+
             fetch(url)
                 .then(function(response) {
                     return response.text();
@@ -221,10 +224,12 @@ Complete the following steps to create a custom function named `stockPriceStream
                     isPending = false;
                 });
         }, updateFrequency);
+
         handler.onCanceled = () => {
             clearInterval(timer);
         };
     }
+
     CustomFunctionMappings.STOCKPRICESTREAM = stockPriceStream;
     ```
 
