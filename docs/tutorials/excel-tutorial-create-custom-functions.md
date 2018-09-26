@@ -114,7 +114,7 @@ The `ADD` custom function computes the sum of the two numbers that you specify a
 
 ## Create a custom function that requests data from the web
 
-What if you needed a function that could retrieve and display the price of a stock in real time? Custom functions are designed so that you can easily request data from the web asynchronously.
+What if you needed a function that could request the price of a stock from the web and display the result in the cell of a worksheet? Custom functions are designed so that you can easily request data from the web asynchronously.
 
 Complete the following steps to create a custom function named `stockPrice` that accepts a stock ticker (e.g., **MSFT**) and returns the price of that stock. This custom function uses the IEX Trading API, which is free and does not require authentication.
 
