@@ -29,7 +29,19 @@ function getComment(x) {
 ```
 
 ## Debugging
-Currently, the best method for debugging Excel custom functions is to first [sideload](../testing/sideload-office-add-ins-for-testing.md) your add-in within **Excel Online**. You can then debug your custom functions by using the [F12 debugging tool native to your browser](../testing/debug-add-ins-in-office-online.md). Use `console.log` statements within your custom functions code to send output to the console in real time.
+
+Currently, the best method for debugging Excel custom functions is to first [sideload](../testing/sideload-office-add-ins-for-testing.md) your add-in within **Excel Online**. You can then debug your custom functions by using the [F12 debugging tool native to your browser](../testing/debug-add-ins-in-office-online.md) in combination with the following techniques:
+
+    - Use `console.log` statements within your custom functions code to send output to the console in real time.
+
+    - Use `debugger;` statements within your custom functions code to specify breakpoints where execution will pause when a debugger is active. For example, if the following function runs while a debugger is active, execution will pause on the `debugger;` statement, enabling you to manually inspect parameter values before the function returns.
+
+        ```js
+        function add(first, second){
+            debugger;
+            return first + second;
+        }
+        ```
 
 If your add-in fails to register, [verify that SSL certificates are correctly configured](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) for the web server that's hosting your add-in application.
 
