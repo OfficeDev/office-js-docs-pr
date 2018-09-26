@@ -194,7 +194,7 @@ The `stockPrice` function that you just created returns the price of a stock at 
 
 Complete the following steps to create a custom function named `stockPriceStream` that requests the price of the specified stock every 1000 milliseconds (provided that the previous request has completed). While the initial request is in-progress, you may see the placeholder value **#GETTING_DATA** the cell where the function is being called. When a value is returned by the function, **#GETTING_DATA** will be replaced by that value in the cell.
 
-1. In the **stock-ticker** project that the Yo Office generator created, add the following code to **customfunctions.js** and save the file.
+1. In the **stock-ticker** project that the Yo Office generator created, add the following code to **src/customfunctions.js** and save the file.
 
     ```js
     function stockPriceStream(ticker, handler) {
