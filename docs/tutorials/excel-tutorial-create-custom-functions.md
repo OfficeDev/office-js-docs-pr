@@ -235,7 +235,7 @@ Complete the following steps to create a custom function named `stockPriceStream
 
 2. Before Excel can make this new function available to end-users, you must specify metadata that describes this function. In the **stock-ticker** project that the Yo Office generator created, add the following object to the `functions` array within the **config/customfunctions.json** file and save the file.
 
-    This JSON describes the `stockPriceStream` function. Notice that the `stream` property within the `options` object is set to `true`, to indicate that this is a streaming function.
+    This JSON describes the `stockPriceStream` function. For any streaming function, the `stream` property and the `cancelable` property must be set to `true` within the `options` object, as shown in this code sample.
 
     ```json
     { 
