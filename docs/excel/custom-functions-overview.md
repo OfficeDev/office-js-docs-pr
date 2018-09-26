@@ -99,7 +99,7 @@ The following code in **customfunctions.json** specifies the metadata for the `A
             "id": "ADD42",
             "name": "ADD42",
             "description":  "adds 42 to the input numbers",
-            "helpUrl": "http://dev.office.com",
+            "helpUrl": "http://www.contoso.com/help",
             "result": {
                 "type": "number",
                 "dimensionality": "scalar"
@@ -274,7 +274,7 @@ When you build an add-in that defines custom functions, be sure to include error
 
 ```js
 function getComment(x) {
-    let url = "https://yourhypotheticalapi/comments/" + x;
+    let url = "https://www.contoso.com/comments/" + x;
 
     return fetch(url)
         .then(function (data) {
