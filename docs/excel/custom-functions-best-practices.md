@@ -33,41 +33,20 @@ Currently, the best method for debugging Excel custom functions is to first [sid
 
 If your add-in fails to register, [verify that SSL certificates are correctly configured](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) for the web server that's hosting your add-in application.
 
-If you are testing your add-in in Office 2016 desktop, you can enable [runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in) to debug issues with your add-in's XML manifest file as well as several installation and runtime conditions. 
+If you are testing your add-in in Office 2016 desktop, you can enable [runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in) to debug issues with your add-in's XML manifest file as well as several installation and runtime conditions.
 
 
 ## Mapping names
 
-By default, the name of a custom function in your JavaScript file is typically declared using entirely uppercase letters, and corresponds exactly to the function name that end users see in Excel. However, you can change this by using the `CustomFunctionMappings` object to map one or more function names from the JavaScript file to different values that end users will see as function names in Excel. This is helpful if you are using an uglifier, webpack, or import syntax - all of which have difficulty with uppercase function names. `CustomFunctionMappings` is required in both JavaScript and TypeScript projects. 
-  
-The following code sample defines a single key-value pair that maps the JavaScript function name `plusFortyTwo` to the `ADD42` function name in the Excel UI. When the end user chooses the `ADD42` function in Excel, the `plusFortyTwo` JavaScript function will run.
+When using the `CustomFunctionMappings` object, there are several best practices to keep in mind.
 
-```js
-function plusFortyTwo(num) {
-    return num + 42;  
-}  
-  
-CustomFunctionMappings = {
-    "plusFortyTwo" : ADD42
-}
-```
+* Function names and ids should match in the functions JSON file.
 
-The following code sample defines a two key-value pairs. The first pair maps the JavaScript function name `plusFifty` to the `ADD50` function name in the Excel UI, and the second pair maps the JavaScript function name `plusOneHundred` to the `ADD100` function name in the Excel UI. When the end user chooses the `ADD50` function in Excel, the `plusFifty` JavaScript function will run. When the end user chooses the `ADD100` function in Excel, the `plusOneHundred` JavaScript function will run.
+    Using the same name and id for a function keeps your code simple. Using this pattern, you will not have to track two separate ways to refer to the same function.  
 
-```js
-function plusFifty(num) {
-    return num + 50;  
-} 
+* Function names in JSON should be listed in uppercase letters.
 
-function plusOneHundred(num) {
-    return num + 100;  
-}  
-  
-CustomFunctionMappings = {
-    "plusFifty" : ADD50,  
-    "plusOneHundred" : ADD100
-}
- ```
+    Using uppercase names is standard for the functions which are already built into Excel. Using this established pattern, your custom function can seamlessly integrate into Excel's existing user experience.
 
  ## See also
 
