@@ -48,6 +48,27 @@ When using the `CustomFunctionMappings` object, there are several best practices
 
     Using uppercase names is standard for the functions which are already built into Excel. Using this established pattern, your custom function can seamlessly integrate into Excel's existing user experience.
 
+* Declare only one instance of `CustomFunctionMappings` in your JavaScript code in order to prevent overwriting functions with new mappings.
+
+    If a function is mapped in `CustomFunctionMappings`, this can be overwritten by another declaration of `CustomFunctionMappings` later in your code. As shown in the following example: 
+
+    ```js
+    addNine(x) {
+        return x + 9;
+    }
+
+    CustomFunctionMappings = {
+        ADDNINE = addNine;
+    }
+
+    addTen(x) {
+       return x + 10;
+    }
+
+    CustomFunctionMappings = {
+        ADDNINE = addTen; //Now when Excel users call ADDNINE, they will get addTen
+    }
+
  ## See also
 
 - [Create custom functions in Excel](custom-functions-overview.md)
