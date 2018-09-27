@@ -14,7 +14,7 @@ When you build an add-in that defines custom functions, be sure to include error
 
 ```js
 function getComment(x) {
-    let url = "https://jsonplaceholder.typicode.com/comments/" + x; 
+    let url = "https://www.contoso.com/comments/" + x;
     return fetch(url)
         .then(function (data) {
             return data.json();
@@ -29,16 +29,27 @@ function getComment(x) {
 ```
 
 ## Debugging
-Currently, the best method for debugging Excel custom functions is to first [sideload](../testing/sideload-office-add-ins-for-testing.md) your add-in within **Excel Online**. Then you can debug your custom functions by using the [F12 debugging tool native to your browser](../testing/debug-add-ins-in-office-online.md). Use `console.log` statements within your custom functions code to send output to the console in real time.
+
+Currently, the best method for debugging Excel custom functions is to first [sideload](../testing/sideload-office-add-ins-for-testing.md) your add-in within **Excel Online**. You can then debug your custom functions by using the [F12 debugging tool native to your browser](../testing/debug-add-ins-in-office-online.md) in combination with the following techniques:
+
+- Use `console.log` statements within your custom functions code to send output to the console in real time.
+
+- Use `debugger;` statements within your custom functions code to specify breakpoints where execution will pause when the F12 window is open. For example, if the following function runs while the F12 window is open, execution will pause on the `debugger;` statement, enabling you to manually inspect parameter values before the function returns. The `debugger;` statement has no effect in Excel Online when the F12 window is not open. Currently, the `debugger;` statement has no effect in Excel for Windows.
+
+    ```js
+    function add(first, second){
+        debugger;
+        return first + second;
+    }
+    ```
 
 If your add-in fails to register, [verify that SSL certificates are correctly configured](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) for the web server that's hosting your add-in application.
 
 If you are testing your add-in in Office 2016 desktop you can enable [runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in) to debug issues with your add-in's XML manifest file as well as several installation and runtime conditions. 
 
-
 ## Mapping names
 
-By default, the name of a custom function in your JavaScript file is typically declared using entirely uppercase letters, and corresponds exactly to the function name that end users see in Excel. However, you can change this by using the `CustomFunctionsMappings` object to map one or more function names from the JavaScript file to different values that end users will see as function names in Excel. This is helpful if you are using an uglifier, webpack, or import syntax - all of which have difficulty with uppercase function names. `CustomFunctionsMappings` is possibly optional for projects using JavaScript but must be used if your project uses TypeScript.  
+By default, the name of a custom function in your JavaScript file is typically declared using entirely uppercase letters, and corresponds exactly to the function name that end users see in Excel. However, you can change this by using the `CustomFunctionMappings` object to map one or more function names from the JavaScript file to different values that end users will see as function names in Excel. This is helpful if you are using an uglifier, webpack, or import syntax - all of which have difficulty with uppercase function names. `CustomFunctionMappings` is required in both JavaScript and TypeScript projects. 
   
 The following code sample defines a single key-value pair that maps the JavaScript function name `plusFortyTwo` to the `ADD42` function name in the Excel UI. When the end user chooses the `ADD42` function in Excel, the `plusFortyTwo` JavaScript function will run.
 
@@ -47,7 +58,7 @@ function plusFortyTwo(num) {
     return num + 42;  
 }  
   
-CustomFunctionsMappings = {
+CustomFunctionMappings = {
     "plusFortyTwo" : ADD42
 }
 ```
@@ -63,7 +74,7 @@ function plusOneHundred(num) {
     return num + 100;  
 }  
   
-CustomFunctionsMappings = {
+CustomFunctionMappings = {
     "plusFifty" : ADD50,  
     "plusOneHundred" : ADD100
 }
@@ -74,4 +85,4 @@ CustomFunctionsMappings = {
 * [Create custom functions in Excel](custom-functions-overview.md)
 * [Custom functions metadata](custom-functions-json.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
-* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Excel custom functions tutorial](excel-tutorial-custom-functions.md)

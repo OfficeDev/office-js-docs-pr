@@ -99,7 +99,7 @@ The following code in **customfunctions.json** specifies the metadata for the `A
             "id": "ADD42",
             "name": "ADD42",
             "description":  "adds 42 to the input numbers",
-            "helpUrl": "http://dev.office.com",
+            "helpUrl": "http://www.contoso.com/help",
             "result": {
                 "type": "number",
                 "dimensionality": "scalar"
@@ -274,8 +274,7 @@ When you build an add-in that defines custom functions, be sure to include error
 
 ```js
 function getComment(x) {
-    //this delivers a section of lorem ipsum from the jsonplaceholder API
-    let url = "https://jsonplaceholder.typicode.com/comments/" + x;
+    let url = "https://www.contoso.com/comments/" + x;
 
     return fetch(url)
         .then(function (data) {
@@ -315,4 +314,4 @@ function getComment(x) {
 * [Custom functions metadata](custom-functions-json.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
-* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Excel custom functions tutorial](excel-tutorial-custom-functions.md)

@@ -63,7 +63,7 @@ function sendWebRequest(thermometerID, data) {
 
 As shown in the following code sample, custom functions can use WebSockets. In this example, the WebSocket logs each message that it receives.
 
-```ts
+```typescript
 const ws = new WebSocket('wss://bundles.office.com');
 ws.onmessage = (message) => {
     console.log(`Received: ${message}`);
@@ -99,7 +99,7 @@ At this time, the `mergeItem` and `multiMerge` methods are not supported.
 
 The following code sample calls the `AsyncStorage.getItem` function to retrieve a value from storage.
 
-```js
+```typescript
 _goGetData = async () => {
     try {
         const value = await AsyncStorage.getItem('toDoItem');
@@ -125,11 +125,11 @@ In the following code sample, the `getTokenViaDialog()` method uses the Dialog A
 function getStock (ticker) {
   return new Promise(function (resolve, reject) {
     // Get a token
-    getToken("https://myauthurl")
+    getToken("https://www.contoso.com/auth")
     .then(function (token) {
       
       // Use token to get stock price
-      fetch("https://myservice.com/?token=token&ticker= + ticker")
+      fetch("https://www.contoso.com/?token=token&ticker= + ticker")
       .then(function (result) {
 
         // Return stock price to cell
@@ -206,4 +206,4 @@ function getStock (ticker) {
 * [Create custom functions in Excel](custom-functions-overview.md)
 * [Custom functions metadata](custom-functions-json.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
-* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Excel custom functions tutorial](excel-tutorial-custom-functions.md)

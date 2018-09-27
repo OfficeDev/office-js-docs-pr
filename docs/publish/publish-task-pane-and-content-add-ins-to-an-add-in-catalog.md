@@ -17,15 +17,18 @@ An add-in catalog is a dedicated site collection in a SharePoint web application
 
 Complete the steps in one of the following sections to set up an add-in catalog on SharePoint or on Office 365.
 
-### To set up an add-in catalog on SharePoint
+### To set up an add-in catalog for on-premises SharePoint
 
-1. Browse to the  **Central Administration Site** ( **Start** > **All Programs** > **Microsoft SharePoint 2013 Products** > **SharePoint 2013 Central Administration**).
+> [!NOTE]
+> The UI in on-premises SharePoint still refers to add-ins as **apps**.
+
+1. Browse to the  **Central Administration Site**.
     
-2. In the left task pane, choose  **Add-ins**.
+2. In the left task pane, choose  **Apps**.
     
-3. On the  **Add-ins** page, under **Add-in Management**, choose  **Manage Add-in Catalog**.
+3. On the  **Apps** page, under **App Management**, choose  **Manage App Catalog**.
     
-4. On the  **Manage Add-in Catalog** page, make sure you have the right web application selected in the **Web Application Selector**.
+4. On the  **Manage App Catalog** page, make sure you have the right web application selected in the **Web Application Selector**.
     
 5. Choose  **View site settings**.
     
@@ -35,7 +38,7 @@ Complete the steps in one of the following sections to set up an add-in catalog 
     
 8. In the  **Share 'App Catalog Site'** dialog box, specify one or more site users, set the appropriate permissions for them, optionally set other options, and then choose **Share**.
     
-9. To add an add-in to the Office Add-ins add-in catalog, choose **Office Add-ins**.
+9. To add an add-in to the Office Add-ins add-in catalog, choose **Apps for Office**.
 
 ### To set up an add-in catalog on Office 365
 
