@@ -42,34 +42,35 @@ When using the `CustomFunctionMappings` object, there are several best practices
 
 * Function names and ids should match in the functions JSON file.
 
-    Using the same name and id for a function keeps your code simple. Using this pattern, you will not have to track two separate ways to refer to the same function.  
+Using the same name and id for a function keeps your code simple. Using this pattern, you will not have to track two separate ways to refer to the same function.  
 
 * Function names in JSON should be listed in uppercase letters.
 
-    Using uppercase names is standard for the functions which are already built into Excel. Using this established pattern, your custom function can seamlessly integrate into Excel's existing user experience.
+Using uppercase names is standard for the functions which are already built into Excel. Using this established pattern, your custom function can seamlessly integrate into Excel's existing user experience.
 
 * Declare only one instance of `CustomFunctionMappings` in your JavaScript code in order to prevent overwriting functions with new mappings.
 
-    If a function is mapped in `CustomFunctionMappings`, this can be overwritten by another declaration of `CustomFunctionMappings` later in your code. As shown in the following example: 
+If a function is mapped in `CustomFunctionMappings`, this can be overwritten by another declaration of `CustomFunctionMappings` later in your code. As shown in the following example: 
 
-    ```js
-    addNine(x) {
-        return x + 9;
-    }
+```js
+addNine(x) {
+    return x + 9;
+}
 
-    CustomFunctionMappings = {
-        ADDNINE = addNine;
-    }
+CustomFunctionMappings = {
+    ADDNINE = addNine;
+}
 
-    addTen(x) {
-       return x + 10;
-    }
+addTen(x) {
+    return x + 10;
+}
 
-    CustomFunctionMappings = {
-        ADDNINE = addTen; //Now when Excel users call ADDNINE, they will get addTen
-    }
+CustomFunctionMappings = {
+    ADDNINE = addTen; //Now when Excel users call ADDNINE, they will get addTen
+}
+```
 
- ## See also
+## See also
 
 - [Create custom functions in Excel](custom-functions-overview.md)
 - [Custom functions metadata](custom-functions-json.md)
