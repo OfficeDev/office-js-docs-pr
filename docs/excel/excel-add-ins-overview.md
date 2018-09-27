@@ -44,7 +44,7 @@ The [manifest](../develop/add-in-manifests.md) is an XML configuration file that
 * How the add-in integrates with Excel, including any custom UI that the add-in creates (ribbon buttons, context menus, and so on).
 * Permissions that the add-in requires, such as reading and writing to the document.
 
-To enable end-users to install and use an Excel add-in, you must publish its manifest either to AppSource or to an add-ins catalog. 
+To enable end users to install and use an Excel add-in, you must publish its manifest either to AppSource or to an add-ins catalog. 
 
 ## Capabilities of an Excel add-in
 
