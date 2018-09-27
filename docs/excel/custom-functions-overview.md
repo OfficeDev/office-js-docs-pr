@@ -38,7 +38,7 @@ In the custom functions project that you've created using [Yo Office](https://gi
 | File | File format | Description |
 |------|-------------|-------------|
 | **./src/customfunctions.js** | JavaScript | Contains the code that defines custom functions. |
-| **./config/customfunctions.json** | JSON | Contains metadata that describes custom functions and enables Excel to register the custom functions in order to make them available to end-users. |
+| **./config/customfunctions.json** | JSON | Contains metadata that describes custom functions and enables Excel to register the custom functions and make them available to end users. |
 | **./index.html** | HTML | Provides a &lt;script&gt; reference to the JavaScript file that defines custom functions. |
 | **./manifest.xml** | XML | Specifies the namespace for all custom functions within the add-in and the location of the JavaScript, JSON, and HTML files that are listed previously in this table. |
 
@@ -84,7 +84,7 @@ The XML manifest file for an add-in that defines custom functions specifies the 
 
 ### JSON file (./config/customfunctions.json)
 
-A custom functions metadata file provides the information that Excel requires to register the custom functions and make them available to end-users. Custom functions are registered when a user runs an add-in for the first time. After that, they are available to that same user in all workbooks (i.e., not only in the workbook where the add-in initially ran.)
+A custom functions metadata file provides the information that Excel requires to register the custom functions and make them available to end users. Custom functions are registered when a user runs an add-in for the first time. After that, they are available to that same user in all workbooks (i.e., not only in the workbook where the add-in initially ran.)
 
 > [!TIP]
 > Server settings on the server that hosts the JSON file must have [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel Online.
