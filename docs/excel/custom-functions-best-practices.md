@@ -98,6 +98,28 @@ Keep in mind the following best practices when creating custom functions in your
     CustomFunctionMappings.INCREMENT = increment;
     ```
 
+The following sample shows the metadata that corresponds to the functions defined in this JavaScript code sample.
+
+```json
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/office-js/custom-functions.schema.json",
+  "functions": [
+    {
+      "id": "ADD",
+      "name": "ADD",
+      ...
+    },
+    {
+      "id": "INCREMENT",
+      "name": "INCREMENT",
+      ...
+    }
+  ]
+}
+```
+
+
+
 ## See also
 
 - [Create custom functions in Excel](custom-functions-overview.md)
