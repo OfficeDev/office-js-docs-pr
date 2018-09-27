@@ -98,27 +98,25 @@ Keep in mind the following best practices when creating custom functions in your
     CustomFunctionMappings.INCREMENT = increment;
     ```
 
-    The following sample shows the metadata that corresponds to the functions defined in this JavaScript code sample.
+    The following sample shows the JSON metadata that corresponds to the functions defined in this JavaScript code sample.
 
     ```json
     {
-    "$schema": "https://developer.microsoft.com/en-us/json-schemas/office-js/custom-functions.schema.json",
-    "functions": [
+      "$schema": "https://developer.microsoft.com/en-us/json-schemas/office-js/custom-functions.schema.json",
+      "functions": [
         {
-        "id": "ADD",
-        "name": "ADD",
-        ...
+          "id": "ADD",
+          "name": "ADD",
+          ...
         },
         {
-        "id": "INCREMENT",
-        "name": "INCREMENT",
-        ...
+          "id": "INCREMENT",
+          "name": "INCREMENT",
+          ...
         }
-    ]
+      ]
     }
     ```
-
-
 
 ## See also
 
