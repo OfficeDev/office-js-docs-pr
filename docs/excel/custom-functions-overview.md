@@ -1,12 +1,14 @@
 ---
-ms.date: 09/20/2018
+ms.date: 09/27/2018
 description: Create a custom function in Excel using JavaScript. 
 title: Create custom functions in Excel (Preview)
 ---
 
-# Create custom functions in Excel (Preview)
+# Create custom functions in Excel (preview)
 
-Custom functions enable developers to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions like any other native function in Excel (such as `SUM()`). This article describes how to create custom functions in Excel.
+Custom functions enable developers to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any other native function in Excel, such as `SUM()`. This article describes how to create custom functions in Excel.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 The following illustration shows an end user inserting a custom function into a cell of an Excel worksheet. The `CONTOSO.ADD42` custom function is designed to add 42 to the pair of numbers that the user specifies as input parameters to the function.
 
@@ -16,22 +18,17 @@ The following code defines the `ADD42` custom function.
 
 ```js
 function ADD42(a, b) {
-    return a + b + 42;
+  return a + b + 42;
 }
 ```
-
-Custom functions are now available in Developer Preview on Windows, Mac, and Excel Online. To try them, complete these steps:
-
-1. Install Office (build 10827 on Windows or 13.329 on Mac) and join the [Office Insider](https://products.office.com/office-insider) program. You must join the Office Insider program in order to have access to custom functions; currently, custom functions are disabled across all Office builds unless you are a member of the Office Insider program.
-
-2. Use [Yo Office](https://github.com/OfficeDev/generator-office) to create an Excel Custom Functions add-in project, and then follow the instructions in the [OfficeDev/Excel-Custom-Functions README](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/README.md) to use the project.
-
-3. Type `=CONTOSO.ADD42(1,2)` into any cell of an Excel worksheet, and press **Enter** to run the custom function.
 
 > [!NOTE]
 > The [Known issues](#known-issues) section later in this article specifies current limitations of custom functions.
 
-## Learn the basics
+## Components of a custom functions project
+
+Use [Yo Office](https://github.com/OfficeDev/generator-office) to create an Excel Custom Functions add-in project, and then follow the instructions in the [OfficeDev/Excel-Custom-Functions README](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/README.md) to use the project.
+
 
 In the custom functions project that you've created using [Yo Office](https://github.com/OfficeDev/generator-office), you’ll see the following files:
 

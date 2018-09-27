@@ -1,12 +1,14 @@
 ---
-ms.date: 09/20/2018
+ms.date: 09/27/2018
 description: Learn best practices and recommended patterns for Excel custom functions.
 title: Custom functions best practices
 ---
 
-# Custom functions best practices
+# Custom functions best practices (preview)
 
 This article describes best practices for developing custom functions in Excel.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## Error handling
 
