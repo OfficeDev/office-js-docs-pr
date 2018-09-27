@@ -48,40 +48,55 @@ If your add-in fails to register, [verify that SSL certificates are correctly co
 If you are testing your add-in in Office 2016 desktop, you can enable [runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in) to debug issues with your add-in's XML manifest file as well as several installation and runtime conditions.
 
 
-## Mapping names
+## Mapping JavaScript function names to JSON metadata
 
-When using the `CustomFunctionMappings` object, there are several best practices to keep in mind.
+As described in the [Custom functions overview](custom-functions-overview.md) article, a custom functions project must include a JSON metadata file which provides the information that Excel requires to register the custom functions and make them available to end users. Additionally, within the JavaScript file that defines your custom functions, you must provide information to specify which function object in the JSON metadata file corresponds to each custom function in the JavaScript file.
 
-* Function names and ids should match in the functions JSON file.
-
-    Using the same name and id for a function keeps your code simple. Using this pattern, you will not have to track two separate ways to refer to the same function.  
-
-* Function names in JSON should be listed in uppercase letters.
-
-    Using uppercase names is standard for the functions which are already built into Excel. Using this established pattern, your custom function can seamlessly integrate into Excel's existing user experience.
-
-* Declare only one instance of `CustomFunctionMappings` in your JavaScript code in order to prevent overwriting functions with new mappings.
-
-    If a function is mapped in `CustomFunctionMappings`, this can be overwritten by another declaration of `CustomFunctionMappings` later in your code. As shown in the following example: 
+For example, the following code sample defines the custom function `add` and then specifies that the function `add` corresponds to the object in the JSON metadata file where the value of the `id` property is `ADD`.
 
 ```js
-addNine(x) {
-    return x + 9;
+function add(first, second){
+  return first + second;
 }
 
-CustomFunctionMappings = {
-    ADDNINE = addNine;
-}
-
-addTen(x) {
-    return x + 10;
-}
-
-CustomFunctionMappings = {
-    ADDNINE = addTen; //Now when Excel users call ADDNINE, they will get addTen
-}
+CustomFunctionMappings.ADD = add;
 ```
 
+Keep in mind the following best practices when creating custom functions in your JavaScript file and specifying corresponding information in the JSON metadata file.
+
+* In the JavaScript file, specify function names using camelCase. For example, the function name `addTenToInput` is written in camel case: the first word starts with a lowercase letter and each subsquent word in the name starts with an uppercase letter.
+
+* In the JSON metadata file, specify the value of the `name` property in uppercase. The `name` property defines the function name that end users will see in Excel. Using uppercase letters for the name of each custom function provides a consistent experience for end users in Excel, where all built-in function names are uppercase.
+
+* In the JSON metadata file, specify the value of the `id` property in uppercase. Doing so makes it obvious which part of the `CustomFunctionMappings` statement in your JavaScript file corresponds to the `id` property in the JSON metadata file (provided that your function name uses camelCase, as recommended earlier).
+
+* In the JSON metadata file, ensure that the value of each `id` property is unique within the scope of the file. That is, no two function objects in the metadata file should have the same `id` value. Additionally, do not specify two `id` values in the metadata file that only differ by case. For example, do not define one function object with an `id` value of **add** and another function object with an `id` value of **ADD**.
+
+* Do not change the value of an `id` property in the JSON metadata file after it's been mapped to a corresponding JavaScript function name. You can change the function name that end users see in Excel by updating the `name` property within the JSON metadata file, but you should never change the value of an `id` property after it's been established.
+
+* In the JavaScript file, specify all custom function mappings in the same location. For example, the following code sample defines two functions and then specifies the mapping information for both functions.
+
+    ```js
+    function add(first, second){
+    return first + second;
+    }
+
+    function increment(incrementBy, callback) {
+    var result = 0;
+    var timer = setInterval(function() {
+        result += incrementBy;
+        callback.setResult(result);
+    }, 1000);
+
+    callback.onCanceled = function() {
+        clearInterval(timer);
+    };
+    }
+
+    // map `id` values in the JSON metadata file to JavaScript function names
+    CustomFunctionMappings.ADD = add;
+    CustomFunctionMappings.INCREMENT = increment;
+    ```
 
 ## See also
 
