@@ -43,7 +43,7 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
     * Choose a script type: `JavaScript`
     * What do you want to name your add-in? `stock-ticker`
 
-    ![Yo Office bash prompts for custom functions](../images/yo-office-cfs-stock-ticker-2.png)
+    ![Yo Office bash prompts for custom functions](../images/yo-office-cfs-stock-ticker-3.png)
 
     After you complete the wizard, the generator will create the project files and install supporting Node components.
 
