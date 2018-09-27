@@ -82,15 +82,15 @@ Keep in mind the following best practices when creating custom functions in your
     }
 
     function increment(incrementBy, callback) {
-        var result = 0;
-        var timer = setInterval(function() {
-            result += incrementBy;
-            callback.setResult(result);
-        }, 1000);
+      var result = 0;
+      var timer = setInterval(function() {
+        result += incrementBy;
+        callback.setResult(result);
+      }, 1000);
 
-        callback.onCanceled = function() {
-            clearInterval(timer);
-        };
+      callback.onCanceled = function() {
+        clearInterval(timer);
+      };
     }
 
     // map `id` values in the JSON metadata file to JavaScript function names
