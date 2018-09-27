@@ -74,23 +74,23 @@ Keep in mind the following best practices when creating custom functions in your
 
 * Do not change the value of an `id` property in the JSON metadata file after it's been mapped to a corresponding JavaScript function name. You can change the function name that end users see in Excel by updating the `name` property within the JSON metadata file, but you should never change the value of an `id` property after it's been established.
 
-* In the JavaScript file, specify all custom function mappings in the same location. For example, the following code sample defines two functions and then specifies the mapping information for both functions.
+* In the JavaScript file, specify all custom function mappings in the same location. For example, the following code sample defines two custom functions and then specifies the mapping information for both functions.
 
     ```js
     function add(first, second){
-    return first + second;
+      return first + second;
     }
 
     function increment(incrementBy, callback) {
-    var result = 0;
-    var timer = setInterval(function() {
-        result += incrementBy;
-        callback.setResult(result);
-    }, 1000);
+        var result = 0;
+        var timer = setInterval(function() {
+            result += incrementBy;
+            callback.setResult(result);
+        }, 1000);
 
-    callback.onCanceled = function() {
-        clearInterval(timer);
-    };
+        callback.onCanceled = function() {
+            clearInterval(timer);
+        };
     }
 
     // map `id` values in the JSON metadata file to JavaScript function names
