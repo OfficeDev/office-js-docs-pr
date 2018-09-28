@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Custom functions enable you to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any other native function in Excel, such as `SUM()`. You can create custom functions that perform simple tasks such as custom calculations or more complex tasks such as streaming real-time data from the web into a worksheet.
+Custom functions enable you to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel, such as `SUM()`. You can create custom functions that perform simple tasks such as custom calculations or more complex tasks such as streaming real-time data from the web into a worksheet.
 
 In this tutorial, you will:
 > [!div class="checklist"]
@@ -10,6 +10,8 @@ In this tutorial, you will:
 > * Use a prebuilt custom function to perform a simple calculation
 > * Create a custom function that requests data from the web
 > * Create a custom function that streams real-time data from the web
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## Prerequisites
 
