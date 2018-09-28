@@ -6,7 +6,7 @@ title: Create custom functions in Excel (Preview)
 
 # Create custom functions in Excel (preview)
 
-Custom functions enable developers to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any other native function in Excel, such as `SUM()`. This article describes how to create custom functions in Excel.
+Custom functions enable developers to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel, such as `SUM()`. This article describes how to create custom functions in Excel.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
