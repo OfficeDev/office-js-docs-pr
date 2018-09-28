@@ -191,7 +191,7 @@ If a custom function retrieves data from an external source such as the web, it 
 
 Custom functions display a `#GETTING_DATA` temporary result in the cell while Excel waits for the final result. Users can interact normally with the rest of the worksheet while they wait for the result.
 
-In the following code sample, the `getTemperature()` custom function retrieves the current temperature of a thermometer. Note that `sendWebRequest` is a hypothetical function (not specified here) that uses XHR to call a temperature web service.
+In the following code sample, the `getTemperature()` custom function retrieves the current temperature of a thermometer. Note that `sendWebRequest` is a hypothetical function (not specified here) that uses [XHR](custom-functions-runtime.md#xhr) to call a temperature web service.
 
 ```js
 function getTemperature(thermometerID){
