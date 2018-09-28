@@ -264,7 +264,7 @@ In some situations, you may need to cancel the execution of a streamed custom fu
 
 - When the user triggers recalculation manually. In this case, a new function call is triggered following the cancellation.
 
-In order to be able to cancel a function and release the resources that it consumes, you must implement a cancellation handler within the JavaScript function and specify the property `"cancelable": true` within the `options` object in the JSON metadata that describes the function. The code samples in the previous section of this article provide an example of these techniques.
+To enable the ability to cancel a function, you must implement a cancellation handler within the JavaScript function and specify the property `"cancelable": true` within the `options` object in the JSON metadata that describes the function. The code samples in the previous section of this article provide an example of these techniques.
 
 ## Saving and sharing state
 
