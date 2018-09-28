@@ -270,7 +270,7 @@ In order to be able to cancel a function and release the resources that it consu
 
 Custom functions can save data in global JavaScript variables. In subsequent calls, your custom function may use the values saved in these variables. Saved state is useful when users add the same custom function to more than one cell, because all the instances of the function can share the state. For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.
 
-The following code sample shows an implementation of the previous temperature-streaming function that saves state globally. Note the following about this code:
+The following code sample shows an implementation of a temperature-streaming function that saves state globally. Note the following about this code:
 
 - `refreshTemperature` is a streamed function that reads the temperature of a particular thermometer every second. New temperatures are saved in the `savedTemperatures` variable, but does not directly update the cell value. It should not be directly called from a worksheet cell, *so it is not registered in the JSON file*.
 
