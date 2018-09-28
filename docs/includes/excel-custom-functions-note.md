@@ -1,0 +1,2 @@
+> [!NOTE]
+> Custom functions are currently available in developer preview. Custom functions are supported in Excel 2016 for Windows (build 10827 or later), Excel 2016 for Mac (build 13.329 or later), and Excel Online. Additionally, you must join the [Office Insider](https://products.office.com/office-insider) program in order to use custom functions. Custom functions are currently disabled across all Office builds unless you are a member of the Office Insider program.

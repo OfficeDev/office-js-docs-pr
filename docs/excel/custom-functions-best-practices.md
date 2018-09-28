@@ -1,12 +1,14 @@
 ---
-ms.date: 09/20/2018
+ms.date: 09/27/2018
 description: Learn best practices and recommended patterns for Excel custom functions.
 title: Custom functions best practices
 ---
 
-# Custom functions best practices
+# Custom functions best practices (preview)
 
 This article describes best practices for developing custom functions in Excel.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## Error handling
 
@@ -14,17 +16,17 @@ When you build an add-in that defines custom functions, be sure to include error
 
 ```js
 function getComment(x) {
-    let url = "https://www.contoso.com/comments/" + x;
-    return fetch(url)
-        .then(function (data) {
-            return data.json();
-        })
-        .then((json) => {
-            return json.body;
-        })
-        .catch(function (error) {
-            throw error;
-        })
+  let url = "https://www.contoso.com/comments/" + x;
+  return fetch(url)
+    .then(function (data) {
+      return data.json();
+    })
+    .then((json) => {
+      return json.body;
+    })
+    .catch(function (error) {
+      throw error;
+    })
 }
 ```
 
@@ -38,8 +40,8 @@ Currently, the best method for debugging Excel custom functions is to first [sid
 
     ```js
     function add(first, second){
-        debugger;
-        return first + second;
+      debugger;
+      return first + second;
     }
     ```
 
