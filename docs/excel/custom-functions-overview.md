@@ -205,13 +205,13 @@ function getTemperature(thermometerID){
 
 ## Streamed functions
 
-Streamed custom functions enable you to output data to cells repeatedly over time, without requiring a user to explicitly request recalculation. The following code sample is a custom function that adds a number to the result every second. Note the following about this code:
+Streamed custom functions enable you to output data to cells repeatedly over time, without requiring a user to explicitly request data refresh. The following code sample is a custom function that adds a number to the result every second. Note the following about this code:
 
 - Excel displays each new value automatically using the `setResult` callback.
 
-- The final parameter, `handler`, is never specified in your registration code, and it does not display in the autocomplete menu to Excel users when they enter the function. It’s an object that contains a `setResult` callback function that’s used to pass data from the function to Excel to update the value of a cell.
+- The second input parameter, `handler`, is not displayed to end users in Excel when they select the function from the autocomplete menu.
 
-- In order for Excel to pass the `setResult` function in the `handler` object, you must declare support for streaming during your function registration by setting the option `"stream": true` in the `options` property for the custom function in the JSON metadata file.
+- The `onCanceled` callback defines the function that executes when the function is canceled. You must implement a cancellation handler like this for any streamed function. See 
 
 ```js
 function incrementValue(increment, handler){
@@ -220,6 +220,37 @@ function incrementValue(increment, handler){
          result += increment;
          handler.setResult(result);
     }, 1000);
+
+    handler.onCanceled = function(){
+        clearInterval(timer);
+    }
+}
+```
+
+When you specify metadata for a streamed function in the JSON metadata file, you must set the properties `"cancelable": true` and `"stream": true` within the `options` object, as shown in the following example.
+
+```json
+{
+  "id": "INCREMENT",
+  "name": "INCREMENT",
+  "description": "Periodically increment a value",
+  "helpUrl": "http://dev.office.com",
+  "result": {
+    "type": "number",
+    "dimensionality": "scalar"
+  },
+  "parameters": [
+    {
+      "name": "increment",
+      "description": "Amount to increment",
+      "type": "number",
+      "dimensionality": "scalar"
+    }
+  ],
+  "options": {
+    "cancelable": true,
+    "stream": true
+  }
 }
 ```
 
@@ -233,26 +264,7 @@ In some situations, you may need to cancel the execution of a streamed custom fu
 
 - The user triggers recalculation manually. In this case, a new function call is triggered following the cancellation.
 
-> [!NOTE]
-> You must implement a cancellation handler for every streaming function.
-
-To make a function cancelable, set the option `"cancelable": true` in the `options` property for the custom function in the JSON metadata file.
-
-The following code shows the same `incrementValue` function that was described previously, but this time with a cancellation handler implemented. In this example, `clearInterval()` will run when the `incrementValue` function is canceled.
-
-```js
-function incrementValue(increment, handler){
-    var result = 0;
-    var timer = setInterval(function(){
-         result += increment;
-         handler.setResult(result);
-    }, 1000);
-
-    handler.onCanceled = function(){
-        clearInterval(timer);
-    }
-}
-```
+In order to be able to cancel a function and release the resources that it consumes, you must implement a cancellation handler within the JavaScript function and specify the property `"cancelable": true` within the `options` object in the JSON metadata that describes the function. The code samples in the previous section of this article provide an example of these techniques.
 
 ## Saving and sharing state
 
