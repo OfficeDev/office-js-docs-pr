@@ -211,7 +211,7 @@ Streamed custom functions enable you to output data to cells repeatedly over tim
 
 - The second input parameter, `handler`, is not displayed to end users in Excel when they select the function from the autocomplete menu.
 
-- The `onCanceled` callback defines the function that executes when the function is canceled. You must implement a cancellation handler like this for any streamed function. See 
+- The `onCanceled` callback defines the function that executes when the function is canceled. You must implement a cancellation handler like this for any streamed function. For more information, see [Canceling a function](#canceling-a-function). 
 
 ```js
 function incrementValue(increment, handler){
