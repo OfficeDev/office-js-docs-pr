@@ -19,64 +19,34 @@ The following example shows the contents of a JSON metadata file for an add-in t
 ```json
 {
   "functions": [
-	{
-  	  "id": "ADD42",
-	  "name": "ADD42",
-	  "description":  "Adds 42 to the input number",
-	  "helpUrl": "http://www.contoso.com/help",
-	  "result": {
-	    "type": "number",
-	    "dimensionality": "scalar"
-	  },
-	  "parameters": [
-	    {
-		  "name": "num",
-		  "description": "Number",
-		  "type": "number",
-		  "dimensionality": "scalar"
-	    }
-	  ]
-	},
-	{
-	  "id": "ADD42ASYNC",
-	  "name": "ADD42ASYNC",
-	  "description":  "asynchronously wait 250ms, then add 42",
-	  "helpUrl": "http://www.contoso.com/help",
-	  "result": {
-		"type": "number",
-		"dimensionality": "scalar"
-	  },
-	  "parameters": [
-		{
-		  "name": "num",
-		  "description": "Number",
-		  "type": "number",
-		  "dimensionality": "scalar"
-		}
-	  ]
-	},
-	{
-	  "id": "ISEVEN",
-	  "name": "ISEVEN", 
-	  "description":  "Determines whether a number is even",
-	  "helpUrl": "http://www.contoso.com/help",
-	  "result": {
-		"type": "boolean",
-		"dimensionality": "scalar"
-	  },
-	  "parameters": [
-		{
-		  "name": "num",
-		  "description": "the number to be evaluated",
-		  "type": "number",
-		  "dimensionality": "scalar"
-		}
-	  ]
-	},
+    {
+      "id": "ADD",
+      "name": "ADD",
+      "description": "Add two numbers",
+      "helpUrl": "http://www.contoso.com/help",
+      "result": {
+        "type": "number",
+        "dimensionality": "scalar"
+      },
+      "parameters": [
+        {
+          "name": "first",
+          "description": "first number to add",
+          "type": "number",
+          "dimensionality": "scalar"
+        },
+        {
+          "name": "second",
+          "description": "second number to add",
+          "type": "number",
+          "dimensionality": "scalar"
+        }
+      ]
+    },
 	{
 	  "id": "GETDAY",
 	  "name": "GETDAY",
-	  "description": "Gets the day of the week",
+	  "description": "Get the day of the week",
 	  "helpUrl": "http://www.contoso.com/help",
 	  "result": {
 		"type": "string"
@@ -86,7 +56,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
 	{
 	  "id": "INCREMENTVALUE",
 	  "name": "INCREMENTVALUE", 
-	  "description":  "Counts up from zero",
+	  "description":  "Count up from zero",
 	  "helpUrl": "http://www.contoso.com/help",
 	  "result": {
 		"type": "number",
@@ -108,7 +78,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
 	{
 	  "id": "SECONDHIGHEST",
 	  "name": "SECONDHIGHEST", 
-	  "description":  "gets the second highest number from a range",
+	  "description":  "Get the second highest number from a range",
 	  "helpUrl": "http://www.contoso.com/help",
 	  "result": {
 		"type": "number",
