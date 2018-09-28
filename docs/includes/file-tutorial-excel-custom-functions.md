@@ -27,9 +27,7 @@ In this tutorial, you will:
 
 * Excel for Windows (build number 10827 or later) or Excel Online
 
-* [Join the Office Insider program](https://products.office.com/office-insider). 
-    > [!NOTE]
-    > Currently, you must join the Office Insider program in order to have access to custom functions. Custom functions are disabled across all Office builds unless you are a member of the Office Insider program.
+* [Join the Office Insider program](https://products.office.com/office-insider)
 
 ## Create a custom functions project
 
