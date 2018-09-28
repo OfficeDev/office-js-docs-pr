@@ -54,7 +54,7 @@ function sendWebRequest(thermometerID, data) {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
            data.temperature = JSON.parse(xhttp.responseText).temperature
-          };
+        };
         xhttp.open("GET", "https://contoso.com/temperature/" + thermometerID), true)
         xhttp.send();  
     }
@@ -108,10 +108,9 @@ _goGetData = async () => {
         const value = await AsyncStorage.getItem('toDoItem');
         if (value !== null) {
             //data exists and you can do something with it here
-            }
-        } catch (error) {
-            //handle errors here
         }
+    } catch (error) {
+        //handle errors here
     }
 }
 ```
