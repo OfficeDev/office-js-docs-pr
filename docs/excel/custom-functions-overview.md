@@ -129,7 +129,7 @@ The following code in **customfunctions.json** specifies the metadata for the `a
 }
 ```
 
-The following table lists the properties that are typically present in the JSON metadata file. For more detailed information about the JSON metadata file, including options not used in the previous example, see [Custom functions metadata](custom-functions-json.md).
+The following table lists the properties that are typically present in the JSON metadata file. For more detailed information about the JSON metadata file, see [Custom functions metadata](custom-functions-json.md).
 
 | Property 	| Description |
 |---------|---------|
