@@ -285,8 +285,11 @@
       - name: Working with multiple ranges
         href: excel/excel-add-ins-multiple-ranges.md
         displayName: Excel
-    - name: Excel JavaScript API reference
+    - name: Excel JavaScript API overview
       href: https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js
+      displayName: Excel
+    - name: Excel JavaScript API reference
+      href: https://docs.microsoft.com/javascript/api/excel?view=office-js
       displayName: Excel
 
   - name: Word add-ins
@@ -317,8 +320,11 @@
     - name: Use search options to find text in your Word add-in 
       href: word/search-option-guidance.md
       displayName: Word
-    - name: Word JavaScript API reference
+    - name: Word JavaScript API usage overview
       href: https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js
+      displayName: Word
+    - name: Word JavaScript API reference
+      href: https://docs.microsoft.com/en-us/javascript/api/word?view=office-js
       displayName: Word
 
   - name: Outlook add-ins
@@ -352,8 +358,11 @@
     - name: Work with OneNote page content
       href: onenote/onenote-add-ins-page-content.md
       displayName: OneNote
-    - name: OneNote JavaScript API reference
+    - name: OneNote JavaScript API overview
       href: https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js
+      displayName: OneNote
+    - name: OneNote JavaScript API reference
+      href: https://docs.microsoft.com/en-us/javascript/api/onenote?view=office-js
       displayName: OneNote
 
   - name: Project add-ins
@@ -423,25 +432,25 @@
   - name: Office Add-in manifest reference
     href: https://docs.microsoft.com/javascript/office/manifest/allowsnapshot?view=office-js
     displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
-  - name: Office JavaScript API
+  - name: Office JavaScript API sets overview
     href: https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js
     displayName: Excel, Word, Outlook, Visio, OneNote
-  - name: Excel JavaScript API
+  - name: Excel-specific JavaScript API overview
     href: https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js
     displayName: Excel
-  - name: OneNote JavaScript API
+  - name: OneNote-specific JavaScript API overview
     href: https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js
     displayName: OneNote
-  - name: Outlook JavaScript API
+  - name: Outlook JavaScript API requirement sets
     href: https://docs.microsoft.com/javascript/office/requirement-sets/outlook-api-requirement-sets?view=office-js
     displayName: Outlook
-  - name: Visio JavaScript API
+  - name: Visio-specific JavaScript API overview
     href: https://docs.microsoft.com/javascript/office/overview/visio-javascript-reference-overview?view=office-js
     displayName: Visio
-  - name: Word JavaScript API
+  - name: Word-specific JavaScript API overview
     href: https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js
     displayName: Word
-  - name: Shared API
+  - name: Common JavaScript API requirment sets
     href: https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js
     displayName: PowerPoint, Project
   - name: API open specifications
