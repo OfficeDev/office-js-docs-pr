@@ -235,10 +235,11 @@
       displayName: Excel
       items:
       - name: Custom functions
-        href: excel/custom-functions-overview.md
-        displayName: Excel
         items:
-        - name: Excel custom functions tutorial
+        - name: Custom functions overview
+          href: excel/custom-functions-overview.md
+          displayName: Excel
+        - name: Custom functions tutorial
           href: excel/excel-tutorial-custom-functions.md
           displayName: Excel
         - name: Custom functions runtime

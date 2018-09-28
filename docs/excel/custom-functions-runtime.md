@@ -1,12 +1,14 @@
 ---
-ms.date: 09/20/2018
+ms.date: 09/27/2018
 description: Excel custom functions use a new JavaScript runtime, which differs from the standard Add-ins WebView control runtime.
 title: Runtime for Excel custom functions
 ---
 
-# Runtime for Excel custom functions (Preview)
+# Runtime for Excel custom functions (preview)
 
 Custom functions extend Excel’s capabilities by using a new JavaScript runtime that uses a sandboxed JavaScript engine rather than a web browser. Because custom functions do not need to render UI elements, the new JavaScript runtime is optimized for performing calculations, enabling you to run thousands of custom functions simultaneously.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## Key facts about the new JavaScript runtime 
 
