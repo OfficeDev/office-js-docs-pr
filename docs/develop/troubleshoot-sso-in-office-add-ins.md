@@ -40,6 +40,8 @@ The [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/
 - The version of Office does not support SSO. The required version is Office 2016, Version 1710, build 8629.nnnn or later (the Office 365 subscription version, sometimes called “Click to Run”). You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). 
 - The add-in manifest is missing the proper [WebApplicationInfo](https://docs.microsoft.com/javascript/office/manifest/webapplicationinfo?view=office-js) section.
 
+Your add-in should respond to this error by falling back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#requirements-and-best-practices).
+
 ### 13001
 
 The user is not signed into Office. Your code should recall the `getAccessTokenAsync` method and pass the option `forceAddAccount: true` in the [options](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) parameter. But don't do this more than once. The user may have decided not to sign-in.
@@ -49,12 +51,14 @@ This error is never seen in Office Online. If the user's cookie expires, Office 
 ### 13002
 
 The user aborted sign in or consent; for example, by choosing **Cancel** on the consent dialog. 
+
 - If your add-in provides functions that don't require the user to be signed in (or to have granted consent), then your code should catch this error and allow the add-in to stay running.
 - If the add-in requires a signed-in user who has granted consent, your code should ask the user to repeat the operation, but not more than once. 
 
 ### 13003
 
-User Type not supported. The user isn't signed into Office with a valid Microsoft Account or Work or School account. This may happen if Office runs with an on-premises domain account, for example. Your code should ask the user to sign in to Office.
+User Type not supported. The user isn't signed into Office with a valid Microsoft Account or Office 365 ("Work or School") account. This may happen if Office runs with an on-premises domain account, for example. Your code should either ask the user to sign in to Office or fall back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins##requirements-and-best-practices).
+
 
 ### 13004
 
@@ -71,6 +75,7 @@ Client Error. Your code should suggest that the user sign out and restart Office
 ### 13007
 
 The Office host was unable to get an access token to the add-in's web service.
+
 - If this error occurs during development, be sure that your add-in registration and add-in manifest specify the `openid` and `profile` permissions. For more information, see [Register the add-in with Azure AD v2.0 endpoint](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) or [Register the add-in with Azure AD v2.0 endpoint](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (Node JS), and [Configure the add-in](create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) or [Configure the add-in](create-sso-office-add-ins-nodejs.md#configure-the-add-in) (Node JS).
 - In production, there are several things that can cause this error. Some of them are:
     - The user has revoked consent, after previously granting it. Your code should recall the `getAccessTokenAsync` method with the option `forceConsent: true`, but no more than once.
@@ -84,7 +89,7 @@ The user triggered an operation that calls `getAccessTokenAsync` before a previo
 
 ### 13009
 
-The add-in called the `getAccessTokenAsync` method with the option `forceConsent: true`, but the add-in's manifest is deployed to a type of catalog that does not support forcing consent. Your code should recall the `getAccessTokenAsync` method and pass the option `forceConsent: false` in the [options](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) parameter. However, the call of  `getAccessTokenAsync`  with `forceConsent: true` might itself have been an automatic response to a failed call of `getAccessTokenAsync` with `forceConsent: false`, so your code should keep track of whether `getAccessTokenAsync` with `forceConsent: false` has already been called. If it has, your code should tell the user to sign out of Office and sign-in again.
+The add-in called the `getAccessTokenAsync` method with the option `forceConsent: true`, but the add-in's manifest is deployed to a type of catalog that does not support forcing consent. Your code should recall the `getAccessTokenAsync` method and pass the option `forceConsent: false` in the [options](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) parameter. However, the call of  `getAccessTokenAsync`  with `forceConsent: true` might itself have been an automatic response to a failed call of `getAccessTokenAsync` with `forceConsent: false`, so your code should keep track of whether `getAccessTokenAsync` with `forceConsent: false` has already been called. If it has, your code should either tell the user to sign out of Office and sign-in again or it should fall back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#requirements-and-best-practices).
 
 > [!NOTE]
 > Microsoft will not necessarily impose this restriction on any types of add-in catalogs. If it doesn't, then this error will never be seen.
@@ -99,7 +104,10 @@ The add-in is running on a platform that does not support the `getAccessTokenAsy
 
 ### 50001
 
-This error (which is not specific to `getAccessTokenAsync`) may indicate that the browser has cached an old copy of the office.js files. Clear the browser's cache. Another possibility is that the version of Office is not recent enough to support SSO. See [Prerequisites](create-sso-office-add-ins-aspnet.md#prerequisites).
+This error (which is not specific to `getAccessTokenAsync`) may indicate that the browser has cached an old copy of the office.js files. When you are developing, clear the browser's cache. Another possibility is that the version of Office is not recent enough to support SSO. See [Prerequisites](create-sso-office-add-ins-aspnet.md#prerequisites).
+
+In a production add-in, the add-in should respond to this error by falling back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins##requirements-and-best-practices).
+
 
 ## Errors on the server-side from Azure Active Directory
 

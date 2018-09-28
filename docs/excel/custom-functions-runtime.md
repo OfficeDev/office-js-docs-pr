@@ -1,12 +1,14 @@
 ---
-ms.date: 09/20/2018
+ms.date: 09/27/2018
 description: Excel custom functions use a new JavaScript runtime, which differs from the standard Add-ins WebView control runtime.
 title: Runtime for Excel custom functions
 ---
 
-# Runtime for Excel custom functions (Preview)
+# Runtime for Excel custom functions (preview)
 
 Custom functions extend Excel’s capabilities by using a new JavaScript runtime that uses a sandboxed JavaScript engine rather than a web browser. Because custom functions do not need to render UI elements, the new JavaScript runtime is optimized for performing calculations, enabling you to run thousands of custom functions simultaneously.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## Key facts about the new JavaScript runtime 
 
@@ -63,7 +65,7 @@ function sendWebRequest(thermometerID, data) {
 
 As shown in the following code sample, custom functions can use WebSockets. In this example, the WebSocket logs each message that it receives.
 
-```ts
+```typescript
 const ws = new WebSocket('wss://bundles.office.com');
 ws.onmessage = (message) => {
     console.log(`Received: ${message}`);
@@ -99,7 +101,7 @@ At this time, the `mergeItem` and `multiMerge` methods are not supported.
 
 The following code sample calls the `AsyncStorage.getItem` function to retrieve a value from storage.
 
-```js
+```typescript
 _goGetData = async () => {
     try {
         const value = await AsyncStorage.getItem('toDoItem');
@@ -125,11 +127,11 @@ In the following code sample, the `getTokenViaDialog()` method uses the Dialog A
 function getStock (ticker) {
   return new Promise(function (resolve, reject) {
     // Get a token
-    getToken("https://myauthurl")
+    getToken("https://www.contoso.com/auth")
     .then(function (token) {
       
       // Use token to get stock price
-      fetch("https://myservice.com/?token=token&ticker= + ticker")
+      fetch("https://www.contoso.com/?token=token&ticker= + ticker")
       .then(function (result) {
 
         // Return stock price to cell

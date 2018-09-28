@@ -232,9 +232,10 @@
       displayName: Excel
       items:
       - name: Custom functions
-        href: excel/custom-functions-overview.md
-        displayName: Excel
         items:
+        - name: Custom functions overview
+          href: excel/custom-functions-overview.md
+          displayName: Excel
         - name: Custom functions runtime
           href: excel/custom-functions-runtime.md
           displayName: Excel
