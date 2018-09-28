@@ -98,7 +98,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
 ```
 
 > [!NOTE]
-> A complete sample JSON file is available in the [OfficeDev/Excel-Custom-Functions GitHub repository](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/config/customfunctions.json).
+> A complete sample JSON file is available in the [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/config/customfunctions.json) GitHub repository.
 
 ## functions 
 
