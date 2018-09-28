@@ -234,7 +234,7 @@ When you specify metadata for a streamed function in the JSON metadata file, you
   "id": "INCREMENT",
   "name": "INCREMENT",
   "description": "Periodically increment a value",
-  "helpUrl": "http://dev.office.com",
+  "helpUrl": "http://www.contoso.com",
   "result": {
     "type": "number",
     "dimensionality": "scalar"
