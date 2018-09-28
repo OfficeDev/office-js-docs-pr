@@ -215,15 +215,15 @@ Streamed custom functions enable you to output data to cells repeatedly over tim
 
 ```js
 function incrementValue(increment, handler){
-    var result = 0;
-    setInterval(function(){
-         result += increment;
-         handler.setResult(result);
-    }, 1000);
+  var result = 0;
+  setInterval(function(){
+    result += increment;
+    handler.setResult(result);
+  }, 1000);
 
-    handler.onCanceled = function(){
-        clearInterval(timer);
-    }
+  handler.onCanceled = function(){
+    clearInterval(timer);
+  }
 }
 ```
 
@@ -282,24 +282,24 @@ The following code sample shows an implementation of a temperature-streaming fun
 var savedTemperatures;
 
 function streamTemperature(thermometerID, handler){
-     if(!savedTemperatures[thermometerID]){
-         refreshTemperatures(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
-     }
+  if(!savedTemperatures[thermometerID]){
+    refreshTemperatures(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
+  }
 
-     function getNextTemperature(){
-         handler.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
-         setTimeout(getNextTemperature, 1000); // Wait 1 second before updating Excel again.
-     }
-     getNextTemperature();
+  function getNextTemperature(){
+    handler.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
+    setTimeout(getNextTemperature, 1000); // Wait 1 second before updating Excel again.
+  }
+  getNextTemperature();
 }
 
 function refreshTemperature(thermometerID){
-     sendWebRequest(thermometerID, function(data){
-         savedTemperatures[thermometerID] = data.temperature;
-     });
-     setTimeout(function(){
-         refreshTemperature(thermometerID);
-     }, 1000); // Wait 1 second before reading the thermometer again, and then update the saved temperature of thermometerID.
+  sendWebRequest(thermometerID, function(data){
+    savedTemperatures[thermometerID] = data.temperature;
+  });
+  setTimeout(function(){
+    refreshTemperature(thermometerID);
+  }, 1000); // Wait 1 second before reading the thermometer again, and then update the saved temperature of thermometerID.
 }
 ```
 
@@ -311,20 +311,20 @@ For example, suppose that your function returns the second highest value from a 
 
 ```js
 function secondHighest(values){
-     let highest = values[0][0], secondHighest = values[0][0];
-     for(var i = 0; i < values.length; i++){
-         for(var j = 1; j < values[i].length; j++){
-             if(values[i][j] >= highest){
-                 secondHighest = highest;
-                 highest = values[i][j];
-             }
-             else if(values[i][j] >= secondHighest){
-                 secondHighest = values[i][j];
-             }
-         }
-     }
-     return secondHighest;
- }
+  let highest = values[0][0], secondHighest = values[0][0];
+  for(var i = 0; i < values.length; i++){
+    for(var j = 1; j < values[i].length; j++){
+      if(values[i][j] >= highest){
+        secondHighest = highest;
+        highest = values[i][j];
+      }
+      else if(values[i][j] >= secondHighest){
+        secondHighest = values[i][j];
+      }
+    }
+  }
+  return secondHighest;
+}
 ```
 
 ## Handling errors
@@ -333,18 +333,18 @@ When you build an add-in that defines custom functions, be sure to include error
 
 ```js
 function getComment(x) {
-    let url = "https://www.contoso.com/comments/" + x;
+  let url = "https://www.contoso.com/comments/" + x;
 
-    return fetch(url)
-        .then(function (data) {
-            return data.json();
-        })
-        .then((json) => {
-            return json.body;
-        })
-        .catch(function (error) {
-            throw error;
-        })
+  return fetch(url)
+    .then(function (data) {
+      return data.json();
+    })
+    .then((json) => {
+      return json.body;
+    })
+    .catch(function (error) {
+      throw error;
+    })
 }
 ```
 
