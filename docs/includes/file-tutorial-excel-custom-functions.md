@@ -288,6 +288,6 @@ In this tutorial, you've created a new custom functions project, tried out a pre
 > [!div class="nextstepaction"]
 > [Create custom functions in Excel](../excel/custom-functions-overview.md)
 
-## Legal Information
+## Legal information
 
-Data provided free by [IEX](https://iextrading.com/developer/). View [IEX's Term of Use](https://iextrading.com/api-exhibit-a/). Microsoft's use of this API in this hands-on-lab is for educational purposes only. 
+Data provided free by [IEX](https://iextrading.com/developer/). View [IEX's Terms of Use](https://iextrading.com/api-exhibit-a/). Microsoft's use of the IEX API in this tutorial is for educational purposes only.
