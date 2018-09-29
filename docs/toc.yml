@@ -47,6 +47,9 @@
   - name: Excel add-in tutorial
     href: tutorials/excel-tutorial.yml
     displayName: Excel
+  - name: Excel custom functions tutorial
+    href: tutorials/excel-tutorial-create-custom-functions.md
+    displayName: Excel
   - name: PowerPoint add-in tutorial
     href: tutorials/powerpoint-tutorial.yml
     displayName: PowerPoint
@@ -235,6 +238,9 @@
         items:
         - name: Custom functions overview
           href: excel/custom-functions-overview.md
+          displayName: Excel
+        - name: Custom functions tutorial
+          href: excel/excel-tutorial-custom-functions.md
           displayName: Excel
         - name: Custom functions runtime
           href: excel/custom-functions-runtime.md

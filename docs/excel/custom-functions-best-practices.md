@@ -49,7 +49,6 @@ If your add-in fails to register, [verify that SSL certificates are correctly co
 
 If you are testing your add-in in Office 2016 desktop, you can enable [runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in) to debug issues with your add-in's XML manifest file as well as several installation and runtime conditions.
 
-
 ## Mapping function names to JSON metadata
 
 As described in the [custom functions overview](custom-functions-overview.md) article, a custom functions project must include a JSON metadata file which provides the information that Excel requires to register the custom functions and make them available to end users. Additionally, within the JavaScript file that defines your custom functions, you must provide information to specify which function object in the JSON metadata file corresponds to each custom function in the JavaScript file.
@@ -122,6 +121,7 @@ Keep in mind the following best practices when creating custom functions in your
 
 ## See also
 
-- [Create custom functions in Excel](custom-functions-overview.md)
-- [Custom functions metadata](custom-functions-json.md)
-- [Runtime for Excel custom functions](custom-functions-runtime.md)
+* [Create custom functions in Excel](custom-functions-overview.md)
+* [Custom functions metadata](custom-functions-json.md)
+* [Runtime for Excel custom functions](custom-functions-runtime.md)
+* [Excel custom functions tutorial](excel-tutorial-custom-functions.md)
