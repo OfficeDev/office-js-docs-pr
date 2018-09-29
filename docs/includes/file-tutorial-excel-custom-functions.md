@@ -141,7 +141,7 @@ Complete the following steps to create a custom function named `stockPrice` that
         "id": "STOCKPRICE",
         "name": "STOCKPRICE",
         "description": "Fetches current stock price",
-        "helpUrl": "http://yourhelpurl.com",
+        "helpUrl": "http://www.contoso.com/help",
         "result": {
             "type": "number",
             "dimensionality": "scalar"
@@ -236,7 +236,7 @@ Complete the following steps to create a custom function named `stockPriceStream
         "id": "STOCKPRICESTREAM",
         "name": "STOCKPRICESTREAM",
         "description": "Streams real time stock price",
-        "helpUrl": "http://yourhelpurl.com",
+        "helpUrl": "http://www.contoso.com/help",
         "result": {
             "type": "number",
             "dimensionality": "scalar"
@@ -287,3 +287,7 @@ In this tutorial, you've created a new custom functions project, tried out a pre
 
 > [!div class="nextstepaction"]
 > [Create custom functions in Excel](../excel/custom-functions-overview.md)
+
+## Legal Information
+
+Data provided free by [IEX](https://iextrading.com/developer/). View [IEX's Term of Use](https://iextrading.com/api-exhibit-a/). Microsoft's use of this API in this hands-on-lab is for educational purposes only. 
