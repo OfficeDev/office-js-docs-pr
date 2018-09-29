@@ -148,3 +148,4 @@ The `results` object defines the type of information that is returned by the fun
 * [Create custom functions in Excel](custom-functions-overview.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
+* [Excel custom functions tutorial](excel-tutorial-custom-functions.md)
