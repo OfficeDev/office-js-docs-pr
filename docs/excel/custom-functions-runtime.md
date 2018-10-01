@@ -6,7 +6,7 @@ title: Runtime for Excel custom functions
 
 # Runtime for Excel custom functions (preview)
 
-Custom functions use a new JavaScript runtime, which differs the runtime used by other parts of an add-in, such as the task pane or other UI elements. This JavaScript runtime is designed to optimize performance of calculations in custom functions and exposes some [new APIs](#new-apis). Some of these APIs allow you to perform common web-based actions, such as requesting external data or enabling chat. Others, like `AsyncStorage` have been developed so they are common to both custom functions and other parts of an add-in.
+Custom functions use a new JavaScript runtime, which differs the runtime used by other parts of an add-in, such as the task pane or other UI elements. This JavaScript runtime is designed to optimize performance of calculations in custom functions and exposes some new APIs. Some of these APIs allow you to perform common web-based actions, such as requesting external data or enabling chat. Others, like `AsyncStorage` have been developed so they are common to both custom functions and other parts of an add-in.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
