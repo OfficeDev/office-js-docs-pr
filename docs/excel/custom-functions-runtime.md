@@ -6,35 +6,19 @@ title: Runtime for Excel custom functions
 
 # Runtime for Excel custom functions (preview)
 
-Custom functions employ a new JavaScript runtime, which differs the runtime utilized by other parts of an add-in, such as the task pane or other UI elements.
-
-* This new runtime emphasizes fast performance for custom functions' calculations and has some [new APIs](#new-apis) that allow you to return data from external sources.
-
-* On Excel for Windows, the new JavaScript runtime does not provide access to the Document Object Model (DOM) or support libraries like jQuery that rely on the DOM. If you would like your add-in to work seamlessly on both Excel Online and Excel for Windows, it is recommended that you avoid these libraries or accessing the DOM.
+Custom functions use a new JavaScript runtime, which differs the runtime used by other parts of an add-in, such as the task pane or other UI elements. This JavaScript runtime is designed to optimize performance of calculations in custom functions and exposes some [new APIs](#new-apis). Some of these APIs allow you to perform common web-based actions, such as requesting external data or enabling chat. Others, like `AsyncStorage` have been developed so they are common to both custom functions and other parts of an add-in.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-## New APIs
+## Requesting external data using fetch and XHR
 
-This new JavaScript runtime features two built-in APIs to facilitate some common web-based actions:
+Requests for external data, such as information from the web, are supported in this JavaScript runtime through two APIs:
 
-- Requesting external data with [fetch](#requesting-external-data) & [XHR](#xhr)
-- [WebSockets](#websockets)
+* Fetch: you can [use fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) to request data
 
-It also includes two APIs which can be used by both custom functions in this new runtime and by other parts of an add-in which do not use this new runtime, such as the task pane and UI elements.
-- [AsyncStorage](#asyncstorage)
-- [Dialog API](#dialog-api)
+* XHR: you can make an XHR request, as detailed below. 
 
-### Requesting external data
-
-Requests for external data, such as information from the web, are supported in this new runtime. You can make XHR requests as detailed in the next section, or [use fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). In both cases, a new JavaScript Promise is returned.
-
->[!NOTE]
-> While you may previously have had to specify `OfficeExtension.Promise` in add-ins to use Promises, as of September 2018, Promises are globally exposed.
-
-#### XHR
-
-XHR stands for [XmlHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers. In the new JavaScript runtime, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).  
+XHR stands for [XmlHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers. In this JavaScript runtime, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).  
 
 In the following code sample, the `getTemperature()` function sends a web request to get the temperature of a particular area based on thermometer ID. The `sendWebRequest()` function uses XHR to issue a `GET` request to an endpoint that can provide the data.  
 
@@ -48,7 +32,7 @@ function getTemperature(thermometerID) {
   });
 }
 
-//Helper method that uses Office's implementation of XMLHttpRequest in the new JavaScript runtime for custom functions  
+//Helper method that uses Office's implementation of XMLHttpRequest in the JavaScript runtime for custom functions  
 function sendWebRequest(thermometerID, data) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -62,11 +46,13 @@ function sendWebRequest(thermometerID, data) {
 
 ```
 
-### WebSockets
+When using fetch or XHR, a new JavaScript Promise is returned. You'll note that you may have had to specify `OfficeExtension.Promise` in the past to use Promises, but as of September 2018, they are globally exposed.
 
-[WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) is a networking protocol that creates real-time communication between a server and one or more clients. It is often used for chat applications because it allows you to read and write text simultaneously.  
+## Enabling chat using WebSockets
 
-As shown in the following code sample, custom functions can use WebSockets. In this example, the WebSocket logs each message that it receives.
+[WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) are also globally exposed in the JavaScript runtime. Websockets is a networking protocol that creates real-time communication between a server and one or more clients. It is often used for chat applications because it allows you to read and write text simultaneously. 
+
+This sample below shows how you can declare a websocket which logs each message it receives. 
 
 ```typescript
 const ws = new WebSocket('wss://bundles.office.com');
@@ -78,15 +64,9 @@ ws.onerror = (error) => {
 }
 ```
 
-### AsyncStorage
+## Managing data with AsyncStorage
 
-AsyncStorage is a key-value storage system that can be used to store authentication tokens. It is:
-
-- Persistent
-- Unencrypted
-- Asynchronous
-
-AsyncStorage is globally available to all parts of your add-in. For custom functions, `AsyncStorage` is exposed as a global object. (For other parts of your add-in, such as task panes and other elements that use the WebView runtime, AsyncStorage is exposed through `OfficeRuntime`.) Each add-in has its own storage partition, with a default size of 5MB. 
+AsyncStorage is a persistent, unencrypted, key-value storage system that can be used to store data. It can be used as an alternative to localStorage, which is not available to custom functions. AsyncStorage is accessible to custom functions as a global object and to all other parts of your add-in through `OfficeRuntime.AsyncStorage`. Each add-in has a 5MB storage partition by default.
 
 The following methods are available on the `AsyncStorage` object:
  
@@ -115,11 +95,11 @@ _goGetData = async () => {
 }
 ```
 
-### Dialog API
+## Enabling pop-up dialog windows through Dialog API
 
-The Dialog API enables you to open a dialog box that prompts user sign-in. You can use the Dialog API to require user authentication through an outside resource, such as Google or Facebook, before the user can use your function.
+The Dialog API enables you to open a pop-up window which a user can interact with. A common usage scenario for the Dialog API is to prompt user sign-in for authentication via an outside resource, but it can be used for any situation which calls for a dialog box. It can be used by both custom functions and all other parts of your add-in, as it is exposed through `OfficeRuntime.displayWebDialogOptions`. Note that this API is different from the [Dialog API](../develop/dialog-api-in-office-add-ins.md) that can only be used within task panes and add-in commands.
 
-In the following code sample, the `getTokenViaDialog()` method uses the Dialog API’s `displayWebDialog()` method to open a dialog box.
+In the following code sample, the function `getTokenViaDialog` uses the Dialog API’s `displayWebDialogOptions` method to open a dialog box.
 
 ```js
 // Get auth token before calling my service, a hypothetical API that will deliver a stock price based on stock ticker string, such as "MSFT"
@@ -179,7 +159,7 @@ function getStock (ticker) {
         }, 1000);
       } else {
         _dialogOpen = true;
-        OfficeRuntime.displayWebDialog(url, {
+        OfficeRuntime.displayWebDialogOptions(url, {
           height: '50%',
           width: '50%',
           onMessage: function (message, dialog) {
@@ -200,8 +180,9 @@ function getStock (ticker) {
 }
 ```
 
-> [!NOTE]
-> The Dialog API described in this section is part of the new JavaScript runtime. This API is different from the [Dialog API](../develop/dialog-api-in-office-add-ins.md) that can be used within task panes and add-in commands.
+## Best practices
+
+To develop an add-in which works both on Excel for Windows and Excel Online, you should avoid accessing the Document Object Model (DOM) or support libraries like jQuery which rely on the DOM. This is because Excel Online uses and renders everything in the browser, whereas Excel for Windows uses the JavaScript runtime, which does not support the DOM and libraries which use it.
 
 ## See also
 
