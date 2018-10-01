@@ -120,6 +120,10 @@ Keep in mind the following best practices when creating custom functions in your
     }
     ```
 
+## Developing for Excel for Windows and Excel Online simultaneously
+
+To develop an add-in which works both on Excel for Windows and Excel Online, you should avoid accessing the Document Object Model (DOM) or support libraries like jQuery which rely on the DOM. This is because Excel Online uses and renders everything in the browser, whereas Excel for Windows uses the JavaScript runtime, which does not support the DOM and libraries which use it. To learn more about this runtime, see [Runtime for Excel custom functions](custom-functions-runtime.md).
+
 ## See also
 
 - [Create custom functions in Excel](custom-functions-overview.md)
