@@ -463,7 +463,7 @@
     displayName: Outlook
   - name: Common JavaScript API requirement sets
     href: https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js
-    displayName: PowerPoint, Project
+    displayName: Excel, OneNote, PowerPoint, Project, Visio, Word
     
 - name: Resources
   href: resources/resources-links-help.md
