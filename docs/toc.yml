@@ -443,16 +443,16 @@
     displayName: Excel, Word, Outlook, Visio, OneNote
   - name: Office Host-specific JavaScript APIs
     items: 
-    - name: Excel-specific JavaScript API overview
+    - name: Excel JavaScript API overview
       href: https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js
       displayName: Excel
-    - name: OneNote-specific JavaScript API overview
+    - name: OneNote JavaScript API overview
       href: https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js
       displayName: OneNote
-    - name: Visio-specific JavaScript API overview
+    - name: Visio JavaScript API overview
       href: https://docs.microsoft.com/javascript/office/overview/visio-javascript-reference-overview?view=office-js
       displayName: Visio
-    - name: Word-specific JavaScript API overview
+    - name: Word JavaScript API overview
       href: https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js
       displayName: Word
   - name: API open specifications
