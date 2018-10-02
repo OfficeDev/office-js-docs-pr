@@ -50,7 +50,7 @@ When using fetch or XHR, a new JavaScript Promise is returned. You'll note that 
 
 ## Enabling chat using WebSockets
 
-[WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) are also globally exposed in the JavaScript runtime. Websockets is a networking protocol that creates real-time communication between a server and one or more clients. It is often used for chat applications because it allows you to read and write text simultaneously. 
+[WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) are also globally exposed in the JavaScript runtime. The Websockets networking protocol creates real-time communication between a server and one or more clients. It is often used for chat applications because it allows you to read and write text simultaneously. 
 
 This sample below shows how you can declare a websocket which logs each message it receives. 
 
@@ -66,7 +66,7 @@ ws.onerror = (error) => {
 
 ## Managing data with AsyncStorage
 
-AsyncStorage is a persistent, unencrypted, key-value storage system that can be used to store data. It can be used as an alternative to localStorage, which is not available to custom functions. AsyncStorage is accessible to custom functions as a global object and to all other parts of your add-in through `OfficeRuntime.AsyncStorage`. Each add-in has a 5MB storage partition by default.
+AsyncStorage is a persistent, unencrypted, key-value storage system that can be used to cache data. It can be used as an alternative to localStorage, which is not available to custom functions. AsyncStorage is accessible to custom functions as a global object and to all other parts of your add-in through `OfficeRuntime.AsyncStorage`. Each add-in has a 5MB storage partition by default.
 
 The following methods are available on the `AsyncStorage` object:
  
@@ -97,7 +97,7 @@ _goGetData = async () => {
 
 ## Enabling pop-up dialog windows through Dialog API
 
-The Dialog API enables you to open a pop-up window which a user can interact with. A common usage scenario for the Dialog API is to prompt user sign-in for authentication via an outside resource, but it can be used for any situation which calls for a dialog box. It can be used by both custom functions and all other parts of your add-in, as it is exposed through `OfficeRuntime.displayWebDialogOptions`. Note that this API is different from the [Dialog API](../develop/dialog-api-in-office-add-ins.md) that can only be used within task panes and add-in commands.
+The Dialog API enables you to open a pop-up window which a user can interact with. A common usage scenario for the Dialog API is to prompt user sign-in for authentication via an outside resource, but it can be used for any situation which calls for a dialog box. Custom functions and all other parts of your add-in can use it as it is exposed through `OfficeRuntime.displayWebDialogOptions`. Note that this API is different from the [Dialog API](../develop/dialog-api-in-office-add-ins.md) that can only be used within task panes and add-in commands.
 
 In the following code sample, the function `getTokenViaDialog` uses the Dialog API’s `displayWebDialogOptions` method to open a dialog box.
 
