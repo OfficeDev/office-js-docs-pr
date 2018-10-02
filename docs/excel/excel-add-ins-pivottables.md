@@ -45,9 +45,8 @@ The following samples show various PivotTable creation techniques.
 
 ```typescript
 await Excel.run(async (context) => {
-    // creating a PivotTable named "Farm Sales" created on the current worksheet at cell A22 with data from the range A1:E21
-	context.workbook.worksheets.getActiveWorksheet()
-		.pivotTables.add("Farm Sales", "A1:E21", "A22");
+    // creating a PivotTable named "Farm Sales" on the current worksheet at cell A22 with data from the range A1:E21
+	context.workbook.worksheets.getActiveWorksheet().pivotTables.add("Farm Sales", "A1:E21", "A22");
 
 	await context.sync();
 });
@@ -61,7 +60,8 @@ await Excel.run(async (context) => {
     // the data comes from the worksheet "DataWorksheet" across the range A1:E21
 	const rangeToAnalyze = context.workbook.worksheets.getItem("DataWorksheet").getRange("A1:E21");
 	const rangeToPlacePivot = context.workbook.worksheets.getItem("PivotWorksheet").getRange("A2");
-	context.workbook.worksheets.getItem("PivotWorksheet").pivotTables.add("Farm Sales", rangeToAnalyze, rangeToPlacePivot);
+	context.workbook.worksheets.getItem("PivotWorksheet").pivotTables.add(
+	    "Farm Sales", rangeToAnalyze, rangeToPlacePivot);
 	
 	await context.sync();
 });
@@ -142,7 +142,8 @@ await Excel.run(async (context) => {
 	pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Farm"));
 	pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Type"));
 
-	// "Crates Sold at Farm" and "Crates Sold Wholesale" are the heirarchies that will have their data aggregated (summed in this case)
+	// "Crates Sold at Farm" and "Crates Sold Wholesale" are the hierarchies
+    // that will have their data aggregated (summed in this case)
 	pivotTable.dataHierarchies.add(pivotTable.hierarchies.getItem("Crates Sold at Farm"));
 	pivotTable.dataHierarchies.add(pivotTable.hierarchies.getItem("Crates Sold Wholesale"));
 
@@ -159,16 +160,77 @@ The currently supported aggregation function types are `Sum`, `Count`, `Average`
 The following code samples changes the aggregation to be averages of the data.
 
 ```typescript
-	await Excel.run(async (context) => {
-        const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
-        pivotTable.dataHierarchies.load("no-properties-needed");
-        await context.sync();
+await Excel.run(async (context) => {
+    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+    pivotTable.dataHierarchies.load("no-properties-needed");
+    await context.sync();
 
-		// changing the aggregation from the default sum to an average of all the values in the hierarchy
-        pivotTable.dataHierarchies.items[0].summarizeBy = Excel.AggregationFunction.average;
-        pivotTable.dataHierarchies.items[1].summarizeBy = Excel.AggregationFunction.average;
-        await context.sync();
-    });
+    // changing the aggregation from the default sum to an average of all the values in the hierarchy
+    pivotTable.dataHierarchies.items[0].summarizeBy = Excel.AggregationFunction.average;
+    pivotTable.dataHierarchies.items[1].summarizeBy = Excel.AggregationFunction.average;
+    await context.sync();
+});
+```
+
+## Change calculations with a ShowAsRule
+
+PivotTables, by default, aggregate the data of their row and column hierarchies independently. A `ShowAsRule` changes the data hierarchy to output values based on other items in the PivotTable.
+
+The `ShowAsRule` object has three properties:
+-	`calculation`: The type of relative calculation to apply to the data hierarchy (the default is `none`).
+-	`baseField`: The field within the hierarchy containing the base data before the calculation is applied. The `PivotField` usually has the same name as its parent hierarchy.
+-	`baseItem`: The individual item compared against the values of the base fields based on the calculation type. Not all calculations require this field.
+
+The following example sets the calculation on the **Sum of Crates Sold at Farm** data hierarchy to be a percentage of the column total. 
+We still want the granularity to extend to the fruit type level, so we’ll use the **Type** row hierarchy and its underlying field. 
+The example also has **Farm** as the first row hierarchy, so the farm total entries display the percentage each farm is responsible for producing as well.
+
+![A PivotTable showing the percentages of fruit sales relative to the grand total for both individual farms and individual fruit types within each farm.](../images/excel-pivots-showas-percentage.png)
+
+``` TypeScript
+await Excel.run(async (context) => {
+    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+    const farmDataHierarchy = pivotTable.dataHierarchies.getItem("Sum of Crates Sold at Farm");
+
+    farmDataHierarchy.load("showAs");
+    await context.sync();
+
+    // show the crates of each fruit type sold at the farm as a percentage of the column's total
+    let farmShowAs = farmDataHierarchy.showAs;
+    farmShowAs.calculation = Excel.ShowAsCalculation.percentOfColumnTotal;
+    farmShowAs.baseField = pivotTable.rowHierarchies.getItem("Type").fields.getItem("Type");
+    farmDataHierarchy.showAs = farmShowAs; 
+    farmDataHierarchy.name = "Percentage of Total Farm Sales";
+
+    await context.sync();
+});
+```
+
+The previous example set the calculation to the column, relative to an individual row hierarchy. When the calculation relates to an individual item, use the `baseItem` property. 
+
+The following example shows the `differenceFrom` calculation. It displays the difference of the farm crate sales data hierarchy entries relative to those of “A Farms”. 
+The `baseField` is **Farm**, so we see the differences between the other farms, as well as breakdowns for each type of like fruit (**Type** is also a row hierarchy in this example).
+
+![A PivotTable showing the differences of fruit sales between “A Farms” and the others. This shows both the difference in total fruit sales of the farms and the sales of types of fruit. If “A Farms” did not sell a particular type of fruit, “#N/A” is displayed.](../images/excel-pivots-showas-differencefrom.png)
+
+``` TypeScript
+await Excel.run(async (context) => {
+    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+    const farmDataHierarchy = pivotTable.dataHierarchies.getItem("Sum of Crates Sold at Farm");
+
+    farmDataHierarchy.load("showAs");
+    await context.sync();
+
+    // show the difference between crate sales of the "A Farms" and the other farms
+    // this difference is both aggregated and shown for individual fruit types (where applicable)
+    let farmShowAs = farmDataHierarchy.showAs;
+    farmShowAs.calculation = Excel.ShowAsCalculation.differenceFrom;
+    farmShowAs.baseField = pivotTable.rowHierarchies.getItem("Farm").fields.getItem("Farm");
+    farmShowAs.baseItem = pivotTable.rowHierarchies.getItem("Farm").fields.getItem("Farm").items.getItem("A Farms");
+    farmDataHierarchy.showAs = farmShowAs;
+    farmDataHierarchy.name = "Difference from A Farms";
+    await context.sync();
+});
 ```
 
 ## PivotTable layouts
@@ -181,22 +243,21 @@ The following diagram shows which layout function calls correspond to which rang
 
 The following code demonstrates how to get the last row of the PivotTable data by going through the layout. Those values are then summed together for a grand total.
 
-
 ```typescript
-    await Excel.run(async (context) => {
-        const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
-		
-		// get the totals for each data hierarchy from the layout
-        const range = pivotTable.layout.getDataBodyRange();
-        const grandTotalRange = range.getLastRow();
-        grandTotalRange.load("address");
-        await context.sync();
-		
-		// sum the totals from the PivotTable data hierarchies and place them in a new range
-		const masterTotalRange = context.workbook.worksheets.getActiveWorksheet().getRange("B27:C27");
-        masterTotalRange.formulas = [["All Crates", "=SUM(" + grandTotalRange.address + ")"]];
-        await context.sync();
-    });
+await Excel.run(async (context) => {
+    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+
+    // get the totals for each data hierarchy from the layout
+    const range = pivotTable.layout.getDataBodyRange();
+    const grandTotalRange = range.getLastRow();
+    grandTotalRange.load("address");
+    await context.sync();
+
+    // sum the totals from the PivotTable data hierarchies and place them in a new range
+    const masterTotalRange = context.workbook.worksheets.getActiveWorksheet().getRange("B27:C27");
+    masterTotalRange.formulas = [["All Crates", "=SUM(" + grandTotalRange.address + ")"]];
+    await context.sync();
+});
 ```
 
 PivotTables have three layout styles: Compact, Outline, and Tabular. We’ve seen the compact style in the previous examples. 
@@ -210,25 +271,6 @@ The following examples use the outline and tabular styles, respectively. The cod
 ### Tabular layout
 
 ![A PivotTable usingthe tabular layout.](../images/excel-pivots-tabular-layout.png)
-
-```typescript
-await Excel.run(async (context) => {
-	const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
-	pivotTable.layout.load("layoutType");
-	await context.sync();
-	
-	// cycling through layout styles
-	if (pivotTable.layout.layoutType === "Compact") {
-		pivotTable.layout.layoutType = "Outline";
-	} else if (pivotTable.layout.layoutType === "Outline") {
-		pivotTable.layout.layoutType = "Tabular";
-	} else {
-		pivotTable.layout.layoutType = "Compact";
-	}
-	
-	await context.sync();
-});
-```
 
 ## Change hierarchy names
 
