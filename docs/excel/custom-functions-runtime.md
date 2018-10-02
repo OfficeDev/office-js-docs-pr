@@ -44,6 +44,9 @@ function sendWebRequest(thermometerID, data) {
     }
 }
 
+//Adding name mapping as this is a recommended best practice
+//This step maps a function's `id` value in the JSON metadata file to JavaScript function name
+CustomFunctionMappings.GETTEMPERATURE = getTemperature;
 ```
 
 When using fetch or XHR, a new JavaScript Promise is returned. You'll note that you may have had to specify `OfficeExtension.Promise` in the past to use Promises, but as of September 2018, they are globally exposed.

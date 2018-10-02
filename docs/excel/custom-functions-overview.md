@@ -272,11 +272,11 @@ Custom functions can save data in global JavaScript variables. In subsequent cal
 
 The following code sample shows an implementation of a temperature-streaming function that saves state globally. Note the following about this code:
 
-- `refreshTemperature` is a streamed function that reads the temperature of a particular thermometer every second. New temperatures are saved in the `savedTemperatures` variable, but does not directly update the cell value. It should not be directly called from a worksheet cell, *so it is not registered in the JSON file*.
-
-- `streamTemperature` updates the temperature values displayed in the cell every second and it uses `savedTemperatures` variable as its data source. It must be registered in the JSON file, and named with all upper-case letters, `STREAMTEMPERATURE`.
+- `streamTemperature` updates the temperature values displayed in the cell every second and it uses the `savedTemperatures` variable as its data source. You'll note `streamTemperature` is a streaming function not just because of its name but because it uses a cancellation handler. While not listed here in this sample, assume that this function also specifies the property `"cancelable": true` in the function's JSON metadata.
 
 - Users may call `streamTemperature` from several cells in the Excel UI. Each call reads data from the same `savedTemperatures` variable.
+
+- `refreshTemperature` is a function that reads the temperature of a particular thermometer every second. New temperatures are saved in the `savedTemperatures` variable, but does not directly update the cell value. It should not be directly called from a worksheet cell, *so it is not registered in the JSON file*.
 
 ```js
 var savedTemperatures;
@@ -301,6 +301,9 @@ function refreshTemperature(thermometerID){
     refreshTemperature(thermometerID);
   }, 1000); // Wait 1 second before reading the thermometer again, and then update the saved temperature of thermometerID.
 }
+
+//
+
 ```
 
 ## Working with ranges of data
