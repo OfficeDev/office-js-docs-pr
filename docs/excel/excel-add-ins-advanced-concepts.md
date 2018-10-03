@@ -1,7 +1,7 @@
 ---
 title: Advanced Excel add-in programming
 description: ''
-ms.date: 10/3/2018
+ms.date: 10/03/2018
 ---
 
 
