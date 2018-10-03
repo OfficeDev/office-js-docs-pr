@@ -230,10 +230,24 @@
     - name: Excel add-in tutorial
       href: tutorials/excel-tutorial.yml
       displayName: Excel
-    - name: Core concepts
-      href: excel/excel-add-ins-core-concepts.md
+    - name: Concepts
       displayName: Excel
       items:
+      - name: Beginner Excel add-in programming
+        href: excel/excel-add-ins-core-concepts.md
+        displayName: Excel
+      - name: Advanced Excel add-in programming
+        href: excel/excel-add-ins-advanced-concepts.md
+        displayName: Excel
+      - name: Calling built-in functions
+        href: excel/excel-add-ins-worksheet-functions.md
+        displayName: Excel
+      - name: Charts
+        href: excel/excel-add-ins-charts.md
+        displayName: Excel
+      - name: Coauthoring in Excel add-ins
+        href: excel/co-authoring-in-excel-add-ins.md
+        displayName: Excel
       - name: Custom functions
         items:
         - name: Custom functions overview
@@ -251,11 +265,17 @@
         - name: Custom functions best practices
           href: excel/custom-functions-best-practices.md
           displayName: Excel
-      - name: Charts
-        href: excel/excel-add-ins-charts.md
+      - name: Data validation
+        href: excel/excel-add-ins-data-validation.md
+        displayName: Excel
+      - name: Error handling
+        href: excel/excel-add-ins-error-handling.md
         displayName: Excel
       - name: Events
         href: excel/excel-add-ins-events.md
+        displayName: Excel
+      - name: Performance optimization
+        href: excel/performance.md
         displayName: Excel
       - name: PivotTables
         href: excel/excel-add-ins-pivottables.md
@@ -266,30 +286,11 @@
       - name: Tables
         href: excel/excel-add-ins-tables.md
         displayName: Excel
-      - name: Worksheets
-        href: excel/excel-add-ins-worksheets.md
-        displayName: Excel
-    - name: Advanced concepts
-      href: excel/excel-add-ins-advanced-concepts.md
-      displayName: Excel
-      items:
-      - name: Calling built-in functions
-        href: excel/excel-add-ins-worksheet-functions.md
-        displayName: Excel
-      - name: Coauthoring in Excel add-ins
-        href: excel/co-authoring-in-excel-add-ins.md
-        displayName: Excel
-      - name: Data validation
-        href: excel/excel-add-ins-data-validation.md
-        displayName: Excel
-      - name: Error handling
-        href: excel/excel-add-ins-error-handling.md
-        displayName: Excel
-      - name: Performance optimization
-        href: excel/performance.md
-        displayName: Excel
       - name: Working with multiple ranges
         href: excel/excel-add-ins-multiple-ranges.md
+        displayName: Excel
+      - name: Worksheets
+        href: excel/excel-add-ins-worksheets.md
         displayName: Excel
     - name: Excel JavaScript API overview
       href: https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js
