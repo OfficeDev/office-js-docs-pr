@@ -1,6 +1,6 @@
 ---
-ms.date: 09/27/2018
-description: Excel custom functions use a new JavaScript runtime, which differs from the standard Add-ins WebView control runtime.
+ms.date: 10/03/2018
+description: Understand key scenarios in developing Excel custom functions that use the new JavaScript runtime.
 title: Runtime for Excel custom functions
 ---
 
