@@ -6,21 +6,17 @@ title: Runtime for Excel custom functions
 
 # Runtime for Excel custom functions (preview)
 
-Custom functions use a new JavaScript runtime that differs from the runtime used by other parts of an add-in, such as the task pane or other UI elements. This JavaScript runtime is designed to optimize performance of calculations in custom functions and exposes new APIs that you can use to perform common web-based actions within custom functions such as requesting external data and receiving external data. The JavaScript runtime also provides access to new APIs in the `OfficeRuntime` namespace that can be used by custom functions or other parts of an add-in to store data or open a dialog box.
+Custom functions use a new JavaScript runtime that differs from the runtime used by other parts of an add-in, such as the task pane or other UI elements. This JavaScript runtime is designed to optimize performance of calculations in custom functions and exposes new APIs that you can use to perform common web-based actions within custom functions such as requesting external data and receiving external data. The JavaScript runtime also provides access to new APIs in the `OfficeRuntime` namespace that can be used within custom functions or by other parts of an add-in to store data or open a dialog box. This article describes how to use these APIs within custom functions and also includes recommendations for...
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-## Requesting external data using fetch and XHR
+## Request external data
 
-Requests for external data, such as information from the web, are supported in this JavaScript runtime through two APIs:
+You can request external data within a custom function by using an API like [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or by using [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers. Within the JavaScript runtime, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).  
 
-* Fetch: you can [use fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) to request data
+### XHR example
 
-* XHR: you can make an XHR request, as detailed below. 
-
-XHR stands for [XmlHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers. In this JavaScript runtime, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).  
-
-In the following code sample, the `getTemperature()` function sends a web request to get the temperature of a particular area based on thermometer ID. The `sendWebRequest()` function uses XHR to issue a `GET` request to an endpoint that can provide the data.  
+In the following code sample, the `getTemperature()` function calls the `sendWebRequest()` function to get the temperature of a particular area based on thermometer ID. The `sendWebRequest()` function uses XHR to issue a `GET` request to an endpoint that can provide the data.  
 
 ```js
 function getTemperature(thermometerID) {
@@ -43,16 +39,15 @@ function sendWebRequest(thermometerID, data) {
         xhttp.send();  
     }
 }
-
 ```
 
 When using fetch or XHR, a new JavaScript Promise is returned. You'll note that you may have had to specify `OfficeExtension.Promise` in the past to use Promises, but as of September 2018, they are globally exposed.
 
-## Enabling chat using WebSockets
+## Enable chat using WebSockets
 
 [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) are also globally exposed in the JavaScript runtime. The Websockets networking protocol creates real-time communication between a server and one or more clients. It is often used for chat applications because it allows you to read and write text simultaneously. 
 
-This sample below shows how you can declare a websocket which logs each message it receives. 
+The following code sample creates a `WebSocket` and then logs each message it receives. 
 
 ```typescript
 const ws = new WebSocket('wss://bundles.office.com');
