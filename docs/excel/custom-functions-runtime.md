@@ -16,19 +16,22 @@ You can request external data within a custom function by using an API like [Fet
 
 ### XHR example
 
-In the following code sample, the `getTemperature()` function calls the `sendWebRequest()` function to get the temperature of a particular area based on thermometer ID. The `sendWebRequest()` function uses XHR to issue a `GET` request to an endpoint that can provide the data.  
+In the following code sample, the `getTemperature()` function calls the `sendWebRequest()` function to get the temperature of a particular area based on thermometer ID. The `sendWebRequest()` function uses XHR to issue a `GET` request to an endpoint that can provide the data. 
+
+> [!NOTE] 
+> When using fetch or XHR, a new JavaScript `Promise` is returned. Prior to September 2018, you had to specify `OfficeExtension.Promise` to use promises within the Office JavaScript API, but now you can simply use a JavaScript `Promise`.
 
 ```js
 function getTemperature(thermometerID) {
   return new Promise(function(setResult) {
-      sendWebRequest(thermometerID, function(data){ //sendWebRequest is defined later in this code sample
+      sendWebRequest(thermometerID, function(data){ 
           storeLastTemperature(thermometerID, data.temperature);
           setResult(data.temperature);
       });
   });
 }
 
-//Helper method that uses Office's implementation of XMLHttpRequest in the JavaScript runtime for custom functions  
+// Helper method that uses Office's implementation of XMLHttpRequest in the JavaScript runtime for custom functions  
 function sendWebRequest(thermometerID, data) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -41,11 +44,9 @@ function sendWebRequest(thermometerID, data) {
 }
 ```
 
-When using fetch or XHR, a new JavaScript Promise is returned. You'll note that you may have had to specify `OfficeExtension.Promise` in the past to use Promises, but as of September 2018, they are globally exposed.
-
 ## Enable chat using WebSockets
 
-[WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) are also globally exposed in the JavaScript runtime. The Websockets networking protocol creates real-time communication between a server and one or more clients. It is often used for chat applications because it allows you to read and write text simultaneously. 
+[WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) is also globally exposed in the JavaScript runtime. The WebSocket networking protocol creates real-time communication between a server and one or more clients. It is often used for chat applications because it allows you to read and write text simultaneously. 
 
 The following code sample creates a `WebSocket` and then logs each message it receives. 
 
