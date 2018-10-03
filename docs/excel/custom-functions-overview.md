@@ -1,5 +1,5 @@
 ---
-ms.date: 09/27/2018
+ms.date: 10/3/2018
 description: Create a custom function in Excel using JavaScript. 
 title: Create custom functions in Excel (Preview)
 ---
@@ -10,7 +10,7 @@ Custom functions enable developers to add new functions to Excel by defining tho
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-The following illustration shows an end user inserting a custom function into a cell of an Excel worksheet. The `CONTOSO.ADD42` custom function is designed to add 42 to the pair of numbers that the user specifies as input parameters to the function.
+The following illustration shows an end user inserting a custom function into a cell of an Excel worksheet. The `CONTOSO.ADD42` custom function adds 42 to the pair of numbers that the user specifies as input parameters to the function.
 
 <img alt="animated image showing an end user inserting the CONTOSO.ADD42 custom function into a cell of an Excel worksheet" src="../images/custom-function.gif" width="579" height="383" />
 
@@ -137,7 +137,7 @@ The following table lists the properties that are typically present in the JSON 
 | `name` | Name of the function that the end user sees in Excel. In Excel, this function name will be prefixed by the custom functions namespace that's specified in the [XML manifest file](#manifest-file). |
 | `helpUrl`	| URL for the page that is shown when a user requests help. |
 | `description`	| Describes what the function does. This value appears as a tooltip when the function is the selected item in the autocomplete menu within Excel. |
-| `result` 	| Object that defines the type of information that is returned by the function. The value of the `type` child property can be **string**, **number**, or **boolean**. The value of the `dimensionality` child property can be **scalar** or **matrix** (a two-dimensional array of values of the specified `type`). |
+| `result` 	| Object that defines the type of information returned by the function. The value of the `type` child property can be **string**, **number**, or **boolean**. The value of the `dimensionality` child property can be **scalar** or **matrix** (a two-dimensional array of values of the specified `type`). |
 | `parameters` | Array that defines the input parameters for the function. The `name` and `description` child properties appear in the Excel intelliSense. The value of the `type` child property can be **string**, **number**, or **boolean**. The value of the `dimensionality` child property can be **scalar** or **matrix** (a two-dimensional array of values of the specified `type`). |
 | `options`	| Enables you to customize some aspects of how and when Excel executes the function. For more information about how this property can be used, see [Streamed functions](#streamed-functions) and [Canceling a function](#canceling-a-function) later in this article. |
 
@@ -179,7 +179,7 @@ The XML manifest file for an add-in that defines custom functions (**./manifest.
 ```
 
 > [!NOTE]
-> Functions in Excel are prepended by the namespace specified in your XML manifest file. A function's namespace comes before the function name and they are separated by a period. For example, to call the function `ADD42` in the cell of an Excel worksheet, you would type `=CONTOSO.ADD42`, because CONTOSO is the namespace and `ADD42` is the name of the function specified in the JSON file. The namespace is intended to be used as an identifier for your company or the add-in. 
+> Functions in Excel are prepended by the namespace specified in your XML manifest file. A function's namespace comes before the function name and they are separated by a period. For example, to call the function `ADD42` in the cell of an Excel worksheet, you would type `=CONTOSO.ADD42`, because CONTOSO is the namespace and `ADD42` is the name of the function specified in the JSON file. You should use namespace as an identifier for your company or the add-in.
 
 ## Functions that return data from external sources
 
@@ -191,7 +191,7 @@ If a custom function retrieves data from an external source such as the web, it 
 
 Custom functions display a `#GETTING_DATA` temporary result in the cell while Excel waits for the final result. Users can interact normally with the rest of the worksheet while they wait for the result.
 
-In the following code sample, the `getTemperature()` custom function retrieves the current temperature of a thermometer. Note that `sendWebRequest` is a hypothetical function (not specified here) that uses [XHR](custom-functions-runtime.md#xhr) to call a temperature web service.
+In the following code sample, the `getTemperature()` custom function retrieves the current temperature of a thermometer. Note that `sendWebRequest` is a hypothetical function (not specified here) that uses [XHR](custom-functions-runtime.md#requesting-external-data-using-fetch-and-xhr) to call a temperature web service.
 
 ```js
 function getTemperature(thermometerID){
@@ -205,7 +205,7 @@ function getTemperature(thermometerID){
 
 ## Streamed functions
 
-Streamed custom functions enable you to output data to cells repeatedly over time, without requiring a user to explicitly request data refresh. The following code sample is a custom function that adds a number to the result every second. Note the following about this code:
+Streamed custom functions enable you to output data to cells repeatedly over time, without requiring a user to explicitly request data refresh. The following code sample is a custom function that adds a number to the result every second. Note the following about this code:
 
 - Excel displays each new value automatically using the `setResult` callback.
 
@@ -272,11 +272,11 @@ Custom functions can save data in global JavaScript variables. In subsequent cal
 
 The following code sample shows an implementation of a temperature-streaming function that saves state globally. Note the following about this code:
 
-- `refreshTemperature` is a streamed function that reads the temperature of a particular thermometer every second. New temperatures are saved in the `savedTemperatures` variable, but does not directly update the cell value. It should not be directly called from a worksheet cell, *so it is not registered in the JSON file*.
-
-- `streamTemperature` updates the temperature values displayed in the cell every second and it uses `savedTemperatures` variable as its data source. It must be registered in the JSON file, and named with all upper-case letters, `STREAMTEMPERATURE`.
+- `streamTemperature` updates the temperature values displayed in the cell every second and it uses the `savedTemperatures` variable as its data source. You'll note `streamTemperature` is a streaming function not just because of its name but because it uses a cancellation handler. While not listed here in this sample, assume that this function also specifies the property `"cancelable": true` in the function's JSON metadata.
 
 - Users may call `streamTemperature` from several cells in the Excel UI. Each call reads data from the same `savedTemperatures` variable.
+
+- `refreshTemperature` reads the temperature of a particular thermometer every second. New temperatures are saved in the `savedTemperatures` variable, but does not directly update the cell value. It should not be directly called from a worksheet cell, *so it is not registered in the JSON file*.
 
 ```js
 var savedTemperatures;
@@ -301,13 +301,16 @@ function refreshTemperature(thermometerID){
     refreshTemperature(thermometerID);
   }, 1000); // Wait 1 second before reading the thermometer again, and then update the saved temperature of thermometerID.
 }
+
+//
+
 ```
 
 ## Working with ranges of data
 
-Your custom function may accept a range of data as an input parameter, or it may return a range of data. In JavaScript, a range of data is represented as a 2-dimensional array.
+Your custom function may accept a range of data as an input parameter, or it may return a range of data. In JavaScript, a range of data is represented as a two-dimensional array.
 
-For example, suppose that your function returns the second highest value from a range of numbers stored in Excel. The following function accepts the parameter `values`, which is of type `Excel.CustomFunctionDimensionality.matrix`. Note that in the JSON metadata for this function, you would set the parameter's `type` property to `matrix`.
+For example, suppose that your function returns the second highest value from a range of numbers stored in Excel. The following function accepts the parameter `values`, that is of type `Excel.CustomFunctionDimensionality.matrix`. Note that in the JSON metadata for this function, you would set the parameter's `type` property to `matrix`.
 
 ```js
 function secondHighest(values){
@@ -373,4 +376,3 @@ function getComment(x) {
 * [Custom functions metadata](custom-functions-json.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
-* [Excel custom functions tutorial](excel-tutorial-custom-functions.md)
