@@ -6,7 +6,7 @@ ms.date: 10/3/2018
 
 
 
-# Excel JavaScript API advanced concepts
+# Advanced Excel JavaScript add-in programming
 
 This article builds upon the information in [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md) to describe some of the more advanced concepts that are essential to building complex add-ins for Excel 2016 or later.
 
