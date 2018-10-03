@@ -62,9 +62,9 @@ ws.onerror = (error) => {
 }
 ```
 
-## Storing data with AsyncStorage
+## Storing and accessing data
 
-AsyncStorage is a persistent, unencrypted, key-value storage system that can be used to cache data. It can be used as an alternative to localStorage, which is not available to custom functions. AsyncStorage is accessible to custom functions as a global object and to all other parts of your add-in through `OfficeRuntime.AsyncStorage`. Each add-in has a 5MB storage partition by default.
+Within a custom function (or within any other part of an add-in), you can store and access data by using the `OfficeRuntime.AsyncStorage` object. `AsyncStorage` is a persistent, unencrypted, key-value storage system that provides an alternative to [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), which cannot be used within custom functions. An add-in can store up to 5MB of data using `AsyncStorage`.
 
 The following methods are available on the `AsyncStorage` object:
  
@@ -77,6 +77,8 @@ The following methods are available on the `AsyncStorage` object:
  - `multiGet`
  - `multiSet`
  - `multiRemove`
+
+### AsyncStorage example 
 
 The following code sample calls the `AsyncStorage.getItem` function to retrieve a value from storage.
 
