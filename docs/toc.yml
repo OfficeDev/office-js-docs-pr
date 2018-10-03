@@ -436,329 +436,329 @@
 - name: Reference
   items:
     - name: JavaScript API for Office
-      href: javascript-api-for-office.md
+      href: reference/javascript-api-for-office.md
       items:
       - name: Excel
-        href: overview/excel-add-ins-reference-overview.md
+        href: reference/overview/excel-add-ins-reference-overview.md
         items:
           - name: Excel JavaScript API requirement sets
-            href: requirement-sets/excel-api-requirement-sets.md
+            href: reference/requirement-sets/excel-api-requirement-sets.md
           - name: API Reference
             uid: excel
       - name: OneNote
-        href: overview/onenote-add-ins-javascript-reference.md
+        href: reference/overview/onenote-add-ins-javascript-reference.md
         items:
           - name: OneNote JavaScript API requirement sets
-            href: requirement-sets/onenote-api-requirement-sets.md
+            href: reference/requirement-sets/onenote-api-requirement-sets.md
           - name: API Reference
             uid: onenote
       - name: Outlook
         items:
           - name: Outlook JavaScript API requirement sets
-            href: requirement-sets/outlook-api-requirement-sets.md
+            href: reference/requirement-sets/outlook-api-requirement-sets.md
           - name: Outlook Object Model
             items:
               - name: Preview Requirement Set
-                href: objectmodel/preview-requirement-set/outlook-requirement-set-preview.md
+                href: reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md
                 items:
                 - name: Office
-                  href: objectmodel/preview-requirement-set/office.md
+                  href: reference/objectmodel/preview-requirement-set/office.md
                 - name: Office.context
-                  href: objectmodel/preview-requirement-set/Office.context.md
+                  href: reference/objectmodel/preview-requirement-set/Office.context.md
                 - name: Office.context.mailbox
-                  href: objectmodel/preview-requirement-set/Office.context.mailbox.md
+                  href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.md
                 - name: Office.context.mailbox.diagnostics
-                  href: objectmodel/preview-requirement-set/Office.context.mailbox.diagnostics.md
+                  href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.diagnostics.md
                 - name: Office.context.mailbox.item
-                  href: objectmodel/preview-requirement-set/Office.context.mailbox.item.md
+                  href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.item.md
                 - name: Office.context.mailbox.userProfile
-                  href: objectmodel/preview-requirement-set/Office.context.mailbox.userProfile.md
+                  href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.userProfile.md
                 - name: API Reference
                   uid: outlook
               - name: Requirement Set 1.7
-                href: objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md
+                href: reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md
                 items:
                 - name: Office
-                  href: objectmodel/requirement-set-1.7/office.md
+                  href: reference/objectmodel/requirement-set-1.7/office.md
                 - name: Office.context
-                  href: objectmodel/requirement-set-1.7/Office.context.md
+                  href: reference/objectmodel/requirement-set-1.7/Office.context.md
                 - name: Office.context.mailbox
-                  href: objectmodel/requirement-set-1.7/Office.context.mailbox.md
+                  href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.md
                 - name: Office.context.mailbox.diagnostics
-                  href: objectmodel/requirement-set-1.7/Office.context.mailbox.diagnostics.md
+                  href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.diagnostics.md
                 - name: Office.context.mailbox.item
-                  href: objectmodel/requirement-set-1.7/Office.context.mailbox.item.md
+                  href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.item.md
                 - name: Office.context.mailbox.userProfile
-                  href: objectmodel/requirement-set-1.7/Office.context.mailbox.userProfile.md
+                  href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.userProfile.md
                 - name: API Reference
                   uid: Outlook_1_7
               - name: Requirement Set 1.6
-                href: objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md
+                href: reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md
                 items:
                 - name: Office
-                  href: objectmodel/requirement-set-1.6/office.md
+                  href: reference/objectmodel/requirement-set-1.6/office.md
                 - name: Office.context
-                  href: objectmodel/requirement-set-1.6/Office.context.md
+                  href: reference/objectmodel/requirement-set-1.6/Office.context.md
                 - name: Office.context.mailbox
-                  href: objectmodel/requirement-set-1.6/Office.context.mailbox.md
+                  href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.md
                 - name: Office.context.mailbox.diagnostics
-                  href: objectmodel/requirement-set-1.6/Office.context.mailbox.diagnostics.md
+                  href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.diagnostics.md
                 - name: Office.context.mailbox.item
-                  href: objectmodel/requirement-set-1.6/Office.context.mailbox.item.md
+                  href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.item.md
                 - name: Office.context.mailbox.userProfile
-                  href: objectmodel/requirement-set-1.6/Office.context.mailbox.userProfile.md
+                  href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.userProfile.md
                 - name: API Reference
                   uid: Outlook_1_6
               - name: Requirement Set 1.5
-                href: objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md
+                href: reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md
                 items:
                 - name: Office
-                  href: objectmodel/requirement-set-1.5/office.md
+                  href: reference/objectmodel/requirement-set-1.5/office.md
                 - name: Office.context
-                  href: objectmodel/requirement-set-1.5/Office.context.md
+                  href: reference/objectmodel/requirement-set-1.5/Office.context.md
                 - name: Office.context.mailbox
-                  href: objectmodel/requirement-set-1.5/Office.context.mailbox.md
+                  href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.md
                 - name: Office.context.mailbox.diagnostics
-                  href: objectmodel/requirement-set-1.5/Office.context.mailbox.diagnostics.md
+                  href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.diagnostics.md
                 - name: Office.context.mailbox.item
-                  href: objectmodel/requirement-set-1.5/Office.context.mailbox.item.md
+                  href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.item.md
                 - name: Office.context.mailbox.userProfile
-                  href: objectmodel/requirement-set-1.5/Office.context.mailbox.userProfile.md
+                  href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.userProfile.md
                 - name: API Reference
                   uid: Outlook_1_5
               - name: Requirement Set 1.4
-                href: objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md
+                href: reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md
                 items:
                 - name: Office
-                  href: objectmodel/requirement-set-1.4/office.md
+                  href: reference/objectmodel/requirement-set-1.4/office.md
                 - name: Office.context
-                  href: objectmodel/requirement-set-1.4/Office.context.md
+                  href: reference/objectmodel/requirement-set-1.4/Office.context.md
                 - name: Office.context.mailbox
-                  href: objectmodel/requirement-set-1.4/Office.context.mailbox.md
+                  href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.md
                 - name: Office.context.mailbox.diagnostics
-                  href: objectmodel/requirement-set-1.4/Office.context.mailbox.diagnostics.md
+                  href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.diagnostics.md
                 - name: Office.context.mailbox.item
-                  href: objectmodel/requirement-set-1.4/Office.context.mailbox.item.md
+                  href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.item.md
                 - name: Office.context.mailbox.userProfile
-                  href: objectmodel/requirement-set-1.4/Office.context.mailbox.userProfile.md
+                  href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.userProfile.md
                 - name: API Reference
                   uid: Outlook_1_4
               - name: Requirement Set 1.3
-                href: objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md
+                href: reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md
                 items:
                 - name: Office
-                  href: objectmodel/requirement-set-1.3/office.md
+                  href: reference/objectmodel/requirement-set-1.3/office.md
                 - name: Office.context
-                  href: objectmodel/requirement-set-1.3/Office.context.md
+                  href: reference/objectmodel/requirement-set-1.3/Office.context.md
                 - name: Office.context.mailbox
-                  href: objectmodel/requirement-set-1.3/Office.context.mailbox.md
+                  href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.md
                 - name: Office.context.mailbox.diagnostics
-                  href: objectmodel/requirement-set-1.3/Office.context.mailbox.diagnostics.md
+                  href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.diagnostics.md
                 - name: Office.context.mailbox.item
-                  href: objectmodel/requirement-set-1.3/Office.context.mailbox.item.md
+                  href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.item.md
                 - name: Office.context.mailbox.userProfile
-                  href: objectmodel/requirement-set-1.3/Office.context.mailbox.userProfile.md
+                  href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.userProfile.md
                 - name: API Reference
                   uid: Outlook_1_3
               - name: Requirement Set 1.2
-                href: objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md
+                href: reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md
                 items:
                 - name: Office
-                  href: objectmodel/requirement-set-1.2/office.md
+                  href: reference/objectmodel/requirement-set-1.2/office.md
                 - name: Office.context
-                  href: objectmodel/requirement-set-1.2/Office.context.md
+                  href: reference/objectmodel/requirement-set-1.2/Office.context.md
                 - name: Office.context.mailbox
-                  href: objectmodel/requirement-set-1.2/Office.context.mailbox.md
+                  href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.md
                 - name: Office.context.mailbox.diagnostics
-                  href: objectmodel/requirement-set-1.2/Office.context.mailbox.diagnostics.md
+                  href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.diagnostics.md
                 - name: Office.context.mailbox.item
-                  href: objectmodel/requirement-set-1.2/Office.context.mailbox.item.md
+                  href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.item.md
                 - name: Office.context.mailbox.userProfile
-                  href: objectmodel/requirement-set-1.2/Office.context.mailbox.userProfile.md
+                  href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.userProfile.md
                 - name: API Reference
                   uid: Outlook_1_2
               - name: Requirement Set 1.1
-                href: objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md
+                href: reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md
                 items:
                 - name: Office
-                  href: objectmodel/requirement-set-1.1/office.md
+                  href: reference/objectmodel/requirement-set-1.1/office.md
                 - name: Office.context
-                  href: objectmodel/requirement-set-1.1/Office.context.md
+                  href: reference/objectmodel/requirement-set-1.1/Office.context.md
                 - name: Office.context.mailbox
-                  href: objectmodel/requirement-set-1.1/Office.context.mailbox.md
+                  href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.md
                 - name: Office.context.mailbox.diagnostics
-                  href: objectmodel/requirement-set-1.1/Office.context.mailbox.diagnostics.md
+                  href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.diagnostics.md
                 - name: Office.context.mailbox.item
-                  href: objectmodel/requirement-set-1.1/Office.context.mailbox.item.md
+                  href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.item.md
                 - name: Office.context.mailbox.userProfile
-                  href: objectmodel/requirement-set-1.1/Office.context.mailbox.userProfile.md
+                  href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.userProfile.md
                 - name: API Reference
                   uid: Outlook_1_1
       - name: PowerPoint
-        href: requirement-sets/powerpoint-and-project-note.md
+        href: reference/requirement-sets/powerpoint-and-project-note.md
       - name: Project
-        href: requirement-sets/powerpoint-and-project-note.md
+        href: reference/requirement-sets/powerpoint-and-project-note.md
       - name: Visio
-        href: overview/visio-javascript-reference-overview.md
+        href: reference/overview/visio-javascript-reference-overview.md
         items:
           - name: API Reference
             uid: visio
       - name: Word
-        href: overview/word-add-ins-reference-overview.md
+        href: reference/overview/word-add-ins-reference-overview.md
         items:
           - name: Word JavaScript API requirement sets
-            href: requirement-sets/word-api-requirement-sets.md
+            href: reference/requirement-sets/word-api-requirement-sets.md
           - name: API Reference
             uid: word
       - name: Shared API
         items: 
           - name: Office common API requirement sets
-            href: requirement-sets/office-add-in-requirement-sets.md
+            href: reference/requirement-sets/office-add-in-requirement-sets.md
           - name: Add-in commands requirement sets
-            href: requirement-sets/add-in-commands-requirement-sets.md
+            href: reference/requirement-sets/add-in-commands-requirement-sets.md
           - name: Dialog API requirement sets
-            href: requirement-sets/dialog-api-requirement-sets.md
+            href: reference/requirement-sets/dialog-api-requirement-sets.md
           - name: Identity API requirement sets
-            href: requirement-sets/identity-api-requirement-sets.md
+            href: reference/requirement-sets/identity-api-requirement-sets.md
           - name: JavaScript API for Office error codes
-            href: javascript-api-for-office-error-codes.md
+            href: reference/javascript-api-for-office-error-codes.md
           - name: API Reference
             uid: office
     - name: API open specifications
-      href: openspec.md
+      href: reference/openspec.md
     - name: Office Add-in manifest reference
       items:
         - name: AllowSnapshot
-          href: manifest/allowsnapshot.md
+          href: reference/manifest/allowsnapshot.md
         - name: AlternateId
-          href: manifest/alternateid.md
+          href: reference/manifest/alternateid.md
         - name: AppDomain
-          href: manifest/appdomain.md
+          href: reference/manifest/appdomain.md
         - name: AppDomains
-          href: manifest/appdomains.md
+          href: reference/manifest/appdomains.md
         - name: CitationText
-          href: manifest/citationtext.md
+          href: reference/manifest/citationtext.md
         - name: DefaultLocale
-          href: manifest/defaultlocale.md
+          href: reference/manifest/defaultlocale.md
         - name: DefaultSettings
-          href: manifest/defaultsettings.md
+          href: reference/manifest/defaultsettings.md
         - name: Description
-          href: manifest/description.md
+          href: reference/manifest/description.md
         - name: DesktopSettings
-          href: manifest/desktopsettings.md
+          href: reference/manifest/desktopsettings.md
         - name: Dictionary
-          href: manifest/dictionary.md
+          href: reference/manifest/dictionary.md
         - name: DictionaryHomePage
-          href: manifest/dictionaryhomepage.md
+          href: reference/manifest/dictionaryhomepage.md
         - name: DisableEntityHighlighting
-          href: manifest/disableentityhighlighting.md
+          href: reference/manifest/disableentityhighlighting.md
         - name: DisplayName
-          href: manifest/displayname.md
+          href: reference/manifest/displayname.md
         - name: Form
-          href: manifest/form.md
+          href: reference/manifest/form.md
         - name: FormSettings
-          href: manifest/formsettings.md
+          href: reference/manifest/formsettings.md
         - name: HighResolutionIconUrl
-          href: manifest/highresolutioniconurl.md
+          href: reference/manifest/highresolutioniconurl.md
         - name: Host
-          href: manifest/host.md
+          href: reference/manifest/host.md
         - name: Hosts
-          href: manifest/hosts.md
+          href: reference/manifest/hosts.md
         - name: IconUrl
-          href: manifest/iconurl.md
+          href: reference/manifest/iconurl.md
         - name: Id
-          href: manifest/id.md
+          href: reference/manifest/id.md
         - name: Metadata
-          href: manifest/metadata.md
+          href: reference/manifest/metadata.md
         - name: Method
-          href: manifest/method.md
+          href: reference/manifest/method.md
         - name: Methods
-          href: manifest/methods.md
+          href: reference/manifest/methods.md
         - name: Namespace
-          href: manifest/namespace.md
+          href: reference/manifest/namespace.md
         - name: OfficeApp
-          href: manifest/officeapp.md
+          href: reference/manifest/officeapp.md
         - name: Override
-          href: manifest/override.md
+          href: reference/manifest/override.md
         - name: Permissions
-          href: manifest/permissions.md
+          href: reference/manifest/permissions.md
         - name: PhoneSettings
-          href: manifest/phonesettings.md
+          href: reference/manifest/phonesettings.md
         - name: ProviderName
-          href: manifest/providername.md
+          href: reference/manifest/providername.md
         - name: QueryUri
-          href: manifest/queryuri.md
+          href: reference/manifest/queryuri.md
         - name: RequestedHeight
-          href: manifest/requestedheight.md
+          href: reference/manifest/requestedheight.md
         - name: RequestedWidth
-          href: manifest/requestedwidth.md
+          href: reference/manifest/requestedwidth.md
         - name: Requirements
-          href: manifest/requirements.md
+          href: reference/manifest/requirements.md
         - name: Rule
-          href: manifest/rule.md
+          href: reference/manifest/rule.md
         - name: Set
-          href: manifest/set.md
+          href: reference/manifest/set.md
         - name: Sets
-          href: manifest/sets.md
+          href: reference/manifest/sets.md
         - name: SourceLocation
-          href: manifest/sourcelocation.md
+          href: reference/manifest/sourcelocation.md
         - name: SupportUrl
-          href: manifest/supporturl.md
+          href: reference/manifest/supporturl.md
         - name: TabletSettings
-          href: manifest/tabletsettings.md
+          href: reference/manifest/tabletsettings.md
         - name: TargetDialect
-          href: manifest/targetdialect.md
+          href: reference/manifest/targetdialect.md
         - name: TargetDialects
-          href: manifest/targetdialects.md
+          href: reference/manifest/targetdialects.md
         - name: Version
-          href: manifest/version.md
+          href: reference/manifest/version.md
         - name: VersionOverrides
-          href: manifest/versionoverrides.md
+          href: reference/manifest/versionoverrides.md
           items: 
           - name: Action
-            href: manifest/action.md
+            href: reference/manifest/action.md
           - name: AllFormFactors
-            href: manifest/allformfactors.md
+            href: reference/manifest/allformfactors.md
           - name: Control
-            href: manifest/control.md
+            href: reference/manifest/control.md
           - name: CustomTab
-            href: manifest/customtab.md
+            href: reference/manifest/customtab.md
           - name: Event
-            href: manifest/event.md
+            href: reference/manifest/event.md
           - name: ExtensionPoint
-            href: manifest/extensionpoint.md
+            href: reference/manifest/extensionpoint.md
           - name: DesktopFormFactor
-            href: manifest/desktopformfactor.md
+            href: reference/manifest/desktopformfactor.md
           - name: FunctionFile
-            href: manifest/functionfile.md
+            href: reference/manifest/functionfile.md
           - name: GetStarted
-            href: manifest/getstarted.md
+            href: reference/manifest/getstarted.md
           - name: Group
-            href: manifest/group.md
+            href: reference/manifest/group.md
           - name: Hosts
-            href: manifest/hosts.md
+            href: reference/manifest/hosts.md
           - name: Icon
-            href: manifest/icon.md
+            href: reference/manifest/icon.md
           - name: MobileFormFactor
-            href: manifest/mobileformfactor.md
+            href: reference/manifest/mobileformfactor.md
           - name: OfficeMenu
-            href: manifest/officemenu.md
+            href: reference/manifest/officemenu.md
           - name: OfficeTab
-            href: manifest/officetab.md
+            href: reference/manifest/officetab.md
           - name: Page
-            href: manifest/page.md
+            href: reference/manifest/page.md
           - name: Resources
-            href: manifest/resources.md
+            href: reference/manifest/resources.md
           - name: Scopes
-            href: manifest/scopes.md
+            href: reference/manifest/scopes.md
           - name: Script
-            href: manifest/script.md
+            href: reference/manifest/script.md
           - name: SourceLocation (custom functions)
-            href: manifest/customfunctionssourcelocation.md
+            href: reference/manifest/customfunctionssourcelocation.md
           - name: Supertip
-            href: manifest/supertip.md
+            href: reference/manifest/supertip.md
           - name: WebApplicationInfo
-            href: manifest/webapplicationinfo.md
+            href: reference/manifest/webapplicationinfo.md
     
 - name: Resources
   href: resources/resources-links-help.md
