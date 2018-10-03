@@ -139,7 +139,7 @@ The following table lists the properties that are typically present in the JSON 
 | `description`	| Describes what the function does. This value appears as a tooltip when the function is the selected item in the autocomplete menu within Excel. |
 | `result` 	| Object that defines the type of information returned by the function. The value of the `type` child property can be **string**, **number**, or **boolean**. The value of the `dimensionality` child property can be **scalar** or **matrix** (a two-dimensional array of values of the specified `type`). |
 | `parameters` | Array that defines the input parameters for the function. The `name` and `description` child properties appear in the Excel intelliSense. The value of the `type` child property can be **string**, **number**, or **boolean**. The value of the `dimensionality` child property can be **scalar** or **matrix** (a two-dimensional array of values of the specified `type`). |
-| `options`	| Enables you to customize some aspects of how and when Excel executes the function. For more information about how this property can be used, see [Streamed functions](#streamed-functions) and [Canceling a function](#canceling-a-function) later in this article. |
+| `options`	| Enables you to customize some aspects of how and when Excel executes the function. For more information about how this property can be used, see [Streaming functions](#streaming-functions) and [Canceling a function](#canceling-a-function) later in this article. |
 
 ### Manifest file
 
@@ -203,15 +203,15 @@ function getTemperature(thermometerID){
 }
 ```
 
-## Streamed functions
+## Streaming functions
 
-Streamed custom functions enable you to output data to cells repeatedly over time, without requiring a user to explicitly request data refresh. The following code sample is a custom function that adds a number to the result every second. Note the following about this code:
+Streaming custom functions enable you to output data to cells repeatedly over time, without requiring a user to explicitly request data refresh. The following code sample is a custom function that adds a number to the result every second. Note the following about this code:
 
 - Excel displays each new value automatically using the `setResult` callback.
 
 - The second input parameter, `handler`, is not displayed to end users in Excel when they select the function from the autocomplete menu.
 
-- The `onCanceled` callback defines the function that executes when the function is canceled. You must implement a cancellation handler like this for any streamed function. For more information, see [Canceling a function](#canceling-a-function). 
+- The `onCanceled` callback defines the function that executes when the function is canceled. You must implement a cancellation handler like this for any streaming function. For more information, see [Canceling a function](#canceling-a-function). 
 
 ```js
 function incrementValue(increment, handler){
@@ -227,7 +227,7 @@ function incrementValue(increment, handler){
 }
 ```
 
-When you specify metadata for a streamed function in the JSON metadata file, you must set the properties `"cancelable": true` and `"stream": true` within the `options` object, as shown in the following example.
+When you specify metadata for a streaming function in the JSON metadata file, you must set the properties `"cancelable": true` and `"stream": true` within the `options` object, as shown in the following example.
 
 ```json
 {
@@ -256,7 +256,7 @@ When you specify metadata for a streamed function in the JSON metadata file, you
 
 ## Canceling a function
 
-In some situations, you may need to cancel the execution of a streamed custom function to reduce its bandwidth consumption, working memory, and CPU load. Excel cancels the execution of a function in the following situations:
+In some situations, you may need to cancel the execution of a streaming custom function to reduce its bandwidth consumption, working memory, and CPU load. Excel cancels the execution of a function in the following situations:
 
 - When the user edits or deletes a cell that references the function.
 
