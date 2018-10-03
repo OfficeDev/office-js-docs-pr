@@ -254,6 +254,6 @@ When an API error occurs, the API will return an **error** object that contains 
  
 * [Get started with Excel add-ins](excel-add-ins-get-started-overview.md)
 * [Excel add-ins code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
-* [Advanced Excel add-ins programming](excel-add-ins-advanced-concepts.md)
+* [Advanced programming concepts with the Excel JavaScript API](excel-add-ins-advanced-concepts.md)
 * [Excel JavaScript API performance optimization](https://docs.microsoft.com/office/dev/add-ins/excel/performance)
 * [Excel JavaScript API reference](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
