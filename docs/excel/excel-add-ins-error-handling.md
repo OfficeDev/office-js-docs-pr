@@ -10,7 +10,7 @@ ms.date: 12/04/2017
 When you build an add-in using the Excel JavaScript API, be sure to include error handling logic to account for runtime errors. Doing so is critical, due to the asynchronous nature of the API.
 
 > [!NOTE]
-> For more information about the **sync()** method and the asynchronous nature of Excel JavaScript API, see [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md).
+> For more information about the **sync()** method and the asynchronous nature of Excel JavaScript API, see [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md).
 
 ## Best practices
 
@@ -44,5 +44,5 @@ When an Excel JavaScript API request fails to run successfully, the API returns 
 
 ## See also
 
-- [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
+- [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
 - [OfficeExtension.Error object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/office/officeextension.error?view=office-js)
