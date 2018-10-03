@@ -233,7 +233,7 @@
     - name: Concepts
       displayName: Excel
       items:
-      - name: Beginner Excel add-in programming
+      - name: Fundamental Excel add-in programming
         href: excel/excel-add-ins-core-concepts.md
         displayName: Excel
       - name: Advanced Excel add-in programming
