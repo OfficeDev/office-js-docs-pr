@@ -26,12 +26,8 @@
   ],
   "JoinTOCPlugin": [
     {
-      "ReferenceTOC": "docs/docs-ref-autogen/toc.yml",
-      "ReferenceTOCUrl": "/javascript/api/office_ref_toc/toc.json?view=office-js",
       "ConceptualTOC": "docs/docs-ref-conceptual/toc.yml",
       "ReferenceTOCUrl": "/javascript/api/office_ref_toc/toc.json?view=office-js",
-      "ConceptualTOCUrl": "/javascript/office/toc.json?view=office-js"
-
     }
   ],
   "notification_subscribers": [],
