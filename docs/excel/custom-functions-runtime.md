@@ -97,7 +97,7 @@ _goGetData = async () => {
 
 ## Displaying a dialog box
 
-Within a custom function (or within any other part of an add-in), you can use the `OfficeRuntime.displayWebDialogOptions` API to display a dialog box. 
+Within a custom function, you can use the `OfficeRuntime.displayWebDialogOptions` API to display a dialog box. 
 
 > [!NOTE]
 > This dialog API is different from the [Dialog API](../develop/dialog-api-in-office-add-ins.md) that can only be used by task panes and add-in commands.
