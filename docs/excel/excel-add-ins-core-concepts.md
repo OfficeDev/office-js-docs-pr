@@ -1,11 +1,11 @@
 ---
-title: Fundamental Excel add-in programming
+title: Fundamental programming concepts with the Excel JavaScript API
 description: Use the Excel JavaScript API to build add-ins for Excel.
 ms.date: 10/03/2018
 ---
 
 
-# Fundamental Excel JavaScript add-in programming
+# Fundamental programming concepts with the Excel JavaScript API
  
 This article describes how to use the [Excel JavaScript API](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js) to build add-ins for Excel 2016 or later. It introduces core concepts that are fundamental to using the API and provides guidance for performing specific tasks such as reading or writing to a large range, updating all cells in range, and more.
 
@@ -113,7 +113,7 @@ Excel.run(function (context) {
  
 In the previous example, because `format/font` is not specified in the call to **myRange.load()**, the `format.font.color` property cannot be read.
 
-To optimize performance, you should explicitly specify the properties and relationships to load when using the **load()** method on an object, as covered in [Excel JavaScript API performance optimizations](performance.md). For more information about the **load()** method, see [Excel JavaScript API advanced concepts](excel-add-ins-advanced-concepts.md).
+To optimize performance, you should explicitly specify the properties and relationships to load when using the **load()** method on an object, as covered in [Excel JavaScript API performance optimizations](performance.md). For more information about the **load()** method, see [Advanced programming concepts with the Excel JavaScript API](excel-add-ins-advanced-concepts.md).
 
 ## null or blank property values
  

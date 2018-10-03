@@ -277,5 +277,5 @@ For examples that show how to get a range within a worksheet, see [Work with Ran
 
 ## See also
 
-- [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
+- [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
 

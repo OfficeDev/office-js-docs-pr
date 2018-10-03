@@ -264,6 +264,6 @@ Excel.run(function (context) {
 
 ## See also
 
-- [Excel JavaScript API core concepts](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview)
+- [Fundamental programming concepts with the Excel JavaScript API](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview)
 - [Range Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range)
 - [RangeAreas Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.rangeareas) (This link may not work while the API is in preview. As an alternative, see [beta office.d.ts](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts).)

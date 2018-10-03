@@ -304,5 +304,5 @@ await Excel.run(async (context) => {
 
 ## See also
 
-- [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
+- [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API Reference](https://docs.microsoft.com/javascript/api/excel)

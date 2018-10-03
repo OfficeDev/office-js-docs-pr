@@ -233,10 +233,10 @@
     - name: Concepts
       displayName: Excel
       items:
-      - name: Fundamental Excel add-in programming
+      - name: Fundamental programming concepts
         href: excel/excel-add-ins-core-concepts.md
         displayName: Excel
-      - name: Advanced Excel add-in programming
+      - name: Advanced programming concepts
         href: excel/excel-add-ins-advanced-concepts.md
         displayName: Excel
       - name: Calling built-in functions
