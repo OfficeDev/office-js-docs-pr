@@ -6,13 +6,13 @@ title: Runtime for Excel custom functions
 
 # Runtime for Excel custom functions (preview)
 
-Custom functions use a new JavaScript runtime that differs from the runtime used by other parts of an add-in, such as the task pane or other UI elements. This JavaScript runtime is designed to optimize performance of calculations in custom functions and exposes new APIs that you can use to perform common web-based actions within custom functions such as requesting external data and receiving external data. The JavaScript runtime also provides access to new APIs in the `OfficeRuntime` namespace that can be used within custom functions or by other parts of an add-in to store data or open a dialog box. This article describes how to use these APIs within custom functions and also outlines additional considerations to keep in mind when developing custom functions.
+Custom functions use a new JavaScript runtime that differs from the runtime used by other parts of an add-in, such as the task pane or other UI elements. This JavaScript runtime is designed to optimize performance of calculations in custom functions and exposes new APIs that you can use to perform common web-based actions within custom functions such as requesting external data or establishing a persistent connection with a server. The JavaScript runtime also provides access to new APIs in the `OfficeRuntime` namespace that can be used within custom functions or by other parts of an add-in to store data or open a dialog box. This article describes how to use these APIs within custom functions and also outlines additional considerations to keep in mind when developing custom functions.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-## Request external data
+## Requesting external data
 
-You can request external data within a custom function by using an API like [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or by using [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers. Within the JavaScript runtime, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).  
+Within a custom function, you can request external data by using an API like [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or by using [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers. Within the JavaScript runtime, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).  
 
 ### XHR example
 
@@ -44,11 +44,13 @@ function sendWebRequest(thermometerID, data) {
 }
 ```
 
-## Enable chat using WebSockets
+## Receiving data via WebSockets
 
-[WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) is also globally exposed in the JavaScript runtime. The WebSocket networking protocol creates real-time communication between a server and one or more clients. It is often used for chat applications because it allows you to read and write text simultaneously. 
+Within a custom function, you can use [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) to exchange data with a server over a persistent connection. By using WebSockets, your custom function can open a connection with a server and then automatically receive messages from the server when certain events occur, without having to explicitly poll the server for that data.
 
-The following code sample creates a `WebSocket` and then logs each message it receives. 
+### WebSockets example
+
+The following code sample establishes a `WebSocket` connection and then logs each incoming message from the server. 
 
 ```typescript
 const ws = new WebSocket('wss://bundles.office.com');
@@ -60,7 +62,7 @@ ws.onerror = (error) => {
 }
 ```
 
-## Managing data with AsyncStorage
+## Storing data with AsyncStorage
 
 AsyncStorage is a persistent, unencrypted, key-value storage system that can be used to cache data. It can be used as an alternative to localStorage, which is not available to custom functions. AsyncStorage is accessible to custom functions as a global object and to all other parts of your add-in through `OfficeRuntime.AsyncStorage`. Each add-in has a 5MB storage partition by default.
 
