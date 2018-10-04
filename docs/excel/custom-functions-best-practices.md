@@ -1,5 +1,5 @@
 ---
-ms.date: 09/27/2018
+ms.date: 10/03/2018
 description: Learn best practices and recommended patterns for Excel custom functions.
 title: Custom functions best practices
 ---
@@ -118,6 +118,10 @@ Keep in mind the following best practices when creating custom functions in your
       ]
     }
     ```
+
+## Additional considerations
+
+In order to create an add-in that will run on multiple platforms (one of the key tenants of Office Add-ins), you should not access the Document Object Model (DOM) in custom functions or use libraries like jQuery that rely on the DOM. On Excel for Windows, where custom functions use the [JavaScript runtime](custom-functions-runtime.md), custom functions cannot access the DOM.
 
 ## See also
 
