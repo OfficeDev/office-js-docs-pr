@@ -307,7 +307,7 @@ function refreshTemperature(thermometerID){
 
 Your custom function may accept a range of data as an input parameter, or it may return a range of data. In JavaScript, a range of data is represented as a two-dimensional array.
 
-For example, suppose that your function returns the second highest value from a range of numbers stored in Excel. The following function accepts the parameter `values`, that is of type `Excel.CustomFunctionDimensionality.matrix`. Note that in the JSON metadata for this function, you would set the parameter's `type` property to `matrix`.
+For example, suppose that your function returns the second highest value from a range of numbers stored in Excel. The following function accepts the parameter `values`, which is of type `Excel.CustomFunctionDimensionality.matrix`. Note that in the JSON metadata for this function, you would set the parameter's `type` property to `matrix`.
 
 ```js
 function secondHighest(values){
