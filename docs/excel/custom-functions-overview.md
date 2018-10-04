@@ -272,7 +272,7 @@ Custom functions can save data in global JavaScript variables. In subsequent cal
 
 The following code sample shows an implementation of a temperature-streaming function that saves state globally. Note the following about this code:
 
-- `streamTemperature` updates the temperature values displayed in the cell every second and it uses the `savedTemperatures` variable as its data source. You'll note `streamTemperature` is a streaming function not only because of its name but because it uses a cancellation handler. Although it is not specified in this sample for brevity, assume that the JSON metadata for `streamTemperature` specifies the property `"cancelable": true`, which is required for streaming functions. 
+- `streamTemperature` updates the temperature values displayed in the cell every second and it uses the `savedTemperatures` variable as its data source. You'll note `streamTemperature` is a streaming function not only because of its name but because it uses a cancellation handler. Although it is not specified in this sample for brevity, assume that the JSON metadata for `streamTemperature` specifies `"stream": true` and `"cancelable": true`, both of which are required for streaming functions. 
 
 - Users may call `streamTemperature` from several cells in the Excel UI. Each call reads data from the same `savedTemperatures` variable.
 
