@@ -312,6 +312,8 @@ CustomFunctionMappings.STREAMTEMPERATURE = streamTemperature;
 
 ```
 
+The following sample shows the JSON metadata that corresponds to the functions defined in the previous JavaScript code sample. 
+
 ## Working with ranges of data
 
 Your custom function may accept a range of data as an input parameter, or it may return a range of data. In JavaScript, a range of data is represented as a two-dimensional array.
