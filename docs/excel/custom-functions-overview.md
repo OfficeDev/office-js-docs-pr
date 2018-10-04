@@ -272,11 +272,15 @@ Custom functions can save data in global JavaScript variables. In subsequent cal
 
 The following code sample shows an implementation of a temperature-streaming function that saves state globally. Note the following about this code:
 
-- `streamTemperature` updates the temperature values displayed in the cell every second and it uses the `savedTemperatures` variable as its data source. You'll note `streamTemperature` is a streaming function not just because of its name but because it uses a cancellation handler. While not listed here in this sample, assume that this function also specifies the property `"cancelable": true` in the function's JSON metadata.
+- `streamTemperature` updates the temperature values displayed in the cell every second and it uses the `savedTemperatures` variable as its data source. You'll note `streamTemperature` is a streaming function not only because of its name but because it uses a cancellation handler.
 
 - Users may call `streamTemperature` from several cells in the Excel UI. Each call reads data from the same `savedTemperatures` variable.
 
-- `refreshTemperature` reads the temperature of a particular thermometer every second. New temperatures are saved in the `savedTemperatures` variable, but does not directly update the cell value. It should not be directly called from a worksheet cell, *so it is not registered in the JSON file*.
+- While not listed in the following sample for brevity, assume that this function's JSON metadata specifies the property `"cancelable": true`, which is required for streaming functions. You can also assume that the function's `name` and `id` properties are both listed as STREAMTEMPERATURE in the JSON metadata.
+
+- `refreshTemperature` reads the temperature of a particular thermometer every second. New temperatures are saved in the `savedTemperatures` variable, but does not directly update the cell value. It should not be directly called from a worksheet cell, *so it is not registered in the JSON file or declared in `CustomFuntionMappings`*.
+
+- As a best practice, `CustomFunctionMappings` should be declared in your JavaScript file. It maps the `id` value of 
 
 ```js
 var savedTemperatures;
@@ -302,7 +306,9 @@ function refreshTemperature(thermometerID){
   }, 1000); // Wait 1 second before reading the thermometer again, and then update the saved temperature of thermometerID.
 }
 
-//
+// CustomFunctionMappings maps the function's `id` values in the JSON metadata file to JavaScript function name
+// There is no need to map refreshTemperature because it is not called directly from a worksheet cell
+CustomFunctionMappings.STREAMTEMPERATURE = streamTemperature;
 
 ```
 
