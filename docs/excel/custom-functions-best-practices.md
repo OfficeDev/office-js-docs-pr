@@ -1,5 +1,5 @@
 ---
-ms.date: 09/27/2018
+ms.date: 10/03/2018
 description: Learn best practices and recommended patterns for Excel custom functions.
 title: Custom functions best practices
 ---
@@ -120,9 +120,9 @@ Keep in mind the following best practices when creating custom functions in your
     }
     ```
 
-## Developing for Excel for Windows and Excel Online simultaneously
+## Additional considerations
 
-To develop an add-in which works both on Excel for Windows and Excel Online, you should avoid accessing the Document Object Model (DOM) or support libraries like jQuery which rely on the DOM. This is because Excel Online uses and renders everything in the browser, whereas Excel for Windows uses the JavaScript runtime, which does not support the DOM and libraries which use it. To learn more about this runtime, see [Runtime for Excel custom functions](custom-functions-runtime.md).
+In order to create an add-in that will run on multiple platforms (one of the key tenants of Office Add-ins), you should not access the Document Object Model (DOM) in custom functions or use libraries like jQuery that rely on the DOM. On Excel for Windows, where custom functions use the [JavaScript runtime](custom-functions-runtime.md), custom functions cannot access the DOM.
 
 ## See also
 
