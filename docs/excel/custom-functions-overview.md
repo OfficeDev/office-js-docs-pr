@@ -268,7 +268,7 @@ To enable the ability to cancel a function, you must implement a cancellation ha
 
 ## Saving and sharing state
 
-Custom functions can save data in global JavaScript variables. In subsequent calls, your custom function may use the values saved in these variables. Saved state is useful when users add the same custom function to more than one cell, because all the instances of the function can share the state. For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.
+Custom functions can save data in global JavaScript variables, which can be used in subsequent calls. Saved state is useful when users add the same custom function to more than one cell, because all the instances of the function can share the state. For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.
 
 The following code sample shows an implementation of a temperature-streaming function that saves state globally. Note the following about this code:
 
