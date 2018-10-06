@@ -288,35 +288,16 @@ function streamTemperature(thermometerID, handler){
     refreshTemperature(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
   }
 
-  var delay = 1000; // amount of time to wait before making another request
-  var timer = setInterval(function() {
-    handler.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
-  }, delay);
-
-  handler.onCanceled = function() {
-    clearInterval(timer);
-  };
-}
-
-
-
-function streamTemperature(thermometerID, handler){
-  if(!savedTemperatures[thermometerID]){
-    refreshTemperature(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
-  }
-
-  var timeout;
-  handler.onCanceled = function() {
-    clearTimeout(timeout);
-  };
-
-  getNextTemperature();
-
-  // Helper:
   function getNextTemperature(){
     handler.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
-    timeout = setTimeout(getNextTemperature, 1000); // Wait 1 second before updating Excel again.
+    var delayTime = 1000; // Amount of milliseconds to delay a request by.
+    setTimeout(getNextTemperature, delayTime); // Wait 1 second before updating Excel again.
+
+    handler.onCancelled() = function {
+        clearTimeout(delayTime);
+    }
   }
+  getNextTemperature();
 }
 
 function refreshTemperature(thermometerID){
