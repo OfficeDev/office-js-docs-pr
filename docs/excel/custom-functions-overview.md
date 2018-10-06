@@ -211,7 +211,7 @@ Streaming custom functions enable you to output data to cells repeatedly over ti
 
 - The second input parameter, `handler`, is not displayed to end users in Excel when they select the function from the autocomplete menu.
 
-- The `onCanceled` callback defines the function that executes when the function is canceled. You must implement a cancellation handler like this for any streaming function. For more information, see [Canceling a function](#canceling-a-function). 
+- The `onCanceled` callback defines the function that executes when the function is canceled. You must implement a cancellation handler like this for any streaming function. For more information, see [Canceling a function](#canceling-a-function).
 
 ```js
 function incrementValue(increment, handler){
@@ -272,27 +272,51 @@ Custom functions can save data in global JavaScript variables, which can be used
 
 The following code sample shows an implementation of a temperature-streaming function that saves state globally. Note the following about this code:
 
-- `streamTemperature` updates the temperature values displayed in the cell every second and it uses the `savedTemperatures` variable as its data source.
+- The `streamTemperature` function updates the temperature value displayed in the cell every second and it uses the `savedTemperatures` variable as its data source.
 
-- You'll note `streamTemperature` is a streaming function because it uses a cancellation handler. Although it is not written in this sample for brevity, assume that the JSON metadata for `streamTemperature` specifies `"stream": true` and `"cancelable": true`, both of which are required for streaming functions.
+- Because `streamTemperature` is a streaming function, it implements a cancellation handler that will run when the function is canceled.
 
-- Users may call `streamTemperature` from several cells in the Excel UI. Each call reads data from the same `savedTemperatures` variable.
+- If a user calls the `streamTemperature` function from multiple cells in Excel, the `streamTemperature` function reads data from the same `savedTemperatures` variable each time it runs. 
 
-- `refreshTemperature` reads the temperature of a particular thermometer every second. New temperatures are saved in the `savedTemperatures` variable, but does not directly update the cell value. It should not be directly called from a worksheet cell, *so it is not registered in the JSON file*.
+- The `refreshTemperature` function reads the temperature of a particular thermometer every second and stores the results in the `savedTemperatures` variable. Because the `refreshTemperatures` function is not exposed to end users in Excel, it does not need to be registered in the JSON file.
 
 ```js
 var savedTemperatures;
 
 function streamTemperature(thermometerID, handler){
   if(!savedTemperatures[thermometerID]){
-    refreshTemperatures(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
+    refreshTemperature(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
   }
 
+  var delay = 1000; // amount of time to wait before making another request
+  var timer = setInterval(function() {
+    handler.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
+  }, delay);
+
+  handler.onCanceled = function() {
+    clearInterval(timer);
+  };
+}
+
+
+
+function streamTemperature(thermometerID, handler){
+  if(!savedTemperatures[thermometerID]){
+    refreshTemperature(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
+  }
+
+  var timeout;
+  handler.onCanceled = function() {
+    clearTimeout(timeout);
+  };
+
+  getNextTemperature();
+
+  // Helper:
   function getNextTemperature(){
     handler.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
-    setTimeout(getNextTemperature, 1000); // Wait 1 second before updating Excel again.
+    timeout = setTimeout(getNextTemperature, 1000); // Wait 1 second before updating Excel again.
   }
-  getNextTemperature();
 }
 
 function refreshTemperature(thermometerID){
