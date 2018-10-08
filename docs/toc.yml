@@ -444,7 +444,7 @@
           - name: Excel JavaScript API requirement sets
             href: reference/requirement-sets/excel-api-requirement-sets.md
           - name: Excel API Reference
-            href: /javascript/api/excel?view=office-js
+            href: /javascript/api/excel
       - name: OneNote
         href: reference/overview/onenote-add-ins-javascript-reference.md
         items:
