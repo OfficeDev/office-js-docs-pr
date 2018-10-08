@@ -27,7 +27,7 @@
   "JoinTOCPlugin": [
     {
       "ConceptualTOC": "docs/docs-ref-conceptual/toc.yml",
-      "ReferenceTOCUrl": "/javascript/api/office_ref_toc/toc.json?view=office-js",
+      "ReferenceTOCUrl": "/javascript/api/office_ref_toc/toc.json?view=office-js"
     }
   ],
   "notification_subscribers": [],
