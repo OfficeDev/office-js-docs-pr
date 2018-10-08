@@ -491,7 +491,7 @@
                 - name: Office.context.mailbox.userProfile
                   href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.userProfile.md
                 - name: API Reference
-                  uid: Outlook_1_7
+                  href: /javascript/api/outlook_1_7?view=office-js
               - name: Requirement Set 1.6
                 href: reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md
                 items:
@@ -508,7 +508,7 @@
                 - name: Office.context.mailbox.userProfile
                   href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.userProfile.md
                 - name: API Reference
-                  uid: Outlook_1_6
+                  href: /javascript/api/outlook_1_6?view=office-js
               - name: Requirement Set 1.5
                 href: reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md
                 items:
@@ -525,7 +525,7 @@
                 - name: Office.context.mailbox.userProfile
                   href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.userProfile.md
                 - name: API Reference
-                  uid: Outlook_1_5
+                  href: /javascript/api/outlook_1_5?view=office-js
               - name: Requirement Set 1.4
                 href: reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md
                 items:
@@ -542,7 +542,7 @@
                 - name: Office.context.mailbox.userProfile
                   href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.userProfile.md
                 - name: API Reference
-                  uid: Outlook_1_4
+                  href: /javascript/api/outlook_1_4?view=office-js
               - name: Requirement Set 1.3
                 href: reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md
                 items:
@@ -559,7 +559,7 @@
                 - name: Office.context.mailbox.userProfile
                   href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.userProfile.md
                 - name: API Reference
-                  uid: Outlook_1_3
+                  href: /javascript/api/outlook_1_3?view=office-js
               - name: Requirement Set 1.2
                 href: reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md
                 items:
@@ -576,7 +576,7 @@
                 - name: Office.context.mailbox.userProfile
                   href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.userProfile.md
                 - name: API Reference
-                  uid: Outlook_1_2
+                  href: /javascript/api/outlook_1_2?view=office-js
               - name: Requirement Set 1.1
                 href: reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md
                 items:
@@ -593,7 +593,7 @@
                 - name: Office.context.mailbox.userProfile
                   href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.userProfile.md
                 - name: API Reference
-                  uid: Outlook_1_1
+                  href: /javascript/api/outlook_1_1?view=office-js
       - name: PowerPoint
         href: reference/requirement-sets/powerpoint-and-project-note.md
       - name: Project
