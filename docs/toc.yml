@@ -473,8 +473,8 @@
                   href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.item.md
                 - name: Office.context.mailbox.userProfile
                   href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.userProfile.md
-                - name: API Reference
-                  uid: outlook
+                - name: Outlook Preview API Reference
+                  href: /javascript/api/outlook?view=office-js
               - name: Requirement Set 1.7
                 href: reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md
                 items:
