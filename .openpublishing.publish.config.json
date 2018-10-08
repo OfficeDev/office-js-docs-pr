@@ -26,7 +26,7 @@
   ],
   "JoinTOCPlugin": [
     {
-      "ConceptualTOC": "docs/docs-ref-conceptual/toc.yml",
+      "ConceptualTOC": "docs/toc.yml",
       "ReferenceTOCUrl": "/javascript/api/office_ref_toc/toc.json?view=office-js"
     }
   ],
