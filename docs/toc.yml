@@ -444,14 +444,14 @@
           - name: Excel JavaScript API requirement sets
             href: reference/requirement-sets/excel-api-requirement-sets.md
           - name: Excel API Reference
-            href: ../../../javascript/api/excel?view=office-js
+            href: ../../../javascript/api/excel
       - name: OneNote
         href: reference/overview/onenote-add-ins-javascript-reference.md
         items:
           - name: OneNote JavaScript API requirement sets
             href: reference/requirement-sets/onenote-api-requirement-sets.md
           - name: OneNote API Reference
-            href: ../../../javascript/api/onenote?view=office-js&branch=DO-NOT-MERGE-test-move-to-office-js-docs-pr
+            href: ../../../javascript/api/onenote?view=office-js
       - name: Outlook
         items:
           - name: Outlook JavaScript API requirement sets
