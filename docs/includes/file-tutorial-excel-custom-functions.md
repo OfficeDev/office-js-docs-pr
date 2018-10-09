@@ -45,7 +45,7 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
 
     ![Yo Office bash prompts for custom functions](../images/yo-office-cfs-stock-ticker-3.png)
 
-    After you complete the wizard, the generator will create the project files and install supporting Node components.
+    After you complete the wizard, the generator will create the project files and install supporting Node components. The project files are from our [Custom Functions sample](https://github.com/OfficeDev/Excel-Custom-Functions).
 
 2. Navigate to the project folder.
 
