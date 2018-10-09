@@ -74,7 +74,7 @@ Excel.run(function (context) {
 
 ## Supported worksheet functions
 
-The following built-in Excel worksheet functions can be called using the Excel JavaScript API. There 
+The following built-in Excel worksheet functions can be called using the Excel JavaScript API. 
 
 | Function | Return type | Description |
 |:---------------|:-------------|:-----------|
