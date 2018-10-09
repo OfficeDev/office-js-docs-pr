@@ -107,5 +107,5 @@ Get started by [creating your first Excel add-in](excel-add-ins-get-started-over
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)
-- [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
+- [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API reference](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

@@ -144,4 +144,4 @@ Excel.run(function (context) {
 
 ## See also
 
-- [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
+- [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)

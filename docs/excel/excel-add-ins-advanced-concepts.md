@@ -1,14 +1,13 @@
 ---
-title: Excel JavaScript API advanced concepts
+title: Advanced programming concepts with the Excel JavaScript API
 description: ''
-ms.date: 1/18/2018
+ms.date: 10/03/2018
 ---
 
 
+# Advanced programming concepts with the Excel JavaScript API
 
-# Excel JavaScript API advanced concepts
-
-This article builds upon the information in [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md) to describe some of the more advanced concepts that are essential to building complex add-ins for Excel 2016 or later.
+This article builds upon the information in [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md) to describe some of the more advanced concepts that are essential to building complex add-ins for Excel 2016 or later.
 
 ## Office.js APIs for Excel
 
@@ -235,7 +234,7 @@ return context.sync()
 
 ## See also
  
-* [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
+* [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
 * [Excel add-ins code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API performance optimization](performance.md)
 * [Excel JavaScript API reference](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

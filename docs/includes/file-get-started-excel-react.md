@@ -94,6 +94,6 @@ Congratulations, you've successfully created an Excel add-in using React! Next, 
 ## See also
 
 * [Excel add-in tutorial](../tutorials/excel-tutorial-create-table.md)
-* [Excel JavaScript API core concepts](../excel/excel-add-ins-core-concepts.md)
+* [Fundamental programming concepts with the Excel JavaScript API](../excel/excel-add-ins-core-concepts.md)
 * [Excel add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API reference](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
