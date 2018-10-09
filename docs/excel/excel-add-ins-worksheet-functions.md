@@ -74,7 +74,7 @@ Excel.run(function (context) {
 
 ## Supported worksheet functions
 
-The following built-in Excel worksheet functions can be called using the Excel JavaScript API.
+The following built-in Excel worksheet functions can be called using the Excel JavaScript API. 
 
 | Function | Return type | Description |
 |:---------------|:-------------|:-----------|
@@ -120,7 +120,7 @@ The following built-in Excel worksheet functions can be called using the Excel J
 | <a href="https://support.office.com/article/BITOR-function-f6ead5c8-5b98-4c9e-9053-8ad5234919b2" target="_blank">BITOR function</a> | FunctionResult | Returns a bitwise OR of 2 numbers |
 | <a href="https://support.office.com/article/BITRSHIFT-function-274d6996-f42c-4743-abdb-4ff95351222c" target="_blank">BITRSHIFT function</a> | FunctionResult | Returns a value number shifted right by shift_amount bits |
 | <a href="https://support.office.com/article/BITXOR-function-c81306a1-03f9-4e89-85ac-b86c3cba10e4" target="_blank">BITXOR function</a> | FunctionResult | Returns a bitwise 'Exclusive Or' of two numbers |
-| <a href="https://support.office.com/article/CEILINGMATH-function-80f95d2f-b499-4eee-9f16-f795a8e306c8" target="_blank">CEILING.MATH function</a> | FunctionResult | Rounds a number up, to the nearest integer or to the nearest multiple of significance |
+| <a href="https://support.office.com/article/CEILINGMATH-function-80f95d2f-b499-4eee-9f16-f795a8e306c8" target="_blank">CEILING.MATH, ECMA_CEILING functions</a> | FunctionResult | Rounds a number up, to the nearest integer or to the nearest multiple of significance |
 | <a href="https://support.office.com/article/CEILINGPRECISE-function-f366a774-527a-4c92-ba49-af0a196e66cb" target="_blank">CEILING.PRECISE function</a> | FunctionResult | Rounds a number the nearest integer or to the nearest multiple of significance. Regardless of the sign of the number, the number is rounded up. |
 | <a href="https://support.office.com/article/CHAR-function-bbd249c8-b36e-4a91-8017-1c133f9b837a" target="_blank">CHAR function</a> | FunctionResult | Returns the character specified by the code number |
 | <a href="https://support.office.com/article/CHISQDIST-function-8486b05e-5c05-4942-a9ea-f6b341518732" target="_blank">CHISQ.DIST function</a> | FunctionResult | Returns the cumulative beta probability density function |
@@ -179,7 +179,7 @@ The following built-in Excel worksheet functions can be called using the Excel J
 | <a href="https://support.office.com/article/DISC-function-71fce9f3-3f05-4acf-a5a3-eac6ef4daa53" target="_blank">DISC function</a> | FunctionResult | Returns the discount rate for a security |
 | <a href="https://support.office.com/article/DMAX-function-f4e8209d-8958-4c3d-a1ee-6351665d41c2" target="_blank">DMAX function</a> | FunctionResult | Returns the maximum value from selected database entries |
 | <a href="https://support.office.com/article/DMIN-function-4ae6f1d9-1f26-40f1-a783-6dc3680192a3" target="_blank">DMIN function</a> | FunctionResult | Returns the minimum value from selected database entries |
-| <a href="https://support.office.com/article/DOLLAR-function-a6cd05d9-9740-4ad3-a469-8109d18ff611" target="_blank">DOLLAR function</a> | FunctionResult | Converts a number to text, using the $ (dollar) currency format |
+| <a href="https://support.office.com/article/DOLLAR-function-a6cd05d9-9740-4ad3-a469-8109d18ff611" target="_blank">DOLLAR, USDOLLAR functions</a> | FunctionResult | Converts a number to text, using the $ (dollar) currency format |
 | <a href="https://support.office.com/article/DOLLARDE-function-db85aab0-1677-428a-9dfd-a38476693427" target="_blank">DOLLARDE function</a> | FunctionResult | Converts a dollar price, expressed as a fraction, into a dollar price, expressed as a decimal number |
 | <a href="https://support.office.com/article/DOLLARFR-function-0835d163-3023-4a33-9824-3042c5d4f495" target="_blank">DOLLARFR function</a> | FunctionResult | Converts a dollar price, expressed as a decimal number, into a dollar price, expressed as a fraction |
 | <a href="https://support.office.com/article/DPRODUCT-function-4f96b13e-d49c-47a7-b769-22f6d017cb31" target="_blank">DPRODUCT function</a> | FunctionResult | Multiplies the values in a particular field of records that match the criteria in a database |
@@ -212,15 +212,8 @@ The following built-in Excel worksheet functions can be called using the Excel J
 | <a href="https://support.office.com/article/FISHER-function-d656523c-5076-4f95-b87b-7741bf236c69" target="_blank">FISHER function</a> | FunctionResult | Returns the Fisher transformation |
 | <a href="https://support.office.com/article/FISHERINV-function-62504b39-415a-4284-a285-19c8e82f86bb" target="_blank">FISHERINV function</a> | FunctionResult | Returns the inverse of the Fisher transformation |
 | <a href="https://support.office.com/article/FIXED-function-ffd5723c-324c-45e9-8b96-e41be2a8274a" target="_blank">FIXED function</a> | FunctionResult | Formats a number as text with a fixed number of decimals |
-| <a href="https://support.office.com/article/FLOOR-function-14bb497c-24f2-4e04-b327-b0b4de5a8886" target="_blank">FLOOR function</a> | FunctionResult | Rounds a number down, toward zero |
 | <a href="https://support.office.com/article/FLOORMATH-function-c302b599-fbdb-4177-ba19-2c2b1249a2f5" target="_blank">FLOOR.MATH function</a> | FunctionResult | Rounds a number down, to the nearest integer or to the nearest multiple of significance |
 | <a href="https://support.office.com/article/FLOORPRECISE-function-f769b468-1452-4617-8dc3-02f842a0702e" target="_blank">FLOOR.PRECISE function</a> | FunctionResult | Rounds a number down to the nearest integer or to the nearest multiple of significance. Regardless of the sign of the number, the number is rounded down. |
-| <a href="https://support.office.com/article/FORECAST-function-50ca49c9-7b40-4892-94e4-7ad38bbeda99" target="_blank">FORECAST function</a> | FunctionResult | Returns a value along a linear trend |
-| <a href="https://support.office.com/article/FORECASTETS-function-897a2fe9-6595-4680-a0b0-93e0308d5f6e" target="_blank">FORECAST.ETS function</a> | FunctionResult | Returns a future value based on existing (historical) values by using the AAA version of the Exponential Smoothing (ETS) algorithm |
-| <a href="https://support.office.com/article/FORECASTETSCONFINT-function-897a2fe9-6595-4680-a0b0-93e0308d5f6e" target="_blank">FORECAST.ETS.CONFINT function</a> | FunctionResult | Returns a confidence interval for the forecast value at the specified target date |
-| <a href="https://support.office.com/article/FORECASTETSSEASONALITY-function-897a2fe9-6595-4680-a0b0-93e0308d5f6e" target="_blank">FORECAST.ETS.SEASONALITY function</a> | FunctionResult | Returns the length of the repetitive pattern Excel detects for the specified time series |
-| <a href="https://support.office.com/article/FORECASTETSSTAT-function-897a2fe9-6595-4680-a0b0-93e0308d5f6e" target="_blank">FORECAST.ETS.STAT function</a> | FunctionResult | Returns a statistical value as a result of time series forecasting |
-| <a href="https://support.office.com/article/FORECASTLINEAR-function-897a2fe9-6595-4680-a0b0-93e0308d5f6e" target="_blank">FORECAST.LINEAR function</a> | FunctionResult | Returns a future value based on existing values |
 | <a href="https://support.office.com/article/FV-function-2eef9f44-a084-4c61-bdd8-4fe4bb1b71b3" target="_blank">FV function</a> | FunctionResult | Returns the future value of an investment |
 | <a href="https://support.office.com/article/FVSCHEDULE-function-bec29522-bd87-4082-bab9-a241f3fb251d" target="_blank">FVSCHEDULE function</a> | FunctionResult | Returns the future value of an initial principal after applying a series of compound interest rates |
 | <a href="https://support.office.com/article/GAMMA-function-ce1702b1-cf55-471d-8307-f83be0fc5297" target="_blank">GAMMA function</a> | FunctionResult | Returns the Gamma function value |
@@ -350,7 +343,6 @@ The following built-in Excel worksheet functions can be called using the Excel J
 | <a href="https://support.office.com/article/PRICE-function-3ea9deac-8dfa-436f-a7c8-17ea02c21b0a" target="_blank">PRICE function</a> | FunctionResult | Returns the price per $100 face value of a security that pays periodic interest |
 | <a href="https://support.office.com/article/PRICEDISC-function-d06ad7c1-380e-4be7-9fd9-75e3079acfd3" target="_blank">PRICEDISC function</a> | FunctionResult | Returns the price per $100 face value of a discounted security |
 | <a href="https://support.office.com/article/PRICEMAT-function-52c3b4da-bc7e-476a-989f-a95f675cae77" target="_blank">PRICEMAT function</a> | FunctionResult | Returns the price per $100 face value of a security that pays interest at maturity |
-| <a href="https://support.office.com/article/PROB-function-9ac30561-c81c-4259-8253-34f0a238fc49" target="_blank">PROB function</a> | FunctionResult | Returns the probability that values in a range are between two limits |
 | <a href="https://support.office.com/article/PRODUCT-function-8e6b5b24-90ee-4650-aeec-80982a0512ce" target="_blank">PRODUCT function</a> | FunctionResult | Multiplies its arguments |
 | <a href="https://support.office.com/article/PROPER-function-52a5a283-e8b2-49be-8506-b2887b889f94" target="_blank">PROPER function</a> | FunctionResult | Capitalizes the first letter in each word of a text value |
 | <a href="https://support.office.com/article/PV-function-23879d31-0e02-4321-be01-da16e8168cbd" target="_blank">PV function</a> | FunctionResult | Returns the present value of an investment |
@@ -373,7 +365,6 @@ The following built-in Excel worksheet functions can be called using the Excel J
 | <a href="https://support.office.com/article/ROUNDUP-function-f8bc9b23-e795-47db-8703-db171d0c42a7" target="_blank">ROUNDUP function</a> | FunctionResult | Rounds a number up, away from zero |
 | <a href="https://support.office.com/article/ROWS-function-b592593e-3fc2-47f2-bec1-bda493811597" target="_blank">ROWS function</a> | FunctionResult | Returns the number of rows in a reference |
 | <a href="https://support.office.com/article/RRI-function-6f5822d8-7ef1-4233-944c-79e8172930f4" target="_blank">RRI function</a> | FunctionResult | Returns an equivalent interest rate for the growth of an investment |
-| <a href="https://support.office.com/article/RTD-function-e0cc001a-56f0-470a-9b19-9455dc0eb593" target="_blank">RTD function</a> | FunctionResult | Retrieves real-time data from a program that supports COM automation |
 | <a href="https://support.office.com/article/SEC-function-ff224717-9c87-4170-9b58-d069ced6d5f7" target="_blank">SEC function</a> | FunctionResult | Returns the secant of an angle |
 | <a href="https://support.office.com/article/SECH-function-e05a789f-5ff7-4d7f-984a-5edb9b09556f" target="_blank">SECH function</a> | FunctionResult | Returns the hyperbolic secant of an angle |
 | <a href="https://support.office.com/article/SECOND-function-740d1cfc-553c-4099-b668-80eaa24e8af1" target="_blank">SECOND function</a> | FunctionResult | Converts a serial number to a second |
@@ -449,5 +440,5 @@ The following built-in Excel worksheet functions can be called using the Excel J
 ## See also
 
 - [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
-- [Excel JavaScript API Open Specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
-- [Worksheet Functions Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheet?view=office-js)
+- [Functions Class (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.functions)
+- [Workbook Functions Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.workbook#functions)
