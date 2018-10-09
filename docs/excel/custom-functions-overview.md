@@ -1,6 +1,6 @@
 ---
-ms.date: 10/05/2018
-description: Create a custom function in Excel using JavaScript. 
+ms.date: 10/09/2018
+description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel (Preview)
 ---
 
@@ -268,17 +268,17 @@ To enable the ability to cancel a function, you must implement a cancellation ha
 
 ## Saving and sharing state
 
-Custom functions can save data in global JavaScript variables, which can be used in subsequent calls. Saved state is useful when users add the same custom function to more than one cell, because all the instances of the function can share the state. For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.
+Custom functions can save data in global JavaScript variables, which can be used in subsequent calls. Saved state is useful when users call the same custom function from more than one cell, because all instances of the function can access the state. For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.
 
 The following code sample shows an implementation of a temperature-streaming function that saves state globally. Note the following about this code:
 
-- The `streamTemperature` function updates the temperature value displayed in the cell every second and it uses the `savedTemperatures` variable as its data source.
+- The `streamTemperature` function updates the temperature value that's displayed in the cell every second and it uses the `savedTemperatures` variable as its data source.
 
 - Because `streamTemperature` is a streaming function, it implements a cancellation handler that will run when the function is canceled.
 
 - If a user calls the `streamTemperature` function from multiple cells in Excel, the `streamTemperature` function reads data from the same `savedTemperatures` variable each time it runs. 
 
-- The `refreshTemperature` function reads the temperature of a particular thermometer every second and stores the results in the `savedTemperatures` variable. Because the `refreshTemperatures` function is not exposed to end users in Excel, it does not need to be registered in the JSON file.
+- The `refreshTemperature` function reads the temperature of a particular thermometer every second and stores the results in the `savedTemperatures` variable. Because the `refreshTemperature` function is not exposed to end users in Excel, it does not need to be registered in the JSON file.
 
 ```js
 var savedTemperatures;
@@ -294,7 +294,7 @@ function streamTemperature(thermometerID, handler){
     setTimeout(getNextTemperature, delayTime); // Wait 1 second before updating Excel again.
 
     handler.onCancelled() = function {
-        clearTimeout(delayTime);
+      clearTimeout(delayTime);
     }
   }
   getNextTemperature();
