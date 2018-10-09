@@ -278,7 +278,7 @@ The following code sample shows an implementation of a temperature-streaming fun
 
 - If a user calls the `streamTemperature` function from multiple cells in Excel, the `streamTemperature` function reads data from the same `savedTemperatures` variable each time it runs. 
 
-- The `refreshTemperature` function reads the temperature of a particular thermometer every second and stores the results in the `savedTemperatures` variable. Because the `refreshTemperature` function is not exposed to end users in Excel, it does not need to be registered in the JSON file.
+- The `refreshTemperature` function reads the temperature of a particular thermometer every second and stores the result in the `savedTemperatures` variable. Because the `refreshTemperature` function is not exposed to end users in Excel, it does not need to be registered in the JSON file.
 
 ```js
 var savedTemperatures;
