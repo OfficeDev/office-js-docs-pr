@@ -164,7 +164,7 @@ A code sample showing how to enable and disable events is in the [Work with Even
 
 ## See also
 
-- [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
-- [Excel JavaScript API advanced concepts](excel-add-ins-advanced-concepts.md)
+- [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
+- [Advanced programming concepts with the Excel JavaScript API](excel-add-ins-advanced-concepts.md)
 - [Excel JavaScript API Open Specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
 - [Worksheet Functions Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.functions)

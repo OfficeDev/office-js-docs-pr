@@ -598,5 +598,5 @@ A transposed range is flipped along the main diagonal, so rows **1**, **2**, and
 
 ## See also
 
-- [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md)
+- [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
 
