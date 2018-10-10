@@ -153,7 +153,7 @@ await Excel.run(async (context) => {
 
 ## Change aggregation function
 
-Data hierarchies have their values aggregated. For datasets of numbers, this is a sum by default. The `summarizeBy` property defines this behavior based on an `AggregrationFunction` type. 
+Data hierarchies have their values aggregated. For datasets of numbers, this is a sum by default. The `summarizeBy` property defines this behavior based on an [AggregrationFunction](https://docs.microsoft.com/javascript/api/excel/excel.aggregationfunction) type. 
 
 The currently supported aggregation function types are `Sum`, `Count`, `Average`, `Max`, `Min`, `Product`, `CountNumbers`, `StandardDeviation`, `StandardDeviationP`, `Variance`, `VarianceP`, and `Automatic` (the default).
 
@@ -174,12 +174,12 @@ await Excel.run(async (context) => {
 
 ## Change calculations with a ShowAsRule
 
-PivotTables, by default, aggregate the data of their row and column hierarchies independently. A `ShowAsRule` changes the data hierarchy to output values based on other items in the PivotTable.
+PivotTables, by default, aggregate the data of their row and column hierarchies independently. A [ShowAsRule](https://docs.microsoft.com/javascript/api/excel/excel.showasrule) changes the data hierarchy to output values based on other items in the PivotTable.
 
 The `ShowAsRule` object has three properties:
 -	`calculation`: The type of relative calculation to apply to the data hierarchy (the default is `none`).
--	`baseField`: The field within the hierarchy containing the base data before the calculation is applied. The `PivotField` usually has the same name as its parent hierarchy.
--	`baseItem`: The individual item compared against the values of the base fields based on the calculation type. Not all calculations require this field.
+-	`baseField`: The field within the hierarchy containing the base data before the calculation is applied. The [PivotField](https://docs.microsoft.com/javascript/api/excel/excel.pivotfield) usually has the same name as its parent hierarchy.
+-	`baseItem`: The individual [PivotItem](https://docs.microsoft.com/javascript/api/excel/excel.pivotitem) compared against the values of the base fields based on the calculation type. Not all calculations require this field.
 
 The following example sets the calculation on the **Sum of Crates Sold at Farm** data hierarchy to be a percentage of the column total. 
 We still want the granularity to extend to the fruit type level, so we’ll use the **Type** row hierarchy and its underlying field. 
@@ -235,7 +235,7 @@ await Excel.run(async (context) => {
 
 ## PivotTable layouts
 
-A PivotTable layout defines the placement of hierarchies and their data. You access the layout to determine the ranges where data is stored. 
+A [PivotLayout](https://docs.microsoft.com/javascript/api/excel/excel.pivotlayout) defines the placement of hierarchies and their data. You access the layout to determine the ranges where data is stored. 
 
 The following diagram shows which layout function calls correspond to which ranges of the PivotTable.
 
