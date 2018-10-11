@@ -758,6 +758,8 @@
             href: reference/manifest/customfunctionssourcelocation.md
           - name: Supertip
             href: reference/manifest/supertip.md
+          - name: SupportsSharedFolders
+            href: reference/manifest/supportssharedfolders.md
           - name: WebApplicationInfo
             href: reference/manifest/webapplicationinfo.md
     

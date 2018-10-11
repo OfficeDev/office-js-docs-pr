@@ -19,7 +19,7 @@ The following features are in preview.
 - [Office.context.auth.getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) - Added access to `getAccessTokenAsync`, which allows add-ins to [get an access token](https://docs.microsoft.com/outlook/add-ins/authenticate-a-user-with-an-sso-token) for the Microsoft Graph API.
 - [Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) - Added a new bit flag enum that specifies the delegate permissions.
 - [Office.EventType](/javascript/api/office/office.eventtype) - Modified to support OfficeThemeChanged event through addition of `OfficeThemeChanged` entry.
-- [DesktopFormFactor element](../../manifest/desktopformfactor.md) - Modified to include SupportsSharedFolders element which defines whether the add-in is available in delegate scenarios.
+- [SupportsSharedFolders manifest element](../../manifest/supportssharedfolders.md) - Added a child element to the [DesktopFormFactor](../../manifest/desktopformfactor.md) manifest element. It defines whether the add-in is available in delegate scenarios.
 
 ## See also
 
