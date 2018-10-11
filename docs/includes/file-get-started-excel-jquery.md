@@ -325,4 +325,4 @@ Congratulations, you've successfully created an Excel add-in using jQuery! Next,
 * [Excel add-in tutorial](../tutorials/excel-tutorial-create-table.md)
 * [Fundamental programming concepts with the Excel JavaScript API](../excel/excel-add-ins-core-concepts.md)
 * [Excel add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API reference](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
+* [Excel JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)

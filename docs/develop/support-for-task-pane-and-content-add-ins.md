@@ -8,7 +8,7 @@ ms.date: 12/04/2017
 # Office JavaScript API support for content and task pane add-ins in Office 2013
 
 
-You can use the [Office JavaScript API](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js) to create task pane or content add-ins for Office 2013 host applications. The objects and methods that content and task pane add-ins support are categorized as follows:
+You can use the [Office JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) to create task pane or content add-ins for Office 2013 host applications. The objects and methods that content and task pane add-ins support are categorized as follows:
 
 
 1. **Common objects shared with other Office Add-ins.** These objects include [Office](https://docs.microsoft.com/javascript/api/office?view=office-js), [Context](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js), and [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js). The  **Office** object is the root object of the Office JavaScript API. The **Context** object represents the add-in's runtime environment. Both **Office** and **Context** are the fundamental objects for any Office Add-in. The **AsyncResult** object represents the results of an asynchronous operation, such as the data returned to the **getSelectedDataAsync** method, which reads what a user has selected in a document.
@@ -160,7 +160,7 @@ For more information, see [Requesting permissions for API use in content and tas
 
 ## See also
 
-- [Office JavaScript API](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
+- [Office JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)
 - [Schema reference for Office Add-ins manifests](../develop/add-in-manifests.md)
 - [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)
     

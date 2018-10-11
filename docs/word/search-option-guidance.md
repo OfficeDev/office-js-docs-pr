@@ -195,4 +195,4 @@ Word.run(function (context) {
 });
 ```
 
-More information can be found in the [Word JavaScript Reference API](https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js).
+More information can be found in the [Word JavaScript Reference API](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js).

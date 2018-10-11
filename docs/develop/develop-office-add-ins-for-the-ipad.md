@@ -13,7 +13,7 @@ The following table lists the tasks to perform to develop an Office Add-in to ru
 
 |**Task**|**Description**|**Resources**|
 |:-----|:-----|:-----|
-|Update your add-in to support Office.js version 1.1.|Update the JavaScript files (Office.js and app-specific .js files) and the add-in manifest validation file used in your Office Add-in project to version 1.1.|[What's changed in the JavaScript API for Office](https://docs.microsoft.com/javascript/office/what's-changed-in-the-javascript-api-for-office?view=office-js)|
+|Update your add-in to support Office.js version 1.1.|Update the JavaScript files (Office.js and app-specific .js files) and the add-in manifest validation file used in your Office Add-in project to version 1.1.|[What's changed in the JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/what's-changed-in-the-javascript-api-for-office?view=office-js)|
 |Apply UI design best practices.|Integrate your add-in UI seamlessly with the iOS experience.|[Designing for iOS](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/)|
 |Apply add-in design best practices.|Ensure that your add-in provides clear value, is engaging, and performs consistently.|[Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)|
 |Optimize your add-in for touch.|Make your UI responsive to touch inputs in addition to mouse and keyboard.|[Apply UX design principles](../concepts/add-in-development-best-practices.md#apply-ux-design-principles)|

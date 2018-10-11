@@ -394,5 +394,5 @@ In both optional parameter examples, the  _callback_ parameter is specified as t
 ## See also
 
 - [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md) 
-- [JavaScript API for Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office)
+- [JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)
      
