@@ -39,8 +39,8 @@ When the installation process finishes, you will have the latest Office applicat
 
 For information about the minimum product builds for each platform for the API requirement sets, see the following:
 
-- [Word JavaScript API requirement sets](https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets?view=office-js)
-- [Excel JavaScript API requirement sets](https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets?view=office-js)
-- [OneNote JavaScript API requirement sets](https://docs.microsoft.com/javascript/office/requirement-sets/onenote-api-requirement-sets?view=office-js)
-- [Dialog API requirement sets](https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets?view=office-js)
-- [Office common API requirement sets](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js)
+- [Word JavaScript API requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets?view=office-js)
+- [Excel JavaScript API requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets?view=office-js)
+- [OneNote JavaScript API requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets?view=office-js)
+- [Dialog API requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets?view=office-js)
+- [Office common API requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets?view=office-js)

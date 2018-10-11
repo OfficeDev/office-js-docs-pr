@@ -155,7 +155,7 @@ Visual Studio builds the project and does the following:
 Next, Visual Studio does the following:
 
 
-1. Modifies the [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation?view=office-js) element of the XML manifest file by replacing the ~remoteAppUrl token with the fully qualified address of the start page (for example, http://localhost/MyAgave.html).
+1. Modifies the [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation?view=office-js) element of the XML manifest file by replacing the ~remoteAppUrl token with the fully qualified address of the start page (for example, http://localhost/MyAgave.html).
     
 2. Starts the web application project in IIS Express.
     

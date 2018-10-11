@@ -79,7 +79,7 @@ function getPagesInSection() {
 }
 ```
 
-You can find supported OneNote objects and operations in the [API reference](https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js).
+You can find supported OneNote objects and operations in the [API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js).
 
 ### Accessing the common API through the *Document* object
 
@@ -113,7 +113,7 @@ OneNote add-ins support only the following common APIs:
 | [Office.context.document.settings.set(name, value);](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#set-name--value-) | Settings are supported by content add-ins only | 
 | [Office.EventType.DocumentSelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs?view=office-js) ||
 
-In general, you only use the common API to do something that isn't supported in the rich API. To learn more about using the common API, see the Office Add-ins [documentation](../overview/office-add-ins.md) and [reference](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js).
+In general, you only use the common API to do something that isn't supported in the rich API. To learn more about using the common API, see the Office Add-ins [documentation](../overview/office-add-ins.md) and [reference](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js).
 
 
 <a name="om-diagram"></a>
@@ -126,6 +126,6 @@ The following diagram represents what's currently available in the OneNote JavaS
 ## See also
 
 - [Build your first OneNote add-in](onenote-add-ins-getting-started.md)
-- [OneNote JavaScript API reference](https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js)
+- [OneNote JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js)
 - [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office Add-ins platform overview](../overview/office-add-ins.md)

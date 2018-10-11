@@ -13,9 +13,9 @@ This article builds upon the information in [Fundamental programming concepts wi
 
 An Excel add-in interacts with objects in Excel by using the JavaScript API for Office, which includes two JavaScript object models:
 
-* **Excel JavaScript API**: Introduced with Office 2016, the [Excel JavaScript API](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js) provides strongly-typed objects that you can use to access worksheets, ranges, tables, charts, and more. 
+* **Excel JavaScript API**: Introduced with Office 2016, the [Excel JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js) provides strongly-typed objects that you can use to access worksheets, ranges, tables, charts, and more. 
 
-* **Common APIs**: Introduced with Office 2013, the common APIs (also referred to as the [Shared API](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of host applications such as Word, Excel, and PowerPoint.
+* **Common APIs**: Introduced with Office 2013, the common APIs (also referred to as the [Shared API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of host applications such as Word, Excel, and PowerPoint.
 
 While you'll likely use the Excel JavaScript API to develop the majority of functionality in add-ins that target Excel 2016 or later, you'll also use objects in the Shared API. For example:
 
@@ -25,7 +25,7 @@ While you'll likely use the Excel JavaScript API to develop the majority of func
 
 ## Requirement sets
 
-Requirement sets are named groups of API members. An Office Add-in can perform a runtime check or use requirement sets specified in the manifest to determine whether an Office host supports the APIs that the add-in needs. To identify the specific requirement sets that are available on each supported platform, see [Excel JavaScript API requirement sets](https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets?view=office-js).
+Requirement sets are named groups of API members. An Office Add-in can perform a runtime check or use requirement sets specified in the manifest to determine whether an Office host supports the APIs that the add-in needs. To identify the specific requirement sets that are available on each supported platform, see [Excel JavaScript API requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets?view=office-js).
 
 ### Checking for requirement set support at runtime
 
@@ -42,7 +42,7 @@ else {
 
 ### Defining requirement set support in the manifest
 
-You can use the [Requirements element](https://docs.microsoft.com/javascript/office/manifest/requirements?view=office-js) in the add-in manifest to specify the minimal requirement sets and/or API methods that your add-in requires to activate. If the Office host or platform doesn't support the requirement sets or API methods that are specified in the **Requirements** element of the manifest, the add-in won't run in that host or platform, and won't display in the list of add-ins that are shown in **My Add-ins**. 
+You can use the [Requirements element](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/requirements?view=office-js) in the add-in manifest to specify the minimal requirement sets and/or API methods that your add-in requires to activate. If the Office host or platform doesn't support the requirement sets or API methods that are specified in the **Requirements** element of the manifest, the add-in won't run in that host or platform, and won't display in the list of add-ins that are shown in **My Add-ins**. 
 
 The following code sample shows the **Requirements** element in an add-in manifest which specifies that the add-in should load in all Office host applications that support ExcelApi requirement set version 1.3 or greater.
 
@@ -59,7 +59,7 @@ The following code sample shows the **Requirements** element in an add-in manife
 
 ### Requirement sets for the Office.js Common API
 
-For information about common API requirement sets, see [Office common API requirement sets](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js).
+For information about common API requirement sets, see [Office common API requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets?view=office-js).
 
 ## Loading the properties of an object
 
@@ -237,4 +237,4 @@ return context.sync()
 * [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
 * [Excel add-ins code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API performance optimization](performance.md)
-* [Excel JavaScript API reference](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
+* [Excel JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)

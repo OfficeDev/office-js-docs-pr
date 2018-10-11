@@ -423,17 +423,17 @@ Run the sample add-in. The taskpane add-in loads in Word 2013, and the strings i
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)    
 - [Language identifiers and OptionState Id values in Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
-[DefaultLocale]: 		https://docs.microsoft.com/javascript/office/manifest/defaultlocale?view=office-js
-[Description]: 			https://docs.microsoft.com/javascript/office/manifest/description?view=office-js
-[DisplayName]: 			https://docs.microsoft.com/javascript/office/manifest/displayname?view=office-js
-[IconUrl]: 				https://docs.microsoft.com/javascript/office/manifest/iconurl?view=office-js
-[HighResolutionIconUrl]:https://docs.microsoft.com/javascript/office/manifest/highresolutioniconurl?view=office-js
-[Resources]: 		    https://docs.microsoft.com/javascript/office/manifest/resources?view=office-js
-[SourceLocation]: 		https://docs.microsoft.com/javascript/office/manifest/sourcelocation?view=office-js
-[Override]:  			https://docs.microsoft.com/javascript/office/manifest/override?view=office-js
-[DesktopSettings]: 		https://docs.microsoft.com/javascript/office/manifest/desktopsettings?view=office-js
-[TabletSettings]: 		https://docs.microsoft.com/javascript/office/manifest/tabletsettings?view=office-js
-[PhoneSettings]: 		https://docs.microsoft.com/javascript/office/manifest/phonesettings?view=office-js
+[DefaultLocale]: 		https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultlocale?view=office-js
+[Description]: 			https://docs.microsoft.com/office/dev/add-ins/reference/manifest/description?view=office-js
+[DisplayName]: 			https://docs.microsoft.com/office/dev/add-ins/reference/manifest/displayname?view=office-js
+[IconUrl]: 				https://docs.microsoft.com/office/dev/add-ins/reference/manifest/iconurl?view=office-js
+[HighResolutionIconUrl]:https://docs.microsoft.com/office/dev/add-ins/reference/manifest/highresolutioniconurl?view=office-js
+[Resources]: 		    https://docs.microsoft.com/office/dev/add-ins/reference/manifest/resources?view=office-js
+[SourceLocation]: 		https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation?view=office-js
+[Override]:  			https://docs.microsoft.com/office/dev/add-ins/reference/manifest/override?view=office-js
+[DesktopSettings]: 		https://docs.microsoft.com/office/dev/add-ins/reference/manifest/desktopsettings?view=office-js
+[TabletSettings]: 		https://docs.microsoft.com/office/dev/add-ins/reference/manifest/tabletsettings?view=office-js
+[PhoneSettings]: 		https://docs.microsoft.com/office/dev/add-ins/reference/manifest/phonesettings?view=office-js
 [displayLanguage]: 	https://docs.microsoft.com/javascript/api/office/office.context?view=office-js#displaylanguage 
 [contentLanguage]: 	https://docs.microsoft.com/javascript/api/office/office.context?view=office-js#contentlanguage 
 [RFC 3066]: https://www.rfc-editor.org/info/rfc3066

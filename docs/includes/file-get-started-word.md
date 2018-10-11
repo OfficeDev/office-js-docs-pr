@@ -485,4 +485,4 @@ Congratulations, you've successfully created a Word add-in using jQuery! Next, l
 
 * [Word add-ins overview](../word/word-add-ins-programming-overview.md)
 * [Word add-in code samples](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
-* [Word JavaScript API reference](https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js)
+* [Word JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js)

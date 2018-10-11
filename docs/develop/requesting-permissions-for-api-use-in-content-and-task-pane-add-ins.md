@@ -24,7 +24,7 @@ A five-level JavaScript API access-permissions model provides the basis for priv
 
 
 
-These permissions specify the subset of the API that the add-in runtime will allow your content or task pane add-in to use when a user inserts, and then activates (trusts) your add-in. To declare the permission level your content or task pane add-in requires, specify one of the permission text values in the [Permissions](https://docs.microsoft.com/javascript/office/manifest/permissions?view=office-js) element of your add-in's manifest. The following example requests the **WriteDocument** permission, which will allow only methods that can write to (but not read) the document.
+These permissions specify the subset of the API that the add-in runtime will allow your content or task pane add-in to use when a user inserts, and then activates (trusts) your add-in. To declare the permission level your content or task pane add-in requires, specify one of the permission text values in the [Permissions](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions?view=office-js) element of your add-in's manifest. The following example requests the **WriteDocument** permission, which will allow only methods that can write to (but not read) the document.
 
 
 
