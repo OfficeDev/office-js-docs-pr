@@ -121,7 +121,7 @@ The `options` object enables you to customize some aspects of how and when Excel
 |  Property  |  Data type  |  Required  |  Description  |
 |:-----|:-----|:-----|:-----|
 |  `cancelable`  |  boolean  |  No<br/><br/>Default value is `false`.  |  If `true`, Excel calls the `onCanceled` handler whenever the user takes an action that has the effect of canceling the function; for example, manually triggering recalculation or editing a cell that is referenced by the function. If you use this option, Excel will call the JavaScript function with an additional `caller` parameter. (Do ***not*** register this parameter in the `parameters` property). In the body of the function, a handler must be assigned to the `caller.onCanceled` member. For more information, see [Canceling a function](custom-functions-overview.md#canceling-a-function). |
-|  `stream`  |  boolean  |  No<br/><br/>Default value is `false`.  |  If `true`, the function can output repeatedly to the cell even when invoked only once. This option is useful for rapidly-changing data sources, such as a stock price. If you use this option, Excel will call the JavaScript function with an additional `caller` parameter. (Do ***not*** register this parameter in the `parameters` property). The function should have no `return` statement. Instead, the result value is passed as the argument of the `caller.setResult` callback method. For more information, see [Streamed functions](custom-functions-overview.md#streamed-functions). |
+|  `stream`  |  boolean  |  No<br/><br/>Default value is `false`.  |  If `true`, the function can output repeatedly to the cell even when invoked only once. This option is useful for rapidly-changing data sources, such as a stock price. If you use this option, Excel will call the JavaScript function with an additional `caller` parameter. (Do ***not*** register this parameter in the `parameters` property). The function should have no `return` statement. Instead, the result value is passed as the argument of the `caller.setResult` callback method. For more information, see [Streaming functions](custom-functions-overview.md#streaming-functions). |
 
 ## parameters
 
@@ -148,3 +148,4 @@ The `results` object defines the type of information that is returned by the fun
 * [Create custom functions in Excel](custom-functions-overview.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
+* [Excel custom functions tutorial](excel-tutorial-custom-functions.md)

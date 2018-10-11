@@ -177,6 +177,6 @@ Congratulations, you've successfully created a OneNote add-in! Next, learn more 
 ## See also
 
 - [OneNote JavaScript API programming overview](../onenote/onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API reference](https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js)
+- [OneNote JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js)
 - [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office Add-ins platform overview](../overview/office-add-ins.md)

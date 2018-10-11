@@ -1,5 +1,5 @@
 ---
-ms.date: 09/27/2018
+ms.date: 10/03/2018
 description: Learn best practices and recommended patterns for Excel custom functions.
 title: Custom functions best practices
 ---
@@ -47,8 +47,7 @@ Currently, the best method for debugging Excel custom functions is to first [sid
 
 If your add-in fails to register, [verify that SSL certificates are correctly configured](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) for the web server that's hosting your add-in application.
 
-If you are testing your add-in in Office 2016 desktop, you can enable [runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in) to debug issues with your add-in's XML manifest file as well as several installation and runtime conditions.
-
+If you are testing your add-in in Office on Windows desktop, you can enable [runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in) to debug issues with your add-in's XML manifest file as well as several installation and runtime conditions.
 
 ## Mapping function names to JSON metadata
 
@@ -120,8 +119,13 @@ Keep in mind the following best practices when creating custom functions in your
     }
     ```
 
+## Additional considerations
+
+In order to create an add-in that will run on multiple platforms (one of the key tenants of Office Add-ins), you should not access the Document Object Model (DOM) in custom functions or use libraries like jQuery that rely on the DOM. On Excel for Windows, where custom functions use the [JavaScript runtime](custom-functions-runtime.md), custom functions cannot access the DOM.
+
 ## See also
 
-- [Create custom functions in Excel](custom-functions-overview.md)
-- [Custom functions metadata](custom-functions-json.md)
-- [Runtime for Excel custom functions](custom-functions-runtime.md)
+* [Create custom functions in Excel](custom-functions-overview.md)
+* [Custom functions metadata](custom-functions-json.md)
+* [Runtime for Excel custom functions](custom-functions-runtime.md)
+* [Excel custom functions tutorial](excel-tutorial-custom-functions.md)

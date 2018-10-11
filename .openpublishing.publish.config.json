@@ -1,6 +1,11 @@
 {
   "docsets_to_publish": [
     {
+       "customized_tasks": {
+        "docset_prebuild": [
+          "_dependentPackages/CommonPlugins/tools/JoinTOC.ps1"
+        ]
+      },
       "docset_name": "office-js-docs-pr",
       "build_source_folder": "docs",
       "build_output_subfolder": "office-js-docs-pr",
@@ -19,6 +24,12 @@
       "template_folder": "_themes"
     }
   ],
+  "JoinTOCPlugin": [
+    {
+      "ConceptualTOC": "docs/toc.yml",
+      "ReferenceTOCUrl": "/javascript/api/office_ref_toc/toc.json?view=office-js"
+    }
+  ],
   "notification_subscribers": [],
   "branches_to_filter": [],
   "git_repository_url_open_to_public_contributors": "https://github.com/OfficeDev/office-js-docs-pr",
@@ -35,5 +46,14 @@
     }
   ],
   "branch_target_mapping": {},
-  "need_generate_pdf_url_template": false
+  "need_generate_pdf_url_template": false,
+  "dependent_packages": [
+    {
+      "id": "Microsoft.OpenPublishing.CommonPlugins",
+      "nuget_feed": "https://www.myget.org/F/op/api/v2",
+      "path_to_root": "_dependentPackages/CommonPlugins",
+      "target_framework": "net45",
+      "version": "latest"
+    }
+  ]
 }

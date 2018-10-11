@@ -859,7 +859,7 @@ When using templates with your app, whether the add-in will be resident in the t
 
 ## See also
 
-- [JavaScript API for Office ](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js) 
+- [JavaScript API for Office ](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) 
 - [Standard ECMA-376: Office Open XML File Formats](http://www.ecma-international.org/publications/standards/Ecma-376.htm) (access the complete language reference and related documentation on Open XML here) 
 - [OpenXMLDeveloper.org](http://www.openxmldeveloper.org)
 - [Exploring the JavaScript API for Office: Data Binding and Custom XML Parts](https://msdn.microsoft.com/magazine/dn166930.aspx)
