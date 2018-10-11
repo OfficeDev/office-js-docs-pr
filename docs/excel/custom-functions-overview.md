@@ -133,7 +133,7 @@ The following table lists the properties that are typically present in the JSON 
 
 | Property 	| Description |
 |---------|---------|
-| `id` | A unique ID for the function. This ID should not be changed after it is set. |
+| `id` | A unique ID for the function. This ID should not be changed after it is set and should only contain alphanumeric characters and periods. |
 | `name` | Name of the function that the end user sees in Excel. In Excel, this function name will be prefixed by the custom functions namespace that's specified in the [XML manifest file](#manifest-file). |
 | `helpUrl`	| URL for the page that is shown when a user requests help. |
 | `description`	| Describes what the function does. This value appears as a tooltip when the function is the selected item in the autocomplete menu within Excel. |
@@ -179,7 +179,7 @@ The XML manifest file for an add-in that defines custom functions (**./manifest.
 ```
 
 > [!NOTE]
-> Functions in Excel are prepended by the namespace specified in your XML manifest file. A function's namespace comes before the function name and they are separated by a period. For example, to call the function `ADD42` in the cell of an Excel worksheet, you would type `=CONTOSO.ADD42`, because CONTOSO is the namespace and `ADD42` is the name of the function specified in the JSON file. The namespace is intended to be used as an identifier for your company or the add-in. 
+> Functions in Excel are prepended by the namespace specified in your XML manifest file. A function's namespace comes before the function name and they are separated by a period. For example, to call the function `ADD42` in the cell of an Excel worksheet, you would type `=CONTOSO.ADD42`, because CONTOSO is the namespace and `ADD42` is the name of the function specified in the JSON file. The namespace is intended to be used as an identifier for your company or the add-in. A namespace may only contain alphanumeric characters and periods.
 
 ## Functions that return data from external sources
 

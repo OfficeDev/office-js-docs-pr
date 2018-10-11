@@ -108,7 +108,7 @@ The `functions` property is an array of custom function objects. The following t
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  No  |  The description of the function that end users see in Excel. For example, **Converts a Celsius value to Fahrenheit**. |
 |  `helpUrl`  |  string  |   No  |  URL that provides information about the function. (It is displayed in a task pane.) For example, **http://contoso.com/help/convertcelsiustofahrenheit.html**. |
-| `id`     | string | Yes | A unique ID for the function. This ID should not be changed after it is set. |
+| `id`     | string | Yes | A unique ID for the function. This ID should not be changed after it is set and should only contain alphanumeric characters and periods. |
 |  `name`  |  string  |  Yes  |  The name of the function that end users see in Excel. In Excel, this function name will be prefixed by the custom functions namespace that's specified in the XML manifest file. |
 |  `options`  |  object  |  No  |  Enables you to customize some aspects of how and when Excel executes the function. See [options object](#options-object) for details. |
 |  `parameters`  |  array  |  Yes  |  Array that defines the input parameters for the function. See [parameters array](#parameters-array)  for details. |
