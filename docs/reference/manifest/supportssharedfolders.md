@@ -3,7 +3,7 @@
 Defines whether the Outlook add-in is available in delegate scenarios. The **SupportsSharedFolders** element is a child element of [DesktopFormFactor](desktopformfactor.md). It is set to *false* by default.
 
 > [!IMPORTANT]
-> This element is only available in the [Outlook add-ins Preview Requirement Set](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) against Exchange Online. Add-ins that use this element aren't allowed in the Office Store or Centralized Deployment.
+> This element is only available in the [Outlook add-ins Preview requirement set](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) against Exchange Online. Add-ins that use this element cannot be published to AppSource or deployed via centralized deployment.
 
 The following is an example of the  **SupportsSharedFolders** element.
 
