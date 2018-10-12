@@ -2,7 +2,7 @@
 
 Specifies source location and control settings that apply when your mail add-in is used on a phone.
 
-**Add-in type:** Content, Task pane, Mail
+**Add-in type:** Mail
 
 ## Syntax
 
