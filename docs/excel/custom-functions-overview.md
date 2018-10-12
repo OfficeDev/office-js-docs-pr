@@ -1,6 +1,6 @@
 ---
-ms.date: 09/27/2018
-description: Create a custom function in Excel using JavaScript. 
+ms.date: 10/09/2018
+description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel (Preview)
 ---
 
@@ -211,7 +211,7 @@ Streaming custom functions enable you to output data to cells repeatedly over ti
 
 - The second input parameter, `handler`, is not displayed to end users in Excel when they select the function from the autocomplete menu.
 
-- The `onCanceled` callback defines the function that executes when the function is canceled. You must implement a cancellation handler like this for any streaming function. For more information, see [Canceling a function](#canceling-a-function). 
+- The `onCanceled` callback defines the function that executes when the function is canceled. You must implement a cancellation handler like this for any streaming function. For more information, see [Canceling a function](#canceling-a-function).
 
 ```js
 function incrementValue(increment, handler){
@@ -268,27 +268,34 @@ To enable the ability to cancel a function, you must implement a cancellation ha
 
 ## Saving and sharing state
 
-Custom functions can save data in global JavaScript variables. In subsequent calls, your custom function may use the values saved in these variables. Saved state is useful when users add the same custom function to more than one cell, because all the instances of the function can share the state. For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.
+Custom functions can save data in global JavaScript variables, which can be used in subsequent calls. Saved state is useful when users call the same custom function from more than one cell, because all instances of the function can access the state. For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.
 
 The following code sample shows an implementation of a temperature-streaming function that saves state globally. Note the following about this code:
 
-- `refreshTemperature` is a streaming function that reads the temperature of a particular thermometer every second. New temperatures are saved in the `savedTemperatures` variable, but does not directly update the cell value. It should not be directly called from a worksheet cell, *so it is not registered in the JSON file*.
+- The `streamTemperature` function updates the temperature value that's displayed in the cell every second and it uses the `savedTemperatures` variable as its data source.
 
-- `streamTemperature` updates the temperature values displayed in the cell every second and it uses `savedTemperatures` variable as its data source. It must be registered in the JSON file, and named with all upper-case letters, `STREAMTEMPERATURE`.
+- Because `streamTemperature` is a streaming function, it implements a cancellation handler that will run when the function is canceled.
 
-- Users may call `streamTemperature` from several cells in the Excel UI. Each call reads data from the same `savedTemperatures` variable.
+- If a user calls the `streamTemperature` function from multiple cells in Excel, the `streamTemperature` function reads data from the same `savedTemperatures` variable each time it runs. 
+
+- The `refreshTemperature` function reads the temperature of a particular thermometer every second and stores the result in the `savedTemperatures` variable. Because the `refreshTemperature` function is not exposed to end users in Excel, it does not need to be registered in the JSON file.
 
 ```js
 var savedTemperatures;
 
 function streamTemperature(thermometerID, handler){
   if(!savedTemperatures[thermometerID]){
-    refreshTemperatures(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
+    refreshTemperature(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
   }
 
   function getNextTemperature(){
     handler.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
-    setTimeout(getNextTemperature, 1000); // Wait 1 second before updating Excel again.
+    var delayTime = 1000; // Amount of milliseconds to delay a request by.
+    setTimeout(getNextTemperature, delayTime); // Wait 1 second before updating Excel again.
+
+    handler.onCancelled() = function {
+      clearTimeout(delayTime);
+    }
   }
   getNextTemperature();
 }

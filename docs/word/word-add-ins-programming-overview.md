@@ -47,11 +47,11 @@ Write your add-in once, and it will run in all versions of Word across multiple 
 
 ## JavaScript APIs for Word
 
-You can use two sets of JavaScript APIs to interact with the objects and metadata in a Word document. The first is the [JavaScript API for Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js?product=word), which was introduced in Office 2013. This is a shared API -- many of the objects can be used in add-ins hosted by two or more Office clients. This API uses callbacks extensively.
+You can use two sets of JavaScript APIs to interact with the objects and metadata in a Word document. The first is the [JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js?product=word), which was introduced in Office 2013. This is a shared API -- many of the objects can be used in add-ins hosted by two or more Office clients. This API uses callbacks extensively.
 
-The second is the [Word JavaScript API](https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js). This is a strongly-typed object model that you can use to create Word add-ins that target Word 2016 for Mac and Windows. This object model uses promises, and provides access to Word-specific objects like [body](https://docs.microsoft.com/javascript/api/word/word.body?view=office-js), [content controls](https://docs.microsoft.com/javascript/api/word/word.contentcontrol?view=office-js), [inline pictures](https://docs.microsoft.com/javascript/api/word/word.inlinepicture?view=office-js), and [paragraphs](https://docs.microsoft.com/javascript/api/word/word.paragraph?view=office-js). The Word JavaScript API includes TypeScript definitions and vsdoc files so that you can get code hints in your IDE.
+The second is the [Word JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js). This is a strongly-typed object model that you can use to create Word add-ins that target Word 2016 for Mac and Windows. This object model uses promises, and provides access to Word-specific objects like [body](https://docs.microsoft.com/javascript/api/word/word.body?view=office-js), [content controls](https://docs.microsoft.com/javascript/api/word/word.contentcontrol?view=office-js), [inline pictures](https://docs.microsoft.com/javascript/api/word/word.inlinepicture?view=office-js), and [paragraphs](https://docs.microsoft.com/javascript/api/word/word.paragraph?view=office-js). The Word JavaScript API includes TypeScript definitions and vsdoc files so that you can get code hints in your IDE.
 
-Currently, all Word clients support the shared JavaScript API for Office, and most clients support the Word JavaScript API. For details about supported clients, see the [API reference documentation](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js?product=word).
+Currently, all Word clients support the shared JavaScript API for Office, and most clients support the Word JavaScript API. For details about supported clients, see the [API reference documentation](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js?product=word).
 
 We recommend that you start with the Word JavaScript API because the object model is easier to use. Use the Word JavaScript API if you need to:
 
@@ -77,10 +77,10 @@ After you develop your add-in, you can [publish](../publish/publish.md) it to a 
 
 ## What's coming up for Word add-ins?
 
-As we design and develop new APIs for Word add-ins, we'll make them available for your feedback on our [API open specifications](https://docs.microsoft.com/javascript/office/openspec?view=office-js) page. Find out what new features are in the pipeline for the Word JavaScript APIs, and provide your input on our design specifications.
+As we design and develop new APIs for Word add-ins, we'll make them available for your feedback on our [API open specifications](https://docs.microsoft.com/office/dev/add-ins/reference/openspec?view=office-js) page. Find out what new features are in the pipeline for the Word JavaScript APIs, and provide your input on our design specifications.
 
 ## See also
 
 * [Office Add-ins platform overview](../overview/office-add-ins.md)
-* [Word JavaScript API reference](https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js)
+* [Word JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js)
 

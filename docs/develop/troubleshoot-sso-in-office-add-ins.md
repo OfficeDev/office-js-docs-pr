@@ -9,7 +9,7 @@ ms.date: 12/08/2017
 This article provides some guidance about how to troubleshoot problems with single sign-on (SSO) in Office Add-ins, and how to make your SSO-enabled add-in robustly handle special conditions or errors.
 
 > [!NOTE]
-> The Single Sign-on API is currently supported in preview for Word, Excel, Outlook, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets]https://docs.microsoft.com/javascript/office/requirement-sets/identity-api-requirement-sets).
+> The Single Sign-on API is currently supported in preview for Word, Excel, Outlook, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets]https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
 > To use SSO, you must load the beta version of the Office JavaScript Library from https://appsforoffice.microsoft.com/lib/beta/hosted/office.js in the startup HTML page of the add-in.
 > If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Office 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
@@ -38,7 +38,7 @@ For examples of the error handling described in this section, see:
 The [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) API is not supported by the add-in or the Office version. 
 
 - The version of Office does not support SSO. The required version is Office 2016, Version 1710, build 8629.nnnn or later (the Office 365 subscription version, sometimes called “Click to Run”). You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). 
-- The add-in manifest is missing the proper [WebApplicationInfo](https://docs.microsoft.com/javascript/office/manifest/webapplicationinfo?view=office-js) section.
+- The add-in manifest is missing the proper [WebApplicationInfo](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/webapplicationinfo?view=office-js) section.
 
 Your add-in should respond to this error by falling back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#requirements-and-best-practices).
 
@@ -100,7 +100,7 @@ The user is running the add-in on Office Online and is using Edge or Internet Ex
 
 ### 13012
 
-The add-in is running on a platform that does not support the `getAccessTokenAsync` API. For example, it is not supported on iPad. See also [Identity API Requirement Sets](https://docs.microsoft.com/javascript/office/requirement-sets/identity-api-requirement-sets).
+The add-in is running on a platform that does not support the `getAccessTokenAsync` API. For example, it is not supported on iPad. See also [Identity API Requirement Sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
 
 ### 50001
 
@@ -129,7 +129,7 @@ If AAD has no record that consent (to the Microsoft Graph resource) was granted 
 ### Invalid or missing scope (permission) errors
 
 - Your server-side code should send a `403 Forbidden` response to the client which should present a friendly message to the user. If possible, log the error to the console or record it in a log.
-- Be sure your add-in manifest [Scopes](https://docs.microsoft.com/javascript/office/manifest/scopes?view=office-js)  section specifies all needed permissions. And be sure your registration of the add-in's web service specifies the same permissions. Check for spelling mistakes too. For more information, see [Register the add-in with Azure AD v2.0 endpoint](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) or [Register the add-in with Azure AD v2.0 endpoint](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (Node JS), and [Configure the add-in](create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) or [Configure the add-in](create-sso-office-add-ins-nodejs.md#configure-the-add-in) (Node JS).
+- Be sure your add-in manifest [Scopes](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/scopes?view=office-js)  section specifies all needed permissions. And be sure your registration of the add-in's web service specifies the same permissions. Check for spelling mistakes too. For more information, see [Register the add-in with Azure AD v2.0 endpoint](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) or [Register the add-in with Azure AD v2.0 endpoint](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (Node JS), and [Configure the add-in](create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) or [Configure the add-in](create-sso-office-add-ins-nodejs.md#configure-the-add-in) (Node JS).
 
 ### Expired or invalid token errors when calling Microsoft Graph
 

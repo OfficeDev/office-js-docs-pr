@@ -1,7 +1,7 @@
 ---
 title: Create and debug Office Add-ins in Visual Studio
 description: ''
-ms.date: 03/14/2018
+ms.date: 10/01/2018
 ---
 
 
@@ -17,79 +17,65 @@ This article describes how to use Visual Studio to create your first Office Add-
 
 To get started, make sure you have the [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx) installed, and a version of Microsoft Office. You can join the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program), or follow these instructions to get the [latest version](../develop/install-latest-office-version.md).
 
-
 1. On the Visual Studio menu bar, choose  **File** > **New** > **Project**.
-    
-2. In the list of project types under  **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose  **Web Add-ins**, and then select one of the add-in projects.  
-    
-3. Name the project, and then choose  **OK** to create the project.
-    
-4. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The default Home.html page opens in Visual Studio.
-    
-In Visual Studio 2015, some of the add-in project templates have been updated to reflect additional functionality:
+2. In the list of project types under  **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose  **Add-ins**, and then select one of the add-in projects.
+3. Name the project, and then choose **OK** to create the project.
 
+In Visual Studio 2017, the following add-in project templates have additional choices after you choose **OK**:
 
-- Content add-ins can appear in the body of Access and PowerPoint documents, in addition to Excel spreadsheets. You can also choose the Basic Project option to create a basic content add-in project with minimal starter code, or the Document Visualization Project option (for Access and Excel only) to create a more full-featured content add-in that includes starter code to visualize and bind to data.
-    
-- Outlook add-ins include options not just for including your add-in in email messages or appointments, but also for specifying whether the add-in is available when an email message or appointment is being composed as well as read.
-    
+**PowerPoint**
+- You can choose to **Add new functionalities to PowerPoint** which creates a task pane add-in.
+- Or you can choose to **Insert content into PowerPoint slides** which creates a content add-in.
 
-> [!NOTE]
-> In Visual Studio most options are understandable from their descriptions except for the  **Email Message** checkbox. Use that checkbox if you want to create an Outlook add-in that appears not just with mail items, but also with meeting requests, responses, and cancellations.
+**Excel** 
+- You can choose to **Add new functionalities to Excel** which creates a task pane add-in.
+- Or you can choose to **Insert content into Excel spreadsheet** which creates a content add-in.
+    - If you create a content add-in, you have an additional choice of **Basic Add-in** which creates a content add-in project with minimal starter code.
+    - Or you can choose a **Document Visualization Add-in** which includes starter code to visualize and bind to data.
 
-When you've completed the wizard, Visual Studio creates a solution for you that contains two projects.
-
-
+After you complete the wizard Visual Studio creates a solution for you that contains two projects. You'll see the default Home.html page open.
 
 |**Project**|**Description**|
 |:-----|:-----|
 |Add-in project|Contains only an XML manifest file, which contains all the settings that describe your add-in. These settings help the Office host determine when your add-in should be activated and where the add-in should appear. Visual Studio generates the contents of this file for you so that you can run the project and use your add-in immediately. You change these settings any time by using the Manifest editor.|
-|Web application project|Contains the content pages of your add-in, including all the files and file references that you need to develop Office-aware HTML and JavaScript pages. While you develop your add-in, Visual Studio hosts the web application on your local IIS server. When you're ready to publish, you'll have to find a server to host this project.To learn more about ASP.NET web application projects, see [ASP.NET Web Projects](http://msdn.microsoft.com/library/cdcd712f-96b0-4165-8b5d-9d0566650a28%28Office.15%29.aspx).|
+|Web application project|Contains the content pages of your add-in, including all the files and file references that you need to develop Office-aware HTML and JavaScript pages. While you develop your add-in, Visual Studio hosts the web application on your local IIS server. When you're ready to publish, you'll have to find a server to host this project. To learn more about ASP.NET web application projects, see [ASP.NET Web Projects](http://msdn.microsoft.com/library/cdcd712f-96b0-4165-8b5d-9d0566650a28%28Office.15%29.aspx).|
 
 ## Modify your add-in settings
 
 
-To modify the settings of your add-in, edit the XML manifest file of the project. In  **Solution Explorer**, expand the add-in project node, expand the folder that contains the XML manifest, and choose the XML manifest. You can point to any element in the file to view a tooltip that describes the purpose of the element. For more information about the manfiest file, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).
+To modify the settings of your add-in, edit the XML manifest file of the project. In  **Solution Explorer**, expand the add-in project node, expand the folder that contains the XML manifest, and choose the XML manifest. You can point to any element in the file to view a tooltip that describes the purpose of the element. For more information about the manifest file, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).
 
 
 ## Develop the contents of your add-in
 
-
 While the add-in project lets you modify the settings that describe your add-in, the web application provides the content that appears in the add-in. 
 
-The web application project contains a default HTML page and JavaScript file that you can use to get started. The project also contains a JavaScript file that is common to all pages that you add to your project. These files are convenient because they contain references to other JavaScript libraries including the JavaScript API for Office. 
+The web application project contains a default HTML page and JavaScript file that you can use to get started. These files contain references to other JavaScript libraries including the JavaScript API for Office. You can develop your add-in by updating these files, and adding more HTML and JavaScript files. The following table describes the default HTML and JavaScript files.
 
-As your add-in becomes more sophisticated, you can add more HTML and JavaScript files. You can use the contents of the default HTML and JavaScript files as examples of the types of references you might want to add to other pages in your project to make them work with your add-in. The following table describes default HTML and JavaScript files.
-
-
+> [!NOTE]
+> The files in the table below may be in the root folder of the web project, or the **Home** folder depending on the type of project template you used.
 
 |**File**|**Description**|
 |:-----|:-----|
-|**Home.html**|Located in the  **Home** folder of the project, this is default HTML page of the add-in. This page appears as the first page inside of the add-in when it is activated in a document, email message or appointment item. This file is convenient because it contains all of the file references that you need to get started. When you are ready to create your first add-in, just add your HTML code to this file.|
-|**Home.js**|Located in the  **Home** folder of the project, this is the JavaScript file associated with the Home.js page. You can place any code that is specific to the behavior of the Home.html page in the Home.js file. The Home.js file contains some example code to get you started.|
-|**App.js**|Located in the  **Add-in** folder of the project, this is the default JavaScript file of the entire add-in. You can place code that is common to the behavior of multiple pages of your add-in in the App.js file. The App.js file contains some example code to get you started.|
+|**Home.html**|The default HTML page of the add-in. This page appears as the first page inside of the add-in when it is activated in a document, email message, or appointment item. This file contains all of the file references that you need to get started. You can start developing your add-in by adding your HTML code to this file.|
+|**Home.js**|The JavaScript file associated with the Home.html page. You can place any code that is specific to the behavior of the Home.html page in the Home.js file. The Home.js file contains some example code to get you started.|
+|**Home.css**|Defines the default styles to apply to your add-in. We recommend using the Office UI Fabric for design and styles. For more information see [Office UI Fabric in Office Add-ins](../design/office-ui-fabric.md).|
 
 > [!NOTE]
-> You don't have to use these files. Feel free to add other files to the project and use those instead. If you want another HTML file to appear as the initial page of the add-in, open the manifest editor, and then point the  **SourceLocation** property to the name of the file.
-
+> You don't have to use these files. Feel free to add other files to the project and use those instead. If you want another HTML file to appear as the initial page of the add-in, open the manifest editor, and then set the  **SourceLocation** property to the name of the file.
 
 ## Debug your add-in
 
-
-When you are ready to start your add-in, review build and debug related properties, and then start the solution.
-
+Visual Studio provides build and debug properties to assist with debugging your add-in.
 
 ### Review the build and debug properties
 
 Before you start the solution, verify that Visual Studio will open the host application that you want. That information appears in the property pages of the project along with several other properties that relate to building and debugging the add-in.
 
-
 ### To open the property pages of a project
 
-
-1. In  **Solution Explorer**, choose the basic add-in project (not the Web project).
-    
-2. On the menu bar, choose  **View**,  **Properties Window**.
+1. In  **Solution Explorer**, choose the basic add-in project (not the Web project).    
+2. On the menu bar, choose  **View** >  **Properties Window**.
     
 The following table describes the properties of the project.
 
@@ -109,12 +95,9 @@ The following table describes the properties of the project.
 
 ### Use an existing document to debug the add-in (content and task pane add-ins only)
 
-
 You can add documents to the add-in project. If you have a document that contains test data that you want to use with your add-in, Visual Studio opens that document for you when you start the project.
 
-
 ### To use an existing document to debug the add-in
-
 
 1. In  **Solution Explorer**, choose the add-in project folder.
     
@@ -127,24 +110,15 @@ You can add documents to the add-in project. If you have a document that contain
     
 4. Choose the  **Add** button to add the document to your project.
     
-5. In  **Solution Explorer**, open the shortcut menu for the project, and then choose  **Properties**.
-    
-    The property pages for the project appear.
-    
-6. In the  **Start Document** list, choose the document that you added to the project, and then choose the **OK** button to close the property pages.
-    
+5. In  **Solution Explorer**, choose the add-in project folder.
+6. On the menu bar, choose  **View** > **Properties Window**.
+7. In the properties window, choose the **Start Document** list, and then choose the document that you added to the project. Now the project is configured to start your add-in in your existing document.
 
 ### Start the solution
 
+Start the solution from the menu bar by choosing **Debug** > **Start Debugging**. Visual Studio will automatically build the solution and start Office to host your add-in.
 
-Visual Studio will automatically build the solution when you start it. You can start the solution from the  **Menu** bar by choosing **Debug**,  **Start**. 
-
-
-> [!NOTE]
-> If script debugging isn't enabled in Internet Explorer, you won't be able to start the debugger in Visual Studio. You can enable script debugging by opening the  **Internet Options** dialog box, choosing the **Advanced** tab, and then clearing the **Disable Script Debugging (Internet Explorer)** and **Disable Script Debugging (Other)** check boxes.
-
-Visual Studio builds the project and does the following:
-
+When Visual Studio builds the project it performs the following tasks:
 
 1. Creates a copy of the XML manifest file and adds it to  _ProjectName_\Output directory. The host application consumes this copy when you start Visual Studio and debug the add-in.
     
@@ -154,8 +128,7 @@ Visual Studio builds the project and does the following:
     
 Next, Visual Studio does the following:
 
-
-1. Modifies the [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation?view=office-js) element of the XML manifest file by replacing the ~remoteAppUrl token with the fully qualified address of the start page (for example, http://localhost/MyAgave.html).
+1. Modifies the [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation?view=office-js) element of the XML manifest file by replacing the ~remoteAppUrl token with the fully qualified address of the start page (for example, http://localhost/MyAgave.html).
     
 2. Starts the web application project in IIS Express.
     
@@ -171,33 +144,16 @@ Visual Studio doesn't show validation errors in the  **OUTPUT** window when you 
     
 To review the validation rules of the XML manifest file in your project, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).
 
+### Show an add-in in Excel, or Word and step through your code
 
-### Show an add-in in Excel, Word, or Project and step through your code
+If you set the  **Start Document** property of the add-in project to Excel or Word, Visual Studio creates a new document and the add-in appears. If you set the **Start Document** property of the add-in project to use an existing document, Visual Studio opens the document, but you have to insert the add-in manually.
 
+1. In Excel or Word, on the  **Insert** tab, choose the **My Add-ins** drop down list. Choose the list from the drop-down arrow, not the button itself which opens the **Office Add-ins** dialog.
+2. Under **Developer Add-ins**, choose your add-in.
 
-If you set the  **Start Document** property of the add-in project to Excel or Word, Visual Studio creates a new document and the add-in appears. If you set the **Start Document** property of the add-in project to use an existing document, Visual Studio opens the document, but you have to insert the add-in manually. If you set the **Start Document** to **Microsoft Project**, you also have to insert the add-in manually.
-
-
-### To show an Office Add-in in Excel or Word
-
-
-1. In Excel or Word, on the  **Insert** tab, choose **Office Add-ins**.
-    
-2. In the list that appears, choose your add-in.
-    
-
-### To show an Office Add-in in Project
-
-
-1. In Project, on the  **Project** tab, choose **Office Add-ins**.
-    
-2. In the list that appears, choose your add-in.
-    
-In Visual Studio, you can then set break-points. Then, as you interact with your add-in and step through the code in your HTML, JavaScript, and C# or VB code files.
-
+In Visual Studio, you can then set break-points and interact with your add-in and step through the code in your HTML or JavaScript files.
 
 ### Show the Outlook add-in in Outlook and step through your code
-
 
 To view the add-in in Outlook, open an email message or appointment item.
 
@@ -205,23 +161,14 @@ Outlook activates the add-in for the item as long as the activation criteria are
 
 To view your Outlook add-in, choose the button for your Outlook add-in.
 
-In Visual Studio, you can set break-points. Then, as you interact with your Outlook add-in and step through the code in your HTML, JavaScript, and C# or VB code files. 
+In Visual Studio, you can then set break-points and interact with your add-in and step through the code in your HTML or JavaScript files.
 
 You can also change your code and review the effects of those changes in your Outlook add-in without having to close the Office Add-in and start the project again. In Outlook, just open the shortcut menu for the Outlook add-in, and then choose  **Reload**.
 
 
 ### Modify code and continue to debug the add-in without having to start the project again
 
-
-You can change your code and review the effects of those changes in your add-in without having to close the host application and start the project again. After you change your code, open the shortcut menu for the add-in, and then choose  **Reload**. When you reload the add-in it becomes disconnected with the Visual Studio debugger. Therefore, you can view the effects of your change, but you cannot step through your code again until you attach the Visual Studio debugger to all of the available Iexplore.exe processes.
-
-
-### To attach the Visual Studio debugger to all of the available Iexplore.exe processes
-
-
-1. In Visual Studio, choose  **DEBUG**,  **Attach to Process**.
-    
-2. In the  **Attach to Process** dialog box, choose all of the available **Iexplore.exe** processes, and then choose the **Attach** button.
+You can change your code and review the effects of those changes in your add-in without having to close the host application and start the project again. After you change and save your code, open the shortcut menu for the add-in, and then choose **Reload**.
     
 
 ## Next steps
