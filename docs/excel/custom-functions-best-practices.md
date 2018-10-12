@@ -71,7 +71,7 @@ Keep in mind the following best practices when creating custom functions in your
 
 * In the JSON metadata file, specify the value of each `id` property in uppercase. Doing so makes it obvious which part of the `CustomFunctionMappings` statement in your JavaScript code corresponds to the `id` property in the JSON metadata file (provided that your function name uses camelCase, as recommended earlier).
 
-* It is required that the value of each `id` property contain alphanumeric characters. `id` property values *may* also contain periods. 
+* In the JSON metadata file, ensure that the value of each `id` property contains only alphanumeric characters and periods. 
 
 * In the JSON metadata file, ensure that the value of each `id` property is unique within the scope of the file. That is, no two function objects in the metadata file should have the same `id` value. Additionally, do not specify two `id` values in the metadata file that only differ by case. For example, do not define one function object with an `id` value of **add** and another function object with an `id` value of **ADD**.
 

@@ -133,7 +133,7 @@ The following table lists the properties that are typically present in the JSON 
 
 | Property 	| Description |
 |---------|---------|
-| `id` | A unique ID for the function. This ID should not be changed after it is set and should only contain alphanumeric characters and/or periods. |
+| `id` | A unique ID for the function. This ID can only contain alphanumeric characters and periods and should not be changed after it is set. |
 | `name` | Name of the function that the end user sees in Excel. In Excel, this function name will be prefixed by the custom functions namespace that's specified in the [XML manifest file](#manifest-file). |
 | `helpUrl`	| URL for the page that is shown when a user requests help. |
 | `description`	| Describes what the function does. This value appears as a tooltip when the function is the selected item in the autocomplete menu within Excel. |
@@ -172,7 +172,7 @@ The XML manifest file for an add-in that defines custom functions (**./manifest.
             <bt:Url id="HTML-URL" DefaultValue="http://127.0.0.1:8080/index.html" /> <!--specifies the location of your HTML file-->
         </bt:Urls>
         <bt:ShortStrings>
-            <bt:String id="namespace" DefaultValue="CONTOSO" /> <!--specifies the namespace that will be prepended to a function's name when it is called in Excel. Can only contain alphanumeric characters and/or periods.-->
+            <bt:String id="namespace" DefaultValue="CONTOSO" /> <!--specifies the namespace that will be prepended to a function's name when it is called in Excel. Can only contain alphanumeric characters and periods.-->
         </bt:ShortStrings>
     </Resources>
 </VersionOverrides>
