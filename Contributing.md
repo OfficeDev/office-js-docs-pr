@@ -22,7 +22,7 @@ Here are some ways you can contribute to this documentation:
 
 Use GitHub to contribute to this documentation without having to clone the repo to your desktop. This is the easiest way to create a pull request in this repository. Use this method to make a minor change that doesn't involve code changes. 
 
-**Note** Using this method allows you to contribute to one article at a time.
+**Note**: Using this method allows you to contribute to one article at a time.
 
 ### To Contribute using GitHub
 
@@ -62,7 +62,7 @@ Pull requests are typically reviewed within 10 business days.
 
 ## Use GitHub, Git, and this repository
 
-**Note:** Most of the information in this section can be found in [GitHub Help] articles.  If you're familiar with Git and GitHub, skip to the **Contribute and edit content** section for the specifics of the code/content flow of this repository.
+**Note**: Most of the information in this section can be found in [GitHub Help] articles.  If you're familiar with Git and GitHub, skip to the **Contribute and edit content** section for the specifics of the code/content flow of this repository.
 
 ### To set up your fork of the repository
 
