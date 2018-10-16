@@ -337,6 +337,7 @@
   - name: Outlook add-ins
     href: outlook/index.md
     displayName: Outlook
+    items:
     - name: Get started
       items:
       - name: Build your first Outlook add-in
