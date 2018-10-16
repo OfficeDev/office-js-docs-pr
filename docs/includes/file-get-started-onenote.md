@@ -244,7 +244,7 @@ In this article, you'll walk through the process of building a OneNote add-in by
     </ol>
     ```
 
-    The outline you specified is added to the page.
+    The outline that you specified is added to the page.
 
     ![The OneNote add-in built from this walkthrough](../images/onenote-first-add-in-3.png)
 
