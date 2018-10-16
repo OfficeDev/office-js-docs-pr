@@ -44,7 +44,7 @@ When an Excel JavaScript API request fails to run successfully, the API returns 
 
 ## Error Messages
 
-The following table defines a list of errors that the API may return.
+The following table is a list of errors the API return.
 
 |error.code | error.message |
 |:----------|:--------------|

@@ -226,7 +226,7 @@ Excel.run(function (context) {
  
 ##Handle errors
 
-When an API error occurs, the API will return an **error** object that contains a code and a message. For detailed information about error handling, including a list of the errors that the API may return, see [Error handling](excel-add-ins-error-handling.md).
+When an API error occurs, the API returns an **error** object that contains a code and a message. For detailed information about error handling, including a list of API errors, see [Error handling](excel-add-ins-error-handling.md).
  
 ## See also
  
