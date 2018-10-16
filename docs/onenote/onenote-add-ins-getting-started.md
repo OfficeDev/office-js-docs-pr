@@ -1,7 +1,7 @@
 ---
 title: Build your first OneNote add-in
 description: ''
-ms.date: 04/12/2018
+ms.date: 10/16/2018
 ROBOTS: NOINDEX
 ---
 
