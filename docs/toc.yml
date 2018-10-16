@@ -293,7 +293,7 @@
         href: excel/excel-add-ins-worksheets.md
         displayName: Excel
     - name: Excel JavaScript API overview
-      href: /office/dev/add-ins/reference/overview/excel-add-ins-reference-overview
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview
       displayName: Excel
     - name: Excel JavaScript API reference
       href: /javascript/api/excel
@@ -328,7 +328,7 @@
       href: word/search-option-guidance.md
       displayName: Word
     - name: Word JavaScript API usage overview
-      href: /office/dev/add-ins/reference/overview/word-add-ins-reference-overview
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview
       displayName: Word
     - name: Word JavaScript API reference
       href: /javascript/api/word
@@ -485,7 +485,7 @@
       href: onenote/onenote-add-ins-page-content.md
       displayName: OneNote
     - name: OneNote JavaScript API overview
-      href: /office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference
       displayName: OneNote
     - name: OneNote JavaScript API reference
       href: /javascript/api/onenote
