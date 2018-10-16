@@ -211,32 +211,31 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 
 1. In your code editor, open **index.html** in the root of the project. This file contains the HTML that will be rendered in the add-in's task pane.
 
-2. Replace the `<header>` element inside the `<body>` element with the following markup.
+2. Replace the `<body>` element with the following markup.
 
     ```html
-    <div id="content-header">
-        <div class="padding">
-            <h1>Welcome</h1>
+    <body class="ms-font-m ms-welcome">
+        <div id="content-header">
+            <div class="padding">
+                <h1>Welcome</h1>
+            </div>
         </div>
-    </div>
+        <div id="content-main">
+            <div class="padding">
+                <p>Select a slide and then choose the buttons to below to add content to it.</p>
+                <br />
+                <h3>Try it out</h3>
+                <button class="ms-Button" id="insert-image">Insert Image</button>
+                <br /><br />
+                <button class="ms-Button" id="insert-text">Insert Text</button>
+            </div>
+        </div>
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
+    </body>
     ```
 
-3. Replace the `<main>` element inside the `<body>` element with the following markup and save the file.
-
-    ```html
-    <div id="content-main">
-        <div class="padding">
-            <p>Select a slide and then choose the buttons below to add content to it.</p>
-            <br />
-            <h3>Try it out</h3>
-            <button class="ms-Button" id="insert-image">Insert Image</button>
-            <br/><br/>
-            <button class="ms-Button" id="insert-text">Insert Text</button>
-        </div>
-    </div>
-    ```
-
-4. Open the file **src\index.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.
+3. Open the file **src\index.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.
 
     ```js
     'use strict';
@@ -342,7 +341,7 @@ In this article, you'll walk through the process of building a PowerPoint add-in
     - PowerPoint Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. In PowerPoint, create a new file, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+2. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
     ![A screenshot of PowerPoint with the Show Taskpane button highlighted](../images/powerpoint_quickstart_addin_1b.png)
 
