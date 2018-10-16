@@ -33,7 +33,7 @@
     href: quickstarts/onenote-quickstart.md
     displayName: OneNote
   - name: Create Outlook add-in
-    href: https://docs.microsoft.com/outlook/add-ins/quick-start
+    href: outlook/quick-start.md
     displayName: Outlook
   - name: Create PowerPoint add-in
     href: quickstarts/powerpoint-quickstart.md
@@ -293,10 +293,10 @@
         href: excel/excel-add-ins-worksheets.md
         displayName: Excel
     - name: Excel JavaScript API overview
-      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js
+      href: reference/overview/excel-add-ins-reference-overview.md
       displayName: Excel
     - name: Excel JavaScript API reference
-      href: https://docs.microsoft.com/javascript/api/excel?view=office-js
+      href: /javascript/api/excel
       displayName: Excel
 
   - name: Word add-ins
@@ -328,15 +328,133 @@
       href: word/search-option-guidance.md
       displayName: Word
     - name: Word JavaScript API usage overview
-      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js
+      href: reference/overview/word-add-ins-reference-overview.md
       displayName: Word
     - name: Word JavaScript API reference
-      href: https://docs.microsoft.com/en-us/javascript/api/word?view=office-js
+      href: javascript/api/word
       displayName: Word
 
   - name: Outlook add-ins
-    href: https://docs.microsoft.com/outlook/add-ins/
+    href: outlook/index.md
     displayName: Outlook
+    - name: Get started
+      items:
+      - name: Build your first Outlook add-in
+        href: quick-start.md
+      - name: Advanced tutorial
+        href: addin-tutorial.md
+    - name: Concepts
+      items:
+      - name: Outlook add-in design guidelines
+        href: outlook-addin-design.md
+      - name: Add-in commands
+        href: add-in-commands-for-outlook.md
+      - name: Contextual add-ins
+        href: contextual-outlook-add-ins.md
+      - name: Module extension add-ins
+        href: extension-module-outlook-add-ins.md
+      - name: Add-ins for Outlook Mobile
+        href: outlook-mobile-addins.md
+      - name: On send add-ins
+        href: outlook-on-send-addins.md
+      - name: Pinnable task pane
+        href: pinnable-taskpane.md
+      - name: Manifests
+        href: manifests.md
+        items:
+        - name: Activation rules
+          href: activation-rules.md
+        - name: Add support for Outlook Mobile
+          href: add-mobile-support.md
+      - name: Add-in requirements
+        href: add-in-requirements.md
+      - name: Add-in APIs
+        href: apis.md
+      - name: Call Outlook REST APIs
+        href: use-rest-api.md
+      - name: Call Exchange web services
+        href: web-services.md
+      - name: Get or set item data
+        href: item-data.md
+      - name: Get or set add-in metadata
+        href: metadata-for-an-outlook-add-in.md
+      - name: Read scenario
+        href: read-scenario.md
+        items:
+        - name: Use regular expressions to activate contextual add-ins
+          href: use-regular-expressions-to-show-an-outlook-add-in.md
+        - name: Match well known entities in an item
+          href: match-strings-in-an-item-as-well-known-entities.md
+        - name: Extract entities from an item
+          href: extract-entity-strings-from-an-item.md
+        - name: Get attachments
+          href: get-attachments-of-an-outlook-item.md
+      - name: Compose scenario
+        href: compose-scenario.md
+        items:
+        - name: Add and remove attachments
+          href: add-and-remove-attachments-to-an-item-in-a-compose-form.md
+        - name: Get and set item data
+          href: get-and-set-item-data-in-a-compose-form.md
+        - name: Get and set recipients
+          href: get-set-or-add-recipients.md
+        - name: Insert data in the body
+          href: insert-data-in-the-body.md
+        - name: Get and set subject
+          href: get-or-set-the-subject.md
+        - name: Get and set times
+          href: get-or-set-the-time-of-an-appointment.md
+        - name: Get and set location
+          href: get-or-set-the-location-of-an-appointment.md
+      - name: Privacy and security
+        href: privacy-and-security.md
+        items:
+        - name: Understanding add-in permissions
+          href: understanding-outlook-add-in-permissions.md
+      - name: Authentication
+        href: authentication.md
+        items:
+        - name: Authenticate with SSO token
+          href: authenticate-a-user-with-an-sso-token.md
+        - name: Authenticate with an identity token
+          href: authenticate-a-user-with-an-identity-token.md
+        - name: Validate an identity token
+          href: validate-an-identity-token.md
+        - name: Inside the identity token
+          href: inside-the-identity-token.md
+        - name: "Scenario: Implement single sign-on"
+          href: implement-sso-in-outlook-add-in.md
+      - name: Testing and tips
+        href: testing-and-tips.md
+        items:
+        - name: Sideload an add-in for testing
+          href: sideload-outlook-add-ins-for-testing.md
+        - name: Compare add-in support in Outlook for Mac
+          href: compare-outlook-add-in-support-in-outlook-for-mac.md
+        - name: Tips for handling date values
+          href: tips-for-handling-date-values-in-outlook-add-ins.md
+        - name: Limits for activation and JavaScript API
+          href: limits-for-activation-and-javascript-api-for-outlook-add-ins.md
+        - name: Troubleshoot add-in activation
+          href: troubleshoot-outlook-add-in-activation.md
+    - name: Reference
+      items:
+      - name: Preview requirement set
+        href: reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md
+      - name: Requirement set 1.7
+        href: reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md
+      - name: Requirement set 1.6
+        href: reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md
+      - name: Requirement set 1.5
+        href: reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md
+      - name: Requirement set 1.4
+        href: reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md
+      - name: Requirement set 1.3
+        href: reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md
+      - name: Requirement set 1.2
+        href: reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md
+      - name: Requirement set 1.1
+        href: reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md
 
   - name: PowerPoint add-ins
     href: powerpoint/powerpoint-add-ins.md
@@ -366,10 +484,10 @@
       href: onenote/onenote-add-ins-page-content.md
       displayName: OneNote
     - name: OneNote JavaScript API overview
-      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js
+      href: reference/overview/onenote-add-ins-javascript-reference.md
       displayName: OneNote
     - name: OneNote JavaScript API reference
-      href: https://docs.microsoft.com/en-us/javascript/api/onenote?view=office-js
+      href: /javascript/api/onenote
       displayName: OneNote
 
   - name: Project add-ins
@@ -430,9 +548,9 @@
     - name: Publish add-ins to a SharePoint catalog
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
     - name: Publish add-ins to AppSource
-      href: https://docs.microsoft.com/office/dev/store/submit-to-the-office-store
+      href: /office/dev/store/submit-to-the-office-store
     - name: AppSource validation policies
-      href: https://docs.microsoft.com/office/dev/store/validation-policies
+      href: /office/dev/store/validation-policies
 
 - name: Reference
   items:
