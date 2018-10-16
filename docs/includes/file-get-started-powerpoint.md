@@ -180,6 +180,10 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 
 1. Create a folder on your local drive and name it `my-powerpoint-addin`. This is where you'll create the files for your add-in.
 
+    ```bash
+    mkdir my-powerpoint-addin
+    ```
+
 2. Navigate to your new folder.
 
     ```bash

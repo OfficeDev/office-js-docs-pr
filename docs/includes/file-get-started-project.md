@@ -16,6 +16,10 @@ In this article, you'll walk through the process of building a Project add-in by
 
 1. Create a folder on your local drive and name it `my-project-addin`. This is where you'll create the files for your add-in.
 
+    ```bash
+    mkdir my-project-addin
+    ```
+
 2. Navigate to your new folder.
 
     ```bash
