@@ -246,7 +246,7 @@ In this article, you'll walk through the process of building a OneNote add-in by
 
     The outline you specified is added to the page.
 
-    ![The OneNote add-in built from this walkthrough](../images/onenote-first-add-in-2.png)
+    ![The OneNote add-in built from this walkthrough](../images/onenote-first-add-in-3.png)
 
 ## Troubleshooting and tips
 
