@@ -331,7 +331,7 @@
       href: reference/overview/word-add-ins-reference-overview.md
       displayName: Word
     - name: Word JavaScript API reference
-      href: javascript/api/word
+      href: /javascript/api/word
       displayName: Word
 
   - name: Outlook add-ins
