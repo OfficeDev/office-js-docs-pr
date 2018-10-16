@@ -1,7 +1,7 @@
 ---
 title: Fundamental programming concepts with the Excel JavaScript API
 description: Use the Excel JavaScript API to build add-ins for Excel.
-ms.date: 10/03/2018
+ms.date: 10/16/2018
 ---
 
 
@@ -224,31 +224,9 @@ Excel.run(function (context) {
 });
 ```
  
-## Error messages
- 
-When an API error occurs, the API will return an **error** object that contains a code and a message. The following table defines a list of errors that the API may return.
- 
-|error.code | error.message |
-|:----------|:--------------|
-|InvalidArgument |The argument is invalid or missing or has an incorrect format.|
-|InvalidRequest  |Cannot process the request.|
-|InvalidReference|This reference is not valid for the current operation.|
-|InvalidBinding  |This object binding is no longer valid due to previous updates.|
-|InvalidSelection|The current selection is invalid for this operation.|
-|Unauthenticated |Required authentication information is either missing or invalid.|
-|AccessDenied |You cannot perform the requested operation.|
-|ItemNotFound |The requested resource doesn't exist.|
-|ActivityLimitReached|Activity limit has been reached.|
-|GeneralException|There was an internal error while processing the request.|
-|NotImplemented  |The requested feature isn't implemented.|
-|ServiceNotAvailable|The service is unavailable.|
-|Conflict              |Request could not be processed because of a conflict.|
-|ItemAlreadyExists|The resource being created already exists.|
-|UnsupportedOperation|The operation being attempted is not supported.|
-|RequestAborted|The request was aborted during run time.|
-|ApiNotAvailable|The requested API is not available.|
-|InsertDeleteConflict|The insert or delete operation attempted resulted in a conflict.|
-|InvalidOperation|The operation attempted is invalid on the object.|
+##Handle errors
+
+When an API error occurs, the API will return an **error** object that contains a code and a message. For detailed information about error handling, including a list of the errors that the API may return, see [Error handling](excel-add-ins-error-handling.md).
  
 ## See also
  
