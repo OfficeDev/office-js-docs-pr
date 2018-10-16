@@ -11,4 +11,4 @@
     > [!NOTE]
     > Chrome (web browser) may continue to indicate the the site's certificate is not trusted, even after you have completed the process described in [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md). Therefore, you should use either Internet Explorer or Microsoft Edge to verify that the certificate is trusted. 
 
-4. After your browser loads the add-in page without any certificate errors, you're ready test your add-in. Proceed to the next section in this article (**Try it out**).
+4. After your browser loads the add-in page without any certificate errors, you're ready test your add-in.
