@@ -111,7 +111,7 @@ In this article, you'll walk through the process of building a OneNote add-in by
 
 ## Update the manifest
 
-1. Open the file **one-note-add-in-manifest.xml** to define the add-in's settings and capabilities.
+1. Open the file **my-office-add-in-manifest.xml** to define the add-in's settings and capabilities.
 
 2. The `ProviderName` element has a placeholder value. Replace it with your name.
 
@@ -147,7 +147,7 @@ In this article, you'll walk through the process of building a OneNote add-in by
 
     <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-3. In the Upload Add-in dialog, browse to **one-note-add-in-manifest.xml** in your project folder, and then choose **Upload**. 
+3. In the Upload Add-in dialog, browse to **my-office-add-in-manifest.xml** in your project folder, and then choose **Upload**. 
 
 4. From the **Home** tab, choose the **Show Taskpane** button in the ribbon. The add-in task pane opens in an iFrame next to the OneNote page.
 
