@@ -32,7 +32,7 @@ This example uses Word and a free add-in from AppSource.
 
 1. Open Word and choose a blank document. 
     
-2. On the **Insert** tab, in the Add-ins group, choose **Store** and select the QR4Office Add-in. (You can load any add-in from the Store or your add-in catalog.)
+2. On the **Insert** tab, in the Add-ins group, choose **Store** and select the **QR4Office** Add-in. (You can load any add-in from the Store or your add-in catalog.)
     
 3. Launch the F12 development tools that corresponds to your version of Office:
     
@@ -58,7 +58,7 @@ This example uses Word and a free add-in from AppSource.
 
 6. Run your add-in to trigger the breakpoint.
     
-   Choose the URL textbox in the upper part of the QR4Office pane and enter some text. In the Debugger, in the **Callstack and Breakpoints** pane, you'll see that the breakpoint has triggered and shows various information. You might need to refresh the F12 tool to see the results.
+   Choose the URL textbox in the upper part of the **QR4Office** pane and enter some text. In the Debugger, in the **Callstack and Breakpoints** pane, you'll see that the breakpoint has triggered and shows various information. You might need to refresh the debugger tool to see the results.
     
    ![Debugger with results from the triggered breakpoint](../images/debugger-home-js-01.png)
 
