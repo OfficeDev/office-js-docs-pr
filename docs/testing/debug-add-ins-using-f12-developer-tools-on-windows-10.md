@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins using F12 developer tools on Windows 10
 description: ''
-ms.date: 01/23/2018
+ms.date: 10/16/2018
 ---
 
 # Debug add-ins using F12 developer tools on Windows 10
@@ -22,6 +22,9 @@ You need the following software:
 - The Office client application that hosts your add-in. 
     
 - Your add-in. 
+
+    > [!NOTE]
+    > The instructions in this article cannot be used to debug an Outlook add-ins that uses Execute Functions. To test an Outlook add-in that uses Execute Functions, we recommend that you attach to Visual Studio in script mode or to some other script debugger.
 
 ## Using the Debugger
 
