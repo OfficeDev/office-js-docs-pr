@@ -22,10 +22,11 @@ Select **Attach Debugger**. This launches the **Visual Studio Just-in-Time Debug
 
 In Visual Studio, you will see the code files in **Solution Explorer**.   You can set breakpoints to the line of code you want to debug in Visual Studio.
 
-If you don't see the Personality menu, you can debug your add-in using Visual Studio. Ensure your task pane add-in is open in Office, and then follow these steps:
+> [!NOTE]
+> If you don't see the Personality menu, you can debug your add-in using Visual Studio. Ensure your task pane add-in is open in Office, and then follow these steps:
 
-1. In Visual Studio, choose **DEBUG** > **Attach to Process**.
-2. In **Attach to Process**, choose all of the available Iexplore.exe processes, and then choose the **Attach** button.
+> 1. In Visual Studio, choose **DEBUG** > **Attach to Process**.
+> 2. In **Attach to Process**, choose all of the available Iexplore.exe processes, and then choose the **Attach** button.
 
 For more information about debugging in Visual Studio, see the following:
 
