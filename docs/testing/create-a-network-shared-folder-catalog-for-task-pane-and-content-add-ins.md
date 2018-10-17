@@ -58,9 +58,11 @@ The following video walks you through the process of sideloading your add-in on 
     
 6. After you've entered the full network path of the folder into the **Catalog Url** box, choose the **Add catalog** button.
 
-7. Select the **Show in Menu** check box for the newly-added item, and then choose the **OK** button to close the **Trust Center** dialog window. Choose the **OK** button to close the **Word Options** dialog window.
+7. Select the **Show in Menu** check box for the newly-added item, and then choose the **OK** button to close the **Trust Center** dialog window. 
 
-8. Close and reopen the Office application so your changes will take effect.
+8. Choose the **OK** button to close the **Word Options** dialog window.
+
+9. Close and reopen the Office application so your changes will take effect.
     
 
 ## Sideload your add-in
