@@ -26,11 +26,11 @@ The following video walks you through the process of sideloading your add-in on 
 
 ## Share a folder
 
-1. On the Windows computer where you want to host your add-in, open File Explorer and navigate to the parent folder, or drive letter, of the folder you want to use as your shared folder catalog.
+1. In File Explorer on the Windows computer where you want to host your add-in, go to the parent folder, or drive letter, of the folder you want to use as your shared folder catalog.
 
-2. Open the context menu for the folder you want to use as your shared folder catalog (right-click the folder) and choose **Properties** to open the folder's **Properties** dialog window.
+2. Open the context menu for the folder you want to use as your shared folder catalog (right-click the folder) and choose **Properties**.
 
-3. Within the **Properties** dialog window, open the **Sharing** tab and then choose the **Share** button to open the **Network access** dialog window.
+3. Within the **Properties** dialog window, open the **Sharing** tab and then choose the **Share** button.
 
     ![folder Properties dialog with the Sharing tab and Share button highlighted](../images/sideload-windows-properties-dialog.png)
 
