@@ -10,17 +10,18 @@ You can use PowerPoint add-ins to build engaging solutions for your users' prese
 
 - Use **content add-ins** to add dynamic HTML5 content to your presentations. For example, see the [LucidChart Diagrams for PowerPoint](https://store.office.com/app.aspx?assetid=WA104380117&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Productivity&homapppos=3&homchv=2&appredirect=false) add-in, which you can use to inject an interactive diagram from LucidChart into your deck.
 
-- Use **task pane add-ins** to bring in reference information or insert data into the slide via a service. For example, see the [Shutterstock Images](https://store.office.com/app.aspx?assetid=WA104380169&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Editor%2527s%2BPicks&homapppos=0&homchv=1&appredirect=false) add-in, which you can use to add professional photos to your presentation. 
+- Use **task pane add-ins** to bring in reference information or insert data into the presentation via a service. For example, see the [Shutterstock Images](https://store.office.com/app.aspx?assetid=WA104380169&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Editor%2527s%2BPicks&homapppos=0&homchv=1&appredirect=false) add-in, which you can use to add professional photos to your presentation. 
 
 ## PowerPoint add-in scenarios
 
-The code examples in this article demonstrate some basic tasks for developing content add-ins for PowerPoint. Please note the following:
+The code examples in this article demonstrate some basic tasks for developing add-ins for PowerPoint. Please note the following:
 
 - To display information, these examples use the `app.showNotification` function, which is included in the Visual Studio Office Add-ins project templates. If you aren't using Visual Studio to develop your add-in, you'll need replace the `showNotification` function with your own code. 
 
-- Several of these examples also use a `Globals` object that is declared beyond the scope of these functions: `var Globals = {activeViewHandler:0, firstSlideId:0};`.
+- Several of these examples also use a `Globals` object that is declared beyond the scope of these functions as: 
+    `var Globals = {activeViewHandler:0, firstSlideId:0};`
 
-- To use these examples, your project must [reference Office.js v1.1 library or later](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md).
+- To use these examples, your add-in project must [reference Office.js v1.1 library or later](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md).
 
 ## Detect the presentation's active view and handle the ActiveViewChanged event
 
