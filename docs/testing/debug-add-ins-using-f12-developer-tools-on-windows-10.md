@@ -58,7 +58,7 @@ This example uses Word and a free add-in from AppSource.
 
 6. Run your add-in to trigger the breakpoint.
     
-   Choose the URL textbox in the upper part of the **QR4Office** pane and enter some text. In the Debugger, in the **Callstack and Breakpoints** pane, you'll see that the breakpoint has triggered and shows various information. You might need to refresh the debugger tool to see the results.
+   In Word, choose the URL textbox in the upper part of the **QR4Office** pane and attempt to enter some text. In the Debugger, in the **Callstack and Breakpoints** pane, you'll see that the breakpoint has triggered and shows various information. You might need to refresh the debugger tool to see the results.
     
    ![Debugger with results from the triggered breakpoint](../images/debugger-home-js-01.png)
 
