@@ -373,7 +373,7 @@ function getComment(x) {
 - **May 7, 2018**: Shipped* support for Mac, Excel Online, and synchronous functions running in-process
 - **September 20, 2018**: Shipped support for custom functions JavaScript runtime. For more information, see [Runtime for Excel custom functions](custom-functions-runtime.md).
 
-\* to the Office Insiders Channel
+\* to the Office Insider Channel (formerly called "Insider Fast")
 
 ## See also
 
