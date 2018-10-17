@@ -48,7 +48,7 @@ This example uses Word and a free add-in from AppSource.
 
 4. In the F12 window, select the file you want to debug.
     
-   To select the file, choose the folder icon above the  **script** (left) pane. The dropdown list shows the available files. Select home.js.
+   To select the file in the F12 window, choose the folder icon above the **script** (left) pane. From the list of available files shown in the dropdown list, select **Home.js**.
     
 5. Set the breakpoint.
     
