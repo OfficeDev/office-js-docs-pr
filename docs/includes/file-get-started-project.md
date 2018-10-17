@@ -16,6 +16,10 @@ In this article, you'll walk through the process of building a Project add-in by
 
 1. Create a folder on your local drive and name it `my-project-addin`. This is where you'll create the files for your add-in.
 
+    ```bash
+    mkdir my-project-addin
+    ```
+
 2. Navigate to your new folder.
 
     ```bash
@@ -47,34 +51,33 @@ In this article, you'll walk through the process of building a Project add-in by
 
 1. In your code editor, open **index.html** in the root of the project. This file contains the HTML that will be rendered in the add-in's task pane.
 
-2. Replace the `<header>` element inside the `<body>` element with the following markup.
+2. Replace the `<body>` element with the following markup.
 
     ```html
-    <div id="content-header">
-        <div class="padding">
-            <h1>Welcome</h1>
+    <body class="ms-font-m ms-welcome">
+        <div id="content-header">
+            <div class="padding">
+                <h1>Welcome</h1>
+            </div>
         </div>
-    </div>
+        <div id="content-main">
+            <div class="padding">
+                <p>Select a task and then choose the buttons below and observe the output in the <b>Results</b> textbox.</p>
+                <h3>Try it out</h3>
+                <button class="ms-Button" id="get-task-guid">Get Task GUID</button>
+                <br/><br/>
+                <button class="ms-Button" id="get-task">Get Task data</button>
+                <br/>
+                <h4>Results:</h4>
+                <textarea id="result" rows="6" cols="25"></textarea>
+            </div>
+        </div>
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
+    </body>
     ```
 
-3. Replace the `<main>` element inside the `<body>` element with the following markup and save the file.
-
-    ```html
-    <div id="content-main">
-        <div class="padding">
-            <p>Select a task and then choose the buttons below and observe the output in the <b>Results</b> textbox.</p>
-            <h3>Try it out</h3>
-            <button class="ms-Button" id="get-task-guid">Get Task GUID</button>
-            <br/><br/>
-            <button class="ms-Button" id="get-task">Get Task data</button>
-            <br/>
-            <h4>Results:</h4>
-            <textarea id="result" rows="6" cols="25"></textarea>
-        </div>
-    </div>
-    ```
-
-4. Open the file **src/index.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.
+3. Open the file **src/index.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.
 
     ```js
     'use strict';
