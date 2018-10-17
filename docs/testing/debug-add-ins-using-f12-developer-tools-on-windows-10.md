@@ -6,7 +6,7 @@ ms.date: 10/16/2018
 
 # Debug add-ins using F12 developer tools on Windows 10
 
-The F12 developer tools included in Windows 10 help you debug, test, and speed up your webpages. You can also use them to develop and debug Office Add-ins, if you are not using an IDE like Visual Studio, or if you need to investigate a problem while running your add-in outside the IDE. You can start the F12 developer tools after your add-in is running. This article describes how to use the Debugger tool from the F12 developer tools in Windows 10 to test your Office Add-in.
+The F12 developer tools included in Windows 10 help you debug, test, and speed up your webpages. You can also use them to develop and debug Office Add-ins, if you are not using an IDE like Visual Studio, or if you need to investigate a problem while running your add-in outside the IDE. This article describes how to use the Debugger tool from the F12 developer tools in Windows 10 to test your Office Add-in.
 
 > [!NOTE]
 > The instructions in this article cannot be used to debug an Outlook add-in that uses Execute Functions. To debug an Outlook add-in that uses Execute Functions, we recommend that you attach to Visual Studio in script mode or to some other script debugger.
@@ -23,7 +23,7 @@ You need the following software:
 
 ## Using the Debugger
 
-You can use the Debugger from the F12 developer tools in Windows 10 to test add-ins from AppSource or add-ins that you have added from other locations. The F12 tools display in a separate window and do not use Visual Studio.
+You can use the Debugger from the F12 developer tools in Windows 10 to test add-ins from AppSource or add-ins that you have added from other locations. You can start the F12 developer tools after your add-in is running. The F12 tools display in a separate window and do not use Visual Studio.
 
 > [!NOTE]
 > The Debugger is part of the F12 developer tools in Windows 10 and Internet Explorer. Earlier versions of Windows do not include the Debugger. 
