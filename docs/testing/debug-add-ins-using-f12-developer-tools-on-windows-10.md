@@ -52,13 +52,13 @@ This example uses Word and a free add-in from AppSource.
     
 5. Set the breakpoint.
     
-   To set the breakpoint in **Home.js**, choose line 144, which is in the  `textChanged` function. You will see a red dot to the left of the line and a corresponding line in the **Callstack and Breakpoints** (bottom right) pane. For other ways to set a breakpoint, see [Inspect running JavaScript with the Debugger](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85)). 
+   To set the breakpoint in **Home.js**, choose line 144, which is in the  `textChanged` function. You will see a red dot to the left of the line and a corresponding line in the **Call stack and Breakpoints** (bottom right) pane. For other ways to set a breakpoint, see [Inspect running JavaScript with the Debugger](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85)). 
     
    ![Debugger with breakpoint in home.js file](../images/debugger-home-js-02.png)
 
 6. Run your add-in to trigger the breakpoint.
     
-   In Word, choose the URL textbox in the upper part of the **QR4Office** pane and attempt to enter some text. In the Debugger, in the **Callstack and Breakpoints** pane, you'll see that the breakpoint has triggered and shows various information. You might need to refresh the debugger tool to see the results.
+   In Word, choose the URL textbox in the upper part of the **QR4Office** pane and attempt to enter some text. In the Debugger, in the **Call stack and Breakpoints** pane, you'll see that the breakpoint has triggered and shows various information. You might need to refresh the debugger tool to see the results.
     
    ![Debugger with results from the triggered breakpoint](../images/debugger-home-js-01.png)
 
