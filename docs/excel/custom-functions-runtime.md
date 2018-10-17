@@ -1,5 +1,5 @@
 ---
-ms.date: 10/03/2018
+ms.date: 10/17/2018
 description: Understand key scenarios in developing Excel custom functions that use the new JavaScript runtime.
 title: Runtime for Excel custom functions
 ---
