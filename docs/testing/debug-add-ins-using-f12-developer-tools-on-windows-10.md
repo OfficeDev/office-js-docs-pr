@@ -24,7 +24,7 @@ You need the following software:
 - Your add-in. 
 
     > [!NOTE]
-    > The instructions in this article cannot be used to debug an Outlook add-ins that uses Execute Functions. To test an Outlook add-in that uses Execute Functions, we recommend that you attach to Visual Studio in script mode or to some other script debugger.
+    > The instructions in this article cannot be used to debug an Outlook add-in that uses Execute Functions. To debug an Outlook add-in that uses Execute Functions, we recommend that you attach to Visual Studio in script mode or to some other script debugger.
 
 ## Using the Debugger
 
