@@ -26,16 +26,21 @@ The following video walks you through the process of sideloading your add-in on 
 
 ## Share a folder
 
-1. On the Windows computer where you want to host your add-in, go to the parent folder, or drive letter, of the folder you want to use as your shared folder catalog.
+1. On the Windows computer where you want to host your add-in, open File Explorer and navigate to the parent folder, or drive letter, of the folder you want to use as your shared folder catalog.
 
-2. Open the context menu for the folder (right-click) and choose **Properties**.
+2. Open the context menu for the folder you want to use as your shared folder catalog(right-click the folder) and choose **Properties** to open the **Properties** dialog window.
 
-3. Open the **Sharing** tab.
+3. Within the **Properties** dialog window, open the **Sharing** tab and then press the **Share** button to open the **Network access** dialog window.
 
-4. On the **Choose people ...** page, add yourself and and anyone else with whom you want to share your add-in. If they are all members of a security group, you can add the group. You will need at least **Read/Write** permission to the folder. 
+    ![folder Properties dialog with the Sharing tab and Share button highlighted](../images/sideload-windows-properties-dialog.png)
 
-5. Choose **Share** > **Done** > **Close**.
+4. Within the **Network access** dialog window, add yourself and any other users and/or groups with whom you want to share your add-in. You will need at least **Read/Write** permission to the folder. After you have finished choosing people to share with, press the **Share** button.
 
+5. When you see confirmation that **Your folder is shared**, make note of the full network path that's displayed immediately following the folder name. (You will enter this value as the **Catalog Url** when you [specify the shared folder as a trusted catalog](#specify-the-shared-folder-as-a-trusted-catalog), as described in the next section of this article.) Press **Done** to close the **Network access** dialog window.
+
+   ![Network access dialog with the share path highlighted](../images/sideload-windows-network-access-dialog.png)
+
+5. Press the **Close** button to close the **Properties** dialog window.
 
 ## Specify the shared folder as a trusted catalog
       
