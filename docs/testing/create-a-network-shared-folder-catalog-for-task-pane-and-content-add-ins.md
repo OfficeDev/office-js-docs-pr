@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins for testing
 description: ''
-ms.date: 01/25/2018
+ms.date: 10/17/2018
 ---
 
 # Sideload Office Add-ins for testing
@@ -26,16 +26,21 @@ The following video walks you through the process of sideloading your add-in on 
 
 ## Share a folder
 
-1. On the Windows computer where you want to host your add-in, go to the parent folder, or drive letter, of the folder you want to use as your shared folder catalog.
+1. In File Explorer on the Windows computer where you want to host your add-in, go to the parent folder, or drive letter, of the folder you want to use as your shared folder catalog.
 
-2. Open the context menu for the folder (right-click) and choose **Properties**.
+2. Open the context menu for the folder you want to use as your shared folder catalog (right-click the folder) and choose **Properties**.
 
-3. Open the **Sharing** tab.
+3. Within the **Properties** dialog window, open the **Sharing** tab and then choose the **Share** button.
 
-4. On the **Choose people ...** page, add yourself and and anyone else with whom you want to share your add-in. If they are all members of a security group, you can add the group. You will need at least **Read/Write** permission to the folder. 
+    ![folder Properties dialog with the Sharing tab and Share button highlighted](../images/sideload-windows-properties-dialog.png)
 
-5. Choose **Share** > **Done** > **Close**.
+4. Within the **Network access** dialog window, add yourself and any other users and/or groups with whom you want to share your add-in. You will need at least **Read/Write** permission to the folder. After you have finished choosing people to share with, choose the **Share** button.
 
+5. When you see confirmation that **Your folder is shared**, make note of the full network path that's displayed immediately following the folder name. (You will need to enter this value as the **Catalog Url** when you [specify the shared folder as a trusted catalog](#specify-the-shared-folder-as-a-trusted-catalog), as described in the next section of this article.) Choose the **Done** button to close the **Network access** dialog window.
+
+   ![Network access dialog with the share path highlighted](../images/sideload-windows-network-access-dialog.png)
+
+6. Choose the **Close** button to close the **Properties** dialog window.
 
 ## Specify the shared folder as a trusted catalog
       
@@ -43,15 +48,23 @@ The following video walks you through the process of sideloading your add-in on 
     
 2. Choose the **File** tab, and then choose **Options**.
     
-3. Choose **Trust Center**, and then choose the  **Trust Center Settings** button.
+3. Choose **Trust Center**, and then choose the **Trust Center Settings** button.
     
-4. Choose  **Trusted Add-in Catalogs**.
+4. Choose **Trusted Add-in Catalogs**.
     
-5. In the  **Catalog Url** box, enter the full network path to the shared folder catalog, and then choose **Add Catalog**.
-    
-6. Select the **Show in Menu** check box, and then choose **OK**.
+5. In the **Catalog Url** box, enter the full network path to the folder that you [shared](#share-a-folder) previously. If you failed to note the folder's full network path when you shared the folder, you can get it from the folder's **Properties** dialog window, as shown in the following screenshot. 
 
-7. Close the Office application so your changes will take effect.
+    ![folder Properties dialog with the Sharing tab and network path highlighted](../images/sideload-windows-properties-dialog-2.png)
+    
+6. After you've entered the full network path of the folder into the **Catalog Url** box, choose the **Add catalog** button.
+
+7. Select the **Show in Menu** check box for the newly-added item, and then choose the **OK** button to close the **Trust Center** dialog window. 
+
+    ![Trust Center dialog with catalog selected](../images/sideload-windows-trust-center-dialog.png)
+
+8. Choose the **OK** button to close the **Word Options** dialog window.
+
+9. Close and reopen the Office application so your changes will take effect.
     
 
 ## Sideload your add-in
