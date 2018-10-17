@@ -48,7 +48,7 @@ The following video walks you through the process of sideloading your add-in on 
     
 2. Choose the **File** tab, and then choose **Options**.
     
-3. Choose **Trust Center**, and then choose the **Trust Center Settings** button.
+3. Choose **Trust Center**, and then press the **Trust Center Settings** button.
     
 4. Choose **Trusted Add-in Catalogs**.
     
