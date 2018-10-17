@@ -48,15 +48,19 @@ The following video walks you through the process of sideloading your add-in on 
     
 2. Choose the **File** tab, and then choose **Options**.
     
-3. Choose **Trust Center**, and then choose the  **Trust Center Settings** button.
+3. Choose **Trust Center**, and then choose the **Trust Center Settings** button.
     
-4. Choose  **Trusted Add-in Catalogs**.
+4. Choose **Trusted Add-in Catalogs**.
     
-5. In the  **Catalog Url** box, enter the full network path to the shared folder catalog, and then choose **Add Catalog**.
-    
-6. Select the **Show in Menu** check box, and then choose **OK**.
+5. In the **Catalog Url** box, enter the full network path to the folder that you [shared](#share-a-folder) previously. If you failed to note the folder's full network path when you shared the folder, you can see it in the folder's **Properties** dialog window, as shown in the following screenshot. 
 
-7. Close the Office application so your changes will take effect.
+    ![folder Properties dialog with the Sharing tab and network path highlighted](../images/sideload-windows-properties-dialog-2.png)
+    
+6. After you've entered the full network path of the folder into the **Catalog Url** box, choose the **Add catalog** button.
+
+7. Select the **Show in Menu** check box for the newly-added item, and then choose the **OK** button. On the next dialog, choose the **OK** button again.
+
+8. Close and reopen the Office application so your changes will take effect.
     
 
 ## Sideload your add-in
