@@ -4,6 +4,8 @@ In this article, you'll walk through the process of building an Excel add-in usi
 
 ## Prerequisites
 
+- [Node.js](https://nodejs.org)
+
 - Install the [Vue CLI](https://github.com/vuejs/vue-cli) globally.
 
     ```bash
@@ -52,18 +54,15 @@ Each add-in requires a manifest file to define its settings and capabilities.
     - **What do you want to name your add-in?:** `My Office Add-in`
     - **Which Office client application would you like to support?:** `Excel`
 
-    After you complete the wizard, a manifest file and resource file are available for you to build your project.
-
     ![Yeoman generator](../images/yo-office.png)
     
-    > [!NOTE]
-    > If you're prompted to overwrite **package.json**, answer **No** (do not overwrite).
+    After you complete the wizard, the generator will create the manifest file and install supporting Node components.
 
 ## Secure the app
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-To enable HTTPS for your app, open **package.json** in the root of the project, modify the `dev` script to add the `--https` flag, and save the file.
+To enable HTTPS for your app, open the file **package.json** in the root folder of the Vue app, modify the `dev` script to add the `--https` flag, and save the file.
 
 ```json
 "dev": "webpack-dev-server --https --inline --progress --config build/webpack.dev.conf.js"
@@ -71,9 +70,11 @@ To enable HTTPS for your app, open **package.json** in the root of the project, 
 
 ## Update the app
 
-1. In your code editor, open the manifest file (i.e., the file in the root directory of your app with a name ending in "manifest.xml"). Replace all occurrences of `https://localhost:3000` with `https://localhost:8080` and save the file.
+1. In your code editor, open the folder **My Office Add-in** that Yo Office created at the root of your Vue app. In that folder, you'll see the manifest file that defines the settings for your add-in: **my-office-add-in-manifest.xml**.
 
-2. Open **index.html**, add the following `<script>` tag immediately before the `</head>` tag, and save the file.
+2. Open the manifest file, replace all occurrences of `https://localhost:3000` with `https://localhost:8080`, and save the file.
+
+3. Open the file **index.html** (in the root folder of your Vue app), add the following `<script>` tag immediately before the `</head>` tag, and save the file.
 
     ```html
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
