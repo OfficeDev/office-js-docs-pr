@@ -158,6 +158,10 @@ In this article, you'll walk through the process of building an Excel add-in by 
 
 1. Create a folder on your local drive and name it **my-addin**. This is where you'll create the files for your app.
 
+    ```bash
+    mkdir my-addin
+    ```
+
 2. Navigate to your app folder.
 
     ```bash
@@ -185,32 +189,33 @@ In this article, you'll walk through the process of building an Excel add-in by 
     cd "My Office Add-in"
     ```
 
-5. In your code editor, open **index.html** in the root of the project. This file specifies the HTML that will be rendered in the add-in's task pane. 
+### Update the code 
+
+1. In your code editor, open **index.html** in the root of the project. This file specifies the HTML that will be rendered in the add-in's task pane. 
  
-6. Within **index.html**, replace the generated `header` tag with the following markup.
+2. Within **index.html**, replace the `body` tag with the following markup and save the file.
  
     ```html
-    <div id="content-header">
-        <div class="padding">
-            <h1>Welcome</h1>
+    <body class="ms-font-m ms-welcome">
+        <div id="content-header">
+            <div class="padding">
+                <h1>Welcome</h1>
+            </div>
         </div>
-    </div>
+        <div id="content-main">
+            <div class="padding">
+                <p>Choose the button below to set the color of the selected range to green.</p>
+                <br />
+                <h3>Try it out</h3>
+                <button class="ms-Button" id="set-color">Set color</button>
+            </div>
+        </div>
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
+    </body>    
     ```
 
-7. Within **index.html**, replace the generated `main` tag with the following markup, and save the file.
-
-    ```html
-    <div id="content-main">
-        <div class="padding">
-            <p>Choose the button below to set the color of the selected range to green.</p>
-            <br />
-            <h3>Try it out</h3>
-            <button class="ms-Button" id="set-color">Set color</button>
-        </div>
-    </div>
-    ```
-
-8. Open the file **src\index.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.
+3. Open the file **src\index.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.
 
     ```js
     'use strict';
@@ -238,7 +243,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
     })();
     ```
 
-9. Open the file **app.css** to specify the custom styles for the add-in. Replace the entire contents with the following code and save the file.
+4. Open the file **app.css** to specify the custom styles for the add-in. Replace the entire contents with the following code and save the file.
 
     ```css
     #content-header {
@@ -273,11 +278,9 @@ In this article, you'll walk through the process of building an Excel add-in by 
 
 2. The `ProviderName` element has a placeholder value. Replace it with your name.
 
-3. The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.
+3. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Excel**.
 
-4. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Excel**.
-
-5. Save the file.
+4. Save the file.
 
     ```xml
     ...
