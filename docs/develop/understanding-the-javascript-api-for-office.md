@@ -158,7 +158,6 @@ For more information, see [Office.initialize Event](https://docs.microsoft.com/j
 >```js
 >Office.initialize = function () {};
 >```
-> If you have no start-up logic and are not calling `Office.onReady()`, you should assign an empty function to `Office.initialize` when your add-in JavaScript loads, because some Office host and platform combinations won't load the task pane until one of these happens. 
 
 ## Office JavaScript API object model
 
