@@ -33,7 +33,7 @@
     href: quickstarts/onenote-quickstart.md
     displayName: OneNote
   - name: Create Outlook add-in
-    href: https://docs.microsoft.com/outlook/add-ins/quick-start
+    href: /outlook/add-ins/quick-start
     displayName: Outlook
   - name: Create PowerPoint add-in
     href: quickstarts/powerpoint-quickstart.md
@@ -293,10 +293,10 @@
         href: excel/excel-add-ins-worksheets.md
         displayName: Excel
     - name: Excel JavaScript API overview
-      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview
       displayName: Excel
     - name: Excel JavaScript API reference
-      href: https://docs.microsoft.com/javascript/api/excel?view=office-js
+      href: /javascript/api/excel
       displayName: Excel
 
   - name: Word add-ins
@@ -328,14 +328,14 @@
       href: word/search-option-guidance.md
       displayName: Word
     - name: Word JavaScript API usage overview
-      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview
       displayName: Word
     - name: Word JavaScript API reference
-      href: https://docs.microsoft.com/en-us/javascript/api/word?view=office-js
+      href: /javascript/api/word
       displayName: Word
 
   - name: Outlook add-ins
-    href: https://docs.microsoft.com/outlook/add-ins/
+    href: /outlook/add-ins/
     displayName: Outlook
 
   - name: PowerPoint add-ins
@@ -366,10 +366,10 @@
       href: onenote/onenote-add-ins-page-content.md
       displayName: OneNote
     - name: OneNote JavaScript API overview
-      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference
       displayName: OneNote
     - name: OneNote JavaScript API reference
-      href: https://docs.microsoft.com/en-us/javascript/api/onenote?view=office-js
+      href: /javascript/api/onenote
       displayName: OneNote
 
   - name: Project add-ins
@@ -430,9 +430,9 @@
     - name: Publish add-ins to a SharePoint catalog
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
     - name: Publish add-ins to AppSource
-      href: https://docs.microsoft.com/office/dev/store/submit-to-the-office-store
+      href: /office/dev/store/submit-to-the-office-store
     - name: AppSource validation policies
-      href: https://docs.microsoft.com/office/dev/store/validation-policies
+      href: /office/dev/store/validation-policies
 
 - name: Reference
   items:
