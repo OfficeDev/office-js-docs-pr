@@ -42,10 +42,10 @@ Office Add-ins often have start-up logic to do things such as:
 
 But your start-up code must not call any Office.js APIs until the library is fully loaded. There are two ways that your code can ensure that the library is loaded. They are described in the following sections: 
 
-- [Initialize with Office.onReady](#initialize-with-office-onready)
-- [Initialize with Office.initialize](#initialize-with-office-initialize)
+- [Initialize with Office.onReady()](#initialize-with-officeonready)
+- [Initialize with Office.initialize](#initialize-with-officeinitialize)
 
-For information about the differences in these techniques, see [Major differences between Office.initialize and Office.onReady()](#major-differences-between-office-initialize-and-office-onready). For more details about the sequence of events when an add-in is initialized, see [Loading the DOM and runtime environment](loading-the-dom-and-runtime-environment.md).
+For information about the differences in these techniques, see [Major differences between Office.initialize and Office.onReady()](#major-differences-between-officeinitialize-and-officeonready). For more details about the sequence of events when an add-in is initialized, see [Loading the DOM and runtime environment](loading-the-dom-and-runtime-environment.md).
 
 ### Initialize with Office.onReady()
 
