@@ -74,7 +74,7 @@ To enable HTTPS for your app, open the file **package.json** in the root folder 
 
 2. Open the manifest file, replace all occurrences of `https://localhost:3000` with `https://localhost:8080`, and save the file.
 
-3. Open the file **index.html** (in the root folder of your Vue project), add the following `<script>` tag immediately before the `</head>` tag, and save the file.
+3. Open the file **index.html** (located at the root of your Vue project), add the following `<script>` tag immediately before the `</head>` tag, and save the file.
 
     ```html
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
