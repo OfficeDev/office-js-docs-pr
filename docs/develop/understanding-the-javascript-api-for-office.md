@@ -40,9 +40,12 @@ Office Add-ins often have start-up logic to do things such as:
 
 - Use the Office dialog API to prompt the user for default add-in settings values.
 
-But your start-up code must not call any Office.js APIs until the library is fully loaded. There are two ways that your code can ensure that the library is loaded. They are described in the sections below. We recommend that you use the newer, more flexible, technique, calling `Office.onReady()`. The older technique, assigning a handler to `Office.initialize`, is still supported. See also [Major differences between Office.initialize and Office.onReady()](#major-differences-between-office-initialize-and-office-onready).
+But your start-up code must not call any Office.js APIs until the library is fully loaded. There are two ways that your code can ensure that the library is loaded. They are described in the following sections: 
 
-For more details about the sequence of events when an add-in is initialized, see [Loading the DOM and runtime environment](loading-the-dom-and-runtime-environment.md).
+- [Initialize with Office.onReady](initialize-with-office-onready)
+- [Initialize with Office.initialize](initialize-with-office-initialize)
+
+For information about the differences in these techniques, see [Major differences between Office.initialize and Office.onReady()](#major-differences-between-office-initialize-and-office-onready). For more details about the sequence of events when an add-in is initialized, see [Loading the DOM and runtime environment](loading-the-dom-and-runtime-environment.md).
 
 ### Initialize with Office.onReady()
 
@@ -136,6 +139,13 @@ Office.initialize = function (reason) {
 
 For more information, see [Office.initialize Event](https://docs.microsoft.com/javascript/api/office?view=office-js) and [InitializationReason Enumeration](https://docs.microsoft.com/javascript/api/office/office.initializationreason?view=office-js).
 
+> [!NOTE]
+> Currently, an add-in must set `Office.Initialize`, regardless of whether `Office.onReady()` is also called. If you have no use for `Office.Initialize`, you can set it to an empty function as shown in the following example.
+> 
+>```js
+>Office.initialize = function () {};
+>```
+
 ### Major differences between Office.initialize and Office.onReady
 
 - You can assign only one handler to `Office.initialize` and it is called, only once, by the Office infrastructure; but you can call `Office.onReady()` in different places in your code and use different callbacks. For example, your code could call `Office.onReady()` as soon as your custom script loads with a callback that runs initialization logic; and your code could also have a button in the task pane, whose script calls `Office.onReady()` with a different callback. If so, the second callback runs when the button is clicked.
@@ -143,15 +153,12 @@ For more information, see [Office.initialize Event](https://docs.microsoft.com/j
 - The `Office.initialize` event fires at the end of the internal process in which Office.js initializes itself. And it fires *immediately* after the internal process ends. If the code in which you assign a handler to the event executes too long after the event fires, then your handler doesn't run. For example, if you are using the WebPack task manager, it might configure the add-in's home page to load polyfill files after it loads Office.js but before it loads your custom JavaScript. By the time your script loads and assigns the handler, the initialize event has already happened. But it is never "too late" to call `Office.onReady()`. If the initialize event has already happened, the callback runs immediately.
 
 > [!NOTE]
-> Even if you have no start-up logic, it is a good practice to either call `Office.onReady()` or assign an empty function to `Office.initialize` when your add-in JavaScript loads, because some Office host and platform combinations won't load the task pane until one of these happens. The following lines show the two ways this can be done:
->
->```js
->Office.onReady();
->```
->
+> If you have no start-up logic, you should assign an empty function to `Office.initialize` when your add-in JavaScript loads, as shown in the following example. Some Office host and platform combinations won't load the task pane until the initialize event fires and the specified event handler function runs.
+> 
 >```js
 >Office.initialize = function () {};
 >```
+> If you have no start-up logic and are not calling `Office.onReady()`, you should assign an empty function to `Office.initialize` when your add-in JavaScript loads, because some Office host and platform combinations won't load the task pane until one of these happens. 
 
 ## Office JavaScript API object model
 
