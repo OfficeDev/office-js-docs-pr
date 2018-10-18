@@ -278,11 +278,9 @@ In this article, you'll walk through the process of building an Excel add-in by 
 
 2. The `ProviderName` element has a placeholder value. Replace it with your name.
 
-3. The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.
+3. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Excel**.
 
-4. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Excel**.
-
-5. Save the file.
+4. Save the file.
 
     ```xml
     ...
