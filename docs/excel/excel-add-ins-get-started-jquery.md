@@ -1,7 +1,7 @@
 ---
 title: Build an Excel add-in using jQuery
 description: ''
-ms.date: 12/29/2017
+ms.date: 10/18/2018
 ROBOTS: NOINDEX
 ---
 

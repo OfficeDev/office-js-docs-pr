@@ -27,7 +27,7 @@ In this tutorial, you will:
 
 * Excel for Windows (build number 10827 or later) or Excel Online
 
-* [Join the Office Insider program](https://products.office.com/office-insider)
+* Join the [Office Insider program](https://products.office.com/office-insider) (**Insider** level -- formerly called "Insider Fast")
 
 ## Create a custom functions project
 

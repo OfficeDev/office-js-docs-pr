@@ -1,5 +1,5 @@
 ---
-ms.date: 10/03/2018
+ms.date: 10/17/2018
 description: Learn best practices and recommended patterns for Excel custom functions.
 title: Custom functions best practices
 ---
