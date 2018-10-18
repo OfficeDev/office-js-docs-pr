@@ -70,7 +70,7 @@ To enable HTTPS for your app, open the file **package.json** in the root folder 
 
 ## Update the app
 
-1. In your code editor, open the folder **My Office Add-in** that Yo Office created at the root of your Vue project. In that folder, you'll see the manifest file that defines the settings for your add-in: **my-office-add-in-manifest.xml**.
+1. In your code editor, open the folder **My Office Add-in** that Yo Office created at the root of your Vue project. In that folder, you'll see the manifest file that defines the settings for your add-in: **manifest.xml**.
 
 2. Open the manifest file, replace all occurrences of `https://localhost:3000` with `https://localhost:8080`, and save the file.
 
