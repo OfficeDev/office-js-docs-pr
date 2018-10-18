@@ -140,7 +140,7 @@ Office.initialize = function (reason) {
 For more information, see [Office.initialize Event](https://docs.microsoft.com/javascript/api/office?view=office-js) and [InitializationReason Enumeration](https://docs.microsoft.com/javascript/api/office/office.initializationreason?view=office-js).
 
 > [!NOTE]
-> Currently, an add-in must set `Office.Initialize`, regardless of whether `Office.onReady()` is also called. If you have no use for `Office.Initialize`, you can set it to an empty function as shown in the following example.
+> Currently, you must set `Office.Initialize`, regardless of whether `Office.onReady()` is also called. If you have no use for `Office.Initialize`, you can set it to an empty function as shown in the following example.
 > 
 >```js
 >Office.initialize = function () {};
