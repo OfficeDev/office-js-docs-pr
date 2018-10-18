@@ -315,7 +315,7 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 
 ### Update the manifest
 
-1. Open the file **my-office-add-in-manifest.xml** to define the add-in's settings and capabilities.
+1. Open the file **manifest.xml** to define the add-in's settings and capabilities.
 
 2. The `ProviderName` element has a placeholder value. Replace it with your name.
 
