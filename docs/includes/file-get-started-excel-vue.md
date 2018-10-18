@@ -62,7 +62,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-To enable HTTPS for your app, open the file **package.json** in the root folder of the Vue app, modify the `dev` script to add the `--https` flag, and save the file.
+To enable HTTPS for your app, open the file **package.json** in the root folder of the Vue project, modify the `dev` script to add the `--https` flag, and save the file.
 
 ```json
 "dev": "webpack-dev-server --https --inline --progress --config build/webpack.dev.conf.js"
@@ -70,11 +70,11 @@ To enable HTTPS for your app, open the file **package.json** in the root folder 
 
 ## Update the app
 
-1. In your code editor, open the folder **My Office Add-in** that Yo Office created at the root of your Vue app. In that folder, you'll see the manifest file that defines the settings for your add-in: **my-office-add-in-manifest.xml**.
+1. In your code editor, open the folder **My Office Add-in** that Yo Office created at the root of your Vue project. In that folder, you'll see the manifest file that defines the settings for your add-in: **my-office-add-in-manifest.xml**.
 
 2. Open the manifest file, replace all occurrences of `https://localhost:3000` with `https://localhost:8080`, and save the file.
 
-3. Open the file **index.html** (in the root folder of your Vue app), add the following `<script>` tag immediately before the `</head>` tag, and save the file.
+3. Open the file **index.html** (in the root folder of your Vue project), add the following `<script>` tag immediately before the `</head>` tag, and save the file.
 
     ```html
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
