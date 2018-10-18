@@ -41,7 +41,6 @@ Complete the following steps to package your add-in using Visual Studio 2017.
     
 2. In the **Where is your website hosted?** box, enter the URL of the website that will host the content files of your add-in, and then choose **Finish**.
     
-    
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)] Azure websites automatically provide an HTTPS endpoint.
     
