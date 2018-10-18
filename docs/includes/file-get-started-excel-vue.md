@@ -56,7 +56,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
 
     ![Yeoman generator](../images/yo-office.png)
     
-    After you complete the wizard, the generator will create the manifest file and install supporting Node components.
+    After you complete the wizard, the generator will create the manifest file.
 
 ## Secure the app
 
