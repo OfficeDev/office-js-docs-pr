@@ -47,19 +47,169 @@ In this article, you'll walk through the process of building an Excel add-in usi
 
 ## Update the code
 
-1.  In your code editor, open the file **src/components/App.tsx** and search for the comment `// Update the fill color`. Within the line of code that immediately follows the comment, change the fill color from **yellow** to **green**, and save the file. 
+1. In your code editor, open the file **src/styles.less**, add the following styles to the end of the file, and save the file.
 
-    ```js
-    range.format.fill.color = 'green';
+    ```css
+    #content-header {
+        background: #2a8dd4;
+        color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px; 
+        overflow: hidden;
+        font-family: Arial;
+        padding-top: 25px;
+    }
+
+    #content-main {
+        background: #fff;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: auto; 
+        font-family: Arial;
+    }
+
+    .padding {
+        padding: 15px;
+    }
+
+    .padding-sm {
+        padding: 4px;
+    }
+
+    .normal-button {
+        width: 80px;
+        padding: 2px;
+    }
     ```
 
-2. Find the `render` function in **src/components/App.tsx**. Within the `return` block of that function, replace the `<Herolist>` element with the following markup, and save the file. 
+2. The project template that the Office Add-ins Yeoman generator created includes a React component that is not needed for this quick start. Delete the file **src/components/HeroList.tsx**.
 
-    ```js
-    <HeroList message='Discover what My Office Add-in can do for you today!' items={this.state.listItems}>
-        <p className='ms-font-l'>Choose the button below to set the color of the selected range to blue. <b>Set color</b>.</p>
-        <Button className='ms-welcome__action' buttonType={ButtonType.hero} iconProps={{ iconName: 'ChevronRight' }} onClick={this.click}>Run</Button>
-    </HeroList>
+3. Open the file **src/components/Header.tsx**, replace the entire contents with the following code, and save the file.
+
+    ```typescript
+    import * as React from 'react';
+    export interface HeaderProps {
+        title: string;
+    }
+
+    export class Header extends React.Component<HeaderProps, any> {
+        constructor(props, context) {
+            super(props, context);
+        }
+
+        render() {
+            return (
+                <div id='content-header'>
+                    <div className='padding'>
+                        <h1>{this.props.title}</h1>
+                    </div>
+                </div>
+            );
+        }
+    }
+    ```
+
+4. Create a new React component named **Content.tsx** in the **src/components** folder, add the following code, and save the file.
+
+    ```typescript
+    import * as React from 'react';
+    import { Button, ButtonType } from 'office-ui-fabric-react';
+
+    export interface ContentProps {
+        message: string;
+        buttonLabel: string;
+        click: any;
+    }
+
+    export class Content extends React.Component<ContentProps, any> {
+        constructor(props, context) {
+            super(props, context);
+        }
+
+        render() {
+            return (
+                <div id='content-main'>
+                    <div className='padding'>
+                        <p>{this.props.message}</p>
+                        <br />
+                        <h3>Try it out</h3>
+                        <br/>
+                        <Button className='normal-button' buttonType={ButtonType.hero} onClick={this.props.click}>{this.props.buttonLabel}</Button>
+                    </div>
+                </div>
+            );
+        }
+    }
+    ```
+
+5. Open the file **src/components/App.tsx**, replace the entire contents with the following code, and save the file.
+
+    ```typescript
+    import * as React from 'react';
+    import { Header } from './Header';
+    import { Content } from './Content';
+    import Progress from './Progress';
+
+    import * as OfficeHelpers from '@microsoft/office-js-helpers';
+
+    export interface AppProps {
+        title: string;
+        isOfficeInitialized: boolean;
+    }
+
+    export interface AppState {
+    }
+
+    export default class App extends React.Component<AppProps, AppState> {
+        constructor(props, context) {
+            super(props, context);
+        }
+
+        setColor = async () => {
+            try {
+                await Excel.run(async context => {
+                    const range = context.workbook.getSelectedRange();
+                    range.load('address');
+                    range.format.fill.color = 'green';
+                    await context.sync();
+                    console.log(`The range address was ${range.address}.`);
+                });
+            } catch (error) {
+                OfficeHelpers.UI.notify(error);
+                OfficeHelpers.Utilities.log(error);
+            }
+        }
+
+        render() {
+            const {
+                title,
+                isOfficeInitialized,
+            } = this.props;
+
+            if (!isOfficeInitialized) {
+                return (
+                    <Progress
+                        title={title}
+                        logo='assets/logo-filled.png'
+                        message='Please sideload your addin to see app body.'
+                    />
+                );
+            }
+
+            return (
+                <div className='ms-welcome'>
+                    <Header title='Welcome' />
+                    <Content message='Choose the button below to set the color of the selected range to green.' buttonLabel='Set color' click={this.setColor} />
+                </div>
+            );
+        }
+    }
     ```
 
 ## Update the manifest
