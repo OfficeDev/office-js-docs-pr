@@ -11,7 +11,7 @@ In this article, you'll walk through the process of building an Excel add-in usi
     npm install -g yo generator-office
     ```
 
-### Create the web app
+## Create the web app
 
 1. Create a folder on your local drive and name it **my-addin**. This is where you'll create the files for your app.
 
@@ -39,13 +39,18 @@ In this article, you'll walk through the process of building an Excel add-in usi
     
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
-### Update the code
+4. Navigate to the root folder of the project.
+
+    ```bash
+    cd "My Office Add-in"
+    ```
+
+## Update the code
 
 1.  In your code editor, open the file **src/components/App.tsx** and search for the comment `// Update the fill color`. Within the line of code that immediately follows the comment, change the fill color from **yellow** to **green**, and save the file. 
 
     ```js
-    range.format.fill.color = 'green'
-
+    range.format.fill.color = 'green';
     ```
 
 2. Find the `render` function in **src/components/App.tsx**. Within the `return` block of that function, replace the `<Herolist>` element with the following markup, and save the file. 
@@ -57,7 +62,7 @@ In this article, you'll walk through the process of building an Excel add-in usi
     </HeroList>
     ```
 
-### Update the manifest
+## Update the manifest
 
 1. Open the file **manifest.xml** to define the add-in's settings and capabilities. 
 
@@ -77,7 +82,7 @@ In this article, you'll walk through the process of building an Excel add-in usi
     ...
     ```
 
-### Start the dev server
+## Start the dev server
 
 [!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
