@@ -14,19 +14,7 @@ In this article, you'll walk you through the process of building an Excel add-in
 
 ## Create the web app
 
-1. Create a folder on your local drive and name it **my-addin**. This is where you'll create the files for your app.
-
-    ```bash
-    mkdir my-addin
-    ```
-
-2. Navigate to your app folder.
-
-    ```bash
-    cd my-addin
-    ```
-
-3. Use the Yeoman generator to create an Excel add-in project. Run the following command and then answer the prompts as follows:
+1. Use the Yeoman generator to create an Excel add-in project. Run the following command and then answer the prompts as follows:
 
     ```bash
     yo office
@@ -41,7 +29,7 @@ In this article, you'll walk you through the process of building an Excel add-in
     
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
-4. Navigate to the root folder of the project.
+2. Navigate to the root folder of the project.
 
     ```bash
     cd "My Office Add-in"
