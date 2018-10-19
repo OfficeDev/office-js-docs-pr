@@ -531,6 +531,10 @@ Excel.run(function (context) {
 
 ![Data in Excel after format is set](../images/excel-ranges-format-numbers.png)
 
+### Conditional formatting of ranges
+
+Ranges can have formats applied to individual cells based on conditions. The [Apply conditional formatting to Excel ranges](excel-add-ins-conditional-formatting.md) article has more information.
+
 ## Copy and Paste
 
 > [!NOTE]
