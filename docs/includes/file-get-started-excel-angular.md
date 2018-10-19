@@ -37,7 +37,7 @@ In this article, you'll walk you through the process of building an Excel add-in
 
 ## Update the code
 
-1. In your code editor, open the file **src/styles.less**, add the following styles to the end of the file, and save the file.
+1. In your code editor, open the file **app.css**, add the following styles to the end of the file, and save the file.
 
     ```css
     #content-header {
