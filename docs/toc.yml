@@ -248,7 +248,7 @@
       - name: Coauthoring in Excel add-ins
         href: excel/co-authoring-in-excel-add-ins.md
         displayName: Excel
-      - name: Conditional formatting in Excel add-ins
+      - name: Conditional formatting of ranges
         href: excel/excel-add-ins-conditional-formatting.md
         displayName: Excel
       - name: Custom functions
