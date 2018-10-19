@@ -7,7 +7,7 @@ ms.date: 10/01/2018
 
 # Create and debug Office Add-ins in Visual Studio
 
-This article describes how to use Visual Studio to create your first Office Add-in. The steps in this article based on Visual Studio 2015. If you're using another version of Visual Studio, the procedures might vary slightly.
+This article describes how to use Visual Studio to create your first Office Add-in. The steps in this article based on Visual Studio 2017. If you're using another version of Visual Studio, the procedures might vary slightly.
 
 > [!NOTE]
 > To get started with an add-in for OneNote, see [Build your first OneNote add-in](../onenote/onenote-add-ins-getting-started.md).
