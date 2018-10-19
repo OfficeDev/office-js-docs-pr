@@ -168,7 +168,7 @@ In this article, you'll walk you through the process of building an Excel add-in
    
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Excel add-in button](../images/excel-quickstart-addin-2a.png)
+    ![Excel add-in button](../images/excel-quickstart-addin-2b.png)
 
 3. Select any range of cells in the worksheet.
 
