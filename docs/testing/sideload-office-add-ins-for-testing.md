@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins in Office Online for testing
-description: ''
-ms.date: 12/04/2017
+description: 'Test your Office Add-in in Office Online by sideloading'
+ms.date: 10/19/2018
 ---
 
 # Sideload Office Add-ins in Office Online for testing
