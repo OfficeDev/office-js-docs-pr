@@ -234,19 +234,7 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 ### Create the add-in project
 
-1. Create a folder on your local drive and name it `my-word-addin`. This is where you'll create the files for your add-in.
-
-    ```bash
-    mkdir my-word-addin
-    ```
-
-2. Navigate to your new folder.
-
-    ```bash
-    cd my-word-addin
-    ```
-
-3. Use the Yeoman generator to create a Word add-in project. Run the following command and then answer the prompts as follows:
+1. Use the Yeoman generator to create a Word add-in project. Run the following command and then answer the prompts as follows:
 
     ```bash
     yo office
@@ -261,7 +249,7 @@ In this article, you'll walk through the process of building a Word add-in by us
     
     After you complete the wizard, the generator will create the project and install supporting Node components.
 	
-4. Navigate to the root folder of the web application project.
+2. Navigate to the root folder of the project.
 
     ```bash
     cd "My Office Add-in"
