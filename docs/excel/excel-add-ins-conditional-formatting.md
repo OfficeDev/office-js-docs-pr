@@ -301,7 +301,7 @@ cellValueFormat.stopIfTrue = true;
 await context.sync();
 ```
 
-## See Also
+## See also
 -	[Fundamental programming concepts with the Excel JavaScript API]( https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-core-concepts)
 -	[Work with ranges using the Excel JavaScript API](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-ranges)
 -	[ConditionalFormat Object (JavaScript API for Excel)]( https://docs.microsoft.com/javascript/api/excel/excel.conditionalformat)
