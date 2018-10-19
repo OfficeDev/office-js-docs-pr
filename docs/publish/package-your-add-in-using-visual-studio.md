@@ -43,7 +43,7 @@ Complete the following steps to package your add-in using Visual Studio 2017.
     
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)] Azure websites automatically provide an HTTPS endpoint.
-    
+
     Visual Studio generates the files that you need to publish your add-in and then opens the publish output folder.
     
 If you plan to submit your add-in to AppSource, you can choose the **Perform a validation check** button to identify any issues that will prevent your add-in from being accepted. You should address all issues before you submit your add-in to the store.
