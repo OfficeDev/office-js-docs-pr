@@ -4,18 +4,47 @@ In this article, you'll walk you through the process of building an Excel add-in
 
 ## Prerequisites
 
-- Check whether you already have the [Angular CLI prerequisites](https://github.com/angular/angular-cli#prerequisites) and install any prerequistes that you are missing.
-
-- Install the [Angular CLI](https://github.com/angular/angular-cli) globally. 
-
-    ```bash
-    npm install -g @angular/cli
-    ```
+- [Node.js](https://nodejs.org)
 
 - Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.
 
     ```bash
     npm install -g yo generator-office
+    ```
+
+## Create the web app
+
+1. Create a folder on your local drive and name it **my-addin**. This is where you'll create the files for your app.
+
+    ```bash
+    mkdir my-addin
+    ```
+
+2. Navigate to your app folder.
+
+    ```bash
+    cd my-addin
+    ```
+
+3. Use the Yeoman generator to create an Excel add-in project. Run the following command and then answer the prompts as follows:
+
+    ```bash
+    yo office
+    ```
+
+    - **Choose a project type:** `Office Add-in project using Angular framework`
+    - **Choose a script type:** `Typescript`
+    - **What do you want to name your add-in?:** `My Office Add-in`
+    - **Which Office client application would you like to support?:** `Excel`
+
+    ![Yeoman generator](../images/yo-office-excel-angular.png)
+    
+    After you complete the wizard, the generator will create the project and install supporting Node components.
+
+4. Navigate to the root folder of the project.
+
+    ```bash
+    cd "My Office Add-in"
     ```
 
 ## Generate a new Angular app
