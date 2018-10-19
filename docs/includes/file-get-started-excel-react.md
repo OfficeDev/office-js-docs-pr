@@ -2,12 +2,6 @@
 
 In this article, you'll walk through the process of building an Excel add-in using React and the Excel JavaScript API.
 
-## Environment
-
-- **Office Desktop**: Ensure that you have the latest version of Office installed. Add-in commands require build 16.0.6769.0000 or higher (**16.0.6868.0000** recommended). Learn how to [Install the latest version of Office applications](http://aka.ms/latestoffice). 
- 
-- **Office Online**: There is no additional setup. Please note that support for commands in Office Online for work/school accounts is in preview.
-
 ## Prerequisites
 
 - [Node.js](https://nodejs.org)
@@ -21,13 +15,17 @@ In this article, you'll walk through the process of building an Excel add-in usi
 
 1. Create a folder on your local drive and name it **my-addin**. This is where you'll create the files for your app.
 
+    ```bash
+    mkdir my-addin
+    ```
+
 2. Navigate to your app folder.
 
     ```bash
     cd my-addin
     ```
 
-3. Use the Yeoman generator to generate the manifest file for your add-in. Run the following command and then answer the prompts as shown in the following screenshot.
+3. Use the Yeoman generator to create an Excel add-in project. Run the following command and then answer the prompts as follows:
 
     ```bash
     yo office
@@ -41,38 +39,55 @@ In this article, you'll walk through the process of building an Excel add-in usi
     
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
-4.  Open **src/components/App.tsx**, search for the comment "Update the fill color," then change the fill color from 'yellow' to 'blue', and save the file. 
+### Update the code
+
+1.  In your code editor, open the file **src/components/App.tsx** and search for the comment `// Update the fill color`. Within the line of code that immediately follows the comment, change the fill color from **yellow** to **green**, and save the file. 
 
     ```js
-    range.format.fill.color = 'blue'
+    range.format.fill.color = 'green'
 
     ```
 
-5. In the `return` block of the `render` function within **src/components/App.tsx**, update the `<Herolist>` to the code below, and save the file. 
+2. Find the `render` function in **src/components/App.tsx**. Within the `return` block of that function, replace the `<Herolist>` element with the following markup, and save the file. 
 
     ```js
-      <HeroList message='Discover what My Office Add-in can do for you today!' items={this.state.listItems}>
+    <HeroList message='Discover what My Office Add-in can do for you today!' items={this.state.listItems}>
         <p className='ms-font-l'>Choose the button below to set the color of the selected range to blue. <b>Set color</b>.</p>
         <Button className='ms-welcome__action' buttonType={ButtonType.hero} iconProps={{ iconName: 'ChevronRight' }} onClick={this.click}>Run</Button>
     </HeroList>
     ```
 
-6. Carry out the steps in [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) to trust the certificate for your development computer's operating system.
+### Update the manifest
 
-7. Sideload your add-in so it will appear in Excel. In the terminal, run the following command: 
-    
-    ```bash
-    npm run sideload
+1. Open the file **manifest.xml** to define the add-in's settings and capabilities. 
+
+2. The `ProviderName` element has a placeholder value. Replace it with your name.
+
+3. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Excel**.
+
+4. Save the file.
+
+    ```xml
+    ...
+    <ProviderName>John Doe</ProviderName>
+    <DefaultLocale>en-US</DefaultLocale>
+    <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
+    <DisplayName DefaultValue="My Office Add-in" />
+    <Description DefaultValue="A task pane add-in for Excel"/>
+    ...
     ```
+
+### Start the dev server
+
+[!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
 ## Try it out
 
-1. From the terminal, run the following command to start the dev server.
+1. Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within Excel.
 
-    Windows:
-    ```bash
-    npm start
-    ```
+    - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
@@ -80,7 +95,7 @@ In this article, you'll walk through the process of building an Excel add-in usi
 
 3. Select any range of cells in the worksheet.
 
-4. In the task pane, choose the **Set color** button to set the color of the selected range to blue.
+4. In the task pane, choose the **Set color** button to set the color of the selected range to green.
 
     ![Excel add-in](../images/excel-quickstart-addin-2c.png)
 
