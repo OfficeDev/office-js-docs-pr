@@ -20,11 +20,12 @@ The `Range.conditionalFormats` property is a collection of [ConditionalFormat](h
 
 > [!NOTE]
 > Each of these formatting properties has a corresponding `*OrNullObject` variant. Learn more about that pattern in [Advanced programming concepts with the Excel JavaScript API]( https://docs.microsoft.com/en-us/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods).
+
 Only one format type can be set for the ConditionalFormat object. This is determined by the `type` property, which is a [ConditionalFormatType](https://docs.microsoft.com/javascript/api/excel/excel.conditionalformattype) enum. `type` us set when adding a conditional format to a range. 
 
 ## Creating conditional formatting rules
 
-Conditional formats are added to a range by using the `add` method on the range’s `conditionalFormats` property. Once added, the properties specific to the conditional format are set. The following examples show the creation of different formatting types.
+Conditional formats are added to a range by using `conditionalFormats.add`. Once added, the properties specific to the conditional format can be set. The following examples show the creation of different formatting types.
 
 ### [Cell value](https://docs.microsoft.com/javascript/api/excel/excel.cellvalueconditionalformat)
 
