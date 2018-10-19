@@ -10,6 +10,7 @@ Use these methods to validate and troubleshoot issues in your Office Add-ins man
 
 - [Validate your manifest with the Office Add-in Validator](#validate-your-manifest-with-the-office-add-in-validator)	
 - [Validate your manifest against the XML schema](#validate-your-manifest-against-the-xml-schema)
+- [Validate your manifest with the Yeoman generator for Office Add-ins](#validate-your-manifest-with-the-yeoman-generator-for-office-add-ins)
 - [Use runtime logging to debug your add-in manifest](#use-runtime-logging-to-debug-your-add-in-manifest)
 
 
@@ -51,6 +52,20 @@ To help ensure that the manifest file follows the correct schema, including any 
 	```bash
 	xmllint --noout --schema XSD_FILE XML_FILE
 	```
+
+## Validate your manifest with the Yeoman generator for Office Add-ins
+
+If you've created your Office Add-in using the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office), you can ensure that the manifest file follows the correct schema by using the following command:
+
+> [!NOTE]
+> Execute the validation script inside of your project directory.
+
+> [!IMPORTANT]
+> Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office)
+
+```bash
+npm run validate
+```
 
 ## Use runtime logging to debug your add-in 
 
