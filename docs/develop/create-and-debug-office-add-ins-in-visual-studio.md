@@ -66,7 +66,7 @@ The web application project contains a default HTML page and JavaScript file tha
 
 ## Debug your add-in
 
-Visual Studio provides build and debug properties to assist with debugging your add-in.
+Visual Studio provides build and debug properties to assist with debugging your add-in in the Office desktop client on Windows. Visual Studio does not debug add-ins in other Office configurations, such as Office Online, or Office for Mac. For more information on debugging in other configurations, see [Debug Office Add-ins in Office Online](../testing/debug-add-ins-in-office-online.md) or [Debug Office Add-ins on iPad and Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md).
 
 ### Review the build and debug properties
 
