@@ -168,7 +168,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
     cd my-addin
     ```
 
-3. Use the Yeoman generator to generate the manifest file for your add-in. Run the following command and then answer the prompts as shown in the following screenshot:
+3. Use the Yeoman generator to create an Excel add-in project. Run the following command and then answer the prompts as follows:
 
     ```bash
     yo office
