@@ -94,6 +94,7 @@ In this article, you'll walk through the process of building an Excel add-in usi
 
     ```typescript
     import * as React from 'react';
+
     export interface HeaderProps {
         title: string;
     }
