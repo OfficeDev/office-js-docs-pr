@@ -31,7 +31,9 @@ Conditional formats are added to a range by using `conditionalFormats.add`. Once
 
 ### [Cell value](https://docs.microsoft.com/javascript/api/excel/excel.cellvalueconditionalformat)
 
-Cell value conditional formatting applies a user-defined format based on the results of one or two formulas in the [ConditionalCellValueRule]( https://docs.microsoft.com/javascript/api/excel/excel.conditionalcellvaluerule). The `operator` property is a [ConditionalCellValueOperator]( https://docs.microsoft.com/javascript/api/excel/excel.conditionalcellvalueoperator) defining how the resulting expressions relate to the formatting. The following example shows red font coloring applied to any value in the range less than zero.
+Cell value conditional formatting applies a user-defined format based on the results of one or two formulas in the [ConditionalCellValueRule]( https://docs.microsoft.com/javascript/api/excel/excel.conditionalcellvaluerule). The `operator` property is a [ConditionalCellValueOperator]( https://docs.microsoft.com/javascript/api/excel/excel.conditionalcellvalueoperator) defining how the resulting expressions relate to the formatting. 
+
+The following example shows red font coloring applied to any value in the range less than zero.
 
 ![A range with negative numbers in red.](../images/excel-conditional-format-cell-value.png)
 
@@ -119,7 +121,9 @@ await context.sync();
 ```
 ### [Data bar](https://docs.microsoft.com/javascript/api/excel/excel.databarconditionalformat)
 
-Data bar conditional formatting adds data bars to the cells. By default, the minimum and maximum values in the Range form the bounds and proportional sizes of the data bars. The `DataBarConditionalFormat` object has several properties to control the bar’s appearance. The following example formats the range with data bars filling left-to-right.
+Data bar conditional formatting adds data bars to the cells. By default, the minimum and maximum values in the Range form the bounds and proportional sizes of the data bars. The `DataBarConditionalFormat` object has several properties to control the bar’s appearance. 
+
+The following example formats the range with data bars filling left-to-right.
 
 ![A range with databars behind the values in cells.](../images/excel-conditional-format-databar.png)
 
@@ -137,7 +141,9 @@ await context.sync();
 
 ### [Icon set](https://docs.microsoft.com/javascript/api/excel/excel.iconsetconditionalformat)
 
-Icon set conditional formatting uses Excel [Icons]( https://docs.microsoft.com/javascript/api/excel/excel.icon) to highlight cells. The `criteria` property is an array of [ConditionalIconCriterion](https://docs.microsoft.com/javascript/api/excel/excel.ConditionalIconCriterion), which define the symbol to inserted and the conditional under which it is inserted. This array is automatically prepopulated with criterion elements with default properties. Individual properties cannot be overwritten. Instead, the whole criteria object must be replaced. The following example shows a three-triangle icon set applied across the range.
+Icon set conditional formatting uses Excel [Icons]( https://docs.microsoft.com/javascript/api/excel/excel.icon) to highlight cells. The `criteria` property is an array of [ConditionalIconCriterion](https://docs.microsoft.com/javascript/api/excel/excel.ConditionalIconCriterion), which define the symbol to be inserted and the condition under which it is inserted. This array is automatically prepopulated with criterion elements with default properties. Individual properties cannot be overwritten. Instead, the whole criteria object must be replaced. 
+
+The following example shows a three-triangle icon set applied across the range.
 
 ![A range with green upward triangles for values above 1000, yellow lines for valuese between 700 and 1000, and red downward triangles for lower values.](../images/excel-conditional-format-iconset.png)
 
@@ -178,7 +184,9 @@ await context.sync();
 
 ### [Preset criteria](https://docs.microsoft.com/javascript/api/excel/excel.presetcriteriaconditionalformat)
 
-Preset conditional formatting applies a user-defined format to the range based on a selected standard rule. These rules are defined by the [ConditionalFormatPresetCriterion](https://docs.microsoft.com/javascript/api/excel/excel.ConditionalFormatPresetCriterion) in the [ConditionalPresetCriteriaRule](https://docs.microsoft.com/javascript/api/excel/excel.conditionalpresetcriteriarule). The following example colors the font white wherever a cell’s value is at least one standard deviation above the range’s average.
+Preset conditional formatting applies a user-defined format to the range based on a selected standard rule. These rules are defined by the [ConditionalFormatPresetCriterion](https://docs.microsoft.com/javascript/api/excel/excel.ConditionalFormatPresetCriterion) in the [ConditionalPresetCriteriaRule](https://docs.microsoft.com/javascript/api/excel/excel.conditionalpresetcriteriarule). 
+
+The following example colors the font white wherever a cell’s value is at least one standard deviation above the range’s average.
 
 ![A range with white font cells where the values are at least one standard deviation above average.](../images/excel-conditional-format-preset.png)
 
@@ -200,7 +208,9 @@ await context.sync();
 
 ### [Text comparison](https://docs.microsoft.com/javascript/api/excel/excel.textconditionalformat)
 
-Text comparison conditional formatting uses string comparisons as the condition. The `rule` property is a [ConditionalTextComparisonRule](https://docs.microsoft.com/javascript/api/excel/excel.conditionaltextcomparisonrule) defining a string to compare with the cell and an operator to specify the type of comparison. The following example formats the font color red when a cell’s text contains “Delayed”.
+Text comparison conditional formatting uses string comparisons as the condition. The `rule` property is a [ConditionalTextComparisonRule](https://docs.microsoft.com/javascript/api/excel/excel.conditionaltextcomparisonrule) defining a string to compare with the cell and an operator to specify the type of comparison. 
+
+The following example formats the font color red when a cell’s text contains “Delayed”.
 
 ![A range with cells containing "Delayed" in red.](../images/excel-conditional-format-text.png)
 
@@ -223,7 +233,10 @@ await context.sync();
 
 ### [Top/bottom](https://docs.microsoft.com/javascript/api/excel/excel.TopBottomconditionalformat)
 
-Top/bottom conditional formatting applies a format to the highest or lowest values in a range. Whether the condition is based on the highest or lowest, as well as whether the evaluation is ranked or percentage-based, is set by the `rule` property of type [ConditionalTopBottomRule](https://docs.microsoft.com/javascript/api/excel/excel.conditionaltopbottomrule). The following example applies a green highlight to the highest value cell in the range.
+Top/bottom conditional formatting applies a format to the highest or lowest values in a range. The `rule` property, which is of type [ConditionalTopBottomRule](https://docs.microsoft.com/javascript/api/excel/excel.conditionaltopbottomrule), sets whether the condition is based on the highest or lowest, as well as whether the evaluation is ranked or percentage-based. 
+
+The following example applies a green highlight to the highest value cell in the range.
+
 
 ![A range with the highest number highlighted in green.](../images/excel-conditional-format-topbottom.png)
 
@@ -251,8 +264,6 @@ The following example shows a conflicting font color choice between the two form
 
 ```typescript
 const sheet = context.workbook.worksheets.getItem("Sample");
-queueCommandsToClearAllConditionalFormats(sheet);
-
 const temperatureDataRange = sheet.tables.getItem("TemperatureTable").getDataBodyRange();
 
 
@@ -286,8 +297,6 @@ The following example shows two conditional formats being added to a range. Nega
 
 ```typescript
 const sheet = context.workbook.worksheets.getItem("Sample");
-queueCommandsToClearAllConditionalFormats(sheet);
-
 const temperatureDataRange = sheet.tables.getItem("TemperatureTable").getDataBodyRange();
 
 // Set low numbers to bold, dark red font and assign priority 1.
