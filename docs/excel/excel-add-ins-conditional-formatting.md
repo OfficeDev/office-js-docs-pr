@@ -51,7 +51,13 @@ await context.sync();
 
 ### [Color scale](https://docs.microsoft.com/javascript/api/excel/excel.colorscaleconditionalformat)
 
-Color scale conditional formatting applies a color gradient across the data range. The `criteria` property on the `ColorScaleConditionalFormat` defines the colors for the minimum, maximum, and optional midpoint. Every cell will be proportionally colored based on its value relative to the minimum, midpoint, and maximum. The following example shows a range being colored blue to yellow to red.
+Color scale conditional formatting applies a color gradient across the data range. The `criteria` property on the `ColorScaleConditionalFormat` defines three [ConditionalColorScaleCriterion](https://docs.microsoft.com/javascript/api/excel/excel.conditionalcolorscalecriterion): `minimum`, `maximum`, and, optionally, `midpoint`. Each of the criterion scale points have three properties:
+
+-	`color` - The HTML color code for the endpoint.
+-	`formula` - A number or formula representing the endpoint. This will be `null` if `type` is `lowestValue` or `highestValue`.
+-	`type` - How the formula should be evaluated. `highestValue` and `lowestValue` refer to values in the range being formatted.
+
+The following example shows a range being colored blue to yellow to red. Note that `minimum` and `maximum` are the lowest and highest values respectively and use `null` formulas. `midpoint` is using the `percentage` type with a formula of `”=50”` so the yellowest cell is the mean value.
 
 ![A range with the low number in blue, average number in yellow, and high number is red, with gradients for between values.](../images/excel-conditional-format-color-scale.png)
 
@@ -87,9 +93,15 @@ await context.sync();
 
 ### [Custom](https://docs.microsoft.com/javascript/api/excel/excel.customconditionalformat) 
 
-Custom conditional formatting applies a user-defined format to the cells based on a formula of arbitrary complexity. The following example colors the fonts green of cells with higher values than the cell to their left.
+Custom conditional formatting applies a user-defined format to the cells based on a formula of arbitrary complexity. The [ConditionalFormatRule](https://docs.microsoft.com/javascript/api/excel/excel.conditionalformatrule) object lets you define the formula in different notations:
 
-![A range with green numbers for places the preceeding column's value in that row is lower.](../images/excel-conditional-format-custom.png)
+-	`formula` - Standard notation. 
+-	`formulaLocal` - Localized based on the user’s language.
+-	`formulaR1C1` - R1C1-style notation.
+
+The following example colors the fonts green of cells with higher values than the cell to their left.
+
+![A range with green numbers for places the preceding column's value in that row is lower.](../images/excel-conditional-format-custom.png)
 
 ```typescript
 const sheet = context.workbook.worksheets.getItem("Sample");
