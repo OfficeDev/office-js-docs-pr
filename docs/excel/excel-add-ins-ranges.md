@@ -1,7 +1,7 @@
 ---
 title: Work with ranges using the Excel JavaScript API
 description: ''
-ms.date: 12/04/2017
+ms.date: 10/19/2018
 ---
 
 
@@ -530,6 +530,10 @@ Excel.run(function (context) {
 **Data in range after number format is set**
 
 ![Data in Excel after format is set](../images/excel-ranges-format-numbers.png)
+
+### Conditional formatting of ranges
+
+Ranges can have formats applied to individual cells based on conditions. For more information about this, see [Apply conditional formatting to Excel ranges](excel-add-ins-conditional-formatting.md).
 
 ## Copy and Paste
 
