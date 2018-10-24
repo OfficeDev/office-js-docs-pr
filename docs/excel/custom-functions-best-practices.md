@@ -1,5 +1,5 @@
 ---
-ms.date: 10/17/2018
+ms.date: 10/24/2018
 description: Learn best practices and recommended patterns for Excel custom functions.
 title: Custom functions best practices
 ---
@@ -32,9 +32,9 @@ function getComment(x) {
 
 ## Troubleshooting
 
-If you are testing your add-in in Office on Windows desktop, we highly recommend you enable **[runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** to troubleshoot issues with your add-in's XML manifest file as well as several installation and runtime conditions. Runtime logging will also write out `console.log` statements within your custom functions code to the log file.
+If you are testing your add-in in Office on Windows, you should enable **[runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** to troubleshoot issues with your add-in's XML manifest file, as well as several installation and runtime conditions. Runtime logging writes `console.log` statements to a log file to help you uncover issues.
 
-If you continue to have have issues, we recommend you send feedback to us via File > Feedback > Send a frown feature in Excel. This will provide us logs needed to understand what issue you may be hitting.
+To report feedback to the Excel Custom Functions team about this method of troubleshooting, send the team feedback. To do this, select File > Feedback > Send a Frown. Sending a frown will provide the necessary logs to understand the issue you are hitting. 
 
 ## Debugging
 
