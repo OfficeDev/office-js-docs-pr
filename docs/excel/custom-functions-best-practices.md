@@ -1,5 +1,5 @@
 ---
-ms.date: 10/17/2018
+ms.date: 10/24/2018
 description: Learn best practices and recommended patterns for Excel custom functions.
 title: Custom functions best practices
 ---
@@ -30,6 +30,12 @@ function getComment(x) {
 }
 ```
 
+## Troubleshooting
+
+If you are testing your add-in in Office on Windows, you should enable **[runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** to troubleshoot issues with your add-in's XML manifest file, as well as several installation and runtime conditions. Runtime logging writes `console.log` statements to a log file to help you uncover issues.
+
+To report feedback to the Excel Custom Functions team about this method of troubleshooting, send the team feedback. To do this, select **File | Feedback | Send a Frown**. Sending a frown will provide the necessary logs to understand the issue you are hitting. 
+
 ## Debugging
 
 Currently, the best method for debugging Excel custom functions is to first [sideload](../testing/sideload-office-add-ins-for-testing.md) your add-in within **Excel Online**. You can then debug your custom functions by using the [F12 debugging tool native to your browser](../testing/debug-add-ins-in-office-online.md) in combination with the following techniques:
@@ -46,8 +52,6 @@ Currently, the best method for debugging Excel custom functions is to first [sid
     ```
 
 If your add-in fails to register, [verify that SSL certificates are correctly configured](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) for the web server that's hosting your add-in application.
-
-If you are testing your add-in in Office on Windows desktop, you can enable [runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in) to debug issues with your add-in's XML manifest file as well as several installation and runtime conditions.
 
 ## Mapping function names to JSON metadata
 
