@@ -66,7 +66,7 @@ ws.onerror = (error) => {
 
 Within a custom function (or within any other part of an add-in), you can store and access data by using the `OfficeRuntime.AsyncStorage` object. `AsyncStorage` is a persistent, unencrypted, key-value storage system that provides an alternative to [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), which cannot be used within custom functions. An add-in can store up to 10 MB of data using `AsyncStorage`.
 
-`AsyncStorage` is intended as a shared storage solution, so multiple parts of an add in are able to access the same data. For example, tokens for user authentication may be stored in `AsyncStorage` because it can be accessed by both a custom function and add-in UI elements like the task pane. Similarly, if two add-ins share the same domain, they are also permitted to share information back and forth between them through `AsyncStorage`. However, because `AsyncStorage` can be a shared location, it is important to realize that it is possible to override key-value pairs.
+`AsyncStorage` is intended as a shared storage solution, meaning multiple parts of an add-in are able to access the same data. For example, tokens for user authentication may be stored in `AsyncStorage` because it can be accessed by both a custom function and add-in UI elements like the task pane. Similarly, if two add-ins share the same domain, they are also permitted to share information back and forth through `AsyncStorage`. However, because `AsyncStorage` can be a shared location, it is important to realize that it is possible to override key-value pairs.
 
 The following methods are available on the `AsyncStorage` object:
  
@@ -77,7 +77,7 @@ The following methods are available on the `AsyncStorage` object:
  - `flushGetRequests`
  - `multiGet`
  - `multiSet`
- - `multiRemove`: You will note that there is no implementation of a method for clearing all information (such as `clear`). Instead, you should instead use multiRemove to remove multiple entries at a time.
+ - `multiRemove`: You will note that there is no implementation of a method for clearing all information (such as `clear`). Instead, you should instead use `multiRemove` to remove multiple entries at a time.
 
 ### AsyncStorage example 
 
