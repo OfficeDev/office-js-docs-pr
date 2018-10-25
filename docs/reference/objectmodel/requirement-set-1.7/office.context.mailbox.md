@@ -97,7 +97,7 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#s
 
 Adds an event handler for a supported event.
 
-Currently, the supported event types are `Office.EventType.ItemChanged` and `Office.EventType.OfficeThemeChanged`.
+Currently, the only supported event type is `Office.EventType.ItemChanged`.
 
 ##### Parameters:
 
@@ -691,7 +691,7 @@ function callback(asyncResult)  {
 
 Removes an event handler for a supported event.
 
-Currently, the supported event types are `Office.EventType.ItemChanged` and `Office.EventType.OfficeThemeChanged`.
+Currently, the only supported event type is `Office.EventType.ItemChanged`.
 
 ##### Parameters:
 
