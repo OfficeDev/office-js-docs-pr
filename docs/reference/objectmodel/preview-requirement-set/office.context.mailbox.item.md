@@ -26,6 +26,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [dateTimeModified](#datetimemodified-date) | Member |
 | [end](#end-datetimejavascriptapioutlookofficetime) | Member |
 | [from](#from-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsfromjavascriptapioutlookofficefrom) | Member |
+| [internetHeaders](#internetheaders) | Member |
 | [internetMessageId](#internetmessageid-string) | Member |
 | [itemClass](#itemclass-string) | Member |
 | [itemId](#nullable-itemid-string) | Member |
@@ -49,6 +50,8 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [close](#close) | Method |
 | [displayReplyAllForm](#displayreplyallformformdata) | Method |
 | [displayReplyForm](#displayreplyformformdata) | Method |
+| [getAttachmentContentAsync](#getattachmentcontentasync) | Method |
+| [getAttachmentsAsync](#getattachmentsasync) | Method |
 | [getEntities](#getentities--entitiesjavascriptapioutlookofficeentities) | Method |
 | [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactjavascriptapioutlookofficecontactmeetingsuggestionjavascriptapioutlookofficemeetingsuggestionphonenumberjavascriptapioutlookofficephonenumbertasksuggestionjavascriptapioutlookofficetasksuggestion) | Method |
 | [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactjavascriptapioutlookofficecontactmeetingsuggestionjavascriptapioutlookofficemeetingsuggestionphonenumberjavascriptapioutlookofficephonenumbertasksuggestionjavascriptapioutlookofficetasksuggestion) | Method |
@@ -87,7 +90,7 @@ Office.initialize = function () {
 
 #### attachments :Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)>
 
-Gets an array of attachments for the item. Read mode only.
+Gets the item's attachments as an array. Read mode only.
 
 > [!NOTE]
 > Certain types of files are blocked by Outlook due to potential security issues and are therefore not returned. For more information, see [Blocked attachments in Outlook](https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519).
@@ -364,6 +367,22 @@ function callback(asyncResult) {
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|1.7|
 |[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|ReadWriteItem|
 |[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Read|Compose|
+
+#### internetHeaders :[InternetHeaders](/javascript/api/outlook/office.internetheaders)
+
+Gets or sets the internet headers of a message.
+
+##### Type:
+
+*   [InternetHeaders](/javascript/api/outlook/office.internetheaders)
+
+##### Requirements
+
+|Requirement|Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Preview|
+|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Compose or read|
 
 #### internetMessageId :String
 
@@ -999,7 +1018,7 @@ Office.context.mailbox.item.addFileAttachmentFromBase64Async(
 
 Adds an event handler for a supported event.
 
-Currently the supported event types are `Office.EventType.AppointmentTimeChanged`, `Office.EventType.RecipientsChanged`, and `Office.EventType.RecurrenceChanged`
+Currently the supported event types are `Office.EventType.AttachmentsChanged`, `Office.EventType.AppointmentTimeChanged`, `Office.EventType.RecipientsChanged`, and `Office.EventType.RecurrenceChanged`.
 
 ##### Parameters:
 
@@ -1333,6 +1352,112 @@ Office.context.mailbox.item.displayReplyForm(
     console.log(asyncResult.value);
   }
 });
+```
+
+#### getAttachmentContentAsync(attachmentId, [options], callback) → [AttachmentContent](/javascript/api/outlook/office.attachmentcontent)
+
+Gets the specified attachment from a message or appointment and returns it as an `AttachmentContent` object.
+
+The `getAttachmentContentAsync` method gets the attachment with the specified identifier from the item. As a best practice, you should use the identifier to retrieve an attachment in the same session that the attachmentIds were retrieved with the `getAttachmentsAsync` or `item.attachments` call. In Outlook Web App and OWA for Devices, the attachment identifier is valid only within the same session. A session is over when the user closes the app, or if the user starts composing an inline form then subsequently pops out the form to continue in a separate window.
+
+##### Parameters:
+
+|Name|Type|Attributes|Description|
+|---|---|---|---|
+|`attachmentId`|String||The identifier of the attachment you want to get. The maximum length of the string is 100 characters.|
+|`options`|Object|&lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`|Object|&lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|`callback`|function|&lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object.|
+
+##### Requirements
+
+|Requirement|Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Preview|
+|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Compose or read|
+
+##### Returns:
+
+Type:
+[AttachmentContent](/javascript/api/outlook/office.attachmentcontent)
+
+##### Example
+
+```
+var item = Office.context.mailbox.item;
+var listOfAttachments = [];
+item.getAttachmentsAsync(callback);
+function callback(result) {
+    if (result.value.length > 0) {
+        for (i = 0 ; i < result.value.length ; i++) {
+            var options = {asyncContext: {type: result.value[i].attachmentType}};
+            getAttachmentContentAsync(result.value[i].id, options, handleAttachmentsCallback);  
+        }
+    }
+}
+
+function handleAttachmentsCallback(result) {
+    //parse string to be a url, an .eml file, or a base64 encoded string
+    if (result.format == Office.MailboxEnums.AttachmentContentFormat.Base64) {
+        //handle file attachment
+    }
+    else if (result.format == Office.MailboxEnums.AttachmentContentFormat.Eml) {
+        //handle item attachment
+    }
+    else {
+        //handle cloud attachment  
+    }
+}
+```
+
+#### getAttachmentsAsync([options], callback) → Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)>
+
+Gets the item's attachments as an array. Compose mode only.
+
+##### Parameters:
+
+|Name|Type|Attributes|Description|
+|---|---|---|---|
+|`options`|Object|&lt;optional&gt;|An object literal that contains one or more of the following properties.|
+|`options.asyncContext`|Object|&lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
+|`callback`|function|&lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object.|
+
+##### Requirements
+
+|Requirement|Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Preview|
+|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Compose|
+
+##### Returns:
+
+Type:
+Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)>
+
+##### Example
+
+The following example builds an HTML string with details of all attachments on the current item.
+
+```
+var item = Office.context.mailbox.item;
+var outputString = "";
+item.getAttachmentsAsync(callback);  
+function callback(result) {
+    if (result.value.length > 0) {
+        for (i = 0 ; i < result.value.length ; i++) {
+            var _att = result.value [i];
+            outputString += "<BR>" + i + ". Name: ";
+            outputString += _att.name;
+            outputString += "<BR>ID: " + _att.id;
+            outputString += "<BR>contentType: " + _att.contentType;
+            outputString += "<BR>size: " + _att.size;
+            outputString += "<BR>attachmentType: " + _att.attachmentType;
+            outputString += "<BR>isInline: " + _att.isInline;
+        }
+    }
+}
 ```
 
 #### getEntities() → {[Entities](/javascript/api/outlook/office.entities)}
@@ -1824,7 +1949,7 @@ function saveCallback(asyncResult) {
 
 Removes an attachment from a message or appointment.
 
-The `removeAttachmentAsync` method removes the attachment with the specified identifier from the item. As a best practice, you should use the attachment identifier to remove an attachment only if the same mail app has added that attachment in the same session. In Outlook Web App and OWA for Devices, the attachment identifier is valid only within the same session. A session is over when the user closes the app, or if the user starts composing in an inline form and subsequently pops out the inline form to continue in a separate window.
+The `removeAttachmentAsync` method removes the attachment with the specified identifier from the item. As a best practice, you should use the attachment identifier to remove an attachment only if the same mail app has added that attachment in the same session. In Outlook Web App and OWA for Devices, the attachment identifier is valid only within the same session. A session is over when the user closes the app, or if the user starts composing an inline form then subsequently pops out the form to continue in a separate window.
 
 ##### Parameters:
 
@@ -1868,7 +1993,7 @@ Office.context.mailbox.item.removeAttachmentAsync(
 
 Removes an event handler for a supported event.
 
-Currently the supported event types are `Office.EventType.AppointmentTimeChanged`, `Office.EventType.RecipientsChanged`, and `Office.EventType.RecurrenceChanged`
+Currently the supported event types are `Office.EventType.AttachmentsChanged`, `Office.EventType.AppointmentTimeChanged`, `Office.EventType.RecipientsChanged`, and `Office.EventType.RecurrenceChanged`.
 
 ##### Parameters:
 
