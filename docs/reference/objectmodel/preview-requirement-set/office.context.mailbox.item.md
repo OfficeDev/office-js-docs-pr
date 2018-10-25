@@ -26,7 +26,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [dateTimeModified](#datetimemodified-date) | Member |
 | [end](#end-datetimejavascriptapioutlookofficetime) | Member |
 | [from](#from-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsfromjavascriptapioutlookofficefrom) | Member |
-| [internetHeaders](#internetheaders) | Member |
+| [internetHeaders](#internetheaders-internetheadersjavascriptapioutlookofficeinternetheaders) | Member |
 | [internetMessageId](#internetmessageid-string) | Member |
 | [itemClass](#itemclass-string) | Member |
 | [itemId](#nullable-itemid-string) | Member |
@@ -50,8 +50,8 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [close](#close) | Method |
 | [displayReplyAllForm](#displayreplyallformformdata) | Method |
 | [displayReplyForm](#displayreplyformformdata) | Method |
-| [getAttachmentContentAsync](#getattachmentcontentasync) | Method |
-| [getAttachmentsAsync](#getattachmentsasync) | Method |
+| [getAttachmentContentAsync](#getattachmentcontentasyncattachmentid-options-callback--attachmentcontentjavascriptapioutlookofficeattachmentcontent) | Method |
+| [getAttachmentsAsync](#getattachmentsasyncoptions-callback--arrayattachmentdetailsjavascriptapioutlookofficeattachmentdetails) | Method |
 | [getEntities](#getentities--entitiesjavascriptapioutlookofficeentities) | Method |
 | [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactjavascriptapioutlookofficecontactmeetingsuggestionjavascriptapioutlookofficemeetingsuggestionphonenumberjavascriptapioutlookofficephonenumbertasksuggestionjavascriptapioutlookofficetasksuggestion) | Method |
 | [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactjavascriptapioutlookofficecontactmeetingsuggestionjavascriptapioutlookofficemeetingsuggestionphonenumberjavascriptapioutlookofficephonenumbertasksuggestionjavascriptapioutlookofficetasksuggestion) | Method |
