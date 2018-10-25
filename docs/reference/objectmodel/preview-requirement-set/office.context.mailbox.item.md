@@ -1999,7 +1999,7 @@ Currently the supported event types are `Office.EventType.AttachmentsChanged`, `
 
 | Name | Type | Attributes | Description |
 |---|---|---|---|
-| `eventType` | [Office.EventType](office.md#eventtype-string) || The event that should invoke the handler. |
+| `eventType` | [Office.EventType](office.md#eventtype-string) || The event that should revoke the handler. |
 | `handler` | Function || The function to handle the event. The function must accept a single parameter, which is an object literal. The `type` property on the parameter will match the `eventType` parameter passed to `removeHandlerAsync`. |
 | `options` | Object | &lt;optional&gt; | An object literal that contains one or more of the following properties. |
 | `options.asyncContext` | Object | &lt;optional&gt; | Developers can provide any object they wish to access in the callback method. |
