@@ -12,7 +12,7 @@ The Preview Requirement set includes all of the features of [Requirement set 1.7
 The following features are in preview.
 
 - [AttachmentContent](/javascript/api/outlook/office.attachmentcontent) - Added a new object that represents the content of a message or appointment item.
-- [InternetHeaders](/javascript/api/outlookoffice.internetheaders) - Added a new object that represents the internet headers of a message item.
+- [InternetHeaders](/javascript/api/outlook/office.internetheaders) - Added a new object that represents the internet headers of a message item.
 - [SharedProperties](/javascript/api/outlook/office.sharedproperties) - Added a new object that represents the properties of an appointment or message item in a shared folder, calendar, or mailbox.
 - [Event.completed](/javascript/api/office/office.addincommands.event#completed-options-) - A new optional parameter `options`, which is a dictionary with one valid value `allowEvent`. This value is used to cancel execution of an event.
 - [Office.context.mailbox.item.addFileAttachmentFromBase64Async](office.context.mailbox.item.md#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) - Added a new method that attaches a file from the base64 encoding to a message or appointment.
