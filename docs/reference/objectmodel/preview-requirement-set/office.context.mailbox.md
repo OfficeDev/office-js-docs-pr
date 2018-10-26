@@ -32,6 +32,7 @@ Provides access to the Outlook add-in object model for Microsoft Outlook and Mic
 | [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | Method |
 | [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | Method |
 | [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | Method |
+| [removeHandlerAsync](#removehandlerasynceventtype-handler-options-callback) | Method |
 
 ### Namespaces
 
@@ -685,3 +686,27 @@ function callback(asyncResult)  {
    // Process the returned response here.
 }
 ```
+
+####  removeHandlerAsync(eventType, handler, [options], [callback])
+
+Removes an event handler for a supported event.
+
+Currently, the supported event types are `Office.EventType.ItemChanged` and `Office.EventType.OfficeThemeChanged`.
+
+##### Parameters:
+
+| Name | Type | Attributes | Description |
+|---|---|---|---|
+| `eventType` | [Office.EventType](office.md#eventtype-string) || The event that should revoke the handler. |
+| `handler` | Function || The function to handle the event. The function must accept a single parameter, which is an object literal. The `type` property on the parameter will match the `eventType` parameter passed to `addHandlerAsync`. |
+| `options` | Object | &lt;optional&gt; | An object literal that contains one or more of the following properties. |
+| `options.asyncContext` | Object | &lt;optional&gt; | Developers can provide any object they wish to access in the callback method. |
+| `callback` | function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.|
+
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
+|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem |
+|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
