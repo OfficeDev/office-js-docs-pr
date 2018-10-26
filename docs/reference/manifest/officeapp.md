@@ -49,7 +49,7 @@ The root element in the manifest of an Office Add-in.
 |[Permissions](permissions.md)||x||
 |[DisableEntityHighlighting](disableentityhighlighting.md)||x||
 |[Dictionary](dictionary.md)|||x|
-|[VersionOverrides](versionoverrides.md)|X|X|X|
+|[VersionOverrides](versionoverrides.md)||x||
 
 ## Attributes
 
