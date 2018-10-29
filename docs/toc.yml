@@ -439,28 +439,26 @@
 
 - name: Reference
   items:
-  - name: JavaScript API for Office error codes
-    href: reference/javascript-api-for-office-error-codes.md
 
   - name: API overview
     href: reference/javascript-api-for-office.md
     items:
-    - name: Excel JavaScript API overview
+    - name: Excel API overview
       href: reference/overview/excel-add-ins-reference-overview.md
-    - name: OneNote JavaScript API overview
+    - name: OneNote API overview
       href: reference/overview/onenote-add-ins-javascript-reference.md
-    - name: PowerPoint
+    - name: PowerPoint API overview
       href: reference/requirement-sets/powerpoint-and-project-note.md
-    - name: Project
+    - name: Project API overview
       href: reference/requirement-sets/powerpoint-and-project-note.md
-    - name: Visio
+    - name: Visio API overview
       href: reference/overview/visio-javascript-reference-overview.md
-    - name: Word
+    - name: Word API overview
       href: reference/overview/word-add-ins-reference-overview.md
 
   - name: API requirement sets
     items:
-    - name: Common
+    - name: Common requirement sets
       items:
       - name: Add-in commands requirement sets
         href: reference/requirement-sets/add-in-commands-requirement-sets.md
@@ -470,13 +468,13 @@
         href: reference/requirement-sets/identity-api-requirement-sets.md
       - name: Office common API requirement sets
         href: reference/requirement-sets/office-add-in-requirement-sets.md
-    - name: Excel JavaScript API requirement sets
+    - name: Excel requirement sets
       href: reference/requirement-sets/excel-api-requirement-sets.md
-    - name: OneNote JavaScript API requirement sets
+    - name: OneNote requirement sets
       href: reference/requirement-sets/onenote-api-requirement-sets.md
-    - name: Outlook JavaScript API requirement sets
+    - name: Outlook requirement sets
       href: reference/requirement-sets/outlook-api-requirement-sets.md
-    - name: Outlook Object Model
+    - name: Outlook object model
       items:
       - name: Preview Requirement Set
         href: reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md
@@ -617,7 +615,7 @@
     - name: Word JavaScript API requirement sets
       href: reference/requirement-sets/word-api-requirement-sets.md
 
-  - name: API Reference
+  - name: API reference
     items:
     - name: Common API Reference
       href: /javascript/api/office
@@ -629,8 +627,12 @@
       href: /javascript/api/visio
     - name: Word API Reference
       href: /javascript/api/word
-    - name: API open specifications
-      href: reference/openspec.md
+
+  - name: API open specifications
+    href: reference/openspec.md
+
+  - name: Error codes
+    href: reference/javascript-api-for-office-error-codes.md
 
   - name: Office Add-in manifest reference
     items:
