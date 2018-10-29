@@ -79,7 +79,7 @@ The following instruction are written generically so they can be used in multipl
     |:-----|:-----|
     |ida:ClientID|The application ID you obtained when you registered the add-in.|
     |ida:Audience|The application ID you obtained when you registered the add-in.|
-    |ida:Password|TThe password you obtained when you registered the add-in.|
+    |ida:Password|The password you obtained when you registered the add-in.|
 
    The following is an example of what the four keys you changed should look like. *Note that ClientID and Audience are the same*. You can also use a single key for both purposes, but your web.config markup is more reusable if you keep them separate because they aren't always the same. Also, having separate keys reinforces the idea that your add-in is both an OAuth resource, relative to the Office host, and an OAuth client, relative to Microsoft Graph.
 
