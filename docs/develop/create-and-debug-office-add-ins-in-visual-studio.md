@@ -6,7 +6,7 @@ ms.date: 10/30/2018
 
 # Create and debug Office Add-ins in Visual Studio
 
-This article describes how to use Visual Studio to create and debug an Office Add-in for Excel, Word, PowerPoint, or Outlook. The steps in this article are based on Visual Studio 2017. If you're using another version of Visual Studio, the procedures might vary slightly.
+This article describes how to use Visual Studio 2017 to create and debug an Office Add-in for Excel, Word, PowerPoint, or Outlook. If you're using another version of Visual Studio, the procedures might vary slightly.
 
 > [!NOTE]
 > Visual Studio does not currently support creating add-ins for OneNote or Project, but you can use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) to create these types of add-ins.
@@ -28,25 +28,29 @@ This article describes how to use Visual Studio to create and debug an Office Ad
 
 ## Create the add-in project in Visual Studio
 
-1. Open Visual Studio and on the Visual Studio menu bar, choose  **File** > **New** > **Project**.
+1. Open Visual Studio and from the Visual Studio menu bar, choose  **File** > **New** > **Project**.
 
 2. In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose the type of add-in project you want to create. 
 
 3. Name the project, and then choose **OK**.
 
-4. If you've chosen to create a **Word Web Add-in** or an **Outlook Web Add-in**, Visual Studio creates a solution and its two projects appear in **Solution Explorer**. If you've chosen to create an **Excel Web Add-in** or a **PowerPoint Web Add-in**, the **Create Office Add-in** dialog appears.
+4. If you've chosen to create a **Word Web Add-in** or an **Outlook Web Add-in**, Visual Studio creates a solution and its two projects appear in **Solution Explorer**. Proceed to the next section of this article to [explore the Visual Studio solution](#explore-the-visual-studio-solution). 
 
-    For PowerPoint, you can choose either of the following options:
-        - **Add new functionalities to PowerPoint** - to create a task pane add-in
-        - **Insert content into PowerPoint slides** - to create a content add-in
+5. If you've chosen to create a **PowerPoint Web Add-in**, the **Create Office Add-in** dialog appears. Select one of the following options and choose the **Finish** button to create the Visual Studio solution. Then proceed to the next section of this article to [explore the Visual Studio solution](#explore-the-visual-studio-solution). 
 
-    For Excel, you can choose either of the following options:
-        - **Add new functionalities to Excel** - to create a task pane add-in
-        - **Insert content into Excel spreadsheet** - to create a content add-in
-        
-        If you choose **Insert content into Excel spreadsheet**, you can then choose either of the following options:
-            - **Basic Add-in** - to create a content add-in project with minimal starter code
-            - **Document Visualization Add-in** - to create a content add-in project with starter code to visualize and bind to data
+    - **Add new functionalities to PowerPoint** - to create a task pane add-in
+
+    - **Insert content into PowerPoint slides** - to create a content add-in
+
+6. If you've chosen to create an **Excel Web Add-in**, the **Create Office Add-in** dialog appears. 
+
+    - To create a task pane add-in, select **Add new functionalities to Excel** and then choose the **Finish** button to create the Visual Studio solution.
+
+    - To create a content add-in, select **Insert content into Excel spreadsheet**, choose the **Next** button, select one of the following options, and then choose the **Finish** button to create the Visual Studio solution:
+
+        - **Basic Add-in** - to create a content add-in project with minimal starter code
+
+        - **Document Visualization Add-in** - to create a content add-in project with starter code to visualize and bind to data  
 
 ### Explore the Visual Studio solution
 
