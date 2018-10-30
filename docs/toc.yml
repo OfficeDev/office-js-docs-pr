@@ -624,6 +624,8 @@
       href: /javascript/api/excel      
     - name: OneNote API Reference
       href: /javascript/api/onenote
+    - name: Outlook API Reference
+      href: /javascript/api/outlook
     - name: Visio API Reference
       href: /javascript/api/visio
     - name: Word API Reference
