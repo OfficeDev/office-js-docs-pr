@@ -613,22 +613,22 @@
           href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.userProfile.md
         - name: Outlook 1.1 API Reference
           href: /javascript/api/outlook_1_1
-    - name: Word JavaScript API requirement sets
+    - name: Word requirement sets
       href: reference/requirement-sets/word-api-requirement-sets.md
 
   - name: API reference
     items:
-    - name: Common API Reference
+    - name: Common API reference
       href: /javascript/api/office
-    - name: Excel API Reference
+    - name: Excel API reference
       href: /javascript/api/excel      
-    - name: OneNote API Reference
+    - name: OneNote API reference
       href: /javascript/api/onenote
-    - name: Outlook API Reference
+    - name: Outlook API reference
       href: /javascript/api/outlook
-    - name: Visio API Reference
+    - name: Visio API reference
       href: /javascript/api/visio
-    - name: Word API Reference
+    - name: Word API reference
       href: /javascript/api/word
 
   - name: API open specifications
