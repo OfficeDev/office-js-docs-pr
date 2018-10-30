@@ -37,9 +37,13 @@ Some of the core Excel objects are listed below for convenience:
 
 As we design and develop new APIs for Excel add-ins, we'll make them available for your feedback on our [Open API specifications](../openspec.md) page. Find out what new features are in the pipeline for the Excel JavaScript APIs, and provide your input on our design specifications.
 
+## Excel JavaScript API requirement sets
+
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For detailed information about Excel JavaScript API requirement sets, see the [Excel JavaScript API requirement sets](../requirement-sets/excel-api-requirement-sets.md) article.
+
 ## Excel JavaScript API reference
 
-For detailed information about Excel JavaScript API, see the [Excel JavaScript API reference documentation](/javascript/api/excel).
+For detailed information about the Excel JavaScript API, see the [Excel JavaScript API reference documentation](/javascript/api/excel).
 
 ## See also
 

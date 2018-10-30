@@ -38,9 +38,13 @@ The following links show the high level OneNote objects available in the API. Ea
 - [TableCell](/javascript/api/onenote/onenote.tablecell): A container for Paragraph objects.
     - [TableCellCollection](/javascript/api/onenote/onenote.tablecellcollection): A collection of TableCell objects in a TableRow.
 
+## OneNote JavaScript API requirement sets
+
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For detailed information about OneNote JavaScript API requirement sets, see the [OneNote JavaScript API requirement sets](../requirement-sets/onenote-api-requirement-sets.md) article.
+
 ## OneNote JavaScript API reference
 
-For detailed information about OneNote JavaScript API, see the [OneNote JavaScript API reference documentation](/javascript/api/onenote).
+For detailed information about the OneNote JavaScript API, see the [OneNote JavaScript API reference documentation](/javascript/api/onenote).
 
 ## See also
 

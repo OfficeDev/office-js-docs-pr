@@ -114,6 +114,10 @@ Word.run(function (context) {
 
 As we design and develop new APIs for Word add-ins, we'll make them available for your feedback on our [Open API specifications](../openspec.md) page. Find out what new features are in the pipeline for the Word JavaScript APIs, and provide your input on our design specifications.
 
+## Word JavaScript API requirement sets
+
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For detailed information about Word JavaScript API requirement sets, see the [Word JavaScript API requirement sets](../requirement-sets/word-api-requirement-sets.md) article.
+
 ## Word JavaScript API reference
 
 For detailed information about the Word JavaScript API, see the [Word JavaScript API reference documentation](/javascript/api/word).
