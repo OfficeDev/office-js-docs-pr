@@ -68,7 +68,10 @@ To turn on runtime logging:
 
 1. Make sure that you are running Office 2016 desktop build **16.0.7019** or later. 
 
-2. Add the `RuntimeLogging` registry key under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\`. 
+2. Add the `RuntimeLogging` registry key under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\`. 
+
+    > [!TIP]
+    > If the `Developer` folder (key) does not already exist under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\`, complete the following steps to create it: <ol><li>Right-click the **WEF** folder and select **New** > **Key**.</li><li>Name the new key **Developer**.</li></ol>
 
 3. Set the default value of the key to the full path of the file where you want the log to be written. For an example, see [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip). 
 
