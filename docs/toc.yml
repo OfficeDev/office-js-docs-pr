@@ -441,8 +441,9 @@
   items:
 
   - name: API overview
-    href: reference/javascript-api-for-office.md
     items:
+    - name: JavaScript API for Office overview
+      href: reference/javascript-api-for-office.md
     - name: Excel API overview
       href: reference/overview/excel-add-ins-reference-overview.md
     - name: OneNote API overview
