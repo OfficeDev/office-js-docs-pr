@@ -1,7 +1,7 @@
 ---
 title: Validate and troubleshoot issues with your manifest
 description: Use these methods to validate the Office Add-ins manifest.
-ms.date: 12/04/2017
+ms.date: 10/30/2018
 ---
 
 # Validate and troubleshoot issues with your manifest
@@ -68,7 +68,12 @@ To turn on runtime logging:
 
 1. Make sure that you are running Office 2016 desktop build **16.0.7019** or later. 
 
-2. Add the `RuntimeLogging` registry key under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\`. 
+2. Add the `RuntimeLogging` registry key under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\`. 
+
+    > [!NOTE]
+    > If the `Developer` key (folder) does not already exist under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\`, complete the following steps to create it: 
+	> 1. Right-click the **WEF** key (folder) and select **New** > **Key**.
+	> 2. Name the new key **Developer**.
 
 3. Set the default value of the key to the full path of the file where you want the log to be written. For an example, see [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip). 
 
