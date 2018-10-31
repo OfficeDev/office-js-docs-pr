@@ -84,7 +84,7 @@ You can use Visual Studio to debug your add-in, as described in the following se
 
 - [Review the build and debug properties](#review-the-build-and-debug-properties)
 - [Use an existing document to debug the add-in](#use-an-existing-document-to-debug-the-add-in)
-- [Start the solution](#start-the-solution)
+- [Start the project](#start-the-project)
 - [Debug the code for an Excel add-in or Word add-in](#debug-the-code-for-an-excel-add-in-or-word-add-in)
 - [Debug the code for an Outlook add-in](#debug-the-code-for-an-outlook-add-in)
 
@@ -130,9 +130,9 @@ If you have a document that contains test data you want to use while debugging y
 
 7. In the **Properties** window, choose the **Start Document** list, and then select the document that you added to the project. The project is now configured to start the add-in in that document.
 
-### Start the solution
+### Start the project
 
-Start the solution from the menu bar by choosing **Debug** > **Start Debugging**. Visual Studio will automatically build the solution and start Office to host your add-in.
+Start the project from the menu bar by choosing **Debug** > **Start Debugging**. Visual Studio will automatically build the solution and start Office to host your add-in.
 
 When Visual Studio builds the project it performs the following tasks:
 
