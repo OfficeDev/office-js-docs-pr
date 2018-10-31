@@ -113,7 +113,7 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
 
 For your reference, the following code snippet shows the contents of the **Home.ts** file after the previously described changes have been applied. This code includes the minimum number of changes needed in order for your add-in to run.
 
-```javascript
+```typescript
 declare var fabric: any;
 
 (function () {
