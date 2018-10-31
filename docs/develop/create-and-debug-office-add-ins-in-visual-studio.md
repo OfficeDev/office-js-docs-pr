@@ -94,7 +94,8 @@ Before you start debugging, review the properties of the add-in project to confi
 
 To view project properties, open the **Properties** window:
 
-1. In  **Solution Explorer**, choose the basic add-in project (not the Web project).    
+1. In  **Solution Explorer**, choose the add-in project (*not* the web application project).
+
 2. From the menu bar, choose  **View** >  **Properties Window**.
 
 The following table describes the properties of the project.
@@ -115,22 +116,19 @@ The following table describes the properties of the project.
 
 If you have a document that contains test data you want to use while debugging your add-in, Visual Studio can be configured to open that document when you start the project. To specify an existing document to use while debugging the add-in, complete the following steps.
 
-1. In **Solution Explorer**, choose the add-in project. 
+1. In **Solution Explorer**, choose the add-in project (*not* the web application project).
     
-    > [!TIP]
-    > The add-in project is the project that contains the XML manifest file.
-
 2. From the menu bar, choose **Project** > **Add Existing Item**.
     
 3. In the **Add Existing Item** dialog box, locate and select the document that you want to add.
     
 4. Choose the **Add** button to add the document to your project.
     
-5. In **Solution Explorer**, choose the add-in project folder.
+5. In **Solution Explorer**, choose the add-in project (*not* the web application project).
 
 6. From the menu bar, choose **View** > **Properties Window**.
 
-7. In the properties window, choose the **Start Document** list, and then choose the document that you added to the project. The project is now configured to start the add-in in that document.
+7. In the **Properties** window, choose the **Start Document** list, and then select the document that you added to the project. The project is now configured to start the add-in in that document.
 
 ### Start the solution
 
@@ -158,7 +156,7 @@ To review the validation rules of the XML manifest file in your project, see [Of
 
 ### Debug the code for an Excel add-in or Word add-in
 
-If you set the **Start Document** property of the add-in project to **Excel** or **Word**, Visual Studio creates a new document and the add-in appears. If you set the **Start Document** property of the add-in project to use an existing document, Visual Studio opens the document, but you have to insert the add-in manually.
+If you set the **Start Document** property of the add-in project to **Excel** or **Word**, Visual Studio creates a new document and the add-in appears. If you set the **Start Document** property of the add-in project to use an existing document, Visual Studio opens the document, but you have to insert the add-in manually by choosing the **Show Taskpane** button in the ribbon of the **Home** tab.
 
 After your add-in is displayed in Excel or Word, you can debug your code by doing the following:
 
