@@ -103,12 +103,12 @@ The following table describes the properties of the project.
 |**Property**|**Description**|
 |:-----|:-----|
 |**Start Action**|Specifies whether to debug your add-in in an Office desktop client or in an Office Online client in the specified browser.|
-|**Start Document** (Excel, PowerPoint, and Word add-ins only)|Specifies what document to open when you start the project.|
+|**Start Document**<br/>(Excel, PowerPoint, and Word add-ins only)|Specifies what document to open when you start the project.|
 |**Web Project**|Specifies the name of the web project associated with the add-in.|
-|**Email Address** (Outlook add-ins only)|Specifies the email address of the user account in Exchange Server or Exchange Online that you want to test your Outlook add-in with.|
-|**EWS Url** (Outlook add-ins only)|Exchange Web service URL (For example: https://www.contoso.com/ews/exchange.aspx). |
-|**OWA Url** (Outlook add-ins only)|Outlook Web App URL (For example: https://www.contoso.com/owa).|
-|**User name** (Outlook add-ins only)|Specifies the name of your user account in Exchange Server or Exchange Online.|
+|**Email Address**<br/>(Outlook add-ins only)|Specifies the email address of the user account in Exchange Server or Exchange Online that you want to test your Outlook add-in with.|
+|**EWS Url**<br/>(Outlook add-ins only)|Exchange Web service URL (For example: https://www.contoso.com/ews/exchange.aspx). |
+|**OWA Url**<br/>(Outlook add-ins only)|Outlook Web App URL (For example: https://www.contoso.com/owa).|
+|**User name**<br/>(Outlook add-ins only)|Specifies the name of your user account in Exchange Server or Exchange Online.|
 |**Project File**|Specifies the name of the file containing build, configuration, and other information about the project.|
 |**Project Folder**|The location of the project file.|
 
