@@ -80,7 +80,13 @@ The web application project contains a default HTML file, JavaScript file, and C
 
 ## Debug your add-in
 
-Visual Studio provides build and debug properties to assist with debugging your add-in.
+You can use Visual Studio to debug your add-in, as described in the following sections:
+
+- Review the build and debug properties
+- Use an existing document to debug the add-in
+- Start the solution
+- Debug the code for an Excel add-in or Word add-in
+- Debug the code for an Outlook add-in
 
 ### Review the build and debug properties
 
@@ -188,5 +194,5 @@ You can change your code and review the effects of those changes in your add-in 
 
 ## Next steps
 
-After your add-in is working as desired, see [Deploy and publish your Office Add-in](../publish/publish.md) for information about the ways you can distribute the add-in to users.
+After your add-in is working as desired, see [Deploy and publish your Office Add-in](../publish/publish.md) to learn about the ways you can distribute the add-in to users.
     
