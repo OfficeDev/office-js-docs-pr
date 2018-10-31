@@ -25,7 +25,7 @@ In this tutorial, you will:
     npm install -g yo generator-office
     ```
 
-* Excel for Windows (build number 10827 or later) or Excel Online
+* Excel for Windows (version 1810 or later) or Excel Online
 
 * Join the [Office Insider program](https://products.office.com/office-insider) (**Insider** level -- formerly called "Insider Fast")
 

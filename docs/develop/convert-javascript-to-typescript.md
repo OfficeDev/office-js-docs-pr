@@ -1,14 +1,12 @@
 ---
 title: Convert an Office Add-in project in Visual Studio to TypeScript
 description: ''
-ms.date: 01/19/2018
+ms.date: 10/30/2018
 ---
 
 # Convert an Office Add-in project in Visual Studio to TypeScript
 
-You can use the Office Add-in template in Visual Studio to create an add-in that uses JavaScript, and then convert that add-in project to TypeScript. By using Visual Studio to create the add-in project, you avoid having to create your Office Add-in TypeScript project from scratch. 
-
-This article shows you how to create an Excel add-in using Visual Studio and then convert the add-in project from JavaScript to TypeScript. You can use the same process to convert other types of Office Add-in JavaScript projects to TypeScript in Visual Studio.
+You can use the Office Add-in template in Visual Studio to create an add-in that uses JavaScript, and then convert that add-in project to TypeScript. This article describes this conversion process for an Excel add-in. You can use the same process to convert other types of Office Add-in projects from JavaScript to TypeScript in Visual Studio.
 
 > [!NOTE]
 > To create an Office Add-in TypeScript project without using Visual Studio, follow the instructions in the "Any editor" section of any [5-minute quick start](../index.yml) and choose `TypeScript` when prompted by the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
@@ -17,13 +15,13 @@ This article shows you how to create an Excel add-in using Visual Studio and the
 
 - [Visual Studio 2017](https://www.visualstudio.com/vs/) with the **Office/SharePoint development** workload installed
 
-    > [!NOTE]
-    > If you've previously installed Visual Studio 2017, [use the Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed. 
+    > [!TIP]
+    > If you've previously installed Visual Studio 2017, [use the Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed. If this workload is not yet installed, use the Visual Studio Installer to [install it](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads).
 
-- TypeScript 2.3 for Visual Studio 2017
+- TypeScript SDK version 2.3 or later (for Visual Studio 2017)
 
-    > [!NOTE]
-    > TypeScript should be installed by default with Visual Studio 2017, but you can [use the Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) to confirm that it is installed. In the Visual Studio Installer, select the **Individual components** tab and then verify that **TypeScript 2.3 SDK** is selected under **SDKs, libraries, and frameworks**.
+    > [!TIP]
+    > In the [Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio), select the **Individual components** tab and then scroll down to the **SDKs, libraries, and frameworks** section. Within that section, ensure that at least one of the **TypeScript SDK** components (version 2.3 or later) is selected. If none of the **TypeScript SDK** components are selected, select the latest available version of the SDK and then choose the **Modify** button to [install that individual component](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio?view=vs-2017#modify-individual-components). 
 
 - Excel 2016 or later
 
@@ -56,7 +54,7 @@ This article shows you how to create an Excel add-in using Visual Studio and the
 
 6. Create a new file named **jQuery.d.ts** in the root of the web application project.
 
-7. In a web browser, open the [type definitions file for jQuery](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/jquery/index.d.ts). Copy the contents of this file to your clipboard.
+7. In a web browser, open the [type definitions file for jQuery](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/jquery/misc.d.ts). Copy the contents of this file to your clipboard.
 
 8. In Visual Studio, open the **jQuery.d.ts** file, paste the contents of your clipboard into this file, and save the file.
 
@@ -64,7 +62,7 @@ This article shows you how to create an Excel add-in using Visual Studio and the
 
 10. Open the **tsconfig.json** file, add the following content to the file, and save the file:
 
-    ```javascript
+    ```json
     {
         "compilerOptions": {
             "skipLibCheck": true,
@@ -75,15 +73,31 @@ This article shows you how to create an Excel add-in using Visual Studio and the
 
 11. Open the **Home.ts** file and add the following declaration at the top of the file:
 
-	```javascript
+	```typescript
 	declare var fabric: any;
 	```
 
-12. In the **Home.ts** file, change **'1.1'** to **1.1** (that is, remove the quotation marks) in the following line, and save the file:
+12. In the **Home.ts** file, change **'1.1'** to **1.1** (that is, remove the quotation marks) in the following line:
 
-	```javascript
+	```typescript
 	if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
 	```
+
+13. In the **Home.ts** file, find the `displaySelectedCells` function, replace the entire function with the following code, and save the file:
+
+    ```typescript
+    function displaySelectedCells() {
+        Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
+            null,
+            function (result) {
+                if (result.status === Office.AsyncResultStatus.Succeeded) {
+                    showNotification('The selected text is:', '"' + result.value + '"');
+                } else {
+                    showNotification('Error', result.error.message);
+                }
+            });
+    }
+    ```
 
 ## Run the converted add-in project
 
@@ -99,7 +113,7 @@ This article shows you how to create an Excel add-in using Visual Studio and the
 
 For your reference, the following code snippet shows the contents of the **Home.ts** file after the previously described changes have been applied. This code includes the minimum number of changes needed in order for your add-in to run.
 
-```javascript
+```typescript
 declare var fabric: any;
 
 (function () {
@@ -116,7 +130,7 @@ declare var fabric: any;
             messageBanner = new fabric.MessageBanner(element);
             messageBanner.hideBanner();
             
-            // If not using Excel 2016 or later, use fallback logic.
+            // If not using Excel 2016, use fallback logic.
             if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
                 $("#template-description").text("This sample will display the value of the cells that you have selected in the spreadsheet.");
                 $('#button-text').text("Display!");
@@ -196,6 +210,7 @@ declare var fabric: any;
 
     function displaySelectedCells() {
         Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
+            null,
             function (result) {
                 if (result.status === Office.AsyncResultStatus.Succeeded) {
                     showNotification('The selected text is:', '"' + result.value + '"');
