@@ -103,7 +103,7 @@ The following table describes the properties of the project.
 |**Property**|**Description**|
 |:-----|:-----|
 |**Start Action**|Specifies whether to debug your add-in in an Office desktop client or in an Office Online client in the specified browser.|
-|**Start Document** (Content and task pane add-ins only)|Specifies what document to open when you start the project.|
+|**Start Document** (Excel, PowerPoint, and Word add-ins only)|Specifies what document to open when you start the project.|
 |**Web Project**|Specifies the name of the web project associated with the add-in.|
 |**Email Address** (Outlook add-ins only)|Specifies the email address of the user account in Exchange Server or Exchange Online that you want to test your Outlook add-in with.|
 |**EWS Url** (Outlook add-ins only)|Exchange Web service URL (For example: https://www.contoso.com/ews/exchange.aspx). |
@@ -114,7 +114,7 @@ The following table describes the properties of the project.
 
 ### Use an existing document to debug the add-in
 
-If you have a document that contains test data you want to use while debugging your Excel, Word, or PowerPoint add-in, Visual Studio can be configured to open that document when you start the project. To specify an existing document to use while debugging the add-in, complete the following steps.
+If you have a document that contains test data you want to use while debugging your Excel, PowerPoint, or Word add-in, Visual Studio can be configured to open that document when you start the project. To specify an existing document to use while debugging the add-in, complete the following steps.
 
 1. In **Solution Explorer**, choose the add-in project (*not* the web application project).
     
