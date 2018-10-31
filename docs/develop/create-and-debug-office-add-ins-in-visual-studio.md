@@ -174,7 +174,7 @@ If your add-in isn't visible within the document that's displayed in the host ap
 
 5. As breakpoints are hit in Visual Studio, step through the code as needed.
 
-You can change your code and review the effects of those changes in your add-in without having to close the host application and restart the project. After you save changes to your code, simply reload the add-in in the host application. For example, reload a task pane add-in by choosing the top-right corner of the task pane to active the [personality menu](../design/task-pane-add-ins?branch=kb-update-VS-article-222#personality-menu) and then choose **Reload**.
+You can change your code and review the effects of those changes in your add-in without having to close the host application and restart the project. After you save changes to your code, simply reload the add-in in the host application. For example, reload a task pane add-in by choosing the top-right corner of the task pane to activate the [personality menu](../design/task-pane-add-ins.md#personality-menu) and then choose **Reload**.
 
 ### Debug the code for an Outlook add-in
 
