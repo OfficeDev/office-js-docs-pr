@@ -92,7 +92,7 @@ You can use Visual Studio to debug your add-in, as described in the following se
 
 Before you start debugging, review the properties of the add-in project to confirm that Visual Studio will open the desired host application and that other build and debug properties are set appropriately.
 
-To view project properties, open the **Properties** window:
+To view project properties, open the **Properties** window for the add-in project:
 
 1. In  **Solution Explorer**, choose the add-in project (*not* the web application project).
 
