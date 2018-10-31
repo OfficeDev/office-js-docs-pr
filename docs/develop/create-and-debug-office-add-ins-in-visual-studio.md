@@ -114,7 +114,7 @@ The following table describes the properties of the project.
 
 ### Use an existing document to debug the add-in
 
-If you have a document that contains test data you want to use while debugging your add-in, Visual Studio can be configured to open that document when you start the project. To specify an existing document to use while debugging the add-in, complete the following steps.
+If you have a document that contains test data you want to use while debugging your Excel, Word, or PowerPoint add-in, Visual Studio can be configured to open that document when you start the project. To specify an existing document to use while debugging the add-in, complete the following steps.
 
 1. In **Solution Explorer**, choose the add-in project (*not* the web application project).
     
