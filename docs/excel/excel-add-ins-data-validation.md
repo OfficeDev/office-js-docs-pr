@@ -108,7 +108,7 @@ Excel.run(function (context) {
 Use the `list` property in the `DataValidationRule` object to specify that the only valid values are those from a finite list. The following is an example. Note the following about this code:
 
 - It assumes that there is a worksheet named "Names" and that the values in the range "A1:A3" are names.
-- The `source` property specifies the list of valid values. The range with the names has been assigned to it. You can also assign a comma-delimited list; for example: "Sue, Ricky, Liz". 
+- The `source` property specifies the list of valid values. The string argument refers to a range containing the names. You can also assign a comma-delimited list; for example: "Sue, Ricky, Liz". 
 - The `inCellDropDown` property specifies whether a drop-down control will appear in the cell when the user selects it. If set to `true`, then the drop-down appears with the list of values from the `source`.
 
 ```js
@@ -120,7 +120,7 @@ Excel.run(function (context) {
     range.dataValidation.rule = {
         list: {
             inCellDropDown: true,
-            source: nameSourceRange
+            source: "=Names!$A$1:$A$3"
         }
     };
 
