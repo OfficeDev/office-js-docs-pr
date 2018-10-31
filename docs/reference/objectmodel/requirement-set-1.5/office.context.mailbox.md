@@ -121,7 +121,7 @@ Currently the only supported event type is `Office.EventType.ItemChanged`, which
 
 ##### Example
 
-```
+```js
 Office.initialize = function (reason) {
   $(document).ready(function () {
     Office.context.mailbox.addHandlerAsync(Office.EventType.ItemChanged, loadNewItem, function (result) {
@@ -169,7 +169,7 @@ String
 
 ##### Example
 
-```
+```js
 // Get an item's ID from a REST API
 var restId = 'AAMkAGVlOTZjNTM3LW...';
 
@@ -236,7 +236,7 @@ String
 
 ##### Example
 
-```
+```js
 // Get the currently selected item's ID
 var ewsId = Office.context.mailbox.item.itemId;
 
@@ -308,7 +308,7 @@ If the specified item identifier does not identify an existing appointment, a bl
 
 ##### Example
 
-```
+```js
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
@@ -343,7 +343,7 @@ Do not use the `displayMessageForm` with an `itemId` that represents an appointm
 
 ##### Example
 
-```
+```js
 Office.context.mailbox.displayMessageForm(messageId);
 ```
 
