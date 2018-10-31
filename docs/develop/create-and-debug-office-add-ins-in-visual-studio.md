@@ -105,9 +105,13 @@ The following table describes the properties of the project.
 |**Email Address**<br/>(Outlook add-ins only)|Specifies the email address of the user account in Exchange Server or Exchange Online that you want to use to test your Outlook add-in.|
 |**EWS Url**<br/>(Outlook add-ins only)|Exchange Web service URL (For example: `https://www.contoso.com/ews/exchange.aspx`). |
 |**OWA Url**<br/>(Outlook add-ins only)|Outlook Web App URL (For example: `https://www.contoso.com/owa`).|
-|**User name**<br/>(Outlook add-ins only)|Specifies the name of the user account in Exchange Server or Exchange Online that you want to use to test your Outlook add-in.|
+|**Use multi-factor auth**<br/>(Outlook add-ins only)|Boolean value that indicates whether multi-factor authenitication should be used.|
+|**User Name**<br/>(Outlook add-ins only)|Specifies the name of the user account in Exchange Server or Exchange Online that you want to use to test your Outlook add-in.|
 |**Project File**|Specifies the name of the file containing build, configuration, and other information about the project.|
 |**Project Folder**|The location of the project file.|
+
+> [!NOTE]
+> For an Outlook add-in, you may choose to specify values for one or more of the *Outlook add-in only* properties in the **Properties** window, but doing so is not required. You will be prompted for login credentials when you [start the project](#start-the-project).
 
 ### Use an existing document to debug the add-in
 
@@ -130,6 +134,9 @@ If you have a document that contains test data you want to use while debugging y
 ### Start the project
 
 Start the project by choosing **Debug** > **Start Debugging** from the menu bar. Visual Studio will automatically build the solution and start Office to host your add-in.
+
+> [!NOTE]
+> When you start an Outlook add-in project, you'll be prompted for login credentials. If you're asked to log in repeatedly then Basic Auth may be disabled for accounts on your Office 365 tenant. In this case, try using a Microsoft account instead.
 
 When Visual Studio builds the project it performs the following tasks:
 
@@ -167,7 +174,7 @@ If your add-in isn't visible within the document that's displayed in the host ap
 
 5. As breakpoints are hit in Visual Studio, step through the code as needed.
 
-You can change your code and review the effects of those changes in your add-in without having to close the host application and restart the project. After you save changes to your code, simply open the shortcut menu for the add-in (in Excel, PowerPoint, or Word), and then choose **Reload**.
+You can change your code and review the effects of those changes in your add-in without having to close the host application and restart the project. After you save changes to your code, simply reload the add-in in the host application. For example, reload a task pane add-in by choosing the top-right corner of the task pane to active the [personality menu](../design/task-pane-add-ins?branch=kb-update-VS-article-222#personality-menu) and then choose **Reload**.
 
 ### Debug the code for an Outlook add-in
 
