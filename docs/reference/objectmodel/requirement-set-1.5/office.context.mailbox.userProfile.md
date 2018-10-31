@@ -38,7 +38,7 @@ Gets the user's display name.
 
 ##### Example
 
-```
+```js
 // Example: Allie Bellew
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
@@ -61,7 +61,7 @@ Gets the user's SMTP email address.
 
 ##### Example
 
-```
+```js
 // Example: allieb@contoso.com
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
@@ -84,7 +84,7 @@ Gets the user's default time zone.
 
 ##### Example
 
-```
+```js
 // Example: Pacific Standard Time
 console.log(Office.context.mailbox.userProfile.timeZone);
 ```

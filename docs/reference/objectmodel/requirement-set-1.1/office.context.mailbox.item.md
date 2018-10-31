@@ -647,7 +647,7 @@ The `subject` property gets or sets the entire subject of the item, as sent by t
 
 The `subject` property returns a string. Use the [`normalizedSubject`](#normalizedsubject-string) property to get the subject minus any leading prefixes such as `RE:` and `FW:`.
 
-```
+```js
 var subject = Office.context.mailbox.item.subject;
 ```
 
@@ -1088,7 +1088,7 @@ The `getRegExMatches` method returns the strings that match the regular expressi
 
 For example, consider an add-in manifest has the following `Rule` element:
 
-```JavaScript
+```xml
 <Rule xsi:type="RuleCollection" Mode="And">
   <Rule xsi:type="ItemIs" FormType="Read" ItemType="Message" />
   <Rule xsi:type="RuleCollection" Mode="Or">
@@ -1100,7 +1100,7 @@ For example, consider an add-in manifest has the following `Rule` element:
 
 The object returned from `getRegExMatches` would have two properties: `fruits` and `veggies`.
 
-```JavaScript
+```json
 {
   'fruits': ['apple','banana','Banana','coconut'],
   'veggies': ['tomato','onion','spinach','broccoli']
