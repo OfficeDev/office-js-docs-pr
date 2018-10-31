@@ -1,7 +1,7 @@
 ---
 title: Create and debug Office Add-ins in Visual Studio
 description: ''
-ms.date: 10/30/2018
+ms.date: 10/31/2018
 ---
 
 # Create and debug Office Add-ins in Visual Studio
