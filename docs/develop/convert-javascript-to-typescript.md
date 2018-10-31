@@ -6,7 +6,7 @@ ms.date: 10/30/2018
 
 # Convert an Office Add-in project in Visual Studio to TypeScript
 
-You can use the Office Add-in template in Visual Studio to create an add-in that uses JavaScript, and then convert that add-in project to TypeScript. This article describes how to create an Excel add-in using Visual Studio and then convert the add-in project from JavaScript to TypeScript. You can use the same process to convert other types of Office Add-in projects from JavaScript to TypeScript in Visual Studio.
+You can use the Office Add-in template in Visual Studio to create an add-in that uses JavaScript, and then convert that add-in project to TypeScript. This article describes this conversion process for an Excel add-in. You can use the same process to convert other types of Office Add-in projects from JavaScript to TypeScript in Visual Studio.
 
 > [!NOTE]
 > To create an Office Add-in TypeScript project without using Visual Studio, follow the instructions in the "Any editor" section of any [5-minute quick start](../index.yml) and choose `TypeScript` when prompted by the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
@@ -73,19 +73,19 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
 
 11. Open the **Home.ts** file and add the following declaration at the top of the file:
 
-	```javascript
+	```typescript
 	declare var fabric: any;
 	```
 
 12. In the **Home.ts** file, change **'1.1'** to **1.1** (that is, remove the quotation marks) in the following line:
 
-	```javascript
+	```typescript
 	if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
 	```
 
 13. In the **Home.ts** file, find the `displaySelectedCells` function, replace the entire function with the following code, and save the file:
 
-    ```javascript
+    ```typescript
     function displaySelectedCells() {
         Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
             null,
