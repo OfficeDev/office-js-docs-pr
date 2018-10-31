@@ -9,10 +9,10 @@ ms.date: 10/30/2018
 This article describes how to use Visual Studio 2017 to create and debug an Office Add-in for Excel, Word, PowerPoint, or Outlook. If you're using another version of Visual Studio, the procedures might vary slightly.
 
 > [!NOTE]
-> Visual Studio does not currently support creating add-ins for OneNote or Project, but you can use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) to create these types of add-ins.
+> Visual Studio does not support creating Office Add-ins for OneNote or Project, but you can use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) to create these types of add-ins.
 > - To get started with an add-in for OneNote, see [Build your first OneNote add-in](../onenote/onenote-add-ins-getting-started.md).
 > 
-> - To get started with an add-in for Project, see [Build your first Project add-in](../project/project-add-ins-get-started.md)
+> - To get started with an add-in for Project, see [Build your first Project add-in](../project/project-add-ins-get-started.md).
 
 ## Prerequisites
 
@@ -46,7 +46,7 @@ This article describes how to use Visual Studio 2017 to create and debug an Offi
 
     - To create a task pane add-in, select **Add new functionalities to Excel** and then choose the **Finish** button to create the Visual Studio solution.
 
-    - To create a content add-in, select **Insert content into Excel spreadsheet**, choose the **Next** button, select one of the following options, and then choose the **Finish** button to create the Visual Studio solution:
+    - To create a content add-in, select **Insert content into Excel spreadsheets**, choose the **Next** button, select one of the following options, and then choose the **Finish** button to create the Visual Studio solution:
 
         - **Basic Add-in** - to create a content add-in project with minimal starter code
 
@@ -58,21 +58,21 @@ This article describes how to use Visual Studio 2017 to create and debug an Offi
 
 ## Modify your add-in settings
 
-To modify the settings of your add-in, edit the XML manifest file of the project. In  **Solution Explorer**, expand the add-in project node, expand the folder that contains the XML manifest, and choose the XML manifest. You can point to any element in the file to view a tooltip that describes the purpose of the element. For more information about the manifest file, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).
+To modify the settings of your add-in, edit the XML manifest file in the add-in project. In  **Solution Explorer**, expand the add-in project node, expand the folder that contains the XML manifest, and choose the XML manifest. You can point to any element in the file to view a tooltip that describes the purpose of the element. For more information about the manifest file, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).
 
 ## Develop the contents of your add-in
 
 While the add-in project lets you modify the settings that describe your add-in, the web application provides the content that appears in the add-in. 
 
-The web application project contains a default HTML page and JavaScript file that you can use to get started. These files contain references to other JavaScript libraries including the JavaScript API for Office. You can develop your add-in by updating these files, and adding more HTML and JavaScript files. The following table describes the default HTML and JavaScript files.
+The web application project contains a default HTML file, JavaScript file, and CSS file that you can use to get started. Some of these files contain references to other JavaScript libraries including the JavaScript API for Office. You can develop your add-in by updating these files and/or adding more HTML and JavaScript files. The following table describes the default files that the web application project contains when the Visual Studio solution is created.
 
 > [!NOTE]
-> The files in the table below may be in the root folder of the web project, or in the **Home** folder, depending on the type of project template you used.
+> The files in the table below may be in the root folder of the web project, or in the **Home** folder, depending on the type of project template you used to create the Visual Studio project.
 
-|**File**|**Description**|
+|**File name**|**Description**|
 |:-----|:-----|
 |**Home.html**<br/>(Excel, PowerPoint, Word)<br/><br/>**MessageRead.html**<br/>(Outlook)|The default HTML page of the add-in. This page appears as the first page inside of the add-in when it is activated in a document, email message, or appointment item. This file contains all of the file references that you need to get started. You can start developing your add-in by adding your HTML code to this file.|
-|**Home.js**<br/>(Excel, PowerPoint, Word)<br/><br/>**MessageRead.js**<br/>(Outlook)|The JavaScript file associated with the Home.html page (Excel, PowerPoint, Word) or the **MessageRead.html** page (Outlook). This file should contain any code that is specific to the behavior of the Home.html page (Excel, PowerPoint, Word) or the **MessageRead.html** page (Outlook). This file contains some example code to get you started.|
+|**Home.js**<br/>(Excel, PowerPoint, Word)<br/><br/>**MessageRead.js**<br/>(Outlook)|The JavaScript file associated with the **Home.html** page (Excel, PowerPoint, Word) or the **MessageRead.html** page (Outlook). This file should contain any code that is specific to the behavior of the **Home.html** page (Excel, PowerPoint, Word) or the **MessageRead.html** page (Outlook). This file contains some example code to get you started.|
 |**Home.css**<br/>(Excel, PowerPoint, Word)<br/><br/>**MessageRead.css**<br/>(Outlook)|Defines the default styles to apply to your add-in. We recommend using the Office UI Fabric for design and styles. For more information see [Office UI Fabric in Office Add-ins](../design/office-ui-fabric.md).|
 
 > [!NOTE]
