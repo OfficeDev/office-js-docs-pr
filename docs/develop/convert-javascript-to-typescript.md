@@ -62,7 +62,7 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
 
 10. Open the **tsconfig.json** file, add the following content to the file, and save the file:
 
-    ```javascript
+    ```json
     {
         "compilerOptions": {
             "skipLibCheck": true,
