@@ -4,3 +4,10 @@
 > - Excel for Mac (version 13.329 or later)
 > 
 > Custom functions are currently disabled across all Office builds unless you are a member of the Office Insider program (**Insider** level).
+
+
+use Excel Online (which requires EITHER an O365 subscription OR a Microsoft Account)
+    OR
+use Excel for Windows or Excel for Mac (which requires an O365 subscription AND ALSO that I join the Insiders program)
+
+https://account.microsoft.com/account?lang=en-us
