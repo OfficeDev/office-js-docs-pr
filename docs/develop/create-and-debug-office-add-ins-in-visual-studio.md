@@ -82,11 +82,11 @@ The web application project contains a default HTML file, JavaScript file, and C
 
 You can use Visual Studio to debug your add-in, as described in the following sections:
 
-- Review the build and debug properties
-- Use an existing document to debug the add-in
-- Start the solution
-- Debug the code for an Excel add-in or Word add-in
-- Debug the code for an Outlook add-in
+- [Review the build and debug properties](#review-the-build-and-debug-properties)
+- [Use an existing document to debug the add-in](#use-an-existing-document-to-debug-the-add-in)
+- [Start the solution](#start-the-solution)
+- [Debug the code for an Excel add-in or Word add-in](#debug-the-code-for-an-excel-add-in-or-word-add-in)
+- [Debug the code for an Outlook add-in](#debug-the-code-for-an-outlook-add-in)
 
 ### Review the build and debug properties
 
