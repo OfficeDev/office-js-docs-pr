@@ -171,7 +171,7 @@ You can change your code and review the effects of those changes in your add-in 
 
 ### Debug the code for an Outlook add-in
 
-To view the add-in in Outlook, open an email message or appointment item. 
+After you've [started the project](#start-the-project) and Visual Studio launches Outlook to host your add-in, open an email message or appointment item. 
 
 Outlook activates the add-in for the item as long as the activation criteria are met. The add-in bar appears at the top of the Inspector window or Reading Pane, and your Outlook add-in appears as a button in the add-in bar. If your add-in has an add-in command, a button will appear in the ribbon, either in the default tab or a specified custom tab, and the add-in will not appear in the add-in bar.
 
