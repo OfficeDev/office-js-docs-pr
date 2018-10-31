@@ -66,9 +66,6 @@ While the add-in project lets you modify the settings that describe your add-in,
 
 The web application project contains a default HTML file, JavaScript file, and CSS file that you can use to get started. Some of these files contain references to other JavaScript libraries including the JavaScript API for Office. You can develop your add-in by updating these files and/or adding more HTML and JavaScript files. The following table describes the default files that the web application project contains when the Visual Studio solution is created.
 
-> [!NOTE]
-> The files in the table below may be in the root folder of the web project, or in the **Home** folder, depending on the type of project template you used to create the Visual Studio project.
-
 |**File name**|**Description**|
 |:-----|:-----|
 |**Home.html**<br/>(Excel, PowerPoint, Word)<br/><br/>**MessageRead.html**<br/>(Outlook)|The default HTML page of the add-in. This page appears as the first page inside of the add-in when it is activated in a document, email message, or appointment item. This file contains all of the file references that you need to get started. You can start developing your add-in by adding your HTML code to this file.|
