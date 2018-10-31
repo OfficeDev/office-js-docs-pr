@@ -1,3 +1,9 @@
+---
+title: JavaScript API for Office error codes
+description: ''
+ms.date: 10/31/2018
+---
+
 # JavaScript API for Office error codes
 
 This article documents the error messages you might encounter while using the JavaScript API for Office (Office.js).
