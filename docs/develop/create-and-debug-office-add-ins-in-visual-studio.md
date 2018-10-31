@@ -132,7 +132,7 @@ If you have a document that contains test data you want to use while debugging y
 
 ### Start the project
 
-Start the project from the menu bar by choosing **Debug** > **Start Debugging**. Visual Studio will automatically build the solution and start Office to host your add-in.
+Start the project by choosing **Debug** > **Start Debugging** from the menu bar. Visual Studio will automatically build the solution and start Office to host your add-in.
 
 When Visual Studio builds the project it performs the following tasks:
 
