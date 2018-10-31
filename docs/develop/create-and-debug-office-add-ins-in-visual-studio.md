@@ -85,7 +85,7 @@ You can use Visual Studio to debug your add-in, as described in the following se
 - [Review the build and debug properties](#review-the-build-and-debug-properties)
 - [Use an existing document to debug the add-in](#use-an-existing-document-to-debug-the-add-in)
 - [Start the project](#start-the-project)
-- [Debug the code for an Excel add-in or Word add-in](#debug-the-code-for-an-excel-add-in-or-word-add-in)
+- [Debug the code for an Excel, PowerPoint, or Word add-in](#debug-the-code-for-an-excel-powerpoint-or-word-add-in)
 - [Debug the code for an Outlook add-in](#debug-the-code-for-an-outlook-add-in)
 
 ### Review the build and debug properties
@@ -154,13 +154,13 @@ Visual Studio doesn't show validation errors in the  **OUTPUT** window when you 
     
 To review the validation rules of the XML manifest file in your project, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).
 
-### Debug the code for an Excel add-in or Word add-in
+### Debug the code for an Excel, PowerPoint, or Word add-in
 
-If you set the **Start Document** property of the add-in project to **Excel** or **Word**, Visual Studio creates a new document and the add-in appears. If you set the **Start Document** property of the add-in project to use an existing document, Visual Studio opens the document, but you have to insert the add-in manually by choosing the **Show Taskpane** button in the ribbon of the **Home** tab.
+If you set the **Start Document** property of the add-in project to **New Excel Workbook**, **New Word Document**, or **New PowerPoint Presentation**, Visual Studio creates a new document and automatically launches the add-in within that document. If you set the **Start Document** property of the add-in project to an [existing document](#use-an-existing-document-to-debug-the-add-in), Visual Studio opens the document, but you'll need to manually launch the add-in by choosing the **Show Taskpane** button in the ribbon of the **Home** tab.
 
-After your add-in is displayed in Excel or Word, you can debug your code by doing the following:
+After your add-in is displayed in Excel, PowerPoint, or Word, you can debug your code by doing the following:
 
-1. In Excel or Word, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
+1. In Excel, PowerPoint, or Word, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
 
     ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)
 
@@ -168,11 +168,11 @@ After your add-in is displayed in Excel or Word, you can debug your code by doin
 
 3. In Visual Studio, set breakpoints in your code.
 
-4. In Excel or Word, interact with your add-in.
+4. In Excel, PowerPoint, or Word, interact with your add-in.
 
 5. As breakpoints are hit in Visual Studio, step through the code as needed.
 
-You can change your code and review the effects of those changes in your add-in without having to close the host application and restart the project. After you save changes to your code, simply open the shortcut menu for the add-in (in Excel or Word), and then choose **Reload**.
+You can change your code and review the effects of those changes in your add-in without having to close the host application and restart the project. After you save changes to your code, simply open the shortcut menu for the add-in (in Excel, PowerPoint, or Word), and then choose **Reload**.
 
 ### Debug the code for an Outlook add-in
 
