@@ -74,7 +74,7 @@ If you're using Visual Studio to develop your add-in, the process to sideload is
 2. In the **Solution Explorer**, select the web project. This will display properties for the project in the **Properties** window.
 3. In the Properties window, copy the **SSL URL**.
 4. In the add-in project, open the manifest XML file. Be sure you are editing the source XML. For some project types Visual Studio will open a visual view of the XML which will not work for the next step.
-5. Search and replace all instances of "~remoteAppUrl/" with the SSL URL you just copied. You will see several replacements depending on the project type, and the new URLs will appear similar to `https://localhost:44300/Home.html`.
+5. Search and replace all instances of **~remoteAppUrl/** with the SSL URL you just copied. You will see several replacements depending on the project type, and the new URLs will appear similar to `https://localhost:44300/Home.html`.
 6. Save the XML file.
 7. Right click the web project and choose **Debug** -> **Start new instance**. This will run the web project without launching Office.
 8. From Office Online, sideload the add-in using steps previously described in [Sideload an Office Add-in in Office Online](#sideload-an-office-add-in-in-office-online).
