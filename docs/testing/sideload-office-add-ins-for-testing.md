@@ -6,7 +6,7 @@ ms.date: 10/19/2018
 
 # Sideload Office Add-ins in Office Online for testing
 
-You can install an Office Add-in for testing without having to first put it in an add-in catalog by using sideloading. Sideloading can be done on either Office 365 or Office Online. The procedure is slightly different for the two platforms. 
+You can install an Office Add-in for testing without having to first put it in an add-in catalog by using sideloading. Sideloading can be done in either Office 365 or Office Online. The procedure is slightly different for the two platforms. 
 
 When you sideload an add-in, the add-in manifest is stored in the browser's local storage, so if you clear the browser's cache, or switch to a different browser, you have to sideload the add-in again.
 
