@@ -1,13 +1,13 @@
 ---
 title: Create and debug Office Add-ins in Visual Studio
-description: ''
-ms.date: 10/01/2018
+description: 'Use Visual Studio to create and debug Office Add-ins on the Office desktop client for Windows'
+ms.date: 10/19/2018
 ---
 
 
 # Create and debug Office Add-ins in Visual Studio
 
-This article describes how to use Visual Studio to create your first Office Add-in. The steps in this article based on Visual Studio 2017. If you're using another version of Visual Studio, the procedures might vary slightly.
+You can use Visual Studio to create Office Add-ins, and then debug them in the Office desktop client on Windows. The steps in this article based on Visual Studio 2017. If you're using another version of Visual Studio, the procedures might vary slightly.
 
 > [!NOTE]
 > To get started with an add-in for OneNote, see [Build your first OneNote add-in](../onenote/onenote-add-ins-getting-started.md).
@@ -66,7 +66,7 @@ The web application project contains a default HTML page and JavaScript file tha
 
 ## Debug your add-in
 
-Visual Studio provides build and debug properties to assist with debugging your add-in.
+Visual Studio provides build and debug properties to assist with debugging your add-in in the Office desktop client on Windows. Visual Studio does not debug add-ins in other Office configurations, such as Office Online, or Office for Mac. For more information on debugging in other configurations, see [Debug Office Add-ins in Office Online](../testing/debug-add-ins-in-office-online.md) or [Debug Office Add-ins on iPad and Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md).
 
 ### Review the build and debug properties
 
@@ -83,7 +83,7 @@ The following table describes the properties of the project.
 
 |**Property**|**Description**|
 |:-----|:-----|
-|**Start Action**|Specifies whether to debug your add-in in an Office desktop client or in an Office Online client in the specified browser.|
+|**Start Action**|Specifies the debug mode for your add-in. Currently only **Office Desktop Client** mode is supported.|
 |**Start Document** (Content and task pane add-ins only)|Specifies what document to open when you start the project.|
 |**Web Project**|Specifies the name of the web project associated with the add-in.|
 |**Email Address** (Outlook add-ins only)|Specifies the email address of the user account in Exchange Server or Exchange Online that you want to test your Outlook add-in with.|
