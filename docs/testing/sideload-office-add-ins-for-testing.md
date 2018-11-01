@@ -14,12 +14,12 @@ When you sideload an add-in, the add-in manifest is stored in the browser's loca
 > [!NOTE]
 > Sideloading as described in this article is supported on Word, Excel, and PowerPoint. To sideload an Outlook add-in, see [Sideload Outlook add-ins for testing](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing).
 
-The following video walks you through the process of sideloading your add-in on Office desktop or Office Online.  
+The following video walks you through the process of sideloading your add-in in Office desktop or Office Online.  
 
 
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
 
-## Sideload an Office Add-in on Office 365
+## Sideload an Office Add-in in Office 365
 
 
 1. Sign in to your Office 365 account.
@@ -39,7 +39,7 @@ The following video walks you through the process of sideloading your add-in on 
 6. Verify that your add-in is installed. For example, if it is an add-in command, it should appear on either the ribbon or the context menu. If it is a task pane add-in the pane should appear.
     
 
-## Sideload an Office Add-in on Office Online
+## Sideload an Office Add-in in Office Online
 
 
 1. Open [Microsoft Office Online](https://office.live.com/).
@@ -74,7 +74,7 @@ If you're using Visual Studio to develop your add-in, the process to sideload is
 2. In the **Solution Explorer**, select the web project. This will display properties for the project in the **Properties** window.
 3. In the Properties window, copy the **SSL URL**.
 4. In the add-in project, open the manifest XML file. Be sure you are editing the source XML. For some project types Visual Studio will open a visual view of the XML which will not work for the next step.
-5. Search and replace all instances of "~remoteAppUrl/" with the SSL URL you just copied. You will see several replacements depending on the project type, and the new URLs will appear similar to "https://localhost:44300/App/Home/Home.html".
+5. Search and replace all instances of "~remoteAppUrl/" with the SSL URL you just copied. You will see several replacements depending on the project type, and the new URLs will appear similar to 'https://localhost:44300/Home.html'.
 6. Save the XML file.
 7. Right click the web project and choose **Debug** -> **Start new instance**. This will run the web project without launching Office.
-8. From Office Online, sideload the add-in using steps previously described in this article.
+8. From Office Online, sideload the add-in using steps previously described in [Sideload an Office Add-in in Office Online](#sideload-an-office-add-in-in-office-online).
