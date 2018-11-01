@@ -13,13 +13,13 @@ Some of the core Excel objects are listed below for convenience:
 - [Range](/javascript/api/excel/excel.range): Represents a cell, a row, a column, or a selection of cells containing one or more contiguous blocks of cells.
     - [ConditionalFormat](/javascript/api/excel/excel.conditionalformat): An object defining a rule and a format applied to the range when the rule's condition is met.
 	- [DataValidation](/javascript/api/excel/excel.datavalidation): An object that restricts user input to a range based on a variety of criteria.
-    - [RangeSort](/javascript/api/excel/excel.rangesort): Represents a object that manages sorting operations on **Range** objects.
+    - [RangeSort](/javascript/api/excel/excel.rangesort): Represents a object that manages sorting operations on a range.
 
 - [Table](/javascript/api/excel/excel.table): Represents a collection of organized cells designed to make management of the data easy.
     - [TableCollection](/javascript/api/excel/excel.tablecollection): A collection of tables in a workbook or worksheet.
     - [TableColumnCollection](/javascript/api/excel/excel.tablecolumncollection): A collection of all the columns in a table.
     - [TableRowCollection](/javascript/api/excel/excel.tablerowcollection): A collection of all the rows in a table.
-    - [TableSort](/javascript/api/excel/excel.tablesort): Represents an object that manages sorting operations on **Table** objects.
+    - [TableSort](/javascript/api/excel/excel.tablesort): Represents an object that manages sorting operations on a table.
 
 - [Chart](/javascript/api/excel/excel.chart): Represents a chart object in a worksheet, which is a visual representation of underlying data.
     - [ChartCollection](/javascript/api/excel/excel.chartcollection): A collection of charts in a worksheet.
