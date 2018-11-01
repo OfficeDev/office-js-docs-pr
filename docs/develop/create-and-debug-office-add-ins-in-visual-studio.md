@@ -83,7 +83,7 @@ The following table describes the properties of the project.
 
 |**Property**|**Description**|
 |:-----|:-----|
-|**Start Action**|Specifies whether to debug your add-in in an Office desktop client or in an Office Online client in the specified browser.|
+|**Start Action**|Specifies the debug mode for your add-in. Currently only **Office Desktop Client** mode is supported.|
 |**Start Document** (Content and task pane add-ins only)|Specifies what document to open when you start the project.|
 |**Web Project**|Specifies the name of the web project associated with the add-in.|
 |**Email Address** (Outlook add-ins only)|Specifies the email address of the user account in Exchange Server or Exchange Online that you want to test your Outlook add-in with.|

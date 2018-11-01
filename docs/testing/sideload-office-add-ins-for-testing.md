@@ -63,3 +63,18 @@ The following video walks you through the process of sideloading your add-in on 
 
 >    ![The Edge Allow localhost loopback option with the box checked.](../images/allow-localhost-loopback.png)
 
+## Sideload an add-in when using Visual Studio
+
+If you're using Visual Studio to develop your add-in, the process to sideload is similar. The only difference is that you must update the value of the **SourceURL** element in your manifest to include the full URL where the add-in is deployed.
+
+> [!NOTE]
+> Although you can sideload add-ins from Visual Studio to Office Online, you cannot debug them from Visual Studio. To debug you will need to use the browser debugging tools. For more information, see [Debug add-ins in Office Online](debug-add-ins-in-office-online.md).
+
+1. In Visual Studio, show the **Properties** window by choosing **View** -> **Properties Window**.
+2. In the **Solution Explorer**, select the web project. This will display properties for the project in the **Properties** window.
+3. In the Properties window, copy the **SSL URL**.
+4. In the add-in project, open the manifest XML file. Be sure you are editing the source XML. For some project types Visual Studio will open a visual view of the XML which will not work for the next step.
+5. Search and replace all instances of "~remoteAppUrl/" with the SSL URL you just copied. You will see several replacements depending on the project type, and the new URLs will appear similar to "https://localhost:44300/App/Home/Home.html".
+6. Save the XML file.
+7. Right click the web project and choose **Debug** -> **Start new instance**. This will run the web project without launching Office.
+8. From Office Online, sideload the add-in using steps previously described in this article.
