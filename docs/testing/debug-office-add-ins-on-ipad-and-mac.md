@@ -28,6 +28,12 @@ Then, open the Office application and insert your add-in. Right-click the add-in
 
 > [!NOTE]
 > Please note that this is an experimental feature and there are no guarantees that we will preserve this functionality in future versions of Office applications.
+>
+> If you are trying to use the inspector, and the dialog is flickering, try the following workaround:
+> 1. Resize the dialog such that it's a very small window.
+> 2. Choose **Inspect Element** which opens in a new window.
+> 3. Resize the dialog to its original size.
+> 4. Use the inspector as required.
 
 ## Debugging with Vorlon.JS on a iPad or Mac
 
