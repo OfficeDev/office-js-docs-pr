@@ -1,7 +1,7 @@
 ---
 title: Validate and troubleshoot issues with your manifest
 description: Use these methods to validate the Office Add-ins manifest.
-ms.date: 12/04/2017
+ms.date: 11/02/2018
 ---
 
 # Validate and troubleshoot issues with your manifest
@@ -55,17 +55,16 @@ To help ensure that the manifest file follows the correct schema, including any 
 
 ## Validate your manifest with the Yeoman generator for Office Add-ins
 
-If you've created your Office Add-in using the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office), you can ensure that the manifest file follows the correct schema by using the following command:
-
-> [!NOTE]
-> Execute the validation script inside of your project directory.
-
-> [!IMPORTANT]
-> Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office)
+If you've created your Office Add-in using the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office), you can ensure that the manifest file follows the correct schema by running the following command within the root directory of your project:
 
 ```bash
 npm run validate
 ```
+
+![Animated gif that shows the Yo Office validator being run at the command line and generating results that show Validation Passed](../images/yo-office-validator.gif)
+
+> [!NOTE]
+> To have access to this functionality, your add-in project must have been created by using [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) version 1.1.17 or later.
 
 ## Use runtime logging to debug your add-in 
 
