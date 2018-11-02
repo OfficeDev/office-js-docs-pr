@@ -11,7 +11,7 @@ You can use the [Dialog API](https://docs.microsoft.com/javascript/api/office/of
 > [!NOTE]
 > For information about where the Dialog API is currently supported, see [Dialog API requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets?view=office-js). The Dialog API is currently supported for Word, Excel, PowerPoint, and Outlook.
 
-> A primary scenario for the Dialog APIs is to enable authentication with a resource such as Google or Facebook. If your add-in requires data about the Office user or their resources accessible through Microsoft Graph, such as Office 365 or OneDrive, we recommend that you use the single sign-on API whenever you can. If you use the APIs for single sign-on, then you will not need the Dialog API. For details, see [Enable single sign-on for Office Add-ins](sso-in-office-add-ins.md).
+> A primary scenario for the Dialog APIs is to enable authentication with a resource such as Google or Facebook.
 
 Consider opening a dialog box from a task pane or content add-in or [add-in command](../design/add-in-commands.md) to do the following:
 
