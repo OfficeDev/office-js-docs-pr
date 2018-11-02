@@ -1,7 +1,7 @@
 ---
 title: Develop Office Add-ins with Angular
 description: ''
-ms.date: 12/04/2017
+ms.date: 11/02/2018
 ---
 
 # Develop Office Add-ins with Angular
@@ -139,3 +139,16 @@ const subscription = source.subscribe(
 );
 ``` 
 
+## Compile the Angular application using the Ahead-of-Time (AOT) compiler
+
+Application performance is one of the most important aspects of user experience. An Angular application can be optimized by using the Angular Ahead-of-Time (AOT) compiler to compile the app at build time. It converts all source code (HTML templates and TypeScript) into efficient JavaScript code. If you compile your app with the AOT compiler, no additional compilation will occur at runtime, which results in faster rendering and faster asynchronous requests for HTML templates. Additionally, the overall application size will be reduced, because the Angular compiler won't need to be included in the application distributable. 
+
+To use the AOT compiler, add `--aot` to the `ng build` or `ng serve` command:
+
+```bash
+ng build --aot
+ng serve --aot
+```
+
+> [!NOTE]
+> To learn more about the Angular Ahead-of-Time (AOT) compiler, see the [official guide](https://angular.io/guide/aot-compiler).
