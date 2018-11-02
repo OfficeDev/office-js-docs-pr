@@ -55,7 +55,7 @@ To help ensure that the manifest file follows the correct schema, including any 
 
 ## Validate your manifest with the Yeoman generator for Office Add-ins
 
-If you've created your Office Add-in using the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office), you can ensure that the manifest file follows the correct schema by running the following command within the root directory of your project:
+If you've created your Office Add-in using the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office), you can ensure that the manifest file follows the correct schema by running the following command within the root directory of your project:
 
 ```bash
 npm run validate
