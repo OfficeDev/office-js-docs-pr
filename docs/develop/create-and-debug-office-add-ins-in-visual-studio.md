@@ -1,12 +1,12 @@
 ---
 title: Create and debug Office Add-ins in Visual Studio
-description: ''
+description: 'Use Visual Studio to create and debug Office Add-ins on the Office desktop client for Windows'
 ms.date: 11/02/2018
 ---
 
 # Create and debug Office Add-ins in Visual Studio
 
-This article describes how to use Visual Studio 2017 to create and debug an Office Add-in for Excel, Word, PowerPoint, or Outlook. If you're using another version of Visual Studio, the procedures might vary slightly.
+This article describes how to use Visual Studio 2017 to create an Office Add-in for Excel, Word, PowerPoint, or Outlook and debug the add-in in the Office desktop client on Windows. If you're using another version of Visual Studio, the procedures might vary slightly.
 
 > [!NOTE]
 > Visual Studio does not support creating Office Add-ins for OneNote or Project, but you can use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) to create these types of add-ins.
