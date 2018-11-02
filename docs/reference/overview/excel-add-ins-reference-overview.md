@@ -8,24 +8,26 @@ Some of the core Excel objects are listed below for convenience:
 
 - [Worksheet](/javascript/api/excel/excel.worksheet): Represents a worksheet in a workbook. 
     - [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection): A collection of the **Worksheet** objects in a workbook.
+    - [WorksheetProtection](/javascript/api/excel/excel.worksheetprotection): Represents the protection of a **Worksheet** object.
 
 - [Range](/javascript/api/excel/excel.range): Represents a cell, a row, a column, or a selection of cells containing one or more contiguous blocks of cells.
+    - [ConditionalFormat](/javascript/api/excel/excel.conditionalformat): An object defining a rule and a format applied to the range when the rule's condition is met.
+	- [DataValidation](/javascript/api/excel/excel.datavalidation): An object that restricts user input to a range based on a variety of criteria.
+    - [RangeSort](/javascript/api/excel/excel.rangesort): Represents a object that manages sorting operations on a range.
 
 - [Table](/javascript/api/excel/excel.table): Represents a collection of organized cells designed to make management of the data easy.
     - [TableCollection](/javascript/api/excel/excel.tablecollection): A collection of tables in a workbook or worksheet.
     - [TableColumnCollection](/javascript/api/excel/excel.tablecolumncollection): A collection of all the columns in a table.
     - [TableRowCollection](/javascript/api/excel/excel.tablerowcollection): A collection of all the rows in a table.
+    - [TableSort](/javascript/api/excel/excel.tablesort): Represents an object that manages sorting operations on a table.
 
 - [Chart](/javascript/api/excel/excel.chart): Represents a chart object in a worksheet, which is a visual representation of underlying data.
     - [ChartCollection](/javascript/api/excel/excel.chartcollection): A collection of charts in a worksheet.
-
-- [TableSort](/javascript/api/excel/excel.tablesort): Represents an object that manages sorting operations on **Table** objects.
-
-- [RangeSort](/javascript/api/excel/excel.rangesort): Represents a object that manages sorting operations on **Range** objects.
+	
+- [PivotTable](/javascript/api/excel/excel.pivottable): Represents an Excel PivotTable, which is a hierarchical grouping and presentation of data. 
+    - [PivotTableCollection](/javascript/api/excel/excel.pivottablecollection): A collection of PivotTables in a worksheet.
 
 - [Filter](/javascript/api/excel/excel.filter): Represents an object that manages the filtering of a table's column.
-
-- [WorksheetProtection](/javascript/api/excel/excel.worksheetprotection): Represents the protection of a **Worksheet** object.
 
 - [NamedItem](/javascript/api/excel/excel.nameditem): Represents a defined name for a range of cells or a value. 
     - [NamedItemCollection](/javascript/api/excel/excel.nameditemcollection): A collection of the **NamedItem** objects in a workbook.
@@ -37,9 +39,13 @@ Some of the core Excel objects are listed below for convenience:
 
 As we design and develop new APIs for Excel add-ins, we'll make them available for your feedback on our [Open API specifications](../openspec.md) page. Find out what new features are in the pipeline for the Excel JavaScript APIs, and provide your input on our design specifications.
 
+## Excel JavaScript API requirement sets
+
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For detailed information about Excel JavaScript API requirement sets, see the [Excel JavaScript API requirement sets](../requirement-sets/excel-api-requirement-sets.md) article.
+
 ## Excel JavaScript API reference
 
-For detailed information about Excel JavaScript API, see the [Excel JavaScript API reference documentation](/javascript/api/excel).
+For detailed information about the Excel JavaScript API, see the [Excel JavaScript API reference documentation](/javascript/api/excel).
 
 ## See also
 

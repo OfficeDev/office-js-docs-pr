@@ -136,7 +136,7 @@ If the specified item identifier does not identify an existing appointment, a bl
 
 ##### Example
 
-```
+```js
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
@@ -171,7 +171,7 @@ Do not use the `displayMessageForm` with an `itemId` that represents an appointm
 
 ##### Example
 
-```
+```js
 Office.context.mailbox.displayMessageForm(messageId);
 ```
 
@@ -214,7 +214,7 @@ If any of the parameters exceed the specified size limits, or if an unknown para
 
 ##### Example
 
-```
+```js
 var start = new Date();
 var end = new Date();
 end.setHours(start.getHours() + 1);
@@ -319,7 +319,7 @@ You cannot request Folder Associated Items with the `makeEwsRequestAsync` method
 
 The XML request must specify UTF-8 encoding.
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 ```
 
@@ -332,7 +332,7 @@ Your add-in must have the **ReadWriteMailbox** permission to use the `makeEwsReq
 
 When you use the `makeEwsRequestAsync` method in mail apps running in Outlook versions earlier than version 15.0.4535.1004, you should set the encoding value to `ISO-8859-1`.
 
-```
+```xml
 <?xml version="1.0" encoding="iso-8859-1"?>
 ```
 
