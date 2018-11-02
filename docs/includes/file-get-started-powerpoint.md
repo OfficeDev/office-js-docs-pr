@@ -178,19 +178,7 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 
 ### Create the add-in project
 
-1. Create a folder on your local drive and name it `my-powerpoint-addin`. This is where you'll create the files for your add-in.
-
-    ```bash
-    mkdir my-powerpoint-addin
-    ```
-
-2. Navigate to your new folder.
-
-    ```bash
-    cd my-powerpoint-addin
-    ```
-
-3. Use the Yeoman generator to create a PowerPoint add-in project. Run the following command and then answer the prompts as follows:
+1. Use the Yeoman generator to create a PowerPoint add-in project. Run the following command and then answer the prompts as follows:
 
     ```bash
     yo office
@@ -205,7 +193,7 @@ In this article, you'll walk through the process of building a PowerPoint add-in
     
     After you complete the wizard, the generator will create the project and install supporting Node components.
 	
-4. Navigate to the root folder of the web application project.
+2. Navigate to the root folder of the project.
 
     ```bash
     cd "My Office Add-in"
@@ -342,7 +330,7 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 1. Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within PowerPoint.
 
     - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - PowerPoint Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - PowerPoint Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 2. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.

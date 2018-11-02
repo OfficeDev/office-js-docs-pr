@@ -41,7 +41,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
    >    `Install-Package Microsoft.Identity.Client -Version 1.1.4-preview0002`
 
-   > 3. In **Solution Explorer**, right-click **References**. Verify that **Microsoft.Identity.Client** is listed. If it is not or there is a warning icon on its entry, delete the entry and then use the Visual Studio Add Reference Wizard to add a reference to the assembly at **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.4-preview0002\lib\net45\Microsoft.Identity.Client.dll**
+   > 3. In **Solution Explorer**, expand **References** of **Office-Add-in-ASPNET-SSO-WebAPI** project. Verify that **Microsoft.Identity.Client** is listed. If it is not or there is a warning icon on its entry, delete the entry and then use the Visual Studio Add Reference Wizard to add a reference to the assembly at **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.4-preview0002\lib\net45\Microsoft.Identity.Client.dll**
 
 1. Build the project a second time.
 
@@ -79,7 +79,7 @@ The following instruction are written generically so they can be used in multipl
     |:-----|:-----|
     |ida:ClientID|The application ID you obtained when you registered the add-in.|
     |ida:Audience|The application ID you obtained when you registered the add-in.|
-    |ida:Password|TThe password you obtained when you registered the add-in.|
+    |ida:Password|The password you obtained when you registered the add-in.|
 
    The following is an example of what the four keys you changed should look like. *Note that ClientID and Audience are the same*. You can also use a single key for both purposes, but your web.config markup is more reusable if you keep them separate because they aren't always the same. Also, having separate keys reinforces the idea that your add-in is both an OAuth resource, relative to the Office host, and an OAuth client, relative to Microsoft Graph.
 

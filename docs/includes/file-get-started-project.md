@@ -14,19 +14,7 @@ In this article, you'll walk through the process of building a Project add-in by
 
 ## Create the add-in
 
-1. Create a folder on your local drive and name it `my-project-addin`. This is where you'll create the files for your add-in.
-
-    ```bash
-    mkdir my-project-addin
-    ```
-
-2. Navigate to your new folder.
-
-    ```bash
-    cd my-project-addin
-    ```
-
-3. Use the Yeoman generator to create a Project add-in project. Run the following command and then answer the prompts as follows:
+1. Use the Yeoman generator to create a Project add-in project. Run the following command and then answer the prompts as follows:
 
     ```bash
     yo office
@@ -41,7 +29,7 @@ In this article, you'll walk through the process of building a Project add-in by
     
     After you complete the wizard, the generator will create the project and install supporting Node components.
 	
-4. Navigate to the root folder of the web application project.
+2. Navigate to the root folder of the project.
 
     ```bash
     cd "My Office Add-in"
@@ -190,7 +178,7 @@ In this article, you'll walk through the process of building a Project add-in by
 2. Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within Project.
 
     - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Project Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - Project Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 3. In Project, select a task.

@@ -1,7 +1,7 @@
 ---
 title: Build an Excel add-in using React
 description: ''
-ms.date: 12/29/2017
+ms.date: 10/19/2018
 ROBOTS: NOINDEX
 ---
 

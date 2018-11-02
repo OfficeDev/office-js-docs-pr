@@ -32,6 +32,7 @@ Provides access to the Outlook add-in object model for Microsoft Outlook and Mic
 | [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | Method |
 | [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | Method |
 | [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | Method |
+| [removeHandlerAsync](#removehandlerasynceventtype-handler-options-callback) | Method |
 
 ### Namespaces
 
@@ -96,7 +97,7 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#s
 
 Adds an event handler for a supported event.
 
-Currently, the supported event types are `Office.EventType.ItemChanged` and `Office.EventType.OfficeThemeChanged`.
+Currently, the only supported event type is `Office.EventType.ItemChanged`.
 
 ##### Parameters:
 
@@ -118,7 +119,7 @@ Currently, the supported event types are `Office.EventType.ItemChanged` and `Off
 
 ##### Example
 
-```
+```js
 Office.initialize = function (reason) {
   $(document).ready(function () {
     Office.context.mailbox.addHandlerAsync(Office.EventType.ItemChanged, loadNewItem, function (result) {
@@ -166,7 +167,7 @@ String
 
 ##### Example
 
-```
+```js
 // Get an item's ID from a REST API
 var restId = 'AAMkAGVlOTZjNTM3LW...';
 
@@ -233,7 +234,7 @@ String
 
 ##### Example
 
-```
+```js
 // Get the currently selected item's ID
 var ewsId = Office.context.mailbox.item.itemId;
 
@@ -305,7 +306,7 @@ If the specified item identifier does not identify an existing appointment, a bl
 
 ##### Example
 
-```
+```js
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
@@ -340,7 +341,7 @@ Do not use the `displayMessageForm` with an `itemId` that represents an appointm
 
 ##### Example
 
-```
+```js
 Office.context.mailbox.displayMessageForm(messageId);
 ```
 
@@ -386,7 +387,7 @@ If any of the parameters exceed the specified size limits, or if an unknown para
 
 ##### Example
 
-```
+```js
 var start = new Date();
 var end = new Date();
 end.setHours(start.getHours() + 1);
@@ -443,7 +444,7 @@ If any of the parameters exceed the specified size limits, or if an unknown para
 
 ##### Example
 
-```
+```js
 Office.context.mailbox.displayNewMessageForm(
   {
     toRecipients: Office.context.mailbox.item.to, // Copy the To line from current item
@@ -605,7 +606,7 @@ You cannot request Folder Associated Items with the `makeEwsRequestAsync` method
 
 The XML request must specify UTF-8 encoding.
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 ```
 
@@ -618,7 +619,7 @@ Your add-in must have the **ReadWriteMailbox** permission to use the `makeEwsReq
 
 When you use the `makeEwsRequestAsync` method in mail apps running in Outlook versions earlier than version 15.0.4535.1004, you should set the encoding value to `ISO-8859-1`.
 
-```
+```xml
 <?xml version="1.0" encoding="iso-8859-1"?>
 ```
 
@@ -685,3 +686,27 @@ function callback(asyncResult)  {
    // Process the returned response here.
 }
 ```
+
+####  removeHandlerAsync(eventType, handler, [options], [callback])
+
+Removes an event handler for a supported event.
+
+Currently, the only supported event type is `Office.EventType.ItemChanged`.
+
+##### Parameters:
+
+| Name | Type | Attributes | Description |
+|---|---|---|---|
+| `eventType` | [Office.EventType](office.md#eventtype-string) || The event that should revoke the handler. |
+| `handler` | Function || The function to handle the event. The function must accept a single parameter, which is an object literal. The `type` property on the parameter will match the `eventType` parameter passed to `addHandlerAsync`. |
+| `options` | Object | &lt;optional&gt; | An object literal that contains one or more of the following properties. |
+| `options.asyncContext` | Object | &lt;optional&gt; | Developers can provide any object they wish to access in the callback method. |
+| `callback` | function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.|
+
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
+|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem |
+|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|

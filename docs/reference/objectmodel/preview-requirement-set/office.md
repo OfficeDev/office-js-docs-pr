@@ -89,8 +89,9 @@ Specifies the event associated with an event handler.
 | Name | Type | Description | Minimum requirement set |
 |---|---|---|---|
 |`AppointmentTimeChanged`| String | The date or time of the selected appointment or series has changed. | 1.7 |
+|`AttachmentsChanged`| String | An attachment has been added to or removed from the item. | Preview |
 |`ItemChanged`| String | The selected item has changed. | 1.5 |
-|`OfficeThemeChanged`| String | The selected item has changed. | Preview |
+|`OfficeThemeChanged`| String | The Office theme on the mailbox has changed. | Preview |
 |`RecipientsChanged`| String | The recipient list of the selected item or appointment location has changed. | 1.7 |
 |`RecurrenceChanged`| String | The recurrence pattern of the selected series has changed. | 1.7 |
 
