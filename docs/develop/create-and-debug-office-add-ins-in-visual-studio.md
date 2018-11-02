@@ -34,15 +34,23 @@ This article describes how to use Visual Studio 2017 to create an Office Add-in 
 
 3. Name the project, and then choose **OK**.
 
-4. If you've chosen to create a **Word Web Add-in** or an **Outlook Web Add-in**, Visual Studio creates a solution and its two projects appear in **Solution Explorer**. Proceed to the next section of this article to [explore the Visual Studio solution](#explore-the-visual-studio-solution). 
+### Word Web Add-in or Outlook Web Add-in
 
-5. If you've chosen to create a **PowerPoint Web Add-in**, the **Create Office Add-in** dialog appears. Select one of the following options and choose the **Finish** button to create the Visual Studio solution. Then proceed to the next section of this article to [explore the Visual Studio solution](#explore-the-visual-studio-solution). 
+If you've chosen to create a **Word Web Add-in** or an **Outlook Web Add-in**, Visual Studio creates a solution and its two projects appear in **Solution Explorer**. Next, you can [explore the Visual Studio solution](#explore-the-visual-studio-solution). 
 
-    - **Add new functionalities to PowerPoint** - to create a task pane add-in
+### PowerPoint Web Add-in
 
-    - **Insert content into PowerPoint slides** - to create a content add-in
+If you've chosen to create a **PowerPoint Web Add-in**, the **Create Office Add-in** dialog appears. 
 
-6. If you've chosen to create an **Excel Web Add-in**, the **Create Office Add-in** dialog appears. 
+    - To create a task pane add-in, select **Add new functionalities to PowerPoint** and then choose the **Finish** button to create the Visual Studio solution.
+
+    - To create a content add-in, select **Insert content into PowerPoint slides** and then choose the **Finish** button to create the Visual Studio solution.
+
+Next, you can [explore the Visual Studio solution](#explore-the-visual-studio-solution).
+
+### Excel Web Add-in
+
+If you've chosen to create an **Excel Web Add-in**, the **Create Office Add-in** dialog appears. 
 
     - To create a task pane add-in, select **Add new functionalities to Excel** and then choose the **Finish** button to create the Visual Studio solution.
 
@@ -114,7 +122,7 @@ The following table describes the properties of the project.
 |**Project Folder**|The location of the project file.|
 
 > [!NOTE]
-> For an Outlook add-in, you may choose to specify values for one or more of the *Outlook add-in only* properties in the **Properties** window, but doing so is not required. You will be prompted for login credentials when you [start the project](#start-the-project).
+> For an Outlook add-in, you may choose to specify values for one or more of the *Outlook add-in only* properties in the **Properties** window, but doing so is not required.
 
 ### Use an existing document to debug the add-in
 
@@ -143,7 +151,7 @@ Start the project by choosing **Debug** > **Start Debugging** from the menu bar.
 
 When Visual Studio builds the project it performs the following tasks:
 
-1. Creates a copy of the XML manifest file and adds it to  _ProjectName_\Output directory. The host application consumes this copy when you start Visual Studio and debug the add-in.
+1. Creates a copy of the XML manifest file and adds it to  `_ProjectName_\bin\Debug\OfficeAppManifests` directory. The host application consumes this copy when you start Visual Studio and debug the add-in.
     
 2. Creates a set of registry entries on your computer that enable the add-in to appear in the host application.
     
@@ -151,7 +159,7 @@ When Visual Studio builds the project it performs the following tasks:
     
 Next, Visual Studio does the following:
 
-1. Modifies the [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation?view=office-js) element of the XML manifest file by replacing the ~remoteAppUrl token with the fully qualified address of the start page (for example, http://localhost/MyAgave.html).
+1. Modifies the [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation?view=office-js) element of the XML manifest file by replacing the `~remoteAppUrl` token with the fully qualified address of the start page (for example, `https://localhost:44302/Home.html`).
     
 2. Starts the web application project in IIS Express.
     
