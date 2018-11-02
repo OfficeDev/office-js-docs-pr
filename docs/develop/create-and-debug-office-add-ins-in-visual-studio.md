@@ -1,7 +1,7 @@
 ---
 title: Create and debug Office Add-ins in Visual Studio
 description: ''
-ms.date: 10/31/2018
+ms.date: 11/02/2018
 ---
 
 # Create and debug Office Add-ins in Visual Studio
@@ -77,13 +77,16 @@ The web application project contains a default HTML file, JavaScript file, and C
 
 ## Debug your add-in
 
-You can use Visual Studio to debug your add-in, as described in the following sections:
+You can use Visual Studio to debug your add-in in the Office desktop client on Windows, as described in the following sections:
 
 - [Review the build and debug properties](#review-the-build-and-debug-properties)
 - [Use an existing document to debug the add-in](#use-an-existing-document-to-debug-the-add-in)
 - [Start the project](#start-the-project)
 - [Debug the code for an Excel, PowerPoint, or Word add-in](#debug-the-code-for-an-excel-powerpoint-or-word-add-in)
 - [Debug the code for an Outlook add-in](#debug-the-code-for-an-outlook-add-in)
+
+> [!NOTE]
+> You cannot use Visual Studio to debug Office Add-ins in Office Online or Office for Mac. For information about debugging on these platforms, see [Debug Office Add-ins in Office Online](../testing/debug-add-ins-in-office-online.md) or [Debug Office Add-ins on iPad and Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
 
 ### Review the build and debug properties
 
@@ -99,7 +102,7 @@ The following table describes the properties of the project.
 
 |**Property**|**Description**|
 |:-----|:-----|
-|**Start Action**|Specifies whether to debug your add-in in an Office desktop client or in an Office Online client in the specified browser.|
+|**Start Action**|Specifies the debug mode for your add-in. Currently only **Office Desktop Client** mode is supported for Office Add-in projects.|
 |**Start Document**<br/>(Excel, PowerPoint, and Word add-ins only)|Specifies what document to open when you start the project.|
 |**Web Project**|Specifies the name of the web project associated with the add-in.|
 |**Email Address**<br/>(Outlook add-ins only)|Specifies the email address of the user account in Exchange Server or Exchange Online that you want to use to test your Outlook add-in.|
