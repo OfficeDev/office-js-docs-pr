@@ -256,7 +256,7 @@ var dialog;
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
 function (asyncResult) {
     if (asyncResult.status === Office.AsyncResultStatus.Failed) {
-        showNotification(asynceResult.error.code = ": " + asyncResult.error.message);
+        showNotification(asyncResult.error.code = ": " + asyncResult.error.message);
     } else {
 	    dialog = asyncResult.value;
         dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
