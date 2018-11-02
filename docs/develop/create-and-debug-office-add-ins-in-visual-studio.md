@@ -28,6 +28,8 @@ This article describes how to use Visual Studio 2017 to create an Office Add-in 
 
 ## Create the add-in project in Visual Studio
 
+Start by completing these three steps, and then complete the steps in the following section that corresponds to the type of add-in you're creating. 
+
 1. Open Visual Studio and from the Visual Studio menu bar, choose  **File** > **New** > **Project**.
 
 2. In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose the type of add-in project you want to create. 
@@ -42,9 +44,9 @@ If you've chosen to create a **Word Web Add-in** or an **Outlook Web Add-in**, V
 
 If you've chosen to create a **PowerPoint Web Add-in**, the **Create Office Add-in** dialog appears. 
 
-    - To create a task pane add-in, select **Add new functionalities to PowerPoint** and then choose the **Finish** button to create the Visual Studio solution.
+- To create a task pane add-in, select **Add new functionalities to PowerPoint** and then choose the **Finish** button to create the Visual Studio solution.
 
-    - To create a content add-in, select **Insert content into PowerPoint slides** and then choose the **Finish** button to create the Visual Studio solution.
+- To create a content add-in, select **Insert content into PowerPoint slides** and then choose the **Finish** button to create the Visual Studio solution.
 
 Next, you can [explore the Visual Studio solution](#explore-the-visual-studio-solution).
 
@@ -52,13 +54,13 @@ Next, you can [explore the Visual Studio solution](#explore-the-visual-studio-so
 
 If you've chosen to create an **Excel Web Add-in**, the **Create Office Add-in** dialog appears. 
 
-    - To create a task pane add-in, select **Add new functionalities to Excel** and then choose the **Finish** button to create the Visual Studio solution.
+- To create a task pane add-in, select **Add new functionalities to Excel** and then choose the **Finish** button to create the Visual Studio solution.
 
-    - To create a content add-in, select **Insert content into Excel spreadsheets**, choose the **Next** button, select one of the following options, and then choose the **Finish** button to create the Visual Studio solution:
+- To create a content add-in, select **Insert content into Excel spreadsheets**, choose the **Next** button, select one of the following options, and then choose the **Finish** button to create the Visual Studio solution:
 
-        - **Basic Add-in** - to create a content add-in project with minimal starter code
+    - **Basic Add-in** - to create a content add-in project with minimal starter code
 
-        - **Document Visualization Add-in** - to create a content add-in project with starter code to visualize and bind to data  
+    - **Document Visualization Add-in** - to create a content add-in project with starter code to visualize and bind to data  
 
 ### Explore the Visual Studio solution
 
