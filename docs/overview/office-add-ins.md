@@ -23,8 +23,6 @@ Office Add-ins provide the following advantages over add-ins built using VBA, CO
 
 - Cross-platform support. Office Add-ins run in Office for Windows, Mac, iOS, and Office Online. 
 
-- Single sign-on (SSO). Office Add-ins integrate easily with users' Office 365 accounts. 
-
 - Centralized deployment and distribution. Admins can deploy Office Add-ins centrally across an organization. 
 
 - Easy access via AppSource. You can make your solution available to a broad audience by submitting it to AppSource. 
