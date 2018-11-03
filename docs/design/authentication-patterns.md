@@ -36,9 +36,9 @@ Until single sign-on is out of preview, production add-ins should give users a c
 ## Single Sign-On authentication flow (preview)
 
 > [!NOTE]
-> The single sign-on API is currently supported in preview for Word, Excel, Outlook, and PowerPoint. For more information about where the single sign-on API is currently supported, see [IdentityAPI requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets?view=office-js). If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Office 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> The single sign-on API is currently supported in preview for Word, Excel, Outlook, and PowerPoint. For more information about single sign-on support, see [IdentityAPI requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets?view=office-js). If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Office 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
-Once single sign-on is generally available for production add-ins, use it for the smoothest end-user experience. The user's identity within Office is used to sign-in to your add-in. As a result users only sign-in once. This removes friction in the experience making it easier for your customers to get started.
+Once single sign-on is generally available for production add-ins, use it for the smoother end-user experience. The user's identity within Office (either a Microsoft Account or an Office 365 identity) is used to sign-in to your add-in. As a result users only sign-in once. This removes friction in the experience making it easier for your customers to get started.
 
 1. As an add-in is being installed, a user will see a consent window similar to the one below:
 ![](../images/add-in-auth-SSO-consent-dialog.png)
