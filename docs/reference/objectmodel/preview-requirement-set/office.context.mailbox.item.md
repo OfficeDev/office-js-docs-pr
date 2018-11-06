@@ -1398,18 +1398,18 @@ function callback(result) {
 }
 
 function handleAttachmentsCallback(result) {
-    //parse string to be a url, an .eml file, a base64-encoded string, or an .icalendar file
+    // parse string to be a url, an .eml file, a base64-encoded string, or an .icalendar file
     if (result.format == Office.MailboxEnums.AttachmentContentFormat.Base64) {
-        //handle file attachment
+        // handle file attachment
     }
     else if (result.format == Office.MailboxEnums.AttachmentContentFormat.Eml) {
-        //handle item attachment
+        // handle item attachment
     }
     else if (result.format == Office.MailboxEnums.AttachmentContentFormat.ICalendar) {
-        //handle .icalender attachment
+        // handle .icalender attachment
     }
     else {
-        //handle cloud attachment  
+        // handle cloud attachment  
     }
 }
 ```
