@@ -41,6 +41,9 @@ The OneNote add-in JavaScript API supports the following HTML for creating and u
 - `<h1>` ... `<h6>`
 - `<b>`, `<em>`, `<strong>`, `<i>`, `<u>`, `<del>`, `<sup>`, `<sub>`, `<cite>`
 
+> [!NOTE]
+> Importing HTML into OneNote consolidates whitespace. The reulting content is pasted into one outline.
+
 ## Accessing page contents
 
 You are only able to access *Page Content* via `Page#load` for the currently
