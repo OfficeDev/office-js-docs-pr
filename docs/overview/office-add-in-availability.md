@@ -698,21 +698,21 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     <th><a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
   </tr>
   <tr>
-    <td>Office for Windows 2013</td>
+    <td>Office 2013 for Windows</td>
     <td> - Taskpane</td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - Selection<br>
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office for Windows 2016</td>
+    <td>Office 2016 for Windows</td>
     <td> - Taskpane</td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - Selection<br>
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office for Windows 2019</td>
+    <td>Office 2019 for Windows</td>
     <td> - Taskpane</td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - Selection<br>
