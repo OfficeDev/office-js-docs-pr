@@ -15,10 +15,10 @@ This article provides some guidance about how to troubleshoot problems with sing
 
 ## Debugging tools
 
-We strongly recommend that you use a tool that can intercept and display the HTTP Requests from, and Responses to, your add-in's web service when you are developing. Two of the most popular are: 
+We strongly recommend that you use a tool that can intercept and display the HTTP Requests from, and Responses to, your add-in's web service when you are developing. Two of the most popular are:
 
 - [Fiddler](http://www.telerik.com/fiddler): Free ([Documentation](http://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler))
-- [Charles](https://www.charlesproxy.com/): Free for 30 days. ([Documenation](https://www.charlesproxy.com/documentation/))
+- [Charles](https://www.charlesproxy.com/): Free for 30 days. ([Documentation](https://www.charlesproxy.com/documentation/))
 
 When developing your service API, you may also want to try:
 
@@ -31,11 +31,11 @@ For examples of the error handling described in this section, see:
 - [program.js in Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/public/program.js)
 
 > [!NOTE]
-> Besides the suggestions made in this section, an Outlook add-in has an additional way to respond to any 13*nnn* error. For details, see [Scenario: Implement single sign-on to your service in an Outlook add-in](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in) and [AttachmentsDemo Sample Add-in](https://github.com/OfficeDev/outlook-add-in-attachments-demo). 
+> Besides the suggestions made in this section, an Outlook add-in has an additional way to respond to any 13*nnn* error. For details, see [Scenario: Implement single sign-on to your service in an Outlook add-in](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in) and [AttachmentsDemo Sample Add-in](https://github.com/OfficeDev/outlook-add-in-attachments-demo).
 
 ### 13000
 
-The [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) API is not supported by the add-in or the Office version. 
+The [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) API is not supported by the add-in or the Office version.
 
 - The version of Office does not support SSO. The required version is Office 2016, Version 1710, build 8629.nnnn or later (the Office 365 subscription version, sometimes called “Click to Run”). You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). 
 - The add-in manifest is missing the proper [WebApplicationInfo](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/webapplicationinfo?view=office-js) section.
@@ -46,23 +46,22 @@ Your add-in should respond to this error by falling back to an alternate system 
 
 The user is not signed into Office. Your code should recall the `getAccessTokenAsync` method and pass the option `forceAddAccount: true` in the [options](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) parameter. But don't do this more than once. The user may have decided not to sign-in.
 
-This error is never seen in Office Online. If the user's cookie expires, Office Online returns error 13006. 
+This error is never seen in Office Online. If the user's cookie expires, Office Online returns error 13006.
 
 ### 13002
 
-The user aborted sign in or consent; for example, by choosing **Cancel** on the consent dialog. 
+The user aborted sign in or consent; for example, by choosing **Cancel** on the consent dialog.
 
 - If your add-in provides functions that don't require the user to be signed in (or to have granted consent), then your code should catch this error and allow the add-in to stay running.
-- If the add-in requires a signed-in user who has granted consent, your code should ask the user to repeat the operation, but not more than once. 
+- If the add-in requires a signed-in user who has granted consent, your code should ask the user to repeat the operation, but not more than once.
 
 ### 13003
 
 User Type not supported. The user isn't signed into Office with a valid Microsoft Account or Office 365 ("Work or School") account. This may happen if Office runs with an on-premises domain account, for example. Your code should either ask the user to sign in to Office or fall back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins##requirements-and-best-practices).
 
-
 ### 13004
 
-Invalid Resource. The add-in manifest hasn’t been configured correctly. Update the manifest. For more information, see [Validate and troubleshoot issues with your manifest](../testing/troubleshoot-manifest.md). The most commmon problem is that the **Resource** element (in the **WebApplicationInfo** element) has a domain that does not match the domain of the add-in. Although the protocol part of the Resource value should be "api" not "https"; all other parts of the domain name (including port, if any) should be the same as for the add-in.
+Invalid Resource. The add-in manifest hasn’t been configured correctly. Update the manifest. For more information, see [Validate and troubleshoot issues with your manifest](../testing/troubleshoot-manifest.md). The most common problem is that the **Resource** element (in the **WebApplicationInfo** element) has a domain that does not match the domain of the add-in. Although the protocol part of the Resource value should be "api" not "https"; all other parts of the domain name (including port, if any) should be the same as for the add-in.
 
 ### 13005
 
@@ -118,7 +117,7 @@ For samples of the error-handling described in this section, see:
 
 ### Conditional access / Multifactor authentication errors
  
-In certain configurations of identity in AAD and Office 365, it is possible for some resources that are accessible with Microsoft Graph to require multifactor authentication (MFA), even when the user's Office 365 tenancy does not. When AAD receives a request for a token to the MFA-protected resource, via the on-behalf-of flow, it returns to your add-in's web service a JSON message that contains a `claims` property. The claims property has information about what further authentication factors are needed. 
+In certain configurations of identity in AAD and Office 365, it is possible for some resources that are accessible with Microsoft Graph to require multifactor authentication (MFA), even when the user's Office 365 tenancy does not. When AAD receives a request for a token to the MFA-protected resource, via the on-behalf-of flow, it returns to your add-in's web service a JSON message that contains a `claims` property. The claims property has information about what further authentication factors are needed.
 
 Your server-side code should test for this message and relay the claims value to your client-side code. You need this information in the client because Office handles authentication for SSO add-ins. The message to the client can be either an error (such as `500 Server Error` or `401 Unauthorized`) or in the body of a success response (such as `200 OK`). In either case, the (failure or success) callback of your code's client-side AJAX call to your add-in's web API should test for this response. If the claims value has been relayed, your code should recall `getAccessTokenAsync` and pass the option `authChallenge: CLAIMS-STRING-HERE` in the [options](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) parameter. When AAD sees this string, it prompts the user for the additional factor(s) and then returns a new access token which will be accepted in the on-behalf-of flow.
 
@@ -135,7 +134,7 @@ If AAD has no record that consent (to the Microsoft Graph resource) was granted 
 
 Some authentication and authorization libraries, including MSAL, prevent expired token errors by using a cached refresh token whenever necessary. You can also code your own token caching system. For a sample that does this, see [Office Add-in NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO), especially the file [auth.ts](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/src/auth.ts).
 
-But if you get an expired token or invalid token error, your code must tell the client (in the body of a `401 Unauthorized` response, for example) to recall `getAccessTokenAsync` and repeat the call to the endpoint of your add-in's web API, which will repeat the on-behalf-of flow to obtain a new token for Microsoft Graph. 
+But if you get an expired token or invalid token error, your code must tell the client (in the body of a `401 Unauthorized` response, for example) to recall `getAccessTokenAsync` and repeat the call to the endpoint of your add-in's web API, which will repeat the on-behalf-of flow to obtain a new token for Microsoft Graph.
 
 ### Invalid token error when calling Microsoft Graph
 
