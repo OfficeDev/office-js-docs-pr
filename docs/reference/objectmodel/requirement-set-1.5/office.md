@@ -86,7 +86,7 @@ Specifies the event associated with an event handler.
 
 | Name | Type | Description |
 |---|---|---|
-|`ItemChanged`| String | The selected item has changed. |
+|`ItemChanged`| String | A different Outlook item is selected for viewing while the task pane is pinned. |
 
 ##### Requirements
 
