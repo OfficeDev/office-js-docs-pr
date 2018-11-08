@@ -132,7 +132,7 @@ The `parameters` property is an array of parameter objects. The following table 
 |  `description`  |  string  |  No |  A description of the parameter.  |
 |  `dimensionality`  |  string  |  No  |  Must be either **scalar** (a non-array value) or **matrix** (a 2-dimensional array).  |
 |  `name`  |  string  |  Yes  |  The name of the parameter. This name is displayed in Excel's intelliSense.  |
-|  `type`  |  string  |  No  |  The data type of the parameter. Must be **boolean**, **number**, or **string**.  |
+|  `type`  |  string  |  No  |  The data type of the parameter. Can be **boolean**, **number**, **string**, or **any** which allows the use of any of the previous three types. **Any** is the default option if left unspecified.  |
 
 ## result
 
@@ -141,7 +141,7 @@ The `results` object defines the type of information that is returned by the fun
 |  Property  |  Data type  |  Required  |  Description  |
 |:-----|:-----|:-----|:-----|
 |  `dimensionality`  |  string  |  No  |  Must be either **scalar** (a non-array value) or **matrix** (a 2-dimensional array). |
-|  `type`  |  string  |  Yes  |  The data type of the parameter. Must be **boolean**, **number**, or **string**.  |
+|  `type`  |  string  |  Yes  |  The data type of the parameter. Must be **boolean**, **number**, **string**, or **any** which allows use of any of the previous three types. **Any** is the default option if left unspecified. |
 
 ## See also
 
