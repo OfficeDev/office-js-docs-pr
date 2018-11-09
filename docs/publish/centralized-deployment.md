@@ -73,7 +73,7 @@ If your organization meets all requirements, complete the following steps to pub
     ![Edit who has access page in Office 365 admin center](../images/power-bi-tiles-edit.png)
 
     > [!NOTE]
-    > For single sign-on (SSO) add-ins, the users and groups assigned will also be shared with add-ins that share the same Azure App ID. Any changes to user assignments will also apply to those add-ins. The related add-ins will be shown on this page. For SSO add-ins only, this page will display the list of Microsoft Graph permissions that the add-in requires.
+    > A [single sign-on (SSO)](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins) system for add-ins is currently in preview and should not be used for production add-ins. When an add-in using SSO is deployed, the users and groups assigned are also shared with add-ins that share the same Azure App ID. Any changes to user assignments are also applied to those add-ins. The related add-ins are shown on this page. For SSO add-ins only, this page displays the list of Microsoft Graph permissions that the add-in requires.
 
 11.	When finished, choose **Save** to save the manifest. This process may take up to three minutes. Then, finish the walkthrough by pressing **Next**. You now see your add-in along with other apps in Office 365.
 

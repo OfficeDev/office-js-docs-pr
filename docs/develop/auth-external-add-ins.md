@@ -24,10 +24,6 @@ You should be familiar with the pros and cons of the Implicit flow and the Autho
 > [!NOTE]
 > You also have the option of using a middleman service to perform authorization and pass the access token to your add-in. For details about this scenario, see the **Middleman services** section later in this article.
 
-## Authorization to Microsoft Graph
-
-If the external service is accessible through Microsoft Graph, such as Office 365 or OneDrive, then you can provide the best experience for your users, and the easiest development experience for yourself, by using the single sign-on system described at [Authorize to Microsoft Graph in your Office Add-in](authorize-to-microsoft-graph.md) and its related articles. The techniques described in this article are best used for external services that are not accessible with Microsoft Graph. However, they *can* be used to access Microsoft Graph, and you might prefer them to the advantages of single sign-on. For example, the single sign-on system requires server-side code, so it cannot be used with a true single page app. Also, the single sign-on system is not yet supported on all platforms.
-
 ## Using the Implicit flow in Office Add-ins
 The best way to find out if an online service supports the Implicit flow is to consult the service's documentation. For services that support the Implicit flow, you can use the **Office-js-helpers** JavaScript library to do all the detailed work for you:
 

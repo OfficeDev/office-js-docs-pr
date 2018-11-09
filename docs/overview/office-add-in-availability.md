@@ -1,14 +1,12 @@
 ---
 title: Office Add-in host and platform availability
-description: Supported requirement sets for Excel, Word, Outlook, PowerPoint, and OneNote.
-ms.date: 10/03/2018
+description: Supported requirement sets for Excel, Word, Outlook, PowerPoint, OneNote, and Project.
+ms.date: 11/07/2018
 ---
 
 # Office Add-in host and platform availability
 
 To work as expected, your Office Add-in might depend on a specific Office host, a requirement set, an API member, or a version of the API. The following tables contain the available platform, extension points, API requirement sets, and common API requirement sets that are currently supported for each Office application.
-
-If a table cell contains an asterisk ( * ), that means we’re working on it. For requirement sets for Project or Access, see [Office common requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).  
 
 > [!NOTE]
 > The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1, WordApi 1.1, and common API requirement sets.
@@ -343,7 +341,6 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
     <th>Extension points</th>
     <th>API requirement sets</th>
     <th><a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
-  </tr> 
   </tr>
   <tr>
     <td>Office Online</td>
@@ -548,7 +545,6 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
     <th>Extension points</th>
     <th>API requirement sets</th>
     <th><a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
-  </tr> 
   </tr>
   <tr>
     <td>Office Online</td>
@@ -674,7 +670,6 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
     <th>Extension points</th>
     <th>API requirement sets</th>
     <th><a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
-  </tr> 
   </tr>
   <tr>
     <td>Office Online</td>
@@ -687,6 +682,40 @@ If a table cell contains an asterisk ( * ), that means we’re working on it. Fo
          - HtmlCoercion<br>
          - ImageCoercion<br>
          - Settings<br>
+         - TextCoercion</td>
+  </tr>
+</table>
+
+<br/>
+
+## Project
+
+<table style="width:80%">
+  <tr>
+    <th>Platform</th>
+    <th>Extension points</th>
+    <th>API requirement sets</th>
+    <th><a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></th>
+  </tr>
+  <tr>
+    <td>Office 2013 for Windows</td>
+    <td> - Taskpane</td>
+    <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td> - Selection<br>
+         - TextCoercion</td>
+  </tr>
+  <tr>
+    <td>Office 2016 for Windows</td>
+    <td> - Taskpane</td>
+    <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td> - Selection<br>
+         - TextCoercion</td>
+  </tr>
+  <tr>
+    <td>Office 2019 for Windows</td>
+    <td> - Taskpane</td>
+    <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td> - Selection<br>
          - TextCoercion</td>
   </tr>
 </table>

@@ -18,7 +18,6 @@ The Office Add-ins platform provides the framework and Office.js JavaScript APIs
 
 * **Cross-platform support**: Excel add-ins run in Office for Windows, Mac, iOS, and Office Online.
 * **Centralized deployment**: Admins can quickly and easily deploy Excel add-ins to users throughout an organization.
-* **Single sign on (SSO)**: Easily integrate your Excel add-in with the Microsoft Graph.
 * **Use of standard web technology**: Create your Excel add-in using familiar web technologies such as HTML, CSS, and JavaScript.
 * **Distribution via AppSource**: Share your Excel add-in with a broad audience by publishing it to [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office&page=1&src=office&corrid=53245fad-fcbe-41f8-9f97-b0840264f97c&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d).
 

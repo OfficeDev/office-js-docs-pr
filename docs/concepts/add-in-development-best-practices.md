@@ -46,8 +46,6 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
 - Avoid pop ups. If you have to use them, guide the user to enable your pop up.
 
-- Use [single sign-on (SSO) authentication](https://docs.microsoft.com/outlook/add-ins/authenticate-a-user-with-an-identity-token).
-
 For templates that illustrate patterns that you can apply as you develop your first-run experience, see [UX design patterns for Office Add-ins](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
 
 ## Use add-in commands
