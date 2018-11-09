@@ -129,7 +129,7 @@ The `parameters` property is an array of parameter objects. The following table 
 
 |  Property  |  Data type  |  Required  |  Description  |
 |:-----|:-----|:-----|:-----|
-|  `description`  |  string  |  No |  A description of the parameter.  |
+|  `description`  |  string  |  No |  A description of the parameter. This is displayed in Excel's intelliSense.  |
 |  `dimensionality`  |  string  |  No  |  Must be either **scalar** (a non-array value) or **matrix** (a 2-dimensional array).  |
 |  `name`  |  string  |  Yes  |  The name of the parameter. This name is displayed in Excel's intelliSense.  |
 |  `type`  |  string  |  No  |  The data type of the parameter. Can be **boolean**, **number**, **string**, or **any**, which allows you to use of any of the previous three types. If this property is not specified, the data type defaults to **any**. |
