@@ -246,7 +246,7 @@ When this method is called, the new Workbook is immediately opened and displayed
 await Excel.createWorkbook()
 ```
 
-`createWorkbook` takes in an optional string. This string is an .xlsx file in base64 encoding. Assuming the string argument is a valid .xlsx file, the resulting workbook will be a copy of that file. You can convert a file into a base64 string using the [FileReader]( https://developer.mozilla.org/en-US/docs/Web/API/FileReader) class. You can get your add-in’s current workbook as a base64 string by using [file slicing]( https://docs.microsoft.com/en-us/javascript/api/office/office.document?view=office-js#getfileasync-filetype--options--callback-).
+`createWorkbook` takes in an optional string. This string is an .xlsx file in base64 encoding. Assuming the string argument is a valid .xlsx file, the resulting workbook will be a copy of that file. You can convert a file into a base64 string using the [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) class. You can get your add-in’s current workbook as a base64 string by using [file slicing](https://docs.microsoft.com/javascript/api/office/office.document#getfileasync-filetype--options--callback-).
 
 ## See also
  
