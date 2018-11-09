@@ -132,16 +132,16 @@ The `parameters` property is an array of parameter objects. The following table 
 |  `description`  |  string  |  No |  A description of the parameter.  |
 |  `dimensionality`  |  string  |  No  |  Must be either **scalar** (a non-array value) or **matrix** (a 2-dimensional array).  |
 |  `name`  |  string  |  Yes  |  The name of the parameter. This name is displayed in Excel's intelliSense.  |
-|  `type`  |  string  |  No  |  The data type of the parameter. Can be **boolean**, **number**, **string**, or **any**, which allows you to use of any of the previous three types. **Any** is the default option if left unspecified.  |
+|  `type`  |  string  |  No  |  The data type of the parameter. Can be **boolean**, **number**, **string**, or **any**, which allows you to use of any of the previous three types. If this property is not specified, the data type defaults to **any**. |
 
 ## result
 
-The `results` object defines the type of information that is returned by the function. The following table lists the properties of the `result` object.
+The `result` object defines the type of information that is returned by the function. The following table lists the properties of the `result` object.
 
 |  Property  |  Data type  |  Required  |  Description  |
 |:-----|:-----|:-----|:-----|
 |  `dimensionality`  |  string  |  No  |  Must be either **scalar** (a non-array value) or **matrix** (a 2-dimensional array). |
-|  `type`  |  string  |  Yes  |  The data type of the parameter. Must be **boolean**, **number**, **string**, or **any**, which allows you to use of any of the previous three types. **Any** is the default option if left unspecified. |
+|  `type`  |  string  |  Yes  |  The data type of the parameter. Must be **boolean**, **number**, **string**, or **any**, which allows you to use of any of the previous three types. |
 
 ## See also
 
