@@ -240,13 +240,13 @@ Your add-in can create a new workbook, separate from the Excel instance in which
 createWorkbook(base64?: string): Promise<object>;
 ```
 
-When this method is called, the new Workbook is immediately opened and displayed in Excel. This happens in a new Excel instance. Your add-in remains open and running with the previous workbook.
+When this method is called, the new workbook is immediately opened and displayed in Excel. This happens in a new Excel instance. Your add-in remains open and running with the previous workbook.
 
 ``` typescript
-await Excel.createWorkbook()
+await Excel.createWorkbook();
 ```
 
-`createWorkbook` takes in an optional string. This string is an .xlsx file in base64 encoding. Assuming the string argument is a valid .xlsx file, the resulting workbook will be a copy of that file. You can convert a file into a base64 string using the [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) class. You can get your add-in’s current workbook as a base64 string by using [file slicing](https://docs.microsoft.com/javascript/api/office/office.document#getfileasync-filetype--options--callback-).
+`createWorkbook` takes in an optional string. This string is an .xlsx file in base64 encoding. Assuming the string argument is a valid .xlsx file, the resulting workbook will be a copy of that file. The [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) class can be used to convert a file into the required base64 string. You can get your add-in’s current workbook as a base64 string by using [file slicing](https://docs.microsoft.com/javascript/api/office/office.document#getfileasync-filetype--options--callback-).
 
 ## See also
  
