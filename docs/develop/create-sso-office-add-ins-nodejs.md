@@ -47,7 +47,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Register the add-in with Azure AD v2.0 endpoint
 
-The following instruction are written generically so they can be used in multiple places. For this ariticle do the following:
+The following instruction are written generically so they can be used in multiple places. For this article do the following:
 - Replace the placeholder **$ADD-IN-NAME$** with `“Office-Add-in-NodeJS-SSO`.
 - Replace the placeholder **$FQDN-WITHOUT-PROTOCOL$** with `localhost:3000`.
 - When you specify permissions in the **Select Permissions** dialog, check the boxes for the following permissions. Only the first is really required by your add-in itself; but the `profile` permission is required for the Office host to get a token to your add-in web application.
@@ -404,7 +404,7 @@ There are two server-side files that need to be modified.
     * The resource parameter is optional. It should not be used when the STS is the AAD V 2.0 endpoint. The V 2.0 endpoint infers the resource from the scopes and it returns an error if a resource is sent in the HTTP Request. 
     * Throwing an exception in the `catch` block will *not* cause an immediate "500 Internal Server Error" to be sent to the client. Calling code in the server.js file will catch this exception and turn it into an error message that is sent to the client.
 
-        ```javascript
+        ```typescript
         private async exchangeForToken(jwt: string, scopes: string[] = ['openid'], resource?: string) {
             try {
                 // TODO3: Construct the parameters that will be sent in the body of the 
@@ -425,7 +425,7 @@ There are two server-side files that need to be modified.
     * An STS that supports the "on behalf of" flow expects certain property/value pairs in the body of the HTTP request. This code constructs an object that will become the body of the request. 
     * A resource property is added to the body if, and only if, a resource was passed to the method.
 
-        ```javascript
+        ```typescript
         const v2Params = {
                 client_id: this.clientId,
                 client_secret: this.clientSecret,
@@ -448,7 +448,7 @@ There are two server-side files that need to be modified.
 
 3. Replace `TODO4` with the following code which sends the HTTP request to the token endpoint of the STS.
 
-    ```javascript
+    ```typescript
     const res = await fetch(`${this.stsDomain}/${this.tenant}/${this.tokenURLsegment}`, {
         method: 'POST',
         body: form(finalParams),
@@ -461,7 +461,7 @@ There are two server-side files that need to be modified.
 
 4. Replace `TODO5` with the following code. Note that throwing an exception will *not* cause an immediate "500 Internal Server Error" to be sent to the client. Calling code in the server.js file will catch this exception and turn it into an error message that is sent to the client.
 
-    ```javascript
+    ```typescript
      if (res.status !== 200) {
         const exception = await res.json();
         throw exception;                
@@ -470,7 +470,7 @@ There are two server-side files that need to be modified.
 
 5. Replace `TODO6` with the following code. Note that the code persists the access token to the resource, and it's expiration time, in addition to returning it. Calling code can avoid unnecessary calls to the STS by reusing an unexpired access token to the resource. You'll see how to do that in the next section.
 
-    ```javascript  
+    ```typescript  
     const json = await res.json();
     const resourceToken = json['access_token'];
     ServerStorage.persist('ResourceToken', resourceToken);
@@ -489,7 +489,7 @@ There are two server-side files that need to be modified.
     * The comments above about the parameters to the the `exchangeForToken` method apply to the parameters of this method as well.
     * The method first checks the persistent storage for an access token to the resource that has not expired and is not going to expire in the next minute. It calls the `exchangeForToken` method you created in the last section only if it needs to.
 
-    ```javascript
+    ```typescript
     async acquireTokenOnBehalfOf(jwt: string, scopes: string[] = ['openid'], resource?: string) {
         const resourceTokenExpirationTime = ServerStorage.retrieve('ResourceTokenExpiresAt');
         if (moment().add(1, 'minute').diff(resourceTokenExpirationTime) < 1 ) {
@@ -510,14 +510,14 @@ There are two server-side files that need to be modified.
 
 2. Add the following method to the bottom of the file. This method will serve the add-in's home page. The add-in manifest specifies the home page URL.
 
-    ```javascript
+    ```typescript
     app.get('/index.html', handler(async (req, res) => {
         return res.sendfile('index.html');
     })); 
     ```
 
 3. Add the following method to bottom of the file. This method will handle any requests for the `onedriveitems` API.
-    ```javascript
+    ```typescript
     app.get('/api/onedriveitems', handler(async (req, res) => {
         // TODO7: Initialize the AuthModule object and validate the access token 
         //        that the client-side received from the Office host.
@@ -529,9 +529,9 @@ There are two server-side files that need to be modified.
     })); 
     ```
 
-4. Replace `TODO7` with the following code which validates the access token received from the Office host application. The `verifyJWT` method is defined in the src\auth.ts file. It always validates the audience and the issuer. We use the optional parameter to specify that we also want it to verify that the scope in the access token is `access_as_user`. This is the only permisison to the add-in that the user and the Office host need in order to get an access token to Microsoft Graph by means of the "on behalf" flow. 
+4. Replace `TODO7` with the following code which validates the access token received from the Office host application. The `verifyJWT` method is defined in the src\auth.ts file. It always validates the audience and the issuer. We use the optional parameter to specify that we also want it to verify that the scope in the access token is `access_as_user`. This is the only permission to the add-in that the user and the Office host need in order to get an access token to Microsoft Graph by means of the "on behalf" flow. 
 
-    ```javascript
+    ```typescript
     await auth.initialize();
     const { jwt } = auth.verifyJWT(req, { scp: 'access_as_user' }); 
     ```
@@ -544,7 +544,7 @@ There are two server-side files that need to be modified.
     * The call to `acquireTokenOnBehalfOf` does not include a resource parameter because we constructed the `AuthModule` object (`auth`) with the AAD V2.0 endpoint which does not support a resource property.
     * The second parameter of the call specifies the permissions the add-in will need to get a list of the user's files and folders on OneDrive. (The `profile` permission is not requested because it is only needed when the Office host gets the access token to your add-in, not when you are trading in that token for an access token to Microsoft Graph.)
 
-    ```javascript
+    ```typescript
     const graphToken = await auth.acquireTokenOnBehalfOf(jwt, ['Files.Read.All']);
     ```
 
@@ -553,13 +553,13 @@ There are two server-side files that need to be modified.
     * The MSGraphHelper class is defined in src\msgraph-helper.ts. 
     * We minimize the data that must be returned by specifying that we only want the name property and only the first 3 items.
 
-    ```javascript
+    ```typescript
     const graphData = await MSGraphHelper.getGraphData(graphToken, "/me/drive/root/children", "?$select=name&$top=3");
     ```
 
 7. Replace `TODO10` with the following code. Note that this code handles '401 Unauthorized" errors from Microsoft Graph which would indicate an expired or invalid token. It is very unlikely that this would ever happen since the token persisting logic should prevent it. (See the section **Create a method to get access to the resource using the "on behalf of" flow** above.) If it does happen, this code will relay the error to the client with "Microsoft Graph error" in the error name. (See the `handleClientSideErrors` method that you created in the program.js file in an earlier step.) Code that you add to the ODataHelper.js file in a later step helps process errors from Microsoft Graph.
 
-    ```javascript
+    ```typescript
     if (graphData.code) {
         if (graphData.code === 401) {
             throw new UnauthorizedError('Microsoft Graph error', graphData);
@@ -570,7 +570,7 @@ There are two server-side files that need to be modified.
 
 1. Replace `TODO11` with the following code. Note that Microsoft Graph returns some OData metadata and an **eTag** property for every item, even if `name` is the only property requested. The code sends only the item names to the client.
 
-    ```javascript
+    ```typescript
     const itemNames: string[] = [];
     const oneDriveItems: string[] = graphData['value'];
     for (let item of oneDriveItems){
@@ -587,7 +587,7 @@ There are two server-side files that need to be modified.
 
     * The response from the OData endpoint might be an error, say a 401 if the endpoint requires an access token and it was invalid or expired. But an error message is still a *message*, not an error in the call of `https.get`, so the `on('error', reject)` line at the end of `https.get` isn't triggered. So, the code distinguishes success (200) messages from error messages and sends a JSON object to the caller with either the requested OData or error information.
 
-    ```javascript
+    ```typescript
     var error;
     if (response.statusCode === 200) {
         // TODO1: Return the data to the caller and resolve the Promise.
@@ -598,7 +598,7 @@ There are two server-side files that need to be modified.
 
 1.  Replace `TODO1` with the following code. Note that the code assumes the data is returned as JSON.
 
-    ```javascript
+    ```typescript
     let parsedBody = JSON.parse(body);
     resolve(parsedBody);
     ```
@@ -608,7 +608,7 @@ There are two server-side files that need to be modified.
     * An error response from an OData source will always have a statusCode and usually a statusMessage. Some OData sources also add an error property to the body with further information, such as an inner, or more specific, code and message.
     * The Promise object is resolved, not rejected. The `https.get` runs when a web service calls an OData endpoint server-to-server. But that call comes in the context of a call from a client to a web API in the web service. The "outer" request from the client to the web service never completes if this "inner" request is rejected. Also, resolving the request with the custom `Error` object is required if the caller of `http.get` needs to relay errors from the OData endpoint to the client.
 
-    ```javascript
+    ```typescript
     error = new Error();
     error.code = response.statusCode;
     error.message = response.statusMessage;
