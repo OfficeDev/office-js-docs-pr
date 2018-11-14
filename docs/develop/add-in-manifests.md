@@ -41,7 +41,7 @@ The following table specifies the elements that are required for the three types
 | [DisplayName][]                                                                              |    X    |     X     |    X    |
 | [Description][]                                                                              |    X    |     X     |    X    |
 | [IconUrl][]                                                                                  |    X    |     X     |    X    |
-| [HighResolutionIconUrl][]                                                                    |    X    |     X     |    X    |
+| [HighResolutionIconUrl*][]                                                                    |        |          |        |
 | [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       |    X    |     X     |         |
 | [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]                         |    X    |     X     |         |
 | [DesktopSettings][]                                                                          |         |           |    X    |
@@ -155,7 +155,8 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   <DisplayName DefaultValue="Add-in Commands Sample" />
   <Description DefaultValue="Sample that illustrates add-in commands basic control types and actions" />
   <!--Icon for your add-in. Used on installation screens and the add-ins dialog -->
-  <IconUrl DefaultValue="https://i.imgur.com/oZFS95h.png" />
+  <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png"/>
 
   <!--BeginTaskpaneMode integration. Office 2013 and any client that doesn't understand commands will use this section.
     This section will also be used if there are no VersionOverrides -->
@@ -348,7 +349,8 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Sample content add-in" />
   <Description DefaultValue="Describe the features of this app." />
-  <IconUrl DefaultValue="https://contoso.com/ENUSIcon.png" />
+  <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png"/>
   <Hosts>
     <Host Name="Workbook" />
     <Host Name="Database" />
@@ -391,10 +393,10 @@ The following sections show examples of manifest v1.1 XML files for content, tas
       YouTube références dans vos courriers électronique
       directement depuis Outlook et Outlook Web App."/>
   </Description>
-  <!-- Change the following line to specify    -->
-  <!-- the web server that hosts the icon file. -->
-  <IconUrl DefaultValue=
-    "https://webserver/YouTube/YouTubeLogo.png"/>
+  <!-- Change the following lines to specify    -->
+  <!-- the web server that hosts the icon files. -->
+  <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png"/>
 
   <Hosts>
     <Host Name="Mailbox" />
