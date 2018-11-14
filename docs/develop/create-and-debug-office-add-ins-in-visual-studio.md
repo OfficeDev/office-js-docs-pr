@@ -100,15 +100,17 @@ You can use Visual Studio to debug your add-in in the Office desktop client on W
 
 ### Review the build and debug properties
 
-Before you start debugging, review the properties of the add-in project to confirm that Visual Studio will open the desired host application and that other build and debug properties are set appropriately.
+Before you start debugging, review the properties of each project to confirm that Visual Studio will open the desired host application and that other build and debug properties are set appropriately.
 
-To view project properties, open the **Properties** window for the add-in project:
+#### Add-in project properties
+
+Open the **Properties** window for the add-in project to review project properties:
 
 1. In  **Solution Explorer**, choose the add-in project (*not* the web application project).
 
 2. From the menu bar, choose  **View** >  **Properties Window**.
 
-The following table describes the properties of the project.
+The following table describes the properties of the add-in project.
 
 |**Property**|**Description**|
 |:-----|:-----|
@@ -125,6 +127,24 @@ The following table describes the properties of the project.
 
 > [!NOTE]
 > For an Outlook add-in, you may choose to specify values for one or more of the *Outlook add-in only* properties in the **Properties** window, but doing so is not required.
+
+#### Web application project properties
+
+Open the **Properties** window for the web application project to review project properties:
+
+1. In  **Solution Explorer**, choose the web application project.
+
+2. From the menu bar, choose  **View** >  **Properties Window**.
+
+The following table describes the properties of the web application project that are most relevant to Office Add-in projects.
+
+|**Property**|**Description**|
+|:-----|:-----|
+|**SSL Enabled**|Specifies whether SSL is enabled on the site. This property should be set to **True** for Office Add-in projects.|
+|**SSL URL**|Specifies the secure HTTPS URL for the site. Read-only.|
+|**URL**|Specifies the HTTP URL for the site. Read-only.|
+|**Project File**|Specifies the name of the file containing build, configuration, and other information about the project.|
+|**Project Folder**|Specifies the location of the project file. Read-only. The manifest file that Visual Studio generates at runtime is written to the `bin\Debug\OfficeAppManifests` folder in this location.|
 
 ### Use an existing document to debug the add-in
 
@@ -157,7 +177,7 @@ When Visual Studio builds the project it performs the following tasks:
     
 2. Creates a set of registry entries on your computer that enable the add-in to appear in the host application.
     
-3. Builds the web application project, and then deploys it to the local IIS web server (http://localhost). 
+3. Builds the web application project, and then deploys it to the local IIS web server (https://localhost). 
     
 Next, Visual Studio does the following:
 
