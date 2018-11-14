@@ -19,27 +19,27 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
             <title>Dialog for My Office Add-in</title>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
             <link rel="stylesheet" href="node_modules/office-ui-fabric-js/dist/css/fabric.min.css" />
             <link rel="stylesheet" href="node_modules/office-ui-fabric-js/dist/css/fabric.components.css" />
-            <link rel="stylesheet" href="app.css">
-    
+            <link rel="stylesheet" href="app.css" />
+
             <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
             <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.1.min.js"></script>
             <script type="text/javascript" src="popup.js"></script>
-    
+
         </head>
-         <body style="display:flex;flex-direction:column;align-items:center;justify-content:center">
-         <div class="padding">
-            <p class="ms-font-xl">ENTER YOUR NAME</p>
-         </div>        
-        <div class="padding">
-            <input id="name-box" type="text"/>
-        <div>
-        <div class="padding">
-            <button id="ok-button" class="ms-Button">OK</button>
-        </div>
-    </body>
+        <body style="display:flex;flex-direction:column;align-items:center;justify-content:center">
+            <div class="padding">
+                <p class="ms-font-xl">ENTER YOUR NAME</p>
+            </div>
+            <div class="padding">
+                <input id="name-box" type="text"/>
+            </div>
+            <div class="padding">
+                <button id="ok-button" class="ms-Button">OK</button>
+            </div>
+        </body>
     </html>
     ```
 
@@ -52,17 +52,17 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
     (function () {
     "use strict";
 
-        Office.initialize = function() {        
+        Office.initialize = function() {
             $(document).ready(function () {  
-    
+
                 // TODO1: Assign handler to the OK button.
-    
+
             });
         }
 
         // TODO2: Create the OK button handler
-    
-    }());    
+
+    }());
     ```
 
 6. Replace `TODO1` with the following code. You'll create the `sendStringToParentPage` function in the next step.
@@ -71,7 +71,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
     $('#ok-button').click(sendStringToParentPage);
     ```
 
-7. Replace `TODO2` with the following code. The `messageParent` method passes its parameter to the parent page, in this case, the page in the task pane. The parameter can be a boolean or a string, which includes anything that can be serialized as a string, such as XML or JSON. 
+7. Replace `TODO2` with the following code. The `messageParent` method passes its parameter to the parent page, in this case, the page in the task pane. The parameter can be a boolean or a string, which includes anything that can be serialized as a string, such as XML or JSON.
 
     ```js
     function sendStringToParentPage() {
@@ -83,7 +83,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 8. Save the file.
 
    > [!NOTE]
-   > The popup.html file, and the popup.js file that it loads, run in an entirely separate Internet Explorer process from the add-in's task pane. If the popup.js was transpiled into the same bundle.js file as the app.js file, then the add-in would have to load two copies of the bundle.js file, which defeats the purpose of bundling. In addition, the popup.js file does not contain any JavaScript that is unsupported by IE. For these two reasons, this add-in does not transpile the popup.js file at all. 
+   > The popup.html file, and the popup.js file that it loads, run in an entirely separate Internet Explorer process from the add-in's task pane. If the popup.js was transpiled into the same bundle.js file as the app.js file, then the add-in would have to load two copies of the bundle.js file, which defeats the purpose of bundling. In addition, the popup.js file does not contain any JavaScript that is unsupported by IE. For these two reasons, this add-in does not transpile the popup.js file at all.
 
 
 ## Open the dialog from the task pane
@@ -92,16 +92,16 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 2. Below the `div` that contains the `freeze-header` button, add the following markup:
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="open-dialog">Open Dialog</button>          
+    <div class="padding">
+        <button class="ms-Button" id="open-dialog">Open Dialog</button>
     </div>
     ```
 
 3. The dialog will prompt the user to enter a name and pass the user's name to the task pane. The task pane will display it in a label. Immediately below the `div` that you just added, add the following markup:
 
     ```html
-    <div class="padding">            
-        <label id="user-name"></label>            
+    <div class="padding">
+        <label id="user-name"></label>
     </div>
     ```
 
@@ -125,21 +125,21 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
     function openDialog() {
         // TODO1: Call the Office Shared API that opens a dialog
     }
-    ``` 
+    ```
 
 8. Replace `TODO1` with the following code. Note:
    - The `displayDialogAsync` method opens a dialog in the center of the screen.
    - The first parameter is the URL of the page to open.
-   - The second parameter passes options. `height` and `width` are percentages of the size of the Office application's window. 
-   
+   - The second parameter passes options. `height` and `width` are percentages of the size of the Office application's window.
+
     ```js
     Office.context.ui.displayDialogAsync(
         'https://localhost:3000/popup.html',
         {height: 45, width: 55},
-        
+
         // TODO2: Add callback parameter.
     );
-    ``` 
+    ```
 
 ## Process the message from the dialog and close the dialog
 
@@ -174,10 +174,9 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 1. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used under-the-hood by Excel to run Excel add-ins).
 2. Run the command `npm start` to start a web server running on localhost.
 4. Reload the task pane by closing it, and then on the **Home** menu, select **Show Taskpane** to reopen the add-in.
-6. Choose the **Open Dialog** button in the task pane. 
-7. While the dialog is open, drag it and resize it. Note that you can interact with the worksheet and press other buttons on the taskpane. But you cannot launch a second dialog from the same task pane page.
+6. Choose the **Open Dialog** button in the task pane.
+7. While the dialog is open, drag it and resize it. Note that you can interact with the worksheet and press other buttons on the task pane. But you cannot launch a second dialog from the same task pane page.
 8. In the dialog, enter a name and choose **OK**. The name appears on the task pane and the dialog closes.
 9. Optionally, comment out the line `dialog.close();` in the `processMessage` function. Then repeat the steps of this section. The dialog stays open and you can change the name. You can close it manually by pressing the **X** button in the upper right corner.
 
     ![Excel tutorial - Dialog](../images/excel-tutorial-dialog-open.png)
-

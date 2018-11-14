@@ -11,13 +11,13 @@ Before you start this step of the tutorial, we recommend that you create and man
 
 ## Create a content control
 
-1. Open the project in your code editor. 
+1. Open the project in your code editor.
 2. Open the file index.html.
 3. Below the `div` that contains the `replace-text` button, add the following markup:
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="create-content-control">Create Content Control</button>            
+    <div class="padding">
+        <button class="ms-Button" id="create-content-control">Create Content Control</button>
     </div>
     ```
 
@@ -34,7 +34,7 @@ Before you start this step of the tutorial, we recommend that you create and man
     ```js
     function createContentControl() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to create a content control.
 
             return context.sync();
@@ -46,12 +46,12 @@ Before you start this step of the tutorial, we recommend that you create and man
             }
         });
     }
-    ``` 
+    ```
 
 7. Replace `TODO1` with the following code. Note:
    - This code is intended to wrap the phrase "Office 365" in a content control. It makes a simplifying assumption that the string is present and the user has selected it.
-   - The `ContentControl.title` property specifies the visible title of the content control. 
-   - The `ContentControl.tag` property specifies an tag that can be used to get a reference to a content control using the `ContentControlCollection.getByTag` method, which you'll use in a later function. 
+   - The `ContentControl.title` property specifies the visible title of the content control.
+   - The `ContentControl.tag` property specifies an tag that can be used to get a reference to a content control using the `ContentControlCollection.getByTag` method, which you'll use in a later function.
    - The `ContentControl.appearance` property specifies the visual look of the control. Using the value "Tags" means that the control will be wrapped in opening and closing tags, and the opening tag will have the content control's title. Other possible values are "BoundingBox" and "None".
    - The `ContentControl.color` property specifies the color of the tags or the border of the bounding box.
 
@@ -62,7 +62,7 @@ Before you start this step of the tutorial, we recommend that you create and man
     serviceNameContentControl.tag = "serviceName";
     serviceNameContentControl.appearance = "Tags";
     serviceNameContentControl.color = "blue";
-    ``` 
+    ```
 
 ## Replace the content of the content control
 
@@ -70,8 +70,8 @@ Before you start this step of the tutorial, we recommend that you create and man
 2. Below the `div` that contains the `create-content-control` button, add the following markup:
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="replace-content-in-control">Rename Service</button>            
+    <div class="padding">
+        <button class="ms-Button" id="replace-content-in-control">Rename Service</button>
     </div>
     ```
 
@@ -88,7 +88,7 @@ Before you start this step of the tutorial, we recommend that you create and man
     ```js
     function replaceContentInControl() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to replace the text in the Service Name
             //        content control.
 
@@ -101,16 +101,16 @@ Before you start this step of the tutorial, we recommend that you create and man
             }
         });
     }
-    ``` 
+    ```
 
-7. Replace `TODO1` with the following code. 
+7. Replace `TODO1` with the following code.
     > [!NOTE]
     > The `ContentControlCollection.getByTag` method returns a `ContentControlCollection` of all content controls of the specified tag. We use `getFirst` to get a reference to the desired control.
 
     ```js
     const serviceNameContentControl = context.document.contentControls.getByTag("serviceName").getFirst();
     serviceNameContentControl.insertText("Fabrikam Online Productivity Suite", "Replace");
-    ``` 
+    ```
 
 ## Test the add-in
 
@@ -120,7 +120,7 @@ Before you start this step of the tutorial, we recommend that you create and man
 2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by all the hosts where Office Add-ins can run.
 3. Run the command `npm start` to start a web server running on localhost.
 4. Reload the task pane by closing it, and then on the **Home** menu, select **Show Taskpane** to reopen the add-in.
-5. In the taskpane, choose **Insert Paragraph** to ensure that there is a paragraph with "Office 365" at the top of the document.
+5. In the task pane, choose **Insert Paragraph** to ensure that there is a paragraph with "Office 365" at the top of the document.
 6. Select the phrase "Office 365" in the paragraph you just added, and then choose the **Create Content Control** button. Note that the phrase is wrapped in tags labelled "Service Name".
 7. Choose the **Rename Service** button and note that the text of the content control changes to "Fabrikam Online Productivity Suite".
 
