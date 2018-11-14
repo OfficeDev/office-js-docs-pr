@@ -277,6 +277,9 @@
       - name: Events
         href: excel/excel-add-ins-events.md
         displayName: Excel
+      - name: Multiple ranges
+        href: excel/excel-add-ins-multiple-ranges.md
+        displayName: Excel
       - name: Performance optimization
         href: excel/performance.md
         displayName: Excel
@@ -288,9 +291,6 @@
         displayName: Excel
       - name: Tables
         href: excel/excel-add-ins-tables.md
-        displayName: Excel
-      - name: Working with multiple ranges
-        href: excel/excel-add-ins-multiple-ranges.md
         displayName: Excel
       - name: Worksheets
         href: excel/excel-add-ins-worksheets.md
