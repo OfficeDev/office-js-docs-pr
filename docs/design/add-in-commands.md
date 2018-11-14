@@ -31,7 +31,7 @@ The following command capabilities are currently supported.
 **Extension points**
 
 - Ribbon tabs - Extend built-in tabs or create a new custom tab.
-- Context menus - Extend selected context menus. 
+- Context menus - Extend selected context menus.
 
 **Control types**
 
@@ -47,9 +47,9 @@ The following command capabilities are currently supported.
 
 Add-in commands are currently supported on the following platforms:
 
-- Office for Windows Desktop 2016 (build 16.0.6769+)
+- Office 2016 or later for Windows (build 16.0.6769+)
 - Office for Mac (build 15.33+)
-- Office Online 
+- Office Online
 
 More platforms are coming soon.
 
@@ -70,7 +70,7 @@ Apply the following best practices when you develop add-in commands:
      > Add-ins that take up too much space might not pass [AppSource validation](https://docs.microsoft.com/office/dev/store/validation-policies).
 
 - For all icons, follow the [icon design guidelines](add-in-icons.md).
-- Provide a version of your add-in that also works on hosts that do not support commands. A single add-in manifest can work in both command-aware (with commands) and non-command-aware (as a taskpane) hosts.
+- Provide a version of your add-in that also works on hosts that do not support commands. A single add-in manifest can work in both command-aware (with commands) and non-command-aware (as a task pane) hosts.
 
    *Figure 3. Task pane add-in in Office 2013 and the same add-in using add-in commands in Office 2016*
 
@@ -82,7 +82,3 @@ Apply the following best practices when you develop add-in commands:
 The best way to get started using add-in commands is to take a look at the [Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) on GitHub.
 
 For more information about specifying add-in commands in your manifest, see [Create add-in commands in your manifest](../develop/create-addin-commands.md) and the [VersionOverrides](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/versionoverrides?view=office-js) reference content.
-
-
-
-
