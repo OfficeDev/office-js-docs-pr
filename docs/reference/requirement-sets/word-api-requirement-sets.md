@@ -68,7 +68,7 @@ The following are the new additions to the Word JavaScript APIs in requirement s
 |[customPropertyCollection](/javascript/api/word/word.custompropertycollection)|_Method_ > getItem(key: string)|Gets a custom property object by its key, which is case-insensitive.|1.3|
 |[customPropertyCollection](/javascript/api/word/word.custompropertycollection)|_Method_ > set(key: string, value: object)|Creates or sets a custom property.|1.3|
 |[document](/javascript/api/word/word.document)|_Relationship_ > properties|Gets the properties of the current document. Read-only.|1.3|
-|[document](/javascript/api/word/word.document)|_Method_ > open()|Open the document.|1.3|
+|[documentCreated](/javascript/api/word/word.documentcreated)|_Method_ > open()|Open the document.|1.3|
 |[documentProperties](/javascript/api/word/word.documentproperties)|_Property_ > applicationName|Gets the application name of the document. Read only.|1.3|
 |[documentProperties](/javascript/api/word/word.documentproperties)|_Property_ > author|Gets or sets the author of the document.|1.3|
 |[documentProperties](/javascript/api/word/word.documentproperties)|_Property_ > category|Gets or sets the category of the document.|1.3|
