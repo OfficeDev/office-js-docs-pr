@@ -5,13 +5,13 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
 
 ## Insert an image
 
-1. Open the project in your code editor. 
+1. Open the project in your code editor.
 2. Open the file index.html.
 3. Below the `div` that contains the `replace-text` button, add the following markup:
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="insert-image">Insert Image</button>            
+    <div class="padding">
+        <button class="ms-Button" id="insert-image">Insert Image</button>
     </div>
     ```
 
@@ -21,20 +21,20 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
 
     ```js
     import { base64Image } from "./base64Image";
-    ``` 
+    ```
 
-5. Below the line that assigns a click handler to the `replace-text` button, add the following code:
+6. Below the line that assigns a click handler to the `replace-text` button, add the following code:
 
     ```js
     $('#insert-image').click(insertImage);
     ```
 
-6. Below the `replaceText` function, add the following function:
+7. Below the `replaceText` function, add the following function:
 
     ```js
     function insertImage() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to insert an image.
 
             return context.sync();
@@ -46,13 +46,13 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
             }
         });
     }
-    ``` 
+    ```
 
-7. Replace `TODO1` with the following code. Note that this line inserts the base 64 encoded image at the end of the document. (The `Paragraph` object also has an `insertInlinePictureFromBase64` method and other `insert*` methods. See the following insertHTML section for an example.)
+8. Replace `TODO1` with the following code. Note that this line inserts the base 64 encoded image at the end of the document. (The `Paragraph` object also has an `insertInlinePictureFromBase64` method and other `insert*` methods. See the following insertHTML section for an example.)
 
     ```js
     context.document.body.insertInlinePictureFromBase64(base64Image, "End");
-    ``` 
+    ```
 
 ## Insert HTML
 
@@ -60,8 +60,8 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
 2. Below the `div` that contains the `insert-image` button, add the following markup:
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="insert-html">Insert HTML</button>            
+    <div class="padding">
+        <button class="ms-Button" id="insert-html">Insert HTML</button>
     </div>
     ```
 
@@ -78,7 +78,7 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
     ```js
     function insertHTML() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to insert a string of HTML.
 
             return context.sync();
@@ -90,7 +90,7 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
             }
         });
     }
-    ``` 
+    ```
 
 6. Replace `TODO1` with the following code. Note:
    - The first line adds a blank paragraph to the end of the document. 
@@ -99,33 +99,33 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
     ```js
     const blankParagraph = context.document.body.paragraphs.getLast().insertParagraph("", "After");
     blankParagraph.insertHtml('<p style="font-family: verdana;">Inserted HTML.</p><p>Another paragraph</p>', "End");
-    ``` 
+    ```
 
 ## Insert Table
 
 1. Open the file index.html.
-3. Below the `div` that contains the `insert-html` button, add the following markup:
+2. Below the `div` that contains the `insert-html` button, add the following markup:
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="insert-table">Insert Table</button>            
+    <div class="padding">
+        <button class="ms-Button" id="insert-table">Insert Table</button>
     </div>
     ```
 
-4. Open the app.js file.
+3. Open the app.js file.
 
-5. Below the line that assigns a click handler to the `insert-html` button, add the following code:
+4. Below the line that assigns a click handler to the `insert-html` button, add the following code:
 
     ```js
     $('#insert-table').click(insertTable);
     ```
 
-6. Below the `insertHTML` function, add the following function:
+5. Below the `insertHTML` function, add the following function:
 
     ```js
     function insertTable() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to get a reference to the paragraph
             //        that will proceed the table.
 
@@ -140,28 +140,28 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
             }
         });
     }
-    ``` 
+    ```
 
-7. Replace `TODO1` with the following code. Note that this line uses the `ParapgraphCollection.getFirst` method to get a reference ot the first paragraph and then uses the `Paragraph.getNext` method to get a reference to the second paragraph.
+6. Replace `TODO1` with the following code. Note that this line uses the `ParagraphCollection.getFirst` method to get a reference ot the first paragraph and then uses the `Paragraph.getNext` method to get a reference to the second paragraph.
 
     ```js
     const secondParagraph = context.document.body.paragraphs.getFirst().getNext();
-    ``` 
+    ```
 
-8. Replace `TODO2` with the following code. Note:
+7. Replace `TODO2` with the following code. Note:
    - The first two parameters of the `insertTable` method specify the number of rows and columns.
    - The third parameter specifies where to insert the table, in this case after the paragraph.
    - The fourth parameter is a two-dimensional array that sets the values of the table cells.
    - The table will have plain default styling, but the `insertTable` method returns a `Table` object with many members, some of which are used to style the table.
 
-     ```js
+    ```js
     const tableData = [
             ["Name", "ID", "Birth City"],
             ["Bob", "434", "Chicago"],
             ["Sue", "719", "Havana"],
         ];
     secondParagraph.insertTable(3, 3, "After", tableData);
-    ``` 
+    ```
 
 ## Test the add-in
 
@@ -174,7 +174,7 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
 2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by all the hosts where Office Add-ins can run.
 3. Run the command `npm start` to start a web server running on localhost.
 4. Reload the task pane by closing it, and then on the **Home** menu, select **Show Taskpane** to reopen the add-in.
-5. In the taskpane, choose **Insert Paragraph** at least three times to ensure that there are a few paragraphs in the document.
+5. In the task pane, choose **Insert Paragraph** at least three times to ensure that there are a few paragraphs in the document.
 6. Choose the **Insert Image** button and note that an image is inserted at the end of the document.
 7. Choose the **Insert HTML** button and note that two paragraphs are inserted at the end of the document, and that the first one has Verdana font.
 8. Choose the **Insert Table** button and note that a table is inserted after the second paragraph.

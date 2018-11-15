@@ -1,7 +1,7 @@
 # Action element
 
 Specifies the action to perform when the user selects a  [Button](control.md#button-control) or [Menu](control.md#menu-dropdown-button-controls) controls.
- 
+
 ## Attributes
 
 |  Attribute  |  Required  |  Description  |
@@ -48,12 +48,12 @@ Required element when  **xsi:type** is "ShowTaskpane". Specifies the source file
 
 ## TaskpaneId
 
-Optional element when  **xsi:type** is "ShowTaskpane". Specifies the ID of the task pane container. When you have multiple "ShowTaskpane" actions, use a different **TaskpaneId** if you want an independent pane for each. Use the same **TaskpaneId** for  different actions that share the same pane. When users choose commands that share the same **TaskpaneId**, the pane container will remain open but the contents of the pane will be replaced with the corresponding Action "SourceLocation". 
+Optional element when  **xsi:type** is "ShowTaskpane". Specifies the ID of the task pane container. When you have multiple "ShowTaskpane" actions, use a different **TaskpaneId** if you want an independent pane for each. Use the same **TaskpaneId** for  different actions that share the same pane. When users choose commands that share the same **TaskpaneId**, the pane container will remain open but the contents of the pane will be replaced with the corresponding Action "SourceLocation".
 
 > [!NOTE]
 > This element is not supported in Outlook.
 
-The following example shows two actions that share the same **TaskpaneId**. 
+The following example shows two actions that share the same **TaskpaneId**.
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -89,7 +89,8 @@ The following examples show two actions that use a different **TaskpaneId**. To 
 ```  
 
 ## Title
-Optional element when  **xsi:type** is "ShowTaskpane". Specifies the custom title for the task pane for this action. 
+
+Optional element when  **xsi:type** is "ShowTaskpane". Specifies the custom title for the task pane for this action.
 
 The following examples show two different actions that use the **Title** element.
 
@@ -99,32 +100,32 @@ The following examples show two different actions that use the **Title** element
 <SourceLocation resid="PG.Code.Url" />
 <Title resid="PG.CodeCommand.Title" />
 </Action>
-``` 
+```
 
 ```xml
 <Action xsi:type="ShowTaskpane">
 <SourceLocation resid="PG.Run.Url" />
 <Title resid="PG.RunCommand.Title" />
 </Action>
-``` 
+```
 
 ```xml
 <bt:Urls>
 <bt:Url id="PG.Code.Url" DefaultValue="https://localhost:3000?commands=1" />
 <bt:Url id="PG.Run.Url" DefaultValue="https://localhost:3000/run.html" />
 </bt:Urls>
-``` 
+```
 
 ```xml
 <bt:ShortStrings>
 <bt:String id="PG.CodeCommand.Title" DefaultValue="Code" />
 <bt:String id="PG.RunCommand.Title" DefaultValue="Run" />
 </bt:ShortStrings>
-``` 
+```
 
 ## SupportsPinning
 
-Optional element when **xsi:type** is "ShowTaskpane". The containing [VersionOverrides](versionoverrides.md) elements must have an `xsi:type` attribute value of `VersionOverridesV1_1`. Include this element with a value of `true` to support taskpane pinning. The user will be able to "pin" the taskpane, causing it to stay open when changing the selection. For more information, see [Implement a pinnable taskpane in Outlook](https://docs.microsoft.com/outlook/add-ins/pinnable-taskpane).
+Optional element when **xsi:type** is "ShowTaskpane". The containing [VersionOverrides](versionoverrides.md) elements must have an `xsi:type` attribute value of `VersionOverridesV1_1`. Include this element with a value of `true` to support task pane pinning. The user will be able to "pin" the task pane, causing it to stay open when changing the selection. For more information, see [Implement a pinnable task pane in Outlook](https://docs.microsoft.com/outlook/add-ins/pinnable-taskpane).
 
 > [!NOTE]
 > SupportsPinning currently only supported by Outlook 2016 for Windows (build 7628.1000 or later).
@@ -135,5 +136,3 @@ Optional element when **xsi:type** is "ShowTaskpane". The containing [VersionOve
   <SupportsPinning>true</SupportsPinning>
 </Action>
 ```
-
-

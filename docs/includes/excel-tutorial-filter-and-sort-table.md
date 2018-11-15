@@ -5,13 +5,13 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 
 ## Filter the table
 
-1. Open the project in your code editor. 
+1. Open the project in your code editor.
 2. Open the file index.html.
 3. Just below the `div` that contains the `create-table` button, add the following markup:
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="filter-table">Filter Table</button>            
+    <div class="padding">
+        <button class="ms-Button" id="filter-table">Filter Table</button>
     </div>
     ```
 
@@ -28,8 +28,8 @@ In this step of the tutorial, you'll filter and sort the table that you created 
     ```js
     function filterTable() {
         Excel.run(function (context) {
-            
-            // TODO1: Queue commands to filter out all expense categories except 
+
+            // TODO1: Queue commands to filter out all expense categories except
             //        Groceries and Education.
 
             return context.sync();
@@ -41,7 +41,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
             }
         });
     }
-    ``` 
+    ```
 
 7. Replace `TODO1` with the following code. Note:
    - The code first gets a reference to the column that needs filtering by passing the column name to the `getItem` method, instead of passing its index to the `getItemAt` method as the `createTable` method does. Since users can move table columns, the column at a given index might change after the table is created. Hence, it is safer to use the column name to get a reference to the column. We used `getItemAt` safely in the preceding tutorial, because we used it in the very same method that creates the table, so there is no chance that a user has moved the column.
@@ -60,8 +60,8 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 2. Below the `div` that contains the `filter-table` button, add the following markup:
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="sort-table">Sort Table</button>            
+    <div class="padding">
+        <button class="ms-Button" id="sort-table">Sort Table</button>
     </div>
     ```
 
@@ -78,7 +78,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
     ```js
     function sortTable() {
         Excel.run(function (context) {
-            
+
             // TODO1: Queue commands to sort the table by Merchant name.
 
             return context.sync();
@@ -90,7 +90,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
             }
         });
     }
-    ``` 
+    ```
 
 7. Replace `TODO1` with the following code. Note:
    - The code creates an array of `SortField` objects which has just one member since the add-in only sorts on the Merchant column.
@@ -101,14 +101,14 @@ In this step of the tutorial, you'll filter and sort the table that you created 
     const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
     const expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
     const sortFields = [
-        { 
+        {
             key: 1,            // Merchant column
             ascending: false,
         }
     ];
 
     expensesTable.sort.apply(sortFields);
-    ``` 
+    ```
 
 ## Test the add-in
 
@@ -120,7 +120,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 1. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by Internet Explorer (which is used under-the-hood by Excel to run Excel add-ins).
 2. Run the command `npm start` to start a web server running on localhost.
 4. Reload the task pane by closing it, and then on the **Home** menu, select **Show Taskpane** to reopen the add-in.
-5. If for any reason the table is not in the open worksheet, in the taskpane, choose **Create Table**. 
+5. If for any reason the table is not in the open worksheet, in the task pane, choose **Create Table**.
 6. Choose the **Filter Table** and **Sort Table** buttons, in either order.
 
     ![Excel tutorial - Filter and Sort Table](../images/excel-tutorial-filter-and-sort-table.png)

@@ -1,17 +1,17 @@
-In this step of the tutorial, you'll add text inside and outside of selected ranges of text, and replace the text of a selected range. 
+In this step of the tutorial, you'll add text inside and outside of selected ranges of text, and replace the text of a selected range.
 
 > [!NOTE]
 > This page describes an individual step of a Word add-in tutorial. If you’ve arrived at this page via search engine results or other direct link, please go to the [Word add-in tutorial](../tutorials/word-tutorial.yml) introduction page to start the tutorial from the beginning.
 
 ## Add text inside a range
 
-1. Open the project in your code editor. 
+1. Open the project in your code editor.
 2. Open the file index.html.
 3. Below the `div` that contains the `change-font` button, add the following markup:
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="insert-text-into-range">Insert Abbreviation</button>            
+    <div class="padding">
+        <button class="ms-Button" id="insert-text-into-range">Insert Abbreviation</button>
     </div>
     ```
 
@@ -28,10 +28,10 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
     ```js
     function insertTextIntoRange() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to insert text into a selected range.
 
-            // TODO2: Load the text of the range and sync so that the 
+            // TODO2: Load the text of the range and sync so that the
             //        current range text can be read.
 
             // TODO3: Queue commands to repeat the text of the original
@@ -59,14 +59,14 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
     const doc = context.document;
     const originalRange = doc.getSelection();
     originalRange.insertText(" (C2R)", "End");
-    ``` 
+    ```
 
 8. We'll skip over `TODO2` until the next section. Replace `TODO3` with the following code. This code is similar to the code you created in the first stage of the tutorial, except that now you are inserting a new paragraph at the end of the document instead of at the start. This new paragraph will demonstrate that the new text is now part of the original range.
- 
+
     ```js
     doc.body.insertParagraph("Original range: " + originalRange.text,
                              "End");
-    ``` 
+    ```
 
 ## Add code to fetch document properties into the task pane's script objects
 
@@ -86,16 +86,16 @@ These steps must be completed whenever your code needs to *read* information fro
         .then(function() {
 
                 // TODO4: Move the doc.body.insertParagraph line here.
-    
+
             }
         )
             // TODO5: Move the final call of context.sync here and ensure
-            //        that it does not run until the insertParagraph has 
+            //        that it does not run until the insertParagraph has
             //        been queued.
-    ``` 
+    ```
 
-2. You can't have two `return` statements in the same unbranching code path, so delete the final line `return context.sync();` at the end of the `Word.run`. You'll add a new final `context.sync` later in this tutorial. 
-3. Cut the `doc.body.insertParagraph` line and paste in place of `TODO4`. 
+2. You can't have two `return` statements in the same unbranching code path, so delete the final line `return context.sync();` at the end of the `Word.run`. You'll add a new final `context.sync` later in this tutorial.
+3. Cut the `doc.body.insertParagraph` line and paste in place of `TODO4`.
 4. Replace `TODO5` with the following code. Note:
    - Passing the `sync` method to a `then` function ensures that it does not run until the `insertParagraph` logic has been queued.
    - The `then` method invokes whatever function is passed to it, and you don't want `sync` to be invoked twice, so leave off the "()" from the end of context.sync.
@@ -106,20 +106,20 @@ These steps must be completed whenever your code needs to *read* information fro
 
 When you are done, the entire function should look like the following:
 
-  
+
 ```js
 function insertTextIntoRange() {
     Word.run(function (context) {
-        
+
         const doc = context.document;
         const originalRange = doc.getSelection();
         originalRange.insertText(" (C2R)", "End");
 
         originalRange.load("text");
         return context.sync()
-            .then(function() {        
+            .then(function() {
                         doc.body.insertParagraph("Current text of original range: " + originalRange.text,
-                                                "End");            
+                                                "End");
                 }
             )
             .then(context.sync);
@@ -131,7 +131,7 @@ function insertTextIntoRange() {
         }
     });
 }
-``` 
+```
 
 ## Add text between ranges
 
@@ -139,8 +139,8 @@ function insertTextIntoRange() {
 2. Below the `div` that contains the `insert-text-into-range` button, add the following markup:
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="insert-text-outside-range">Add Version Info</button>            
+    <div class="padding">
+        <button class="ms-Button" id="insert-text-outside-range">Add Version Info</button>
     </div>
     ```
 
@@ -157,11 +157,11 @@ function insertTextIntoRange() {
     ```js
     function insertTextBeforeRange() {
         Word.run(function (context) {
-            
-            // TODO1: Queue commands to insert a new range before the 
+
+            // TODO1: Queue commands to insert a new range before the
             //        selected range.
 
-            // TODO2: Load the text of the original range and sync so that the 
+            // TODO2: Load the text of the original range and sync so that the
             //        range text can be read and inserted.
 
         })
@@ -172,7 +172,7 @@ function insertTextIntoRange() {
             }
         });
     }
-    ``` 
+    ```
 
 6. Replace `TODO1` with the following code. Note:
    - The method is intended to add a range whose text is "Office 2019, " before the range with text "Office 365". It makes a simplifying assumption that the string is present and the user has selected it.
@@ -183,10 +183,10 @@ function insertTextIntoRange() {
     const doc = context.document;
     const originalRange = doc.getSelection();
     originalRange.insertText("Office 2019, ", "Before");
-    ``` 
+    ```
 
-7. Replace `TODO2` with the following code. 
- 
+7. Replace `TODO2` with the following code.
+
      ```js
     originalRange.load("text");
     return context.sync()
@@ -194,21 +194,21 @@ function insertTextIntoRange() {
 
                 // TODO3: Queue commands to insert the original range as a
                 //        paragraph at the end of the document.
-    
+
                 }
             )
 
             // TODO4: Make a final call of context.sync here and ensure
-            //        that it does not run until the insertParagraph has 
+            //        that it does not run until the insertParagraph has
             //        been queued.
-    ``` 
+    ```
 
 8. Replace `TODO3` with the following code. This new paragraph will demonstrate the fact that the new text is ***not*** part of the original selected range. The original range still has only the text it had when it was selected.
- 
+
     ```js
     doc.body.insertParagraph("Current text of original range: " + originalRange.text,
                              "End");
-    ``` 
+    ```
 
 9. Replace `TODO4` with the following code:
 
@@ -223,8 +223,8 @@ function insertTextIntoRange() {
 2. Below the `div` that contains the `insert-text-outside-range` button, add the following markup:
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="replace-text">Change Quantity Term</button>            
+    <div class="padding">
+        <button class="ms-Button" id="replace-text">Change Quantity Term</button>
     </div>
     ```
 
@@ -241,7 +241,7 @@ function insertTextIntoRange() {
     ```js
     function replaceText() {
         Word.run(function (context) {
-             
+
             // TODO1: Queue commands to replace the text.
 
             return context.sync();
@@ -253,15 +253,15 @@ function insertTextIntoRange() {
             }
         });
     }
-    ``` 
+    ```
 
 6. Replace `TODO1` with the following code. Note that the method is intended to replace the string "several" with the string "many". It makes a simplifying assumption that the string is present and the user has selected it.
 
     ```js
     const doc = context.document;
     const originalRange = doc.getSelection();
-    originalRange.insertText("many", "Replace"); 
-    ``` 
+    originalRange.insertText("many", "Replace");
+    ```
 
 ## Test the add-in
 
@@ -273,7 +273,7 @@ function insertTextIntoRange() {
 2. Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by all the hosts where Office Add-ins can run.
 3. Run the command `npm start` to start a web server running on localhost.
 4. Reload the task pane by closing it, and then on the **Home** menu, select **Show Taskpane** to reopen the add-in.
-5. In the taskpane, choose **Insert Paragraph** to ensure that there is a paragraph at the start of the document.
+5. In the task pane, choose **Insert Paragraph** to ensure that there is a paragraph at the start of the document.
 6. Select some text. Selecting the phrase "Click-to-Run" will make the most sense. *Be careful not to include the preceding or following space in the selection.*
 7. Choose the **Insert Abbreviation** button. Note that " (C2R)" is added. Note also that at the bottom of the document a new paragraph is added with the entire expanded text because the new string was added to the existing range.
 8. Select some text. Selecting the phrase "Office 365" will make the most sense. *Be careful not to include the preceding or following space in the selection.*
