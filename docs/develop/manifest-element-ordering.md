@@ -13,7 +13,7 @@ The required ordering is specified in the XSD files in the [Schemas](https://git
 For example, In the `<OfficeApp>` element, the `<Id>`, `<Version>`, `<ProviderName>` must appear in that order. If an `<AlternateId>` element is added, it must be between the `<Id>` and `<Version>` element. Your manifest will not be valid and your add-in will not load, if any element is in the wrong order.
 
 > [!NOTE]
-> The [Office Add-in Validator](../testing/troubleshoot-manifest#validate-your-manifest-with-the-office-add-in-validator) uses the same error message when an element is out-of-order as it does when an element is under the wrong parent. The error says the child element is is not a valid child of the parent element. If you get such an error but the reference documentation for the child element indicates that it *is* valid for the parent, then the problem is likely that the child has been placed in the wrong order.
+> The [Office Add-in Validator](/office/dev/add-ins/testing/troubleshoot-manifest?branch=manifest-element-ordering#validate-your-manifest-with-the-office-add-in-validator) uses the same error message when an element is out-of-order as it does when an element is under the wrong parent. The error says the child element is is not a valid child of the parent element. If you get such an error but the reference documentation for the child element indicates that it *is* valid for the parent, then the problem is likely that the child has been placed in the wrong order.
 
 To find the correct order for the child elements of a given parent element, take the following steps. (This is a simplified process, as XSD files are quite complex. Fully parsing XSD files is out of the scope of this document.)
 
