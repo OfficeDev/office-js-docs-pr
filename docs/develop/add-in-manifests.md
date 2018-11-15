@@ -29,6 +29,10 @@ An XML manifest file based on this schema enables an Office Add-in to do the fol
 
 The following table specifies the elements that are required for the three types of Office Add-ins.
 
+> [!NOTE]
+> There us also a mandatory order in which elements must appear within their parent element. For more information see [How to find the proper order of manifest elements](manifest-element-ordering.md).
+
+
 ### Required elements by Office Add-in type
 
 | Element                                                                                      | Content | Task pane | Outlook |
