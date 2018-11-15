@@ -5,13 +5,13 @@ When a table is long enough that a user must scroll to see some rows, the header
 
 ## Freeze the table's header row
 
-1. Open the project in your code editor. 
+1. Open the project in your code editor.
 2. Open the file index.html.
 3. Below the `div` that contains the `create-chart` button, add the following markup:
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="freeze-header">Freeze Header</button>            
+    <div class="padding">
+        <button class="ms-Button" id="freeze-header">Freeze Header</button>
     </div>
     ```
 
@@ -28,7 +28,7 @@ When a table is long enough that a user must scroll to see some rows, the header
     ```js
     function freezeHeader() {
         Excel.run(function (context) {
-            
+
             // TODO1: Queue commands to keep the header visible when the user scrolls.
 
             return context.sync();
@@ -40,7 +40,7 @@ When a table is long enough that a user must scroll to see some rows, the header
             }
         });
     }
-    ``` 
+    ```
 
 7. Replace `TODO1` with the following code. Note:
    - The `Worksheet.freezePanes` collection is a set of panes in the worksheet that are pinned, or frozen, in place when the worksheet is scrolled.
@@ -49,7 +49,7 @@ When a table is long enough that a user must scroll to see some rows, the header
     ```js
     const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
     currentWorksheet.freezePanes.freezeRows(1);
-    ``` 
+    ```
 
 ## Test the add-in
 
@@ -62,7 +62,7 @@ When a table is long enough that a user must scroll to see some rows, the header
 2. Run the command `npm start` to start a web server running on localhost.
 4. Reload the task pane by closing it, and then on the **Home** menu, select **Show Taskpane** to reopen the add-in.
 6. If the table is in the worksheet, delete it.
-7. In the taskpane, choose **Create Table**. 
+7. In the task pane, choose **Create Table**.
 8. Choose the **Freeze Header** button.
 9. Scroll down the worksheet enough to to see that the table header remains visible at the top even when the higher rows scroll out of sight.
 

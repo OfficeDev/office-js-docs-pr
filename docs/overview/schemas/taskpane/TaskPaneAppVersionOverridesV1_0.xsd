@@ -11,7 +11,7 @@
   <xs:complexType name="ShowTaskpane">
     <xs:annotation>
       <xs:documentation>
-        Specifies a taskpane extension URL to display when a user interface extension point is invoked by the user.
+        Specifies a task pane extension URL to display when a user interface extension point is invoked by the user.
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>

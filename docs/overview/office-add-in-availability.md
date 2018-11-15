@@ -22,7 +22,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office Online</td>
-    <td> - Taskpane<br>
+    <td> - TaskPane<br>
         - Content<br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a>
     </td>
@@ -53,7 +53,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   <tr>
     <td>Office 2013 for Windows</td>
     <td>
-        - Taskpane<br>
+        - TaskPane<br>
         - Content</td>
     <td>  - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>
@@ -73,7 +73,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office 2016 for Windows</td>
-    <td>- Taskpane<br>
+    <td>- TaskPane<br>
         - Content<br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td>- <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
@@ -101,7 +101,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office 2019 for Windows</td>
-    <td>- Taskpane<br>
+    <td>- TaskPane<br>
         - Content<br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td>- <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
@@ -129,7 +129,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office for iPad</td>
-    <td>- Taskpane<br>
+    <td>- TaskPane<br>
         - Content</td>
     <td>- <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
@@ -156,7 +156,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office 2016 for Mac</td>
-    <td>- Taskpane<br>
+    <td>- TaskPane<br>
         - Content<br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td>- <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
@@ -185,7 +185,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office 2019 for Mac</td>
-    <td>- Taskpane<br>
+    <td>- TaskPane<br>
         - Content<br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td>- <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
@@ -344,7 +344,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office Online</td>
-    <td> - Taskpane<br>
+    <td> - TaskPane<br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
@@ -370,7 +370,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office 2013 for Windows</td>
-    <td> - Taskpane</td>
+    <td> - TaskPane</td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
@@ -393,7 +393,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office 2016 for Windows</td>
-    <td> - Taskpane<br>
+    <td> - TaskPane<br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
@@ -421,7 +421,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office 2019 for Windows</td>
-    <td> - Taskpane<br>
+    <td> - TaskPane<br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
@@ -449,7 +449,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office for iPad</td>
-    <td> - Taskpane</td>
+    <td> - TaskPane</td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
@@ -477,7 +477,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office 2016 for Mac</td>
-    <td> - Taskpane<br>
+    <td> - TaskPane<br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
@@ -506,7 +506,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office 2019 for Mac</td>
-    <td> - Taskpane<br>
+    <td> - TaskPane<br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
@@ -549,7 +549,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   <tr>
     <td>Office Online</td>
     <td> - Content<br>
-         - Taskpane<br>
+         - TaskPane<br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
@@ -565,7 +565,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   <tr>
     <td>Office 2013 for Windows</td>
     <td> - Content<br>
-         - Taskpane<br>
+         - TaskPane<br>
     </td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
 </td>
@@ -582,7 +582,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   <tr>
     <td>Office 2016 for Windows</td>
     <td> - Content<br>
-         - Taskpane<br>
+         - TaskPane<br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
@@ -598,7 +598,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   <tr>
     <td>Office 2019 for Windows</td>
     <td> - Content<br>
-         - Taskpane<br>
+         - TaskPane<br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
@@ -614,7 +614,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   <tr>
     <td>Office for iPad</td>
     <td> - Content<br>
-         - Taskpane</td>
+         - TaskPane</td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
      <td> - ActiveView<br>
          - CompressedFile<br>
@@ -629,7 +629,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   <tr>
     <td>Office 2016 for Mac</td>
     <td> - Content<br>
-         - Taskpane<br>
+         - TaskPane<br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
@@ -645,7 +645,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   <tr>
     <td>Office 2019 for Mac</td>
     <td> - Content<br>
-         - Taskpane<br>
+         - TaskPane<br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
@@ -674,7 +674,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   <tr>
     <td>Office Online</td>
     <td> - Content<br>
-         - Taskpane<br>
+         - TaskPane<br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets">OneNoteApi 1.1</a><br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
@@ -699,21 +699,21 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office 2013 for Windows</td>
-    <td> - Taskpane</td>
+    <td> - TaskPane</td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - Selection<br>
          - TextCoercion</td>
   </tr>
   <tr>
     <td>Office 2016 for Windows</td>
-    <td> - Taskpane</td>
+    <td> - TaskPane</td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - Selection<br>
          - TextCoercion</td>
   </tr>
   <tr>
     <td>Office 2019 for Windows</td>
-    <td> - Taskpane</td>
+    <td> - TaskPane</td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - Selection<br>
          - TextCoercion</td>
