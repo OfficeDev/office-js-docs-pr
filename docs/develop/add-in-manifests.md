@@ -66,7 +66,7 @@ _\*Added in the Office Add-in Manifest Schema version 1.1._
 [displayname]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/displayname
 [description]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/description
 [iconurl]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/iconurl
-[highresolutioniconurl]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/highresolutioniconurl
+[highresolutioniconurl*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/highresolutioniconurl
 [defaultsettings (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultsettings
 [defaultsettings (taskpaneapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultsettings
 [sourcelocation (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation
@@ -156,7 +156,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   <Description DefaultValue="Sample that illustrates add-in commands basic control types and actions" />
   <!--Icon for your add-in. Used on installation screens and the add-ins dialog -->
   <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
-  <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png"/>
+  <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
 
   <!--BeginTaskpaneMode integration. Office 2013 and any client that doesn't understand commands will use this section.
     This section will also be used if there are no VersionOverrides -->
@@ -350,7 +350,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   <DisplayName DefaultValue="Sample content add-in" />
   <Description DefaultValue="Describe the features of this app." />
   <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
-  <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png"/>
+  <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
   <Hosts>
     <Host Name="Workbook" />
     <Host Name="Database" />
@@ -396,7 +396,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   <!-- Change the following lines to specify    -->
   <!-- the web server that hosts the icon files. -->
   <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
-  <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png"/>
+  <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
 
   <Hosts>
     <Host Name="Mailbox" />
