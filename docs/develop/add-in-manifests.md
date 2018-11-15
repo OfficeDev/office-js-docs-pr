@@ -41,7 +41,6 @@ The following table specifies the elements that are required for the three types
 | [DisplayName][]                                                                              |    X    |     X     |    X    |
 | [Description][]                                                                              |    X    |     X     |    X    |
 | [IconUrl][]                                                                                  |    X    |     X     |    X    |
-| [HighResolutionIconUrl*][]                                                                    |        |          |        |
 | [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       |    X    |     X     |         |
 | [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]                         |    X    |     X     |         |
 | [DesktopSettings][]                                                                          |         |           |    X    |
@@ -66,7 +65,6 @@ _\*Added in the Office Add-in Manifest Schema version 1.1._
 [displayname]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/displayname
 [description]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/description
 [iconurl]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/iconurl
-[highresolutioniconurl*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/highresolutioniconurl
 [defaultsettings (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultsettings
 [defaultsettings (taskpaneapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultsettings
 [sourcelocation (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation
