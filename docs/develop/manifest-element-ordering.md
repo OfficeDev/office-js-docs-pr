@@ -6,7 +6,7 @@ ms.date: 11/16/2018
 
 # How to find the proper order of manifest elements
 
-The XML elements in the manifest of an Office Add-in must not only be under the proper parent element; they must be in a specific order, relative to each other, under the parent.
+The XML elements in the manifest of an Office Add-in must be under the proper parent element *and* in a specific order, relative to each other, under the parent.
 
 The required ordering is specified in the XSD files in the [Schemas](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) folder. The XSD files are categorized into subfolders for taskpane, content, and mail add-ins.
 
