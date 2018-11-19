@@ -57,7 +57,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
             .then(function() {
                 $(document).ready(function () {  
 
-                    // TODO1: Assign handler to the OK button.;
+                    // TODO1: Assign handler to the OK button.
 
                 });
             });
