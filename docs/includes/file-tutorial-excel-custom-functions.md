@@ -52,8 +52,10 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
     ```bash
     cd stock-ticker
     ```
+3. Install the self-signed certificates by following these instructions (https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).  Failing to do this will result in an add-in could not load error.
 
-3. Start the local web server.
+    
+4. Start the local web server.
 
     * If you'll be using Excel for Windows to test your custom functions, run the following command to start the local web server, launch Excel, and sideload the add-in:
 
