@@ -64,7 +64,7 @@ function add(first, second){
   return first + second;
 }
 
-CustomFunctionMappings.ADD = add;
+CustomFunctions.associate.ADD = add;
 ```
 
 Keep in mind the following best practices when creating custom functions in your JavaScript file and specifying corresponding information in the JSON metadata file.
@@ -73,9 +73,9 @@ Keep in mind the following best practices when creating custom functions in your
 
 * In the JSON metadata file, specify the value of each `name` property in uppercase. The `name` property defines the function name that end users will see in Excel. Using uppercase letters for the name of each custom function provides a consistent experience for end users in Excel, where all built-in function names are uppercase.
 
-* In the JSON metadata file, specify the value of each `id` property in uppercase. Doing so makes it obvious which part of the `CustomFunctionMappings` statement in your JavaScript code corresponds to the `id` property in the JSON metadata file (provided that your function name uses camelCase, as recommended earlier).
+* In the JSON metadata file, specify the value of each `id` property in uppercase. Doing so makes it obvious which part of the `CustomFunctions.associate` statement in your JavaScript code corresponds to the `id` property in the JSON metadata file (provided that your function name uses camelCase, as recommended earlier).
 
-* In the JSON metadata file, ensure that the value of each `id` property contains only alphanumeric characters and periods. 
+* In the JSON metadata file, ensure that the value of each `id` property contains only alphanumeric characters and periods.
 
 * In the JSON metadata file, ensure that the value of each `id` property is unique within the scope of the file. That is, no two function objects in the metadata file should have the same `id` value. Additionally, do not specify two `id` values in the metadata file that only differ by case. For example, do not define one function object with an `id` value of **add** and another function object with an `id` value of **ADD**.
 
@@ -101,8 +101,8 @@ Keep in mind the following best practices when creating custom functions in your
     }
 
     // map `id` values in the JSON metadata file to JavaScript function names
-    CustomFunctionMappings.ADD = add;
-    CustomFunctionMappings.INCREMENT = increment;
+    CustomFunctions.associate.ADD = add;
+    CustomFunctions.associate.INCREMENT = increment;
     ```
 
     The following sample shows the JSON metadata that corresponds to the functions defined in this JavaScript code sample.
