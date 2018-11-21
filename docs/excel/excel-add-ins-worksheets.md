@@ -1,11 +1,11 @@
 ---
-title: Work with Worksheets using the Excel JavaScript API
+title: Work with worksheets using the Excel JavaScript API
 description: ''
 ms.date: 12/04/2017
 ---
 
 
-# Work with Worksheets using the Excel JavaScript API
+# Work with worksheets using the Excel JavaScript API
 
 This article provides code samples that show how to perform common tasks with worksheets using the Excel JavaScript API. For the complete list of properties and methods that the **Worksheet** and **WorksheetCollection** objects support, see [Worksheet Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheet?view=office-js) and [WorksheetCollection Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection?view=office-js).
 
@@ -274,6 +274,27 @@ Excel.run(function (context) {
 ## Get a range within a worksheet
 
 For examples that show how to get a range within a worksheet, see [Work with Ranges using the Excel JavaScript API](excel-add-ins-ranges.md).
+
+## Data protection
+
+Your add-in can control a user's ability to edit data in a worksheet. The worksheet's `protection` property is a [WorksheetProtection](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotection) object with a `protect()` method. The following example shows a basic scenario toggling the complete protection of the active worksheet.
+
+```js
+Excel.run(function (context) {
+	var activeSheet = context.workbook.worksheets.getActiveWorksheet();
+	activeSheet.load("protection/protected");
+
+	return context.sync().then(function() {
+		if (!activeSheet.protection.protected) {
+			activeSheet.protection.protect();
+		}
+	})
+}).catch(errorHandlerFunction);
+```
+
+The `protect` method has two optional parameters:
+ - `options`: A [WorksheetProtectionOptions](https://docs.microsoft.com/en-us/javascript/api/excel/excel.worksheetprotectionoptions) object defining specific editing restrictions.
+ - `password`: A string representing the password needed for a user to bypass protection and edit the worksheet.
 
 ## See also
 
