@@ -1,12 +1,12 @@
 ---
 ms.date: 10/24/2018
-description: Learn best practices and recommended patterns for Excel custom functions.
-title: Custom functions best practices
+description: Learn design practices and recommended patterns for Excel custom functions.
+title: Custom functions design practices
 ---
 
-# Custom functions best practices (preview)
+# Custom functions design considerations (preview)
 
-This article describes best practices for developing custom functions in Excel.
+This article describes design patterns and practices for developing custom functions in Excel.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -124,6 +124,60 @@ Keep in mind the following best practices when creating custom functions in your
       ]
     }
     ```
+
+## Declaring optional parameters 
+In Excel for Windows (version 1812 or later), you can declare optional parameters for your custom functions. When a user invokes a function in Excel, optional parameters appear in brackets. For example, a function `FOO` with one required parameter called `parameter1` and one optional parameter called `parameter2` would appear as `=FOO(parameter1, [parameter2])` in Excel.
+
+To make a parameter optional, you must add `"optional": "true"` to the parameter in the JSON metadata file that defines the function. The following example shows what this might look like for the function `=ADD(first, second, [third])`. Notice that the optional `[third]` parameter follows the two required parameters. Required parameters so they show up first in Excel’s Formula UI, providing a better experience for your users.
+
+```json
+{
+    "id": "add",
+    "name": "ADD",
+    "description": "Add two numbers",
+    "helpUrl": "http://www.contoso.com",
+    "result": {
+        "type": "number",
+        "dimensionality": "scalar"
+        },
+    "parameters": [
+        {
+        "name": "first",
+        "description": "first number to add",
+        "type": "number",
+        "dimensionality": "scalar"
+        },
+        {
+        "name": "second",
+        "description": "second number to add",
+        "type": "number",
+        "dimensionality": "scalar",
+        },
+        {
+        "name": "third",
+        "description": "third optional number to add",
+        "type": "number",
+        "dimensionality": "scalar",
+        "optional": true
+        }
+    ],
+    "options": {
+        "sync": false
+    }
+}
+```
+
+For optional parameters, as a best practice you should specify what happens if the parameter is undefined. You can set this using an if condition or pass in a fallback value using the JavaScript OR operator as shown in the following example.  
+
+```js
+function getWeatherReport(required, zipCode, dayOfWeek)
+{
+    if (zipCode == undefined) {
+    //do x
+    }
+    dayofWeek = dayofWeek || "Wednesday"; //Wednesday becomes the fallback value
+}
+```
 
 ## Additional considerations
 
