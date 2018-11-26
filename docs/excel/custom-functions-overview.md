@@ -256,9 +256,9 @@ When you specify metadata for a streaming function in the JSON metadata file, yo
 
 ## Declaring a function volatile
 
-[Volatile functions](https://docs.microsoft.com/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions) are functions in which the value changes from moment to moment, even if none of the function's arguments have changed. Volatile functions instead recalculate every time Excel recalculates.
+[Volatile functions](https://docs.microsoft.com/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions) are functions in which the value changes from moment to moment, even if none of the function's arguments have changed. Volatile functions instead recalculate every time Excel recalculates. For example, imagine a cell that calls the function `=NOW()`. Every time `=NOW` is called, it will give you the current date and time, automatically.
 
-For example, imagine a cell that calls the function `=NOW()`. Every time `=NOW` is called, it will give you the current date and time, automatically.  The function is volatile because the function's value is constantly changing when the function is invoked. There are a handful of built in volatile functions in Excel, such as RAND() and TODAY(). You can find [a comprehensive list of Excel’s volatile functions here](https://docs.microsoft.com/en-us/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).  
+There are a handful of built in volatile functions in Excel, such as RAND() and TODAY(). You can find [a comprehensive list of Excel’s volatile functions here](https://docs.microsoft.com/en-us/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).  
   
 Custom functions allow you to create your own volatile functions, which you may want to use to deal with dates, times, random numbers, and for modelling purposes. For example, Monte Carlo simulations require generation of random inputs to determine an optimal solution.  
   
