@@ -263,6 +263,7 @@ For example, imagine a cell that calls the function `=NOW()`. Every time `=NOW` 
 Custom functions allow you to create your own volatile functions, which you may want to use to deal with dates, times, random numbers, and for modelling purposes. For example, Monte Carlo simulations require generation of random inputs to determine an optimal solution.  
   
 To declare a function volatile, you'll add `"volatile": true` under the `options` property in the function's JSON file, as shown in the following code sample. Note that a function cannot be marked both streaming and volatile; if a streaming function is also marked as volatile, the volatile option will be ignored.  
+
 ```json
 {
   "name": "TOMORROW",
