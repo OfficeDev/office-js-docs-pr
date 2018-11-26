@@ -29,6 +29,10 @@ An XML manifest file based on this schema enables an Office Add-in to do the fol
 
 The following table specifies the elements that are required for the three types of Office Add-ins.
 
+> [!NOTE]
+> There is also a mandatory order in which elements must appear within their parent element. For more information see [How to find the proper order of manifest elements](manifest-element-ordering.md).
+
+
 ### Required elements by Office Add-in type
 
 | Element                                                                                      | Content | Task pane | Outlook |
@@ -41,7 +45,6 @@ The following table specifies the elements that are required for the three types
 | [DisplayName][]                                                                              |    X    |     X     |    X    |
 | [Description][]                                                                              |    X    |     X     |    X    |
 | [IconUrl][]                                                                                  |    X    |     X     |    X    |
-| [HighResolutionIconUrl][]                                                                    |    X    |     X     |    X    |
 | [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       |    X    |     X     |         |
 | [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]                         |    X    |     X     |         |
 | [DesktopSettings][]                                                                          |         |           |    X    |
@@ -66,7 +69,6 @@ _\*Added in the Office Add-in Manifest Schema version 1.1._
 [displayname]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/displayname
 [description]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/description
 [iconurl]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/iconurl
-[highresolutioniconurl]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/highresolutioniconurl
 [defaultsettings (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultsettings
 [defaultsettings (taskpaneapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultsettings
 [sourcelocation (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation
@@ -131,6 +133,7 @@ The following XML manifest example hosts its main add-in page in the `https://ww
 ```
 
 ## Manifest v1.1 XML file examples and schemas
+
 The following sections show examples of manifest v1.1 XML files for content, task pane, and Outlook add-ins.
 
 # [Task pane](#tab/tabid-1)
@@ -141,20 +144,21 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
 
-<!-- See https://github.com/OfficeDev/Office-Add-in-Commands-Samples for documentation-->
+  <!-- See https://github.com/OfficeDev/Office-Add-in-Commands-Samples for documentation-->
 
-<!-- BeginBasicSettings: Add-in metadata, used for all versions of Office unless override provided -->
+  <!-- BeginBasicSettings: Add-in metadata, used for all versions of Office unless override provided -->
 
-<!--IMPORTANT! Id must be unique for your add-in. If you clone this manifest ensure that you change this id to your own GUID -->
+  <!--IMPORTANT! Id must be unique for your add-in. If you clone this manifest ensure that you change this id to your own GUID -->
   <Id>e504fb41-a92a-4526-b101-542f357b7acb</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-   <!-- The display name of your add-in. Used on the store and various placed of the Office UI such as the add-ins dialog -->
+  <!-- The display name of your add-in. Used on the store and various placed of the Office UI such as the add-ins dialog -->
   <DisplayName DefaultValue="Add-in Commands Sample" />
   <Description DefaultValue="Sample that illustrates add-in commands basic control types and actions" />
-   <!--Icon for your add-in. Used on installation screens and the add-ins dialog -->
-  <IconUrl DefaultValue="https://i.imgur.com/oZFS95h.png" />
+  <!--Icon for your add-in. Used on installation screens and the add-ins dialog -->
+  <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
 
   <!--BeginTaskpaneMode integration. Office 2013 and any client that doesn't understand commands will use this section.
     This section will also be used if there are no VersionOverrides -->
@@ -164,7 +168,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   <DefaultSettings>
     <SourceLocation DefaultValue="https://commandsimple.azurewebsites.net/Taskpane.html" />
   </DefaultSettings>
-   <!--EndTaskpaneMode integration -->
+  <!--EndTaskpaneMode integration -->
 
   <Permissions>ReadWriteDocument</Permissions>
 
@@ -175,25 +179,25 @@ The following sections show examples of manifest v1.1 XML files for content, tas
       <!-- Workbook=Excel Document=Word Presentation=PowerPoint -->
       <!-- Make sure the hosts you override match the hosts declared in the top section of the manifest -->
       <Host xsi:type="Document">
-      	<!-- Form factor. Currenly only DesktopFormFactor is supported. We will add TabletFormFactor and PhoneFormFactor in the future-->
+        <!-- Form factor. Currently only DesktopFormFactor is supported. We will add TabletFormFactor and PhoneFormFactor in the future-->
         <DesktopFormFactor>
-        	<!--Function file is an html page that includes the javascript where functions for ExecuteAction will be called.
+          <!--Function file is an html page that includes the javascript where functions for ExecuteAction will be called.
             Think of the FunctionFile as the "code behind" ExecuteFunction-->
           <FunctionFile resid="Contoso.FunctionFile.Url" />
 
           <!--PrimaryCommandSurface==Main Office Ribbon-->
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
-          	<!--Use OfficeTab to extend an existing Tab. Use CustomTab to create a new tab -->
+            <!--Use OfficeTab to extend an existing Tab. Use CustomTab to create a new tab -->
             <!-- Documentation includes all the IDs currently tested to work -->
             <CustomTab id="Contoso.Tab1">
-				<!--Group ID-->
+              <!--Group ID-->
               <Group id="Contoso.Tab1.Group1">
-              	 <!--Label for your group. resid must point to a ShortString resource -->
+                <!--Label for your group. resid must point to a ShortString resource -->
                 <Label resid="Contoso.Tab1.GroupLabel" />
                 <Icon>
-                <!-- Sample Todo: Each size needs its own icon resource or it will look distorted when resized -->
-                <!--Icons. Required sizes 16,31,80, optional 20, 24, 40, 48, 64. Strongly recommended to provide all sizes for great UX -->
-                <!--Use PNG icons and remember that all URLs on the resources section must use HTTPS -->
+                  <!-- Sample Todo: Each size needs its own icon resource or it will look distorted when resized -->
+                  <!--Icons. Required sizes 16,31,80, optional 20, 24, 40, 48, 64. Strongly recommended to provide all sizes for great UX -->
+                  <!--Use PNG icons and remember that all URLs on the resources section must use HTTPS -->
                   <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
                   <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
                   <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
@@ -201,12 +205,12 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 
                 <!--Control. It can be of type "Button" or "Menu" -->
                 <Control xsi:type="Button" id="Contoso.FunctionButton">
-                <!--Label for your button. resid must point to a ShortString resource -->
+                  <!--Label for your button. resid must point to a ShortString resource -->
                   <Label resid="Contoso.FunctionButton.Label" />
                   <Supertip>
-                  	 <!--ToolTip title. resid must point to a ShortString resource -->
+                    <!--ToolTip title. resid must point to a ShortString resource -->
                     <Title resid="Contoso.FunctionButton.Label" />
-                     <!--ToolTip description. resid must point to a LongString resource -->
+                    <!--ToolTip description. resid must point to a LongString resource -->
                     <Description resid="Contoso.FunctionButton.Tooltip" />
                   </Supertip>
                   <Icon>
@@ -214,10 +218,10 @@ The following sections show examples of manifest v1.1 XML files for content, tas
                     <bt:Image size="32" resid="Contoso.FunctionButton.Icon" />
                     <bt:Image size="80" resid="Contoso.FunctionButton.Icon" />
                   </Icon>
-                  <!--This is what happens when the command is triggered (E.g. click on the Ribbon). Supported actions are ExecuteFuncion or ShowTaskpane-->
+                  <!--This is what happens when the command is triggered (E.g. click on the Ribbon). Supported actions are ExecuteFunction or ShowTaskpane-->
                   <!--Look at the FunctionFile.html page for reference on how to implement the function -->
-                  - <Action xsi:type="ExecuteFunction">
-                  <!--Name of the function to call. This function needs to exist in the global DOM namespace of the function file-->
+                  <Action xsi:type="ExecuteFunction">
+                    <!--Name of the function to call. This function needs to exist in the global DOM namespace of the function file-->
                     <FunctionName>writeText</FunctionName>
                   </Action>
                 </Control>
@@ -235,59 +239,59 @@ The following sections show examples of manifest v1.1 XML files for content, tas
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>Button2Id1</TaskpaneId>
-                     <!--Provide a url resource id for the location that will be displayed on the task pane -->
+                    <!--Provide a url resource id for the location that will be displayed on the task pane -->
                     <SourceLocation resid="Contoso.Taskpane1.Url" />
                   </Action>
                 </Control>
-            <!-- Menu example -->
-            <Control xsi:type="Menu" id="Contoso.Menu">
-              <Label resid="Contoso.Dropdown.Label" />
-              <Supertip>
-                <Title resid="Contoso.Dropdown.Label" />
-                <Description resid="Contoso.Dropdown.Tooltip" />
-              </Supertip>
-              <Icon>
-                <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
-                <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
-                <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
-              </Icon>
-              <Items>
-                <Item id="Contoso.Menu.Item1">
-                  <Label resid="Contoso.Item1.Label"/>
+                <!-- Menu example -->
+                <Control xsi:type="Menu" id="Contoso.Menu">
+                  <Label resid="Contoso.Dropdown.Label" />
                   <Supertip>
-                    <Title resid="Contoso.Item1.Label" />
-                    <Description resid="Contoso.Item1.Tooltip" />
+                    <Title resid="Contoso.Dropdown.Label" />
+                    <Description resid="Contoso.Dropdown.Tooltip" />
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
                     <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
                     <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
                   </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <TaskpaneId>MyTaskPaneID1</TaskpaneId>
-                    <SourceLocation resid="Contoso.Taskpane1.Url" />
-                  </Action>
-                </Item>
+                  <Items>
+                    <Item id="Contoso.Menu.Item1">
+                      <Label resid="Contoso.Item1.Label"/>
+                      <Supertip>
+                        <Title resid="Contoso.Item1.Label" />
+                        <Description resid="Contoso.Item1.Tooltip" />
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
+                        <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
+                        <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
+                      </Icon>
+                      <Action xsi:type="ShowTaskpane">
+                        <TaskpaneId>MyTaskPaneID1</TaskpaneId>
+                        <SourceLocation resid="Contoso.Taskpane1.Url" />
+                      </Action>
+                    </Item>
 
-                <Item id="Contoso.Menu.Item2">
-                  <Label resid="Contoso.Item2.Label"/>
-                  <Supertip>
-                    <Title resid="Contoso.Item2.Label" />
-                    <Description resid="Contoso.Item2.Tooltip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
-                    <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
-                    <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <TaskpaneId>MyTaskPaneID2</TaskpaneId>
-                    <SourceLocation resid="Contoso.Taskpane2.Url" />
-                  </Action>
-                </Item>
+                    <Item id="Contoso.Menu.Item2">
+                      <Label resid="Contoso.Item2.Label"/>
+                      <Supertip>
+                        <Title resid="Contoso.Item2.Label" />
+                        <Description resid="Contoso.Item2.Tooltip" />
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
+                        <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
+                        <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
+                      </Icon>
+                      <Action xsi:type="ShowTaskpane">
+                        <TaskpaneId>MyTaskPaneID2</TaskpaneId>
+                        <SourceLocation resid="Contoso.Taskpane2.Url" />
+                      </Action>
+                    </Item>
 
-              </Items>
-            </Control>
+                  </Items>
+                </Control>
 
               </Group>
 
@@ -301,8 +305,8 @@ The following sections show examples of manifest v1.1 XML files for content, tas
     </Hosts>
     <Resources>
       <bt:Images>
-		<bt:Image id="Contoso.TaskpaneButton.Icon" DefaultValue="https://i.imgur.com/FkSShX9.png" />
-		<bt:Image id="Contoso.FunctionButton.Icon" DefaultValue="https://i.imgur.com/qDujiX0.png" />
+        <bt:Image id="Contoso.TaskpaneButton.Icon" DefaultValue="https://i.imgur.com/FkSShX9.png" />
+        <bt:Image id="Contoso.FunctionButton.Icon" DefaultValue="https://i.imgur.com/qDujiX0.png" />
       </bt:Images>
       <bt:Urls>
         <bt:Url id="Contoso.FunctionFile.Url" DefaultValue="https://commandsimple.azurewebsites.net/FunctionFile.html" />
@@ -347,7 +351,8 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Sample content add-in" />
   <Description DefaultValue="Describe the features of this app." />
-  <IconUrl DefaultValue="https://contoso.com/ENUSIcon.png" />
+  <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
   <Hosts>
     <Host Name="Workbook" />
     <Host Name="Database" />
@@ -390,10 +395,10 @@ The following sections show examples of manifest v1.1 XML files for content, tas
       YouTube références dans vos courriers électronique
       directement depuis Outlook et Outlook Web App."/>
   </Description>
-  <!-- Change the following line to specify    -->
-  <!-- the web serverthat hosts the icon file. -->
-  <IconUrl DefaultValue=
-    "https://webserver/YouTube/YouTubeLogo.png"/>
+  <!-- Change the following lines to specify    -->
+  <!-- the web server that hosts the icon files. -->
+  <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
 
   <Hosts>
     <Host Name="Mailbox" />

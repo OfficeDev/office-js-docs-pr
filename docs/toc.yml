@@ -162,6 +162,8 @@
         href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
       - name: Update API and manifest version
         href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
+      - name: How to find the proper order of manifest elements
+        href: develop/manifest-element-ordering.md
 
     - name: Authentication and authorization
       items:
@@ -277,6 +279,9 @@
       - name: Events
         href: excel/excel-add-ins-events.md
         displayName: Excel
+      - name: Multiple ranges
+        href: excel/excel-add-ins-multiple-ranges.md
+        displayName: Excel
       - name: Performance optimization
         href: excel/performance.md
         displayName: Excel
@@ -288,9 +293,6 @@
         displayName: Excel
       - name: Tables
         href: excel/excel-add-ins-tables.md
-        displayName: Excel
-      - name: Working with multiple ranges
-        href: excel/excel-add-ins-multiple-ranges.md
         displayName: Excel
       - name: Workbooks
         href: excel/excel-add-ins-workbooks.md

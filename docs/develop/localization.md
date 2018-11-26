@@ -13,7 +13,7 @@ You can implement any localization scheme that's appropriate for your Office Add
 The JavaScript API for Office provides two properties that support displaying or interpreting values consistent with the locale of the host application and data:
 
 - [Context.displayLanguage][displayLanguage] specifies the locale (or language) of the user interface of the host application. The following example verifies if the host application uses the en-US or fr-FR locale, and displays a locale-specific greeting.
-    
+
     ```js
     function sayHelloWithDisplayLanguage() {
         var myLanguage = Office.context.displayLanguage;
@@ -26,15 +26,15 @@ The JavaScript API for Office provides two properties that support displaying or
                 break;
         }
     }
-    
+
     // Function that writes to a div with id='message' on the page.
     function write(message) {
-        document.getElementById('message').innerText += message; 
+        document.getElementById('message').innerText += message;
     }
     ```
 
 - [Context.contentLanguage][contentLanguage] specifies the locale (or language) of the data. Extending the last code sample, instead of checking the [displayLanguage] property, assign `myLanguage` to the [contentLanguage] property, and use the rest of the same code to display a greeting based on the locale of the data:
-    
+
     ```js
     var myLanguage = Office.context.contentLanguage;
     ```
@@ -57,13 +57,13 @@ Every Office Add-in specifies a [DefaultLocale] element and a locale in its mani
 |[SourceLocation]   |Users in each locale you specify can see a webpage that you specifically design for the add-in for that locale. |
 
 
-> [!NOTE] 
+> [!NOTE]
 > You can localize the description and display name for only the locales that Office supports. See [Language identifiers and OptionState Id values in Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15)) for a list of languages and locales for the current release of Office.
 
 
 ### Examples
 
-For example, an Office Add-in can specify the [DefaultLocale] as `en-us`. For the [DisplayName] element, the add-in can specify an [Override] child element for the locale `fr-fr`, as shown below. 
+For example, an Office Add-in can specify the [DefaultLocale] as `en-us`. For the [DisplayName] element, the add-in can specify an [Override] child element for the locale `fr-fr`, as shown below.
 
 
 ```xml
@@ -74,12 +74,12 @@ For example, an Office Add-in can specify the [DefaultLocale] as `en-us`. For th
 </DisplayName>
 ```
 
-> [!NOTE] 
+> [!NOTE]
 > If you need to localize for more than one area within a language family, such as `de-de` and `de-at`, we recommend that you use separate `Override` elements for each area. Using just the language name alone, in this case, `de`, is not supported across all combinations of Office host applications and platforms.
 
 This means that the add-in assumes the  `en-us` locale by default. Users see the English display name of "Video player" for all locales unless the client computer's locale is `fr-fr`, in which case users would see the French display name "Lecteur vidéo".
 
-> [!NOTE] 
+> [!NOTE]
 > You may only specify a single override per language, including for the default locale. For example, if your default locale is `en-us` you cannot not specify an  override for `en-us` as well. 
 
 The following example applies a locale override for the [Description] element. It first specifies a default locale of `en-us` and an English description, and then specifies an [Override] statement with a French description for the `fr-fr` locale:
@@ -88,7 +88,7 @@ The following example applies a locale override for the [Description] element. I
 <DefaultLocale>en-us</DefaultLocale>
 ...
 <Description DefaultValue=
-   "Watch YouTube videos referenced in the emails you receive 
+   "Watch YouTube videos referenced in the emails you receive
    without leaving your email client.">
    <Override Locale="fr-fr" Value=
    "Visualisez les vidéos YouTube référencées dans vos courriers 
@@ -158,7 +158,7 @@ If you use Visual Studio to create Office Add-ins, the .NET Framework and Ajax p
 
 You can globalize and use the [Date](http://msdn.microsoft.com/library/caf98d32-2de2-4704-8198-692350343681.aspx) and [Number](http://msdn.microsoft.com/library/c216d3a1-12ae-47d1-bca1-c3666d04572f.aspx) JavaScript type extensions and the JavaScript [Date](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date) object in the JavaScript code for an Office Add-in to display values based on the locale settings on the current browser. For more information, see [Walkthrough: Globalizing a Date by Using Client Script](http://msdn.microsoft.com/library/69b34e6d-d590-4d03-a763-b7ae54b47d74.aspx).
 
-You can include localized resource strings directly in standalone JavaScript files to provide client script files for different locales, which are set on the browser or provided by the user. Create a separate script file for each supported locale. In each script file, include an object in JSON format that contains the resource strings for that locale. The localized values are applied when the script runs in the browser. 
+You can include localized resource strings directly in standalone JavaScript files to provide client script files for different locales, which are set on the browser or provided by the user. Create a separate script file for each supported locale. In each script file, include an object in JSON format that contains the resource strings for that locale. The localized values are applied when the script runs in the browser.
 
 
 ## Example: Build a localized Office Add-in
@@ -169,44 +169,44 @@ To run the sample code provided, configure Microsoft Office 2013 on your compute
 
 Also, you'll need to create a Visual Studio 2015 Office Add-in project.
 
-> [!NOTE] 
+> [!NOTE]
 > To download Visual Studio 2015, see the [Office Developer Tools page](https://www.visualstudio.com/features/office-tools-vs). This page also has a link for the Office Developer Tools.
 
 ### Configure Office 2013 to use additional languages for display or editing
 
 You can use an Office 2013 Language pack to install an additional language. For more information about Language Packs and where to get them, see [Office 2013 Language Options](http://office.microsoft.com/language-packs/).
 
-> [!NOTE] 
-> If you are an MSDN Subscriber, you might already have the Office 2013 Language Packs available to you. To determine whether your subscription offers Office 2013 Language Packs for download, go to [MSDN Subscriptions Home](https://msdn.microsoft.com/subscriptions/manage/), enter Office 2013 Language Pack in **Software downloads**, choose **Search**, and then select **Products available with my subscription**. Under **Language**, select the check box for the Language Pack you want to download, and then choose  **Go**. 
+> [!NOTE]
+> If you are an MSDN Subscriber, you might already have the Office 2013 Language Packs available to you. To determine whether your subscription offers Office 2013 Language Packs for download, go to [MSDN Subscriptions Home](https://msdn.microsoft.com/subscriptions/manage/), enter Office 2013 Language Pack in **Software downloads**, choose **Search**, and then select **Products available with my subscription**. Under **Language**, select the check box for the Language Pack you want to download, and then choose  **Go**.
 
 After you install the Language Pack, you can configure Office 2013 to use the installed language for display in the UI, for editing document content, or both. The example in this article uses an installation of Office 2013 that has the Spanish Language Pack applied.
 
 ### Create an Office Add-in project
 
 1. In Visual Studio, choose **File** > **New Project**.
-    
+
 2. In the **New Project** dialog box, under **Templates**, expand **Visual Basic** or **Visual C#**, expand **Office/SharePoint**, and then choose  **Office Add-ins**.
-    
+
 3. Choose **Office Add-in**, and then name your add-in, for example WorldReadyAddIn. Choose  **OK**.
-    
+
 4. In the **Create Office Add-in** dialog box, select **Task pane** and choose **Next**. On the next page, clear the check boxes for all host applications except Word. Choose **Finish** to create the project.
-    
+
 
 ### Localize the text used in your add-in
 
 The text that you want to localize for another language appears in two areas:
 
 -  **Add-in display name and description**. This is controlled by entries in the add-in manifest file.
-    
--  **Add-in UI**. You can localize the strings that appear in your add-in UI by using JavaScript codeâ€”for example, by using a separate resource file that contains the localized strings.
-    
+
+-  **Add-in UI**. You can localize the strings that appear in your add-in UI by using JavaScript code, for example, by using a separate resource file that contains the localized strings.
+
 To localize the add-in display name and description:
 
 1. In **Solution Explorer**, expand **WorldReadyAddIn**, **WorldReadyAddInManifest**, and then choose  **WorldReadyAddIn.xml**.
-    
+
 2. In WorldReadyAddInManifest.xml, replace the [DisplayName] and [Description] elements with the following block of code:
-    
-    > [!NOTE] 
+
+    > [!NOTE]
     > You can replace the Spanish language localized strings used in this example for the [DisplayName] and [Description] elements with the localized strings for any other language.
 
     ```xml
@@ -218,14 +218,14 @@ To localize the add-in display name and description:
     </Description>
     ```
 
-3. When you change the display language for Office 2013 from English to Spanish, for example, and then run the add-in, the add-in display name and description are shown with localized text. 
-    
+3. When you change the display language for Office 2013 from English to Spanish, for example, and then run the add-in, the add-in display name and description are shown with localized text.
+
 To lay out the add-in UI:
 
 1. In Visual Studio, in **Solution Explorer**, choose **Home.html**.
-    
+
 2. Replace the HTML in Home.html with the following HTML.
-    
+
     ```html
     <!DOCTYPE html>
     <html>
@@ -234,17 +234,17 @@ To lay out the add-in UI:
         <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
         <title></title>
         <script src="../../Scripts/jquery-1.8.2.js" type="text/javascript"></script>
-    
+
         <link href="../../Content/Office.css" rel="stylesheet" type="text/css" />
         <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
-    
+
         <!-- To enable offline debugging using a local reference to Office.js, use:                        -->
         <!-- <script src="../../Scripts/Office/MicrosoftAjax.js" type="text/javascript"></script>          -->
         <!--    <script src="../../Scripts/Office/1.0/office.js" type="text/javascript"></script>          -->
-    
+
         <link href="../App.css" rel="stylesheet" type="text/css" />
         <script src="../App.js" type="text/javascript"></script>
-    
+
         <link href="Home.css" rel="stylesheet" type="text/css" />
         <script src="Home.js" type="text/javascript"></script> <body>
         <!-- Page content -->
@@ -257,7 +257,7 @@ To lay out the add-in UI:
             <div class="padding">
                 <div>
                     <p id="about"></p>
-                </div>            
+                </div>
             </div>
         </div>
     </head>
@@ -265,7 +265,7 @@ To lay out the add-in UI:
     ```
 
 3. In Visual Studio, choose  **File**,  **Save AddIn\Home\Home.html**.
-    
+
 The following figure shows the heading (h1) element and the paragraph (p) element that will display localized text when your sample add-in runs.
 
 *Figure 1. The add-in UI*
@@ -276,43 +276,43 @@ The following figure shows the heading (h1) element and the paragraph (p) elemen
 
 The JavaScript resource file contains the strings used for the add-in UI. The sample add-in UI has an h1 element that displays a greeting, and a p element that introduces the add-in to the user. 
 
-To enable localized strings for the heading and paragraph, you place the strings in a separate resource file. The resource file creates a JavaScript object that contains a separate JavaScript Object Notation (JSON) object for each set of localized strings. The resource file also provides a method for getting back the appropriate JSON object for a given locale. 
+To enable localized strings for the heading and paragraph, you place the strings in a separate resource file. The resource file creates a JavaScript object that contains a separate JavaScript Object Notation (JSON) object for each set of localized strings. The resource file also provides a method for getting back the appropriate JSON object for a given locale.
 
 To add the resource file to the add-in project:
 
 1. In **Solution Explorer** in Visual Studio, choose the **Add-in** folder in the web project for the sample add-in, and choose **Add** > **JavaScript file**.
-    
+
 2. In the **Specify Name for Item** dialog box, enterUIStrings.js.
-    
+
 3. Add the following code to the UIStrings.js file.
 
     ```js
     /* Store the locale-specific strings */
-    
+
     var UIStrings = (function ()
     {
         "use strict";
-    
+
         var UIStrings = {};
-    
+
         // JSON object for English strings
         UIStrings.EN =
-        {        
+        {
             "Greeting": "Welcome",
-            "Introduction": "This is my localized add-in."        
+            "Introduction": "This is my localized add-in."
         };
-    
+
         // JSON object for Spanish strings
         UIStrings.ES =
-        {        
+        {
             "Greeting": "Bienvenido",
             "Introduction": "Esta es mi aplicación localizada."
         };
-    
+
         UIStrings.getLocaleStrings = function (locale)
         {
             var text;
-            
+
             // Get the resource strings that match the language.
             switch (locale)
             {
@@ -326,15 +326,15 @@ To add the resource file to the add-in project:
                     text = UIStrings.EN;
                     break;
             }
-    
+
             return text;
         };
-    
+
         return UIStrings;
     })();
     ```
 
-The UIStrings.js resource file creates an object, **UIStrings**, which contains the localized strings for your add-in UI. 
+The UIStrings.js resource file creates an object, **UIStrings**, which contains the localized strings for your add-in UI.
 
 ### Localize the text used for the add-in UI
 
@@ -355,7 +355,7 @@ After you know the language the host application is using, you can use **UIStrin
 
 Replace the code in the Home.js file with the following code. The code shows how you can change the strings used in the UI elements on Home.html based on either the display language of the host application or the editing language of the host application.
 
-> [!NOTE] 
+> [!NOTE]
 > To switch between changing the localization of the add-in based on the language used for editing, uncomment the line of code  `var myLanguage = Office.context.contentLanguage;` and comment out the line of code `var myLanguage = Office.context.displayLanguage;`
 
 ```js
@@ -369,7 +369,7 @@ Replace the code in the Home.js file with the following code. The code shows how
     // The initialize function must be run each time a new page is loaded.
     Office.initialize = function (reason)
     {
-       
+
         $(document).ready(function () {
             app.initialize();
 
@@ -379,39 +379,39 @@ Replace the code in the Home.js file with the following code. The code shows how
             // var myLanguage = Office.context.contentLanguage;
 
             // Get the language setting for UI display in the host application.
-            var myLanguage = Office.context.displayLanguage;            
+            var myLanguage = Office.context.displayLanguage;
             var UIText;
 
             // Get the resource strings that match the language.
             // Use the UIStrings object from the UIStrings.js file
             // to get the JSON object with the correct localized strings.
-            UIText = UIStrings.getLocaleStrings(myLanguage);            
+            UIText = UIStrings.getLocaleStrings(myLanguage);
 
             // Set localized text for UI elements.
             $("#greeting").text(UIText.Greeting);
             $("#about").text(UIText.Instruction);
         });
-    };    
+    };
 })();
 ```
 
 ### Test your localized add-in
 
-To test your localized add-in, change the language used for display or editing in the host application and then run your add-in. 
+To test your localized add-in, change the language used for display or editing in the host application and then run your add-in.
 
 To change the language used for display or editing in your add-in:
 
 1. In Word 2013, choose **File** > **Options** > **Language**. The following figure shows the **Word Options** dialog box opened to the Language tab.
-    
+
     *Figure 2. Language options in the Word 2013 Options dialog box*
 
     ![Word 2013 Options dialog](../images/office15-app-how-to-localize-fig04.png)
 
 2. Under **Choose Display and Help Languages**, select the language that you want for display, for example Spanish, and then choose the up arrow to move the Spanish language to the first position in the list. Alternatively, to change the language used for editing, under  **Choose editing languages**, choose the language you want to use for editing, for example, Spanish, and then choose **Set as Default**.
-    
+
 3. Choose **OK** to confirm your selection, and then close Word.
-    
-Run the sample add-in. The taskpane add-in loads in Word 2013, and the strings in the add-in UI change to match the language used by the host application, as shown in the following figure.
+
+Run the sample add-in. The task pane add-in loads in Word 2013, and the strings in the add-in UI change to match the language used by the host application, as shown in the following figure.
 
 
 *Figure 3. Add-in UI with localized text*
@@ -420,7 +420,7 @@ Run the sample add-in. The taskpane add-in loads in Word 2013, and the strings i
 
 ## See also
 
-- [Design guidelines for Office Add-ins](../design/add-in-design.md)    
+- [Design guidelines for Office Add-ins](../design/add-in-design.md)
 - [Language identifiers and OptionState Id values in Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
 [DefaultLocale]: 		https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultlocale?view=office-js

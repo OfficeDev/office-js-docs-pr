@@ -88,7 +88,7 @@ Here is the same example using the `async` and `await` keywords in TypeScript:
 })();
 ```
 
-If you are using additional JavaScript frameworks that include their own initialization handler or tests, these should be *usually* be placed within the response to `Office.onReady()`. For example, [JQuery's](https://jquery.com) `$(document).ready()` function would be referenced as follows:
+If you are using additional JavaScript frameworks that include their own initialization handler or tests, these should *usually* be placed within the response to `Office.onReady()`. For example, [JQuery's](https://jquery.com) `$(document).ready()` function would be referenced as follows:
 
 ```js
 Office.onReady(function() {

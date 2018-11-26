@@ -24,7 +24,7 @@ The following table lists the common API requirement sets, the methods in each s
 | AddInCommands | See [Add-in command requirement sets](add-in-commands-requirement-sets.md). | |
 | BindingEvents  | Access Web Apps<br>Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>Word 2013 and later<br>Word 2016 for Mac and later<br>Word Online<br>Word for iPad|Binding.addHanderAsync<br>Binding.removeHanderAsync|
 | CompressedFile    | Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac<br>Word 2013 and later<br>Word 2016 for Mac and later<br>Word Online<br>Word for iPad|Supports output to Office Open XML (OOXML) format as a byte array<br>(Office.FileType.Compressed) when using the Document.getFileAsync method.|
-| CustomXmlParts    | Word 2013 and later<br>Word 2016 for Mac and later<br>Word Online<br>Word for iPad|CustomXmlNode.getNodesAsync<br>CustomXmlNode.getNodeValueAsync<br>CustomXmlNode.getXmlAsync<br>CustomXmlNode.setNodeValueAsync<br>CustomXmlNode.setXmlAsync<br>CustomXmlPart.addHandlerAsync<br>CustomXmlPart.deleteAsync<br>CustomXmlPart.getNodesAsync<br>CustomXmlPart.getXmlAsync<br>CustomXmlPart.removeHandlerAsync<br>CustomXmlParts.addAsync<br>CustomXmlParts.getByIdAsync<br>CustomXmlParts.getByNamespaceAsync<br>CustomXmlPrefixMappings.addNamespaceAsync<br>CustomXmlPrefixMappings.getNamespaceAsync<br>CustomXmlPrefixMappings.getPrefixAsync|
+| CustomXmlParts    | Word 2013 and later<br>Word 2016 for Mac and later<br>Word Online<br>Word for iPad|CustomXmlNode.getNodesAsync<br>CustomXmlNode.getNodeValueAsync<br>CustomXmlNode.getTextAsync<br>CustomXmlNode.getXmlAsync<br>CustomXmlNode.setNodeValueAsync<br>CustomXmlNode.setTextAsync<br>CustomXmlNode.setXmlAsync<br>CustomXmlPart.addHandlerAsync<br>CustomXmlPart.deleteAsync<br>CustomXmlPart.getNodesAsync<br>CustomXmlPart.getXmlAsync<br>CustomXmlPart.removeHandlerAsync<br>CustomXmlParts.addAsync<br>CustomXmlParts.getByIdAsync<br>CustomXmlParts.getByNamespaceAsync<br>CustomXmlPrefixMappings.addNamespaceAsync<br>CustomXmlPrefixMappings.getNamespaceAsync<br>CustomXmlPrefixMappings.getPrefixAsync|
 | DialogApi | See [Dialog API requirement sets](dialog-api-requirement-sets.md). | UI.messageParent<br>UI.displayDialogAsync<br>UI.closeContainer<br>UI.Dialog |
 | DocumentEvents    | Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>OneNote Online<br>PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac<br>Word 2013 and later<br>Word 2016 for Mac and later<br>Word Online<br>Word for iPad|Document.addHandlerAsync<br>Document.removeHandlerAsync|
 | File  | Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac<br>Word 2013 and later<br>Word 2016 for Mac and later<br>Word Online<br>Word for iPad|Document.getFileAsync<br>File.closeAsync<br>File.getSliceAsync|
@@ -41,7 +41,7 @@ The following table lists the common API requirement sets, the methods in each s
 | Settings  | Access Web Apps<br>Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>OneNote Online<br>PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac<br>Word 2013 and later<br>Word 2016 for Mac and later<br>Word Online<br>Word for iPad|Settings.get<br>Settings.remove<br>Settings.saveAsync<br>Settings.set|
 | TableBindings | Access Web Apps<br>Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>Word 2013 and later<br>Word 2016 for Mac and later<br>Word Online<br>Word for iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncTable<br>Binding.addColumnsAsyncTable<br>Binding.addRowsAsyncTable<br>Binding.deleteAllDataValuesAsyncTable<br>Binding.getDataAsyncTable<br>Binding.setDataAsync|
 | TableCoercion | Access Web Apps<br>Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>Word 2013 and later<br>Word 2016 for Mac and later<br>Word Online<br>Word for iPad|Supports coercion to the "table" data structure (Office.CoercionType.Table) when reading and writing data using the Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync, or Binding.setDataAsync methods.|
-| TextBindings  | Excel<br>Excel Online<br>Excel for iPad<br>Word 2013 and later<br>Word 2016 for Mac and later<br>Word Online<br>Word for iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncText<br>Binding.getDataAsyncText<br>Binding.setDataAsync|
+| TextBindings  | Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>Word 2013 and later<br>Word 2016 for Mac and later<br>Word Online<br>Word for iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncText<br>Binding.getDataAsyncText<br>Binding.setDataAsync|
 | TextCoercion  | Excel<br>Excel Online<br>Excel for iPad<br>OneNote Online<br>PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac<br>Project<br>Word 2013 and later<br>Word 2016 for Mac and later<br>Word Online<br>Word for iPad|Supports coercion to text format (Office.CoercionType.Text) when reading and writing data using the Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync, or Binding.setDataAsync methods.|
 | TextFile  | Word 2013 and later<br>Word 2016 for Mac and later<br>Word Online<br>Word for iPad|Supports output to text format (Office.FileType.Text) when using the Document.getFileAsync method.|
 
@@ -51,7 +51,7 @@ The following methods in the JavaScript API for Office aren't part of a requirem
 
 |**Method name**|**Office host support**|
 |:-----|:-----|
-|Bindings.addFromPromptAsync|Access web apps, Excel, Excel Online, and Excel for iPad|
+|Bindings.addFromPromptAsync|Access web apps, Excel, Excel Online, Excel for iPad, and Excel for Mac|
 |Document.getFilePropertiesAsync|Excel, Excel Online, Excel for iPad, Excel for Mac, PowerPoint, PowerPoint Online, PowerPoint for iPad, PowerPoint for Mac, Word, Word Online, Word for iPad, and Word for Mac|
 |Document.getProjectFieldAsync|Project Standard 2013 and Project Professional 2013|
 |Document.getResourceFieldAsync|Project Standard 2013 and Project Professional 2013|
@@ -61,10 +61,10 @@ The following methods in the JavaScript API for Office aren't part of a requirem
 |Document.getTaskAsync|Project Standard 2013 and Project Professional 2013|
 |Document.getTaskFieldAsync|Project Standard 2013 and Project Professional 2013|
 |Document.goToByIdAsync|Excel, Excel Online, Excel for iPad, Excel for Mac, PowerPoint, PowerPoint Online, PowerPoint for iPad, PowerPoint for Mac, Word, Word Online, Word for iPad, and Word for Mac|
-|Settings.addHandlerAsync|Access web apps, Excel, Excel Online, PowerPoint, PowerPoint Online, Word, and Word Online|
+|Settings.addHandlerAsync|Access web apps and Excel Online|
 |Settings.refreshAsync|Access web apps, Excel, Excel Online, PowerPoint, PowerPoint Online, Word, and Word Online|
-|Settings.removeHandlerAsync|Access web apps, Excel, Excel Online, PowerPoint, PowerPoint Online, Word, and Word Online|
-|TableBinding.clearFormatsAsync|Excel, Excel Online, and Excel for Mac|
+|Settings.removeHandlerAsync|Access web apps and Excel Online|
+|TableBinding.clearFormatsAsync|Excel, Excel Online, Excel for iPad, and Excel for Mac|
 |TableBinding.setFormatsAsync|Excel, Excel Online, Excel for iPad, and Excel for Mac|
 |TableBinding.setTableOptionsAsync|Excel, Excel Online, Excel for iPad, and Excel for Mac|
 
