@@ -1,5 +1,5 @@
 ---
-ms.date: 10/17/2018
+ms.date: 11/26/2018
 description: Define metadata for custom functions in Excel.
 title: Metadata for custom functions in Excel
 ---
