@@ -1,5 +1,5 @@
 ---
-ms.date: 10/17/2018
+ms.date: 11/26/2018
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel (Preview)
 ---
@@ -252,6 +252,30 @@ When you specify metadata for a streaming function in the JSON metadata file, yo
     "stream": true
   }
 }
+```
+
+## Declaring a function volatile
+
+[Volatile functions](https://docs.microsoft.com/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions) are functions in which the value changes from moment to moment, even if none of the function's arguments have changed. Volatile functions instead recalculate every time Excel recalculates.
+
+For example, imagine a cell that calls the function `=NOW()`. Every time `=NOW` is called, it will give you the current date and time, automatically.  The function is volatile because the function's value is constantly changing when the function is invoked. There are a handful of built in volatile functions in Excel, such as RAND() and TODAY(). You can find [a comprehensive list of Excel’s volatile functions here](https://docs.microsoft.com/en-us/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).  
+  
+Custom functions allow you to create your own volatile functions, which you may want to use to deal with dates, times, random numbers, and for modelling purposes. For example, Monte Carlo simulations require generation of random inputs to determine an optimal solution.  
+  
+To declare a function volatile, you'll add `"volatile": true` under the `options` property in the function's JSON file, as shown in the following code sample. Note that a function cannot be marked both streaming and volatile; if a streaming function is also marked as volatile, the volatile option will be ignored.  
+```json
+{
+            "name": "TOMORROW",
+            "description":  "Returns tomorrow’s date",
+            "helpUrl": "http://dev.office.com",
+            "result": {
+                "type": "string",
+                "dimensionality": "scalar"
+            },
+            "options": {
+                "volatile": true
+            }
+        }
 ```
 
 ## Canceling a function
