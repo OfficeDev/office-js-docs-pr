@@ -254,9 +254,9 @@ When you specify metadata for a streaming function in the JSON metadata file, yo
 }
 ```
 
-## Declaring a function volatile
+## Declaring a volatile function
 
-[Volatile functions](https://docs.microsoft.com/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions) are functions in which the value changes from moment to moment, even if none of the function's arguments have changed. Volatile functions instead recalculate every time Excel recalculates. For example, imagine a cell that calls the function `=NOW()`. Every time `=NOW` is called, it will give you the current date and time, automatically.
+[Volatile functions](https://docs.microsoft.com/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions) are functions in which the value changes from moment to moment, even if none of the function's arguments have changed. These functions recalculate every time Excel recalculates. For example, imagine a cell that calls the function `=NOW()`. Every time `=NOW` is called, it will give you the current date and time, automatically.
 
 There are a handful of built in volatile functions in Excel, such as RAND() and TODAY(). You can find [a comprehensive list of Excel’s volatile functions here](https://docs.microsoft.com/en-us/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).  
   
