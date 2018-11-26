@@ -38,7 +38,7 @@ If you use the [Yo Office generator](https://github.com/OfficeDev/generator-offi
 
 The following sections provide more information about these files.
 
-### Script file 
+### Script file
 
 The script file (**./src/customfunctions.js** or **./src/customfunctions.ts** in the project that the Yo Office generator creates) contains the code that defines custom functions and maps the names of the custom functions to objects in the [JSON metadata file](#json-metadata-file). 
 
@@ -265,17 +265,17 @@ Custom functions allow you to create your own volatile functions, which you may 
 To declare a function volatile, you'll add `"volatile": true` under the `options` property in the function's JSON file, as shown in the following code sample. Note that a function cannot be marked both streaming and volatile; if a streaming function is also marked as volatile, the volatile option will be ignored.  
 ```json
 {
-            "name": "TOMORROW",
-            "description":  "Returns tomorrow’s date",
-            "helpUrl": "http://dev.office.com",
-            "result": {
-                "type": "string",
-                "dimensionality": "scalar"
-            },
-            "options": {
-                "volatile": true
-            }
-        }
+  "name": "TOMORROW",
+  "description":  "Returns tomorrow’s date",
+  "helpUrl": "http://dev.office.com",
+  "result": {
+      "type": "string",
+      "dimensionality": "scalar"
+  },
+  "options": {
+      "volatile": true
+  }
+}
 ```
 
 ## Canceling a function
