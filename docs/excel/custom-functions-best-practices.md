@@ -1,5 +1,5 @@
 ---
-ms.date: 10/24/2018
+ms.date: 11/26/2018
 description: Learn design practices and recommended patterns for Excel custom functions.
 title: Custom functions design practices
 ---
