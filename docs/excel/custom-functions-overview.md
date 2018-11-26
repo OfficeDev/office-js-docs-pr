@@ -254,6 +254,18 @@ When you specify metadata for a streaming function in the JSON metadata file, yo
 }
 ```
 
+## Canceling a function
+
+In some situations, you may need to cancel the execution of a streaming custom function to reduce its bandwidth consumption, working memory, and CPU load. Excel cancels the execution of a function in the following situations:
+
+- When the user edits or deletes a cell that references the function.
+
+- When one of the arguments (inputs) for the function changes. In this case, a new function call is triggered following the cancellation.
+
+- When the user triggers recalculation manually. In this case, a new function call is triggered following the cancellation.
+
+To enable the ability to cancel a function, you must implement a cancellation handler within the JavaScript function and specify the property `"cancelable": true` within the `options` object in the JSON metadata that describes the function. The code samples in the previous section of this article provide an example of these techniques.
+
 ## Declaring a volatile function
 
 [Volatile functions](https://docs.microsoft.com/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions) are functions in which the value changes from moment to moment, even if none of the function's arguments have changed. These functions recalculate every time Excel recalculates. For example, imagine a cell that calls the function `=NOW`. Every time `=NOW` is called, it will give you the current date and time, automatically.
@@ -278,18 +290,6 @@ To declare a function volatile, you'll add `"volatile": true` under the `options
   }
 }
 ```
-
-## Canceling a function
-
-In some situations, you may need to cancel the execution of a streaming custom function to reduce its bandwidth consumption, working memory, and CPU load. Excel cancels the execution of a function in the following situations:
-
-- When the user edits or deletes a cell that references the function.
-
-- When one of the arguments (inputs) for the function changes. In this case, a new function call is triggered following the cancellation.
-
-- When the user triggers recalculation manually. In this case, a new function call is triggered following the cancellation.
-
-To enable the ability to cancel a function, you must implement a cancellation handler within the JavaScript function and specify the property `"cancelable": true` within the `options` object in the JSON metadata that describes the function. The code samples in the previous section of this article provide an example of these techniques.
 
 ## Saving and sharing state
 
