@@ -10,7 +10,7 @@ This article describes how to update your JavaScript files (Office.js and app-sp
 
 ## Use the most up-to-date project files
 
-If you use Visual Studio to develop your add-in, to use the [newest API members](https://docs.microsoft.com/office/dev/add-ins/reference/what's-changed-in-the-javascript-api-for-office?view=office-js) of the JavaScript API for Office and the [v1.1 features of the add-in manifest](../develop/add-in-manifests.md) (which is validated against offappmanifest-1.1.xsd), you need to download and install the [Visual Studio 2015 and the latest Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs).
+If you use Visual Studio to develop your add-in, to use the [newest API members](https://docs.microsoft.com/office/dev/add-ins/reference/what's-changed-in-the-javascript-api-for-office?view=office-js) of the JavaScript API for Office and the [v1.1 features of the add-in manifest](../develop/add-in-manifests.md) (which is validated against offappmanifest-1.1.xsd), you need to download Visual Studio 2017. To download Visual Studio 2017, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/). During installation you'll need to select the Office/SharePoint development workload.
 
 If you use a text editor or IDE other than Visual Studio to develop your add-in, you need to update the references to the CDN for Office.js and the version of schema referenced in your add-in's manifest.
 
@@ -33,33 +33,28 @@ Note that the update process is applied on a  _per-project basis_ - you'll need 
 
 
 ### Update the JavaScript API for Office library files in your project to the newest release
+Visual studio 2017 already uses v1.1, however there are additional minor updates to apply to your project by using the Nuget Package Manager. The following steps are similar for Visual Studio 2015.
 
-
-1. In Visual Studio 2015, open or create a new  **Office Add-in** project.
-    
-      - In the left pane, choose **Update** and complete the package update process.
-    
-      - Go to step 6.
-    
+1. In Visual Studio 2017, open or create a new  **Office Add-in** project.    
 2. Choose  **Tools** > **NuGet Package Manager** > **Manage Nuget Packages for Solution**.
-    
-3. In the  **NuGet Package Manager**, select  **nuget.org** for **Package source** and **Upgrade available** for **Filter**. and select Microsoft.Office.js.
-    
-4. In the left pane, choose **Update** and complete the package update process.
-    
-5. In the **head** tag of your add-in's HTML pages, comment out or delete any existing office.js script references, and reference the updated JavaScript API for Office library as follows:
+3. In the  **NuGet Package Manager**, select  **nuget.org** for **Package source**.
+4. Choose the **Updates** tab.
+5. Select Microsoft.Office.js.
+6. In the left pane, choose **Update** and complete the package update process.
+
+If you are using Visual Studio 2015, you'll need to take a few additional steps to complete the update. In the **head** tag of your add-in's HTML pages, comment out or delete any existing office.js script references, and reference the updated JavaScript API for Office library as follows:
     
     ```html
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
     ```
 
    > [!NOTE] 
-   > The `/1/` in front of `office.js` in the CDN URL specifies to use the latest incremental release within version 1 of Office.js.   
+   > The `/1/` in front of `office.js` in the CDN URL specifies to use the latest incremental release within version 1 of Office.js.
 
 
 ### Update the manifest file in your project to use schema version 1.1
 
-In your add-in's manifest file, update the **xmlns** attribute of the **OfficeApp** element changing the version value to `1.1` (leaving attributes other than the **xmlns** attribute unchanged).
+If you are using Visual Studio 2015, then in your add-in's manifest file, update the **xmlns** attribute of the **OfficeApp** element changing the version value to `1.1` (leaving attributes other than the **xmlns** attribute unchanged).
     
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
