@@ -273,7 +273,7 @@ Excel.run(function (context) {
 
 ## Get a range within a worksheet
 
-For examples that show how to get a range within a worksheet, see [Work with Ranges using the Excel JavaScript API](excel-add-ins-ranges.md).
+For examples that show how to get a range within a worksheet, see [Work with ranges using the Excel JavaScript API](excel-add-ins-ranges.md).
 
 ## Data protection
 

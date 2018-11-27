@@ -9,11 +9,11 @@ ms.date: 11/27/2018
 
 This article provides code samples that show how to perform common tasks with workbooks using the Excel JavaScript API. For the complete list of properties and methods that the **Workbook** object supports, see [Workbook Object (JavaScript API for Excel)](/javascript/api/excel/excel.workbook). This article also covers workbook-level actions performed through the [Application](/javascript/api/excel/excel.application) object.
 
-The Workbook object is the entry point for your add-in to interact with Excel. They maintain collections of worksheets, tables, PivotTables, and other data types through which Excel data is accessed and changed. The WorksheetCollection [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) gives your add-in access to all the workbook's data through indivual worksheets. Specifically, it lets your add-in add worksheets, navigate among them, and assign handlers to worksheet events. The article [Work with Worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md) describes how to access and edit worksheets.
+The Workbook object is the entry point for your add-in to interact with Excel. It maintains collections of worksheets, tables, PivotTables, and more, through which Excel data is accessed and changed. The [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) object gives your add-in access to all the workbook's data through indivual worksheets. Specifically, it lets your add-in add worksheets, navigate among them, and assign handlers to worksheet events. The article [Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md) describes how to access and edit worksheets.
 
 ## Get the active cell or selected range
 
-The Workbook object contains two methods which get a range of cells the user or add-in has selected: `getActiveCell()` and `getSelectedRange()`. `getActiveCell()` gets the active cell from the workbook as a [Range object](/javascript/api/excel/excel.range). The following example shows a call to `getActiveCell()`, followed by the cell's address being printed to the console.
+The Workbook object contains two methods that get a range of cells the user or add-in has selected: `getActiveCell()` and `getSelectedRange()`. `getActiveCell()` gets the active cell from the workbook as a [Range object](/javascript/api/excel/excel.range). The following example shows a call to `getActiveCell()`, followed by the cell's address being printed to the console.
 
 ```js
 Excel.run(function (context) {
@@ -69,7 +69,7 @@ reader.readAsDataURL(myFile.files[0]);
 
 ## Protect the workbook's structure
 
-Your add-in can control a user's ability to edit the workbook's structure. The workbook's `protection` property is a [WorkbookProtection](/javascript/api/excel/excel.workbookprotection) object with a `protect()` method. The following example shows a basic scenario toggling the protection of the workbook's structure. 
+Your add-in can control a user's ability to edit the workbook's structure. The Workbook object's `protection` property is a [WorkbookProtection](/javascript/api/excel/excel.workbookprotection) object with a `protect()` method. The following example shows a basic scenario toggling the protection of the workbook's structure. 
 
 ```js
 Excel.run(function (context) {
@@ -84,9 +84,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-The `protect` method accepts an optional string parameter, `password`. This string represents the password needed for a user to bypass protection and change the workbook's structure.
+The `protect` method accepts an optional string parameter. This string represents the password needed for a user to bypass protection and change the workbook's structure.
 
-Protection can also be set at the worksheet level to prevent unwanted data editing. For more information, see the **Data protection** section of the [Work with Worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md#data-protection) article.
+Protection can also be set at the worksheet level to prevent unwanted data editing. For more information, see the **Data protection** section of the [Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md#data-protection) article.
 
 > [!NOTE] 
 > For more information about workbook protection in Excel, see the [Protect a workbook](https://support.office.com/article/Protect-a-workbook-7E365A4D-3E89-4616-84CA-1931257C1517) article.
@@ -103,7 +103,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-You can also define custom properties. The `DocumentProperties` object contains a `custom` property that represents a collection of key-value pairs for user-defined properties. The following example shows how to create a custom property named **Introduction** with the value "Hello", then retrieve it.
+You can also define custom properties. The DocumentProperties object contains a `custom` property that represents a collection of key-value pairs for user-defined properties. The following example shows how to create a custom property named **Introduction** with the value "Hello", then retrieve it.
 
 ```js
 Excel.run(function (context) {
