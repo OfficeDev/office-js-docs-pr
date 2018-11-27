@@ -334,6 +334,51 @@ function secondHighest(values){
 }
 ```
 
+## Discovering cells that invoke custom functions
+
+You may wish to discover the cell that invoked a custom function. Common scenarios for using `caller.address` include:
+
+- Formatting ranges: You can use `caller.address` as the key of the cell to store information in `AsyncStorage`. Then, use the `onCalculate` event in Excel to load the key from `AsyncStorage`.
+- Displaying cached values: If your function is being used offline (but usually requires making a web request), you can display stored values from `AsyncStorage`. Display using the `onCalculate` event.
+- Reconciliation: You can use `caller.address` to discover an origin cell to help you reconcile where processing is occurring.
+
+The information about a cell's address is exposed only if `requiresAddress` is marked as true in the function's JSON metadata file. Values returned from the `getAddress` function follow the following format: `<SheetName>!<CellNumber>`. For example, if a function was called from a sheet called Expenses in cell B2, the returned value would be `<Expenses>!<B2>`.
+
+As an example of the JSON metadata, see the following example:
+
+```JSON
+{
+"id": "ADDTIME",
+  "name": "ADDTIME",
+  "description": "Display the date right now and add the amount of hours to it designated by the parameter",
+  "helpUrl": "http://www.contoso.com",
+  "result": {
+    "type": "number",
+    "dimensionality": "scalar"
+  },
+  "parameters": [
+    {
+      "name": "Additional time",
+      "description": "Amount of hours to increase current date by",
+      "type": "number",
+      "dimensionality": "scalar"
+    }
+  ],
+"options": {
+    "requiresAddress": true
+    }
+}
+```
+
+In the script file (./src/customfunctions.js or ./src/customfunctions.ts), you'll add a function to get an address for a cell which issued a call. This function may take parameters, as shown in the following sample as `parameter1`, but the last parameter will always be `invocationContext`, an object containing the cell's location that Excel passes down when `"requiresAddress": true` is marked in your JSON metadata file.
+
+```JS
+    function getAddress(parameter1, invocationContext) {
+        return invocationContext.address;
+    }
+}
+```
+
 ## Handling errors
 
 When you build an add-in that defines custom functions, be sure to include error handling logic to account for runtime errors. Error handling for custom functions is the same as [error handling for the Excel JavaScript API at large](excel-add-ins-error-handling.md). In the following code sample, `.catch` will handle any errors that occur previously in the code.
