@@ -293,8 +293,11 @@ Excel.run(function (context) {
 ```
 
 The `protect` method has two optional parameters:
- - `options`: A [WorksheetProtectionOptions](https://docs.microsoft.com/en-us/javascript/api/excel/excel.worksheetprotectionoptions) object defining specific editing restrictions.
+
+ - `options`: A [WorksheetProtectionOptions](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotectionoptions) object defining specific editing restrictions.
  - `password`: A string representing the password needed for a user to bypass protection and edit the worksheet.
+
+The article [Protect a worksheet](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6) has more information about worksheet protection and how to change it through the Excel UI.
 
 ## See also
 

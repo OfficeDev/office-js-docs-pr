@@ -7,13 +7,13 @@ ms.date: 11/26/2018
 
 # Work with Workbooks using the Excel JavaScript API
 
-This article provides code samples that show how to perform common tasks with workbooks using the Excel JavaScript API. For the complete list of properties and methods that the **Workbook** object supports, see [Workbook Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.workbook). This article also covers workbook-level actions performed through other similarly scoped objects, such as [Application](https://docs.microsoft.com/javascript/api/excel/excel.application).
+This article provides code samples that show how to perform common tasks with workbooks using the Excel JavaScript API. For the complete list of properties and methods that the **Workbook** object supports, see [Workbook Object (JavaScript API for Excel)](/javascript/api/excel/excel.workbook). This article also covers workbook-level actions performed through the [Application](/javascript/api/excel/excel.application) object.
 
-The workbook object is the entry point for your add-in to interact with Excel. It contains a [WorksheetCollection](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) to manipulate individual worksheets. Most work done to [ranges](excel-add-ins-ranges.md) happens directly through a worksheet. The article [Work with Worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md) describes how to access and edit worksheets.
+The workbook object is the entry point for your add-in to interact with Excel. It contains a [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) to add worksheets, navigate among them, and assign handlers to worksheet events. The article [Work with Worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md) describes how to access and edit worksheets.
 
 ## Get active cell and selected range
 
-Workbooks maintain collections of worksheets, tables, PivotTables, and other data types through which Excel data is accessed and changed. They also have application-level information (more on that later). There are a pair of methods to directly get ranges the Excel user has just activated. The first is `getActiveCell()`. This method gets the active cell from the workbook as a [Range object](https://docs.microsoft.com/javascript/api/excel/excel.range). The following example shows a call to `getActiveCell()`, followed by the cell's address being printed to the console.
+Workbooks maintain collections of worksheets, tables, PivotTables, and other data types through which Excel data is accessed and changed. They also have application-level information (more on that later). There are a pair of methods to directly get ranges the Excel user has just activated. The first is `getActiveCell()`. This method gets the active cell from the workbook as a [Range object](/javascript/api/excel/excel.range). The following example shows a call to `getActiveCell()`, followed by the cell's address being printed to the console.
 
 
 ```js
@@ -37,7 +37,7 @@ Excel.run(function(context) {
 }).catch(errorHandlerFunction);
 ```
 
-## Create Workbook
+## Create workbook
 
 Your add-in can create a new workbook, separate from the Excel instance in which the add-in is currently running. The Excel object has the `createWorkbook` method for this purpose. When this method is called, the new workbook is immediately opened and displayed. This happens in a new Excel instance. Your add-in remains open and running with the previous workbook.
 
@@ -45,7 +45,7 @@ Your add-in can create a new workbook, separate from the Excel instance in which
 Excel.createWorkbook();
 ```
 
-`createWorkbook` takes in an optional string. This string is an .xlsx file in base64 encoding. Assuming the string argument is a valid .xlsx file, the resulting workbook will be a copy of that file. You can get your add-in’s current workbook as a base64-encoded string by using [file slicing](https://docs.microsoft.com/javascript/api/office/office.document#getfileasync-filetype--options--callback-). The [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) class can be used to convert a file into the required base64-encoded string, as demonstrated in the following example. 
+`createWorkbook` takes in an optional string. This string is an .xlsx file in base64 encoding. Assuming the string argument is a valid .xlsx file, the resulting workbook will be a copy of that file. You can get your add-in’s current workbook as a base64-encoded string by using [file slicing](/javascript/api/office/office.document#getfileasync-filetype--options--callback-). The [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) class can be used to convert a file into the required base64-encoded string, as demonstrated in the following example. 
 
 ```js
 var myFile = document.getElementById("file");
@@ -68,7 +68,7 @@ reader.readAsDataURL(myFile.files[0]);
 
 ## Protection
 
-Your add-in can control a user's ability to edit the worksheet structure. The workbook's `protection` property is a [WorkbookProtection](https://docs.microsoft.com/javascript/api/excel/excel.workbookprotection) object with a `protect()` method. The following example shows a basic scenario toggling the protection of the workbook's structure. 
+Your add-in can control a user's ability to edit the worksheet structure. The workbook's `protection` property is a [WorkbookProtection](/javascript/api/excel/excel.workbookprotection) object with a `protect()` method. The following example shows a basic scenario toggling the protection of the workbook's structure. 
 
 ```js
 Excel.run(function (context) {
@@ -87,9 +87,11 @@ The `protect` method also has an optional string parameter, `password`. This str
 
 Protection can also be set at the worksheet level. Protection on the worksheet guards against unwanted data editing. For more information, the Data protection section of the [Work with Worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md#data-protection) article.
 
+The article [Protect a workbook](https://support.office.com/article/Protect-a-workbook-7E365A4D-3E89-4616-84CA-1931257C1517) has more information about workbook protection and how to change it through the Excel UI.
+
 ## Document properties
 
-A workbook has access to the Office file metadata, which is known as the [document properties](https://support.office.com/article/View-or-change-the-properties-for-an-Office-file-21D604C2-481E-4379-8E54-1DD4622C6B75). The workbook's `properties` property is a [DocumentProperties](https://docs.microsoft.com/javascript/api/excel/excel.documentproperties) object containing these metadata values. The following example shows how to set the author property.
+A workbook has access to the Office file metadata, which is known as the [document properties](https://support.office.com/article/View-or-change-the-properties-for-an-Office-file-21D604C2-481E-4379-8E54-1DD4622C6B75). The workbook's `properties` property is a [DocumentProperties](/javascript/api/excel/excel.documentproperties) object containing these metadata values. The following example shows how to set the author property.
 
 ```js
 Excel.run(function (context) {
@@ -124,7 +126,7 @@ Excel.run(function (context) {
 
 ## Document settings
 
-A workbook's settings are similar to the collection of custom properties. The different is settings are unique to a single Excel file and add-in pairing, whereas properties are solely connected to the file. The following example shows how to create and access a setting.
+A workbook's settings are similar to the collection of custom properties. The difference is settings are unique to a single Excel file and add-in pairing, whereas properties are solely connected to the file. The following example shows how to create and access a setting.
 
 ```js
 Excel.run(function (context) {
@@ -155,7 +157,7 @@ Application objects provide a method to force an immediate recalculation. `Appli
  
 The article [Change formula recalculation, iteration, or precision](https://support.office.com/article/change-formula-recalculation-iteration-or-precision-73fc7dac-91cf-4d36-86e8-67124f6bcce4) provides more context on the recalculation terminology.
 
-The Excel API also lets add-ins turn off calculations until `RequestContext.sync()` is called. This is done with `suspendApiCalculationUntilNextSync()`. Use this method when you are editing large ranges without needing to access the data between edits.
+The Excel API also lets add-ins turn off calculations until `RequestContext.sync()` is called. This is done with `suspendApiCalculationUntilNextSync()`. Use this method when your add-in is editing large ranges without needing to access the data between edits.
 
 ```js
 context.application.suspendApiCalculationUntilNextSync();
