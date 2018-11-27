@@ -60,7 +60,7 @@ The following table lists the error codes, names, and messages displayed, and th
 |5006|Session Timeout|The document session timed out. Reload the document. |The session has timed out.|
 |5007|Invalid API call|The enumeration is not supported in the current context.|The enumeration is not supported in the current context.|
 |5009|Permission Denied|Access Denied|The add-in does not have permission to call the specific API.|
-|5012|Invalid Or Timed Out Session|Your Office Online session has expired or is invalid. To continue, refresh the page.|The session between the office client and server has expired or when the date, time, or time zone is incorrect on your computer.
+|5012|Invalid Or Timed Out Session|Your Office Online session has expired or is invalid. To continue, refresh the page.|The session between the office client and server has expired or when the date, time, or time zone is incorrect on your computer.|
 |6000|Invalid node|The specified node was not found.|The **CustomXmlPart** node was not found.|
 |6100|Custom XML error|Custom XML error|Invalid API call|
 |7000|Invalid Id|The specified Id does not exist.|Invalid ID|
