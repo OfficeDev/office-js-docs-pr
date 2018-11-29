@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API performance optimization
 description: 'Optimize performance using Excel JavaScript API'
-ms.date: 03/28/2018
+ms.date: 11/29/2018
 ---
 
 # Performance optimization using the Excel JavaScript API
@@ -156,6 +156,34 @@ Excel.run(async (ctx) => {
 
 > [!NOTE]
 > You can conveniently convert a Table object to a Range object by using the [Table.convertToRange()](https://docs.microsoft.com/javascript/api/excel/excel.table#converttorange--) method.
+
+## Untrack unneeded ranges
+
+The JavaScript layer creates proxy objects for your add-in to interact with the Excel workbook and underlying ranges. These objects persist in memory until `context.sync()` is called. Large batch operations may generate a lot of proxy objects that are only needed once by the add-in and can be released from memory before the batch executes.
+
+The `Range.untrack()` method releases Excel Range objects from memory. Calling this after your add-in is done with the range will yield a noticeable performance benefit when using large numbers of Range objects. `Range.untrack()` is a shortcut for `ClientRequestContext.trackedObjects.remove(thisRange)`. Any proxy object can be untracked by removing it from the tracked objects list in the context. Typically, Range objects are the only Excel objects used in sufficient quantity to justify worrying about performance.
+
+The following code sample fills a selected range with data, one cell at a time. After the value is added to the cell, the range representing that cell is untracked. Try this sample with a selected range of 10,000 to 20,000 cells both with and without the `cell.untrack()` line. You should notice not only a faster execution time, but also a quicker response time after execution (since the cleanup step takes less time).
+
+```js
+Excel.run(async (context) => {
+	var largeRange = context.workbook.getSelectedRange();
+	largeRange.load(["rowCount", "columnCount"]);
+	await context.sync();
+	
+	for (var i = 0; i < largeRange.rowCount; i++) {
+		for (var j = 0; j < largeRange.columnCount; j++) {
+			var cell = largeRange.getCell(i, j);
+			cell.values = [[i *j]];
+
+			// call untrack() to release the range from memory
+			cell.untrack();
+		}
+	}
+
+	await context.sync();
+});
+```
 
 ## Enable and disable events
 
