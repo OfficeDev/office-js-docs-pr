@@ -1,7 +1,7 @@
 ---
 title: Fundamental programming concepts with the Excel JavaScript API
 description: Use the Excel JavaScript API to build add-ins for Excel.
-ms.date: 10/16/2018
+ms.date: 11/29/2018
 ---
 
 
@@ -31,6 +31,16 @@ Excel.run(function (context) {
   }
 });
 ```
+
+### Run options
+
+**Excel.run** has an overload to take in a [RunOptions](https://docs.microsoft.com/javascript/api/excel/excel.runoptions) object. This contains a set of properties affecting platform behavior during the function's execution.
+
+ - `delayForCellEdit`: Determines whether Excel delays the batch request until the user exits cell edit mode. When false (which is the default), the batch request automatically fails if the user is in cell edit mode. When true, the batch request is delayed and executes when the user exits cell edit mode.
+ 
+ ```js
+ Excel.run({ delayForCellEdit: true }, function (context) { ... }
+ ```
 
 ## Request context
  
