@@ -38,11 +38,11 @@ If you use the [Yo Office generator](https://github.com/OfficeDev/generator-offi
 
 The following sections provide more information about these files.
 
-### Script file 
+### Script file
 
-The script file (**./src/customfunctions.js** or **./src/customfunctions.ts** in the project that the Yo Office generator creates) contains the code that defines custom functions and maps the names of the custom functions to objects in the [JSON metadata file](#json-metadata-file). 
+The script file (**./src/customfunctions.js** or **./src/customfunctions.ts** in the project that the Yo Office generator creates) contains the code that defines custom functions and associates the names of the custom functions with objects in the [JSON metadata file](#json-metadata-file).
 
-For example, the following code defines the custom functions `add` and `increment` and then specifies association information for both functions. The `add` function is mapped to the object in the JSON metadata file where the value of the `id` property is **ADD**, and the `increment` function is mapped to the object in the metadata file where the value of the `id` property is **INCREMENT**. See [Custom functions best practices](custom-functions-best-practices.md#associating-function-names-to-json-metadata) for more information about associating function names in the script file to objects in the JSON metadata file.
+For example, the following code defines the custom functions `add` and `increment` and then specifies association information for both functions. The `add` function is associated with the object in the JSON metadata file where the value of the `id` property is **ADD**, and the `increment` function is associated with the object in the metadata file where the value of the `id` property is **INCREMENT**. See [Custom functions best practices](custom-functions-best-practices.md#associating-function-names-to-json-metadata) for more information about associating function names in the script file to objects in the JSON metadata file.
 
 ```js
 function add(first, second){
@@ -61,12 +61,12 @@ function increment(incrementBy, callback) {
   };
 }
 
-// map `id` values in the JSON metadata file to the JavaScript function names
+// associate `id` values in the JSON metadata file to the JavaScript function names
 CustomFunctions.associate.ADD = add;
 CustomFunctions.associate.INCREMENT = increment;
 ```
 
-### JSON metadata file 
+### JSON metadata file
 
 The custom functions metadata file (**./config/customfunctions.json** in the project that the Yo Office generator creates) provides the information that Excel requires to register custom functions and make them available to end users. Custom functions are registered when a user runs an add-in for the first time. After that, they are available to that same user in all workbooks (i.e., not only in the workbook where the add-in initially ran.)
 

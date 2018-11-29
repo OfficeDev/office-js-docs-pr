@@ -53,7 +53,7 @@ Currently, the best method for debugging Excel custom functions is to first [sid
 
 If your add-in fails to register, [verify that SSL certificates are correctly configured](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) for the web server that's hosting your add-in application.
 
-## Mapping function names to JSON metadata
+## Associating function names with JSON metadata
 
 As described in the [custom functions overview](custom-functions-overview.md) article, a custom functions project must include a JSON metadata file which provides the information that Excel requires to register the custom functions and make them available to end users. Additionally, within the JavaScript file that defines your custom functions, you must provide information to specify which function object in the JSON metadata file corresponds to each custom function in the JavaScript file.
 
@@ -79,9 +79,9 @@ Keep in mind the following best practices when creating custom functions in your
 
 * In the JSON metadata file, ensure that the value of each `id` property is unique within the scope of the file. That is, no two function objects in the metadata file should have the same `id` value. Additionally, do not specify two `id` values in the metadata file that only differ by case. For example, do not define one function object with an `id` value of **add** and another function object with an `id` value of **ADD**.
 
-* Do not change the value of an `id` property in the JSON metadata file after it's been mapped to a corresponding JavaScript function name. You can change the function name that end users see in Excel by updating the `name` property within the JSON metadata file, but you should never change the value of an `id` property after it's been established.
+* Do not change the value of an `id` property in the JSON metadata file after it's been associated with a corresponding JavaScript function name. You can change the function name that end users see in Excel by updating the `name` property within the JSON metadata file, but you should never change the value of an `id` property after it's been established.
 
-* In the JavaScript file, specify all custom function mappings in the same location. For example, the following code sample defines two custom functions and then specifies the mapping information for both functions.
+* In the JavaScript file, specify all custom function associations in the same location. For example, the following code sample defines two custom functions and then specifies the association information for both functions.
 
     ```js
     function add(first, second){
@@ -100,7 +100,7 @@ Keep in mind the following best practices when creating custom functions in your
       };
     }
 
-    // map `id` values in the JSON metadata file to JavaScript function names
+    // associate `id` values in the JSON metadata file to JavaScript function names
     CustomFunctions.associate.ADD = add;
     CustomFunctions.associate.INCREMENT = increment;
     ```
