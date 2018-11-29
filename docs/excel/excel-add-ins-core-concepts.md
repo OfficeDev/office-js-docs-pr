@@ -34,7 +34,7 @@ Excel.run(function (context) {
 
 ### Run options
 
-**Excel.run** has an overload to take in a [RunOptions](https://docs.microsoft.com/javascript/api/excel/excel.runoptions) object. This contains a set of properties affecting platform behavior during the function's execution.
+**Excel.run** has an overload that takes in a [RunOptions](https://docs.microsoft.com/javascript/api/excel/excel.runoptions) object. This contains a set of properties affecting platform behavior during the function's execution. The following are some of the most commonly used option properties:
 
  - `delayForCellEdit`: Determines whether Excel delays the batch request until the user exits cell edit mode. When false (which is the default), the batch request automatically fails if the user is in cell edit mode. When true, the batch request is delayed and executes when the user exits cell edit mode.
 
