@@ -4,9 +4,9 @@ description: Learn best practices and recommended patterns for Excel custom func
 title: Custom functions best practices
 ---
 
-# Custom functions design considerations (preview)
+# Custom functions best practices (preview)
 
-This article describes design patterns and practices for developing custom functions in Excel.
+This article describes best practices for developing custom functions in Excel.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
