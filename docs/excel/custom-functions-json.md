@@ -133,9 +133,10 @@ The `parameters` property is an array of parameter objects. The following table 
 |  `dimensionality`  |  string  |  No  |  Must be either **scalar** (a non-array value) or **matrix** (a 2-dimensional array).  |
 |  `name`  |  string  |  Yes  |  The name of the parameter. This name is displayed in Excel's intelliSense.  |
 |  `type`  |  string  |  No  |  The data type of the parameter. Can be **boolean**, **number**, **string**, or **any**, which allows you to use of any of the previous three types. If this property is not specified, the data type defaults to **any**. |
-|  `optional`  | string | No | If **true**, parameter will be labelled optional. |
+|  `optional`  | string | No | If **true**, the parameter is optional. |
 
-[!NOTE] Any as the default value for `type` and optional parameters are currently available, but you may experience linting errors and not see optional parameters in Excel's formula UI when calling a function. This is projected to change in December of 2018.
+>[!NOTE]
+> If the `type` property of an optional parameter is either no specified or set to `any`, you may notice issues such as linting errors in your IDE and optional parameters not being displayed when the function is being entered into a cell in Excel. This is projected to change in December of 2018.
 
 ## result
 
