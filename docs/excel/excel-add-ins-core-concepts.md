@@ -37,10 +37,10 @@ Excel.run(function (context) {
 **Excel.run** has an overload to take in a [RunOptions](https://docs.microsoft.com/javascript/api/excel/excel.runoptions) object. This contains a set of properties affecting platform behavior during the function's execution.
 
  - `delayForCellEdit`: Determines whether Excel delays the batch request until the user exits cell edit mode. When false (which is the default), the batch request automatically fails if the user is in cell edit mode. When true, the batch request is delayed and executes when the user exits cell edit mode.
- 
- ```js
- Excel.run({ delayForCellEdit: true }, function (context) { ... }
- ```
+
+```js
+Excel.run({ delayForCellEdit: true }, function (context) { ... }
+```
 
 ## Request context
  
