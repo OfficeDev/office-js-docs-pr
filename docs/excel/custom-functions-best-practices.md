@@ -167,17 +167,18 @@ To make a parameter optional, add `"optional": "true"` to the parameter in the J
 }
 ```
 
-When you define a function that contains one or more optional parameters, you should specify what happens when the optional parameters are undefined. You may do so by using an `if` statement or by using the JavaScript OR operator. In the following example, `zipCode` 
-
-For optional parameters, as a best practice you should specify what happens if the parameter is undefined. You can set this using an if condition or pass in a fallback value using the JavaScript OR operator as shown in the following example.  
+When you define a function that contains one or more optional parameters, you should specify what happens when the optional parameters are undefined. You may do so by using an `if` statement or by using the JavaScript OR operator. In the following example, `zipCode` and `dayOfWeek` are both optional parameters for the `getWeatherReport` function. If the `zipCode` parameter is undefined, the default value is set to 98052. If the `dayOfWeek` parameter is undefined, it is set to Wednesday.
 
 ```js
 function getWeatherReport(required, zipCode, dayOfWeek)
 {
   if (zipCode === undefined) {
-      zipCode === 98052 //98052 becomes the fallback value
+      zipCode === 98052
   }
-  dayOfWeek = ...
+  if (dayOfWeek === undefined) {
+    dayOfWeek === "Wednesday"
+}
+    ... //After establishing parameters, this function would have additional code to get a weather report
 }
 ```
 
