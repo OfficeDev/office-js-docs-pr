@@ -155,15 +155,18 @@ Excel.run(async (ctx) => {
 ```
 
 > [!NOTE]
-> You can conveniently convert a Table object to a Range object by using the [Table.convertToRange()](https://docs.microsoft.com/javascript/api/excel/excel.table#converttorange--) method.
+> You can conveniently convert a Table object to a Range object by using the [Table.convertToRange()](/javascript/api/excel/excel.table#converttorange--) method.
 
 ## Untrack unneeded ranges
 
 The JavaScript layer creates proxy objects for your add-in to interact with the Excel workbook and underlying ranges. These objects persist in memory until `context.sync()` is called. Large batch operations may generate a lot of proxy objects that are only needed once by the add-in and can be released from memory before the batch executes.
 
-The [Range.untrack()](https://docs.microsoft.com/javascript/api/excel/excel.range#untrack--) method releases Excel Range objects from memory. Calling this after your add-in is done with the range yields a noticeable performance benefit when using large numbers of Range objects. `Range.untrack()` is a shortcut for [ClientRequestContext.trackedObjects.remove(thisRange)](https://docs.microsoft.com/javascript/api/office/officeextension.trackedobjects#remove-object-). Any proxy object can be untracked by removing it from the tracked objects list in the context. Typically, Range objects are the only Excel objects used in sufficient quantity to justify untracking.
+The [Range.untrack()](/javascript/api/excel/excel.range#untrack--) method releases an Excel Range object from memory. Calling this method after your add-in is done with the range should yield a noticeable performance benefit when using large numbers of Range objects. 
 
-The following code sample fills a selected range with data, one cell at a time. After the value is added to the cell, the range representing that cell is untracked. Try this sample with a selected range of 10,000 to 20,000 cells both with and without the `cell.untrack()` line. You should notice a faster execution time and a quicker response time after execution (since the cleanup step takes less time).
+> [!NOTE]
+> `Range.untrack()` is a shortcut for [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove-object-). Any proxy object can be untracked by removing it from the tracked objects list in the context. Typically, Range objects are the only Excel objects used in sufficient quantity to justify untracking.
+
+The following code sample fills a selected range with data, one cell at a time. After the value is added to the cell, the range representing that cell is untracked. Run this code with a selected range of 10,000 to 20,000 cells, first with the `cell.untrack()` line, and then without it. You should notice the code runs faster with the `cell.untrack()` line than without it. You may also notice a quicker response time afterwards, since the cleanup step takes less time.
 
 ```js
 Excel.run(async (context) => {
