@@ -273,7 +273,7 @@ To enable the ability to cancel a function, you must implement a cancellation ha
 
 Excel contains several built-in volatile functions, such as `RAND` and `TODAY`. For a comprehensive list of Excel’s volatile functions, see [Volatile and Non-Volatile Functions](https://docs.microsoft.com/en-us/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).  
   
-Custom functions allow you to create your own volatile functions, which you may be useful when handling dates, times, random numbers, and modelling. For example, Monte Carlo simulations require generation of random inputs to determine an optimal solution.  
+Custom functions allow you to create your own volatile functions, which may be useful when handling dates, times, random numbers, and modelling. For example, Monte Carlo simulations require generation of random inputs to determine an optimal solution.  
   
 To declare a function volatile, add `"volatile": true` within the `options` object  for the function in the JSON metadata file, as shown in the following code sample. Note that a function cannot be marked both `"streaming": true` and `"volatile": true`; in the case where both are marked `true` the volatile option will be ignored.  
 
@@ -281,7 +281,7 @@ To declare a function volatile, add `"volatile": true` within the `options` obje
 {
   "name": "TOMORROW",
   "description":  "Returns tomorrow’s date",
-  "helpUrl": "http://dev.office.com",
+  "helpUrl": "http://www.contoso.com",
   "result": {
       "type": "string",
       "dimensionality": "scalar"
