@@ -173,13 +173,15 @@ When you define a function that contains one or more optional parameters, you sh
 function getWeatherReport(zipCode, dayOfWeek)
 {
   if (zipCode === undefined) {
-      zipCode = 98052
+      zipCode = 98052;
   }
+
   if (dayOfWeek === undefined) {
-    dayOfWeek = "Wednesday"
-    }
-    // Get weather report for specified zipCode and dayOfWeek
-    // ...
+    dayOfWeek = "Wednesday";
+   }
+
+  // Get weather report for specified zipCode and dayOfWeek
+  // ...
 }
 ```
 
