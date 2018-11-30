@@ -294,6 +294,9 @@
       - name: Tables
         href: excel/excel-add-ins-tables.md
         displayName: Excel
+      - name: Workbooks
+        href: excel/excel-add-ins-workbooks.md
+        displayName: Excel
       - name: Worksheets
         href: excel/excel-add-ins-worksheets.md
         displayName: Excel
