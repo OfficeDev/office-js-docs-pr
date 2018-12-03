@@ -50,6 +50,9 @@
   - name: Excel custom functions tutorial
     href: tutorials/excel-tutorial-create-custom-functions.md
     displayName: Excel
+  - name: Outlook add-in tutorial
+    href: /outlook/add-ins/addin-tutorial.md
+    displayName: Outlook
   - name: PowerPoint add-in tutorial
     href: tutorials/powerpoint-tutorial.yml
     displayName: PowerPoint
