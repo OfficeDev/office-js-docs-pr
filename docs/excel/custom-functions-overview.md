@@ -346,25 +346,25 @@ The information about a cell's address is exposed only if `requiresAddress` is m
 
 ```JSON
 {
-"id": "ADDTIME",
-  "name": "ADDTIME",
-  "description": "Display the date right now and add the amount of hours to it designated by the parameter",
-  "helpUrl": "http://www.contoso.com",
-  "result": {
-    "type": "number",
-    "dimensionality": "scalar"
-  },
-  "parameters": [
-    {
-      "name": "Additional time",
-      "description": "Amount of hours to increase current date by",
+   "id": "ADDTIME",
+   "name": "ADDTIME",
+   "description": "Display the date right now and add the amount of hours to it designated by the parameter",
+   "helpUrl": "http://www.contoso.com",
+   "result": {
       "type": "number",
       "dimensionality": "scalar"
-    }
-  ],
-"options": {
-    "requiresAddress": true
-    }
+   },
+   "parameters": [
+      {
+         "name": "Additional time",
+         "description": "Amount of hours to increase current date by",
+         "type": "number",
+         "dimensionality": "scalar"
+      }
+   ],
+   "options": {
+      "requiresAddress": true
+   }
 }
 ```
 
