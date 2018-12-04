@@ -336,7 +336,13 @@ function secondHighest(values){
 
 ## Discovering cells that invoke custom functions
 
-You may wish to discover the cell that invoked a custom function. The information about a cell's address is exposed only if `requiresAddress` is marked as true in the function's JSON metadata file. As an example of the JSON metadata, see the following example:
+You may wish to discover the cell that invoked a custom function. Common scenarios for using `caller.address` include:
+
+- Formatting ranges: You can use `caller.address` as the key of the cell to store information in [`AsyncStorage`](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [the `onCalculated` event](https://docs.microsoft.com/en-us/javascript/api/excel/excel.worksheet?view=office-js#oncalculated) in Excel to load the key from `AsyncStorage`.
+- Displaying cached values: If your function is being used offline, you can display stored cached values from `AsyncStorage`. Display using the `onCalculated` event.
+- Reconciliation: You can use `caller.address` to discover an origin cell to help you reconcile where processing is occurring.
+
+The information about a cell's address is exposed only if `requiresAddress` is marked as true in the function's JSON metadata file. As an example of the JSON metadata, see the following example:
 
 ```JSON
 {
@@ -372,12 +378,6 @@ Values returned from the `getAddress` function follow the following format: `She
     }
 }
 ```
-
-Common scenarios for using `caller.address` include:
-
-- Formatting ranges: You can use `caller.address` as the key of the cell to store information in [`AsyncStorage`](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [the `onCalculated` event](https://docs.microsoft.com/en-us/javascript/api/excel/excel.worksheet?view=office-js#oncalculated) in Excel to load the key from `AsyncStorage`.
-- Displaying cached values: If your function is being used offline, you can display stored cached values from `AsyncStorage`. Display using the `onCalculated` event.
-- Reconciliation: You can use `caller.address` to discover an origin cell to help you reconcile where processing is occurring.
 
 ## Handling errors
 
