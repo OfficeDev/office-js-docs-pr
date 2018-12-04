@@ -1,7 +1,7 @@
 ---
 title: Work with ranges using the Excel JavaScript API
 description: ''
-ms.date: 10/19/2018
+ms.date: 12/03/2018
 ---
 
 
