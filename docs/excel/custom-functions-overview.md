@@ -373,9 +373,8 @@ In the script file (./src/customfunctions.js or ./src/customfunctions.ts), add a
 Values returned from the `getAddress` function follow the following format: `SheetName!CellNumber`. For example, if a function was called from a sheet called Expenses in cell B2, the returned value would be `Expenses!B2`.
 
 ```js
-  function getAddress(parameter1, invocationContext) {
+function getAddress(parameter1, invocationContext) {
     return invocationContext.address;
-  }
 }
 ```
 
