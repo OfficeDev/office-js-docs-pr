@@ -368,7 +368,7 @@ The information about a cell's address is exposed only if `requiresAddress` is m
 }
 ```
 
-In the script file (./src/customfunctions.js or ./src/customfunctions.ts), add a function similar to the `getAddress` in the following sample to get an address for a cell which issued a call. This function may take parameters, as shown in the following sample as `parameter1`, but the last parameter will always be `invocationContext`, an object containing the cell's location that Excel passes down when `"requiresAddress": true` is marked in your JSON metadata file.
+In the script file (./src/customfunctions.js or ./src/customfunctions.ts), add a function similar to the `getAddress` in the following sample to get an address for a cell which issued a call. This function may take parameters, as shown in the following sample as `parameter1`, but the last parameter will always be `invocationContext`, an object containing the cell's location that Excel passes down when `requiresAddress` is marked as `true` in your JSON metadata file.
 
 Values returned from the `getAddress` function follow the following format: `SheetName!CellNumber`. For example, if a function was called from a sheet called Expenses in cell B2, the returned value would be `Expenses!B2`.
 
