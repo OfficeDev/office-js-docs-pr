@@ -342,7 +342,7 @@ You may wish to discover the cell that invoked a custom function. Common scenari
 - Displaying cached values: If your function is being used offline, you can display stored cached values from `AsyncStorage`. Display using the `onCalculated` event.
 - Reconciliation: You can use `caller.address` to discover an origin cell to help you reconcile where processing is occurring.
 
-The information about a cell's address is exposed only if `requiresAddress` is marked as true in the function's JSON metadata file. As an example of the JSON metadata, see the following example:
+The information about a cell's address is exposed only if `requiresAddress` is marked as `true` in the function's JSON metadata file. As an example of the JSON metadata, see the following example:
 
 ```JSON
 {
