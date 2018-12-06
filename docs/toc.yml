@@ -50,6 +50,9 @@
   - name: Excel custom functions tutorial
     href: tutorials/excel-tutorial-create-custom-functions.md
     displayName: Excel
+  - name: Outlook add-in tutorial
+    href: /outlook/add-ins/addin-tutorial
+    displayName: Outlook
   - name: PowerPoint add-in tutorial
     href: tutorials/powerpoint-tutorial.yml
     displayName: PowerPoint
@@ -293,6 +296,9 @@
         displayName: Excel
       - name: Tables
         href: excel/excel-add-ins-tables.md
+        displayName: Excel
+      - name: Workbooks
+        href: excel/excel-add-ins-workbooks.md
         displayName: Excel
       - name: Worksheets
         href: excel/excel-add-ins-worksheets.md

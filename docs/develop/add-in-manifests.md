@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins XML manifest
 description: ''
-ms.date: 02/09/2018
+ms.date: 12/04/2018
 ---
 
 # Office Add-ins XML manifest
@@ -397,7 +397,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   </Description>
   <!-- Change the following lines to specify    -->
   <!-- the web server that hosts the icon files. -->
-  <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
+  <IconUrl DefaultValue="https://contoso.com/assets/icon-64.png" />
   <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
 
   <Hosts>

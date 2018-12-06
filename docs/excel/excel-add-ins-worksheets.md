@@ -1,13 +1,13 @@
 ---
-title: Work with Worksheets using the Excel JavaScript API
+title: Work with worksheets using the Excel JavaScript API
 description: ''
-ms.date: 12/04/2017
+ms.date: 11/27/2018
 ---
 
 
-# Work with Worksheets using the Excel JavaScript API
+# Work with worksheets using the Excel JavaScript API
 
-This article provides code samples that show how to perform common tasks with worksheets using the Excel JavaScript API. For the complete list of properties and methods that the **Worksheet** and **WorksheetCollection** objects support, see [Worksheet Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheet?view=office-js) and [WorksheetCollection Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection?view=office-js).
+This article provides code samples that show how to perform common tasks with worksheets using the Excel JavaScript API. For the complete list of properties and methods that the **Worksheet** and **WorksheetCollection** objects support, see [Worksheet Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) and [WorksheetCollection Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection).
 
 > [!NOTE]
 > The information in this article applies only to regular worksheets; it does not apply to "chart" sheets or "macro" sheets.
@@ -273,7 +273,31 @@ Excel.run(function (context) {
 
 ## Get a range within a worksheet
 
-For examples that show how to get a range within a worksheet, see [Work with Ranges using the Excel JavaScript API](excel-add-ins-ranges.md).
+For examples that show how to get a range within a worksheet, see [Work with ranges using the Excel JavaScript API](excel-add-ins-ranges.md).
+
+## Data protection
+
+Your add-in can control a user's ability to edit data in a worksheet. The worksheet's `protection` property is a [WorksheetProtection](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotection) object with a `protect()` method. The following example shows a basic scenario toggling the complete protection of the active worksheet.
+
+```js
+Excel.run(function (context) {
+	var activeSheet = context.workbook.worksheets.getActiveWorksheet();
+	activeSheet.load("protection/protected");
+
+	return context.sync().then(function() {
+		if (!activeSheet.protection.protected) {
+			activeSheet.protection.protect();
+		}
+	})
+}).catch(errorHandlerFunction);
+```
+
+The `protect` method has two optional parameters:
+
+ - `options`: A [WorksheetProtectionOptions](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotectionoptions) object defining specific editing restrictions.
+ - `password`: A string representing the password needed for a user to bypass protection and edit the worksheet.
+
+The article [Protect a worksheet](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6) has more information about worksheet protection and how to change it through the Excel UI.
 
 ## See also
 
