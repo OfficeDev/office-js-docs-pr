@@ -364,7 +364,7 @@ function secondHighest(values){
 
 You may wish to discover the cell that invoked a custom function. Common scenarios for using `caller.address` include:
 
-- Formatting ranges: You can use `caller.address` as the key of the cell to store information in [`AsyncStorage`](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [`onCalculated`](https://docs.microsoft.com/javascript/api/excel/excel.worksheet?view=office-js#oncalculated) in Excel to load the key from `AsyncStorage`.
+- Formatting ranges: You can use `caller.address` as the key of the cell to store information in [AsyncStorage](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `AsyncStorage`.
 - Displaying cached values: If your function is being used offline, you can display stored cached values from `AsyncStorage`. Display using `onCalculated`.
 - Reconciliation: You can use `caller.address` to discover an origin cell to help you reconcile where processing is occurring.
 
