@@ -1,7 +1,7 @@
 ---
 title: Work with ranges using the Excel JavaScript API
 description: ''
-ms.date: 10/19/2018
+ms.date: 12/04/2018
 ---
 
 
@@ -535,7 +535,55 @@ Excel.run(function (context) {
 
 Ranges can have formats applied to individual cells based on conditions. For more information about this, see [Apply conditional formatting to Excel ranges](excel-add-ins-conditional-formatting.md).
 
-## Copy and Paste
+## Work with dates using the Moment-MSDate plug-in
+
+The [Moment JavaScript library](https://momentjs.com/) provides a convenient way to use dates and timestamps. The [Moment-MSDate plug-in](https://www.npmjs.com/package/moment-msdate) converts the format of moments into one preferable for Excel. This is the same format the [NOW function](https://support.office.com/article/now-function-3337fd29-145a-4347-b2e6-20c904739c46) returns.
+
+The following code shows how to set the range at **B4** to a moment's timestamp:
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+	
+	var now = Date.now();
+	var nowMoment = moment(now);
+	var nowMS = nowMoment.toOADate();
+	
+	var dateRange = sheet.getRange("B4");
+	dateRange.values = [[nowMS]];
+	
+	dateRange.numberFormat = [["[$-409]m/d/yy h:mm AM/PM;@"]];
+	
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+It is a similar technique to get the date back out of the cell and convert it to a moment or other format, as demonstrated in the following code:
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    var dateRange = sheet.getRange("B4");
+    dateRange.load("values");
+		
+    return context.sync().then(function () {
+        var nowMS = dateRange.values[0][0];
+
+        // log the date as a moment
+        var nowMoment = moment.fromOADate(nowMS);
+        console.log(`get (moment): ${JSON.stringify(nowMoment)}`);
+
+        // log the date as a UNIX-style timestamp 
+        var now = nowMoment.unix();
+        console.log(`get (timestamp): ${now}`);
+    });
+}).catch(errorHandlerFunction);
+```
+
+Your add-in will have to format the ranges to display the dates in a more human-readable form. The example of `"[$-409]m/d/yy h:mm AM/PM;@"` displays a time like "12/3/18 3:57 PM". For more information about date and time number formats, please see the "Guidelines for date and time formats" in the [Review guidelines for customizing a number format](https://support.office.com/article/review-guidelines-for-customizing-a-number-format-c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5) article.
+
+## Copy and paste
 
 > [!NOTE]
 > The copyFrom function is currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.

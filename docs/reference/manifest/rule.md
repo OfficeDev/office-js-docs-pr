@@ -82,14 +82,14 @@ Defines a rule that evaluates to true if a match for the specified regular expre
 |:-----|:-----|:-----|
 | **RegExName** | Yes | Specifies the name of the regular expression, so that you can refer to the expression in the code for your add-in. |
 | **RegExValue** | Yes | Specifies the regular expression that will be evaluated to determine whether the mail add-in should be shown. |
-| **PropertyName** | Yes | Specifies the name of the property that the regular expression will be evaluated against. Can be one of the following: `Subject`, `BodyAsPlaintext`, `BodyAsHtml`, or `SenderSTMPAddress`. |
+| **PropertyName** | Yes | Specifies the name of the property that the regular expression will be evaluated against. Can be one of the following: `Subject`, `BodyAsPlaintext`, `BodyAsHTML`, or `SenderSMTPAddress`. |
 | **IgnoreCase** | No | Specifies to ignore the case when executing the regular expression. |
 | **Highlight** | No | **Note:** this only applies to **Rule** elements within **ExtensionPoint** elements. Specifies how the client should highlight matching text. Can be one of the following: `all` or `none`. If not specified, the default value is `all`. |
 
 ### Example
 
 ```XML
-<Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="SupportArticleNumber" RegExValue="(\W|^)kb\d{6}(\W|$)" PropertyName="BodyAsHtml" IgnoreCase="true" />
+<Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="SupportArticleNumber" RegExValue="(\W|^)kb\d{6}(\W|$)" PropertyName="BodyAsHTML" IgnoreCase="true" />
 ```
 
 ## RuleCollection
