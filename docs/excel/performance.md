@@ -73,7 +73,7 @@ Please be aware that some of the “properties” under an object may have the s
 
 ## Suspend Excel processes temporarily
 
-When your add-in edits an Excel workbook through the JavaScript API, the experience is similar to when a user edits it through the UI. This can be slower than desired when dealing with large data sets, due to the side processes Excel runs. Some of these can be controlled to yield a performance benefit.
+Excel has a number of background tasks reacting to input from both users and your add-in. Some of these Excel processes can be controlled to yield a performance benefit. This is especially helpful when your add-in deals with large data sets.
 
 ### Suspend calculation temporarily
 
