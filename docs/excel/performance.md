@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API performance optimization
 description: 'Optimize performance using Excel JavaScript API'
-ms.date: 11/29/2018
+ms.date: 12/06/2018
 ---
 
 # Performance optimization using the Excel JavaScript API
@@ -71,11 +71,15 @@ _Where:_
 
 Please be aware that some of the “properties” under an object may have the same name as another object. For example, `format` is a property under range object, but `format` itself is an object as well. So, if you make a call such as `range.load("format")`, this is equivalent to `range.format.load()`, which is an empty load() call that can cause performance problems as outlined previously. To avoid this, your code should only load the “leaf nodes” in an object tree. 
 
-## Suspend calculation temporarily
+## Suspend Excel processes temporarily
 
-If you are trying to perform an operation on a large number of cells (for example, setting the value of a huge range object) and you don't mind suspending the calculation in Excel temporarily while your operation finishes, we recommend that you suspend calculation until the next ```context.sync()``` is called.
+When your add-in edits an Excel workbook through the JavaScript API, the experience is similar to when a user edits it through the UI. This can be slower than desired when dealing with large data sets, due to the side processes Excel runs. Some of these can be controlled to yield a performance benefit.
 
-See [Application Object](https://docs.microsoft.com/javascript/api/excel/excel.application) reference documentation for information about how to use the ```suspendApiCalculationUntilNextSync()``` API to suspend and reactivate calculations in a very convenient way. The following code demonstrates how to suspend calculation temporarily:
+### Suspend calculation temporarily
+
+If you are trying to perform an operation on a large number of cells (for example, setting the value of a huge range object) and you don't mind suspending the calculation in Excel temporarily while your operation finishes, we recommend that you suspend calculation until the next `context.sync()` is called.
+
+See the [Application Object](https://docs.microsoft.com/javascript/api/excel/excel.application) reference documentation for information about how to use the `suspendApiCalculationUntilNextSync()` API to suspend and reactivate calculations in a very convenient way. The following code demonstrates how to suspend calculation temporarily:
 
 ```js
 Excel.run(async function(ctx) {
@@ -115,6 +119,18 @@ Excel.run(async function(ctx) {
     console.log(rangeToGet.values);
 })
 ```
+
+### Suspend screen updating
+
+> [!NOTE]
+> The `suspendScreenUpdatingUntilNextSync()` method described in this article requires the beta version of the Office JavaScript library from [Office.js CDN](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file] (https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) is also found at the CDN. For more information on our upcoming APIs, please visit the [open spec](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec) on GitHub.
+
+Excel displays changes your add-in makes approximately as they happen in the code. For large, iterative data sets, you may not need to see this progress on the screen. `Application.suspendScreenUpdatingUntilNextSync()` pauses visual updates to Excel until the ad-in calls `context.sync()` (or the `Excel.run` call ends, implictly calling `context.sync`). Be aware, Excel will not show any signs of activity until the next sync. Your add-in should either give users guidance to prepare them for this delay or provide a status bar to demonstrate activity.
+
+### Enable and disable events
+
+Performance of an add-in may be improved by disabling events. 
+A code sample showing how to enable and disable events is in the [Work with Events](excel-add-ins-events.md#enable-and-disable-events) article.
 
 ## Update all cells in a range 
 
@@ -187,11 +203,6 @@ Excel.run(async (context) => {
 	await context.sync();
 });
 ```
-
-## Enable and disable events
-
-Performance of an add-in may be improved by disabling events. 
-A code sample showing how to enable and disable events is in the [Work with Events](excel-add-ins-events.md#enable-and-disable-events) article.
 
 ## See also
 
