@@ -208,5 +208,6 @@ Excel.run(async (context) => {
 
 - [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
 - [Advanced programming concepts with the Excel JavaScript API](excel-add-ins-advanced-concepts.md)
+- [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md)
 - [Excel JavaScript API Open Specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
 - [Worksheet Functions Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.functions)
