@@ -103,5 +103,5 @@ While the resources limits on CPU and memory usage, crash tolerance, UI responsi
 
 - [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md)
 - [Limits for activation and JavaScript API for Outlook add-ins](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
-- [Performance optimization using the Excel JavaScript API] (../excel/performance.md)
+- [Performance optimization using the Excel JavaScript API](../excel/performance.md)
     
