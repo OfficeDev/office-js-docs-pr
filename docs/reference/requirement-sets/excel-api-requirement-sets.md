@@ -33,7 +33,7 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ## What's in the Excel JavaScript API Preview
 
-<table><tr><th>Object</th><th>What's new</th><th>Description</th>
+<table><tr><th width="1*">Object</th><th width="1*">What's new</th><th width="2*">Description</th>
 <tr><td rowSpan="9">[AutoFilter](/javascript/api/excel/excel.autofilter)</td><td>[apply(range: Range | string, columnIndex?: number, criteria?: Excel.FilterCriteria)](javascript/api/excel/excel.autofilter#apply-range--columnIndex?--criteria?-)</td><td>Applies AutoFilter on a range and filters the column if column index and filter criteria are specified.</td></tr>
 <tr><td>[clearCriteria()](javascript/api/excel/excel.autofilter#clearCriteria)</td><td>Clears the criteria if AutoFilter has filters</td></tr>
 <tr><td>[getRange()](javascript/api/excel/excel.autofilter#getRange)</td><td>Returns the Range object that represents the range to which the AutoFilter applies.</td></tr>
