@@ -138,7 +138,7 @@ Complete the following steps to create a custom function named `stockPrice` that
     CustomFunctionMappings.STOCKPRICE = stockPrice;
     ```
 
-3. Before Excel can make this new function available to end-users, you must specify metadata that describes this function. In the **stock-ticker** project that the Yo Office generator created, find the file **src/functions.json** and open it in your code editor. Add the following object to the `functions` array within the **src/functions.json** file and save the file.
+3. Before Excel can make this new function available to end-users, you must specify metadata that describes this function. In the **stock-ticker** project that the Yo Office generator created, find the file **src/functions/functions.json** and open it in your code editor. Add the following object to the `functions` array within the **src/functions/functions.json** file and save the file.
 
     This JSON describes the `stockPrice` function.
 
@@ -233,7 +233,7 @@ Complete the following steps to create a custom function named `stockPriceStream
     CustomFunctionMappings.STOCKPRICESTREAM = stockPriceStream;
     ```
 
-2. Before Excel can make this new function available to end-users, you must specify metadata that describes this function. In the **stock-ticker** project that the Yo Office generator created, add the following object to the `functions` array within the **src/functions.json** file and save the file.
+2. Before Excel can make this new function available to end-users, you must specify metadata that describes this function. In the **stock-ticker** project that the Yo Office generator created, add the following object to the `functions` array within the **src/functions/functions.json** file and save the file.
 
     This JSON describes the `stockPriceStream` function. For any streaming function, the `stream` property and the `cancelable` property must be set to `true` within the `options` object, as shown in this code sample.
 
