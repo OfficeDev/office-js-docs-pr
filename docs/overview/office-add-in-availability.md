@@ -1,7 +1,7 @@
 ---
 title: Office Add-in host and platform availability
 description: Supported requirement sets for Excel, Word, Outlook, PowerPoint, OneNote, and Project.
-ms.date: 11/07/2018
+ms.date: 12/11/2018
 ---
 
 # Office Add-in host and platform availability
@@ -10,6 +10,8 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
 
 > [!NOTE]
 > The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1, WordApi 1.1, and common API requirement sets.
+
+[![Excel](../images/index/ExcelLogoColor.svg)Excel](#excel) [![Outlook](../images/index/OutlookLogoColor.svg)Outlook](#outlook) [![Word](../images/index/WordLogoColor.svg)Word](#word) [![PowerPoint](../images/index/PowerPointLogoColor.svg)PowerPoint](#powerpoint) [![OneNote](../images/index/OneNoteLogoColor.svg)OneNote](#onenote) [![Project](../images/index/ProjectLogoColor.svg)Project](#project)
 
 ## Excel
 
