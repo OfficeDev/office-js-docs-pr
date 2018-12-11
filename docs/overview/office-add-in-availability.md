@@ -11,7 +11,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
 > [!NOTE]
 > The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1, WordApi 1.1, and common API requirement sets.
 
-[![Excel](../images/index/ExcelLogoColor.svg)Excel](#excel) [![Outlook](../images/index/OutlookLogoColor.svg)Outlook](#outlook) [![Word](../images/index/WordLogoColor.svg)Word](#word) [![PowerPoint](../images/index/PowerPointLogoColor.svg)PowerPoint](#powerpoint) [![OneNote](../images/index/OneNoteLogoColor.svg)OneNote](#onenote) [![Project](../images/index/ProjectLogoColor.svg)Project](#project)
+<div style="display: flex;"><a href="#excel"><img src="../images/index/ExcelLogoColor.svg" alt="Excel" width="48" /><span>Excel</span></a> <a href="#outlook"><img src="../images/index/OutlookLogoColor.svg" alt="Outlook" width="48" /><span>Outlook</span></a> <a href="#word"><img src="../images/index/WordLogoColor.svg" alt="Word" width="48" /><span>Word</span></a> <a href="#powerpoint"><img src="../images/index/PowerPointLogoColor.svg" alt="PowerPoint" width="48" /><span>PowerPoint</span></a> <a href="#OneNote"><img src="../images/index/OneNoteLogoColor.svg" alt="OneNote" width="48" /><span>OneNote</span></a> <a href="#project"><img src="../images/index/ProjectLogoColor.svg" alt="Project" width="48" /><span>Project</span></a></div>
 
 ## Excel
 
