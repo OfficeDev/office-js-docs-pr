@@ -118,7 +118,7 @@ Complete the following steps to create a custom function named `stockPrice` that
 
 1. In the **stock-ticker** project that the Yo Office generator created, find the file **src/functions/functions.js** and open it in your code editor.
 
-2. Add the following code to **customfunctions.js** and save the file.
+2. In **customfunctions.js**, locate the `increment` function and add the following code immediately after that function.
 
     ```js
     function stockPrice(ticker) {
@@ -135,10 +135,13 @@ Complete the following steps to create a custom function named `stockPrice` that
         //    will be bubbled up to Excel to indicate an error.
     }
 
+3. In **customfunctions.js**, locate the line`CustomFunctionMappings.LOG = logMessage;`, add the following line of code immediately after that line, and save the file.
+
+    ```js
     CustomFunctionMappings.STOCKPRICE = stockPrice;
     ```
 
-3. Before Excel can make this new function available to end-users, you must specify metadata that describes this function. In the **stock-ticker** project that the Yo Office generator created, find the file **src/functions/functions.json** and open it in your code editor. Add the following object to the `functions` array within the **src/functions/functions.json** file and save the file.
+4. Before Excel can make this new function available to end-users, you must specify metadata that describes this function. In the **stock-ticker** project that the Yo Office generator created, find the file **src/functions/functions.json** and open it in your code editor. Add the following object to the `functions` array within the **src/functions/functions.json** file and save the file.
 
     This JSON describes the `stockPrice` function.
 
@@ -163,7 +166,7 @@ Complete the following steps to create a custom function named `stockPrice` that
     }
     ```
 
-4. You must reregister the add-in in Excel in order for the new function to be available to end-users. Complete the following steps for the platform that you're using in this tutorial.
+5. You must reregister the add-in in Excel in order for the new function to be available to end-users. Complete the following steps for the platform that you're using in this tutorial.
 
     * If you're using Excel for Windows:
 
