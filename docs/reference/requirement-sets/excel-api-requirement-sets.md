@@ -33,7 +33,7 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ## What's in the Excel JavaScript API Preview
 
-> [!div class="mx-tdBreakAll"]
+> [!div class="mx-tdCol3BreakAll"]
 > |Object|What's new|Description|
 > |---|---|---|
 > |[AutoFilter](/javascript/api/excel/excel.autofilter)|[apply(range: Range \| string, columnIndex?: number, criteria?: Excel.FilterCriteria)](javascript/api/excel/excel.autofilter#apply-range--columnIndex?--criteria?-)|Applies AutoFilter on a range and filters the column if column index and filter criteria are specified.|
