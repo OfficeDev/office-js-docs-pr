@@ -1,5 +1,5 @@
 ---
-ms.date: 12/4/2018
+ms.date: 12/12/2018
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel (Preview)
 ---
@@ -362,11 +362,11 @@ function secondHighest(values){
 
 ## Discovering cells that invoke custom functions
 
-You may wish to discover the cell that invoked a custom function. Common scenarios for using `caller.address` include:
+Custom funtions also allows you to format ranges, display cached values, and reconcile values using `caller.address`, which makes it possible to discover the cell that invoked a custom function. You might use `caller.address` in some of the following scenarios:
 
-- Formatting ranges: You can use `caller.address` as the key of the cell to store information in [AsyncStorage](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `AsyncStorage`.
-- Displaying cached values: If your function is being used offline, you can display stored cached values from `AsyncStorage`. Display using `onCalculated`.
-- Reconciliation: You can use `caller.address` to discover an origin cell to help you reconcile where processing is occurring.
+- Formatting ranges: Use `caller.address` as the key of the cell to store information in [AsyncStorage](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `AsyncStorage`.
+- Displaying cached values: If your function is used offline, display stored cached values from `AsyncStorage` using `onCalculated`.
+- Reconciliation: Use `caller.address` to discover an origin cell to help you reconcile where processing is occurring.
 
 The information about a cell's address is exposed only if `requiresAddress` is marked as `true` in the function's JSON metadata file. The following sample gives an example of this:
 
@@ -394,7 +394,7 @@ The information about a cell's address is exposed only if `requiresAddress` is m
 }
 ```
 
-In the script file (**./src/customfunctions.js** or **./src/customfunctions.ts**), you will also need to add a `getAddress` function to find a cell's address. This function may take parameters, as shown in the following sample as `parameter1`. The last parameter will always be `invocationContext`, an object containing the cell's location that Excel passes down when `requiresAddress` is marked as `true` in your JSON metadata file.
+In the script file (**./src/customfunctions.js** or **./src/customfunctions.ts**), you'll also need to add a `getAddress` function to find a cell's address. This function may take parameters, as shown in the following sample as `parameter1`. The last parameter will always be `invocationContext`, an object containing the cell's location that Excel passes down when `requiresAddress` is marked as `true` in your JSON metadata file.
 
 ```js
 function getAddress(parameter1, invocationContext) {
