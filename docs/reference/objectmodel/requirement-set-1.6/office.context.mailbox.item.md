@@ -1523,7 +1523,7 @@ An object that contains arrays of strings that match the regular expressions def
 
 The following example shows how to access the array of matches for the regular expression rule elements `fruits` and `veggies`, which are specified in the manifest.
 
-```
+```javascript
 var selectedMatches = Office.context.mailbox.item.getSelectedRegExMatches();
 var fruits = selectedMatches.fruits;
 var veggies = selectedMatches.veggies;
