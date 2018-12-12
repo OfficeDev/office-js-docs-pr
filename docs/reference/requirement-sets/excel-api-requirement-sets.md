@@ -159,9 +159,6 @@ More [events](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-
 |[chartTrendlineLabelFormat](/javascript/api/excel/excel.charttrendlinelabelformat)|_Relationship_ > border|Represents the border format, which includes color, linestyle, and weight. Read-only.|1.8|
 |[chartTrendlineLabelFormat](/javascript/api/excel/excel.charttrendlinelabelformat)|_Relationship_ > fill|Represents the fill format of the current chart trendline label. Read-only.|1.8|
 |[chartTrendlineLabelFormat](/javascript/api/excel/excel.charttrendlinelabelformat)|_Relationship_ > font|Represents the font attributes (font name, font size, color, etc.) for a chart trendline label. Read-only.|1.8|
-|[createWorkbookPostProcessAction](/javascript/api/excel/excel.createworkbookpostprocessaction)|_Property_ > fakeFileId|Transmits additional data to client side, e.g., worksheetId for TableSelectionChangedEvent.|1.8|
-|[createWorkbookPostProcessAction](/javascript/api/excel/excel.createworkbookpostprocessaction)|_Property_ > fileBase64|Transmits additional data to client side, e.g., worksheetId for TableSelectionChangedEvent.|1.8|
-|[createWorkbookPostProcessAction](/javascript/api/excel/excel.createworkbookpostprocessaction)|_Relationship_ > actionType|Transmits additional data to client side, e.g., worksheetId for TableSelectionChangedEvent.|1.8|
 |[customDataValidation](/javascript/api/excel/excel.customdatavalidation)|_Property_ > formula| A custom data validation formula. This creates special input rules, such as preventing duplicates or limiting the total in a range of cells.|1.8|
 |[dataPivotHierarchy](/javascript/api/excel/excel.datapivothierarchy)|_Property_ > id|Id of the DataPivotHierarchy. Read-only.|1.8|
 |[dataPivotHierarchy](/javascript/api/excel/excel.datapivothierarchy)|_Property_ > name|Name of the DataPivotHierarchy.|1.8|
@@ -201,9 +198,6 @@ More [events](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-
 |[dateTimeDataValidation](/javascript/api/excel/excel.datetimedatavalidation)|_Property_ > formula1|Gets or sets the Formula1, i.e. minimum value or value depending on the operator.|1.8|
 |[dateTimeDataValidation](/javascript/api/excel/excel.datetimedatavalidation)|_Property_ > formula2|Gets or sets the Formula2, i.e. maximum value or value depending on the operator.|1.8|
 |[dateTimeDataValidation](/javascript/api/excel/excel.datetimedatavalidation)|_Relationship_ > operator|The operator to use for validating the data.|1.8|
-|[enableEventsPostProcessAction](/javascript/api/excel/excel.enableeventspostprocessaction)|_Property_ > isEnableEvents{|Transmits additional data to client side, e.g., worksheetId for TableSelectionChangedEvent.|1.8|
-|[enableEventsPostProcessAction](/javascript/api/excel/excel.enableeventspostprocessaction)|_Relationship_ > actionType|Transmits additional data to client side, e.g., worksheetId for TableSelectionChangedEvent.|1.8|
-|[enableEventsPostProcessAction](/javascript/api/excel/excel.enableeventspostprocessaction)|_Relationship_ > controlId|Transmits additional data to client side, e.g., worksheetId for TableSelectionChangedEvent.|1.8|
 |[filterPivotHierarchy](/javascript/api/excel/excel.filterpivothierarchy)|_Property_ > enableMultipleFilterItems|Determines whether to allow multiple filter items.|1.8|
 |[filterPivotHierarchy](/javascript/api/excel/excel.filterpivothierarchy)|_Property_ > id|Id of the FilterPivotHierarchy. Read-only.|1.8|
 |[filterPivotHierarchy](/javascript/api/excel/excel.filterpivothierarchy)|_Property_ > name|Name of the FilterPivotHierarchy.|1.8|
@@ -218,8 +212,6 @@ More [events](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-
 |[filterPivotHierarchyCollection](/javascript/api/excel/excel.filterpivothierarchycollection)|_Method_ > [remove(filterPivotHierarchy: FilterPivotHierarchy)](/javascript/api/excel/excel.filterpivothierarchycollection)|Removes the PivotHierarchy from the current axis.|1.8|
 |[listDataValidation](/javascript/api/excel/excel.listdatavalidation)|_Property_ > inCellDropDown|Displays the list in cell drop down or not, it defaults to true.|1.8|
 |[listDataValidation](/javascript/api/excel/excel.listdatavalidation)|_Property_ > source|Source of the list for data validation|1.8|
-|[openWorkbookPostProcessAction](/javascript/api/excel/excel.openworkbookpostprocessaction)|_Property_ > fakeFileId|Transmits additional data to client side, e.g., worksheetId for TableSelectionChangedEvent.|1.8|
-|[openWorkbookPostProcessAction](/javascript/api/excel/excel.openworkbookpostprocessaction)|_Relationship_ > actionType|Transmits additional data to client side, e.g., worksheetId for TableSelectionChangedEvent.|1.8|
 |[pivotField](/javascript/api/excel/excel.pivotfield)|_Property_ > id|Id of the PivotField. Read-only.|1.8|
 |[pivotField](/javascript/api/excel/excel.pivotfield)|_Property_ > name|Name of the PivotField.|1.8|
 |[pivotField](/javascript/api/excel/excel.pivotfield)|_Property_ > showAllItems|Determines whether to show all items of the PivotField.|1.8|
