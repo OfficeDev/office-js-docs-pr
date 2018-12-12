@@ -19,7 +19,7 @@ In this tutorial, you will:
 
 * [Git Bash](https://git-scm.com/downloads) (or another Git client)
 
-* The latest version of [Yeoman](http://yeoman.io/) and the [Yo Office generator](https://www.npmjs.com/package/generator-office). To install these tools globally, run the following command via the command prompt:
+* The latest version of [Yeoman](https://yeoman.io/) and the [Yo Office generator](https://www.npmjs.com/package/generator-office). To install these tools globally, run the following command via the command prompt:
 
     ```bash
     npm install -g yo generator-office

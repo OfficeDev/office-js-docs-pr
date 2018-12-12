@@ -136,6 +136,6 @@ In general, be careful about how you use your data to draw conclusions. Don’t 
 
 ## See also
  
- - [How to Conduct Usability Testing](http://whatpixel.com/howto-conduct-usability-testing/)  
+ - [How to Conduct Usability Testing](https://whatpixel.com/howto-conduct-usability-testing/)  
  - [Best Practices](http://help.usertesting.com/customer/en/portal/articles/1680726-best-practices)  
- - [Minimizing Bias](http://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)  
+ - [Minimizing Bias](https://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)  
