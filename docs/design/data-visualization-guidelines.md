@@ -146,6 +146,5 @@ Motion follows data.
 
 ## See also 
 
-- [Data + Design: A Simple Introduction to Preparing and Visualizing Information](https://infoactive.co/data-design)
 - [The Five Best Libraries for Building Data Visualizations](https://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)
 - [The Visual Display of Quantitative Information](https://www.edwardtufte.com/tufte/books_vdqi)
