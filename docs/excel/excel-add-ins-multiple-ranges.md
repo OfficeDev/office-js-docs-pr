@@ -1,7 +1,7 @@
 ---
 title: Work with multiple ranges simultaneously in Excel add-ins
 description: ''
-ms.date: 9/4/2018
+ms.date: 09/04/2018
 ---
 
 # Work with multiple ranges simultaneously in Excel add-ins (Preview)
