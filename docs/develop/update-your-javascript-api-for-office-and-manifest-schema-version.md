@@ -1,7 +1,7 @@
 ---
 title: Update to the latest JavaScript API for Office library and version 1.1 add-in manifest schema
 description: Update your JavaScript files (Office.js and app-specific .js files) and add-in manifest validation file in your Office Add-in project to version 1.1.
-ms.date: 11/27/2018
+ms.date: 12/12/2018
 ---
 
 # Update to the latest JavaScript API for Office library and version 1.1 add-in manifest schema
@@ -9,7 +9,7 @@ ms.date: 11/27/2018
 This article describes how to update your JavaScript files (Office.js and app-specific .js files) and add-in manifest validation file in your Office Add-in project to version 1.1.
 
 > [!NOTE]
-> New projects created in Visual Studio 2017 will already use version 1.1. However there are additional small version update releases that you can apply by using the techniques in this article.
+> Projects created in Visual Studio 2017 will already use version 1.1. However there are occasional minor updates to version 1.1 that you can apply by using the techniques in this article.
 
 ## Use the most up-to-date project files
 
@@ -52,7 +52,7 @@ You'll need to take a few additional steps to complete the update. In the **head
     ```
 
    > [!NOTE] 
-   > The `/1/` in front of `office.js` in the CDN URL specifies to use the latest incremental release within version 1 of Office.js.
+   > The `/1/` in the `office.js` in the CDN URL specifies to use the latest incremental release within version 1 of Office.js.
 
 
 ### Update the manifest file in your project to use schema version 1.1

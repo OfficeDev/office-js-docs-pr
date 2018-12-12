@@ -1,7 +1,7 @@
 ---
 title: Localization for Office Add-ins
 description: You can use the JavaScript API for Office to determine a locale and display strings based on the locale of the host application, or to interpret or display data based on the locale of the data.
-ms.date: 11/27/2018
+ms.date: 12/11/2018
 ---
 
 # Localization for Office Add-ins
@@ -44,7 +44,7 @@ The JavaScript API for Office provides two properties that support displaying or
 
 Every Office Add-in specifies a [DefaultLocale] element and a locale in its manifest. By default, the Office Add-in platform and Office host applications apply the values of the [Description], [DisplayName], [IconUrl], [HighResolutionIconUrl], and [SourceLocation] elements to all locales. You can optionally support specific values for specific locales, by specifying an [Override] child element for each additional locale, for any of these five elements. The value for the [DefaultLocale] element and for the `Locale` attribute of the [Override] element is specified according to [RFC 3066], "Tags for the Identification of Languages." Table 1 describes the localizing support for these elements.
 
-**Table 1. Localization support**
+*Table 1. Localization support*
 
 
 |**Element**|**Localization support**|
@@ -163,26 +163,27 @@ You can include localized resource strings directly in standalone JavaScript fil
 
 ## Example: Build a localized Office Add-in
 
-This section provides examples that show you how to localize an Office Add-in description, display name, and UI.
-
-To run the sample code provided, configure Microsoft Office on your computer to use additional languages so that you can test your add-in by switching the language used for display in menus and commands, for editing and proofing, or both.
-
-Also, you'll need to create a Visual Studio 2017 Office Add-in project.
+This section provides examples that show you how to localize an Office Add-in description, display name, and UI. 
 
 > [!NOTE]
 > To download Visual Studio 2017, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/). During installation you'll need to select the Office/SharePoint development workload.
 
 ### Configure Office to use additional languages for display or editing
 
+To run the sample code provided, configure Microsoft Office on your computer to use additional languages so that you can test your add-in by switching the language used for display in menus and commands, for editing and proofing, or both.
+
 You can use an Office Language pack to install an additional language. For more information about Language Packs and where to get them, see [Language Accessory Pack for Office](http://office.microsoft.com/language-packs/).
 
-After you install the Language Pack, you can configure Office to use the installed language for display in the UI, for editing document content, or both. The example in this article uses an installation of Office that has the Spanish Language Pack applied.
+After you install the Language Accessory Pack, you can configure Office to use the installed language for display in the UI, for editing document content, or both. The example in this article uses an installation of Office that has the Spanish Language Pack applied.
 
 ### Create an Office Add-in project
 
+You'll need to create a Visual Studio 2017 Office Add-in project. If you haven't installed Visual Studio 2017, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/) for download instructions. During installation you'll need to select the Office/SharePoint development workload. If you have previously installed Visual Studio 2017, [use the Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio/) to ensure that the Office/SharePoint development workload is installed.
+
+
 1. In Visual Studio, choose **File** > **New Project**.
 2. In the **New Project** dialog box, expand **Visual Basic** or **Visual C#**, expand **Office/SharePoint**, and then choose  **Add-ins**.
-3. Choose **Word Add-in**, and then name your add-in, for example WorldReadyAddIn. Choose **OK**.
+3. Choose **Word Add-in**, and then name your add-in **WorldReadyAddIn**. Choose **OK**.
 
 ### Localize the text used in your add-in
 
@@ -216,7 +217,7 @@ To lay out the add-in UI:
 
 1. In Visual Studio, in **Solution Explorer**, choose **Home.html**.
 
-2. Replace the `<body>` element contents in Home.html with the following HTML.
+2. Replace the `<body>` element contents in Home.html with the following HTML, and save the file.
 
     ```html
     <body>
@@ -236,8 +237,6 @@ To lay out the add-in UI:
     </body>
     ```
 
-3. Save the Home.html file.
-
 The following figure shows the heading (h1) element and the paragraph (p) element that will display localized text when you complete the remaining steps and run the add-in.
 
 *Figure 1. The add-in UI*
@@ -246,7 +245,7 @@ The following figure shows the heading (h1) element and the paragraph (p) elemen
 
 ### Add the resource file that contains the localized strings
 
-The JavaScript resource file contains the strings used for the add-in UI. The sample add-in UI has an `<h1>` element that displays a greeting, and a `<p>` element that introduces the add-in to the user. 
+The JavaScript resource file contains the strings used for the add-in UI. The HTML for the sample add-in UI contains an `<h1>` element that displays a greeting, and a `<p>` element that introduces the add-in to the user. 
 
 To enable localized strings for the heading and paragraph, you place the strings in a separate resource file. The resource file creates a JavaScript object that contains a separate JavaScript Object Notation (JSON) object for each set of localized strings. The resource file also provides a method for getting back the appropriate JSON object for a given locale.
 
@@ -258,7 +257,7 @@ To add the resource file to the add-in project:
 
 3. Enter **UIStrings.js** as the file name and choose **Add**.
 
-4. Add the following code to the UIStrings.js file.
+4. Add the following code to the UIStrings.js file, and save the file.
 
     ```js
     /* Store the locale-specific strings */
@@ -383,7 +382,11 @@ To change the language used for display or editing in your add-in:
 
 3. Choose **OK** to confirm your selection, and then close Word.
 
-Run the sample add-in. The task pane add-in loads in Word, and the strings in the add-in UI change to match the language used by the host application, as shown in the following figure.
+4. Press F5 in Visual Studio to run the sample add-in, or choose **Debug** > **Start Debugging** from the menu bar.
+
+5. In Word, choose **Homne** > **Show Taskpane**.
+
+Once running, the strings in the add-in UI change to match the language used by the host application, as shown in the following figure.
 
 
 *Figure 3. Add-in UI with localized text*
