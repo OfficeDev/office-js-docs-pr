@@ -178,7 +178,10 @@ After you install the Language Accessory Pack, you can configure Office to use t
 
 ### Create an Office Add-in project
 
-You'll need to create a Visual Studio 2017 Office Add-in project. If you haven't installed Visual Studio 2017, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/) for download instructions. During installation you'll need to select the Office/SharePoint development workload. If you have previously installed Visual Studio 2017, [use the Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio/) to ensure that the Office/SharePoint development workload is installed.
+You'll need to create a Visual Studio 2017 Office Add-in project. 
+
+> [!NOTE]
+> If you haven't installed Visual Studio 2017, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/) for download instructions. During installation you'll need to select the Office/SharePoint development workload. If you have previously installed Visual Studio 2017, [use the Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio/) to ensure that the Office/SharePoint development workload is installed.
 
 
 1. In Visual Studio, choose **File** > **New Project**.
