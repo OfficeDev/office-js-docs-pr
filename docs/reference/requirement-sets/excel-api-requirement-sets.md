@@ -952,6 +952,7 @@ Represents the worksheet search criteria to be used.
 |[completeMatch?](/javascript/api/excel/excel.worksheetsearchcriteria#completeMatch)|Specifies whether the match needs to be complete or partial. Default is false (partial).|
 |[matchCase?](/javascript/api/excel/excel.worksheetsearchcriteria#matchCase)|Specifies whether the match is case sensitive. Default is false (insensitive).|
 
+
 ## What’s new in Excel JavaScript API 1.8
 
 The Excel JavaScript API requirement set 1.8 features include APIs for PivotTables, data validation, charts, events for charts, performance options, and workbook creation.
