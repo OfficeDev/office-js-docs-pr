@@ -14,7 +14,7 @@ Lists any domains in addition to the domain specified in the SourceLocation elem
 ```
 
 > [!IMPORTANT]
-> Each **AppDomain** must include the protocol e.g., `<AppDomain>https://myappdomain"<AppDomain>`.
+> The value of each **AppDomain** element must include the protocol (e.g., `<AppDomain>https://myappdomain<AppDomain>`).
 
 ## Contained in
 
@@ -26,4 +26,4 @@ Lists any domains in addition to the domain specified in the SourceLocation elem
 
 ## Remarks
 
-By default, your add-in can load any page that is in the same domain as the location specified in the **SourceLocation** element. To load pages that are not in the same domain as the add-in, specify the domains by using the **AppDomains** and **AppDomain** elements. This element can't be empty.
+By default, your add-in can load any page that is in the same domain as the location specified in the [SourceLocation element](sourcelocation.md). To load pages that are not in the same domain as the add-in, specify their domains by using the **AppDomains** and **AppDomain** elements. This element can't be empty.
