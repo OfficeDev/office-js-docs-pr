@@ -1,6 +1,7 @@
 ---
 title: Create a Node.js Office Add-in that uses single sign-on
-description: 01/23/2018
+description: ''
+ms.date: 12/7/2018
 ---
 
 # Create a Node.js Office Add-in that uses single sign-on (preview)
@@ -191,14 +192,14 @@ The following instruction are written generically so they can be used in multipl
             // TODO3: Handle the case where the user's sign-in or consent was aborted.
     
             // TODO4: Handle the case where the user is logged in with an account that is neither work or school, 
-            //        nor Micrososoft Account.
+            //        nor Microsoft Account.
     
             // TODO5: Handle an unspecified error from the Office host.
     
             // TODO6: Handle the case where the Office host cannot get an access token to the add-ins 
             //        web service/application.
     
-            // TODO7: Handle the case where the user tiggered an operation that calls `getAccessTokenAsync` 
+            // TODO7: Handle the case where the user triggered an operation that calls `getAccessTokenAsync` 
             //        before a previous call of it completed.
     
             // TODO8: Handle the case where the add-in does not support forcing consent.
@@ -228,7 +229,7 @@ The following instruction are written generically so they can be used in multipl
         break; 
     ```
 
-1. Replace `TODO4` with the following code. Error 13003 occurs when user is logged in with an account that is neither work or school, nor Micrososoft Account. Ask the user to sign-out and then in again with a supported account type.
+1. Replace `TODO4` with the following code. Error 13003 occurs when user is logged in with an account that is neither work or school, nor Microsoft Account. Ask the user to sign-out and then in again with a supported account type.
 
     ```javascript
     case 13003: 
@@ -255,7 +256,7 @@ The following instruction are written generically so they can be used in multipl
         break;      
     ```
 
-1. Replace `TODO7` with the following code. Error 13008 occurs when the user tiggered an operation that calls `getAccessTokenAsync` before a previous call of it completed.
+1. Replace `TODO7` with the following code. Error 13008 occurs when the user triggered an operation that calls `getAccessTokenAsync` before a previous call of it completed.
 
     ```javascript
     case 13008:
@@ -326,13 +327,7 @@ The following instruction are written generically so they can be used in multipl
     else if (result.responseJSON.error.innerError
             && result.responseJSON.error.innerError.error_codes
             && result.responseJSON.error.innerError.error_codes[0] === 65001){
-        showResult(['Please grant consent to this add-in to access your Microsoft Graph data.']);        
-        /*
-            THE FORCE CONSENT OPTION IS NOT AVAILABLE IN DURING PREVIEW. WHEN SSO FOR
-            OFFICE ADD-INS IS RELEASED, REMOVE THE showResult LINE ABOVE AND UNCOMMENT
-            THE FOLLOWING LINE.
-        */
-        // getDataWithToken({ forceConsent: true });
+        getDataWithToken({ forceConsent: true });
     }
     ```
 
@@ -401,7 +396,7 @@ There are two server-side files that need to be modified.
 
     * The `jwt` parameter is the access token to the application. In the "on behalf of" flow, it is exchanged with AAD for an access token to the resource.
     * The scopes parameter has a default value, but in this sample it will be overridden by the calling code.
-    * The resource parameter is optional. It should not be used when the STS is the AAD V 2.0 endpoint. The V 2.0 endpoint infers the resource from the scopes and it returns an error if a resource is sent in the HTTP Request. 
+    * The resource parameter is optional. It should not be used when the [Secure Token Service (STS)](https://docs.microsoft.com/previous-versions/windows-identity-foundation/ee748490(v=msdn.10)) is the AAD V 2.0 endpoint. The V 2.0 endpoint infers the resource from the scopes and it returns an error if a resource is sent in the HTTP Request. 
     * Throwing an exception in the `catch` block will *not* cause an immediate "500 Internal Server Error" to be sent to the client. Calling code in the server.js file will catch this exception and turn it into an error message that is sent to the client.
 
         ```typescript
@@ -516,9 +511,9 @@ There are two server-side files that need to be modified.
     })); 
     ```
 
-3. Add the following method to bottom of the file. This method will handle any requests for the `onedriveitems` API.
+3. Add the following method to bottom of the file. This method will handle any requests for the `values` API.
     ```typescript
-    app.get('/api/onedriveitems', handler(async (req, res) => {
+    app.get('/api/values', handler(async (req, res) => {
         // TODO7: Initialize the AuthModule object and validate the access token 
         //        that the client-side received from the Office host.
         // TODO8: Get a token to Microsoft Graph from either persistent storage 
