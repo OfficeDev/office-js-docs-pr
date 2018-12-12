@@ -387,7 +387,7 @@ To change the language used for display or editing in your add-in:
 
 4. Press F5 in Visual Studio to run the sample add-in, or choose **Debug** > **Start Debugging** from the menu bar.
 
-5. In Word, choose **Homne** > **Show Taskpane**.
+5. In Word, choose **Home** > **Show Taskpane**.
 
 Once running, the strings in the add-in UI change to match the language used by the host application, as shown in the following figure.
 
