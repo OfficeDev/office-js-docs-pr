@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API performance optimization
 description: 'Optimize performance using Excel JavaScript API'
-ms.date: 03/28/2018
+ms.date: 12/06/2018
 ---
 
 # Performance optimization using the Excel JavaScript API
@@ -71,11 +71,15 @@ _Where:_
 
 Please be aware that some of the “properties” under an object may have the same name as another object. For example, `format` is a property under range object, but `format` itself is an object as well. So, if you make a call such as `range.load("format")`, this is equivalent to `range.format.load()`, which is an empty load() call that can cause performance problems as outlined previously. To avoid this, your code should only load the “leaf nodes” in an object tree. 
 
-## Suspend calculation temporarily
+## Suspend Excel processes temporarily
 
-If you are trying to perform an operation on a large number of cells (for example, setting the value of a huge range object) and you don't mind suspending the calculation in Excel temporarily while your operation finishes, we recommend that you suspend calculation until the next ```context.sync()``` is called.
+Excel has a number of background tasks reacting to input from both users and your add-in. Some of these Excel processes can be controlled to yield a performance benefit. This is especially helpful when your add-in deals with large data sets.
 
-See [Application Object](https://docs.microsoft.com/javascript/api/excel/excel.application) reference documentation for information about how to use the ```suspendApiCalculationUntilNextSync()``` API to suspend and reactivate calculations in a very convenient way. The following code demonstrates how to suspend calculation temporarily:
+### Suspend calculation temporarily
+
+If you are trying to perform an operation on a large number of cells (for example, setting the value of a huge range object) and you don't mind suspending the calculation in Excel temporarily while your operation finishes, we recommend that you suspend calculation until the next `context.sync()` is called.
+
+See the [Application Object](https://docs.microsoft.com/javascript/api/excel/excel.application) reference documentation for information about how to use the `suspendApiCalculationUntilNextSync()` API to suspend and reactivate calculations in a very convenient way. The following code demonstrates how to suspend calculation temporarily:
 
 ```js
 Excel.run(async function(ctx) {
@@ -116,6 +120,18 @@ Excel.run(async function(ctx) {
 })
 ```
 
+### Suspend screen updating
+
+> [!NOTE]
+> The `suspendScreenUpdatingUntilNextSync()` method described in this article requires the beta version of the Office JavaScript library from [Office.js CDN](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file] (https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) is also found at the CDN. For more information on our upcoming APIs, please visit the [open spec](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec) on GitHub.
+
+Excel displays changes your add-in makes approximately as they happen in the code. For large, iterative data sets, you may not need to see this progress on the screen in real-time. `Application.suspendScreenUpdatingUntilNextSync()` pauses visual updates to Excel until the add-in calls `context.sync()`, or until `Excel.run` ends (implicitly calling `context.sync`). Be aware, Excel will not show any signs of activity until the next sync. Your add-in should either give users guidance to prepare them for this delay or provide a status bar to demonstrate activity.
+
+### Enable and disable events
+
+Performance of an add-in may be improved by disabling events. 
+A code sample showing how to enable and disable events is in the [Work with Events](excel-add-ins-events.md#enable-and-disable-events) article.
+
 ## Update all cells in a range 
 
 When you need to update all cells in a range with the same value or property, it can be slow to do this via a 2-dimensional array that repeatedly specifies the same value, since that approach requires Excel to iterate over all of the cells in the range to set each one separately. Excel has a more efficient way to update all the cells in a range with the same value or property.
@@ -155,16 +171,43 @@ Excel.run(async (ctx) => {
 ```
 
 > [!NOTE]
-> You can conveniently convert a Table object to a Range object by using the [Table.convertToRange()](https://docs.microsoft.com/javascript/api/excel/excel.table#converttorange--) method.
+> You can conveniently convert a Table object to a Range object by using the [Table.convertToRange()](/javascript/api/excel/excel.table#converttorange--) method.
 
-## Enable and disable events
+## Untrack unneeded ranges
 
-Performance of an add-in may be improved by disabling events. 
-A code sample showing how to enable and disable events is in the [Work with Events](excel-add-ins-events.md#enable-and-disable-events) article.
+The JavaScript layer creates proxy objects for your add-in to interact with the Excel workbook and underlying ranges. These objects persist in memory until `context.sync()` is called. Large batch operations may generate a lot of proxy objects that are only needed once by the add-in and can be released from memory before the batch executes.
+
+The [Range.untrack()](/javascript/api/excel/excel.range#untrack--) method releases an Excel Range object from memory. Calling this method after your add-in is done with the range should yield a noticeable performance benefit when using large numbers of Range objects. 
+
+> [!NOTE]
+> `Range.untrack()` is a shortcut for [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove-object-). Any proxy object can be untracked by removing it from the tracked objects list in the context. Typically, Range objects are the only Excel objects used in sufficient quantity to justify untracking.
+
+The following code sample fills a selected range with data, one cell at a time. After the value is added to the cell, the range representing that cell is untracked. Run this code with a selected range of 10,000 to 20,000 cells, first with the `cell.untrack()` line, and then without it. You should notice the code runs faster with the `cell.untrack()` line than without it. You may also notice a quicker response time afterwards, since the cleanup step takes less time.
+
+```js
+Excel.run(async (context) => {
+	var largeRange = context.workbook.getSelectedRange();
+	largeRange.load(["rowCount", "columnCount"]);
+	await context.sync();
+	
+	for (var i = 0; i < largeRange.rowCount; i++) {
+		for (var j = 0; j < largeRange.columnCount; j++) {
+			var cell = largeRange.getCell(i, j);
+			cell.values = [[i *j]];
+
+			// call untrack() to release the range from memory
+			cell.untrack();
+		}
+	}
+
+	await context.sync();
+});
+```
 
 ## See also
 
 - [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
 - [Advanced programming concepts with the Excel JavaScript API](excel-add-ins-advanced-concepts.md)
+- [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md)
 - [Excel JavaScript API Open Specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
 - [Worksheet Functions Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.functions)

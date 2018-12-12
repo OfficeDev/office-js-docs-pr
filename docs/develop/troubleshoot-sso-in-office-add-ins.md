@@ -17,12 +17,12 @@ This article provides some guidance about how to troubleshoot problems with sing
 
 We strongly recommend that you use a tool that can intercept and display the HTTP Requests from, and Responses to, your add-in's web service when you are developing. Two of the most popular are:
 
-- [Fiddler](http://www.telerik.com/fiddler): Free ([Documentation](http://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler))
+- [Fiddler](https://www.telerik.com/fiddler): Free ([Documentation](https://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler))
 - [Charles](https://www.charlesproxy.com/): Free for 30 days. ([Documentation](https://www.charlesproxy.com/documentation/))
 
 When developing your service API, you may also want to try:
 
-- [Postman](http://www.getpostman.com/postman): Free ([Documentation](https://www.getpostman.com/docs/))
+- [Postman](https://www.getpostman.com/postman): Free ([Documentation](https://www.getpostman.com/docs/))
 
 ## Causes and handling of errors from getAccessTokenAsync
 

@@ -1,7 +1,7 @@
 ---
 title: Use the Dialog API in your Office Add-ins
 description: ''
-ms.date: 10/31/2018
+ms.date: 11/28/2018
 ---
 
 # Use the Dialog API in your Office Add-ins
@@ -75,6 +75,17 @@ The default value is `false`, which is the same as omitting the property entirel
 > [!NOTE]
 > You should **not** use `displayInIframe: true` if the dialog will at any point redirect to a page that cannot be opened in an iframe. For example, the sign in pages of many popular web services, such as Google and Microsoft Account, cannot be opened in an iframe.
 
+### Handling pop-up blockers with Office Online
+
+Attempting to display a dialog while using Office Online may cause the browser's pop-up blocker to block the dialog. The browser's pop-up blocker can be circumvented if the user of your add-in first agrees to a prompt from the add-in. `displayDialogAsync`'s [DialogOptions](/javascript/api/office/office.dialogoptions) has the `promptBeforeOpen` property to trigger such a pop-up. `promptBeforeOpen` is a boolean value which provides the following behavior:
+ 
+ - `true` - The framework displays a pop-up to trigger the navigation and avoid the browser's pop-up blocker. 
+ - `false` - The dialog will not be shown and the developer must handle pop-ups (by providing a user interface artifact to trigger the navigation). 
+ 
+The pop-up looks similiar to that in the following screenshot:
+
+![The prompt an add-in's dialog can generate to avoid in-browser pop-up blockers.](../images/dialog-prompt-before-open.png)
+ 
 ### Send information from the dialog box to the host page
 
 The dialog box cannot communicate with the host page in the task pane unless:
@@ -115,7 +126,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 ```
 
 > [!NOTE]
-> - Office passes an [AsyncResult]() object to the callback. It represents the result of the attempt to open the dialog box. It does not represent the outcome of any events in the dialog box. For more on this distinction, see the section [Handle errors and events](#handle-errors-and-events).
+> - Office passes an [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js) object to the callback. It represents the result of the attempt to open the dialog box. It does not represent the outcome of any events in the dialog box. For more on this distinction, see the section [Handle errors and events](#handle-errors-and-events).
 > - The `value` property of the `asyncResult` is set to a [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js) object, which exists in the host page, not in the dialog box's execution context.
 > - The `processMessage` is the function that handles the event. You can give it any name you want.
 > - The `dialog` variable is declared at a wider scope than the callback because it is also referenced in `processMessage`.

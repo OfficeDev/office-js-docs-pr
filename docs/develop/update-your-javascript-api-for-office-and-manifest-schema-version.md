@@ -21,11 +21,11 @@ To run an add-in developed using new and updated Office.js API and add-in manife
 
 To download Office, SharePoint, and Exchange SP1 products, see the following:
 
-- [List of all Service Pack 1 (SP1) updates for Microsoft Office 2013 and related desktop products](http://support.microsoft.com/kb/2850036)
+- [List of all Service Pack 1 (SP1) updates for Microsoft Office 2013 and related desktop products](https://support.microsoft.com/kb/2850036)
     
-- [List of all Service Pack 1 (SP1) updates for Microsoft SharePoint Server 2013 and related server products](http://support.microsoft.com/kb/2850035)
+- [List of all Service Pack 1 (SP1) updates for Microsoft SharePoint Server 2013 and related server products](https://support.microsoft.com/kb/2850035)
     
-- [Description of Exchange Server 2013 Service Pack 1](http://support.microsoft.com/kb/2926248)
+- [Description of Exchange Server 2013 Service Pack 1](https://support.microsoft.com/kb/2926248)
     
 
 ## Updating an Office Add-in project created with Visual Studio
@@ -79,7 +79,7 @@ For projects created before the release of v1.1 of the JavaScript API for Office
 
 The update process is applied on a  _per-project basis_ - you'll need to repeat the updating process for each add-in project in which you want to use v1.1 of Office.js and add-in manifest schema.
 
-You don't need local copies of the JavaScript API for Office files (Office.js and app-specific .js files) to develop anOffice Add-in (referencing the CDN for Office.js downloads the necessary files at runtime), but if you want a local copy of the library files you can use the [NuGet Command-Line Utility](http://docs.nuget.org/consume/installing-nuget) and the `Install-Package Microsoft.Office.js` command to download them.
+You don't need local copies of the JavaScript API for Office files (Office.js and app-specific .js files) to develop anOffice Add-in (referencing the CDN for Office.js downloads the necessary files at runtime), but if you want a local copy of the library files you can use the [NuGet Command-Line Utility](https://docs.nuget.org/consume/installing-nuget) and the `Install-Package Microsoft.Office.js` command to download them.
 
 > [!NOTE] 
 > To get a copy of the XSD (XML Schema Definition) for the v1.1 add-in manifest, see the listing in [Schema reference for Office Add-ins manifests (v1.1)](../develop/add-in-manifests.md).

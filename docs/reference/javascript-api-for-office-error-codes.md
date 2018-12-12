@@ -1,7 +1,7 @@
 ---
 title: JavaScript API for Office error codes
 description: ''
-ms.date: 10/31/2018
+ms.date: 11/27/2018
 ---
 
 # JavaScript API for Office error codes
@@ -17,18 +17,18 @@ The following table lists the error codes, names, and messages displayed, and th
 |**Error.code**|**Error.name**|**Error.message**|**Condition**|
 |:-----|:-----|:-----|:-----|
 |1000|Invalid Coercion Type|The specified coercion type is not supported|The coercion type is not supported in the host application. (For example, OOXML and HTML coercion types are not supported in Excel.)|
-|1001|Data Read Error|The current selection is not supported.|The user's current selection is not supported. (That is, it is something different than the supported coercion types.)|
+|1001|Data Read Error|The current selection is not supported.|The user's current selection is not supported (that is, it is something different than the supported coercion types).|
 |1002|Invalid Coercion Type|The specified coercion type is not compatible for this binding type.|The solution developer provided an incompatible combination of coercion type and binding type.|
 |1003|Data Read Error|The specified rowCount or columnCount values are invalid.|The user supplies invalid column or row counts.|
 |1004|Data Read Error|The current selection is not compatible for the specified coercion type.|The current selection is not supported for the specified coercion type by this application.|
 |1005|Data Read Error|The specified startRow or startColumn values are invalid.|The user supplies invalid startRow or startCol values.|
-|1006|Data Read Error|Coordinate parameters cannot be used with coercion type "Table" when the table contains merged cells.|The user tries to get partial data from a non-uniform table (that is, a table that has merged cells.) |
+|1006|Data Read Error|Coordinate parameters cannot be used with coercion type "Table" when the table contains merged cells.|The user tries to get partial data from a non-uniform table (that is, a table that has merged cells). |
 |1007|Data Read Error|The size of the document is too large.|The user tries to get a document larger than the size currently supported.|
 |1008|Data Read Error|The requested data set is too large.|The user requests to read data beyond the data limits defined by the host add-ins.|
 |1009|Data Read Error|The specified file type is not supported.|The user sends an invalid file type.|
 |2000|Data Write Error|The supplied data object type is not supported. |An unsupported data object is supplied.|
 |2001|Data Write Error|Cannot write to the current selection.|The user's current selection is not supported for a write operation. (For example, when the user selects an image.)|
-|2002|Data Write Error|The supplied data object is not compatible with the shape or dimensions of the current selection.|Multiple cells are selected (and the selection shape does not match the shape of the data.)Multiple cells are selected (and the selection dimensions do not match the dimensions of the data.)|
+|2002|Data Write Error|The supplied data object is not compatible with the shape or dimensions of the current selection.|Multiple cells are selected (and the selection shape does not match the shape of the data). Multiple cells are selected (and the selection dimensions do not match the dimensions of the data).|
 |2003|Data Write Error|The set operation failed because the supplied data object will overwrite data.|A single cell is selected and the supplied data object overwrites data in the worksheet.|
 |2004|Data Write Error|The supplied data object does not match the size of the current selection.|The user supplies an object larger than the current selection size.|
 |2005|Data Write Error|The specified startRow or startColumn values are invalid.|The user supplies invalid startRow or startCol values.|
@@ -36,7 +36,7 @@ The following table lists the error codes, names, and messages displayed, and th
 |2007|Invalid Data Object|The type of the specified data object is not compatible with the current selection.|The solution developer supplies a data object not compatible with the specified coercion type.|
 |2008|Data Write Error|TBD|TBD|
 |2009|Data Write Error|The specified data object is too large.|The user tries to set data beyond the data limits defined by host add-ins.|
-|2010|Data Write Error|Coordinate parameters cannot be used with coercion type Table when the table contains merged cells.|The user tries to set partial data from a non- uniform table (that is, a table that has merged cells.)|
+|2010|Data Write Error|Coordinate parameters cannot be used with coercion type Table when the table contains merged cells.|The user tries to set partial data from a non- uniform table (that is, a table that has merged cells).|
 |3000|Binding Creation Error|Cannot bind to the current selection.|The user's selection is not supported for binding. (For example, the user is selecting an image or other non-supported object.)|
 |3001|Binding Creation Error|TBD|TBD|
 |3002|Invalid Binding Error|The specified binding does not exist.|The developer tries to bind to a non-existing or removed binding.|
@@ -60,9 +60,10 @@ The following table lists the error codes, names, and messages displayed, and th
 |5006|Session Timeout|The document session timed out. Reload the document. |The session has timed out.|
 |5007|Invalid API call|The enumeration is not supported in the current context.|The enumeration is not supported in the current context.|
 |5009|Permission Denied|Access Denied|The add-in does not have permission to call the specific API.|
+|5012|Invalid Or Timed Out Session|Your Office Online session has expired or is invalid. To continue, refresh the page.|The session between the Office client and server has expired or the date, time, or time zone is incorrect on your computer.|
 |6000|Invalid node|The specified node was not found.|The **CustomXmlPart** node was not found.|
-|6100|Custom XML error|Custom XML error|Invalid API call|
-|7000|Invalid Id|The specified Id does not exist.|Invalid ID|
+|6100|Custom XML error|Custom XML error|Invalid API call.|
+|7000|Invalid Id|The specified Id does not exist.|Invalid ID.|
 |7001|Invalid navigation|The object is located in a place where navigation is not supported.|The user can find the object, but cannot navigate to it. (For example, in Word, the binding is to the header, footer, or a comment.)|
 |7002|Invalid navigation|The object is locked or protected.|The user is trying to navigate to a locked or protected range.|
 |7004|Invalid navigation|The operation failed because the Index is out of range.|The user is trying to navigate to an index that is out of range.|

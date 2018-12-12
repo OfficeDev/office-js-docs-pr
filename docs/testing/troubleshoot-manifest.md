@@ -11,7 +11,7 @@ Use these methods to validate and troubleshoot issues in your Office Add-ins man
 - [Validate your manifest with the Office Add-in Validator](#validate-your-manifest-with-the-office-add-in-validator)	
 - [Validate your manifest against the XML schema](#validate-your-manifest-against-the-xml-schema)
 - [Validate your manifest with the Yeoman generator for Office Add-ins](#validate-your-manifest-with-the-yeoman-generator-for-office-add-ins)
-- [Use runtime logging to debug your add-in manifest](#use-runtime-logging-to-debug-your-add-in-manifest)
+- [Use runtime logging to debug your add-in](#use-runtime-logging-to-debug-your-add-in)
 
 
 ## Validate your manifest with the Office Add-in Validator
