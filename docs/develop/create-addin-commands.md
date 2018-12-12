@@ -71,7 +71,7 @@ The **VersionOverrides** element is the root element that contains the definitio
 
 |**Attribute**|**Description**|
 |:-----|:-----|
-|**xmlns** <br/> | Required. The schema location, which must be "http://schemas.microsoft.com/office/taskpaneappversionoverrides". <br/> |
+|**xmlns** <br/> | Required. The schema location, which must be `http://schemas.microsoft.com/office/taskpaneappversionoverrides`. <br/> |
 |**xsi:type** <br/> |Required. The schema version. The version described in this article is "VersionOverridesV1_0".  <br/> |
    
 The following table identifies the child elements of **VersionOverrides**.

@@ -19,7 +19,7 @@ In this tutorial, you will:
 
 * [Git Bash](https://git-scm.com/downloads) (or another Git client)
 
-* The latest version of [Yeoman](http://yeoman.io/) and the [Yo Office generator](https://www.npmjs.com/package/generator-office). To install these tools globally, run the following command via the command prompt:
+* The latest version of [Yeoman](https://yeoman.io/) and the [Yo Office generator](https://www.npmjs.com/package/generator-office). To install these tools globally, run the following command via the command prompt:
 
     ```bash
     npm install -g yo generator-office
@@ -96,11 +96,7 @@ At this point, the prebuilt custom functions in your project are loaded and avai
 
 1. Within a cell, type **=CONTOSO**. Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.
 
-2. Run the `CONTOSO.ADD` function, with numbers `10` and `200` as input parameters, by specifying the following value in the cell and pressing enter:
-
-    ```
-    =CONTOSO.ADD(10,200)
-    ```
+2. Run the `CONTOSO.ADD` function, with numbers `10` and `200` as input parameters, by typing the value `=CONTOSO.ADD(10,200)` in the cell and pressing enter.
 
 The `ADD` custom function computes the sum of the two numbers that you specify as input parameters. Typing `=CONTOSO.ADD(10,200)` should produce the result **210** in the cell after you press enter.
 
