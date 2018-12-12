@@ -1,5 +1,5 @@
 ---
-ms.date: 12/5/2018
+ms.date: 12/12/2018
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel (Preview)
 ---
@@ -62,8 +62,8 @@ function increment(incrementBy, callback) {
 }
 
 // associate `id` values in the JSON metadata file to the JavaScript function names
-CustomFunctions.associate.ADD = add;
-CustomFunctions.associate.INCREMENT = increment;
+CustomFunctions.associate('ADD': add);
+CustomFunctions.associate('INCREMENT': increment);
 ```
 
 ### JSON metadata file
