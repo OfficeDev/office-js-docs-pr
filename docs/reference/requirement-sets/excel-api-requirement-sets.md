@@ -35,7 +35,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [AutoFilter](/javascript/api/excel/excel.autofilter)
 
-|What's new|Description|
+Represents the AutoFilter object.
+
+|Fields|Description|
 |:---|:---|
 |[apply(range: Range \| string, columnIndex?: number, criteria?: Excel.FilterCriteria)](javascript/api/excel/excel.autofilter#apply-range--columnIndex?--criteria?-)|Applies AutoFilter on a range and filters the column if column index and filter criteria are specified.|
 |[clearCriteria()](javascript/api/excel/excel.autofilter#clearCriteria)|Clears the criteria if AutoFilter has filters|
@@ -49,20 +51,26 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [Chart](/javascript/api/excel/excel.chart)
 
-|What's new|Description|
+Represents a chart object in a workbook.
+
+|Fields|Description|
 |:---|:---|
 |[pivotOptions](javascript/api/excel/excel.chart#pivotOptions)|Encapsulates the options for the pivot chart. Read-only.|
 
 ### [ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)
 
-|What's new|Description|
+Encapsulates the format properties for the overall chart area.
+
+|Fields|Description|
 |:---|:---|
 |[colorScheme](javascript/api/excel/excel.chartareaformat#colorScheme)|Returns or sets an integer that represents the color scheme for the chart. Read/Write.|
 |[roundedCorners](javascript/api/excel/excel.chartareaformat#roundedCorners)|True if the chart area of the chart has rounded corners. Read/Write.|
 
 ### [ChartBinOptions](/javascript/api/excel/excel.chartbinoptions)
 
-|What's new|Description|
+Encapsulates the bon options only for histogram chart and pareto chart.
+
+|Fields|Description|
 |:---|:---|
 |[allowOverflow](javascript/api/excel/excel.chartbinoptions#allowOverflow)|Returns or sets if bin overflow enabled in a histogram chart or pareto chart. Read/Write.|
 |[allowUnderflow](javascript/api/excel/excel.chartbinoptions#allowUnderflow)|Returns or sets if bin underflow enabled in a histogram chart or pareto chart. Read/Write.|
@@ -74,7 +82,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [ChartBoxwhiskerOptions](/javascript/api/excel/excel.chartboxwhiskeroptions)
 
-|What's new|Description|
+Represents the properties for Box & Whisker chart.
+
+|Fields|Description|
 |:---|:---|
 |[quartileCalculation](javascript/api/excel/excel.chartboxwhiskeroptions#quartileCalculation)|Returns or sets quartile calculation type of a Box & whisker chart. Read/Write.|
 |[showInnerPoints](javascript/api/excel/excel.chartboxwhiskeroptions#showInnerPoints)|Returns or sets if inner points showed in a Box & whisker chart. Read/Write.|
@@ -84,7 +94,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [ChartErrorBars](/javascript/api/excel/excel.charterrorbars)
 
-|What's new|Description|
+This object represents the attributes for chart error bars object.
+
+|Fields|Description|
 |:---|:---|
 |[endStyleCap](javascript/api/excel/excel.charterrorbars#endStyleCap)|Represents whether have the end style cap for the error bars.|
 |[include](javascript/api/excel/excel.charterrorbars#include)|Represents which error-bar parts to include. See Excel.ChartErrorBarsInclude for details.|
@@ -94,13 +106,17 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [ChartErrorBarsFormat](/javascript/api/excel/excel.charterrorbarsformat)
 
-|What's new|Description|
+Encapsulates the format properties for chart error bars.
+
+|Fields|Description|
 |:---|:---|
 |[line](javascript/api/excel/excel.charterrorbarsformat#line)|Represents chart line formatting.|
 
 ### [ChartMapOptions](/javascript/api/excel/excel.chartmapoptions)
 
-|What's new|Description|
+Encapsulates the properties for Map chart.
+
+|Fields|Description|
 |:---|:---|
 |[labelStrategy](javascript/api/excel/excel.chartmapoptions#labelStrategy)|Returns or sets series map labels strategy of a region map chart. Read/Write.|
 |[level](javascript/api/excel/excel.chartmapoptions#level)|Returns or sets series map area of a region map chart. Read/Write.|
@@ -108,7 +124,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [ChartPivotOptions](/javascript/api/excel/excel.chartpivotoptions)
 
-|What's new|Description|
+Encapsulates the options for the pivot chart.
+
+|Fields|Description|
 |:---|:---|
 |[showAxisFieldButtons](javascript/api/excel/excel.chartpivotoptions#showAxisFieldButtons)|Represents whether to display axis field buttons on a PivotChart.|
 |[showLegendFieldButtons](javascript/api/excel/excel.chartpivotoptions#showLegendFieldButtons)|Represents whether to display legend field buttons on a PivotChart.|
@@ -117,7 +135,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [ChartSeries](/javascript/api/excel/excel.chartseries)
 
-|What's new|Description|
+Represents a series in a chart.
+
+|Fields|Description|
 |:---|:---|
 |[bubbleScale](javascript/api/excel/excel.chartseries#bubbleScale)|Returns or sets the scale factor for bubbles in the specified chart group. Can be an integer value from 0 (zero) to 300, corresponding to a percentage of the default size. Applies only to bubble charts. Read/Write.|
 |[gradientMaximumColor](javascript/api/excel/excel.chartseries#gradientMaximumColor)|Returns or sets the Color for maximum value of a region map chart series. Read/Write.|
@@ -144,31 +164,41 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [ChartTrendlineLabel](/javascript/api/excel/excel.charttrendlinelabel)
 
-|What's new|Description|
+This object represents the attributes for a chart trendline lable object.
+
+|Fields|Description|
 |:---|:---|
 |[linkNumberFormat](javascript/api/excel/excel.charttrendlinelabel#linkNumberFormat)|Boolean value representing if the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).|
 
 ### [ChartTrendlineLabel](/javascript/api/excel/excel.charttrendlinelabel)
 
-|What's new|Description|
+This object represents the attributes for a chart trendline lable object.
+
+|Fields|Description|
 |:---|:---|
 |[linkNumberFormat](javascript/api/excel/excel.charttrendlinelabel#linkNumberFormat)|Represents whether the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).|
 
 ### [ChartTrendlineLabel](/javascript/api/excel/excel.charttrendlinelabel)
 
-|What's new|Description|
+This object represents the attributes for a chart trendline lable object.
+
+|Fields|Description|
 |:---|:---|
 |[linkNumberFormat](javascript/api/excel/excel.charttrendlinelabel#linkNumberFormat)|Boolean value representing if the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).|
 
 ### [ChartTrendlineLabel](/javascript/api/excel/excel.charttrendlinelabel)
 
-|What's new|Description|
+This object represents the attributes for a chart trendline lable object.
+
+|Fields|Description|
 |:---|:---|
 |[linkNumberFormat](javascript/api/excel/excel.charttrendlinelabel#linkNumberFormat)|Represents whether the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).|
 
 ### [Comment](/javascript/api/excel/excel.comment)
 
-|What's new|Description|
+Represents a cell comment object in the workbook.
+
+|Fields|Description|
 |:---|:---|
 |[id](javascript/api/excel/excel.comment#id)|Represents the comment identifier. Read-only.|
 |[isParent](javascript/api/excel/excel.comment#isParent)|Represents whether it is a comment thread or reply. Always return true here. Read-only.|
@@ -176,7 +206,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [CommentCollection](/javascript/api/excel/excel.commentcollection)
 
-|What's new|Description|
+Represents a collection of comment objects that are part of the workbook.
+
+|Fields|Description|
 |:---|:---|
 |[getCount()](javascript/api/excel/excel.commentcollection#getCount)|Gets the number of comments in the collection.|
 |[getItem(commentId: string)](javascript/api/excel/excel.commentcollection#getItem-commentId-)|Returns a comment identified by its ID. Read-only.|
@@ -186,7 +218,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [CommentReply](/javascript/api/excel/excel.commentreply)
 
-|What's new|Description|
+Represents a cell comment reply object in the workbook.
+
+|Fields|Description|
 |:---|:---|
 |[delete()](javascript/api/excel/excel.commentreply#delete)|Deletes the comment reply.|
 |[id](javascript/api/excel/excel.commentreply#id)|Represents the comment reply identifier. Read-only.|
@@ -194,7 +228,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)
 
-|What's new|Description|
+Represents a collection of comment reply objects that are part of the comment.
+
+|Fields|Description|
 |:---|:---|
 |[add(content: string, contentType?: "Plain")](javascript/api/excel/excel.commentreplycollection#add-content--contentType?-)|Creates a comment reply for comment.|
 |[add(content: string, contentType?: Excel.ContentType)](javascript/api/excel/excel.commentreplycollection#add-content--contentType?-)|Creates a comment reply for comment.|
@@ -204,34 +240,44 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [ConditionalFormat](/javascript/api/excel/excel.conditionalformat)
 
-|What's new|Description|
+An object encapsulating a conditional format's range, format, rule, and other properties.
+
+|Fields|Description|
 |:---|:---|
 |[getRanges()](javascript/api/excel/excel.conditionalformat#getRanges)|Returns the RangeAreas, comprising one or more rectangular ranges, the conditonal format is applied to. Read-only.|
 
 ### [CustomFunctionEventArgs](/javascript/api/excel/excel.customfunctioneventargs)
 
-|What's new|Description|
+[Api set: CustomFunctions 1.1]
+
+|Fields|Description|
 |:---|:---|
 |[higherTicks](javascript/api/excel/excel.customfunctioneventargs#higherTicks)||
 |[lowerTicks](javascript/api/excel/excel.customfunctioneventargs#lowerTicks)||
 
 ### [DataValidation](/javascript/api/excel/excel.datavalidation)
 
-|What's new|Description|
+Represents the data validation applied to the current range.
+
+|Fields|Description|
 |:---|:---|
 |[getInvalidCells()](javascript/api/excel/excel.datavalidation#getInvalidCells)|Returns a RangeAreas, comprising one or more rectangular ranges, with invalid cell values. If all cell values are valid, this function will throw an ItemNotFound error.|
 |[getInvalidCellsOrNullObject()](javascript/api/excel/excel.datavalidation#getInvalidCellsOrNullObject)|Returns a RangeAreas, comprising one or more rectangular ranges, with invalid cell values. If all cell values are valid, this function will return null.|
 
 ### [GeometricShape](/javascript/api/excel/excel.geometricshape)
 
-|What's new|Description|
+Represents a geometric shape object inside a worksheet. A geometric shape can be a line, rectangle, block arrow, equation, flowchart, start, banner, callout or basic shape in Excel.
+
+|Fields|Description|
 |:---|:---|
 |[id](javascript/api/excel/excel.geometricshape#id)|Represents the shape identifier. Read-only.|
 |[shape](javascript/api/excel/excel.geometricshape#shape)|Returns the shape object for the geometric shape. Read-only.|
 
 ### [GroupShapeCollection](/javascript/api/excel/excel.groupshapecollection)
 
-|What's new|Description|
+Represents a shape collection inside a shape group.
+
+|Fields|Description|
 |:---|:---|
 |[getCount()](javascript/api/excel/excel.groupshapecollection#getCount)|Returns the number of shapes in the group shape. Read-only.|
 |[getItem(shapeId: string)](javascript/api/excel/excel.groupshapecollection#getItem-shapeId-)|Returns a shape identified by the shape id. Read-only.|
@@ -240,7 +286,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [HeaderFooter](/javascript/api/excel/excel.headerfooter)
 
-|What's new|Description|
+[Api set: ExcelApi BETA (PREVIEW ONLY)]
+
+|Fields|Description|
 |:---|:---|
 |[centerFooter](javascript/api/excel/excel.headerfooter#centerFooter)|Gets or sets the center footer of the worksheet.|
 |[centerHeader](javascript/api/excel/excel.headerfooter#centerHeader)|Gets or sets the center header of the worksheet.|
@@ -251,7 +299,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [HeaderFooterGroup](/javascript/api/excel/excel.headerfootergroup)
 
-|What's new|Description|
+[Api set: ExcelApi BETA (PREVIEW ONLY)]
+
+|Fields|Description|
 |:---|:---|
 |[defaultForAllPages](javascript/api/excel/excel.headerfootergroup#defaultForAllPages)|The general header/footer, used for all pages unless even/odd or first page is specified.|
 |[evenPages](javascript/api/excel/excel.headerfootergroup#evenPages)|The header/footer to use for even pages, odd header/footer needs to be specified for odd pages.|
@@ -263,19 +313,25 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [Icon](/javascript/api/excel/excel.icon)
 
-|What's new|Description|
+Represents a cell icon.
+
+|Fields|Description|
 |:---|:---|
 |[set](javascript/api/excel/excel.icon#set)|Represents the set that the icon is part of.|
 
 ### [IconSetConditionalFormat](/javascript/api/excel/excel.iconsetconditionalformat)
 
-|What's new|Description|
+Represents an IconSet criteria for conditional formatting.
+
+|Fields|Description|
 |:---|:---|
 |[style](javascript/api/excel/excel.iconsetconditionalformat#style)|If set, displays the IconSet option for the conditional format.|
 
 ### [Image](/javascript/api/excel/excel.image)
 
-|What's new|Description|
+Represents an image object in the worksheet.
+
+|Fields|Description|
 |:---|:---|
 |[format](javascript/api/excel/excel.image#format)|Returns the format for the image. Read-only.|
 |[id](javascript/api/excel/excel.image#id)|Represents the shape identifier for the image object. Read-only.|
@@ -283,7 +339,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [IterativeCalculation](/javascript/api/excel/excel.iterativecalculation)
 
-|What's new|Description|
+Represents the Iterative Calculation settings.
+
+|Fields|Description|
 |:---|:---|
 |[enabled](javascript/api/excel/excel.iterativecalculation#enabled)|True if Excel will use iteration to resolve circular references.|
 |[maxChange](javascript/api/excel/excel.iterativecalculation#maxChange)|Returns or sets the maximum amount of change between each iteration as Excel resolves circular references.|
@@ -291,13 +349,17 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [ListDataValidation](/javascript/api/excel/excel.listdatavalidation)
 
-|What's new|Description|
+Represents the List data validation criteria.
+
+|Fields|Description|
 |:---|:---|
 |[source](javascript/api/excel/excel.listdatavalidation#source)|Source of the list for data validation|
 
 ### [PageBreak](/javascript/api/excel/excel.pagebreak)
 
-|What's new|Description|
+[Api set: ExcelApi BETA (PREVIEW ONLY)]
+
+|Fields|Description|
 |:---|:---|
 |[delete()](javascript/api/excel/excel.pagebreak#delete)|Deletes a page break object.|
 |[getStartCell()](javascript/api/excel/excel.pagebreak#getStartCell)|Gets the first cell after the page break.|
@@ -306,7 +368,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [PageBreakCollection](/javascript/api/excel/excel.pagebreakcollection)
 
-|What's new|Description|
+[Api set: ExcelApi BETA (PREVIEW ONLY)]
+
+|Fields|Description|
 |:---|:---|
 |[add(pageBreakRange: Range \| string)](javascript/api/excel/excel.pagebreakcollection#add-pageBreakRange-)|Adds a page break before the top-left cell of the range specified.|
 |[getCount()](javascript/api/excel/excel.pagebreakcollection#getCount)|Gets the number of page breaks in the collection.|
@@ -317,7 +381,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [PageLayout](/javascript/api/excel/excel.pagelayout)
 
-|What's new|Description|
+[Api set: ExcelApi BETA (PREVIEW ONLY)]
+
+|Fields|Description|
 |:---|:---|
 |[blackAndWhite](javascript/api/excel/excel.pagelayout#blackAndWhite)|Gets or sets the worksheet's black and white print option.|
 |[bottomMargin](javascript/api/excel/excel.pagelayout#bottomMargin)|Gets or sets the worksheet's bottom page margin to use for printing in points.|
@@ -353,7 +419,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [PageLayoutMarginOptions](/javascript/api/excel/excel.pagelayoutmarginoptions)
 
-|What's new|Description|
+Represents the options in page layout margins.
+
+|Fields|Description|
 |:---|:---|
 |[bottom?](javascript/api/excel/excel.pagelayoutmarginoptions#bottom)|Represents the page layout bottom margin in the unit specified to use for printing.|
 |[footer?](javascript/api/excel/excel.pagelayoutmarginoptions#footer)|Represents the page layout footer margin in the unit specified to use for printing.|
@@ -364,7 +432,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions)
 
-|What's new|Description|
+Represents page zoom properties.
+
+|Fields|Description|
 |:---|:---|
 |[horizontalFitToPages?](javascript/api/excel/excel.pagelayoutzoomoptions#horizontalFitToPages)|Number of pages to fit horizontally. This value can be null if percentage scale is used.|
 |[scale?](javascript/api/excel/excel.pagelayoutzoomoptions#scale)|Print page scale value can be between 10 and 400. This value can be null if fit to page tall or wide is specified.|
@@ -372,7 +442,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [PivotField](/javascript/api/excel/excel.pivotfield)
 
-|What's new|Description|
+Represents the Excel PivotField.
+
+|Fields|Description|
 |:---|:---|
 |[sortByLabels(sortby: SortBy)](javascript/api/excel/excel.pivotfield#sortByLabels-sortby-)|Sorts the PivotField. If a DataPivotHierarchy is specified, then sort will be applied based on it, if not sort will be based on the PivotField itself.|
 |[sortByValues(sortby: "Ascending" \| "Descending", valuesHierarchy: Excel.DataPivotHierarchy, pivotItemScope?: Array<PivotItem \| string>)](javascript/api/excel/excel.pivotfield#sortByValues-sortby--valuesHierarchy--pivotItemScope?-)|Sorts the PivotField by specified values in a given scope. The scope defines which specific values will be used to sort when|
@@ -380,7 +452,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [PivotLayout](/javascript/api/excel/excel.pivotlayout)
 
-|What's new|Description|
+Represents the visual layout of the PivotTable.
+
+|Fields|Description|
 |:---|:---|
 |[enableFieldList](javascript/api/excel/excel.pivotlayout#enableFieldList)|True if the field list should be shown or hidden from the UI.|
 |[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](javascript/api/excel/excel.pivotlayout#getCell-dataHierarchy--rowItems--columnItems-)|Gets the cell in the PivotTable's data body that contains the value for the intersection of the specified dataHierarchy, rowItems, and columnItems.|
@@ -392,13 +466,17 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [PivotTable](/javascript/api/excel/excel.pivottable)
 
-|What's new|Description|
+Represents an Excel PivotTable.
+
+|Fields|Description|
 |:---|:---|
 |[useCustomSortLists](javascript/api/excel/excel.pivottable#useCustomSortLists)|True if the PivotTable should use custom lists when sorting.|
 
 ### [RangeAreas](/javascript/api/excel/excel.rangeareas)
 
-|What's new|Description|
+RangeAreas represents a collection of one or more rectangular ranges in the same worksheet.
+
+|Fields|Description|
 |:---|:---|
 |[calculate()](javascript/api/excel/excel.rangeareas#calculate)|Calculates all cells in the RangeAreas.|
 |[clear(applyTo?: "All" \| "Formats" \| "Contents" \| "Hyperlinks" \| "RemoveHyperlinks")](javascript/api/excel/excel.rangeareas#clear-applyTo?-)|Clears values, format, fill, border, etc on each of the areas that comprise this RangeAreas object.|
@@ -437,7 +515,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [RangeAreas](/javascript/api/excel/excel.rangeareas)
 
-|What's new|Description|
+RangeAreas represents a collection of one or more rectangular ranges in the same worksheet.
+
+|Fields|Description|
 |:---|:---|
 |[convertDataTypeToText()](javascript/api/excel/excel.rangeareas#convertDataTypeToText)|Converts the range cells with datatypes into text.|
 |[convertToLinkedDataType(serviceID: number, languageCulture: string)](javascript/api/excel/excel.rangeareas#convertToLinkedDataType-serviceID--languageCulture-)|Converts the range cells into linked datatype in the worksheet.|
@@ -460,7 +540,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [RangeCollection](/javascript/api/excel/excel.rangecollection)
 
-|What's new|Description|
+[Api set: ExcelApi BETA (PREVIEW ONLY)]
+
+|Fields|Description|
 |:---|:---|
 |[getCount()](javascript/api/excel/excel.rangecollection#getCount)|Returns the number of ranges in the RangeCollection.|
 |[getItemAt(index: number)](javascript/api/excel/excel.rangecollection#getItemAt-index-)|Returns the range object based on its position in the RangeCollection.|
@@ -469,7 +551,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [RangeFill](/javascript/api/excel/excel.rangefill)
 
-|What's new|Description|
+Represents the background of a range object.
+
+|Fields|Description|
 |:---|:---|
 |[pattern](javascript/api/excel/excel.rangefill#pattern)|Gets or sets the pattern of a Range. See Excel.FillPattern for details. LinearGradient and RectangularGradient are not supported.|
 |[patternColor](javascript/api/excel/excel.rangefill#patternColor)|Sets HTML color code representing the color of the Range pattern, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|
@@ -478,13 +562,17 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [RangeFont](/javascript/api/excel/excel.rangefont)
 
-|What's new|Description|
+This object represents the font attributes (font name, font size, color, etc.) for an object.
+
+|Fields|Description|
 |:---|:---|
 |[tintAndShade](javascript/api/excel/excel.rangefont#tintAndShade)|Returns or sets a double that lightens or darkens a color for Range Border, the value is between -1 (darkest) and 1 (brightest), with 0 for the original color.|
 
 ### [RangeFont](/javascript/api/excel/excel.rangefont)
 
-|What's new|Description|
+This object represents the font attributes (font name, font size, color, etc.) for an object.
+
+|Fields|Description|
 |:---|:---|
 |[subscript](javascript/api/excel/excel.rangefont#subscript)|Represents the Subscript status of font.|
 |[superscript](javascript/api/excel/excel.rangefont#superscript)|Represents the Superscript status of font.|
@@ -492,27 +580,35 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [RangeFont](/javascript/api/excel/excel.rangefont)
 
-|What's new|Description|
+This object represents the font attributes (font name, font size, color, etc.) for an object.
+
+|Fields|Description|
 |:---|:---|
 |[tintAndShade](javascript/api/excel/excel.rangefont#tintAndShade)|Returns or sets a double that lightens or darkens a color for Range Borders, the value is between -1 (darkest) and 1 (brightest), with 0 for the original color.|
 
 ### [RemoveDuplicatesResult](/javascript/api/excel/excel.removeduplicatesresult)
 
-|What's new|Description|
+Represents the results from the removeDuplicates method on range
+
+|Fields|Description|
 |:---|:---|
 |[removed](javascript/api/excel/excel.removeduplicatesresult#removed)|Number of duplicated rows removed by the operation.|
 |[uniqueRemaining](javascript/api/excel/excel.removeduplicatesresult#uniqueRemaining)|Number of remaining unique rows present in the resulting range.|
 
 ### [ReplaceCriteria](/javascript/api/excel/excel.replacecriteria)
 
-|What's new|Description|
+Represents the replace criteria to be used.
+
+|Fields|Description|
 |:---|:---|
 |[completeMatch?](javascript/api/excel/excel.replacecriteria#completeMatch)|Specifies whether the match needs to be complete or partial. Default is false (partial).|
 |[matchCase?](javascript/api/excel/excel.replacecriteria#matchCase)|Specifies whether the match is case sensitive. Default is false (insensitive).|
 
 ### [SearchCriteria](/javascript/api/excel/excel.searchcriteria)
 
-|What's new|Description|
+Represents the search criteria to be used.
+
+|Fields|Description|
 |:---|:---|
 |[completeMatch?](javascript/api/excel/excel.searchcriteria#completeMatch)|Specifies whether the match needs to be complete or partial. Default is false (partial).|
 |[matchCase?](javascript/api/excel/excel.searchcriteria#matchCase)|Specifies whether the match is case sensitive. Default is false (insensitive).|
@@ -520,13 +616,17 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [SettingCollection](/javascript/api/excel/excel.settingcollection)
 
-|What's new|Description|
+Represents a collection of key-value pair setting objects that are part of the workbook. The scope is limited to per file and add-in (task-pane or content) combination.
+
+|Fields|Description|
 |:---|:---|
 |[add(key: string, value: string \| number \| boolean \| Date \| Array<any> \| any)](javascript/api/excel/excel.settingcollection#add-key--value-)|Sets or adds the specified setting to the workbook.|
 
 ### [Shape](/javascript/api/excel/excel.shape)
 
-|What's new|Description|
+Represents a generic shape object in the worksheet.
+
+|Fields|Description|
 |:---|:---|
 |[altTextDescription](javascript/api/excel/excel.shape#altTextDescription)|Returns or sets the alternative descriptive text string for a Shape object when the object is saved to a Web page.|
 |[altTextTitle](javascript/api/excel/excel.shape#altTextTitle)|Returns or sets the alternative title text string for a Shape object when the object is saved to a Web page.|
@@ -565,7 +665,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [ShapeActivatedEventArgs](/javascript/api/excel/excel.shapeactivatedeventargs)
 
-|What's new|Description|
+Provides information about the shape that raised the Activated event.
+
+|Fields|Description|
 |:---|:---|
 |[shapeId](javascript/api/excel/excel.shapeactivatedeventargs#shapeId)|Gets the id of the shape that is activated.|
 |[type](javascript/api/excel/excel.shapeactivatedeventargs#type)|Gets the type of the event. See Excel.EventType for details.|
@@ -573,7 +675,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [ShapeCollection](/javascript/api/excel/excel.shapecollection)
 
-|What's new|Description|
+Represents all the shapes in the worksheet.
+
+|Fields|Description|
 |:---|:---|
 |[addGeometricShape(geometricShapeType: "LineInverse" \| "Triangle" \| "RightTriangle" \| "Rectangle" \| "Diamond" \| "Parallelogram" \| "Trapezoid" \| "NonIsoscelesTrapezoid" \| "Pentagon" \| "Hexagon" \| "Heptagon" \| "Octagon" \| "Decagon" \| "Dodecagon" \| "Star4" \| "Star5" \| "Star6" \| "Star7" \| "Star8" \| "Star10" \| "Star12" \| "Star16" \| "Star24" \| "Star32" \| "RoundRectangle" \| "Round1Rectangle" \| "Round2SameRectangle" \| "Round2DiagonalRectangle" \| "SnipRoundRectangle" \| "Snip1Rectangle" \| "Snip2SameRectangle" \| "Snip2DiagonalRectangle" \| "Plaque" \| "Ellipse" \| "Teardrop" \| "HomePlate" \| "Chevron" \| "PieWedge" \| "Pie" \| "BlockArc" \| "Donut" \| "NoSmoking" \| "RightArrow" \| "LeftArrow" \| "UpArrow" \| "DownArrow" \| "StripedRightArrow" \| "NotchedRightArrow" \| "BentUpArrow" \| "LeftRightArrow" \| "UpDownArrow" \| "LeftUpArrow" \| "LeftRightUpArrow" \| "QuadArrow" \| "LeftArrowCallout" \| "RightArrowCallout" \| "UpArrowCallout" \| "DownArrowCallout" \| "LeftRightArrowCallout" \| "UpDownArrowCallout" \| "QuadArrowCallout" \| "BentArrow" \| "UturnArrow" \| "CircularArrow" \| "LeftCircularArrow" \| "LeftRightCircularArrow" \| "CurvedRightArrow" \| "CurvedLeftArrow" \| "CurvedUpArrow" \| "CurvedDownArrow" \| "SwooshArrow" \| "Cube" \| "Can" \| "LightningBolt" \| "Heart" \| "Sun" \| "Moon" \| "SmileyFace" \| "IrregularSeal1" \| "IrregularSeal2" \| "FoldedCorner" \| "Bevel" \| "Frame" \| "HalfFrame" \| "Corner" \| "DiagonalStripe" \| "Chord" \| "Arc" \| "LeftBracket" \| "RightBracket" \| "LeftBrace" \| "RightBrace" \| "BracketPair" \| "BracePair" \| "Callout1" \| "Callout2" \| "Callout3" \| "AccentCallout1" \| "AccentCallout2" \| "AccentCallout3" \| "BorderCallout1" \| "BorderCallout2" \| "BorderCallout3" \| "AccentBorderCallout1" \| "AccentBorderCallout2" \| "AccentBorderCallout3" \| "WedgeRectCallout" \| "WedgeRRectCallout" \| "WedgeEllipseCallout" \| "CloudCallout" \| "Cloud" \| "Ribbon" \| "Ribbon2" \| "EllipseRibbon" \| "EllipseRibbon2" \| "LeftRightRibbon" \| "VerticalScroll" \| "HorizontalScroll" \| "Wave" \| "DoubleWave" \| "Plus" \| "FlowChartProcess" \| "FlowChartDecision" \| "FlowChartInputOutput" \| "FlowChartPredefinedProcess" \| "FlowChartInternalStorage" \| "FlowChartDocument" \| "FlowChartMultidocument" \| "FlowChartTerminator" \| "FlowChartPreparation" \| "FlowChartManualInput" \| "FlowChartManualOperation" \| "FlowChartConnector" \| "FlowChartPunchedCard" \| "FlowChartPunchedTape" \| "FlowChartSummingJunction" \| "FlowChartOr" \| "FlowChartCollate" \| "FlowChartSort" \| "FlowChartExtract" \| "FlowChartMerge" \| "FlowChartOfflineStorage" \| "FlowChartOnlineStorage" \| "FlowChartMagneticTape" \| "FlowChartMagneticDisk" \| "FlowChartMagneticDrum" \| "FlowChartDisplay" \| "FlowChartDelay" \| "FlowChartAlternateProcess" \| "FlowChartOffpageConnector" \| "ActionButtonBlank" \| "ActionButtonHome" \| "ActionButtonHelp" \| "ActionButtonInformation" \| "ActionButtonForwardNext" \| "ActionButtonBackPrevious" \| "ActionButtonEnd" \| "ActionButtonBeginning" \| "ActionButtonReturn" \| "ActionButtonDocument" \| "ActionButtonSound" \| "ActionButtonMovie" \| "Gear6" \| "Gear9" \| "Funnel" \| "MathPlus" \| "MathMinus" \| "MathMultiply" \| "MathDivide" \| "MathEqual" \| "MathNotEqual" \| "CornerTabs" \| "SquareTabs" \| "PlaqueTabs" \| "ChartX" \| "ChartStar" \| "ChartPlus", left: number, top: number, width: number, height: number)](javascript/api/excel/excel.shapecollection#addGeometricShape-geometricShapeType--left--top--width--height-)|Adds a geometric shape to worksheet. Returns a Shape object that represents the new shape.|
 |[addGeometricShape(geometricShapeType: Excel.GeometricShapeType, left: number, top: number, width: number, height: number)](javascript/api/excel/excel.shapecollection#addGeometricShape-geometricShapeType--left--top--width--height-)|Adds a geometric shape to worksheet. Returns a Shape object that represents the new shape.|
@@ -588,7 +692,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [ShapeDeactivatedEventArgs](/javascript/api/excel/excel.shapedeactivatedeventargs)
 
-|What's new|Description|
+Provides information about the shape that raised the Deactivated event.
+
+|Fields|Description|
 |:---|:---|
 |[shapeId](javascript/api/excel/excel.shapedeactivatedeventargs#shapeId)|Gets the id of the shape that is deactivated.|
 |[type](javascript/api/excel/excel.shapedeactivatedeventargs#type)|Gets the type of the event. See Excel.EventType for details.|
@@ -596,7 +702,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [ShapeFill](/javascript/api/excel/excel.shapefill)
 
-|What's new|Description|
+Represents the fill formatting for a shape object.
+
+|Fields|Description|
 |:---|:---|
 |[clear()](javascript/api/excel/excel.shapefill#clear)|Clears the fill formatting of a shape object.|
 |[foreColor](javascript/api/excel/excel.shapefill#foreColor)|Represents the shape fill fore color in HTML color format, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange")|
@@ -606,7 +714,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [ShapeFont](/javascript/api/excel/excel.shapefont)
 
-|What's new|Description|
+This object represents the font attributes (font name, font size, color, etc.) for a TextRange in the Shape.
+
+|Fields|Description|
 |:---|:---|
 |[bold](javascript/api/excel/excel.shapefont#bold)|Represents the bold status of font. Returns null the TextRange includes both bold and non-bold text fragments.|
 |[color](javascript/api/excel/excel.shapefont#color)|HTML color code representation of the text color. E.g. #FF0000 represents Red. Returns null if the TextRange includes text fragments with different colors.|
@@ -617,7 +727,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [ShapeGroup](/javascript/api/excel/excel.shapegroup)
 
-|What's new|Description|
+Represents a shape group object inside a worksheet.
+
+|Fields|Description|
 |:---|:---|
 |[id](javascript/api/excel/excel.shapegroup#id)|Represents the shape identifier. Read-only.|
 |[shape](javascript/api/excel/excel.shapegroup#shape)|Returns the shape object for the group. Read-only.|
@@ -626,19 +738,25 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [SortField](/javascript/api/excel/excel.sortfield)
 
-|What's new|Description|
+Represents a condition in a sorting operation.
+
+|Fields|Description|
 |:---|:---|
 |[subField?](javascript/api/excel/excel.sortfield#subField)|The property used by the filter to do rich filter on richvalues.|
 
 ### [SortField](/javascript/api/excel/excel.sortfield)
 
-|What's new|Description|
+Represents a condition in a sorting operation.
+
+|Fields|Description|
 |:---|:---|
 |[subField?](javascript/api/excel/excel.sortfield#subField)|Represents the subfield that is the target property name of a rich value to sort on.|
 
 ### [Table](/javascript/api/excel/excel.table)
 
-|What's new|Description|
+Represents an Excel table.
+
+|Fields|Description|
 |:---|:---|
 |[clearStyle()](javascript/api/excel/excel.table#clearStyle)|Changes the table to use the default table style.|
 |[autoFilter](javascript/api/excel/excel.table#autoFilter)|Represents the AutoFilter object of the table. Read-Only.|
@@ -646,7 +764,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [TableAddedEventArgs](/javascript/api/excel/excel.tableaddedeventargs)
 
-|What's new|Description|
+Provides information about the table that raised the OnAdded event.
+
+|Fields|Description|
 |:---|:---|
 |[source](javascript/api/excel/excel.tableaddedeventargs#source)|Gets the source of the event. See Excel.EventSource for details.|
 |[tableId](javascript/api/excel/excel.tableaddedeventargs#tableId)|Gets the id of the table that is added.|
@@ -655,7 +775,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [TableCollection](/javascript/api/excel/excel.tablecollection)
 
-|What's new|Description|
+Represents a collection of all the tables that are part of the workbook or worksheet, depending on how it was reached.
+
+|Fields|Description|
 |:---|:---|
 |[onAdded](javascript/api/excel/excel.tablecollection#onAdded)|Occurs when new table is added in a workbook.|
 |[onDeleted](javascript/api/excel/excel.tablecollection#onDeleted)|Occurs when the specified table is deleted in a workbook.|
@@ -663,7 +785,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [TableDeletedEventArgs](/javascript/api/excel/excel.tabledeletedeventargs)
 
-|What's new|Description|
+Provides information about the table that raised the OnDeleted event.
+
+|Fields|Description|
 |:---|:---|
 |[source](javascript/api/excel/excel.tabledeletedeventargs#source)|Specifies the source of the event. See Excel.EventSource for details.|
 |[tableId](javascript/api/excel/excel.tabledeletedeventargs#tableId)|Specifies the id of the table that is deleted.|
@@ -673,7 +797,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)
 
-|What's new|Description|
+Provides information about the table that raised the filter applied event.
+
+|Fields|Description|
 |:---|:---|
 |[tableId](javascript/api/excel/excel.tablefilteredeventargs#tableId)|Represents the id of the table in which the filter is applied..|
 |[type](javascript/api/excel/excel.tablefilteredeventargs#type)|Represents the type of the event. See Excel.EventType for details.|
@@ -681,7 +807,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [TableScopedCollection](/javascript/api/excel/excel.tablescopedcollection)
 
-|What's new|Description|
+Represents a scoped collection of tables. For each table its top-left corner is considered its anchor location and the tables are sorted top to bottom and then left to right.
+
+|Fields|Description|
 |:---|:---|
 |[getCount()](javascript/api/excel/excel.tablescopedcollection#getCount)|Gets the number of tables in the collection.|
 |[getFirst()](javascript/api/excel/excel.tablescopedcollection#getFirst)|Gets the first table in the collection. The tables in the collection are sorted top to bottom and left to right, such that top left table is the first table in the collection.|
@@ -691,7 +819,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [TextFrame](/javascript/api/excel/excel.textframe)
 
-|What's new|Description|
+Represents the text frame for a shape object.
+
+|Fields|Description|
 |:---|:---|
 |[autoSize](javascript/api/excel/excel.textframe#autoSize)|Gets or sets the auto sizing settings for the text frame. A text frame can be set to auto size the text to fit the text frame, or auto size the text frame to fit the text, or without auto sizing.|
 |[bottomMargin](javascript/api/excel/excel.textframe#bottomMargin)|Represents the bottom margin, in points, of the text frame.|
@@ -710,7 +840,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [TextRange](/javascript/api/excel/excel.textrange)
 
-|What's new|Description|
+[Api set: ExcelApi BETA (PREVIEW ONLY)]
+
+|Fields|Description|
 |:---|:---|
 |[getCharacters(start: number, length?: number)](javascript/api/excel/excel.textrange#getCharacters-start--length?-)|Returns a TextRange object for characters in the given range.|
 |[font](javascript/api/excel/excel.textrange#font)|Returns a ShapeFont object that represents the font attributes for the text range. Read-only.|
@@ -718,7 +850,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [Workbook](/javascript/api/excel/excel.workbook)
 
-|What's new|Description|
+Workbook is the top level object which contains related workbook objects such as worksheets, tables, ranges, etc.
+
+|Fields|Description|
 |:---|:---|
 |[calculationEngineVersion](javascript/api/excel/excel.workbook#calculationEngineVersion)|Returns a number about the version of Excel Calculation Engine that the workbook was last fully recalculated by. Read-only.|
 |[calculationState](javascript/api/excel/excel.workbook#calculationState)|Returns a CalculationState that indicates the calculation state of the application. See Excel.CalculationState for details. Read-only.|
@@ -727,7 +861,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [Workbook](/javascript/api/excel/excel.workbook)
 
-|What's new|Description|
+Workbook is the top level object which contains related workbook objects such as worksheets, tables, ranges, etc.
+
+|Fields|Description|
 |:---|:---|
 |[chartDataPointTrack](javascript/api/excel/excel.workbook#chartDataPointTrack)|True if all charts in the workbook are tracking the actual data points to which they are attached.|
 |[close(closeBehavior?: "Save" \| "SkipSave")](javascript/api/excel/excel.workbook#close-closeBehavior?-)|Close current workbook.|
@@ -749,13 +885,17 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [WorkbookAutoSaveSettingChangedEventArgs](/javascript/api/excel/excel.workbookautosavesettingchangedeventargs)
 
-|What's new|Description|
+Provides information about the workbook AutoSave setting changed event.
+
+|Fields|Description|
 |:---|:---|
 |[type](javascript/api/excel/excel.workbookautosavesettingchangedeventargs#type)|Represents the type of the event. See Excel.EventType for details.|
 
 ### [Worksheet](/javascript/api/excel/excel.worksheet)
 
-|What's new|Description|
+An Excel worksheet is a grid of cells. It can contain data, tables, charts, etc.
+
+|Fields|Description|
 |:---|:---|
 |[enableCalculation](javascript/api/excel/excel.worksheet#enableCalculation)|Gets or sets the enableCalculation property of the worksheet.|
 |[findAll(text: string, criteria: Excel.WorksheetSearchCriteria)](javascript/api/excel/excel.worksheet#findAll-text--criteria-)|Finds all occurrences of the given string based on the criteria specified and returns them as a RangeAreas object, comprising one or more rectangular ranges.|
@@ -772,7 +912,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)
 
-|What's new|Description|
+Represents a collection of worksheet objects that are part of the workbook.
+
+|Fields|Description|
 |:---|:---|
 |[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: "None" \| "Before" \| "After" \| "Beginning" \| "End", relativeTo?: Worksheet \| string)](javascript/api/excel/excel.worksheetcollection#addFromBase64-base64File--sheetNamesToInsert?--positionType?--relativeTo?-)|Inserts the specified worksheets of a workbook into the current workbook.|
 |[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](javascript/api/excel/excel.worksheetcollection#addFromBase64-base64File--sheetNamesToInsert?--positionType?--relativeTo?-)|Inserts the specified worksheets of a workbook into the current workbook.|
@@ -781,14 +923,18 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [WorksheetFilteredEventArgs](/javascript/api/excel/excel.worksheetfilteredeventargs)
 
-|What's new|Description|
+Provides information about the worksheet that raised the filter applied event.
+
+|Fields|Description|
 |:---|:---|
 |[type](javascript/api/excel/excel.worksheetfilteredeventargs#type)|Represents the type of the event. See Excel.EventType for details.|
 |[worksheetId](javascript/api/excel/excel.worksheetfilteredeventargs#worksheetId)|Represents the id of the worksheet in which the filter is applied.|
 
 ### [WorksheetFormatChangedEventArgs](/javascript/api/excel/excel.worksheetformatchangedeventargs)
 
-|What's new|Description|
+Provides information about the worksheet format change event.
+
+|Fields|Description|
 |:---|:---|
 |[address](javascript/api/excel/excel.worksheetformatchangedeventargs#address)|Gets the range address that represents the changed area of a specific worksheet.|
 |[getRange(ctx: Excel.RequestContext)](javascript/api/excel/excel.worksheetformatchangedeventargs#getRange-ctx-)|Gets the range that represents the changed area of a specific worksheet.|
@@ -799,7 +945,9 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ### [WorksheetSearchCriteria](/javascript/api/excel/excel.worksheetsearchcriteria)
 
-|What's new|Description|
+Represents the worksheet search criteria to be used.
+
+|Fields|Description|
 |:---|:---|
 |[completeMatch?](javascript/api/excel/excel.worksheetsearchcriteria#completeMatch)|Specifies whether the match needs to be complete or partial. Default is false (partial).|
 |[matchCase?](javascript/api/excel/excel.worksheetsearchcriteria#matchCase)|Specifies whether the match is case sensitive. Default is false (insensitive).|
