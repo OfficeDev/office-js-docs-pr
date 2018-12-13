@@ -14,14 +14,14 @@ If you are building an add-in, we encourage you to use Office UI Fabric to creat
 The following sections explain how to get started using Fabric to meet your requirements. 
 
 ## Use Fabric Core: icons, fonts, colors
-Fabric Core contains basic elements of the design language such as icons, colors, type, and grid. Fabric core is framework independent. Both Fabric React and Fabric JS use Fabric Core.
+Fabric Core contains basic elements of the design language such as icons, colors, type, and grid. Fabric core is framework independent. Fabric Core is used by and included with Fabric React.
 
 To get started using Fabric Core:
 
 1. Add the CDN reference to the HTML on your page.  
 
 	```html
-	<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css">
+	<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css">
 	```   
     
 2. Use Fabric icons and fonts. 
