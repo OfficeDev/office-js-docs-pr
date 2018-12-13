@@ -537,5 +537,5 @@ Ranges can have formats applied to individual cells based on conditions. For mor
 
 ## See also
 
-- [Work with ranges using the Excel JavaScript API (advanced)](excel/excel-add-ins-ranges-advanced.md)
+- [Work with ranges using the Excel JavaScript API (advanced)](excel-add-ins-ranges-advanced.md)
 - [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
