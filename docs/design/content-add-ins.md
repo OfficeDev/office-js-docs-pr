@@ -1,12 +1,12 @@
 ---
 title: Content Office Add-ins
-description: Content add-ins are surfaces that can be embedded directly into Word, Excel, or PowerPoint documents that give users access to interface controls that run code to modify documents or display data from a data source.
+description: Content add-ins are surfaces that can be embedded directly into Excel or PowerPoint documents that give users access to interface controls that run code to modify documents or display data from a data source.
 ms.date: 12/04/2017
 ---
 
 # Content Office Add-ins
 
-Content add-ins are surfaces that can be embedded directly into Word, Excel, or PowerPoint documents. Content add-ins give users access to interface controls that run code to modify documents or display data from a data source. Use content add-ins when you want to embed functionality directly into the document.  
+Content add-ins are surfaces that can be embedded directly into Excel or PowerPoint documents. Content add-ins give users access to interface controls that run code to modify documents or display data from a data source. Use content add-ins when you want to embed functionality directly into the document.  
 
 *Figure 1. Typical layout for content add-ins*
 
@@ -15,11 +15,11 @@ Content add-ins are surfaces that can be embedded directly into Word, Excel, or 
 ## Best practices
 
 - Include some navigational or commanding element such as the CommandBar or Pivot at the top of your add-in.
-- Include a branding element such as the BrandBar at the bottom of your add-in (applies to Word, Excel, and PowerPoint add-ins only).
+- Include a branding element such as the BrandBar at the bottom of your add-in (applies to Excel and PowerPoint add-ins only).
 
 ## Variants
 
-Content add-in sizes for Word, Excel, and PowerPoint in Office desktop and Office 365 are user specified.
+Content add-in sizes for Excel and PowerPoint in Office desktop and Office 365 are user specified.
 
 ## Personality menu
 
