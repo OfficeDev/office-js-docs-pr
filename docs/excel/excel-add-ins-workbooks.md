@@ -1,7 +1,7 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
 description: ''
-ms.date: 11/27/2018
+ms.date: 12/13/2018
 ---
 
 
