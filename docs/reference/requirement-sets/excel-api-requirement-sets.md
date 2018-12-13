@@ -243,7 +243,7 @@ More [events](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-
 |[pivotLayout](/javascript/api/excel/excel.pivotlayout)|_Relationship_ > layoutType|This property indicates the PivotLayoutType of all fields on the PivotTable. If fields have different states, this will be null.|1.8|
 |[pivotLayout](/javascript/api/excel/excel.pivotlayout)|_Method_ > [getColumnLabelRange()](/javascript/api/excel/excel.pivotlayout)|Returns the range where the PivotTable's column labels reside.|1.8|
 |[pivotLayout](/javascript/api/excel/excel.pivotlayout)|_Method_ > [getDataBodyRange()](/javascript/api/excel/excel.pivotlayout)|Returns the range where the PivotTable's data values reside.|1.8|
-|[pivotLayout](/javascript/api/excel/excel.pivotlayout.md)|_Method_ > [getFilterAxisRange()](/javascript/api/excel/excel.pivotlayout)|Returns the range of the PivotTable's filter area.|1.8|
+|[pivotLayout](/javascript/api/excel/excel.pivotlayout)|_Method_ > [getFilterAxisRange()](/javascript/api/excel/excel.pivotlayout)|Returns the range of the PivotTable's filter area.|1.8|
 |[pivotLayout](/javascript/api/excel/excel.pivotlayout)|_Method_ > [getRange()](/javascript/api/excel/excel.pivotlayout)|Returns the range the PivotTable exists on, excluding the filter area.|1.8|
 |[pivotLayout](/javascript/api/excel/excel.pivotlayout)|_Method_ > [getRowLabelRange()](/javascript/api/excel/excel.pivotlayout)|Returns the range where the PivotTable's row labels reside.|1.8|
 |[pivotTable](/javascript/api/excel/excel.pivottable)|_Relationship_ > columnHierarchies|The Column Pivot Hierarchies of the PivotTable. Read-only.|1.8|
