@@ -18,11 +18,11 @@ The Workbook object contains two methods that get a range of cells the user or a
 ```js
 Excel.run(function (context) {
     var activeCell = context.workbook.getActiveCell();
-	activeCell.load("address");
+    activeCell.load("address");
 
     return context.sync().then(function () {
-		console.log("The active cell is " + activeCell.address);
-	});
+        console.log("The active cell is " + activeCell.address);
+    });
 }).catch(errorHandlerFunction);
 ```
 
@@ -30,9 +30,9 @@ The `getSelectedRange()` method returns the currently selected single range. If 
 
 ```js
 Excel.run(function(context) {
-	var range = context.workbook.getSelectedRange();
-	range.format.fill.color = "yellow";
-	return context.sync();
+    var range = context.workbook.getSelectedRange();
+    range.format.fill.color = "yellow";
+    return context.sync();
 }).catch(errorHandlerFunction);
 ```
 
@@ -53,14 +53,14 @@ var myFile = document.getElementById("file");
 var reader = new FileReader();
 
 reader.onload = (function (event) {
-	Excel.run(function (context) {
-		// strip off the metadata before the base64-encoded string
-		var startIndex = event.target.result.indexOf("base64,");
-		var mybase64 = event.target.result.substr(startIndex + 7);
+    Excel.run(function (context) {
+        // strip off the metadata before the base64-encoded string
+        var startIndex = event.target.result.indexOf("base64,");
+        var mybase64 = event.target.result.substr(startIndex + 7);
 
-		Excel.createWorkbook(mybase64);
-		return context.sync();
-	}).catch(errorHandlerFunction);
+        Excel.createWorkbook(mybase64);
+        return context.sync();
+    }).catch(errorHandlerFunction);
 });
 
 // read in the file as a data URL so we can parse the base64-encoded string
@@ -73,14 +73,14 @@ Your add-in can control a user's ability to edit the workbook's structure. The W
 
 ```js
 Excel.run(function (context) {
-	var workbook = context.workbook;
-	workbook.load("protection/protected");
+    var workbook = context.workbook;
+    workbook.load("protection/protected");
 
-	return context.sync().then(function() {
-		if (!workbook.protection.protected) {
-			workbook.protection.protect();
-		}
-	});
+    return context.sync().then(function() {
+        if (!workbook.protection.protected) {
+            workbook.protection.protect();
+        }
+    });
 }).catch(errorHandlerFunction);
 ```
 
@@ -88,7 +88,7 @@ The `protect` method accepts an optional string parameter. This string represent
 
 Protection can also be set at the worksheet level to prevent unwanted data editing. For more information, see the **Data protection** section of the [Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md#data-protection) article.
 
-> [!NOTE] 
+> [!NOTE]
 > For more information about workbook protection in Excel, see the [Protect a workbook](https://support.office.com/article/Protect-a-workbook-7E365A4D-3E89-4616-84CA-1931257C1517) article.
 
 ## Access document properties
@@ -97,9 +97,9 @@ Workbook objects have access to the Office file metadata, which is known as the 
 
 ```js
 Excel.run(function (context) {
-	var docProperties = context.workbook.properties;
-	docProperties.author = "Alex";
-	return context.sync();
+    var docProperties = context.workbook.properties;
+    docProperties.author = "Alex";
+    return context.sync();
 }).catch(errorHandlerFunction);
 ```
 
@@ -107,22 +107,22 @@ You can also define custom properties. The DocumentProperties object contains a 
 
 ```js
 Excel.run(function (context) {
-	var customDocProperties = context.workbook.properties.custom;
-	customDocProperties.add("Introduction", "Hello");
-	return context.sync();
+    var customDocProperties = context.workbook.properties.custom;
+    customDocProperties.add("Introduction", "Hello");
+    return context.sync();
 }).catch(errorHandlerFunction);
 
 [...]
 
 Excel.run(function (context) {
-	var customDocProperties = context.workbook.properties.custom;
-	var customProperty = customDocProperties.getItem("Introduction");
-	customProperty.load("key, value");
+    var customDocProperties = context.workbook.properties.custom;
+    var customProperty = customDocProperties.getItem("Introduction");
+    customProperty.load("key, value");
 
-	return context.sync().then(function() {
+    return context.sync().then(function() {
         console.log("Custom key  : " + customProperty.key); // "Introduction"
         console.log("Custom value : " + customProperty.value); // "Hello"
-	});
+    });
 }).catch(errorHandlerFunction);
 ```
 
@@ -132,16 +132,63 @@ A workbook's settings are similar to the collection of custom properties. The di
 
 ```js
 Excel.run(function (context) {
-	var settings = context.workbook.settings;
-	settings.add("NeedsReview", true);
-	var needsReview = settings.getItem("NeedsReview");
-	needsReview.load("value");
+    var settings = context.workbook.settings;
+    settings.add("NeedsReview", true);
+    var needsReview = settings.getItem("NeedsReview");
+    needsReview.load("value");
 
-	return context.sync().then(function() {
-		console.log("Workbook needs review : " + needsReview.value);
-	});
+    return context.sync().then(function() {
+        console.log("Workbook needs review : " + needsReview.value);
+    });
 }).catch(errorHandlerFunction);
 ```
+
+## Add custom XML data to the workbook
+
+The flexible nature of Excel's Open XML **.xlsx** file format lets your add-in embed custom XML data in the workbook. This data persists with the workbook, independent of the add-in.
+
+A workbook contains a [CustomXmlPartCollection](/javascript/api/excel/excel.customxmlpartcollection), which is a list of [CustomXmlParts](https://docs.microsoft.com/javascript/api/excel/excel.customxmlpart). These not only give access to the XML strings, but an ID to store and use between sessions.
+
+The following samples show how to use custom XML parts. The first code block demonstrates how to embed XML data in the document. It stores a list of reviewers, then uses the workbook's settings to save the XML's `id` for future retrieval. The second block shows how to access that XML later. The "ContosoReviewXmlPartId" setting is loaded and passed to the workbook's `customXmlParts`. The XML data is then printed to the console.
+
+```js
+Excel.run(async (context) => {
+    // Add reviewer data to the document as XML
+    var originalXml = "<Reviewers xmlns='http://schemas.contoso.com/review/1.0'><Reviewer>Juan</Reviewer><Reviewer>Hong</Reviewer><Reviewer>Sally</Reviewer></Reviewers>";
+    var customXmlPart = context.workbook.customXmlParts.add(originalXml);
+    customXmlPart.load("id");
+
+    return context.sync().then(function() {
+        // Store the XML part's ID in a setting
+        var settings = context.workbook.settings;
+        settings.add("ContosoReviewXmlPartId", customXmlPart.id);
+    });
+}).catch(errorHandlerFunction);
+```
+
+```js
+Excel.run(async (context) => {
+    // Retrieve the XML part's id from the setting
+    var settings = context.workbook.settings;
+    var xmlPartIDSetting = settings.getItemOrNullObject("ContosoReviewXmlPartId").load("value");
+
+    return context.sync().then(function () {
+        if (xmlPartIDSetting.value) {
+            var customXmlPart = context.workbook.customXmlParts.getItem(xmlPartIDSetting.value);
+            var xmlBlob = customXmlPart.getXml();
+
+            return context.sync().then(function () {
+                // Add spaces to make more human readable in the console
+                var readableXML = xmlBlob.value.replace(/></g, "> <");
+                console.log(readableXML);
+            });
+        }
+    });
+}).catch(errorHandlerFunction);
+```
+
+> [!NOTE]
+> `CustomXMLPart.namespaceUri` is only populated if the top-level custom XML element contains the `xmlns` attribute.
 
 ## Control calculation behavior
 
@@ -152,7 +199,7 @@ By default, Excel recalculates formula results whenever a referenced cell is cha
  - `automatic`: The default recalculation behavior where Excel calculates new formula results every time the relevant data is changed.
  - `automaticExceptTables`: Same as `automatic`, except any changes made to values in tables are ignored.
  - `manual`: Calculations only occur when the user or add-in requests them.
- 
+
 ### Set calculation type
 
 The [Application](/javascript/api/excel/excel.application) object provides a method to force an immediate recalculation. `Application.calculate(calculationType)` starts a manual recalculation based on the specified `calculationType`. The following values can be specified:
@@ -161,7 +208,7 @@ The [Application](/javascript/api/excel/excel.application) object provides a met
  - `fullRebuild`: Check dependent formulas, and then recalculate all formulas in all open workbooks, regardless of whether they have changed since the last recalculation.
  - `recalculate`: Recalculate formulas that have changed (or been programmatically marked for recalculation) since the last calculation, and formulas dependent on them, in all active workbooks.
  
-> [!NOTE] 
+> [!NOTE]
 > For more information about recalculation, see the [Change formula recalculation, iteration, or precision](https://support.office.com/article/change-formula-recalculation-iteration-or-precision-73fc7dac-91cf-4d36-86e8-67124f6bcce4) article.
 
 ### Temporarily suspend calculations
