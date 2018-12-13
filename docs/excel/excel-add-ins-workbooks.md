@@ -147,7 +147,7 @@ Excel.run(function (context) {
 
 Excel's Open XML **.xlsx** file format lets your add-in embed custom XML data in the workbook. This data persists with the workbook, independent of the add-in.
 
-A workbook contains a [CustomXmlPartCollection](/javascript/api/excel/excel.customxmlpartcollection), which is a list of [CustomXmlParts](https://docs.microsoft.com/javascript/api/excel/excel.customxmlpart). These give access to the XML strings and a corresponding unique ID. By storing these IDs as settings, your add-in can maintain the keys to its XML parts between sessions.
+A workbook contains a [CustomXmlPartCollection](/javascript/api/excel/excel.customxmlpartcollection), which is a list of [CustomXmlParts](/javascript/api/excel/excel.customxmlpart). These give access to the XML strings and a corresponding unique ID. By storing these IDs as settings, your add-in can maintain the keys to its XML parts between sessions.
 
 The following samples show how to use custom XML parts. The first code block demonstrates how to embed XML data in the document. It stores a list of reviewers, then uses the workbook's settings to save the XML's `id` for future retrieval. The second block shows how to access that XML later. The "ContosoReviewXmlPartId" setting is loaded and passed to the workbook's `customXmlParts`. The XML data is then printed to the console.
 
