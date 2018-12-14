@@ -88,8 +88,11 @@ copyFrom(sourceRange: Range | string, copyType?: "All" | "Formulas" | "Values" |
 - `"Formats"` copies the formatting of the range, including font, color, and other format settings, but no values.
 - `"All"` (the default option) copies both data and formatting, preserving cells’ formulas if found.
 
-`skipBlanks` sets whether blank cells are copied into the destination. When true, `copyFrom` skips blank cells in the source range. 
+`skipBlanks` sets whether blank cells are copied into the destination. When true, `copyFrom` skips blank cells in the source range.
 Skipped cells will not overwrite the existing data of their corresponding cells in the destination range. The default is false.
+
+`transpose` determines whether or not the data is transposed, meaning its rows and columns are switched, into the source location.
+A transposed range is flipped along the main diagonal, so rows **1**, **2**, and **3** will become columns **A**, **B**, and **C**.
 
 The following code sample and images demonstrate this behavior in a simple scenario.
 
@@ -118,16 +121,13 @@ Excel.run(function (context) {
 
 ![Data in Excel after range’s copy method has been run](../images/excel-range-copyfrom-skipblanks-after.png)
 
-`transpose` determines whether or not the data is transposed, meaning its rows and columns are switched, into the source location.
-A transposed range is flipped along the main diagonal, so rows **1**, **2**, and **3** will become columns **A**, **B**, and **C**.
-
 ## Remove duplicates
 
 > [!NOTE]
 > The Range object's `removeDuplicates` function is currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 > If you are using TypeScript or your code editor uses TypeScript type definition files for IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
 
-The Range object's `removeDuplicates` function removes rows with duplicate entries in the specified columns. The function goes through each row in the range from the lowest-valued index to the highest-valued index in the range (from top to bottom). A row is deleted if it has a value in the specified column or columns appeared earlier in the range. Rows in the range below the deleted row are shifted up. `removeDuplicates` does not affect the position of cells outside of the range.
+The Range object's `removeDuplicates` function removes rows with duplicate entries in the specified columns. The function goes through each row in the range from the lowest-valued index to the highest-valued index in the range (from top to bottom). A row is deleted if a value in its specified column or columns appeared earlier in the range. Rows in the range below the deleted row are shifted up. `removeDuplicates` does not affect the position of cells outside of the range.
 
 `removeDuplicates` takes in a `number[]` representing the column indices which are checked for duplicates. This array is zero-based and relative to the range, not the worksheet. The function also takes in a boolean parameter that specifies whether the first row is a header. When **true**, the top row is ignored when considering duplicates. The `removeDuplicates` function returns a `RemoveDuplicatesResult` object that specifies the number of rows removed and the number of unique rows remaining.
 
@@ -149,7 +149,8 @@ Excel.run(async (context) => {
     return context.sync().then(function () {
         console.log(deleteResult.removed + " entries with duplicate names removed.");
         console.log(deleteResult.uniqueRemaining + " entries with unique names remain in the range.");
-});
+    });
+}).catch(errorHandlerFunction);
 ```
 
 *Before the preceding function has been run.*
