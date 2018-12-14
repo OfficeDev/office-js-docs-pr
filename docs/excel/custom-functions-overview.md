@@ -1,5 +1,5 @@
 ---
-ms.date: 12/5/2018
+ms.date: 12/14/2018
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel (Preview)
 ---
@@ -365,6 +365,50 @@ function secondHighest(values){
   return secondHighest;
 }
 ```
+
+## Discovering cells that invoke custom functions
+
+Custom funtions also allows you to format ranges, display cached values, and reconcile values using `caller.address`, which makes it possible to discover the cell that invoked a custom function. You might use `caller.address` in some of the following scenarios:
+
+- Formatting ranges: Use `caller.address` as the key of the cell to store information in [AsyncStorage](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `AsyncStorage`.
+- Displaying cached values: If your function is used offline, display stored cached values from `AsyncStorage` using `onCalculated`.
+- Reconciliation: Use `caller.address` to discover an origin cell to help you reconcile where processing is occurring.
+
+The information about a cell's address is exposed only if `requiresAddress` is marked as `true` in the function's JSON metadata file. The following sample gives an example of this:
+
+```JSON
+{
+   "id": "ADDTIME",
+   "name": "ADDTIME",
+   "description": "Display current date and add the amount of hours to it designated by the parameter",
+   "helpUrl": "http://www.contoso.com",
+   "result": {
+      "type": "number",
+      "dimensionality": "scalar"
+   },
+   "parameters": [
+      {
+         "name": "Additional time",
+         "description": "Amount of hours to increase current date by",
+         "type": "number",
+         "dimensionality": "scalar"
+      }
+   ],
+   "options": {
+      "requiresAddress": true
+   }
+}
+```
+
+In the script file (**./src/customfunctions.js** or **./src/customfunctions.ts**), you'll also need to add a `getAddress` function to find a cell's address. This function may take parameters, as shown in the following sample as `parameter1`. The last parameter will always be `invocationContext`, an object containing the cell's location that Excel passes down when `requiresAddress` is marked as `true` in your JSON metadata file.
+
+```js
+function getAddress(parameter1, invocationContext) {
+    return invocationContext.address;
+}
+```
+
+By default, values returned from a `getAddress` function follow the following format: `SheetName!CellNumber`. For example, if a function was called from a sheet called Expenses in cell B2, the returned value would be `Expenses!B2`.
 
 ## Handling errors
 
