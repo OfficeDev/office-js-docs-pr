@@ -19,7 +19,7 @@ In this tutorial, you will:
 
 * [Git Bash](https://git-scm.com/downloads) (or another Git client)
 
-* The latest version of [Yeoman](http://yeoman.io/) and the [Yo Office generator](https://www.npmjs.com/package/generator-office). To install these tools globally, run the following command via the command prompt:
+* The latest version of [Yeoman](https://yeoman.io/) and the [Yo Office generator](https://www.npmjs.com/package/generator-office). To install these tools globally, run the following command via the command prompt:
 
     ```bash
     npm install -g yo generator-office
@@ -58,7 +58,7 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
     * If you'll be using Excel for Windows to test your custom functions, run the following command to start the local web server, launch Excel, and sideload the add-in:
 
         ```bash
-        npm start
+        npm run start-desktop
         ```
 
     * If you'll be using Excel Online to test your custom functions, run the following command to start the local web server: 
@@ -69,7 +69,7 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
 
 ## Try out a prebuilt custom function
 
-The custom functions project that you created by using the Yo Office generator contains some prebuilt custom functions, defined within the **src/customfunction.js** file. The **manifest.xml** file in the root directory of the project specifies that all custom functions belong to the `CONTOSO` namespace.
+The custom functions project that you created by using the Yo Office generator contains some prebuilt custom functions, defined within the **src/functions/functions.js** file. The **manifest.xml** file in the root directory of the project specifies that all custom functions belong to the `CONTOSO` namespace.
 
 Before you can use any of the prebuilt custom functions, you must register the custom functions add-in in Excel. Do so by completing steps for the platform that you'll be using in this tutorial.
 
@@ -96,11 +96,7 @@ At this point, the prebuilt custom functions in your project are loaded and avai
 
 1. Within a cell, type **=CONTOSO**. Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.
 
-2. Run the `CONTOSO.ADD` function, with numbers `10` and `200` as input parameters, by specifying the following value in the cell and pressing enter:
-
-    ```
-    =CONTOSO.ADD(10,200)
-    ```
+2. Run the `CONTOSO.ADD` function, with numbers `10` and `200` as input parameters, by typing the value `=CONTOSO.ADD(10,200)` in the cell and pressing enter.
 
 The `ADD` custom function computes the sum of the two numbers that you specify as input parameters. Typing `=CONTOSO.ADD(10,200)` should produce the result **210** in the cell after you press enter.
 
@@ -110,7 +106,7 @@ What if you needed a function that could request the price of a stock from an AP
 
 Complete the following steps to create a custom function named `stockPrice` that accepts a stock ticker (e.g., **MSFT**) and returns the price of that stock. This custom function uses the IEX Trading API, which is free and does not require authentication.
 
-1. In the **stock-ticker** project that the Yo Office generator created, find the file **src/customfunctions.js** and open it in your code editor.
+1. In the **stock-ticker** project that the Yo Office generator created, find the file **src/functions/functions.js** and open it in your code editor.
 
 2. Add the following code to **customfunctions.js** and save the file.
 
@@ -132,7 +128,7 @@ Complete the following steps to create a custom function named `stockPrice` that
     CustomFunctionMappings.STOCKPRICE = stockPrice;
     ```
 
-3. Before Excel can make this new function available to end-users, you must specify metadata that describes this function. In the **stock-ticker** project that the Yo Office generator created, find the file **config/customfunctions.json** and open it in your code editor. Add the following object to the `functions` array within the **config/customfunctions.json** file and save the file.
+3. Before Excel can make this new function available to end-users, you must specify metadata that describes this function. In the **stock-ticker** project that the Yo Office generator created, find the file **src/functions/functions.json** and open it in your code editor. Add the following object to the `functions` array within the **src/functions/functions.json** file and save the file.
 
     This JSON describes the `stockPrice` function.
 
@@ -188,7 +184,7 @@ The `stockPrice` function that you just created returns the price of a stock at 
 
 Complete the following steps to create a custom function named `stockPriceStream` that requests the price of the specified stock every 1000 milliseconds (provided that the previous request has completed). While the initial request is in-progress, you may see the placeholder value **#GETTING_DATA** the cell where the function is being called. When a value is returned by the function, **#GETTING_DATA** will be replaced by that value in the cell.
 
-1. In the **stock-ticker** project that the Yo Office generator created, add the following code to **src/customfunctions.js** and save the file.
+1. In the **stock-ticker** project that the Yo Office generator created, add the following code to **src/functions/functions.js** and save the file.
 
     ```js
     function stockPriceStream(ticker, handler) {
@@ -227,7 +223,7 @@ Complete the following steps to create a custom function named `stockPriceStream
     CustomFunctionMappings.STOCKPRICESTREAM = stockPriceStream;
     ```
 
-2. Before Excel can make this new function available to end-users, you must specify metadata that describes this function. In the **stock-ticker** project that the Yo Office generator created, add the following object to the `functions` array within the **config/customfunctions.json** file and save the file.
+2. Before Excel can make this new function available to end-users, you must specify metadata that describes this function. In the **stock-ticker** project that the Yo Office generator created, add the following object to the `functions` array within the **src/functions/functions.json** file and save the file.
 
     This JSON describes the `stockPriceStream` function. For any streaming function, the `stream` property and the `cancelable` property must be set to `true` within the `options` object, as shown in this code sample.
 

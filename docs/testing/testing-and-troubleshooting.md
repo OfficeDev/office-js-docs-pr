@@ -8,7 +8,7 @@ ms.date: 01/23/2018
 
 At times your users might encounter issues with Office Add-ins that you develop. For example, an add-in fails to load or is inaccessible. Use the information in this article to help resolve common issues that your users encounter with your Office Add-in. 
 
-You can also use [Fiddler](http://www.telerik.com/fiddler) to identify and debug issues with your add-ins.
+You can also use [Fiddler](https://www.telerik.com/fiddler) to identify and debug issues with your add-ins.
 
 After you resolve the user's issue, you can [respond directly to customer reviews in AppSource](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings).
 
