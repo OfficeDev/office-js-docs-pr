@@ -291,8 +291,11 @@
       - name: PivotTables
         href: excel/excel-add-ins-pivottables.md
         displayName: Excel
-      - name: Ranges
+      - name: Ranges (fundamental)
         href: excel/excel-add-ins-ranges.md
+        displayName: Excel
+      - name: Ranges (advanced)
+        href: excel/excel-add-ins-ranges-advanced.md
         displayName: Excel
       - name: Tables
         href: excel/excel-add-ins-tables.md
