@@ -10,10 +10,10 @@ The XML elements in the manifest of an Office Add-in must be under the proper pa
 
 The required ordering is specified in the XSD files in the [Schemas](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) folder. The XSD files are categorized into subfolders for taskpane, content, and mail add-ins.
 
-For example, In the `<OfficeApp>` element, the `<Id>`, `<Version>`, `<ProviderName>` must appear in that order. If an `<AlternateId>` element is added, it must be between the `<Id>` and `<Version>` element. Your manifest will not be valid and your add-in will not load, if any element is in the wrong order.
+For example, in the `<OfficeApp>` element, the `<Id>`, `<Version>`, `<ProviderName>` must appear in that order. If an `<AlternateId>` element is added, it must be between the `<Id>` and `<Version>` element. Your manifest will not be valid and your add-in will not load, if any element is in the wrong order.
 
 > [!NOTE]
-> The [Office Add-in Validator](/office/dev/add-ins/testing/troubleshoot-manifest#validate-your-manifest-with-the-office-add-in-validator) uses the same error message when an element is out-of-order as it does when an element is under the wrong parent. The error says the child element is is not a valid child of the parent element. If you get such an error but the reference documentation for the child element indicates that it *is* valid for the parent, then the problem is likely that the child has been placed in the wrong order.
+> The [Office Add-in Validator](/office/dev/add-ins/testing/troubleshoot-manifest#validate-your-manifest-with-the-office-add-in-validator) uses the same error message when an element is out-of-order as it does when an element is under the wrong parent. The error says the child element is not a valid child of the parent element. If you get such an error but the reference documentation for the child element indicates that it *is* valid for the parent, then the problem is likely that the child has been placed in the wrong order.
 
 To find the correct order for the child elements of a given parent element, take the following steps. (This is a simplified process, as XSD files are quite complex. Fully parsing XSD files is out of the scope of this document.)
 
@@ -38,7 +38,7 @@ To find the correct order for the child elements of a given parent element, take
 
 The `<xs:sequence>` lists the possible child elements, *in the order in which they must appear*. This does *not* mean all of them are mandatory. If the `minOccurs` value for a child element is **0**, then the child element is optional. *But if it is present, it must be in the order specified by the `<xs:sequence>` element*.
 
-If there is no `<xs:sequence>` element, or there *is* but the child element is not listed (even though the reference documentation for the child element indicates that it *is* valid for the parent); then the parent element's complex type definition has been extended with additional child elements somewhere else in the XSD file. For example, the definition for the `OfficeApp` complex type does not list `Requirements` as a possible child. But later in the file (within the definition for the `TaskPaneApp` complex type), the definition of `OfficeApp` is extended and `Requirements` is added as an additional valid child.
+If there is no `<xs:sequence>` element, or there *is* but the child element is not listed (even though the reference documentation for the child element indicates that it *is* valid for the parent), then the parent element's complex type definition has been extended with additional child elements somewhere else in the XSD file. For example, the definition for the `OfficeApp` complex type does not list `Requirements` as a possible child. But later in the file (within the definition for the `TaskPaneApp` complex type), the definition of `OfficeApp` is extended and `Requirements` is added as an additional valid child.
 
 To find the extended definitions follow these steps:
 
