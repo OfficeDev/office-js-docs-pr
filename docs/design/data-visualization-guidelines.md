@@ -56,7 +56,7 @@ Choose colors that follow operating system or application themes rather than har
 For best practices for use of color in data visualizations, see the following:
 
 
-- [Why rainbow colors aren't the best option for data visualizations](http://www.poynter.org/2013/why-rainbow-colors-arent-always-the-best-options-for-data-visualizations/224413/)
+- [Why rainbow colors aren't the best option for data visualizations](https://www.poynter.org/2013/why-rainbow-colors-arent-always-the-best-options-for-data-visualizations/224413/)
 - [Color Brewer 2.0: Color Advice for Cartography](http://colorbrewer2.org/)
 - [I Want Hue](http://tools.medialab.sciences-po.fr/iwanthue/)
 
@@ -105,7 +105,7 @@ The Office Design team created the following set of design principles, which we 
 - Allow for direct interactions with objects that reveal new insights (sorting via drag, for example).
 - Use simple, direct, familiar interaction models.
 
-For more information about how to design user-friendly interactive data visualizations, see [UI Tenets and Traps](http://uitraps.com/).
+For more information about how to design user-friendly interactive data visualizations, see [UI Tenets and Traps](https://uitraps.com/).
 
 ### Motion design principles
 
@@ -146,6 +146,5 @@ Motion follows data.
 
 ## See also 
 
-- [Data + Design: A Simple Introduction to Preparing and Visualizing Information](https://infoactive.co/data-design)
-- [The Five Best Libraries for Building Data Visualizations](http://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)
+- [The Five Best Libraries for Building Data Visualizations](https://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)
 - [The Visual Display of Quantitative Information](https://www.edwardtufte.com/tufte/books_vdqi)

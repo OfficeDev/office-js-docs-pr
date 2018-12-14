@@ -1,7 +1,7 @@
 ---
 title: Use search options to find text in your Word add-in 
 description: ''
-ms.date: 7/20/2018
+ms.date: 07/20/2018
 ---
 
 # Use search options to find text in your Word add-in 
