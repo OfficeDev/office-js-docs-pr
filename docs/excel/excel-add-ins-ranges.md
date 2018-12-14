@@ -1,13 +1,15 @@
 ---
-title: Work with ranges using the Excel JavaScript API
+title: Work with ranges using the Excel JavaScript API (fundamental)
 description: ''
-ms.date: 12/04/2018
+ms.date: 12/14/2018
 ---
-
 
 # Work with ranges using the Excel JavaScript API
 
 This article provides code samples that show how to perform common tasks with ranges using the Excel JavaScript API. For the complete list of properties and methods that the **Range** object supports, see [Range Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range).
+
+> [!NOTE]
+> For code samples that show how to perform more advanced tasks with ranges, see [Work with ranges using the Excel JavaScript API (advanced)](excel-add-ins-ranges-advanced.md).
 
 ## Get a range
 

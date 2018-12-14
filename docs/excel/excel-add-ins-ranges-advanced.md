@@ -1,12 +1,12 @@
 ---
 title: Work with ranges using the Excel JavaScript API (advanced)
 description: ''
-ms.date: 12/12/2018
+ms.date: 12/14/2018
 ---
 
 # Work with ranges using the Excel JavaScript API (advanced)
 
-This article provides code samples that show how to perform scenario-specific tasks with ranges using the Excel JavaScript API. For the complete list of properties and methods that the **Range** object supports, see [Range Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range).
+This article builds upon information in [Work with ranges using the Excel JavaScript API (fundamental)](excel-add-ins-ranges.md) by providing code samples that show how to perform more advanced tasks with ranges using the Excel JavaScript API. For the complete list of properties and methods that the **Range** object supports, see [Range Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range).
 
 ## Work with dates using the Moment-MSDate plug-in
 
@@ -62,7 +62,7 @@ Your add-in will have to format the ranges to display the dates in a more human-
 > The `Range.copyFrom` function is currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 > If you are using TypeScript or your code editor uses TypeScript type definition files for IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
 
-Range’s `copyFrom` function replicates the copy-and-paste behavior of the Excel UI. The range object that copyFrom is called on is the destination.
+Range’s `copyFrom` function replicates the copy-and-paste behavior of the Excel UI. The range object that `copyFrom` is called on is the destination.
 The source to be copied is passed as a range or a string address representing a range. 
 The following code sample copies the data from **A1:E1** into the range starting at **G1** (which ends up pasting into **G1:K1**).
 
@@ -77,20 +77,21 @@ Excel.run(function (context) {
 
 `Range.copyFrom` has three optional parameters.
 
-```ts
+```TypeScript
 copyFrom(sourceRange: Range | string, copyType?: "All" | "Formulas" | "Values" | "Formats", skipBlanks?: boolean, transpose?: boolean): void;
 ```
 
 `copyType` specifies what data gets copied from the source to the destination.
-`“Formulas”` transfers the formulas in the source cells and preserves the relative positioning of those formulas’ ranges. Any non-formula entries are copied as-is.
-`“Values”` copies the data values and, in the case of formulas, the result of the formula.
-`“Formats”` copies the formatting of the range, including font, color, and other format settings, but no values.
-`”All”` (the default option) copies both data and formatting, preserving cells’ formulas if found.
+
+- `"Formulas"` transfers the formulas in the source cells and preserves the relative positioning of those formulas’ ranges. Any non-formula entries are copied as-is.
+- `"Values"` copies the data values and, in the case of formulas, the result of the formula.
+- `"Formats"` copies the formatting of the range, including font, color, and other format settings, but no values.
+- `"All"` (the default option) copies both data and formatting, preserving cells’ formulas if found.
 
 `skipBlanks` sets whether blank cells are copied into the destination. When true, `copyFrom` skips blank cells in the source range. 
 Skipped cells will not overwrite the existing data of their corresponding cells in the destination range. The default is false.
 
-The following code sample and images demonstrate this behavior in a simple scenario. 
+The following code sample and images demonstrate this behavior in a simple scenario.
 
 ```js
 Excel.run(function (context) {
@@ -123,14 +124,17 @@ A transposed range is flipped along the main diagonal, so rows **1**, **2**, and
 ## Remove duplicates
 
 > [!NOTE]
-> The `Range.removeDuplicates` function is currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> The Range object's `removeDuplicates` function is currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 > If you are using TypeScript or your code editor uses TypeScript type definition files for IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
 
-`Range.removeDuplicates` removes rows with duplicate entries in the specified columns. The function goes through each row in the range from top (the lowest index row in the range) to bottom (the highest valued index in the range). If a value in the specified column or columns is encountered more than once, that value's row is deleted. Subsequent rows in the range are shifted up. `removeDuplicates` does not affect the position of cells outside of the range.
+The Range object's `removeDuplicates` function removes rows with duplicate entries in the specified columns. The function goes through each row in the range from the lowest-valued index to the highest-valued index in the range (from top to bottom). A row is deleted if it has a value in the specified column or columns appeared earlier in the range. Rows in the range below the deleted row are shifted up. `removeDuplicates` does not affect the position of cells outside of the range.
 
-`Range.removeDuplicates` takes in a `number[]` representing the column indices which are checked for duplicates. This array is zero-based and relative to the range, not the worksheet. The function also takes in a boolean argument, `includesHeader` to determine if the range's top row is a header. When **true**, the top row is ignored when considering duplicates. A `RemoveDuplicatesResult` is returned upon completion of `removeDuplicates`, containing the number of rows removed and the number of unique rows remaining.
+`removeDuplicates` takes in a `number[]` representing the column indices which are checked for duplicates. This array is zero-based and relative to the range, not the worksheet. The function also takes in a boolean parameter that specifies whether the first row is a header. When **true**, the top row is ignored when considering duplicates. The `removeDuplicates` function returns a `RemoveDuplicatesResult` object that specifies the number of rows removed and the number of unique rows remaining.
 
-`Range.removeDuplicates` considers cell values, not function results. If two different functions evaluate to the same result, they are not considered duplicates. Relatedly, blank cells are checked by `removeDuplicates`. Any blank rows will be included in the `RemoveDuplicatesResult`.
+When using a range's `removeDuplicates` function, keep the following in mind:
+
+- `removeDuplicates` considers cell values, not function results. If two different functions evaluate to the same result, the cell values are not considered duplicates.
+- Empty cells are not ignored by `removeDuplicates`. The value of an empty cell is treated like any other value. This means empty rows contained within in the range will be included in the `RemoveDuplicatesResult`.
 
 The following sample shows the removal of entries with duplicate values in the first column.
 
@@ -142,8 +146,7 @@ Excel.run(async (context) => {
     var deleteResult = range.removeDuplicates([0],true);
     deleteResult.load();
 
-  return context.sync()
-    .then(function () {
+    return context.sync().then(function () {
         console.log(deleteResult.removed + " entries with duplicate names removed.");
         console.log(deleteResult.uniqueRemaining + " entries with unique names remain in the range.");
 });
