@@ -1,7 +1,7 @@
 ---
 title: Create better add-ins for Word with Office Open XML
 description: ''
-ms.date: 12/04/2017
+ms.date: 12/17/2018
 ---
 
 
