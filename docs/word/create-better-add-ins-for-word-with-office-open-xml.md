@@ -49,7 +49,7 @@ You can use the same method for inserting any Office-supported image format.
 *Figure 4. An image formatted using picture styles and effects*
 
 
-![Formatted image in Word 2013.](../images/office15-app-create-wd-app-using-ooxml-fig04.png)
+![Formatted image in Word.](../images/office15-app-create-wd-app-using-ooxml-fig04.png)
 
 
 Adding high quality formatting and effects to your images requires much less markup than you might expect.
@@ -71,39 +71,39 @@ Text effects are available in Word for text inside a text box (as shown here) or
 *Figure 7. A shape*
 
 
-![An Office 2013 drawing shape in Word 2013.](../images/office15-app-create-wd-app-using-ooxml-fig07.png)
+![A Microsoft Office drawing shape in Word.](../images/office15-app-create-wd-app-using-ooxml-fig07.png)
 
 You can insert built-in or custom drawing shapes, with or without text and formatting effects.
 
 *Figure 8. A table with direct formatting*
 
 
-![A formatted table in Word 2013.](../images/office15-app-create-wd-app-using-ooxml-fig08.png)
+![A formatted table in Word.](../images/office15-app-create-wd-app-using-ooxml-fig08.png)
 
 You can include text formatting, borders, shading, cell sizing, or any table formatting you need.
 
 *Figure 9. A table formatted using a table style*
 
 
-![A formatted table in Word 2013.](../images/office15-app-create-wd-app-using-ooxml-fig09.png)
+![A formatted table in Word.](../images/office15-app-create-wd-app-using-ooxml-fig09.png)
 
 You can use built-in or custom table styles just as easily as using a paragraph style for text.
 
 *Figure 10. A SmartArt diagram*
 
 
-![A dynamic SmartArt diagram in Word 2013.](../images/office15-app-create-wd-app-using-ooxml-fig10.png)
+![A dynamic SmartArt diagram in Word.](../images/office15-app-create-wd-app-using-ooxml-fig10.png)
 
-Office 2013 offers a wide array of SmartArt diagram layouts (and you can use Office Open XML to create your own).
+Microsoft Office offers a wide array of SmartArt diagram layouts (and you can use Office Open XML to create your own).
 
 *Figure 11. A chart*
 
 
-![A chart in Word 2013.](../images/office15-app-create-wd-app-using-ooxml-fig11.png)
+![A chart in Word.](../images/office15-app-create-wd-app-using-ooxml-fig11.png)
 
 You can insert Excel charts as live charts in Word documents, which also means you can use them in your add-in for Word.
 As you can see by the preceding examples, you can use Office Open XML coercion to insert essentially any type of content that a user can insert into their own document.
-There are two simple ways to get theOffice Open XML markup you need. Either add your rich content to an otherwise blank Word 2013 document and then save the file in Word XML Document format or use a test add-in with the [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) method to grab the markup. Both approaches provide essentially the same result.
+There are two simple ways to get theOffice Open XML markup you need. Either add your rich content to an otherwise blank Word document and then save the file in Word XML Document format or use a test add-in with the [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) method to grab the markup. Both approaches provide essentially the same result.
 
 
 > [!NOTE]
@@ -126,10 +126,10 @@ For example, say that you want to insert just a paragraph of text with direct fo
 
 
 > [!TIP]
-> You can edit Office Open XML markup in a text editor like Notepad. If you open it in Visual Studio 2015, you can use  **Edit >Advanced > Format Document** (Ctrl+K, Ctrl+D) to format the package for easier editing. Then you can collapse or expand document parts or sections of them, as shown in Figure 12, to more easily review and edit the content of the Office Open XML package. Each document part begins with a **pkg:part** tag.
+> You can edit Office Open XML markup in a text editor like Notepad. If you open it in Visual Studio, you can use  **Edit >Advanced > Format Document** (Ctrl+K, Ctrl+D) to format the package for easier editing. Then you can collapse or expand document parts or sections of them, as shown in Figure 12, to more easily review and edit the content of the Office Open XML package. Each document part begins with a **pkg:part** tag.
 
 
-*Figure 12. Collapse and expand package parts for easier editing in Visual Studio 2015*
+*Figure 12. Collapse and expand package parts for easier editing in Visual Studio*
 
 ![Office Open XML code snippet for a package part.](../images/office15-app-create-wd-app-using-ooxml-fig12.png)
 
@@ -212,7 +212,7 @@ We've edited the Office Open XML example shown here, as described in the precedi
 
 
 > [!NOTE]
-> If you add the markup shown here to an XML file along with the XML declaration tags for version and mso-application at the top of the file (shown in Figure 13), you can open it in Word as a Word document. Or, without those tags, you can still open it using  **File> Open** in Word. You'll see **Compatibility Mode** on the title bar in Word 2013, because you removed the settings that tell Word this is a 2013 document. Since you're adding this markup to an existing Word 2013 document, that won't affect your content at all.
+> If you add the markup shown here to an XML file along with the XML declaration tags for version and mso-application at the top of the file (shown in Figure 13), you can open it in Word as a Word document. Or, without those tags, you can still open it using  **File> Open** in Word. You'll see **Compatibility Mode** on the title bar in Word, because you removed the settings that tell Word this is a Word document. Since you're adding this markup to an existing Word document, that won't affect your content at all.
 
 
 ### JavaScript for using setSelectedDataAsync
@@ -322,7 +322,7 @@ Since document.xml is the primary document part where you place your content, le
 
 
 > [!TIP]
-> If you're editing your markup in Visual Studio 2015, after you delete namespaces in any part, look through all tags of that part. If you've removed a namespace that's required for your markup, you'll see a red squiggly underline on the relevant prefix for affected tags. If you remove the **xmlns:mc** namespace, you must also remove the **mc:Ignorable** attribute that precedes the namespace listings.
+> If you're editing your markup in Visual Studio, after you delete namespaces in any part, look through all tags of that part. If you've removed a namespace that's required for your markup, you'll see a red squiggly underline on the relevant prefix for affected tags. If you remove the **xmlns:mc** namespace, you must also remove the **mc:Ignorable** attribute that precedes the namespace listings.
 
 
 - Inside the opening body tag, you see a paragraph tag ( **w:p** ), which includes our sample content for this example.
@@ -338,7 +338,7 @@ Since document.xml is the primary document part where you place your content, le
 
     Notice that, because the formatting included in this sample is font formatting (that is, formatting that can be applied to as little as one character), it also appears in the properties for the individual run.
 
-- Also notice the tags for the hidden "_GoBack" bookmark (**w:bookmarkStart** and **w:bookmarkEnd** ), which appear in Word 2013 documents by default. You can always delete the start and end tags for the GoBack bookmark from your markup.
+- Also notice the tags for the hidden "_GoBack" bookmark (**w:bookmarkStart** and **w:bookmarkEnd** ), which appear in Word documents by default. You can always delete the start and end tags for the GoBack bookmark from your markup.
 
 - The last piece of the document body is the **w:sectPr** tag, or section properties. This tag includes settings such as margins and page orientation. The content you insert using **setSelectedDataAsync** will take on the active section properties in the destination document by default. So, unless your content includes a section break (in which case you'll see more than one **w:sectPr** tag), you can delete this tag.
 
@@ -354,9 +354,9 @@ Be aware that if you use the co-authoring capabilities in Word (such as the abil
 
 To turn off RSID attributes in Word for documents you create going forward, do the following: 
 
-1. In Word 2013, choose **File** and then choose **Options**.
+1. In Word, choose **File** and then choose **Options**.
 2. In the Word Options dialog box, choose **Trust Center** and then choose **Trust Center Settings**.
-3. In the Trust Center dialog box, choose **Privacy Options** and then disable the setting **Store Random Number to Improve Combine Accuracy**.
+3. In the Trust Center dialog box, choose **Privacy Options** and then disable the setting **Store random numbers to improve Combine accuracy**.
 
 To remove RSID tags from an existing document, try the following shortcut with the document open in Office Open XML:
 
@@ -383,7 +383,7 @@ If the markup for your shape or text box looks far more complex than you would e
 
 So, to support shapes and text boxes in Office Open XML Format Word documents when opened in Word 2007, shapes (including text boxes) require fallback VML markup.
 
-Typically, as you see for the shape and text box examples included in the [Word-Add-in-Load-and-write-Open-XML](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML) code sample, the fallback markup can be removed. Word 2013 automatically adds missing fallback markup to shapes when a document is saved. However, if you prefer to keep the fallback markup to ensure that you're supporting all user scenarios, there's no harm in retaining it.
+Typically, as you see for the shape and text box examples included in the [Word-Add-in-Load-and-write-Open-XML](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML) code sample, the fallback markup can be removed. Word automatically adds missing fallback markup to shapes when a document is saved. However, if you prefer to keep the fallback markup to ensure that you're supporting all user scenarios, there's no harm in retaining it.
 
 If you have grouped drawing objects included in your content, you'll see additional (and apparently repetitive) markup, but this must be retained. Portions of the markup for drawing shapes are duplicated when the object is included in a group.
 
@@ -401,14 +401,14 @@ The shape in those code samples is positioned relative to the right and bottom p
 
 ### Working with content controls
 
-Content controls are an important feature in Word 2013 that can greatly enhance the power of your add-in for Word in multiple ways, including giving you the ability to insert content at designated places in the document rather than only at the selection.
+Content controls are an important feature in Word that can greatly enhance the power of your add-in for Word in multiple ways, including giving you the ability to insert content at designated places in the document rather than only at the selection.
 
 In Word, find content controls on the Developer tab of the ribbon, as shown here in Figure 15.
 
 
 *Figure 15. The Controls group on the Developer tab in Word*
 
-![Content Controls group on the Word 2013 ribbon.](../images/office15-app-create-wd-app-using-ooxml-fig15.png)
+![Content Controls group on the Word ribbon.](../images/office15-app-create-wd-app-using-ooxml-fig15.png)
 
 Types of content controls in Word include rich text, plain text, picture, building block gallery, check box, dropdown list, combo box, date picker, and repeating section.
 
@@ -485,7 +485,7 @@ The **w:sdt** tag that you see within the document.xml body represents the conte
 
 - The unique **id** is a required property. If you bind to the control from within your add-in, the ID is the property the binding uses in the document to identify the applicable named content control.
 
-- The  **appearance** attribute is used to hide the control container, for a cleaner look. This is a new feature in Word 2013, as you see by the use of the w15 namespace. Because this property is used, the w15 namespace is retained at the start of the document.xml part.
+- The  **appearance** attribute is used to hide the control container, for a cleaner look. This feature was introduced in Word 2013, as you see by the use of the w15 namespace. Because this property is used, the w15 namespace is retained at the start of the document.xml part.
 
 - The  **showingPlcHdr** attribute is an optional setting that sets the default content you include inside the control (text in this example) as placeholder content. So, if the user clicks or taps in the control area, the entire content is selected rather than behaving like editable content in which the user can make changes.
 
@@ -677,7 +677,7 @@ So, for example, the only content we needed to retain from the styles.xml part f
 
 
 > [!NOTE]
-> A complete Word 2013 definition for the Heading 1 style has been retained in this example.
+> A complete Word definition for the Heading 1 style has been retained in this example.
 
 
 
@@ -802,7 +802,7 @@ Similar to SmartArt diagrams, charts contain several additional parts. However, 
 
     There are three files referenced in chart1.xml.rels, but only one is required. These include the binary Excel workbook data (required) and the color and style parts (colors1.xml and styles1.xml) that you can remove.
 
-Charts that you can create and edit natively in Word 2013 are Excel 2013 charts, and their data is maintained on an Excel worksheet that's embedded as binary data in your Office Open XML package. Like the binary data parts for images, this Excel binary data is required, but there's nothing to edit in this part. So you can just collapse the part in the editor to avoid having to manually scroll through it all to examine the rest of your Office Open XML package.
+Charts that you can create and edit natively in Word are Excel charts, and their data is maintained on an Excel worksheet that's embedded as binary data in your Office Open XML package. Like the binary data parts for images, this Excel binary data is required, but there's nothing to edit in this part. So you can just collapse the part in the editor to avoid having to manually scroll through it all to examine the rest of your Office Open XML package.
 
 However, similar to SmartArt, you can delete the colors and styles parts. If you've used the chart styles and color styles available in to format your chart, the chart will take on the applicable formatting automatically when it is inserted into the destination document.
 
@@ -819,7 +819,7 @@ You've already seen how to identify and edit the content in your markup. If the 
 > Remember that you can use all .rels parts in the package as a map to quickly check for document parts that you can remove.
 
 
-1. Open the flattened XML file in Visual Studio 2015 and press Ctrl+K, Ctrl+D to format the file. Then use the collapse/expand buttons on the left to collapse the parts you know you need to remove. You might also want to collapse long parts you need, but know you won't need to edit (such as the base64 binary data for an image file), making the markup faster and easier to visually scan.
+1. Open the flattened XML file in Visual Studio and press Ctrl+K, Ctrl+D to format the file. Then use the collapse/expand buttons on the left to collapse the parts you know you need to remove. You might also want to collapse long parts you need, but know you won't need to edit (such as the base64 binary data for an image file), making the markup faster and easier to visually scan.
 
 2. There are several parts of the document package that you can almost always remove when you are preparing Office Open XML markup for use in your add-in. You might want to start by removing these (and their associated relationship definitions), which will greatly reduce the package right away. These include the theme1, fontTable, settings, webSettings, thumbnail, both the core and add-in properties files, and any `taskpane` or `webExtension` parts.
 
@@ -839,7 +839,7 @@ Regardless of whether you leave it here or choose to delve further into your con
 
 
 > [!TIP]
-> If you update an Office Open XML snippet in an existing solution while developing, clear temporary Internet files before you run the solution again to update the Office Open XML used by your code. Markup that's included in your solution in XML files is cached on your computer. You can, of course, clear temporary Internet files from your default web browser. To access Internet options and delete these settings from inside Visual Studio 2015, on the  **Debug** menu, choose **Options and Settings**. Then, under  **Environment**, choose  **Web Browser** and then choose **Internet Explorer Options**.
+> If you update an Office Open XML snippet in an existing solution while developing, clear temporary Internet files before you run the solution again to update the Office Open XML used by your code. Markup that's included in your solution in XML files is cached on your computer. You can, of course, clear temporary Internet files from your default web browser. To access Internet options and delete these settings from inside Visual Studio 2017, on the  **Debug** menu, choose **Options**. Then, under  **Environment**, choose  **Web Browser** and then choose **Internet Explorer Options**.
 
 
 ## Creating an add-in for both template and stand-alone use
