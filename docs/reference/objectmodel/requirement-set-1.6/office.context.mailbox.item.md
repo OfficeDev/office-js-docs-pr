@@ -1587,7 +1587,7 @@ The `removeAttachmentAsync` method removes the attachment with the specified ide
 
 |Name| Type| Attributes| Description|
 |---|---|---|---|
-|`attachmentId`| String||The identifier of the attachment to remove. The maximum length of the string is 100 characters.|
+|`attachmentId`| String||The identifier of the attachment to remove.|
 |`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
 |`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
 |`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object. <br/>If removing the attachment fails, the `asyncResult.error` property will contain an error code with the reason for the failure.|
