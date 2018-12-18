@@ -43,7 +43,7 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
     * Choose a script type: `JavaScript`
     * What do you want to name your add-in? `stock-ticker`
 
-    ![Yo Office bash prompts for custom functions](../images/yo-office-cfs-stock-ticker-3.png)
+    ![Yo Office bash prompts for custom functions](../images/12-10-fork-cf-pic.jpg)
 
     After you complete the wizard, the generator will create the project files and install supporting Node components. The project files come from the [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) GitHub repository.
 
@@ -53,18 +53,37 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
     cd stock-ticker
     ```
 
-3. Build the project.
+3. Trust the self-signed certificate that is needed to run this project.
+
+    ```bash
+    cd certs
+    start ca.crt
+    ```
+
+    This will bring up a pop-up window. Follow the below directions to trust the self-signed certificate:
+
+    * Select **Install Certificate**.
+    
+    * Select **Local Machine** and select **Next** to continue.
+    
+    * Select **Place all certificates in the following store** and then select **Browse**.
+    
+    * Select **Trusted Root Certification Authorities** and then select **Ok**.
+    
+    * Select **Next** and then **Finish** to complete installing the self-signed certificate.
+    
+4. Build the project.
 
     ```bash
     npm run build-dev
     ```
 
-4. Start the local web server.
+5. Start the local web server.
 
     * If you'll be using Excel for Windows to test your custom functions, run the following command to start the local web server, launch Excel, and sideload the add-in:
 
         ```bash
-        npm run start-desktop
+        npm run start
         ```
 
     * If you'll be using Excel Online to test your custom functions, run the following command to start the local web server: 
