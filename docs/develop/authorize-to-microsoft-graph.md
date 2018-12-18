@@ -32,7 +32,7 @@ The following diagram shows how the process of signing in and getting access to 
 1. The Office host application sends the **bootstrap access token** to the add-in as part of the result object returned by the `getAccessTokenAsync` call.
 1. JavaScript in the add-in makes an HTTP request to a web API that is hosted at the same fully-qualified domain as the add-in, and it includes the **bootstrap access token** as authorization proof.  
 1. Server-side code validates the incoming **bootstrap access token**.
-1. Server-side code uses the “on behalf of” flow (defined at [OAuth2 Token Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02) and the [daemon or server application to web API Azure scenario](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-scenarios#daemon-or-server-application-to-web-api)) to obtain an access token for Microsoft Graph in exchange for the bootstrap access token.
+1. Server-side code uses the “on behalf of” flow (defined at [OAuth2 Token Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02) and the [daemon or server application to web API Azure scenario](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-scenarios)) to obtain an access token for Microsoft Graph in exchange for the bootstrap access token.
 1. Azure AD returns the access token to Microsoft Graph (and a refresh token, if the add-in requests *offline_access* permission) to the add-in.
 1. Server-side code caches the access token to Microsoft Graph.
 1. Server-side code makes requests to Microsoft Graph and includes the access token to Microsoft Graph.

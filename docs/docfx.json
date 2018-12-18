@@ -45,7 +45,8 @@
       "author": "o365devx",
       "ms.topic": "conceptual",
       "ms.prod": "Office 365",
-      "ms.technology": "Add-ins"
+      "ms.technology": "Add-ins",
+      "titleSuffix": "Office Add-ins"
     },
     "fileMetadata": {
       "feedback_system": {

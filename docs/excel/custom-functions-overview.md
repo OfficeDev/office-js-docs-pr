@@ -1,5 +1,5 @@
 ---
-ms.date: 11/29/2018
+ms.date: 12/14/2018
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel (Preview)
 ---
@@ -31,16 +31,16 @@ If you use the [Yo Office generator](https://github.com/OfficeDev/generator-offi
 
 | File | File format | Description |
 |------|-------------|-------------|
-| **./src/customfunctions.js**<br/>or<br/>**./src/customfunctions.ts** | JavaScript<br/>or<br/>TypeScript | Contains the code that defines custom functions. |
-| **./config/customfunctions.json** | JSON | Contains metadata that describes custom functions and enables Excel to register the custom functions and make them available to end users. |
-| **./index.html** | HTML | Provides a &lt;script&gt; reference to the JavaScript file that defines custom functions. |
+| **./src/functions/functions.js**<br/>or<br/>**./src/functions/functions.ts** | JavaScript<br/>or<br/>TypeScript | Contains the code that defines custom functions. |
+| **./src/functions/functions.json** | JSON | Contains metadata that describes custom functions and enables Excel to register the custom functions and make them available to end users. |
+| **./src/functions/functions.html** | HTML | Provides a &lt;script&gt; reference to the JavaScript file that defines custom functions. |
 | **./manifest.xml** | XML | Specifies the namespace for all custom functions within the add-in and the location of the JavaScript, JSON, and HTML files that are listed previously in this table. |
 
 The following sections provide more information about these files.
 
 ### Script file
 
-The script file (**./src/customfunctions.js** or **./src/customfunctions.ts** in the project that the Yo Office generator creates) contains the code that defines custom functions and maps the names of the custom functions to objects in the [JSON metadata file](#json-metadata-file). 
+The script file (**./src/functions/functions.js** or **./src/functions/functions.ts** in the project that the Yo Office generator creates) contains the code that defines custom functions and maps the names of the custom functions to objects in the [JSON metadata file](#json-metadata-file). 
 
 For example, the following code defines the custom functions `add` and `increment` and then specifies mapping information for both functions. The `add` function is mapped to the object in the JSON metadata file where the value of the `id` property is **ADD**, and the `increment` function is mapped to the object in the metadata file where the value of the `id` property is **INCREMENT**. See [Custom functions best practices](custom-functions-best-practices.md#mapping-function-names-to-json-metadata) for more information about mapping function names in the script file to objects in the JSON metadata file.
 
@@ -68,12 +68,12 @@ CustomFunctionMappings.INCREMENT = increment;
 
 ### JSON metadata file 
 
-The custom functions metadata file (**./config/customfunctions.json** in the project that the Yo Office generator creates) provides the information that Excel requires to register custom functions and make them available to end users. Custom functions are registered when a user runs an add-in for the first time. After that, they are available to that same user in all workbooks (i.e., not only in the workbook where the add-in initially ran.)
+The custom functions metadata file (**./src/functions/functions.json** in the project that the Yo Office generator creates) provides the information that Excel requires to register custom functions and make them available to end users. Custom functions are registered when a user runs an add-in for the first time. After that, they are available to that same user in all workbooks (i.e., not only in the workbook where the add-in initially ran.)
 
 > [!TIP]
 > Server settings on the server that hosts the JSON file must have [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel Online.
 
-The following code in **customfunctions.json** specifies the metadata for the `add` function and the `increment` function that were described previously. The table that follows this code sample provides detailed information about the individual properties within this JSON object. See [Custom functions best practices](custom-functions-best-practices.md#mapping-function-names-to-json-metadata) for more information about specifying the value of `id` and `name` properties in the JSON metadata file.
+The following code in **functions.json** specifies the metadata for the `add` function and the `increment` function that were described previously. The table that follows this code sample provides detailed information about the individual properties within this JSON object. See [Custom functions best practices](custom-functions-best-practices.md#mapping-function-names-to-json-metadata) for more information about specifying the value of `id` and `name` properties in the JSON metadata file.
 
 ```json
 {
@@ -148,35 +148,41 @@ The XML manifest file for an add-in that defines custom functions (**./manifest.
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
-    <Hosts>
-        <Host xsi:type="Workbook">
-            <AllFormFactors>
-                <ExtensionPoint xsi:type="CustomFunctions">
-                    <Script>
-                        <SourceLocation resid="JS-URL" /> <!--resid points to location of JavaScript file-->
-                    </Script>
-                    <Page>
-                        <SourceLocation resid="HTML-URL"/> <!--resid points to location of HTML file-->
-                    </Page>
-                    <Metadata>
-                        <SourceLocation resid="JSON-URL" /> <!--resid points to location of JSON file-->
-                    </Metadata>
-                    <Namespace resid="namespace" />
-                </ExtensionPoint>
-            </AllFormFactors>
-        </Host>
-    </Hosts>
-    <Resources>
-        <bt:Urls>
-            <bt:Url id="JSON-URL" DefaultValue="http://127.0.0.1:8080/customfunctions.json" /> <!--specifies the location of your JSON file-->
-            <bt:Url id="JS-URL" DefaultValue="http://127.0.0.1:8080/customfunctions.js" /> <!--specifies the location of your JavaScript file-->
-            <bt:Url id="HTML-URL" DefaultValue="http://127.0.0.1:8080/index.html" /> <!--specifies the location of your HTML file-->
-        </bt:Urls>
-        <bt:ShortStrings>
-            <bt:String id="namespace" DefaultValue="CONTOSO" /> <!--specifies the namespace that will be prepended to a function's name when it is called in Excel. Can only contain alphanumeric characters and periods.-->
-        </bt:ShortStrings>
-    </Resources>
-</VersionOverrides>
+		<Hosts>
+			<Host xsi:type="Workbook">
+				<AllFormFactors>
+					<ExtensionPoint xsi:type="CustomFunctions">
+						<Script>
+							<SourceLocation resid="Contoso.Functions.Script.Url" />
+						</Script>
+						<Page>
+							<SourceLocation resid="Contoso.Functions.Page.Url"/>
+						</Page>
+						<Metadata>
+							<SourceLocation resid="Contoso.Functions.Metadata.Url" />
+						</Metadata>
+						<Namespace resid="Contoso.Functions.Namespace" />
+					</ExtensionPoint>
+				</AllFormFactors>
+			</Host>
+		</Hosts>
+		<Resources>
+			<bt:Images>
+				<bt:Image id="Contoso.tpicon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+				<bt:Image id="Contoso.tpicon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+				<bt:Image id="Contoso.tpicon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
+			</bt:Images>
+			<bt:Urls>
+				<bt:Url id="Contoso.Functions.Script.Url" DefaultValue="https://localhost:3000/dist/functions.js" />
+				<bt:Url id="Contoso.Functions.Metadata.Url" DefaultValue="https://localhost:3000/dist/functions.json" />
+				<bt:Url id="Contoso.Functions.Page.Url" DefaultValue="https://localhost:3000/dist/functions.html" />
+				<bt:Url id="Contoso.Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
+			</bt:Urls>
+			<bt:ShortStrings>
+				<bt:String id="Contoso.Functions.Namespace" DefaultValue="CONTOSO" />
+			</bt:ShortStrings>
+		</Resources>
+	</VersionOverrides>
 ```
 
 > [!NOTE]
@@ -338,7 +344,7 @@ function refreshTemperature(thermometerID){
 
 ## Working with ranges of data
 
-Your custom function may accept a range of data as an input parameter, or it may return a range of data. In JavaScript, a range of data is represented as a 2-dimensional array.
+Your custom function may accept a range of data as an input parameter, or it may return a range of data. In JavaScript, a range of data is represented as a two-dimensional array.
 
 For example, suppose that your function returns the second highest value from a range of numbers stored in Excel. The following function accepts the parameter `values`, which is of type `Excel.CustomFunctionDimensionality.matrix`. Note that in the JSON metadata for this function, you would set the parameter's `type` property to `matrix`.
 
@@ -359,6 +365,50 @@ function secondHighest(values){
   return secondHighest;
 }
 ```
+
+## Discovering cells that invoke custom functions
+
+Custom funtions also allows you to format ranges, display cached values, and reconcile values using `caller.address`, which makes it possible to discover the cell that invoked a custom function. You might use `caller.address` in some of the following scenarios:
+
+- Formatting ranges: Use `caller.address` as the key of the cell to store information in [AsyncStorage](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `AsyncStorage`.
+- Displaying cached values: If your function is used offline, display stored cached values from `AsyncStorage` using `onCalculated`.
+- Reconciliation: Use `caller.address` to discover an origin cell to help you reconcile where processing is occurring.
+
+The information about a cell's address is exposed only if `requiresAddress` is marked as `true` in the function's JSON metadata file. The following sample gives an example of this:
+
+```JSON
+{
+   "id": "ADDTIME",
+   "name": "ADDTIME",
+   "description": "Display current date and add the amount of hours to it designated by the parameter",
+   "helpUrl": "http://www.contoso.com",
+   "result": {
+      "type": "number",
+      "dimensionality": "scalar"
+   },
+   "parameters": [
+      {
+         "name": "Additional time",
+         "description": "Amount of hours to increase current date by",
+         "type": "number",
+         "dimensionality": "scalar"
+      }
+   ],
+   "options": {
+      "requiresAddress": true
+   }
+}
+```
+
+In the script file (**./src/customfunctions.js** or **./src/customfunctions.ts**), you'll also need to add a `getAddress` function to find a cell's address. This function may take parameters, as shown in the following sample as `parameter1`. The last parameter will always be `invocationContext`, an object containing the cell's location that Excel passes down when `requiresAddress` is marked as `true` in your JSON metadata file.
+
+```js
+function getAddress(parameter1, invocationContext) {
+    return invocationContext.address;
+}
+```
+
+By default, values returned from a `getAddress` function follow the following format: `SheetName!CellNumber`. For example, if a function was called from a sheet called Expenses in cell B2, the returned value would be `Expenses!B2`.
 
 ## Handling errors
 

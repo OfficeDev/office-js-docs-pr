@@ -1,5 +1,5 @@
 ---
-ms.date: 10/17/2018
+ms.date: 12/5/2018
 description: Understand key scenarios in developing Excel custom functions that use the new JavaScript runtime.
 title: Runtime for Excel custom functions
 ---
@@ -16,7 +16,7 @@ Within a custom function, you can request external data by using an API like [Fe
 
 ### XHR example
 
-In the following code sample, the `getTemperature` function calls the `sendWebRequest` function to get the temperature of a particular area based on thermometer ID. The `sendWebRequest` function uses XHR to issue a `GET` request to an endpoint that can provide the data. 
+In the following code sample, the `getTemperature` function calls the `sendWebRequest` function to get the temperature of a particular area based on thermometer ID. The `sendWebRequest` function uses XHR to issue a `GET` request to an endpoint that can provide the data.
 
 > [!NOTE] 
 > When using fetch or XHR, a new JavaScript `Promise` is returned. Prior to September 2018, you had to specify `OfficeExtension.Promise` to use promises within the Office JavaScript API, but now you can simply use a JavaScript `Promise`.
@@ -102,7 +102,7 @@ _goGetData = async () => {
 
 Within a custom function (or within any other part of an add-in), you can use the `OfficeRuntime.displayWebDialogOptions` API to display a dialog box. This dialog API provides an alternative to the [Dialog API](../develop/dialog-api-in-office-add-ins.md) that can be used within task panes and add-in commands, but not within custom functions.
 
-### Dialog API example 
+### Dialog API example
 
 In the following code sample, the function `getTokenViaDialog` uses the Dialog API’s `displayWebDialogOptions` function to display a dialog box.
 
