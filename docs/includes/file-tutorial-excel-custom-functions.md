@@ -94,7 +94,7 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
 
 ## Try out a prebuilt custom function
 
-The custom functions project that you created by using the Yo Office generator contains some prebuilt custom functions, defined within the **src/functions/function.js** file. The **manifest.xml** file in the root directory of the project specifies that all custom functions belong to the `CONTOSO` namespace.
+The custom functions project that you created by using the Yo Office generator contains some prebuilt custom functions, defined within the **src/functions/functions.js** file. The **manifest.xml** file in the root directory of the project specifies that all custom functions belong to the `CONTOSO` namespace.
 
 Before you can use any of the prebuilt custom functions, you must register the custom functions add-in in Excel. Do so by completing steps for the platform that you'll be using in this tutorial.
 
