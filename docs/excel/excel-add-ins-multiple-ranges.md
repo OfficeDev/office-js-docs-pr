@@ -92,8 +92,7 @@ Once you have a `RangeAreas` object, you can create others using the methods on 
 > [!NOTE]
 > You cannot directly add additional ranges to a `RangeAreas` object. For example, the collection in `RangeAreas.areas` does not have an `add` method.
 
-
-> [!WARNING] 
+> [!WARNING]
 > Do not attempt to directly add or delete members of the the `RangeAreas.areas.items` array. This will lead to undesirable behavior in your code. For example, it is possible to push an additional `Range` object onto the array, but doing so will cause errors because `RangeAreas` properties and methods behave as if the new item isn't there. For example, the `areaCount` property does not include ranges pushed in this way, and the `RangeAreas.getItemAt(index)` throws an error if `index` is larger than `areasCount-1`. Similarly, deleting a `Range` object in the `RangeAreas.areas.items` array by getting a reference to it and calling its `Range.delete` method causes bugs: although the `Range` object *is* deleted, the properties and methods of the parent `RangeAreas` object behave, or try to, as if it is still in existence. For example, if your code calls `RangeAreas.calculate`, Office will try to calculate the range, but will error because the range object is gone.
 
 Setting a property on a `RangeAreas` sets the corresponding property on all the ranges in the `RangeAreas.areas` collection.
@@ -102,8 +101,8 @@ The following is an example of setting a property on multiple ranges. The functi
 
 ```js
 Excel.run(function (context) {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const rangeAreas = sheet.getRanges("F3:F5, H3:H5");
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var rangeAreas = sheet.getRanges("F3:F5, H3:H5");
     rangeAreas.format.fill.color = "pink";
 
     return context.sync();
@@ -137,9 +136,9 @@ The following is an example of using the first one. About this code, note:
 
 ```js
 Excel.run(function (context) {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const usedRange = sheet.getUsedRange();
-    const formulaRanges = usedRange.getSpecialCells("Formulas");
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var formulaRanges = usedRange.getSpecialCells("Formulas");
     formulaRanges.format.fill.color = "pink";
 
     return context.sync();
@@ -156,8 +155,8 @@ But in scenarios in which it is normal, but perhaps uncommon, for there to be no
 
 ```js
 Excel.run(function (context) {
-    const range = context.workbook.getSelectedRange();
-    const formulaRanges = range.getSpecialCellsOrNullObject("Formulas");
+    var range = context.workbook.getSelectedRange();
+    var formulaRanges = range.getSpecialCellsOrNullObject("Formulas");
     return context.sync()
         .then(function() {
             if (formulaRanges.isNullObject) {
@@ -182,9 +181,9 @@ There is an optional second parameter, of enum type `Excel.SpecialCellValueType`
 
 ```js
 Excel.run(function (context) {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const usedRange = sheet.getUsedRange();
-    const constantNumberRanges = usedRange.getSpecialCells("Constants", "Numbers");
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var constantNumberRanges = usedRange.getSpecialCells("Constants", "Numbers");
     constantNumberRanges.format.fill.color = "pink";
 
     return context.sync();
@@ -195,9 +194,9 @@ Sometimes you need to operate on more than one cell value type, such as all text
 
 ```js
 Excel.run(function (context) {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const usedRange = sheet.getUsedRange();
-    const formulaLogicalNumberRanges = usedRange.getSpecialCells("Formulas", "LogicalNumbers");
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var formulaLogicalNumberRanges = usedRange.getSpecialCells("Formulas", "LogicalNumbers");
     formulaLogicalNumberRanges.format.fill.color = "pink";
 
     return context.sync();
@@ -217,10 +216,10 @@ Reading property values of `RangeAreas` requires care, because a given property 
 
 ```js
 Excel.run(function (context) {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // The ranges are the F column and the H column.
-    const rangeAreas = sheet.getRanges("F:F, H:H");  
+    var rangeAreas = sheet.getRanges("F:F, H:H");  
     rangeAreas.format.fill.color = "pink";
 
     rangeAreas.load("format/fill/color, isEntireColumn");
@@ -244,10 +243,10 @@ For example, the following code creates a `RangeAreas` in which only one range i
 
 ```js
 Excel.run(function (context) {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const rangeAreas = sheet.getRanges("F3:F5, H:H");
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var rangeAreas = sheet.getRanges("F3:F5, H:H");
 
-    const pinkColumnRange = sheet.getRange("H:H");
+    var pinkColumnRange = sheet.getRange("H:H");
     pinkColumnRange.format.fill.color = "pink";
 
     rangeAreas.load("format/fill/color, isEntireColumn, address");
