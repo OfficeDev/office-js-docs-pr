@@ -1,7 +1,7 @@
 ---
 title: Work with ranges using the Excel JavaScript API (advanced)
 description: ''
-ms.date: 12/18/2018
+ms.date: 12/20/2018
 ---
 
 # Work with ranges using the Excel JavaScript API (advanced)
@@ -63,6 +63,96 @@ Your add-in will have to format the ranges to display the dates in a more human-
 > If you are using TypeScript or your code editor uses TypeScript type definition files for IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
 
 The `RangeAreas` object lets your add-in perform operations on multiple ranges at once. These ranges may be contiguous, but do not have to be. `RangeAreas` are further discussed in the article [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
+
+## Find special cells within a range (preview)
+
+The `Range.getSpecialCells()` and `Range.getSpecialCellsOrNullObject()` methods enable you to find at runtime the ranges that you want to operate on based on the characteristics of the cells and the type of the values of the cells. Both these methods return `RangeAreas` objects. Here are the signatures of the methods from the TypeScript data types file:
+
+```typescript
+getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
+```
+
+```typescript
+getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
+```
+
+The following is an example of using the first one. About this code, note:
+
+- It limits the part of the sheet that needs to be searched by first calling `Worksheet.getUsedRange` and calling `getSpecialCells` for only that range.
+- It passes as a parameter to `getSpecialCells` the string version of a value from the `Excel.SpecialCellType` enum. Some of the other values that could be passed instead are "Blanks" for empty cells, "Constants" for cells with literal values instead of formulas, and "SameConditionalFormat" for cells that have the same conditional formatting as the first cell in the `usedRange`. The first cell is the upper leftmost cell. For a complete list of the values in the enum, see [beta office.d.ts](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts).
+- The `getSpecialCells` method returns a `RangeAreas` object, so all of the cells with formulas will be colored pink even if they are not all contiguous.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var formulaRanges = usedRange.getSpecialCells("Formulas");
+    formulaRanges.format.fill.color = "pink";
+
+    return context.sync();
+})
+```
+
+Sometimes the range doesn't have *any* cells with the targeted characteristic. If `getSpecialCells` doesn't find any, it throws an **ItemNotFound** error. This would divert the flow of control to a `catch` block/method, if there is one. If there isn't, the error halts the function. There may be scenarios in which throwing the error is exactly what you want to happen when there are no cells with the targeted characteristic.
+
+But in scenarios in which it is normal, but perhaps uncommon, for there to be no matching cells; your code should check for this possibility and handle it gracefully without throwing an error. For these scenarios, use the `getSpecialCellsOrNullObject` method and test the `RangeAreas.isNullObject` property. The following is an example. Note about this code:
+
+- The `getSpecialCellsOrNullObject` method always returns a proxy object, so it is never `null` in the ordinary JavaScript sense. But if no matching cells are found, the `isNullObject` property of the object is set to `true`.
+- It calls `context.sync` *before* it tests the `isNullObject` property. This is a requirement with all `*OrNullObject` methods and properties, because you always have to load and sync a property in order to read it. However, it is not necessary to *explicitly* load the `isNullObject` property. It is automatically loaded by the `context.sync` even if `load` is not called on the object. For more information, see [\*OrNullObject](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods).
+- You can test this code by first selecting a range that has no formula cells and running it. Then select a range that has at least one cell with a formula and run it again.
+
+```js
+Excel.run(function (context) {
+    var range = context.workbook.getSelectedRange();
+    var formulaRanges = range.getSpecialCellsOrNullObject("Formulas");
+    return context.sync()
+        .then(function() {
+            if (formulaRanges.isNullObject) {
+                console.log("No cells have formulas");
+            }
+            else {
+                formulaRanges.format.fill.color = "pink";
+            }
+        })
+        .then(context.sync);
+})
+```
+
+For simplicity, all other examples in this article use the `getSpecialCells` method instead of  `getSpecialCellsOrNullObject`.
+
+### Narrow the target cells with cell value types
+
+There is an optional second parameter, of enum type `Excel.SpecialCellValueType`, that further narrows down the cells to target. You can use it only when you pass either "Formulas" or "Constants" to `getSpecialCells` or `getSpecialCellsOrNullObject`. The parameter specifies that you only want cells with certain types of values. There are four basic types: "Error", "Logical" (which means boolean), "Numbers", and "Text". (The enum has other values besides these four which are discussed below.) The following is an example. About this code, note:
+
+- It will only highlight cells that have a literal number value. It will not highlight cells that have a formula (even if the result is a number) or a boolean, text, or error state cells.
+- To test the code, be sure the worksheet has some cells with literal number values, some with other kinds of literal values, and some with formulas.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var constantNumberRanges = usedRange.getSpecialCells("Constants", "Numbers");
+    constantNumberRanges.format.fill.color = "pink";
+
+    return context.sync();
+})
+```
+
+Sometimes you need to operate on more than one cell value type, such as all text-valued and all boolean-valued ("Logical") cells. The `Excel.SpecialCellValueType` enum has values that let you combine types. For example, "LogicalText" will target all boolean and all text-valued cells. You can combine any two or any three of the four basic types. The names of these enum values that combine basic types are always in alphabetical order. So to combine error-valued, text-valued, and boolean-valued cells, use "ErrorLogicalText", not "LogicalErrorText" or "TextErrorLogical". The default parameter of "All" combines all four types. The following example highlights all cells with formulas that produce number or boolean values:
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var formulaLogicalNumberRanges = usedRange.getSpecialCells("Formulas", "LogicalNumbers");
+    formulaLogicalNumberRanges.format.fill.color = "pink";
+
+    return context.sync();
+})
+```
+
+> [!NOTE]
+> The `Excel.SpecialCellValueType` parameter can only be used if the `Excel.SpecialCellType` parameter is "Formulas" or "Constants".
 
 ## Copy and paste (preview)
 
@@ -173,3 +263,4 @@ Excel.run(async (context) => {
 
 - [Work with ranges using the Excel JavaScript API](excel-add-ins-ranges.md)
 - [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
+- [Work with multiple ranges simultaneously in Excel add-ins](excel.add-ins-multiple-ranges.md)
