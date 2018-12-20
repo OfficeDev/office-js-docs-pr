@@ -85,29 +85,7 @@ When running this command, you will see instructions to run `npm run start` howe
 
 The custom functions project that you created by using the Yo Office generator contains some prebuilt custom functions, defined within the **src/functions/functions.js** file. The **manifest.xml** file in the root directory of the project specifies that all custom functions belong to the `CONTOSO` namespace.
 
-Before you can use any of the prebuilt custom functions, you must register the custom functions add-in in Excel. Do so by completing steps for the platform that you'll be using in this tutorial.
-
-* If you'll be using Excel for Windows to test your custom functions:
-
-    1. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
-        ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)
-
-    2. In the list of available add-ins, find the **Developer Add-ins** section and select the **Excel Custom Functions** add-in to register it.
-        ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/excel-cf-register-add-in-2.png)
-    [VERIFY THAT THIS EXISTS STILL IN EITHER THE CC OR THE ROLLBACK]
-
-* If you'll be using Excel Online to test your custom functions: 
-
-    1. In Excel Online, choose the **Insert** tab and then choose **Add-ins**.
-        ![Insert ribbon in Excel Online with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
-
-    2. Choose **Manage My Add-ins** and select **Upload My Add-in**. 
-
-    3. Choose **Browse...** and navigate to the root directory of the project that the Yo Office generator created. 
-
-    4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
-
-At this point, the prebuilt custom functions in your project are loaded and available within Excel. Try out the `ADD` custom function by completing the following steps in Excel:
+In your Excel workbook, try out the `ADD` custom function by completing the following steps in Excel:
 
 1. Within a cell, type **=CONTOSO**. Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.
 
