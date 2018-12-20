@@ -214,6 +214,10 @@ function processMessage(arg) {
 }
 ```
 
+> [!NOTE]
+> - The `showNotification` implementation is not shown in the sample code provided by this article. 
+> For an example of how you might implement this function within your add-in, see the [~/SimpleDialogSampleWeb/Taskpane.js](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example/blob/master/SimpleDialogSampleWeb/Taskpane.js) file within the [Office Add-in Dialog API Example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example) GitHub repository.
+
 ### Closing the dialog box
 
 You can implement a button in the dialog box that will close it. To do this, the click event handler for the button should use `messageParent` to tell the host page that the button has been clicked. The following is an example:
