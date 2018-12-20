@@ -20,7 +20,7 @@ Every Office document theme defines 12 colors. Ten of these colors are available
 
 ![Color palette](../images/office15-app-color-palette.png)
 
-To view or customize the full set of 12 theme colors in PowerPoint, in the  **Variants** group on the **Design** tab, click the **More** drop-down - then choose **Colors** > **Customize Colors** to display the **Create New Theme Colors** dialog box.
+To view or customize the full set of 12 theme colors in PowerPoint, in the  **Variants** group on the **Design** tab, click the **More** drop-down - then select **Colors** > **Customize Colors** to display the **Create New Theme Colors** dialog box.
 
 ![Create new theme colors dialog box](../images/office15-app-create-new-theme-colors.png)
 
@@ -32,7 +32,7 @@ Every Office document theme also defines two fonts -- one for headings and one f
 
 ![The font picker](../images/office15-app-font-picker.png)
 
-To view or customize theme fonts in PowerPoint, in the  **Variants** group on the **Design** tab, click the **More** drop-down - then choose **Fonts** > **Customize Fonts** to display the **Create New Theme Fonts** dialog box.
+To view or customize theme fonts in PowerPoint, in the  **Variants** group on the **Design** tab, click the **More** drop-down - then select **Fonts** > **Customize Fonts** to display the **Create New Theme Fonts** dialog box.
 
 ![Create new theme fonts dialog box](../images/office15-app-create-new-theme-fonts.png)
 
