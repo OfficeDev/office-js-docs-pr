@@ -69,7 +69,7 @@ In this tutorial, you will:
 
 When running this command, you will see instructions to run `npm run start` however, run the below command instead: 
          ```
-        npm run start
+         npm run start-desktop
         ```
         After running this command, your command prompt will show details about what has been done, another npm window will open showing the details of the build, and Excel will start with your add-in loaded. If you add-in does not load, check that you have completed step 3 properly.  
 
