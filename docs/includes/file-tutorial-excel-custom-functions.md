@@ -31,7 +31,7 @@ In this tutorial, you will:
 
 ## Create a custom functions project
 
-You’ll begin this tutorial by using the Yo Office generator to create the files that you need for your custom functions project. If you have previously installed yo office, make sure to update your package to pull the latest from npm. You can do this by running `npm update generator=office`.
+ You’ll begin this tutorial by using the Yo Office generator to create the files that you need for your custom functions project. If you have previously installed yo office, make sure to update your package to pull the latest from npm. You can do this by running `npm install -g yo generator-office`.
 
 1. Run the following command and then answer the prompts as follows.
 
