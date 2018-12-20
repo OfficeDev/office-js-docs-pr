@@ -79,7 +79,7 @@ When running this command, you will see instructions to run `npm run start` howe
         npm run start-web
         ```
 
-        After running this command [TBD I NEED TO TEST IN EITHER CC OR ROLLBACK].
+         After running this command, another window will open showing you the details of the build. To use your functions, open a new workbook in Office Online. 
 
 ## Try out a prebuilt custom function
 
