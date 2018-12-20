@@ -173,6 +173,6 @@ Excel.run(function (context) {
 
 ## See also
 
-- [Fundamental programming concepts with the Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview)
+- [Fundamental programming concepts with the Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md)
 - [Work with ranges using the Excel JavaScript API (fundamental)](excel-add-ins-ranges.md)
 - [Work with ranges using the Excel JavaScript API (advanced)](excel-add-ins-ranges-advanced.md)

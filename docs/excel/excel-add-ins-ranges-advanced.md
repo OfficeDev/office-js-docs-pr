@@ -263,4 +263,4 @@ Excel.run(async (context) => {
 
 - [Work with ranges using the Excel JavaScript API](excel-add-ins-ranges.md)
 - [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
-- [Work with multiple ranges simultaneously in Excel add-ins](excel.add-ins-multiple-ranges.md)
+- [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md)
