@@ -215,8 +215,7 @@ function processMessage(arg) {
 ```
 
 > [!NOTE]
-> - The `showNotification` implementation is not shown in the sample code provided by this article. 
-> For an example of how you might implement this function within your add-in, see the [~/SimpleDialogSampleWeb/Taskpane.js](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example/blob/master/SimpleDialogSampleWeb/Taskpane.js) file within the [Office Add-in Dialog API Example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example) GitHub repository.
+> The `showNotification` implementation is not shown in the sample code provided by this article. For an example of how you might implement this function within your add-in, see [Office Add-in Dialog API Example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).
 
 ### Closing the dialog box
 
