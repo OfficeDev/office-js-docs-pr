@@ -31,7 +31,7 @@ In this tutorial, you will:
 
 ## Create a custom functions project
 
-You’ll begin this tutorial by using the Yo Office generator to create the files that you need for your custom functions project.
+You’ll begin this tutorial by using the Yo Office generator to create the files that you need for your custom functions project. If you have previously installed yo office, make sure to update your package to pull the latest from npm. You can do this by running `npm update generator=office`.
 
 1. Run the following command and then answer the prompts as follows.
 
@@ -49,48 +49,36 @@ You’ll begin this tutorial by using the Yo Office generator to create the file
 
 2. Navigate to the project folder.
 
-    ```bash
+    ```
     cd stock-ticker
     ```
 
-3. Trust the self-signed certificate that is needed to run this project.
+3. Trust the self-signed certificate that is needed to run this project. For detailed instructions for either Windows or Mac, see [Adding Self Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).  
 
-    ```bash
-    cd certs
-    start ca.crt
-    ```
-
-    This will bring up a pop-up window. Follow the below directions to trust the self-signed certificate:
-
-    * Select **Install Certificate**.
-    
-    * Select **Local Machine** and select **Next** to continue.
-    
-    * Select **Place all certificates in the following store** and then select **Browse**.
-    
-    * Select **Trusted Root Certification Authorities** and then select **Ok**.
-    
-    * Select **Next** and then **Finish** to complete installing the self-signed certificate.
-    
 4. Build the project.
 
-    ```bash
+    ```
     npm run build-dev
     ```
+    
+    After running this, you will see a readout in your command prompt about the build process. Note that you will be using this command later to re-build whenever you make changes to your functions files.
 
-5. Start the local web server.
+5. Start the local web server, which runs in Node.js. 
 
     * If you'll be using Excel for Windows to test your custom functions, run the following command to start the local web server, launch Excel, and sideload the add-in:
 
-        ```bash
+        ```
         npm run start
         ```
+        After running this command, your command prompt will show details about what has been done, another npm window will open showing the details of the build, and Excel will start with your add-in loaded. If you add-in does not load, check that you have completed step 3 properly.  
 
     * If you'll be using Excel Online to test your custom functions, run the following command to start the local web server: 
 
-        ```bash
+        ```
         npm run start-web
         ```
+
+        After running this command [TBD I NEED TO TEST IN EITHER CC OR ROLLBACK].
 
 ## Try out a prebuilt custom function
 
@@ -105,6 +93,7 @@ Before you can use any of the prebuilt custom functions, you must register the c
 
     2. In the list of available add-ins, find the **Developer Add-ins** section and select the **Excel Custom Functions** add-in to register it.
         ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/excel-cf-register-add-in-2.png)
+    [VERIFY THAT THIS EXISTS STILL IN EITHER THE CC OR THE ROLLBACK]
 
 * If you'll be using Excel Online to test your custom functions: 
 
@@ -129,11 +118,11 @@ The `ADD` custom function computes the sum of the two numbers that you specify a
 
 What if you needed a function that could request the price of a stock from an API and display the result in the cell of a worksheet? Custom functions are designed so that you can easily request data from the web asynchronously.
 
-Complete the following steps to create a custom function named `stockPrice` that accepts a stock ticker (e.g., **MSFT**) and returns the price of that stock. This custom function uses the IEX Trading API, which is free and does not require authentication.
+Complete the following steps to create a custom function named `stockPrice` that accepts a stock ticker symbol (e.g., **MSFT**) and returns the price of that stock. This custom function uses the IEX Trading API, which is free and does not require authentication.
 
 1. In the **stock-ticker** project that the Yo Office generator created, find the file **src/functions/functions.js** and open it in your code editor.
 
-2. In **customfunctions.js**, locate the `increment` function and add the following code immediately after that function.
+2. In **functions.js**, locate the `increment` function and add the following code immediately after that function.
 
     ```js
     function stockPrice(ticker) {
@@ -150,13 +139,13 @@ Complete the following steps to create a custom function named `stockPrice` that
         //    will be bubbled up to Excel to indicate an error.
     }
 
-3. In **customfunctions.js**, locate the line`CustomFunctionMappings.LOG = logMessage;`, add the following line of code immediately after that line, and save the file.
+3. In **functions.js**, locate the line`CustomFunctionMappings.LOG = logMessage;`, add the following line of code immediately after that line, and save the file.
 
     ```js
     CustomFunctionMappings.STOCKPRICE = stockPrice;
     ```
     
-4. Before Excel can make this new function available to end-users, you must specify metadata that describes this function. In the **stock-ticker** project that the Yo Office generator created, find the file **src/functions/functions.json** and open it in your code editor. Add the following object to the `functions` array within the **src/functions/functions.json** file and save the file.
+4. Before Excel can make this new function available, you must specify metadata to describe the function to Excel. Open the **src/functions/functions.json** file. Add the following JSON object to the 'functions' array and save the file.
 
 
     This JSON describes the `stockPrice` function.
@@ -182,7 +171,7 @@ Complete the following steps to create a custom function named `stockPrice` that
     }
     ```
 
-5. You must reregister the add-in in Excel in order for the new function to be available to end-users. Complete the following steps for the platform that you're using in this tutorial.
+5. You must re-register the add-in in Excel in order for the new function to be available to end-users. Complete the following steps for the platform that you're using in this tutorial.
 
     * If you're using Excel for Windows:
 
@@ -204,6 +193,7 @@ Complete the following steps to create a custom function named `stockPrice` that
         3. Choose **Browse...** and navigate to the root directory of the project that the Yo Office generator created. 
 
         4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
+1. [ADD A STEP ABOUT RE_BUILDING]
 
 5. Now, let's try out the new function. In cell **B1**, type the text `=CONTOSO.STOCKPRICE("MSFT")` and press enter. You should see that the result in cell **B1** is the current stock price for one share of Microsoft stock.
 
@@ -252,7 +242,7 @@ Complete the following steps to create a custom function named `stockPriceStream
     CustomFunctionMappings.STOCKPRICESTREAM = stockPriceStream;
     ```
 
-2. Before Excel can make this new function available to end-users, you must specify metadata that describes this function. In the **stock-ticker** project that the Yo Office generator created, add the following object to the `functions` array within the **src/functions/functions.json** file and save the file.
+2. Before Excel can make this new function available to end-users, specify metadata that describes this function. In the **stock-ticker** project that the Yo Office generator created, add the following object to the `functions` array within the **src/functions/functions.json** file and save the file.
 
     This JSON describes the `stockPriceStream` function. For any streaming function, the `stream` property and the `cancelable` property must be set to `true` within the `options` object, as shown in this code sample.
 
