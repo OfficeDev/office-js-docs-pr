@@ -67,7 +67,8 @@ In this tutorial, you will:
 
     * If you'll be using Excel for Windows to test your custom functions, run the following command to start the local web server, launch Excel, and sideload the add-in:
 
-        ```
+When running this command, you will see instructions to run `npm run start` however, run the below command instead: 
+         ```
         npm run start
         ```
         After running this command, your command prompt will show details about what has been done, another npm window will open showing the details of the build, and Excel will start with your add-in loaded. If you add-in does not load, check that you have completed step 3 properly.  
