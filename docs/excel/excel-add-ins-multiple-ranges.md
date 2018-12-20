@@ -116,7 +116,7 @@ This example applies to scenarios in which you can hard code the range addresses
 
 ### Get special cells from a RangeAreas object
 
-The `RangeAreas` object itself has `getSpecialCells` and `getSpecialCellsOrNullObject` methods which work analogously to the `Range` object's methods of the same names. These methods return all the targeted cells from all of the ranges in the `RangeAreas.areas` collection. See the [Find special cells within a range](excel-add-ins-ranges-advanced.md#find-special-cells-within-a-range) section for more details on special cells.
+The `RangeAreas` object itself has `getSpecialCells` and `getSpecialCellsOrNullObject` methods which work analogously to the `Range` object's methods of the same names. These methods return all the targeted cells from all of the ranges in the `RangeAreas.areas` collection. See the [Find special cells within a range](excel-add-ins-ranges-advanced.md#find-special-cells-within-a-range-preview) section for more details on special cells.
 
 There is one small difference in the behavior of the `getSpecialCells` methods when called on a `RangeAreas` object instead of a `Range` object: when you pass "SameConditionalFormat" as the first parameter, the method returns all cells that have the same conditional formatting as the upper leftmost cell *in the first range in the `RangeAreas.areas` collection*. The same point applies to "SameDataValidation": when passed to `Range.getSpecialCells`, it returns all cells that have the same data validation rule as the upper leftmost cell *in the range*. But when it is passed to `RangeAreas.getSpecialCells`, it returns all cells that have the same data validation rule as the upper leftmost cell *in the first range in the `RangeAreas.areas` collection*.
 
@@ -149,7 +149,7 @@ Things get more complicated when consistency isn't possible. The behavior of `Ra
 - Non-boolean properties, with the exception of the `address` property, return `null` unless the corresponding property on all the member ranges has the same value.
 - The `address` property returns a comma-delimited string of the addresses of the member ranges.
 
-For example, the following code creates a `RangeAreas` in which only one range is an entire column and only one is filled with pink. The console will show `null` for the fill color, `false` for the `isEntireRow` property, and "Sheet1!F3:F5, Sheet1!H:H" (assuming the sheet name is "Sheet1") for the `address` property. 
+For example, the following code creates a `RangeAreas` in which only one range is an entire column and only one is filled with pink. The console will show `null` for the fill color, `false` for the `isEntireRow` property, and "Sheet1!F3:F5, Sheet1!H:H" (assuming the sheet name is "Sheet1") for the `address` property.
 
 ```js
 Excel.run(function (context) {
