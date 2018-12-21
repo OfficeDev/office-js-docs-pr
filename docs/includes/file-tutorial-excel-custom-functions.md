@@ -125,10 +125,10 @@ Complete the following steps to create a custom function named `stockPrice` that
     ```
     
 4. Before Excel can make this new function available, you must specify metadata to describe the function to Excel. Open the **config/customfunctions.json** file. Add the following JSON object to the 'functions' array and save the file.
-
-
+    
+    
     This JSON describes the `stockPrice` function.
-
+    
     ```json
     {
         "id": "STOCKPRICE",
