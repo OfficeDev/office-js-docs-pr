@@ -34,7 +34,7 @@ In this tutorial, you will:
 
 ## Create a custom functions project
 
- to start, you'll use the Yeoman generator to create the custom functions project. This will set up your project with the correct folder structure, source files, and dependencies to begin coding your custom functions.
+ To start, you'll use the Yeoman generator to create the custom functions project. This will set up your project with the correct folder structure, source files, and dependencies to begin coding your custom functions.
 
 1. Run the following command and then answer the prompts as follows.
 
@@ -71,7 +71,10 @@ In this tutorial, you will:
         ```
          npm run start
         ```
-        After running this command, your command prompt will show details about what has been done, another npm window will open showing the details of the build, and Excel will start with your add-in loaded. If you add-in does not load, check that you have completed step 3 properly.  
+        After running this command, your command prompt will show details about what has been done, another npm window will open showing the details of the build, and Excel will start with your add-in loaded. If you add-in does not load, check that you have completed step 3 properly.
+
+        > [!NOTE]
+        > In the 32 bit version of the Office 365 December Insiders Version 1901 (Build 11128.20000), custom functions may not work properly. For a workaround, see the known issues and workaround section in the [Custom functions in Excel readme](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/README.md)
 
     * If you'll be using Excel Online to test your custom functions, run the following command to start the local web server: 
 
@@ -118,7 +121,7 @@ Complete the following steps to create a custom function named `stockPrice` that
         //    will be bubbled up to Excel to indicate an error.
     }
 
-3. In **customfunctions.js**, locate the line`CustomFunctionMappings.LOG = logMessage;`, add the following line of code immediately after that line, and save the file.
+3. In **customfunctions.js**, locate the line`CustomFunctionMappings.INCREMENT = increment;`, add the following line of code immediately after that line, and save the file.
 
     ```js
     CustomFunctionMappings.STOCKPRICE = stockPrice;
