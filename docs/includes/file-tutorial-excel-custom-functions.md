@@ -17,13 +17,16 @@ In this tutorial, you will:
 
 * [Node.js](https://nodejs.org/en/) (version 8.0.0 or later)
 
-* [Git Bash](https://git-scm.com/downloads) (or another Git client)
+* [Git Bash](https://git-scm.com/downloads) or (or another Git client)
 
-* The latest version of [Yeoman](https://yeoman.io/) and the [Yo Office generator](https://www.npmjs.com/package/generator-office). To install these tools globally, run the following command via the command prompt:
+* The latest version of [Yeoman](https://yeoman.io/) and the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office). To install these tools globally, run the following command via the command prompt:
 
-    ```bash
+    ```
     npm install -g yo generator-office
     ```
+
+    > [!NOTE]
+    > Even if you have previously installed the Yeoman generator, we recommend updating your package to the latest version from npm.
 
 * Excel for Windows (version 1810 or later) or Excel Online
 
@@ -31,11 +34,11 @@ In this tutorial, you will:
 
 ## Create a custom functions project
 
- You’ll begin this tutorial by using the Yo Office generator to create the files that you need for your custom functions project. If you have previously installed yo office, make sure to update your package to pull the latest from npm. You can do this by running `npm install -g yo generator-office`.
+ to start, you'll use the Yeoman generator to createg the custom functions project. This will set up your project with the correct folder structure, source files, and dependencies to begin coding your custom functions.
 
 1. Run the following command and then answer the prompts as follows.
 
-    ```bash
+    ```
     yo office
     ```
 
@@ -43,11 +46,11 @@ In this tutorial, you will:
     * Choose a script type: `JavaScript`
     * What do you want to name your add-in? `stock-ticker`
 
-    ![Yo Office bash prompts for custom functions](../images/12-10-fork-cf-pic.jpg)
+    ![Yeoman generator for Office Add-ins prompts for custom functions](../images/12-10-fork-cf-pic.jpg)
 
-    After you complete the wizard, the generator will create the project files and install supporting Node components. The project files come from the [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) GitHub repository.
+    The Yeoman generator will create the project files and install supporting Node components. The project files come from the [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) GitHub repository.
 
-2. Navigate to the project folder.
+2. Go to the project folder.
 
     ```
     cd stock-ticker
@@ -58,16 +61,14 @@ In this tutorial, you will:
 4. Build the project.
 
     ```
-    npm run build-dev
+    npm run build
     ```
-    
-    After running this, you will see a readout in your command prompt about the build process. Note that you will be using this command later to re-build whenever you make changes to your functions files.
 
-5. Start the local web server, which runs in Node.js. 
+5. Start the local web server, which runs in Node.js.
 
     * If you'll be using Excel for Windows to test your custom functions, run the following command to start the local web server, launch Excel, and sideload the add-in:
 
-When running this command, you will see instructions to run `npm run start` however, run the below command instead: 
+    When running this command, you will see instructions to run `npm run start` however, run the below command instead: 
          ```
          npm run start-desktop
         ```
@@ -83,7 +84,7 @@ When running this command, you will see instructions to run `npm run start` howe
 
 ## Try out a prebuilt custom function
 
-The custom functions project that you created by using the Yo Office generator contains some prebuilt custom functions, defined within the **src/functions/functions.js** file. The **manifest.xml** file in the root directory of the project specifies that all custom functions belong to the `CONTOSO` namespace.
+The custom functions project that you created by using the Yeoman generator contains some prebuilt custom functions, defined within the **src/functions/functions.js** file. The **manifest.xml** file in the root directory of the project specifies that all custom functions belong to the `CONTOSO` namespace.
 
 In your Excel workbook, try out the `ADD` custom function by completing the following steps in Excel:
 
@@ -99,7 +100,7 @@ What if you needed a function that could request the price of a stock from an AP
 
 Complete the following steps to create a custom function named `stockPrice` that accepts a stock ticker symbol (e.g., **MSFT**) and returns the price of that stock. This custom function uses the IEX Trading API, which is free and does not require authentication.
 
-1. In the **stock-ticker** project that the Yo Office generator created, find the file **src/functions/functions.js** and open it in your code editor.
+1. In the **stock-ticker** project that the Yeoman generator created, find the file **src/functions/functions.js** and open it in your code editor.
 
 2. In **functions.js**, locate the `increment` function and add the following code immediately after that function.
 
@@ -169,7 +170,7 @@ Complete the following steps to create a custom function named `stockPrice` that
 
         2. Choose **Manage My Add-ins** and select **Upload My Add-in**. 
 
-        3. Choose **Browse...** and navigate to the root directory of the project that the Yo Office generator created. 
+        3. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created. 
 
         4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 1. [ADD A STEP ABOUT RE_BUILDING]
@@ -182,7 +183,7 @@ The `stockPrice` function that you just created returns the price of a stock at 
 
 Complete the following steps to create a custom function named `stockPriceStream` that requests the price of the specified stock every 1000 milliseconds (provided that the previous request has completed). While the initial request is in-progress, you may see the placeholder value **#GETTING_DATA** the cell where the function is being called. When a value is returned by the function, **#GETTING_DATA** will be replaced by that value in the cell.
 
-1. In the **stock-ticker** project that the Yo Office generator created, add the following code to **src/functions/functions.js** and save the file.
+1. In the **stock-ticker** project that the Yeoman generator created, add the following code to **src/functions/functions.js** and save the file.
 
     ```js
     function stockPriceStream(ticker, handler) {
@@ -221,7 +222,7 @@ Complete the following steps to create a custom function named `stockPriceStream
     CustomFunctionMappings.STOCKPRICESTREAM = stockPriceStream;
     ```
 
-2. Before Excel can make this new function available to end-users, specify metadata that describes this function. In the **stock-ticker** project that the Yo Office generator created, add the following object to the `functions` array within the **src/functions/functions.json** file and save the file.
+2. Before Excel can make this new function available to end-users, specify metadata that describes this function. In the **stock-ticker** project that the Yeoman generator created, add the following object to the `functions` array within the **src/functions/functions.json** file and save the file.
 
     This JSON describes the `stockPriceStream` function. For any streaming function, the `stream` property and the `cancelable` property must be set to `true` within the `options` object, as shown in this code sample.
 
@@ -269,7 +270,7 @@ Complete the following steps to create a custom function named `stockPriceStream
 
         2. Choose **Manage My Add-ins** and select **Upload My Add-in**. 
 
-        3. Choose **Browse...** and navigate to the root directory of the project that the Yo Office generator created. 
+        3. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created. 
 
         4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
