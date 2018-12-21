@@ -1,3 +1,9 @@
+---
+title: Page element in the manifest file
+description: ''
+ms.date: 10/09/2018
+---
+
 # Page element
 
 Defines HTML page settings used by a custom function in Excel.

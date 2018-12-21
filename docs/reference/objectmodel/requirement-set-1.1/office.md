@@ -1,4 +1,8 @@
- 
+---
+title: Office namespace - requirement set 1.1
+description: ''
+ms.date: 11/08/2018
+---
 
 # Office
 

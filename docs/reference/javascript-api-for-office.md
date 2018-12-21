@@ -1,3 +1,9 @@
+---
+title: JavaScript API for Office
+description: ''
+ms.date: 10/09/2018
+---
+
 # JavaScript API for Office
 
 The JavaScript API for Office enables you to create web applications that interact with the object models in Office host applications. Your application will reference the office.js library, which is a script loader. The office.js library loads the object models that are applicable to the Office application that is running the add-in. You can use the following JavaScript object models:

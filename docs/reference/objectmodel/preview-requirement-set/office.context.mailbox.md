@@ -1,7 +1,12 @@
+---
+title: Office.context.mailbox - preview requirement set
+description: ''
+ms.date: 10/31/2018
+---
 
 # mailbox
 
-### [Office](Office.md)[.context](Office.context.md). mailbox
+### [Office](Office.md)[.context](Office.context.md).mailbox
 
 Provides access to the Outlook add-in object model for Microsoft Outlook and Microsoft Outlook on the web.
 

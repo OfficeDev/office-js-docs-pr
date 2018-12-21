@@ -1,3 +1,9 @@
+---
+title: Namespace element in the manifest file
+description: ''
+ms.date: 10/09/2018
+---
+
 # Namespace element
 
 Defines the namespace used by a custom function in Excel.

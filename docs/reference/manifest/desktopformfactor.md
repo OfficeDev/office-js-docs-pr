@@ -1,3 +1,9 @@
+---
+title: DesktopFormFactor element in the manifest file
+description: ''
+ms.date: 10/09/2018
+---
+
 # DesktopFormFactor element
 
 Specifies the settings for an add-in for the desktop form factor. The desktop form factor includes Office for Windows, Office for Mac, and Office Online. It contains all the add-in information for the desktop form factor except for the  **Resources** node.

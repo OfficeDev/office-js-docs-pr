@@ -1,3 +1,9 @@
+---
+title: DefaultLocale element in the manifest file
+description: ''
+ms.date: 10/09/2018
+---
+
 # DefaultLocale element
 
 Specifies the default culture name of the locale used by strings in your add-in.

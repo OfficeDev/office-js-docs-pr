@@ -1,3 +1,9 @@
+---
+title: AppDomain element in the manifest file
+description: ''
+ms.date: 12/13/2018
+---
+
 # AppDomain element
 
 Specifies an additional domain that will be used to load pages in the add-in window.

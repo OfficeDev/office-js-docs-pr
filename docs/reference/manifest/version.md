@@ -1,3 +1,9 @@
+---
+title: Version element in the manifest file
+description: ''
+ms.date: 10/09/2018
+---
+
 # Version element
 
 Specifies the version of your Office Add-in.

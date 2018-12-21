@@ -1,3 +1,9 @@
+---
+title: Apply conditional formatting to ranges with the Excel JavaScript API
+description: ''
+ms.date: 10/22/2018
+---
+
 # Apply conditional formatting to Excel ranges
 
 The Excel JavaScript Library provides APIs to apply conditional formatting to data ranges in your worksheets. This functionality makes large sets of data easy to visually parse. The formatting also dynamically updates based on changes within the range. 
