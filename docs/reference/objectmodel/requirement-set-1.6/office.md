@@ -1,5 +1,5 @@
 ---
-title: Office namespace
+title: Office namespace - requirement set 1.6
 description: ''
 ms.date: 11/08/2018
 ---

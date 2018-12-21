@@ -1,5 +1,5 @@
 ---
-title: Office namespace
+title: Office namespace - preview requirement set
 description: ''
 ms.date: 11/08/2018
 ---

@@ -1,5 +1,5 @@
 ---
-title: Office.context.mailbox.userProfile
+title: Office.context.mailbox.userProfile - preview requirement set
 description: ''
 ms.date: 10/31/2018
 ---

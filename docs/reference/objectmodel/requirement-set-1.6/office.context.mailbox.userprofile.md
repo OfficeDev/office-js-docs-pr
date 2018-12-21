@@ -1,5 +1,5 @@
 ---
-title: Office.context.mailbox.userProfile
+title: Office.context.mailbox.userProfile - requirement set 1.6
 description: ''
 ms.date: 10/31/2018
 ---
