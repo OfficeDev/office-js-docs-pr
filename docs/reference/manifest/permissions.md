@@ -1,3 +1,9 @@
+---
+title: Permissions element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # Permissions element
 
 Specifies the level of API access for your Office Add-in; you should request permissions based on the principle of least privilege.

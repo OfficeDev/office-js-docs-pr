@@ -1,3 +1,9 @@
+---
+title: Event element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # Event element
 
 Defines an event handler in an add-in.

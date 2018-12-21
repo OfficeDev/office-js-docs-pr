@@ -1,3 +1,9 @@
+---
+title: Rule element - Office Add-ins manifest
+description: ''
+ms.date: 11/30/2018
+---
+
 # Rule element
 
 Specifies the activation rule(s) that should be evaluated for this contextual mail add-in.

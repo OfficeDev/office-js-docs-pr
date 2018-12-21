@@ -1,3 +1,9 @@
+---
+title: ProviderName element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # ProviderName element
 
 Specifies the name of the individual or company that developed this Office Add-in as a string of no more than 125 characters.

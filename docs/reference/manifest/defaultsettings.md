@@ -1,3 +1,9 @@
+---
+title: DefaultSettings element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # DefaultSettings element
 
 Specifies the default source location and other default settings for your content or task pane add-in.

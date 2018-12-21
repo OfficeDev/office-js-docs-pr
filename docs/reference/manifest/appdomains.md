@@ -1,3 +1,9 @@
+---
+title: AppDomains element - Office Add-ins manifest
+description: ''
+ms.date: 12/13/2018
+---
+
 # AppDomains element
 
 Lists any domains in addition to the domain specified in the SourceLocation element that your Office Add-in will use to load pages. For each additional domain, specify an AppDomain element.

@@ -1,3 +1,9 @@
+---
+title: Host element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # Host element
 
 Specifies an individual Office application type where the add-in should activate.

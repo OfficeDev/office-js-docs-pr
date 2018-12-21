@@ -1,3 +1,9 @@
+---
+title: SourceLocation element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # SourceLocation element
 
 Defines the location of a resource needed by the Script or Page elements used by custom functions in Excel.

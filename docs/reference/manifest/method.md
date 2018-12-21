@@ -1,3 +1,9 @@
+---
+title: Method element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # Method element
 
 Specifies an individual method from the JavaScript API for Office that your Office Add-in requires in order to activate.

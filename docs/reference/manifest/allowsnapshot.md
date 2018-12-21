@@ -1,3 +1,9 @@
+---
+title: AllowSnapshot element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # AllowSnapshot element
 
 Specifies whether a snapshot image of your content add-in is saved with the host document.

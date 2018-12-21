@@ -1,3 +1,9 @@
+---
+title: Page element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # Page element
 
 Defines HTML page settings used by a custom function in Excel.

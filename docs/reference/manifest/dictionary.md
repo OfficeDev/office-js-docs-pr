@@ -1,3 +1,9 @@
+---
+title: Dictionary element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # Dictionary element
 Defines settings for a task pane add-in that implements additional dictionary support.
 

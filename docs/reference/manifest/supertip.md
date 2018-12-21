@@ -1,3 +1,9 @@
+---
+title: Supertip element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # Supertip
 
 Defines a rich tooltip (both Title and Description). It is used by both [Button](control.md#button-control) or [Menu](control.md#menu-dropdown-button-controls)  controls.

@@ -1,3 +1,9 @@
+---
+title: Override element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # Override element
 
 Provides a way to specify the value of a setting for an additional locale.

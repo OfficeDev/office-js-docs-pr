@@ -1,3 +1,9 @@
+---
+title: PhoneSettings element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # PhoneSettings element
 
 Specifies source location and control settings that apply when your mail add-in is used on a phone.

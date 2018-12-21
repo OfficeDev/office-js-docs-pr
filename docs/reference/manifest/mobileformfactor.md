@@ -1,3 +1,9 @@
+---
+title: MobileFormFactor element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # MobileFormFactor element
 
 Specifies the settings for an add-in for the mobile form factor. It contains all the add-in information for the mobile form factor except for the **Resources** node.

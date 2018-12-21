@@ -1,3 +1,9 @@
+---
+title: Icon element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # Icon element
 
 Defines **Image** elements for [Button](control.md#button-control) or [Menu](control.md#menu-dropdown-button-controls) controls.

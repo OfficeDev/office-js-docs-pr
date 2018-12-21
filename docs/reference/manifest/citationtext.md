@@ -1,3 +1,9 @@
+---
+title: CitationText element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # CitationText element
 
 Specifies the citation boilerplate text for this dictionary.

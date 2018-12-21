@@ -1,3 +1,9 @@
+---
+title: DefaultLocale element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # DefaultLocale element
 
 Specifies the default culture name of the locale used by strings in your add-in.

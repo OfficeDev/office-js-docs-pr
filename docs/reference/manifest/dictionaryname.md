@@ -1,3 +1,9 @@
+---
+title: DictionaryName element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # DictionaryName element
 
 Specifies the name of this dictionary.

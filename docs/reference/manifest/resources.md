@@ -1,3 +1,9 @@
+---
+title: Resources element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # Resources element
 
 Contains icons, strings, and URLs for the [VersionOverrides](versionoverrides.md) node. A manifest element specifies a resource by using the **id** of the resource. This helps to keep the size of the manifest manageable, especially when resources have versions for different locales. An **id** must be unique within the manifest and can have a maximum of 32 characters.

@@ -1,3 +1,9 @@
+---
+title: GetStarted element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # GetStarted element
 
 Provides information used by the callout that appears when the add-in is installed in Word, Excel, PowerPoint, and OneNote hosts. The **GetStarted** element is a child element of [DesktopFormFactor](desktopformfactor.md).

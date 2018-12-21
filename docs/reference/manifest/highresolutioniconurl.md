@@ -1,3 +1,9 @@
+---
+title: HighResolutionIconUrl element - Office Add-ins manifest
+description: ''
+ms.date: 12/04/2018
+---
+
 # HighResolutionIconUrl element
 
 Specifies the URL of the image that is used to represent your Office Add-in in the insertion UX and Office Store on high DPI screens.

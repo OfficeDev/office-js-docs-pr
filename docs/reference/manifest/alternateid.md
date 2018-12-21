@@ -1,3 +1,9 @@
+---
+title: AlternateId element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # AlternateId element
 
 Specifies the alternate ID for your Office Add-in as issued by the Office Store.

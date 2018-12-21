@@ -1,3 +1,9 @@
+---
+title: OfficeMenu element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # OfficeMenu element
 
 Defines a collection of controls to be added to the Office context menu. Applies to Word, Excel, PowerPoint, and OneNote add-ins.

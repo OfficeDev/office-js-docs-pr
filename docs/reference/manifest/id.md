@@ -1,3 +1,9 @@
+---
+title: Id element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # Id element
 
 Specifies the unique ID of your Office Add-in as a GUID.

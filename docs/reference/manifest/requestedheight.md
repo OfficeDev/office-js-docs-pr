@@ -1,3 +1,9 @@
+---
+title: RequestedHeight element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # RequestedHeight element
 
 Specifies the initial height (in pixels) of a content add-in or mail add-in. 

@@ -1,3 +1,9 @@
+---
+title: TargetDialect element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # TargetDialect element
 
 Defines a regional language supported by this dictionary, represented as a culture name string.

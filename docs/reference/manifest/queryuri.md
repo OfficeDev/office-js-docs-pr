@@ -1,3 +1,9 @@
+---
+title: QueryUri element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # QueryUri element
 
 Specifies the URL of the endpoint for the dictionary query service.

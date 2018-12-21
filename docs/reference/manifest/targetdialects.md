@@ -1,3 +1,9 @@
+---
+title: TargetDialects element - Office Add-ins manifest
+description: ''
+ms.date: 10/09/2018
+---
+
 # TargetDialects element
 
 Defines the regional language or languages supported by this dictionary.
