@@ -1,7 +1,7 @@
 ---
 title: Work with ranges using the Excel JavaScript API (advanced)
 description: ''
-ms.date: 12/14/2018
+ms.date: 12/18/2018
 ---
 
 # Work with ranges using the Excel JavaScript API (advanced)
@@ -56,7 +56,15 @@ Excel.run(function (context) {
 
 Your add-in will have to format the ranges to display the dates in a more human-readable form. The example of `"[$-409]m/d/yy h:mm AM/PM;@"` displays a time like "12/3/18 3:57 PM". For more information about date and time number formats, please see the "Guidelines for date and time formats" in the [Review guidelines for customizing a number format](https://support.office.com/article/review-guidelines-for-customizing-a-number-format-c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5) article.
 
-## Copy and paste
+## Work with multiple ranges simultaneously (preview)
+
+> [!NOTE]
+> The `RangeAreas` object is currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> If you are using TypeScript or your code editor uses TypeScript type definition files for IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+
+The `RangeAreas` object lets your add-in perform operations on multiple ranges at once. These ranges may be contiguous, but do not have to be. `RangeAreas` are further discussed in the article [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
+
+## Copy and paste (preview)
 
 > [!NOTE]
 > The `Range.copyFrom` function is currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
@@ -121,7 +129,7 @@ Excel.run(function (context) {
 
 ![Data in Excel after range’s copy method has been run](../images/excel-range-copyfrom-skipblanks-after.png)
 
-## Remove duplicates
+## Remove duplicates (preview)
 
 > [!NOTE]
 > The Range object's `removeDuplicates` function is currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.

@@ -1,14 +1,14 @@
 ---
-title: Create your first task pane add-in for Project 2013 by using a text editor
+title: Create your first task pane add-in for Microsoft Project by using a text editor
 description: ''
-ms.date: 12/04/2017
+ms.date: 12/17/2018
 ---
 
-# Create your first task pane add-in for Project 2013 by using a text editor
+# Create your first task pane add-in for Microsoft Project by using a text editor
 
-You can create a task pane add-in for Project Standard 2013 or Project Professional 2013 by using Visual Studio 2015 to create a complex web application or by using a text editor to create files for a local add-in. This article describes how to create a simple add-in that uses an XML manifest that points to an HTML file on a file share. The Project OM Test sample add-in tests some JavaScript functions that use the object model for add-ins. After you use the  **Trust Center** in Project 2013 to register the file share that contains the manifest file, you can open the task pane add-in from the **PROJECT** tab on the ribbon. (The sample code in this article is based on a test application by Arvind Iyer, Microsoft Corporation.)
+You can create a task pane add-in for Project Standard 2013, Project Professional 2013, or later verions using the Yeoman generator for Office Add-ins. This article describes how to create a simple add-in that uses an XML manifest that points to an HTML file on a file share. The Project OM Test sample add-in tests some JavaScript functions that use the object model for add-ins. After you use the  **Trust Center** in Project to register the file share that contains the manifest file, you can open the task pane add-in from the **Project** tab on the ribbon. (The sample code in this article is based on a test application by Arvind Iyer, Microsoft Corporation.)
 
-Project 2013 uses the same add-in manifest schema that other Microsoft Office 2013 clients use, and much of the same JavaScript API. The complete code for the add-in that is described in this article is available in the  `Samples\Apps` subdirectory of the Project 2013 SDK download.
+Project uses the same add-in manifest schema that other Microsoft Office clients use, and much of the same JavaScript API. The complete code for the add-in that is described in this article is available in the  `Samples\Apps` subdirectory of the Project 2013 SDK download.
 
 The Project OM Test sample add-in can get the GUID of a task and properties of the application and the active project. If Project Professional 2013 opens a project that is in a SharePoint library, the add-in can show the URL of the project. 
 
@@ -63,7 +63,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
 
 1. Create an HTML file with a name that is specified by the **SourceLocation** element in the JSOM_SimpleOMCalls.xml manifest. 
 
-   For example, create theJSOMCall.html file in the `C:\Project\AppSource` directory. Although you can use a simple text editor to create the source files, it is easier to use a tool such as Visual Studio 2015, which works with specific document types (such as HTML and JavaScript) and has other editing aids. If you have not already done the Bing Search example that is described in [Task pane add-ins for Project](../project/project-add-ins.md), Procedure 3 shows how to create the `\\ServerName\AppSource` file share that the manifest specifies.
+   For example, create theJSOMCall.html file in the `C:\Project\AppSource` directory. Although you can use a simple text editor to create the source files, it is easier to use a tool such as Visual Studio code, which works with specific document types (such as HTML and JavaScript) and has other editing aids. If you have not already done the Bing Search example that is described in [Task pane add-ins for Project](../project/project-add-ins.md), Procedure 3 shows how to create the `\\ServerName\AppSource` file share that the manifest specifies.
     
    The JSOMCall.html file uses the common MicrosoftAjax.js file for AJAX functionality and the Office.js file for the add-in functionality in Microsoft Office 2013 applications.
 
@@ -696,8 +696,6 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
     </style>
     ```
 
-> [!NOTE]
-> The **Task Pane Add-in (Project)** template in Visual Studio 2015 includes default .css files for a common look and feel of add-ins.
 Procedure 3 shows how to install and use the Project OM Test add-in features.
 
 ## Procedure 3. To install and use the Project OM Test add-in
@@ -928,7 +926,7 @@ function getSelectedResourceAsync() {
 }
 ```
 
-It is easier to develop an add-in when you use Visual Studio 2015, where you can set breakpoints to help debug the JavaScript code and quickly integrate common routines for error handling. For example, the  **HelloProject_OData** sample in the Project 2013 SDK download includes the SurfaceErrors.js file that uses the JQuery library to display a pop-up error message. Figure 4 shows the error message in a "toast" notification. The sample also includes the Office-vsdoc.js file that provides Intellisense for JavaScript functions in the Office.js file and the Project-15.js file.
+The **HelloProject_OData** sample in the Project 2013 SDK download includes the SurfaceErrors.js file that uses the JQuery library to display a pop-up error message. Figure 4 shows the error message in a "toast" notification.
 
 The following code in the SurfaceErrors.js file includes the  **throwError** function that creates a **Toast** object.
 

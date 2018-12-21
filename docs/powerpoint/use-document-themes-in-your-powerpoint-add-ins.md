@@ -1,7 +1,7 @@
 ---
 title: Use document themes in your PowerPoint add-ins
 description: ''
-ms.date: 12/04/2017
+ms.date: 12/17/2018
 ---
 
 # Use document themes in your PowerPoint add-ins
@@ -20,7 +20,7 @@ Every Office document theme defines 12 colors. Ten of these colors are available
 
 ![Color palette](../images/office15-app-color-palette.png)
 
-To view or customize the full set of 12 theme colors in PowerPoint, in the  **Variants** group on the **Design** tab, click the **More** drop-down - then point to **Color**, and click  **Customize Colors** to display the **Create New Theme Colors** dialog box.
+To view or customize the full set of 12 theme colors in PowerPoint, in the  **Variants** group on the **Design** tab, click the **More** drop-down - then select **Colors** > **Customize Colors** to display the **Create New Theme Colors** dialog box.
 
 ![Create new theme colors dialog box](../images/office15-app-create-new-theme-colors.png)
 
@@ -32,7 +32,7 @@ Every Office document theme also defines two fonts -- one for headings and one f
 
 ![The font picker](../images/office15-app-font-picker.png)
 
-To view or customize theme fonts in PowerPoint, in the  **Variants** group on the **Design** tab, click the **More** drop-down - then point to **Fonts**, and click  **Customize Fonts** to display the **Create New Theme Fonts** dialog box.
+To view or customize theme fonts in PowerPoint, in the  **Variants** group on the **Design** tab, click the **More** drop-down - then select **Fonts** > **Customize Fonts** to display the **Create New Theme Fonts** dialog box.
 
 ![Create new theme fonts dialog box](../images/office15-app-create-new-theme-fonts.png)
 
@@ -54,7 +54,10 @@ Use the following steps to add and reference the OfficeThemes.css file to your a
 
 #### To add OfficeThemes.css to your Visual Studio project
 
-1. In **Solution Explorer**, right-click the **Content** folder in the _**project_name**_**Web** project, point to **Add**, and then select **Style Sheet**.
+> [!NOTE]
+> The steps in this procedure only apply to Visual Studio 2015. If you are using Visual Studio 2017, the OfficeThemes.css file is created automatically for any new PowerPoint add-in projects that you create.
+
+1. In **Solution Explorer**, right-click the **Content** folder in the _**project_name**_**Web** project, choose **Add**, and then select **Style Sheet**.
     
 2. Name the new style sheet **OfficeThemes**.
     
@@ -134,7 +137,7 @@ To do this in Visual Studio, follow these steps.
 
 #### To reference OfficeThemes.css in your add-in for PowerPoint
 
-1. In Visual Studio 2015, open or create a new **Office Add-in** project.
+1. In Visual Studio 2017, open or create a new **Office Add-in** project.
     
 2. In the HTML pages that implement the UI of your add-in, such as Home.html in the default template, add the following `<link>` tag inside the `<head>` tag that references the OfficeThemes.css file:
     

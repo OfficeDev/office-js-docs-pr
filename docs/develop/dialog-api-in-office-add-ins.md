@@ -1,7 +1,7 @@
 ---
 title: Use the Dialog API in your Office Add-ins
 description: ''
-ms.date: 11/28/2018
+ms.date: 12/20/2018
 ---
 
 # Use the Dialog API in your Office Add-ins
@@ -213,6 +213,9 @@ function processMessage(arg) {
     }
 }
 ```
+
+> [!NOTE]
+> The `showNotification` implementation is not shown in the sample code provided by this article. For an example of how you might implement this function within your add-in, see [Office Add-in Dialog API Example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).
 
 ### Closing the dialog box
 
