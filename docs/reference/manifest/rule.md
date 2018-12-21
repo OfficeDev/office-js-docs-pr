@@ -1,5 +1,5 @@
 ---
-title: Rule element - Office Add-ins manifest
+title: Rule element in the manifest file
 description: ''
 ms.date: 11/30/2018
 ---

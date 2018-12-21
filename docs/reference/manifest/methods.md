@@ -1,5 +1,5 @@
 ---
-title: Methods element - Office Add-ins manifest
+title: Methods element in the manifest file
 description: ''
 ms.date: 10/09/2018
 ---

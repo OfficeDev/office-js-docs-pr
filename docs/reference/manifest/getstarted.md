@@ -1,5 +1,5 @@
 ---
-title: GetStarted element - Office Add-ins manifest
+title: GetStarted element in the manifest file
 description: ''
 ms.date: 10/09/2018
 ---

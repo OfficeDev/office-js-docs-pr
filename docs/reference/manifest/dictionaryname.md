@@ -1,5 +1,5 @@
 ---
-title: DictionaryName element - Office Add-ins manifest
+title: DictionaryName element in the manifest file
 description: ''
 ms.date: 10/09/2018
 ---

@@ -1,5 +1,5 @@
 ---
-title: DefaultLocale element - Office Add-ins manifest
+title: DefaultLocale element in the manifest file
 description: ''
 ms.date: 10/09/2018
 ---

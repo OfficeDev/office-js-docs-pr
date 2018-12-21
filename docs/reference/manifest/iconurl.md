@@ -1,5 +1,5 @@
 ---
-title: IconUrl element - Office Add-ins manifest
+title: IconUrl element in the manifest file
 description: ''
 ms.date: 12/04/2018
 ---

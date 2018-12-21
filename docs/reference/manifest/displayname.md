@@ -1,5 +1,5 @@
 ---
-title: DisplayName element - Office Add-ins manifest
+title: DisplayName element in the manifest file
 description: ''
 ms.date: 10/09/2018
 ---

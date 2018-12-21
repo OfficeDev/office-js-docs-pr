@@ -1,5 +1,5 @@
 ---
-title: RequestedWidth element - Office Add-ins manifest
+title: RequestedWidth element in the manifest file
 description: ''
 ms.date: 11/13/2018
 ---

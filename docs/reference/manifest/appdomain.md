@@ -1,5 +1,5 @@
 ---
-title: AppDomain element - Office Add-ins manifest
+title: AppDomain element in the manifest file
 description: ''
 ms.date: 12/13/2018
 ---

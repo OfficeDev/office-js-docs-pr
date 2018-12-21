@@ -1,5 +1,5 @@
 ---
-title: HighResolutionIconUrl element - Office Add-ins manifest
+title: HighResolutionIconUrl element in the manifest file
 description: ''
 ms.date: 12/04/2018
 ---

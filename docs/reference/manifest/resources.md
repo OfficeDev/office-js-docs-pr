@@ -1,5 +1,5 @@
 ---
-title: Resources element - Office Add-ins manifest
+title: Resources element in the manifest file
 description: ''
 ms.date: 10/09/2018
 ---

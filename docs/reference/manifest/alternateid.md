@@ -1,5 +1,5 @@
 ---
-title: AlternateId element - Office Add-ins manifest
+title: AlternateId element in the manifest file
 description: ''
 ms.date: 10/09/2018
 ---

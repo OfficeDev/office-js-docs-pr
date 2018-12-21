@@ -1,5 +1,5 @@
 ---
-title: Form element - Office Add-ins manifest
+title: Form element in the manifest file
 description: ''
 ms.date: 10/09/2018
 ---
