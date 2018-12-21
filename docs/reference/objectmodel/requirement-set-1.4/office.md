@@ -1,4 +1,8 @@
- 
+---
+title: Office namespace
+description: ''
+ms.date: 11/08/2018
+---
 
 # Office
 
