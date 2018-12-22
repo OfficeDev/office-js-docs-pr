@@ -17,7 +17,7 @@ In this tutorial, you will:
 
 * [Node.js](https://nodejs.org/en/) (version 8.0.0 or later)
 
-* [Git Bash](https://git-scm.com/downloads) or (or another Git client)
+* [Git Bash](https://git-scm.com/downloads) (or another Git client)
 
 * The latest version of [Yeoman](https://yeoman.io/) and the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office). To install these tools globally, run the following command via the command prompt:
 
@@ -28,7 +28,7 @@ In this tutorial, you will:
     > [!NOTE]
     > Even if you have previously installed the Yeoman generator, we recommend updating your package to the latest version from npm.
 
-* Excel for Windows (version 1810 or later) or Excel Online
+* Excel for Windows (64-bit version 1810 or later) or Excel Online
 
 * Join the [Office Insider program](https://products.office.com/office-insider) (**Insider** level -- formerly called "Insider Fast")
 
@@ -76,13 +76,13 @@ In this tutorial, you will:
         > [!NOTE]
         > In the 32 bit version of the Office 365 December Insiders Version 1901 (Build 11128.20000), custom functions may not work properly. For a workaround, see the known issues and workaround section in the [Custom functions in Excel readme](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/README.md)
 
-    * If you'll be using Excel Online to test your custom functions, run the following command to start the local web server: 
+    * If you'll be using Excel Online to test your custom functions, run the following command to start the local web server:
 
         ```
         npm run start-web
         ```
 
-         After running this command, another window will open showing you the details of the build. To use your functions, open a new workbook in Office Online. 
+         After running this command, another window will open showing you the details of the build. To use your functions, open a new workbook in Office Online.
 
 ## Try out a prebuilt custom function
 
@@ -126,13 +126,12 @@ Complete the following steps to create a custom function named `stockPrice` that
     ```js
     CustomFunctionMappings.STOCKPRICE = stockPrice;
     ```
-    
+
 4. Before Excel can make this new function available, you must specify metadata to describe the function to Excel. Open the **config/customfunctions.json** file. Add the following JSON object to the 'functions' array and save the file.
-    
-    
+
     This JSON describes the `stockPrice` function.
-    
-    ```json
+
+    ```JSON
     {
         "id": "STOCKPRICE",
         "name": "STOCKPRICE",
@@ -162,10 +161,10 @@ Complete the following steps to create a custom function named `stockPrice` that
         2. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
             ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)
 
-        1. In the list of available add-ins, find the **Developer Add-ins** section and select the **stock-ticker** add-in to register it.
+        3. In the list of available add-ins, find the **Developer Add-ins** section and select the **stock-ticker** add-in to register it.
             ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/excel-cf-register-add-in-2.png)
 
-    * If you're using Excel Online: 
+    * If you're using Excel Online:
 
         1. In Excel Online, choose the **Insert** tab and then choose **Add-ins**.
             ![Insert ribbon in Excel Online with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
@@ -176,7 +175,7 @@ Complete the following steps to create a custom function named `stockPrice` that
 
         4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
-5. Now, let's try out the new function. In cell **B1**, type the text `=CONTOSO.STOCKPRICE("MSFT")` and press enter. You should see that the result in cell **B1** is the current stock price for one share of Microsoft stock.
+6. Now, let's try out the new function. In cell **B1**, type the text `=CONTOSO.STOCKPRICE("MSFT")` and press enter. You should see that the result in cell **B1** is the current stock price for one share of Microsoft stock.
 
 ## Create a streaming asynchronous custom function
 
@@ -252,7 +251,7 @@ Complete the following steps to create a custom function named `stockPriceStream
     }
     ```
 
-3. You must reregister the add-in in Excel in order for the new function to be available to end-users. Complete the following steps for the platform that you're using in this tutorial.
+3. You must re-register the add-in in Excel in order for the new function to be available to end-users. Complete the following steps for the platform that you're using in this tutorial.
 
     * If you're using Excel for Windows:
 
@@ -264,14 +263,14 @@ Complete the following steps to create a custom function named `stockPriceStream
         3. In the list of available add-ins, find the **Developer Add-ins** section and select the **stock-ticker** add-in to register it.
             ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/excel-cf-register-add-in-2.png)
 
-    * If you're using Excel Online: 
+    * If you're using Excel Online:
 
         1. In Excel Online, choose the **Insert** tab and then choose **Add-ins**.
             ![Insert ribbon in Excel Online with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
 
-        2. Choose **Manage My Add-ins** and select **Upload My Add-in**. 
+        2. Choose **Manage My Add-ins** and select **Upload My Add-in**.
 
-        3. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created. 
+        3. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.
 
         4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
@@ -279,7 +278,7 @@ Complete the following steps to create a custom function named `stockPriceStream
 
 ## Next steps
 
-In this tutorial, you've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams real-time data from the web. To learn more about custom functions in Excel, continue to the following article: 
+In this tutorial, you've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams real-time data from the web. To learn more about custom functions in Excel, continue to the following article:
 
 > [!div class="nextstepaction"]
 > [Create custom functions in Excel](../excel/custom-functions-overview.md)
