@@ -1,3 +1,9 @@
+---
+title: Authentication design guidelines for Office Add-ins
+description: ''
+ms.date: 11/02/2018
+---
+
 # Authentication patterns
 
 Add-ins may require users to sign-in or sign-up in order to access features and functionality. Input boxes for username and password or buttons that start third party credential flows are common interface controls in authentication experiences. A simple and efficient authentication experience is an important first step to getting users started with your add-in.

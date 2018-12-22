@@ -1,3 +1,9 @@
+---
+title: Script element in the manifest file
+description: ''
+ms.date: 10/09/2018
+---
+
 # Script element
 
 Defines script settings used by a custom function in Excel.

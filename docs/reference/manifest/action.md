@@ -1,3 +1,9 @@
+---
+title: Action element in the manifest file
+description: ''
+ms.date: 11/14/2018
+---
+
 # Action element
 
 Specifies the action to perform when the user selects a  [Button](control.md#button-control) or [Menu](control.md#menu-dropdown-button-controls) controls.

@@ -1,3 +1,9 @@
+---
+title: UX design patterns for Office Add-ins
+description: ''
+ms.date: 06/27/2018
+---
+
 # UX design patterns for Office Add-ins
 
 Designing the user experience for Office Add-ins should provide a compelling experience for Office users and extend the overall Office experience by fitting seamlessly within the default Office UI.  

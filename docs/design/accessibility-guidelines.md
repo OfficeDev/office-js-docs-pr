@@ -1,3 +1,9 @@
+---
+title: Accessibility guidelines for Office Add-ins
+description: ''
+ms.date: 09/24/2018
+---
+
 # Accessibility guidelines
 
 As you design and develop your Office Add-ins, you'll want to ensure that all potential users and customers are able to use your add-in successfully. Apply the following guidelines to ensure that your solution is accessible to all audiences.

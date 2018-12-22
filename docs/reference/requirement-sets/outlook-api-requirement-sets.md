@@ -1,3 +1,9 @@
+---
+title: Outlook JavaScript API requirement sets
+description: ''
+ms.date: 12/04/2018
+---
+
 # Outlook JavaScript API requirement sets
 
 Outlook add-ins declare what API versions they require by using the [Requirements](/office/dev/add-ins/reference/manifest/requirements) element in their [manifest](https://docs.microsoft.com/office/dev/add-ins/develop/add-in-manifests). Outlook add-ins always include a [Set](/office/dev/add-ins/reference/manifest/set) element with a `Name` attribute set to `Mailbox` and a `MinVersion` attribute set to the minimum API requirement set that supports the add-in's scenarios.

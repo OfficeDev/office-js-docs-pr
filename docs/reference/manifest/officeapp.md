@@ -1,3 +1,9 @@
+---
+title: OfficeApp element in the manifest file
+description: ''
+ms.date: 10/09/2018
+---
+
 # OfficeApp element
 
 The root element in the manifest of an Office Add-in.

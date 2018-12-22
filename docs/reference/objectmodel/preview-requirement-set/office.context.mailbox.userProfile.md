@@ -1,7 +1,12 @@
+---
+title: Office.context.mailbox.userProfile - preview requirement set
+description: ''
+ms.date: 10/31/2018
+---
 
 # userProfile
 
-### [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md). userProfile
+### [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile
 
 ##### Requirements
 

@@ -1,3 +1,9 @@
+---
+title: ExtensionPoint element in the manifest file
+description: ''
+ms.date: 10/09/2018
+---
+
 # ExtensionPoint element
 
  Defines where an add-in exposes functionality in the Office UI. The **ExtensionPoint** element is a child element of [AllFormFactors](allformfactors.md), [DesktopFormFactor](desktopformfactor.md) or [MobileFormFactor](mobileformfactor.md). 

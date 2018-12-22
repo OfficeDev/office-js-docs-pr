@@ -1,3 +1,9 @@
+---
+title: Requirements element in the manifest file
+description: ''
+ms.date: 10/09/2018
+---
+
 # Requirements element
 
 Specifies the minimum set of JavaScript API for Office requirements ([requirement sets](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets#specify-office-hosts-and-requirement-sets) and/or methods) that your Office Add-in needs to activate.

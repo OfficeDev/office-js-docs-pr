@@ -1,3 +1,9 @@
+---
+title: Excel JavaScript API overview
+description: ''
+ms.date: 11/01/2018
+---
+
 # Excel JavaScript API overview
 
 You can use the Excel JavaScript API to build add-ins for Excel 2016 or later. The following list shows the high-level Excel objects that are available in the API. Each object page link contains a description of the properties, events, and methods that are available on the object. Explore the links from the menu to learn more.

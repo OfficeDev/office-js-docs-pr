@@ -1,3 +1,9 @@
+---
+title: VersionOverrides element in the manifest file
+description: ''
+ms.date: 10/09/2018
+---
+
 # VersionOverrides element
 
 The root element that contains information for the add-in commands implemented by the add-in. **VersionOverrides** is a child element of the [OfficeApp](./officeapp.md) element in the manifest. This element is supported in manifest schema v1.1 and later but is defined in the VersionOverrides v1.0 or v1.1 schema.

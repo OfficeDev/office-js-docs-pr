@@ -1,3 +1,9 @@
+---
+title: Icon guidelines for Office Add-ins
+description: ''
+ms.date: 06/27/2018
+---
+
 # Icons
 Icons are the visual representation of a behavior or concept. They are often used to add meaning to controls and commands. Visuals, either realistic or symbolic, enable the user to navigate the UI the same way signs help users navigate their environment. They should be simple, clear, and contain only the necessary details to enable customers to quickly parse what action will occur when they choose a control.
 

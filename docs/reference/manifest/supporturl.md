@@ -1,3 +1,9 @@
+---
+title: SupportUrl element in the manifest file
+description: ''
+ms.date: 10/09/2018
+---
+
 # SupportUrl element
 
 Specifies the URL of a page that provides support information for your add-in.

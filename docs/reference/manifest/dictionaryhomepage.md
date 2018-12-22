@@ -1,3 +1,9 @@
+---
+title: DictionaryHomePage element in the manifest file
+description: ''
+ms.date: 10/09/2018
+---
+
 # DictionaryHomePage element
 
 Specifies the URL of the home page for the dictionary.

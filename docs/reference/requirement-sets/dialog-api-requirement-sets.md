@@ -1,3 +1,9 @@
+---
+title: Dialog API requirement sets
+description: ''
+ms.date: 10/09/2018
+---
+
 # Dialog API requirement sets
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
