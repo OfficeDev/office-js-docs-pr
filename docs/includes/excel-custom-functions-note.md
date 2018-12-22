@@ -1,7 +1,7 @@
 > [!NOTE]
-> Custom functions are currently available in developer preview and are supported on the following platforms:
+> Custom functions are currently available in developer preview on the following platforms:
 > - Excel Online
-> - Excel for Windows (64-bit version 1810 or later). At present, Excel for Windows 32-bit versions may offer less stable behavior. See [known issues](../excel/custom-functions-overview.md#known-issues) for more information and a temporary workaround.
+> - Excel for Windows (64-bit version 1810 or later). At present, Excel for Windows 32-bit may not work for all scenarios.
 > - Excel for Mac (version 13.329 or later)
 >
 > To use custom functions within Excel Online, login by using either your Office 365 subscription or a [Microsoft account](https://account.microsoft.com/account).
