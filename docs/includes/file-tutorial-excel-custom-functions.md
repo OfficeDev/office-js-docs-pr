@@ -43,7 +43,9 @@ In this tutorial, you will:
     ```
 
     * Choose a project type: `Excel Custom Functions Add-in project (...)`
+
     * Choose a script type: `JavaScript`
+
     * What do you want to name your add-in? `stock-ticker`
 
     ![Yeoman generator for Office Add-ins prompts for custom functions](../images/12-10-fork-cf-pic.jpg)
