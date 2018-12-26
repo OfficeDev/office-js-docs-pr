@@ -70,7 +70,7 @@ The `RangeAreas` object lets your add-in perform operations on multiple ranges a
 > The `getSpecialCells` and `getSpecialCellsOrNullObject` methods are currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 > If you are using TypeScript or your code editor uses TypeScript type definition files for IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
 
-The `Range.getSpecialCells()` and `Range.getSpecialCellsOrNullObject()` methods enable you to find the ranges that you want to operate on based on the characteristics of the cells and the types of values of the cells. Both of these methods return `RangeAreas` objects. Here are the signatures of the methods from the TypeScript data types file:
+The `Range.getSpecialCells()` and `Range.getSpecialCellsOrNullObject()` methods find ranges based on the characteristics of their cells and the types of values of their cells. Both of these methods return `RangeAreas` objects. Here are the signatures of the methods from the TypeScript data types file:
 
 ```typescript
 getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
@@ -97,9 +97,9 @@ Excel.run(function (context) {
 })
 ```
 
-If no cells with the targeted characteristic exist in the range, `getSpecialCells` throws an **ItemNotFound** error. This would divert the flow of control to a `catch` block, if there is one. If there isn't a `catch` block, the error halts the function. There may be scenarios in which throwing the error is exactly what you want to happen when there are no cells with the targeted characteristic.
+If no cells with the targeted characteristic exist in the range, `getSpecialCells` throws an **ItemNotFound** error. This diverts the flow of control to a `catch` block, if there is one. If there isn't a `catch` block, the error halts the function.
 
-If you expect that cells with the targeted characteristic should always exist, you'll likely want your code to throw an error if those cells aren't there. If its a valid scenario that there aren't any matching cells, your code should check for this possibility and handle it gracefully without throwing an error. You can achieve this with the `getSpecialCellsOrNullObject` method and its returned `isNullObject` property. The following example uses this pattern. About this code, note:
+If you expect that cells with the targeted characteristic should always exist, you'll likely want your code to throw an error if those cells aren't there. If its a valid scenario that there aren't any matching cells, your code should check for this possibility and handle it gracefully without throwing an error. You can achieve this behavior with the `getSpecialCellsOrNullObject` method and its returned `isNullObject` property. The following example uses this pattern. About this code, note:
 
 - The `getSpecialCellsOrNullObject` method always returns a proxy object, so it is never `null` in the ordinary JavaScript sense. But if no matching cells are found, the `isNullObject` property of the object is set to `true`.
 - It calls `context.sync` *before* it tests the `isNullObject` property. This is a requirement with all `*OrNullObject` methods and properties, because you always have to load and sync a property in order to read it. However, it is not necessary to *explicitly* load the `isNullObject` property. It is automatically loaded by the `context.sync` even if `load` is not called on the object. For more information, see [\*OrNullObject](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods).
@@ -140,7 +140,7 @@ The `Excel.SpecialCellValueType` enum has these four basic types (in addition to
 - "Numbers"
 - "Text"
 
-The following example finds special cells that are numerical constants and highlights those cells pink. About this code, note:
+The following example finds special cells that are numerical constants and colors those cells pink. About this code, note:
 
 - It will only highlight cells that have a literal number value. It will not highlight cells that have a formula (even if the result is a number) or a boolean, text, or error state cells.
 - To test the code, be sure the worksheet has some cells with literal number values, some with other kinds of literal values, and some with formulas.
@@ -160,7 +160,7 @@ Excel.run(function (context) {
 
 #### Test for a multiple cell value types
 
-Sometimes you need to operate on more than one cell value type, such as all text-valued and all boolean-valued ("Logical") cells. The `Excel.SpecialCellValueType` enum has values that let you combine types. For example, "LogicalText" will target all boolean and all text-valued cells. You can combine any two or any three of the four basic types. The names of these enum values that combine basic types are always in alphabetical order. So to combine error-valued, text-valued, and boolean-valued cells, use "ErrorLogicalText", not "LogicalErrorText" or "TextErrorLogical". "All" is the default value, which does not limit the cell value types returned. The following example highlights all cells with formulas that produce number or boolean value.
+Sometimes you need to operate on more than one cell value type, such as all text-valued and all boolean-valued ("Logical") cells. The `Excel.SpecialCellValueType` enum has values that let you combine types. For example, "LogicalText" targets all boolean and all text-valued cells. You can combine any two or any three of the four basic types. The names of these enum values that combine basic types are always in alphabetical order. So to combine error-valued, text-valued, and boolean-valued cells, use "ErrorLogicalText", not "LogicalErrorText" or "TextErrorLogical". "All" is the default value, which does not limit the cell value types returned. The following example colors all cells with formulas that produce number or boolean value.
 
 ```js
 Excel.run(function (context) {
