@@ -160,6 +160,8 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
   <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
 
+  <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
+
   <!--BeginTaskpaneMode integration. Office 2013 and any client that doesn't understand commands will use this section.
     This section will also be used if there are no VersionOverrides -->
   <Hosts>
@@ -353,6 +355,9 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   <Description DefaultValue="Describe the features of this app." />
   <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
   <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
+
+  <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
+
   <Hosts>
     <Host Name="Workbook" />
     <Host Name="Database" />
