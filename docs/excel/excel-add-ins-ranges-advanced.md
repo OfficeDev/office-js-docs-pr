@@ -90,7 +90,7 @@ The following example uses the `getSpecialCells` method. About this code, note:
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     var usedRange = sheet.getUsedRange();
-    var formulaRanges = usedRange.getSpecialCells("Formulas");
+    var formulaRanges = usedRange.getSpecialCells(Excel.SpecialCellType.formulas);
     formulaRanges.format.fill.color = "pink";
 
     return context.sync();
@@ -158,7 +158,7 @@ Excel.run(function (context) {
 })
 ```
 
-#### Test for a multiple cell value types
+#### Test for multiple cell value types
 
 Sometimes you need to operate on more than one cell value type, such as all text-valued and all boolean-valued ("Logical") cells. The `Excel.SpecialCellValueType` enum has values that let you combine types. For example, "LogicalText" targets all boolean and all text-valued cells. You can combine any two or any three of the four basic types. The names of these enum values that combine basic types are always in alphabetical order. So to combine error-valued, text-valued, and boolean-valued cells, use "ErrorLogicalText", not "LogicalErrorText" or "TextErrorLogical". "All" is the default value, which does not limit the cell value types returned. The following example colors all cells with formulas that produce number or boolean value.
 

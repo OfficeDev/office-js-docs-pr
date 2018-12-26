@@ -97,7 +97,7 @@ Once you have a `RangeAreas` object, you can create others using the methods on 
 
 ## Set properties on multiple ranges
 
-Setting a property on a `RangeAreas` sets the corresponding property on all the ranges in the `RangeAreas.areas` collection.
+Setting a property on a `RangeAreas` object sets the corresponding property on all the ranges in the `RangeAreas.areas` collection.
 
 The following is an example of setting a property on multiple ranges. The function highlights the ranges **F3:F5** and **H3:H5**.
 
@@ -122,8 +122,8 @@ The `getSpecialCells` and `getSpecialCellsOrNullObject` methods on the `RangeAre
 
 When calling the `getSpecialCells` or `getSpecialCellsOrNullObject` method on a `RangeAreas` object:
 
-- If you pass "SameConditionalFormat" as the first parameter, the method returns all cells with the same conditional formatting as the upper-leftmost cell in the first range in the RangeAreas.areas collection.
-- If you pass "SameDataValidation" as the first parameter, the method returns all cells with the same data validation rule as the upper-leftmost cell in the first range in the RangeAreas.areas collection.
+- If you pass "SameConditionalFormat" as the first parameter, the method returns all cells with the same conditional formatting as the upper-leftmost cell in the first range in the `RangeAreas.areas` collection.
+- If you pass "SameDataValidation" as the first parameter, the method returns all cells with the same data validation rule as the upper-leftmost cell in the first range in the `RangeAreas.areas` collection.
 
 ## Read properties of RangeAreas
 
