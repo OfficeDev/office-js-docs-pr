@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins XML manifest
 description: ''
-ms.date: 12/04/2018
+ms.date: 12/26/2018
 ---
 
 # Office Add-ins XML manifest
@@ -142,7 +142,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
 
   <!-- See https://github.com/OfficeDev/Office-Add-in-Commands-Samples for documentation-->
 
@@ -159,6 +159,8 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   <!--Icon for your add-in. Used on installation screens and the add-ins dialog -->
   <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
   <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
+
+  <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
 
   <!--BeginTaskpaneMode integration. Office 2013 and any client that doesn't understand commands will use this section.
     This section will also be used if there are no VersionOverrides -->
@@ -342,7 +344,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp
   xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:type="ContentApp">
   <Id>01eac144-e55a-45a7-b6e3-f1cc60ab0126</Id>
   <AlternateId>en-US\WA123456789</AlternateId>
@@ -353,6 +355,9 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   <Description DefaultValue="Describe the features of this app." />
   <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
   <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
+
+  <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
+
   <Hosts>
     <Host Name="Workbook" />
     <Host Name="Database" />
@@ -380,7 +385,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns=
   "http://schemas.microsoft.com/office/appforoffice/1.1"
-  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:type="MailApp">
 
   <Id>971E76EF-D73E-567F-ADAE-5A76B39052CF</Id>
@@ -399,6 +404,8 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   <!-- the web server that hosts the icon files. -->
   <IconUrl DefaultValue="https://contoso.com/assets/icon-64.png" />
   <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
+
+  <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
 
   <Hosts>
     <Host Name="Mailbox" />
