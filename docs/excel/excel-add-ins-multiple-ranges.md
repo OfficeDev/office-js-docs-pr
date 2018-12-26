@@ -1,10 +1,10 @@
 ---
 title: Work with multiple ranges simultaneously in Excel add-ins
 description: ''
-ms.date: 12/20/2018
+ms.date: 12/26/2018
 ---
 
-# Work with multiple ranges simultaneously in Excel add-ins (Preview)
+# Work with multiple ranges simultaneously in Excel add-ins (preview)
 
 The Excel JavaScript library enables your add-in to perform operations, and set properties, on multiple ranges simultaneously. The ranges do not have to be contiguous. In addition to making your code simpler, this way of setting a property runs much faster than setting the same property individually for each of the ranges.
 
@@ -80,7 +80,7 @@ The `RangeAreas` type has some properties and methods that are not on the `Range
 - `areaCount`: The total number of ranges in the `RangeAreas`.
 - `getOffsetRangeAreas`: Works just like [Range.getOffsetRange](/javascript/api/excel/excel.range#getoffsetrange-rowoffset--columnoffset-), except that a `RangeAreas` is returned and it contains ranges that are each offset from one of the ranges in the original `RangeAreas`.
 
-## Create RangeAreas and set properties
+## Create RangeAreas
 
 You can create `RangeAreas` object in two basic ways:
 
@@ -94,6 +94,8 @@ Once you have a `RangeAreas` object, you can create others using the methods on 
 
 > [!WARNING]
 > Do not attempt to directly add or delete members of the the `RangeAreas.areas.items` array. This will lead to undesirable behavior in your code. For example, it is possible to push an additional `Range` object onto the array, but doing so will cause errors because `RangeAreas` properties and methods behave as if the new item isn't there. For example, the `areaCount` property does not include ranges pushed in this way, and the `RangeAreas.getItemAt(index)` throws an error if `index` is larger than `areasCount-1`. Similarly, deleting a `Range` object in the `RangeAreas.areas.items` array by getting a reference to it and calling its `Range.delete` method causes bugs: although the `Range` object *is* deleted, the properties and methods of the parent `RangeAreas` object behave, or try to, as if it is still in existence. For example, if your code calls `RangeAreas.calculate`, Office will try to calculate the range, but will error because the range object is gone.
+
+## Set properties on multiple ranges
 
 Setting a property on a `RangeAreas` sets the corresponding property on all the ranges in the `RangeAreas.areas` collection.
 
@@ -114,11 +116,14 @@ This example applies to scenarios in which you can hard code the range addresses
 - The code runs in the context of a known template.
 - The code runs in the context of imported data where the schema of the data is known.
 
-### Get special cells from a RangeAreas object
+## Get special cells from multiple ranges
 
-The `RangeAreas` object itself has `getSpecialCells` and `getSpecialCellsOrNullObject` methods which work analogously to the `Range` object's methods of the same names. These methods return all the targeted cells from all of the ranges in the `RangeAreas.areas` collection. See the [Find special cells within a range](excel-add-ins-ranges-advanced.md#find-special-cells-within-a-range-preview) section for more details on special cells.
+The `getSpecialCells` and `getSpecialCellsOrNullObject` methods on the `RangeAreas` object work analogously to methods of the same name on the `Range` object. These methods return the cells with the specified characteristic from all of the ranges in the `RangeAreas.areas` collection. See the [Find special cells within a range](excel-add-ins-ranges-advanced.md#find-special-cells-within-a-range-preview) section for more details on special cells.
 
-There is one small difference in the behavior of the `getSpecialCells` methods when called on a `RangeAreas` object instead of a `Range` object: when you pass "SameConditionalFormat" as the first parameter, the method returns all cells that have the same conditional formatting as the upper leftmost cell *in the first range in the `RangeAreas.areas` collection*. The same point applies to "SameDataValidation": when passed to `Range.getSpecialCells`, it returns all cells that have the same data validation rule as the upper leftmost cell *in the range*. But when it is passed to `RangeAreas.getSpecialCells`, it returns all cells that have the same data validation rule as the upper leftmost cell *in the first range in the `RangeAreas.areas` collection*.
+When calling the `getSpecialCells` or `getSpecialCellsOrNullObject` method on a `RangeAreas` object:
+
+- If you pass "SameConditionalFormat" as the first parameter, the method returns all cells with the same conditional formatting as the upper-leftmost cell in the first range in the RangeAreas.areas collection.
+- If you pass "SameDataValidation" as the first parameter, the method returns all cells with the same data validation rule as the upper-leftmost cell in the first range in the RangeAreas.areas collection.
 
 ## Read properties of RangeAreas
 
