@@ -37,6 +37,7 @@ For more information about versions, build numbers, and Office Online Server, se
 
 Represents the Excel application that manages the workbook.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[calculationEngineVersion](/javascript/api/excel/excel.application#calculationEngineVersion)|Returns a number about the version of Excel Calculation Engine that the workbook was last fully recalculated by. Read-only.|
@@ -48,6 +49,7 @@ Represents the Excel application that manages the workbook.
 
 Represents the AutoFilter object.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[apply(range: Range \| string, columnIndex?: number, criteria?: Excel.FilterCriteria)](/javascript/api/excel/excel.autofilter#apply-range--columnIndex?--criteria?-)|Applies AutoFilter on a range and filters the column if column index and filter criteria are specified.|
@@ -64,6 +66,7 @@ Represents the AutoFilter object.
 
 Represents a chart object in a workbook.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[activate()](/javascript/api/excel/excel.chart#activate)|Activate the chart in the Excel UI.|
@@ -73,6 +76,7 @@ Represents a chart object in a workbook.
 
 Encapsulates the format properties for the overall chart area.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[colorScheme](/javascript/api/excel/excel.chartareaformat#colorScheme)|Returns or sets an integer that represents the color scheme for the chart. Read/Write.|
@@ -82,6 +86,7 @@ Encapsulates the format properties for the overall chart area.
 
 Represents a single axis in a chart.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[linkNumberFormat](/javascript/api/excel/excel.chartaxis#linkNumberFormat)|Represents whether the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).|
@@ -90,6 +95,7 @@ Represents a single axis in a chart.
 
 Encapsulates the bon options only for histogram chart and pareto chart.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[allowOverflow](/javascript/api/excel/excel.chartbinoptions#allowOverflow)|Returns or sets if bin overflow enabled in a histogram chart or pareto chart. Read/Write.|
@@ -104,6 +110,7 @@ Encapsulates the bon options only for histogram chart and pareto chart.
 
 Represents the properties for Box & Whisker chart.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[quartileCalculation](/javascript/api/excel/excel.chartboxwhiskeroptions#quartileCalculation)|Returns or sets quartile calculation type of a Box & whisker chart. Read/Write.|
@@ -116,6 +123,7 @@ Represents the properties for Box & Whisker chart.
 
 Represents the data label of a chart point.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[linkNumberFormat](/javascript/api/excel/excel.chartdatalabel#linkNumberFormat)|Boolean value representing if the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).|
@@ -124,6 +132,7 @@ Represents the data label of a chart point.
 
 Represents a collection of all the data labels on a chart point.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[linkNumberFormat](/javascript/api/excel/excel.chartdatalabels#linkNumberFormat)|Represents whether the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).|
@@ -132,6 +141,7 @@ Represents a collection of all the data labels on a chart point.
 
 This object represents the attributes for chart error bars object.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[endStyleCap](/javascript/api/excel/excel.charterrorbars#endStyleCap)|Represents whether have the end style cap for the error bars.|
@@ -144,6 +154,7 @@ This object represents the attributes for chart error bars object.
 
 Encapsulates the format properties for chart error bars.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[line](/javascript/api/excel/excel.charterrorbarsformat#line)|Represents chart line formatting.|
@@ -152,6 +163,7 @@ Encapsulates the format properties for chart error bars.
 
 Encapsulates the properties for Map chart.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[labelStrategy](/javascript/api/excel/excel.chartmapoptions#labelStrategy)|Returns or sets series map labels strategy of a region map chart. Read/Write.|
@@ -162,6 +174,7 @@ Encapsulates the properties for Map chart.
 
 Encapsulates the options for the pivot chart.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[showAxisFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showAxisFieldButtons)|Represents whether to display axis field buttons on a PivotChart.|
@@ -173,6 +186,7 @@ Encapsulates the options for the pivot chart.
 
 Represents a series in a chart.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[bubbleScale](/javascript/api/excel/excel.chartseries#bubbleScale)|Returns or sets the scale factor for bubbles in the specified chart group. Can be an integer value from 0 (zero) to 300, corresponding to a percentage of the default size. Applies only to bubble charts. Read/Write.|
@@ -202,6 +216,7 @@ Represents a series in a chart.
 
 This object represents the attributes for a chart trendline lable object.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[linkNumberFormat](/javascript/api/excel/excel.charttrendlinelabel#linkNumberFormat)|Boolean value representing if the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).|
@@ -210,6 +225,7 @@ This object represents the attributes for a chart trendline lable object.
 
 Represents a cell comment object in the workbook.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[id](/javascript/api/excel/excel.comment#id)|Represents the comment identifier. Read-only.|
@@ -220,6 +236,7 @@ Represents a cell comment object in the workbook.
 
 Represents a collection of comment objects that are part of the workbook.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[getCount()](/javascript/api/excel/excel.commentcollection#getCount)|Gets the number of comments in the collection.|
@@ -232,6 +249,7 @@ Represents a collection of comment objects that are part of the workbook.
 
 Represents a cell comment reply object in the workbook.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[delete()](/javascript/api/excel/excel.commentreply#delete)|Deletes the comment reply.|
@@ -242,6 +260,7 @@ Represents a cell comment reply object in the workbook.
 
 Represents a collection of comment reply objects that are part of the comment.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[add(content: string, contentType?: "Plain")](/javascript/api/excel/excel.commentreplycollection#add-content--contentType?-)|Creates a comment reply for comment.|
@@ -254,6 +273,7 @@ Represents a collection of comment reply objects that are part of the comment.
 
 An object encapsulating a conditional format's range, format, rule, and other properties.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[getRanges()](/javascript/api/excel/excel.conditionalformat#getRanges)|Returns the RangeAreas, comprising one or more rectangular ranges, the conditonal format is applied to. Read-only.|
@@ -262,6 +282,7 @@ An object encapsulating a conditional format's range, format, rule, and other pr
 
 [Api set: CustomFunctions 1.1]
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[higherTicks](/javascript/api/excel/excel.customfunctioneventargs#higherTicks)||
@@ -271,6 +292,7 @@ An object encapsulating a conditional format's range, format, rule, and other pr
 
 Represents the data validation applied to the current range.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[getInvalidCells()](/javascript/api/excel/excel.datavalidation#getInvalidCells)|Returns a RangeAreas, comprising one or more rectangular ranges, with invalid cell values. If all cell values are valid, this function will throw an ItemNotFound error.|
@@ -280,6 +302,7 @@ Represents the data validation applied to the current range.
 
 Represents the filtering criteria applied to a column.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[subField?](/javascript/api/excel/excel.filtercriteria#subField)|The property used by the filter to do rich filter on richvalues.|
@@ -288,6 +311,7 @@ Represents the filtering criteria applied to a column.
 
 Represents a geometric shape object inside a worksheet. A geometric shape can be a line, rectangle, block arrow, equation, flowchart, start, banner, callout or basic shape in Excel.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[id](/javascript/api/excel/excel.geometricshape#id)|Represents the shape identifier. Read-only.|
@@ -297,6 +321,7 @@ Represents a geometric shape object inside a worksheet. A geometric shape can be
 
 Represents a shape collection inside a shape group.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[getCount()](/javascript/api/excel/excel.groupshapecollection#getCount)|Returns the number of shapes in the group shape. Read-only.|
@@ -308,6 +333,7 @@ Represents a shape collection inside a shape group.
 
 [Api set: ExcelApi BETA (PREVIEW ONLY)]
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[centerFooter](/javascript/api/excel/excel.headerfooter#centerFooter)|Gets or sets the center footer of the worksheet.|
@@ -321,6 +347,7 @@ Represents a shape collection inside a shape group.
 
 [Api set: ExcelApi BETA (PREVIEW ONLY)]
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[defaultForAllPages](/javascript/api/excel/excel.headerfootergroup#defaultForAllPages)|The general header/footer, used for all pages unless even/odd or first page is specified.|
@@ -335,6 +362,7 @@ Represents a shape collection inside a shape group.
 
 Represents a cell icon.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[set](/javascript/api/excel/excel.icon#set)|Represents the set that the icon is part of.|
@@ -343,6 +371,7 @@ Represents a cell icon.
 
 Represents an IconSet criteria for conditional formatting.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[style](/javascript/api/excel/excel.iconsetconditionalformat#style)|If set, displays the IconSet option for the conditional format.|
@@ -351,6 +380,7 @@ Represents an IconSet criteria for conditional formatting.
 
 Represents an image object in the worksheet.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[format](/javascript/api/excel/excel.image#format)|Returns the format for the image. Read-only.|
@@ -361,6 +391,7 @@ Represents an image object in the worksheet.
 
 Represents the Iterative Calculation settings.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[enabled](/javascript/api/excel/excel.iterativecalculation#enabled)|True if Excel will use iteration to resolve circular references.|
@@ -371,6 +402,7 @@ Represents the Iterative Calculation settings.
 
 Represents the List data validation criteria.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[source](/javascript/api/excel/excel.listdatavalidation#source)|Source of the list for data validation|
@@ -379,6 +411,7 @@ Represents the List data validation criteria.
 
 [Api set: ExcelApi BETA (PREVIEW ONLY)]
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[delete()](/javascript/api/excel/excel.pagebreak#delete)|Deletes a page break object.|
@@ -390,6 +423,7 @@ Represents the List data validation criteria.
 
 [Api set: ExcelApi BETA (PREVIEW ONLY)]
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[add(pageBreakRange: Range \| string)](/javascript/api/excel/excel.pagebreakcollection#add-pageBreakRange-)|Adds a page break before the top-left cell of the range specified.|
@@ -403,6 +437,7 @@ Represents the List data validation criteria.
 
 [Api set: ExcelApi BETA (PREVIEW ONLY)]
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[blackAndWhite](/javascript/api/excel/excel.pagelayout#blackAndWhite)|Gets or sets the worksheet's black and white print option.|
@@ -441,6 +476,7 @@ Represents the List data validation criteria.
 
 Represents the options in page layout margins.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[bottom?](/javascript/api/excel/excel.pagelayoutmarginoptions#bottom)|Represents the page layout bottom margin in the unit specified to use for printing.|
@@ -454,6 +490,7 @@ Represents the options in page layout margins.
 
 Represents page zoom properties.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[horizontalFitToPages?](/javascript/api/excel/excel.pagelayoutzoomoptions#horizontalFitToPages)|Number of pages to fit horizontally. This value can be null if percentage scale is used.|
@@ -464,6 +501,7 @@ Represents page zoom properties.
 
 Represents the Excel PivotField.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[sortByLabels(sortby: SortBy)](/javascript/api/excel/excel.pivotfield#sortByLabels-sortby-)|Sorts the PivotField. If a DataPivotHierarchy is specified, then sort will be applied based on it, if not sort will be based on the PivotField itself.|
@@ -474,6 +512,7 @@ Represents the Excel PivotField.
 
 Represents the visual layout of the PivotTable.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[enableFieldList](/javascript/api/excel/excel.pivotlayout#enableFieldList)|True if the field list should be shown or hidden from the UI.|
@@ -488,6 +527,7 @@ Represents the visual layout of the PivotTable.
 
 Represents an Excel PivotTable.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[useCustomSortLists](/javascript/api/excel/excel.pivottable#useCustomSortLists)|True if the PivotTable should use custom lists when sorting.|
@@ -496,6 +536,7 @@ Represents an Excel PivotTable.
 
 Range represents a set of one or more contiguous cells such as a cell, a row, a column, block of cells, etc.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[convertDataTypeToText()](/javascript/api/excel/excel.range#convertDataTypeToText)|Converts the range cells with datatypes into text.|
@@ -521,6 +562,7 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 
 RangeAreas represents a collection of one or more rectangular ranges in the same worksheet.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[calculate()](/javascript/api/excel/excel.rangeareas#calculate)|Calculates all cells in the RangeAreas.|
@@ -562,6 +604,7 @@ RangeAreas represents a collection of one or more rectangular ranges in the same
 
 Represents the border of an object.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[tintAndShade](/javascript/api/excel/excel.rangeborder#tintAndShade)|Returns or sets a double that lightens or darkens a color for Range Border, the value is between -1 (darkest) and 1 (brightest), with 0 for the original color.|
@@ -570,6 +613,7 @@ Represents the border of an object.
 
 Represents the border objects that make up the range border.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[tintAndShade](/javascript/api/excel/excel.rangebordercollection#tintAndShade)|Returns or sets a double that lightens or darkens a color for Range Borders, the value is between -1 (darkest) and 1 (brightest), with 0 for the original color.|
@@ -578,6 +622,7 @@ Represents the border objects that make up the range border.
 
 [Api set: ExcelApi BETA (PREVIEW ONLY)]
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[getCount()](/javascript/api/excel/excel.rangecollection#getCount)|Returns the number of ranges in the RangeCollection.|
@@ -589,6 +634,7 @@ Represents the border objects that make up the range border.
 
 Represents the background of a range object.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[pattern](/javascript/api/excel/excel.rangefill#pattern)|Gets or sets the pattern of a Range. See Excel.FillPattern for details. LinearGradient and RectangularGradient are not supported.|
@@ -600,6 +646,7 @@ Represents the background of a range object.
 
 This object represents the font attributes (font name, font size, color, etc.) for an object.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[strikethrough](/javascript/api/excel/excel.rangefont#strikethrough)|Represents the strikethrough status of font. A null value indicates that the entire range doesn't have uniform Strikethrough setting.|
@@ -611,6 +658,7 @@ This object represents the font attributes (font name, font size, color, etc.) f
 
 A format object encapsulating the range's font, fill, borders, alignment, and other properties.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[autoIndent](/javascript/api/excel/excel.rangeformat#autoIndent)|Indicates if text is automatically indented when text alignment is set to equal distribution.|
@@ -622,6 +670,7 @@ A format object encapsulating the range's font, fill, borders, alignment, and ot
 
 Represents the results from the removeDuplicates method on range
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[removed](/javascript/api/excel/excel.removeduplicatesresult#removed)|Number of duplicated rows removed by the operation.|
@@ -631,6 +680,7 @@ Represents the results from the removeDuplicates method on range
 
 Represents the replace criteria to be used.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[completeMatch?](/javascript/api/excel/excel.replacecriteria#completeMatch)|Specifies whether the match needs to be complete or partial. Default is false (partial).|
@@ -640,6 +690,7 @@ Represents the replace criteria to be used.
 
 Represents the search criteria to be used.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[completeMatch?](/javascript/api/excel/excel.searchcriteria#completeMatch)|Specifies whether the match needs to be complete or partial. Default is false (partial).|
@@ -650,6 +701,7 @@ Represents the search criteria to be used.
 
 Represents a collection of key-value pair setting objects that are part of the workbook. The scope is limited to per file and add-in (task-pane or content) combination.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[add(key: string, value: string \| number \| boolean \| Date \| Array<any> \| any)](/javascript/api/excel/excel.settingcollection#add-key--value-)|Sets or adds the specified setting to the workbook.|
@@ -658,6 +710,7 @@ Represents a collection of key-value pair setting objects that are part of the w
 
 Represents a generic shape object in the worksheet.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[altTextDescription](/javascript/api/excel/excel.shape#altTextDescription)|Returns or sets the alternative descriptive text string for a Shape object when the object is saved to a Web page.|
@@ -699,6 +752,7 @@ Represents a generic shape object in the worksheet.
 
 Provides information about the shape that raised the Activated event.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[shapeId](/javascript/api/excel/excel.shapeactivatedeventargs#shapeId)|Gets the id of the shape that is activated.|
@@ -709,6 +763,7 @@ Provides information about the shape that raised the Activated event.
 
 Represents all the shapes in the worksheet.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[addGeometricShape(geometricShapeType: "LineInverse" \| "Triangle" \| "RightTriangle" \| "Rectangle" \| "Diamond" \| "Parallelogram" \| "Trapezoid" \| "NonIsoscelesTrapezoid" \| "Pentagon" \| "Hexagon" \| "Heptagon" \| "Octagon" \| "Decagon" \| "Dodecagon" \| "Star4" \| "Star5" \| "Star6" \| "Star7" \| "Star8" \| "Star10" \| "Star12" \| "Star16" \| "Star24" \| "Star32" \| "RoundRectangle" \| "Round1Rectangle" \| "Round2SameRectangle" \| "Round2DiagonalRectangle" \| "SnipRoundRectangle" \| "Snip1Rectangle" \| "Snip2SameRectangle" \| "Snip2DiagonalRectangle" \| "Plaque" \| "Ellipse" \| "Teardrop" \| "HomePlate" \| "Chevron" \| "PieWedge" \| "Pie" \| "BlockArc" \| "Donut" \| "NoSmoking" \| "RightArrow" \| "LeftArrow" \| "UpArrow" \| "DownArrow" \| "StripedRightArrow" \| "NotchedRightArrow" \| "BentUpArrow" \| "LeftRightArrow" \| "UpDownArrow" \| "LeftUpArrow" \| "LeftRightUpArrow" \| "QuadArrow" \| "LeftArrowCallout" \| "RightArrowCallout" \| "UpArrowCallout" \| "DownArrowCallout" \| "LeftRightArrowCallout" \| "UpDownArrowCallout" \| "QuadArrowCallout" \| "BentArrow" \| "UturnArrow" \| "CircularArrow" \| "LeftCircularArrow" \| "LeftRightCircularArrow" \| "CurvedRightArrow" \| "CurvedLeftArrow" \| "CurvedUpArrow" \| "CurvedDownArrow" \| "SwooshArrow" \| "Cube" \| "Can" \| "LightningBolt" \| "Heart" \| "Sun" \| "Moon" \| "SmileyFace" \| "IrregularSeal1" \| "IrregularSeal2" \| "FoldedCorner" \| "Bevel" \| "Frame" \| "HalfFrame" \| "Corner" \| "DiagonalStripe" \| "Chord" \| "Arc" \| "LeftBracket" \| "RightBracket" \| "LeftBrace" \| "RightBrace" \| "BracketPair" \| "BracePair" \| "Callout1" \| "Callout2" \| "Callout3" \| "AccentCallout1" \| "AccentCallout2" \| "AccentCallout3" \| "BorderCallout1" \| "BorderCallout2" \| "BorderCallout3" \| "AccentBorderCallout1" \| "AccentBorderCallout2" \| "AccentBorderCallout3" \| "WedgeRectCallout" \| "WedgeRRectCallout" \| "WedgeEllipseCallout" \| "CloudCallout" \| "Cloud" \| "Ribbon" \| "Ribbon2" \| "EllipseRibbon" \| "EllipseRibbon2" \| "LeftRightRibbon" \| "VerticalScroll" \| "HorizontalScroll" \| "Wave" \| "DoubleWave" \| "Plus" \| "FlowChartProcess" \| "FlowChartDecision" \| "FlowChartInputOutput" \| "FlowChartPredefinedProcess" \| "FlowChartInternalStorage" \| "FlowChartDocument" \| "FlowChartMultidocument" \| "FlowChartTerminator" \| "FlowChartPreparation" \| "FlowChartManualInput" \| "FlowChartManualOperation" \| "FlowChartConnector" \| "FlowChartPunchedCard" \| "FlowChartPunchedTape" \| "FlowChartSummingJunction" \| "FlowChartOr" \| "FlowChartCollate" \| "FlowChartSort" \| "FlowChartExtract" \| "FlowChartMerge" \| "FlowChartOfflineStorage" \| "FlowChartOnlineStorage" \| "FlowChartMagneticTape" \| "FlowChartMagneticDisk" \| "FlowChartMagneticDrum" \| "FlowChartDisplay" \| "FlowChartDelay" \| "FlowChartAlternateProcess" \| "FlowChartOffpageConnector" \| "ActionButtonBlank" \| "ActionButtonHome" \| "ActionButtonHelp" \| "ActionButtonInformation" \| "ActionButtonForwardNext" \| "ActionButtonBackPrevious" \| "ActionButtonEnd" \| "ActionButtonBeginning" \| "ActionButtonReturn" \| "ActionButtonDocument" \| "ActionButtonSound" \| "ActionButtonMovie" \| "Gear6" \| "Gear9" \| "Funnel" \| "MathPlus" \| "MathMinus" \| "MathMultiply" \| "MathDivide" \| "MathEqual" \| "MathNotEqual" \| "CornerTabs" \| "SquareTabs" \| "PlaqueTabs" \| "ChartX" \| "ChartStar" \| "ChartPlus", left: number, top: number, width: number, height: number)](/javascript/api/excel/excel.shapecollection#addGeometricShape-geometricShapeType--left--top--width--height-)|Adds a geometric shape to worksheet. Returns a Shape object that represents the new shape.|
@@ -726,6 +781,7 @@ Represents all the shapes in the worksheet.
 
 Provides information about the shape that raised the Deactivated event.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[shapeId](/javascript/api/excel/excel.shapedeactivatedeventargs#shapeId)|Gets the id of the shape that is deactivated.|
@@ -736,6 +792,7 @@ Provides information about the shape that raised the Deactivated event.
 
 Represents the fill formatting for a shape object.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[clear()](/javascript/api/excel/excel.shapefill#clear)|Clears the fill formatting of a shape object.|
@@ -748,6 +805,7 @@ Represents the fill formatting for a shape object.
 
 This object represents the font attributes (font name, font size, color, etc.) for a TextRange in the Shape.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[bold](/javascript/api/excel/excel.shapefont#bold)|Represents the bold status of font. Returns null the TextRange includes both bold and non-bold text fragments.|
@@ -761,6 +819,7 @@ This object represents the font attributes (font name, font size, color, etc.) f
 
 Represents a shape group object inside a worksheet.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[id](/javascript/api/excel/excel.shapegroup#id)|Represents the shape identifier. Read-only.|
@@ -772,6 +831,7 @@ Represents a shape group object inside a worksheet.
 
 Represents a condition in a sorting operation.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[subField?](/javascript/api/excel/excel.sortfield#subField)|Represents the subfield that is the target property name of a rich value to sort on.|
@@ -780,6 +840,7 @@ Represents a condition in a sorting operation.
 
 Represents an Excel table.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[clearStyle()](/javascript/api/excel/excel.table#clearStyle)|Changes the table to use the default table style.|
@@ -790,6 +851,7 @@ Represents an Excel table.
 
 Provides information about the table that raised the OnAdded event.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[source](/javascript/api/excel/excel.tableaddedeventargs#source)|Gets the source of the event. See Excel.EventSource for details.|
@@ -801,6 +863,7 @@ Provides information about the table that raised the OnAdded event.
 
 Represents a collection of all the tables that are part of the workbook or worksheet, depending on how it was reached.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[onAdded](/javascript/api/excel/excel.tablecollection#onAdded)|Occurs when new table is added in a workbook.|
@@ -811,6 +874,7 @@ Represents a collection of all the tables that are part of the workbook or works
 
 Provides information about the table that raised the OnDeleted event.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[source](/javascript/api/excel/excel.tabledeletedeventargs#source)|Specifies the source of the event. See Excel.EventSource for details.|
@@ -823,6 +887,7 @@ Provides information about the table that raised the OnDeleted event.
 
 Provides information about the table that raised the filter applied event.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableId)|Represents the id of the table in which the filter is applied..|
@@ -833,6 +898,7 @@ Provides information about the table that raised the filter applied event.
 
 Represents a scoped collection of tables. For each table its top-left corner is considered its anchor location and the tables are sorted top to bottom and then left to right.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[getCount()](/javascript/api/excel/excel.tablescopedcollection#getCount)|Gets the number of tables in the collection.|
@@ -845,6 +911,7 @@ Represents a scoped collection of tables. For each table its top-left corner is 
 
 Represents the text frame for a shape object.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[autoSize](/javascript/api/excel/excel.textframe#autoSize)|Gets or sets the auto sizing settings for the text frame. A text frame can be set to auto size the text to fit the text frame, or auto size the text frame to fit the text, or without auto sizing.|
@@ -866,6 +933,7 @@ Represents the text frame for a shape object.
 
 [Api set: ExcelApi BETA (PREVIEW ONLY)]
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[getCharacters(start: number, length?: number)](/javascript/api/excel/excel.textrange#getCharacters-start--length?-)|Returns a TextRange object for characters in the given range.|
@@ -876,6 +944,7 @@ Represents the text frame for a shape object.
 
 Workbook is the top level object which contains related workbook objects such as worksheets, tables, ranges, etc.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[chartDataPointTrack](/javascript/api/excel/excel.workbook#chartDataPointTrack)|True if all charts in the workbook are tracking the actual data points to which they are attached.|
@@ -900,6 +969,7 @@ Workbook is the top level object which contains related workbook objects such as
 
 Provides information about the workbook AutoSave setting changed event.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[type](/javascript/api/excel/excel.workbookautosavesettingchangedeventargs#type)|Represents the type of the event. See Excel.EventType for details.|
@@ -908,6 +978,7 @@ Provides information about the workbook AutoSave setting changed event.
 
 An Excel worksheet is a grid of cells. It can contain data, tables, charts, etc.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[enableCalculation](/javascript/api/excel/excel.worksheet#enableCalculation)|Gets or sets the enableCalculation property of the worksheet.|
@@ -927,6 +998,7 @@ An Excel worksheet is a grid of cells. It can contain data, tables, charts, etc.
 
 Represents a collection of worksheet objects that are part of the workbook.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: "None" \| "Before" \| "After" \| "Beginning" \| "End", relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addFromBase64-base64File--sheetNamesToInsert?--positionType?--relativeTo?-)|Inserts the specified worksheets of a workbook into the current workbook.|
@@ -940,6 +1012,7 @@ Represents a collection of worksheet objects that are part of the workbook.
 
 Provides information about the worksheet that raised the filter applied event.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[type](/javascript/api/excel/excel.worksheetfilteredeventargs#type)|Represents the type of the event. See Excel.EventType for details.|
@@ -949,6 +1022,7 @@ Provides information about the worksheet that raised the filter applied event.
 
 Provides information about the worksheet format change event.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[address](/javascript/api/excel/excel.worksheetformatchangedeventargs#address)|Gets the range address that represents the changed area of a specific worksheet.|
@@ -962,6 +1036,7 @@ Provides information about the worksheet format change event.
 
 Represents the worksheet search criteria to be used.
 
+[!div class="mx-tdCol0BreakAll"]
 |Fields|Description|
 |:---|:---|
 |[completeMatch?](/javascript/api/excel/excel.worksheetsearchcriteria#completeMatch)|Specifies whether the match needs to be complete or partial. Default is false (partial).|
