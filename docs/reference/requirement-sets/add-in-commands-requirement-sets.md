@@ -33,9 +33,9 @@ To find out more about versions, build numbers, and Office Online Server, see:
 - [Where you can find the version and build number for an Office 365 client application](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [Office Online Server overview](https://docs.microsoft.com/officeonlineserver/office-online-server-overview)
 
-## Office common API requirement sets
+## Office Common API requirement sets
 
-For information about common API requirement sets, see [Office common API requirement sets](office-add-in-requirement-sets.md).
+For information about Common API requirement sets, see [Office Common API requirement sets](office-add-in-requirement-sets.md).
 
 ## See also
 

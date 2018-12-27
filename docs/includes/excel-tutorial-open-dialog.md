@@ -123,7 +123,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 
     ```js
     function openDialog() {
-        // TODO1: Call the Office Shared API that opens a dialog
+        // TODO1: Call the Office Common API that opens a dialog
     }
     ```
 

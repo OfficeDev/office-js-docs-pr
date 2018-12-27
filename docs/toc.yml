@@ -478,7 +478,7 @@
         href: reference/requirement-sets/dialog-api-requirement-sets.md
       - name: Identity API requirement sets
         href: reference/requirement-sets/identity-api-requirement-sets.md
-      - name: Office common API requirement sets
+      - name: Office Common API requirement sets
         href: reference/requirement-sets/office-add-in-requirement-sets.md
     - name: Excel requirement sets
       href: reference/requirement-sets/excel-api-requirement-sets.md

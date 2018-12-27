@@ -95,7 +95,7 @@ An Excel add-in interacts with objects in Excel by using the [JavaScript API for
 
 * **Excel JavaScript API**: Introduced with Office 2016, the [Excel JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js) provides strongly-typed Excel objects that you can use to access worksheets, ranges, tables, charts, and more. 
 
-* **Shared API**: Introduced with Office 2013, the shared API enables you to access features such as UI, dialogs, and client settings that are common across multiple types of host applications such as Word, Excel, and PowerPoint. Because the shared API does provide limited functionality for Excel interaction, you can use it if your add-in needs to run on Excel 2013.
+* **Common API**: Introduced with Office 2013, the Common API enables you to access features such as UI, dialogs, and client settings that are common across multiple types of host applications such as Word, Excel, and PowerPoint. Because the Common API does provide limited functionality for Excel interaction, you can use it if your add-in needs to run on Excel 2013.
 
 ## Next steps
 

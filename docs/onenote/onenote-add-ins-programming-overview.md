@@ -27,12 +27,12 @@ Add-ins consist of two basic components:
 
 Add-ins use the runtime context of the host application to access the JavaScript API. The API has two layers: 
 
-- A **rich API** for OneNote-specific operations, accessed through the **Application** object.
-- A **common API** that's shared across Office applications, accessed through the **Document** object.
+- A **host-specific API** for OneNote-specific operations, accessed through the **Application** object.
+- A **Common API** that's shared across Office applications, accessed through the **Document** object.
 
-### Accessing the rich API through the *Application* object
+### Accessing the host-specific API through the *Application* object
 
-Use the **Application** object to access OneNote objects such as **Notebook**, **Section**, and **Page**. With rich APIs, you run batch operations on proxy objects. The basic flow goes something like this: 
+Use the **Application** object to access OneNote objects such as **Notebook**, **Section**, and **Page**. With host-specific APIs, you run batch operations on proxy objects. The basic flow goes something like this: 
 
 1. Get the application instance from the context.
 
@@ -81,9 +81,9 @@ function getPagesInSection() {
 
 You can find supported OneNote objects and operations in the [API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js).
 
-### Accessing the common API through the *Document* object
+### Accessing the Common API through the *Document* object
 
-Use the **Document** object to access the common API, such as the [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-)
+Use the **Document** object to access the Common API, such as the [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-)
 and [setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#setselecteddataasync-data--options--callback-) methods. 
 
 
@@ -103,7 +103,7 @@ function getSelectionFromPage() {
         });
 }
 ```
-OneNote add-ins support only the following common APIs:
+OneNote add-ins support only the following Common APIs:
 
 | API | Notes |
 |:------|:------|
@@ -113,7 +113,7 @@ OneNote add-ins support only the following common APIs:
 | [Office.context.document.settings.set(name, value);](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#set-name--value-) | Settings are supported by content add-ins only | 
 | [Office.EventType.DocumentSelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs?view=office-js) ||
 
-In general, you only use the common API to do something that isn't supported in the rich API. To learn more about using the common API, see the Office Add-ins [documentation](../overview/office-add-ins.md) and [reference](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js).
+In general, you only use the Common API to do something that isn't supported in the host-specific API. To learn more about using the Common API, see the Office Add-ins [documentation](../overview/office-add-ins.md) and [reference](../reference/javascript-api-for-office.md).
 
 
 <a name="om-diagram"></a>
