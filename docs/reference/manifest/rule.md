@@ -69,7 +69,7 @@ Defines a rule that evaluates to true if the item contains text of the specified
 | **EntityType** | Yes | Specifies the type of entity that must be found for the rule to evaluate to true. Can be one of the following: `MeetingSuggestion`, `TaskSuggestion`, `Address`, `Url`, `PhoneNumber`, `EmailAddress`, or `Contact`. |
 | **RegExFilter** | No | Specifies a regular expression to run against this entity for activation. |
 | **FilterName** | No | Specifies the name of the regular expression filter, so that it is subsequently possible to refer to it in your add-in's code. |
-| **IgnoreCase** | No | Specifies whether to ignore case when running the regular expression specified by the **RegExFilter** attribute. |
+| **IgnoreCase** | No | Specifies whether to ignore case when matching the regular expression specified by the **RegExFilter** attribute. |
 | **Highlight** | No | **Note:** this only applies to **Rule** elements within **ExtensionPoint** elements. Specifies how the client should highlight matching entities. Can be one of the following: `all` or `none`. If not specified, the default value is `all`. |
 
 ### Example
