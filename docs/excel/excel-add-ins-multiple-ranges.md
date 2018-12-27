@@ -122,8 +122,8 @@ The `getSpecialCells` and `getSpecialCellsOrNullObject` methods on the `RangeAre
 
 When calling the `getSpecialCells` or `getSpecialCellsOrNullObject` method on a `RangeAreas` object:
 
-- If you pass `sameConditionalFormat` as the first parameter, the method returns all cells with the same conditional formatting as the upper-leftmost cell in the first range in the `RangeAreas.areas` collection.
-- If you pass `sameDataValidation` as the first parameter, the method returns all cells with the same data validation rule as the upper-leftmost cell in the first range in the `RangeAreas.areas` collection.
+- If you pass `Excel.SpecialCellType.sameConditionalFormat` as the first parameter, the method returns all cells with the same conditional formatting as the upper-leftmost cell in the first range in the `RangeAreas.areas` collection.
+- If you pass `Excel.SpecialCellType.sameDataValidation` as the first parameter, the method returns all cells with the same data validation rule as the upper-leftmost cell in the first range in the `RangeAreas.areas` collection.
 
 ## Read properties of RangeAreas
 

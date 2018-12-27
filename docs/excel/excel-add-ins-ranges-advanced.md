@@ -80,10 +80,9 @@ getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCe
 getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
 ```
 
-The following example uses the `getSpecialCells` method. About this code, note:
+The following example uses the `getSpecialCells` method to find all the cells with formulas. About this code, note:
 
 - It limits the part of the sheet that needs to be searched by first calling `Worksheet.getUsedRange` and calling `getSpecialCells` for only that range.
-- It passes as a parameter to `getSpecialCells` the string version of a value from the `Excel.SpecialCellType` enum. Some of the other values that could be passed instead are `blanks` for empty cells, `constants` for cells with literal values instead of formulas, and `sameConditionalFormat` for cells that have the same conditional formatting as the first cell in the `usedRange`. The first cell is the upper leftmost cell. For a complete list of the values in the enum, see [beta office.d.ts](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts).
 - The `getSpecialCells` method returns a `RangeAreas` object, so all of the cells with formulas will be colored pink even if they are not all contiguous.
 
 ```js
@@ -129,16 +128,16 @@ For simplicity, all other examples in this article use the `getSpecialCells` met
 The `Range.getSpecialCells()` and `Range.getSpecialCellsOrNullObject()` methods accept an optional second parameter used to further narrow down the targeted cells. This second parameter is an `Excel.SpecialCellValueType` you use to specify that you only want cells that contain certain types of values.
 
 > [!NOTE]
-> The `Excel.SpecialCellValueType` parameter can only be used if the `Excel.SpecialCellType` parameter is `formulas` or `constants`.
+> The `Excel.SpecialCellValueType` parameter can only be used if the `Excel.SpecialCellType` is `Excel.SpecialCellType.formulas` or `Excel.SpecialCellType.constants`.
 
 #### Test for a single cell value type
 
 The `Excel.SpecialCellValueType` enum has these four basic types (in addition to the other combined values described later in this section):
 
-- `errors`
-- `logical` (which means boolean)
-- `numbers`
-- `text`
+- `Excel.SpecialCellValueType.errors`
+- `Excel.SpecialCellValueType.logical` (which means boolean)
+- `Excel.SpecialCellValueType.numbers`
+- `Excel.SpecialCellValueType.text`
 
 The following example finds special cells that are numerical constants and colors those cells pink. About this code, note:
 
@@ -160,7 +159,7 @@ Excel.run(function (context) {
 
 #### Test for multiple cell value types
 
-Sometimes you need to operate on more than one cell value type, such as all text-valued and all boolean-valued (`logical`) cells. The `Excel.SpecialCellValueType` enum has values with combined types. For example, `logicalText` targets all boolean and all text-valued cells. `all` is the default value, which does not limit the cell value types returned. The following example colors all cells with formulas that produce number or boolean value.
+Sometimes you need to operate on more than one cell value type, such as all text-valued and all boolean-valued (`Excel.SpecialCellValueType.logical`) cells. The `Excel.SpecialCellValueType` enum has values with combined types. For example, `Excel.SpecialCellValueType.logicalText` targets all boolean and all text-valued cells. `Excel.SpecialCellValueType.all` is the default value, which does not limit the cell value types returned. The following example colors all cells with formulas that produce number or boolean value.
 
 ```js
 Excel.run(function (context) {
@@ -202,10 +201,10 @@ copyFrom(sourceRange: Range | RangeAreas | string, copyType?: Excel.RangeCopyTyp
 
 `copyType` specifies what data gets copied from the source to the destination.
 
-- `formulas` transfers the formulas in the source cells and preserves the relative positioning of those formulas’ ranges. Any non-formula entries are copied as-is.
-- `values` copies the data values and, in the case of formulas, the result of the formula.
-- `formats` copies the formatting of the range, including font, color, and other format settings, but no values.
-- `all` (the default option) copies both data and formatting, preserving cells’ formulas if found.
+- `Excel.RangeCopyType.formulas` transfers the formulas in the source cells and preserves the relative positioning of those formulas’ ranges. Any non-formula entries are copied as-is.
+- `Excel.RangeCopyType.values` copies the data values and, in the case of formulas, the result of the formula.
+- `Excel.RangeCopyType.formats` copies the formatting of the range, including font, color, and other format settings, but no values.
+- `Excel.RangeCopyType.all` (the default option) copies both data and formatting, preserving cells’ formulas if found.
 
 `skipBlanks` sets whether blank cells are copied into the destination. When true, `copyFrom` skips blank cells in the source range.
 Skipped cells will not overwrite the existing data of their corresponding cells in the destination range. The default is false.
