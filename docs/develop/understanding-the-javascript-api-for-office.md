@@ -150,13 +150,6 @@ For more information, see [Office.initialize Event](https://docs.microsoft.com/j
 - The `Office.initialize` event fires at the end of the internal process in which Office.js initializes itself. And it fires *immediately* after the internal process ends. If the code in which you assign a handler to the event executes too long after the event fires, then your handler doesn't run. For example, if you are using the WebPack task manager, it might configure the add-in's home page to load polyfill files after it loads Office.js but before it loads your custom JavaScript. By the time your script loads and assigns the handler, the initialize event has already happened. But it is never "too late" to call `Office.onReady()`. If the initialize event has already happened, the callback runs immediately.
 
 > [!NOTE]
-> Even if you have no start-up logic, you should assign an empty function to `Office.initialize` when your add-in JavaScript loads, as shown in the following example. Some Office host and platform combinations won't load the task pane until the initialize event fires and the specified event handler function runs.
-> 
->```js
->Office.initialize = function () {};
->```
-
-> [!NOTE]
 > Even if you have no start-up logic, you should either call `Office.onReady()` or assign an empty function to `Office.initialize` when your add-in JavaScript loads. Some Office host and platform combinations won't load the task pane until one of these happens. The following example shows the two ways this can be done.
 >
 >```js	
