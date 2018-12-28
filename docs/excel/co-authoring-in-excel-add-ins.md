@@ -43,13 +43,13 @@ For example, you might build a content add-in that displays custom visualization
 - User A's hidden worksheet is updated with the new value of orange.
 - User A's custom visualizations are still blue. 
 
-If you want User A's custom visualizations to respond to changes made by coauthors on the hidden worksheet, use the [BindingDataChanged](https://docs.microsoft.com/javascript/api/office/office.bindingdatachangedeventargs?view=office-js) event. This ensures that changes to workbook content made by coauthors is reflected in the state of your add-in.
+If you want User A's custom visualizations to respond to changes made by coauthors on the hidden worksheet, use the [BindingDataChanged](https://docs.microsoft.com/javascript/api/office/office.bindingdatachangedeventargs) event. This ensures that changes to workbook content made by coauthors is reflected in the state of your add-in.
 
 ## Caveats to using events with coauthoring 
 
 As described earlier, in some scenarios, triggering events for all coauthors provides an improved user experience. However, be aware that in some scenarios this behavior can produce poor user experiences. 
 
-For example, in data validation scenarios, it is common to display UI in response to events. The [BindingDataChanged](https://docs.microsoft.com/javascript/api/office/office.bindingdatachangedeventargs?view=office-js) event described in the previous section runs when either a local user or coauthor (remote) changes the workbook content within the binding. If the event handler of the **BindingDataChanged** event displays UI, users will see UI that is unrelated to changes they were working on in the workbook, leading to a poor user experience. Avoid displaying UI when using events in your add-in.
+For example, in data validation scenarios, it is common to display UI in response to events. The [BindingDataChanged](https://docs.microsoft.com/javascript/api/office/office.bindingdatachangedeventargs) event described in the previous section runs when either a local user or coauthor (remote) changes the workbook content within the binding. If the event handler of the **BindingDataChanged** event displays UI, users will see UI that is unrelated to changes they were working on in the workbook, leading to a poor user experience. Avoid displaying UI when using events in your add-in.
 
 ## See also 
 

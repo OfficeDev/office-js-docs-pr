@@ -61,7 +61,7 @@ _\*Added in the Office Add-in Manifest Schema version 1.1._
 
 <!-- Links for above table -->
 
-[officeapp]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/officeapp?view=office-js
+[officeapp]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/officeapp
 [id]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/id
 [version]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/version
 [providername]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/providername

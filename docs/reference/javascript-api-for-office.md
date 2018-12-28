@@ -34,4 +34,4 @@ As we design and develop new APIs for Office Add-ins, we'll make them available 
 
 ## See also
 
-- [Office JavaScript API reference](https://docs.microsoft.com/javascript/api/overview/office?view=office-js)
+- [Office JavaScript API reference](https://docs.microsoft.com/javascript/api/overview/office)

@@ -24,7 +24,7 @@ The following table lists the add-in commands 1.1 requirement set, the Office ho
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | AddinCommands 1.1  | N/A | 16.0.4678.1000 *Supported in Outlook only*  | Version 1705 (Build 8121.1000) or later | N/A | 15.34 or later\*| May 2017 |
 
->\* The [Office.context.requirements.isSetSupported](https://docs.microsoft.com/javascript/api/office/office.requirementsetsupport?view=office-js#issetsupported-name--minversion-) method will erroneously return `false` for versions 16.9 &ndash; 16.14 (inclusive), but the requirement set *is* supported on these versions.
+>\* The [Office.context.requirements.isSetSupported](https://docs.microsoft.com/javascript/api/office/office.requirementsetsupport#issetsupported-name--minversion-) method will erroneously return `false` for versions 16.9 &ndash; 16.14 (inclusive), but the requirement set *is* supported on these versions.
 
 To find out more about versions, build numbers, and Office Online Server, see:
 
