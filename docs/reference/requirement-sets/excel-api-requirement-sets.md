@@ -799,7 +799,7 @@ New methods:
 
 ### Settings API in the Excel namespace
 
-The [Setting](/javascript/api/excel/excel.setting) object represents a key-value pair of a setting persisted to the document. Now, we've added settings-related APIs under the Excel namespace. These APIs don't provide net new functionality, since you were previously able to use the Common API to manage document settings. However, by using these APIs in the Excel namespace, you can use promise-based, batched API syntax and reduce the dependency on the Common API for Excel-related tasks.
+The [Setting](/javascript/api/excel/excel.setting) object represents a key:value pair for a setting persisted to the document. The functionality of `Excel.Setting` is equivalent to `Office.Settings`, but uses the batched API syntax, rather than the Common API's callback model.
 
 APIs include `getItem()` to get setting entry via the key, `add()` to add the specified key:value setting pair to the workbook.
 
