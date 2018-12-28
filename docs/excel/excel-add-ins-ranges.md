@@ -539,7 +539,11 @@ Ranges can have formats applied to individual cells based on conditions. For mor
 
 ## Find a cell (preview)
 
-The `Range` object has a `find` method to search for matching strings within the range. It returns the range of the first cell with matching text. The following example shows the range of a table being searched for the word **Food**. The address of the first cell matching that word is logged to the console.
+> [!NOTE]
+> The Range object's `find` function is currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> If you are using TypeScript or your code editor uses TypeScript type definition files for IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+
+The `Range` object has a `find` method to search for matching strings within the range. It returns the range of the first cell with matching text. The following example shows the range of a table being searched for the word **Food**. The address of the first cell matching that word is logged to the console. Note that `find` will throw an `ItemNotFound` error if nothing matches. Use the [findOrNullObject](excel-add-ins-advanced-concepts.md#42ornullobject-methods) version if you expect nothing in the range to match.
 
 ```js
 Excel.run(function (context) {

@@ -280,7 +280,11 @@ Excel.run(function (context) {
 
 ### Find all ranges with matching text (preview)
 
-The following code sample gets all the cells containing the text "Completed" and colors them green. The type returned by `findAll` is a `RangeAreas` object, which is a collection of ranges able to be edited all at once.
+> [!NOTE]
+> The Worksheet object's `findAll` function is currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> If you are using TypeScript or your code editor uses TypeScript type definition files for IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+
+The following code sample gets all the cells containing the text "Completed" and colors them green. The type returned by `findAll` is a `RangeAreas` object, which is a collection of ranges able to be edited all at once. Note that `findAll` will throw an `ItemNotFound` error if nothing matches. Use the [findAllOrNullObject](excel-add-ins-advanced-concepts.md#42ornullobject-methods) version if you expect nothing in the worksheet to match.
 
 ```js
 Excel.run(function (context) {
