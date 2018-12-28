@@ -8,7 +8,7 @@ ms.date: 10/09/2018
 
 The JavaScript API for Office enables you to create web applications that interact with the object models in Office host applications. Your application will reference the office.js library, which is a script loader. The office.js library loads the object models that are applicable to the Office application that is running the add-in. You can use the following JavaScript object models:
 
-- **Common APIs** - APIs that were introduced with **Office 2013**. This is loaded for **all Office host applications** and connects your add-in application with the Office client application. The object model contains APIs that are specific to Office clients, and APIs that are applicable to multiple Office client host applications. All of this content is under **Common API**. 
+- **Common APIs** - APIs that were introduced with **Office 2013**. This is loaded for **all Office host applications** and connects your add-in application with the Office client application. The object model contains APIs that are specific to Office clients, and APIs that are applicable to multiple Office client host applications. All of this content is under **Common API**. This object model uses callbacks. 
 
   **Outlook** also uses the Common API syntax. Everything under the alias Office contains objects you can use to write scripts that interact with content in Office documents, worksheets, presentations, mail items, and projects from your Office Add-ins. You must use these Common APIs if your add-in will target Office 2013 and later. This object model uses callbacks.
 
