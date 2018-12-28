@@ -797,9 +797,9 @@ New methods:
 * `add(name: string, reference: Range or string, comment: string)`Adds a new name to the collection of the given scope.
 * `addFormulaLocal(name: string, formula: string, comment: string)` Adds a new name to the collection of the given scope using the user's locale for the formula.
 
-### Settings API in in Excel namespace
+### Settings API in the Excel namespace
 
-[Setting](/javascript/api/excel/excel.setting) object represents a key-value pair of a setting persisted to the document. Now, we've added settings related APIs under Excel namespace. This doesn't offer net new functionality - however this make easy to remain in the promise based batched API syntax reduce the dependency on common API for Excel related tasks.
+The [Setting](/javascript/api/excel/excel.setting) object represents a key:value pair for a setting persisted to the document. The functionality of `Excel.Setting` is equivalent to `Office.Settings`, but uses the batched API syntax, rather than the Common API's callback model.
 
 APIs include `getItem()` to get setting entry via the key, `add()` to add the specified key:value setting pair to the workbook.
 
