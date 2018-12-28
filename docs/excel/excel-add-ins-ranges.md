@@ -1,7 +1,7 @@
 ---
 title: Work with ranges using the Excel JavaScript API (fundamental)
 description: ''
-ms.date: 12/14/2018
+ms.date: 12/28/2018
 ---
 
 # Work with ranges using the Excel JavaScript API
@@ -536,6 +536,29 @@ Excel.run(function (context) {
 ### Conditional formatting of ranges
 
 Ranges can have formats applied to individual cells based on conditions. For more information about this, see [Apply conditional formatting to Excel ranges](excel-add-ins-conditional-formatting.md).
+
+## Find a cell (preview)
+
+The `Range` object has a `find` method to search for matching strings within the range. It returns the range of the first cell with matching text. The following example shows the range of a table being searched for the word **Food**. The address of the first cell matching that word is logged to the console.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    var table = sheet.tables.getItem("ExpensesTable");
+    var searchRange = table.getRange();
+    var foundRange = searchRange.find("Food", {
+        completeMatch: true, // find will match the whole cell value
+        matchCase: false, // find will not match case
+        searchDirection: Excel.SearchDirection.forward // find will start searching at the beginning of the range
+    });
+
+    foundRange.load("address");
+    return context.sync()
+        .then(function() {
+            console.log(foundRange.address);
+    });
+});
+```
 
 ## See also
 
