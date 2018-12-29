@@ -8,8 +8,6 @@ ms.topic: tutorial
 
 # Tutorial: Create a PowerPoint add-in
 
-## Introduction
-
 This tutorial teaches you how to build an PowerPoint task pane add-in. In this tutorial, you'll use Visual Studio to create an add-in that:
 
 > [!div class="checklist"]
