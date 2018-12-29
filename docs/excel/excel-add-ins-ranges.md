@@ -537,13 +537,13 @@ Excel.run(function (context) {
 
 Ranges can have formats applied to individual cells based on conditions. For more information about this, see [Apply conditional formatting to Excel ranges](excel-add-ins-conditional-formatting.md).
 
-## Find a cell (preview)
+## Find a cell using string matching (preview)
 
 > [!NOTE]
 > The Range object's `find` function is currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 > If you are using TypeScript or your code editor uses TypeScript type definition files for IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
 
-The `Range` object has a `find` method to search for matching strings within the range. It returns the range of the first cell with matching text. The following example shows the range of a table being searched for the word **Food**. The address of the first cell matching that word is logged to the console. Note that `find` will throw an `ItemNotFound` error if nothing matches. Use the [findOrNullObject](excel-add-ins-advanced-concepts.md#42ornullobject-methods) version if you expect nothing in the range to match.
+The `Range` object has a `find` method to search for a specified string within the range. It returns the range of the first cell with matching text. The following code sample finds the first cell with a value equal to the string **Food** and logs its address to the console. Note that `find` throws an `ItemNotFound` error if the specified string doesn't exist in the range. If you expect that the specified string may not exist in the range, use the [findOrNullObject](excel-add-ins-advanced-concepts.md#42ornullobject-methods) method instead, so your code gracefully handles that scenario.
 
 ```js
 Excel.run(function (context) {
@@ -561,8 +561,10 @@ Excel.run(function (context) {
         .then(function() {
             console.log(foundRange.address);
     });
-});
+}).catch(errorHandlerFunction);
 ```
+
+When the `find` method is called on a range representing a single cell, the entire worksheet is searched. The search begins at that cell and goes in the direction specified by `SearchCriteria.searchDirection`, wrapping around the ends of the worksheet if needed.
 
 ## See also
 

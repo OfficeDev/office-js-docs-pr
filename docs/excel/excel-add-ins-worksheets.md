@@ -253,15 +253,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## Find data in a worksheet
-
-This section describes how to find cells and ranges using the `Worksheet` object's functions of `getCell` and `findAll`. More range retrieval information can be found in object-specific articles.
-
-- For examples that show how to get a range within a worksheet using the `Range` object, see [Work with ranges using the Excel JavaScript API](excel-add-ins-ranges.md).
-- For examples that show how to get ranges from a `Table` object, see [Work with tables using the Excel JavaScript API](excel-add-ins-tables.md).
-- For examples that show how to search a large range for multiple sub-ranges based on cell characteristics, see [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
-
-### Get a cell within a worksheet
+## Get a single cell within a worksheet
 
 The following code sample gets the cell that is located in row 2, column 5 of the worksheet named **Sample**, loads its **address** and **values** properties, and writes a message to the console. The values that are passed into the `getCell(row: number, column:number)` method are the zero-indexed row number and column number for the cell that is being retrieved.
 
@@ -278,13 +270,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-### Find all ranges with matching text (preview)
+## Find all cells with matching text (preview)
 
 > [!NOTE]
 > The Worksheet object's `findAll` function is currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 > If you are using TypeScript or your code editor uses TypeScript type definition files for IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
 
-The following code sample gets all the cells containing the text "Completed" and colors them green. The type returned by `findAll` is a `RangeAreas` object, which is a collection of ranges able to be edited all at once. Note that `findAll` will throw an `ItemNotFound` error if nothing matches. Use the [findAllOrNullObject](excel-add-ins-advanced-concepts.md#42ornullobject-methods) version if you expect nothing in the worksheet to match.
+The `Worksheet` object has a `find` method to search for a specified string within the worksheet. It returns a `RangeAreas` object, which is a collection of `Range` objects that can be edited all at once. The following code sample finds all cells with values equal to the string **Complete** and colors them green. Note that `findAll` will throw an `ItemNotFound` error if the specified string doesn't exist in the worksheet. If you expect that the specified string may not exist in the worksheet, use the [findAllOrNullObject](excel-add-ins-advanced-concepts.md#42ornullobject-methods) method instead, so your code gracefully handles that scenario.
 
 ```js
 Excel.run(function (context) {
@@ -300,6 +292,12 @@ Excel.run(function (context) {
     });
 }).catch(errorHandlerFunction);
 ```
+
+> [!NOTE]
+> This section describes how to find cells and ranges using the `Worksheet` object's functions. More range retrieval information can be found in object-specific articles.
+> - For examples that show how to get a range within a worksheet using the `Range` object, see [Work with ranges using the Excel JavaScript API](excel-add-ins-ranges.md).
+> - For examples that show how to get ranges from a `Table` object, see [Work with tables using the Excel JavaScript API](excel-add-ins-tables.md).
+> - For examples that show how to search a large range for multiple sub-ranges based on cell characteristics, see [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
 
 ## Data protection
 
