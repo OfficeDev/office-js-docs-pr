@@ -10,7 +10,13 @@ ms.topic: tutorial
 
 ## Introduction
 
-This tutorial teaches you how to build an PowerPoint task pane add-in that adds the [Bing](https://www.bing.com) photo of the day to a slide, adds text to a slide, gets slide metadata, and navigates between slides. If you run into any issues along the way, please [let us know](https://github.com/OfficeDev/office-js-docs-pr/issues).
+This tutorial teaches you how to build an PowerPoint task pane add-in. In this tutorial, you'll use Visual Studio to create an add-in that:
+
+> [!div class="checklist"]
+> Adds the [Bing](https://www.bing.com) photo of the day to a slide
+> Adds text to a slide
+> Gets slide metadata
+> Navigates between slides
 
 ## Prerequisites
 
