@@ -8,13 +8,13 @@ ms.topic: tutorial
 
 # Tutorial: Create a PowerPoint add-in
 
-This tutorial teaches you how to build an PowerPoint task pane add-in. In this tutorial, you'll use Visual Studio to create an add-in that:
+In this tutorial, you'll use Visual Studio to create an PowerPoint task pane add-in that can:
 
 > [!div class="checklist"]
-> Adds the [Bing](https://www.bing.com) photo of the day to a slide
-> Adds text to a slide
-> Gets slide metadata
-> Navigates between slides
+> * Add the [Bing](https://www.bing.com) photo of the day to a slide
+> * Add text to a slide
+> * Get slide metadata
+> * Navigate between slides
 
 ## Prerequisites
 
