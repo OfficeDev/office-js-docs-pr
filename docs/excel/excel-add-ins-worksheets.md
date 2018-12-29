@@ -1,9 +1,8 @@
 ---
 title: Work with worksheets using the Excel JavaScript API
 description: ''
-ms.date: 11/27/2018
+ms.date: 12/28/2018
 ---
-
 
 # Work with worksheets using the Excel JavaScript API
 
@@ -46,7 +45,7 @@ The following code sample gets the active worksheet, loads its **name** property
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.load("name");
-    
+
     return context.sync()
         .then(function () {
             console.log(`The active worksheet is "${sheet.name}"`);
@@ -151,7 +150,7 @@ Excel.run(function (context) {
 
     var sheet = sheets.add("Sample");
     sheet.load("name, position");
-    
+
     return context.sync()
         .then(function () {
             console.log(`Added worksheet named "${sheet.name}" in position ${sheet.position}`);
@@ -254,16 +253,16 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## Get a cell within a worksheet
+## Get a single cell within a worksheet
 
-The following code sample gets the cell that is located in row 2, column 5 of the worksheet named **Sample**, loads its **address** and **values** properties, and writes a message to the console. The values that are passed into the **getCell(row: number, column:number)** method are the zero-indexed row number and column number for the cell that is being retrieved.
+The following code sample gets the cell that is located in row 2, column 5 of the worksheet named **Sample**, loads its **address** and **values** properties, and writes a message to the console. The values that are passed into the `getCell(row: number, column:number)` method are the zero-indexed row number and column number for the cell that is being retrieved.
 
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
     var cell = sheet.getCell(1, 4);
     cell.load("address, values");
-    
+
     return context.sync()
         .then(function() {
             console.log(`The value of the cell in row 2, column 5 is "${cell.values[0][0]}" and the address of that cell is "${cell.address}"`);
@@ -271,9 +270,34 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## Get a range within a worksheet
+## Find all cells with matching text (preview)
 
-For examples that show how to get a range within a worksheet, see [Work with ranges using the Excel JavaScript API](excel-add-ins-ranges.md).
+> [!NOTE]
+> The Worksheet object's `findAll` function is currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> If you are using TypeScript or your code editor uses TypeScript type definition files for IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+
+The `Worksheet` object has a `find` method to search for a specified string within the worksheet. It returns a `RangeAreas` object, which is a collection of `Range` objects that can be edited all at once. The following code sample finds all cells with values equal to the string **Complete** and colors them green. Note that `findAll` will throw an `ItemNotFound` error if the specified string doesn't exist in the worksheet. If you expect that the specified string may not exist in the worksheet, use the [findAllOrNullObject](excel-add-ins-advanced-concepts.md#42ornullobject-methods) method instead, so your code gracefully handles that scenario.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    var foundRanges = sheet.findAll("Complete", {
+        completeMatch: true, // findAll will match the whole cell value
+        matchCase: false // findAll will not match case
+    });
+
+    return context.sync()
+        .then(function() {
+            foundRanges.format.fill.color = "green"
+    });
+}).catch(errorHandlerFunction);
+```
+
+> [!NOTE]
+> This section describes how to find cells and ranges using the `Worksheet` object's functions. More range retrieval information can be found in object-specific articles.
+> - For examples that show how to get a range within a worksheet using the `Range` object, see [Work with ranges using the Excel JavaScript API](excel-add-ins-ranges.md).
+> - For examples that show how to get ranges from a `Table` object, see [Work with tables using the Excel JavaScript API](excel-add-ins-tables.md).
+> - For examples that show how to search a large range for multiple sub-ranges based on cell characteristics, see [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
 
 ## Data protection
 
@@ -281,25 +305,24 @@ Your add-in can control a user's ability to edit data in a worksheet. The worksh
 
 ```js
 Excel.run(function (context) {
-	var activeSheet = context.workbook.worksheets.getActiveWorksheet();
-	activeSheet.load("protection/protected");
+    var activeSheet = context.workbook.worksheets.getActiveWorksheet();
+    activeSheet.load("protection/protected");
 
-	return context.sync().then(function() {
-		if (!activeSheet.protection.protected) {
-			activeSheet.protection.protect();
-		}
-	})
+    return context.sync().then(function() {
+        if (!activeSheet.protection.protected) {
+            activeSheet.protection.protect();
+        }
+    })
 }).catch(errorHandlerFunction);
 ```
 
 The `protect` method has two optional parameters:
 
- - `options`: A [WorksheetProtectionOptions](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotectionoptions) object defining specific editing restrictions.
- - `password`: A string representing the password needed for a user to bypass protection and edit the worksheet.
+- `options`: A [WorksheetProtectionOptions](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotectionoptions) object defining specific editing restrictions.
+- `password`: A string representing the password needed for a user to bypass protection and edit the worksheet.
 
 The article [Protect a worksheet](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6) has more information about worksheet protection and how to change it through the Excel UI.
 
 ## See also
 
 - [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
-
