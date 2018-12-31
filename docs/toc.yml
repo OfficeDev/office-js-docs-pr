@@ -54,7 +54,7 @@
     href: /outlook/add-ins/addin-tutorial
     displayName: Outlook
   - name: PowerPoint add-in tutorial
-    href: tutorials/powerpoint-tutorial-new.md
+    href: tutorials/powerpoint-tutorial.md
     displayName: PowerPoint
   - name: Word add-in tutorial
     href: tutorials/word-tutorial.yml
@@ -360,7 +360,7 @@
       href: powerpoint/powerpoint-add-ins-get-started.md
       displayName: PowerPoint
     - name: PowerPoint add-in tutorial
-      href: tutorials/powerpoint-tutorial-new.md
+      href: tutorials/powerpoint-tutorial.md
       displayName: PowerPoint
     - name: Use document themes in your PowerPoint add-ins
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md

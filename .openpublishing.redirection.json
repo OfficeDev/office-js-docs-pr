@@ -2,7 +2,7 @@
     "redirections": [ 
       {   
           "source_path": "docs/excel/script-lab-test.md", 
-          "redirect_url": "/office/dev/add-ins/testing/test-debug-office-add-ins", 
+          "redirect_url": "/office/dev/add-ins/testing/test-debug-office-add-ins" 
       },
       {   
           "source_path": "docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md", 
@@ -170,16 +170,40 @@
       },
       {
             "source_path": "docs/design/ui-elements/accessibility-guidelines.md",
-            "redirect_url": "/office/dev/add-ins/design/accessibility-guidelines",
+            "redirect_url": "/office/dev/add-ins/design/accessibility-guidelines"
       },
       {
             "source_path": "docs/design/ui-elements/voice-guidelines.md",
-            "redirect_url": "/office/dev/add-ins/design/voice-guidelines",
+            "redirect_url": "/office/dev/add-ins/design/voice-guidelines"
       },
       {
             "source_path": "docs/design/automatically-open-a-task-pane-with-a-document.md",
             "redirect_url": "/office/dev/add-ins/develop/automatically-open-a-task-pane-with-a-document",
             "redirect_document_id": true
+      },
+      {
+        "source_path": "docs/tutorials/powerpoint-tutorial-customize-ui.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-1"
+      },
+      {
+        "source_path": "docs/tutorials/powerpoint-tutorial-get-slide-metadata.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-1"
+      },
+      {
+        "source_path": "docs/tutorials/powerpoint-tutorial-insert-image.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-1"
+      },
+      {
+        "source_path": "docs/tutorials/powerpoint-tutorial-insert-text.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-1"
+      },
+      {
+        "source_path": "docs/tutorials/powerpoint-tutorial-navigate-slides.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-1"
+      },
+      {
+        "source_path": "docs/tutorials/powerpoint-tutorial-setup.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-1"
       }
     ] 
 }
