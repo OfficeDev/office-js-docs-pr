@@ -136,7 +136,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 ## Format text
 
-In this step of the tutorial, you'll apply a built-in style to text, apply and custom style to text, and change the font of text.
+In this step of the tutorial, you'll apply a built-in style to text, apply a custom style to text, and change the font of text.
 
 ### Apply a built-in style to text
 
