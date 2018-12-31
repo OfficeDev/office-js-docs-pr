@@ -57,7 +57,7 @@
     href: tutorials/powerpoint-tutorial.yml
     displayName: PowerPoint
   - name: Word add-in tutorial
-    href: tutorials/word-tutorial.yml
+    href: tutorials/word-tutorial.md
     displayName: Word
 
 - name: Concepts
@@ -321,7 +321,7 @@
       href: word/word-add-ins.md
       displayName: Word
     - name: Word add-in tutorial
-      href: tutorials/word-tutorial.yml
+      href: tutorials/word-tutorial.md
       displayName: Word
     - name: Create better add-ins for Word with Office Open XML
       href: word/create-better-add-ins-for-word-with-office-open-xml.md
