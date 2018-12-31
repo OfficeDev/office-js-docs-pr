@@ -183,27 +183,27 @@
       },
       {
         "source_path": "docs/tutorials/powerpoint-tutorial-customize-ui.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-1"
+        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
       },
       {
         "source_path": "docs/tutorials/powerpoint-tutorial-get-slide-metadata.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-1"
+        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
       },
       {
         "source_path": "docs/tutorials/powerpoint-tutorial-insert-image.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-1"
+        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
       },
       {
         "source_path": "docs/tutorials/powerpoint-tutorial-insert-text.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-1"
+        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
       },
       {
         "source_path": "docs/tutorials/powerpoint-tutorial-navigate-slides.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-1"
+        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
       },
       {
         "source_path": "docs/tutorials/powerpoint-tutorial-setup.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-1"
+        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
       }
     ] 
 }
