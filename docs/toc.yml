@@ -45,7 +45,7 @@
 - name: Tutorials
   items:
   - name: Excel add-in tutorial
-    href: tutorials/excel-tutorial.yml
+    href: tutorials/excel-tutorial.md
     displayName: Excel
   - name: Excel custom functions tutorial
     href: tutorials/excel-tutorial-create-custom-functions.md
@@ -233,7 +233,7 @@
         href: excel/excel-add-ins-get-started-vue.md
         displayName: Excel
     - name: Excel add-in tutorial
-      href: tutorials/excel-tutorial.yml
+      href: tutorials/excel-tutorial.md
       displayName: Excel
     - name: Concepts
       displayName: Excel
