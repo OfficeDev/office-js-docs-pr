@@ -204,6 +204,40 @@
       {
         "source_path": "docs/tutorials/powerpoint-tutorial-setup.md",
         "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+      },
+      {
+        "source_path": "docs/tutorials/excel-tutorial-create-chart.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
+      }
+      ,
+      {
+        "source_path": "docs/tutorials/excel-tutorial-create-table.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
+      }
+      ,
+      {
+        "source_path": "docs/tutorials/excel-tutorial-filter-and-sort-table.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
+      }
+      ,
+      {
+        "source_path": "docs/tutorials/excel-tutorial-freeze-header.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
+      }
+      ,
+      {
+        "source_path": "docs/tutorials/excel-tutorial-open-dialog.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
+      }
+      ,
+      {
+        "source_path": "docs/tutorials/excel-tutorial-protect-worksheet.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
+      }
+      ,
+      {
+        "source_path": "docs/tutorials/excel-tutorial-setup.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
       }
     ] 
 }
