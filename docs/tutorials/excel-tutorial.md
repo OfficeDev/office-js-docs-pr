@@ -72,7 +72,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     $('#create-table').click(createTable);
     ```
 
-7. Replace the `TODO3` with the following code. Note the following:
+7. Replace the `TODO3` with the following code. Note:
 
    - Your Excel.js business logic will be added to the function that is passed to `Excel.run`. This logic does not execute immediately. Instead, it is added to a queue of pending commands.
 
