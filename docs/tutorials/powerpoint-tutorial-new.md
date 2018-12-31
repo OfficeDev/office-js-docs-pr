@@ -8,13 +8,13 @@ ms.topic: tutorial
 
 # Tutorial: Create a PowerPoint add-in
 
-In this tutorial, you'll use Visual Studio to create an PowerPoint task pane add-in that can:
+In this tutorial, you'll use Visual Studio to create an PowerPoint task pane add-in that:
 
 > [!div class="checklist"]
-> * Add the [Bing](https://www.bing.com) photo of the day to a slide
-> * Add text to a slide
-> * Get slide metadata
-> * Navigate between slides
+> * Adds the [Bing](https://www.bing.com) photo of the day to a slide
+> * Adds text to a slide
+> * Gets slide metadata
+> * Navigates between slides
 
 ## Prerequisites
 
@@ -102,7 +102,7 @@ Edit the add-in code as follows, to create the framework that you'll use to impl
 
 ## Insert an image
 
-Complete the following steps retrieve the [Bing](https://www.bing.com) photo of the day and insert that image into a slide.
+Complete the following steps to add code that retrieves the [Bing](https://www.bing.com) photo of the day and inserts that image into a slide.
 
 1. Using Solution Explorer, add a new folder named **Controllers** to the **HelloWorldWeb** project.
 
@@ -233,7 +233,7 @@ Complete the following steps retrieve the [Bing](https://www.bing.com) photo of 
 
 ## Customize User Interface (UI) elements
 
-Complete the following steps to customize the task pane UI.
+Complete the following steps to add markup that customizes the task pane UI.
 
 1. In the **Home.html** file, replace `TODO2` with the following markup to add a header section and title to the task pane. Note:
 
@@ -271,7 +271,7 @@ Complete the following steps to customize the task pane UI.
 
 ## Insert text
 
-Complete the following steps to add text to the title slide that contains the [Bing](https://www.bing.com) photo of the day.
+Complete the following steps to add code that inserts text into the title slide which contains the [Bing](https://www.bing.com) photo of the day.
 
 1. In the **Home.html** file, replace `TODO3` with the following markup. This markup defines the **Insert Text** button that will appear within the add-in's task pane.
 
@@ -328,7 +328,7 @@ Complete the following steps to add text to the title slide that contains the [B
 
 ## Get slide metadata
 
-Complete the following steps to retrieve metadata for the selected slide.
+Complete the following steps to add code that retrieves metadata for the selected slide.
 
 1. In the **Home.html** file, replace `TODO4` with the following markup. This markup defines the **Get Slide Metadata** button that will appear within the add-in's task pane.
 
@@ -383,7 +383,7 @@ Complete the following steps to retrieve metadata for the selected slide.
 
 ## Navigate between slides
 
-Complete the following steps to navigate between the slides of a document.
+Complete the following steps to add code that navigates between the slides of a document.
 
 1. In the **Home.html** file, replace `TODO5` with the following markup. This markup defines the four navigation buttons that will appear within the add-in's task pane.
 
