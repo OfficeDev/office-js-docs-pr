@@ -288,7 +288,7 @@ In this tutorial, you've created a new custom functions project, tried out a pre
 > [!div class="nextstepaction"]
 > [Create custom functions in Excel](../excel/custom-functions-overview.md)
 
-## Legal information
+### Legal information
 
 Data provided free by [IEX](https://iextrading.com/developer/). View [IEX's Terms of Use](https://iextrading.com/api-exhibit-a/). Microsoft's use of the IEX API in this tutorial is for educational purposes only.
 
