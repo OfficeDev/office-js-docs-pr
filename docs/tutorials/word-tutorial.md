@@ -103,7 +103,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
    - The second parameter is the location within the body where the paragraph will be inserted. Other options for insert paragraph, when the parent object is the body, are "End" and "Replace".
 
     ```js
-    const docBody = context.document.body;
+    var docBody = context.document.body;
     docBody.insertParagraph("Office has several versions, including Office 2016, Office 365 Click-to-Run, and Office Online.",
                             "Start");
     ```
@@ -130,13 +130,13 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 7. Make a change in the paragraph.
 
-8. Choose **Insert Paragraph** again. Note that the new paragraph is above the previous one because the `insertParagraph` method is inserting at the "start" of the document's body.
+8. Choose **Insert Paragraph** again. Note that the new paragraph is above the previous one because the `insertParagraph` method is inserting at the start of the document's body.
 
     ![Word tutorial - Insert Paragraph](../images/word-tutorial-insert-paragraph.png)
 
 ## Format text
 
-In this step of the tutorial, you'll change the font of text, and use both built-in and custom styles on the text.
+In this step of the tutorial, you'll apply a built-in style to text, apply and custom style to text, and change the font of text.
 
 ### Apply a built-in style to text
 
@@ -182,7 +182,7 @@ In this step of the tutorial, you'll change the font of text, and use both built
 7. Replace `TODO1` with the following code. Note that the code applies a style to a paragraph, but styles can also be applied to ranges of text.
 
     ```js
-    const firstParagraph = context.document.body.paragraphs.getFirst();
+    var firstParagraph = context.document.body.paragraphs.getFirst();
     firstParagraph.styleBuiltIn = Word.Style.intenseReference;
     ``` 
 
@@ -228,7 +228,7 @@ In this step of the tutorial, you'll change the font of text, and use both built
 6. Replace `TODO1` with the following code. Note that the code applies a custom style that does not exist yet. You'll create a style with the name **MyCustomStyle** in the [Test the add-in](#test-the-add-in) step.
 
     ```js
-    const lastParagraph = context.document.body.paragraphs.getLast();
+    var lastParagraph = context.document.body.paragraphs.getLast();
     lastParagraph.style = "MyCustomStyle";
     ``` 
 
@@ -274,7 +274,7 @@ In this step of the tutorial, you'll change the font of text, and use both built
 6. Replace `TODO1` with the following code. Note that the code gets a reference to the second paragraph by using the `ParagraphCollection.getFirst` method chained to the `Paragraph.getNext` method.
 
     ```js
-    const secondParagraph = context.document.body.paragraphs.getFirst().getNext();
+    var secondParagraph = context.document.body.paragraphs.getFirst().getNext();
     secondParagraph.font.set({
             name: "Courier New",
             bold: true,
@@ -371,16 +371,15 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
    - You saw in an earlier stage of the tutorial that the insert* methods of the body object do not have the "Before" and "After" options. This is because you can't put content outside of the document's body.
 
     ```js
-    const doc = context.document;
-    const originalRange = doc.getSelection();
+    var doc = context.document;
+    var originalRange = doc.getSelection();
     originalRange.insertText(" (C2R)", "End");
     ```
 
 8. We'll skip over `TODO2` until the next section. Replace `TODO3` with the following code. This code is similar to the code you created in the first stage of the tutorial, except that now you are inserting a new paragraph at the end of the document instead of at the start. This new paragraph will demonstrate that the new text is now part of the original range.
 
     ```js
-    doc.body.insertParagraph("Original range: " + originalRange.text,
-                             "End");
+    doc.body.insertParagraph("Original range: " + originalRange.text, "End");
     ```
 
 ### Add code to fetch document properties into the task pane's script objects
@@ -431,8 +430,8 @@ When you're done, the entire function should look like the following:
 function insertTextIntoRange() {
     Word.run(function (context) {
 
-        const doc = context.document;
-        const originalRange = doc.getSelection();
+        var doc = context.document;
+        var originalRange = doc.getSelection();
         originalRange.insertText(" (C2R)", "End");
 
         originalRange.load("text");
@@ -504,8 +503,8 @@ function insertTextIntoRange() {
    - The second parameter specifies where in the range the additional text should be inserted. For more details about the location options, see the previous discussion of the `insertTextIntoRange` function.
 
     ```js
-    const doc = context.document;
-    const originalRange = doc.getSelection();
+    var doc = context.document;
+    var originalRange = doc.getSelection();
     originalRange.insertText("Office 2019, ", "Before");
     ```
 
@@ -582,8 +581,8 @@ function insertTextIntoRange() {
 6. Replace `TODO1` with the following code. Note that the method is intended to replace the string "several" with the string "many". It makes a simplifying assumption that the string is present and the user has selected it.
 
     ```js
-    const doc = context.document;
-    const originalRange = doc.getSelection();
+    var doc = context.document;
+    var originalRange = doc.getSelection();
     originalRange.insertText("many", "Replace");
     ```
 
@@ -719,7 +718,7 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
    - The second line inserts a string of HTML at the end of the paragraph; specifically two paragraphs, one formatted with Verdana font, the other with the default styling of the Word document. (As you saw in the `insertImage` method earlier, the `context.document.body` object also has the `insert*` methods.)
 
     ```js
-    const blankParagraph = context.document.body.paragraphs.getLast().insertParagraph("", "After");
+    var blankParagraph = context.document.body.paragraphs.getLast().insertParagraph("", "After");
     blankParagraph.insertHtml('<p style="font-family: verdana;">Inserted HTML.</p><p>Another paragraph</p>', "End");
     ```
 
@@ -768,7 +767,7 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
 6. Replace `TODO1` with the following code. Note that this line uses the `ParagraphCollection.getFirst` method to get a reference ot the first paragraph and then uses the `Paragraph.getNext` method to get a reference to the second paragraph.
 
     ```js
-    const secondParagraph = context.document.body.paragraphs.getFirst().getNext();
+    var secondParagraph = context.document.body.paragraphs.getFirst().getNext();
     ```
 
 7. Replace `TODO2` with the following code. Note:
@@ -782,7 +781,7 @@ In this step of the tutorial, you'll learn how to insert images, HTML, and table
    - The table will have plain default styling, but the `insertTable` method returns a `Table` object with many members, some of which are used to style the table.
 
     ```js
-    const tableData = [
+    var tableData = [
             ["Name", "ID", "Birth City"],
             ["Bob", "434", "Chicago"],
             ["Sue", "719", "Havana"],
@@ -876,8 +875,8 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
    - The `ContentControl.color` property specifies the color of the tags or the border of the bounding box.
 
     ```js
-    const serviceNameRange = context.document.getSelection();
-    const serviceNameContentControl = serviceNameRange.insertContentControl();
+    var serviceNameRange = context.document.getSelection();
+    var serviceNameContentControl = serviceNameRange.insertContentControl();
     serviceNameContentControl.title = "Service Name";
     serviceNameContentControl.tag = "serviceName";
     serviceNameContentControl.appearance = "Tags";
@@ -929,7 +928,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
     - The `ContentControlCollection.getByTag` method returns a `ContentControlCollection` of all content controls of the specified tag. We use `getFirst` to get a reference to the desired control.
 
     ```js
-    const serviceNameContentControl = context.document.contentControls.getByTag("serviceName").getFirst();
+    var serviceNameContentControl = context.document.contentControls.getByTag("serviceName").getFirst();
     serviceNameContentControl.insertText("Fabrikam Online Productivity Suite", "Replace");
     ```
 
