@@ -42,7 +42,7 @@ Complete the following steps to create a PowerPoint add-in project using Visual 
 
 ### Update code 
 
-Edit the add-in code as follows, to create the framework that you'll use to implement add-in functionality in subsequent steps of this tutorial.
+Edit the add-in code as follows to create the framework that you'll use to implement add-in functionality in subsequent steps of this tutorial.
 
 1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, find the **div** with `id="content-main"`, replace that entire **div** with the following markup, and save the file.
 
@@ -174,13 +174,13 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
 
 7. In the **Home.js** file, replace `TODO1` with the following code to assign the event handler for the **Insert Image** button.
 
-    ```js
+    ```javascript
     $('#insert-image').click(insertImage);
     ```
 
 8. In the **Home.js** file, replace `TODO2` with the following code to define the **insertImage** function. This function fetches the image from the Bing web service and then calls the `insertImageFromBase64String` function to insert that image into the document.
 
-    ```js
+    ```javascript
     function insertImage() {
         // Get image from from web service (as a Base64 encoded string).
         $.ajax({
@@ -199,7 +199,7 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
 
     - The `asyncResult` object encapsulates the result of the `setSelectedDataAsync` request, including status and error information if the request failed.
 
-    ```js
+    ```javascript
     function insertImageFromBase64String(image) {
         // Call Office.js to insert the image into the document.
         Office.context.document.setSelectedDataAsync(image, {
@@ -286,13 +286,13 @@ Complete the following steps to add code that inserts text into the title slide 
 
 2. In the **Home.js** file, replace `TODO4` with the following code to assign the event handler for the **Insert Text** button.
 
-    ```js
+    ```javascript
     $('#insert-text').click(insertText);
     ```
 
 3. In the **Home.js** file, replace `TODO5` with the following code to define the **insertText** function. This function inserts text into the current slide.
 
-    ```js
+    ```javascript
     function insertText() {
         Office.context.document.setSelectedDataAsync('Hello World!',
             function (asyncResult) {
@@ -343,13 +343,13 @@ Complete the following steps to add code that retrieves metadata for the selecte
 
 2. In the **Home.js** file, replace `TODO6` with the following code to assign the event handler for the **Get Slide Metadata** button.
 
-    ```js
+    ```javascript
     $('#get-slide-metadata').click(getSlideMetadata);
     ```
 
 3. In the **Home.js** file, replace `TODO7` with the following code to define the **getSlideMetadata** function. This function retrieves metadata for the selected slide(s) and writes it to a popup dialog window within the add-in task pane.
 
-    ```js
+    ```javascript
     function getSlideMetadata() {
         Office.context.document.getSelectedDataAsync(Office.CoercionType.SlideRange,
             function (asyncResult) {
@@ -416,16 +416,16 @@ Complete the following steps to add code that navigates between the slides of a 
 
 2. In the **Home.js** file, replace `TODO8` with the following code to assign the event handlers for the four navigation buttons.
 
-    ```js
+    ```javascript
     $('#go-to-first-slide').click(goToFirstSlide);
     $('#go-to-next-slide').click(goToNextSlide);
     $('#go-to-previous-slide').click(goToPreviousSlide);
     $('#go-to-last-slide').click(goToLastSlide);
     ```
 
-3. In the **Home.js** file, replace `TODO9` with the following code to define the navigation functions. Each of these functions uses the `goToByIdAsync` function to select a slide based upon its position in the document (first, last, previous, next).
+3. In the **Home.js** file, replace `TODO9` with the following code to define the navigation functions. Each of these functions uses the `goToByIdAsync` function to select a slide based upon its position in the document (first, last, previous, and next).
 
-    ```js
+    ```javascript
     function goToFirstSlide() {
         Office.context.document.goToByIdAsync(Office.Index.First, Office.GoToType.Index,
             function (asyncResult) {
