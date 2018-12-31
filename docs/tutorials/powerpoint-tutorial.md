@@ -6,7 +6,7 @@ ms.topic: tutorial
 #Customer intent: As a developer, I want to build a PowerPoint add-in that can interact with content in a PowerPoint document.
 ---
 
-# Tutorial: Create a PowerPoint add-in
+# Tutorial: Create a PowerPoint task pane add-in
 
 In this tutorial, you'll use Visual Studio to create an PowerPoint task pane add-in that:
 
