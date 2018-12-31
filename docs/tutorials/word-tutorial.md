@@ -134,11 +134,11 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
     ![Word tutorial - Insert Paragraph](../images/word-tutorial-insert-paragraph.png)
 
-### Format text
+## Format text
 
 In this step of the tutorial, you'll change the font of text, and use both built-in and custom styles on the text.
 
-#### Apply a built-in style to text
+### Apply a built-in style to text
 
 1. Open the project in your code editor. 
 
@@ -186,7 +186,7 @@ In this step of the tutorial, you'll change the font of text, and use both built
     firstParagraph.styleBuiltIn = Word.Style.intenseReference;
     ``` 
 
-#### Apply a custom style to text
+### Apply a custom style to text
 
 1. Open the file index.html.
 
