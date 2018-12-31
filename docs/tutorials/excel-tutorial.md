@@ -110,8 +110,8 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
    - Table names must be unique across the entire workbook, not just the worksheet.
 
     ```js
-    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-    const expensesTable = currentWorksheet.tables.add("A1:D1", true /*hasHeaders*/);
+    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    var expensesTable = currentWorksheet.tables.add("A1:D1", true /*hasHeaders*/);
     expensesTable.name = "ExpensesTable";
     ```
 
@@ -228,9 +228,9 @@ In this step of the tutorial, you'll filter and sort the table that you created 
    - The `applyValuesFilter` method is one of several filtering methods on the `Filter` object.
 
     ```js
-    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-    const expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
-    const categoryFilter = expensesTable.columns.getItem('Category').filter;
+    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    var expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
+    var categoryFilter = expensesTable.columns.getItem('Category').filter;
     categoryFilter.applyValuesFilter(["Education", "Groceries"]);
     ``` 
 
@@ -282,9 +282,9 @@ In this step of the tutorial, you'll filter and sort the table that you created 
    - The `sort` member of a `Table` is a `TableSort` object, not a method. The `SortField`s are passed to the `TableSort` object's `apply` method.
 
     ```js
-    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-    const expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
-    const sortFields = [
+    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    var expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
+    var sortFields = [
         {
             key: 1,            // Merchant column
             ascending: false,
@@ -296,7 +296,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 
 ### Test the add-in
 
-1. If the Git bash window, or Node.JS-enabled system prompt, from the previous stage tutorial is still open, enter Ctrl-C twice to stop the running web server. Otherwise, open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
+1. If the Git bash window, or Node.JS-enabled system prompt, from the previous stage tutorial is still open, enter **Ctrl+C** twice to stop the running web server. Otherwise, open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
 
      > [!NOTE]
      > Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process so that you can get a prompt to enter the build command. After the build, you restart the server. The next few steps carry out this process.
@@ -365,9 +365,9 @@ In this step of the tutorial, you'll create a chart using data from the table th
 7. Replace `TODO1` with the following code. Note that in order to exclude the header row, the code uses the `Table.getDataBodyRange` method to get the range of data you want to chart instead of the `getRange` method.
 
     ```js
-    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-    const expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
-    const dataRange = expensesTable.getDataBodyRange();
+    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    var expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
+    var dataRange = expensesTable.getDataBodyRange();
     ```
 
 8. Replace `TODO2` with the following code. Note the following parameters:
@@ -379,7 +379,7 @@ In this step of the tutorial, you'll create a chart using data from the table th
    - The third parameter determines whether a series of data points from the table should be charted row-wise or column-wise. The option `auto` tells Excel to decide the best method.
 
     ```js
-    let chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'auto');
+    var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'auto');
     ```
 
 9. Replace `TODO3` with the following code. Most of this code is self-explanatory. Note:
@@ -400,7 +400,7 @@ In this step of the tutorial, you'll create a chart using data from the table th
 
 ### Test the add-in
 
-1. If the Git bash window, or Node.JS-enabled system prompt, from the previous stage tutorial is still open, enter Ctrl-C twice to stop the running web server. Otherwise, open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
+1. If the Git bash window, or Node.JS-enabled system prompt, from the previous stage tutorial is still open, enter **Ctrl+C** twice to stop the running web server. Otherwise, open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
 
      > [!NOTE]
      > Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process in so that you can get a prompt to enter the build command. After the build, you restart the server. The next few steps carry out this process.
@@ -469,13 +469,13 @@ When a table is long enough that a user must scroll to see some rows, the header
    - The `freezeRows` method takes as a parameter the number of rows, from the top that are to be pinned in place. We pass `1` to pin the first row in place.
 
     ```js
-    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
     currentWorksheet.freezePanes.freezeRows(1);
     ```
 
 ### Test the add-in
 
-1. If the Git bash window, or Node.JS-enabled system prompt, from the previous stage tutorial is still open, enter Ctrl-C twice to stop the running web server. Otherwise, open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
+1. If the Git bash window, or Node.JS-enabled system prompt, from the previous stage tutorial is still open, enter **Ctrl+C** twice to stop the running web server. Otherwise, open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
 
      > [!NOTE]
      > Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process in so that you can get a prompt to enter the build command. After the build, you restart the server. The next few steps carry out this process.
@@ -524,7 +524,7 @@ In this step of the tutorial, you'll add another button to the ribbon that, when
     </Control>
     ```
 
-3. Replace `TODO1` with a string that gives the button an ID that is unique within this manifest file. There's only one other button in the manifest, so this isn't difficult. Since our button is going to toggle protection of the worksheet on and off, use "ToggleProtection". When you are done, the entire start Control tag should look like the following:
+3. Replace `TODO1` with a string that gives the button an ID that is unique within this manifest file. Since our button is going to toggle protection of the worksheet on and off, use "ToggleProtection". When you are done, the entire start Control tag should look like the following:
 
     ```xml
     <Control xsi:type="Button" id="ToggleProtection">
@@ -602,7 +602,7 @@ In this step of the tutorial, you'll add another button to the ribbon that, when
 
 2. The file already has an Immediately Invoked Function Expression (IFFE). No custom initialization logic is needed, so leave the function that is assigned to `Office.initialize` with an empty body. (But do not delete it. The `Office.initialize` property cannot be null or undefined.) *Outside of the IIFE*, add the following code. Note that we specify an `args` parameter to the method and the very last line of the method calls `args.completed`. This is a requirement for all add-in commands of type **ExecuteFunction**. It signals the Office host application that the function has finished and the UI can become responsive again.
 
-    ```javascript
+    ```js
     function toggleProtection(args) {
         Excel.run(function (context) {
             
@@ -622,8 +622,8 @@ In this step of the tutorial, you'll add another button to the ribbon that, when
 
 3. Replace `TODO1` with the following code. This code uses the worksheet object's protection property in a standard toggle pattern. The `TODO2` will be explained in the next section.
 
-    ```javascript
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
+    ```js
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // TODO2: Queue command to load the sheet's "protection.protected" property from
     //        the document and re-synchronize the document and task pane.
@@ -653,7 +653,7 @@ These steps must be completed whenever your code needs to *read* information fro
 
    - To ensure that the toggle logic, which reads `sheet.protection.protected`, does not run until after the `sync` is complete and the `sheet.protection.protected` has been assigned the correct value that is fetched from the document, it will be moved (in the next step) into a `then` function that won't run until the `sync` has completed. 
 
-    ```javascript
+    ```js
     sheet.load('protection/protected');
     return context.sync()
         .then(
@@ -675,16 +675,16 @@ These steps must be completed whenever your code needs to *read* information fro
 
    - The `then` method invokes whatever function is passed to it, and you don't want `sync` to be invoked twice, so leave off the "()" from the end of `context.sync`.
 
-    ```javascript
+    ```js
     .then(context.sync);
     ```
 
    When you are done, the entire function should look like the following:
 
-    ```javascript
+    ```js
     function toggleProtection(args) {
         Excel.run(function (context) {            
-          const sheet = context.workbook.worksheets.getActiveWorksheet();          
+          var sheet = context.workbook.worksheets.getActiveWorksheet();          
           sheet.load('protection/protected');
 
           return context.sync()
@@ -871,7 +871,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 6. Below the `freezeHeader` function add the following declaration. This variable is used to hold an object in the parent page's execution context that acts as an intermediator to the dialog page's execution context.
 
     ```js
-    let dialog = null;
+    var dialog = null;
     ```
 
 7. Below the declaration of `dialog`, add the following function. The important thing to notice about this code is what is *not* there: there is no call of `Excel.run`. This is because the API to open a dialog is shared among all Office hosts, so it is part of the Office JavaScript Common API, not the Excel-specific API.
@@ -927,7 +927,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 
 ### Test the add-in
 
-1. If the Git bash window, or Node.JS-enabled system prompt, from the previous stage tutorial is still open, enter Ctrl-C twice to stop the running web server. Otherwise, open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
+1. If the Git bash window, or Node.JS-enabled system prompt, from the previous stage tutorial is still open, enter **Ctrl+C** twice to stop the running web server. Otherwise, open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.
 
      > [!NOTE]
      > Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process in so that you can get a prompt to enter the build command. After the build, you restart the server. The next few steps carry out this process.
@@ -940,7 +940,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 
 5. Choose the **Open Dialog** button in the task pane.
 
-6. While the dialog is open, drag it and resize it. Note that you can interact with the worksheet and press other buttons on the task pane. But you cannot launch a second dialog from the same task pane page.
+6. While the dialog is open, drag it and resize it. Note that you can interact with the worksheet and press other buttons on the task pane, but you cannot launch a second dialog from the same task pane page.
 
 7. In the dialog, enter a name and choose **OK**. The name appears on the task pane and the dialog closes.
 
