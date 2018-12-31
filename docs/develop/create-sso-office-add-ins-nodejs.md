@@ -653,7 +653,7 @@ There are two ways to build and run the project depending on whether you are usi
 2. If you are using VS Code:
  1. Open the project in VS Code.
  2. Press CTRL-SHIFT-B to build the project.
- 3. Press F5 to run the project in a debugging session.
+ 3. Press **F5** to run the project in a debugging session.
 
 
 ## Add the add-in to an Office document
