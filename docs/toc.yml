@@ -262,7 +262,7 @@
           href: excel/custom-functions-overview.md
           displayName: Excel
         - name: Custom functions tutorial
-          href: excel/excel-tutorial-custom-functions.md
+          href: tutorials/excel-tutorial-create-custom-functions.md
           displayName: Excel
         - name: Custom functions runtime
           href: excel/custom-functions-runtime.md
