@@ -149,7 +149,7 @@ Complete the following steps to create a custom function named `stockPrice` that
         "parameters": [
             {
                 "name": "ticker",
-                "description": "stock ticker name",
+                "description": "stock symbol",
                 "type": "string",
                 "dimensionality": "scalar"
             }
@@ -186,7 +186,7 @@ Complete the following steps to create a custom function named `stockPrice` that
 
 The `stockPrice` function that you just created returns the price of a stock at a specific moment in time, but stock prices are always changing. Let's create a custom function that streams data from an API to get real-time updates on a stock price.
 
-Complete the following steps to create a custom function named `stockPriceStream` that requests the price of the specified stock every 1000 milliseconds (provided that the previous request has completed). While the initial request is in-progress, you may see the placeholder value **#GETTING_DATA** the cell where the function is being called. When a value is returned by the function, **#GETTING_DATA** is replaced by that value in the cell.
+Complete the following steps to create a custom function named `stockPriceStream` that requests the price of the specified stock every 1000 milliseconds (provided that the previous request has completed). While the initial request is in-progress, you may see the placeholder value **#GETTING_DATA** in the cell where the function is being called. When a value is returned by the function, **#GETTING_DATA** is replaced by that value in the cell.
 
 1. In the **stock-ticker** project that the Yeoman generator created, add the following code to **src/customfunctions.js** and save the file.
 
@@ -244,7 +244,7 @@ Complete the following steps to create a custom function named `stockPriceStream
         "parameters": [
             {
                 "name": "ticker",
-                "description": "stock ticker name",
+                "description": "stock symbol",
                 "type": "string",
                 "dimensionality": "scalar"
             }
