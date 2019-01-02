@@ -33,7 +33,7 @@ For more information about versions, build numbers, and Office Online Server, se
 
 ## What's in the Excel JavaScript API Preview
 
-> [!div class="mx-tdCol1BreakAll"]
+> [!div class="mx-tdCol0BreakAll"]
 > |Class|Fields|Description|
 > |:---|:---|:---|
 > |[Application](/javascript/api/excel/excel.application)|[calculationEngineVersion](/javascript/api/excel/excel.application#calculationEngineVersion)|Returns a number about the version of Excel Calculation Engine that the workbook was last fully recalculated by. Read-only.|
