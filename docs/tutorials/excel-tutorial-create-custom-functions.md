@@ -1,14 +1,14 @@
 ---
 title: Excel custom functions tutorial
 description: In this tutorial, you’ll create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 12/21/2018
+ms.date: 01/02/2019
 ms.topic: tutorial
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
 ---
 
 # Tutorial: Create custom functions in Excel
 
-Custom functions enable you to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel, such as `SUM()`. You can create custom functions that perform simple tasks such as custom calculations or more complex tasks such as streaming real-time data from the web into a worksheet.
+Custom functions enable you to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions as they would any native function in Excel, such as `SUM()`. You can create custom functions that perform simple tasks like calculations or more complex tasks such as streaming real-time data from the web into a worksheet.
 
 In this tutorial, you will:
 > [!div class="checklist"]
@@ -95,7 +95,7 @@ The custom functions project that you created by using the Yeoman generator cont
 
 In your Excel workbook, try out the `ADD` custom function by completing the following steps in Excel:
 
-1. Within a cell, type **=CONTOSO**. Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.
+1. Within a cell, type `=CONTOSO`. Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.
 
 2. Run the `CONTOSO.ADD` function, with numbers `10` and `200` as input parameters, by typing the value `=CONTOSO.ADD(10,200)` in the cell and pressing enter.
 
@@ -186,7 +186,7 @@ Complete the following steps to create a custom function named `stockPrice` that
 
 The `stockPrice` function that you just created returns the price of a stock at a specific moment in time, but stock prices are always changing. Let's create a custom function that streams data from an API to get real-time updates on a stock price.
 
-Complete the following steps to create a custom function named `stockPriceStream` that requests the price of the specified stock every 1000 milliseconds (provided that the previous request has completed). While the initial request is in-progress, you may see the placeholder value **#GETTING_DATA** the cell where the function is being called. When a value is returned by the function, **#GETTING_DATA** will be replaced by that value in the cell.
+Complete the following steps to create a custom function named `stockPriceStream` that requests the price of the specified stock every 1000 milliseconds (provided that the previous request has completed). While the initial request is in-progress, you may see the placeholder value **#GETTING_DATA** the cell where the function is being called. When a value is returned by the function, **#GETTING_DATA** is replaced by that value in the cell.
 
 1. In the **stock-ticker** project that the Yeoman generator created, add the following code to **src/customfunctions.js** and save the file.
 
