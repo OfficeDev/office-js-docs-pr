@@ -1,3 +1,9 @@
+---
+title: Set element in the manifest file
+description: ''
+ms.date: 10/09/2018
+---
+
 # Set element
 
 Specifies a requirement set from the JavaScript API for Office that your Office Add-in requires to activate.

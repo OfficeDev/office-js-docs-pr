@@ -1,3 +1,9 @@
+---
+title: DictionaryName element in the manifest file
+description: ''
+ms.date: 10/09/2018
+---
+
 # DictionaryName element
 
 Specifies the name of this dictionary.

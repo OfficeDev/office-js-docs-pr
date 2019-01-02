@@ -1,3 +1,9 @@
+---
+title: Add-in commands requirement sets
+description: ''
+ms.date: 11/21/2018
+---
+
 # Add-in commands requirement sets
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
@@ -18,7 +24,7 @@ The following table lists the add-in commands 1.1 requirement set, the Office ho
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | AddinCommands 1.1  | N/A | 16.0.4678.1000 *Supported in Outlook only*  | Version 1705 (Build 8121.1000) or later | N/A | 15.34 or later\*| May 2017 |
 
->\* The [Office.context.requirements.isSetSupported](https://docs.microsoft.com/javascript/api/office/office.requirementsetsupport?view=office-js#issetsupported-name--minversion-) method will erroneously return `false` for versions 16.9 &ndash; 16.14 (inclusive), but the requirement set *is* supported on these versions.
+>\* The [Office.context.requirements.isSetSupported](https://docs.microsoft.com/javascript/api/office/office.requirementsetsupport#issetsupported-name--minversion-) method will erroneously return `false` for versions 16.9 &ndash; 16.14 (inclusive), but the requirement set *is* supported on these versions.
 
 To find out more about versions, build numbers, and Office Online Server, see:
 
@@ -27,9 +33,9 @@ To find out more about versions, build numbers, and Office Online Server, see:
 - [Where you can find the version and build number for an Office 365 client application](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [Office Online Server overview](https://docs.microsoft.com/officeonlineserver/office-online-server-overview)
 
-## Office common API requirement sets
+## Office Common API requirement sets
 
-For information about common API requirement sets, see [Office common API requirement sets](office-add-in-requirement-sets.md).
+For information about Common API requirement sets, see [Office Common API requirement sets](office-add-in-requirement-sets.md).
 
 ## See also
 

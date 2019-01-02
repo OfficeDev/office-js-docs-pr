@@ -10,11 +10,11 @@ ms.date: 01/23/2018
 > [!NOTE]
 > In addition to the steps described in this article, if you want to use TypeScript, then to get Intellisense you will need run the following command in a Node-enabled system prompt (or git bash window) from the root of your project folder. You must have [Node.js](https://nodejs.org) installed (which includes npm).
 > 
-> ```
+> ```bash
 > npm install --save-dev @types/office-js
 > ```
 
-The [JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) library consists of the Office.js file and associated host application-specific .js files, such as Excel-15.js and Outlook-15.js. 
+The [JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office) library consists of the Office.js file and associated host application-specific .js files, such as Excel-15.js and Outlook-15.js. 
 
 
 The simplest way to reference the API is to use our CDN by adding the following `<script>` to your page's `<head>` tag:  
@@ -33,5 +33,5 @@ If you plan to publish your Office Add-in from AppSource, you must use this CDN 
 ## See also
 
 - [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md)    
-- [JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)
+- [JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)
     

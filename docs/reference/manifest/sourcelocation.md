@@ -1,3 +1,9 @@
+---
+title: SourceLocation element in the manifest file
+description: ''
+ms.date: 10/09/2018
+---
+
 # SourceLocation element
 
 Specifies the source file location(s) for your Office Add-in as a URL between 1 and 2018 characters long. The source location must be an HTTPS address, not a file path.

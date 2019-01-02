@@ -1,3 +1,9 @@
+---
+title: Rule element in the manifest file
+description: ''
+ms.date: 11/30/2018
+---
+
 # Rule element
 
 Specifies the activation rule(s) that should be evaluated for this contextual mail add-in.
@@ -63,7 +69,7 @@ Defines a rule that evaluates to true if the item contains text of the specified
 | **EntityType** | Yes | Specifies the type of entity that must be found for the rule to evaluate to true. Can be one of the following: `MeetingSuggestion`, `TaskSuggestion`, `Address`, `Url`, `PhoneNumber`, `EmailAddress`, or `Contact`. |
 | **RegExFilter** | No | Specifies a regular expression to run against this entity for activation. |
 | **FilterName** | No | Specifies the name of the regular expression filter, so that it is subsequently possible to refer to it in your add-in's code. |
-| **IgnoreCase** | No | Specifies to ignore case when running the regular expression specified by the  **RegExFilter** attribute. |
+| **IgnoreCase** | No | Specifies whether to ignore case when matching the regular expression specified by the **RegExFilter** attribute. |
 | **Highlight** | No | **Note:** this only applies to **Rule** elements within **ExtensionPoint** elements. Specifies how the client should highlight matching entities. Can be one of the following: `all` or `none`. If not specified, the default value is `all`. |
 
 ### Example
@@ -82,9 +88,10 @@ Defines a rule that evaluates to true if a match for the specified regular expre
 |:-----|:-----|:-----|
 | **RegExName** | Yes | Specifies the name of the regular expression, so that you can refer to the expression in the code for your add-in. |
 | **RegExValue** | Yes | Specifies the regular expression that will be evaluated to determine whether the mail add-in should be shown. |
-| **PropertyName** | Yes | Specifies the name of the property that the regular expression will be evaluated against. Can be one of the following: `Subject`, `BodyAsPlaintext`, `BodyAsHTML`, or `SenderSMTPAddress`. |
-| **IgnoreCase** | No | Specifies to ignore the case when executing the regular expression. |
-| **Highlight** | No | **Note:** this only applies to **Rule** elements within **ExtensionPoint** elements. Specifies how the client should highlight matching text. Can be one of the following: `all` or `none`. If not specified, the default value is `all`. |
+| **PropertyName** | Yes | Specifies the name of the property that the regular expression will be evaluated against. Can be one of the following: `Subject`, `BodyAsPlaintext`, `BodyAsHTML`, or `SenderSMTPAddress`.<br/><br/>If you specify `BodyAsHTML`, Outlook only applies the regular expression if the item body is HTML. Otherwise, Outlook returns no matches for that regular expression.<br/><br/>If you specify `BodyAsPlaintext`, Outlook always applies the regular expression on the item body.<br/><br/>**Note:** You must set the **PropertyName** attribute to `BodyAsPlaintext` if you specify the **Highlight** attribute for the **Rule** element.|
+| **IgnoreCase** | No | Specifies whether to ignore case when matching the regular expression specified by the **RegExName** attribute. |
+| **Highlight** | No | Specifies how the client should highlight matching text. This attribute can only be applied to **Rule** elements within **ExtensionPoint** elements. Can be one of the following: `all` or `none`. If not specified, the default value is `all`.<br/><br/>**Note:** You must set the **PropertyName** attribute to `BodyAsPlaintext` if you specify the **Highlight** attribute for the **Rule** element.
+|
 
 ### Example
 

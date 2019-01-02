@@ -8,7 +8,7 @@ ms.date: 01/23/2018
 
 At times your users might encounter issues with Office Add-ins that you develop. For example, an add-in fails to load or is inaccessible. Use the information in this article to help resolve common issues that your users encounter with your Office Add-in. 
 
-You can also use [Fiddler](http://www.telerik.com/fiddler) to identify and debug issues with your add-ins.
+You can also use [Fiddler](https://www.telerik.com/fiddler) to identify and debug issues with your add-ins.
 
 After you resolve the user's issue, you can [respond directly to customer reviews in AppSource](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings).
 
@@ -81,7 +81,7 @@ To add a URL to your list of trusted sites:
 3. Enter the URL that appears in the error message, and choose **Add**.
 4. Try to use the add-in again. If the problem persists, verify the settings for the other security zones and ensure that the add-in domain is in the same zone as the URL that is displayed in the address bar of the Office application.
 
-This issue occurs when the Dialog API is used in pop-up mode. To prevent this issue from occurring, use the [displayInFrame](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) flag. This requires that your page support display within an iframe. The following example shows how to use the flag.
+This issue occurs when the Dialog API is used in pop-up mode. To prevent this issue from occurring, use the [displayInFrame](https://docs.microsoft.com/javascript/api/office/office.ui) flag. This requires that your page support display within an iframe. The following example shows how to use the flag.
 
 ```js
 

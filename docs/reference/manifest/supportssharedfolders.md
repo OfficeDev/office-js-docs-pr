@@ -1,3 +1,9 @@
+---
+title: SupportsSharedFolders element in the manifest file
+description: ''
+ms.date: 10/09/2018
+---
+
 # SupportsSharedFolders element
 
 Defines whether the Outlook add-in is available in delegate scenarios. The **SupportsSharedFolders** element is a child element of [DesktopFormFactor](desktopformfactor.md). It is set to *false* by default.

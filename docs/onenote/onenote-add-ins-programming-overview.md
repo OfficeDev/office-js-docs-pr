@@ -27,12 +27,12 @@ Add-ins consist of two basic components:
 
 Add-ins use the runtime context of the host application to access the JavaScript API. The API has two layers: 
 
-- A **rich API** for OneNote-specific operations, accessed through the **Application** object.
-- A **common API** that's shared across Office applications, accessed through the **Document** object.
+- A **host-specific API** for OneNote-specific operations, accessed through the **Application** object.
+- A **Common API** that's shared across Office applications, accessed through the **Document** object.
 
-### Accessing the rich API through the *Application* object
+### Accessing the host-specific API through the *Application* object
 
-Use the **Application** object to access OneNote objects such as **Notebook**, **Section**, and **Page**. With rich APIs, you run batch operations on proxy objects. The basic flow goes something like this: 
+Use the **Application** object to access OneNote objects such as **Notebook**, **Section**, and **Page**. With host-specific APIs, you run batch operations on proxy objects. The basic flow goes something like this: 
 
 1. Get the application instance from the context.
 
@@ -79,12 +79,12 @@ function getPagesInSection() {
 }
 ```
 
-You can find supported OneNote objects and operations in the [API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js).
+You can find supported OneNote objects and operations in the [API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference).
 
-### Accessing the common API through the *Document* object
+### Accessing the Common API through the *Document* object
 
-Use the **Document** object to access the common API, such as the [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-)
-and [setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#setselecteddataasync-data--options--callback-) methods. 
+Use the **Document** object to access the Common API, such as the [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)
+and [setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) methods. 
 
 
 For example:  
@@ -103,17 +103,17 @@ function getSelectionFromPage() {
         });
 }
 ```
-OneNote add-ins support only the following common APIs:
+OneNote add-ins support only the following Common APIs:
 
 | API | Notes |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) | **Office.CoercionType.Text** and **Office.CoercionType.Matrix** only |
-| [Office.context.document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#setselecteddataasync-data--options--callback-) | **Office.CoercionType.Text**, **Office.CoercionType.Image**, and **Office.CoercionType.Html** only | 
-| [var mySetting = Office.context.document.settings.get(name);](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#get-name-) | Settings are supported by content add-ins only | 
-| [Office.context.document.settings.set(name, value);](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#set-name--value-) | Settings are supported by content add-ins only | 
-| [Office.EventType.DocumentSelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs?view=office-js) ||
+| [Office.context.document.getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) | **Office.CoercionType.Text** and **Office.CoercionType.Matrix** only |
+| [Office.context.document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) | **Office.CoercionType.Text**, **Office.CoercionType.Image**, and **Office.CoercionType.Html** only | 
+| [var mySetting = Office.context.document.settings.get(name);](https://docs.microsoft.com/javascript/api/office/office.settings#get-name-) | Settings are supported by content add-ins only | 
+| [Office.context.document.settings.set(name, value);](https://docs.microsoft.com/javascript/api/office/office.settings#set-name--value-) | Settings are supported by content add-ins only | 
+| [Office.EventType.DocumentSelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs) ||
 
-In general, you only use the common API to do something that isn't supported in the rich API. To learn more about using the common API, see the Office Add-ins [documentation](../overview/office-add-ins.md) and [reference](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js).
+In general, you only use the Common API to do something that isn't supported in the host-specific API. To learn more about using the Common API, see the Office Add-ins [documentation](../overview/office-add-ins.md) and [reference](../reference/javascript-api-for-office.md).
 
 
 <a name="om-diagram"></a>
@@ -126,6 +126,6 @@ The following diagram represents what's currently available in the OneNote JavaS
 ## See also
 
 - [Build your first OneNote add-in](onenote-add-ins-getting-started.md)
-- [OneNote JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js)
+- [OneNote JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office Add-ins platform overview](../overview/office-add-ins.md)

@@ -1,3 +1,9 @@
+---
+title: Typography guidelines for Office Add-ins
+description: ''
+ms.date: 06/27/2018
+---
+
 # Typography
 
 Segoe is the standard typeface for Office. Use it in your add-in to align with Office task panes, dialog boxes, and content objects. Office UI Fabric gives you access to Segoe. It provides a full type ramp of Segoe with many variations - across font weight and size - in convenient CSS classes. Not all Office UI Fabric sizes and weights will look great in an Office Add-in. To fit harmoniously or avoid conflicts, consider using a subset of the Fabric type ramp. Here's a list of Fabric's base classes that we recommend for use in Office Add-ins.

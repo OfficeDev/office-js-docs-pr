@@ -40,7 +40,7 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
    ![A screenshot that shows a content add-in with data next to a content add-in with no data](../images/add-in-title.png)
 
-- Offer [free trials](https://docs.microsoft.com/office/dev/store/decide-on-a-pricing-model#office-store-pricing-options). If your add-in requires a subscription, make some functionality available without a subscription.
+- Offer [free trials](https://docs.microsoft.com/office/dev/store/decide-on-a-pricing-model). If your add-in requires a subscription, make some functionality available without a subscription.
 
 - Make signup simple. Prefill information (email, display name) and skip email verifications.
 
@@ -76,7 +76,7 @@ For templates that apply design principles that you can use and customize as you
 
 ### Optimize for touch
 
-- Use the [Context.touchEnabled](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js) property to detect whether the host application your add-in runs on is touch enabled.
+- Use the [Context.touchEnabled](https://docs.microsoft.com/javascript/api/office/office.context) property to detect whether the host application your add-in runs on is touch enabled.
 
   > [!NOTE]
   > This property is not supported in Outlook.

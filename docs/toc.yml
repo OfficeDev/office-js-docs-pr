@@ -45,7 +45,7 @@
 - name: Tutorials
   items:
   - name: Excel add-in tutorial
-    href: tutorials/excel-tutorial.yml
+    href: tutorials/excel-tutorial.md
     displayName: Excel
   - name: Excel custom functions tutorial
     href: tutorials/excel-tutorial-create-custom-functions.md
@@ -54,10 +54,10 @@
     href: /outlook/add-ins/addin-tutorial
     displayName: Outlook
   - name: PowerPoint add-in tutorial
-    href: tutorials/powerpoint-tutorial.yml
+    href: tutorials/powerpoint-tutorial.md
     displayName: PowerPoint
   - name: Word add-in tutorial
-    href: tutorials/word-tutorial.yml
+    href: tutorials/word-tutorial.md
     displayName: Word
 
 - name: Concepts
@@ -233,7 +233,7 @@
         href: excel/excel-add-ins-get-started-vue.md
         displayName: Excel
     - name: Excel add-in tutorial
-      href: tutorials/excel-tutorial.yml
+      href: tutorials/excel-tutorial.md
       displayName: Excel
     - name: Concepts
       displayName: Excel
@@ -291,8 +291,11 @@
       - name: PivotTables
         href: excel/excel-add-ins-pivottables.md
         displayName: Excel
-      - name: Ranges
+      - name: Ranges (fundamental)
         href: excel/excel-add-ins-ranges.md
+        displayName: Excel
+      - name: Ranges (advanced)
+        href: excel/excel-add-ins-ranges-advanced.md
         displayName: Excel
       - name: Tables
         href: excel/excel-add-ins-tables.md
@@ -318,7 +321,7 @@
       href: word/word-add-ins.md
       displayName: Word
     - name: Word add-in tutorial
-      href: tutorials/word-tutorial.yml
+      href: tutorials/word-tutorial.md
       displayName: Word
     - name: Create better add-ins for Word with Office Open XML
       href: word/create-better-add-ins-for-word-with-office-open-xml.md
@@ -357,7 +360,7 @@
       href: powerpoint/powerpoint-add-ins-get-started.md
       displayName: PowerPoint
     - name: PowerPoint add-in tutorial
-      href: tutorials/powerpoint-tutorial.yml
+      href: tutorials/powerpoint-tutorial.md
       displayName: PowerPoint
     - name: Use document themes in your PowerPoint add-ins
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
@@ -475,7 +478,7 @@
         href: reference/requirement-sets/dialog-api-requirement-sets.md
       - name: Identity API requirement sets
         href: reference/requirement-sets/identity-api-requirement-sets.md
-      - name: Office common API requirement sets
+      - name: Office Common API requirement sets
         href: reference/requirement-sets/office-add-in-requirement-sets.md
     - name: Excel requirement sets
       href: reference/requirement-sets/excel-api-requirement-sets.md

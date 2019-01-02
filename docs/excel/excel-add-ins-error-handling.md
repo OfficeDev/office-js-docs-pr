@@ -71,4 +71,4 @@ The following table is a list of errors that the API may return.
 ## See also
 
 - [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
-- [OfficeExtension.Error object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/office/officeextension.error?view=office-js)
+- [OfficeExtension.Error object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/office/officeextension.error)

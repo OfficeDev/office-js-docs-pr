@@ -1,3 +1,9 @@
+---
+title: FormSettings element in the manifest file
+description: ''
+ms.date: 10/09/2018
+---
+
 # FormSettings element
 
 Specifies source location and control settings for your mail add-in.

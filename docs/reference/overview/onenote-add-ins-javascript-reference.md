@@ -1,3 +1,9 @@
+---
+title: OneNote JavaScript API overview
+description: ''
+ms.date: 10/09/2018
+---
+
 # OneNote JavaScript API overview
 
 Applies to: OneNote Online

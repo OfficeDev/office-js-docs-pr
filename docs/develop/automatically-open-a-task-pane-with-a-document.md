@@ -55,7 +55,7 @@ To implement the autoopen feature:
 
 ### Step 1: Specify the task pane to open
 
-To specify the task pane to open automatically, set the [TaskpaneId](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/action?view=office-js#taskpaneid) value to **Office.AutoShowTaskpaneWithDocument**. You can only set this value on one task pane. If you set this value on multiple task panes, the first occurrence of the value will be recognized and the others will be ignored.
+To specify the task pane to open automatically, set the [TaskpaneId](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/action#taskpaneid) value to **Office.AutoShowTaskpaneWithDocument**. You can only set this value on one task pane. If you set this value on multiple task panes, the first occurrence of the value will be recognized and the others will be ignored.
 
 The following example shows the TaskPaneId value set to Office.AutoShowTaskpaneWithDocument.
 
@@ -73,7 +73,7 @@ You can tag the document to trigger the autoopen feature in one of two ways. Pic
 
 #### Tag the document on the client side
 
-Use the Office.js [settings.set](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js) method to set **Office.AutoShowTaskpaneWithDocument** to **true**, as shown in the following example.
+Use the Office.js [settings.set](https://docs.microsoft.com/javascript/api/office/office.settings) method to set **Office.AutoShowTaskpaneWithDocument** to **true**, as shown in the following example.
 
 ```js
 Office.context.document.settings.set("Office.AutoShowTaskpaneWithDocument", true);

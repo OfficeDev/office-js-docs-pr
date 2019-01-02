@@ -1,4 +1,10 @@
-# Office common API requirement sets
+---
+title: Office Common API requirement sets
+description: ''
+ms.date: 11/20/2018
+---
+
+# Office Common API requirement sets
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
@@ -16,7 +22,7 @@ Looking for the *host-specific* API requirement sets? See the following API requ
 
 ## Common API requirement sets
 
-The following table lists the common API requirement sets, the methods in each set, and the Office host applications that support that requirement set. All of these API requirement sets are version 1.1.
+The following table lists the Common API requirement sets, the methods in each set, and the Office host applications that support that requirement set. All of these API requirement sets are version 1.1.
 
 |**Requirement set**|**Office host**|**Methods in set**|
 |:-----|:-----|:-----|

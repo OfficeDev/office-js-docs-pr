@@ -1,3 +1,9 @@
+---
+title: Layout guidelines for Office Add-ins
+description: ''
+ms.date: 06/27/2018
+---
+
 # Layout
 Each HTML container embedded in Office will have a layout. These layouts are the main screens of your add-in. In them you will create experiences that enable customers to initiate actions, modify settings, view, scroll, or navigate content. Design your add-in with a consistent layouts across screens to guarantee continuity of experience. If you have an existing website that your customers are familiar with using, consider reusing layouts from your existing web pages. Adapt them to fit harmoniously within Office HTML containers.
 

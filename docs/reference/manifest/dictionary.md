@@ -1,3 +1,9 @@
+---
+title: Dictionary element in the manifest file
+description: ''
+ms.date: 10/09/2018
+---
+
 # Dictionary element
 Defines settings for a task pane add-in that implements additional dictionary support.
 

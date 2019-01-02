@@ -1,7 +1,7 @@
 ---
 title: Create a Node.js Office Add-in that uses single sign-on
 description: ''
-ms.date: 12/7/2018
+ms.date: 12/07/2018
 ---
 
 # Create a Node.js Office Add-in that uses single sign-on (preview)
@@ -191,7 +191,7 @@ The following instruction are written generically so they can be used in multipl
     
             // TODO3: Handle the case where the user's sign-in or consent was aborted.
     
-            // TODO4: Handle the case where the user is logged in with an account that is neither work or school, 
+            // TODO4: Handle the case where the user is logged in with an account that is neither work or school,
             //        nor Microsoft Account.
     
             // TODO5: Handle an unspecified error from the Office host.
@@ -295,7 +295,7 @@ The following instruction are written generically so they can be used in multipl
 
         // TODO12: Handle the case where an invalid scope (permission) was used in the on-behalf-of flow
 
-        // TODO13: Handle the case where the token that the add-in's client-side sends to it's 
+        // TODO13: Handle the case where the token that the add-in's client-side sends to its
         //         server-side is not valid because it is missing `access_as_user` scope (permission).
 
         // TODO14: Handle the case where the token sent to Microsoft Graph in the request for 
@@ -487,7 +487,7 @@ There are two server-side files that need to be modified.
     ```typescript
     async acquireTokenOnBehalfOf(jwt: string, scopes: string[] = ['openid'], resource?: string) {
         const resourceTokenExpirationTime = ServerStorage.retrieve('ResourceTokenExpiresAt');
-        if (moment().add(1, 'minute').diff(resourceTokenExpirationTime) < 1 ) {
+        if (moment().add(1, 'minute').diff(await resourceTokenExpirationTime) < 1 ) {
             return ServerStorage.retrieve('ResourceToken');
         } else if (resource) {
             return this.exchangeForToken(jwt, scopes, resource);
@@ -653,7 +653,7 @@ There are two ways to build and run the project depending on whether you are usi
 2. If you are using VS Code:
  1. Open the project in VS Code.
  2. Press CTRL-SHIFT-B to build the project.
- 3. Press F5 to run the project in a debugging session.
+ 3. Press **F5** to run the project in a debugging session.
 
 
 ## Add the add-in to an Office document

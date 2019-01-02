@@ -1,3 +1,9 @@
+---
+title: DisplayName element in the manifest file
+description: ''
+ms.date: 10/09/2018
+---
+
 # DisplayName element
 
 Specifies the name for your Office Add-in as a string up to 125 characters long.
