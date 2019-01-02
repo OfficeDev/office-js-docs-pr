@@ -62,7 +62,7 @@ function increment(incrementBy, callback) {
 }
 
 // associate `id` values in the JSON metadata file to the JavaScript function names
-CustomFunctions.associate('ADD': add);
+ CustomFunctions.associate('ADD', add);
 CustomFunctions.associate('INCREMENT': increment);
 ```
 
