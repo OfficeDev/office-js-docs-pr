@@ -342,7 +342,7 @@ function secondHighest(values){
 
 ## Discovering cells that invoke custom functions
 
-Custom funtions also allows you to format ranges, display cached values, and reconcile values using the address of the cell which invokes a custom function. You might use this functionality in some of the following scenarios:
+ Custom functions also allows you to format ranges, display cached values, and reconcile values using the address of the cell which invokes a custom function. You might use this functionality in some of the following scenarios:
 
 - Formatting ranges: Use the cell's address as the key to store information in [AsyncStorage](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `AsyncStorage`.
 - Displaying cached values: If your function is used offline, display stored cached values from `AsyncStorage` using `onCalculated`.
