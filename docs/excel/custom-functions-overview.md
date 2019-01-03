@@ -433,4 +433,4 @@ function getComment(x) {
 * [Custom functions metadata](custom-functions-json.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
-* [Excel custom functions tutorial](excel-tutorial-custom-functions.md)
+* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)

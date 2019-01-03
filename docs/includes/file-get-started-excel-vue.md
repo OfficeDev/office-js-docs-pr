@@ -204,7 +204,7 @@ To enable HTTPS for your app, open the file **package.json** in the root folder 
 Congratulations, you've successfully created an Excel add-in using Vue! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.
 
 > [!div class="nextstepaction"]
-> [Excel add-in tutorial](../tutorials/excel-tutorial.yml)
+> [Excel add-in tutorial](../tutorials/excel-tutorial.md)
 
 ## See also
 
