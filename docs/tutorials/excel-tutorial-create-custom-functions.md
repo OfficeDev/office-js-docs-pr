@@ -126,10 +126,10 @@ Complete the following steps to create a custom function named `stockPrice` that
         //    will be bubbled up to Excel to indicate an error.
     }
 
-3. In **customfunctions.js**, locate the line`CustomFunctionMappings.INCREMENT = increment;`, add the following line of code immediately after that line, and save the file.
+3. In **customfunctions.js**, locate the line`CustomFunctions.associate("increment", increment);`, add the following line of code immediately after that line, and save the file. This `CustomFunctions.associate` code ensures that the names of the custom functions are tied to their corresponding objects in the JSON metadata file, making the functions useable.
 
     ```js
-    CustomFunctionMappings.STOCKPRICE = stockPrice;
+    CustomFunctions.associate("stockprice", stockprice);
     ```
 
 4. Before Excel can make this new function available, you must specify metadata to describe the function to Excel. Open the **config/customfunctions.json** file. Add the following JSON object to the 'functions' array and save the file.
@@ -224,7 +224,7 @@ Complete the following steps to create a custom function named `stockPriceStream
         };
     }
 
-    CustomFunctionMappings.STOCKPRICESTREAM = stockPriceStream;
+    CustomFunctions.associate("stockpricestream", stockpricestream);
     ```
 
 2. Before Excel can make this new function available to users, specify metadata that describes this function. In the **stock-ticker** project that the Yeoman generator created, add the following object to the `functions` array within the **config/customfunctions.json** file and save the file.
