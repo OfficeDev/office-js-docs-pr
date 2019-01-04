@@ -4,7 +4,7 @@ description: Discover the latest updates to custom functions.
 title: Custom Functions Changelog
 ---
 
-# Custom functions Changelog (preview)
+# Custom functions changelog (preview)
 
 Excel custom functions is still in preview and that means there are frequent changes to the product, including changes and the release of new features. This changelog provides the most up-to-date information about any changes to the product.
 
