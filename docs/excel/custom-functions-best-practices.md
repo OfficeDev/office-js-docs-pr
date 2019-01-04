@@ -194,5 +194,5 @@ In order to create an add-in that will run on multiple platforms (one of the key
 * [Create custom functions in Excel](custom-functions-overview.md)
 * [Custom functions metadata](custom-functions-json.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
+* [Custom functions changelog](custom-functions-changelog.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
-* [Excel custom functions changelog](custom-functions-changelog.md)

@@ -22,6 +22,7 @@ For a list of known issues with the product, see [Known Issues](custom-functions
 
 ## See also
 
+* [Custom functions overview](custom-functions-overview.md)
 * [Custom functions metadata](custom-functions-json.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
