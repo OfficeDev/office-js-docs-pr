@@ -1,5 +1,5 @@
 ---
-ms.date: 11/29/2018
+ms.date: 01/04/2019
 description: Learn best practices for developing custom functions in Excel.
 title: Custom functions best practices
 ---
@@ -195,3 +195,4 @@ In order to create an add-in that will run on multiple platforms (one of the key
 * [Custom functions metadata](custom-functions-json.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Excel custom functions changelog](custom-functions-changelog.md)
