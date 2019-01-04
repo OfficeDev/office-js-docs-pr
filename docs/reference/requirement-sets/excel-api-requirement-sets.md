@@ -6,6 +6,7 @@ Excel add-ins run across multiple versions of Office, including Office 2016 or l
 
 |  Requirement set  |  Office 365 for Windows\*  |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
+| Preview  | Please use the latest Office version to try preview APIs (you may need to join the [Office Insider program](https://products.office.com/office-insider)) |
 | ExcelApi1.8  | Version 1808 (Build 10730.20102) or later | 2.17 or later | 16.17 or later | September 2018 | Coming soon |
 | ExcelApi1.7  | Version 1801 (Build 9001.2171) or later   | 2.9 or later | 16.9 or later | April 2018 | Coming soon |
 | ExcelApi1.6  | Version 1704 (Build 8201.2001) or later   | 2.2 or later |15.36 or later| April 2017 | Coming soon|
@@ -14,7 +15,6 @@ Excel add-ins run across multiple versions of Office, including Office 2016 or l
 | ExcelApi1.3  | Version 1608 (Build 7369.2055) or later | 1.27 or later |  15.27 or later| September 2016 | Version 1608 (Build 7601.6800) or later|
 | ExcelApi1.2  | Version 1601 (Build 6741.2088) or later | 1.21 or later | 15.22 or later| January 2016 ||
 | ExcelApi1.1  | Version 1509 (Build 4266.1001) or later | 1.19 or later | 15.20 or later| January 2016 ||
-| Preview  | Please use the latest Office version to try preview APIs (you may need to join the [Office Insider program](https://products.office.com/office-insider) |
 
 > [!NOTE]
 > The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1 requirement set.
@@ -26,14 +26,14 @@ For more information about versions, build numbers, and Office Online Server, se
 - [Where you can find the version and build number for an Office 365 client application](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [Office Online Server overview](https://docs.microsoft.com/officeonlineserver/office-online-server-overview)
 
-## What's in the Excel JavaScript API beta
+## Excel JavaScript preview API set
 
-Preview APIs are still in development. All Excel JavaScript APIs start in preview and advanced into a specific, numbered requirement set once sufficient testing occurs and user-feedback is acquired. Please leave feedback on these APIs on their individual reference pages through the GitHub feedback mechanism at the end of each page.
+New Excel JavaScript APIs are first introduced in "preview" and later become part of a specific, numbered requirement set after sufficient testing occurs and user feedback is acquired. The following table lists the APIs currently available in preview. To provide feedback about a preview API, please use the feedback mechanism at the end of the web page where the API is documented.
 
 > [!NOTE]
-> Preview APIs are subject to change and are not intended for use in a production environment. We recommend that you try them out in test and development environments only. Do not use Preview APIs in a production environment or within business-critical documents.
+> Preview APIs are subject to change and are not intended for use in a production environment. We recommend that you try them out in test and development environments only. Do not use preview APIs in a production environment or within business-critical documents.
 >
-> For the requirement sets that are marked as **Preview**, use the specified (or later) version of the Office software and use the Beta library on the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js. Entries not marked as **Preview** are generally available and you can use Production library on the CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
+> To use preview APIs, you must reference the **beta** library on the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js and you may also need to join the Office Insider program to get a sufficiently recent Office build.
 
 |Class|Fields|Description|
 |:---|:---|:---|
