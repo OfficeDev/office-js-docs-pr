@@ -43,23 +43,21 @@ In this tutorial, you will:
  To start, you'll create the code project to build your custom function add-in. The [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) will set up your project with some initial custom functions that you can try out.
 
 1. Run the following command and then answer the prompts as follows.
-
+    
     ```
     yo office
     ```
-
+    
     * Choose a project type: `Excel Custom Functions Add-in project (...)`
-
     * Choose a script type: `JavaScript`
-
     * What do you want to name your add-in? `stock-ticker`
-
+    
     ![Yeoman generator for Office Add-ins prompts for custom functions](../images/12-10-fork-cf-pic.jpg)
-
-The Yeoman generator creates the project files and installs supporting Node.js components.
+    
+    The Yeoman generator creates the project files and installs supporting Node.js components.
 
 2. Go to the project folder.
-
+    
     ```
     cd stock-ticker
     ```
@@ -67,35 +65,45 @@ The Yeoman generator creates the project files and installs supporting Node.js c
 3. Trust the self-signed certificate that is needed to run this project. For detailed instructions for either Windows or Mac, see [Adding Self Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).  
 
 4. Build the project.
-
+    
     ```
     npm run build
     ```
 
 5. Next you'll start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel for Windows, or Excel online.
 
-    * To start the local web server for Excel for Windows, use the following comand.
+# [Excel for Windows](#tab/excel-windows)
 
-        ```
-        npm run start
-        ```
-        This command starts the web server, and sideloads your custom function add-in into Excel for Windows.
+To start the local web server for Excel for Windows, use the following comand.
         
-        > [!NOTE]
-        > If your add-in does not load, check that you have completed step 3 properly.
+    ```
+    npm run start
+    ```
+    This command starts the web server, and sideloads your custom function add-in into Excel for Windows.
+    
+    > [!NOTE]
+    > If your add-in does not load, check that you have completed step 3 properly.
 
-    * To start the local web server for Excel online, use the following command.
+# [Excel online](#tab/excel-online)
 
-        ```
-        npm run start-web
-        ```
-        This command starts the web server. Use the following steps to sideload your add-in.
+To start the local web server for Excel online, use the following command.
+    
+    ```
+    npm run start-web
+    ```
+    This command starts the web server. Use the following steps to sideload your add-in.
 
-        1. In Excel Online, choose the **Insert** tab and then choose **Add-ins**.
+    1. In Excel Online, choose the **Insert** tab and then choose **Add-ins**.
             ![Insert ribbon in Excel Online with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
-        2. Choose **Manage My Add-ins** and select **Upload My Add-in**. 
-        3. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created. 
-        4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
+    2. Choose **Manage My Add-ins** and select **Upload My Add-in**. 
+    3. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created. 
+    4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
+    
+    > [!NOTE]
+    > If your add-in does not load, check that you have completed step 3 properly.
+
+--- 
+    
 
 ## Try out a prebuilt custom function
 
