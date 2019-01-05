@@ -64,7 +64,7 @@ function add(first, second){
   return first + second;
 }
 
-CustomFunctions.associate.ADD = add;
+CustomFunctions.associate("add", add); 
 ```
 
 Keep in mind the following best practices when creating custom functions in your JavaScript file and specifying corresponding information in the JSON metadata file.
