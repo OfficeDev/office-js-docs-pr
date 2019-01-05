@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
 description: In this tutorial, you’ll create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 01/02/2019
+ms.date: 01/04/2019
 ms.topic: tutorial
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
 ---
@@ -12,10 +12,10 @@ Custom functions enable you to add new functions to Excel by defining those func
 
 In this tutorial, you will:
 > [!div class="checklist"]
-> * Create a custom functions project by using the Yo Office generator
-> * Use a prebuilt custom function to perform a simple calculation
-> * Create a custom function that requests data from the web
-> * Create a custom function that streams real-time data from the web
+> * Create a custom function add-in using the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office). 
+> * Use a prebuilt custom function to perform a simple calculation.
+> * Create a custom function that gets data from the web.
+> * Create a custom function that streams real-time data from the web.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -40,7 +40,7 @@ In this tutorial, you will:
 
 ## Create a custom functions project
 
- To start, you'll use the Yeoman generator to create the custom functions project. This will set up your project with the correct folder structure, source files, and dependencies to begin coding your custom functions.
+ To start, you'll create the code project to build your custom function add-in. The [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) will set up your project with some initial custom functions that you can try out.
 
 1. Run the following command and then answer the prompts as follows.
 
@@ -56,7 +56,7 @@ In this tutorial, you will:
 
     ![Yeoman generator for Office Add-ins prompts for custom functions](../images/12-10-fork-cf-pic.jpg)
 
-    The Yeoman generator will create the project files and install supporting Node components. The project files come from the [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) GitHub repository.
+The Yeoman generator creates the project files and installs supporting Node.js components.
 
 2. Go to the project folder.
 
@@ -72,22 +72,30 @@ In this tutorial, you will:
     npm run build
     ```
 
-5. Start the local web server, which runs in Node.js.
+5. Next you'll start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel for Windows, or Excel online.
 
-    * If you'll be using Excel for Windows to test your custom functions, run the following command to start the local web server, launch Excel, and sideload the add-in:
+    * To start the local web server for Excel for Windows, use the following comand.
 
         ```
-         npm run start
+        npm run start
         ```
-        After running this command, your command prompt will show details about what has been done, another npm window will open showing the details of the build, and Excel will start with your add-in loaded. If you add-in does not load, check that you have completed step 3 properly.
+        This command starts the web server, and sideloads your custom function add-in into Excel for Windows.
+        
+        > [!NOTE]
+        > If your add-in does not load, check that you have completed step 3 properly.
 
-    * If you'll be using Excel Online to test your custom functions, run the following command to start the local web server:
+    * To start the local web server for Excel online, use the following command.
 
         ```
         npm run start-web
         ```
+        This command starts the web server. Use the following steps to sideload your add-in.
 
-         After running this command, another window will open showing you the details of the build. To use your functions, open a new workbook in Office Online.
+        1. In Excel Online, choose the **Insert** tab and then choose **Add-ins**.
+            ![Insert ribbon in Excel Online with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
+        2. Choose **Manage My Add-ins** and select **Upload My Add-in**. 
+        3. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created. 
+        4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
 ## Try out a prebuilt custom function
 
