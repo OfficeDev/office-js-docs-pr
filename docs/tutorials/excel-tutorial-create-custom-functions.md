@@ -88,25 +88,25 @@ To start the local web server for Excel for Windows, use the following comand.
 # [Excel online](#tab/excel-online)
 
 To start the local web server for Excel online, use the following command.
-    
-    ```
-    npm run start-web
-    ```
 
-    This command starts the web server. Use the following steps to sideload your add-in.
-    
-    1. In Excel Online, choose the **Insert** tab and then choose **Add-ins**.
-            ![Insert ribbon in Excel Online with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
-    2. Choose **Manage My Add-ins** and select **Upload My Add-in**. 
-    3. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created. 
-    4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
-    
-    > [!NOTE]
-    > If your add-in does not load, check that you have completed step 3 properly.
+```
+npm run start-web
+```
+
+This command starts the web server. Use the following steps to sideload your add-in.
+\<ol type="a">
+   <li>In Excel Online, choose the <strong>Insert</strong> tab and then choose <strong>Add-ins</strong>.<br/>
+   <img src="../images/excel-cf-online-register-add-in-1.png" alt="Insert ribbon in Excel Online with the My Add-ins icon highlighted"></li>
+   <li>Choose <strong>Manage My Add-ins</strong> and select <strong>Upload My Add-in</strong>.</li> 
+   <li>Choose <strong>Browse...</strong> and navigate to the root directory of the project that the Yeoman generator created.</li> 
+   <li>Select the file <strong>manifest.xml</strong> and choose <strong>Open</strong>, then choose <strong>Upload</strong>.</li>
+</ol>
+
+> [!NOTE]
+> If your add-in does not load, check that you have completed step 3 properly.
 
 --- 
     
-
 ## Try out a prebuilt custom function
 
 The custom functions project that you created alrady has two prebuilt custom functions named ADD and INCREMENT. The code for these prebuilt functions is in the  **src/customfunctions.js** file. The **./manifest.xml** file specifies that all custom functions belong to the `CONTOSO` namespace. You'll use the CONTOSO namespace to access the custom functions in Excel.
@@ -198,7 +198,9 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
 --- 
 
-6. Try out the new function. In cell **B1**, type the text `=CONTOSO.STOCKPRICE("MSFT")` and press enter. You should see that the result in cell **B1** is the current stock price for one share of Microsoft stock.
+<ol start="6">
+<li> Try out the new function. In cell <strong>B1</strong>, type the text <strong>=CONTOSO.STOCKPRICE("MSFT")</strong> and press enter. You should see that the result in cell <strong>B1</strong> is the current stock price for one share of Microsoft stock.</li>
+</ol>
 
 ## Create a streaming asynchronous custom function
 
@@ -291,11 +293,13 @@ Next you’ll create a custom function named `stockPriceStream` that gets the pr
     ![Insert ribbon in Excel Online with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
 2. Choose **Manage My Add-ins** and select **Upload My Add-in**.
 3. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.
- 4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
+4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
 --- 
 
-4. Try out the new function. In cell **C1**, type the text `=CONTOSO.STOCKPRICESTREAM("MSFT")` and press enter. Provided that the stock market is open, you should see that the result in cell **C1** is constantly updated to reflect the real-time price for one share of Microsoft stock.
+<ol start="4">
+<li>Try out the new function. In cell <strong>C1</strong>, type the text <strong>=CONTOSO.STOCKPRICESTREAM("MSFT")</strong> and press enter. Provided that the stock market is open, you should see that the result in cell <strong>C1</strong> is constantly updated to reflect the real-time price for one share of Microsoft stock.</li>
+</ol>
 
 ## Next steps
 
