@@ -1,6 +1,10 @@
 { 
     "redirections": [ 
       {
+        "source_path": "docs/excel/excel-tutorial-custom-functions.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions"
+      },
+      {
         "source_path": "docs/tutorials/word-tutorial-content-control.md",
         "redirect_url": "/office/dev/add-ins/tutorials/word-tutorial"
       },

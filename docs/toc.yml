@@ -262,7 +262,7 @@
           href: excel/custom-functions-overview.md
           displayName: Excel
         - name: Custom functions tutorial
-          href: excel/excel-tutorial-custom-functions.md
+          href: tutorials/excel-tutorial-create-custom-functions.md
           displayName: Excel
         - name: Custom functions runtime
           href: excel/custom-functions-runtime.md
@@ -272,6 +272,9 @@
           displayName: Excel
         - name: Custom functions best practices
           href: excel/custom-functions-best-practices.md
+          displayName: Excel
+        - name: Custom functions changelog
+          href: excel/custom-functions-changelog.md
           displayName: Excel
       - name: Data validation
         href: excel/excel-add-ins-data-validation.md
