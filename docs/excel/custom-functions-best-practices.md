@@ -55,10 +55,9 @@ If your add-in fails to register, [verify that SSL certificates are correctly co
 
 ## Associating function names with JSON metadata
 
-As described in the [custom functions overview](custom-functions-overview.md) article, a custom functions project must include both a JSON metadata file and a script (either JavaScript or TypeScript) file to form a complete function. For a function to work properly, you'll need to bind the name of the function in the script file to the id listed in the JSON file. This process is called association and you should make a note to include associations at the end of your JavaScript code files; otherwise, your functions will not work. 
+As described in the [custom functions overview](custom-functions-overview.md) article, a custom functions project must include both a JSON metadata file and a script (either JavaScript or TypeScript) file to form a complete function. For a function to work properly, you'll need to bind the name of the function in the script file to the id listed in the JSON file. This process is called association. Make a note to include associations at the end of your JavaScript code files; otherwise, your functions will not work.
 
-The following code sample shows how to do this association. The sample defines the custom function `add` associates it with the object in the JSON metadata file where the value of the `id` property is **ADD**. Note that no capitalization is needed within `CustomFunctions.associate()`, even though your JSON will use capital letters. 
-
+The following code sample shows how to do this association. The sample defines the custom function `add` ties it to the object in the JSON metadata file where the value of the `id` property is **ADD**.
 
 ```js
 function add(first, second){
@@ -70,15 +69,13 @@ CustomFunctions.associate("add", add);
 
 Keep in mind the following best practices when creating custom functions in your JavaScript file and specifying corresponding information in the JSON metadata file.
 
-* In the JavaScript file, specify function names in camelCase. For example, the function name `addTenToInput` is written in camelCase: the first word in the name starts with a lowercase letter and each subsequent word in the name starts with an uppercase letter.
+* Only use uppercase letters for a function's `name` and `id` in the JSON metadata file. Do not use a mix of cases or only lowercase letters. If you do, you may end up with two values that only differ by case which will cause unintentional overwriting of your functions. For example, a function object with an `id` value of **add** could be overwritten by declaration later in the file of function object with an `id` value of **ADD**. Additionally, the `name` property defines the function name that end users will see in Excel. Using uppercase letters for the name of each custom function provides a consistent experience in Excel, where all built-in function names are uppercase.
 
-* In the JSON metadata file, specify the value of each `name` property in uppercase. The `name` property defines the function name that end users will see in Excel. Using uppercase letters for the name of each custom function provides a consistent experience for end users in Excel, where all built-in function names are uppercase.
-
-* In the JSON metadata file, specify the value of each `id` property in uppercase. Doing so makes it obvious which part of the `CustomFunctions.associate` statement in your JavaScript code corresponds to the `id` property in the JSON metadata file (provided that your function name uses camelCase, as recommended earlier).
+* However, it is not necessary to capitalize the function's `name` when associating. For example, `CustomFunctions.associate("add", add)` is equivalent to `CustomFunctions.associate("ADD", add)`.
 
 * In the JSON metadata file, ensure that the value of each `id` property contains only alphanumeric characters and periods.
 
-* In the JSON metadata file, ensure that the value of each `id` property is unique within the scope of the file. That is, no two function objects in the metadata file should have the same `id` value. Additionally, do not specify two `id` values in the metadata file that only differ by case. For example, do not define one function object with an `id` value of **add** and another function object with an `id` value of **ADD**.
+* In the JSON metadata file, ensure that the value of each `id` property is unique within the scope of the file. That is, no two function objects in the metadata file should have the same `id` value. 
 
 * Do not change the value of an `id` property in the JSON metadata file after it's been associated with a corresponding JavaScript function name. You can change the function name that end users see in Excel by updating the `name` property within the JSON metadata file, but you should never change the value of an `id` property after it's been established.
 
@@ -106,7 +103,7 @@ Keep in mind the following best practices when creating custom functions in your
     CustomFunctions.associate("increment", increment);
     ```
 
-    The following sample shows the JSON metadata that corresponds to the functions defined in this JavaScript code sample.
+    The following sample shows the JSON metadata that corresponds to the functions defined in this JavaScript code sample. Note that the `id` and `name` properties are in uppercase letters in this file. 
 
     ```json
     {
