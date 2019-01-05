@@ -1,5 +1,5 @@
 ---
-ms.date: 01/03/2019
+ms.date: 01/04/2019
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel (Preview)
 ---
@@ -426,21 +426,11 @@ function getComment(x) {
 - Debugging tools specifically for custom functions may be available in the future. In the meantime, you can debug on Excel Online using F12 developer tools. See more details in [Custom functions best practices](custom-functions-best-practices.md).
 - In the 32 bit version of the Office 365 *December* Insiders Version 1901 (Build 11128.20000),  Custom Functions may not work properly. In some cases you can workaround this bug by downloading the file at https://github.com/OfficeDev/Excel-Custom-Functions/blob/december-insiders-workaround/excel-udf-host.win32.bundle. Then, copy it your "C:\Program Files (x86)\Microsoft Office\root\Office16" folder.
 
-## Changelog
-
-- **Nov 7, 2017**: Shipped* the custom functions preview and samples
-- **Nov 20, 2017**: Fixed compatibility bug for those using builds 8801 and later
-- **Nov 28, 2017**: Shipped* support for cancellation on asynchronous functions (requires change for streaming functions)
-- **May 7, 2018**: Shipped* support for Mac, Excel Online, and synchronous functions running in-process
-- **September 20, 2018**: Shipped support for custom functions JavaScript runtime. For more information, see [Runtime for Excel custom functions](custom-functions-runtime.md).
-- **October 20, 2018**: With the [October Insiders build](https://support.office.com/en-us/article/what-s-new-for-office-insiders-c152d1e2-96ff-4ce9-8c14-e74e13847a24), Custom Functions now requires the 'id' parameter in your [custom functions metadata](custom-functions-json.md) for Windows Desktop and Online. On Mac, this parameter should be ignored.
-
-
-\* to the [Office Insider](https://products.office.com/office-insider) channel (formerly called "Insider Fast")
-
 ## See also
 
 * [Custom functions metadata](custom-functions-json.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
+* [Custom functions changelog](custom-functions-changelog.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+

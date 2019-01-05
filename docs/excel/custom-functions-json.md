@@ -1,5 +1,5 @@
 ---
-ms.date: 11/26/2018
+ms.date: 01/04/2019
 description: Define metadata for custom functions in Excel.
 title: Metadata for custom functions in Excel
 ---
@@ -153,4 +153,5 @@ The `result` object defines the type of information that is returned by the func
 * [Create custom functions in Excel](custom-functions-overview.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
+* [Custom functions changelog](custom-functions-changelog.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
