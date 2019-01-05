@@ -102,7 +102,7 @@ Keep in mind the following best practices when creating custom functions in your
     }
 
     // associate `id` values in the JSON metadata file to JavaScript function names
-    CustomFunctions.associate.ADD = add;
+    CustomFunctions.associate("add", add);
     CustomFunctions.associate.INCREMENT = increment;
     ```
 
