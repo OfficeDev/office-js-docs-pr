@@ -75,15 +75,15 @@ In this tutorial, you will:
 # [Excel for Windows](#tab/excel-windows)
 
 To start the local web server for Excel for Windows, use the following comand.
-        
-    ```
-    npm run start
-    ```
 
-    This command starts the web server, and sideloads your custom function add-in into Excel for Windows.
-    
-    > [!NOTE]
-    > If your add-in does not load, check that you have completed step 3 properly.
+```
+npm run start
+```
+
+This command starts the web server, and sideloads your custom function add-in into Excel for Windows.
+
+> [!NOTE]
+> If your add-in does not load, check that you have completed step 3 properly.
 
 # [Excel online](#tab/excel-online)
 
@@ -94,7 +94,8 @@ npm run start-web
 ```
 
 This command starts the web server. Use the following steps to sideload your add-in.
-\<ol type="a">
+
+<ol type="a">
    <li>In Excel Online, choose the <strong>Insert</strong> tab and then choose <strong>Add-ins</strong>.<br/>
    <img src="../images/excel-cf-online-register-add-in-1.png" alt="Insert ribbon in Excel Online with the My Add-ins icon highlighted"></li>
    <li>Choose <strong>Manage My Add-ins</strong> and select <strong>Upload My Add-in</strong>.</li> 
