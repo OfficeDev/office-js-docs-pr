@@ -57,7 +57,7 @@ If your add-in fails to register, [verify that SSL certificates are correctly co
 
 As described in the [custom functions overview](custom-functions-overview.md) article, a custom functions project must include both a JSON metadata file and a script (either JavaScript or TypeScript) file to form a complete function. For a function to work properly, you'll need to bind the name of the function in the script file to the id listed in the JSON file. This process is called association. Make a note to include associations at the end of your JavaScript code files; otherwise, your functions will not work.
 
-The following code sample shows how to do this association. The sample defines the custom function `add` ties it to the object in the JSON metadata file where the value of the `id` property is **ADD**.
+The following code sample shows how to do this association. The sample defines the custom function `add` and ties it to the object in the JSON metadata file where the value of the `id` property is **ADD**.
 
 ```js
 function add(first, second){
