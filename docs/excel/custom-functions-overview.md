@@ -1,5 +1,5 @@
 ---
-ms.date: 01/04/2019
+ms.date: 01/07/2019
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel (Preview)
 ---
@@ -42,7 +42,7 @@ The following sections provide more information about these files.
 
 The script file (**./src/customfunctions.js** or **./src/customfunctions.ts** in the project that the Yo Office generator creates) contains the code that defines custom functions and maps the names of the custom functions to objects in the [JSON metadata file](#json-metadata-file). 
 
-For example, the following code defines the custom functions `add` and `increment` and then specifies association information for both functions. The `add` function is associated with the object in the JSON metadata file where the value of the `id` property is **ADD**, and the `increment` function is associated with the object in the metadata file where the value of the `id` property is **INCREMENT**. See [Custom functions best practices](custom-functions-best-practices.md#associating-function-names-with-json-metadata) for more information about associating function names in the script file to objects in the JSON metadata file.
+For example, the following code defines the custom functions `add` and `increment` and then specifies association information for both functions. The `add` function is associated with the object in the JSON metadata file where the value of the `id` property is **add**, and the `increment` function is associated with the object in the metadata file where the value of the `id` property is **increment**. See [Custom functions best practices](custom-functions-best-practices.md#associating-function-names-with-json-metadata) for more information about associating function names in the script file to objects in the JSON metadata file.
 
 ```js
 function add(first, second){
@@ -80,7 +80,7 @@ The following code in **customfunctions.json** specifies the metadata for the `a
   "$schema": "https://developer.microsoft.com/en-us/json-schemas/office-js/custom-functions.schema.json",
   "functions": [
     {
-      "id": "ADD",
+      "id": "add",
       "name": "ADD",
       "description": "Add two numbers",
       "helpUrl": "http://www.contoso.com",
@@ -104,7 +104,7 @@ The following code in **customfunctions.json** specifies the metadata for the `a
       ]
     },
     {
-      "id": "INCREMENT",
+      "id": "increment",
       "name": "INCREMENT",
       "description": "Periodically increment a value",
       "helpUrl": "http://www.contoso.com",
@@ -350,13 +350,13 @@ function secondHighest(values){
 }
 ```
 
-## Discovering cells that invoke custom functions
+## Determine which cell invoked your custom function
 
-Custom funtions also allows you to format ranges, display cached values, and reconcile values using `caller.address`, which makes it possible to discover the cell that invoked a custom function. You might use `caller.address` in some of the following scenarios:
+In some cases you'll need to get the address of the cell that invoked your custom function. This can be useful in the following :
 
-- Formatting ranges: Use `caller.address` as the key of the cell to store information in [AsyncStorage](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `AsyncStorage`.
+- Formatting ranges: Use the cell's address as the key to store information in [AsyncStorage](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `AsyncStorage`.
 - Displaying cached values: If your function is used offline, display stored cached values from `AsyncStorage` using `onCalculated`.
-- Reconciliation: Use `caller.address` to discover an origin cell to help you reconcile where processing is occurring.
+- Reconciliation: Use the cell's address to discover an origin cell to help you reconcile where processing is occurring.
 
 The information about a cell's address is exposed only if `requiresAddress` is marked as `true` in the function's JSON metadata file. The following sample gives an example of this:
 
