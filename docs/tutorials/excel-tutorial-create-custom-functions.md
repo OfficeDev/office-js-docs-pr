@@ -143,7 +143,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
         //    will be bubbled up to Excel to indicate an error.
     }
 
-3. In **customfunctions.js**, locate the line`CustomFunctions.associate("increment", increment);`. Add the following line of code immediately after that line, and save the file.
+3. In **customfunctions.js**, locate the line`CustomFunctions.associate("INCREMENT", increment);`. Add the following line of code immediately after that line, and save the file.
 
     ```js
     CustomFunctions.associate("stockprice", stockprice);
