@@ -74,7 +74,7 @@ In this tutorial, you will:
 
 # [Excel for Windows](#tab/excel-windows)
 
-- Run the following command.
+Run the following command.
 
 ```
 npm run start
