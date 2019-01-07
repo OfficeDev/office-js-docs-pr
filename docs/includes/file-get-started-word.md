@@ -210,7 +210,7 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 ### Try it out
 
-1. Using Visual Studio, test the newly created Word add-in by pressing F5 or choosing the **Start** button to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
+1. Using Visual Studio, test the newly created Word add-in by pressing **F5** or choosing the **Start** button to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
 2. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. (If you are using the non-subscription version of Office 2016, instead of the Office 365 version, then custom buttons are not supported. Instead, the task pane will open immediately.)
 
@@ -464,10 +464,10 @@ In this article, you'll walk through the process of building a Word add-in by us
 Congratulations, you've successfully created a Word add-in using jQuery! Next, learn more about the capabilities of a Word add-in and build a more complex add-in by following along with the Word add-in tutorial.
 
 > [!div class="nextstepaction"]
-> [Word add-in tutorial](../tutorials/word-tutorial.yml)
+> [Word add-in tutorial](../tutorials/word-tutorial.md)
 
 ## See also
 
 * [Word add-ins overview](../word/word-add-ins-programming-overview.md)
 * [Word add-in code samples](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
-* [Word JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js)
+* [Word JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)

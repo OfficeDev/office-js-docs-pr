@@ -17,14 +17,14 @@ In the OneNote add-ins JavaScript API, page content is represented by the follow
 
 To create an empty OneNote page, use one of the following methods:
 
-- [Section.addPage](https://docs.microsoft.com/javascript/api/onenote/onenote.section?view=office-js#addpage-title-)
-- [Page.insertPageAsSibling](https://docs.microsoft.com/javascript/api/onenote/onenote.section?view=office-js#insertsectionassibling-location--title-)
+- [Section.addPage](https://docs.microsoft.com/javascript/api/onenote/onenote.section#addpage-title-)
+- [Page.insertPageAsSibling](https://docs.microsoft.com/javascript/api/onenote/onenote.section#insertsectionassibling-location--title-)
 
 Then use methods in the following objects to work with the page content, such as Page.addOutline and Outline.appendHtml. 
 
-- [Page](https://docs.microsoft.com/javascript/api/onenote/onenote.page?view=office-js)
-- [Outline](https://docs.microsoft.com/javascript/api/onenote/onenote.outline?view=office-js)
-- [Paragraph](https://docs.microsoft.com/javascript/api/onenote/onenote.paragraph?view=office-js)
+- [Page](https://docs.microsoft.com/javascript/api/onenote/onenote.page)
+- [Outline](https://docs.microsoft.com/javascript/api/onenote/onenote.outline)
+- [Paragraph](https://docs.microsoft.com/javascript/api/onenote/onenote.paragraph)
 
 The content and structure of a OneNote page are represented by HTML. Only a subset of HTML is supported for creating or updating page content, as described below.
 
@@ -54,6 +54,6 @@ Metadata such as title can still be queried for any page.
 ## See also
 
 - [OneNote JavaScript API programming overview](onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js)
+- [OneNote JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office Add-ins platform overview](../overview/office-add-ins.md)

@@ -127,7 +127,7 @@ The following instruction are written generically so they can be used in multipl
 
         1. Comment out the `<WebApplicationInfo>` section from the manifest just above the end of `</VersionOverrides>`.
 
-        2. Press F5 to start a debugging session. This will create a copy of the manifest in the following folder (which is easier to access in **File Explorer** than in Visual Studio): `Office-Add-in-ASP.NET-SSO\Complete\Office-Add-in-ASPNET-SSO\bin\Debug\OfficeAppManifests`
+        2. Press **F5** to start a debugging session. This will create a copy of the manifest in the following folder (which is easier to access in **File Explorer** than in Visual Studio): `Office-Add-in-ASP.NET-SSO\Complete\Office-Add-in-ASPNET-SSO\bin\Debug\OfficeAppManifests`
 
         3. In the copy of the manifest, remove the comment syntax around the `<WebApplicationInfo>` section.
 
