@@ -1,7 +1,7 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
 description: ''
-ms.date: 12/13/2018
+ms.date: 1/7/2019
 ---
 
 
@@ -9,7 +9,7 @@ ms.date: 12/13/2018
 
 This article provides code samples that show how to perform common tasks with workbooks using the Excel JavaScript API. For the complete list of properties and methods that the **Workbook** object supports, see [Workbook Object (JavaScript API for Excel)](/javascript/api/excel/excel.workbook). This article also covers workbook-level actions performed through the [Application](/javascript/api/excel/excel.application) object.
 
-The Workbook object is the entry point for your add-in to interact with Excel. It maintains collections of worksheets, tables, PivotTables, and more, through which Excel data is accessed and changed. The [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) object gives your add-in access to all the workbook's data through indivual worksheets. Specifically, it lets your add-in add worksheets, navigate among them, and assign handlers to worksheet events. The article [Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md) describes how to access and edit worksheets.
+The Workbook object is the entry point for your add-in to interact with Excel. It maintains collections of worksheets, tables, PivotTables, and more, through which Excel data is accessed and changed. The [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) object gives your add-in access to all the workbook's data through individual worksheets. Specifically, it lets your add-in add worksheets, navigate among them, and assign handlers to worksheet events. The article [Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md) describes how to access and edit worksheets.
 
 ## Get the active cell or selected range
 
@@ -46,7 +46,7 @@ Excel.createWorkbook();
 
 The `createWorkbook` method can also create a copy of an existing workbook. The method accepts a base64-encoded string representation of an .xlsx file as an optional parameter. The resulting workbook will be a copy of that file, assuming the string argument is a valid .xlsx file.
 
-You can get your add-in’s current workbook as a base64-encoded string by using [file slicing](/javascript/api/office/office.document#getfileasync-filetype--options--callback-). The [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) class can be used to convert a file into the required base64-encoded string, as demonstrated in the following example. 
+You can get your add-in’s current workbook as a base64-encoded string by using [file slicing](/javascript/api/office/office.document#getfileasync-filetype--options--callback-). The [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) class can be used to convert a file into the required base64-encoded string, as demonstrated in the following example.
 
 ```js
 var myFile = document.getElementById("file");
@@ -56,9 +56,9 @@ reader.onload = (function (event) {
     Excel.run(function (context) {
         // strip off the metadata before the base64-encoded string
         var startIndex = event.target.result.indexOf("base64,");
-        var mybase64 = event.target.result.substr(startIndex + 7);
+        var workbookContents = event.target.result.substr(startIndex + 7);
 
-        Excel.createWorkbook(mybase64);
+        Excel.createWorkbook(workbookContents);
         return context.sync();
     }).catch(errorHandlerFunction);
 });
@@ -67,9 +67,48 @@ reader.onload = (function (event) {
 reader.readAsDataURL(myFile.files[0]);
 ```
 
+### Insert a copy of an existing workbook into the current one
+
+> [!NOTE]
+> The `WorksheetCollection.addFromBase64` function is currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> If you are using TypeScript or your code editor uses TypeScript type definition files for IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+
+The previous example shows a new workbook being created from an existing workbook. You can also copy some or all of an existing workbook into the one currently associated with your add-in. A workbook's [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) has the `addFromBase64` method to insert copies of the target workbook's worksheets into itself. The other workbook's file is passed as base64-encoded string, just like the `Excel.createWorkbook` call.
+
+```TypeScript
+addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet | string): OfficeExtension.ClientResult<string[]>;
+```
+
+The following example shows a workbook's worksheets being inserted in the current workbook, directly after the active worksheet. Note that `null` is passed for the `sheetNamesToInsert?: string[]` parameter. This means all the worksheets are being inserted.
+
+```js
+var myFile = <HTMLInputElement>document.getElementById("file");
+var reader = new FileReader();
+
+reader.onload = (event) => {
+    Excel.run((context) => {
+        // strip off the metadata before the base64-encoded string
+        var startIndex = (<string>(<FileReader>event.target).result).indexOf("base64,");
+        var workbookContents = (<string>(<FileReader>event.target).result).substr(startIndex + 7);
+
+        var sheets = context.workbook.worksheets;
+        sheets.addFromBase64(
+            workbookContents,
+            null, // get all the worksheets
+            Excel.WorksheetPositionType.after, // insert them after the worksheet specified by the next parameter
+            sheets.getActiveWorksheet() // insert them after the active worksheet
+        );
+        return context.sync();
+    });
+};
+
+// read in the file as a data URL so we can parse the base64-encoded string
+reader.readAsDataURL(myFile.files[0]);
+```
+
 ## Protect the workbook's structure
 
-Your add-in can control a user's ability to edit the workbook's structure. The Workbook object's `protection` property is a [WorkbookProtection](/javascript/api/excel/excel.workbookprotection) object with a `protect()` method. The following example shows a basic scenario toggling the protection of the workbook's structure. 
+Your add-in can control a user's ability to edit the workbook's structure. The Workbook object's `protection` property is a [WorkbookProtection](/javascript/api/excel/excel.workbookprotection) object with a `protect()` method. The following example shows a basic scenario toggling the protection of the workbook's structure.
 
 ```js
 Excel.run(function (context) {
@@ -196,18 +235,18 @@ Excel.run(async (context) => {
 
 By default, Excel recalculates formula results whenever a referenced cell is changed. Your add-in's performance may benefit from adjusting this calculation behavior. The Application object has a `calculationMode` property of type `CalculationMode`. It can be set to the following values:
 
- - `automatic`: The default recalculation behavior where Excel calculates new formula results every time the relevant data is changed.
- - `automaticExceptTables`: Same as `automatic`, except any changes made to values in tables are ignored.
- - `manual`: Calculations only occur when the user or add-in requests them.
+- `automatic`: The default recalculation behavior where Excel calculates new formula results every time the relevant data is changed.
+- `automaticExceptTables`: Same as `automatic`, except any changes made to values in tables are ignored.
+- `manual`: Calculations only occur when the user or add-in requests them.
 
 ### Set calculation type
 
 The [Application](/javascript/api/excel/excel.application) object provides a method to force an immediate recalculation. `Application.calculate(calculationType)` starts a manual recalculation based on the specified `calculationType`. The following values can be specified:
 
- - `full`: Recalculate all formulas in all open workbooks, regardless of whether they have changed since the last recalculation.
- - `fullRebuild`: Check dependent formulas, and then recalculate all formulas in all open workbooks, regardless of whether they have changed since the last recalculation.
- - `recalculate`: Recalculate formulas that have changed (or been programmatically marked for recalculation) since the last calculation, and formulas dependent on them, in all active workbooks.
- 
+- `full`: Recalculate all formulas in all open workbooks, regardless of whether they have changed since the last recalculation.
+- `fullRebuild`: Check dependent formulas, and then recalculate all formulas in all open workbooks, regardless of whether they have changed since the last recalculation.
+- `recalculate`: Recalculate formulas that have changed (or been programmatically marked for recalculation) since the last calculation, and formulas dependent on them, in all active workbooks.
+
 > [!NOTE]
 > For more information about recalculation, see the [Change formula recalculation, iteration, or precision](https://support.office.com/article/change-formula-recalculation-iteration-or-precision-73fc7dac-91cf-4d36-86e8-67124f6bcce4) article.
 
