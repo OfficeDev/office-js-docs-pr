@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
 description: In this tutorial, you’ll create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 01/04/2019
+ms.date: 01/07/2019
 ms.topic: tutorial
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
 ---
@@ -70,11 +70,11 @@ In this tutorial, you will:
     npm run build
     ```
 
-5.  you'll start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel for Windows, or Excel online.
+5. Start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel for Windows, or Excel online.
 
 # [Excel for Windows](#tab/excel-windows)
 
-To start the local web server for Excel for Windows, use the following comand.
+- Run the following command.
 
 ```
 npm run start
@@ -87,7 +87,7 @@ This command starts the web server, and sideloads your custom function add-in in
 
 # [Excel online](#tab/excel-online)
 
-To start the local web server for Excel online, use the following command.
+Run the following command.
 
 ```
 npm run start-web
