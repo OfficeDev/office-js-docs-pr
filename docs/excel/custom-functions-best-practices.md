@@ -130,7 +130,7 @@ To make a parameter optional, add `"optional": true` to the parameter in the JSO
 
 ```json
 {
-    "id": "add",
+    "id": "ADD",
     "name": "ADD",
     "description": "Add two numbers",
     "helpUrl": "http://www.contoso.com",
