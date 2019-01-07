@@ -1,7 +1,7 @@
 ---
 ms.date: 01/04/2019
 description: Define metadata for custom functions in Excel.
-title: Metadata for custom functions in Excel
+title: Metadata for custom functions in Excel (preview)
 ---
 
 # Custom functions metadata (preview)

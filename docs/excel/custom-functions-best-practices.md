@@ -4,7 +4,7 @@ description: Learn best practices for developing custom functions in Excel.
 title: Custom functions best practices
 ---
 
-# Custom functions best practices (preview)
+# Custom functions best practices (Preview)
 
 This article describes best practices for developing custom functions in Excel.
 

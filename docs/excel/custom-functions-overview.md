@@ -1,7 +1,7 @@
 ---
 ms.date: 01/07/2019
 description: Create custom functions in Excel using JavaScript.
-title: Create custom functions in Excel (Preview)
+title: Create custom functions in Excel (preview)
 ---
 
 # Create custom functions in Excel (preview)

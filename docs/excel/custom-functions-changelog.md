@@ -1,7 +1,7 @@
 ---
 ms.date: 01/04/2019
 description: Discover the latest updates to custom functions.
-title: Custom Functions Changelog
+title: Custom Functions Changelog (preview)
 ---
 
 # Custom functions changelog (preview)
