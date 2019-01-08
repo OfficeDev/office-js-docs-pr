@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial (preview)
 description: In this tutorial, you’ll create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 01/07/2019
+ms.date: 01/08/2019
 ms.topic: tutorial
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
 ---
@@ -70,7 +70,7 @@ In this tutorial, you will:
     npm run build
     ```
 
-5. Start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel for Windows, or Excel online.
+5. Start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel for Windows, or Excel Online.
 
 # [Excel for Windows](#tab/excel-windows)
 
@@ -85,7 +85,7 @@ This command starts the web server, and sideloads your custom function add-in in
 > [!NOTE]
 > If your add-in does not load, check that you have completed step 3 properly.
 
-# [Excel online](#tab/excel-online)
+# [Excel Online](#tab/excel-online)
 
 Run the following command.
 
@@ -143,13 +143,13 @@ Integrating data from the Web is a great way to extend Excel through custom func
         //    will be bubbled up to Excel to indicate an error.
     }
 
-3. In **customfunctions.js**, locate the line`CustomFunctions.associate("INCREMENT", increment);`. Add the following line of code immediately after that line, and save the file.
+3. In **customfunctions.js**, locate the line `CustomFunctions.associate("INCREMENT", increment);`. Add the following line of code immediately after that line, and save the file.
 
     ```js
-    CustomFunctions.associate("stockprice", stockprice);
+    CustomFunctions.associate("STOCKPRICE", stockprice);
     ```
 
-    The `CustomFunctions.associate` code associates the id of the function with the function address of `increment` in JavaScript so that Excel can call your function.
+    The `CustomFunctions.associate` code associates the `id` of the function with the function address of `increment` in JavaScript so that Excel can call your function.
 
     Before Excel can use your custom function, you need to describe it using metadata. You need to define the `id` used in the `associate` method previously, along with some other metadata.
 
@@ -184,17 +184,22 @@ Integrating data from the Web is a great way to extend Excel through custom func
 # [Excel for Windows](#tab/excel-windows)
 
 1. Close Excel and then reopen Excel.
+
 2. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
     ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)
+
 3. In the list of available add-ins, find the **Developer Add-ins** section and select the **stock-ticker** add-in to register it.
     ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/excel-cf-register-add-in-2.png)
 
-# [Excel online](#tab/excel-online)
+# [Excel Online](#tab/excel-online)
 
 1. In Excel Online, choose the **Insert** tab and then choose **Add-ins**.
     ![Insert ribbon in Excel Online with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
+
 2. Choose **Manage My Add-ins** and select **Upload My Add-in**. 
+
 3. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created. 
+
 4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
 --- 
@@ -244,7 +249,7 @@ Next you’ll create a custom function named `stockPriceStream` that gets the pr
         };
     }
     
-    CustomFunctions.associate("stockpricestream", stockpricestream);
+    CustomFunctions.associate("STOCKPRICE", stockpricestream);
     ```
     
     Before Excel can use your custom function, you need to describe it using metadata .
@@ -283,17 +288,22 @@ Next you’ll create a custom function named `stockPriceStream` that gets the pr
 # [Excel for Windows](#tab/excel-windows)
 
 1. Close Excel and then reopen Excel.
+
 2. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
     ![Insert ribbon in Excel for Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)
+
 3. In the list of available add-ins, find the **Developer Add-ins** section and select the **stock-ticker** add-in to register it.
     ![Insert ribbon in Excel for Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/excel-cf-register-add-in-2.png)
 
-# [Excel online](#tab/excel-online)
+# [Excel Online](#tab/excel-online)
 
 1. In Excel Online, choose the **Insert** tab and then choose **Add-ins**.
     ![Insert ribbon in Excel Online with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)
+
 2. Choose **Manage My Add-ins** and select **Upload My Add-in**.
+
 3. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.
+
 4. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
 --- 

@@ -1,5 +1,5 @@
 ---
-ms.date: 01/07/2019
+ms.date: 01/08/2019
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel (preview)
 ---
@@ -352,7 +352,7 @@ function secondHighest(values){
 
 ## Determine which cell invoked your custom function
 
-In some cases you'll need to get the address of the cell that invoked your custom function. This can be useful in the following :
+In some cases you'll need to get the address of the cell that invoked your custom function. This may be useful in the following types of scenarios:
 
 - Formatting ranges: Use the cell's address as the key to store information in [AsyncStorage](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `AsyncStorage`.
 - Displaying cached values: If your function is used offline, display stored cached values from `AsyncStorage` using `onCalculated`.

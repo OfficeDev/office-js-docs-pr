@@ -1,6 +1,6 @@
 ---
-ms.date: 01/04/2019
-description: Discover the latest updates to custom functions.
+ms.date: 01/08/2019
+description: Discover the latest updates to Excel custom functions.
 title: Custom Functions Changelog (preview)
 ---
 
@@ -15,7 +15,7 @@ Excel custom functions is still in preview and that means there are frequent cha
 - **September 20, 2018**: Shipped support for custom functions JavaScript runtime. For more information, see [Runtime for Excel custom functions](custom-functions-runtime.md).
 - **October 20, 2018**: With the [October Insiders build](https://support.office.com/en-us/article/what-s-new-for-office-insiders-c152d1e2-96ff-4ce9-8c14-e74e13847a24), Custom Functions now requires the 'id' parameter in your [custom functions metadata](custom-functions-json.md) for Windows Desktop and Online. On Mac, this parameter should be ignored.
 - **December 12, 2018**: Custom functions now include a way to discover a cell's address. For more information, see [Determine which cell invoked your custom function](custom-functions-overview.md#determine-which-cell-invoked-your-custom-function).
-- **January 8, 2019**: Binding method `CustomFunctionMapping()` has been altered to `CustomFunctions.associate()`. For more information, see [Custom functions best practices (preview)](custom-functions-best-practices.md)
+- **January 8, 2019**: Binding method `CustomFunctionMapping()` has been altered to `CustomFunctions.associate()`. For more information, see [Custom functions best practices (preview)](custom-functions-best-practices.md).
 
 \* to the [Office Insider](https://products.office.com/office-insider) channel (formerly called "Insider Fast")
 
