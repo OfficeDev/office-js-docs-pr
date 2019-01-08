@@ -249,10 +249,10 @@ Next you’ll create a custom function named `stockPriceStream` that gets the pr
         };
     }
     
-    CustomFunctions.associate("STOCKPRICE", stockpricestream);
+    CustomFunctions.associate("STOCKPRICESTREAM", stockpricestream);
     ```
     
-    Before Excel can use your custom function, you need to describe it using metadata .
+    Before Excel can use your custom function, you need to describe it using metadata.
     
 2. In the **stock-ticker** project add the following object to the `functions` array within the **config/customfunctions.json** file and save the file.
     
