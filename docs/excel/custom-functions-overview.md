@@ -1,7 +1,7 @@
 ---
-ms.date: 01/03/2019
+ms.date: 01/08/2019
 description: Create custom functions in Excel using JavaScript.
-title: Create custom functions in Excel (Preview)
+title: Create custom functions in Excel (preview)
 ---
 
 # Create custom functions in Excel (preview)
@@ -42,7 +42,7 @@ The following sections provide more information about these files.
 
 The script file (**./src/customfunctions.js** or **./src/customfunctions.ts** in the project that the Yo Office generator creates) contains the code that defines custom functions and maps the names of the custom functions to objects in the [JSON metadata file](#json-metadata-file). 
 
-For example, the following code defines the custom functions `add` and `increment` and then specifies mapping information for both functions. The `add` function is mapped to the object in the JSON metadata file where the value of the `id` property is **ADD**, and the `increment` function is mapped to the object in the metadata file where the value of the `id` property is **INCREMENT**. See [Custom functions best practices](custom-functions-best-practices.md#mapping-function-names-to-json-metadata) for more information about mapping function names in the script file to objects in the JSON metadata file.
+For example, the following code defines the custom functions `add` and `increment` and then specifies association information for both functions. The `add` function is associated with the object in the JSON metadata file where the value of the `id` property is **ADD**, and the `increment` function is associated with the object in the metadata file where the value of the `id` property is **INCREMENT**. See [Custom functions best practices](custom-functions-best-practices.md#associating-function-names-with-json-metadata) for more information about associating function names in the script file to objects in the JSON metadata file.
 
 ```js
 function add(first, second){
@@ -61,19 +61,19 @@ function increment(incrementBy, callback) {
   };
 }
 
-// map `id` values in the JSON metadata file to the JavaScript function names
-CustomFunctionMappings.ADD = add;
-CustomFunctionMappings.INCREMENT = increment;
+// associate `id` values in the JSON metadata file to the JavaScript function names
+ CustomFunctions.associate("ADD", add);
+ CustomFunctions.associate("INCREMENT", increment);
 ```
 
-### JSON metadata file 
+### JSON metadata file
 
 The custom functions metadata file (**./config/customfunctions.json** in the project that the Yo Office generator creates) provides the information that Excel requires to register custom functions and make them available to end users. Custom functions are registered when a user runs an add-in for the first time. After that, they are available to that same user in all workbooks (i.e., not only in the workbook where the add-in initially ran.)
 
 > [!TIP]
 > Server settings on the server that hosts the JSON file must have [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel Online.
 
-The following code in **customfunctions.json** specifies the metadata for the `add` function and the `increment` function that were described previously. The table that follows this code sample provides detailed information about the individual properties within this JSON object. See [Custom functions best practices](custom-functions-best-practices.md#mapping-function-names-to-json-metadata) for more information about specifying the value of `id` and `name` properties in the JSON metadata file.
+The following code in **customfunctions.json** specifies the metadata for the `add` function and the `increment` function that were described previously. The table that follows this code sample provides detailed information about the individual properties within this JSON object. See [Custom functions best practices](custom-functions-best-practices.md#associating-function-names-with-json-metadata) for more information about specifying the value of `id` and `name` properties in the JSON metadata file.
 
 ```json
 {
@@ -350,13 +350,13 @@ function secondHighest(values){
 }
 ```
 
-## Discovering cells that invoke custom functions
+## Determine which cell invoked your custom function
 
-Custom funtions also allows you to format ranges, display cached values, and reconcile values using `caller.address`, which makes it possible to discover the cell that invoked a custom function. You might use `caller.address` in some of the following scenarios:
+In some cases you'll need to get the address of the cell that invoked your custom function. This may be useful in the following types of scenarios:
 
-- Formatting ranges: Use `caller.address` as the key of the cell to store information in [AsyncStorage](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `AsyncStorage`.
+- Formatting ranges: Use the cell's address as the key to store information in [AsyncStorage](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `AsyncStorage`.
 - Displaying cached values: If your function is used offline, display stored cached values from `AsyncStorage` using `onCalculated`.
-- Reconciliation: Use `caller.address` to discover an origin cell to help you reconcile where processing is occurring.
+- Reconciliation: Use the cell's address to discover an origin cell to help you reconcile where processing is occurring.
 
 The information about a cell's address is exposed only if `requiresAddress` is marked as `true` in the function's JSON metadata file. The following sample gives an example of this:
 
@@ -426,21 +426,11 @@ function getComment(x) {
 - Debugging tools specifically for custom functions may be available in the future. In the meantime, you can debug on Excel Online using F12 developer tools. See more details in [Custom functions best practices](custom-functions-best-practices.md).
 - In the 32 bit version of the Office 365 *December* Insiders Version 1901 (Build 11128.20000),  Custom Functions may not work properly. In some cases you can workaround this bug by downloading the file at https://github.com/OfficeDev/Excel-Custom-Functions/blob/december-insiders-workaround/excel-udf-host.win32.bundle. Then, copy it your "C:\Program Files (x86)\Microsoft Office\root\Office16" folder.
 
-## Changelog
-
-- **Nov 7, 2017**: Shipped* the custom functions preview and samples
-- **Nov 20, 2017**: Fixed compatibility bug for those using builds 8801 and later
-- **Nov 28, 2017**: Shipped* support for cancellation on asynchronous functions (requires change for streaming functions)
-- **May 7, 2018**: Shipped* support for Mac, Excel Online, and synchronous functions running in-process
-- **September 20, 2018**: Shipped support for custom functions JavaScript runtime. For more information, see [Runtime for Excel custom functions](custom-functions-runtime.md).
-- **October 20, 2018**: With the [October Insiders build](https://support.office.com/en-us/article/what-s-new-for-office-insiders-c152d1e2-96ff-4ce9-8c14-e74e13847a24), Custom Functions now requires the 'id' parameter in your [custom functions metadata](custom-functions-json.md) for Windows Desktop and Online. On Mac, this parameter should be ignored.
-
-
-\* to the [Office Insider](https://products.office.com/office-insider) channel (formerly called "Insider Fast")
-
 ## See also
 
 * [Custom functions metadata](custom-functions-json.md)
 * [Runtime for Excel custom functions](custom-functions-runtime.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
+* [Custom functions changelog](custom-functions-changelog.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+

@@ -47,9 +47,6 @@
   - name: Excel add-in tutorial
     href: tutorials/excel-tutorial.md
     displayName: Excel
-  - name: Excel custom functions tutorial
-    href: tutorials/excel-tutorial-create-custom-functions.md
-    displayName: Excel
   - name: Outlook add-in tutorial
     href: /outlook/add-ins/addin-tutorial
     displayName: Outlook
@@ -272,6 +269,9 @@
           displayName: Excel
         - name: Custom functions best practices
           href: excel/custom-functions-best-practices.md
+          displayName: Excel
+        - name: Custom functions changelog
+          href: excel/custom-functions-changelog.md
           displayName: Excel
       - name: Data validation
         href: excel/excel-add-ins-data-validation.md
