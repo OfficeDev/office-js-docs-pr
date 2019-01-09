@@ -9,11 +9,25 @@
         "exclude": [
           "**/obj/**",
           "**/includes/**",
-          "README.md",
-          "LICENSE",
-          "LICENSE-CODE",
-          "ThirdPartyNotices"
+          "outlook_1_4/**",
+          "outlook_1_5/**"
         ]
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "outlook_1_4",
+        "group": "outlook-is-1.4"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "outlook_1_5",
+        "group": "outlook-is-1.5"
       }
     ],
     "resource": [
@@ -30,6 +44,16 @@
         ]
       }
     ],
+    "groups": {
+      "outlook-is-1.4": {
+        "dest": "outlook-is-1.4",
+        "moniker_range": "outlook-is-1.4"
+      },
+      "outlook-is-1.5": {
+        "dest": "outlook-is-1.5",
+        "moniker_range": "outlook-is-1.5"
+      }
+    },
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
