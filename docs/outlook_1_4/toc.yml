@@ -1,5 +1,3 @@
 items:
 - name: DEMO
   href: demo.md
-metadata:
-  universal_ref_toc: /javascript/api/toc.json
