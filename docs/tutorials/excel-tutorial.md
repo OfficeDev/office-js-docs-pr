@@ -800,7 +800,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 5. Add the following code to popup.js. Note the following about this code:
 
    - *Every page that calls APIs in the Office.JS library must first ensure that the library is fully initialized.* The best way to do that is to call the `Office.onReady()` method. If your add-in has its own initialization tasks, the code should go in a `then()` method that is chained to the call of `Office.onReady()`. For an example, see the app.js file in the project root. The call of `Office.onReady()` must run before any calls to Office.JS; hence the assignment is in a script file that is loaded by the page, as it is in this case.
-   - The jQuery `ready` function is called inside the `then()` method. It is an almost universal rule that the loading, initializing, or bootstrapping code of other JavaScript libraries should be inside the `then()` method that is chained to the call of `Office.onReady()`.
+   - The jQuery `ready` function is called inside the `then()` method. In most cases, the loading, initializing, or bootstrapping code of other JavaScript libraries should be inside the `then()` method that is chained to the call of `Office.onReady()`.
 
     ```js
     (function () {
