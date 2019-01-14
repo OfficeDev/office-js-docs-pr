@@ -36,9 +36,7 @@
       "uhfHeaderId": "MSDocsHeader-Dev_Office",
       "searchScope": ["Office Add-ins"],
       "breadcrumb_path": "/office/dev/add-ins/breadcrumb/toc.json",
-      "feedback_system": "GitHub",
-      "feedback_github_repo": "OfficeDev/office-js-docs-pr",
-      "feedback_product_url": "https://officespdev.uservoice.com/",
+      "feedback_system": "None",
       "extendBreadcrumb": true,
       "ms.suite": "office365",
       "ms.author": "o365devx",
@@ -47,11 +45,6 @@
       "ms.prod": "Office 365",
       "ms.technology": "Add-ins",
       "titleSuffix": "Office Add-ins"
-    },
-    "fileMetadata": {
-      "feedback_system": {
-        "resources/resources-links-help.md": "None"
-      }
     },
     "template": [],
     "dest": "office-js-docs-pr"
