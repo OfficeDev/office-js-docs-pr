@@ -140,4 +140,4 @@ In general, be careful about how you use your data to draw conclusions. Don’t 
  - [Best Practices for UserTesting](https://help.usertesting.com/hc/en-us/articles/115003370231-Best-practices-for-UserTesting)  
  - [Minimizing Bias](https://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)  
 
-[!include[Support and feedback](../../includes/feedback-boilerplate.md)]
+[!include[Support and feedback](../includes/feedback-boilerplate.md)]
