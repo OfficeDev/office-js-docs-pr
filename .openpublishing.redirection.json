@@ -1,8 +1,36 @@
 { 
     "redirections": [ 
+      {
+        "source_path": "docs/excel/excel-tutorial-custom-functions.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions"
+      },
+      {
+        "source_path": "docs/tutorials/word-tutorial-content-control.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/word-tutorial"
+      },
+      {
+        "source_path": "docs/tutorials/word-tutorial-format-text.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/word-tutorial"
+      },
+      {
+        "source_path": "docs/tutorials/word-tutorial-insert-image-html-table.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/word-tutorial"
+      },
+      {
+        "source_path": "docs/tutorials/word-tutorial-insert-text.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/word-tutorial"
+      },
+      {
+        "source_path": "docs/tutorials/word-tutorial-replace-text.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/word-tutorial"
+      },
+      {
+        "source_path": "docs/tutorials/word-tutorial-setup.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/word-tutorial"
+      },
       {   
           "source_path": "docs/excel/script-lab-test.md", 
-          "redirect_url": "/office/dev/add-ins/testing/test-debug-office-add-ins", 
+          "redirect_url": "/office/dev/add-ins/testing/test-debug-office-add-ins" 
       },
       {   
           "source_path": "docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md", 
@@ -170,16 +198,74 @@
       },
       {
             "source_path": "docs/design/ui-elements/accessibility-guidelines.md",
-            "redirect_url": "/office/dev/add-ins/design/accessibility-guidelines",
+            "redirect_url": "/office/dev/add-ins/design/accessibility-guidelines"
       },
       {
             "source_path": "docs/design/ui-elements/voice-guidelines.md",
-            "redirect_url": "/office/dev/add-ins/design/voice-guidelines",
+            "redirect_url": "/office/dev/add-ins/design/voice-guidelines"
       },
       {
             "source_path": "docs/design/automatically-open-a-task-pane-with-a-document.md",
             "redirect_url": "/office/dev/add-ins/develop/automatically-open-a-task-pane-with-a-document",
             "redirect_document_id": true
+      },
+      {
+        "source_path": "docs/tutorials/powerpoint-tutorial-customize-ui.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+      },
+      {
+        "source_path": "docs/tutorials/powerpoint-tutorial-get-slide-metadata.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+      },
+      {
+        "source_path": "docs/tutorials/powerpoint-tutorial-insert-image.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+      },
+      {
+        "source_path": "docs/tutorials/powerpoint-tutorial-insert-text.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+      },
+      {
+        "source_path": "docs/tutorials/powerpoint-tutorial-navigate-slides.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+      },
+      {
+        "source_path": "docs/tutorials/powerpoint-tutorial-setup.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+      },
+      {
+        "source_path": "docs/tutorials/excel-tutorial-create-chart.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
+      }
+      ,
+      {
+        "source_path": "docs/tutorials/excel-tutorial-create-table.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
+      }
+      ,
+      {
+        "source_path": "docs/tutorials/excel-tutorial-filter-and-sort-table.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
+      }
+      ,
+      {
+        "source_path": "docs/tutorials/excel-tutorial-freeze-header.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
+      }
+      ,
+      {
+        "source_path": "docs/tutorials/excel-tutorial-open-dialog.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
+      }
+      ,
+      {
+        "source_path": "docs/tutorials/excel-tutorial-protect-worksheet.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
+      }
+      ,
+      {
+        "source_path": "docs/tutorials/excel-tutorial-setup.md",
+        "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
       }
     ] 
 }

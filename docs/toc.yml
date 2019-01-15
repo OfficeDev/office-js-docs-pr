@@ -45,19 +45,16 @@
 - name: Tutorials
   items:
   - name: Excel add-in tutorial
-    href: tutorials/excel-tutorial.yml
-    displayName: Excel
-  - name: Excel custom functions tutorial
-    href: tutorials/excel-tutorial-create-custom-functions.md
+    href: tutorials/excel-tutorial.md
     displayName: Excel
   - name: Outlook add-in tutorial
     href: /outlook/add-ins/addin-tutorial
     displayName: Outlook
   - name: PowerPoint add-in tutorial
-    href: tutorials/powerpoint-tutorial.yml
+    href: tutorials/powerpoint-tutorial.md
     displayName: PowerPoint
   - name: Word add-in tutorial
-    href: tutorials/word-tutorial.yml
+    href: tutorials/word-tutorial.md
     displayName: Word
 
 - name: Concepts
@@ -233,7 +230,7 @@
         href: excel/excel-add-ins-get-started-vue.md
         displayName: Excel
     - name: Excel add-in tutorial
-      href: tutorials/excel-tutorial.yml
+      href: tutorials/excel-tutorial.md
       displayName: Excel
     - name: Concepts
       displayName: Excel
@@ -262,7 +259,7 @@
           href: excel/custom-functions-overview.md
           displayName: Excel
         - name: Custom functions tutorial
-          href: excel/excel-tutorial-custom-functions.md
+          href: tutorials/excel-tutorial-create-custom-functions.md
           displayName: Excel
         - name: Custom functions runtime
           href: excel/custom-functions-runtime.md
@@ -272,6 +269,9 @@
           displayName: Excel
         - name: Custom functions best practices
           href: excel/custom-functions-best-practices.md
+          displayName: Excel
+        - name: Custom functions changelog
+          href: excel/custom-functions-changelog.md
           displayName: Excel
       - name: Data validation
         href: excel/excel-add-ins-data-validation.md
@@ -321,7 +321,7 @@
       href: word/word-add-ins.md
       displayName: Word
     - name: Word add-in tutorial
-      href: tutorials/word-tutorial.yml
+      href: tutorials/word-tutorial.md
       displayName: Word
     - name: Create better add-ins for Word with Office Open XML
       href: word/create-better-add-ins-for-word-with-office-open-xml.md
@@ -360,7 +360,7 @@
       href: powerpoint/powerpoint-add-ins-get-started.md
       displayName: PowerPoint
     - name: PowerPoint add-in tutorial
-      href: tutorials/powerpoint-tutorial.yml
+      href: tutorials/powerpoint-tutorial.md
       displayName: PowerPoint
     - name: Use document themes in your PowerPoint add-ins
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md

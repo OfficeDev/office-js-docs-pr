@@ -1,7 +1,7 @@
 ---
 title: Rule element in the manifest file
 description: ''
-ms.date: 11/30/2018
+ms.date: 12/27/2018
 ---
 
 # Rule element

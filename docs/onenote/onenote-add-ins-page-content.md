@@ -1,10 +1,10 @@
 ---
 title: Work with OneNote page content
 description: ''
-ms.date: 12/04/2017
+ms.date: 1/10/2019
 ---
 
-# Work with OneNote page content 
+# Work with OneNote page content
 
 In the OneNote add-ins JavaScript API, page content is represented by the following object model.
 
@@ -20,7 +20,7 @@ To create an empty OneNote page, use one of the following methods:
 - [Section.addPage](https://docs.microsoft.com/javascript/api/onenote/onenote.section#addpage-title-)
 - [Page.insertPageAsSibling](https://docs.microsoft.com/javascript/api/onenote/onenote.section#insertsectionassibling-location--title-)
 
-Then use methods in the following objects to work with the page content, such as Page.addOutline and Outline.appendHtml. 
+Then use methods in the following objects to work with the page content, such as `Page.addOutline` and `Outline.appendHtml`.
 
 - [Page](https://docs.microsoft.com/javascript/api/onenote/onenote.page)
 - [Outline](https://docs.microsoft.com/javascript/api/onenote/onenote.outline)
@@ -32,17 +32,19 @@ The content and structure of a OneNote page are represented by HTML. Only a subs
 
 The OneNote add-in JavaScript API supports the following HTML for creating and updating page content:
 
-- `<html>`, `<body>`, `<div>`, `<span>`, `<br/>` 
+- `<html>`, `<body>`, `<div>`, `<span>`, `<br/>`
 - `<p>`
 - `<img>`
 - `<a>`
-- `<ul>`, `<ol>`, `<li>` 
+- `<ul>`, `<ol>`, `<li>`
 - `<table>`, `<tr>`, `<td>`
 - `<h1>` ... `<h6>`
 - `<b>`, `<em>`, `<strong>`, `<i>`, `<u>`, `<del>`, `<sup>`, `<sub>`, `<cite>`
 
 > [!NOTE]
 > Importing HTML into OneNote consolidates whitespace. The resulting content is pasted into one outline.
+
+OneNote does its best to translate HTML into page content while ensuring security for users. HTML and CSS standards do not exactly match OneNote's content model, so there will be differences in appearances, particularly with CSS stylings. We recommend using the JavaScript objects if specific formatting is needed.
 
 ## Accessing page contents
 
