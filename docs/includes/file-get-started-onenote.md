@@ -66,9 +66,9 @@ In this article, you'll walk through the process of building a OneNote add-in by
     ```js
     import * as OfficeHelpers from "@microsoft/office-js-helpers";
 
-    Office.onReady(function() {
+    Office.onReady(() => {
         // Office is ready
-        $(document).ready(function () {
+        $(document).ready(() => {
             // The document is ready
             $('#addOutline').click(addOutlineToPage);
         });
