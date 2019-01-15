@@ -1,7 +1,7 @@
 ---
 title: Understanding the JavaScript API for Office
 description: ''
-ms.date: 12/28/2018
+ms.date: 01/15/2019
 ---
 
 # Understanding the JavaScript API for Office

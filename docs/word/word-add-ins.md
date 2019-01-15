@@ -1,7 +1,7 @@
 ---
 title: Build your first Word add-in
 description: ''
-ms.date: 10/16/2018
+ms.date: 1/15/2019
 ROBOTS: NOINDEX
 ---
 
