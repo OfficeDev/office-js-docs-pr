@@ -29,9 +29,10 @@ The root element that contains information for the add-in commands implemented b
 |  **VersionOverrides**    |  No  | Defines add-in commands under a newer schema version. See [Implementing multiple versions](#implementing-multiple-versions) for details. |
 |  **WebApplicationInfo**    |  No  | Specifies details about the add-in's associated Web application. |
 
-
-
 ### VersionOverrides example
+
+The following is an example of a typical `<VersionOverrides>` element, including some child elements that are not required but are typically used.
+
 ```xml
 <OfficeApp>
 ...
