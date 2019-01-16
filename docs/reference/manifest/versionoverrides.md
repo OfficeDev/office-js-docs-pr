@@ -1,7 +1,7 @@
 ---
 title: VersionOverrides element in the manifest file
 description: ''
-ms.date: 10/09/2018
+ms.date: 01/15/2019
 ---
 
 # VersionOverrides element
@@ -92,6 +92,7 @@ To implement both the VersionOverrides v1.0 and v1.1 schema, the manifest would 
         <!-- add information on resources -->
       </Resources>
     </VersionOverrides>  
+  </VersionOverrides>
 ...
 </OfficeApp>
 ```
