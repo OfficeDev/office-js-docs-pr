@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - preview requirement set
 description: ''
-ms.date: 12/18/2018
+ms.date: 01/16/2019
 ---
 
 # item

@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API requirement set 1.5
 description: ''
-ms.date: 11/14/2018
+ms.date: 01/16/2019
 ---
 
 # Outlook add-in API requirement set 1.5

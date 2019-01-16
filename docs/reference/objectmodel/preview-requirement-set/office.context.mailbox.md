@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - preview requirement set
 description: ''
-ms.date: 10/31/2018
+ms.date: 01/16/2019
 ---
 
 # mailbox
