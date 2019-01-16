@@ -1999,7 +1999,7 @@ Office.context.mailbox.item.removeAttachmentAsync(
 
 ####  removeHandlerAsync(eventType, [options], [callback])
 
-Removes the event handlers for a supported event event.
+Removes the event handlers for a supported event type.
 
 Currently the supported event types are `Office.EventType.AttachmentsChanged`, `Office.EventType.AppointmentTimeChanged`, `Office.EventType.RecipientsChanged`, and `Office.EventType.RecurrenceChanged`.
 
