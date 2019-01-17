@@ -140,6 +140,8 @@ In this article, you'll walk through the process of building an Excel add-in usi
 5. Open the file **src/components/App.tsx**, replace the entire contents with the following code, and save the file.
 
     ```typescript
+    /* global Office, Excel */
+
     import * as React from 'react';
     import { Header } from './Header';
     import { Content } from './Content';
