@@ -63,10 +63,10 @@ In this article, you'll walk through the process of building a Word add-in by us
     
     (function () {
 
-        // The initialize function is run each time the page is loaded.
-        Office.initialize = function (reason) {
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
-
+                // The document is ready
                 // Use this to check whether the API is supported in the Word client.
                 if (Office.context.requirements.isSetSupported('WordApi', 1.1)) {
                     // Do something that is only available via the new APIs
@@ -80,7 +80,7 @@ In this article, you'll walk through the process of building a Word add-in by us
                     $('#supportedVersion').html('This code requires Word 2016 or later.');
                 }
             });
-        };
+        });
 
         function insertEmersonQuoteAtSelection() {
             Word.run(function (context) {
@@ -294,10 +294,10 @@ In this article, you'll walk through the process of building a Word add-in by us
     
     (function () {
 
-        // The initialize function is run each time the page is loaded.
-        Office.initialize = function (reason) {
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
-
+                // The document is ready
                 // Use this to check whether the API is supported in the Word client.
                 if (Office.context.requirements.isSetSupported('WordApi', 1.1)) {
                     // Do something that is only available via the new APIs
@@ -311,7 +311,7 @@ In this article, you'll walk through the process of building a Word add-in by us
                     $('#supportedVersion').html('This code requires Word 2016 or later.');
                 }
             });
-        };
+        });
 
         function insertEmersonQuoteAtSelection() {
             Word.run(function (context) {

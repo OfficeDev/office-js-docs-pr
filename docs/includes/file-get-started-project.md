@@ -74,13 +74,14 @@ In this article, you'll walk through the process of building a Project add-in by
 
         var taskGuid;
 
-        // The initialize function must be run each time a new page is loaded
-        Office.initialize = function (reason) {
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
+                // The document is ready
                 $('#get-task-guid').click(getTaskGUID);
                 $('#get-task').click(getTask);
             });
-        };
+        });
 
         function getTaskGUID() {
             Office.context.document.getSelectedTaskAsync(function (asyncResult) {
