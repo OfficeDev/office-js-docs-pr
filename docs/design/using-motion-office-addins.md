@@ -2,6 +2,7 @@
 title: Using motion in Office Add-ins
 description: ''
 ms.date: 03/23/2018
+localization_priority: Normal
 ---
 
 # Using motion in Office Add-ins

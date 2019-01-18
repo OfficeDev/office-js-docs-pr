@@ -2,6 +2,7 @@
 title: Work with multiple ranges simultaneously in Excel add-ins
 description: ''
 ms.date: 12/26/2018
+localization_priority: Normal
 ---
 
 # Work with multiple ranges simultaneously in Excel add-ins (preview)

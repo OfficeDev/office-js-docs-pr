@@ -2,6 +2,7 @@
 title: Work with ranges using the Excel JavaScript API (advanced)
 description: ''
 ms.date: 12/26/2018
+localization_priority: Normal
 ---
 
 # Work with ranges using the Excel JavaScript API (advanced)

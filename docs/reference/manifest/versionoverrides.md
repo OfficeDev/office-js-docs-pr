@@ -2,6 +2,7 @@
 title: VersionOverrides element in the manifest file
 description: ''
 ms.date: 01/15/2019
+localization_priority: Normal
 ---
 
 # VersionOverrides element

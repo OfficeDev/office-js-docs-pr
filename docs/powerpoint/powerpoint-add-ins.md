@@ -2,6 +2,7 @@
 title: PowerPoint add-ins
 description: ''
 ms.date: 10/16/2018
+localization_priority: Priority
 ---
 
 # PowerPoint add-ins

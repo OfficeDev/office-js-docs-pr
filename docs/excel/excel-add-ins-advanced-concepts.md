@@ -2,6 +2,7 @@
 title: Advanced programming concepts with the Excel JavaScript API
 description: ''
 ms.date: 10/03/2018
+localization_priority: Priority
 ---
 
 

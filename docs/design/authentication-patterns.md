@@ -2,6 +2,7 @@
 title: Authentication design guidelines for Office Add-ins
 description: ''
 ms.date: 11/02/2018
+localization_priority: Normal
 ---
 
 # Authentication patterns

@@ -4,6 +4,7 @@ description: In this tutorial, you’ll create an Excel add-in that contains a c
 ms.date: 01/08/2019
 ms.topic: tutorial
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
+localization_priority: Normal
 ---
 
 # Tutorial: Create custom functions in Excel (preview)

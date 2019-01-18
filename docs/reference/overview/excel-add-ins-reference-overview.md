@@ -2,6 +2,7 @@
 title: Excel JavaScript API overview
 description: ''
 ms.date: 11/01/2018
+localization_priority: Priority
 ---
 
 # Excel JavaScript API overview

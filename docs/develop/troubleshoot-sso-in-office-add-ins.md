@@ -2,6 +2,7 @@
 title: Troubleshoot error messages for single sign-on (SSO)
 description: ''
 ms.date: 12/08/2017
+localization_priority: Priority
 ---
 
 # Troubleshoot error messages for single sign-on (SSO) (preview)

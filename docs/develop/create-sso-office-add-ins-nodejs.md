@@ -2,6 +2,7 @@
 title: Create a Node.js Office Add-in that uses single sign-on
 description: ''
 ms.date: 12/07/2018
+localization_priority: Priority
 ---
 
 # Create a Node.js Office Add-in that uses single sign-on (preview)

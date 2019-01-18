@@ -2,6 +2,7 @@
 title: Office Add-ins development lifecycle
 description: ''
 ms.date: 01/23/2018
+localization_priority: Priority
 ---
 
 # Office Add-ins development lifecycle

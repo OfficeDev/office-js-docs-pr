@@ -2,6 +2,7 @@
 title: Add-in commands requirement sets
 description: ''
 ms.date: 11/21/2018
+localization_priority: Priority
 ---
 
 # Add-in commands requirement sets

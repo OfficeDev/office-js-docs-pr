@@ -2,6 +2,7 @@
 title: Use the OAuth authorization framework in an Office Add-in
 description: ''
 ms.date: 12/04/2017
+localization_priority: Priority
 ---
 
 

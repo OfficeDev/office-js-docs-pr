@@ -2,6 +2,7 @@
 title: Requirements for running Office Add-ins
 description: ''
 ms.date: 02/09/2018
+localization_priority: Priority
 ---
 
 # Requirements for running Office Add-ins

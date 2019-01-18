@@ -2,6 +2,7 @@
 title: Excel JavaScript API requirement sets
 description: ''
 ms.date: 10/09/2018
+localization_priority: Priority
 ---
 
 # Excel JavaScript API requirement sets

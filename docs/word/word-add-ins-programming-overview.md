@@ -2,6 +2,7 @@
 title: Word add-ins overview
 description: ''
 ms.date: 09/24/2018
+localization_priority: Priority
 ---
 
 

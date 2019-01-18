@@ -2,6 +2,7 @@
 title: Office Add-ins additional resources
 description: 
 ms.date: 04/12/2018
+localization_priority: Priority
 ---
 
 # Office Add-ins additional resources

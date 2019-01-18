@@ -2,6 +2,7 @@
 title: Create an ASP.NET Office Add-in that uses single sign-on
 description: 
 ms.date: 01/23/2018
+localization_priority: Priority
 ---
 
 # Create an ASP.NET Office Add-in that uses single sign-on (preview)

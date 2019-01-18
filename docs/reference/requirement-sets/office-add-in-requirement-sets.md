@@ -2,6 +2,7 @@
 title: Office Common API requirement sets
 description: ''
 ms.date: 11/20/2018
+localization_priority: Priority
 ---
 
 # Office Common API requirement sets

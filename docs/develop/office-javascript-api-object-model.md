@@ -2,6 +2,7 @@
 title: Office JavaScript API object model
 description: ''
 ms.date: 07/27/2018
+localization_priority: Priority
 ---
 
 

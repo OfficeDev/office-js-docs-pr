@@ -2,6 +2,7 @@
 title: Create your first task pane add-in for Microsoft Project by using a text editor
 description: ''
 ms.date: 12/17/2018
+localization_priority: Normal
 ---
 
 # Create your first task pane add-in for Microsoft Project by using a text editor

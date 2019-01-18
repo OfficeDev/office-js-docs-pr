@@ -2,6 +2,7 @@
 title: Create add-in commands in your manifest for Excel, Word, and PowerPoint
 description: Use VersionOverrides in your manifest to define add-in commands for Excel, Word, and PowerPoint. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
 ms.date: 12/04/2017
+localization_priority: Priority
 ---
 
 
