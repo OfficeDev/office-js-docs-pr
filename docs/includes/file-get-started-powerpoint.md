@@ -59,14 +59,15 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 
     (function () {
 
-        // The initialize function must be run each time a new page is loaded
-        Office.initialize = function (reason) {
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
+                // The document is ready
                 $('#insert-image').click(insertImage);
                 $('#insert-text').click(insertText);
             });
-        };
-    
+        });
+
         function insertImage() {
             Office.context.document.setSelectedDataAsync(getImageAsBase64String(), {
                 coercionType: Office.CoercionType.Image,
@@ -234,13 +235,14 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 
     (function () {
 
-        // The initialize function must be run each time a new page is loaded
-        Office.initialize = function (reason) {
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
+                // The document is ready
                 $('#insert-image').click(insertImage);
                 $('#insert-text').click(insertText);
             });
-        };
+        });
     
         function insertImage() {
             Office.context.document.setSelectedDataAsync(getImageAsBase64String(), {

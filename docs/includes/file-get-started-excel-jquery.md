@@ -56,11 +56,14 @@ In this article, you'll walk through the process of building an Excel add-in by 
     'use strict';
 
     (function () {
-        Office.initialize = function (reason) {
+
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
+                // The document is ready
                 $('#set-color').click(setColor);
             });
-        };
+        });
 
         function setColor() {
             Excel.run(function (context) {
@@ -209,11 +212,13 @@ In this article, you'll walk through the process of building an Excel add-in by 
     'use strict';
     
     (function () {
-        Office.initialize = function (reason) {
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
+                // The document is ready
                 $('#set-color').click(setColor);
             });
-        };
+        });
 
         function setColor() {
             Excel.run(function (context) {
