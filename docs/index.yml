@@ -9,8 +9,18 @@ metadata:
   ms.date: 12/04/2017
   ms.author: o365devx
 abstract:
-  sections:
-- title: Products
+  description: select product reference...
+  aside:
+    image:
+      alt: 
+      height: 130
+      src: https://docs.microsoft.com/office/dev/add-ins/images/office-add-ins-video-thumbnail.png
+      width: 250  
+    title: Get started with Office Add-ins. (14:10)
+    href: https://channel9.msdn.com/Events/Connect/2017/T192
+    width: 250
+sections:
+- title: 5-Minute Quick Starts
   items:
   - type: paragraph
     text: 'Learn how to create your first Office Add-in:'
@@ -20,9 +30,16 @@ abstract:
     - image: 
         src: https://docs.microsoft.com/office/dev/add-ins/images/index/ExcelLogoColor.svg
       text: Excel
-      href: https://review.docs.microsoft.com/en-us/office/dev/add-ins/demo?view=excel-js-1.4
+      href: https://review.docs.microsoft.com/en-us/office/dev/add-ins/demo?view=excel-js-1.4 
     - image: 
         src: https://docs.microsoft.com/office/dev/add-ins/images/index/OutlookLogoColor.svg
       text: Outlook
       href: https://review.docs.microsoft.com/en-us/office/dev/add-ins/demo?view=outlook-is-1.4 
-   
+    - image: 
+        src: https://docs.microsoft.com/office/dev/add-ins/images/index/PowerPointLogoColor.svg
+      text: PowerPoint
+      href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/powerpoint-quickstart
+    - image: 
+        src: https://docs.microsoft.com/office/dev/add-ins/images/index/ProjectLogoColor.svg
+      text: Project
+      href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/project-quickstart
