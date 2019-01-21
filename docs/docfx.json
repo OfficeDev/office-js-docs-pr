@@ -28,6 +28,22 @@
         ],
         "src": "outlook_1_5",
         "group": "outlook-is-1.5"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "excel_1_4",
+        "group": "excel-js-1.4"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "excel_1_5",
+        "group": "excel-js-1.5"
       }
     ],
     "resource": [
@@ -52,6 +68,14 @@
       "outlook-is-1.5": {
         "dest": "outlook-is-1.5",
         "moniker_range": "outlook-is-1.5"
+      },
+      "excel-js-1.4": {
+        "dest": "excel-js-1.4",
+        "moniker_range": "excel-js-1.4"
+      },
+      "excel-js-1.5": {
+        "dest": "excel-js-1.5",
+        "moniker_range": "excel-js-1.5"
       }
     },
     "overwrite": [],

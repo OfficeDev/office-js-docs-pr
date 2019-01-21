@@ -11,7 +11,7 @@
       "build_output_subfolder": "office-js-docs-pr",
       "locale": "en-us",
       "monikers": [],
-      "moniker_ranges": ["outlook-is-1.4", "outlook-is-1.5"],
+      "moniker_ranges": ["outlook-is-1.4", "outlook-is-1.5", "excel-js-1.4", "excel-js-1.5"],
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
@@ -35,6 +35,14 @@
     },
     {
       "ConceptualTOC": "docs/outlook_1_5/toc.yml",
+      "ReferenceTOCUrl": "/javascript/api/toc.json"
+    },
+    {
+      "ConceptualTOC": "docs/excel_1_4/toc.yml",
+      "ReferenceTOCUrl": "/javascript/api/toc.json"
+    },
+    {
+      "ConceptualTOC": "docs/excel_1_5/toc.yml",
       "ReferenceTOCUrl": "/javascript/api/toc.json"
     }
   ],
