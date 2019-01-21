@@ -2,6 +2,14 @@
 title: this file is only for demo purpose
 ---
 
-# H1 heading is required to make moniker-pick show
+# Office Add-ins landing page
 
-Content for Outlook 1.4
+Outlook product link [Outlook](https://review.docs.microsoft.com/en-us/office/dev/add-ins/demo?view=outlook-is-1.4)
+
+Excel product link [Excel](https://review.docs.microsoft.com/en-us/office/dev/add-ins/demo?view=excel-js-1.4)
+
+OneNote product link
+
+Project product link
+
+PowerPoint product link
