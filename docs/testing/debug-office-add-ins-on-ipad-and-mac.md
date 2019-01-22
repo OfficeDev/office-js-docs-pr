@@ -36,7 +36,7 @@ Then, open the Office application and insert your add-in. Right-click the add-in
 > 3. Resize the dialog to its original size.
 > 4. Use the inspector as required.
 
-## Debugging with Vorlon.JS on a iPad or Mac
+## Debugging with Vorlon.JS on a iPad
 
 To debug an add-in on iPad or Mac, you can use Vorlon.JS, a debugger for web pages that is similar to the F12 tools. It is designed to work remotely and it enables you to debug web pages across different devices. For more information, see the [Vorlon website](http://www.vorlonjs.com).  
 
