@@ -431,6 +431,8 @@
       href: testing/testing-and-troubleshooting.md
     - name: Validate an add-in manifest and troubleshoot issues
       href: testing/troubleshoot-manifest.md
+    - name: Add a self-signed certificate as a trusted root certificate
+      href: testing/add-self-signed-certificate-as-trusted-root-certificate.md
 
   - name: Publish
     href: publish/publish.md
