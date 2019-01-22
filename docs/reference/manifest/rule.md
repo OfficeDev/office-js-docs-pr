@@ -2,6 +2,7 @@
 title: Rule element in the manifest file
 description: ''
 ms.date: 12/27/2018
+localization_priority: Normal
 ---
 
 # Rule element

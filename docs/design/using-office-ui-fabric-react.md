@@ -2,6 +2,7 @@
 title: Use Office UI Fabric React in Office Add-ins
 description: ''
 ms.date: 12/04/2017
+localization_priority: Priority
 ---
 # Use Office UI Fabric React in Office Add-ins
 

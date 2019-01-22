@@ -2,6 +2,7 @@
 title: Read and write data to the active selection in a document or spreadsheet
 description: ''
 ms.date: 12/04/2017
+localization_priority: Priority
 ---
 
 

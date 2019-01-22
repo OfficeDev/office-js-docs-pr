@@ -2,6 +2,7 @@
 title: Create a dictionary task pane add-in
 description: ''
 ms.date: 12/04/2017
+localization_priority: Normal
 ---
 
 

@@ -2,6 +2,7 @@
 title: Task pane add-ins for Project
 description: ''
 ms.date: 12/17/2018
+localization_priority: Priority
 ---
 
 # Task pane add-ins for Project

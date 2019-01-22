@@ -2,6 +2,7 @@
 title: Accessibility guidelines for Office Add-ins
 description: ''
 ms.date: 09/24/2018
+localization_priority: Normal
 ---
 
 # Accessibility guidelines

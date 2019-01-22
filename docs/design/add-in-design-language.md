@@ -2,6 +2,7 @@
 title: Office Add-in design language
 description: ''
 ms.date: 12/04/2017
+localization_priority: Priority
 ---
 
 # Office Add-in design language

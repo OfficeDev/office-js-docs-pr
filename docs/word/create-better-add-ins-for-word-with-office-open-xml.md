@@ -2,6 +2,7 @@
 title: Create better add-ins for Word with Office Open XML
 description: ''
 ms.date: 12/17/2018
+localization_priority: Priority
 ---
 
 

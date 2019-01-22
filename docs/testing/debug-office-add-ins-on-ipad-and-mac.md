@@ -2,6 +2,7 @@
 title: Debug Office Add-ins on iPad and Mac
 description: ''
 ms.date: 03/21/2018
+localization_priority: Priority
 ---
 
 # Debug Office Add-ins on iPad and Mac

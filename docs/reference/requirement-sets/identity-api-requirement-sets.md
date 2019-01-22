@@ -2,6 +2,7 @@
 title: Identity API requirement sets
 description: ''
 ms.date: 10/09/2018
+localization_priority: Normal
 ---
 
 # Identity API requirement sets

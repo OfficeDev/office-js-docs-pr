@@ -2,6 +2,7 @@
 title: Create and debug Office Add-ins in Visual Studio
 description: 'Use Visual Studio to create and debug Office Add-ins on the Office desktop client for Windows'
 ms.date: 11/02/2018
+localization_priority: Priority
 ---
 
 # Create and debug Office Add-ins in Visual Studio

@@ -2,6 +2,7 @@
 title: Requesting permissions for API use in content and task pane add-ins
 description: ''
 ms.date: 12/04/2017
+localization_priority: Normal
 ---
 
 

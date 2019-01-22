@@ -4,6 +4,7 @@ description: In this tutorial, you'll build a Word add-in that inserts (and repl
 ms.date: 12/31/2018
 ms.topic: tutorial
 #Customer intent: As a developer, I want to build a Word add-in that can interact with content in a Word document.
+localization_priority: Normal
 ---
 
 # Tutorial: Create a Word task pane add-in

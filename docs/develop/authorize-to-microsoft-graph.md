@@ -2,6 +2,7 @@
 title: Authorize to Microsoft Graph in your Office Add-in
 description: ''
 ms.date: 04/10/2018
+localization_priority: Priority
 ---
 
 # Authorize to Microsoft Graph in your Office Add-in (preview)

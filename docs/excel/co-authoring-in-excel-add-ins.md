@@ -2,6 +2,7 @@
 title: Coauthoring in Excel add-ins
 description: ''
 ms.date: 12/04/2017
+localization_priority: Normal
 ---
 
 

@@ -2,6 +2,7 @@
 title: Add-in commands for Excel, Word, and PowerPoint
 description: ''
 ms.date: 01/23/2018
+localization_priority: Priority
 ---
 
 

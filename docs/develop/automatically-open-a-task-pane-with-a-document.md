@@ -2,6 +2,7 @@
 title: Automatically open a task pane with a document
 description: ''
 ms.date: 05/02/2018
+localization_priority: Priority
 ---
 
 

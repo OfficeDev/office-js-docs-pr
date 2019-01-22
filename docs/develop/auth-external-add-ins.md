@@ -2,6 +2,7 @@
 title: Authorize external services in your Office Add-in
 description: ''
 ms.date: 12/04/2017
+localization_priority: Priority
 ---
 
 # Authorize external services in your Office Add-in
