@@ -2,6 +2,7 @@
 title: Word JavaScript API requirement sets
 description: ''
 ms.date: 11/14/2018
+localization_priority: Priority
 ---
 
 # Word JavaScript API requirement sets

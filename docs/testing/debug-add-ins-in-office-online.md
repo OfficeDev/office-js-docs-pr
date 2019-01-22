@@ -2,6 +2,7 @@
 title: Debug add-ins in Office Online
 description: How to use Office Online to test and debug your add-ins.
 ms.date: 03/14/2018
+localization_priority: Priority
 ---
 
 # Debug add-ins in Office Online

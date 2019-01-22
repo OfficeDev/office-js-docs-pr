@@ -2,6 +2,7 @@
 title: AppDomain element in the manifest file
 description: ''
 ms.date: 12/13/2018
+localization_priority: Normal
 ---
 
 # AppDomain element

@@ -2,6 +2,7 @@
 title: First-run experience patterns for Office Add-ins
 description: ''
 ms.date: 06/26/2018
+localization_priority: Normal
 ---
 
 # First-run experience patterns

@@ -2,6 +2,7 @@
 title: Navigation patterns for Office Add-ins
 description: ''
 ms.date: 06/26/2018
+localization_priority: Normal
 ---
 
 # Navigation patterns

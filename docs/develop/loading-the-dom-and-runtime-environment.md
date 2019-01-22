@@ -2,6 +2,7 @@
 title: Loading the DOM and runtime environment
 description: ''
 ms.date: 01/09/2019
+localization_priority: Priority
 ---
 
 

@@ -2,6 +2,7 @@
 title: Office UI elements for Office Add-ins
 description: ''
 ms.date: 12/04/2017
+localization_priority: Priority
 ---
 
 

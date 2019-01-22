@@ -2,6 +2,7 @@
 title: Develop Office Add-ins with Angular
 description: ''
 ms.date: 11/02/2018
+localization_priority: Priority
 ---
 
 # Develop Office Add-ins with Angular

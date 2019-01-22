@@ -2,6 +2,7 @@
 ms.date: 01/08/2019
 description: Learn best practices for developing custom functions in Excel.
 title: Custom functions best practices (preview)
+localization_priority: Normal
 ---
 
 # Custom functions best practices (preview)

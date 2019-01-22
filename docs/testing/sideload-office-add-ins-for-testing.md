@@ -2,6 +2,7 @@
 title: Sideload Office Add-ins in Office Online for testing
 description: 'Test your Office Add-in in Office Online by sideloading'
 ms.date: 10/19/2018
+localization_priority: Priority
 ---
 
 # Sideload Office Add-ins in Office Online for testing

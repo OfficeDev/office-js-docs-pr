@@ -2,6 +2,7 @@
 title: Work with tables using the Excel JavaScript API
 description: ''
 ms.date: 12/04/2017
+localization_priority: Priority
 ---
 
 

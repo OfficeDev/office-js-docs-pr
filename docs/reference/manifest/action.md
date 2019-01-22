@@ -2,6 +2,7 @@
 title: Action element in the manifest file
 description: ''
 ms.date: 11/14/2018
+localization_priority: Normal
 ---
 
 # Action element

@@ -2,6 +2,7 @@
 title: Office.context.mailbox.diagnostics - preview requirement set
 description: ''
 ms.date: 10/11/2018
+localization_priority: Normal
 ---
 
 # diagnostics

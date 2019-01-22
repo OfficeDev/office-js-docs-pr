@@ -2,6 +2,7 @@
 title: JavaScript API for Office
 description: ''
 ms.date: 10/09/2018
+localization_priority: Priority
 ---
 
 # JavaScript API for Office

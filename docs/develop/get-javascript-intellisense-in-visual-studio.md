@@ -2,6 +2,7 @@
 title: Get JavaScript IntelliSense in Visual Studio 2017
 description: ''
 ms.date: 12/04/2017
+localization_priority: Priority
 ---
 
 

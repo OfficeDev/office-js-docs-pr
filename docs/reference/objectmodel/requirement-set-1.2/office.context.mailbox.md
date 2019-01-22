@@ -2,6 +2,7 @@
 title: Office.context.mailbox - requirement set 1.2
 description: ''
 ms.date: 10/31/2018
+localization_priority: Normal
 ---
 
 # mailbox

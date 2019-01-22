@@ -2,6 +2,7 @@
 title: Referencing the JavaScript API for Office library from its content delivery network (CDN)
 description: ''
 ms.date: 01/23/2018
+localization_priority: Priority
 ---
 
 

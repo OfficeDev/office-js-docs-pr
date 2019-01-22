@@ -2,6 +2,7 @@
 title: Troubleshoot user errors with Office Add-ins
 description: ''
 ms.date: 01/23/2018
+localization_priority: Priority
 ---
 
 # Troubleshoot user errors with Office Add-ins

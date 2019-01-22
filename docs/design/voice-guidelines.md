@@ -2,6 +2,7 @@
 title: Voice guidelines for Office Add-ins
 description: ''
 ms.date: 06/27/2018
+localization_priority: Normal
 ---
 
 # Voice guidelines

@@ -2,6 +2,7 @@
 title: Get started with Excel add-ins
 description: ''
 ms.date: 01/23/2018
+localization_priority: Priority
 ---
 
 

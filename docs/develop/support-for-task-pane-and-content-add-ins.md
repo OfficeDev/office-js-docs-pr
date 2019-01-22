@@ -2,6 +2,7 @@
 title: Office JavaScript API support for content and task pane add-ins in Office 2013
 description: ''
 ms.date: 12/04/2017
+localization_priority: Normal
 ---
 
 
