@@ -2,11 +2,12 @@
 title: Office namespace - requirement set 1.4
 description: ''
 ms.date: 11/08/2018
+localization_priority: Normal
 ---
 
 # Office
 
-The Office namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office namespace, see the [Shared API](/javascript/api/office).
+The Office namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office namespace, see the [Common API](/javascript/api/office).
 
 ##### Requirements
 

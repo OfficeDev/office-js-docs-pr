@@ -2,13 +2,14 @@
 title: Office.context - requirement set 1.5
 description: ''
 ms.date: 10/11/2018
+localization_priority: Normal
 ---
 
 # context
 
 ### [Office](Office.md).context
 
-The Office.context namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office.context namespace, see the [Office.context reference in the Shared API](/javascript/api/office/office.context).
+The Office.context namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office.context namespace, see the [Office.context reference in the Common API](/javascript/api/office/office.context).
 
 ##### Requirements
 

@@ -1,8 +1,9 @@
 ---
 title: Build your first Word add-in
 description: ''
-ms.date: 10/16/2018
+ms.date: 01/17/2019
 ROBOTS: NOINDEX
+localization_priority: Priority
 ---
 
 [!include[Word add-ins get started](../includes/file-get-started-word.md)]

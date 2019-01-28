@@ -2,6 +2,7 @@
 title: OneNote JavaScript API requirement sets
 description: ''
 ms.date: 10/09/2018
+localization_priority: Normal
 ---
 
 # OneNote JavaScript API requirement sets
@@ -14,9 +15,9 @@ The following table lists the OneNote requirement sets, the Office host applicat
 |:-----|:-----|
 | OneNoteApi 1.1  | September 2016 |  
 
-## Office common API requirement sets
+## Office Common API requirement sets
 
-For information about common API requirement sets, see [Office common API requirement sets](office-add-in-requirement-sets.md).
+For information about Common API requirement sets, see [Office Common API requirement sets](office-add-in-requirement-sets.md).
 
 ## OneNote JavaScript API 1.1 
 

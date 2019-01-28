@@ -2,6 +2,7 @@
 title: Deploy and publish your Office Add-in | Microsoft Docs
 description: Methods and options to deploy your Office Add-in for testing or distribution to users.
 ms.date: 01/23/2018
+localization_priority: Priority
 ---
 
 # Deploy and publish your Office Add-in

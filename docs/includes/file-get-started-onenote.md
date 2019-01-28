@@ -66,11 +66,13 @@ In this article, you'll walk through the process of building a OneNote add-in by
     ```js
     import * as OfficeHelpers from "@microsoft/office-js-helpers";
 
-    Office.initialize = (reason) => {
+    Office.onReady(() => {
+        // Office is ready
         $(document).ready(() => {
+            // The document is ready
             $('#addOutline').click(addOutlineToPage);
         });
-    };
+    });
     
     async function addOutlineToPage() {
         try {
@@ -261,6 +263,6 @@ Congratulations, you've successfully created a OneNote add-in! Next, learn more 
 ## See also
 
 - [OneNote JavaScript API programming overview](../onenote/onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js)
+- [OneNote JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office Add-ins platform overview](../overview/office-add-ins.md)

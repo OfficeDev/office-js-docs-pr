@@ -2,6 +2,7 @@
 title: Debug add-ins using F12 developer tools on Windows 10
 description: ''
 ms.date: 10/16/2018
+localization_priority: Priority
 ---
 
 # Debug add-ins using F12 developer tools on Windows 10

@@ -1,7 +1,8 @@
 ---
 title: VersionOverrides element in the manifest file
 description: ''
-ms.date: 10/09/2018
+ms.date: 01/15/2019
+localization_priority: Normal
 ---
 
 # VersionOverrides element
@@ -29,9 +30,10 @@ The root element that contains information for the add-in commands implemented b
 |  **VersionOverrides**    |  No  | Defines add-in commands under a newer schema version. See [Implementing multiple versions](#implementing-multiple-versions) for details. |
 |  **WebApplicationInfo**    |  No  | Specifies details about the add-in's associated Web application. |
 
-
-
 ### VersionOverrides example
+
+The following is an example of a typical `<VersionOverrides>` element, including some child elements that are not required but are typically used.
+
 ```xml
 <OfficeApp>
 ...
@@ -92,6 +94,7 @@ To implement both the VersionOverrides v1.0 and v1.1 schema, the manifest would 
         <!-- add information on resources -->
       </Resources>
     </VersionOverrides>  
+  </VersionOverrides>
 ...
 </OfficeApp>
 ```
