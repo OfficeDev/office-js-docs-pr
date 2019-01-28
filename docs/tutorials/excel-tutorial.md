@@ -1,7 +1,7 @@
 ---
 title: Excel add-in tutorial
 description: In this tutorial, you'll build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.
-ms.date: 01/09/2019
+ms.date: 01/28/2019
 ms.topic: tutorial
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
 localization_priority: Normal
@@ -28,6 +28,8 @@ To use this tutorial, you need to have the following installed.
 - [Node](https://nodejs.org/en/) 
 
 - [Git Bash](https://git-scm.com/downloads) (or another Git client)
+
+- You need to have an Internet connection to test the add-in in this tutorial.
 
 ## Create your add-in project
 
@@ -601,7 +603,7 @@ In this step of the tutorial, you'll add another button to the ribbon that, when
 
 1. Open the file \function-file\function-file.js.
 
-2. The file already has an Immediately Invoked Function Expression (IFFE). No custom initialization logic is needed, so leave the function that is assigned to `Office.initialize` with an empty body. (But do not delete it. The `Office.initialize` property cannot be null or undefined.) *Outside of the IIFE*, add the following code. Note that we specify an `args` parameter to the method and the very last line of the method calls `args.completed`. This is a requirement for all add-in commands of type **ExecuteFunction**. It signals the Office host application that the function has finished and the UI can become responsive again.
+2. The file already has an Immediately Invoked Function Expression (IFFE). *Outside of the IIFE*, add the following code. Note that we specify an `args` parameter to the method and the very last line of the method calls `args.completed`. This is a requirement for all add-in commands of type **ExecuteFunction**. It signals the Office host application that the function has finished and the UI can become responsive again.
 
     ```js
     function toggleProtection(args) {
