@@ -8,7 +8,7 @@ title: Batching Web Requests with Custom Functions
 
 Custom functions allow you to make requests to resources on the web and this article will detail a pattern to batch these requests. When batching, you bundle individual requests together into a larger request, rather than executing each request one by one.
 
->[NOTE!]
+> [!NOTE]
 > This article assumes you are familiar with JavaScript Promises and assumes you have created a custom function before. To learn how to create a custom function, see the [Custom Functions Tutorial](../tutorials/).
 
 ## Clone the batching code sample repository
