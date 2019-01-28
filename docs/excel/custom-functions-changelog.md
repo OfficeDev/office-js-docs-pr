@@ -1,5 +1,5 @@
 ---
-ms.date: 01/08/2019
+ms.date: 01/23/2019
 description: Discover the latest updates to Excel custom functions.
 title: Custom functions changelog (preview)
 localization_priority: Normal
