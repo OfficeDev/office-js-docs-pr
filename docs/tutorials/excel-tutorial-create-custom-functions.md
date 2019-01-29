@@ -144,6 +144,10 @@ Integrating data from the Web is a great way to extend Excel through custom func
         //    will be bubbled up to Excel to indicate an error.
     }
 
+> [!NOTE]
+> In the January Insiders 1901 Build, there is a bug preventing fetch calls from executing which will result in #VALUE!.
+> To workaround this please use the [XMLHTTPRequest API](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-runtime#requesting-external-data) to make the web request.
+
 3. In **customfunctions.js**, locate the line `CustomFunctions.associate("INCREMENT", increment);`. Add the following line of code immediately after that line, and save the file.
 
     ```js
