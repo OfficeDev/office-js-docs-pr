@@ -10,15 +10,13 @@ In some scenarios your custom function will need to authenticate the user in ord
   
 ## AsyncStorage object
 
-The custom functions runtime doesn't have a `localStorage` object available on the global window, where you might typically store data. Instead, you should share data between custom functions and task panes, by using [OfficeRuntime.AsyncStorage](https://docs.microsoft.com/javascript/api/office-runtime/officeruntime.asyncstorage) to set and get data.
-
-Suggested usage:
-
-- Use `AsyncStorage` to set and get access tokens.
-- From your custom function, read user tokens from `AsyncStorage` and use them to make your web request.
-- For best performance, you should save a user token into a global variable within custom functions so you can access it from other functions without having to look it up in `AsyncStorage` again.
+The custom functions runtime doesn't have a `localStorage` object available on the global window, where you might typically store data. Instead, you should share data between custom functions and task panes, by using [OfficeRuntime.AsyncStorage](https://docs.microsoft.com/javascript/api/office-runtime/officeruntime.asyncstorage) to set and get data. 
 
 Additionally, there is a benefit to using `AsyncStorage`; it uses a secure sandbox environment so that your data cannot be accessed by other add-ins.  
+
+### Suggested usage
+
+When you need to authenticate either from the task pane or a custom function, check AsyncStorage to see if the access token was already acquired. If not, use the dialog API to authenticate the user, retrieve the access token, and then store the token in AsyncStorage for future use.
 
 ## Dialog API
 
