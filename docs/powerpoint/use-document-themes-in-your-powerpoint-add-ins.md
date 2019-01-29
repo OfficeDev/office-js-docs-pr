@@ -2,6 +2,7 @@
 title: Use document themes in your PowerPoint add-ins
 description: ''
 ms.date: 12/17/2018
+localization_priority: Normal
 ---
 
 # Use document themes in your PowerPoint add-ins

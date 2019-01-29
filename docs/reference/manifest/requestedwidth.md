@@ -2,6 +2,7 @@
 title: RequestedWidth element in the manifest file
 description: ''
 ms.date: 11/13/2018
+localization_priority: Normal
 ---
 
 # RequestedWidth element

@@ -2,6 +2,7 @@
 title: Task pane add-ins for Project
 description: ''
 ms.date: 12/17/2018
+localization_priority: Priority
 ---
 
 # Task pane add-ins for Project
@@ -197,7 +198,7 @@ You can distribute add-ins through a file share, an add-in catalog in a SharePoi
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Office Add-ins XML manifest](../develop/add-in-manifests.md)
-- [JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)
+- [JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)
 - [Create your first task pane add-in for Project 2013 by using a text editor](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [Create a Project add-in that uses REST with an on-premises Project Server OData service](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
 - [Project 2013 SDK download](https://www.microsoft.com/download/details.aspx?id=30435%20)

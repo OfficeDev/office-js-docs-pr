@@ -59,14 +59,15 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 
     (function () {
 
-        // The initialize function must be run each time a new page is loaded
-        Office.initialize = function (reason) {
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
+                // The document is ready
                 $('#insert-image').click(insertImage);
                 $('#insert-text').click(insertText);
             });
-        };
-    
+        });
+
         function insertImage() {
             Office.context.document.setSelectedDataAsync(getImageAsBase64String(), {
                 coercionType: Office.CoercionType.Image,
@@ -150,7 +151,7 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 
 ### Try it out
 
-1. Using Visual Studio, test the newly created PowerPoint add-in by pressing F5 or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
+1. Using Visual Studio, test the newly created PowerPoint add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
 2. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
@@ -234,13 +235,14 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 
     (function () {
 
-        // The initialize function must be run each time a new page is loaded
-        Office.initialize = function (reason) {
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
+                // The document is ready
                 $('#insert-image').click(insertImage);
                 $('#insert-text').click(insertText);
             });
-        };
+        });
     
         function insertImage() {
             Office.context.document.setSelectedDataAsync(getImageAsBase64String(), {
@@ -352,4 +354,4 @@ In this article, you'll walk through the process of building a PowerPoint add-in
 Congratulations, you've successfully created a PowerPoint add-in! Next, learn more about the capabilities of a PowerPoint add-in and build a more complex add-in by following along with the PowerPoint add-in tutorial.
 
 > [!div class="nextstepaction"]
-> [PowerPoint add-in tutorial](../tutorials/powerpoint-tutorial.yml)
+> [PowerPoint add-in tutorial](../tutorials/powerpoint-tutorial.md)

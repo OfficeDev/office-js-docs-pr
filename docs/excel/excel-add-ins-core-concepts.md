@@ -2,12 +2,13 @@
 title: Fundamental programming concepts with the Excel JavaScript API
 description: Use the Excel JavaScript API to build add-ins for Excel.
 ms.date: 11/29/2018
+localization_priority: Priority
 ---
 
 
 # Fundamental programming concepts with the Excel JavaScript API
  
-This article describes how to use the [Excel JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js) to build add-ins for Excel 2016 or later. It introduces core concepts that are fundamental to using the API and provides guidance for performing specific tasks such as reading or writing to a large range, updating all cells in range, and more.
+This article describes how to use the [Excel JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) to build add-ins for Excel 2016 or later. It introduces core concepts that are fundamental to using the API and provides guidance for performing specific tasks such as reading or writing to a large range, updating all cells in range, and more.
 
 ## Asynchronous nature of Excel APIs
 
@@ -244,4 +245,4 @@ When an API error occurs, the API returns an **error** object that contains a co
 * [Excel add-ins code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
 * [Advanced programming concepts with the Excel JavaScript API](excel-add-ins-advanced-concepts.md)
 * [Excel JavaScript API performance optimization](https://docs.microsoft.com/office/dev/add-ins/excel/performance)
-* [Excel JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)
+* [Excel JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

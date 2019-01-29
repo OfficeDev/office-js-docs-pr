@@ -2,6 +2,7 @@
 title: Office.context.mailbox.item - requirement set 1.3
 description: ''
 ms.date: 12/18/2018
+localization_priority: Normal
 ---
 
 # item

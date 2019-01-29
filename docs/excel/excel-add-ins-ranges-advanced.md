@@ -1,7 +1,8 @@
 ---
 title: Work with ranges using the Excel JavaScript API (advanced)
 description: ''
-ms.date: 12/18/2018
+ms.date: 12/26/2018
+localization_priority: Normal
 ---
 
 # Work with ranges using the Excel JavaScript API (advanced)
@@ -64,6 +65,116 @@ Your add-in will have to format the ranges to display the dates in a more human-
 
 The `RangeAreas` object lets your add-in perform operations on multiple ranges at once. These ranges may be contiguous, but do not have to be. `RangeAreas` are further discussed in the article [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
 
+## Find special cells within a range (preview)
+
+> [!NOTE]
+> The `getSpecialCells` and `getSpecialCellsOrNullObject` methods are currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> If you are using TypeScript or your code editor uses TypeScript type definition files for IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+
+The `Range.getSpecialCells()` and `Range.getSpecialCellsOrNullObject()` methods find ranges based on the characteristics of their cells and the types of values of their cells. Both of these methods return `RangeAreas` objects. Here are the signatures of the methods from the TypeScript data types file:
+
+```typescript
+getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
+```
+
+```typescript
+getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
+```
+
+The following example uses the `getSpecialCells` method to find all the cells with formulas. About this code, note:
+
+- It limits the part of the sheet that needs to be searched by first calling `Worksheet.getUsedRange` and calling `getSpecialCells` for only that range.
+- The `getSpecialCells` method returns a `RangeAreas` object, so all of the cells with formulas will be colored pink even if they are not all contiguous.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var formulaRanges = usedRange.getSpecialCells(Excel.SpecialCellType.formulas);
+    formulaRanges.format.fill.color = "pink";
+
+    return context.sync();
+})
+```
+
+If no cells with the targeted characteristic exist in the range, `getSpecialCells` throws an **ItemNotFound** error. This diverts the flow of control to a `catch` block, if there is one. If there isn't a `catch` block, the error halts the function.
+
+If you expect that cells with the targeted characteristic should always exist, you'll likely want your code to throw an error if those cells aren't there. If it's a valid scenario that there aren't any matching cells, your code should check for this possibility and handle it gracefully without throwing an error. You can achieve this behavior with the `getSpecialCellsOrNullObject` method and its returned `isNullObject` property. The following example uses this pattern. About this code, note:
+
+- The `getSpecialCellsOrNullObject` method always returns a proxy object, so it is never `null` in the ordinary JavaScript sense. But if no matching cells are found, the `isNullObject` property of the object is set to `true`.
+- It calls `context.sync` *before* it tests the `isNullObject` property. This is a requirement with all `*OrNullObject` methods and properties, because you always have to load and sync a property in order to read it. However, it is not necessary to *explicitly* load the `isNullObject` property. It is automatically loaded by the `context.sync` even if `load` is not called on the object. For more information, see [\*OrNullObject](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods).
+- You can test this code by first selecting a range that has no formula cells and running it. Then select a range that has at least one cell with a formula and run it again.
+
+```js
+Excel.run(function (context) {
+    var range = context.workbook.getSelectedRange();
+    var formulaRanges = range.getSpecialCellsOrNullObject(Excel.SpecialCellType.formulas);
+    return context.sync()
+        .then(function() {
+            if (formulaRanges.isNullObject) {
+                console.log("No cells have formulas");
+            }
+            else {
+                formulaRanges.format.fill.color = "pink";
+            }
+        })
+        .then(context.sync);
+})
+```
+
+For simplicity, all other examples in this article use the `getSpecialCells` method instead of  `getSpecialCellsOrNullObject`.
+
+### Narrow the target cells with cell value types
+
+The `Range.getSpecialCells()` and `Range.getSpecialCellsOrNullObject()` methods accept an optional second parameter used to further narrow down the targeted cells. This second parameter is an `Excel.SpecialCellValueType` you use to specify that you only want cells that contain certain types of values.
+
+> [!NOTE]
+> The `Excel.SpecialCellValueType` parameter can only be used if the `Excel.SpecialCellType` is `Excel.SpecialCellType.formulas` or `Excel.SpecialCellType.constants`.
+
+#### Test for a single cell value type
+
+The `Excel.SpecialCellValueType` enum has these four basic types (in addition to the other combined values described later in this section):
+
+- `Excel.SpecialCellValueType.errors`
+- `Excel.SpecialCellValueType.logical` (which means boolean)
+- `Excel.SpecialCellValueType.numbers`
+- `Excel.SpecialCellValueType.text`
+
+The following example finds special cells that are numerical constants and colors those cells pink. About this code, note:
+
+- It will only highlight cells that have a literal number value. It will not highlight cells that have a formula (even if the result is a number) or a boolean, text, or error state cells.
+- To test the code, be sure the worksheet has some cells with literal number values, some with other kinds of literal values, and some with formulas.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var constantNumberRanges = usedRange.getSpecialCells(
+        Excel.SpecialCellType.constants,
+        Excel.SpecialCellValueType.numbers);
+    constantNumberRanges.format.fill.color = "pink";
+
+    return context.sync();
+})
+```
+
+#### Test for multiple cell value types
+
+Sometimes you need to operate on more than one cell value type, such as all text-valued and all boolean-valued (`Excel.SpecialCellValueType.logical`) cells. The `Excel.SpecialCellValueType` enum has values with combined types. For example, `Excel.SpecialCellValueType.logicalText` targets all boolean and all text-valued cells. `Excel.SpecialCellValueType.all` is the default value, which does not limit the cell value types returned. The following example colors all cells with formulas that produce number or boolean value.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var formulaLogicalNumberRanges = usedRange.getSpecialCells(
+        Excel.SpecialCellType.formulas,
+        Excel.SpecialCellValueType.logicalNumbers);
+    formulaLogicalNumberRanges.format.fill.color = "pink";
+
+    return context.sync();
+})
+```
+
 ## Copy and paste (preview)
 
 > [!NOTE]
@@ -71,7 +182,7 @@ The `RangeAreas` object lets your add-in perform operations on multiple ranges a
 > If you are using TypeScript or your code editor uses TypeScript type definition files for IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
 
 Range’s `copyFrom` function replicates the copy-and-paste behavior of the Excel UI. The range object that `copyFrom` is called on is the destination.
-The source to be copied is passed as a range or a string address representing a range. 
+The source to be copied is passed as a range or a string address representing a range.
 The following code sample copies the data from **A1:E1** into the range starting at **G1** (which ends up pasting into **G1:K1**).
 
 ```js
@@ -86,15 +197,15 @@ Excel.run(function (context) {
 `Range.copyFrom` has three optional parameters.
 
 ```TypeScript
-copyFrom(sourceRange: Range | string, copyType?: "All" | "Formulas" | "Values" | "Formats", skipBlanks?: boolean, transpose?: boolean): void;
+copyFrom(sourceRange: Range | RangeAreas | string, copyType?: Excel.RangeCopyType, skipBlanks?: boolean, transpose?: boolean): void;
 ```
 
 `copyType` specifies what data gets copied from the source to the destination.
 
-- `"Formulas"` transfers the formulas in the source cells and preserves the relative positioning of those formulas’ ranges. Any non-formula entries are copied as-is.
-- `"Values"` copies the data values and, in the case of formulas, the result of the formula.
-- `"Formats"` copies the formatting of the range, including font, color, and other format settings, but no values.
-- `"All"` (the default option) copies both data and formatting, preserving cells’ formulas if found.
+- `Excel.RangeCopyType.formulas` transfers the formulas in the source cells and preserves the relative positioning of those formulas’ ranges. Any non-formula entries are copied as-is.
+- `Excel.RangeCopyType.values` copies the data values and, in the case of formulas, the result of the formula.
+- `Excel.RangeCopyType.formats` copies the formatting of the range, including font, color, and other format settings, but no values.
+- `Excel.RangeCopyType.all` (the default option) copies both data and formatting, preserving cells’ formulas if found.
 
 `skipBlanks` sets whether blank cells are copied into the destination. When true, `copyFrom` skips blank cells in the source range.
 Skipped cells will not overwrite the existing data of their corresponding cells in the destination range. The default is false.
@@ -173,3 +284,4 @@ Excel.run(async (context) => {
 
 - [Work with ranges using the Excel JavaScript API](excel-add-ins-ranges.md)
 - [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
+- [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md)

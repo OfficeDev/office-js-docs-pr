@@ -1,7 +1,8 @@
 ---
-ms.date: 12/5/2018
+ms.date: 01/08/2019
 description: Understand key scenarios in developing Excel custom functions that use the new JavaScript runtime.
-title: Runtime for Excel custom functions
+title: Runtime for Excel custom functions (preview)
+localization_priority: Normal
 ---
 
 # Runtime for Excel custom functions (preview)
@@ -194,4 +195,5 @@ In order to create an add-in that will run on multiple platforms (one of the key
 * [Create custom functions in Excel](custom-functions-overview.md)
 * [Custom functions metadata](custom-functions-json.md)
 * [Custom functions best practices](custom-functions-best-practices.md)
-* [Excel custom functions tutorial](excel-tutorial-custom-functions.md)
+* [Custom functions changelog](custom-functions-changelog.md)
+* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)

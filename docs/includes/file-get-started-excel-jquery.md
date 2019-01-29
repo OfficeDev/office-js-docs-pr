@@ -56,11 +56,14 @@ In this article, you'll walk through the process of building an Excel add-in by 
     'use strict';
 
     (function () {
-        Office.initialize = function (reason) {
+
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
+                // The document is ready
                 $('#set-color').click(setColor);
             });
-        };
+        });
 
         function setColor() {
             Excel.run(function (context) {
@@ -131,7 +134,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
 
 ### Try it out
 
-1. Using Visual Studio, test the newly created Excel add-in by pressing F5 or choosing the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
+1. Using Visual Studio, test the newly created Excel add-in by pressing **F5** or choosing the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
@@ -209,11 +212,13 @@ In this article, you'll walk through the process of building an Excel add-in by 
     'use strict';
     
     (function () {
-        Office.initialize = function (reason) {
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
+                // The document is ready
                 $('#set-color').click(setColor);
             });
-        };
+        });
 
         function setColor() {
             Excel.run(function (context) {
@@ -309,11 +314,11 @@ In this article, you'll walk through the process of building an Excel add-in by 
 Congratulations, you've successfully created an Excel add-in using jQuery! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.
 
 > [!div class="nextstepaction"]
-> [Excel add-in tutorial](../tutorials/excel-tutorial.yml)
+> [Excel add-in tutorial](../tutorials/excel-tutorial.md)
 
 ## See also
 
 * [Excel add-in tutorial](../tutorials/excel-tutorial-create-table.md)
 * [Fundamental programming concepts with the Excel JavaScript API](../excel/excel-add-ins-core-concepts.md)
 * [Excel add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)
+* [Excel JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

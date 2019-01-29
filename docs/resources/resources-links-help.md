@@ -2,14 +2,12 @@
 title: Office Add-ins additional resources
 description: 
 ms.date: 04/12/2018
+localization_priority: Priority
 ---
 
 # Office Add-ins additional resources
 
 These resources provide additional information and support for developing Office Add-ins.
-
-> [!IMPORTANT]
-> This article is not monitored for support requests. Please use one of these resources for support rather than posting comments on this article. 
 
 |**Resource type**                    | **Guidance**                                                
 |----------------------------|---------------------------------

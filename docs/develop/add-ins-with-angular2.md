@@ -2,6 +2,7 @@
 title: Develop Office Add-ins with Angular
 description: ''
 ms.date: 11/02/2018
+localization_priority: Priority
 ---
 
 # Develop Office Add-ins with Angular
@@ -79,7 +80,7 @@ We recommend using [Office UI Fabric](https://developer.microsoft.com/fabric#/fa
 
 The Office Add-in Dialog API enables your add-in to open a page in a semimodal dialog box that can exchange information with the main page, which is typically in a task pane. 
 
-The [displayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) method takes a parameter that specifies the URL of the page that should open in the dialog box. Your add-in can have a separate HTML page (different from the base page) to pass to this parameter, or you can pass the URL of a route in your Angular appication. 
+The [displayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui) method takes a parameter that specifies the URL of the page that should open in the dialog box. Your add-in can have a separate HTML page (different from the base page) to pass to this parameter, or you can pass the URL of a route in your Angular appication. 
 
 It is important to remember, if you pass a route, that the dialog box creates a new window with its own execution context. Your base page and all its initialization and bootstrapping code run again in this new context, and any variables are set to their initial values in the dialog box. So this technique launches a second instance of your single page application in the dialog box. Code that changes variables in the dialog box does not change the task pane version of the same variables. Similarly, the dialog box has its own session storage, which is not accessible from code in the task pane.  
 
