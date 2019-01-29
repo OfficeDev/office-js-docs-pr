@@ -20,7 +20,7 @@ When you need to authenticate either from the task pane or a custom function, ch
 
 ## Dialog API
 
-If a token doesn't exist, you should use the Dialog API to ask the user to sign in. Then, when a user enters their credentials into the dialog box, that information can be stored in `AsyncStorage`.
+If a token doesn't exist, you should use the Dialog API to ask the user to sign in. After a user enters their credentials, the resulting access token can be stored in `AsyncStorage`.
 
 NOTE: The custom functions runtime uses a Dialog object that is slightly different from the Dialog object in the runtime used by task panes. They're both referred to as the "Dialog API", but use `Officeruntime.Dialog` to authenticate users in the custom functions runtime.
 
