@@ -26,15 +26,15 @@ If a token doesn't exist, you should use the Dialog API to ask the user to sign 
 
 Keep in mind that both the task pane (and other UI elements of an add-in) and custom functions have their own separate Dialog APIs. They're both referred to as the "Dialog API", but use `Officeruntime.Dialog` to authenticate users in the custom functions runtime.
 
-For information on how to use the `OfficeRuntime.Dialog`, consult [Custom Functions runtime](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-runtime?view=office-js#displaying-a-dialog-box).
+For information on how to use the `OfficeRuntime.Dialog`, see [Custom Functions runtime](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-runtime?view=office-js#displaying-a-dialog-box).
 
 When envisioning the entire authentication process as a whole, it might be helpful to think of `OfficeRuntime`, the task pane and UI elements of your add-in, and the custom functions portions of your add-in as separate entities which can communicate with each other. As shown in the following diagram, calls made from a cell in an Excel workbook and `OfficeRuntime.Dialog` exist in the custom functions runtime, indicated in orange. They communicate back and forth to the task pane through an intermediary, `OfficeRuntime.AsyncStorage`.
 
-![Diagram of custom functions, OfficeRuntime, and taskpanes working together.](../images/RuntimeDiagram.svg "Authentication diagram.")
+![Diagram of custom functions, OfficeRuntime, and task panes working together.](../images/RuntimeDiagram.svg "Authentication diagram.")
 
 ## General guidance
 
-Use any authentication method you prefer. There is no particular pattern or method you must follow to implement your own authentication with custom functions. You may wish to consult the documentation about various authentication patterns, starting with [this article about authorizing via external services](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/auth-external-add-ins?view=office-js).  
+Use any authentication method you prefer. There is no particular pattern or method you must follow to implement your own authentication with custom functions. To get started with authentication patterns, a good start is [this article about authorizing via external services](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/auth-external-add-ins?view=office-js).  
 
 There are two locations which should not be used to store data if you're using custom functions:  
 
