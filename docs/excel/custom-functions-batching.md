@@ -1,34 +1,34 @@
 ---
-ms.date: 1/28/2019
+ms.date: 1/30/2019
 description: Discover a pattern for batching API calls when using custom functions in Excel.
 title: Batching Web Requests with Custom Functions
 ---
 
-# Batching Web Requests
+# Batching web requests
 
-Custom functions allow you to make requests to resources on the web and this article will detail a pattern to batch these requests. When batching, you bundle individual requests together into a larger request, rather than executing each request one by one.
+Custom functions allow you to make requests to resources on the web and this article will detail a pattern to batch these requests. When batching, you'll bundle individual requests together into a larger request, rather than executing each request one by one.
 
 > [!NOTE]
-> This article assumes you are familiar with JavaScript Promises and assumes you have created a custom function before. To learn how to create a custom function, see the [Custom Functions Tutorial](../tutorials/).
+> This article assumes you're familiar with JavaScript Promises and assumes you've created a custom function before. To learn how to create a custom function, see the [Custom functions tutorial](../tutorials/).
 
 ## Clone the batching code sample repository
 
-This article is explained with a code sample, available in [this Github repository](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions). Follow the listed steps to get started with the code sample.
+This article is explained with a code sample, available in [this Github repository](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions). Complete the following steps to get started with the code sample:
 
 1. Clone the repository to your local computer and open the repository’s root folder. You'll notice there are two files:
 
     * The file named fill-in.js is a set of code which you will fill in, given instructions in this tutorial.
     * The file named final-batching-sample.js gives a full code sample if you prefer to look at a whole code sample right away.
 
-2. For now, open the file named fill-in.js in your favorite code editor.
+2. Open the file named fill-in.js in your favorite code editor.
 
 3. Follow the steps in the next section to fill in the code at each point you come across a `TODO` in the code sample.
 
-## Fill in the `TODO` sections of the code sample
+## Complete the `TODO` sections of the code sample
 
 * **TODO #1**
 
-    The first `TODO` section you'll be creating two custom functions. One is called sum, which will take two numbers and add them together. The other is multiply, which multiplies two numbers.
+   In the first `TODO` section you'll create two custom functions. One is called sum, which will take two numbers and add them together. The other is called multiply, which multiplies two numbers.
 
     To simplify your code, you'll create a method which takes the name of the operation the function performs and its arguments, called `_pushOperation`. You'll note that many of the functions in this sample use of an underscore in front of the function name, indicating that the function is not publicly accessible.
 
@@ -44,7 +44,7 @@ This article is explained with a code sample, available in [this Github reposito
     }
     ```
 
-    Next, the sample details the `_pushOperation` function. The function creates an invocation entry each time the function is invoked in Excel by a user. For example, every time a user calls your multiply function in a cell, a new `invocationEntry` would be created. The invocation entry contains a description of what operation is being performed, the arguments (or numbers to be summed or multiplied, as well as properties for resolved and rejected results from the operation. These properties are filled in by the returned values from this invocation's JavaScript Promise.
+    Note that the function creates an invocation entry each time the function is invoked in Excel by a user. For example, every time a user calls your multiply function in a cell, a new `invocationEntry` is created. The invocation entry contains a description of what operation is performed, the arguments (or numbers to be summed or multiplied, as well as properties for resolved and rejected results from the operation. These properties are filled in by the returned values from this invocation's JavaScript Promise.
 
     Next, you'll see that the function pushes this `invocationEntry` into a batch, which your code will later process.
 
