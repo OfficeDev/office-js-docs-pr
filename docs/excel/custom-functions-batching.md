@@ -9,7 +9,7 @@ title: Batching Web Requests with Custom Functions
 Custom functions allow you to make requests to resources on the web and this article will detail a pattern to batch these requests. When batching, you'll bundle individual requests together into a larger request, rather than executing each request one by one.
 
 > [!NOTE]
-> This article assumes you're familiar with JavaScript Promises and assumes you've created a custom function before. To learn how to create a custom function, see the [Custom functions tutorial](../tutorials/).
+> This article assumes you're familiar with JavaScript Promises and assumes you've created a custom function before. To learn how to create a custom function, see the [Custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md).
 
 ## Clone the batching code sample repository
 
