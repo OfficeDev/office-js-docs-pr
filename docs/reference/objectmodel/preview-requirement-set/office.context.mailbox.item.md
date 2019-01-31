@@ -31,7 +31,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [dateTimeCreated](#datetimecreated-date) | Member |
 | [dateTimeModified](#datetimemodified-date) | Member |
 | [end](#end-datetimejavascriptapioutlookofficetime) | Member |
-| [enhancedLocation](#enhancedlocation--enhancedlocationjavascriptapioutlookofficeenhancedlocation) | Member |
+| [enhancedLocation](#enhancedlocation-enhancedlocationjavascriptapioutlookofficeenhancedlocation) | Member |
 | [from](#from-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsfromjavascriptapioutlookofficefrom) | Member |
 | [internetHeaders](#internetheaders-internetheadersjavascriptapioutlookofficeinternetheaders) | Member |
 | [internetMessageId](#internetmessageid-string) | Member |
