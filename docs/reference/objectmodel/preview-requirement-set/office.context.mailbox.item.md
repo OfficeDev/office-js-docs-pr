@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - preview requirement set
 description: ''
-ms.date: 01/16/2019
+ms.date: 01/30/2019
 localization_priority: Normal
 ---
 
@@ -31,6 +31,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [dateTimeCreated](#datetimecreated-date) | Member |
 | [dateTimeModified](#datetimemodified-date) | Member |
 | [end](#end-datetimejavascriptapioutlookofficetime) | Member |
+| [enhancedLocation](#enhancedlocation--enhancedlocationjavascriptapioutlookofficeenhancedlocation) | Member |
 | [from](#from-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsfromjavascriptapioutlookofficefrom) | Member |
 | [internetHeaders](#internetheaders-internetheadersjavascriptapioutlookofficeinternetheaders) | Member |
 | [internetMessageId](#internetmessageid-string) | Member |
@@ -333,6 +334,56 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 });
 ```
 
+#### enhancedLocation :[EnhancedLocation](/javascript/api/outlook/office.enhancedlocation)
+
+Gets or sets the locations of an appointment.
+
+##### Read mode
+
+The `enhancedLocation` property returns an [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) object that allows you to get the set of locations (each represented by a [LocationDetails](/javascript/api/outlook/office.locationdetails) object) associated with the appointment.
+
+##### Compose mode
+
+The `enhancedLocation` property returns an [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) object that provides methods to get, remove, or add locations on an appointment.
+
+##### Type:
+
+*   [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation)
+
+##### Requirements
+
+|Requirement|Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Preview|
+|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Compose or read|
+
+##### Example
+
+The following example gets the current locations associated with the appointment.
+
+```javascript
+Office.context.mailbox.item.enhancedLocation.getAsync(callbackFunction);
+
+Office.context.mailbox.item.enhancedLocation.getAsync(callbackFunction);
+function callbackFunction(asyncResult) {
+  asyncResult.value.forEach(function (place) {
+    console.log("Display name: " + place.displayName);
+    console.log("Type: " + place.locationIdentifier.type);
+    if (place.locationIdentifier.type == Office.MailboxEnums.LocationType.Room) {
+      console.log("Email address: " + place.emailAddress);
+    }
+  });
+}
+
+// Sample output:
+// Display name: Conf Room 14
+// Type: room
+// Email address: cr14@contoso.com
+// Display name: Paris
+// Type: custom
+```
+
 #### from :[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)|[From](/javascript/api/outlook/office.from)
 
 Gets the email address of the sender of a message.
@@ -420,7 +471,7 @@ The `itemClass` property specifies the message class of the selected item. The f
 
 |Type|Description|item class|
 |---|---|---|
-|Appointment items|These are calendar items of the item class `IPM.Appointment` or `IPM.Appointment.Occurence`.|`IPM.Appointment`<br />`IPM.Appointment.Occurence`|
+|Appointment items|These are calendar items of the item class `IPM.Appointment` or `IPM.Appointment.Occurrence`.|`IPM.Appointment`<br />`IPM.Appointment.Occurrence`|
 |Message items|These include email messages that have the default message class `IPM.Note`, and meeting requests, responses, and cancellations, that use `IPM.Schedule.Meeting` as the base message class.|`IPM.Note`<br />`IPM.Schedule.Meeting.Request`<br />`IPM.Schedule.Meeting.Neg`<br />`IPM.Schedule.Meeting.Pos`<br />`IPM.Schedule.Meeting.Tent`<br />`IPM.Schedule.Meeting.Canceled`|
 
 You can create custom message classes that extends a default message class, for example, a custom appointment message class `IPM.Appointment.Contoso`.
