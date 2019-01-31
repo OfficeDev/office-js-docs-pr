@@ -20,7 +20,7 @@ To use custom functions within Excel for Windows or Excel for Mac, you must have
 
 If you are using a version of Office on your desktop which you downloaded from the Windows Store, you must be part of the [Windows Insider](https://insider.windows.com/) program at the **Insider** level (formerly called "Insider Fast"), running the April 2018 Update version or later to use custom functions. This is a new change as of January 2019.
 
-## Get a Office 365 subscription
+## Subscribe to Office 365
 If you don't already have an Office 365 subscription, you can get one by joining the [Office 365 Developer Program](https://developer.microsoft.com/en-us/office/dev-program).
 
 
