@@ -16,7 +16,7 @@ Note that the custom functions feature is currently in preview and subject to ch
 To use custom functions within Excel Online, login by using either your Office 365 subscription or a [Microsoft account](https://account.microsoft.com/account). 
 
 ## Excel for Windows and Excel for Mac
-To use custom functions within Excel for Windows or Excel for Mac, you must have an Office 365 subscription, join the [Office Insider](https://products.office.com/office-insider) program (**Insider** level -- formerly called "Insider Fast"), and use a sufficiently recent build of Excel (as specified earlier in this note).
+To use custom functions within Excel for Windows or Excel for Mac, you must have an Office 365 subscription, join the [Office Insider](https://products.office.com/office-insider) program (**Insider** level -- formerly called "Insider Fast"), and use a sufficiently recent build of Excel (as specified previously).
 
 If you are using a version of Office on your desktop which you downloaded from the Windows Store, you must be part of the [Windows Insider](https://insider.windows.com/) program at the **Insider** level (formerly called "Insider Fast"), running the April 2018 Update version or later to use custom functions. This is a new change as of January 2019.
 
