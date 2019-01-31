@@ -10,7 +10,9 @@
           "**/obj/**",
           "**/includes/**",
           "outlook_1_4/**",
-          "outlook_1_5/**"
+          "outlook_1_5/**",
+          "excel_1_4/**",
+          "excel_1_5/**"
         ]
       },
       {
