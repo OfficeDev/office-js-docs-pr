@@ -40,7 +40,7 @@ The following diagram shows how the SSO process works.
 5. Azure AD sends the add-in token to the Office host application.
 6. The Office host application sends the **add-in token** to the add-in as part of the result object returned by the `getAccessTokenAsync` call.
 7. JavaScript in the add-in can parse the token and extract the information it needs, such as the user's email address. 
-8. Optionally, the add-in can send HTTP request to its server-side for more data about the user; such as the user's preferences. Alternatively, the access token itself could be sent to the server-side for parsing and validation there. 
+8. Optionally, the add-in can send HTTP request to its server-side for more data about the user; such as the user's preferences. Alternatively, the access token itself could be sent to the server-side for parsing and validation there.
 
 ## Develop an SSO add-in
 
