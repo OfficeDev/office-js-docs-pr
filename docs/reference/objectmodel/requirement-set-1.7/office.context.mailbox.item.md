@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.7
 description: ''
-ms.date: 01/16/2019
+ms.date: 01/30/2019
 localization_priority: Normal
 ---
 
@@ -398,7 +398,7 @@ The `itemClass` property specifies the message class of the selected item. The f
 
 |Type|Description|item class|
 |---|---|---|
-|Appointment items|These are calendar items of the item class `IPM.Appointment` or `IPM.Appointment.Occurence`.|`IPM.Appointment`<br />`IPM.Appointment.Occurence`|
+|Appointment items|These are calendar items of the item class `IPM.Appointment` or `IPM.Appointment.Occurrence`.|`IPM.Appointment`<br />`IPM.Appointment.Occurrence`|
 |Message items|These include email messages that have the default message class `IPM.Note`, and meeting requests, responses, and cancellations, that use `IPM.Schedule.Meeting` as the base message class.|`IPM.Note`<br />`IPM.Schedule.Meeting.Request`<br />`IPM.Schedule.Meeting.Neg`<br />`IPM.Schedule.Meeting.Pos`<br />`IPM.Schedule.Meeting.Tent`<br />`IPM.Schedule.Meeting.Canceled`|
 
 You can create custom message classes that extends a default message class, for example, a custom appointment message class `IPM.Appointment.Contoso`.
