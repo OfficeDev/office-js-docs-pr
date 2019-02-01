@@ -1,6 +1,10 @@
 { 
     "redirections": [ 
       {
+        "source_path": "docs/word/word-add-ins.md",
+        "redirect_url": "/office/dev/add-ins/quickstarts/word-quickstart"
+      },
+      {
         "source_path": "docs/excel/excel-tutorial-custom-functions.md",
         "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions"
       },
