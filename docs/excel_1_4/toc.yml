@@ -2,6 +2,6 @@ items:
 - name: DEMO
   href: demo.md
 - name: Common
-  href: ~/toc.yml
+  href: ../toc.yml
 
 
