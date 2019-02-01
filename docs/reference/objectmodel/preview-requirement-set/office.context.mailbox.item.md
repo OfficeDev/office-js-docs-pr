@@ -365,7 +365,6 @@ The following example gets the current locations associated with the appointment
 ```javascript
 Office.context.mailbox.item.enhancedLocation.getAsync(callbackFunction);
 
-Office.context.mailbox.item.enhancedLocation.getAsync(callbackFunction);
 function callbackFunction(asyncResult) {
   asyncResult.value.forEach(function (place) {
     console.log("Display name: " + place.displayName);
