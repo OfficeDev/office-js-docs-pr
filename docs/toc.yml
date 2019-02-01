@@ -223,7 +223,7 @@
         href: quickstarts/excel-quickstart-jquery.md
         displayName: Excel
       - name: Use React
-        href: excel/excel-add-ins-get-started-react.md
+        href: quickstarts/excel-quickstart-react.md
         displayName: Excel
       - name: Use Vue
         href: excel/excel-add-ins-get-started-vue.md
