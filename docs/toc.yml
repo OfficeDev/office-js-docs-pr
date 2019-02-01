@@ -273,9 +273,6 @@
         - name: Custom functions changelog
           href: excel/custom-functions-changelog.md
           displayName: Excel
-        - name: Custom functions batching
-          href: excel/custom-functions-batching.md
-          displayName: Excel
       - name: Data validation
         href: excel/excel-add-ins-data-validation.md
         displayName: Excel
