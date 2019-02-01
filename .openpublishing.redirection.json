@@ -1,6 +1,10 @@
 { 
     "redirections": [ 
       {
+        "source_path": "docs/project/project-add-ins-get-started.md",
+        "redirect_url": "/office/dev/add-ins/quickstarts/project-quickstart"
+      },
+      {
         "source_path": "docs/word/word-add-ins.md",
         "redirect_url": "/office/dev/add-ins/quickstarts/word-quickstart"
       },
