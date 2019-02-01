@@ -16,7 +16,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Prerequisites
 
-* The latest available version of Visual Studio 2017 Preview.
+* The latest available version of Visual Studio 2017.
 
 * Office 365 (subscription version, also called “Click to Run”). Latest monthly version and build from the Insiders channel. You need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). Note: when a version/build graduates to the production semi-annual channel, support for preview features, including SSO, is turned off for that version/build.
 
