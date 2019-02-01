@@ -34,7 +34,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     > [!NOTE]
     > You will get an error about the Identity namespace. This is a side effect of a configuration issue that you will fix with the next step. The important thing is that the packages are installed.
 
-1. Currently, the version of the MSAL library (Microsoft.Identity.Client) that you need for SSO (version `1.1.4-preview0002`) is not part of the standard nuget catalog, so it is not listed in the package.config, and it must be installed separately. 
+1. Currently, the version of the MSAL library (Microsoft.Identity.Client) that you need for SSO (version `1.1.4-preview0002`) is not part of the standard nuget catalog, so it is not listed in the package.config, and it must be installed separately.
 
    > 1. On the **Tools** menu, navigate to **Nuget Package Manager** > **Package Manager Console**. 
 
