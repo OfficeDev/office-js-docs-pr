@@ -1,6 +1,10 @@
 { 
     "redirections": [ 
       {
+        "source_path": "docs/onenote/onenote-add-ins-get-started.md",
+        "redirect_url": "/office/dev/add-ins/quickstarts/onenote-quickstart"
+      },
+      {
         "source_path": "docs/powerpoint/powerpoint-add-ins-get-started.md",
         "redirect_url": "/office/dev/add-ins/quickstarts/powerpoint-quickstart"
       },

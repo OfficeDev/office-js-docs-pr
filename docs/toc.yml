@@ -376,7 +376,7 @@
     displayName: OneNote
     items:
     - name: Build your first OneNote add-in
-      href: onenote/onenote-add-ins-getting-started.md
+      href: quickstarts/onenote-quickstart.md
       displayName: OneNote
     - name: Work with OneNote page content
       href: onenote/onenote-add-ins-page-content.md
