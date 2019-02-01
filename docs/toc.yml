@@ -220,7 +220,7 @@
         href: quickstarts/excel-quickstart-angular.md
         displayName: Excel
       - name: Use jQuery
-        href: excel/excel-add-ins-get-started-jquery.md
+        href: quickstarts/excel-quickstart-jquery.md
         displayName: Excel
       - name: Use React
         href: excel/excel-add-ins-get-started-react.md
