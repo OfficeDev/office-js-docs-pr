@@ -359,7 +359,7 @@
     displayName: PowerPoint
     items:
     - name: Build your first PowerPoint add-in
-      href: powerpoint/powerpoint-add-ins-get-started.md
+      href: quickstarts/powerpoint-quickstart.md
       displayName: PowerPoint
     - name: PowerPoint add-in tutorial
       href: tutorials/powerpoint-tutorial.md
