@@ -3,6 +3,5 @@ items:
   href: demo.md
 - name: Common
   href: ~/toc.yml
-- name: API reference
-  href: ~/toc-test.md
+
 
