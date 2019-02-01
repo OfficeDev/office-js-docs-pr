@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: ''
-ms.date: 10/31/2018
+ms.date: 01/30/2019
 localization_priority: Priority
 ---
 
@@ -19,10 +19,14 @@ The Preview Requirement set includes all of the features of [Requirement set 1.7
 The following features are in preview.
 
 - [AttachmentContent](/javascript/api/outlook/office.attachmentcontent) - Added a new object that represents the content of an attachment.
+- [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) - Added a new object that represents the set of locations on an appointment.
 - [InternetHeaders](/javascript/api/outlook/office.internetheaders) - Added a new object that represents the internet headers of a message item.
+- [LocationDetails](/javascript/api/outlook/office.locationdetails) - Added a new object that represents a location. Read only.
+- [LocationIdentifier](/javascript/api/outlook/office.locationidentifier) - Added a new object that represents the id of a location.
 - [SharedProperties](/javascript/api/outlook/office.sharedproperties) - Added a new object that represents the properties of an appointment or message item in a shared folder, calendar, or mailbox.
 - [Event.completed](/javascript/api/office/office.addincommands.event#completed-options-) - A new optional parameter `options`, which is a dictionary with one valid value `allowEvent`. This value is used to cancel execution of an event.
 - [Office.context.mailbox.item.addFileAttachmentFromBase64Async](office.context.mailbox.item.md#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) - Added a new method that allows you to attach a file represented as a base64 encoded string to a message or appointment.
+- [Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#enhancedlocation-enhancedlocationjavascriptapioutlookofficeenhancedlocation) - Added a new property that represents the set of locations on an appointment.
 - [Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#getattachmentcontentasyncattachmentid-options-callback--attachmentcontentjavascriptapioutlookofficeattachmentcontent) - Added a new method to get the content of a specific attachment.
 - [Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#getattachmentsasyncoptions-callback--arrayattachmentdetailsjavascriptapioutlookofficeattachmentdetails) - Added a new method that gets an item's attachments in compose mode.
 - [Office.context.mailbox.item.getInitializationContextAsync](office.context.mailbox.item.md#getinitializationcontextasyncoptions-callback) - Added a new function that returns initialization data passed when the add-in is [activated by an actionable message](https://docs.microsoft.com/outlook/actionable-messages/invoke-add-in-from-actionable-message).
@@ -32,6 +36,7 @@ The following features are in preview.
 - [Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat) - Added a new enum that specifies the formatting that applies to an attachment's content.
 - [Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus) - Added a new enum that specifies whether an attachment was added to or removed from an item.
 - [Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) - Added a new bit flag enum that specifies the delegate permissions.
+- [Office.MailboxEnums.LocationType](/javascript/api/outlook/office.mailboxenums.locationtype) - Added a new enum that specifies an appointment location's type.
 - [Office.EventType](/javascript/api/office/office.eventtype) - Modified to support AttachmentsChanged and OfficeThemeChanged events through addition of `AttachmentsChanged` and `OfficeThemeChanged` entries respectively.
 - [SupportsSharedFolders manifest element](../../manifest/supportssharedfolders.md) - Added a child element to the [DesktopFormFactor](../../manifest/desktopformfactor.md) manifest element. It defines whether the add-in is available in delegate scenarios.
 
