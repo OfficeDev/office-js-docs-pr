@@ -4,5 +4,5 @@ items:
 - name: Common
   href: ~/toc.yml
 - name: API reference
-  href: ~/toc-test.yml
+  href: ~/toc-test/toc-test.yml
 
