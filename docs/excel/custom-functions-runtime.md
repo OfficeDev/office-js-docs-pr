@@ -101,11 +101,11 @@ _goGetData = async () => {
 
 ## Displaying a dialog box
 
-Within a custom function (or within any other part of an add-in), you can use the `OfficeRuntime.displayWebDialogOptions` API to display a dialog box. This dialog API provides an alternative to the [Dialog API](../develop/dialog-api-in-office-add-ins.md) that can be used within task panes and add-in commands, but not within custom functions.
+Within a custom function (or within any other part of an add-in), you can use the `OfficeRuntime.displayWebDialog` API to display a dialog box. This dialog API provides an alternative to the [Dialog API](../develop/dialog-api-in-office-add-ins.md) that can be used within task panes and add-in commands, but not within custom functions.
 
 ### Dialog API example
 
-In the following code sample, the function `getTokenViaDialog` uses the Dialog API’s `displayWebDialogOptions` function to display a dialog box.
+In the following code sample, the function `getTokenViaDialog` uses the Dialog API’s `displayWebDialog` function to display a dialog box.
 
 ```js
 // Get auth token before calling my service, a hypothetical API that will deliver a stock price based on stock ticker string, such as "MSFT"
@@ -165,13 +165,13 @@ function getStock (ticker) {
         }, 1000);
       } else {
         _dialogOpen = true;
-        OfficeRuntime.displayWebDialogOptions(url, {
+        OfficeRuntime.displayWebDialog(url, {
           height: '50%',
           width: '50%',
           onMessage: function (message, dialog) {
             _cachedToken = message;
             resolve(message);
-            dialog.closeDialog();
+            dialog.close();
             return;
           },
           onRuntimeError: function(error, dialog) {
