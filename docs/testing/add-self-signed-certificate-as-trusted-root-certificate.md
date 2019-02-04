@@ -56,13 +56,13 @@ Use the following steps to set up the certificate authority cert for localhost.
 
 1.	Go to {project root}\certs.
 2.	Double-click ca.crt, and select **Install Certificate**.
-       
-![](../images/ssl-ie-04.png)
-
+    
+    ![](../images/ssl-ie-04.png)
+    
 3.	Select **Local Machine** and select **Next** to continue.
-
-![](../images/ssl-ie-05.png)
-
+    
+    ![](../images/ssl-ie-05.png)
+    
 4.	Select **Place all certificates in the following store** and then select **Browse**.
 5.	Select **Trusted Root Certification Authorities** and then select **OK**.
 6.	Select **Next** and then **Finish**.
