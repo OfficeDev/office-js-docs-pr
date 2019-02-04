@@ -1,7 +1,7 @@
 ---
 title: Add a self-signed certificate as a trusted root certificate
 description: 'Add a self-signed certifiate as a trusted root certificate so that you can test your Office add-in'
-ms.date: 1/22/2019
+ms.date: 02/04/2019
 ---
 
 # Add a self-signed certificate as a trusted root certificate
@@ -14,7 +14,7 @@ When you browse to a site that has an untrusted certificate, the browser will di
    
   ![](../images/ssl-edge-error.png)
    
-To work around the error, you need to configure your developer workstation to trust the self-signed certificate. The steps to trust the self-signed certificate are different depending on your operating system (macOS / Windows / Linux).
+To work around the error, you need to configure your developer workstation to trust the self-signed certificate. The steps to trust the self-signed certificate are different depending on your operating system.
 
 ## Trust a self-signed certificate on macOS
 
