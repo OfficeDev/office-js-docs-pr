@@ -1,6 +1,38 @@
 { 
     "redirections": [ 
       {
+        "source_path": "docs/excel/excel-add-ins-get-started-vue.md",
+        "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-vue"
+      },
+      {
+        "source_path": "docs/excel/excel-add-ins-get-started-react.md",
+        "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-react"
+      },
+      {
+        "source_path": "docs/excel/excel-add-ins-get-started-jquery.md",
+        "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-jquery"
+      },
+      {
+        "source_path": "docs/excel/excel-add-ins-get-started-angular.md",
+        "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-angular"
+      },
+      {
+        "source_path": "docs/onenote/onenote-add-ins-get-started.md",
+        "redirect_url": "/office/dev/add-ins/quickstarts/onenote-quickstart"
+      },
+      {
+        "source_path": "docs/powerpoint/powerpoint-add-ins-get-started.md",
+        "redirect_url": "/office/dev/add-ins/quickstarts/powerpoint-quickstart"
+      },
+      {
+        "source_path": "docs/project/project-add-ins-get-started.md",
+        "redirect_url": "/office/dev/add-ins/quickstarts/project-quickstart"
+      },
+      {
+        "source_path": "docs/word/word-add-ins.md",
+        "redirect_url": "/office/dev/add-ins/quickstarts/word-quickstart"
+      },
+      {
         "source_path": "docs/excel/excel-tutorial-custom-functions.md",
         "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions"
       },
