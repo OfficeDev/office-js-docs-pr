@@ -2,6 +2,7 @@
 title: Visio JavaScript API overview
 description: ''
 ms.date: 10/11/2018
+ms.prod: visio
 localization_priority: Priority
 ---
 

@@ -2,6 +2,7 @@
 title: OneNote JavaScript API overview
 description: ''
 ms.date: 10/09/2018
+ms.prod: onenote
 localization_priority: Normal
 ---
 
