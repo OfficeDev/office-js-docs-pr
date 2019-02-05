@@ -2,6 +2,7 @@
 title: Dialog API requirement sets
 description: ''
 ms.date: 10/09/2018
+ms.prod: non-product-specific
 localization_priority: Normal
 ---
 

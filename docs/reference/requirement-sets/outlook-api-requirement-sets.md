@@ -2,6 +2,7 @@
 title: Outlook JavaScript API requirement sets
 description: ''
 ms.date: 12/04/2018
+ms.prod: outlook
 localization_priority: Priority
 ---
 

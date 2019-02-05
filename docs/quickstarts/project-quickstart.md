@@ -2,6 +2,7 @@
 title: Build your first Project add-in
 description: 
 ms.date: 01/17/2019
+ms.prod: project
 localization_priority: Priority
 ---
 

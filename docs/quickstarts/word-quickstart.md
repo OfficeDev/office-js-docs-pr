@@ -2,6 +2,7 @@
 title: Build your first Word add-in
 description: 
 ms.date: 01/17/2019
+ms.prod: word
 localization_priority: Priority
 ---
 

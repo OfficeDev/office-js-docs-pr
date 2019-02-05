@@ -1,3 +1,10 @@
+---
+title: PowerPoint and Project in the JavaScript API
+description: ''
+ms.date: 12/27/2018
+ms.prod: non-product-specific
+localization_priority: Priority
+---
 # PowerPoint and Project in the JavaScript API
 
 PowerPoint and Project support add-ins made with the JavaScript API. However, they currently do not have host-specific APIs. You interact with these hosts through the Common API. 

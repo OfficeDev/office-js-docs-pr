@@ -2,6 +2,7 @@
 title: Build an Excel add-in using React
 description: 
 ms.date: 10/19/2018
+ms.prod: excel
 localization_priority: Priority
 ---
 

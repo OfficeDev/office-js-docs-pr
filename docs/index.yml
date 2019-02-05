@@ -6,6 +6,7 @@ metadata:
   meta.description: Learn how to build Office Add-ins.
   author: o365devx
   ms.topic: landing-page
+  ms.prod: non-product-specific
   ms.date: 12/04/2017
   ms.author: o365devx
 abstract:
