@@ -5,14 +5,13 @@ ms.date: 01/23/2018
 localization_priority: Priority
 ---
 
-
 # Get started with Excel add-ins
 
 You can create an Excel add-in using familiar web technologies such as HTML, CSS, and JavaScript. 
 
 ## Create your first Excel add-in
 
-To get started, complete one of the walkthroughs in this section to create an Excel add-in using [React](excel-add-ins-get-started-react.md), [Angular](excel-add-ins-get-started-angular.md), or [jQuery](excel-add-ins-get-started-jquery.md). Each walkthough provides step-by-step guidance for creating a simple task pane add-in that uses the Excel JavaScript API to interact with a worksheet. 
+To get started, complete one of the walkthroughs in this section to create an Excel add-in using [React](../quickstarts/excel-quickstart-react.md), [Angular](../quickstarts/excel-quickstart-angular.md), [jQuery](../quickstarts/excel-quickstart-jquery.md), or [Vue](../quickstarts/excel-quickstart-vue.md). Each walkthough provides step-by-step guidance for creating a simple task pane add-in that uses the Excel JavaScript API to interact with a worksheet. 
 
 ## Explore snippets with Script Lab
 
