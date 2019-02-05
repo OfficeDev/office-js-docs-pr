@@ -110,7 +110,7 @@ An **Office Addin** plug-in adds extra capabilities for Office.js, such as explo
 
 If you have add-in that shows UI in a task pane or in a content add-in, you can debug an Office Add-in using Safari Web Inspector.
 
-To be able to debug Office Add-ins on Mac, you must have Mac OS High Sierra AND Mac Office Version: 16.9.1 (Build 18012504) or later. If you don't have an Office Mac build, you can get one by joining the [Office 365 Developer program](https://aka.ms/o365devprogram).
+To be able to debug Office Add-ins on Mac, you must have Mac OS High Sierra or later AND Mac Office version 16.9.1 (Build 18012504) or later. If you don't have an Office for Mac build, you can get one by joining the [Office 365 Developer program](https://aka.ms/o365devprogram).
 
 To start, open a terminal and set the `OfficeWebAddinDeveloperExtras` property for the relevant Office application as follows:
 
@@ -122,7 +122,7 @@ To start, open a terminal and set the `OfficeWebAddinDeveloperExtras` property f
 
 - `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
 
-Then, open the Office application and insert your add-in. Right-click the add-in and you should see an **Inspect Element** option in the context menu.  Select that option and it will pop the Inspector, where you can set breakpoints and debug your add-in.
+Then, open the Office application and [sideload your add-in](sideload-an-office-add-in-on-ipad-and-mac.md). Right-click the add-in and you should see an **Inspect Element** option in the context menu.  Select that option and it will pop the Inspector, where you can set breakpoints and debug your add-in.
 
 > [!NOTE]
 > If you are trying to use the inspector and the dialog flickers, try the following workaround:
