@@ -2,6 +2,7 @@
 title: Build your first Excel add-in using jQuery
 description: 
 ms.date: 01/17/2019
+ms.prod: excel
 localization_priority: Priority
 ---
 
