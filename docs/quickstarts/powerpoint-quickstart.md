@@ -2,6 +2,7 @@
 title: Build your first PowerPoint add-in
 description: 
 ms.date: 01/17/2019
+ms.prod: powerpoint
 localization_priority: Priority
 ---
 
