@@ -1,5 +1,5 @@
 ---
-ms.date: 02/04/2019
+ms.date: 02/06/2019
 description: Understand key scenarios in developing Excel custom functions that use the new JavaScript runtime.
 title: Runtime for Excel custom functions (preview)
 localization_priority: Normal
@@ -13,13 +13,11 @@ Custom functions use a new JavaScript runtime that differs from the runtime used
 
 ## Requesting external data
 
-Within a custom function, you can request external data by using an API like [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or by using [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers. Within the JavaScript runtime, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).  
+Within a custom function, you can request external data by using an API like [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or by using [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
 
-Your `XHR.setRequestHeader` value should be set to one of the following content-types for custom functions to work properly: 
-- application/x-www-form-urlencoded (e.g. `xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')`) 
-- application/text (e.g. `xhr.setRequestHeader('Content-Type', 'application/text')`)
-- multipart/form-data (e.g. `xhr.setRequestHeader('Content-Type', 'multipart/form-data')`)
-- text/plain (e.g. `xhr.setRequestHeader('Content-Type', 'text/plain')`) 
+Within the JavaScript runtime used by custom functions, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).
+
+Note that a simple CORS implementation cannot use cookies and only supports simple methods (GET, HEAD, POST). Simple CORS accepts simple headers with field names `Accept`, `Accept-Language`, `Content-Language`. You can also use a `Content-Type` header in simple CORS, provided that the content type is `application/x-www-form-urlencoded`, `text/plain`, or `multipart/form-data`.
 
 ### XHR example
 
