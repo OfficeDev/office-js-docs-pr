@@ -397,7 +397,7 @@ The `from` and [`sender`](#sender-emailaddressdetailsjavascriptapioutlookofficee
 The `from` property returns an `EmailAddressDetails` object.
 
 ```javascript
-var subject = Office.context.mailbox.item.from;
+var from = Office.context.mailbox.item.from;
 ```
 
 ##### Compose mode
