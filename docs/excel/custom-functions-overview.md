@@ -327,6 +327,11 @@ function refreshTemperature(thermometerID){
 }
 ```
 
+## Co-Authoring
+Excel Online and Excel for Windows with an Office 365 subscription allow you to co-author documents and this feature is supported by custom functions. If your workbook uses a custom function, your sharing partner will be prompted to install the custom function's add-in in order to display the results. Once both people sharing the document have installed the add-in, all custom function behavior should work normally.
+
+For more information on coauthoring, see [About CoAuthoring in Excel](https://docs.microsoft.com/en-us/office/vba/excel/concepts/about-coauthoring-in-excel).
+
 ## Working with ranges of data
 
 Your custom function may accept a range of data as an input parameter, or it may return a range of data. In JavaScript, a range of data is represented as a two-dimensional array.
