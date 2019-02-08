@@ -29,3 +29,10 @@ If a function name in your add-in matches a name in an existing and installed ad
 To troubleshoot this, please change the name in your add-in and try the function again. If you're testing your add-in in different environments, either uninstall the add-in with the conflicting name or use a different namespace to differentiate your function (e.g. NAMESPACE_NAMEOFFUNCTION).
 
 Also consider how you'd like people to use the functions within your add-in. In many cases, it makes sense to add multiple arguments to a function rather than create multiple functions with the same or similar names.
+
+## See also
+
+* [Custom functions metadata](custom-functions-json.md)
+* [Custom functions best practices](custom-functions-best-practices.md)
+* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Runtime for Excel custom functions](custom-functions-runtime.md)
