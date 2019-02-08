@@ -198,30 +198,6 @@ The XML manifest file for an add-in that defines custom functions (**./manifest.
 > [!NOTE]
 > Functions in Excel are prepended by the namespace specified in your XML manifest file. A function's namespace comes before the function name and they are separated by a period. For example, to call the function `ADD42` in the cell of an Excel worksheet, you would type `=CONTOSO.ADD42`, because `CONTOSO` is the namespace and `ADD42` is the name of the function specified in the JSON file. The namespace is intended to be used as an identifier for your company or the add-in. A namespace can only contain alphanumeric characters and periods.
 
-## Naming guidelines
-Custom functions have two properties in their JSON file which mark them as unique - their function name and their function ID. Function IDs are used as the main way to differentiate functions from each other programmatically. Function names are what appear to users of your add-in as the function's name in Excel. Function names can differ from the ID, e.g. for localization purposes, but should generally stay the same as the ID if there is not a compelling reason for them to differ.
-
-Function names and function IDs share some common requirements:
-
-- Can use alphanumeric characters (including Unicode), the numbers zero through nine, underscores, and periods.
-
-- Must start with a letter and have a minimum limit of three characters.
-
-It is recommended that function names and function IDs be specified using uppercase letters, as most function names for built-in Excel functions appear in uppercase letters (e.g. `SUM`).
-
-Function names should not be named the same as:
-
-- Any cells between A1 to XFD1048576 or any cells between R1C1 to R1048576C16384.
-
-- Any Excel 4.0 Macro Function (such as `RUN`, `ECHO`).  For a full list of these functions, see [this article](https://www.microsoft.com/en-us/download/details.aspx?id=1465).
-
-### Naming conflicts
-If a function name in your add-in matches a name in an existing and installed add-in, you'll see an error #REF! appear in your workbook.
-
-To troubleshoot this, please change the name in your add-in and try the function again. If you're testing your add-in in different environments, either uninstall the add-in with the conflicting name or use a different namespace to differentiate your function (e.g. <NAMESPACE>_<FUNCTION NAME>).
-
-Also consider how you'd like people to use the functions within your add-in. In many cases, it makes sense to add multiple arguments to a function rather than create multiple functions with the same or similar names.
-
 ## Functions that return data from external sources
 
 If a custom function retrieves data from an external source such as the web, it must:
