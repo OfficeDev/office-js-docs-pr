@@ -123,8 +123,7 @@ The following code in **customfunctions.json** specifies the metadata for the `a
     ],
     "options": {
         "cancelable": true,
-        "stream": true,
-         "volatile": false
+        "stream": true
       }
     }
   ]
@@ -141,7 +140,7 @@ The following table lists the properties that are typically present in the JSON 
 | `description`	| Describes what the function does. This value appears as a tooltip when the function is the selected item in the autocomplete menu within Excel. |
 | `result` 	| Object that defines the type of information that is returned by the function. For detailed information about this object, see [result](custom-functions-json.md#result). |
 | `parameters` | Array that defines the input parameters for the function. For detailed information about this object, see [parameters](custom-functions-json.md#parameters). |
-| `options`	| Enables you to customize some aspects of how and when Excel executes the function. For more information about how this property can be used, see [Streaming functions](#streaming-functions), [Canceling a function](#canceling-a-function), and [Declaring a volatile function](#declaring-a-volatile-function) later in this article. |
+| `options`	| Enables you to customize some aspects of how and when Excel executes the function. For more information about how this property can be used, see [Streaming functions](#streaming-functions) and [canceling a function](#canceling-a-function). |
 
 ### Manifest file
 
