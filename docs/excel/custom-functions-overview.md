@@ -296,6 +296,7 @@ To declare a function volatile, add `"volatile": true` within the `options` obje
 
 ```json
 {
+ "id": "TOMORROW",
   "name": "TOMORROW",
   "description":  "Returns tomorrow’s date",
   "helpUrl": "http://www.contoso.com",
