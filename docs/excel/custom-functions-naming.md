@@ -14,7 +14,7 @@ Function names and function IDs share some common requirements:
 
 - They must start with a letter and have a minimum limit of three characters.
 
-Most function names for built-in Excel functions appear in uppercase letters (e.g. `SUM`). While not required, it is a best practice to specify your custom function names and function IDs using uppercase letters.
+Most function names for built-in Excel functions appear in uppercase letters (such as `SUM`). As a best practice, we recommend to use uppercase for your custom function names so they appear consistent for users.
 
 Function names should not be named the same as:
 
