@@ -10,7 +10,7 @@ A custom function is identified by an `id` and `name` property in the JSON metad
 
 Function names and function IDs share some common requirements:
 
-- Can use alphanumeric characters (including Unicode), the numbers zero through nine, underscores, and periods.
+- They must only use alphanumeric characters (including Unicode), the numbers zero through nine, underscores, and periods.
 
 - They must start with a letter and have a minimum limit of three characters.
 
