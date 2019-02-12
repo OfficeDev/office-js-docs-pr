@@ -35,7 +35,7 @@ function getComment(x) {
 
 1. If you are testing your add-in in Office on Windows, you should enable **[runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** to troubleshoot issues with your add-in's XML manifest file, as well as several installation and runtime conditions. Runtime logging writes `console.log` statements to a log file to help you uncover issues.
 
-2. Your add-in will not be installed if one or more custom functions conflicts with a previously registered add-in's custom functions. In this case, you can either remove the existing add-in, or if you encounter this error while developing an add-in, you can specify a different namespace name in your manifest.
+2. Your add-in will not load if one or more custom functions conflicts with a previously registered add-in's custom functions. In this case, you can either remove the existing add-in, or if you encounter this error while developing an add-in, you can specify a different namespace name in your manifest.
 
 3. To report feedback to the Excel Custom Functions team about this method of troubleshooting, send the team feedback. To do this, select **File | Feedback | Send a Frown**. Sending a frown will provide the necessary logs to understand the issue you are hitting.
 
