@@ -85,7 +85,7 @@ npm run start
 This command starts the web server, and sideloads your custom function add-in into Excel for Windows.
 
 > [!NOTE]
-> If your add-in does not load, check that you have completed step 3 properly. You can also enable **[runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** to troubleshoot issues with your add-in's XML manifest file, as well as several installation and runtime conditions. Runtime logging writes `console.log` statements to a log file to help you uncover issues, as well.
+> If your add-in does not load, check that you have completed step 3 properly. You can also enable **[runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** to troubleshoot issues with your add-in's XML manifest file, as well as any installation or runtime problems. Runtime logging writes `console.log` statements to a log file to help you find and fix issues.
 
 # [Excel Online](#tab/excel-online)
 
