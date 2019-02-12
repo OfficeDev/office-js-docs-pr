@@ -85,7 +85,7 @@ npm run start
 This command starts the web server, and sideloads your custom function add-in into Excel for Windows.
 
 > [!NOTE]
-> If your add-in does not load, check that you have completed step 3 properly.
+> If your add-in does not load, check that you have completed step 3 properly. You can also enable **[runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** to troubleshoot issues with your add-in's XML manifest file, as well as several installation and runtime conditions. Runtime logging writes `console.log` statements to a log file to help you uncover issues, as well.
 
 # [Excel Online](#tab/excel-online)
 
@@ -317,6 +317,7 @@ Next you’ll create a custom function named `stockPriceStream` that gets the pr
 <ol start="4">
 <li>Try out the new function. In cell <strong>C1</strong>, type the text <strong>=CONTOSO.STOCKPRICESTREAM("MSFT")</strong> and press enter. Provided that the stock market is open, you should see that the result in cell <strong>C1</strong> is constantly updated to reflect the real-time price for one share of Microsoft stock.</li>
 </ol>
+
 
 ## Next steps
 
