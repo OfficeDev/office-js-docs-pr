@@ -418,14 +418,7 @@ function getComment(x) {
 
 ## Known issues
 
-- Help URLs and parameter descriptions are not yet used by Excel.
-- Custom functions are not currently available on Excel for mobile clients.
-- Volatile functions (those that recalculate automatically whenever unrelated data changes in the spreadsheet) are not yet supported.
-- Deployment via the Office 365 Admin Portal and AppSource are not yet enabled.
-- Custom functions in Excel Online may stop working during a session after a period of inactivity. Refresh the browser page (F5) and re-enter a custom function to restore the feature.
-- You may see the **#GETTING_DATA** temporary result within the cell(s) of a worksheet if you have multiple add-ins running on Excel for Windows. Close all Excel windows and restart Excel.
-- Debugging tools specifically for custom functions may be available in the future. In the meantime, you can debug on Excel Online using F12 developer tools. See more details in [Custom functions best practices](custom-functions-best-practices.md).
-- In the 32 bit version of the Office 365 *December* Insiders Version 1901 (Build 11128.20000),  Custom functions may not work properly. In some cases you can workaround this bug by downloading the file at https://github.com/OfficeDev/Excel-Custom-Functions/blob/december-insiders-workaround/excel-udf-host.win32.bundle. Then, copy it your "C:\Program Files (x86)\Microsoft Office\root\Office16" folder.
+See known issues on our [Excel Custom Functions GitHub repo](https://github.com/OfficeDev/Excel-Custom-Functions/issues). 
 
 ## See also
 
