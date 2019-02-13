@@ -394,7 +394,7 @@ The following is a simple and typical authentication flow:
 3. When the redirectPage.html page opens, it calls `messageParent` to report the success or failure to the host page and optionally also report user data or error data.
 4. The `DialogMessageReceived` event fires in the host page and its handler closes the dialog window and optionally does other processing of the message.
 
-For a sample add-in that use this pattern, see:
+For a sample add-in that uses this pattern, see:
 
 - [Insert Excel charts using Microsoft Graph in a PowerPoint add-in](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart): The resource that is initially opened in the dialog window is a controller method that has no view of its own. It redirects to the Office 365 sign in page.
 
