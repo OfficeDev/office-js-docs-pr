@@ -1,7 +1,7 @@
 ---
 title: Office.context - preview requirement set
 description: ''
-ms.date: 10/11/2018
+ms.date: 02/12/2019
 localization_priority: Normal
 ---
 
@@ -51,7 +51,7 @@ The `displayLanguage` value reflects the current **Display Language** setting sp
 
 ##### Example
 
-```js
+```javascript
 function sayHelloWithDisplayLanguage() {
   var myDisplayLanguage = Office.context.displayLanguage;
   switch (myDisplayLanguage) {
@@ -100,7 +100,7 @@ Using Office theme colors let's you coordinate the color scheme of your add-in w
 
 ##### Example
 
-```js
+```javascript
 function applyOfficeTheme(){
   // Get office theme colors.
   var bodyBackgroundColor = Office.context.officeTheme.bodyBackgroundColor;

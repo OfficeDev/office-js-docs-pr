@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - preview requirement set
 description: ''
-ms.date: 01/16/2019
+ms.date: 02/12/2019
 localization_priority: Normal
 ---
 
@@ -125,21 +125,21 @@ Currently, the supported event types are `Office.EventType.ItemChanged` and `Off
 
 ##### Example
 
-```js
+```javascript
 Office.initialize = function (reason) {
   $(document).ready(function () {
     Office.context.mailbox.addHandlerAsync(Office.EventType.ItemChanged, loadNewItem, function (result) {
       if (result.status === Office.AsyncResultStatus.Failed) {
-        // Handle error
+        // Handle error.
       }
     });
   });
 };
 
 function loadNewItem(eventArgs) {
-  // Load the properties of the newly selected item
+  // Load the properties of the newly selected item.
   loadProps(Office.context.mailbox.item);
-};
+}
 ```
 
 ####  convertToEwsId(itemId, restVersion) → {String}
@@ -173,12 +173,11 @@ String
 
 ##### Example
 
-```js
-// Get an item's ID from a REST API
+```javascript
+// Get an item's ID from a REST API.
 var restId = 'AAMkAGVlOTZjNTM3LW...';
 
-// Treat restId as coming from the v2.0 version of the
-// Outlook Mail API
+// Treat restId as coming from the v2.0 version of the Outlook Mail API.
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
@@ -240,12 +239,11 @@ String
 
 ##### Example
 
-```js
-// Get the currently selected item's ID
+```javascript
+// Get the currently selected item's ID.
 var ewsId = Office.context.mailbox.item.itemId;
 
-// Convert to a REST ID for the v2.0 version of the
-// Outlook Mail API
+// Convert to a REST ID for the v2.0 version of the Outlook Mail API.
 var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
@@ -312,7 +310,7 @@ If the specified item identifier does not identify an existing appointment, a bl
 
 ##### Example
 
-```js
+```javascript
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
@@ -347,7 +345,7 @@ Do not use the `displayMessageForm` with an `itemId` that represents an appointm
 
 ##### Example
 
-```js
+```javascript
 Office.context.mailbox.displayMessageForm(messageId);
 ```
 
@@ -393,7 +391,7 @@ If any of the parameters exceed the specified size limits, or if an unknown para
 
 ##### Example
 
-```js
+```javascript
 var start = new Date();
 var end = new Date();
 end.setHours(start.getHours() + 1);
@@ -450,10 +448,11 @@ If any of the parameters exceed the specified size limits, or if an unknown para
 
 ##### Example
 
-```js
+```javascript
 Office.context.mailbox.displayNewMessageForm(
   {
-    toRecipients: Office.context.mailbox.item.to, // Copy the To line from current item
+    // Copy the To line from current item.
+    toRecipients: Office.context.mailbox.item.to,
     ccRecipients: ['sam@contoso.com'],
     subject: 'Outlook add-ins are cool!',
     htmlBody: 'Hello <b>World</b>!<br/><img src="cid:image.png"></i>',
@@ -475,7 +474,7 @@ Gets a string that contains a token used to call REST APIs or Exchange Web Servi
 The `getCallbackTokenAsync` method makes an asynchronous call to get an opaque token from the Exchange Server that hosts the user's mailbox. The lifetime of the callback token is 5 minutes.
 
 > [!NOTE]
-> It is recommended that add-ins use the REST APIs instead of Exchange Web Services whenever possible. 
+> It is recommended that add-ins use the REST APIs instead of Exchange Web Services whenever possible.
 
 **REST Tokens**
 
@@ -508,7 +507,7 @@ The add-in should use the `ewsUrl` property to determine the correct URL to use 
 
 ##### Example
 
-```js
+```javascript
 function getCallbackToken() {
   var options = {
     isRest: true,
@@ -552,7 +551,7 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#s
 
 ##### Example
 
-```js
+```javascript
 function getCallbackToken() {
   Office.context.mailbox.getCallbackTokenAsync(cb);
 }
@@ -585,7 +584,7 @@ The `getUserIdentityTokenAsync` method returns a token that you can use to ident
 
 ##### Example
 
-```js
+```javascript
 function getIdentityToken() {
   Office.context.mailbox.getUserIdentityTokenAsync(cb);
 }
@@ -651,10 +650,10 @@ You do not need to set the encoding value when your mail app is running in Outlo
 
 The following example calls `makeEwsRequestAsync` to use the `GetItem` operation to get the subject of an item.
 
-```js
+```javascript
 function getSubjectRequest(id) {
-   // Return a GetItem operation request for the subject of the specified item.
-   var request =
+  // Return a GetItem operation request for the subject of the specified item.
+  var request =
     '<?xml version="1.0" encoding="utf-8"?>' +
     '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"' +
     '               xmlns:xsd="http://www.w3.org/2001/XMLSchema"' +
@@ -676,20 +675,20 @@ function getSubjectRequest(id) {
     '  </soap:Body>' +
     '</soap:Envelope>';
 
-   return request;
+  return request;
 }
 
 function sendRequest() {
-   // Create a local variable that contains the mailbox.
-   Office.context.mailbox.makeEwsRequestAsync(
-    getSubjectRequest(mailbox.item.itemId), callback);
+  // Create a local variable that contains the mailbox.
+  Office.context.mailbox.makeEwsRequestAsync(
+  getSubjectRequest(mailbox.item.itemId), callback);
 }
 
 function callback(asyncResult)  {
-   var result = asyncResult.value;
-   var context = asyncResult.asyncContext;
+  var result = asyncResult.value;
+  var context = asyncResult.asyncContext;
 
-   // Process the returned response here.
+  // Process the returned response here.
 }
 ```
 

@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.userProfile - preview requirement set
 description: ''
-ms.date: 10/31/2018
+ms.date: 02/12/2019
 localization_priority: Normal
 ---
 
@@ -56,7 +56,7 @@ Gets the account type of the user associated with the mailbox. The possible valu
 
 ##### Example
 
-```js
+```javascript
 console.log(Office.context.mailbox.userProfile.accountType);
 ```
 
@@ -78,7 +78,7 @@ Gets the user's display name.
 
 ##### Example
 
-```js
+```javascript
 // Example: Allie Bellew
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
@@ -101,7 +101,7 @@ Gets the user's SMTP email address.
 
 ##### Example
 
-```js
+```javascript
 // Example: allieb@contoso.com
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
@@ -124,7 +124,7 @@ Gets the user's default time zone.
 
 ##### Example
 
-```js
+```javascript
 // Example: Pacific Standard Time
 console.log(Office.context.mailbox.userProfile.timeZone);
 ```

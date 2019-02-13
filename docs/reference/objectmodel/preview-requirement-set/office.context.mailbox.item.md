@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - preview requirement set
 description: ''
-ms.date: 02/11/2019
+ms.date: 02/12/2019
 localization_priority: Normal
 ---
 
@@ -190,7 +190,7 @@ Office.context.mailbox.item.body.getAsync(
   "text",
   { asyncContext: "This is passed to the callback" },
   function callback(result) {
-    // Do something with the result
+    // Do something with the result.
   });
 
 // The following is an example of the result parameter passed to the callback function.
@@ -341,14 +341,14 @@ The following example sets the end time of an appointment by using the [`setAsyn
 ```javascript
 var endTime = new Date("3/14/2015");
 var options = {
-  // Pass information that can be used in the callback
+  // Pass information that can be used in the callback.
   asyncContext: {verb: "Set"}
 };
 Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
   if (result.error) {
     console.debug(result.error);
   } else {
-    // Access the asyncContext that was passed to the setAsync function
+    // Access the asyncContext that was passed to the setAsync function.
     console.debug("End Time " + result.asyncContext.verb);
   }
 });
@@ -588,9 +588,9 @@ The `itemType` property returns one of the `ItemType` enumeration values, indica
 
 ```javascript
 if (Office.context.mailbox.item.itemType === Office.MailboxEnums.ItemType.Message) {
-  // do something
+  // Do something.
 } else {
-  // do something else
+  // Do something else.
 }
 ```
 
@@ -677,7 +677,7 @@ Gets the notification messages for an item.
 ##### Example
 
 ```javascript
-// Get all notifications
+// Get all notifications.
 Office.context.mailbox.item.notificationMessages.getAllAsync(
   function (asyncResult) {
     console.log(JSON.stringify(asyncResult));
@@ -951,14 +951,14 @@ The following example sets the start time of an appointment in compose mode by u
 ```javascript
 var startTime = new Date("3/14/2015");
 var options = {
-  // Pass information that can be used in the callback
+  // Pass information that can be used in the callback.
   asyncContext: {verb: "Set"}
 };
 Office.context.mailbox.item.start.setAsync(startTime, options, function(result) {
   if (result.error) {
     console.debug(result.error);
   } else {
-    // Access the asyncContext that was passed to the setAsync function
+    // Access the asyncContext that was passed to the setAsync function.
     console.debug("Start Time " + result.asyncContext.verb);
   }
 });
@@ -1093,7 +1093,7 @@ You can subsequently use the identifier with the [`removeAttachmentAsync`](#remo
 
 ##### Examples
 
-```js
+```javascript
 function callback(result) {
   if (result.error) {
     console.log(result.error);
@@ -1103,7 +1103,7 @@ function callback(result) {
 }
 
 function addAttachment() {
-  // The values in asyncContext can be accessed in the callback
+  // The values in asyncContext can be accessed in the callback.
   var options = { 'asyncContext': { var1: 1, var2: 2 } };
 
   var attachmentURL = "https://contoso.com/rtm/icon.png";
@@ -1113,7 +1113,7 @@ function addAttachment() {
 
 The following example adds an image file as an inline attachment and references the attachment in the message body.
 
-```js
+```javascript
 Office.context.mailbox.item.addFileAttachmentAsync(
   "http://i.imgur.com/WJXklif.png",
   "cute_bird.png",
@@ -1127,7 +1127,7 @@ Office.context.mailbox.item.addFileAttachmentAsync(
         "coercionType": "html"
       },
       function (asyncResult) {
-        // Do something here
+        // Do something here.
       });
   });
 ```
@@ -1168,7 +1168,7 @@ You can subsequently use the identifier with the [`removeAttachmentAsync`](#remo
 
 ##### Examples
 
-```js
+```javascript
 Office.context.mailbox.item.addFileAttachmentFromBase64Async(
   base64String,
   "cute_bird.png",
@@ -1182,7 +1182,7 @@ Office.context.mailbox.item.addFileAttachmentFromBase64Async(
         "coercionType": "html"
       },
       function (asyncResult) {
-        // Do something here
+        // Do something here.
       });
   });
 ```
@@ -1273,11 +1273,10 @@ function callback(result) {
 }
 
 function addAttachment() {
-  // EWS ID of item to attach
-  // (Shortened for readability)
+  // EWS ID of item to attach (shortened for readability).
   var itemId = "AAMkADI1...AAA=";
 
-  // The values in asyncContext can be accessed in the callback
+  // The values in asyncContext can be accessed in the callback.
   var options = { 'asyncContext': { var1: 1, var2: 2 } };
 
   Office.context.mailbox.item.addItemAttachmentAsync(itemId, "My Attachment", options, callback);
@@ -1303,7 +1302,7 @@ In the Outlook desktop client, if the message is an inline reply, the `close` me
 |[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|Restricted|
 |[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Compose|
 
-#### displayReplyAllForm(formData)
+#### displayReplyAllForm(formData, [callback])
 
 Displays a reply form that includes the sender and all recipients of the selected message or the organizer and all attendees of the selected appointment.
 
@@ -1422,7 +1421,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 });
 ```
 
-#### displayReplyForm(formData)
+#### displayReplyForm(formData, [callback])
 
 Displays a reply form that includes only the sender of the selected message or the organizer of the selected appointment.
 
@@ -1541,7 +1540,7 @@ Office.context.mailbox.item.displayReplyForm(
 });
 ```
 
-#### getAttachmentContentAsync(attachmentId, [options], callback) → [AttachmentContent](/javascript/api/outlook/office.attachmentcontent)
+#### getAttachmentContentAsync(attachmentId, [options], [callback]) → [AttachmentContent](/javascript/api/outlook/office.attachmentcontent)
 
 Gets the specified attachment from a message or appointment and returns it as an `AttachmentContent` object.
 
@@ -1575,33 +1574,33 @@ Type:
 var item = Office.context.mailbox.item;
 var listOfAttachments = [];
 item.getAttachmentsAsync(callback);
+
 function callback(result) {
-    if (result.value.length > 0) {
-        for (i = 0 ; i < result.value.length ; i++) {
-            var options = {asyncContext: {type: result.value[i].attachmentType}};
-            getAttachmentContentAsync(result.value[i].id, options, handleAttachmentsCallback);  
-        }
+  if (result.value.length > 0) {
+    for (i = 0 ; i < result.value.length ; i++) {
+      var options = {asyncContext: {type: result.value[i].attachmentType}};
+      getAttachmentContentAsync(result.value[i].id, options, handleAttachmentsCallback);
     }
+  }
 }
 
 function handleAttachmentsCallback(result) {
-    // parse string to be a url, an .eml file, a base64-encoded string, or an .icalendar file
-    if (result.format == Office.MailboxEnums.AttachmentContentFormat.Base64) {
-        // handle file attachment
-    }
-    else if (result.format == Office.MailboxEnums.AttachmentContentFormat.Eml) {
-        // handle item attachment
-    }
-    else if (result.format == Office.MailboxEnums.AttachmentContentFormat.ICalendar) {
-        // handle .icalender attachment
-    }
-    else {
-        // handle cloud attachment  
-    }
+  // Parse string to be a url, an .eml file, a base64-encoded string, or an .icalendar file.
+  if (result.format === Office.MailboxEnums.AttachmentContentFormat.Base64) {
+    // Handle file attachment.
+  } else if (result.format === Office.MailboxEnums.AttachmentContentFormat.Eml) {
+    // Handle email item attachment.
+  } else if (result.format === Office.MailboxEnums.AttachmentContentFormat.ICalendar) {
+    // Handle .icalender attachment.
+  } else if (result.format === Office.MailboxEnums.AttachmentContentFormat.Url) {
+    // Handle cloud attachment.
+  } else {
+    // Handle attachment formats that are not supported.
+  }
 }
 ```
 
-#### getAttachmentsAsync([options], callback) → Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)>
+#### getAttachmentsAsync([options], [callback]) → Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)>
 
 Gets the item's attachments as an array. Compose mode only.
 
@@ -1633,20 +1632,21 @@ The following example builds an HTML string with details of all attachments on t
 ```javascript
 var item = Office.context.mailbox.item;
 var outputString = "";
-item.getAttachmentsAsync(callback);  
+item.getAttachmentsAsync(callback);
+
 function callback(result) {
-    if (result.value.length > 0) {
-        for (i = 0 ; i < result.value.length ; i++) {
-            var _att = result.value [i];
-            outputString += "<BR>" + i + ". Name: ";
-            outputString += _att.name;
-            outputString += "<BR>ID: " + _att.id;
-            outputString += "<BR>contentType: " + _att.contentType;
-            outputString += "<BR>size: " + _att.size;
-            outputString += "<BR>attachmentType: " + _att.attachmentType;
-            outputString += "<BR>isInline: " + _att.isInline;
-        }
+  if (result.value.length > 0) {
+    for (i = 0 ; i < result.value.length ; i++) {
+      var attachment = result.value [i];
+      outputString += "<BR>" + i + ". Name: ";
+      outputString += attachment.name;
+      outputString += "<BR>ID: " + attachment.id;
+      outputString += "<BR>contentType: " + attachment.contentType;
+      outputString += "<BR>size: " + attachment.size;
+      outputString += "<BR>attachmentType: " + attachment.attachmentType;
+      outputString += "<BR>isInline: " + attachment.isInline;
     }
+  }
 }
 ```
 
@@ -1732,7 +1732,7 @@ Office.initialize = function () {
     var addresses = item.getEntitiesByType(Office.MailboxEnums.EntityType.Address);
     // Continue processing the array of addresses.
   });
-}
+};
 ```
 
 #### getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook/office.contact)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion))>}
@@ -1790,24 +1790,23 @@ Gets initialization data passed when the add-in is [activated by an actionable m
 ##### Example
 
 ```javascript
-// Get the initialization context (if present)
+// Get the initialization context (if present).
 Office.context.mailbox.item.getInitializationContextAsync(
   function(asyncResult) {
     if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
       if (asyncResult.value != null && asyncResult.value.length > 0) {
-        // The value is a string, parse to an object
+        // The value is a string, parse to an object.
         var context = JSON.parse(asyncResult.value);
-        // Do something with context
+        // Do something with context.
       } else {
-        // Empty context, treat as no context
+        // Empty context, treat as no context.
       }
     } else {
       if (asyncResult.error.code == 9020) {
-        // GenericResponseError returned when there is
-        // no context
-        // Treat as no context
+        // GenericResponseError returned when there is no context.
+        // Treat as no context.
       } else {
-        // Handle the error
+        // Handle the error.
       }
     }
   }
@@ -1920,7 +1919,7 @@ var fruits = Office.context.mailbox.item.getRegExMatchesByName("fruits");
 var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 ```
 
-####  getSelectedDataAsync(coercionType, [options], callback) → {String}
+####  getSelectedDataAsync(coercionType, [options], [callback]) → {String}
 
 Asynchronously returns selected data from the subject or body of a message.
 
@@ -1958,20 +1957,20 @@ The selected data as a string with format determined by `coercionType`.
 ##### Example
 
 ```javascript
-// getting selected data
+// Get selected data.
 Office.initialize = function () {
-    Office.context.mailbox.item.getSelectedDataAsync(Office.CoercionType.Text, {}, getCallback);
-}
+  Office.context.mailbox.item.getSelectedDataAsync(Office.CoercionType.Text, {}, getCallback);
+};
 
 function getCallback(asyncResult) {
-    var text = asyncResult.value.data;
-    var prop = asyncResult.value.sourceProperty;
+  var text = asyncResult.value.data;
+  var prop = asyncResult.value.sourceProperty;
 
-    Office.context.mailbox.item.setSelectedDataAsync('Setting ' + prop + ': ' + text, {}, setCallback);
+  Office.context.mailbox.item.setSelectedDataAsync('Setting ' + prop + ': ' + text, {}, setCallback);
 }
 
 function setCallback(asyncResult) {
-    // check for errors
+  // Check for errors.
 }
 ```
 
@@ -2079,10 +2078,11 @@ Gets the properties of the selected appointment or message in a shared folder, c
 
 ##### Example
 
-```js
+```javascript
 Office.context.mailbox.item.getSharedPropertiesAsync(callback);
+
 function callback (asyncResult) {
-  var context=asyncResult.context;
+  var context = asyncResult.context;
   var sharedProperties = asyncResult.value;
 }
 ```
@@ -2117,11 +2117,11 @@ The following code example shows how to use the `loadCustomPropertiesAsync` meth
 Office.initialize = function () {
   // Checks for the DOM to load using the jQuery ready function.
   $(document).ready(function () {
-  // After the DOM is loaded, add-in-specific code can run.
-  var item = Office.context.mailbox.item;
-  item.loadCustomPropertiesAsync(customPropsCallback);
+    // After the DOM is loaded, add-in-specific code can run.
+    var item = Office.context.mailbox.item;
+    item.loadCustomPropertiesAsync(customPropsCallback);
   });
-}
+};
 
 function customPropsCallback(asyncResult) {
   var customProps = asyncResult.value;
@@ -2240,7 +2240,7 @@ Since appointments have no draft state, if `saveAsync` is called on an appointme
 ```javascript
 Office.context.mailbox.item.saveAsync(
   function callback(result) {
-    // Process the result
+    // Process the result.
   });
 ```
 
