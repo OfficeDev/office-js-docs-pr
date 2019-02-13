@@ -328,7 +328,7 @@ function refreshTemperature(thermometerID){
 ```
 
 ## Co-Authoring
-Excel Online and Excel for Windows with an Office 365 subscription allow you to co-author documents and this feature is supported by custom functions. If your workbook uses a custom function, your sharing partner will be prompted to install the custom function's add-in in order to display the results. Once both people sharing the document have installed the add-in, all custom function behavior should work normally.
+Excel Online and Excel for Windows with an Office 365 subscription allow you to co-author documents and this feature works with custom functions. If your workbook uses a custom function, your colleague will be prompted to load the custom function's add-in. Once you both have loaded the add-in, the custom function will share results through co-authoring.
 
 For more information on co-authoring, see [About CoAuthoring in Excel](https://docs.microsoft.com/en-us/office/vba/excel/concepts/about-coauthoring-in-excel).
 
