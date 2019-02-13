@@ -6,7 +6,7 @@ localization_priority: Normal
 ---
 # Naming guidelines
 
-A custom function is identified by an `id` and `name` property in the JSON metadata file. The function `id` is used to uniquely identify custom functions in your JavaScript code. The function `name` is used as the display name that appears to a user in Excel. A function name can differ from the function ID, such as for localization purposes. But in general it should stay the same as the ID if there is no compelling reason for them to differ.
+A custom function is identified by an **id** and **name** property in the JSON metadata file. The function id is used to uniquely identify custom functions in your JavaScript code. The function name is used as the display name that appears to a user in Excel. A function name can differ from the function ID, such as for localization purposes. But in general it should stay the same as the ID if there is no compelling reason for them to differ.
 
 Function names and function IDs share some common requirements:
 
