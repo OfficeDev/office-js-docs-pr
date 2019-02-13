@@ -1,7 +1,7 @@
 ---
 title: Use the Dialog API in your Office Add-ins
 description: ''
-ms.date: 02/12/2018
+ms.date: 02/12/2019
 localization_priority: Priority
 ---
 
