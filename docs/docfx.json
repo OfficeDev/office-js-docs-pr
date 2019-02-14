@@ -9,12 +9,135 @@
         "exclude": [
           "**/obj/**",
           "**/includes/**",
+          "excel/**",
+          "excel_1_1/**",
+          "excel_1_2/**",
+          "excel_1_3/**",
+          "excel_1_4/**",
+          "excel_1_5/**",
+          "excel_1_6/**",
+          "excel_1_7/**",
+          "excel_1_8/**",
+          "onenote/**",
+          "outlook/**",
+          "outlook_1_1/**",
+          "outlook_1_2/**",
           "outlook_1_3/**",
           "outlook_1_4/**",
           "outlook_1_5/**",
-          "excel_1_4/**",
-          "excel_1_5/**"
+          "outlook_1_6/**",
+          "outlook_1_7/**",
+          "powerpoint/**",
+          "visio/**",
+          "word/**",
+          "word_1_1/**",
+          "word_1_2/**",
+          "word_1_3/**"
         ]
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "excel",
+        "group": "excel-js-preview"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "excel_1_1",
+        "group": "excel-js-1.1"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "excel_1_2",
+        "group": "excel-js-1.2"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "excel_1_3",
+        "group": "excel-js-1.3"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "excel_1_4",
+        "group": "excel-js-1.4"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "excel_1_5",
+        "group": "excel-js-1.5"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "excel_1_6",
+        "group": "excel-js-1.6"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "excel_1_7",
+        "group": "excel-js-1.7"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "excel_1_8",
+        "group": "excel-js-1.8"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "onenote",
+        "group": "onenote-js-1.1"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "outlook",
+        "group": "outlook-js-preview"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "outlook_1_1",
+        "group": "outlook-js-1.1"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "outlook_1_2",
+        "group": "outlook-js-1.2"
       },
       {
         "files": [
@@ -45,16 +168,64 @@
           "**/*.md",
           "**/*.yml"
         ],
-        "src": "excel_1_4",
-        "group": "excel-js-1.4"
+        "src": "outlook_1_6",
+        "group": "outlook-js-1.6"
       },
       {
         "files": [
           "**/*.md",
           "**/*.yml"
         ],
-        "src": "excel_1_5",
-        "group": "excel-js-1.5"
+        "src": "outlook_1_7",
+        "group": "outlook-js-1.7"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "powerpoint",
+        "group": "powerpoint-js-1.1"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "visio",
+        "group": "visio-js-1.1"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "word",
+        "group": "word-js-preview"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "word_1_1",
+        "group": "word-js-1.1"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "word_1_2",
+        "group": "word-js-1.2"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "src": "word_1_3",
+        "group": "word-js-1.3"
       }
     ],
     "resource": [
@@ -72,6 +243,18 @@
       }
     ],
     "groups": {
+      "outlook-js-preview": {
+        "dest": "outlook-js-preview",
+        "moniker_range": "outlook-js-preview"
+      },
+      "outlook-js-1.1": {
+        "dest": "outlook-js-1.1",
+        "moniker_range": "outlook-js-1.1"
+      },
+      "outlook-js-1.2": {
+        "dest": "outlook-js-1.2",
+        "moniker_range": "outlook-js-1.2"
+      },
       "outlook-js-1.3": {
         "dest": "outlook-js-1.3",
         "moniker_range": "outlook-js-1.3"
@@ -84,6 +267,30 @@
         "dest": "outlook-js-1.5",
         "moniker_range": "outlook-js-1.5"
       },
+      "outlook-js-1.6": {
+        "dest": "outlook-js-1.6",
+        "moniker_range": "outlook-js-1.6"
+      },
+      "outlook-js-1.7": {
+        "dest": "outlook-js-1.7",
+        "moniker_range": "outlook-js-1.7"
+      },
+      "excel-js-preview": {
+        "dest": "excel-js-preview",
+        "moniker_range": "excel-js-preview"
+      },
+      "excel-js-1.1": {
+        "dest": "excel-js-1.1",
+        "moniker_range": "excel-js-1.1"
+      },
+      "excel-js-1.2": {
+        "dest": "excel-js-1.2",
+        "moniker_range": "excel-js-1.2"
+      },
+      "excel-js-1.3": {
+        "dest": "excel-js-1.3",
+        "moniker_range": "excel-js-1.3"
+      },
       "excel-js-1.4": {
         "dest": "excel-js-1.4",
         "moniker_range": "excel-js-1.4"
@@ -91,6 +298,46 @@
       "excel-js-1.5": {
         "dest": "excel-js-1.5",
         "moniker_range": "excel-js-1.5"
+      },
+      "excel-js-1.6": {
+        "dest": "excel-js-1.6",
+        "moniker_range": "excel-js-1.6"
+      },
+      "excel-js-1.7": {
+        "dest": "excel-js-1.7",
+        "moniker_range": "excel-js-1.7"
+      },
+      "excel-js-1.8": {
+        "dest": "excel-js-1.8",
+        "moniker_range": "excel-js-1.8"
+      },
+      "onenote-js-1.1": {
+        "dest": "onenote-js-1.1",
+        "moniker_range": "onenote-js-1.1"
+      },
+      "powerpoint-js-1.1": {
+        "dest": "powerpoint-js-1.1",
+        "moniker_range": "powerpoint-js-1.1"
+      },
+      "visio-js-1.1": {
+        "dest": "visio-js-1.1",
+        "moniker_range": "visio-js-1.1"
+      },
+      "word-js-preview": {
+        "dest": "word-js-preview",
+        "moniker_range": "word-js-preview"
+      },
+      "word-js-1.1": {
+        "dest": "word-js-1.1",
+        "moniker_range": "word-js-1.1"
+      },
+      "word-js-1.2": {
+        "dest": "word-js-1.2",
+        "moniker_range": "word-js-1.2"
+      },
+      "word-js-1.3": {
+        "dest": "word-js-1.3",
+        "moniker_range": "word-js-1.3"
       }
     },
     "overwrite": [],
