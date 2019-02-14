@@ -37,10 +37,6 @@
       "ReferenceTOCUrl": "/javascript/api/office_ref_toc/toc.json"
     },
     {
-      "ConceptualTOC": "docs/outlook/toc.yml",
-      "ReferenceTOCUrl": "/javascript/api/toc.json"
-    },
-    {
       "ConceptualTOC": "docs/outlook_1_1/toc.yml",
       "ReferenceTOCUrl": "/javascript/api/toc.json"
     },
@@ -66,10 +62,6 @@
     },
     {
       "ConceptualTOC": "docs/outlook_1_7/toc.yml",
-      "ReferenceTOCUrl": "/javascript/api/toc.json"
-    },
-    {
-      "ConceptualTOC": "docs/excel/toc.yml",
       "ReferenceTOCUrl": "/javascript/api/toc.json"
     },
     {
@@ -102,22 +94,6 @@
     },
     {
       "ConceptualTOC": "docs/excel_1_8/toc.yml",
-      "ReferenceTOCUrl": "/javascript/api/toc.json"
-    },
-    {
-      "ConceptualTOC": "docs/onenote/toc.yml",
-      "ReferenceTOCUrl": "/javascript/api/toc.json"
-    },
-    {
-      "ConceptualTOC": "docs/powerpoint/toc.yml",
-      "ReferenceTOCUrl": "/javascript/api/toc.json"
-    },
-    {
-      "ConceptualTOC": "docs/visio/toc.yml",
-      "ReferenceTOCUrl": "/javascript/api/toc.json"
-    },
-    {
-      "ConceptualTOC": "docs/word/toc.yml",
       "ReferenceTOCUrl": "/javascript/api/toc.json"
     },
     {

@@ -9,7 +9,6 @@
         "exclude": [
           "**/obj/**",
           "**/includes/**",
-          "excel/**",
           "excel_1_1/**",
           "excel_1_2/**",
           "excel_1_3/**",
@@ -18,8 +17,6 @@
           "excel_1_6/**",
           "excel_1_7/**",
           "excel_1_8/**",
-          "onenote/**",
-          "outlook/**",
           "outlook_1_1/**",
           "outlook_1_2/**",
           "outlook_1_3/**",
@@ -27,9 +24,6 @@
           "outlook_1_5/**",
           "outlook_1_6/**",
           "outlook_1_7/**",
-          "powerpoint/**",
-          "visio/**",
-          "word/**",
           "word_1_1/**",
           "word_1_2/**",
           "word_1_3/**"
