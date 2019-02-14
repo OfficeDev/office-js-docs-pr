@@ -34,14 +34,6 @@
           "**/*.md",
           "**/*.yml"
         ],
-        "src": "excel",
-        "group": "excel-js-preview"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
         "src": "excel_1_1",
         "group": "excel-js-1.1"
       },
@@ -106,22 +98,6 @@
           "**/*.md",
           "**/*.yml"
         ],
-        "src": "onenote",
-        "group": "onenote-js-1.1"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "src": "outlook",
-        "group": "outlook-js-preview"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
         "src": "outlook_1_1",
         "group": "outlook-js-1.1"
       },
@@ -172,30 +148,6 @@
         ],
         "src": "outlook_1_7",
         "group": "outlook-js-1.7"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "src": "powerpoint",
-        "group": "powerpoint-js-1.1"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "src": "visio",
-        "group": "visio-js-1.1"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "src": "word",
-        "group": "word-js-preview"
       },
       {
         "files": [
