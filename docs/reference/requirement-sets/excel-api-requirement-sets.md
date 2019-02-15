@@ -407,10 +407,7 @@ The following is a complete list of APIs in preview.
 ||[style](/javascript/api/excel/excel.settablecellproperties#style)||
 |[SettableColumnProperties](/javascript/api/excel/excel.settablecolumnproperties)|[columnHidden](/javascript/api/excel/excel.settablecolumnproperties#columnhidden)||
 ||[columnWidth](/javascript/api/excel/excel.settablecolumnproperties#columnwidth)||
-||[format: Excel.CellPropertiesFormat & {
-            columnWidth?](/javascript/api/excel/excel.settablecolumnproperties#format)||
-|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[format: Excel.CellPropertiesFormat & {
-            rowHeight?](/javascript/api/excel/excel.settablerowproperties#format)||
+|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)||
 ||[rowHeight](/javascript/api/excel/excel.settablerowproperties#rowheight)||
 ||[rowHidden](/javascript/api/excel/excel.settablerowproperties#rowhidden)||
 |[Setting](/javascript/api/excel/excel.setting)|[](/javascript/api/excel/excel.setting#replacestringdatewithdate)||
