@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - preview requirement set
 description: ''
-ms.date: 02/12/2019
+ms.date: 02/15/2019
 localization_priority: Normal
 ---
 
@@ -17,7 +17,7 @@ Provides access to the Outlook add-in object model for Microsoft Outlook and Mic
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restricted|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Members and methods
 
@@ -63,7 +63,7 @@ Your app must have the **ReadItem** permission specified in its manifest to call
 
 In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) method before you can use the `ewsUrl` member. Your app must have **ReadWriteItem** permissions to call the `saveAsync` method.
 
-##### Type:
+##### Type
 
 *   String
 
@@ -73,7 +73,7 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#s
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
 
 #### restUrl :String
 
@@ -85,7 +85,7 @@ Your app must have the **ReadItem** permission specified in its manifest to call
 
 In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) method before you can use the `restUrl` member. Your app must have **ReadWriteItem** permissions to call the `saveAsync` method.
 
-##### Type:
+##### Type
 
 *   String
 
@@ -95,7 +95,7 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#s
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
 
 ### Methods
 
@@ -105,7 +105,7 @@ Adds an event handler for a supported event.
 
 Currently, the supported event types are `Office.EventType.ItemChanged` and `Office.EventType.OfficeThemeChanged`.
 
-##### Parameters:
+##### Parameters
 
 | Name | Type | Attributes | Description |
 |---|---|---|---|
@@ -121,7 +121,7 @@ Currently, the supported event types are `Office.EventType.ItemChanged` and `Off
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem |
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Example
 
@@ -151,7 +151,7 @@ Converts an item ID formatted for REST into EWS format.
 
 Item IDs retrieved via a REST API (such as the [Outlook Mail API](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) or the [Microsoft Graph](https://graph.microsoft.io/)) use a different format than the format used by Exchange Web Services (EWS). The `convertToEwsId` method converts a REST-formatted ID into the proper format for EWS.
 
-##### Parameters:
+##### Parameters
 
 |Name| Type| Description|
 |---|---|---|
@@ -164,7 +164,7 @@ Item IDs retrieved via a REST API (such as the [Outlook Mail API](https://docs.m
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
 |[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restricted|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Returns:
 
@@ -189,7 +189,7 @@ The dates and times used by a mail app for Outlook or Outlook Web App can use di
 
 If the mail app is running in Outlook, the `convertToLocalClientTime` method will return a dictionary object with the values set to the client computer time zone. If the mail app is running in Outlook Web App, the `convertToLocalClientTime` method will return a dictionary object with the values set to the time zone specified in the EAC.
 
-##### Parameters:
+##### Parameters
 
 |Name| Type| Description|
 |---|---|---|
@@ -201,7 +201,7 @@ If the mail app is running in Outlook, the `convertToLocalClientTime` method wil
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Returns:
 
@@ -217,7 +217,7 @@ Converts an item ID formatted for EWS into REST format.
 
 Item IDs retrieved via EWS or via the `itemId` property use a different format than the format used by REST APIs (such as the [Outlook Mail API](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) or the [Microsoft Graph](https://graph.microsoft.io/)). The `convertToRestId` method converts an EWS-formatted ID into the proper format for REST.
 
-##### Parameters:
+##### Parameters
 
 |Name| Type| Description|
 |---|---|---|
@@ -230,7 +230,7 @@ Item IDs retrieved via EWS or via the `itemId` property use a different format t
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
 |[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restricted|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Returns:
 
@@ -253,7 +253,7 @@ Gets a Date object from a dictionary containing time information.
 
 The `convertToUtcClientTime` method converts a dictionary containing a local date and time to a Date object with the correct values for the local date and time.
 
-##### Parameters:
+##### Parameters
 
 |Name| Type| Description|
 |---|---|---|
@@ -265,7 +265,7 @@ The `convertToUtcClientTime` method converts a dictionary containing a local dat
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Returns:
 
@@ -294,7 +294,7 @@ In Outlook Web App, this method opens the specified form only if the body of the
 
 If the specified item identifier does not identify an existing appointment, a blank pane opens on the client computer or device, and no error message will be returned.
 
-##### Parameters:
+##### Parameters
 
 |Name| Type| Description|
 |---|---|---|
@@ -306,7 +306,7 @@ If the specified item identifier does not identify an existing appointment, a bl
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Example
 
@@ -329,7 +329,7 @@ If the specified item identifier does not identify an existing message, no messa
 
 Do not use the `displayMessageForm` with an `itemId` that represents an appointment. Use the `displayAppointmentForm` method to display an existing appointment, and `displayNewAppointmentForm` to display a form to create a new appointment.
 
-##### Parameters:
+##### Parameters
 
 |Name| Type| Description|
 |---|---|---|
@@ -341,7 +341,7 @@ Do not use the `displayMessageForm` with an `itemId` that represents an appointm
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Example
 
@@ -364,7 +364,7 @@ In the Outlook rich client and Outlook RT, if you specify any attendees or resou
 
 If any of the parameters exceed the specified size limits, or if an unknown parameter name is specified, an exception is thrown.
 
-##### Parameters:
+##### Parameters
 
 > [!NOTE]
 > All parameters are optional.
@@ -417,7 +417,7 @@ The `displayNewMessageForm` method opens a form that enables the user to create 
 
 If any of the parameters exceed the specified size limits, or if an unknown parameter name is specified, an exception is thrown.
 
-##### Parameters:
+##### Parameters
 
 > [!NOTE]
 > All parameters are optional.
@@ -488,7 +488,7 @@ When an EWS token is requested (`options.isRest = false`), the resulting token w
 
 The add-in should use the `ewsUrl` property to determine the correct URL to use when making EWS calls.
 
-##### Parameters:
+##### Parameters
 
 |Name| Type| Attributes| Description|
 |---|---|---|---|
@@ -534,7 +534,7 @@ Your app must have the **ReadItem** permission specified in its manifest to call
 
 In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) method to get an item identifier to pass to the `getCallbackTokenAsync` method. Your app must have **ReadWriteItem** permissions to call the `saveAsync` method.
 
-##### Parameters:
+##### Parameters
 
 |Name| Type| Attributes| Description|
 |---|---|---|---|
@@ -567,7 +567,7 @@ Gets a token identifying the user and the Office Add-in.
 
 The `getUserIdentityTokenAsync` method returns a token that you can use to identify and [authenticate the add-in and user with a third-party system](https://docs.microsoft.com/outlook/add-ins/authentication).
 
-##### Parameters:
+##### Parameters
 
 |Name| Type| Attributes| Description|
 |---|---|---|---|
@@ -580,7 +580,7 @@ The `getUserIdentityTokenAsync` method returns a token that you can use to ident
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Example
 
@@ -630,7 +630,7 @@ When you use the `makeEwsRequestAsync` method in mail apps running in Outlook ve
 
 You do not need to set the encoding value when your mail app is running in Outlook on the web. You can determine whether your mail app is running in Outlook or Outlook on the web by using the mailbox.diagnostics.hostName property. You can determine what version of Outlook is running by using the mailbox.diagnostics.hostVersion property.
 
-##### Parameters:
+##### Parameters
 
 |Name| Type| Attributes| Description|
 |---|---|---|---|
@@ -644,7 +644,7 @@ You do not need to set the encoding value when your mail app is running in Outlo
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteMailbox|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Example
 
@@ -681,7 +681,7 @@ function getSubjectRequest(id) {
 function sendRequest() {
   // Create a local variable that contains the mailbox.
   Office.context.mailbox.makeEwsRequestAsync(
-  getSubjectRequest(mailbox.item.itemId), callback);
+    getSubjectRequest(mailbox.item.itemId), callback);
 }
 
 function callback(asyncResult)  {
@@ -698,7 +698,7 @@ Removes the event handlers for a supported event type.
 
 Currently, the supported event types are `Office.EventType.ItemChanged` and `Office.EventType.OfficeThemeChanged`.
 
-##### Parameters:
+##### Parameters
 
 | Name | Type | Attributes | Description |
 |---|---|---|---|
@@ -713,4 +713,4 @@ Currently, the supported event types are `Office.EventType.ItemChanged` and `Off
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem |
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
