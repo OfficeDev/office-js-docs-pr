@@ -1,3 +1,9 @@
+---
+title: Office.context.mailbox.item - requirement set 1.2
+description: ''
+ms.date: 01/30/2019
+localization_priority: Normal
+---
 
 # item
 
@@ -323,7 +329,7 @@ The `itemClass` property specifies the message class of the selected item. The f
 
 | Type | Description | item class |
 | --- | --- | --- |
-| Appointment items | These are calendar items of the item class `IPM.Appointment` or `IPM.Appointment.Occurence`. | `IPM.Appointment`<br />`IPM.Appointment.Occurence` |
+| Appointment items | These are calendar items of the item class `IPM.Appointment` or `IPM.Appointment.Occurrence`. | `IPM.Appointment`<br />`IPM.Appointment.Occurrence` |
 | Message items | These include email messages that have the default message class `IPM.Note`, and meeting requests, responses, and cancellations, that use `IPM.Schedule.Meeting` as the base message class. | `IPM.Note`<br />`IPM.Schedule.Meeting.Request`<br />`IPM.Schedule.Meeting.Neg`<br />`IPM.Schedule.Meeting.Pos`<br />`IPM.Schedule.Meeting.Tent`<br />`IPM.Schedule.Meeting.Canceled` |
 
 You can create custom message classes that extends a default message class, for example, a custom appointment message class `IPM.Appointment.Contoso`.
@@ -1398,7 +1404,7 @@ The `removeAttachmentAsync` method removes the attachment with the specified ide
 
 |Name| Type| Attributes| Description|
 |---|---|---|---|
-|`attachmentId`| String||The identifier of the attachment to remove. The maximum length of the string is 100 characters.|
+|`attachmentId`| String||The identifier of the attachment to remove.|
 |`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
 |`options.asyncContext`| Object| &lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
 |`callback`| function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object. <br/>If removing the attachment fails, the `asyncResult.error` property will contain an error code with the reason for the failure.|

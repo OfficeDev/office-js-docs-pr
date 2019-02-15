@@ -1,3 +1,10 @@
+---
+title: TargetDialects element in the manifest file
+description: ''
+ms.date: 10/09/2018
+localization_priority: Normal
+---
+
 # TargetDialects element
 
 Defines the regional language or languages supported by this dictionary.

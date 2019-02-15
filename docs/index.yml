@@ -6,6 +6,7 @@ metadata:
   meta.description: Learn how to build Office Add-ins.
   author: o365devx
   ms.topic: landing-page
+  ms.prod: non-product-specific
   ms.date: 12/04/2017
   ms.author: o365devx
 abstract:
@@ -29,26 +30,32 @@ sections:
     items: 
     - image: 
         src: https://docs.microsoft.com/office/dev/add-ins/images/index/ExcelLogoColor.svg
+        alt: 'Excel logo'
       text: Excel
       href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/excel-quickstart-jquery
     - image: 
         src: https://docs.microsoft.com/office/dev/add-ins/images/index/WordLogoColor.svg
+        alt: 'Word logo'
       text: Word
       href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/word-quickstart
     - image: 
         src: https://docs.microsoft.com/office/dev/add-ins/images/index/OneNoteLogoColor.svg
+        alt: 'OneNote logo'
       text: OneNote
       href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/onenote-quickstart
     - image: 
         src: https://docs.microsoft.com/office/dev/add-ins/images/index/OutlookLogoColor.svg
+        alt: 'Outlook logo'
       text: Outlook
       href: https://docs.microsoft.com/outlook/add-ins/quick-start
     - image: 
         src: https://docs.microsoft.com/office/dev/add-ins/images/index/PowerPointLogoColor.svg
+        alt: 'PowerPoint logo'
       text: PowerPoint
       href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/powerpoint-quickstart
     - image: 
         src: https://docs.microsoft.com/office/dev/add-ins/images/index/ProjectLogoColor.svg
+        alt: 'Project logo'
       text: Project
       href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/project-quickstart
 - title: How-to Guides
@@ -75,8 +82,8 @@ sections:
     className: cardsD
     items:
     - title: Common APIs (2013)
-      html: <p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js" target="_blank">JavaScript API for Office</a></p>
+      html: <p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office" target="_blank">JavaScript API for Office</a></p>
     - title: Host-specific APIs (2016)
-      html: <p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js" target="_blank">Excel JavaScript API</a></p><p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js" target="_blank">Word JavaScript API</a></p><p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js" target="_blank">OneNote JavaScript API</a></p><p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets?view=office-js" target="_blank">Outlook JavaScript API</a></p>
+      html: <p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview" target="_blank">Excel JavaScript API</a></p><p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview" target="_blank">Word JavaScript API</a></p><p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference" target="_blank">OneNote JavaScript API</a></p><p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets" target="_blank">Outlook JavaScript API</a></p>
     - title: Other
-      html: <p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/openspec?view=office-js" target="_blank">API open specifications</a></p><p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/manifest/allowsnapshot?view=office-js" target="_blank">Office Add-ins Manifest</a></p>
+      html: <p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/openspec" target="_blank">API open specifications</a></p><p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/manifest/allowsnapshot" target="_blank">Office Add-ins Manifest</a></p>

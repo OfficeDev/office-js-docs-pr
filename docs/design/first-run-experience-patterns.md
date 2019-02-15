@@ -1,3 +1,10 @@
+---
+title: First-run experience patterns for Office Add-ins
+description: ''
+ms.date: 06/26/2018
+localization_priority: Normal
+---
+
 # First-run experience patterns
 
 A First-run Experience (FRE) is a user's introduction to your add-in. An FRE is presented when a user opens an add-in for the first time and provides them with insight into the functions, features, and/or benefits of the add-in. This experience helps shape the user's impression of an add-in and can strongly influence their likelihood to come back to and continue using your add-in..

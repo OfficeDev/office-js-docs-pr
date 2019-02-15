@@ -1,10 +1,17 @@
+---
+title: JavaScript API for Office
+description: ''
+ms.date: 10/09/2018
+localization_priority: Priority
+---
+
 # JavaScript API for Office
 
 The JavaScript API for Office enables you to create web applications that interact with the object models in Office host applications. Your application will reference the office.js library, which is a script loader. The office.js library loads the object models that are applicable to the Office application that is running the add-in. You can use the following JavaScript object models:
 
-- **Common APIs** - APIs that were introduced with **Office 2013**. This is loaded for **all Office host applications** and connects your add-in application with the Office client application. The object model contains APIs that are specific to Office clients, and APIs that are applicable to multiple Office client host applications. All of this content is under **Shared API**. 
+- **Common APIs** - APIs that were introduced with **Office 2013**. This is loaded for **all Office host applications** and connects your add-in application with the Office client application. The object model contains APIs that are specific to Office clients, and APIs that are applicable to multiple Office client host applications. All of this content is under **Common API**. This object model uses callbacks. 
 
-  **Outlook** also uses the common API syntax. Everything under the alias Office contains objects you can use to write scripts that interact with content in Office documents, worksheets, presentations, mail items, and projects from your Office Add-ins. You must use these common APIs if your add-in will target Office 2013 and later. This object model uses callbacks.
+  **Outlook** also uses the Common API syntax. Everything under the alias Office contains objects you can use to write scripts that interact with content in Office documents, worksheets, presentations, mail items, and projects from your Office Add-ins. You must use these Common APIs if your add-in will target Office 2013 and later. This object model uses callbacks.
 
 - **Host-specific APIs** - APIs that were introduced with **Office 2016**. This object model provides host-specific strongly-typed objects that correspond to familiar objects that you see when you use Office clients, and represents the future of Office JavaScript APIs. The host-specific APIs currently include the Word JavaScript API and the Excel JavaScript API.
 
@@ -15,12 +22,12 @@ The JavaScript API for Office enables you to create web applications that intera
 - [Outlook](requirement-sets/outlook-api-requirement-sets.md)
 - [Visio](overview/visio-javascript-reference-overview.md)
 - [Word](overview/word-add-ins-reference-overview.md)
-- [Shared API](requirement-sets/office-add-in-requirement-sets.md)
+- [Common API](requirement-sets/office-add-in-requirement-sets.md)
 
 > [!NOTE] 
-> [PowerPoint and Project](requirement-sets/powerpoint-and-project-note.md) support add-ins made with the JavaScript API. However, they currently do not have host-specific APIs. You interact with these hosts through the Shared API.
+> [PowerPoint and Project](requirement-sets/powerpoint-and-project-note.md) support add-ins made with the JavaScript API. However, they currently do not have host-specific APIs. You interact with these hosts through the Common API.
 
-Learn more about [supported hosts and other requirements](https://docs.microsoft.com/office/dev/add-ins/concepts/requirements-for-running-office-add-ins).
+Learn more about [supported hosts and other requirements](../concepts/requirements-for-running-office-add-ins.md).
 
 ## Open API specifications
 
@@ -28,4 +35,4 @@ As we design and develop new APIs for Office Add-ins, we'll make them available 
 
 ## See also
 
-- [Office JavaScript API reference](https://docs.microsoft.com/javascript/api/overview/office?view=office-js)
+- [Office JavaScript API reference](https://docs.microsoft.com/javascript/api/overview/office)

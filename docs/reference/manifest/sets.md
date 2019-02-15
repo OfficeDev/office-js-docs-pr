@@ -1,3 +1,10 @@
+---
+title: Sets element in the manifest file
+description: ''
+ms.date: 10/09/2018
+localization_priority: Normal
+---
+
 # Sets element
 
 Specifies the minimum subset of the JavaScript API for Office that your Office Add-in requires in order to activate.

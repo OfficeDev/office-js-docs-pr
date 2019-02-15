@@ -1,3 +1,9 @@
+---
+title: Office.context.mailbox.item - requirement set 1.7
+description: ''
+ms.date: 01/30/2019
+localization_priority: Normal
+---
 
 # item
 
@@ -58,7 +64,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [getSelectedRegExMatches](#getselectedregexmatches--object) | Method |
 | [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | Method |
 | [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | Method |
-| [removeHandlerAsync](#removehandlerasynceventtype-handler-options-callback) | Method |
+| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | Method |
 | [saveAsync](#saveasyncoptions-callback) | Method |
 | [setSelectedDataAsync](#setselecteddataasyncdata-options-callback) | Method |
 
@@ -335,7 +341,7 @@ The `from` and [`sender`](#sender-emailaddressdetailsjavascriptapioutlook17offic
 The `from` property returns an `EmailAddressDetails` object.
 
 ```js
-var subject = Office.context.mailbox.item.from;
+var from = Office.context.mailbox.item.from;
 ```
 
 ##### Compose mode
@@ -392,7 +398,7 @@ The `itemClass` property specifies the message class of the selected item. The f
 
 |Type|Description|item class|
 |---|---|---|
-|Appointment items|These are calendar items of the item class `IPM.Appointment` or `IPM.Appointment.Occurence`.|`IPM.Appointment`<br />`IPM.Appointment.Occurence`|
+|Appointment items|These are calendar items of the item class `IPM.Appointment` or `IPM.Appointment.Occurrence`.|`IPM.Appointment`<br />`IPM.Appointment.Occurrence`|
 |Message items|These include email messages that have the default message class `IPM.Note`, and meeting requests, responses, and cancellations, that use `IPM.Schedule.Meeting` as the base message class.|`IPM.Note`<br />`IPM.Schedule.Meeting.Request`<br />`IPM.Schedule.Meeting.Neg`<br />`IPM.Schedule.Meeting.Pos`<br />`IPM.Schedule.Meeting.Tent`<br />`IPM.Schedule.Meeting.Canceled`|
 
 You can create custom message classes that extends a default message class, for example, a custom appointment message class `IPM.Appointment.Contoso`.
@@ -1711,7 +1717,7 @@ The `removeAttachmentAsync` method removes the attachment with the specified ide
 
 |Name|Type|Attributes|Description|
 |---|---|---|---|
-|`attachmentId`|String||The identifier of the attachment to remove. The maximum length of the string is 100 characters.|
+|`attachmentId`|String||The identifier of the attachment to remove.|
 |`options`|Object|&lt;optional&gt;|An object literal that contains one or more of the following properties.|
 |`options.asyncContext`|Object|&lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
 |`callback`|function|&lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object. <br/>If removing the attachment fails, the `asyncResult.error` property will contain an error code with the reason for the failure.|
@@ -1745,9 +1751,9 @@ Office.context.mailbox.item.removeAttachmentAsync(
 );
 ```
 
-####  removeHandlerAsync(eventType, handler, [options], [callback])
+####  removeHandlerAsync(eventType, [options], [callback])
 
-Removes an event handler for a supported event.
+Removes the event handlers for a supported event type.
 
 Currently the supported event types are `Office.EventType.AppointmentTimeChanged`, `Office.EventType.RecipientsChanged`, and `Office.EventType.RecurrenceChanged`
 
@@ -1756,7 +1762,6 @@ Currently the supported event types are `Office.EventType.AppointmentTimeChanged
 | Name | Type | Attributes | Description |
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || The event that should invoke the handler. |
-| `handler` | Function || The function to handle the event. The function must accept a single parameter, which is an object literal. The `type` property on the parameter will match the `eventType` parameter passed to `removeHandlerAsync`. |
 | `options` | Object | &lt;optional&gt; | An object literal that contains one or more of the following properties. |
 | `options.asyncContext` | Object | &lt;optional&gt; | Developers can provide any object they wish to access in the callback method. |
 | `callback` | function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.|
@@ -1774,17 +1779,12 @@ Currently the supported event types are `Office.EventType.AppointmentTimeChanged
 ```js
 Office.initialize = function (reason) {
   $(document).ready(function () {
-    Office.context.mailbox.item.removeHandlerAsync(Office.EventType.RecurrenceChanged, loadNewItem, function (result) {
+    Office.context.mailbox.item.removeHandlerAsync(Office.EventType.RecurrenceChanged, function (result) {
       if (result.status === Office.AsyncResultStatus.Failed) {
         // Handle error
       }
     });
   });
-};
-
-function loadNewItem(eventArgs) {
-  // Load the properties of the newly selected item
-  loadProps(Office.context.mailbox.item);
 };
 ```
 

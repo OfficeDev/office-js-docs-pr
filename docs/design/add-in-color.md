@@ -1,3 +1,10 @@
+---
+title: Color guidelines for Office Add-ins
+description: ''
+ms.date: 06/27/2018
+localization_priority: Normal
+---
+
 # Color
 Color is often used to emphasize brand and reinforce visual hierarchy. It helps identify an interface as well as guide customers through an experience. Inside Office, color is used for the same goals but it is applied purposefully and minimally. At no point does it overwhelm customer content. Even when each Office app is branded with its own dominant color, it is used sparingly.
 
@@ -6,7 +13,7 @@ Office UI Fabric includes a set of default theme colors. When Fabric is applied 
 Office applications allow customers to personalize their interfaces by applying an Office UI theme. Customers can choose between four UI themes to vary styling of backgrounds and buttons in Word, PowerPoint, Excel and other apps in the Office suite. To make your add-ins feel like a natural part of Office and respond to personalization, use our Themeing APIs. For example, task pane background colors switch to a dark gray in some themes. Our theming APIs allow you to follow suit and adjust foreground text to ensure [accessibility](../design/accessibility-guidelines.md).
 
 > [!NOTE]
-> - For mail and task pane add-ins, use the [Context.officeTheme](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js) property to match the theme of the Office applications. This API is currently only available in Office 2016.
+> - For mail and task pane add-ins, use the [Context.officeTheme](https://docs.microsoft.com/javascript/api/office/office.context) property to match the theme of the Office applications. This API is currently only available in Office 2016.
 > - For PowerPoint content add-ins, see [Use Office themes in your PowerPoint add-ins](../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md).
 
 Apply the following general guidelines for color:

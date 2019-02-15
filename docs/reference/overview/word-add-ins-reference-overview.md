@@ -1,3 +1,11 @@
+---
+title: Word JavaScript API overview
+description: ''
+ms.date: 10/09/2018
+ms.prod: word
+localization_priority: Priority
+---
+
 # Word JavaScript API overview
 
 Word provides a rich set of APIs that you can use to create add-ins that interact with document content and metadata. Use these APIs to create compelling experiences that integrate with and extend Word. You can import and export content, assemble new documents from different data sources, and integrate with document workflows to create custom document solutions.

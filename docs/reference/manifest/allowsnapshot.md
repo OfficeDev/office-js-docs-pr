@@ -1,3 +1,10 @@
+---
+title: AllowSnapshot element in the manifest file
+description: ''
+ms.date: 10/09/2018
+localization_priority: Normal
+---
+
 # AllowSnapshot element
 
 Specifies whether a snapshot image of your content add-in is saved with the host document.

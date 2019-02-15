@@ -1,3 +1,10 @@
+---
+title: API open specifications for the Office JavaScript API
+description: ''
+ms.date: 10/09/2018
+localization_priority: Priority
+---
+
 # API open specifications
 
 The Office JavaScript API open specifications provide information about new JavaScript APIs that are being designed for Excel, Word, and other host applications. You can review the open specifications in [branches](https://github.com/OfficeDev/office-js-docs/branches/all) of the **OfficeDev/office-js-docs** GitHub repository to learn about APIs that are planned for future releases and can provide feedback about the planned API features and design by logging issues in the GitHub repository.

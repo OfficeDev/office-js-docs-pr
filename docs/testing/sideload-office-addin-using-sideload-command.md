@@ -2,6 +2,7 @@
 title: Sideload Office Add-ins using the sideload command
 description: ''
 ms.date: 07/24/2018
+localization_priority: Priority
 ---
 
 # Sideload Office Add-ins for testing using the **sideload command**

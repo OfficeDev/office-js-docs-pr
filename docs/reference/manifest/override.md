@@ -1,3 +1,10 @@
+---
+title: Override element in the manifest file
+description: ''
+ms.date: 10/09/2018
+localization_priority: Normal
+---
+
 # Override element
 
 Provides a way to specify the value of a setting for an additional locale.

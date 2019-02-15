@@ -1,7 +1,13 @@
+---
+title: Office.context.mailbox - requirement set 1.5
+description: ''
+ms.date: 01/16/2019
+localization_priority: Priority
+---
 
 # mailbox
 
-### [Office](Office.md)[.context](Office.context.md). mailbox
+### [Office](Office.md)[.context](Office.context.md).mailbox
 
 Provides access to the Outlook add-in object model for Microsoft Outlook and Microsoft Outlook on the web.
 
@@ -31,7 +37,7 @@ Provides access to the Outlook add-in object model for Microsoft Outlook and Mic
 | [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | Method |
 | [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | Method |
 | [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | Method |
-| [removeHandlerAsync](#removehandlerasynceventtype-handler-options-callback) | Method |
+| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | Method |
 
 ### Namespaces
 
@@ -145,7 +151,7 @@ Converts an item ID formatted for REST into EWS format.
 > [!NOTE]
 > This method is not supported in Outlook for iOS or Outlook for Android.
 
-Item IDs retrieved via a REST API (such as the [Outlook Mail API](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) or the [Microsoft Graph](http://graph.microsoft.io/)) use a different format than the format used by Exchange Web Services (EWS). The `convertToEwsId` method converts a REST-formatted ID into the proper format for EWS.
+Item IDs retrieved via a REST API (such as the [Outlook Mail API](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) or the [Microsoft Graph](https://graph.microsoft.io/)) use a different format than the format used by Exchange Web Services (EWS). The `convertToEwsId` method converts a REST-formatted ID into the proper format for EWS.
 
 ##### Parameters:
 
@@ -212,7 +218,7 @@ Converts an item ID formatted for EWS into REST format.
 > [!NOTE]
 > This method is not supported in Outlook for iOS or Outlook for Android.
 
-Item IDs retrieved via EWS or via the `itemId` property use a different format than the format used by REST APIs (such as the [Outlook Mail API](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) or the [Microsoft Graph](http://graph.microsoft.io/)). The `convertToRestId` method converts an EWS-formatted ID into the proper format for REST.
+Item IDs retrieved via EWS or via the `itemId` property use a different format than the format used by REST APIs (such as the [Outlook Mail API](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) or the [Microsoft Graph](https://graph.microsoft.io/)). The `convertToRestId` method converts an EWS-formatted ID into the proper format for REST.
 
 ##### Parameters:
 
@@ -629,9 +635,9 @@ function callback(asyncResult)  {
 }
 ```
 
-####  removeHandlerAsync(eventType, handler, [options], [callback])
+####  removeHandlerAsync(eventType, [options], [callback])
 
-Removes an event handler for a supported event.
+Removes the event handlers for a supported event type.
 
 Currently, the only supported event type is `Office.EventType.ItemChanged`.
 
@@ -640,7 +646,6 @@ Currently, the only supported event type is `Office.EventType.ItemChanged`.
 | Name | Type | Attributes | Description |
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || The event that should revoke the handler. |
-| `handler` | Function || The function to handle the event. The function must accept a single parameter, which is an object literal. The `type` property on the parameter will match the `eventType` parameter passed to `addHandlerAsync`. |
 | `options` | Object | &lt;optional&gt; | An object literal that contains one or more of the following properties. |
 | `options.asyncContext` | Object | &lt;optional&gt; | Developers can provide any object they wish to access in the callback method. |
 | `callback` | function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.|

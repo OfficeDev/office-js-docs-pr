@@ -1,3 +1,10 @@
+---
+title: DefaultSettings element in the manifest file
+description: ''
+ms.date: 10/09/2018
+localization_priority: Normal
+---
+
 # DefaultSettings element
 
 Specifies the default source location and other default settings for your content or task pane add-in.

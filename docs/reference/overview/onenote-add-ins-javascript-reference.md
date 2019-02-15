@@ -1,3 +1,11 @@
+---
+title: OneNote JavaScript API overview
+description: ''
+ms.date: 10/09/2018
+ms.prod: onenote
+localization_priority: Normal
+---
+
 # OneNote JavaScript API overview
 
 Applies to: OneNote Online
@@ -49,6 +57,6 @@ For detailed information about the OneNote JavaScript API, see the [OneNote Java
 ## See also
 
 - [OneNote JavaScript API programming overview](https://docs.microsoft.com/office/dev/add-ins/onenote/onenote-add-ins-programming-overview)
-- [Build your first OneNote add-in](https://docs.microsoft.com/office/dev/add-ins/onenote/onenote-add-ins-getting-started)
+- [Build your first OneNote add-in](../../quickstarts/onenote-quickstart.md)
 - [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office Add-ins platform overview](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins)

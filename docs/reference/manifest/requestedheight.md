@@ -1,3 +1,10 @@
+---
+title: RequestedHeight element in the manifest file
+description: ''
+ms.date: 10/09/2018
+localization_priority: Normal
+---
+
 # RequestedHeight element
 
 Specifies the initial height (in pixels) of a content add-in or mail add-in. 

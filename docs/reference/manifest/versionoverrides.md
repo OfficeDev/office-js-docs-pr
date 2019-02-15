@@ -1,3 +1,10 @@
+---
+title: VersionOverrides element in the manifest file
+description: ''
+ms.date: 01/29/2019
+localization_priority: Normal
+---
+
 # VersionOverrides element
 
 The root element that contains information for the add-in commands implemented by the add-in. **VersionOverrides** is a child element of the [OfficeApp](./officeapp.md) element in the manifest. This element is supported in manifest schema v1.1 and later but is defined in the VersionOverrides v1.0 or v1.1 schema.
@@ -10,7 +17,7 @@ The root element that contains information for the add-in commands implemented b
 |  **xsi:type**  |  Yes  | The schema version. At this time, the only valid values are `VersionOverridesV1_0` and `VersionOverridesV1_1`. |
 
 > [!NOTE]
-> Currently only Outlook 2016 supports the VersionOverrides v1.1 schema and the `VersionOverridesV1_1` type.
+> Currently only Outlook 2016 or later supports the VersionOverrides v1.1 schema and the `VersionOverridesV1_1` type.
 
 ## Child elements
 
@@ -23,9 +30,10 @@ The root element that contains information for the add-in commands implemented b
 |  **VersionOverrides**    |  No  | Defines add-in commands under a newer schema version. See [Implementing multiple versions](#implementing-multiple-versions) for details. |
 |  **WebApplicationInfo**    |  No  | Specifies details about the add-in's associated Web application. |
 
-
-
 ### VersionOverrides example
+
+The following is an example of a typical `<VersionOverrides>` element, including some child elements that are not required but are typically used.
+
 ```xml
 <OfficeApp>
 ...
@@ -86,6 +94,7 @@ To implement both the VersionOverrides v1.0 and v1.1 schema, the manifest would 
         <!-- add information on resources -->
       </Resources>
     </VersionOverrides>  
+  </VersionOverrides>
 ...
 </OfficeApp>
 ```

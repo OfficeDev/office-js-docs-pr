@@ -1,3 +1,10 @@
+---
+title: Voice guidelines for Office Add-ins
+description: ''
+ms.date: 06/27/2018
+localization_priority: Normal
+---
+
 # Voice guidelines
 
 As you design your Office Add-ins, consider the voice that you use in your UI text and elements. Strive to match the voice and tone of the Office UI, which is conversational, engaging, and accessible to users. 

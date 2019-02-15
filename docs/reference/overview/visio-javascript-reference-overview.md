@@ -1,3 +1,11 @@
+---
+title: Visio JavaScript API overview
+description: ''
+ms.date: 10/11/2018
+ms.prod: visio
+localization_priority: Priority
+---
+
 # Visio JavaScript API overview
 
 You can use the Visio JavaScript APIs to embed Visio diagrams in SharePoint Online. An embedded Visio diagram is a diagram that is stored in a SharePoint document library and displayed on a SharePoint page. To embed a Visio diagram, display it in an HTML `<iframe>` element. Then you can use Visio JavaScript APIs to programmatically work with the embedded diagram.

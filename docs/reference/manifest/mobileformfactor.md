@@ -1,3 +1,10 @@
+---
+title: MobileFormFactor element in the manifest file
+description: ''
+ms.date: 10/09/2018
+localization_priority: Normal
+---
+
 # MobileFormFactor element
 
 Specifies the settings for an add-in for the mobile form factor. It contains all the add-in information for the mobile form factor except for the **Resources** node.

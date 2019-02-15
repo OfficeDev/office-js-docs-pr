@@ -1,3 +1,10 @@
+---
+title: AppDomain element in the manifest file
+description: ''
+ms.date: 12/13/2018
+localization_priority: Normal
+---
+
 # AppDomain element
 
 Specifies an additional domain that will be used to load pages in the add-in window.
@@ -7,8 +14,11 @@ Specifies an additional domain that will be used to load pages in the add-in win
 ## Syntax
 
 ```XML
-<AppDomain>string </AppDomain>
+<AppDomain>string</AppDomain>
 ```
+
+> [!IMPORTANT]
+> The value of the **AppDomain** element must include the protocol (e.g., `<AppDomain>https://myappdomain<AppDomain>`).
 
 ## Contained in
 
@@ -16,5 +26,4 @@ Specifies an additional domain that will be used to load pages in the add-in win
 
 ## Remarks
 
-The  **AppDomains** and **AppDomain** elements are used to specify any additional domains other than the one specified in the SourceLocation element. For more information, see Office Add-ins XML manifest.
-
+**AppDomain** elements should be used to specify any additional domains other than the one specified in the [SourceLocation element](sourcelocation.md). For more information, see [Office Add-ins XML manifest](/office/dev/add-ins/develop/add-in-manifests).

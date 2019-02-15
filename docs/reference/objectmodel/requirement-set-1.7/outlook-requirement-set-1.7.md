@@ -1,3 +1,10 @@
+---
+title: Outlook add-in API requirement set 1.7
+description: ''
+ms.date: 01/16/2019
+localization_priority: Priority
+---
+
 # Outlook add-in API requirement set 1.7
 
 The Outlook add-in API subset of the JavaScript API for Office includes objects, methods, properties and events that you can use in an Outlook add-in.
@@ -21,7 +28,7 @@ Requirement set 1.7 includes all of the features of [Requirement set 1.6](../req
 - Modified [Office.context.mailbox.item.from](office.context.mailbox.item.md#from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom): Modifies to get the from value in Compose mode.
 - Modified [Office.context.mailbox.item.organizer](office.context.mailbox.item.md#organizer-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsorganizerjavascriptapioutlook17officeorganizer) - Modifies to get the organizer value in Compose mode.
 - Added [Office.context.mailbox.item.recurrence](office.context.mailbox.item.md#nullable-recurrence-recurrencejavascriptapioutlook17officerecurrence): Adds a new property that gets or sets an object which provides methods to manage the recurrence pattern of an appointment item. This property can also be used to get the recurrence pattern of a meeting request item.
-- Added [Office.context.mailbox.item.removeHandlerAsync](office.context.mailbox.item.md#removehandlerasynceventtype-handler-options-callback): Adds a new method that removes an event handler.
+- Added [Office.context.mailbox.item.removeHandlerAsync](office.context.mailbox.item.md#removehandlerasynceventtype-options-callback): Adds a new method that removes the event handlers for a supported event type.
 - Added [Office.context.mailbox.item.seriesId](office.context.mailbox.item.md#nullable-seriesid-string): Adds a new property that gets the id of the series an occurrence belongs to.
 - Added [Office.MailboxEnums.Days](/javascript/api/outlook_1_7/office.mailboxenums.days): Adds a new enum that specifies the day of week or type of day.
 - Added [Office.MailboxEnums.Month](/javascript/api/outlook_1_7/office.mailboxenums.month): Adds a new enum that specifies the month.

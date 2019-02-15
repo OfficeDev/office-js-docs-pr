@@ -2,6 +2,7 @@
 title: Host an Office Add-in on Microsoft Azure | Microsoft Docs
 description: Learn how to deploy an add-in web app to Azure and sideload the add-in for testing in an Office client application.
 ms.date: 01/25/2018
+localization_priority: Priority
 ---
 
 

@@ -2,6 +2,7 @@
 title: Sideload Office Add-ins on iPad and Mac for testing
 description: ''
 ms.date: 12/04/2017
+localization_priority: Priority
 ---
 
 # Sideload Office Add-ins on iPad and Mac for testing
@@ -10,7 +11,7 @@ To see how your add-in will run in Office for iOS, you can sideload your add-in'
 
 ## Prerequisites for Office for iOS
 
-- A Windows or Mac computer with [iTunes](http://www.apple.com/itunes/download/) installed.
+- A Windows or Mac computer with [iTunes](https://www.apple.com/itunes/download/) installed.
     
 - An iPad running iOS 8.2 or later with [Excel for iPad](https://itunes.apple.com/us/app/microsoft-excel/id586683407?mt=8) installed, and a sync cable.
     

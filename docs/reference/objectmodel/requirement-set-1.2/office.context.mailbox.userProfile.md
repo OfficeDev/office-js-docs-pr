@@ -1,7 +1,13 @@
+---
+title: Office.context.mailbox.userProfile - requirement set 1.2
+description: ''
+ms.date: 10/31/2018
+localization_priority: Normal
+---
 
 # userProfile
 
-### [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md). userProfile
+### [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile
 
 ##### Requirements
 

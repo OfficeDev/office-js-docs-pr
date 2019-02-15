@@ -1,3 +1,10 @@
+---
+title: QueryUri element in the manifest file
+description: ''
+ms.date: 10/09/2018
+localization_priority: Normal
+---
+
 # QueryUri element
 
 Specifies the URL of the endpoint for the dictionary query service.

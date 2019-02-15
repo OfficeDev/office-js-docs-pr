@@ -45,19 +45,16 @@
 - name: Tutorials
   items:
   - name: Excel add-in tutorial
-    href: tutorials/excel-tutorial.yml
-    displayName: Excel
-  - name: Excel custom functions tutorial
-    href: tutorials/excel-tutorial-create-custom-functions.md
+    href: tutorials/excel-tutorial.md
     displayName: Excel
   - name: Outlook add-in tutorial
     href: /outlook/add-ins/addin-tutorial
     displayName: Outlook
   - name: PowerPoint add-in tutorial
-    href: tutorials/powerpoint-tutorial.yml
+    href: tutorials/powerpoint-tutorial.md
     displayName: PowerPoint
   - name: Word add-in tutorial
-    href: tutorials/word-tutorial.yml
+    href: tutorials/word-tutorial.md
     displayName: Word
 
 - name: Concepts
@@ -130,7 +127,6 @@
         href: design/office-ui-fabric.md
       - name: Get started using Fabric React
         href: design/using-office-ui-fabric-react.md
-
 
   - name: Develop
     items:
@@ -221,19 +217,19 @@
       displayName: Excel
       items:
       - name: Use Angular
-        href: excel/excel-add-ins-get-started-angular.md
+        href: quickstarts/excel-quickstart-angular.md
         displayName: Excel
       - name: Use jQuery
-        href: excel/excel-add-ins-get-started-jquery.md
+        href: quickstarts/excel-quickstart-jquery.md
         displayName: Excel
       - name: Use React
-        href: excel/excel-add-ins-get-started-react.md
+        href: quickstarts/excel-quickstart-react.md
         displayName: Excel
       - name: Use Vue
-        href: excel/excel-add-ins-get-started-vue.md
+        href: quickstarts/excel-quickstart-vue.md
         displayName: Excel
     - name: Excel add-in tutorial
-      href: tutorials/excel-tutorial.yml
+      href: tutorials/excel-tutorial.md
       displayName: Excel
     - name: Concepts
       displayName: Excel
@@ -262,7 +258,7 @@
           href: excel/custom-functions-overview.md
           displayName: Excel
         - name: Custom functions tutorial
-          href: excel/excel-tutorial-custom-functions.md
+          href: tutorials/excel-tutorial-create-custom-functions.md
           displayName: Excel
         - name: Custom functions runtime
           href: excel/custom-functions-runtime.md
@@ -272,6 +268,15 @@
           displayName: Excel
         - name: Custom functions best practices
           href: excel/custom-functions-best-practices.md
+          displayName: Excel
+        - name: Custom functions authentication
+          href: excel/custom-functions-authentication.md
+          displayName: Excel
+        - name: Custom functions changelog
+          href: excel/custom-functions-changelog.md
+          displayName: Excel
+        - name: Custom functions requirements
+          href: excel/custom-functions-requirements.md
           displayName: Excel
       - name: Data validation
         href: excel/excel-add-ins-data-validation.md
@@ -291,8 +296,11 @@
       - name: PivotTables
         href: excel/excel-add-ins-pivottables.md
         displayName: Excel
-      - name: Ranges
+      - name: Ranges (fundamental)
         href: excel/excel-add-ins-ranges.md
+        displayName: Excel
+      - name: Ranges (advanced)
+        href: excel/excel-add-ins-ranges-advanced.md
         displayName: Excel
       - name: Tables
         href: excel/excel-add-ins-tables.md
@@ -315,10 +323,10 @@
     displayName: Word
     items:
     - name: Build your first Word add-in
-      href: word/word-add-ins.md
+      href: quickstarts/word-quickstart.md
       displayName: Word
     - name: Word add-in tutorial
-      href: tutorials/word-tutorial.yml
+      href: tutorials/word-tutorial.md
       displayName: Word
     - name: Create better add-ins for Word with Office Open XML
       href: word/create-better-add-ins-for-word-with-office-open-xml.md
@@ -354,10 +362,10 @@
     displayName: PowerPoint
     items:
     - name: Build your first PowerPoint add-in
-      href: powerpoint/powerpoint-add-ins-get-started.md
+      href: quickstarts/powerpoint-quickstart.md
       displayName: PowerPoint
     - name: PowerPoint add-in tutorial
-      href: tutorials/powerpoint-tutorial.yml
+      href: tutorials/powerpoint-tutorial.md
       displayName: PowerPoint
     - name: Use document themes in your PowerPoint add-ins
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
@@ -371,7 +379,7 @@
     displayName: OneNote
     items:
     - name: Build your first OneNote add-in
-      href: onenote/onenote-add-ins-getting-started.md
+      href: quickstarts/onenote-quickstart.md
       displayName: OneNote
     - name: Work with OneNote page content
       href: onenote/onenote-add-ins-page-content.md
@@ -388,7 +396,7 @@
     displayName: Project
     items:
     - name: Build your first Project add-in
-      href: project/project-add-ins-get-started.md
+      href: quickstarts/project-quickstart.md
       displayName: Project
     - name: Create a Project add-in that uses REST with an on-premises OData service
       href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
@@ -475,7 +483,7 @@
         href: reference/requirement-sets/dialog-api-requirement-sets.md
       - name: Identity API requirement sets
         href: reference/requirement-sets/identity-api-requirement-sets.md
-      - name: Office common API requirement sets
+      - name: Office Common API requirement sets
         href: reference/requirement-sets/office-add-in-requirement-sets.md
     - name: Excel requirement sets
       href: reference/requirement-sets/excel-api-requirement-sets.md

@@ -1,7 +1,13 @@
+---
+title: Office.context.mailbox.diagnostics - requirement set 1.6
+description: ''
+ms.date: 10/11/2018
+localization_priority: Normal
+---
 
 # diagnostics
 
-### [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md). diagnostics
+### [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).diagnostics
 
 Provides diagnostic information to an Outlook add-in.
 

@@ -1,3 +1,9 @@
+---
+title: Office.context.mailbox.item - preview requirement set
+description: ''
+ms.date: 01/30/2019
+localization_priority: Normal
+---
 
 # item
 
@@ -25,6 +31,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [dateTimeCreated](#datetimecreated-date) | Member |
 | [dateTimeModified](#datetimemodified-date) | Member |
 | [end](#end-datetimejavascriptapioutlookofficetime) | Member |
+| [enhancedLocation](#enhancedlocation-enhancedlocationjavascriptapioutlookofficeenhancedlocation) | Member |
 | [from](#from-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsfromjavascriptapioutlookofficefrom) | Member |
 | [internetHeaders](#internetheaders-internetheadersjavascriptapioutlookofficeinternetheaders) | Member |
 | [internetMessageId](#internetmessageid-string) | Member |
@@ -64,7 +71,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [getSharedPropertiesAsync](#getsharedpropertiesasyncoptions-callback) | Method |
 | [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | Method |
 | [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | Method |
-| [removeHandlerAsync](#removehandlerasynceventtype-handler-options-callback) | Method |
+| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | Method |
 | [saveAsync](#saveasyncoptions-callback) | Method |
 | [setSelectedDataAsync](#setselecteddataasyncdata-options-callback) | Method |
 
@@ -327,6 +334,55 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 });
 ```
 
+#### enhancedLocation :[EnhancedLocation](/javascript/api/outlook/office.enhancedlocation)
+
+Gets or sets the locations of an appointment.
+
+##### Read mode
+
+The `enhancedLocation` property returns an [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) object that allows you to get the set of locations (each represented by a [LocationDetails](/javascript/api/outlook/office.locationdetails) object) associated with the appointment.
+
+##### Compose mode
+
+The `enhancedLocation` property returns an [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) object that provides methods to get, remove, or add locations on an appointment.
+
+##### Type:
+
+*   [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation)
+
+##### Requirements
+
+|Requirement|Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Preview|
+|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Compose or read|
+
+##### Example
+
+The following example gets the current locations associated with the appointment.
+
+```javascript
+Office.context.mailbox.item.enhancedLocation.getAsync(callbackFunction);
+
+function callbackFunction(asyncResult) {
+  asyncResult.value.forEach(function (place) {
+    console.log("Display name: " + place.displayName);
+    console.log("Type: " + place.locationIdentifier.type);
+    if (place.locationIdentifier.type == Office.MailboxEnums.LocationType.Room) {
+      console.log("Email address: " + place.emailAddress);
+    }
+  });
+}
+
+// Sample output:
+// Display name: Conf Room 14
+// Type: room
+// Email address: cr14@contoso.com
+// Display name: Paris
+// Type: custom
+```
+
 #### from :[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)|[From](/javascript/api/outlook/office.from)
 
 Gets the email address of the sender of a message.
@@ -341,7 +397,7 @@ The `from` and [`sender`](#sender-emailaddressdetailsjavascriptapioutlookofficee
 The `from` property returns an `EmailAddressDetails` object.
 
 ```javascript
-var subject = Office.context.mailbox.item.from;
+var from = Office.context.mailbox.item.from;
 ```
 
 ##### Compose mode
@@ -414,7 +470,7 @@ The `itemClass` property specifies the message class of the selected item. The f
 
 |Type|Description|item class|
 |---|---|---|
-|Appointment items|These are calendar items of the item class `IPM.Appointment` or `IPM.Appointment.Occurence`.|`IPM.Appointment`<br />`IPM.Appointment.Occurence`|
+|Appointment items|These are calendar items of the item class `IPM.Appointment` or `IPM.Appointment.Occurrence`.|`IPM.Appointment`<br />`IPM.Appointment.Occurrence`|
 |Message items|These include email messages that have the default message class `IPM.Note`, and meeting requests, responses, and cancellations, that use `IPM.Schedule.Meeting` as the base message class.|`IPM.Note`<br />`IPM.Schedule.Meeting.Request`<br />`IPM.Schedule.Meeting.Neg`<br />`IPM.Schedule.Meeting.Pos`<br />`IPM.Schedule.Meeting.Tent`<br />`IPM.Schedule.Meeting.Canceled`|
 
 You can create custom message classes that extends a default message class, for example, a custom appointment message class `IPM.Appointment.Contoso`.
@@ -1364,7 +1420,7 @@ The `getAttachmentContentAsync` method gets the attachment with the specified id
 
 |Name|Type|Attributes|Description|
 |---|---|---|---|
-|`attachmentId`|String||The identifier of the attachment you want to get. The maximum length of the string is 100 characters.|
+|`attachmentId`|String||The identifier of the attachment you want to get.|
 |`options`|Object|&lt;optional&gt;|An object literal that contains one or more of the following properties.|
 |`options.asyncContext`|Object|&lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
 |`callback`|function|&lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object.|
@@ -1958,7 +2014,7 @@ The `removeAttachmentAsync` method removes the attachment with the specified ide
 
 |Name|Type|Attributes|Description|
 |---|---|---|---|
-|`attachmentId`|String||The identifier of the attachment to remove. The maximum length of the string is 100 characters.|
+|`attachmentId`|String||The identifier of the attachment to remove.|
 |`options`|Object|&lt;optional&gt;|An object literal that contains one or more of the following properties.|
 |`options.asyncContext`|Object|&lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
 |`callback`|function|&lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object. <br/>If removing the attachment fails, the `asyncResult.error` property will contain an error code with the reason for the failure.|
@@ -1992,9 +2048,9 @@ Office.context.mailbox.item.removeAttachmentAsync(
 );
 ```
 
-####  removeHandlerAsync(eventType, handler, [options], [callback])
+####  removeHandlerAsync(eventType, [options], [callback])
 
-Removes an event handler for a supported event.
+Removes the event handlers for a supported event type.
 
 Currently the supported event types are `Office.EventType.AttachmentsChanged`, `Office.EventType.AppointmentTimeChanged`, `Office.EventType.RecipientsChanged`, and `Office.EventType.RecurrenceChanged`.
 
@@ -2003,7 +2059,6 @@ Currently the supported event types are `Office.EventType.AttachmentsChanged`, `
 | Name | Type | Attributes | Description |
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || The event that should revoke the handler. |
-| `handler` | Function || The function to handle the event. The function must accept a single parameter, which is an object literal. The `type` property on the parameter will match the `eventType` parameter passed to `removeHandlerAsync`. |
 | `options` | Object | &lt;optional&gt; | An object literal that contains one or more of the following properties. |
 | `options.asyncContext` | Object | &lt;optional&gt; | Developers can provide any object they wish to access in the callback method. |
 | `callback` | function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.|

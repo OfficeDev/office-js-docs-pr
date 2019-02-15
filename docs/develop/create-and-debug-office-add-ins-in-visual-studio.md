@@ -2,6 +2,7 @@
 title: Create and debug Office Add-ins in Visual Studio
 description: 'Use Visual Studio to create and debug Office Add-ins on the Office desktop client for Windows'
 ms.date: 11/02/2018
+localization_priority: Priority
 ---
 
 # Create and debug Office Add-ins in Visual Studio
@@ -10,9 +11,9 @@ This article describes how to use Visual Studio 2017 to create an Office Add-in 
 
 > [!NOTE]
 > Visual Studio does not support creating Office Add-ins for OneNote or Project, but you can use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) to create these types of add-ins.
-> - To get started with an add-in for OneNote, see [Build your first OneNote add-in](../onenote/onenote-add-ins-getting-started.md).
+> - To get started with an add-in for OneNote, see [Build your first OneNote add-in](../quickstarts/onenote-quickstart.md).
 > 
-> - To get started with an add-in for Project, see [Build your first Project add-in](../project/project-add-ins-get-started.md).
+> - To get started with an add-in for Project, see [Build your first Project add-in](../quickstarts/project-quickstart.md).
 
 ## Prerequisites
 
@@ -181,7 +182,7 @@ When Visual Studio builds the project it performs the following tasks:
     
 Next, Visual Studio does the following:
 
-1. Modifies the [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation?view=office-js) element of the XML manifest file by replacing the `~remoteAppUrl` token with the fully qualified address of the start page (for example, `https://localhost:44302/Home.html`).
+1. Modifies the [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation) element of the XML manifest file by replacing the `~remoteAppUrl` token with the fully qualified address of the start page (for example, `https://localhost:44302/Home.html`).
     
 2. Starts the web application project in IIS Express.
     

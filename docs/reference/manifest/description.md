@@ -1,3 +1,10 @@
+---
+title: Description element in the manifest file
+description: ''
+ms.date: 10/09/2018
+localization_priority: Normal
+---
+
 # Description element
 
 Specifies the description of your Office Add-in as a string no longer than 250 characters.

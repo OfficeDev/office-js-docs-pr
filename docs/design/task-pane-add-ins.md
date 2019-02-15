@@ -2,6 +2,7 @@
 title: Task panes in Office Add-ins
 description: Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source.
 ms.date: 12/04/2017
+localization_priority: Priority
 ---
 
 

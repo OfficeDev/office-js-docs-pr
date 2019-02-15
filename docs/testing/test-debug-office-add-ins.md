@@ -2,6 +2,7 @@
 title: Test and debug Office Add-ins
 description: 
 ms.date: 11/24/2017 
+localization_priority: Priority
 ---
 
 # Test and debug Office Add-ins

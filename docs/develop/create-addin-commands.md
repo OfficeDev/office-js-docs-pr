@@ -2,13 +2,14 @@
 title: Create add-in commands in your manifest for Excel, Word, and PowerPoint
 description: Use VersionOverrides in your manifest to define add-in commands for Excel, Word, and PowerPoint. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
 ms.date: 12/04/2017
+localization_priority: Priority
 ---
 
 
 # Create add-in commands in your manifest for Excel, Word, and PowerPoint
 
 
-Use **[VersionOverrides](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/versionoverrides?view=office-js)** in your manifest to define add-in commands for Excel, Word, and PowerPoint. Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. You can use add-in commands to:
+Use **[VersionOverrides](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/versionoverrides)** in your manifest to define add-in commands for Excel, Word, and PowerPoint. Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. You can use add-in commands to:
 - Create UI elements or entry points that make your add-in's functionality easier to use.  
   
 - Add buttons or a drop-down list of buttons to the ribbon.    
@@ -71,7 +72,7 @@ The **VersionOverrides** element is the root element that contains the definitio
 
 |**Attribute**|**Description**|
 |:-----|:-----|
-|**xmlns** <br/> | Required. The schema location, which must be "http://schemas.microsoft.com/office/taskpaneappversionoverrides". <br/> |
+|**xmlns** <br/> | Required. The schema location, which must be `http://schemas.microsoft.com/office/taskpaneappversionoverrides`. <br/> |
 |**xsi:type** <br/> |Required. The schema version. The version described in this article is "VersionOverridesV1_0".  <br/> |
    
 The following table identifies the child elements of **VersionOverrides**.
@@ -139,7 +140,7 @@ The following is an example of **Hosts**, **Host**, and **DesktopFormFactor** el
 
 ## Step 5: Add the FunctionFile element
 
-The **FunctionFile** element specifies a file that contains JavaScript code to run when an add-in command uses the **ExecuteFunction** action (see [Button controls](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control?view=office-js#Button-control) for a description). The **FunctionFile** element's **resid** attribute is set to a HTML file that includes all the JavaScript files your add-in commands require. You can't link directly to a JavaScript file. You can only link to an HTML file. The file name is specified as a **Url** element in the **Resources** element.
+The **FunctionFile** element specifies a file that contains JavaScript code to run when an add-in command uses the **ExecuteFunction** action (see [Button controls](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control#Button-control) for a description). The **FunctionFile** element's **resid** attribute is set to a HTML file that includes all the JavaScript files your add-in commands require. You can't link directly to a JavaScript file. You can only link to an HTML file. The file name is specified as a **Url** element in the **Resources** element.
         
 The following is an example of the **FunctionFile** element.
   
@@ -157,7 +158,7 @@ The following is an example of the **FunctionFile** element.
 > [!IMPORTANT]
 > Make sure your JavaScript code calls  `Office.initialize`. 
    
-The JavaScript in the HTML file referenced by the **FunctionFile** element must call `Office.initialize`. The **FunctionName** element (see [Button controls](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control?view=office-js#Button-control) for a description) uses the functions in **FunctionFile**.
+The JavaScript in the HTML file referenced by the **FunctionFile** element must call `Office.initialize`. The **FunctionName** element (see [Button controls](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control#Button-control) for a description) uses the functions in **FunctionFile**.
      
 The following code shows how to implement the function used by **FunctionName**.
 
@@ -243,13 +244,13 @@ The following examples show how to use the **ExtensionPoint** element with **Pri
 |**Element**|**Description**|
 |:-----|:-----|
 |**CustomTab** <br/> |Required if you want to add a custom tab to the ribbon (using **PrimaryCommandSurface**). If you use the **CustomTab** element, you can't use the **OfficeTab** element. The **id** attribute is required. <br/> |
-|**OfficeTab** <br/> |Required if you want to extend a default Office ribbon tab (using **PrimaryCommandSurface**). If you use the **OfficeTab** element, you can't use the **CustomTab** element. <br/> For more tab values to use with the **id** attribute, see [Tab values for default Office ribbon tabs](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/officetab?view=office-js).  <br/> |
+|**OfficeTab** <br/> |Required if you want to extend a default Office ribbon tab (using **PrimaryCommandSurface**). If you use the **OfficeTab** element, you can't use the **CustomTab** element. <br/> For more tab values to use with the **id** attribute, see [Tab values for default Office ribbon tabs](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/officetab).  <br/> |
 |**OfficeMenu** <br/> | Required if you're adding add-in commands to a default context menu (using **ContextMenu**). The **id** attribute must be set to: <br/> **ContextMenuText** for Excel or Word. Displays the item on the context menu when text is selected and then the user right-clicks on the selected text. <br/> **ContextMenuCell** for Excel. Displays the item on the context menu when the user right-clicks on a cell on the spreadsheet. <br/> |
 |**Group** <br/> |A group of user interface extension points on a tab. A group can have up to six controls. The **id** attribute is required. It's a string with a maximum of 125 characters. <br/> |
 |**Label** <br/> |Required. The label of the group. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element. <br/> |
 |**Icon** <br/> |Required. Specifies the group's icon to be used on small form factor devices, or when too many buttons are displayed. The **resid** attribute must be set to the value of the **id** attribute of an **Image** element. The **Image** element is a child element of the **Images** element, which is a child element of the **Resources** element. The **size** attribute gives the size, in pixels, of the image. Three image sizes are required: 16, 32, and 80. Five optional sizes are also supported: 20, 24, 40, 48, and 64. <br/> |
 |**Tooltip** <br/> |Optional. The tooltip of the group. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element. <br/> |
-|**Control** <br/> |Each group requires at least one control. A **Control** element can be either a **Button** or a **Menu**. Use **Menu** to specify a drop-down list of button controls. Currently, only buttons and menus are supported. See the  [Button controls](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control?view=office-js#Button-control) and [Menu controls](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control?view=office-js#menu-dropdown-button-controls) sections for more information. <br/>**Note:** To make troubleshooting easier, we recommend that you add a **Control** element and the related **Resources** child elements one at a time.          |
+|**Control** <br/> |Each group requires at least one control. A **Control** element can be either a **Button** or a **Menu**. Use **Menu** to specify a drop-down list of button controls. Currently, only buttons and menus are supported. See the  [Button controls](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control#Button-control) and [Menu controls](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control#menu-dropdown-button-controls) sections for more information. <br/>**Note:** To make troubleshooting easier, we recommend that you add a **Control** element and the related **Resources** child elements one at a time.          |
    
 
 ### Button controls
@@ -377,7 +378,7 @@ The following example shows how to define a menu item with two submenu items. Th
 |**Tooltip** <br/> |Optional. The tooltip for the menu. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element. <br/> |
 |**SuperTip** <br/> | Required. The supertip for the menu, which is defined by the following: <br/> **Title** <br/>  Required. The text of the supertip. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element. <br/> **Description** <br/>  Required. The description for the supertip. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element. <br/> |
 |**Icon** <br/> | Required. Contains the **Image** elements for the menu. Image files must be .png format. <br/> **Image** <br/>  An image for the menu. The **resid** attribute must be set to the value of the **id** attribute of an **Image** element. The **Image** element is a child element of the **Images** element, which is a child element of the **Resources** element. The **size** attribute indicates the size in pixels of the image. Three image sizes, in pixels, are required: 16, 32, and 80. Five optional sizes, in pixels, are also supported: 20, 24, 40, 48, and 64. <br/> |
-|**Items** <br/> |Required. Contains the **Item** elements for each submenu item. Each **Item** element contains the same child elements as [Button controls](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control?view=office-js#Button-control).  <br/> |
+|**Items** <br/> |Required. Contains the **Item** elements for each submenu item. Each **Item** element contains the same child elements as [Button controls](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control#Button-control).  <br/> |
    
 ## Step 7: Add the Resources element
 

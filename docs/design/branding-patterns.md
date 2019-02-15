@@ -1,3 +1,10 @@
+---
+title: Branding patterns design guidelines for Office Add-ins
+description: ''
+ms.date: 06/26/2018
+localization_priority: Normal
+---
+
 # Branding patterns
 
 These patterns provide brand visibilty and context to your add-in users. 

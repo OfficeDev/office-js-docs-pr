@@ -2,6 +2,7 @@
 title: Create an ASP.NET Office Add-in that uses single sign-on
 description: 
 ms.date: 01/23/2018
+localization_priority: Priority
 ---
 
 # Create an ASP.NET Office Add-in that uses single sign-on (preview)
@@ -15,9 +16,9 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Prerequisites
 
-* The latest available version of Visual Studio 2017 Preview.
+* The latest available version of Visual Studio 2017.
 
-* Office 2016, Version 1708, build 8424.nnnn or later (the Office 365 subscription version, sometimes called “Click to Run”). You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1).
+* Office 365 (subscription version, also called “Click to Run”). Latest monthly version and build from the Insiders channel. You need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). Please note that when a build graduates to the production semi-annual channel, support for preview features, including SSO, is turned off for that build.
 
 ## Set up the starter project
 
@@ -33,7 +34,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     > [!NOTE]
     > You will get an error about the Identity namespace. This is a side effect of a configuration issue that you will fix with the next step. The important thing is that the packages are installed.
 
-1. Currently, the version of the MSAL library (Microsoft.Identity.Client) that you need for SSO (version `1.1.4-preview0002`) is not part of the standard nuget catalog, so it is not listed in the package.config, and it must be installed separately. 
+1. Currently, the version of the MSAL library (Microsoft.Identity.Client) that you need for SSO (version `1.1.4-preview0002`) is not part of the standard nuget catalog, so it is not listed in the package.config, and it must be installed separately.
 
    > 1. On the **Tools** menu, navigate to **Nuget Package Manager** > **Package Manager Console**. 
 
@@ -127,7 +128,7 @@ The following instruction are written generically so they can be used in multipl
 
         1. Comment out the `<WebApplicationInfo>` section from the manifest just above the end of `</VersionOverrides>`.
 
-        2. Press F5 to start a debugging session. This will create a copy of the manifest in the following folder (which is easier to access in **File Explorer** than in Visual Studio): `Office-Add-in-ASP.NET-SSO\Complete\Office-Add-in-ASPNET-SSO\bin\Debug\OfficeAppManifests`
+        2. Press **F5** to start a debugging session. This will create a copy of the manifest in the following folder (which is easier to access in **File Explorer** than in Visual Studio): `Office-Add-in-ASP.NET-SSO\Complete\Office-Add-in-ASPNET-SSO\bin\Debug\OfficeAppManifests`
 
         3. In the copy of the manifest, remove the comment syntax around the `<WebApplicationInfo>` section.
 

@@ -1,3 +1,10 @@
+---
+title: Hosts element in the manifest file
+description: ''
+ms.date: 10/09/2018
+localization_priority: Normal
+---
+
 # Hosts element
 
 Specifies the Office client application where the Office Add-in will activate. Contains a collection of **Host** elements and their settings. 
