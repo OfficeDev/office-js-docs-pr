@@ -6,4 +6,4 @@
 - Office 2016 or later
     
     > [!NOTE]
-    > If you don't already have Office, you can [join the Office Developer Porgram](https://developer.microsoft.com/en-us/office/dev-program) to get a license to do your development and experiment with add-ins.
+    > If you don't already have Office, you can [join the Office Developer Program](https://developer.microsoft.com/en-us/office/dev-program) to get a license to do your development and experiment with add-ins.
