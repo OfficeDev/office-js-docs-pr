@@ -184,6 +184,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
+> [!NOTE]
+> A worksheet with a visibility of "[Very Hidden](/javascript/api/excel/excel.sheetvisibility)" cannot be deleted with the `delete` method. If you wish to delete the worksheet anyway, you must first change the visibility.
+
 ## Rename a worksheet
 
 The following code sample changes the name of the active worksheet to **New Name**.
