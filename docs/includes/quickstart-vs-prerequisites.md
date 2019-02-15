@@ -6,4 +6,4 @@
 - Office 2016 or later
     
     > [!NOTE]
-    > If you don't already have Office, you can [register for a free 1-month trial](https://products.office.com/en-US/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735).
+    > If you don't already have Office, you can [join the Office Developer Porgram](https://developer.microsoft.com/en-us/office/dev-program) to get a license to do your development and experiment with add-ins.

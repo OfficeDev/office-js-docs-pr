@@ -1,7 +1,7 @@
 ---
 title: Office namespace - requirement set 1.1
 description: ''
-ms.date: 11/08/2018
+ms.date: 02/15/2019
 localization_priority: Normal
 ---
 
@@ -14,13 +14,13 @@ The Office namespace provides shared interfaces that are used by add-ins in all 
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
 
 ### Namespaces
 
 [context](office.context.md): Provides shared interfaces from the Office Add-ins API's context namespace for use in the Outlook add-in API.
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype): Includes the ItemType, EntityType, AttachmentType, RecipientType, ResponseType, and ItemNotificationMessageType enumerations.
+[MailboxEnums](/javascript/api/outlook_1_1/office.mailboxenums.attachmenttype): Includes the ItemType, EntityType, AttachmentType, RecipientType, ResponseType, and ItemNotificationMessageType enumerations.
 
 ### Members
 
@@ -28,7 +28,7 @@ The Office namespace provides shared interfaces that are used by add-ins in all 
 
 Specifies the result of an asynchronous call.
 
-##### Type:
+##### Type
 
 *   String
 
@@ -44,12 +44,13 @@ Specifies the result of an asynchronous call.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
+
 ####  CoercionType :String
 
 Specifies how to coerce data returned or set by the invoked method.
 
-##### Type:
+##### Type
 
 *   String
 
@@ -65,12 +66,13 @@ Specifies how to coerce data returned or set by the invoked method.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
+
 ####  SourceProperty :String
 
 Specifies the source of the data returned by the invoked method.
 
-##### Type:
+##### Type
 
 *   String
 
@@ -86,4 +88,4 @@ Specifies the source of the data returned by the invoked method.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
