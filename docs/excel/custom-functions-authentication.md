@@ -1,5 +1,5 @@
 ---
-ms.date: 1/29/2019
+ms.date: 01/29/2019
 description: Authenticate users using custom functions in Excel.
 title: Authentication for Custom Functions
 ---

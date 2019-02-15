@@ -1,7 +1,7 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
 description: ''
-ms.date: 1/7/2019
+ms.date: 01/07/2019
 localization_priority: Priority
 ---
 
