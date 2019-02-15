@@ -1,7 +1,7 @@
 ---
 title: Work with worksheets using the Excel JavaScript API
 description: ''
-ms.date: 12/28/2018
+ms.date: 02/15/2018
 localization_priority: Priority
 ---
 
