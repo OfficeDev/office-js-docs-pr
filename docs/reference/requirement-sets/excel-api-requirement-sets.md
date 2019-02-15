@@ -15,7 +15,7 @@ Excel add-ins run across multiple versions of Office, including Office 2016 or l
 > [!NOTE]
 > To use APIs in any of the numbered requirement sets, you should reference the **production** library on the CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
 >
-> For information about using preview APIs, see the [Excel JavaScript preview API set](#excel-javascript-preview-api-set) section within this article.
+> For information about using preview APIs, see the [Excel JavaScript preview APIs](#excel-javascript-preview-apis) section within this article.
 
 |  Requirement set  |  Office 365 for Windows  |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
@@ -39,7 +39,7 @@ For more information about versions, build numbers, and Office Online Server, se
 - [Where you can find the version and build number for an Office 365 client application](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [Office Online Server overview](https://docs.microsoft.com/officeonlineserver/office-online-server-overview)
 
-## Excel JavaScript preview API set
+## Excel JavaScript preview APIs
 
 New Excel JavaScript APIs are first introduced in "preview" and later become part of a specific, numbered requirement set after sufficient testing occurs and user feedback is acquired. The following table lists the APIs currently available in preview. To provide feedback about a preview API, please use the feedback mechanism at the end of the web page where the API is documented.
 
@@ -48,10 +48,10 @@ New Excel JavaScript APIs are first introduced in "preview" and later become par
 >
 > To use preview APIs, you must reference the **beta** library on the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js and you may also need to join the Office Insider program to get a sufficiently recent Office build.
 
-Included in this release are more than 400 new APIs for Excel. The first table provides a concise summary of the APIs, while the subsequent tables gives a detailed list. Please try the new features and share your feedback with us.
+More than 400 new Excel APIs are currently in preview. The first table provides a concise summary of the APIs, while the subsequent table gives a detailed list. Please try the new features and share your feedback with us.
 
-| Feature Area | Description | Relevant Objects/Articles |
-| --- | --- | --- |
+| Feature area | Description | Relevant objects |
+|:--- |:--- |:--- |
 | Slicer | Insert and configure slicers to tables and PivotTables. | [Slicer](/javascript/api/excel/slicer) |
 | Comments | Add, edit, and delete comments. | [Comment](/javascript/api/excel/comment), [CommentCollection](/javascript/api/excel/commentcollection) |
 | Shapes | Insert, position, and format images, geometric shapes and text boxes. | [ShapeCollection](/javascript/api/excel/shapecollection) [Shape](/javascript/api/excel/shape) [GeometricShape](/javascript/api/excel/geometricshape)  [Image](/javascript/api/excel/image) |
@@ -66,7 +66,9 @@ Included in this release are more than 400 new APIs for Excel. The first table p
 | Insert Workbook | Insert one workbook into another.  | [Workbook](/javascript/api/excel/worksheetcollection) |
 | Calculation | Greater control over the Excel calculation engine. | [Application](/javascript/api/excel/application) |
 
-|Class|Fields|Description|
+The following is a complete list of APIs in preview.
+
+| Class | Fields | Description |
 |:---|:---|:---|
 |[Application](/javascript/api/excel/excel.application)|[calculationEngineVersion](/javascript/api/excel/excel.application#calculationengineversion)|Returns a number about the version of Excel Calculation Engine that the workbook was last fully recalculated by. Read-only.|
 ||[calculationState](/javascript/api/excel/excel.application#calculationstate)|Returns a CalculationState that indicates the calculation state of the application. See Excel.CalculationState for details. Read-only.|
@@ -76,7 +78,7 @@ Included in this release are more than 400 new APIs for Excel. The first table p
 ||[clearCriteria()](/javascript/api/excel/excel.autofilter#clearcriteria--)|Clears the criteria if AutoFilter has filters|
 ||[getRange()](/javascript/api/excel/excel.autofilter#getrange--)|Returns the Range object that represents the range to which the AutoFilter applies.|
 ||[getRangeOrNullObject()](/javascript/api/excel/excel.autofilter#getrangeornullobject--)|If there is Range object associated with the AutoFilter, this method returns it.|
-||[criteria](/javascript/api/excel/excel.autofilter#criteria)|Array that holds all filter criterias in an autofiltered range. Read-Only.|
+||[criteria](/javascript/api/excel/excel.autofilter#criteria)|Array that holds all filter criteria in an autofiltered range. Read-Only.|
 ||[enabled](/javascript/api/excel/excel.autofilter#enabled)|Indicates if the AutoFilter is enabled or not. Read-Only.|
 ||[isDataFiltered](/javascript/api/excel/excel.autofilter#isdatafiltered)|Indicates if the AutoFilter has filter criteria. Read-Only.|
 ||[reapply()](/javascript/api/excel/excel.autofilter#reapply--)|Applies the specified Autofilter object currently on the range.|
