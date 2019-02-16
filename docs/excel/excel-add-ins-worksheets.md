@@ -1,7 +1,7 @@
 ---
 title: Work with worksheets using the Excel JavaScript API
 description: ''
-ms.date: 12/28/2018
+ms.date: 02/15/2018
 localization_priority: Priority
 ---
 
@@ -183,6 +183,9 @@ Excel.run(function (context) {
         });
 }).catch(errorHandlerFunction);
 ```
+
+> [!NOTE]
+> A worksheet with a visibility of "[Very Hidden](/javascript/api/excel/excel.sheetvisibility)" cannot be deleted with the `delete` method. If you wish to delete the worksheet anyway, you must first change the visibility.
 
 ## Rename a worksheet
 
