@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API requirement sets
 description: ''
-ms.date: 02/15/2018
+ms.date: 02/15/2019
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -215,8 +215,6 @@ The following is a complete list of APIs in preview.
 ||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.commentreplycollection#load-option-)|Queues up a command to load the specified properties of the object. You must call "context.sync()" before reading the properties.|
 ||[items](/javascript/api/excel/excel.commentreplycollection#items)|Gets the loaded child items in this collection.|
 |[ConditionalFormat](/javascript/api/excel/excel.conditionalformat)|[getRanges()](/javascript/api/excel/excel.conditionalformat#getranges--)|Returns the RangeAreas, comprising one or more rectangular ranges, the conditonal format is applied to. Read-only.|
-|[CustomFunctionEventArgs](/javascript/api/excel/excel.customfunctioneventargs)|[higherTicks](/javascript/api/excel/excel.customfunctioneventargs#higherticks)||
-||[lowerTicks](/javascript/api/excel/excel.customfunctioneventargs#lowerticks)||
 |[DataValidation](/javascript/api/excel/excel.datavalidation)|[getInvalidCells()](/javascript/api/excel/excel.datavalidation#getinvalidcells--)|Returns a RangeAreas, comprising one or more rectangular ranges, with invalid cell values. If all cell values are valid, this function will throw an ItemNotFound error.|
 ||[getInvalidCellsOrNullObject()](/javascript/api/excel/excel.datavalidation#getinvalidcellsornullobject--)|Returns a RangeAreas, comprising one or more rectangular ranges, with invalid cell values. If all cell values are valid, this function will return null.|
 |[FilterCriteria](/javascript/api/excel/excel.filtercriteria)|[subField](/javascript/api/excel/excel.filtercriteria#subfield)|The property used by the filter to do rich filter on richvalues.|
@@ -407,8 +405,7 @@ The following is a complete list of APIs in preview.
 ||[style](/javascript/api/excel/excel.settablecellproperties#style)||
 |[SettableColumnProperties](/javascript/api/excel/excel.settablecolumnproperties)|[columnHidden](/javascript/api/excel/excel.settablecolumnproperties#columnhidden)||
 ||[columnWidth](/javascript/api/excel/excel.settablecolumnproperties#columnwidth)||
-|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|
-||[rowHeight](/javascript/api/excel/excel.settablerowproperties#rowheight)||
+|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[rowHeight](/javascript/api/excel/excel.settablerowproperties#rowheight)||
 ||[rowHidden](/javascript/api/excel/excel.settablerowproperties#rowhidden)||
 |[Setting](/javascript/api/excel/excel.setting)|[](/javascript/api/excel/excel.setting#replacestringdatewithdate)||
 |[Shape](/javascript/api/excel/excel.shape)|[altTextDescription](/javascript/api/excel/excel.shape#alttextdescription)|Returns or sets the alternative descriptive text string for a Shape object when the object is saved to a Web page.|
