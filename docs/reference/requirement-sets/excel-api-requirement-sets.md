@@ -52,19 +52,19 @@ More than 400 new Excel APIs are currently in preview. The first table provides 
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
-| Slicer | Insert and configure slicers to tables and PivotTables. | [Slicer](/javascript/api/excel/slicer) |
-| Comments | Add, edit, and delete comments. | [Comment](/javascript/api/excel/comment), [CommentCollection](/javascript/api/excel/commentcollection) |
-| Shapes | Insert, position, and format images, geometric shapes and text boxes. | [ShapeCollection](/javascript/api/excel/shapecollection) [Shape](/javascript/api/excel/shape) [GeometricShape](/javascript/api/excel/geometricshape)  [Image](/javascript/api/excel/image) |
-| New Charts | Explore our new supported chart types: maps, box and whisker, waterfall, sunburst, pareto. and funnel. | [Chart](/javascript/api/excel/charttype) |
-| Auto Filter | Add filters to ranges. | [AutoFilter](/javascript/api/excel/autofilter) |
-| Areas | Support for discontinuous ranges. | [RangeAreas](/javascript/api/excel/rangeareas) |
-| Special Cells | Get cells containing dates, comments, or formulas within a range. | [Range](/javascript/api/excel/range#getspecialcells-celltype--cellvaluetype-)|
-| Find | Find values or formulas within a range or worksheet. | [Range](/javascript/api/excel/range#find-text--criteria-)[Worksheet](/javascript/api/excel/worksheet#findall-text--criteria-) |
-| Copy Paste | Copy values, formats, and formulas from one range to another. | [Range](/javascript/api/excel/range#copyfrom-sourcerange--copytype--skipblanks--transpose-) |
-| RangeFormat | New capabilities with range formats. | [Range](/javascript/api/excel/rangeformat) |
-| Workbook Save, Close | Save and close workbooks.  | [Workbook](/javascript/api/excel/workbook) |
-| Insert Workbook | Insert one workbook into another.  | [Workbook](/javascript/api/excel/worksheetcollection) |
-| Calculation | Greater control over the Excel calculation engine. | [Application](/javascript/api/excel/application) |
+| Slicer | Insert and configure slicers to tables and PivotTables. | [Slicer](/javascript/api/excel/excel.slicer) |
+| Comments | Add, edit, and delete comments. | [Comment](/javascript/api/excel/excel.comment), [CommentCollection](/javascript/api/excel/excel.commentcollection) |
+| Shapes | Insert, position, and format images, geometric shapes and text boxes. | [ShapeCollection](/javascript/api/excel/excel.shapecollection) [Shape](/javascript/api/excel/excel.shape) [GeometricShape](/javascript/api/excel/excel.geometricshape)  [Image](/javascript/api/excel/excel.image) |
+| New Charts | Explore our new supported chart types: maps, box and whisker, waterfall, sunburst, pareto. and funnel. | [Chart](/javascript/api/excel/excel.charttype) |
+| Auto Filter | Add filters to ranges. | [AutoFilter](/javascript/api/excel/excel.autofilter) |
+| Areas | Support for discontinuous ranges. | [RangeAreas](/javascript/api/excel/excel.rangeareas) |
+| Special Cells | Get cells containing dates, comments, or formulas within a range. | [Range](/javascript/api/excel/excel.range#getspecialcells-celltype--cellvaluetype-)|
+| Find | Find values or formulas within a range or worksheet. | [Range](/javascript/api/excel/excel.range#find-text--criteria-)[Worksheet](/javascript/api/excel/excel.worksheet#findall-text--criteria-) |
+| Copy Paste | Copy values, formats, and formulas from one range to another. | [Range](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) |
+| RangeFormat | New capabilities with range formats. | [Range](/javascript/api/excel/excel.rangeformat) |
+| Workbook Save, Close | Save and close workbooks.  | [Workbook](/javascript/api/excel/excel.workbook) |
+| Insert Workbook | Insert one workbook into another.  | [Workbook](/javascript/api/excel/excel.worksheetcollection) |
+| Calculation | Greater control over the Excel calculation engine. | [Application](/javascript/api/excel/excel.application) |
 
 The following is a complete list of APIs in preview.
 
