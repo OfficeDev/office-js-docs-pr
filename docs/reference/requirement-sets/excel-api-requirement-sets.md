@@ -62,7 +62,7 @@ More than 400 new Excel APIs are currently in preview. The first table provides 
 | Find | Find values or formulas within a range or worksheet. | [Range](/javascript/api/excel/excel.range#find-text--criteria-)[Worksheet](/javascript/api/excel/excel.worksheet#findall-text--criteria-) |
 | Copy Paste | Copy values, formats, and formulas from one range to another. | [Range](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) |
 | RangeFormat | New capabilities with range formats. | [Range](/javascript/api/excel/excel.rangeformat) |
-| Workbook Save, Close | Save and close workbooks.  | [Workbook](/javascript/api/excel/excel.workbook) |
+| Workbook Save and Close | Save and close workbooks.  | [Workbook](/javascript/api/excel/excel.workbook) |
 | Insert Workbook | Insert one workbook into another.  | [Workbook](/javascript/api/excel/excel.worksheetcollection) |
 | Calculation | Greater control over the Excel calculation engine. | [Application](/javascript/api/excel/excel.application) |
 
