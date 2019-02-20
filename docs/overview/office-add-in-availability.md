@@ -699,7 +699,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - TextCoercion</td>
   </tr>
 </table>
-*&ast; - * Added with post-release updates.
+*&ast; - Added with post-release updates.*
 
 <br/>
 
