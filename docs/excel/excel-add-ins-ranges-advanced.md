@@ -60,14 +60,14 @@ Your add-in will have to format the ranges to display the dates in a more human-
 ## Work with multiple ranges simultaneously (preview)
 
 > [!NOTE]
-> The `RangeAreas` object is currently available only in public preview. To use this feature, you must use the preview version of the Office JavaScript library from the [Office.js CDN](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file] (https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and Intellisense and is also found at the CDN. For more information on our upcoming APIs, please visit [Excel JavaScript API requirement sets](/reference/requirement-sets/excel-api-requirement-sets?branch=AlexJ-ReqSets#excel-javascript-preview-apis)
+> The `RangeAreas` object is currently available only in public preview. To use this feature, you must use the preview version of the Office JavaScript library from the [Office.js CDN](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file] (https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and Intellisense and is also found at the CDN. For more information on our upcoming APIs, please visit [Excel JavaScript API requirement sets](../reference/requirement-sets/excel-api-requirement-sets.md#excel-javascript-preview-apis)
 
 The `RangeAreas` object lets your add-in perform operations on multiple ranges at once. These ranges may be contiguous, but do not have to be. `RangeAreas` are further discussed in the article [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
 
 ## Find special cells within a range (preview)
 
 > [!NOTE]
-> The `getSpecialCells` and `getSpecialCellsOrNullObject` methods are currently available only in public preview. To use this feature, you must use the preview version of the Office JavaScript library from the [Office.js CDN](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file] (https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and Intellisense and is also found at the CDN. For more information on our upcoming APIs, please visit [Excel JavaScript API requirement sets](/reference/requirement-sets/excel-api-requirement-sets?branch=AlexJ-ReqSets#excel-javascript-preview-apis)
+> The `getSpecialCells` and `getSpecialCellsOrNullObject` methods are currently available only in public preview. To use this feature, you must use the preview version of the Office JavaScript library from the [Office.js CDN](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file] (https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and Intellisense and is also found at the CDN. For more information on our upcoming APIs, please visit [Excel JavaScript API requirement sets](/reference/requirement-sets/excel-api-requirement-sets#excel-javascript-preview-apis)
 
 The `Range.getSpecialCells()` and `Range.getSpecialCellsOrNullObject()` methods find ranges based on the characteristics of their cells and the types of values of their cells. Both of these methods return `RangeAreas` objects. Here are the signatures of the methods from the TypeScript data types file:
 
@@ -176,7 +176,7 @@ Excel.run(function (context) {
 ## Copy and paste (preview)
 
 > [!NOTE]
-> The `Range.copyFrom` function is currently available only in public preview. To use this feature, you must use the preview version of the Office JavaScript library from the [Office.js CDN](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file] (https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and Intellisense and is also found at the CDN. For more information on our upcoming APIs, please visit [Excel JavaScript API requirement sets](/reference/requirement-sets/excel-api-requirement-sets?branch=AlexJ-ReqSets#excel-javascript-preview-apis)
+> The `Range.copyFrom` function is currently available only in public preview. To use this feature, you must use the preview version of the Office JavaScript library from the [Office.js CDN](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file] (https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and Intellisense and is also found at the CDN. For more information on our upcoming APIs, please visit [Excel JavaScript API requirement sets](/reference/requirement-sets/excel-api-requirement-sets#excel-javascript-preview-apis)
 
 Range’s `copyFrom` function replicates the copy-and-paste behavior of the Excel UI. The range object that `copyFrom` is called on is the destination.
 The source to be copied is passed as a range or a string address representing a range.
@@ -240,7 +240,7 @@ Excel.run(function (context) {
 ## Remove duplicates (preview)
 
 > [!NOTE]
-> The Range object's `removeDuplicates` function is currently available only in public preview. To use this feature, you must use the preview version of the Office JavaScript library from the [Office.js CDN](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file] (https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and Intellisense and is also found at the CDN. For more information on our upcoming APIs, please visit [Excel JavaScript API requirement sets](/reference/requirement-sets/excel-api-requirement-sets?branch=AlexJ-ReqSets#excel-javascript-preview-apis)
+> The Range object's `removeDuplicates` function is currently available only in public preview. To use this feature, you must use the preview version of the Office JavaScript library from the [Office.js CDN](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file] (https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and Intellisense and is also found at the CDN. For more information on our upcoming APIs, please visit [Excel JavaScript API requirement sets](../reference/requirement-sets/excel-api-requirement-sets.md#excel-javascript-preview-apis)
 
 The Range object's `removeDuplicates` function removes rows with duplicate entries in the specified columns. The function goes through each row in the range from the lowest-valued index to the highest-valued index in the range (from top to bottom). A row is deleted if a value in its specified column or columns appeared earlier in the range. Rows in the range below the deleted row are shifted up. `removeDuplicates` does not affect the position of cells outside of the range.
 
