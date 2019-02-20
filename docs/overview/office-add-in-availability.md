@@ -75,8 +75,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   <tr>
     <td>Office 2016 for Windows</td>
     <td>- TaskPane<br>
-        - Content<br>
-        - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
+        - Content</td>
     <td>- <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
     <td>- BindingEvents<br>
@@ -151,8 +150,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   <tr>
     <td>Office 2016 for Mac</td>
     <td>- TaskPane<br>
-        - Content<br>
-        - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
+        - Content</td>
     <td>- <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
     <td>- BindingEvents<br>
@@ -229,8 +227,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   <tr>
     <td>Office 2013 for Windows</td>
     <td> - Mail Read<br>
-      - Mail Compose<br>
-      - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
+      - Mail Compose</td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
@@ -379,10 +376,9 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office 2016 for Windows</td>
-    <td> - TaskPane<br>
-         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
+    <td> - TaskPane</td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
-        - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
+         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
          - CustomXmlParts<br>
@@ -461,8 +457,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office 2016 for Mac</td>
-    <td> - TaskPane<br>
-         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
+    <td> - TaskPane</td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
     <td> - BindingEvents<br>
@@ -562,8 +557,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   <tr>
     <td>Office 2016 for Windows</td>
     <td> - Content<br>
-         - TaskPane<br>
-         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
+         - TaskPane</td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
     <td> - ActiveView<br>
          - CompressedFile<br>
@@ -609,8 +603,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   <tr>
     <td>Office 2016 for Mac</td>
     <td> - Content<br>
-         - TaskPane<br>
-         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
+         - TaskPane/td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
     <td> - ActiveView<br>
          - CompressedFile<br>
