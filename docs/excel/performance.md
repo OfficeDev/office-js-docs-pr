@@ -124,7 +124,7 @@ Excel.run(async function(ctx) {
 ### Suspend screen updating
 
 > [!NOTE]
-> The `suspendScreenUpdatingUntilNextSync` method described in this article requires the preview version of the Office JavaScript library from the [Office.js CDN](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file] (https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and Intellisense and is also found at the CDN. For more information on our upcoming APIs, please visit [Excel JavaScript API requirement sets](/reference/requirement-sets/excel-api-requirement-sets?branch=AlexJ-ReqSets#excel-javascript-preview-apis).
+> The `suspendScreenUpdatingUntilNextSync` method described in this article is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 Excel displays changes your add-in makes approximately as they happen in the code. For large, iterative data sets, you may not need to see this progress on the screen in real-time. `Application.suspendScreenUpdatingUntilNextSync()` pauses visual updates to Excel until the add-in calls `context.sync()`, or until `Excel.run` ends (implicitly calling `context.sync`). Be aware, Excel will not show any signs of activity until the next sync. Your add-in should either give users guidance to prepare them for this delay or provide a status bar to demonstrate activity.
 
