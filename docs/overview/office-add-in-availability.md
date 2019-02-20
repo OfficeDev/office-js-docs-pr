@@ -52,7 +52,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 365 for Windows</td>
+    <td>Office 365</td>
     <td>- TaskPane<br>
         - Content<br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
@@ -169,35 +169,6 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
-        - Selection<br>
-        - Settings<br>
-        - TableBindings<br>
-        - TableCoercion<br>
-        - TextBindings<br>
-        - TextCoercion</td>
-  </tr>
-  <tr>
-    <td>Office 365 for Mac</td>
-    <td>- TaskPane<br>
-        - Content<br>
-        - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
-    <td>- <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
-        - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
-        - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
-        - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
-        - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
-        - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
-        - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
-        - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
-        - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
-    <td>- BindingEvents<br>
-        - CompressedFile<br>
-        - DocumentEvents<br>
-        - File<br>
-        - ImageCoercion<br>
-        - MatrixBindings<br>
-        - MatrixCoercion<br>
-        - PdfFile<br>
         - Selection<br>
         - Settings<br>
         - TableBindings<br>
@@ -412,7 +383,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - TextFile</td>
   </tr>
   <tr>
-    <td>Office 365 for Windows</td>
+    <td>Office 365</td>
     <td> - TaskPane<br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -545,35 +516,6 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
     </td>
   </tr>
   <tr>
-    <td>Office 365 for Mac</td>
-    <td> - TaskPane<br>
-         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
-    <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
-        - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
-        - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
-        - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
-</td>
-    <td> - BindingEvents<br>
-         - CompressedFile<br>
-         - CustomXmlParts<br>
-         - DocumentEvents<br>
-         - File<br>
-         - HtmlCoercion<br>
-         - ImageCoercion<br>
-         - MatrixBindings<br>
-         - MatrixCoercion<br>
-         - OoxmlCoercion<br>
-         - PdfFile<br>
-         - Selection<br>
-         - Settings<br>
-         - TableBindings<br>
-         - TableCoercion<br>
-         - TextBindings<br>
-         - TextCoercion<br>
-         - TextFile
-    </td>
-  </tr>
-  <tr>
     <td>Office 2016 for Mac</td>
     <td> - TaskPane<br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
@@ -644,6 +586,22 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
   <tr>
     <td>Office Online</td>
+    <td> - Content<br>
+         - TaskPane<br>
+         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
+    <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td> - ActiveView<br>
+         - CompressedFile<br>
+         - DocumentEvents<br>
+         - File<br>
+         - ImageCoercion<br>
+         - PdfFile<br>
+         - Selection<br>
+         - Settings<br>
+         - TextCoercion</td>
+  </tr>>
+  <tr>
+    <td>Office 365</td>
     <td> - Content<br>
          - TaskPane<br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></td>
