@@ -1,13 +1,13 @@
 ---
 title: Work with ranges using the Excel JavaScript API (fundamental)
 description: ''
-ms.date: 12/28/2018
+ms.date: 02/20/2019
 localization_priority: Priority
 ---
 
 # Work with ranges using the Excel JavaScript API
 
-This article provides code samples that show how to perform common tasks with ranges using the Excel JavaScript API. For the complete list of properties and methods that the **Range** object supports, see [Range Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range).
+This article provides code samples that show how to perform common tasks with ranges using the Excel JavaScript API. For the complete list of properties and methods that the **Range** object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
 
 > [!NOTE]
 > For code samples that show how to perform more advanced tasks with ranges, see [Work with ranges using the Excel JavaScript API (advanced)](excel-add-ins-ranges-advanced.md).
@@ -541,8 +541,7 @@ Ranges can have formats applied to individual cells based on conditions. For mor
 ## Find a cell using string matching (preview)
 
 > [!NOTE]
-> The Range object's `find` function is currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-> If you are using TypeScript or your code editor uses TypeScript type definition files for IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+> The Range object's `find` function is currently available only in public preview. To use this feature, you must use the preview version of the Office JavaScript library from the [Office.js CDN](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file] (https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and Intellisense and is also found at the CDN. For more information on our upcoming APIs, please visit [Excel JavaScript API requirement sets](/reference/requirement-sets/excel-api-requirement-sets?branch=AlexJ-ReqSets#excel-javascript-preview-apis).
 
 The `Range` object has a `find` method to search for a specified string within the range. It returns the range of the first cell with matching text. The following code sample finds the first cell with a value equal to the string **Food** and logs its address to the console. Note that `find` throws an `ItemNotFound` error if the specified string doesn't exist in the range. If you expect that the specified string may not exist in the range, use the [findOrNullObject](excel-add-ins-advanced-concepts.md#42ornullobject-methods) method instead, so your code gracefully handles that scenario.
 
