@@ -75,9 +75,17 @@ To debug using the command line, follow the same step sequences for platform and
 
 ### Debug
 
-- If debugging for desktop, use `npm start desktop -- --app excel`. You can also use `npm stop desktop -- --app excel` to stop debugging. 
+- If debugging for desktop, use `npm start desktop -- --app excel`. You can also use `npm stop desktop -- --app excel` to stop debugging.
 
 - If debugging online, use `npm start web`. You will have to manually open a new workbook using Excel Online and insert your add-in (for help, see the note below).  Select F12 to use your browser's debugging tools.
 
 > [!NOTE]
 > To insert your add-in in Excel Online,  Select **Insert | Office Add-ins**. This will open a pop-up window. Select **Manage My Add-ins | Upload Add-in** in the new pop-up window. Browse for the manifest file of your add-in and select Upload. 
+
+## See also
+
+* [Custom functions metadata](custom-functions-json.md)
+* [Runtime for Excel custom functions](custom-functions-runtime.md)
+* [Custom functions best practices](custom-functions-best-practices.md)
+* [Custom functions changelog](custom-functions-changelog.md)
+* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)

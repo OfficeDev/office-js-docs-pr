@@ -458,4 +458,4 @@ See known issues on our [Excel Custom Functions GitHub repo](https://github.com/
 * [Custom functions best practices](custom-functions-best-practices.md)
 * [Custom functions changelog](custom-functions-changelog.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
-
+* [Custom functions debugging](custom-functions-debugging.md)
