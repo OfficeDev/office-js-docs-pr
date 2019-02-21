@@ -24,7 +24,7 @@ Function names shouldn't be named the same as:
 
 ## Naming conflicts
 
-If a function name in your add-in matches a name in an existing and installed add-in, you'll see an error #REF! appear in your workbook.
+If your function name is the same as a function name in an add-in that already exists, the **#REF!** error will appear in your workbook.
 
 To fix a name conflict, change the name in your add-in and try the function again. If you're testing your add-in in different environments, either uninstall the add-in with the conflicting name or use a different namespace to differentiate your function (such as NAMESPACE_NAMEOFFUNCTION).
 
