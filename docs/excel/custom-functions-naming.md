@@ -26,7 +26,7 @@ Function names shouldn't be named the same as:
 
 If your function name is the same as a function name in an add-in that already exists, the **#REF!** error will appear in your workbook.
 
-To fix a name conflict, change the name in your add-in and try the function again. If you're testing your add-in in different environments, either uninstall the add-in with the conflicting name or use a different namespace to differentiate your function (such as NAMESPACE_NAMEOFFUNCTION).
+To fix a name conflict, change the name in your add-in and try the function again. You can also uninstall the add-in with the conflicting name. Or, if you're testing your add-in in different environments, try using a different namespace to differentiate your function (such as NAMESPACE_NAMEOFFUNCTION).
 
 Also consider how you'd like people to use the functions within your add-in. In many cases, it makes sense to add multiple arguments to a function rather than create multiple functions with the same or similar names.
 
