@@ -16,7 +16,7 @@ Function names and function IDs share some common requirements:
 
 Most function names for built-in Excel functions appear in uppercase letters (such as `SUM`). As a best practice, we recommend to use uppercase for your custom function names so they appear consistent for users.
 
-Function names should not be named the same as:
+Function names shouldn't be named the same as:
 
 - Any cells between A1 to XFD1048576 or any cells between R1C1 to R1048576C16384.
 
