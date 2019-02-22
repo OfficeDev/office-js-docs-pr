@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API performance optimization
 description: 'Optimize performance using Excel JavaScript API'
-ms.date: 12/06/2018
+ms.date: 02/20/2019
 localization_priority: Priority
 ---
 
@@ -101,7 +101,7 @@ Excel.run(async function(ctx) {
     // Range value should be [1, 2, 3] now
     console.log(rangeToGet.values);
 
-    // Suspending recalc
+    // Suspending recalculation
     app.suspendApiCalculationUntilNextSync();
     rangeToSet = sheet.getRange("A1:B1");
     rangeToSet.values = [[10, 20]];
@@ -111,7 +111,7 @@ Excel.run(async function(ctx) {
     await ctx.sync();
     // Range value should be [10, 20, 3] when we load the property, because calculation is suspended at that point
     console.log(rangeToGet.values);
-    // Calculation mode should still be "Automatic" even with supend recalc
+    // Calculation mode should still be "Automatic" even with suspend recalculation
     console.log(app.calculationMode);
 
     rangeToGet.load("values");
@@ -124,7 +124,7 @@ Excel.run(async function(ctx) {
 ### Suspend screen updating
 
 > [!NOTE]
-> The `suspendScreenUpdatingUntilNextSync()` method described in this article requires the beta version of the Office JavaScript library from [Office.js CDN](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file] (https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) is also found at the CDN. For more information on our upcoming APIs, please visit the [open spec](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec) on GitHub.
+> The `suspendScreenUpdatingUntilNextSync` method described in this article is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 Excel displays changes your add-in makes approximately as they happen in the code. For large, iterative data sets, you may not need to see this progress on the screen in real-time. `Application.suspendScreenUpdatingUntilNextSync()` pauses visual updates to Excel until the add-in calls `context.sync()`, or until `Excel.run` ends (implicitly calling `context.sync`). Be aware, Excel will not show any signs of activity until the next sync. Your add-in should either give users guidance to prepare them for this delay or provide a status bar to demonstrate activity.
 
@@ -133,7 +133,7 @@ Excel displays changes your add-in makes approximately as they happen in the cod
 Performance of an add-in may be improved by disabling events. 
 A code sample showing how to enable and disable events is in the [Work with Events](excel-add-ins-events.md#enable-and-disable-events) article.
 
-## Update all cells in a range 
+## Update all cells in a range
 
 When you need to update all cells in a range with the same value or property, it can be slow to do this via a 2-dimensional array that repeatedly specifies the same value, since that approach requires Excel to iterate over all of the cells in the range to set each one separately. Excel has a more efficient way to update all the cells in a range with the same value or property.
 
@@ -178,7 +178,7 @@ Excel.run(async (ctx) => {
 
 The JavaScript layer creates proxy objects for your add-in to interact with the Excel workbook and underlying ranges. These objects persist in memory until `context.sync()` is called. Large batch operations may generate a lot of proxy objects that are only needed once by the add-in and can be released from memory before the batch executes.
 
-The [Range.untrack()](/javascript/api/excel/excel.range#untrack--) method releases an Excel Range object from memory. Calling this method after your add-in is done with the range should yield a noticeable performance benefit when using large numbers of Range objects. 
+The [Range.untrack()](/javascript/api/excel/excel.range#untrack--) method releases an Excel Range object from memory. Calling this method after your add-in is done with the range should yield a noticeable performance benefit when using large numbers of Range objects.
 
 > [!NOTE]
 > `Range.untrack()` is a shortcut for [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove-object-). Any proxy object can be untracked by removing it from the tracked objects list in the context. Typically, Range objects are the only Excel objects used in sufficient quantity to justify untracking.
