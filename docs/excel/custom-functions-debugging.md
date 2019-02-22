@@ -62,7 +62,7 @@ To debug using the command line, follow the same step sequences for platform and
 
 ### Watch and build your project
 
-- `npm run watch`: builds for development and automatically rebuilds when a source file is saved.
+- `npm run watch`: builds for development and automatically rebuilds when a source file is saved
 
 - `npm run build-dev`: builds for development once.
 
