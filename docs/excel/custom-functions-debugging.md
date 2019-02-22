@@ -79,7 +79,7 @@ To debug using the command line, follow the same step sequences for platform and
 - If debugging online, use `npm start web`. You will have to manually open a new workbook using Excel Online and insert your add-in (for help, see the note below).  Select F12 to use your browser's debugging tools.
 
 > [!NOTE]
-> To insert your add-in in Excel Online,  Select **Insert | Office Add-ins**. This will open a pop-up window. Select **Manage My Add-ins | Upload Add-in** in the new pop-up window. Browse for the manifest file of your add-in and select Upload.
+> To insert your add-in in Excel Online,  select **Insert | Office Add-ins**. This opens a pop-up window where you can select **Manage My Add-ins | Upload Add-in**. Browse for the manifest file of your add-in and select **Upload**.
 
 ## See also
 
