@@ -70,7 +70,7 @@ To debug using the command line, follow the same step sequences for platform and
 
 ### Start the dev-server
 
-- `npm run dev-server`: runs the web server used for development.
+- `npm run dev-server`: runs the web server used for development
 
 ### Debug
 
