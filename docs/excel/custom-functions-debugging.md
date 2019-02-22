@@ -31,7 +31,7 @@ Debugging for custom functions can be accomplished by multiple means, depending 
 ### Mac and Chrome
 
 1. Open your custom functions root project folder in VS Code.
-2. You may be prompted to install recommended extensions if you have based this project off of the latest yo office generator project. You should select install all, which will install [Debugger for Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge) and [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) extensions for VS Code. If you are not prompted to install these, install these extensions to VS Code manually.
+2. You may be prompted to install recommended extensions if you've based this project off of the latest yo office generator project. Select **install all**, which will install [Debugger for Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge) and [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) extensions for VS Code. If you're not prompted to install these, install these extensions to VS Code manually.
 3. Select **Terminal | Run Task** and type or select Dev Server.
 4. Switch to Debug View selecting **View | Debug** or by entering **Ctrl+Shift+D**.
 5. From the Debug options, choose Office Online (Chrome).
