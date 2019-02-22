@@ -40,7 +40,7 @@
       "feedback_github_repo": "OfficeDev/office-js-docs-pr",
       "feedback_product_url": "https://officespdev.uservoice.com/",
       "extendBreadcrumb": true,
-      "ms.suite": "office365",
+      "ms.suite": "office",
       "ms.author": "o365devx",
       "author": "o365devx",
       "ms.topic": "conceptual",
