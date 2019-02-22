@@ -66,7 +66,7 @@ To debug using the command line, follow the same step sequences for platform and
 
 - `npm run build-dev`: builds for development once.
 
-- `npm run build`: builds for production.
+- `npm run build`: builds for production
 
 ### Start the dev-server
 
