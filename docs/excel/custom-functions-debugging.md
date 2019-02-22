@@ -76,7 +76,7 @@ To debug using the command line, follow the same step sequences for platform and
 
 - If debugging for desktop, use `npm start desktop -- --app excel`. You can also use `npm stop desktop -- --app excel` to stop debugging.
 
-- If debugging online, use `npm start web`. You will have to manually open a new workbook using Excel Online and insert your add-in (for help, see the note below).  Select F12 to use your browser's debugging tools.
+- If debugging online, use `npm start web`. You'll need to manually open a new workbook using Excel Online and insert your add-in (for help, see the following note).  Select **F12** to use your browser's debugging tools.
 
 > [!NOTE]
 > To insert your add-in in Excel Online,  select **Insert | Office Add-ins**. This opens a pop-up window where you can select **Manage My Add-ins | Upload Add-in**. Browse for the manifest file of your add-in and select **Upload**.
