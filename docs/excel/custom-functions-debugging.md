@@ -6,7 +6,7 @@ localization_priority: Normal
 ---
 # Custom functions debugging (preview)
 
-Debugging for custom functions can be accomplished by multiple means, depending on what platform you are using. Methods differ between [Office Online for Windows](#windows-10-and-edge), [Office Online for Mac](#mac-and-chrone), Office Desktop for Windows, and Office Desktop for Mac. You can also issue debugging commands through [the command line directly](#using-the-command-line).
+Debugging for custom functions can be accomplished by multiple means, depending on what platform you're using. Methods differ between [Office Online for Windows](#windows-10-and-microsoft-edge), [Office Online for Mac](#mac-and-chrome), Office Desktop for Windows, and Office Desktop for Mac. You can also issue debugging commands through [the command line directly](#using-the-command-line).
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
