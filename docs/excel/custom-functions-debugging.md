@@ -50,6 +50,7 @@ Debugging for custom functions can be accomplished by multiple means, depending 
 ### For Windows Or Mac
 
 1. Open your custom functions root project folder in VS Code.
+2. Select **Terminal | Run Task** and type or select Watch.
 3. Select **Terminal | Run Task** and type or select Dev Server.
 4. Switch to Debug View selecting **View | Debug** or by entering **Ctrl+Shift+D**.
 5. From the Debug options, choose Office Desktop.
