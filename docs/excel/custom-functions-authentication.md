@@ -1,5 +1,5 @@
 ---
-ms.date: 01/29/2019
+ms.date: 02/22/2019
 description: Authenticate users using custom functions in Excel.
 title: Authentication for Custom Functions
 ---
@@ -10,9 +10,9 @@ In some scenarios your custom function will need to authenticate the user in ord
   
 ## AsyncStorage object
 
-The custom functions runtime doesn't have a `localStorage` object available on the global window, where you might typically store data. Instead, you should share data between custom functions and task panes, by using [OfficeRuntime.AsyncStorage](https://docs.microsoft.com/javascript/api/office-runtime/officeruntime.asyncstorage) to set and get data. 
+The custom functions runtime doesn't have a `localStorage` object available on the global window, where you might typically store data. Instead, you should share data between custom functions and task panes, by using [OfficeRuntime.AsyncStorage](https://docs.microsoft.com/javascript/api/office-runtime/officeruntime.asyncstorage) to set and get data.
 
-Additionally, there is a benefit to using `AsyncStorage`; it uses a secure sandbox environment so that your data cannot be accessed by other add-ins.  
+Additionally, there is a benefit to using `AsyncStorage`; it uses a secure sandbox environment so that your data cannot be accessed by other add-ins.
 
 ### Suggested usage
 
@@ -38,6 +38,37 @@ The following diagram outlines this basic process. Note that the dotted line ind
 5. Your add-in's task pane accesses the token from `AsyncStorage`.
 
 ![Diagram of custom functions, OfficeRuntime, and task panes working together.](../images/Authdiagram.png "Authentication diagram.")
+
+## Storing the token
+
+The following examples are from the [Using AsyncStorage in custom functions](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) code sample. Refer to this code sample for a complete example of sharing data between custom functions and the task pane.
+
+If the custom function authenticates, then it receives the access token and will need to store it in AsyncStorage. The following code sample shows how to call the `AsyncStorage.setItem` method to store a value. The `StoreValue` function is a custom function that for example purposes stores a value from the user. You can modify this to store any token value you need.
+
+```javascript
+function StoreValue(key, value) {
+  return OfficeRuntime.AsyncStorage.setItem(key, value).then(function (result) {
+      return "Success: Item with key '" + key + "' saved to AsyncStorage.";
+  }, function (error) {
+      return "Error: Unable to save item with key '" + key + "' to AsyncStorage. " + error;
+  });
+}
+```
+
+When the task pane needs access, it can retrieve the access token from AsyncStorage. The following code sample shows how to use the `AsyncStorage.getItem` method to retrieve the token.
+
+```javascript
+function ReceiveTokenFromCustomFunction() {
+   var key = "token";
+   var tokenSendStatus = document.getElementById('tokenSendStatus');
+   OfficeRuntime.AsyncStorage.getItem(key).then(function (result) {
+      tokenSendStatus.value = "Success: Item with key '" + key + "' read from AsyncStorage.";
+      document.getElementById('tokenTextBox2').value = result;
+   }, function (error) {
+      tokenSendStatus.value = "Error: Unable to read item with key '" + key + "' from AsyncStorage. " + error;
+   });
+}
+```
 
 ## General guidance
 
