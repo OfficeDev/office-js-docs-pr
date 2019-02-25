@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins on iPad and Mac for testing
 description: ''
-ms.date: 2/25/2019
+ms.date: 02/25/2019
 localization_priority: Priority
 ---
 
