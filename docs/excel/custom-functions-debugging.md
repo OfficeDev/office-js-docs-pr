@@ -10,7 +10,7 @@ Debugging for custom functions can be accomplished by multiple means, depending 
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-## Office Online
+## Debugging custom functions in Office Online
 ### Windows 10 and Microsoft Edge
 
 1. Open your custom functions root project folder in VS Code.
