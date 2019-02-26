@@ -26,9 +26,9 @@
     - name: Use Vue
       href: quickstarts/excel-quickstart-vue.md
       displayName: Excel
-  - name: Create an add-in with a custom function
-    href: quickstarts/excel-custom-functions.quickstart.md
-    displayName: Excel
+    - name: Build a custom function 
+      href: quickstarts/excel-custom-functions-quickstart.md
+      displayName: Excel
   - name: Create Word add-in
     href: quickstarts/word-quickstart.md
     displayName: Word
