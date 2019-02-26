@@ -39,7 +39,7 @@ To report feedback to the Excel Custom Functions team about this method of troub
 
 ## Associating function names with JSON metadata
 
-As described in the [custom functions overview](custom-functions-overview.md) article, a custom functions project must include both a JSON metadata file and a script (either JavaScript or TypeScript) file to form a complete function. For a function to work properly, you'll need to bind the name of the function in the script file to the id listed in the JSON file. This process is called association. Make a note to include associations at the end of your JavaScript code files; otherwise, your functions will not work.
+As described in the [custom functions overview](custom-functions-overview.md) article, a custom functions project must include both a JSON metadata file and a script (either JavaScript or TypeScript) file to form a complete function. For a function to work properly, you need to associate the id with the JavaScript implementation. Make sure there is an association, otherwise the function will not be called.
 
 The following code sample shows how to do this association. The sample defines the custom function `add` and associates it with the object in the JSON metadata file where the value of the `id` property is **ADD**.
 
@@ -48,14 +48,12 @@ function add(first, second){
   return first + second;
 }
 
-CustomFunctions.associate("ADD", add); 
+CustomFunctions.associate("ADD", add);
 ```
 
 Keep in mind the following best practices when creating custom functions in your JavaScript file and specifying corresponding information in the JSON metadata file.
 
 * Only use uppercase letters for a function's `name` and `id` in the JSON metadata file. Do not use a mix of cases or only lowercase letters. If you do, you may end up with two values that only differ by case which will cause unintentional overwriting of your functions. For example, a function object with an `id` value of **add** could be overwritten by declaration later in the file of function object with an `id` value of **ADD**. Additionally, the `name` property defines the function name that end users will see in Excel. Using uppercase letters for the name of each custom function provides a consistent experience in Excel, where all built-in function names are uppercase.
-
-* However, it is not necessary to capitalize the function's `name` when associating. For example, `CustomFunctions.associate("add", add)` is equivalent to `CustomFunctions.associate("ADD", add)`.
 
 * In the JSON metadata file, ensure that the value of each `id` property contains only alphanumeric characters and periods.
 
