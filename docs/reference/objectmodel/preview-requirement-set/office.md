@@ -1,7 +1,7 @@
 ---
 title: Office namespace - preview requirement set
 description: ''
-ms.date: 02/15/2019
+ms.date: 02/26/2019
 localization_priority: Normal
 ---
 
@@ -95,6 +95,7 @@ Specifies the event associated with an event handler.
 |---|---|---|---|
 |`AppointmentTimeChanged`| String | The date or time of the selected appointment or series has changed. | 1.7 |
 |`AttachmentsChanged`| String | An attachment has been added to or removed from the item. | Preview |
+|`EnhancedLocationsChanged`| String | The location of the selected appointment has changed. | Preview |
 |`ItemChanged`| String | A different Outlook item is selected for viewing while the task pane is pinned. | 1.5 |
 |`OfficeThemeChanged`| String | The Office theme on the mailbox has changed. | Preview |
 |`RecipientsChanged`| String | The recipient list of the selected item or appointment location has changed. | 1.7 |

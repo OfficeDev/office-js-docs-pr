@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: ''
-ms.date: 01/30/2019
+ms.date: 02/26/2019
 localization_priority: Priority
 ---
 
@@ -37,7 +37,7 @@ The following features are in preview.
 - [Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus) - Added a new enum that specifies whether an attachment was added to or removed from an item.
 - [Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) - Added a new bit flag enum that specifies the delegate permissions.
 - [Office.MailboxEnums.LocationType](/javascript/api/outlook/office.mailboxenums.locationtype) - Added a new enum that specifies an appointment location's type.
-- [Office.EventType](/javascript/api/office/office.eventtype) - Modified to support AttachmentsChanged and OfficeThemeChanged events through addition of `AttachmentsChanged` and `OfficeThemeChanged` entries respectively.
+- [Office.EventType](/javascript/api/office/office.eventtype) - Modified to support AttachmentsChanged, EnhancedLocationsChanged, and OfficeThemeChanged events through addition of `AttachmentsChanged`, `EnhancedLocationsChanged`, and `OfficeThemeChanged` entries respectively.
 - [SupportsSharedFolders manifest element](../../manifest/supportssharedfolders.md) - Added a child element to the [DesktopFormFactor](../../manifest/desktopformfactor.md) manifest element. It defines whether the add-in is available in delegate scenarios.
 
 ## See also
