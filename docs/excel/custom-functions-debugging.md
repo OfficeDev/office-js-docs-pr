@@ -6,11 +6,12 @@ localization_priority: Normal
 ---
 # Custom functions debugging (preview)
 
-Debugging for custom functions can be accomplished by multiple means, depending on what platform you're using. Methods differ between [Office Online for Windows](#windows-10-visual-studio-and-microsoft-edge), [Office Online for Mac](#mac-and-chrome-debugger), [Office Desktop for Windows](#for-windows), and [Office Desktop for Mac](#for-mac). You can also issue debugging commands through [the command line directly](#using-the-command-line).
+Debugging for custom functions can be accomplished by multiple means, depending on what platform you're using. Methods differ between [Office Online for Windows](#windows-10-visual-studio-and-microsoft-edge), [Office Online for Mac](#mac-and-chrome-debugger), [Office Desktop for Windows](#for-windows-and-visual-studio), and [Office Desktop for Mac](#for-mac). You can also issue debugging commands through [the command line directly](#using-the-command-line).
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## Debugging custom functions in Office Online
+
 ### Windows 10, Visual Studio, and Microsoft Edge
 
 1. Open your custom functions root project folder in [Visual Studio Code (VS Code)](https://code.visualstudio.com/).
@@ -18,7 +19,7 @@ Debugging for custom functions can be accomplished by multiple means, depending 
 3. Select **Terminal | Run Task** and type or select **Dev Server**.
 4. Select **View | Debug** or enter **Ctrl+Shift+D** to switch to Debug View.
 5. From the Debug options, choose Office Online (Microsoft Edge).
-6. Open Excel Online using the Microsoft Edge broswer, open Excel Online, and create a new workbook.
+6. Open Excel Online using the Microsoft Edge browser, open Excel Online, and create a new workbook.
 7. Copy the URL for this new workbook.
 8. In VS Code, select **F5** to begin debugging. A prompt will appear, which asks for the URL of your document.
 9. Paste in the URL for your workbook.
@@ -39,7 +40,7 @@ Debugging for custom functions can be accomplished by multiple means, depending 
 
 ## Office Desktop
 
-### For Windows
+### For Windows and Visual Studio
 
 1. Open your custom functions root project folder in VS Code.
 2. Select **Terminal | Run Task** and type or select Watch.
