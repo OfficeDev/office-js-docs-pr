@@ -13,19 +13,3 @@ OneNote product link
 Project product link
 
 PowerPoint product link
-
-![test-img-1](../images/about-addins-addincommands.png)
-
-![test-img-2](../images/moniker-selector-2.png)
-
-![test-img-3](images/about-addins-addincommands.png)
-
-![test-img-4](images/moniker-selector-2.png)
-
-![test-img-5](/images/about-addins-addincommands.png)
-
-![test-img-6](/images/moniker-selector-2.png)
-
-![test-img-7](~/images/about-addins-addincommands.png)
-
-![test-img-8](~/images/moniker-selector-2.png)
