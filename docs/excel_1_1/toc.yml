@@ -1,6 +1,8 @@
 items:
 - name: DEMO
   href: demo.md
+- name: API Ref landing page
+  href: api-ref.md
 - name: Common
   href: ../toc.yml
 - name: API reference
