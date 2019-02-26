@@ -1,11 +1,9 @@
 ---
 title: Work with Charts using the Excel JavaScript API
 description: ''
-ms.date: 12/04/2017
+ms.date: 02/25/2019
 localization_priority: Priority
 ---
-
-
 
 # Work with Charts using the Excel JavaScript API
 
@@ -64,7 +62,7 @@ Excel.run(function (context) {
 
 ## Set chart title
 
-The following code sample sets the title of the first chart in the worksheet to **Sales Data by Year**. 
+The following code sample sets the title of the first chart in the worksheet to **Sales Data by Year**.
 
 ```js
 Excel.run(function (context) {
@@ -184,6 +182,21 @@ Excel.run(function (context) {
 **Chart with linear trendline**
 
 ![Chart with linear trendline in Excel](../images/excel-charts-trendline-linear.png)
+
+## Export a chart as an image
+
+Charts can be rendered as images. `Chart.getImage` returns the chart as a base64-encoded string representing the chart as a PNG image. The following code shows how to get the image string and log it to the console.
+
+```js
+Excel.run(function (ctx) {
+    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
+    var imageAsString = chart.getImage();
+        return context.sync().then(function () {
+            console.log(chartString.value);
+            // Instead of logging, your add-in could, for example, save the image as a file or insert it in HTML.
+    });
+}).catch(errorHandlerFunction);
+```
 
 ## See also
 
