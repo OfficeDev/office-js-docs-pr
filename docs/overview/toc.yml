@@ -1,0 +1,7 @@
+items:
+- name: About Office Add-ins
+  href: office-add-ins.md
+  displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
+- name: Host and platform availability
+  href: office-add-in-availability.md
+  displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
