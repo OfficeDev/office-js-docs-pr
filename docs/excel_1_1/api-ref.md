@@ -10,7 +10,7 @@ The JavaScript API for Office enables you to create web applications that intera
 
 ## Select an Office host and requirement set
 
-Once you've determined the maximum requirement set that your add-in should support, you can filter this API reference documentation such that it only shows the APIs that are available in that requirement set and earlier.
+Once you've determined the maximum requirement set that your add-in will support, you can filter this API reference documentation such that it only shows the APIs that are available in that requirement set and earlier.
 
 To view API reference documentation for APIs available in a specific requirement set or earlier, select the Office host and requirement set from the list that appears above the table of contents and filter box on the left side of the page.
 
