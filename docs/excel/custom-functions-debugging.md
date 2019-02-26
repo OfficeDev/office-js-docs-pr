@@ -6,24 +6,24 @@ localization_priority: Normal
 ---
 # Custom functions debugging (preview)
 
-Debugging for custom functions can be accomplished by multiple means, depending on what platform you're using. Methods differ between [Office Online for Windows](#windows-10-and-microsoft-edge), [Office Online for Mac](#mac-and-chrome-debugger), [Office Desktop for Windows](#for-windows), and [Office Desktop for Mac](#for-mac). You can also issue debugging commands through [the command line directly](#using-the-command-line).
+Debugging for custom functions can be accomplished by multiple means, depending on what platform you're using. Methods differ between [Office Online for Windows](#windows-10-visual-studio-and-microsoft-edge), [Office Online for Mac](#mac-and-chrome-debugger), [Office Desktop for Windows](#for-windows), and [Office Desktop for Mac](#for-mac). You can also issue debugging commands through [the command line directly](#using-the-command-line).
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## Debugging custom functions in Office Online
-### Windows 10 and Microsoft Edge
+### Windows 10, Visual Studio, and Microsoft Edge
 
-1. Open your custom functions root project folder in VS Code.
-2. You may be prompted to install recommended extensions if you've based this project off of the latest yo office generator project. Select **install all**, which will install [Debugger for Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge) and [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) extensions for VS Code. If you're not prompted to install these, install these extensions to VS Code manually.
+1. Open your custom functions root project folder in [Visual Studio Code (VS Code)](https://code.visualstudio.com/).
+2. A notification may prompt you to install recommended extensions. Select **install all**, which will install [Debugger for Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge) and [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) extensions for VS Code. If you're not prompted to install these, install these extensions to VS Code manually.
 3. Select **Terminal | Run Task** and type or select **Dev Server**.
-4. Switch to Debug View selecting **View | Debug** or by entering **Ctrl+Shift+D**.
-5. From the Debug options, choose Office Online (Edge).
-6. Open Excel Online using Edge and create a new workbook.
+4. Select **View | Debug** or enter **Ctrl+Shift+D** to switch to Debug View.
+5. From the Debug options, choose Office Online (Microsoft Edge).
+6. Open Excel Online using the Microsoft Edge broswer, open Excel Online, and create a new workbook.
 7. Copy the URL for this new workbook.
 8. In VS Code, select **F5** to begin debugging. A prompt will appear, which asks for the URL of your document.
 9. Paste in the URL for your workbook.
 10. At this point, debugging is active. You can set breakpoints within VS Code.
-11. To see your breakpoints applied, you'll go back to the Edge window with your open workbook and load your add-in. Select **Insert | Office Add-ins**. This opens a pop-up window where you can select **Manage My Add-ins | Upload Add-in**. Browse for the manifest file of your add-in and select **Upload**.
+11. To see your breakpoints applied, you'll go back to the Microsoft Edge window with your open workbook and load your add-in. Select **Insert | Office Add-ins**. This opens a pop-up window where you can select **Manage My Add-ins | Upload Add-in**. Browse for the manifest file of your add-in and select **Upload**.
 
 ### Mac and Chrome Debugger
 
@@ -55,7 +55,7 @@ At this time, desktop debugging for the Mac is not available. Instead, refer to 
 
 ## Using the command line
 
-To debug using the command line, follow the same step sequences for platform and product, but replace VS Code terminal and debugging commands with statements below, depending on your needs:
+To debug using the command line, follow the same step sequences for platform and product, but replace VS Code terminal and debugging commands with the following statements, depending on your needs. 
 
 ### Watch and build your project
 
