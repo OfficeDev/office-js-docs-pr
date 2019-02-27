@@ -79,7 +79,7 @@ In this tutorial, you will:
 Run the following command.
 
 ```
-npm run start
+npm start
 ```
 
 This command starts the web server, and sideloads your custom function add-in into Excel for Windows.
@@ -92,7 +92,7 @@ This command starts the web server, and sideloads your custom function add-in in
 Run the following command.
 
 ```
-npm run start-web
+npm start web
 ```
 
 This command starts the web server. Use the following steps to sideload your add-in.
