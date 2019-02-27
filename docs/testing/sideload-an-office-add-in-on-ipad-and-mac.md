@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins on iPad and Mac for testing
 description: ''
-ms.date: 12/04/2017
+ms.date: 02/25/2019
 localization_priority: Priority
 ---
 
@@ -36,16 +36,10 @@ To see how your add-in will run in Office for iOS, you can sideload your add-in'
 1. Use a sync cable to connect your iPad to your computer. If you're connecting the iPad to your computer for the first time, you'll be prompted with  **Trust This Computer?**. Choose **Trust** to continue.
 
 2. In iTunes, choose the  **iPad** icon below the menu bar.
-    
-    ![The iPad icon in iTunes](../images/ipad.png)
 
 3. Under  **Settings** on the left side of iTunes, choose **Apps**.
-    
-    ![iTunes Apps Settings](../images/file-settings-apps.png)
 
 4. On the right side of iTunes, scroll down to  **File Sharing**, and then choose  **Excel** or **Word** in the **Add-ins** column.
-    
-    ![iTunes File Sharing](../images/file-sharing.png)
 
 5. At the bottom of the  **Excel** or **Word Documents** column, choose **Add File**, and then select the manifest .xml file of the add-in you want to sideload. 
     
@@ -92,4 +86,3 @@ To see how your add-in will run in Office for iOS, you can sideload your add-in'
 ## See also
 
 - [Debug Office Add-ins on iPad and Mac](debug-office-add-ins-on-ipad-and-mac.md)
-    
