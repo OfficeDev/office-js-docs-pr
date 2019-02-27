@@ -14,5 +14,4 @@ The JavaScript API for Office enables you to create web applications that intera
 - [PowerPoint](/javascript/api/api-ref?view=powerpoint-js-1.1)
 - [Visio](/javascript/api/api-ref?view=visio-js-1.1)
 - [Word](/javascript/api/api-ref?view=word-js-preview)
-- [Common API](/javascript/api/api-ref?view=common-js)
 
