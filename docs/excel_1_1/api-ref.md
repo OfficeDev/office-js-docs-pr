@@ -17,6 +17,6 @@ The JavaScript API for Office enables you to create web applications that intera
 - [Common API](/javascript/api/api-ref?view=common-js)
 
 > [!TIP]
-> To view reference documentation for all APIs that are available in a specific requirement set (and earlier), select the Office host and requirement set from the list that appears above the table of contents and filter box on the left side of the page.
+> To view reference documentation only for APIs that are available in a specific requirement set (and earlier), select the Office host and requirement set from the list that appears above the table of contents and filter box on the left side of the page.
 > 
-> ![Office JavaScript API reference documentation with product Excel JavaScript API and version 1.4 selected about the table of contents](api-ref-moniker-selector-1.png)
+> ![Office JavaScript API reference documentation with product Excel JavaScript API and version 1.4 selected about the table of contents](images/api-ref-moniker-selector-1.png)
