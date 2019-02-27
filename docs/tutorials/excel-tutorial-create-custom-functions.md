@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial (preview)
 description: In this tutorial, you’ll create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 01/08/2019
+ms.date: 02/27/2019
 ms.prod: excel
 ms.topic: tutorial
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
@@ -112,7 +112,7 @@ This command starts the web server. Use the following steps to sideload your add
     
 ## Try out a prebuilt custom function
 
-The custom functions project that you created alrady has two prebuilt custom functions named ADD and INCREMENT. The code for these prebuilt functions is in the  **src/customfunctions.js** file. The **./manifest.xml** file specifies that all custom functions belong to the `CONTOSO` namespace. You'll use the CONTOSO namespace to access the custom functions in Excel.
+The custom functions project that you created alrady has two prebuilt custom functions named ADD and INCREMENT. The code for these prebuilt functions is in the  **src/functions/functions.js** file. The **./manifest.xml** file specifies that all custom functions belong to the `CONTOSO` namespace. You'll use the CONTOSO namespace to access the custom functions in Excel.
 
 Next you'll try out the `ADD` custom function by completing the following steps:
 
@@ -126,9 +126,9 @@ The `ADD` custom function computes the sum of the two numbers that you provided 
 
 Integrating data from the Web is a great way to extend Excel through custom functions. Next you’ll create a custom function named `stockPrice` that gets a stock quote from a Web API and returns the result to the cell of a worksheet. You’ll use the IEX Trading API, which is free and does not require authentication.
 
-1. In the **stock-ticker** project, find the file **src/customfunctions.js** and open it in your code editor.
+1. In the **stock-ticker** project, find the file **src/functions/functions.js** and open it in your code editor.
 
-2. In **customfunctions.js**, locate the `increment` function and add the following code immediately after that function.
+2. In **functions.js**, locate the `increment` function and add the following code immediately after that function.
 
     ```js
     function stockPrice(ticker) {
@@ -149,7 +149,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
 > In the January Insiders 1901 Build, there is a bug preventing fetch calls from executing which will result in #VALUE!.
 > To workaround this please use the [XMLHTTPRequest API](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-runtime#requesting-external-data) to make the web request.
 
-3. In **customfunctions.js**, locate the line `CustomFunctions.associate("INCREMENT", increment);`. Add the following line of code immediately after that line, and save the file.
+3. In **functions.js**, locate the line `CustomFunctions.associate("INCREMENT", increment);`. Add the following line of code immediately after that line, and save the file.
 
     ```js
     CustomFunctions.associate("STOCKPRICE", stockprice);
@@ -160,7 +160,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
     Before Excel can use your custom function, you need to describe it using metadata. You need to define the `id` used in the `associate` method previously, along with some other metadata.
 
 
-4. Open the **config/customfunctions.json** file. Add the following JSON object to the 'functions' array and save the file.
+4. Open the **src/functions/functions.json** file. Add the following JSON object to the 'functions' array and save the file.
 
     ```JSON
     {
@@ -219,7 +219,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
 The `stockPrice` function returns the price of a stock at a specific moment in time, but stock prices are always changing. 
 Next you’ll create a custom function named `stockPriceStream` that gets the price of a stock every 1000 milliseconds.
 
-1. In the **stock-ticker** project, add the following code to **src/customfunctions.js** and save the file.
+1. In the **stock-ticker** project, add the following code to **src/functions/functions.js** and save the file.
 
     ```js
     function stockPriceStream(ticker, handler) {
@@ -260,7 +260,7 @@ Next you’ll create a custom function named `stockPriceStream` that gets the pr
     
     Before Excel can use your custom function, you need to describe it using metadata.
     
-2. In the **stock-ticker** project add the following object to the `functions` array within the **config/customfunctions.json** file and save the file.
+2. In the **stock-ticker** project add the following object to the `functions` array within the **src/functions/functions.json** file and save the file.
     
     ```json
     { 
@@ -320,7 +320,7 @@ Next you’ll create a custom function named `stockPriceStream` that gets the pr
 
 ## Next steps
 
-Congratulations! You've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams real-time data from the web. To learn more about custom functions in Excel, continue to the following article:
+Congratulations! You've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams real-time data from the web. You can also try out debugging this function using [the custom function debugging instructions](../excel/custom-functions-debugging.md). To learn more about custom functions in Excel, continue to the following article:
 
 > [!div class="nextstepaction"]
 > [Create custom functions in Excel](../excel/custom-functions-overview.md)
