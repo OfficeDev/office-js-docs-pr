@@ -1,14 +1,7 @@
 items:
-- name: 1 About Office Add-ins
+- name: About Office Add-ins
   href: /office/dev/add-ins/overview/office-add-ins
   displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
-- name: 2 Host and platform availability
-  href: ~/overview/office-add-in-availability
+- name: Host and platform availability
+  href: /office/dev/add-ins/overview/office-add-in-availability
   displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
-- name: 3 About Office Add-ins
-  href: /overview/office-add-ins
-  displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
-- name: 4 Host and platform availability
-  href: overview/office-add-in-availability
-  displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
-
