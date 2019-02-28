@@ -3,8 +3,6 @@ items:
   href: demo.md
 - name: API Ref landing page
   href: api-ref.md
-- name: Common
-  href: ../toc.yml
 - name: Office Add-ins Documentation
   href: index.yml
   displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
