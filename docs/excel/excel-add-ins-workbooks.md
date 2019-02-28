@@ -1,7 +1,7 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
 description: ''
-ms.date: 02/20/2019
+ms.date: 02/28/2019
 localization_priority: Priority
 ---
 
@@ -82,14 +82,14 @@ addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: 
 The following example shows a workbook's worksheets being inserted in the current workbook, directly after the active worksheet. Note that `null` is passed for the `sheetNamesToInsert?: string[]` parameter. This means all the worksheets are being inserted.
 
 ```js
-var myFile = <HTMLInputElement>document.getElementById("file");
+var myFile = document.getElementById("file");
 var reader = new FileReader();
 
 reader.onload = (event) => {
     Excel.run((context) => {
         // strip off the metadata before the base64-encoded string
-        var startIndex = (<string>(<FileReader>event.target).result).indexOf("base64,");
-        var workbookContents = (<string>(<FileReader>event.target).result).substr(startIndex + 7);
+        var startIndex = event.target.result.indexOf("base64,");
+        var workbookContents = event.target.result.substr(startIndex + 7);
 
         var sheets = context.workbook.worksheets;
         sheets.addFromBase64(
@@ -256,6 +256,31 @@ The Excel API also lets add-ins turn off calculations until `RequestContext.sync
 
 ```js
 context.application.suspendApiCalculationUntilNextSync();
+```
+
+## Save the workbook
+
+> [!NOTE]
+> The `Workbook.save(saveBehavior)` function is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+
+The workbook is saved to persistent storage with `Workbook.save(saveBehavior)`. The `save` method takes a single, optional `SaveBehavior` enum as a parameter. This specifies whether the user is prompted about the file name and save location. `save` saves the workbook without ever prompting the user. If the workbook has never been saved, then the file is automatically saved to the default location. `save` is the default behavior. `prompt` gives the user the Excel save prompt the first time the workbook is saved. It does not prompt the user if the workbook has been previously saved.
+
+> [!CAUTION]
+> If the user is prompted to save and cancels the operation, `save` throws an exception.
+
+```js
+context.workbook.save(Excel.SaveBehavior.prompt);
+```
+
+## Close the workbook
+
+> [!NOTE]
+> The `Workbook.close(closeBehavior)` function is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+
+`Workbook.close(closeBehavior)` closes the workbook (and your add-in associated with the workbook). The Excel application remains open. The `close` method takes a single, optional `CloseBehavior` enum as a parameter. This specifies whether the workbook is saved before closing. `save` saves the workbook; prompting the user if the workbook has never previously been saved. `save` is the default behavior. `skipSave` immediately closes the workbook without saving, potentially losing information.
+
+```js
+context.workbook.close(Excel.CloseBehavior.save);
 ```
 
 ## See also
