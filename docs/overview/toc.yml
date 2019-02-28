@@ -1,7 +1,37 @@
 items:
-- name: About Office Add-ins
+- name: 1 About Office Add-ins
   href: office-add-ins.md
   displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
-- name: Host and platform availability
+- name: 1 Host and platform availability
   href: office-add-in-availability.md
+  displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
+- name: 2 About Office Add-ins
+  href: /office-add-ins.md
+  displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
+- name: 2 Host and platform availability
+  href: /office-add-in-availability.md
+  displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
+- name: 6 About Office Add-ins
+  href: ~/office-add-ins.md
+  displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
+- name: 6 Host and platform availability
+  href: ~/office-add-in-availability.md
+  displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
+- name: 3 About Office Add-ins
+  href: ~/overview/office-add-ins.md
+  displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
+- name: 3 Host and platform availability
+  href: ~/overview/office-add-in-availability.md
+  displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
+- name: 4 About Office Add-ins
+  href: overview/office-add-ins.md
+  displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
+- name: 4 Host and platform availability
+  href: overview/office-add-in-availability.md
+  displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
+- name: 5 About Office Add-ins
+  href: /overview/office-add-ins.md
+  displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
+- name: 5 Host and platform availability
+  href: /overview/office-add-in-availability.md
   displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
