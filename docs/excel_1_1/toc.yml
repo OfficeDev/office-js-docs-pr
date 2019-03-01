@@ -1,8 +1,8 @@
 items:
 - name: DEMO
   href: demo.md
-- name: Common
-  href: ../toc.yml
-- name: API reference
-  href: ../toc-test/toc.yml
-
+- name: Office Add-ins Documentation
+  href: /office/dev/add-ins
+  displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
+- name: Overview
+  href: ../overview/toc.yml
