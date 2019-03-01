@@ -1,7 +1,7 @@
 ---
 title: Best practices for developing Office Add-ins
 description: ''
-ms.date: 01/23/2018
+ms.date: 02/28/2019
 localization_priority: Priority
 ---
 
