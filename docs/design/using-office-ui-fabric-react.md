@@ -108,6 +108,7 @@ Save your changes. All open browser instances, including the add-in, update auto
 ## See also
 
 - [Office UI Fabric React](https://developer.microsoft.com/fabric)
+- [UX design patterns for Office Add-ins](../design/ux-design-pattern-templates.md)
 - [Getting started with Fabric React code sample](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
 - [Office Add-in Fabric UI sample (uses Fabric 1.0)](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)
 - [Yeoman generator for Office](https://github.com/OfficeDev/generator-office)

@@ -28,6 +28,6 @@ For a sample that implements a dialog box, see [Office Add-in Dialog API Example
 ## See also
 
 - [Dialog object](https://docs.microsoft.com/javascript/api/office/office.dialog)
-- [UX design patterns for Office Add-ins](../ux-design-pattern-templates.md)
+- [UX design patterns for Office Add-ins](../design/ux-design-pattern-templates.md)
 
 
