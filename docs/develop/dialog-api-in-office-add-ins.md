@@ -373,7 +373,7 @@ To show a video in a dialog box:
 3.  Use a call of `displayDialogAsync` in the host page to open video.dialogbox.html.
 4.  If your add-in needs to know when the user closes the dialog box, register a handler for the `DialogEventReceived` event and handle the 12006 event. For details, see the section [Errors and events in the dialog window](#errors-and-events-in-the-dialog-window).
 
-For a sample that shows a video in a dialog box, see the [video placemat design pattern](https://docs.microsoft.com/en-us/office/dev/add-ins/design/first-run-experience-patterns#video-placemat).
+For a sample that shows a video in a dialog box, see the [video placemat design pattern](https://docs.microsoft.com/office/dev/add-ins/design/first-run-experience-patterns#video-placemat).
 
 ![Screenshot of a video showing in an add-in dialog box](../images/video-placemats-dialog-open.png)
 

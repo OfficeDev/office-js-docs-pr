@@ -47,7 +47,7 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
 - Avoid pop ups. If you have to use them, guide the user to enable your pop up.
 
-For patterns that you can apply as you develop your first-run experience, see [UX design patterns for Office Add-ins](https://docs.microsoft.com/en-us/office/dev/add-ins/design/first-run-experience-patterns).
+For patterns that you can apply as you develop your first-run experience, see [UX design patterns for Office Add-ins](https://docs.microsoft.com/office/dev/add-ins/design/first-run-experience-patterns).
 
 ## Use add-in commands
 
