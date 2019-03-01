@@ -263,7 +263,10 @@ context.application.suspendApiCalculationUntilNextSync();
 > [!NOTE]
 > The `Workbook.save(saveBehavior)` function is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
-The workbook is saved to persistent storage with `Workbook.save(saveBehavior)`. The `save` method takes a single, optional `SaveBehavior` enum as a parameter. This specifies whether the user is prompted about the file name and save location. `save` saves the workbook without ever prompting the user. If the workbook has never been saved, then the file is automatically saved to the default location. `save` is the default behavior. `prompt` gives the user the Excel save prompt the first time the workbook is saved. It does not prompt the user if the workbook has been previously saved.
+`Workbook.save(saveBehavior)` saves the workbook to persistent storage . The `save` method takes a single, optional parameter that can be one of the following values:
+
+- `Excel.SaveBehavior.save` (default): The file is saved without prompting the user to specify file name and save location. If the file has not been saved previously, it's saved to the default location. If the file has been saved previously, it's saved to the same location.
+- `Excel.SaveBehavior.prompt`: If file has not been saved previously, the user will be prompted to specify file name and save location. If the file has been saved previously, it will be saved to the same location and the user will not be prompted.
 
 > [!CAUTION]
 > If the user is prompted to save and cancels the operation, `save` throws an exception.
@@ -277,7 +280,10 @@ context.workbook.save(Excel.SaveBehavior.prompt);
 > [!NOTE]
 > The `Workbook.close(closeBehavior)` function is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
-`Workbook.close(closeBehavior)` closes the workbook (and your add-in associated with the workbook). The Excel application remains open. The `close` method takes a single, optional `CloseBehavior` enum as a parameter. This specifies whether the workbook is saved before closing. `save` saves the workbook; prompting the user if the workbook has never previously been saved. `save` is the default behavior. `skipSave` immediately closes the workbook without saving, potentially losing information.
+`Workbook.close(closeBehavior)` closes the workbook, along with add-ins that are associated with the workbook (the Excel application remains open). The `close` method takes a single, optional parameter that can be one of the following values:
+
+- `Excel.CloseBehavior.save` (default): The file is saved before closing. If the file has not been saved previously, the user will be prompted to specify file name and save location.
+- `Excel.CloseBehavior.skipSave`: The file is immediately closed, without saving. Any unsaved changes will be lost.
 
 ```js
 context.workbook.close(Excel.CloseBehavior.save);
