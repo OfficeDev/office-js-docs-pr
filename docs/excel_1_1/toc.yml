@@ -2,7 +2,7 @@ items:
 - name: DEMO
   href: demo.md
 - name: Office Add-ins Documentation
-  href: /office/dev/add-ins/index.yml
+  href: /office/dev/add-ins
   displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
 - name: Overview
   href: ../overview/toc.yml
