@@ -27,7 +27,6 @@ For a sample that implements a dialog box, see [Office Add-in Dialog API Example
 
 ## See also
 
-- [GitHub Development Resources](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
 - [Dialog object](https://docs.microsoft.com/javascript/api/office/office.dialog)
 
 

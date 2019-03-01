@@ -47,7 +47,7 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
 - Avoid pop ups. If you have to use them, guide the user to enable your pop up.
 
-For templates that illustrate patterns that you can apply as you develop your first-run experience, see [UX design patterns for Office Add-ins](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
+For patterns that you can apply as you develop your first-run experience, see [UX design patterns for Office Add-ins](https://docs.microsoft.com/en-us/office/dev/add-ins/design/first-run-experience-patterns).
 
 ## Use add-in commands
 
@@ -72,8 +72,6 @@ For templates that illustrate patterns that you can apply as you develop your fi
 - Account for accessibility - make your add-in easy for all users to interact with, and accommodate assistive technologies such as screen readers.
 
 - Design for all platforms and input methods, including mouse/keyboard and [touch](#optimize-for-touch). Ensure that your UI is responsive to different form factors.
-
-For templates that apply design principles that you can use and customize as you develop your add-in, see [UX design patterns for Office Add-ins](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
 
 ### Optimize for touch
 

@@ -72,6 +72,5 @@ For a sample that implements a task pane, see [Excel Add-in JS WoodGrove Expense
 ## See also
 
 - [Office UI Fabric in Office Add-ins](office-ui-fabric.md) 
-- [UX design patterns for Office Add-ins](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
 
 
