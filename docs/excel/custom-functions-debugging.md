@@ -10,74 +10,142 @@ Debugging for custom functions can be accomplished by multiple means, depending 
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-## Debugging custom functions in Office Online
+> [!NOTE]
+> For simplicity, this article shows debugging in the context of using Visual Studio Code to edit, run tasks, and in some cases use the debug view. If you are using a different editor or command line tool, see the [command line instructions](#Use-the-command-line-tools-to-debug) at the end of this article.
 
-### Windows 10, Visual Studio, and Microsoft Edge
+## Use the browser developer tools to debug Excel Online
 
-1. Open your custom functions root project folder in [Visual Studio Code (VS Code)](https://code.visualstudio.com/).
-2. A notification may prompt you to install recommended extensions. Select **install all**, which will install [Debugger for Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge) and [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) extensions for VS Code. If you're not prompted to install these, install these extensions to VS Code manually.
-3. Select **Terminal | Run Task** and type or select **Dev Server**.
-4. Select **View | Debug** or enter **Ctrl+Shift+D** to switch to Debug View.
-5. From the Debug options, choose Office Online (Microsoft Edge).
-6. Open Excel Online using the Microsoft Edge browser, open Excel Online, and create a new workbook.
-7. Copy the URL for this new workbook.
-8. In VS Code, select **F5** to begin debugging. A prompt will appear, which asks for the URL of your document.
-9. Paste in the URL for your workbook.
-10. At this point, debugging is active. You can set breakpoints within VS Code.
-11. To see your breakpoints applied, you'll go back to the Microsoft Edge window with your open workbook and load your add-in. Select **Insert | Office Add-ins**. This opens a pop-up window where you can select **Manage My Add-ins | Upload Add-in**. Browse for the manifest file of your add-in and select **Upload**.
+You can use the browser developer tools to debug custom functions in Excel Online. The following steps work for both Windows and macOS.
 
-### Mac and Chrome Debugger
+### Run your add-in from Visual Studio Code
 
-1. In a terminal window, navigate to the root project folder.
-2. In the terminal window, run the following: `npm run watch`. This ensures that your files are continually monitored for changes.
-3. Open another terminal window, navigate to the root project folder and then run `npm run start:web`. This will launch the dev server.
-4. Open Excel Online using Chrome and create a new workbook.
-5. Load your add-in within Excel Online. Select **Insert | Office Add-ins**. This opens a pop-up window where you can select **Manage My Add-ins | Upload Add-in**. Browse for the manifest file of your add-in and select **Upload**.
-6. Open Chrome's developer tools by selecting **Cmd+Option+I**.
-7. With Chrome's developer tools open, select **Cmd+P** and type "functions.js" or "functions.ts" to find your script file. Select the script file to open it within Chrome's developer tools. 
-8. Within your script file, apply breakpoints directly by selecting a line of code.
-9. To apply changes to code you have updated, refresh the browser.
+1. Open your custom functions root project folder in [VS Code](https://code.visualstudio.com/).
+2. In VS Code choose **Terminal -> New Terminal**.
+3. Choose **Terminal -> Run Task** and type or select **Watch**. This will monitor and rebuild for any file changes.
+4. Choose **Terminal -> Run Task** and type or select **Dev Server**. 
 
-## Office Desktop
+### Sideload your add-in   
 
-### For Windows and Visual Studio
+1. Open [Microsoft Office Online](https://office.live.com/).
+2. Open a new Excel workbook.
+3. Open the  **Insert** tab on the ribbon and, in the **Add-ins** section, choose **Office Add-ins**.
+4. On the  **Office Add-ins** dialog, select the **MY ADD-INS** tab, choose **Manage My Add-ins**, and then  **Upload My Add-in**.
+    
+    ![The Office Add-ins dialog with a drop-down in the upper right reading "Manage my add-ins" and a drop-down below it with the option "Upload My Add-in"](../images/office-add-ins-my-account.png)
 
-1. Open your custom functions root project folder in VS Code.
-2. Select **Terminal | Run Task** and type or select Watch.
-3. Select **Terminal | Run Task** and type or select Dev Server.
-4. Switch to Debug View selecting **View | Debug** or by entering **Ctrl+Shift+D**.
-5. From the Debug options, choose Office Desktop.
-6. Select **F5** to begin debugging. A new Excel workbook will pop up, with your add-in already sideloaded and ready to use.
-7. To debug, set breakpoints within VS Code.
-
-### For Mac
-
-At this time, desktop debugging for the Mac is not available. Instead, refer to instructions for [debugging Mac with Excel Online](#mac-and-chrome-debugger).
-
-## Using the command line
-
-To debug using the command line, follow the same step sequences for platform and product, but replace VS Code terminal and debugging commands with the following statements, depending on your needs. 
-
-### Watch and build your project
-
-- `npm run watch`: builds for development and automatically rebuilds when a source file is saved
-
-- `npm run build-dev`: builds for development once
-
-- `npm run build`: builds for production
-
-### Start the dev-server
-
-- `npm run dev-server`: runs the web server used for development
-
-### Debug
-
-- If debugging for desktop, use `npm run start:desktop`. You can also use `npm run stop` to stop debugging. 
-
-- If debugging online, use `npm run start:web`. You'll need to manually open a new workbook using Excel Online and insert your add-in (for help, see the following note).  Select **F12** to use your browser's debugging tools.
+5.  **Browse** to the add-in manifest file, and then select **Upload**.
+    
+    ![The upload add-in dialog with buttons for browse, upload, and cancel.](../images/upload-add-in.png)
 
 > [!NOTE]
-> To insert your add-in in Excel Online,  select **Insert | Office Add-ins**. This opens a pop-up window where you can select **Manage My Add-ins | Upload Add-in**. Browse for the manifest file of your add-in and select **Upload**.
+> Once you've sideloaded to the document, it will remain sideloaded each time you open the document.
+
+### Start debugging
+
+1. Open developer tools in the browser. For Chrome and most browsers F12 will open the developer tools.
+2. In developer tools, open your source code script file (functions.js or functions.ts). Your custom functions code may be located near the end of the file.
+3. In the custom function source code, apply a breakpoint by selecting a line of code.
+
+If you need to change the code you can make edits in Visual Studio and save the changes. Refresh the browser to see the changes loaded.
+
+## Use the Visual Studio Code debugger for Excel Desktop
+
+You can use Visual Studio Code to debug custom functions in Office Excel on the desktop.
+
+> [!NOTE]
+> At this time, desktop debugging for the Mac is not available. Instead, refer to instructions for [using the browser tools to debug Excel Online](#debug-in-excel-online-by-using-the-browser-developer-tools).
+
+### Run your add-in from VS Code
+
+1. Open your custom functions root project folder in [VS Code](https://code.visualstudio.com/).
+2. In VS Code choose **Terminal -> New Terminal**.
+3. Choose **Terminal -> Run Task** and type or select **Watch**. This will monitor and rebuild for any file changes.
+4. Choose **Terminal -> Run Task** and type or select **Dev Server**. 
+
+### Start the VS Code debugger
+
+4. Choose **View -> Debug** or enter **Ctrl+Shift+D** to switch to debug view.
+5. From the Debug options, choose **Excel Desktop**.
+6. Select **F5** (or choose **Debug -> Start Debugging** from the menu) to begin debugging. A new Excel workbook will open with your add-in already sideloaded and ready to use.
+
+### Start debugging
+
+1. In VS code, open your source code script file (functions.js or functions.ts).
+2. In the custom function source code, set a breakpoint on a line of code. You can select a line and choose **Debug -> Toggle Breakpoint**.
+2. In the Excel workbook, enter a formula that uses your custom function.
+
+At this point execution will stop on the line of code where you set the breakpoint. Now you can step through your code, set watches, and use any Visual Studio Code debugging features you need.
+
+## Use the VS Code debugger for Excel Online in Microsoft Edge
+
+You can use Visual Studio Code to debug custom functions in Excel Online in the Microsoft Edge browser. To use VS Code with Microsoft Edge, you must install the [Debugger for Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge) extension.
+
+### Run your add-in from Visual Studio Code
+
+1. Open your custom functions root project folder in [VS Code](https://code.visualstudio.com/).
+2. In VS Code choose **Terminal -> New Terminal**.
+3. Choose **Terminal -> Run Task** and type or select **Watch**. This will monitor and rebuild for any file changes.
+4. Choose **Terminal -> Run Task** and type or select **Dev Server**. 
+
+### Start the VS Code debugger
+
+4. Choose **View -> Debug** or enter **Ctrl+Shift+D** to switch to debug view.
+5. From the Debug options, choose **Office Online (Edge)**.
+6. Open Excel Online using the Microsoft Edge browser, open Excel Online, and create a new workbook.
+7. Choose **Share** in the ribbon and copy the link for the URL for this new workbook.
+
+6. Select **F5** (or choose **Debug -> Start Debugging** from the menu) to begin debugging. A prompt will appear, which asks for the URL of your document.
+9. Paste in the URL for your workbook.
+
+### Sideload your add-in.
+
+You'll need to sideload your add-in to debug it. Follow the steps in [Sideload your add-in](#Sideload-your-add-in) to sideload your add-in. Then continue to the next section to start debugging.
+
+
+### Start debugging
+
+1. Open developer tools in the browser. For Chrome and most browsers F12 will open the developer tools.
+2. In developer tools, open your source code script file (functions.js or functions.ts). Your custom functions code may be located near the end of the file.
+3. In the source code, apply breakpoints by selecting a line of code.
+
+If you need to change the code you can make edits in Visual Studio and save the changes. Refresh the browser to see the changes loaded.
+
+
+## Use the command line tools to debug
+
+If you are not using VS Code, you can use the command line (such as bash, or PowerShell) to run your add-in. You'll need to use the browser developer tools to debug your code in Excel Online. You cannot debug the desktop version of Excel using the command line.
+
+1. From the command line run `npm run watch` to watch for and rebuild when code changes occur.
+2. Open a second command line window (the first one will be blocked while running the watch.)
+
+3. If you want to start your add-in in the desktop version of Excel, run the following command
+    
+    `npm run start:desktop`
+    
+    Or if you prefer to start your add-in in Excel Online run the following command
+    
+    `npm run start:web`
+    
+    For Excel Online you also need to sideload your add-in. Follow the steps in [Sideload your add-in](#Sideload-your-add-in) to sideload your add-in. Then continue to the next section to start debugging.
+    
+4. Open developer tools in the browser. For Chrome and most browsers F12 will open the developer tools.
+5. In developer tools, open your source code script file (functions.js or functions.ts). Your custom functions code may be located near the end of the file.
+6. In the custom function source code, apply a breakpoint by selecting a line of code.
+
+If you need to change the code you can make edits in Visual Studio and save the changes. Refresh the browser to see the changes loaded.
+
+### Commands for building and running your add-in
+
+There are several build tasks available:
+- `npm run watch`: builds for development and automatically rebuilds when a source file is saved
+- `npm run build-dev`: builds for development once
+- `npm run build`: builds for production
+- `npm run dev-server`: runs the web server used for development
+
+You can use the following tasks to start debugging on desktop or online.
+- `npm run start:desktop`: Starts Excel on desktop and sideloads your add-in.
+- `npm run start:web`: Starts Excel Online and sideloads your add-in.
+- `npm run stop`: Stops Excel and debugging.
 
 ## See also
 
