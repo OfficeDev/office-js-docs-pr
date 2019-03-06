@@ -100,7 +100,7 @@ You can use Visual Studio Code to debug custom functions in Excel Online in the 
     
     ![The Office Add-ins dialog with a drop-down in the upper right reading "Manage my add-ins" and a drop-down below it with the option "Upload My Add-in"](../images/office-add-ins-my-account.png)
 
-3.  **Browse** to the add-in manifest file, and then select **Upload**.
+3.  **Browse** to the add-in manifest file and then select **Upload**.
     
     ![The upload add-in dialog with buttons for browse, upload, and cancel.](../images/upload-add-in.png)
 
