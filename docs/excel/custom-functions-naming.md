@@ -12,7 +12,7 @@ Function names and function IDs share some common requirements:
 
 - Function ids may only use characters A through Z, numbers zero through nine, underscores, and periods.
 
-- Function names may use any Unicode alphanumeric character, underscore, and period.
+- Function names may use any Unicode alphabetic characters, underscores, and periods.
 
 - They must start with a letter and have a minimum limit of three characters.
 
