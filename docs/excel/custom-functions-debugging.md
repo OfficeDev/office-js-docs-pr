@@ -81,7 +81,7 @@ You can use Visual Studio Code to debug custom functions in Excel Online in the 
 ### Run your add-in from Visual Studio Code
 
 1. Open your custom functions root project folder in [VS Code](https://code.visualstudio.com/).
-2. Choose **Terminal -> Run Task** and type or select **Watch**. This will monitor and rebuild for any file changes.
+2. Choose **Terminal > Run Task** and type or select **Watch**. This will monitor and rebuild for any file changes.
 3. Choose **Terminal -> Run Task** and type or select **Dev Server**. 
 
 ### Start the VS Code debugger
