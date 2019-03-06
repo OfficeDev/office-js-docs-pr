@@ -281,6 +281,9 @@
         - name: Custom functions naming guidelines
           href: excel/custom-functions-naming.md
           displayName: Excel
+        - name: Custom functions troubleshooting
+          href: excel/custom-functions-troubleshooting.md
+          displayName: Excel
       - name: Data validation
         href: excel/excel-add-ins-data-validation.md
         displayName: Excel
