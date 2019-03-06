@@ -1,7 +1,7 @@
 ---
-ms.date: 01/08/2019
-description: Learn best practices for developing custom functions in Excel.
-title: Custom functions best practices (preview)
+ms.date: 03/06/2019
+description: A quick start guide to developing custom functions in Excel.
+title: Custom functions quick start (preview)
 localization_priority: Normal
 ---
 
@@ -9,25 +9,9 @@ localization_priority: Normal
 
 Custom functions enable developers to add new functions to Excel by defining those functions in JavaScript or Typescript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel, such as `SUM()`.
 
-## Platforms
+## Pre-requisites
 
-Custom functions are currently in preview and subject to change. They are not supported for use in production environments. For preview purposes you can try custom functions on the following platforms.
-
-- Excel Online
-- Excel for Windows (64-bit version 1810 or later). At present, Excel for Windows 32-bit may not work for all scenarios.
-- Excel for Mac (version 13.329 or later)
-
-To use custom functions within Excel Online, login by using either your Office 365 subscription or a [Microsoft account](https://account.microsoft.com/account).
-
-To use custom functions within Excel for Windows or Excel for Mac, you must have an Office 365 subscription, join the [Office Insider](https://products.office.com/office-insider) program (**Insider** level -- formerly called "Insider Fast"), and use a sufficiently recent build of Excel (as specified earlier).
-
-If you are using a version of Office on your desktop which you downloaded from the Windows Store, you must be part of the [Windows Insider](https://insider.windows.com/) program at the **Insider** level (formerly called "Insider Fast"), running the April 2018 Update version or later to use custom functions. This is a new change as of January 2019.
-
-## Subscribe to Office 365
-
-If you don't already have an Office 365 subscription, you can get one by joining the [Office 365 Developer Program](https://developer.microsoft.com/en-us/office/dev-program).
-
-## Set up your development environment
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 You'll need the following tools and related resources to begin creating custom functions.
 
@@ -43,10 +27,6 @@ You'll need the following tools and related resources to begin creating custom f
 
     > [!NOTE]
     > Even if you have previously installed the Yeoman generator, we recommend updating your package to the latest version from npm.
-
-- Excel for Windows (64-bit version 1810 or later) or Excel Online. See exact specifications in the [platform section](#plaforms).
-
-- Join the [Office Insider program](https://products.office.com/office-insider) (**Insider** level -- formerly called "Insider Fast")
 
 ## Build your first custom functions project
 
@@ -66,7 +46,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
     ![Yeoman generator for Office Add-ins prompts for custom functions](../images/12-10-fork-cf-pic.jpg)
 
-    The Yeoman generator will create the project files and install supporting Node components. The project files come from the [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) GitHub repository.
+    The Yeoman generator will create the project files and install supporting Node components.
 
 2. Go to the project folder.
 
@@ -97,7 +77,9 @@ To start, you'll use the Yeoman generator to create the custom functions project
         npm run start-web
         ```
 
-         After running this command, another window will open showing you the details of the build. To use your functions, open a new workbook in Office Online.
+         After running this command, your command prompt will show details about starting the web server. To use your functions, open a new workbook in Excel Online. In this workbook, you'll need to load your add-in. 
+
+        To do this, select the **Insert** tab on the ribbon and select **Office Add-ins**. Next select **Manage My Add-ins > Upload My Add-in**. Browse for your manifest file and upload it. If your add-in does not load, check you've completed step 3 correctly.
 
 ## Try out the prebuilt custom functions
 
@@ -113,10 +95,11 @@ The `ADD` custom function computes the sum of the two numbers that you specify a
 
 ## Next steps
 
-Congratulations, you've successfully created a custom function in an Excel add-in! Next, learn more about the capabilities of custom functions and build a more complex add-in by following along with the Excel custom functions add-in tutorial.
+Congratulations, you've successfully created a custom function in an Excel add-in! Next, build a more complex add-in with streaming data capability. The below link will take you to the next steps to follow in the Excel add-in with custom functions tutorial.
 
 > [!div class="nextstepaction"]
-> [Excel custom functions add-in tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+> [Excel custom functions add-in tutorial](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web
+)
 
 ## See also
 
