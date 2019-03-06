@@ -10,7 +10,7 @@ A custom function is identified by an **id** and **name** property in the JSON m
 
 Function names and function IDs share some common requirements:
 
-- Function ids may only use characters A to Z, 0 - 9, underscore, and period.
+- Function ids may only use characters A to Z, numbers zero through nine, underscores, and periods.
 
 - Function names may use any Unicode alphanumeric character, underscore, and period.
 
