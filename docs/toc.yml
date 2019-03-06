@@ -269,6 +269,9 @@
         - name: Custom functions best practices
           href: excel/custom-functions-best-practices.md
           displayName: Excel
+        - name: Custom functions authentication
+          href: excel/custom-functions-authentication.md
+          displayName: Excel
         - name: Custom functions changelog
           href: excel/custom-functions-changelog.md
           displayName: Excel
@@ -278,11 +281,6 @@
         - name: Custom functions naming guidelines
           href: excel/custom-functions-naming.md
           displayName: Excel
-        - name: Solution guidance
-          items:
-          - name: Custom functions authentication
-            href: excel/custom-functions-authentication.md
-            displayName: Excel
       - name: Data validation
         href: excel/excel-add-ins-data-validation.md
         displayName: Excel
