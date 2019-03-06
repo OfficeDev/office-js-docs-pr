@@ -13,7 +13,7 @@ When you build an add-in that defines custom functions, be sure to include error
 In the following code sample, `.catch` will handle any errors that occur previously in the code.
 
 ```js
-function getComment(x) {
+function getComment(commentID) {
   let url = "https://www.contoso.com/comments/" + x;
 
   return fetch(url)
