@@ -9,7 +9,7 @@ localization_priority: Normal
 
 Custom functions enable developers to add new functions to Excel by defining those functions in JavaScript or Typescript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel, such as `SUM()`.
 
-## Pre-requisites
+## Prerequisites
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
