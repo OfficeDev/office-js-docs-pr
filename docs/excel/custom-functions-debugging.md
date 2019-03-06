@@ -43,7 +43,7 @@ You can use the browser developer tools to debug custom functions in Excel Onlin
 
 1. Open developer tools in the browser. For Chrome and most browsers F12 will open the developer tools.
 2. In developer tools, open your source code script file (functions.js or functions.ts).
-3. In the custom function source code, select the margin next to the code line number to set a breakpoint on that line.
+3. [Set a breakpoint](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) in the custom function source code. 
 
 If you need to change the code you can make edits in Visual Studio Code and save the changes. Refresh the browser to see the changes loaded.
 
