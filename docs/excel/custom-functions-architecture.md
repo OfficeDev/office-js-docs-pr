@@ -13,7 +13,8 @@ The custom functions runtime prioritizes executing calculations, so functions ru
 
 Because functions are limited to actions performed in a workbook, the custom functions runtime doesn't support UI elements nor does it provide access to the Document Object Model (DOM). You should think of custom functions as a separate component of your add-in, separate from your add-in's task pane or other UI elements.
 
->[!NOTE] When first installing a custom function, a task pane is shown. This pane is necessary to install the custom functions runtime, but shouldn't serve as your main task pane for your add-in.
+>[!NOTE] 
+> When first installing a custom function, a task pane is shown. This pane is necessary to install the custom functions runtime, but shouldn't serve as your main task pane for your add-in.
 
 ## Browser-based engine
 
