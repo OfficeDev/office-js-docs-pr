@@ -69,7 +69,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
         ```
          npm run start
         ```
-        After running this command, your command prompt will show details about what has been done, another npm window will open showing the details of the build, and Excel will start with your add-in loaded. If you add-in does not load, check that you have completed step 3 properly.
+        After running this command, your command prompt will show details about starting the web server. Excel will start with your add-in loaded. If you add-in does not load, check that you have completed step 3 properly.
 
     - If you'll be using Excel Online to test your custom functions, run the following command to start the local web server:
 
