@@ -9,6 +9,7 @@ localization_priority: Priority
 Custom function use a new JavaScript runtime that differs from the browser-based JavaScript engine which powers most other parts of your add-in.
 
 ## Custom functions runtime
+
 The custom functions runtime prioritizes executing calculations, so functions run run smoothly when Excel recalculates. The custom functions runtime allows access to APIs which make requesting external data and exchanging data over a persistent connection over a server possible.
 
 Because functions are limited to actions performed in a workbook, the custom functions runtime doesn't support UI elements nor does it provide access to the Document Object Model (DOM). You should think of custom functions as a separate component of your add-in, separate from your add-in's task pane or other UI elements.
