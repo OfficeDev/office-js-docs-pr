@@ -12,11 +12,11 @@ To resolve issues, you can [enable runtime logging to capture errors](#enable-ru
 
 ## Enable runtime logging
 
-If you are testing your add-in in Office on Windows, you should [enable runtime logging](https://docs.microsoft.com/en-us/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in) to troubleshoot issues with your add-in's XML manifest file, as well as several installation and runtime conditions. Runtime logging writes console.log statements to a log file to help you uncover issues. For more information about runtime logging, see [Use runtime logging to debug your add-in](https://docs.microsoft.com/en-us/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in).  
+If you are testing your add-in in Office on Windows, you should [enable runtime logging](https://docs.microsoft.com/en-us/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in) to troubleshoot issues with your add-in's XML manifest file, as well as several installation and runtime conditions. Runtime logging writes `console.log` statements to a log file to help you uncover issues. For more information about runtime logging, see [Use runtime logging to debug your add-in](https://docs.microsoft.com/en-us/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in).  
 
 ### Check for Excel error messages
 
-Excel has a number of built-in error messages which are returned to a cell if there is calculation error. These are #NULL!, #DIV/0!, #VALUE!, #REF!, #NAME?, #NUM!, #N/A, and #GETTING_DATA. At this time, custom functions can only use the error codes listed above when custom functions hit an error.
+Excel has a number of built-in error messages which are returned to a cell if there is calculation error. These are `#NULL!`, `#DIV/0!`, `#VALUE!`, `#REF!`, `#NAME?`, `#NUM!`, `#N/A`, and `#GETTING_DATA`. At this time, custom functions can only use the error codes listed above when custom functions hit an error.
 
 ## Common issues
 
@@ -42,7 +42,7 @@ For more information on this process, see [Associating function names with json 
 
 ### Ensure promises return
 
-In addition to the ordinary reasons that a cell might report a #GETTING_DATA error, custom functions also will report #GETTING_DATA if a promise does not return a result. Check your functions to make sure that any promises are properly returning a result to a cell.
+In addition to the ordinary reasons that a cell might report a #GETTING_DATA error, custom functions also will report `#GETTING_DATA` if a promise does not return a result. Check your functions to make sure that any promises are properly returning a result to a cell.
 
 ## Reporting Feedback
 
