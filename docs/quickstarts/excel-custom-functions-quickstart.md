@@ -26,7 +26,7 @@ You'll need the following tools and related resources to begin creating custom f
     ```
 
     > [!NOTE]
-    > Even if you have previously installed the Yeoman generator, we recommend updating your package to the latest version from npm.
+    > Even if you've previously installed the Yeoman generator, we recommend you update your package to the latest version from npm.
 
 ## Build your first custom functions project
 
