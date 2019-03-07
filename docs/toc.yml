@@ -261,7 +261,7 @@
           href: excel/custom-functions-overview.md
           displayName: Excel
         - name: Custom functions quickstart
-          href: quickstarts/custom-functions-quickstart.md
+          href: quickstarts/excel-custom-functions-quickstart.md
           displayName: Excel
         - name: Custom functions tutorial
           href: tutorials/excel-tutorial-create-custom-functions.md
