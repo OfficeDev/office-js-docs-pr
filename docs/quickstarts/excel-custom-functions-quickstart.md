@@ -48,13 +48,13 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
     The Yeoman generator will create the project files and install supporting Node components.
 
-2. Go to the project folder.
+2. Navigate to the project folder you just created.
 
     ```
     cd stock-ticker
     ```
 
-3. Trust the self-signed certificate that is needed to run this project. For detailed instructions for either Windows or Mac, see [Adding Self Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).  
+3. Trust the self-signed certificate you need to run this project. For detailed instructions for either Windows or Mac, see [Adding Self Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).  
 
 4. Build the project.
 
@@ -64,14 +64,14 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
 5. Start the local web server, which runs in Node.js.
 
-    - If you'll be using Excel for Windows to test your custom functions, run the following command to start the local web server, launch Excel, and sideload the add-in:
+    - If you use Excel for Windows to test your custom functions, run the following command to start the local web server, launch Excel, and sideload the add-in:
 
         ```
          npm run start
         ```
         After running this command, your command prompt will show details about starting the web server. Excel will start with your add-in loaded. If you add-in does not load, check that you have completed step 3 properly.
 
-    - If you'll be using Excel Online to test your custom functions, run the following command to start the local web server:
+    - If you use Excel Online to test your custom functions, run the following command to start the local web server:
 
         ```
         npm run start-web
@@ -87,15 +87,15 @@ The custom functions project that you created by using the Yeoman generator cont
 
 In your Excel workbook, try out the `ADD` custom function by completing the following steps:
 
-1. Within a cell, type `=CONTOSO`. Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.
+1. Select a cell and type `=CONTOSO`. Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.
 
-2. Run the `CONTOSO.ADD` function, with numbers `10` and `200` as input parameters, by typing the value `=CONTOSO.ADD(10,200)` in the cell and pressing enter.
+2. Run the `CONTOSO.ADD` function, using numbers `10` and `200` as input parameters, by typing the value `=CONTOSO.ADD(10,200)` in the cell and pressing enter.
 
 The `ADD` custom function computes the sum of the two numbers that you specify as input parameters. Typing `=CONTOSO.ADD(10,200)` should produce the result **210** in the cell after you press enter.
 
 ## Next steps
 
-Congratulations, you've successfully created a custom function in an Excel add-in! Next, build a more complex add-in with streaming data capability. The below link will take you to the next steps to follow in the Excel add-in with custom functions tutorial.
+Congratulations, you've successfully created a custom function in an Excel add-in! Next, build a more complex add-in with streaming data capability. The following link takes you through the next steps in the Excel add-in with custom functions tutorial.
 
 > [!div class="nextstepaction"]
 > [Excel custom functions add-in tutorial](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web
