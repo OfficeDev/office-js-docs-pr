@@ -85,7 +85,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
 The custom functions project that you created by using the Yeoman generator contains some prebuilt custom functions, defined within the **src/customfunctions.js** file. The **manifest.xml** file in the root directory of the project specifies that all custom functions belong to the `CONTOSO` namespace.
 
-In your Excel workbook, try out the `ADD` custom function by completing the following steps in Excel:
+In your Excel workbook, try out the `ADD` custom function by completing the following steps:
 
 1. Within a cell, type `=CONTOSO`. Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.
 
