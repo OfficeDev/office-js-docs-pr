@@ -20,9 +20,8 @@ You can use the browser developer tools to debug custom functions in Excel Onlin
 ### Run your add-in from Visual Studio Code
 
 1. Open your custom functions root project folder in [VS Code](https://code.visualstudio.com/).
-2. In VS Code choose **Terminal -> New Terminal**.
-3. Choose **Terminal -> Run Task** and type or select **Watch**. This will monitor and rebuild for any file changes.
-4. Choose **Terminal -> Run Task** and type or select **Dev Server**. 
+2. Choose **Terminal > Run Task** and type or select **Watch**. This will monitor and rebuild for any file changes.
+3. Choose **Terminal > Run Task** and type or select **Dev Server**. 
 
 ### Sideload your add-in   
 
@@ -43,10 +42,10 @@ You can use the browser developer tools to debug custom functions in Excel Onlin
 ### Start debugging
 
 1. Open developer tools in the browser. For Chrome and most browsers F12 will open the developer tools.
-2. In developer tools, open your source code script file (functions.js or functions.ts). Your custom functions code may be located near the end of the file.
-3. In the custom function source code, apply a breakpoint by selecting a line of code.
+2. In developer tools, open your source code script file (functions.js or functions.ts).
+3. [Set a breakpoint](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) in the custom function source code. 
 
-If you need to change the code you can make edits in Visual Studio and save the changes. Refresh the browser to see the changes loaded.
+If you need to change the code you can make edits in Visual Studio Code and save the changes. Refresh the browser to see the changes loaded.
 
 ## Use the Visual Studio Code debugger for Excel Desktop
 
@@ -58,9 +57,8 @@ You can use Visual Studio Code to debug custom functions in Office Excel on the 
 ### Run your add-in from VS Code
 
 1. Open your custom functions root project folder in [VS Code](https://code.visualstudio.com/).
-2. In VS Code choose **Terminal -> New Terminal**.
-3. Choose **Terminal -> Run Task** and type or select **Watch**. This will monitor and rebuild for any file changes.
-4. Choose **Terminal -> Run Task** and type or select **Dev Server**. 
+2. Choose **Terminal > Run Task** and type or select **Watch**. This will monitor and rebuild for any file changes.
+3. Choose **Terminal > Run Task** and type or select **Dev Server**. 
 
 ### Start the VS Code debugger
 
@@ -71,8 +69,8 @@ You can use Visual Studio Code to debug custom functions in Office Excel on the 
 ### Start debugging
 
 1. In VS code, open your source code script file (functions.js or functions.ts).
-2. In the custom function source code, set a breakpoint on a line of code. You can select a line and choose **Debug -> Toggle Breakpoint**.
-2. In the Excel workbook, enter a formula that uses your custom function.
+2. In the custom function source code, set a breakpoint.
+3. In the Excel workbook, enter a formula that uses your custom function.
 
 At this point execution will stop on the line of code where you set the breakpoint. Now you can step through your code, set watches, and use any Visual Studio Code debugging features you need.
 
@@ -83,32 +81,35 @@ You can use Visual Studio Code to debug custom functions in Excel Online in the 
 ### Run your add-in from Visual Studio Code
 
 1. Open your custom functions root project folder in [VS Code](https://code.visualstudio.com/).
-2. In VS Code choose **Terminal -> New Terminal**.
-3. Choose **Terminal -> Run Task** and type or select **Watch**. This will monitor and rebuild for any file changes.
-4. Choose **Terminal -> Run Task** and type or select **Dev Server**. 
+2. Choose **Terminal > Run Task** and type or select **Watch**. This will monitor and rebuild for any file changes.
+3. Choose **Terminal > Run Task** and type or select **Dev Server**. 
 
 ### Start the VS Code debugger
 
-4. Choose **View -> Debug** or enter **Ctrl+Shift+D** to switch to debug view.
+4. Choose **View > Debug** or enter **Ctrl+Shift+D** to switch to debug view.
 5. From the Debug options, choose **Office Online (Edge)**.
 6. Open Excel Online using the Microsoft Edge browser, open Excel Online, and create a new workbook.
 7. Choose **Share** in the ribbon and copy the link for the URL for this new workbook.
+8. Select **F5** (or choose **Debug > Start Debugging** from the menu) to begin debugging. A prompt will appear, which asks for the URL of your document.
+9. Paste in the URL for your workbook and press Enter.
 
-6. Select **F5** (or choose **Debug -> Start Debugging** from the menu) to begin debugging. A prompt will appear, which asks for the URL of your document.
-9. Paste in the URL for your workbook.
+### Sideload your add-in   
 
-### Sideload your add-in.
+1. Select the  **Insert** tab on the ribbon and in the **Add-ins** section, choose **Office Add-ins**.
+2. On the  **Office Add-ins** dialog, select the **MY ADD-INS** tab, choose **Manage My Add-ins**, and then  **Upload My Add-in**.
+    
+    ![The Office Add-ins dialog with a drop-down in the upper right reading "Manage my add-ins" and a drop-down below it with the option "Upload My Add-in"](../images/office-add-ins-my-account.png)
 
-You'll need to sideload your add-in to debug it. Follow the steps in [Sideload your add-in](#Sideload-your-add-in) to sideload your add-in. Then continue to the next section to start debugging.
+3.  **Browse** to the add-in manifest file and then select **Upload**.
+    
+    ![The upload add-in dialog with buttons for browse, upload, and cancel.](../images/upload-add-in.png)
 
 
-### Start debugging
+### Set breakpoints
+1. In VS Code, open your source code script file (functions.js or functions.ts).
+2. In the source code, select in the margin next to a line of code to set a breakpoint on that line.
+3. In the Excel workbook, enter a formula that uses your custom function.
 
-1. Open developer tools in the browser. For Chrome and most browsers F12 will open the developer tools.
-2. In developer tools, open your source code script file (functions.js or functions.ts). Your custom functions code may be located near the end of the file.
-3. In the source code, apply breakpoints by selecting a line of code.
-
-If you need to change the code you can make edits in Visual Studio and save the changes. Refresh the browser to see the changes loaded.
 
 
 ## Use the command line tools to debug
