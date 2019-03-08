@@ -1,5 +1,5 @@
 - name: Office Add-ins Documentation
-  href: index.yml
+  href: overview.yml
   displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
 - name: Overview
   items:
