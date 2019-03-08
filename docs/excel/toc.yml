@@ -1,15 +1,13 @@
 - name: Excel add-ins
+  href: excel-add-ins-overview.md
   items:
-
+  
   - name: Overview
     items:
-    - name: Excel add-ins overview
-      href: excel-add-ins-overview.md
-      displayName: Excel
-    - name: Office Add-ins platform
-      href: ../overview/office-add-ins.md
+    - name: About Office Add-ins
+      href: ../overview/office-add-ins.md?context=office/dev/add-ins/excel/context
     - name: Host and platform availability
-      href: ../overview/office-add-in-availability.md
+      href: ../overview/office-add-in-availability.md?context=office/dev/add-ins/excel/context
 
   - name: Quick Starts
     items:
@@ -35,121 +33,121 @@
   - name: Office Add-ins concepts
     items:
     - name: Requirements for running add-ins
-      href: ../concepts/requirements-for-running-office-add-ins.md
+      href: ../concepts/requirements-for-running-office-add-ins.md?context=office/dev/add-ins/excel/context
     - name: Add-in development best practices
-      href: ../concepts/add-in-development-best-practices.md
+      href: ../concepts/add-in-development-best-practices.md?context=office/dev/add-ins/excel/context
     - name: Add-in development lifecycle
-      href: ../concepts/add-in-development-lifecycle.md
+      href: ../concepts/add-in-development-lifecycle.md?context=office/dev/add-ins/excel/context
     - name: Privacy and security
-      href: ../concepts/privacy-and-security.md
+      href: ../concepts/privacy-and-security.md?context=office/dev/add-ins/excel/context
     - name: Performance
-      href: ../concepts/resource-limits-and-performance-optimization.md
+      href: ../concepts/resource-limits-and-performance-optimization.md?context=office/dev/add-ins/excel/context
 
   - name: Design the User Interface
-    href: ../design/add-in-design.md
+    href: ../design/add-in-design.md?context=office/dev/add-ins/excel/context
     items:
     - name: Guidelines
       items:
       - name: Accessibility
-        href: ../design/accessibility-guidelines.md
+        href: ../design/accessibility-guidelines.md?context=office/dev/add-ins/excel/context
       - name: Voice
-        href: ../design/voice-guidelines.md
+        href: ../design/voice-guidelines.md?context=office/dev/add-ins/excel/context
       - name: Data visualization
-        href: ../design/data-visualization-guidelines.md
+        href: ../design/data-visualization-guidelines.md?context=office/dev/add-ins/excel/context
     - name: Design language
-      href: ../design/add-in-design-language.md
+      href: ../design/add-in-design-language.md?context=office/dev/add-ins/excel/context
       items:
       - name: Typography
-        href: ../design/add-in-typography.md
+        href: ../design/add-in-typography.md?context=office/dev/add-ins/excel/context
       - name: Color
-        href: ../design/add-in-color.md
+        href: ../design/add-in-color.md?context=office/dev/add-ins/excel/context
       - name: Layout
-        href: ../design/add-in-layout.md
+        href: ../design/add-in-layout.md?context=office/dev/add-ins/excel/context
       - name: Icons
-        href: ../design/add-in-icons.md
+        href: ../design/add-in-icons.md?context=office/dev/add-ins/excel/context
       - name: Using motion
-        href: ../design/using-motion-office-addins.md
+        href: ../design/using-motion-office-addins.md?context=office/dev/add-ins/excel/context
         displayName: Motion
     - name: Interface elements
-      href: ../design/interface-elements.md
+      href: ../design/interface-elements.md?context=office/dev/add-ins/excel/context
       items:
       - name: Add-in commands
-        href: ../design/add-in-commands.md
+        href: ../design/add-in-commands.md?context=office/dev/add-ins/excel/context
       - name: Task panes
-        href: ../design/task-pane-add-ins.md
+        href: ../design/task-pane-add-ins.md?context=office/dev/add-ins/excel/context
       - name: Dialog boxes
-        href: ../design/dialog-boxes.md
+        href: ../design/dialog-boxes.md?context=office/dev/add-ins/excel/context
       - name: Content add-ins
-        href: ../design/content-add-ins.md
+        href: ../design/content-add-ins.md?context=office/dev/add-ins/excel/context
     - name: UX design templates
-      href: ../design/ux-design-pattern-templates.md
+      href: ../design/ux-design-pattern-templates.md?context=office/dev/add-ins/excel/context
       items:
       - name: Authentication
-        href: ../design/authentication-patterns.md
+        href: ../design/authentication-patterns.md?context=office/dev/add-ins/excel/context
       - name: First run experience
-        href: ../design/first-run-experience-patterns.md
+        href: ../design/first-run-experience-patterns.md?context=office/dev/add-ins/excel/context
       - name: Navigation
-        href: ../design/navigation-patterns.md
+        href: ../design/navigation-patterns.md?context=office/dev/add-ins/excel/context
       - name: Branding
-        href: ../design/branding-patterns.md
+        href: ../design/branding-patterns.md?context=office/dev/add-ins/excel/context
     - name: Resources
       items:
       - name: Design toolkits
-        href: ../design/design-toolkits.md
+        href: ../design/design-toolkits.md?context=office/dev/add-ins/excel/context
       - name: Office UI Fabric
-        href: ../design/office-ui-fabric.md
+        href: ../design/office-ui-fabric.md?context=office/dev/add-ins/excel/context
       - name: Get started using Fabric React
-        href: ../design/using-office-ui-fabric-react.md
+        href: ../design/using-office-ui-fabric-react.md?context=office/dev/add-ins/excel/context
 
   - name: Test and debug
-    href: ../testing/test-debug-office-add-ins.md
+    href: ../testing/test-debug-office-add-ins.md?context=office/dev/add-ins/excel/context
     items:
     - name: Windows
       items:
       - name: Sideload Office Add-ins on Windows
-        href: ../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
+        href: ../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md?context=office/dev/add-ins/excel/context
       - name: Sideload Office Add-ins using the sideload command
-        href: ../testing/sideload-office-addin-using-sideload-command.md
+        href: ../testing/sideload-office-addin-using-sideload-command.md?context=office/dev/add-ins/excel/context
       - name: Attach a debugger from the task pane
-        href: ../testing/attach-debugger-from-task-pane.md
+        href: ../testing/attach-debugger-from-task-pane.md?context=office/dev/add-ins/excel/context
       - name: Debug using F12 developer tools
-        href: ../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
+        href: ../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md?context=office/dev/add-ins/excel/context
     - name: Office Online
       items:
       - name: Sideload Office Add-ins in Office Online
-        href: ../testing/sideload-office-add-ins-for-testing.md
+        href: ../testing/sideload-office-add-ins-for-testing.md?context=office/dev/add-ins/excel/context
       - name: Debug in Office Online
-        href: ../testing/debug-add-ins-in-office-online.md
+        href: ../testing/debug-add-ins-in-office-online.md?context=office/dev/add-ins/excel/context
     - name: iPad and Mac
       items:
       - name: Sideload Office Add-ins on iPad and Mac
-        href: ../testing/sideload-an-office-add-in-on-ipad-and-mac.md
+        href: ../testing/sideload-an-office-add-in-on-ipad-and-mac.md?context=office/dev/add-ins/excel/context
       - name: Debug on iPad and Mac
-        href: ../testing/debug-office-add-ins-on-ipad-and-mac.md
+        href: ../testing/debug-office-add-ins-on-ipad-and-mac.md?context=office/dev/add-ins/excel/context
     - name: Usability testing
-      href: develop/usability-testing.md
+      href: ../develop/usability-testing.md?context=office/dev/add-ins/excel/context
     - name: Troubleshoot user errors
-      href: ../testing/testing-and-troubleshooting.md
+      href: ../testing/testing-and-troubleshooting.md?context=office/dev/add-ins/excel/context
     - name: Validate an add-in manifest and troubleshoot issues
-      href: ../testing/troubleshoot-manifest.md
+      href: ../testing/troubleshoot-manifest.md?context=office/dev/add-ins/excel/context
 
   - name: Publish
-    href: ../publish/publish.md
+    href: ../publish/publish.md?context=office/dev/add-ins/excel/context
     items:
     - name: Host an Office Add-in on Microsoft Azure
-      href: ../publish/host-an-office-add-in-on-microsoft-azure.md
+      href: ../publish/host-an-office-add-in-on-microsoft-azure.md?context=office/dev/add-ins/excel/context
     - name: Package your add-in using Visual Studio
-      href: ../publish/package-your-add-in-using-visual-studio.md
+      href: ../publish/package-your-add-in-using-visual-studio.md?context=office/dev/add-ins/excel/context
     - name: Publish add-ins via Centralized Deployment
-      href: ../publish/centralized-deployment.md
+      href: ../publish/centralized-deployment.md?context=office/dev/add-ins/excel/context
     - name: Publish add-ins to a SharePoint catalog
-      href: ../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
+      href: ../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md?context=office/dev/add-ins/excel/context
     - name: Publish add-ins to AppSource
       href: /office/dev/store/submit-to-the-office-store
     - name: AppSource validation policies
       href: /office/dev/store/validation-policies
 
   - name: Resources
-    href: ../resources/resources-links-help.md
+    href: ../resources/resources-links-help.md?context=office/dev/add-ins/excel/context
 
 

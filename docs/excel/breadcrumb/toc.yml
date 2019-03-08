@@ -1,0 +1,7 @@
+- name: Office
+  tocHref: /office/
+  topicHref: /office/index
+  items:
+  - name: Add-ins
+    tocHref: /office/dev/add-ins/
+    topicHref: /office/dev/add-ins
