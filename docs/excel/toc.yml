@@ -1,0 +1,33 @@
+- name: Excel add-ins
+  items:
+
+  - name: Overview
+    items:
+    - name: About Office Add-ins
+      href: ../overview/office-add-ins.md
+    - name: Excel add-ins overview
+      href: excel-add-ins-overview.md
+    - name: Host and platform availability
+      href: ../overview/office-add-in-availability.md
+
+  - name: Quick Starts
+    items:
+    - name: Use Angular
+      href: ../quickstarts/excel-quickstart-angular.md
+      displayName: Excel
+    - name: Use jQuery
+      href: ../quickstarts/excel-quickstart-jquery.md
+      displayName: Excel
+    - name: Use React
+      href: ../quickstarts/excel-quickstart-react.md
+      displayName: Excel
+    - name: Use Vue
+      href: ../quickstarts/excel-quickstart-vue.md
+      displayName: Excel
+
+  - name: Tutorials
+    items:
+    - name: Excel add-in tutorial
+      href: ../tutorials/excel-tutorial.md
+      displayName: Excel
+
