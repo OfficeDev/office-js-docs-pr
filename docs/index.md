@@ -12,7 +12,7 @@ ms.author: o365devx
     <div class="container">
         <ul class="cardsY panelContent featuredContent">
             <li>
-                <a href="/add-ins/quickstarts/excel-quickstart-jquery">
+                <a href="quickstarts/excel-quickstart-jquery">
                     <div class="cardSize">
                         <div class="cardPadding">
                             <div class="card">
