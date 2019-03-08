@@ -45,3 +45,110 @@
     - name: Performance
       href: ../concepts/resource-limits-and-performance-optimization.md
 
+  - name: Design the User Interface
+    href: ../design/add-in-design.md
+    items:
+    - name: Guidelines
+      items:
+      - name: Accessibility
+        href: ../design/accessibility-guidelines.md
+      - name: Voice
+        href: ../design/voice-guidelines.md
+      - name: Data visualization
+        href: ../design/data-visualization-guidelines.md
+    - name: Design language
+      href: ../design/add-in-design-language.md
+      items:
+      - name: Typography
+        href: ../design/add-in-typography.md
+      - name: Color
+        href: ../design/add-in-color.md
+      - name: Layout
+        href: ../design/add-in-layout.md
+      - name: Icons
+        href: ../design/add-in-icons.md
+      - name: Using motion
+        href: ../design/using-motion-office-addins.md
+        displayName: Motion
+    - name: Interface elements
+      href: ../design/interface-elements.md
+      items:
+      - name: Add-in commands
+        href: ../design/add-in-commands.md
+      - name: Task panes
+        href: ../design/task-pane-add-ins.md
+      - name: Dialog boxes
+        href: ../design/dialog-boxes.md
+      - name: Content add-ins
+        href: ../design/content-add-ins.md
+    - name: UX design templates
+      href: ../design/ux-design-pattern-templates.md
+      items:
+      - name: Authentication
+        href: ../design/authentication-patterns.md
+      - name: First run experience
+        href: ../design/first-run-experience-patterns.md
+      - name: Navigation
+        href: ../design/navigation-patterns.md
+      - name: Branding
+        href: ../design/branding-patterns.md
+    - name: Resources
+      items:
+      - name: Design toolkits
+        href: ../design/design-toolkits.md
+      - name: Office UI Fabric
+        href: ../design/office-ui-fabric.md
+      - name: Get started using Fabric React
+        href: ../design/using-office-ui-fabric-react.md
+
+  - name: Test and debug
+    href: ../testing/test-debug-office-add-ins.md
+    items:
+    - name: Windows
+      items:
+      - name: Sideload Office Add-ins on Windows
+        href: ../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
+      - name: Sideload Office Add-ins using the sideload command
+        href: ../testing/sideload-office-addin-using-sideload-command.md
+      - name: Attach a debugger from the task pane
+        href: ../testing/attach-debugger-from-task-pane.md
+      - name: Debug using F12 developer tools
+        href: ../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
+    - name: Office Online
+      items:
+      - name: Sideload Office Add-ins in Office Online
+        href: ../testing/sideload-office-add-ins-for-testing.md
+      - name: Debug in Office Online
+        href: ../testing/debug-add-ins-in-office-online.md
+    - name: iPad and Mac
+      items:
+      - name: Sideload Office Add-ins on iPad and Mac
+        href: ../testing/sideload-an-office-add-in-on-ipad-and-mac.md
+      - name: Debug on iPad and Mac
+        href: ../testing/debug-office-add-ins-on-ipad-and-mac.md
+    - name: Usability testing
+      href: develop/usability-testing.md
+    - name: Troubleshoot user errors
+      href: ../testing/testing-and-troubleshooting.md
+    - name: Validate an add-in manifest and troubleshoot issues
+      href: ../testing/troubleshoot-manifest.md
+
+  - name: Publish
+    href: ../publish/publish.md
+    items:
+    - name: Host an Office Add-in on Microsoft Azure
+      href: ../publish/host-an-office-add-in-on-microsoft-azure.md
+    - name: Package your add-in using Visual Studio
+      href: ../publish/package-your-add-in-using-visual-studio.md
+    - name: Publish add-ins via Centralized Deployment
+      href: ../publish/centralized-deployment.md
+    - name: Publish add-ins to a SharePoint catalog
+      href: ../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
+    - name: Publish add-ins to AppSource
+      href: /office/dev/store/submit-to-the-office-store
+    - name: AppSource validation policies
+      href: /office/dev/store/validation-policies
+
+  - name: Resources
+    href: ../resources/resources-links-help.md
+
