@@ -12,7 +12,7 @@ ms.author: o365devx
     <div class="container">
         <ul class="cardsY panelContent featuredContent">
             <li>
-                <a href="/add-ins/quickstarts/excel-quickstart-jquery.md">
+                <a href="/office/dev/add-ins/quickstarts/excel-quickstart-jquery">
                     <div class="cardSize">
                         <div class="cardPadding">
                             <div class="card">
@@ -32,7 +32,7 @@ ms.author: o365devx
         </ul>
         <ul class="cardsY panelContent featuredContent">
             <li>
-                <a href="/add-ins/quickstarts/onenote-quickstart">
+                <a href="/office/dev/add-ins/quickstarts/onenote-quickstart">
                     <div class="cardSize">
                         <div class="cardPadding">
                             <div class="card">
@@ -72,7 +72,7 @@ ms.author: o365devx
         </ul>
         <ul class="cardsY panelContent featuredContent">
             <li>
-                <a href="quickstarts/powerpoint-quickstart">
+                <a href="/office/dev/add-ins/quickstarts/powerpoint-quickstart">
                     <div class="cardSize">
                         <div class="cardPadding">
                             <div class="card">
@@ -92,7 +92,7 @@ ms.author: o365devx
         </ul>
         <ul class="cardsY panelContent featuredContent">
             <li>
-                <a href="quickstarts/project-quickstart">
+                <a href="/office/dev/add-ins/quickstarts/project-quickstart">
                     <div class="cardSize">
                         <div class="cardPadding">
                             <div class="card">
@@ -112,7 +112,7 @@ ms.author: o365devx
         </ul>
         <ul class="cardsY panelContent featuredContent">
             <li>
-                <a href="quickstarts/word-quickstart">
+                <a href="/office/dev/add-ins/quickstarts/word-quickstart">
                     <div class="cardSize">
                         <div class="cardPadding">
                             <div class="card">
