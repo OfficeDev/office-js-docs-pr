@@ -3,11 +3,11 @@
 
   - name: Overview
     items:
-    - name: About Office Add-ins
-      href: ../overview/office-add-ins.md
     - name: Excel add-ins overview
       href: excel-add-ins-overview.md
       displayName: Excel
+    - name: Office Add-ins platform
+      href: ../overview/office-add-ins.md
     - name: Host and platform availability
       href: ../overview/office-add-in-availability.md
 
@@ -151,4 +151,5 @@
 
   - name: Resources
     href: ../resources/resources-links-help.md
+
 
