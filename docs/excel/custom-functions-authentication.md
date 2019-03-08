@@ -6,7 +6,7 @@ title: Authentication for Custom Functions
 
 # Authentication
 
-In some scenarios your custom function will need to authenticate the user in order to access protected resources. While custom functions doesn't require a specific method of authentication, you should be aware that custom functions run in a separate runtime from the task pane and other UI elements of your add-in. Because of this, you'll need to pass data back and forth between the two runtimes using the `AsyncStorage` object and the Dialog API.
+In some scenarios your custom function will need to authenticate the user in order to access protected resources. While custom functions don't require a specific method of authentication, you should be aware that custom functions run in a separate runtime from the task pane and other UI elements of your add-in. Because of this, you'll need to pass data back and forth between the two runtimes using the `AsyncStorage` object and the Dialog API.
   
 ## AsyncStorage object
 
@@ -27,9 +27,9 @@ If a token doesn't exist, you should use the Dialog API to ask the user to sign 
 
 For information on how to use the `OfficeRuntime.Dialog`, see [Custom Functions runtime](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-runtime?view=office-js#displaying-a-dialog-box).
 
-When envisioning the entire authentication process as a whole, it might be helpful to think of the task pane and UI elements of your add-in and the custom functions portions of your add-in as separate entities which can communicate with each other through `AsyncStorage`.
+When envisioning the entire authentication process as a whole, it might be helpful to think of the task pane and UI elements of your add-in and the custom functions part of your add-in as separate entities which can communicate with each other through `AsyncStorage`.
 
-The following diagram outlines this basic process. Note that the dotted line indicates that while they perform separate actions, custom functions and your add-in's task pane are both parts of your add-in as a whole.
+The following diagram outlines this basic process. Note that the dotted line indicates that while they perform separate actions, custom functions and your add-in's task pane are both part of your add-in as a whole.
 
 1. You issue a custom function call from a cell in an Excel workbook.
 2. The custom function uses `Officeruntime.Dialog` to pass your user credentials to a website.
