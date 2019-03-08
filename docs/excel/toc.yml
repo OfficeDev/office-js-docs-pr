@@ -7,6 +7,7 @@
       href: ../overview/office-add-ins.md
     - name: Excel add-ins overview
       href: excel-add-ins-overview.md
+      displayName: Excel
     - name: Host and platform availability
       href: ../overview/office-add-in-availability.md
 
@@ -30,4 +31,17 @@
     - name: Excel add-in tutorial
       href: ../tutorials/excel-tutorial.md
       displayName: Excel
+
+  - name: Office Add-ins concepts
+    items:
+    - name: Requirements for running add-ins
+      href: ../concepts/requirements-for-running-office-add-ins.md
+    - name: Add-in development best practices
+      href: ../concepts/add-in-development-best-practices.md
+    - name: Add-in development lifecycle
+      href: ../concepts/add-in-development-lifecycle.md
+    - name: Privacy and security
+      href: ../concepts/privacy-and-security.md
+    - name: Performance
+      href: ../concepts/resource-limits-and-performance-optimization.md
 
