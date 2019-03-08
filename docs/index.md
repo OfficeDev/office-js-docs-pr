@@ -133,6 +133,6 @@ ms.author: o365devx
             </li>
         </ul>
     </div>
-    <p><span style="font-color:red">NOTE: The content on this page is placeholder content intended merely to demonstrate basic functionality of the page. Should we choose to proceed with this approach, additional content will be added to this page and its UI redesigned significantly.</span></p>
+    <p><span style="color:blue">NOTE: The content on this page is placeholder content intended merely to demonstrate basic functionality of the page. Should we choose to proceed with this approach, additional content will be added to this page and its UI redesigned significantly.</span></p>
 </div>
 
