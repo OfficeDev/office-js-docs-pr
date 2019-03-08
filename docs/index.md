@@ -12,7 +12,7 @@ ms.author: o365devx
     <div class="container">
         <ul class="cardsY panelContent featuredContent">
             <li>
-                <a href="quickstarts/excel-quickstart-jquery">
+                <a href="/add-ins/quickstarts/excel-quickstart-jquery.md">
                     <div class="cardSize">
                         <div class="cardPadding">
                             <div class="card">
@@ -23,6 +23,106 @@ ms.author: o365devx
                                 </div>
                                 <div class="cardText">
                                     <span class="likeAnH3">Excel add-ins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <ul class="cardsY panelContent featuredContent">
+            <li>
+                <a href="/add-ins/quickstarts/onenote-quickstart">
+                    <div class="cardSize">
+                        <div class="cardPadding">
+                            <div class="card">
+                                <div class="cardImageOuter">
+                                    <div class="cardImage">
+                                        <img data-hoverimage="images/index/OneNoteLogoColor.svg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="cardText">
+                                    <span class="likeAnH3">OneNote add-ins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <ul class="cardsY panelContent featuredContent">
+            <li>
+                <a href="/outlook/add-ins/quick-start">
+                    <div class="cardSize">
+                        <div class="cardPadding">
+                            <div class="card">
+                                <div class="cardImageOuter">
+                                    <div class="cardImage">
+                                        <img data-hoverimage="images/index/OutlookLogoColor.svg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="cardText">
+                                    <span class="likeAnH3">Outlook add-ins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <ul class="cardsY panelContent featuredContent">
+            <li>
+                <a href="quickstarts/powerpoint-quickstart">
+                    <div class="cardSize">
+                        <div class="cardPadding">
+                            <div class="card">
+                                <div class="cardImageOuter">
+                                    <div class="cardImage">
+                                        <img data-hoverimage="images/index/PowerPointLogoColor.svg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="cardText">
+                                    <span class="likeAnH3">PowerPoint add-ins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <ul class="cardsY panelContent featuredContent">
+            <li>
+                <a href="quickstarts/project-quickstart">
+                    <div class="cardSize">
+                        <div class="cardPadding">
+                            <div class="card">
+                                <div class="cardImageOuter">
+                                    <div class="cardImage">
+                                        <img data-hoverimage="images/index/ProjectLogoColor.svg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="cardText">
+                                    <span class="likeAnH3">Project add-ins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <ul class="cardsY panelContent featuredContent">
+            <li>
+                <a href="quickstarts/word-quickstart">
+                    <div class="cardSize">
+                        <div class="cardPadding">
+                            <div class="card">
+                                <div class="cardImageOuter">
+                                    <div class="cardImage">
+                                        <img data-hoverimage="images/index/WordLogoColor.svg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="cardText">
+                                    <span class="likeAnH3">Word add-ins</span>
                                 </div>
                             </div>
                         </div>
