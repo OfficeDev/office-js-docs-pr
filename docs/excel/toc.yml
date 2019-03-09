@@ -2,7 +2,7 @@
   href: excel-add-ins-overview.md
   items:
   
-  - name: Office Add-ins overview
+  - name: Overview
     items:
     - name: About Office Add-ins
       href: ../overview/office-add-ins.md?context=office/dev/add-ins/excel/context
