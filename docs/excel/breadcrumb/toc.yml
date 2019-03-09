@@ -7,5 +7,5 @@
     topicHref: /office/dev/add-ins
     items:
     - name: Excel add-ins
-      tocHref: /office/dev/add-ins/excel-add-ins-overview
-      topicHref: /office/dev/add-ins/excel-add-ins-overview
+      tocHref: /office/dev/add-ins/excel/excel-add-ins-overview
+      topicHref: /office/dev/add-ins/excel/excel-add-ins-overview
