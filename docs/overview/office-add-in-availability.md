@@ -1,7 +1,7 @@
 ---
 title: Office Add-in host and platform availability
 description: Supported requirement sets for Excel, Word, Outlook, PowerPoint, OneNote, and Project.
-ms.date: 02/20/2019
+ms.date: 03/07/2019
 localization_priority: Priority
 ---
 
@@ -198,6 +198,8 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
         - TextCoercion</td>
   </tr>
 </table>
+
+*&ast; - Added with post-release updates.*
 
 <br/>
 
@@ -511,6 +513,8 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
 </table>
 
+*&ast; - Added with post-release updates.*
+
 <br/>
 
 ## PowerPoint
@@ -633,6 +637,8 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
   </tr>
 </table>
 
+*&ast; - Added with post-release updates.*
+
 <br/>
 
 ## OneNote
@@ -658,7 +664,6 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
          - TextCoercion</td>
   </tr>
 </table>
-*&ast; - Added with post-release updates.*
 
 <br/>
 
