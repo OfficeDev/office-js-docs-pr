@@ -1,7 +1,7 @@
 ---
 title: Work with multiple ranges simultaneously in Excel add-ins
 description: ''
-ms.date: 02/20/2019
+ms.date: 03/11/2019
 localization_priority: Normal
 ---
 
@@ -14,7 +14,7 @@ The Excel JavaScript library enables your add-in to perform operations, and set 
 
 ## RangeAreas
 
-A set of (possibly discontiguous) ranges is represented by a [RangeAreas](/javascript/api/excel/excel.rangeareas) object. It has properties and methods similar to the `Range` type (many with the same, or similar, names), but adjustments have been made to:
+A set of (possibly discontiguous) ranges is represented by a [RangeAreas](/javascript/api/excel/excel.rangeareas) object. It has properties and methods similar to the [Range](/javascript/api/excel/excel.range) type (many with the same, or similar, names), but adjustments have been made to:
 
 - The data types for properties and the behavior of the setters and getters.
 - The data types of method parameters and the method behaviors.
@@ -29,50 +29,6 @@ Some examples:
 - `RangeAreas.getEntireColumn` and `RangeAreas.getEntireRow` return another `RangeAreas` object that represents all of the columns (or rows) in all the ranges in the `RangeAreas`. For example, if the `RangeAreas` represents "A1:C4" and "F14:L15", then `RangeAreas.getEntireColumn` returns a `RangeAreas` object that represents "A:C" and "F:L".
 - `RangeAreas.copyFrom` can take either a `Range` or a `RangeAreas` parameter representing the source range(s) of the copy operation.
 
-#### Complete list of Range members that are also available on RangeAreas
-
-##### Properties
-
-Be familiar with [Read properties of RangeAreas](#read-properties-of-rangeareas) before you write code that reads any properties listed. There are subtleties to what gets returned.
-
-- address
-- addressLocal
-- cellCount
-- conditionalFormats
-- context
-- dataValidation
-- format
-- isEntireColumn
-- isEntireRow
-- style
-- worksheet
-
-##### Methods
-
-Range methods in preview are marked.
-
-- calculate()
-- clear()
-- convertDataTypeToText() (preview)
-- convertToLinkedDataType() (preview)
-- copyFrom() (preview)
-- getEntireColumn()
-- getEntireRow()
-- getIntersection()
-- getIntersectionOrNullObject()
-- getOffsetRange() (named getOffsetRangeAreas on the RangeAreas object)
-- getSpecialCells() (preview)
-- getSpecialCellsOrNullObject() (preview)
-- getTables() (preview)
-- getUsedRange() (named getUsedRangeAreas on the RangeAreas object)
-- getUsedRangeOrNullObject() (named getUsedRangeAreasOrNullObject on the RangeAreas object)
-- load()
-- set()
-- setDirty() (preview)
-- toJSON()
-- track()
-- untrack()
-
 ### RangeArea-specific properties and methods
 
 The `RangeAreas` type has some properties and methods that are not on the `Range` object. The following is a selection of them:
@@ -83,7 +39,7 @@ The `RangeAreas` type has some properties and methods that are not on the `Range
 
 ## Create RangeAreas
 
-You can create `RangeAreas` object in two basic ways:
+You can create a `RangeAreas` object in two basic ways:
 
 - Call `Worksheet.getRanges()` and pass it a string with comma-delimited range addresses. If any range you want to include has been made into a [NamedItem](/javascript/api/excel/excel.nameditem), you can include the name, instead of the address, in the string.
 - Call `Workbook.getSelectedRanges()`. This method returns a `RangeAreas` representing all the ranges that are selected on the currently active worksheet.
@@ -94,7 +50,7 @@ Once you have a `RangeAreas` object, you can create others using the methods on 
 > You cannot directly add additional ranges to a `RangeAreas` object. For example, the collection in `RangeAreas.areas` does not have an `add` method.
 
 > [!WARNING]
-> Do not attempt to directly add or delete members of the the `RangeAreas.areas.items` array. This will lead to undesirable behavior in your code. For example, it is possible to push an additional `Range` object onto the array, but doing so will cause errors because `RangeAreas` properties and methods behave as if the new item isn't there. For example, the `areaCount` property does not include ranges pushed in this way, and the `RangeAreas.getItemAt(index)` throws an error if `index` is larger than `areasCount-1`. Similarly, deleting a `Range` object in the `RangeAreas.areas.items` array by getting a reference to it and calling its `Range.delete` method causes bugs: although the `Range` object *is* deleted, the properties and methods of the parent `RangeAreas` object behave, or try to, as if it is still in existence. For example, if your code calls `RangeAreas.calculate`, Office will try to calculate the range, but will error because the range object is gone.
+> Do not attempt to directly add or delete members of the the `RangeAreas.areas.items` array. This will lead to undesirable behavior in your code. For example, it is possible to push an additional `Range` object onto the array, but doing so will cause errors because `RangeAreas` properties and methods behave as if the new item isn't there. For example, the `areaCount` property does not include ranges pushed in this way, and the `RangeAreas.getItemAt(index)` throws an error if `index` is larger than `areasCount - 1`. Similarly, deleting a `Range` object in the `RangeAreas.areas.items` array by getting a reference to it and calling its `Range.delete` method causes bugs: although the `Range` object *is* deleted, the properties and methods of the parent `RangeAreas` object behave, or try to, as if it is still in existence. For example, if your code calls `RangeAreas.calculate`, Office will try to calculate the range, but will error because the range object is gone.
 
 ## Set properties on multiple ranges
 
