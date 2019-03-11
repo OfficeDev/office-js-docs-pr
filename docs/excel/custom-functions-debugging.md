@@ -1,25 +1,26 @@
 ---
-ms.date: 02/26/2019
+ms.date: 03/11/2019
 description: Debug your custom functions in Excel.
 title: Custom functions debugging (preview)
 localization_priority: Normal
 ---
 # Custom functions debugging (preview)
 
-Debugging for custom functions can be accomplished by multiple means, depending on what platform you're using. Methods differ between [Office Online for Windows](#windows-10-visual-studio-and-microsoft-edge), [Office Online for Mac](#mac-and-chrome-debugger), [Office Desktop for Windows](#for-windows-and-visual-studio), and [Office Desktop for Mac](#for-mac). You can also issue debugging commands through [the command line directly](#using-the-command-line).
+Debugging for custom functions can be accomplished by multiple means, depending on what platform you're using. Methods differ between [Office Online for Windows](#windows-10-visual-studio-and-microsoft-edge), [Office Online for Mac](#mac-and-chrome-debugger), [Office Desktop for Windows](#for-windows-and-visual-studio-code), and [Office Desktop for Mac](#for-mac). You can also issue debugging commands through [the command line directly](#using-the-command-line).
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 > [!NOTE]
 > For simplicity, this article shows debugging in the context of using Visual Studio Code to edit, run tasks, and in some cases use the debug view. If you are using a different editor or command line tool, see the [command line instructions](#Use-the-command-line-tools-to-debug) at the end of this article.
 
+Before debugging, ensure that you have trusted self-signed certificates for your project. For instructions, see [Adding self-signed certificates as trusted root certificates](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md). 
 ## Use the browser developer tools to debug Excel Online
 
 You can use the browser developer tools to debug custom functions in Excel Online. The following steps work for both Windows and macOS.
 
 ### Run your add-in from Visual Studio Code
 
-1. Open your custom functions root project folder in [VS Code](https://code.visualstudio.com/).
+1. Open your custom functions root project folder in [Visual Studio Code (VS Code)](https://code.visualstudio.com/).
 2. Choose **Terminal > Run Task** and type or select **Watch**. This will monitor and rebuild for any file changes.
 3. Choose **Terminal > Run Task** and type or select **Dev Server**. 
 
@@ -42,14 +43,14 @@ You can use the browser developer tools to debug custom functions in Excel Onlin
 ### Start debugging
 
 1. Open developer tools in the browser. For Chrome and most browsers F12 will open the developer tools.
-2. In developer tools, open your source code script file (functions.js or functions.ts).
+2. In developer tools, open your source code script file using **Cmd+P** or **Ctrl+P** (functions.js or functions.ts).
 3. [Set a breakpoint](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) in the custom function source code. 
 
-If you need to change the code you can make edits in Visual Studio Code and save the changes. Refresh the browser to see the changes loaded.
+If you need to change the code you can make edits in VS Code and save the changes. Refresh the browser to see the changes loaded.
 
-## Use the Visual Studio Code debugger for Excel Desktop
+## Use the VS Code debugger for Excel Desktop
 
-You can use Visual Studio Code to debug custom functions in Office Excel on the desktop.
+You can use VS Code to debug custom functions in Office Excel on the desktop.
 
 > [!NOTE]
 > At this time, desktop debugging for the Mac is not available. Instead, refer to instructions for [using the browser tools to debug Excel Online](#debug-in-excel-online-by-using-the-browser-developer-tools).
@@ -68,17 +69,17 @@ You can use Visual Studio Code to debug custom functions in Office Excel on the 
 
 ### Start debugging
 
-1. In VS code, open your source code script file (functions.js or functions.ts).
+1. In VS Code, open your source code script file (functions.js or functions.ts).
 2. In the custom function source code, set a breakpoint.
 3. In the Excel workbook, enter a formula that uses your custom function.
 
-At this point execution will stop on the line of code where you set the breakpoint. Now you can step through your code, set watches, and use any Visual Studio Code debugging features you need.
+At this point execution will stop on the line of code where you set the breakpoint. Now you can step through your code, set watches, and use any VS Code debugging features you need.
 
 ## Use the VS Code debugger for Excel Online in Microsoft Edge
 
-You can use Visual Studio Code to debug custom functions in Excel Online in the Microsoft Edge browser. To use VS Code with Microsoft Edge, you must install the [Debugger for Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge) extension.
+You can use VS Code to debug custom functions in Excel Online in the Microsoft Edge browser. To use VS Code with Microsoft Edge, you must install the [Debugger for Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge) extension.
 
-### Run your add-in from Visual Studio Code
+### Run your add-in from VS Code
 
 1. Open your custom functions root project folder in [VS Code](https://code.visualstudio.com/).
 2. Choose **Terminal > Run Task** and type or select **Watch**. This will monitor and rebuild for any file changes.
@@ -121,11 +122,11 @@ If you are not using VS Code, you can use the command line (such as bash, or Pow
 
 3. If you want to start your add-in in the desktop version of Excel, run the following command
     
-    `npm run start:desktop`
+    `npm run start desktop`
     
     Or if you prefer to start your add-in in Excel Online run the following command
     
-    `npm run start:web`
+    `npm run start web`
     
     For Excel Online you also need to sideload your add-in. Follow the steps in [Sideload your add-in](#Sideload-your-add-in) to sideload your add-in. Then continue to the next section to start debugging.
     

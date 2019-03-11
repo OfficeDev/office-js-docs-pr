@@ -1,5 +1,5 @@
 ---
-ms.date: 02/27/2019
+ms.date: 03/11/2019
 description: Define metadata for custom functions in Excel.
 title: Metadata for custom functions in Excel (preview)
 localization_priority: Normal

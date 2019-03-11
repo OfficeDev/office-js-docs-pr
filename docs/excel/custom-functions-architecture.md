@@ -1,5 +1,5 @@
 ---
-ms.date: 02/26/2019
+ms.date: 03/11/2019
 description: ''
 title: Custom functions architecture (preview)
 localization_priority: Normal

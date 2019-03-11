@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial (preview)
 description: In this tutorial, you’ll create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 02/27/2019
+ms.date: 03/11/2019
 ms.prod: excel
 ms.topic: tutorial
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
@@ -79,7 +79,7 @@ In this tutorial, you will:
 Run the following command.
 
 ```
-npm start
+npm start desktop
 ```
 
 This command starts the web server, and sideloads your custom function add-in into Excel for Windows.
