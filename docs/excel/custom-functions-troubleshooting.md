@@ -54,7 +54,7 @@ If using Excel for Windows or Mac, you can report feedback to the Excel Custom F
 
 ### In Github
 
-Feel free to submit an issue you encounter either through the "edit" feature on any documentation page, by submitting a [pull request to the office js docs repository](https://github.com/OfficeDev/office-js-docs-pr/blob/master/Contributing.md), or by [filing a new issue directly to the custom functions repository](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
+Feel free to submit an issue you encounter either through the "Content feedback" feature at the bottom of any documentation page, or by [filing a new issue directly to the custom functions repository](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
 ## See also
 
