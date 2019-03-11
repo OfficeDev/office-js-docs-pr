@@ -24,7 +24,7 @@ The Office.context namespace provides shared interfaces that are used by add-ins
 |--------|------|
 | [displayLanguage](#displaylanguage-string) | Member |
 | [officeTheme](#officetheme-object) | Member |
-| [roamingSettings](#roamingsettings-roamingsettingsjavascriptapioutlook17officeroamingsettings) | Member |
+| [roamingSettings](#roamingsettings-roamingsettings) | Member |
 
 ### Namespaces
 
