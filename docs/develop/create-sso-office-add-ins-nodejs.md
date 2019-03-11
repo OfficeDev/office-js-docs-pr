@@ -130,7 +130,7 @@ The following instruction are written generically so they can be used in multipl
 
 1. Below the `getOneDriveFiles` method, add the code below. Note the following about this code:
 
-    * The [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) is the new API in Office.js that enables an add-in to ask the Office host application (Excel, PowerPoint, Word, etc.) for an access token to the add-in (for the user signed into Office). The Office host application, in turn, asks the Azure AD 2.0 endpoint for the token. Since you preauthorized the Office host to your add-in when you registered it, Azure AD will send the token.
+    * The [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) is the new API in Office.js that enables an add-in to ask the Office host application (Excel, PowerPoint, Word, etc.) for an access token to the add-in (for the user signed into Office). The Office host application, in turn, asks the Azure AD 2.0 endpoint for the token. Since you pre-authorized the Office host to your add-in when you registered it, Azure AD will send the token.
     * If no user is signed into Office, the Office host will prompt the user to sign in.
     * The options parameter sets `forceConsent` to `false`, so the user will not be prompted to consent to giving the Office host access to your add-in every time she or he uses the add-in. The first time the user runs the add-in, the call of `getAccessTokenAsync` will fail, but error-handling logic that you add in a later step will automatically re-call with the `forceConsent` option set to `true` and the user will be prompted to consent, but only that first time.
     * You will create the `handleClientSideErrors` method in a later step.
@@ -194,7 +194,8 @@ The following instruction are written generically so they can be used in multipl
             // TODO4: Handle the case where the user is logged in with an account that is neither work or school,
             //        nor Microsoft Account.
 
-            // TODO5: Handle 
+            // TODO5: Handle the case where the Office host has not been authorized to the add-in's web service or
+            //        the user has not granted the service permission to their `profile`.
 
             // TODO6: Handle an unspecified error from the Office host.
 
@@ -242,7 +243,7 @@ The following instruction are written generically so they can be used in multipl
     > [!NOTE]
     > Error 13004 is not handled in this method because it should only occur in development. It cannot be fixed by runtime code and there would be no point in reporting it to an end user.
 
-1. Replace `TODO5` with the following code. Error 13005 occurs when there has been an unspecified error in the Office host that may indicate that the host is in an unstable state. Ask the user to restart Office.
+1. Replace `TODO5` with the following code. Error 13005 occurs when Office has not been authorized to the add-in's web service or the user has not granted the service permission to their `profile`.
 
     ```javascript
     case 13005:
