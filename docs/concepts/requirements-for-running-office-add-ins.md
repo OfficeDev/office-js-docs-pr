@@ -1,7 +1,7 @@
 ---
 title: Requirements for running Office Add-ins
 description: ''
-ms.date: 02/09/2018
+ms.date: 03/11/2019
 localization_priority: Priority
 ---
 
@@ -10,7 +10,7 @@ localization_priority: Priority
 This article describes the software and device requirements for running Office Add-ins.
 
 > [!NOTE]
-> If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](https://docs.microsoft.com/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)). 
+> If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](https://docs.microsoft.com/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).
 
 For a high-level view of where Office Add-ins are currently supported, see [Office Add-in host and platform availability](../overview/office-add-in-availability.md).
 
@@ -40,10 +40,8 @@ The following software is required for developing an Office Add-in for the suppo
 - For Windows x86 and x64 desktops, and tablets such as Surface Pro:
     - The 32- or 64-bit version of Office 2013 or a later version, running on Windows 7 or a later version.
     - Excel 2013, Outlook 2013, PowerPoint 2013, Project Professional 2013, Project 2013 SP1, Word 2013, or a later version of the Office client, if you are testing or running an Office Add-in specifically for one of these Office desktop clients. Office desktop clients can be installed on premises or via Click-to-Run on the client computer.
-    
-  If you have a valid Office 365 subscription and you do not have access to Office 2013, you can download it via one the following CDN links:		
-    - [Office 2013 for Business (.exe)](https://c2rsetup.officeapps.live.com/c2r/download.aspx?productReleaseID=O365BusinessRetail&platform=X86&language=en-us&version=O15GA&source=O15OLSO365) 
-    - [Office 2013 for Home (.exe)](https://c2rsetup.officeapps.live.com/c2r/download.aspx?productReleaseID=O365HomePremRetail&platform=X86&language=en-us&version=O15GA&source=O15OLSO365) 
+
+  If you have a valid Office 365 subscription and you do not have access to the Office client, you can [download and install the latest version of Office](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658).
 
 - Internet Explorer 11 or later, which must be installed but doesn't have to be the default browser. To support Office Add-ins, the Office client that acts as host uses browser components that are part of Internet Explorer 11 or later.
 
@@ -59,8 +57,8 @@ Outlook for Mac, which is distributed as part of Office 365, supports Outlook ad
 
 The following are the minimum client versions of Office for Mac that support Office Add-ins:
 
-- Word for Mac version 15.18 (160109) 
-- Excel for Mac version 15.19 (160206) 
+- Word for Mac version 15.18 (160109)
+- Excel for Mac version 15.19 (160206)
 - PowerPoint for Mac version 15.24 (160614)
 
 ## Client requirements: Browser support for Office Online web clients and SharePoint
@@ -70,15 +68,17 @@ Any browser that supports ECMAScript 5.1, HTML5, and CSS3, such as Internet Expl
 
 ## Client requirements: non-Windows smartphone and tablet
 
-Specifically for OWA for Devices, and Outlook Web App running in a browser on smartphones and non-Windows tablet devices, the following software is required for testing and running Outlook add-ins.
+Specifically for Outlook Web App running in a browser on smartphones and non-Windows tablet devices, the following software is required for testing and running Outlook add-ins.
 
 
 | Host application | Device | Operating system | Exchange account | Mobile browser |
 |:-----|:-----|:-----|:-----|:-----|
-|OWA for Android|Android smartphones. Technically, those devices considered as "small" or "normal" by [Android OS](https://developer.android.com/guide/practices/screens_support.html).|Android 4.4 KitKat or later|On the latest update of Office 365 for business or Exchange Online|Native add-in for Android, browser not applicable|
-|OWA for iPad|iPad 2 or later|iOS 6 or later|On the latest update of Office 365 for business or Exchange Online|Native add-in for iOS, browser not applicable|
-|OWA for iPhone|iPhone 4S or later|iOS 6 or later|On the latest update of Office 365 for business or Exchange Online|Native add-in for iOS, browser not applicable|
-|Outlook Web App|iPhone 4 or later, iPad 2 or later, iPod Touch 4 or later|iOS 5 or later|On Office 365, Exchange Online, or on premise on Exchange Server 2013 or later|Safari|
+|Outlook for Android|Android tablets and smartphones|Android 4.4 KitKat later|On the latest update of Office 365 for business or Exchange Online|Native app for Android, browser not applicable|
+|Outlook for iOS|iPad tablets, iPhone smartphones|iOS 11 or later|On the latest update of Office 365 for business or Exchange Online|Native app for iOS, browser not applicable|
+|Outlook Web App|iPhone 4 or later, iPad 2 or later, iPod Touch 4 or later|iOS 5 or later|On Office 365, Exchange Online, or on premises on Exchange Server 2013 or later|Safari|
+
+> [!NOTE]
+> The native apps OWA for Android, OWA for iPad, and OWA for iPhone have been [deprecated](https://support.office.com/article/Microsoft-OWA-mobile-apps-are-being-retired-076ec122-4576-4900-bc26-937f84d25a4b) and are no longer required or available for testing Outlook add-ins.
 
 
 ## See also
