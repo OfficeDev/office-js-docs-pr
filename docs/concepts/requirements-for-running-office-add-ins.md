@@ -73,7 +73,7 @@ Specifically for Outlook Web App running in a browser on smartphones and non-Win
 
 | Host application | Device | Operating system | Exchange account | Mobile browser |
 |:-----|:-----|:-----|:-----|:-----|
-|Outlook for Android|Android smartphones|Android 4.4 KitKat later|On the latest update of Office 365 for business or Exchange Online|Native app for Android, browser not applicable|
+|Outlook for Android|Android tablets and smartphones|Android 4.4 KitKat later|On the latest update of Office 365 for business or Exchange Online|Native app for Android, browser not applicable|
 |Outlook for iOS|iPad tablets, iPhone smartphones|iOS 11 or later|On the latest update of Office 365 for business or Exchange Online|Native app for iOS, browser not applicable|
 |Outlook Web App|iPhone 4 or later, iPad 2 or later, iPod Touch 4 or later|iOS 5 or later|On Office 365, Exchange Online, or on premises on Exchange Server 2013 or later|Safari|
 
