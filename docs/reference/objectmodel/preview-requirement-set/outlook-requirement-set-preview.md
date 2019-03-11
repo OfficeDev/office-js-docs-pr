@@ -40,13 +40,13 @@ Added a new method that allows you to attach a file represented as a base64 enco
 
 **Available in**: Outlook 2019 for Windows (Office 365 subscription)
 
-#### [Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#getattachmentcontentasyncattachmentid-options-callback--attachmentcontentjavascriptapioutlookofficeattachmentcontent)
+#### [Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent)
 
 Added a new method to get the content of a specific attachment.
 
 **Available in**: Outlook 2019 for Windows (Office 365 subscription)
 
-#### [Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#getattachmentsasyncoptions-callback--arrayattachmentdetailsjavascriptapioutlookofficeattachmentdetails)
+#### [Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#getattachmentsasyncoptions-callback--arrayattachmentdetails)
 
 Added a new method that gets an item's attachments in compose mode.
 
@@ -116,7 +116,7 @@ Added a new object that represents the id of a location.
 
 **Available in**: Outlook 2019 for Windows (Office 365 subscription)
 
-#### [Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#enhancedlocation-enhancedlocationjavascriptapioutlookofficeenhancedlocation)
+#### [Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#enhancedlocation-enhancedlocation)
 
 Added a new property that represents the set of locations on an appointment.
 
@@ -150,7 +150,7 @@ Added a new object that represents the internet headers of a message item.
 
 **Available in**: Outlook 2019 for Windows (Office 365 subscription)
 
-#### [Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#internetheaders-internetheadersjavascriptapioutlookofficeinternetheaders)
+#### [Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#internetheaders-internetheaders)
 
 Added a new property that represents the internet headers on a message item.
 
