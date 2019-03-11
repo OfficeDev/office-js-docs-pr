@@ -350,7 +350,7 @@ The following instruction are written generically so they can be used in multipl
 
         // TODO11: Parse the JSON response.
 
-        // TODO11: Handle the case where AAD asks for an additional form of authentication.
+        // TODO12: Handle the case where AAD asks for an additional form of authentication.
 
         // TODO13: Handle missing consent and scope (permission) related issues.
 
