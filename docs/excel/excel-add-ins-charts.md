@@ -1,7 +1,7 @@
 ---
 title: Work with Charts using the Excel JavaScript API
 description: ''
-ms.date: 02/25/2019
+ms.date: 03/11/2019
 localization_priority: Priority
 ---
 
@@ -185,18 +185,30 @@ Excel.run(function (context) {
 
 ## Export a chart as an image
 
-Charts can be rendered as images. `Chart.getImage` returns the chart as a base64-encoded string representing the chart as a PNG image. The following code shows how to get the image string and log it to the console.
+Charts can be rendered as images outside of Excel. `Chart.getImage` returns the chart as a base64-encoded string representing the chart as a JPEG image. The following code shows how to get the image string and log it to the console.
 
 ```js
 Excel.run(function (ctx) {
     var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
     var imageAsString = chart.getImage();
         return context.sync().then(function () {
-            console.log(chartString.value);
+            console.log(imageAsString.value);
             // Instead of logging, your add-in could, for example, save the image as a file or insert it in HTML.
     });
 }).catch(errorHandlerFunction);
 ```
+
+`Chart.getImage` takes three optional parameters: width, height, and the fitting mode (as an `ImageFittingMode` value).
+
+```typescript
+getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode): OfficeExtension.ClientResult<string>;
+```
+
+These parameters determine the size of the image. Images are always proportionally scaled. The width and height parameters put upper or lower bounds on the scaled image. `ImageFittingMode` has three values with the following behaviors:
+
+- `Fill`: The image’s minimum height or width is the specified height or width (whichever is reached first when scaling the image). This is the default behavior when no fitting mode is specified.
+- `Fit`: The image’s maximum height or width is the specified height or width (whichever is reached first when scaling the image).
+- `FitAndCenter`: The image’s maximum height or width is the specified height or width (whichever is reached first when scaling the image). The resulting image is centered relative to the other dimension.
 
 ## See also
 
