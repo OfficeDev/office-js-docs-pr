@@ -16,7 +16,7 @@ If you are testing your add-in in Office on Windows, you should [enable runtime 
 
 ### Check for Excel error messages
 
-Excel has a number of built-in error messages which are returned to a cell if there is calculation error. These are `#NULL!`, `#DIV/0!`, `#VALUE!`, `#REF!`, `#NAME?`, `#NUM!`, `#N/A`, and `#GETTING_DATA`. At this time, custom functions can only use the error codes listed above when custom functions hit an error.
+Excel has a number of built-in error messages which are returned to a cell if there is calculation error. Custom functions only use the following error messages: `#NULL!`, `#DIV/0!`, `#VALUE!`, `#REF!`, `#NAME?`, `#NUM!`, `#N/A`, and `#GETTING_DATA`.
 
 ## Common issues
 
