@@ -22,11 +22,11 @@ Excel has a number of built-in error messages which are returned to a cell if th
 
 ### Verify SSL certificates
 
-If your add-in fails to register, [verify that the SSL certificates are configured correctly](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) for the web server that's hosting your add-in application. Typically if you forget to do this step, you will see an error message in Excel warning you that custom functions could not be installed properly. For more information on this verification, see [Adding self-signed certificates as trusted root certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
+If your add-in fails to install, verify that the SSL certificates are configured correctly for the web server that's hosting your add-in. Typically if there is a problem with SSL certificates, you will see an error message in Excel warning you that your add-in could not be installed properly. For more information, see [Adding self-signed certificates as trusted root certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
 
 ### Associate your functions
 
-In your custom functions' script file, you need to both write the function code and code to associate the function's name to the corresponding JSON id. Typically this declaration is made after each function or at the end of the script file. It's common to forget to include this and can be a reason why your functions don't work.
+In your custom functions' script file, you need to associate each custom function with its ID specified in the [JSON metadata file](custom-functions-json.md). This is done by using the `CustomFunctions.associate()` method. Typically this method call is made after each function or at the end of the script file. If a custom function is not associated, it will not work.
 
 The following example shows an add function, followed by the function's name `add` being associated with the corresponding JSON id `ADD`.
 
@@ -42,15 +42,15 @@ For more information on this process, see [Associating function names with json 
 
 ### Ensure promises return
 
-In addition to the ordinary reasons that a cell might report a #GETTING_DATA error, custom functions also will report `#GETTING_DATA` if a promise does not return a result. Check your functions to make sure that any promises are properly returning a result to a cell.
+When Excel is waiting for a custom function to complete, it displays #GETTING_DATA in the cell. If your custom function code returns a promise, but the promise does not return a result, Excel will continue showing #GETTING_DATA. Check your functions to make sure that any promises are properly returning a result to a cell.
 
 ## Reporting Feedback
 
-If you are encountering errors that aren't documented here, let us know. The custom functions and documentation teams have several procedures in place for reporting issues.
+If you are encountering issues that aren't documented here, let us know. There are two ways to report issues.
 
 ### In Excel on Windows or Mac
 
-If using Excel for Windows or Mac, you can report feedback to the Excel Custom Functions team directly in the UI of Excel itself. To do this, select **File | Feedback | Send a Frown**. Sending a frown will provide the necessary logs to understand the issue you are hitting.
+If using Excel for Windows or Mac, you can report feedback to the Office extensibility team directly from Excel. To do this, select **File -> Feedback -> Send a Frown**. Sending a frown will provide the necessary logs to understand the issue you are hitting.
 
 ### In Github
 
