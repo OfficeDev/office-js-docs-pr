@@ -31,7 +31,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [dateTimeCreated](#datetimecreated-date) | Member |
 | [dateTimeModified](#datetimemodified-date) | Member |
 | [end](#end-datetime) | Member |
-| [from](#from-emailaddressdetails) | Member |
+| [from](#from-emailaddressdetailsfrom) | Member |
 | [internetMessageId](#internetmessageid-string) | Member |
 | [itemClass](#itemclass-string) | Member |
 | [itemId](#nullable-itemid-string) | Member |
@@ -40,7 +40,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [normalizedSubject](#normalizedsubject-string) | Member |
 | [notificationMessages](#notificationmessages-notificationmessages) | Member |
 | [optionalAttendees](#optionalattendees-arrayemailaddressdetails) | Member |
-| [organizer](#organizer-emailaddressdetails) | Member |
+| [organizer](#organizer-emailaddressdetailsorganizer) | Member |
 | [recurrence](#nullable-recurrence-recurrence) | Member |
 | [requiredAttendees](#requiredattendees-arrayemailaddressdetails) | Member |
 | [sender](#sender-emailaddressdetails) | Member |
