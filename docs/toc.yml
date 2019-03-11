@@ -275,6 +275,9 @@
         - name: Custom functions changelog
           href: excel/custom-functions-changelog.md
           displayName: Excel
+        - name: Custom functions error handling
+          href: excel/custom-functions-errors.md
+          displayName: Excel
         - name: Custom functions requirements
           href: excel/custom-functions-requirements.md
           displayName: Excel
