@@ -9,7 +9,7 @@ localization_priority: Normal
 
 ### [Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item
 
-The `item` namespace is used to access the currently selected message, meeting request, or appointment. You can determine the type of the `item` by using the [itemType](#itemtype-officemailboxenumsitemtypejavascriptapioutlook17officemailboxenumsitemtype) property.
+The `item` namespace is used to access the currently selected message, meeting request, or appointment. You can determine the type of the `item` by using the [itemType](#itemtype-officemailboxenumsitemtype) property.
 
 ##### Requirements
 
@@ -23,44 +23,44 @@ The `item` namespace is used to access the currently selected message, meeting r
 
 | Member | Type |
 |--------|------|
-| [attachments](#attachments-arrayattachmentdetailsjavascriptapioutlook17officeattachmentdetails) | Member |
-| [bcc](#bcc-recipientsjavascriptapioutlook17officerecipients) | Member |
-| [body](#body-bodyjavascriptapioutlook17officebody) | Member |
-| [cc](#cc-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients) | Member |
+| [attachments](#attachments-arrayattachmentdetails) | Member |
+| [bcc](#bcc-recipients) | Member |
+| [body](#body-body) | Member |
+| [cc](#cc-arrayemailaddressdetails) | Member |
 | [conversationId](#nullable-conversationid-string) | Member |
 | [dateTimeCreated](#datetimecreated-date) | Member |
 | [dateTimeModified](#datetimemodified-date) | Member |
-| [end](#end-datetimejavascriptapioutlook17officetime) | Member |
-| [from](#from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom) | Member |
+| [end](#end-datetime) | Member |
+| [from](#from-emailaddressdetailsfrom) | Member |
 | [internetMessageId](#internetmessageid-string) | Member |
 | [itemClass](#itemclass-string) | Member |
 | [itemId](#nullable-itemid-string) | Member |
-| [itemType](#itemtype-officemailboxenumsitemtypejavascriptapioutlook17officemailboxenumsitemtype) | Member |
-| [location](#location-stringlocationjavascriptapioutlook17officelocation) | Member |
+| [itemType](#itemtype-officemailboxenumsitemtype) | Member |
+| [location](#location-stringlocation) | Member |
 | [normalizedSubject](#normalizedsubject-string) | Member |
-| [notificationMessages](#notificationmessages-notificationmessagesjavascriptapioutlook17officenotificationmessages) | Member |
-| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients) | Member |
-| [organizer](#organizer-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsorganizerjavascriptapioutlook17officeorganizer) | Member |
-| [recurrence](#nullable-recurrence-recurrencejavascriptapioutlook17officerecurrence) | Member |
-| [requiredAttendees](#requiredattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients) | Member |
-| [sender](#sender-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetails) | Member |
+| [notificationMessages](#notificationmessages-notificationmessages) | Member |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetails) | Member |
+| [organizer](#organizer-emailaddressdetailsorganizer) | Member |
+| [recurrence](#nullable-recurrence-recurrence) | Member |
+| [requiredAttendees](#requiredattendees-arrayemailaddressdetails) | Member |
+| [sender](#sender-emailaddressdetails) | Member |
 | [seriesId](#nullable-seriesid-string) | Member |
-| [start](#start-datetimejavascriptapioutlook17officetime) | Member |
-| [subject](#subject-stringsubjectjavascriptapioutlook17officesubject) | Member |
-| [to](#to-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients) | Member |
+| [start](#start-datetime) | Member |
+| [subject](#subject-stringsubject) | Member |
+| [to](#to-arrayemailaddressdetails) | Member |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | Method |
 | [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | Method |
 | [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | Method |
 | [close](#close) | Method |
 | [displayReplyAllForm](#displayreplyallformformdata-callback) | Method |
 | [displayReplyForm](#displayreplyformformdata-callback) | Method |
-| [getEntities](#getentities--entitiesjavascriptapioutlook17officeentities) | Method |
-| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactjavascriptapioutlook17officecontactmeetingsuggestionjavascriptapioutlook17officemeetingsuggestionphonenumberjavascriptapioutlook17officephonenumbertasksuggestionjavascriptapioutlook17officetasksuggestion) | Method |
-| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactjavascriptapioutlook17officecontactmeetingsuggestionjavascriptapioutlook17officemeetingsuggestionphonenumberjavascriptapioutlook17officephonenumbertasksuggestionjavascriptapioutlook17officetasksuggestion) | Method |
+| [getEntities](#getentities--entities) | Method |
+| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontact) | Method |
+| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontact) | Method |
 | [getRegExMatches](#getregexmatches--object) | Method |
 | [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Method |
 | [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | Method |
-| [getSelectedEntities](#getselectedentities--entitiesjavascriptapioutlook17officeentities) | Method |
+| [getSelectedEntities](#getselectedentities--entities) | Method |
 | [getSelectedRegExMatches](#getselectedregexmatches--object) | Method |
 | [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | Method |
 | [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | Method |
@@ -317,7 +317,7 @@ console.log("Date and time modified: " + dateTimeModified);
 
 Gets or sets the date and time that the appointment is to end.
 
-The `end` property is expressed as a Coordinated Universal Time (UTC) date and time value. You can use the [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook17officelocalclienttime) method to convert the end property value to the client’s local date and time.
+The `end` property is expressed as a Coordinated Universal Time (UTC) date and time value. You can use the [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttime) method to convert the end property value to the client’s local date and time.
 
 ##### Read mode
 
@@ -368,7 +368,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 
 Gets the email address of the sender of a message.
 
-The `from` and [`sender`](#sender-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetails) properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.
+The `from` and [`sender`](#sender-emailaddressdetails) properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.
 
 > [!NOTE]
 > The `recipientType` property of the `EmailAddressDetails` object in the `from` property is `undefined`.
@@ -565,7 +565,7 @@ function callback(asyncResult) {
 
 Gets the subject of an item, with all prefixes removed (including `RE:` and `FWD:`). Read mode only.
 
-The normalizedSubject property gets the subject of the item, with any standard prefixes (such as `RE:` and `FW:`) that are added by email programs. To get the subject of the item with the prefixes intact, use the [`subject`](#subject-stringsubjectjavascriptapioutlook17officesubject) property.
+The normalizedSubject property gets the subject of the item, with any standard prefixes (such as `RE:` and `FW:`) that are added by email programs. To get the subject of the item with the prefixes intact, use the [`subject`](#subject-stringsubject) property.
 
 ##### Type
 
@@ -792,7 +792,7 @@ function callback(asyncResult) {
 
 Gets the email address of the sender of an email message. Read mode only.
 
-The [`from`](#from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom) and `sender` properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.
+The [`from`](#from-emailaddressdetails) and `sender` properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.
 
 > [!NOTE]
 > The `recipientType` property of the `EmailAddressDetails` object in the `sender` property is `undefined`.
@@ -857,7 +857,7 @@ console.log("SeriesId is " + seriesId + " and isSeriesInstance is " + isSeriesIn
 
 Gets or sets the date and time that the appointment is to begin.
 
-The `start` property is expressed as a Coordinated Universal Time (UTC) date and time value. You can use the [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook17officelocalclienttime) method to convert the value to the client’s local date and time.
+The `start` property is expressed as a Coordinated Universal Time (UTC) date and time value. You can use the [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttime) method to convert the value to the client’s local date and time.
 
 ##### Read mode
 
