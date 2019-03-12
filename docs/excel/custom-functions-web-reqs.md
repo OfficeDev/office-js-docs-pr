@@ -18,7 +18,7 @@ If a custom function retrieves data from an external source such as the web, it 
 1. Return a JavaScript Promise to Excel.
 2. Resolve the Promise with the final value using the callback function.
 
-You can request external data through an API like [`Fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or by using [`XmlHttpRequest` (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
+You can request external data through an API like [`Fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or by using `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
 
 Within custom functions runtime, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).
 
@@ -122,7 +122,7 @@ Streaming custom functions enable you to output data to cells repeatedly over ti
 
 - Excel displays each new value automatically using the setResult callback.
 - The second input parameter, handler, is not displayed to end users in Excel when they select the function from the autocomplete menu.
-- The onCanceled callback defines the function that executes when the function is canceled. You must implement a cancellation handler like this for any streaming function. For more information, see [Cancelling a function](#cancelling-a-function).
+- The onCanceled callback defines the function that executes when the function is canceled. You must implement a cancellation handler like this for any streaming function. For more information, see [Canceling a function](#canceling-a-function).
 
 ```JavaScript
 function incrementValue(increment, handler){
@@ -175,7 +175,7 @@ In some situations, you may need to cancel the execution of a streaming custom f
 - When one of the arguments (inputs) for the function changes. In this case, a new function call is triggered following the cancellation.
 - When the user triggers recalculation manually. In this case, a new function call is triggered following the cancellation.
 
-To make a function cancellable, implement a handler in your function's code to tell it what to do when it is cancelled. Additionally, specify specify the property `"cancelable": true` within the options object in the JSON metadata that describes the function. The code samples in the previous section of this article provide an example of these techniques.
+To make a function cancelable, implement a handler in your function's code to tell it what to do when it is canceled. Additionally, specify specify the property `"cancelable": true` within the options object in the JSON metadata that describes the function. The code samples in the previous section of this article provide an example of these techniques.
 
 ## See also
 
