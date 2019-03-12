@@ -266,6 +266,9 @@
         - name: Custom functions tutorial
           href: tutorials/excel-tutorial-create-custom-functions.md
           displayName: Excel
+        - name: Custom functions web requests
+          href: excel/custom-functions-web-reqs.md
+          displayName: Excel
         - name: Custom functions runtime
           href: excel/custom-functions-runtime.md
           displayName: Excel
