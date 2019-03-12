@@ -191,14 +191,14 @@ Charts can be rendered as images outside of Excel. `Chart.getImage` returns the 
 Excel.run(function (ctx) {
     var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
     var imageAsString = chart.getImage();
-        return context.sync().then(function () {
-            console.log(imageAsString.value);
-            // Instead of logging, your add-in could, for example, save the image as a file or insert it in HTML.
+    return context.sync().then(function () {
+        console.log(imageAsString.value);
+        // Instead of logging, your add-in may use the base64-encoded string to save the image as a file or insert it in HTML.
     });
 }).catch(errorHandlerFunction);
 ```
 
-`Chart.getImage` takes three optional parameters: width, height, and the fitting mode (as an `ImageFittingMode` value).
+`Chart.getImage` takes three optional parameters: width, height, and the fitting mode.
 
 ```typescript
 getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode): OfficeExtension.ClientResult<string>;
