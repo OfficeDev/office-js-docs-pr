@@ -64,7 +64,7 @@ You can use VS Code to debug custom functions in Office Excel on the desktop.
 
 ### Start the VS Code debugger
 
-4. Choose **View -> Debug** or enter **Ctrl+Shift+D** to switch to debug view.
+4. Choose **View > Debug** or enter **Ctrl+Shift+D** to switch to debug view.
 5. From the Debug options, choose **Excel Desktop**.
 6. Select **F5** (or choose **Debug -> Start Debugging** from the menu) to begin debugging. A new Excel workbook will open with your add-in already sideloaded and ready to use.
 
@@ -146,8 +146,8 @@ There are several build tasks available:
 - `npm run dev-server`: runs the web server used for development
 
 You can use the following tasks to start debugging on desktop or online.
-- `npm run start:desktop`: Starts Excel on desktop and sideloads your add-in.
-- `npm run start:web`: Starts Excel Online and sideloads your add-in.
+- `npm run start desktop`: Starts Excel on desktop and sideloads your add-in.
+- `npm run start web`: Starts Excel Online and sideloads your add-in.
 - `npm run stop`: Stops Excel and debugging.
 
 ## See also
