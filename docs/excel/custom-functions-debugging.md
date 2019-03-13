@@ -1,60 +1,38 @@
 ---
-ms.date: 03/11/2019
+ms.date: 03/13/2019
 description: Debug your custom functions in Excel.
 title: Custom functions debugging (preview)
 localization_priority: Normal
 ---
 # Custom functions debugging (preview)
 
-Debugging for custom functions can be accomplished by multiple means, depending on what platform you're using. Methods differ between platforms (such as Windows, Mac, and Online) and depending on what method you prefer (Visual Studio Code or online debugging tools). You can also issue debugging commands through [the command line directly](#commands-for-building-and-running-your-add-in).
+Debugging for custom functions can be accomplished by multiple means, depending on what platform you're using.
+
+On Windows:
+- [Excel Desktop and Visual Studio Code (VS Code) debugger](#use-the-vs-code-debugger-for-excel-desktop)
+- [Excel Online and VS Code debugger](#use-the-vs-code-debugger-for-excel-online-in-microsoft-edge)
+- [Excel Online and browser tools](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-online)
+- [Command line](#use-the-command-line-tools-to-debug)
+
+On Mac:
+- [Excel Online and browser tools](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-online)
+- [Command line](#use-the-command-line-tools-to-debug)
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 > [!NOTE]
 > For simplicity, this article shows debugging in the context of using Visual Studio Code to edit, run tasks, and in some cases use the debug view. If you are using a different editor or command line tool, see the [command line instructions](#Use-the-command-line-tools-to-debug) at the end of this article.
 
-Before starting to debug, you should create a custom functions add-in project using the Yo Office generator and ensured that you have trusted self-signed certificates for your project. For instructions to create a project, see the [custom functions tutorial](https://review.docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions). For instructions on trusting certificates, see [Adding self-signed certificates as trusted root certificates](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md). 
+## Requirements
 
-## Use the browser developer tools to debug custom functions in Excel Online
-
-You can use the browser developer tools to debug custom functions in Excel Online. The following steps work for both Windows and macOS.
-
-### Run your add-in from Visual Studio Code
-
-1. Open your custom functions root project folder in [Visual Studio Code (VS Code)](https://code.visualstudio.com/).
-2. Choose **Terminal > Run Task** and type or select **Watch**. This will monitor and rebuild for any file changes.
-3. Choose **Terminal > Run Task** and type or select **Dev Server**. 
-
-### Sideload your add-in   
-
-1. Open [Microsoft Office Online](https://office.live.com/).
-2. Open a new Excel workbook.
-3. Open the  **Insert** tab on the ribbon and, in the **Add-ins** section, choose **Office Add-ins**.
-4. On the  **Office Add-ins** dialog, select the **MY ADD-INS** tab, choose **Manage My Add-ins**, and then  **Upload My Add-in**.
-    
-    ![The Office Add-ins dialog with a drop-down in the upper right reading "Manage my add-ins" and a drop-down below it with the option "Upload My Add-in"](../images/office-add-ins-my-account.png)
-
-5.  **Browse** to the add-in manifest file, and then select **Upload**.
-    
-    ![The upload add-in dialog with buttons for browse, upload, and cancel.](../images/upload-add-in.png)
-
-> [!NOTE]
-> Once you've sideloaded to the document, it will remain sideloaded each time you open the document.
-
-### Start debugging
-
-1. Open developer tools in the browser. For Chrome and most browsers F12 will open the developer tools.
-2. In developer tools, open your source code script file using **Cmd+P** or **Ctrl+P** (functions.js or functions.ts).
-3. [Set a breakpoint](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) in the custom function source code. 
-
-If you need to change the code you can make edits in VS Code and save the changes. Refresh the browser to see the changes loaded.
+Before starting to debug, you should create a custom functions add-in project using the Yo Office generator and ensured that you have trusted self-signed certificates for your project. For instructions to create a project, see the [custom functions tutorial](https://review.docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions). For instructions on trusting certificates, see [Adding self-signed certificates as trusted root certificates](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
 
 ## Use the VS Code debugger for Excel Desktop
 
 You can use VS Code to debug custom functions in Office Excel on the desktop.
 
 > [!NOTE]
-> At this time, desktop debugging for the Mac is not available. Instead, refer to instructions for [using the browser tools to debug Excel Online](#debug-in-excel-online-by-using-the-browser-developer-tools).
+> Desktop debugging for the Mac is not available but can be achieved [using the browser tools to debug Excel Online](#debug-in-excel-online-by-using-the-browser-developer-tools).
 
 ### Run your add-in from VS Code
 
@@ -113,6 +91,41 @@ You can use VS Code to debug custom functions in Excel Online in the Microsoft E
 3. In the Excel workbook, enter a formula that uses your custom function.
 
 
+
+
+## Use the browser developer tools to debug custom functions in Excel Online
+
+You can use the browser developer tools to debug custom functions in Excel Online. The following steps work for both Windows and macOS.
+
+### Run your add-in from Visual Studio Code
+
+1. Open your custom functions root project folder in [Visual Studio Code (VS Code)](https://code.visualstudio.com/).
+2. Choose **Terminal > Run Task** and type or select **Watch**. This will monitor and rebuild for any file changes.
+3. Choose **Terminal > Run Task** and type or select **Dev Server**. 
+
+### Sideload your add-in   
+
+1. Open [Microsoft Office Online](https://office.live.com/).
+2. Open a new Excel workbook.
+3. Open the  **Insert** tab on the ribbon and, in the **Add-ins** section, choose **Office Add-ins**.
+4. On the  **Office Add-ins** dialog, select the **MY ADD-INS** tab, choose **Manage My Add-ins**, and then  **Upload My Add-in**.
+    
+    ![The Office Add-ins dialog with a drop-down in the upper right reading "Manage my add-ins" and a drop-down below it with the option "Upload My Add-in"](../images/office-add-ins-my-account.png)
+
+5.  **Browse** to the add-in manifest file, and then select **Upload**.
+    
+    ![The upload add-in dialog with buttons for browse, upload, and cancel.](../images/upload-add-in.png)
+
+> [!NOTE]
+> Once you've sideloaded to the document, it will remain sideloaded each time you open the document.
+
+### Start debugging
+
+1. Open developer tools in the browser. For Chrome and most browsers F12 will open the developer tools.
+2. In developer tools, open your source code script file using **Cmd+P** or **Ctrl+P** (functions.js or functions.ts).
+3. [Set a breakpoint](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) in the custom function source code. 
+
+If you need to change the code you can make edits in VS Code and save the changes. Refresh the browser to see the changes loaded.
 
 ## Use the command line tools to debug
 
