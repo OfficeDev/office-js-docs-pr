@@ -73,12 +73,12 @@ The following is a complete list of APIs in preview.
 |[Application](/javascript/api/excel/excel.application)|[calculationEngineVersion](/javascript/api/excel/excel.application#calculationengineversion)|Returns a number about the version of Excel Calculation Engine that the workbook was last fully recalculated by. Read-only.|
 ||[calculationState](/javascript/api/excel/excel.application#calculationstate)|Returns a CalculationState that indicates the calculation state of the application. See Excel.CalculationState for details. Read-only.|
 ||[iterativeCalculation](/javascript/api/excel/excel.application#iterativecalculation)|Returns the Iterative Calculation settings.|
-||[suspendScreenUpdatingUntilNextSync()](/javascript/api/excel/excel.application#suspendscreenupdatinguntilnextsync--)|Suspends sceen updating until the next "context.sync()" is called.|
+||[suspendScreenUpdatingUntilNextSync()](/javascript/api/excel/excel.application#suspendscreenupdatinguntilnextsync--)|Suspends screen updating until the next "context.sync()" is called.|
 |[AutoFilter](/javascript/api/excel/excel.autofilter)|[apply(range: Range \| string, columnIndex?: number, criteria?: Excel.FilterCriteria)](/javascript/api/excel/excel.autofilter#apply-range--columnindex--criteria-)|Applies AutoFilter on a range and filters the column if column index and filter criteria are specified.|
 ||[clearCriteria()](/javascript/api/excel/excel.autofilter#clearcriteria--)|Clears the criteria if AutoFilter has filters|
 ||[getRange()](/javascript/api/excel/excel.autofilter#getrange--)|Returns the Range object that represents the range to which the AutoFilter applies.|
 ||[getRangeOrNullObject()](/javascript/api/excel/excel.autofilter#getrangeornullobject--)|If there is Range object associated with the AutoFilter, this method returns it.|
-||[criteria](/javascript/api/excel/excel.autofilter#criteria)|Array that holds all filter criterias in an autofiltered range. Read-Only.|
+||[criteria](/javascript/api/excel/excel.autofilter#criteria)|Array that holds all filter criteria in an autofiltered range. Read-Only.|
 ||[enabled](/javascript/api/excel/excel.autofilter#enabled)|Indicates if the AutoFilter is enabled or not. Read-Only.|
 ||[isDataFiltered](/javascript/api/excel/excel.autofilter#isdatafiltered)|Indicates if the AutoFilter has filter criteria. Read-Only.|
 ||[reapply()](/javascript/api/excel/excel.autofilter#reapply--)|Applies the specified Autofilter object currently on the range.|
@@ -447,11 +447,7 @@ The following is a complete list of APIs in preview.
 ||[style](/javascript/api/excel/excel.settablecellproperties#style)||
 |[SettableColumnProperties](/javascript/api/excel/excel.settablecolumnproperties)|[columnHidden](/javascript/api/excel/excel.settablecolumnproperties#columnhidden)||
 ||[columnWidth](/javascript/api/excel/excel.settablecolumnproperties#columnwidth)||
-||[format: Excel.CellPropertiesFormat & {
-            columnWidth?](/javascript/api/excel/excel.settablecolumnproperties#format)||
-|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[format: Excel.CellPropertiesFormat & {
-            rowHeight?](/javascript/api/excel/excel.settablerowproperties#format)||
-||[rowHeight](/javascript/api/excel/excel.settablerowproperties#rowheight)||
+|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[rowHeight](/javascript/api/excel/excel.settablerowproperties#rowheight)||
 ||[rowHidden](/javascript/api/excel/excel.settablerowproperties#rowhidden)||
 |[Setting](/javascript/api/excel/excel.setting)|[](/javascript/api/excel/excel.setting#replacestringdatewithdate)||
 |[Shape](/javascript/api/excel/excel.shape)|[altTextDescription](/javascript/api/excel/excel.shape#alttextdescription)|Returns or sets the alternative description text for a Shape object.|
@@ -671,6 +667,7 @@ The following is a complete list of APIs in preview.
 ||[save(saveBehavior?: Excel.SaveBehavior)](/javascript/api/excel/excel.workbook#save-savebehavior-)|Save current workbook.|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|True if the workbook uses the 1904 date system.|
 ||[usePrecisionAsDisplayed](/javascript/api/excel/excel.workbook#useprecisionasdisplayed)|True if calculations in this workbook will be done using only the precision of the numbers as they're displayed.|
+|[WorkbookAutoSaveSetting[...]](/javascript/api/excel/excel.workbookautosavesettingchangedeventargs)|[type](/javascript/api/excel/excel.workbookautosavesettingchangedeventargs#type)|Represents the type of the event. See Excel.EventType for details.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[enableCalculation](/javascript/api/excel/excel.worksheet#enablecalculation)|Gets or sets the enableCalculation property of the worksheet.|
 ||[findAll(text: string, criteria: Excel.WorksheetSearchCriteria)](/javascript/api/excel/excel.worksheet#findall-text--criteria-)|Finds all occurrences of the given string based on the criteria specified and returns them as a RangeAreas object, comprising one or more rectangular ranges.|
 ||[findAllOrNullObject(text: string, criteria: Excel.WorksheetSearchCriteria)](/javascript/api/excel/excel.worksheet#findallornullobject-text--criteria-)|Finds all occurrences of the given string based on the criteria specified and returns them as a RangeAreas object, comprising one or more rectangular ranges.|
@@ -694,7 +691,7 @@ The following is a complete list of APIs in preview.
 ||[onSelectionChanged](/javascript/api/excel/excel.worksheetcollection#onselectionchanged)|Occurs when the selection changes on any worksheet.|
 |[WorksheetFilteredEventArgs](/javascript/api/excel/excel.worksheetfilteredeventargs)|[type](/javascript/api/excel/excel.worksheetfilteredeventargs#type)|Represents the type of the event. See Excel.EventType for details.|
 ||[worksheetId](/javascript/api/excel/excel.worksheetfilteredeventargs#worksheetid)|Represents the id of the worksheet in which the filter is applied.|
-|[WorksheetFormatChangedEventArgs](/javascript/api/excel/excel.worksheetformatchangedeventargs)|[address](/javascript/api/excel/excel.worksheetformatchangedeventargs#address)|Gets the range address that represents the changed area of a specific worksheet.|
+|[WorksheetFormatChanged[...]](/javascript/api/excel/excel.worksheetformatchangedeventargs)|[address](/javascript/api/excel/excel.worksheetformatchangedeventargs#address)|Gets the range address that represents the changed area of a specific worksheet.|
 ||[getRange(ctx: Excel.RequestContext)](/javascript/api/excel/excel.worksheetformatchangedeventargs#getrange-ctx-)|Gets the range that represents the changed area of a specific worksheet.|
 ||[getRangeOrNullObject(ctx: Excel.RequestContext)](/javascript/api/excel/excel.worksheetformatchangedeventargs#getrangeornullobject-ctx-)|Gets the range that represents the changed area of a specific worksheet. It might return null object.|
 ||[source](/javascript/api/excel/excel.worksheetformatchangedeventargs#source)|Gets the source of the event. See Excel.EventSource for details.|
