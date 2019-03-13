@@ -15,7 +15,7 @@ Debugging for custom functions can be accomplished by multiple means, depending 
 
 Before starting to debug, you should create a custom functions add-in project using the Yo Office generator and ensured that you have trusted self-signed certificates for your project. For instructions to create a project, see the [custom functions tutorial](https://review.docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions). For instructions on trusting certificates, see [Adding self-signed certificates as trusted root certificates](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md). 
 
-## Use the browser developer tools to debug Excel Online
+## Use the browser developer tools to debug custom functions in Excel Online
 
 You can use the browser developer tools to debug custom functions in Excel Online. The following steps work for both Windows and macOS.
 
