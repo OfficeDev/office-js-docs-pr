@@ -353,6 +353,11 @@ function refreshTemperature(thermometerID){
 }
 ```
 
+## Co-Authoring
+Excel Online and Excel for Windows with an Office 365 subscription allow you to co-author documents and this feature works with custom functions. If your workbook uses a custom function, your colleague will be prompted to load the custom function's add-in. Once you both have loaded the add-in, the custom function will share results through co-authoring.
+
+For more information on co-authoring, see [About Co-Authoring in Excel](https://docs.microsoft.com/en-us/office/vba/excel/concepts/about-coauthoring-in-excel).
+
 ## Working with ranges of data
 
 Your custom function may accept a range of data as an input parameter, or it may return a range of data. In JavaScript, a range of data is represented as a two-dimensional array.
@@ -420,27 +425,6 @@ function getAddress(parameter1, invocationContext) {
 ```
 
 By default, values returned from a `getAddress` function follow the following format: `SheetName!CellNumber`. For example, if a function was called from a sheet called Expenses in cell B2, the returned value would be `Expenses!B2`.
-
-## Handling errors
-
-When you build an add-in that defines custom functions, be sure to include error handling logic to account for runtime errors. Error handling for custom functions is the same as [error handling for the Excel JavaScript API at large](excel-add-ins-error-handling.md). In the following code sample, `.catch` will handle any errors that occur previously in the code.
-
-```js
-function getComment(x) {
-  let url = "https://www.contoso.com/comments/" + x;
-
-  return fetch(url)
-    .then(function (data) {
-      return data.json();
-    })
-    .then((json) => {
-      return json.body;
-    })
-    .catch(function (error) {
-      throw error;
-    })
-}
-```
 
 ## Known issues
 

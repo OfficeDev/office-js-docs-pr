@@ -1,7 +1,7 @@
 ---
 title: Use the Dialog API in your Office Add-ins
 description: ''
-ms.date: 02/12/2019
+ms.date: 02/28/2019
 localization_priority: Priority
 ---
 
@@ -238,8 +238,6 @@ function processMessage(arg) {
 }
 ```
 
-For a sample that uses this technique, see the [dialog navigation design pattern](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/navigation) in the [UX design patterns for Office Add-ins](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code) repo.
-
 Even when you don't have your own close dialog UI, an end user can close the dialog box by choosing the **X** in the upper-right corner. This action triggers the `DialogEventReceived` event. If your host pane needs to know when this happens, it should declare a handler for this event. See the section [Errors and events in the dialog window](#errors-and-events-in-the-dialog-window) for details.
 
 ## Handle errors and events
@@ -375,7 +373,7 @@ To show a video in a dialog box:
 3.  Use a call of `displayDialogAsync` in the host page to open video.dialogbox.html.
 4.  If your add-in needs to know when the user closes the dialog box, register a handler for the `DialogEventReceived` event and handle the 12006 event. For details, see the section [Errors and events in the dialog window](#errors-and-events-in-the-dialog-window).
 
-For a sample that shows a video in a dialog box, see the [video placemat design pattern](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/video-placemat) in the [UX design patterns for Office Add-ins](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code) repo.
+For a sample that shows a video in a dialog box, see the [video placemat design pattern](https://docs.microsoft.com/office/dev/add-ins/design/first-run-experience-patterns#video-placemat).
 
 ![Screenshot of a video showing in an add-in dialog box](../images/video-placemats-dialog-open.png)
 
@@ -394,10 +392,9 @@ The following is a simple and typical authentication flow:
 3. When the redirectPage.html page opens, it calls `messageParent` to report the success or failure to the host page and optionally also report user data or error data.
 4. The `DialogMessageReceived` event fires in the host page and its handler closes the dialog window and optionally does other processing of the message.
 
-For sample add-ins that use this pattern, see:
+For a sample add-in that uses this pattern, see:
 
 - [Insert Excel charts using Microsoft Graph in a PowerPoint add-in](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart): The resource that is initially opened in the dialog window is a controller method that has no view of its own. It redirects to the Office 365 sign in page.
-- [Office Add-in Office 365 Client Authentication for AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth): The resource that is initially opened in the dialog window is a page.
 
 #### Support multiple identity providers
 

@@ -19,7 +19,7 @@ localization_priority: Priority
 
 - **CustomFunctions** - A custom function written in JavaScript for Excel.
 
-[This XML code sample](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/customfunctions.xml) shows how to use the **ExtensionPoint** element with the **CustomFunctions** attribute value, and the child elements to be used.
+[This XML code sample](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/manifest.xml) shows how to use the **ExtensionPoint** element with the **CustomFunctions** attribute value, and the child elements to be used.
 
 ## Extension points for Word, Excel, PowerPoint, and OneNote add-in commands
 

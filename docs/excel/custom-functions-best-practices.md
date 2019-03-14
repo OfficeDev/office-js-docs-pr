@@ -11,31 +11,14 @@ This article describes best practices for developing custom functions in Excel.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-## Error handling
-
-When you build an add-in that defines custom functions, be sure to include error handling logic to account for runtime errors. Error handling for custom functions is the same as [error handling for the Excel JavaScript API at large](excel-add-ins-error-handling.md). In the following code sample, `.catch` will handle any errors that occur previously in the code.
-
-```js
-function getComment(x) {
-  let url = "https://www.contoso.com/comments/" + x;
-  return fetch(url)
-    .then(function (data) {
-      return data.json();
-    })
-    .then((json) => {
-      return json.body;
-    })
-    .catch(function (error) {
-      throw error;
-    })
-}
-```
-
 ## Troubleshooting
 
-If you are testing your add-in in Office on Windows, you should enable **[runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** to troubleshoot issues with your add-in's XML manifest file, as well as several installation and runtime conditions. Runtime logging writes `console.log` statements to a log file to help you uncover issues.
+1. If you are testing your add-in in Office on Windows, you should enable **[runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** to troubleshoot issues with your add-in's XML manifest file, as well as several installation and runtime conditions. Runtime logging writes `console.log` statements to a log file to help you uncover issues.
 
-To report feedback to the Excel Custom Functions team about this method of troubleshooting, send the team feedback. To do this, select **File | Feedback | Send a Frown**. Sending a frown will provide the necessary logs to understand the issue you are hitting.
+2. Your add-in will not load if one or more custom functions conflicts with a previously registered add-in's custom functions. In this case, you can either remove the existing add-in, or if you encounter this error while developing an add-in, you can specify a different namespace name in your manifest.
+
+3. To report feedback to the Excel Custom Functions team about this method of troubleshooting, send the team feedback. To do this, select **File | Feedback | Send a Frown**. Sending a frown will provide the necessary logs to understand the issue you are hitting.
+
 
 ## Debugging
 

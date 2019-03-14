@@ -1,7 +1,7 @@
 ---
 title: Work with OneNote page content
 description: ''
-ms.date: 1/10/2019
+ms.date: 01/10/2019
 localization_priority: Normal
 ---
 
