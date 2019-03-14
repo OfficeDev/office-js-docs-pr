@@ -1,10 +1,18 @@
 ---
 ms.date: 03/14/2019
-description: Learn how to use additional configuration options for custom functions, such as using ranges, declaring optional parameters, 
+description: Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.   
 title: Options for Excel custom functions (preview)
 localization_priority: Normal
 ---
-## Working with ranges of data
+# Custom functions parameter options
+
+Custom functions are configurable with many different options. This article will cover various TBD
+
+## Optional parameters
+
+TBD
+
+## Range parameters
 
 Your custom function may accept a range of data as an input parameter, or it may return a range of data. In JavaScript, a range of data is represented as a two-dimensional array.
 
@@ -28,7 +36,11 @@ function secondHighest(values){
 }
 ```
 
-## Determine which cell invoked your custom function
+## Invocation context parameter
+
+TBD
+
+## Addressing cell's context parameter
 
 In some cases you'll need to get the address of the cell that invoked your custom function. This may be useful in the following types of scenarios:
 
