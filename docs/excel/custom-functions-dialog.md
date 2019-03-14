@@ -8,8 +8,10 @@ localization_priority: Priority
 
 Within your add-in, you have two options for creating dialogs:
 
-- The [Dialog API](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/dialog-api-in-office-add-ins) is used by Office add-in's browser-based engine but not custom functions runtime
-- `OfficeRuntime.Dialog` can be accessed by both the browser-based engine and custom functions runtime. You should use this dialog when developing custom functions.
+- `OfficeRuntime.Dialog` can be accessed by both the browser-based JavaScript engine and custom functions runtime. You should use this dialog when developing custom functions.
+- The [Dialog API](https://docs.microsoft.com/office/dev/add-ins/develop/dialog-api-in-office-add-ins) is used by Office add-in's browser-based Javascript engine, but is not accessible from custom functions' runtime.
+
+The primary scenario for the `OfficeRuntime.Dialog` API is to facilitate authentication. For more details about authentication with custom functions, see [Custom functions authentication](./custom-functions-authentication.md).
 
 ## Dialog API example
 
