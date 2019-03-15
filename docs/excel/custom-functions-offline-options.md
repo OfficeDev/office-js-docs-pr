@@ -1,6 +1,6 @@
 ---
 ms.date: 03/14/2019
-description: Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.   
+description: Learn to implement volatile and offline streaming custom functions.
 title: Offline options for Excel custom functions (preview)
 localization_priority: Normal
 ---
@@ -10,16 +10,18 @@ In addition to performing common mathematical calculations and requesting inform
 
 ## Offline streaming
 
-Custom functions are considered streaming if they request data at set intervals. While it is more common for streaming functions to request web data, they can also perform calculations as set intervals. The following example shows a clock function that returns the time each second. Note that Jav
+Custom functions are considered streaming if they request data at set intervals. While it is more common for streaming functions to request web data, they can also perform calculations as set intervals.
+
+The following example shows a clock function that returns the time each second. Note that this function uses the invocationContext parameter, which can be invoked on any function (TBD LINK). The function also implements a cancellation handler, which is a best practice when creating a streaming function.
 
 ```JavaScript
 function clock(invocation) {
-  const timer = setInterval(() => {
+  const timer = setInterval() {
     const time = currentTime();
     invocation.setResult(time);
   }, 1000);
 
-  invocation.onCanceled = () => {
+  invocation.onCanceled() {
     clearInterval(timer);
   };
 }
@@ -48,13 +50,23 @@ When you specify metadata for a streaming function in the JSON metadata file, yo
 }
 ```
 
-Streaming data from the web requires the same `options` to be declared in the JSON file, but the function's code will instead request data via an XHR or fetch request. For information about streaming web data, see TBD PAGE. 
+Streaming data from the web requires the same `options` to be declared in the JSON file, but the function's code will instead request data via an XHR or fetch request. For information about streaming web data, see TBD PAGE.
 
 ## Offline cancelling
 
-## Volatile values in functions
+It is a best practice to write a cancellation handler for streaming functions. A cancellation handler can reduce a function's bandwidth consumption, working memory, and CPU load.
 
-## Declaring a volatile function
+Excel automatically cancels the execution of a function in the following situations:
+
+- When the user edits or deletes a cell that references the function.
+
+- When one of the arguments (inputs) for the function changes. In this case, a new function call is triggered following the cancellation.
+
+- When the user triggers recalculation manually. In this case, a new function call is triggered following the cancellation.
+
+To enable the ability to cancel a function, you must implement a cancellation handler within the JavaScript function and specify the property `"cancelable": true` within the `options` object in the JSON metadata that describes the function. The code samples in the previous section of this article provide an example of these techniques.
+
+## Volatile values in functions
 
 [Volatile functions](https://docs.microsoft.com/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions) are functions in which the value changes from moment to moment, even if none of the function's arguments have changed. These functions recalculate every time Excel recalculates. For example, imagine a cell that calls the function `NOW`. Every time `NOW` is called, it will automatically return the current date and time.
 
