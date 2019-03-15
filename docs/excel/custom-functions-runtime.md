@@ -62,10 +62,10 @@ The following code sample establishes a `WebSocket` connection and then logs eac
 
 ```typescript
 const ws = new WebSocket('wss://bundles.office.com');
-ws.onmessage = (message) => {
+ws.onmessage = function (message) {
     console.log(`Received: ${message}`);
-};
-ws.onerror = (error) => {
+}
+ws.onerror = function (error) {
     console.err(`Failed: ${error}`);
 }
 ```
@@ -91,18 +91,16 @@ The following methods are available on the `AsyncStorage` object:
 
 ### AsyncStorage example 
 
-The following code sample calls the `AsyncStorage.getItem` function to retrieve a value from storage.
+The following code sample calls the `AsyncStorage.setItem` function to set a key and value into `AsyncStorage`.
 
-```typescript
-_goGetData = async () => {
-    try {
-        const value = await AsyncStorage.getItem('toDoItem');
-        if (value !== null) {
-            //data exists and you can do something with it here
-        }
-    } catch (error) {
-        //handle errors here
-    }
+```JavaScript
+function StoreValue(key, value) {
+
+  return OfficeRuntime.AsyncStorage.setItem(key, value).then(function (result) {
+      return "Success: Item with key '" + key + "' saved to AsyncStorage.";
+  }, function (error) {
+      return "Error: Unable to save item with key '" + key + "' to AsyncStorage. " + error;
+  });
 }
 ```
 
