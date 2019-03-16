@@ -10,7 +10,61 @@ Custom functions are configurable with many different options. This article will
 
 ## Optional parameters
 
-TBD
+In Excel for Windows (version 1812 or later), you can declare optional parameters for your custom functions. When a user invokes a function in Excel, optional parameters appear in brackets. For example, a function `FOO` with one required parameter called `parameter1` and one optional parameter called `parameter2` would appear as `=FOO(parameter1, [parameter2])` in Excel.
+
+To make a parameter optional, add `"optional": true` to the parameter in the JSON metadata file that defines the function. The following example shows what this might look like for the function `=ADD(first, second, [third])`. Notice that the optional `[third]` parameter follows the two required parameters. Required parameters will appear first in Excel’s Formula UI.
+
+```json
+{
+    "id": "ADD",
+    "name": "ADD",
+    "description": "Add two numbers",
+    "helpUrl": "http://www.contoso.com",
+    "result": {
+        "type": "number",
+        "dimensionality": "scalar"
+        },
+    "parameters": [
+        {
+            "name": "first",
+            "description": "first number to add",
+            "type": "number",
+            "dimensionality": "scalar"
+        },
+        {
+            "name": "second",
+            "description": "second number to add",
+            "type": "number",
+            "dimensionality": "scalar",
+        },
+        {
+            "name": "third",
+            "description": "third optional number to add",
+            "type": "number",
+            "dimensionality": "scalar",
+            "optional": true
+        }
+    ]
+}
+```
+
+When you define a function that contains one or more optional parameters, you should specify what happens when the optional parameters are undefined. In the following example, `zipCode` and `dayOfWeek` are both optional parameters for the `getWeatherReport` function. If the `zipCode` parameter is undefined, the default value is set to 98052. If the `dayOfWeek` parameter is undefined, it is set to Wednesday.
+
+```js
+function getWeatherReport(zipCode, dayOfWeek)
+{
+  if (zipCode === undefined) {
+      zipCode = "98052";
+  }
+
+  if (dayOfWeek === undefined) {
+    dayOfWeek = "Wednesday";
+  }
+
+  // Get weather report for specified zipCode and dayOfWeek
+  // ...
+}
+```
 
 ## Range parameters
 
@@ -38,7 +92,17 @@ function secondHighest(values){
 
 ## Invocation context parameter
 
-TBD
+Every custom function automatically contains an `invocationContext` argument, which is invisibly present at the end of any list of parameters. Even if you declare no parameters, your custom function will have this parameter. This argument is not explicitly stated, so it does not appear to the end user in Excel, nor is it present in the code in your script files.
+
+In the following code sample, you'll see the invocationContext explicitly stated for your reference.
+
+```JavaScript
+subtract(one, two, invocationContext) {
+  return one - two;
+}
+```
+
+The parameter allows you to get the context of the invoking cell, which can be helpful in some scenarios including [discovering the address of a cell which invoke a custom function](#addressing-cells-context-parameter).
 
 ## Addressing cell's context parameter
 
@@ -83,8 +147,6 @@ function getAddress(parameter1, invocationContext) {
 ```
 
 By default, values returned from a `getAddress` function follow the following format: `SheetName!CellNumber`. For example, if a function was called from a sheet called Expenses in cell B2, the returned value would be `Expenses!B2`.
-
-
 
 ## See also
 

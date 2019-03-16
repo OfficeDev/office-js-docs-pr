@@ -19,7 +19,6 @@ This article describes best practices for developing custom functions in Excel.
 
 3. To report feedback to the Excel Custom Functions team about this method of troubleshooting, send the team feedback. To do this, select **File | Feedback | Send a Frown**. Sending a frown will provide the necessary logs to understand the issue you are hitting.
 
-
 ## Debugging
 
 Currently, the best method for debugging Excel custom functions is to first [sideload](../testing/sideload-office-add-ins-for-testing.md) your add-in within **Excel Online**. You can then debug your custom functions by using the [F12 debugging tool native to your browser](../testing/debug-add-ins-in-office-online.md) in combination with the following techniques:
@@ -106,70 +105,6 @@ Keep in mind the following best practices when creating custom functions in your
       ]
     }
     ```
-
-## Declaring optional parameters 
-In Excel for Windows (version 1812 or later), you can declare optional parameters for your custom functions. When a user invokes a function in Excel, optional parameters appear in brackets. For example, a function `FOO` with one required parameter called `parameter1` and one optional parameter called `parameter2` would appear as `=FOO(parameter1, [parameter2])` in Excel.
-
-To make a parameter optional, add `"optional": true` to the parameter in the JSON metadata file that defines the function. The following example shows what this might look like for the function `=ADD(first, second, [third])`. Notice that the optional `[third]` parameter follows the two required parameters. Required parameters will appear first in Excel’s Formula UI.
-
-```json
-{
-    "id": "ADD",
-    "name": "ADD",
-    "description": "Add two numbers",
-    "helpUrl": "http://www.contoso.com",
-    "result": {
-        "type": "number",
-        "dimensionality": "scalar"
-        },
-    "parameters": [
-        {
-            "name": "first",
-            "description": "first number to add",
-            "type": "number",
-            "dimensionality": "scalar"
-        },
-        {
-            "name": "second",
-            "description": "second number to add",
-            "type": "number",
-            "dimensionality": "scalar",
-        },
-        {
-            "name": "third",
-            "description": "third optional number to add",
-            "type": "number",
-            "dimensionality": "scalar",
-            "optional": true
-        }
-    ],
-    "options": {
-        "sync": false
-    }
-}
-```
-
-When you define a function that contains one or more optional parameters, you should specify what happens when the optional parameters are undefined. In the following example, `zipCode` and `dayOfWeek` are both optional parameters for the `getWeatherReport` function. If the `zipCode` parameter is undefined, the default value is set to 98052. If the `dayOfWeek` parameter is undefined, it is set to Wednesday.
-
-```js
-function getWeatherReport(zipCode, dayOfWeek)
-{
-  if (zipCode === undefined) {
-      zipCode = "98052";
-  }
-
-  if (dayOfWeek === undefined) {
-    dayOfWeek = "Wednesday";
-  }
-
-  // Get weather report for specified zipCode and dayOfWeek
-  // ...
-}
-```
-
-## Additional considerations
-
-In order to create an add-in that will run on multiple platforms (one of the key tenants of Office Add-ins), you should not access the Document Object Model (DOM) in custom functions or use libraries like jQuery that rely on the DOM. On Excel for Windows, where custom functions use the [JavaScript runtime](custom-functions-runtime.md), custom functions cannot access the DOM.
 
 ## See also
 
