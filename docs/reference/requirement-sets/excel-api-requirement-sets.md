@@ -446,10 +446,7 @@ The following is a complete list of APIs in preview.
 ||[hyperlink](/javascript/api/excel/excel.settablecellproperties#hyperlink)||
 ||[style](/javascript/api/excel/excel.settablecellproperties#style)||
 |[SettableColumnProperties](/javascript/api/excel/excel.settablecolumnproperties)|[columnHidden](/javascript/api/excel/excel.settablecolumnproperties#columnhidden)||
-||[columnWidth](/javascript/api/excel/excel.settablecolumnproperties#columnwidth)||
-|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[rowHeight](/javascript/api/excel/excel.settablerowproperties#rowheight)||
-||[rowHidden](/javascript/api/excel/excel.settablerowproperties#rowhidden)||
-|[Setting](/javascript/api/excel/excel.setting)|[](/javascript/api/excel/excel.setting#replacestringdatewithdate)||
+|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[rowHidden](/javascript/api/excel/excel.settablerowproperties#rowhidden)||
 |[Shape](/javascript/api/excel/excel.shape)|[altTextDescription](/javascript/api/excel/excel.shape#alttextdescription)|Returns or sets the alternative description text for a Shape object.|
 ||[altTextTitle](/javascript/api/excel/excel.shape#alttexttitle)|Returns or sets the alternative title text for a Shape object.|
 ||[delete()](/javascript/api/excel/excel.shape#delete--)|Removes the shape from the worksheet.|
