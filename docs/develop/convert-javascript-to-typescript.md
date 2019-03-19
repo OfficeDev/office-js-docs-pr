@@ -1,7 +1,7 @@
 ---
 title: Convert an Office Add-in project in Visual Studio to TypeScript
 description: ''
-ms.date: 10/30/2018
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -17,12 +17,12 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
 - [Visual Studio 2017](https://www.visualstudio.com/vs/) with the **Office/SharePoint development** workload installed
 
     > [!TIP]
-    > If you've previously installed Visual Studio 2017, [use the Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed. If this workload is not yet installed, use the Visual Studio Installer to [install it](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads).
+    > If you've previously installed Visual Studio 2017, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed. If this workload is not yet installed, use the Visual Studio Installer to [install it](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads).
 
 - TypeScript SDK version 2.3 or later (for Visual Studio 2017)
 
     > [!TIP]
-    > In the [Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio), select the **Individual components** tab and then scroll down to the **SDKs, libraries, and frameworks** section. Within that section, ensure that at least one of the **TypeScript SDK** components (version 2.3 or later) is selected. If none of the **TypeScript SDK** components are selected, select the latest available version of the SDK and then choose the **Modify** button to [install that individual component](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio?view=vs-2017#modify-individual-components). 
+    > In the [Visual Studio Installer](/visualstudio/install/modify-visual-studio), select the **Individual components** tab and then scroll down to the **SDKs, libraries, and frameworks** section. Within that section, ensure that at least one of the **TypeScript SDK** components (version 2.3 or later) is selected. If none of the **TypeScript SDK** components are selected, select the latest available version of the SDK and then choose the **Modify** button to [install that individual component](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-individual-components). 
 
 - Excel 2016 or later
 
@@ -130,7 +130,7 @@ declare var fabric: any;
             var element = document.querySelector('.ms-MessageBanner');
             messageBanner = new fabric.MessageBanner(element);
             messageBanner.hideBanner();
-            
+
             // If not using Excel 2016, use fallback logic.
             if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
                 $("#template-description").text("This sample will display the value of the cells that you have selected in the spreadsheet.");
@@ -144,7 +144,7 @@ declare var fabric: any;
             $("#template-description").text("This sample highlights the highest value from the cells you have selected in the spreadsheet.");
             $('#button-text').text("Highlight!");
             $('#button-desc').text("Highlights the largest number.");
-                
+
             loadSampleData();
 
             // Add a click event handler for the highlight button.

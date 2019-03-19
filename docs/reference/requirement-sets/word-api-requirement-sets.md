@@ -1,14 +1,14 @@
 ---
 title: Word JavaScript API requirement sets
 description: ''
-ms.date: 11/14/2018
+ms.date: 03/19/2019
 ms.prod: word
 localization_priority: Priority
 ---
 
 # Word JavaScript API requirement sets
 
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
 Word add-ins run across multiple versions of Office, including Office 2016 or later for Windows, Office for iPad, Office for Mac, and Office Online. The following table lists the Word requirement sets, the Office host applications that support that requirement set, and the build or version numbers for those applications.
 
@@ -31,7 +31,7 @@ To find out more about versions, build numbers, and Office Online Server, see:
 - [Version and build numbers of update channel releases for Office 365 clients](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [What version of Office am I using?](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
 - [Where you can find the version and build number for an Office 365 client application](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [Office Online Server overview](https://docs.microsoft.com/officeonlineserver/office-online-server-overview)
+- [Office Online Server overview](/officeonlineserver/office-online-server-overview)
 
 ## Office Common API requirement sets
 
@@ -291,6 +291,6 @@ Word JavaScript API 1.1 is the first version of the API. For details about the A
 
 ## See also
 
-- [Office versions and requirement sets](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Specify Office hosts and API requirements](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Office Add-ins XML manifest](https://docs.microsoft.com/office/dev/add-ins/develop/add-in-manifests)
+- [Office versions and requirement sets](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
+- [Specify Office hosts and API requirements](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
+- [Office Add-ins XML manifest](/office/dev/add-ins/develop/add-in-manifests)

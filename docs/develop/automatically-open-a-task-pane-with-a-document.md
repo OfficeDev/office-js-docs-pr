@@ -1,7 +1,7 @@
 ---
 title: Automatically open a task pane with a document
 description: ''
-ms.date: 05/02/2018
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -56,7 +56,7 @@ To implement the autoopen feature:
 
 ### Step 1: Specify the task pane to open
 
-To specify the task pane to open automatically, set the [TaskpaneId](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/action#taskpaneid) value to **Office.AutoShowTaskpaneWithDocument**. You can only set this value on one task pane. If you set this value on multiple task panes, the first occurrence of the value will be recognized and the others will be ignored.
+To specify the task pane to open automatically, set the [TaskpaneId](/office/dev/add-ins/reference/manifest/action#taskpaneid) value to **Office.AutoShowTaskpaneWithDocument**. You can only set this value on one task pane. If you set this value on multiple task panes, the first occurrence of the value will be recognized and the others will be ignored.
 
 The following example shows the TaskPaneId value set to Office.AutoShowTaskpaneWithDocument.
 
@@ -74,7 +74,7 @@ You can tag the document to trigger the autoopen feature in one of two ways. Pic
 
 #### Tag the document on the client side
 
-Use the Office.js [settings.set](https://docs.microsoft.com/javascript/api/office/office.settings) method to set **Office.AutoShowTaskpaneWithDocument** to **true**, as shown in the following example.
+Use the Office.js [settings.set](/javascript/api/office/office.settings) method to set **Office.AutoShowTaskpaneWithDocument** to **true**, as shown in the following example.
 
 ```js
 Office.context.document.settings.set("Office.AutoShowTaskpaneWithDocument", true);
@@ -155,10 +155,10 @@ You can deploy a test version of your add-in that will automatically open a task
 </we:webextension>
 ```
 
-To test the previous example, please consider joining the [Office 365 Developer Program](https://docs.microsoft.com/office/developer-program/office-365-developer-program) and signing up for an [Office 365 developer account](https://developer.microsoft.com/office/dev-program) if you don't already own an Office 365 subscription. You can actually test drive Centralized Deployment and verify that your add-in works as expected.
+To test the previous example, please consider joining the [Office 365 Developer Program](/office/developer-program/office-365-developer-program) and signing up for an [Office 365 developer account](https://developer.microsoft.com/office/dev-program) if you don't already own an Office 365 subscription. You can actually test drive Centralized Deployment and verify that your add-in works as expected.
 
 
 ## See also
 
 For a sample that shows you how to use the autoopen feature, see [Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane).
-[Join the Office 365 developer program](https://docs.microsoft.com/office/developer-program/office-365-developer-program).
+[Join the Office 365 developer program](/office/developer-program/office-365-developer-program).
