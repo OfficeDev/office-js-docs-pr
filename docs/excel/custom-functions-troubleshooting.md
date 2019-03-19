@@ -12,7 +12,7 @@ To resolve issues, you can [enable runtime logging to capture errors](#enable-ru
 
 ## Enable runtime logging
 
-If you are testing your add-in in Office on Windows, you should [enable runtime logging](https://docs.microsoft.com/en-us/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in) to troubleshoot issues with your add-in's XML manifest file, as well as several installation and runtime conditions. Runtime logging writes `console.log` statements to a log file to help you uncover issues. For more information about runtime logging, see [Use runtime logging to debug your add-in](https://docs.microsoft.com/en-us/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in).  
+If you are testing your add-in in Office on Windows, you should [enable runtime logging](https://docs.microsoft.com/en-us/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in). Runtime logging delivers `console.log` statements to a separate log file you create to help you uncover issues. The statements cover a variety of errors, including errors pertaining to your add-in's XML manifest file, runtime conditions, or installation of your custom functions.  For more information about runtime logging, see [Use runtime logging to debug your add-in](https://docs.microsoft.com/en-us/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in).  
 
 ### Check for Excel error messages
 
