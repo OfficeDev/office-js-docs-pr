@@ -18,7 +18,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 * The latest available version of Visual Studio 2017.
 
-* Office 365 (subscription version of Office). Latest monthly version and build from the Insiders channel. You need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). Please note that when a build graduates to the production semi-annual channel, support for preview features, including SSO, is turned off for that build.
+* Office 365 (the subscription version of Office). Latest monthly version and build from the Insiders channel. You need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). Please note that when a build graduates to the production semi-annual channel, support for preview features, including SSO, is turned off for that build.
 
 ## Set up the starter project
 
