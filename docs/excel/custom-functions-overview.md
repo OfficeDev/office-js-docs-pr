@@ -1,5 +1,5 @@
 ---
-ms.date: 01/30/2019
+ms.date: 03/19/2019
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel (preview)
 localization_priority: Priority
@@ -285,9 +285,9 @@ To enable the ability to cancel a function, you must implement a cancellation ha
 
 ## Declaring a volatile function
 
-[Volatile functions](https://docs.microsoft.com/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions) are functions in which the value changes from moment to moment, even if none of the function's arguments have changed. These functions recalculate every time Excel recalculates. For example, imagine a cell that calls the function `NOW`. Every time `NOW` is called, it will automatically return the current date and time.
+[Volatile functions](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions) are functions in which the value changes from moment to moment, even if none of the function's arguments have changed. These functions recalculate every time Excel recalculates. For example, imagine a cell that calls the function `NOW`. Every time `NOW` is called, it will automatically return the current date and time.
 
-Excel contains several built-in volatile functions, such as `RAND` and `TODAY`. For a comprehensive list of Excel’s volatile functions, see [Volatile and Non-Volatile Functions](https://docs.microsoft.com/en-us/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).
+Excel contains several built-in volatile functions, such as `RAND` and `TODAY`. For a comprehensive list of Excel's volatile functions, see [Volatile and Non-Volatile Functions](/en-us/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).
 
 Custom functions allow you to create your own volatile functions, which may be useful when handling dates, times, random numbers, and modelling. For example, Monte Carlo simulations require generation of random inputs to determine an optimal solution.
 
@@ -353,10 +353,10 @@ function refreshTemperature(thermometerID){
 }
 ```
 
-## Co-Authoring
+## Coauthoring
 Excel Online and Excel for Windows with an Office 365 subscription allow you to co-author documents and this feature works with custom functions. If your workbook uses a custom function, your colleague will be prompted to load the custom function's add-in. Once you both have loaded the add-in, the custom function will share results through co-authoring.
 
-For more information on co-authoring, see [About Co-Authoring in Excel](https://docs.microsoft.com/en-us/office/vba/excel/concepts/about-coauthoring-in-excel).
+For more information on co-authoring, see [About Co-Authoring in Excel](/en-us/office/vba/excel/concepts/about-coauthoring-in-excel).
 
 ## Working with ranges of data
 
@@ -386,7 +386,7 @@ function secondHighest(values){
 
 In some cases you'll need to get the address of the cell that invoked your custom function. This may be useful in the following types of scenarios:
 
-- Formatting ranges: Use the cell's address as the key to store information in [AsyncStorage](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `AsyncStorage`.
+- Formatting ranges: Use the cell's address as the key to store information in [AsyncStorage](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Then, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `AsyncStorage`.
 - Displaying cached values: If your function is used offline, display stored cached values from `AsyncStorage` using `onCalculated`.
 - Reconciliation: Use the cell's address to discover an origin cell to help you reconcile where processing is occurring.
 
@@ -437,4 +437,3 @@ See known issues on our [Excel Custom Functions GitHub repo](https://github.com/
 * [Custom functions best practices](custom-functions-best-practices.md)
 * [Custom functions changelog](custom-functions-changelog.md)
 * [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
-

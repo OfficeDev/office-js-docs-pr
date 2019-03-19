@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot error messages for single sign-on (SSO)
 description: ''
-ms.date: 12/08/2017
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -32,20 +32,20 @@ For examples of the error handling described in this section, see:
 - [program.js in Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/public/program.js)
 
 > [!NOTE]
-> Besides the suggestions made in this section, an Outlook add-in has an additional way to respond to any 13*nnn* error. For details, see [Scenario: Implement single sign-on to your service in an Outlook add-in](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in) and [AttachmentsDemo Sample Add-in](https://github.com/OfficeDev/outlook-add-in-attachments-demo).
+> Besides the suggestions made in this section, an Outlook add-in has an additional way to respond to any 13*nnn* error. For details, see [Scenario: Implement single sign-on to your service in an Outlook add-in](/outlook/add-ins/implement-sso-in-outlook-add-in) and [AttachmentsDemo Sample Add-in](https://github.com/OfficeDev/outlook-add-in-attachments-demo).
 
 ### 13000
 
-The [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) API is not supported by the add-in or the Office version.
+The [getAccessTokenAsync](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) API is not supported by the add-in or the Office version.
 
-- The version of Office does not support SSO. The required version is Office 2016, Version 1710, build 8629.nnnn or later (the Office 365 subscription version, sometimes called “Click to Run”). You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). 
-- The add-in manifest is missing the proper [WebApplicationInfo](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/webapplicationinfo) section.
+- The version of Office does not support SSO. The required version is Office 365 (subscription version of Office), Version 1710, build 8629.nnnn or later. You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1).
+- The add-in manifest is missing the proper [WebApplicationInfo](/office/dev/add-ins/reference/manifest/webapplicationinfo) section.
 
-Your add-in should respond to this error by falling back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#requirements-and-best-practices).
+Your add-in should respond to this error by falling back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](/office/dev/add-ins/develop/sso-in-office-add-ins#requirements-and-best-practices).
 
 ### 13001
 
-The user is not signed into Office. Your code should recall the `getAccessTokenAsync` method and pass the option `forceAddAccount: true` in the [options](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) parameter. But don't do this more than once. The user may have decided not to sign-in.
+The user is not signed into Office. Your code should recall the `getAccessTokenAsync` method and pass the option `forceAddAccount: true` in the [options](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) parameter. But don't do this more than once. The user may have decided not to sign-in.
 
 This error is never seen in Office Online. If the user's cookie expires, Office Online returns error 13006.
 
@@ -58,7 +58,7 @@ The user aborted sign in or consent; for example, by choosing **Cancel** on the 
 
 ### 13003
 
-User Type not supported. The user isn't signed into Office with a valid Microsoft Account or Office 365 ("Work or School") account. This may happen if Office runs with an on-premises domain account, for example. Your code should either ask the user to sign in to Office or fall back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins##requirements-and-best-practices).
+User Type not supported. The user isn't signed into Office with a valid Microsoft Account or Office 365 ("Work or School") account. This may happen if Office runs with an on-premises domain account, for example. Your code should either ask the user to sign in to Office or fall back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](/office/dev/add-ins/develop/sso-in-office-add-ins##requirements-and-best-practices).
 
 ### 13004
 
@@ -79,7 +79,7 @@ The Office host was unable to get an access token to the add-in's web service.
 - If this error occurs during development, be sure that your add-in registration and add-in manifest specify the `openid` and `profile` permissions. For more information, see [Register the add-in with Azure AD v2.0 endpoint](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) or [Register the add-in with Azure AD v2.0 endpoint](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (Node JS), and [Configure the add-in](create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) or [Configure the add-in](create-sso-office-add-ins-nodejs.md#configure-the-add-in) (Node JS).
 - In production, there are several things that can cause this error. Some of them are:
     - The user has revoked consent, after previously granting it. Your code should recall the `getAccessTokenAsync` method with the option `forceConsent: true`, but no more than once.
-    - The user is has an Microsoft Account (MSA) identity. Some situations that would cause one of the other 13nnn errors with a Work or School account, will cause a 13007 when a MSA is used. 
+    - The user is has an Microsoft Account (MSA) identity. Some situations that would cause one of the other 13nnn errors with a Work or School account, will cause a 13007 when a MSA is used.
 
   For all of these cases, if you have already tried the `forceConsent` option once, then your code could suggest that the user retry the operation later.
 
@@ -89,7 +89,7 @@ The user triggered an operation that calls `getAccessTokenAsync` before a previo
 
 ### 13009
 
-The add-in called the `getAccessTokenAsync` method with the option `forceConsent: true`, but the add-in's manifest is deployed to a type of catalog that does not support forcing consent. Your code should recall the `getAccessTokenAsync` method and pass the option `forceConsent: false` in the [options](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) parameter. However, the call of  `getAccessTokenAsync`  with `forceConsent: true` might itself have been an automatic response to a failed call of `getAccessTokenAsync` with `forceConsent: false`, so your code should keep track of whether `getAccessTokenAsync` with `forceConsent: false` has already been called. If it has, your code should either tell the user to sign out of Office and sign-in again or it should fall back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#requirements-and-best-practices).
+The add-in called the `getAccessTokenAsync` method with the option `forceConsent: true`, but the add-in's manifest is deployed to a type of catalog that does not support forcing consent. Your code should recall the `getAccessTokenAsync` method and pass the option `forceConsent: false` in the [options](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) parameter. However, the call of  `getAccessTokenAsync`  with `forceConsent: true` might itself have been an automatic response to a failed call of `getAccessTokenAsync` with `forceConsent: false`, so your code should keep track of whether `getAccessTokenAsync` with `forceConsent: false` has already been called. If it has, your code should either tell the user to sign out of Office and sign-in again or it should fall back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](/office/dev/add-ins/develop/sso-in-office-add-ins#requirements-and-best-practices).
 
 > [!NOTE]
 > Microsoft will not necessarily impose this restriction on any types of add-in catalogs. If it doesn't, then this error will never be seen.
@@ -100,13 +100,13 @@ The user is running the add-in on Office Online and is using Edge or Internet Ex
 
 ### 13012
 
-The add-in is running on a platform that does not support the `getAccessTokenAsync` API. For example, it is not supported on iPad. See also [Identity API Requirement Sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
+The add-in is running on a platform that does not support the `getAccessTokenAsync` API. For example, it is not supported on iPad. See also [Identity API Requirement Sets](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
 
 ### 50001
 
 This error (which is not specific to `getAccessTokenAsync`) may indicate that the browser has cached an old copy of the office.js files. When you are developing, clear the browser's cache. Another possibility is that the version of Office is not recent enough to support SSO. See [Prerequisites](create-sso-office-add-ins-aspnet.md#prerequisites).
 
-In a production add-in, the add-in should respond to this error by falling back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins##requirements-and-best-practices).
+In a production add-in, the add-in should respond to this error by falling back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](/office/dev/add-ins/develop/sso-in-office-add-ins##requirements-and-best-practices).
 
 
 ## Errors on the server-side from Azure Active Directory
@@ -120,7 +120,7 @@ For samples of the error-handling described in this section, see:
  
 In certain configurations of identity in AAD and Office 365, it is possible for some resources that are accessible with Microsoft Graph to require multifactor authentication (MFA), even when the user's Office 365 tenancy does not. When AAD receives a request for a token to the MFA-protected resource, via the on-behalf-of flow, it returns to your add-in's web service a JSON message that contains a `claims` property. The claims property has information about what further authentication factors are needed.
 
-Your server-side code should test for this message and relay the claims value to your client-side code. You need this information in the client because Office handles authentication for SSO add-ins. The message to the client can be either an error (such as `500 Server Error` or `401 Unauthorized`) or in the body of a success response (such as `200 OK`). In either case, the (failure or success) callback of your code's client-side AJAX call to your add-in's web API should test for this response. If the claims value has been relayed, your code should recall `getAccessTokenAsync` and pass the option `authChallenge: CLAIMS-STRING-HERE` in the [options](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) parameter. When AAD sees this string, it prompts the user for the additional factor(s) and then returns a new access token which will be accepted in the on-behalf-of flow.
+Your server-side code should test for this message and relay the claims value to your client-side code. You need this information in the client because Office handles authentication for SSO add-ins. The message to the client can be either an error (such as `500 Server Error` or `401 Unauthorized`) or in the body of a success response (such as `200 OK`). In either case, the (failure or success) callback of your code's client-side AJAX call to your add-in's web API should test for this response. If the claims value has been relayed, your code should recall `getAccessTokenAsync` and pass the option `authChallenge: CLAIMS-STRING-HERE` in the [options](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) parameter. When AAD sees this string, it prompts the user for the additional factor(s) and then returns a new access token which will be accepted in the on-behalf-of flow.
 
 ### Consent missing errors
 
@@ -129,7 +129,7 @@ If AAD has no record that consent (to the Microsoft Graph resource) was granted 
 ### Invalid or missing scope (permission) errors
 
 - Your server-side code should send a `403 Forbidden` response to the client which should present a friendly message to the user. If possible, log the error to the console or record it in a log.
-- Be sure your add-in manifest [Scopes](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/scopes)  section specifies all needed permissions. And be sure your registration of the add-in's web service specifies the same permissions. Check for spelling mistakes too. For more information, see [Register the add-in with Azure AD v2.0 endpoint](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) or [Register the add-in with Azure AD v2.0 endpoint](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (Node JS), and [Configure the add-in](create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) or [Configure the add-in](create-sso-office-add-ins-nodejs.md#configure-the-add-in) (Node JS).
+- Be sure your add-in manifest [Scopes](/office/dev/add-ins/reference/manifest/scopes)  section specifies all needed permissions. And be sure your registration of the add-in's web service specifies the same permissions. Check for spelling mistakes too. For more information, see [Register the add-in with Azure AD v2.0 endpoint](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) or [Register the add-in with Azure AD v2.0 endpoint](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (Node JS), and [Configure the add-in](create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) or [Configure the add-in](create-sso-office-add-ins-nodejs.md#configure-the-add-in) (Node JS).
 
 ### Expired or invalid token errors when calling Microsoft Graph
 
