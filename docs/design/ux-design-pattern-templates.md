@@ -34,7 +34,8 @@ The patterns are organized by key actions or experiences that are common in an a
 
 Browse each grouping to get an idea of how you can design your add-in using best practices.
 
-> [!NOTE] The example screens shown throughout this documentation are designed and displayed at a resolution of **1366x768**
+> [!NOTE]
+> The example screens shown throughout this documentation are designed and displayed at a resolution of **1366x768**.
 
 ## See also
 
