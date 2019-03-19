@@ -881,6 +881,6 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
 ## See also
 
 - [Office Add-ins platform overview](office-add-ins.md)
-- [Common API requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
-- [Add-in Commands requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets)
-- [JavaScript API for Office reference](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)
+- [Common API requirement sets](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
+- [Add-in Commands requirement sets](/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets)
+- [JavaScript API for Office reference](/office/dev/add-ins/reference/javascript-api-for-office)
