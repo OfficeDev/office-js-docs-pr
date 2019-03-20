@@ -39,6 +39,6 @@ Requirement set 1.7 includes all of the features of [Requirement set 1.6](../req
 
 ## See also
 
-- [Outlook add-ins](https://docs.microsoft.com/outlook/add-ins/)
+- [Outlook add-ins](/outlook/add-ins/)
 - [Outlook add-in code samples](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [Get started](https://docs.microsoft.com/outlook/add-ins/quick-start)
+- [Get started](/outlook/add-ins/quick-start)

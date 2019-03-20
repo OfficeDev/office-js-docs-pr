@@ -1,7 +1,7 @@
 ---
 title: Build an Excel add-in using Vue
 description: 
-ms.date: 10/18/2018
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -55,7 +55,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
 2. Use the Yeoman generator to generate the manifest file for your add-in. Run the following command and then answer the prompts as shown below.
 
     ```bash
-    yo office 
+    yo office
     ```
 
     - **Choose a project type:** `Office Add-in containing the manifest only`
@@ -63,7 +63,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
     - **Which Office client application would you like to support?:** `Excel`
 
     ![Yeoman generator](../images/yo-office.png)
-    
+
     After you complete the wizard, the generator creates the manifest file.
 
 ## Secure the app
@@ -219,5 +219,5 @@ Congratulations, you've successfully created an Excel add-in using Vue! Next, le
 * [Excel add-in tutorial](../tutorials/excel-tutorial-create-table.md)
 * [Fundamental programming concepts with the Excel JavaScript API](../excel/excel-add-ins-core-concepts.md)
 * [Excel add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [Excel JavaScript API reference](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
 

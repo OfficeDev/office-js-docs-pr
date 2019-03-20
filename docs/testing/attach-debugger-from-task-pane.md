@@ -1,7 +1,7 @@
 ---
 title: Attach a debugger from the task pane
 description: ''
-ms.date: 10/17/2018
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -32,8 +32,8 @@ In Visual Studio, you will see the code files in **Solution Explorer**.   You ca
 For more information about debugging in Visual Studio, see the following:
 
 -	To launch and use the DOM Explorer in Visual Studio, see Tip 4 in the [Tips and Tricks](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates/#tips_tricks) section of the [Building great-looking apps for Office using the new project templates](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates) blog post.
--	To set breakpoints, see [Using Breakpoints](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints?view=vs-2015).
--	To use F12, see [Using the F12 developer tools](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85)).
+-	To set breakpoints, see [Using Breakpoints](/visualstudio/debugger/using-breakpoints?view=vs-2015).
+-	To use F12, see [Using the F12 developer tools](/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85)).
 
 ## See also
 

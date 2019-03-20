@@ -354,6 +354,7 @@ function refreshTemperature(thermometerID){
 ```
 
 ## Coauthoring
+
 Excel Online and Excel for Windows with an Office 365 subscription allow you to coauthor documents and this feature works with custom functions. If your workbook uses a custom function, your colleague will be prompted to load the custom function's add-in. Once you both have loaded the add-in, the custom function will share results through coauthoring.
 
 For more information on coauthoring, see [About coauthoring in Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
@@ -428,7 +429,7 @@ By default, values returned from a `getAddress` function follow the following fo
 
 ## Known issues
 
-See known issues on our [Excel Custom Functions GitHub repo](https://github.com/OfficeDev/Excel-Custom-Functions/issues). 
+See known issues on our [Excel Custom Functions GitHub repo](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
 ## See also
 

@@ -1,7 +1,7 @@
 ---
 title: Calling built-in Excel worksheet functions using the Excel JavaScript API
 description: ''
-ms.date: 01/24/2017
+ms.date: 03/19/2019
 localization_priority: Normal
 ---
 
@@ -61,7 +61,7 @@ As this example shows, when one or more function calls are nested within another
 Excel.run(function (context) {
     var range = context.workbook.worksheets.getItem("Sheet1").getRange("A1:D4");
     var sumOfTwoLookups = context.workbook.functions.sum(
-        context.workbook.functions.vlookup("Wrench", range, 2, false), 
+        context.workbook.functions.vlookup("Wrench", range, 2, false),
         context.workbook.functions.vlookup("Wrench", range, 3, false)
     );
     sumOfTwoLookups.load('value');
@@ -75,7 +75,7 @@ Excel.run(function (context) {
 
 ## Supported worksheet functions
 
-The following built-in Excel worksheet functions can be called using the Excel JavaScript API. 
+The following built-in Excel worksheet functions can be called using the Excel JavaScript API.
 
 | Function | Return type | Description |
 |:---------------|:-------------|:-----------|
@@ -441,5 +441,5 @@ The following built-in Excel worksheet functions can be called using the Excel J
 ## See also
 
 - [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
-- [Functions Class (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.functions)
-- [Workbook Functions Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.workbook#functions)
+- [Functions Class (JavaScript API for Excel)](/javascript/api/excel/excel.functions)
+- [Workbook Functions Object (JavaScript API for Excel)](/javascript/api/excel/excel.workbook#functions)
