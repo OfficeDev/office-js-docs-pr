@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins using the sideload command
 description: ''
-ms.date: 07/24/2018
+ms.date: 03/19/201907/24/2018
 localization_priority: Priority
 ---
 
@@ -13,7 +13,7 @@ localization_priority: Priority
 > 
 > - [Sideload Office Add-ins in Office Online for testing](sideload-office-add-ins-for-testing.md)
 > - [Sideload Office Add-ins on iPad and Mac for testing](sideload-an-office-add-in-on-ipad-and-mac.md)
-> - [Sideload Outlook add-ins for testing](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)
+> - [Sideload Outlook add-ins for testing](/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 
 1. Open a command prompt as an administrator.
 

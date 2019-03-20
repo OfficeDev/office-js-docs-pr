@@ -1,7 +1,7 @@
 ---
 title: Work with ranges using the Excel JavaScript API (advanced)
 description: ''
-ms.date: 02/20/2019
+ms.date: 03/19/2019
 localization_priority: Normal
 ---
 
@@ -48,7 +48,7 @@ Excel.run(function (context) {
         var nowMoment = moment.fromOADate(nowMS);
         console.log(`get (moment): ${JSON.stringify(nowMoment)}`);
 
-        // log the date as a UNIX-style timestamp 
+        // log the date as a UNIX-style timestamp
         var now = nowMoment.unix();
         console.log(`get (timestamp): ${now}`);
     });
@@ -100,7 +100,7 @@ If no cells with the targeted characteristic exist in the range, `getSpecialCell
 If you expect that cells with the targeted characteristic should always exist, you'll likely want your code to throw an error if those cells aren't there. If it's a valid scenario that there aren't any matching cells, your code should check for this possibility and handle it gracefully without throwing an error. You can achieve this behavior with the `getSpecialCellsOrNullObject` method and its returned `isNullObject` property. The following example uses this pattern. About this code, note:
 
 - The `getSpecialCellsOrNullObject` method always returns a proxy object, so it is never `null` in the ordinary JavaScript sense. But if no matching cells are found, the `isNullObject` property of the object is set to `true`.
-- It calls `context.sync` *before* it tests the `isNullObject` property. This is a requirement with all `*OrNullObject` methods and properties, because you always have to load and sync a property in order to read it. However, it is not necessary to *explicitly* load the `isNullObject` property. It is automatically loaded by the `context.sync` even if `load` is not called on the object. For more information, see [\*OrNullObject](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods).
+- It calls `context.sync` *before* it tests the `isNullObject` property. This is a requirement with all `*OrNullObject` methods and properties, because you always have to load and sync a property in order to read it. However, it is not necessary to *explicitly* load the `isNullObject` property. It is automatically loaded by the `context.sync` even if `load` is not called on the object. For more information, see [\*OrNullObject](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods).
 - You can test this code by first selecting a range that has no formula cells and running it. Then select a range that has at least one cell with a formula and run it again.
 
 ```js

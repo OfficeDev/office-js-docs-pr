@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins in Office Online for testing
 description: 'Test your Office Add-in in Office Online by sideloading'
-ms.date: 10/19/2018
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -13,7 +13,7 @@ When you sideload an add-in, the add-in manifest is stored in the browser's loca
 
 
 > [!NOTE]
-> Sideloading as described in this article is supported on Word, Excel, and PowerPoint. To sideload an Outlook add-in, see [Sideload Outlook add-ins for testing](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing).
+> Sideloading as described in this article is supported on Word, Excel, and PowerPoint. To sideload an Outlook add-in, see [Sideload Outlook add-ins for testing](/outlook/add-ins/sideload-outlook-add-ins-for-testing).
 
 The following video walks you through the process of sideloading your add-in in Office desktop or Office Online.  
 

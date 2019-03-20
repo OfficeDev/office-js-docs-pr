@@ -1,5 +1,5 @@
 ---
-ms.date: 01/30/2019
+ms.date: 03/19/2019
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel (preview)
 localization_priority: Priority
@@ -327,14 +327,15 @@ function refreshTemperature(thermometerID){
 }
 ```
 
-## Co-Authoring
-Excel Online and Excel for Windows with an Office 365 subscription allow you to co-author documents and this feature works with custom functions. If your workbook uses a custom function, your colleague will be prompted to load the custom function's add-in. Once you both have loaded the add-in, the custom function will share results through co-authoring.
+## Coauthoring
 
-For more information on co-authoring, see [About Co-Authoring in Excel](https://docs.microsoft.com/en-us/office/vba/excel/concepts/about-coauthoring-in-excel).
+Excel Online and Excel for Windows with an Office 365 subscription allow you to coauthor documents and this feature works with custom functions. If your workbook uses a custom function, your colleague will be prompted to load the custom function's add-in. Once you both have loaded the add-in, the custom function will share results through coauthoring.
+
+For more information on coauthoring, see [About coauthoring in Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
 
 ## Known issues
 
-See known issues on our [Excel Custom Functions GitHub repo](https://github.com/OfficeDev/Excel-Custom-Functions/issues). 
+See known issues on our [Excel Custom Functions GitHub repo](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
 ## See also
 
