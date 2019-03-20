@@ -33,6 +33,6 @@ Script Lab is supported on the following clients for Excel, Word, PowerPoint, an
 
 ## See also
 
-[Get Script Lab](https://store.office.com/app.aspx?assetid=WA104380862)
-[Learn more about Script Lab](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
-[Sign up for dev program](https://developer.microsoft.com/office/dev-program)
+- [Get Script Lab](https://store.office.com/app.aspx?assetid=WA104380862)
+- [Learn more about Script Lab](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
+- [Sign up for dev program](https://developer.microsoft.com/office/dev-program)
