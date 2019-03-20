@@ -1,7 +1,7 @@
 ---
 title: Create better add-ins for Word with Office Open XML
 description: ''
-ms.date: 12/17/2018
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -104,7 +104,7 @@ Microsoft Office offers a wide array of SmartArt diagram layouts (and you can us
 
 You can insert Excel charts as live charts in Word documents, which also means you can use them in your add-in for Word.
 As you can see by the preceding examples, you can use Office Open XML coercion to insert essentially any type of content that a user can insert into their own document.
-There are two simple ways to get theOffice Open XML markup you need. Either add your rich content to an otherwise blank Word document and then save the file in Word XML Document format or use a test add-in with the [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) method to grab the markup. Both approaches provide essentially the same result.
+There are two simple ways to get theOffice Open XML markup you need. Either add your rich content to an otherwise blank Word document and then save the file in Word XML Document format or use a test add-in with the [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) method to grab the markup. Both approaches provide essentially the same result.
 
 
 > [!NOTE]
@@ -119,7 +119,7 @@ In this topic, we'll use some common scenarios we've been hearing from the Offic
 ## Exploring the Office Open XML document package
 
 
-When you use [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) to retrieve the Office Open XML for a selection of content (or when you save the document in Word XML Document format), what you're getting is not just the markup that describes your selected content; it's an entire document with many options and settings that you almost certainly don't need. In fact, if you use that method from a document that contains a task pane add-in, the markup you get even includes your task pane.
+When you use [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) to retrieve the Office Open XML for a selection of content (or when you save the document in Word XML Document format), what you're getting is not just the markup that describes your selected content; it's an entire document with many options and settings that you almost certainly don't need. In fact, if you use that method from a document that contains a task pane add-in, the markup you get even includes your task pane.
 
 Even a simple Word document package includes parts for document properties, styles, theme (formatting settings), web settings, fonts, and then some, in addition to parts for the actual content.
 
@@ -221,7 +221,7 @@ We've edited the Office Open XML example shown here, as described in the precedi
 
 Once you save the preceding Office Open XML as an XML file that's accessible from your solution, you can use the following function to set the formatted text content in the document using Office Open XML coercion. 
 
-In this function, notice that all but the last line are used to get your saved markup for use in the [setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) method call at the end of the function. **setSelectedDataASync** requires only that you specify the content to be inserted and the coercion type.
+In this function, notice that all but the last line are used to get your saved markup for use in the [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) method call at the end of the function. **setSelectedDataASync** requires only that you specify the content to be inserted and the coercion type.
 
 
 > [!NOTE]
@@ -555,7 +555,7 @@ function addAndBindControl() {
 The code shown here takes the following steps:
 
 
-- Attempts to bind to the named content control, using [addFromNamedItemAsync](https://docs.microsoft.com/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-).
+- Attempts to bind to the named content control, using [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-).
 
   Take this step first if there is a possible scenario for your add-in where the named control could already exist in the document when the code executes. For example, you'll want to do this if the add-in was inserted into and saved with a template that's been designed to work with the add-in, where the control was placed in advance. You also need to do this if you need to bind to a control that was placed earlier by the add-in.
 
@@ -857,6 +857,6 @@ When using templates with your app, whether the add-in will be resident in the t
 
 ## See also
 
-- [JavaScript API for Office ](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)
+- [JavaScript API for Office ](/office/dev/add-ins/reference/javascript-api-for-office)
 - [Standard ECMA-376: Office Open XML File Formats](https://www.ecma-international.org/publications/standards/Ecma-376.htm) (access the complete language reference and related documentation on Open XML here)
 - [Exploring the JavaScript API for Office: Data Binding and Custom XML Parts](https://msdn.microsoft.com/magazine/dn166930.aspx)

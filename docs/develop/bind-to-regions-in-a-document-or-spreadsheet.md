@@ -1,7 +1,7 @@
 ---
 title: Bind to regions in a document or spreadsheet
 description: ''
-ms.date: 12/04/2017
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -12,11 +12,11 @@ Binding-based data access enables content and task pane add-ins to consistently 
 
 
 - Permits access to common data structures across supported Office applications, such as: tables, ranges, or text (a contiguous run of characters).
-    
+
 - Enables read/write operations without requiring the user to make a selection.
-    
+
 - Establishes a relationship between the add-in and the data in the document. Bindings are persisted in the document, and can be accessed at a later time.
-    
+
 Establishing a binding also allows you to subscribe to data and selection change events that are scoped to that particular region of the document or spreadsheet. This means that the add-in is only notified of changes that happen within the bound region as opposed to general changes across the whole document or spreadsheet.
 
 The [Bindings] object exposes a [getAllAsync] method that gives access to the set of all bindings established on the document or spreadsheet. An individual binding can be accessed by its ID using either the Bindings.[getByIdAsync] or [Office.select] methods. You can establish new bindings as well as remove existing ones by using one of the following methods of the [Bindings] object: [addFromSelectionAsync], [addFromPromptAsync], [addFromNamedItemAsync], or [releaseByIdAsync].
@@ -34,7 +34,7 @@ There are [three different types of bindings][Office.BindingType] that you speci
 
 	In Excel, any contiguous selection of cells can be used to establish a matrix binding. In Word, only tables support matrix binding.
 
-3. **[Table Binding][TableBinding]** - Binds to a region of a document that contains a table with headers.Data in a table binding is written or read as a [TableData](https://docs.microsoft.com/javascript/api/office/office.tabledata) object. The `TableData` object exposes the data through the `headers` and `rows` properties.
+3. **[Table Binding][TableBinding]** - Binds to a region of a document that contains a table with headers.Data in a table binding is written or read as a [TableData](/javascript/api/office/office.tabledata) object. The `TableData` object exposes the data through the `headers` and `rows` properties.
 
 	Any Excel or Word table can be the basis for a table binding. After you establish a table binding, each new row or column a user adds to the table is automatically included in the binding.
 
@@ -88,7 +88,7 @@ function bindFromPrompt() {
 
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
@@ -338,7 +338,7 @@ The anonymous function that is passed into the function is a callback that is ex
 ## Detect changes to data or the selection in a binding
 
 
-The following example shows how to attach an event handler to the [DataChanged](https://docs.microsoft.com/javascript/api/office/office.binding) event of a binding with an id of "MyBinding".
+The following example shows how to attach an event handler to the [DataChanged](/javascript/api/office/office.binding) event of a binding with an id of "MyBinding".
 
 
 ```js
@@ -351,7 +351,7 @@ function dataChanged(eventArgs) {
 }
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
@@ -389,7 +389,7 @@ function removeEventHandlerFromBinding() {
 - [Understanding the JavaScript API for Office](understanding-the-javascript-api-for-office.md) 
 - [Asynchronous programming in Office Add-ins](asynchronous-programming-in-office-add-ins.md)
 - [Read and write data to the active selection in a document or spreadsheet](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
-    
+
 [Binding]: 				 https://docs.microsoft.com/javascript/api/office/office.binding
 [MatrixBinding]:		 https://docs.microsoft.com/javascript/api/office/office.matrixbinding
 [TableBinding]: 		 https://docs.microsoft.com/javascript/api/office/office.tablebinding

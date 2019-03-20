@@ -1,7 +1,7 @@
 ---
 title: Localization for Office Add-ins
 description: You can use the JavaScript API for Office to determine a locale and display strings based on the locale of the host application, or to interpret or display data based on the locale of the data.
-ms.date: 12/11/2018
+ms.date: 03/19/2019
 localization_priority: Normal
 ---
 
@@ -59,7 +59,7 @@ Every Office Add-in specifies a [DefaultLocale] element and a locale in its mani
 
 
 > [!NOTE]
-> You can localize the description and display name for only the locales that Office supports. See [Language identifiers and OptionState Id values in Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15)) for a list of languages and locales for the current release of Office.
+> You can localize the description and display name for only the locales that Office supports. See [Language identifiers and OptionState Id values in Office 2013](/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15)) for a list of languages and locales for the current release of Office.
 
 
 ### Examples
@@ -179,10 +179,10 @@ After you install the Language Accessory Pack, you can configure Office to use t
 
 ### Create an Office Add-in project
 
-You'll need to create a Visual Studio 2017 Office Add-in project. 
+You'll need to create a Visual Studio 2017 Office Add-in project.
 
 > [!NOTE]
-> If you haven't installed Visual Studio 2017, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/) for download instructions. During installation you'll need to select the Office/SharePoint development workload. If you have previously installed Visual Studio 2017, [use the Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio/) to ensure that the Office/SharePoint development workload is installed.
+> If you haven't installed Visual Studio 2017, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/) for download instructions. During installation you'll need to select the Office/SharePoint development workload. If you have previously installed Visual Studio 2017, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio/) to ensure that the Office/SharePoint development workload is installed.
 
 
 1. In Visual Studio, choose **File** > **New Project**.
@@ -400,7 +400,7 @@ Once running, the strings in the add-in UI change to match the language used by 
 ## See also
 
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)
-- [Language identifiers and OptionState Id values in Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
+- [Language identifiers and OptionState Id values in Office 2013](/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
 [DefaultLocale]: 		https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultlocale
 [Description]: 			https://docs.microsoft.com/office/dev/add-ins/reference/manifest/description
