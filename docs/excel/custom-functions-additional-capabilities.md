@@ -4,15 +4,15 @@ description: Learn to implement volatile and offline streaming custom functions.
 title: Offline options for Excel custom functions (preview)
 localization_priority: Normal
 ---
-# Custom functions offline options
+# Custom functions additional capabilities
 
-In addition to performing common mathematical calculations and requesting information from external sources, you can write custom functions which automatically update values upon Excel's recalculation of a worksheet. <-- CHECK THAT THAT IS TRUE>
+Custom functions can perform mathematical calculations and request information from external sources, such as the web. However, they also have some additional capabilities including streaming, cancelling, and handling volatile functions.
 
 ## Offline streaming
 
-Custom functions are considered streaming if they request data at set intervals. While it is more common for streaming functions to request web data, they can also perform calculations as set intervals.
+Custom functions are considered streaming if they request data at set intervals. While it is more common for streaming functions to request web data, they can also perform calculations or other offline actions at set intervals.
 
-The following example shows a clock function that returns the time each second. Note that this function uses the invocationContext parameter, which can be invoked on any function (TBD LINK). The function also implements a cancellation handler, which is a best practice when creating a streaming function.
+The following example shows a clock function that returns the time each second. Note that this function uses the invocationContext parameter, which is automatically available as a parameter in your custom function. The function also implements a cancellation handler, which is a best practice when creating a streaming function.
 
 ```JavaScript
 function clock(invocation) {
