@@ -1,7 +1,7 @@
 ---
 title: Authentication design guidelines for Office Add-ins
 description: ''
-ms.date: 11/02/2018
+ms.date: 03/19/2019
 localization_priority: Normal
 ---
 
@@ -21,6 +21,7 @@ Add-ins may require users to sign-in or sign-up in order to access features and 
 |Provide a way for users to sign-out and reauthenticate.	|Force users to uninstall to switch identities.|
 
 ## Authentication flow
+
 Until single sign-on is out of preview, production add-ins should give users a choice to sign-in directly with your service or an identity provider like Microsoft.
 
 1. First Run Placemat - Place your sign-in button as a clear call-to action inside your add-in's first run experience.
@@ -31,7 +32,7 @@ Until single sign-on is out of preview, production add-ins should give users a c
 
 
 
-3. Identity Provider Sign-in - The identity provider will have their own UI. Microsoft Azure Active Directory allows customization of sign-in and access panel pages for consistent look and feel with your service. [Learn More](https://docs.microsoft.com/azure/active-directory/fundamentals/customize-branding).
+3. Identity Provider Sign-in - The identity provider will have their own UI. Microsoft Azure Active Directory allows customization of sign-in and access panel pages for consistent look and feel with your service. [Learn More](/azure/active-directory/fundamentals/customize-branding).
 ![A screenshot of the Identity Provider Sign-in dialog in an Office application](../images/add-in-auth-identity-sign-in.png)
 
 4. Progress - Indicate progress while settings and UI load.
@@ -43,7 +44,7 @@ Until single sign-on is out of preview, production add-ins should give users a c
 ## Single Sign-On authentication flow (preview)
 
 > [!NOTE]
-> The single sign-on API is currently supported in preview for Word, Excel, Outlook, and PowerPoint. For more information about single sign-on support, see [IdentityAPI requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets). If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Office 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> The single sign-on API is currently supported in preview for Word, Excel, Outlook, and PowerPoint. For more information about single sign-on support, see [IdentityAPI requirement sets](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets). If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Office 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 Once single sign-on is generally available for production add-ins, use it for the smoother end-user experience. The user's identity within Office (either a Microsoft Account or an Office 365 identity) is used to sign-in to your add-in. As a result users only sign-in once. This removes friction in the experience making it easier for your customers to get started.
 
@@ -56,4 +57,5 @@ Once single sign-on is generally available for production add-ins, use it for th
 ![A screenshot of an Office application with add-in buttons displayed in the ribbon](../images/add-in-ribbon.png)
 
 ## See also
-- Learn more about [developing SSO Add-ins (preview)](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins)
+
+- Learn more about [developing SSO Add-ins (preview)](/office/dev/add-ins/develop/sso-in-office-add-ins)

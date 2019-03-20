@@ -1,7 +1,7 @@
 ---
 title: Build your first OneNote add-in
 description: 
-ms.date: 01/17/2019
+ms.date: 03/19/2019
 ms.prod: onenote
 localization_priority: Priority
 ---
@@ -271,7 +271,7 @@ Congratulations, you've successfully created a OneNote add-in! Next, learn more 
 ## See also
 
 - [OneNote JavaScript API programming overview](../onenote/onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
+- [OneNote JavaScript API reference](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 

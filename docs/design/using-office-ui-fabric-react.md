@@ -1,7 +1,7 @@
 ---
 title: Use Office UI Fabric React in Office Add-ins
 description: ''
-ms.date: 2/28/2019
+ms.date: 02/28/2019
 localization_priority: Priority
 ---
 # Use Office UI Fabric React in Office Add-ins
@@ -23,7 +23,7 @@ To create your project, perform the following steps using **Windows PowerShell**
 2. Run `yo office` to create the project files for your add-in.
 3. When prompted to select an Office client application, choose **Word**.
 4. Ensure you are in the directory with the project files, and then run `npm start`. A browser window showing a spinner opens automatically.
-5. [Sideload your manifest](..\testing\test-debug-office-add-ins.md) to view the full UI of the add-in.
+5. [Sideload your manifest](../testing/test-debug-office-add-ins.md) to view the full UI of the add-in.
 
 ## Step 2 - Add a Fabric React component
 

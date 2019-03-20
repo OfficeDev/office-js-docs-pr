@@ -1,7 +1,7 @@
 ---
 title: Build your first Excel add-in using jQuery
 description: 
-ms.date: 01/17/2019
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -10,7 +10,7 @@ localization_priority: Priority
 
 In this article, you'll walk through the process of building an Excel add-in by using jQuery and the Excel JavaScript API. 
 
-## Create the add-in 
+## Create the add-in
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
@@ -23,7 +23,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
 ### Create the add-in project
 
 1. On the Visual Studio menu bar, choose  **File** > **New** > **Project**.
-    
+
 2. In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **Excel Web Add-in** as the project type. 
 
 3. Name the project, and then choose **OK**.
@@ -31,7 +31,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
 4. In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.
 
 5. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
-    
+
 ### Explore the Visual Studio solution
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
@@ -39,7 +39,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
 ### Update the code
 
 1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.
- 
+
     ```html
     <body class="ms-font-m ms-welcome">
         <div id="content-header">
@@ -179,7 +179,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
     - **Which Office client application would you like to support?:** `Excel`
 
     ![Yeoman generator](../images/yo-office-jquery.png)
-    
+
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
 2. Navigate to the root folder of the project.
@@ -191,9 +191,9 @@ In this article, you'll walk through the process of building an Excel add-in by 
 ### Update the code 
 
 1. In your code editor, open **index.html** in the root of the project. This file specifies the HTML that will be rendered in the add-in's task pane. 
- 
+
 2. Within **index.html**, replace the `body` tag with the following markup and save the file.
- 
+
     ```html
     <body class="ms-font-m ms-welcome">
         <div id="content-header">
@@ -211,14 +211,14 @@ In this article, you'll walk through the process of building an Excel add-in by 
         </div>
         <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
         <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
-    </body>    
+    </body>
     ```
 
 3. Open the file **src\index.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.
 
     ```js
     'use strict';
-    
+
     (function () {
         Office.onReady(function() {
             // Office is ready
@@ -254,7 +254,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px; 
+        height: 80px;
         overflow: hidden;
     }
 
@@ -265,7 +265,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
     }
 
     .padding {
@@ -275,7 +275,7 @@ In this article, you'll walk through the process of building an Excel add-in by 
 
 ### Update the manifest
 
-1. Open the file **manifest.xml** to define the add-in's settings and capabilities. 
+1. Open the file **manifest.xml** to define the add-in's settings and capabilities.
 
 2. The `ProviderName` element has a placeholder value. Replace it with your name.
 
@@ -329,5 +329,4 @@ Congratulations, you've successfully created an Excel add-in using jQuery! Next,
 * [Excel add-in tutorial](../tutorials/excel-tutorial-create-table.md)
 * [Fundamental programming concepts with the Excel JavaScript API](../excel/excel-add-ins-core-concepts.md)
 * [Excel add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
-
+* [Excel JavaScript API reference](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

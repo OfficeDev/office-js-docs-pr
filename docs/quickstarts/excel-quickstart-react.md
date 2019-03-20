@@ -1,7 +1,7 @@
 ---
 title: Build an Excel add-in using React
 description: 
-ms.date: 10/19/2018
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -32,7 +32,7 @@ In this article, you'll walk through the process of building an Excel add-in usi
     - **Which Office client application would you like to support?:** `Excel`
 
     ![Yeoman generator](../images/yo-office-excel-react.png)
-    
+
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
 2. Navigate to the root folder of the project.
@@ -53,7 +53,7 @@ In this article, you'll walk through the process of building an Excel add-in usi
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px; 
+        height: 80px;
         overflow: hidden;
         font-family: Arial;
         padding-top: 25px;
@@ -66,7 +66,7 @@ In this article, you'll walk through the process of building an Excel add-in usi
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
         font-family: Arial;
     }
 
@@ -196,7 +196,7 @@ In this article, you'll walk through the process of building an Excel add-in usi
                     <Progress
                         title={title}
                         logo='assets/logo-filled.png'
-                        message='Please sideload your addin to see app body.'
+                        message='Please sideload your add-in to see app body.'
                     />
                 );
             }
@@ -233,7 +233,7 @@ In this article, you'll walk through the process of building an Excel add-in usi
 
 ## Start the dev server
 
-[!include[Start server section](../includes/quickstart-yo-start-server.md)] 
+[!include[Start server section](../includes/quickstart-yo-start-server.md)]
 
 ## Try it out
 
@@ -265,4 +265,4 @@ Congratulations, you've successfully created an Excel add-in using React! Next, 
 * [Excel add-in tutorial](../tutorials/excel-tutorial-create-table.md)
 * [Fundamental programming concepts with the Excel JavaScript API](../excel/excel-add-ins-core-concepts.md)
 * [Excel add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [Excel JavaScript API reference](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
