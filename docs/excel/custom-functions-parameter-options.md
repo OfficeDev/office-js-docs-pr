@@ -6,7 +6,7 @@ localization_priority: Normal
 ---
 # Custom functions parameter options
 
-Custom functions are configurable with many different options. This article will cover various TBD
+Custom functions are configurable with many different options for parameters.
 
 ## Optional parameters
 
