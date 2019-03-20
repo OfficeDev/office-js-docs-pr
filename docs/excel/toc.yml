@@ -99,6 +99,95 @@
       - name: Get started using Fabric React
         href: ../design/using-office-ui-fabric-react.md?context=office/dev/add-ins/excel/context
 
+  - name: Develop
+    items: 
+    - name: Excel JavaScript API
+      items:
+      - name: Overview
+        href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?context=office/dev/add-ins/excel/context
+        displayName: Excel
+      - name: Fundamental programming concepts
+        href: excel/excel-add-ins-core-concepts.md?context=office/dev/add-ins/excel/context
+        displayName: Excel
+      - name: Advanced programming concepts
+        href: excel/excel-add-ins-advanced-concepts.md?context=office/dev/add-ins/excel/context
+        displayName: Excel
+      - name: Calling built-in functions
+        href: excel/excel-add-ins-worksheet-functions.md?context=office/dev/add-ins/excel/context
+        displayName: Excel
+      - name: Charts
+        href: excel/excel-add-ins-charts.md?context=office/dev/add-ins/excel/context
+        displayName: Excel
+      - name: Coauthoring in Excel add-ins
+        href: excel/co-authoring-in-excel-add-ins.md?context=office/dev/add-ins/excel/context
+        displayName: Excel
+      - name: Conditional formatting of ranges
+        href: excel/excel-add-ins-conditional-formatting.md?context=office/dev/add-ins/excel/context
+        displayName: Excel
+      - name: Custom functions
+        items:
+        - name: Custom functions overview
+          href: excel/custom-functions-overview.md?context=office/dev/add-ins/excel/context
+          displayName: Excel
+        - name: Custom functions tutorial
+          href: tutorials/excel-tutorial-create-custom-functions.md?context=office/dev/add-ins/excel/context
+          displayName: Excel
+        - name: Custom functions runtime
+          href: excel/custom-functions-runtime.md?context=office/dev/add-ins/excel/context
+          displayName: Excel
+        - name: Custom functions metadata
+          href: excel/custom-functions-json.md?context=office/dev/add-ins/excel/context
+          displayName: Excel
+        - name: Custom functions best practices
+          href: excel/custom-functions-best-practices.md?context=office/dev/add-ins/excel/context
+          displayName: Excel
+        - name: Custom functions authentication
+          href: excel/custom-functions-authentication.md?context=office/dev/add-ins/excel/context
+          displayName: Excel
+        - name: Custom functions changelog
+          href: excel/custom-functions-changelog.md?context=office/dev/add-ins/excel/context
+          displayName: Excel
+        - name: Custom functions requirements
+          href: excel/custom-functions-requirements.md?context=office/dev/add-ins/excel/context
+          displayName: Excel
+        - name: Custom functions naming guidelines
+          href: excel/custom-functions-naming.md?context=office/dev/add-ins/excel/context
+          displayName: Excel
+      - name: Data validation
+        href: excel/excel-add-ins-data-validation.md?context=office/dev/add-ins/excel/context
+        displayName: Excel
+      - name: Error handling
+        href: excel/excel-add-ins-error-handling.md?context=office/dev/add-ins/excel/context
+        displayName: Excel
+      - name: Events
+        href: excel/excel-add-ins-events.md?context=office/dev/add-ins/excel/context
+        displayName: Excel
+      - name: Multiple ranges
+        href: excel/excel-add-ins-multiple-ranges.md?context=office/dev/add-ins/excel/context
+        displayName: Excel
+      - name: Performance optimization
+        href: excel/performance.md?context=office/dev/add-ins/excel/context
+        displayName: Excel
+      - name: PivotTables
+        href: excel/excel-add-ins-pivottables.md?context=office/dev/add-ins/excel/context
+        displayName: Excel
+      - name: Ranges (fundamental)
+        href: excel/excel-add-ins-ranges.md?context=office/dev/add-ins/excel/context
+        displayName: Excel
+      - name: Ranges (advanced)
+        href: excel/excel-add-ins-ranges-advanced.md?context=office/dev/add-ins/excel/context
+        displayName: Excel
+      - name: Tables
+        href: excel/excel-add-ins-tables.md?context=office/dev/add-ins/excel/context
+        displayName: Excel
+      - name: Workbooks
+        href: excel/excel-add-ins-workbooks.md?context=office/dev/add-ins/excel/context
+        displayName: Excel
+      - name: Worksheets
+        href: excel/excel-add-ins-worksheets.md?context=office/dev/add-ins/excel/context
+        displayName: Excel
+
+
   - name: Test and debug
     href: ../testing/test-debug-office-add-ins.md?context=office/dev/add-ins/excel/context
     items:
@@ -149,5 +238,3 @@
 
   - name: Resources
     href: ../resources/resources-links-help.md?context=office/dev/add-ins/excel/context
-
-
