@@ -314,6 +314,9 @@
       - name: Ranges (advanced)
         href: excel/excel-add-ins-ranges-advanced.md
         displayName: Excel
+      - name: Shapes
+        href: excel/excel-add-ins-shapes.md
+        displayName: Excel
       - name: Tables
         href: excel/excel-add-ins-tables.md
         displayName: Excel
