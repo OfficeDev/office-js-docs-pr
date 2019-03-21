@@ -1,13 +1,8 @@
 - name: Excel add-ins documentation
-  href: excel-add-ins-overview.md
   items:
   
   - name: Overview
-    items:
-    - name: About Office Add-ins
-      href: ../overview/office-add-ins.md?context=office/dev/add-ins/excel/context
-    - name: Host and platform availability
-      href: ../overview/office-add-in-availability.md?context=office/dev/add-ins/excel/context
+    href: excel-add-ins-overview.md
 
   - name: Quick Starts
     items:
@@ -32,6 +27,10 @@
 
   - name: Office Add-ins concepts
     items:
+    - name: About Office Add-ins
+      href: ../overview/office-add-ins.md?context=office/dev/add-ins/excel/context
+    - name: Host and platform availability
+      href: ../overview/office-add-in-availability.md?context=office/dev/add-ins/excel/context
     - name: Requirements for running add-ins
       href: ../concepts/requirements-for-running-office-add-ins.md?context=office/dev/add-ins/excel/context
     - name: Add-in development best practices
