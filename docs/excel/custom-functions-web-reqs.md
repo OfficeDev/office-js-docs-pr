@@ -1,5 +1,5 @@
 ---
-ms.date: 03/11/2019
+ms.date: 03/21/2019
 description: Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel
 title: Web requests and other data handling with custom functions (preview)
 localization_priority: Priority
@@ -26,7 +26,7 @@ Note that a simple CORS implementation cannot use cookies and only supports simp
 
 ### XHR example
 
-In the following code sample, the getTemperature function calls the sendWebRequest function to get the temperature of a particular area based on thermometer ID. The sendWebRequest function uses XHR to issue a GET request to an endpoint that can provide the data.
+In the following code sample, the **getTemperature** function calls the sendWebRequest function to get the temperature of a particular area based on thermometer ID. The sendWebRequest function uses XHR to issue a GET request to an endpoint that can provide the data.
 
 ```JavaScript
 function getTemperature(thermometerID) {
@@ -102,7 +102,8 @@ CustomFunctions.associate("STOCKPRICESTREAM", stockPriceStream);
 Within a custom function, you can use WebSockets to exchange data over a persistent connection with a server. By using WebSockets, your custom function can open a connection with a server and then automatically receive messages from the server when certain events occur, without having to explicitly poll the server for data.
 
 ### WebSockets example
-The following code sample establishes a WebSocket connection and then logs each incoming message from the server. 
+
+The following code sample establishes a WebSocket connection and then logs each incoming message from the server.
 
 ```JavaScript
 var ws = new WebSocket('wss://bundles.office.com');
