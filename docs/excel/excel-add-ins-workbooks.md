@@ -5,7 +5,6 @@ ms.date: 02/28/2019
 localization_priority: Priority
 ---
 
-
 # Work with workbooks using the Excel JavaScript API
 
 This article provides code samples that show how to perform common tasks with workbooks using the Excel JavaScript API. For the complete list of properties and methods that the **Workbook** object supports, see [Workbook Object (JavaScript API for Excel)](/javascript/api/excel/excel.workbook). This article also covers workbook-level actions performed through the [Application](/javascript/api/excel/excel.application) object.
