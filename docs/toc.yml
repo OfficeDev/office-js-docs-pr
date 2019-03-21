@@ -269,6 +269,12 @@
         - name: Custom functions runtime
           href: excel/custom-functions-runtime.md
           displayName: Excel
+        - name: Custom functions additional capabilities
+          href: excel/custom-functions-additional-capabilities.md
+          displayName: Excel
+        - name: Custom functions parameter options
+          href: excel/custom-functions-parameter-options.md
+          displayName: Excel
         - name: Custom functions metadata
           href: excel/custom-functions-json.md
           displayName: Excel
