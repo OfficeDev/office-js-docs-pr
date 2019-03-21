@@ -14,7 +14,7 @@ Excel defines shapes as any object that sits on the drawing layer of Excel. That
 
 ## Create shapes
 
-Shapes are created by adding new shapes to the a worksheet. This is done through the `ShapeCollection.add*` methods. Created shapes are stored in `Worksheet.shapes`, which is a `ShapeCollection` object. Shapes can have a relevant name stored in the `name` property, which is then accessible through the `ShapeCollection.getItem(name)` method. They also have unique IDs your add-in can persist and reference later.
+Shapes are created through and stored in a worksheet's shape collection (`Worksheet.shapes`). `ShapeCollection` has several `.add*` methods for this purpose. All shapes have names and IDs generated for them when they are added to the collection. These are the `name` and `id` properties, respectively. `name` can be set by your add-in for easy retrieval with the `ShapeCollection.getItem(name)` method.
 
 The following types of shapes are added using the associated method:
 
@@ -73,8 +73,6 @@ reader.onload = (event) => {
 reader.readAsDataURL(myFile.files[0]);
 ```
 
-Any `Shape` object can be converted to an image. [Shape.getAsImage](/javascript/api/excel/excel.shape#getasimage-format-) returns base64-encoded string. The image's format is specified as a [PictureFormat](/javascript/api/excel/excel.pictureformat) enum passed to `getAsImage`.
-
 ### Lines
 
 A line is created with `ShapeCollection.addLine`. That method needs the left and top margins of the line's start and end points. It also takes a [ConnectorType](/javascript/api/excel/excel.connectortype) enum to specify how the line contorts between endpoints. The following code sample creates a straight line on the worksheet.
@@ -108,7 +106,7 @@ Excel.run(function (context) {
 
 Shapes sit on top of the worksheet. Their placement is defined by the `left` and `top` property. These act as margins from worksheet's respective edges, with [0, 0] being the upper-left corner. These can either be set directly or adjusted from their current position with the `incrementLeft` and `incrementTop` methods. How much a shape is rotated from the default position is also established in this manner, with the `rotation` property being the absolute amount and the `incrementRotation` method adjusting the existing rotation.
 
-A shape's depth relative to other shapes is defining by the `zorderPosition` property. This is set using the `setZOrder` method, which takes a [ShapeZOrder](/javascript/api/excel/excel.shapezorder). `setZOrder` adjusts the ordering of the current shape relative to the other shapes.
+A shape's depth relative to other shapes is defined by the `zorderPosition` property. This is set using the `setZOrder` method, which takes a [ShapeZOrder](/javascript/api/excel/excel.shapezorder). `setZOrder` adjusts the ordering of the current shape relative to the other shapes.
 
 Your add-in has a couple options for changing the height and width of shapes. Setting the `height` and `width` properties change that dimension without changing the other dimension. The `scaleHeight` and `scaleWidth` adjust the shape's respective dimensions relative to either the current or original size (based on the value of the provided [ShapeScaleType](/javascript/api/excel/excel.shapescaletype)). An optional [ShapeScaleFrom](/javascript/api/excel/excel.shapescalefrom) parameter specifies from where the shape scales (top-left corner, middle, or bottom-right corner). If the `lockAspectRatio` property is **true**, the scale methods maintain the shape's current aspect ratio by also adjusting the other dimension.
 
@@ -177,7 +175,7 @@ Excel.run(function (context) {
 
 ## Shape groups
 
-Shapes can be grouped together. This allows a user to treat them as a single entity. A [ShapeGroup](/javascript/api/excel/excel.shapegroup) is a type of `Shape`, so your add-in treats the group as a single shape.
+Shapes can be grouped together. This allows a user to treat them as a single entity for positioning, sizing, and other related tasks. A [ShapeGroup](/javascript/api/excel/excel.shapegroup) is a type of `Shape`, so your add-in treats the group as a single shape.
 
 The following code sample shows three shapes being grouped together. The subsequent code sample shows that shape group being moved to the right 50 pixels.
 
@@ -206,7 +204,25 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-Individual shapes within the group are referenced through the `ShapeGroup.shapes` property, which is of type [GroupShapeCollection](/javascript/api/excel/excel.GroupShapeCollection). They are no longer accessible through the worksheet's shape collection after being grouped. As an example, if your worksheet had three shapes and they were all grouped together, the worksheet's `shapes.getCount` method would return a count of 1.
+> [!IMPORTANT]
+> Individual shapes within the group are referenced through the `ShapeGroup.shapes` property, which is of type [GroupShapeCollection](/javascript/api/excel/excel.GroupShapeCollection). They are no longer accessible through the worksheet's shape collection after being grouped. As an example, if your worksheet had three shapes and they were all grouped together, the worksheet's `shapes.getCount` method would return a count of 1.
+
+## Export shapes as images
+
+Any `Shape` object can be converted to an image. [Shape.getAsImage](/javascript/api/excel/excel.shape#getasimage-format-) returns base64-encoded string. The image's format is specified as a [PictureFormat](/javascript/api/excel/excel.pictureformat) enum passed to `getAsImage`.
+
+```js
+Excel.run(function (context) {
+    var shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
+    var shape = sheet.shapes.getItem("Image");
+    var stringResult = shape.getAsImage(Excel.PictureFormat.png);
+
+    return context.sync().then(function () {
+        console.log(stringResult.value);
+        // Instead of logging, your add-in may use the base64-encoded string to save the image as a file or insert it in HTML.
+    });
+}).catch(errorHandlerFunction);
+```
 
 ## Delete shapes
 
