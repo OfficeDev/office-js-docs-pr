@@ -143,10 +143,10 @@
       href: ../develop/dialog-api-in-office-add-ins.md?context=office/dev/add-ins/excel/context
     - name: Localization
       href: ../develop/localization.md?context=office/dev/add-ins/excel/context
-    - name: Privacy and security
-      href: ../concepts/privacy-and-security.md?context=office/dev/add-ins/excel/context
     - name: Performance
       href: ../concepts/resource-limits-and-performance-optimization.md?context=office/dev/add-ins/excel/context
+    - name: Privacy and security
+      href: ../concepts/privacy-and-security.md?context=office/dev/add-ins/excel/context
 
   - name: Excel custom functions
     items:
