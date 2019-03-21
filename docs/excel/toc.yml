@@ -70,6 +70,62 @@
     - name: Automatically open a task pane with a document
       href: ../develop/automatically-open-a-task-pane-with-a-document.md?context=office/dev/add-ins/excel/context
 
+    - name: Design the User Interface
+      href: ../design/add-in-design.md?context=office/dev/add-ins/excel/context
+      items:
+      - name: Guidelines
+        items:
+        - name: Accessibility
+          href: ../design/accessibility-guidelines.md?context=office/dev/add-ins/excel/context
+        - name: Voice
+          href: ../design/voice-guidelines.md?context=office/dev/add-ins/excel/context
+        - name: Data visualization
+          href: ../design/data-visualization-guidelines.md?context=office/dev/add-ins/excel/context
+      - name: Design language
+        href: ../design/add-in-design-language.md?context=office/dev/add-ins/excel/context
+        items:
+        - name: Typography
+          href: ../design/add-in-typography.md?context=office/dev/add-ins/excel/context
+        - name: Color
+          href: ../design/add-in-color.md?context=office/dev/add-ins/excel/context
+        - name: Layout
+          href: ../design/add-in-layout.md?context=office/dev/add-ins/excel/context
+        - name: Icons
+          href: ../design/add-in-icons.md?context=office/dev/add-ins/excel/context
+        - name: Using motion
+          href: ../design/using-motion-office-addins.md?context=office/dev/add-ins/excel/context
+          displayName: Motion
+      - name: Interface elements
+        href: ../design/interface-elements.md?context=office/dev/add-ins/excel/context
+        items:
+        - name: Add-in commands
+          href: ../design/add-in-commands.md?context=office/dev/add-ins/excel/context
+        - name: Task panes
+          href: ../design/task-pane-add-ins.md?context=office/dev/add-ins/excel/context
+        - name: Dialog boxes
+          href: ../design/dialog-boxes.md?context=office/dev/add-ins/excel/context
+        - name: Content add-ins
+          href: ../design/content-add-ins.md?context=office/dev/add-ins/excel/context
+      - name: UX design templates
+        href: ../design/ux-design-pattern-templates.md?context=office/dev/add-ins/excel/context
+        items:
+        - name: Authentication
+          href: ../design/authentication-patterns.md?context=office/dev/add-ins/excel/context
+        - name: First run experience
+          href: ../design/first-run-experience-patterns.md?context=office/dev/add-ins/excel/context
+        - name: Navigation
+          href: ../design/navigation-patterns.md?context=office/dev/add-ins/excel/context
+        - name: Branding
+          href: ../design/branding-patterns.md?context=office/dev/add-ins/excel/context
+      - name: Resources
+        items:
+        - name: Design toolkits
+          href: ../design/design-toolkits.md?context=office/dev/add-ins/excel/context
+        - name: Office UI Fabric
+          href: ../design/office-ui-fabric.md?context=office/dev/add-ins/excel/context
+        - name: Get started using Fabric React
+          href: ../design/using-office-ui-fabric-react.md?context=office/dev/add-ins/excel/context
+
     - name: Develop add-ins with Visual Studio
       items:
       - name: Create and debug Office Add-ins in Visual Studio
@@ -92,62 +148,6 @@
       href: ../concepts/privacy-and-security.md?context=office/dev/add-ins/excel/context
     - name: Performance
       href: ../concepts/resource-limits-and-performance-optimization.md?context=office/dev/add-ins/excel/context
-
-  - name: Design the User Interface
-    href: ../design/add-in-design.md?context=office/dev/add-ins/excel/context
-    items:
-    - name: Guidelines
-      items:
-      - name: Accessibility
-        href: ../design/accessibility-guidelines.md?context=office/dev/add-ins/excel/context
-      - name: Voice
-        href: ../design/voice-guidelines.md?context=office/dev/add-ins/excel/context
-      - name: Data visualization
-        href: ../design/data-visualization-guidelines.md?context=office/dev/add-ins/excel/context
-    - name: Design language
-      href: ../design/add-in-design-language.md?context=office/dev/add-ins/excel/context
-      items:
-      - name: Typography
-        href: ../design/add-in-typography.md?context=office/dev/add-ins/excel/context
-      - name: Color
-        href: ../design/add-in-color.md?context=office/dev/add-ins/excel/context
-      - name: Layout
-        href: ../design/add-in-layout.md?context=office/dev/add-ins/excel/context
-      - name: Icons
-        href: ../design/add-in-icons.md?context=office/dev/add-ins/excel/context
-      - name: Using motion
-        href: ../design/using-motion-office-addins.md?context=office/dev/add-ins/excel/context
-        displayName: Motion
-    - name: Interface elements
-      href: ../design/interface-elements.md?context=office/dev/add-ins/excel/context
-      items:
-      - name: Add-in commands
-        href: ../design/add-in-commands.md?context=office/dev/add-ins/excel/context
-      - name: Task panes
-        href: ../design/task-pane-add-ins.md?context=office/dev/add-ins/excel/context
-      - name: Dialog boxes
-        href: ../design/dialog-boxes.md?context=office/dev/add-ins/excel/context
-      - name: Content add-ins
-        href: ../design/content-add-ins.md?context=office/dev/add-ins/excel/context
-    - name: UX design templates
-      href: ../design/ux-design-pattern-templates.md?context=office/dev/add-ins/excel/context
-      items:
-      - name: Authentication
-        href: ../design/authentication-patterns.md?context=office/dev/add-ins/excel/context
-      - name: First run experience
-        href: ../design/first-run-experience-patterns.md?context=office/dev/add-ins/excel/context
-      - name: Navigation
-        href: ../design/navigation-patterns.md?context=office/dev/add-ins/excel/context
-      - name: Branding
-        href: ../design/branding-patterns.md?context=office/dev/add-ins/excel/context
-    - name: Resources
-      items:
-      - name: Design toolkits
-        href: ../design/design-toolkits.md?context=office/dev/add-ins/excel/context
-      - name: Office UI Fabric
-        href: ../design/office-ui-fabric.md?context=office/dev/add-ins/excel/context
-      - name: Get started using Fabric React
-        href: ../design/using-office-ui-fabric-react.md?context=office/dev/add-ins/excel/context
 
   - name: Excel custom functions
     items:
