@@ -47,7 +47,7 @@ function add(first, second){
   return first + second;
 }
 
-CustomFunctions.associate("ADD", add); 
+CustomFunctions.associate("ADD", add);
 ```
 
 Keep in mind the following best practices when creating custom functions in your JavaScript file and specifying corresponding information in the JSON metadata file.
@@ -105,7 +105,7 @@ Keep in mind the following best practices when creating custom functions in your
       ]
     }
     ```
-
+    
 ## See also
 
 * [Create custom functions in Excel](custom-functions-overview.md)
