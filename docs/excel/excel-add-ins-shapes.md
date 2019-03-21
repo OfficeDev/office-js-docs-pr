@@ -28,7 +28,7 @@ The following types of shapes are added using the associated method:
 
 ### Geometric shapes
 
-A geometric shape is created with `ShapeCollection.addGeometricShape`. That method takes a [GeometricShapeType](//javascript/api/excel/excel.geometricshapetype) enum as an argument.
+A geometric shape is created with `ShapeCollection.addGeometricShape`. That method takes a [GeometricShapeType](/javascript/api/excel/excel.geometricshapetype) enum as an argument.
 
 The following code sample creates a 150x150-pixel rectangle named **"Square"** that is positioned 100 pixels from the top and left sides of the worksheet.
 
