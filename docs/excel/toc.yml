@@ -1,9 +1,10 @@
 - name: Excel add-ins documentation
   items:
   
-  - name: About Excel add-ins
-    href: excel-add-ins-overview.md
+  - name: Overview
     items:
+    - name: About Excel add-ins
+      href: excel-add-ins-overview.md
     - name: Host and platform availability
       href: ../overview/office-add-in-availability.md?context=office/dev/add-ins/excel/context
 

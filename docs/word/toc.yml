@@ -1,9 +1,10 @@
 - name: Word add-ins documentation
   items:
   
-  - name: About Word add-ins
-    href: word-add-ins-programming-overview.md
+  - name: Overview
     items:
+    - name: About Word add-ins
+      href: word-add-ins-programming-overview.md
     - name: Host and platform availability
       href: ../overview/office-add-in-availability.md#word?context=office/dev/add-ins/word/context
 
