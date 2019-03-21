@@ -154,36 +154,6 @@
     - name: Privacy and security
       href: ../concepts/privacy-and-security.md?context=office/dev/add-ins/word/context
 
-  
-    items:
-    - name: Custom functions overview
-      href: custom-functions-overview.md
-      displayName: Excel
-    - name: Custom functions tutorial
-      href: ../tutorials/excel-tutorial-create-custom-functions.md
-      displayName: Excel
-    - name: Custom functions runtime
-      href: custom-functions-runtime.md
-      displayName: Excel
-    - name: Custom functions metadata
-      href: custom-functions-json.md
-      displayName: Excel
-    - name: Custom functions best practices
-      href: custom-functions-best-practices.md
-      displayName: Excel
-    - name: Custom functions authentication
-      href: custom-functions-authentication.md
-      displayName: Excel
-    - name: Custom functions changelog
-      href: custom-functions-changelog.md
-      displayName: Excel
-    - name: Custom functions requirements
-      href: custom-functions-requirements.md
-      displayName: Excel
-    - name: Custom functions naming guidelines
-      href: custom-functions-naming.md
-      displayName: Excel
-
   - name: Word JavaScript API
     items:
     - name: Overview
