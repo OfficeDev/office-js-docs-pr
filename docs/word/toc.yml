@@ -3,6 +3,9 @@
   
   - name: About Word add-ins
     href: word-add-ins-programming-overview.md
+    items:
+    - name: Host and platform availability
+      href: ../overview/office-add-in-availability.md#word?context=office/dev/add-ins/word/context
 
   - name: Quick Starts
     items:
@@ -18,8 +21,6 @@
     items:
     - name: About Office Add-ins
       href: ../overview/office-add-ins.md?context=office/dev/add-ins/word/context
-    - name: Host and platform availability
-      href: ../overview/office-add-in-availability.md?context=office/dev/add-ins/word/context
     - name: Requirements for running add-ins
       href: ../concepts/requirements-for-running-office-add-ins.md?context=office/dev/add-ins/word/context
     - name: Add-in development best practices
