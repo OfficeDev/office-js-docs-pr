@@ -1,17 +1,14 @@
 ---
-ms.date: 03/13/2019
+ms.date: 03/21/2019
 description: Create dialog boxes through custom functions in Excel using JavaScript.
 title: Custom functions dialogs (preview)
 localization_priority: Priority
 ---
 # Display a dialog box in custom functions
 
-Within your add-in, you have two options for creating dialogs:
+If your custom function needs to interact with the user, you can create a dialog box using the `OfficeRuntime.Dialog` object. A common scenario for using the dialog box is to authenticate a user so that your custom function can access a web service. For more details about authentication with custom functions, see [Custom functions authentication](./custom-functions-authentication.md).
 
-- `OfficeRuntime.Dialog` can be accessed by both the browser-based JavaScript engine and custom functions runtime. You should use this dialog when developing custom functions.
-- The [Dialog API](https://docs.microsoft.com/office/dev/add-ins/develop/dialog-api-in-office-add-ins) is used by Office add-in's browser-based Javascript engine, but is not accessible from custom functions' runtime.
-
-The primary scenario for the `OfficeRuntime.Dialog` API is to facilitate authentication. For more details about authentication with custom functions, see [Custom functions authentication](./custom-functions-authentication.md).
+Note: The `OfficeRuntime.Dialog` object is part of the custom functions runtime. It cannot be used from the context of a task pane. To create a dialog from a task pane, see [Dialog API](/office/dev/add-ins/develop/dialog-api-in-office-add-ins).
 
 ## Dialog API example
 
