@@ -1,40 +1,39 @@
 ---
 title: Work with Shapes using the Excel JavaScript API
 description: ''
-ms.date: 03/14/2019
+ms.date: 03/21/2019
 localization_priority: Normal
 ---
 
 # Work with Shapes using the Excel JavaScript API (preview)
 
 > [!NOTE]
-> The APIs discussed in this article are currently available only in public preview (beta). To use this feature, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-> If you are using TypeScript or your code editor uses TypeScript type definition files for IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+> The APIs discussed in this article are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
-Excel defines shapes as any object that sits on the drawing layer of Excel. That means anything outside of a cell is a shape. This article describes how to use geometric shapes, lines, and images in conjunction with the [Shape]/javascript/api/excel/excel.shape) and [ShapeCollection](/javascript/api/excel/excel.shapecollection) APIs. [Charts](/javascript/api/excel/excel.chart) are covered in [their own article](excel-add-ins-charts.md)).
+Excel defines shapes as any object that sits on the drawing layer of Excel. That means anything outside of a cell is a shape. This article describes how to use geometric shapes, lines, and images in conjunction with the [Shape]/javascript/api/excel/excel.shape) and [ShapeCollection](/javascript/api/excel/excel.shapecollection) APIs. [Charts](/javascript/api/excel/excel.chart) are covered in their own article, [Work with Charts using the Excel JavaScript API]](excel-add-ins-charts.md)).
 
 ## Create shapes
 
-Shapes are created by adding new shapes to a worksheet's ShapeCollection object. This is done through the `add*` methods. Created shapes are stored in the worksheet's `ShapeCollection` (`Worksheet.shapes`). Shape can have a relevant name stored in the `name` property, which is then accessible through the `ShapeCollection.getItem(name)` method.
+Shapes are created by adding new shapes to the a worksheet. This is done through the `ShapeCollection.add*` methods. Created shapes are stored in `Worksheet.shapes`, which is a `ShapeCollection` object. Shapes can have a relevant name stored in the `name` property, which is then accessible through the `ShapeCollection.getItem(name)` method. They also have unique IDs your add-in can persist and reference later.
 
-The following shapes are added using the associated method:
+The following types of shapes are added using the associated method:
 
 | Shape | Add Method | Signature |
 |-------|------------|-----------|
 | Geometric Shape | [addGeometricShape](/javascript/api/excel/excel.shapecollection#addgeometricshape-geometricshapetype-) | `addGeometricShape(geometricShapeType: Excel.GeometricShapeType): Excel.Shape` |
-| Image (either JPEG or PNG) | [addImage](/javascript/api/excel/excel.shapecollection?view=office-js#addimage-base64imagestring-) | `addImage(base64ImageString: string): Excel.Shape` |
-| Line | [addLine](/javascript/api/excel/excel.shapecollection?view=office-js#addline-startleft--starttop--endleft--endtop--connectortype-) | `addLine(startLeft: number, startTop: number, endLeft: number, endTop: number, connectorType?: Excel.ConnectorType): Excel.Shape` |
-| SVG | [addSvg](/javascript/api/excel/excel.shapecollection?view=office-js#addsvg-xml-) | `addSvg(xml: string): Excel.Shape` |
-| Text Box | [addTextBox](/javascript/api/excel/excel.shapecollection?view=office-js#addtextbox-text-) | `addTextBox(text?: string): Excel.Shape` |
+| Image (either JPEG or PNG) | [addImage](/javascript/api/excel/excel.shapecollection#addimage-base64imagestring-) | `addImage(base64ImageString: string): Excel.Shape` |
+| Line | [addLine](/javascript/api/excel/excel.shapecollection#addline-startleft--starttop--endleft--endtop--connectortype-) | `addLine(startLeft: number, startTop: number, endLeft: number, endTop: number, connectorType?: Excel.ConnectorType): Excel.Shape` |
+| SVG | [addSvg](/javascript/api/excel/excel.shapecollection#addsvg-xml-) | `addSvg(xml: string): Excel.Shape` |
+| Text Box | [addTextBox](/javascript/api/excel/excel.shapecollection#addtextbox-text-) | `addTextBox(text?: string): Excel.Shape` |
 
 ### Geometric shapes
 
-A geometric shape is created with `ShapeCollection.addGeometricShape`. That method takes a [GeometricShapeType](//javascript/api/excel/excel.geometricshapeyype) enum as an argument.
+A geometric shape is created with `ShapeCollection.addGeometricShape`. That method takes a [GeometricShapeType](//javascript/api/excel/excel.geometricshapetype) enum as an argument.
 
 The following code sample creates a 150x150-pixel rectangle named **"Square"** that is positioned 100 pixels from the top and left sides of the worksheet.
 
 ```js
-// This creates a rectangle positioned 100 pixels from the top and left sides
+// This sample creates a rectangle positioned 100 pixels from the top and left sides
 // of the worksheet and is 150x150 pixels.
 Excel.run(function (context) {
     var shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
@@ -55,7 +54,7 @@ JPEG, PNG, and SVG images can be inserted into a worksheet as shapes. The `Shape
 The following code sample shows an image file being loaded by a [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) as a string. The string has the metadata "base64," removed before the shape is created.
 
 ```js
-// This creates an image as a Shape object in the worksheet.
+// This sample creates an image as a Shape object in the worksheet.
 var myFile = document.getElementById("selectedFile");
 var reader = new FileReader();
 
@@ -74,15 +73,14 @@ reader.onload = (event) => {
 reader.readAsDataURL(myFile.files[0]);
 ```
 
-Any Shape object can be converted to an image. [Shape.getAsImage](/javascript/api/excel/excel.shape#getasimage-format-) returns base64-encoded string.
-> The image's format is specified as a [PictureFormat](/javascript/api/excel/excel.pictureformat) enum.
+Any `Shape` object can be converted to an image. [Shape.getAsImage](/javascript/api/excel/excel.shape#getasimage-format-) returns base64-encoded string. The image's format is specified as a [PictureFormat](/javascript/api/excel/excel.pictureformat) enum passed to `getAsImage`.
 
 ### Lines
 
 A line is created with `ShapeCollection.addLine`. That method needs the left and top margins of the line's start and end points. It also takes a [ConnectorType](/javascript/api/excel/excel.connectortype) enum to specify how the line contorts between endpoints. The following code sample creates a straight line on the worksheet.
 
 ```js
-// This creates a straight line from [200,50] to [300,150] on the worksheet
+// This sample creates a straight line from [200,50] to [300,150] on the worksheet
 Excel.run(function (context) {
     var shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
     var line = shapes.addLine(200, 50, 300, 150, Excel.ConnectorType.straight);
@@ -96,7 +94,7 @@ Lines can be connected to other Shape objects. The `connectBeginShape` and `conn
 The following code sample connects the **"MyLine"** line to two shapes named **"LeftShape"** and **"RightShape"**.
 
 ```js
-// This connects a line between two shapes at connection points '0' and '3'.
+// This sample connects a line between two shapes at connection points '0' and '3'.
 Excel.run(function (context) {
     var shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
     var line = shapes.getItem("MyLine").line;
@@ -110,14 +108,14 @@ Excel.run(function (context) {
 
 Shapes sit on top of the worksheet. Their placement is defined by the `left` and `top` property. These act as margins from worksheet's respective edges, with [0, 0] being the upper-left corner. These can either be set directly or adjusted from their current position with the `incrementLeft` and `incrementTop` methods. How much a shape is rotated from the default position is also established in this manner, with the `rotation` property being the absolute amount and the `incrementRotation` method adjusting the existing rotation.
 
-A shape's depth relative to other shapes is the `zorderPosition` property. This is set using the `setZOrder` method, which takes a [ShapeZOrder](/javascript/api/excel/excel.shapezorder). `setZOrder` adjusts the ordering of the current shape relative to the other shapes.
+A shape's depth relative to other shapes is defining by the `zorderPosition` property. This is set using the `setZOrder` method, which takes a [ShapeZOrder](/javascript/api/excel/excel.shapezorder). `setZOrder` adjusts the ordering of the current shape relative to the other shapes.
 
 Your add-in has a couple options for changing the height and width of shapes. Setting the `height` and `width` properties change that dimension without changing the other dimension. The `scaleHeight` and `scaleWidth` adjust the shape's respective dimensions relative to either the current or original size (based on the value of the provided [ShapeScaleType](/javascript/api/excel/excel.shapescaletype)). An optional [ShapeScaleFrom](/javascript/api/excel/excel.shapescalefrom) parameter specifies from where the shape scales (top-left corner, middle, or bottom-right corner). If the `lockAspectRatio` property is **true**, the scale methods maintain the shape's current aspect ratio by also adjusting the other dimension.
 
 > [!NOTE]
 > Direct changes to the `height` and `width` properties only affect that property, regardless of the `lockAspectRatio` property's value.
 
-The following code sample shows a shape being scaled to 1.25 times its original and rotated 30 degrees.
+The following code sample shows a shape being scaled to 1.25 times its original size and rotated 30 degrees.
 
 ```js
 // In this sample, the shape "Octagon" is rotated 30 degrees clockwise
@@ -137,13 +135,84 @@ Excel.run(function (context) {
 
 ## Text in shapes
 
-Geometric Shapes can display text.
+Geometric Shapes can contain text. Shapes have a `textFrame` property of type [TextFrame](/javascript/api/excel/excel.textframe). The `TextFrame` object manages the text display options (such as margins and text overflow). `TextFrame.textRange` is a [TextRange](/javascript/api/excel/excel.textrange) object with the text content and font settings.
+
+The following code sample creates a geometric shape named "Wave" with the text "Shape Text". It also adjusts the shape and text colors, as well as sets the text's horizontal alignment to the center.
+
+```js
+// This sample creates a light-blue wave shape and adds the purple text "Shape text" to the center.
+Excel.run(function (context) {
+    var shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
+    var wave = shapes.addGeometricShape(Excel.GeometricShapeType.wave);
+    wave.left = 100;
+    wave.top = 400;
+    wave.height = 50;
+    wave.width = 150;
+    wave.name = "Wave";
+    wave.fill.setSolidColor("lightblue");
+    wave.textFrame.textRange.text = "Shape text";
+    wave.textFrame.textRange.font.color = "purple";
+    wave.textFrame.horizontalAlignment = Excel.ShapeTextHorizontalAlignment.center;
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+The `addTextBox` method of `ShapeCollection` creates a `GeometricShape` of type `Rectangle` with a white background and black text. This is the same as what is created by Excel's **Text Box** button on the **Insert** tab. `addTextBox` takes a string argument to set the text of the `TextRange`.
+
+The following code sample shows the creation of a text box with the text "Hello!".
+
+```js
+// This sample creates a text box with the text "Hello!" and sizes it appropriately.
+Excel.run(function (context) {
+    var shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
+    var textbox = shapes.addTextBox("Hello!");
+    textbox.left = 100;
+    textbox.top = 100;
+    textbox.height = 20;
+    textbox.width = 45;
+    textbox.name = "Textbox";
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
 
 ## Shape groups
 
+Shapes can be grouped together. This allows a user to treat them as a single entity. A [ShapeGroup](/javascript/api/excel/excel.shapegroup) is a type of `Shape`, so your add-in treats the group as a single shape.
+
+The following code sample shows three shapes being grouped together. The subsequent code sample shows that shape group being moved to the right 50 pixels.
+
+```js
+// This sample takes three previously-created shapes ("Square", "Pentagon", and "Octagon")
+// and groups them into a single ShapeGroup.
+Excel.run(function (context) {
+    var shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
+    var square = shapes.getItem("Square");
+    var pentagon = shapes.getItem("Pentagon");
+    var octagon = shapes.getItem("Octagon");
+
+    var shapeGroup = shapes.addGroup([square, pentagon, octagon]);
+    shapeGroup.name = "Group";
+    console.log("Shapes grouped");
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+
+// This sample moves the previously created shape group to the right by 50 pixels.
+Excel.run(function (context) {
+    var shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
+    var shapeGroup = sheet.shapes.getItem("Group");
+    shapeGroup.incrementLeft(50);
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+Individual shapes within the group are referenced through the `ShapeGroup.shapes` property, which is of type [GroupShapeCollection](/javascript/api/excel/excel.GroupShapeCollection). They are no longer accessible through the worksheet's shape collection after being grouped. As an example, if your worksheet had three shapes and they were all grouped together, the worksheet's `shapes.getCount` method would return a count of 1.
+
 ## Delete shapes
 
-Shapes are removed from the worksheet with the `Shape` object's `delete` method.
+Shapes are removed from the worksheet with the `Shape` object's `delete` method. No other metadata is needed.
+
+The following code sample deletes all the shapes from **MyWorksheet**.
 
 ```js
 // This deletes all the shapes from "MyWorksheet".
