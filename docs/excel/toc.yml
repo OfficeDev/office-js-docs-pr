@@ -1,7 +1,7 @@
 - name: Excel add-ins documentation
   items:
   
-  - name: Overview
+  - name: About Excel add-ins
     href: excel-add-ins-overview.md
 
   - name: Quick Starts
@@ -181,7 +181,7 @@
   - name: Excel JavaScript API
     items:
     - name: Overview
-      href: ../reference/overview/excel-add-ins-reference-overview.md
+      href: ../reference/overview/excel-add-ins-reference-overview.md?context=office/dev/add-ins/excel/context
       displayName: Excel
     - name: Fundamental programming concepts
       href: excel-add-ins-core-concepts.md
