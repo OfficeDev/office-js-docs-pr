@@ -37,7 +37,7 @@ The following diagram outlines this basic process. Note that the dotted line ind
 4. Your custom function then sets this access token to the `AsyncStorage`.
 5. Your add-in's task pane accesses the token from `AsyncStorage`.
 
-![Diagram of custom functions, OfficeRuntime, and task panes working together.](../images/authdiagram.png "Authentication diagram.")
+![Diagram of custom functions, OfficeRuntime, and task panes working together.](../images/authentication-diagram.png "Authentication diagram.")
 
 ## General guidance
 
