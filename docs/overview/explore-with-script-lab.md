@@ -19,7 +19,7 @@ Script Lab is a tool for anyone who wants to learn about developing Office Add-i
 
 Sounds good so far? Take a look at this one-minute teaser video.
 
-[![Teaser video showing Script Lab being used in Excel, Word, and PowerPoint Online.](https://github.com/OfficeDev/script-lab/blob/master/.github/images/screenshot-wide-youtube.png 'Script Lab teaser video')](https://aka.ms/scriptlabvideo)
+[![Teaser video showing Script Lab being used in Excel, Word, and PowerPoint Online.](../images/screenshot-wide-youtube.png 'Script Lab teaser video')](https://aka.ms/scriptlabvideo)
 
 ### Supported clients
 
