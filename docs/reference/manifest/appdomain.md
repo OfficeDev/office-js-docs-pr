@@ -18,7 +18,7 @@ Specifies an additional domain that will be used to load pages in the add-in win
 ```
 
 > [!IMPORTANT]
-> 1. The value of the **AppDomain** element must include the protocol (e.g., `<AppDomain>https://myappdomain<AppDomain>`).
+> 1. The value of the **AppDomain** element must include the protocol (e.g., `<AppDomain>https://myappdomain</AppDomain>`).
 > 2. Do *not* put a closing slash, "/", on the the value.
 
 ## Contained in
