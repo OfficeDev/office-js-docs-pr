@@ -16,7 +16,7 @@ If you are testing your add-in in Office on Windows, you should [enable runtime 
 
 ### Check for Excel error messages
 
-Excel has a number of built-in error messages which are returned to a cell if there is calculation error. Custom functions only use the following error messages: `#NULL!`, `#DIV/0!`, `#VALUE!`, `#REF!`, `#NAME?`, `#NUM!`, `#N/A`, and `#GETTING_DATA`.
+Excel has a number of built-in error messages which are returned to a cell if there is calculation error. Custom functions only use the following error messages: `#NULL!`, `#DIV/0!`, `#VALUE!`, `#REF!`, `#NAME?`, `#NUM!`, `#N/A`, and `#BUSY!`.
 
 ## Common issues
 
@@ -42,7 +42,7 @@ For more information on this process, see [Associating function names with json 
 
 ### Ensure promises return
 
-When Excel is waiting for a custom function to complete, it displays #GETTING_DATA in the cell. If your custom function code returns a promise, but the promise does not return a result, Excel will continue showing #GETTING_DATA. Check your functions to make sure that any promises are properly returning a result to a cell.
+When Excel is waiting for a custom function to complete, it displays #BUSY! in the cell. If your custom function code returns a promise, but the promise does not return a result, Excel will continue showing #BUSY!. Check your functions to make sure that any promises are properly returning a result to a cell.
 
 ## Reporting Feedback
 
