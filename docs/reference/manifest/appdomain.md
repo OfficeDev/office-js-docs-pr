@@ -1,7 +1,7 @@
 ---
 title: AppDomain element in the manifest file
 description: ''
-ms.date: 03/21/2018
+ms.date: 03/21/2019
 localization_priority: Normal
 ---
 
