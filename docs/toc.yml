@@ -278,6 +278,9 @@
         - name: Custom functions authentication
           href: excel/custom-functions-authentication.md
           displayName: Excel
+        - name: Custom functions dialog
+          href: excel/custom-functions-dialog.md
+          displayName: Excel
         - name: Custom functions changelog
           href: excel/custom-functions-changelog.md
           displayName: Excel
