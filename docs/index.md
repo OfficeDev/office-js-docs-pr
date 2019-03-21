@@ -114,7 +114,7 @@ ms.author: o365devx
         </ul>
         <ul class="cardsY panelContent featuredContent">
             <li>
-                <a href="/office/dev/add-ins/word/word-add-ins-overview">
+                <a href="/office/dev/add-ins/word/word-add-ins-programming-overview">
                     <div class="cardSize">
                         <div class="cardPadding">
                             <div class="card">
