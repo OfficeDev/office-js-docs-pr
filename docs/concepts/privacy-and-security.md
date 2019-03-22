@@ -29,7 +29,7 @@ Also, the use of memory, CPU, and network resources by Office Add-ins is governa
 
 The following sections briefly describe how the runtime architecture supports running add-ins in Office clients on Windows-based devices, on OS X Mac devices, and in Office Online clients on the web.
 
-> **NOTE**
+> [!NOTE]
 > To learn about using WIP and Intune with Office Add-ins, see [Use WIP and Intune to protect enterprise data in documents running Office Add-ins](/microsoft-365/enterprise/office-add-ins-wip).
 
 ### Clients for Windows and OS X devices
@@ -243,6 +243,17 @@ Other than resource usage rules, developers for Outlook add-ins should also make
 ## IT administrators' control
 
 In a corporate setting, IT administrators have ultimate authority over enabling or disabling access to AppSource and any private catalogs.
+
+The management and enforcement of Office settings is done with group policy settings. These are configurable through the [Office Deployment Tool](https://docs.microsoft.com/deployoffice/overview-of-the-office-2016-deployment-tool), in conjunction with the [Office Customization Tool](https://docs.microsoft.com/DeployOffice/overview-of-the-office-customization-tool-for-click-to-run).
+
+| Setting name | Description |
+|--------------|-------------|
+| Allow Unsecure web add-ins and Catalogs | Allows users to run non-secure add-ins, which are add-ins that have webpage or catalog locations that are not SSL-secured (https://) and are not in users' Internet zones. |
+| Block Web Add-ins | Allows you to prevent users from using web add-ins. |
+| Block the Office Store |  Allows you to prevent users from using or inserting web add-ins that come from the Office Store. |
+
+> [!IMPORTANT]
+> If your working groups are using multiple releases of Office, group policy settings must be configured for each release. Please refer to the [Using Group Policy to manage how users can install and use apps for Office](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office) of the [Overview of apps for Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v%3doffice.15)) article for details on group policy settings for Office 2013.
 
 ## See also
 
