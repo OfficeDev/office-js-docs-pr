@@ -1,7 +1,7 @@
 ---
 title: Dialog boxes in Office Add-ins
 description: ''
-ms.date: 2/28/2019
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -27,7 +27,5 @@ For a sample that implements a dialog box, see [Office Add-in Dialog API Example
 
 ## See also
 
-- [Dialog object](https://docs.microsoft.com/javascript/api/office/office.dialog)
+- [Dialog object](/javascript/api/office/office.dialog)
 - [UX design patterns for Office Add-ins](../design/ux-design-pattern-templates.md)
-
-

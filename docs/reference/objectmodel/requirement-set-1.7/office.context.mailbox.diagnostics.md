@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.diagnostics - requirement set 1.7
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
 ---
 
@@ -16,8 +16,8 @@ Provides diagnostic information to an Outlook add-in.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Members and methods
 
@@ -44,8 +44,8 @@ A string that can be one of the following values: `Outlook`, `Mac Outlook`, `Out
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ####  hostVersion :String
 
@@ -62,8 +62,8 @@ If the mail add-in is running on the Outlook desktop client or Outlook for iOS, 
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ####  OWAView :String
 
@@ -88,5 +88,5 @@ Outlook Web App has three views that correspond to the width of the screen and t
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|

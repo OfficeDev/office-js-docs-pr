@@ -1,7 +1,7 @@
 ---
 title: Office namespace - requirement set 1.3
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
 ---
 
@@ -14,7 +14,7 @@ The Office namespace provides shared interfaces that are used by add-ins in all 
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ### Namespaces
 
@@ -44,7 +44,7 @@ Specifies the result of an asynchronous call.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ####  CoercionType :String
 
@@ -66,7 +66,7 @@ Specifies how to coerce data returned or set by the invoked method.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ####  SourceProperty :String
 
@@ -88,4 +88,4 @@ Specifies the source of the data returned by the invoked method.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or Read|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|

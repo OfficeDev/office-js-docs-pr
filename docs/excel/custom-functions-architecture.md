@@ -25,7 +25,7 @@ The following table highlights the differences between the custom functions runt
 
 ## Browser engine runtime
 
-The task pane and other components that are not custom functions run in a browser engine runtime.
+The task pane, content add-in, and commands run in a browser engine runtime.
 
 The browser engine runtime supports the Office.js APIs. Keep in mind that any of the Excel APIs, such as APIs which allow you to manipulate Excel tables, run on the browser engine runtime, but aren't directly accessible from the custom functions runtime.
 

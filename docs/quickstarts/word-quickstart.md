@@ -1,18 +1,18 @@
 ---
 title: Build your first Word add-in
 description: 
-ms.date: 01/17/2019
+ms.date: 03/19/2019
 ms.prod: word
 localization_priority: Priority
 ---
 
 # Build your first Word add-in
 
-_Applies to: Word 2016, Word for iPad, Word for Mac_
+_Applies to: Word 2016 or later for Windows, Word for iPad, Word for Mac_
 
-In this article, you'll walk through the process of building a Word add-in by using jQuery and the Word JavaScript API. 
+In this article, you'll walk through the process of building a Word add-in by using jQuery and the Word JavaScript API.
 
-## Create the add-in 
+## Create the add-in
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
@@ -25,13 +25,13 @@ In this article, you'll walk through the process of building a Word add-in by us
 ### Create the add-in project
 
 1. On the Visual Studio menu bar, choose  **File** > **New** > **Project**.
-    
+
 2. In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **Word Web Add-in** as the project type. 
 
 3. Name the project, and then choose **OK**.
 
 4. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
-    
+
 ### Explore the Visual Studio solution
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
@@ -39,14 +39,14 @@ In this article, you'll walk through the process of building a Word add-in by us
 ### Update the code
 
 1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.
- 
+
     ```html
     <body>
         <div id="content-header">
             <div class="padding">
                 <h1>Welcome</h1>
             </div>
-        </div>    
+        </div>
         <div id="content-main">
             <div class="padding">
                 <p>Choose the buttons below to add boilerplate text to the document by using the Word JavaScript API.</p>
@@ -68,7 +68,7 @@ In this article, you'll walk through the process of building a Word add-in by us
 
     ```js
     'use strict';
-    
+
     (function () {
 
         Office.onReady(function() {
@@ -186,7 +186,7 @@ In this article, you'll walk through the process of building a Word add-in by us
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
     }
 
     .padding {
@@ -220,7 +220,7 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 1. Using Visual Studio, test the newly created Word add-in by pressing **F5** or choosing the **Start** button to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
-2. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. (If you are using the non-subscription version of Office 2016, instead of the Office 365 version, then custom buttons are not supported. Instead, the task pane will open immediately.)
+2. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. (If you are using the one-time purchase version of Office, instead of the Office 365 version, then custom buttons are not supported. Instead, the task pane will open immediately.)
 
     ![A screenshot of the Word application with the Show Taskpane button highlighted](../images/word-quickstart-addin-0.png)
 
@@ -254,9 +254,9 @@ In this article, you'll walk through the process of building a Word add-in by us
     - **Which Office client application would you like to support?:** `Word`
 
     ![A screenshot of the prompts and answers for the Yeoman generator](../images/yo-office-word-jquery.png)
-    
+
     After you complete the wizard, the generator will create the project and install supporting Node components.
-	
+
 2. Navigate to the root folder of the project.
 
     ```bash
@@ -265,7 +265,7 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 ### Update the code
 
-1. In your code editor, open **index.html** in the root of the project. This file contains the HTML that will be rendered in the add-in's task pane. 
+1. In your code editor, open **index.html** in the root of the project. This file contains the HTML that will be rendered in the add-in's task pane.
 
 2. Replace the `<body>` element with the following markup and save the file.
 
@@ -295,11 +295,11 @@ In this article, you'll walk through the process of building a Word add-in by us
     </body>
     ```
 
-2. Open the file **src/index.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file. This script contains initialization code as well as the code that makes changes to the Word document, by inserting text into the document when a button is chosen. 
+3. Open the file **src/index.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file. This script contains initialization code as well as the code that makes changes to the Word document, by inserting text into the document when a button is chosen.
 
     ```js
     'use strict';
-    
+
     (function () {
 
         Office.onReady(function() {
@@ -396,7 +396,7 @@ In this article, you'll walk through the process of building a Word add-in by us
     })();
     ```
 
-3. Open the file **app.css** in the root of the project to specify the custom styles for the add-in. Replace the entire contents with the following and save the file.
+4. Open the file **app.css** in the root of the project to specify the custom styles for the add-in. Replace the entire contents with the following and save the file.
 
     ```css
     #content-header {
@@ -417,7 +417,7 @@ In this article, you'll walk through the process of building a Word add-in by us
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
     }
 
     .padding {
@@ -478,5 +478,4 @@ Congratulations, you've successfully created a Word add-in using jQuery! Next, l
 
 * [Word add-ins overview](../word/word-add-ins-programming-overview.md)
 * [Word add-in code samples](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
-* [Word JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
-
+* [Word JavaScript API reference](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)

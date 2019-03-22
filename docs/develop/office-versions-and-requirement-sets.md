@@ -1,7 +1,7 @@
 ---
 title: Office versions and requirement sets
 description: ''
-ms.date: 03/29/2018
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -10,7 +10,7 @@ localization_priority: Priority
 There are many versions of Office on several platforms, and they don't all support every API in Office JavaScript API (Office.js). You may not always have control over the version of Office your users have installed.  To handle this situation, we provide a system called requirement sets to help you determine whether an Office host supports the capabilities you need in your Office Add-in. 
 
 > [!NOTE]
-> - Office runs across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad.  
+> - Office runs across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad.
 > - Examples of Office hosts are Office Products: Excel, Word, PowerPoint, Outlook, OneNote, and so forth.  
 > - A requirement set is a named group of API members e.g., `ExcelApi 1.5`, `WordApi 1.3`, and so on.  
 
@@ -32,30 +32,30 @@ In addition, other functionality such as add-in commands (ribbon extensibility) 
 
 An add-in can only use APIs in requirement sets that are supported by the version of Office host where the add-in is running. To know exactly which requirement sets are available for a specific Office host version, refer to the following host-specific requirement set articles:
 
-- [Excel JavaScript API requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) (ExcelApi)
-- [Word JavaScript API requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets) (WordApi)
-- [OneNote JavaScript API requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets) (OneNoteApi)
-- [Understanding Outlook API requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) (MailBox)
+- [Excel JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) (ExcelApi)
+- [Word JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets) (WordApi)
+- [OneNote JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets) (OneNoteApi)
+- [Understanding Outlook API requirement sets](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) (MailBox)
 
 Some requirement sets contain APIs that can be used by any Office host. For information about these requirement sets, refer to the following articles:
 
-- [Office common requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
-- [Add-in commands requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets)
-- [Dialog API requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets)
-- [Identity API requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)
+- [Office common requirement sets](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
+- [Add-in commands requirement sets](/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets)
+- [Dialog API requirement sets](/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets)
+- [Identity API requirement sets](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)
 
 The version number of a requirement set, such as the "1.1" in `ExcelApi 1.1`, is relative to the Office host. The version number of a given requirement set (e.g., `ExcelApi 1.1`) does not correspond to the version number of Office.js or to requirement sets for other Office hosts (e.g., Word, Outlook, etc.).  Requirement sets for the different Office hosts are released at different speeds and times. For example, `ExcelApi 1.5` was released before the `WordApi 1.3` requirement set.
 
-The JavaScript API for Office library (Office.js) includes all requirement sets that are currently available. While there is such a thing as requirement sets `ExcelApi 1.3` and `WordApi 1.3`, there is no `Office.js 1.3` requirement set. The latest release of Office.js is maintained as a single Office endpoint delivered via the content delivery network (CDN). For more details around the Office.js CDN, including how versioning and backward compatibility is handled, see [Understanding the JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office).
+The JavaScript API for Office library (Office.js) includes all requirement sets that are currently available. While there is such a thing as requirement sets `ExcelApi 1.3` and `WordApi 1.3`, there is no `Office.js 1.3` requirement set. The latest release of Office.js is maintained as a single Office endpoint delivered via the content delivery network (CDN). For more details around the Office.js CDN, including how versioning and backward compatibility is handled, see [Understanding the JavaScript API for Office](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office).
 
 ## Specify Office hosts and requirement sets
 
-There are various ways to specify which Office hosts and requirement sets are required by an add-in.  For detailed information, see [Specify Office hosts and API requirements](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
+There are various ways to specify which Office hosts and requirement sets are required by an add-in.  For detailed information, see [Specify Office hosts and API requirements](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
 
 
 ## See also
 
-- [Specify Office hosts and API requirements](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Install the latest version of Office](https://docs.microsoft.com/office/dev/add-ins/develop/install-latest-office-version)
-- [Overview of update channels for Office 365 ProPlus](https://docs.microsoft.com/deployoffice/overview-of-update-channels-for-office-365-proplus)
+- [Specify Office hosts and API requirements](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
+- [Install the latest version of Office](/office/dev/add-ins/develop/install-latest-office-version)
+- [Overview of update channels for Office 365 ProPlus](/deployoffice/overview-of-update-channels-for-office-365-proplus)
 - [Get the most from Office with Office 365](https://products.office.com/compare-all-microsoft-office-products?tab=2)
