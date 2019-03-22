@@ -10,7 +10,9 @@ localization_priority: Priority
 
 ## Custom functions runtime
 
-Because of their unique runtime, think of custom functions as another component of your total add-in. Your add-in will also likely include elements from the browser engine runtime, like a task pane.
+An Office Web Add-in can interact with the user as a task pane, or a content pane, and can include commands and custom functions. All of these parts run in a browser engine runtime except for custom functions. Custom functions run in a separate custom functions runtime to optimize for calculation speed.
+
+Note that if you are using the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) to generate your project, the custom functions runtime will be loaded through the custom-functions.js script file referenced in the functions.html file. The functions.html serves only to load the runtime and shouldn't be used as the task pane for your add-in.
 
 The following table highlights the differences between the custom functions runtime and the browser engine runtime:
 
@@ -18,17 +20,14 @@ The following table highlights the differences between the custom functions runt
 |------------------------------------------------------------------	|--------------------------------------------------------------------------------------------------------------	|
 | Supports returning a value from a cell 	| Supports Office.js APIs and UI elements 	|
 | Does not have `localStorage` object, instead uses `AsyncStorage` 	| Has `localStorage` object, can optionally use `AsyncStorage` object 	|
-| Provides access to `OfficeRuntime` objects 	| Provides access to `OfficeRuntime` objects 	|
-| Allows you to make web requests 	| Allows you to access the Document Object Model (DOM) and supports libraries that use the DOM, such as jQuery 	|
+| Does not support interacting with the DOM, or loading libraries that depend on the DOM such as jQuery.	| Supports interacting with the DOM and loading libraries that depend on the DOM. |
 
->[!NOTE]
-> When first installing a custom function, a task pane is shown. This pane is necessary to install the custom functions runtime, but shouldn't serve as the task pane for your add-in.
 
 ## Browser engine runtime
 
 The task pane and other components that are not custom functions run in a browser engine runtime.
 
-The browser engine runtime enables access to the Office.js APIs. Keep in mind that any of the Excel APIs, such as APIs which allow you to manipulate Excel tables, run on the browser engine runtime, but aren't directly accessible from the custom functions runtime.
+The browser engine runtime supports the Office.js APIs. Keep in mind that any of the Excel APIs, such as APIs which allow you to manipulate Excel tables, run on the browser engine runtime, but aren't directly accessible from the custom functions runtime.
 
 ## Communicate between runtimes
 
@@ -36,7 +35,7 @@ Both the browser engine runtime and the custom functions runtime have access to 
 
 `AsyncStorage` can be used to store data from your custom functions and get data from your task pane code.
 
-You'll find a code sample using `AsyncStorage` in this [Github repository](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) dedicated to patterns and practices.
+You can see a code sample using `AsyncStorage` in this [Github repository](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) dedicated to patterns and practices.
 For more general information about `AsyncStorage`, see [Custom functions runtime](./custom-functions-runtime.md).
 
 `AsyncStorage` can also be useful for authentication. For more information, see [Custom functions authentication](custom-functions-authentication.md).
