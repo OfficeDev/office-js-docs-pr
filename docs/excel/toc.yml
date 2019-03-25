@@ -101,78 +101,6 @@
 
   - name: Develop
     items:
-    - name: Address same origin policy limitations
-      href: ../develop/addressing-same-origin-policy-limitations.md?context=office/dev/add-ins/excel/context
-
-    - name: Authentication and authorization
-      items:
-      - name: Enable SSO in an add-in
-        href: ../develop/sso-in-office-add-ins.md?context=office/dev/add-ins/excel/context
-        items:
-        - name: Create an SSO add-in using ASP.NET
-          href: ../develop/create-sso-office-add-ins-aspnet.md?context=office/dev/add-ins/excel/context
-        - name: Create an SSO add-in using Node.js
-          href: ../develop/create-sso-office-add-ins-nodejs.md?context=office/dev/add-ins/excel/context
-        - name: Register an Office Add-in that uses SSO with Azure AD v2.0
-          href: ../develop/register-sso-add-in-aad-v2.md?context=office/dev/add-ins/excel/context
-        - name: Grant administrator consent to the add-in
-          href: ../develop/grant-admin-consent-to-an-add-in.md?context=office/dev/add-ins/excel/context
-        - name: Troubleshoot error messages for single sign-on (SSO)
-          href: ../develop/troubleshoot-sso-in-office-add-ins.md?context=office/dev/add-ins/excel/context
-      - name: Authorize external services
-        href: ../develop/auth-external-add-ins.md?context=office/dev/add-ins/excel/context
-      - name: Authorize to Microsoft Graph
-        href: ../develop/authorize-to-microsoft-graph.md?context=office/dev/add-ins/excel/context
-
-    - name: Automatically open a task pane with a document
-      href: ../develop/automatically-open-a-task-pane-with-a-document.md?context=office/dev/add-ins/excel/context
-
-    - name: Custom functions
-      items:
-      - name: Custom functions overview
-        href: custom-functions-overview.md
-        displayName: Excel
-      - name: Custom functions tutorial
-        href: ../tutorials/excel-tutorial-create-custom-functions.md?context=office/dev/add-ins/excel/context
-        displayName: Excel
-      - name: Custom functions runtime
-        href: custom-functions-runtime.md
-        displayName: Excel
-      - name: Custom functions metadata
-        href: custom-functions-json.md
-        displayName: Excel
-      - name: Custom functions best practices
-        href: custom-functions-best-practices.md
-        displayName: Excel
-      - name: Custom functions authentication
-        href: custom-functions-authentication.md
-        displayName: Excel
-      - name: Custom functions changelog
-        href: custom-functions-changelog.md
-        displayName: Excel
-      - name: Custom functions requirements
-        href: custom-functions-requirements.md
-        displayName: Excel
-      - name: Custom functions naming guidelines
-        href: custom-functions-naming.md
-        displayName: Excel
-
-    - name: Develop add-ins with Visual Studio
-      items:
-      - name: Create and debug Office Add-ins in Visual Studio
-        href: ../develop/create-and-debug-office-add-ins-in-visual-studio.md?context=office/dev/add-ins/excel/context
-        items:
-      - name: Get JavaScript IntelliSense in Visual Studio
-        href: ../develop/get-javascript-intellisense-in-visual-studio.md?context=office/dev/add-ins/excel/context
-      - name: Convert JavaScript to TypeScript
-        href: ../develop/convert-javascript-to-typescript.md?context=office/dev/add-ins/excel/context
-
-    - name: Develop add-ins for the iPad
-      href: ../develop/develop-office-add-ins-for-the-ipad.md?context=office/dev/add-ins/excel/context
-    - name: Develop add-ins with Angular
-      href: ../develop/add-ins-with-angular2.md?context=office/dev/add-ins/excel/context
-    - name: Dialog API
-      href: ../develop/dialog-api-in-office-add-ins.md?context=office/dev/add-ins/excel/context
 
     - name: Excel JavaScript API
       items:
@@ -232,6 +160,79 @@
       - name: Worksheets
         href: excel-add-ins-worksheets.md
         displayName: Excel
+
+    - name: Custom functions
+      items:
+      - name: Custom functions overview
+        href: custom-functions-overview.md
+        displayName: Excel
+      - name: Custom functions tutorial
+        href: ../tutorials/excel-tutorial-create-custom-functions.md?context=office/dev/add-ins/excel/context
+        displayName: Excel
+      - name: Custom functions runtime
+        href: custom-functions-runtime.md
+        displayName: Excel
+      - name: Custom functions metadata
+        href: custom-functions-json.md
+        displayName: Excel
+      - name: Custom functions best practices
+        href: custom-functions-best-practices.md
+        displayName: Excel
+      - name: Custom functions authentication
+        href: custom-functions-authentication.md
+        displayName: Excel
+      - name: Custom functions changelog
+        href: custom-functions-changelog.md
+        displayName: Excel
+      - name: Custom functions requirements
+        href: custom-functions-requirements.md
+        displayName: Excel
+      - name: Custom functions naming guidelines
+        href: custom-functions-naming.md
+        displayName: Excel
+
+    - name: Address same origin policy limitations
+      href: ../develop/addressing-same-origin-policy-limitations.md?context=office/dev/add-ins/excel/context
+
+    - name: Authentication and authorization
+      items:
+      - name: Enable SSO in an add-in
+        href: ../develop/sso-in-office-add-ins.md?context=office/dev/add-ins/excel/context
+        items:
+        - name: Create an SSO add-in using ASP.NET
+          href: ../develop/create-sso-office-add-ins-aspnet.md?context=office/dev/add-ins/excel/context
+        - name: Create an SSO add-in using Node.js
+          href: ../develop/create-sso-office-add-ins-nodejs.md?context=office/dev/add-ins/excel/context
+        - name: Register an Office Add-in that uses SSO with Azure AD v2.0
+          href: ../develop/register-sso-add-in-aad-v2.md?context=office/dev/add-ins/excel/context
+        - name: Grant administrator consent to the add-in
+          href: ../develop/grant-admin-consent-to-an-add-in.md?context=office/dev/add-ins/excel/context
+        - name: Troubleshoot error messages for single sign-on (SSO)
+          href: ../develop/troubleshoot-sso-in-office-add-ins.md?context=office/dev/add-ins/excel/context
+      - name: Authorize external services
+        href: ../develop/auth-external-add-ins.md?context=office/dev/add-ins/excel/context
+      - name: Authorize to Microsoft Graph
+        href: ../develop/authorize-to-microsoft-graph.md?context=office/dev/add-ins/excel/context
+
+    - name: Automatically open a task pane with a document
+      href: ../develop/automatically-open-a-task-pane-with-a-document.md?context=office/dev/add-ins/excel/context
+
+    - name: Develop add-ins with Visual Studio
+      items:
+      - name: Create and debug Office Add-ins in Visual Studio
+        href: ../develop/create-and-debug-office-add-ins-in-visual-studio.md?context=office/dev/add-ins/excel/context
+        items:
+      - name: Get JavaScript IntelliSense in Visual Studio
+        href: ../develop/get-javascript-intellisense-in-visual-studio.md?context=office/dev/add-ins/excel/context
+      - name: Convert JavaScript to TypeScript
+        href: ../develop/convert-javascript-to-typescript.md?context=office/dev/add-ins/excel/context
+
+    - name: Develop add-ins for the iPad
+      href: ../develop/develop-office-add-ins-for-the-ipad.md?context=office/dev/add-ins/excel/context
+    - name: Develop add-ins with Angular
+      href: ../develop/add-ins-with-angular2.md?context=office/dev/add-ins/excel/context
+    - name: Dialog API
+      href: ../develop/dialog-api-in-office-add-ins.md?context=office/dev/add-ins/excel/context
 
     - name: Localization
       href: ../develop/localization.md?context=office/dev/add-ins/excel/context

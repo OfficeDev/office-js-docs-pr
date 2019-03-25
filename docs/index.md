@@ -94,7 +94,7 @@ ms.author: o365devx
         </ul>
         <ul class="cardsY panelContent featuredContent">
             <li>
-                <a href="/office/dev/add-ins/quickstarts/project-quickstart">
+                <a href="/office/dev/add-ins/project/project-add-ins">
                     <div class="cardSize">
                         <div class="cardPadding">
                             <div class="card">

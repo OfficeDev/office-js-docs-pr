@@ -94,6 +94,20 @@
   - name: Develop
     items:
 
+    - name: PowerPoint JavaScript API
+      items:
+      - name: Overview
+        href: ../reference/requirement-sets/powerpoint-and-project-note.md?context=office/dev/add-ins/powerpoint/context
+        displayName: PowerPoint
+      - name: PowerPoint JavaScript API reference
+        href: /javascript/api/powerpoint
+      - name: Get the whole document from an add-in
+        href: get-the-whole-document-from-an-add-in-for-powerpoint.md
+        displayName: PowerPoint
+      - name: Use document themes in your PowerPoint add-ins
+        href: use-document-themes-in-your-powerpoint-add-ins.md
+        displayName: PowerPoint
+
     - name: Address same origin policy limitations
       href: ../develop/addressing-same-origin-policy-limitations.md?context=office/dev/add-ins/powerpoint/context
 
@@ -168,20 +182,6 @@
         href: ../develop/asynchronous-programming-in-office-add-ins.md?context=office/dev/add-ins/powerpoint/context
       - name: Persist state and settings
         href: ../develop/persisting-add-in-state-and-settings.md?context=office/dev/add-ins/powerpoint/context
-
-    - name: PowerPoint JavaScript API
-      items:
-      - name: Overview
-        href: ../reference/requirement-sets/powerpoint-and-project-note.md?context=office/dev/add-ins/powerpoint/context
-        displayName: PowerPoint
-      - name: PowerPoint JavaScript API reference
-        href: /javascript/api/powerpoint
-      - name: Get the whole document from an add-in
-        href: get-the-whole-document-from-an-add-in-for-powerpoint.md
-        displayName: PowerPoint
-      - name: Use document themes in your PowerPoint add-ins
-        href: use-document-themes-in-your-powerpoint-add-ins.md
-        displayName: PowerPoint
 
   - name: Test and debug
     href: ../testing/test-debug-office-add-ins.md?context=office/dev/add-ins/powerpoint/context
