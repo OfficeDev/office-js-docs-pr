@@ -127,24 +127,7 @@
     - name: Automatically open a task pane with a document
       href: ../develop/automatically-open-a-task-pane-with-a-document.md?context=office/dev/add-ins/excel/context
 
-    - name: Develop add-ins with Visual Studio
-      items:
-      - name: Create and debug Office Add-ins in Visual Studio
-        href: ../develop/create-and-debug-office-add-ins-in-visual-studio.md?context=office/dev/add-ins/excel/context
-        items:
-      - name: Get JavaScript IntelliSense in Visual Studio
-        href: ../develop/get-javascript-intellisense-in-visual-studio.md?context=office/dev/add-ins/excel/context
-      - name: Convert JavaScript to TypeScript
-        href: ../develop/convert-javascript-to-typescript.md?context=office/dev/add-ins/excel/context
-
-    - name: Develop add-ins for the iPad
-      href: ../develop/develop-office-add-ins-for-the-ipad.md?context=office/dev/add-ins/excel/context
-    - name: Develop add-ins with Angular
-      href: ../develop/add-ins-with-angular2.md?context=office/dev/add-ins/excel/context
-    - name: Dialog API
-      href: ../develop/dialog-api-in-office-add-ins.md?context=office/dev/add-ins/excel/context
-
-    - name: Excel custom functions
+    - name: Custom functions
       items:
       - name: Custom functions overview
         href: custom-functions-overview.md
@@ -173,6 +156,23 @@
       - name: Custom functions naming guidelines
         href: custom-functions-naming.md
         displayName: Excel
+
+    - name: Develop add-ins with Visual Studio
+      items:
+      - name: Create and debug Office Add-ins in Visual Studio
+        href: ../develop/create-and-debug-office-add-ins-in-visual-studio.md?context=office/dev/add-ins/excel/context
+        items:
+      - name: Get JavaScript IntelliSense in Visual Studio
+        href: ../develop/get-javascript-intellisense-in-visual-studio.md?context=office/dev/add-ins/excel/context
+      - name: Convert JavaScript to TypeScript
+        href: ../develop/convert-javascript-to-typescript.md?context=office/dev/add-ins/excel/context
+
+    - name: Develop add-ins for the iPad
+      href: ../develop/develop-office-add-ins-for-the-ipad.md?context=office/dev/add-ins/excel/context
+    - name: Develop add-ins with Angular
+      href: ../develop/add-ins-with-angular2.md?context=office/dev/add-ins/excel/context
+    - name: Dialog API
+      href: ../develop/dialog-api-in-office-add-ins.md?context=office/dev/add-ins/excel/context
 
     - name: Excel JavaScript API
       items:
