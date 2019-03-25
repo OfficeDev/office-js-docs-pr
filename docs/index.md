@@ -54,7 +54,7 @@ ms.author: o365devx
         </ul>
         <ul class="cardsY panelContent featuredContent">
             <li>
-                <a href="/outlook/add-ins/quick-start">
+                <a href="/outlook/add-ins">
                     <div class="cardSize">
                         <div class="cardPadding">
                             <div class="card">
