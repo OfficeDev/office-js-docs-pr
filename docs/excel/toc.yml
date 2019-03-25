@@ -185,6 +185,8 @@
       - name: Advanced programming concepts
         href: excel-add-ins-advanced-concepts.md
         displayName: Excel
+      - name: Excel JavaScript API reference
+        href: /javascript/api/excel
       - name: Calling built-in functions
         href: excel-add-ins-worksheet-functions.md
         displayName: Excel
