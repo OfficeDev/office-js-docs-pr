@@ -248,6 +248,8 @@
           href: ../reference/requirement-sets/identity-api-requirement-sets.md?context=office/dev/add-ins/powerpoint/context
         - name: Office Common API requirement sets
           href: ../reference/requirement-sets/office-add-in-requirement-sets.md?context=office/dev/add-ins/powerpoint/context
+    - name: Common API reference
+      href: /javascript/api/office
     - name: Error codes
       href: ../reference/javascript-api-for-office-error-codes.md?context=office/dev/add-ins/powerpoint/context
     - name: Office Add-in manifest reference

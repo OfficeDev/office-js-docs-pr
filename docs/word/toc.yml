@@ -262,6 +262,8 @@
           href: ../reference/requirement-sets/office-add-in-requirement-sets.md?context=office/dev/add-ins/word/context
       - name: Word requirement sets
         href: ../reference/requirement-sets/word-api-requirement-sets.md?context=office/dev/add-ins/word/context
+    - name: Common API reference
+      href: /javascript/api/office
     - name: Error codes
       href: ../reference/javascript-api-for-office-error-codes.md?context=office/dev/add-ins/word/context
     - name: Office Add-in manifest reference

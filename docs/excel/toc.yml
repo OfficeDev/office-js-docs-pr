@@ -333,6 +333,8 @@
           href: ../reference/requirement-sets/office-add-in-requirement-sets.md?context=office/dev/add-ins/excel/context
       - name: Excel requirement sets
         href: ../reference/requirement-sets/excel-api-requirement-sets.md?context=office/dev/add-ins/excel/context
+    - name: Common API reference
+      href: /javascript/api/office
     - name: Error codes
       href: ../reference/javascript-api-for-office-error-codes.md?context=office/dev/add-ins/excel/context
     - name: Excel API reference
