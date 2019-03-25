@@ -74,7 +74,7 @@ ms.author: o365devx
         </ul>
         <ul class="cardsY panelContent featuredContent">
             <li>
-                <a href="/office/dev/add-ins/quickstarts/powerpoint-quickstart">
+                <a href="/office/dev/add-ins/powerpoint/powerpoint-add-ins">
                     <div class="cardSize">
                         <div class="cardPadding">
                             <div class="card">
