@@ -176,11 +176,11 @@
         displayName: PowerPoint
       - name: PowerPoint JavaScript API reference
         href: /javascript/api/powerpoint
-      - name: Use document themes in your PowerPoint add-ins
-        href: use-document-themes-in-your-powerpoint-add-ins.md
-        displayName: PowerPoint
       - name: Get the whole document from an add-in
         href: get-the-whole-document-from-an-add-in-for-powerpoint.md
+        displayName: PowerPoint
+      - name: Use document themes in your PowerPoint add-ins
+        href: use-document-themes-in-your-powerpoint-add-ins.md
         displayName: PowerPoint
 
   - name: Test and debug
