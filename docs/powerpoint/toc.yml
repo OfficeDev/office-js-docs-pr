@@ -234,8 +234,6 @@
   - name: Reference
     href: ../reference/javascript-api-for-office.md?context=office/dev/add-ins/powerpoint/context
     items: 
-    - name: API open specifications
-      href: ../reference/openspec.md?context=office/dev/add-ins/powerpoint/context
     - name: API requirement sets
       items:
       - name: Common requirement sets
