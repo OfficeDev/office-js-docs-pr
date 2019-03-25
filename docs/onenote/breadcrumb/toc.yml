@@ -1,0 +1,11 @@
+- name: Office
+  tocHref: /office/
+  topicHref: /office/index
+  items:
+  - name: Add-ins
+    tocHref: /office/dev/add-ins/
+    topicHref: /office/dev/add-ins
+    items:
+    - name: OneNote add-ins
+      tocHref: /office/dev/add-ins/onenote/onenote-add-ins-programming-overview
+      topicHref: /office/dev/add-ins/onenote/onenote-add-ins-programming-overview
