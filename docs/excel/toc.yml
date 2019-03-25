@@ -173,7 +173,7 @@
       href: custom-functions-overview.md
       displayName: Excel
     - name: Custom functions tutorial
-      href: ../tutorials/excel-tutorial-create-custom-functions.md
+      href: ../tutorials/excel-tutorial-create-custom-functions.md?context=office/dev/add-ins/excel/context
       displayName: Excel
     - name: Custom functions runtime
       href: custom-functions-runtime.md
