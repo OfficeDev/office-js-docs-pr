@@ -1,0 +1,394 @@
+- name: PowerPoint add-ins
+  href: powerpoint-add-ins.md
+  items:
+
+  - name: Quick Starts
+    items:
+    - name: Create PowerPoint add-in
+      href: ../quickstarts/powerpoint-quickstart.md?context=office/dev/add-ins/powerpoint/context
+
+  - name: Tutorials
+    items:
+    - name: PowerPoint add-in tutorial
+      href: ../tutorials/powerpoint-tutorial.md?context=office/dev/add-ins/powerpoint/context
+
+  - name: Office Add-ins concepts
+    items:
+    - name: About Office Add-ins
+      href: ../overview/office-add-ins.md?context=office/dev/add-ins/powerpoint/context
+    - name: Host and platform availability
+      href: ../overview/office-add-in-availability.md#word?context=office/dev/add-ins/powerpoint/context
+    - name: Requirements for running add-ins
+      href: ../concepts/requirements-for-running-office-add-ins.md?context=office/dev/add-ins/powerpoint/context
+    - name: Add-in development best practices
+      href: ../concepts/add-in-development-best-practices.md?context=office/dev/add-ins/powerpoint/context
+    - name: Add-in development lifecycle
+      href: ../concepts/add-in-development-lifecycle.md?context=office/dev/add-ins/powerpoint/context
+
+    - name: Office versions and requirement sets
+      href: ../develop/office-versions-and-requirement-sets.md?context=office/dev/add-ins/powerpoint/context
+    - name: Install the latest Office version
+      href: ../develop/install-latest-office-version.md?context=office/dev/add-ins/powerpoint/context
+
+    - name: Design the User Interface
+      href: ../design/add-in-design.md?context=office/dev/add-ins/powerpoint/context
+      items:
+      - name: Guidelines
+        items:
+        - name: Accessibility
+          href: ../design/accessibility-guidelines.md?context=office/dev/add-ins/powerpoint/context
+        - name: Voice
+          href: ../design/voice-guidelines.md?context=office/dev/add-ins/powerpoint/context
+        - name: Data visualization
+          href: ../design/data-visualization-guidelines.md?context=office/dev/add-ins/powerpoint/context
+      - name: Design language
+        href: ../design/add-in-design-language.md?context=office/dev/add-ins/powerpoint/context
+        items:
+        - name: Typography
+          href: ../design/add-in-typography.md?context=office/dev/add-ins/powerpoint/context
+        - name: Color
+          href: ../design/add-in-color.md?context=office/dev/add-ins/powerpoint/context
+        - name: Layout
+          href: ../design/add-in-layout.md?context=office/dev/add-ins/powerpoint/context
+        - name: Icons
+          href: ../design/add-in-icons.md?context=office/dev/add-ins/powerpoint/context
+        - name: Using motion
+          href: ../design/using-motion-office-addins.md?context=office/dev/add-ins/powerpoint/context
+          displayName: Motion
+      - name: Interface elements
+        href: ../design/interface-elements.md?context=office/dev/add-ins/powerpoint/context
+        items:
+        - name: Add-in commands
+          href: ../design/add-in-commands.md?context=office/dev/add-ins/powerpoint/context
+        - name: Task panes
+          href: ../design/task-pane-add-ins.md?context=office/dev/add-ins/powerpoint/context
+        - name: Dialog boxes
+          href: ../design/dialog-boxes.md?context=office/dev/add-ins/powerpoint/context
+        - name: Content add-ins
+          href: ../design/content-add-ins.md?context=office/dev/add-ins/powerpoint/context
+      - name: UX design templates
+        href: ../design/ux-design-pattern-templates.md?context=office/dev/add-ins/powerpoint/context
+        items:
+        - name: Authentication
+          href: ../design/authentication-patterns.md?context=office/dev/add-ins/powerpoint/context
+        - name: First run experience
+          href: ../design/first-run-experience-patterns.md?context=office/dev/add-ins/powerpoint/context
+        - name: Navigation
+          href: ../design/navigation-patterns.md?context=office/dev/add-ins/powerpoint/context
+        - name: Branding
+          href: ../design/branding-patterns.md?context=office/dev/add-ins/powerpoint/context
+      - name: Resources
+        items:
+        - name: Design toolkits
+          href: ../design/design-toolkits.md?context=office/dev/add-ins/powerpoint/context
+        - name: Office UI Fabric
+          href: ../design/office-ui-fabric.md?context=office/dev/add-ins/powerpoint/context
+        - name: Get started using Fabric React
+          href: ../design/using-office-ui-fabric-react.md?context=office/dev/add-ins/powerpoint/context
+
+    - name: Performance
+      href: ../concepts/resource-limits-and-performance-optimization.md?context=office/dev/add-ins/powerpoint/context
+    - name: Privacy and security
+      href: ../concepts/privacy-and-security.md?context=office/dev/add-ins/powerpoint/context
+
+  - name: Develop
+    items:
+
+    - name: Address same origin policy limitations
+      href: ../develop/addressing-same-origin-policy-limitations.md?context=office/dev/add-ins/powerpoint/context
+
+    - name: Authentication and authorization
+      items:
+      - name: Enable SSO in an add-in
+        href: ../develop/sso-in-office-add-ins.md?context=office/dev/add-ins/powerpoint/context
+        items:
+        - name: Create an SSO add-in using ASP.NET
+          href: ../develop/create-sso-office-add-ins-aspnet.md?context=office/dev/add-ins/powerpoint/context
+        - name: Create an SSO add-in using Node.js
+          href: ../develop/create-sso-office-add-ins-nodejs.md?context=office/dev/add-ins/powerpoint/context
+        - name: Register an Office Add-in that uses SSO with Azure AD v2.0
+          href: ../develop/register-sso-add-in-aad-v2.md?context=office/dev/add-ins/powerpoint/context
+        - name: Grant administrator consent to the add-in
+          href: ../develop/grant-admin-consent-to-an-add-in.md?context=office/dev/add-ins/powerpoint/context
+        - name: Troubleshoot error messages for single sign-on (SSO)
+          href: ../develop/troubleshoot-sso-in-office-add-ins.md?context=office/dev/add-ins/powerpoint/context
+      - name: Authorize external services
+        href: ../develop/auth-external-add-ins.md?context=office/dev/add-ins/powerpoint/context
+      - name: Authorize to Microsoft Graph
+        href: ../develop/authorize-to-microsoft-graph.md?context=office/dev/add-ins/powerpoint/context
+
+    - name: Automatically open a task pane with a document
+      href: ../develop/automatically-open-a-task-pane-with-a-document.md?context=office/dev/add-ins/powerpoint/context
+
+    - name: Develop add-ins with Visual Studio
+      items:
+      - name: Create and debug Office Add-ins in Visual Studio
+        href: ../develop/create-and-debug-office-add-ins-in-visual-studio.md?context=office/dev/add-ins/powerpoint/context
+        items:
+      - name: Get JavaScript IntelliSense in Visual Studio
+        href: ../develop/get-javascript-intellisense-in-visual-studio.md?context=office/dev/add-ins/powerpoint/context
+      - name: Convert JavaScript to TypeScript
+        href: ../develop/convert-javascript-to-typescript.md?context=office/dev/add-ins/powerpoint/context
+
+    - name: Develop add-ins for the iPad
+      href: ../develop/develop-office-add-ins-for-the-ipad.md?context=office/dev/add-ins/powerpoint/context
+    - name: Develop add-ins with Angular
+      href: ../develop/add-ins-with-angular2.md?context=office/dev/add-ins/powerpoint/context
+    - name: Dialog API
+      href: ../develop/dialog-api-in-office-add-ins.md?context=office/dev/add-ins/powerpoint/context
+    - name: Localization
+      href: ../develop/localization.md?context=office/dev/add-ins/powerpoint/context
+
+    - name: Manifest
+      href: ../develop/add-in-manifests.md?context=office/dev/add-ins/powerpoint/context
+      items:
+      - name: Create add-in commands
+        href: ../develop/create-addin-commands.md?context=office/dev/add-ins/powerpoint/context
+      - name: Specify Office hosts
+        href: ../develop/specify-office-hosts-and-api-requirements.md?context=office/dev/add-ins/powerpoint/context
+      - name: Request permissions for API use in content and task pane add-ins
+        href: ../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md?context=office/dev/add-ins/powerpoint/context
+      - name: Update API and manifest version
+        href: ../develop/update-your-javascript-api-for-office-and-manifest-schema-version.md?context=office/dev/add-ins/powerpoint/context
+      - name: How to find the proper order of manifest elements
+        href: ../develop/manifest-element-ordering.md?context=office/dev/add-ins/powerpoint/context
+
+    - name: Office JavaScript API
+      href: ../develop/understanding-the-javascript-api-for-office.md?context=office/dev/add-ins/powerpoint/context
+      items:
+      - name: Support for content and task pane add-ins
+        href: ../develop/support-for-task-pane-and-content-add-ins.md?context=office/dev/add-ins/powerpoint/context
+      - name: Reference Office.js
+        href: ../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md?context=office/dev/add-ins/powerpoint/context
+      - name: Load Office.js
+        href: ../develop/loading-the-dom-and-runtime-environment.md?context=office/dev/add-ins/powerpoint/context
+      - name: Office JavaScript API object model
+        href: ../develop/office-javascript-api-object-model.md?context=office/dev/add-ins/powerpoint/context
+      - name: Asynchronous programming in Office Add-ins
+        href: ../develop/asynchronous-programming-in-office-add-ins.md?context=office/dev/add-ins/powerpoint/context
+      - name: Persist state and settings
+        href: ../develop/persisting-add-in-state-and-settings.md?context=office/dev/add-ins/powerpoint/context
+
+    - name: PowerPoint JavaScript API
+      items:
+      - name: Overview
+        href: ../reference/requirement-sets/powerpoint-and-project-note.md?context=office/dev/add-ins/powerpoint/context
+        displayName: PowerPoint
+      - name: PowerPoint JavaScript API reference
+        href: /javascript/api/powerpoint
+      - name: Use document themes in your PowerPoint add-ins
+        href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
+        displayName: PowerPoint
+      - name: Get the whole document from an add-in
+        href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
+        displayName: PowerPoint
+
+  - name: Test and debug
+    href: ../testing/test-debug-office-add-ins.md?context=office/dev/add-ins/powerpoint/context
+    items:
+    - name: Windows
+      items:
+      - name: Sideload Office Add-ins on Windows
+        href: ../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md?context=office/dev/add-ins/powerpoint/context
+      - name: Sideload Office Add-ins using the sideload command
+        href: ../testing/sideload-office-addin-using-sideload-command.md?context=office/dev/add-ins/powerpoint/context
+      - name: Attach a debugger from the task pane
+        href: ../testing/attach-debugger-from-task-pane.md?context=office/dev/add-ins/powerpoint/context
+      - name: Debug using F12 developer tools
+        href: ../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md?context=office/dev/add-ins/powerpoint/context
+    - name: Office Online
+      items:
+      - name: Sideload Office Add-ins in Office Online
+        href: ../testing/sideload-office-add-ins-for-testing.md?context=office/dev/add-ins/powerpoint/context
+      - name: Debug in Office Online
+        href: ../testing/debug-add-ins-in-office-online.md?context=office/dev/add-ins/powerpoint/context
+    - name: iPad and Mac
+      items:
+      - name: Sideload Office Add-ins on iPad and Mac
+        href: ../testing/sideload-an-office-add-in-on-ipad-and-mac.md?context=office/dev/add-ins/powerpoint/context
+      - name: Debug on iPad and Mac
+        href: ../testing/debug-office-add-ins-on-ipad-and-mac.md?context=office/dev/add-ins/powerpoint/context
+    - name: Usability testing
+      href: ../develop/usability-testing.md?context=office/dev/add-ins/powerpoint/context
+    - name: Troubleshoot user errors
+      href: ../testing/testing-and-troubleshooting.md?context=office/dev/add-ins/powerpoint/context
+    - name: Validate an add-in manifest and troubleshoot issues
+      href: ../testing/troubleshoot-manifest.md?context=office/dev/add-ins/powerpoint/context
+
+  - name: Publish
+    href: ../publish/publish.md?context=office/dev/add-ins/powerpoint/context
+    items:
+    - name: Host an Office Add-in on Microsoft Azure
+      href: ../publish/host-an-office-add-in-on-microsoft-azure.md?context=office/dev/add-ins/powerpoint/context
+    - name: Package your add-in using Visual Studio
+      href: ../publish/package-your-add-in-using-visual-studio.md?context=office/dev/add-ins/powerpoint/context
+    - name: Publish add-ins via Centralized Deployment
+      href: ../publish/centralized-deployment.md?context=office/dev/add-ins/powerpoint/context
+    - name: Publish add-ins to a SharePoint catalog
+      href: ../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md?context=office/dev/add-ins/powerpoint/context
+    - name: Publish add-ins to AppSource
+      href: /office/dev/store/submit-to-the-office-store
+    - name: AppSource validation policies
+      href: /office/dev/store/validation-policies
+
+  - name: Reference
+    href: ../reference/javascript-api-for-office.md?context=office/dev/add-ins/powerpoint/context
+    items: 
+    - name: API open specifications
+      href: ../reference/openspec.md?context=office/dev/add-ins/powerpoint/context
+    - name: API requirement sets
+      items:
+      - name: Common requirement sets
+        items:
+        - name: Add-in commands requirement sets
+          href: ../reference/requirement-sets/add-in-commands-requirement-sets.md?context=office/dev/add-ins/powerpoint/context
+        - name: Dialog API requirement sets
+          href: ../reference/requirement-sets/dialog-api-requirement-sets.md?context=office/dev/add-ins/powerpoint/context
+        - name: Identity API requirement sets
+          href: ../reference/requirement-sets/identity-api-requirement-sets.md?context=office/dev/add-ins/powerpoint/context
+        - name: Office Common API requirement sets
+          href: ../reference/requirement-sets/office-add-in-requirement-sets.md?context=office/dev/add-ins/powerpoint/context
+      - name: Word requirement sets
+        href: ../reference/requirement-sets/word-api-requirement-sets.md?context=office/dev/add-ins/powerpoint/context
+    - name: Error codes
+      href: ../reference/javascript-api-for-office-error-codes.md?context=office/dev/add-ins/powerpoint/context
+    - name: Office Add-in manifest reference
+      items:
+      - name: AllowSnapshot
+        href: ../reference/manifest/allowsnapshot.md?context=office/dev/add-ins/powerpoint/context
+      - name: AlternateId
+        href: ../reference/manifest/alternateid.md?context=office/dev/add-ins/powerpoint/context
+      - name: AppDomain
+        href: ../reference/manifest/appdomain.md?context=office/dev/add-ins/powerpoint/context
+      - name: AppDomains
+        href: ../reference/manifest/appdomains.md?context=office/dev/add-ins/powerpoint/context
+      - name: CitationText
+        href: ../reference/manifest/citationtext.md?context=office/dev/add-ins/powerpoint/context
+      - name: DefaultLocale
+        href: ../reference/manifest/defaultlocale.md?context=office/dev/add-ins/powerpoint/context
+      - name: DefaultSettings
+        href: ../reference/manifest/defaultsettings.md?context=office/dev/add-ins/powerpoint/context
+      - name: Description
+        href: ../reference/manifest/description.md?context=office/dev/add-ins/powerpoint/context
+      - name: DesktopSettings
+        href: ../reference/manifest/desktopsettings.md?context=office/dev/add-ins/powerpoint/context
+      - name: Dictionary
+        href: ../reference/manifest/dictionary.md?context=office/dev/add-ins/powerpoint/context
+      - name: DictionaryHomePage
+        href: ../reference/manifest/dictionaryhomepage.md?context=office/dev/add-ins/powerpoint/context
+      - name: DisableEntityHighlighting
+        href: ../reference/manifest/disableentityhighlighting.md?context=office/dev/add-ins/powerpoint/context
+      - name: DisplayName
+        href: ../reference/manifest/displayname.md?context=office/dev/add-ins/powerpoint/context
+      - name: Form
+        href: ../reference/manifest/form.md?context=office/dev/add-ins/powerpoint/context
+      - name: FormSettings
+        href: ../reference/manifest/formsettings.md?context=office/dev/add-ins/powerpoint/context
+      - name: HighResolutionIconUrl
+        href: ../reference/manifest/highresolutioniconurl.md?context=office/dev/add-ins/powerpoint/context
+      - name: Host
+        href: ../reference/manifest/host.md?context=office/dev/add-ins/powerpoint/context
+      - name: Hosts
+        href: ../reference/manifest/hosts.md?context=office/dev/add-ins/powerpoint/context
+      - name: IconUrl
+        href: ../reference/manifest/iconurl.md?context=office/dev/add-ins/powerpoint/context
+      - name: Id
+        href: ../reference/manifest/id.md?context=office/dev/add-ins/powerpoint/context
+      - name: Metadata
+        href: ../reference/manifest/metadata.md?context=office/dev/add-ins/powerpoint/context
+      - name: Method
+        href: ../reference/manifest/method.md?context=office/dev/add-ins/powerpoint/context
+      - name: Methods
+        href: ../reference/manifest/methods.md?context=office/dev/add-ins/powerpoint/context
+      - name: Namespace
+        href: ../reference/manifest/namespace.md?context=office/dev/add-ins/powerpoint/context
+      - name: OfficeApp
+        href: ../reference/manifest/officeapp.md?context=office/dev/add-ins/powerpoint/context
+      - name: Override
+        href: ../reference/manifest/override.md?context=office/dev/add-ins/powerpoint/context
+      - name: Permissions
+        href: ../reference/manifest/permissions.md?context=office/dev/add-ins/powerpoint/context
+      - name: PhoneSettings
+        href: ../reference/manifest/phonesettings.md?context=office/dev/add-ins/powerpoint/context
+      - name: ProviderName
+        href: ../reference/manifest/providername.md?context=office/dev/add-ins/powerpoint/context
+      - name: QueryUri
+        href: ../reference/manifest/queryuri.md?context=office/dev/add-ins/powerpoint/context
+      - name: RequestedHeight
+        href: ../reference/manifest/requestedheight.md?context=office/dev/add-ins/powerpoint/context
+      - name: RequestedWidth
+        href: ../reference/manifest/requestedwidth.md?context=office/dev/add-ins/powerpoint/context
+      - name: Requirements
+        href: ../reference/manifest/requirements.md?context=office/dev/add-ins/powerpoint/context
+      - name: Rule
+        href: ../reference/manifest/rule.md?context=office/dev/add-ins/powerpoint/context
+      - name: Set
+        href: ../reference/manifest/set.md?context=office/dev/add-ins/powerpoint/context
+      - name: Sets
+        href: ../reference/manifest/sets.md?context=office/dev/add-ins/powerpoint/context
+      - name: SourceLocation
+        href: ../reference/manifest/sourcelocation.md?context=office/dev/add-ins/powerpoint/context
+      - name: SupportUrl
+        href: ../reference/manifest/supporturl.md?context=office/dev/add-ins/powerpoint/context
+      - name: TabletSettings
+        href: ../reference/manifest/tabletsettings.md?context=office/dev/add-ins/powerpoint/context
+      - name: TargetDialect
+        href: ../reference/manifest/targetdialect.md?context=office/dev/add-ins/powerpoint/context
+      - name: TargetDialects
+        href: ../reference/manifest/targetdialects.md?context=office/dev/add-ins/powerpoint/context
+      - name: Version
+        href: ../reference/manifest/version.md?context=office/dev/add-ins/powerpoint/context
+      - name: VersionOverrides
+        href: ../reference/manifest/versionoverrides.md?context=office/dev/add-ins/powerpoint/context
+        items: 
+        - name: Action
+          href: ../reference/manifest/action.md?context=office/dev/add-ins/powerpoint/context
+        - name: AllFormFactors
+          href: ../reference/manifest/allformfactors.md?context=office/dev/add-ins/powerpoint/context
+        - name: Control
+          href: ../reference/manifest/control.md?context=office/dev/add-ins/powerpoint/context
+        - name: CustomTab
+          href: ../reference/manifest/customtab.md?context=office/dev/add-ins/powerpoint/context
+        - name: Event
+          href: ../reference/manifest/event.md?context=office/dev/add-ins/powerpoint/context
+        - name: ExtensionPoint
+          href: ../reference/manifest/extensionpoint.md?context=office/dev/add-ins/powerpoint/context
+        - name: DesktopFormFactor
+          href: ../reference/manifest/desktopformfactor.md?context=office/dev/add-ins/powerpoint/context
+        - name: FunctionFile
+          href: ../reference/manifest/functionfile.md?context=office/dev/add-ins/powerpoint/context
+        - name: GetStarted
+          href: ../reference/manifest/getstarted.md?context=office/dev/add-ins/powerpoint/context
+        - name: Group
+          href: ../reference/manifest/group.md?context=office/dev/add-ins/powerpoint/context
+        - name: Hosts
+          href: ../reference/manifest/hosts.md?context=office/dev/add-ins/powerpoint/context
+        - name: Icon
+          href: ../reference/manifest/icon.md?context=office/dev/add-ins/powerpoint/context
+        - name: MobileFormFactor
+          href: ../reference/manifest/mobileformfactor.md?context=office/dev/add-ins/powerpoint/context
+        - name: OfficeMenu
+          href: ../reference/manifest/officemenu.md?context=office/dev/add-ins/powerpoint/context
+        - name: OfficeTab
+          href: ../reference/manifest/officetab.md?context=office/dev/add-ins/powerpoint/context
+        - name: Page
+          href: ../reference/manifest/page.md?context=office/dev/add-ins/powerpoint/context
+        - name: Resources
+          href: ../reference/manifest/resources.md?context=office/dev/add-ins/powerpoint/context
+        - name: Scopes
+          href: ../reference/manifest/scopes.md?context=office/dev/add-ins/powerpoint/context
+        - name: Script
+          href: ../reference/manifest/script.md?context=office/dev/add-ins/powerpoint/context
+        - name: SourceLocation (custom functions)
+          href: ../reference/manifest/customfunctionssourcelocation.md?context=office/dev/add-ins/powerpoint/context
+        - name: Supertip
+          href: ../reference/manifest/supertip.md?context=office/dev/add-ins/powerpoint/context
+        - name: SupportsSharedFolders
+          href: ../reference/manifest/supportssharedfolders.md?context=office/dev/add-ins/powerpoint/context
+        - name: WebApplicationInfo
+          href: ../reference/manifest/webapplicationinfo.md?context=office/dev/add-ins/powerpoint/context
+    - name: Word API reference
+      href: /javascript/api/word
+
+  - name: Resources
+    href: ../resources/resources-links-help.md?context=office/dev/add-ins/powerpoint/context
