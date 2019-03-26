@@ -376,5 +376,8 @@
 - name: Project add-ins
   href: project/project-add-ins.md
 
+- name: Visio add-ins
+  href: reference/overview/visio-javascript-reference-overview.md
+
 - name: Word add-ins
   href: word/word-add-ins-programming-overview.md
