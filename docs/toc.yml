@@ -360,7 +360,7 @@
   - name: Project JavaScript API
     items:
     - name: Overview
-      href: reference/requirement-sets/powerpoint-and-project-note.md?context=office/dev/add-ins/project/context
+      href: reference/requirement-sets/powerpoint-and-project-note.md
       displayName: Project
     - name: Create a Project add-in that uses REST with an on-premises OData service
       href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
@@ -377,6 +377,40 @@
 
 - name: Word add-ins
   href: word/word-add-ins-programming-overview.md
+  items:
+  - name: Quick Starts
+    items:
+    - name: Create Word add-in
+      href: quickstarts/word-quickstart.md
+  - name: Tutorials
+    items:
+    - name: Word add-in tutorial
+      href: tutorials/word-tutorial.md
+  - name: Word JavaScript API
+    items:
+    - name: Overview
+      href: reference/overview/word-add-ins-reference-overview.md
+      displayName: Word
+    - name: Word JavaScript API reference
+      href: /javascript/api/word
+    - name: Create better add-ins for Word with Office Open XML
+      href: word/create-better-add-ins-for-word-with-office-open-xml.md
+      displayName: Word
+    - name: Dictionary task pane add-ins
+      href: word/dictionary-task-pane-add-ins.md
+      displayName: Word
+    - name: Get the whole document from an add-in
+      href: word/get-the-whole-document-from-an-add-in-for-word.md
+      displayName: Word
+    - name: Read and write data to the active selection
+      href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
+      displayName: Word
+    - name: Bind to regions in a document
+      href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
+      displayName: Word
+    - name: Use search options to find text in your Word add-in 
+      href: word/search-option-guidance.md
+      displayName: Word
 
 - name: Reference
   items:
