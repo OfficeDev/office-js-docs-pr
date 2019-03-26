@@ -306,9 +306,6 @@
 
 - name: OneNote add-ins
   href: onenote/onenote-add-ins-programming-overview.md
-
-- name: OneNote add-ins
-  href: onenote/onenote-add-ins-programming-overview.md
   items:
   - name: Quick Starts
     items:
@@ -317,12 +314,12 @@
   - name: OneNote JavaScript API
     items:
     - name: Overview
-      href: ../reference/overview/onenote-add-ins-javascript-reference.md
+      href: reference/overview/onenote-add-ins-javascript-reference.md
       displayName: OneNote
     - name: OneNote JavaScript API reference
       href: /javascript/api/onenote
     - name: Work with OneNote page content
-      href: onenote-add-ins-page-content.md
+      href: onenote/onenote-add-ins-page-content.md
       displayName: OneNote
 
 - name: Outlook add-ins
@@ -330,6 +327,29 @@
 
 - name: PowerPoint add-ins
   href: powerpoint/powerpoint-add-ins.md
+  items:
+  - name: Quick Starts
+    items:
+    - name: Create PowerPoint add-in
+      href: quickstarts/powerpoint-quickstart.md
+  - name: Tutorials
+    items:
+    - name: PowerPoint add-in tutorial
+      href: tutorials/powerpoint-tutorial.md
+  - name: PowerPoint JavaScript API
+    items:
+    - name: Overview
+      href: reference/requirement-sets/powerpoint-and-project-note.md
+      displayName: PowerPoint
+    - name: PowerPoint JavaScript API reference
+      href: /javascript/api/powerpoint
+    - name: Get the whole document from an add-in
+      href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
+      displayName: PowerPoint
+    - name: Use document themes in your PowerPoint add-ins
+      href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
+      displayName: PowerPoint
+
 
 - name: Project add-ins
   href: project/project-add-ins.md
