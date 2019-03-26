@@ -260,9 +260,6 @@
         - name: Custom functions quickstart
           href: quickstarts/excel-custom-functions-quickstart.md
           displayName: Excel
-        - name: Custom functions tutorial
-          href: tutorials/excel-tutorial-create-custom-functions.md
-          displayName: Excel
         - name: Custom functions runtime
           href: excel/custom-functions-runtime.md
           displayName: Excel
