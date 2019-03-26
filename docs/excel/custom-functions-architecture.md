@@ -31,7 +31,7 @@ The browser engine runtime supports the Office.js APIs. Keep in mind that any of
 
 ## Communicate between runtimes
 
-Code in your custom functions cannot directly interact with code in other parts of your web add-in, like the task pane because they are in different runtimes. But in some scenarios you may need to share data, such as passing a token.
+Your custom functions code cannot directly interact with code in other parts of your web add-in, like the task pane because they are in different runtimes. But in some scenarios you may need to share data, such as passing a token.
 
 `AsyncStorage` can be used to store data from your custom functions and get data from your task pane code.
 
