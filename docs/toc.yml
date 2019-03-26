@@ -219,7 +219,7 @@
   - name: Excel JavaScript API
     items:
     - name: Overview
-      href: reference/overview/excel-add-ins-reference-overview.md?context=office/dev/add-ins/excel/context
+      href: reference/overview/excel-add-ins-reference-overview.m
       displayName: Excel
     - name: Fundamental programming concepts
       href: excel/excel-add-ins-core-concepts.md
@@ -280,7 +280,7 @@
       href: excel/custom-functions-overview.md
       displayName: Excel
     - name: Custom functions tutorial
-      href: tutorials/excel-tutorial-create-custom-functions.md?context=office/dev/add-ins/excel/context
+      href: tutorials/excel-tutorial-create-custom-functions.md
       displayName: Excel
     - name: Custom functions runtime
       href: excel/custom-functions-runtime.md
@@ -307,6 +307,24 @@
 - name: OneNote add-ins
   href: onenote/onenote-add-ins-programming-overview.md
 
+- name: OneNote add-ins
+  href: onenote/onenote-add-ins-programming-overview.md
+  items:
+  - name: Quick Starts
+    items:
+    - name: Create OneNote add-in
+      href: quickstarts/onenote-quickstart.md
+  - name: OneNote JavaScript API
+    items:
+    - name: Overview
+      href: ../reference/overview/onenote-add-ins-javascript-reference.md
+      displayName: OneNote
+    - name: OneNote JavaScript API reference
+      href: /javascript/api/onenote
+    - name: Work with OneNote page content
+      href: onenote-add-ins-page-content.md
+      displayName: OneNote
+
 - name: Outlook add-ins
   href: /outlook/add-ins/
 
@@ -317,7 +335,7 @@
   href: project/project-add-ins.md
 
 - name: Visio add-ins
-  href: reference/overview/visio-javascript-reference-overview.md?context=office/dev/add-ins/visio/context
+  href: reference/overview/visio-javascript-reference-overview.md
 
 - name: Word add-ins
   href: word/word-add-ins-programming-overview.md
