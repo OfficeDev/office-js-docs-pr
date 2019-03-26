@@ -371,6 +371,9 @@
 
 - name: Visio add-ins
   href: reference/overview/visio-javascript-reference-overview.md
+  items:
+  - name: Visio API reference
+    href: /javascript/api/visio
 
 - name: Word add-ins
   href: word/word-add-ins-programming-overview.md
