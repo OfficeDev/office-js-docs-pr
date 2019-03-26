@@ -195,8 +195,9 @@
       href: /office/dev/store/validation-policies
 
 - name: Excel add-ins
-  href: excel/excel-add-ins-overview.md
   items:
+  - name: About Excel add-ins
+    href: excel/excel-add-ins-overview.md
   - name: Quick Starts
     items:
     - name: Use Angular
@@ -305,8 +306,9 @@
       displayName: Excel
 
 - name: OneNote add-ins
-  href: onenote/onenote-add-ins-programming-overview.md
   items:
+  - name: About OneNote add-ins
+    href: onenote/onenote-add-ins-programming-overview.md
   - name: Quick Starts
     items:
     - name: Create OneNote add-in
@@ -326,8 +328,9 @@
   href: /outlook/add-ins/
 
 - name: PowerPoint add-ins
-  href: powerpoint/powerpoint-add-ins.md
   items:
+  - name: About PowerPoint add-ins
+    href: powerpoint/powerpoint-add-ins.md
   - name: Quick Starts
     items:
     - name: Create PowerPoint add-in
@@ -351,8 +354,9 @@
       displayName: PowerPoint
 
 - name: Project add-ins
-  href: project/project-add-ins.md
   items:
+  - name: About Project add-ins
+    href: project/project-add-ins.md
   - name: Quick Starts
     items:
     - name: Create Project add-in
@@ -370,14 +374,16 @@
       displayName: Project
 
 - name: Visio add-ins
-  href: reference/overview/visio-javascript-reference-overview.md
   items:
+  - name: About Visio add-ins
+    href: reference/overview/visio-javascript-reference-overview.md
   - name: Visio API reference
     href: /javascript/api/visio
 
 - name: Word add-ins
-  href: word/word-add-ins-programming-overview.md
   items:
+  - name: About Word add-ins
+    href: word/word-add-ins-programming-overview.md
   - name: Quick Starts
     items:
     - name: Create Word add-in
