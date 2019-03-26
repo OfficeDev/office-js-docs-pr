@@ -12,6 +12,8 @@
     - name: Host and platform availability
       href: overview/office-add-in-availability.md
       displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
+    - name: Requirements for running add-ins
+      href: concepts/requirements-for-running-office-add-ins.md
     - name: Add-in development best practices
       href: concepts/add-in-development-best-practices.md
     - name: Add-in development lifecycle
@@ -71,16 +73,14 @@
           href: design/office-ui-fabric.md
         - name: Get started using Fabric React
           href: design/using-office-ui-fabric-react.md
-    - name: Install the latest Office version
-      href: develop/install-latest-office-version.md
     - name: Office versions and requirement sets
       href: develop/office-versions-and-requirement-sets.md
+    - name: Install the latest Office version
+      href: develop/install-latest-office-version.md
     - name: Performance
       href: concepts/resource-limits-and-performance-optimization.md
     - name: Privacy and security
       href: concepts/privacy-and-security.md
-    - name: Requirements for running add-ins
-      href: concepts/requirements-for-running-office-add-ins.md
   - name: Develop
     items:
     - name: Address same origin policy limitations
