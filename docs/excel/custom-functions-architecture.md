@@ -33,7 +33,7 @@ The browser engine runtime supports the Office.js APIs. Keep in mind that any of
 
 Code in your custom functions cannot directly interact with code in other parts of your web add-in, like the task pane because they are in different runtimes. But in some scenarios you may need to share data, such as passing a token.
 
-`AsyncStorage` can be used to store data from your custom functions and get data from your task pane code.
+`AsyncStorage` can be used to store data from your custom functions and get data from your task pane code. For more information about storing and sharing data, see [Saving and sharing state](custom-functions-overview.md#saving-and-sharing-state).
 
 You can see a code sample using `AsyncStorage` in this [Github repository](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) dedicated to patterns and practices.
 For more general information about `AsyncStorage`, see [Custom functions runtime](./custom-functions-runtime.md).
