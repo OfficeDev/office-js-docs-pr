@@ -219,7 +219,7 @@
   - name: Excel JavaScript API
     items:
     - name: Overview
-      href: reference/overview/excel-add-ins-reference-overview.m
+      href: reference/overview/excel-add-ins-reference-overview.md
       displayName: Excel
     - name: Fundamental programming concepts
       href: excel/excel-add-ins-core-concepts.md
