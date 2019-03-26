@@ -350,9 +350,24 @@
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
       displayName: PowerPoint
 
-
 - name: Project add-ins
   href: project/project-add-ins.md
+  items:
+  - name: Quick Starts
+    items:
+    - name: Create Project add-in
+      href: quickstarts/project-quickstart.md
+  - name: Project JavaScript API
+    items:
+    - name: Overview
+      href: reference/requirement-sets/powerpoint-and-project-note.md?context=office/dev/add-ins/project/context
+      displayName: Project
+    - name: Create a Project add-in that uses REST with an on-premises OData service
+      href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
+      displayName: Project
+    - name: Create your first task pane add-in for Project by using a text editor
+      href: project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md
+      displayName: Project
 
 - name: Visio add-ins
   href: reference/overview/visio-javascript-reference-overview.md
