@@ -2,16 +2,7 @@
   href: overview.yml
   displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
 
-- name: Overview
-  items:
-  - name: About Office Add-ins
-    href: overview/office-add-ins.md
-    displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
-  - name: Host and platform availability
-    href: overview/office-add-in-availability.md
-    displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
-
-- name: Office add-ins concepts
+- name: Concepts
   items:
   - name: Add-in development best practices
     href: concepts/add-in-development-best-practices.md
