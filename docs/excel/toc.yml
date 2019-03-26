@@ -59,7 +59,6 @@
           href: ../design/add-in-icons.md?context=office/dev/add-ins/excel/context
         - name: Using motion
           href: ../design/using-motion-office-addins.md?context=office/dev/add-ins/excel/context
-          displayName: Motion
       - name: Interface elements
         href: ../design/interface-elements.md?context=office/dev/add-ins/excel/context
         items:

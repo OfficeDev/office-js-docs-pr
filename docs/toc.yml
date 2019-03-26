@@ -1,6 +1,5 @@
 - name: Office Add-ins Documentation
   href: overview.yml
-  displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
 
 - name: Office Add-ins
   items:
@@ -8,10 +7,8 @@
     items:
     - name: About Office Add-ins
       href: overview/office-add-ins.md
-      displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     - name: Host and platform availability
       href: overview/office-add-in-availability.md
-      displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     - name: Requirements for running add-ins
       href: concepts/requirements-for-running-office-add-ins.md
     - name: Add-in development best practices
@@ -42,7 +39,6 @@
           href: design/add-in-icons.md
         - name: Using motion
           href: design/using-motion-office-addins.md
-          displayName: Motion
       - name: Interface elements
         href: design/interface-elements.md
         items:
