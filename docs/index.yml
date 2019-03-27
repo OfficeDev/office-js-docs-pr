@@ -30,12 +30,12 @@ sections:
         - href: /azure/cosmos-db/distribute-data-globally/
           html: <p>Learn about the Office Add-ins platform.</p>
           image:
-            src: images/index/ExcelLogoColor.svg
+            src: images/index/office-add-ins.gif
           title: Office Add-ins
         - href: /azure/cosmos-db/graph-introduction/
           html: <p>Learn about the JavaScript API for Office.</p>
           image:
-            src: images/index/ExcelLogoColor.svg
+            src: images/index/api-ref.svg
           title: JavaScript API for Office
         - href: /azure/cosmos-db/sql-api-query-reference/
           html: <p>Develop Excel add-ins and custom functions.</p>
