@@ -29,6 +29,7 @@ ms.author: o365devx
                                               </div>
                                           </div>
                                           <div class="cardText">
+                                              <img src="images/index/ExcelLogoColor.svg" alt="" />&#160;
                                               <h3>Excel add-ins</h3>
                                               <ul class="noBullet">
                                               <li><a class="barLink" href="/office/dev/add-ins/excel/excel-add-ins-overview"><strong>About Excel add-ins</strong></a></li>
@@ -54,6 +55,7 @@ ms.author: o365devx
                                               </div>
                                           </div>
                                           <div class="cardText">
+                                              <img src="images/index/OneNoteLogoColor.svg" alt="" />&#160;
                                               <h3>OneNote add-ins</h3>
                                               <ul class="noBullet">
                                               <li><a class="barLink" href="/office/dev/add-ins/onenote/onenote-add-ins-programming-overview"><strong>About OneNote add-ins</strong></a></li>
@@ -77,6 +79,7 @@ ms.author: o365devx
                                               </div>
                                           </div>
                                           <div class="cardText">
+                                              <img src="images/index/OutlookLogoColor.svg" alt="" />&#160;
                                               <h3>Outlook add-ins</h3>
                                               <ul class="noBullet">
                                               <li><a class="barLink" href="/outlook/add-ins"><strong>About Outlook add-ins</strong></a></li>
@@ -101,6 +104,7 @@ ms.author: o365devx
                                               </div>
                                           </div>
                                           <div class="cardText">
+                                              <img src="images/index/PowerPointLogoColor.svg" alt="" />&#160;
                                               <h3>PowerPoint add-ins</h3>
                                               <ul class="noBullet">
                                               <li><a class="barLink" href="/office/dev/add-ins/powerpoint/powerpoint-add-ins"><strong>About PowerPoint add-ins</strong></a></li>
@@ -125,6 +129,7 @@ ms.author: o365devx
                                               </div>
                                           </div>
                                           <div class="cardText">
+                                              <img src="images/index/ProjectLogoColor.svg" alt="" />&#160;
                                               <h3>Project add-ins</h3>
                                               <ul class="noBullet">
                                               <li><a class="barLink" href="/office/dev/add-ins/project/project-add-ins"><strong>About Project add-ins</strong></a></li>
@@ -149,6 +154,7 @@ ms.author: o365devx
                                               </div>
                                           </div>
                                           <div class="cardText">
+                                              <img src="images/index/WordLogoColor.svg" alt="" />&#160;
                                               <h3>Word add-ins</h3>
                                               <ul class="noBullet">
                                               <li><a class="barLink" href="/office/dev/add-ins/word/word-add-ins-programming-overview"><strong>About Word add-ins</strong></a></li>
