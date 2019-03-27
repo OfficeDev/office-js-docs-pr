@@ -17,14 +17,18 @@ ms.author: o365devx
                 <a href="#add-ins">Office Add-ins</a>
                 <ul id="add-ins">
                     <li>
-                        <a href="#add-ins">Office Add-ins</a>
-                        <ul id="add-ins" class="cardsL cols cols3">
+                        <a href="#add-in-hosts">Office Add-ins</a>
+                        <ul id="add-in-hosts" class="cardsL cols cols3">
                             <li>
                               <div class="cardSize">
                                   <div class="cardPadding">
                                       <div class="card">
+                                          <div class="cardImageOuter">
+                                              <div class="cardImage">
+                                                  <img src="images/index/ExcelLogoColor.svg" alt="" />
+                                              </div>
+                                          </div>
                                           <div class="cardText">
-                                              <img src="images/index/ExcelLogoColor.svg" alt="" />&#160;
                                               <h3>Excel add-ins</h3>
                                               <ul class="noBullet">
                                               <li><a class="barLink" href="/office/dev/add-ins/excel/excel-add-ins-overview">About Excel add-ins</a></li>
@@ -44,8 +48,12 @@ ms.author: o365devx
                               <div class="cardSize">
                                   <div class="cardPadding">
                                       <div class="card">
+                                          <div class="cardImageOuter">
+                                              <div class="cardImage">
+                                                  <img src="images/index/OneNoteLogoColor.svg" alt="" />
+                                              </div>
+                                          </div>
                                           <div class="cardText">
-                                              <img src="images/index/OneNoteLogoColor.svg" alt="" />&#160;
                                               <h3>OneNote add-ins</h3>
                                               <ul class="noBullet">
                                               <li><a class="barLink" href="/office/dev/add-ins/onenote/onenote-add-ins-programming-overview">About OneNote add-ins</a></li>
@@ -63,8 +71,12 @@ ms.author: o365devx
                               <div class="cardSize">
                                   <div class="cardPadding">
                                       <div class="card">
+                                          <div class="cardImageOuter">
+                                              <div class="cardImage">
+                                                  <img src="images/index/OutlookLogoColor.svg" alt="" />
+                                              </div>
+                                          </div>
                                           <div class="cardText">
-                                              <img src="images/index/OutlookLogoColor.svg" alt="" />&#160;
                                               <h3>Outlook add-ins</h3>
                                               <ul class="noBullet">
                                               <li><a class="barLink" href="/outlook/add-ins">About Outlook add-ins</a></li>
@@ -83,8 +95,12 @@ ms.author: o365devx
                               <div class="cardSize">
                                   <div class="cardPadding">
                                       <div class="card">
+                                          <div class="cardImageOuter">
+                                              <div class="cardImage">
+                                                  <img src="images/index/PowerPointLogoColor.svg" alt="" />
+                                              </div>
+                                          </div>
                                           <div class="cardText">
-                                              <img src="images/index/PowerPointLogoColor.svg" alt="" />&#160;
                                               <h3>PowerPoint add-ins</h3>
                                               <ul class="noBullet">
                                               <li><a class="barLink" href="/office/dev/add-ins/powerpoint/powerpoint-add-ins">About PowerPoint add-ins</a></li>
@@ -103,8 +119,12 @@ ms.author: o365devx
                               <div class="cardSize">
                                   <div class="cardPadding">
                                       <div class="card">
+                                          <div class="cardImageOuter">
+                                              <div class="cardImage">
+                                                  <img src="images/index/ProjectLogoColor.svg" alt="" />
+                                              </div>
+                                          </div>
                                           <div class="cardText">
-                                              <img src="images/index/ProjectLogoColor.svg" alt="" />&#160;
                                               <h3>Project add-ins</h3>
                                               <ul class="noBullet">
                                               <li><a class="barLink" href="/office/dev/add-ins/project/project-add-ins">About Project add-ins</a></li>
@@ -123,8 +143,12 @@ ms.author: o365devx
                               <div class="cardSize">
                                   <div class="cardPadding">
                                       <div class="card">
+                                          <div class="cardImageOuter">
+                                              <div class="cardImage">
+                                                  <img src="images/index/WordLogoColor.svg" alt="" />
+                                              </div>
+                                          </div>
                                           <div class="cardText">
-                                              <img src="images/index/WordLogoColor.svg" alt="" />&#160;
                                               <h3>Word add-ins</h3>
                                               <ul class="noBullet">
                                               <li><a class="barLink" href="/office/dev/add-ins/word/word-add-ins-programming-overview">About Word add-ins</a></li>
