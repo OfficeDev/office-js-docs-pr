@@ -65,11 +65,11 @@ sections:
   - title: 5-Minute Quick Starts
     items:
     - type: paragraph
-      text: 'Build your first add-in using one of the following quick starts DB&#58;'
+      text: 'Build your first add-in using one of the following quick starts&#58;'
     - type: list
       style: unordered
       items:
-      - html: Excel task pane add-in DB&#58; <a href="/office/dev/add-ins/quickstarts/excel-quickstart-angular">Angular</a> | <a href="/office/dev/add-ins/quickstarts/excel-quickstart-jquery">jQuery</a> | <a href="/office/dev/add-ins/quickstarts/excel-quickstart-react">React</a> | <a href="/office/dev/add-ins/quickstarts/excel-quickstart-vue">Vue</a>
+      - html: Excel task pane add-in&#58; <a href="/office/dev/add-ins/quickstarts/excel-quickstart-angular">Angular</a> | <a href="/office/dev/add-ins/quickstarts/excel-quickstart-jquery">jQuery</a> | <a href="/office/dev/add-ins/quickstarts/excel-quickstart-react">React</a> | <a href="/office/dev/add-ins/quickstarts/excel-quickstart-vue">Vue</a>
       - html: <a href="/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions">Excel custom functions</a>
       - html: <a href="/office/dev/add-ins/quickstarts/onenote-quickstart">OneNote task pane add-in</a>
       - html: <a href="/outlook/add-ins/quick-start">Outlook task pane add-in</a>
@@ -85,19 +85,25 @@ sections:
       items:
       - title: Office JavaScript API questions
         href: https://stackoverflow.com/questions/tagged/office-js
+        target: _blank
         image: 
           src: images/index/i_support.svg
           href: https://stackoverflow.com/questions/tagged/office-js
+          target: _blank
       - title: Office JavaScript API issues 
         href: https://github.com/officedev/office-js/issues
+        target: _blank
         image: 
           src: images/index/i_bug.svg
           href: https://github.com/officedev/office-js/issues
+          target: _blank
       - title: Office JavaScript API feature requests
         href: https://officespdev.uservoice.com/
+        target: _blank
         image: 
           src: images/index/i_feedback.svg
           href: https://officespdev.uservoice.com/
+          target: _blank
 
   - title: Reference
     items:
