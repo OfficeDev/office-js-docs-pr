@@ -29,7 +29,7 @@ ms.author: o365devx
                                               </div>
                                           </div>
                                           <div class="cardText">
-                                              <h3>Excel add-ins</h3>
+                                              <h2>Excel add-ins</h2>
                                               <ul class="noBullet">
                                               <li><a class="barLink" href="/office/dev/add-ins/excel/excel-add-ins-overview">About Excel add-ins</a></li>
                                               <li><a class="barLink" href="/office/dev/add-ins/overview/office-add-ins?context=office/dev/add-ins/excel/context">Office Add-ins platform overview</a></li>
@@ -54,7 +54,7 @@ ms.author: o365devx
                                               </div>
                                           </div>
                                           <div class="cardText">
-                                              <h3>OneNote add-ins</h3>
+                                              <h2>OneNote add-ins</h2>
                                               <ul class="noBullet">
                                               <li><a class="barLink" href="/office/dev/add-ins/onenote/onenote-add-ins-programming-overview">About OneNote add-ins</a></li>
                                               <li><a class="barLink" href="/office/dev/add-ins/overview/office-add-ins?context=office/dev/add-ins/onenote/context">Office Add-ins platform overview</a></li>
@@ -77,7 +77,7 @@ ms.author: o365devx
                                               </div>
                                           </div>
                                           <div class="cardText">
-                                              <h3>Outlook add-ins</h3>
+                                              <h2>Outlook add-ins</h2>
                                               <ul class="noBullet">
                                               <li><a class="barLink" href="/outlook/add-ins">About Outlook add-ins</a></li>
                                               <li><a class="barLink" href="/office/dev/add-ins/overview/office-add-ins?context=outlook/context">Office Add-ins platform overview</a></li>
@@ -101,7 +101,7 @@ ms.author: o365devx
                                               </div>
                                           </div>
                                           <div class="cardText">
-                                              <h3>PowerPoint add-ins</h3>
+                                              <h2>PowerPoint add-ins</h2>
                                               <ul class="noBullet">
                                               <li><a class="barLink" href="/office/dev/add-ins/powerpoint/powerpoint-add-ins">About PowerPoint add-ins</a></li>
                                               <li><a class="barLink" href="/office/dev/add-ins/overview/office-add-ins?context=office/dev/add-ins/powerpoint/context">Office Add-ins platform overview</a></li>
@@ -125,7 +125,7 @@ ms.author: o365devx
                                               </div>
                                           </div>
                                           <div class="cardText">
-                                              <h3>Project add-ins</h3>
+                                              <h2>Project add-ins</h2>
                                               <ul class="noBullet">
                                               <li><a class="barLink" href="/office/dev/add-ins/project/project-add-ins">About Project add-ins</a></li>
                                               <li><a class="barLink" href="/office/dev/add-ins/overview/office-add-ins?context=office/dev/add-ins/project/context">Office Add-ins platform overview</a></li>
@@ -149,7 +149,7 @@ ms.author: o365devx
                                               </div>
                                           </div>
                                           <div class="cardText">
-                                              <h3>Word add-ins</h3>
+                                              <h2>Word add-ins</h2>
                                               <ul class="noBullet">
                                               <li><a class="barLink" href="/office/dev/add-ins/word/word-add-ins-programming-overview">About Word add-ins</a></li>
                                               <li><a class="barLink" href="/office/dev/add-ins/overview/office-add-ins?context=office/dev/add-ins/word/context">Office Add-ins platform overview</a></li>
