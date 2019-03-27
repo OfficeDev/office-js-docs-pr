@@ -10,7 +10,7 @@ metadata:
   ms.date: 12/04/2017
   ms.author: o365devx
 abstract:
-  description: The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad. Learn how to create Office Add-ins with our quick starts, how-to guides, and API reference documentation.<br/><br/><b>Note:</b> For information about COM or VSTO add-ins, see the <a href="/office/client-developer/office-client-development" target="_blank">Office client development documentation</a>.
+  description: The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad.<br/><br/><b>Note:</b> For information about COM or VSTO add-ins, see the <a href="/office/client-developer/office-client-development" target="_blank">Office client development documentation</a>.
   aside:
     image:
       alt: 
@@ -25,7 +25,7 @@ sections:
     - type: list
       style: cards
       className: cardsM
-      columns: 3
+      columns: 4
       items:
         - href: /azure/cosmos-db/distribute-data-globally/
           html: <p>Learn about the Office Add-ins platform.</p>
@@ -38,32 +38,32 @@ sections:
             src: images/index/api-ref.svg
           title: JavaScript API for Office
         - href: /azure/cosmos-db/sql-api-query-reference/
-          html: <p>Develop Excel add-ins and custom functions.</p>
+          html: <p>Build Excel add-ins and custom functions.</p>
           image:
             src: images/index/ExcelLogoColor.svg
           title: Excel add-ins
         - href: /azure/cosmos-db/graph-introduction/
-          html: <p>Develop OneNote add-ins.</p>
+          html: <p>Build OneNote add-ins.</p>
           image:
             src: images/index/OneNoteLogoColor.svg
           title: OneNote add-ins
         - href: /azure/cosmos-db/graph-introduction/
-          html: <p>Develop Outlook add-ins.</p>
+          html: <p>Build Outlook add-ins.</p>
           image:
             src: images/index/OutlookLogoColor.svg
           title: Outlook add-ins
         - href: /azure/cosmos-db/graph-introduction/
-          html: <p>Develop PowerPoint add-ins.</p>
+          html: <p>Build PowerPoint add-ins.</p>
           image:
             src: images/index/PowerPointLogoColor.svg
           title: PowerPoint add-ins
         - href: /azure/cosmos-db/graph-introduction/
-          html: <p>Develop Project add-ins.</p>
+          html: <p>Build Project add-ins.</p>
           image:
             src: images/index/ProjectLogoColor.svg
           title: Project add-ins
         - href: /azure/cosmos-db/graph-introduction/
-          html: <p>Develop Word add-ins.</p>
+          html: <p>Build Word add-ins.</p>
           image:
             src: images/index/WordLogoColor.svg
           title: Word add-ins
