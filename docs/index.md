@@ -11,7 +11,7 @@ ms.author: o365devx
 <div id="main" class="v2">
     <div class="container">
         <h1 class="screenReader">Office Add-ins documentation</h1>
-        <p style="font-size: 1.12rem;margin-bottom: 1rem;">The <a href="https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad.</p>
+        <p style="font-size: 1.12rem;margin-bottom: 1rem;">The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad.</p>
         <ul class="pivots">
             <li>
                 <a href="#add-ins">Office Add-ins</a>
