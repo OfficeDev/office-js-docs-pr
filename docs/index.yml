@@ -25,23 +25,18 @@ sections:
     - type: list
       style: cards
       className: cardsM
-      columns: 3
+      columns: 4
       items:
         - href: /azure/cosmos-db/distribute-data-globally/
           html: <p>Learn about Office Add-ins.</p>
           image:
             src: images/index/blocks.svg
           title: Office Add-ins
-        - href: /office/dev/add-ins/develop/understanding-the-javascript-api-for-office/
+        - href: /office/dev/add-ins/reference/javascript-api-for-office/
           html: <p>Learn about the JavaScript API for Office.</p>
           image:
             src: images/index/api-ref.svg
           title: JavaScript API for Office
-        - href: /office/dev/add-ins/develop/add-in-manifests/
-          html: <p>Learn about the file that defines an Office Add-in.</p>
-          image:
-            src: images/index/developer.svg
-          title: Office Add-ins XML manifest
         - href: /office/dev/add-ins/excel/excel-add-ins-overview/
           html: <p>Build Excel add-ins and custom functions.</p>
           image:
@@ -57,12 +52,12 @@ sections:
           image:
             src: images/index/OutlookLogoColor.svg
           title: Outlook add-ins
-        - href: /office/dev/add-ins/powerpoint/powerpoint-add-ins
+        - href: /office/dev/add-ins/powerpoint/powerpoint-add-ins/
           html: <p>Build PowerPoint add-ins.</p>
           image:
             src: images/index/PowerPointLogoColor.svg
           title: PowerPoint add-ins
-        - href: /office/dev/add-ins/project/project-add-ins
+        - href: /office/dev/add-ins/project/project-add-ins/
           html: <p>Build Project add-ins.</p>
           image:
             src: images/index/ProjectLogoColor.svg
