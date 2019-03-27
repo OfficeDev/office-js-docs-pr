@@ -25,9 +25,9 @@ sections:
     - type: list
       style: cards
       className: cardsM
-      columns: 4
+      columns: 3
       items:
-        - href: /azure/cosmos-db/distribute-data-globally/
+        - href: /office/dev/add-ins/overview/office-add-ins/
           html: <p>Learn about Office Add-ins.</p>
           image:
             src: images/index/blocks.svg
@@ -37,6 +37,11 @@ sections:
           image:
             src: images/index/api-ref.svg
           title: JavaScript API for Office
+        - href: /office/dev/add-ins/develop/add-in-manifests/
+          html: <p>Learn about XML file that defines an add-in.</p>
+          image:
+            src: images/index/developer.svg
+          title: Office Add-ins manifest
         - href: /office/dev/add-ins/excel/excel-add-ins-overview/
           html: <p>Build Excel add-ins and custom functions.</p>
           image:
