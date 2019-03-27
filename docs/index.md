@@ -23,11 +23,6 @@ ms.author: o365devx
                               <div class="cardSize">
                                   <div class="cardPadding">
                                       <div class="card">
-                                          <div class="cardImageOuter">
-                                              <div class="cardImage">
-                                                  <img src="images/index/ExcelLogoColor.svg" alt="" />
-                                              </div>
-                                          </div>
                                           <div class="cardText">
                                               <img src="images/index/ExcelLogoColor.svg" alt="" />&#160;
                                               <h3>Excel add-ins</h3>
@@ -49,11 +44,6 @@ ms.author: o365devx
                               <div class="cardSize">
                                   <div class="cardPadding">
                                       <div class="card">
-                                          <div class="cardImageOuter">
-                                              <div class="cardImage">
-                                                  <img src="images/index/OneNoteLogoColor.svg" alt="" />
-                                              </div>
-                                          </div>
                                           <div class="cardText">
                                               <img src="images/index/OneNoteLogoColor.svg" alt="" />&#160;
                                               <h3>OneNote add-ins</h3>
@@ -73,11 +63,6 @@ ms.author: o365devx
                               <div class="cardSize">
                                   <div class="cardPadding">
                                       <div class="card">
-                                          <div class="cardImageOuter">
-                                              <div class="cardImage">
-                                                  <img src="images/index/OutlookLogoColor.svg" alt="" />
-                                              </div>
-                                          </div>
                                           <div class="cardText">
                                               <img src="images/index/OutlookLogoColor.svg" alt="" />&#160;
                                               <h3>Outlook add-ins</h3>
@@ -98,11 +83,6 @@ ms.author: o365devx
                               <div class="cardSize">
                                   <div class="cardPadding">
                                       <div class="card">
-                                          <div class="cardImageOuter">
-                                              <div class="cardImage">
-                                                  <img src="images/index/PowerPointLogoColor.svg" alt="" />
-                                              </div>
-                                          </div>
                                           <div class="cardText">
                                               <img src="images/index/PowerPointLogoColor.svg" alt="" />&#160;
                                               <h3>PowerPoint add-ins</h3>
@@ -123,11 +103,6 @@ ms.author: o365devx
                               <div class="cardSize">
                                   <div class="cardPadding">
                                       <div class="card">
-                                          <div class="cardImageOuter">
-                                              <div class="cardImage">
-                                                  <img src="images/index/ProjectLogoColor.svg" alt="" />
-                                              </div>
-                                          </div>
                                           <div class="cardText">
                                               <img src="images/index/ProjectLogoColor.svg" alt="" />&#160;
                                               <h3>Project add-ins</h3>
@@ -148,11 +123,6 @@ ms.author: o365devx
                               <div class="cardSize">
                                   <div class="cardPadding">
                                       <div class="card">
-                                          <div class="cardImageOuter">
-                                              <div class="cardImage">
-                                                  <img src="images/index/WordLogoColor.svg" alt="" />
-                                              </div>
-                                          </div>
                                           <div class="cardText">
                                               <img src="images/index/WordLogoColor.svg" alt="" />&#160;
                                               <h3>Word add-ins</h3>
