@@ -18,7 +18,7 @@ ms.author: o365devx
                 <ul id="add-ins">
                     <li>
                         <a href="#add-in-hosts">Office Add-ins</a>
-                        <ul id="add-in-hosts" class="cardsL">
+                        <ul id="add-in-hosts" class="cardsF">
                             <li>
                               <div class="cardSize">
                                   <div class="cardPadding">
