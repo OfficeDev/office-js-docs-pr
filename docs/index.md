@@ -14,26 +14,28 @@ ms.author: o365devx
         <p style="font-size: 1.12rem;margin-bottom: 1rem;">The <a href="https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad.</p>
         <ul class="pivots">
             <li>
-                <a href="#sqlserver">SQL Server</a>
-                <ul id="sqlserver">
+                <ul id="add-ins">
                     <li>
-                        <a href="#sqlserver"></a>
-                        <ul id="sqlserver" class="cardsL cols cols3">
+                        <ul id="add-ins" class="cardsL cols cols3">
                             <li>
                               <div class="cardSize">
                                   <div class="cardPadding">
                                       <div class="card">
                                           <div class="cardImageOuter">
                                               <div class="cardImage">
-                                                  <img src="media/index/windows.png" alt="" />
+                                                  <img src="images/index/ExcelLogoColor.svg" alt="" />
                                               </div>
                                           </div>
                                           <div class="cardText">
-                                              <h3>SQL Server on Windows</h3>
+                                              <h3>Excel add-ins</h3>
                                               <ul class="noBullet">
-                                              <li><a class="barLink" href="/sql/sql-server/sql-server-technical-documentation?toc=..%2ftoc%2ftoc.json"><strong>On-premises</strong></a></li>
-                                              <li><a class="barLink" href="/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-iaas-overview/"> <strong>On an Azure VM</strong></a></li>
-                                              <li><a class="barLink" href="/sql/sql-server/what-s-new-in-sql-server-ver15/"><strong>What's new</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/excel/excel-add-ins-overview"><strong>About Excel add-ins</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/overview/office-add-ins?context=office/dev/add-ins/excel/context"><strong>Office Add-ins platform overview</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/quickstarts/excel-quickstart-jquery"><strong>Quick Start</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview"><strong>Develop: Excel JavaScript API</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/excel/custom-functions-overview"><strong>Develop: custom functions</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/testing/test-debug-office-add-ins?context=office/dev/add-ins/excel/context"><strong>Test and debug</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/publish/publish?context=office/dev/add-ins/excel/context"><strong>Publish</strong></a></li>
                                               </ul>
                                           </div>
                                       </div>
@@ -46,15 +48,41 @@ ms.author: o365devx
                                       <div class="card">
                                           <div class="cardImageOuter">
                                               <div class="cardImage">
-                                                  <img src="media/index/azure.png" alt="" />
+                                                  <img src="images/index/OneNoteLogoColor.svg" alt="" />
                                               </div>
                                           </div>
                                           <div class="cardText">
-                                              <h3>SQL as an Azure Service</h3>
+                                              <h3>OneNote add-ins</h3>
                                               <ul class="noBullet">
-                                                  <li><a class="barLink" href="/azure/sql-database/"><strong>Azure SQL Database</strong></a></li>
-                                                  <li><a class="barLink" href="/azure/sql-data-warehouse/sql-data-warehouse-overview-what-is/"> <strong>Azure SQL Data Warehouse</strong></a></li>
-                                                  <li><a class="barLink" href="https://azure.microsoft.com/updates/?status=all&product=sql-database"><strong>What's new</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/onenote/onenote-add-ins-programming-overview"><strong>About OneNote add-ins</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/overview/office-add-ins?context=office/dev/add-ins/onenote/context"><strong>Office Add-ins platform overview</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/quickstarts/onenote-quickstart"><strong>Quick Start</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference"><strong>Develop: OneNote JavaScript API</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/testing/test-debug-office-add-ins?context=office/dev/add-ins/onenote/context"><strong>Test and debug</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/publish/publish?context=office/dev/add-ins/onenote/context"><strong>Publish</strong></a></li>
+                                              </ul>
+                                          </div>
+                                  </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="cardSize">
+                                  <div class="cardPadding">
+                                      <div class="card">
+                                          <div class="cardImageOuter">
+                                              <div class="cardImage">
+                                                  <img src="images/index/OutlookLogoColor.svg" alt="" />
+                                              </div>
+                                          </div>
+                                          <div class="cardText">
+                                              <h3>Outlook add-ins</h3>
+                                              <ul class="noBullet">
+                                              <li><a class="barLink" href="/outlook/add-ins"><strong>About Outlook add-ins</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/overview/office-add-ins?context=outlook/context"><strong>Office Add-ins platform overview</strong></a></li>
+                                              <li><a class="barLink" href="/outlook/add-ins/quick-start"><strong>Quick Start</strong></a></li>
+                                              <li><a class="barLink" href="/outlook/add-ins/apis"><strong>Develop: Outlook JavaScript API</strong></a></li>
+                                              <li><a class="barLink" href="/outlook/add-ins/testing-and-tips"><strong>Test and debug</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/publish/publish?context=outlook/context"><strong>Publish</strong></a></li>
                                               </ul>
                                           </div>
                                       </div>
@@ -62,25 +90,76 @@ ms.author: o365devx
                               </div>
                             </li>
                             <li>
-                                <div class="cardSize">
-                                    <div class="cardPadding">
-                                        <div class="card">
-                                            <div class="cardImageOuter">
-                                                <div class="cardImage">
-                                                    <img src="media/index/linux.png" alt="" />
-                                                </div>
-                                            </div>
-                                            <div class="cardText">
-                                                <h3>SQL Server on Linux</h3>
-                                                <ul class="noBullet">
-                                                    <li><a class="barLink" href="/sql/linux/sql-server-linux-overview/"><strong>On-premises</strong></a></li>
-                                                    <li><a class="barLink" href="/sql/linux/quickstart-install-connect-clouds/"><strong>On an Azure VM</strong></a></li>
-                                                    <li><a class="barLink" href="/sql/linux/sql-server-linux-whats-new/"><strong>What's new</strong></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                              <div class="cardSize">
+                                  <div class="cardPadding">
+                                      <div class="card">
+                                          <div class="cardImageOuter">
+                                              <div class="cardImage">
+                                                  <img src="images/index/PowerPointLogoColor.svg" alt="" />
+                                              </div>
+                                          </div>
+                                          <div class="cardText">
+                                              <h3>PowerPoint add-ins</h3>
+                                              <ul class="noBullet">
+                                              <li><a class="barLink" href="/office/dev/add-ins/powerpoint/powerpoint-add-ins"><strong>About PowerPoint add-ins</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/overview/office-add-ins?context=office/dev/add-ins/powerpoint/context"><strong>Office Add-ins platform overview</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/quickstarts/powerpoint-quickstart"><strong>Quick Start</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/reference/requirement-sets/powerpoint-and-project-note?context=office/dev/add-ins/powerpoint/context"><strong>Develop: PowerPoint JavaScript API</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/testing/test-debug-office-add-ins?context=office/dev/add-ins/powerpoint/context"><strong>Test and debug</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/publish/publish?context=office/dev/add-ins/powerpoint/context"><strong>Publish</strong></a></li>
+                                              </ul>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="cardSize">
+                                  <div class="cardPadding">
+                                      <div class="card">
+                                          <div class="cardImageOuter">
+                                              <div class="cardImage">
+                                                  <img src="images/index/ProjectLogoColor.svg" alt="" />
+                                              </div>
+                                          </div>
+                                          <div class="cardText">
+                                              <h3>Project add-ins</h3>
+                                              <ul class="noBullet">
+                                              <li><a class="barLink" href="/office/dev/add-ins/project/project-add-ins"><strong>About Project add-ins</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/overview/office-add-ins?context=office/dev/add-ins/project/context"><strong>Office Add-ins platform overview</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/quickstarts/project-quickstart"><strong>Quick Start</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/reference/requirement-sets/powerpoint-and-project-note?context=office/dev/add-ins/project/context"><strong>Develop: Project JavaScript API</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/testing/test-debug-office-add-ins?context=office/dev/add-ins/project/context"><strong>Test and debug</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/publish/publish?context=office/dev/add-ins/project/context"><strong>Publish</strong></a></li>
+                                              </ul>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="cardSize">
+                                  <div class="cardPadding">
+                                      <div class="card">
+                                          <div class="cardImageOuter">
+                                              <div class="cardImage">
+                                                  <img src="images/index/WordLogoColor.svg" alt="" />
+                                              </div>
+                                          </div>
+                                          <div class="cardText">
+                                              <h3>Word add-ins</h3>
+                                              <ul class="noBullet">
+                                              <li><a class="barLink" href="/office/dev/add-ins/word/word-add-ins-programming-overview"><strong>About Word add-ins</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/overview/office-add-ins?context=office/dev/add-ins/word/context"><strong>Office Add-ins platform overview</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/quickstarts/word-quickstart"><strong>Quick Start</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/reference/overview/word-add-ins-reference-overview"><strong>Develop: Word JavaScript API</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/testing/test-debug-office-add-ins?context=office/dev/add-ins/word/context"><strong>Test and debug</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/publish/publish?context=office/dev/add-ins/word/context"><strong>Publish</strong></a></li>
+                                              </ul>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
                             </li>
                         </ul>
                     </li>
