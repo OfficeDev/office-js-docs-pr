@@ -266,6 +266,9 @@
         - name: Custom functions tutorial
           href: tutorials/excel-tutorial-create-custom-functions.md
           displayName: Excel
+        - name: Custom functions web requests
+          href: excel/custom-functions-web-reqs.md
+          displayName: Excel
         - name: Custom functions runtime
           href: excel/custom-functions-runtime.md
           displayName: Excel
@@ -277,6 +280,9 @@
           displayName: Excel
         - name: Custom functions authentication
           href: excel/custom-functions-authentication.md
+          displayName: Excel
+        - name: Custom functions dialog
+          href: excel/custom-functions-dialog.md
           displayName: Excel
         - name: Custom functions changelog
           href: excel/custom-functions-changelog.md
@@ -316,6 +322,9 @@
         displayName: Excel
       - name: Ranges (advanced)
         href: excel/excel-add-ins-ranges-advanced.md
+        displayName: Excel
+      - name: Shapes
+        href: excel/excel-add-ins-shapes.md
         displayName: Excel
       - name: Tables
         href: excel/excel-add-ins-tables.md

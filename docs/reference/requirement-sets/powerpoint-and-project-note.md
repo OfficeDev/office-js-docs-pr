@@ -1,7 +1,7 @@
 ---
 title: PowerPoint and Project in the JavaScript API
 description: ''
-ms.date: 12/27/2018
+ms.date: 03/19/2019
 ms.prod: non-product-specific
 localization_priority: Priority
 ---
@@ -12,5 +12,5 @@ PowerPoint and Project support add-ins made with the JavaScript API. However, th
 ## See also
 
 - [JavaScript API for Office](/office/dev/add-ins/reference/javascript-api-for-office)
-- [Office Add-in host and platform availability](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-in-availability)
+- [Office Add-in host and platform availability](/office/dev/add-ins/overview/office-add-in-availability)
 - [Common API Reference](/javascript/api/overview/office)

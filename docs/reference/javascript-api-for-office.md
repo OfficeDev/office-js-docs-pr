@@ -1,7 +1,7 @@
 ---
 title: JavaScript API for Office
 description: ''
-ms.date: 10/09/2018
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -35,4 +35,4 @@ As we design and develop new APIs for Office Add-ins, we'll make them available 
 
 ## See also
 
-- [Office JavaScript API reference](https://docs.microsoft.com/javascript/api/overview/office)
+- [Office JavaScript API reference](/javascript/api/overview/office)

@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins XML manifest
 description: ''
-ms.date: 12/26/2018
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -24,7 +24,7 @@ An XML manifest file based on this schema enables an Office Add-in to do the fol
 * For Outlook add-ins, define the rule or rules that specify the context in which they will be activated and interact with a message, appointment, or meeting request item.
 
 > [!NOTE]
-> If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](https://docs.microsoft.com/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).
+> If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).
 
 ## Required elements
 
@@ -93,26 +93,26 @@ _\*Added in the Office Add-in Manifest Schema version 1.1._
 
 All image URIs, such as those used for [add-in commands][], must support caching. The server hosting the image should not return a `Cache-Control` header specifying `no-cache`, `no-store`, or similar options in the HTTP response.
 
-All URLs, such as the source file locations specified in the [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation) element, should be **SSL-secured (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
+All URLs, such as the source file locations specified in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element, should be **SSL-secured (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
 
 ## Best practices for submitting to AppSource
 
 Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID.
 
-Add-ins submitted to AppSource must also include the [SupportUrl](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/supporturl) element. For more information, see [Validation policies for apps and add-ins submitted to AppSource](https://docs.microsoft.com/office/dev/store/validation-policies).
+Add-ins submitted to AppSource must also include the [SupportUrl](/office/dev/add-ins/reference/manifest/supporturl) element. For more information, see [Validation policies for apps and add-ins submitted to AppSource](/office/dev/store/validation-policies).
 
-Only use the [AppDomains](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/appdomains) element to specify domains other than the one specified in the [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation) element for authentication scenarios.
+Only use the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) element to specify domains other than the one specified in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element for authentication scenarios.
 
 ## Specify domains you want to open in the add-in window
 
-When running in Office Online, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation) element of the manifest file), that URL opens in a new browser window outside the add-in pane of the Office host application.
+When running in Office Online, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element of the manifest file), that URL opens in a new browser window outside the add-in pane of the Office host application.
 
-To override this (desktop Office) behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/appdomains) element of the manifest file. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both desktop Office and Office Online. If it tries to go to a URL that isn't in the list, then, in desktop Office, that URL opens in a new browser window (outside the add-in pane).
+To override this (desktop Office) behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) element of the manifest file. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both desktop Office and Office Online. If it tries to go to a URL that isn't in the list, then, in desktop Office, that URL opens in a new browser window (outside the add-in pane).
 
 > [!NOTE]
 > This behavior applies only to the root pane of the add-in. If there is an iframe embedded in the add-in page, the iframe can be directed to any URL regardless of whether it is listed in **AppDomains**, even in desktop Office.
 
-The following XML manifest example hosts its main add-in page in the `https://www.contoso.com` domain as specified in the **SourceLocation** element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/appdomain) element within the **AppDomains** element list. If the add-in goes to a page in the www.northwindtraders.com domain, that page opens in the add-in pane, even in Office desktop.
+The following XML manifest example hosts its main add-in page in the `https://www.contoso.com` domain as specified in the **SourceLocation** element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](/office/dev/add-ins/reference/manifest/appdomain) element within the **AppDomains** element list. If the add-in goes to a page in the www.northwindtraders.com domain, that page opens in the add-in pane, even in Office desktop.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -199,7 +199,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
                 <Label resid="Contoso.Tab1.GroupLabel" />
                 <Icon>
                   <!-- Sample Todo: Each size needs its own icon resource or it will look distorted when resized -->
-                  <!--Icons. Required sizes 16,31,80, optional 20, 24, 40, 48, 64. Strongly recommended to provide all sizes for great UX -->
+                  <!--Icons. Required sizes: 16, 32, 80; optional: 20, 24, 40, 48, 64. You should provide as many sizes as possible for a great user experience. -->
                   <!--Use PNG icons and remember that all URLs on the resources section must use HTTPS -->
                   <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
                   <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />

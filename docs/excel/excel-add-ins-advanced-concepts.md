@@ -1,7 +1,7 @@
 ---
 title: Advanced programming concepts with the Excel JavaScript API
 description: ''
-ms.date: 10/03/2018
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -14,19 +14,19 @@ This article builds upon the information in [Fundamental programming concepts wi
 
 An Excel add-in interacts with objects in Excel by using the JavaScript API for Office, which includes two JavaScript object models:
 
-* **Excel JavaScript API**: Introduced with Office 2016, the [Excel JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) provides strongly-typed objects that you can use to access worksheets, ranges, tables, charts, and more. 
+* **Excel JavaScript API**: Introduced with Office 2016, the [Excel JavaScript API](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) provides strongly-typed objects that you can use to access worksheets, ranges, tables, charts, and more. 
 
 * **Common APIs**: Introduced with Office 2013, the [Common API](../reference/javascript-api-for-office.md) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of host applications such as Word, Excel, and PowerPoint.
 
 While you'll likely use the Excel JavaScript API to develop the majority of functionality in add-ins that target Excel 2016 or later, you'll also use objects in the Common API. For example:
 
-- [Context](https://docs.microsoft.com/javascript/api/office/office.context): The **Context** object represents the runtime environment of the add-in and provides access to key objects of the API. It consists of workbook configuration details such as `contentLanguage` and `officeTheme` and also provides information about the add-in's runtime environment such as `host` and `platform`. Additionally, it provides the `requirements.isSetSupported()` method, which you can use to check whether the specified requirement set is supported by the Excel application where the add-in is running. 
+- [Context](/javascript/api/office/office.context): The **Context** object represents the runtime environment of the add-in and provides access to key objects of the API. It consists of workbook configuration details such as `contentLanguage` and `officeTheme` and also provides information about the add-in's runtime environment such as `host` and `platform`. Additionally, it provides the `requirements.isSetSupported()` method, which you can use to check whether the specified requirement set is supported by the Excel application where the add-in is running. 
 
-- [Document](https://docs.microsoft.com/javascript/api/office/office.document): The **Document** object provides the `getFileAsync()` method, which you can use to download the Excel file where the add-in is running. 
+- [Document](/javascript/api/office/office.document): The **Document** object provides the `getFileAsync()` method, which you can use to download the Excel file where the add-in is running. 
 
 ## Requirement sets
 
-Requirement sets are named groups of API members. An Office Add-in can perform a runtime check or use requirement sets specified in the manifest to determine whether an Office host supports the APIs that the add-in needs. To identify the specific requirement sets that are available on each supported platform, see [Excel JavaScript API requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets).
+Requirement sets are named groups of API members. An Office Add-in can perform a runtime check or use requirement sets specified in the manifest to determine whether an Office host supports the APIs that the add-in needs. To identify the specific requirement sets that are available on each supported platform, see [Excel JavaScript API requirement sets](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets).
 
 ### Checking for requirement set support at runtime
 
@@ -43,7 +43,7 @@ else {
 
 ### Defining requirement set support in the manifest
 
-You can use the [Requirements element](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/requirements) in the add-in manifest to specify the minimal requirement sets and/or API methods that your add-in requires to activate. If the Office host or platform doesn't support the requirement sets or API methods that are specified in the **Requirements** element of the manifest, the add-in won't run in that host or platform, and won't display in the list of add-ins that are shown in **My Add-ins**. 
+You can use the [Requirements element](/office/dev/add-ins/reference/manifest/requirements) in the add-in manifest to specify the minimal requirement sets and/or API methods that your add-in requires to activate. If the Office host or platform doesn't support the requirement sets or API methods that are specified in the **Requirements** element of the manifest, the add-in won't run in that host or platform, and won't display in the list of add-ins that are shown in **My Add-ins**. 
 
 The following code sample shows the **Requirements** element in an add-in manifest which specifies that the add-in should load in all Office host applications that support ExcelApi requirement set version 1.3 or greater.
 
@@ -60,7 +60,7 @@ The following code sample shows the **Requirements** element in an add-in manife
 
 ### Requirement sets for the Office.js Common API
 
-For information about Common API requirement sets, see [Office Common API requirement sets](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).
+For information about Common API requirement sets, see [Office Common API requirement sets](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).
 
 ## Loading the properties of an object
 
@@ -96,24 +96,24 @@ void
 The following code sample sets the properties of one Excel range by copying the properties of another range. Note that the source object must be loaded first, before its property values can be accessed and written to the target range. This example assumes that there is data the two ranges (**B2:E2** and **B7:E7**) and that the two ranges are initially formatted differently.
 
 ```js
-Excel.run(function (ctx) { 
-	var sheet = ctx.workbook.worksheets.getItem("Sample");
-	var sourceRange = sheet.getRange("B2:E2");
-	sourceRange.load("format/fill/color, format/font/name, format/font/color");
+Excel.run(function (ctx) {
+    var sheet = ctx.workbook.worksheets.getItem("Sample");
+    var sourceRange = sheet.getRange("B2:E2");
+    sourceRange.load("format/fill/color, format/font/name, format/font/color");
 
-	return ctx.sync()
-		.then(function () {
-			var targetRange = sheet.getRange("B7:E7");
-			targetRange.set(sourceRange); 
-			targetRange.format.autofitColumns();
+    return ctx.sync()
+        .then(function () {
+            var targetRange = sheet.getRange("B7:E7");
+            targetRange.set(sourceRange);
+            targetRange.format.autofitColumns();
 
-			return ctx.sync();
-		});
+            return ctx.sync();
+        });
 }).catch(function(error) {
-	console.log("Error: " + error);
-	if (error instanceof OfficeExtension.Error) {
-		console.log("Debug info: " + JSON.stringify(error.debugInfo));
-	}
+    console.log("Error: " + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log("Debug info: " + JSON.stringify(error.debugInfo));
+    }
 });
 ```
 
@@ -128,7 +128,7 @@ As an alternative to passing a comma-delimited string or array when you call the
 |`top`|int| Specifies the maximum number of collection items that can be included in the result. Optional. You can only use this option when you use the object notation option.|
 |`skip`|int|Specify the number of items in the collection that are to be skipped and not included in the result. If `top` is specified, the result set will start after skipping the specified number of items. Optional. You can only use this option when you use the object notation option.|
 
-The following code sample loads a workskeet collection by selecting the `name` property and the `address` of the used range for each worksheet in the collection. It also specifies that only the top five worksheets in the collection should be loaded. You could process the next set of five worksheets by specifying `top: 10` and `skip: 5` as attribute values. 
+The following code sample loads a worksheet collection by selecting the `name` property and the `address` of the used range for each worksheet in the collection. It also specifies that only the top five worksheets in the collection should be loaded. You could process the next set of five worksheets by specifying `top: 10` and `skip: 5` as attribute values.
 
 ```js 
 myWorksheets.load({
@@ -139,9 +139,9 @@ myWorksheets.load({
 });
 ```
 
-## Scalar and navigation properties 
+## Scalar and navigation properties
 
-In the Excel JavaScript API reference documentation, you may notice that object members are grouped into two categories: **properties** and **relationships**. A property of an object is a scalar member such as a string, an integer, or a boolean value, while a relationship of an object (also known as a navigation property) is a member that is either an object or collection of objects. For example, `name` and `position` members on the [Worksheet](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) object are scalar properties, whereas `protection` and `tables` are relationships (navigation properties). 
+In the Excel JavaScript API reference documentation, you may notice that object members are grouped into two categories: **properties** and **relationships**. A property of an object is a scalar member such as a string, an integer, or a boolean value, while a relationship of an object (also known as a navigation property) is a member that is either an object or collection of objects. For example, `name` and `position` members on the [Worksheet](/javascript/api/excel/excel.worksheet) object are scalar properties, whereas `protection` and `tables` are relationships (navigation properties). 
 
 ### Scalar properties and navigation properties with `object.load()`
 
@@ -180,37 +180,38 @@ object.set(properties[, options]);
 
 #### Returns
 
-void    
+void
 
 #### Example
 
 The following code sample sets several format properties of a range by calling the `set()` method and passing in a JavaScript object with property names and types that mirror the structure of properties in the **Range** object. This example assumes that there is data in range **B2:E2**.
 
 ```js
-Excel.run(function (ctx) { 
-	var sheet = ctx.workbook.worksheets.getItem("Sample");
-	var range = sheet.getRange("B2:E2");
-	range.set({
-		format: {
-			fill: {
-				color: '#4472C4'
-			},
-			font: {
-				name: 'Verdana',
-				color: 'white'
-			}
-		}
-	});
-	range.format.autofitColumns();
+Excel.run(function (ctx) {
+    var sheet = ctx.workbook.worksheets.getItem("Sample");
+    var range = sheet.getRange("B2:E2");
+    range.set({
+        format: {
+            fill: {
+                color: '#4472C4'
+            },
+            font: {
+                name: 'Verdana',
+                color: 'white'
+            }
+        }
+    });
+    range.format.autofitColumns();
 
-	return ctx.sync(); 
+    return ctx.sync();
 }).catch(function(error) {
-	console.log("Error: " + error);
-	if (error instanceof OfficeExtension.Error) {
-		console.log("Debug info: " + JSON.stringify(error.debugInfo));
-	}
+    console.log("Error: " + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log("Debug info: " + JSON.stringify(error.debugInfo));
+    }
 });
 ```
+
 ## &#42;OrNullObject methods
 
 Many Excel JavaScript API methods will return an exception when the condition of the API is not met. For example, if you attempt to get a worksheet by specifying a worksheet name that doesn't exist in the workbook, the `getItem()` method will return an `ItemNotFound` exception. 
@@ -220,22 +221,22 @@ Instead of implementing complex exception handling logic for scenarios like this
 The following code sample attempts to retrieve a worksheet named "Data" by using the `getItemOrNullObject()` method. If the method returns a null object, a new sheet needs to be created before actions can taken on the sheet.
 
 ```js
-var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data"); 
+var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
 
 return context.sync()
   .then(function() {
-	if (dataSheet.isNullObject) { 
-		// Create the sheet
-	}
+    if (dataSheet.isNullObject) {
+        // Create the sheet
+    }
 
-	dataSheet.position = 1;
-	//...
+    dataSheet.position = 1;
+    //...
   })
 ```
 
 ## See also
- 
+
 * [Fundamental programming concepts with the Excel JavaScript API](excel-add-ins-core-concepts.md)
 * [Excel add-ins code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API performance optimization](performance.md)
-* [Excel JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [Excel JavaScript API reference](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial (preview)
 description: In this tutorial, you’ll create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 01/08/2019
+ms.date: 03/19/2019
 ms.prod: excel
 ms.topic: tutorial
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
@@ -147,7 +147,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
 > [!NOTE]
 > In the January Insiders 1901 Build, there is a bug preventing fetch calls from executing which will result in #VALUE!.
-> To workaround this please use the [XMLHTTPRequest API](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-runtime#requesting-external-data) to make the web request.
+> To workaround this please use the [XMLHTTPRequest API](/office/dev/add-ins/excel/custom-functions-runtime#requesting-external-data) to make the web request.
 
 3. In **customfunctions.js**, locate the line `CustomFunctions.associate("INCREMENT", increment);`. Add the following line of code immediately after that line, and save the file.
 

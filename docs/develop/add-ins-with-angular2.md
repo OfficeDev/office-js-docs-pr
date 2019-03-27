@@ -1,7 +1,7 @@
 ---
 title: Develop Office Add-ins with Angular
 description: ''
-ms.date: 11/02/2018
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
@@ -15,7 +15,8 @@ This article provides guidance for using Angular 2+ to create an Office Add-in a
 For an Office Add-ins sample that's built using the Angular framework, see [Word Style Checking Add-in Built on Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker).
 
 ## Install the TypeScript type definitions
-Open an nodejs window and enter the following at the command line: 
+
+Open an nodejs window and enter the following at the command line:
 
 ```bash
 npm install --save-dev @types/office-js
@@ -68,7 +69,7 @@ const routes: Routes = // route definitions go here
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-```   
+```
 
 
 ## Consider wrapping Fabric components with Angular components
@@ -78,9 +79,9 @@ We recommend using [Office UI Fabric](https://developer.microsoft.com/fabric#/fa
 
 ## Using the Office Dialog API with Angular
 
-The Office Add-in Dialog API enables your add-in to open a page in a semimodal dialog box that can exchange information with the main page, which is typically in a task pane. 
+The Office Add-in Dialog API enables your add-in to open a page in a semimodal dialog box that can exchange information with the main page, which is typically in a task pane.
 
-The [displayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui) method takes a parameter that specifies the URL of the page that should open in the dialog box. Your add-in can have a separate HTML page (different from the base page) to pass to this parameter, or you can pass the URL of a route in your Angular appication. 
+The [displayDialogAsync](/javascript/api/office/office.ui) method takes a parameter that specifies the URL of the page that should open in the dialog box. Your add-in can have a separate HTML page (different from the base page) to pass to this parameter, or you can pass the URL of a route in your Angular appication. 
 
 It is important to remember, if you pass a route, that the dialog box creates a new window with its own execution context. Your base page and all its initialization and bootstrapping code run again in this new context, and any variables are set to their initial values in the dialog box. So this technique launches a second instance of your single page application in the dialog box. Code that changes variables in the dialog box does not change the task pane version of the same variables. Similarly, the dialog box has its own session storage, which is not accessible from code in the task pane.  
 
@@ -101,7 +102,7 @@ export class MyComponent {
     });
   }
 }
-``` 
+```
 
 ## Using Observable
 

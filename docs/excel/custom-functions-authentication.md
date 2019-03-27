@@ -1,5 +1,5 @@
 ---
-ms.date: 03/06/2019
+ms.date: 03/19/2019
 description: Authenticate users using custom functions in Excel.
 title: Authentication for Custom Functions
 ---
@@ -10,7 +10,7 @@ In some scenarios your custom function will need to authenticate the user in ord
   
 ## AsyncStorage object
 
-The custom functions runtime doesn't have a `localStorage` object available on the global window, where you might typically store data. Instead, you should share data between custom functions and task panes by using [OfficeRuntime.AsyncStorage](https://docs.microsoft.com/javascript/api/office-runtime/officeruntime.asyncstorage) to set and get data.
+The custom functions runtime doesn't have a `localStorage` object available on the global window, where you might typically store data. Instead, you should share data between custom functions and task panes by using [OfficeRuntime.AsyncStorage](/javascript/api/office-runtime/officeruntime.asyncstorage) to set and get data.
 
 Additionally, there is a benefit to using `AsyncStorage`; it uses a secure sandbox environment so that your data cannot be accessed by other add-ins.
 
@@ -25,7 +25,7 @@ If a token doesn't exist, you should use the Dialog API to ask the user to sign 
 > [!NOTE]
 > The custom functions runtime uses a Dialog object that is slightly different from the Dialog object in the browser engine runtime used by task panes. They're both referred to as the "Dialog API", but use `Officeruntime.Dialog` to authenticate users in the custom functions runtime.
 
-For information on how to use the `OfficeRuntime.Dialog`, see [Custom Functions runtime](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-runtime?view=office-js#displaying-a-dialog-box).
+For information on how to use the `OfficeRuntime.Dialog`, see [Custom Functions runtime](/office/dev/add-ins/excel/custom-functions-runtime?view=office-js#displaying-a-dialog-box).
 
 When envisioning the entire authentication process as a whole, it might be helpful to think of the task pane and UI elements of your add-in and the custom functions part of your add-in as separate entities which can communicate with each other through `AsyncStorage`.
 
@@ -37,7 +37,7 @@ The following diagram outlines this basic process. Note that the dotted line ind
 4. Your custom function then sets this access token to the `AsyncStorage`.
 5. Your add-in's task pane accesses the token from `AsyncStorage`.
 
-![Diagram of custom functions, OfficeRuntime, and task panes working together.](../images/Authdiagram.png "Authentication diagram.")
+![Diagram of custom function using dialog API to get access token, and then share token with task pane through the AsyncStorage API.](../images/authentication-diagram.png "Authentication diagram.")
 
 ## Storing the token
 
@@ -72,7 +72,7 @@ function ReceiveTokenFromCustomFunction() {
 
 ## General guidance
 
-Office Add-ins are web-based and you can use any web authentication technique. There is no particular pattern or method you must follow to implement your own authentication with custom functions. You may wish to consult the documentation about various authentication patterns, starting with [this article about authorizing via external services](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/auth-external-add-ins?view=office-js).  
+Office Add-ins are web-based and you can use any web authentication technique. There is no particular pattern or method you must follow to implement your own authentication with custom functions. You may wish to consult the documentation about various authentication patterns, starting with [this article about authorizing via external services](/office/dev/add-ins/develop/auth-external-add-ins?view=office-js).  
 
 Avoid using the following locations to store data when developing custom functions:  
 

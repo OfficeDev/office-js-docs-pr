@@ -1,5 +1,5 @@
 ---
-ms.date: 03/06/2019
+ms.date: 03/19/2019
 description: Troubleshoot common problems in Excel custom functions.
 title: Troubleshoot custom functions (preview)
 localization_priority: Priority
@@ -12,11 +12,11 @@ To resolve issues, you can [enable runtime logging to capture errors](#enable-ru
 
 ## Enable runtime logging
 
-If you are testing your add-in in Office on Windows, you should [enable runtime logging](https://docs.microsoft.com/en-us/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in). Runtime logging delivers `console.log` statements to a separate log file you create to help you uncover issues. The statements cover a variety of errors, including errors pertaining to your add-in's XML manifest file, runtime conditions, or installation of your custom functions.  For more information about runtime logging, see [Use runtime logging to debug your add-in](https://docs.microsoft.com/en-us/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in).  
+If you are testing your add-in in Office on Windows, you should [enable runtime logging](/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in). Runtime logging delivers `console.log` statements to a separate log file you create to help you uncover issues. The statements cover a variety of errors, including errors pertaining to your add-in's XML manifest file, runtime conditions, or installation of your custom functions.  For more information about runtime logging, see [Use runtime logging to debug your add-in](/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in).  
 
 ### Check for Excel error messages
 
-Excel has a number of built-in error messages which are returned to a cell if there is calculation error. Custom functions only use the following error messages: `#NULL!`, `#DIV/0!`, `#VALUE!`, `#REF!`, `#NAME?`, `#NUM!`, `#N/A`, and `#GETTING_DATA`.
+Excel has a number of built-in error messages which are returned to a cell if there is calculation error. Custom functions only use the following error messages: `#NULL!`, `#DIV/0!`, `#VALUE!`, `#REF!`, `#NAME?`, `#NUM!`, `#N/A`, and `#BUSY!`.
 
 ## Common issues
 
@@ -38,11 +38,11 @@ function add(first, second){
 CustomFunctions.associate("ADD", add);
 ```
 
-For more information on this process, see [Associating function names with json metadata](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-best-practices#associating-function-names-with-json-metadata).
+For more information on this process, see [Associating function names with json metadata](/office/dev/add-ins/excel/custom-functions-best-practices#associating-function-names-with-json-metadata).
 
 ### Ensure promises return
 
-When Excel is waiting for a custom function to complete, it displays #GETTING_DATA in the cell. If your custom function code returns a promise, but the promise does not return a result, Excel will continue showing #GETTING_DATA. Check your functions to make sure that any promises are properly returning a result to a cell.
+When Excel is waiting for a custom function to complete, it displays #BUSY! in the cell. If your custom function code returns a promise, but the promise does not return a result, Excel will continue showing #BUSY!. Check your functions to make sure that any promises are properly returning a result to a cell.
 
 ## Reporting Feedback
 
