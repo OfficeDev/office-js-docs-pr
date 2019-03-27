@@ -260,6 +260,9 @@
         - name: Custom functions overview
           href: excel/custom-functions-overview.md
           displayName: Excel
+        - name: Custom functions architecture
+          href: excel/custom-functions-architecture.md
+          displayName: Excel
         - name: Custom functions quickstart
           href: quickstarts/excel-custom-functions-quickstart.md
           displayName: Excel
