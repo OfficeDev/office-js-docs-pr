@@ -30,7 +30,7 @@ sections:
         - href: /azure/cosmos-db/distribute-data-globally/
           html: <p>Learn about Office Add-ins and how they differ frm COM and VSTO add-ins.</p>
           image:
-            src: images/index/office-add-ins.gif
+            src: images/index/blocks-blue.svg
           title: Office Add-ins
         - href: /office/dev/add-ins/develop/understanding-the-javascript-api-for-office/
           html: <p>Learn about the JavaScript API for Office.</p>
@@ -40,7 +40,7 @@ sections:
         - href: /office/dev/add-ins/develop/add-in-manifests/
           html: <p>Learn about the XML manifest file that defines the settings and capabilities of an Office Add-in.</p>
           image:
-            src: images/index/xml.png
+            src: images/index/developer-blue.svg
           title: Office Add-ins manifest
         - href: /office/dev/add-ins/excel/excel-add-ins-overview/
           html: <p>Build Excel add-ins and custom functions.</p>
