@@ -27,13 +27,13 @@ ms.author: o365devx
                                               <img src="images/index/ExcelLogoColor.svg" alt="" />&#160;
                                               <h3>Excel add-ins</h3>
                                               <ul class="noBullet">
-                                              <li><a class="barLink" href="/office/dev/add-ins/excel/excel-add-ins-overview"><strong>About Excel add-ins</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/overview/office-add-ins?context=office/dev/add-ins/excel/context"><strong>Office Add-ins platform overview</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/quickstarts/excel-quickstart-jquery"><strong>Quick Start</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview"><strong>Develop: Excel JavaScript API</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/excel/custom-functions-overview"><strong>Develop: custom functions</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/testing/test-debug-office-add-ins?context=office/dev/add-ins/excel/context"><strong>Test and debug</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/publish/publish?context=office/dev/add-ins/excel/context"><strong>Publish</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/excel/excel-add-ins-overview">About Excel add-ins</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/overview/office-add-ins?context=office/dev/add-ins/excel/context">Office Add-ins platform overview</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/quickstarts/excel-quickstart-jquery">Quick Start</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview">Develop: Excel JavaScript API</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/excel/custom-functions-overview">Develop: custom functions</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/testing/test-debug-office-add-ins?context=office/dev/add-ins/excel/context">Test and debug</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/publish/publish?context=office/dev/add-ins/excel/context">Publish</a></li>
                                               </ul>
                                           </div>
                                       </div>
@@ -48,12 +48,12 @@ ms.author: o365devx
                                               <img src="images/index/OneNoteLogoColor.svg" alt="" />&#160;
                                               <h3>OneNote add-ins</h3>
                                               <ul class="noBullet">
-                                              <li><a class="barLink" href="/office/dev/add-ins/onenote/onenote-add-ins-programming-overview"><strong>About OneNote add-ins</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/overview/office-add-ins?context=office/dev/add-ins/onenote/context"><strong>Office Add-ins platform overview</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/quickstarts/onenote-quickstart"><strong>Quick Start</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference"><strong>Develop: OneNote JavaScript API</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/testing/test-debug-office-add-ins?context=office/dev/add-ins/onenote/context"><strong>Test and debug</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/publish/publish?context=office/dev/add-ins/onenote/context"><strong>Publish</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/onenote/onenote-add-ins-programming-overview">About OneNote add-ins</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/overview/office-add-ins?context=office/dev/add-ins/onenote/context">Office Add-ins platform overview</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/quickstarts/onenote-quickstart">Quick Start</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference">Develop: OneNote JavaScript API</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/testing/test-debug-office-add-ins?context=office/dev/add-ins/onenote/context">Test and debug</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/publish/publish?context=office/dev/add-ins/onenote/context">Publish</a></li>
                                               </ul>
                                           </div>
                                   </div>
@@ -67,12 +67,12 @@ ms.author: o365devx
                                               <img src="images/index/OutlookLogoColor.svg" alt="" />&#160;
                                               <h3>Outlook add-ins</h3>
                                               <ul class="noBullet">
-                                              <li><a class="barLink" href="/outlook/add-ins"><strong>About Outlook add-ins</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/overview/office-add-ins?context=outlook/context"><strong>Office Add-ins platform overview</strong></a></li>
-                                              <li><a class="barLink" href="/outlook/add-ins/quick-start"><strong>Quick Start</strong></a></li>
-                                              <li><a class="barLink" href="/outlook/add-ins/apis"><strong>Develop: Outlook JavaScript API</strong></a></li>
-                                              <li><a class="barLink" href="/outlook/add-ins/testing-and-tips"><strong>Test and debug</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/publish/publish?context=outlook/context"><strong>Publish</strong></a></li>
+                                              <li><a class="barLink" href="/outlook/add-ins">About Outlook add-ins</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/overview/office-add-ins?context=outlook/context">Office Add-ins platform overview</a></li>
+                                              <li><a class="barLink" href="/outlook/add-ins/quick-start">Quick Start</a></li>
+                                              <li><a class="barLink" href="/outlook/add-ins/apis">Develop: Outlook JavaScript API</a></li>
+                                              <li><a class="barLink" href="/outlook/add-ins/testing-and-tips">Test and debug</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/publish/publish?context=outlook/context">Publish</a></li>
                                               </ul>
                                           </div>
                                       </div>
@@ -87,12 +87,12 @@ ms.author: o365devx
                                               <img src="images/index/PowerPointLogoColor.svg" alt="" />&#160;
                                               <h3>PowerPoint add-ins</h3>
                                               <ul class="noBullet">
-                                              <li><a class="barLink" href="/office/dev/add-ins/powerpoint/powerpoint-add-ins"><strong>About PowerPoint add-ins</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/overview/office-add-ins?context=office/dev/add-ins/powerpoint/context"><strong>Office Add-ins platform overview</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/quickstarts/powerpoint-quickstart"><strong>Quick Start</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/reference/requirement-sets/powerpoint-and-project-note?context=office/dev/add-ins/powerpoint/context"><strong>Develop: PowerPoint JavaScript API</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/testing/test-debug-office-add-ins?context=office/dev/add-ins/powerpoint/context"><strong>Test and debug</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/publish/publish?context=office/dev/add-ins/powerpoint/context"><strong>Publish</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/powerpoint/powerpoint-add-ins">About PowerPoint add-ins</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/overview/office-add-ins?context=office/dev/add-ins/powerpoint/context">Office Add-ins platform overview</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/quickstarts/powerpoint-quickstart">Quick Start</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/reference/requirement-sets/powerpoint-and-project-note?context=office/dev/add-ins/powerpoint/context">Develop: PowerPoint JavaScript API</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/testing/test-debug-office-add-ins?context=office/dev/add-ins/powerpoint/context">Test and debug</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/publish/publish?context=office/dev/add-ins/powerpoint/context">Publish</a></li>
                                               </ul>
                                           </div>
                                       </div>
@@ -107,12 +107,12 @@ ms.author: o365devx
                                               <img src="images/index/ProjectLogoColor.svg" alt="" />&#160;
                                               <h3>Project add-ins</h3>
                                               <ul class="noBullet">
-                                              <li><a class="barLink" href="/office/dev/add-ins/project/project-add-ins"><strong>About Project add-ins</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/overview/office-add-ins?context=office/dev/add-ins/project/context"><strong>Office Add-ins platform overview</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/quickstarts/project-quickstart"><strong>Quick Start</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/reference/requirement-sets/powerpoint-and-project-note?context=office/dev/add-ins/project/context"><strong>Develop: Project JavaScript API</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/testing/test-debug-office-add-ins?context=office/dev/add-ins/project/context"><strong>Test and debug</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/publish/publish?context=office/dev/add-ins/project/context"><strong>Publish</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/project/project-add-ins">About Project add-ins</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/overview/office-add-ins?context=office/dev/add-ins/project/context">Office Add-ins platform overview</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/quickstarts/project-quickstart">Quick Start</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/reference/requirement-sets/powerpoint-and-project-note?context=office/dev/add-ins/project/context">Develop: Project JavaScript API</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/testing/test-debug-office-add-ins?context=office/dev/add-ins/project/context">Test and debug</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/publish/publish?context=office/dev/add-ins/project/context">Publish</a></li>
                                               </ul>
                                           </div>
                                       </div>
@@ -127,12 +127,12 @@ ms.author: o365devx
                                               <img src="images/index/WordLogoColor.svg" alt="" />&#160;
                                               <h3>Word add-ins</h3>
                                               <ul class="noBullet">
-                                              <li><a class="barLink" href="/office/dev/add-ins/word/word-add-ins-programming-overview"><strong>About Word add-ins</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/overview/office-add-ins?context=office/dev/add-ins/word/context"><strong>Office Add-ins platform overview</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/quickstarts/word-quickstart"><strong>Quick Start</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/reference/overview/word-add-ins-reference-overview"><strong>Develop: Word JavaScript API</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/testing/test-debug-office-add-ins?context=office/dev/add-ins/word/context"><strong>Test and debug</strong></a></li>
-                                              <li><a class="barLink" href="/office/dev/add-ins/publish/publish?context=office/dev/add-ins/word/context"><strong>Publish</strong></a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/word/word-add-ins-programming-overview">About Word add-ins</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/overview/office-add-ins?context=office/dev/add-ins/word/context">Office Add-ins platform overview</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/quickstarts/word-quickstart">Quick Start</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/reference/overview/word-add-ins-reference-overview">Develop: Word JavaScript API</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/testing/test-debug-office-add-ins?context=office/dev/add-ins/word/context">Test and debug</a></li>
+                                              <li><a class="barLink" href="/office/dev/add-ins/publish/publish?context=office/dev/add-ins/word/context">Publish</a></li>
                                               </ul>
                                           </div>
                                       </div>
