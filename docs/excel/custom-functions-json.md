@@ -121,8 +121,8 @@ The `options` object enables you to customize some aspects of how and when Excel
 
 |  Property  |  Data type  |  Required  |  Description  |
 |:-----|:-----|:-----|:-----|
-|  `cancelable`  |  boolean  |  No<br/><br/>Default value is `false`.  |  If `true`, Excel calls the `onCanceled` handler whenever the user takes an action that has the effect of canceling the function; for example, manually triggering recalculation or editing a cell that is referenced by the function. If you use this option, Excel will call the JavaScript function with an additional `caller` parameter. (Do ***not*** register this parameter in the `parameters` property). In the body of the function, a handler must be assigned to the `caller.onCanceled` member. For more information, see [Canceling a function](custom-functions-web-reqs.md#canceling-a-function). |
-|  `stream`  |  boolean  |  No<br/><br/>Default value is `false`.  |  If `true`, the function can output repeatedly to the cell even when invoked only once. This option is useful for rapidly-changing data sources, such as a stock price. If you use this option, Excel will call the JavaScript function with an additional `caller` parameter. (Do ***not*** register this parameter in the `parameters` property). The function should have no `return` statement. Instead, the result value is passed as the argument of the `caller.setResult` callback method. For more information, see [Streaming functions](custom-functions-web-reqs.md#streaming-functions). |
+|  `cancelable`  |  boolean  |  No<br/><br/>Default value is `false`.  |  A cancelable function must declare an `invocation` parameter as the last parameter in the body of the function. If `"cancelable": true`, Excel calls the `invocation.onCanceled` method which you specify in the body of the function. (Do ***not*** register the `invocation` parameter in the `parameters` property). For more information, see [Streaming and cancelable functions](custom-functions-web-reqs.md#streaming-and-canceling-functions). |
+|  `stream`  |  boolean  |  No<br/><br/>Default value is `false`.  | If `true`, the function can output repeatedly to the cell even when invoked only once. This option is useful for rapidly-changing data sources, such as a stock price. A streaming function must also declare an `invocation` parameter as the last parameter in the body of the function. (Do ***not*** register the `invocation` parameter in the `parameters` property). Do not return a value within the body of the function. Instead, the result value is passed as the argument of the `invocation.setResult` callback method. For more information, see [Streaming and cancelable functions](custom-functions-web-reqs.md#streaming-and-canceling-functions). |
 |  `volatile`  | boolean | No <br/><br/>Default value is `false`. | <br /><br /> If `true`, the function will recalculate each time Excel recalculates, instead of only when the formula's dependent values have changed. A function cannot be both streaming and volatile. If the `stream` and `volatile` properties are both set to `true`, the volatile option will be ignored. |
 
 ## parameters
@@ -147,7 +147,6 @@ The `result` object defines the type of information that is returned by the func
 |  Property  |  Data type  |  Required  |  Description  |
 |:-----|:-----|:-----|:-----|
 |  `dimensionality`  |  string  |  No  |  Must be either **scalar** (a non-array value) or **matrix** (a 2-dimensional array). |
-|  `type`  |  string  |  Yes  |  The data type of the parameter. Must be **boolean**, **number**, **string**, or **any**, which allows you to use of any of the previous three types. |
 
 ## See also
 

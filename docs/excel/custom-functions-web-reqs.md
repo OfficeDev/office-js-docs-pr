@@ -119,36 +119,55 @@ ws.onerror(error){
 }
 ```
 
-## Streaming functions
+## Streaming and cancelable functions
 
-Streaming custom functions enable you to output data to cells repeatedly over time, without requiring a user to explicitly request data refresh. The following code sample is a custom function that adds a number to the result every second. Note the following about this code:
+Streaming custom functions enable you to output data to cells repeatedly over time, without requiring a user to explicitly request data refresh.
 
-- Excel displays each new value automatically using the setResult callback.
-- The second input parameter, handler, is not displayed to end users in Excel when they select the function from the autocomplete menu.
-- The onCanceled callback defines the function that executes when the function is canceled. You must implement a cancellation handler like this for any streaming function. For more information, see [Canceling a function](#canceling-a-function).
+Cancelable custom functions enable you to cancel the execution of a streaming custom function to reduce its bandwidth consumption, working memory, and CPU load. It is typically a best practice to make streaming functions also cancelable functions. Excel automatically cancels the execution of a function in the following situations:
+
+- When the user edits or deletes a cell that references the function.
+- When one of the arguments (inputs) for the function changes. In this case, a new function call is triggered following the cancellation.
+- When the user triggers recalculation manually. In this case, a new function call is triggered following the cancellation.
+
+To declare a streaming or cancelable function, you will need to do two things: 
+
+- Add streaming and/or cancelable properties to the function's JSON metadata, by declaring `"streaming": true` or `"cancelable": true`. 
+- Declare an invocation parameter which carries important context of the cell being called. 
+
+### Using an invocation parameter
+
+When setting an invocation parameter, it should come last in the list of parameters specified. An invocation will allow you to use `setResult` and `onCanceled` methods. These methods are used to tell a function what to do when the function streams (`setResult`) or is canceled (`onCanceled`). 
+
+If using Typescript, note that the invocation handler you use will need to be specified by type `CustomFunctions.StreamingInvocation` or `CustomFunctions.CancelableInvocation`. 
+
+### Streaming and cancelable function example
+The following code sample is a custom function that adds a number to the result every second. Note the following about this code:
+
+- Excel displays each new value automatically using the `setResult` method.
+- The second input parameter, invocation, is not displayed to end users in Excel when they select the function from the autocomplete menu. 
+- The `onCanceled` callback defines the function that executes when the function is canceled. 
 
 ```JavaScript
-function incrementValue(increment, handler){
+function incrementValue(increment, invocation){
   var result = 0;
   setInterval(function(){
     result += increment;
-    handler.setResult(result);
+    invocation.setResult(result);
   }, 1000);
 
-  handler.onCanceled = function(){
+  invocation.onCanceled = function(){
     clearInterval(timer);
   }
 }
 
 CustomFunctions.associate("INCREMENTVALUE", incrementValue);
 ```
-
-When you specify metadata for a streaming function in the JSON metadata file, you must set the properties "cancelable": true and "stream": true within the options object, as shown in the following example.
+The corresponding JSON for this function is as follows. Note that the invocation parameter does not need to be declared in the JSON file. 
 
 ```JSON
 {
-  "id": "INCREMENT",
-  "name": "INCREMENT",
+  "id": "INCREMENTVALUE",
+  "name": "INCREMENTVALUE",
   "description": "Periodically increment a value",
   "helpUrl": "http://www.contoso.com",
   "result": {
@@ -169,16 +188,6 @@ When you specify metadata for a streaming function in the JSON metadata file, yo
   }
 }
 ```
-
-## Canceling a function
-
-In some situations, you may need to cancel the execution of a streaming custom function to reduce its bandwidth consumption, working memory, and CPU load. Excel cancels the execution of a function in the following situations:
-
-- When the user edits or deletes a cell that references the function.
-- When one of the arguments (inputs) for the function changes. In this case, a new function call is triggered following the cancellation.
-- When the user triggers recalculation manually. In this case, a new function call is triggered following the cancellation.
-
-To make a function cancelable, implement a handler in your function's code to tell it what to do when it is canceled. Additionally, specify specify the property `"cancelable": true` within the options object in the JSON metadata that describes the function. The code samples in the previous section of this article provide an example of these techniques.
 
 ## See also
 
