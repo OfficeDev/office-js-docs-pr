@@ -136,7 +136,7 @@ To declare a streaming or cancelable function, you will need to do two things:
 
 ### Using an invocation parameter
 
-When setting an invocation parameter, it should come last in the list of parameters specified. An invocation will allow you to use `setResult` and `onCanceled` methods. These methods are used to tell a function what to do when the function streams (`setResult`) or is canceled (`onCanceled`). 
+When setting an invocation parameter, it should come last in the list of parameters specified. An invocation will allow you to use `setResult` on streaming functions or `onCanceled` methods on cancelable functions. 
 
 If using Typescript, note that the invocation handler you use will need to be specified by type `CustomFunctions.StreamingInvocation` or `CustomFunctions.CancelableInvocation`. 
 
