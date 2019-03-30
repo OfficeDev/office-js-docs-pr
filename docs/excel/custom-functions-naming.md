@@ -32,6 +32,31 @@ To fix a name conflict, change the name in your add-in and try the function agai
 
 Also consider how you'd like people to use the functions within your add-in. In many cases, it makes sense to add multiple arguments to a function rather than create multiple functions with the same or similar names.
 
+## Localizing function names
+
+You can localize your function names for different markets. You can set alternative `name` and `description` properties within your function metadata for each locale, as shown in the following example. You'll notice that the `id` property is always specified in your add-in's default language (in this case, English). The `id` of a function should be declared once and not change, nor be localized. The `name` and `description` of both the function and parameters are localized, into Russian in the following example.
+
+```JSON
+{
+    "id": "SLEEP",
+    "name": "СПИ",
+    "description": "Спи за определен брой милисекунди",
+    "result": {
+        "dimensionality": "scalar"
+    },
+    "parameters": [
+        {
+        "name": "мс",
+        "description": "милисекунди",
+        "type": "number",
+        "dimensionality": "scalar"
+        }
+    ]
+}
+```
+
+You'll then use this metadata file with the variant text in another language as the metadata file that loads when an override locale occurs. You'll need to declare that this is your override file in your XML manifest file for your add-in. For information on setting up your XML file and declaring optional additional locales, see [Localization for Office Add-ins](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/localization).
+
 ## See also
 
 * [Custom functions metadata](custom-functions-json.md)
