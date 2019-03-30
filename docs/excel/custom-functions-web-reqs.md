@@ -123,7 +123,7 @@ ws.onerror(error){
 
 Streaming custom functions enable you to output data to cells repeatedly over time, without requiring a user to explicitly request data refresh.
 
-Cancelable custom functions enable you to cancel the execution of a streaming custom function to reduce its bandwidth consumption, working memory, and CPU load. It is typically a best practice to make streaming functions also cancelable functions. Excel automatically cancels the execution of a function in the following situations:
+Cancelable custom functions enable you to cancel the execution of a streaming custom function to reduce its bandwidth consumption, working memory, and CPU load. Excel automatically cancels the execution of a function in the following situations:
 
 - When the user edits or deletes a cell that references the function.
 - When one of the arguments (inputs) for the function changes. In this case, a new function call is triggered following the cancellation.
