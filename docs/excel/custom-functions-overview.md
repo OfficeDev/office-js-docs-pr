@@ -1,5 +1,5 @@
 ---
-ms.date: 03/11/2019
+ms.date: 03/29/2019
 description: Create custom functions in Excel using JavaScript.
 title: Create custom functions in Excel (preview)
 localization_priority: Priority
@@ -28,123 +28,44 @@ function add42(a, b) {
 
 ## Components of a custom functions add-in project
 
-If you use the [Yo Office generator](https://github.com/OfficeDev/generator-office) to create an Excel custom functions add-in project, you'll see the following files in the project that the generator creates:
+If you use the [Yo Office generator](https://github.com/OfficeDev/generator-office) to create an Excel custom functions add-in project, you'll find that it creates files which control your functions, your task pane, and your add-in overall. We'll concentrate on the files that are important to custom functions: 
 
 | File | File format | Description |
 |------|-------------|-------------|
 | **./src/functions/functions.js**<br/>or<br/>**./src/functions/functions.ts** | JavaScript<br/>or<br/>TypeScript | Contains the code that defines custom functions. |
-| **./src/functions/functions.json** | JSON | Contains metadata that describes custom functions and enables Excel to register the custom functions and make them available to end users. |
-| **./index.html** | HTML | Provides a &lt;script&gt; reference to the JavaScript file that defines custom functions. |
-| **./manifest.xml** | XML | Specifies the namespace for all custom functions within the add-in and the location of the JavaScript, JSON, and HTML files that are listed previously in this table. |
-
-The following sections provide more information about these files.
+| **./src/functions/functions.html** | HTML | Provides a &lt;script&gt; reference to the JavaScript file that defines custom functions. |
+| **./manifest.xml** | XML | Specifies the namespace for all custom functions within the add-in and the location of the JavaScript and HTML files that are listed previously in this table. It also lists the locations of other files your add-in might make use of, such as the task pane files and command files. |
 
 ### Script file
 
-The script file (**./src/functions/functions.js** or **./src/functions/functions.ts** in the project that the Yo Office generator creates) contains the code that defines custom functions and maps the names of the custom functions to objects in the [JSON metadata file](#json-metadata-file). 
+The script file (**./src/functions/functions.js** or **./src/functions/functions.ts** in the project that the Yo Office generator creates) contains the code that defines custom functions, comments which define the function, and associates the names of the custom functions to objects in the [JSON metadata file](#json-metadata-file).
 
-For example, the following code defines the custom functions `add` and `increment` and then specifies association information for both functions. The `add` function is associated with the object in the JSON metadata file where the value of the `id` property is **ADD**, and the `increment` function is associated with the object in the metadata file where the value of the `id` property is **INCREMENT**. See [Custom functions best practices](custom-functions-best-practices.md#associating-function-names-with-json-metadata) for more information about associating function names in the script file to objects in the JSON metadata file.
+The following code defines the custom function `add`  and then specifies association information for the function. For more information on associating functions, see [Custom functions best practices](custom-functions-best-practices.md#associating-function-names-with-json-metadata).
+
+The following code also provides code comments which define the function. The required `@customfunction` comment is declared first, to indicate that this is a custom function. Additionally, you'll notice two parameters are declared, `first` and `second`, which are followed by their `description` properties. Finally, a `returns` description is given. For more information about what comments are required for your custom function, see [Generate JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
 ```js
+/**
+ * Adds two numbers.
+ * @customfunction 
+ * @param first First number
+ * @param second Second number
+ * @returns The sum of the two numbers.
+ */
+
 function add(first, second){
   return first + second;
 }
 
-function increment(incrementBy, callback) {
-  var result = 0;
-  var timer = setInterval(function() {
-    result += incrementBy;
-    callback.setResult(result);
-  }, 1000);
-
-  callback.onCanceled = function() {
-    clearInterval(timer);
-  };
-}
-
 // associate `id` values in the JSON metadata file to the JavaScript function names
  CustomFunctions.associate("ADD", add);
- CustomFunctions.associate("INCREMENT", increment);
 ```
-
-### JSON metadata file
-
-The custom functions metadata file (**./functions/functions.json** in the project that the Yo Office generator creates) provides the information that Excel requires to register custom functions and make them available to end users. Custom functions are registered when a user runs an add-in for the first time. After that, they are available to that same user in all workbooks (i.e., not only in the workbook where the add-in initially ran.)
-
-> [!TIP]
-> Server settings on the server that hosts the JSON file must have [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel Online.
-
-The following code in **functions.json** specifies the metadata for the `add` function and the `increment` function that were described previously. The table that follows this code sample provides detailed information about the individual properties within this JSON object. See [Custom functions best practices](custom-functions-best-practices.md#associating-function-names-with-json-metadata) for more information about specifying the value of `id` and `name` properties in the JSON metadata file.
-
-```json
-{
-  "$schema": "https://developer.microsoft.com/en-us/json-schemas/office-js/custom-functions.schema.json",
-  "functions": [
-    {
-      "id": "ADD",
-      "name": "ADD",
-      "description": "Add two numbers",
-      "helpUrl": "http://www.contoso.com",
-      "result": {
-        "type": "number",
-        "dimensionality": "scalar"
-      },
-      "parameters": [
-        {
-          "name": "first",
-          "description": "first number to add",
-          "type": "number",
-          "dimensionality": "scalar"
-        },
-        {
-          "name": "second",
-          "description": "second number to add",
-          "type": "number",
-          "dimensionality": "scalar"
-        }
-      ]
-    },
-    {
-      "id": "INCREMENT",
-      "name": "INCREMENT",
-      "description": "Periodically increment a value",
-      "helpUrl": "http://www.contoso.com",
-      "result": {
-          "type": "number",
-          "dimensionality": "scalar"
-    },
-    "parameters": [
-        {
-            "name": "increment",
-            "description": "Amount to increment",
-            "type": "number",
-            "dimensionality": "scalar"
-        }
-    ],
-    "options": {
-        "cancelable": true,
-        "stream": true
-      }
-    }
-  ]
-}
-```
-
-The following table lists the properties that are typically present in the JSON metadata file. For more detailed information about the JSON metadata file, see [Custom functions metadata](custom-functions-json.md).
-
-| Property 	| Description |
-|---------|---------|
-| `id` | A unique ID for the function. This ID can only contain alphanumeric characters and periods and should not be changed after it is set. |
-| `name` | Name of the function that the end user sees in Excel. In Excel, this function name will be prefixed by the custom functions namespace that's specified in the [XML manifest file](#manifest-file). |
-| `helpUrl`	| URL for the page that is shown when a user requests help. |
-| `description`	| Describes what the function does. This value appears as a tooltip when the function is the selected item in the autocomplete menu within Excel. |
-| `result` 	| Object that defines the type of information that is returned by the function. For detailed information about this object, see [result](custom-functions-json.md#result). |
-| `parameters` | Array that defines the input parameters for the function. For detailed information about this object, see [parameters](custom-functions-json.md#parameters). |
-| `options`	| Enables you to customize some aspects of how and when Excel executes the function. For more information about how this property can be used, see [Streaming functions](#streaming-functions) and [canceling a function](#canceling-a-function). |
 
 ### Manifest file
 
-The XML manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the Yo Office generator creates) specifies the namespace for all custom functions within the add-in and the location of the JavaScript, JSON, and HTML files. The following XML markup shows an example of the `<ExtensionPoint>` and `<Resources>` elements that you must include in an add-in's manifest to enable custom functions.  
+The XML manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the Yo Office generator creates) specifies the namespace for all custom functions within the add-in and the location of the JavaScript, JSON, and HTML files. 
+
+The following basic XML markup shows an example of the `<ExtensionPoint>` and `<Resources>` elements that you must include in an add-in's manifest to enable custom functions. If using the Yo Office generator, your generated custom function files will contain a more complex manifest file, which you can compare on t[his Github repository](https://github.com/OfficeDev/Excel-Custom-Functions/blob/generate-metadata/manifest.xml).
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
