@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - requirement set 1.2
 description: ''
-ms.date: 10/31/2018
+ms.date: 03/19/2019
 localization_priority: Normal
 ---
 
@@ -16,8 +16,8 @@ Provides access to the Outlook add-in object model for Microsoft Outlook and Mic
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restricted|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restricted|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ### Namespaces
 
@@ -36,9 +36,9 @@ Gets the URL of the Exchange Web Services (EWS) endpoint for this email account.
 > [!NOTE]
 > This member is not supported in Outlook for iOS or Outlook for Android.
 
-The `ewsUrl` value can be used by a remote service to make EWS calls to the user's mailbox. For example, you can create a remote service to [get attachments from the selected item](https://docs.microsoft.com/outlook/add-ins/get-attachments-of-an-outlook-item).
+The `ewsUrl` value can be used by a remote service to make EWS calls to the user's mailbox. For example, you can create a remote service to [get attachments from the selected item](/outlook/add-ins/get-attachments-of-an-outlook-item).
 
-##### Type:
+##### Type
 
 *   String
 
@@ -47,8 +47,8 @@ The `ewsUrl` value can be used by a remote service to make EWS calls to the user
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Read|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Read|
 
 ### Methods
 
@@ -60,7 +60,7 @@ The dates and times used by a mail app for Outlook or Outlook Web App can use di
 
 If the mail app is running in Outlook, the `convertToLocalClientTime` method will return a dictionary object with the values set to the client computer time zone. If the mail app is running in Outlook Web App, the `convertToLocalClientTime` method will return a dictionary object with the values set to the time zone specified in the EAC.
 
-##### Parameters:
+##### Parameters
 
 |Name| Type| Description|
 |---|---|---|
@@ -71,8 +71,8 @@ If the mail app is running in Outlook, the `convertToLocalClientTime` method wil
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Returns:
 
@@ -85,7 +85,7 @@ Gets a Date object from a dictionary containing time information.
 
 The `convertToUtcClientTime` method converts a dictionary containing a local date and time to a Date object with the correct values for the local date and time.
 
-##### Parameters:
+##### Parameters
 
 |Name| Type| Description|
 |---|---|---|
@@ -96,8 +96,8 @@ The `convertToUtcClientTime` method converts a dictionary containing a local dat
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Returns:
 
@@ -126,7 +126,7 @@ In Outlook Web App, this method opens the specified form only if the body of the
 
 If the specified item identifier does not identify an existing appointment, a blank pane opens on the client computer or device, and no error message will be returned.
 
-##### Parameters:
+##### Parameters
 
 |Name| Type| Description|
 |---|---|---|
@@ -137,12 +137,12 @@ If the specified item identifier does not identify an existing appointment, a bl
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Example
 
-```js
+```javascript
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
@@ -161,7 +161,7 @@ If the specified item identifier does not identify an existing message, no messa
 
 Do not use the `displayMessageForm` with an `itemId` that represents an appointment. Use the `displayAppointmentForm` method to display an existing appointment, and `displayNewAppointmentForm` to display a form to create a new appointment.
 
-##### Parameters:
+##### Parameters
 
 |Name| Type| Description|
 |---|---|---|
@@ -172,12 +172,12 @@ Do not use the `displayMessageForm` with an `itemId` that represents an appointm
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Example
 
-```js
+```javascript
 Office.context.mailbox.displayMessageForm(messageId);
 ```
 
@@ -196,7 +196,7 @@ In the Outlook rich client and Outlook RT, if you specify any attendees or resou
 
 If any of the parameters exceed the specified size limits, or if an unknown parameter name is specified, an exception is thrown.
 
-##### Parameters:
+##### Parameters
 
 |Name| Type| Description|
 |---|---|---|
@@ -215,12 +215,12 @@ If any of the parameters exceed the specified size limits, or if an unknown para
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Read|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Read|
 
 ##### Example
 
-```js
+```javascript
 var start = new Date();
 var end = new Date();
 end.setHours(start.getHours() + 1);
@@ -244,11 +244,11 @@ Gets a string that contains a token used to get an attachment or item from an Ex
 
 The `getCallbackTokenAsync` method makes an asynchronous call to get an opaque token from the Exchange Server that hosts the user's mailbox. The lifetime of the callback token is 5 minutes.
 
-You can pass the token and an attachment identifier or item identifier to a third-party system. The third-party system uses the token as a bearer authorization token to call the Exchange Web Services (EWS) [GetAttachment](https://docs.microsoft.com/exchange/client-developer/web-service-reference/getattachment-operation) or [GetItem](https://docs.microsoft.com/exchange/client-developer/web-service-reference/getitem-operation) operation to return an attachment or item. For example, you can create a remote service to [get attachments from the selected item](https://docs.microsoft.com/outlook/add-ins/get-attachments-of-an-outlook-item).
+You can pass the token and an attachment identifier or item identifier to a third-party system. The third-party system uses the token as a bearer authorization token to call the Exchange Web Services (EWS) [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) or [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) operation to return an attachment or item. For example, you can create a remote service to [get attachments from the selected item](/outlook/add-ins/get-attachments-of-an-outlook-item).
 
 Your app must have the **ReadItem** permission specified in its manifest to call the `getCallbackTokenAsync` method.
 
-##### Parameters:
+##### Parameters
 
 |Name| Type| Attributes| Description|
 |---|---|---|---|
@@ -260,12 +260,12 @@ Your app must have the **ReadItem** permission specified in its manifest to call
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Read|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Read|
 
 ##### Example
 
-```js
+```javascript
 function getCallbackToken() {
   Office.context.mailbox.getCallbackTokenAsync(cb);
 }
@@ -279,9 +279,9 @@ function cb(asyncResult) {
 
 Gets a token identifying the user and the Office Add-in.
 
-The `getUserIdentityTokenAsync` method returns a token that you can use to identify and [authenticate the add-in and user with a third-party system](https://docs.microsoft.com/outlook/add-ins/authentication).
+The `getUserIdentityTokenAsync` method returns a token that you can use to identify and [authenticate the add-in and user with a third-party system](/outlook/add-ins/authentication).
 
-##### Parameters:
+##### Parameters
 
 |Name| Type| Attributes| Description|
 |---|---|---|---|
@@ -293,12 +293,12 @@ The `getUserIdentityTokenAsync` method returns a token that you can use to ident
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Example
 
-```js
+```javascript
 function getIdentityToken() {
   Office.context.mailbox.getUserIdentityTokenAsync(cb);
 }
@@ -317,9 +317,9 @@ Makes an asynchronous request to an Exchange Web Services (EWS) service on the E
 > - In Outlook for iOS or Outlook for Android
 > - When the add-in is loaded in a Gmail mailbox
 > 
-> In these cases, add-ins should [use REST APIs](https://docs.microsoft.com/outlook/add-ins/use-rest-api) to access the user's mailbox instead.
+> In these cases, add-ins should [use REST APIs](/outlook/add-ins/use-rest-api) to access the user's mailbox instead.
 
-The `makeEwsRequestAsync` method sends an EWS request on behalf of the add-in to Exchange. See [Call web services from an Outlook add-in](https://docs.microsoft.com/outlook/add-ins/web-services#ews-operations-that-add-ins-support) for a list of the supported EWS operations.
+The `makeEwsRequestAsync` method sends an EWS request on behalf of the add-in to Exchange. See [Call web services from an Outlook add-in](/outlook/add-ins/web-services#ews-operations-that-add-ins-support) for a list of the supported EWS operations.
 
 You cannot request Folder Associated Items with the `makeEwsRequestAsync` method.
 
@@ -329,7 +329,7 @@ The XML request must specify UTF-8 encoding.
 <?xml version="1.0" encoding="utf-8"?>
 ```
 
-Your add-in must have the **ReadWriteMailbox** permission to use the `makeEwsRequestAsync` method. For information about using the **ReadWriteMailbox** permission and the EWS operations that you can call with the `makeEwsRequestAsync` method, see [Specify permissions for mail add-in access to the user's mailbox](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions).
+Your add-in must have the **ReadWriteMailbox** permission to use the `makeEwsRequestAsync` method. For information about using the **ReadWriteMailbox** permission and the EWS operations that you can call with the `makeEwsRequestAsync` method, see [Specify permissions for mail add-in access to the user's mailbox](/outlook/add-ins/understanding-outlook-add-in-permissions).
 
 > [!NOTE]
 > The server administrator must set `OAuthAuthentication` to true on the Client Access Server EWS directory to enable the `makeEwsRequestAsync` method to make EWS requests.
@@ -344,7 +344,7 @@ When you use the `makeEwsRequestAsync` method in mail apps running in Outlook ve
 
 You do not need to set the encoding value when your mail app is running in Outlook on the web. You can determine whether your mail app is running in Outlook or Outlook on the web by using the mailbox.diagnostics.hostName property. You can determine what version of Outlook is running by using the mailbox.diagnostics.hostVersion property.
 
-##### Parameters:
+##### Parameters
 
 |Name| Type| Attributes| Description|
 |---|---|---|---|
@@ -357,17 +357,17 @@ You do not need to set the encoding value when your mail app is running in Outlo
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteMailbox|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteMailbox|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Example
 
 The following example calls `makeEwsRequestAsync` to use the `GetItem` operation to get the subject of an item.
 
-```js
+```javascript
 function getSubjectRequest(id) {
-   // Return a GetItem operation request for the subject of the specified item.
-   var request =
+  // Return a GetItem operation request for the subject of the specified item.
+  var request =
     '<?xml version="1.0" encoding="utf-8"?>' +
     '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"' +
     '               xmlns:xsd="http://www.w3.org/2001/XMLSchema"' +
@@ -389,19 +389,19 @@ function getSubjectRequest(id) {
     '  </soap:Body>' +
     '</soap:Envelope>';
 
-   return request;
+  return request;
 }
 
 function sendRequest() {
-   // Create a local variable that contains the mailbox.
-   Office.context.mailbox.makeEwsRequestAsync(
+  // Create a local variable that contains the mailbox.
+  Office.context.mailbox.makeEwsRequestAsync(
     getSubjectRequest(mailbox.item.itemId), callback);
 }
 
 function callback(asyncResult)  {
-   var result = asyncResult.value;
-   var context = asyncResult.asyncContext;
+  var result = asyncResult.value;
+  var context = asyncResult.asyncContext;
 
-   // Process the returned response here.
+  // Process the returned response here.
 }
 ```

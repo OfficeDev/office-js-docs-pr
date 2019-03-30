@@ -1,11 +1,11 @@
 ---
 title: Work with Events using the Excel JavaScript API
 description: ''
-ms.date: 10/17/2018
+ms.date: 03/19/2019
 localization_priority: Priority
 ---
 
-# Work with Events using the Excel JavaScript API 
+# Work with Events using the Excel JavaScript API
 
 This article describes important concepts related to working with events in Excel and provides code samples that show how to register event handlers, handle events, and remove event handlers using the Excel JavaScript API. 
 
@@ -15,15 +15,15 @@ Each time certain types of changes occur in an Excel workbook, an event notifica
 
 | Event | Description | Supported objects |
 |:---------------|:-------------|:-----------|
-| `onAdded` | Event that occurs when an object is added. | [**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
-| `onDeleted` | Event that occurs when an object is deleted. | [**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
-| `onActivated` | Event that occurs when an object is activated. | [**Chart**](https://docs.microsoft.com/javascript/api/excel/excel.chart), [**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection), [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
-| `onDeactivated` | Event that occurs when an object is deactivated. | [**Chart**](https://docs.microsoft.com/javascript/api/excel/excel.chart), [**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection), [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
-| `onCalculated` | Event that occurs when a worksheet has finished calculation (or all the worksheets of the collection have finished). | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection), [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
-| `onChanged` | Event that occurs when data within cells is changed. | [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet), [**Table**](https://docs.microsoft.com/javascript/api/excel/excel.table), [**TableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.tablecollection) |
-| `onDataChanged` | Event that occurs when data or formatting within the binding is changed. | [**Binding**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
-| `onSelectionChanged` | Event that occurs when the active cell or selected range is changed. | [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet), [**Table**](https://docs.microsoft.com/javascript/api/excel/excel.table), [**Binding**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
-| `onSettingsChanged` | Event that occurs when the Settings in the document are changed. | [**SettingCollection**](https://docs.microsoft.com/javascript/api/excel/excel.settingcollection) |
+| `onAdded` | Event that occurs when an object is added. | [**ChartCollection**](/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
+| `onDeleted` | Event that occurs when an object is deleted. | [**ChartCollection**](/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
+| `onActivated` | Event that occurs when an object is activated. | [**Chart**](/javascript/api/excel/excel.chart), [**ChartCollection**](/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection), [**Worksheet**](/javascript/api/excel/excel.worksheet) |
+| `onDeactivated` | Event that occurs when an object is deactivated. | [**Chart**](/javascript/api/excel/excel.chart), [**ChartCollection**](/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection), [**Worksheet**](/javascript/api/excel/excel.worksheet) |
+| `onCalculated` | Event that occurs when a worksheet has finished calculation (or all the worksheets of the collection have finished). | [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection), [**Worksheet**](/javascript/api/excel/excel.worksheet) |
+| `onChanged` | Event that occurs when data within cells is changed. | [**Worksheet**](/javascript/api/excel/excel.worksheet), [**Table**](/javascript/api/excel/excel.table), [**TableCollection**](/javascript/api/excel/excel.tablecollection) |
+| `onDataChanged` | Event that occurs when data or formatting within the binding is changed. | [**Binding**](/javascript/api/excel/excel.binding) |
+| `onSelectionChanged` | Event that occurs when the active cell or selected range is changed. | [**Worksheet**](/javascript/api/excel/excel.worksheet), [**Table**](/javascript/api/excel/excel.table), [**Binding**](/javascript/api/excel/excel.binding) |
+| `onSettingsChanged` | Event that occurs when the Settings in the document are changed. | [**SettingCollection**](/javascript/api/excel/excel.settingcollection) |
 
 ### Event triggers
 
@@ -68,7 +68,7 @@ As shown in the previous example, when you register an event handler, you indica
 
 ```js
 function handleChange(event)
-{ 
+{
     return Excel.run(function(context){
         return context.sync()
             .then(function() {
@@ -98,7 +98,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 
 function handleSelectionChange(event)
-{ 
+{
     return Excel.run(function(context){
         return context.sync()
             .then(function() {
@@ -108,41 +108,41 @@ function handleSelectionChange(event)
 }
 
 function remove() {
-	return Excel.run(eventResult.context, function (context) {
-		eventResult.remove();
-		
-		return context.sync()
-			.then(function() {
-				eventResult = null;
-				console.log("Event handler successfully removed.");
-			});
-	}).catch(errorHandlerFunction);
+    return Excel.run(eventResult.context, function (context) {
+        eventResult.remove();
+
+        return context.sync()
+            .then(function() {
+                eventResult = null;
+                console.log("Event handler successfully removed.");
+            });
+    }).catch(errorHandlerFunction);
 }
 ```
 
 ## Enable and disable events
 
 The performance of an add-in may be improved by disabling events. 
-For example, your app might never need to receive events, or it could ignore events while performing batch-edits of multiple entities. 
+For example, your app might never need to receive events, or it could ignore events while performing batch-edits of multiple entities.
 
-Events are enabled and disabled at the [runtime](https://docs.microsoft.com/javascript/api/excel/excel.runtime) level. 
-The `enableEvents` property determines if events are fired and their handlers are activated. 
+Events are enabled and disabled at the [runtime](/javascript/api/excel/excel.runtime) level.
+The `enableEvents` property determines if events are fired and their handlers are activated.
 
 The following code sample shows how to toggle events on and off.
 
 ```js
 Excel.run(function (context) {
-	context.runtime.load("enableEvents");
-	return context.sync()
-		.then(function () {
-			var eventBoolean = !context.runtime.enableEvents;
-			context.runtime.enableEvents = eventBoolean;
-			if (eventBoolean) {
-				console.log("Events are currently on.");
-			} else {
-				console.log("Events are currently off.");
-			}
-		}).then(context.sync);
+    context.runtime.load("enableEvents");
+    return context.sync()
+        .then(function () {
+            var eventBoolean = !context.runtime.enableEvents;
+            context.runtime.enableEvents = eventBoolean;
+            if (eventBoolean) {
+                console.log("Events are currently on.");
+            } else {
+                console.log("Events are currently off.");
+            }
+        }).then(context.sync);
 }).catch(errorHandlerFunction);
 ```
 

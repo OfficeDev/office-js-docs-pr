@@ -1,14 +1,14 @@
 ---
 title: Build an Excel add-in using Angular
 description: 
-ms.date: 10/19/2018
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
 ---
 
 # Build an Excel add-in using Angular
 
-In this article, you'll walk you through the process of building an Excel add-in using Angular and the Excel JavaScript API.
+In this article, you'll walk through the process of building an Excel add-in using Angular and the Excel JavaScript API.
 
 ## Prerequisites
 
@@ -34,7 +34,7 @@ In this article, you'll walk you through the process of building an Excel add-in
     - **Which Office client application would you like to support?:** `Excel`
 
     ![Yeoman generator](../images/yo-office-excel-angular.png)
-    
+
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
 2. Navigate to the root folder of the project.
@@ -55,7 +55,7 @@ In this article, you'll walk you through the process of building an Excel add-in
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px; 
+        height: 80px;
         overflow: hidden;
         font-family: Arial;
         padding-top: 25px;
@@ -68,7 +68,7 @@ In this article, you'll walk you through the process of building an Excel add-in
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
         font-family: Arial;
     }
 
@@ -173,7 +173,6 @@ In this article, you'll walk you through the process of building an Excel add-in
     - Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
     - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-   
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
     ![Excel add-in button](../images/excel-quickstart-addin-2b.png)
@@ -196,5 +195,4 @@ Congratulations, you've successfully created an Excel add-in using Angular! Next
 * [Excel add-in tutorial](../tutorials/excel-tutorial-create-table.md)
 * [Fundamental programming concepts with the Excel JavaScript API](../excel/excel-add-ins-core-concepts.md)
 * [Excel add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API reference](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
-
+* [Excel JavaScript API reference](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

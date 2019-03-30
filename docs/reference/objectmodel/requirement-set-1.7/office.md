@@ -1,7 +1,7 @@
 ---
 title: Office namespace - requirement set 1.7
 description: ''
-ms.date: 11/08/2018
+ms.date: 03/19/2019
 localization_priority: Normal
 ---
 
@@ -14,7 +14,7 @@ The Office namespace provides shared interfaces that are used by add-ins in all 
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ##### Members and methods
 
@@ -37,7 +37,7 @@ The Office namespace provides shared interfaces that are used by add-ins in all 
 
 Specifies the result of an asynchronous call.
 
-##### Type:
+##### Type
 
 *   String
 
@@ -53,7 +53,7 @@ Specifies the result of an asynchronous call.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ---
 
@@ -61,7 +61,7 @@ Specifies the result of an asynchronous call.
 
 Specifies how to coerce data returned or set by the invoked method.
 
-##### Type:
+##### Type
 
 *   String
 
@@ -77,7 +77,7 @@ Specifies how to coerce data returned or set by the invoked method.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ---
 
@@ -85,7 +85,7 @@ Specifies how to coerce data returned or set by the invoked method.
 
 Specifies the event associated with an event handler.
 
-##### Type:
+##### Type
 
 *   String
 
@@ -103,7 +103,7 @@ Specifies the event associated with an event handler.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read |
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read |
 
 ---
 
@@ -111,7 +111,7 @@ Specifies the event associated with an event handler.
 
 Specifies the source of the data returned by the invoked method.
 
-##### Type:
+##### Type
 
 *   String
 
@@ -127,4 +127,4 @@ Specifies the source of the data returned by the invoked method.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|

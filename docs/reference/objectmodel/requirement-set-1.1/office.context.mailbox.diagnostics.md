@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.diagnostics - requirement set 1.1
 description: ''
-ms.date: 10/11/2018
+ms.date: 03/19/2019
 localization_priority: Normal
 ---
 
@@ -16,8 +16,8 @@ Provides diagnostic information to an Outlook add-in.
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ### Members
 
@@ -27,7 +27,7 @@ Gets a string that represents the name of the host application.
 
 A string that can be one of the following values: `Outlook`, `OutlookIOS`, or `OutlookWebApp`.
 
-##### Type:
+##### Type
 
 *   String
 
@@ -36,8 +36,8 @@ A string that can be one of the following values: `Outlook`, `OutlookIOS`, or `O
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ####  hostVersion :String
 
@@ -45,7 +45,7 @@ Gets a string that represents the version of either the host application or the 
 
 If the mail add-in is running on the Outlook desktop client or Outlook for iOS, the `hostVersion` property returns the version of the host application, Outlook. In Outlook Web App, the property returns the version of the Exchange Server. An example is the string `15.0.468.0`.
 
-##### Type:
+##### Type
 
 *   String
 
@@ -54,8 +54,8 @@ If the mail add-in is running on the Outlook desktop client or Outlook for iOS, 
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ####  OWAView :String
 
@@ -71,7 +71,7 @@ Outlook Web App has three views that correspond to the width of the screen and t
 *   `TwoColumns`, which is displayed when the screen is wider. Outlook Web App uses this view on most tablets.
 *   `ThreeColumns`, which is displayed when the screen is wide. For example, Outlook Web App uses this view in a full screen window on a desktop computer.
 
-##### Type:
+##### Type
 
 *   String
 
@@ -80,5 +80,5 @@ Outlook Web App has three views that correspond to the width of the screen and t
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Applicable Outlook mode](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose or read|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|

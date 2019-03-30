@@ -26,6 +26,9 @@
     - name: Use Vue
       href: quickstarts/excel-quickstart-vue.md
       displayName: Excel
+    - name: Build a custom function 
+      href: quickstarts/excel-custom-functions-quickstart.md
+      displayName: Excel
   - name: Create Word add-in
     href: quickstarts/word-quickstart.md
     displayName: Word
@@ -257,8 +260,17 @@
         - name: Custom functions overview
           href: excel/custom-functions-overview.md
           displayName: Excel
+        - name: Custom functions architecture
+          href: excel/custom-functions-architecture.md
+          displayName: Excel
+        - name: Custom functions quickstart
+          href: quickstarts/excel-custom-functions-quickstart.md
+          displayName: Excel
         - name: Custom functions tutorial
           href: tutorials/excel-tutorial-create-custom-functions.md
+          displayName: Excel
+        - name: Custom functions web requests
+          href: excel/custom-functions-web-reqs.md
           displayName: Excel
         - name: Custom functions runtime
           href: excel/custom-functions-runtime.md
@@ -275,11 +287,23 @@
         - name: Custom functions authentication
           href: excel/custom-functions-authentication.md
           displayName: Excel
+        - name: Custom functions dialog
+          href: excel/custom-functions-dialog.md
+          displayName: Excel
         - name: Custom functions changelog
           href: excel/custom-functions-changelog.md
           displayName: Excel
+        - name: Custom functions error handling
+          href: excel/custom-functions-errors.md
+          displayName: Excel
         - name: Custom functions requirements
           href: excel/custom-functions-requirements.md
+          displayName: Excel
+        - name: Custom functions naming guidelines
+          href: excel/custom-functions-naming.md
+          displayName: Excel
+        - name: Custom functions troubleshooting
+          href: excel/custom-functions-troubleshooting.md
           displayName: Excel
       - name: Data validation
         href: excel/excel-add-ins-data-validation.md
@@ -304,6 +328,9 @@
         displayName: Excel
       - name: Ranges (advanced)
         href: excel/excel-add-ins-ranges-advanced.md
+        displayName: Excel
+      - name: Shapes
+        href: excel/excel-add-ins-shapes.md
         displayName: Excel
       - name: Tables
         href: excel/excel-add-ins-tables.md

@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API overview
 description: ''
-ms.date: 11/01/2018
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
 ---
@@ -57,6 +57,6 @@ For detailed information about the Excel JavaScript API, see the [Excel JavaScri
 
 ## See also
 
-- [Excel add-ins overview](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-overview)
-- [Office Add-ins platform overview](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins)
+- [Excel add-ins overview](/office/dev/add-ins/excel/excel-add-ins-overview)
+- [Office Add-ins platform overview](/office/dev/add-ins/overview/office-add-ins)
 - [Excel add-in samples on GitHub](https://github.com/OfficeDev?utf8=%E2%9C%93&q=Excel)
