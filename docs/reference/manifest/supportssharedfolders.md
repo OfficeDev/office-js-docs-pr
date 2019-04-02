@@ -16,8 +16,8 @@ The following is an example of the  **SupportsSharedFolders** element.
 
 ```XML
 <DesktopFormFactor>
-  <FunctionFile resid="residDesktopFuncUrl" />
   <SupportsSharedFolders>true</SupportsSharedFolders>
+  <FunctionFile resid="residDesktopFuncUrl" />
   <ExtensionPoint xsi:type="MessageReadCommandSurface">
     <!-- configure selected extension point -->
   </ExtensionPoint>
