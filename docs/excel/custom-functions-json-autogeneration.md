@@ -1,6 +1,6 @@
 ---
 ms.date: 03/29/2019
-description: Create custom functions' JSON file automatically with JSDOC comments. 
+description: Use JSDOC tags to dynamically create your custom functions JSON metadata.
 title: Generate JSON metadata for custom functions (preview)
 localization_priority: Priority
 ---
