@@ -15,14 +15,26 @@ Defines whether the Outlook add-in is available in delegate scenarios. The **Sup
 The following is an example of the  **SupportsSharedFolders** element.
 
 ```XML
-<DesktopFormFactor>
-  <FunctionFile resid="residDesktopFuncUrl" />
-  <SupportsSharedFolders>true</SupportsSharedFolders>
-  <ExtensionPoint xsi:type="MessageReadCommandSurface">
-    <!-- configure selected extension point -->
-  </ExtensionPoint>
+...
+<VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+    ...
+    <Hosts>
+      <Host xsi:type="MailHost">
+        <DesktopFormFactor>
+          <SupportsSharedFolders>true</SupportsSharedFolders>
+          <FunctionFile resid="residDesktopFuncUrl" />
+          <ExtensionPoint xsi:type="MessageReadCommandSurface">
+            <!-- configure selected extension point -->
+          </ExtensionPoint>
 
-  <!-- You can define more than one ExtensionPoint element as needed -->
+          <!-- You can define more than one ExtensionPoint element as needed -->
 
-</DesktopFormFactor>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    ...
+  </VersionOverrides>
+</VersionOverrides>
+...
 ```
