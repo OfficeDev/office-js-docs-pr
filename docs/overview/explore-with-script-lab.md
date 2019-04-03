@@ -2,7 +2,7 @@
 title: Explore Office JavaScript API using Script Lab
 description: Learn about Script Lab and how you can use it to explore the Office JS API and prototype functionality.
 ms.topic: article
-ms.date: 04/01/2019
+ms.date: 04/03/2019
 localization_priority: Normal
 ---
 
@@ -17,7 +17,7 @@ Script Lab is a tool for anyone who wants to learn about developing Office Add-i
 > [!TIP]
 > In order to participate in beta or preview, you may have to sign up for the [Office Insider program](https://products.office.com/office-insider).
 
-Sounds good so far? Take a look at this one-minute teaser video.
+Sounds good so far? Take a look at this one-minute teaser video to see Script Lab in action.
 
 [![Teaser video showing Script Lab being used in Excel, Word, and PowerPoint Online.](../images/screenshot-wide-youtube.png 'Script Lab teaser video')](https://aka.ms/scriptlabvideo)
 
