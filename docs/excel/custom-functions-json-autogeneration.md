@@ -1,27 +1,27 @@
 ---
-ms.date: 03/29/2019
+ms.date: 04/03/2019
 description: Use JSDOC tags to dynamically create your custom functions JSON metadata.
-title: Use JSDOC tags to dynamically create your custom functions JSON metadata
+title: Create JSON metadata for custom functions (preview)
 localization_priority: Priority
 ---
 
-# Generate JSON metadata for custom functions (preview)
+# Create JSON metadata for custom functions (preview)
 
-When an Excel custom function is written in JavaScript or TypeScript, JSDoc tags are used to provide the extra information about the custom function.
+When an Excel custom function is written in JavaScript or TypeScript, JSDoc tags are used to provide extra information about the custom function. The JSDoc tags are then used at build time to create the [JSON metadata file](custom-functions-json.md). Using JSDoc tags saves you from the effort of manually editing the JSON metadata file.
 
-Add the `@customfunction` tag in the comments for a JavaScript or TypeScript function to mark it as a custom function.
+Add the `@customfunction` tag in the code comments for a JavaScript or TypeScript function to mark it as a custom function.
 
 The function parameter types may be provided using the [@param](#param) tag in JavaScript, or from the [Function type](http://www.typescriptlang.org/docs/handbook/functions.html) in TypeScript. For more information, see the [@param](#param) tag and [Types](#Types) section.
 
 ## Tags
-* [@cancelable](#cancelable)
-* [@customfunction](#customfunction) id name
-* [@helpurl](#helpurl) url
-* [@param](#param) _{type}_ name description
-* [@requiresAddress](#requiresAddress)
-* [@returns](#returns) _{type}_
-* [@streaming](#streaming)
-* [@volatile](#volatile)
+* [@cancelable](#@cancelable)
+* [@customfunction](#@customfunction) id name
+* [@helpurl](#@helpurl) url
+* [@param](#@param) _{type}_ name description
+* [@requiresAddress](#@requiresAddress)
+* [@returns](#@returns) _{type}_
+* [@streaming](#@streaming)
+* [@volatile](#@volatile)
 
 ---
 ### @cancelable
@@ -32,7 +32,7 @@ The last function parameter must be of type `CustomFunctions.CancelableInvocatio
 
 If the last function parameter is of type `CustomFunctions.CancelableInvocation`, it will be considered `@cancelable` even if the tag is not present.
 
- A function cannot have both `@cancelable` and `@streaming` tags.
+A function cannot have both `@cancelable` and `@streaming` tags.
 
 ---
 ### @customfunction
@@ -41,7 +41,7 @@ Syntax: @customfunction _id_ _name_
 
 Specify this tag to treat the JavaScript/TypeScript function as an Excel custom function.
 
-This tag is required to generate metadata for the custom function.
+This tag is required to create metadata for the custom function.
 
 There should also be a call to `CustomFunctions.associate("id", functionName);`
 
@@ -70,7 +70,7 @@ Syntax: @helpurl _url_
 The provided _url_ is displayed in Excel.
 
 ---
-### @param 
+### @param
 
 #### JavaScript
 
