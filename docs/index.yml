@@ -32,10 +32,10 @@ sections:
       columns: 3
       items:
         - href: /office/dev/add-ins/overview/office-add-ins/
-          html: <p>Learn about Office Add-ins.</p>
+          html: <p>Learn about the Office Add-ins platform.</p>
           image:
             src: images/index/blocks.svg
-          title: Office Add-ins
+          title: Office Add-ins platform
         - href: /office/dev/add-ins/excel/excel-add-ins-overview/
           html: <p>Build Excel add-ins and custom functions.</p>
           image:
