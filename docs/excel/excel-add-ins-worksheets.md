@@ -276,9 +276,9 @@ Excel.run(function (context) {
 
 ## Detect data changes
 
-Your add-in may need to react to users changing the data in a range. To detect these changes, [Worksheets](/javascript/api/excel/excel.worksheet) provide an `onChanged` event. This event fires whenever the data is changed in a particular worksheet. Event handlers for `onChanged` receive a [WorksheetChangedEventArgs](/javascript/api/excel/excel.worksheetchangedeventargs).
+Your add-in may need to react to users changing the data in a worksheet. To detect these changes, you can [register an event handler](excel-add-ins-events.md#register-an-event-handler) for the `onChanged` event of a worksheet. Event handlers for the `onChanged` event receive a [WorksheetChangedEventArgs](/javascript/api/excel/excel.worksheetchangedeventargs) object when the event fires.
 
-The `WorksheetChangedEventArgs` object provides information about the changes and the source. Since `onChanged` fires when either the format or value of the data changes, it can be useful to have your add-in check if the values have actually changed. The `details` property encapsulates this information as a [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail). The following code sample demonstrates how to display the before and after values and types of a cell that has been changed.
+The `WorksheetChangedEventArgs` object provides information about the changes and the source. Since `onChanged` fires when either the format or value of the data changes, it can be useful to have your add-in check if the values have actually changed. The `details` property encapsulates this information as a [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail). The following code sample shows how to display the before and after values and types of a cell that has been changed.
 
 > [!NOTE]
 > `WorksheetChangedEventArgs.details` is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
