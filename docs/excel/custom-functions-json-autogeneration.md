@@ -14,6 +14,7 @@ Add the `@customfunction` tag in the code comments for a JavaScript or TypeScrip
 The function parameter types may be provided using the [@param](#param) tag in JavaScript, or from the [Function type](http://www.typescriptlang.org/docs/handbook/functions.html) in TypeScript. For more information, see the [@param](#param) tag and [Types](#Types) section.
 
 ## JSDoc Tags
+The following JSDoc tags are supported in Excel custom functions:
 * [@cancelable](#cancelable)
 * [@customfunction](#customfunction) id name
 * [@helpurl](#helpurl) url
