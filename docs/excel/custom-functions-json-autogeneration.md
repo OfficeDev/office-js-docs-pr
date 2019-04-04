@@ -14,17 +14,18 @@ Add the `@customfunction` tag in the code comments for a JavaScript or TypeScrip
 The function parameter types may be provided using the [@param](#param) tag in JavaScript, or from the [Function type](http://www.typescriptlang.org/docs/handbook/functions.html) in TypeScript. For more information, see the [@param](#param) tag and [Types](#Types) section.
 
 ## JSDoc Tags
-* [@cancelable](#@cancelable)
-* [@customfunction](#@customfunction) id name
-* [@helpurl](#@helpurl) url
-* [@param](#@param) _{type}_ name description
-* [@requiresAddress](#@requiresAddress)
-* [@returns](#@returns) _{type}_
-* [@streaming](#@streaming)
-* [@volatile](#@volatile)
+* [@cancelable](#cancelable)
+* [@customfunction](#customfunction) id name
+* [@helpurl](#helpurl) url
+* [@param](#param) _{type}_ name description
+* [@requiresAddress](#requiresAddress)
+* [@returns](#returns) _{type}_
+* [@streaming](#streaming)
+* [@volatile](#volatile)
 
 ---
 ### @cancelable
+<a id="cancelable"/>
 
 Indicates that a custom function wants to perform an action when the function is canceled.
 
@@ -36,6 +37,7 @@ A function cannot have both `@cancelable` and `@streaming` tags.
 
 ---
 ### @customfunction
+<a id="customfunction"/>
 
 Syntax: @customfunction _id_ _name_
 
@@ -64,6 +66,7 @@ Provides the display name for the custom function.
 
 ---
 ### @helpurl
+<a id="helpurl"/>
 
 Syntax: @helpurl _url_
 
@@ -71,6 +74,7 @@ The provided _url_ is displayed in Excel.
 
 ---
 ### @param
+<a id="param"/>
 
 #### JavaScript
 
@@ -100,6 +104,7 @@ For detailed description of the @param see: [JSDoc](http://usejsdoc.org/tags-par
 
 ---
 ### @requiresAddress
+<a id="requiresAddress"/>
 
 Indicates that the address of the cell where the function is being evaluated should be provided. 
 
@@ -107,6 +112,7 @@ The last function parameter must be of type `CustomFunctions.Invocation` or a de
 
 ---
 ### @returns
+<a id="returns"/>
 
 Syntax: @returns {_type_}
 
@@ -116,6 +122,7 @@ If `{type}` is omitted, the TypeScript type info will be used. If there is no ty
 
 ---
 ### @streaming
+<a id="streaming"/>
 
 Used to indicate that a custom function is a streaming function. 
 
@@ -130,6 +137,7 @@ Streaming functions cannot be marked as [@volatile](#volatile).
 
 ---
 ### @volatile
+<a id="volatile"/>
 
 A volatile function is one whose result cannot be assumed to be the same from one moment to the next even if it takes no arguments or the arguments have not changed. Excel re-evaluates cells that contain volatile functions, together with all dependents, every time that a calculation is done. For this reason, too much reliance on volatile functions can make recalculation times slow, so use them sparingly.
 
