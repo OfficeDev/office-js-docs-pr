@@ -276,6 +276,30 @@ Excel.run(async (context) => {
 
 ![Data in Excel after range’s remove duplicates method has been run](../images/excel-ranges-remove-duplicates-after.png)
 
+## Detect data changes
+
+> [!NOTE]
+> The `ChangedEventDetail` class and `details` property of the [TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs) and WorksheetChangedEventArgs(/javascript/api/excel/excel.worksheetchangedeventargs) are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+Your add-in may need to react to users changing the data in a range. To detect these data changes, both [Tables](/javascript/api/excel/excel.table) and [Worksheets](/javascript/api/excel/excel.worksheet) provide an `onChanged` event. This event fires whenever the data is changed in the particular table or worksheet. Event handlers for `onChanged` receive a [TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs) or WorksheetChangedEventArgs(/javascript/api/excel/excel.worksheetchangedeventargs), depending on which structure is connected.
+
+The `*ChangedEventArgs` provide information about the changes and the source. Since `onChanged` fires when the data formatting changes, it can be useful to have your add-in check if the data values have changed. The `details` property encapsulates this information as a [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail). The following code sample demonstrates how to display the before and after values and types of a cell that has been changed.
+
+```js
+// This function would be used as an event handler for the Worksheet.onChanged event.
+function onWorksheetChanged(eventArgs) {
+    Excel.run(function (context) {
+        var details = eventArgs.details;
+        var address = eventArgs.address;
+
+        // Print the before and after types and values to the console.
+        console.log(`Change at ${address}: was ${details.valueBefore}(${details.valueTypeBefore}),`
+            + ` now is ${details.valueAfter}(${details.valueTypeAfter})`);
+        return context.sync();
+    });
+}
+```
+
 ## See also
 
 - [Work with ranges using the Excel JavaScript API](excel-add-ins-ranges.md)
