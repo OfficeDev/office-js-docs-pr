@@ -57,7 +57,7 @@ More platforms are coming soon.
 
 ## Debugging
 
-To debug an Add-in Command, you must run it in Office Online. For details, see [Debugging in Office Online](../testing/debug-add-ins-in-office-online.md).
+To debug an Add-in Command, you must run it in Office Online. For details, see [Debug add-ins in Office Online](../testing/debug-add-ins-in-office-online.md).
 
 ## Best practices
 
