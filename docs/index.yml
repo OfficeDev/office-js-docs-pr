@@ -41,11 +41,6 @@ sections:
       className: cardsM
       columns: 3
       items:
-        - href: /office/dev/add-ins/overview/office-add-ins/
-          html: <p>Learn about the Office Add-ins platform.</p>
-          image:
-            src: images/index/blocks.svg
-          title: Office Add-ins platform
         - href: /office/dev/add-ins/excel/excel-add-ins-overview/
           html: <p>Build Excel add-ins and custom functions.</p>
           image:
@@ -66,6 +61,11 @@ sections:
           image:
             src: images/index/PowerPointLogoColor.svg
           title: PowerPoint add-ins
+        - href: /office/dev/add-ins/project/project-add-ins/
+          html: <p>Build Project add-ins.</p>
+          image:
+            src: images/index/ProjectLogoColor.svg
+          title: Project add-ins
         - href: /office/dev/add-ins/word/word-add-ins-programming-overview/
           html: <p>Build Word add-ins.</p>
           image:
