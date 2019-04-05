@@ -311,7 +311,7 @@
   - name: About OneNote add-ins
     href: onenote/onenote-add-ins-programming-overview.md
   - name: > 
-        Quick start: build a OneNote add-in
+        Quick Start: Build a OneNote add-in
     href: quickstarts/onenote-quickstart.md
   - name: OneNote JavaScript API
     items:
@@ -331,7 +331,8 @@
   items:
   - name: About PowerPoint add-ins
     href: powerpoint/powerpoint-add-ins.md
-  - name: Build your first PowerPoint add-in
+  - name: > 
+        Quick Start: Build a PowerPoint add-in
     href: quickstarts/powerpoint-quickstart.md
   - name: PowerPoint add-in tutorial
     href: tutorials/powerpoint-tutorial.md
@@ -353,7 +354,8 @@
   items:
   - name: About Project add-ins
     href: project/project-add-ins.md
-  - name: Build your first Project add-in
+  - name: > 
+        Quick Start: Build a Project add-in
     href: quickstarts/project-quickstart.md
   - name: Project JavaScript API
     items:
@@ -371,7 +373,8 @@
   items:
   - name: About Word add-ins
     href: word/word-add-ins-programming-overview.md
-  - name: Build your first Word add-in
+  - name: > 
+        Quick Start: Build a Word add-in
     href: quickstarts/word-quickstart.md
   - name: Word add-in tutorial
     href: tutorials/word-tutorial.md
