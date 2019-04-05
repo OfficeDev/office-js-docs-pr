@@ -194,7 +194,7 @@
     - name: AppSource validation policies
       href: /office/dev/store/validation-policies
   - name: Reference
-   items:
+    items:
     - name: JavaScript API for Office overview
       href: reference/javascript-api-for-office.md
     - name: API requirement sets (Common)
