@@ -29,6 +29,16 @@ sections:
     - type: list
       style: cards
       className: cardsM
+      columns: 1
+      items:
+        - href: /office/dev/add-ins/overview/office-add-ins/
+          html: <p>Learn about the Office Add-ins platform.</p>
+          image:
+            src: images/index/blocks.svg
+          title: Office Add-ins platform
+    - type: list
+      style: cards
+      className: cardsM
       columns: 3
       items:
         - href: /office/dev/add-ins/overview/office-add-ins/
