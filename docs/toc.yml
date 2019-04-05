@@ -375,11 +375,16 @@
     - name: Create custom functions
       href: tutorials/excel-tutorial-create-custom-functions.md
       displayName: Excel
-
   - name: Excel JavaScript API
     items:
     - name: Overview
       href: reference/overview/excel-add-ins-reference-overview.md
+      displayName: Excel
+    - name: API requirement sets
+      href: reference/requirement-sets/excel-api-requirement-sets.md
+      displayName: Excel
+    - name: API reference
+      href: /javascript/api/excel
       displayName: Excel
     - name: Fundamental programming concepts
       href: excel/excel-add-ins-core-concepts.md
@@ -387,8 +392,6 @@
     - name: Advanced programming concepts
       href: excel/excel-add-ins-advanced-concepts.md
       displayName: Excel
-    - name: Excel JavaScript API reference
-      href: /javascript/api/excel
     - name: Calling built-in functions
       href: excel/excel-add-ins-worksheet-functions.md
       displayName: Excel
@@ -472,13 +475,18 @@
     - name: Overview
       href: reference/overview/onenote-add-ins-javascript-reference.md
       displayName: OneNote
-    - name: OneNote JavaScript API reference
+    - name: API requirement sets
+      href: reference/requirement-sets/onenote-api-requirement-sets.md
+      displayName: OneNote
+    - name: API reference
       href: /javascript/api/onenote
+      displayName: OneNote
     - name: Work with OneNote page content
       href: onenote/onenote-add-ins-page-content.md
       displayName: OneNote
 
 - name: Outlook add-ins
+  items: 
   href: /outlook/add-ins/
 
 - name: PowerPoint add-ins
@@ -494,8 +502,9 @@
     - name: Overview
       href: reference/requirement-sets/powerpoint-and-project-note.md
       displayName: PowerPoint
-    - name: PowerPoint JavaScript API reference
+    - name: API reference
       href: /javascript/api/powerpoint
+      displayName: PowerPoint
     - name: Get the whole document from an add-in
       href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
       displayName: PowerPoint
@@ -521,6 +530,15 @@
       href: project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md
       displayName: Project
 
+- name: Visio add-ins
+  items:
+  - name: API overview
+    href: reference/overview/visio-javascript-reference-overview.md
+    displayName: Visio
+  - name: API reference
+    href: /javascript/api/visio
+    displayName: Visio
+
 - name: Word add-ins
   items:
   - name: About Word add-ins
@@ -534,7 +552,9 @@
     - name: Overview
       href: reference/overview/word-add-ins-reference-overview.md
       displayName: Word
-    - name: Word JavaScript API reference
+    - name: API requirement sets
+      href: reference/requirement-sets/word-api-requirement-sets.md
+    - name: API reference
       href: /javascript/api/word
     - name: Create better add-ins for Word with Office Open XML
       href: word/create-better-add-ins-for-word-with-office-open-xml.md
@@ -558,27 +578,8 @@
 - name: Reference
   items:
 
-  - name: API overview
-    items:
-    - name: Excel API overview
-      href: reference/overview/excel-add-ins-reference-overview.md
-    - name: OneNote API overview
-      href: reference/overview/onenote-add-ins-javascript-reference.md
-    - name: PowerPoint API overview
-      href: reference/requirement-sets/powerpoint-and-project-note.md
-    - name: Project API overview
-      href: reference/requirement-sets/powerpoint-and-project-note.md
-    - name: Visio API overview
-      href: reference/overview/visio-javascript-reference-overview.md
-    - name: Word API overview
-      href: reference/overview/word-add-ins-reference-overview.md
-
   - name: API requirement sets
     items:
-    - name: Excel requirement sets
-      href: reference/requirement-sets/excel-api-requirement-sets.md
-    - name: OneNote requirement sets
-      href: reference/requirement-sets/onenote-api-requirement-sets.md
     - name: Outlook requirement sets
       href: reference/requirement-sets/outlook-api-requirement-sets.md
     - name: Outlook object model
@@ -719,21 +720,11 @@
           href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.userProfile.md
         - name: Outlook 1.1 API Reference
           href: /javascript/api/outlook_1_1
-    - name: Word requirement sets
-      href: reference/requirement-sets/word-api-requirement-sets.md
 
   - name: API reference
     items:
-    - name: Excel API reference
-      href: /javascript/api/excel      
-    - name: OneNote API reference
-      href: /javascript/api/onenote
     - name: Outlook API reference
       href: /javascript/api/outlook
-    - name: Visio API reference
-      href: /javascript/api/visio
-    - name: Word API reference
-      href: /javascript/api/word
     
 - name: Resources
   href: resources/resources-links-help.md
