@@ -2,15 +2,11 @@
   href: powerpoint-add-ins.md
   items:
 
-  - name: Quick Starts
-    items:
-    - name: Create PowerPoint add-in
-      href: ../quickstarts/powerpoint-quickstart.md?context=office/dev/add-ins/powerpoint/context
+  - name: Build your first PowerPoint add-in
+    href: ../quickstarts/powerpoint-quickstart.md?context=office/dev/add-ins/powerpoint/context
 
-  - name: Tutorials
-    items:
-    - name: PowerPoint add-in tutorial
-      href: ../tutorials/powerpoint-tutorial.md?context=office/dev/add-ins/powerpoint/context
+  - name: PowerPoint add-in tutorial
+    href: ../tutorials/powerpoint-tutorial.md?context=office/dev/add-ins/powerpoint/context
 
   - name: Office Add-ins concepts
     items:

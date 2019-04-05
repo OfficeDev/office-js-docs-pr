@@ -2,10 +2,8 @@
   href: project-add-ins.md
   items:
 
-  - name: Quick Starts
-    items:
-    - name: Create Project add-in
-      href: ../quickstarts/project-quickstart.md?context=office/dev/add-ins/project/context
+  - name: Build your first Project add-in
+    href: ../quickstarts/project-quickstart.md?context=office/dev/add-ins/project/context
 
   - name: Office Add-ins concepts
     items:

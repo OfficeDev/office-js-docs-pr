@@ -2,10 +2,8 @@
   href: onenote-add-ins-programming-overview.md
   items:
 
-  - name: Quick Starts
-    items:
-    - name: Create OneNote add-in
-      href: ../quickstarts/onenote-quickstart.md?context=office/dev/add-ins/onenote/context
+  - name: Build your first OneNote add-in
+    href: ../quickstarts/onenote-quickstart.md?context=office/dev/add-ins/onenote/context
 
   - name: Office Add-ins concepts
     items:

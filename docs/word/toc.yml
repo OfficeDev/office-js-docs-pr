@@ -2,15 +2,11 @@
   href: word-add-ins-programming-overview.md
   items:
 
-  - name: Quick Starts
-    items:
-    - name: Create Word add-in
-      href: ../quickstarts/word-quickstart.md?context=office/dev/add-ins/word/context
+  - name: Build your first Word add-in
+    href: ../quickstarts/word-quickstart.md?context=office/dev/add-ins/word/context
 
-  - name: Tutorials
-    items:
-    - name: Word add-in tutorial
-      href: ../tutorials/word-tutorial.md?context=office/dev/add-ins/word/context
+  - name: Word add-in tutorial
+    href: ../tutorials/word-tutorial.md?context=office/dev/add-ins/word/context
 
   - name: Office Add-ins concepts
     items:

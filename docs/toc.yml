@@ -1,4 +1,4 @@
-- name: Office Add-ins Documentation
+- name: Office Add-ins documentation
   href: index.md
 
 - name: Office Add-ins
@@ -195,11 +195,9 @@
       href: /office/dev/store/validation-policies
   - name: Reference
     items:
-
     - name: JavaScript API for Office overview
       href: reference/javascript-api-for-office.md
-
-    - name: Common requirement sets
+    - name: API requirement sets (Common)
       items:
       - name: Add-in commands requirement sets
         href: reference/requirement-sets/add-in-commands-requirement-sets.md
@@ -209,17 +207,9 @@
         href: reference/requirement-sets/identity-api-requirement-sets.md
       - name: Office Common API requirement sets
         href: reference/requirement-sets/office-add-in-requirement-sets.md
-
-    - name: Common API reference
+    - name: API reference (Common)
       href: /javascript/api/office
-    
-    - name: API open specifications
-      href: reference/openspec.md
-
-    - name: Error codes
-      href: reference/javascript-api-for-office-error-codes.md
-
-    - name: Office Add-in manifest reference
+    - name: Manifest reference
       items:
       - name: AllowSnapshot
         href: reference/manifest/allowsnapshot.md
@@ -354,6 +344,10 @@
           href: reference/manifest/supportssharedfolders.md
         - name: WebApplicationInfo
           href: reference/manifest/webapplicationinfo.md
+    - name: API open specifications
+      href: reference/openspec.md
+    - name: Error codes
+      href: reference/javascript-api-for-office-error-codes.md
   - name: Resources
     href: resources/resources-links-help.md
 
