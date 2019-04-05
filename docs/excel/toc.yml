@@ -1,7 +1,9 @@
-- name: Excel add-ins
-  href: excel-add-ins-overview.md
+- name: Excel add-ins documentation
   items:
   
+  - name: About Excel add-ins
+    href: excel-add-ins-overview.md
+
   - name: Quick Starts
     displayName: Excel
     items:
@@ -380,8 +382,6 @@
             href: ../reference/manifest/supportssharedfolders.md?context=office/dev/add-ins/excel/context
           - name: WebApplicationInfo
             href: ../reference/manifest/webapplicationinfo.md?context=office/dev/add-ins/excel/context
-      - name: API open specifications
-        href: ../reference/openspec.md?context=office/dev/add-ins/excel/context
       - name: Error codes
         href: ../reference/javascript-api-for-office-error-codes.md?context=office/dev/add-ins/excel/context
     - name: Resources
@@ -397,6 +397,8 @@
       href: ../reference/requirement-sets/excel-api-requirement-sets.md?context=office/dev/add-ins/excel/context
     - name: API reference
       href: /javascript/api/excel
+    - name: API open specifications
+      href: ../reference/openspec.md?context=office/dev/add-ins/excel/context
     - name: Fundamental programming concepts
       href: excel-add-ins-core-concepts.md
     - name: Advanced programming concepts
