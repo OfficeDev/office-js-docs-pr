@@ -11,11 +11,19 @@ metadata:
   ms.date: 03/31/2019
   ms.author: o365devx
 
-sections:
+abstract:
+  description: The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad.<br/><br/><b>Note:</b> For information about COM or VSTO add-ins, see the <a href="/office/client-developer/office-client-development" target="_blank">Office client development documentation</a>.
+  aside:
+    image:
+      alt: 
+      height: 130
+      src: https://docs.microsoft.com/office/dev/add-ins/images/office-add-ins-video-thumbnail.png
+      width: 250  
+    title: Get started with Office Add-ins. (14:10)
+    href: https://channel9.msdn.com/Events/Connect/2017/T192
+    width: 250
 
-  - items:
-    - type: paragraph
-      html: The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad.<br/><br/><b>Note:</b> For information about COM or VSTO add-ins, see the <a href="/office/client-developer/office-client-development" target="_blank">Office client development documentation</a>.
+sections:
 
   - items:
     - type: list
