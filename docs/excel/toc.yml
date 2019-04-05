@@ -435,19 +435,20 @@
   - name: Custom functions
     displayName: Excel
     items:
-    - name: Custom functions overview
+    - name: Overview
       href: custom-functions-overview.md
-    - name: Custom functions runtime
-      href: custom-functions-runtime.md
-    - name: Custom functions metadata
-      href: custom-functions-json.md
-    - name: Custom functions best practices
-      href: custom-functions-best-practices.md
-    - name: Custom functions authentication
+    - name: Authentication
       href: custom-functions-authentication.md
-    - name: Custom functions changelog
+    - name: Best practices
+      href: custom-functions-best-practices.md
+    - name: Changelog
       href: custom-functions-changelog.md
-    - name: Custom functions requirements
-      href: custom-functions-requirements.md
-    - name: Custom functions naming guidelines
+    - name: Metadata
+      href: custom-functions-json.md
+    - name: Naming guidelines
       href: custom-functions-naming.md
+    - name: Requirements
+      href: custom-functions-requirements.md
+    - name: Runtime
+      href: custom-functions-runtime.md
+
