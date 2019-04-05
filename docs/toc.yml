@@ -310,7 +310,8 @@
   items:
   - name: About OneNote add-ins
     href: onenote/onenote-add-ins-programming-overview.md
-  - name: 'Quick start&#58; build a OneNote add-in'
+  - name: > 
+        Quick start: build a OneNote add-in
     href: quickstarts/onenote-quickstart.md
   - name: OneNote JavaScript API
     items:
