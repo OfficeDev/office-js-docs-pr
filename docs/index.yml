@@ -42,7 +42,7 @@ sections:
       columns: 3
       items:
         - href: /office/dev/add-ins/excel/excel-add-ins-overview/
-          html: <p>Build Excel add-ins and custom functions.</p>
+          html: <p>Build Excel add-ins.</p>
           image:
             src: images/index/ExcelLogoColor.svg
           title: Excel add-ins
