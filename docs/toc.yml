@@ -479,6 +479,9 @@
   - name: Outlook JavaScript API
     displayName: Outlook
     items:
+    - name: Overview
+      href: /outlook/add-ins/apis?context=office/dev/add-ins/context
+      displayName: Outlook
     - name: API requirement sets
       href: reference/requirement-sets/outlook-api-requirement-sets.md
       displayName: Outlook
