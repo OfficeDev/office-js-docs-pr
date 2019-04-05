@@ -12,7 +12,7 @@ metadata:
   ms.author: o365devx
 
 abstract:
-  description: The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. Your solution can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad.
+  description: The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run on multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad.<br/><br/><b>Note:</b> For information about COM or VSTO add-ins, see the <a href="/office/client-developer/office-client-development" target="_blank">Office client development documentation</a>.
   aside:
     image:
       alt: 
