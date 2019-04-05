@@ -1,8 +1,6 @@
 - name: Word add-ins documentation
+  href: word-add-ins-programming-overview.md
   items:
-
-  - name: About Word add-ins
-    href: word-add-ins-programming-overview.md
 
   - name: Build your first Word add-in
     href: ../quickstarts/word-quickstart.md?context=office/dev/add-ins/word/context

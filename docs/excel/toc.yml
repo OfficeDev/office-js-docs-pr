@@ -1,9 +1,7 @@
-- name: Excel add-ins documentation
+- name: Excel add-ins
+  href: excel-add-ins-overview.md
   items:
   
-  - name: About Excel add-ins
-    href: excel-add-ins-overview.md
-
   - name: Quick Starts
     displayName: Excel
     items:

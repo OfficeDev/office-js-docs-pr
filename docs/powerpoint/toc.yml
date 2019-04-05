@@ -1,8 +1,6 @@
 - name: PowerPoint add-ins documentation
+  href: powerpoint-add-ins.md
   items:
-
-  - name: About PowerPoint add-ins
-    href: powerpoint-add-ins.md
 
   - name: Build your first PowerPoint add-in
     href: ../quickstarts/powerpoint-quickstart.md?context=office/dev/add-ins/powerpoint/context

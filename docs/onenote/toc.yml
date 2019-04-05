@@ -1,8 +1,6 @@
-- name: OneNote add-ins documentation
+- name: OneNote add-ins
+  href: onenote-add-ins-programming-overview.md
   items:
-
-  - name: About OneNote add-ins
-    href: onenote-add-ins-programming-overview.md
 
   - name: Build your first OneNote add-in
     href: ../quickstarts/onenote-quickstart.md?context=office/dev/add-ins/onenote/context
