@@ -51,7 +51,7 @@ sections:
           image:
             src: images/index/OneNoteLogoColor.svg
           title: OneNote add-ins
-        - href: /outlook/add-ins/
+        - href: /outlook/add-ins/index?context=office/dev/add-ins/context
           html: <p>Build Outlook add-ins.</p>
           image:
             src: images/index/OutlookLogoColor.svg
@@ -82,7 +82,7 @@ sections:
       - html: Excel task pane add-in&#58; <a href="/office/dev/add-ins/quickstarts/excel-quickstart-angular">Angular</a> | <a href="/office/dev/add-ins/quickstarts/excel-quickstart-jquery">jQuery</a> | <a href="/office/dev/add-ins/quickstarts/excel-quickstart-react">React</a> | <a href="/office/dev/add-ins/quickstarts/excel-quickstart-vue">Vue</a>
       - html: <a href="/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions">Excel custom functions</a>
       - html: <a href="/office/dev/add-ins/quickstarts/onenote-quickstart">OneNote task pane add-in</a>
-      - html: <a href="/outlook/add-ins/quick-start">Outlook task pane add-in</a>
+      - html: <a href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Outlook task pane add-in</a>
       - html: <a href="/office/dev/add-ins/powerpoint/powerpoint-add-ins">PowerPoint task pane add-in</a>
       - html: <a href="/office/dev/add-ins/quickstarts/project-quickstart">Project task pane add-in</a>
       - html: <a href="/office/dev/add-ins/quickstarts/word-quickstart">Word task pane add-in</a>
