@@ -55,6 +55,10 @@ Add-in commands are currently supported on the following platforms:
 
 More platforms are coming soon.
 
+## Debugging
+
+To debug an Add-in Command, you must run it in Office Online. For details, see [Debugging in Office Online](../testing/debug-add-ins-in-office-online.md).
+
 ## Best practices
 
 Apply the following best practices when you develop add-in commands:
