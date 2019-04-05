@@ -354,6 +354,9 @@
       href: reference/openspec.md
     - name: Error codes
       href: reference/javascript-api-for-office-error-codes.md
+  - name: Resources
+    href: resources/resources-links-help.md
+    displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
 
 - name: Excel add-ins
   items:
@@ -734,6 +737,3 @@
     - name: Use search options to find text in your Word add-in 
       href: word/search-option-guidance.md
       displayName: Word
-    
-- name: Resources
-  href: resources/resources-links-help.md
