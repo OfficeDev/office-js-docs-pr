@@ -468,7 +468,7 @@
 - name: Outlook add-ins
   items:
   - name: About Outlook add-ins
-    href: /outlook/add-ins?context=office/dev/add-ins/context
+    href: /outlook/add-ins/index?context=office/dev/add-ins/context
     displayName: Outlook
   - name: Build your first Outlook add-in
     href: /outlook/add-ins/quick-start?context=office/dev/add-ins/context
@@ -627,7 +627,7 @@
         - name: Outlook 1.1 API Reference
           href: /javascript/api/outlook_1_1
     - name: Concepts
-      href: /outlook/add-ins/outlook-addin-design?context=office/dev/add-ins/context
+      href: /outlook/add-ins/outlook-addin-design
 
 - name: PowerPoint add-ins
   items:
