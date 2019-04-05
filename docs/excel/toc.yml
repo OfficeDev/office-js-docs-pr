@@ -5,7 +5,7 @@
   - name: Quick Starts
     items:
     - name: Custom functions
-      href: quickstarts/excel-custom-functions-quickstart.md
+      href: ../quickstarts/excel-custom-functions-quickstart.md
       displayName: Excel
     - name: Task pane (Angular)
       href: ../quickstarts/excel-quickstart-angular.md
