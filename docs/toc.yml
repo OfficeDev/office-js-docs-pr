@@ -468,13 +468,13 @@
 - name: Outlook add-ins
   items:
   - name: About Outlook add-ins
-    href: /outlook/add-ins?context=office/dev/add-ins/context
+    href: /outlook/add-ins
     displayName: Outlook
   - name: Build your first Outlook add-in
-    href: /outlook/add-ins/quick-start?context=office/dev/add-ins/context
+    href: /outlook/add-ins/quick-start
     displayName: Outlook
   - name: Outlook add-in tutorial
-    href: /outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context
+    href: /outlook/add-ins/addin-tutorial
     displayName: Outlook
   - name: Outlook JavaScript API
     displayName: Outlook
