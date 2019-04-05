@@ -5,6 +5,7 @@
   displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
   items:
   - name: Concepts
+    displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
     items:
     - name: About Office Add-ins
       href: overview/office-add-ins.md
@@ -79,6 +80,7 @@
     - name: Privacy and security
       href: concepts/privacy-and-security.md
   - name: Develop
+    displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
     items:
     - name: Address same origin policy limitations
       href: develop/addressing-same-origin-policy-limitations.md
@@ -150,6 +152,7 @@
       href: develop/dialog-api-in-office-add-ins.md
   - name: Test and debug
     href: testing/test-debug-office-add-ins.md
+    displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
     items:
     - name: Windows
       items:
@@ -181,6 +184,7 @@
       href: testing/troubleshoot-manifest.md
   - name: Publish
     href: publish/publish.md
+    displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
     items:
     - name: Host an Office Add-in on Microsoft Azure
       href: publish/host-an-office-add-in-on-microsoft-azure.md
@@ -195,6 +199,7 @@
     - name: AppSource validation policies
       href: /office/dev/store/validation-policies
   - name: Reference
+    displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
     items:
     - name: JavaScript API for Office overview
       href: reference/javascript-api-for-office.md
@@ -354,182 +359,151 @@
   items:
   - name: About Excel add-ins
     href: excel/excel-add-ins-overview.md
+    displayName: Excel
   - name: Quick Starts
+    displayName: Excel
     items:
     - name: Use Angular
       href: quickstarts/excel-quickstart-angular.md
-      displayName: Excel
     - name: Use jQuery
       href: quickstarts/excel-quickstart-jquery.md
-      displayName: Excel
     - name: Use React
       href: quickstarts/excel-quickstart-react.md
-      displayName: Excel
     - name: Use Vue
       href: quickstarts/excel-quickstart-vue.md
-      displayName: Excel
   - name: Tutorials
+    displayName: Excel
     items:
     - name: Create a task pane add-in
       href: tutorials/excel-tutorial.md
-      displayName: Excel
     - name: Create custom functions
       href: tutorials/excel-tutorial-create-custom-functions.md
-      displayName: Excel
   - name: Excel JavaScript API
+    displayName: Excel
     items:
     - name: Overview
       href: reference/overview/excel-add-ins-reference-overview.md
-      displayName: Excel
     - name: API requirement sets
       href: reference/requirement-sets/excel-api-requirement-sets.md
-      displayName: Excel
     - name: API reference
       href: /javascript/api/excel
-      displayName: Excel
     - name: Fundamental programming concepts
       href: excel/excel-add-ins-core-concepts.md
-      displayName: Excel
     - name: Advanced programming concepts
       href: excel/excel-add-ins-advanced-concepts.md
-      displayName: Excel
     - name: Calling built-in functions
       href: excel/excel-add-ins-worksheet-functions.md
-      displayName: Excel
     - name: Charts
       href: excel/excel-add-ins-charts.md
-      displayName: Excel
     - name: Coauthoring in Excel add-ins
       href: excel/co-authoring-in-excel-add-ins.md
-      displayName: Excel
     - name: Conditional formatting of ranges
       href: excel/excel-add-ins-conditional-formatting.md
-      displayName: Excel
     - name: Data validation
       href: excel/excel-add-ins-data-validation.md
-      displayName: Excel
     - name: Error handling
       href: excel/excel-add-ins-error-handling.md
-      displayName: Excel
     - name: Events
       href: excel/excel-add-ins-events.md
-      displayName: Excel
     - name: Multiple ranges
       href: excel/excel-add-ins-multiple-ranges.md
-      displayName: Excel
     - name: Performance optimization
       href: excel/performance.md
-      displayName: Excel
     - name: PivotTables
       href: excel/excel-add-ins-pivottables.md
-      displayName: Excel
     - name: Ranges (fundamental)
       href: excel/excel-add-ins-ranges.md
-      displayName: Excel
     - name: Ranges (advanced)
       href: excel/excel-add-ins-ranges-advanced.md
-      displayName: Excel
     - name: Tables
       href: excel/excel-add-ins-tables.md
-      displayName: Excel
     - name: Workbooks
       href: excel/excel-add-ins-workbooks.md
-      displayName: Excel
     - name: Worksheets
       href: excel/excel-add-ins-worksheets.md
-      displayName: Excel
   - name: Custom functions
+    displayName: Excel
     items:
     - name: Custom functions overview
       href: excel/custom-functions-overview.md
-      displayName: Excel
     - name: Custom functions runtime
       href: excel/custom-functions-runtime.md
-      displayName: Excel
     - name: Custom functions metadata
       href: excel/custom-functions-json.md
-      displayName: Excel
     - name: Custom functions best practices
       href: excel/custom-functions-best-practices.md
-      displayName: Excel
     - name: Custom functions authentication
       href: excel/custom-functions-authentication.md
-      displayName: Excel
     - name: Custom functions changelog
       href: excel/custom-functions-changelog.md
-      displayName: Excel
     - name: Custom functions requirements
       href: excel/custom-functions-requirements.md
-      displayName: Excel
     - name: Custom functions naming guidelines
       href: excel/custom-functions-naming.md
-      displayName: Excel
 
 - name: OneNote add-ins
   items:
   - name: About OneNote add-ins
     href: onenote/onenote-add-ins-programming-overview.md
+    displayName: OneNote
   - name: Build your first OneNote add-in
     href: quickstarts/onenote-quickstart.md
+    displayName: OneNote
   - name: OneNote JavaScript API
+    displayName: OneNote
     items:
     - name: Overview
       href: reference/overview/onenote-add-ins-javascript-reference.md
-      displayName: OneNote
     - name: API requirement sets
       href: reference/requirement-sets/onenote-api-requirement-sets.md
-      displayName: OneNote
     - name: API reference
       href: /javascript/api/onenote
-      displayName: OneNote
     - name: Work with OneNote page content
       href: onenote/onenote-add-ins-page-content.md
-      displayName: OneNote
 
 - name: Outlook add-ins
-  items: 
   href: /outlook/add-ins/
 
 - name: PowerPoint add-ins
   items:
   - name: About PowerPoint add-ins
     href: powerpoint/powerpoint-add-ins.md
+    displayName: PowerPoint
   - name: Build your first PowerPoint add-in
     href: quickstarts/powerpoint-quickstart.md
+    displayName: PowerPoint
   - name: PowerPoint add-in tutorial
     href: tutorials/powerpoint-tutorial.md
+    displayName: PowerPoint
   - name: PowerPoint JavaScript API
+    displayName: PowerPoint
     items:
     - name: Overview
       href: reference/requirement-sets/powerpoint-and-project-note.md
-      displayName: PowerPoint
     - name: API reference
       href: /javascript/api/powerpoint
-      displayName: PowerPoint
     - name: Get the whole document from an add-in
       href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
-      displayName: PowerPoint
     - name: Use document themes in your PowerPoint add-ins
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
-      displayName: PowerPoint
 
 - name: Project add-ins
   items:
   - name: About Project add-ins
     href: project/project-add-ins.md
+    displayName: Project
   - name: Build your first Project add-in
     href: quickstarts/project-quickstart.md
+    displayName: Project
   - name: Project JavaScript API
+    displayName: Project
     items:
     - name: Overview
       href: reference/requirement-sets/powerpoint-and-project-note.md
-      displayName: Project
     - name: Create a Project add-in that uses REST with an on-premises OData service
       href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
-      displayName: Project
     - name: Create your first task pane add-in for Project by using a text editor
       href: project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md
-      displayName: Project
 
 - name: Visio add-ins
   items:
@@ -544,37 +518,34 @@
   items:
   - name: About Word add-ins
     href: word/word-add-ins-programming-overview.md
+    displayName: Word
   - name: Build your first Word add-in
     href: quickstarts/word-quickstart.md
+    displayName: Word
   - name: Word add-in tutorial
     href: tutorials/word-tutorial.md
+    displayName: Word
   - name: Word JavaScript API
+    displayName: Word
     items:
     - name: Overview
       href: reference/overview/word-add-ins-reference-overview.md
-      displayName: Word
     - name: API requirement sets
       href: reference/requirement-sets/word-api-requirement-sets.md
     - name: API reference
       href: /javascript/api/word
     - name: Create better add-ins for Word with Office Open XML
       href: word/create-better-add-ins-for-word-with-office-open-xml.md
-      displayName: Word
     - name: Dictionary task pane add-ins
       href: word/dictionary-task-pane-add-ins.md
-      displayName: Word
     - name: Get the whole document from an add-in
       href: word/get-the-whole-document-from-an-add-in-for-word.md
-      displayName: Word
     - name: Read and write data to the active selection
       href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
-      displayName: Word
     - name: Bind to regions in a document
       href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
-      displayName: Word
     - name: Use search options to find text in your Word add-in 
       href: word/search-option-guidance.md
-      displayName: Word
 
 - name: Reference
   items:
