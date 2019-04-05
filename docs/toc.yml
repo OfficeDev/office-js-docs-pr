@@ -385,6 +385,7 @@
       href: tutorials/excel-tutorial.md
     - name: Create custom functions
       href: tutorials/excel-tutorial-create-custom-functions.md
+
   - name: Excel JavaScript API
     displayName: Excel
     items:
@@ -428,25 +429,26 @@
       href: excel/excel-add-ins-workbooks.md
     - name: Worksheets
       href: excel/excel-add-ins-worksheets.md
+  
   - name: Custom functions
     displayName: Excel
     items:
-    - name: Custom functions overview
+    - name: Overview
       href: excel/custom-functions-overview.md
-    - name: Custom functions runtime
-      href: excel/custom-functions-runtime.md
-    - name: Custom functions metadata
-      href: excel/custom-functions-json.md
-    - name: Custom functions best practices
-      href: excel/custom-functions-best-practices.md
-    - name: Custom functions authentication
+    - name: Authentication
       href: excel/custom-functions-authentication.md
-    - name: Custom functions changelog
+    - name: Best practices
+      href: excel/custom-functions-best-practices.md
+    - name: Changelog
       href: excel/custom-functions-changelog.md
-    - name: Custom functions requirements
-      href: excel/custom-functions-requirements.md
-    - name: Custom functions naming guidelines
+    - name: Metadata
+      href: excel/custom-functions-json.md
+    - name: Naming guidelines
       href: excel/custom-functions-naming.md
+    - name: Requirements
+      href: excel/custom-functions-requirements.md
+    - name: Runtime
+      href: excel/custom-functions-runtime.md
 
 - name: OneNote add-ins
   items:
