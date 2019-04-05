@@ -368,34 +368,34 @@
       href: ../resources/resources-links-help.md?context=office/dev/add-ins/word/context
 
   - name: Word JavaScript API
-      items:
-      - name: Overview
-        href: ../reference/overview/word-add-ins-reference-overview.md?context=office/dev/add-ins/word/context
-        displayName: Word
-      - name: API requirement sets
-        href: ../reference/requirement-sets/word-api-requirement-sets.md?context=office/dev/add-ins/word/context
-        displayName: Word
-      - name: API reference
-        href: /javascript/api/word
-        displayName: Word
-      - name: API open specifications
-        href: ../reference/openspec.md?context=office/dev/add-ins/word/context
-        displayName: Word
-      - name: Create better add-ins for Word with Office Open XML
-        href: create-better-add-ins-for-word-with-office-open-xml.md
-        displayName: Word
-      - name: Dictionary task pane add-ins
-        href: dictionary-task-pane-add-ins.md
-        displayName: Word
-      - name: Get the whole document from an add-in
-        href: get-the-whole-document-from-an-add-in-for-word.md
-        displayName: Word
-      - name: Read and write data to the active selection
-        href: ../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md?context=office/dev/add-ins/word/context
-        displayName: Word
-      - name: Bind to regions in a document
-        href: ../develop/bind-to-regions-in-a-document-or-spreadsheet.md?context=office/dev/add-ins/word/context
-        displayName: Word
-      - name: Use search options to find text in your Word add-in 
-        href: search-option-guidance.md
-        displayName: Word
+    items:
+    - name: Overview
+      href: ../reference/overview/word-add-ins-reference-overview.md?context=office/dev/add-ins/word/context
+      displayName: Word
+    - name: API requirement sets
+      href: ../reference/requirement-sets/word-api-requirement-sets.md?context=office/dev/add-ins/word/context
+      displayName: Word
+    - name: API reference
+      href: /javascript/api/word
+      displayName: Word
+    - name: API open specifications
+      href: ../reference/openspec.md?context=office/dev/add-ins/word/context
+      displayName: Word
+    - name: Create better add-ins for Word with Office Open XML
+      href: create-better-add-ins-for-word-with-office-open-xml.md
+      displayName: Word
+    - name: Dictionary task pane add-ins
+      href: dictionary-task-pane-add-ins.md
+      displayName: Word
+    - name: Get the whole document from an add-in
+      href: get-the-whole-document-from-an-add-in-for-word.md
+      displayName: Word
+    - name: Read and write data to the active selection
+      href: ../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md?context=office/dev/add-ins/word/context
+      displayName: Word
+    - name: Bind to regions in a document
+      href: ../develop/bind-to-regions-in-a-document-or-spreadsheet.md?context=office/dev/add-ins/word/context
+      displayName: Word
+    - name: Use search options to find text in your Word add-in 
+      href: search-option-guidance.md
+      displayName: Word
