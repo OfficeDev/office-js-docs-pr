@@ -1,7 +1,7 @@
 ---
 title: Work with worksheets using the Excel JavaScript API
 description: ''
-ms.date: 02/20/2019
+ms.date: 04/04/2019
 localization_priority: Priority
 ---
 
@@ -272,6 +272,30 @@ Excel.run(function (context) {
             console.log(`The value of the cell in row 2, column 5 is "${cell.values[0][0]}" and the address of that cell is "${cell.address}"`);
         })
 }).catch(errorHandlerFunction);
+```
+
+## Detect data changes
+
+Your add-in may need to react to users changing the data in a worksheet. To detect these changes, you can [register an event handler](excel-add-ins-events.md#register-an-event-handler) for the `onChanged` event of a worksheet. Event handlers for the `onChanged` event receive a [WorksheetChangedEventArgs](/javascript/api/excel/excel.worksheetchangedeventargs) object when the event fires.
+
+The `WorksheetChangedEventArgs` object provides information about the changes and the source. Since `onChanged` fires when either the format or value of the data changes, it can be useful to have your add-in check if the values have actually changed. The `details` property encapsulates this information as a [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail). The following code sample shows how to display the before and after values and types of a cell that has been changed.
+
+> [!NOTE]
+> `WorksheetChangedEventArgs.details` is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+```js
+// This function would be used as an event handler for the Worksheet.onChanged event.
+function onWorksheetChanged(eventArgs) {
+    Excel.run(function (context) {
+        var details = eventArgs.details;
+        var address = eventArgs.address;
+
+        // Print the before and after types and values to the console.
+        console.log(`Change at ${address}: was ${details.valueBefore}(${details.valueTypeBefore}),`
+            + ` now is ${details.valueAfter}(${details.valueTypeAfter})`);
+        return context.sync();
+    });
+}
 ```
 
 ## Find all cells with matching text (preview)
