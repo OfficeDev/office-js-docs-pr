@@ -198,6 +198,7 @@
     - name: JavaScript API for Office overview
       href: reference/javascript-api-for-office.md
     - name: API requirement sets (Common)
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
       items:
       - name: Add-in commands requirement sets
         href: reference/requirement-sets/add-in-commands-requirement-sets.md
