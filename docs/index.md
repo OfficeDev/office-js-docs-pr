@@ -33,9 +33,10 @@ localization_priority: Normal
                                             </div>
                                             <div class="cardText">
                                                 <h3>Excel add-ins</h3>
-                                                <p><a href="overview/office-add-ins.md" target="_blank">Link1</a></p>
-                                                <p><a href="overview/office-add-ins.md" target="_blank">Link2</a></p>
-                                                <p><a href="overview/office-add-ins.md" target="_blank">Link3</a></p>
+                                                <p><a href="/office/dev/add-ins/excel/excel-add-ins-overview" target="_blank">About Excel add-ins</a></p>
+                                                <p><a href="/office/dev/add-ins/quickstarts/excel-quickstart-jquery">Quick Start</a></p>
+                                                <p><a href="/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview" target="_blank">Excel JavaScript API</a></p>
+                                                <p><a href="/office/dev/add-ins/excel/custom-functions-overview">Custom functions</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -138,7 +139,7 @@ localization_priority: Normal
                             </li>
                             <li class="fullSpan">
                               <hr />
-                              <br>
+                              <br/><br/>
                               <ul class="cardsF panelContent singlePanelContent" style="display:flex!important;">
                                     <li>
                                         <div class="cardSize">
