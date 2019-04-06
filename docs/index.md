@@ -13,7 +13,7 @@ localization_priority: Normal
 <div id="main" class="v2">
     <div class="container">
         <h1>Office Add-ins documentation</h1>
-        <P>Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad.</p>
+        <p style="font-size: 1.12rem;margin-bottom: 1rem;">The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad.</p>
         <p></p>
         <ul class="pivots">
             <li>
@@ -32,7 +32,7 @@ localization_priority: Normal
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3></h3>
+                                                <h3>Excel add-ins</h3>
                                                 <p><a href="overview/office-add-ins.md" target="_blank">Link1</a></p>
                                                 <p><a href="overview/office-add-ins.md" target="_blank">Link2</a></p>
                                                 <p><a href="overview/office-add-ins.md" target="_blank">Link3</a></p>
@@ -51,7 +51,7 @@ localization_priority: Normal
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3></h3>
+                                                <h3>OneNote add-ins</h3>
                                                 <p><a href="overview/office-add-ins.md" target="_blank">Link1</a></p>
                                                 <p><a href="overview/office-add-ins.md" target="_blank">Link2</a></p>
                                                 <p><a href="overview/office-add-ins.md" target="_blank">Link3</a></p>
@@ -70,7 +70,7 @@ localization_priority: Normal
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3></h3>
+                                                <h3>Outlook add-ins</h3>
                                                 <p><a href="overview/office-add-ins.md" target="_blank">Link1</a></p>
                                                 <p><a href="overview/office-add-ins.md" target="_blank">Link2</a></p>
                                                 <p><a href="overview/office-add-ins.md" target="_blank">Link3</a></p>
@@ -89,7 +89,7 @@ localization_priority: Normal
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3></h3>
+                                                <h3>PowerPoint add-ins</h3>
                                                 <p><a href="overview/office-add-ins.md" target="_blank">Link1</a></p>
                                                 <p><a href="overview/office-add-ins.md" target="_blank">Link2</a></p>
                                                 <p><a href="overview/office-add-ins.md" target="_blank">Link3</a></p>
@@ -108,7 +108,7 @@ localization_priority: Normal
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3></h3>
+                                                <h3>Project add-ins</h3>
                                                 <p><a href="overview/office-add-ins.md" target="_blank">Link1</a></p>
                                                 <p><a href="overview/office-add-ins.md" target="_blank">Link2</a></p>
                                                 <p><a href="overview/office-add-ins.md" target="_blank">Link3</a></p>
@@ -127,7 +127,7 @@ localization_priority: Normal
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3></h3>
+                                                <h3>Word add-ins</h3>
                                                 <p><a href="overview/office-add-ins.md" target="_blank">Link1</a></p>
                                                 <p><a href="overview/office-add-ins.md" target="_blank">Link2</a></p>
                                                 <p><a href="overview/office-add-ins.md" target="_blank">Link3</a></p>
@@ -146,14 +146,11 @@ localization_priority: Normal
                                                 <div class="card">
                                                     <div class="cardImageOuter">
                                                         <div class="cardImage">
-                                                            <img src="https://docs.microsoft.com/office/media/icons/developer-blue.svg" alt="Code, developer" />
+                                                            <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><img src="images/index/i_support.svg" alt="API questions" /></a>
                                                         </div>
                                                     </div>
                                                     <div class="cardText">
-                                                        <h3>Develop for Microsoft 365</h3>
-                                                        <P><a href="https://developer.microsoft.com/office" target="_blank">Office 365 Dev Center</a></p>
-                                                        <P><a href="https://developer.microsoft.com/windows/enterprise" target="_blank">Windows Dev Center</a></p>
-                                                        <P><a href="https://developer.microsoft.com/graph" target="_blank">Microsoft Graph</a></p>
+                                                        <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><h3>Office JavaScript API questions</h3></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -165,32 +162,27 @@ localization_priority: Normal
                                                 <div class="card">
                                                     <div class="cardImageOuter">
                                                         <div class="cardImage">
-                                                            <img src="https://docs.microsoft.com/office/media/icons/caret-right-blue.svg" alt="More arrow" />
+                                                            <a href="https://github.com/officedev/office-js/issues" target="_blank"><img src="images/index/i_bug.svg" alt="API issues" /></a>
                                                         </div>
                                                     </div>
                                                     <div class="cardText">
-                                                        <h3>Other Microsoft 365 products</h3>
-                                                        <P><a href="https://docs.microsoft.com/microsoft-365/business/" target="_blank">Microsoft 365 Business</a></p>
-                                                        <P><a href="https://docs.microsoft.com/education/" target="_blank">Microsoft 365 Education</a></p>
+                                                        <a href="https://github.com/officedev/office-js/issues" target="_blank"><h3>Office JavaScript API issues</h3></a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </li> 
+                                    </li>
                                     <li>
                                         <div class="cardSize">
                                             <div class="cardPadding">
                                                 <div class="card">
                                                     <div class="cardImageOuter">
                                                         <div class="cardImage">
-                                                            <img src="https://docs.microsoft.com/office/media/icons/chat.svg" alt="Chat" />
+                                                            <a href="https://officespdev.uservoice.com/" target="_blank"><img src="images/index/i_feedback.svg" alt="API feature requests" /></a>
                                                         </div>
                                                     </div>
                                                     <div class="cardText">
-                                                        <h3>Need support?</h3>
-                                                        <P><a href="https://azure.microsoft.com/support/options/" target="_blank">Azure</a></p>
-                                                        <P><a href="https://support.office.com/article/Contact-support-for-business-products-Admin-Help-32a17ca7-6fa0-4870-8a8d-e25ba4ccfd4b" target="_blank">Office 365</a></p>
-                                                        <P><a href="http://support.microsoft.com/products/windows" target="_blank">Windows 10</a></p>
+                                                        <a href="https://officespdev.uservoice.com/" target="_blank"><h3>Office JavaScript API feature requests</h3></a>
                                                     </div>
                                                 </div>
                                             </div>
