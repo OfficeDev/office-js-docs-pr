@@ -36,7 +36,7 @@ localization_priority: Normal
                                                 <p><a href="/office/dev/add-ins/excel/excel-add-ins-overview" target="_blank">About Excel add-ins</a></p>
                                                 <p><a href="/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview" target="_blank">Build Excel add-ins</a></p>
                                                 <p><a href="/office/dev/add-ins/excel/custom-functions-overview" target="_blank">Build custom functions</a></p>
-                                                <p><a href="/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview" target="_blank">API Reference</a></p>
+                                                <p><a href="/javascript/api/excel" target="_blank">API Reference</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -55,7 +55,7 @@ localization_priority: Normal
                                                 <h3>OneNote add-ins</h3>
                                                 <p><a href="/office/dev/add-ins/onenote/onenote-add-ins-programming-overview" target="_blank">About OneNote add-ins</a></p>
                                                 <p><a href="/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference" target="_blank">Build OneNote add-ins</a></p>
-                                                <p><a href="/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference" target="_blank">API reference</a></p>
+                                                <p><a href="/javascript/api/onenote" target="_blank">API reference</a></p>
                                             </div>
                                         </div>
                                     </div>
