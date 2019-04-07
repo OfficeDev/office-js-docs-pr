@@ -18,20 +18,14 @@ localization_priority: Normal
         <ul class="cardsM cols cols1">
             <li>
                 <a class="card x-hidden-focus" href="overview/office-add-ins.md">
-                    <div class="cardSize">
-                        <div class="cardPadding">
-                            <div class="card">
-                                <div class="cardImageOuter">
-                                    <div class="cardImage">
-                                        <img src="images/index/blocks.svg" alt="Office Add-ins platform" />
-                                    </div>
-                                </div>
-                                <div class="cardText">
-                                    <h3>Office Add-ins platform</h3>
-                                    <p>Learn about the Office Add-ins platform and important concepts that apply to building any type of Office Add-in.</p>
-                                </div>
-                            </div>
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="images/index/blocks.svg" alt="Office Add-ins platform" />
                         </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Office Add-ins platform</h3>
+                        <p>Learn about the Office Add-ins platform and important concepts that apply to building any type of Office Add-in.</p>
                     </div>
                 </a>
             </li>
