@@ -93,7 +93,7 @@ localization_priority: Normal
                                                 <h3>PowerPoint add-ins</h3>
                                                 <p><a href="powerpoint/powerpoint-add-ins.md" target="_blank">About PowerPoint add-ins</a></p>
                                                 <p><a href="reference/requirement-sets/powerpoint-and-project-note.md" target="_blank">Build PowerPoint add-ins</a></p>
-                                                <p><a href="javascript/api/powerpoint" target="_blank">API Reference</a></p>
+                                                <p><a href="/javascript/api/powerpoint" target="_blank">API Reference</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -129,7 +129,7 @@ localization_priority: Normal
                                             </div>
                                             <div class="cardText">
                                                 <h3>Word add-ins</h3>
-                                                <p><a href="word/word-add-ins-programming/overview.md" target="_blank">About Word add-ins</a></p>
+                                                <p><a href="word/word-add-ins-programming-overview.md" target="_blank">About Word add-ins</a></p>
                                                 <p><a href="reference/overview/word-add-ins-reference-overview.md" target="_blank">Build Word add-ins</a></p>
                                                 <p><a href="/javascript/api/word" target="_blank">API reference</a></p>
                                             </div>
@@ -139,7 +139,6 @@ localization_priority: Normal
                             </li>
                             <li class="fullSpan">
                               <hr />
-                              <br/><br/>
                               <h2>Resources</h2>
                               <ul class="cardsF panelContent singlePanelContent" style="display:flex!important;">
                                     <li>
