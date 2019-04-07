@@ -39,115 +39,79 @@ localization_priority: Normal
                         <ul id="home-all" class="cardsM cols cols3">
                             <li>
                               <a class="card x-hidden-focus" href="excel/excel-add-ins-overview.md" target="_blank">
-                                <div class="cardSize">
-                                    <div class="cardPadding">
-                                        <div class="card">
-                                            <div class="cardImageOuter">
-                                                <div class="cardImage">
-                                                    <img src="images/index/ExcelLogoColor.svg" alt="Excel add-ins" />
-                                                </div>
-                                            </div>
-                                            <div class="cardText">
-                                                <h3>Excel add-ins</h3>
-                                                <p>Build Excel add-ins</p>
-                                            </div>
-                                        </div>
+                                <div class="cardImageOuter">
+                                    <div class="cardImage">
+                                        <img src="images/index/ExcelLogoColor.svg" alt="Excel add-ins" />
                                     </div>
+                                </div>
+                                <div class="cardText">
+                                    <h3>Excel add-ins</h3>
+                                    <p>Build Excel add-ins</p>
                                 </div>
                               </a>
                             </li>
                             <li>
                               <a class="card x-hidden-focus" href="onenote/onenote-add-ins-programming-overview.md" target="_blank">
-                                <div class="cardSize">
-                                    <div class="cardPadding">
-                                        <div class="card">
-                                            <div class="cardImageOuter">
-                                                <div class="cardImage">
-                                                    <img src="images/index/OneNoteLogoColor.svg" alt="OneNote add-ins" />
-                                                </div>
-                                            </div>
-                                            <div class="cardText">
-                                                <h3>OneNote add-ins</h3>
-                                                <p>Build OneNote add-ins</p>
-                                            </div>
-                                        </div>
+                                <div class="cardImageOuter">
+                                    <div class="cardImage">
+                                        <img src="images/index/OneNoteLogoColor.svg" alt="OneNote add-ins" />
                                     </div>
+                                </div>
+                                <div class="cardText">
+                                    <h3>OneNote add-ins</h3>
+                                    <p>Build OneNote add-ins</p>
                                 </div>
                               </a>
                             </li>
                             <li>
                               <a class="card x-hidden-focus" href="/outlook/add-ins/index" target="_blank">
-                                <div class="cardSize">
-                                    <div class="cardPadding">
-                                        <div class="card">
-                                            <div class="cardImageOuter">
-                                                <div class="cardImage">
-                                                    <img src="images/index/OutlookLogoColor.svg" alt="Outlook add-ins" />
-                                                </div>
-                                            </div>
-                                            <div class="cardText">
-                                                <h3>Outlook add-ins</h3>
-                                                <p>Build Outlook add-ins</p>
-                                            </div>
-                                        </div>
+                                <div class="cardImageOuter">
+                                    <div class="cardImage">
+                                        <img src="images/index/OutlookLogoColor.svg" alt="Outlook add-ins" />
                                     </div>
+                                </div>
+                                <div class="cardText">
+                                    <h3>Outlook add-ins</h3>
+                                    <p>Build Outlook add-ins</p>
                                 </div>
                               </a>
                             </li>
                             <li>
                               <a class="card x-hidden-focus" href="powerpoint/powerpoint-add-ins.md" target="_blank">
-                                <div class="cardSize">
-                                    <div class="cardPadding">
-                                        <div class="card">
-                                            <div class="cardImageOuter">
-                                                <div class="cardImage">
-                                                    <img src="images/index/PowerPointLogoColor.svg" alt="PowerPoint add-ins" />
-                                                </div>
-                                            </div>
-                                            <div class="cardText">
-                                                <h3>PowerPoint add-ins</h3>
-                                                <p>Build PowerPoint add-ins</p>
-                                            </div>
-                                        </div>
+                                <div class="cardImageOuter">
+                                    <div class="cardImage">
+                                        <img src="images/index/PowerPointLogoColor.svg" alt="PowerPoint add-ins" />
                                     </div>
+                                </div>
+                                <div class="cardText">
+                                    <h3>PowerPoint add-ins</h3>
+                                    <p>Build PowerPoint add-ins</p>
                                 </div>
                               </a>
                             </li>
                             <li>
                               <a class="card x-hidden-focus" href="project/project-add-ins.md" target="_blank">
-                                <div class="cardSize">
-                                    <div class="cardPadding">
-                                        <div class="card">
-                                            <div class="cardImageOuter">
-                                                <div class="cardImage">
-                                                    <img src="images/index/ProjectLogoColor.svg" alt="Project add-ins" />
-                                                </div>
-                                            </div>
-                                            <div class="cardText">
-                                                <h3>Project add-ins</h3>
-                                                <p>Build Project add-ins</p>
-                                            </div>
-                                        </div>
+                                <div class="cardImageOuter">
+                                    <div class="cardImage">
+                                        <img src="images/index/ProjectLogoColor.svg" alt="Project add-ins" />
                                     </div>
+                                </div>
+                                <div class="cardText">
+                                    <h3>Project add-ins</h3>
+                                    <p>Build Project add-ins</p>
                                 </div>
                               </a>
                             </li>
                             <li>
                               <a class="card x-hidden-focus" href="word/word-add-ins-programming-overview.md" target="_blank">
-                                <div class="cardSize">
-                                    <div class="cardPadding">
-                                        <div class="card">
-                                            <div class="cardImageOuter">
-                                                <div class="cardImage">
-                                                    <img src="images/index/WordLogoColor.svg" alt="Word add-ins" />
-                                                </div>
-                                            </div>
-                                            <div class="cardText">
-                                                <h3>Word add-ins</h3>
-                                                <p>Build Word add-ins</p>
-                                            </div>
-                                        </div>
+                                <div class="cardImageOuter">
+                                    <div class="cardImage">
+                                        <img src="images/index/WordLogoColor.svg" alt="Word add-ins" />
                                     </div>
+                                </div>
+                                <div class="cardText">
+                                    <h3>Word add-ins</h3>
+                                    <p>Build Word add-ins</p>
                                 </div>
                               </a>
                             </li>
