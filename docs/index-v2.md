@@ -17,7 +17,7 @@ localization_priority: Normal
         <p></p>
         <ul class="cardsM cols cols1">
             <li>
-                <a href="overview/office-add-ins.md">
+                <a class="card x-hidden-focus" href="overview/office-add-ins.md">
                     <div class="cardSize">
                         <div class="cardPadding">
                             <div class="card">
@@ -44,7 +44,7 @@ localization_priority: Normal
                         <a href="#home-all"></a>
                         <ul id="home-all" class="cardsM cols cols3">
                             <li>
-                              <a href="excel/excel-add-ins-overview.md" target="_blank">
+                              <a class="card x-hidden-focus" href="excel/excel-add-ins-overview.md" target="_blank">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -63,7 +63,7 @@ localization_priority: Normal
                               </a>
                             </li>
                             <li>
-                              <a href="onenote/onenote-add-ins-programming-overview.md" target="_blank">
+                              <a class="card x-hidden-focus" href="onenote/onenote-add-ins-programming-overview.md" target="_blank">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -82,7 +82,7 @@ localization_priority: Normal
                               </a>
                             </li>
                             <li>
-                              <a href="/outlook/add-ins/index" target="_blank">
+                              <a class="card x-hidden-focus" href="/outlook/add-ins/index" target="_blank">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -101,7 +101,7 @@ localization_priority: Normal
                               </a>
                             </li>
                             <li>
-                              <a href="powerpoint/powerpoint-add-ins.md" target="_blank">
+                              <a class="card x-hidden-focus" href="powerpoint/powerpoint-add-ins.md" target="_blank">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -120,7 +120,7 @@ localization_priority: Normal
                               </a>
                             </li>
                             <li>
-                              <a href="project/project-add-ins.md" target="_blank">
+                              <a class="card x-hidden-focus" href="project/project-add-ins.md" target="_blank">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -139,7 +139,7 @@ localization_priority: Normal
                               </a>
                             </li>
                             <li>
-                              <a href="word/word-add-ins-programming-overview.md" target="_blank">
+                              <a class="card x-hidden-focus" href="word/word-add-ins-programming-overview.md" target="_blank">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
