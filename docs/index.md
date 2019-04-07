@@ -15,13 +15,36 @@ localization_priority: Normal
         <h1>Office Add-ins documentation</h1>
         <p style="font-size: 1.12rem;margin-bottom: 1rem;">The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad.</p>
         <p></p>
+        <ul class="cardsY panelContent featuredContent">
+            <li>
+                <a href="overview/office-add-ins.md">
+                    <div class="cardSize">
+                        <div class="cardPadding">
+                            <div class="card">
+                                <div class="cardImageOuter">
+                                    <div class="cardImage">
+                                        <img src="images/index/blocks.svg" alt="Office Add-ins platform" />
+                                    </div>
+                                </div>
+                                <div class="cardText">
+                                    <h3>Office Add-ins platform</h3>
+                                    <p>Learn about the Office Add-ins platform and important concepts that apply to building any type of Office Add-in.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
         <ul class="pivots">
             <li>
                 <a href="#home"></a>
                 <ul id="home">
                     <li>
                         <a href="#home-all"></a>
-                        <ul id="home-all" class="cardsF">
+                        <ul id="home-all" class="cardsM">
                             <li>
                                 <div class="cardSize">
                                     <div class="cardPadding">
