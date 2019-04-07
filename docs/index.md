@@ -139,6 +139,7 @@ localization_priority: Normal
                             </li>
                             <li class="fullSpan">
                               <hr />
+                              <br/>
                               <h2>Resources</h2>
                               <ul class="cardsF panelContent singlePanelContent" style="display:flex!important;">
                                     <li>
