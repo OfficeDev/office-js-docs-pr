@@ -36,15 +36,13 @@ localization_priority: Normal
                 </a>
             </li>
         </ul>
-    </div>
-    <div class="container">
         <ul class="pivots">
             <li>
                 <a href="#home"></a>
                 <ul id="home">
                     <li>
                         <a href="#home-all"></a>
-                        <ul id="home-all" class="cardsM cols cols1">
+                        <ul id="home-all" class="cardsM cols cols3">
                             <li>
                               <a href="excel/excel-add-ins-overview.md" target="_blank">
                                 <div class="cardSize">
@@ -163,7 +161,7 @@ localization_priority: Normal
                               <hr />
                               <br/>
                               <h2>Resources</h2>
-                              <ul class="cardsFTitle panelContent singlePanelContent" style="display:flex!important;">
+                              <ul class="cardsF panelContent singlePanelContent" style="display:flex!important;">
                                     <li>
                                         <div class="cardSize">
                                             <div class="cardPadding">
@@ -174,7 +172,7 @@ localization_priority: Normal
                                                         </div>
                                                     </div>
                                                     <div class="cardText">
-                                                        <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank">Office JavaScript API questions</a>
+                                                        <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><h3>Office JavaScript API questions</h3></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -190,7 +188,7 @@ localization_priority: Normal
                                                         </div>
                                                     </div>
                                                     <div class="cardText">
-                                                        <a href="https://github.com/officedev/office-js/issues" target="_blank">Office JavaScript API issues</a>
+                                                        <a href="https://github.com/officedev/office-js/issues" target="_blank"><h3>Office JavaScript API issues</h3></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -206,7 +204,7 @@ localization_priority: Normal
                                                         </div>
                                                     </div>
                                                     <div class="cardText">
-                                                        <a href="https://officespdev.uservoice.com/" target="_blank">Office JavaScript API feature requests</a>
+                                                        <a href="https://officespdev.uservoice.com/" target="_blank"><h3>Office JavaScript API feature requests</h3></a>
                                                     </div>
                                                 </div>
                                             </div>
