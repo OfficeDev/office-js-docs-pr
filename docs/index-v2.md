@@ -46,7 +46,7 @@ localization_priority: Normal
                                 </div>
                                 <div class="cardText">
                                     <h3>Excel add-ins</h3>
-                                    <p>Build Excel add-ins</p>
+                                    <p>Build Excel add-ins.</p>
                                 </div>
                               </a>
                             </li>
@@ -59,7 +59,7 @@ localization_priority: Normal
                                 </div>
                                 <div class="cardText">
                                     <h3>OneNote add-ins</h3>
-                                    <p>Build OneNote add-ins</p>
+                                    <p>Build OneNote add-ins.</p>
                                 </div>
                               </a>
                             </li>
@@ -72,7 +72,7 @@ localization_priority: Normal
                                 </div>
                                 <div class="cardText">
                                     <h3>Outlook add-ins</h3>
-                                    <p>Build Outlook add-ins</p>
+                                    <p>Build Outlook add-ins.</p>
                                 </div>
                               </a>
                             </li>
@@ -85,7 +85,7 @@ localization_priority: Normal
                                 </div>
                                 <div class="cardText">
                                     <h3>PowerPoint add-ins</h3>
-                                    <p>Build PowerPoint add-ins</p>
+                                    <p>Build PowerPoint add-ins.</p>
                                 </div>
                               </a>
                             </li>
@@ -98,7 +98,7 @@ localization_priority: Normal
                                 </div>
                                 <div class="cardText">
                                     <h3>Project add-ins</h3>
-                                    <p>Build Project add-ins</p>
+                                    <p>Build Project add-ins.</p>
                                 </div>
                               </a>
                             </li>
@@ -111,7 +111,7 @@ localization_priority: Normal
                                 </div>
                                 <div class="cardText">
                                     <h3>Word add-ins</h3>
-                                    <p>Build Word add-ins</p>
+                                    <p>Build Word add-ins.</p>
                                 </div>
                               </a>
                             </li>
