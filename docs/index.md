@@ -191,10 +191,12 @@ localization_priority: Normal
                                         </div>
                                     </li>
                                 </ul>
+                                <p><b>Note:</b> For information about COM or VSTO add-ins, see the <a href="/office/client-developer/office-client-development" target="_blank">Office client development documentation</a>.</p>
                             </li>
                             <li class="fullSpan">
-                              <p><b>Note:</b> For information about COM or VSTO add-ins, see the <a href="/office/client-developer/office-client-development" target="_blank">Office client development documentation</a>.</p>
-                            </li>
+                              <hr />
+                              <br/>
+                              <h2>Resources</h2>
                        </ul>
                     </li>
                 </ul>
