@@ -14,128 +14,106 @@ localization_priority: Normal
     <div class="container">
         <h1>Office Add-ins documentation</h1>
         <p style="font-size: 1.12rem;margin-bottom: 1rem;">The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad.</p>
-        <p><br/></p>
+        <p></p>
+        <ul class="cardsM cols cols1">
+            <li>
+                <a class="card x-hidden-focus" href="overview/office-add-ins.md">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="images/index/blocks.svg" alt="Office Add-ins platform" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Office Add-ins platform</h3>
+                        <p>Learn about the Office Add-ins platform and important concepts that apply to building any type of Office Add-in.</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
         <ul class="pivots">
             <li>
                 <a href="#home"></a>
                 <ul id="home">
                     <li>
                         <a href="#home-all"></a>
-                        <ul id="home-all" class="cardsF">
+                        <ul id="home-all" class="cardsM cols cols3">
                             <li>
-                                <div class="cardSize">
-                                    <div class="cardPadding">
-                                        <div class="card">
-                                            <div class="cardImageOuter">
-                                                <div class="cardImage">
-                                                    <img src="images/index/ExcelLogoColor.svg" alt="Excel add-ins" />
-                                                </div>
-                                            </div>
-                                            <div class="cardText">
-                                                <h3>Excel add-ins</h3>
-                                                <p><a href="excel/excel-add-ins-overview.md" target="_blank">About Excel add-ins</a></p>
-                                                <p><a href="reference/overview/excel-add-ins-reference-overview.md" target="_blank">Build Excel add-ins</a></p>
-                                                <p><a href="excel/custom-functions-overview.md" target="_blank">Build custom functions</a></p>
-                                                <p><a href="/javascript/api/excel" target="_blank">API Reference</a></p>
-                                            </div>
-                                        </div>
+                              <a class="card x-hidden-focus" href="excel/excel-add-ins-overview.md" target="_blank">
+                                <div class="cardImageOuter">
+                                    <div class="cardImage">
+                                        <img src="images/index/ExcelLogoColor.svg" alt="Excel add-ins" />
                                     </div>
                                 </div>
+                                <div class="cardText">
+                                    <h3>Excel add-ins</h3>
+                                    <p>Build Excel add-ins.</p>
+                                </div>
+                              </a>
                             </li>
                             <li>
-                                <div class="cardSize">
-                                    <div class="cardPadding">
-                                        <div class="card">
-                                            <div class="cardImageOuter">
-                                                <div class="cardImage">
-                                                    <img src="images/index/OneNoteLogoColor.svg" alt="OneNote add-ins" />
-                                                </div>
-                                            </div>
-                                            <div class="cardText">
-                                                <h3>OneNote add-ins</h3>
-                                                <p><a href="onenote/onenote-add-ins-programming-overview.md" target="_blank">About OneNote add-ins</a></p>
-                                                <p><a href="reference/overview/onenote-add-ins-javascript-reference.md" target="_blank">Build OneNote add-ins</a></p>
-                                                <p><a href="/javascript/api/onenote" target="_blank">API reference</a></p>
-                                            </div>
-                                        </div>
+                              <a class="card x-hidden-focus" href="onenote/onenote-add-ins-programming-overview.md" target="_blank">
+                                <div class="cardImageOuter">
+                                    <div class="cardImage">
+                                        <img src="images/index/OneNoteLogoColor.svg" alt="OneNote add-ins" />
                                     </div>
                                 </div>
+                                <div class="cardText">
+                                    <h3>OneNote add-ins</h3>
+                                    <p>Build OneNote add-ins.</p>
+                                </div>
+                              </a>
                             </li>
                             <li>
-                                <div class="cardSize">
-                                    <div class="cardPadding">
-                                        <div class="card">
-                                            <div class="cardImageOuter">
-                                                <div class="cardImage">
-                                                    <img src="images/index/OutlookLogoColor.svg" alt="Outlook add-ins" />
-                                                </div>
-                                            </div>
-                                            <div class="cardText">
-                                                <h3>Outlook add-ins</h3>
-                                                <p><a href="/outlook/add-ins/index" target="_blank">About Outlook add-ins</a></p>
-                                                <p><a href="/outlook/add-ins/apis" target="_blank">Build Outlook add-ins</a></p>
-                                                <p><a href="/javascript/api/outlook" target="_blank">API Reference</a></p>
-                                            </div>
-                                        </div>
+                              <a class="card x-hidden-focus" href="/outlook/add-ins/index" target="_blank">
+                                <div class="cardImageOuter">
+                                    <div class="cardImage">
+                                        <img src="images/index/OutlookLogoColor.svg" alt="Outlook add-ins" />
                                     </div>
                                 </div>
+                                <div class="cardText">
+                                    <h3>Outlook add-ins</h3>
+                                    <p>Build Outlook add-ins.</p>
+                                </div>
+                              </a>
                             </li>
                             <li>
-                                <div class="cardSize">
-                                    <div class="cardPadding">
-                                        <div class="card">
-                                            <div class="cardImageOuter">
-                                                <div class="cardImage">
-                                                    <img src="images/index/PowerPointLogoColor.svg" alt="PowerPoint add-ins" />
-                                                </div>
-                                            </div>
-                                            <div class="cardText">
-                                                <h3>PowerPoint add-ins</h3>
-                                                <p><a href="powerpoint/powerpoint-add-ins.md" target="_blank">About PowerPoint add-ins</a></p>
-                                                <p><a href="reference/requirement-sets/powerpoint-and-project-note.md" target="_blank">Build PowerPoint add-ins</a></p>
-                                                <p><a href="/javascript/api/powerpoint" target="_blank">API Reference</a></p>
-                                            </div>
-                                        </div>
+                              <a class="card x-hidden-focus" href="powerpoint/powerpoint-add-ins.md" target="_blank">
+                                <div class="cardImageOuter">
+                                    <div class="cardImage">
+                                        <img src="images/index/PowerPointLogoColor.svg" alt="PowerPoint add-ins" />
                                     </div>
                                 </div>
+                                <div class="cardText">
+                                    <h3>PowerPoint add-ins</h3>
+                                    <p>Build PowerPoint add-ins.</p>
+                                </div>
+                              </a>
                             </li>
                             <li>
-                                <div class="cardSize">
-                                    <div class="cardPadding">
-                                        <div class="card">
-                                            <div class="cardImageOuter">
-                                                <div class="cardImage">
-                                                    <img src="images/index/ProjectLogoColor.svg" alt="Project add-ins" />
-                                                </div>
-                                            </div>
-                                            <div class="cardText">
-                                                <h3>Project add-ins</h3>
-                                                <p><a href="project/project-add-ins.md" target="_blank">About Project add-ins</a></p>
-                                                <p><a href="reference/requirement-sets/powerpoint-and-project-note.md" target="_blank">Build Project add-ins</a></p>
-                                                <p><a href="/javascript/api/office" target="_blank">API Reference</a></p>
-                                            </div>
-                                        </div>
+                              <a class="card x-hidden-focus" href="project/project-add-ins.md" target="_blank">
+                                <div class="cardImageOuter">
+                                    <div class="cardImage">
+                                        <img src="images/index/ProjectLogoColor.svg" alt="Project add-ins" />
                                     </div>
                                 </div>
+                                <div class="cardText">
+                                    <h3>Project add-ins</h3>
+                                    <p>Build Project add-ins.</p>
+                                </div>
+                              </a>
                             </li>
                             <li>
-                                <div class="cardSize">
-                                    <div class="cardPadding">
-                                        <div class="card">
-                                            <div class="cardImageOuter">
-                                                <div class="cardImage">
-                                                    <img src="images/index/WordLogoColor.svg" alt="Word add-ins" />
-                                                </div>
-                                            </div>
-                                            <div class="cardText">
-                                                <h3>Word add-ins</h3>
-                                                <p><a href="word/word-add-ins-programming-overview.md" target="_blank">About Word add-ins</a></p>
-                                                <p><a href="reference/overview/word-add-ins-reference-overview.md" target="_blank">Build Word add-ins</a></p>
-                                                <p><a href="/javascript/api/word" target="_blank">API reference</a></p>
-                                            </div>
-                                        </div>
+                              <a class="card x-hidden-focus" href="word/word-add-ins-programming-overview.md" target="_blank">
+                                <div class="cardImageOuter">
+                                    <div class="cardImage">
+                                        <img src="images/index/WordLogoColor.svg" alt="Word add-ins" />
                                     </div>
                                 </div>
+                                <div class="cardText">
+                                    <h3>Word add-ins</h3>
+                                    <p>Build Word add-ins.</p>
+                                </div>
+                              </a>
                             </li>
                             <li class="fullSpan">
                               <hr />
