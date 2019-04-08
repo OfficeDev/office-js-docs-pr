@@ -68,7 +68,7 @@ The XML manifest file for an add-in that defines custom functions (**./manifest.
 The following basic XML markup shows an example of the `<ExtensionPoint>` and `<Resources>` elements that you must include in an add-in's manifest to enable custom functions. If using the Yo Office generator, your generated custom function files will contain a more complex manifest file, which you can compare on [this Github repository](https://github.com/OfficeDev/Excel-Custom-Functions/blob/generate-metadata/manifest.xml).
 
 > [!NOTE] 
-> The custom functions javascript, json, and html files indicated in the manifest below must live on the same subdomain and be publicly accessible for Excel to be able to register your functions.
+> The URLs specified in the manifest file for the custom functions JavaScript, JSON, and HTML files must be publicly accessible and have the same subdomain.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
