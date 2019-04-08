@@ -1,7 +1,7 @@
 - name: Office Add-ins documentation
   href: index.md
 
-- name: Office Add-ins
+- name: Office Add-ins platform
   items:
   - name: Concepts
     items:

@@ -17,7 +17,7 @@ localization_priority: Normal
         <p></p>
         <ul class="cardsM cols cols1">
             <li>
-                <a class="card x-hidden-focus" href="overview/office-add-ins.md">
+                <a class="card x-hidden-focus" href="overview/office-add-ins.md" target="_blank">
                     <div class="cardImageOuter">
                         <div class="cardImage">
                             <img src="images/index/blocks.svg" alt="Office Add-ins platform" />
