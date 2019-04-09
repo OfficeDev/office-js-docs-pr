@@ -1,7 +1,7 @@
 ---
 title: Work with worksheets using the Excel JavaScript API
 description: ''
-ms.date: 04/04/2019
+ms.date: 04/09/2019
 localization_priority: Priority
 ---
 
@@ -325,6 +325,9 @@ Excel.run(function (context) {
 > - For examples that show how to get a range within a worksheet using the `Range` object, see [Work with ranges using the Excel JavaScript API](excel-add-ins-ranges.md).
 > - For examples that show how to get ranges from a `Table` object, see [Work with tables using the Excel JavaScript API](excel-add-ins-tables.md).
 > - For examples that show how to search a large range for multiple sub-ranges based on cell characteristics, see [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
+
+## Filter data
+
 
 ## Data protection
 

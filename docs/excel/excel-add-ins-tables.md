@@ -1,7 +1,7 @@
 ---
 title: Work with tables using the Excel JavaScript API
 description: ''
-ms.date: 04/04/2019
+ms.date: 04/09/2019
 localization_priority: Priority
 ---
 
@@ -44,8 +44,7 @@ Excel.run(function (context) {
     return context.sync();
 }).catch(errorHandlerFunction);
 ```
-
-**New table**
+### New table
 
 ![New table in Excel](../images/excel-tables-create.png)
 
