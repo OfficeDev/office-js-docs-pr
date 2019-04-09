@@ -31,6 +31,7 @@ The following section list the Common API requirement sets, the methods in each 
 |**Office hosts**|**Methods in set**|
 |:-----|:-----|
 | PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac|Document.getActiveViewAsync|
+
 ---
 
 ### AddInCommands
