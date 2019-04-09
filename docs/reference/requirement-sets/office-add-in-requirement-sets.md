@@ -30,14 +30,14 @@ The following section list the Common API requirement sets, the methods in each 
 
 |**Office hosts**|**Methods in set**|
 |:-----|:-----|
-| PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac|Document.getActiveViewAsync|
+| PowerPoint | Document.getActiveViewAsync |
+| PowerPoint Online ||
+| PowerPoint for iPad ||
+| PowerPoint for Mac||
 
 ### AddInCommands
 
-|**Office hosts**|**Methods in set**|
-|:-----|:-----|
-| See [Add-in command requirement sets](add-in-commands-requirement-sets.md). | |
-
+See [Add-in command requirement sets](add-in-commands-requirement-sets.md).
 
 ### BindingEvents
 

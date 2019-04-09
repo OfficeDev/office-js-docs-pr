@@ -1,7 +1,7 @@
 ---
 title: Identity API requirement sets
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/09/2019
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
@@ -14,9 +14,9 @@ Office Add-ins run across multiple versions of Office. The following table lists
 
 |  Requirement set  | Office 2013 or later for Windows | Office 365 for Windows   |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  | SharePoint Online | OneDrive.com |Outlook.com & Exchange Online|
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| IdentityAPI 1.1  | N/A**&#42;** | Preview**&#42;** | Coming soon | Preview**&#42;**| Preview | Preview| Coming soon | Coming soon |
+| IdentityAPI 1.1  | N/A* | Preview* | Coming soon | Preview* | Preview | Preview| Coming soon | Coming soon |
 
-> **&#42;** During the preview phase, the Identity API requires Office 365 (the subscription version of Office). You should use the latest monthly version and build from the Insiders channel. You need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). Please note that when a build graduates to the production semi-annual channel, support for preview features, including SSO, is turned off for that build.
+> * During the preview phase, the Identity API requires Office 365 (the subscription version of Office). You should use the latest monthly version and build from the Insiders channel. You need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1). Please note that when a build graduates to the production semi-annual channel, support for preview features, including SSO, is turned off for that build.
 
 To find out more about versions, build numbers, and Office Online Server, see:
 
