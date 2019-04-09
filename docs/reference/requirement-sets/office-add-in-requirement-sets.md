@@ -17,7 +17,7 @@ Looking for the *host-specific* API requirement sets? See the following API requ
 - [Excel JavaScript API requirement sets](excel-api-requirement-sets.md) (ExcelApi)
 - [Word JavaScript API requirement sets](word-api-requirement-sets.md) (WordApi)
 - [OneNote JavaScript API requirement sets](onenote-api-requirement-sets.md) (OneNoteApi)
-- [Understanding Outlook API requirement sets](outlook-api-requirement-sets.md) (MailBox)
+- [Understanding Outlook API requirement sets](outlook-api-requirement-sets.md) (Mailbox)
 
 > [!IMPORTANT]
 > We no longer recommend that you create and use Access web apps and databases in SharePoint. As an alternative, we recommend that you use [Microsoft PowerApps](https://powerapps.microsoft.com/) to build no-code business solutions for web and mobile devices.
@@ -30,10 +30,8 @@ The following section list the Common API requirement sets, the methods in each 
 
 |**Office hosts**|**Methods in set**|
 |:-----|:-----|
-| PowerPoint | Document.getActiveViewAsync |
-| PowerPoint Online ||
-| PowerPoint for iPad ||
-| PowerPoint for Mac||
+| PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac|Document.getActiveViewAsync|
+|||
 
 ### AddInCommands
 
