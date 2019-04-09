@@ -24,7 +24,7 @@ Looking for the *host-specific* API requirement sets? See the following API requ
 
 ## Common API requirement sets
 
-The following section list the Common API requirement sets, the methods in each set, and the Office host applications that support that requirement set. All of these API requirement sets are version 1.1.
+The following sections list the Common API requirement sets, the methods in each set, and the Office host applications that support that requirement set. All of these API requirement sets are version 1.1.
 
 ### ActiveView
 
