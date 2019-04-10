@@ -2,7 +2,7 @@
 
 1. Navigate to the [Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) to register your app.
 
-1. Sign in with the ***admin*** credentials to your Office 365 tenancy. For example, _MyName@contoso.onmicrosoft.com_.
+1. Sign in with the ***admin*** credentials to your Office 365 tenancy. For example, MyName@contoso.onmicrosoft.com.
 
 1. Select **New registration**. On the **Register an application** page, set the values as follows.
 
