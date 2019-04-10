@@ -180,11 +180,11 @@ When Visual Studio builds the project it performs the following tasks:
 
 3. Builds the web application project, and then deploys it to the local IIS web server (https://localhost).
 
-4. If this is the first add-in project  that you have deployed to local IIS web server, you may be prompted to install a Self-Signed Certificate to the current user's Trusted Root Certificate store.  This is required for IIS Express to display the content of your add-in correctly.
+4. If this is the first add-in project that you have deployed to local IIS web server, you may be prompted to install a Self-Signed Certificate to the current user's Trusted Root Certificate store. This is required for IIS Express to display the content of your add-in correctly.
 
 
 > [!NOTE]
-> The latest version of Office may use a newer web control to display the add-in contents when running on Windows 10. If this is the case, Visual Studio may prompt you to add a local network loopback exemption. This is required for the web control, in the Office host application, to be able to access the website deployed to the local IIS web server. You can also change this setting anytime in Visual Studio under Tools > Options > Office Tools (Web) > Web Add-In Debugging.
+> The latest version of Office may use a newer web control to display the add-in contents when running on Windows 10. If this is the case, Visual Studio may prompt you to add a local network loopback exemption. This is required for the web control, in the Office host application, to be able to access the website deployed to the local IIS web server. You can also change this setting anytime in Visual Studio under **Tools** > **Options** > **Office Tools (Web)** > **Web Add-In Debugging**.
 
 
 Next, Visual Studio does the following:
