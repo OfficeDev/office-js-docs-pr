@@ -529,7 +529,6 @@ if (itemId === null || itemId == undefined) {
 
 ---
 ---
----
 
 ####  itemType :[Office.MailboxEnums.ItemType](/javascript/api/outlook_1_7/office.mailboxenums.itemtype)
 
@@ -1626,6 +1625,7 @@ If there is no `ItemHasKnownEntity` element in the manifest with a `FilterName` 
 Type:
 Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))>
 
+---
 ---
 
 #### getRegExMatches() → {Object}

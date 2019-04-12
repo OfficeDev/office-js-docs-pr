@@ -254,6 +254,7 @@ function callback(asyncResult) {
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
 ---
+---
 
 ####  (nullable) conversationId :String
 
