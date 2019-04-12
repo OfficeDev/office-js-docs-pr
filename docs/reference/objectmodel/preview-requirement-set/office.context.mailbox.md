@@ -76,6 +76,7 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#s
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ---
+---
 
 #### restUrl :String
 
@@ -145,6 +146,7 @@ function loadNewItem(eventArgs) {
 ```
 
 ---
+---
 
 ####  convertToEwsId(itemId, restVersion) → {String}
 
@@ -186,6 +188,7 @@ var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.Re
 ```
 
 ---
+---
 
 ####  convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook/office.LocalClientTime)}
 
@@ -214,6 +217,7 @@ If the mail app is running in Outlook, the `convertToLocalClientTime` method wil
 Type:
 [LocalClientTime](/javascript/api/outlook/office.LocalClientTime)
 
+---
 ---
 
 ####  convertToRestId(itemId, restVersion) → {String}
@@ -256,6 +260,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 ```
 
 ---
+---
 
 ####  convertToUtcClientTime(input) → {Date}
 
@@ -289,6 +294,7 @@ A Date object with the time expressed in UTC.
 
 </dl>
 
+---
 ---
 
 ####  displayAppointmentForm(itemId)
@@ -327,6 +333,7 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
 ---
+---
 
 ####  displayMessageForm(itemId)
 
@@ -363,6 +370,7 @@ Do not use the `displayMessageForm` with an `itemId` that represents an appointm
 Office.context.mailbox.displayMessageForm(messageId);
 ```
 
+---
 ---
 
 #### displayNewAppointmentForm(parameters)
@@ -426,6 +434,7 @@ Office.context.mailbox.displayNewAppointmentForm(
 ```
 
 ---
+---
 
 #### displayNewMessageForm(parameters)
 
@@ -486,6 +495,7 @@ Office.context.mailbox.displayNewMessageForm(
 ```
 
 ---
+---
 
 #### getCallbackTokenAsync([options], callback)
 
@@ -543,6 +553,7 @@ function cb(asyncResult) {
 ```
 
 ---
+---
 
 #### getCallbackTokenAsync(callback, [userContext])
 
@@ -584,6 +595,7 @@ function cb(asyncResult) {
 ```
 
 ---
+---
 
 ####  getUserIdentityTokenAsync(callback, [userContext])
 
@@ -618,6 +630,7 @@ function cb(asyncResult) {
 }
 ```
 
+---
 ---
 
 ####  makeEwsRequestAsync(data, callback, [userContext])
@@ -718,6 +731,7 @@ function callback(asyncResult)  {
 }
 ```
 
+---
 ---
 
 ####  removeHandlerAsync(eventType, [options], [callback])
