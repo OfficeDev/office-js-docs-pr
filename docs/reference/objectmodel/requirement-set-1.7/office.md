@@ -1,7 +1,7 @@
 ---
 title: Office namespace - requirement set 1.7
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Normal
 ---
 
@@ -56,6 +56,7 @@ Specifies the result of an asynchronous call.
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ---
+---
 
 ####  CoercionType :String
 
@@ -79,6 +80,7 @@ Specifies how to coerce data returned or set by the invoked method.
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
+---
 ---
 
 ####  EventType :String
@@ -105,6 +107,7 @@ Specifies the event associated with an event handler.
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read |
 
+---
 ---
 
 ####  SourceProperty :String
