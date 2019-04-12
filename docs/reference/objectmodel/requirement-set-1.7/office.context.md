@@ -1,7 +1,7 @@
 ---
 title: Office.context - requirement set 1.7
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Normal
 ---
 
@@ -70,6 +70,8 @@ function write(message){
 }
 ```
 
+---
+
 ####  officeTheme :Object
 
 Provides access to the properties for Office theme colors.
@@ -113,6 +115,8 @@ function applyOfficeTheme(){
   $('.body').css('background-color', bodyBackgroundColor);
 }
 ```
+
+---
 
 ####  roamingSettings :[RoamingSettings](/javascript/api/outlook_1_7/office.RoamingSettings)
 
