@@ -48,6 +48,7 @@ A string that can be one of the following values: `Outlook`, `Mac Outlook`, `Out
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
 ---
+---
 
 ####  hostVersion :String
 
@@ -67,6 +68,7 @@ If the mail add-in is running on the Outlook desktop client or Outlook for iOS, 
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
+---
 ---
 
 ####  OWAView :String

@@ -71,6 +71,7 @@ function write(message){
 ```
 
 ---
+---
 
 ####  officeTheme :Object
 
@@ -116,6 +117,7 @@ function applyOfficeTheme(){
 }
 ```
 
+---
 ---
 
 ####  roamingSettings :[RoamingSettings](/javascript/api/outlook/office.RoamingSettings)

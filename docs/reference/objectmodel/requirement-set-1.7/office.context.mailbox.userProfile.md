@@ -61,6 +61,7 @@ console.log(Office.context.mailbox.userProfile.accountType);
 ```
 
 ---
+---
 
 ####  displayName :String
 
@@ -86,6 +87,7 @@ console.log(Office.context.mailbox.userProfile.displayName);
 ```
 
 ---
+---
 
 ####  emailAddress :String
 
@@ -110,6 +112,7 @@ Gets the user's SMTP email address.
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
 
+---
 ---
 
 ####  timeZone :String

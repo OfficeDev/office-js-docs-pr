@@ -139,6 +139,7 @@ console.log(outputString);
 ```
 
 ---
+---
 
 ####  bcc :[Recipients](/javascript/api/outlook/office.recipients)
 
@@ -168,6 +169,7 @@ function callback(asyncResult) {
 }
 ```
 
+---
 ---
 
 ####  body :[Body](/javascript/api/outlook/office.body)
@@ -210,6 +212,7 @@ The following is an example of the result parameter passed to the callback funct
 }
 ```
 
+---
 ---
 
 ####  cc :Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook/office.recipients)
@@ -280,6 +283,7 @@ console.log("conversationId: " + conversationId);
 ```
 
 ---
+---
 
 #### dateTimeCreated :Date
 
@@ -304,6 +308,7 @@ var dateTimeCreated = Office.context.mailbox.item.dateTimeCreated;
 console.log("Date and time created: " + dateTimeCreated);
 ```
 
+---
 ---
 
 #### dateTimeModified :Date
@@ -332,6 +337,7 @@ var dateTimeModified = Office.context.mailbox.item.dateTimeModified;
 console.log("Date and time modified: " + dateTimeModified);
 ```
 
+---
 ---
 
 ####  end :Date|[Time](/javascript/api/outlook/office.time)
@@ -386,6 +392,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
 ---
+---
 
 #### enhancedLocation :[EnhancedLocation](/javascript/api/outlook/office.enhancedlocation)
 
@@ -429,6 +436,7 @@ function callbackFunction(asyncResult) {
 }
 ```
 
+---
 ---
 
 #### from :[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)|[From](/javascript/api/outlook/office.from)
@@ -474,6 +482,7 @@ function callback(asyncResult) {
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|Compose|
 
 ---
+---
 
 #### internetHeaders :[InternetHeaders](/javascript/api/outlook/office.internetheaders)
 
@@ -503,6 +512,7 @@ function callback(asyncResult) {
 ```
 
 ---
+---
 
 #### internetMessageId :String
 
@@ -527,6 +537,7 @@ var internetMessageId = Office.context.mailbox.item.internetMessageId;
 console.log("internetMessageId: " + internetMessageId);
 ```
 
+---
 ---
 
 #### itemClass :String
@@ -561,6 +572,7 @@ var itemClass = Office.context.mailbox.item.itemClass;
 console.log("Item class: " + itemClass);
 ```
 
+---
 ---
 
 #### (nullable) itemId :String
@@ -598,6 +610,7 @@ if (itemId === null || itemId == undefined) {
 ```
 
 ---
+---
 
 ####  itemType :[Office.MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype)
 
@@ -627,6 +640,7 @@ if (Office.context.mailbox.item.itemType === Office.MailboxEnums.ItemType.Messag
 }
 ```
 
+---
 ---
 
 ####  location :String|[Location](/javascript/api/outlook/office.location)
@@ -669,6 +683,7 @@ function callback(asyncResult) {
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
 ---
+---
 
 #### normalizedSubject :String
 
@@ -695,6 +710,7 @@ var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
 console.log("Normalized subject: " + normalizedSubject);
 ```
 
+---
 ---
 
 ####  notificationMessages :[NotificationMessages](/javascript/api/outlook/office.notificationmessages)
@@ -724,6 +740,7 @@ Office.context.mailbox.item.notificationMessages.getAllAsync(
 );
 ```
 
+---
 ---
 
 ####  optionalAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook/office.recipients)
@@ -766,6 +783,7 @@ function callback(asyncResult) {
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
 ---
+---
 
 #### organizer :[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)|[Organizer](/javascript/api/outlook/office.organizer)
 
@@ -805,6 +823,7 @@ Office.context.mailbox.item.organizer.getAsync(
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|ReadWriteItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Read|Compose|
 
+---
 ---
 
 #### (nullable) recurrence :[Recurrence](/javascript/api/outlook/office.recurrence)
@@ -866,6 +885,7 @@ Recurrence = {
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
 ---
+---
 
 ####  requiredAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook/office.recipients)
 
@@ -908,6 +928,7 @@ function callback(asyncResult) {
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
 ---
+---
 
 #### sender :[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)
 
@@ -938,6 +959,7 @@ var senderAddress = Office.context.mailbox.item.sender.emailAddress;
 console.log("Sender: " + senderName + " (" + senderAddress + ")");
 ```
 
+---
 ---
 
 #### (nullable) seriesId :String
@@ -976,6 +998,7 @@ var isSeriesInstance = (seriesId != null);
 console.log("SeriesId is " + seriesId + " and isSeriesInstance is " + isSeriesInstance);
 ```
 
+---
 ---
 
 ####  start :Date|[Time](/javascript/api/outlook/office.time)
@@ -1030,6 +1053,7 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
 ---
+---
 
 ####  subject :String|[Subject](/javascript/api/outlook/office.subject)
 
@@ -1072,6 +1096,7 @@ function callback(asyncResult) {
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
+---
 ---
 
 ####  to :Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook/office.recipients)
@@ -1190,6 +1215,7 @@ Office.context.mailbox.item.addFileAttachmentAsync(
 ```
 
 ---
+---
 
 #### addFileAttachmentFromBase64Async(base64File, attachmentName, [options], [callback])
 
@@ -1200,6 +1226,7 @@ The `addFileAttachmentFromBase64Async` method uploads the file from the base64 e
 You can subsequently use the identifier with the [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) method to remove the attachment in the same session.
 
 ##### Parameters
+
 |Name|Type|Attributes|Description|
 |---|---|---|---|
 |`base64File`|String||The base64 encoded content of an image or file to be added to an email or event.|
@@ -1247,6 +1274,7 @@ Office.context.mailbox.item.addFileAttachmentFromBase64Async(
 ```
 
 ---
+---
 
 ####  addHandlerAsync(eventType, handler, [options], [callback])
 
@@ -1286,6 +1314,7 @@ function myHandlerFunction(eventarg) {
 Office.context.mailbox.item.addHandlerAsync(Office.EventType.AttachmentsChanged, myHandlerFunction, myCallback);
 ```
 
+---
 ---
 
 ####  addItemAttachmentAsync(itemId, attachmentName, [options], [callback])
@@ -1347,6 +1376,7 @@ function addAttachment() {
 ```
 
 ---
+---
 
 ####  close()
 
@@ -1367,6 +1397,7 @@ In the Outlook desktop client, if the message is an inline reply, the `close` me
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|Restricted|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose|
 
+---
 ---
 
 #### displayReplyAllForm(formData, [callback])
@@ -1489,6 +1520,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 ```
 
 ---
+---
 
 #### displayReplyForm(formData, [callback])
 
@@ -1610,6 +1642,7 @@ Office.context.mailbox.item.displayReplyForm(
 ```
 
 ---
+---
 
 #### getAttachmentContentAsync(attachmentId, [options], [callback]) → [AttachmentContent](/javascript/api/outlook/office.attachmentcontent)
 
@@ -1672,6 +1705,7 @@ function handleAttachmentsCallback(result) {
 ```
 
 ---
+---
 
 #### getAttachmentsAsync([options], [callback]) → Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)>
 
@@ -1724,6 +1758,7 @@ function callback(result) {
 ```
 
 ---
+---
 
 #### getEntities() → {[Entities](/javascript/api/outlook/office.entities)}
 
@@ -1753,6 +1788,7 @@ The following example accesses the contacts entities in the current item's body.
 var contacts = Office.context.mailbox.item.getEntities().contacts;
 ```
 
+---
 ---
 
 #### getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook/office.contact)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion))>}
@@ -1813,6 +1849,7 @@ Office.initialize = function () {
 ```
 
 ---
+---
 
 #### getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook/office.contact)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion))>}
 
@@ -1845,6 +1882,7 @@ Type:
 Array.<(String|[Contact](/javascript/api/outlook/office.contact)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion))>
 
 ---
+---
 
 #### getInitializationContextAsync([options], [callback])
 
@@ -1854,6 +1892,7 @@ Gets initialization data passed when the add-in is [activated by an actionable m
 > This method is only supported by Outlook 2016 or later for Windows (Click-to-Run versions later than 16.0.8413.1000) and Outlook on the web for Office 365.
 
 ##### Parameters
+
 |Name|Type|Attributes|Description|
 |---|---|---|---|
 |`options`|Object|&lt;optional&gt;|An object literal that contains one or more of the following properties.|
@@ -1894,6 +1933,7 @@ Office.context.mailbox.item.getInitializationContextAsync(
 );
 ```
 
+---
 ---
 
 #### getRegExMatches() → {Object}
@@ -1959,6 +1999,7 @@ var veggies = allMatches.veggies;
 ```
 
 ---
+---
 
 #### getRegExMatchesByName(name) → (nullable) {Array.< String >}
 
@@ -2004,6 +2045,7 @@ var fruits = Office.context.mailbox.item.getRegExMatchesByName("fruits");
 var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 ```
 
+---
 ---
 
 ####  getSelectedDataAsync(coercionType, [options], callback) → {String}
@@ -2062,6 +2104,7 @@ function setCallback(asyncResult) {
 ```
 
 ---
+---
 
 #### getSelectedEntities() → {[Entities](/javascript/api/outlook/office.entities)}
 
@@ -2091,6 +2134,7 @@ The following example accesses the addresses entities in the highlighted match s
 var contacts = Office.context.mailbox.item.getSelectedEntities().addresses;
 ```
 
+---
 ---
 
 #### getSelectedRegExMatches() → {Object}
@@ -2148,6 +2192,7 @@ var veggies = selectedMatches.veggies;
 ```
 
 ---
+---
 
 #### getSharedPropertiesAsync([options], callback)
 
@@ -2180,6 +2225,7 @@ function callback (asyncResult) {
 }
 ```
 
+---
 ---
 
 ####  loadCustomPropertiesAsync(callback, [userContext])
@@ -2231,6 +2277,7 @@ function saveCallback(asyncResult) {
 ```
 
 ---
+---
 
 ####  removeAttachmentAsync(attachmentId, [options], [callback])
 
@@ -2277,6 +2324,7 @@ Office.context.mailbox.item.removeAttachmentAsync(
 ```
 
 ---
+---
 
 ####  removeHandlerAsync(eventType, [options], [callback])
 
@@ -2301,6 +2349,7 @@ Currently the supported event types are `Office.EventType.AttachmentsChanged`, `
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem |
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read |
 
+---
 ---
 
 ####  saveAsync([options], callback)
@@ -2354,6 +2403,7 @@ The following is an example of the `result` parameter passed to the callback fun
 }
 ```
 
+---
 ---
 
 ####  setSelectedDataAsync(data, [options], callback)
