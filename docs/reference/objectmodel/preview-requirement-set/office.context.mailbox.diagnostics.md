@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.diagnostics - preview requirement set
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Normal
 ---
 
@@ -47,6 +47,9 @@ A string that can be one of the following values: `Outlook`, `Mac Outlook`, `Out
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
+---
+---
+
 ####  hostVersion :String
 
 Gets a string that represents the version of either the host application or the Exchange Server.
@@ -64,6 +67,9 @@ If the mail add-in is running on the Outlook desktop client or Outlook for iOS, 
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+
+---
+---
 
 ####  OWAView :String
 

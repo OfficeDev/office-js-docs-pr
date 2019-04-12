@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - preview requirement set
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Normal
 ---
 
@@ -75,6 +75,9 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#s
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
 
+---
+---
+
 #### restUrl :String
 
 Gets the URL of the REST endpoint for this email account.
@@ -142,6 +145,9 @@ function loadNewItem(eventArgs) {
 }
 ```
 
+---
+---
+
 ####  convertToEwsId(itemId, restVersion) → {String}
 
 Converts an item ID formatted for REST into EWS format.
@@ -181,6 +187,9 @@ var restId = 'AAMkAGVlOTZjNTM3LW...';
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
+---
+---
+
 ####  convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook/office.LocalClientTime)}
 
 Gets a dictionary containing time information in local client time.
@@ -207,6 +216,9 @@ If the mail app is running in Outlook, the `convertToLocalClientTime` method wil
 
 Type:
 [LocalClientTime](/javascript/api/outlook/office.LocalClientTime)
+
+---
+---
 
 ####  convertToRestId(itemId, restVersion) → {String}
 
@@ -247,6 +259,9 @@ var ewsId = Office.context.mailbox.item.itemId;
 var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
+---
+---
+
 ####  convertToUtcClientTime(input) → {Date}
 
 Gets a Date object from a dictionary containing time information.
@@ -278,6 +293,9 @@ A Date object with the time expressed in UTC.
 <dd>Date</dd>
 
 </dl>
+
+---
+---
 
 ####  displayAppointmentForm(itemId)
 
@@ -314,6 +332,9 @@ If the specified item identifier does not identify an existing appointment, a bl
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
+---
+---
+
 ####  displayMessageForm(itemId)
 
 Displays an existing message.
@@ -348,6 +369,9 @@ Do not use the `displayMessageForm` with an `itemId` that represents an appointm
 ```javascript
 Office.context.mailbox.displayMessageForm(messageId);
 ```
+
+---
+---
 
 #### displayNewAppointmentForm(parameters)
 
@@ -409,6 +433,9 @@ Office.context.mailbox.displayNewAppointmentForm(
   });
 ```
 
+---
+---
+
 #### displayNewMessageForm(parameters)
 
 Displays a form for creating a new message.
@@ -467,6 +494,9 @@ Office.context.mailbox.displayNewMessageForm(
   });
 ```
 
+---
+---
+
 #### getCallbackTokenAsync([options], callback)
 
 Gets a string that contains a token used to call REST APIs or Exchange Web Services.
@@ -522,6 +552,9 @@ function cb(asyncResult) {
 }
 ```
 
+---
+---
+
 #### getCallbackTokenAsync(callback, [userContext])
 
 Gets a string that contains a token used to get an attachment or item from an Exchange Server.
@@ -561,6 +594,9 @@ function cb(asyncResult) {
 }
 ```
 
+---
+---
+
 ####  getUserIdentityTokenAsync(callback, [userContext])
 
 Gets a token identifying the user and the Office Add-in.
@@ -593,6 +629,9 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+---
+---
 
 ####  makeEwsRequestAsync(data, callback, [userContext])
 
@@ -691,6 +730,9 @@ function callback(asyncResult)  {
   // Process the returned response here.
 }
 ```
+
+---
+---
 
 ####  removeHandlerAsync(eventType, [options], [callback])
 
