@@ -9,9 +9,9 @@ localization_priority: Priority
 
 You can use PowerPoint add-ins to build engaging solutions for your users' presentations across platforms including Windows, iOS, Office Online, and Mac. You can create two types of PowerPoint add-ins:
 
-- Use **content add-ins** to add dynamic HTML5 content to your presentations. For example, see the [LucidChart Diagrams for PowerPoint](https://store.office.com/app.aspx?assetid=WA104380117&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Productivity&homapppos=3&homchv=2&appredirect=false) add-in, which you can use to inject an interactive diagram from LucidChart into your deck.
+- Use **content add-ins** to add dynamic HTML5 content to your presentations. For example, see the [LucidChart Diagrams for PowerPoint](https://appsource.microsoft.com/en-us/product/office/WA104380117) add-in, which you can use to inject an interactive diagram from LucidChart into your deck.
 
-- Use **task pane add-ins** to bring in reference information or insert data into the presentation via a service. For example, see the [Shutterstock Images](https://store.office.com/app.aspx?assetid=WA104380169&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Editor%2527s%2BPicks&homapppos=0&homchv=1&appredirect=false) add-in, which you can use to add professional photos to your presentation. 
+- Use **task pane add-ins** to bring in reference information or insert data into the presentation via a service. For example, see the [Pixton Comic Characters](https://appsource.microsoft.com/en-us/product/office/WA104380907) add-in, which you can use to add professional photos to your presentation. 
 
 ## PowerPoint add-in scenarios
 
