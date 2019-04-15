@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-ins
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 localization_priority: Priority
 ---
 
@@ -9,9 +9,9 @@ localization_priority: Priority
 
 You can use PowerPoint add-ins to build engaging solutions for your users' presentations across platforms including Windows, iOS, Office Online, and Mac. You can create two types of PowerPoint add-ins:
 
-- Use **content add-ins** to add dynamic HTML5 content to your presentations. For example, see the [LucidChart Diagrams for PowerPoint](https://appsource.microsoft.com/en-us/product/office/WA104380117) add-in, which you can use to inject an interactive diagram from LucidChart into your deck.
+- Use **content add-ins** to add dynamic HTML5 content to your presentations. For example, see the [LucidChart Diagrams for PowerPoint](https://appsource.microsoft.com/product/office/WA104380117) add-in, which you can use to inject an interactive diagram from LucidChart into your deck.
 
-- Use **task pane add-ins** to bring in reference information or insert data into the presentation via a service. For example, see the [Pixton Comic Characters](https://appsource.microsoft.com/en-us/product/office/WA104380907) add-in, which you can use to add professional photos to your presentation. 
+- Use **task pane add-ins** to bring in reference information or insert data into the presentation via a service. For example, see the [Pixton Comic Characters](https://appsource.microsoft.com/product/office/WA104380907) add-in, which you can use to add professional photos to your presentation. 
 
 ## PowerPoint add-in scenarios
 
@@ -187,7 +187,7 @@ reader.readAsDataURL(myFile.files[0]);
 
 ## See also
 
-- [PowerPoint Code Samples](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,PowerPoint)
+- [PowerPoint Code Samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,PowerPoint)
 - [How to save add-in state and settings per document for content and task pane add-ins](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [Read and write data to the active selection in a document or spreadsheet](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
 - [Get the whole document from an add-in for PowerPoint or Word](../powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md)
