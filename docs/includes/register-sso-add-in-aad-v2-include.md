@@ -20,21 +20,22 @@
 
 1. Select **Expose an API** under **Manage**. Select the **Set** link to generate the Application ID URI in the form "api://$App ID GUID$". Insert the **$FQDN-WITHOUT-PROTOCOL$** (with a forward slash "/" appended to the end) between the double forward slashes and the GUID. The entire ID should have the form `api://$FQDN-WITHOUT-PROTOCOL$/$App ID GUID$`; for example `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
 
-    > [!NOTES]
+    > [!NOTE]
     > You may get an inaccurate error at this point saying "The application ID URI must be a valid URI starting with HTTPS, API, URN, MS-APPX. It must not end in a slash." If the ID meets the stated conditions, ignore the error and save your change.
-    
+
+    > [!NOTE]
     > If you get an error saying that the domain is already owned but you own it, follow the procedure at [Quickstart: Add a custom domain name to Azure Active Directory](/azure/active-directory/add-custom-domain) to register it, and then repeat this step. (This error can also occur if you are not signed in with credentials of an admin in the Office 365 tenancy. See step 2. Sign out and sign in again with admin credentials and repeat the process from step 3.)
 
-1. Select the **Add a scope** button. In the panel that opens, enter `access_as_user` as the **Scope name**. 
+1. Select the **Add a scope** button. In the panel that opens, enter `access_as_user` as the **Scope name**.
 
 1. Set **Who can consent?** to **Admins and users**.
 
 1. Fill in the fields for configuring the admin and user consent prompts with values that are appropriate for the `access_as_user` scope which enables the Office host application to use your add-in's web APIs with the same rights as the current user. Suggestions:
 
-- **Admin consent title:** Office can act as the user.
-- **Admin consent description:** Enable Office to call the add-in's web APIs with the same rights as the current user.
-- **User consent title:** Office can act as you.
-- **Admin consent description:** Enable Office to call the add-in's web APIs with the same rights as you have.
+    - **Admin consent title:** Office can act as the user.
+    - **Admin consent description:** Enable Office to call the add-in's web APIs with the same rights as the current user.
+    - **User consent title:** Office can act as you.
+    - **Admin consent description:** Enable Office to call the add-in's web APIs with the same rights that you have.
 
 1. Ensure that **State** is set to **Enabled**.
 
@@ -43,14 +44,17 @@
     > [!NOTE]
     > The domain part of the **Scope name** displayed just below the text field should automatically match the **Application ID URI** set in the previous step, with `/access_as_user` appended to the end; for example, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
 
-1. In the **Authorized client applications** section, you identify the applications that you want to authorize to your add-in's web application. Each of the following IDs needs to be pre-authorized. For each, take these steps:
-
-  a. Select **Add a client application** button then, in the panel that opens, set the **Client ID** to the respective GUID and check the box for `api://$FQDN-WITHOUT-PROTOCOL$/$App ID GUID$/access_as_user`.
-  b. Select **Add application**.
+1. In the **Authorized client applications** section, you identify the applications that you want to authorize to your add-in's web application. Each of the following IDs needs to be pre-authorized.
   
     * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
     * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office Online)
     * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office Online)
+
+    For each ID, take these steps:
+
+      a. Select **Add a client application** button then, in the panel that opens, set the **Client ID** to the respective GUID and check the box for `api://$FQDN-WITHOUT-PROTOCOL$/$App ID GUID$/access_as_user`.
+
+      b. Select **Add application**.
 
 1. Select **Authentication** under **Manage**. In the **Redirect URIs** section, select **Web** in the **Type** dropdown then set the **Redirect URI** value to `https://$FQDN-WITHOUT-PROTOCOL$`.
 
