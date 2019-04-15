@@ -21,7 +21,7 @@ On Mac:
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 > [!NOTE]
-> For simplicity, this article shows debugging in the context of using Visual Studio Code to edit, run tasks, and in some cases use the debug view. If you are using a different editor or command line tool, see the [command line instructions](#Use-the-command-line-tools-to-debug) at the end of this article.
+> For simplicity, this article shows debugging in the context of using Visual Studio Code to edit, run tasks, and in some cases use the debug view. If you are using a different editor or command line tool, see the [command line instructions](#use-the-command-line-tools-to-debug) at the end of this article.
 
 ## Requirements
 
@@ -32,7 +32,7 @@ Before starting to debug, you should create a custom functions add-in project us
 You can use VS Code to debug custom functions in Office Excel on the desktop.
 
 > [!NOTE]
-> Desktop debugging for the Mac is not available but can be achieved [using the browser tools to debug Excel Online](#debug-in-excel-online-by-using-the-browser-developer-tools).
+> Desktop debugging for the Mac is not available but can be achieved [using the browser tools to debug Excel Online](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-online).
 
 ### Run your add-in from VS Code
 
@@ -139,7 +139,7 @@ If you are not using VS Code, you can use the command line (such as bash, or Pow
     
     `npm run start web`
     
-    For Excel Online you also need to sideload your add-in. Follow the steps in [Sideload your add-in](#Sideload-your-add-in) to sideload your add-in. Then continue to the next section to start debugging.
+    For Excel Online you also need to sideload your add-in. Follow the steps in [Sideload your add-in](#sideload-your-add-in) to sideload your add-in. Then continue to the next section to start debugging.
     
 4. Open developer tools in the browser. For Chrome and most browsers F12 will open the developer tools.
 5. In developer tools, open your source code script file (functions.js or functions.ts). Your custom functions code may be located near the end of the file.
