@@ -72,7 +72,7 @@ The following instruction are written generically so they can be used in multipl
 
 1. For the `audience` property, replace the placeholder `{audience GUID}` with the application ID that you saved when you registered the add-in. (The very same value that you assigned to the `client_id` property.)
   
-1. In the string assigned to the `issuer` property, you will see the placeholder *{O365 tenant GUID}*. Replace this with the Office 365 tenancy ID. Use one of the methods in [Find your Office 365 tenant ID](/onedrive/find-your-office-365-tenant-id) to obtain it. When you are done, the `issuer` property value should look something like this:
+1. In the string assigned to the `issuer` property, you will see the placeholder *{O365 tenant GUID}*. Replace this with the Office 365 tenancy ID. If you didn't copy the tenancy ID when you registered the add-in with AAD, use one of the methods in [Find your Office 365 tenant ID](/onedrive/find-your-office-365-tenant-id) to obtain it. When you are done, the `issuer` property value should look something like this:
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
