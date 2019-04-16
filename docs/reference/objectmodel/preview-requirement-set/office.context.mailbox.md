@@ -95,6 +95,21 @@ Gets an object that provides methods to manage the categories master list on thi
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadMailbox |
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read |
 
+##### Example
+
+This example gets the categories master list on this mailbox.
+
+```javascript
+Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
+  if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+    console.log("Action failed with error: " + asyncResult.error.message);
+  }
+  else {
+    console.log("Master categories: " + JSON.stringify(asyncResult.value));
+  }
+});
+```
+
 ---
 ---
 

@@ -232,6 +232,21 @@ Gets an object that provides methods for managing the item's categories.
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
 
+##### Example
+
+This example gets the item's categories.
+
+```javascript
+Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
+  if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+    console.log("Action failed with error: " + asyncResult.error.message);
+  }
+  else {
+    console.log("Categories: " + JSON.stringify(asyncResult.value));
+  }
+});
+```
+
 ---
 ---
 
