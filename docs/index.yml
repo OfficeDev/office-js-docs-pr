@@ -35,7 +35,7 @@ sections:
           html: <p>Learn about the Office Add-ins platform and important concepts that apply to building any type of Office Add-in.</p>
           image:
             src: images/index/blocks.svg
-          title: Office Add-ins platform
+          title: Office Add-ins guidance
     - type: list
       style: cards
       className: cardsM
