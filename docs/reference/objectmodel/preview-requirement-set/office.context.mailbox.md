@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - preview requirement set
 description: ''
-ms.date: 04/12/2019
+ms.date: 04/16/2019
 localization_priority: Normal
 ---
 
@@ -24,6 +24,7 @@ Provides access to the Outlook add-in object model for Microsoft Outlook and Mic
 | Member | Type |
 |--------|------|
 | [ewsUrl](#ewsurl-string) | Member |
+| [masterCategories](#mastercategories-mastercategories) | Member |
 | [restUrl](#resturl-string) | Member |
 | [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | Method |
 | [convertToEwsId](#converttoewsiditemid-restversion--string) | Method |
@@ -74,6 +75,25 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#s
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read|
+
+---
+---
+
+#### masterCategories :[MasterCategories](/javascript/api/outlook/office.mastercategories)
+
+Gets an object that provides methods to manage the categories master list on this mailbox.
+
+##### Type
+
+*   [MasterCategories](/javascript/api/outlook/office.mastercategories)
+
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| Preview |
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadMailbox |
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read |
 
 ---
 ---
