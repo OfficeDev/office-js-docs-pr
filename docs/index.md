@@ -24,7 +24,7 @@ localization_priority: Normal
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Office Add-ins platform</h3>
+                        <h3>Office Add-ins guidance</h3>
                         <p>Learn about the Office Add-ins platform and important concepts that apply to building any type of Office Add-in.</p>
                     </div>
                 </a>

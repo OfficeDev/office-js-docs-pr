@@ -5,7 +5,7 @@
   - name: Build your first OneNote add-in
     href: ../quickstarts/onenote-quickstart.md?context=office/dev/add-ins/onenote/context
 
-  - name: Office Add-ins platform
+  - name: Office Add-ins guidance
     displayName: OneNote
     items:
     - name: Concepts

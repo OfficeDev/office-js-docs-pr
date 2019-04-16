@@ -31,7 +31,7 @@
       href: ../tutorials/excel-tutorial-create-custom-functions.md?context=office/dev/add-ins/excel/context
       displayName: Excel
 
-  - name: Office Add-ins platform
+  - name: Office Add-ins guidance
     displayName: Excel
     items:
     - name: Concepts

@@ -8,7 +8,7 @@
   - name: PowerPoint add-in tutorial
     href: ../tutorials/powerpoint-tutorial.md?context=office/dev/add-ins/powerpoint/context
 
-  - name: Office Add-ins platform
+  - name: Office Add-ins guidance
     displayName: PowerPoint
     items:
     - name: Concepts
