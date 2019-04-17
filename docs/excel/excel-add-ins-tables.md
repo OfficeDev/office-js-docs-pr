@@ -44,7 +44,8 @@ Excel.run(function (context) {
     return context.sync();
 }).catch(errorHandlerFunction);
 ```
-### New table
+
+**New table**
 
 ![New table in Excel](../images/excel-tables-create.png)
 
