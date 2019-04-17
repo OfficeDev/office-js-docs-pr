@@ -106,8 +106,7 @@ This example gets the categories master list on this mailbox.
 Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
   if (asyncResult.status === Office.AsyncResultStatus.Failed) {
     console.log("Action failed with error: " + asyncResult.error.message);
-  }
-  else {
+  } else {
     console.log("Master categories: " + JSON.stringify(asyncResult.value));
   }
 });

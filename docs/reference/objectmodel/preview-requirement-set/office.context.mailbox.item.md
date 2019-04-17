@@ -243,8 +243,7 @@ This example gets the item's categories.
 Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
   if (asyncResult.status === Office.AsyncResultStatus.Failed) {
     console.log("Action failed with error: " + asyncResult.error.message);
-  }
-  else {
+  } else {
     console.log("Categories: " + JSON.stringify(asyncResult.value));
   }
 });
