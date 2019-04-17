@@ -1,7 +1,7 @@
 ---
 title: Work with tables using the Excel JavaScript API
 description: ''
-ms.date: 04/09/2019
+ms.date: 04/17/2019
 localization_priority: Priority
 ---
 
@@ -351,6 +351,35 @@ Excel.run(function (context) {
         });
 }).catch(errorHandlerFunction);
 ```
+
+### AutoFilter
+
+> [!NOTE]
+> `Table.autoFilter` is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+As of the `ExcelApi 1.9` requirement set, add-ins have access to the table's [AutoFilter](/javascript/api/excel/excel.autofilter). An AutoFilter object is the entire filter structure of a table or range. All the aforementioned filter operations are compatible with the auto-filter. The single access point does make accessing and managing multiple filters easier.
+
+The following code sample shows the same [data filtering as the earlier code sample](#apply-filters-to-a-table), but done entirely through an auto-filter.
+
+```js
+    Excel.run(function (context) {
+        var sheet = context.workbook.worksheets.getItem("Sample");
+        var expensesTable = sheet.tables.getItem("ExpensesTable");
+
+        expensesTable.autoFilter.apply(expensesTable.getRange(), 2, {
+            filterOn: Excel.FilterOn.values,
+            values: ["Restaurant", "Groceries"]
+        });
+        expensesTable.autoFilter.apply(expensesTable.getRange(), 3, {
+            filterOn: Excel.FilterOn.dynamic,
+            dynamicCriteria: Excel.DynamicFilterCriteria.belowAverage
+        });
+
+        return context.sync();
+    }).catch(errorHandlerFunction);
+```
+
+An `AutoFilter` can also be applied to a range at the worksheet level. See the ["Filter data" section of Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md#filter-data) for more information.
 
 ## Format a table
 
