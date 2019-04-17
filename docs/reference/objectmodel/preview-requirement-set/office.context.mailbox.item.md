@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - preview requirement set
 description: ''
-ms.date: 04/12/2019
+ms.date: 04/17/2019
 localization_priority: Normal
 ---
 
@@ -26,6 +26,7 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [attachments](#attachments-arrayattachmentdetails) | Member |
 | [bcc](#bcc-recipients) | Member |
 | [body](#body-body) | Member |
+| [categories](#categories-categories) | Member |
 | [cc](#cc-arrayemailaddressdetailsrecipients) | Member |
 | [conversationId](#nullable-conversationid-string) | Member |
 | [dateTimeCreated](#datetimecreated-date) | Member |
@@ -210,6 +211,42 @@ The following is an example of the result parameter passed to the callback funct
   "status": "succeeded",
   "asyncContext": "This is passed to the callback"
 }
+```
+
+---
+---
+
+####  categories :[Categories](/javascript/api/outlook/office.categories)
+
+Gets an object that provides methods for managing the item's categories.
+
+> [!NOTE]
+> This member is not supported in Outlook for iOS or Outlook for Android.
+
+##### Type
+
+*   [Categories](/javascript/api/outlook/office.categories)
+
+##### Requirements
+
+|Requirement|Value|
+|---|---|
+|[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Preview|
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Applicable Outlook mode](/outlook/add-ins/#extension-points)|Compose or Read|
+
+##### Example
+
+This example gets the item's categories.
+
+```javascript
+Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
+  if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+    console.log("Action failed with error: " + asyncResult.error.message);
+  } else {
+    console.log("Categories: " + JSON.stringify(asyncResult.value));
+  }
+});
 ```
 
 ---

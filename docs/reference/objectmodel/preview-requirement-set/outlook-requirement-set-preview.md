@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/17/2019
 localization_priority: Priority
 ---
 
@@ -25,6 +25,8 @@ The following features are in preview.
 Added a new optional parameter `options`, which is a dictionary with one valid value `allowEvent`. This value is used to cancel execution of an event.
 
 **Available in**: Outlook on the web (Classic)
+
+---
 
 ### Attachments
 
@@ -70,6 +72,53 @@ Added `AttachmentsChanged` event to `Item`.
 
 **Available in**: Outlook for Windows (Office 365)
 
+---
+
+### Categories
+
+In Outlook, a user can group messages and appointments by using a category to color-code them. The user defines categories in a master list on their mailbox. They can then apply one or more categories to an item.
+
+> [!NOTE]
+> This feature is not supported in Outlook for iOS or Outlook for Android.
+
+#### [Categories](/javascript/api/outlook/office.categories)
+
+Added a new object that represents an item's categories.
+
+**Available in**: Outlook for Windows (Office 365)
+
+#### [CategoryDetails](/javascript/api/outlook/office.categorydetails)
+
+Added a new object that represents a category's details (its name and associated color).
+
+**Available in**: Outlook for Windows (Office 365)
+
+#### [MasterCategories](/javascript/api/outlook/office.mastercategories)
+
+Added a new object that represents the categories master list on a mailbox.
+
+**Available in**: Outlook for Windows (Office 365)
+
+#### [Office.context.mailbox.masterCategories](/javascript/api/outlook/office.mailbox#mastercategories)
+
+Added a new property that represents the categories master list on a mailbox.
+
+**Available in**: Outlook for Windows (Office 365)
+
+#### [Office.context.mailbox.item.categories](/javascript/api/outlook/office.item#categories)
+
+Added a new property that represents the set of categories on an item.
+
+**Available in**: Outlook for Windows (Office 365)
+
+#### [Office.MailboxEnums.CategoryColor](/javascript/api/outlook/office.mailboxenums.categorycolor)
+
+Added a new enum that specifies the colors available to be associated with categories.
+
+**Available in**: Outlook for Windows (Office 365)
+
+---
+
 ### Delegate access
 
 #### [SharedProperties](/javascript/api/outlook/office.sharedproperties)
@@ -95,6 +144,8 @@ Added a new bit flag enum that specifies the delegate permissions.
 Added a child element to the [DesktopFormFactor](../../manifest/desktopformfactor.md) manifest element. It defines whether the add-in is available in delegate scenarios.
 
 **Available in**: Outlook for Windows (Office 365)
+
+---
 
 ### Enhanced location
 
@@ -134,6 +185,8 @@ Added `EnhancedLocationsChanged` event to `Item`.
 
 **Available in**: Outlook for Windows (Office 365)
 
+---
+
 ### Integration with actionable messages
 
 #### [Office.context.mailbox.item.getInitializationContextAsync](office.context.mailbox.item.md#getinitializationcontextasyncoptions-callback)
@@ -141,6 +194,8 @@ Added `EnhancedLocationsChanged` event to `Item`.
 Added a new function that returns initialization data passed when the add-in is [activated by an actionable message](/outlook/actionable-messages/invoke-add-in-from-actionable-message).
 
 **Available in**: Outlook for Windows (Office 365), Outlook on the web (Classic)
+
+---
 
 ### Internet headers
 
@@ -156,6 +211,8 @@ Added a new property that represents the internet headers on a message item.
 
 **Available in**: Outlook for Windows (Office 365)
 
+---
+
 ### Office theme
 
 #### [Office.context.mailbox.officeTheme](/javascript/api/office/office.officetheme)
@@ -169,6 +226,8 @@ Added ability to get Office theme.
 Added `OfficeThemeChanged` event to `Mailbox`.
 
 **Available in**: Outlook for Windows (Office 365)
+
+---
 
 ### SSO
 
