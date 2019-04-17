@@ -370,6 +370,8 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
+An `AutoFilter` can also be applied to individual tables. See the ["AutoFilter" section of Work with tables using the Excel JavaScript API](excel-add-ins-tables.md#autofilter) for more information.
+
 ## Data protection
 
 Your add-in can control a user's ability to edit data in a worksheet. The worksheet's `protection` property is a [WorksheetProtection](/javascript/api/excel/excel.worksheetprotection) object with a `protect()` method. The following example shows a basic scenario toggling the complete protection of the active worksheet.

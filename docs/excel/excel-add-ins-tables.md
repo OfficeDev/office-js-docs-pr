@@ -358,9 +358,9 @@ Excel.run(function (context) {
 > [!NOTE]
 > `Table.autoFilter` is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
-As of the `ExcelApi 1.9` requirement set, add-ins have access to the table's [AutoFilter](/javascript/api/excel/excel.autofilter). An AutoFilter object is the entire filter structure of a table or range. All the aforementioned filter operations are compatible with the auto-filter. The single access point does make accessing and managing multiple filters easier.
+As of the `ExcelApi 1.9` requirement set, add-ins have access to the table's [AutoFilter](/javascript/api/excel/excel.autofilter). An AutoFilter object is the entire filter structure of a table or range. All the aforementioned filter operations are compatible with the auto-filter. The single access point does make it easier to access and manage multiple filters.
 
-The following code sample shows the same [data filtering as the earlier code sample](#apply-filters-to-a-table), but done entirely through an auto-filter.
+The following code sample shows the same [data filtering as the earlier code sample](#apply-filters-to-a-table), but done entirely through the auto-filter.
 
 ```js
     Excel.run(function (context) {
