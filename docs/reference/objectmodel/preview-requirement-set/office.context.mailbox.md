@@ -100,7 +100,7 @@ Gets an object that provides methods to manage the categories master list on thi
 
 ##### Example
 
-This example gets the categories master list on this mailbox.
+This example gets the categories master list for this mailbox.
 
 ```javascript
 Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
