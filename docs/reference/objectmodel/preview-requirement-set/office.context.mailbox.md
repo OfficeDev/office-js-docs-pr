@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox - preview requirement set
 description: ''
-ms.date: 04/16/2019
+ms.date: 04/17/2019
 localization_priority: Normal
 ---
 
@@ -83,6 +83,9 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item.md#s
 
 Gets an object that provides methods to manage the categories master list on this mailbox.
 
+> [!NOTE]
+> This member is not supported in Outlook for iOS or Outlook for Android.
+
 ##### Type
 
 *   [MasterCategories](/javascript/api/outlook/office.mastercategories)
@@ -92,7 +95,7 @@ Gets an object that provides methods to manage the categories master list on thi
 |Requirement| Value|
 |---|---|
 |[Minimum mailbox requirement set version](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| Preview |
-|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadMailbox |
+|[Minimum permission level](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteMailbox |
 |[Applicable Outlook mode](/outlook/add-ins/#extension-points)| Compose or Read |
 
 ##### Example

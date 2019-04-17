@@ -1,7 +1,7 @@
 ---
 title: Office.context.mailbox.item - preview requirement set
 description: ''
-ms.date: 04/16/2019
+ms.date: 04/17/2019
 localization_priority: Normal
 ---
 
@@ -219,6 +219,9 @@ The following is an example of the result parameter passed to the callback funct
 ####  categories :[Categories](/javascript/api/outlook/office.categories)
 
 Gets an object that provides methods for managing the item's categories.
+
+> [!NOTE]
+> This member is not supported in Outlook for iOS or Outlook for Android.
 
 ##### Type
 

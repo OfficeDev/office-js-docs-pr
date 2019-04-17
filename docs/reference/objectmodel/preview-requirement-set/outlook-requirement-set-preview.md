@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API Preview requirement set
 description: ''
-ms.date: 04/16/2019
+ms.date: 04/17/2019
 localization_priority: Priority
 ---
 
@@ -78,6 +78,9 @@ Added `AttachmentsChanged` event to `Item`.
 
 In Outlook, a user can group messages and appointments by using a category to color-code them. The user defines categories in a master list on their mailbox. They can then apply one or more categories to an item.
 
+> [!NOTE]
+> This feature is not supported in Outlook for iOS or Outlook for Android.
+
 #### [Categories](/javascript/api/outlook/office.categories)
 
 Added a new object that represents an item's categories.
@@ -86,7 +89,7 @@ Added a new object that represents an item's categories.
 
 #### [CategoryDetails](/javascript/api/outlook/office.categorydetails)
 
-Added a new object that represents a category's details (for example, its name and associated color).
+Added a new object that represents a category's details (its name and associated color).
 
 **Available in**: Outlook for Windows (Office 365)
 
