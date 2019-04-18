@@ -1,10 +1,9 @@
 ---
 title: Work with tables using the Excel JavaScript API
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/04/2019
 localization_priority: Priority
 ---
-
 
 # Work with tables using the Excel JavaScript API
 
@@ -232,6 +231,30 @@ Excel.run(function (context) {
 **Table and data output**
 
 ![Table data in Excel](../images/excel-tables-get-data.png)
+
+## Detect data changes
+
+Your add-in may need to react to users changing the data in a table. To detect these changes, you can [register an event handler](excel-add-ins-events.md#register-an-event-handler) for the `onChanged` event of a table. Event handlers for the `onChanged` event receive a [TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs) object when the event fires.
+
+The `TableChangedEventArgs` object provides information about the changes and the source. Since `onChanged` fires when either the format or value of the data changes, it can be useful to have your add-in check if the values have actually changed. The `details` property encapsulates this information as a [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail). The following code sample shows how to display the before and after values and types of a cell that has been changed.
+
+> [!NOTE]
+> `TableChangedEventArgs.details` is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+```js
+// This function would be used as an event handler for the Table.onChanged event.
+function onTableChanged(eventArgs) {
+    Excel.run(function (context) {
+        var details = eventArgs.details;
+        var address = eventArgs.address;
+
+        // Print the before and after types and values to the console.
+        console.log(`Change at ${address}: was ${details.valueBefore}(${details.valueTypeBefore}),`
+            + ` now is ${details.valueAfter}(${details.valueTypeAfter})`);
+        return context.sync();
+    });
+}
+```
 
 ## Sort data in a table
 

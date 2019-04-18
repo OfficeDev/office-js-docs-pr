@@ -8,7 +8,7 @@ localization_priority: Priority
 
 When developing custom functions, you may encounter errors in the product while creating and testing your functions.
 
-To resolve issues, you can [enable runtime logging to capture errors](#enable-runtime-logging) and refer to [Excel's native error messages](#check-for-excel-error-messages). Also, check for common mistakes such as not [verifying ssl certificates](#verify-ssl-certificates) properly, [leaving promises unresolved](#ensure-promises-return), and forgetting to [associate your functions](#associate-your-functions).
+To resolve issues, you can [enable runtime logging to capture errors](#enable-runtime-logging) and refer to [Excel's native error messages](#check-for-excel-error-messages). Also, check for common mistakes such as not [verifying ssl certificates](#my-add-in-wont-load-verify-certificates) properly, [leaving promises unresolved](#ensure-promises-return), and forgetting to [associate your functions](#my-functions-wont-load-associate-functions).
 
 ## Enable runtime logging
 
@@ -20,7 +20,7 @@ Excel has a number of built-in error messages which are returned to a cell if th
 
 ## Common issues
 
-### My add-in won't load: verify certifications
+### My add-in won't load: verify certificates
 
 If your add-in fails to install, verify that the SSL certificates are configured correctly for the web server that's hosting your add-in. Typically if there is a problem with SSL certificates, you will see an error message in Excel warning you that your add-in could not be installed properly. For more information, see [Adding self-signed certificates as trusted root certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
 

@@ -1,7 +1,7 @@
 ---
 title: Outlook JavaScript API requirement sets
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/10/2019
 ms.prod: outlook
 localization_priority: Priority
 ---
@@ -15,7 +15,7 @@ For example, the following manifest snippet indicates a minimum requirement set 
 ```xml
 <Requirements>
   <Sets>
-    <Set Name="MailBox" MinVersion="1.1" />
+    <Set Name="Mailbox" MinVersion="1.1" />
   </Sets>
 </Requirements>
 ```

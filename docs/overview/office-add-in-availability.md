@@ -1,7 +1,7 @@
 ---
 title: Office Add-in host and platform availability
 description: Supported requirement sets for Excel, Word, Outlook, PowerPoint, OneNote, and Project.
-ms.date: 03/19/2019
+ms.date: 04/03/2019
 localization_priority: Priority
 ---
 
@@ -10,9 +10,7 @@ localization_priority: Priority
 To work as expected, your Office Add-in might depend on a specific Office host, a requirement set, an API member, or a version of the API. The following tables contain the available platforms, extension points, API requirement sets, and Common APIs that are currently supported for each Office application.
 
 > [!NOTE]
-> The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1, WordApi 1.1, and Common API requirement sets.
->
-> The build number for a one-time purchase of Office 2019 is 16.0.10827.20150.
+> The initial Office 2016 release installed via MSI only contains the ExcelApi 1.1, WordApi 1.1, and Common API requirement sets. For more information about the update history of the various Office versions, check out the [See also](#see-also) section.
 
 ## Excel
 
@@ -884,3 +882,7 @@ To work as expected, your Office Add-in might depend on a specific Office host, 
 - [Common API requirement sets](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
 - [Add-in Commands requirement sets](/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets)
 - [JavaScript API for Office reference](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Office 2016 and 2019 update history (Click-To-Run)](/officeupdates/update-history-office-2019)
+- [Office 2013 update history (Click-To-Run)](/officeupdates/update-history-office-2013)
+- [Office 2010, 2013, and 2016 update history (MSI)](/officeupdates/office-updates-msi)
+- [Outlook 2010, 2013, and 2016 update history (MSI)](/officeupdates/outlook-updates-msi)

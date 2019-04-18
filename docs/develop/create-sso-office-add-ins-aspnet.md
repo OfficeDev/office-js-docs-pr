@@ -1,7 +1,7 @@
 ---
 title: Create an ASP.NET Office Add-in that uses single sign-on
 description: 
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 localization_priority: Priority
 ---
 
@@ -64,7 +64,7 @@ The following instruction are written generically so they can be used in multipl
 
 ## Configure the add-in
 
-1. In the following string, replace the placeholder “{tenant_ID}” with your Office 365 tenant ID. Use one of the methods in [Find your Office 365 tenant ID](/onedrive/find-your-office-365-tenant-id) to obtain it.
+1. In the following string, replace the placeholder “{tenant_ID}” with your Office 365 tenancy ID. If you didn't copy the tenancy ID when you registered the add-in with AAD, use one of the methods in [Find your Office 365 tenant ID](/onedrive/find-your-office-365-tenant-id) to obtain it.
 
     `https://login.microsoftonline.com/{tenant_ID}/v2.0`
 
