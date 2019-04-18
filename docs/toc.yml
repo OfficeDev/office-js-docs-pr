@@ -290,6 +290,9 @@
         - name: Custom functions naming guidelines
           href: excel/custom-functions-naming.md
           displayName: Excel
+        - name: Custom functions localization
+          href: excel/custom-functions-localize.md
+          displayName: Excel
       - name: Data validation
         href: excel/excel-add-ins-data-validation.md
         displayName: Excel
