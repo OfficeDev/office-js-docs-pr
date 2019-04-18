@@ -6,7 +6,7 @@ localization_priority: Normal
 ---
 # Localize custom functions
 
-Just like add-ins, custom functions can be localized. You'll provide locale information in the XML manifest file of your add-in and provide your own localized function names in the functions' JSON file.
+To make your custom functions work around the world, localize them into different languages. To localize custom functions, you'll need to provide locale information in the XML manifest file and provide localized function names in the functions' JSON file.
 
 ## Localize your add-in
 
