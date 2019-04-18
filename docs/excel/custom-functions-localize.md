@@ -14,7 +14,7 @@ Before localizing your function names, you'll need to add optional locales to yo
 
 ## Localize function names
 
-To declare a localized function name, you will set alternative `name` and `description` properties within your function's JSON file. You can declare multiple localized names and descriptions.
+To declare a localized function name, create additional `name` and `description` properties within your function's JSON file. You can declare multiple localized names and descriptions.
 
 Note your functions' `name` and `description` can change by locale, the `id` of each function is not localized. This `id` property is how Excel identifies your function as unique and should not be changed once it is set.
 
