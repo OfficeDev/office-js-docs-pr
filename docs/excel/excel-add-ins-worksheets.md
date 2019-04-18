@@ -1,7 +1,7 @@
 ---
 title: Work with worksheets using the Excel JavaScript API
 description: ''
-ms.date: 04/17/2019
+ms.date: 04/18/2019
 localization_priority: Priority
 ---
 
@@ -331,9 +331,9 @@ Excel.run(function (context) {
 > [!NOTE]
 > `AutoFilter` is currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
-An [AutoFilter]((/javascript/api/excel/excel.autofilter) applies data filters across a range within the worksheet. This is created with `Worksheet.autoFilter.apply`, which has the following parameters:
+An [AutoFilter](/javascript/api/excel/excel.autofilter) applies data filters across a range within the worksheet. This is created with `Worksheet.autoFilter.apply`, which has the following parameters:
 
-- `range`: The range, specified as either a `Range` object or a string, to which the filter is applied.
+- `range`: The range to which the filter is applied, specified as either a `Range` object or a string.
 - `columnIndex`: The zero-based column index against which the filter criteria is evaluated.
 - `criteria`: A [FilterCriteria](/javascript/api/excel/excel.filtercriteria) object determining which rows should be filtered based on the column's cell.
 
@@ -360,7 +360,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-The final auto-filter code sample shows how to remove the filters from the worksheet with the `remove` method.
+The final auto-filter code sample shows how to remove the auto-filter from the worksheet with the `remove` method.
 
 ```js
 Excel.run(function (context) {
@@ -370,7 +370,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-An `AutoFilter` can also be applied to individual tables. See the ["AutoFilter" section of Work with tables using the Excel JavaScript API](excel-add-ins-tables.md#autofilter) for more information.
+An `AutoFilter` can also be applied to individual tables. See [Work with tables using the Excel JavaScript API](excel-add-ins-tables.md#autofilter) for more information.
 
 ## Data protection
 
