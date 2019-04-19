@@ -1,6 +1,6 @@
 ---
 title: Explore Office JavaScript API using Script Lab
-description: Use Script Lab to explore the Office JS API and prototype functionality.
+description: Use Script Lab to explore the Office JS API and to prototype functionality.
 ms.topic: article
 ms.date: 04/19/2019
 localization_priority: Normal
