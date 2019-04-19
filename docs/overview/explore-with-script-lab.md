@@ -12,7 +12,7 @@ The [Script Lab add-in](https://store.office.com/app.aspx?assetid=WA104380862), 
 
 ## What is Script Lab?
 
-Script Lab is a tool for anyone who wants to learn about developing Office Add-ins using Office Javascript API in Excel, Word, PowerPoint, and Project. It provides IntelliSense so you can see what's available and is built on the Monaco framework, the same framework as Visual Studio Code. Through Script Lab you can access a library of samples to quickly try out features or use a sample as the base for your own. You are also welcome to expand the sample library by adding snippets to the [office-js-snippets repo](https://github.com/OfficeDev/office-js-snippets#office-js-snippets). Another cool thing is you can try beta or preview functionality like [custom functions](/office/dev/add-ins/excel/custom-functions-overview).
+Script Lab is a tool for anyone who wants to learn about developing Office Add-ins using Office Javascript API in Excel, Word, and PowerPoint. It provides IntelliSense so you can see what's available and is built on the Monaco framework, the same framework as Visual Studio Code. Through Script Lab you can access a library of samples to quickly try out features or use a sample as the base for your own. You are also welcome to expand the sample library by adding snippets to the [office-js-snippets repo](https://github.com/OfficeDev/office-js-snippets#office-js-snippets). Another cool thing is you can try beta or preview functionality like [custom functions](/office/dev/add-ins/excel/custom-functions-overview).
 
 > [!TIP]
 > In order to participate in beta or preview, you may have to sign up for the [Office Insider program](https://products.office.com/office-insider).
@@ -23,16 +23,13 @@ Sounds good so far? Take a look at this one-minute teaser video to see Script La
 
 ## Supported clients
 
-Script Lab is supported for Excel, Word, PowerPoint, and Project on the following clients.
+Script Lab is supported for Excel, Word, and PowerPoint on the following clients.
 
 - Office 365 for Windows
 - Office 365 for Mac
 - Office Online
 - Office 2013 or later for Windows
 - Office 2016 or later for Mac
-
-> [!NOTE]
-> See [Office Add-in host and platform availability](/office/dev/add-ins/overview/office-add-in-availability) for specifics about Office Add-ins support on each host application.
 
 ## See also
 
