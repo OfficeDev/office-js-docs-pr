@@ -26,8 +26,7 @@ You'll need the following tools and related resources to begin creating custom f
     npm install -g yo generator-office
     ```
 
-    > [!NOTE]
-    > Even if you've previously installed the Yeoman generator, we recommend you update your package to the latest version from npm.
+    [!include[note to update Yeoman generator](../includes/note-yeoman-generator-update.md)]
 
 ## Build your first custom functions project
 
