@@ -1,5 +1,5 @@
 ---
-ms.date: 04/15/2019
+ms.date: 04/18/2019
 description: Troubleshoot common problems in Excel custom functions.
 title: Troubleshoot custom functions (preview)
 localization_priority: Priority
@@ -39,6 +39,10 @@ CustomFunctions.associate("ADD", add);
 ```
 
 For more information on this process, see [Associating function names with json metadata](/office/dev/add-ins/excel/custom-functions-best-practices#associating-function-names-with-json-metadata).
+
+### Can't open add-in from localhost: use a local loopback exception
+
+If you see the error "We can't open this add-in from localhost," you will need to enable a local loopback exception. For details on how to do this, see [this Microsoft support article](https://support.microsoft.com/en-us/help/4490419/local-loopback-exemption-does-not-work).
 
 ### Ensure promises return
 
