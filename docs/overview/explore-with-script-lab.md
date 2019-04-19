@@ -2,17 +2,17 @@
 title: Explore Office JavaScript API using Script Lab
 description: Learn about Script Lab and how you can use it to explore the Office JS API and prototype functionality.
 ms.topic: article
-ms.date: 04/03/2019
+ms.date: 04/19/2019
 localization_priority: Normal
 ---
 
 # Explore Office JavaScript API using Script Lab
 
-As you begin or continue to develop your Office add-in, there are several ways to explore the Office JavaScript API (for example, quick starts and tutorials) but the [Script Lab add-in](https://aka.ms/getscriptlab), which is available free from the Office store, enables you to do so in a sort of sand-boxed environment. Script Lab is also a great way to prototype and verify functionality you want to include in your add-in.
+The [Script Lab add-in](https://store.office.com/app.aspx?assetid=WA104380862), which is available free from the Office store, enables you to explore the Office JavaScript API right there in Office. Script Lab is a great tool to add to your development toolkit as you prototype and verify functionality you want in your add-in.
 
 ## What is Script Lab?
 
-Script Lab is a tool for anyone who wants to learn about developing Office Add-ins for Excel, Word, PowerPoint, and Project using Office JS API. It provides IntelliSense so you can see what's available. You can use existing samples in an Office host application to quickly try out something or use a sample as the base for your own. Another cool thing is that, through Script Lab, you might be able to try beta or preview functionality like [custom functions](/office/dev/add-ins/excel/custom-functions-overview).
+Script Lab is a tool for anyone who wants to learn about developing Office Add-ins using Office Javascript API in Excel, Word, PowerPoint, and Project. It provides IntelliSense so you can see what's available and is built on the Monaco framework, the same framework as Visual Studio Code. Through Script Lab you can access a library of samples to quickly try out features or use a sample as the base for your own. You are also welcome to expand the sample library by adding snippets to the [office-js-snippets repo](https://github.com/OfficeDev/office-js-snippets#office-js-snippets). Another cool thing is you can try beta or preview functionality like [custom functions](/office/dev/add-ins/excel/custom-functions-overview).
 
 > [!TIP]
 > In order to participate in beta or preview, you may have to sign up for the [Office Insider program](https://products.office.com/office-insider).
@@ -21,9 +21,9 @@ Sounds good so far? Take a look at this one-minute teaser video to see Script La
 
 [![Teaser video showing Script Lab being used in Excel, Word, and PowerPoint Online.](../images/screenshot-wide-youtube.png 'Script Lab teaser video')](https://aka.ms/scriptlabvideo)
 
-### Supported clients
+## Supported clients
 
-Script Lab is supported on the following clients for Excel, Word, PowerPoint, and Project where available.
+Script Lab is supported for Excel, Word, PowerPoint, and Project on the following clients.
 
 - Office 365 for Windows
 - Office 365 for Mac
@@ -31,8 +31,11 @@ Script Lab is supported on the following clients for Excel, Word, PowerPoint, an
 - Office 2013 or later for Windows
 - Office 2016 or later for Mac
 
+> [!NOTE]
+> See [Office Add-in host and platform availability](/office/dev/add-ins/overview/office-add-in-availability) for specifics about Office Add-ins support on each host application.
+
 ## See also
 
-- [Get Script Lab](https://aka.ms/getscriptlab)
+- [Get Script Lab](https://store.office.com/app.aspx?assetid=WA104380862)
 - [Learn more about Script Lab](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
 - [Sign up for the dev program](https://developer.microsoft.com/office/dev-program)
