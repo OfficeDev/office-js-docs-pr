@@ -1,14 +1,14 @@
 ---
-title: Build your first Excel add-in using jQuery
+title: Build your first Excel task pane add-in
 description: 
 ms.date: 04/19/2019
 ms.prod: excel
 localization_priority: Priority
 ---
 
-# Build an Excel add-in using jQuery
+# Build an Excel task pane add-in
 
-In this article, you'll walk through the process of building an Excel add-in by using jQuery and the Excel JavaScript API. 
+In this article, you'll walk through the process of building an Excel task pane add-in. 
 
 ## Create the add-in
 
@@ -191,25 +191,28 @@ In this article, you'll walk through the process of building an Excel add-in by 
     cd "My Office Add-in"
     ```
 
+### Explore the project
+
+The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in. If you'd like to explore the components of your add-in project, open the project in your code editor and review the files listed below. When you're ready to try out your add-in, proceed to the next section.
+
+- The **manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.
+- The **src/taskpane/taskpane.html** file contains the HTML markup for the task pane.
+- The **src/taskpane/taskpane.css** file contains the CSS styles that are used in rendering the task pane.
+- The **src/taskpane/taskpane.js** file contains the Excel JavaScript API code that facilitates interaction between the task pane and the Excel workbook.
+
 ### Try it out
 
-[!include[Start server section](../includes/quickstart-yo-start-server.md)] 
-
-1. Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within Excel.
-
-    - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
-    - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+1. [!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Excel add-in button](../images/excel-quickstart-addin-2b.png)
+    ![Excel add-in button](../images/excel-quickstart-addin-3b.png)
 
 3. Select any range of cells in the worksheet.
 
-4. In the task pane, choose the **Set color** button to set the color of the selected range to green.
+4. In the task pane, choose the **Run** link to set the color of the selected range to yellow.
 
-    ![Excel add-in](../images/excel-quickstart-addin-2c.png)
+    ![Excel add-in](../images/excel-quickstart-addin-3c.png)
 
 ---
 
