@@ -1,7 +1,7 @@
 ---
 title: Build your first Excel task pane add-in
 description: 
-ms.date: 04/19/2019
+ms.date: 04/23/2019
 ms.prod: excel
 localization_priority: Priority
 ---

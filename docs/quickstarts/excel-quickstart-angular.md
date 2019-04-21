@@ -1,7 +1,7 @@
 ---
 title: Build an Excel task pane add-in using Angular
 description: 
-ms.date: 03/19/2019
+ms.date: 04/23/2019
 ms.prod: excel
 localization_priority: Priority
 ---
